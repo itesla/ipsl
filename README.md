@@ -28,9 +28,9 @@ Each contributor should send an email to info@itesla-ipsl.org with the following
 <The iPSL is a Modelica library for power system simulation using phasor time domain convention>
 
 Copyright 2015 RTE (France), AIA (Spain), KTH (Sweden) and DTU (Denmark)
-RTE: http://www.rte-france.com/ 
-AIA: http://www.aia.es/en/energy/
-KTH: https://www.kth.se/en
+RTE: http://www.rte-france.com/, 
+AIA: http://www.aia.es/en/energy/, 
+KTH: [SmarTS Lab research group](https://www.kth.se/en/ees/omskolan/organisation/avdelningar/eps/research/smarttslab/smarts-lab-1.369280),
 DTU: http://www.dtu.dk/english 
 
 The authors can be contacted by email: info@itesla-ipsl.org
