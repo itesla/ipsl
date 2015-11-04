@@ -21,6 +21,19 @@ A validation report should also be submitted by email to info@itesla-ipsl.org. A
 - A short report describing your component model, as well as the validation test.
 - The data files to plot the comparison figures and compute the MSE.
 
+## Citing iPSL in Publications
+If you use iPSL in your work or research, all we ask you in exchange is that you cite the following papers, according to your use. You are also welcome to submit your contributions as stated above.
+
+- M. Zhang, M. Baudette, J. Lavenius, S. Løvlund, and L. Vanfretti, “Modelica Implementation and Software-to-Software Validation of Power System Component Models Commonly used by Nordic TSOs for Dynamic Simulations,” In Proceedings of the 56th Conference on Simulation and Modelling (SIMS 56), 7-9 October 2015, Linköking, Sweden.
+- M. Sabate, G. Leon, M. Halat, J.B. Heyberger, F.J. Gomez and L. Vanfretti, “Aspects of Power System Modeling, Initialization and Simulation using the Modelica Language,” IEEE PowerTech 2015.
+- M.A. Adib Murad, F.J. Gomez, and L. Vanfretti, “Equation-Based Modeling of FACTS using Modelica,” IEEE PowerTech 2015.
+- M.A. Adib Murad, F.J. Gomez, and L. Vanfretti, “Equation-Based Modeling and Simulation of Three-Winding, and Regulating Transformers using Modelica,” IEEE PowerTech 2015.
+- L. Vanfretti, T. Bogodorova, and M. Baudette, “Power System Model Identification Exploiting the Modelica Language and FMI Technologies,” 2014 IEEE International Conference on Intelligent Energy and Power Systems, June 2-6, 2014, Kyiv, Ukraine.
+- L. Vanfretti, T. Bogodorova, and M. Baudette, “A Modelica Power System Component Library for Model Validation and Parameter Identification,” 10th International Modelica Conference 2014, Lund, Sweden, Mar. 10 – 12, 2014.
+- T. Bogodorova, M. Sabate, G. León, L. Vanfretti, M. Halat, J.B. Heyberger, and P. Panciatici, “A Modelica Power System Library for Phasor Time-Domain Simulation,” IEEE ISGT Europe 2013, Oct. 6 – 9, 2013, Lyngby, Denmark.
+- L. Vanfretti, W. Li, T. Bogodorova, and P.Panciatici “Unambiguous Power System Modeling and Simulation using Modelica Tools”, IEEE PES General Meeting 2013.
+
+
 ## Copyright assignment:
 Each contributor should send an email to info@itesla-ipsl.org with the following sentence: I hereby assign copyright of my contributions to the iPSL, to be licensed under the same terms as the rest of the iPSL. 
 
@@ -28,9 +41,9 @@ Each contributor should send an email to info@itesla-ipsl.org with the following
 <The iPSL is a Modelica library for power system simulation using phasor time domain convention>
 
 Copyright 2015 RTE (France), AIA (Spain), KTH (Sweden) and DTU (Denmark)
-RTE: http://www.rte-france.com/, 
-AIA: http://www.aia.es/en/energy/, 
-KTH: [SmarTS Lab research group](https://www.kth.se/en/ees/omskolan/organisation/avdelningar/eps/research/smarttslab/smarts-lab-1.369280),
+RTE: http://www.rte-france.com/ 
+AIA: http://www.aia.es/en/energy/
+KTH: https://www.kth.se/en
 DTU: http://www.dtu.dk/english 
 
 The authors can be contacted by email: info@itesla-ipsl.org
