@@ -1,11 +1,10 @@
 within iPSL.Examples.DevelopmentExamples.Electrical.Controls.PSAT.AVR;
 model AVRTypeII_Test
-  import PowerSystems = iPSL;
 
-  PowerSystems.Electrical.Loads.PSAT.LOADPQ pwLoadPQ2(P_0 = 0.08, Q_0 = 0.06,
+   iPSL.Electrical.Loads.PSAT.LOADPQ pwLoadPQ2(P_0 = 0.08, Q_0 = 0.06,
     V_0=1,
     angle_0=0)                                                          annotation(Placement(visible = true, transformation(origin = {122.283, 26}, extent = {{-10.0, -10.0}, {10.0, 10.0}}, rotation = 0)));
-  PowerSystems.Electrical.Branches.PwLine2Openings pwLinewithOpening1(
+   iPSL.Electrical.Branches.PwLine2Openings pwLinewithOpening1(
     B=0.001/2,
     G=0,
     R=0.01,
@@ -15,7 +14,7 @@ model AVRTypeII_Test
         origin={79,16},
         extent={{-10.0,-10.0},{10.0,10.0}},
         rotation=0)));
-  PowerSystems.Electrical.Branches.PwLine pwLine4(
+   iPSL.Electrical.Branches.PwLine pwLine4(
     B=0.001/2,
     G=0,
     R=0.01,
@@ -23,7 +22,7 @@ model AVRTypeII_Test
         origin={79,31},
         extent={{-10.0,-10.0},{10.0,10.0}},
         rotation=0)));
-  PowerSystems.Electrical.Branches.PwLine pwLine3(
+   iPSL.Electrical.Branches.PwLine pwLine3(
     B=0.001/2,
     G=0,
     R=0.01,
@@ -31,10 +30,10 @@ model AVRTypeII_Test
         origin={84,-19},
         extent={{-10.0,-10.0},{10.0,10.0}},
         rotation=0)));
-  PowerSystems.Electrical.Loads.PSAT.LOADPQ pwLoadPQ1(P_0 = 0.08, Q_0 = 0.06,
+   iPSL.Electrical.Loads.PSAT.LOADPQ pwLoadPQ1(P_0 = 0.08, Q_0 = 0.06,
     V_0=1,
     angle_0=0)                                                            annotation(Placement(visible = true, transformation(origin = {124, -19}, extent = {{-10.0, -10.0}, {10.0, 10.0}}, rotation = 0)));
-  PowerSystems.Electrical.Branches.PwLine pwLine2(
+   iPSL.Electrical.Branches.PwLine pwLine2(
     B=0.001/2,
     G=0,
     R=0.01,
@@ -42,7 +41,7 @@ model AVRTypeII_Test
         origin={44,26},
         extent={{-10.0,-10.0},{10.0,10.0}},
         rotation=0)));
-  PowerSystems.Electrical.Branches.PwLine pwLine1(
+   iPSL.Electrical.Branches.PwLine pwLine1(
     B=0.001/2,
     G=0,
     R=0.01,
@@ -50,8 +49,8 @@ model AVRTypeII_Test
         origin={44,-4},
         extent={{-10.0,-10.0},{10.0,10.0}},
         rotation=0)));
-  PowerSystems.Electrical.Events.PwFaultPQ pwFault(X = 0.001, t1 = 3, t2 = 3.1, R = 0.2) annotation(Placement(transformation(extent = {{115, -52}, {135, -32}})));
-  PowerSystems.Electrical.Machines.PSAT.SixthOrder.Order6 order6Type2_Inputs_Outputs(
+   iPSL.Electrical.Events.PwFaultPQ pwFault(X = 0.001, t1 = 3, t2 = 3.1, R = 0.2) annotation(Placement(transformation(extent = {{115, -52}, {135, -32}})));
+   iPSL.Electrical.Machines.PSAT.SixthOrder.Order6 order6Type2_Inputs_Outputs(
     V_0=1,
     angle_0=0,
     P_0=0.160352698692006,
@@ -63,9 +62,9 @@ model AVRTypeII_Test
     xd1=0.302,
     M=10,
     D=0)                                                                                                 annotation(Placement(transformation(extent = {{-68, -12}, {12, 66}})));
-  PowerSystems.NonElectrical.Math.ImSetPoint imSetPoint(V = 1) annotation(Placement(transformation(extent = {{52, 88}, {32, 108}})));
-  PowerSystems.Electrical.Controls.PSAT.AVR.AVRTypeII exciter_Type_II(vref0 = 1, vrmin = -5, vrmax = 5, Ta = 0.1, Te = 1, Tr = 0.001, Ae = 0.0006, Be = 0.9, Kf = 0.45, Tf = 1, Ka = 400, vf0 = 1.064, Ke = 0.01) annotation(Placement(transformation(extent = {{4, 58}, {-58, 110}})));
-  inner PowerSystems.Electrical.SystemBase SysData
+   iPSL.NonElectrical.Math.ImSetPoint imSetPoint(V = 1) annotation(Placement(transformation(extent = {{52, 88}, {32, 108}})));
+   iPSL.Electrical.Controls.PSAT.AVR.AVRTypeII exciter_Type_II(vref0 = 1, vrmin = -5, vrmax = 5, Ta = 0.1, Te = 1, Tr = 0.001, Ae = 0.0006, Be = 0.9, Kf = 0.45, Tf = 1, Ka = 400, vf0 = 1.064, Ke = 0.01) annotation(Placement(transformation(extent = {{4, 58}, {-58, 110}})));
+  inner iPSL.Electrical.SystemBase  SysData
     annotation (Placement(transformation(extent={{100,80},{124,100}})));
 equation
   connect(pwLine4.n, pwLoadPQ2.p) annotation(Line(visible = true, origin = {101.213, 29}, points={{-15.213,

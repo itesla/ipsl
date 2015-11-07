@@ -1,9 +1,8 @@
 within iPSL.Examples.DevelopmentExamples.Electrical.Controls.PSAT.TG;
 model TGTypeVI_test
-  import PowerSystems = iPSL;
 
-  PowerSystems.Electrical.Controls.PSAT.TG.TGTypeVI tGModel6_1(Ka = 3.33333, Ta = 0.07, vmin = -0.1, vmax = 0.1, gmax = 0.97518, gmin = 0.01, Rp = 0.05, Kp = 1.163, Ki = 0.105, Kd = 0, Td = 0.01, beta = 0.1, Tw = 2.67, dref = 0, po = 0.16074) annotation(Placement(transformation(extent = {{-44, 16}, {-10, 50}})));
-  PowerSystems.Electrical.Machines.PSAT.ThirdOrder.Order3
+   iPSL.Electrical.Controls.PSAT.TG.TGTypeVI tGModel6_1(Ka = 3.33333, Ta = 0.07, vmin = -0.1, vmax = 0.1, gmax = 0.97518, gmin = 0.01, Rp = 0.05, Kp = 1.163, Ki = 0.105, Kd = 0, Td = 0.01, beta = 0.1, Tw = 2.67, dref = 0, po = 0.16074) annotation(Placement(transformation(extent = {{-44, 16}, {-10, 50}})));
+   iPSL.Electrical.Machines.PSAT.ThirdOrder.Order3
     order3_Inputs_Outputs1(
     P_0=0.16041,
     Q_0=0.12012,
@@ -22,10 +21,10 @@ model TGTypeVI_test
         origin={-25.3443,-17.3756},
         extent={{-16.6557,-16.6244},{16.6557,16.6244}},
         rotation=0)));
-  PowerSystems.Electrical.Loads.PSAT.LOADPQ pwLoadPQ1(P_0 = 0.08, Q_0 = 0.06,
+   iPSL.Electrical.Loads.PSAT.LOADPQ pwLoadPQ1(P_0 = 0.08, Q_0 = 0.06,
     V_0=1,
     angle_0=0)                                                          annotation(Placement(visible = true, transformation(origin = {63.147, -19.6714}, extent = {{-10.0, -10.0}, {10.0, 10.0}}, rotation = 0)));
-  PowerSystems.Electrical.Branches.PwLine pwLine1(
+   iPSL.Electrical.Branches.PwLine pwLine1(
     B=0.001/2,
     G=0,
     R=0.01,
@@ -33,7 +32,7 @@ model TGTypeVI_test
         origin={17.8634,-37.6714},
         extent={{-10.0,-10.0},{10.0,10.0}},
         rotation=0)));
-  PowerSystems.Electrical.Branches.PwLine pwLine2(
+   iPSL.Electrical.Branches.PwLine pwLine2(
     B=0.001/2,
     G=0,
     R=0.01,
@@ -41,7 +40,7 @@ model TGTypeVI_test
         origin={17.8634,-17.6714},
         extent={{-10.0,-10.0},{10.0,10.0}},
         rotation=0)));
-  PowerSystems.Electrical.Branches.PwLine pwLine3(
+   iPSL.Electrical.Branches.PwLine pwLine3(
     B=0.001/2,
     G=0,
     R=0.01,
@@ -49,7 +48,7 @@ model TGTypeVI_test
         origin={39.5,-38},
         extent={{-10.0,-10.0},{10.0,10.0}},
         rotation=0)));
-  PowerSystems.Electrical.Branches.PwLine pwLine4(
+   iPSL.Electrical.Branches.PwLine pwLine4(
     B=0.001/2,
     G=0,
     R=0.01,
@@ -57,13 +56,13 @@ model TGTypeVI_test
         origin={40.8634,-18.6714},
         extent={{-10.0,-10.0},{10.0,10.0}},
         rotation=0)));
-  PowerSystems.Electrical.Loads.PSAT.LOADPQ pwLoadPQ2(P_0 = 0.08, Q_0 = 0.06,
+   iPSL.Electrical.Loads.PSAT.LOADPQ pwLoadPQ2(P_0 = 0.08, Q_0 = 0.06,
     V_0=1,
     angle_0=0)                                                          annotation(Placement(visible = true, transformation(origin = {63.5, -38}, extent = {{-10.0, -10.0}, {10.0, 10.0}}, rotation = 0)));
   Modelica.Blocks.Sources.Sine sine3(freqHz = 0.2, startTime = 10, amplitude = -0.001, offset = 0) annotation(Placement(visible = true, transformation(origin = {-90.0594, 49.8126}, extent = {{-5.9406, -5.8126}, {5.9406, 5.8126}}, rotation = 0)));
   Modelica.Blocks.Math.Add Perturbation(k2 = +1) annotation(Placement(visible = true, transformation(origin = {-64.3229, 61.327}, extent = {{-6.3229, -6.3229}, {6.3229, 6.3229}}, rotation = 0)));
   Modelica.Blocks.Sources.Sine sine4(freqHz = 0.2, startTime = 5, amplitude = 0.001, offset = 1) annotation(Placement(visible = true, transformation(origin = {-90.2599, 69.8051}, extent = {{-5.7401, -5.8051}, {5.7401, 5.8051}}, rotation = 0)));
-  inner PowerSystems.Electrical.SystemBase SysData
+  inner iPSL.Electrical.SystemBase  SysData
     annotation (Placement(transformation(extent={{0,80},{60,100}})));
 equation
   connect(pwLine4.n, pwLoadPQ1.p) annotation(Line(visible = true, origin = {63.076, -14.6714}, points={{

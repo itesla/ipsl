@@ -1,20 +1,19 @@
 within iPSL.Examples.DevelopmentExamples.Electrical.Controls.PSSE.ES;
 model EXST1 "SMIB model example of GENROU with Excitation System EXST1"
-  import PowerSystems = iPSL;
 
-  PowerSystems.Electrical.Branches.PwLine pwLine(
+   iPSL.Electrical.Branches.PwLine pwLine(
     R=0.001,
     X=0.2,
     G=0,
     B=0)
     annotation (Placement(transformation(extent={{-50,-10},{-30,10}})));
-  PowerSystems.Electrical.Branches.PwLine pwLine1(
+   iPSL.Electrical.Branches.PwLine pwLine1(
     R=0.001,
     X=0.2,
     G=0,
     B=0)
     annotation (Placement(transformation(extent={{10,30},{30,50}})));
-  PowerSystems.Electrical.Branches.PwLine2Openings pwLine3(
+   iPSL.Electrical.Branches.PwLine2Openings pwLine3(
     t2=100,
     R=0.0005,
     X=0.1,
@@ -22,7 +21,7 @@ model EXST1 "SMIB model example of GENROU with Excitation System EXST1"
     B=0,
     t1=2.15)
     annotation (Placement(transformation(extent={{-8,-50},{12,-30}})));
-  PowerSystems.Electrical.Branches.PwLine2Openings pwLine4(
+   iPSL.Electrical.Branches.PwLine2Openings pwLine4(
     t2=100,
     R=0.0005,
     X=0.1,
@@ -30,7 +29,7 @@ model EXST1 "SMIB model example of GENROU with Excitation System EXST1"
     B=0,
     t1=2.15)
     annotation (Placement(transformation(extent={{28,-50},{48,-30}})));
-  PowerSystems.Electrical.Machines.PSSE.GENCLS.GENCLS gENCLS(
+   iPSL.Electrical.Machines.PSSE.GENCLS.GENCLS gENCLS(
     X_d=0.2,
     H=0,
     D=0,
@@ -42,7 +41,7 @@ model EXST1 "SMIB model example of GENROU with Excitation System EXST1"
     Q_0=8.006544)
          annotation (Placement(transformation(extent={{78,-10},{68,14}})));
 
-  PowerSystems.Electrical.Loads.PSSE.Load_variation constantLoad(
+   iPSL.Electrical.Loads.PSSE.Load_variation constantLoad(
     S_p(re=0.5, im=0.1),
     S_i(im=0, re=0),
     S_y(re=0, im=0),
@@ -55,7 +54,7 @@ model EXST1 "SMIB model example of GENROU with Excitation System EXST1"
     t1=0,
     d_t=0)
     annotation (Placement(transformation(extent={{-12,-60},{-24,-48}})));
-  PowerSystems.Electrical.Events.PwFault pwFault(
+   iPSL.Electrical.Events.PwFault pwFault(
     R=0.1,
     X=0.1,
     t1=2,
@@ -66,15 +65,15 @@ model EXST1 "SMIB model example of GENROU with Excitation System EXST1"
 
   Generator generator
     annotation (Placement(transformation(extent={{-92,-10},{-72,10}})));
-  PowerSystems.Electrical.Buses.Bus GEN01
+   iPSL.Electrical.Buses.Bus GEN01
     annotation (Placement(transformation(extent={{-70,-10},{-50,10}})));
-  PowerSystems.Electrical.Buses.Bus LOAD
+   iPSL.Electrical.Buses.Bus LOAD
     annotation (Placement(transformation(extent={{-32,-10},{-12,10}})));
-  PowerSystems.Electrical.Buses.Bus FAULT
+   iPSL.Electrical.Buses.Bus FAULT
     annotation (Placement(transformation(extent={{10,-50},{30,-30}})));
-  PowerSystems.Electrical.Buses.Bus GEN02
+   iPSL.Electrical.Buses.Bus GEN02
     annotation (Placement(transformation(extent={{50,-8},{70,12}})));
-  inner PowerSystems.Electrical.SystemBase SysData(S_b=100, fn=50)
+  inner iPSL.Electrical.SystemBase  SysData(S_b=100, fn=50)
     annotation (Placement(transformation(extent={{40,84},{100,100}})));
 equation
 

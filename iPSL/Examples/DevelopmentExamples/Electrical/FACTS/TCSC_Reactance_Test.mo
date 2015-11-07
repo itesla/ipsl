@@ -1,8 +1,7 @@
 within iPSL.Examples.DevelopmentExamples.Electrical.FACTS;
 model TCSC_Reactance_Test
-  import PowerSystems = iPSL;
 
-  PowerSystems.Electrical.Machines.PSAT.SecondOrder.Order2 Gen1(
+   iPSL.Electrical.Machines.PSAT.SecondOrder.Order2 Gen1(
     Sn=370,
     P_0=0.080101913348342,
     Q_0=0.060948619430301,
@@ -35,12 +34,12 @@ model TCSC_Reactance_Test
     k1=1,
     k2=1)
     annotation (Placement(transformation(extent={{-58,-10},{-38,10}})));
-  PowerSystems.Electrical.Branches.PwLine pwLine1(
+   iPSL.Electrical.Branches.PwLine pwLine1(
     R=0.01,
     X=0.1,
     G=0,
     B=0.001/2) annotation (Placement(transformation(extent={{62,-10},{82,10}})));
- PowerSystems.Electrical.Loads.PSAT.LOADPQ_variation lOADPQ(
+  iPSL.Electrical.Loads.PSAT.LOADPQ_variation lOADPQ(
     P_0=0.08,
     Q_0=0.06,
     Q2=0,
@@ -51,9 +50,9 @@ model TCSC_Reactance_Test
     t4=20,
     P2=0.01,
     P3=-0.01) annotation (Placement(transformation(extent={{96,-10},{116,10}})));
-  PowerSystems.Electrical.Controls.PSAT.FACTS.TCSC.TCSCReactance tCSCReactance
+   iPSL.Electrical.Controls.PSAT.FACTS.TCSC.TCSCReactance tCSCReactance
     annotation (Placement(transformation(extent={{26,-10},{46,10}})));
-  inner PowerSystems.Electrical.SystemBase SysData
+  inner iPSL.Electrical.SystemBase  SysData
     annotation (Placement(transformation(extent={{-100,60},{-76,80}})));
 equation
   connect(pulse1.y, add3_1.u2) annotation (Line(

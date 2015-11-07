@@ -1,5 +1,5 @@
 within ;
-package iPSL "iTesla PowerSystems Library"
+package iPSL "iTesla Power System Library"
 
 
 

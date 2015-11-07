@@ -1,8 +1,7 @@
 within iPSL.Examples.DevelopmentExamples.Electrical.FACTS;
 model TCSC_Alpha_Test
-  import PowerSystems = iPSL;
 
-  PowerSystems.Electrical.Machines.PSAT.SecondOrder.Order2 Gen1(
+   iPSL.Electrical.Machines.PSAT.SecondOrder.Order2 Gen1(
     Sn=370,
     P_0=0.080101913348342,
     Q_0=0.060948619430301,
@@ -34,12 +33,12 @@ model TCSC_Alpha_Test
     k1=1,
     k2=1)
     annotation (Placement(transformation(extent={{-78,-10},{-58,10}})));
-  PowerSystems.Electrical.Branches.PwLine pwLine1(
+   iPSL.Electrical.Branches.PwLine pwLine1(
     R=0.01,
     G=0,
     B=0.001/2,
     X=0.1) annotation (Placement(transformation(extent={{56,-10},{76,10}})));
-  PowerSystems.Electrical.Loads.PSAT.LOADPQ_variation lOADPQ(
+   iPSL.Electrical.Loads.PSAT.LOADPQ_variation lOADPQ(
     P_0=0.08,
     Q_0=0.06,
     t1=2,
@@ -50,9 +49,9 @@ model TCSC_Alpha_Test
     P3=-0.01,
     Q2=0.01,
     Q3=-0.01) annotation (Placement(transformation(extent={{94,-10},{114,10}})));
-  PowerSystems.Electrical.Controls.PSAT.FACTS.TCSC.TCSCAlpha tCSCAlpha
+   iPSL.Electrical.Controls.PSAT.FACTS.TCSC.TCSCAlpha tCSCAlpha
     annotation (Placement(transformation(extent={{18,-10},{38,10}})));
-  inner PowerSystems.Electrical.SystemBase SysData
+  inner iPSL.Electrical.SystemBase  SysData
     annotation (Placement(transformation(extent={{-120,60},{-96,80}})));
 equation
   connect(pulse1.y, add3_1.u2) annotation (Line(

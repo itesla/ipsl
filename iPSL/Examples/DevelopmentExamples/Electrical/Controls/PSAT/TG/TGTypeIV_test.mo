@@ -1,8 +1,7 @@
 within iPSL.Examples.DevelopmentExamples.Electrical.Controls.PSAT.TG;
 model TGTypeIV_test
-  import PowerSystems = iPSL;
 
-  PowerSystems.Electrical.Machines.PSAT.ThirdOrder.Order3 Generator(
+   iPSL.Electrical.Machines.PSAT.ThirdOrder.Order3 Generator(
     P_0=0.16041,
     Q_0=0.12012,
     V_b=400,
@@ -20,10 +19,10 @@ model TGTypeIV_test
         origin={-17.3443,2.6244},
         extent={{-16.6557,-16.6244},{16.6557,16.6244}},
         rotation=0)));
-  PowerSystems.Electrical.Loads.PSAT.LOADPQ pwLoadPQ1(P_0 = 0.08, Q_0 = 0.06,
+   iPSL.Electrical.Loads.PSAT.LOADPQ pwLoadPQ1(P_0 = 0.08, Q_0 = 0.06,
     V_0=1,
     angle_0=0)                                                          annotation(Placement(visible = true, transformation(origin = {79.147, 14.3286}, extent = {{-10.0, -10.0}, {10.0, 10.0}}, rotation = 0)));
-  PowerSystems.Electrical.Branches.PwLine pwLine2(
+   iPSL.Electrical.Branches.PwLine pwLine2(
     B=0.001/2,
     G=0,
     R=0.01,
@@ -31,7 +30,7 @@ model TGTypeIV_test
         origin={25.8634,14.3286},
         extent={{-10.0,-10.0},{10.0,10.0}},
         rotation=0)));
-  PowerSystems.Electrical.Branches.PwLine pwLine3(
+   iPSL.Electrical.Branches.PwLine pwLine3(
     G=0,
     X=0.1,
     R=0.01,
@@ -39,7 +38,7 @@ model TGTypeIV_test
         origin={51.5,-12},
         extent={{-10.0,-10.0},{10.0,10.0}},
         rotation=0)));
-  PowerSystems.Electrical.Branches.PwLine pwLine4(
+   iPSL.Electrical.Branches.PwLine pwLine4(
     B=0.001/2,
     G=0,
     R=0.01,
@@ -47,9 +46,9 @@ model TGTypeIV_test
         origin={54.863,15.3286},
         extent={{-10.0,-10.0},{10.0,10.0}},
         rotation=0)));
-  PowerSystems.Electrical.Controls.PSAT.TG.TGTypeIV tGModel4_1(Ki = 0.105, Tg = 0.2, Tp = 0.04, delta = 0.3, sigma = 0.05, Tr = 5, vmin = -0.1, vmax = 0.1, gmax = 1, gmin = 0, Tw = 1, a11 = 0.5, a13 = 1, a21 = 1.5, a23 = 1, Kp = 1.163, Pref = 0.080199,
+   iPSL.Electrical.Controls.PSAT.TG.TGTypeIV tGModel4_1(Ki = 0.105, Tg = 0.2, Tp = 0.04, delta = 0.3, sigma = 0.05, Tr = 5, vmin = -0.1, vmax = 0.1, gmax = 1, gmin = 0, Tw = 1, a11 = 0.5, a13 = 1, a21 = 1.5, a23 = 1, Kp = 1.163, Pref = 0.080199,
     wref=1)                                                                                                     annotation(Placement(transformation(extent = {{-82, -14}, {-56, 6}})));
-  PowerSystems.Electrical.Branches.PwLine pwLine1(
+   iPSL.Electrical.Branches.PwLine pwLine1(
     B=0.001/2,
     G=0,
     R=0.01,
@@ -57,8 +56,8 @@ model TGTypeIV_test
         origin={26.863,-12.6714},
         extent={{-10.0,-10.0},{10.0,10.0}},
         rotation=0)));
-  PowerSystems.Electrical.Buses.InfiniteBus infiniteBus(V = 1, angle = 0) annotation(Placement(transformation(extent = {{-5, -5}, {5, 5}}, rotation = 180, origin = {77, -11})));
-  inner PowerSystems.Electrical.SystemBase SysData
+   iPSL.Electrical.Buses.InfiniteBus infiniteBus(V = 1, angle = 0) annotation(Placement(transformation(extent = {{-5, -5}, {5, 5}}, rotation = 180, origin = {77, -11})));
+  inner iPSL.Electrical.SystemBase  SysData
     annotation (Placement(transformation(extent={{0,60},{46,80}})));
 equation
   connect(pwLine4.n, pwLoadPQ1.p) annotation(Line(visible = true, origin = {79.076, 17.3286}, points={{-17.213,

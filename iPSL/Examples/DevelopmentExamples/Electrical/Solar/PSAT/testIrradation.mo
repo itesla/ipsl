@@ -1,10 +1,9 @@
 within iPSL.Examples.DevelopmentExamples.Electrical.Solar.PSAT;
 model testIrradation
-  import PowerSystems = iPSL;
 
   Modelica.Blocks.Sources.Constant const(k = 25) annotation(Placement(visible = true, transformation(origin = {-59.5887, -17.0499}, extent = {{-3.3987, -3.3987}, {3.3987, 3.3987}}, rotation = 0)));
   Modelica.Blocks.Sources.Constant const1(k = 1000) annotation(Placement(visible = true, transformation(origin = {-87.9874, 22.9501}, extent = {{-3.3987, -3.3987}, {3.3987, 3.3987}}, rotation = 0)));
-  PowerSystems.Electrical.Branches.PwLine pwLine13(
+   iPSL.Electrical.Branches.PwLine pwLine13(
     B=0,
     G=0,
     R=0,
@@ -12,7 +11,7 @@ model testIrradation
         origin={49.0376,0.0024},
         extent={{-10.0,-10.0},{10.0,10.0}},
         rotation=0)));
-  PowerSystems.Electrical.Branches.PwLine pwLine14(
+   iPSL.Electrical.Branches.PwLine pwLine14(
     B=0.001884956/2*100,
     G=0,
     R=0,
@@ -20,8 +19,8 @@ model testIrradation
         origin={83.1777,5.4501},
         extent={{-10.0,-10.0},{10.0,10.0}},
         rotation=0)));
-  PowerSystems.Electrical.Buses.InfiniteBus infiniteBus8(angle = 0, V = 1) annotation(Placement(visible = true, transformation(origin = {117.9874, -1.1504}, extent = {{10.0, -10.0}, {-10.0, 10.0}}, rotation = 0)));
-  PowerSystems.Electrical.Branches.PwLine pwLine15(
+   iPSL.Electrical.Buses.InfiniteBus infiniteBus8(angle = 0, V = 1) annotation(Placement(visible = true, transformation(origin = {117.9874, -1.1504}, extent = {{10.0, -10.0}, {-10.0, 10.0}}, rotation = 0)));
+   iPSL.Electrical.Branches.PwLine pwLine15(
     B=0.001884956/2*100,
     G=0,
     R=0,
@@ -33,8 +32,8 @@ model testIrradation
   Modelica.Blocks.Sources.Step step1(startTime = 0.3, height = -500) annotation(Placement(visible = true, transformation(origin = {-113.885, 0.0201}, extent = {{-4.1024, -4.1024}, {4.1024, 4.1024}}, rotation = 0)));
   Modelica.Blocks.Sources.Step step2(startTime = 0.7, height = 500) annotation(Placement(visible = true, transformation(origin = {-112.9874, -30.0}, extent = {{-5.0, -5.0}, {5.0, 5.0}}, rotation = 0)));
   Modelica.Blocks.Math.Add add2 annotation(Placement(visible = true, transformation(origin = {-85.1206, -12.0499}, extent = {{-2.8669, -2.8669}, {2.8669, 2.8669}}, rotation = 0)));
-  PowerSystems.Electrical.Solar.KTH.PFmodelmpptCorrected05MW PFmodel1(anglev0 = 0.030372922116265, p0 = 0.44884, q0 = 0.00003, v0 = 1.00034051839501) annotation(Placement(visible = true, transformation(origin = {-7.9875, 0.2883}, extent = {{-10.0, -10.0}, {10.0, 10.0}}, rotation = 0)));
-  inner PowerSystems.Electrical.SystemBase SysData
+   iPSL.Electrical.Solar.KTH.PFmodelmpptCorrected05MW PFmodel1(anglev0 = 0.030372922116265, p0 = 0.44884, q0 = 0.00003, v0 = 1.00034051839501) annotation(Placement(visible = true, transformation(origin = {-7.9875, 0.2883}, extent = {{-10.0, -10.0}, {10.0, 10.0}}, rotation = 0)));
+  inner iPSL.Electrical.SystemBase  SysData
     annotation (Placement(transformation(extent={{50,50},{75,70}})));
 equation
   connect(const1.y, add1.u1) annotation(Line(visible = true, origin = {-71.3029, 21.9375}, points={{

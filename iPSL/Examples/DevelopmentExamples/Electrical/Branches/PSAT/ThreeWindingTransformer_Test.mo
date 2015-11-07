@@ -1,8 +1,7 @@
 within iPSL.Examples.DevelopmentExamples.Electrical.Branches.PSAT;
 model ThreeWindingTransformer_Test
-  import PowerSystems = iPSL;
 
-  PowerSystems.Electrical.Branches.PwLine pwLine3(
+   iPSL.Electrical.Branches.PwLine pwLine3(
     B=0.001/2,
     G=0,
     R=0.01,
@@ -10,7 +9,7 @@ model ThreeWindingTransformer_Test
         origin={40,0},
         extent={{-10.0,-10.0},{10.0,10.0}},
         rotation=0)));
-  PowerSystems.Electrical.Branches.PwLine pwLine4(
+   iPSL.Electrical.Branches.PwLine pwLine4(
     B=0.001/2,
     G=0,
     R=0.01,
@@ -23,7 +22,7 @@ model ThreeWindingTransformer_Test
   Modelica.Blocks.Math.Add add2(k2=-1) annotation(Placement(visible=true, transformation(origin={-79.1062,
             14.6621},                                                                                               extent={{-6.3229,-6.3229},{6.3229,6.3229}}, rotation=0)));
   Modelica.Blocks.Sources.Sine sine2(amplitude=0.001, freqHz=0.2, startTime=5) annotation(Placement(visible=true, transformation(origin={-107.3823,-5.5198}, extent={{-4.4802,-4.4802},{4.4802,4.4802}}, rotation=0)));
-  PowerSystems.Electrical.Machines.PSAT.SecondOrder.Order2 Gen1(
+   iPSL.Electrical.Machines.PSAT.SecondOrder.Order2 Gen1(
     Sn=370,
     D=5,
     P_0=0.080124489663871,
@@ -38,7 +37,7 @@ model ThreeWindingTransformer_Test
     annotation (Placement(transformation(extent={{-20,0},{0,20}})));
   Modelica.Blocks.Math.Add add
     annotation (Placement(transformation(extent={{-60,0},{-40,20}})));
-  PowerSystems.Electrical.Loads.PSAT.LOADPQ_variation lOADPQ(
+   iPSL.Electrical.Loads.PSAT.LOADPQ_variation lOADPQ(
     t1=5,
     t2=8,
     t3=8,
@@ -49,7 +48,7 @@ model ThreeWindingTransformer_Test
     Q_0=0.02,
     Q2=0.01,
     Q3=-0.01) annotation (Placement(transformation(extent={{115,15},{135,35}})));
-  PowerSystems.Electrical.Loads.PSAT.LOADPQ_variation lOADPQ1(
+   iPSL.Electrical.Loads.PSAT.LOADPQ_variation lOADPQ1(
     P_0=0.04,
     Q_0=0.04,
     t1=0,
@@ -60,18 +59,18 @@ model ThreeWindingTransformer_Test
     Q2=0,
     P3=0,
     Q3=0) annotation (Placement(transformation(extent={{115,-20},{135,0}})));
-  PowerSystems.Electrical.Branches.PSAT.ThreeWindingTransformer.ThreeWindingTransformer
+   iPSL.Electrical.Branches.PSAT.ThreeWindingTransformer.ThreeWindingTransformer
     threeWindingTransformer
     annotation (Placement(transformation(extent={{70,0},{90,20}})));
-  PowerSystems.Electrical.Buses.Bus Bus1
+   iPSL.Electrical.Buses.Bus Bus1
     annotation (Placement(transformation(extent={{10,0},{30,20}})));
-  PowerSystems.Electrical.Buses.Bus Bus2
+   iPSL.Electrical.Buses.Bus Bus2
     annotation (Placement(transformation(extent={{50,0},{70,20}})));
-  PowerSystems.Electrical.Buses.Bus Bus3
+   iPSL.Electrical.Buses.Bus Bus3
     annotation (Placement(transformation(extent={{95,15},{115,35}})));
-  PowerSystems.Electrical.Buses.Bus Bus4
+   iPSL.Electrical.Buses.Bus Bus4
     annotation (Placement(transformation(extent={{95,-20},{115,0}})));
-  inner PowerSystems.Electrical.SystemBase SysData
+  inner iPSL.Electrical.SystemBase  SysData
     annotation (Placement(transformation(extent={{-50,50},{-5,70}})));
 equation
   connect(sine1.y,add2.u1) annotation(Line(visible=true, origin={-93.5606,15.4643}, points={{

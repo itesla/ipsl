@@ -1,8 +1,7 @@
 within iPSL.Examples.DevelopmentExamples.Electrical.Branches.PSAT;
 model ULTC_Test
-  import PowerSystems = iPSL;
 
-  PowerSystems.Electrical.Branches.PwLine pwLine3(
+   iPSL.Electrical.Branches.PwLine pwLine3(
     B=0.001/2,
     G=0,
     R=0.01,
@@ -10,7 +9,7 @@ model ULTC_Test
         origin={30,-10},
         extent={{-10.0,-10.0},{10.0,10.0}},
         rotation=0)));
-  PowerSystems.Electrical.Branches.PwLine pwLine4(
+   iPSL.Electrical.Branches.PwLine pwLine4(
     B=0.001/2,
     G=0,
     R=0.01,
@@ -24,7 +23,7 @@ model ULTC_Test
             -0.3379},                                                                                               extent={{-6.3229,-6.3229},{6.3229,6.3229}}, rotation=0)));
   Modelica.Blocks.Sources.Sine sine2(amplitude=0.001, freqHz=0.2, startTime=5) annotation(Placement(visible=true, transformation(origin={-132.382,
             -10.5198},                                                                                                    extent={{-4.4802,-4.4802},{4.4802,4.4802}}, rotation=0)));
-  PowerSystems.Electrical.Machines.PSAT.SecondOrder.Order2
+   iPSL.Electrical.Machines.PSAT.SecondOrder.Order2
     order2_Inputs_Outputs(
     Sn=370,
     P_0=0.081032877181982,
@@ -40,7 +39,7 @@ model ULTC_Test
     annotation (Placement(transformation(extent={{-40,-10},{-20,10}})));
   Modelica.Blocks.Math.Add add
     annotation (Placement(transformation(extent={{-85,-10},{-65,10}})));
-  PowerSystems.Electrical.Loads.PSAT.LOADPQ_variation lOADPQ(
+   iPSL.Electrical.Loads.PSAT.LOADPQ_variation lOADPQ(
     P_0=0.08,
     Q_0=0.06,
     t1=5,
@@ -51,15 +50,15 @@ model ULTC_Test
     P3=0,
     Q3=-0.05,
     Q2=0.05) annotation (Placement(transformation(extent={{115,-10},{135,10}})));
-  PowerSystems.Electrical.Branches.PSAT.ULTC_VoltageControl uLTC_VoltageControl
+   iPSL.Electrical.Branches.PSAT.ULTC_VoltageControl uLTC_VoltageControl
     annotation (Placement(transformation(extent={{70,-10},{90,10}})));
-  PowerSystems.Electrical.Buses.Bus B1
+   iPSL.Electrical.Buses.Bus B1
     annotation (Placement(transformation(extent={{-5,-10},{15,10}})));
-  PowerSystems.Electrical.Buses.Bus B2
+   iPSL.Electrical.Buses.Bus B2
     annotation (Placement(transformation(extent={{45,-10},{65,10}})));
-  PowerSystems.Electrical.Buses.Bus B3
+   iPSL.Electrical.Buses.Bus B3
     annotation (Placement(transformation(extent={{90,-10},{110,10}})));
-  inner PowerSystems.Electrical.SystemBase SysData
+  inner iPSL.Electrical.SystemBase  SysData
     annotation (Placement(transformation(extent={{0,50},{45,70}})));
 equation
 

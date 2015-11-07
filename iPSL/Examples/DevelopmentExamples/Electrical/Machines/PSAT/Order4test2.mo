@@ -1,11 +1,10 @@
 within iPSL.Examples.DevelopmentExamples.Electrical.Machines.PSAT;
 model Order4test2
-  import PowerSystems = iPSL;
 
-  PowerSystems.Electrical.Loads.PSAT.LOADPQ pwLoadPQ2(P_0 = 0.08, Q_0 = 0.06,
+   iPSL.Electrical.Loads.PSAT.LOADPQ pwLoadPQ2(P_0 = 0.08, Q_0 = 0.06,
     V_0=1,
     angle_0=0)                                                          annotation(Placement(visible = true, transformation(origin = {-22.5, 67.5}, extent = {{-12.5, -12.5}, {12.5, 12.5}}, rotation = 0)));
-  PowerSystems.Electrical.Branches.PwLinewithOpeningReceiving
+   iPSL.Electrical.Branches.PwLinewithOpeningReceiving
     pwLinewithOpening1(
     B=0.001/2,
     G=0,
@@ -16,7 +15,7 @@ model Order4test2
         origin={-45,55},
         extent={{-10.0,-10.0},{10.0,10.0}},
         rotation=0)));
-  PowerSystems.Electrical.Branches.PwLine pwLine4(
+   iPSL.Electrical.Branches.PwLine pwLine4(
     B=0.001/2,
     G=0,
     R=0.01,
@@ -24,7 +23,7 @@ model Order4test2
         origin={-45,70},
         extent={{-10.0,-10.0},{10.0,10.0}},
         rotation=0)));
-  PowerSystems.Electrical.Branches.PwLine pwLine3(
+   iPSL.Electrical.Branches.PwLine pwLine3(
     B=0.001/2,
     G=0,
     R=0.01,
@@ -32,10 +31,10 @@ model Order4test2
         origin={-45,35},
         extent={{-10.0,-10.0},{10.0,10.0}},
         rotation=0)));
-  PowerSystems.Electrical.Loads.PSAT.LOADPQ pwLoadPQ1(P_0 = 0.08, Q_0 = 0.06,
+   iPSL.Electrical.Loads.PSAT.LOADPQ pwLoadPQ1(P_0 = 0.08, Q_0 = 0.06,
     V_0=1,
     angle_0=0)                                                            annotation(Placement(visible = true, transformation(origin = {-22.5, 42.5}, extent = {{-12.5, -12.5}, {12.5, 12.5}}, rotation = 0)));
-  PowerSystems.Electrical.Branches.PwLine pwLine2(
+   iPSL.Electrical.Branches.PwLine pwLine2(
     B=0.001/2,
     G=0,
     R=0.01,
@@ -43,7 +42,7 @@ model Order4test2
         origin={-70,60},
         extent={{-10.0,-10.0},{10.0,10.0}},
         rotation=0)));
-  PowerSystems.Electrical.Branches.PwLine pwLine1(
+   iPSL.Electrical.Branches.PwLine pwLine1(
     B=0.001/2,
     G=0,
     R=0.01,
@@ -51,16 +50,16 @@ model Order4test2
         origin={-70,45},
         extent={{-10.0,-10.0},{10.0,10.0}},
         rotation=0)));
-  PowerSystems.Electrical.Events.PwFault pwFault(X = 0.001, t1 = 3, t2 = 3.1, R = 10) annotation(Placement(transformation(extent={{-25,-15},
+   iPSL.Electrical.Events.PwFault pwFault(X = 0.001, t1 = 3, t2 = 3.1, R = 10) annotation(Placement(transformation(extent={{-25,-15},
             {0,10}})));
-  PowerSystems.Electrical.Machines.PSAT.FourthOrder.Order4 Generator(Sn = 100, P_0 = 0.160352698692006, Q_0 = 0.11859436505981, Vn = 20, V_b = 400,
+   iPSL.Electrical.Machines.PSAT.FourthOrder.Order4 Generator(Sn = 100, P_0 = 0.160352698692006, Q_0 = 0.11859436505981, Vn = 20, V_b = 400,
     V_0=1,
     angle_0=0,
     ra=0.001,
     M=10,
     D=0,
     xd1=0.302)                                                                                                     annotation(Placement(transformation(extent = {{-120, 40}, {-90, 70}})));
-  inner PowerSystems.Electrical.SystemBase SysData
+  inner iPSL.Electrical.SystemBase  SysData
     annotation (Placement(transformation(extent={{50,80},{75,100}})));
 equation
   connect(pwLinewithOpening1.n, pwLine4.n) annotation(Line(visible = true, origin = {-38, 62.5}, points = {{0, -7.5}, {0, 7.5}}));

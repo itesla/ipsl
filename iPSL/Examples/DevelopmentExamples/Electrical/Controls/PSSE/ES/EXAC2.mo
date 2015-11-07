@@ -1,20 +1,19 @@
 within iPSL.Examples.DevelopmentExamples.Electrical.Controls.PSSE.ES;
 model EXAC2 "SMIB system with one load and GENROE model"
-  import PowerSystems = iPSL;
 
-  PowerSystems.Electrical.Branches.PwLine pwLine(
+   iPSL.Electrical.Branches.PwLine pwLine(
     R=0.001,
     X=0.2,
     G=0,
     B=0)                                                                                                     annotation(Placement(transformation(extent={{-26,0},
             {-6,20}})));
-  PowerSystems.Electrical.Branches.PwLine pwLine1(
+   iPSL.Electrical.Branches.PwLine pwLine1(
     R=0.001,
     X=0.2,
     G=0,
     B=0)                                                                                                     annotation(Placement(transformation(extent={{26,14},
             {46,34}})));
-  PowerSystems.Electrical.Branches.PwLine2Openings pwLine3(
+   iPSL.Electrical.Branches.PwLine2Openings pwLine3(
     t2=100,
     R=0.0005,
     X=0.1,
@@ -22,7 +21,7 @@ model EXAC2 "SMIB system with one load and GENROE model"
     B=0,
     t1=100)                                                                                                     annotation(Placement(transformation(extent={{16,-20},
             {36,0}})));
-  PowerSystems.Electrical.Branches.PwLine2Openings pwLine4(
+   iPSL.Electrical.Branches.PwLine2Openings pwLine4(
     t2=100,
     t1=100,
     R=0.0005,
@@ -30,7 +29,7 @@ model EXAC2 "SMIB system with one load and GENROE model"
     G=0,
     B=0)                                                                                                     annotation(Placement(transformation(extent={{42,-20},
             {62,0}})));
- PowerSystems.Electrical.Machines.PSSE.GENCLS.GENCLS gENCLS(
+  iPSL.Electrical.Machines.PSSE.GENCLS.GENCLS gENCLS(
     M_b=100,
     D=0,
     V_0=1,
@@ -40,7 +39,7 @@ model EXAC2 "SMIB system with one load and GENROE model"
     Q_0=8.006544,
     H=0)                                                                                                     annotation(Placement(transformation(extent={{108,0},
             {86,22}})));
-  PowerSystems.Electrical.Loads.PSSE.Load_variation constantLoad(
+   iPSL.Electrical.Loads.PSSE.Load_variation constantLoad(
     S_p(re=0.5, im=0.1),
     S_i(im=0, re=0),
     S_y(re=0, im=0),
@@ -53,13 +52,13 @@ model EXAC2 "SMIB system with one load and GENROE model"
     angle_0=-0.5762684,
     t1=0)                                                                                                     annotation(Placement(transformation(extent={{8,-50},
             {30,-26}})));
-  PowerSystems.Electrical.Events.PwFault pwFault(
+   iPSL.Electrical.Events.PwFault pwFault(
     t1=2,
     t2=2.15,
     R=0,
     X=0)                                                 annotation(Placement(transformation(extent={{56,-38},
             {76,-16}})));
-  PowerSystems.Electrical.Machines.PSSE.GENROE.GENROE gENROE(
+   iPSL.Electrical.Machines.PSSE.GENROE.GENROE gENROE(
     M_b=100,
     Tpd0=5,
     Tppd0=0.07,
@@ -81,7 +80,7 @@ model EXAC2 "SMIB system with one load and GENROE model"
     Q_0=5.416582,
     Xppq=0.2)
     annotation (Placement(transformation(extent={{-82,-10},{-42,30}})));
-  PowerSystems.Electrical.Controls.PSSE.ES.EXAC2.EXAC2 eXAC2_1(
+   iPSL.Electrical.Controls.PSSE.ES.EXAC2.EXAC2 eXAC2_1(
     K_B=2,
     V_RMAX=2,
     V_RMIN=2,

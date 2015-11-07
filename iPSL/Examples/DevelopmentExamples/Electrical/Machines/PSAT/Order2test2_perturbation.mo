@@ -1,11 +1,10 @@
 within iPSL.Examples.DevelopmentExamples.Electrical.Machines.PSAT;
 model Order2test2_perturbation
-  import PowerSystems = iPSL;
 
-  PowerSystems.Electrical.Loads.PSAT.LOADPQ pwLoadPQ1(P_0 = 0.08, Q_0 = 0.06,
+   iPSL.Electrical.Loads.PSAT.LOADPQ pwLoadPQ1(P_0 = 0.08, Q_0 = 0.06,
     V_0=1,
     angle_0=0)                                                          annotation(Placement(visible = true, transformation(origin = {121.0667, -11.5778}, extent = {{-10.0, -10.0}, {10.0, 10.0}}, rotation = 0)));
-  PowerSystems.Electrical.Branches.PwLine pwLine1(
+   iPSL.Electrical.Branches.PwLine pwLine1(
     X=0.1,
     R=0.01,
     G=0,
@@ -13,8 +12,8 @@ model Order2test2_perturbation
         origin={37.7833,-31.5778},
         extent={{-10.0,-10.0},{10.0,10.0}},
         rotation=0)));
-  PowerSystems.Electrical.Events.PwFault pwFault1(R = 20, X = 1, t1 = 10, t2 = 10.1) annotation(Placement(visible = true, transformation(origin = {127.7833, -70.0}, extent = {{-10.0, -10.0}, {10.0, 10.0}}, rotation = 0)));
-  PowerSystems.Electrical.Branches.PwLinewithOpeningReceiving
+   iPSL.Electrical.Events.PwFault pwFault1(R = 20, X = 1, t1 = 10, t2 = 10.1) annotation(Placement(visible = true, transformation(origin = {127.7833, -70.0}, extent = {{-10.0, -10.0}, {10.0, 10.0}}, rotation = 0)));
+   iPSL.Electrical.Branches.PwLinewithOpeningReceiving
     pwLinewithOpening1(
     B=0.001/2,
     G=0,
@@ -25,7 +24,7 @@ model Order2test2_perturbation
         origin={82.7833,-21.5778},
         extent={{-10.0,-10.0},{10.0,10.0}},
         rotation=0)));
-  PowerSystems.Electrical.Branches.PwLine pwLine2(
+   iPSL.Electrical.Branches.PwLine pwLine2(
     B=0.001/2,
     G=0,
     R=0.01,
@@ -33,7 +32,7 @@ model Order2test2_perturbation
         origin={37.7833,-11.5778},
         extent={{-10.0,-10.0},{10.0,10.0}},
         rotation=0)));
-  PowerSystems.Electrical.Branches.PwLine pwLine3(
+   iPSL.Electrical.Branches.PwLine pwLine3(
     B=0.001/2,
     G=0,
     R=0.01,
@@ -41,7 +40,7 @@ model Order2test2_perturbation
         origin={82.7833,-42.7},
         extent={{-10.0,-10.0},{10.0,10.0}},
         rotation=0)));
-  PowerSystems.Electrical.Branches.PwLine pwLine4(
+   iPSL.Electrical.Branches.PwLine pwLine4(
     B=0.001/2,
     G=0,
     R=0.01,
@@ -49,7 +48,7 @@ model Order2test2_perturbation
         origin={82.7833,-6.5778},
         extent={{-10.0,-10.0},{10.0,10.0}},
         rotation=0)));
-  PowerSystems.Electrical.Loads.PSAT.LOADPQ pwLoadPQ2(P_0 = 0.08, Q_0 = 0.06,
+   iPSL.Electrical.Loads.PSAT.LOADPQ pwLoadPQ2(P_0 = 0.08, Q_0 = 0.06,
     V_0=1,
     angle_0=0)                                                          annotation(Placement(visible = true, transformation(origin = {122.7833, -42.7}, extent = {{-10.0, -10.0}, {10.0, 10.0}}, rotation = 0)));
   Modelica.Blocks.Math.Add3 add31 annotation(Placement(visible = true, transformation(origin = {-62.2167, 17.6329}, extent = {{-10.0, -10.0}, {10.0, 10.0}}, rotation = 0)));
@@ -66,7 +65,7 @@ model Order2test2_perturbation
   Modelica.Blocks.Sources.Step step4(height = 0.0005, startTime = 7) annotation(Placement(visible = true, transformation(origin = {-125.0, -26.35}, extent = {{-5.0, -5.0}, {5.0, 5.0}}, rotation = 0)));
   Modelica.Blocks.Math.Add add4 annotation(Placement(visible = true, transformation(origin = {-96.3229, -32.6729}, extent = {{-6.3229, -6.3229}, {6.3229, 6.3229}}, rotation = 0)));
   Modelica.Blocks.Math.Add3 add32 annotation(Placement(visible = true, transformation(origin = {-62.2167, -53.3521}, extent = {{-10.0, -10.0}, {10.0, 10.0}}, rotation = 0)));
-  PowerSystems.Electrical.Machines.PSAT.SecondOrder.Order2
+   iPSL.Electrical.Machines.PSAT.SecondOrder.Order2
     order2_Inputs_Outputs1(
     D=0,
     V_b=400,
@@ -82,7 +81,7 @@ model Order2test2_perturbation
         origin={-7.2167,-18.6674},
         extent={{-10.0,-10.0},{10.0,10.0}},
         rotation=0)));
-  inner PowerSystems.Electrical.SystemBase SysData
+  inner iPSL.Electrical.SystemBase  SysData
     annotation (Placement(transformation(extent={{100,80},{135,100}})));
 equation
   connect(step3.y, add4.u2) annotation(Line(visible = true, origin = {-109.3078, -38.9083}, points = {{-10.1922, -2.4417}, {2.3974, -2.4417}, {2.3974, 2.44166}, {5.39742, 2.44166}}, color = {0, 0, 127}));

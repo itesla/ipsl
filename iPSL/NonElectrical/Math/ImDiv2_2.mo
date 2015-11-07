@@ -1,6 +1,6 @@
 within iPSL.NonElectrical.Math;
 model ImDiv2_2
-  import PowerSystems = iPSL;
+
   parameter Real a0 "Offset";
   parameter Real a1 "Entry 1 gain";
   parameter Real a2 "Entry 2 gain";

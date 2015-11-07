@@ -1,8 +1,7 @@
 within iPSL.Examples.DevelopmentExamples.Electrical.Loads.PSAT;
 model Loadtestfreq
-  import PowerSystems = iPSL;
 
-  PowerSystems.Electrical.Branches.PwLine pwLine1(
+   iPSL.Electrical.Branches.PwLine pwLine1(
     X=0.1,
     R=0.01,
     G=0,
@@ -10,7 +9,7 @@ model Loadtestfreq
         origin={39.8634,-35.6714},
         extent={{-10.0,-10.0},{10.0,10.0}},
         rotation=0)));
-  PowerSystems.Electrical.Branches.PwLine pwLine2(
+   iPSL.Electrical.Branches.PwLine pwLine2(
     B=0.001/2,
     G=0,
     R=0.01,
@@ -18,7 +17,7 @@ model Loadtestfreq
         origin={39.8634,-15.6714},
         extent={{-10.0,-10.0},{10.0,10.0}},
         rotation=0)));
-  PowerSystems.Electrical.Branches.PwLine pwLine3(
+   iPSL.Electrical.Branches.PwLine pwLine3(
     B=0.001/2,
     G=0,
     R=0.01,
@@ -26,7 +25,7 @@ model Loadtestfreq
         origin={85.0,-35.0},
         extent={{-10.0,-10.0},{10.0,10.0}},
         rotation=0)));
-  PowerSystems.Electrical.Branches.PwLine pwLine4(
+   iPSL.Electrical.Branches.PwLine pwLine4(
     B=0.001/2,
     G=0,
     R=0.01,
@@ -48,7 +47,7 @@ model Loadtestfreq
   Modelica.Blocks.Sources.Step step4(height = 0.0005, startTime = 7) annotation(Placement(visible = true, transformation(origin = {-107.7833, -30.0}, extent = {{-5.0, -5.0}, {5.0, 5.0}}, rotation = 0)));
   Modelica.Blocks.Math.Add add4 annotation(Placement(visible = true, transformation(origin = {-79.1062, -36.3229}, extent = {{-6.3229, -6.3229}, {6.3229, 6.3229}}, rotation = 0)));
   Modelica.Blocks.Math.Add3 add32 annotation(Placement(visible = true, transformation(origin = {-45.0, -57.0021}, extent = {{-10.0, -10.0}, {10.0, 10.0}}, rotation = 0)));
-  PowerSystems.Electrical.Machines.PSAT.ThirdOrder.Order3
+   iPSL.Electrical.Machines.PSAT.ThirdOrder.Order3
     order3_Inputs_Outputs1(
     P_0=0.0800989878477798,
     Q_0=0.0570163388727956,
@@ -67,10 +66,10 @@ model Loadtestfreq
         origin={3.3113,-20.7513},
         extent={{-10.0,-10.0},{10.0,10.0}},
         rotation=0)));
-  PowerSystems.Electrical.Loads.PSAT.FrequencyDependentLoad frequencyDependentLoad1(alpha_p = 0, beta_p = 1, beta_q = 1, Sn = 10, V_0 = 0.993325452568749, angle_0 = -0.00746932024404292, alpha_q = 0, Tf = 0.1,
+   iPSL.Electrical.Loads.PSAT.FrequencyDependentLoad frequencyDependentLoad1(alpha_p = 0, beta_p = 1, beta_q = 1, Sn = 10, V_0 = 0.993325452568749, angle_0 = -0.00746932024404292, alpha_q = 0, Tf = 0.1,
     P_0=0.8,
     Q_0=0.6)                                                                                                     annotation(Placement(visible = true, transformation(origin = {123.3697, -45.0}, extent = {{-10.0, -10.0}, {10.0, 10.0}}, rotation = 0)));
-  inner PowerSystems.Electrical.SystemBase SysData
+  inner iPSL.Electrical.SystemBase  SysData
     annotation (Placement(transformation(extent={{100,80},{125,100}})));
 equation
   connect(pwLine3.n, frequencyDependentLoad1.p) annotation(Line(visible = true, origin = {105.7773, -40.0}, points={{

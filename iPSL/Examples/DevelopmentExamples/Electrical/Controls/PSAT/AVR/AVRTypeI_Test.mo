@@ -1,8 +1,7 @@
 within iPSL.Examples.DevelopmentExamples.Electrical.Controls.PSAT.AVR;
 model AVRTypeI_Test
-  import PowerSystems = iPSL;
 
-  PowerSystems.Electrical.Machines.PSAT.SixthOrder.Order6 Syn1(
+   iPSL.Electrical.Machines.PSAT.SixthOrder.Order6 Syn1(
     Sn=991,
     V_0=1.05,
     angle_0=0.159255652433349,
@@ -25,32 +24,32 @@ model AVRTypeI_Test
     Taa=0.002,
     D=0)
     annotation (Placement(transformation(extent={{-116,-10},{-86,18}})));
-  PowerSystems.Electrical.Buses.Bus bus1 annotation (Placement(transformation(extent={{-80,-12},{-56,12}})));
-  PowerSystems.Electrical.Buses.Bus bus2 annotation (Placement(transformation(extent={{102,-12},{126,12}})));
-  PowerSystems.Electrical.Buses.Bus bus3 annotation (Placement(transformation(extent={{20,20},{44,44}})));
-  PowerSystems.Electrical.Buses.Bus bus4 annotation (Placement(transformation(extent={{-22,-12},{2,12}})));
-  PowerSystems.Electrical.Buses.Bus bus5 annotation (Placement(transformation(extent={{60,20},{84,44}})));
-  PowerSystems.Electrical.Branches.PwLine pwLine1to4(
+   iPSL.Electrical.Buses.Bus bus1 annotation (Placement(transformation(extent={{-80,-12},{-56,12}})));
+   iPSL.Electrical.Buses.Bus bus2 annotation (Placement(transformation(extent={{102,-12},{126,12}})));
+   iPSL.Electrical.Buses.Bus bus3 annotation (Placement(transformation(extent={{20,20},{44,44}})));
+   iPSL.Electrical.Buses.Bus bus4 annotation (Placement(transformation(extent={{-22,-12},{2,12}})));
+   iPSL.Electrical.Buses.Bus bus5 annotation (Placement(transformation(extent={{60,20},{84,44}})));
+   iPSL.Electrical.Branches.PwLine pwLine1to4(
     R=0,
     X=0.05,
     G=0,
     B=0) annotation (Placement(transformation(extent={{-48,-10},{-28,10}})));
-  PowerSystems.Electrical.Branches.PwLine pwLine1(
+   iPSL.Electrical.Branches.PwLine pwLine1(
     R=0,
     X=0.05,
     G=0,
     B=0) annotation (Placement(transformation(extent={{4,-10},{24,10}})));
-  PowerSystems.Electrical.Branches.PwLine pwLine2(
+   iPSL.Electrical.Branches.PwLine pwLine2(
     R=0,
     X=0.05,
     G=0,
     B=0) annotation (Placement(transformation(extent={{42,22},{62,42}})));
-  PowerSystems.Electrical.Branches.PwLine pwLine3(
+   iPSL.Electrical.Branches.PwLine pwLine3(
     R=0,
     X=0.05,
     G=0,
     B=0) annotation (Placement(transformation(extent={{88,-10},{108,10}})));
-  PowerSystems.Electrical.Machines.PSAT.SecondOrder.Order2 Syn2(
+   iPSL.Electrical.Machines.PSAT.SecondOrder.Order2 Syn2(
     Sn=991,
     Vn=20000,
     V_b=20000,
@@ -69,13 +68,13 @@ model AVRTypeI_Test
     annotation (Placement(transformation(extent={{-5,-5},{5,5}},
         rotation=0,
         origin={-167,23})));
-  PowerSystems.Electrical.Events.PwFault pwFault(
+   iPSL.Electrical.Events.PwFault pwFault(
     R=0.15,
     X=0,
     t1=2,
     t2=2.1) annotation (Placement(transformation(extent={{38,-8},{58,12}})));
-  PowerSystems.Electrical.Controls.PSAT.AVR.AVRTypeI aVRI(vrmax=7.57) annotation (Placement(transformation(extent={{-148,8},{-128,28}})));
-  inner PowerSystems.Electrical.SystemBase SysData
+   iPSL.Electrical.Controls.PSAT.AVR.AVRTypeI aVRI(vrmax=7.57) annotation (Placement(transformation(extent={{-148,8},{-128,28}})));
+  inner iPSL.Electrical.SystemBase  SysData
     annotation (Placement(transformation(extent={{-80,60},{-38,80}})));
 equation
   connect(Syn1.p, bus1.p) annotation (Line(

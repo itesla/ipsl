@@ -1,28 +1,27 @@
 within iPSL.Examples.DevelopmentExamples.Electrical.Branches.PSAT;
 model PhaseShiftingTransformer_Test
-  import PowerSystems = iPSL;
 
-  PowerSystems.Electrical.Loads.PSAT.LOADPQ lOADPQ2(Q_0=0.001, P_0=0.03)
+   iPSL.Electrical.Loads.PSAT.LOADPQ lOADPQ2(Q_0=0.001, P_0=0.03)
     annotation (Placement(transformation(extent={{34,-44},{54,-24}})));
-  PowerSystems.Electrical.Branches.PwLine pwLine(
+   iPSL.Electrical.Branches.PwLine pwLine(
     R=0.01,
     X=0.1,
     G=0,
     B=0.001/2) annotation (Placement(transformation(extent={{-24,0},{-4,20}})));
-  PowerSystems.Electrical.Branches.PwLine pwLine1(
+   iPSL.Electrical.Branches.PwLine pwLine1(
     R=0.01,
     X=0.1,
     G=0,
     B=0.001) annotation (Placement(transformation(extent={{-22,-20},{-2,0}})));
-  PowerSystems.Electrical.Branches.PwLine pwLine2(
+   iPSL.Electrical.Branches.PwLine pwLine2(
     R=0.01,
     X=0.1,
     G=0,
     B=0.001/2) annotation (Placement(transformation(extent={{52,0},{72,20}})));
-  PowerSystems.Electrical.Branches.PSAT.PhaseShiftingTransformer.PSTransformer
+   iPSL.Electrical.Branches.PSAT.PhaseShiftingTransformer.PSTransformer
     pSTransformer
     annotation (Placement(transformation(extent={{54,-22},{74,-2}})));
-  PowerSystems.Electrical.Loads.PSAT.LOADPQ_variation lOADPQ1(
+   iPSL.Electrical.Loads.PSAT.LOADPQ_variation lOADPQ1(
     P_0=0.02,
     Q_0=0.01,
     t1=5,
@@ -40,7 +39,7 @@ model PhaseShiftingTransformer_Test
             30.6621},                                                                                               extent={{-6.3229,-6.3229},{6.3229,6.3229}}, rotation=0)));
   Modelica.Blocks.Sources.Sine sine2(amplitude=0.001, freqHz=0.2, startTime=5) annotation(Placement(visible=true, transformation(origin={-135.382,
             20.4802},                                                                                                    extent={{-4.4802,-4.4802},{4.4802,4.4802}}, rotation=0)));
-  PowerSystems.Electrical.Machines.PSAT.SecondOrder.Order2 Gen1(
+   iPSL.Electrical.Machines.PSAT.SecondOrder.Order2 Gen1(
     D=5,
     Sn=100,
     Vn=13800,
@@ -55,7 +54,7 @@ model PhaseShiftingTransformer_Test
     annotation (Placement(transformation(extent={{-101,-11},{-81,9}})));
   Modelica.Blocks.Math.Add add
     annotation (Placement(transformation(extent={{-97,20},{-77,40}})));
-  PowerSystems.Electrical.Branches.PSAT.TwoWindingTransformer
+   iPSL.Electrical.Branches.PSAT.TwoWindingTransformer
     twoWindingTransformer(
     Vn=13800,
     x=0.1,
@@ -63,15 +62,15 @@ model PhaseShiftingTransformer_Test
     V_b=13800,
     kT=13.8/20)
     annotation (Placement(transformation(extent={{-60,-10},{-40,10}})));
-  PowerSystems.Electrical.Buses.Bus B1
+   iPSL.Electrical.Buses.Bus B1
     annotation (Placement(transformation(extent={{-78,-10},{-58,10}})));
-  PowerSystems.Electrical.Buses.Bus B2
+   iPSL.Electrical.Buses.Bus B2
     annotation (Placement(transformation(extent={{-42,-10},{-22,10}})));
-  PowerSystems.Electrical.Buses.Bus B3
+   iPSL.Electrical.Buses.Bus B3
     annotation (Placement(transformation(extent={{14,-10},{34,10}})));
-  PowerSystems.Electrical.Buses.Bus B4
+   iPSL.Electrical.Buses.Bus B4
     annotation (Placement(transformation(extent={{88,-10},{108,10}})));
-  inner PowerSystems.Electrical.SystemBase SysData
+  inner iPSL.Electrical.SystemBase  SysData
     annotation (Placement(transformation(extent={{-40,60},{2,80}})));
 equation
 

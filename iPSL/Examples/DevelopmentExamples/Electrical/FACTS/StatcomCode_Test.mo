@@ -1,8 +1,7 @@
 within iPSL.Examples.DevelopmentExamples.Electrical.FACTS;
 model StatcomCode_Test
-  import PowerSystems = iPSL;
 
-  PowerSystems.Electrical.Branches.PwLine pwLine4(
+   iPSL.Electrical.Branches.PwLine pwLine4(
     B=0.001/2,
     G=0,
     R=0.01,
@@ -10,7 +9,7 @@ model StatcomCode_Test
         origin={-13,13},
         extent={{-10.0,-10.0},{10.0,10.0}},
         rotation=0)));
-  PowerSystems.Electrical.Branches.PwLine pwLine2(
+   iPSL.Electrical.Branches.PwLine pwLine2(
     B=0.001/2,
     G=0,
     R=0.01,
@@ -18,7 +17,7 @@ model StatcomCode_Test
         origin={-15,-17},
         extent={{-10.0,-10.0},{10.0,10.0}},
         rotation=0)));
-  PowerSystems.Electrical.Machines.PSAT.SecondOrder.Order2 Syn2(
+   iPSL.Electrical.Machines.PSAT.SecondOrder.Order2 Syn2(
     D=1,
     Sn=370,
     V_0=1.027606413803688,
@@ -33,7 +32,7 @@ model StatcomCode_Test
         extent={{-15,-16},{15,16}},
         rotation=180,
         origin={123,0})));
-  PowerSystems.Electrical.Branches.PwLine pwLine1(
+   iPSL.Electrical.Branches.PwLine pwLine1(
     B=0.001/2,
     G=0,
     R=0.01,
@@ -41,7 +40,7 @@ model StatcomCode_Test
         origin={53,17},
         extent={{-10.0,-10.0},{10.0,10.0}},
         rotation=0)));
-  PowerSystems.Electrical.Branches.PwLine pwLine3(
+   iPSL.Electrical.Branches.PwLine pwLine3(
     B=0.001/2,
     G=0,
     R=0.01,
@@ -49,7 +48,7 @@ model StatcomCode_Test
         origin={55,-17},
         extent={{-10.0,-10.0},{10.0,10.0}},
         rotation=0)));
-  PowerSystems.Electrical.Machines.PSAT.SecondOrder.Order2
+   iPSL.Electrical.Machines.PSAT.SecondOrder.Order2
     order2_Inputs_Outputs(
     Sn=370,
     D=5,
@@ -83,13 +82,13 @@ model StatcomCode_Test
     k1=1,
     k2=1)
     annotation (Placement(transformation(extent={{-118,-10},{-98,10}})));
-  PowerSystems.Electrical.Controls.PSAT.FACTS.STATCOM.STATCOM sTATCOM3_1(
+   iPSL.Electrical.Controls.PSAT.FACTS.STATCOM.STATCOM sTATCOM3_1(
     V_0=1,
     angle_0=-0.000213067852480)
     annotation (Placement(transformation(extent={{-14,-54},{6,-34}})));
-  PowerSystems.Electrical.Buses.Bus bus
+   iPSL.Electrical.Buses.Bus bus
     annotation (Placement(transformation(extent={{4,-8},{24,12}})));
-  PowerSystems.Electrical.Loads.PSAT.LOADPQ_variation lOADPQ(
+   iPSL.Electrical.Loads.PSAT.LOADPQ_variation lOADPQ(
     P2=0,
     P3=0,
     t1=7,
@@ -100,7 +99,7 @@ model StatcomCode_Test
     t2=7.001,
     P_0=0.8,
     Q_0=0.6)  annotation (Placement(transformation(extent={{38,-52},{58,-32}})));
-  inner PowerSystems.Electrical.SystemBase SysData
+  inner iPSL.Electrical.SystemBase  SysData
     annotation (Placement(transformation(extent={{-100,60},{-76,80}})));
 equation
   connect(pwLine1.n, pwLine3.n) annotation (Line(

@@ -24,8 +24,8 @@ equation
   R * (n.ii - B * n.vr - G * n.vi) + X * (n.ir - G * n.vr + B * n.vi) = n.vi - p.vi;
   R * (p.ir - G * p.vr + B * p.vi) - X * (p.ii - B * p.vr - G * p.vi) = p.vr - n.vr;
   R * (p.ii - B * p.vr - G * p.vi) + X * (p.ir - G * p.vr + B * p.vi) = p.vi - n.vi;
-   annotation(Icon(graphics={  Rectangle(extent=  {{-60, 40}, {60, -42}}, lineColor=  {0, 0, 255}), Rectangle(extent=  {{-40, 10}, {40, -10}}, lineColor=  {0, 0, 255}, fillColor=  {95, 95, 95},
-            fillPattern=                                                                                                    FillPattern.Solid),
+   annotation(Icon(graphics={  Rectangle(extent = {{-60, 40}, {60, -42}}, lineColor = {0, 0, 255}), Rectangle(extent = {{-40, 10}, {40, -10}}, lineColor = {0, 0, 255}, fillColor = {95, 95, 95},
+            fillPattern =                                                                                                   FillPattern.Solid),
         Text(
           extent={{-106,82},{-18,36}},
           lineColor={238,46,47},
@@ -52,7 +52,7 @@ equation
         Line(points={{48,-48},{48,-60}}, color={0,0,0}),
         Line(points={{40,-54},{88,-54},{80,-48}}, color={0,0,0}),
         Line(points={{88,-54},{80,-60}},   color={0,0,0})}),                                                                                   Diagram(graphics),
-    uses(PowerSystems(version="0.6"), Modelica(version="3.2.1")),
+    uses(Modelica(version="3.2.1")),
     Documentation(info="<html>
 <p><br><span style=\"font-family: MS Shell Dlg 2;\">&LT;iPSL: iTesla Power System Library&GT;</span></p>
 <p><span style=\"font-family: MS Shell Dlg 2;\">Copyright 2015 RTE (France), AIA (Spain), KTH (Sweden) and DTU (Denmark)</span></p>

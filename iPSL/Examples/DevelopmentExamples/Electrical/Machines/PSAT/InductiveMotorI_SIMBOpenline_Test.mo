@@ -1,9 +1,8 @@
 within iPSL.Examples.DevelopmentExamples.Electrical.Machines.PSAT;
 model InductiveMotorI_SIMBOpenline_Test
   "Order 1 inductive machine from PSAT, line opened at 2 s for 1 s"
-  import PowerSystems = iPSL;
 
-  PowerSystems.Electrical.Machines.PSAT.InductionMachine.MotorTypeI motorTypeI(
+   iPSL.Electrical.Machines.PSAT.InductionMachine.MotorTypeI        motorTypeI(
     Sup=0,
     V_0=1.0336,
     angle_0=-0.02173,
@@ -12,7 +11,7 @@ model InductiveMotorI_SIMBOpenline_Test
         extent={{-27,-22},{27,22}},
         rotation=180,
         origin={65,-16})));
-  PowerSystems.Electrical.Branches.PwLine pwLine1(
+   iPSL.Electrical.Branches.PwLine pwLine1(
     G=0,
     B=0,
     R=0.01,
@@ -20,7 +19,7 @@ model InductiveMotorI_SIMBOpenline_Test
         extent={{-25,-16},{25,16}},
         rotation=180,
         origin={-9,-38})));
-  PowerSystems.Electrical.Branches.PwLine2Openings pwLine2(
+   iPSL.Electrical.Branches.PwLine2Openings pwLine2(
     G=0,
     B=0,
     R=0.01,
@@ -30,12 +29,12 @@ model InductiveMotorI_SIMBOpenline_Test
         extent={{-25,-16},{25,16}},
         rotation=180,
         origin={-9,4})));
-  PowerSystems.Electrical.Buses.InfiniteBus infiniteBus(V=1.05, angle=0)
+   iPSL.Electrical.Buses.InfiniteBus infiniteBus(V=1.05, angle=0)
     annotation (Placement(transformation(
         extent={{-16.5,-13.5},{16.5,13.5}},
         rotation=0,
         origin={-86.5,-15.5})));
-  inner PowerSystems.Electrical.SystemBase SysData
+  inner iPSL.Electrical.SystemBase  SysData
     annotation (Placement(transformation(extent={{40,60},{64,80}})));
 equation
   connect(infiniteBus.p, pwLine2.n) annotation (Line(

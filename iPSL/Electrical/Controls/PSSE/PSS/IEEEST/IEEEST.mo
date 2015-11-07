@@ -1,6 +1,6 @@
 within iPSL.Electrical.Controls.PSSE.PSS.IEEEST;
 model IEEEST "IEEE Stabilizing Model with single Input"
-  import PowerSystems = iPSL;
+
   parameter Real A_1 "Filter Coefficient";
   parameter Real A_2 "Filter Coefficient";
   parameter Real A_3 "Filter Coefficient";
@@ -19,8 +19,8 @@ model IEEEST "IEEE Stabilizing Model with single Input"
   parameter Real V_CU = 999 "Output Limits";
   parameter Real V_CL = -999 "Output Limits";
   Modelica.Blocks.Continuous.TransferFunction Filter(b = {A6, A5, 1}, a = {A2 * A4, A1 * A4 + A2 * A3, A4 + A2 + A1 * A3, A3 + A1, 1}, initType = Modelica.Blocks.Types.Init.InitialOutput, y_start = 0) annotation(Placement(transformation(extent = {{-86, -8}, {-74, 4}})));
-  PowerSystems.NonElectrical.Continuous.ImLeadLag T_1_T_2(K = 1, T1 = T_1, T2 = T_2, nStartValue = 0) annotation(Placement(transformation(extent = {{-44, -20}, {-4, 12}})));
-  PowerSystems.NonElectrical.Continuous.ImLeadLag T_3_T_4(K = 1, T1 = T_3, T2 = T_4, nStartValue = 0) annotation(Placement(transformation(extent = {{-18, -20}, {24, 12}})));
+   iPSL.NonElectrical.Continuous.ImLeadLag T_1_T_2(K = 1, T1 = T_1, T2 = T_2, nStartValue = 0) annotation(Placement(transformation(extent = {{-44, -20}, {-4, 12}})));
+   iPSL.NonElectrical.Continuous.ImLeadLag T_3_T_4(K = 1, T1 = T_3, T2 = T_4, nStartValue = 0) annotation(Placement(transformation(extent = {{-18, -20}, {24, 12}})));
   output Modelica.Blocks.Interfaces.RealOutput VOTHSG(start = 0)
     "PSS output signal"                                                                            annotation(Placement(transformation(extent={{120,-10},
             {140,10}},                                                                                                    rotation = 0), iconTransformation(extent={{120,-10},
@@ -36,8 +36,8 @@ public
     "Compensated machine terminal voltage (pu)"
     annotation (Placement(transformation(extent={{-124,-4},{-98,22}}, rotation=0),
         iconTransformation(extent={{-128,10},{-108,30}})));
-  PowerSystems.NonElectrical.Nonlinear.ImRelay imRelay annotation(Placement(transformation(extent = {{-74, -20}, {-30, 12}})));
-  PowerSystems.NonElectrical.Math.ImSetPoint Bypass(V = Switch) annotation(Placement(transformation(extent = {{-92, 4}, {-66, 20}})));
+   iPSL.NonElectrical.Nonlinear.ImRelay imRelay annotation(Placement(transformation(extent = {{-74, -20}, {-30, 12}})));
+   iPSL.NonElectrical.Math.ImSetPoint Bypass(V = Switch) annotation(Placement(transformation(extent = {{-92, 4}, {-66, 20}})));
 protected
   parameter Real A(fixed = false);
   parameter Real Switch(fixed = false);
@@ -48,7 +48,7 @@ protected
   parameter Real A5(fixed = false);
   parameter Real A6(fixed = false);
 public
-  PowerSystems.NonElectrical.Continuous.ImDerivativeLag imDerivativeLag(
+   iPSL.NonElectrical.Continuous.ImDerivativeLag imDerivativeLag(
     K=K_S*T_5,
     T=T_6,
     pStartValue=0)

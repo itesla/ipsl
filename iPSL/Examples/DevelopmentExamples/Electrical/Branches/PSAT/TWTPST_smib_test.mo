@@ -1,8 +1,7 @@
 within iPSL.Examples.DevelopmentExamples.Electrical.Branches.PSAT;
 model TWTPST_smib_test
-  import PowerSystems = iPSL;
 
-  PowerSystems.Electrical.Machines.PSAT.SecondOrder.Order2 order2_1(
+   iPSL.Electrical.Machines.PSAT.SecondOrder.Order2 order2_1(
     Sn=100,
     D=5,
     V_0=1,
@@ -15,36 +14,36 @@ model TWTPST_smib_test
     xd1=0.302,
     M=10)
     annotation (Placement(transformation(extent={{-122,-10},{-102,10}})));
-  PowerSystems.Electrical.Loads.PSAT.LOADPQ lOADPQ2(Q_0=0.001, P_0=0.03)
+   iPSL.Electrical.Loads.PSAT.LOADPQ lOADPQ2(Q_0=0.001, P_0=0.03)
     annotation (Placement(transformation(extent={{34,-44},{54,-24}})));
-  PowerSystems.Electrical.Branches.PSAT.TwoWindingTransformer twoWindingTransformer(
+   iPSL.Electrical.Branches.PSAT.TwoWindingTransformer twoWindingTransformer(
     Vn=13800,
     x=0.1,
     r=0.01,
     V_b=13800,
     kT=13.8/20)
     annotation (Placement(transformation(extent={{-80,-10},{-60,10}})));
-  PowerSystems.Electrical.Buses.InfiniteBus infiniteBus(V=1, angle=0)
+   iPSL.Electrical.Buses.InfiniteBus infiniteBus(V=1, angle=0)
     annotation (Placement(transformation(extent={{-124,-44},{-104,-24}})));
-  PowerSystems.Electrical.Branches.PwLine pwLine(
+   iPSL.Electrical.Branches.PwLine pwLine(
     R=0.01,
     X=0.1,
     G=0,
     B=0.001/2) annotation (Placement(transformation(extent={{-22,-4},{-2,16}})));
-  PowerSystems.Electrical.Branches.PwLine pwLine1(
+   iPSL.Electrical.Branches.PwLine pwLine1(
     R=0.01,
     X=0.1,
     G=0,
     B=0.001) annotation (Placement(transformation(extent={{-22,-22},{-2,-2}})));
-  PowerSystems.Electrical.Branches.PwLine pwLine2(
+   iPSL.Electrical.Branches.PwLine pwLine2(
     R=0.01,
     X=0.1,
     G=0,
     B=0.001/2) annotation (Placement(transformation(extent={{52,0},{72,20}})));
-  PowerSystems.Electrical.Branches.PSAT.PhaseShiftingTransformer.PSTransformer
+   iPSL.Electrical.Branches.PSAT.PhaseShiftingTransformer.PSTransformer
     pSTransformer
     annotation (Placement(transformation(extent={{54,-22},{74,-2}})));
-  PowerSystems.Electrical.Loads.PSAT.LOADPQ_variation lOADPQ1(
+   iPSL.Electrical.Loads.PSAT.LOADPQ_variation lOADPQ1(
     P_0=0.02,
     Q_0=0.01,
     Q2=0,
@@ -56,15 +55,15 @@ model TWTPST_smib_test
     P2=0,
     P3=0)
     annotation (Placement(transformation(extent={{116,-10},{136,10}})));
-  PowerSystems.Electrical.Buses.Bus bus1
+   iPSL.Electrical.Buses.Bus bus1
     annotation (Placement(transformation(extent={{-100,-10},{-80,10}})));
-  PowerSystems.Electrical.Buses.Bus bus2
+   iPSL.Electrical.Buses.Bus bus2
     annotation (Placement(transformation(extent={{-56,-10},{-36,10}})));
-  PowerSystems.Electrical.Buses.Bus bus3
+   iPSL.Electrical.Buses.Bus bus3
     annotation (Placement(transformation(extent={{16,-10},{36,10}})));
-  PowerSystems.Electrical.Buses.Bus bus4
+   iPSL.Electrical.Buses.Bus bus4
     annotation (Placement(transformation(extent={{94,-10},{114,10}})));
-  inner PowerSystems.Electrical.SystemBase SysData
+  inner iPSL.Electrical.SystemBase  SysData
     annotation (Placement(transformation(extent={{-40,60},{2,80}})));
 equation
 

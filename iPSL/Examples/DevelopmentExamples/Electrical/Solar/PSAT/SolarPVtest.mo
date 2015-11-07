@@ -1,8 +1,7 @@
 within iPSL.Examples.DevelopmentExamples.Electrical.Solar.PSAT;
 model SolarPVtest
-  import PowerSystems = iPSL;
 
-  PowerSystems.Electrical.Branches.PwLine pwLine1(
+   iPSL.Electrical.Branches.PwLine pwLine1(
     B=0.001/2,
     G=0,
     R=0.01,
@@ -10,8 +9,8 @@ model SolarPVtest
         origin={-70.0,-10.0},
         extent={{-10.0,-10.0},{10.0,10.0}},
         rotation=0)));
-  PowerSystems.Electrical.Events.PwFault pwFault1(R = 20, X = 1, t1 = 3, t2 = 3.1) annotation(Placement(visible = true, transformation(origin = {20.0, -57.3}, extent = {{-10.0, -10.0}, {10.0, 10.0}}, rotation = 0)));
-  PowerSystems.Electrical.Branches.PwLinewithOpeningReceiving
+   iPSL.Electrical.Events.PwFault pwFault1(R = 20, X = 1, t1 = 3, t2 = 3.1) annotation(Placement(visible = true, transformation(origin = {20.0, -57.3}, extent = {{-10.0, -10.0}, {10.0, 10.0}}, rotation = 0)));
+   iPSL.Electrical.Branches.PwLinewithOpeningReceiving
     pwLinewithOpening1(
     B=0.001/2,
     G=0,
@@ -22,7 +21,7 @@ model SolarPVtest
         origin={-25.0,0.0},
         extent={{-10.0,-10.0},{10.0,10.0}},
         rotation=0)));
-  PowerSystems.Electrical.Branches.PwLine pwLine2(
+   iPSL.Electrical.Branches.PwLine pwLine2(
     B=0.001/2,
     G=0,
     R=0.01,
@@ -30,7 +29,7 @@ model SolarPVtest
         origin={-70.0,10.0},
         extent={{-10.0,-10.0},{10.0,10.0}},
         rotation=0)));
-  PowerSystems.Electrical.Branches.PwLine pwLine3(
+   iPSL.Electrical.Branches.PwLine pwLine3(
     B=0.001/2,
     G=0,
     R=0.01,
@@ -38,7 +37,7 @@ model SolarPVtest
         origin={-25.0,-30.0},
         extent={{-10.0,-10.0},{10.0,10.0}},
         rotation=0)));
-  PowerSystems.Electrical.Branches.PwLine pwLine4(
+   iPSL.Electrical.Branches.PwLine pwLine4(
     B=0.001/2,
     G=0,
     R=0.01,
@@ -46,10 +45,10 @@ model SolarPVtest
         origin={-25.0,15.0},
         extent={{-10.0,-10.0},{10.0,10.0}},
         rotation=0)));
-  PowerSystems.Electrical.Loads.PSAT.LOADPQ pwLoadPQ2(P_0 = 0.08, Q_0 = 0.06,
+   iPSL.Electrical.Loads.PSAT.LOADPQ pwLoadPQ2(P_0 = 0.08, Q_0 = 0.06,
     V_0=1,
     angle_0=0)                                                          annotation(Placement(visible = true, transformation(origin = {15.0, -30.0}, extent = {{-10.0, -10.0}, {10.0, 10.0}}, rotation = 0)));
-  PowerSystems.Electrical.Machines.PSAT.ThirdOrder.Order3 order31(Sn = 20, P_0 = 0.0401256732154526, Q_0 = 0.0262725307404601,
+   iPSL.Electrical.Machines.PSAT.ThirdOrder.Order3 order31(Sn = 20, P_0 = 0.0401256732154526, Q_0 = 0.0262725307404601,
     V_b=400,
     V_0=1,
     angle_0=0,
@@ -61,13 +60,13 @@ model SolarPVtest
     xd=1.9,
     Td10=8,
     xq=1.7)                                                                                                     annotation(Placement(visible = true, transformation(origin = {-110.0, 10.0}, extent = {{-10.0, -10.0}, {10.0, 10.0}}, rotation = 0)));
-  PowerSystems.Electrical.Buses.Bus bus1 annotation(Placement(visible = true, transformation(origin = {-87.5421, 10.0}, extent = {{-10.0, -10.0}, {10.0, 10.0}}, rotation = 0)));
-  PowerSystems.Electrical.Buses.Bus bus2 annotation(Placement(visible = true, transformation(origin = {-46.7243, 11.8063}, extent = {{-10.0, -10.0}, {10.0, 10.0}}, rotation = 0)));
-  PowerSystems.Electrical.Buses.Bus bus3 annotation(Placement(visible = true, transformation(origin = {5.0, 12.1033}, extent = {{-10.0, -10.0}, {10.0, 10.0}}, rotation = 0)));
-  PowerSystems.Electrical.Buses.Bus bus4 annotation(Placement(visible = true, transformation(origin = {-3.3112, -30.0}, extent = {{-10.0, -10.0}, {10.0, 10.0}}, rotation = 0)));
-  PowerSystems.Electrical.Solar.PSAT.ConstantPQPV.PV1 PV11(Q_0 = 0.283430554716626, angle_0 = -0.00000839852213846341, V_0 = 1.00002, vref = 1.00002,
+   iPSL.Electrical.Buses.Bus bus1 annotation(Placement(visible = true, transformation(origin = {-87.5421, 10.0}, extent = {{-10.0, -10.0}, {10.0, 10.0}}, rotation = 0)));
+   iPSL.Electrical.Buses.Bus bus2 annotation(Placement(visible = true, transformation(origin = {-46.7243, 11.8063}, extent = {{-10.0, -10.0}, {10.0, 10.0}}, rotation = 0)));
+   iPSL.Electrical.Buses.Bus bus3 annotation(Placement(visible = true, transformation(origin = {5.0, 12.1033}, extent = {{-10.0, -10.0}, {10.0, 10.0}}, rotation = 0)));
+   iPSL.Electrical.Buses.Bus bus4 annotation(Placement(visible = true, transformation(origin = {-3.3112, -30.0}, extent = {{-10.0, -10.0}, {10.0, 10.0}}, rotation = 0)));
+   iPSL.Electrical.Solar.PSAT.ConstantPQPV.PV1 PV11(Q_0 = 0.283430554716626, angle_0 = -0.00000839852213846341, V_0 = 1.00002, vref = 1.00002,
     P_0=0.4)                                                                                                     annotation(Placement(visible = true, transformation(origin = {30.0, 12.1033}, extent = {{-10.0, -10.0}, {10.0, 10.0}}, rotation = 0)));
-  inner PowerSystems.Electrical.SystemBase SysData
+  inner iPSL.Electrical.SystemBase  SysData
     annotation (Placement(transformation(extent={{55,50},{80,70}})));
 equation
   connect(bus3.p, PV11.p) annotation(Line(visible = true, origin = {12.0, 12.1033}, points = {{-7, 0}, {7, 0}}));
