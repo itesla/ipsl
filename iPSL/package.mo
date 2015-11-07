@@ -6,8 +6,7 @@ package iPSL "iTesla PowerSystems Library"
 
 
 
-  annotation(uses(Modelica(version="3.2.1"), Complex(version="3.2.1"),
-    PowerSystems(version="0.7")),
+  annotation(uses(Modelica(version="3.2.1"), Complex(version="3.2.1")),
   version="0.8",
   conversion(noneFromVersion=""),
   Documentation(info="<html>
