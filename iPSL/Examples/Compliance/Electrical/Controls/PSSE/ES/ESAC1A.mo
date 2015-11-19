@@ -1,12 +1,12 @@
 within iPSL.Examples.Compliance.Electrical.Controls.PSSE.ES;
-model ESST4B "SMIB system with one load and GENROE model"
+model ESAC1A "SMIB system with one load and GENROE model"
   import iPSL;
 
   Modelica.Blocks.Sources.Constant ZERO(k=0)
     annotation (Placement(transformation(extent={{70,-60},{60,-50}})));
-  Modelica.Blocks.Sources.Constant XADIFD(k=1.32747)
+  Modelica.Blocks.Sources.Constant XADIFD(k=1.36722)
     annotation (Placement(transformation(extent={{70,6},{60,16}})));
-  Modelica.Blocks.Sources.Constant EFD0(k=1.32747)
+  Modelica.Blocks.Sources.Constant EFD0(k=1.36722)
     annotation (Placement(transformation(extent={{70,24},{60,34}})));
   Modelica.Blocks.Sources.Step step(
     height=0.05,
@@ -20,26 +20,27 @@ model ESST4B "SMIB system with one load and GENROE model"
     annotation (Placement(transformation(extent={{80,-30},{70,-20}})));
   Modelica.Blocks.Math.Add add
     annotation (Placement(transformation(extent={{60,-16},{54,-10}})));
-  iPSL.Electrical.Controls.PSSE.ES.ESST4B.ESST4B eSST4B annotation (Placement(
-        transformation(
-        extent={{36,-23},{-36,23}},
-        rotation=0,
-        origin={-26,3})));
+  iPSL.Electrical.Controls.PSSE.ES.ESAC1A.ESAC1A eSAC1A(
+    V_RMAX=6,
+    V_RMIN=-6,
+    V0=1) annotation (Placement(transformation(extent={{30,-12},{-40,14}})));
 equation
   connect(add.u2, step1.y) annotation (Line(points={{60.6,-14.8},{64,-14.8},{64,
           -25},{69.5,-25}}, color={0,0,127}));
   connect(add.u1, step.y) annotation (Line(points={{60.6,-11.2},{64,-11.2},{64,
           -5},{69.5,-5}}, color={0,0,127}));
-  connect(eSST4B.ECOMP, add.y) annotation (Line(points={{13.1091,3.82143},{42,
-          3.82143},{42,-13},{53.7,-13}}, color={0,0,127}));
-  connect(eSST4B.VUEL, ZERO.y) annotation (Line(points={{13.4364,-2.75},{38,
-          -2.75},{38,-55},{59.5,-55}}, color={0,0,127}));
-  connect(eSST4B.VOTHSG, ZERO.y) annotation (Line(points={{13.1091,11.7071},{38,
-          11.7071},{38,-55},{59.5,-55}}, color={0,0,127}));
-  connect(eSST4B.XADIFD, XADIFD.y) annotation (Line(points={{13.1091,-9.65},{30,
-          -9.65},{30,11},{59.5,11}}, color={0,0,127}));
-  connect(eSST4B.EFD0, EFD0.y) annotation (Line(points={{13.4364,-16.8786},{48,
-          -16.8786},{48,29},{59.5,29}}, color={0,0,127}));
+  connect(eSAC1A.ECOMP, add.y) annotation (Line(points={{28.9063,9.66667},{44,
+          9.66667},{44,-13},{53.7,-13}}, color={0,0,127}));
+  connect(eSAC1A.VOTHSG, ZERO.y) annotation (Line(points={{28.9063,-3.33333},{
+          40,-3.33333},{40,-55},{59.5,-55}}, color={0,0,127}));
+  connect(eSAC1A.VUEL, ZERO.y) annotation (Line(points={{21.25,-10.83},{21.25,
+          -20},{40,-20},{40,-55},{59.5,-55}}, color={0,0,127}));
+  connect(eSAC1A.VOEL, ZERO.y) annotation (Line(points={{8.16875,-10.895},{
+          8.16875,-20},{40,-20},{40,-55},{59.5,-55}}, color={0,0,127}));
+  connect(eSAC1A.XADIFD, XADIFD.y) annotation (Line(points={{-4.89063,-10.895},
+          {-4.89063,-26},{48,-26},{48,11},{59.5,11}}, color={0,0,127}));
+  connect(eSAC1A.EFD0, EFD0.y) annotation (Line(points={{-18.125,-10.7},{
+          -18.125,-30},{52,-30},{52,29},{59.5,29}}, color={0,0,127}));
   annotation(__ModelicaAssociation(TestCase(shouldPass=true)),Diagram(coordinateSystem(preserveAspectRatio=false,   extent={{-80,-40},
             {80,40}})),         Documentation(info="<html>
 <p><span style=\"font-family: MS Shell Dlg 2;\">&LT;iPSL: iTesla Power System Library&GT;</span></p>
@@ -57,4 +58,4 @@ equation
 <p><span style=\"font-family: MS Shell Dlg 2;\">You should have received a copy of the GNU Lesser General Public License along with the iPSL. If not, see &LT;http://www.gnu.org/licenses/&GT;.</span></p>
 </html>"),
     Icon(coordinateSystem(extent={{-80,-40},{80,40}})));
-end ESST4B;
+end ESAC1A;

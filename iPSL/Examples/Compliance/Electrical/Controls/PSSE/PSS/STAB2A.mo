@@ -1,5 +1,5 @@
 within iPSL.Examples.Compliance.Electrical.Controls.PSSE.PSS;
-model STABNI
+model STAB2A
   "Simple Machine Infinite Bus with Machine, Governor and Excitation system"
   import iPSL;
 
@@ -16,19 +16,24 @@ model STABNI
     annotation (Placement(transformation(extent={{90,-22},{80,-12}})));
   Modelica.Blocks.Math.Add add
     annotation (Placement(transformation(extent={{70,-8},{64,-2}})));
-  iPSL.Electrical.Controls.PSSE.PSS.STABNI.STABNI sTABNI(
-    K=100,
-    T_1=1,
-    T_2=5,
-    T_0=0.5,
-    LIMIT=10) annotation (Placement(transformation(extent={{10,-14},{-30,4}})));
+  Modelica.Blocks.Sources.Constant VCT(k=1)
+    annotation (Placement(transformation(extent={{90,16},{80,26}})));
+  iPSL.Electrical.Controls.PSSE.PSS.STAB2A.STAB2A sTAB2A(
+    K_2=100,
+    T_2=0.1,
+    K_3=0.2,
+    T_3=10,
+    K_4=0.3,
+    K_5=2,
+    T_5=5,
+    H_LIM=5) annotation (Placement(transformation(extent={{10,-8},{-12,0}})));
 equation
   connect(add.u2, step1.y) annotation (Line(points={{70.6,-6.8},{74,-6.8},{74,
           -17},{79.5,-17}}, color={0,0,127}));
   connect(add.u1, step.y) annotation (Line(points={{70.6,-3.2},{74,-3.2},{74,3},
           {79.5,3}}, color={0,0,127}));
-  connect(sTABNI.PELEC, add.y)
-    annotation (Line(points={{11.3333,-5},{63.7,-5}}, color={0,0,127}));
+  connect(sTAB2A.PELEC, add.y)
+    annotation (Line(points={{9.7,-4},{63.7,-4},{63.7,-5}}, color={0,0,127}));
   annotation(__ModelicaAssociation(TestCase(shouldPass=true)),Diagram(coordinateSystem(preserveAspectRatio=false,  extent={{-100,
             -40},{100,40}})),                                                                                      Icon(coordinateSystem(extent={{-100,
             -40},{100,40}})),
@@ -47,4 +52,4 @@ equation
 <p><span style=\"font-family: MS Shell Dlg 2;\">The iPSL is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU Lesser General Public License for more details.</span></p>
 <p><span style=\"font-family: MS Shell Dlg 2;\">You should have received a copy of the GNU Lesser General Public License along with the iPSL. If not, see &LT;http://www.gnu.org/licenses/&GT;.</span></p>
 </html>"));
-end STABNI;
+end STAB2A;
