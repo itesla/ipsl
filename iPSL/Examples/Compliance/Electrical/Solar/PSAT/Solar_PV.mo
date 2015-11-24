@@ -1,5 +1,5 @@
 within iPSL.Examples.Compliance.Electrical.Solar.PSAT;
-model SolarPVtest
+model Solar_PV
 
    iPSL.Electrical.Branches.PwLine pwLine1(
     B=0.001/2,
@@ -108,4 +108,4 @@ equation
 <p><span style=\"font-family: MS Shell Dlg 2;\">The iPSL is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU Lesser General Public License for more details.</span></p>
 <p><span style=\"font-family: MS Shell Dlg 2;\">You should have received a copy of the GNU Lesser General Public License along with the iPSL. If not, see &LT;http://www.gnu.org/licenses/&GT;.</span></p>
 </html>"));
-end SolarPVtest;
+end Solar_PV;

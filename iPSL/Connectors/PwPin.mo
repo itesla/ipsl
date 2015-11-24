@@ -9,8 +9,8 @@ connector PwPin
   // real part of the current
   flow Real ii;
   // imaginary part of the current
-  annotation(Icon(graphics={  Rectangle(extent=  {{-100, 98}, {100, -102}}, lineColor=  {0, 0, 255}, fillColor=  {0, 0, 255},
-            fillPattern=                                                                                                    FillPattern.Solid)}),
+  annotation(Icon(graphics={  Rectangle(extent = {{-100, 98}, {100, -102}}, lineColor = {0, 0, 255}, fillColor = {0, 0, 255},
+            fillPattern =                                                                                                   FillPattern.Solid)}),
       Documentation(info="<html>
 <p><br><span style=\"font-family: MS Shell Dlg 2;\">&LT;iPSL: iTesla Power System Library&GT;</span></p>
 <p><span style=\"font-family: MS Shell Dlg 2;\">Copyright 2015 RTE (France), AIA (Spain), KTH (Sweden) and DTU (Denmark)</span></p>

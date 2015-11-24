@@ -75,9 +75,9 @@ equation
   connect(T, PVnew1.T) annotation(Line(visible = true, origin = {-124.25, -26.9696}, points = {{-45.75, -14.9697}, {14.25, -14.9697}, {14.25, 14.9696}, {17.25, 14.9696}}, color = {0, 0, 127}));
   connect(E, PVnew1.E) annotation(Line(visible = true, origin = {-138.5, -5.0}, points = {{-31.5, 0.0}, {31.5, 0.0}}, color = {0, 0, 127}));
   connect(PVnew1.Iarray, DCBusBar1.Ipv) annotation(Line(visible = true, origin = {-64.5923, 3.5}, points = {{-19.4077, -8.5}, {-10.4077, -8.5}, {-10.4077, 8.5}, {40.2231, 8.5}}, color = {0, 0, 127}));
-  annotation(Icon(coordinateSystem(extent = {{-100.0, -100.0}, {100.0, 100.0}}, preserveAspectRatio = true, initialScale = 0.1, grid = {10, 10}), graphics={  Text(visible=  true, origin=  {-72.3502, 50.0},
-            fillPattern=                                                                                                    FillPattern.Solid, extent=  {{-17.6498, -10.0}, {17.6498, 10.0}}, textString=  "E", fontName=  "Arial"), Text(visible=  true, origin=  {-72.3502, -50.0},
-            fillPattern=                                                                                                    FillPattern.Solid, extent=  {{-17.6498, -10.0}, {17.6498, 10.0}}, textString=  "T", fontName=  "Arial"), Rectangle(visible=  true, fillColor=  {255, 255, 255}, extent=  {{-100.0, -100.0}, {100.0, 100.0}})}), Diagram(coordinateSystem(extent = {{-148.5, -105.0}, {148.5, 105.0}}, preserveAspectRatio = true, initialScale = 0.1, grid = {5, 5})),
+  annotation(Icon(coordinateSystem(extent = {{-100.0, -100.0}, {100.0, 100.0}}, preserveAspectRatio = true, initialScale = 0.1, grid = {10, 10}), graphics={  Text(visible = true, origin = {-72.3502, 50.0},
+            fillPattern =                                                                                                   FillPattern.Solid, extent = {{-17.6498, -10.0}, {17.6498, 10.0}}, textString = "E", fontName = "Arial"), Text(visible = true, origin = {-72.3502, -50.0},
+            fillPattern =                                                                                                   FillPattern.Solid, extent = {{-17.6498, -10.0}, {17.6498, 10.0}}, textString = "T", fontName = "Arial"), Rectangle(visible = true, fillColor = {255, 255, 255}, extent = {{-100.0, -100.0}, {100.0, 100.0}})}), Diagram(coordinateSystem(extent = {{-148.5, -105.0}, {148.5, 105.0}}, preserveAspectRatio = true, initialScale = 0.1, grid = {5, 5})),
     Documentation(info="<html>
 <table cellspacing=\"1\" cellpadding=\"1\" border=\"1\">
 <tr>

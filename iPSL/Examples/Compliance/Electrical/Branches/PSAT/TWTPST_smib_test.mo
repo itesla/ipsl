@@ -129,8 +129,8 @@ equation
       points={{75,-16},{80,-16},{80,0},{46,0},{46,-6.4},{51.6,-6.4}},
       color={0,0,127},
       smooth=Smooth.None));
-  connect(order2_1.vf0, order2_1.vf) annotation (Line(points={{-120,11},{
-          -120,14},{-130,14},{-130,5},{-122,5}},
+  connect(order2_1.vf0, order2_1.vf) annotation (Line(points={{-120,11},{-120,
+          14},{-130,14},{-130,5},{-122,5}},
                                         color={0,0,127}));
   connect(order2_1.pm, order2_1.pm0) annotation (Line(points={{-122,-5},{-130,-5},
           {-130,-16},{-120,-16},{-120,-11}}, color={0,0,127}));

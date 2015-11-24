@@ -3,7 +3,6 @@ model IEE2ST
   "Simple Machine Infinite Bus with Machine, Governor and Excitation system"
   import iPSL;
 
-
   Modelica.Blocks.Sources.Step step(
     height=0.05,
     offset=1,

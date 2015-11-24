@@ -3,7 +3,6 @@ model STAB3
   "Simple Machine Infinite Bus with Machine, Governor and Excitation system"
   import iPSL;
 
-
   iPSL.Electrical.Controls.PSSE.PSS.STAB3.STAB3 sTAB3_1(
     T_t=0.1,
     T_X1=5,

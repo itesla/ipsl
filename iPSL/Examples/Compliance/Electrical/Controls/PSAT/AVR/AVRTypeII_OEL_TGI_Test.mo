@@ -84,8 +84,8 @@ equation
   connect(pwLine2.n, pwLine4.p) annotation(Line(points = {{51, 26}, {64, 26}, {64, 31}, {72, 31}}, color = {0, 0, 255}, smooth = Smooth.None));
   connect(pwLine1.n, pwLine3.p) annotation(Line(points = {{51, -4}, {64, -4}, {64, -19}, {77, -19}}, color = {0, 0, 255}, smooth = Smooth.None));
   connect(pwLine2.n, pwLine1.n) annotation(Line(points = {{51, 26}, {51, -4}}, color = {0, 0, 255}, smooth = Smooth.None));
-  connect(pwFault.p, pwLine3.n) annotation(Line(points={{113.333,-42},{104,
-          -42},{104,-19},{91,-19}},                                                                       color = {0, 0, 255}, smooth = Smooth.None));
+  connect(pwFault.p, pwLine3.n) annotation(Line(points={{113.333,-42},{104,-42},
+          {104,-19},{91,-19}},                                                                            color = {0, 0, 255}, smooth = Smooth.None));
   connect(order6Type2_Inputs_Outputs.p, pwLine2.p) annotation(Line(points={{16,
           27.1936},{27,27.1936},{27,26},{37,26}},                                                                               color = {0, 0, 255}, smooth = Smooth.None));
   connect(pwLine1.p, pwLine2.p) annotation(Line(points = {{37, -4}, {37, 26}}, color = {0, 0, 255}, smooth = Smooth.None));

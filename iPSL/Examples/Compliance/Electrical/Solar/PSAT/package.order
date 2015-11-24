@@ -1,4 +1,4 @@
-SolarPQtest
-SolarPVtest
-testTemperature
-testIrradation
+Solar_PQ
+Solar_PV
+Solar_Temperature
+Solar_Irradation

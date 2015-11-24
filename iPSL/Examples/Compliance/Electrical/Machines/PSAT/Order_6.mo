@@ -1,5 +1,5 @@
 within iPSL.Examples.Compliance.Electrical.Machines.PSAT;
-model Order6test2
+model Order_6
 
    iPSL.Electrical.Loads.PSAT.LOADPQ pwLoadPQ2(P_0 = 0.08, Q_0 = 0.06,
     V_0=1,
@@ -70,8 +70,8 @@ equation
           -0.5},{3.5,-0.5},{3.5,10.5},{16.5,10.5}}));
   connect(pwLine2.n, pwLine4.p) annotation(Line(points = {{-53, 10}, {-40, 10}, {-40, 15}, {-32, 15}}, color = {0, 0, 255}, smooth = Smooth.None));
   connect(pwLine1.n, pwLine3.p) annotation(Line(points = {{-53, -20}, {-40, -20}, {-40, -35}, {-27, -35}}, color = {0, 0, 255}, smooth = Smooth.None));
-  connect(pwFault.p, pwLine3.n) annotation(Line(points={{23.3333,-60},{
-          23.3333,-44.5},{-13,-44.5},{-13,-35}},                                                             color = {0, 0, 255}, smooth = Smooth.None));
+  connect(pwFault.p, pwLine3.n) annotation(Line(points={{23.3333,-60},{23.3333,
+          -44.5},{-13,-44.5},{-13,-35}},                                                                     color = {0, 0, 255}, smooth = Smooth.None));
   connect(order6Type2_1.p, pwLine2.p) annotation(Line(points={{-98,10.0993},{
           -94.5,10.0993},{-94.5,10},{-67,10}},                                                                               color = {0, 0, 255}, smooth = Smooth.None));
   connect(pwLine2.p, pwLine1.p) annotation(Line(points = {{-67, 10}, {-67, 10}, {-67, -20}}, color = {0, 0, 255}, smooth = Smooth.None));
@@ -89,10 +89,10 @@ equation
         grid={5,5}), graphics={Text(
             visible=true,
             origin={-60,54.1417},
-            fillPattern=                                                                                                    FillPattern.Solid,
-                                                                                        extent=  {{-35.0, -5.8583}, {35.0, 5.8583}},
-                                                                                        textString=  "SystemSbase=100 MVA",
-                                                                                        fontName=  "Arial")}), experiment(StopTime = 20), __Dymola_experimentSetupOutput,
+            fillPattern =                                                                                                   FillPattern.Solid,
+                                                                                        extent = {{-35.0, -5.8583}, {35.0, 5.8583}},
+                                                                                        textString = "SystemSbase=100 MVA",
+                                                                                        fontName = "Arial")}), experiment(StopTime = 20), __Dymola_experimentSetupOutput,
     Documentation(info="<html>
 <p><span style=\"font-family: MS Shell Dlg 2;\">&LT;iPSL: iTesla Power System Library&GT;</span></p>
 <p><span style=\"font-family: MS Shell Dlg 2;\">Copyright 2015 RTE (France), AIA (Spain), KTH (Sweden) and DTU (Denmark)</span></p>
@@ -108,4 +108,4 @@ equation
 <p><span style=\"font-family: MS Shell Dlg 2;\">The iPSL is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU Lesser General Public License for more details.</span></p>
 <p><span style=\"font-family: MS Shell Dlg 2;\">You should have received a copy of the GNU Lesser General Public License along with the iPSL. If not, see &LT;http://www.gnu.org/licenses/&GT;.</span></p>
 </html>"));
-end Order6test2;
+end Order_6;

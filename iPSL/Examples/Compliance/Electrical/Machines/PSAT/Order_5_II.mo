@@ -1,5 +1,6 @@
 within iPSL.Examples.Compliance.Electrical.Machines.PSAT;
-model Order5_1test2
+model Order_5_II
+  import iPSL;
 
    iPSL.Electrical.Loads.PSAT.LOADPQ pwLoadPQ2(P_0 = 0.08, Q_0 = 0.06,
     V_0=1,
@@ -53,14 +54,14 @@ model Order5_1test2
    iPSL.Electrical.Events.PwFault pwFault(X = 0.001, t1 = 3, t2 = 3.1, R = 10) annotation(Placement(transformation(extent = {{40, -55}, {60, -35}})));
   inner iPSL.Electrical.SystemBase  SysData
     annotation (Placement(transformation(extent={{50,80},{75,100}})));
-   iPSL.Electrical.Machines.PSAT.FifthOrder.Order5_Type1
-    order5Type1_Inputs_Outputs(
+  iPSL.Electrical.Machines.PSAT.FifthOrder.Order5_Type2 order5_Type2_1(
     Sn=370,
     Vn=200,
     ra=0.001,
     xd1=0.302,
     M=10,
-    D=0) annotation (Placement(transformation(extent={{-100,0},{-80,20}})));
+    D=0)
+    annotation (Placement(transformation(extent={{-100,-10},{-65,30}})));
 equation
   connect(pwLine4.n, pwLoadPQ2.p) annotation(Line(visible = true, origin = {37.2125, 23}, points={{
           -15.2125,2},{3.0708,2},{3.0708,8},{16.0709,8}}));
@@ -72,16 +73,14 @@ equation
   connect(pwLine1.n, pwLine2.n) annotation(Line(points = {{-13, 5}, {-13, 20}}, color = {0, 0, 255}, smooth = Smooth.None));
   connect(pwLine2.n, pwLine4.p) annotation(Line(points = {{-13, 20}, {0, 20}, {0, 25}, {8, 25}}, color = {0, 0, 255}, smooth = Smooth.None));
   connect(pwLine1.n, pwLine3.p) annotation(Line(points = {{-13, 5}, {0, 5}, {0, -25}, {13, -25}}, color = {0, 0, 255}, smooth = Smooth.None));
-  connect(pwFault.p, pwLine3.n) annotation(Line(points={{38.3333,-45},{
-          38.3333,-34.5},{27,-34.5},{27,-25}},                                                             color = {0, 0, 255}, smooth = Smooth.None));
-  connect(order5Type1_Inputs_Outputs.p, pwLine2.p) annotation (Line(points={{-79,
-          10.0496},{-40,10.0496},{-40,20},{-27,20}},       color={0,0,255}));
-  connect(order5Type1_Inputs_Outputs.vf, order5Type1_Inputs_Outputs.vf0)
-    annotation (Line(points={{-100,15},{-105,15},{-105,25},{-98,25},{-98,21}},
-        color={0,0,127}));
-  connect(order5Type1_Inputs_Outputs.pm, order5Type1_Inputs_Outputs.pm0)
-    annotation (Line(points={{-100,5},{-105,5},{-105,-5},{-98,-5},{-98,-1}},
-        color={0,0,127}));
+  connect(pwFault.p, pwLine3.n) annotation(Line(points={{38.3333,-45},{38.3333,
+          -34.5},{27,-34.5},{27,-25}},                                                                     color = {0, 0, 255}, smooth = Smooth.None));
+  connect(order5_Type2_1.p, pwLine2.p) annotation (Line(points={{-63.25,10.0993},
+          {-27,10.0993},{-27,20}}, color={0,0,255}));
+  connect(order5_Type2_1.vf0, order5_Type2_1.vf) annotation (Line(points={{-96.5,
+          32},{-96.5,40},{-105,40},{-105,20},{-100,20}}, color={0,0,127}));
+  connect(order5_Type2_1.pm, order5_Type2_1.pm0) annotation (Line(points={{-100,
+          0},{-105,0},{-105,-20},{-96.5,-20},{-96.5,-12}}, color={0,0,127}));
   annotation (
     Diagram(coordinateSystem(
         extent={{-148.5,-105},{148.5,105}},
@@ -90,10 +89,10 @@ equation
         grid={5,5}), graphics={Text(
             visible=true,
             origin={-60,54.1417},
-            fillPattern=                                                                                                    FillPattern.Solid,
-                                                                                        extent=  {{-35.0, -5.8583}, {35.0, 5.8583}},
-                                                                                        textString=  "SystemSbase=100 MVA",
-                                                                                        fontName=  "Arial")}), experiment(StopTime = 20), __Dymola_experimentSetupOutput,
+            fillPattern =                                                                                                   FillPattern.Solid,
+                                                                                        extent = {{-35.0, -5.8583}, {35.0, 5.8583}},
+                                                                                        textString = "SystemSbase=100 MVA",
+                                                                                        fontName = "Arial")}), experiment(StopTime = 20), __Dymola_experimentSetupOutput,
     Documentation(info="<html>
 <p><span style=\"font-family: MS Shell Dlg 2;\">&LT;iPSL: iTesla Power System Library&GT;</span></p>
 <p><span style=\"font-family: MS Shell Dlg 2;\">Copyright 2015 RTE (France), AIA (Spain), KTH (Sweden) and DTU (Denmark)</span></p>
@@ -109,4 +108,4 @@ equation
 <p><span style=\"font-family: MS Shell Dlg 2;\">The iPSL is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU Lesser General Public License for more details.</span></p>
 <p><span style=\"font-family: MS Shell Dlg 2;\">You should have received a copy of the GNU Lesser General Public License along with the iPSL. If not, see &LT;http://www.gnu.org/licenses/&GT;.</span></p>
 </html>"));
-end Order5_1test2;
+end Order_5_II;

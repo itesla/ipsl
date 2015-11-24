@@ -1,52 +1,6 @@
 within iPSL.Examples.Compliance.Electrical.Controls.PSSE.TG;
 model GGOV "three phase to ground fault test of GGOV"
 
-  iPSL.Electrical.Machines.PSSE.GENROU.GENROU generator(
-    Xppd=0.2,
-    Xppq=0.2,
-    Xpp=0.2,
-    Xl=0.12,
-    M_b=100,
-    Tpd0=5,
-    Tppd0=0.50000E-01,
-    Tppq0=0.1,
-    H=4.0000,
-    D=0,
-    Xd=1.41,
-    Xq=1.3500,
-    Xpd=0.3,
-    S10=0.1,
-    S12=0.5,
-    Xpq=0.6,
-    Tpq0=0.7,
-    V_0=1,
-    angle_0=4.05,
-    P_0=39.99995,
-    Q_0=5.416571) annotation (Placement(transformation(extent={{-84,-4},{-44,30}})));
-
-  iPSL.Electrical.Branches.PwLine pwLine(
-    R=0.001,
-    X=0.2,
-    G=0,
-    B=0)
-    annotation (Placement(transformation(extent={{-40,2},{-20,22}})));
-  iPSL.Electrical.Branches.PwLine pwLine1(
-    R=0.001,
-    X=0.2,
-    G=0,
-    B=0)
-    annotation (Placement(transformation(extent={{2,8},{22,28}})));
-  iPSL.Electrical.Machines.PSSE.GENCLS.GENCLS gENCLS(
-    X_d=0.2,
-    P_0=10.01716,
-    Q_0=8.006525,
-    H=0,
-    D=0,
-    M_b=100,
-    V_0=1,
-    angle_0=0)
-    annotation (Placement(transformation(extent={{84,-6},{62,16}})));
-
   iPSL.Electrical.Controls.PSSE.TG.GGOV1.GGOV1 gGOV1pele(
     R=0.04,
     T_pelec=1,
@@ -83,74 +37,34 @@ model GGOV "three phase to ground fault test of GGOV"
     Rdown=-99,
     DELT=0.005,
     Flag=0) annotation (Placement(transformation(
-        extent={{-20,-18},{20,18}},
+        extent={{-30,-29},{30,29}},
         rotation=180,
-        origin={-52,52})));
-  iPSL.Electrical.Branches.PwLine2Openings pwLine3(
-    t2=100,
-    t1=10.15 - 0.005,
-    R=0.0005,
-    X=0.1,
-    G=0,
-    B=0)
-    annotation (Placement(transformation(extent={{-6,-16},{14,4}})));
-  iPSL.Electrical.Branches.PwLine2Openings pwLine4(
-    t2=100,
-    t1=10.15 - 0.005,
-    R=0.0005,
-    X=0.1,
-    G=0,
-    B=0)
-    annotation (Placement(transformation(extent={{20,-16},{40,4}})));
-  iPSL.Electrical.Loads.PSSE.Load_variation constantLoad(
-    angle_0=-0.57627,
-    S_p(re=0.5, im=0.1),
-    S_i(im=0, re=0),
-    S_y(re=0, im=0),
-    a(re=1, im=0),
-    b(re=0, im=1),
-    PQBRAK=0.7,
-    V_0=0.991992,
-    d_P=5*0.01,
-    d_t=0.1,
-    t1=2 - 0.005)
-    annotation (Placement(transformation(extent={{-8,-28},{-28,-6}})));
-  iPSL.Electrical.Events.PwFault pwFault(
-    R=0,
-    X=-2e-9,
-    t1=10 - 0.005,
-    t2=10.15 - 0.005)
-    annotation (Placement(transformation(extent={{34,-26},{54,-6}})));
+        origin={-36,7})));
+  Modelica.Blocks.Sources.Constant const(k=0.4)
+    annotation (Placement(transformation(extent={{60,40},{40,60}})));
+  Modelica.Blocks.Sources.Ramp ramp(
+    height=0.1,
+    duration=1,
+    offset=0,
+    startTime=0.5)
+    annotation (Placement(transformation(extent={{100,-20},{80,0}})));
+  Modelica.Blocks.Sources.Step step(
+    height=-0.1,
+    offset=0,
+    startTime=1)
+    annotation (Placement(transformation(extent={{100,-60},{80,-40}})));
+  Modelica.Blocks.Math.Add add
+    annotation (Placement(transformation(extent={{60,-40},{40,-20}})));
 equation
-  connect(generator.p, pwLine.p) annotation(Line(points={{-42,13},{-50.6,13},{-50.6,
-          12},{-37,12}},                                                                                            color = {0, 0, 255}, smooth = Smooth.None));
-  connect(pwLine.n, pwLine1.p) annotation(Line(points = {{-23, 12}, {-16.5, 12}, {-16.5, 18}, {5, 18}}, color = {0, 0, 255}, smooth = Smooth.None));
-  connect(pwLine1.n, gENCLS.p) annotation(Line(points={{19,18},{52,18},{52,
-          4.8346},{59.8,4.8346}},                                                                           color = {0, 0, 255}, smooth = Smooth.None));
 
-  connect(gGOV1pele.PELEC, generator.PELEC) annotation (Line(
-      points={{-27.2414,60.5304},{-18,60.5304},{-18,4.5},{-42.4,4.5}},
-      color={0,0,127},
-      smooth=Smooth.None));
-  connect(generator.EFD0, generator.EFD) annotation (Line(
-      points={{-42.4,1.1},{-36,1.1},{-36,-18},{-86,-18},{-86,4.5},{-83.6,4.5}},
-      color={0,0,127},
-      smooth=Smooth.None));
-  connect(pwLine3.p, pwLine.n) annotation(Line(points={{-3,-6},{-17.5,-6},{
-          -17.5,12},{-23,12}},                                                                           color = {0, 0, 255}, smooth = Smooth.None));
-  connect(pwLine3.n,pwLine4. p) annotation(Line(points={{11,-6},{23,-6}},      color = {0, 0, 255}, smooth = Smooth.None));
-  connect(pwLine4.n, gENCLS.p) annotation(Line(points={{37,-6},{52,-6},{52,
-          4.8346},{59.8,4.8346}},                                                                           color = {0, 0, 255}, smooth = Smooth.None));
-  connect(constantLoad.p,pwLine3. p) annotation(Line(points={{-18,-4.9},{-18,
-          -15.5},{-3,-15.5},{-3,-6}},                                                                            color = {0, 0, 255}, smooth = Smooth.None));
-  connect(pwFault.p,pwLine4. p) annotation(Line(points={{32.3333,-16},{23,-16},
-          {23,-6}},                                                                        color = {0, 0, 255}, smooth = Smooth.None));
-  connect(gGOV1pele.PMECH, generator.PMECH) annotation (Line(points={{-68.5517,
-          52.7826},{-90,52.7826},{-90,21.5},{-83.6,21.5}},
-                                                  color={0,0,127}));
-  connect(generator.SPEED, gGOV1pele.SPEED) annotation (Line(points={{-42.4,
-          28.3},{-24,28.3},{-24,43.3913},{-27.3103,43.3913}},
-                                                        color={0,0,127}));
+  connect(add.u1, ramp.y) annotation (Line(points={{62,-24},{70,-24},{70,-10},
+          {79,-10}}, color={0,0,127}));
+  connect(step.y, add.u2) annotation (Line(points={{79,-50},{70,-50},{70,-36},
+          {62,-36}}, color={0,0,127}));
+  connect(add.y, gGOV1pele.SPEED) annotation (Line(points={{39,-30},{20,-30},{
+          20,-6.86957},{1.03448,-6.86957}}, color={0,0,127}));
+  connect(gGOV1pele.PELEC, const.y) annotation (Line(points={{1.13793,20.7435},
+          {20,20.7435},{20,50},{39,50}}, color={0,0,127}));
   annotation(__ModelicaAssociation(TestCase(shouldPass=true)),Diagram(coordinateSystem(preserveAspectRatio=false,  extent={{-100,
             -100},{100,100}})), Documentation(info="<html>
 <p><br><span style=\"font-family: MS Shell Dlg 2;\">&LT;iPSL: iTesla Power System Library&GT;</span></p>

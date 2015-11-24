@@ -59,14 +59,14 @@ equation
           77.84,0},{64,0}},                                                                     color = {0, 0, 127}, smooth = Smooth.None));
   annotation(Diagram(coordinateSystem(preserveAspectRatio = false, extent = {{-120, -120}, {140, 80}}), graphics={  Text(extent=  {{-92, 26}, {-80, 16}}, lineColor=  {0, 0, 255}, textString=  "Efd0"), Text(extent=  {{-94, 4}, {-76, -14}}, lineColor=  {0, 0, 255}, textString=  "VOTHSG "), Text(extent=  {{-98, -12}, {-72, -18}}, lineColor=  {0, 0, 255}, textString=  " VOEL"), Text(extent=  {{-100, -22}, {-70, -28}}, lineColor=  {0, 0, 255}, textString=  " VUEL "), Text(extent=  {{-94, 10}, {-76, -2}}, lineColor=  {0, 0, 255}, textString=  "Ecomp
              "), Text(extent=  {{-58, 22}, {-48, 12}}, lineColor=  {0, 0, 255}, textString=  "Vref")}), Icon(coordinateSystem(preserveAspectRatio = false, extent = {{-120, -120}, {140, 80}}), graphics={  Text(extent={{
-              -22,10},{24,-12}},                                                                                                    lineColor=  {0, 0, 255}, textString=  "SEXS"), Rectangle(extent={{
-              -60,60},{60,-60}},                                                                                                    lineColor=  {0, 0, 255}), Text(extent={{
-              -56,38},{-26,20}},                                                                                                    lineColor=  {0, 0, 255}, textString=  "VOTHSG "), Text(extent={{
-              46,18},{68,6}},                                                                                                    lineColor=  {0, 0, 255}, textString=  "EFD"), Text(extent={{
-              -68,-4},{-22,-14}},                                                                                                    lineColor=  {0, 0, 255}, textString=  " VUEL "), Text(extent={{
-              -70,16},{-22,6}},                                                                                                    lineColor=  {0, 0, 255}, textString=  " VOEL"), Text(extent={{
-              -56,-40},{-40,-62}},                                                                                                    lineColor=  {0, 0, 255}, textString=  "Efd0"), Text(extent={{
-              -56,54},{-28,44}},                                                                                                    lineColor=  {0, 0, 255}, textString=  "ECOMP")}),
+              -22,10},{24,-12}},                                                                                                    lineColor = {0, 0, 255}, textString = "SEXS"), Rectangle(extent={{
+              -60,60},{60,-60}},                                                                                                    lineColor = {0, 0, 255}), Text(extent={{
+              -56,38},{-26,20}},                                                                                                    lineColor = {0, 0, 255}, textString = "VOTHSG "), Text(extent={{
+              46,18},{68,6}},                                                                                                    lineColor = {0, 0, 255}, textString = "EFD"), Text(extent={{
+              -68,-4},{-22,-14}},                                                                                                    lineColor = {0, 0, 255}, textString = " VUEL "), Text(extent={{
+              -70,16},{-22,6}},                                                                                                    lineColor = {0, 0, 255}, textString = " VOEL"), Text(extent={{
+              -56,-40},{-40,-62}},                                                                                                    lineColor = {0, 0, 255}, textString = "Efd0"), Text(extent={{
+              -56,54},{-28,44}},                                                                                                    lineColor = {0, 0, 255}, textString = "ECOMP")}),
     Documentation(info="<html>
 <table cellspacing=\"1\" cellpadding=\"1\" border=\"1\">
 <tr>

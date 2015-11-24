@@ -1,31 +1,30 @@
 within iPSL.Examples.Compliance.Electrical.Machines.PSAT;
-model InductiveMotorI_SIMBOpenline_Test
-  "Order 1 inductive machine from PSAT, line opened at 2 s for 1 s"
+model InductionMachine_III
 
-   iPSL.Electrical.Machines.PSAT.InductionMachine.MotorTypeI        motorTypeI(
+   iPSL.Electrical.Machines.PSAT.InductionMachine.MotorTypeIII        motorTypeI(
     Sup=0,
     V_0=1.0336,
     angle_0=-0.02173,
-    P_0=0.5,
-    Q_0=0.286) annotation (Placement(transformation(
+    P_0=0.251061717038311,
+    Q_0=0.226568616630697) annotation (Placement(transformation(
         extent={{-27,-22},{27,22}},
         rotation=180,
         origin={65,-16})));
    iPSL.Electrical.Branches.PwLine pwLine1(
     G=0,
-    B=0,
     R=0.01,
-    X=0.1) annotation (Placement(transformation(
+    X=0.1,
+    B=1e-3) annotation (Placement(transformation(
         extent={{-25,-16},{25,16}},
         rotation=180,
         origin={-9,-38})));
    iPSL.Electrical.Branches.PwLine2Openings pwLine2(
     G=0,
-    B=0,
     R=0.01,
     X=0.1,
     t1=2,
-    t2=3) annotation (Placement(transformation(
+    t2=3,
+    B=1e-3) annotation (Placement(transformation(
         extent={{-25,-16},{25,16}},
         rotation=180,
         origin={-9,4})));
@@ -34,7 +33,7 @@ model InductiveMotorI_SIMBOpenline_Test
         extent={{-16.5,-13.5},{16.5,13.5}},
         rotation=0,
         origin={-86.5,-15.5})));
-  inner iPSL.Electrical.SystemBase  SysData
+  inner iPSL.Electrical.SystemBase  SysData(fn=60)
     annotation (Placement(transformation(extent={{40,60},{64,80}})));
 equation
   connect(infiniteBus.p, pwLine2.n) annotation (Line(
@@ -50,11 +49,11 @@ equation
       color={0,0,255},
       smooth=Smooth.None));
   connect(pwLine1.p, motorTypeI.p) annotation (Line(
-      points={{8.5,-38},{26,-38},{26,-16},{42.32,-16}},
+      points={{8.5,-38},{30,-38},{30,-16},{42.32,-16}},
       color={0,0,255},
       smooth=Smooth.None));
-  annotation (Diagram(coordinateSystem(preserveAspectRatio=true, extent={{-100,
-            -100},{100,100}}),      graphics), Documentation(info="<html>
+  annotation (Diagram(coordinateSystem(preserveAspectRatio=true, extent={{
+            -100,-100},{100,100}}), graphics), Documentation(info="<html>
 <p><span style=\"font-family: MS Shell Dlg 2;\">&LT;iPSL: iTesla Power System Library&GT;</span></p>
 <p><span style=\"font-family: MS Shell Dlg 2;\">Copyright 2015 RTE (France), AIA (Spain), KTH (Sweden) and DTU (Denmark)</span></p>
 <ul>
@@ -69,4 +68,4 @@ equation
 <p><span style=\"font-family: MS Shell Dlg 2;\">The iPSL is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU Lesser General Public License for more details.</span></p>
 <p><span style=\"font-family: MS Shell Dlg 2;\">You should have received a copy of the GNU Lesser General Public License along with the iPSL. If not, see &LT;http://www.gnu.org/licenses/&GT;.</span></p>
 </html>"));
-end InductiveMotorI_SIMBOpenline_Test;
+end InductionMachine_III;

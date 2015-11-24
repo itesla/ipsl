@@ -301,7 +301,7 @@ equation
               -170,60},{-160,54}},                                                                                                    lineColor=  {255, 0, 0}, textString=  "V"), Text(extent={{
               -160,56},{-166,54}},                                                                                                    lineColor=  {255, 0, 0}, textString=  "F")}),                                                                                                    Icon(coordinateSystem(preserveAspectRatio=false,   extent={{-160,
             -80},{160,80}}),                                                                                                    graphics={  Rectangle(extent={{
-              -160,80},{160,-80}},                                                                                                    lineColor=  {0, 0, 255}), Text(extent={{
+              -160,80},{160,-80}},                                                                                                    lineColor = {0, 0, 255}), Text(extent={{
               -150,64},{-128,54}},                                                                                                    lineColor=
               {0,0,255},
           textString="EFD0"),                                                                                                    Text(extent={{
@@ -314,7 +314,7 @@ equation
               -154,-36},{-122,-46}},                                                                                                    lineColor=
               {0,0,255},
           textString="VUEL"),                                                                                                    Text(extent={{
-              128,8},{158,-8}},                                                                                                    lineColor=  {0, 0, 255}, textString=  "EFD"), Text(extent={{
+              128,8},{158,-8}},                                                                                                    lineColor = {0, 0, 255}, textString = "EFD"), Text(extent={{
               -52,32},{52,-30}},                                                                                                    lineColor=
               {0,0,255},
           textString="EXAC2"),                                                                                                    Text(extent={{

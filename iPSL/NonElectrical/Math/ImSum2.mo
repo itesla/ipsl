@@ -10,7 +10,7 @@ class ImSum2 "Sum of Reals.
   parameter Real a2 "Entry 2 gain";
 equation
   n1 = p1 * a1 + p2 * a2 + a0;
-  annotation(Icon(graphics={  Rectangle(extent=  {{-40, 40}, {40, -40}}, lineColor=  {0, 0, 255}), Text(extent=  {{-10, 16}, {10, -14}}, lineColor=  {0, 0, 255}, textString=  "+", textStyle=  {TextStyle.Bold})}), Diagram(graphics),
+  annotation(Icon(graphics={  Rectangle(extent = {{-40, 40}, {40, -40}}, lineColor = {0, 0, 255}), Text(extent = {{-10, 16}, {10, -14}}, lineColor = {0, 0, 255}, textString = "+", textStyle = {TextStyle.Bold})}), Diagram(graphics),
     Documentation(info="<html>
 <p><br><span style=\"font-family: MS Shell Dlg 2;\">&LT;iPSL: iTesla Power System Library&GT;</span></p>
 <p><span style=\"font-family: MS Shell Dlg 2;\">Copyright 2015 RTE (France), AIA (Spain), KTH (Sweden) and DTU (Denmark)</span></p>

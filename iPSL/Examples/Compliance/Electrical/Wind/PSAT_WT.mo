@@ -1,5 +1,5 @@
 within iPSL.Examples.Compliance.Electrical.Wind;
-model PSAT_WT_Test
+model PSAT_WT
 
   iPSL.Electrical.Wind.PSAT.PSAT_Type_3.PSAT_WT dfig_Turbine1(
     V_b=1,
@@ -58,4 +58,4 @@ equation
 <p><span style=\"font-family: MS Shell Dlg 2;\">The iPSL is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU Lesser General Public License for more details.</span></p>
 <p><span style=\"font-family: MS Shell Dlg 2;\">You should have received a copy of the GNU Lesser General Public License along with the iPSL. If not, see &LT;http://www.gnu.org/licenses/&GT;.</span></p>
 </html>"));
-end PSAT_WT_Test;
+end PSAT_WT;

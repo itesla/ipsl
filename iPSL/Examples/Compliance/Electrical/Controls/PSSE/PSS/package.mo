@@ -2,9 +2,15 @@ within iPSL.Examples.Compliance.Electrical.Controls.PSSE;
 package PSS 
 
 
-  annotation(Icon(graphics={  Rectangle(extent = {{-40, 40}, {40, -40}}, lineColor = {0, 0, 255}), Text(extent = {{-32, 14}, {32, -10}}, lineColor = {0, 0, 255}, textStyle = {TextStyle.Bold}, textString = "|x|"), Text(extent = {{-58, 4}, {-46, -4}}, lineColor = {255, 255, 255}, textString = "p1")}), Diagram(graphics),
-    Documentation(info="<html>
-<p><br><span style=\"font-family: MS Shell Dlg 2;\">&LT;iPSL: iTesla Power System Library&GT;</span></p>
+
+
+
+
+
+
+
+annotation (Documentation(info="<html>
+<p><span style=\"font-family: MS Shell Dlg 2;\">&LT;iPSL: iTesla Power System Library&GT;</span></p>
 <p><span style=\"font-family: MS Shell Dlg 2;\">Copyright 2015 RTE (France), AIA (Spain), KTH (Sweden) and DTU (Denmark)</span></p>
 <ul>
 <li><span style=\"font-family: MS Shell Dlg 2;\">RTE: http://www.rte-france.com/ </span></li>

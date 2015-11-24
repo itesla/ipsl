@@ -1,5 +1,5 @@
 within iPSL.Examples.Compliance.Electrical.Wind;
-model TestforWTv07_CDV_wApp "Developed by DTU"
+model DTU_WT "Developed by DTU"
 
   iPSL.NonElectrical.Math.ImSetPoint imSetPoint1(V=0.9)
     annotation (Placement(transformation(extent={{-106,-44},{-86,-24}})));
@@ -56,4 +56,4 @@ equation
 <p><span style=\"font-family: MS Shell Dlg 2;\">The iPSL is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU Lesser General Public License for more details.</span></p>
 <p><span style=\"font-family: MS Shell Dlg 2;\">You should have received a copy of the GNU Lesser General Public License along with the iPSL. If not, see &LT;http://www.gnu.org/licenses/&GT;.</span></p>
 </html>"));
-end TestforWTv07_CDV_wApp;
+end DTU_WT;

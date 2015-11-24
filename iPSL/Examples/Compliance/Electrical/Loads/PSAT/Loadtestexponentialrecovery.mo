@@ -85,8 +85,8 @@ equation
           -6.803},{38.6557,-6.803},{38.6557,-0.1282},{-38.6557,-0.1282},{-38.6557,8.9312},
           {-35.6557,8.9312}},                                                                                                    color = {0, 0, 127}));
   connect(add31.y, order3_Inputs_Outputs1.vf) annotation(Line(visible = true, origin = {-28.1135, -5.371}, points={{-5.8865,
-          19.3539},{-2.8865,19.3539},{-2.8865,-9.629},{-3.8826,-9.629},{
-          -3.8826,-10.3803},{21.4248,-10.3803}},                                                                                  color = {0, 0, 127}));
+          19.3539},{-2.8865,19.3539},{-2.8865,-9.629},{-3.8826,-9.629},{-3.8826,
+          -10.3803},{21.4248,-10.3803}},                                                                                          color = {0, 0, 127}));
   connect(add32.y, order3_Inputs_Outputs1.pm) annotation(Line(visible = true, origin = {-28.216, -45.5845}, points={{-5.784,
           -11.4176},{-2.784,-11.4176},{-2.784,-9.4155},{-4.0877,-9.4155},{-4.0877,19.8332},
           {21.5273,19.8332}},                                                                                                    color = {0, 0, 127}));
@@ -106,8 +106,8 @@ equation
           -10.9141,-2.41516},{1.638,-2.41516},{1.638,2.6151},{7.638,2.6151}}));
   connect(pwLine1.n, pwLine2.n) annotation(Line(visible = true, origin = {46.8634, -25.6714}, points = {{-0.0, -10.0}, {-0.0, 10.0}}));
   connect(pwLine2.p, pwLine1.p) annotation(Line(visible = true, origin = {32.8634, -25.6714}, points = {{0.0, 10.0}, {0.0, -10.0}}));
-  annotation(Diagram(coordinateSystem(extent = {{-148.5, -105.0}, {148.5, 105.0}}, preserveAspectRatio = true, initialScale = 0.1, grid = {5, 5}), graphics={  Text(visible=  true, origin=  {39.8634, 3.4703},
-            fillPattern=                                                                                                    FillPattern.Solid, extent=  {{-35.0, -5.8583}, {35.0, 5.8583}}, textString=  "SystemSbase=100 MVA", fontName=  "Arial")}),
+  annotation(Diagram(coordinateSystem(extent = {{-148.5, -105.0}, {148.5, 105.0}}, preserveAspectRatio = true, initialScale = 0.1, grid = {5, 5}), graphics={  Text(visible = true, origin = {39.8634, 3.4703},
+            fillPattern =                                                                                                   FillPattern.Solid, extent = {{-35.0, -5.8583}, {35.0, 5.8583}}, textString = "SystemSbase=100 MVA", fontName = "Arial")}),
       Documentation(info="<html>
 <p><span style=\"font-family: MS Shell Dlg 2;\">&LT;iPSL: iTesla Power System Library&GT;</span></p>
 <p><span style=\"font-family: MS Shell Dlg 2;\">Copyright 2015 RTE (France), AIA (Spain), KTH (Sweden) and DTU (Denmark)</span></p>

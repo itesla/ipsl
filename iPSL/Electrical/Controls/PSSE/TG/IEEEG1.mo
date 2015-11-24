@@ -185,7 +185,7 @@ equation
       smooth=Smooth.None));
   annotation(Diagram(coordinateSystem(extent={{-140,-80},{160,80}},        preserveAspectRatio=false)),            Icon(coordinateSystem(extent={{-140,
             -80},{160,80}},                                                                                                    preserveAspectRatio=false),   graphics={  Rectangle(extent={{
-              -140,80},{160,-80}},                                                                                                    lineColor=  {0, 0, 255}), Text(extent={{
+              -140,80},{160,-80}},                                                                                                    lineColor = {0, 0, 255}), Text(extent={{
               -122,18},{-68,-18}},                                                                                                    lineColor=
               {0,0,255},
             fillPattern=FillPattern.Solid,
@@ -198,8 +198,8 @@ equation
               {0,0,255},
             fillPattern=FillPattern.Solid,
           textString="PMECH_LP"),                                                                                                    Text(extent={{
-              -68,40},{88,-46}},                                                                                                    lineColor=  {0, 0, 255},
-            fillPattern=                                                                                                    FillPattern.Solid, textString=  "IEEEG1")}),
+              -68,40},{88,-46}},                                                                                                    lineColor = {0, 0, 255},
+            fillPattern =                                                                                                   FillPattern.Solid, textString = "IEEEG1")}),
     Documentation(info="<html>
 <table cellspacing=\"1\" cellpadding=\"1\" border=\"1\">
 <tr>

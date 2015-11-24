@@ -25,7 +25,7 @@ model Group1 "Machine configuration of synchronous machine with regulators: GENR
     S10=0.1089,
     S12=0.378,
     S_b=1000)
-    annotation (Placement(transformation(extent={{-7,-11},{39,35}})));
+    annotation (Placement(transformation(extent={{-6,-29},{48,40}})));
   Electrical.Controls.PSSE.TG.IEESGO iEESGO(
     T_1=0.01 "controller lag (s)",
     T_2=0 "controller lead compensation (s)",
@@ -41,9 +41,9 @@ model Group1 "Machine configuration of synchronous machine with regulators: GENR
     P_MIN=0 "lower power limit")
       annotation (Placement(
         transformation(
-        extent={{-33,-27.5},{33,27.5}},
+        extent={{-20.5,-14.5},{20.5,14.5}},
         rotation=0,
-        origin={-56,30.5})));
+        origin={-47.5,22.5})));
   Electrical.Controls.PSSE.ES.IEEET2.IEEET2 iEEET2(
     V_0= 1,
     T_R=0 "Voltage input time constant (s)",
@@ -62,9 +62,9 @@ model Group1 "Machine configuration of synchronous machine with regulators: GENR
     S_EE_2=0.2020 "Saturation at E2")
       annotation (
       Placement(transformation(
-        extent={{-28.5,-20},{28.5,20}},
+        extent={{-22.5,-15},{22.5,15}},
         rotation=0,
-        origin={-51.5,0})));
+        origin={-48.5,-12})));
   Electrical.Controls.PSSE.PSS.STAB2A.STAB2A sTAB2A(
     K_2=1 "fraction ",
     T_2=2 "controller lead compensation (s)",
@@ -74,62 +74,60 @@ model Group1 "Machine configuration of synchronous machine with regulators: GENR
     K_5=1,
     T_5=0.01,
     H_LIM=0.03)
-    annotation (Placement(transformation(extent={{-141,24},{-99,39}})));
+    annotation (Placement(transformation(extent={{-152,-14},{-110,1}})));
 
   Modelica.Blocks.Sources.Constant cte(k=0)
-    annotation (Placement(transformation(extent={{-120,-14},{-110,-4}})));
+    annotation (Placement(transformation(extent={{-121,-42},{-111,-32}})));
   iPSL.Connectors.PwPin pwPin
     annotation (Placement(transformation(extent={{100,-10},{120,10}})));
 
 equation
   connect(cte.y, iEEET2.VOEL) annotation (Line(
-      points={{-109.5,-9},{-104,-9},{-104,0},{-79.05,0}},
+      points={{-110.5,-37},{-104,-37},{-104,-12},{-70.25,-12}},
       color={0,0,127},
       smooth=Smooth.None));
   connect(cte.y, iEEET2.VUEL) annotation (Line(
-      points={{-109.5,-9},{-104,-9},{-104,-8},{-79.05,-8}},
-      color={0,0,127},
-      smooth=Smooth.None));
-  connect(iEESGO.PMECH, gENROU.PMECH) annotation (Line(
-      points={{-17.5,30.5},{-26,30.5},{-26,23.5},{-6.54,23.5}},
-      color={0,0,127},
-      smooth=Smooth.None));
-
-  connect(iEEET2.EFD, gENROU.EFD) annotation (Line(
-      points={{-20.8625,0},{-27,0},{-27,0.5},{-6.54,0.5}},
+      points={{-110.5,-37},{-104,-37},{-104,-18},{-70.25,-18}},
       color={0,0,127},
       smooth=Smooth.None));
 
   connect(gENROU.EFD0, iEEET2.EFD0) annotation (Line(
-      points={{40.84,-4.1},{54,-4.1},{54,-53},{-86,-53},{-86,-16},{-79.05,-16}},
+      points={{50.16,-18.65},{54,-18.65},{54,-54},{-86,-54},{-86,-24},{-70.25,
+          -24}},
       color={0,0,127},
       smooth=Smooth.None));
   connect(gENROU.ETERM, iEEET2.ECOMP) annotation (Line(
-      points={{40.84,23.5},{66,23.5},{66,57},{-86,57},{-86,16},{-79.05,16}},
+      points={{50.16,22.75},{63,22.75},{63,56},{-89,56},{-89,0},{-70.25,0}},
       color={0,0,127},
       smooth=Smooth.None));
   connect(gENROU.PELEC, sTAB2A.PELEC) annotation (Line(
-      points={{40.84,0.5},{60,0.5},{60,-11},{73,-11},{73,-59},{-146,-59},{-146,
-          31.5},{-140.427,31.5}},
+      points={{50.16,-11.75},{59,-11.75},{59,-12},{71,-12},{71,-62},{-161,-62},
+          {-161,-6.5},{-151.427,-6.5}},
       color={0,0,127},
       smooth=Smooth.None));
   connect(gENROU.SPEED, iEESGO.SPEED) annotation (Line(
-      points={{40.84,32.7},{56,32.7},{56,49},{-83,49},{-83,44.25},{-87.9,44.25}},
+      points={{50.16,36.55},{56,36.55},{56,48},{-83,48},{-83,29.75},{-67.3167,
+          29.75}},
       color={0,0,127},
       smooth=Smooth.None));
 
   connect(sTAB2A.VOTHSG, iEEET2.VOTHSG) annotation (Line(
-      points={{-97.0909,31.5},{-93,31.5},{-93,8},{-79.05,8}},
+      points={{-108.091,-6.5},{-93,-6.5},{-93,-6},{-70.25,-6}},
       color={0,0,127},
       smooth=Smooth.None));
   connect(gENROU.PMECH0, iEESGO.PMECH0) annotation (Line(
-      points={{40.84,5.1},{63,5.1},{63,-57},{-90,-57},{-90,16.75},{-87.9,16.75}},
+      points={{50.16,-4.85},{63,-4.85},{63,-58},{-95,-58},{-95,15.25},{-67.3167,
+          15.25}},
       color={0,0,127},
       smooth=Smooth.None));
   connect(gENROU.p, pwPin) annotation (Line(
-      points={{41.3,12},{76.475,12},{76.475,0},{110,0}},
+      points={{50.7,5.5},{76.475,5.5},{76.475,0},{110,0}},
       color={0,0,255},
       smooth=Smooth.None));
+  connect(iEESGO.PMECH, gENROU.PMECH) annotation (Line(points={{-23.5833,22.5},
+          {-23.5833,22.75},{-5.46,22.75}}, color={0,0,127}));
+  connect(iEEET2.EFD, gENROU.EFD) annotation (Line(points={{-24.3125,-12},{
+          -15.175,-12},{-15.175,-11.75},{-5.46,-11.75}}, color={0,0,127}));
     annotation(Diagram(coordinateSystem(extent={{-100,-100},{100,100}},      preserveAspectRatio=false, initialScale = 0.1, grid = {1, 1})),
                                                                                           Icon(coordinateSystem(extent={{-100,
             -100},{100,100}},                                                                                                    preserveAspectRatio=true,  initialScale = 0.1, grid = {1, 1}),

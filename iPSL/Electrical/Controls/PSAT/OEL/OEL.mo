@@ -47,13 +47,13 @@ equation
   connect(vref0, imSum2_2.p2) annotation(Line(points = {{-80, -14}, {44.9, -14}, {44.9, 44}}, color = {0, 0, 127}, smooth = Smooth.None));
   connect(imSum2_2.n1, vref) annotation(Line(points = {{54.9, 46}, {58, 46}, {58, 38}, {70, 38}}, color = {0, 0, 127}, smooth = Smooth.None));
   annotation(Diagram(coordinateSystem(preserveAspectRatio=false,   extent={{-100,
-            -100},{100,100}})),                                                                                     Icon(coordinateSystem(preserveAspectRatio = false, extent = {{-100, -100}, {100, 100}}), graphics={  Rectangle(extent=  {{-60, 92}, {68, -48}}, lineColor=  {0, 0, 255}), Text(extent=  {{-68, 100}, {-30, 64}}, lineColor=  {0, 0, 255},
-            fillPattern=                                                                                                    FillPattern.Solid, textString=  "v"), Text(extent=  {{-64, 64}, {-30, 30}}, lineColor=  {0, 0, 255},
-            fillPattern=                                                                                                    FillPattern.Solid, textString=  "p"), Text(extent=  {{-62, 24}, {-34, -10}}, lineColor=  {0, 0, 255},
-            fillPattern=                                                                                                    FillPattern.Solid, textString=  "q"), Text(extent=  {{-52, -16}, {-16, -48}}, lineColor=  {0, 0, 255},
-            fillPattern=                                                                                                    FillPattern.Solid, textString=  "vref0"), Text(extent=  {{26, 46}, {60, 12}}, lineColor=  {0, 0, 255},
-            fillPattern=                                                                                                    FillPattern.Solid, textString=  "vref"), Text(extent=  {{-18, 102}, {44, 24}}, lineColor=  {0, 0, 255},
-            fillPattern=                                                                                                    FillPattern.Solid, textString=  "OXL")}),
+            -100},{100,100}})),                                                                                     Icon(coordinateSystem(preserveAspectRatio = false, extent = {{-100, -100}, {100, 100}}), graphics={  Rectangle(extent = {{-60, 92}, {68, -48}}, lineColor = {0, 0, 255}), Text(extent = {{-68, 100}, {-30, 64}}, lineColor = {0, 0, 255},
+            fillPattern =                                                                                                   FillPattern.Solid, textString = "v"), Text(extent = {{-64, 64}, {-30, 30}}, lineColor = {0, 0, 255},
+            fillPattern =                                                                                                   FillPattern.Solid, textString = "p"), Text(extent = {{-62, 24}, {-34, -10}}, lineColor = {0, 0, 255},
+            fillPattern =                                                                                                   FillPattern.Solid, textString = "q"), Text(extent = {{-52, -16}, {-16, -48}}, lineColor = {0, 0, 255},
+            fillPattern =                                                                                                   FillPattern.Solid, textString = "vref0"), Text(extent = {{26, 46}, {60, 12}}, lineColor = {0, 0, 255},
+            fillPattern =                                                                                                   FillPattern.Solid, textString = "vref"), Text(extent = {{-18, 102}, {44, 24}}, lineColor = {0, 0, 255},
+            fillPattern =                                                                                                   FillPattern.Solid, textString = "OXL")}),
     Documentation(info="<html>
 <table cellspacing=\"1\" cellpadding=\"1\" border=\"1\">
 <tr>

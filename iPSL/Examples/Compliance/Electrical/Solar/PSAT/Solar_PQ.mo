@@ -1,5 +1,5 @@
 within iPSL.Examples.Compliance.Electrical.Solar.PSAT;
-model SolarPQtest
+model Solar_PQ
 
    iPSL.Electrical.Solar.PSAT.ConstantPQPV.PQ1 PQ11(
     P_0=0.4,
@@ -89,8 +89,8 @@ equation
   connect(bus1.p, order31.p) annotation(Line(visible = true, origin = {-91.3614, 9.8998}, points={{3.8193,
           0.1002},{3.8193,0.14984},{-7.6386,0.14984}}));
   connect(PQ11.p, bus3.p) annotation(Line(visible = true, origin = {17.4388, 13.7927}, points = {{6.5612, -3.7927}, {6.2194, -1.6893}, {-12.4388, -1.6894}}));
-  connect(order31.vf0, order31.vf) annotation (Line(points={{-118,21},{-118,
-          25},{-125,25},{-125,15},{-120,15}}, color={0,0,127}));
+  connect(order31.vf0, order31.vf) annotation (Line(points={{-118,21},{-118,25},
+          {-125,25},{-125,15},{-120,15}},     color={0,0,127}));
   connect(order31.pm, order31.pm0) annotation (Line(points={{-120,5},{-125,
           5},{-125,-5},{-118,-5},{-118,-1}}, color={0,0,127}));
   annotation(Diagram(coordinateSystem(extent={{-148.5,-105},{148.5,105}},          preserveAspectRatio=false,  initialScale = 0.1, grid = {5, 5})),
@@ -109,4 +109,4 @@ equation
 <p><span style=\"font-family: MS Shell Dlg 2;\">The iPSL is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU Lesser General Public License for more details.</span></p>
 <p><span style=\"font-family: MS Shell Dlg 2;\">You should have received a copy of the GNU Lesser General Public License along with the iPSL. If not, see &LT;http://www.gnu.org/licenses/&GT;.</span></p>
 </html>"));
-end SolarPQtest;
+end Solar_PQ;

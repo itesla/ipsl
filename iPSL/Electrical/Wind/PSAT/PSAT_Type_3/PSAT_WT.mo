@@ -106,8 +106,8 @@ equation
           -87.0682,2.7238},{27.3519,2.7238},{27.3519,-2.72393},{32.3644,
           -2.72393}},                                                                                                    color = {0, 0, 127}));
   connect(pitchControl1.omega_m, mechaBlk1.omega_m) annotation(Line(visible = true, origin = {25.5125, -22.0292}, points = {{-80.5, 7.0292}, {-85.5125, 7.0292}, {-85.5125, -11.0437}, {57.5, -11.0437}, {57.5, 2.0292}, {52.8744, 2.0292}}, color = {0, 0, 127}));
-  annotation(Icon(coordinateSystem(extent = {{-100.0, -100.0}, {100.0, 100.0}}, preserveAspectRatio = true, initialScale = 0.1, grid = {10, 10}), graphics={  Text(visible=  true,
-            fillPattern=                                                                                                    FillPattern.Solid, extent=  {{-55.0, -28.0231}, {55.0, 28.0231}}, textString=  "Dfig", fontName=  "Arial"), Ellipse(visible=  true, fillColor=  {255, 255, 255}, extent=  {{-100.0, -100.0}, {100.0, 100.0}})}), Diagram(coordinateSystem(extent = {{-148.5, -105.0}, {148.5, 105.0}}, preserveAspectRatio = true, initialScale = 0.1, grid = {5, 5})),
+  annotation(Icon(coordinateSystem(extent = {{-100.0, -100.0}, {100.0, 100.0}}, preserveAspectRatio = true, initialScale = 0.1, grid = {10, 10}), graphics={  Text(visible = true,
+            fillPattern =                                                                                                   FillPattern.Solid, extent = {{-55.0, -28.0231}, {55.0, 28.0231}}, textString = "Dfig", fontName = "Arial"), Ellipse(visible = true, fillColor = {255, 255, 255}, extent = {{-100.0, -100.0}, {100.0, 100.0}})}), Diagram(coordinateSystem(extent = {{-148.5, -105.0}, {148.5, 105.0}}, preserveAspectRatio = true, initialScale = 0.1, grid = {5, 5})),
     Documentation(info="<html>
 <table cellspacing=\"1\" cellpadding=\"1\" border=\"1\"><tr>
 <td><p>Reference</p></td>
