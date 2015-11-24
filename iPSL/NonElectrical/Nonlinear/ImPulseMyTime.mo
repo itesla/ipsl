@@ -1,5 +1,5 @@
 within iPSL.NonElectrical.Nonlinear;
-class ImPulseMyTime "Generate pulse signal using input as time.
+model ImPulseMyTime "Generate pulse signal using input as time.
               2014/03/10"
 
   Modelica.Blocks.Interfaces.RealInput p1 annotation(Placement(transformation(extent = {{-61, 10}, {-41, 30}}), iconTransformation(extent = {{-61, 10}, {-41, 30}})));
@@ -17,7 +17,7 @@ equation
   else
     n1 = 0;
   end if;
-  annotation(Icon(graphics={  Rectangle(extent=  {{-40, 40}, {40, -40}}, lineColor=  {0, 0, 255}), Text(extent=  {{-30, 10}, {30, -12}}, lineColor=  {0, 0, 255}, textStyle=  {TextStyle.Bold}, textString=  "T"), Line(points=  {{-24, -6}, {-12, -6}, {-12, 12}, {12, 12}, {12, -6}, {24, -6}}, color=  {0, 0, 255}, smooth=  Smooth.None)}), Diagram(graphics),
+  annotation(Icon(graphics={  Rectangle(extent = {{-40, 40}, {40, -40}}, lineColor = {0, 0, 255}), Text(extent = {{-30, 10}, {30, -12}}, lineColor = {0, 0, 255}, textStyle = {TextStyle.Bold}, textString = "T"), Line(points = {{-24, -6}, {-12, -6}, {-12, 12}, {12, 12}, {12, -6}, {24, -6}}, color = {0, 0, 255}, smooth = Smooth.None)}), Diagram(graphics),
     Documentation(info="<html>
 <p><br><span style=\"font-family: MS Shell Dlg 2;\">&LT;iPSL: iTesla Power System Library&GT;</span></p>
 <p><span style=\"font-family: MS Shell Dlg 2;\">Copyright 2015 RTE (France), AIA (Spain), KTH (Sweden) and DTU (Denmark)</span></p>

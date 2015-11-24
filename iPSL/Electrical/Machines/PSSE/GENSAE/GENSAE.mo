@@ -14,7 +14,7 @@ model GENSAE "SALIENT POLE GENERATOR MODEL (EXPONENTIAL SATURATION)"
   import Modelica.ComplexMath.conj;
   import Modelica.ComplexMath.fromPolar;
 
-  //Extending machine base class
+  //Extending machine base
 
   extends BaseClasses.baseMachine(
   w(start=0),
@@ -119,7 +119,7 @@ equation
              Diagram(coordinateSystem(preserveAspectRatio=false,  extent={{-100,
             -100},{100,100}})),                                                                                     Icon(coordinateSystem(preserveAspectRatio=false,  extent={{-100,
             -100},{100,100}}),                                                                                                    graphics={  Text(extent={{
-              -58,62},{52,-64}},                                                                                                    lineColor=  {0, 0, 255}, textString=  "GENSAL"),
+              -58,62},{52,-64}},                                                                                                    lineColor = {0, 0, 255}, textString = "GENSAL"),
                                                                                           Text(extent={{
               -86,58},{-50,42}},                                                                                                    lineColor=
               {0,0,255},

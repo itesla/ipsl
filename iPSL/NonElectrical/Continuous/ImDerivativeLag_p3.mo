@@ -1,5 +1,5 @@
 within iPSL.NonElectrical.Continuous;
-class ImDerivativeLag_p3 "Approximated derivative block"
+model ImDerivativeLag_p3 "Approximated derivative block"
   parameter Real Pelec0 "Input start val";
   Modelica.Blocks.Interfaces.RealInput p1(start = Pelec0) annotation(Placement(transformation(extent = {{-103, -12}, {-83, 8}}), iconTransformation(extent = {{-53, -8}, {-44, 6}})));
   Modelica.Blocks.Interfaces.RealOutput n2 annotation(Placement(transformation(extent = {{139, -12}, {159, 8}}), iconTransformation(extent = {{35, -6}, {44, 8}})));
@@ -82,9 +82,9 @@ equation
   connect(imSimpleLag2.p1, imGain2.n1) annotation(Line(points = {{81.25, -8}, {76, -8}, {76, -1}, {72.9, -1}}, color = {0, 0, 127}, smooth = Smooth.None));
   connect(imSum2_2.n1, imGain2.p1) annotation(Line(points = {{54.9, -2}, {60, -2}, {60, -1}, {62.9, -1}}, color = {0, 0, 127}, smooth = Smooth.None));
   connect(imSum2_3.n1, n2) annotation(Line(points = {{122.9, -2}, {135.95, -2}, {135.95, -2}, {149, -2}}, color = {0, 0, 127}, smooth = Smooth.None));
-  annotation(Icon(coordinateSystem(preserveAspectRatio = false, extent = {{-100, -100}, {140, 100}}), graphics={  Rectangle(extent=  {{-40, 40}, {38, -36}}, lineColor=  {0, 0, 255}), Text(extent=  {{-12, 14}, {14, -4}}, lineColor=  {0, 0, 255}, textString=  "K2sT2"), Text(extent=  {{-20, 10}, {18, -30}}, lineColor=  {0, 0, 255}, textString=  "1 + T2s"), Line(points=  {{-14, 0}, {18, 0}}, color=  {0, 0, 255}, smooth=  Smooth.Bezier), Rectangle(extent=  {{24, 36}, {36, 24}}, lineColor=  {0, 0, 255}, fillColor=  {0, 0, 255},
-            fillPattern=                                                                                                    FillPattern.Solid), Text(extent=  {{-18, 18}, {-34, -16}}, lineColor=  {0, 0, 255}, textString=  "("), Text(extent=  {{18, 16}, {28, -16}}, lineColor=  {0, 0, 255}, textString=  ")"), Text(extent=  {{24, 20}, {30, 8}}, lineColor=  {0, 0, 255}, textStyle=  {TextStyle.Bold}, textString=  "3"), Rectangle(extent=  {{-38, 0}, {-30, -2}}, lineColor=  {0, 0, 255},
-            fillPattern=                                                                                                    FillPattern.Solid, fillColor=  {0, 0, 255})}), Diagram(coordinateSystem(preserveAspectRatio = false, extent = {{-100, -100}, {140, 100}}), graphics),
+  annotation(Icon(coordinateSystem(preserveAspectRatio = false, extent = {{-100, -100}, {140, 100}}), graphics={  Rectangle(extent = {{-40, 40}, {38, -36}}, lineColor = {0, 0, 255}), Text(extent = {{-12, 14}, {14, -4}}, lineColor = {0, 0, 255}, textString = "K2sT2"), Text(extent = {{-20, 10}, {18, -30}}, lineColor = {0, 0, 255}, textString = "1 + T2s"), Line(points = {{-14, 0}, {18, 0}}, color = {0, 0, 255}, smooth = Smooth.Bezier), Rectangle(extent = {{24, 36}, {36, 24}}, lineColor = {0, 0, 255}, fillColor = {0, 0, 255},
+            fillPattern =                                                                                                   FillPattern.Solid), Text(extent = {{-18, 18}, {-34, -16}}, lineColor = {0, 0, 255}, textString = "("), Text(extent = {{18, 16}, {28, -16}}, lineColor = {0, 0, 255}, textString = ")"), Text(extent = {{24, 20}, {30, 8}}, lineColor = {0, 0, 255}, textStyle = {TextStyle.Bold}, textString = "3"), Rectangle(extent = {{-38, 0}, {-30, -2}}, lineColor = {0, 0, 255},
+            fillPattern =                                                                                                   FillPattern.Solid, fillColor = {0, 0, 255})}), Diagram(coordinateSystem(preserveAspectRatio = false, extent = {{-100, -100}, {140, 100}}), graphics),
     Documentation(info="<html>
 <p><br><span style=\"font-family: MS Shell Dlg 2;\">&LT;iPSL: iTesla Power System Library&GT;</span></p>
 <p><span style=\"font-family: MS Shell Dlg 2;\">Copyright 2015 RTE (France), AIA (Spain), KTH (Sweden) and DTU (Denmark)</span></p>

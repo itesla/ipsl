@@ -1,5 +1,5 @@
 within iPSL.NonElectrical.Continuous;
-class ImSimpleLag_nowinduplimit "Simple Lag with limited value of the output"
+model ImSimpleLag_nowinduplimit "Simple Lag with limited value of the output"
 
   input Modelica.Blocks.Interfaces.RealInput p1 annotation(Placement(transformation(extent = {{-61, -10}, {-41, 10}}), iconTransformation(extent = {{-61, -10}, {-41, 10}})));
   output Modelica.Blocks.Interfaces.RealOutput n0 annotation(Placement(transformation(extent = {{39, -10}, {59, 10}}), iconTransformation(extent = {{39, -10}, {59, 10}})));
@@ -28,7 +28,7 @@ equation
   else
      n0 = K*p1;
   end if;
-  annotation(Icon(graphics={  Rectangle(extent=  {{-40, 40}, {40, -40}}, lineColor=  {0, 0, 255}), Text(extent=  {{-28, 14}, {-20, 0}}, lineColor=  {0, 0, 255}, textString=  "K", textStyle=  {TextStyle.Bold}), Text(extent=  {{-38, 0}, {-6, -12}}, lineColor=  {0, 0, 255}, textStyle=  {TextStyle.Bold}, textString=  "1+Ts"), Line(points=  {{-32, 0}, {-14, 0}}, color=  {0, 0, 255}, smooth=  Smooth.Bezier), Line(points=  {{-12, -20}, {0, -20}, {10, 20}, {24, 20}}, color=  {0, 0, 255}, smooth=  Smooth.None)}), Diagram(graphics),
+  annotation(Icon(graphics={  Rectangle(extent = {{-40, 40}, {40, -40}}, lineColor = {0, 0, 255}), Text(extent = {{-28, 14}, {-20, 0}}, lineColor = {0, 0, 255}, textString = "K", textStyle = {TextStyle.Bold}), Text(extent = {{-38, 0}, {-6, -12}}, lineColor = {0, 0, 255}, textStyle = {TextStyle.Bold}, textString = "1+Ts"), Line(points = {{-32, 0}, {-14, 0}}, color = {0, 0, 255}, smooth = Smooth.Bezier), Line(points = {{-12, -20}, {0, -20}, {10, 20}, {24, 20}}, color = {0, 0, 255}, smooth = Smooth.None)}), Diagram(graphics),
     Documentation(info="<html>
 <p><br><span style=\"font-family: MS Shell Dlg 2;\">&LT;iPSL: iTesla Power System Library&GT;</span></p>
 <p><span style=\"font-family: MS Shell Dlg 2;\">Copyright 2015 RTE (France), AIA (Spain), KTH (Sweden) and DTU (Denmark)</span></p>

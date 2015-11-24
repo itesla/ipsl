@@ -1,5 +1,5 @@
 within iPSL.Electrical.Wind.PSSE.WT3G;
-class ConstantLoad
+model ConstantLoad
 
   iPSL.Connectors.PwPin p(
     vr(start=vr0),
@@ -63,7 +63,7 @@ equation
             -100,-100},{100,100}}),
                      graphics), Icon(coordinateSystem(preserveAspectRatio=
             false, extent={{-100,-100},{100,100}}),
-                                     graphics={  Rectangle(extent=  {{-60, 60}, {40, -40}}, lineColor=  {0, 0, 255}), Rectangle(extent=  {{-40, 40}, {20, -20}}, lineColor=  {0, 0, 255}), Line(points=  {{-40, 40}, {20, -20}}, color=  {0, 0, 255}, smooth=  Smooth.None), Line(points=  {{-40, -20}, {20, 40}}, color=  {0, 0, 255}, smooth=  Smooth.None)}),
+                                     graphics={  Rectangle(extent = {{-60, 60}, {40, -40}}, lineColor = {0, 0, 255}), Rectangle(extent = {{-40, 40}, {20, -20}}, lineColor = {0, 0, 255}), Line(points = {{-40, 40}, {20, -20}}, color = {0, 0, 255}, smooth = Smooth.None), Line(points = {{-40, -20}, {20, 40}}, color = {0, 0, 255}, smooth = Smooth.None)}),
     Documentation(info="<html>
 <p><br><span style=\"font-family: MS Shell Dlg 2;\">&LT;iPSL: iTesla Power System Library&GT;</span></p>
 <p><span style=\"font-family: MS Shell Dlg 2;\">Copyright 2015 RTE (France), AIA (Spain), KTH (Sweden) and DTU (Denmark)</span></p>

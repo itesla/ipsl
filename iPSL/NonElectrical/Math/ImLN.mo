@@ -1,5 +1,5 @@
 within iPSL.NonElectrical.Math;
-class ImLN "Neperian Logarithm.
+model ImLN "Neperian Logarithm.
               2014/03/10"
   parameter Real a0;
   parameter Real a1;
@@ -7,7 +7,7 @@ class ImLN "Neperian Logarithm.
   Modelica.Blocks.Interfaces.RealOutput n1 annotation(Placement(transformation(extent = {{39, -10}, {59, 10}}), iconTransformation(extent = {{39, -10}, {59, 10}})));
 equation
   n1 = a1 * log(abs(p1)) + a0;
-  annotation(Diagram(graphics), Icon(graphics={  Rectangle(extent=  {{-40, 40}, {40, -40}}, lineColor=  {0, 0, 255}), Text(extent=  {{-12, 10}, {14, -8}}, lineColor=  {0, 0, 255}, textStyle=  {TextStyle.Bold}, textString=  "ln")}),
+  annotation(Diagram(graphics), Icon(graphics={  Rectangle(extent = {{-40, 40}, {40, -40}}, lineColor = {0, 0, 255}), Text(extent = {{-12, 10}, {14, -8}}, lineColor = {0, 0, 255}, textStyle = {TextStyle.Bold}, textString = "ln")}),
     Documentation(info="<html>
 <p><br><span style=\"font-family: MS Shell Dlg 2;\">&LT;iPSL: iTesla Power System Library&GT;</span></p>
 <p><span style=\"font-family: MS Shell Dlg 2;\">Copyright 2015 RTE (France), AIA (Spain), KTH (Sweden) and DTU (Denmark)</span></p>

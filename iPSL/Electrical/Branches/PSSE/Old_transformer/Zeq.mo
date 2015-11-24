@@ -1,5 +1,5 @@
 within iPSL.Electrical.Branches.PSSE.Old_transformer;
-class Zeq "Transformer equivalent impedance"
+model Zeq "Transformer equivalent impedance"
 
   iPSL.Connectors.PwPin p annotation (Placement(transformation(extent={{-80,-10},
             {-60,10}}), iconTransformation(extent={{-80,-10},{-60,10}})));
@@ -24,9 +24,9 @@ equation
 
   annotation(Icon(coordinateSystem(preserveAspectRatio=false,extent={{-100,-100},
             {100,100}}),
-                  graphics={  Rectangle(extent=  {{-60, 40}, {60, -42}}, lineColor=  {0, 0, 255}), Rectangle(extent={{
-              -36,8},{32,-6}},                                                                                                    lineColor=  {0, 0, 255}, fillColor=  {95, 95, 95},
-            fillPattern=                                                                                                    FillPattern.Solid)}),
+                  graphics={  Rectangle(extent = {{-60, 40}, {60, -42}}, lineColor = {0, 0, 255}), Rectangle(extent={{
+              -36,8},{32,-6}},                                                                                                    lineColor = {0, 0, 255}, fillColor = {95, 95, 95},
+            fillPattern =                                                                                                   FillPattern.Solid)}),
                                                                                           Diagram(
         coordinateSystem(preserveAspectRatio=true, extent={{-100,-100},{100,100}}),                                                                       graphics),
     Documentation(info="<html>

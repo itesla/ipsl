@@ -1,5 +1,5 @@
 within iPSL.NonElectrical.Math;
-class ImExponential "Output exponential of input.
+model ImExponential "Output exponential of input.
               2014/03/10"
 
   Modelica.Blocks.Interfaces.RealOutput n1 annotation(Placement(transformation(extent = {{39, -10}, {59, 10}}), iconTransformation(extent = {{31, -10}, {51, 10}})));
@@ -8,7 +8,7 @@ class ImExponential "Output exponential of input.
   parameter Real B "exponent gain";
 equation
   n1 = A * exp(B * p1);
-  annotation(Icon(graphics={  Rectangle(extent=  {{-40, 36}, {32, -38}}, lineColor=  {0, 0, 255}), Text(extent=  {{-38, 8}, {34, -4}}, lineColor=  {0, 0, 255}, textString=  "Ae^(Bx)")}), Diagram(graphics),
+  annotation(Icon(graphics={  Rectangle(extent = {{-40, 36}, {32, -38}}, lineColor = {0, 0, 255}), Text(extent = {{-38, 8}, {34, -4}}, lineColor = {0, 0, 255}, textString = "Ae^(Bx)")}), Diagram(graphics),
     Documentation(info="<html>
 <p><br><span style=\"font-family: MS Shell Dlg 2;\">&LT;iPSL: iTesla Power System Library&GT;</span></p>
 <p><span style=\"font-family: MS Shell Dlg 2;\">Copyright 2015 RTE (France), AIA (Spain), KTH (Sweden) and DTU (Denmark)</span></p>

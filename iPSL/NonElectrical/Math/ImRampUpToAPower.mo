@@ -1,5 +1,5 @@
 within iPSL.NonElectrical.Math;
-class ImRampUpToAPower "power of the input signal 2014/03/10"
+model ImRampUpToAPower "power of the input signal 2014/03/10"
   parameter Real A;
   Modelica.Blocks.Interfaces.RealInput p1 annotation(Placement(transformation(extent = {{-61, -10}, {-41, 10}}), iconTransformation(extent = {{-61, -10}, {-41, 10}})));
   Modelica.Blocks.Interfaces.RealOutput n1 annotation(Placement(transformation(extent = {{39, -10}, {59, 10}}), iconTransformation(extent = {{39, -10}, {59, 10}})));
@@ -9,7 +9,7 @@ equation
   else
     n1 = abs(p1) ^ A;
   end if;
-  annotation(Diagram(graphics), Icon(graphics={  Rectangle(extent=  {{-40, 40}, {40, -40}}, lineColor=  {0, 0, 255}), Text(extent=  {{-22, 14}, {22, -8}}, lineColor=  {0, 0, 255}, textString=  "(x)^A")}),
+  annotation(Diagram(graphics), Icon(graphics={  Rectangle(extent = {{-40, 40}, {40, -40}}, lineColor = {0, 0, 255}), Text(extent = {{-22, 14}, {22, -8}}, lineColor = {0, 0, 255}, textString = "(x)^A")}),
     Documentation(info="<html>
 <p><br><span style=\"font-family: MS Shell Dlg 2;\">&LT;iPSL: iTesla Power System Library&GT;</span></p>
 <p><span style=\"font-family: MS Shell Dlg 2;\">Copyright 2015 RTE (France), AIA (Spain), KTH (Sweden) and DTU (Denmark)</span></p>

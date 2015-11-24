@@ -22,7 +22,7 @@ equation
   0 = x + 1 / (2 * pi * fn) * 1 / Tf * (anglev - angle_0) - deltaw;
   P = P_0 * CoB * a ^ alpha_p * (1 + deltaw) ^ beta_p;
   Q = Q_0 * CoB * a ^ alpha_q * (1 + deltaw) ^ beta_q;
-  annotation(Icon(coordinateSystem(extent = {{-100.0, -100.0}, {100.0, 100.0}}, preserveAspectRatio = true, initialScale = 0.1, grid = {10, 10})),                                                                                                    Diagram(coordinateSystem(extent = {{-148.5, -105.0}, {148.5, 105.0}}, preserveAspectRatio = true, initialScale = 0.1, grid = {5, 5}), graphics={  Rectangle(visible=  true, origin=  {10.0, -2.5}, lineColor=  {0, 0, 128}, fillColor=  {255, 255, 255}, extent=  {{-90.0, -82.5}, {90.0, 82.5}})}),
+  annotation(Icon(coordinateSystem(extent = {{-100.0, -100.0}, {100.0, 100.0}}, preserveAspectRatio = true, initialScale = 0.1, grid = {10, 10})),                                                                                                    Diagram(coordinateSystem(extent = {{-148.5, -105.0}, {148.5, 105.0}}, preserveAspectRatio = true, initialScale = 0.1, grid = {5, 5}), graphics={  Rectangle(visible = true, origin = {10.0, -2.5}, lineColor = {0, 0, 128}, fillColor = {255, 255, 255}, extent = {{-90.0, -82.5}, {90.0, 82.5}})}),
     Documentation(info="<html>
 <table cellspacing=\"1\" cellpadding=\"1\" border=\"1\">
 <tr>

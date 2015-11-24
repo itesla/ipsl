@@ -1,5 +1,5 @@
 within iPSL.Electrical.Branches;
-class PwLine_Bis "Model for a transmission Line based on the pi-equivalent circuit 
+model PwLine_Bis "Model for a transmission Line based on the pi-equivalent circuit 
   with explicit equations for currents. Developed by RTE. 2014/12/16"
 
   iPSL.Connectors.PwPin p annotation (Placement(transformation(extent={{-80,-10},

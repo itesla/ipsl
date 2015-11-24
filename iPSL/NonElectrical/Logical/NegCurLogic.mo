@@ -10,7 +10,7 @@ model NegCurLogic
 equation
   Efd = if XadIfd < 0 then Crowbar_V else Vd;
   Crowbar_V = if RC_rfd == 0 then 0 else (-1) * RC_rfd * XadIfd;
-  annotation(Diagram(coordinateSystem(preserveAspectRatio = false, extent = {{-100, -100}, {100, 100}}), graphics), Icon(coordinateSystem(preserveAspectRatio = false, extent = {{-100, -100}, {100, 100}}), graphics={  Rectangle(extent=  {{-56, 38}, {58, -52}}, lineColor=  {0, 0, 255}), Text(extent=  {{-48, 42}, {54, -60}}, lineColor=  {0, 0, 255}, textString=  "Negative Current
+  annotation(Diagram(coordinateSystem(preserveAspectRatio = false, extent = {{-100, -100}, {100, 100}}), graphics), Icon(coordinateSystem(preserveAspectRatio = false, extent = {{-100, -100}, {100, 100}}), graphics={  Rectangle(extent = {{-56, 38}, {58, -52}}, lineColor = {0, 0, 255}), Text(extent = {{-48, 42}, {54, -60}}, lineColor = {0, 0, 255}, textString = "Negative Current
              Logic")}),
     Documentation(info="<html>
 <p><br><span style=\"font-family: MS Shell Dlg 2;\">&LT;iPSL: iTesla Power System Library&GT;</span></p>

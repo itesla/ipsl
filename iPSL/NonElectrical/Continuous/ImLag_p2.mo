@@ -1,5 +1,5 @@
 within iPSL.NonElectrical.Continuous;
-class ImLag_p2 "Lag filter"
+model ImLag_p2 "Lag filter"
 
   Modelica.Blocks.Interfaces.RealInput p1 annotation(Placement(transformation(extent = {{-41, -10}, {-21, 10}}), iconTransformation(extent = {{-41, -10}, {-30, 6}})));
   Modelica.Blocks.Interfaces.RealOutput n1 annotation(Placement(transformation(extent = {{31, -10}, {51, 10}}), iconTransformation(extent = {{39, -8}, {50, 8}})));
@@ -21,7 +21,7 @@ equation
   //equivalent to n+T2*der(n)=K*p;
   T * der(y2) = (-y2) + n0;
   n1 = y2;
-  annotation(Icon(coordinateSystem(preserveAspectRatio = false, extent = {{-100, -100}, {100, 100}}), graphics={  Rectangle(extent=  {{-40, 40}, {40, -40}}, lineColor=  {0, 0, 255}), Text(extent=  {{-32, -2}, {34, -18}}, lineColor=  {0, 0, 255}, textString=  "1 + T s"), Line(points=  {{-14, 0}, {18, 0}}, color=  {0, 0, 255}, smooth=  Smooth.Bezier, thickness=  0.5), Text(extent=  {{-34, 20}, {36, 2}}, lineColor=  {0, 0, 255}, textString=  "K"), Text(extent=  {{-18, 16}, {-32, -14}}, lineColor=  {0, 0, 255}, textString=  "("), Text(extent=  {{20, 14}, {32, -14}}, lineColor=  {0, 0, 255}, textString=  ")"), Text(extent=  {{28, 20}, {34, 8}}, lineColor=  {0, 0, 255}, textString=  "2", textStyle=  {TextStyle.Bold})}), Diagram(coordinateSystem(preserveAspectRatio = false, extent = {{-100, -100}, {100, 100}}), graphics),
+  annotation(Icon(coordinateSystem(preserveAspectRatio = false, extent = {{-100, -100}, {100, 100}}), graphics={  Rectangle(extent = {{-40, 40}, {40, -40}}, lineColor = {0, 0, 255}), Text(extent = {{-32, -2}, {34, -18}}, lineColor = {0, 0, 255}, textString = "1 + T s"), Line(points = {{-14, 0}, {18, 0}}, color = {0, 0, 255}, smooth = Smooth.Bezier, thickness = 0.5), Text(extent = {{-34, 20}, {36, 2}}, lineColor = {0, 0, 255}, textString = "K"), Text(extent = {{-18, 16}, {-32, -14}}, lineColor = {0, 0, 255}, textString = "("), Text(extent = {{20, 14}, {32, -14}}, lineColor = {0, 0, 255}, textString = ")"), Text(extent = {{28, 20}, {34, 8}}, lineColor = {0, 0, 255}, textString = "2", textStyle = {TextStyle.Bold})}), Diagram(coordinateSystem(preserveAspectRatio = false, extent = {{-100, -100}, {100, 100}}), graphics),
     Documentation(info="<html>
 <p><br><span style=\"font-family: MS Shell Dlg 2;\">&LT;iPSL: iTesla Power System Library&GT;</span></p>
 <p><span style=\"font-family: MS Shell Dlg 2;\">Copyright 2015 RTE (France), AIA (Spain), KTH (Sweden) and DTU (Denmark)</span></p>

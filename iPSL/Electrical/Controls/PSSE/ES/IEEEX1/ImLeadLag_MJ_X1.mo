@@ -1,5 +1,5 @@
 within iPSL.Electrical.Controls.PSSE.ES.IEEEX1;
-class ImLeadLag_MJ_X1 "Lead Lag filter.
+model ImLeadLag_MJ_X1 "Lead Lag filter.
   modified to match the behavior of IEEEX1 in PSSE"
 
   Modelica.Blocks.Interfaces.RealInput p1 annotation(Placement(transformation(extent = {{-61, -10}, {-41, 10}}), iconTransformation(extent = {{-61, -10}, {-41, 10}})));
@@ -15,7 +15,7 @@ equation
 
     T2 *T2* der(y) = -T2*y-K * p1;
   -n1 =(-T2*y-K * p1)*T1/T2 + T2 * y;
-  annotation(Icon(graphics={  Rectangle(extent=  {{-40, 40}, {40, -40}}, lineColor=  {0, 0, 255}), Text(extent=  {{-32, 10}, {-14, -8}}, lineColor=  {0, 0, 255}, textString=  "K", textStyle=  {TextStyle.Bold}), Text(extent=  {{-24, -8}, {38, -20}}, lineColor=  {0, 0, 255}, textString=  "1 + T2 s", textStyle=  {TextStyle.Bold}), Line(points=  {{-14, 0}, {18, 0}}, color=  {0, 0, 255}, smooth=  Smooth.Bezier), Text(extent=  {{-24, 16}, {38, 4}}, lineColor=  {0, 0, 255}, textStyle=  {TextStyle.Bold}, textString=  "1 + T1 s")}), Diagram(graphics),
+  annotation(Icon(graphics={  Rectangle(extent = {{-40, 40}, {40, -40}}, lineColor = {0, 0, 255}), Text(extent = {{-32, 10}, {-14, -8}}, lineColor = {0, 0, 255}, textString = "K", textStyle = {TextStyle.Bold}), Text(extent = {{-24, -8}, {38, -20}}, lineColor = {0, 0, 255}, textString = "1 + T2 s", textStyle = {TextStyle.Bold}), Line(points = {{-14, 0}, {18, 0}}, color = {0, 0, 255}, smooth = Smooth.Bezier), Text(extent = {{-24, 16}, {38, 4}}, lineColor = {0, 0, 255}, textStyle = {TextStyle.Bold}, textString = "1 + T1 s")}), Diagram(graphics),
     Documentation(info="<html>
 <p><br><span style=\"font-family: MS Shell Dlg 2;\">&LT;iPSL: iTesla Power System Library&GT;</span></p>
 <p><span style=\"font-family: MS Shell Dlg 2;\">Copyright 2015 RTE (France), AIA (Spain), KTH (Sweden) and DTU (Denmark)</span></p>

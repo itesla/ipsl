@@ -1,5 +1,5 @@
 within iPSL.NonElectrical.Nonlinear;
-class ImRelaySCRX "input dependent output"
+model ImRelaySCRX "input dependent output"
 
   Modelica.Blocks.Interfaces.RealInput p2 annotation(Placement(transformation(extent = {{-61, 10}, {-41, 30}}), iconTransformation(extent = {{-61, 10}, {-41, 30}})));
   Modelica.Blocks.Interfaces.RealInput p3 annotation(Placement(transformation(extent = {{-61, -28}, {-41, -8}}), iconTransformation(extent = {{-61, -28}, {-41, -8}})));
@@ -7,7 +7,7 @@ class ImRelaySCRX "input dependent output"
   parameter Real switch;
 equation
   n1 = if switch == 0 then p2 else p3;
-  annotation(Icon(coordinateSystem(preserveAspectRatio = false, extent = {{-100, -100}, {100, 100}}), graphics={  Rectangle(extent=  {{-40, 40}, {40, -40}}, lineColor=  {0, 0, 255}), Line(points=  {{-32, 20}, {-12, 20}}, color=  {0, 0, 255}, smooth=  Smooth.None), Line(points=  {{-32, -20}, {-12, -20}}, color=  {0, 0, 255}, smooth=  Smooth.None), Line(points=  {{-2, 8}, {14, -2}, {34, -2}}, color=  {0, 0, 255}, smooth=  Smooth.None), Ellipse(extent=  {{-12, 22}, {-8, 18}}, lineColor=  {0, 0, 255}), Ellipse(extent=  {{-12, -18}, {-8, -22}}, lineColor=  {0, 0, 255})}), Diagram(coordinateSystem(preserveAspectRatio = false, extent = {{-100, -100}, {100, 100}}), graphics),
+  annotation(Icon(coordinateSystem(preserveAspectRatio = false, extent = {{-100, -100}, {100, 100}}), graphics={  Rectangle(extent = {{-40, 40}, {40, -40}}, lineColor = {0, 0, 255}), Line(points = {{-32, 20}, {-12, 20}}, color = {0, 0, 255}, smooth = Smooth.None), Line(points = {{-32, -20}, {-12, -20}}, color = {0, 0, 255}, smooth = Smooth.None), Line(points = {{-2, 8}, {14, -2}, {34, -2}}, color = {0, 0, 255}, smooth = Smooth.None), Ellipse(extent = {{-12, 22}, {-8, 18}}, lineColor = {0, 0, 255}), Ellipse(extent = {{-12, -18}, {-8, -22}}, lineColor = {0, 0, 255})}), Diagram(coordinateSystem(preserveAspectRatio = false, extent = {{-100, -100}, {100, 100}}), graphics),
     Documentation(info="<html>
 <p><br><span style=\"font-family: MS Shell Dlg 2;\">&LT;iPSL: iTesla Power System Library&GT;</span></p>
 <p><span style=\"font-family: MS Shell Dlg 2;\">Copyright 2015 RTE (France), AIA (Spain), KTH (Sweden) and DTU (Denmark)</span></p>

@@ -1,5 +1,5 @@
 within iPSL.NonElectrical.Math;
-class Min "standard component for min function"
+model Min "standard component for min function"
 
   Modelica.Blocks.Interfaces.RealInput p1 "input1" annotation(Placement(transformation(extent = {{-70, 4}, {-50, 24}}), iconTransformation(extent = {{-70, 4}, {-50, 24}})));
   Modelica.Blocks.Interfaces.RealInput p2 "Input2" annotation(Placement(transformation(extent = {{-70, -48}, {-50, -28}}), iconTransformation(extent = {{-70, -48}, {-50, -28}})));
@@ -9,7 +9,7 @@ equation
     n1 = p2;
   else
     n1 = p1;
-  end if annotation(Diagram(coordinateSystem(preserveAspectRatio = false, extent = {{-100, -100}, {100, 100}}), graphics), Icon(coordinateSystem(preserveAspectRatio = false, extent = {{-100, -100}, {100, 100}}), graphics={  Rectangle(extent=  {{-48, 50}, {54, -50}}, lineColor=  {0, 0, 255}), Text(extent=  {{-26, 86}, {32, -94}}, lineColor=  {0, 0, 255}, textString=  "min")}));
+  end if annotation(Diagram(coordinateSystem(preserveAspectRatio = false, extent = {{-100, -100}, {100, 100}}), graphics), Icon(coordinateSystem(preserveAspectRatio = false, extent = {{-100, -100}, {100, 100}}), graphics={  Rectangle(extent = {{-48, 50}, {54, -50}}, lineColor = {0, 0, 255}), Text(extent = {{-26, 86}, {32, -94}}, lineColor = {0, 0, 255}, textString = "min")}));
   annotation(Diagram(coordinateSystem(preserveAspectRatio = false, extent = {{-100, -100}, {100, 100}}), graphics),
       Documentation(info="<html>
 <p><br><span style=\"font-family: MS Shell Dlg 2;\">&LT;iPSL: iTesla Power System Library&GT;</span></p>

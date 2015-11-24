@@ -12,9 +12,9 @@ initial equation
   n1 = nStartValue;
 equation
   n1 = (p1 * a1 / (p2 * a2)) ^ 2 + a0;
-  annotation(Icon(coordinateSystem(extent = {{-100, -100}, {100, 100}}, preserveAspectRatio = false), graphics={  Rectangle(extent=  {{-30, 50}, {50, -30}}, lineColor=  {0, 0, 255}), Line(points=  {{-4, 10}, {24, 10}}, color=  {0, 0, 255}, smooth=  Smooth.None, thickness=  0.5), Ellipse(extent=  {{8, 20}, {10, 18}}, lineColor=  {0, 0, 255}, fillColor=  {0, 0, 255},
-            fillPattern=                                                                                                    FillPattern.Solid), Ellipse(extent=  {{8, 4}, {10, 2}}, lineColor=  {0, 0, 255}, fillColor=  {0, 0, 255},
-            fillPattern=                                                                                                    FillPattern.Solid), Text(extent=  {{-8, 22}, {-14, 0}}, lineColor=  {0, 0, 255}, textString=  "("), Text(extent=  {{28, 22}, {32, 0}}, lineColor=  {0, 0, 255}, textString=  ")"), Text(extent=  {{32, 30}, {40, 16}}, lineColor=  {0, 0, 255}, textString=  "2")}), Diagram(coordinateSystem(extent = {{-100, -100}, {100, 100}})),
+  annotation(Icon(coordinateSystem(extent = {{-100, -100}, {100, 100}}, preserveAspectRatio = false), graphics={  Rectangle(extent = {{-30, 50}, {50, -30}}, lineColor = {0, 0, 255}), Line(points = {{-4, 10}, {24, 10}}, color = {0, 0, 255}, smooth = Smooth.None, thickness = 0.5), Ellipse(extent = {{8, 20}, {10, 18}}, lineColor = {0, 0, 255}, fillColor = {0, 0, 255},
+            fillPattern =                                                                                                   FillPattern.Solid), Ellipse(extent = {{8, 4}, {10, 2}}, lineColor = {0, 0, 255}, fillColor = {0, 0, 255},
+            fillPattern =                                                                                                   FillPattern.Solid), Text(extent = {{-8, 22}, {-14, 0}}, lineColor = {0, 0, 255}, textString = "("), Text(extent = {{28, 22}, {32, 0}}, lineColor = {0, 0, 255}, textString = ")"), Text(extent = {{32, 30}, {40, 16}}, lineColor = {0, 0, 255}, textString = "2")}), Diagram(coordinateSystem(extent = {{-100, -100}, {100, 100}})),
     Documentation(info="<html>
 <p><br><span style=\"font-family: MS Shell Dlg 2;\">&LT;iPSL: iTesla Power System Library&GT;</span></p>
 <p><span style=\"font-family: MS Shell Dlg 2;\">Copyright 2015 RTE (France), AIA (Spain), KTH (Sweden) and DTU (Denmark)</span></p>

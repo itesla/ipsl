@@ -1,11 +1,11 @@
 within iPSL.NonElectrical.Math;
-class ImConstant "Generate constant signal of type Real.
+model ImConstant "Generate constant signal of type Real.
               2014/03/10"
   parameter Real K;
   Modelica.Blocks.Interfaces.RealOutput n1 annotation(Placement(transformation(extent = {{39, -10}, {59, 10}}), iconTransformation(extent = {{39, -10}, {59, 10}})));
 equation
   n1 = K;
-  annotation(Icon(graphics={  Rectangle(extent=  {{-60, 40}, {40, -40}}, lineColor=  {0, 0, 255}), Text(extent=  {{-40, 20}, {20, 4}}, lineColor=  {0, 0, 255}, textStyle=  {TextStyle.Bold}, textString=  "Constant"), Line(points=  {{-40, -20}, {20, -20}}, color=  {0, 0, 255}, smooth=  Smooth.None), Line(points=  {{14, -14}, {20, -20}, {14, -26}}, color=  {0, 0, 255}, smooth=  Smooth.None)}), Diagram(graphics),
+  annotation(Icon(graphics={  Rectangle(extent = {{-60, 40}, {40, -40}}, lineColor = {0, 0, 255}), Text(extent = {{-40, 20}, {20, 4}}, lineColor = {0, 0, 255}, textStyle = {TextStyle.Bold}, textString = "Constant"), Line(points = {{-40, -20}, {20, -20}}, color = {0, 0, 255}, smooth = Smooth.None), Line(points = {{14, -14}, {20, -20}, {14, -26}}, color = {0, 0, 255}, smooth = Smooth.None)}), Diagram(graphics),
     Documentation(info="<html>
 <p><br><span style=\"font-family: MS Shell Dlg 2;\">&LT;iPSL: iTesla Power System Library&GT;</span></p>
 <p><span style=\"font-family: MS Shell Dlg 2;\">Copyright 2015 RTE (France), AIA (Spain), KTH (Sweden) and DTU (Denmark)</span></p>

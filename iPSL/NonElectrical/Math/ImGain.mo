@@ -1,5 +1,5 @@
 within iPSL.NonElectrical.Math;
-class ImGain "Output the product of a gain value with the input signal.
+model ImGain "Output the product of a gain value with the input signal.
               2014/03/10"
 
   Modelica.Blocks.Interfaces.RealInput p1 annotation(Placement(transformation(extent = {{-61, -10}, {-41, 10}}), iconTransformation(extent = {{-61, -10}, {-41, 10}})));
@@ -7,7 +7,7 @@ class ImGain "Output the product of a gain value with the input signal.
   parameter Real K "Gain value multiplied with input signal";
 equation
   n1 = K * p1;
-  annotation(Diagram(graphics={  Rectangle(extent=  {{-40, 40}, {40, -40}}, lineColor=  {0, 0, 255}), Text(extent=  {{14, -6}, {-14, 20}}, lineColor=  {0, 0, 255}, textString=  "K", textStyle=  {TextStyle.Bold})}), Icon(graphics={  Rectangle(extent=  {{-40, 40}, {40, -40}}, lineColor=  {0, 0, 255}), Text(extent=  {{16, -14}, {-12, 12}}, lineColor=  {0, 0, 255}, textString=  "K", textStyle=  {TextStyle.Bold})}),
+  annotation(Diagram(graphics={  Rectangle(extent = {{-40, 40}, {40, -40}}, lineColor = {0, 0, 255}), Text(extent = {{14, -6}, {-14, 20}}, lineColor = {0, 0, 255}, textString = "K", textStyle = {TextStyle.Bold})}), Icon(graphics={  Rectangle(extent = {{-40, 40}, {40, -40}}, lineColor = {0, 0, 255}), Text(extent = {{16, -14}, {-12, 12}}, lineColor = {0, 0, 255}, textString = "K", textStyle = {TextStyle.Bold})}),
     Documentation(info="<html>
 <p><br><span style=\"font-family: MS Shell Dlg 2;\">&LT;iPSL: iTesla Power System Library&GT;</span></p>
 <p><span style=\"font-family: MS Shell Dlg 2;\">Copyright 2015 RTE (France), AIA (Spain), KTH (Sweden) and DTU (Denmark)</span></p>

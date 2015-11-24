@@ -1,5 +1,5 @@
 within iPSL.NonElectrical.Continuous;
-class ImSimpleLag "First order transfer function block (= 1 pole) 2014/03/10"
+model ImSimpleLag "First order transfer function block (= 1 pole) 2014/03/10"
 
   input Modelica.Blocks.Interfaces.RealInput p1 annotation(Placement(transformation(extent = {{-61, -10}, {-41, 10}}), iconTransformation(extent = {{-41, -10}, {-21, 10}})));
 
@@ -22,7 +22,7 @@ equation
   end if;
   annotation(Icon(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},
             {100,100}}),
-                  graphics={  Rectangle(extent=  {{-20, 40}, {60, -40}}, lineColor=  {0, 0, 255}), Text(extent=  {{12, 18}, {30, 0}}, lineColor=  {0, 0, 255}, textString=  "K"), Text(extent=  {{2, 4}, {40, -28}}, lineColor=  {0, 0, 255}, textString=  "1 + Ts"), Line(points=  {{6, 0}, {38, 0}}, color=  {0, 0, 255}, smooth=  Smooth.Bezier, thickness=  0.5)}), Diagram(graphics),
+                  graphics={  Rectangle(extent = {{-20, 40}, {60, -40}}, lineColor = {0, 0, 255}), Text(extent = {{12, 18}, {30, 0}}, lineColor = {0, 0, 255}, textString = "K"), Text(extent = {{2, 4}, {40, -28}}, lineColor = {0, 0, 255}, textString = "1 + Ts"), Line(points = {{6, 0}, {38, 0}}, color = {0, 0, 255}, smooth = Smooth.Bezier, thickness = 0.5)}), Diagram(graphics),
     Documentation(info="<html>
 <p><br><span style=\"font-family: MS Shell Dlg 2;\">&LT;iPSL: iTesla Power System Library&GT;</span></p>
 <p><span style=\"font-family: MS Shell Dlg 2;\">Copyright 2015 RTE (France), AIA (Spain), KTH (Sweden) and DTU (Denmark)</span></p>

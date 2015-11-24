@@ -1,5 +1,5 @@
 within iPSL.NonElectrical.Logical;
-class ImOr "Logical 'or': p1>0 or p2>0 or p3>0 or p4>0 or p5>0.
+model ImOr "Logical 'or': p1>0 or p2>0 or p3>0 or p4>0 or p5>0.
               2014/03/10"
 
   Modelica.Blocks.Interfaces.RealInput p1 annotation(Placement(transformation(extent = {{-54, 28}, {-41, 44}}), iconTransformation(extent = {{-54, 28}, {-41, 44}})));
@@ -14,7 +14,7 @@ equation
   else
     n1 = 0;
   end if;
-  annotation(Icon(graphics={  Rectangle(extent=  {{-40, 40}, {40, -40}}, lineColor=  {0, 0, 255}), Text(extent=  {{-30, 10}, {28, -10}}, lineColor=  {0, 0, 255}, textStyle=  {TextStyle.Bold}, textString=  "OR")}), Diagram(graphics),
+  annotation(Icon(graphics={  Rectangle(extent = {{-40, 40}, {40, -40}}, lineColor = {0, 0, 255}), Text(extent = {{-30, 10}, {28, -10}}, lineColor = {0, 0, 255}, textStyle = {TextStyle.Bold}, textString = "OR")}), Diagram(graphics),
     Documentation(info="<html>
 <p><br><span style=\"font-family: MS Shell Dlg 2;\">&LT;iPSL: iTesla Power System Library&GT;</span></p>
 <p><span style=\"font-family: MS Shell Dlg 2;\">Copyright 2015 RTE (France), AIA (Spain), KTH (Sweden) and DTU (Denmark)</span></p>

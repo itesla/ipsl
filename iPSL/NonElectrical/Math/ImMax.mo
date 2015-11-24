@@ -1,5 +1,5 @@
 within iPSL.NonElectrical.Math;
-class ImMax "Maximum selector Block.
+model ImMax "Maximum selector Block.
               2014/03/28"
 
   Modelica.Blocks.Interfaces.RealInput p1 annotation(Placement(transformation(extent = {{-71, 34}, {-51, 54}}), iconTransformation(extent = {{-71, 34}, {-51, 54}})));
@@ -20,7 +20,7 @@ equation
   else
     n1 = p5;
   end if;
-  annotation(Icon(graphics={  Rectangle(extent=  {{-50, 48}, {50, -50}}, lineColor=  {0, 0, 255}), Text(extent=  {{-10, 14}, {10, -16}}, lineColor=  {0, 0, 255}, textStyle=  {TextStyle.Bold}, textString=  "x")}), Diagram(graphics),
+  annotation(Icon(graphics={  Rectangle(extent = {{-50, 48}, {50, -50}}, lineColor = {0, 0, 255}), Text(extent = {{-10, 14}, {10, -16}}, lineColor = {0, 0, 255}, textStyle = {TextStyle.Bold}, textString = "x")}), Diagram(graphics),
     Documentation(info="<html>
 <p><br><span style=\"font-family: MS Shell Dlg 2;\">&LT;iPSL: iTesla Power System Library&GT;</span></p>
 <p><span style=\"font-family: MS Shell Dlg 2;\">Copyright 2015 RTE (France), AIA (Spain), KTH (Sweden) and DTU (Denmark)</span></p>

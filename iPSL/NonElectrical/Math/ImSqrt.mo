@@ -1,12 +1,12 @@
 within iPSL.NonElectrical.Math;
-class ImSqrt "Square Root.
+model ImSqrt "Square Root.
               2014/03/10"
 
   Modelica.Blocks.Interfaces.RealInput p1 annotation(Placement(transformation(extent = {{-61, -10}, {-41, 10}}), iconTransformation(extent = {{-61, -10}, {-41, 10}})));
   Modelica.Blocks.Interfaces.RealOutput n1 annotation(Placement(transformation(extent = {{39, -10}, {59, 10}}), iconTransformation(extent = {{39, -10}, {59, 10}})));
 equation
   n1 = sqrt(abs(p1));
-  annotation(Diagram(graphics), Icon(graphics={  Rectangle(extent=  {{-40, 40}, {40, -40}}, lineColor=  {0, 0, 255}), Line(points=  {{-20, 4}, {-16, -10}, {-12, 22}, {20, 22}, {20, 14}}, color=  {0, 0, 255}, smooth=  Smooth.None), Text(extent=  {{-8, 12}, {14, -8}}, lineColor=  {0, 0, 255}, textString=  "X"), Line(points=  {{-6, 14}, {-6, -8}, {-6, -8}}, color=  {0, 0, 255}, smooth=  Smooth.None), Line(points=  {{12, 14}, {12, -8}, {12, -8}}, color=  {0, 0, 255}, smooth=  Smooth.None)}),
+  annotation(Diagram(graphics), Icon(graphics={  Rectangle(extent = {{-40, 40}, {40, -40}}, lineColor = {0, 0, 255}), Line(points = {{-20, 4}, {-16, -10}, {-12, 22}, {20, 22}, {20, 14}}, color = {0, 0, 255}, smooth = Smooth.None), Text(extent = {{-8, 12}, {14, -8}}, lineColor = {0, 0, 255}, textString = "X"), Line(points = {{-6, 14}, {-6, -8}, {-6, -8}}, color = {0, 0, 255}, smooth = Smooth.None), Line(points = {{12, 14}, {12, -8}, {12, -8}}, color = {0, 0, 255}, smooth = Smooth.None)}),
     Documentation(info="<html>
 <p><br><span style=\"font-family: MS Shell Dlg 2;\">&LT;iPSL: iTesla Power System Library&GT;</span></p>
 <p><span style=\"font-family: MS Shell Dlg 2;\">Copyright 2015 RTE (France), AIA (Spain), KTH (Sweden) and DTU (Denmark)</span></p>

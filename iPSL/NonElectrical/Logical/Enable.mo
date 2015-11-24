@@ -1,5 +1,5 @@
 within iPSL.NonElectrical.Logical;
-class Enable
+model Enable
   "Used to fix the output of the block to a specific value during initialization, else input=output."
 parameter Real Et0=1 "Initial value";
   Modelica.Blocks.Interfaces.RealOutput n1 annotation(Placement(transformation(extent = {{88, -10}, {108, 10}})));

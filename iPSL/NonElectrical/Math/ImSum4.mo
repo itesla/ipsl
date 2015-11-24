@@ -1,5 +1,5 @@
 within iPSL.NonElectrical.Math;
-class ImSum4 "Sum of Reals"
+model ImSum4 "Sum of Reals"
 
   Modelica.Blocks.Interfaces.RealInput p1 annotation(Placement(transformation(extent = {{39, -10}, {59, 10}}), iconTransformation(extent = {{-61, 22}, {-41, 42}})));
   Modelica.Blocks.Interfaces.RealInput p2 annotation(Placement(transformation(extent = {{-61, -2}, {-41, 18}}), iconTransformation(extent = {{-61, -2}, {-41, 18}})));
@@ -13,7 +13,7 @@ class ImSum4 "Sum of Reals"
   Modelica.Blocks.Interfaces.RealInput p4 annotation(Placement(transformation(extent = {{-61, -48}, {-41, -28}}), iconTransformation(extent = {{-61, -46}, {-41, -26}})));
 equation
   n1 = p1 * a1 + p2 * a2 + p3 * a3 + p4 * a4 + a0;
-  annotation(Icon(coordinateSystem(preserveAspectRatio = false, extent = {{-100, -100}, {100, 100}}), graphics={  Rectangle(extent=  {{-40, 40}, {40, -40}}, lineColor=  {0, 0, 255}), Text(extent=  {{-10, 16}, {10, -14}}, lineColor=  {0, 0, 255}, textString=  "+", textStyle=  {TextStyle.Bold})}), Diagram(coordinateSystem(preserveAspectRatio = false, extent = {{-100, -100}, {100, 100}}), graphics),
+  annotation(Icon(coordinateSystem(preserveAspectRatio = false, extent = {{-100, -100}, {100, 100}}), graphics={  Rectangle(extent = {{-40, 40}, {40, -40}}, lineColor = {0, 0, 255}), Text(extent = {{-10, 16}, {10, -14}}, lineColor = {0, 0, 255}, textString = "+", textStyle = {TextStyle.Bold})}), Diagram(coordinateSystem(preserveAspectRatio = false, extent = {{-100, -100}, {100, 100}}), graphics),
     Documentation(info="<html>
 <p><br><span style=\"font-family: MS Shell Dlg 2;\">&LT;iPSL: iTesla Power System Library&GT;</span></p>
 <p><span style=\"font-family: MS Shell Dlg 2;\">Copyright 2015 RTE (France), AIA (Spain), KTH (Sweden) and DTU (Denmark)</span></p>

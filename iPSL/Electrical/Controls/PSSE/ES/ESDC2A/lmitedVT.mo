@@ -1,5 +1,5 @@
 within iPSL.Electrical.Controls.PSSE.ES.ESDC2A;
-class lmitedVT "input dependent output"
+model lmitedVT "input dependent output"
 
   Modelica.Blocks.Interfaces.RealInput p1
            annotation (Placement(transformation(extent={{-54,26},{-41,40}}),
