@@ -2,8 +2,6 @@ within iPSL.Electrical.Controls.PSSE.ES;
 package ESST4B "IEEE Type ST4B Potential or Compounded Source-Controlled Rectifier Exciter"
 
 
-
-
 annotation (Documentation(info="<html>
 <p><br><span style=\"font-family: MS Shell Dlg 2;\">&LT;iPSL: iTesla Power System Library&GT;</span></p>
 <p><span style=\"font-family: MS Shell Dlg 2;\">Copyright 2015 RTE (France), AIA (Spain), KTH (Sweden) and DTU (Denmark)</span></p>

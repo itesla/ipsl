@@ -1,5 +1,5 @@
 within iPSL.NonElectrical.Continuous;
-class ImLimited "Limited value of the output"
+model ImLimited "Limited value of the output"
 
   Modelica.Blocks.Interfaces.RealInput p1 annotation(Placement(transformation(extent = {{-61, -10}, {-41, 10}}), iconTransformation(extent = {{-61, -10}, {-41, 10}})));
   Modelica.Blocks.Interfaces.RealOutput n1 annotation(Placement(transformation(extent = {{39, -10}, {59, 10}}), iconTransformation(extent = {{39, -10}, {59, 10}})));
@@ -13,7 +13,7 @@ equation
   else
     n1 = Ymax;
   end if;
-  annotation(Icon(graphics={  Rectangle(extent=  {{-40, 40}, {40, -40}}, lineColor=  {0, 0, 255}), Line(points=  {{-22, -20}, {-10, -20}, {0, 20}, {14, 20}}, color=  {0, 0, 255}, smooth=  Smooth.None)}), Diagram(graphics),
+  annotation(Icon(graphics={  Rectangle(extent = {{-40, 40}, {40, -40}}, lineColor = {0, 0, 255}), Line(points = {{-22, -20}, {-10, -20}, {0, 20}, {14, 20}}, color = {0, 0, 255}, smooth = Smooth.None)}), Diagram(graphics),
     Documentation(info="<html>
 <p><br><span style=\"font-family: MS Shell Dlg 2;\">&LT;iPSL: iTesla Power System Library&GT;</span></p>
 <p><span style=\"font-family: MS Shell Dlg 2;\">Copyright 2015 RTE (France), AIA (Spain), KTH (Sweden) and DTU (Denmark)</span></p>

@@ -14,9 +14,9 @@ model ImDiv2_2
   //    p2=p2StartValue;
 equation
   n1 = p1 * a1 / (p2 * a2) + a0;
-  annotation(Icon(coordinateSystem(extent = {{-100, -100}, {100, 100}}, preserveAspectRatio = false), graphics={  Rectangle(extent=  {{-32, 48}, {48, -32}}, lineColor=  {0, 0, 255}), Line(points=  {{-20, 22}, {8, 22}}, color=  {0, 0, 255}, smooth=  Smooth.None, thickness=  0.5), Text(extent=  {{-10, 6}, {34, -42}}, lineColor=  {0, 0, 255}, textString=  "*"), Ellipse(extent=  {{-10, 36}, {-2, 28}}, lineColor=  {0, 0, 255},
-            fillPattern=                                                                                                    FillPattern.Solid, fillColor=  {0, 0, 255}), Ellipse(extent=  {{-10, 10}, {-2, 18}}, lineColor=  {0, 0, 255},
-            fillPattern=                                                                                                    FillPattern.Solid, fillColor=  {0, 0, 255})}), Diagram(coordinateSystem(extent = {{-100, -100}, {100, 100}}, preserveAspectRatio = false), graphics),
+  annotation(Icon(coordinateSystem(extent = {{-100, -100}, {100, 100}}, preserveAspectRatio = false), graphics={  Rectangle(extent = {{-32, 48}, {48, -32}}, lineColor = {0, 0, 255}), Line(points = {{-20, 22}, {8, 22}}, color = {0, 0, 255}, smooth = Smooth.None, thickness = 0.5), Text(extent = {{-10, 6}, {34, -42}}, lineColor = {0, 0, 255}, textString = "*"), Ellipse(extent = {{-10, 36}, {-2, 28}}, lineColor = {0, 0, 255},
+            fillPattern =                                                                                                   FillPattern.Solid, fillColor = {0, 0, 255}), Ellipse(extent = {{-10, 10}, {-2, 18}}, lineColor = {0, 0, 255},
+            fillPattern =                                                                                                   FillPattern.Solid, fillColor = {0, 0, 255})}), Diagram(coordinateSystem(extent = {{-100, -100}, {100, 100}}, preserveAspectRatio = false), graphics),
     Documentation(info="<html>
 <p><br><span style=\"font-family: MS Shell Dlg 2;\">&LT;iPSL: iTesla Power System Library&GT;</span></p>
 <p><span style=\"font-family: MS Shell Dlg 2;\">Copyright 2015 RTE (France), AIA (Spain), KTH (Sweden) and DTU (Denmark)</span></p>

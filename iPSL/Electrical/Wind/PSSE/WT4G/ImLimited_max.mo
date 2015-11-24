@@ -1,5 +1,5 @@
 within iPSL.Electrical.Wind.PSSE.WT4G;
-class ImLimited_max "Integrator with limited value of the output"
+model ImLimited_max "Integrator with limited value of the output"
 
   input Modelica.Blocks.Interfaces.RealInput p1 annotation(Placement(transformation(extent = {{-61, -10}, {-41, 10}}), iconTransformation(extent = {{-61, -10}, {-41, 10}})));
   output Modelica.Blocks.Interfaces.RealOutput n1 annotation(Placement(transformation(extent = {{39, -10}, {59, 10}}), iconTransformation(extent = {{39, -10}, {59, 10}})));
@@ -17,7 +17,7 @@ equation
     n1 = Ymax;
   end if;
   annotation(Icon(coordinateSystem(preserveAspectRatio=true,   extent={{-100,
-            -100},{100,100}}),                                                                        graphics={  Rectangle(extent=  {{-40, 40}, {40, -40}}, lineColor=
+            -100},{100,100}}),                                                                        graphics={  Rectangle(extent = {{-40, 40}, {40, -40}}, lineColor=
               {0,0,255},
           fillColor={255,255,255},
           fillPattern=FillPattern.Solid),                                                                                                    Line(points={{

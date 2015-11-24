@@ -203,16 +203,16 @@ equation
               -140,16},{-124,10}},                                                                                                    lineColor=  {0, 0, 255}, textString=  "Efd0"), Text(extent={{
               -142,0},{-114,-6}},                                                                                                    lineColor=  {0, 0, 255}, textString=  "Ec")}),      Icon(coordinateSystem(preserveAspectRatio=false,   extent={{-140,
             -60},{120,60}}),                                                                                                    graphics={  Rectangle(extent={{
-              -140,60},{120,-60}},                                                                                                    lineColor=  {0, 0, 255}), Text(extent={{
-              -136,-16},{-110,-24}},                                                                                                    lineColor=  {0, 0, 255}, textString=  "Ec"), Text(extent={{
-              -132,46},{-108,36}},                                                                                                    lineColor=  {0, 0, 255}, textString=  "VOTHSG"), Text(extent={{
-              -134,4},{-110,-2}},                                                                                                    lineColor=  {0, 0, 255}, textString=  "VUEL"), Text(extent={{
-              88,8},{118,-8}},                                                                                                    lineColor=  {0, 0, 255}, textString=  "EFD"), Text(extent={{
+              -140,60},{120,-60}},                                                                                                    lineColor = {0, 0, 255}), Text(extent={{
+              -136,-16},{-110,-24}},                                                                                                    lineColor = {0, 0, 255}, textString = "Ec"), Text(extent={{
+              -132,46},{-108,36}},                                                                                                    lineColor = {0, 0, 255}, textString = "VOTHSG"), Text(extent={{
+              -134,4},{-110,-2}},                                                                                                    lineColor = {0, 0, 255}, textString = "VUEL"), Text(extent={{
+              88,8},{118,-8}},                                                                                                    lineColor = {0, 0, 255}, textString = "EFD"), Text(extent={{
               -52,34},{48,-38}},                                                                                                    lineColor=
               {0,0,255},
           textString="IEEEX1"),                                                                                                    Text(extent={{
-              -140,22},{-104,16}},                                                                                                    lineColor=  {0, 0, 255}, textString=  "VOEL"), Text(extent={{
-              -132,-34},{-108,-42}},                                                                                                    lineColor=  {0, 0, 255}, textString=  "Efd0")}),
+              -140,22},{-104,16}},                                                                                                    lineColor = {0, 0, 255}, textString = "VOEL"), Text(extent={{
+              -132,-34},{-108,-42}},                                                                                                    lineColor = {0, 0, 255}, textString = "Efd0")}),
     Documentation(info="<html>
 <p><br><span style=\"font-family: MS Shell Dlg 2;\">&LT;iPSL: iTesla Power System Library&GT;</span></p>
 <p><span style=\"font-family: MS Shell Dlg 2;\">Copyright 2015 RTE (France), AIA (Spain), KTH (Sweden) and DTU (Denmark)</span></p>

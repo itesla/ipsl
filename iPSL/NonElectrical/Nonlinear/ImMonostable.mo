@@ -1,5 +1,5 @@
 within iPSL.NonElectrical.Nonlinear;
-class ImMonostable "Temporary overshoot for a threshold. The output's changeover from 0 to 1 (switching on) takes place when the input 
+model ImMonostable "Temporary overshoot for a threshold. The output's changeover from 0 to 1 (switching on) takes place when the input 
               becomes greater than the threshold. The switched position is held during a time at least equal to T. Then, the changeover from 1 to 0 
               (switching off) takes place when the input once more falls (or has already fallen) below the threshold.
               2014/03/10"
@@ -24,7 +24,7 @@ equation
   else
     n1 = 0;
   end if;
-  annotation(Icon(graphics={  Rectangle(extent=  {{-40, 40}, {40, -40}}, lineColor=  {0, 0, 255}), Text(extent=  {{-40, -22}, {-22, -34}}, lineColor=  {0, 0, 255}, textStyle=  {TextStyle.Bold}, textString=  "T"), Line(points=  {{-24, 16}, {-12, 16}, {-12, 34}, {12, 34}, {12, 16}, {24, 16}}, color=  {0, 0, 255}, smooth=  Smooth.None), Text(extent=  {{-40, -10}, {-22, -22}}, lineColor=  {0, 0, 255}, textStyle=  {TextStyle.Bold}, textString=  "S")}), Diagram(graphics),
+  annotation(Icon(graphics={  Rectangle(extent = {{-40, 40}, {40, -40}}, lineColor = {0, 0, 255}), Text(extent = {{-40, -22}, {-22, -34}}, lineColor = {0, 0, 255}, textStyle = {TextStyle.Bold}, textString = "T"), Line(points = {{-24, 16}, {-12, 16}, {-12, 34}, {12, 34}, {12, 16}, {24, 16}}, color = {0, 0, 255}, smooth = Smooth.None), Text(extent = {{-40, -10}, {-22, -22}}, lineColor = {0, 0, 255}, textStyle = {TextStyle.Bold}, textString = "S")}), Diagram(graphics),
     Documentation(info="<html>
 <p><br><span style=\"font-family: MS Shell Dlg 2;\">&LT;iPSL: iTesla Power System Library&GT;</span></p>
 <p><span style=\"font-family: MS Shell Dlg 2;\">Copyright 2015 RTE (France), AIA (Spain), KTH (Sweden) and DTU (Denmark)</span></p>

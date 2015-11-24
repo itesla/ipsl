@@ -1,5 +1,5 @@
 within iPSL.NonElectrical.Logical;
-class Switch "Switch between signals, in Simulink.OEL"
+model Switch "Switch between signals, in Simulink.OEL"
 
   Modelica.Blocks.Interfaces.RealInput y annotation(Placement(transformation(extent = {{-74, 46}, {-54, 66}}), iconTransformation(extent = {{-62, -2}, {-54, 6}})));
   Modelica.Blocks.Interfaces.RealInput if_in "Field current control input " annotation(Placement(transformation(extent = {{-74, 12}, {-54, 32}}), iconTransformation(extent = {{-62, 16}, {-54, 24}})));
@@ -11,10 +11,10 @@ equation
   else
     n1 = V_input;
   end if;
-  annotation(Diagram(coordinateSystem(preserveAspectRatio = false, extent = {{-100, -100}, {100, 100}}), graphics), Icon(coordinateSystem(preserveAspectRatio = false, extent = {{-100, -100}, {100, 100}}), graphics={  Rectangle(extent=  {{-54, 34}, {12, -28}}, lineColor=  {0, 0, 127}), Line(points=  {{-54, 20}, {-36, 20}, {-8, 6}, {12, 6}}, color=  {0, 0, 127}, smooth=  Smooth.None), Line(points=  {{-54, -14}, {-38, -14}}, color=  {0, 0, 127}, smooth=  Smooth.None), Line(points=  {{-38, -14}, {-8, 6}}, color=  {0, 0, 127}, pattern=  LinePattern.Dot, smooth=  Smooth.None), Text(extent=  {{-22, 24}, {-4, 16}}, lineColor=  {0, 0, 255}, pattern=  LinePattern.Dot, fillColor=  {0, 0, 255},
-            fillPattern=                                                                                                    FillPattern.Solid, textString=  "y => 0"), Text(extent=  {{-26, -12}, {-8, -20}}, lineColor=  {0, 0, 255}, pattern=  LinePattern.Dot, fillColor=  {0, 0, 255},
-            fillPattern=                                                                                                    FillPattern.Solid, textString=  "y < 0"), Text(extent=  {{-56, 6}, {-38, -2}}, lineColor=  {0, 0, 255}, pattern=  LinePattern.Dot, fillColor=  {0, 0, 255},
-            fillPattern=                                                                                                    FillPattern.Solid, textString=  "y")}),
+  annotation(Diagram(coordinateSystem(preserveAspectRatio = false, extent = {{-100, -100}, {100, 100}}), graphics), Icon(coordinateSystem(preserveAspectRatio = false, extent = {{-100, -100}, {100, 100}}), graphics={  Rectangle(extent = {{-54, 34}, {12, -28}}, lineColor = {0, 0, 127}), Line(points = {{-54, 20}, {-36, 20}, {-8, 6}, {12, 6}}, color = {0, 0, 127}, smooth = Smooth.None), Line(points = {{-54, -14}, {-38, -14}}, color = {0, 0, 127}, smooth = Smooth.None), Line(points = {{-38, -14}, {-8, 6}}, color = {0, 0, 127}, pattern = LinePattern.Dot, smooth = Smooth.None), Text(extent = {{-22, 24}, {-4, 16}}, lineColor = {0, 0, 255}, pattern = LinePattern.Dot, fillColor = {0, 0, 255},
+            fillPattern =                                                                                                   FillPattern.Solid, textString = "y => 0"), Text(extent = {{-26, -12}, {-8, -20}}, lineColor = {0, 0, 255}, pattern = LinePattern.Dot, fillColor = {0, 0, 255},
+            fillPattern =                                                                                                   FillPattern.Solid, textString = "y < 0"), Text(extent = {{-56, 6}, {-38, -2}}, lineColor = {0, 0, 255}, pattern = LinePattern.Dot, fillColor = {0, 0, 255},
+            fillPattern =                                                                                                   FillPattern.Solid, textString = "y")}),
     Documentation(info="<html>
 <p><br><span style=\"font-family: MS Shell Dlg 2;\">&LT;iPSL: iTesla Power System Library&GT;</span></p>
 <p><span style=\"font-family: MS Shell Dlg 2;\">Copyright 2015 RTE (France), AIA (Spain), KTH (Sweden) and DTU (Denmark)</span></p>

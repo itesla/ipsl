@@ -1,5 +1,5 @@
 within iPSL.NonElectrical.Math;
-class ImResetSet "The changeover of the output from 1 to 0 takes place when the 
+model ImResetSet "The changeover of the output from 1 to 0 takes place when the 
   first input is negative or zero and the second one positive. The switch off 
   position is held has long as the first input remains negative or zero.
               2014/03/10"
@@ -16,8 +16,8 @@ equation
   else
     y = 1;
   end if;
-  annotation(Icon(graphics={  Rectangle(extent=  {{-40, 40}, {40, -40}}, lineColor=  {0, 0, 255}), Text(extent=  {{5, 25}, {-5, 11}}, lineColor=  {0, 0, 255}, textString=  "S"), Text(extent=  {{5, -13}, {-5, -27}}, lineColor=  {0, 0, 255}, textString=  "R"), Line(points=  {{-40, 0}, {40, 0}}, color=  {0, 0, 255}, smooth=  Smooth.None), Rectangle(extent=  {{32, 40}, {40, 0}}, lineColor=  {0, 0, 255}, fillColor=  {0, 0, 255},
-            fillPattern=                                                                                                    FillPattern.Solid)}), Diagram(graphics),
+  annotation(Icon(graphics={  Rectangle(extent = {{-40, 40}, {40, -40}}, lineColor = {0, 0, 255}), Text(extent = {{5, 25}, {-5, 11}}, lineColor = {0, 0, 255}, textString = "S"), Text(extent = {{5, -13}, {-5, -27}}, lineColor = {0, 0, 255}, textString = "R"), Line(points = {{-40, 0}, {40, 0}}, color = {0, 0, 255}, smooth = Smooth.None), Rectangle(extent = {{32, 40}, {40, 0}}, lineColor = {0, 0, 255}, fillColor = {0, 0, 255},
+            fillPattern =                                                                                                   FillPattern.Solid)}), Diagram(graphics),
     Documentation(info="<html>
 <p><br><span style=\"font-family: MS Shell Dlg 2;\">&LT;iPSL: iTesla Power System Library&GT;</span></p>
 <p><span style=\"font-family: MS Shell Dlg 2;\">Copyright 2015 RTE (France), AIA (Spain), KTH (Sweden) and DTU (Denmark)</span></p>

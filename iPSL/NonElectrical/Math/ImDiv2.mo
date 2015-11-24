@@ -1,5 +1,5 @@
 within iPSL.NonElectrical.Math;
-class ImDiv2 "Quotient block.
+model ImDiv2 "Quotient block.
               2014/03/10"
 
   Modelica.Blocks.Interfaces.RealInput p1 annotation(Placement(transformation(extent = {{-61, 10}, {-41, 30}}), iconTransformation(extent = {{-61, 10}, {-41, 30}})));
@@ -16,9 +16,9 @@ equation
   else
     n1 = 1000000;
   end if;
-  annotation(Icon(graphics={  Rectangle(extent=  {{-40, 40}, {40, -40}}, lineColor=  {0, 0, 255}), Line(points=  {{-14, 0}, {14, 0}}, color=  {0, 0, 255}, smooth=  Smooth.None, thickness=  1), Ellipse(extent=  {{-2, 10}, {2, 6}}, lineColor=  {0, 0, 255}, fillColor=  {0, 0, 255},
-            fillPattern=                                                                                                    FillPattern.Solid), Ellipse(extent=  {{-2, -6}, {2, -10}}, lineColor=  {0, 0, 255}, fillColor=  {0, 0, 255},
-            fillPattern=                                                                                                    FillPattern.Solid)}), Diagram(graphics),
+  annotation(Icon(graphics={  Rectangle(extent = {{-40, 40}, {40, -40}}, lineColor = {0, 0, 255}), Line(points = {{-14, 0}, {14, 0}}, color = {0, 0, 255}, smooth = Smooth.None, thickness = 1), Ellipse(extent = {{-2, 10}, {2, 6}}, lineColor = {0, 0, 255}, fillColor = {0, 0, 255},
+            fillPattern =                                                                                                   FillPattern.Solid), Ellipse(extent = {{-2, -6}, {2, -10}}, lineColor = {0, 0, 255}, fillColor = {0, 0, 255},
+            fillPattern =                                                                                                   FillPattern.Solid)}), Diagram(graphics),
     Documentation(info="<html>
 <p><br><span style=\"font-family: MS Shell Dlg 2;\">&LT;iPSL: iTesla Power System Library&GT;</span></p>
 <p><span style=\"font-family: MS Shell Dlg 2;\">Copyright 2015 RTE (France), AIA (Spain), KTH (Sweden) and DTU (Denmark)</span></p>

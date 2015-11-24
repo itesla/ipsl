@@ -1,5 +1,5 @@
 within iPSL.NonElectrical.Math;
-class ImSetPoint "Generate constant signal of type Real.
+model ImSetPoint "Generate constant signal of type Real.
               2014/03/10"
   parameter Real V;
   parameter Boolean setPointWithModification = false;
@@ -16,7 +16,7 @@ equation
   else
     n1 = V;
   end if;
-  annotation(Icon(graphics={  Rectangle(extent=  {{-60, 40}, {40, -40}}, lineColor=  {0, 0, 255}), Text(extent=  {{-32, 20}, {10, -6}}, lineColor=  {0, 0, 255}, textString=  "Set", textStyle=  {TextStyle.Bold}), Line(points=  {{-40, -20}, {20, -20}}, color=  {0, 0, 255}, smooth=  Smooth.None), Line(points=  {{14, -14}, {20, -20}, {14, -26}}, color=  {0, 0, 255}, smooth=  Smooth.None)}), Diagram(graphics),
+  annotation(Icon(graphics={  Rectangle(extent = {{-60, 40}, {40, -40}}, lineColor = {0, 0, 255}), Text(extent = {{-32, 20}, {10, -6}}, lineColor = {0, 0, 255}, textString = "Set", textStyle = {TextStyle.Bold}), Line(points = {{-40, -20}, {20, -20}}, color = {0, 0, 255}, smooth = Smooth.None), Line(points = {{14, -14}, {20, -20}, {14, -26}}, color = {0, 0, 255}, smooth = Smooth.None)}), Diagram(graphics),
     Documentation(info="<html>
 <p><br><span style=\"font-family: MS Shell Dlg 2;\">&LT;iPSL: iTesla Power System Library&GT;</span></p>
 <p><span style=\"font-family: MS Shell Dlg 2;\">Copyright 2015 RTE (France), AIA (Spain), KTH (Sweden) and DTU (Denmark)</span></p>

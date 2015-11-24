@@ -1,5 +1,5 @@
 within iPSL.NonElectrical.Continuous;
-class ImIntegrator "Output the integral of the input signal.
+model ImIntegrator "Output the integral of the input signal.
               2014/03/10"
 
   input Modelica.Blocks.Interfaces.RealInput p1 annotation(Placement(transformation(extent = {{-61, -10}, {-41, 10}}), iconTransformation(extent = {{-61, -10}, {-41, 10}})));
@@ -11,7 +11,7 @@ initial equation
   n1 =  nStartValue;
 equation
   der(n1) = K * p1;
-  annotation(Icon(graphics={  Rectangle(extent=  {{-40, 40}, {40, -40}}, lineColor=  {0, 0, 255}), Text(extent=  {{-8, 18}, {10, 0}}, lineColor=  {0, 0, 255}, textString=  "K"), Text(extent=  {{-8, 0}, {10, -18}}, lineColor=  {0, 0, 255}, textString=  "s"), Line(points=  {{-14, 0}, {18, 0}}, color=  {0, 0, 255}, smooth=  Smooth.Bezier)}), Diagram(graphics),
+  annotation(Icon(graphics={  Rectangle(extent = {{-40, 40}, {40, -40}}, lineColor = {0, 0, 255}), Text(extent = {{-8, 18}, {10, 0}}, lineColor = {0, 0, 255}, textString = "K"), Text(extent = {{-8, 0}, {10, -18}}, lineColor = {0, 0, 255}, textString = "s"), Line(points = {{-14, 0}, {18, 0}}, color = {0, 0, 255}, smooth = Smooth.Bezier)}), Diagram(graphics),
     Documentation(info="<html>
 <p><br><span style=\"font-family: MS Shell Dlg 2;\">&LT;iPSL: iTesla Power System Library&GT;</span></p>
 <p><span style=\"font-family: MS Shell Dlg 2;\">Copyright 2015 RTE (France), AIA (Spain), KTH (Sweden) and DTU (Denmark)</span></p>

@@ -1,5 +1,5 @@
 within iPSL.NonElectrical.Continuous;
-class ImSimpleLead "First order transfer function block (= 1 pole)"
+model ImSimpleLead "First order transfer function block (= 1 pole)"
 
   Modelica.Blocks.Interfaces.RealOutput p1 "output" annotation(Placement(transformation(extent = {{53, -10}, {73, 10}}), iconTransformation(extent = {{55, -8}, {62, 4}})));
   Modelica.Blocks.Interfaces.RealInput n1 "input" annotation(Placement(transformation(extent = {{-63, -12}, {-43, 8}}), iconTransformation(extent = {{-21, -12}, {-12, 4}})));
@@ -10,7 +10,7 @@ class ImSimpleLead "First order transfer function block (= 1 pole)"
   //   p1=nStartValue;
 equation
   T * der(n1) = K * p1 - n1;
-  annotation(Icon(coordinateSystem(preserveAspectRatio = false, extent = {{-100, -100}, {100, 100}}), graphics={  Rectangle(extent=  {{-20, 40}, {60, -40}}, lineColor=  {0, 0, 255}), Text(extent=  {{10, -4}, {28, -22}}, lineColor=  {0, 0, 255}, textString=  "K"), Text(extent=  {{0, 26}, {38, -6}}, lineColor=  {0, 0, 255}, textString=  "1 + Ts"), Line(points=  {{4, 0}, {36, 0}}, color=  {0, 0, 255}, smooth=  Smooth.Bezier, thickness=  0.5)}), Diagram(coordinateSystem(preserveAspectRatio = false, extent = {{-100, -100}, {100, 100}}), graphics),
+  annotation(Icon(coordinateSystem(preserveAspectRatio = false, extent = {{-100, -100}, {100, 100}}), graphics={  Rectangle(extent = {{-20, 40}, {60, -40}}, lineColor = {0, 0, 255}), Text(extent = {{10, -4}, {28, -22}}, lineColor = {0, 0, 255}, textString = "K"), Text(extent = {{0, 26}, {38, -6}}, lineColor = {0, 0, 255}, textString = "1 + Ts"), Line(points = {{4, 0}, {36, 0}}, color = {0, 0, 255}, smooth = Smooth.Bezier, thickness = 0.5)}), Diagram(coordinateSystem(preserveAspectRatio = false, extent = {{-100, -100}, {100, 100}}), graphics),
     Documentation(info="<html>
 <p><br><span style=\"font-family: MS Shell Dlg 2;\">&LT;iPSL: iTesla Power System Library&GT;</span></p>
 <p><span style=\"font-family: MS Shell Dlg 2;\">Copyright 2015 RTE (France), AIA (Spain), KTH (Sweden) and DTU (Denmark)</span></p>

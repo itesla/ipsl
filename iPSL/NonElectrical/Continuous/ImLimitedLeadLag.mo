@@ -1,5 +1,5 @@
 within iPSL.NonElectrical.Continuous;
-class ImLimitedLeadLag "Nonwindup Limited Lead Lag filter.
+model ImLimitedLeadLag "Nonwindup Limited Lead Lag filter.
               2014/06/03"
 
    Modelica.Blocks.Interfaces.RealInput p1 annotation(Placement(transformation(extent = {{-61, -10}, {-41, 10}}), iconTransformation(extent = {{-61, -10}, {-41, 10}})));
@@ -37,15 +37,15 @@ equation
   annotation(Icon(coordinateSystem(preserveAspectRatio=true, extent={{-100,
             -100},{100,100}}),
                   graphics={                                                                                                    Line(points={{2,
-              38},{8,38},{12,54},{30,54}},                                                                                                    color=  {0, 0, 255}, smooth=  Smooth.None),
-                              Rectangle(extent={{-48,38},{44,-42}},      lineColor=  {0, 0, 255}), Line(points={{
-              -28,-2},{16,-2}},                                                                                                  color=  {0, 0, 255}, smooth=  Smooth.Bezier, thickness=  0.5), Text(extent={{
-              -26,2},{12,-30}},                                                                                                   lineColor=  {0, 0, 255}, textString=  "1 + T2s"),                                                                                   Text(extent={{
-              -26,24},{12,-8}},                                                                                                   lineColor=  {0, 0, 255}, textString=  "1 + T1s"),                                                                                                   Text(extent={{
+              38},{8,38},{12,54},{30,54}},                                                                                                    color = {0, 0, 255}, smooth = Smooth.None),
+                              Rectangle(extent={{-48,38},{44,-42}},      lineColor = {0, 0, 255}), Line(points={{
+              -28,-2},{16,-2}},                                                                                                  color = {0, 0, 255}, smooth = Smooth.Bezier, thickness = 0.5), Text(extent={{
+              -26,2},{12,-30}},                                                                                                   lineColor = {0, 0, 255}, textString = "1 + T2s"),                                                                                   Text(extent={{
+              -26,24},{12,-8}},                                                                                                   lineColor = {0, 0, 255}, textString = "1 + T1s"),                                                                                                   Text(extent={{
               16,64},{38,54}},                                                                                                    lineColor=
               {0,0,255},
           textString="VMAX/KR"),                                                                                                    Line(points={{
-              -32,-58},{-16,-58},{-12,-42},{-6,-42}},                                                                                                    color=  {0, 0, 255}, smooth=  Smooth.None), Text(extent={{
+              -32,-58},{-16,-58},{-12,-42},{-6,-42}},                                                                                                    color = {0, 0, 255}, smooth = Smooth.None), Text(extent={{
               -28,-58},{-6,-68}},                                                                                                    lineColor=
               {0,0,255},
           textString="VMIN/KR")}), Documentation(info="<html>

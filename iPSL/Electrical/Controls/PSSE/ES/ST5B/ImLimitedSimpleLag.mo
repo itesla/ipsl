@@ -1,5 +1,5 @@
 within iPSL.Electrical.Controls.PSSE.ES.ST5B;
-class ImLimitedSimpleLag "Simple Lag with limited value of the output.
+model ImLimitedSimpleLag "Simple Lag with limited value of the output.
               2014/03/10"
 
   input Modelica.Blocks.Interfaces.RealInput p1 annotation(Placement(transformation(extent={{-59,8},
@@ -32,13 +32,13 @@ equation
   end if;
   annotation(Icon(coordinateSystem(preserveAspectRatio=true, extent={{-100,
             -100},{100,100}}),
-                  graphics={  Rectangle(extent=  {{-40, 40}, {40, -40}}, lineColor=  {0, 0, 255}), Text(extent={{
-              -6,14},{2,0}},                                                                                                    lineColor=  {0, 0, 255}, textString=  "K", textStyle=  {TextStyle.Bold}), Text(extent={{
-              -16,0},{16,-12}},                                                                                                    lineColor=  {0, 0, 255}, textStyle=  {TextStyle.Bold}, textString=  "1+Ts"), Line(points={{
-              -12,0},{12,0}},                                                                                                    color=  {0, 0, 255}, smooth=  Smooth.Bezier), Line(points={{
-              -2,40},{10,40},{14,54},{28,54}},                                                                                                    color=  {0, 0, 255}, smooth=  Smooth.None),
+                  graphics={  Rectangle(extent = {{-40, 40}, {40, -40}}, lineColor = {0, 0, 255}), Text(extent={{
+              -6,14},{2,0}},                                                                                                    lineColor = {0, 0, 255}, textString = "K", textStyle = {TextStyle.Bold}), Text(extent={{
+              -16,0},{16,-12}},                                                                                                    lineColor = {0, 0, 255}, textStyle = {TextStyle.Bold}, textString = "1+Ts"), Line(points={{
+              -12,0},{12,0}},                                                                                                    color = {0, 0, 255}, smooth = Smooth.Bezier), Line(points={{
+              -2,40},{10,40},{14,54},{28,54}},                                                                                                    color = {0, 0, 255}, smooth = Smooth.None),
                                                                                         Line(points={{
-              -30,-54},{-14,-54},{-10,-40},{4,-40}},                                                                                                    color=  {0, 0, 255}, smooth=  Smooth.None),
+              -30,-54},{-14,-54},{-10,-40},{4,-40}},                                                                                                    color = {0, 0, 255}, smooth = Smooth.None),
                                                                                         Text(extent={{4,
               60},{36,54}},                                                                                                    lineColor=
               {0,0,255},                                                                                                    textStyle=

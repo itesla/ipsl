@@ -1,5 +1,5 @@
 within iPSL.Electrical.Machines.Eurostag;
-class PwExtIntParameters "Transformation of external parameters to internal parameters for M2S synchronous machine.
+model PwExtIntParameters "Transformation of external parameters to internal parameters for M2S synchronous machine.
                   2014/03/10"
   parameter Real omega0_ = 2 * 3.14159265 * 50;
   parameter Real epsilon = 0.0000000001;

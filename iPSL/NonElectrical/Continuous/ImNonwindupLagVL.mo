@@ -1,5 +1,5 @@
 within iPSL.NonElectrical.Continuous;
-class ImNonwindupLagVL "Lag block with nonwind up limit variance"
+model ImNonwindupLagVL "Lag block with nonwind up limit variance"
 
   Modelica.Blocks.Interfaces.RealInput p1 annotation(Placement(transformation(extent={{-59,8},
             {-39,28}}),                                                                                         iconTransformation(extent={{-59,6},
@@ -39,7 +39,7 @@ equation
   end if;
   annotation(Icon(coordinateSystem(preserveAspectRatio=true, extent={{-100,-100},
             {100,100}}),
-                  graphics={  Rectangle(extent=  {{-40, 40}, {40, -40}}, lineColor=  {0, 0, 255}), Text(extent=  {{-28, 14}, {-20, 0}}, lineColor=  {0, 0, 255}, textString=  "K", textStyle=  {TextStyle.Bold}), Text(extent=  {{-38, 0}, {-6, -12}}, lineColor=  {0, 0, 255}, textStyle=  {TextStyle.Bold}, textString=  "1+Ts"), Line(points=  {{-32, 0}, {-14, 0}}, color=  {0, 0, 255}, smooth=  Smooth.Bezier), Line(points=  {{-12, -20}, {0, -20}, {10, 20}, {24, 20}}, color=  {0, 0, 255}, smooth=  Smooth.None),
+                  graphics={  Rectangle(extent = {{-40, 40}, {40, -40}}, lineColor = {0, 0, 255}), Text(extent = {{-28, 14}, {-20, 0}}, lineColor = {0, 0, 255}, textString = "K", textStyle = {TextStyle.Bold}), Text(extent = {{-38, 0}, {-6, -12}}, lineColor = {0, 0, 255}, textStyle = {TextStyle.Bold}, textString = "1+Ts"), Line(points = {{-32, 0}, {-14, 0}}, color = {0, 0, 255}, smooth = Smooth.Bezier), Line(points = {{-12, -20}, {0, -20}, {10, 20}, {24, 20}}, color = {0, 0, 255}, smooth = Smooth.None),
                                                                                         Text(extent={{
               -32,-18},{-28,-40}},                                                                                                    lineColor=
               {0,0,255},                                                                                                    textStyle=

@@ -1,5 +1,5 @@
 within iPSL.NonElectrical.Math;
-class ImArcTangent "Output arctan(abs(p1/p2)). Developed by AIA.
+model ImArcTangent "Output arctan(abs(p1/p2)). Developed by AIA.
               2014/03/10"
 
   Modelica.Blocks.Interfaces.RealInput p1 "numerator" annotation(Placement(transformation(extent = {{-61, 10}, {-41, 30}}), iconTransformation(extent = {{-61, -30}, {-41, -10}})));
@@ -33,7 +33,7 @@ equation
   else
     n1 = x + a1;
   end if;
-  annotation(Icon(graphics={  Rectangle(extent=  {{-40, 40}, {40, -40}}, lineColor=  {0, 0, 255}), Text(extent=  {{-22, 16}, {24, -16}}, lineColor=  {0, 0, 255}, textStyle=  {TextStyle.Bold}, textString=  "atan
+  annotation(Icon(graphics={  Rectangle(extent = {{-40, 40}, {40, -40}}, lineColor = {0, 0, 255}), Text(extent = {{-22, 16}, {24, -16}}, lineColor = {0, 0, 255}, textStyle = {TextStyle.Bold}, textString = "atan
 (N / D)")}),
        Diagram(graphics),
     Documentation(info="<html>

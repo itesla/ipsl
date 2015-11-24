@@ -1,5 +1,5 @@
 within iPSL.NonElectrical.Continuous;
-class ImDerivativeLag "Approximated derivative block.
+model ImDerivativeLag "Approximated derivative block.
               2014/03/10"
 
   input Modelica.Blocks.Interfaces.RealInput p1 annotation(Placement(transformation(extent={{-109,
@@ -18,15 +18,15 @@ equation
   T * n1 = (-y) + K * p1;
   annotation(Icon(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},
             {100,100}}),
-                  graphics={  Rectangle(extent={{-100,100},{100,-100}},  lineColor=  {0, 0, 255}), Text(extent={{
-              -18,42},{36,-6}},                                                                                                    lineColor=  {0, 0, 255}, textString=  "Ks"), Text(extent={{
-              -38,20},{60,-64}},                                                                                                    lineColor=  {0, 0, 255}, textString=  "1 + Ts"), Line(
+                  graphics={  Rectangle(extent={{-100,100},{100,-100}},  lineColor = {0, 0, 255}), Text(extent={{
+              -18,42},{36,-6}},                                                                                                    lineColor = {0, 0, 255}, textString = "Ks"), Text(extent={{
+              -38,20},{60,-64}},                                                                                                    lineColor = {0, 0, 255}, textString = "1 + Ts"), Line(
           points={{-44,-2},{66,-2}},
           color={0,0,255},
           smooth=Smooth.Bezier,
           thickness=1),                                                                                                    Rectangle(extent={{
-              84,96},{96,84}},                                                                                                    lineColor=  {0, 0, 255}, fillColor=  {0, 0, 255},
-            fillPattern=                                                                                                    FillPattern.Solid)}), Diagram(graphics),
+              84,96},{96,84}},                                                                                                    lineColor = {0, 0, 255}, fillColor = {0, 0, 255},
+            fillPattern =                                                                                                   FillPattern.Solid)}), Diagram(graphics),
     Documentation(info="<html>
 <p><br><span style=\"font-family: MS Shell Dlg 2;\">&LT;iPSL: iTesla Power System Library&GT;</span></p>
 <p><span style=\"font-family: MS Shell Dlg 2;\">Copyright 2015 RTE (France), AIA (Spain), KTH (Sweden) and DTU (Denmark)</span></p>

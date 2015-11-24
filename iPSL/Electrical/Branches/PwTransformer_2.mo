@@ -1,5 +1,5 @@
 within iPSL.Electrical.Branches;
-class PwTransformer_2 "Two winding fixed transformer composed of an ideal transformer, 
+model PwTransformer_2 "Two winding fixed transformer composed of an ideal transformer, 
   a series  impedance and a shunt admittance, with explicit equations for currents.
   2014/12/16"
 

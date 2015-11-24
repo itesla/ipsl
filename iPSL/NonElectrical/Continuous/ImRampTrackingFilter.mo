@@ -1,5 +1,5 @@
 within iPSL.NonElectrical.Continuous;
-class ImRampTrackingFilter "Ramp-tracking filter"
+model ImRampTrackingFilter "Ramp-tracking filter"
 
   parameter Real T_1;
   parameter Real T_2;

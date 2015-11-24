@@ -2,11 +2,6 @@ within iPSL.Electrical.Wind.PSAT;
 package PSAT_Type_3 
 
 
-
-
-
-
-
   annotation(Diagram(coordinateSystem(extent = {{-148.5, -105.0}, {148.5, 105.0}}, preserveAspectRatio = true, initialScale = 0.1, grid = {5, 5})),
     Documentation(info="<html>
 <p><br><span style=\"font-family: MS Shell Dlg 2;\">&LT;iPSL: iTesla Power System Library&GT;</span></p>

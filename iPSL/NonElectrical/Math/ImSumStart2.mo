@@ -1,5 +1,5 @@
 within iPSL.NonElectrical.Math;
-class ImSumStart2 "Sum of Reals with a start value.
+model ImSumStart2 "Sum of Reals with a start value.
               2014/03/10"
 
   Modelica.Blocks.Interfaces.RealInput p1 annotation(Placement(transformation(extent = {{-61, 10}, {-41, 30}}), iconTransformation(extent = {{-61, 10}, {-41, 30}})));
@@ -11,7 +11,7 @@ class ImSumStart2 "Sum of Reals with a start value.
   parameter Real nStartValue "Output start value";
 equation
   n1 = p1 * a1 + p2 * a2 + a0;
-  annotation(Icon(graphics={  Rectangle(extent=  {{-40, 40}, {40, -40}}, lineColor=  {0, 0, 255}), Text(extent=  {{-10, 16}, {10, -14}}, lineColor=  {0, 0, 255}, textString=  "+", textStyle=  {TextStyle.Bold})}), Diagram(graphics),
+  annotation(Icon(graphics={  Rectangle(extent = {{-40, 40}, {40, -40}}, lineColor = {0, 0, 255}), Text(extent = {{-10, 16}, {10, -14}}, lineColor = {0, 0, 255}, textString = "+", textStyle = {TextStyle.Bold})}), Diagram(graphics),
     Documentation(info="<html>
 <p><br><span style=\"font-family: MS Shell Dlg 2;\">&LT;iPSL: iTesla Power System Library&GT;</span></p>
 <p><span style=\"font-family: MS Shell Dlg 2;\">Copyright 2015 RTE (France), AIA (Spain), KTH (Sweden) and DTU (Denmark)</span></p>

@@ -1,5 +1,5 @@
 within iPSL.NonElectrical.Continuous;
-class ImIntegratornonwindup "Integrator with limited value of the output"
+model ImIntegratornonwindup "Integrator with limited value of the output"
 
   Modelica.Blocks.Interfaces.RealInput p1 annotation(Placement(transformation(extent = {{-61, -10}, {-41, 10}}), iconTransformation(extent = {{-61, -10}, {-41, 10}})));
   Modelica.Blocks.Interfaces.RealOutput n0 annotation(Placement(transformation(extent = {{39, -10}, {59, 10}}), iconTransformation(extent = {{39, -10}, {59, 10}})));
@@ -33,8 +33,8 @@ equation
   else
     n0 = n1;
   end if;
-  annotation(Icon(graphics={  Line(points=  {{-14, -20}, {-2, -20}, {8, 20}, {22, 20}}, color=  {0, 0, 255}, smooth=  Smooth.None), Rectangle(extent=  {{-40, 40}, {40, -40}}, lineColor=  {0, 0, 255}), Rectangle(extent=  {{-8, 16}, {14, -16}}, lineColor=  {0, 0, 255},
-            fillPattern=                                                                                                    FillPattern.Solid, fillColor=  {215, 215, 215}), Text(extent=  {{-2, 14}, {6, 0}}, lineColor=  {0, 0, 255}, textString=  "K", textStyle=  {TextStyle.Bold}), Text(extent=  {{-4, 0}, {8, -14}}, lineColor=  {0, 0, 255}, textString=  "s", textStyle=  {TextStyle.Bold}), Line(points=  {{-6, 0}, {12, 0}}, color=  {0, 0, 255}, smooth=  Smooth.Bezier)}), Diagram(graphics),
+  annotation(Icon(graphics={  Line(points = {{-14, -20}, {-2, -20}, {8, 20}, {22, 20}}, color = {0, 0, 255}, smooth = Smooth.None), Rectangle(extent = {{-40, 40}, {40, -40}}, lineColor = {0, 0, 255}), Rectangle(extent = {{-8, 16}, {14, -16}}, lineColor = {0, 0, 255},
+            fillPattern =                                                                                                   FillPattern.Solid, fillColor = {215, 215, 215}), Text(extent = {{-2, 14}, {6, 0}}, lineColor = {0, 0, 255}, textString = "K", textStyle = {TextStyle.Bold}), Text(extent = {{-4, 0}, {8, -14}}, lineColor = {0, 0, 255}, textString = "s", textStyle = {TextStyle.Bold}), Line(points = {{-6, 0}, {12, 0}}, color = {0, 0, 255}, smooth = Smooth.Bezier)}), Diagram(graphics),
     Documentation(info="<html>
 <p><br><span style=\"font-family: MS Shell Dlg 2;\">&LT;iPSL: iTesla Power System Library&GT;</span></p>
 <p><span style=\"font-family: MS Shell Dlg 2;\">Copyright 2015 RTE (France), AIA (Spain), KTH (Sweden) and DTU (Denmark)</span></p>

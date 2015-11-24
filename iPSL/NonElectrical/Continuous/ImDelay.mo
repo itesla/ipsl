@@ -1,5 +1,5 @@
 within iPSL.NonElectrical.Continuous;
-class ImDelay "Delay block.
+model ImDelay "Delay block.
               2014/03/10"
 
   Modelica.Blocks.Interfaces.RealInput p1 annotation(Placement(transformation(extent = {{-61, -10}, {-41, 10}}), iconTransformation(extent = {{-61, -10}, {-41, 10}})));
@@ -15,8 +15,8 @@ equation
   der(x1) = x2;
   der(x2) = (-12 / T ^ 2 * x1) - 6 / T * x2 + p1;
   n1 = (-12 / T * x2) + p1;
-  annotation(Icon(graphics={  Rectangle(extent=  {{-40, 40}, {40, -40}}, lineColor=  {0, 0, 255}), Text(extent=  {{-20, 26}, {20, 10}}, lineColor=  {0, 0, 255}, textString=  "Delay", textStyle=  {TextStyle.Bold}), Text(extent=  {{-18, -6}, {42, -20}}, lineColor=  {0, 0, 255},
-            horizontalAlignment=                                                                                                    TextAlignment.Left, textString=  "e^(-Ts) ", textStyle=  {TextStyle.Bold})}), Diagram(graphics),
+  annotation(Icon(graphics={  Rectangle(extent = {{-40, 40}, {40, -40}}, lineColor = {0, 0, 255}), Text(extent = {{-20, 26}, {20, 10}}, lineColor = {0, 0, 255}, textString = "Delay", textStyle = {TextStyle.Bold}), Text(extent = {{-18, -6}, {42, -20}}, lineColor = {0, 0, 255},
+            horizontalAlignment =                                                                                                   TextAlignment.Left, textString = "e^(-Ts) ", textStyle = {TextStyle.Bold})}), Diagram(graphics),
     Documentation(info="<html>
 <p><br><span style=\"font-family: MS Shell Dlg 2;\">&LT;iPSL: iTesla Power System Library&GT;</span></p>
 <p><span style=\"font-family: MS Shell Dlg 2;\">Copyright 2015 RTE (France), AIA (Spain), KTH (Sweden) and DTU (Denmark)</span></p>

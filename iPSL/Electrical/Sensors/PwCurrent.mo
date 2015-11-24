@@ -1,5 +1,5 @@
 within iPSL.Electrical.Sensors;
-class PwCurrent "Current sensor"
+model PwCurrent "Current sensor"
 
   iPSL.Connectors.PwPin p annotation (Placement(transformation(extent={{-60,-10},
             {-40,10}}), iconTransformation(extent={{-60,-10},{-40,10}})));
@@ -11,7 +11,7 @@ equation
   n.vi = p.vi;
   n.ir = -p.ir;
   n.ii = -p.ii;
-  outp = sqrt(p.ir * p.ir + p.ii * p.ii) annotation(Icon(graphics={  Rectangle(extent=  {{-40, 40}, {40, -40}}, lineColor=  {0, 0, 255}), Rectangle(extent=  {{-30, 32}, {30, -32}}, lineColor=  {0, 0, 255}), Rectangle(extent=  {{-20, 20}, {20, 0}}, lineColor=  {0, 0, 255}), Text(extent=  {{-26, -12}, {-6, -28}}, lineColor=  {0, 0, 255}, textStyle=  {TextStyle.Bold}, textString=  "I"), Line(points=  {{0, 0}, {10, 10}}, color=  {0, 0, 255}, smooth=  Smooth.None)}), Diagram(graphics));
+  outp = sqrt(p.ir * p.ir + p.ii * p.ii) annotation(Icon(graphics={  Rectangle(extent = {{-40, 40}, {40, -40}}, lineColor = {0, 0, 255}), Rectangle(extent = {{-30, 32}, {30, -32}}, lineColor = {0, 0, 255}), Rectangle(extent = {{-20, 20}, {20, 0}}, lineColor = {0, 0, 255}), Text(extent = {{-26, -12}, {-6, -28}}, lineColor = {0, 0, 255}, textStyle = {TextStyle.Bold}, textString = "I"), Line(points = {{0, 0}, {10, 10}}, color = {0, 0, 255}, smooth = Smooth.None)}), Diagram(graphics));
   annotation(Icon(graphics = {Text(extent=  {{-68, 20}, {-60, 14}}, lineColor=  {0, 0, 255}, textString=  "p"), Text(extent=  {{58, 40}, {66, 34}}, lineColor=  {0, 0, 255}, textString=  "p"), Text(extent=  {{-66, 20}, {-58, 14}}, lineColor=  {0, 0, 255}, textString=  "p"), Text(extent=  {{56, 40}, {64, 34}}, lineColor=  {0, 0, 255}, textString=  "n"), Text(extent=  {{-66, 22}, {-58, 16}}, lineColor=  {0, 0, 255}, textString=  "p"), Text(extent=  {{56, 42}, {64, 36}}, lineColor=  {0, 0, 255}, textString=  "p"), Text(extent=  {{-68, 22}, {-60, 16}}, lineColor=  {0, 0, 255}, textString=  "p"), Text(extent=  {{52, -4}, {60, -10}}, lineColor=  {0, 0, 255}, textString=  "outp")}), Diagram(graphics),
     Documentation(info="<html>
 <p><br><span style=\"font-family: MS Shell Dlg 2;\">&LT;iPSL: iTesla Power System Library&GT;</span></p>

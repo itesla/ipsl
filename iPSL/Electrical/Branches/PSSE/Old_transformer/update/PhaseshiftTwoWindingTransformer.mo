@@ -37,12 +37,12 @@ equation
       smooth=Smooth.None));
   annotation (Diagram(coordinateSystem(preserveAspectRatio=true, extent={{-100,
             -100},{100,100}}), graphics), Icon(graphics={                                                                                     Text(extent={{
-              26,52},{114,0}},                                                                                                    lineColor=  {0, 0, 255}, fillColor=  {0, 0, 255},
-            fillPattern=                                                                                                    FillPattern.Solid, textString=  "*", textStyle=  {TextStyle.Bold}), Ellipse(extent={{
-              -74,42},{6,-42}},                                                                                                    lineColor=  {0, 0, 255},
-            lineThickness=                                                                                                    0.5), Ellipse(extent={{
-              -10,42},{70,-42}},                                                                                                    lineColor=  {0, 0, 255},
-            lineThickness=                                                                                                    0.5)}),
+              26,52},{114,0}},                                                                                                    lineColor = {0, 0, 255}, fillColor = {0, 0, 255},
+            fillPattern =                                                                                                   FillPattern.Solid, textString = "*", textStyle = {TextStyle.Bold}), Ellipse(extent={{
+              -74,42},{6,-42}},                                                                                                    lineColor = {0, 0, 255},
+            lineThickness =                                                                                                   0.5), Ellipse(extent={{
+              -10,42},{70,-42}},                                                                                                    lineColor = {0, 0, 255},
+            lineThickness =                                                                                                   0.5)}),
       Documentation(info="<html>
 <p><br><span style=\"font-family: MS Shell Dlg 2;\">&LT;iPSL: iTesla Power System Library&GT;</span></p>
 <p><span style=\"font-family: MS Shell Dlg 2;\">Copyright 2015 RTE (France), AIA (Spain), KTH (Sweden) and DTU (Denmark)</span></p>
