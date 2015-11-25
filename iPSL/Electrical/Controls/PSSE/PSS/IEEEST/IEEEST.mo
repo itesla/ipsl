@@ -18,26 +18,31 @@ model IEEEST "IEEE Stabilizing Model with single Input"
   parameter Real L_SMIN = -0.1 "Output Limits";
   parameter Real V_CU = 999 "Output Limits";
   parameter Real V_CL = -999 "Output Limits";
-  Modelica.Blocks.Continuous.TransferFunction Filter(b = {A6, A5, 1}, a = {A2 * A4, A1 * A4 + A2 * A3, A4 + A2 + A1 * A3, A3 + A1, 1}, initType = Modelica.Blocks.Types.Init.InitialOutput, y_start = 0) annotation(Placement(transformation(extent = {{-86, -8}, {-74, 4}})));
-   iPSL.NonElectrical.Continuous.ImLeadLag T_1_T_2(K = 1, T1 = T_1, T2 = T_2, nStartValue = 0) annotation(Placement(transformation(extent = {{-44, -20}, {-4, 12}})));
-   iPSL.NonElectrical.Continuous.ImLeadLag T_3_T_4(K = 1, T1 = T_3, T2 = T_4, nStartValue = 0) annotation(Placement(transformation(extent = {{-18, -20}, {24, 12}})));
+  Modelica.Blocks.Continuous.TransferFunction Filter(b = {A6, A5, 1}, a = {A2 * A4, A1 * A4 + A2 * A3, A4 + A2 + A1 * A3, A3 + A1, 1}, initType = Modelica.Blocks.Types.Init.InitialOutput, y_start = 0) annotation(Placement(transformation(extent={{-86,-4},
+            {-74,8}})));
+   iPSL.NonElectrical.Continuous.LeadLag T_1_T_2(K = 1, T1 = T_1, T2 = T_2, y_start = 0) annotation(Placement(transformation(extent={{-32,-10},
+            {-12,10}})));
+   iPSL.NonElectrical.Continuous.LeadLag T_3_T_4(K = 1, T1 = T_3, T2 = T_4, y_start = 0) annotation(Placement(transformation(extent={{-4,-10},
+            {16,10}})));
   output Modelica.Blocks.Interfaces.RealOutput VOTHSG(start = 0)
     "PSS output signal"                                                                            annotation(Placement(transformation(extent={{120,-10},
             {140,10}},                                                                                                    rotation = 0), iconTransformation(extent={{120,-10},
             {140,10}})));
   input Modelica.Blocks.Interfaces.RealInput V_S(start=0) "PSS input signal"
-    annotation (Placement(transformation(extent={{-126,-24},{-98,4}},
+    annotation (Placement(transformation(extent={{-126,-20},{-98,8}},
           rotation=0), iconTransformation(extent={{-128,-30},{-108,-10}})));
-  Modelica.Blocks.Nonlinear.Limiter VSS(uMax = L_SMAX, uMin = L_SMIN) annotation(Placement(transformation(extent = {{60, -12}, {76, 4}})));
+  Modelica.Blocks.Nonlinear.Limiter VSS(uMax = L_SMAX, uMin = L_SMIN) annotation(Placement(transformation(extent={{60,-8},
+            {76,8}})));
 protected
-  Modelica.Blocks.Interfaces.RealOutput Vs "Connector of Real output signal" annotation(Placement(transformation(extent = {{82, -14}, {102, 6}}, rotation = 0), iconTransformation(extent = {{32, -8}, {36, -4}})));
+  Modelica.Blocks.Interfaces.RealOutput Vs "Connector of Real output signal" annotation(Placement(transformation(extent={{82,-10},
+            {102,10}},                                                                                                    rotation = 0), iconTransformation(extent = {{32, -8}, {36, -4}})));
 public
   Modelica.Blocks.Interfaces.RealInput V_CT
     "Compensated machine terminal voltage (pu)"
-    annotation (Placement(transformation(extent={{-124,-4},{-98,22}}, rotation=0),
+    annotation (Placement(transformation(extent={{-124,0},{-98,26}},  rotation=0),
         iconTransformation(extent={{-128,10},{-108,30}})));
-   iPSL.NonElectrical.Nonlinear.ImRelay imRelay annotation(Placement(transformation(extent = {{-74, -20}, {-30, 12}})));
-   iPSL.NonElectrical.Math.ImSetPoint Bypass(V = Switch) annotation(Placement(transformation(extent = {{-92, 4}, {-66, 20}})));
+   iPSL.NonElectrical.Nonlinear.ImRelay imRelay annotation(Placement(transformation(extent={{-74,-16},
+            {-30,16}})));
 protected
   parameter Real A(fixed = false);
   parameter Real Switch(fixed = false);
@@ -48,11 +53,13 @@ protected
   parameter Real A5(fixed = false);
   parameter Real A6(fixed = false);
 public
-   iPSL.NonElectrical.Continuous.ImDerivativeLag imDerivativeLag(
+   iPSL.NonElectrical.Continuous.DerivativeLag imDerivativeLag(
     K=K_S*T_5,
     T=T_6,
-    pStartValue=0)
-    annotation (Placement(transformation(extent={{16,-22},{56,16}})));
+    y_start=0)
+    annotation (Placement(transformation(extent={{28,-10},{48,10}})));
+  Modelica.Blocks.Sources.Constant const(k=Switch)
+    annotation (Placement(transformation(extent={{-92,16},{-72,36}})));
 initial algorithm
   A := A_1 + A_2 + A_3 + A_4 + A_5 + A_6;
   Switch := A;
@@ -82,23 +89,27 @@ equation
   else
     VOTHSG = 0;
   end if;
-  connect(VSS.y, Vs) annotation(Line(points = {{76.8, -4}, {92, -4}}, color = {0, 0, 127}, smooth = Smooth.None));
-  connect(Bypass.n1, imRelay.p1) annotation(Line(points = {{-72.63, 12}, {-68.59, 12}, {-68.59, 0.8}, {-63.22, 0.8}}, color = {0, 0, 127}, smooth = Smooth.None));
-  connect(T_1_T_2.n1, T_3_T_4.p1) annotation(Line(points = {{-14.2, -4}, {-7.71, -4}}, color = {0, 0, 127}, smooth = Smooth.None));
-  connect(Filter.y, imRelay.p2) annotation(Line(points = {{-73.4, -2}, {-72.31, -2}, {-72.31, -4}, {-63.22, -4}}, color = {0, 0, 127}, smooth = Smooth.None));
-  connect(imRelay.n1, T_1_T_2.p1) annotation(Line(points = {{-41.22, -4}, {-34.2, -4}}, color = {0, 0, 127}, smooth = Smooth.None));
+  connect(VSS.y, Vs) annotation(Line(points={{76.8,0},{92,0}},        color = {0, 0, 127}, smooth = Smooth.None));
+  connect(Filter.y, imRelay.p2) annotation(Line(points={{-73.4,2},{-72.31,2},{
+          -72.31,0},{-63.22,0}},                                                                                  color = {0, 0, 127}, smooth = Smooth.None));
   connect(V_S, Filter.u) annotation (Line(
-      points={{-112,-10},{-91.5,-10},{-91.5,-2},{-87.2,-2}},
+      points={{-112,-6},{-91.5,-6},{-91.5,2},{-87.2,2}},
       color={0,0,127},
       smooth=Smooth.None));
   connect(V_S, imRelay.p3) annotation (Line(
-      points={{-112,-10},{-64.5,-10},{-64.5,-8.8},{-63.22,-8.8}},
+      points={{-112,-6},{-64.5,-6},{-64.5,-4.8},{-63.22,-4.8}},
       color={0,0,127},
       smooth=Smooth.None));
-  connect(T_3_T_4.n1, imDerivativeLag.p1) annotation (Line(points={{13.29,-4},{16.2,
-          -4},{16.2,-3}},      color={0,0,127}));
-  connect(imDerivativeLag.n1, VSS.u) annotation (Line(points={{56.2,-3},{51.9,-3},
-          {51.9,-4},{58.4,-4}},     color={0,0,127}));
+  connect(imRelay.n1, T_1_T_2.u)
+    annotation (Line(points={{-41.22,0},{-34,0}},   color={0,0,127}));
+  connect(T_1_T_2.y, T_3_T_4.u)
+    annotation (Line(points={{-11,0},{-6,0}},   color={0,0,127}));
+  connect(T_3_T_4.y, imDerivativeLag.u)
+    annotation (Line(points={{17,0},{21.5,0},{26,0}}, color={0,0,127}));
+  connect(imDerivativeLag.y, VSS.u)
+    annotation (Line(points={{49,0},{58.4,0}}, color={0,0,127}));
+  connect(const.y, imRelay.p1) annotation (Line(points={{-71,26},{-68,26},{-68,
+          4.8},{-63.22,4.8}}, color={0,0,127}));
   annotation(Diagram(coordinateSystem(preserveAspectRatio=false,  extent={{-120,
             -40},{120,40}})),                                                                                      Icon(coordinateSystem(preserveAspectRatio=false,   extent={{-120,
             -40},{120,40}}),                                                                                                    graphics={  Rectangle(extent={{

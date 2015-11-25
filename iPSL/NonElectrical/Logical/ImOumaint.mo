@@ -14,10 +14,10 @@ equation
   else
     y = 1;
   end if;
-  annotation(Icon(graphics={  Rectangle(extent=  {{-40, 40}, {40, -40}}, lineColor=  {0, 0, 255}), Text(extent=  {{-12, 24}, {10, 8}}, lineColor=  {0, 0, 255}, fillColor=  {0, 0, 255},
-            fillPattern=                                                                                                    FillPattern.Solid, textString=  "OR"), Line(points=  {{40, -10}, {0, -10}, {0, -40}, {0, -40}}, color=  {0, 0, 255}, smooth=  Smooth.None), Line(points=  {{40, -25}, {2, -25}, {0, -25}, {0, -25}}, color=  {0, 0, 255}, smooth=  Smooth.None), Text(extent=  {{13, -11}, {27, -23}}, lineColor=  {0, 0, 255}, fillColor=  {0, 0, 255},
-            fillPattern=                                                                                                    FillPattern.Solid, textString=  "S"), Text(extent=  {{13, -27}, {27, -39}}, lineColor=  {0, 0, 255}, fillColor=  {0, 0, 255},
-            fillPattern=                                                                                                    FillPattern.Solid, textString=  "R")}), Diagram(graphics),
+  annotation(Icon(graphics={  Rectangle(extent = {{-40, 40}, {40, -40}}, lineColor = {0, 0, 255}), Text(extent = {{-12, 24}, {10, 8}}, lineColor = {0, 0, 255}, fillColor = {0, 0, 255},
+            fillPattern =                                                                                                   FillPattern.Solid, textString = "OR"), Line(points = {{40, -10}, {0, -10}, {0, -40}, {0, -40}}, color = {0, 0, 255}, smooth = Smooth.None), Line(points = {{40, -25}, {2, -25}, {0, -25}, {0, -25}}, color = {0, 0, 255}, smooth = Smooth.None), Text(extent = {{13, -11}, {27, -23}}, lineColor = {0, 0, 255}, fillColor = {0, 0, 255},
+            fillPattern =                                                                                                   FillPattern.Solid, textString = "S"), Text(extent = {{13, -27}, {27, -39}}, lineColor = {0, 0, 255}, fillColor = {0, 0, 255},
+            fillPattern =                                                                                                   FillPattern.Solid, textString = "R")}), Diagram(graphics),
     Documentation(info="<html>
 <p><br><span style=\"font-family: MS Shell Dlg 2;\">&LT;iPSL: iTesla Power System Library&GT;</span></p>
 <p><span style=\"font-family: MS Shell Dlg 2;\">Copyright 2015 RTE (France), AIA (Spain), KTH (Sweden) and DTU (Denmark)</span></p>

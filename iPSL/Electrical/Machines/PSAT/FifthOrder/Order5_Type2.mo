@@ -69,10 +69,10 @@ equation
   e2d = vd + Ra * id - x2q * iq "relation between voltages and currents";
   pm0=pm00;
   vf0 = vf00;
-annotation(Icon(coordinateSystem(extent={{-100,-100},{100,100}},      preserveAspectRatio=false,   initialScale = 0.1, grid = {10, 10}), graphics={  Rectangle(visible=  true, fillColor=  {255, 255, 255}, extent=  {{-100.0, -100.0}, {100.0, 100.0}}),
+annotation(Icon(coordinateSystem(extent={{-100,-100},{100,100}},      preserveAspectRatio=false,   initialScale = 0.1, grid = {10, 10}), graphics={  Rectangle(visible = true, fillColor = {255, 255, 255}, extent = {{-100.0, -100.0}, {100.0, 100.0}}),
                                                                                           Text(                origin={-6,
               61.9022},
-            fillPattern=FillPattern.Solid,                                                                                                    extent=  {{-57.2101, -15.0}, {57.2101, 15.0}},                       fontName=
+            fillPattern=FillPattern.Solid,                                                                                                    extent = {{-57.2101, -15.0}, {57.2101, 15.0}},                       fontName=
               "Arial",
           lineColor={28,108,200},
           textString="Order IV - Typ 2")}),                                                                                                    Diagram(coordinateSystem(extent = {{-148.5, -105.0}, {148.5, 105.0}}, preserveAspectRatio = true, initialScale = 0.1, grid = {5, 5})),

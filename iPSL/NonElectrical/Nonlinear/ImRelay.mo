@@ -8,7 +8,7 @@ class ImRelay "input dependent output.
   Modelica.Blocks.Interfaces.RealOutput n1 annotation(Placement(transformation(extent = {{39, -10}, {59, 10}}), iconTransformation(extent = {{39, -10}, {59, 10}})));
 equation
   n1 = if p1 > 0 then p2 else p3;
-  annotation(Icon(graphics={  Rectangle(extent=  {{-40, 40}, {40, -40}}, lineColor=  {0, 0, 255}), Line(points=  {{-32, 0}, {-12, 0}}, color=  {0, 0, 255}, smooth=  Smooth.None), Line(points=  {{-32, -20}, {-12, -20}}, color=  {0, 0, 255}, smooth=  Smooth.None), Line(points=  {{-16, -2}, {0, -12}, {20, -12}}, color=  {0, 0, 255}, smooth=  Smooth.None), Ellipse(extent=  {{-12, 2}, {-8, -2}}, lineColor=  {0, 0, 255}), Ellipse(extent=  {{-12, -18}, {-8, -22}}, lineColor=  {0, 0, 255}), Text(extent=  {{-32, 40}, {14, 26}}, lineColor=  {0, 0, 255}, textString=  "- Input", textStyle=  {TextStyle.Bold})}), Diagram(graphics),
+  annotation(Icon(graphics={  Rectangle(extent = {{-40, 40}, {40, -40}}, lineColor = {0, 0, 255}), Line(points = {{-32, 0}, {-12, 0}}, color = {0, 0, 255}, smooth = Smooth.None), Line(points = {{-32, -20}, {-12, -20}}, color = {0, 0, 255}, smooth = Smooth.None), Line(points = {{-16, -2}, {0, -12}, {20, -12}}, color = {0, 0, 255}, smooth = Smooth.None), Ellipse(extent = {{-12, 2}, {-8, -2}}, lineColor = {0, 0, 255}), Ellipse(extent = {{-12, -18}, {-8, -22}}, lineColor = {0, 0, 255}), Text(extent = {{-32, 40}, {14, 26}}, lineColor = {0, 0, 255}, textString = "- Input", textStyle = {TextStyle.Bold})}), Diagram(graphics),
     Documentation(info="<html>
 <p><br><span style=\"font-family: MS Shell Dlg 2;\">&LT;iPSL: iTesla Power System Library&GT;</span></p>
 <p><span style=\"font-family: MS Shell Dlg 2;\">Copyright 2015 RTE (France), AIA (Spain), KTH (Sweden) and DTU (Denmark)</span></p>

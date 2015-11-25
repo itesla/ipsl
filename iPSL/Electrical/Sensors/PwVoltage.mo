@@ -12,7 +12,7 @@ equation
   vr = p.vr;
   vi = p.vi;
   v = sqrt(p.vr * p.vr + p.vi * p.vi);
-  annotation(Icon(graphics={  Rectangle(extent=  {{-40, 40}, {40, -40}}, lineColor=  {0, 0, 255}), Rectangle(extent=  {{-30, 32}, {30, -32}}, lineColor=  {0, 0, 255}), Rectangle(extent=  {{-20, 20}, {20, 0}}, lineColor=  {0, 0, 255}), Text(extent=  {{-26, -12}, {-6, -28}}, lineColor=  {0, 0, 255}, textString=  "U", textStyle=  {TextStyle.Bold}), Line(points=  {{0, 0}, {10, 10}}, color=  {0, 0, 255}, smooth=  Smooth.None), Text(extent=  {{52, 44}, {60, 38}}, lineColor=  {0, 0, 255}, textString=  "vr"), Text(extent=  {{52, 14}, {60, 8}}, lineColor=  {0, 0, 255}, textString=  "vi"), Text(extent=  {{52, -16}, {60, -22}}, lineColor=  {0, 0, 255}, textString=  "v")}), Diagram(graphics),
+  annotation(Icon(graphics={  Rectangle(extent = {{-40, 40}, {40, -40}}, lineColor = {0, 0, 255}), Rectangle(extent = {{-30, 32}, {30, -32}}, lineColor = {0, 0, 255}), Rectangle(extent = {{-20, 20}, {20, 0}}, lineColor = {0, 0, 255}), Text(extent = {{-26, -12}, {-6, -28}}, lineColor = {0, 0, 255}, textString = "U", textStyle = {TextStyle.Bold}), Line(points = {{0, 0}, {10, 10}}, color = {0, 0, 255}, smooth = Smooth.None), Text(extent = {{52, 44}, {60, 38}}, lineColor = {0, 0, 255}, textString = "vr"), Text(extent = {{52, 14}, {60, 8}}, lineColor = {0, 0, 255}, textString = "vi"), Text(extent = {{52, -16}, {60, -22}}, lineColor = {0, 0, 255}, textString = "v")}), Diagram(graphics),
     Documentation(info="<html>
 <p><br><span style=\"font-family: MS Shell Dlg 2;\">&LT;iPSL: iTesla Power System Library&GT;</span></p>
 <p><span style=\"font-family: MS Shell Dlg 2;\">Copyright 2015 RTE (France), AIA (Spain), KTH (Sweden) and DTU (Denmark)</span></p>

@@ -22,8 +22,8 @@ equation
   end if;
   annotation(Icon(coordinateSystem(preserveAspectRatio=true, extent={{-100,-100},
             {100,100}}),
-                  graphics={  Rectangle(extent=  {{-40, 40}, {40, -40}}, lineColor=  {0, 0, 255}), Line(points={{
-              -22,0},{22,0}},                                                                                                    color=  {0, 0, 255}, smooth=  Smooth.None, thickness=  1,
+                  graphics={  Rectangle(extent = {{-40, 40}, {40, -40}}, lineColor = {0, 0, 255}), Line(points={{
+              -22,0},{22,0}},                                                                                                    color = {0, 0, 255}, smooth = Smooth.None, thickness = 1,
           origin={0,2},
           rotation=90),
         Text(

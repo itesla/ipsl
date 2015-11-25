@@ -72,7 +72,7 @@ model ImFunction "Piecewise function. It takes into account the case when the fu
   parameter Real[:] v;
 equation
   n1 = findValue(v, p1, false);
-  annotation(Diagram(graphics), Icon(graphics={  Rectangle(extent=  {{-40, 40}, {40, -40}}, lineColor=  {0, 0, 255}), Text(extent=  {{-16, 18}, {24, -14}}, lineColor=  {0, 0, 255}, textStyle=  {TextStyle.Bold}, textString=  "y = f(x)")}),
+  annotation(Diagram(graphics), Icon(graphics={  Rectangle(extent = {{-40, 40}, {40, -40}}, lineColor = {0, 0, 255}), Text(extent = {{-16, 18}, {24, -14}}, lineColor = {0, 0, 255}, textStyle = {TextStyle.Bold}, textString = "y = f(x)")}),
     Documentation(info="<html>
 <p><br><span style=\"font-family: MS Shell Dlg 2;\">&LT;iPSL: iTesla Power System Library&GT;</span></p>
 <p><span style=\"font-family: MS Shell Dlg 2;\">Copyright 2015 RTE (France), AIA (Spain), KTH (Sweden) and DTU (Denmark)</span></p>

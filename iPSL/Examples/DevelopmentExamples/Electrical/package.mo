@@ -2,12 +2,6 @@ within iPSL.Examples.DevelopmentExamples;
 package Electrical 
 
 
-
-
-
-
-
-
 annotation (Documentation(info="<html>
 <p><span style=\"font-family: MS Shell Dlg 2;\">&LT;iPSL: iTesla Power System Library&GT;</span></p>
 <p><span style=\"font-family: MS Shell Dlg 2;\">Copyright 2015 RTE (France), AIA (Spain), KTH (Sweden) and DTU (Denmark)</span></p>

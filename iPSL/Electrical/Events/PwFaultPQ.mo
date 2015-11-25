@@ -1,5 +1,5 @@
 within iPSL.Electrical.Events;
-class PwFaultPQ
+model PwFaultPQ
 
   iPSL.Connectors.PwPin p annotation (Placement(transformation(extent={{-40,-10},
             {-20,10}}), iconTransformation(extent={{-80,-10},{-60,10}})));

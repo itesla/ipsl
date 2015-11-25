@@ -47,59 +47,35 @@ protected
     end if;
    end VE_ini;
 public
-  iPSL.NonElectrical.Continuous.ImLeadLag imLeadLag(
+  iPSL.NonElectrical.Continuous.LeadLag imLeadLag(
     K=1,
     T1=T_C,
     T2=T_B,
-    nStartValue=VA0/K_A)
-    annotation (Placement(transformation(extent={{-44,-20},{8,36}})));
-  iPSL.NonElectrical.Math.ImSum2 imSum2_1(
-    a0=0,
-    a1=1,
-    a2=-1) annotation (Placement(transformation(
-        extent={{-9,10},{9,-10}},
-        rotation=180,
-        origin={21,-60})));
-  iPSL.NonElectrical.Continuous.ImSimpleLag imSimpleLag(
-    K=1,
-    T=T_F,
-    nStartValue=K_F*VFE0/T_F) annotation (Placement(transformation(
-        extent={{23,-18},{-23,18}},
-        rotation=0,
-        origin={47,-74})));
-  NonElectrical.Continuous.ImSimpleLag                        Vm(
-      nStartValue=Vm0,
+    y_start=VA0/K_A)
+    annotation (Placement(transformation(extent={{4,-10},{24,10}})));
+  NonElectrical.Continuous.SimpleLag                        Vm(
+      y_start=Vm0,
     K=1,
     T=T_R)
     annotation (Placement(transformation(
-        extent={{-22,-19},{22,19}},
+        extent={{-10,-10},{10,10}},
         rotation=0,
-        origin={-72,9})));
+        origin={-74,4})));
   NonElectrical.Functions.ImSE
      se1(
     SE1=S_EE_1,
     SE2=S_EE_2,
     E1=E_1,
     E2=E_2)                                      annotation(Placement(transformation(extent={{-2,-2},
-            {2,2}},                                                                                                 rotation = 180, origin={186,-54})));
+            {2,2}},                                                                                                 rotation = 180, origin={276,-54})));
   Modelica.Blocks.Math.Product VX annotation(Placement(transformation(extent={{-3,-3},
-            {3,3}},                                                                                rotation = 180, origin={177,-51})));
-  NonElectrical.Continuous.ImSimpleLag_nowinduplimit
+            {3,3}},                                                                                rotation = 180, origin={267,-51})));
+  NonElectrical.Continuous.SimpleLag
                 VR1(
-    nStartValue=VA0,
-    Ymin=V_AMIN,
-    Ymax=V_AMAX,
+    y_start=VA0,
     K=K_A,
-    T=T_A)                                                                          annotation(Placement(transformation(extent={{-8,-16},
-            {44,32}})));
-  Modelica.Blocks.Math.Gain imGain1(k=K_F/T_F)  annotation(Placement(transformation(extent={{-4,-4},
-            {4,4}},                                                                                              rotation=180,   origin={100,-62})));
-  iPSL.NonElectrical.Math.ImSum4 imSum4_1(
-    a0=0,
-    a1=1,
-    a2=-1,
-    a3=1,
-    a4=-1) annotation (Placement(transformation(extent={{-56,-4},{-32,20}})));
+    T=T_A)                                                                          annotation(Placement(transformation(extent={{34,-10},
+            {54,10}})));
   Modelica.Blocks.Interfaces.RealInput ECOMP
     annotation (Placement(transformation(extent={{-134,22},{-96,60}}),
         iconTransformation(extent={{-134,22},{-96,60}})));
@@ -107,31 +83,22 @@ public
         transformation(extent={{-134,64},{-96,102}}),iconTransformation(extent={{-134,64},
             {-96,102}})));
   Modelica.Blocks.Sources.Constant V_REF(k=VREF)
-    annotation (Placement(transformation(extent={{-80,-18},{-68,-6}})));
+    annotation (Placement(transformation(extent={{-86,-40},{-66,-20}})));
   Modelica.Blocks.Math.Add               imSum2_2(k1=-1, k2=1)             annotation(Placement(transformation(extent={{-4,4},{
-            4,-4}},                                                                                                    rotation=0,     origin={42,6})));
+            4,-4}},                                                                                                    rotation=0,     origin={112,6})));
   Modelica.Blocks.Math.Gain K_b(k=K_B)
                                       annotation (Placement(transformation(
         extent={{-4,-4},{4,4}},
         rotation=0,
-        origin={58,6})));
+        origin={128,6})));
   NonElectrical.Logical.HV_GATE
           hV_Gate
-    annotation (Placement(transformation(extent={{74,-8},{98,26}})));
+    annotation (Placement(transformation(extent={{144,-8},{168,26}})));
   NonElectrical.Logical.LV_GATE
           lV_Gate
-    annotation (Placement(transformation(extent={{98,-14},{118,16}})));
-  iPSL.NonElectrical.Continuous.ImLimited imLimited(Ymin=V_RMIN, Ymax=V_RMAX)
-    annotation (Placement(transformation(extent={{120,-8},{136,8}})));
-  iPSL.NonElectrical.Math.ImSum2 imSum2_3(
-    a0=0,
-    a1=1,
-    a2=-1) annotation (Placement(transformation(
-        extent={{-8,-9},{8,9}},
-        rotation=0,
-        origin={146,1})));
+    annotation (Placement(transformation(extent={{168,-14},{188,16}})));
   Modelica.Blocks.Math.Gain imGain3(k=K_H)      annotation(Placement(transformation(extent={{-4,-4},
-            {4,4}},                                                                                              rotation=180,   origin={60,-44})));
+            {4,4}},                                                                                              rotation=180,   origin={128,-40})));
   NonElectrical.Continuous.ImIntegrator_adpt
                     imIntegrator_adpt(
     nStartValue=VE_0,
@@ -143,25 +110,11 @@ public
     SE1=S_EE_1,
     E2=E_2,
     SE2=S_EE_2)
-             annotation (Placement(transformation(extent={{152,-10},{190,14}})));
+             annotation (Placement(transformation(extent={{242,-10},{280,14}})));
   Modelica.Blocks.Math.Gain imGain2(k=K_E)      annotation(Placement(transformation(extent={{-3,-3},
-            {3,3}},                                                                                              rotation=180,   origin={179,-65})));
-  iPSL.NonElectrical.Math.ImSum2 imSum2_4(
-    a0=0,
-    a1=1,
-    a2=1) annotation (Placement(transformation(
-        extent={{-4,6},{4,-6}},
-        rotation=180,
-        origin={166,-62})));
-  iPSL.NonElectrical.Math.ImSum2 imSum2_5(
-    a0=0,
-    a1=1,
-    a2=1) annotation (Placement(transformation(
-        extent={{-6,8},{6,-8}},
-        rotation=180,
-        origin={156,-62})));
+            {3,3}},                                                                                              rotation=180,   origin={269,-65})));
   Modelica.Blocks.Math.Gain imGain4(k=K_D)      annotation(Placement(transformation(extent={{-3,-3},
-            {3,3}},                                                                                              rotation=180,   origin={179,-77})));
+            {3,3}},                                                                                              rotation=180,   origin={269,-77})));
   Modelica.Blocks.Interfaces.RealInput XADIFD annotation (Placement(transformation(
         extent={{-19,-19},{19,19}},
         rotation=0,
@@ -172,14 +125,14 @@ public
                annotation (Placement(transformation(
         extent={{-12,-19},{12,19}},
         rotation=90,
-        origin={209,-30})));
+        origin={299,-30})));
   NonElectrical.Nonlinear.ImFEX
-      fEX annotation (Placement(transformation(extent={{208,-28},{246,4}})));
+      fEX annotation (Placement(transformation(extent={{298,-28},{336,4}})));
   Modelica.Blocks.Math.Product product
-    annotation (Placement(transformation(extent={{254,-8},{266,4}})));
+    annotation (Placement(transformation(extent={{344,-8},{356,4}})));
   Modelica.Blocks.Interfaces.RealOutput EFD
-    annotation (Placement(transformation(extent={{302,-64},{322,-44}}),
-        iconTransformation(extent={{302,-64},{322,-44}})));
+    annotation (Placement(transformation(extent={{372,-64},{392,-44}}),
+        iconTransformation(extent={{372,-64},{392,-44}})));
 
   Modelica.Blocks.Interfaces.RealInput EFD0
                                            annotation (Placement(transformation(
@@ -199,6 +152,25 @@ public
         rotation=0,
         origin={-117,-145}),iconTransformation(extent={{-17,-17},{17,17}},
           origin={-115,-85})));
+  Modelica.Blocks.Nonlinear.Limiter limiter(uMax=V_AMAX, uMin=V_AMIN)
+    annotation (Placement(transformation(extent={{70,-10},{90,10}})));
+  Modelica.Blocks.Nonlinear.Limiter limiter1(uMax=V_RMAX, uMin=V_RMIN)
+    annotation (Placement(transformation(extent={{192,-10},{212,10}})));
+  Modelica.Blocks.Math.Add add(k2=-1)
+    annotation (Placement(transformation(extent={{222,-16},{242,4}})));
+  NonElectrical.Continuous.DerivativeLag derivativeLag(
+    K=K_F,
+    T=T_F,
+    y_start=0)
+    annotation (Placement(transformation(extent={{120,-80},{100,-60}})));
+  Modelica.Blocks.Math.Add3 add3_1(k2=-1)
+    annotation (Placement(transformation(extent={{-54,-6},{-34,14}})));
+  Modelica.Blocks.Math.Add add1(k2=-1)
+    annotation (Placement(transformation(extent={{-24,-10},{-4,10}})));
+  Modelica.Blocks.Math.Add add2
+    annotation (Placement(transformation(extent={{258,-66},{250,-58}})));
+  Modelica.Blocks.Math.Add add3
+    annotation (Placement(transformation(extent={{240,-68},{232,-60}})));
 initial equation
    Vm0=EFD0;
    VREF=VA0/K_A+EFD0;
@@ -213,203 +185,142 @@ initial equation
    VA0=VFE0*(1/K_B+K_H);
 
 equation
-  connect(imSimpleLag.n1,imSum2_1. p2) annotation(Line(points={{30.9,
-          -74},{28,-74},{28,-62},{25.59,-62}},                                                                     color = {0, 0, 127}, smooth = Smooth.None));
-  connect(imLeadLag.n1, VR1.p1) annotation (Line(
-      points={{-5.26,8},{4.74,8}},
-      color={0,0,127},
-      smooth=Smooth.None));
-  connect(imSum4_1.n1, imLeadLag.p1) annotation (Line(
-      points={{-38.12,8},{-31.26,8}},
-      color={0,0,127},
-      smooth=Smooth.None));
-  connect(ECOMP, Vm.p1) annotation (Line(
-      points={{-115,41},{-102,41},{-102,9},{-78.82,9}},
-      color={0,0,127},
-      smooth=Smooth.None));
-  connect(VOTHSG, imSum4_1.p1) annotation (Line(
-      points={{-115,83},{-52,83},{-52,11.84},{-50.12,11.84}},
-      color={0,0,127},
-      smooth=Smooth.None));
-  connect(Vm.n1, imSum4_1.p2) annotation (Line(
-      points={{-56.6,9},{-55.61,9},{-55.61,8.96},{-50.12,8.96}},
-      color={0,0,127},
-      smooth=Smooth.None));
-  connect(V_REF.y, imSum4_1.p3) annotation (Line(
-      points={{-67.4,-12},{-58,-12},{-58,6.32},{-50.12,6.32}},
-      color={0,0,127},
-      smooth=Smooth.None));
-  connect(imSum2_1.n1, imSum4_1.p4) annotation (Line(
-      points={{16.59,-60},{-54,-60},{-54,3.68},{-50.12,3.68}},
-      color={0,0,127},
-      smooth=Smooth.None));
-  connect(imSum2_4.p2, imGain2.y) annotation (Line(
-      points={{168.04,-63.2},{172,-63.2},{172,-65},{175.7,-65}},
-      color={0,0,127},
-      smooth=Smooth.None));
-  connect(imSum2_4.p1,VX. y) annotation (Line(
-      points={{168.04,-60.8},{170,-60.8},{170,-51},{173.7,-51}},
-      color={0,0,127},
-      smooth=Smooth.None));
-  connect(imSum2_5.p1, imSum2_4.n1) annotation (Line(
-      points={{159.06,-60.4},{162.02,-60.4},{162.02,-62},{164.04,-62}},
-      color={0,0,127},
-      smooth=Smooth.None));
-  connect(imGain4.y, imSum2_5.p2) annotation (Line(
-      points={{175.7,-77},{159.06,-77},{159.06,-63.6}},
-      color={0,0,127},
-      smooth=Smooth.None));
   connect(XADIFD, iN.IFD) annotation (Line(
-      points={{-119,-93},{214,-93},{214,-36.12},{213.94,-36.12}},
+      points={{-119,-93},{304,-93},{304,-36.12},{303.94,-36.12}},
       color={0,0,127},
       smooth=Smooth.None));
   connect(imGain4.u, iN.IFD) annotation (Line(
-      points={{182.6,-77},{214,-77},{214,-36.12},{213.94,-36.12}},
+      points={{272.6,-77},{304,-77},{304,-36.12},{303.94,-36.12}},
       color={0,0,127},
       smooth=Smooth.None));
   connect(fEX.FEX, product.u2) annotation (Line(
-      points={{239.92,-12},{252.8,-12},{252.8,-5.6}},
+      points={{329.92,-12},{342.8,-12},{342.8,-5.6}},
       color={0,0,127},
       smooth=Smooth.None));
   connect(imIntegrator_adpt.IFD, iN.IFD) annotation (Line(
-      points={{161.69,-4.12},{146,-4.12},{146,-92},{214,-92},{214,-36.12},{213.94,
-          -36.12}},
+      points={{251.69,-4.12},{236,-4.12},{236,-92},{304,-92},{304,-36.12},{
+          303.94,-36.12}},
       color={0,0,127},
       smooth=Smooth.None));
 
   connect(product.y, EFD) annotation (Line(
-      points={{266.6,-2},{290,-2},{290,-54},{312,-54}},
-      color={0,0,127},
-      smooth=Smooth.None));
-  connect(imSum2_1.p1, imGain1.y) annotation (Line(
-      points={{25.59,-58},{82,-58},{82,-62},{95.6,-62}},
-      color={0,0,127},
-      smooth=Smooth.None));
-  connect(imSimpleLag.p1, imGain1.y) annotation (Line(
-      points={{54.13,-74},{82,-74},{82,-62},{95.6,-62}},
+      points={{356.6,-2},{380,-2},{380,-54},{382,-54}},
       color={0,0,127},
       smooth=Smooth.None));
   connect(iN.I_N, fEX.IN) annotation (Line(
-      points={{209,-24.12},{209,-12},{215.6,-12}},
+      points={{299,-24.12},{299,-12},{305.6,-12}},
       color={0,0,127},
       smooth=Smooth.None));
   connect(imIntegrator_adpt.VE, product.u1) annotation (Line(
-      points={{180.31,2},{252.8,2},{252.8,1.6}},
+      points={{270.31,2},{342.8,2},{342.8,1.6}},
       color={0,0,127},
       smooth=Smooth.None));
   connect(imIntegrator_adpt.VE,VX. u2) annotation (Line(
-      points={{180.31,2},{192,2},{192,-49.2},{180.6,-49.2}},
+      points={{270.31,2},{282,2},{282,-49.2},{270.6,-49.2}},
       color={0,0,127},
       smooth=Smooth.None));
 
-  connect(imSum2_3.n1, imIntegrator_adpt.p1) annotation (Line(
-      points={{149.92,1},{154.96,1},{154.96,1.88},{161.025,1.88}},
-      color={0,0,127},
-      smooth=Smooth.None));
-  connect(imLimited.n1, imSum2_3.p1) annotation (Line(
-      points={{131.92,0},{140,0},{140,2.8},{141.92,2.8}},
-      color={0,0,127},
-      smooth=Smooth.None));
-  connect(imSum2_3.p2, imGain1.u) annotation (Line(
-      points={{141.92,-0.8},{141.92,-62},{104.8,-62}},
-      color={0,0,127},
-      smooth=Smooth.None));
-  connect(imGain3.u, imGain1.u) annotation (Line(
-      points={{64.8,-44},{142,-44},{142,-62},{104.8,-62}},
-      color={0,0,127},
-      smooth=Smooth.None));
-  connect(imSum2_5.n1, imGain1.u) annotation (Line(
-      points={{153.06,-62},{104.8,-62}},
-      color={0,0,127},
-      smooth=Smooth.None));
-  connect(VR1.n0, imSum2_2.u2) annotation (Line(
-      points={{30.74,8},{32,8},{32,8.4},{37.2,8.4}},
-      color={0,0,127},
-      smooth=Smooth.None));
   connect(imSum2_2.y, K_b.u) annotation (Line(
-      points={{46.4,6},{53.2,6}},
+      points={{116.4,6},{123.2,6}},
       color={0,0,127},
       smooth=Smooth.None));
   connect(imSum2_2.u1, imGain3.y) annotation (Line(
-      points={{37.2,3.6},{34,3.6},{34,-44},{55.6,-44}},
+      points={{107.2,3.6},{104,3.6},{104,-40},{123.6,-40}},
       color={0,0,127},
       smooth=Smooth.None));
   connect(imGain2.u, product.u1) annotation (Line(
-      points={{182.6,-65},{192,-65},{192,2},{254,2},{254,1.6},{252.8,1.6}},
+      points={{272.6,-65},{282,-65},{282,2},{344,2},{344,1.6},{342.8,1.6}},
       color={0,0,127},
       smooth=Smooth.None));
   connect(iN.VE, product.u1) annotation (Line(
-      points={{204.44,-36.12},{204.44,-64},{200,-64},{200,2},{254,2},{254,1.6},{
-          252.8,1.6}},
+      points={{294.44,-36.12},{294.44,-64},{290,-64},{290,2},{344,2},{344,1.6},
+          {342.8,1.6}},
       color={0,0,127},
       smooth=Smooth.None));
   connect(se1.VE_IN, product.u1) annotation (Line(
-      points={{188.1,-53.98},{192,-53.98},{192,2},{254,2},{254,1.6},{252.8,1.6}},
+      points={{278.1,-53.98},{282,-53.98},{282,2},{344,2},{344,1.6},{342.8,1.6}},
       color={0,0,127},
       smooth=Smooth.None));
   connect(K_b.y, hV_Gate.n1) annotation (Line(
-      points={{62.4,6},{70,6},{70,12.06},{77.6,12.06}},
+      points={{132.4,6},{140,6},{140,12.06},{147.6,12.06}},
       color={0,0,127},
       smooth=Smooth.None));
   connect(VUEL, hV_Gate.n2) annotation (Line(
-      points={{-117,-145},{74.5,-145},{74.5,4.58},{77.6,4.58}},
-      color={0,0,127},
-      smooth=Smooth.None));
-  connect(lV_Gate.p, imLimited.p1) annotation (Line(
-      points={{113.9,0.25},{118.95,0.25},{118.95,0},{123.92,0}},
+      points={{-117,-145},{144.5,-145},{144.5,4.58},{147.6,4.58}},
       color={0,0,127},
       smooth=Smooth.None));
   connect(hV_Gate.p, lV_Gate.n1) annotation (Line(
-      points={{93.08,8.15},{96.54,8.15},{96.54,3.7},{101,3.7}},
+      points={{163.08,8.15},{166.54,8.15},{166.54,3.7},{171,3.7}},
       color={0,0,127},
       smooth=Smooth.None));
   connect(lV_Gate.n2, VOEL) annotation (Line(
-      points={{101,-2.9},{96.5,-2.9},{96.5,-45},{-117,-45}},
+      points={{171,-2.9},{166.5,-2.9},{166.5,-45},{-117,-45}},
       color={0,0,127},
       smooth=Smooth.None));
   connect(VX.u1, se1.VE_OUT) annotation (Line(
-      points={{180.6,-52.8},{183.3,-52.8},{183.3,-53.98},{183.9,-53.98}},
+      points={{270.6,-52.8},{273.3,-52.8},{273.3,-53.98},{273.9,-53.98}},
       color={0,0,127},
       smooth=Smooth.None));
-  annotation (Diagram(coordinateSystem(preserveAspectRatio=true, extent={{-100,
+  connect(ECOMP, Vm.u) annotation (Line(points={{-115,41},{-90,41},{-90,4},{-86,
+          4}}, color={0,0,127}));
+  connect(imLeadLag.y, VR1.u)
+    annotation (Line(points={{25,0},{28,0},{32,0}},
+                                             color={0,0,127}));
+  connect(VR1.y, limiter.u)
+    annotation (Line(points={{55,0},{55,0},{68,0}}, color={0,0,127}));
+  connect(limiter.y, imSum2_2.u2) annotation (Line(points={{91,0},{98,0},{98,
+          8.4},{107.2,8.4}}, color={0,0,127}));
+  connect(lV_Gate.p, limiter1.u) annotation (Line(points={{183.9,0.25},{186,
+          0.25},{186,0},{190,0}}, color={0,0,127}));
+  connect(limiter1.y, add.u1)
+    annotation (Line(points={{213,0},{216.5,0},{220,0}}, color={0,0,127}));
+  connect(add.u2, imGain3.u) annotation (Line(points={{220,-12},{214,-12},{214,
+          -40},{132.8,-40}}, color={0,0,127}));
+  connect(derivativeLag.u, imGain3.u) annotation (Line(points={{122,-70},{214,
+          -70},{214,-40},{132.8,-40}}, color={0,0,127}));
+  connect(Vm.y, add3_1.u2)
+    annotation (Line(points={{-63,4},{-56,4}}, color={0,0,127}));
+  connect(VOTHSG, add3_1.u1) annotation (Line(points={{-115,83},{-62,83},{-62,
+          12},{-56,12}}, color={0,0,127}));
+  connect(V_REF.y, add3_1.u3) annotation (Line(points={{-65,-30},{-60,-30},{-60,
+          -4},{-56,-4}}, color={0,0,127}));
+  connect(imLeadLag.u, add1.y)
+    annotation (Line(points={{2,0},{-2,0},{-3,0}}, color={0,0,127}));
+  connect(add3_1.y, add1.u1)
+    annotation (Line(points={{-33,4},{-26,4},{-26,6}}, color={0,0,127}));
+  connect(derivativeLag.y, add1.u2) annotation (Line(points={{99,-70},{36,-70},
+          {-32,-70},{-32,-6},{-26,-6}}, color={0,0,127}));
+  connect(imIntegrator_adpt.p1, add.y) annotation (Line(points={{251.025,1.88},
+          {246,1.88},{246,-6},{243,-6}}, color={0,0,127}));
+  connect(VX.y, add2.u1) annotation (Line(points={{263.7,-51},{262,-51},{262,
+          -59.6},{258.8,-59.6}}, color={0,0,127}));
+  connect(add2.u2, imGain2.y) annotation (Line(points={{258.8,-64.4},{262.4,
+          -64.4},{262.4,-65},{265.7,-65}}, color={0,0,127}));
+  connect(imGain4.y, add3.u2) annotation (Line(points={{265.7,-77},{244,-77},{
+          244,-66.4},{240.8,-66.4}}, color={0,0,127}));
+  connect(add3.u1, add2.y) annotation (Line(points={{240.8,-61.6},{245.4,-61.6},
+          {245.4,-62},{249.6,-62}}, color={0,0,127}));
+  connect(add3.y, imGain3.u) annotation (Line(points={{231.6,-64},{214,-64},{
+          214,-40},{132.8,-40}}, color={0,0,127}));
+  annotation (Diagram(coordinateSystem(preserveAspectRatio=false,extent={{-100,
             -200},{300,100}}), graphics={                                                                                                    Text(extent={{
-              162,-44},{190,-48}},                                                                                                lineColor=
+              252,-44},{280,-48}},                                                                                                lineColor=
               {0,0,255},
           textString="VX=SE*VE"),
         Text(
-          extent={{32,20},{38,10}},
-          lineColor={255,0,0},
-          textString="VA"),
-        Text(
-          extent={{-48,-6},{-42,-16}},
-          lineColor={255,0,0},
-          textString="VF"),
-        Text(
-          extent={{44,-6},{50,-16}},
-          lineColor={255,0,0},
-          textString="VH"),
-        Text(
-          extent={{140,18},{146,8}},
+          extent={{210,18},{216,8}},
           lineColor={255,0,0},
           textString="VR"),
         Text(
-          extent={{176,18},{182,8}},
+          extent={{266,18},{272,8}},
           lineColor={255,0,0},
           textString="VE"),
         Text(
-          extent={{164,-50},{168,-58}},
-          lineColor={255,0,0},
-          textString="VX"),
-        Text(
-          extent={{156,-68},{166,-76}},
-          lineColor={255,0,0},
-          textString="VFE"),
-        Text(
-          extent={{202,-14},{208,-24}},
+          extent={{292,-14},{298,-24}},
           lineColor={255,0,0},
           textString="I_N"),
         Text(
-          extent={{224,-24},{250,-32}},
+          extent={{314,-24},{340,-32}},
           lineColor={255,0,0},
           textString="FEX")}), Icon(coordinateSystem(extent={{-100,-200},{300,100}},
           preserveAspectRatio=true), graphics={

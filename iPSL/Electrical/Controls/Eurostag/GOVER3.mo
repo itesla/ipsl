@@ -64,7 +64,7 @@ equation
   connect(imSumStart2_1.p2, imSetPoint1.n1) annotation(Line(points = {{18.25, 52.4}, {18.25, 31}, {-11.69, 31}}, color = {0, 0, 255}, smooth = Smooth.None));
   connect(imSumStart2_1.p1, imLeadLag.n1) annotation(Line(points = {{18.25, 61.6}, {2, 61.6}, {2, 62}, {1.17, 62}}, color = {0, 0, 255}, smooth = Smooth.None));
   connect(imSumStart2_1.n1, imLimiter.p1) annotation(Line(points = {{43.25, 57}, {43.25, 56}, {56.21, 56}}, color = {0, 0, 255}, smooth = Smooth.None));
-  annotation(Diagram(coordinateSystem(extent = {{-120, -100}, {180, 100}}, preserveAspectRatio = true), graphics), Icon(coordinateSystem(extent = {{-120, -100}, {180, 100}}, preserveAspectRatio = true), graphics={  Rectangle(extent=  {{-40, 40}, {60, -40}}, lineColor=  {0, 0, 255}), Text(extent=  {{-20, -6}, {38, 8}}, lineColor=  {0, 0, 255}, textString=  "GOVER3")}),
+  annotation(Diagram(coordinateSystem(extent = {{-120, -100}, {180, 100}}, preserveAspectRatio = true), graphics), Icon(coordinateSystem(extent = {{-120, -100}, {180, 100}}, preserveAspectRatio = true), graphics={  Rectangle(extent = {{-40, 40}, {60, -40}}, lineColor = {0, 0, 255}), Text(extent = {{-20, -6}, {38, 8}}, lineColor = {0, 0, 255}, textString = "GOVER3")}),
     Documentation(info="<html>
 <p><br><span style=\"font-family: MS Shell Dlg 2;\">&LT;iPSL: iTesla Power System Library&GT;</span></p>
 <p><span style=\"font-family: MS Shell Dlg 2;\">Copyright 2015 RTE (France), AIA (Spain), KTH (Sweden) and DTU (Denmark)</span></p>

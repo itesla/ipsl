@@ -1,5 +1,5 @@
 within iPSL.Electrical.Events;
-class PwFault "Transitory short-circuit on a node. Shunt impedance connected only during a specified interval of time.
+model PwFault "Transitory short-circuit on a node. Shunt impedance connected only during a specified interval of time.
               Developed by AIA. 2014/12/16"
 
 iPSL.Connectors.PwPin p annotation (Placement(transformation(extent={{-80,-10},

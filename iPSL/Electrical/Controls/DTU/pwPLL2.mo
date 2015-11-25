@@ -78,10 +78,10 @@ equation
       points={{-1.1,-16},{2,-16},{2,-2},{4.9,-2}},
       color={0,0,127},
       smooth=Smooth.None));
-  annotation(Icon(coordinateSystem(preserveAspectRatio = false, extent = {{-100, -100}, {100, 100}}), graphics={  Rectangle(extent=  {{-68, 46}, {46, -50}}, lineColor=  {0, 0, 255},
-            lineThickness=                                                                                                    0.5), Text(extent=  {{-42, 20}, {20, -24}}, lineColor=  {0, 0, 255},
-            lineThickness=                                                                                                    0.5,
-            fillPattern=                                                                                                    FillPattern.Solid, textString=  "PLL")}), Diagram(coordinateSystem(preserveAspectRatio=true,   extent={{-100,
+  annotation(Icon(coordinateSystem(preserveAspectRatio = false, extent = {{-100, -100}, {100, 100}}), graphics={  Rectangle(extent = {{-68, 46}, {46, -50}}, lineColor = {0, 0, 255},
+            lineThickness =                                                                                                   0.5), Text(extent = {{-42, 20}, {20, -24}}, lineColor = {0, 0, 255},
+            lineThickness =                                                                                                   0.5,
+            fillPattern =                                                                                                   FillPattern.Solid, textString = "PLL")}), Diagram(coordinateSystem(preserveAspectRatio=true,   extent={{-100,
             -100},{100,100}}),                                                                                                    graphics),
     Documentation(info="<html>
 <p><br><span style=\"font-family: MS Shell Dlg 2;\">&LT;iPSL: iTesla Power System Library&GT;</span></p>

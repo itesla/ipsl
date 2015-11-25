@@ -1,7 +1,6 @@
 ImDeadBand
 ImDelay_1
 ImDelay_2
-ImLimiter
 ImPulse
 ImPulseMyTime
 ImRelay
@@ -13,7 +12,5 @@ ImRateLimiter
 ImReal4in
 ImFEX
 ImRelay4
-ImRelayIEEET1
-ImRelaySCRX
 IF_comparisorOEL
 ImRelayOEL

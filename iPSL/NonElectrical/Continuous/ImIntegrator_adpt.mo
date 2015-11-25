@@ -47,12 +47,12 @@ equation
     E2));
   annotation(Icon(coordinateSystem(preserveAspectRatio=true, extent={{-100,
             -100},{100,100}}),
-                  graphics={  Rectangle(extent={{-42,72},{40,-72}},      lineColor=  {0, 0, 255}), Text(extent={{
+                  graphics={  Rectangle(extent={{-42,72},{40,-72}},      lineColor = {0, 0, 255}), Text(extent={{
               -4,-4},{14,-22}},                                                                                                    lineColor=
               {0,0,255},
           textString="TE"),                                                                                                    Text(extent={{
-              -20,-2},{-4,-20}},                                                                                                    lineColor=  {0, 0, 255}, textString=  "s"), Line(points={{
-              -30,0},{26,0}},                                                                                                    color=  {0, 0, 255}, smooth=  Smooth.Bezier),
+              -20,-2},{-4,-20}},                                                                                                    lineColor = {0, 0, 255}, textString = "s"), Line(points={{
+              -30,0},{26,0}},                                                                                                    color = {0, 0, 255}, smooth = Smooth.Bezier),
                                                                                         Text(extent={{
               -32,-42},{-14,-60}},                                                                                                    lineColor=
               {0,0,255},

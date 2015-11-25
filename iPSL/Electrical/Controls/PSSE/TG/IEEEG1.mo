@@ -3,113 +3,81 @@ model IEEEG1
 
   Modelica.Blocks.Interfaces.RealInput SPEED_HP
     "Machine speed deviation from nominal (pu)" annotation (Placement(
-        transformation(extent={{-132,4},{-122,16}}), iconTransformation(extent={
-            {-152,-16},{-122,16}})));
-  iPSL.NonElectrical.Continuous.ImLeadLag imLeadLag(
+        transformation(extent={{-172,2},{-162,14}}), iconTransformation(extent={{-162,
+            -16},{-132,16}})));
+  iPSL.NonElectrical.Continuous.LeadLag imLeadLag(
     K=K,
     T1=T_2,
     T2=T_1,
-    nStartValue=0)
-    annotation (Placement(transformation(extent={{-96,-8},{-44,30}})));
-  iPSL.NonElectrical.Math.ImSum3 imSum3_1(
-    a0=0,
-    a2=-1,
-    a1=1,
-    a3=-1) annotation (Placement(transformation(extent={{-52,0},{-30,22}})));
-  iPSL.NonElectrical.Math.ImGain imGain(K=1/T_3)
-    annotation (Placement(transformation(extent={{-36,0},{-14,22}})));
-  iPSL.NonElectrical.Continuous.ImLimited imLimited(Ymin=U_c, Ymax=U_o)
-    annotation (Placement(transformation(extent={{-18,0},{2,22}})));
-  NonElectrical.Continuous.ImIntegratornonwindup            imLimitedIntegrator(Ymin = P_MIN, Ymax = P_MAX, K = 1, nStartValue = P0) annotation(Placement(transformation(extent = {{0, 0}, {20, 22}})));
-  iPSL.NonElectrical.Continuous.ImSimpleLag imSimpleLag(
+    y_start=0)
+    annotation (Placement(transformation(extent={{-144,0},{-128,16}})));
+  iPSL.NonElectrical.Continuous.SimpleLag imSimpleLag(
     K=1,
     T=T_4,
-    nStartValue=P0)
-    annotation (Placement(transformation(extent={{6,-8},{60,30}})));
-  iPSL.NonElectrical.Continuous.ImSimpleLag imSimpleLag1(
+    y_start=P0)
+    annotation (Placement(transformation(extent={{-20,0},{-4,16}})));
+  iPSL.NonElectrical.Continuous.SimpleLag imSimpleLag1(
     K=1,
     T=T_5,
-    nStartValue=P0)
-    annotation (Placement(transformation(extent={{42,-8},{96,30}})));
-  iPSL.NonElectrical.Continuous.ImSimpleLag imSimpleLag2(
+    y_start=P0)
+    annotation (Placement(transformation(extent={{22,0},{38,16}})));
+  iPSL.NonElectrical.Continuous.SimpleLag imSimpleLag2(
     K=1,
     T=T_6,
-    nStartValue=P0)
-    annotation (Placement(transformation(extent={{80,-8},{134,30}})));
-  iPSL.NonElectrical.Continuous.ImSimpleLag imSimpleLag3(
+    y_start=P0)
+    annotation (Placement(transformation(extent={{62,0},{78,16}})));
+  iPSL.NonElectrical.Continuous.SimpleLag imSimpleLag3(
     K=1,
     T=T_7,
-    nStartValue=P0)
-    annotation (Placement(transformation(extent={{114,-8},{168,30}})));
-  iPSL.NonElectrical.Math.ImGain imGain1(K=K_1) annotation (Placement(
+    y_start=P0)
+    annotation (Placement(transformation(extent={{102,0},{118,16}})));
+  Modelica.Blocks.Math.Gain imGain1(k=K_1) annotation (Placement(
         transformation(
-        extent={{-11,-11},{11,11}},
+        extent={{-6,-6},{6,6}},
         rotation=90,
-        origin={57,35})));
-  iPSL.NonElectrical.Math.ImGain imGain2(K=K_2) annotation (Placement(
+        origin={10,32})));
+  Modelica.Blocks.Math.Gain imGain2(k=K_2) annotation (Placement(
         transformation(
-        extent={{-11,-11},{11,11}},
+        extent={{-6,-6},{6,6}},
         rotation=-90,
-        origin={57,-15})));
-  iPSL.NonElectrical.Math.ImGain imGain3(K=K_3) annotation (Placement(
+        origin={10,-16})));
+  Modelica.Blocks.Math.Gain imGain3(k=K_3) annotation (Placement(
         transformation(
-        extent={{-11,-11},{11,11}},
+        extent={{-6,-6},{6,6}},
         rotation=90,
-        origin={93,35})));
-  iPSL.NonElectrical.Math.ImGain imGain4(K=K_4) annotation (Placement(
+        origin={50,32})));
+  Modelica.Blocks.Math.Gain imGain4(k=K_4) annotation (Placement(
         transformation(
-        extent={{-11,-11},{11,11}},
+        extent={{-6,-6},{6,6}},
         rotation=-90,
-        origin={91,-15})));
-  iPSL.NonElectrical.Math.ImGain imGain5(K=K_5) annotation (Placement(
+        origin={50,-16})));
+  Modelica.Blocks.Math.Gain imGain5(k=K_5) annotation (Placement(
         transformation(
-        extent={{-11,-11},{11,11}},
+        extent={{-6,-6},{6,6}},
         rotation=90,
-        origin={129,35})));
-  iPSL.NonElectrical.Math.ImGain imGain6(K=K_6) annotation (Placement(
+        origin={90,32})));
+  Modelica.Blocks.Math.Gain imGain6(k=K_6) annotation (Placement(
         transformation(
-        extent={{-11,-11},{11,11}},
+        extent={{-6,-6},{6,6}},
         rotation=-90,
-        origin={127,-15})));
-  iPSL.NonElectrical.Math.ImGain imGain7(K=K_7) annotation (Placement(
+        origin={90,-16})));
+  Modelica.Blocks.Math.Gain imGain7(k=K_7) annotation (Placement(
         transformation(
-        extent={{-11,-11},{11,11}},
+        extent={{-6,-6},{6,6}},
         rotation=90,
-        origin={165,35})));
-  iPSL.NonElectrical.Math.ImGain imGain8(K=K_8) annotation (Placement(
+        origin={130,32})));
+  Modelica.Blocks.Math.Gain imGain8(k=K_8) annotation (Placement(
         transformation(
-        extent={{-11,-11},{11,11}},
+        extent={{-6,-6},{6,6}},
         rotation=-90,
-        origin={165,-15})));
-  iPSL.NonElectrical.Math.ImSum2 imSum2_1(
-    a0=0,
-    a1=1,
-    a2=1) annotation (Placement(transformation(extent={{98,36},{118,56}})));
-  iPSL.NonElectrical.Math.ImSum2 imSum2_2(
-    a0=0,
-    a1=1,
-    a2=1) annotation (Placement(transformation(extent={{134,36},{154,56}})));
-  iPSL.NonElectrical.Math.ImSum2 imSum2_3(
-    a0=0,
-    a1=1,
-    a2=1) annotation (Placement(transformation(extent={{166,38},{186,58}})));
-  iPSL.NonElectrical.Math.ImSum2 imSum2_4(
-    a0=0,
-    a1=1,
-    a2=1) annotation (Placement(transformation(extent={{98,-40},{118,-20}})));
-  iPSL.NonElectrical.Math.ImSum2 imSum2_5(
-    a0=0,
-    a1=1,
-    a2=1) annotation (Placement(transformation(extent={{134,-40},{154,-20}})));
-  iPSL.NonElectrical.Math.ImSum2 imSum2_6(
-    a0=0,
-    a1=1,
-    a2=1) annotation (Placement(transformation(extent={{166,-38},{186,-18}})));
+        origin={130,-16})));
   Modelica.Blocks.Interfaces.RealOutput PMECH_HP
-    "Turbine mechanical power (pu)"              annotation(Placement(transformation(extent = {{184, 40}, {194, 52}}), iconTransformation(extent={{160,26},
+    "Turbine mechanical power (pu)"              annotation(Placement(transformation(extent={{170,52},
+            {180,64}}),                                                                                                iconTransformation(extent={{160,26},
             {188,54}})));
   Modelica.Blocks.Interfaces.RealOutput PMECH_LP
-    "Turbine mechanical power (pu)"              annotation(Placement(transformation(extent = {{184, -34}, {194, -22}}), iconTransformation(extent={{160,-56},
+    "Turbine mechanical power (pu)"              annotation(Placement(transformation(extent={{170,-48},
+            {180,-36}}),                                                                                                 iconTransformation(extent={{160,-56},
             {188,-24}})));
   parameter Real P0 "Power reference of the governor";
 
@@ -133,59 +101,104 @@ model IEEEG1
   parameter Real T_7 = 1e-8 "LP section time const s";
   parameter Real K_7 = 0 "Fraction of power from IP  (pu)";
   parameter Real K_8 = 0;
-  iPSL.NonElectrical.Math.ImSetPoint Pref(V=P0) "Power reference "
-    annotation (Placement(transformation(extent={{-74,24},{-54,44}})));
+  Modelica.Blocks.Sources.Constant Pref(k=P0) "Power reference "
+    annotation (Placement(transformation(extent={{-144,34},{-128,50}})));
+  Modelica.Blocks.Math.Add3 add3_1(k2=-1, k3=-1)
+    annotation (Placement(transformation(extent={{-112,0},{-96,16}})));
+  Modelica.Blocks.Math.Gain gain(k=1/T_3)
+    annotation (Placement(transformation(extent={{-90,0},{-74,16}})));
+  Modelica.Blocks.Nonlinear.Limiter limiter(uMax=U_o, uMin=U_c)
+    annotation (Placement(transformation(extent={{-68,0},{-52,16}})));
+  Modelica.Blocks.Continuous.LimIntegrator limIntegrator(
+    k=1,
+    outMax=P_MAX,
+    outMin=P_MIN,
+    initType=Modelica.Blocks.Types.Init.InitialOutput,
+    y_start=P0) annotation (Placement(transformation(extent={{-46,0},{-30,16}})));
+  Modelica.Blocks.Math.Add add
+    annotation (Placement(transformation(extent={{58,52},{70,64}})));
+  Modelica.Blocks.Math.Add add1
+    annotation (Placement(transformation(extent={{58,-48},{70,-36}})));
+  Modelica.Blocks.Math.Add add2
+    annotation (Placement(transformation(extent={{98,-48},{110,-36}})));
+  Modelica.Blocks.Math.Add add3
+    annotation (Placement(transformation(extent={{98,52},{110,64}})));
+  Modelica.Blocks.Math.Add add4
+    annotation (Placement(transformation(extent={{138,-48},{150,-36}})));
+  Modelica.Blocks.Math.Add add5
+    annotation (Placement(transformation(extent={{138,52},{150,64}})));
 equation
-  connect(imSum3_1.n1, imGain.p1) annotation(Line(points = {{-35.61, 11}, {-30.61, 11}}, color = {0, 0, 127}, smooth = Smooth.None));
-  connect(imGain.n1, imLimited.p1) annotation(Line(points = {{-19.61, 11}, {-13.1, 11}}, color = {0, 0, 127}, smooth = Smooth.None));
-  connect(imLimited.n1, imLimitedIntegrator.p1) annotation(Line(points = {{-3.1, 11}, {4.9, 11}}, color = {0, 0, 127}, smooth = Smooth.None));
-  connect(imSum3_1.p3, imSimpleLag.p1) annotation(Line(points = {{-46.61, 7.7}, {-50, 7.7}, {-50, -10}, {20, -10}, {20, 11}, {24.63, 11}}, color = {0, 0, 127}, smooth = Smooth.None));
-  connect(imSimpleLag.n1, imSimpleLag1.p1) annotation(Line(points={{51.9,11},
-          {60.63,11}},                                                                          color = {0, 0, 127}, smooth = Smooth.None));
-  connect(imSimpleLag1.n1, imSimpleLag2.p1) annotation(Line(points={{87.9,11},
-          {98.63,11}},                                                                           color = {0, 0, 127}, smooth = Smooth.None));
-  connect(imSimpleLag2.n1, imSimpleLag3.p1) annotation(Line(points={{125.9,
-          11},{132.63,11}},                                                                        color = {0, 0, 127}, smooth = Smooth.None));
-  connect(imGain1.p1, imSimpleLag.n1) annotation(Line(points={{57,29.39},
-          {56,29.39},{56,11},{51.9,11}},                                                                          color = {0, 0, 127}, smooth = Smooth.None));
-  connect(imGain2.p1, imSimpleLag1.p1) annotation(Line(points = {{57, -9.39}, {56, -9.39}, {56, 11}, {60.63, 11}}, color = {0, 0, 127}, smooth = Smooth.None));
-  connect(imGain3.p1, imSimpleLag1.n1) annotation(Line(points={{93,29.39},
-          {92,29.39},{92,11},{87.9,11}},                                                                           color = {0, 0, 127}, smooth = Smooth.None));
-  connect(imGain4.p1, imSimpleLag2.p1) annotation(Line(points = {{91, -9.39}, {92, -9.39}, {92, 11}, {98.63, 11}}, color = {0, 0, 127}, smooth = Smooth.None));
-  connect(imGain5.p1, imSimpleLag2.n1) annotation(Line(points={{129,29.39},
-          {128,29.39},{128,11},{125.9,11}},                                                                            color = {0, 0, 127}, smooth = Smooth.None));
-  connect(imGain6.p1, imSimpleLag3.p1) annotation(Line(points = {{127, -9.39}, {128, -9.39}, {128, 11}, {132.63, 11}}, color = {0, 0, 127}, smooth = Smooth.None));
-  connect(imGain3.n1, imSum2_1.p2) annotation(Line(points = {{93, 40.39}, {93, 44}, {102.9, 44}}, color = {0, 0, 127}, smooth = Smooth.None));
-  connect(imGain1.n1, imSum2_1.p1) annotation(Line(points = {{57, 40.39}, {57, 48}, {102.9, 48}}, color = {0, 0, 127}, smooth = Smooth.None));
-  connect(imSum2_1.n1, imSum2_2.p1) annotation(Line(points = {{112.9, 46}, {125.45, 46}, {125.45, 48}, {138.9, 48}}, color = {0, 0, 127}, smooth = Smooth.None));
-  connect(imGain5.n1, imSum2_2.p2) annotation(Line(points = {{129, 40.39}, {129, 44}, {138.9, 44}}, color = {0, 0, 127}, smooth = Smooth.None));
-  connect(imSum2_2.n1, imSum2_3.p1) annotation(Line(points = {{148.9, 46}, {160, 46}, {160, 50}, {170.9, 50}}, color = {0, 0, 127}, smooth = Smooth.None));
-  connect(imGain7.p1, imSimpleLag3.n1) annotation(Line(points={{165,29.39},
-          {165,19.695},{159.9,19.695},{159.9,11}},                                                                             color = {0, 0, 127}, smooth = Smooth.None));
-  connect(imGain7.n1, imSum2_3.p2) annotation(Line(points = {{165, 40.39}, {165, 46}, {170.9, 46}}, color = {0, 0, 127}, smooth = Smooth.None));
-  connect(imSimpleLag3.n1, imGain8.p1) annotation(Line(points={{159.9,
-          11},{159.9,2},{165,2},{165,-9.39}},                                                                        color = {0, 0, 127}, smooth = Smooth.None));
-  connect(imGain4.n1, imSum2_4.p1) annotation(Line(points = {{91, -20.39}, {91, -28}, {102.9, -28}}, color = {0, 0, 127}, smooth = Smooth.None));
-  connect(imGain2.n1, imSum2_4.p2) annotation(Line(points = {{57, -20.39}, {57, -32}, {102.9, -32}}, color = {0, 0, 127}, smooth = Smooth.None));
-  connect(imGain6.n1, imSum2_5.p1) annotation(Line(points = {{127, -20.39}, {127, -28}, {138.9, -28}}, color = {0, 0, 127}, smooth = Smooth.None));
-  connect(imSum2_4.n1, imSum2_5.p2) annotation(Line(points = {{112.9, -30}, {126, -30}, {126, -32}, {138.9, -32}}, color = {0, 0, 127}, smooth = Smooth.None));
-  connect(imGain8.n1, imSum2_6.p1) annotation(Line(points = {{165, -20.39}, {165, -24.195}, {170.9, -24.195}, {170.9, -26}}, color = {0, 0, 127}, smooth = Smooth.None));
-  connect(imSum2_5.n1, imSum2_6.p2) annotation(Line(points = {{148.9, -30}, {170.9, -30}}, color = {0, 0, 127}, smooth = Smooth.None));
-  connect(imSum2_6.n1,PMECH_LP)  annotation(Line(points = {{180.9, -28}, {189, -28}}, color = {0, 0, 127}, smooth = Smooth.None));
-  connect(Pref.n1, imSum3_1.p1) annotation(Line(points = {{-59.1, 34}, {-54, 34}, {-54, 14.3}, {-46.61, 14.3}}, color = {0, 0, 127}, smooth = Smooth.None));
-  connect(SPEED_HP, imLeadLag.p1) annotation (Line(
-      points={{-127,10},{-83.26,10},{-83.26,11}},
-      color={0,0,127},
-      smooth=Smooth.None));
-  connect(imLeadLag.n1, imSum3_1.p2) annotation(Line(points = {{-57.26, 11}, {-46.61, 11}}, color = {0, 0, 127}, smooth = Smooth.None));
-  connect(imSum2_3.n1,PMECH_HP)  annotation(Line(points = {{180.9, 48}, {188, 48}, {188, 46}, {189, 46}}, color = {0, 0, 127}, smooth = Smooth.None));
-  connect(imLimitedIntegrator.n0, imSimpleLag.p1) annotation (Line(
-      points={{14.9,11},{24.63,11}},
-      color={0,0,127},
-      smooth=Smooth.None));
+  connect(SPEED_HP, imLeadLag.u)
+    annotation (Line(points={{-167,8},{-145.6,8}},   color={0,0,127}));
+  connect(Pref.y, add3_1.u1) annotation (Line(points={{-127.2,42},{-122,42},{
+          -122,14.4},{-113.6,14.4}},
+                         color={0,0,127}));
+  connect(add3_1.u2, imLeadLag.y) annotation (Line(points={{-113.6,8},{-113.6,8},
+          {-127.2,8}}, color={0,0,127}));
+  connect(add3_1.y, gain.u)
+    annotation (Line(points={{-95.2,8},{-91.6,8}},   color={0,0,127}));
+  connect(gain.y, limiter.u)
+    annotation (Line(points={{-73.2,8},{-69.6,8}},   color={0,0,127}));
+  connect(limiter.y, limIntegrator.u)
+    annotation (Line(points={{-51.2,8},{-47.6,8}},   color={0,0,127}));
+  connect(imSimpleLag1.u, imSimpleLag.y)
+    annotation (Line(points={{20.4,8},{20.4,8},{-3.2,8}},    color={0,0,127}));
+  connect(limIntegrator.y, imSimpleLag.u)
+    annotation (Line(points={{-29.2,8},{-21.6,8}},        color={0,0,127}));
+  connect(add3_1.u3, imSimpleLag.u) annotation (Line(points={{-113.6,1.6},{-122,
+          1.6},{-122,-22},{-26,-22},{-26,8},{-21.6,8}},
+                                              color={0,0,127}));
+  connect(imGain1.u, imSimpleLag.y)
+    annotation (Line(points={{10,24.8},{10,8},{-3.2,8}}, color={0,0,127}));
+  connect(imGain2.u, imSimpleLag.y)
+    annotation (Line(points={{10,-8.8},{10,8},{-3.2,8}}, color={0,0,127}));
+  connect(imSimpleLag1.y, imSimpleLag2.u)
+    annotation (Line(points={{38.8,8},{60.4,8}}, color={0,0,127}));
+  connect(imGain3.u, imSimpleLag2.u)
+    annotation (Line(points={{50,24.8},{50,8},{60.4,8}}, color={0,0,127}));
+  connect(imGain4.u, imSimpleLag2.u)
+    annotation (Line(points={{50,-8.8},{50,8},{60.4,8}}, color={0,0,127}));
+  connect(add.u2, imGain3.y) annotation (Line(points={{56.8,54.4},{50,54.4},{50,
+          38.6}}, color={0,0,127}));
+  connect(imGain1.y, add.u1) annotation (Line(points={{10,38.6},{10,61.6},{56.8,
+          61.6}}, color={0,0,127}));
+  connect(add1.u1, imGain4.y) annotation (Line(points={{56.8,-38.4},{50,-38.4},
+          {50,-22.6}}, color={0,0,127}));
+  connect(imGain2.y, add1.u2) annotation (Line(points={{10,-22.6},{10,-45.6},{
+          56.8,-45.6}}, color={0,0,127}));
+  connect(imSimpleLag2.y, imSimpleLag3.u)
+    annotation (Line(points={{78.8,8},{100.4,8}}, color={0,0,127}));
+  connect(imGain5.u, imSimpleLag3.u)
+    annotation (Line(points={{90,24.8},{90,8},{100.4,8}}, color={0,0,127}));
+  connect(imGain6.u, imSimpleLag3.u)
+    annotation (Line(points={{90,-8.8},{90,8},{100.4,8}}, color={0,0,127}));
+  connect(imGain6.y, add2.u1) annotation (Line(points={{90,-22.6},{90,-38.4},{
+          96.8,-38.4}}, color={0,0,127}));
+  connect(add1.y, add2.u2) annotation (Line(points={{70.6,-42},{90,-42},{90,
+          -45.6},{96.8,-45.6}}, color={0,0,127}));
+  connect(add.y, add3.u1) annotation (Line(points={{70.6,58},{90,58},{90,61.6},
+          {96.8,61.6}}, color={0,0,127}));
+  connect(imGain5.y, add3.u2) annotation (Line(points={{90,38.6},{90,54.4},{
+          96.8,54.4}}, color={0,0,127}));
+  connect(imSimpleLag3.y, imGain7.u)
+    annotation (Line(points={{118.8,8},{130,8},{130,24.8}}, color={0,0,127}));
+  connect(imGain8.u, imGain7.u)
+    annotation (Line(points={{130,-8.8},{130,24.8}}, color={0,0,127}));
+  connect(add4.y, PMECH_LP) annotation (Line(points={{150.6,-42},{152,-42},{175,
+          -42}}, color={0,0,127}));
+  connect(imGain8.y, add4.u1) annotation (Line(points={{130,-22.6},{130,-38.4},
+          {136.8,-38.4}}, color={0,0,127}));
+  connect(add2.y, add4.u2) annotation (Line(points={{110.6,-42},{130,-42},{130,
+          -45.6},{136.8,-45.6}}, color={0,0,127}));
+  connect(add3.y, add5.u1) annotation (Line(points={{110.6,58},{130,58},{130,
+          61.6},{136.8,61.6}}, color={0,0,127}));
+  connect(imGain7.y, add5.u2) annotation (Line(points={{130,38.6},{130,54.4},{
+          136.8,54.4}}, color={0,0,127}));
+  connect(add5.y, PMECH_HP)
+    annotation (Line(points={{150.6,58},{152,58},{175,58}}, color={0,0,127}));
   annotation(Diagram(coordinateSystem(extent={{-140,-80},{160,80}},        preserveAspectRatio=false)),            Icon(coordinateSystem(extent={{-140,
-            -80},{160,80}},                                                                                                    preserveAspectRatio=false),   graphics={  Rectangle(extent={{
-              -140,80},{160,-80}},                                                                                                    lineColor=  {0, 0, 255}), Text(extent={{
+            -80},{160,80}},                                                                                                    preserveAspectRatio=true),    graphics={  Rectangle(extent={{
+              -140,80},{160,-80}},                                                                                                    lineColor = {0, 0, 255}), Text(extent={{
               -122,18},{-68,-18}},                                                                                                    lineColor=
               {0,0,255},
             fillPattern=FillPattern.Solid,
@@ -198,8 +211,8 @@ equation
               {0,0,255},
             fillPattern=FillPattern.Solid,
           textString="PMECH_LP"),                                                                                                    Text(extent={{
-              -68,40},{88,-46}},                                                                                                    lineColor=  {0, 0, 255},
-            fillPattern=                                                                                                    FillPattern.Solid, textString=  "IEEEG1")}),
+              -68,40},{88,-46}},                                                                                                    lineColor = {0, 0, 255},
+            fillPattern =                                                                                                   FillPattern.Solid, textString = "IEEEG1")}),
     Documentation(info="<html>
 <table cellspacing=\"1\" cellpadding=\"1\" border=\"1\">
 <tr>

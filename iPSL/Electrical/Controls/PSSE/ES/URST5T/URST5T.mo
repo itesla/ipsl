@@ -15,13 +15,13 @@ protected
    parameter Real Vm0(fixed=false);
    parameter Real VR0(fixed=false);
 public
-  NonElectrical.Continuous.ImSimpleLag                  Vm(
-      nStartValue=Vm0, T=T_r,
+  NonElectrical.Continuous.SimpleLag                  Vm(
+      y_start=Vm0, T=T_r,
     K=1)
     annotation (Placement(transformation(
-        extent={{-25,-19},{25,19}},
+        extent={{-9,-9},{9,9}},
         rotation=0,
-        origin={-69,-13})));
+        origin={-79,-13})));
   Modelica.Blocks.Interfaces.RealInput ECOMP
     annotation (Placement(transformation(extent={{-144,-32},{-106,6}}),
         iconTransformation(extent={{-128,82},{-94,116}})));
@@ -79,38 +79,28 @@ public
   NonElectrical.Logical.HV_GATE
           hV_Gate
     annotation (Placement(transformation(extent={{18,-20},{44,8}})));
-  NonElectrical.Continuous.ImLimitedLeadLag
-                                     imLimitedLeadLag(
-    YMAX=V_RMAX/KR,
+  NonElectrical.Continuous.LeadLagLim LL1(
     K=1,
+    outMax=V_RMAX/KR,
+    outMin=V_RMIN/KR,
     T1=T_C1,
     T2=T_B1,
-    YMIN=V_RMIN/KR,
-    nStartValue=VR0/KR)
-    annotation (Placement(transformation(extent={{100,-58},{184,28}})));
-  NonElectrical.Continuous.ImLimitedLeadLag
-                                     imLimitedLeadLag2(
-   YMAX=V_RMAX/KR,
+    y_start=VR0/KR)
+    annotation (Placement(transformation(extent={{142,-24},{160,-6}})));
+  NonElectrical.Continuous.LeadLagLim LL2(
     K=1,
+    outMax=V_RMAX/KR,
+    outMin=V_RMIN/KR,
     T1=T_C2,
     T2=T_B2,
-    YMIN=V_RMIN/KR,
-    nStartValue=VR0/KR)
-    annotation (Placement(transformation(extent={{162,-58},{246,28}})));
-  NonElectrical.Continuous.ImNonwindupLagVL
-                     imLimitedSimpleLag(
-    K=1,
-    VRMIN=V_RMIN,
-    VRMAX=V_RMAX,
-    T=T_1,
-    nStartValue=VR0)
-    annotation (Placement(transformation(extent={{298,-56},{366,18}})));
+    y_start=VR0/KR)
+    annotation (Placement(transformation(extent={{180,-24},{198,-6}})));
   Modelica.Blocks.Math.Gain K_R(k=KR) annotation (Placement(transformation(
-        extent={{-9,-9},{9,9}},
+        extent={{-10,-10},{10,10}},
         rotation=0,
-        origin={251,-9})));
+        origin={250,-10})));
   Modelica.Blocks.Nonlinear.Limiter limiter(uMax=V_RMAX, uMin=V_RMIN)
-    annotation (Placement(transformation(extent={{274,-16},{288,-2}})));
+    annotation (Placement(transformation(extent={{270,-20},{290,0}})));
   Modelica.Blocks.Math.Add VERR2(
                                 k1=-1, k2=1) annotation (Placement(
         transformation(
@@ -131,6 +121,11 @@ public
         extent={{-6,-6},{6,6}},
         rotation=0,
         origin={248,-36})));
+  NonElectrical.Continuous.SimpleLagLimVar simpleLagLimVar(
+    K=1,
+    T=T_1,
+    y_start=VR0)
+    annotation (Placement(transformation(extent={{320,-20},{340,0}})));
 initial equation
     VR0=EFD0+K_C*XADIFD;
     VREF=VR0/KR+ECOMP;
@@ -138,36 +133,12 @@ initial equation
 
 equation
 
-  connect(ECOMP, Vm.p1) annotation (Line(
-      points={{-125,-13},{-76.75,-13}},
-      color={0,0,127},
-      smooth=Smooth.None));
-  connect(Vm.n1, VERR.u1) annotation (Line(
-      points={{-51.5,-13},{-40.375,-13},{-40.375,-12.8},{-23.6,-12.8}},
-      color={0,0,127},
-      smooth=Smooth.None));
   connect(VOTHSG, VERR1.u2) annotation (Line(
       points={{-121,-73},{76,-73},{76,-9.6},{86.2,-9.6}},
       color={0,0,127},
       smooth=Smooth.None));
-  connect(VERR1.y, imLimitedLeadLag.p1) annotation (Line(
-      points={{106.9,-15},{120.58,-15}},
-      color={0,0,127},
-      smooth=Smooth.None));
-  connect(imLimitedLeadLag.n1, imLimitedLeadLag2.p1) annotation (Line(
-      points={{164.26,-15},{182.58,-15}},
-      color={0,0,127},
-      smooth=Smooth.None));
-  connect(K_R.u, imLimitedLeadLag2.n1) annotation (Line(
-      points={{240.2,-9},{232,-9},{232,-15},{226.26,-15}},
-      color={0,0,127},
-      smooth=Smooth.None));
   connect(K_R.y, limiter.u) annotation (Line(
-      points={{260.9,-9},{272.6,-9}},
-      color={0,0,127},
-      smooth=Smooth.None));
-  connect(limiter.y, imLimitedSimpleLag.p1) annotation (Line(
-      points={{288.7,-9},{298,-9},{298,-13.08},{314.83,-13.08}},
+      points={{261,-10},{268,-10}},
       color={0,0,127},
       smooth=Smooth.None));
   connect(XADIFD, K_c.u) annotation (Line(
@@ -207,27 +178,29 @@ equation
       points={{86.2,-20.4},{74,-20.4},{74,-17.75},{62.67,-17.75}},
       color={0,0,127},
       smooth=Smooth.None));
-  connect(imLimitedSimpleLag.n0, VERR2.u2) annotation (Line(
-      points={{348.66,-19},{353.33,-19},{353.33,-25.6},{360.2,-25.6}},
-      color={0,0,127},
-      smooth=Smooth.None));
-  connect(Vmax.y, imLimitedSimpleLag.Ymax) annotation (Line(
-      points={{254.6,-36},{298,-36},{298,-27.51},{316.7,-27.51}},
-      color={0,0,127},
-      smooth=Smooth.None));
-  connect(Vmin.y, imLimitedSimpleLag.Ymin) annotation (Line(
-      points={{254.6,-52},{302,-52},{302,-31.95},{316.7,-31.95}},
-      color={0,0,127},
-      smooth=Smooth.None));
-  connect(Vmax.u, Vm.n1) annotation (Line(
-      points={{240.8,-36},{-51.5,-36},{-51.5,-13}},
-      color={0,0,127},
-      smooth=Smooth.None));
-  connect(Vmin.u, Vm.n1) annotation (Line(
-      points={{240.8,-52},{-52,-52},{-52,-48},{-51.5,-48},{-51.5,-13}},
-      color={0,0,127},
-      smooth=Smooth.None));
-  annotation (Diagram(coordinateSystem(preserveAspectRatio=true, extent={{-120,
+  connect(Vm.u, ECOMP) annotation (Line(points={{-89.8,-13},{-100.9,-13},{-125,-13}},
+        color={0,0,127}));
+  connect(Vm.y, VERR.u1) annotation (Line(points={{-69.1,-13},{-46.55,-13},{-46.55,
+          -12.8},{-23.6,-12.8}}, color={0,0,127}));
+  connect(LL1.u, VERR1.y) annotation (Line(points={{140.2,-15},{140.2,-15},{
+          106.9,-15}}, color={0,0,127}));
+  connect(Vmax.u, ECOMP) annotation (Line(points={{240.8,-36},{-98,-36},{-98,-14},
+          {-100.9,-13},{-125,-13}}, color={0,0,127}));
+  connect(Vmin.u, ECOMP) annotation (Line(points={{240.8,-52},{230,-52},{230,-36},
+          {-98,-36},{-98,-14},{-100.9,-13},{-125,-13}}, color={0,0,127}));
+  connect(LL1.y, LL2.u) annotation (Line(points={{160.9,-15},{160.9,-15},{178.2,
+          -15}}, color={0,0,127}));
+  connect(LL2.y, K_R.u) annotation (Line(points={{198.9,-15},{228,-15},{228,-10},
+          {238,-10}}, color={0,0,127}));
+  connect(simpleLagLimVar.y, VERR2.u2) annotation (Line(points={{341,-10},{350,
+          -10},{350,-26},{356,-26},{356,-25.6},{360.2,-25.6}}, color={0,0,127}));
+  connect(Vmax.y, simpleLagLimVar.outMax) annotation (Line(points={{254.6,-36},
+          {300,-36},{300,20},{338,20},{338,4}}, color={0,0,127}));
+  connect(limiter.y, simpleLagLimVar.u) annotation (Line(points={{291,-10},{
+          304.5,-10},{318,-10}}, color={0,0,127}));
+  connect(Vmin.y, simpleLagLimVar.outMin) annotation (Line(points={{254.6,-52},
+          {322,-52},{322,-24}}, color={0,0,127}));
+  annotation (Diagram(coordinateSystem(preserveAspectRatio=false,extent={{-120,
             -200},{420,120}}), graphics={
         Text(
           extent={{50,-2},{56,-12}},

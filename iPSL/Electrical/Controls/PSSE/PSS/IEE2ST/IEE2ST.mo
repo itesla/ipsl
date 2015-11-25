@@ -24,11 +24,11 @@ model IEE2ST "IEEE Stabilizing Model With Dual-Input Signals"
   Modelica.Blocks.Math.Add add
     annotation (Placement(transformation(extent={{-100,-10},{-80,10}})));
   Modelica.Blocks.Nonlinear.Limiter limiter(uMax=L_SMAX, uMin=L_SMIN)
-    annotation (Placement(transformation(extent={{100,-10},{120,10}})));
+    annotation (Placement(transformation(extent={{96,-10},{116,10}})));
 
 protected
   Modelica.Blocks.Interfaces.RealOutput VSS
-    annotation (Placement(transformation(extent={{140,-10},{160,10}})));
+    annotation (Placement(transformation(extent={{136,-10},{156,10}})));
 public
   Modelica.Blocks.Interfaces.RealOutput VOTHSG "PSS output signal"
     annotation (Placement(transformation(extent={{180,-10},{200,10}})));
@@ -36,39 +36,39 @@ protected
   parameter Real ICS10(fixed = false);
   parameter Real ICS20(fixed = false);
 public
-  NonElectrical.Continuous.ImDerivativeLag imDerivativeLag(
+  NonElectrical.Continuous.DerivativeLag imDerivativeLag(
     K=T_3,
     T=T_4,
-    pStartValue=0)
+    y_start=0)
     annotation (Placement(transformation(extent={{-60,-10},{-40,10}})));
-  NonElectrical.Continuous.ImSimpleLag imSimpleLag(
+  NonElectrical.Continuous.SimpleLag imSimpleLag(
     K=K_1,
     T=T_1,
-    nStartValue=K_1*ICS10)
-    annotation (Placement(transformation(extent={{-160,18},{-110,62}})));
-  NonElectrical.Continuous.ImSimpleLag imSimpleLag1(
+    y_start=K_1*ICS10)
+    annotation (Placement(transformation(extent={{-150,30},{-130,50}})));
+  NonElectrical.Continuous.SimpleLag imSimpleLag1(
     K=K_2,
     T=T_2,
-    nStartValue=ICS20)
-    annotation (Placement(transformation(extent={{-160,-62},{-110,-18}})));
-  NonElectrical.Continuous.ImLeadLag imLeadLag(
+    y_start=ICS20)
+    annotation (Placement(transformation(extent={{-150,-50},{-130,-30}})));
+  NonElectrical.Continuous.LeadLag imLeadLag(
     K=1,
     T1=T_5,
     T2=T_6,
-    nStartValue=0)
-    annotation (Placement(transformation(extent={{-34,-24},{14,24}})));
-  NonElectrical.Continuous.ImLeadLag imLeadLag1(
+    y_start=0)
+    annotation (Placement(transformation(extent={{-20,-10},{0,10}})));
+  NonElectrical.Continuous.LeadLag imLeadLag1(
     K=1,
     T1=T_7,
     T2=T_8,
-    nStartValue=0)
-    annotation (Placement(transformation(extent={{6,-24},{54,24}})));
-  NonElectrical.Continuous.ImLeadLag imLeadLag2(
+    y_start=0)
+    annotation (Placement(transformation(extent={{20,-10},{40,10}})));
+  NonElectrical.Continuous.LeadLag imLeadLag2(
     K=1,
     T1=T_9,
     T2=T_10,
-    nStartValue=0)
-    annotation (Placement(transformation(extent={{46,-24},{94,24}})));
+    y_start=0)
+    annotation (Placement(transformation(extent={{60,-10},{80,10}})));
   Modelica.Blocks.Interfaces.RealInput VCT
     "Compensated machine terminal voltage (pu)"
     annotation (Placement(transformation(
@@ -101,29 +101,25 @@ equation
     end if;
 
   connect(limiter.y, VSS)
-    annotation (Line(points={{121,0},{150,0}}, color={0,0,127}));
-  connect(add.y, imDerivativeLag.p1) annotation (Line(
-      points={{-79,0},{-59.9,0}},
-      color={0,0,127},
-      smooth=Smooth.Bezier));
-  connect(V_S1, imSimpleLag.p1)
-    annotation (Line(points={{-180,40},{-142.75,40}}, color={0,0,127}));
-  connect(imSimpleLag.n1, add.u1) annotation (Line(points={{-117.5,40},{-110,
-          40},{-110,6},{-102,6}},
-                              color={0,0,127}));
-  connect(V_S2, imSimpleLag1.p1) annotation (Line(points={{-180,-40},{-162,-40},
-          {-142.75,-40}}, color={0,0,127}));
-  connect(imSimpleLag1.n1, add.u2) annotation (Line(points={{-117.5,-40},{
-          -110,-40},{-110,-6},{-102,-6}},
-                                     color={0,0,127}));
-  connect(imDerivativeLag.n1, imLeadLag.p1)
-    annotation (Line(points={{-39.9,0},{-30,0},{-22.24,0}}, color={0,0,127}));
-  connect(imLeadLag.n1, imLeadLag1.p1)
-    annotation (Line(points={{1.76,0},{10,0},{17.76,0}}, color={0,0,127}));
-  connect(limiter.u, imLeadLag2.n1)
-    annotation (Line(points={{98,0},{90,0},{81.76,0}}, color={0,0,127}));
-  connect(imLeadLag1.n1, imLeadLag2.p1)
-    annotation (Line(points={{41.76,0},{57.76,0}}, color={0,0,127}));
+    annotation (Line(points={{117,0},{146,0}}, color={0,0,127}));
+  connect(V_S2, imSimpleLag1.u)
+    annotation (Line(points={{-180,-40},{-152,-40}}, color={0,0,127}));
+  connect(imSimpleLag1.y, add.u2) annotation (Line(points={{-129,-40},{-120,-40},
+          {-120,-6},{-102,-6}}, color={0,0,127}));
+  connect(V_S1, imSimpleLag.u)
+    annotation (Line(points={{-180,40},{-166,40},{-152,40}}, color={0,0,127}));
+  connect(imSimpleLag.y, add.u1) annotation (Line(points={{-129,40},{-120,40},{
+          -120,6},{-102,6}}, color={0,0,127}));
+  connect(imLeadLag2.y, limiter.u)
+    annotation (Line(points={{81,0},{94,0}}, color={0,0,127}));
+  connect(imLeadLag1.y, imLeadLag2.u)
+    annotation (Line(points={{41,0},{49.5,0},{58,0}}, color={0,0,127}));
+  connect(imLeadLag.y, imLeadLag1.u)
+    annotation (Line(points={{1,0},{9.5,0},{18,0}}, color={0,0,127}));
+  connect(imLeadLag.u, imDerivativeLag.y)
+    annotation (Line(points={{-22,0},{-39,0}}, color={0,0,127}));
+  connect(add.y, imDerivativeLag.u)
+    annotation (Line(points={{-79,0},{-62,0},{-62,0}}, color={0,0,127}));
   annotation (Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-180,
             -60},{180,60}})), Icon(coordinateSystem(extent={{-180,-60},{180,
             60}},

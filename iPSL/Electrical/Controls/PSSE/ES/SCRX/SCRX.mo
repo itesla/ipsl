@@ -17,96 +17,107 @@ model SCRX "Bus Fed or Solid Fed Static Exciter"
   Modelica.Blocks.Interfaces.RealOutput  EFD annotation(Placement(transformation(extent={{116,-26},
             {132,-12}}),                                                                                         iconTransformation(extent={{116,-26},
             {132,-12}})));
-  Modelica.Blocks.Math.Add3 V_erro(k3 = 1, k1 = 1, k2 = -1) annotation(Placement(transformation(extent = {{-52, -6}, {-36, 10}})));
-  NonElectrical.Continuous.ImSimpleLag_nowinduplimit            VR(
-    K=K,
-    nStartValue=VR0,
-    Ymin=E_MIN,
-    Ymax=E_MAX,
-    T=T_E)                                                                                                     annotation(Placement(transformation(extent = {{-8, -18}, {40, 22}})));
+  Modelica.Blocks.Math.Add3 V_erro(k3 = 1, k1 = 1, k2 = -1) annotation(Placement(transformation(extent={{-52,-8},
+            {-36,8}})));
   Modelica.Blocks.Interfaces.RealInput  VOTHSG(start = 0) "PSS output Upss" annotation(Placement(transformation(extent = {{-114, -14}, {-104, -4}}), iconTransformation(extent={{-124,34},
             {-114,44}})));
   Modelica.Blocks.Interfaces.RealInput  VOEL "OEL output" annotation(Placement(transformation(extent = {{-114, -24}, {-104, -14}}), iconTransformation(extent={{-124,10},
             {-114,20}})));
   Modelica.Blocks.Interfaces.RealInput  VUEL "UEL output" annotation(Placement(transformation(extent = {{-114, -34}, {-104, -24}}), iconTransformation(extent={{-124,
             -16},{-114,-6}})));
-  iPSL.NonElectrical.Math.ImSum3 Vs(
-    a0=0,
-    a1=1,
-    a2=1,
-    a3=1) annotation (Placement(transformation(extent={{-90,-50},{-62,12}})));
 protected
   parameter Real efd0(fixed = false);
   parameter Real VR0(fixed = false);
   parameter Real VREF(fixed = false);
 public
-  iPSL.NonElectrical.Math.ImSetPoint V_REF(V=VREF)
-    annotation (Placement(transformation(extent={{-118,34},{-92,52}})));
   Modelica.Blocks.Interfaces.RealInput  EFD0 annotation(Placement(transformation(extent = {{-114, 10}, {-104, 20}}), iconTransformation(extent={{-124,
             -108},{-114,-94}})));
-  iPSL.NonElectrical.Continuous.ImLeadLag imLeadLag(
+  iPSL.NonElectrical.Continuous.LeadLag imLeadLag(
     K=1,
-    nStartValue=VR0/K,
+    y_start=VR0/K,
     T1=T_AT_B*T_B,
-    T2=T_B) annotation (Placement(transformation(extent={{-44,-28},{10,32}})));
+    T2=T_B) annotation (Placement(transformation(extent={{-28,-10},{-8,10}})));
   iPSL.NonElectrical.Logical.NegCurLogic negCurLogic(nstartvalue=efd0, RC_rfd=
         r_cr_fd)
-    annotation (Placement(transformation(extent={{46,-22},{90,22}})));
+    annotation (Placement(transformation(extent={{66,-22},{110,22}})));
   Modelica.Blocks.Interfaces.RealInput  XADIFD annotation(Placement(transformation(extent = {{-114, -48}, {-104, -36}}), iconTransformation(extent={{-126,
             -38},{-116,-28}})));
   Modelica.Blocks.Interfaces.RealInput  ECOMP
     "Ternimal voltage of generator bus"                                                      annotation(Placement(transformation(extent = {{-114, 22}, {-104, 32}}), iconTransformation(extent={{-124,62},
             {-114,72}})));
-  Switch sWITCH(switch=C_SWITCH)  annotation(Placement(transformation(extent = {{30, -8}, {56, 18}})));
+  Switch sWITCH(switch=C_SWITCH)  annotation(Placement(transformation(extent={{48,-10},
+            {76,18}})));
   iPSL.NonElectrical.Logical.Enable SwitchFromInitialValue(Et0=V_c0)
     annotation (Placement(transformation(extent={{-42,22},{-26,32}})));
+  Modelica.Blocks.Sources.Constant const(k=VREF)
+    annotation (Placement(transformation(extent={{-100,40},{-80,60}})));
+  Modelica.Blocks.Math.Add3 add3_1
+    annotation (Placement(transformation(extent={{-86,-30},{-66,-10}})));
+  NonElectrical.Continuous.SimpleLagLim simpleLagLim(
+    K=K,
+    T=T_E,
+    y_start=VR0,
+    outMax=E_MAX,
+    outMin=E_MIN)
+    annotation (Placement(transformation(extent={{10,-10},{30,10}})));
 initial algorithm
   efd0 := EFD0;
   if C_SWITCH == 0 then
     VR0 := efd0 / V_0;
-    VREF := VR0 / K + V_c0 - Vs.a0;
+    VREF := VR0 / K + V_c0 - add3_1.y;
   else
     VR0 := efd0;
-    VREF := VR0 / K + V_c0 - Vs.a0;
+    VREF := VR0 / K + V_c0 - add3_1.y;
   end if;
 
 equation
-  connect(ETERM, V_erro.u2) annotation(Line(points={{-109,5},{-56,5},
-          {-56,2},{-53.6,2}},                                                                        color = {0, 0, 127}, smooth = Smooth.None));
-  connect(VOTHSG, Vs.p1) annotation(Line(points = {{-109, -9}, {-84.5, -9}, {-84.5, -9.7}, {-83.14, -9.7}}, color = {0, 0, 127}, smooth = Smooth.None));
-  connect(VOEL, Vs.p2) annotation(Line(points = {{-109, -19}, {-83.14, -19}}, color = {0, 0, 127}, smooth = Smooth.None));
-  connect(VUEL, Vs.p3) annotation(Line(points = {{-109, -29}, {-109, -29.5}, {-83.14, -29.5}, {-83.14, -28.3}}, color = {0, 0, 127}, smooth = Smooth.None));
-  connect(Vs.n1, V_erro.u3) annotation(Line(points = {{-69.14, -19}, {-60, -19}, {-60, -4.4}, {-53.6, -4.4}}, color = {0, 0, 127}, smooth = Smooth.None));
-  connect(imLeadLag.p1, V_erro.y) annotation(Line(points = {{-30.77, 2}, {-35.2, 2}}, color = {0, 0, 127}, smooth = Smooth.None));
-  connect(imLeadLag.n1, VR.p1) annotation(Line(points = {{-3.77, 2}, {3.76, 2}}, color = {0, 0, 127}, smooth = Smooth.None));
-  connect(XADIFD, negCurLogic.XadIfd) annotation(Line(points = {{-109, -42}, {35, -42}, {35, -7.92}, {53.48, -7.92}}, color = {0, 0, 127}, smooth = Smooth.None));
-  connect(negCurLogic.Efd, EFD) annotation(Line(points={{83.84,
-          -3.08},{94.7,-3.08},{94.7,-19},{124,-19}},                                                              color = {0, 0, 127}, smooth = Smooth.None));
-  connect(sWITCH.Vd, negCurLogic.Vd) annotation(Line(points = {{49.37, 5}, {51.195, 5}, {51.195, 4.4}, {53.48, 4.4}}, color = {0, 0, 127}, smooth = Smooth.None));
+  connect(ETERM, V_erro.u2) annotation(Line(points={{-109,5},{-56,5},{-56,0},{-53.6,
+          0}},                                                                                       color = {0, 0, 127}, smooth = Smooth.None));
+  connect(XADIFD, negCurLogic.XadIfd) annotation(Line(points={{-109,-42},{55,-42},
+          {55,-7.92},{73.48,-7.92}},                                                                                  color = {0, 0, 127}, smooth = Smooth.None));
+  connect(negCurLogic.Efd, EFD) annotation(Line(points={{103.84,-3.08},{114.7,-3.08},
+          {114.7,-19},{124,-19}},                                                                                 color = {0, 0, 127}, smooth = Smooth.None));
+  connect(sWITCH.Vd, negCurLogic.Vd) annotation(Line(points={{68.86,4},{71.195,4},
+          {71.195,4.4},{73.48,4.4}},                                                                                  color = {0, 0, 127}, smooth = Smooth.None));
   connect(SwitchFromInitialValue.n1, sWITCH.Et)
-                                 annotation(Line(points = {{-26.16, 27}, {34, 27}, {34, 8.64}, {36.37, 8.64}}, color = {0, 0, 127}, smooth = Smooth.None));
+                                 annotation(Line(points={{-26.16,27},{50,27},{50,
+          10},{54,10},{54,7.92},{54.86,7.92}},                                                                 color = {0, 0, 127}, smooth = Smooth.None));
   connect(ECOMP, SwitchFromInitialValue.Et)
                              annotation(Line(points = {{-109, 27}, {-40.8, 27}}, color = {0, 0, 127}, smooth = Smooth.None));
-  connect(VR.n0, sWITCH.VR) annotation(Line(points = {{27.76, 2}, {32, 2}, {32, 1.36}, {36.37, 1.36}}, color = {0, 0, 127}, smooth = Smooth.None));
-  connect(V_REF.n1, V_erro.u1) annotation(Line(points={{-98.63,43},
-          {-53.6,43},{-53.6,8.4}},                                                                 color = {0, 0, 127}, smooth = Smooth.None));
-  annotation(Placement(transformation(extent = {{-114, 44}, {-102, 58}}), iconTransformation(extent = {{-100, -50}, {-90, -40}})), Diagram(coordinateSystem(preserveAspectRatio=true,   extent={{-120,
+  connect(const.y, V_erro.u1) annotation (Line(points={{-79,50},{-58,50},{-58,6.4},
+          {-53.6,6.4}}, color={0,0,127}));
+  connect(VOTHSG, add3_1.u1) annotation (Line(points={{-109,-9},{-99.5,-9},{-99.5,
+          -12},{-88,-12}}, color={0,0,127}));
+  connect(add3_1.u2, VOEL) annotation (Line(points={{-88,-20},{-97,-20},{-97,-19},
+          {-109,-19}}, color={0,0,127}));
+  connect(add3_1.u3, VUEL) annotation (Line(points={{-88,-28},{-98,-28},{-98,-29},
+          {-109,-29}}, color={0,0,127}));
+  connect(V_erro.y, imLeadLag.u)
+    annotation (Line(points={{-35.2,0},{-32.6,0},{-30,0}}, color={0,0,127}));
+  connect(add3_1.y, V_erro.u3) annotation (Line(points={{-65,-20},{-60,-20},{-60,
+          -6.4},{-53.6,-6.4}}, color={0,0,127}));
+  connect(imLeadLag.y, simpleLagLim.u)
+    annotation (Line(points={{-7,0},{8,0},{8,0}}, color={0,0,127}));
+  connect(simpleLagLim.y, sWITCH.VR)
+    annotation (Line(points={{31,0},{54.86,0},{54.86,0.08}}, color={0,0,127}));
+  annotation(Placement(transformation(extent = {{-114, 44}, {-102, 58}}), iconTransformation(extent = {{-100, -50}, {-90, -40}})), Diagram(coordinateSystem(preserveAspectRatio=false,  extent={{-120,
             -120},{120,80}}),                                                                                                    graphics={  Text(extent={{
-              -110,38},{-92,26}},                                                                                                    lineColor=  {0, 0, 255}, textString=  "Ecomp
-             "), Text(extent={{-104,14},{-92,6}},       lineColor=  {0, 0, 255}, textString=  "Et"), Text(extent={{
-              -106,6},{-86,-16}},                                                                                                    lineColor=  {0, 0, 255}, textString=  "VOTHSG "), Text(extent=  {{-108, -12}, {-82, -18}}, lineColor=  {0, 0, 255}, textString=  " VOEL"), Text(extent=  {{-110, -22}, {-80, -28}}, lineColor=  {0, 0, 255}, textString=  " VUEL "), Text(extent={{
-              -102,26},{-90,12}},                                                                                                    lineColor=  {0, 0, 255}, textString=  "Efd0"), Text(extent=  {{-102, -34}, {-84, -42}}, lineColor=  {0, 0, 255}, textString=  "XadIfd"), Text(extent=  {{86, 14}, {102, 6}}, lineColor=  {0, 0, 255}, textString=  "Efd"), Text(extent=  {{-114, 52}, {-100, 46}}, lineColor=  {0, 0, 255}, textString=  "Vref")}), Icon(coordinateSystem(preserveAspectRatio=true,   extent={{-120,
+              -110,38},{-92,26}},                                                                                                    lineColor = {0, 0, 255}, textString = "Ecomp
+             "), Text(extent={{-104,14},{-92,6}},       lineColor = {0, 0, 255}, textString = "Et"), Text(extent={{
+              -106,6},{-86,-16}},                                                                                                    lineColor = {0, 0, 255}, textString = "VOTHSG "), Text(extent = {{-108, -12}, {-82, -18}}, lineColor = {0, 0, 255}, textString = " VOEL"), Text(extent = {{-110, -22}, {-80, -28}}, lineColor = {0, 0, 255}, textString = " VUEL "), Text(extent={{
+              -102,26},{-90,12}},                                                                                                    lineColor = {0, 0, 255}, textString = "Efd0"), Text(extent = {{-102, -34}, {-84, -42}}, lineColor = {0, 0, 255}, textString = "XadIfd"), Text(extent={{
+              106,14},{122,6}},                                                                                                    lineColor = {0, 0, 255}, textString = "Efd")}),                                                                                        Icon(coordinateSystem(preserveAspectRatio=true,   extent={{-120,
             -120},{120,80}}),                                                                                                    graphics={  Rectangle(extent={{
-              -120,80},{120,-120}},                                                                                                 lineColor=  {0, 0, 255}), Text(extent={{
-              -114,-48},{-70,-66}},                                                                                                   lineColor=  {0, 0, 255}, textString=  "ETERM"), Text(extent={{
-              -114,62},{-62,32}},                                                                                                  lineColor=  {0, 0, 255}, textString=  "VOTHSG "), Text(extent={{
-              90,4},{122,-10}},                                                                                                    lineColor=  {0, 0, 255}, textString=  "EFD"), Text(extent={{
-              -52,26},{60,-56}},                                                                                                    lineColor=  {0, 0, 255}, textString=  "SCRX"), Text(extent={{
-              -114,-2},{-80,-16}},                                                                                                    lineColor=  {0, 0, 255}, textString=  " VUEL "), Text(extent={{
-              -118,26},{-74,12}},                                                                                                   lineColor=  {0, 0, 255}, textString=  " VOEL"), Text(extent={{
-              -112,-82},{-88,-106}},                                                                                                  lineColor=  {0, 0, 255}, textString=  "Efd0"), Text(extent={{
-              -112,-24},{-72,-42}},                                                                                                   lineColor=  {0, 0, 255}, textString=  "XADIFD"), Text(extent={{
-              -114,86},{-72,58}},                                                                                                   lineColor=  {0, 0, 255}, textString=  "ECOMP")}),
+              -120,80},{120,-120}},                                                                                                 lineColor = {0, 0, 255}), Text(extent={{
+              -114,-48},{-70,-66}},                                                                                                   lineColor = {0, 0, 255}, textString = "ETERM"), Text(extent={{
+              -114,62},{-62,32}},                                                                                                  lineColor = {0, 0, 255}, textString = "VOTHSG "), Text(extent={{
+              90,4},{122,-10}},                                                                                                    lineColor = {0, 0, 255}, textString = "EFD"), Text(extent={{
+              -52,26},{60,-56}},                                                                                                    lineColor = {0, 0, 255}, textString = "SCRX"), Text(extent={{
+              -114,-2},{-80,-16}},                                                                                                    lineColor = {0, 0, 255}, textString = " VUEL "), Text(extent={{
+              -118,26},{-74,12}},                                                                                                   lineColor = {0, 0, 255}, textString = " VOEL"), Text(extent={{
+              -112,-82},{-88,-106}},                                                                                                  lineColor = {0, 0, 255}, textString = "Efd0"), Text(extent={{
+              -112,-24},{-72,-42}},                                                                                                   lineColor = {0, 0, 255}, textString = "XADIFD"), Text(extent={{
+              -114,86},{-72,58}},                                                                                                   lineColor = {0, 0, 255}, textString = "ECOMP")}),
     Documentation(info="<html>
 <table cellspacing=\"1\" cellpadding=\"1\" border=\"1\">
 <tr>

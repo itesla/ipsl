@@ -1,21 +1,8 @@
 within iPSL.Electrical.Controls.PSSE.ES.EXAC1;
 model EXAC1
 
-  iPSL.NonElectrical.Math.ImSum2 imSum2_1(
-    a0=0,
-    a1=1,
-    a2=-1) annotation (Placement(transformation(extent={{-50,-38},{-30,-18}})));
-  iPSL.NonElectrical.Math.ImSetPoint Vref(V=VREF)
-    annotation (Placement(transformation(extent={{-68,-22},{-44,2}})));
-  iPSL.NonElectrical.Math.ImSum3 imSum3_1(
-    a0=0,
-    a2=1,
-    a1=-1,
-    a3=1) annotation (Placement(transformation(extent={{-34,-38},{-14,-18}})));
-  iPSL.NonElectrical.Math.ImSum2 imSum2_2(
-    a0=0,
-    a1=1,
-    a2=1) annotation (Placement(transformation(extent={{-72,-62},{-52,-42}})));
+  Modelica.Blocks.Sources.Constant Vref(k=VREF)
+    annotation (Placement(transformation(extent={{-68,-22},{-54,-8}})));
   Modelica.Blocks.Interfaces.RealInput XADIFD "Field current" annotation (
       Placement(transformation(extent={{-104,54},{-94,66}}), iconTransformation(
           extent={{-104,54},{-94,66}})));
@@ -27,13 +14,13 @@ model EXAC1
             -26},{-94,-14}}), iconTransformation(extent={{-104,-26},{-94,-14}})));
   Modelica.Blocks.Interfaces.RealInput VOEL "OEL output" annotation(Placement(transformation(extent={{-104,
             -66},{-94,-54}}), iconTransformation(extent={{-104,-66},{-94,-54}})));
-  iPSL.NonElectrical.Continuous.ImSimpleLag_nowinduplimit imLimitedSimpleLag(
+  iPSL.NonElectrical.Continuous.SimpleLag imLimitedSimpleLag(
     K=K_A,
     T=T_A,
     Ymin=V_RMIN,
     Ymax=V_RMAX,
     nStartValue=0)
-    annotation (Placement(transformation(extent={{-22,-46},{36,-10}})));
+    annotation (Placement(transformation(extent={{0,-36},{16,-20}})));
   iPSL.NonElectrical.Continuous.ImIntegrator imIntegrator(K=1/T_E, nStartValue=
         vf00) annotation (Placement(transformation(extent={{54,-36},{74,-16}})));
   iPSL.NonElectrical.Continuous.ImLimited imLimited_min(Ymin=0.000001, Ymax=
@@ -49,17 +36,17 @@ model EXAC1
     annotation (Placement(transformation(extent={{-26,60},{-6,80}})));
   NonElectrical.Nonlinear.ImRelay4
           imRelay(E1 = E_1, E2 = E_2) annotation(Placement(transformation(extent = {{90, 10}, {36, 58}})));
-  iPSL.NonElectrical.Math.ImSetPoint imSetPoint(V=S_EE_1)
-    annotation (Placement(transformation(extent={{98,34},{78,54}})));
-  iPSL.NonElectrical.Math.ImSetPoint imSetPoint1(V=S_EE_2)
-    annotation (Placement(transformation(extent={{98,22},{76,44}})));
-  iPSL.NonElectrical.Math.ImSetPoint imSetPoint2(V=0)
-    annotation (Placement(transformation(extent={{98,44},{78,64}})));
+  Modelica.Blocks.Sources.Constant imSetPoint(k=S_EE_1)
+    annotation (Placement(transformation(extent={{96,38},{84,50}})));
+  Modelica.Blocks.Sources.Constant imSetPoint1(k=S_EE_2)
+    annotation (Placement(transformation(extent={{94,12},{80,26}})));
+  Modelica.Blocks.Sources.Constant imSetPoint2(k=0)
+    annotation (Placement(transformation(extent={{90,54},{78,66}})));
   iPSL.NonElectrical.Math.ImSum2 imSum2_4(
     a0=0,
     a1=1,
     a2=1) annotation (Placement(transformation(extent={{46,26},{26,46}})));
-  iPSL.NonElectrical.Math.ImSetPoint imSetPoint3(V=K_E)
+  Modelica.Blocks.Sources.Constant imSetPoint3(k=K_E)
     annotation (Placement(transformation(extent={{68,8},{48,28}})));
   iPSL.NonElectrical.Math.ImMult2 imMult2_1(
     a0=0,
@@ -97,23 +84,16 @@ model EXAC1
   parameter Real S_EE_2 = 0.1 "Saturation at E2";
   parameter Real vf00 "Initial field voltage";
   parameter Real if00 "Initial field current";
-  iPSL.NonElectrical.Continuous.ImDerivativeLag imDerivativeLag(
+  iPSL.NonElectrical.Continuous.DerivativeLag imDerivativeLag(
     K=K_F,
     T=T_F,
     pStartValue=if00*K_D + vf00)
-    annotation (Placement(transformation(extent={{-40,-14},{4,16}})));
+    annotation (Placement(transformation(extent={{-26,-10},{-12,4}})));
   iPSL.NonElectrical.Math.ImSum2 imSum2_3(
     a0=0,
     a2=1,
     a1=-1) annotation (Placement(transformation(extent={{38,-36},{58,-16}})));
 equation
-  connect(Vref.n1, imSum2_1.p1) annotation(Line(points = {{-50.12, -10}, {-46, -10}, {-46, -26}, {-45.1, -26}}, color = {0, 0, 127}, smooth = Smooth.None));
-  connect(imSum2_1.n1, imSum3_1.p2) annotation(Line(points = {{-35.1, -28}, {-29.1, -28}}, color = {0, 0, 127}, smooth = Smooth.None));
-  connect(VOTHSG, imSum2_2.p1) annotation(Line(points={{-99,-20},{-76.5,-20},{-76.5,
-          -50},{-67.1,-50}},                                                                                    color = {0, 0, 127}, smooth = Smooth.None));
-  connect(VOEL, imSum2_2.p2) annotation(Line(points={{-99,-60},{-74,-60},{-74,-54},
-          {-67.1,-54}},                                                                                   color = {0, 0, 127}, smooth = Smooth.None));
-  connect(imSum2_2.n1, imSum3_1.p3) annotation(Line(points = {{-57.1, -52}, {-32, -52}, {-32, -31}, {-29.1, -31}}, color = {0, 0, 127}, smooth = Smooth.None));
   connect(imIntegrator.n1, imLimited_min.p1) annotation(Line(points = {{68.9, -26}, {72.9, -26}}, color = {0, 0, 127}, smooth = Smooth.None));
   connect(XADIFD, imGain.p1) annotation (Line(
       points={{-99,60},{-92,60},{-92,-2},{-75.1,-2}},
@@ -123,7 +103,8 @@ equation
       points={{-37.1,72},{-82,72},{-82,60},{-99,60}},
       color={0,0,127},
       smooth=Smooth.None));
-  connect(imLimited_min.n1, imDiv2_1.p2) annotation(Line(points = {{82.9, -26}, {98, -26}, {98, 60}, {-38, 60}, {-38, 68}, {-37.1, 68}}, color = {0, 0, 127}, smooth = Smooth.None));
+  connect(imLimited_min.n1, imDiv2_1.p2) annotation(Line(points={{84.9,-28},{100,
+          -28},{100,58},{-36,58},{-36,66},{-35.1,66}},                                                                                   color = {0, 0, 127}, smooth = Smooth.None));
   connect(imDiv2_1.n1, imGain1.p1) annotation(Line(points = {{-27.1, 70}, {-21.1, 70}}, color = {0, 0, 127}, smooth = Smooth.None));
   connect(imRelay.p4, imSetPoint1.n1) annotation(Line(points = {{75.96, 31.36}, {78.98, 31.36}, {78.98, 33}, {81.61, 33}}, color = {0, 0, 127}, smooth = Smooth.None));
   connect(imSetPoint.n1, imRelay.p3) annotation(Line(points = {{83.1, 44}, {80, 44}, {80, 36.4}, {75.825, 36.4}}, color = {0, 0, 127}, smooth = Smooth.None));
@@ -136,19 +117,12 @@ equation
   connect(imRelay.p1, imLimited_min.n1) annotation(Line(points = {{75.825, 26.08}, {90, 26.08}, {90, 12}, {98, 12}, {98, -26}, {82.9, -26}}, color = {0, 0, 127}, smooth = Smooth.None));
   connect(imGain1.n1, fEX.IN) annotation(Line(points = {{-11.1, 70}, {-3.6, 70}}, color = {0, 0, 127}, smooth = Smooth.None));
   connect(fEX.FEX, imMult2_2.p1) annotation(Line(points = {{23.28, 70}, {26.09, 70}, {26.09, 70.2}, {28.9, 70.2}}, color = {0, 0, 127}, smooth = Smooth.None));
-  connect(imMult2_2.p2, imLimited_min.n1) annotation(Line(points = {{28.9, 65.8}, {24, 65.8}, {24, 60}, {98, 60}, {98, -26}, {82.9, -26}}, color = {0, 0, 127}, smooth = Smooth.None));
+  connect(imMult2_2.p2, imLimited_min.n1) annotation(Line(points={{26.9,69.8},{22,
+          69.8},{22,64},{96,64},{96,-22},{80.9,-22}},                                                                                      color = {0, 0, 127}, smooth = Smooth.None));
   connect(imMult2_2.n1, EFD) annotation(Line(points={{38.9,68},{104,68},{104,0},
           {105,0}},                                                                                    color = {0, 0, 127}, smooth = Smooth.None));
-  connect(imSum3_1.n1, imLimitedSimpleLag.p1) annotation(Line(points={{-19.1,
-          -28},{-7.79,-28}},                                                                         color = {0, 0, 127}, smooth = Smooth.None));
-  connect(ECOMP, imSum2_1.p2) annotation (Line(
-      points={{-99,20},{-68,20},{-68,-30},{-45.1,-30}},
-      color={0,0,127},
-      smooth=Smooth.None));
   connect(imSum2_5.n1, imDerivativeLag.p1) annotation(Line(points={{-39.1,0},{
           -32,0},{-32,1},{-39.78,1}},                                                                              color = {0, 0, 127}, smooth = Smooth.None));
-  connect(imDerivativeLag.n1, imSum3_1.p1) annotation(Line(points={{4.22,1},{2,
-          1},{2,-12},{-34,-12},{-34,-25},{-29.1,-25}},                                                                                    color = {0, 0, 127}, smooth = Smooth.None));
   connect(imMult2_1.p2, imDiv2_1.p2) annotation(Line(points = {{-24.9, 23.8}, {-10, 23.8}, {-10, 60}, {-38, 60}, {-38, 68}, {-37.1, 68}}, color = {0, 0, 127}, smooth = Smooth.None));
   connect(imIntegrator.p1, imSum2_3.n1) annotation(Line(points = {{58.9, -26}, {52.9, -26}}, color = {0, 0, 127}, smooth = Smooth.None));
   connect(imSum2_3.p1, imDerivativeLag.p1) annotation(Line(points={{42.9,-24},{
@@ -158,18 +132,18 @@ equation
       color={0,0,127},
       smooth=Smooth.None));
   annotation(Diagram(coordinateSystem(preserveAspectRatio=false,  extent={{-100,
-            -80},{100,80}}),                                                                           graphics={  Text(extent=  {{-64, -14}, {-54, -22}}, lineColor=  {0, 0, 255}, textString=  "Vref"), Text(extent=  {{-56, -52}, {-50, -58}}, lineColor=  {255, 0, 0}, textString=  "Vs"), Text(extent=  {{-14, 78}, {-8, 72}}, lineColor=  {255, 0, 0}, textString=  "I"), Text(extent=  {{-10, 74}, {-8, 74}}, lineColor=  {255, 0, 0}, textString=  "N"), Text(extent=  {{86, 58}, {92, 52}}, lineColor=  {255, 0, 0}, textString=  "0"), Text(extent=  {{86, 38}, {94, 30}}, lineColor=  {255, 0, 0}, textString=  "SE2"), Text(extent=  {{86, 48}, {94, 42}}, lineColor=  {255, 0, 0}, textString=  "SE1"), Text(extent=  {{84, -28}, {90, -34}}, lineColor=  {255, 0, 0}, textString=  "V"), Text(extent=  {{88, -32}, {90, -32}}, lineColor=  {255, 0, 0}, textString=  "E"), Text(extent=  {{-40, -4}, {-30, -10}}, lineColor=  {255, 0, 0}, textString=  "V"), Text(extent=  {{-36, -8}, {-28, -10}}, lineColor=  {255, 0, 0}, textString=  "FE"), Text(extent=  {{30, 2}, {40, -4}}, lineColor=  {255, 0, 0}, textString=  "V"), Text(extent=  {{42, -2}, {36, -4}}, lineColor=  {255, 0, 0}, textString=  "F"), Text(extent=  {{54, 22}, {60, 16}}, lineColor=  {255, 0, 0}, textString=  "K"), Text(extent=  {{58, 18}, {60, 18}}, lineColor=  {255, 0, 0}, textString=  "E"), Text(extent=  {{42, 44}, {48, 38}}, lineColor=  {255, 0, 0}, textString=  "S"), Text(extent=  {{46, 40}, {48, 40}}, lineColor=  {255, 0, 0}, textString=  "E")}), Icon(coordinateSystem(preserveAspectRatio=false,   extent={{-100,
+            -80},{100,80}}),                                                                           graphics={  Text(extent = {{-64, -14}, {-54, -22}}, lineColor = {0, 0, 255}, textString = "Vref"),                                                                                      Text(extent = {{-14, 78}, {-8, 72}}, lineColor = {255, 0, 0}, textString = "I"), Text(extent = {{-10, 74}, {-8, 74}}, lineColor = {255, 0, 0}, textString = "N"), Text(extent = {{86, 58}, {92, 52}}, lineColor = {255, 0, 0}, textString = "0"), Text(extent = {{86, 38}, {94, 30}}, lineColor = {255, 0, 0}, textString = "SE2"), Text(extent = {{86, 48}, {94, 42}}, lineColor = {255, 0, 0}, textString = "SE1"), Text(extent = {{84, -28}, {90, -34}}, lineColor = {255, 0, 0}, textString = "V"), Text(extent = {{88, -32}, {90, -32}}, lineColor = {255, 0, 0}, textString = "E"), Text(extent = {{-40, -4}, {-30, -10}}, lineColor = {255, 0, 0}, textString = "V"), Text(extent = {{-36, -8}, {-28, -10}}, lineColor = {255, 0, 0}, textString = "FE"), Text(extent = {{30, 2}, {40, -4}}, lineColor = {255, 0, 0}, textString = "V"), Text(extent = {{42, -2}, {36, -4}}, lineColor = {255, 0, 0}, textString = "F"), Text(extent = {{54, 22}, {60, 16}}, lineColor = {255, 0, 0}, textString = "K"), Text(extent = {{58, 18}, {60, 18}}, lineColor = {255, 0, 0}, textString = "E"), Text(extent = {{42, 44}, {48, 38}}, lineColor = {255, 0, 0}, textString = "S"), Text(extent = {{46, 40}, {48, 40}}, lineColor = {255, 0, 0}, textString = "E")}), Icon(coordinateSystem(preserveAspectRatio=false,   extent={{-100,
             -80},{100,80}}),                                                                                                    graphics={  Rectangle(extent={{
-              -100,80},{100,-80}},                                                                                                    lineColor=  {0, 0, 255}), Text(extent={{
+              -100,80},{100,-80}},                                                                                                    lineColor = {0, 0, 255}), Text(extent={{
               -92,68},{-60,52}},                                                                                                    lineColor=
               {0,0,255},
           textString="XADIFD"),                                                                                                    Text(extent={{
               -92,-12},{-56,-30}},                                                                                                    lineColor=
               {0,0,255},
           textString="VOTHSG"),                                                                                                    Text(extent={{
-              -96,-56},{-64,-66}},                                                                                                    lineColor=  {0, 0, 255}, textString=  "VOEL"), Text(extent={{
-              68,8},{98,-8}},                                                                                                    lineColor=  {0, 0, 255}, textString=  "EFD"), Text(extent={{
-              -54,34},{52,-28}},                                                                                                    lineColor=  {0, 0, 255}, textString=  "EXAC1"),
+              -96,-56},{-64,-66}},                                                                                                    lineColor = {0, 0, 255}, textString = "VOEL"), Text(extent={{
+              68,8},{98,-8}},                                                                                                    lineColor = {0, 0, 255}, textString = "EFD"), Text(extent={{
+              -54,34},{52,-28}},                                                                                                    lineColor = {0, 0, 255}, textString = "EXAC1"),
                                                                                         Text(extent={{
               -92,26},{-60,16}},                                                                                                    lineColor=
               {0,0,255},

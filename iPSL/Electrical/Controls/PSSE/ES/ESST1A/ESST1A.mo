@@ -6,7 +6,7 @@ model ESST1A "IEEE Type ST1A Excitation System"
     a1=1,
     a2=-1)
     annotation (Placement(transformation(extent={{-57.6,-7.6},{-37.6,12.4}})));
-  iPSL.NonElectrical.Math.ImSetPoint Vref(V=VREF)
+  Modelica.Blocks.Sources.Constant Vref(k=VREF)
     annotation (Placement(transformation(extent={{-82.5,4.9},{-58.5,28.9}})));
   iPSL.NonElectrical.Math.ImSum3 imSum3_1(
     a0=0,
@@ -39,8 +39,8 @@ model ESST1A "IEEE Type ST1A Excitation System"
                              iconTransformation(extent={{-9,-10},{9,10}},
         rotation=270,
         origin={-58.3,-88})));
-  NonElectrical.Continuous.ImSimpleLag_nowinduplimit       imLimitedSimpleLag(
-    nStartValue=VA0,
+  NonElectrical.Continuous.SimpleLag imLimitedSimpleLag(
+    y_start=VA0,
     Ymin=V_AMIN,
     Ymax=V_AMAX,
     K=K_A,
@@ -77,8 +77,8 @@ parameter Real T_F=1 "Rate feedback time constant (s)" annotation (Dialog(group=
 parameter Real K_LR annotation (Dialog(group="Excitation system parameters"));
 parameter Real I_LR annotation (Dialog(group="Excitation system parameters"));
 
-  iPSL.NonElectrical.Continuous.ImDerivativeLag imDerivativeLag(
-    pStartValue=0,
+  iPSL.NonElectrical.Continuous.DerivativeLag imDerivativeLag(
+    y_start=0,
     K=K_F,
     T=T_F)
     annotation (Placement(transformation(extent={{70.4,37.6},{26.4,67.6}})));

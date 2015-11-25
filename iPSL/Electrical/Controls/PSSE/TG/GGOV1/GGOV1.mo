@@ -80,11 +80,11 @@ public
     annotation (Placement(transformation(extent={{-7,-7},{7,7}},
         rotation=180,
         origin={-51,-117})));
-  iPSL.NonElectrical.Continuous.ImDerivativeLag s1(
+  iPSL.NonElectrical.Continuous.DerivativeLag s1(
     K=Kdgov,
     T=Tdgov,
-    pStartValue=0)
-    annotation (Placement(transformation(extent={{-94,-50},{-52,-16}})));
+    y_start=0)
+    annotation (Placement(transformation(extent={{-80,-40},{-60,-20}})));
   Modelica.Blocks.Math.Add3 GovernorPID
     annotation (Placement(transformation(extent={{-60,-88},{-38,-66}})));
   Modelica.Blocks.Math.Add LoadlimiterPI
@@ -106,11 +106,11 @@ public
   Modelica.Blocks.Interfaces.RealInput PELEC "Machine electrical power (pu)"
     annotation (Placement(transformation(extent={{-348,-118},{-310,-80}}),
         iconTransformation(extent={{-348,-118},{-310,-80}})));
-  iPSL.NonElectrical.Continuous.ImDerivativeLag s8(
+  iPSL.NonElectrical.Continuous.DerivativeLag s8(
     K=1,
     T=Ta,
-    pStartValue=0)
-    annotation (Placement(transformation(extent={{-210,-14},{-154,26}})));
+    y_start=0)
+    annotation (Placement(transformation(extent={{-196,-14},{-170,12}})));
   Modelica.Blocks.Math.Add add1(k2=-1)
     annotation (Placement(transformation(extent={{-146,2},{-126,22}})));
   Modelica.Blocks.Sources.Constant AccelerationSet(k=Aset)
@@ -138,24 +138,24 @@ public
     annotation (Placement(transformation(extent={{-6,-6},{6,6}},
         rotation=90,
         origin={-246,-122})));
-  NonElectrical.Continuous.ImSimpleLag                  s0(T=T_pelec,
-      nStartValue=s00,
+  NonElectrical.Continuous.SimpleLag                  s0(T=T_pelec,
+      y_start=s00,
     K=1)
     annotation (Placement(transformation(
-        extent={{-31,-19},{31,19}},
+        extent={{-10,-10},{10,10}},
         rotation=0,
-        origin={-263,-167})));
+        origin={-270,-170})));
   Modelica.Blocks.Math.Add add6(k1=-1) annotation (Placement(transformation(
         extent={{-8,-8},{8,8}},
         rotation=180,
         origin={-74,118})));
-  NonElectrical.Continuous.ImSimpleLag                  s5(T=Tfload,
-      nStartValue=s50,
+  NonElectrical.Continuous.SimpleLag                  s5(T=Tfload,
+      y_start=s50,
     K=1)
     annotation (Placement(transformation(
-        extent={{-34,26},{34,-26}},
+        extent={{-10,10},{10,-10}},
         rotation=180,
-        origin={-32,114})));
+        origin={-30,110})));
   Modelica.Blocks.Math.Gain gain(k=1/Kturb)
     annotation (Placement(transformation(extent={{-138,124},{-122,140}})));
   Modelica.Blocks.Sources.Constant set(k=Ldref) "load reference"
@@ -164,24 +164,24 @@ public
                                  maxLimiter(uMax=1, uMin=-Modelica.Constants.inf)
     annotation (Placement(transformation(extent={{-126,56},{-110,72}})));
 public
-  NonElectrical.Continuous.ImLeadLag                s9(
+  NonElectrical.Continuous.LeadLag                s9(
     T1=Tsa,
     T2=Tsb,
-    nStartValue=s90,
-    K=1) annotation (Placement(transformation(extent={{48,88},{-22,138}})));
+    y_start=s90,
+    K=1) annotation (Placement(transformation(extent={{20,100},{0,120}})));
   Min_select min_select(nu=3, frs0=fsr0)
     annotation (Placement(transformation(extent={{-18,-28},{-2,-12}})));
   Modelica.Blocks.Math.Product product
     annotation (Placement(transformation(extent={{130,-66},{142,-54}})));
 public
-  iPSL.NonElectrical.Continuous.ImLeadLag s4(
+  iPSL.NonElectrical.Continuous.LeadLag s4(
     K=1,
     T1=Tc,
     T2=Tb,
-    nStartValue=s40) annotation (Placement(transformation(
-        extent={{-34,-32},{34,32}},
+    y_start=s40) annotation (Placement(transformation(
+        extent={{-10,-10},{10,10}},
         rotation=90,
-        origin={150,98})));
+        origin={150,110})));
   Modelica.Blocks.Math.Gain gain1(k=Kturb) annotation (Placement(transformation(
         extent={{-8,-8},{8,8}},
         rotation=90,
@@ -218,9 +218,9 @@ public
     annotation (Placement(transformation(extent={{260,-10},{280,10}}),
         iconTransformation(extent={{260,-10},{280,10}})));
   Modelica.Blocks.Math.Product product1 annotation (Placement(transformation(
-        extent={{-9,-9},{9,9}},
+        extent={{-10,-10},{10,10}},
         rotation=180,
-        origin={51,113})));
+        origin={50,110})));
   Modelica.Blocks.Nonlinear.Limiter V(uMax=Vmax, uMin=Vmin)
     annotation (Placement(transformation(extent={{10,-62},{24,-48}})));
   Modelica.Blocks.Math.Add add7        annotation (Placement(transformation(
@@ -297,8 +297,8 @@ equation
       points={{-90.8,12},{-86,12},{-86,12.4},{-55.8,12.4}},
       color={0,0,127},
       smooth=Smooth.None));
-  connect(s8.n1, add1.u2) annotation (Line(
-      points={{-153.72,6},{-148,6}},
+  connect(s8.y, add1.u2) annotation (Line(
+      points={{-168.7,-1},{-160,-1},{-160,6},{-148,6}},
       color={0,0,127},
       smooth=Smooth.None));
   connect(AccelerationSet.y, add1.u1) annotation (Line(
@@ -309,16 +309,16 @@ equation
       points={{-118.4,12},{-125,12}},
       color={0,0,127},
       smooth=Smooth.None));
-  connect(SPEED,s8. p1) annotation (Line(
-      points={{-328,120},{-262,120},{-262,6},{-209.72,6}},
+  connect(SPEED,s8.u) annotation (Line(
+      points={{-328,120},{-262,120},{-262,-1},{-198.6,-1}},
       color={0,0,127},
       smooth=Smooth.None));
   connect(add3_2.y, deadZone.u) annotation (Line(
       points={{-185.4,-74},{-170,-74}},
       color={0,0,127},
       smooth=Smooth.None));
-  connect(add3_2.u1,s8. p1) annotation (Line(
-      points={{-199.2,-69.2},{-212,-69.2},{-212,6},{-209.72,6}},
+  connect(add3_2.u1,s8.u) annotation (Line(
+      points={{-199.2,-69.2},{-212,-69.2},{-212,-1},{-198.6,-1}},
       color={0,0,127},
       smooth=Smooth.None));
   connect(r.y, add3_2.u3) annotation (Line(
@@ -345,24 +345,24 @@ equation
       points={{-246,-115.4},{-246,-107.6}},
       color={0,0,127},
       smooth=Smooth.None));
-  connect(s0.n1, add3.u2) annotation (Line(
-      points={{-241.3,-167},{-242,-167},{-242,-129.2},{-242.4,-129.2}},
+  connect(s0.y, add3.u2) annotation (Line(
+      points={{-259,-170},{-242,-170},{-242,-129.2},{-242.4,-129.2}},
       color={0,0,127},
       smooth=Smooth.None));
-  connect(s0.p1, PELEC) annotation (Line(
-      points={{-272.61,-167},{-300,-167},{-300,-99},{-329,-99}},
+  connect(s0.u, PELEC) annotation (Line(
+      points={{-282,-170},{-300,-170},{-300,-99},{-329,-99}},
       color={0,0,127},
       smooth=Smooth.None));
   connect(set.y, gain.u) annotation (Line(
       points={{-163.2,132},{-139.6,132}},
       color={0,0,127},
       smooth=Smooth.None));
-  connect(add6.u1, s5.n1) annotation (Line(
-      points={{-64.4,113.2},{-51.2,113.2},{-51.2,114},{-55.8,114}},
+  connect(add6.u1, s5.y) annotation (Line(
+      points={{-64.4,113.2},{-51.2,113.2},{-51.2,110},{-41,110}},
       color={0,0,127},
       smooth=Smooth.None));
-  connect(s5.p1, s9.n1) annotation (Line(
-      points={{-21.46,114},{-4.15,114},{-4.15,113}},
+  connect(s5.u, s9.y) annotation (Line(
+      points={{-18,110},{-1,110}},
       color={0,0,127},
       smooth=Smooth.None));
   connect(maxLimiter.y, min_select.u[1]) annotation (Line(
@@ -373,8 +373,8 @@ equation
       points={{-35.1,7},{-26,7},{-26,-4},{-18,-4},{-18,-20}},
       color={0,0,127},
       smooth=Smooth.None));
-  connect(s4.n1, add5.u2) annotation (Line(
-      points={{150,114.66},{150,152},{164,152}},
+  connect(s4.y, add5.u2) annotation (Line(
+      points={{150,121},{150,152},{164,152}},
       color={0,0,127},
       smooth=Smooth.None));
   connect(product.y, add4.u1) annotation (Line(
@@ -410,16 +410,12 @@ equation
       points={{187,158},{198,158},{198,0},{270,0}},
       color={0,0,127},
       smooth=Smooth.None));
-  connect(s9.p1, product1.y) annotation (Line(
-      points={{30.85,113},{41.1,113}},
-      color={0,0,127},
-      smooth=Smooth.None));
   connect(product1.u2, gain2.u) annotation (Line(
-      points={{61.8,118.4},{66.4,118.4},{66.4,164}},
+      points={{62,116},{66.4,116},{66.4,164}},
       color={0,0,127},
       smooth=Smooth.None));
   connect(product1.u1, add4.u1) annotation (Line(
-      points={{61.8,107.6},{126,107.6},{126,-30},{134,-30},{134,-31.2},{146.4,-31.2}},
+      points={{62,104},{126,104},{126,-30},{134,-30},{134,-31.2},{146.4,-31.2}},
       color={0,0,127},
       smooth=Smooth.None));
 
@@ -475,12 +471,12 @@ equation
       points={{-106.8,93.6},{34,93.6},{34,-56},{24.7,-55}},
       color={0,0,127},
       smooth=Smooth.None));
-  connect(s1.p1, limiterSerror.y) annotation (Line(
-      points={{-93.79,-33},{-108,-33},{-108,-74},{-117,-74}},
+  connect(s1.u, limiterSerror.y) annotation (Line(
+      points={{-82,-30},{-108,-30},{-108,-74},{-117,-74}},
       color={0,0,127},
       smooth=Smooth.None));
-  connect(s1.n1, GovernorPID.u1) annotation (Line(
-      points={{-51.79,-33},{-34,-33},{-34,-68.2},{-62.2,-68.2}},
+  connect(s1.y, GovernorPID.u1) annotation (Line(
+      points={{-59,-30},{-34,-30},{-34,-68.2},{-62.2,-68.2}},
       color={0,0,127},
       smooth=Smooth.None));
   connect(KPGOV.y, GovernorPID.u2) annotation (Line(
@@ -535,8 +531,8 @@ equation
       points={{40.8,-61.6},{40,-61.6},{40,-90},{120,-90},{120,-56.4},{128.8,-56.4}},
       color={0,0,127},
       smooth=Smooth.None));
-  connect(s4.p1, gain1.y) annotation (Line(
-      points={{150,80.66},{150,68.8}},
+  connect(s4.u, gain1.y) annotation (Line(
+      points={{150,98},{150,68.8}},
       color={0,0,127},
       smooth=Smooth.None));
   connect(gain1.u, delay.n1) annotation (Line(
@@ -547,8 +543,8 @@ equation
       points={{150,-0.36},{150,-17.4}},
       color={0,0,127},
       smooth=Smooth.None));
-  connect(s0.n1, rSELECT.Pelect) annotation (Line(
-      points={{-241.3,-167},{-218.32,-167},{-218.32,-149}},
+  connect(s0.y, rSELECT.Pelect) annotation (Line(
+      points={{-259,-170},{-218.32,-170},{-218.32,-149}},
       color={0,0,127},
       smooth=Smooth.None));
   connect(rSELECT.y, r.u) annotation (Line(
@@ -563,6 +559,8 @@ equation
       points={{-179.6,-129.8},{120,-129.8},{120,-56.4},{128.8,-56.4}},
       color={0,0,127},
       smooth=Smooth.None));
+  connect(s9.u, product1.y)
+    annotation (Line(points={{22,110},{39,110},{39,110}}, color={0,0,127}));
   annotation (Diagram(coordinateSystem(preserveAspectRatio=false,extent={{-320,-240},
             {260,220}}),       graphics={
         Text(

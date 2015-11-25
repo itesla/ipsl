@@ -4,17 +4,17 @@ model TGOV1 "Steam Turbine-Governor"
   Modelica.Blocks.Interfaces.RealInput SPEED
     "Machine speed deviation from nominal (pu)"
                                              annotation (Placement(
-        transformation(extent={{-76,-32},{-66,-20}}), iconTransformation(extent={{-86,-40},
+        transformation(extent={{-85,-20},{-75,-8}}),  iconTransformation(extent={{-86,-40},
             {-66,-20}})));
-  iPSL.NonElectrical.Continuous.ImLeadLag imLeadLag(
+  iPSL.NonElectrical.Continuous.LeadLag imLeadLag(
     T1=T_2,
     T2=T_3,
     K=1,
-    nStartValue=P0)
-    annotation (Placement(transformation(extent={{26,28},{78,66}})));
+    y_start=P0)
+    annotation (Placement(transformation(extent={{30,7},{40,17}})));
   Modelica.Blocks.Interfaces.RealOutput PMECH "Turbine mechanical power (pu)"
                                               annotation (Placement(
-        transformation(extent={{94,42},{104,54}}), iconTransformation(extent={{80,-10},
+        transformation(extent={{80,-6},{90,6}}),   iconTransformation(extent={{80,-10},
             {100,10}})));
 parameter Real P0 "Power reference of the governor";
 parameter Real R "Governor gain, 1/R (pu)";
@@ -26,65 +26,45 @@ parameter Real V_MAX "Max. valve position (p.u. on M_b)";
 parameter Real V_MIN "min. valve position (p.u. on M_b)";
 Real V "Valve position (pu)";
   Modelica.Blocks.Interfaces.RealInput Reference "Speed reference (pu)"
-    annotation (Placement(transformation(extent={{-88,46},{-78,58}}),
+    annotation (Placement(transformation(extent={{-85,9},{-75,21}}),
         iconTransformation(extent={{-86.9,19.9},{-66.9,39.9}})));
-  iPSL.NonElectrical.Math.ImSum2 imSum2_7(
-    a0=0,
-    a1=1,
-    a2=-1) annotation (Placement(transformation(extent={{-74,38},{-52,60}})));
-  iPSL.NonElectrical.Math.ImGain imGain9(K=1/R)
-    annotation (Placement(transformation(extent={{-48,38},{-26,60}})));
-  NonElectrical.Continuous.ImSimpleLag_nowinduplimit       imLimitedSimpleLag(
-    Ymin=V_MIN,
-    Ymax=V_MAX,
+  Modelica.Blocks.Math.Gain imGain9(k=1/R)
+    annotation (Placement(transformation(extent={{-30,7},{-20,17}})));
+  NonElectrical.Continuous.SimpleLag       imLimitedSimpleLag(
     K=1,
     T=T_1,
-    nStartValue=P0)
-    annotation (Placement(transformation(extent={{-30,30},{28,66}})));
-  iPSL.NonElectrical.Math.ImSum2 imSum2_1(
-    a0=0,
-    a1=1,
-    a2=-1) annotation (Placement(transformation(extent={{76,36},{98,58}})));
-  iPSL.NonElectrical.Math.ImGain imGain1(K=D_t)
-    annotation (Placement(transformation(extent={{-32,0},{-10,24}})));
+    y_start=P0)
+    annotation (Placement(transformation(extent={{-10,7},{0,17}})));
+  Modelica.Blocks.Math.Gain imGain1(k=D_t)
+    annotation (Placement(transformation(extent={{-16,-19},{-6,-9}})));
+  Modelica.Blocks.Math.Add add(k2=-1)
+    annotation (Placement(transformation(extent={{-50,7},{-40,17}})));
+  Modelica.Blocks.Nonlinear.Limiter limiter(uMax=V_MAX, uMin=V_MIN)
+    annotation (Placement(transformation(extent={{10,7},{20,17}})));
+  Modelica.Blocks.Math.Add add1(k2=-1)
+    annotation (Placement(transformation(extent={{60,-5},{70,5}})));
 equation
-  V = imLimitedSimpleLag.n0;
-  connect(Reference, imSum2_7.p1) annotation (Line(
-      points={{-83,52},{-80,52},{-80,51.2},{-68.61,51.2}},
-      color={0,0,127},
-      smooth=Smooth.None));
-  connect(SPEED, imSum2_7.p2) annotation (Line(
-      points={{-71,-26},{-68.61,-26},{-68.61,46.8}},
-      color={0,0,127},
-      smooth=Smooth.None));
-  connect(imSum2_7.n1, imGain9.p1) annotation (Line(
-      points={{-57.61,49},{-42.61,49}},
-      color={0,0,127},
-      smooth=Smooth.None));
-  connect(imGain9.n1, imLimitedSimpleLag.p1) annotation (Line(
-      points={{-31.61,49},{-18.805,49},{-18.805,48},{-15.79,48}},
-      color={0,0,127},
-      smooth=Smooth.None));
-  connect(imLeadLag.n1, imSum2_1.p1) annotation (Line(
-      points={{64.74,47},{72.37,47},{72.37,49.2},{81.39,49.2}},
-      color={0,0,127},
-      smooth=Smooth.None));
-  connect(imGain1.n1, imSum2_1.p2) annotation (Line(
-      points={{-15.61,12},{80,12},{80,44.8},{81.39,44.8}},
-      color={0,0,127},
-      smooth=Smooth.None));
-  connect(imGain1.p1, SPEED) annotation (Line(
-      points={{-26.61,12},{-59.805,12},{-59.805,-26},{-71,-26}},
-      color={0,0,127},
-      smooth=Smooth.None));
-  connect(imSum2_1.n1, PMECH) annotation (Line(
-      points={{92.39,47},{95.195,47},{95.195,48},{99,48}},
-      color={0,0,127},
-      smooth=Smooth.None));
-  connect(imLimitedSimpleLag.n0, imLeadLag.p1) annotation (Line(
-      points={{13.21,48},{26,48},{26,47},{38.74,47}},
-      color={0,0,127},
-      smooth=Smooth.None));
+  V = imLimitedSimpleLag.y;
+  connect(Reference, add.u1)
+    annotation (Line(points={{-80,15},{-51,15}}, color={0,0,127}));
+  connect(add.y, imGain9.u)
+    annotation (Line(points={{-39.5,12},{-31,12}}, color={0,0,127}));
+  connect(add.u2, SPEED) annotation (Line(points={{-51,9},{-60,9},{-60,-14},{-80,
+          -14}}, color={0,0,127}));
+  connect(limiter.u, imLimitedSimpleLag.y)
+    annotation (Line(points={{9,12},{0.5,12}}, color={0,0,127}));
+  connect(limiter.y, imLeadLag.u)
+    annotation (Line(points={{20.5,12},{29,12}}, color={0,0,127}));
+  connect(imGain1.u, SPEED)
+    annotation (Line(points={{-17,-14},{-80,-14}}, color={0,0,127}));
+  connect(add1.y, PMECH)
+    annotation (Line(points={{70.5,0},{85,0}}, color={0,0,127}));
+  connect(imLeadLag.y, add1.u1) annotation (Line(points={{40.5,12},{54,12},{54,3},
+          {59,3}}, color={0,0,127}));
+  connect(imGain1.y, add1.u2) annotation (Line(points={{-5.5,-14},{54,-14},{54,-3},
+          {59,-3}}, color={0,0,127}));
+  connect(imGain9.y, imLimitedSimpleLag.u) annotation (Line(points={{-19.5,12},{
+          -15.25,12},{-11,12}}, color={0,0,127}));
   annotation (Diagram(coordinateSystem(extent={{-80,-60},{80,60}},
           preserveAspectRatio=false,
         grid={1,1})),                           Icon(coordinateSystem(extent={{-80,-60},

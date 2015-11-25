@@ -5,7 +5,7 @@ class EFD1 "Generate constant signal of type Real.
   Modelica.Blocks.Interfaces.RealOutput pin_EFD annotation(Placement(transformation(extent = {{39, -10}, {59, 10}}), iconTransformation(extent = {{39, -10}, {59, 10}})));
 equation
   pin_EFD = V;
-  annotation(Icon(graphics={  Rectangle(extent=  {{-60, 40}, {40, -40}}, lineColor=  {0, 0, 255}), Text(extent=  {{-36, 14}, {20, -12}}, lineColor=  {0, 0, 255}, textStyle=  {TextStyle.Bold}, textString=  "EFD1")}), Diagram(graphics),
+  annotation(Icon(graphics={  Rectangle(extent = {{-60, 40}, {40, -40}}, lineColor = {0, 0, 255}), Text(extent = {{-36, 14}, {20, -12}}, lineColor = {0, 0, 255}, textStyle = {TextStyle.Bold}, textString = "EFD1")}), Diagram(graphics),
     Documentation(info="<html>
 <p><br><span style=\"font-family: MS Shell Dlg 2;\">&LT;iPSL: iTesla Power System Library&GT;</span></p>
 <p><span style=\"font-family: MS Shell Dlg 2;\">Copyright 2015 RTE (France), AIA (Spain), KTH (Sweden) and DTU (Denmark)</span></p>

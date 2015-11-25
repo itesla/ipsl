@@ -14,72 +14,43 @@ model HYGOV
   parameter Real D_turb = 0.2 "Turbine damping";
   parameter Real q_NL = 0.08 "Water flow at no load";
 
-  iPSL.NonElectrical.Math.ImSetPoint n_ref(V=nref)
-    annotation (Placement(transformation(extent={{-100,54},{-80,76}})));
+  Modelica.Blocks.Sources.Constant n_ref(k=nref)
+    annotation (Placement(transformation(extent={{-178,14},{-166,26}})));
   Modelica.Blocks.Interfaces.RealInput SPEED
-    "Machine speed deviation from nominal (pu)"                      annotation(Placement(transformation(extent = {{-110, 36}, {-102, 46}}), iconTransformation(extent={{-84,24},
+    "Machine speed deviation from nominal (pu)"                      annotation(Placement(transformation(extent={{-206,
+            -10},{-192,4}}),                                                                                                    iconTransformation(extent={{-84,24},
             {-72,36}})));
-  iPSL.NonElectrical.Math.ImSum2 Sum2_1(
-    a1=1,
-    a2=1,
-    a0=0) annotation (Placement(transformation(extent={{-96,32},{-78,48}})));
-  iPSL.NonElectrical.Math.ImSum2 w_erro(
-    a0=0,
-    a1=1,
-    a2=-1) annotation (Placement(transformation(extent={{-86,46},{-70,60}})));
-  iPSL.NonElectrical.Continuous.ImSimpleLag SimpleLag1(
+  iPSL.NonElectrical.Continuous.SimpleLag SimpleLag1(
     K=1,
     T=T_f,
-    nStartValue=0)
-    annotation (Placement(transformation(extent={{-82,40},{-48,66}})));
-  iPSL.NonElectrical.Math.ImGain Gain3(K=R)
-    annotation (Placement(transformation(extent={{-58,22},{-78,42}})));
-  iPSL.NonElectrical.Math.ImGain Gain4(K=D_turb)
-    annotation (Placement(transformation(extent={{-2,14},{18,32}})));
-  iPSL.NonElectrical.Math.ImMult2 Mult2_2(
-    a0=0,
-    a1=1,
-    a2=1) annotation (Placement(transformation(extent={{104,16},{124,36}})));
-  iPSL.NonElectrical.Math.ImSum2 Sum2_4(
-    a0=0,
-    a1=-1,
-    a2=1) annotation (Placement(transformation(extent={{88,42},{104,60}})));
-  iPSL.NonElectrical.Math.ImSetPoint hs(V=1)
-    annotation (Placement(transformation(extent={{110,30},{90,50}})));
-  iPSL.NonElectrical.Continuous.ImIntegrator_varyK q(nStartValue=q0)
-    annotation (Placement(transformation(extent={{98,36},{128,66}})));
-  iPSL.NonElectrical.Math.ImSetPoint qNL(V=q_NL)
-    annotation (Placement(transformation(extent={{150,28},{130,48}})));
-  iPSL.NonElectrical.Math.ImSum2 Sum2_5(
-    a0=0,
-    a1=1,
-    a2=-1) annotation (Placement(transformation(extent={{128,42},{146,60}})));
-  iPSL.NonElectrical.Math.ImMult2 Mult2_1(
-    a0=0,
-    a1=1,
-    a2=1) annotation (Placement(transformation(extent={{142,46},{158,62}})));
-  iPSL.NonElectrical.Math.ImGain Gain6(K=A_t)
-    annotation (Placement(transformation(extent={{156,44},{176,64}})));
-  iPSL.NonElectrical.Math.ImSum2 Sum2_6(
-    a0=0,
-    a1=1,
-    a2=-1) annotation (Placement(transformation(extent={{178,32},{196,50}})));
+    y_start=0)
+    annotation (Placement(transformation(extent={{-126,0},{-114,12}})));
+  Modelica.Blocks.Math.Gain Gain3(k=R)
+    annotation (Placement(transformation(extent={{-130,-22},{-142,-10}})));
+  Modelica.Blocks.Math.Gain Gain4(k=D_turb)
+    annotation (Placement(transformation(extent={{-62,-34},{-50,-22}})));
+  Modelica.Blocks.Sources.Constant hs(k=1)
+    annotation (Placement(transformation(extent={{20,-20},{32,-8}})));
+  Modelica.Blocks.Continuous.Integrator q(y_start=q0,
+    initType=Modelica.Blocks.Types.Init.InitialOutput,
+    k=1/T_w)
+    annotation (Placement(transformation(extent={{62,-4},{74,8}})));
+  Modelica.Blocks.Sources.Constant qNL(k=q_NL)
+    annotation (Placement(transformation(extent={{92,-18},{84,-10}})));
+  Modelica.Blocks.Math.Gain Gain6(k=A_t)
+    annotation (Placement(transformation(extent={{100,-4},{112,8}})));
   Modelica.Blocks.Interfaces.RealOutput PMECH "Turbine mechanical power (pu)"
-                                                                 annotation(Placement(transformation(extent={{80,-4},
-            {90,6}}),                                                                                                    iconTransformation(extent={{80,-4},
+                                                                 annotation(Placement(transformation(extent={{138,-6},
+            {150,6}}),                                                                                                   iconTransformation(extent={{80,-4},
             {88,4}})));
-  iPSL.NonElectrical.Math.ImDiv2_2 Div3_1(
-    a0=0,
-    a1=1,
-    a2=1) annotation (Placement(transformation(extent={{54,38},{80,64}})));
-  iPSL.NonElectrical.Continuous.ImSimpleLag g(
+  iPSL.NonElectrical.Continuous.SimpleLag g(
     K=1,
     T=T_g,
-    nStartValue=g0) "servo_motor"
-    annotation (Placement(transformation(extent={{0,38},{38,68}})));
+    y_start=g0) "servo_motor"
+    annotation (Placement(transformation(extent={{-40,0},{-28,12}})));
   Modelica.Blocks.Interfaces.RealInput PMECH0
-    "Initial turbine mechanical power (pu)"                              annotation(Placement(transformation(extent={{-78,26},
-            {-70,36}}),                                                                                                    iconTransformation(extent={{-84,-36},
+    "Initial turbine mechanical power (pu)"                              annotation(Placement(transformation(extent={{-84,-62},
+            {-76,-52}}),                                                                                                   iconTransformation(extent={{-84,-36},
             {-72,-24}})));
 
 protected
@@ -96,25 +67,39 @@ protected
   //=R*c0 "speed reference";
   parameter Real P_m0(fixed = false);
 public
-  iPSL.NonElectrical.Continuous.ImSimpleLead imLead(K=r*T_r, T=T_r)
-    annotation (Placement(transformation(extent={{-56,38},{-24,68}})));
-  iPSL.NonElectrical.Nonlinear.ImLimiter Velocity_Limiter(Ymin=-VELM, Ymax=VELM)
-    annotation (Placement(transformation(extent={{-32,40},{-8,66}})));
-  iPSL.NonElectrical.Continuous.ImIntegratornonwindup Position_Limiter(
-    Ymin=G_MIN,
-    Ymax=G_MAX,
-    K=1,
-    nStartValue=c0)
-    annotation (Placement(transformation(extent={{-14,42},{10,64}})));
-  iPSL.NonElectrical.Math.ImMult2 h(
-    a0=0,
-    a1=1,
-    a2=1) annotation (Placement(transformation(extent={{76,42},{88,62}})));
+  iPSL.NonElectrical.Continuous.SimpleLead imLead(K=r*T_r, T=T_r,
+    y_start=0)
+    annotation (Placement(transformation(extent={{-106,0},{-94,12}})));
+  Modelica.Blocks.Nonlinear.Limiter Velocity_Limiter(uMin=-VELM, uMax=VELM)
+    annotation (Placement(transformation(extent={{-86,0},{-74,12}})));
+  Modelica.Blocks.Continuous.LimIntegrator Position_Limiter(
+    outMin=G_MIN,
+    outMax=G_MAX,
+    k=1,
+    y_start=c0,
+    initType=Modelica.Blocks.Types.Init.InitialOutput)
+    annotation (Placement(transformation(extent={{-68,0},{-56,12}})));
 public
   Real G "Gate opening (pu)";
   Real c "Desired gate opening (pu)";
   Real Q "Turbine flow (pu)";
   Real H "Turbine head (pu)";
+  Modelica.Blocks.Math.Add add(k2=-1)
+    annotation (Placement(transformation(extent={{-144,0},{-132,12}})));
+  Modelica.Blocks.Math.Add add1
+    annotation (Placement(transformation(extent={{-168,-12},{-156,0}})));
+  Modelica.Blocks.Math.Division division
+    annotation (Placement(transformation(extent={{0,-4},{12,8}})));
+  Modelica.Blocks.Math.Product product
+    annotation (Placement(transformation(extent={{20,-4},{32,8}})));
+  Modelica.Blocks.Math.Add add2
+    annotation (Placement(transformation(extent={{42,-4},{54,8}})));
+  Modelica.Blocks.Math.Add add3
+    annotation (Placement(transformation(extent={{82,-4},{94,8}})));
+  Modelica.Blocks.Math.Add add4(k2=-1)
+    annotation (Placement(transformation(extent={{120,-6},{132,6}})));
+  Modelica.Blocks.Math.Product product1
+    annotation (Placement(transformation(extent={{58,-30},{70,-18}})));
 initial algorithm
   P_m0 := PMECH0;
   q0 := P_m0 / (A_t * h0) + q_NL;
@@ -126,61 +111,79 @@ initial algorithm
   nref := R * c0;
   //
 equation
-  G =  g.n1;
-  c = g.p1;
-  Q = q.n1;
-  H = h.n1;
-  q.K = 1 / T_w;
-  connect(w_erro.n1, SimpleLag1.p1) annotation(Line(points = {{-74.08, 53}, {-70.27, 53}}, color = {0, 0, 127}, smooth = Smooth.None));
-  connect(Gain3.n1, Sum2_1.p2) annotation(Line(points = {{-72.9, 32}, {-92, 32}, {-92, 38.4}, {-91.59, 38.4}}, color = {0, 0, 127}, smooth = Smooth.None));
-  connect(Gain4.p1, SPEED) annotation(Line(points = {{2.9, 23}, {-106, 23}, {-106, 41}}, color = {0, 0, 127}, smooth = Smooth.None));
-  connect(hs.n1, Sum2_4.p2) annotation(Line(points = {{95.1, 40}, {91.92, 40}, {91.92, 49.2}}, color = {0, 0, 127}, smooth = Smooth.None));
-  connect(q.n1, Sum2_5.p1) annotation(Line(points = {{120.35, 51}, {128, 51}, {128, 52.8}, {132.41, 52.8}}, color = {0, 0, 127}, smooth = Smooth.None));
-  connect(Mult2_2.n1, Sum2_6.p2) annotation(Line(points = {{118.9, 26}, {176, 26}, {176, 39.2}, {182.41, 39.2}}, color = {0, 0, 127}, smooth = Smooth.None));
-  connect(Sum2_6.n1, PMECH) annotation(Line(points={{191.41,41},{156,41},{156,1},
-          {85,1}},                                                              color = {0, 0, 127}, smooth = Smooth.None));
-  connect(qNL.n1, Sum2_5.p2) annotation(Line(points = {{135.1, 38}, {130, 38}, {130, 49.2}, {132.41, 49.2}}, color = {0, 0, 127}, smooth = Smooth.None));
-  connect(Gain3.p1, g.p1) annotation(Line(points = {{-62.9, 32}, {8, 32}, {8, 53}, {13.11, 53}}, color = {0, 0, 127}, smooth = Smooth.None));
-  connect(SPEED, Sum2_1.p1) annotation(Line(points = {{-106, 41}, {-94, 41}, {-94, 41.6}, {-91.59, 41.6}}, color = {0, 0, 127}, smooth = Smooth.None));
-  connect(Sum2_1.n1, w_erro.p2) annotation(Line(points = {{-82.59, 40}, {-82, 40}, {-82, 51.6}, {-82.08, 51.6}}, color = {0, 0, 127}, smooth = Smooth.None));
-  connect(Sum2_4.n1, q.p1) annotation(Line(points = {{99.92, 51}, {105.35, 51}}, color = {0, 0, 127}, smooth = Smooth.None));
-  connect(Sum2_5.n1, Mult2_1.p2) annotation(Line(points = {{141.41, 51}, {146, 51}, {146, 52.24}, {145.92, 52.24}}, color = {0, 0, 127}, smooth = Smooth.None));
-  connect(Mult2_1.n1, Gain6.p1) annotation(Line(points = {{153.92, 54}, {160.9, 54}}, color = {0, 0, 127}, smooth = Smooth.None));
-  connect(Gain4.n1, Mult2_2.p2) annotation(Line(points = {{12.9, 23}, {60, 23}, {60, 23.8}, {108.9, 23.8}}, color = {0, 0, 127}, smooth = Smooth.None));
-  connect(Gain6.n1, Sum2_6.p1) annotation(Line(points = {{170.9, 54}, {176, 54}, {176, 42.8}, {182.41, 42.8}}, color = {0, 0, 127}, smooth = Smooth.None));
-  connect(n_ref.n1, w_erro.p1) annotation(Line(points = {{-85.1, 65}, {-84.55, 65}, {-84.55, 54.4}, {-82.08, 54.4}}, color = {0, 0, 127}, smooth = Smooth.None));
-  connect(Mult2_2.p1, g.n1) annotation(Line(points={{108.9,28.2},{32.3,
-          28.2},{32.3,53}},                                                                       color = {0, 0, 127}, smooth = Smooth.None));
-  connect(g.n1, Div3_1.p2) annotation(Line(points={{32.3,53},{50.055,53},
-          {50.055,52.3},{63.425,52.3}},                                                                          color = {0, 0, 127}, smooth = Smooth.None));
-  connect(Div3_1.p1, q.n1) annotation(Line(points = {{68.105, 47.75}, {68.105, 32}, {120.35, 32}, {120.35, 51}}, color = {0, 0, 127}, smooth = Smooth.None));
-  connect(SimpleLag1.n1, imLead.n1) annotation(Line(points={{-53.1,53},
-          {-49.635,53},{-49.635,52.4},{-42.64,52.4}},                                                                        color = {0, 0, 127}, smooth = Smooth.None));
-  connect(imLead.p1, Velocity_Limiter.p1) annotation(Line(points = {{-30.64, 52.7}, {-29.32, 52.7}, {-29.32, 53}, {-26.12, 53}}, color = {0, 0, 127}, smooth = Smooth.None));
-  connect(Position_Limiter.n0, g.p1) annotation(Line(points = {{3.88, 53}, {13.11, 53}}, color = {0, 0, 127}, smooth = Smooth.None));
-  connect(Position_Limiter.p1, Velocity_Limiter.n1) annotation(Line(points = {{-8.12, 53}, {-14.12, 53}}, color = {0, 0, 127}, smooth = Smooth.None));
-  connect(h.p2, Div3_1.n1) annotation(Line(points = {{78.94, 49.8}, {76.225, 49.8}, {76.225, 52.43}, {73.825, 52.43}}, color = {0, 0, 127}, smooth = Smooth.None));
-  connect(h.p1, Div3_1.n1) annotation(Line(points = {{78.94, 54.2}, {75.225, 54.2}, {75.225, 52.43}, {73.825, 52.43}}, color = {0, 0, 127}, smooth = Smooth.None));
-  connect(h.n1, Sum2_4.p1) annotation(Line(points = {{84.94, 52}, {84.94, 52.8}, {91.92, 52.8}}, color = {0, 0, 127}, smooth = Smooth.None));
-  connect(Mult2_1.p1, Sum2_4.p1) annotation(Line(points = {{145.92, 55.76}, {145.92, 64}, {88, 64}, {88, 52.8}, {91.92, 52.8}}, color = {0, 0, 127}, smooth = Smooth.None));
+  G =  g.y;
+  c = g.u;
+  Q = q.y;
+  H = product.y;
+  connect(add.y, SimpleLag1.u)
+    annotation (Line(points={{-131.4,6},{-127.2,6}}, color={0,0,127}));
+  connect(n_ref.y, add.u1) annotation (Line(points={{-165.4,20},{-152,20},{-152,
+          9.6},{-145.2,9.6}}, color={0,0,127}));
+  connect(add1.y, add.u2) annotation (Line(points={{-155.4,-6},{-150,-6},{-150,2.4},
+          {-145.2,2.4}}, color={0,0,127}));
+  connect(add1.u1, SPEED) annotation (Line(points={{-169.2,-2.4},{-177.6,-2.4},{
+          -177.6,-3},{-199,-3}}, color={0,0,127}));
+  connect(Gain3.y, add1.u2) annotation (Line(points={{-142.6,-16},{-178,-16},{-178,
+          -9.6},{-169.2,-9.6}}, color={0,0,127}));
+  connect(Gain4.u, SPEED) annotation (Line(points={{-63.2,-28},{-188,-28},{-188,
+          -3},{-199,-3}}, color={0,0,127}));
+  connect(SimpleLag1.y, imLead.u)
+    annotation (Line(points={{-113.4,6},{-107.2,6}}, color={0,0,127}));
+  connect(imLead.y, Velocity_Limiter.u)
+    annotation (Line(points={{-93.4,6},{-87.2,6}},           color={0,0,127}));
+  connect(Velocity_Limiter.y, Position_Limiter.u)
+    annotation (Line(points={{-73.4,6},{-69.2,6}}, color={0,0,127}));
+  connect(Position_Limiter.y, Gain3.u) annotation (Line(points={{-55.4,6},{-52,6},
+          {-52,-16},{-128.8,-16}}, color={0,0,127}));
+  connect(g.u, Gain3.u) annotation (Line(points={{-41.2,6},{-52,6},{-52,-16},{-128.8,
+          -16}}, color={0,0,127}));
+  connect(g.y, division.u1)
+    annotation (Line(points={{-27.4,6},{-1.2,6},{-1.2,5.6}}, color={0,0,127}));
+  connect(division.y, product.u1) annotation (Line(points={{12.6,2},{14,2},{14,5.6},
+          {18.8,5.6}}, color={0,0,127}));
+  connect(product.u2, product.u1) annotation (Line(points={{18.8,-1.6},{14,-1.6},
+          {14,5.6},{18.8,5.6}}, color={0,0,127}));
+  connect(product.y, add2.u1) annotation (Line(points={{32.6,2},{36,2},{36,5.6},
+          {40.8,5.6}}, color={0,0,127}));
+  connect(hs.y, add2.u2) annotation (Line(points={{32.6,-14},{36,-14},{36,-1.6},
+          {40.8,-1.6}}, color={0,0,127}));
+  connect(add2.y, q.u)
+    annotation (Line(points={{54.6,2},{60.8,2}}, color={0,0,127}));
+  connect(division.u2, q.u) annotation (Line(points={{-1.2,-1.6},{-6,-1.6},{-6,-24},
+          {40,-24},{40,-6},{56,-6},{56,2},{60.8,2}}, color={0,0,127}));
+  connect(q.y, add3.u1) annotation (Line(points={{74.6,2},{76,2},{76,5.6},{80.8,
+          5.6}}, color={0,0,127}));
+  connect(qNL.y, add3.u2) annotation (Line(points={{83.6,-14},{76,-14},{76,-1.6},
+          {80.8,-1.6}}, color={0,0,127}));
+  connect(add3.y, Gain6.u)
+    annotation (Line(points={{94.6,2},{98.8,2}}, color={0,0,127}));
+  connect(Gain6.y, add4.u1) annotation (Line(points={{112.6,2},{114,2},{114,3.6},
+          {118.8,3.6}}, color={0,0,127}));
+  connect(Gain4.y, product1.u2) annotation (Line(points={{-49.4,-28},{4,-28},{4,
+          -27.6},{56.8,-27.6}}, color={0,0,127}));
+  connect(product1.u1, division.u1) annotation (Line(points={{56.8,-20.4},{48,-20.4},
+          {48,-26},{-20,-26},{-20,6},{-1.2,6},{-1.2,5.6}}, color={0,0,127}));
+  connect(product1.y, add4.u2) annotation (Line(points={{70.6,-24},{114,-24},{114,
+          -3.6},{118.8,-3.6}}, color={0,0,127}));
+  connect(add4.y, PMECH)
+    annotation (Line(points={{132.6,0},{144,0},{144,0}}, color={0,0,127}));
     annotation(Diagram(coordinateSystem(preserveAspectRatio=false,  extent={{-80,-60},
-            {80,60}}),                                                                                   graphics={  Text(extent=  {{34, 58}, {42, 66}}, lineColor=  {0, 0, 255}, fillColor=  {0, 0, 255},
-            fillPattern=                                                                                                    FillPattern.Solid, textString=  "g"), Text(extent=  {{120, 54}, {128, 62}}, lineColor=  {0, 0, 255}, fillColor=  {0, 0, 255},
-            fillPattern=                                                                                                    FillPattern.Solid, textString=  "q"), Text(extent=  {{76, 58}, {84, 66}}, lineColor=  {0, 0, 255}, fillColor=  {0, 0, 255},
-            fillPattern=                                                                                                    FillPattern.Solid, textString=  "h"), Text(extent=  {{-56, 56}, {-48, 64}}, lineColor=  {0, 0, 255}, fillColor=  {0, 0, 255},
-            fillPattern=                                                                                                    FillPattern.Solid, textString=  "e"), Text(extent=  {{6, 58}, {14, 66}}, lineColor=  {0, 0, 255}, fillColor=  {0, 0, 255},
-            fillPattern=                                                                                                    FillPattern.Solid, textString=  "c"), Text(extent=  {{-72, 36}, {-68, 32}}, lineColor=  {0, 0, 255}, textString=  "R", textStyle=  {TextStyle.Bold}), Text(extent=  {{2, 18}, {16, 12}}, lineColor=  {0, 0, 255}, textStyle=  {TextStyle.Bold}, textString=  "D_turb"), Text(extent=  {{-18, 68}, {6, 62}}, lineColor=  {0, 0, 255}, textString=  "position limit"), Text(extent=  {{14, 70}, {40, 62}}, lineColor=  {0, 0, 255}, textString=  "servo motor"), Rectangle(extent=  {{-100, 78}, {48, 8}}, lineColor=  {255, 128, 0}, pattern=  LinePattern.Dash,
-            lineThickness=                                                                                                    1), Text(extent=  {{-56, 86}, {-12, 80}}, lineColor=  {255, 128, 0}, textStyle=  {TextStyle.Bold}, textString=  "Governor System"), Rectangle(extent=  {{60, 76}, {194, 10}}, lineColor=  {85, 170, 255}, pattern=  LinePattern.Dash,
-            lineThickness=                                                                                                    1), Text(extent=  {{98, 88}, {158, 78}}, lineColor=  {85, 170, 255}, textStyle=  {TextStyle.Bold}, textString=  "Hydrauli Turbine System"), Text(extent=  {{-34, 44}, {-10, 38}}, lineColor=  {0, 0, 255}, textString=  "velocity limit"), Text(extent=  {{64, 62}, {72, 70}}, lineColor=  {0, 0, 255}, fillColor=  {0, 0, 255},
-            fillPattern=                                                                                                    FillPattern.Solid, textString=  "q/g")}), Icon(coordinateSystem(extent={{-80,-60},
+            {80,60}}),                                                                                   graphics={                                                                       Rectangle(extent={{
+              -190,32},{-12,-38}},                                                                                                    lineColor = {255, 128, 0}, pattern = LinePattern.Dash,
+            lineThickness =                                                                                                   1), Text(extent={{
+              -126,40},{-82,34}},                                                                                                    lineColor = {255, 128, 0}, textStyle = {TextStyle.Bold}, textString = "Governor System"), Rectangle(extent={{
+              -8,32},{134,-38}},                                                                                                 lineColor = {85, 170, 255}, pattern = LinePattern.Dash,
+            lineThickness =                                                                                                   1), Text(extent={{
+              38,42},{98,32}},                                                                                                    lineColor = {85, 170, 255}, textStyle = {TextStyle.Bold}, textString = "Hydrauli Turbine System")}),
+                                                                                                    Icon(coordinateSystem(extent={{-80,-60},
             {80,60}},                                                                                                    preserveAspectRatio=false),  graphics={  Text(extent={{
-              -48,12},{52,-14}},                                                                                                  lineColor=  {0, 0, 255},
-            fillPattern=                                                                                                    FillPattern.Solid, textString=  "HYGOV"), Text(extent={{
-              -70,-20},{-42,-40}},                                                                                                   lineColor=  {0, 0, 255},
-            fillPattern=                                                                                                    FillPattern.Solid, textString=  "PMECH0"), Rectangle(extent={{
-              -80,60},{80,-60}},                                                                                                    lineColor=  {0, 0, 255}), Text(extent={{
-              -78,34},{-40,26}},                                                                                                  lineColor=  {0, 0, 255}, textString=  "SPEED"), Text(extent={{
-              52,6},{78,-8}},                                                                                                    lineColor=  {0, 0, 255}, textString=  "PMECH")}),
+              -48,12},{52,-14}},                                                                                                  lineColor = {0, 0, 255},
+            fillPattern =                                                                                                   FillPattern.Solid, textString = "HYGOV"), Text(extent={{
+              -70,-20},{-42,-40}},                                                                                                   lineColor = {0, 0, 255},
+            fillPattern =                                                                                                   FillPattern.Solid, textString = "PMECH0"), Rectangle(extent={{
+              -80,60},{80,-60}},                                                                                                    lineColor = {0, 0, 255}), Text(extent={{
+              -78,34},{-40,26}},                                                                                                  lineColor = {0, 0, 255}, textString = "SPEED"), Text(extent={{
+              52,6},{78,-8}},                                                                                                    lineColor = {0, 0, 255}, textString = "PMECH")}),
     Documentation(info="<html>
 <p><br><span style=\"font-family: MS Shell Dlg 2;\">&LT;iPSL: iTesla Power System Library&GT;</span></p>
 <p><span style=\"font-family: MS Shell Dlg 2;\">Copyright 2015 RTE (France), AIA (Spain), KTH (Sweden) and DTU (Denmark)</span></p>

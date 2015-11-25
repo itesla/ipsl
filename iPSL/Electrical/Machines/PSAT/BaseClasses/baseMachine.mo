@@ -103,7 +103,7 @@ equation
           textString="vf",
           lineColor={28,108,200}),                                                                                               Text(                origin={
               -77.3761,-48},
-            fillPattern=FillPattern.Solid,                                                                                                    extent=  {{-9.6086, -11.4189}, {9.6086, 11.4189}},                    fontName=
+            fillPattern=FillPattern.Solid,                                                                                                    extent = {{-9.6086, -11.4189}, {9.6086, 11.4189}},                    fontName=
               "Arial",
           textString="pm",
           lineColor={28,108,200}),                                                                                               Text(                origin={
@@ -127,12 +127,12 @@ equation
           textString="delta"),                                                                                                    Text(                origin={90,
               90.5},
             fillPattern=FillPattern.Solid,                                                                                                    extent={{
-              -10,-10.5},{10,10.5}},                                                                                                    textString=  "w", fontName=
+              -10,-10.5},{10,10.5}},                                                                                                    textString = "w", fontName=
               "Arial",
           lineColor={28,108,200}),                                                                                                    Text(                origin={90,
               30},
             fillPattern=FillPattern.Solid,                                                                                                    extent={{
-              -10,-10},{10,10}},                                                                                                    textString=  "v", fontName=
+              -10,-10},{10,10}},                                                                                                    textString = "v", fontName=
               "Arial",
           lineColor={28,108,200}),                                                                                                    Rectangle(                fillColor=
               {255,255,255},                                                                                                    extent={{
@@ -144,7 +144,7 @@ equation
           color={28,108,200},
           smooth=Smooth.Bezier),                                                                                                    Text(                origin={4,
               -58.0978},
-            fillPattern=FillPattern.Solid,                                                                                                    extent=  {{-57.2101, -15.0}, {57.2101, 15.0}}, textString=  "%name", fontName=
+            fillPattern=FillPattern.Solid,                                                                                                    extent = {{-57.2101, -15.0}, {57.2101, 15.0}}, textString = "%name", fontName=
               "Arial",
           lineColor={28,108,200}),                                                                                                    Text(                origin={90,
               -31},

@@ -8,7 +8,7 @@ class ImDeadBand "Provide a region of zero output.
   parameter Real Xmax "Max value of the zero region";
 equation
   n1 = if p1 < Xmin then p1 - Xmin elseif p1 > Xmax then p1 - Xmax else 0;
-  annotation(Icon(graphics={  Rectangle(extent=  {{-40, 40}, {40, -40}}, lineColor=  {0, 0, 255}), Line(points=  {{-24, 0}, {24, 0}}, color=  {0, 0, 255}, smooth=  Smooth.None, thickness=  0.5), Line(points=  {{0, 18}, {0, -20}}, color=  {0, 0, 255}, smooth=  Smooth.None, thickness=  0.5), Line(points=  {{-20, -10}, {-8, 0}, {8, 0}, {20, 12}}, color=  {0, 0, 255}, smooth=  Smooth.None, thickness=  0.5)}), Diagram(graphics),
+  annotation(Icon(graphics={  Rectangle(extent = {{-40, 40}, {40, -40}}, lineColor = {0, 0, 255}), Line(points = {{-24, 0}, {24, 0}}, color = {0, 0, 255}, smooth = Smooth.None, thickness = 0.5), Line(points = {{0, 18}, {0, -20}}, color = {0, 0, 255}, smooth = Smooth.None, thickness = 0.5), Line(points = {{-20, -10}, {-8, 0}, {8, 0}, {20, 12}}, color = {0, 0, 255}, smooth = Smooth.None, thickness = 0.5)}), Diagram(graphics),
     Documentation(info="<html>
 <p><br><span style=\"font-family: MS Shell Dlg 2;\">&LT;iPSL: iTesla Power System Library&GT;</span></p>
 <p><span style=\"font-family: MS Shell Dlg 2;\">Copyright 2015 RTE (France), AIA (Spain), KTH (Sweden) and DTU (Denmark)</span></p>
