@@ -97,7 +97,7 @@ public
   NonElectrical.Continuous.DerivativeLag imDerivativeLag(
     K=K_F,
     T=T_F,
-    y_start=Efd0)
+    y_start=0)
     annotation (Placement(transformation(extent={{142,-90},{122,-70}})));
   Modelica.Blocks.Math.Add3 add3_2
     annotation (Placement(transformation(extent={{-60,-100},{-40,-80}})));
@@ -127,7 +127,7 @@ equation
   connect(imLeadLag.y, K_a.u)
     annotation (Line(points={{141.2,-20},{149.2,-20}}, color={0,0,127}));
   connect(imLeadLag.u, limiter.y)
-    annotation (Line(points={{113.6,-20},{99,-20},{99,-20}}, color={0,0,127}));
+    annotation (Line(points={{113.6,-20},{99,-20}},          color={0,0,127}));
   connect(VOEL, add3_2.u2) annotation (Line(points={{-118,-90},{-90,-90},{-62,
           -90}}, color={0,0,127}));
   connect(VOTHSG, add3_2.u1) annotation (Line(points={{-118,-32},{-78,-32},{-78,
@@ -142,9 +142,9 @@ equation
           -80},{46,-80},{46,-28}}, color={0,0,127}));
   connect(add3_2.y, add3_1.u1) annotation (Line(points={{-39,-90},{42,-90},{42,
           -12},{46,-12}}, color={0,0,127}));
-  connect(K_a.y, Vm1.u) annotation (Line(points={{158.4,-20},{172.8,-20},{172.8,
-          -20}}, color={0,0,127}));
-  connect(Vm1.y, EFD1) annotation (Line(points={{209.6,-20},{240,-20},{240,-20}},
+  connect(K_a.y, Vm1.u) annotation (Line(points={{158.4,-20},{172.8,-20}},
+                 color={0,0,127}));
+  connect(Vm1.y, EFD1) annotation (Line(points={{209.6,-20},{240,-20}},
         color={0,0,127}));
   connect(imDerivativeLag.u, EFD1) annotation (Line(points={{144,-80},{220,-80},
           {220,-20},{240,-20}}, color={0,0,127}));

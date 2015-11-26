@@ -172,7 +172,7 @@ public
     annotation (Placement(transformation(extent={{-5.1,-5.1},{5.1,5.1}},
         rotation=90,
         origin={84.9,-15.1})));
-  Modelica.Blocks.Math.Add3 add3_2(k1=+1)
+  Modelica.Blocks.Math.Add3 add3_2(k1=+1, k2=-1)
     annotation (Placement(transformation(extent={{96,11},{106,21}})));
   Modelica.Blocks.Math.Gain imGain1(k=V_RMIN)
                                            annotation (Placement(
@@ -247,7 +247,7 @@ equation
   connect(hV_GATE.p, imLeadLag.u) annotation (Line(points={{18.5975,20.38},{21.2987,
           20.38},{21.2987,20},{25,20}}, color={0,0,127}));
   connect(imLeadLag.y, imLeadLag1.u)
-    annotation (Line(points={{36.5,20},{44,20},{44,20}}, color={0,0,127}));
+    annotation (Line(points={{36.5,20},{44,20}},         color={0,0,127}));
   connect(simpleLagLim.u, imLeadLag1.y)
     annotation (Line(points={{63,20},{55.5,20}}, color={0,0,127}));
   connect(imGain.u, add2.y) annotation (Line(points={{85.15,-36.93},{85.15,-42.065},
