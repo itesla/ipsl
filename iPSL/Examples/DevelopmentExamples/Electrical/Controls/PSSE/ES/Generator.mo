@@ -37,8 +37,6 @@ model Generator
   iPSL.Connectors.PwPin pwPin
     annotation (Placement(transformation(extent={{100,-10},{120,10}})));
 equation
-  connect(exst1.EFD, generator.EFD) annotation (Line(points={{-71.619,-49.6},{
-          -80,-49.6},{-80,20},{-59.2,20}}, color={0,0,127}));
   connect(generator.PMECH, generator.PMECH0) annotation (Line(points={{-59.2,60},
           {-80,60},{-80,90},{40,90},{40,28},{23.2,28}}, color={0,0,127}));
   connect(exst1.EFD0, generator.EFD0) annotation (Line(points={{6.71429,-79.6},
@@ -58,6 +56,8 @@ equation
           127}));
   connect(generator.p, pwPin) annotation (Line(points={{24,40},{42,40},{60,40},
           {60,0},{110,0}}, color={0,0,255}));
+  connect(generator.EFD, generator.EFD0) annotation (Line(points={{-59.2,20},{
+          -80,20},{-80,-4},{40,-4},{40,12},{23.2,12}}, color={0,0,127}));
   annotation (Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,
             -100},{100,100}})), Icon(coordinateSystem(preserveAspectRatio=false,
           extent={{-100,-100},{100,100}}), graphics={

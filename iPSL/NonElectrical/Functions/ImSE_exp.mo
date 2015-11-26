@@ -16,7 +16,7 @@ equation
     SE2,
     E1,
     E2);
-  annotation(Diagram(coordinateSystem(preserveAspectRatio = false, extent = {{-100, -100}, {100, 100}}), graphics), Icon(coordinateSystem(preserveAspectRatio = false, extent = {{-100, -100}, {100, 100}}), graphics={  Ellipse(extent=  {{-98, 62}, {100, -68}}, lineColor=  {0, 0, 255}), Text(extent=  {{-86, 42}, {84, -38}}, lineColor=  {0, 0, 255}, textString=  "SE(Efd)")}),
+  annotation(Diagram(coordinateSystem(preserveAspectRatio = false, extent = {{-100, -100}, {100, 100}}), graphics), Icon(coordinateSystem(preserveAspectRatio = false, extent = {{-100, -100}, {100, 100}}), graphics={  Ellipse(extent = {{-98, 62}, {100, -68}}, lineColor = {0, 0, 255}), Text(extent = {{-86, 42}, {84, -38}}, lineColor = {0, 0, 255}, textString = "SE(Efd)")}),
     Documentation(info="<html>
 <p><br><span style=\"font-family: MS Shell Dlg 2;\">&LT;iPSL: iTesla Power System Library&GT;</span></p>
 <p><span style=\"font-family: MS Shell Dlg 2;\">Copyright 2015 RTE (France), AIA (Spain), KTH (Sweden) and DTU (Denmark)</span></p>

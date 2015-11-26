@@ -119,24 +119,24 @@ equation
   connect(pwFault.p, pwLine4.p) annotation(Line(points={{64.3333,-4},{55,-4},{
           55,6}},                                                                          color = {0, 0, 255}, smooth = Smooth.None));
   connect(generator.p, eSST4B.Gen_terminal) annotation (Line(
-      points={{-52.6,13},{-48.7,13},{-48.7,11.9143},{-38.8364,11.9143}},
+      points={{-52.6,13},{-48.7,13},{-48.7,8.3},{-38.8364,8.3}},
       color={0,0,255},
       smooth=Smooth.None));
   connect(eSST4B.Bus, pwLine.p) annotation (Line(
-      points={{-17.1636,11.9143},{-9.63635,11.9143},{-9.63635,14},{-5,14}},
+      points={{-17.1636,8.3},{-9.63635,8.3},{-9.63635,14},{-5,14}},
       color={0,0,255},
       smooth=Smooth.None));
   connect(const.y, eSST4B.VOTHSG) annotation (Line(
-      points={{-55.6,-40},{-48,-40},{-48,9.16429},{-41.3818,9.16429}},
+      points={{-55.6,-40},{-48,-40},{-48,5.89375},{-41.3818,5.89375}},
       color={0,0,127},
       smooth=Smooth.None));
 
   connect(generator.EFD0, eSST4B.EFD0) annotation (Line(
-      points={{-52.88,1.1},{-52,1.1},{-52,-4.50714},{-41.5273,-4.50714}},
+      points={{-52.88,1.1},{-52,1.1},{-52,-6.06875},{-41.5273,-6.06875}},
       color={0,0,127},
       smooth=Smooth.None));
   connect(const5.y, eSST4B.VUEL) annotation (Line(
-      points={{-53.5,-25},{-46,-25},{-46,2.25},{-41.5273,2.25}},
+      points={{-53.5,-25},{-46,-25},{-46,-0.15625},{-41.5273,-0.15625}},
       color={0,0,127},
       smooth=Smooth.None));
 
@@ -145,16 +145,17 @@ equation
       color={0,0,127},
       smooth=Smooth.None));
   connect(eSST4B.EFD, generator.EFD) annotation (Line(
-      points={{-15.2727,1.07143},{-10,1.07143},{-10,-12},{-86,-12},{-86,4.5},{
+      points={{-15.2727,-1.1875},{-10,-1.1875},{-10,-12},{-86,-12},{-86,4.5},{
           -81.72,4.5}},
       color={0,0,127},
       smooth=Smooth.None));
   connect(generator.XADIFD, eSST4B.XADIFD) annotation (Line(
-      points={{-52.88,-2.3},{-52.88,-8},{-56,-8},{-56,-1.05},{-41.3818,-1.05}},
+      points={{-52.88,-2.3},{-52.88,-8},{-56,-8},{-56,-3.04375},{-41.3818,
+          -3.04375}},
       color={0,0,127},
       smooth=Smooth.None));
   connect(generator.PELEC, eSST4B.ECOMP) annotation (Line(
-      points={{-52.88,4.5},{-50,4.5},{-50,5.39286},{-41.3818,5.39286}},
+      points={{-52.88,4.5},{-50,4.5},{-50,2.59375},{-41.3818,2.59375}},
       color={0,0,127},
       smooth=Smooth.None));
 

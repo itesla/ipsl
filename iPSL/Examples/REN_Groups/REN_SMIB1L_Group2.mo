@@ -86,8 +86,8 @@ equation
           {80.8,0.834604}}, color={0,0,255}));
   connect(constantLoad.p, pwLine3.p) annotation (Line(points={{32,-30.8},{32,
           -42},{10,-42},{10,-20}},      color={0,0,255}));
-  connect(pwFault.p, pwLine2.p) annotation (Line(points={{62.0833,-45},{56,
-          -45},{56,-40},{40,-40},{40,-20}},
+  connect(pwFault.p, pwLine2.p) annotation (Line(points={{62.0833,-45},{56,-45},
+          {56,-40},{40,-40},{40,-20}},
                                    color={0,0,255}));
   annotation (Diagram(coordinateSystem(preserveAspectRatio=true, extent={{-100,
             -100},{100,100}})), Documentation(info="<html>

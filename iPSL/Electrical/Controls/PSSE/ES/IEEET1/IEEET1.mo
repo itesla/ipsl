@@ -23,11 +23,6 @@ model IEEET1 "IEEE Type 1 excitation system"
             {-126,50}})));
   Modelica.Blocks.Sources.Constant Vref(k=VREF)
     annotation (Placement(transformation(extent={{-86,26},{-72,40}})));
-  NonElectrical.Continuous.SimpleLag
-                VR(                y_start = VR0,
-    K=K_A,
-    T=T_A)                                                                          annotation(Placement(transformation(extent={{-14,-8},
-            {-4,2}})));
   Modelica.Blocks.Interfaces.RealOutput EFD "Output,excitation voltage" annotation(Placement(transformation(extent={{78,-28},
             {88,-16}}),                                                                                                    iconTransformation(extent={{120,-6},
             {130,6}})));
@@ -101,12 +96,17 @@ public
     initType=Modelica.Blocks.Types.Init.InitialOutput,
     y_start=Efd0)
     annotation (Placement(transformation(extent={{42,-6},{52,4}})));
-  Modelica.Blocks.Nonlinear.Limiter limiter(uMax=V_RMAX, uMin=V_RMIN)
-    annotation (Placement(transformation(extent={{2,-8},{12,2}})));
   NonElectrical.Continuous.DerivativeLag derivativeLag(
     K=K_F,
     T=T_F,
     y_start=0) annotation (Placement(transformation(extent={{12,-40},{2,-30}})));
+  NonElectrical.Continuous.SimpleLagLim simpleLagLim(
+    K=K_A,
+    T=T_A,
+    y_start=VR0,
+    outMax=V_RMAX,
+    outMin=V_RMIN)
+    annotation (Placement(transformation(extent={{-8,-8},{2,2}})));
 initial equation
   VT0 = V_0;
   Efd0 = EFD0;
@@ -135,12 +135,6 @@ equation
     annotation (Line(points={{-37.5,3},{-33,3},{-33,0}}, color={0,0,127}));
   connect(sum3.u2, derivativeLag.y) annotation (Line(points={{-33,-6},{-34,-6},{
           -34,-28},{-34,-35},{1.5,-35}}, color={0,0,127}));
-  connect(sum3.y, VR.u) annotation (Line(points={{-21.5,-3},{-18.75,-3},{-18.75,
-          -3},{-15,-3}}, color={0,0,127}));
-  connect(VR.y, limiter.u) annotation (Line(points={{-3.5,-3},{-1.75,-3},{-1.75,
-          -3},{1,-3}}, color={0,0,127}));
-  connect(limiter.y, sum4.u2) annotation (Line(points={{12.5,-3},{15.25,-3},{15.25,
-          -4},{19,-4}}, color={0,0,127}));
   connect(sum4.u1, sum5.y) annotation (Line(points={{19,2},{14,2},{14,18},{15.6,
           18}}, color={0,0,127}));
   connect(sum5.u2, VE.y) annotation (Line(points={{24.8,20.4},{30,20.4},{30,26},
@@ -161,6 +155,10 @@ equation
           -22}}, color={0,0,127}));
   connect(KE_EFD.u, EFD) annotation (Line(points={{50.8,16},{74,16},{74,-22},{83,
           -22}}, color={0,0,127}));
+  connect(sum3.y, simpleLagLim.u) annotation (Line(points={{-21.5,-3},{-15.75,
+          -3},{-15.75,-3},{-9,-3}}, color={0,0,127}));
+  connect(simpleLagLim.y, sum4.u2) annotation (Line(points={{2.5,-3},{10.25,-3},
+          {10.25,-4},{19,-4}}, color={0,0,127}));
   annotation(Diagram(coordinateSystem(preserveAspectRatio=false,   extent={{-140,
             -100},{120,100}}),                                                                           graphics={                                                                                                    Text(extent = {{10, 40}, {38, 32}}, lineColor = {0, 0, 255}, textString = "VE=SE*EFD"),                                                                                       Text(extent = {{-110, 10}, {-82, 4}}, lineColor = {0, 0, 255}, textString = "Ec"), Text(extent = {{-102, -20}, {-80, -26}}, lineColor = {0, 0, 255}, textString = "VUEL"), Text(extent = {{-102, -12}, {-80, -18}}, lineColor = {0, 0, 255}, textString = "VOEL"), Text(extent = {{-100, -2}, {-82, -12}}, lineColor = {0, 0, 255}, textString = "VOTHSG")}), Icon(coordinateSystem(preserveAspectRatio=false,   extent={{-140,
             -100},{120,100}}),                                                                                                    graphics={  Rectangle(extent={{

@@ -23,10 +23,6 @@ model IEEET2 "IEEE Type 2 excitation system"
             -10},{-106,10}})));
   Modelica.Blocks.Sources.Constant Vref(k=VREF)
     annotation (Placement(transformation(extent={{-96,14},{-84,26}})));
-  NonElectrical.Continuous.SimpleLag            VR(                y_start = VR0,
-    K=K_A,
-    T=T_A)                                                                                                     annotation(Placement(transformation(extent={{-8,-10},
-            {6,4}})));
   Modelica.Blocks.Interfaces.RealOutput EFD(start = Efd0)
     "Output,excitation voltage"                                                       annotation(Placement(transformation(extent = {{100, -6}, {110, 6}}), iconTransformation(extent={{120,-10},
             {138,10}})));
@@ -119,8 +115,13 @@ public
     annotation (Placement(transformation(extent={{42,22},{30,34}})));
   Modelica.Blocks.Math.Gain gain(k=K_E)
     annotation (Placement(transformation(extent={{82,16},{72,26}})));
-  Modelica.Blocks.Nonlinear.Limiter limiter(uMax=VRMAX0, uMin=VRMIN0)
-    annotation (Placement(transformation(extent={{16,-10},{30,4}})));
+  NonElectrical.Continuous.SimpleLagLim simpleLagLim(
+    K=K_A,
+    T=T_A,
+    y_start=VR0,
+    outMax=VRMAX0,
+    outMin=VRMIN0)
+    annotation (Placement(transformation(extent={{0,-8},{12,4}})));
 initial algorithm
   VT0 := V_0;
   Efd0 := EFD0;
@@ -149,8 +150,6 @@ equation
           -2.6},{-53.4,-2.6}}, color={0,0,127}));
   connect(add3_1.y, add.u1) annotation (Line(points={{-37.3,3},{-33.65,3},{-33.65,
           1.6},{-29.2,1.6}}, color={0,0,127}));
-  connect(add.y, VR.u) annotation (Line(points={{-15.4,-2},{-9.4,-2},{-9.4,-3}},
-        color={0,0,127}));
   connect(simpleLag.y, add.u2) annotation (Line(points={{-16.7,-33},{-34,-33},{-34,
           -5.6},{-29.2,-5.6}}, color={0,0,127}));
   connect(simpleLag.u, derivativeLag.y) annotation (Line(points={{-0.6,-33},{6.7,
@@ -170,15 +169,16 @@ equation
   connect(add2.y, add1.u1) annotation (Line(points={{29.4,28},{24,28},{24,12},{32,
           12},{32,3.6},{38.8,3.6}}, color={0,0,127}));
   connect(derivativeLag.u, add1.u2) annotation (Line(points={{29.4,-33},{36,-33},
-          {36,-4},{38.8,-3.6}}, color={0,0,127}));
+          {36,-3.6},{38.8,-3.6}},
+                                color={0,0,127}));
   connect(gain.u, EFD) annotation (Line(points={{83,21},{96,21},{96,0},{105,0}},
         color={0,0,127}));
   connect(gain.y, add2.u2) annotation (Line(points={{71.5,21},{50,21},{50,24.4},
           {43.2,24.4}}, color={0,0,127}));
-  connect(VR.y, limiter.u)
-    annotation (Line(points={{6.7,-3},{10.35,-3},{14.6,-3}}, color={0,0,127}));
-  connect(limiter.y, add1.u2) annotation (Line(points={{30.7,-3},{34.35,-3},{34.35,
-          -3.6},{38.8,-3.6}}, color={0,0,127}));
+  connect(add.y, simpleLagLim.u)
+    annotation (Line(points={{-15.4,-2},{-1.2,-2}}, color={0,0,127}));
+  connect(simpleLagLim.y, add1.u2) annotation (Line(points={{12.6,-2},{24,-2},{
+          24,-3.6},{38.8,-3.6}}, color={0,0,127}));
   annotation(Diagram(coordinateSystem(preserveAspectRatio=false,   extent={{-120,
             -100},{120,100}}),                                                                          graphics={                                                                                       Text(extent = {{-94, 24}, {-86, 16}}, lineColor = {0, 0, 255}, textString = "Vref"), Text(extent = {{-104, -40}, {-88, -46}}, lineColor = {0, 0, 255}, textString = "Efd0"), Text(extent = {{-112, 6}, {-84, 0}}, lineColor = {0, 0, 255}, textString = "Ec"), Text(extent = {{-104, -8}, {-86, -18}}, lineColor = {0, 0, 255}, textString = "VOTHSG"), Text(extent = {{-106, -18}, {-84, -24}}, lineColor = {0, 0, 255}, textString = "VOEL"), Text(extent = {{-106, -26}, {-84, -32}}, lineColor = {0, 0, 255}, textString = "VUEL")}),                                                                                         Icon(coordinateSystem(preserveAspectRatio=false,   extent={{-120,
             -100},{120,100}}),                                                                                                   graphics={  Text(extent={{

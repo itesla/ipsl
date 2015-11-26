@@ -129,17 +129,17 @@ equation
           {-36,22.7},{-32,22.7},{-32,34},{-32,33},{-36.475,33}}, color={0,0,127}));
   connect(generator.XADIFD, SCRX.XADIFD) annotation (Line(points={{-48.88,-0.7},
           {-42,-0.7},{-42,-17.52},{-47.85,-17.52}}, color={0,0,127}));
-  connect(HYGOV.PMECH, generator.PMECH) annotation (Line(points={{-74.95,40},
-          {-86,40},{-86,17.5},{-77.72,17.5}}, color={0,0,127}));
   connect(SCRX.ECOMP, SCRX.ETERM) annotation (Line(points={{-48.15,-33.52},
           {-32,-33.52},{-32,-12.24},{-47.85,-12.24}}, color={0,0,127}));
   connect(generator.ETERM, SCRX.ETERM) annotation (Line(points={{-48.88,17.5},
           {-32,17.5},{-32,-12.24},{-47.85,-12.24}}, color={0,0,127}));
-  connect(generator.EFD, SCRX.EFD) annotation (Line(points={{-77.72,4.5},{
-          -90,4.5},{-90,-19.76},{-84.6,-19.76}}, color={0,0,127}));
   connect(SCRX.VOTHSG, const.y) annotation (Line(points={{-48.15,-29.04},{
           -44,-29.04},{-44,-26},{-43.67,-25.2},{-43.67,-24},{-42.2,-24}},
         color={0,0,127}));
+  connect(generator.PMECH, HYGOV.PMECH0) annotation (Line(points={{-77.72,17.5},
+          {-90,17.5},{-90,26},{-28,26},{-28,47},{-36.475,47}}, color={0,0,127}));
+  connect(SCRX.EFD, generator.EFD) annotation (Line(points={{-84.6,-19.76},{-90,
+          -19.76},{-90,4.5},{-77.72,4.5}}, color={0,0,127}));
   annotation(Diagram(coordinateSystem(preserveAspectRatio=false,  extent={{-100,
             -120},{100,80}})),                                                                                     Icon(coordinateSystem(extent = {{-100, -120}, {100, 80}})),
     Documentation(info="<html>

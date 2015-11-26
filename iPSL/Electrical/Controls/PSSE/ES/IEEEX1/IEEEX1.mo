@@ -26,11 +26,6 @@ model IEEEX1
             {-134,26}})));
   Modelica.Blocks.Sources.Constant Vref(k=VREF)
     annotation (Placement(transformation(extent={{-120,6},{-108,18}})));
-  NonElectrical.Continuous.SimpleLag            VR(
-    K=K_A,
-    T=T_A,
-    y_start=VR0)
-    annotation (Placement(transformation(extent={{-18,-12},{0,6}})));
   Modelica.Blocks.Interfaces.RealOutput EFD "Output,excitation voltage" annotation(Placement(transformation(extent={{120,-6},
             {130,6}}),                                                                                                    iconTransformation(extent={{120,-6},
             {130,6}})));
@@ -124,8 +119,13 @@ public
     initType=Modelica.Blocks.Types.Init.InitialOutput,
     y_start=Efd0)
     annotation (Placement(transformation(extent={{66,-6},{76,4}})));
-  Modelica.Blocks.Nonlinear.Limiter limiter(uMax=VRMAX0, uMin=VRMIN0)
-    annotation (Placement(transformation(extent={{10,-12},{28,6}})));
+  NonElectrical.Continuous.SimpleLagLim simpleLagLim(
+    K=K_A,
+    T=T_A,
+    y_start=VR0,
+    outMax=VRMAX0,
+    outMin=VRMIN0)
+    annotation (Placement(transformation(extent={{-4,-12},{14,6}})));
 initial equation
   VT0 = Ec0;
   Efd0 = EFD0;
@@ -169,8 +169,6 @@ equation
           1},{-67,1}}, color={0,0,127}));
   connect(V_Erro1.y, LL.u)
     annotation (Line(points={{-55.5,-3},{-47.8,-3}}, color={0,0,127}));
-  connect(LL.y, VR.u) annotation (Line(points={{-27.1,-3},{-23.55,-3},{-23.55,-3},
-          {-19.8,-3}}, color={0,0,127}));
   connect(imDerivativeLag.y, V_Erro1.u3) annotation (Line(points={{-18.9,-39},{-76,
           -39},{-76,-7},{-67,-7}}, color={0,0,127}));
   connect(imSum2_3.y, integrator.u)
@@ -185,10 +183,10 @@ equation
           1},{100,0},{125,0}}, color={0,0,127}));
   connect(KE_EFD.u, EFD) annotation (Line(points={{60.8,12},{100,12},{100,2},{99.25,
           1},{99.25,0},{125,0}}, color={0,0,127}));
-  connect(VR.y, limiter.u)
-    annotation (Line(points={{0.9,-3},{4.45,-3},{8.2,-3}}, color={0,0,127}));
-  connect(limiter.y, imSum2_3.u2) annotation (Line(points={{28.9,-3},{33.45,-3},
-          {33.45,-4},{39,-4}}, color={0,0,127}));
+  connect(LL.y, simpleLagLim.u) annotation (Line(points={{-27.1,-3},{-16.55,-3},
+          {-16.55,-3},{-5.8,-3}}, color={0,0,127}));
+  connect(simpleLagLim.y, imSum2_3.u2) annotation (Line(points={{14.9,-3},{
+          26.45,-3},{26.45,-4},{39,-4}}, color={0,0,127}));
   annotation(Diagram(coordinateSystem(preserveAspectRatio=false,   extent={{-140,
             -60},{120,60}}),                                                                             graphics={  Text(extent={{
               -90,32},{-84,26}},                                                                                                    lineColor = {0, 0, 255}, textString = "Vs"), Text(extent={{

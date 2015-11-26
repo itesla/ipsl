@@ -24,8 +24,8 @@ equation
   R * (n.ii - B * n.vr - G * n.vi) + X * (n.ir - G * n.vr + B * n.vi) = n.vi - p.vi;
   R * (p.ir - G * p.vr + B * p.vi) - X * (p.ii - B * p.vr - G * p.vi) = p.vr - n.vr;
   R * (p.ii - B * p.vr - G * p.vi) + X * (p.ir - G * p.vr + B * p.vi) = p.vi - n.vi;
-   annotation(Icon(graphics={  Rectangle(extent=  {{-60, 40}, {60, -42}}, lineColor=  {0, 0, 255}), Rectangle(extent=  {{-40, 10}, {40, -10}}, lineColor=  {0, 0, 255}, fillColor=  {95, 95, 95},
-            fillPattern=                                                                                                    FillPattern.Solid),
+   annotation(Icon(graphics={  Rectangle(extent = {{-60, 40}, {60, -42}}, lineColor = {0, 0, 255}), Rectangle(extent = {{-40, 10}, {40, -10}}, lineColor = {0, 0, 255}, fillColor = {95, 95, 95},
+            fillPattern =                                                                                                   FillPattern.Solid),
         Text(
           extent={{-106,82},{-18,36}},
           lineColor={238,46,47},

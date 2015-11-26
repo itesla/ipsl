@@ -55,17 +55,10 @@ public
   Modelica.Blocks.Interfaces.RealInput VT "sensed VT"
     annotation (Placement(transformation(extent={{-5,-6},{5,6}},
         rotation=270,
-        origin={25,-60}),
+        origin={23,-62}),
         iconTransformation(extent={{-6,-6},{6,6}},
         rotation=90,
         origin={-10,-34})));
-  iPSL.NonElectrical.Continuous.SimpleLag imSimpleLag(
-    K=K_A,
-    T=T_A,
-    y_start=vr0)
-    annotation (Placement(transformation(extent={{4,-36},{16,-24}})));
-  lmitedVT lmitedVT1(VRMAX=V_RMAX, VRMIN=V_RMIN)
-    annotation (Placement(transformation(extent={{16,-66},{48,-34}})));
 public
   Modelica.Blocks.Interfaces.RealInput EFD0 annotation (Placement(
         transformation(
@@ -100,7 +93,7 @@ public
   Modelica.Blocks.Math.Product product
     annotation (Placement(transformation(extent={{42,36},{28,50}})));
   Modelica.Blocks.Math.Product product1
-    annotation (Placement(transformation(extent={{54,14},{40,28}})));
+    annotation (Placement(transformation(extent={{54,10},{40,24}})));
   Modelica.Blocks.Sources.Constant const(k=K_E)
     annotation (Placement(transformation(extent={{86,18},{74,30}})));
   Modelica.Blocks.Math.Add add(k1=-1)
@@ -110,6 +103,20 @@ public
     initType=Modelica.Blocks.Types.Init.InitialOutput,
     y_start=vf00)
     annotation (Placement(transformation(extent={{70,-32},{82,-20}})));
+  NonElectrical.Continuous.SimpleLagLimVar simpleLagLimVar(
+    K=K_A,
+    T=T_A,
+    y_start=vr0)
+    annotation (Placement(transformation(extent={{12,-34},{22,-24}})));
+  Modelica.Blocks.Math.Gain gain(k=V_RMIN) annotation (Placement(transformation(
+        extent={{-3,-3},{3,3}},
+        rotation=90,
+        origin={13,-47})));
+  Modelica.Blocks.Math.Gain gain1(k=V_RMAX) annotation (Placement(
+        transformation(
+        extent={{-3,-3},{3,3}},
+        rotation=90,
+        origin={29,-47})));
 initial equation
   ECOMP0 = ECOMP;
   vf00 = EFD0;
@@ -120,10 +127,6 @@ equation
 
   connect(VUEL, hV_GATE.n2) annotation (Line(
       points={{-91,-74},{-16.7,-74},{-16.7,-32.6}},
-      color={0,0,127},
-      smooth=Smooth.None));
-  connect(lmitedVT1.p2, VT) annotation (Line(
-      points={{24.4,-49.36},{24.4,-56.68},{25,-56.68},{25,-60}},
       color={0,0,127},
       smooth=Smooth.None));
   connect(imSE.VE_IN, EFD) annotation (Line(points={{82.45,47.9},{98,47.9},{98,0},
@@ -146,11 +149,7 @@ equation
           30},{-56,-24.8},{-48.8,-24.8}}, color={0,0,127}));
   connect(add3_2.y, add3_1.u3) annotation (Line(points={{-59.5,-7},{-54,-7},{
           -54,-31.2},{-48.8,-31.2}}, color={0,0,127}));
-  connect(hV_GATE.p, imSimpleLag.u) annotation (Line(points={{-2.51,-30.5},{
-          -0.255,-30.5},{-0.255,-30},{2.8,-30}}, color={0,0,127}));
-  connect(imSimpleLag.y, lmitedVT1.p1) annotation (Line(points={{16.6,-30},{20,
-          -30},{20,-44.72},{24.4,-44.72}}, color={0,0,127}));
-  connect(product1.u1, const.y) annotation (Line(points={{55.4,25.2},{64.7,25.2},
+  connect(product1.u1, const.y) annotation (Line(points={{55.4,21.2},{64.7,21.2},
           {64.7,24},{73.4,24}}, color={0,0,127}));
   connect(product.u1, imSE.VE_OUT) annotation (Line(points={{43.4,47.2},{53.7,
           47.2},{53.7,47.9},{63.55,47.9}}, color={0,0,127}));
@@ -159,9 +158,7 @@ equation
   connect(add1.u1, product.y) annotation (Line(points={{13.4,37.2},{20,37.2},{
           20,43},{27.3,43}}, color={0,0,127}));
   connect(add1.u2, product1.y) annotation (Line(points={{13.4,28.8},{26,28.8},{
-          26,21},{39.3,21}}, color={0,0,127}));
-  connect(lmitedVT1.n1, add.u2) annotation (Line(points={{39.84,-47.44},{43.2,
-          -47.44},{43.2,-28.4}}, color={0,0,127}));
+          26,17},{39.3,17}}, color={0,0,127}));
   connect(add1.y, add.u1) annotation (Line(points={{-2.7,33},{-10,33},{-10,16},
           {34,16},{34,-23.6},{43.2,-23.6}}, color={0,0,127}));
   connect(add.y, integrator.u)
@@ -170,18 +167,23 @@ equation
           {105,0}}, color={0,0,127}));
   connect(imDerivativeLag.u, EFD)
     annotation (Line(points={{9.2,0},{105,0}}, color={0,0,127}));
-  connect(product1.u2, EFD) annotation (Line(points={{55.4,16.8},{98,18},{98,0},
-          {105,0}}, color={0,0,127}));
+  connect(product1.u2, EFD) annotation (Line(points={{55.4,12.8},{98,12.8},{98,
+          0},{105,0}},
+                    color={0,0,127}));
+  connect(hV_GATE.p, simpleLagLimVar.u) annotation (Line(points={{-2.51,-30.5},
+          {4.745,-30.5},{4.745,-29},{11,-29}}, color={0,0,127}));
+  connect(simpleLagLimVar.y, add.u2) annotation (Line(points={{22.5,-29},{33.25,
+          -29},{33.25,-28.4},{43.2,-28.4}}, color={0,0,127}));
+  connect(gain.y, simpleLagLimVar.outMin) annotation (Line(points={{13,-43.7},{
+          13,-39.85},{13,-36}}, color={0,0,127}));
+  connect(gain1.y, simpleLagLimVar.outMax) annotation (Line(points={{29,-43.7},
+          {29,-16},{21,-16},{21,-22}}, color={0,0,127}));
+  connect(VT, gain.u) annotation (Line(points={{23,-62},{24,-62},{24,-56},{13,
+          -56},{13,-50.6}}, color={0,0,127}));
+  connect(gain1.u, gain.u) annotation (Line(points={{29,-50.6},{29,-56},{13,-56},
+          {13,-50.6}}, color={0,0,127}));
   annotation (Diagram(coordinateSystem(preserveAspectRatio=false,extent={{-100,
-            -40},{100,40}}),   graphics={
-        Text(
-          extent={{32,-28},{42,-34}},
-          lineColor={255,0,0},
-          textString="V"),
-        Text(
-          extent={{36,-32},{44,-34}},
-          lineColor={255,0,0},
-          textString="R")}), Icon(coordinateSystem(preserveAspectRatio=false,
+            -40},{100,40}})),Icon(coordinateSystem(preserveAspectRatio=false,
           extent={{-100,-40},{100,40}}),   graphics={
         Rectangle(extent={{-100,40},{100,-40}},lineColor={0,0,255}),
         Text(

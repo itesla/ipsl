@@ -126,14 +126,14 @@ equation
           10.8346},{83.8,10.8346}},                                                                             color = {0, 0, 255}, smooth = Smooth.None));
   connect(constantLoad.p, pwLine3.p) annotation(Line(points={{37,-14.8},{37,-25.5},{19,
           -25.5},{19,-10}},                                                                                         color = {0, 0, 255}, smooth = Smooth.None));
-  connect(pwFault.p, pwLine4.p) annotation(Line(points={{54.8333,-25},{
-          54.8333,-25.5},{45,-25.5},{45,-10}},                                                               color = {0, 0, 255}, smooth = Smooth.None));
+  connect(pwFault.p, pwLine4.p) annotation(Line(points={{54.8333,-25},{54.8333,
+          -25.5},{45,-25.5},{45,-10}},                                                                       color = {0, 0, 255}, smooth = Smooth.None));
   connect(iEEET2_1.VUEL, const.y) annotation(Line(points={{-56.5667,-11.2},{
           -43.67,-11.2},{-43.67,-8},{-40.2,-8}},                                                                          color = {0, 0, 127}, smooth = Smooth.None));
   connect(iEEET2_1.VOEL, const.y) annotation(Line(points={{-56.5667,-24},{
           -43.67,-24},{-43.67,-8},{-40.2,-8}},                                                                            color = {0, 0, 127}, smooth = Smooth.None));
-  connect(iEEET2_1.VOTHSG, const.y) annotation(Line(points={{-56.5667,-36.8},
-          {-43.67,-36.8},{-43.67,-8},{-40.2,-8}},                                                                             color = {0, 0, 127}, smooth = Smooth.None));
+  connect(iEEET2_1.VOTHSG, const.y) annotation(Line(points={{-56.5667,-36.8},{
+          -43.67,-36.8},{-43.67,-8},{-40.2,-8}},                                                                              color = {0, 0, 127}, smooth = Smooth.None));
   connect(step.y, imSum2_1.p1) annotation(Line(points={{-36.7,47},{-41.92,
           47},{-41.92,46.8}},                                                                        color = {0, 0, 127}, smooth = Smooth.None));
   connect(iEEET2_1.EFD, generator.EFD) annotation (Line(
@@ -141,11 +141,11 @@ equation
       color={0,0,127},
       smooth=Smooth.None));
   connect(generator.SPEED, iEEESGO.SPEED) annotation (Line(
-      points={{-48.96,20.9},{-52,20.9},{-52,32},{-50.6333,32}},
+      points={{-48.96,20.9},{-52,20.9},{-52,33.7143},{-50.95,33.7143}},
       color={0,0,127},
       smooth=Smooth.None));
   connect(iEEESGO.PMECH, generator.PMECH) annotation (Line(
-      points={{-91.1667,36},{-88,36},{-88,16.5},{-75.74,16.5}},
+      points={{-89.1875,37.1429},{-88,37.1429},{-88,16.5},{-75.74,16.5}},
       color={0,0,127},
       smooth=Smooth.None));
   connect(generator.PMECH0, imSum2_1.p2) annotation (Line(
@@ -153,7 +153,7 @@ equation
       color={0,0,127},
       smooth=Smooth.None));
   connect(imSum2_1.n1, iEEESGO.PMECH0) annotation (Line(
-      points={{-49.92,45},{-52,45},{-52,40},{-50.6333,40}},
+      points={{-49.92,45},{-52,45},{-52,41.7143},{-50.95,41.7143}},
       color={0,0,127},
       smooth=Smooth.None));
   connect(generator.EFD0, iEEET2_1.EFD0) annotation (Line(

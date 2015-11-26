@@ -51,7 +51,7 @@ equation
 <td><p><a href=\"mailto:luigiv@kth.se\">luigiv@kth.se</a></p></td>
 </tr>
 </table>
-</html>"), Icon(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},
+</html>"), Icon(coordinateSystem(preserveAspectRatio=true,  extent={{-100,-100},
             {100,100}}), graphics={
     Line(points={{40,100},{60,140},{100,140}},         color={0,0,0}),                             Text(extent={{
               -20,68},{20,8}},                                                                                                    lineColor = {0, 0, 255}, textString = "K"),
@@ -61,5 +61,6 @@ equation
               -70,-20},{70,-80}},                                                                                                    lineColor=
               {0,0,255},
           textString="1 + Ts"),
-    Line(points={{-100,-140},{-60,-140},{-40,-100}},   color={0,0,0})}));
+    Line(points={{-100,-140},{-60,-140},{-40,-100}},   color={0,0,0})}),
+    Diagram);
 end SimpleLagLimVar;

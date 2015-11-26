@@ -1,5 +1,5 @@
 within iPSL.NonElectrical.Continuous;
-class LeadLagLim "Lead Lag filter"
+class LeadLagLim "Lead Lag filter with a non-windup limiter"
   extends Modelica.Blocks.Interfaces.SISO(y(start=y_start));
 
   parameter Real K "Gain";

@@ -50,7 +50,7 @@ equation
   der(vf) = -(vf * (Ke + Se) - vr) / Te;
   Se = Ae * e ^ (Be * abs(vf));
   annotation(Diagram(coordinateSystem(preserveAspectRatio=false,   extent={{-100,
-            -100},{100,100}})),                                                                                     Icon(coordinateSystem(preserveAspectRatio = false, extent = {{-100, -100}, {100, 100}}), graphics={  Rectangle(extent=  {{-60, 70}, {70, -28}}, lineColor=  {0, 0, 255}), Text(extent=  {{-56, 68}, {-24, 46}}, lineColor=  {0, 0, 255}, textString=  "vref"), Text(extent=  {{-64, 2}, {-32, -20}}, lineColor=  {0, 0, 255}, textString=  "v"), Text(extent=  {{40, 40}, {72, 18}}, lineColor=  {0, 0, 255}, textString=  "vf"), Text(extent=  {{-36, 44}, {40, -16}}, lineColor=  {0, 0, 255}, textString=  "AVR2")}),
+            -100},{100,100}})),                                                                                     Icon(coordinateSystem(preserveAspectRatio = false, extent = {{-100, -100}, {100, 100}}), graphics={  Rectangle(extent = {{-60, 70}, {70, -28}}, lineColor = {0, 0, 255}), Text(extent = {{-56, 68}, {-24, 46}}, lineColor = {0, 0, 255}, textString = "vref"), Text(extent = {{-64, 2}, {-32, -20}}, lineColor = {0, 0, 255}, textString = "v"), Text(extent = {{40, 40}, {72, 18}}, lineColor = {0, 0, 255}, textString = "vf"), Text(extent = {{-36, 44}, {40, -16}}, lineColor = {0, 0, 255}, textString = "AVR2")}),
     Documentation(info="<html>
 <table cellspacing=\"1\" cellpadding=\"1\" border=\"1\">
 <tr>

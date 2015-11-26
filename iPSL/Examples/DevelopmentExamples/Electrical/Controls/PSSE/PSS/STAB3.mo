@@ -114,8 +114,8 @@ equation
           {-43.67,-24},{-42.2,-24}},                                                                                      color = {0, 0, 127}, smooth = Smooth.None));
   connect(SCRX.VOEL, const.y) annotation(Line(points={{-48.15,-25.2},{-43.67,-25.2},
           {-43.67,-24},{-42.2,-24}},                                                                                      color = {0, 0, 127}, smooth = Smooth.None));
-  connect(pwFault.p, pwLine.p) annotation(Line(points={{-33.6667,-2},{
-          -33.6667,0.5},{-31,0.5},{-31,10}},                                                            color = {0, 0, 255}, smooth = Smooth.None));
+  connect(pwFault.p, pwLine.p) annotation(Line(points={{-33.6667,-2},{-33.6667,
+          0.5},{-31,0.5},{-31,10}},                                                                     color = {0, 0, 255}, smooth = Smooth.None));
   connect(generator.EFD0, SCRX.EFD0) annotation (Line(
       points={{-48.88,1.9},{-46,1.9},{-46,-6.64},{-48.15,-6.64}},
       color={0,0,127},

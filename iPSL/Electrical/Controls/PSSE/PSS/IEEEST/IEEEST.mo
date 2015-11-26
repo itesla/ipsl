@@ -113,12 +113,12 @@ equation
   annotation(Diagram(coordinateSystem(preserveAspectRatio=false,  extent={{-120,
             -40},{120,40}})),                                                                                      Icon(coordinateSystem(preserveAspectRatio=false,   extent={{-120,
             -40},{120,40}}),                                                                                                    graphics={  Rectangle(extent={{
-              -120,40},{120,-40}},                                                                                                    lineColor=  {0, 0, 255}), Text(extent={{
-              -46,40},{54,-44}},                                                                                                    lineColor=  {0, 0, 255}, textString=  "IEEEST"), Text(extent={{
+              -120,40},{120,-40}},                                                                                                    lineColor = {0, 0, 255}), Text(extent={{
+              -46,40},{54,-44}},                                                                                                    lineColor = {0, 0, 255}, textString = "IEEEST"), Text(extent={{
               -106,-10},{-84,-30}},                                                                                                    lineColor=
               {0,0,255},
           textString="V_S"),                                                                                                    Text(extent={{
-              84,14},{118,-16}},                                                                                                    lineColor=  {0, 0, 255}, textString=  "VOTHSG"), Text(extent={{
+              84,14},{118,-16}},                                                                                                    lineColor = {0, 0, 255}, textString = "VOTHSG"), Text(extent={{
               -106,32},{-78,8}},                                                                                                    lineColor=
               {0,0,255},
           textString="V_CT")}),

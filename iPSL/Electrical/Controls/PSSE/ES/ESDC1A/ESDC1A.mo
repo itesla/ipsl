@@ -12,11 +12,6 @@ model ESDC1A
   Modelica.Blocks.Interfaces.RealInput VOEL "OEL output"
     annotation (Placement(transformation(extent={{-80,-16},{-70,-4}}),
         iconTransformation(extent={{-80,-16},{-70,-4}})));
-  NonElectrical.Continuous.SimpleLag       imLimitedSimpleLag(
-    K=K_A,
-    T=T_A,
-    y_start=vr0)
-    annotation (Placement(transformation(extent={{20,-32},{30,-22}})));
   Modelica.Blocks.Interfaces.RealOutput EFD "Output,excitation voltage"
     annotation (Placement(transformation(extent={{100,-6},{110,6}}),
         iconTransformation(extent={{100,-6},{110,6}})));
@@ -101,12 +96,17 @@ public
     T=T_R,
     y_start=ECOMP0)
     annotation (Placement(transformation(extent={{-64,22},{-52,34}})));
-  Modelica.Blocks.Nonlinear.Limiter limiter(uMax=V_RMAX, uMin=V_RMIN)
-    annotation (Placement(transformation(extent={{40,-32},{50,-22}})));
   Modelica.Blocks.Math.Add3 add3_2
     annotation (Placement(transformation(extent={{-62,-4},{-52,6}})));
   Modelica.Blocks.Sources.Constant const1(k=VREF)
     annotation (Placement(transformation(extent={{-78,-24},{-70,-16}})));
+  NonElectrical.Continuous.SimpleLagLim simpleLagLim(
+    K=K_A,
+    T=T_A,
+    y_start=vr0,
+    outMax=V_RMAX,
+    outMin=V_RMIN)
+    annotation (Placement(transformation(extent={{30,-34},{40,-24}})));
 initial equation
   ECOMP0 = ECOMP;
   vf00 = EFD0;
@@ -122,8 +122,6 @@ equation
                     color={0,0,127}));
   connect(imLeadLag.y, hV_GATE.n1) annotation (Line(points={{-9.4,-26},{0.4,-26},
           {0.4,-26.56}}, color={0,0,127}));
-  connect(hV_GATE.p, imLimitedSimpleLag.u) annotation (Line(points={{10.72,-28.4},
-          {13.36,-28.4},{13.36,-27},{19,-27}},          color={0,0,127}));
   connect(add.y, limIntegrator.u) annotation (Line(points={{74.7,-23},{74.7,-23},
           {79,-23}},   color={0,0,127}));
   connect(limIntegrator.y, EFD) annotation (Line(points={{90.5,-23},{94,-23},{94,
@@ -151,10 +149,6 @@ equation
           -9},{-46,10.8},{-41.2,10.8}}, color={0,0,127}));
   connect(add3_1.y, imLeadLag.u) annotation (Line(points={{-27.4,6},{-26,6},{-26,
           -26},{-23.2,-26}}, color={0,0,127}));
-  connect(limiter.y, add.u2) annotation (Line(points={{50.5,-27},{54.25,-27},{54.25,
-          -27.2},{58.6,-27.2}}, color={0,0,127}));
-  connect(limiter.u, imLimitedSimpleLag.y) annotation (Line(points={{39,-27},{34.5,
-          -27},{30.5,-27}},            color={0,0,127}));
   connect(imDerivativeLag.u, EFD)
     annotation (Line(points={{9,-9},{86,-9},{86,0},{105,0}}, color={0,0,127}));
   connect(add3_2.y, add3_1.u3) annotation (Line(points={{-51.5,1},{-47.75,1},{
@@ -165,6 +159,10 @@ equation
           {-63,1}}, color={0,0,127}));
   connect(const1.y, add3_2.u3) annotation (Line(points={{-69.6,-20},{-63,-20},{
           -63,-3}}, color={0,0,127}));
+  connect(hV_GATE.p, simpleLagLim.u) annotation (Line(points={{10.72,-28.4},{
+          19.36,-28.4},{19.36,-29},{29,-29}}, color={0,0,127}));
+  connect(simpleLagLim.y, add.u2) annotation (Line(points={{40.5,-29},{54,-29},
+          {54,-27.2},{58.6,-27.2}}, color={0,0,127}));
   annotation (Diagram(coordinateSystem(preserveAspectRatio=false,extent={{-80,-40},
             {100,40}})),     Icon(coordinateSystem(preserveAspectRatio=false,
           extent={{-80,-40},{100,40}}),    graphics={

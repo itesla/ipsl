@@ -55,8 +55,8 @@ equation
       color={0,0,127},
       smooth=Smooth.None));
   connect(gENROU.EFD0,iEEEX1.EFD0) annotation (Line(
-      points={{60.08,-19.9},{64,-19.9},{64,-42},{-62,-42},{-62,-5.1},{
-          -57.8154,-5.1}},
+      points={{60.08,-19.9},{64,-19.9},{64,-42},{-62,-42},{-62,-5.1},{-57.8154,
+          -5.1}},
       color={0,0,127},
       smooth=Smooth.None));
   connect(p, gENROU.p)
@@ -66,11 +66,10 @@ equation
           12.5},{-2,52},{68,52},{68,-9.1},{60.08,-9.1}},          color={0,0,
           127}));
   connect(iEEEX1.ECOMP, gENROU.ETERM) annotation (Line(points={{-57.8154,
-          -0.433333},{-66,-0.433333},{-66,-46},{72,-46},{72,12.5},{60.08,
-          12.5}},  color={0,0,127}));
-  connect(iEEEX1.VOEL, iEEEX1.VOTHSG) annotation (Line(points={{-57.8154,
-          8.9},{-64,8.9},{-64,13.5667},{-57.8154,13.5667}},
-                                                        color={0,0,127}));
+          -0.433333},{-66,-0.433333},{-66,-46},{72,-46},{72,12.5},{60.08,12.5}},
+                   color={0,0,127}));
+  connect(iEEEX1.VOEL, iEEEX1.VOTHSG) annotation (Line(points={{-57.8154,8.9},{
+          -64,8.9},{-64,13.5667},{-57.8154,13.5667}},   color={0,0,127}));
   connect(iEEEX1.VUEL, iEEEX1.VOTHSG) annotation (Line(points={{-57.8154,
           4.23333},{-64,4.23333},{-64,13.5667},{-57.8154,13.5667}},   color={0,
           0,127}));

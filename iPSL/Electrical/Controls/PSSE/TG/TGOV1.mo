@@ -30,31 +30,26 @@ Real V "Valve position (pu)";
         iconTransformation(extent={{-86.9,19.9},{-66.9,39.9}})));
   Modelica.Blocks.Math.Gain imGain9(k=1/R)
     annotation (Placement(transformation(extent={{-30,7},{-20,17}})));
-  NonElectrical.Continuous.SimpleLag       imLimitedSimpleLag(
-    K=1,
-    T=T_1,
-    y_start=P0)
-    annotation (Placement(transformation(extent={{-10,7},{0,17}})));
   Modelica.Blocks.Math.Gain imGain1(k=D_t)
     annotation (Placement(transformation(extent={{-16,-19},{-6,-9}})));
   Modelica.Blocks.Math.Add add(k2=-1)
     annotation (Placement(transformation(extent={{-50,7},{-40,17}})));
-  Modelica.Blocks.Nonlinear.Limiter limiter(uMax=V_MAX, uMin=V_MIN)
-    annotation (Placement(transformation(extent={{10,7},{20,17}})));
   Modelica.Blocks.Math.Add add1(k2=-1)
     annotation (Placement(transformation(extent={{60,-5},{70,5}})));
+  NonElectrical.Continuous.SimpleLagLim simpleLagLim(
+    K=1,
+    T=T_1,
+    y_start=P0,
+    outMax=V_MAX,
+    outMin=V_MIN) annotation (Placement(transformation(extent={{0,7},{10,17}})));
 equation
-  V = imLimitedSimpleLag.y;
+  V = simpleLagLim.y;
   connect(Reference, add.u1)
     annotation (Line(points={{-80,15},{-51,15}}, color={0,0,127}));
   connect(add.y, imGain9.u)
     annotation (Line(points={{-39.5,12},{-31,12}}, color={0,0,127}));
   connect(add.u2, SPEED) annotation (Line(points={{-51,9},{-60,9},{-60,-14},{-80,
           -14}}, color={0,0,127}));
-  connect(limiter.u, imLimitedSimpleLag.y)
-    annotation (Line(points={{9,12},{0.5,12}}, color={0,0,127}));
-  connect(limiter.y, imLeadLag.u)
-    annotation (Line(points={{20.5,12},{29,12}}, color={0,0,127}));
   connect(imGain1.u, SPEED)
     annotation (Line(points={{-17,-14},{-80,-14}}, color={0,0,127}));
   connect(add1.y, PMECH)
@@ -63,8 +58,10 @@ equation
           {59,3}}, color={0,0,127}));
   connect(imGain1.y, add1.u2) annotation (Line(points={{-5.5,-14},{54,-14},{54,-3},
           {59,-3}}, color={0,0,127}));
-  connect(imGain9.y, imLimitedSimpleLag.u) annotation (Line(points={{-19.5,12},{
-          -15.25,12},{-11,12}}, color={0,0,127}));
+  connect(simpleLagLim.u, imGain9.y)
+    annotation (Line(points={{-1,12},{-19.5,12}}, color={0,0,127}));
+  connect(simpleLagLim.y, imLeadLag.u)
+    annotation (Line(points={{10.5,12},{19.75,12},{29,12}}, color={0,0,127}));
   annotation (Diagram(coordinateSystem(extent={{-80,-60},{80,60}},
           preserveAspectRatio=false,
         grid={1,1})),                           Icon(coordinateSystem(extent={{-80,-60},

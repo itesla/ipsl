@@ -77,7 +77,7 @@ model RGroup1 "Machine configuration of synchronous machine with regulators: GEN
             {120,10}}),      iconTransformation(extent={{100,-10},{120,10}})));
 equation
 
-  connect(pSS2A.VOTHSG, eSST1A.VOTHSG) annotation (Line(points={{-70.84,-5},{
+  connect(pSS2A.VOTHSG, eSST1A.VOTHSG) annotation (Line(points={{-71.0842,-5},{
           -50.6,-5},{-50.6,-35.75}}, color={0,0,127}));
   connect(cte.y, eSST1A.VOTHSG2) annotation (Line(points={{-100.5,-50},{-90,-50},
           {-90,-35.75},{-58.04,-35.75}}, color={0,0,127}));
@@ -108,13 +108,13 @@ equation
           -66,-80},{-66,-108},{-59.36,-108},{-59.36,-79.95}}, color={0,0,127}));
   connect(eSST1A.VUEL3, eSST1A.VUEL2) annotation (Line(points={{-53.26,-80.225},
           {-53.26,-108},{-59.36,-108},{-59.36,-79.95}}, color={0,0,127}));
-  connect(pSS2A.V_S2, gENSAL.PELEC) annotation (Line(points={{-129.613,-8.5},
-          {-138,-8.5},{-138,-24},{4,-24},{4,-8.5},{-1.92,-8.5}},   color={0,0,
+  connect(pSS2A.V_S2, gENSAL.PELEC) annotation (Line(points={{-130,-8.5},{-138,
+          -8.5},{-138,-24},{4,-24},{4,-8.5},{-1.92,-8.5}},         color={0,0,
           127}));
   connect(gENSAL.p, p) annotation (Line(points={{-1.4,5},{84,5},{84,0},{110,0}},
                    color={0,0,255}));
-  connect(pSS2A.V_S1, hYGOV.SPEED) annotation (Line(points={{-129.613,-1.5},
-          {-140,-1.5},{-140,42},{-4,42},{-4,28},{12,28},{12,35},{6.7,35}},
+  connect(pSS2A.V_S1, hYGOV.SPEED) annotation (Line(points={{-130,-1.5},{-140,
+          -1.5},{-140,42},{-4,42},{-4,28},{12,28},{12,35},{6.7,35}},
         color={0,0,127}));
   annotation (Icon(graphics={
         Ellipse(extent={{-14,-42},{74,38}}, lineColor={0,0,255}),

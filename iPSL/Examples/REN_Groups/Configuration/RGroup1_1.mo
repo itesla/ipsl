@@ -113,36 +113,31 @@ equation
       smooth=Smooth.None));
   connect(p, gENSAL.p) annotation (Line(points={{110,0},{44,0},{44,5},{-1.4,5}},
                   color={0,0,255}));
-  connect(eSST1A.ECOMP, eSST1A.VT) annotation (Line(points={{-92.7007,
-          -9.325},{-100,-9.325},{-100,-36},{-71.9,-36},{-71.9,-23.1375}}, color=
+  connect(eSST1A.ECOMP, eSST1A.VT) annotation (Line(points={{-92.7007,-9.325},{
+          -100,-9.325},{-100,-36},{-71.9,-36},{-71.9,-23.1375}},          color=
          {0,0,127}));
   connect(gENSAL.ETERM, eSST1A.VT) annotation (Line(points={{-1.92,18.5},{0,18.5},
           {0,-36},{-71.9,-36},{-71.9,-23.1375}},              color={0,0,127}));
   connect(cte.y, eSST1A.VOTHSG2) annotation (Line(points={{-108.5,-28},{-104,
           -28},{-104,-4},{-96,-4},{-96,10},{-84.31,10},{-84.31,5.4625}},
         color={0,0,127}));
-  connect(cte2.y, eSST1A.VOEL) annotation (Line(points={{-108.5,-64},{
-          -76.6964,-64},{-76.6964,-23.495}},
-                                     color={0,0,127}));
-  connect(cte1.y, eSST1A.VUEL2) annotation (Line(points={{-108.5,-48},{-100,
-          -48},{-100,-50},{-85.1114,-50},{-85.1114,-23.2675}},
-                                                          color={0,0,127}));
+  connect(cte2.y, eSST1A.VOEL) annotation (Line(points={{-108.5,-64},{-76.6964,
+          -64},{-76.6964,-23.495}},  color={0,0,127}));
+  connect(cte1.y, eSST1A.VUEL2) annotation (Line(points={{-108.5,-48},{-100,-48},
+          {-100,-50},{-85.1114,-50},{-85.1114,-23.2675}}, color={0,0,127}));
   connect(eSST1A.VUEL3, eSST1A.VUEL2) annotation (Line(points={{-81.4079,
           -23.4462},{-81.4079,-30},{-85.1114,-30},{-85.1114,-23.2675}}, color={
           0,0,127}));
   connect(eSST1A.VUEL1, eSST1A.VOTHSG2) annotation (Line(points={{-88.9364,
-          -23.3},{-88.9364,-28},{-104,-28},{-104,-4},{-96,-4},{-96,10},{
-          -84.31,10},{-84.31,5.4625}},
-                                color={0,0,127}));
-  connect(gENSAL.EFD0, eSST1A.EFD0) annotation (Line(points={{-1.92,-13.9},
-          {-8,-13.9},{-8,-30},{-54,-30},{-54,5.18625},{-70.6857,5.18625}},
+          -23.3},{-88.9364,-28},{-104,-28},{-104,-4},{-96,-4},{-96,10},{-84.31,
+          10},{-84.31,5.4625}}, color={0,0,127}));
+  connect(gENSAL.EFD0, eSST1A.EFD0) annotation (Line(points={{-1.92,-13.9},{-8,
+          -13.9},{-8,-30},{-54,-30},{-54,5.18625},{-70.6857,5.18625}},
         color={0,0,127}));
-  connect(gENSAL.EFD, eSST1A.EFD) annotation (Line(points={{-55.48,-8.5},{
-          -52,-8.5},{-52,-8.9025},{-62.1857,-8.9025}},
-                                                   color={0,0,127}));
-  connect(iEEEST.VOTHSG, eSST1A.VOTHSG) annotation (Line(points={{-104.75,
-          -2},{-102,-2},{-102,12},{-79.7929,12},{-79.7929,5.4625}},
-                                                                  color={0,0,
+  connect(gENSAL.EFD, eSST1A.EFD) annotation (Line(points={{-55.48,-8.5},{-52,
+          -8.5},{-52,-8.9025},{-62.1857,-8.9025}}, color={0,0,127}));
+  connect(iEEEST.VOTHSG, eSST1A.VOTHSG) annotation (Line(points={{-104.75,-2},{
+          -102,-2},{-102,12},{-79.7929,12},{-79.7929,5.4625}},    color={0,0,
           127}));
   connect(iEEEST.V_S, gENSAL.PELEC) annotation (Line(points={{-135.75,-7},{-142,
           -7},{-142,-60},{16,-60},{16,-8.5},{-1.92,-8.5}}, color={0,0,127}));

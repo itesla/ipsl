@@ -144,7 +144,7 @@ equation
       color={0,0,127},
       smooth=Smooth.None));
   connect(eSAC2A.EFD, generator.EFD) annotation (Line(
-      points={{-116.1,-35.6133},{-120,-35.6133},{-120,5.5},{-77.72,5.5}},
+      points={{-128.35,-35.6133},{-120,-35.6133},{-120,5.5},{-77.72,5.5}},
       color={0,0,127},
       smooth=Smooth.None));
   annotation(Diagram(coordinateSystem(preserveAspectRatio=true,   extent={{-100,

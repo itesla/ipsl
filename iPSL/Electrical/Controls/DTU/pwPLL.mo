@@ -13,10 +13,10 @@ equation
   connect(pwVoltage.vr, imArcTangent.p2) annotation(Line(points = {{-29.1, 3}, {-16.55, 3}, {-16.55, 2}, {-3.1, 2}}, color = {0, 0, 127}, smooth = Smooth.None));
   connect(pwVoltage.vi, imArcTangent.p1) annotation(Line(points = {{-29.1, 0}, {-16, 0}, {-16, -2}, {-3.1, -2}}, color = {0, 0, 127}, smooth = Smooth.None));
   connect(imArcTangent.n1, imPin) annotation(Line(points = {{6.9, 0}, {54, 0}}, color = {0, 0, 127}, smooth = Smooth.None));
-  annotation(Icon(coordinateSystem(preserveAspectRatio = false, extent = {{-100, -100}, {100, 100}}), graphics={  Rectangle(extent = {{-48, 50}, {46, -50}}, lineColor = {0, 0, 255},
-            lineThickness =                                                                                                   0.5), Text(extent = {{-28, 22}, {34, -22}}, lineColor = {0, 0, 255},
-            lineThickness =                                                                                                   0.5,
-            fillPattern =                                                                                                   FillPattern.Solid, textString = "PLL")}), Diagram(coordinateSystem(preserveAspectRatio = false, extent = {{-100, -100}, {100, 100}}), graphics),
+  annotation(Icon(coordinateSystem(preserveAspectRatio = false, extent = {{-100, -100}, {100, 100}}), graphics={  Rectangle(extent=  {{-48, 50}, {46, -50}}, lineColor=  {0, 0, 255},
+            lineThickness=                                                                                                    0.5), Text(extent=  {{-28, 22}, {34, -22}}, lineColor=  {0, 0, 255},
+            lineThickness=                                                                                                    0.5,
+            fillPattern=                                                                                                    FillPattern.Solid, textString=  "PLL")}), Diagram(coordinateSystem(preserveAspectRatio = false, extent = {{-100, -100}, {100, 100}}), graphics),
     Documentation(info="<html>
 <p><br><span style=\"font-family: MS Shell Dlg 2;\">&LT;iPSL: iTesla Power System Library&GT;</span></p>
 <p><span style=\"font-family: MS Shell Dlg 2;\">Copyright 2015 RTE (France), AIA (Spain), KTH (Sweden) and DTU (Denmark)</span></p>

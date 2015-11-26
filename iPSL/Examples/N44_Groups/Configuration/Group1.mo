@@ -90,10 +90,6 @@ equation
       points={{-109.5,-9},{-104,-9},{-104,-8},{-79.05,-8}},
       color={0,0,127},
       smooth=Smooth.None));
-  connect(iEESGO.PMECH, gENROU.PMECH) annotation (Line(
-      points={{-17.5,30.5},{-26,30.5},{-26,23.5},{-6.54,23.5}},
-      color={0,0,127},
-      smooth=Smooth.None));
 
   connect(iEEET2.EFD, gENROU.EFD) annotation (Line(
       points={{-20.8625,0},{-27,0},{-27,0.5},{-6.54,0.5}},
@@ -114,7 +110,8 @@ equation
       color={0,0,127},
       smooth=Smooth.None));
   connect(gENROU.SPEED, iEESGO.SPEED) annotation (Line(
-      points={{40.84,32.7},{56,32.7},{56,49},{-83,49},{-83,44.25},{-87.9,44.25}},
+      points={{40.84,32.7},{56,32.7},{56,49},{-83,49},{-83,46.2143},{-87.35,
+          46.2143}},
       color={0,0,127},
       smooth=Smooth.None));
 
@@ -123,13 +120,17 @@ equation
       color={0,0,127},
       smooth=Smooth.None));
   connect(gENROU.PMECH0, iEESGO.PMECH0) annotation (Line(
-      points={{40.84,5.1},{63,5.1},{63,-57},{-90,-57},{-90,16.75},{-87.9,16.75}},
+      points={{40.84,5.1},{63,5.1},{63,-57},{-90,-57},{-90,18.7143},{-87.35,
+          18.7143}},
       color={0,0,127},
       smooth=Smooth.None));
   connect(gENROU.p, pwPin) annotation (Line(
       points={{41.3,12},{76.475,12},{76.475,0},{110,0}},
       color={0,0,255},
       smooth=Smooth.None));
+  connect(gENROU.PMECH, iEESGO.PMECH0) annotation (Line(points={{-6.54,23.5},{
+          -14,23.5},{-14,42},{48,42},{48,5},{63,5},{63,-57},{-90,-57},{-90,
+          18.7143},{-87.35,18.7143}}, color={0,0,127}));
     annotation(Diagram(coordinateSystem(extent={{-100,-100},{100,100}},      preserveAspectRatio=false, initialScale = 0.1, grid = {1, 1})),
                                                                                           Icon(coordinateSystem(extent={{-100,
             -100},{100,100}},                                                                                                    preserveAspectRatio=true,  initialScale = 0.1, grid = {1, 1}),

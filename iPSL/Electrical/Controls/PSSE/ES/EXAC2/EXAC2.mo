@@ -16,11 +16,6 @@ model EXAC2 "IEEE Type AC2 Excitation System"
   Modelica.Blocks.Interfaces.RealInput VOEL
     "Maximum excitation limiter signal (pu)"             annotation(Placement(transformation(extent={{-164,
             -66},{-152,-54}}), iconTransformation(extent={{-164,-66},{-152,-54}})));
-  iPSL.NonElectrical.Continuous.SimpleLag imLimitedSimpleLag(
-    K=K_A,
-    T=T_A,
-    y_start=VA0)
-    annotation (Placement(transformation(extent={{-44,-34},{-32,-22}})));
   NonElectrical.Nonlinear.ImFEX
       fEX annotation(Placement(transformation(extent={{88,44},{58,68}})));
   Modelica.Blocks.Interfaces.RealOutput EFD "Generator main field voltage (pu)"
@@ -147,8 +142,13 @@ public
         origin={43,29})));
   Modelica.Blocks.Math.Add add6(k1=+1)
     annotation (Placement(transformation(extent={{38,10},{26,22}})));
-  Modelica.Blocks.Nonlinear.Limiter limiter1(uMax=V_AMAX, uMin=V_AMIN)
-    annotation (Placement(transformation(extent={{-28,-34},{-16,-22}})));
+  NonElectrical.Continuous.SimpleLagLim simpleLagLim(
+    K=K_A,
+    T=T_A,
+    y_start=VA0,
+    outMax=V_AMAX,
+    outMin=V_AMIN)
+    annotation (Placement(transformation(extent={{-36,-34},{-24,-22}})));
 initial equation
   Efd0 = EFD0;
   Ifd0 = XADIFD;
@@ -189,8 +189,6 @@ equation
           -80,-31.6},{-77.2,-31.6}}, color={0,0,127}));
   connect(imDerivativeLag.y, add1.u1) annotation (Line(points={{-66.7,0},{-82,0},
           {-82,-24.4},{-77.2,-24.4}}, color={0,0,127}));
-  connect(imLeadLag.y, imLimitedSimpleLag.u) annotation (Line(points={{-47.4,-28},
-          {-45.2,-28}},                  color={0,0,127}));
   connect(add2.y, lV_GATE.n1)
     annotation (Line(points={{2.6,-24},{13,-24},{13,-26.2}}, color={0,0,127}));
   connect(add2.u1, gain.y) annotation (Line(points={{-11.2,-20.4},{-20,-20.4},{-20,
@@ -243,12 +241,12 @@ equation
           {8,0},{8,16},{25.4,16}}, color={0,0,127}));
   connect(add3.u1, add6.y) annotation (Line(points={{-10.4,17.2},{-10.4,20},{8,20},
           {8,16},{25.4,16}}, color={0,0,127}));
-  connect(imLimitedSimpleLag.y, limiter1.u) annotation (Line(points={{-31.4,-28},
-          {-30.2,-28},{-29.2,-28}}, color={0,0,127}));
-  connect(limiter1.y, add2.u2) annotation (Line(points={{-15.4,-28},{-11.2,-28},
-          {-11.2,-27.6}}, color={0,0,127}));
   connect(add4.u1, add6.y) annotation (Line(points={{66.8,-22.4},{62,-22.4},{62,
           0},{8,0},{8,16},{25.4,16}}, color={0,0,127}));
+  connect(imLeadLag.y, simpleLagLim.u) annotation (Line(points={{-47.4,-28},{
+          -37.2,-28},{-37.2,-28}}, color={0,0,127}));
+  connect(simpleLagLim.y, add2.u2) annotation (Line(points={{-23.4,-28},{-11.2,
+          -28},{-11.2,-27.6}}, color={0,0,127}));
   annotation(Diagram(coordinateSystem(preserveAspectRatio=false,   extent={{-160,
             -80},{160,80}}),                                                                           graphics={  Text(extent={{
               -124,-18},{-114,-26}},                                                                                                  lineColor=

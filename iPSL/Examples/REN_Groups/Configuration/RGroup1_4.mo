@@ -88,12 +88,12 @@ equation
       color={0,0,127},
       smooth=Smooth.None));
   connect(cte.y,eSAC1A.VOTHSG) annotation (Line(
-      points={{-132.5,-20},{-124,-20},{-124,-17.3333},{-113.469,-17.3333}},
+      points={{-132.5,-20},{-124,-20},{-124,-19.5},{-113.63,-19.5}},
       color={0,0,127},
       smooth=Smooth.None));
   connect(gENSAL.XADIFD,eSAC1A. XADIFD) annotation (Line(
-      points={{-25.92,-25.3},{-25.92,-44},{-120,-44},{-120,-24.895},{
-          -97.0531,-24.895}},
+      points={{-25.92,-25.3},{-25.92,-44},{-120,-44},{-120,-24.895},{-97.7761,
+          -24.895}},
       color={0,0,127},
       smooth=Smooth.None));
   connect(p, gENSAL.p) annotation (Line(points={{110,0},{32,0},{32,-1},{-25.4,-1}},
@@ -102,21 +102,19 @@ equation
       points={{110,0},{104,0},{104,0},{110,0}},
       color={0,0,255},
       smooth=Smooth.None));
-  connect(eSAC1A.ECOMP, gENSAL.ETERM) annotation (Line(points={{-113.469,
-          -4.33333},{-118,-4.33333},{-118,-42},{-26,-42},{-26,12.5},{-25.92,
-          12.5}},  color={0,0,127}));
+  connect(eSAC1A.ECOMP, gENSAL.ETERM) annotation (Line(points={{-113.63,-6.5},{
+          -118,-6.5},{-118,-42},{-26,-42},{-26,12.5},{-25.92,12.5}},
+                   color={0,0,127}));
   connect(cte1.y, eSAC1A.VUEL) annotation (Line(points={{-132.5,-36},{-128,-36},
-          {-128,-24.83},{-109.75,-24.83}},    color={0,0,127}));
-  connect(cte2.y, eSAC1A.VOEL) annotation (Line(points={{-132.5,-52},{-124,
-          -52},{-124,-24.895},{-103.396,-24.895}},
-                                              color={0,0,127}));
-  connect(eSAC1A.EFD0, gENSAL.EFD0) annotation (Line(points={{-90.625,-24.7},{-90.625,
-          -36},{-32,-36},{-32,-19.9},{-25.92,-19.9}},           color={0,0,127}));
+          {-128,-24.83},{-106.609,-24.83}},   color={0,0,127}));
+  connect(cte2.y, eSAC1A.VOEL) annotation (Line(points={{-132.5,-52},{-124,-52},
+          {-124,-24.895},{-102.189,-24.895}}, color={0,0,127}));
+  connect(eSAC1A.EFD0, gENSAL.EFD0) annotation (Line(points={{-93.3043,-24.7},{
+          -93.3043,-36},{-32,-36},{-32,-19.9},{-25.92,-19.9}},  color={0,0,127}));
   connect(hYGOV.PMECH, gENSAL.PMECH) annotation (Line(points={{-74.7,14},{-82,14},
           {-82,12.5},{-79.48,12.5}},              color={0,0,127}));
-  connect(eSAC1A.EFD, gENSAL.EFD) annotation (Line(points={{-79.4688,-13},{
-          -76,-13},{-76,-14.5},{-79.48,-14.5}},
-                                            color={0,0,127}));
+  connect(eSAC1A.EFD, gENSAL.EFD) annotation (Line(points={{-79.6304,-13},{-76,
+          -13},{-76,-14.5},{-79.48,-14.5}}, color={0,0,127}));
   annotation (Icon(coordinateSystem(preserveAspectRatio=true, extent={{-100,-100},
             {100,100}}), graphics={
         Ellipse(extent={{-14,-42},{74,38}}, lineColor={0,0,255}),

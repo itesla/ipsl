@@ -46,8 +46,8 @@ equation
   end if;
   annotation(Icon(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},
             {100,100}}),
-                  graphics={  Rectangle(extent=  {{-60, 40}, {60, -42}}, lineColor=  {0, 0, 255}), Rectangle(extent=  {{-40, 10}, {40, -10}}, lineColor=  {0, 0, 255}, fillColor=  {95, 95, 95},
-            fillPattern=                                                                                                    FillPattern.Solid), Line(points=  {{-38, 16}, {4, 16}, {24, 30}}, color=  {0, 0, 255}, smooth=  Smooth.None), Line(points=  {{34, 18}, {40, 18}}, color=  {0, 0, 255}, smooth=  Smooth.None), Ellipse(extent=  {{28, 22}, {34, 16}}, lineColor=  {0, 0, 255}),
+                  graphics={  Rectangle(extent = {{-60, 40}, {60, -42}}, lineColor = {0, 0, 255}), Rectangle(extent = {{-40, 10}, {40, -10}}, lineColor = {0, 0, 255}, fillColor = {95, 95, 95},
+            fillPattern =                                                                                                   FillPattern.Solid), Line(points = {{-38, 16}, {4, 16}, {24, 30}}, color = {0, 0, 255}, smooth = Smooth.None), Line(points = {{34, 18}, {40, 18}}, color = {0, 0, 255}, smooth = Smooth.None), Ellipse(extent = {{28, 22}, {34, 16}}, lineColor = {0, 0, 255}),
         Text(
           extent={{-108,86},{-20,40}},
           lineColor={238,46,47},

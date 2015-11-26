@@ -26,11 +26,6 @@ model ESAC1A
         extent={{-5,-6},{5,6}},
         rotation=90,
         origin={-60.2,-54.9})));
-  NonElectrical.Continuous.SimpleLag       imLimitedSimpleLag(
-    y_start=VR0,
-    K=K_A,
-    T=T_A)
-    annotation (Placement(transformation(extent={{-36,30},{-16,50}})));
   Modelica.Blocks.Interfaces.RealOutput EFD "Output,excitation voltage"
     annotation (Placement(transformation(extent={{240,-6},{250,6}}),
         iconTransformation(extent={{240,-6},{250,6}})));
@@ -151,8 +146,6 @@ public
     annotation (Placement(transformation(extent={{-170,64},{-150,84}})));
   Modelica.Blocks.Math.Add3 add3_2(k2=-1)
     annotation (Placement(transformation(extent={{-136,30},{-116,50}})));
-  Modelica.Blocks.Nonlinear.Limiter limiter(uMax=V_AMAX, uMin=V_AMIN)
-    annotation (Placement(transformation(extent={{-6,30},{14,50}})));
   Modelica.Blocks.Math.Add add(k2=-1)
     annotation (Placement(transformation(extent={{-98,30},{-78,50}})));
   Modelica.Blocks.Nonlinear.Limiter limiter1(uMax=V_RMAX, uMin=V_RMIN)
@@ -166,6 +159,13 @@ public
     initType=Modelica.Blocks.Types.Init.InitialOutput,
     y_start=VE0)
     annotation (Placement(transformation(extent={{144,28},{164,48}})));
+  NonElectrical.Continuous.SimpleLagLim simpleLagLim(
+    K=K_A,
+    T=T_A,
+    y_start=VR0,
+    outMax=V_AMAX,
+    outMin=V_AMIN)
+    annotation (Placement(transformation(extent={{-20,30},{0,50}})));
 initial equation
   Efd0 = EFD0;
   Ifd0 = XADIFD;
@@ -240,12 +240,6 @@ equation
   connect(VOTHSG, add3_2.u3) annotation (Line(points={{-215,-30},{-146,-30},{
           -146,32},{-138,32}},
                           color={0,0,127}));
-  connect(imLeadLag.y, imLimitedSimpleLag.u)
-    annotation (Line(points={{-45,40},{-38,40}}, color={0,0,127}));
-  connect(hV_GATE.n1, limiter.y) annotation (Line(points={{23,42.2},{22,42.2},{22,
-          40},{15,40}}, color={0,0,127}));
-  connect(imLimitedSimpleLag.y, limiter.u)
-    annotation (Line(points={{-15,40},{-15,40},{-8,40}}, color={0,0,127}));
   connect(add3_2.y, add.u1) annotation (Line(points={{-115,40},{-110,40},{-110,
           46},{-100,46}}, color={0,0,127}));
   connect(imDerivativeLag.y, add.u2) annotation (Line(points={{-25,0},{-68,0},{
@@ -264,6 +258,10 @@ equation
           134,38},{142,38}}, color={0,0,127}));
   connect(limIntegrator.y, product1.u1)
     annotation (Line(points={{165,38},{200,38}}, color={0,0,127}));
+  connect(imLeadLag.y, simpleLagLim.u)
+    annotation (Line(points={{-45,40},{-22,40},{-22,40}}, color={0,0,127}));
+  connect(simpleLagLim.y, hV_GATE.n1) annotation (Line(points={{1,40},{18,40},{
+          18,42.2},{23,42.2}}, color={0,0,127}));
   annotation (Diagram(coordinateSystem(preserveAspectRatio=false,extent={{-220,
             -60},{240,60}},
         grid={2,2}),           graphics={

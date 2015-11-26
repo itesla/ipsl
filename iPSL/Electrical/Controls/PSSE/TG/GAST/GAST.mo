@@ -45,8 +45,6 @@ model GAST "Gas Turbine-Governor"
   NonElectrical.Logical.LV_GATE
           lV_Gate
     annotation (Placement(transformation(extent={{-46,-10},{-26,10}})));
-  Modelica.Blocks.Continuous.TransferFunction transferFunction(a={T_1,1})
-    annotation (Placement(transformation(extent={{-16,-6},{-4,6}})));
   Modelica.Blocks.Continuous.TransferFunction transferFunction1(a={T_2,1})
     annotation (Placement(transformation(extent={{48,-6},{60,6}})));
   Modelica.Blocks.Continuous.TransferFunction transferFunction2(a={T_3,1})
@@ -54,10 +52,14 @@ model GAST "Gas Turbine-Governor"
         extent={{-6,-6},{6,6}},
         rotation=180,
         origin={54,-40})));
-  Modelica.Blocks.Nonlinear.Limiter limiter(uMax=V_MAX, uMin=V_MIN)
-    annotation (Placement(transformation(extent={{10,-6},{22,6}})));
   Modelica.Blocks.Sources.Constant const(k=AT)
     annotation (Placement(transformation(extent={{-48,-94},{-28,-74}})));
+  NonElectrical.Continuous.SimpleLagLim simpleLagLim(
+    outMax=V_MAX,
+    outMin=V_MIN,
+    K=1,
+    T=T_1,
+    y_start=0) annotation (Placement(transformation(extent={{-4,-4},{6,6}})));
 equation
   connect(SPEED, gDturb.u) annotation (Line(
       points={{-100,50},{-78,50},{-78,60},{-55,60}},
@@ -103,14 +105,6 @@ equation
       points={{60.6,0},{68,0},{68,-40},{61.2,-40}},
       color={0,0,127},
       smooth=Smooth.None));
-  connect(transferFunction.y, limiter.u) annotation (Line(
-      points={{-3.4,0},{8.8,0}},
-      color={0,0,127},
-      smooth=Smooth.None));
-  connect(limiter.y, transferFunction1.u) annotation (Line(
-      points={{22.6,0},{46.8,0}},
-      color={0,0,127},
-      smooth=Smooth.None));
   connect(add.y, lV_Gate.n1) annotation (Line(
       points={{-67.5,-17},{-55.75,-17},{-55.75,1.8},{-43,1.8}},
       color={0,0,127},
@@ -119,14 +113,14 @@ equation
       points={{-43,-2.6},{-43,-25.3},{-42.5,-25.3},{-42.5,-47}},
       color={0,0,127},
       smooth=Smooth.None));
-  connect(lV_Gate.p, transferFunction.u) annotation (Line(
-      points={{-30.1,-0.5},{-23.05,-0.5},{-23.05,0},{-17.2,0}},
-      color={0,0,127},
-      smooth=Smooth.None));
   connect(const.y, add2.u1) annotation (Line(points={{-27,-84},{-8,-84},{-8,-50},
           {-31,-50}}, color={0,0,127}));
   connect(add1.u1, add2.u1) annotation (Line(points={{31,-50},{38,-50},{38,-84},
           {-8,-84},{-8,-50},{-31,-50}}, color={0,0,127}));
+  connect(simpleLagLim.u, lV_Gate.p) annotation (Line(points={{-5,1},{-17.5,1},
+          {-17.5,-0.5},{-30.1,-0.5}}, color={0,0,127}));
+  connect(simpleLagLim.y, transferFunction1.u) annotation (Line(points={{6.5,1},
+          {26.25,1},{26.25,0},{46.8,0}}, color={0,0,127}));
   annotation (Diagram(coordinateSystem(preserveAspectRatio=false,extent={{-100,
             -100},{100,100}})),           Icon(coordinateSystem(
           preserveAspectRatio=false,extent={{-100,-100},{100,100}}),

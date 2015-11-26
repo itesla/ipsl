@@ -95,9 +95,8 @@ equation
       points={{-63,0},{-18,0}},
       color={0,0,255},
       smooth=Smooth.None));
-  connect(pwFault.p, pwLine4.p) annotation (Line(points={{44.0833,-52},{
-          44.0833,-49},{36,-49},{36,-20}},
-                                   color={0,0,255}));
+  connect(pwFault.p, pwLine4.p) annotation (Line(points={{44.0833,-52},{44.0833,
+          -49},{36,-49},{36,-20}}, color={0,0,255}));
   annotation (Diagram(coordinateSystem(preserveAspectRatio=true, extent={{-100,
             -100},{100,100}})), Documentation(info="<html>
 <p><br><span style=\"font-family: MS Shell Dlg 2;\">&LT;iPSL: iTesla Power System Library&GT;</span></p>
