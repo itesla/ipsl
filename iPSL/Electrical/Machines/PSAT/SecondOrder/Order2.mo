@@ -43,7 +43,7 @@ equation
   annotation(Icon(coordinateSystem(extent={{-100,-100},{100,100}},              preserveAspectRatio=false,  initialScale = 0.1, grid = {10, 10}),
         graphics={                                                                                                    Text(                origin={4,
               61.9022},
-            fillPattern=FillPattern.Solid,                                                                                                    extent=  {{-57.2101, -15.0}, {57.2101, 15.0}},                       fontName=
+            fillPattern=FillPattern.Solid,                                                                                                    extent = {{-57.2101, -15.0}, {57.2101, 15.0}},                       fontName=
               "Arial",
           lineColor={28,108,200},
           textString="Order II")}),                                                                 Diagram(coordinateSystem(extent={{-148.5,

@@ -92,9 +92,9 @@ public
     annotation (Placement(transformation(extent={{0,-4},{12,8}})));
   Modelica.Blocks.Math.Product product
     annotation (Placement(transformation(extent={{20,-4},{32,8}})));
-  Modelica.Blocks.Math.Add add2
+  Modelica.Blocks.Math.Add add2(k1=-1)
     annotation (Placement(transformation(extent={{42,-4},{54,8}})));
-  Modelica.Blocks.Math.Add add3
+  Modelica.Blocks.Math.Add add3(k2=-1)
     annotation (Placement(transformation(extent={{82,-4},{94,8}})));
   Modelica.Blocks.Math.Add add4(k2=-1)
     annotation (Placement(transformation(extent={{120,-6},{132,6}})));
@@ -137,8 +137,6 @@ equation
           {-52,-16},{-128.8,-16}}, color={0,0,127}));
   connect(g.u, Gain3.u) annotation (Line(points={{-41.2,6},{-52,6},{-52,-16},{-128.8,
           -16}}, color={0,0,127}));
-  connect(g.y, division.u1)
-    annotation (Line(points={{-27.4,6},{-1.2,6},{-1.2,5.6}}, color={0,0,127}));
   connect(division.y, product.u1) annotation (Line(points={{12.6,2},{14,2},{14,5.6},
           {18.8,5.6}}, color={0,0,127}));
   connect(product.u2, product.u1) annotation (Line(points={{18.8,-1.6},{14,-1.6},
@@ -149,8 +147,6 @@ equation
           {40.8,-1.6}}, color={0,0,127}));
   connect(add2.y, q.u)
     annotation (Line(points={{54.6,2},{60.8,2}}, color={0,0,127}));
-  connect(division.u2, q.u) annotation (Line(points={{-1.2,-1.6},{-6,-1.6},{-6,-24},
-          {40,-24},{40,-6},{56,-6},{56,2},{60.8,2}}, color={0,0,127}));
   connect(q.y, add3.u1) annotation (Line(points={{74.6,2},{76,2},{76,5.6},{80.8,
           5.6}}, color={0,0,127}));
   connect(qNL.y, add3.u2) annotation (Line(points={{83.6,-14},{76,-14},{76,-1.6},
@@ -161,12 +157,16 @@ equation
           {118.8,3.6}}, color={0,0,127}));
   connect(Gain4.y, product1.u2) annotation (Line(points={{-49.4,-28},{4,-28},{4,
           -27.6},{56.8,-27.6}}, color={0,0,127}));
-  connect(product1.u1, division.u1) annotation (Line(points={{56.8,-20.4},{48,-20.4},
-          {48,-26},{-20,-26},{-20,6},{-1.2,6},{-1.2,5.6}}, color={0,0,127}));
   connect(product1.y, add4.u2) annotation (Line(points={{70.6,-24},{114,-24},{114,
           -3.6},{118.8,-3.6}}, color={0,0,127}));
   connect(add4.y, PMECH)
     annotation (Line(points={{132.6,0},{144,0},{144,0}}, color={0,0,127}));
+  connect(product1.u1, g.y) annotation (Line(points={{56.8,-20.4},{-16,-20.4},{
+          -16,6},{-27.4,6}}, color={0,0,127}));
+  connect(division.u2, g.y) annotation (Line(points={{-1.2,-1.6},{-16,-2},{-16,
+          6},{-27.4,6}}, color={0,0,127}));
+  connect(division.u1, add3.u1) annotation (Line(points={{-1.2,5.6},{-6,5.6},{
+          -6,-34},{78,-34},{78,6},{80.8,5.6}}, color={0,0,127}));
     annotation(Diagram(coordinateSystem(preserveAspectRatio=false,  extent={{-80,-60},
             {80,60}}),                                                                                   graphics={                                                                       Rectangle(extent={{
               -190,32},{-12,-38}},                                                                                                    lineColor = {255, 128, 0}, pattern = LinePattern.Dash,

@@ -12,7 +12,7 @@ equation
   else
     VOTHSGO = 0;
   end if;
-  annotation(Diagram(coordinateSystem(preserveAspectRatio = false, extent = {{-100, -100}, {100, 100}}), graphics), Icon(coordinateSystem(preserveAspectRatio = false, extent = {{-100, -100}, {100, 100}}), graphics={  Text(extent = {{-68, 58}, {62, -88}}, lineColor = {0, 0, 255}, textString = "Vs=VSS, if(VCU>VCT>VCL)
+  annotation(Diagram(coordinateSystem(preserveAspectRatio = false, extent = {{-100, -100}, {100, 100}}), graphics), Icon(coordinateSystem(preserveAspectRatio = false, extent = {{-100, -100}, {100, 100}}), graphics={  Text(extent=  {{-68, 58}, {62, -88}}, lineColor=  {0, 0, 255}, textString=  "Vs=VSS, if(VCU>VCT>VCL)
 Vs=0, if(VCT>VCU)
 Vs=0, if(VCT<VCL)
 "),     Text(
