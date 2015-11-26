@@ -47,10 +47,12 @@ model EXAC2 "IEEE Type AC2 Excitation System"
   parameter Real S_EE_1 = 0.03 "Saturation factor at E1";
   parameter Real S_EE_2 = 0.1 "Saturation factor at E2";
 
-  iPSL.NonElectrical.Continuous.DerivativeLag imDerivativeLag(
-    K=K_F,
+  Modelica.Blocks.Continuous.Derivative imDerivativeLag(
+    k=K_F,
     T=T_F,
-    y_start=0) annotation (Placement(transformation(
+    y_start=0,
+    initType=Modelica.Blocks.Types.Init.InitialOutput)
+               annotation (Placement(transformation(
         extent={{7,-6},{-7,6}},
         rotation=0,
         origin={-59,0})));
@@ -244,7 +246,7 @@ equation
   connect(add4.u1, add6.y) annotation (Line(points={{66.8,-22.4},{62,-22.4},{62,
           0},{8,0},{8,16},{25.4,16}}, color={0,0,127}));
   connect(imLeadLag.y, simpleLagLim.u) annotation (Line(points={{-47.4,-28},{
-          -37.2,-28},{-37.2,-28}}, color={0,0,127}));
+          -37.2,-28}},             color={0,0,127}));
   connect(simpleLagLim.y, add2.u2) annotation (Line(points={{-23.4,-28},{-11.2,
           -28},{-11.2,-27.6}}, color={0,0,127}));
   annotation(Diagram(coordinateSystem(preserveAspectRatio=false,   extent={{-160,

@@ -53,10 +53,11 @@ protected
   parameter Real A5(fixed = false);
   parameter Real A6(fixed = false);
 public
-   iPSL.NonElectrical.Continuous.DerivativeLag imDerivativeLag(
-    K=K_S*T_5,
+   Modelica.Blocks.Continuous.Derivative imDerivativeLag(
+    k=K_S*T_5,
     T=T_6,
-    y_start=0)
+    y_start=0,
+    initType=Modelica.Blocks.Types.Init.InitialOutput)
     annotation (Placement(transformation(extent={{28,-10},{48,10}})));
   Modelica.Blocks.Sources.Constant const(k=Switch)
     annotation (Placement(transformation(extent={{-92,16},{-72,36}})));
@@ -113,12 +114,12 @@ equation
   annotation(Diagram(coordinateSystem(preserveAspectRatio=false,  extent={{-120,
             -40},{120,40}})),                                                                                      Icon(coordinateSystem(preserveAspectRatio=false,   extent={{-120,
             -40},{120,40}}),                                                                                                    graphics={  Rectangle(extent={{
-              -120,40},{120,-40}},                                                                                                    lineColor = {0, 0, 255}), Text(extent={{
-              -46,40},{54,-44}},                                                                                                    lineColor = {0, 0, 255}, textString = "IEEEST"), Text(extent={{
+              -120,40},{120,-40}},                                                                                                    lineColor=  {0, 0, 255}), Text(extent={{
+              -46,40},{54,-44}},                                                                                                    lineColor=  {0, 0, 255}, textString=  "IEEEST"), Text(extent={{
               -106,-10},{-84,-30}},                                                                                                    lineColor=
               {0,0,255},
           textString="V_S"),                                                                                                    Text(extent={{
-              84,14},{118,-16}},                                                                                                    lineColor = {0, 0, 255}, textString = "VOTHSG"), Text(extent={{
+              84,14},{118,-16}},                                                                                                    lineColor=  {0, 0, 255}, textString=  "VOTHSG"), Text(extent={{
               -106,32},{-78,8}},                                                                                                    lineColor=
               {0,0,255},
           textString="V_CT")}),

@@ -36,10 +36,11 @@ protected
   parameter Real ICS10(fixed = false);
   parameter Real ICS20(fixed = false);
 public
-  NonElectrical.Continuous.DerivativeLag imDerivativeLag(
-    K=T_3,
+  Modelica.Blocks.Continuous.Derivative imDerivativeLag(
+    k=T_3,
     T=T_4,
-    y_start=0)
+    y_start=0,
+    initType=Modelica.Blocks.Types.Init.InitialOutput)
     annotation (Placement(transformation(extent={{-60,-10},{-40,10}})));
   NonElectrical.Continuous.SimpleLag imSimpleLag(
     K=K_1,
@@ -119,7 +120,7 @@ equation
   connect(imLeadLag.u, imDerivativeLag.y)
     annotation (Line(points={{-22,0},{-39,0}}, color={0,0,127}));
   connect(add.y, imDerivativeLag.u)
-    annotation (Line(points={{-79,0},{-62,0},{-62,0}}, color={0,0,127}));
+    annotation (Line(points={{-79,0},{-62,0}},         color={0,0,127}));
   annotation (Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-180,
             -60},{180,60}})), Icon(coordinateSystem(extent={{-180,-60},{180,
             60}},

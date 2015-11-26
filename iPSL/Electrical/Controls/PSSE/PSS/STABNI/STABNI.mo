@@ -27,15 +27,17 @@ protected
     T2=T_0,
     y_start=0)
     annotation (Placement(transformation(extent={{-10,-10},{10,10}})));
-  NonElectrical.Continuous.DerivativeLag imDerivativeLag(
+  Modelica.Blocks.Continuous.Derivative imDerivativeLag(
     T=T_0,
-    K=T_0,
-    y_start=0)
+    k=T_0,
+    y_start=0,
+    initType=Modelica.Blocks.Types.Init.InitialOutput)
     annotation (Placement(transformation(extent={{-70,-10},{-50,10}})));
-  NonElectrical.Continuous.DerivativeLag imDerivativeLag1(
+  Modelica.Blocks.Continuous.Derivative imDerivativeLag1(
     T=T_0,
-    K=T_0,
-    y_start=0)
+    k=T_0,
+    y_start=0,
+    initType=Modelica.Blocks.Types.Init.InitialOutput)
     annotation (Placement(transformation(extent={{-40,-10},{-20,10}})));
   NonElectrical.Continuous.SimpleLag imSimpleLag1(
     K=1,
@@ -67,8 +69,8 @@ equation
     annotation (Line(points={{81,0},{88,0},{94,0}}, color={0,0,127}));
   connect(limiter.u, imSimpleLag1.y)
     annotation (Line(points={{58,0},{41,0}}, color={0,0,127}));
-  annotation (Diagram(coordinateSystem(preserveAspectRatio=false,extent={{-120,-40},
-            {120,40}})),      Icon(coordinateSystem(extent={{-120,-40},
+  annotation (Diagram(coordinateSystem(preserveAspectRatio=false,extent={{-120,
+            -40},{120,40}})), Icon(coordinateSystem(extent={{-120,-40},
             {120,40}},
                   preserveAspectRatio=false),graphics={
         Rectangle(extent={{-120,40},{120,-40}}, lineColor={28,108,200}),

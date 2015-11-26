@@ -1,7 +1,6 @@
 within iPSL.Electrical.Controls.PSSE.ES.EXNI;
 model EXNI "Bus or Solid Fed SCR Bridge Excitation System Model Type NI (NVE)"
-  parameter Real Ec0 "power flow node voltage";
-  parameter Real Et0 "power flow node voltage";
+
   parameter Real T_R = 0.60000E-01 "Voltage input time constant (s)";
   //0
   parameter Real K_A = 150.00 "AVR gain";
@@ -18,6 +17,8 @@ protected
   parameter Real Efd0(fixed = false);
   parameter Real VR0(fixed = false);
   parameter Real VREF(fixed = false);
+  parameter Real Ec0(fixed=false);
+  parameter Real Et0(fixed=false);
   Modelica.Blocks.Sources.Constant Vref(k=VREF)
     annotation (Placement(transformation(extent={{-86,24},{-74,36}})));
   NonElectrical.Continuous.SimpleLag VR(
@@ -48,7 +49,7 @@ public
   NonElectrical.Continuous.SimpleLag simpleLag(
     K=1,
     T=T_R,
-    y_start=ECOMP)
+    y_start=Ec0)
     annotation (Placement(transformation(extent={{-74,4},{-62,16}})));
 public
   Modelica.Blocks.Math.Add3 add3_1
@@ -56,10 +57,11 @@ public
 public
   Modelica.Blocks.Math.Add3 add3_2(k2=-1)
     annotation (Placement(transformation(extent={{-50,4},{-38,16}})));
-  NonElectrical.Continuous.DerivativeLag derivativeLag(
-    K=K_F,
+  Modelica.Blocks.Continuous.Derivative derivativeLag(
+    k=K_F,
     T=T_F1,
-    y_start=0)
+    y_start=0,
+    initType=Modelica.Blocks.Types.Init.InitialOutput)
     annotation (Placement(transformation(extent={{26,-26},{12,-12}})));
   NonElectrical.Continuous.SimpleLag simpleLag1(
     K=1,
@@ -71,6 +73,8 @@ public
   Modelica.Blocks.Nonlinear.Limiter limiter(uMax=V_RMAX, uMin=V_RMIN)
     annotation (Placement(transformation(extent={{20,-2},{34,12}})));
 initial algorithm
+  Ec0 :=ECOMP;
+  Ec0 :=ECOMP;
   Efd0 := EFD0;
   if SWITCH > 0 then
     VR0 := Efd0;
@@ -114,9 +118,9 @@ equation
   connect(limiter.y, sWITCH.VR) annotation (Line(points={{34.7,5},{44,5},{44,32.8},
           {48.86,32.8}}, color={0,0,127}));
   connect(derivativeLag.u, sWITCH.VR) annotation (Line(points={{27.4,-19},{44,-19},
-          {44,4},{44,4},{44,32.8},{48.86,32.8}}, color={0,0,127}));
+          {44,4},{44,32.8},{48.86,32.8}},        color={0,0,127}));
   annotation(Diagram(coordinateSystem(preserveAspectRatio=false,   extent={{-100,
-            -100},{100,100}}),                                                                           graphics={  Text(extent = {{-58, -8}, {-52, -14}}, lineColor = {0, 0, 255}, textString = "Vs"), Text(extent = {{-84, 34}, {-76, 26}}, lineColor = {0, 0, 255}, textString = "Vref"), Text(extent = {{-94, -30}, {-78, -36}}, lineColor = {0, 0, 255}, textString = "Efd0"), Text(extent = {{-102, 16}, {-74, 10}}, lineColor = {0, 0, 255}, textString = "Ec"), Text(extent = {{-94, 2}, {-76, -8}}, lineColor = {0, 0, 255}, textString = "VOTHSG"), Text(extent = {{-96, -8}, {-74, -14}}, lineColor = {0, 0, 255}, textString = "VOEL"), Text(extent = {{-96, -16}, {-74, -22}}, lineColor = {0, 0, 255}, textString = "VUEL"), Text(extent = {{-92, 54}, {-80, 46}}, lineColor = {0, 0, 255}, textString = "Et"), Text(extent = {{-88, -42}, {-70, -50}}, lineColor = {0, 0, 255}, textString = "XadIfd")}),
+            -100},{100,100}}),                                                                           graphics={  Text(extent=  {{-58, -8}, {-52, -14}}, lineColor=  {0, 0, 255}, textString=  "Vs"), Text(extent=  {{-84, 34}, {-76, 26}}, lineColor=  {0, 0, 255}, textString=  "Vref"), Text(extent=  {{-94, -30}, {-78, -36}}, lineColor=  {0, 0, 255}, textString=  "Efd0"), Text(extent=  {{-102, 16}, {-74, 10}}, lineColor=  {0, 0, 255}, textString=  "Ec"), Text(extent=  {{-94, 2}, {-76, -8}}, lineColor=  {0, 0, 255}, textString=  "VOTHSG"), Text(extent=  {{-96, -8}, {-74, -14}}, lineColor=  {0, 0, 255}, textString=  "VOEL"), Text(extent=  {{-96, -16}, {-74, -22}}, lineColor=  {0, 0, 255}, textString=  "VUEL"), Text(extent=  {{-92, 54}, {-80, 46}}, lineColor=  {0, 0, 255}, textString=  "Et"), Text(extent=  {{-88, -42}, {-70, -50}}, lineColor=  {0, 0, 255}, textString=  "XadIfd")}),
       Documentation(info="<html>
 <p><br><span style=\"font-family: MS Shell Dlg 2;\">&LT;iPSL: iTesla Power System Library&GT;</span></p>
 <p><span style=\"font-family: MS Shell Dlg 2;\">Copyright 2015 RTE (France), AIA (Spain), KTH (Sweden) and DTU (Denmark)</span></p>

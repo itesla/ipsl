@@ -69,8 +69,8 @@ public
   Modelica.Blocks.Math.Gain KPGOV(k=Kpgov)
     annotation (Placement(transformation(extent={{-92,-82},{-76,-66}})));
   Modelica.Blocks.Continuous.Integrator s6(k=1,
-    initType=Modelica.Blocks.Types.Init.InitialOutput,
-    y_start=s60)
+    y_start=s60,
+    initType=Modelica.Blocks.Types.Init.InitialState)
     annotation (Placement(transformation(extent={{-6,-6},{6,6}},
         rotation=180,
         origin={-158,90})));
@@ -80,10 +80,11 @@ public
     annotation (Placement(transformation(extent={{-7,-7},{7,7}},
         rotation=180,
         origin={-51,-117})));
-  iPSL.NonElectrical.Continuous.DerivativeLag s1(
-    K=Kdgov,
+  Modelica.Blocks.Continuous.Derivative s1(
+    k=Kdgov,
     T=Tdgov,
-    y_start=0)
+    y_start=0,
+    initType=Modelica.Blocks.Types.Init.InitialOutput)
     annotation (Placement(transformation(extent={{-80,-40},{-60,-20}})));
   Modelica.Blocks.Math.Add3 GovernorPID
     annotation (Placement(transformation(extent={{-60,-88},{-38,-66}})));
@@ -106,10 +107,11 @@ public
   Modelica.Blocks.Interfaces.RealInput PELEC "Machine electrical power (pu)"
     annotation (Placement(transformation(extent={{-348,-118},{-310,-80}}),
         iconTransformation(extent={{-348,-118},{-310,-80}})));
-  iPSL.NonElectrical.Continuous.DerivativeLag s8(
-    K=1,
+  Modelica.Blocks.Continuous.Derivative s8(
+    k=1,
     T=Ta,
-    y_start=0)
+    y_start=0,
+    initType=Modelica.Blocks.Types.Init.InitialOutput)
     annotation (Placement(transformation(extent={{-196,-14},{-170,12}})));
   Modelica.Blocks.Math.Add add1(k2=-1)
     annotation (Placement(transformation(extent={{-146,2},{-126,22}})));

@@ -80,7 +80,7 @@ equation
   connect(imLimitedIntegrator3.y, multiSum.u[4]) annotation (Line(points={{16.8,
           -6},{38,-6},{38,36.85},{42,36.85}}, color={0,0,127}));
   annotation(Diagram(coordinateSystem(preserveAspectRatio=false,  extent={{-100,
-            -20},{100,80}})),                                                                                     Icon(coordinateSystem(preserveAspectRatio = false, extent = {{-100, -20}, {100, 80}}), graphics={  Rectangle(extent = {{-72, 68}, {72, 4}}, lineColor = {0, 0, 255}), Text(extent = {{-36, 54}, {38, 26}}, lineColor = {0, 0, 255}, textString = "OEL"), Text(extent = {{-70, 42}, {-46, 32}}, lineColor = {0, 0, 255}, textString = "IFD/EFD"), Text(extent = {{54, 42}, {72, 34}}, lineColor = {0, 0, 255}, textString = "VOEL")}),
+            -20},{100,80}})),                                                                                     Icon(coordinateSystem(preserveAspectRatio = false, extent = {{-100, -20}, {100, 80}}), graphics={  Rectangle(extent=  {{-72, 68}, {72, 4}}, lineColor=  {0, 0, 255}), Text(extent=  {{-36, 54}, {38, 26}}, lineColor=  {0, 0, 255}, textString=  "OEL"), Text(extent=  {{-70, 42}, {-46, 32}}, lineColor=  {0, 0, 255}, textString=  "IFD/EFD"), Text(extent=  {{54, 42}, {72, 34}}, lineColor=  {0, 0, 255}, textString=  "VOEL")}),
     Documentation(info="<html>
 <table cellspacing=\"1\" cellpadding=\"1\" border=\"1\">
 <tr>

@@ -15,7 +15,7 @@ equation
   else
     FEX = 0;
   end if;
-  annotation(Diagram(coordinateSystem(preserveAspectRatio = false, extent = {{-100, -100}, {100, 100}}), graphics), Icon(coordinateSystem(preserveAspectRatio = false, extent = {{-100, -100}, {100, 100}}), graphics={  Rectangle(extent = {{-48, 34}, {58, -36}}, lineColor = {0, 0, 255}), Text(extent = {{-36, 28}, {50, -30}}, lineColor = {0, 0, 255}, textString = "FEX=f(IN)")}),
+  annotation(Diagram(coordinateSystem(preserveAspectRatio = false, extent = {{-100, -100}, {100, 100}}), graphics), Icon(coordinateSystem(preserveAspectRatio = false, extent = {{-100, -100}, {100, 100}}), graphics={  Rectangle(extent=  {{-48, 34}, {58, -36}}, lineColor=  {0, 0, 255}), Text(extent=  {{-36, 28}, {50, -30}}, lineColor=  {0, 0, 255}, textString=  "FEX=f(IN)")}),
     Documentation(info="<html>
 <p><br><span style=\"font-family: MS Shell Dlg 2;\">&LT;iPSL: iTesla Power System Library&GT;</span></p>
 <p><span style=\"font-family: MS Shell Dlg 2;\">Copyright 2015 RTE (France), AIA (Spain), KTH (Sweden) and DTU (Denmark)</span></p>

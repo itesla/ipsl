@@ -39,10 +39,11 @@ parameter Real vf00(fixed=false) "Initial field voltage";
 parameter Real vr0(fixed=false);
 parameter Real ECOMP0(fixed=false);
 public
-  iPSL.NonElectrical.Continuous.DerivativeLag imDerivativeLag(
-    K=K_F,
+  Modelica.Blocks.Continuous.Derivative imDerivativeLag(
+    k=K_F,
     T=T_F1,
-    y_start=0)
+    y_start=0,
+    initType=Modelica.Blocks.Types.Init.InitialOutput)
     annotation (Placement(transformation(extent={{8,-14},{-2,-4}})));
   NonElectrical.Logical.HV_GATE
           hV_GATE

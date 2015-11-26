@@ -46,10 +46,11 @@ model EXAC1
   parameter Real S_EE_1 = 0.03 "Saturation at E1";
   parameter Real S_EE_2 = 0.1 "Saturation at E2";
 
-  iPSL.NonElectrical.Continuous.DerivativeLag imDerivativeLag(
+  Modelica.Blocks.Continuous.Derivative imDerivativeLag(
     K=K_F,
     T=T_F,
-    y_start=0)
+    y_start=0,
+    initType=Modelica.Blocks.Types.Init.InitialOutput)
     annotation (Placement(transformation(extent={{-20,-8},{-36,8}})));
   NonElectrical.Continuous.LeadLag leadLag(
     K=1,
@@ -193,18 +194,18 @@ equation
   connect(add3.y, add3_1.u3) annotation (Line(points={{-63.3,-49},{-62,-49},{-62,
           -34.4},{-57.6,-34.4}}, color={0,0,127}));
   annotation(Diagram(coordinateSystem(preserveAspectRatio=false,  extent={{-100,
-            -80},{100,80}}),                                                                           graphics={                                                                                                    Text(extent = {{-14, 78}, {-8, 72}}, lineColor = {255, 0, 0}, textString = "I"), Text(extent = {{-10, 74}, {-8, 74}}, lineColor = {255, 0, 0}, textString = "N"),                                                                                                    Text(extent = {{84, -28}, {90, -34}}, lineColor = {255, 0, 0}, textString = "V"), Text(extent = {{88, -32}, {90, -32}}, lineColor = {255, 0, 0}, textString = "E")}),                                                                                                    Icon(coordinateSystem(preserveAspectRatio=false,   extent={{-100,
+            -80},{100,80}}),                                                                           graphics={                                                                                                    Text(extent=  {{-14, 78}, {-8, 72}}, lineColor=  {255, 0, 0}, textString=  "I"), Text(extent=  {{-10, 74}, {-8, 74}}, lineColor=  {255, 0, 0}, textString=  "N"),                                                                                                    Text(extent=  {{84, -28}, {90, -34}}, lineColor=  {255, 0, 0}, textString=  "V"), Text(extent=  {{88, -32}, {90, -32}}, lineColor=  {255, 0, 0}, textString=  "E")}),                                                                                                    Icon(coordinateSystem(preserveAspectRatio=false,   extent={{-100,
             -80},{100,80}}),                                                                                                    graphics={  Rectangle(extent={{
-              -100,80},{100,-80}},                                                                                                    lineColor = {0, 0, 255}), Text(extent={{
+              -100,80},{100,-80}},                                                                                                    lineColor=  {0, 0, 255}), Text(extent={{
               -88,68},{-56,52}},                                                                                                    lineColor=
               {0,0,255},
           textString="XADIFD"),                                                                                                    Text(extent={{
               -88,48},{-52,30}},                                                                                                    lineColor=
               {0,0,255},
           textString="VOTHSG"),                                                                                                    Text(extent={{
-              -92,-46},{-60,-56}},                                                                                                    lineColor = {0, 0, 255}, textString = "VOEL"), Text(extent={{
-              68,8},{98,-8}},                                                                                                    lineColor = {0, 0, 255}, textString = "EFD"), Text(extent={{
-              -54,34},{52,-28}},                                                                                                    lineColor = {0, 0, 255}, textString = "EXAC1"),
+              -92,-46},{-60,-56}},                                                                                                    lineColor=  {0, 0, 255}, textString=  "VOEL"), Text(extent={{
+              68,8},{98,-8}},                                                                                                    lineColor=  {0, 0, 255}, textString=  "EFD"), Text(extent={{
+              -54,34},{52,-28}},                                                                                                    lineColor=  {0, 0, 255}, textString=  "EXAC1"),
                                                                                         Text(extent={{
               -88,4},{-56,-6}},                                                                                                    lineColor=
               {0,0,255},

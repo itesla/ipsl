@@ -10,9 +10,9 @@ model ImReal4in
   Modelica.Blocks.Interfaces.RealOutput n annotation(Placement(transformation(extent = {{39, -6}, {49, 6}}), iconTransformation(extent = {{39, -6}, {49, 6}})));
 equation
   n = if in1 == 0 and in2 == 1 and in3 == 0 and in4 == 0 then p1 else p2;
-  annotation(Diagram(coordinateSystem(preserveAspectRatio = false, extent = {{-100, -100}, {100, 100}}), graphics), Icon(coordinateSystem(preserveAspectRatio = false, extent = {{-100, -100}, {100, 100}}), graphics={  Rectangle(extent = {{-40, 40}, {40, -40}}, lineColor = {0, 0, 255}), Line(points = {{-34, 20}, {-6, 20}}, color = {0, 0, 255}, smooth = Smooth.None, thickness = 0.5), Line(points = {{-34, -20}, {-6, -20}}, color = {0, 0, 255}, smooth = Smooth.None, thickness = 0.5), Ellipse(extent = {{-6, 23}, {0, 17}}, lineColor = {0, 0, 255},
-            lineThickness =                                                                                                   0.5), Ellipse(extent = {{-6, -17}, {0, -23}}, lineColor = {0, 0, 255},
-            lineThickness =                                                                                                   0.5), Line(points = {{0, 16}, {12, 0}, {40, 0}}, color = {0, 0, 255}, smooth = Smooth.None, thickness = 0.5)}),
+  annotation(Diagram(coordinateSystem(preserveAspectRatio = false, extent = {{-100, -100}, {100, 100}}), graphics), Icon(coordinateSystem(preserveAspectRatio = false, extent = {{-100, -100}, {100, 100}}), graphics={  Rectangle(extent=  {{-40, 40}, {40, -40}}, lineColor=  {0, 0, 255}), Line(points=  {{-34, 20}, {-6, 20}}, color=  {0, 0, 255}, smooth=  Smooth.None, thickness=  0.5), Line(points=  {{-34, -20}, {-6, -20}}, color=  {0, 0, 255}, smooth=  Smooth.None, thickness=  0.5), Ellipse(extent=  {{-6, 23}, {0, 17}}, lineColor=  {0, 0, 255},
+            lineThickness=                                                                                                    0.5), Ellipse(extent=  {{-6, -17}, {0, -23}}, lineColor=  {0, 0, 255},
+            lineThickness=                                                                                                    0.5), Line(points=  {{0, 16}, {12, 0}, {40, 0}}, color=  {0, 0, 255}, smooth=  Smooth.None, thickness=  0.5)}),
     Documentation(info="<html>
 <p><br><span style=\"font-family: MS Shell Dlg 2;\">&LT;iPSL: iTesla Power System Library&GT;</span></p>
 <p><span style=\"font-family: MS Shell Dlg 2;\">Copyright 2015 RTE (France), AIA (Spain), KTH (Sweden) and DTU (Denmark)</span></p>

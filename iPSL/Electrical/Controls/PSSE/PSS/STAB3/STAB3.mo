@@ -16,9 +16,10 @@ protected
   NonElectrical.Continuous.SimpleLag imSimpleLag1(K=1, T=T_X1,
     y_start=0)
     annotation (Placement(transformation(extent={{0,-10},{20,10}})));
-  NonElectrical.Continuous.DerivativeLag imDerivativeLag(y_start=0,
-    K=-K_X,
-    T=T_X2)
+  Modelica.Blocks.Continuous.Derivative imDerivativeLag(y_start=0,
+    k=-K_X,
+    T=T_X2,
+    initType=Modelica.Blocks.Types.Init.InitialOutput)
     annotation (Placement(transformation(extent={{34,-10},{54,10}})));
 
 public

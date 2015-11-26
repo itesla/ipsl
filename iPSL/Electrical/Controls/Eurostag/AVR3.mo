@@ -27,7 +27,7 @@ equation
   connect(imSum2_1.n1, imGain.p1) annotation(Line(points = {{-21.73, 29}, {-7.71, 29}}, color = {0, 0, 255}, smooth = Smooth.None));
   connect(imSum2_1.p1, imSetPoint.n1) annotation(Line(points = {{-44.73, 33.6}, {-44.73, 49}, {-59.73, 49}}, color = {0, 0, 255}, smooth = Smooth.None));
   connect(imSum2_1.p2, pin_TerminalVoltage) annotation(Line(points = {{-44.73, 24.4}, {-51, 24.4}, {-51, 0}}, color = {0, 0, 255}, smooth = Smooth.None));
-  annotation(Diagram(graphics), Icon(graphics={  Rectangle(extent = {{-40, 40}, {60, -40}}, lineColor = {0, 0, 255}), Text(extent = {{58, -10}, {-40, 12}}, lineColor = {0, 0, 255}, textString = "AVR3")}),
+  annotation(Diagram(graphics), Icon(graphics={  Rectangle(extent=  {{-40, 40}, {60, -40}}, lineColor=  {0, 0, 255}), Text(extent=  {{58, -10}, {-40, 12}}, lineColor=  {0, 0, 255}, textString=  "AVR3")}),
     Documentation(info="<html>
 <p><br><span style=\"font-family: MS Shell Dlg 2;\">&LT;iPSL: iTesla Power System Library&GT;</span></p>
 <p><span style=\"font-family: MS Shell Dlg 2;\">Copyright 2015 RTE (France), AIA (Spain), KTH (Sweden) and DTU (Denmark)</span></p>

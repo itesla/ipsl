@@ -54,9 +54,9 @@ parameter Real T_F=1 "Rate feedback time constant (s)" annotation (Dialog(group=
 parameter Real K_LR annotation (Dialog(group="Excitation system parameters"));
 parameter Real I_LR annotation (Dialog(group="Excitation system parameters"));
 
-  iPSL.NonElectrical.Continuous.DerivativeLag imDerivativeLag(
+  Modelica.Blocks.Continuous.Derivative imDerivativeLag(
     y_start=0,
-    K=K_F,
+    k=K_F,
     T=T_F)
     annotation (Placement(transformation(extent={{50,50},{39.4,60.6}})));
   Modelica.Blocks.Interfaces.RealInput VOTHSG2 "VOS=2"

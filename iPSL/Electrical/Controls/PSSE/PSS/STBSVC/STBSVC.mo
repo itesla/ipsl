@@ -37,10 +37,11 @@ model STBSVC "WECC Supplementary Signal for Static var Compensator"
     annotation (Placement(transformation(extent={{-60,-60},{-40,-40}})));
   Modelica.Blocks.Math.Add add
     annotation (Placement(transformation(extent={{-12,-10},{8,10}})));
-  NonElectrical.Continuous.DerivativeLag imDerivativeLag(
-    K=T_S13,
+  Modelica.Blocks.Continuous.Derivative imDerivativeLag(
+    k=T_S13,
     T=T_S14,
-    y_start=0)
+    y_start=0,
+    initType=Modelica.Blocks.Types.Init.InitialOutput)
     annotation (Placement(transformation(extent={{18,-10},{38,10}})));
   Modelica.Blocks.Math.Gain gain(k=K_S3)
     annotation (Placement(transformation(extent={{46,-10},{66,10}})));

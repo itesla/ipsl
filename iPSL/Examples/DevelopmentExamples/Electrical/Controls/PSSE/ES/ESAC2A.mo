@@ -115,7 +115,7 @@ equation
   connect(pwFault.p, pwLine4.p) annotation(Line(points={{32.8333,-9},{23,-9},{
           23,4}},                                                                          color = {0, 0, 255}, smooth = Smooth.None));
   connect(eSAC2A.EFD0, generator.EFD0) annotation (Line(
-      points={{-41.025,-59.9933},{-30,-59.9933},{-30,2.5},{-48.88,2.5}},
+      points={{-41.025,-48.0333},{-30,-48.0333},{-30,2.5},{-48.88,2.5}},
       color={0,0,127},
       smooth=Smooth.None));
   connect(const.y, eSAC2A.VOTHSG) annotation (Line(
@@ -144,7 +144,7 @@ equation
       color={0,0,127},
       smooth=Smooth.None));
   connect(eSAC2A.EFD, generator.EFD) annotation (Line(
-      points={{-128.35,-35.6133},{-120,-35.6133},{-120,5.5},{-77.72,5.5}},
+      points={{-115.75,-35.3067},{-120,-35.3067},{-120,5.5},{-77.72,5.5}},
       color={0,0,127},
       smooth=Smooth.None));
   annotation(Diagram(coordinateSystem(preserveAspectRatio=true,   extent={{-100,

@@ -2,7 +2,6 @@ SimpleLag
 SimpleLagLim
 SimpleLagLimVar
 SimpleLead
-DerivativeLag
 LeadLag
 LeadLagLim
 Delay

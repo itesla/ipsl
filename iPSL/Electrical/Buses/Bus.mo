@@ -24,17 +24,17 @@ equation
   angle = atan2(p.vi, p.vr);
   p.ir = 0;
   p.ii = 0;
-  annotation(Icon(coordinateSystem(extent={{-100,-100},{100,100}},              preserveAspectRatio=true,   initialScale=0.1,   grid={2,2}),      graphics={  Rectangle(visible = true,
-            fillPattern =                                                                                                   FillPattern.Solid, extent = {{-10.0, -100.0}, {10.0, 100.0}}), Text(visible = true, origin = {0.9738, 119.0625},
-            fillPattern =                                                                                                   FillPattern.Solid, extent = {{-39.0262, -16.7966}, {39.0262, 16.7966}}, textString = "%name", fontName = "Arial"),
+  annotation(Icon(coordinateSystem(extent={{-100,-100},{100,100}},              preserveAspectRatio=true,   initialScale=0.1,   grid={2,2}),      graphics={  Rectangle(visible=  true,
+            fillPattern=                                                                                                    FillPattern.Solid, extent=  {{-10.0, -100.0}, {10.0, 100.0}}), Text(visible=  true, origin=  {0.9738, 119.0625},
+            fillPattern=                                                                                                    FillPattern.Solid, extent=  {{-39.0262, -16.7966}, {39.0262, 16.7966}}, textString=  "%name", fontName=  "Arial"),
                                                                                               Text(                origin={
               0.9738,-114.937},
-            fillPattern=FillPattern.Solid,                                                                                                    extent = {{-39.0262, -16.7966}, {39.0262, 16.7966}},                       fontName=
+            fillPattern=FillPattern.Solid,                                                                                                    extent=  {{-39.0262, -16.7966}, {39.0262, 16.7966}},                       fontName=
               "Arial",
           textString=DynamicSelect("0.0", String(v, significantDigits=3)),
           lineColor={238,46,47}),                                                                                                Text(                origin={
               0.9738,-140.937},
-            fillPattern=FillPattern.Solid,                                                                                                    extent = {{-39.0262, -16.7966}, {39.0262, 16.7966}},                       fontName=
+            fillPattern=FillPattern.Solid,                                                                                                    extent=  {{-39.0262, -16.7966}, {39.0262, 16.7966}},                       fontName=
               "Arial",
           textString=DynamicSelect("0.0", String(anglevdeg, significantDigits=3)),
           lineColor={238,46,47})}),                                                                                                Diagram(coordinateSystem(extent = {{-148.5, -105.0}, {148.5, 105.0}}, preserveAspectRatio = true, initialScale = 0.1, grid = {5, 5})),

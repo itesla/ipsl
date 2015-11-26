@@ -2,8 +2,6 @@ within iPSL.Electrical.Controls.PSSE.ES.ESAC1A;
 model ESAC1A
   import iPSL.NonElectrical.Functions.SE;
 
-   parameter Real V0 "Voltage magnitude (pu)" annotation (Dialog(group="Power flow data"));
-
   Modelica.Blocks.Interfaces.RealInput XADIFD "Field current"
     annotation (Placement(transformation(extent={{-5,-6},{5,6}},
         rotation=180,
@@ -50,10 +48,6 @@ parameter Real S_EE_2=0.1 "Saturation at E2";
 parameter Real V_RMAX "Maximum AVR output (pu)";
 parameter Real V_RMIN "Minimum AVR output (pu)";
 
-  iPSL.NonElectrical.Continuous.DerivativeLag imDerivativeLag(
-    y_start=0,
-    K=K_F,
-    T=T_F) annotation (Placement(transformation(extent={{-4,-10},{-24,10}})));
   Modelica.Blocks.Interfaces.RealInput VUEL "Under Excitation Limiter output"
     annotation (Placement(transformation(extent={{-5,-6},{5,6}},
         rotation=270,
@@ -140,6 +134,7 @@ protected
   parameter Real Ifd0(fixed=false);
   parameter Real VE0(fixed=false);
   parameter Real VFE0(fixed=false);
+  parameter Real V0(fixed=false) "Voltage magnitude (pu)";
 
 public
   Modelica.Blocks.Sources.Constant const(k=VREF)
@@ -166,7 +161,13 @@ public
     outMax=V_AMAX,
     outMin=V_AMIN)
     annotation (Placement(transformation(extent={{-20,30},{0,50}})));
+  Modelica.Blocks.Continuous.Derivative derivative(
+    k=K_F,
+    T=T_F,
+    initType=Modelica.Blocks.Types.Init.InitialOutput,
+    y_start=0) annotation (Placement(transformation(extent={{0,-10},{-20,10}})));
 initial equation
+  V0 =ECOMP;
   Efd0 = EFD0;
   Ifd0 = XADIFD;
   // Finding initial value of excitation voltage, VE0, via going through conditions of FEX function
@@ -242,16 +243,12 @@ equation
                           color={0,0,127}));
   connect(add3_2.y, add.u1) annotation (Line(points={{-115,40},{-110,40},{-110,
           46},{-100,46}}, color={0,0,127}));
-  connect(imDerivativeLag.y, add.u2) annotation (Line(points={{-25,0},{-68,0},{
-          -110,0},{-110,34},{-100,34}}, color={0,0,127}));
   connect(add.y, imLeadLag.u)
     annotation (Line(points={{-77,40},{-72.5,40},{-68,40}}, color={0,0,127}));
   connect(lV_GATE.p, limiter1.u) annotation (Line(points={{55.9,46.5},{55.9,
           45.25},{70,45.25},{70,46}}, color={0,0,127}));
   connect(limiter1.y, add1.u1)
     annotation (Line(points={{93,46},{102,46}}, color={0,0,127}));
-  connect(imDerivativeLag.u, add1.u2) annotation (Line(points={{-2,0},{46,0},{
-          96,0},{96,34},{102,34}}, color={0,0,127}));
   connect(add3_1.y, add1.u2) annotation (Line(points={{43,-52},{30,-52},{30,0},
           {96,0},{96,34},{102,34}}, color={0,0,127}));
   connect(add1.y, limIntegrator.u) annotation (Line(points={{125,40},{134,40},{
@@ -262,6 +259,10 @@ equation
     annotation (Line(points={{-45,40},{-22,40},{-22,40}}, color={0,0,127}));
   connect(simpleLagLim.y, hV_GATE.n1) annotation (Line(points={{1,40},{18,40},{
           18,42.2},{23,42.2}}, color={0,0,127}));
+  connect(derivative.y, add.u2) annotation (Line(points={{-21,0},{-106,0},{-106,
+          34},{-100,34}}, color={0,0,127}));
+  connect(derivative.u, add1.u2)
+    annotation (Line(points={{2,0},{96,0},{96,34},{102,34}}, color={0,0,127}));
   annotation (Diagram(coordinateSystem(preserveAspectRatio=false,extent={{-220,
             -60},{240,60}},
         grid={2,2}),           graphics={

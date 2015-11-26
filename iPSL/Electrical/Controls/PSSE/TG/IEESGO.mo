@@ -58,7 +58,7 @@ public
             {180,10}})));
   Modelica.Blocks.Math.Add add(k2=-1)
     annotation (Placement(transformation(extent={{-44,14},{-24,34}})));
-  Modelica.Blocks.Nonlinear.Limiter limiter
+  Modelica.Blocks.Nonlinear.Limiter limiter(uMax=P_MAX, uMin=P_MIN)
     annotation (Placement(transformation(extent={{-14,14},{6,34}})));
   Modelica.Blocks.Math.Gain gain(k=1 - K_2)
     annotation (Placement(transformation(extent={{66,14},{86,34}})));
@@ -100,7 +100,7 @@ equation
     annotation (Line(points={{127,-16},{151,-16}}, color={0,0,127}));
   annotation(Diagram(coordinateSystem(preserveAspectRatio=false,  extent={{-160,
             -80},{160,60}}),                                                                             graphics={  Text(extent={{
-              -50,70},{46,18}},                                                                                                   lineColor = {0, 0, 255}, textString = "Pm0*(1-K_2)+Pm0*K_2*(1-K_3)+Pm0*K_3*K_2
+              -50,70},{46,18}},                                                                                                   lineColor=  {0, 0, 255}, textString=  "Pm0*(1-K_2)+Pm0*K_2*(1-K_3)+Pm0*K_3*K_2
 =0+0+0+Pm0")}),
       Icon(coordinateSystem(preserveAspectRatio=false,  extent={{-160,-80},{160,
             60}}),                                                                             graphics={  Rectangle(extent={{

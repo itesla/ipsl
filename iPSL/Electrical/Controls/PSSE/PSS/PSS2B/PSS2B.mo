@@ -67,25 +67,29 @@ model PSS2B
     annotation (Placement(transformation(extent={{-164,10},{-144,30}})));
   Modelica.Blocks.Nonlinear.Limiter limiter2(uMax=V_S2MAX, uMin=V_S2MIN)
     annotation (Placement(transformation(extent={{-166,-30},{-146,-10}})));
-  NonElectrical.Continuous.DerivativeLag derivativeLag(
-    K=T_w1,
+  Modelica.Blocks.Continuous.Derivative derivativeLag(
+    k=T_w1,
     T=T_w1,
-    y_start=0)
+    y_start=0,
+    initType=Modelica.Blocks.Types.Init.InitialOutput)
     annotation (Placement(transformation(extent={{-132,10},{-112,30}})));
-  NonElectrical.Continuous.DerivativeLag derivativeLag1(
-    K=T_w2,
+  Modelica.Blocks.Continuous.Derivative derivativeLag1(
+    k=T_w2,
     T=T_w2,
-    y_start=0)
+    y_start=0,
+    initType=Modelica.Blocks.Types.Init.InitialOutput)
     annotation (Placement(transformation(extent={{-100,10},{-80,30}})));
-  NonElectrical.Continuous.DerivativeLag derivativeLag2(
-    K=T_w3,
+  Modelica.Blocks.Continuous.Derivative derivativeLag2(
+    k=T_w3,
     T=T_w3,
-    y_start=0)
+    y_start=0,
+    initType=Modelica.Blocks.Types.Init.InitialOutput)
     annotation (Placement(transformation(extent={{-132,-30},{-112,-10}})));
-  NonElectrical.Continuous.DerivativeLag derivativeLag3(
-    K=T_w4,
+  Modelica.Blocks.Continuous.Derivative derivativeLag3(
+    k=T_w4,
     T=T_w4,
-    y_start=0)
+    y_start=0,
+    initType=Modelica.Blocks.Types.Init.InitialOutput)
     annotation (Placement(transformation(extent={{-100,-30},{-80,-10}})));
   Modelica.Blocks.Math.Add add(k2=+K_S3)
     annotation (Placement(transformation(extent={{-36,4},{-16,24}})));

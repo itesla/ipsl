@@ -118,15 +118,15 @@ public
   Modelica.Blocks.Math.Product product
     annotation (Placement(transformation(extent={{344,-8},{356,4}})));
   Modelica.Blocks.Interfaces.RealOutput EFD
-    annotation (Placement(transformation(extent={{372,-64},{392,-44}}),
-        iconTransformation(extent={{372,-64},{392,-44}})));
+    annotation (Placement(transformation(extent={{300,-62},{320,-42}}),
+        iconTransformation(extent={{300,-62},{320,-42}})));
 
   Modelica.Blocks.Interfaces.RealInput EFD0
                                            annotation (Placement(transformation(
         extent={{-17,-17},{17,17}},
         rotation=90,
         origin={-61,-207}), iconTransformation(extent={{-17,-17},{17,17}},
-          origin={-117,-213})));
+          origin={-117,-135})));
   Modelica.Blocks.Interfaces.RealInput VOEL
                                            annotation (Placement(transformation(
         extent={{-19,-19},{19,19}},
@@ -143,11 +143,6 @@ public
     annotation (Placement(transformation(extent={{192,-10},{212,10}})));
   Modelica.Blocks.Math.Add add(k2=-1)
     annotation (Placement(transformation(extent={{222,-16},{242,4}})));
-  NonElectrical.Continuous.DerivativeLag derivativeLag(
-    K=K_F,
-    T=T_F,
-    y_start=0)
-    annotation (Placement(transformation(extent={{120,-80},{100,-60}})));
   Modelica.Blocks.Math.Add3 add3_1(k2=-1)
     annotation (Placement(transformation(extent={{-54,-6},{-34,14}})));
   Modelica.Blocks.Math.Add add1(k2=-1)
@@ -163,9 +158,20 @@ public
     outMin=V_AMIN,
     y_start=VA0)
     annotation (Placement(transformation(extent={{50,-10},{70,10}})));
+  NonElectrical.Functions.ImSE imSE(
+    SE1=S_EE_1,
+    SE2=S_EE_2,
+    E1=E_1,
+    E2=E_2) annotation (Placement(transformation(extent={{280,-56},{272,-50}})));
+  Modelica.Blocks.Continuous.Derivative derivative(
+    k=K_F,
+    T=T_F,
+    initType=Modelica.Blocks.Types.Init.InitialOutput,
+    y_start=0)
+    annotation (Placement(transformation(extent={{84,-74},{64,-54}})));
 initial equation
-   Vm0=EFD0;
-   VREF=VA0/K_A+EFD0;
+   Vm0=ECOMP;
+   VREF=VA0/K_A+ECOMP;
    KCIFD0=K_C*XADIFD;
    VE_0=VE_ini(KCIFD0,EFD0);
   VFE0 = VE_0*(iPSL.NonElectrical.Functions.SE(
@@ -196,7 +202,7 @@ equation
       smooth=Smooth.None));
 
   connect(product.y, EFD) annotation (Line(
-      points={{356.6,-2},{380,-2},{380,-54},{382,-54}},
+      points={{356.6,-2},{380,-2},{380,-52},{310,-52}},
       color={0,0,127},
       smooth=Smooth.None));
   connect(iN.I_N, fEX.IN) annotation (Line(
@@ -253,8 +259,6 @@ equation
     annotation (Line(points={{213,0},{216.5,0},{220,0}}, color={0,0,127}));
   connect(add.u2, imGain3.u) annotation (Line(points={{220,-12},{214,-12},{214,
           -40},{132.8,-40}}, color={0,0,127}));
-  connect(derivativeLag.u, imGain3.u) annotation (Line(points={{122,-70},{214,
-          -70},{214,-40},{132.8,-40}}, color={0,0,127}));
   connect(Vm.y, add3_1.u2)
     annotation (Line(points={{-63,4},{-56,4}}, color={0,0,127}));
   connect(VOTHSG, add3_1.u1) annotation (Line(points={{-115,83},{-62,83},{-62,
@@ -265,8 +269,6 @@ equation
     annotation (Line(points={{2,0},{-2,0},{-3,0}}, color={0,0,127}));
   connect(add3_1.y, add1.u1)
     annotation (Line(points={{-33,4},{-26,4},{-26,6}}, color={0,0,127}));
-  connect(derivativeLag.y, add1.u2) annotation (Line(points={{99,-70},{36,-70},
-          {-32,-70},{-32,-6},{-26,-6}}, color={0,0,127}));
   connect(imIntegrator_adpt.p1, add.y) annotation (Line(points={{251.025,1.88},
           {246,1.88},{246,-6},{243,-6}}, color={0,0,127}));
   connect(VX.y, add2.u1) annotation (Line(points={{263.7,-51},{262,-51},{262,
@@ -280,11 +282,17 @@ equation
   connect(add3.y, imGain3.u) annotation (Line(points={{231.6,-64},{214,-64},{
           214,-40},{132.8,-40}}, color={0,0,127}));
   connect(imLeadLag.y, simpleLagLim.u)
-    annotation (Line(points={{25,0},{48,0},{48,0}}, color={0,0,127}));
+    annotation (Line(points={{25,0},{48,0}},        color={0,0,127}));
   connect(simpleLagLim.y, imSum2_2.u2) annotation (Line(points={{71,0},{94,0},{
           94,8.4},{107.2,8.4}}, color={0,0,127}));
-  connect(VX.u1, product.u1) annotation (Line(points={{270.6,-52.8},{282,-54},{
-          282,2},{344,2},{344,1.6},{342.8,1.6}}, color={0,0,127}));
+  connect(VX.u1, imSE.VE_OUT) annotation (Line(points={{270.6,-52.8},{271.2,
+          -52.8},{271.2,-53.03},{271.8,-53.03}}, color={0,0,127}));
+  connect(imSE.VE_IN, product.u1) annotation (Line(points={{280.2,-53.03},{282,
+          -52},{282,2},{344,2},{344,1.6},{342.8,1.6}}, color={0,0,127}));
+  connect(derivative.u, imGain3.u) annotation (Line(points={{86,-64},{214,-64},
+          {214,-40},{132.8,-40}}, color={0,0,127}));
+  connect(derivative.y, add1.u2) annotation (Line(points={{63,-64},{42,-64},{42,
+          -66},{-32,-66},{-32,-6},{-26,-6}}, color={0,0,127}));
   annotation (Diagram(coordinateSystem(preserveAspectRatio=false,extent={{-100,
             -200},{300,100}}), graphics={                                                                                                    Text(extent={{
               252,-44},{280,-48}},                                                                                                lineColor=
@@ -305,13 +313,15 @@ equation
         Text(
           extent={{314,-24},{340,-32}},
           lineColor={255,0,0},
-          textString="FEX")}), Icon(coordinateSystem(extent={{-100,-200},{300,100}},
-          preserveAspectRatio=true), graphics={
+          textString="FEX")}), Icon(coordinateSystem(extent={{-100,-200},{300,
+            100}},
+          preserveAspectRatio=false),graphics={
         Text(
           extent={{32,-2},{240,-98}},
           lineColor={0,0,255},
           textString="ESAC2A"),
-        Rectangle(extent={{-98,92},{298,-222}},lineColor={0,0,255}),
+        Rectangle(extent={{-100,100},{300,-200}},
+                                               lineColor={0,0,255}),
         Text(
           extent={{-90,80},{-24,0}},
           lineColor={0,0,255},
@@ -325,7 +335,7 @@ equation
           lineColor={0,0,255},
           textString="XadIfd"),
         Text(
-          extent={{-96,-198},{-32,-224}},
+          extent={{-96,-120},{-32,-146}},
           lineColor={0,0,255},
           textString="EFD0"),
         Text(

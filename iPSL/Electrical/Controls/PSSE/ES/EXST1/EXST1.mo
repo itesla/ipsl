@@ -94,10 +94,11 @@ public
     "Input from voltage under excitation limiter" annotation (
       Placement(transformation(extent={{-140,-158},{-100,-118}}),
         iconTransformation(extent={{-132,-142},{-98,-108}})));
-  NonElectrical.Continuous.DerivativeLag imDerivativeLag(
-    K=K_F,
+  Modelica.Blocks.Continuous.Derivative imDerivativeLag(
+    k=K_F,
     T=T_F,
-    y_start=0)
+    y_start=0,
+    initType=Modelica.Blocks.Types.Init.InitialOutput)
     annotation (Placement(transformation(extent={{142,-90},{122,-70}})));
   Modelica.Blocks.Math.Add3 add3_2
     annotation (Placement(transformation(extent={{-60,-100},{-40,-80}})));

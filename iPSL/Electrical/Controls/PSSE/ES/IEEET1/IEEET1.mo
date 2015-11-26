@@ -96,8 +96,8 @@ public
     initType=Modelica.Blocks.Types.Init.InitialOutput,
     y_start=Efd0)
     annotation (Placement(transformation(extent={{42,-6},{52,4}})));
-  NonElectrical.Continuous.DerivativeLag derivativeLag(
-    K=K_F,
+  Modelica.Blocks.Continuous.Derivative derivativeLag(
+    k=K_F,
     T=T_F,
     y_start=0) annotation (Placement(transformation(extent={{12,-40},{2,-30}})));
   NonElectrical.Continuous.SimpleLagLim simpleLagLim(
@@ -160,18 +160,18 @@ equation
   connect(simpleLagLim.y, sum4.u2) annotation (Line(points={{2.5,-3},{10.25,-3},
           {10.25,-4},{19,-4}}, color={0,0,127}));
   annotation(Diagram(coordinateSystem(preserveAspectRatio=false,   extent={{-140,
-            -100},{120,100}}),                                                                           graphics={                                                                                                    Text(extent = {{10, 40}, {38, 32}}, lineColor = {0, 0, 255}, textString = "VE=SE*EFD"),                                                                                       Text(extent = {{-110, 10}, {-82, 4}}, lineColor = {0, 0, 255}, textString = "Ec"), Text(extent = {{-102, -20}, {-80, -26}}, lineColor = {0, 0, 255}, textString = "VUEL"), Text(extent = {{-102, -12}, {-80, -18}}, lineColor = {0, 0, 255}, textString = "VOEL"), Text(extent = {{-100, -2}, {-82, -12}}, lineColor = {0, 0, 255}, textString = "VOTHSG")}), Icon(coordinateSystem(preserveAspectRatio=false,   extent={{-140,
+            -100},{120,100}}),                                                                           graphics={                                                                                                    Text(extent=  {{10, 40}, {38, 32}}, lineColor=  {0, 0, 255}, textString=  "VE=SE*EFD"),                                                                                       Text(extent=  {{-110, 10}, {-82, 4}}, lineColor=  {0, 0, 255}, textString=  "Ec"), Text(extent=  {{-102, -20}, {-80, -26}}, lineColor=  {0, 0, 255}, textString=  "VUEL"), Text(extent=  {{-102, -12}, {-80, -18}}, lineColor=  {0, 0, 255}, textString=  "VOEL"), Text(extent=  {{-100, -2}, {-82, -12}}, lineColor=  {0, 0, 255}, textString=  "VOTHSG")}), Icon(coordinateSystem(preserveAspectRatio=false,   extent={{-140,
             -100},{120,100}}),                                                                                                    graphics={  Rectangle(extent={{
-              -140,100},{120,-100}},                                                                                                    lineColor = {0, 0, 255}), Text(extent={{
+              -140,100},{120,-100}},                                                                                                    lineColor=  {0, 0, 255}), Text(extent={{
               -126,-36},{-68,-62}},                                                                                                    lineColor=
               {0,0,255},
           textString="ECOMP
 "),                                                                                        Text(extent={{
-              -124,92},{-60,68}},                                                                                                    lineColor = {0, 0, 255}, textString = "VOTHSG"), Text(extent={{
-              -130,8},{-80,-8}},                                                                                                    lineColor = {0, 0, 255}, textString = "VUEL"), Text(extent={{
-              88,8},{118,-8}},                                                                                                    lineColor = {0, 0, 255}, textString = "EFD"), Text(extent={{
-              -46,36},{54,-36}},                                                                                                    lineColor = {0, 0, 255}, textString = "IEEET1"), Text(extent={{
-              -126,48},{-84,32}},                                                                                                    lineColor = {0, 0, 255}, textString = "VOEL"), Text(extent={{
+              -124,92},{-60,68}},                                                                                                    lineColor=  {0, 0, 255}, textString=  "VOTHSG"), Text(extent={{
+              -130,8},{-80,-8}},                                                                                                    lineColor=  {0, 0, 255}, textString=  "VUEL"), Text(extent={{
+              88,8},{118,-8}},                                                                                                    lineColor=  {0, 0, 255}, textString=  "EFD"), Text(extent={{
+              -46,36},{54,-36}},                                                                                                    lineColor=  {0, 0, 255}, textString=  "IEEET1"), Text(extent={{
+              -126,48},{-84,32}},                                                                                                    lineColor=  {0, 0, 255}, textString=  "VOEL"), Text(extent={{
               -132,-72},{-76,-88}},                                                                                                    lineColor=
               {0,0,255},
           textString="EFD0")}),

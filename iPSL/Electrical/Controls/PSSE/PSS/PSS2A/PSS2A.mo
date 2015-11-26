@@ -53,23 +53,23 @@ parameter Integer N "Ramp tracking filter coefficient";
     T=T_7,
     y_start=0)
     annotation (Placement(transformation(extent={{-80,-30},{-60,-10}})));
-  NonElectrical.Continuous.DerivativeLag Washout1(
-    K=T_w1,
+  Modelica.Blocks.Continuous.Derivative Washout1(
+    k=T_w1,
     T=T_w1,
     y_start=0)
     annotation (Placement(transformation(extent={{-160,10},{-140,30}})));
-  NonElectrical.Continuous.DerivativeLag Washout2(
-    K=T_w2,
+  Modelica.Blocks.Continuous.Derivative Washout2(
+    k=T_w2,
     T=T_w2,
     y_start=0)
     annotation (Placement(transformation(extent={{-120,10},{-100,30}})));
-  NonElectrical.Continuous.DerivativeLag Washout3(
-    K=T_w3,
+  Modelica.Blocks.Continuous.Derivative Washout3(
+    k=T_w3,
     T=T_w3,
     y_start=0)
     annotation (Placement(transformation(extent={{-160,-30},{-140,-10}})));
-  NonElectrical.Continuous.DerivativeLag Washout4(
-    K=T_w4,
+  Modelica.Blocks.Continuous.Derivative Washout4(
+    k=T_w4,
     T=T_w4,
     y_start=0)
     annotation (Placement(transformation(extent={{-120,-30},{-100,-10}})));
