@@ -1,19 +1,6 @@
 within iPSL.Electrical.Machines.PSSE.GENROU;
 model GENROU "ROUND ROTOR GENERATOR MODEL (QUADRATIC SATURATION)"
-  extends iPSL.Electrical.Essentials.pfComponent;
-
-  //Import of dependencies
-
-  import Complex;
-  import Modelica.ComplexMath.arg;
-  import Modelica.ComplexMath.real;
-  import Modelica.ComplexMath.imag;
-  import Modelica.ComplexMath.'abs';
-  import Modelica.ComplexMath.conj;
-  import Modelica.ComplexMath.fromPolar;
-  import iPSL.NonElectrical.Functions.SE;
-  import Modelica.Constants.pi;
-
+  //Extending machine base
   extends BaseClasses.baseMachine(
   w(start=0),
   EFD(start=efd0),
@@ -26,6 +13,17 @@ model GENROU "ROUND ROTOR GENERATOR MODEL (QUADRATIC SATURATION)"
   ud(start=ud0),
   uq(start=uq0),
   Te(start=pm0));
+
+  //Import of dependencies
+  import Complex;
+  import Modelica.ComplexMath.arg;
+  import Modelica.ComplexMath.real;
+  import Modelica.ComplexMath.imag;
+  import Modelica.ComplexMath.'abs';
+  import Modelica.ComplexMath.conj;
+  import Modelica.ComplexMath.fromPolar;
+  import iPSL.NonElectrical.Functions.SE;
+  import Modelica.Constants.pi;
 
   //Machine parameters
   parameter Real Xpq "Sub-transient reactance (pu)" annotation (Dialog(group="Machine parameters"));
@@ -94,14 +92,14 @@ protected
   parameter Real efd0 = dsat * PSIppd0 + PSIppd0 + (Xpd - Xpp) * id0 + (Xd - Xpd) * id0
     "Initial field voltage magnitude";
   parameter Real Epq0= PSIkd0+((Xpd-Xl))*id0;
-  parameter Real Epd0= PSIkq0-((Xpd-Xl))*iq0;
+  parameter Real Epd0= PSIkq0-((Xpq-Xl))*iq0;
  //Initialize remaining states:
   parameter Real PSIkd0=(PSIppd0 -((Xpd-Xl)*K3d*id0))/(K3d +K4d)
     "d-axis initial rotor flux linkage";
   parameter Real PSIkq0=(-PSIppq0 +((Xpq-Xl)*K3q*iq0))/(K3q +K4q)
     "q-axis initial rotor flux linkage";
   parameter Real PSId0 = PSIppd0 - Xppd * id0;
-  parameter Real PSIq0 = PSIppq0 - Xppq * iq0;
+  parameter Real PSIq0 = -PSIppq0 - Xppq * iq0;
 
 // Constants
   parameter Real K1d = (Xpd - Xppd) * (Xd - Xpd) / (Xpd - Xl) ^ 2;
@@ -166,7 +164,7 @@ equation
   annotation(Diagram(coordinateSystem(preserveAspectRatio=false,  extent={{-100,
             -100},{100,100}})),                                                                                     Icon(coordinateSystem(preserveAspectRatio=false,  extent={{-100,
             -100},{100,100}}),                                                                                                    graphics={  Text(extent={{
-              -54,24},{54,-26}},                                                                                                   lineColor=  {0, 0, 255}, textString=  "GENROU")}),
+              -54,24},{54,-26}},                                                                                                   lineColor = {0, 0, 255}, textString = "GENROU")}),
     Documentation(info="<html>
 <table cellspacing=\"1\" cellpadding=\"1\" border=\"1\">
 <tr>
