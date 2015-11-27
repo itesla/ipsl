@@ -1,5 +1,5 @@
 within iPSL.NonElectrical.Logical;
-class ImOumaint "Logical OR with Hold. The output's changeover from 0 to 1 (switching on) takes place when one of the inputs becomes positive. Switching off is impossible. 
+model ImOumaint "Logical OR with Hold. The output's changeover from 0 to 1 (switching on) takes place when one of the inputs becomes positive. Switching off is impossible. 
               2014/03/10"
   parameter Real nStartValue;
   Real y(start = nStartValue);
@@ -14,10 +14,10 @@ equation
   else
     y = 1;
   end if;
-  annotation(Icon(graphics={  Rectangle(extent=  {{-40, 40}, {40, -40}}, lineColor=  {0, 0, 255}), Text(extent=  {{-12, 24}, {10, 8}}, lineColor=  {0, 0, 255}, fillColor=  {0, 0, 255},
-            fillPattern=                                                                                                    FillPattern.Solid, textString=  "OR"), Line(points=  {{40, -10}, {0, -10}, {0, -40}, {0, -40}}, color=  {0, 0, 255}, smooth=  Smooth.None), Line(points=  {{40, -25}, {2, -25}, {0, -25}, {0, -25}}, color=  {0, 0, 255}, smooth=  Smooth.None), Text(extent=  {{13, -11}, {27, -23}}, lineColor=  {0, 0, 255}, fillColor=  {0, 0, 255},
-            fillPattern=                                                                                                    FillPattern.Solid, textString=  "S"), Text(extent=  {{13, -27}, {27, -39}}, lineColor=  {0, 0, 255}, fillColor=  {0, 0, 255},
-            fillPattern=                                                                                                    FillPattern.Solid, textString=  "R")}), Diagram(graphics),
+  annotation(Icon(graphics={  Rectangle(extent = {{-40, 40}, {40, -40}}, lineColor = {0, 0, 255}), Text(extent = {{-12, 24}, {10, 8}}, lineColor = {0, 0, 255}, fillColor = {0, 0, 255},
+            fillPattern =                                                                                                   FillPattern.Solid, textString = "OR"), Line(points = {{40, -10}, {0, -10}, {0, -40}, {0, -40}}, color = {0, 0, 255}, smooth = Smooth.None), Line(points = {{40, -25}, {2, -25}, {0, -25}, {0, -25}}, color = {0, 0, 255}, smooth = Smooth.None), Text(extent = {{13, -11}, {27, -23}}, lineColor = {0, 0, 255}, fillColor = {0, 0, 255},
+            fillPattern =                                                                                                   FillPattern.Solid, textString = "S"), Text(extent = {{13, -27}, {27, -39}}, lineColor = {0, 0, 255}, fillColor = {0, 0, 255},
+            fillPattern =                                                                                                   FillPattern.Solid, textString = "R")}), Diagram(graphics),
     Documentation(info="<html>
 <p><br><span style=\"font-family: MS Shell Dlg 2;\">&LT;iPSL: iTesla Power System Library&GT;</span></p>
 <p><span style=\"font-family: MS Shell Dlg 2;\">Copyright 2015 RTE (France), AIA (Spain), KTH (Sweden) and DTU (Denmark)</span></p>

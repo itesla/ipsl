@@ -1,5 +1,5 @@
 within iPSL.Electrical.Wind.PSSE.WT4G;
-class ImVariableLimiter "The limits should be calculated by other block"
+model ImVariableLimiter "The limits should be calculated by other block"
 
   input Modelica.Blocks.Interfaces.RealInput p1 annotation(Placement(transformation(extent={{-61,4},
             {-41,24}}),                                                                                        iconTransformation(extent={{-61,4},
@@ -12,11 +12,11 @@ equation
   n1 = if p2 > p1 then p1 else p2;
   annotation(Icon(coordinateSystem(preserveAspectRatio=true, extent={{-100,
             -100},{100,100}}),
-                  graphics={  Rectangle(extent=  {{-40, 40}, {40, -40}}, lineColor=  {0, 0, 255}), Line(points={{
-              -36,-60},{-6,8},{12,48},{36,48}},                                                                                                    color=  {0, 0, 255}, smooth=  Smooth.None, thickness=  0.5), Line(points={{
-              24,52},{24,32}},                                                                                                    color=  {0, 0, 255}, smooth=  Smooth.None, thickness=  0.5), Line(points={{
-              22,50},{24,54},{26,50}},                                                                                                    color=  {0, 0, 255}, smooth=  Smooth.None, thickness=  0.5), Line(points={{
-              22,36},{24,32},{26,36}},                                                                                                    color=  {0, 0, 255}, smooth=  Smooth.None, thickness=  0.5)}),                                                                                                    Diagram(
+                  graphics={  Rectangle(extent = {{-40, 40}, {40, -40}}, lineColor = {0, 0, 255}), Line(points={{
+              -36,-60},{-6,8},{12,48},{36,48}},                                                                                                    color = {0, 0, 255}, smooth = Smooth.None, thickness = 0.5), Line(points={{
+              24,52},{24,32}},                                                                                                    color = {0, 0, 255}, smooth = Smooth.None, thickness = 0.5), Line(points={{
+              22,50},{24,54},{26,50}},                                                                                                    color = {0, 0, 255}, smooth = Smooth.None, thickness = 0.5), Line(points={{
+              22,36},{24,32},{26,36}},                                                                                                    color = {0, 0, 255}, smooth = Smooth.None, thickness = 0.5)}),                                                                                                    Diagram(
         coordinateSystem(preserveAspectRatio=true, extent={{-100,-100},{100,100}}),                                                                                                    graphics),
     Documentation(info="<html>
 <p><br><span style=\"font-family: MS Shell Dlg 2;\">&LT;iPSL: iTesla Power System Library&GT;</span></p>

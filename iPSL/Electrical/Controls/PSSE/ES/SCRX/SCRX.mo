@@ -108,16 +108,16 @@ equation
               -102,26},{-90,12}},                                                                                                    lineColor=  {0, 0, 255}, textString=  "Efd0"), Text(extent=  {{-102, -34}, {-84, -42}}, lineColor=  {0, 0, 255}, textString=  "XadIfd"), Text(extent={{
               106,14},{122,6}},                                                                                                    lineColor=  {0, 0, 255}, textString=  "Efd")}),                                                                                        Icon(coordinateSystem(preserveAspectRatio=true,   extent={{-120,
             -120},{120,80}}),                                                                                                    graphics={  Rectangle(extent={{
-              -120,80},{120,-120}},                                                                                                 lineColor = {0, 0, 255}), Text(extent={{
-              -114,-48},{-70,-66}},                                                                                                   lineColor = {0, 0, 255}, textString = "ETERM"), Text(extent={{
-              -114,62},{-62,32}},                                                                                                  lineColor = {0, 0, 255}, textString = "VOTHSG "), Text(extent={{
-              90,4},{122,-10}},                                                                                                    lineColor = {0, 0, 255}, textString = "EFD"), Text(extent={{
-              -52,26},{60,-56}},                                                                                                    lineColor = {0, 0, 255}, textString = "SCRX"), Text(extent={{
-              -114,-2},{-80,-16}},                                                                                                    lineColor = {0, 0, 255}, textString = " VUEL "), Text(extent={{
-              -118,26},{-74,12}},                                                                                                   lineColor = {0, 0, 255}, textString = " VOEL"), Text(extent={{
-              -112,-82},{-88,-106}},                                                                                                  lineColor = {0, 0, 255}, textString = "Efd0"), Text(extent={{
-              -112,-24},{-72,-42}},                                                                                                   lineColor = {0, 0, 255}, textString = "XADIFD"), Text(extent={{
-              -114,86},{-72,58}},                                                                                                   lineColor = {0, 0, 255}, textString = "ECOMP")}),
+              -120,80},{120,-120}},                                                                                                 lineColor=  {0, 0, 255}), Text(extent={{
+              -114,-48},{-70,-66}},                                                                                                   lineColor=  {0, 0, 255}, textString=  "ETERM"), Text(extent={{
+              -114,62},{-62,32}},                                                                                                  lineColor=  {0, 0, 255}, textString=  "VOTHSG "), Text(extent={{
+              90,4},{122,-10}},                                                                                                    lineColor=  {0, 0, 255}, textString=  "EFD"), Text(extent={{
+              -52,26},{60,-56}},                                                                                                    lineColor=  {0, 0, 255}, textString=  "SCRX"), Text(extent={{
+              -114,-2},{-80,-16}},                                                                                                    lineColor=  {0, 0, 255}, textString=  " VUEL "), Text(extent={{
+              -118,26},{-74,12}},                                                                                                   lineColor=  {0, 0, 255}, textString=  " VOEL"), Text(extent={{
+              -112,-82},{-88,-106}},                                                                                                  lineColor=  {0, 0, 255}, textString=  "Efd0"), Text(extent={{
+              -112,-24},{-72,-42}},                                                                                                   lineColor=  {0, 0, 255}, textString=  "XADIFD"), Text(extent={{
+              -114,86},{-72,58}},                                                                                                   lineColor=  {0, 0, 255}, textString=  "ECOMP")}),
     Documentation(info="<html>
 <table cellspacing=\"1\" cellpadding=\"1\" border=\"1\">
 <tr>

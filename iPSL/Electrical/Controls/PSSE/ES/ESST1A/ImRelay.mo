@@ -1,5 +1,5 @@
 within iPSL.Electrical.Controls.PSSE.ES.ESST1A;
-class ImRelay "input dependent output"
+model ImRelay "input dependent output"
 
   Modelica.Blocks.Interfaces.RealInput p1
            annotation (Placement(transformation(extent={{-54,12},{-41,26}}),

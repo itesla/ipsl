@@ -1,5 +1,5 @@
 within iPSL.Electrical.Machines.Eurostag;
-class PwGenerator "Synchronous machine model according to Park's classical theory (Full model description).
+model PwGenerator "Synchronous machine model according to Park's classical theory (Full model description).
                    The model corresponds to Eurostag's full model for M1S machine 
                    (defined by internal parameters). Initial values must be inserted manually.
                    Developed by RTE and adapted by AIA. 2014/03/10"
@@ -116,8 +116,8 @@ equation
   ttheta = theta;
   sortie.vr = ur;
   sortie.vi = ui;
-  annotation(Icon(graphics={  Rectangle(extent=  {{-40, 40}, {40, -40}}, lineColor=  {0, 0, 255}), Ellipse(extent=  {{-24, 22}, {24, -24}}, lineColor=  {0, 0, 255},
-            lineThickness=                                                                                                    1), Line(points=  {{-16, 0}, {-12, 8}, {-6, 8}, {6, -10}, {12, -10}, {16, 0}}, color=  {0, 0, 255}, smooth=  Smooth.Bezier, thickness=  1), Text(extent=  {{-68, 46}, {-60, 40}}, lineColor=  {0, 0, 255}, textString=  "ccm"), Text(extent=  {{-74, 18}, {-60, 10}}, lineColor=  {0, 0, 255}, textString=  "oomega"), Text(extent=  {{-70, -14}, {-60, -20}}, lineColor=  {0, 0, 255}, textString=  "eefd"), Text(extent=  {{54, 38}, {68, 32}}, lineColor=  {0, 0, 255}, textString=  "sortie"), Text(extent=  {{50, -6}, {64, -12}}, lineColor=  {0, 0, 255}, textString=  "ttheta")}), Diagram(graphics),
+  annotation(Icon(graphics={  Rectangle(extent = {{-40, 40}, {40, -40}}, lineColor = {0, 0, 255}), Ellipse(extent = {{-24, 22}, {24, -24}}, lineColor = {0, 0, 255},
+            lineThickness =                                                                                                   1), Line(points = {{-16, 0}, {-12, 8}, {-6, 8}, {6, -10}, {12, -10}, {16, 0}}, color = {0, 0, 255}, smooth = Smooth.Bezier, thickness = 1), Text(extent = {{-68, 46}, {-60, 40}}, lineColor = {0, 0, 255}, textString = "ccm"), Text(extent = {{-74, 18}, {-60, 10}}, lineColor = {0, 0, 255}, textString = "oomega"), Text(extent = {{-70, -14}, {-60, -20}}, lineColor = {0, 0, 255}, textString = "eefd"), Text(extent = {{54, 38}, {68, 32}}, lineColor = {0, 0, 255}, textString = "sortie"), Text(extent = {{50, -6}, {64, -12}}, lineColor = {0, 0, 255}, textString = "ttheta")}), Diagram(graphics),
     Documentation(info="<html>
 <p><br><span style=\"font-family: MS Shell Dlg 2;\">&LT;iPSL: iTesla Power System Library&GT;</span></p>
 <p><span style=\"font-family: MS Shell Dlg 2;\">Copyright 2015 RTE (France), AIA (Spain), KTH (Sweden) and DTU (Denmark)</span></p>

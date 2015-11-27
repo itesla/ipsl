@@ -1,5 +1,5 @@
 within iPSL.Electrical.Branches.Eurostag;
-class PwDetailedTransformer "Two winding tap changer transformer.
+model PwDetailedTransformer "Two winding tap changer transformer.
                   2014/03/10"
 
   iPSL.Connectors.PwPin p annotation (Placement(transformation(extent={{-80,-8},
@@ -61,9 +61,9 @@ equation
   p.ir * X + p.ii * R = n.vr * ki - n.vi * kr + p.vr * (k * k * Go * X - B * R) + p.vi * (kr * kr + ki * ki + k * k * Go * R + B * X);
   n.ir * R - n.ii * X = n.vr - kr * p.vr + ki * p.vi;
   n.ir * X + n.ii * R = n.vi - kr * p.vi - ki * p.vr;
-  annotation(Icon(graphics={  Rectangle(extent=  {{-60, 40}, {60, -40}}, lineColor=  {0, 0, 255}), Ellipse(extent=  {{-26, 16}, {6, -16}}, lineColor=  {0, 0, 255},
-            lineThickness=                                                                                                    1), Ellipse(extent=  {{-8, 16}, {24, -16}}, lineColor=  {0, 0, 255},
-            lineThickness=                                                                                                    1), Line(points=  {{-42, 0}, {-26, 0}}, color=  {0, 0, 255}, thickness=  1, smooth=  Smooth.None), Line(points=  {{24, 0}, {40, 0}}, color=  {0, 0, 255}, thickness=  1, smooth=  Smooth.None), Text(extent=  {{50, 20}, {-50, 32}}, lineColor=  {0, 0, 255}, textString=  "Detailed Transformer")}), Diagram(graphics),
+  annotation(Icon(graphics={  Rectangle(extent = {{-60, 40}, {60, -40}}, lineColor = {0, 0, 255}), Ellipse(extent = {{-26, 16}, {6, -16}}, lineColor = {0, 0, 255},
+            lineThickness =                                                                                                   1), Ellipse(extent = {{-8, 16}, {24, -16}}, lineColor = {0, 0, 255},
+            lineThickness =                                                                                                   1), Line(points = {{-42, 0}, {-26, 0}}, color = {0, 0, 255}, thickness = 1, smooth = Smooth.None), Line(points = {{24, 0}, {40, 0}}, color = {0, 0, 255}, thickness = 1, smooth = Smooth.None), Text(extent = {{50, 20}, {-50, 32}}, lineColor = {0, 0, 255}, textString = "Detailed Transformer")}), Diagram(graphics),
     Documentation(info="<html>
 <p><br><span style=\"font-family: MS Shell Dlg 2;\">&LT;iPSL: iTesla Power System Library&GT;</span></p>
 <p><span style=\"font-family: MS Shell Dlg 2;\">Copyright 2015 RTE (France), AIA (Spain), KTH (Sweden) and DTU (Denmark)</span></p>

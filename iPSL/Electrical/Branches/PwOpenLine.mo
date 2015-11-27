@@ -1,5 +1,5 @@
 within iPSL.Electrical.Branches;
-class PwOpenLine "Transmission Line based on the pi-equivalent circuit
+model PwOpenLine "Transmission Line based on the pi-equivalent circuit
              open at the Receiving/Sending end. 2014/04/28"
 
   iPSL.Connectors.PwPin p annotation (Placement(transformation(extent={{-80,-10},

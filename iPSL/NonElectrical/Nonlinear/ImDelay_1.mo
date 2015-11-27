@@ -1,5 +1,5 @@
 within iPSL.NonElectrical.Nonlinear;
-class ImDelay_1 "Delay block. The Delay_1 block should normally be used once one made sure of the continuity of the input with 
+model ImDelay_1 "Delay block. The Delay_1 block should normally be used once one made sure of the continuity of the input with 
               respect to time.
               2014/03/10"
 
@@ -8,8 +8,8 @@ class ImDelay_1 "Delay block. The Delay_1 block should normally be used once one
   parameter Real T;
 equation
   n1 = delay(p1, T);
-  annotation(Icon(graphics={  Rectangle(extent=  {{-40, 40}, {40, -40}}, lineColor=  {0, 0, 255}), Text(extent=  {{-24, 26}, {26, 8}}, lineColor=  {0, 0, 255}, textStyle=  {TextStyle.Bold}, textString=  "Delay_1"), Text(extent=  {{-18, -6}, {42, -20}}, lineColor=  {0, 0, 255},
-            horizontalAlignment=                                                                                                    TextAlignment.Left, textString=  "e^(-Ts) ", textStyle=  {TextStyle.Bold})}), Diagram(graphics),
+  annotation(Icon(graphics={  Rectangle(extent = {{-40, 40}, {40, -40}}, lineColor = {0, 0, 255}), Text(extent = {{-24, 26}, {26, 8}}, lineColor = {0, 0, 255}, textStyle = {TextStyle.Bold}, textString = "Delay_1"), Text(extent = {{-18, -6}, {42, -20}}, lineColor = {0, 0, 255},
+            horizontalAlignment =                                                                                                   TextAlignment.Left, textString = "e^(-Ts) ", textStyle = {TextStyle.Bold})}), Diagram(graphics),
     Documentation(info="<html>
 <p><br><span style=\"font-family: MS Shell Dlg 2;\">&LT;iPSL: iTesla Power System Library&GT;</span></p>
 <p><span style=\"font-family: MS Shell Dlg 2;\">Copyright 2015 RTE (France), AIA (Spain), KTH (Sweden) and DTU (Denmark)</span></p>

@@ -1,5 +1,5 @@
 within iPSL.Electrical.Sensors.Eurostag;
-class PwActivePower "Active Power sensor. This model has been built assuming that the three 
+model PwActivePower "Active Power sensor. This model has been built assuming that the three 
   non-Fortescue phases are identical and thus the only non-zero component 
   for the Fortescue sequence is the positive. The output is the 3-phase active
    power which is equal to the positive sequence active power.Developed by AIA. 2014/03/10"
@@ -25,7 +25,7 @@ equation
   n.ir = -p.ir;
   n.ii = -p.ii;
   sortie = (p.vr * p.ir + p.vi * p.ii) * SNREF / PUI;
-  annotation(Icon(graphics={  Rectangle(extent=  {{-40, 40}, {40, -40}}, lineColor=  {0, 0, 255}), Rectangle(extent=  {{-30, 32}, {30, -32}}, lineColor=  {0, 0, 255}), Rectangle(extent=  {{-20, 20}, {20, 0}}, lineColor=  {0, 0, 255}), Text(extent=  {{-26, -12}, {-6, -28}}, lineColor=  {0, 0, 255}, textStyle=  {TextStyle.Bold}, textString=  "P"), Line(points=  {{0, 0}, {10, 10}}, color=  {0, 0, 255}, smooth=  Smooth.None)}), Diagram(graphics),
+  annotation(Icon(graphics={  Rectangle(extent = {{-40, 40}, {40, -40}}, lineColor = {0, 0, 255}), Rectangle(extent = {{-30, 32}, {30, -32}}, lineColor = {0, 0, 255}), Rectangle(extent = {{-20, 20}, {20, 0}}, lineColor = {0, 0, 255}), Text(extent = {{-26, -12}, {-6, -28}}, lineColor = {0, 0, 255}, textStyle = {TextStyle.Bold}, textString = "P"), Line(points = {{0, 0}, {10, 10}}, color = {0, 0, 255}, smooth = Smooth.None)}), Diagram(graphics),
     Documentation(info="<html>
 <p><br><span style=\"font-family: MS Shell Dlg 2;\">&LT;iPSL: iTesla Power System Library&GT;</span></p>
 <p><span style=\"font-family: MS Shell Dlg 2;\">Copyright 2015 RTE (France), AIA (Spain), KTH (Sweden) and DTU (Denmark)</span></p>

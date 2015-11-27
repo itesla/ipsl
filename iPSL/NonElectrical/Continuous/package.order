@@ -6,7 +6,6 @@ LeadLag
 LeadLagLim
 Delay
 ImIntegratorvarnonwindup
-ImIntegratorFollower
 ImSimpleLag_varnonwindup
 ImSimpleLag_frznonwindup
 ImSimpleLag_nonwindup
