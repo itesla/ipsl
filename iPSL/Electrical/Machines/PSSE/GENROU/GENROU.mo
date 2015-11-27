@@ -99,7 +99,7 @@ protected
   parameter Real PSIkq0=(-PSIppq0 +((Xpq-Xl)*K3q*iq0))/(K3q +K4q)
     "q-axis initial rotor flux linkage";
   parameter Real PSId0 = PSIppd0 - Xppd * id0;
-  parameter Real PSIq0 = PSIppq0 - Xppq * iq0;
+  parameter Real PSIq0 = -PSIppq0 - Xppq * iq0;
 
 // Constants
   parameter Real K1d = (Xpd - Xppd) * (Xd - Xpd) / (Xpd - Xl) ^ 2;
