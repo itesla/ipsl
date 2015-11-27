@@ -90,10 +90,10 @@ equation
   connect(const1.y, add.u1) annotation (Line(points={{-147.4,66},{-141.2,66},{-141.2,
           65.6}}, color={0,0,127}));
   annotation(Icon(coordinateSystem(preserveAspectRatio=false,   extent={{-100,-100},
-            {100,100}}),                                                                              graphics={  Rectangle(extent=  {{-100, 100}, {100, -100}}, lineColor=  {0, 0, 255}), Text(extent=  {{-44, 38}, {34, -30}}, lineColor=  {0, 0, 255}, textString=  "TGTypeIII"), Text(visible=  true, origin={
+            {100,100}}),                                                                              graphics={  Rectangle(extent = {{-100, 100}, {100, -100}}, lineColor = {0, 0, 255}), Text(extent = {{-44, 38}, {34, -30}}, lineColor = {0, 0, 255}, textString = "TGTypeIII"), Text(visible = true, origin={
               -71,-1},
-            fillPattern=                                                                                                    FillPattern.Solid, extent=  {{-19, -11}, {19, 11}}, textString=  "W", fontName=  "Arial"), Text(visible=  true, origin=  {83.0002, 5},
-            fillPattern=                                                                                                    FillPattern.Solid, extent=  {{-15.0002, -11}, {15.0002, 11}}, fontName=  "Arial", textString=  "Pm", lineColor=  {0, 0, 0})}),
+            fillPattern =                                                                                                   FillPattern.Solid, extent = {{-19, -11}, {19, 11}}, textString = "W", fontName = "Arial"), Text(visible = true, origin = {83.0002, 5},
+            fillPattern =                                                                                                   FillPattern.Solid, extent = {{-15.0002, -11}, {15.0002, 11}}, fontName = "Arial", textString = "Pm", lineColor = {0, 0, 0})}),
                                                                                           Diagram(coordinateSystem(preserveAspectRatio=false,   extent={{-100,
             -100},{100,100}})),
     Documentation(info="<html>

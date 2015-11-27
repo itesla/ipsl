@@ -25,9 +25,10 @@ parameter Real delta0(fixed = false) "Initial internal angle";
   Modelica.Blocks.Interfaces.RealOutput WTRBSP
     annotation (Placement(transformation(extent={{94,0},{114,20}}),
       iconTransformation(extent={{90,-64},{110,-44}})));
-  iPSL.NonElectrical.Continuous.ImIntegrator dwt(nStartValue=k10, K=1/(2*Ht))
+  Modelica.Blocks.Continuous.Integrator dwt(y_start=k10, k=1/(2*Ht),
+    initType=Modelica.Blocks.Types.Init.InitialOutput)
     "Turbine speed deviation, pu"
-    annotation (Placement(transformation(extent={{-4,8},{14,30}})));
+    annotation (Placement(transformation(extent={{0,14},{10,24}})));
   Modelica.Blocks.Math.Add Tmech1 annotation (Placement(transformation(
         extent={{-5,-5},{5,5}},
         rotation=0,
@@ -61,8 +62,9 @@ public
   Modelica.Blocks.Interfaces.RealOutput SPEED
     annotation (Placement(transformation(extent={{94,-42},{114,-22}}),
       iconTransformation(extent={{90,-36},{110,-16}})));
-  iPSL.NonElectrical.Continuous.ImIntegrator dwg(K=1/(2*Hg), nStartValue=k20)
-    annotation (Placement(transformation(extent={{-36,-60},{-18,-38}})));
+  Modelica.Blocks.Continuous.Integrator dwg(k=1/(2*Hg), y_start=k20,
+    initType=Modelica.Blocks.Types.Init.InitialOutput)
+    annotation (Placement(transformation(extent={{-36,-54},{-26,-44}})));
   Modelica.Blocks.Math.Gain Damp(k=DAMP) annotation (Placement(transformation(
         extent={{-4,-4},{4,4}},
         rotation=180,
@@ -81,13 +83,14 @@ public
         extent={{-5,-5},{5,5}},
         rotation=0,
         origin={-77,-49})));
-  iPSL.NonElectrical.Continuous.ImIntegrator theta_tg(K=Kshaft, nStartValue=k0)
-    annotation (Placement(transformation(extent={{50,-10},{68,12}})));
+  Modelica.Blocks.Continuous.Integrator theta_tg(k=Kshaft, y_start=k0,
+    initType=Modelica.Blocks.Types.Init.InitialOutput)
+    annotation (Placement(transformation(extent={{56,-4},{66,6}})));
   Modelica.Blocks.Interfaces.RealOutput RotorAD "Rotor angle deviation"
     annotation (Placement(transformation(extent={{94,-80},{112,-62}}),
       iconTransformation(extent={{90,-88},{108,-70}})));
-  iPSL.NonElectrical.Continuous.ImIntegrator state4(K=1, nStartValue=k30)
-    annotation (Placement(transformation(extent={{58,-82},{76,-60}})));
+  Modelica.Blocks.Continuous.Integrator state4(k=1, y_start=k30)
+    annotation (Placement(transformation(extent={{62,-76},{72,-66}})));
   Modelica.Blocks.Math.Add add2(k2=-1) annotation (Placement(transformation(
         extent={{-5,-5},{5,5}},
         rotation=0,
@@ -138,14 +141,6 @@ equation
       points={{-28.8,-14},{7.6,-14}},
       color={0,0,127},
       smooth=Smooth.None));
-  connect(dwt.n1, WTRBSP)    annotation (Line(
-      points={{9.41,19},{20,19},{20,10},{104,10}},
-      color={0,0,127},
-      smooth=Smooth.None));
-  connect(dwtg.u1, dwt.n1)    annotation (Line(
-      points={{16.8,-11.6},{20,-11.6},{20,19},{9.41,19}},
-      color={0,0,127},
-      smooth=Smooth.None));
   connect(WBASE.y, add5.u1) annotation (Line(
       points={{36.5,19},{38,19},{38,4},{39,4}},
       color={0,0,127},
@@ -160,18 +155,6 @@ equation
       smooth=Smooth.None));
   connect(SPEED,dwtg. u2) annotation (Line(
       points={{104,-32},{20,-32},{20,-16.4},{16.8,-16.4}},
-      color={0,0,127},
-      smooth=Smooth.None));
-  connect(add3_1.y, dwg.p1)    annotation (Line(
-      points={{-43.5,-49},{-31.59,-49}},
-      color={0,0,127},
-      smooth=Smooth.None));
-  connect(dwg.n1, WBASE1.u)    annotation (Line(
-      points={{-22.59,-49},{23,-49}},
-      color={0,0,127},
-      smooth=Smooth.None));
-  connect(Damp.u, dwg.n1)    annotation (Line(
-      points={{-23.2,-34},{-12,-34},{-12,-49},{-22.59,-49}},
       color={0,0,127},
       smooth=Smooth.None));
   connect(Damp.y, add3_1.u1) annotation (Line(
@@ -190,39 +173,12 @@ equation
       points={{-42.6,-14},{-98,-14},{-98,-46},{-83,-46}},
       color={0,0,127},
       smooth=Smooth.None));
-  connect(theta_tg.n1, Tmech1.u1)
-                                annotation (Line(
-      points={{63.41,1},{74,1},{74,40},{-98,40},{-98,18},{-83,18}},
-      color={0,0,127},
-      smooth=Smooth.None));
-  connect(Tmech.u2, theta_tg.n1)
-                               annotation (Line(
-      points={{-83,-52},{-98,-52},{-98,-96},{74,-96},{74,1},{63.41,1}},
-      color={0,0,127},
-      smooth=Smooth.None));
-  connect(add3.y, dwt.p1)    annotation (Line(
-      points={{-5.5,19},{0.41,19}},
-      color={0,0,127},
-      smooth=Smooth.None));
   connect(VAR1.y, add2.u2) annotation (Line(
       points={{14.6,-74},{27,-74}},
       color={0,0,127},
       smooth=Smooth.None));
   connect(add2.u1, WBASE1.u) annotation (Line(
       points={{27,-68},{20,-68},{20,-49},{23,-49}},
-      color={0,0,127},
-      smooth=Smooth.None));
-  connect(WBASE2.y, state4.p1) annotation (Line(
-      points={{58.5,-71},{62.41,-71}},
-      color={0,0,127},
-      smooth=Smooth.None));
-  connect(dwt.n1, WBASE.u)    annotation (Line(
-      points={{9.41,19},{25,19}},
-      color={0,0,127},
-      smooth=Smooth.None));
-  connect(add5.y, theta_tg.p1)
-                             annotation (Line(
-      points={{50.5,1},{54.41,1}},
       color={0,0,127},
       smooth=Smooth.None));
   connect(product2.y, add3_1.u3) annotation (Line(
@@ -237,10 +193,6 @@ equation
       points={{-24.6,-86},{-31,-86},{-31,-82}},
       color={0,0,127},
       smooth=Smooth.None));
-  connect(wg.u2, dwg.n1)        annotation (Line(
-      points={{-31,-76},{-12,-76},{-12,-49},{-22.59,-49}},
-      color={0,0,127},
-      smooth=Smooth.None));
   connect(product2.u2, wg.y)     annotation (Line(
       points={{-61.6,-72.8},{-61.6,-79},{-42.5,-79}},
       color={0,0,127},
@@ -249,11 +201,33 @@ equation
       points={{38.5,-71},{42.25,-71},{42.25,-71},{47,-71}},
       color={0,0,127},
       smooth=Smooth.None));
-  connect(state4.n1, RotorAD) annotation (Line(
-      points={{71.41,-71},{103,-71}},
-      color={0,0,127},
-      smooth=Smooth.None));
-  annotation (Diagram(coordinateSystem(preserveAspectRatio=true, extent={{-100,
+  connect(dwt.u, add3.y)
+    annotation (Line(points={{-1,19},{-4,19},{-5.5,19}}, color={0,0,127}));
+  connect(dwt.y, WBASE.u)
+    annotation (Line(points={{10.5,19},{17.25,19},{25,19}}, color={0,0,127}));
+  connect(dwtg.u1, WBASE.u) annotation (Line(points={{16.8,-11.6},{20,-11.6},{20,
+          19},{25,19}}, color={0,0,127}));
+  connect(WTRBSP, WBASE.u) annotation (Line(points={{104,10},{20,10},{20,19},{25,
+          19}}, color={0,0,127}));
+  connect(add3_1.y, dwg.u)
+    annotation (Line(points={{-43.5,-49},{-37,-49}}, color={0,0,127}));
+  connect(dwg.y, WBASE1.u)
+    annotation (Line(points={{-25.5,-49},{20,-49},{23,-49}}, color={0,0,127}));
+  connect(Damp.u, WBASE1.u) annotation (Line(points={{-23.2,-34},{-8,-34},{-8,-49},
+          {20,-49},{23,-49}}, color={0,0,127}));
+  connect(wg.u2, WBASE1.u) annotation (Line(points={{-31,-76},{-8,-76},{-8,-49},
+          {20,-49},{23,-49}}, color={0,0,127}));
+  connect(WBASE2.y, state4.u) annotation (Line(points={{58.5,-71},{59.25,-71},{59.25,
+          -71},{61,-71}}, color={0,0,127}));
+  connect(state4.y, RotorAD) annotation (Line(points={{72.5,-71},{84.25,-71},{84.25,
+          -71},{103,-71}}, color={0,0,127}));
+  connect(add5.y, theta_tg.u)
+    annotation (Line(points={{50.5,1},{52.25,1},{55,1}}, color={0,0,127}));
+  connect(theta_tg.y, Tmech1.u1) annotation (Line(points={{66.5,1},{76,1},{76,
+          38},{-98,38},{-98,18},{-83,18}}, color={0,0,127}));
+  connect(Tmech.u2, Tmech1.u1) annotation (Line(points={{-83,-52},{-98,-52},{
+          -98,-96},{76,-96},{76,38},{-98,38},{-98,18},{-83,18}}, color={0,0,127}));
+  annotation (Diagram(coordinateSystem(preserveAspectRatio=false,extent={{-100,
             -100},{100,100}}), graphics={
         Text(
           extent={{48,0},{72,-24}},

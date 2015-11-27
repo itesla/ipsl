@@ -163,8 +163,8 @@ equation
   ui = sortie.vi;
   ir = sortie.ir;
   ii = sortie.ii;
-  annotation(Diagram(graphics), Icon(graphics={  Rectangle(extent = {{-40, 40}, {40, -40}}, lineColor = {0, 0, 255}), Ellipse(extent = {{-24, 22}, {24, -24}}, lineColor = {0, 0, 255},
-            lineThickness =                                                                                                   1), Text(extent = {{-12, -7}, {12, 7}}, lineColor = {0, 0, 255}, textString = "M10")}),
+  annotation(Diagram(graphics), Icon(graphics={  Rectangle(extent=  {{-40, 40}, {40, -40}}, lineColor=  {0, 0, 255}), Ellipse(extent=  {{-24, 22}, {24, -24}}, lineColor=  {0, 0, 255},
+            lineThickness=                                                                                                    1), Text(extent=  {{-12, -7}, {12, 7}}, lineColor=  {0, 0, 255}, textString=  "M10")}),
     Documentation(info="<html>
 <p><br><span style=\"font-family: MS Shell Dlg 2;\">&LT;iPSL: iTesla Power System Library&GT;</span></p>
 <p><span style=\"font-family: MS Shell Dlg 2;\">Copyright 2015 RTE (France), AIA (Spain), KTH (Sweden) and DTU (Denmark)</span></p>

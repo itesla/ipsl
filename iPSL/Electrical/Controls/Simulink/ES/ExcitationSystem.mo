@@ -22,57 +22,58 @@ model ExcitationSystem
     r=r,
     f=f,
     L1=L1) annotation (Placement(transformation(extent={{-28,40},{20,76}})));
-  iPSL.NonElectrical.Math.ImSetPoint V_0(V=V0) "Reference terminal voltage "
-    annotation (Placement(transformation(extent={{-92,28},{-56,58}})));
-  iPSL.NonElectrical.Math.ImSum3 imSum3_1(
-    a0=0,
-    a1=1,
-    a2=-1,
-    a3=1) annotation (Placement(transformation(extent={{-50,18},{-30,38}})));
+  Modelica.Blocks.Sources.Constant V_0(k=V0) "Reference terminal voltage "
+    annotation (Placement(transformation(extent={{-88,34},{-70,52}})));
   Modelica.Blocks.Interfaces.RealInput ifd "Field current" annotation(Placement(transformation(extent = {{-96, 62}, {-84, 74}})));
   Modelica.Blocks.Interfaces.RealInput V "Terminal voltage " annotation(Placement(transformation(extent = {{-96, 22}, {-84, 34}})));
   Modelica.Blocks.Interfaces.RealInput omega "Speed" annotation(Placement(transformation(extent = {{-96, -10}, {-84, 2}})));
   Modelica.Blocks.Interfaces.RealOutput vfd "Field voltage" annotation(Placement(transformation(extent = {{128, 22}, {140, 34}})));
-  iPSL.NonElectrical.Math.ImSum2 imSum2_1(
-    a0=0,
-    a1=1,
-    a2=-1) annotation (Placement(transformation(extent={{66,44},{88,64}})));
-  iPSL.NonElectrical.Math.ImGain Ka(K=10)
-    annotation (Placement(transformation(extent={{82,44},{102,64}})));
-  NonElectrical.Continuous.ImIntegratornonwindup            imLimitedIntegrator(Ymin = 0, Ymax = L2, K = 1, nStartValue = vfd0) annotation(Placement(transformation(extent = {{98, 36}, {132, 72}})));
-  iPSL.NonElectrical.Continuous.ImLeadLag tgr(
+  Modelica.Blocks.Math.Gain Ka(k=10)
+    annotation (Placement(transformation(extent={{88,48},{100,60}})));
+  Modelica.Blocks.Continuous.LimIntegrator            imLimitedIntegrator(outMin = 0, outMax = L2, k = 1, y_start = vfd0,
+    initType=Modelica.Blocks.Types.Init.InitialOutput)                                                                    annotation(Placement(transformation(extent={{108,46},
+            {124,62}})));
+  iPSL.NonElectrical.Continuous.LeadLag tgr(
     K=G,
     T1=Ta,
     T2=Tb,
-    nStartValue=vfd0) "Transient gain rudection"
-    annotation (Placement(transformation(extent={{18,30},{74,80}})));
+    y_start=vfd0) "Transient gain rudection"
+    annotation (Placement(transformation(extent={{36,44},{56,64}})));
   iPSL.Electrical.Controls.Simulink.PSS.PSS pSS(
     Kp=Kp,
     Tw=Tw,
     T1=T1,
     T2=T2,
     C=C) annotation (Placement(transformation(extent={{-78,-28},{-44,14}})));
+  Modelica.Blocks.Math.Feedback feedback
+    annotation (Placement(transformation(extent={{62,44},{82,64}})));
+  Modelica.Blocks.Math.Add3 add3_1(k2=-1)
+    annotation (Placement(transformation(extent={{-46,18},{-26,38}})));
 equation
   connect(oEL.ifd, ifd) annotation(Line(points = {{-24.4, 59.08}, {-77.44, 59.08}, {-77.44, 68}, {-90, 68}}, color = {0, 0, 127}, smooth = Smooth.None));
-  connect(V_0.n1, imSum3_1.p1) annotation(Line(points = {{-65.18, 43}, {-59.59, 43}, {-59.59, 31}, {-45.1, 31}}, color = {0, 0, 127}, smooth = Smooth.None));
-  connect(V, imSum3_1.p2) annotation(Line(points = {{-90, 28}, {-45.1, 28}}, color = {0, 0, 127}, smooth = Smooth.None));
-  connect(imSum3_1.n1, oEL.VolContinput) annotation(Line(points = {{-35.1, 28}, {-30, 28}, {-30, 51.16}, {-24.4, 51.16}}, color = {0, 0, 127}, smooth = Smooth.None));
-  connect(Ka.n1, imLimitedIntegrator.p1) annotation(Line(points = {{96.9, 54}, {106.33, 54}}, color = {0, 0, 127}, smooth = Smooth.None));
-  connect(imSum2_1.n1, Ka.p1) annotation(Line(points = {{82.39, 54}, {86.9, 54}}, color = {0, 0, 127}, smooth = Smooth.None));
-  connect(oEL.OEL_output, tgr.p1) annotation(Line(points = {{16.16, 54.4}, {24.08, 54.4}, {24.08, 55}, {31.72, 55}}, color = {0, 0, 127}, smooth = Smooth.None));
-  connect(tgr.n1, imSum2_1.p1) annotation(Line(points = {{59.72, 55}, {64.86, 55}, {64.86, 56}, {71.39, 56}}, color = {0, 0, 127}, smooth = Smooth.None));
   connect(omega, pSS.omega) annotation(Line(points = {{-90, -4}, {-84, -4}, {-84, -4.06}, {-76.98, -4.06}}, color = {0, 0, 127}, smooth = Smooth.None));
-  connect(pSS.Upss, imSum3_1.p3) annotation(Line(points = {{-50.46, -4.48}, {-50.46, 9.76}, {-45.1, 9.76}, {-45.1, 25}}, color = {0, 0, 127}, smooth = Smooth.None));
-  connect(imLimitedIntegrator.n0, vfd) annotation (Line(
-      points={{123.33,54},{128,54},{128,28},{134,28}},
-      color={0,0,127},
-      smooth=Smooth.None));
-  connect(imSum2_1.p2, vfd) annotation (Line(
-      points={{71.39,52},{70,52},{70,28},{134,28}},
-      color={0,0,127},
-      smooth=Smooth.None));
-  annotation(Diagram(coordinateSystem(preserveAspectRatio=true,   extent={{-100,
-            -100},{140,100}}),                                                                           graphics), Icon(coordinateSystem(extent = {{-100, -100}, {140, 100}}, preserveAspectRatio = false), graphics={  Rectangle(extent=  {{-84, 78}, {128, -20}}, lineColor=  {0, 0, 255}), Text(extent=  {{-80, 72}, {-62, 60}}, lineColor=  {0, 0, 255}, textString=  "ifd"), Text(extent=  {{-80, 34}, {-62, 22}}, lineColor=  {0, 0, 255}, textString=  "V "), Text(extent=  {{-78, 2}, {-54, -12}}, lineColor=  {0, 0, 255}, textString=  "omega"), Text(extent=  {{106, 36}, {130, 22}}, lineColor=  {0, 0, 255}, textString=  "vfd"), Text(extent=  {{-34, 58}, {88, 0}}, lineColor=  {0, 0, 255}, textString=  "Exciter AVR OEL PSS")}),
+  connect(imLimitedIntegrator.y, vfd)
+    annotation (Line(points={{124.8,54},{134,54},{134,28}}, color={0,0,127}));
+  connect(Ka.y, imLimitedIntegrator.u) annotation (Line(points={{100.6,54},{106.4,
+          54},{106.4,54}}, color={0,0,127}));
+  connect(oEL.OEL_output, tgr.u) annotation (Line(points={{16.16,54.4},{25.08,
+          54.4},{25.08,54},{34,54}}, color={0,0,127}));
+  connect(feedback.y, Ka.u)
+    annotation (Line(points={{81,54},{86.8,54},{86.8,54}}, color={0,0,127}));
+  connect(tgr.y, feedback.u1)
+    annotation (Line(points={{57,54},{64,54},{64,54}}, color={0,0,127}));
+  connect(feedback.u2, vfd) annotation (Line(points={{72,46},{72,40},{134,40},{
+          134,28}}, color={0,0,127}));
+  connect(V, add3_1.u2)
+    annotation (Line(points={{-90,28},{-74,28},{-48,28}}, color={0,0,127}));
+  connect(V_0.y, add3_1.u1)
+    annotation (Line(points={{-69.1,43},{-48,43},{-48,36}}, color={0,0,127}));
+  connect(pSS.Upss, add3_1.u3) annotation (Line(points={{-50.46,-4.48},{-48,
+          -4.48},{-48,20}}, color={0,0,127}));
+  connect(add3_1.y, oEL.VolContinput) annotation (Line(points={{-25,28},{-18,28},
+          {-18,42},{-24.4,42},{-24.4,51.16}}, color={0,0,127}));
+  annotation(Diagram(coordinateSystem(preserveAspectRatio=false,  extent={{-100,
+            -100},{140,100}})),                                                                                     Icon(coordinateSystem(extent = {{-100, -100}, {140, 100}}, preserveAspectRatio = false), graphics={  Rectangle(extent = {{-84, 78}, {128, -20}}, lineColor = {0, 0, 255}), Text(extent = {{-80, 72}, {-62, 60}}, lineColor = {0, 0, 255}, textString = "ifd"), Text(extent = {{-80, 34}, {-62, 22}}, lineColor = {0, 0, 255}, textString = "V "), Text(extent = {{-78, 2}, {-54, -12}}, lineColor = {0, 0, 255}, textString = "omega"), Text(extent = {{106, 36}, {130, 22}}, lineColor = {0, 0, 255}, textString = "vfd"), Text(extent = {{-34, 58}, {88, 0}}, lineColor = {0, 0, 255}, textString = "Exciter AVR OEL PSS")}),
     Documentation(info="<html>
 <p><br><span style=\"font-family: MS Shell Dlg 2;\">&LT;iPSL: iTesla Power System Library&GT;</span></p>
 <p><span style=\"font-family: MS Shell Dlg 2;\">Copyright 2015 RTE (France), AIA (Spain), KTH (Sweden) and DTU (Denmark)</span></p>

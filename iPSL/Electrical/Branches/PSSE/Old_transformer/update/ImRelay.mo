@@ -15,8 +15,8 @@ model ImRelay "input dependent output"
 equation
   n1 = if COD > 0 then p1 else  p2;
   annotation(Icon(coordinateSystem(preserveAspectRatio=true,   extent={{-100,-100},
-            {100,100}}),                                                                              graphics={  Rectangle(extent = {{-40, 40}, {40, -40}}, lineColor = {0, 0, 255}),                                                                                                    Line(points={{
-              -2,12},{14,2},{34,2}},                                                                                                    color = {0, 0, 255}, smooth = Smooth.None),
+            {100,100}}),                                                                              graphics={  Rectangle(extent=  {{-40, 40}, {40, -40}}, lineColor=  {0, 0, 255}),                                                                                                    Line(points={{
+              -2,12},{14,2},{34,2}},                                                                                                    color=  {0, 0, 255}, smooth=  Smooth.None),
         Line(
           points={{-40,24},{-14,24}},
           color={0,0,255},

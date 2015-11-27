@@ -63,13 +63,14 @@ Real delta(start=anglev_rad);
     ir(start=ir1),
     ii(start=ii1)) annotation (Placement(transformation(extent={{130,14},{150,
             34}}), iconTransformation(extent={{130,14},{150,34}})));
-  iPSL.NonElectrical.Continuous.ImSimpleLag K1(
+  iPSL.NonElectrical.Continuous.SimpleLag K1(
     K=1,
     T=TIQCmd,
-    nStartValue=Iy0)
-    annotation (Placement(transformation(extent={{-54,56},{-2,90}})));
-  iPSL.NonElectrical.Continuous.ImIntegrator K(nStartValue=Ix0, K=1/TIPCmd)
-    annotation (Placement(transformation(extent={{-40,22},{12,56}})));
+    y_start=Iy0)
+    annotation (Placement(transformation(extent={{-28,66},{-14,80}})));
+  Modelica.Blocks.Continuous.Integrator K(y_start=Ix0, k=1/TIPCmd,
+    initType=Modelica.Blocks.Types.Init.InitialOutput)
+    annotation (Placement(transformation(extent={{-20,32},{-4,48}})));
 
   Modelica.Blocks.Interfaces.RealOutput Iy(start=Iy0)
     annotation (Placement(transformation(extent={{12,64},{30,82}})));
@@ -127,11 +128,13 @@ protected
        iconTransformation(extent={{-110,52},{-94,68}})));
 
 public
-  ImVariableLimiter Ix
-    annotation (Placement(transformation(extent={{2,20},{46,66}})));
-  iPSL.NonElectrical.Continuous.ImLimited imLimited_max(Ymin=-Modelica.Constants.inf,
-      Ymax=RIp_LVPL)
-    annotation (Placement(transformation(extent={{-52,26},{-28,52}})));
+  Modelica.Blocks.Nonlinear.Limiter imLimited_max(uMin=-Modelica.Constants.inf,
+      uMax=RIp_LVPL)
+    annotation (Placement(transformation(extent={{-44,32},{-28,48}})));
+  Modelica.Blocks.Nonlinear.VariableLimiter variableLimiter
+    annotation (Placement(transformation(extent={{20,30},{40,50}})));
+  Modelica.Blocks.Sources.Constant const(k=-Modelica.Constants.inf)
+    annotation (Placement(transformation(extent={{-20,-20},{0,0}})));
 equation
 
 anglev = atan2(p.vi, p.vr);
@@ -143,16 +146,8 @@ delta=anglev;
 
  -P = p.vr * p.ir+ p.vi * p.ii;
   -Q = p.vi * p.ir - p.vr * p.ii;
-  connect(Iqcmd, K1.p1)          annotation (Line(
-      points={{-101,73},{-36.06,73}},
-      color={0,0,127},
-      smooth=Smooth.None));
   connect(Iperr.u1, Ipcmd) annotation (Line(
       points={{-73.8,39},{-101,39}},
-      color={0,0,127},
-      smooth=Smooth.None));
-  connect(K1.n1, Iy)          annotation (Line(
-      points={{-9.8,73},{21,73}},
       color={0,0,127},
       smooth=Smooth.None));
   connect(Iy, hVRCL.Iq) annotation (Line(
@@ -179,31 +174,25 @@ delta=anglev;
       points={{52.76,60.32},{52.76,-26.84},{73,-26.84},{73,-91}},
       color={0,0,127},
       smooth=Smooth.None));
-  connect(lVPL.LVPL, Ix.p1)                annotation (Line(
-      points={{-34,-52},{-118,-52},{-118,56},{8,56},{8,46.22},{12.78,46.22}},
-      color={0,0,127},
-      smooth=Smooth.None));
-  connect(K.n1, Ix.p2)                annotation (Line(
-      points={{-1.26,39},{6.97,39},{6.97,39.32},{12.78,39.32}},
-      color={0,0,127},
-      smooth=Smooth.None));
-  connect(imLimited_max.n1, K.p1) annotation (Line(
-      points={{-34.12,39},{-27.26,39}},
-      color={0,0,127},
-      smooth=Smooth.None));
-  connect(imLimited_max.p1, Iperr.y) annotation (Line(
-      points={{-46.12,39},{-55.1,39}},
-      color={0,0,127},
-      smooth=Smooth.None));
-  connect(Ix.n1, lVACL.Ip_LVPL) annotation (Line(
-      points={{34.78,43},{44.155,43},{44.155,43.2},{58.28,43.2}},
-      color={0,0,127},
-      smooth=Smooth.None));
-  connect(Iperr.u2, Ix.n1) annotation (Line(
-      points={{-65,30.2},{-65,10},{34.78,10},{34.78,43}},
-      color={0,0,127},
-      smooth=Smooth.None));
-  annotation (Diagram(coordinateSystem(preserveAspectRatio=true, extent={{-100,
+  connect(Iqcmd, K1.u) annotation (Line(points={{-101,73},{-65.5,73},{-65.5,73},
+          {-29.4,73}}, color={0,0,127}));
+  connect(K1.y, Iy) annotation (Line(points={{-13.3,73},{0.35,73},{0.35,73},{21,
+          73}}, color={0,0,127}));
+  connect(Iperr.y, imLimited_max.u) annotation (Line(points={{-55.1,39},{-50.55,
+          39},{-50.55,40},{-45.6,40}}, color={0,0,127}));
+  connect(imLimited_max.y, K.u) annotation (Line(points={{-27.2,40},{-21.6,40},
+          {-21.6,40}}, color={0,0,127}));
+  connect(K.y, variableLimiter.u)
+    annotation (Line(points={{-3.2,40},{18,40}}, color={0,0,127}));
+  connect(variableLimiter.limit1, lVPL.LVPL) annotation (Line(points={{18,48},{
+          2,48},{2,10},{-70,10},{-70,-52},{-34,-52}}, color={0,0,127}));
+  connect(variableLimiter.y, lVACL.Ip_LVPL) annotation (Line(points={{41,40},{
+          48,40},{48,43.2},{58.28,43.2}}, color={0,0,127}));
+  connect(Iperr.u2, lVACL.Ip_LVPL) annotation (Line(points={{-65,30.2},{-65,20},
+          {46,20},{46,40},{48,40},{48,43.2},{58.28,43.2}}, color={0,0,127}));
+  connect(const.y, variableLimiter.limit2) annotation (Line(points={{1,-10},{10,
+          -10},{10,32},{18,32}}, color={0,0,127}));
+  annotation (Diagram(coordinateSystem(preserveAspectRatio=false,extent={{-100,
             -100},{100,100}}), graphics={
         Text(
           extent={{-52,52},{-28,46}},

@@ -11,9 +11,9 @@ equation
   else
     signal = -100;
   end if;
-  annotation(Icon(coordinateSystem(preserveAspectRatio = false, extent = {{-100, -100}, {100, 100}}), graphics={  Rectangle(extent = {{-50, 52}, {56, -38}}, lineColor = {0, 0, 255}, fillColor = {255, 255, 255},
-            fillPattern =                                                                                                   FillPattern.Solid), Text(extent = {{-34, 32}, {40, -24}}, lineColor = {0, 0, 255}, fillColor = {255, 255, 255},
-            fillPattern =                                                                                                   FillPattern.Solid, textString = "deadband")}), Diagram(coordinateSystem(preserveAspectRatio = false, extent = {{-100, -100}, {100, 100}}), graphics),
+  annotation(Icon(coordinateSystem(preserveAspectRatio = false, extent = {{-100, -100}, {100, 100}}), graphics={  Rectangle(extent=  {{-50, 52}, {56, -38}}, lineColor=  {0, 0, 255}, fillColor=  {255, 255, 255},
+            fillPattern=                                                                                                    FillPattern.Solid), Text(extent=  {{-34, 32}, {40, -24}}, lineColor=  {0, 0, 255}, fillColor=  {255, 255, 255},
+            fillPattern=                                                                                                    FillPattern.Solid, textString=  "deadband")}), Diagram(coordinateSystem(preserveAspectRatio = false, extent = {{-100, -100}, {100, 100}}), graphics),
     Documentation(info="<html>
 <table cellspacing=\"1\" cellpadding=\"1\" border=\"1\">
 <tr>

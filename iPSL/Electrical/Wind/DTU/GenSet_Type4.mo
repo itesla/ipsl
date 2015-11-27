@@ -12,10 +12,10 @@ model GenSet_Type4 "Generator Type 4 Set Model. Developed by DTU"
   Modelica.Blocks.Interfaces.RealInput iQcmd annotation(Placement(transformation(extent = {{-51, -22}, {-41, -10}})));
   Modelica.Blocks.Interfaces.RealOutput iPref annotation(Placement(transformation(extent = {{25, 14}, {35, 26}}), iconTransformation(extent = {{25, 14}, {35, 26}})));
   Modelica.Blocks.Interfaces.RealOutput iQref annotation(Placement(transformation(extent = {{25, -26}, {35, -14}}), iconTransformation(extent = {{25, -26}, {35, -14}})));
-  iPSL.NonElectrical.Math.ImSetPoint imSetPoint(V=-999)
-    annotation (Placement(transformation(extent={{-38,-2},{-18,14}})));
-  iPSL.NonElectrical.Math.ImGain imGain2(K=-1)
-    annotation (Placement(transformation(extent={{-28,-36},{-8,-16}})));
+  Modelica.Blocks.Sources.Constant imSetPoint(k=-999)
+    annotation (Placement(transformation(extent={{-38,0},{-26,12}})));
+  Modelica.Blocks.Math.Gain imGain2(k=-1)
+    annotation (Placement(transformation(extent={{-22,-30},{-14,-22}})));
   iPSL.NonElectrical.Continuous.ImSimpleLag_varnonwindup imSimpleLag_varnonwindup(
     T=Tg,
     rmax=diPmax,
@@ -30,19 +30,24 @@ model GenSet_Type4 "Generator Type 4 Set Model. Developed by DTU"
 equation
   connect(imSimpleLag_varnonwindup.yi, iPcmd) annotation(Line(points = {{-12.7, 18}, {-28, 18}, {-28, 16}, {-46, 16}}, color = {0, 0, 127}, smooth = Smooth.None));
   connect(imSimpleLag_varnonwindup.yo, iPref) annotation(Line(points = {{0.6, 17.9}, {14.3, 17.9}, {14.3, 20}, {30, 20}}, color = {0, 0, 127}, smooth = Smooth.None));
-  connect(imSetPoint.n1, imSimpleLag_varnonwindup.min) annotation(Line(points = {{-23.1, 6}, {-16, 6}, {-16, 12}, {-7.5, 12}}, color = {0, 0, 127}, smooth = Smooth.None));
   connect(imSimpleLag_varnonwindup.max, iPmax) annotation(Line(points = {{-2.9, 24}, {-22, 24}, {-22, 40}, {-46, 40}}, color = {0, 0, 127}, smooth = Smooth.None));
   connect(imSimpleLag_varnonwindup1.yi, iQcmd) annotation(Line(points = {{-8.7, -16}, {-46, -16}}, color = {0, 0, 127}, smooth = Smooth.None));
   connect(imSimpleLag_varnonwindup1.yo, iQref) annotation(Line(points = {{4.6, -16.1}, {30, -16.1}, {30, -20}}, color = {0, 0, 127}, smooth = Smooth.None));
-  connect(imGain2.n1, imSimpleLag_varnonwindup1.min) annotation(Line(points = {{-13.1, -26}, {-8, -26}, {-8, -22}, {-3.5, -22}}, color = {0, 0, 127}, smooth = Smooth.None));
-  connect(imSimpleLag_varnonwindup1.max, imGain2.p1) annotation(Line(points = {{1.1, -10}, {-26, -10}, {-26, -26}, {-23.1, -26}}, color = {0, 0, 127}, smooth = Smooth.None));
-  connect(iQmax, imGain2.p1) annotation(Line(points = {{-46, -40}, {-36, -40}, {-36, -26}, {-23.1, -26}}, color = {0, 0, 127}, smooth = Smooth.None));
-  annotation(Diagram(coordinateSystem(preserveAspectRatio = false, extent = {{-55, -60}, {55, 55}}, initialScale = 0.1, grid = {2, 2}), graphics), Icon(coordinateSystem(preserveAspectRatio = false, extent = {{-55, -60}, {55, 55}}, initialScale = 0.1, grid = {2, 2}), graphics={  Rectangle(extent=  {{-40, 40}, {26, -40}}, lineColor=  {0, 0, 255},
-            lineThickness=                                                                                                    0.5), Text(extent=  {{-18, 8}, {8, -8}}, lineColor=  {0, 0, 255},
-            lineThickness=                                                                                                    0.5,
-            fillPattern=                                                                                                    FillPattern.Solid, textString=  "Type 4
+  connect(imSetPoint.y, imSimpleLag_varnonwindup.min) annotation (Line(points={{
+          -25.4,6},{-14,6},{-14,12},{-7.5,12}}, color={0,0,127}));
+  connect(imGain2.y, imSimpleLag_varnonwindup1.min) annotation (Line(points={{-13.6,
+          -26},{-8,-26},{-8,-22},{-3.5,-22}}, color={0,0,127}));
+  connect(iQmax, imGain2.u) annotation (Line(points={{-46,-40},{-34,-40},{-34,-26},
+          {-22.8,-26}}, color={0,0,127}));
+  connect(imSimpleLag_varnonwindup1.max, imGain2.u) annotation (Line(points={{1.1,
+          -10},{-26,-10},{-26,-26},{-22.8,-26}}, color={0,0,127}));
+  annotation(Diagram(coordinateSystem(preserveAspectRatio=false,   extent={{-55,-60},
+            {55,55}},                                                                               initialScale = 0.1, grid = {2, 2})),           Icon(coordinateSystem(preserveAspectRatio = false, extent = {{-55, -60}, {55, 55}}, initialScale = 0.1, grid = {2, 2}), graphics={  Rectangle(extent = {{-40, 40}, {26, -40}}, lineColor = {0, 0, 255},
+            lineThickness =                                                                                                   0.5), Text(extent = {{-18, 8}, {8, -8}}, lineColor = {0, 0, 255},
+            lineThickness =                                                                                                   0.5,
+            fillPattern =                                                                                                   FillPattern.Solid, textString = "Type 4
 Gen Set"),
-   Text(extent=  {{-38, 36}, {-26, 30}}, lineColor=  {0, 0, 255}, textString=  "i_Pmax"), Text(extent=  {{-38, 18}, {-26, 12}}, lineColor=  {0, 0, 255}, textString=  "i_Pcmd"), Text(extent=  {{-38, -10}, {-26, -16}}, lineColor=  {0, 0, 255}, textString=  "i_Qcmd"), Text(extent=  {{-38, -32}, {-26, -38}}, lineColor=  {0, 0, 255}, textString=  "i_Qmax"), Text(extent=  {{11, 24}, {23, 18}}, lineColor=  {0, 0, 255}, textString=  "i_Pref"), Text(extent=  {{10, -17}, {22, -23}}, lineColor=  {0, 0, 255}, textString=  "i_Qref")}),
+   Text(extent = {{-38, 36}, {-26, 30}}, lineColor = {0, 0, 255}, textString = "i_Pmax"), Text(extent = {{-38, 18}, {-26, 12}}, lineColor = {0, 0, 255}, textString = "i_Pcmd"), Text(extent = {{-38, -10}, {-26, -16}}, lineColor = {0, 0, 255}, textString = "i_Qcmd"), Text(extent = {{-38, -32}, {-26, -38}}, lineColor = {0, 0, 255}, textString = "i_Qmax"), Text(extent = {{11, 24}, {23, 18}}, lineColor = {0, 0, 255}, textString = "i_Pref"), Text(extent = {{10, -17}, {22, -23}}, lineColor = {0, 0, 255}, textString = "i_Qref")}),
     Documentation(info="<html>
 <p><br><span style=\"font-family: MS Shell Dlg 2;\">&LT;iPSL: iTesla Power System Library&GT;</span></p>
 <p><span style=\"font-family: MS Shell Dlg 2;\">Copyright 2015 RTE (France), AIA (Spain), KTH (Sweden) and DTU (Denmark)</span></p>

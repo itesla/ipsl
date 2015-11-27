@@ -19,8 +19,8 @@ equation
   connect(imSimpleLag.n1, imDelay_1_1.p1) annotation(Line(points={{-7.7,0},{5.8,
           0}},                                                                             color = {0, 0, 127}, smooth = Smooth.None));
   connect(imDelay_1_1.n1, n1) annotation(Line(points = {{25.8, 0}, {49, 0}}, color = {0, 0, 127}, smooth = Smooth.None));
-  annotation(Icon(graphics={  Rectangle(extent = {{-40, 40}, {40, -40}}, lineColor = {0, 0, 255}), Text(extent = {{-24, 26}, {20, 10}}, lineColor = {0, 0, 255}, textStyle = {TextStyle.Bold}, textString = "Delay_2"), Text(extent = {{-18, -6}, {42, -20}}, lineColor = {0, 0, 255},
-            horizontalAlignment =                                                                                                   TextAlignment.Left, textString = "e^(-Ts) ", textStyle = {TextStyle.Bold})}), Diagram(graphics),
+  annotation(Icon(graphics={  Rectangle(extent=  {{-40, 40}, {40, -40}}, lineColor=  {0, 0, 255}), Text(extent=  {{-24, 26}, {20, 10}}, lineColor=  {0, 0, 255}, textStyle=  {TextStyle.Bold}, textString=  "Delay_2"), Text(extent=  {{-18, -6}, {42, -20}}, lineColor=  {0, 0, 255},
+            horizontalAlignment=                                                                                                    TextAlignment.Left, textString=  "e^(-Ts) ", textStyle=  {TextStyle.Bold})}), Diagram(graphics),
     Documentation(info="<html>
 <p><br><span style=\"font-family: MS Shell Dlg 2;\">&LT;iPSL: iTesla Power System Library&GT;</span></p>
 <p><span style=\"font-family: MS Shell Dlg 2;\">Copyright 2015 RTE (France), AIA (Spain), KTH (Sweden) and DTU (Denmark)</span></p>

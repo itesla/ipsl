@@ -58,27 +58,29 @@ parameter Real VY0=-sin(anglev_rad)*vr0+cos(anglev_rad)*vi0;
     ir(start=ir1),
     ii(start=ii1)) annotation (Placement(transformation(extent={{58,6},{78,26}}),
         iconTransformation(extent={{58,6},{78,26}})));
-  iPSL.NonElectrical.Continuous.ImIntegrator imIntegrator(K=wbase, nStartValue=
-        anglev_rad)
-    annotation (Placement(transformation(extent={{26,-26},{44,-4}})));
-  iPSL.NonElectrical.Continuous.ImIntegratornonwindup imIntegrator1(
-    Ymin=-Pllmax,
-    Ymax=Pllmax,
-    K=0,
-    nStartValue=0)
-    annotation (Placement(transformation(extent={{-34,-14},{-14,6}})));
-  iPSL.NonElectrical.Continuous.ImSimpleLag imSimpleLag(
+  Modelica.Blocks.Continuous.Integrator imIntegrator(k=wbase, y_start=
+        anglev_rad,
+    initType=Modelica.Blocks.Types.Init.InitialOutput)
+    annotation (Placement(transformation(extent={{32,-20},{42,-10}})));
+  Modelica.Blocks.Continuous.LimIntegrator imIntegrator1(
+    outMin=-Pllmax,
+    outMax=Pllmax,
+    k=0,
+    y_start=0,
+    initType=Modelica.Blocks.Types.Init.InitialOutput)
+    annotation (Placement(transformation(extent={{-30,-12},{-16,2}})));
+  iPSL.NonElectrical.Continuous.SimpleLag imSimpleLag(
     K=1,
     T=0.02,
-    nStartValue=Eqcmd0)
-    annotation (Placement(transformation(extent={{-54,56},{-2,90}})));
-  iPSL.NonElectrical.Continuous.ImSimpleLag imSimpleLag1(
+    y_start=Eqcmd0)
+    annotation (Placement(transformation(extent={{-30,64},{-12,82}})));
+  iPSL.NonElectrical.Continuous.SimpleLag imSimpleLag1(
     K=1,
     T=0.02,
-    nStartValue=Ix0)
-    annotation (Placement(transformation(extent={{-54,22},{-2,56}})));
-  iPSL.NonElectrical.Math.ImGain imGain(K=-1/Xeq)
-    annotation (Placement(transformation(extent={{2,62},{24,84}})));
+    y_start=Ix0)
+    annotation (Placement(transformation(extent={{-30,30},{-12,48}})));
+  Modelica.Blocks.Math.Gain imGain(k=-1/Xeq)
+    annotation (Placement(transformation(extent={{4,64},{22,82}})));
 protected
   Modelica.Blocks.Interfaces.RealOutput Iy(start=Iy0)
     annotation (Placement(transformation(extent={{40,64},{58,82}})));
@@ -92,16 +94,16 @@ protected
     annotation (Placement(transformation(extent={{-120,20},{-82,58}}),
        iconTransformation(extent={{-116,-16},{-94,6}})));
 
-  iPSL.NonElectrical.Math.ImGain imGain1(K=Kpll/wbase)
-    annotation (Placement(transformation(extent={{-56,-32},{-34,-10}})));
+  Modelica.Blocks.Math.Gain imGain1(k=Kpll/wbase)
+    annotation (Placement(transformation(extent={{-52,-28},{-38,-14}})));
   Modelica.Blocks.Interfaces.RealInput Vy
     annotation (Placement(transformation(extent={{-118,-40},{-80,-2}}),
         iconTransformation(extent={{-118,-40},{-96,-18}})));
 
   Modelica.Blocks.Math.Add add
     annotation (Placement(transformation(extent={{-8,-24},{10,-6}})));
-  iPSL.NonElectrical.Continuous.ImLimited imLimited(Ymin=-Pllmax, Ymax=Pllmax)
-    annotation (Placement(transformation(extent={{10,-28},{32,-2}})));
+  Modelica.Blocks.Nonlinear.Limiter imLimited(uMin=-Pllmax, uMax=Pllmax)
+    annotation (Placement(transformation(extent={{16,-20},{26,-10}})));
   Modelica.Blocks.Interfaces.RealOutput delta(start=anglev_rad)
     annotation (Placement(transformation(extent={{46,-24},{64,-6}})));
 
@@ -146,56 +148,32 @@ Is.im =p.ii/CoB+p.vr/Xeq;
  [VX; VY]= [cos(delta), sin(delta);-sin(delta), cos(delta)] *[p.vr; p.vi];
  -P = p.vr * p.ir + p.vi * p.ii;
   -Q = p.vi * p.ir - p.vr * p.ii;
-  connect(Ipcmd, imSimpleLag1.p1) annotation (Line(
-      points={{-101,39},{-36.06,39}},
-      color={0,0,127},
-      smooth=Smooth.None));
-  connect(imSimpleLag.n1, imGain.p1) annotation (Line(
-      points={{-9.8,73},{7.39,73}},
-      color={0,0,127},
-      smooth=Smooth.None));
-  connect(imGain1.n1, imIntegrator1.p1) annotation (Line(
-      points={{-39.61,-21},{-32,-21},{-32,-4},{-29.1,-4}},
-      color={0,0,127},
-      smooth=Smooth.None));
-  connect(imGain1.n1, add.u2) annotation (Line(
-      points={{-39.61,-21},{-11.805,-21},{-11.805,-20.4},{-9.8,-20.4}},
-      color={0,0,127},
-      smooth=Smooth.None));
-  connect(imIntegrator1.n0, add.u1) annotation (Line(
-      points={{-19.1,-4},{-12,-4},{-12,-9.6},{-9.8,-9.6}},
-      color={0,0,127},
-      smooth=Smooth.None));
-  connect(add.y, imLimited.p1) annotation (Line(
-      points={{10.9,-15},{15.39,-15}},
-      color={0,0,127},
-      smooth=Smooth.None));
-  connect(imLimited.n1, imIntegrator.p1) annotation (Line(
-      points={{26.39,-15},{30.41,-15}},
-      color={0,0,127},
-      smooth=Smooth.None));
-  connect(Eqcmd, imSimpleLag.p1) annotation (Line(
-      points={{-101,73},{-36.06,73}},
-      color={0,0,127},
-      smooth=Smooth.None));
-  connect(imGain.n1, Iy) annotation (Line(
-      points={{18.39,73},{49,73}},
-      color={0,0,127},
-      smooth=Smooth.None));
-  connect(imSimpleLag1.n1, Ix) annotation (Line(
-      points={{-9.8,39},{15.97,39},{15.97,39},{49,39}},
-      color={0,0,127},
-      smooth=Smooth.None));
-  connect(imIntegrator.n1, delta) annotation (Line(
-      points={{39.41,-15},{55,-15}},
-      color={0,0,127},
-      smooth=Smooth.None));
-  connect(Vy, imGain1.p1) annotation (Line(
-      points={{-99,-21},{-70,-22},{-70,-21},{-50.61,-21}},
-      color={0,0,127},
-      smooth=Smooth.None));
-  annotation (Diagram(coordinateSystem(preserveAspectRatio=true, extent={{-100,
-            -100},{100,100}}), graphics), Icon(coordinateSystem(
+  connect(Eqcmd, imSimpleLag.u) annotation (Line(points={{-101,73},{-65.5,73},{-65.5,
+          73},{-31.8,73}}, color={0,0,127}));
+  connect(imSimpleLag1.u, Ipcmd) annotation (Line(points={{-31.8,39},{-60.9,39},
+          {-60.9,39},{-101,39}}, color={0,0,127}));
+  connect(imSimpleLag1.y, Ix) annotation (Line(points={{-11.1,39},{16.45,39},{16.45,
+          39},{49,39}}, color={0,0,127}));
+  connect(imGain1.y, imIntegrator1.u) annotation (Line(points={{-37.3,-21},{-34,
+          -21},{-34,-5},{-31.4,-5}}, color={0,0,127}));
+  connect(add.u2, imIntegrator1.u) annotation (Line(points={{-9.8,-20.4},{-34,-20.4},
+          {-34,-5},{-31.4,-5}}, color={0,0,127}));
+  connect(Vy, imGain1.u) annotation (Line(points={{-99,-21},{-76.5,-21},{-76.5,-21},
+          {-53.4,-21}}, color={0,0,127}));
+  connect(imIntegrator1.y, add.u1) annotation (Line(points={{-15.3,-5},{-14,-5},
+          {-14,-9.6},{-9.8,-9.6}}, color={0,0,127}));
+  connect(add.y, imLimited.u) annotation (Line(points={{10.9,-15},{11.85,-15},{15,
+          -15}}, color={0,0,127}));
+  connect(imIntegrator.y, delta) annotation (Line(points={{42.5,-15},{44.25,-15},
+          {44.25,-15},{55,-15}}, color={0,0,127}));
+  connect(imLimited.y, imIntegrator.u) annotation (Line(points={{26.5,-15},{28.25,
+          -15},{28.25,-15},{31,-15}}, color={0,0,127}));
+  connect(imSimpleLag.y, imGain.u) annotation (Line(points={{-11.1,73},{-4.55,
+          73},{-4.55,73},{2.2,73}}, color={0,0,127}));
+  connect(imGain.y, Iy) annotation (Line(points={{22.9,73},{32.45,73},{32.45,73},
+          {49,73}}, color={0,0,127}));
+  annotation (Diagram(coordinateSystem(preserveAspectRatio=false,extent={{-100,
+            -100},{100,100}})),           Icon(coordinateSystem(
           preserveAspectRatio=true, extent={{-100,-100},{100,100}}), graphics={
           Rectangle(extent={{-100,56},{108,-32}}, lineColor={0,0,255}), Text(
           extent={{-44,24},{40,-14}},

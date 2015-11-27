@@ -5,7 +5,7 @@ model InPutPort
   Real vo;
 equation
   vi = vo;
-  annotation(Icon(graphics={  Rectangle(extent=  {{-20, 20}, {20, -20}}, lineColor=  {0, 0, 255}), Text(extent=  {{-18, 8}, {18, -6}}, lineColor=  {0, 0, 255}, textString=  "Input")}), Diagram(graphics={  Rectangle(extent=  {{-20, 20}, {20, -20}}, lineColor=  {0, 0, 255}), Text(extent=  {{-18, 8}, {18, -6}}, lineColor=  {0, 0, 255}, textString=  "Input")}),
+  annotation(Icon(graphics={  Rectangle(extent = {{-20, 20}, {20, -20}}, lineColor = {0, 0, 255}), Text(extent = {{-18, 8}, {18, -6}}, lineColor = {0, 0, 255}, textString = "Input")}), Diagram(graphics={  Rectangle(extent = {{-20, 20}, {20, -20}}, lineColor = {0, 0, 255}), Text(extent = {{-18, 8}, {18, -6}}, lineColor = {0, 0, 255}, textString = "Input")}),
     Documentation(info="<html>
 <p><br><span style=\"font-family: MS Shell Dlg 2;\">&LT;iPSL: iTesla Power System Library&GT;</span></p>
 <p><span style=\"font-family: MS Shell Dlg 2;\">Copyright 2015 RTE (France), AIA (Spain), KTH (Sweden) and DTU (Denmark)</span></p>

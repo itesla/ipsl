@@ -4,7 +4,6 @@ ImDelay_2
 ImPulse
 ImPulseMyTime
 ImRelay
-ImVariableLimiter
 ImSchmidtTrigger
 ImMonostable
 ImTimer
@@ -13,4 +12,3 @@ ImReal4in
 ImFEX
 ImRelay4
 IF_comparisorOEL
-ImRelayOEL

@@ -47,7 +47,7 @@ model EXAC1
   parameter Real S_EE_2 = 0.1 "Saturation at E2";
 
   Modelica.Blocks.Continuous.Derivative imDerivativeLag(
-    K=K_F,
+    k=K_F,
     T=T_F,
     y_start=0,
     initType=Modelica.Blocks.Types.Init.InitialOutput)

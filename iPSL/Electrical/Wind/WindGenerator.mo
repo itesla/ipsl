@@ -25,10 +25,10 @@ equation
     Vw = v0 + (vmax - v0) * (1 - (time - (tstop + tstart) / 2) ^ 2 / sigma ^ 2) * Modelica.Constants.e ^ (-(time - (tstop + tstart) / 2) ^ 2 / (2 * sigma ^ 2))
       "2/(sqrt(3*sigma)*Modelica.Constants.pi^(1/4))*(1 - ((time - (tstop + tstart)/2)/sigma)^2)*Modelica.Constants.e^((-((time - (tstop + tstart)/2)/sigma)^2)/(2*sigma^2)) + v0";
   end if;
-  annotation(Icon(coordinateSystem(extent = {{-100.0, -100.0}, {100.0, 100.0}}, preserveAspectRatio = true, initialScale = 0.1, grid = {10, 10}), graphics={  Rectangle(visible=  true, fillColor=  {255, 255, 255},
-            fillPattern=                                                                                                    FillPattern.Solid,
-            lineThickness=                                                                                                    0.75, extent=  {{-100.0, -100.0}, {100.0, 100.0}}), Bitmap(visible=  true, origin={
-              -0.1255,0},                                                                                                    fileName=  "",
+  annotation(Icon(coordinateSystem(extent = {{-100.0, -100.0}, {100.0, 100.0}}, preserveAspectRatio = true, initialScale = 0.1, grid = {10, 10}), graphics={  Rectangle(visible = true, fillColor = {255, 255, 255},
+            fillPattern =                                                                                                   FillPattern.Solid,
+            lineThickness =                                                                                                   0.75, extent = {{-100.0, -100.0}, {100.0, 100.0}}), Bitmap(visible = true, origin={
+              -0.1255,0},                                                                                                    fileName = "",
           extent={{-99.8745,-96.8769},{99.8745,96.877}})}), Diagram(
         coordinateSystem(
         extent={{-148.5,-105.0},{148.5,105.0}},

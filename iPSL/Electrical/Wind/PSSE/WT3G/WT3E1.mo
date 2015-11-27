@@ -111,42 +111,40 @@ public
         iconTransformation(extent={{-10,-10},{10,10}},
         rotation=180,
         origin={138,-92})));
-  iPSL.NonElectrical.Continuous.ImSimpleLag K5(
+  iPSL.NonElectrical.Continuous.SimpleLag K5(
     K=1,
     T=T_Power,
-    nStartValue=k50)
-    annotation (Placement(transformation(extent={{-48,-76},{-10,-48}})));
+    y_start=k50)
+    annotation (Placement(transformation(extent={{-32,-70},{-16,-54}})));
   Modelica.Blocks.Math.Add add(k2=-1)
     annotation (Placement(transformation(extent={{-8,-64},{2,-54}})));
 
-  iPSL.NonElectrical.Continuous.ImIntegrator K3(nStartValue=k30, K=KIP)
-    annotation (Placement(transformation(extent={{8,-60},{28,-40}})));
-  iPSL.NonElectrical.Math.ImGain imGain(K=Kpp)
-    annotation (Placement(transformation(extent={{8,-76},{28,-56}})));
+  Modelica.Blocks.Continuous.Integrator K3(y_start=k30, k=KIP,
+    initType=Modelica.Blocks.Types.Init.InitialOutput)
+    annotation (Placement(transformation(extent={{14,-54},{22,-46}})));
+  Modelica.Blocks.Math.Gain imGain(k=Kpp)
+    annotation (Placement(transformation(extent={{14,-70},{22,-62}})));
   Modelica.Blocks.Math.Add add1
     annotation (Placement(transformation(extent={{28,-62},{38,-52}})));
-  iPSL.NonElectrical.Math.ImMult2 imMult2_1(
-    a0=0,
-    a1=1,
-    a2=1) annotation (Placement(transformation(extent={{40,-64},{58,-46}})));
   Modelica.Blocks.Math.Feedback feedback
     annotation (Placement(transformation(extent={{58,-62},{72,-48}})));
-  iPSL.NonElectrical.Continuous.ImLimited imLimited(Ymin=RPMN, Ymax=RPMX)
-    annotation (Placement(transformation(extent={{70,-66},{90,-44}})));
-  iPSL.NonElectrical.Continuous.ImIntegratornonwindup K2(
-    Ymin=PMN,
-    Ymax=PMX,
-    K=1/TFP,
-    nStartValue=k20)
-    annotation (Placement(transformation(extent={{86,-66},{106,-44}})));
+  Modelica.Blocks.Nonlinear.Limiter imLimited(uMin=RPMN, uMax=RPMX)
+    annotation (Placement(transformation(extent={{76,-60},{86,-50}})));
+  Modelica.Blocks.Continuous.LimIntegrator K2(
+    outMin=PMN,
+    outMax=PMX,
+    k=1/TFP,
+    y_start=k20,
+    initType=Modelica.Blocks.Types.Init.InitialOutput)
+    annotation (Placement(transformation(extent={{92,-60},{102,-50}})));
   Modelica.Blocks.Interfaces.RealInput Vterm(start=v0)
     annotation (Placement(transformation(extent={{-122,-112},{-88,-78}}),
         iconTransformation(extent={{-12,-12},{12,12}},
         rotation=180,
         origin={136,-16})));
-  iPSL.NonElectrical.Continuous.ImLimited imLimited_max(Ymin=-Modelica.Constants.inf,
-      Ymax=IPMAX)
-    annotation (Placement(transformation(extent={{138,-68},{156,-50}})));
+  Modelica.Blocks.Nonlinear.Limiter imLimited_max(uMin=-Modelica.Constants.inf,
+      uMax=IPMAX)
+    annotation (Placement(transformation(extent={{140,-64},{150,-54}})));
   Modelica.Blocks.Interfaces.RealOutput WIPCMD
     annotation (Placement(transformation(extent={{176,2},{194,20}}),
         iconTransformation(extent={{148,40},{166,58}})));
@@ -155,8 +153,8 @@ public
   Modelica.Blocks.Sources.Constant const(k=1)
     annotation (Placement(transformation(extent={{0,-30},{6,-24}})));
 
-  iPSL.NonElectrical.Continuous.ImLimited Qord(Ymin=QMN, Ymax=QMX)
-    annotation (Placement(transformation(extent={{22,32},{42,54}})));
+  Modelica.Blocks.Nonlinear.Limiter Qord(uMin=QMN, uMax=QMX)
+    annotation (Placement(transformation(extent={{26,36},{40,50}})));
   Modelica.Blocks.Interfaces.RealInput Qelec
     annotation (Placement(transformation(extent={{-16,-16},{16,16}},
         rotation=270,
@@ -166,12 +164,13 @@ public
         origin={137,-53})));
   Modelica.Blocks.Math.Feedback feedback1
     annotation (Placement(transformation(extent={{44,50},{58,36}})));
-  iPSL.NonElectrical.Continuous.ImIntegratornonwindup K6(
-    Ymin=VMINCL,
-    Ymax=VMAXCL,
-    K=Kqi,
-    nStartValue=k60)
-    annotation (Placement(transformation(extent={{56,32},{76,54}})));
+  Modelica.Blocks.Continuous.LimIntegrator K6(
+    outMin=VMINCL,
+    outMax=VMAXCL,
+    k=Kqi,
+    y_start=k60,
+    initType=Modelica.Blocks.Types.Init.InitialOutput)
+    annotation (Placement(transformation(extent={{62,38},{72,48}})));
   Modelica.Blocks.Math.Feedback Vcl
     annotation (Placement(transformation(extent={{76,36},{90,50}})));
   Modelica.Blocks.Interfaces.RealOutput WEQCMD
@@ -189,41 +188,41 @@ public
         extent={{-9,-9},{9,9}},
         rotation=270,
         origin={15,-113})));
-  iPSL.NonElectrical.Continuous.ImIntegratornonwindup K7(
-    K=Kqv,
-    nStartValue=k70,
-    Ymax=1 + XIQmax,
-    Ymin=XIQmin - 1)
-    annotation (Placement(transformation(extent={{114,32},{136,56}})));
+  Modelica.Blocks.Continuous.LimIntegrator K7(
+    k=Kqv,
+    y_start=k70,
+    outMax=1 + XIQmax,
+    outMin=XIQmin - 1)
+    annotation (Placement(transformation(extent={{120,36},{136,52}})));
   Modelica.Blocks.Math.Tan tan1
     annotation (Placement(transformation(extent={{-72,48},{-62,58}})));
 
-  iPSL.NonElectrical.Continuous.ImSimpleLag K9(
+  iPSL.NonElectrical.Continuous.SimpleLag K9(
     K=1,
-    nStartValue=k90,
-    T=Tp) annotation (Placement(transformation(extent={{-90,14},{-50,50}})));
+    y_start=k90,
+    T=Tp) annotation (Placement(transformation(extent={{-72,26},{-60,38}})));
   Modelica.Blocks.Math.Product Qcmdn1
     annotation (Placement(transformation(extent={{-40,36},{-30,46}})));
   Modelica.Blocks.Sources.Constant VAR3(k=Thetaref)
     annotation (Placement(transformation(extent={{-104,46},{-92,58}})));
 
-  iPSL.NonElectrical.Continuous.ImSimpleLag K4(
+  iPSL.NonElectrical.Continuous.SimpleLag K4(
     K=1,
     T=TRV,
-    nStartValue=k40)
-    annotation (Placement(transformation(extent={{-150,70},{-112,96}})));
+    y_start=k40)
+    annotation (Placement(transformation(extent={{-132,78},{-122,88}})));
 
-  iPSL.NonElectrical.Continuous.ImSimpleLag K8(
+  iPSL.NonElectrical.Continuous.SimpleLag K8(
     K=Kpv,
     T=Tv,
-    nStartValue=k80)
-    annotation (Placement(transformation(extent={{-88,68},{-56,96}})));
+    y_start=k80)
+    annotation (Placement(transformation(extent={{-72,78},{-64,86}})));
 
-  iPSL.NonElectrical.Continuous.ImSimpleLag K(
+  iPSL.NonElectrical.Continuous.SimpleLag K(
     K=1,
     T=Tfv,
-    nStartValue=k0)
-    annotation (Placement(transformation(extent={{-42,74},{-10,106}})));
+    y_start=k0)
+    annotation (Placement(transformation(extent={{-30,86},{-22,94}})));
   Modelica.Blocks.Interfaces.RealInput Iterm "magenitute of terminal current"
     annotation (Placement(transformation(extent={{-216,64},{-184,96}}),
         iconTransformation(extent={{-12,-12},{12,12}},
@@ -239,11 +238,11 @@ public
   Modelica.Blocks.Math.Gain portion(k=1/Fn)
     "Line drop compensation reactance (pu)"
     annotation (Placement(transformation(extent={{-94,82},{-84,92}})));
-  NonElectrical.Continuous.ImSimpleLag                      K1(
-    nStartValue=k10,
+  NonElectrical.Continuous.SimpleLag                      K1(
+    y_start=k10,
     K=KIV,
     T=Tv)
-    annotation (Placement(transformation(extent={{-80,88},{-50,112}})));
+    annotation (Placement(transformation(extent={{-66,96},{-58,104}})));
   Modelica.Blocks.Math.Add add4
     annotation (Placement(transformation(extent={{-54,88},{-50,92}})));
   Modelica.Blocks.Math.Add add5(
@@ -255,11 +254,11 @@ public
         origin={0,20})));
   Modelica.Blocks.Math.Division division
     annotation (Placement(transformation(extent={{118,-64},{128,-54}})));
-  iPSL.NonElectrical.Continuous.ImLimited imLimited_min(Ymin=0.01, Ymax=
+  Modelica.Blocks.Nonlinear.Limiter imLimited_min(uMin=0.01, uMax=
         Modelica.Constants.inf)
-    annotation (Placement(transformation(extent={{82,-108},{106,-82}})));
-  iPSL.NonElectrical.Continuous.ImLimited Qord1(Ymin=QMN, Ymax=QMX)
-    annotation (Placement(transformation(extent={{-50,78},{-32,102}})));
+    annotation (Placement(transformation(extent={{82,-102},{96,-88}})));
+  Modelica.Blocks.Nonlinear.Limiter Qord1(uMin=QMN, uMax=QMX)
+    annotation (Placement(transformation(extent={{-46,86},{-38,94}})));
 protected
   Modelica.Blocks.Interfaces.RealInput WNDSP_1
     annotation (Placement(transformation(extent={{-70,-78},{-38,-46}})));
@@ -280,10 +279,12 @@ public
         extent={{-12,-12},{12,12}},
         rotation=270,
         origin={54,78})));
-  iPSL.NonElectrical.Continuous.ImSimpleLag K10(
+  iPSL.NonElectrical.Continuous.SimpleLag K10(
     T=Tv,
-    nStartValue=k80,
-    K=1) annotation (Placement(transformation(extent={{-110,90},{-78,118}})));
+    y_start=k80,
+    K=1) annotation (Placement(transformation(extent={{-78,96},{-70,104}})));
+  Modelica.Blocks.Math.Product Qcmdn2
+    annotation (Placement(transformation(extent={{44,-60},{54,-50}})));
 initial equation
   Thetaref=atan2(q0, p0);
   k40 =v0;
@@ -300,73 +301,24 @@ equation
   WNDSP_1=Speed(Pelec,PMN,wPmin, wP20, wP40,wP60,wP100,Pmin);
 
 if VLRFLG<>0 then
-    K7.p1=Vcl.y;
-    WEQCMD=K7.n1;
+    K7.u=Vcl.y;
+    WEQCMD=K7.y;
 else
   WEQCMD=Vcl.y;
-  K7.p1=0;
+  K7.u=0;
 end if;
 
 if VARFLG==1 then
-Qord.p1=K.n1;
+Qord.u=K.y;
 elseif VARFLG==-1 then
-Qord.p1=Qcmdn1.y;
+Qord.u=Qcmdn1.y;
 else
-Qord.p1=Qref;
+Qord.u=Qref;
 end if;
 
-  connect(WNDSP_1, K5.p1)
-                         annotation (Line(
-      points={{-54,-62},{-34.89,-62}},
-      color={0,0,127},
-      smooth=Smooth.None));
   connect(ShaftSpeed, add.u1)
                           annotation (Line(
-      points={{-105,-33},{-16,-33},{-16,-56},{-9,-56}},
-      color={0,0,127},
-      smooth=Smooth.None));
-  connect(K5.n1, add.u2) annotation (Line(
-      points={{-15.7,-62},{-9,-62}},
-      color={0,0,127},
-      smooth=Smooth.None));
-  connect(K3.n1, add1.u1)           annotation (Line(
-      points={{22.9,-50},{24,-50},{24,-54},{27,-54}},
-      color={0,0,127},
-      smooth=Smooth.None));
-  connect(imGain.n1, add1.u2) annotation (Line(
-      points={{22.9,-66},{24,-66},{24,-60},{27,-60}},
-      color={0,0,127},
-      smooth=Smooth.None));
-  connect(K3.p1, add.y)           annotation (Line(
-      points={{12.9,-50},{8,-50},{8,-59},{2.5,-59}},
-      color={0,0,127},
-      smooth=Smooth.None));
-  connect(imGain.p1, add.y) annotation (Line(
-      points={{12.9,-66},{8,-66},{8,-59},{2.5,-59}},
-      color={0,0,127},
-      smooth=Smooth.None));
-  connect(add1.y, imMult2_1.p2) annotation (Line(
-      points={{38.5,-57},{41.25,-57},{41.25,-56.98},{44.41,-56.98}},
-      color={0,0,127},
-      smooth=Smooth.None));
-  connect(imMult2_1.n1, feedback.u1) annotation (Line(
-      points={{53.41,-55},{59.4,-55}},
-      color={0,0,127},
-      smooth=Smooth.None));
-  connect(imLimited.n1, K2.p1)                  annotation (Line(
-      points={{84.9,-55},{90.9,-55}},
-      color={0,0,127},
-      smooth=Smooth.None));
-  connect(feedback.y, imLimited.p1) annotation (Line(
-      points={{71.3,-55},{74.9,-55}},
-      color={0,0,127},
-      smooth=Smooth.None));
-  connect(feedback.u2, K2.n0)                  annotation (Line(
-      points={{65,-60.6},{65,-74},{100.9,-74},{100.9,-55}},
-      color={0,0,127},
-      smooth=Smooth.None));
-  connect(imLimited_max.n1, WIPCMD) annotation (Line(
-      points={{151.41,-59},{169.205,-59},{169.205,11},{185,11}},
+      points={{-105,-33},{-14,-33},{-14,-56},{-9,-56}},
       color={0,0,127},
       smooth=Smooth.None));
   connect(add2.u2, ShaftSpeed)
@@ -378,64 +330,24 @@ end if;
       points={{6.3,-27},{8,-27},{8,-28},{21,-28}},
       color={0,0,127},
       smooth=Smooth.None));
-  connect(add2.y, imMult2_1.p1) annotation (Line(
-      points={{32.5,-31},{44.41,-31},{44.41,-53.02}},
-      color={0,0,127},
-      smooth=Smooth.None));
-  connect(Qord.n1, feedback1.u1)       annotation (Line(
-      points={{36.9,43},{45.4,43}},
-      color={0,0,127},
-      smooth=Smooth.None));
   connect(Qelec, feedback1.u2) annotation (Line(
       points={{50,110},{51,110},{51,48.6}},
-      color={0,0,127},
-      smooth=Smooth.None));
-  connect(Vterm, Vcl.u2)       annotation (Line(
-      points={{-105,-95},{83,-95},{83,37.4}},
       color={0,0,127},
       smooth=Smooth.None));
   connect(WNDSP_1, WNDSP1) annotation (Line(
       points={{-54,-62},{-54,-117},{29,-117}},
       color={0,0,127},
       smooth=Smooth.None));
-  connect(WPCMND, K2.n0)                  annotation (Line(
-      points={{153,-95},{104,-95},{104,-55},{100.9,-55}},
-      color={0,0,127},
-      smooth=Smooth.None));
   connect(tan1.y, Qcmdn1.u1) annotation (Line(
       points={{-61.5,53},{-52,53},{-52,44},{-41,44}},
-      color={0,0,127},
-      smooth=Smooth.None));
-  connect(K9.n1, Qcmdn1.u2) annotation (Line(
-      points={{-56,32},{-52,32},{-52,38},{-41,38}},
       color={0,0,127},
       smooth=Smooth.None));
   connect(VAR3.y, tan1.u)   annotation (Line(
       points={{-91.4,52},{-73,52},{-73,53}},
       color={0,0,127},
       smooth=Smooth.None));
-  connect(K9.p1, Pelec) annotation (Line(
-      points={{-76.2,32},{-105,32},{-105,-61}},
-      color={0,0,127},
-      smooth=Smooth.None));
-  connect(K4.n1, add3.u2) annotation (Line(
-      points={{-117.7,83},{-116,83},{-116,84},{-111,84}},
-      color={0,0,127},
-      smooth=Smooth.None));
   connect(VARL.y, add3.u1)   annotation (Line(
       points={{-145,114},{-118,114},{-118,90},{-111,90}},
-      color={0,0,127},
-      smooth=Smooth.None));
-  connect(K8.p1, portion.y) annotation (Line(
-      points={{-76.96,82},{-83.5,82},{-83.5,87}},
-      color={0,0,127},
-      smooth=Smooth.None));
-  connect(K1.n1, add4.u1)                   annotation (Line(
-      points={{-54.5,100},{-56,100},{-56,91.2},{-54.4,91.2}},
-      color={0,0,127},
-      smooth=Smooth.None));
-  connect(K8.n1, add4.u2) annotation (Line(
-      points={{-60.8,82},{-56,82},{-56,88.8},{-54.4,88.8}},
       color={0,0,127},
       smooth=Smooth.None));
   connect(Iterm, XC.u) annotation (Line(
@@ -450,60 +362,86 @@ end if;
       points={{-105,-95},{-164,-95},{-164,86},{-155,86}},
       color={0,0,127},
       smooth=Smooth.None));
-  connect(add5.y,K4. p1) annotation (Line(
-      points={{-143.5,83},{-136.89,83}},
-      color={0,0,127},
-      smooth=Smooth.None));
   connect(add3.y, portion.u) annotation (Line(
       points={{-99.5,87},{-95,87}},
       color={0,0,127},
       smooth=Smooth.None));
-  connect(division.u1, K2.n0) annotation (Line(
-      points={{117,-56},{107.95,-56},{107.95,-55},{100.9,-55}},
+  connect(imLimited_min.u, Vterm) annotation (Line(
+      points={{80.6,-95},{-105,-95}},
       color={0,0,127},
       smooth=Smooth.None));
-  connect(division.y, imLimited_max.p1) annotation (Line(
-      points={{128.5,-59},{142.41,-59}},
+  connect(imLimited_min.y, division.u2) annotation (Line(
+      points={{96.7,-95},{114,-95},{114,-62},{117,-62}},
       color={0,0,127},
       smooth=Smooth.None));
-  connect(imLimited_min.p1, Vterm) annotation (Line(
-      points={{87.88,-95},{-3.06,-95},{-3.06,-95},{-105,-95}},
-      color={0,0,127},
-      smooth=Smooth.None));
-  connect(imLimited_min.n1, division.u2) annotation (Line(
-      points={{99.88,-95},{114,-95},{114,-62},{117,-62}},
-      color={0,0,127},
-      smooth=Smooth.None));
-  connect(add4.y, Qord1.p1) annotation (Line(
-      points={{-49.8,90},{-45.59,90}},
-      color={0,0,127},
-      smooth=Smooth.None));
-  connect(Qord1.n1, K.p1) annotation (Line(
-      points={{-36.59,90},{-30.96,90}},
-      color={0,0,127},
-      smooth=Smooth.None));
-  connect(feedback1.y, K6.p1) annotation (Line(
-      points={{57.3,43},{60.9,43}},
-      color={0,0,127},
-      smooth=Smooth.None));
-  connect(K6.n0, Vcl.u1) annotation (Line(
-      points={{70.9,43},{77.4,43}},
-      color={0,0,127},
-      smooth=Smooth.None));
-  connect(K10.n1, K1.p1) annotation (Line(
-      points={{-82.8,104},{-82,104},{-82,100},{-69.65,100}},
-      color={0,0,127},
-      smooth=Smooth.None));
-  connect(K10.p1, portion.y) annotation (Line(
-      points={{-98.96,104},{-106,104},{-106,94},{-78,94},{-78,87},{-83.5,87}},
-      color={0,0,127},
-      smooth=Smooth.None));
+  connect(WNDSP_1, K5.u)
+    annotation (Line(points={{-54,-62},{-33.6,-62}}, color={0,0,127}));
+  connect(K5.y, add.u2)
+    annotation (Line(points={{-15.2,-62},{-9,-62},{-9,-62}}, color={0,0,127}));
+  connect(feedback.y, imLimited.u)
+    annotation (Line(points={{71.3,-55},{75,-55}}, color={0,0,127}));
+  connect(imLimited.y, K2.u) annotation (Line(points={{86.5,-55},{88.25,-55},{91,
+          -55}},          color={0,0,127}));
+  connect(K2.y, division.u1) annotation (Line(points={{102.5,-55},{114,-55},{114,
+          -56},{117,-56}}, color={0,0,127}));
+  connect(feedback.u2, division.u1) annotation (Line(points={{65,-60.6},{65,-72},
+          {106,-72},{106,-56},{114,-56},{114,-56},{117,-56}}, color={0,0,127}));
+  connect(WPCMND, division.u1) annotation (Line(points={{153,-95},{124,-95},{124,
+          -72},{106,-72},{106,-56},{117,-56}}, color={0,0,127}));
+  connect(Vcl.u2, Vterm) annotation (Line(points={{83,37.4},{83,-32},{62,-32},{62,
+          -95},{-105,-95}}, color={0,0,127}));
+  connect(division.y, imLimited_max.u) annotation (Line(points={{128.5,-59},{133.25,
+          -59},{139,-59}}, color={0,0,127}));
+  connect(imLimited_max.y, WIPCMD) annotation (Line(points={{150.5,-59},{168,-59},
+          {168,11},{185,11}}, color={0,0,127}));
+  connect(K3.y, add1.u1) annotation (Line(points={{22.4,-50},{24,-50},{24,-54},{
+          27,-54}}, color={0,0,127}));
+  connect(K3.u, add.y) annotation (Line(points={{13.2,-50},{8,-50},{8,-59},{2.5,
+          -59}}, color={0,0,127}));
+  connect(imGain.y, add1.u2) annotation (Line(points={{22.4,-66},{24,-66},{24,-60},
+          {27,-60}}, color={0,0,127}));
+  connect(imGain.u, add.y) annotation (Line(points={{13.2,-66},{8,-66},{8,-59},{
+          2.5,-59}}, color={0,0,127}));
+  connect(Qcmdn2.y, feedback.u1) annotation (Line(points={{54.5,-55},{58.25,-55},
+          {58.25,-55},{59.4,-55}}, color={0,0,127}));
+  connect(add1.y, Qcmdn2.u2) annotation (Line(points={{38.5,-57},{40.25,-57},{40.25,
+          -58},{43,-58}}, color={0,0,127}));
+  connect(add2.y, Qcmdn2.u1) annotation (Line(points={{32.5,-31},{40,-31},{40,-52},
+          {43,-52}}, color={0,0,127}));
+  connect(add5.y, K4.u) annotation (Line(points={{-143.5,83},{-138.75,83},{-138.75,
+          83},{-133,83}}, color={0,0,127}));
+  connect(K4.y, add3.u2) annotation (Line(points={{-121.5,83},{-118,83},{-118,84},
+          {-111,84}}, color={0,0,127}));
+  connect(K9.y, Qcmdn1.u2) annotation (Line(points={{-59.4,32},{-52,32},{-52,38},
+          {-41,38}}, color={0,0,127}));
+  connect(K9.u, Pelec) annotation (Line(points={{-73.2,32},{-116,32},{-116,-61},
+          {-105,-61}}, color={0,0,127}));
+  connect(K8.u, portion.y) annotation (Line(points={{-72.8,82},{-83.5,82},{-83.5,
+          87}}, color={0,0,127}));
+  connect(K8.y, add4.u2) annotation (Line(points={{-63.6,82},{-56,82},{-56,88.8},
+          {-54.4,88.8}}, color={0,0,127}));
+  connect(K1.y, add4.u1) annotation (Line(points={{-57.6,100},{-56,100},{-56,91.2},
+          {-54.4,91.2}}, color={0,0,127}));
+  connect(K10.y, K1.u) annotation (Line(points={{-69.6,100},{-66.8,100},{-66.8,100}},
+        color={0,0,127}));
+  connect(K10.u, portion.y) annotation (Line(points={{-78.8,100},{-83.5,100},{-83.5,
+          87}}, color={0,0,127}));
+  connect(add4.y, Qord1.u)
+    annotation (Line(points={{-49.8,90},{-46.8,90}}, color={0,0,127}));
+  connect(Qord1.y, K.u) annotation (Line(points={{-37.6,90},{-34,90},{-30.8,90}},
+        color={0,0,127}));
+  connect(feedback1.y, K6.u) annotation (Line(points={{57.3,43},{58.65,43},{58.65,
+          43},{61,43}}, color={0,0,127}));
+  connect(K6.y, Vcl.u1) annotation (Line(points={{72.5,43},{74.25,43},{74.25,43},
+          {77.4,43}}, color={0,0,127}));
+  connect(Qord.y, feedback1.u1) annotation (Line(points={{40.7,43},{43.35,43},{43.35,
+          43},{45.4,43}}, color={0,0,127}));
                                                                      annotation (choices(choice=0
         "0 Bypass V control",                                                                                           choice=1
         "1 WT3G1 Eqcmd limits",                                                         choice=-1
         "-1 WT3G2 Eqcmd limits"),
-              Diagram(coordinateSystem(preserveAspectRatio=true, extent={{-200,
-            -140},{180,140}}), graphics={
+              Diagram(coordinateSystem(preserveAspectRatio=false,extent={{-200,-140},
+            {180,140}}),       graphics={
         Text(
           extent={{-30,-70},{-20,-74}},
           lineColor={255,0,0},

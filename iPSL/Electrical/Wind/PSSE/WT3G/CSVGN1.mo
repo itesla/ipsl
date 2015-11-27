@@ -78,17 +78,17 @@ public
     annotation (Placement(transformation(extent={{6,54},{16,64}})));
   Modelica.Blocks.Sources.Constant const1(k=CBASE/SBASE)
     annotation (Placement(transformation(extent={{34,54},{44,64}})));
-  iPSL.NonElectrical.Continuous.ImSimpleLag_nowinduplimit ImSimpleLagnonwinduplimit(
-    Ymin=VMIN,
-    Ymax=VMAX,
+  iPSL.NonElectrical.Continuous.SimpleLagLim ImSimpleLagnonwinduplimit(
+    outMin=VMIN,
+    outMax=VMAX,
     T=T3,
     K=K,
-    nStartValue=k30)
-    annotation (Placement(transformation(extent={{-58,-24},{0,22}})));
+    y_start=k30)
+    annotation (Placement(transformation(extent={{-42,-12},{-22,8}})));
   Modelica.Blocks.Sources.Constant const2(k=Vref)
     annotation (Placement(transformation(extent={{-112,14},{-98,28}})));
-  iPSL.NonElectrical.Continuous.ImLimited imLimited(Ymin=0, Ymax=1)
-    annotation (Placement(transformation(extent={{-10,-12},{10,10}})));
+  Modelica.Blocks.Nonlinear.Limiter imLimited(uMin=0, uMax=1)
+    annotation (Placement(transformation(extent={{-2,-12},{18,8}})));
 
   iPSL.Connectors.PwPin p(
     vr(start=vr0),
@@ -123,10 +123,6 @@ equation
       points={{44.4,12},{61,12}},
       color={0,0,127},
       smooth=Smooth.None));
-  connect(add1.y, ImSimpleLagnonwinduplimit.p1) annotation (Line(
-      points={{-61.3,-1},{-43.79,-1}},
-      color={0,0,127},
-      smooth=Smooth.None));
   connect(V, add1.u2) annotation (Line(
       points={{-105,-5},{-93.5,-5},{-93.5,-5.2},{-77.4,-5.2}},
       color={0,0,127},
@@ -135,19 +131,17 @@ equation
       points={{-97.3,21},{-82,21},{-82,3.2},{-77.4,3.2}},
       color={0,0,127},
       smooth=Smooth.None));
-  connect(ImSimpleLagnonwinduplimit.n0, imLimited.p1) annotation (Line(
-      points={{-14.79,-1},{-5.1,-1}},
-      color={0,0,127},
-      smooth=Smooth.None));
-  connect(imLimited.n1, product1.u2) annotation (Line(
-      points={{4.9,-1},{24,-1},{24,9.6},{35.2,9.6}},
-      color={0,0,127},
-      smooth=Smooth.None));
   connect(const.y, product1.u1) annotation (Line(
       points={{16.5,59},{24,59},{24,14.4},{35.2,14.4}},
       color={0,0,127},
       smooth=Smooth.None));
-  annotation (Diagram(coordinateSystem(preserveAspectRatio=true, extent={{-100,
+  connect(add1.y, ImSimpleLagnonwinduplimit.u) annotation (Line(points={{-61.3,
+          -1},{-52.65,-1},{-52.65,-2},{-44,-2}}, color={0,0,127}));
+  connect(ImSimpleLagnonwinduplimit.y, imLimited.u)
+    annotation (Line(points={{-21,-2},{-4,-2},{-4,-2}}, color={0,0,127}));
+  connect(imLimited.y, product1.u2) annotation (Line(points={{19,-2},{24,-2},{
+          24,9.6},{35.2,9.6}}, color={0,0,127}));
+  annotation (Diagram(coordinateSystem(preserveAspectRatio=false,extent={{-100,
             -100},{100,100}}), graphics={Text(
           extent={{-144,92},{-108,84}},
           lineColor={0,0,255},

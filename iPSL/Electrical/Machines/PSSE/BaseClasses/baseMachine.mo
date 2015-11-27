@@ -147,7 +147,7 @@ equation
 
   annotation (Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,
             -100},{100,100}})), Icon(graphics={                                                                                                    Rectangle(extent={{
-              -100,100},{100,-100}},                                                                                                  lineColor = {0, 0, 255}),
+              -100,100},{100,-100}},                                                                                                  lineColor=  {0, 0, 255}),
         Text(
           extent={{66,98},{96,82}},
           lineColor={0,0,255},

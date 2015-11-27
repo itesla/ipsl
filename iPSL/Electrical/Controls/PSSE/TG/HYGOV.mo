@@ -169,21 +169,21 @@ equation
           -6,-34},{78,-34},{78,6},{80.8,5.6}}, color={0,0,127}));
     annotation(Diagram(coordinateSystem(preserveAspectRatio=false,  extent={{-80,-60},
             {80,60}}),                                                                                   graphics={                                                                       Rectangle(extent={{
-              -190,32},{-12,-38}},                                                                                                    lineColor = {255, 128, 0}, pattern = LinePattern.Dash,
-            lineThickness =                                                                                                   1), Text(extent={{
-              -126,40},{-82,34}},                                                                                                    lineColor = {255, 128, 0}, textStyle = {TextStyle.Bold}, textString = "Governor System"), Rectangle(extent={{
-              -8,32},{134,-38}},                                                                                                 lineColor = {85, 170, 255}, pattern = LinePattern.Dash,
-            lineThickness =                                                                                                   1), Text(extent={{
-              38,42},{98,32}},                                                                                                    lineColor = {85, 170, 255}, textStyle = {TextStyle.Bold}, textString = "Hydrauli Turbine System")}),
+              -190,32},{-12,-38}},                                                                                                    lineColor=  {255, 128, 0}, pattern=  LinePattern.Dash,
+            lineThickness=                                                                                                    1), Text(extent={{
+              -126,40},{-82,34}},                                                                                                    lineColor=  {255, 128, 0}, textStyle=  {TextStyle.Bold}, textString=  "Governor System"), Rectangle(extent={{
+              -8,32},{134,-38}},                                                                                                 lineColor=  {85, 170, 255}, pattern=  LinePattern.Dash,
+            lineThickness=                                                                                                    1), Text(extent={{
+              38,42},{98,32}},                                                                                                    lineColor=  {85, 170, 255}, textStyle=  {TextStyle.Bold}, textString=  "Hydrauli Turbine System")}),
                                                                                                     Icon(coordinateSystem(extent={{-80,-60},
             {80,60}},                                                                                                    preserveAspectRatio=false),  graphics={  Text(extent={{
-              -48,12},{52,-14}},                                                                                                  lineColor = {0, 0, 255},
-            fillPattern =                                                                                                   FillPattern.Solid, textString = "HYGOV"), Text(extent={{
-              -70,-20},{-42,-40}},                                                                                                   lineColor = {0, 0, 255},
-            fillPattern =                                                                                                   FillPattern.Solid, textString = "PMECH0"), Rectangle(extent={{
-              -80,60},{80,-60}},                                                                                                    lineColor = {0, 0, 255}), Text(extent={{
-              -78,34},{-40,26}},                                                                                                  lineColor = {0, 0, 255}, textString = "SPEED"), Text(extent={{
-              52,6},{78,-8}},                                                                                                    lineColor = {0, 0, 255}, textString = "PMECH")}),
+              -48,12},{52,-14}},                                                                                                  lineColor=  {0, 0, 255},
+            fillPattern=                                                                                                    FillPattern.Solid, textString=  "HYGOV"), Text(extent={{
+              -70,-20},{-42,-40}},                                                                                                   lineColor=  {0, 0, 255},
+            fillPattern=                                                                                                    FillPattern.Solid, textString=  "PMECH0"), Rectangle(extent={{
+              -80,60},{80,-60}},                                                                                                    lineColor=  {0, 0, 255}), Text(extent={{
+              -78,34},{-40,26}},                                                                                                  lineColor=  {0, 0, 255}, textString=  "SPEED"), Text(extent={{
+              52,6},{78,-8}},                                                                                                    lineColor=  {0, 0, 255}, textString=  "PMECH")}),
     Documentation(info="<html>
 <p><br><span style=\"font-family: MS Shell Dlg 2;\">&LT;iPSL: iTesla Power System Library&GT;</span></p>
 <p><span style=\"font-family: MS Shell Dlg 2;\">Copyright 2015 RTE (France), AIA (Spain), KTH (Sweden) and DTU (Denmark)</span></p>

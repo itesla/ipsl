@@ -7,44 +7,51 @@ model PSS "Power system stabilizer"
   parameter Real C "PSS output limiation";
   parameter Real init_PSS_Leadlag1 = 0 "initial output value";
   parameter Real init_PSS_Leadlag2 = 0 "initial output value";
-  Modelica.Blocks.Interfaces.RealInput omega "Speed" annotation(Placement(transformation(extent = {{-100, 8}, {-88, 20}})));
-  iPSL.NonElectrical.Continuous.ImLeadLag Leadlag1(
+  Modelica.Blocks.Interfaces.RealInput omega "Speed" annotation(Placement(transformation(extent={{-106,12},
+            {-94,24}}), iconTransformation(extent={{-100,8},{-88,20}})));
+  iPSL.NonElectrical.Continuous.LeadLag Leadlag1(
     K=1,
     T1=T1,
     T2=T2,
-    nStartValue=init_PSS_Leadlag1)
-    annotation (Placement(transformation(extent={{-38,-2},{0,28}})));
-  iPSL.NonElectrical.Continuous.ImLeadLag Leadlag2(
+    y_start=init_PSS_Leadlag1)
+    annotation (Placement(transformation(extent={{-22,4},{-4,22}})));
+  iPSL.NonElectrical.Continuous.LeadLag Leadlag2(
     K=1,
     T1=T1,
     T2=T2,
-    nStartValue=init_PSS_Leadlag2)
-    annotation (Placement(transformation(extent={{-10,-2},{22,28}})));
+    y_start=init_PSS_Leadlag2)
+    annotation (Placement(transformation(extent={{4,4},{22,22}})));
   Modelica.Blocks.Interfaces.RealOutput Upss "PSS output" annotation(Placement(transformation(extent = {{56, 6}, {68, 18}}), iconTransformation(extent = {{56, 6}, {68, 18}})));
-  iPSL.NonElectrical.Continuous.ImLimited limit(Ymin=-C, Ymax=C)
-    annotation (Placement(transformation(extent={{12,-8},{54,34}})));
-  iPSL.NonElectrical.Math.ImGain imGain(K=Kp/Tw)
-    annotation (Placement(transformation(extent={{-90,4},{-70,24}})));
-  iPSL.NonElectrical.Continuous.ImSimpleLag imSimpleLag(
+  Modelica.Blocks.Nonlinear.Limiter limit(uMin=-C, uMax=C)
+    annotation (Placement(transformation(extent={{30,4},{48,22}})));
+  Modelica.Blocks.Math.Gain imGain(k=Kp/Tw)
+    annotation (Placement(transformation(extent={{-90,12},{-78,24}})));
+  iPSL.NonElectrical.Continuous.SimpleLag imSimpleLag(
     K=1,
     T=Tw,
-    nStartValue=0)
-    annotation (Placement(transformation(extent={{-80,-4},{-44,30}})));
-  iPSL.NonElectrical.Math.ImSum2 imSum2_1(
-    a0=0,
-    a1=-1,
-    a2=1) annotation (Placement(transformation(extent={{-48,2},{-28,22}})));
+    y_start=0)
+    annotation (Placement(transformation(extent={{-68,10},{-52,26}})));
+  Modelica.Blocks.Math.Add add(k1=-1)
+    annotation (Placement(transformation(extent={{-46,4},{-28,22}})));
 equation
-  connect(omega, imGain.p1) annotation(Line(points = {{-94, 14}, {-85.1, 14}}, color = {0, 0, 127}, smooth = Smooth.None));
-  connect(imGain.n1, imSimpleLag.p1) annotation(Line(points = {{-75.1, 14}, {-68, 14}, {-68, 13}, {-67.58, 13}}, color = {0, 0, 127}, smooth = Smooth.None));
-  connect(imSimpleLag.n1, imSum2_1.p1) annotation(Line(points={{-49.4,13},{-46,13},
-          {-46,14},{-43.1,14}},                                                                                    color = {0, 0, 127}, smooth = Smooth.None));
-  connect(Leadlag1.p1, imSum2_1.n1) annotation(Line(points = {{-28.69, 13}, {-30, 13}, {-30, 12}, {-33.1, 12}}, color = {0, 0, 127}, smooth = Smooth.None));
-  connect(imSum2_1.p2, imSimpleLag.p1) annotation(Line(points = {{-43.1, 10}, {-50, 10}, {-50, -2}, {-70, -2}, {-70, 13}, {-67.58, 13}}, color = {0, 0, 127}, smooth = Smooth.None));
-  connect(Leadlag1.n1, Leadlag2.p1) annotation(Line(points = {{-9.69, 13}, {-2.16, 13}}, color = {0, 0, 127}, smooth = Smooth.None));
-  connect(Leadlag2.n1, limit.p1) annotation(Line(points = {{13.84, 13}, {17.92, 13}, {17.92, 13}, {22.29, 13}}, color = {0, 0, 127}, smooth = Smooth.None));
-  connect(limit.n1, Upss) annotation(Line(points = {{43.29, 13}, {51.645, 13}, {51.645, 12}, {62, 12}}, color = {0, 0, 127}, smooth = Smooth.None));
-  annotation(Diagram(coordinateSystem(preserveAspectRatio = false, extent = {{-100, -100}, {100, 100}}), graphics), Icon(coordinateSystem(preserveAspectRatio = false, extent = {{-100, -100}, {100, 100}}), graphics={  Rectangle(extent=  {{-88, 44}, {56, -18}}, lineColor=  {0, 0, 255}), Text(extent=  {{-44, 28}, {22, -2}}, lineColor=  {0, 0, 255}, textString=  "PSS"), Text(extent=  {{-86, 24}, {-62, 4}}, lineColor=  {0, 0, 255}, textString=  "omega"), Text(extent=  {{34, 20}, {54, 0}}, lineColor=  {0, 0, 255}, textString=  "Upss")}),
+  connect(limit.y, Upss) annotation (Line(points={{48.9,13},{51.45,13},{51.45,12},
+          {62,12}}, color={0,0,127}));
+  connect(Leadlag2.y, limit.u)
+    annotation (Line(points={{22.9,13},{22.9,13},{28.2,13}}, color={0,0,127}));
+  connect(Leadlag1.y, Leadlag2.u)
+    annotation (Line(points={{-3.1,13},{-3.1,13},{2.2,13}}, color={0,0,127}));
+  connect(add.y, Leadlag1.u) annotation (Line(points={{-27.1,13},{-25.55,13},{-23.8,
+          13}}, color={0,0,127}));
+  connect(omega, imGain.u)
+    annotation (Line(points={{-100,18},{-96,18},{-91.2,18}},color={0,0,127}));
+  connect(imSimpleLag.y, add.u1) annotation (Line(points={{-51.2,18},{-47.8,18},
+          {-47.8,18.4}}, color={0,0,127}));
+  connect(imGain.y, imSimpleLag.u) annotation (Line(points={{-77.4,18},{-69.6,
+          18},{-69.6,18}}, color={0,0,127}));
+  connect(add.u2, imSimpleLag.u) annotation (Line(points={{-47.8,7.6},{-74,7.6},
+          {-74,18},{-69.6,18}}, color={0,0,127}));
+  annotation(Diagram(coordinateSystem(preserveAspectRatio=false,   extent={{-100,
+            -100},{100,100}})),                                                                                     Icon(coordinateSystem(preserveAspectRatio = false, extent = {{-100, -100}, {100, 100}}), graphics={  Rectangle(extent = {{-88, 44}, {56, -18}}, lineColor = {0, 0, 255}), Text(extent = {{-44, 28}, {22, -2}}, lineColor = {0, 0, 255}, textString = "PSS"), Text(extent = {{-86, 24}, {-62, 4}}, lineColor = {0, 0, 255}, textString = "omega"), Text(extent = {{34, 20}, {54, 0}}, lineColor = {0, 0, 255}, textString = "Upss")}),
     Documentation(info="<html>
 <p><br><span style=\"font-family: MS Shell Dlg 2;\">&LT;iPSL: iTesla Power System Library&GT;</span></p>
 <p><span style=\"font-family: MS Shell Dlg 2;\">Copyright 2015 RTE (France), AIA (Spain), KTH (Sweden) and DTU (Denmark)</span></p>

@@ -50,9 +50,9 @@ equation
   connect(imSetPoint1.y, add.u2) annotation (Line(points={{-55,-28},{-44,-28},{
           -44,10},{-36,10}}, color={0,0,127}));
   annotation(Diagram(coordinateSystem(preserveAspectRatio=false,  extent={{-100,
-            -100},{200,100}})),                                                                                     Icon(coordinateSystem(preserveAspectRatio = false, extent = {{-100, -100}, {200, 100}}), graphics={  Rectangle(extent = {{-78, 70}, {80, -32}}, lineColor = {0, 0, 255}, fillColor = {255, 255, 255},
-            fillPattern =                                                                                                   FillPattern.Solid), Text(extent = {{-60, 32}, {66, -58}}, lineColor = {0, 0, 255}, fillColor = {255, 255, 255},
-            fillPattern =                                                                                                   FillPattern.Solid, textString = "LTC
+            -100},{200,100}})),                                                                                     Icon(coordinateSystem(preserveAspectRatio = false, extent = {{-100, -100}, {200, 100}}), graphics={  Rectangle(extent=  {{-78, 70}, {80, -32}}, lineColor=  {0, 0, 255}, fillColor=  {255, 255, 255},
+            fillPattern=                                                                                                    FillPattern.Solid), Text(extent=  {{-60, 32}, {66, -58}}, lineColor=  {0, 0, 255}, fillColor=  {255, 255, 255},
+            fillPattern=                                                                                                    FillPattern.Solid, textString=  "LTC
 ")}),
     Documentation(info="<html>
 <table cellspacing=\"1\" cellpadding=\"1\" border=\"1\">

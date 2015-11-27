@@ -69,12 +69,12 @@ equation
             -100},{100,100}}), graphics), Icon(coordinateSystem(
           preserveAspectRatio=true, extent={{-100,-100},{100,100}}),
         graphics={                                                                                                    Text(extent={{
-              26,54},{114,2}},                                                                                                    lineColor = {0, 0, 255}, fillColor = {0, 0, 255},
-            fillPattern =                                                                                                   FillPattern.Solid, textString = "*", textStyle = {TextStyle.Bold}), Ellipse(extent={{
-              -74,44},{6,-40}},                                                                                                    lineColor = {0, 0, 255},
-            lineThickness =                                                                                                   0.5), Ellipse(extent={{
-              -10,44},{70,-40}},                                                                                                    lineColor = {0, 0, 255},
-            lineThickness =                                                                                                   0.5),
+              26,54},{114,2}},                                                                                                    lineColor=  {0, 0, 255}, fillColor=  {0, 0, 255},
+            fillPattern=                                                                                                    FillPattern.Solid, textString=  "*", textStyle=  {TextStyle.Bold}), Ellipse(extent={{
+              -74,44},{6,-40}},                                                                                                    lineColor=  {0, 0, 255},
+            lineThickness=                                                                                                    0.5), Ellipse(extent={{
+              -10,44},{70,-40}},                                                                                                    lineColor=  {0, 0, 255},
+            lineThickness=                                                                                                    0.5),
         Line(
           points={{-13,-12},{-5,-12},{-5,-6},{1,-6},{1,0},{9,0},{9,6},{15,6},{
               15,12}},
