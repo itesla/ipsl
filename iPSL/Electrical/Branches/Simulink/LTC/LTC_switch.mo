@@ -11,8 +11,8 @@ equation
   else
     r = Normalin;
   end if;
-  annotation(Diagram(coordinateSystem(preserveAspectRatio = false, extent = {{-100, -100}, {100, 100}}), graphics), Icon(coordinateSystem(preserveAspectRatio = false, extent = {{-100, -100}, {100, 100}}), graphics={  Rectangle(extent=  {{-46, 94}, {56, -94}}, lineColor=  {0, 0, 255}, fillColor=  {255, 255, 255},
-            fillPattern=                                                                                                    FillPattern.Solid), Line(points=  {{-46, 0}, {-32, 0}, {-32, 18}}, color=  {0, 0, 255}, smooth=  Smooth.None, thickness=  1), Line(points=  {{-32, 0}, {-32, -18}}, color=  {0, 0, 255}, smooth=  Smooth.None, thickness=  1)}),
+  annotation(Diagram(coordinateSystem(preserveAspectRatio = false, extent = {{-100, -100}, {100, 100}}), graphics), Icon(coordinateSystem(preserveAspectRatio = false, extent = {{-100, -100}, {100, 100}}), graphics={  Rectangle(extent = {{-46, 94}, {56, -94}}, lineColor = {0, 0, 255}, fillColor = {255, 255, 255},
+            fillPattern =                                                                                                   FillPattern.Solid), Line(points = {{-46, 0}, {-32, 0}, {-32, 18}}, color = {0, 0, 255}, smooth = Smooth.None, thickness = 1), Line(points = {{-32, 0}, {-32, -18}}, color = {0, 0, 255}, smooth = Smooth.None, thickness = 1)}),
     Documentation(info="<html>
 <table cellspacing=\"1\" cellpadding=\"1\" border=\"1\">
 <tr>

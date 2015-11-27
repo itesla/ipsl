@@ -106,12 +106,10 @@ model IEESGO
         rotation=180,
         origin={-73,-24})));
   Modelica.Blocks.Sources.Constant const(k = 0) annotation(Placement(transformation(extent = {{-2, -2}, {2, 2}}, rotation = 180, origin={-38,-8})));
-  iPSL.NonElectrical.Math.ImSum2 imSum2_1(
-    a0=0,
-    a1=1,
-    a2=1) annotation (Placement(transformation(extent={{-38,36},{-54,54}})));
   Modelica.Blocks.Sources.Step step(height = -0.002, startTime = 10) annotation(Placement(transformation(extent={{-22,40},
             {-36,54}})));
+  Modelica.Blocks.Math.Add add
+    annotation (Placement(transformation(extent={{-78,60},{-58,80}})));
 equation
   connect(generator.p, pwLine.p) annotation(Line(points={{-48.7,11},{-20.6,
           11},{-20.6,10},{-15,10}},                                                                                 color = {0, 0, 255}, smooth = Smooth.None));
@@ -134,8 +132,6 @@ equation
           -43.67,-24},{-43.67,-8},{-40.2,-8}},                                                                            color = {0, 0, 127}, smooth = Smooth.None));
   connect(iEEET2_1.VOTHSG, const.y) annotation(Line(points={{-56.5667,-36.8},{
           -43.67,-36.8},{-43.67,-8},{-40.2,-8}},                                                                              color = {0, 0, 127}, smooth = Smooth.None));
-  connect(step.y, imSum2_1.p1) annotation(Line(points={{-36.7,47},{-41.92,
-          47},{-41.92,46.8}},                                                                        color = {0, 0, 127}, smooth = Smooth.None));
   connect(iEEET2_1.EFD, generator.EFD) annotation (Line(
       points={{-91.275,-24},{-86,-24},{-86,5.5},{-75.74,5.5}},
       color={0,0,127},
@@ -148,20 +144,18 @@ equation
       points={{-89.1875,37.1429},{-88,37.1429},{-88,16.5},{-75.74,16.5}},
       color={0,0,127},
       smooth=Smooth.None));
-  connect(generator.PMECH0, imSum2_1.p2) annotation (Line(
-      points={{-48.96,7.7},{-40,7.7},{-40,43.2},{-41.92,43.2}},
-      color={0,0,127},
-      smooth=Smooth.None));
-  connect(imSum2_1.n1, iEEESGO.PMECH0) annotation (Line(
-      points={{-49.92,45},{-52,45},{-52,41.7143},{-50.95,41.7143}},
-      color={0,0,127},
-      smooth=Smooth.None));
   connect(generator.EFD0, iEEET2_1.EFD0) annotation (Line(
       points={{-48.96,3.3},{-32,3.3},{-32,1.6},{-56.5667,1.6}},
       color={0,0,127},
       smooth=Smooth.None));
   connect(generator.ETERM, iEEET2_1.ECOMP) annotation (Line(points={{-48.96,
           16.5},{-28,16.5},{-28,-49.6},{-56.5667,-49.6}}, color={0,0,127}));
+  connect(add.u1, step.y) annotation (Line(points={{-80,76},{-86,76},{-86,74},{
+          -94,74},{-94,47},{-36.7,47}}, color={0,0,127}));
+  connect(add.u2, generator.PMECH0) annotation (Line(points={{-80,64},{-92,64},
+          {-92,66},{-112,66},{-112,7.7},{-48.96,7.7}}, color={0,0,127}));
+  connect(iEEESGO.PMECH0, add.y) annotation (Line(points={{-50.95,41.7143},{-48,
+          41.7143},{-48,70},{-57,70}}, color={0,0,127}));
   annotation(Diagram(coordinateSystem(preserveAspectRatio=false,  extent={{-100,
             -100},{100,100}})), Documentation(info="<html>
 <p><br><span style=\"font-family: MS Shell Dlg 2;\">&LT;iPSL: iTesla Power System Library&GT;</span></p>

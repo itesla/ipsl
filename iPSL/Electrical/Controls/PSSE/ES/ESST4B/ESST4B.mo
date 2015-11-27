@@ -20,20 +20,14 @@ source-controlled rectifier exciter "
    parameter Real THETAP=0;
 
 public
-  NonElectrical.Continuous.ImSimpleLag                        Vm(
-      nStartValue=V0,
+  NonElectrical.Continuous.SimpleLag                        Vm(
+      y_start=V0,
     K=1,
     T=T_R)
     annotation (Placement(transformation(
-        extent={{-22,-19},{22,19}},
+        extent={{-9,-9},{9,9}},
         rotation=0,
-        origin={-72,59})));
-  iPSL.NonElectrical.Math.ImSum4 imSum4_1(
-    a0=0,
-    a1=1,
-    a2=-1,
-    a3=1,
-    a4=1) annotation (Placement(transformation(extent={{-56,36},{-20,76}})));
+        origin={-81,15})));
   Modelica.Blocks.Interfaces.RealInput ECOMP
     annotation (Placement(transformation(extent={{-138,-4},{-100,34}}),
         iconTransformation(extent={{-138,-54},{-100,-16}})));
@@ -41,7 +35,7 @@ public
         transformation(extent={{-138,44},{-100,82}}),iconTransformation(extent={{-138,-6},
             {-100,32}})));
   Modelica.Blocks.Sources.Constant V_REF(k=VREF)
-    annotation (Placement(transformation(extent={{-80,32},{-68,44}})));
+    annotation (Placement(transformation(extent={{-100,-12},{-88,0}})));
   NonElectrical.Logical.LV_GATE
           lV_Gate
     annotation (Placement(transformation(extent={{264,46},{286,68}})));
@@ -78,20 +72,20 @@ public
         rotation=0,
         origin={-123,-27}), iconTransformation(extent={{-17,-17},{17,17}},
           origin={-121,-75})));
-  NonElectrical.Continuous.ImSimpleLag                        VA(
+  NonElectrical.Continuous.SimpleLag                        VA(
     K=1,
     T=T_A,
-    nStartValue=Efd0*K_G)
-                        annotation (Placement(transformation(
-        extent={{-28,-22},{28,22}},
+    y_start=Efd0*K_G)   annotation (Placement(transformation(
+        extent={{-10,-10},{10,10}},
         rotation=0,
-        origin={100,54})));
-  iPSL.NonElectrical.Continuous.ImIntegratornonwindup VR1(
-    Ymax=V_RMAX/K_PR,
-    Ymin=V_RMIN/K_PR,
-    K=K_IR,
-    nStartValue=Efd0*K_G)
-    annotation (Placement(transformation(extent={{-26,12},{20,56}})));
+        origin={104,54})));
+  Modelica.Blocks.Continuous.LimIntegrator VR1(
+    outMax=V_RMAX/K_PR,
+    outMin=V_RMIN/K_PR,
+    k=K_IR,
+    y_start=Efd0*K_G,
+    initType=Modelica.Blocks.Types.Init.InitialOutput)
+    annotation (Placement(transformation(extent={{-12,28},{6,46}})));
   Modelica.Blocks.Math.Gain Gain1(k=K_PR)
     annotation (Placement(transformation(extent={{-12,62},{8,82}})));
   Modelica.Blocks.Nonlinear.Limiter limiter(uMax=V_RMAX, uMin=V_RMIN)
@@ -105,11 +99,13 @@ public
         extent={{-9,-9},{9,9}},
         rotation=180,
         origin={195,109})));
-  iPSL.NonElectrical.Continuous.ImIntegratornonwindup VM1(
-    nStartValue=Efd0/VB0,
-    Ymax=V_MMAX/K_PM,
-    Ymin=V_MMIN/K_PM,
-    K=K_IR) annotation (Placement(transformation(extent={{148,8},{194,52}})));
+  Modelica.Blocks.Continuous.LimIntegrator VM1(
+    y_start=Efd0/VB0,
+    outMax=V_MMAX/K_PM,
+    outMin=V_MMIN/K_PM,
+    k=K_IR,
+    initType=Modelica.Blocks.Types.Init.InitialOutput)
+            annotation (Placement(transformation(extent={{162,22},{180,40}})));
   Modelica.Blocks.Math.Gain Gain2(k=K_PM)
     annotation (Placement(transformation(extent={{164,62},{184,82}})));
   Modelica.Blocks.Nonlinear.Limiter limiter1(uMax=V_RMAX, uMin=V_RMIN)
@@ -165,6 +161,11 @@ parameter Real VB0(fixed=false);
     FEX := 0;
   end if;
   end FEX_INI;
+public
+  Modelica.Blocks.Math.Add3 add3_1
+    annotation (Placement(transformation(extent={{-46,46},{-26,66}})));
+  Modelica.Blocks.Math.Add add3(k1=-1)
+    annotation (Placement(transformation(extent={{-58,8},{-44,22}})));
 initial equation
   KCIFD0=K_C*XADIFD;
   Efd0=EFD0;
@@ -178,22 +179,6 @@ initial equation
   VB0=VE0*FEX_INI(IN0);
 
 equation
-  connect(ECOMP,Vm.p1) annotation (Line(
-      points={{-119,15},{-94,15},{-94,59},{-78.82,59}},
-      color={0,0,127},
-      smooth=Smooth.None));
-  connect(VOTHSG, imSum4_1.p1) annotation (Line(
-      points={{-119,63},{-94,63},{-94,62.4},{-47.18,62.4}},
-      color={0,0,127},
-      smooth=Smooth.None));
-  connect(Vm.n1, imSum4_1.p2) annotation (Line(
-      points={{-56.6,59},{-55.61,59},{-55.61,57.6},{-47.18,57.6}},
-      color={0,0,127},
-      smooth=Smooth.None));
-  connect(V_REF.y, imSum4_1.p3) annotation (Line(
-      points={{-67.4,38},{-58,38},{-58,53.2},{-47.18,53.2}},
-      color={0,0,127},
-      smooth=Smooth.None));
 
   connect(product.y, EFD) annotation (Line(
       points={{306.7,53},{336,53},{336,52},{350,52}},
@@ -208,44 +193,16 @@ equation
       points={{-119,-91},{-92.5,-91},{-92.5,-90.98},{47.68,-90.98}},
       color={0,0,127},
       smooth=Smooth.None));
-  connect(VUEL, imSum4_1.p4) annotation (Line(
-      points={{-123,-27},{-90,-27},{-90,48.8},{-47.18,48.8}},
-      color={0,0,127},
-      smooth=Smooth.None));
   connect(Gain1.y, add.u1) annotation (Line(
       points={{9,72},{26,72},{26,57.6},{32.8,57.6}},
-      color={0,0,127},
-      smooth=Smooth.None));
-  connect(VR1.n0, add.u2) annotation (Line(
-      points={{8.27,34},{24,34},{24,50.4},{32.8,50.4}},
-      color={0,0,127},
-      smooth=Smooth.None));
-  connect(Gain1.u, imSum4_1.n1) annotation (Line(
-      points={{-14,72},{-30,72},{-30,56},{-29.18,56}},
-      color={0,0,127},
-      smooth=Smooth.None));
-  connect(VR1.p1, imSum4_1.n1) annotation (Line(
-      points={{-14.73,34},{-30,34},{-30,56},{-29.18,56}},
       color={0,0,127},
       smooth=Smooth.None));
   connect(add.y, limiter.u) annotation (Line(
       points={{46.6,54},{52,54}},
       color={0,0,127},
       smooth=Smooth.None));
-  connect(limiter.y, VA.p1) annotation (Line(
-      points={{75,54},{91.32,54}},
-      color={0,0,127},
-      smooth=Smooth.None));
-  connect(VA.n1, add1.u2) annotation (Line(
-      points={{119.6,54},{127,54}},
-      color={0,0,127},
-      smooth=Smooth.None));
   connect(Gain2.y, add2.u1) annotation (Line(
       points={{185,72},{198,72},{198,65.6},{208.8,65.6}},
-      color={0,0,127},
-      smooth=Smooth.None));
-  connect(VM1.n0, add2.u2) annotation (Line(
-      points={{182.27,30},{198,30},{198,58.4},{208.8,58.4}},
       color={0,0,127},
       smooth=Smooth.None));
   connect(add2.y, limiter1.u) annotation (Line(
@@ -254,10 +211,6 @@ equation
       smooth=Smooth.None));
   connect(Gain2.u, add1.y) annotation (Line(
       points={{162,72},{142,72},{142,57},{138.5,57}},
-      color={0,0,127},
-      smooth=Smooth.None));
-  connect(VM1.p1, add1.y) annotation (Line(
-      points={{159.27,30},{142,30},{142,57},{138.5,57}},
       color={0,0,127},
       smooth=Smooth.None));
   connect(add1.u1, gain.y) annotation (Line(
@@ -325,6 +278,32 @@ equation
       points={{281.49,56.45},{285.745,56.45},{285.745,57.2},{290.6,57.2}},
       color={0,0,127},
       smooth=Smooth.None));
+  connect(VA.y, add1.u2)
+    annotation (Line(points={{115,54},{127,54},{127,54}}, color={0,0,127}));
+  connect(VA.u, limiter.y)
+    annotation (Line(points={{92,54},{75,54},{75,54}}, color={0,0,127}));
+  connect(VR1.y, add.u2) annotation (Line(points={{6.9,37},{26,37},{26,50.4},{32.8,
+          50.4}}, color={0,0,127}));
+  connect(VM1.u, add1.y) annotation (Line(points={{160.2,31},{142,31},{142,57},
+          {138.5,57}}, color={0,0,127}));
+  connect(VM1.y, add2.u2) annotation (Line(points={{180.9,31},{200,31},{200,
+          58.4},{208.8,58.4}}, color={0,0,127}));
+  connect(add3_1.y, Gain1.u) annotation (Line(points={{-25,56},{-22,56},{-22,72},
+          {-14,72}}, color={0,0,127}));
+  connect(VR1.u, Gain1.u) annotation (Line(points={{-13.8,37},{-22,37},{-22,72},
+          {-14,72}}, color={0,0,127}));
+  connect(Vm.u, ECOMP) annotation (Line(points={{-91.8,15},{-97.9,15},{-97.9,15},
+          {-119,15}}, color={0,0,127}));
+  connect(V_REF.y, add3.u2) annotation (Line(points={{-87.4,-6},{-78,-6},{-78,
+          -8},{-62,-8},{-62,10.8},{-59.4,10.8}}, color={0,0,127}));
+  connect(Vm.y, add3.u1) annotation (Line(points={{-71.1,15},{-62,15},{-62,19.2},
+          {-59.4,19.2}}, color={0,0,127}));
+  connect(add3.y, add3_1.u3) annotation (Line(points={{-43.3,15},{-32,15},{-32,
+          38},{-58,38},{-58,48},{-48,48}}, color={0,0,127}));
+  connect(VOTHSG, add3_1.u1) annotation (Line(points={{-119,63},{-84.5,63},{
+          -84.5,64},{-48,64}}, color={0,0,127}));
+  connect(VUEL, add3_1.u2) annotation (Line(points={{-123,-27},{-64,-27},{-64,
+          56},{-48,56}}, color={0,0,127}));
   annotation (Diagram(coordinateSystem(preserveAspectRatio=false,extent={{-100,
             -160},{340,160}}), graphics={
         Text(

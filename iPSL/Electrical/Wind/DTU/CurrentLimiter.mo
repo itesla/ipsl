@@ -41,11 +41,11 @@ model CurrentLimiter
     "Prioritisation of q control during LVRT (0: active power priority - 1: reactive power priority)"
                                                                                                         annotation(Placement(transformation(extent = {{4, 0}, {14, 10}})));
   Modelica.Blocks.Logical.GreaterThreshold greaterThreshold1(threshold = 0.5) annotation(Placement(transformation(extent = {{40, -2}, {48, 6}})));
-  iPSL.NonElectrical.Continuous.ImSimpleLag imSimpleLag(
+  iPSL.NonElectrical.Continuous.SimpleLag imSimpleLag(
     K=1,
     T=T_Ufilt,
-    nStartValue=ini_Uwttfilt)
-    annotation (Placement(transformation(extent={{-84,-16},{-54,16}})));
+    y_start=ini_Uwttfilt)
+    annotation (Placement(transformation(extent={{-66,-6},{-54,6}})));
   Modelica.Blocks.Tables.CombiTable1D iQ_VDL(table = [0.1, 0; 0.15, 1; 0.9, 1; 0.925, 0.33; 1.075, 0.33; 1.1, 1])
     "Lookup table for voltage dependency of reactive current limits"                                                                                                     annotation(Placement(transformation(extent = {{-22, 24}, {-10, 36}})));
   Modelica.Blocks.Math.Min min3 annotation(Placement(transformation(extent = {{-62, 32}, {-52, 42}})));
@@ -81,7 +81,6 @@ equation
   connect(min2.y, switch3.u1) annotation(Line(points = {{34.5, -37}, {40, -37}, {40, -27.2}, {58.8, -27.2}}, color = {0, 0, 127}, smooth = Smooth.None));
   connect(switch3.y, iPmax) annotation(Line(points = {{72.6, -32}, {85, -32}}, color = {0, 0, 127}, smooth = Smooth.None));
   connect(switch3.u3, min2.u1) annotation(Line(points = {{58.8, -36.8}, {44, -36.8}, {44, -12}, {2, -12}, {2, -34}, {23, -34}}, color = {0, 0, 127}, smooth = Smooth.None));
-  connect(Uwtt, imSimpleLag.p1) annotation(Line(points = {{-85, 0}, {-73.65, 0}}, color = {0, 0, 127}, smooth = Smooth.None));
   connect(iQ_VDL.y[1], min1.u2) annotation(Line(points = {{-9.4, 30}, {18, 30}, {18, 50}, {21, 50}}, color = {0, 0, 127}, smooth = Smooth.None));
   connect(switch2.u1, min1.u2) annotation(Line(points = {{52.8, 62.8}, {38, 62.8}, {38, 30}, {18, 30}, {18, 50}, {21, 50}}, color = {0, 0, 127}, smooth = Smooth.None));
   connect(min3.u2, min2.u1) annotation(Line(points = {{-63, 34}, {-66, 34}, {-66, 12}, {-12, 12}, {-12, -8}, {-2, -8}, {-2, -34}, {23, -34}}, color = {0, 0, 127}, smooth = Smooth.None));
@@ -95,17 +94,19 @@ equation
           -2,88},{-2,90},{-110,90},{-110,62},{-80.8,62}}, color={0,0,127}));
   connect(iQcmdlmt, abs1.u) annotation (Line(points={{-85,-40},{-64.6,-40},{
           -64.6,-41}}, color={0,0,127}));
-  connect(imSimpleLag.n1, iQ_VDL.u[1]) annotation (Line(points={{-58.5,0},{-44,
-          0},{-30,0},{-30,30},{-23.2,30}}, color={0,0,127}));
-  connect(iP_VDL.u[1], imSimpleLag.n1) annotation (Line(points={{-27.2,-12},{
-          -30,-12},{-30,0},{-30,2},{-30,0},{-58.5,0}}, color={0,0,127}));
   connect(iPcmdlmt, min3.u1)
     annotation (Line(points={{-85,40},{-63,40},{-63,40}}, color={0,0,127}));
+  connect(Uwtt, imSimpleLag.u)
+    annotation (Line(points={{-85,0},{-67.2,0},{-67.2,0}}, color={0,0,127}));
+  connect(imSimpleLag.y, iP_VDL.u[1]) annotation (Line(points={{-53.4,0},{-36,0},
+          {-36,-12},{-27.2,-12}}, color={0,0,127}));
+  connect(iQ_VDL.u[1], imSimpleLag.y) annotation (Line(points={{-23.2,30},{-38,
+          30},{-38,0},{-53.4,0}}, color={0,0,127}));
   annotation(Diagram(coordinateSystem(preserveAspectRatio=false,   extent={{-100,
-            -70},{100,100}})),                                                                                     Icon(coordinateSystem(preserveAspectRatio = false, extent = {{-100, -70}, {100, 100}}), graphics={  Rectangle(extent=  {{-79, 60}, {81, -60}}, lineColor=  {0, 0, 255}), Ellipse(extent=  {{-22, 20}, {22, -22}}, lineColor=  {0, 0, 255},
-            lineThickness=                                                                                                    0.5), Polygon(points=  {{0, 20}, {-2, 14}, {2, 14}, {0, 20}}, lineColor=  {0, 0, 255},
-            lineThickness=                                                                                                    0.5, smooth=  Smooth.None,
-            fillPattern=                                                                                                    FillPattern.Solid, fillColor=  {0, 0, 255}), Line(points=  {{-10, -20}, {-22, -38}}, color=  {0, 0, 255}, thickness=  0.5, smooth=  Smooth.None), Line(points=  {{24, 34}, {12, 16}}, color=  {0, 0, 255}, thickness=  0.5, smooth=  Smooth.None), Line(points=  {{24, 34}, {36, 34}}, color=  {0, 0, 255}, smooth=  Smooth.None, thickness=  0.5), Line(points=  {{-34, -38}, {-22, -38}}, color=  {0, 0, 255}, smooth=  Smooth.None, thickness=  0.5), Line(points=  {{0, 16}, {0, -22}}, color=  {0, 0, 255}, thickness=  0.5, smooth=  Smooth.None), Text(extent=  {{-74, 45}, {-56, 35}}, lineColor=  {0, 0, 255}, textString=  "i_Pcmd"), Text(extent=  {{-73, 5}, {-59, -4}}, lineColor=  {0, 0, 255}, textString=  "U_wtt"), Text(extent=  {{-8, 55}, {10, 45}}, lineColor=  {0, 0, 255}, textString=  "F_LVRT"), Text(extent=  {{58, 35}, {76, 25}}, lineColor=  {0, 0, 255}, textString=  "i_Qmax"), Text(extent=  {{60, -27}, {78, -37}}, lineColor=  {0, 0, 255}, textString=  "i_Pmax"), Text(extent=  {{-72, -34}, {-54, -44}}, lineColor=  {0, 0, 255}, textString=  "i_Qcmd"), Text(extent=  {{-26, -43}, {26, -54}}, lineColor=  {0, 0, 255}, textString=  "Current Limitation Model")}),
+            -70},{100,100}})),                                                                                     Icon(coordinateSystem(preserveAspectRatio = false, extent = {{-100, -70}, {100, 100}}), graphics={  Rectangle(extent = {{-79, 60}, {81, -60}}, lineColor = {0, 0, 255}), Ellipse(extent = {{-22, 20}, {22, -22}}, lineColor = {0, 0, 255},
+            lineThickness =                                                                                                   0.5), Polygon(points = {{0, 20}, {-2, 14}, {2, 14}, {0, 20}}, lineColor = {0, 0, 255},
+            lineThickness =                                                                                                   0.5, smooth = Smooth.None,
+            fillPattern =                                                                                                   FillPattern.Solid, fillColor = {0, 0, 255}), Line(points = {{-10, -20}, {-22, -38}}, color = {0, 0, 255}, thickness = 0.5, smooth = Smooth.None), Line(points = {{24, 34}, {12, 16}}, color = {0, 0, 255}, thickness = 0.5, smooth = Smooth.None), Line(points = {{24, 34}, {36, 34}}, color = {0, 0, 255}, smooth = Smooth.None, thickness = 0.5), Line(points = {{-34, -38}, {-22, -38}}, color = {0, 0, 255}, smooth = Smooth.None, thickness = 0.5), Line(points = {{0, 16}, {0, -22}}, color = {0, 0, 255}, thickness = 0.5, smooth = Smooth.None), Text(extent = {{-74, 45}, {-56, 35}}, lineColor = {0, 0, 255}, textString = "i_Pcmd"), Text(extent = {{-73, 5}, {-59, -4}}, lineColor = {0, 0, 255}, textString = "U_wtt"), Text(extent = {{-8, 55}, {10, 45}}, lineColor = {0, 0, 255}, textString = "F_LVRT"), Text(extent = {{58, 35}, {76, 25}}, lineColor = {0, 0, 255}, textString = "i_Qmax"), Text(extent = {{60, -27}, {78, -37}}, lineColor = {0, 0, 255}, textString = "i_Pmax"), Text(extent = {{-72, -34}, {-54, -44}}, lineColor = {0, 0, 255}, textString = "i_Qcmd"), Text(extent = {{-26, -43}, {26, -54}}, lineColor = {0, 0, 255}, textString = "Current Limitation Model")}),
     Documentation(info="<html>
 <p><br><span style=\"font-family: MS Shell Dlg 2;\">&LT;iPSL: iTesla Power System Library&GT;</span></p>
 <p><span style=\"font-family: MS Shell Dlg 2;\">Copyright 2015 RTE (France), AIA (Spain), KTH (Sweden) and DTU (Denmark)</span></p>
