@@ -66,13 +66,13 @@ equation
   connect(limIntegrator.y, v_OXL) annotation (Line(points={{89,10},{92,10},{92,
           38},{108,38}}, color={0,0,127}));
   annotation(Diagram(coordinateSystem(preserveAspectRatio=false,   extent={{-100,
-            -100},{100,100}})),                                                                                     Icon(coordinateSystem(preserveAspectRatio = false, extent = {{-100, -100}, {100, 100}}), graphics={  Rectangle(extent=  {{-60, 92}, {68, -48}}, lineColor=  {0, 0, 255}), Text(extent=  {{-68, 100}, {-30, 64}}, lineColor=  {0, 0, 255},
-            fillPattern=                                                                                                    FillPattern.Solid, textString=  "v"), Text(extent=  {{-64, 64}, {-30, 30}}, lineColor=  {0, 0, 255},
-            fillPattern=                                                                                                    FillPattern.Solid, textString=  "p"), Text(extent=  {{-62, 24}, {-34, -10}}, lineColor=  {0, 0, 255},
-            fillPattern=                                                                                                    FillPattern.Solid, textString=  "q"), Text(extent=  {{-52, -16}, {-16, -48}}, lineColor=  {0, 0, 255},
-            fillPattern=                                                                                                    FillPattern.Solid, textString=  "vref0"), Text(extent=  {{26, 46}, {60, 12}}, lineColor=  {0, 0, 255},
-            fillPattern=                                                                                                    FillPattern.Solid, textString=  "vref"), Text(extent=  {{-18, 102}, {44, 24}}, lineColor=  {0, 0, 255},
-            fillPattern=                                                                                                    FillPattern.Solid, textString=  "OXL")}),
+            -100},{100,100}})),                                                                                     Icon(coordinateSystem(preserveAspectRatio = false, extent = {{-100, -100}, {100, 100}}), graphics={  Rectangle(extent = {{-60, 92}, {68, -48}}, lineColor = {0, 0, 255}), Text(extent = {{-68, 100}, {-30, 64}}, lineColor = {0, 0, 255},
+            fillPattern =                                                                                                   FillPattern.Solid, textString = "v"), Text(extent = {{-64, 64}, {-30, 30}}, lineColor = {0, 0, 255},
+            fillPattern =                                                                                                   FillPattern.Solid, textString = "p"), Text(extent = {{-62, 24}, {-34, -10}}, lineColor = {0, 0, 255},
+            fillPattern =                                                                                                   FillPattern.Solid, textString = "q"), Text(extent = {{-52, -16}, {-16, -48}}, lineColor = {0, 0, 255},
+            fillPattern =                                                                                                   FillPattern.Solid, textString = "vref0"), Text(extent = {{26, 46}, {60, 12}}, lineColor = {0, 0, 255},
+            fillPattern =                                                                                                   FillPattern.Solid, textString = "vref"), Text(extent = {{-18, 102}, {44, 24}}, lineColor = {0, 0, 255},
+            fillPattern =                                                                                                   FillPattern.Solid, textString = "OXL")}),
     Documentation(info="<html>
 <table cellspacing=\"1\" cellpadding=\"1\" border=\"1\">
 <tr>

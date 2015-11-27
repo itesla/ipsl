@@ -49,10 +49,10 @@ equation
   connect(min.u2, switch.V_input) annotation (Line(points={{67,8},{62,8},{62,-38},
           {25.5,-38},{25.5,8.94},{33.54,8.94}}, color={0,0,127}));
   annotation(Diagram(coordinateSystem(preserveAspectRatio=false,  extent={{-100,
-            -100},{100,100}})),                                                                                     Icon(coordinateSystem(preserveAspectRatio = false, extent = {{-100, -100}, {100, 100}}), graphics={  Rectangle(extent = {{-74, 26}, {74, -62}}, lineColor = {0, 0, 127}), Text(extent = {{-84, 6}, {-36, -14}}, lineColor = {0, 0, 255},
-            fillPattern =                                                                                                   FillPattern.Solid, textString = "ifd"), Text(extent = {{-86, -38}, {-40, -54}}, lineColor = {0, 0, 255},
-            fillPattern =                                                                                                   FillPattern.Solid, textString = "V"), Text(extent = {{-52, 6}, {58, -42}}, lineColor = {0, 0, 255},
-            fillPattern =                                                                                                   FillPattern.Solid, textString = "OEL")}),
+            -100},{100,100}})),                                                                                     Icon(coordinateSystem(preserveAspectRatio = false, extent = {{-100, -100}, {100, 100}}), graphics={  Rectangle(extent=  {{-74, 26}, {74, -62}}, lineColor=  {0, 0, 127}), Text(extent=  {{-84, 6}, {-36, -14}}, lineColor=  {0, 0, 255},
+            fillPattern=                                                                                                    FillPattern.Solid, textString=  "ifd"), Text(extent=  {{-86, -38}, {-40, -54}}, lineColor=  {0, 0, 255},
+            fillPattern=                                                                                                    FillPattern.Solid, textString=  "V"), Text(extent=  {{-52, 6}, {58, -42}}, lineColor=  {0, 0, 255},
+            fillPattern=                                                                                                    FillPattern.Solid, textString=  "OEL")}),
     Documentation(info="<html>
 <table cellspacing=\"1\" cellpadding=\"1\" border=\"1\">
 <tr>

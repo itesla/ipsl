@@ -60,7 +60,6 @@ model AVRTypeII_OEL_Test
     M=10,
     D=0)                                                                                                     annotation(Placement(transformation(extent = {{-68, -12}, {12, 66}})));
    iPSL.Electrical.Controls.PSAT.OEL.OEL oXL(vOELmax = 0.05, xd = xd0, xq = xq0, iflim = 2.7, T0 = 5) annotation(Placement(transformation(extent = {{84, 72}, {40, 112}})));
-   iPSL.NonElectrical.Math.ImSetPoint imSetPoint(V = 1) annotation(Placement(transformation(extent = {{120, 72}, {100, 92}})));
   parameter Real Sn = 370 "Power rating, MVA";
   parameter Real Vn = 400000 "Nominal voltage";
   parameter Real Vbus = 400000 "Bus nominal voltage, change of base";
@@ -79,14 +78,13 @@ equation
   connect(pwLine2.n, pwLine4.p) annotation(Line(points = {{51, 26}, {64, 26}, {64, 31}, {72, 31}}, color = {0, 0, 255}, smooth = Smooth.None));
   connect(pwLine1.n, pwLine3.p) annotation(Line(points = {{51, -4}, {64, -4}, {64, -19}, {77, -19}}, color = {0, 0, 255}, smooth = Smooth.None));
   connect(pwLine2.n, pwLine1.n) annotation(Line(points = {{51, 26}, {51, -4}}, color = {0, 0, 255}, smooth = Smooth.None));
-  connect(pwFault.p, pwLine3.n) annotation(Line(points={{113.333,-42},{104,
-          -42},{104,-19},{91,-19}},                                                                       color = {0, 0, 255}, smooth = Smooth.None));
+  connect(pwFault.p, pwLine3.n) annotation(Line(points={{113.333,-42},{104,-42},
+          {104,-19},{91,-19}},                                                                            color = {0, 0, 255}, smooth = Smooth.None));
   connect(order6Type2_Inputs_Outputs.p, pwLine2.p) annotation(Line(points={{16,
           27.1936},{27,27.1936},{27,26},{37,26}},                                                                               color = {0, 0, 255}, smooth = Smooth.None));
   connect(pwLine1.p, pwLine2.p) annotation(Line(points = {{37, -4}, {37, 26}}, color = {0, 0, 255}, smooth = Smooth.None));
   connect(oXL.v, order6Type2_Inputs_Outputs.v) annotation(Line(points={{78.72,
           108.4},{96,108.4},{96,40},{30,40},{30,38.7},{16,38.7}},                                                                                      color = {0, 0, 127}, smooth = Smooth.None));
-  connect(oXL.vref0, imSetPoint.n1) annotation(Line(points = {{78.5, 86}, {92, 86}, {92, 82}, {105.1, 82}}, color = {0, 0, 127}, smooth = Smooth.None));
   connect(order6Type2_Inputs_Outputs.Q, oXL.q) annotation(Line(points={{16,3.6},
           {16,-76},{138,-76},{138,93.8},{78.72,93.8}},                                                                                       color = {0, 0, 127}, smooth = Smooth.None));
   connect(exciter_Type_II.vf, order6Type2_Inputs_Outputs.vf) annotation(Line(points={{-35.35,

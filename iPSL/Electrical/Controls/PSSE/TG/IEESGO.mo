@@ -104,7 +104,7 @@ equation
 =0+0+0+Pm0")}),
       Icon(coordinateSystem(preserveAspectRatio=false,  extent={{-160,-80},{160,
             60}}),                                                                             graphics={  Rectangle(extent={{
-              -160,60},{160,-80}},                                                                                                  lineColor=  {0, 0, 255}),
+              -160,60},{160,-80}},                                                                                                  lineColor = {0, 0, 255}),
                                                                                           Text(extent={{
               -52,20},{68,-20}},                                                                                                  lineColor=
               {0,0,255},

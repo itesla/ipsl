@@ -23,8 +23,8 @@ model EXAC1
     annotation (Placement(transformation(extent={{0,-36},{16,-20}})));
   Modelica.Blocks.Sources.Constant imSetPoint3(k=K_E)
     annotation (Placement(transformation(extent={{76,14},{64,26}})));
-  NonElectrical.Nonlinear.ImFEX
-      fEX annotation(Placement(transformation(extent = {{-12, 50}, {30, 90}})));
+  NonElectrical.Nonlinear.FEX fEX
+    annotation (Placement(transformation(extent={{2,62},{18,78}})));
   Modelica.Blocks.Interfaces.RealOutput EFD "Excitation voltage" annotation(Placement(transformation(extent={{128,-6},
             {138,6}}), iconTransformation(extent={{100,-6},{110,6}})));
 
@@ -177,10 +177,6 @@ equation
           {-60,54},{86,54},{86,39.9},{80.5,39.9}}, color={0,0,127}));
   connect(gain1.u, division.y)
     annotation (Line(points={{-31.2,70},{-43.4,70}}, color={0,0,127}));
-  connect(gain1.y, fEX.IN)
-    annotation (Line(points={{-17.4,70},{-3.6,70}}, color={0,0,127}));
-  connect(fEX.FEX, product1.u1) annotation (Line(points={{23.28,70},{56,70},{92,
-          70},{92,3.6},{98.8,3.6}}, color={0,0,127}));
   connect(VOEL, add3_2.u2)
     annotation (Line(points={{-117,-40},{-103.6,-40}}, color={0,0,127}));
   connect(VOTHSG, add3_2.u1) annotation (Line(points={{-117,-20},{-108,-20},{-108,
@@ -193,19 +189,23 @@ equation
           {-79.4,-53.2}}, color={0,0,127}));
   connect(add3.y, add3_1.u3) annotation (Line(points={{-63.3,-49},{-62,-49},{-62,
           -34.4},{-57.6,-34.4}}, color={0,0,127}));
+  connect(gain1.y, fEX.u)
+    annotation (Line(points={{-17.4,70},{-7.7,70},{2,70}}, color={0,0,127}));
+  connect(fEX.y, product1.u1) annotation (Line(points={{18.8,70},{94,70},{94,
+          3.6},{98.8,3.6}}, color={0,0,127}));
   annotation(Diagram(coordinateSystem(preserveAspectRatio=false,  extent={{-100,
-            -80},{100,80}}),                                                                           graphics={                                                                                                    Text(extent=  {{-14, 78}, {-8, 72}}, lineColor=  {255, 0, 0}, textString=  "I"), Text(extent=  {{-10, 74}, {-8, 74}}, lineColor=  {255, 0, 0}, textString=  "N"),                                                                                                    Text(extent=  {{84, -28}, {90, -34}}, lineColor=  {255, 0, 0}, textString=  "V"), Text(extent=  {{88, -32}, {90, -32}}, lineColor=  {255, 0, 0}, textString=  "E")}),                                                                                                    Icon(coordinateSystem(preserveAspectRatio=false,   extent={{-100,
+            -80},{100,80}}),                                                                           graphics={                                                                                                    Text(extent = {{-14, 78}, {-8, 72}}, lineColor = {255, 0, 0}, textString = "I"), Text(extent = {{-10, 74}, {-8, 74}}, lineColor = {255, 0, 0}, textString = "N"),                                                                                                    Text(extent = {{84, -28}, {90, -34}}, lineColor = {255, 0, 0}, textString = "V"), Text(extent = {{88, -32}, {90, -32}}, lineColor = {255, 0, 0}, textString = "E")}),                                                                                                    Icon(coordinateSystem(preserveAspectRatio=false,   extent={{-100,
             -80},{100,80}}),                                                                                                    graphics={  Rectangle(extent={{
-              -100,80},{100,-80}},                                                                                                    lineColor=  {0, 0, 255}), Text(extent={{
+              -100,80},{100,-80}},                                                                                                    lineColor = {0, 0, 255}), Text(extent={{
               -88,68},{-56,52}},                                                                                                    lineColor=
               {0,0,255},
           textString="XADIFD"),                                                                                                    Text(extent={{
               -88,48},{-52,30}},                                                                                                    lineColor=
               {0,0,255},
           textString="VOTHSG"),                                                                                                    Text(extent={{
-              -92,-46},{-60,-56}},                                                                                                    lineColor=  {0, 0, 255}, textString=  "VOEL"), Text(extent={{
-              68,8},{98,-8}},                                                                                                    lineColor=  {0, 0, 255}, textString=  "EFD"), Text(extent={{
-              -54,34},{52,-28}},                                                                                                    lineColor=  {0, 0, 255}, textString=  "EXAC1"),
+              -92,-46},{-60,-56}},                                                                                                    lineColor = {0, 0, 255}, textString = "VOEL"), Text(extent={{
+              68,8},{98,-8}},                                                                                                    lineColor = {0, 0, 255}, textString = "EFD"), Text(extent={{
+              -54,34},{52,-28}},                                                                                                    lineColor = {0, 0, 255}, textString = "EXAC1"),
                                                                                         Text(extent={{
               -88,4},{-56,-6}},                                                                                                    lineColor=
               {0,0,255},

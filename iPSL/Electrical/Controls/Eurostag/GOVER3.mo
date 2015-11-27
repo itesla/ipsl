@@ -70,7 +70,7 @@ equation
           0},{68.5,0}}, color={0,0,127}));
   connect(add1.y, imLeadLag.u)
     annotation (Line(points={{-39,62},{-26,62}}, color={0,0,127}));
-  annotation(Diagram(coordinateSystem(extent={{-120,-100},{180,100}},      preserveAspectRatio=false)),            Icon(coordinateSystem(extent = {{-120, -100}, {180, 100}}, preserveAspectRatio = true), graphics={  Rectangle(extent = {{-40, 40}, {60, -40}}, lineColor = {0, 0, 255}), Text(extent = {{-20, -6}, {38, 8}}, lineColor = {0, 0, 255}, textString = "GOVER3")}),
+  annotation(Diagram(coordinateSystem(extent={{-120,-100},{180,100}},      preserveAspectRatio=false)),            Icon(coordinateSystem(extent = {{-120, -100}, {180, 100}}, preserveAspectRatio = true), graphics={  Rectangle(extent=  {{-40, 40}, {60, -40}}, lineColor=  {0, 0, 255}), Text(extent=  {{-20, -6}, {38, 8}}, lineColor=  {0, 0, 255}, textString=  "GOVER3")}),
     Documentation(info="<html>
 <p><br><span style=\"font-family: MS Shell Dlg 2;\">&LT;iPSL: iTesla Power System Library&GT;</span></p>
 <p><span style=\"font-family: MS Shell Dlg 2;\">Copyright 2015 RTE (France), AIA (Spain), KTH (Sweden) and DTU (Denmark)</span></p>

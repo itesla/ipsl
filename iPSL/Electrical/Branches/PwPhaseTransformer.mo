@@ -37,9 +37,9 @@ equation
   p.ii = p.vi * G11 + p.vr * B11 + n.vi * G12 + n.vr * B12;
   n.ir = p.vr * G21 - p.vi * B21 + n.vr * G22 - n.vi * B22;
   n.ii = p.vi * G21 + p.vr * B21 + n.vi * G22 + n.vr * B22;
-  annotation(Icon(graphics={  Rectangle(extent = {{-60, 40}, {60, -40}}, lineColor = {0, 0, 255}), Ellipse(extent = {{-26, 16}, {6, -16}}, lineColor = {0, 0, 255},
-            lineThickness =                                                                                                   1), Ellipse(extent = {{-8, 16}, {24, -16}}, lineColor = {0, 0, 255},
-            lineThickness =                                                                                                   1), Line(points = {{-42, 0}, {-26, 0}}, color = {0, 0, 255}, thickness = 1, smooth = Smooth.None), Line(points = {{24, 0}, {40, 0}}, color = {0, 0, 255}, thickness = 1, smooth = Smooth.None)}), Diagram(graphics),
+  annotation(Icon(graphics={  Rectangle(extent=  {{-60, 40}, {60, -40}}, lineColor=  {0, 0, 255}), Ellipse(extent=  {{-26, 16}, {6, -16}}, lineColor=  {0, 0, 255},
+            lineThickness=                                                                                                    1), Ellipse(extent=  {{-8, 16}, {24, -16}}, lineColor=  {0, 0, 255},
+            lineThickness=                                                                                                    1), Line(points=  {{-42, 0}, {-26, 0}}, color=  {0, 0, 255}, thickness=  1, smooth=  Smooth.None), Line(points=  {{24, 0}, {40, 0}}, color=  {0, 0, 255}, thickness=  1, smooth=  Smooth.None)}), Diagram(graphics),
     Documentation(info="<html>
 <p><br><span style=\"font-family: MS Shell Dlg 2;\">&LT;iPSL: iTesla Power System Library&GT;</span></p>
 <p><span style=\"font-family: MS Shell Dlg 2;\">Copyright 2015 RTE (France), AIA (Spain), KTH (Sweden) and DTU (Denmark)</span></p>

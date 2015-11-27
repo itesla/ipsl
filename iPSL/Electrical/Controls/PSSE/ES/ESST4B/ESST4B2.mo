@@ -51,8 +51,8 @@ public
         extent={{-32,-23},{32,23}},
         rotation=0,
         origin={64,-135})));
-  NonElectrical.Nonlinear.ImFEX
-      fEX annotation (Placement(transformation(extent={{76,-154},{134,-116}})));
+  NonElectrical.Nonlinear.FEX fEX
+    annotation (Placement(transformation(extent={{92,-150},{122,-120}})));
   Modelica.Blocks.Math.Product product
     annotation (Placement(transformation(extent={{292,-4},{306,10}})));
   Modelica.Blocks.Interfaces.RealOutput EFD
@@ -177,10 +177,6 @@ equation
       color={0,0,127},
       smooth=Smooth.None));
 
-  connect(iN.I_N, fEX.IN) annotation (Line(
-      points={{79.68,-135},{87.6,-135}},
-      color={0,0,127},
-      smooth=Smooth.None));
   connect(IFD, iN.IFD) annotation (Line(
       points={{-119,-141},{-90.5,-141},{-90.5,-140.98},{47.68,-140.98}},
       color={0,0,127},
@@ -223,10 +219,6 @@ equation
       color={0,0,127},
       smooth=Smooth.None));
 
-  connect(VB.u2, fEX.FEX) annotation (Line(
-      points={{144.6,-83.2},{138,-83.2},{138,-135},{124.72,-135}},
-      color={0,0,127},
-      smooth=Smooth.None));
   connect(VB.y, maxLimiter.u) annotation (Line(
       points={{160.7,-79},{173.8,-79}},
       color={0,0,127},
@@ -289,6 +281,10 @@ equation
     annotation (Line(points={{75,4},{96,4},{96,4}}, color={0,0,127}));
   connect(VM1.u, add1.y) annotation (Line(points={{164,-16},{154,-16},{154,-18},
           {142,-18},{142,7},{138.5,7}}, color={0,0,127}));
+  connect(fEX.y, VB.u2) annotation (Line(points={{123.5,-135},{134,-135},{134,
+          -83.2},{144.6,-83.2}}, color={0,0,127}));
+  connect(iN.I_N, fEX.u) annotation (Line(points={{79.68,-135},{85.84,-135},{
+          85.84,-135},{92,-135}}, color={0,0,127}));
   annotation (Diagram(coordinateSystem(preserveAspectRatio=false,extent={{-100,
             -180},{340,100}}), graphics={
         Text(

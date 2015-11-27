@@ -108,8 +108,8 @@ parameter Real V_RMIN "Minimum AVR output (pu)";
         extent={{-10,10},{10,-10}},
         rotation=90,
         origin={192,-34})));
-  NonElectrical.Nonlinear.ImFEX
-      fEX annotation (Placement(transformation(extent={{-22,-22},{22,22}},
+  NonElectrical.Nonlinear.FEX fEX annotation (Placement(transformation(
+        extent={{-8,-8},{8,8}},
         rotation=90,
         origin={192,2})));
   Modelica.Blocks.Math.Product product1 annotation (Placement(transformation(
@@ -212,12 +212,8 @@ equation
     annotation (Line(points={{219,-86},{172,-86},{142,-86}},color={0,0,127}));
   connect(gain2.u, gain1.u)
     annotation (Line(points={{198,-78},{198,-86},{142,-86}},color={0,0,127}));
-  connect(division.y, fEX.IN)
-    annotation (Line(points={{192,-23},{192,-11.2}}, color={0,0,127}));
   connect(product1.y, EFD)
     annotation (Line(points={{223,32},{223,0},{245,0}},   color={0,0,127}));
-  connect(fEX.FEX, product1.u2) annotation (Line(points={{192,16.96},{192,16.96},
-          {192,22},{192,26},{200,26}}, color={0,0,127}));
   connect(imSE.VE_IN, product1.u1) annotation (Line(points={{168.5,-15.9},{176,
           -15.9},{176,38},{200,38}},
                               color={0,0,127}));
@@ -263,6 +259,10 @@ equation
           34},{-100,34}}, color={0,0,127}));
   connect(derivative.u, add1.u2)
     annotation (Line(points={{2,0},{96,0},{96,34},{102,34}}, color={0,0,127}));
+  connect(division.y, fEX.u) annotation (Line(points={{192,-23},{192,-14.5},{
+          192,-6}}, color={0,0,127}));
+  connect(fEX.y, product1.u2)
+    annotation (Line(points={{192,10.8},{192,26},{200,26}}, color={0,0,127}));
   annotation (Diagram(coordinateSystem(preserveAspectRatio=false,extent={{-220,
             -60},{240,60}},
         grid={2,2}),           graphics={

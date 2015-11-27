@@ -36,7 +36,7 @@ equation
               56,44},{76,24}},                                                                                                    lineColor=
               {0,0,255},
           textString="1"),                                                                                                    Line(points={{
-              -52,0},{76,0}},                                                                                                    color=  {0, 0, 255}, smooth=  Smooth.Bezier, thickness=  0.5),
+              -52,0},{76,0}},                                                                                                    color = {0, 0, 255}, smooth = Smooth.Bezier, thickness = 0.5),
                                                                                                     Text(extent={{
               -50,-20},{70,-80}},                                                                                                    lineColor=
               {0,0,255},

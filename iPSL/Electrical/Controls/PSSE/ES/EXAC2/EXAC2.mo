@@ -16,8 +16,8 @@ model EXAC2 "IEEE Type AC2 Excitation System"
   Modelica.Blocks.Interfaces.RealInput VOEL
     "Maximum excitation limiter signal (pu)"             annotation(Placement(transformation(extent={{-164,
             -66},{-152,-54}}), iconTransformation(extent={{-164,-66},{-152,-54}})));
-  NonElectrical.Nonlinear.ImFEX
-      fEX annotation(Placement(transformation(extent={{88,44},{58,68}})));
+  NonElectrical.Nonlinear.FEX fEX
+    annotation (Placement(transformation(extent={{80,48},{64,64}})));
   Modelica.Blocks.Interfaces.RealOutput EFD "Generator main field voltage (pu)"
                                                                         annotation(Placement(transformation(extent={{160,-6},
             {170,6}})));
@@ -213,8 +213,6 @@ equation
     annotation (Line(points={{156.8,0},{165,0},{165,0}}, color={0,0,127}));
   connect(limIntegrator.y, product.u2) annotation (Line(points={{104.6,-26},{130,
           -26},{130,-4.8},{138.4,-4.8}}, color={0,0,127}));
-  connect(fEX.FEX, product.u1) annotation (Line(points={{62.8,56},{56,56},{56,32},
-          {132,32},{132,4.8},{138.4,4.8}}, color={0,0,127}));
   connect(imSE.VE_IN, product.u2) annotation (Line(points={{92.5,23.9},{130,23.9},
           {130,-4.8},{138.4,-4.8}}, color={0,0,127}));
   connect(gain2.u, product.u2) annotation (Line(points={{86.8,4},{130,4},{130,-4.8},
@@ -225,8 +223,6 @@ equation
           {77.6,4}}, color={0,0,127}));
   connect(XADIFD, division.u2) annotation (Line(points={{-160,40},{-14,40},{130,
           40},{130,50.8},{119.4,50.8}}, color={0,0,127}));
-  connect(fEX.IN, gain4.y) annotation (Line(points={{82,56},{84,56},{84,55},{87.5,
-          55}}, color={0,0,127}));
   connect(gain4.u, division.y)
     annotation (Line(points={{99,55},{106,55},{103.3,55}}, color={0,0,127}));
   connect(division.u1, product.u2) annotation (Line(points={{119.4,59.2},{130,59.2},
@@ -249,17 +245,21 @@ equation
           -37.2,-28}},             color={0,0,127}));
   connect(simpleLagLim.y, add2.u2) annotation (Line(points={{-23.4,-28},{-11.2,
           -28},{-11.2,-27.6}}, color={0,0,127}));
+  connect(fEX.u, gain4.y) annotation (Line(points={{80,56},{84,56},{84,55},{
+          87.5,55}}, color={0,0,127}));
+  connect(fEX.y, product.u1) annotation (Line(points={{63.2,56},{58,56},{58,34},
+          {134,34},{134,4.8},{138.4,4.8}}, color={0,0,127}));
   annotation(Diagram(coordinateSystem(preserveAspectRatio=false,   extent={{-160,
             -80},{160,80}}),                                                                           graphics={  Text(extent={{
               -124,-18},{-114,-26}},                                                                                                  lineColor=
               {0,0,255},
           textString="VREF"),                                                                                                    Text(extent={{
-              -8,28},{2,22}},                                                                                                    lineColor=  {255, 0, 0}, textString=  "V"), Text(extent={{
-              -4,24},{4,22}},                                                                                                    lineColor=  {255, 0, 0}, textString=  "FE"), Text(extent={{
-              -170,60},{-160,54}},                                                                                                    lineColor=  {255, 0, 0}, textString=  "V"), Text(extent={{
-              -160,56},{-166,54}},                                                                                                    lineColor=  {255, 0, 0}, textString=  "F")}),                                                                                                    Icon(coordinateSystem(preserveAspectRatio=false,   extent={{-160,
+              -8,28},{2,22}},                                                                                                    lineColor = {255, 0, 0}, textString = "V"), Text(extent={{
+              -4,24},{4,22}},                                                                                                    lineColor = {255, 0, 0}, textString = "FE"), Text(extent={{
+              -170,60},{-160,54}},                                                                                                    lineColor = {255, 0, 0}, textString = "V"), Text(extent={{
+              -160,56},{-166,54}},                                                                                                    lineColor = {255, 0, 0}, textString = "F")}),                                                                                                    Icon(coordinateSystem(preserveAspectRatio=false,   extent={{-160,
             -80},{160,80}}),                                                                                                    graphics={  Rectangle(extent={{
-              -160,80},{160,-80}},                                                                                                    lineColor=  {0, 0, 255}), Text(extent={{
+              -160,80},{160,-80}},                                                                                                    lineColor = {0, 0, 255}), Text(extent={{
               -150,64},{-128,54}},                                                                                                    lineColor=
               {0,0,255},
           textString="EFD0"),                                                                                                    Text(extent={{
@@ -272,7 +272,7 @@ equation
               -154,-36},{-122,-46}},                                                                                                    lineColor=
               {0,0,255},
           textString="VUEL"),                                                                                                    Text(extent={{
-              128,8},{158,-8}},                                                                                                    lineColor=  {0, 0, 255}, textString=  "EFD"), Text(extent={{
+              128,8},{158,-8}},                                                                                                    lineColor = {0, 0, 255}, textString = "EFD"), Text(extent={{
               -52,32},{52,-30}},                                                                                                    lineColor=
               {0,0,255},
           textString="EXAC2"),                                                                                                    Text(extent={{

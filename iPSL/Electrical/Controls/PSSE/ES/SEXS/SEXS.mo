@@ -67,19 +67,19 @@ equation
   connect(simpleLagLim.y, EFD)
     annotation (Line(points={{41,2},{106,2},{106,0}}, color={0,0,127}));
   annotation(Diagram(coordinateSystem(preserveAspectRatio=false,   extent={{-100,
-            -80},{100,80}}),                                                                            graphics={  Text(extent=  {{-92, 26}, {-80, 16}}, lineColor=  {0, 0, 255}, textString=  "Efd0"), Text(extent=  {{-94, 4}, {-76, -14}}, lineColor=  {0, 0, 255}, textString=  "VOTHSG "), Text(extent=  {{-98, -12}, {-72, -18}}, lineColor=  {0, 0, 255}, textString=  " VOEL"), Text(extent=  {{-100, -22}, {-70, -28}}, lineColor=  {0, 0, 255}, textString=  " VUEL "), Text(extent=  {{-94, 10}, {-76, -2}}, lineColor=  {0, 0, 255}, textString=  "Ecomp
-             "), Text(extent=  {{-58, 22}, {-48, 12}}, lineColor=  {0, 0, 255}, textString=  "Vref")}), Icon(coordinateSystem(preserveAspectRatio=false,   extent={{-100,
+            -80},{100,80}}),                                                                            graphics={  Text(extent = {{-92, 26}, {-80, 16}}, lineColor = {0, 0, 255}, textString = "Efd0"), Text(extent = {{-94, 4}, {-76, -14}}, lineColor = {0, 0, 255}, textString = "VOTHSG "), Text(extent = {{-98, -12}, {-72, -18}}, lineColor = {0, 0, 255}, textString = " VOEL"), Text(extent = {{-100, -22}, {-70, -28}}, lineColor = {0, 0, 255}, textString = " VUEL "), Text(extent = {{-94, 10}, {-76, -2}}, lineColor = {0, 0, 255}, textString = "Ecomp
+             "), Text(extent = {{-58, 22}, {-48, 12}}, lineColor = {0, 0, 255}, textString = "Vref")}), Icon(coordinateSystem(preserveAspectRatio=false,   extent={{-100,
             -80},{100,80}}),                                                                                                    graphics={  Text(extent={{
-              -22,10},{24,-12}},                                                                                                    lineColor=  {0, 0, 255}, textString=  "SEXS"), Rectangle(extent={{
-              -100,80},{100,-80}},                                                                                                  lineColor=  {0, 0, 255}), Text(extent={{
-              -84,38},{-54,20}},                                                                                                    lineColor=  {0, 0, 255}, textString=  "VOTHSG "), Text(extent={{
-              76,6},{98,-6}},                                                                                                    lineColor=  {0, 0, 255}, textString=  "EFD"), Text(extent={{
-              -96,-26},{-50,-36}},                                                                                                   lineColor=  {0, 0, 255}, textString=  " VUEL "), Text(extent={{
-              -98,4},{-50,-6}},                                                                                                    lineColor=  {0, 0, 255}, textString=  " VOEL"), Text(extent={{
+              -22,10},{24,-12}},                                                                                                    lineColor = {0, 0, 255}, textString = "SEXS"), Rectangle(extent={{
+              -100,80},{100,-80}},                                                                                                  lineColor = {0, 0, 255}), Text(extent={{
+              -84,38},{-54,20}},                                                                                                    lineColor = {0, 0, 255}, textString = "VOTHSG "), Text(extent={{
+              76,6},{98,-6}},                                                                                                    lineColor = {0, 0, 255}, textString = "EFD"), Text(extent={{
+              -96,-26},{-50,-36}},                                                                                                   lineColor = {0, 0, 255}, textString = " VUEL "), Text(extent={{
+              -98,4},{-50,-6}},                                                                                                    lineColor = {0, 0, 255}, textString = " VOEL"), Text(extent={{
               -86,-38},{-62,-64}},                                                                                                    lineColor=
               {0,0,255},
           textString="EFD0"),                                                                                                    Text(extent={{
-              -84,54},{-56,44}},                                                                                                    lineColor=  {0, 0, 255}, textString=  "ECOMP")}),
+              -84,54},{-56,44}},                                                                                                    lineColor = {0, 0, 255}, textString = "ECOMP")}),
     Documentation(info="<html>
 <table cellspacing=\"1\" cellpadding=\"1\" border=\"1\">
 <tr>

@@ -188,11 +188,12 @@ public
         extent={{-8,-8},{8,8}},
         rotation=90,
         origin={150,60})));
-  iPSL.NonElectrical.Nonlinear.ImDelay_1 delay(T=Teng) "Transport lag time"
+  Modelica.Blocks.Nonlinear.FixedDelay delay(delayTime=Teng)
+    "Transport lag time"
     annotation (Placement(transformation(
-        extent={{-36,-26},{36,26}},
+        extent={{-14,-14},{14,14}},
         rotation=90,
-        origin={150,18})));
+        origin={150,20})));
   Modelica.Blocks.Math.Add add4(k2=-1) annotation (Placement(transformation(
         extent={{-6,-6},{6,6}},
         rotation=90,
@@ -537,14 +538,6 @@ equation
       points={{150,98},{150,68.8}},
       color={0,0,127},
       smooth=Smooth.None));
-  connect(gain1.u, delay.n1) annotation (Line(
-      points={{150,50.4},{150,35.64}},
-      color={0,0,127},
-      smooth=Smooth.None));
-  connect(delay.p1, add4.y) annotation (Line(
-      points={{150,-0.36},{150,-17.4}},
-      color={0,0,127},
-      smooth=Smooth.None));
   connect(s0.y, rSELECT.Pelect) annotation (Line(
       points={{-259,-170},{-218.32,-170},{-218.32,-149}},
       color={0,0,127},
@@ -563,8 +556,12 @@ equation
       smooth=Smooth.None));
   connect(s9.u, product1.y)
     annotation (Line(points={{22,110},{39,110},{39,110}}, color={0,0,127}));
-  annotation (Diagram(coordinateSystem(preserveAspectRatio=false,extent={{-320,-240},
-            {260,220}}),       graphics={
+  connect(delay.y, gain1.u) annotation (Line(points={{150,35.4},{150,50.4},{150,
+          50.4}}, color={0,0,127}));
+  connect(delay.u, add4.y) annotation (Line(points={{150,3.2},{150,-17.4},{150,
+          -17.4}}, color={0,0,127}));
+  annotation (Diagram(coordinateSystem(preserveAspectRatio=false,extent={{-320,
+            -240},{260,220}}), graphics={
         Text(
           extent={{-272,-98},{-260,-106}},
           lineColor={255,0,0},

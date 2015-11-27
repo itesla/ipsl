@@ -62,7 +62,7 @@ model AVRTypeII_Test
     xd1=0.302,
     M=10,
     D=0)                                                                                                 annotation(Placement(transformation(extent = {{-68, -12}, {12, 66}})));
-   iPSL.NonElectrical.Math.ImSetPoint imSetPoint(V = 1) annotation(Placement(transformation(extent = {{52, 88}, {32, 108}})));
+   Modelica.Blocks.Sources.Constant imSetPoint(k = 1) annotation(Placement(transformation(extent = {{52, 88}, {32, 108}})));
    iPSL.Electrical.Controls.PSAT.AVR.AVRTypeII exciter_Type_II(vref0 = 1, vrmin = -5, vrmax = 5, Ta = 0.1, Te = 1, Tr = 0.001, Ae = 0.0006, Be = 0.9, Kf = 0.45, Tf = 1, Ka = 400, vf0 = 1.064, Ke = 0.01) annotation(Placement(transformation(extent = {{4, 58}, {-58, 110}})));
   inner iPSL.Electrical.SystemBase  SysData
     annotation (Placement(transformation(extent={{100,80},{124,100}})));
@@ -76,19 +76,20 @@ equation
   connect(pwLine2.n, pwLine4.p) annotation(Line(points = {{51, 26}, {64, 26}, {64, 31}, {72, 31}}, color = {0, 0, 255}, smooth = Smooth.None));
   connect(pwLine1.n, pwLine3.p) annotation(Line(points = {{51, -4}, {64, -4}, {64, -19}, {77, -19}}, color = {0, 0, 255}, smooth = Smooth.None));
   connect(pwLine2.n, pwLine1.n) annotation(Line(points = {{51, 26}, {51, -4}}, color = {0, 0, 255}, smooth = Smooth.None));
-  connect(pwFault.p, pwLine3.n) annotation(Line(points={{113.333,-42},{104,
-          -42},{104,-19},{91,-19}},                                                                       color = {0, 0, 255}, smooth = Smooth.None));
+  connect(pwFault.p, pwLine3.n) annotation(Line(points={{113.333,-42},{104,-42},
+          {104,-19},{91,-19}},                                                                            color = {0, 0, 255}, smooth = Smooth.None));
   connect(order6Type2_Inputs_Outputs.p, pwLine2.p) annotation(Line(points={{16,
           27.1936},{27,27.1936},{27,26},{37,26}},                                                                               color = {0, 0, 255}, smooth = Smooth.None));
   connect(pwLine1.p, pwLine2.p) annotation(Line(points = {{37, -4}, {37, 26}}, color = {0, 0, 255}, smooth = Smooth.None));
   connect(order6Type2_Inputs_Outputs.pm0, order6Type2_Inputs_Outputs.pm) annotation(Line(points={{-60,
           -15.9},{38,-15.9},{38,52},{60,52},{60,112},{-92,112},{-92,7.5},{
           -68,7.5}},                                                                                                    color = {0, 0, 127}, smooth = Smooth.None));
-  connect(exciter_Type_II.vref, imSetPoint.n1) annotation(Line(points = {{-2.2, 98.04}, {37.1, 98.04}, {37.1, 98}}, color = {0, 0, 127}, smooth = Smooth.None));
   connect(order6Type2_Inputs_Outputs.v, exciter_Type_II.v) annotation(Line(points={{16,38.7},
           {32,38.7},{32,81.4},{-2.2,81.4}},                                                                                                 color = {0, 0, 127}, smooth = Smooth.None));
   connect(exciter_Type_II.vf, order6Type2_Inputs_Outputs.vf) annotation(Line(points={{-53.35,
           90.76},{-68,90.76},{-68,46.5}},                                                                                              color = {0, 0, 127}, smooth = Smooth.None));
+  connect(exciter_Type_II.vref, imSetPoint.y) annotation (Line(points={{-2.2,
+          98.04},{14.9,98.04},{14.9,98},{31,98}}, color={0,0,127}));
   annotation(Diagram(coordinateSystem(extent={{-100,-100},{140,120}},      preserveAspectRatio=false)),             Icon(coordinateSystem(extent = {{-100, -100}, {140, 120}})),
     Documentation(info="<html>
 <p><span style=\"font-family: MS Shell Dlg 2;\">&LT;iPSL: iTesla Power System Library&GT;</span></p>

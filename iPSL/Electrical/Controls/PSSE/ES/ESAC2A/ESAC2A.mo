@@ -113,8 +113,8 @@ public
         extent={{-12,-19},{12,19}},
         rotation=90,
         origin={299,-30})));
-  NonElectrical.Nonlinear.ImFEX
-      fEX annotation (Placement(transformation(extent={{298,-28},{336,4}})));
+  NonElectrical.Nonlinear.FEX fEX
+    annotation (Placement(transformation(extent={{308,-22},{328,-2}})));
   Modelica.Blocks.Math.Product product
     annotation (Placement(transformation(extent={{344,-8},{356,4}})));
   Modelica.Blocks.Interfaces.RealOutput EFD
@@ -191,10 +191,6 @@ equation
       points={{272.6,-77},{304,-77},{304,-36.12},{303.94,-36.12}},
       color={0,0,127},
       smooth=Smooth.None));
-  connect(fEX.FEX, product.u2) annotation (Line(
-      points={{329.92,-12},{342.8,-12},{342.8,-5.6}},
-      color={0,0,127},
-      smooth=Smooth.None));
   connect(imIntegrator_adpt.IFD, iN.IFD) annotation (Line(
       points={{251.69,-4.12},{236,-4.12},{236,-92},{304,-92},{304,-36.12},{
           303.94,-36.12}},
@@ -203,10 +199,6 @@ equation
 
   connect(product.y, EFD) annotation (Line(
       points={{356.6,-2},{380,-2},{380,-52},{310,-52}},
-      color={0,0,127},
-      smooth=Smooth.None));
-  connect(iN.I_N, fEX.IN) annotation (Line(
-      points={{299,-24.12},{299,-12},{305.6,-12}},
       color={0,0,127},
       smooth=Smooth.None));
   connect(imIntegrator_adpt.VE, product.u1) annotation (Line(
@@ -293,6 +285,10 @@ equation
           {214,-40},{132.8,-40}}, color={0,0,127}));
   connect(derivative.y, add1.u2) annotation (Line(points={{63,-64},{42,-64},{42,
           -66},{-32,-66},{-32,-6},{-26,-6}}, color={0,0,127}));
+  connect(fEX.y, product.u2) annotation (Line(points={{329,-12},{336,-12},{336,
+          -5.6},{342.8,-5.6}}, color={0,0,127}));
+  connect(fEX.u, iN.I_N) annotation (Line(points={{308,-12},{299,-12},{299,
+          -24.12}}, color={0,0,127}));
   annotation (Diagram(coordinateSystem(preserveAspectRatio=false,extent={{-100,
             -200},{300,100}}), graphics={                                                                                                    Text(extent={{
               252,-44},{280,-48}},                                                                                                lineColor=

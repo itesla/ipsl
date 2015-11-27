@@ -182,19 +182,19 @@ equation
   connect(simpleLagLim.y, add1.u2) annotation (Line(points={{12.6,-2},{24,-2},{
           24,-3.6},{38.8,-3.6}}, color={0,0,127}));
   annotation(Diagram(coordinateSystem(preserveAspectRatio=false,   extent={{-120,
-            -100},{120,100}}),                                                                          graphics={                                                                                       Text(extent=  {{-94, 24}, {-86, 16}}, lineColor=  {0, 0, 255}, textString=  "Vref"), Text(extent=  {{-104, -40}, {-88, -46}}, lineColor=  {0, 0, 255}, textString=  "Efd0"), Text(extent=  {{-112, 6}, {-84, 0}}, lineColor=  {0, 0, 255}, textString=  "Ec"), Text(extent=  {{-104, -8}, {-86, -18}}, lineColor=  {0, 0, 255}, textString=  "VOTHSG"), Text(extent=  {{-106, -18}, {-84, -24}}, lineColor=  {0, 0, 255}, textString=  "VOEL"), Text(extent=  {{-106, -26}, {-84, -32}}, lineColor=  {0, 0, 255}, textString=  "VUEL")}),                                                                                         Icon(coordinateSystem(preserveAspectRatio=false,   extent={{-120,
+            -100},{120,100}}),                                                                          graphics={                                                                                       Text(extent = {{-94, 24}, {-86, 16}}, lineColor = {0, 0, 255}, textString = "Vref"), Text(extent = {{-104, -40}, {-88, -46}}, lineColor = {0, 0, 255}, textString = "Efd0"), Text(extent = {{-112, 6}, {-84, 0}}, lineColor = {0, 0, 255}, textString = "Ec"), Text(extent = {{-104, -8}, {-86, -18}}, lineColor = {0, 0, 255}, textString = "VOTHSG"), Text(extent = {{-106, -18}, {-84, -24}}, lineColor = {0, 0, 255}, textString = "VOEL"), Text(extent = {{-106, -26}, {-84, -32}}, lineColor = {0, 0, 255}, textString = "VUEL")}),                                                                                         Icon(coordinateSystem(preserveAspectRatio=false,   extent={{-120,
             -100},{120,100}}),                                                                                                   graphics={  Text(extent={{
-              100,8},{118,-8}},                                                                                                  lineColor=  {0, 0, 255}, textString=  "EFD"), Text(extent={{
-              -38,14},{44,-18}},                                                                                                   lineColor=  {0, 0, 255}, textString=  "IEEET2"), Text(extent={{
+              100,8},{118,-8}},                                                                                                  lineColor = {0, 0, 255}, textString = "EFD"), Text(extent={{
+              -38,14},{44,-18}},                                                                                                   lineColor = {0, 0, 255}, textString = "IEEET2"), Text(extent={{
               -102,-74},{-78,-86}},                                                                                                   lineColor=
               {0,0,255},
           textString="EFD0"),                                                                                                    Rectangle(extent={{
               -120,100},{120,-100}},
                                   lineColor={0,0,255}),                                                                                                    Text(extent={{
-              -98,46},{-60,34}},                                                                                                    lineColor=  {0, 0, 255}, textString=  "VOTHSG "), Text(extent={{
-              -102,-32},{-74,-48}},                                                                                                lineColor=  {0, 0, 255}, textString=  " VUEL "), Text(extent={{
-              -102,6},{-72,-8}},                                                                                                    lineColor=  {0, 0, 255}, textString=  " VOEL"), Text(extent={{
-              -100,84},{-68,74}},                                                                                                   lineColor=  {0, 0, 255}, textString=  "ECOMP")}),
+              -98,46},{-60,34}},                                                                                                    lineColor = {0, 0, 255}, textString = "VOTHSG "), Text(extent={{
+              -102,-32},{-74,-48}},                                                                                                lineColor = {0, 0, 255}, textString = " VUEL "), Text(extent={{
+              -102,6},{-72,-8}},                                                                                                    lineColor = {0, 0, 255}, textString = " VOEL"), Text(extent={{
+              -100,84},{-68,74}},                                                                                                   lineColor = {0, 0, 255}, textString = "ECOMP")}),
     Documentation(info="<html>
 <p><br><span style=\"font-family: MS Shell Dlg 2;\">&LT;iPSL: iTesla Power System Library&GT;</span></p>
 <p><span style=\"font-family: MS Shell Dlg 2;\">Copyright 2015 RTE (France), AIA (Spain), KTH (Sweden) and DTU (Denmark)</span></p>

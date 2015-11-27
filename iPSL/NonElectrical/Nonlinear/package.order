@@ -1,5 +1,3 @@
-ImDeadBand
-ImDelay_1
 ImDelay_2
 ImPulse
 ImPulseMyTime
@@ -7,8 +5,7 @@ ImRelay
 ImSchmidtTrigger
 ImMonostable
 ImTimer
-ImRateLimiter
 ImReal4in
-ImFEX
+FEX
 ImRelay4
 IF_comparisorOEL
