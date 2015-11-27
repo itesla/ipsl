@@ -1,19 +1,6 @@
 within iPSL.Electrical.Machines.PSSE.GENROU;
 model GENROU "ROUND ROTOR GENERATOR MODEL (QUADRATIC SATURATION)"
-  extends iPSL.Electrical.Essentials.pfComponent;
-
-  //Import of dependencies
-
-  import Complex;
-  import Modelica.ComplexMath.arg;
-  import Modelica.ComplexMath.real;
-  import Modelica.ComplexMath.imag;
-  import Modelica.ComplexMath.'abs';
-  import Modelica.ComplexMath.conj;
-  import Modelica.ComplexMath.fromPolar;
-  import iPSL.NonElectrical.Functions.SE;
-  import Modelica.Constants.pi;
-
+  //Extending machine base
   extends BaseClasses.baseMachine(
   w(start=0),
   EFD(start=efd0),
@@ -26,6 +13,17 @@ model GENROU "ROUND ROTOR GENERATOR MODEL (QUADRATIC SATURATION)"
   ud(start=ud0),
   uq(start=uq0),
   Te(start=pm0));
+
+  //Import of dependencies
+  import Complex;
+  import Modelica.ComplexMath.arg;
+  import Modelica.ComplexMath.real;
+  import Modelica.ComplexMath.imag;
+  import Modelica.ComplexMath.'abs';
+  import Modelica.ComplexMath.conj;
+  import Modelica.ComplexMath.fromPolar;
+  import iPSL.NonElectrical.Functions.SE;
+  import Modelica.Constants.pi;
 
   //Machine parameters
   parameter Real Xpq "Sub-transient reactance (pu)" annotation (Dialog(group="Machine parameters"));
@@ -166,7 +164,7 @@ equation
   annotation(Diagram(coordinateSystem(preserveAspectRatio=false,  extent={{-100,
             -100},{100,100}})),                                                                                     Icon(coordinateSystem(preserveAspectRatio=false,  extent={{-100,
             -100},{100,100}}),                                                                                                    graphics={  Text(extent={{
-              -54,24},{54,-26}},                                                                                                   lineColor=  {0, 0, 255}, textString=  "GENROU")}),
+              -54,24},{54,-26}},                                                                                                   lineColor = {0, 0, 255}, textString = "GENROU")}),
     Documentation(info="<html>
 <table cellspacing=\"1\" cellpadding=\"1\" border=\"1\">
 <tr>

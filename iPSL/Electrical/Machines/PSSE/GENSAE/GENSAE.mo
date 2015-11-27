@@ -1,21 +1,6 @@
 within iPSL.Electrical.Machines.PSSE.GENSAE;
 model GENSAE "SALIENT POLE GENERATOR MODEL (EXPONENTIAL SATURATION)"
-
-  // Import of Dependencies
-
-  import iPSL.NonElectrical.Functions.SE_exp;
-  import Modelica.Constants.pi;
-
-  import Complex;
-  import Modelica.ComplexMath.arg;
-  import Modelica.ComplexMath.real;
-  import Modelica.ComplexMath.imag;
-  import Modelica.ComplexMath.'abs';
-  import Modelica.ComplexMath.conj;
-  import Modelica.ComplexMath.fromPolar;
-
   //Extending machine base
-
   extends BaseClasses.baseMachine(
   w(start=0),
   EFD(start=efd0),
@@ -28,6 +13,17 @@ model GENSAE "SALIENT POLE GENERATOR MODEL (EXPONENTIAL SATURATION)"
   ud(start=ud0),
   uq(start=uq0),
   Te(start=pm0));
+
+  // Import of Dependencies
+  import iPSL.NonElectrical.Functions.SE_exp;
+  import Modelica.Constants.pi;
+  import Complex;
+  import Modelica.ComplexMath.arg;
+  import Modelica.ComplexMath.real;
+  import Modelica.ComplexMath.imag;
+  import Modelica.ComplexMath.'abs';
+  import Modelica.ComplexMath.conj;
+  import Modelica.ComplexMath.fromPolar;
 
 protected
   parameter Complex Zs(re = R_a, im = Xppd) "Equivalent impedance";

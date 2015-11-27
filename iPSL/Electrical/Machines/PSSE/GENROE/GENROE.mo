@@ -1,19 +1,6 @@
 within iPSL.Electrical.Machines.PSSE.GENROE;
 model GENROE "ROUND ROTOR GENERATOR MODEL (EXPONENTIAL SATURATION)"
-  extends iPSL.Electrical.Essentials.pfComponent;
-
-  //Import of dependencies
-
-  import Complex;
-  import Modelica.ComplexMath.arg;
-  import Modelica.ComplexMath.real;
-  import Modelica.ComplexMath.imag;
-  import Modelica.ComplexMath.'abs';
-  import Modelica.ComplexMath.conj;
-  import Modelica.ComplexMath.fromPolar;
-  import iPSL.NonElectrical.Functions.SE_exp;
-  import Modelica.Constants.pi;
-
+  //Extending machine base
   extends BaseClasses.baseMachine(
   w(start=0),
   EFD(start=efd0),
@@ -26,6 +13,17 @@ model GENROE "ROUND ROTOR GENERATOR MODEL (EXPONENTIAL SATURATION)"
   ud(start=ud0),
   uq(start=uq0),
   Te(start=pm0));
+
+  //Import of dependencies
+  import Complex;
+  import Modelica.ComplexMath.arg;
+  import Modelica.ComplexMath.real;
+  import Modelica.ComplexMath.imag;
+  import Modelica.ComplexMath.'abs';
+  import Modelica.ComplexMath.conj;
+  import Modelica.ComplexMath.fromPolar;
+  import iPSL.NonElectrical.Functions.SE_exp;
+  import Modelica.Constants.pi;
 
   //Machine parameters
   parameter Real Xpq "Sub-transient reactance (pu)" annotation (Dialog(group="Machine parameters"));

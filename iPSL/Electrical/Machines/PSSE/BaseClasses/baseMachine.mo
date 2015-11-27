@@ -1,5 +1,6 @@
 within iPSL.Electrical.Machines.PSSE.BaseClasses;
 partial model baseMachine
+  extends iPSL.Electrical.Essentials.pfComponent;
   import Modelica.Constants.pi;
   import Complex;
   import Modelica.ComplexMath.arg;
@@ -9,10 +10,7 @@ partial model baseMachine
   import Modelica.ComplexMath.conj;
   import Modelica.Blocks.Interfaces.*;
 
-  extends iPSL.Electrical.Essentials.pfComponent;
-
   //Machine parameters
-
   parameter Real M_b "Machine base power (MVA)" annotation (Dialog(group="Power flow data"));
   parameter Real Tpd0 "d-axis transient open-circuit time constant (s)"
                                                                        annotation (Dialog(group="Machine parameters"));
@@ -147,7 +145,7 @@ equation
 
   annotation (Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,
             -100},{100,100}})), Icon(graphics={                                                                                                    Rectangle(extent={{
-              -100,100},{100,-100}},                                                                                                  lineColor=  {0, 0, 255}),
+              -100,100},{100,-100}},                                                                                                  lineColor = {0, 0, 255}),
         Text(
           extent={{66,98},{96,82}},
           lineColor={0,0,255},
