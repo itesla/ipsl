@@ -92,7 +92,7 @@ protected
   parameter Real efd0 = dsat * PSIppd0 + PSIppd0 + (Xpd - Xpp) * id0 + (Xd - Xpd) * id0
     "Initial field voltage magnitude";
   parameter Real Epq0= PSIkd0+((Xpd-Xl))*id0;
-  parameter Real Epd0= PSIkq0-((Xpd-Xl))*iq0;
+  parameter Real Epd0= PSIkq0-((Xpq-Xl))*iq0;
  //Initialize remaining states:
   parameter Real PSIkd0=(PSIppd0 -((Xpd-Xl)*K3d*id0))/(K3d +K4d)
     "d-axis initial rotor flux linkage";
