@@ -1,15 +1,14 @@
 within iPSL.Electrical.Machines.Eurostag;
-model PwGeneratorM1S "Synchronous machine model according to Park's classical theory (Full model description).
+class PwGeneratorM1S "Synchronous machine model according to Park's classical theory (Full model description).
                    The model corresponds to Eurostag's full model for M1S machine 
-                   (defined by internal parameters). Developed by RTE and adapted by AIA.
+                   (defined by internal parameters). Initialization included in the model.
                    2014/03/10"
 
-  iPSL.Connectors.PwPin sortie annotation (Placement(transformation(extent={{40,
-            10},{60,30}}), iconTransformation(extent={{40,10},{60,30}})));
-  Modelica.Blocks.Interfaces.RealInput pin_EFD annotation(Placement(transformation(extent = {{-61, -40}, {-41, -20}}), iconTransformation(extent = {{-61, -40}, {-41, -20}})));
-  Modelica.Blocks.Interfaces.RealInput pin_OMEGA annotation(Placement(transformation(extent = {{-61, 20}, {-41, 40}}), iconTransformation(extent = {{-61, 20}, {-41, 40}})));
-  Modelica.Blocks.Interfaces.RealInput pin_CM annotation(Placement(transformation(extent = {{-61, -10}, {-41, 10}}), iconTransformation(extent = {{-61, -10}, {-41, 10}})));
-  Modelica.Blocks.Interfaces.RealInput omegaRef;
+  PowerSystems.Connectors.PwPin sortie annotation(Placement(transformation(extent = {{40, 10}, {60, 30}}), iconTransformation(extent = {{40, 10}, {60, 30}})));
+  PowerSystems.Connectors.ImPin pin_EFD annotation(Placement(transformation(extent = {{-61, -40}, {-41, -20}}), iconTransformation(extent = {{-61, -40}, {-41, -20}})));
+  PowerSystems.Connectors.ImPin pin_OMEGA annotation(Placement(transformation(extent = {{-61, 20}, {-41, 40}}), iconTransformation(extent = {{-61, 20}, {-41, 40}})));
+  PowerSystems.Connectors.ImPin pin_CM annotation(Placement(transformation(extent = {{-61, -10}, {-41, 10}}), iconTransformation(extent = {{-61, -10}, {-41, 10}})));
+  PowerSystems.Connectors.ImPin omegaRef;
   Real cm(start = init_cm);
   Real efd(start = init_efd);
   Real ur(start = ur0);
@@ -120,15 +119,15 @@ model PwGeneratorM1S "Synchronous machine model according to Park's classical th
   parameter Real lQ1 = lQ1Pu * yscale "q axis damper 1 winding leakeage";
   parameter Real lQ2 = lQ2Pu * yscale "q axis damper 2 winding leakeage";
   parameter Real RT = RTfoPu * SNREF / SNtfo * rtfo * rtfo
-    "Machine transformer resistance (pu), enter value*SNREF/SNtfo";
+    "Machine transformer resistance (p.u.), enter value*SNREF/SNtfo";
   parameter Real XT = XTfoPu * SNREF / SNtfo * rtfo * rtfo
-    "Machine transformer reactance (pu), enter value*SNREF/SNtfo";
+    "Machine transformer reactance (p.u.), enter value*SNREF/SNtfo";
   parameter Real Md0 = mD0Pu * yscale "d axis mutual inductance";
   parameter Real Mq0 = mQ0Pu * yscale "q axis mutual inductance";
   parameter Real Mdv = WLMDVPu * yscale;
   parameter Real D = DIn * SN / SNREF "Mechanical damping coefficient";
   parameter Real H = HIn * SN / SNREF "Constant of inertia";
-  parameter Real rtfo = if transformerIncluded then (U2N / V2) / (U1N / V1) else 1
+  parameter Real rtfo = if transformerIncluded then U2N / V2 / U1N / V1 else 1
     "Transformer ratio";
   parameter Real DET = lf * lD + mrc * lf + mrc * lD;
   parameter Real Mdif = Md0 - Mq0;
@@ -154,22 +153,22 @@ model PwGeneratorM1S "Synchronous machine model according to Park's classical th
   parameter Real Coef51 = PN / (SNREF * 2 * H);
   parameter Real Coef52 = D / (2 * H);
   parameter Real Coef53 = 1.0 / (2 * H);
-  Modelica.Blocks.Interfaces.RealOutput pin_TETA annotation(Placement(transformation(extent = {{39, -30}, {59, -10}}), iconTransformation(extent = {{39, -30}, {59, -10}})));
-  Modelica.Blocks.Interfaces.RealOutput pin_UR annotation(Placement(transformation(extent = {{-10, -10}, {10, 10}}, rotation = -90, origin = {-30, -49}), iconTransformation(extent = {{-10, -10}, {10, 10}}, rotation = -90, origin = {-30, -49})));
-  Modelica.Blocks.Interfaces.RealOutput pin_UI annotation(Placement(transformation(extent = {{-10, -10}, {10, 10}}, rotation = -90, origin = {0, -49}), iconTransformation(extent = {{-10, -10}, {10, 10}}, rotation = -90, origin = {0, -49})));
-  Modelica.Blocks.Interfaces.RealOutput pin_FieldCurrent annotation(Placement(transformation(extent = {{-10, -10}, {10, 10}}, rotation = 90, origin = {-30, 49}), iconTransformation(extent = {{-10, -10}, {10, 10}}, rotation = 90, origin = {-30, 49})));
-  Modelica.Blocks.Interfaces.RealOutput pin_TerminalVoltage annotation(Placement(transformation(extent = {{-10, -10}, {10, 10}}, rotation = -90, origin = {30, -49})));
-  Modelica.Blocks.Interfaces.RealOutput pin_ActivePowerPNALT annotation(Placement(transformation(extent = {{-10, -10}, {10, 10}}, rotation = 90, origin = {0, 49})));
-  Modelica.Blocks.Interfaces.RealOutput pin_ActivePowerPN annotation(Placement(transformation(extent = {{-10, -10}, {10, 10}}, rotation = 90, origin = {30, 49})));
-  Modelica.Blocks.Interfaces.RealOutput pin_ActivePowerSNREF;
- Modelica.Blocks.Interfaces.RealOutput pin_ReactivePowerPNALT;
-  Modelica.Blocks.Interfaces.RealOutput pin_ReactivePowerPN;
- Modelica.Blocks.Interfaces.RealOutput pin_ReactivePowerSNREF;
- Modelica.Blocks.Interfaces.RealOutput pin_ActivePowerSN;
- Modelica.Blocks.Interfaces.RealOutput pin_ReactivePowerSN;
-  Modelica.Blocks.Interfaces.RealOutput pin_Current;
-  Modelica.Blocks.Interfaces.RealOutput pin_FRZPU;
-  Modelica.Blocks.Interfaces.RealOutput pin_FRZHZ;
+  Connectors.ImPin pin_TETA annotation(Placement(transformation(extent = {{39, -30}, {59, -10}}), iconTransformation(extent = {{39, -30}, {59, -10}})));
+  Connectors.ImPin pin_UR annotation(Placement(transformation(extent = {{-10, -10}, {10, 10}}, rotation = -90, origin = {-30, -49}), iconTransformation(extent = {{-10, -10}, {10, 10}}, rotation = -90, origin = {-30, -49})));
+  Connectors.ImPin pin_UI annotation(Placement(transformation(extent = {{-10, -10}, {10, 10}}, rotation = -90, origin = {0, -49}), iconTransformation(extent = {{-10, -10}, {10, 10}}, rotation = -90, origin = {0, -49})));
+  Connectors.ImPin pin_FieldCurrent annotation(Placement(transformation(extent = {{-10, -10}, {10, 10}}, rotation = 90, origin = {-30, 49}), iconTransformation(extent = {{-10, -10}, {10, 10}}, rotation = 90, origin = {-30, 49})));
+  Connectors.ImPin pin_TerminalVoltage annotation(Placement(transformation(extent = {{-10, -10}, {10, 10}}, rotation = -90, origin = {30, -49})));
+  Connectors.ImPin pin_ActivePowerPNALT annotation(Placement(transformation(extent = {{-10, -10}, {10, 10}}, rotation = 90, origin = {0, 49})));
+  Connectors.ImPin pin_ActivePowerPN annotation(Placement(transformation(extent = {{-10, -10}, {10, 10}}, rotation = 90, origin = {30, 49})));
+  Connectors.ImPin pin_ActivePowerSNREF;
+  Connectors.ImPin pin_ReactivePowerPNALT;
+  Connectors.ImPin pin_ReactivePowerPN;
+  Connectors.ImPin pin_ReactivePowerSNREF;
+  PowerSystems.Connectors.ImPin pin_ActivePowerSN;
+  PowerSystems.Connectors.ImPin pin_ReactivePowerSN;
+  Connectors.ImPin pin_Current;
+  Connectors.ImPin pin_FRZPU;
+  Connectors.ImPin pin_FRZHZ;
 equation
   der(lambdaf) = (-efd * Coef11) - lambdaf * Coef12 + lambdad * Coef13 + lambdaad * Coef14;
   der(lambdad) = lambdaf * Coef21 - lambdad * Coef22 + lambdaad * Coef23;
@@ -256,20 +255,5 @@ equation
                   textString="ActivePowerPNALT"),Text(
                   extent={{8,56},{28,52}},
                   lineColor={0,0,255},
-                  textString="ActivePowerPN")}), Diagram(graphics),
-    Documentation(info="<html>
-<p><br><span style=\"font-family: MS Shell Dlg 2;\">&LT;iPSL: iTesla Power System Library&GT;</span></p>
-<p><span style=\"font-family: MS Shell Dlg 2;\">Copyright 2015 RTE (France), AIA (Spain), KTH (Sweden) and DTU (Denmark)</span></p>
-<ul>
-<li><span style=\"font-family: MS Shell Dlg 2;\">RTE: http://www.rte-france.com/ </span></li>
-<li><span style=\"font-family: MS Shell Dlg 2;\">AIA: http://www.aia.es/en/energy/</span></li>
-<li><span style=\"font-family: MS Shell Dlg 2;\">KTH: https://www.kth.se/en</span></li>
-<li><span style=\"font-family: MS Shell Dlg 2;\">DTU:http://www.dtu.dk/english</span></li>
-</ul>
-<p><span style=\"font-family: MS Shell Dlg 2;\">The authors can be contacted by email: info at itesla-ipsl dot org</span></p>
-<p><span style=\"font-family: MS Shell Dlg 2;\">This package is part of the iTesla Power System Library (&QUOT;iPSL&QUOT;) .</span></p>
-<p><span style=\"font-family: MS Shell Dlg 2;\">The iPSL is free software: you can redistribute it and/or modify it under the terms of the GNU Lesser General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.</span></p>
-<p><span style=\"font-family: MS Shell Dlg 2;\">The iPSL is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU Lesser General Public License for more details.</span></p>
-<p><span style=\"font-family: MS Shell Dlg 2;\">You should have received a copy of the GNU Lesser General Public License along with the iPSL. If not, see &LT;http://www.gnu.org/licenses/&GT;.</span></p>
-</html>"));
+                  textString="ActivePowerPN")}), Diagram(graphics));
 end PwGeneratorM1S;
