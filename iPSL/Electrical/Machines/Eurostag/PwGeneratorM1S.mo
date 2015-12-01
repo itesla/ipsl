@@ -3,9 +3,7 @@ model PwGeneratorM1S "Synchronous machine model according to Park's classical th
                    The model corresponds to Eurostag's full model for M1S machine 
                    (defined by internal parameters). Developed by RTE and adapted by AIA.
                    2014/03/10"
-
-  iPSL.Connectors.PwPin sortie annotation (Placement(transformation(extent={{40,
-            10},{60,30}}), iconTransformation(extent={{40,10},{60,30}})));
+  iPSL.Connectors.PwPin sortie annotation(Placement(transformation(extent = {{40, 10}, {60, 30}}), iconTransformation(extent = {{40, 10}, {60, 30}})));
   Modelica.Blocks.Interfaces.RealInput pin_EFD annotation(Placement(transformation(extent = {{-61, -40}, {-41, -20}}), iconTransformation(extent = {{-61, -40}, {-41, -20}})));
   Modelica.Blocks.Interfaces.RealInput pin_OMEGA annotation(Placement(transformation(extent = {{-61, 20}, {-41, 40}}), iconTransformation(extent = {{-61, 20}, {-41, 40}})));
   Modelica.Blocks.Interfaces.RealInput pin_CM annotation(Placement(transformation(extent = {{-61, -10}, {-41, 10}}), iconTransformation(extent = {{-61, -10}, {-41, 10}})));
@@ -128,7 +126,7 @@ model PwGeneratorM1S "Synchronous machine model according to Park's classical th
   parameter Real Mdv = WLMDVPu * yscale;
   parameter Real D = DIn * SN / SNREF "Mechanical damping coefficient";
   parameter Real H = HIn * SN / SNREF "Constant of inertia";
-  parameter Real rtfo = if transformerIncluded then (U2N / V2) / (U1N / V1) else 1
+  parameter Real rtfo = if transformerIncluded then U2N / V2 / (U1N / V1) else 1
     "Transformer ratio";
   parameter Real DET = lf * lD + mrc * lf + mrc * lD;
   parameter Real Mdif = Md0 - Mq0;
@@ -162,11 +160,11 @@ model PwGeneratorM1S "Synchronous machine model according to Park's classical th
   Modelica.Blocks.Interfaces.RealOutput pin_ActivePowerPNALT annotation(Placement(transformation(extent = {{-10, -10}, {10, 10}}, rotation = 90, origin = {0, 49})));
   Modelica.Blocks.Interfaces.RealOutput pin_ActivePowerPN annotation(Placement(transformation(extent = {{-10, -10}, {10, 10}}, rotation = 90, origin = {30, 49})));
   Modelica.Blocks.Interfaces.RealOutput pin_ActivePowerSNREF;
- Modelica.Blocks.Interfaces.RealOutput pin_ReactivePowerPNALT;
+  Modelica.Blocks.Interfaces.RealOutput pin_ReactivePowerPNALT;
   Modelica.Blocks.Interfaces.RealOutput pin_ReactivePowerPN;
- Modelica.Blocks.Interfaces.RealOutput pin_ReactivePowerSNREF;
- Modelica.Blocks.Interfaces.RealOutput pin_ActivePowerSN;
- Modelica.Blocks.Interfaces.RealOutput pin_ReactivePowerSN;
+  Modelica.Blocks.Interfaces.RealOutput pin_ReactivePowerSNREF;
+  Modelica.Blocks.Interfaces.RealOutput pin_ActivePowerSN;
+  Modelica.Blocks.Interfaces.RealOutput pin_ReactivePowerSN;
   Modelica.Blocks.Interfaces.RealOutput pin_Current;
   Modelica.Blocks.Interfaces.RealOutput pin_FRZPU;
   Modelica.Blocks.Interfaces.RealOutput pin_FRZHZ;
@@ -242,22 +240,8 @@ equation
   //Frequency
   pin_FRZPU = omegaRef;
   pin_FRZHZ = omegaRef * omega0;
-  annotation(Icon(graphics={  Rectangle(extent = {{-40, 40}, {40, -40}}, lineColor = {0, 0, 255}), Ellipse(extent = {{-24, 22}, {24, -24}}, lineColor = {0, 0, 255},
-            lineThickness =                                                                                                   1), Line(points = {{-16, 0}, {-12, 8}, {-6, 8}, {6, -10}, {12, -10}, {16, 0}}, color = {0, 0, 255}, smooth = Smooth.Bezier, thickness = 1), Text(extent = {{-74, 48}, {-54, 42}}, lineColor = {0, 0, 255}, textString = "pin_OMEGA"), Text(extent = {{-70, 16}, {-60, 10}}, lineColor = {0, 0, 255}, textString = "pin_CM"), Text(extent = {{-70, -14}, {-60, -20}}, lineColor = {0, 0, 255}, textString = "pin_EFD"), Text(extent = {{54, 38}, {70, 32}}, lineColor = {0, 0, 255}, textString = "sortie"), Text(extent = {{52, -8}, {70, -16}}, lineColor = {0, 0, 255}, textString = "pin_THETA"), Text(extent = {{-52, -46}, {-42, -52}}, lineColor = {0, 0, 255}, textString = "ur"), Text(extent = {{4, -48}, {14, -54}}, lineColor = {0, 0, 255}, textString = "ui
-"),     Text(
-          extent={{-56,56},{-36,52}},
-                  lineColor={0,0,255},
-                  textString="FieldCurrent"),Text(
-                  extent={{34,-50},{54,-54}},
-                  lineColor={0,0,255},
-                  textString="TerminalVoltage"),Text(
-                  extent={{-24,56},{-4,52}},
-                  lineColor={0,0,255},
-                  textString="ActivePowerPNALT"),Text(
-                  extent={{8,56},{28,52}},
-                  lineColor={0,0,255},
-                  textString="ActivePowerPN")}), Diagram(graphics),
-    Documentation(info="<html>
+  annotation(Icon(graphics = {Rectangle(extent=  {{-40, 40}, {40, -40}}, lineColor=  {0, 0, 255}), Ellipse(extent=  {{-24, 22}, {24, -24}}, lineColor=  {0, 0, 255}, lineThickness=  1), Line(points=  {{-16, 0}, {-12, 8}, {-6, 8}, {6, -10}, {12, -10}, {16, 0}}, color=  {0, 0, 255}, smooth=  Smooth.Bezier, thickness=  1), Text(extent=  {{-74, 48}, {-54, 42}}, lineColor=  {0, 0, 255}, textString=  "pin_OMEGA"), Text(extent=  {{-70, 16}, {-60, 10}}, lineColor=  {0, 0, 255}, textString=  "pin_CM"), Text(extent=  {{-70, -14}, {-60, -20}}, lineColor=  {0, 0, 255}, textString=  "pin_EFD"), Text(extent=  {{54, 38}, {70, 32}}, lineColor=  {0, 0, 255}, textString=  "sortie"), Text(extent=  {{52, -8}, {70, -16}}, lineColor=  {0, 0, 255}, textString=  "pin_THETA"), Text(extent=  {{-52, -46}, {-42, -52}}, lineColor=  {0, 0, 255}, textString=  "ur"), Text(extent=  {{4, -48}, {14, -54}}, lineColor=  {0, 0, 255}, textString=  "ui
+"), Text(extent=  {{-56, 56}, {-36, 52}}, lineColor=  {0, 0, 255}, textString=  "FieldCurrent"), Text(extent=  {{34, -50}, {54, -54}}, lineColor=  {0, 0, 255}, textString=  "TerminalVoltage"), Text(extent=  {{-24, 56}, {-4, 52}}, lineColor=  {0, 0, 255}, textString=  "ActivePowerPNALT"), Text(extent=  {{8, 56}, {28, 52}}, lineColor=  {0, 0, 255}, textString=  "ActivePowerPN")}), Diagram(graphics), Documentation(info = "<html>
 <p><br><span style=\"font-family: MS Shell Dlg 2;\">&LT;iPSL: iTesla Power System Library&GT;</span></p>
 <p><span style=\"font-family: MS Shell Dlg 2;\">Copyright 2015 RTE (France), AIA (Spain), KTH (Sweden) and DTU (Denmark)</span></p>
 <ul>
@@ -273,3 +257,4 @@ equation
 <p><span style=\"font-family: MS Shell Dlg 2;\">You should have received a copy of the GNU Lesser General Public License along with the iPSL. If not, see &LT;http://www.gnu.org/licenses/&GT;.</span></p>
 </html>"));
 end PwGeneratorM1S;
+

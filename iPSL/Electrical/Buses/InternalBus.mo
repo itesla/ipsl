@@ -1,24 +1,18 @@
 within iPSL.Electrical.Buses;
 model InternalBus "Bus for change base"
   constant Real pi = Modelica.Constants.pi;
-  parameter Real M_b = 120 "System base power rating (MVA)" annotation (Dialog(group="Power flow data"));
-  parameter Real S_b = 1000 "System base power rating (MVA)" annotation (Dialog(group="Power flow data"));
+  parameter Real M_b = 120 "System base power rating (MVA)" annotation(Dialog(group = "Power flow data"));
+  parameter Real S_b = 1000 "System base power rating (MVA)" annotation(Dialog(group = "Power flow data"));
+  iPSL.Connectors.PwPin p "Machine base" annotation(Placement(transformation(extent = {{-32, -4}, {-12, 16}}), iconTransformation(extent = {{-32, -4}, {-12, 16}})));
+  iPSL.Connectors.PwPin n "System base" annotation(Placement(transformation(extent = {{8, -4}, {28, 16}}), iconTransformation(extent = {{8, -4}, {28, 16}})));
 protected
   parameter Real CoB = M_b / S_b;
-public
-  iPSL.Connectors.PwPin p "Machine base" annotation (Placement(transformation(
-          extent={{-32,-4},{-12,16}}), iconTransformation(extent={{-32,-4},{-12,
-            16}})));
-  iPSL.Connectors.PwPin n "System base" annotation (Placement(transformation(
-          extent={{8,-4},{28,16}}), iconTransformation(extent={{8,-4},{28,16}})));
 equation
   0 = n.vr - p.vr;
   0 = n.vi - p.vi;
   0 = p.ir * CoB + n.ir;
   0 = p.ii * CoB + n.ii;
-  annotation(Icon(coordinateSystem(preserveAspectRatio = false, extent = {{-100, -100}, {100, 100}}), graphics={  Rectangle(extent = {{8, 96}, {-12, -88}}, lineColor = {0, 0, 255}, fillColor = {95, 95, 95},
-            fillPattern =                                                                                                   FillPattern.Solid), Text(extent = {{-46, 34}, {-22, 2}}, lineColor = {0, 0, 255}, textString = "*")}), Diagram(graphics),
-    Documentation(info="<html>
+  annotation(Icon(coordinateSystem(preserveAspectRatio = false, extent = {{-100, -100}, {100, 100}}), graphics = {Rectangle(extent=  {{8, 96}, {-12, -88}}, lineColor=  {0, 0, 255}, fillColor=  {95, 95, 95}, fillPattern=  FillPattern.Solid), Text(extent=  {{-46, 34}, {-22, 2}}, lineColor=  {0, 0, 255}, textString=  "*")}), Diagram(graphics), Documentation(info = "<html>
 <p><br><span style=\"font-family: MS Shell Dlg 2;\">&LT;iPSL: iTesla Power System Library&GT;</span></p>
 <p><span style=\"font-family: MS Shell Dlg 2;\">Copyright 2015 RTE (France), AIA (Spain), KTH (Sweden) and DTU (Denmark)</span></p>
 <ul>
@@ -34,3 +28,4 @@ equation
 <p><span style=\"font-family: MS Shell Dlg 2;\">You should have received a copy of the GNU Lesser General Public License along with the iPSL. If not, see &LT;http://www.gnu.org/licenses/&GT;.</span></p>
 </html>"));
 end InternalBus;
+

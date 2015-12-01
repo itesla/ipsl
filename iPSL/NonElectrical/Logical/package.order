@@ -1,12 +1,6 @@
-ImAnd
-ImOr
-ImOumaint
-Switch
-SaturationBlockTan
-outputlimiter
 NegCurLogic
-Enable
 HV_GATE
 LV_GATE
-IN
-IF_comparisor
+Relay
+Relay3
+Relay4

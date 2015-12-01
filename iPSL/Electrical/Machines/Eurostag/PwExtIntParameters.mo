@@ -107,7 +107,7 @@ model PwExtIntParameters "Transformation of external parameters to internal para
   parameter Real lQ1 = if IENR == 4 then Vq * rQ1 else (tppq * mQ0Pu_ - tppQO_ * Y) / (tppQO_ - tppq);
   parameter Real lq = lStatIn_;
   parameter Real Y = mQ0Pu_ * lq / xQPu_;
-  annotation (Documentation(info="<html>
+  annotation(Documentation(info = "<html>
 <p><br><span style=\"font-family: MS Shell Dlg 2;\">&LT;iPSL: iTesla Power System Library&GT;</span></p>
 <p><span style=\"font-family: MS Shell Dlg 2;\">Copyright 2015 RTE (France), AIA (Spain), KTH (Sweden) and DTU (Denmark)</span></p>
 <ul>
@@ -123,3 +123,4 @@ model PwExtIntParameters "Transformation of external parameters to internal para
 <p><span style=\"font-family: MS Shell Dlg 2;\">You should have received a copy of the GNU Lesser General Public License along with the iPSL. If not, see &LT;http://www.gnu.org/licenses/&GT;.</span></p>
 </html>"));
 end PwExtIntParameters;
+

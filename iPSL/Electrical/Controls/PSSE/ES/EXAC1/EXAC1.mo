@@ -1,83 +1,18 @@
 within iPSL.Electrical.Controls.PSSE.ES.EXAC1;
-model EXAC1
 
-  iPSL.NonElectrical.Math.ImSum2 imSum2_1(
-    a0=0,
-    a1=1,
-    a2=-1) annotation (Placement(transformation(extent={{-50,-38},{-30,-18}})));
-  iPSL.NonElectrical.Math.ImSetPoint Vref(V=VREF)
-    annotation (Placement(transformation(extent={{-68,-22},{-44,2}})));
-  iPSL.NonElectrical.Math.ImSum3 imSum3_1(
-    a0=0,
-    a2=1,
-    a1=-1,
-    a3=1) annotation (Placement(transformation(extent={{-34,-38},{-14,-18}})));
-  iPSL.NonElectrical.Math.ImSum2 imSum2_2(
-    a0=0,
-    a1=1,
-    a2=1) annotation (Placement(transformation(extent={{-72,-62},{-52,-42}})));
-  Modelica.Blocks.Interfaces.RealInput XADIFD "Field current" annotation (
-      Placement(transformation(extent={{-104,54},{-94,66}}), iconTransformation(
-          extent={{-104,54},{-94,66}})));
+
+model EXAC1
+  import iPSL.NonElectrical.Functions.SE;
+  Modelica.Blocks.Sources.Constant Vref(k = VREF) annotation(Placement(transformation(extent = {{-108, -86}, {-94, -72}})));
+  Modelica.Blocks.Interfaces.RealInput XADIFD "Field current" annotation(Placement(transformation(extent = {{-108, 38}, {-94, 52}}), iconTransformation(extent = {{-100, 54}, {-90, 66}})));
   Modelica.Blocks.Interfaces.RealInput ECOMP
-    "Compensated generator terminal voltage" annotation (Placement(transformation(
-          extent={{-104,14},{-94,26}}), iconTransformation(extent={{-104,14},{-94,
-            26}})));
-  Modelica.Blocks.Interfaces.RealInput VOTHSG "PSS output signal" annotation(Placement(transformation(extent={{-104,
-            -26},{-94,-14}}), iconTransformation(extent={{-104,-26},{-94,-14}})));
-  Modelica.Blocks.Interfaces.RealInput VOEL "OEL output" annotation(Placement(transformation(extent={{-104,
-            -66},{-94,-54}}), iconTransformation(extent={{-104,-66},{-94,-54}})));
-  iPSL.NonElectrical.Continuous.ImSimpleLag_nowinduplimit imLimitedSimpleLag(
-    K=K_A,
-    T=T_A,
-    Ymin=V_RMIN,
-    Ymax=V_RMAX,
-    nStartValue=0)
-    annotation (Placement(transformation(extent={{-22,-46},{36,-10}})));
-  iPSL.NonElectrical.Continuous.ImIntegrator imIntegrator(K=1/T_E, nStartValue=
-        vf00) annotation (Placement(transformation(extent={{54,-36},{74,-16}})));
-  iPSL.NonElectrical.Continuous.ImLimited imLimited_min(Ymin=0.000001, Ymax=
-        Modelica.Constants.inf)
-    annotation (Placement(transformation(extent={{68,-36},{88,-16}})));
-  iPSL.NonElectrical.Math.ImGain imGain(K=K_D)
-    annotation (Placement(transformation(extent={{-80,-12},{-60,8}})));
-  iPSL.NonElectrical.Math.ImDiv2 imDiv2_1(
-    a0=0,
-    a1=1,
-    a2=1) annotation (Placement(transformation(extent={{-42,60},{-22,80}})));
-  iPSL.NonElectrical.Math.ImGain imGain1(K=K_C)
-    annotation (Placement(transformation(extent={{-26,60},{-6,80}})));
-  NonElectrical.Nonlinear.ImRelay4
-          imRelay(E1 = E_1, E2 = E_2) annotation(Placement(transformation(extent = {{90, 10}, {36, 58}})));
-  iPSL.NonElectrical.Math.ImSetPoint imSetPoint(V=S_EE_1)
-    annotation (Placement(transformation(extent={{98,34},{78,54}})));
-  iPSL.NonElectrical.Math.ImSetPoint imSetPoint1(V=S_EE_2)
-    annotation (Placement(transformation(extent={{98,22},{76,44}})));
-  iPSL.NonElectrical.Math.ImSetPoint imSetPoint2(V=0)
-    annotation (Placement(transformation(extent={{98,44},{78,64}})));
-  iPSL.NonElectrical.Math.ImSum2 imSum2_4(
-    a0=0,
-    a1=1,
-    a2=1) annotation (Placement(transformation(extent={{46,26},{26,46}})));
-  iPSL.NonElectrical.Math.ImSetPoint imSetPoint3(V=K_E)
-    annotation (Placement(transformation(extent={{68,8},{48,28}})));
-  iPSL.NonElectrical.Math.ImMult2 imMult2_1(
-    a0=0,
-    a1=1,
-    a2=1) annotation (Placement(transformation(extent={{-20,16},{-40,36}})));
-  iPSL.NonElectrical.Math.ImSum2 imSum2_5(
-    a0=0,
-    a1=1,
-    a2=1) annotation (Placement(transformation(extent={{-54,-10},{-34,10}})));
-  NonElectrical.Nonlinear.ImFEX
-      fEX annotation(Placement(transformation(extent = {{-12, 50}, {30, 90}})));
-  iPSL.NonElectrical.Math.ImMult2 imMult2_2(
-    a0=0,
-    a1=1,
-    a2=1) annotation (Placement(transformation(extent={{24,58},{44,78}})));
-  Modelica.Blocks.Interfaces.RealOutput EFD "Excitation voltage" annotation(Placement(transformation(extent={{100,-6},
-            {110,6}}), iconTransformation(extent={{100,-6},{110,6}})));
-  parameter Real VREF = 1 "Reference terminal voltage (pu)";
+    "Compensated generator terminal voltage"                                          annotation(Placement(transformation(extent = {{-104, 14}, {-94, 26}}), iconTransformation(extent = {{-100, -6}, {-90, 6}})));
+  Modelica.Blocks.Interfaces.RealInput VOTHSG "PSS output signal" annotation(Placement(transformation(extent = {{-122, -26}, {-112, -14}}), iconTransformation(extent = {{-100, 34}, {-90, 46}})));
+  Modelica.Blocks.Interfaces.RealInput VOEL "OEL output" annotation(Placement(transformation(extent = {{-122, -46}, {-112, -34}}), iconTransformation(extent = {{-100, -56}, {-90, -44}})));
+  iPSL.NonElectrical.Continuous.SimpleLagLim imLimitedSimpleLag(K = K_A, T = T_A, outMin = V_RMIN, outMax = V_RMAX, y_start = VR0) annotation(Placement(transformation(extent = {{0, -36}, {16, -20}})));
+  Modelica.Blocks.Sources.Constant imSetPoint3(k = K_E) annotation(Placement(transformation(extent = {{76, 14}, {64, 26}})));
+  NonElectrical.Nonlinear.FEX fEX annotation(Placement(transformation(extent = {{2, 62}, {18, 78}})));
+  Modelica.Blocks.Interfaces.RealOutput EFD "Excitation voltage" annotation(Placement(transformation(extent = {{128, -6}, {138, 6}}), iconTransformation(extent = {{100, -6}, {110, 6}})));
   parameter Real T_R = 0 "Voltage input time constant (s)";
   parameter Real T_B = 0 "AVR lead-lag time constant (s)";
   parameter Real T_C = 0 "AVR lead-lag time constant (s)";
@@ -95,98 +30,94 @@ model EXAC1
   parameter Real E_2 = 7 "Exciter saturation point 2 (pu)";
   parameter Real S_EE_1 = 0.03 "Saturation at E1";
   parameter Real S_EE_2 = 0.1 "Saturation at E2";
-  parameter Real vf00 "Initial field voltage";
-  parameter Real if00 "Initial field current";
-  iPSL.NonElectrical.Continuous.ImDerivativeLag imDerivativeLag(
-    K=K_F,
-    T=T_F,
-    pStartValue=if00*K_D + vf00)
-    annotation (Placement(transformation(extent={{-40,-14},{4,16}})));
-  iPSL.NonElectrical.Math.ImSum2 imSum2_3(
-    a0=0,
-    a2=1,
-    a1=-1) annotation (Placement(transformation(extent={{38,-36},{58,-16}})));
+  Modelica.Blocks.Continuous.Derivative imDerivativeLag(k = K_F, T = T_F, y_start = 0, initType = Modelica.Blocks.Types.Init.InitialOutput) annotation(Placement(transformation(extent = {{-20, -8}, {-36, 8}})));
+  NonElectrical.Continuous.LeadLag leadLag(K = 1, T1 = T_C, T2 = T_B, y_start = VR0 / K_A) annotation(Placement(transformation(extent = {{-28, -36}, {-12, -20}})));
+  Modelica.Blocks.Math.Add3 add3_1(k2 = -1, k1 = -1) annotation(Placement(transformation(extent = {{-56, -36}, {-40, -20}})));
+  NonElectrical.Continuous.SimpleLag simpleLag(K = 1, T = T_R, y_start = ECOMP0) annotation(Placement(transformation(extent = {{-86, 12}, {-70, 28}})));
+  Modelica.Blocks.Math.Add add(k1 = -1) annotation(Placement(transformation(extent = {{30, -36}, {46, -20}})));
+  Modelica.Blocks.Continuous.LimIntegrator limIntegrator(k = 1 / T_E, outMax = Modelica.Constants.inf, outMin = 0, initType = Modelica.Blocks.Types.Init.InitialOutput, y_start = VE0) annotation(Placement(transformation(extent = {{56, -36}, {72, -20}})));
+  NonElectrical.Functions.ImSE imSE(SE1 = S_EE_1, SE2 = S_EE_2, E1 = E_1, E2 = E_2) annotation(Placement(transformation(extent = {{80, 30}, {60, 50}})));
+  Modelica.Blocks.Math.Add add1 annotation(Placement(transformation(extent = {{46, 24}, {36, 34}})));
+  Modelica.Blocks.Math.Product product annotation(Placement(transformation(extent = {{24, 20}, {14, 30}})));
+  Modelica.Blocks.Math.Add add2 annotation(Placement(transformation(extent = {{2, 24}, {-8, 34}})));
+  Modelica.Blocks.Math.Gain gain(k = K_D) annotation(Placement(transformation(extent = {{-6, 40}, {4, 50}})));
+  Modelica.Blocks.Math.Product product1 annotation(Placement(transformation(extent = {{100, -6}, {112, 6}})));
+  Modelica.Blocks.Math.Division division annotation(Placement(transformation(extent = {{-56, 64}, {-44, 76}})));
+  Modelica.Blocks.Math.Gain gain1(k = K_C) annotation(Placement(transformation(extent = {{-30, 64}, {-18, 76}})));
+  Modelica.Blocks.Math.Add3 add3_2(k1 = +1, k2 = +1) annotation(Placement(transformation(extent = {{-102, -48}, {-86, -32}})));
+  Modelica.Blocks.Interfaces.RealInput VUEL "Under-excitation limter input" annotation(Placement(transformation(extent = {{-126, -66}, {-112, -52}}), iconTransformation(extent = {{-100, -36}, {-88, -24}})));
+  Modelica.Blocks.Math.Add add3 annotation(Placement(transformation(extent = {{-78, -56}, {-64, -42}})));
+  Modelica.Blocks.Interfaces.RealInput EFD0 annotation(Placement(transformation(extent = {{-62, -82}, {-40, -60}}), iconTransformation(extent = {{-100, -74}, {-90, -64}})));
+protected
+  parameter Real VREF(fixed = false) "Reference terminal voltage (pu)";
+  parameter Real VR0(fixed = false);
+  parameter Real Efd0(fixed = false);
+  parameter Real Ifd0(fixed = false);
+  parameter Real VE0(fixed = false);
+  parameter Real VFE0(fixed = false);
+  parameter Real ECOMP0(fixed = false);
+initial equation
+  ECOMP0 = ECOMP;
+  Efd0 = EFD0;
+  Ifd0 = XADIFD;
+  // Finding initial value of excitation voltage, VE0, via going through conditions of FEX function
+  if Ifd0 <= 0 then
+    VE0 = Efd0;
+  elseif K_C * Ifd0 / (Efd0 + 0.577 * K_C * Ifd0) <= 0.433 then
+    VE0 = Efd0 + 0.577 * K_C * Ifd0;
+  elseif K_C * Ifd0 / sqrt((Efd0 ^ 2 + (K_C * Ifd0) ^ 2) / 0.75) > 0.433 and K_C * Ifd0 / sqrt((Efd0 ^ 2 + (K_C * Ifd0) ^ 2) / 0.75) < 0.75 then
+    VE0 = sqrt((Efd0 ^ 2 + (K_C * Ifd0) ^ 2) / 0.75);
+  else
+    VE0 = (Efd0 + 1.732 * K_C * Ifd0) / 1.732;
+  end if;
+  // Case IN>0 not checked because it will be resolved in the next iteration
+  VFE0 = VE0 * (SE(VE0, S_EE_1, S_EE_2, E_1, E_2) + K_E) + Ifd0 * K_D;
+  VR0 = VFE0;
+  VREF = VR0 / K_A + ECOMP0;
 equation
-  connect(Vref.n1, imSum2_1.p1) annotation(Line(points = {{-50.12, -10}, {-46, -10}, {-46, -26}, {-45.1, -26}}, color = {0, 0, 127}, smooth = Smooth.None));
-  connect(imSum2_1.n1, imSum3_1.p2) annotation(Line(points = {{-35.1, -28}, {-29.1, -28}}, color = {0, 0, 127}, smooth = Smooth.None));
-  connect(VOTHSG, imSum2_2.p1) annotation(Line(points={{-99,-20},{-76.5,-20},{-76.5,
-          -50},{-67.1,-50}},                                                                                    color = {0, 0, 127}, smooth = Smooth.None));
-  connect(VOEL, imSum2_2.p2) annotation(Line(points={{-99,-60},{-74,-60},{-74,-54},
-          {-67.1,-54}},                                                                                   color = {0, 0, 127}, smooth = Smooth.None));
-  connect(imSum2_2.n1, imSum3_1.p3) annotation(Line(points = {{-57.1, -52}, {-32, -52}, {-32, -31}, {-29.1, -31}}, color = {0, 0, 127}, smooth = Smooth.None));
-  connect(imIntegrator.n1, imLimited_min.p1) annotation(Line(points = {{68.9, -26}, {72.9, -26}}, color = {0, 0, 127}, smooth = Smooth.None));
-  connect(XADIFD, imGain.p1) annotation (Line(
-      points={{-99,60},{-92,60},{-92,-2},{-75.1,-2}},
-      color={0,0,127},
-      smooth=Smooth.None));
-  connect(imDiv2_1.p1, XADIFD) annotation (Line(
-      points={{-37.1,72},{-82,72},{-82,60},{-99,60}},
-      color={0,0,127},
-      smooth=Smooth.None));
-  connect(imLimited_min.n1, imDiv2_1.p2) annotation(Line(points = {{82.9, -26}, {98, -26}, {98, 60}, {-38, 60}, {-38, 68}, {-37.1, 68}}, color = {0, 0, 127}, smooth = Smooth.None));
-  connect(imDiv2_1.n1, imGain1.p1) annotation(Line(points = {{-27.1, 70}, {-21.1, 70}}, color = {0, 0, 127}, smooth = Smooth.None));
-  connect(imRelay.p4, imSetPoint1.n1) annotation(Line(points = {{75.96, 31.36}, {78.98, 31.36}, {78.98, 33}, {81.61, 33}}, color = {0, 0, 127}, smooth = Smooth.None));
-  connect(imSetPoint.n1, imRelay.p3) annotation(Line(points = {{83.1, 44}, {80, 44}, {80, 36.4}, {75.825, 36.4}}, color = {0, 0, 127}, smooth = Smooth.None));
-  connect(imSetPoint2.n1, imRelay.p2) annotation(Line(points = {{83.1, 54}, {75.825, 54}, {75.825, 41.92}}, color = {0, 0, 127}, smooth = Smooth.None));
-  connect(imRelay.n1, imSum2_4.p1) annotation(Line(points = {{49.77, 37.84}, {45.885, 37.84}, {45.885, 38}, {41.1, 38}}, color = {0, 0, 127}, smooth = Smooth.None));
-  connect(imSetPoint3.n1, imSum2_4.p2) annotation(Line(points = {{53.1, 18}, {46, 18}, {46, 34}, {41.1, 34}}, color = {0, 0, 127}, smooth = Smooth.None));
-  connect(imSum2_4.n1, imMult2_1.p1) annotation(Line(points = {{31.1, 36}, {28, 36}, {28, 28.2}, {-24.9, 28.2}}, color = {0, 0, 127}, smooth = Smooth.None));
-  connect(imGain.n1, imSum2_5.p2) annotation(Line(points = {{-65.1, -2}, {-49.1, -2}}, color = {0, 0, 127}, smooth = Smooth.None));
-  connect(imMult2_1.n1, imSum2_5.p1) annotation(Line(points = {{-34.9, 26}, {-56, 26}, {-56, 2}, {-49.1, 2}}, color = {0, 0, 127}, smooth = Smooth.None));
-  connect(imRelay.p1, imLimited_min.n1) annotation(Line(points = {{75.825, 26.08}, {90, 26.08}, {90, 12}, {98, 12}, {98, -26}, {82.9, -26}}, color = {0, 0, 127}, smooth = Smooth.None));
-  connect(imGain1.n1, fEX.IN) annotation(Line(points = {{-11.1, 70}, {-3.6, 70}}, color = {0, 0, 127}, smooth = Smooth.None));
-  connect(fEX.FEX, imMult2_2.p1) annotation(Line(points = {{23.28, 70}, {26.09, 70}, {26.09, 70.2}, {28.9, 70.2}}, color = {0, 0, 127}, smooth = Smooth.None));
-  connect(imMult2_2.p2, imLimited_min.n1) annotation(Line(points = {{28.9, 65.8}, {24, 65.8}, {24, 60}, {98, 60}, {98, -26}, {82.9, -26}}, color = {0, 0, 127}, smooth = Smooth.None));
-  connect(imMult2_2.n1, EFD) annotation(Line(points={{38.9,68},{104,68},{104,0},
-          {105,0}},                                                                                    color = {0, 0, 127}, smooth = Smooth.None));
-  connect(imSum3_1.n1, imLimitedSimpleLag.p1) annotation(Line(points={{-19.1,
-          -28},{-7.79,-28}},                                                                         color = {0, 0, 127}, smooth = Smooth.None));
-  connect(ECOMP, imSum2_1.p2) annotation (Line(
-      points={{-99,20},{-68,20},{-68,-30},{-45.1,-30}},
-      color={0,0,127},
-      smooth=Smooth.None));
-  connect(imSum2_5.n1, imDerivativeLag.p1) annotation(Line(points={{-39.1,0},{
-          -32,0},{-32,1},{-39.78,1}},                                                                              color = {0, 0, 127}, smooth = Smooth.None));
-  connect(imDerivativeLag.n1, imSum3_1.p1) annotation(Line(points={{4.22,1},{2,
-          1},{2,-12},{-34,-12},{-34,-25},{-29.1,-25}},                                                                                    color = {0, 0, 127}, smooth = Smooth.None));
-  connect(imMult2_1.p2, imDiv2_1.p2) annotation(Line(points = {{-24.9, 23.8}, {-10, 23.8}, {-10, 60}, {-38, 60}, {-38, 68}, {-37.1, 68}}, color = {0, 0, 127}, smooth = Smooth.None));
-  connect(imIntegrator.p1, imSum2_3.n1) annotation(Line(points = {{58.9, -26}, {52.9, -26}}, color = {0, 0, 127}, smooth = Smooth.None));
-  connect(imSum2_3.p1, imDerivativeLag.p1) annotation(Line(points={{42.9,-24},{
-          28,-24},{28,12},{-34,12},{-34,1},{-39.78,1}},                                                                                   color = {0, 0, 127}, smooth = Smooth.None));
-  connect(imLimitedSimpleLag.n0, imSum2_3.p2) annotation (Line(
-      points={{21.21,-28},{42.9,-28}},
-      color={0,0,127},
-      smooth=Smooth.None));
-  annotation(Diagram(coordinateSystem(preserveAspectRatio=false,  extent={{-100,
-            -80},{100,80}}),                                                                           graphics={  Text(extent=  {{-64, -14}, {-54, -22}}, lineColor=  {0, 0, 255}, textString=  "Vref"), Text(extent=  {{-56, -52}, {-50, -58}}, lineColor=  {255, 0, 0}, textString=  "Vs"), Text(extent=  {{-14, 78}, {-8, 72}}, lineColor=  {255, 0, 0}, textString=  "I"), Text(extent=  {{-10, 74}, {-8, 74}}, lineColor=  {255, 0, 0}, textString=  "N"), Text(extent=  {{86, 58}, {92, 52}}, lineColor=  {255, 0, 0}, textString=  "0"), Text(extent=  {{86, 38}, {94, 30}}, lineColor=  {255, 0, 0}, textString=  "SE2"), Text(extent=  {{86, 48}, {94, 42}}, lineColor=  {255, 0, 0}, textString=  "SE1"), Text(extent=  {{84, -28}, {90, -34}}, lineColor=  {255, 0, 0}, textString=  "V"), Text(extent=  {{88, -32}, {90, -32}}, lineColor=  {255, 0, 0}, textString=  "E"), Text(extent=  {{-40, -4}, {-30, -10}}, lineColor=  {255, 0, 0}, textString=  "V"), Text(extent=  {{-36, -8}, {-28, -10}}, lineColor=  {255, 0, 0}, textString=  "FE"), Text(extent=  {{30, 2}, {40, -4}}, lineColor=  {255, 0, 0}, textString=  "V"), Text(extent=  {{42, -2}, {36, -4}}, lineColor=  {255, 0, 0}, textString=  "F"), Text(extent=  {{54, 22}, {60, 16}}, lineColor=  {255, 0, 0}, textString=  "K"), Text(extent=  {{58, 18}, {60, 18}}, lineColor=  {255, 0, 0}, textString=  "E"), Text(extent=  {{42, 44}, {48, 38}}, lineColor=  {255, 0, 0}, textString=  "S"), Text(extent=  {{46, 40}, {48, 40}}, lineColor=  {255, 0, 0}, textString=  "E")}), Icon(coordinateSystem(preserveAspectRatio=false,   extent={{-100,
-            -80},{100,80}}),                                                                                                    graphics={  Rectangle(extent={{
-              -100,80},{100,-80}},                                                                                                    lineColor=  {0, 0, 255}), Text(extent={{
-              -92,68},{-60,52}},                                                                                                    lineColor=
-              {0,0,255},
-          textString="XADIFD"),                                                                                                    Text(extent={{
-              -92,-12},{-56,-30}},                                                                                                    lineColor=
-              {0,0,255},
-          textString="VOTHSG"),                                                                                                    Text(extent={{
-              -96,-56},{-64,-66}},                                                                                                    lineColor=  {0, 0, 255}, textString=  "VOEL"), Text(extent={{
-              68,8},{98,-8}},                                                                                                    lineColor=  {0, 0, 255}, textString=  "EFD"), Text(extent={{
-              -54,34},{52,-28}},                                                                                                    lineColor=  {0, 0, 255}, textString=  "EXAC1"),
-                                                                                        Text(extent={{
-              -92,26},{-60,16}},                                                                                                    lineColor=
-              {0,0,255},
-          textString="ECOMP")}),
-    Documentation(info="<html>
+  connect(leadLag.y, imLimitedSimpleLag.u) annotation(Line(points = {{-11.2, -28}, {-8, -28}, {-1.6, -28}}, color = {0, 0, 127}));
+  connect(add3_1.y, leadLag.u) annotation(Line(points = {{-39.2, -28}, {-36, -28}, {-29.6, -28}}, color = {0, 0, 127}));
+  connect(ECOMP, simpleLag.u) annotation(Line(points = {{-99, 20}, {-87.6, 20}}, color = {0, 0, 127}));
+  connect(simpleLag.y, add3_1.u2) annotation(Line(points = {{-69.2, 20}, {-66, 20}, {-66, -28}, {-57.6, -28}}, color = {0, 0, 127}));
+  connect(imLimitedSimpleLag.y, add.u2) annotation(Line(points = {{16.8, -28}, {22, -28}, {22, -32.8}, {28.4, -32.8}}, color = {0, 0, 127}));
+  connect(add.y, limIntegrator.u) annotation(Line(points = {{46.8, -28}, {54.4, -28}}, color = {0, 0, 127}));
+  connect(add1.u1, imSE.VE_OUT) annotation(Line(points = {{47, 32}, {54, 32}, {54, 39.9}, {59.5, 39.9}}, color = {0, 0, 127}));
+  connect(add1.u2, imSetPoint3.y) annotation(Line(points = {{47, 26}, {54, 26}, {54, 20}, {63.4, 20}}, color = {0, 0, 127}));
+  connect(product.u1, add1.y) annotation(Line(points = {{25, 28}, {35.5, 28}, {35.5, 29}}, color = {0, 0, 127}));
+  connect(add2.u2, product.y) annotation(Line(points = {{3, 26}, {8, 26}, {8, 25}, {13.5, 25}}, color = {0, 0, 127}));
+  connect(gain.u, XADIFD) annotation(Line(points = {{-7, 45}, {-101, 45}}, color = {0, 0, 127}));
+  connect(gain.y, add2.u1) annotation(Line(points = {{4.5, 45}, {8, 45}, {8, 32}, {3, 32}}, color = {0, 0, 127}));
+  connect(imDerivativeLag.u, add2.y) annotation(Line(points = {{-18.4, 0}, {-12, 0}, {-12, 29}, {-8.5, 29}}, color = {0, 0, 127}));
+  connect(imDerivativeLag.y, add3_1.u1) annotation(Line(points = {{-36.8, 0}, {-62, 0}, {-62, -21.6}, {-57.6, -21.6}}, color = {0, 0, 127}));
+  connect(add.u1, add2.y) annotation(Line(points = {{28.4, -23.2}, {24, -23.2}, {24, 0}, {-12, 0}, {-12, 29}, {-8.5, 29}}, color = {0, 0, 127}));
+  connect(limIntegrator.y, imSE.VE_IN) annotation(Line(points = {{72.8, -28}, {86, -28}, {86, 39.9}, {80.5, 39.9}}, color = {0, 0, 127}));
+  connect(product.u2, imSE.VE_IN) annotation(Line(points = {{25, 22}, {32, 22}, {32, 8}, {86, 8}, {86, 39.9}, {80.5, 39.9}}, color = {0, 0, 127}));
+  connect(product1.y, EFD) annotation(Line(points = {{112.6, 0}, {122, 0}, {133, 0}}, color = {0, 0, 127}));
+  connect(product1.u2, imSE.VE_IN) annotation(Line(points = {{98.8, -3.6}, {86, -3.6}, {86, 39.9}, {80.5, 39.9}}, color = {0, 0, 127}));
+  connect(division.u1, XADIFD) annotation(Line(points = {{-57.2, 73.6}, {-80, 73.6}, {-80, 45}, {-101, 45}}, color = {0, 0, 127}));
+  connect(division.u2, imSE.VE_IN) annotation(Line(points = {{-57.2, 66.4}, {-60, 66.4}, {-60, 54}, {86, 54}, {86, 39.9}, {80.5, 39.9}}, color = {0, 0, 127}));
+  connect(gain1.u, division.y) annotation(Line(points = {{-31.2, 70}, {-43.4, 70}}, color = {0, 0, 127}));
+  connect(VOEL, add3_2.u2) annotation(Line(points = {{-117, -40}, {-103.6, -40}}, color = {0, 0, 127}));
+  connect(VOTHSG, add3_2.u1) annotation(Line(points = {{-117, -20}, {-108, -20}, {-108, -33.6}, {-103.6, -33.6}}, color = {0, 0, 127}));
+  connect(VUEL, add3_2.u3) annotation(Line(points = {{-119, -59}, {-108, -59}, {-108, -46.4}, {-103.6, -46.4}}, color = {0, 0, 127}));
+  connect(add3_2.y, add3.u1) annotation(Line(points = {{-85.2, -40}, {-84, -40}, {-84, -44.8}, {-79.4, -44.8}}, color = {0, 0, 127}));
+  connect(Vref.y, add3.u2) annotation(Line(points = {{-93.3, -79}, {-86, -79}, {-86, -53.2}, {-79.4, -53.2}}, color = {0, 0, 127}));
+  connect(add3.y, add3_1.u3) annotation(Line(points = {{-63.3, -49}, {-62, -49}, {-62, -34.4}, {-57.6, -34.4}}, color = {0, 0, 127}));
+  connect(gain1.y, fEX.u) annotation(Line(points = {{-17.4, 70}, {-7.7, 70}, {2, 70}}, color = {0, 0, 127}));
+  connect(fEX.y, product1.u1) annotation(Line(points = {{18.8, 70}, {94, 70}, {94, 3.6}, {98.8, 3.6}}, color = {0, 0, 127}));
+  annotation(Diagram(coordinateSystem(preserveAspectRatio = false, extent = {{-100, -80}, {100, 80}}), graphics = {Text(extent=  {{-14, 78}, {-8, 72}}, lineColor=  {255, 0, 0}, textString=  "I"), Text(extent=  {{-10, 74}, {-8, 74}}, lineColor=  {255, 0, 0}, textString=  "N"), Text(extent=  {{84, -28}, {90, -34}}, lineColor=  {255, 0, 0}, textString=  "V"), Text(extent=  {{88, -32}, {90, -32}}, lineColor=  {255, 0, 0}, textString=  "E")}), Icon(coordinateSystem(preserveAspectRatio = false, extent = {{-100, -80}, {100, 80}}), graphics = {Rectangle(extent=  {{-100, 80}, {100, -80}}, lineColor=  {0, 0, 255}), Text(extent=  {{-88, 68}, {-56, 52}}, lineColor=  {0, 0, 255}, textString=  "XADIFD"), Text(extent=  {{-88, 48}, {-52, 30}}, lineColor=  {0, 0, 255}, textString=  "VOTHSG"), Text(extent=  {{-92, -46}, {-60, -56}}, lineColor=  {0, 0, 255}, textString=  "VOEL"), Text(extent=  {{68, 8}, {98, -8}}, lineColor=  {0, 0, 255}, textString=  "EFD"), Text(extent=  {{-54, 34}, {52, -28}}, lineColor=  {0, 0, 255}, textString=  "EXAC1"), Text(extent=  {{-88, 4}, {-56, -6}}, lineColor=  {0, 0, 255}, textString=  "ECOMP"), Text(extent=  {{-90, -26}, {-58, -36}}, lineColor=  {0, 0, 255}, textString=  "VUEL"), Text(extent=  {{-92, -64}, {-60, -74}}, lineColor=  {0, 0, 255}, textString=  "EFD0")}), Documentation(info = "<html>
 <table cellspacing=\"1\" cellpadding=\"1\" border=\"1\">
 <tr>
 <td><p>Reference</p></td>
-<td>Excitation System (EXAC1), PSSE manual</td>
+<td>EXAC2, PSS/E Manual</td>
 </tr>
 <tr>
 <td><p>Last update</p></td>
-<td>2015-10-02</td>
+<td>2015-11-26</td>
 </tr>
 <tr>
 <td><p>Author</p></td>
-<td><p>Le Qi, SmarTS Lab, KTH Royal Institute of Technology</p></td>
+<td><p>Tin Rabuzin, SmarTS Lab, KTH Royal Institute of Technology</p></td>
 </tr>
 <tr>
 <td><p>Contact</p></td>

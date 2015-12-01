@@ -1,7 +1,8 @@
 within iPSL.Electrical.Controls.PSAT.TG;
+
+
 model TGTypeVI
   "Hydro Turbine (Nonlinear model) and Governor (PID controller combined with servomotor)- control scheme Type 6"
-
   parameter Real gmax "Maximum gate opening (pu)";
   parameter Real gmin "Minimum gate opening (pu)";
   parameter Real vmax "Maximum gate opening rate (pu)";
@@ -23,8 +24,7 @@ model TGTypeVI
   Modelica.Blocks.Math.MultiSum multiSum1(k = {-1, 1}, nu = 2) annotation(Placement(transformation(extent = {{-152, -26}, {-140, -14}})));
   Modelica.Blocks.Continuous.Integrator integrator3(initType = Modelica.Blocks.Types.Init.NoInit, y_start = po) annotation(Placement(transformation(extent = {{-6, -6}, {6, 6}}, rotation = 180, origin = {166, -2})));
   Modelica.Blocks.Math.MultiSum multiSum3(nu = 2, k = {1, -1}) annotation(Placement(transformation(extent = {{212, 52}, {224, 64}})));
-  Modelica.Blocks.Interfaces.RealOutput Pm "Mechanical power (pu)"
-                                                           annotation(Placement(transformation(extent = {{88, 14}, {100, 26}}), iconTransformation(extent = {{100, 24}, {126, 50}})));
+  Modelica.Blocks.Interfaces.RealOutput Pm "Mechanical power (pu)" annotation(Placement(transformation(extent = {{88, 14}, {100, 26}}), iconTransformation(extent = {{100, 24}, {126, 50}})));
   Modelica.Blocks.Math.Gain gain9(k = Kp) annotation(Placement(transformation(extent = {{-98, 74}, {-86, 86}})));
   Modelica.Blocks.Math.MultiSum multiSum5(nu = 3, k = {1, 1, 1}) annotation(Placement(transformation(extent = {{-52, 54}, {-40, 66}})));
   Modelica.Blocks.Math.MultiSum multiSum6(k = {1, -1}, nu = 2) annotation(Placement(transformation(extent = {{-130, 54}, {-118, 66}})));
@@ -38,9 +38,7 @@ model TGTypeVI
   Modelica.Blocks.Math.Division division annotation(Placement(transformation(extent = {{158, 56}, {170, 68}})));
   Modelica.Blocks.Math.Product product1 annotation(Placement(transformation(extent = {{262, 64}, {274, 76}})));
   Modelica.Blocks.Math.MultiProduct multiProduct(nu = 2) annotation(Placement(transformation(extent = {{184, 56}, {196, 68}})));
-public
-  Modelica.Blocks.Interfaces.RealInput Pe "Active power (pu)"
-                                                             annotation(Placement(transformation(extent = {{-54, -46}, {-44, -36}}), iconTransformation(extent = {{-132, -18}, {-100, 14}})));
+  Modelica.Blocks.Interfaces.RealInput Pe "Active power (pu)" annotation(Placement(transformation(extent = {{-54, -46}, {-44, -36}}), iconTransformation(extent = {{-132, -18}, {-100, 14}})));
   Modelica.Blocks.Continuous.Derivative derivative(k = Kd, T = Td) annotation(Placement(transformation(extent = {{-90, 30}, {-78, 42}})));
   Modelica.Blocks.Continuous.TransferFunction transferFunction(a = {Ta, 1}, b = {Ka}) annotation(Placement(transformation(extent = {{0, 52}, {12, 64}})));
   Modelica.Blocks.Math.MultiSum multiSum2(nu = 2, k = {1, -1}) annotation(Placement(transformation(extent = {{-28, 52}, {-16, 64}})));
@@ -50,15 +48,9 @@ public
   Modelica.Blocks.Logical.Switch switch1 annotation(Placement(transformation(extent = {{-8, -8}, {8, 8}}, rotation = 180, origin = {-6, -32})));
   Modelica.Blocks.Math.RealToBoolean realToBoolean(threshold = 0.5) annotation(Placement(transformation(extent = {{-8, -8}, {8, 8}}, rotation = 180, origin = {38, -32})));
   Modelica.Blocks.Sources.Constant const(k = dref) annotation(Placement(transformation(extent = {{-6, -6}, {6, 6}}, rotation = 180, origin = {68, -32})));
-public
-  Modelica.Blocks.Interfaces.RealInput Pref "Active power reference (pu)"
-                                            annotation(Placement(transformation(extent = {{-54, -36}, {-44, -26}}), iconTransformation(extent = {{-132, -60}, {-100, -28}})));
-public
-  Modelica.Blocks.Interfaces.RealInput wref "Rotor speed reference (pu)"
-                                            annotation(Placement(transformation(extent = {{-54, 0}, {-44, 10}}), iconTransformation(extent = {{-132, 62}, {-100, 94}})));
-public
-  Modelica.Blocks.Interfaces.RealInput we "Rotor speed (pu)"
-                                          annotation(Placement(transformation(extent = {{-54, -12}, {-44, -2}}), iconTransformation(extent = {{-132, 20}, {-100, 52}})));
+  Modelica.Blocks.Interfaces.RealInput Pref "Active power reference (pu)" annotation(Placement(transformation(extent = {{-54, -36}, {-44, -26}}), iconTransformation(extent = {{-132, -60}, {-100, -28}})));
+  Modelica.Blocks.Interfaces.RealInput wref "Rotor speed reference (pu)" annotation(Placement(transformation(extent = {{-54, 0}, {-44, 10}}), iconTransformation(extent = {{-132, 62}, {-100, 94}})));
+  Modelica.Blocks.Interfaces.RealInput we "Rotor speed (pu)" annotation(Placement(transformation(extent = {{-54, -12}, {-44, -2}}), iconTransformation(extent = {{-132, 20}, {-100, 52}})));
 equation
   G = Gain10.y;
   connect(gain9.y, multiSum5.u[1]) annotation(Line(points = {{-85.4, 80}, {-57.7, 80}, {-57.7, 62.8}, {-52, 62.8}}, color = {0, 0, 127}, smooth = Smooth.None));
@@ -100,13 +92,7 @@ equation
   connect(Pref, multiSum1.u[1]) annotation(Line(points = {{-49, -31}, {-162, -31}, {-162, -17.9}, {-152, -17.9}}, color = {0, 0, 127}, smooth = Smooth.None));
   connect(Pe, multiSum1.u[2]) annotation(Line(points = {{-49, -41}, {-158, -41}, {-158, -22.1}, {-152, -22.1}}, color = {0, 0, 127}, smooth = Smooth.None));
   connect(multiSum7.y, Proportional.u) annotation(Line(points = {{-140.98, 84}, {-136, 84}, {-136, 102}, {78.8, 102}}, color = {0, 0, 127}, smooth = Smooth.None));
-  annotation(Icon(coordinateSystem(extent={{-100,-80},{100,120}},      preserveAspectRatio=false),   graphics={  Rectangle(extent=  {{-100, 120}, {100, -80}}, lineColor=  {0, 0, 255}), Text(extent=  {{-38, 46}, {36, 0}}, lineColor=  {0, 0, 255}, textString=  "TGTypeVI"), Text(visible=  true, origin=  {-73, 78},
-            fillPattern=                                                                                                    FillPattern.Solid, extent=  {{-29, -10}, {29, 10}}, fontName=  "Arial", lineColor=  {0, 0, 0}, textString=  "wref"), Text(visible=  true, origin=  {-76, 37},
-            fillPattern=                                                                                                    FillPattern.Solid, extent=  {{-28, -11}, {28, 11}}, fontName=  "Arial", lineColor=  {0, 0, 0}, textString=  "we"), Text(visible=  true, origin=  {-73, -7},
-            fillPattern=                                                                                                    FillPattern.Solid, extent=  {{-21, -13}, {21, 13}}, fontName=  "Arial", textString=  "Pe", lineColor=  {0, 0, 0}), Text(visible=  true, origin=  {-71, -42},
-            fillPattern=                                                                                                    FillPattern.Solid, extent=  {{-17, -12}, {17, 12}}, fontName=  "Arial", textString=  "Pref", lineColor=  {0, 0, 0}), Text(visible=  true, origin=  {79.0002, 37},
-            fillPattern=                                                                                                    FillPattern.Solid, extent=  {{-21.0002, -13}, {21.0002, 13}}, fontName=  "Arial", textString=  "Pm", lineColor=  {0, 0, 0})}), Diagram(coordinateSystem(preserveAspectRatio = false, extent = {{-100, -80}, {100, 120}}), graphics),
-    Documentation(info="<html>
+  annotation(Icon(coordinateSystem(extent = {{-100, -80}, {100, 120}}, preserveAspectRatio = false), graphics = {Rectangle(extent=  {{-100, 120}, {100, -80}}, lineColor=  {0, 0, 255}), Text(extent=  {{-38, 46}, {36, 0}}, lineColor=  {0, 0, 255}, textString=  "TGTypeVI"), Text(visible=  true, origin=  {-73, 78}, fillPattern=  FillPattern.Solid, extent=  {{-29, -10}, {29, 10}}, fontName=  "Arial", lineColor=  {0, 0, 0}, textString=  "wref"), Text(visible=  true, origin=  {-76, 37}, fillPattern=  FillPattern.Solid, extent=  {{-28, -11}, {28, 11}}, fontName=  "Arial", lineColor=  {0, 0, 0}, textString=  "we"), Text(visible=  true, origin=  {-73, -7}, fillPattern=  FillPattern.Solid, extent=  {{-21, -13}, {21, 13}}, fontName=  "Arial", textString=  "Pe", lineColor=  {0, 0, 0}), Text(visible=  true, origin=  {-71, -42}, fillPattern=  FillPattern.Solid, extent=  {{-17, -12}, {17, 12}}, fontName=  "Arial", textString=  "Pref", lineColor=  {0, 0, 0}), Text(visible=  true, origin=  {79.0002, 37}, fillPattern=  FillPattern.Solid, extent=  {{-21.0002, -13}, {21.0002, 13}}, fontName=  "Arial", textString=  "Pm", lineColor=  {0, 0, 0})}), Diagram(coordinateSystem(preserveAspectRatio = false, extent = {{-100, -80}, {100, 120}}), graphics), Documentation(info = "<html>
 <table cellspacing=\"1\" cellpadding=\"1\" border=\"1\">
 <tr>
 <td><p>Reference</p></td>

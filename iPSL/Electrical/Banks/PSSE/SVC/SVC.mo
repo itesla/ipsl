@@ -2,49 +2,21 @@ within iPSL.Electrical.Banks.PSSE.SVC;
 model SVC "On bus 10106 & 10114"
 
   iPSL.Connectors.PwPin VIB
-    "Voltage signal connected to stepdown transformer (pu)"
-    annotation (Placement(transformation(extent={{-98,-4},{-86,8}})));
-  iPSL.NonElectrical.Math.ImSum2 imSum2_1(
-    a0=0,
-    a1=1,
-    a2=-1) annotation (Placement(transformation(extent={{-58,0},{-38,20}})));
-  iPSL.NonElectrical.Math.ImSetPoint imSetPoint(V=Vref)
-    annotation (Placement(transformation(extent={{-80,14},{-56,36}})));
-  iPSL.NonElectrical.Math.ImSum3 imSum3_1(
-    a0=0,
-    a1=-1,
-    a2=1,
-    a3=-1) annotation (Placement(transformation(extent={{-34,0},{-14,20}})));
-  iPSL.NonElectrical.Math.ImSetPoint imSetPoint1(V=Bref)
-    annotation (Placement(transformation(extent={{-56,14},{-34,36}})));
-  iPSL.NonElectrical.Continuous.ImLeadLag imLeadLag(
-    K=K,
-    T1=T1,
-    T2=T3,
-    nStartValue=init_SVC_Leadlag)
-    annotation (Placement(transformation(extent={{-22,-8},{22,26}})));
-  iPSL.NonElectrical.Continuous.ImLeadLag imLeadLag1(
-    K=1,
-    T1=T2,
-    T2=T4,
-    nStartValue=init_SVC_Leadlag)
-    annotation (Placement(transformation(extent={{6,-8},{50,26}})));
-  iPSL.NonElectrical.Continuous.ImLimited imLimited(Ymin=Vmin, Ymax=Vmax)
-    annotation (Placement(transformation(extent={{38,-2},{60,20}})));
-  NonElectrical.Continuous.ImSimpleLag_nowinduplimit       imLimitedSimpleLag(K = 1, T = T5, Ymin = Mvar_C, nStartValue = init_SVC_Lag, Ymax = Mvar_R) annotation(Placement(transformation(extent = {{46, -8}, {98, 24}})));
-  iPSL.Electrical.Banks.PwShunt shunt
-    annotation (Placement(transformation(extent={{76,-72},{162,12}})));
-  iPSL.Electrical.Banks.PSSE.SVC.ImRelay imRelay
-    annotation (Placement(transformation(extent={{32,-56},{84,-6}})));
-  iPSL.NonElectrical.Math.ImSetPoint Q_capacitors(V=Mvar_C) "If Verr>Vov"
-    annotation (Placement(transformation(extent={{8,-30},{34,-2}})));
-  iPSL.NonElectrical.Math.ImSetPoint Q_Reactors(V=Mvar_R) "If Verr<-Vov"
-    annotation (Placement(transformation(extent={{8,-44},{34,-16}})));
-  iPSL.NonElectrical.Math.ImGain imGain(K=1/Sbase)
-    annotation (Placement(transformation(extent={{74,-36},{94,-16}})));
+    "Voltage signal connected to stepdown transformer (pu)"                         annotation(Placement(transformation(extent = {{-98, -4}, {-86, 8}})));
+  Modelica.Blocks.Sources.Constant imSetPoint(k = Vref) annotation(Placement(transformation(extent = {{-76, 20}, {-64, 32}})));
+  Modelica.Blocks.Sources.Constant imSetPoint1(k = Bref) annotation(Placement(transformation(extent = {{-52, 20}, {-38, 34}})));
+  iPSL.NonElectrical.Continuous.LeadLag imLeadLag(K = K, T1 = T1, T2 = T3, y_start = init_SVC_Leadlag) annotation(Placement(transformation(extent = {{-6, 0}, {10, 16}})));
+  iPSL.NonElectrical.Continuous.LeadLag imLeadLag1(K = 1, T1 = T2, T2 = T4, y_start = init_SVC_Leadlag) annotation(Placement(transformation(extent = {{18, 0}, {34, 16}})));
+  Modelica.Blocks.Nonlinear.Limiter imLimited(uMin = Vmin, uMax = Vmax) annotation(Placement(transformation(extent = {{42, 0}, {58, 16}})));
+  NonElectrical.Continuous.SimpleLagLim imLimitedSimpleLag(K = 1, T = T5, outMin = Mvar_C, y_start = init_SVC_Lag, outMax = Mvar_R) annotation(Placement(transformation(extent = {{66, 0}, {82, 16}})));
+  iPSL.Electrical.Banks.PwShunt shunt annotation(Placement(transformation(extent = {{76, -72}, {162, 12}})));
+  iPSL.NonElectrical.Logical.Relay3 imRelay
+    annotation (Placement(transformation(extent={{52,-40},{68,-24}})));
+  Modelica.Blocks.Sources.Constant Q_capacitors(k = Mvar_C) "If Verr>Vov" annotation(Placement(transformation(extent = {{6, -20}, {22, -4}})));
+  Modelica.Blocks.Sources.Constant Q_Reactors(k = Mvar_R) "If Verr<-Vov" annotation(Placement(transformation(extent = {{6, -42}, {22, -26}})));
+  Modelica.Blocks.Math.Gain imGain(k = 1 / Sbase) annotation(Placement(transformation(extent = {{80, -32}, {92, -20}})));
   parameter Real Vref "Reference voltage (pu)";
   parameter Real Bref "Reference susceptance (pu)";
-
   parameter Real K = 150 "Steady-state gain";
   parameter Real T1 "Time constant (s)";
   parameter Real T2 "Time constant (s)";
@@ -62,37 +34,36 @@ model SVC "On bus 10106 & 10114"
     "Total compensation capacity of shunt capacitor, 100(10106)/200(10114) MVar";
   parameter Real Mvar_R = -50
     "Total compensation capacity of shunt reactor, MVar";
-  iPSL.NonElectrical.Math.ImSetPoint imSetPoint2(V=OtherSignals)
-    annotation (Placement(transformation(extent={{-40,-20},{-20,0}})));
-  iPSL.Electrical.Sensors.PwVoltage pwVoltage
-    annotation (Placement(transformation(extent={{-90,-14},{-58,20}})));
+  Modelica.Blocks.Sources.Constant imSetPoint2(k = OtherSignals) annotation(Placement(transformation(extent = {{-52, -18}, {-40, -6}})));
+  iPSL.Electrical.Sensors.PwVoltage pwVoltage annotation(Placement(transformation(extent = {{-90, -14}, {-58, 20}})));
+  Modelica.Blocks.Math.Add add(k1 = 1, k2 = -1) annotation(Placement(transformation(extent = {{-58, 0}, {-46, 12}})));
+  Modelica.Blocks.Math.Add3 add3_1(k1 = -1, k3 = -1) annotation(Placement(transformation(extent = {{-28, 2}, {-14, 16}})));
 equation
-  connect(imSetPoint.n1, imSum2_1.p1) annotation(Line(points = {{-62.12, 25}, {-58, 25}, {-58, 12}, {-53.1, 12}}, color = {0, 0, 127}, smooth = Smooth.None));
-  connect(imSum2_1.n1, imSum3_1.p2) annotation(Line(points = {{-43.1, 10}, {-29.1, 10}}, color = {0, 0, 127}, smooth = Smooth.None));
-  connect(imSetPoint1.n1, imSum3_1.p1) annotation(Line(points = {{-39.61, 25}, {-34, 25}, {-34, 13}, {-29.1, 13}}, color = {0, 0, 127}, smooth = Smooth.None));
-  connect(imSum3_1.n1, imLeadLag.p1) annotation(Line(points = {{-19.1, 10}, {-16, 10}, {-16, 9}, {-11.22, 9}}, color = {0, 0, 127}, smooth = Smooth.None));
-  connect(imLeadLag.n1, imLeadLag1.p1) annotation(Line(points = {{10.78, 9}, {16.78, 9}}, color = {0, 0, 127}, smooth = Smooth.None));
-  connect(imLeadLag1.n1, imLimited.p1) annotation(Line(points = {{38.78, 9}, {43.39, 9}}, color = {0, 0, 127}, smooth = Smooth.None));
-  connect(imLimited.n1, imLimitedSimpleLag.p1) annotation(Line(points = {{54.39, 9}, {57.195, 9}, {57.195, 8}, {58.74, 8}}, color = {0, 0, 127}, smooth = Smooth.None));
-  connect(Q_capacitors.n1, imRelay.p3) annotation(Line(points = {{27.37, -16}, {32.51, -16}, {32.51, -28.5}, {45.65, -28.5}}, color = {0, 0, 127}, smooth = Smooth.None));
-  connect(Q_Reactors.n1, imRelay.p4) annotation(Line(points = {{27.37, -30}, {30, -30}, {30, -33.75}, {45.52, -33.75}}, color = {0, 0, 127}, smooth = Smooth.None));
-  connect(imRelay.p1, imSum2_1.n1) annotation(Line(points = {{45.65, -39.25}, {-40, -39.25}, {-40, 10}, {-43.1, 10}}, color = {0, 0, 127}, smooth = Smooth.None));
-  connect(imRelay.n1, imGain.p1) annotation(Line(points={{70.74,-27},{71.37,-27},
-          {71.37,-26},{78.9,-26}},                                                                                 color = {0, 0, 127}, smooth = Smooth.None));
-  connect(imGain.n1, shunt.Q) annotation(Line(points={{88.9,-26},{92.415,-26},{
-          92.415,-26.22},{97.93,-26.22}},                                                                               color = {0, 0, 127}, smooth = Smooth.None));
-  connect(imSetPoint2.n1, imSum3_1.p3) annotation(Line(points = {{-25.1, -10}, {-22, -10}, {-22, -2}, {-36, -2}, {-36, 7}, {-29.1, 7}}, color = {0, 0, 127}, smooth = Smooth.None));
   connect(VIB, pwVoltage.p) annotation(Line(points = {{-92, 2}, {-87, 2}, {-87, 3}, {-82, 3}}, color = {0, 0, 255}, smooth = Smooth.None));
-  connect(pwVoltage.v, imSum2_1.p2) annotation(Line(points = {{-66.16, -2.1}, {-58, -2.1}, {-58, 8}, {-53.1, 8}}, color = {0, 0, 127}, smooth = Smooth.None));
   connect(shunt.p, VIB) annotation(Line(points = {{119, -8.16}, {119, 52}, {-92, 52}, {-92, 2}}, color = {0, 0, 255}, smooth = Smooth.None));
-  connect(imLimitedSimpleLag.n0, imRelay.p2) annotation (Line(
-      points={{84.74,8},{92,8},{92,-16},{45.65,-16},{45.65,-22.75}},
-      color={0,0,127},
-      smooth=Smooth.None));
-  annotation(Diagram(coordinateSystem(preserveAspectRatio=true,   extent={{-100,
-            -100},{140,100}}),                                                                           graphics={  Text(extent=  {{-44, 16}, {-34, 12}}, lineColor=  {255, 0, 0}, textString=  "Verr"), Text(extent=  {{-40, -16}, {-14, -20}}, lineColor=  {255, 0, 0}, textString=  "Other signals"), Text(extent=  {{-82, 28}, {-58, 24}}, lineColor=  {255, 0, 0}, textString=  "Vref"), Text(extent=  {{-58, 28}, {-34, 24}}, lineColor=  {255, 0, 0}, textString=  "Bref"), Text(extent=  {{-14, -12}, {12, -20}}, lineColor=  {255, 0, 0}, textString=  "Verr>Vov"), Text(extent=  {{-14, -24}, {12, -34}}, lineColor=  {255, 0, 0}, textString=  "Verr<-Vov"), Text(extent=  {{-80, -4}, {-68, -10}}, lineColor=  {255, 0, 0}, textString=  "|VB|")}), Icon(coordinateSystem(extent = {{-100, -100}, {140, 100}}, preserveAspectRatio = false), graphics={  Line(points=  {{-88, 0}, {-60, 0}}, color=  {0, 0, 255}, smooth=  Smooth.None, thickness=  0.5), Line(points=  {{-60, 16}, {-60, -18}}, color=  {0, 0, 255}, smooth=  Smooth.None, thickness=  0.5), Line(points=  {{-44, 20}, {-48, 16}, {-52, 10}, {-54, 2}, {-54, -4}, {-52, -10}, {-50, -14}, {-46, -20}, {-44, -20}}, color=  {0, 0, 255}, smooth=  Smooth.Bezier, thickness=  0.5), Rectangle(extent=  {{-86, 34}, {-14, -34}}, lineColor=  {0, 0, 255}), Text(extent=  {{-40, -18}, {-14, -40}}, lineColor=  {0, 0, 255}, fillColor=  {0, 0, 255},
-            fillPattern=                                                                                                    FillPattern.Solid, textString=  "SVC")}),
-    Documentation(info="<html>
+  connect(imRelay.y, imGain.u) annotation(Line(points={{69.2,-32},{74,-32},{74,
+          -26},{78.8,-26}},                                                                                color = {0, 0, 127}));
+  connect(shunt.Q, imGain.y) annotation(Line(points = {{97.93, -26.22}, {96, -26.22}, {96, -26}, {92.6, -26}}, color = {0, 0, 127}));
+  connect(imLimitedSimpleLag.y, imRelay.u2) annotation(Line(points={{82.8,8},{
+          88,8},{88,-16},{42,-16},{42,-26},{50.4,-26}},                                                                                         color = {0, 0, 127}));
+  connect(imLimited.y, imLimitedSimpleLag.u) annotation(Line(points = {{58.8, 8}, {60, 8}, {64.4, 8}}, color = {0, 0, 127}));
+  connect(imLeadLag1.y, imLimited.u) annotation(Line(points = {{34.8, 8}, {34.8, 8}, {40.4, 8}}, color = {0, 0, 127}));
+  connect(imLeadLag.y, imLeadLag1.u) annotation(Line(points = {{10.8, 8}, {16.4, 8}}, color = {0, 0, 127}));
+  connect(Q_Reactors.y, imRelay.u4) annotation(Line(points={{22.8,-34},{50.4,
+          -34}},                                                                                           color = {0, 0, 127}));
+  connect(Q_capacitors.y, imRelay.u3) annotation(Line(points={{22.8,-12},{30,
+          -12},{30,-30},{50.4,-30}},                                                                                  color = {0, 0, 127}));
+  connect(add.u2, pwVoltage.v) annotation(Line(points = {{-59.2, 2.4}, {-62, 2.4}, {-62, -2.1}, {-66.16, -2.1}}, color = {0, 0, 127}));
+  connect(imSetPoint.y, add.u1) annotation(Line(points = {{-63.4, 26}, {-59.2, 26}, {-59.2, 9.6}}, color = {0, 0, 127}));
+  connect(add3_1.y, imLeadLag.u) annotation(Line(points = {{-13.3, 9}, {-10.65, 9}, {-10.65, 8}, {-7.6, 8}}, color = {0, 0, 127}));
+  connect(imSetPoint2.y, add3_1.u3) annotation(Line(points = {{-39.4, -12}, {-34, -12}, {-34, 3.4}, {-29.4, 3.4}}, color = {0, 0, 127}));
+  connect(imSetPoint1.y, add3_1.u1) annotation(Line(points = {{-37.3, 27}, {-34, 27}, {-34, 14.6}, {-29.4, 14.6}}, color = {0, 0, 127}));
+  connect(add.y, add3_1.u2) annotation(Line(points = {{-45.4, 6}, {-38, 6}, {-38, 9}, {-29.4, 9}}, color = {0, 0, 127}));
+  connect(imRelay.u1, add3_1.u2) annotation(Line(points={{50.4,-38},{36,-38},{
+          36,-54},{-36,-54},{-36,9},{-29.4,9}},                                                                                          color = {0, 0, 127}));
+  annotation(Diagram(coordinateSystem(preserveAspectRatio=false,   extent={{-100,
+            -100},{140,100}}),                                                                           graphics={  Text(extent=  {{-44, 16}, {-34, 12}}, lineColor=  {255, 0, 0}, textString=  "Verr"), Text(extent=  {{-82, 28}, {-58, 24}}, lineColor=  {255, 0, 0}, textString=  "Vref"), Text(extent=  {{-58, 28}, {-34, 24}}, lineColor=  {255, 0, 0}, textString=  "Bref"), Text(extent=  {{-80, -4}, {-68, -10}}, lineColor=  {255, 0, 0}, textString=  "|VB|")}), Icon(coordinateSystem(extent = {{-100, -100}, {140, 100}}, preserveAspectRatio = false), graphics={  Line(points=  {{-88, 0}, {-60, 0}}, color=  {0, 0, 255}, smooth=  Smooth.None, thickness=  0.5), Line(points=  {{-60, 16}, {-60, -18}}, color=  {0, 0, 255}, smooth=  Smooth.None, thickness=  0.5), Line(points=  {{-44, 20}, {-48, 16}, {-52, 10}, {-54, 2}, {-54, -4}, {-52, -10}, {-50, -14}, {-46, -20}, {-44, -20}}, color=  {0, 0, 255}, smooth=  Smooth.Bezier, thickness=  0.5), Rectangle(extent=  {{-86, 34}, {-14, -34}}, lineColor=  {0, 0, 255}), Text(extent=  {{-40, -18}, {-14, -40}}, lineColor=  {0, 0, 255}, fillColor=  {0, 0, 255},
+            fillPattern=                                                                                                    FillPattern.Solid, textString=  "SVC")}), Documentation(info = "<html>
 <p><br><span style=\"font-family: MS Shell Dlg 2;\">&LT;iPSL: iTesla Power System Library&GT;</span></p>
 <p><span style=\"font-family: MS Shell Dlg 2;\">Copyright 2015 RTE (France), AIA (Spain), KTH (Sweden) and DTU (Denmark)</span></p>
 <ul>
@@ -108,3 +79,4 @@ equation
 <p><span style=\"font-family: MS Shell Dlg 2;\">You should have received a copy of the GNU Lesser General Public License along with the iPSL. If not, see &LT;http://www.gnu.org/licenses/&GT;.</span></p>
 </html>"));
 end SVC;
+

@@ -1,13 +1,10 @@
 within iPSL.Electrical.Loads.PSAT;
 model LOADPQ "Constant PQ Load"
   extends BaseClasses.baseLoad;
-
 equation
   P = P_0 * CoB;
   Q = Q_0 * CoB;
-
-  annotation(Icon(coordinateSystem(extent = {{-100.0, -100.0}, {100.0, 100.0}}, preserveAspectRatio = true, initialScale = 0.1, grid = {10, 10})),                                                                                                  Diagram(coordinateSystem(extent = {{-148.5, -105.0}, {148.5, 105.0}}, preserveAspectRatio = true, initialScale = 0.1, grid = {5, 5})),
-    Documentation(info="<html>
+  annotation(Icon(coordinateSystem(extent = {{-100.0, -100.0}, {100.0, 100.0}}, preserveAspectRatio = true, initialScale = 0.1, grid = {10, 10})), Diagram(coordinateSystem(extent = {{-148.5, -105.0}, {148.5, 105.0}}, preserveAspectRatio = true, initialScale = 0.1, grid = {5, 5})), Documentation(info = "<html>
 <table cellspacing=\"1\" cellpadding=\"1\" border=\"1\">
 <tr>
 <td><p>Reference</p></td>
@@ -39,7 +36,8 @@ equation
 <p><span style=\"font-family: MS Shell Dlg 2;\">The iPSL is free software: you can redistribute it and/or modify it under the terms of the GNU Lesser General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.</span></p>
 <p><span style=\"font-family: MS Shell Dlg 2;\">The iPSL is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU Lesser General Public License for more details.</span></p>
 <p><span style=\"font-family: MS Shell Dlg 2;\">You should have received a copy of the GNU Lesser General Public License along with the iPSL. If not, see &LT;http://www.gnu.org/licenses/&GT;.</span></p>
-</html>", revisions="<html>
+</html>", revisions = "<html>
 <pre><span style=\"font-family: Courier New,courier; color: #006400;\">Equations&nbsp;come&nbsp;from&nbsp;the&nbsp;mathematical&nbsp;separation&nbsp;in&nbsp;between&nbsp;reals&nbsp;and&nbsp;imaginary&nbsp;of&nbsp;S=P+jQ=UI*</span></pre>
 </html>"));
 end LOADPQ;
+

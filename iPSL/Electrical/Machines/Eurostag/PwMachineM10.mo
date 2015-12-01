@@ -3,12 +3,7 @@ model PwMachineM10 "Induction Machine. The model corresponds to Eurostag's full 
                   Developed by RTE and adapted by AIA. 2014/03/10"
   // Connectors
   Modelica.Blocks.Interfaces.RealInput omegaRef(start = omegaRef0) annotation(Placement(transformation(extent = {{-61, -10}, {-41, 10}})));
-  iPSL.Connectors.PwPin sortie(
-    vr(start=ur0),
-    vi(start=ui0),
-    ir(start=ir0),
-    ii(start=ii0))
-    annotation (Placement(transformation(extent={{40,-10},{60,10}})));
+  iPSL.Connectors.PwPin sortie(vr(start = ur0), vi(start = ui0), ir(start = ir0), ii(start = ii0)) annotation(Placement(transformation(extent = {{40, -10}, {60, 10}})));
   //
   // Generic parameters for simulation
   // --------------------------------
@@ -163,9 +158,7 @@ equation
   ui = sortie.vi;
   ir = sortie.ir;
   ii = sortie.ii;
-  annotation(Diagram(graphics), Icon(graphics={  Rectangle(extent = {{-40, 40}, {40, -40}}, lineColor = {0, 0, 255}), Ellipse(extent = {{-24, 22}, {24, -24}}, lineColor = {0, 0, 255},
-            lineThickness =                                                                                                   1), Text(extent = {{-12, -7}, {12, 7}}, lineColor = {0, 0, 255}, textString = "M10")}),
-    Documentation(info="<html>
+  annotation(Diagram(graphics), Icon(graphics = {Rectangle(extent=  {{-40, 40}, {40, -40}}, lineColor=  {0, 0, 255}), Ellipse(extent=  {{-24, 22}, {24, -24}}, lineColor=  {0, 0, 255}, lineThickness=  1), Text(extent=  {{-12, -7}, {12, 7}}, lineColor=  {0, 0, 255}, textString=  "M10")}), Documentation(info = "<html>
 <p><br><span style=\"font-family: MS Shell Dlg 2;\">&LT;iPSL: iTesla Power System Library&GT;</span></p>
 <p><span style=\"font-family: MS Shell Dlg 2;\">Copyright 2015 RTE (France), AIA (Spain), KTH (Sweden) and DTU (Denmark)</span></p>
 <ul>
@@ -181,3 +174,4 @@ equation
 <p><span style=\"font-family: MS Shell Dlg 2;\">You should have received a copy of the GNU Lesser General Public License along with the iPSL. If not, see &LT;http://www.gnu.org/licenses/&GT;.</span></p>
 </html>"));
 end PwMachineM10;
+

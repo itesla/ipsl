@@ -1,38 +1,23 @@
 within iPSL.Electrical.Loads.PSAT.BaseClasses;
+
+
 partial model baseLoad
   import Modelica.Constants.pi;
   extends iPSL.Electrical.Essentials.pfComponent;
   parameter Real Sn = S_b "Power rating (MVA)";
-protected
-  parameter Real CoB = Sn / S_b;
-
-public
-  iPSL.Connectors.PwPin p annotation (Placement(
-      transformation(
-        extent={{-56.0,-10.0},{-36.0,10.0}},
-        origin={0.0,0.0},
-        rotation=0),
-      iconTransformation(
-        extent={{-80.0,0.0},{-60.0,20.0}},
-        origin={70,100},
-        rotation=0),
-      visible=true));
+  iPSL.Connectors.PwPin p annotation(Placement(transformation(extent = {{-56.0, -10.0}, {-36.0, 10.0}}, origin = {0.0, 0.0}, rotation = 0), iconTransformation(extent = {{-80.0, 0.0}, {-60.0, 20.0}}, origin = {70, 100}, rotation = 0), visible = true));
   Real v "Voltage magnitude (pu)";
   Real anglev "voltage angle (rad)";
   Real P "Active power (pu)";
   Real Q "Reactive power (pu)";
-
+protected
+  parameter Real CoB = Sn / S_b;
 equation
   P = p.vr * p.ir + p.vi * p.ii;
   Q = p.vi * p.ir - p.vr * p.ii;
   v = sqrt(p.vr ^ 2 + p.vi ^ 2);
   anglev = atan2(p.vi, p.vr);
-  annotation (Icon(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,
-            100}}), graphics={     Line(points={{-100,100},{100,100},{0,-100},{-100,100}},
-                     color={28,108,200}), Text(
-          extent={{-62,66},{66,34}},
-          lineColor={28,108,200},
-          textString="%P_0+j%Q_0")}), Documentation(info="<html>
+  annotation(Icon(coordinateSystem(preserveAspectRatio = false, extent = {{-100, -100}, {100, 100}}), graphics={  Line(points = {{-100, 100}, {100, 100}, {0, -100}, {-100, 100}}, color = {28, 108, 200}), Text(extent = {{-62, 66}, {66, 34}}, lineColor = {28, 108, 200}, textString = "%P_0+j%Q_0")}), Documentation(info = "<html>
 <p><br><span style=\"font-family: MS Shell Dlg 2;\">&LT;iPSL: iTesla Power System Library&GT;</span></p>
 <p><span style=\"font-family: MS Shell Dlg 2;\">Copyright 2015 RTE (France), AIA (Spain), KTH (Sweden) and DTU (Denmark)</span></p>
 <ul>

@@ -1,37 +1,25 @@
 within iPSL.Electrical.Machines.PSAT.ThirdOrder;
+
+
 model Order3 "Third Order Synchronous Machine with Inputs and Outputs"
   import Modelica.Constants.pi;
-  extends BaseClasses.baseMachine(
-  delta(start=delta0),
-  pe(start=pm00),
-  pm(start=pm00),
-  pm0(start = pm00),
-  vf(start=vf00),
-  vf0(start=vf00),
-  vq(start=vq0),
-  vd(start=vd0),
-  iq(start=iq0),
-  id(start=id0));
-
-  parameter Real xd "d-axis synchronous reactance (pu)" annotation (Dialog(group="Machine parameters"));
-  parameter Real Td10 "d-axis open circuit transient time constant (s)" annotation (Dialog(group="Machine parameters"));
-  parameter Real xq "q-axis synchronous reactance (pu)" annotation (Dialog(group="Machine parameters"));
-
+  extends BaseClasses.baseMachine(delta(start = delta0), pe(start = pm00), pm(start = pm00), pm0(start = pm00), vf(start = vf00), vf0(start = vf00), vq(start = vq0), vd(start = vd0), iq(start = iq0), id(start = id0));
+  parameter Real xd "d-axis synchronous reactance (pu)" annotation(Dialog(group = "Machine parameters"));
+  parameter Real Td10 "d-axis open circuit transient time constant (s)" annotation(Dialog(group = "Machine parameters"));
+  parameter Real xq "q-axis synchronous reactance (pu)" annotation(Dialog(group = "Machine parameters"));
   //Base changing
+  Real e1q(start = e1q0) "q-axis transient voltage (pu)";
 protected
   parameter Real Xd = xd * CoB "d-axis reactance, p.u.";
   parameter Real x1d = xd1 * CoB "d-axis transient reactance, p.u.";
   parameter Real Xq = xq * CoB "q-axis reactance, p.u.";
   parameter Real m = M / CoB2 "Machanical starting time (2H), kWs/kVA";
-
   parameter Real c1 = Ra * K "CONSTANT";
   parameter Real c2 = x1d * K "CONSTANT";
   parameter Real c3 = Xq * K " CONSTANT";
   parameter Real K = 1 / (Ra * Ra + Xq * x1d) "CONSTANT";
-
   parameter Real delta0 = atan2(vi0 + Ra * ii0 + Xq * ir0, vr0 + Ra * ir0 - Xq * ii0)
     "Initialitation";
-
   parameter Real vd0 = vr0 * cos(pi / 2 - delta0) - vi0 * sin(pi / 2 - delta0)
     "Initialitation";
   parameter Real vq0 = vr0 * sin(pi / 2 - delta0) + vi0 * cos(pi / 2 - delta0)
@@ -44,9 +32,6 @@ protected
     "Initialitation";
   parameter Real vf00 = e1q0 + (Xd - x1d) * id0 "Initialitation";
   parameter Real e1q0 = vq0 + Ra * iq0 + x1d * id0 "Initialitation";
-
-public
-  Real e1q(start = e1q0) "q-axis transient voltage (pu)";
 initial equation
   der(e1q) = 0;
 equation
@@ -55,14 +40,7 @@ equation
   iq = c2 * vd - c1 * vq + e1q * c1;
   vf0 = vf00;
   pm0 = pm00;
-  annotation(Icon(coordinateSystem(extent={{-100,-100},{100,100}},              preserveAspectRatio=false,  initialScale = 0.1, grid = {10, 10}),
-        graphics={                                                                                                    Text(                origin={4,
-              61.9022},
-            fillPattern=FillPattern.Solid,                                                                                                    extent=  {{-57.2101, -15.0}, {57.2101, 15.0}},                       fontName=
-              "Arial",
-          lineColor={28,108,200},
-          textString="Order III")}),                                                                                                    Diagram(coordinateSystem(extent = {{-148.5, -105.0}, {148.5, 105.0}}, preserveAspectRatio = true, initialScale = 0.1, grid = {5, 5})),
-    Documentation(info="<html>
+  annotation(Icon(coordinateSystem(extent = {{-100, -100}, {100, 100}}, preserveAspectRatio = false, initialScale = 0.1, grid = {10, 10}), graphics = {Text(origin=  {4, 61.9022}, fillPattern=  FillPattern.Solid, extent=  {{-57.2101, -15.0}, {57.2101, 15.0}}, fontName=  "Arial", lineColor=  {28, 108, 200}, textString=  "Order III")}), Diagram(coordinateSystem(extent = {{-148.5, -105.0}, {148.5, 105.0}}, preserveAspectRatio = true, initialScale = 0.1, grid = {5, 5})), Documentation(info = "<html>
 <table cellspacing=\"1\" cellpadding=\"1\" border=\"1\">
 <tr>
 <td><p>Reference</p></td>

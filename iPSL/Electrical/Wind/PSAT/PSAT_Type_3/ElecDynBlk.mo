@@ -1,6 +1,7 @@
 within iPSL.Electrical.Wind.PSAT.PSAT_Type_3;
-model ElecDynBlk
 
+
+model ElecDynBlk
   Modelica.Blocks.Interfaces.RealInput omega_m "Rotor Speed" annotation(Placement(transformation(extent = {{-102.0, 54.0}, {-62.0, 94.0}}, origin = {-45.2439, -151.0508}, rotation = 0), visible = true, iconTransformation(origin = {2.0, -124.0}, extent = {{-102.0, 54.0}, {-62.0, 94.0}}, rotation = 0)));
   Modelica.Blocks.Interfaces.RealInput Vbus "Vbus" annotation(Placement(transformation(extent = {{-102.0, 54.0}, {-62.0, 94.0}}, origin = {-45.2049, -85.6189}, rotation = 0), visible = true, iconTransformation(origin = {2.0, -24.0}, extent = {{-102.0, 54.0}, {-62.0, 94.0}}, rotation = 0)));
   Modelica.Blocks.Interfaces.RealOutput idr(start = idr0, fixed = false)
@@ -63,19 +64,15 @@ equation
   idr = min(max(idrI, idr_min), idr_max);
   when iqrI > iqr_max and der(iqrI) < 0 then
     reinit(iqrI, iqr_max);
-       elsewhen
-            iqrI < iqr_min and der(iqrI) > 0 then
+  elsewhen iqrI < iqr_min and der(iqrI) > 0 then
     reinit(iqrI, iqr_min);
   end when;
   when idrI > idr_max and der(idrI) < 0 then
     reinit(idrI, idr_max);
-        elsewhen
-             idrI < idr_min and der(idrI) > 0 then
+  elsewhen idrI < idr_min and der(idrI) > 0 then
     reinit(idrI, idr_min);
   end when;
-  annotation(Icon(coordinateSystem(extent = {{-100.0, -100.0}, {100.0, 100.0}}, preserveAspectRatio = true, initialScale = 0.1, grid = {10, 10}), graphics={  Rectangle(visible=  true, fillColor=  {255, 255, 255}, extent=  {{-100.0, -100.0}, {100.0, 100.0}}), Text(visible=  true, origin=  {0.294, 8.6655},
-            fillPattern=                                                                                                    FillPattern.Solid, extent=  {{-47.919, -38.6655}, {47.919, 38.6655}}, textString=  "elecDyn", fontName=  "Arial")}), Diagram(coordinateSystem(extent = {{-148.5, -105.0}, {148.5, 105.0}}, preserveAspectRatio = true, initialScale = 0.1, grid = {5, 5})),
-    Documentation(info="<html>
+  annotation(Icon(coordinateSystem(extent = {{-100.0, -100.0}, {100.0, 100.0}}, preserveAspectRatio = true, initialScale = 0.1, grid = {10, 10}), graphics = {Rectangle(visible=  true, fillColor=  {255, 255, 255}, extent=  {{-100.0, -100.0}, {100.0, 100.0}}), Text(visible=  true, origin=  {0.294, 8.6655}, fillPattern=  FillPattern.Solid, extent=  {{-47.919, -38.6655}, {47.919, 38.6655}}, textString=  "elecDyn", fontName=  "Arial")}), Diagram(coordinateSystem(extent = {{-148.5, -105.0}, {148.5, 105.0}}, preserveAspectRatio = true, initialScale = 0.1, grid = {5, 5})), Documentation(info = "<html>
 <p><br><span style=\"font-family: MS Shell Dlg 2;\">&LT;iPSL: iTesla Power System Library&GT;</span></p>
 <p><span style=\"font-family: MS Shell Dlg 2;\">Copyright 2015 RTE (France), AIA (Spain), KTH (Sweden) and DTU (Denmark)</span></p>
 <ul>
