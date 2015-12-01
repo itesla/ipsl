@@ -2,7 +2,6 @@ within iPSL.Electrical.Loads.PSAT;
 model Mixed_Load "Mixed Load"
   import Modelica.Constants.pi;
   extends BaseClasses.baseLoad;
-
   parameter Real Kpf = 0 "Frequency coefficient for the active power (pu)";
   parameter Real alpha = 0 "Voltage exponent for the active power";
   parameter Real Tpv = 0.12 "Time constant of dV/dt for the active power (s)";
@@ -12,9 +11,7 @@ model Mixed_Load "Mixed Load"
     "Time constant of dV/dt for the reactive power (s)";
   parameter Real Tfv = 0.005 "Time constant of voltage magnitude filter (s)";
   parameter Real Tft = 0.007 "Time constant of voltage angle filter (s)";
-
   Real deltaw "Frequency deviation (pu)";
-
 protected
   Real a "Auxiliary variable, voltage division";
   Real b "Auxiliary variable, derivation";
@@ -28,8 +25,7 @@ equation
   deltaw = y + 1 / (2 * pi * fn * Tft) * (anglev - angle_0);
   P = Kpf * deltaw + P_0 * CoB * (a ^ alpha + Tpv * b);
   Q = Kqf * deltaw + Q_0 * CoB * (a ^ beta + Tqv * b);
-  annotation(Icon(coordinateSystem(extent = {{-100.0, -100.0}, {100.0, 100.0}}, preserveAspectRatio = true, initialScale = 0.1, grid = {10, 10})),                                                                                                    Diagram(coordinateSystem(extent = {{-148.5, -105.0}, {148.5, 105.0}}, preserveAspectRatio = true, initialScale = 0.1, grid = {5, 5})),
-    Documentation(info="<html>
+  annotation(Icon(coordinateSystem(extent = {{-100.0, -100.0}, {100.0, 100.0}}, preserveAspectRatio = true, initialScale = 0.1, grid = {10, 10})), Diagram(coordinateSystem(extent = {{-148.5, -105.0}, {148.5, 105.0}}, preserveAspectRatio = true, initialScale = 0.1, grid = {5, 5})), Documentation(info = "<html>
 <table cellspacing=\"1\" cellpadding=\"1\" border=\"1\">
 <tr>
 <td><p>Reference</p></td>
@@ -61,7 +57,8 @@ equation
 <p><span style=\"font-family: MS Shell Dlg 2;\">The iPSL is free software: you can redistribute it and/or modify it under the terms of the GNU Lesser General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.</span></p>
 <p><span style=\"font-family: MS Shell Dlg 2;\">The iPSL is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU Lesser General Public License for more details.</span></p>
 <p><span style=\"font-family: MS Shell Dlg 2;\">You should have received a copy of the GNU Lesser General Public License along with the iPSL. If not, see &LT;http://www.gnu.org/licenses/&GT;.</span></p>
-</html>", revisions="<html>
+</html>", revisions = "<html>
 <pre><span style=\"font-family: Courier New,courier; color: #006400;\">Remember:&nbsp;Pz+Pi+Pp=1&nbsp;and&nbsp;Qz+Qi+Qp=1&QUOT;</span></pre>
 </html>"));
 end Mixed_Load;
+

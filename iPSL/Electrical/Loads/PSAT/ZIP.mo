@@ -1,7 +1,6 @@
 within iPSL.Electrical.Loads.PSAT;
 model ZIP "ZIP Load"
   extends BaseClasses.baseLoad;
-
   parameter Real Pz = 0.33 "Conductance (pu)";
   parameter Real Pi = 0.33 "Active current (pu)";
   parameter Real Pp = 1 - Pz - Pi "Active power (pu)";
@@ -14,8 +13,7 @@ equation
   a = v / V_0;
   P = P_0 * CoB * (Pz * a ^ 2 + Pi * a + Pp);
   Q = Q_0 * CoB * (Qz * a ^ 2 + Qi * a + Qp);
-  annotation(Icon(coordinateSystem(extent = {{-100.0, -100.0}, {100.0, 100.0}}, preserveAspectRatio = true, initialScale = 0.1, grid = {10, 10})),                                                                                                    Diagram(coordinateSystem(extent = {{-148.5, -105.0}, {148.5, 105.0}}, preserveAspectRatio = true, initialScale = 0.1, grid = {5, 5})),
-    Documentation(info="<html>
+  annotation(Icon(coordinateSystem(extent = {{-100.0, -100.0}, {100.0, 100.0}}, preserveAspectRatio = true, initialScale = 0.1, grid = {10, 10})), Diagram(coordinateSystem(extent = {{-148.5, -105.0}, {148.5, 105.0}}, preserveAspectRatio = true, initialScale = 0.1, grid = {5, 5})), Documentation(info = "<html>
 <table cellspacing=\"1\" cellpadding=\"1\" border=\"1\">
 <tr>
 <td><p>Reference</p></td>
@@ -49,3 +47,4 @@ equation
 <p><span style=\"font-family: MS Shell Dlg 2;\">You should have received a copy of the GNU Lesser General Public License along with the iPSL. If not, see &LT;http://www.gnu.org/licenses/&GT;.</span></p>
 </html>"));
 end ZIP;
+

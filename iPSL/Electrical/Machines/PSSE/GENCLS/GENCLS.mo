@@ -1,29 +1,25 @@
 within iPSL.Electrical.Machines.PSSE.GENCLS;
+
+
 model GENCLS
   extends iPSL.Electrical.Essentials.pfComponent;
-
-  iPSL.Connectors.PwPin p(
-    vr(start=vr0),
-    vi(start=vi0),
-    ir(start=ir0),
-    ii(start=ii0)) annotation (Placement(
-      visible=true,
-      transformation(
-        origin={2.2777,10.4683},
-        extent={{-10.0,-10.0},{10.0,10.0}},
-        rotation=0),
-      iconTransformation(
-        origin={110.0,-1.5036},
-        extent={{-10.0,-10.0},{10.0,10.0}},
-        rotation=0)));
-  parameter Real M_b "Machine base power rating (MVA)" annotation (Dialog(group="Power flow data"));
-
-  parameter Real H = 0 "Inertia constant, s" annotation (Dialog(group="Machine parameters"));
-  parameter Real D = 0 "Damping coefficient" annotation (Dialog(group="Machine parameters"));
-
-  parameter Real R_a = 0 "Amature resistance, p.u." annotation (Dialog(group="Machine parameters"));
-  parameter Real X_d = 1 "d-axis transient reactance, p.u." annotation (Dialog(group="Machine parameters"));
-
+  iPSL.Connectors.PwPin p(vr(start = vr0), vi(start = vi0), ir(start = ir0), ii(start = ii0)) annotation(Placement(visible = true, transformation(origin = {2.2777, 10.4683}, extent = {{-10.0, -10.0}, {10.0, 10.0}}, rotation = 0), iconTransformation(origin = {110.0, -1.5036}, extent = {{-10.0, -10.0}, {10.0, 10.0}}, rotation = 0)));
+  parameter Real M_b "Machine base power rating (MVA)" annotation(Dialog(group = "Power flow data"));
+  parameter Real H = 0 "Inertia constant, s" annotation(Dialog(group = "Machine parameters"));
+  parameter Real D = 0 "Damping coefficient" annotation(Dialog(group = "Machine parameters"));
+  parameter Real R_a = 0 "Amature resistance, p.u." annotation(Dialog(group = "Machine parameters"));
+  parameter Real X_d = 1 "d-axis transient reactance, p.u." annotation(Dialog(group = "Machine parameters"));
+  Real delta(start = delta0, fixed = true) "Rotor angle (deg.)";
+  Real v(start = v0) "Bus voltage magnitude (pu)";
+  Real anglev(start = anglev_rad) "Bus voltage angle (deg.)";
+  Real vf(start = vf0, fixed = true) "Field voltage (pu)";
+  Real vd(start = vd0) "d-axis voltage (pu)";
+  Real vq(start = vq0) "q-axis voltage (pu)";
+  Real id(start = id0) "d-axis current (pu)";
+  Real iq(start = iq0) "q-axis current (pu)";
+  Real P(start = P_0 / S_b) "Active power (pu. of S_b)";
+  Real Q(start = Q_0 / S_b) "Reactive power (pu of S_b)";
+  Real PELEC "Active power (pu of M_b)";
 protected
   constant Real pi = Modelica.Constants.pi;
   parameter Real w_b = 2 * pi * fn "System base speed (rad/s)";
@@ -58,37 +54,24 @@ protected
   //Real deltaminusanglev=delta - anglev;
   parameter Real pm0 = (vq0 + R_a * iq0) * iq0 + (vd0 + R_a * id0) * id0
     "Initialitation";
-  parameter Real CoB = M_b/S_b
+  parameter Real CoB = M_b / S_b
     "Constant to change from system base to machine base";
-public
-  Real delta(start=delta0,fixed=true) "Rotor angle (deg.)";
-  Real v(start = v0) "Bus voltage magnitude (pu)";
-  Real anglev(start = anglev_rad) "Bus voltage angle (deg.)";
-  Real vf(start = vf0,fixed=true) "Field voltage (pu)";
-  Real vd(start = vd0) "d-axis voltage (pu)";
-  Real vq(start = vq0) "q-axis voltage (pu)";
-  Real id(start = id0) "d-axis current (pu)";
-  Real iq(start = iq0) "q-axis current (pu)";
-  Real P(start=P_0/S_b) "Active power (pu. of S_b)";
-  Real Q(start=Q_0/S_b) "Reactive power (pu of S_b)";
-  Real PELEC "Active power (pu of M_b)";
 equation
   v = sqrt(p.vr ^ 2 + p.vi ^ 2);
   anglev = atan2(p.vi, p.vr);
-  der(delta)=0;
-  der(vf)=0;
+  der(delta) = 0;
+  der(vf) = 0;
   id = (-c1 * vd) - c3 * vq + vf * c3;
   iq = c2 * vd - c1 * vq + vf * c1;
-  [p.ir; p.ii] = -CoB*[sin(delta), cos(delta); -cos(delta), sin(delta)] * [id; iq];
+  [p.ir; p.ii] = -CoB * [sin(delta), cos(delta); -cos(delta), sin(delta)] * [id; iq];
   [p.vr; p.vi] = [sin(delta), cos(delta); -cos(delta), sin(delta)] * [vd; vq];
   -P = p.vr * p.ir + p.vi * p.ii;
   -Q = p.vi * p.ir - p.vr * p.ii;
-  PELEC=P/CoB;
-  annotation(Icon(coordinateSystem(extent={{0,-100},{100,100}},         preserveAspectRatio = false, initialScale = 0.1, grid = {10, 10}), graphics={  Rectangle(extent=  {{80, 100}, {100, -100}}, lineColor=  {0, 0, 255},
-            fillPattern=                                                                                                    FillPattern.Solid, fillColor=  {0, 0, 255}), Line(points=  {{40, 110}, {80, 90}, {90, 90}}, color=  {0, 0, 255}, smooth=  Smooth.None, thickness=  0.5), Line(points=  {{40, -70}, {80, -90}, {90, -90}}, color=  {0, 0, 255}, smooth=  Smooth.None, thickness=  0.5), Line(points=  {{40, 70}, {80, 50}, {90, 50}}, color=  {0, 0, 255}, smooth=  Smooth.None, thickness=  0.5), Line(points=  {{40, 50}, {80, 30}, {90, 30}}, color=  {0, 0, 255}, smooth=  Smooth.None, thickness=  0.5), Line(points=  {{40, 30}, {80, 10}, {90, 10}}, color=  {0, 0, 255}, smooth=  Smooth.None, thickness=  0.5), Line(points=  {{40, 10}, {80, -10}, {90, -10}}, color=  {0, 0, 255}, smooth=  Smooth.None, thickness=  0.5), Line(points=  {{40, -10}, {80, -30}, {90, -30}}, color=  {0, 0, 255}, smooth=  Smooth.None, thickness=  0.5), Line(points=  {{40, 90}, {80, 70}, {90, 70}}, color=  {0, 0, 255}, smooth=  Smooth.None, thickness=  0.5), Line(points=  {{40, -30}, {80, -50}, {90, -50}}, color=  {0, 0, 255}, smooth=  Smooth.None, thickness=  0.5), Line(points=  {{40, -50}, {80, -70}, {90, -70}}, color=  {0, 0, 255}, smooth=  Smooth.None, thickness=  0.5), Text(extent=  {{50, 150}, {100, 110}}, lineColor=  {0, 0, 255},
-            lineThickness=                                                                                                    0.5, fillColor=  {0, 0, 255},
-            fillPattern=                                                                                                    FillPattern.Solid, textStyle=  {TextStyle.Bold}, textString=  "INF")}), Diagram(coordinateSystem(extent = {{-148.5, -105.0}, {148.5, 105.0}}, preserveAspectRatio = true, initialScale = 0.1, grid = {5, 5})),
-    Documentation(info="<html>
+  PELEC = P / CoB;
+  annotation(Icon(coordinateSystem(extent = {{0, -100}, {100, 100}}, preserveAspectRatio = false, initialScale = 0.1, grid = {10, 10}), graphics={  Rectangle(extent = {{80, 100}, {100, -100}}, lineColor = {0, 0, 255},
+            fillPattern =                                                                                                    FillPattern.Solid, fillColor = {0, 0, 255}), Line(points = {{40, 110}, {80, 90}, {90, 90}}, color = {0, 0, 255}, smooth = Smooth.None, thickness = 0.5), Line(points = {{40, -70}, {80, -90}, {90, -90}}, color = {0, 0, 255}, smooth = Smooth.None, thickness = 0.5), Line(points = {{40, 70}, {80, 50}, {90, 50}}, color = {0, 0, 255}, smooth = Smooth.None, thickness = 0.5), Line(points = {{40, 50}, {80, 30}, {90, 30}}, color = {0, 0, 255}, smooth = Smooth.None, thickness = 0.5), Line(points = {{40, 30}, {80, 10}, {90, 10}}, color = {0, 0, 255}, smooth = Smooth.None, thickness = 0.5), Line(points = {{40, 10}, {80, -10}, {90, -10}}, color = {0, 0, 255}, smooth = Smooth.None, thickness = 0.5), Line(points = {{40, -10}, {80, -30}, {90, -30}}, color = {0, 0, 255}, smooth = Smooth.None, thickness = 0.5), Line(points = {{40, 90}, {80, 70}, {90, 70}}, color = {0, 0, 255}, smooth = Smooth.None, thickness = 0.5), Line(points = {{40, -30}, {80, -50}, {90, -50}}, color = {0, 0, 255}, smooth = Smooth.None, thickness = 0.5), Line(points = {{40, -50}, {80, -70}, {90, -70}}, color = {0, 0, 255}, smooth = Smooth.None, thickness = 0.5), Text(extent = {{50, 150}, {100, 110}}, lineColor = {0, 0, 255},
+            lineThickness =                                                                                                    0.5, fillColor = {0, 0, 255},
+            fillPattern =                                                                                                    FillPattern.Solid, textStyle = {TextStyle.Bold}, textString = "INF")}), Diagram(coordinateSystem(extent = {{-148.5, -105.0}, {148.5, 105.0}}, preserveAspectRatio = true, initialScale = 0.1, grid = {5, 5})), Documentation(info = "<html>
 <table cellspacing=\"1\" cellpadding=\"1\" border=\"1\">
 <tr>
 <td><p>Reference</p></td>

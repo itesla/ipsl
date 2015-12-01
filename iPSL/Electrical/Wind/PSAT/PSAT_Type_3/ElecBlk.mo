@@ -1,4 +1,6 @@
 within iPSL.Electrical.Wind.PSAT.PSAT_Type_3;
+
+
 model ElecBlk
   import Modelica.Constants.pi;
   Modelica.Blocks.Interfaces.RealInput omega_m "Rotor Speed" annotation(Placement(transformation(extent = {{-102.0, 54.0}, {-62.0, 94.0}}, origin = {-46.1127, -159.0}, rotation = 0), visible = true, iconTransformation(origin = {2.0, -144.0}, extent = {{-102.0, 54.0}, {-62.0, 94.0}}, rotation = 0)));
@@ -35,7 +37,6 @@ model ElecBlk
   parameter Real vdr0 = (-Rr * idr0) + (1 - omega_m0) * ((Xm + Xr) * iqr0 + Xm * iqs0);
   parameter Real vqr0 = (-Rr * iqr0) - (1 - omega_m0) * ((Xm + Xr) * idr0 + Xm * ids0);
   parameter Real poles = 2 "Number of poles-pair";
-public
   Real vds(start = vds0, fixed = false) "stator tension, in dq";
   Real vqs(start = vqs0, fixed = false) "stator tension, in dq";
   Real p "Active power";
@@ -44,16 +45,7 @@ public
   Real iqs(start = iqs0, fixed = false) "stator current, in dq";
   Real vdr(start = vdr0, fixed = false) "rotor voltage in dq";
   Real vqr(start = vqr0, fixed = false) "rotor voltage in dq";
-  iPSL.Connectors.PwPin pin annotation (Placement(
-      visible=true,
-      transformation(
-        origin={-158.3073,1.6927},
-        extent={{-10.0,-10.0},{10.0,10.0}},
-        rotation=0),
-      iconTransformation(
-        origin={0.0,-110.0},
-        extent={{-10.0,-10.0},{10.0,10.0}},
-        rotation=0)));
+  iPSL.Connectors.PwPin pin annotation(Placement(visible = true, transformation(origin = {-158.3073, 1.6927}, extent = {{-10.0, -10.0}, {10.0, 10.0}}, rotation = 0), iconTransformation(origin = {0.0, -110.0}, extent = {{-10.0, -10.0}, {10.0, 10.0}}, rotation = 0)));
   Real slip;
   Real Anglebus = atan(pin.vi / pin.vr);
 equation
@@ -70,9 +62,7 @@ equation
   vdr = (-Rr * idr) + slip * (x1 * iqr + Xm * iqs);
   vqr = (-Rr * iqr) - slip * (x1 * idr + Xm * ids);
   Tel = Xm * (iqr * ids - idr * iqs);
-  annotation(Icon(coordinateSystem(extent = {{-100.0, -100.0}, {100.0, 100.0}}, preserveAspectRatio = true, initialScale = 0.1, grid = {10, 10}), graphics={  Rectangle(visible=  true, fillColor=  {255, 255, 255}, extent=  {{-100.0, -100.0}, {100.0, 100.0}}), Text(visible=  true, origin=  {1.7639, 5.0},
-            fillPattern=                                                                                                    FillPattern.Solid, extent=  {{-44.3912, -45.0}, {44.3912, 45.0}}, textString=  "elec", fontName=  "Arial")}), Diagram(coordinateSystem(extent = {{-148.5, -105.0}, {148.5, 105.0}}, preserveAspectRatio = true, initialScale = 0.1, grid = {5, 5})),
-    Documentation(info="<html>
+  annotation(Icon(coordinateSystem(extent = {{-100.0, -100.0}, {100.0, 100.0}}, preserveAspectRatio = true, initialScale = 0.1, grid = {10, 10}), graphics = {Rectangle(visible=  true, fillColor=  {255, 255, 255}, extent=  {{-100.0, -100.0}, {100.0, 100.0}}), Text(visible=  true, origin=  {1.7639, 5.0}, fillPattern=  FillPattern.Solid, extent=  {{-44.3912, -45.0}, {44.3912, 45.0}}, textString=  "elec", fontName=  "Arial")}), Diagram(coordinateSystem(extent = {{-148.5, -105.0}, {148.5, 105.0}}, preserveAspectRatio = true, initialScale = 0.1, grid = {5, 5})), Documentation(info = "<html>
 <p><br><span style=\"font-family: MS Shell Dlg 2;\">&LT;iPSL: iTesla Power System Library&GT;</span></p>
 <p><span style=\"font-family: MS Shell Dlg 2;\">Copyright 2015 RTE (France), AIA (Spain), KTH (Sweden) and DTU (Denmark)</span></p>
 <ul>

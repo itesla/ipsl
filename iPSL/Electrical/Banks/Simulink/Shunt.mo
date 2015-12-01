@@ -1,8 +1,8 @@
 within iPSL.Electrical.Banks.Simulink;
-model Shunt "Shunt Inductor or Capacitor"
 
-  iPSL.Connectors.PwPin p annotation (Placement(transformation(extent={{-22,48},
-            {-2,68}}), iconTransformation(extent={{-10,40},{10,60}})));
+
+model Shunt "Shunt Inductor or Capacitor"
+  iPSL.Connectors.PwPin p annotation(Placement(transformation(extent = {{-22, 48}, {-2, 68}}), iconTransformation(extent = {{-10, 40}, {10, 60}})));
   constant Real pi = Modelica.Constants.pi;
   parameter Real Qnom
     "Reactive power produced by the shunt under 1 p.u voltage, (negative for inductive charge, positive for capacitive charge) Mvar";
@@ -15,9 +15,7 @@ equation
   0 = p.vr * p.ir + p.vi * p.ii;
   Q = p.vi * p.ir - p.vr * p.ii;
   Q = 1 / X * v * v;
-  annotation(Icon(coordinateSystem(preserveAspectRatio = false, extent = {{-100, -100}, {100, 100}}), graphics={  Line(points=  {{0, 40}, {0, 30}}, smooth=  Smooth.None, color=  {0, 0, 255}, thickness=  0.5), Rectangle(extent=  {{-22, 40}, {24, -42}}, lineColor=  {0, 0, 255}), Text(extent=  {{-12, 34}, {12, -18}}, lineColor=  {0, 0, 255}, textString=  "Y",
-            lineThickness=                                                                                                    0.5), Line(points=  {{0, -12}, {0, -26}}, smooth=  Smooth.None, color=  {0, 0, 255}, thickness=  0.5), Line(points=  {{-1, 14}, {-1, -6}}, smooth=  Smooth.None, color=  {0, 0, 255}, origin=  {-4, -27}, rotation=  -90, thickness=  0.5), Line(points=  {{-1, -6}, {-1, -2}}, smooth=  Smooth.None, color=  {0, 0, 255}, origin=  {-4, -33}, rotation=  90, thickness=  0.5), Line(points=  {{-1, 12}, {-1, -0.000000000000000183697}}, smooth=  Smooth.None, color=  {0, 0, 255}, origin=  {-6, -31}, rotation=  -90, thickness=  0.5)}),
-      Documentation(info="<html>
+  annotation(Icon(coordinateSystem(preserveAspectRatio = false, extent = {{-100, -100}, {100, 100}}), graphics = {Line(points=  {{0, 40}, {0, 30}}, smooth=  Smooth.None, color=  {0, 0, 255}, thickness=  0.5), Rectangle(extent=  {{-22, 40}, {24, -42}}, lineColor=  {0, 0, 255}), Text(extent=  {{-12, 34}, {12, -18}}, lineColor=  {0, 0, 255}, textString=  "Y", lineThickness=  0.5), Line(points=  {{0, -12}, {0, -26}}, smooth=  Smooth.None, color=  {0, 0, 255}, thickness=  0.5), Line(points=  {{-1, 14}, {-1, -6}}, smooth=  Smooth.None, color=  {0, 0, 255}, origin=  {-4, -27}, rotation=  -90, thickness=  0.5), Line(points=  {{-1, -6}, {-1, -2}}, smooth=  Smooth.None, color=  {0, 0, 255}, origin=  {-4, -33}, rotation=  90, thickness=  0.5), Line(points=  {{-1, 12}, {-1, -0.000000000000000183697}}, smooth=  Smooth.None, color=  {0, 0, 255}, origin=  {-6, -31}, rotation=  -90, thickness=  0.5)}), Documentation(info = "<html>
 <table cellspacing=\"1\" cellpadding=\"1\" border=\"1\">
 <tr>
 <td><p>Reference</p></td>

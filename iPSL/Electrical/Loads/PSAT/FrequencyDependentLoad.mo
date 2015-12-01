@@ -2,13 +2,11 @@ within iPSL.Electrical.Loads.PSAT;
 model FrequencyDependentLoad "Frequency Dependent Load"
   import Modelica.Constants.pi;
   extends BaseClasses.baseLoad;
-
   parameter Real alpha_p = 0 "Active power voltage coefficient";
   parameter Real alpha_q = 0 "Reactive power voltage coefficient";
   parameter Real beta_p = 1.3 "Active power frequency coefficient";
   parameter Real beta_q = 1.3 "Reactive power frequency coefficient";
   parameter Real Tf = 0.1 "Filter time constant (s)";
-
   Real deltaw "Frequency deviation (pu)";
 protected
   Real a "Auxiliary variable, voltage division";
@@ -16,14 +14,12 @@ protected
 initial equation
   der(x) = 0;
 equation
-
   a = v / V_0;
   der(x) = -deltaw / Tf;
   0 = x + 1 / (2 * pi * fn) * 1 / Tf * (anglev - angle_0) - deltaw;
   P = P_0 * CoB * a ^ alpha_p * (1 + deltaw) ^ beta_p;
   Q = Q_0 * CoB * a ^ alpha_q * (1 + deltaw) ^ beta_q;
-  annotation(Icon(coordinateSystem(extent = {{-100.0, -100.0}, {100.0, 100.0}}, preserveAspectRatio = true, initialScale = 0.1, grid = {10, 10})),                                                                                                    Diagram(coordinateSystem(extent = {{-148.5, -105.0}, {148.5, 105.0}}, preserveAspectRatio = true, initialScale = 0.1, grid = {5, 5}), graphics={  Rectangle(visible = true, origin = {10.0, -2.5}, lineColor = {0, 0, 128}, fillColor = {255, 255, 255}, extent = {{-90.0, -82.5}, {90.0, 82.5}})}),
-    Documentation(info="<html>
+  annotation(Icon(coordinateSystem(extent = {{-100.0, -100.0}, {100.0, 100.0}}, preserveAspectRatio = true, initialScale = 0.1, grid = {10, 10})), Diagram(coordinateSystem(extent = {{-148.5, -105.0}, {148.5, 105.0}}, preserveAspectRatio = true, initialScale = 0.1, grid = {5, 5}), graphics = {Rectangle(visible=  true, origin=  {10.0, -2.5}, lineColor=  {0, 0, 128}, fillColor=  {255, 255, 255}, extent=  {{-90.0, -82.5}, {90.0, 82.5}})}), Documentation(info = "<html>
 <table cellspacing=\"1\" cellpadding=\"1\" border=\"1\">
 <tr>
 <td><p>Reference</p></td>
@@ -57,3 +53,4 @@ equation
 <p><span style=\"font-family: MS Shell Dlg 2;\">You should have received a copy of the GNU Lesser General Public License along with the iPSL. If not, see &LT;http://www.gnu.org/licenses/&GT;.</span></p>
 </html>"));
 end FrequencyDependentLoad;
+

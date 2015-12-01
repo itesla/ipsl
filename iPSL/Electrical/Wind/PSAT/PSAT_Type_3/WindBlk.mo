@@ -1,4 +1,6 @@
 within iPSL.Electrical.Wind.PSAT.PSAT_Type_3;
+
+
 model WindBlk
   import Modelica.Constants.pi;
   Modelica.Blocks.Interfaces.RealInput vw "Real voltage" annotation(Placement(transformation(extent = {{-102.0, 54.0}, {-62.0, 94.0}}, origin = {-43.0, 7.7602}, rotation = 0), visible = true, iconTransformation(origin = {2.0, -2.4053}, extent = {{-102.0, 54.0}, {-62.0, 94.0}}, rotation = 0)));
@@ -25,9 +27,7 @@ equation
   cp = 0.22 * (116 / lambdai - 0.4 * theta_p - 5) * exp(-12.5 / lambdai);
   Pw = 0.5 * rho * cp * Ar * (vw * vw_base) ^ 3 / (Sbase * 1000000.0);
   Tm = Pw / omega_m;
-  annotation(Icon(coordinateSystem(extent = {{-100.0, -100.0}, {100.0, 100.0}}, preserveAspectRatio = true, initialScale = 0.1, grid = {10, 10}), graphics={  Rectangle(visible=  true, fillColor=  {255, 255, 255}, extent=  {{-100.0, -100.0}, {100.0, 100.0}}), Text(visible=  true, origin=  {5.2917, -1.4606},
-            fillPattern=                                                                                                    FillPattern.Solid, extent=  {{-39.3935, -41.4606}, {39.3935, 41.4606}}, textString=  "wind", fontName=  "Arial")}), Diagram(coordinateSystem(extent = {{-148.5, -105.0}, {148.5, 105.0}}, preserveAspectRatio = true, initialScale = 0.1, grid = {5, 5})),
-    Documentation(info="<html>
+  annotation(Icon(coordinateSystem(extent = {{-100.0, -100.0}, {100.0, 100.0}}, preserveAspectRatio = true, initialScale = 0.1, grid = {10, 10}), graphics = {Rectangle(visible=  true, fillColor=  {255, 255, 255}, extent=  {{-100.0, -100.0}, {100.0, 100.0}}), Text(visible=  true, origin=  {5.2917, -1.4606}, fillPattern=  FillPattern.Solid, extent=  {{-39.3935, -41.4606}, {39.3935, 41.4606}}, textString=  "wind", fontName=  "Arial")}), Diagram(coordinateSystem(extent = {{-148.5, -105.0}, {148.5, 105.0}}, preserveAspectRatio = true, initialScale = 0.1, grid = {5, 5})), Documentation(info = "<html>
 <p><br><span style=\"font-family: MS Shell Dlg 2;\">&LT;iPSL: iTesla Power System Library&GT;</span></p>
 <p><span style=\"font-family: MS Shell Dlg 2;\">Copyright 2015 RTE (France), AIA (Spain), KTH (Sweden) and DTU (Denmark)</span></p>
 <ul>

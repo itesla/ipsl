@@ -1,18 +1,15 @@
 within iPSL.Electrical.Loads.PSAT;
 model VoltDependant "Voltage Dependent Load"
   extends BaseClasses.baseLoad;
-
   parameter Real alphap = 2.0 "Active power exponent";
   parameter Real alphaq = 2.0 "Reactive power exponent";
-
 protected
   Real a "Auxiliary variable, voltage division";
 equation
   a = v / V_0;
   P = P_0 * CoB * a ^ alphap;
   Q = Q_0 * CoB * a ^ alphaq;
-  annotation(Icon(coordinateSystem(extent = {{-100.0, -100.0}, {100.0, 100.0}}, preserveAspectRatio = true, initialScale = 0.1, grid = {10, 10})),
-      Documentation(info="<html>
+  annotation(Icon(coordinateSystem(extent = {{-100.0, -100.0}, {100.0, 100.0}}, preserveAspectRatio = true, initialScale = 0.1, grid = {10, 10})), Documentation(info = "<html>
 <table cellspacing=\"1\" cellpadding=\"1\" border=\"1\">
 <tr>
 <td><p>Reference</p></td>
@@ -46,3 +43,4 @@ equation
 <p><span style=\"font-family: MS Shell Dlg 2;\">You should have received a copy of the GNU Lesser General Public License along with the iPSL. If not, see &LT;http://www.gnu.org/licenses/&GT;.</span></p>
 </html>"));
 end VoltDependant;
+

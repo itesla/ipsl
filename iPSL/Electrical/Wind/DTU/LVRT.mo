@@ -1,6 +1,5 @@
 within iPSL.Electrical.Wind.DTU;
 model LVRT "Enables low voltage ride through signal. Developed by DTU"
-
   Modelica.Blocks.Interfaces.RealInput Uwtt annotation(Placement(transformation(extent = {{-51, -6}, {-41, 6}}), iconTransformation(extent = {{-51, -6}, {-41, 6}})));
   Modelica.Blocks.Interfaces.RealOutput F_LVRT annotation(Placement(transformation(extent = {{39, 14}, {49, 26}}), iconTransformation(extent = {{39, 14}, {49, 26}})));
   Modelica.Blocks.Interfaces.RealOutput Fpost annotation(Placement(transformation(extent = {{39, -26}, {49, -14}}), iconTransformation(extent = {{39, -26}, {49, -14}})));
@@ -28,11 +27,7 @@ algorithm
       Fpost := pre(Fpost);
     end if;
   end when;
-  annotation(Icon(coordinateSystem(preserveAspectRatio = false, extent = {{-100, -100}, {100, 100}}), graphics={  Rectangle(extent=  {{-40, 30}, {40, -30}}, lineColor=  {0, 0, 255},
-            lineThickness=                                                                                                    0.5), Text(extent=  {{-18, 38}, {20, 6}}, lineColor=  {0, 0, 255},
-            lineThickness=                                                                                                    0.5,
-            fillPattern=                                                                                                    FillPattern.Solid, textString=  "LVRT Mode"), Line(points=  {{-26, 10}, {-10, 10}, {-10, -20}, {6, -20}, {20, 4}, {36, 4}}, color=  {0, 0, 255}, smooth=  Smooth.None, thickness=  0.5)}), Diagram(coordinateSystem(preserveAspectRatio = false, extent = {{-100, -100}, {100, 100}}), graphics),
-    Documentation(info="<html>
+  annotation(Icon(coordinateSystem(preserveAspectRatio = false, extent = {{-100, -100}, {100, 100}}), graphics = {Rectangle(extent=  {{-40, 30}, {40, -30}}, lineColor=  {0, 0, 255}, lineThickness=  0.5), Text(extent=  {{-18, 38}, {20, 6}}, lineColor=  {0, 0, 255}, lineThickness=  0.5, fillPattern=  FillPattern.Solid, textString=  "LVRT Mode"), Line(points=  {{-26, 10}, {-10, 10}, {-10, -20}, {6, -20}, {20, 4}, {36, 4}}, color=  {0, 0, 255}, smooth=  Smooth.None, thickness=  0.5)}), Diagram(coordinateSystem(preserveAspectRatio = false, extent = {{-100, -100}, {100, 100}}), graphics), Documentation(info = "<html>
 <p><br><span style=\"font-family: MS Shell Dlg 2;\">&LT;iPSL: iTesla Power System Library&GT;</span></p>
 <p><span style=\"font-family: MS Shell Dlg 2;\">Copyright 2015 RTE (France), AIA (Spain), KTH (Sweden) and DTU (Denmark)</span></p>
 <ul>
@@ -48,3 +43,4 @@ algorithm
 <p><span style=\"font-family: MS Shell Dlg 2;\">You should have received a copy of the GNU Lesser General Public License along with the iPSL. If not, see &LT;http://www.gnu.org/licenses/&GT;.</span></p>
 </html>"));
 end LVRT;
+

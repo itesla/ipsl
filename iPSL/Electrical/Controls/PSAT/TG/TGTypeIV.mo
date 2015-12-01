@@ -1,4 +1,6 @@
 within iPSL.Electrical.Controls.PSAT.TG;
+
+
 model TGTypeIV
   "Hydro Turbine (Linear model) and Governor (Standard model with PI controller)- control scheme Type 4"
   parameter Real wref "Reference speed (pu)";
@@ -19,17 +21,8 @@ model TGTypeIV
   parameter Real Kp "Proportional droop";
   parameter Real Ki "Integral droop";
   parameter Real Pref;
-
-protected
-  parameter Real int1 = sigma * Pref;
-  parameter Real int2 = 0;
-  parameter Real int3 = Pref;
-  parameter Real int4 = Tr * Pref;
-  parameter Real int5 = a13 * a21 / a11 * Pref;
-public
   Real deltaG "Gate position variation (pu)";
   Real v "Gate opening rate (pu)";
-public
   Modelica.Blocks.Continuous.Integrator integrator3(initType = Modelica.Blocks.Types.Init.NoInit, y_start = int3) annotation(Placement(transformation(extent = {{34, 56}, {46, 68}})));
   Modelica.Blocks.Math.Gain gain(k = 1 / (Tg * Tp)) annotation(Placement(transformation(extent = {{-50, 56}, {-38, 68}})));
   Modelica.Blocks.Math.Gain gain1(k = 1 / Tp) annotation(Placement(transformation(extent = {{-6, -6}, {6, 6}}, rotation = 180, origin = {-16, 42})));
@@ -45,26 +38,27 @@ public
   Modelica.Blocks.Math.Feedback feedback2 annotation(Placement(transformation(extent = {{-6, -6}, {6, 6}}, rotation = 0, origin = {124, 28})));
   Modelica.Blocks.Math.Gain G6(k = (a11 * a23 - a13 * a21) / a11) annotation(Placement(transformation(extent = {{116, 56}, {128, 68}})));
   Modelica.Blocks.Math.Gain gain7(k = a13 * a21 / (a11 * a11 * Tw)) annotation(Placement(transformation(extent = {{104, 22}, {116, 34}})));
-public
   Modelica.Blocks.Interfaces.RealInput w "Rotor speed (pu)" annotation(Placement(transformation(extent = {{-12, 4}, {-2, 14}}), iconTransformation(extent = {{-136, -20}, {-100, 16}})));
-  Modelica.Blocks.Interfaces.RealOutput Pm "Mechanical power (pu)"
-                                                           annotation(Placement(transformation(extent = {{78, -8}, {90, 4}}), iconTransformation(extent = {{100, -10}, {120, 10}})));
+  Modelica.Blocks.Interfaces.RealOutput Pm "Mechanical power (pu)" annotation(Placement(transformation(extent = {{78, -8}, {90, 4}}), iconTransformation(extent = {{100, -10}, {120, 10}})));
   Modelica.Blocks.Continuous.Integrator integrator1(initType = Modelica.Blocks.Types.Init.NoInit, y_start = int1) annotation(Placement(transformation(extent = {{-122, 56}, {-110, 68}})));
   Modelica.Blocks.Math.Gain gain6(k = Ki) annotation(Placement(transformation(extent = {{-144, 56}, {-132, 68}})));
   Modelica.Blocks.Math.Gain gain8(k = Kp) annotation(Placement(transformation(extent = {{-144, 82}, {-132, 94}})));
-public
   Modelica.Blocks.Nonlinear.Limiter limiter(uMax = vmax, uMin = vmin) annotation(Placement(transformation(extent = {{12, 56}, {24, 68}})));
   Modelica.Blocks.Nonlinear.Limiter limiter1(uMax = gmax, uMin = gmin) annotation(Placement(transformation(extent = {{56, 56}, {68, 68}})));
   Modelica.Blocks.Math.Add add1(k1 = +1, k2 = -1) annotation(Placement(transformation(extent = {{-172, 54}, {-158, 68}})));
   Modelica.Blocks.Math.Add add2 annotation(Placement(transformation(extent = {{-102, 60}, {-88, 74}})));
   Modelica.Blocks.Math.Add3 add3_1(k1 = -1, k2 = +1, k3 = +1) annotation(Placement(transformation(extent = {{-72, 60}, {-58, 74}})));
   Modelica.Blocks.Math.Add add3 annotation(Placement(transformation(extent = {{172, 52}, {184, 64}})));
-  Modelica.Blocks.Sources.Constant const1(k=wref)
-    annotation (Placement(transformation(extent={{-210,60},{-198,72}})));
+  Modelica.Blocks.Sources.Constant const1(k = wref) annotation(Placement(transformation(extent = {{-210, 60}, {-198, 72}})));
+protected
+  parameter Real int1 = sigma * Pref;
+  parameter Real int2 = 0;
+  parameter Real int3 = Pref;
+  parameter Real int4 = Tr * Pref;
+  parameter Real int5 = a13 * a21 / a11 * Pref;
 equation
   deltaG = limiter1.y;
   v = limiter.y;
-
   connect(gain1.y, feedback.u2) annotation(Line(points = {{-22.6, 42}, {-28, 42}, {-28, 57.2}}, color = {0, 0, 127}, smooth = Smooth.None));
   connect(feedback.y, integrator2.u) annotation(Line(points = {{-22.6, 62}, {-19.2, 62}}, color = {0, 0, 127}, smooth = Smooth.None));
   connect(gain.y, feedback.u1) annotation(Line(points = {{-37.4, 62}, {-32.8, 62}}, color = {0, 0, 127}, smooth = Smooth.None));
@@ -97,15 +91,8 @@ equation
   connect(add3.y, Pm) annotation(Line(points = {{184.6, 58}, {188, 58}, {188, -2}, {84, -2}}, color = {0, 0, 127}, smooth = Smooth.None));
   connect(limiter1.y, G6.u) annotation(Line(points = {{68.6, 62}, {114.8, 62}}, color = {0, 0, 127}, smooth = Smooth.None));
   connect(limiter1.y, gain7.u) annotation(Line(points = {{68.6, 62}, {92, 62}, {92, 28}, {102.8, 28}}, color = {0, 0, 127}, smooth = Smooth.None));
-  connect(const1.y, add1.u1) annotation (Line(points={{-197.4,66},{-173.4,66},{-173.4,
-          65.2}}, color={0,0,127}));
-  annotation(Icon(coordinateSystem(preserveAspectRatio=false,   extent={{-100,
-            -100},{100,100}}),                                                                        graphics={  Rectangle(extent=  {{-100, 100}, {100, -100}}, lineColor=  {0, 0, 255}), Text(extent=  {{-34, 20}, {32, -18}}, lineColor=  {0, 0, 255}, textString=  "TGTypeIV"), Text(visible=  true, origin=  {-81, -1},
-            fillPattern=                                                                                                    FillPattern.Solid, extent=  {{-23, -13}, {23, 13}}, textString=  "W", fontName=  "Arial"), Text(visible=  true, origin=  {81.0002, 1},
-            fillPattern=                                                                                                    FillPattern.Solid, extent=  {{-25.0002, -13}, {25.0002, 13}}, fontName=  "Arial", textString=  "Pm", lineColor=  {0, 0, 0}), Text(visible=  true, origin=  {-69, -57},
-            fillPattern=                                                                                                    FillPattern.Solid, extent=  {{-23, -13}, {23, 13}}, fontName=  "Arial", textString=  "Wref", lineColor=  {0, 0, 0})}), Diagram(coordinateSystem(preserveAspectRatio=false,   extent={{-100,
-            -100},{100,100}})),
-    Documentation(info="<html>
+  connect(const1.y, add1.u1) annotation(Line(points = {{-197.4, 66}, {-173.4, 66}, {-173.4, 65.2}}, color = {0, 0, 127}));
+  annotation(Icon(coordinateSystem(preserveAspectRatio = false, extent = {{-100, -100}, {100, 100}}), graphics = {Rectangle(extent=  {{-100, 100}, {100, -100}}, lineColor=  {0, 0, 255}), Text(extent=  {{-34, 20}, {32, -18}}, lineColor=  {0, 0, 255}, textString=  "TGTypeIV"), Text(visible=  true, origin=  {-81, -1}, fillPattern=  FillPattern.Solid, extent=  {{-23, -13}, {23, 13}}, textString=  "W", fontName=  "Arial"), Text(visible=  true, origin=  {81.0002, 1}, fillPattern=  FillPattern.Solid, extent=  {{-25.0002, -13}, {25.0002, 13}}, fontName=  "Arial", textString=  "Pm", lineColor=  {0, 0, 0}), Text(visible=  true, origin=  {-69, -57}, fillPattern=  FillPattern.Solid, extent=  {{-23, -13}, {23, 13}}, fontName=  "Arial", textString=  "Wref", lineColor=  {0, 0, 0})}), Diagram(coordinateSystem(preserveAspectRatio = false, extent = {{-100, -100}, {100, 100}})), Documentation(info = "<html>
 <table cellspacing=\"1\" cellpadding=\"1\" border=\"1\">
 <tr>
 <td><p>Reference</p></td>

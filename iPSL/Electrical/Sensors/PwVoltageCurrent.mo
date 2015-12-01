@@ -1,22 +1,13 @@
 within iPSL.Electrical.Sensors;
-model PwVoltageCurrent "Voltage sensor."
 
-  iPSL.Connectors.PwPin p annotation (Placement(transformation(extent={{-60,-40},
-            {-40,-20}}), iconTransformation(extent={{-60,-40},{-40,-20}})));
-  iPSL.Connectors.PwPin n annotation (Placement(transformation(extent={{-10,50},
-            {10,70}}), iconTransformation(extent={{40,20},{60,40}})));
-  Modelica.Blocks.Interfaces.RealOutput Vr
-    annotation (Placement(transformation(extent={{48,-34},{68,-14}}),
-        iconTransformation(extent={{40,4},{50,14}})));
-  Modelica.Blocks.Interfaces.RealOutput Vi
-    annotation (Placement(transformation(extent={{48,-54},{68,-34}}),
-        iconTransformation(extent={{40,-10},{50,0}})));
-  Modelica.Blocks.Interfaces.RealOutput Ir
-    annotation (Placement(transformation(extent={{48,-72},{68,-52}}),
-        iconTransformation(extent={{40,-24},{50,-14}})));
-  Modelica.Blocks.Interfaces.RealOutput Ii
-    annotation (Placement(transformation(extent={{48,-88},{68,-68}}),
-        iconTransformation(extent={{40,-40},{52,-28}})));
+
+class PwVoltageCurrent "Voltage sensor."
+  iPSL.Connectors.PwPin p annotation(Placement(transformation(extent = {{-60, -40}, {-40, -20}}), iconTransformation(extent = {{-60, -40}, {-40, -20}})));
+  iPSL.Connectors.PwPin n annotation(Placement(transformation(extent = {{-10, 50}, {10, 70}}), iconTransformation(extent = {{40, 20}, {60, 40}})));
+  Modelica.Blocks.Interfaces.RealOutput Vr annotation(Placement(transformation(extent = {{48, -34}, {68, -14}}), iconTransformation(extent = {{40, 4}, {50, 14}})));
+  Modelica.Blocks.Interfaces.RealOutput Vi annotation(Placement(transformation(extent = {{48, -54}, {68, -34}}), iconTransformation(extent = {{40, -10}, {50, 0}})));
+  Modelica.Blocks.Interfaces.RealOutput Ir annotation(Placement(transformation(extent = {{48, -72}, {68, -52}}), iconTransformation(extent = {{40, -24}, {50, -14}})));
+  Modelica.Blocks.Interfaces.RealOutput Ii annotation(Placement(transformation(extent = {{48, -88}, {68, -68}}), iconTransformation(extent = {{40, -40}, {52, -28}})));
 equation
   n.vr = p.vr;
   n.vi = p.vi;
@@ -26,20 +17,7 @@ equation
   Vi = p.vi;
   Ir = p.ir;
   Ii = p.ii;
-
-  annotation(Icon(coordinateSystem(preserveAspectRatio=true, extent={{-100,
-            -100},{100,100}}),
-                  graphics={  Rectangle(extent = {{-40, 40}, {40, -40}}, lineColor = {0, 0, 255}), Rectangle(extent = {{-30, 32}, {30, -32}}, lineColor = {0, 0, 255}), Rectangle(extent = {{-20, 20}, {20, 0}}, lineColor = {0, 0, 255}), Text(extent = {{-26, -12}, {-6, -28}}, lineColor = {0, 0, 255}, textString = "U", textStyle = {TextStyle.Bold}), Line(points = {{0, 0}, {10, 10}}, color = {0, 0, 255}, smooth = Smooth.None), Text(extent={{
-              52,12},{60,6}},                                                                                                    lineColor = {0, 0, 255}, textString = "vr"), Text(extent={{
-              52,-2},{60,-8}},                                                                                                    lineColor = {0, 0, 255}, textString = "vi"), Text(extent={{
-              52,-16},{60,-22}},                                                                                                    lineColor=
-              {0,0,255},
-          textString="Ir"),                                                                                                    Text(extent={{
-              52,-32},{60,-38}},                                                                                                    lineColor=
-              {0,0,255},
-          textString="Ii")}),                                                                                                    Diagram(
-        coordinateSystem(preserveAspectRatio=true, extent={{-100,-100},{100,100}}),                                                                                                    graphics),
-    Documentation(info="<html>
+  annotation(Icon(coordinateSystem(preserveAspectRatio = true, extent = {{-100, -100}, {100, 100}}), graphics={  Rectangle(extent=  {{-40, 40}, {40, -40}}, lineColor=  {0, 0, 255}), Rectangle(extent=  {{-30, 32}, {30, -32}}, lineColor=  {0, 0, 255}), Rectangle(extent=  {{-20, 20}, {20, 0}}, lineColor=  {0, 0, 255}), Text(extent=  {{-26, -12}, {-6, -28}}, lineColor=  {0, 0, 255}, textString=  "U", textStyle=  {TextStyle.Bold}), Line(points=  {{0, 0}, {10, 10}}, color=  {0, 0, 255}, smooth=  Smooth.None), Text(extent=  {{52, 12}, {60, 6}}, lineColor=  {0, 0, 255}, textString=  "vr"), Text(extent=  {{52, -2}, {60, -8}}, lineColor=  {0, 0, 255}, textString=  "vi"), Text(extent=  {{52, -16}, {60, -22}}, lineColor=  {0, 0, 255}, textString=  "Ir"), Text(extent=  {{52, -32}, {60, -38}}, lineColor=  {0, 0, 255}, textString=  "Ii")}), Diagram(coordinateSystem(preserveAspectRatio = true, extent = {{-100, -100}, {100, 100}}), graphics), Documentation(info = "<html>
 <p><br><span style=\"font-family: MS Shell Dlg 2;\">&LT;iPSL: iTesla Power System Library&GT;</span></p>
 <p><span style=\"font-family: MS Shell Dlg 2;\">Copyright 2015 RTE (France), AIA (Spain), KTH (Sweden) and DTU (Denmark)</span></p>
 <ul>

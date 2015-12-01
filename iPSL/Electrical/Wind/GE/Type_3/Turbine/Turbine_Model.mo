@@ -1,4 +1,6 @@
 within iPSL.Electrical.Wind.GE.Type_3.Turbine;
+
+
 model Turbine_Model
   parameter Real GEN_base = 1;
   parameter Real WT_base = 1;
@@ -36,6 +38,11 @@ model Turbine_Model
   parameter Real wbase = 1;
   parameter Real wndtge_ang0 = 1;
   parameter Real wndtge_spd0 = 1;
+  Modelica.Blocks.Interfaces.RealInput Pelec "Electrical power" annotation(Placement(transformation(extent = {{-102.0, 54.0}, {-62.0, 94.0}}, origin = {-88.0, 11.0}, rotation = 0), visible = true, iconTransformation(origin = {2.0, -137.1586}, extent = {{-102.0, 54.0}, {-62.0, 94.0}}, rotation = 0)));
+  Modelica.Blocks.Interfaces.RealInput Wind_Speed "Wind speed" annotation(Placement(transformation(extent = {{-102.0, 54.0}, {-62.0, 94.0}}, origin = {-88.0, -29.0}, rotation = 0), visible = true, iconTransformation(origin = {2.0, -7.5581}, extent = {{-102.0, 54.0}, {-62.0, 94.0}}, rotation = 0)));
+  Modelica.Blocks.Interfaces.RealOutput Pord "Active power command" annotation(Placement(transformation(extent = {{102.0, 54.0}, {62.0, 94.0}}, origin = {128.0, -75.6493}, rotation = 0), visible = true, iconTransformation(origin = {-2.0, -7.6782}, extent = {{102.0, 54.0}, {62.0, 94.0}}, rotation = 0)));
+  Rotor_Model rotor_Model1(wt_x6_0 = wt_x6_0, wt_x7_0 = wt_x7_0, wt_x8_0 = wt_x8_0, wt_x9_0 = wt_x9_0, Dtg = Dtg, H = H, Hg = Hg, Ktg = Ktg, wbase = wbase, wndtge_ang0 = wndtge_ang0, wndtge_spd0 = wndtge_spd0) annotation(Placement(visible = true, transformation(origin = {-100.5502, 45.01}, extent = {{-10.0, -10.0}, {10.0, 10.0}}, rotation = 0)));
+  Wind_Power_Model wind_Power_Model1(KI = KI, wndtge_kp = wndtge_kp) annotation(Placement(visible = true, transformation(origin = {-132.1327, 37.6573}, extent = {{-10.0, -10.0}, {10.0, 10.0}}, rotation = 0)));
 protected
   Boolean thlim1(start = true);
   Boolean pwlim2(start = true);
@@ -64,25 +71,15 @@ protected
   Modelica.Blocks.Math.Add add8(k2 = -1) annotation(Placement(visible = true, transformation(origin = {56.5483, -76.2002}, extent = {{-10.0, -10.0}, {10.0, 10.0}}, rotation = 0)));
   Modelica.Blocks.Math.Gain Change_Base1(k = WT_base / GEN_base) annotation(Placement(visible = true, transformation(origin = {175.0, -1.9789}, extent = {{-10.0, -10.0}, {10.0, 10.0}}, rotation = 0)));
   Modelica.Blocks.Sources.Constant const(k = 1) annotation(Placement(visible = true, transformation(origin = {-147.5253, -5.0}, extent = {{-10.0, -10.0}, {10.0, 10.0}}, rotation = 0)));
-public
-  Modelica.Blocks.Interfaces.RealInput Pelec "Electrical power" annotation(Placement(transformation(extent = {{-102.0, 54.0}, {-62.0, 94.0}}, origin = {-88.0, 11.0}, rotation = 0), visible = true, iconTransformation(origin = {2.0, -137.1586}, extent = {{-102.0, 54.0}, {-62.0, 94.0}}, rotation = 0)));
-  Modelica.Blocks.Interfaces.RealInput Wind_Speed "Wind speed" annotation(Placement(transformation(extent = {{-102.0, 54.0}, {-62.0, 94.0}}, origin = {-88.0, -29.0}, rotation = 0), visible = true, iconTransformation(origin = {2.0, -7.5581}, extent = {{-102.0, 54.0}, {-62.0, 94.0}}, rotation = 0)));
-  Modelica.Blocks.Interfaces.RealOutput Pord "Active power command" annotation(Placement(transformation(extent = {{102.0, 54.0}, {62.0, 94.0}}, origin = {128.0, -75.6493}, rotation = 0), visible = true, iconTransformation(origin = {-2.0, -7.6782}, extent = {{102.0, 54.0}, {62.0, 94.0}}, rotation = 0)));
-  Rotor_Model rotor_Model1(wt_x6_0 = wt_x6_0, wt_x7_0 = wt_x7_0, wt_x8_0 = wt_x8_0, wt_x9_0 = wt_x9_0, Dtg = Dtg, H = H, Hg = Hg, Ktg = Ktg, wbase = wbase, wndtge_ang0 = wndtge_ang0, wndtge_spd0 = wndtge_spd0) annotation(Placement(visible = true, transformation(origin = {-100.5502, 45.01}, extent = {{-10.0, -10.0}, {10.0, 10.0}}, rotation = 0)));
-  Wind_Power_Model wind_Power_Model1(KI = KI, wndtge_kp = wndtge_kp) annotation(Placement(visible = true, transformation(origin = {-132.1327, 37.6573}, extent = {{-10.0, -10.0}, {10.0, 10.0}}, rotation = 0)));
 equation
   connect(Pelec, Change_Base.u) annotation(Line(visible = true, origin = {-156.0, 85.0}, points = {{-14.0, 0.0}, {14.0, 0.0}}, color = {0, 0, 127}));
-  connect(Wind_Speed, wind_Power_Model1.Wind_Speed) annotation(Line(visible = true, origin = {-150.1058, 44.9084}, points={{
-          -19.8942,0.0916},{4.9606,0.0916},{4.9606,-0.09163},{
-          9.9731,-0.09163}},                                                                                                    color = {0, 0, 127}));
+  connect(Wind_Speed, wind_Power_Model1.Wind_Speed) annotation(Line(visible = true, origin = {-150.1058, 44.9084}, points = {{-19.8942, 0.0916}, {4.9606, 0.0916}, {4.9606, -0.09163}, {9.9731, -0.09163}}, color = {0, 0, 127}));
   connect(integrator1.y, add2.u1) annotation(Line(visible = true, origin = {-50.6823, 74.6186}, points = {{-5.047, 10.3814}, {0.6823, 10.3814}, {0.6823, -10.3814}, {3.6823, -10.3814}}, color = {0, 0, 127}));
   connect(add1.u2, integrator1.y) annotation(Line(visible = true, origin = {-79.8948, 75.9958}, points = {{-24.1654, -1.9958}, {-25.1654, -1.9958}, {-25.1654, -7.0083}, {25.1654, -7.0083}, {25.1654, 9.0042}, {24.1655, 9.0042}}, color = {0, 0, 127}));
   connect(add1.y, integrator1.u) annotation(Line(visible = true, origin = {-79.812, 82.5}, points = {{-1.2482, -2.5}, {0.0827, -2.5}, {0.0827, 2.5}, {1.0827, 2.5}}, color = {0, 0, 127}));
   connect(Change_Base1.y, Pord) annotation(Line(visible = true, origin = {193.5, -1.8141}, points = {{-7.5, -0.1648}, {-4.5, -0.1648}, {-4.5, 0.1648}, {16.5, 0.1648}}, color = {0, 0, 127}));
   connect(const.y, add4.u1) annotation(Line(visible = true, origin = {-128.3813, -14.5849}, points = {{-8.144, 9.5849}, {-1.6187, 9.5849}, {-1.6187, 9.5849}, {11.3813, 8.7548}}, color = {0, 0, 127}));
-  connect(add4.u2, limIntegrator2.y) annotation(Line(visible = true, origin = {16.5876, -49.6768}, points={{
-          -133.588,31.8467},{-136.588,31.8467},{-136.588,-5.3232},{136.588,
-          -5.3232},{136.588,-26.5234},{133.588,-26.5234}},                                                                                                    color = {0, 0, 127}));
+  connect(add4.u2, limIntegrator2.y) annotation(Line(visible = true, origin = {16.5876, -49.6768}, points = {{-133.588, 31.8467}, {-136.588, 31.8467}, {-136.588, -5.3232}, {136.588, -5.3232}, {136.588, -26.5234}, {133.588, -26.5234}}, color = {0, 0, 127}));
   connect(limIntegrator2.y, Change_Base1.u) annotation(Line(visible = true, origin = {158.2938, -39.0896}, points = {{-8.1185, -37.1106}, {1.7062, -37.1106}, {1.7062, 37.1107}, {4.7062, 37.1107}}, color = {0, 0, 127}));
   connect(add8.y, Gain_iTPc.u) annotation(Line(visible = true, origin = {69.8618, -76.2002}, points = {{-2.3135, 0.0}, {2.3135, 0.0}}, color = {0, 0, 127}));
   connect(add5.y, Gain_iTP.u) annotation(Line(visible = true, origin = {65.6865, 60.0}, points = {{-2.3135, 0.0}, {2.3135, 0.0}}, color = {0, 0, 127}));
@@ -97,9 +94,7 @@ equation
   connect(rotor_Model1.omega_gen, product1.u1) annotation(Line(visible = true, origin = {-41.5592, -14.7662}, points = {{-50.991, 66.7762}, {-26.3238, 66.7762}, {-26.3238, -42.1593}, {51.8193, -42.1593}, {51.8193, -49.2338}}, color = {0, 0, 127}));
   connect(add6.y, product1.u2) annotation(Line(visible = true, origin = {7.1388, -79.0}, points = {{-3.3638, -3.0}, {0.1213, -3.0}, {0.1213, 3.0}, {3.1213, 3.0}}, color = {0, 0, 127}));
   connect(Gain_Kptrq.y, add6.u1) annotation(Line(visible = true, origin = {-20.9188, -75.7105}, points = {{-3.0812, 0.2895}, {0.6938, 0.2895}, {0.6938, -0.2895}, {1.6938, -0.2895}}, color = {0, 0, 127}));
-  connect(wind_Power_Model1.Theta, limIntegrator1.y) annotation(Line(visible = true, origin = {-28.0648, 76.8501}, points={{
-          -112.068,-39.4497},{-117.08,-39.4497},{-117.08,28.1499},{-91.0554,
-          28.1499},{177.065,28.1499},{177.065,-16.8501},{174.065,-16.8501}},                                                     color = {0, 0, 127}));
+  connect(wind_Power_Model1.Theta, limIntegrator1.y) annotation(Line(visible = true, origin = {-28.0648, 76.8501}, points = {{-112.068, -39.4497}, {-117.08, -39.4497}, {-117.08, 28.1499}, {-91.0554, 28.1499}, {177.065, 28.1499}, {177.065, -16.8501}, {174.065, -16.8501}}, color = {0, 0, 127}));
   connect(limIntegrator1.y, add5.u2) annotation(Line(visible = true, origin = {93.1865, 51.3333}, points = {{52.8135, 8.6667}, {55.8135, 8.6667}, {55.8135, -11.3333}, {-55.8135, -11.3333}, {-55.8135, 2.6667}, {-52.8135, 2.6667}}, color = {0, 0, 127}));
   connect(limiter1.y, limIntegrator1.u) annotation(Line(visible = true, origin = {120.5848, 60.0}, points = {{-2.4152, 0.0}, {2.4152, 0.0}}, color = {0, 0, 127}));
   connect(Gain_iTP.y, limiter1.u) annotation(Line(visible = true, origin = {93.0848, 60.0}, points = {{-2.0848, 0.0}, {2.0848, 0.0}}, color = {0, 0, 127}));
@@ -109,9 +104,7 @@ equation
   connect(Gain_Kpc.y, add3.u1) annotation(Line(visible = true, origin = {-21.6125, -9.689}, points = {{-2.3875, 11.268}, {0.6125, 11.268}, {0.6125, -1.957}, {-0.6125, -1.957}, {-0.6125, -9.311}, {2.3875, -9.311}}, color = {0, 0, 127}));
   connect(Gain_Kpp.y, add31.u1) annotation(Line(visible = true, origin = {8.0797, 73.0257}, points = {{-3.9505, 0.0256}, {0.3168, 0.0256}, {0.3168, -0.0257}, {3.3168, -0.0257}}, color = {0, 0, 127}));
   connect(add2.y, Gain_Kpp.u) annotation(Line(visible = true, origin = {-20.6531, 65.6443}, points = {{-3.3469, -7.4071}, {0.7823, -7.4071}, {0.7823, 7.407}, {1.7823, 7.407}}, color = {0, 0, 127}));
-  connect(Change_Base.y, rotor_Model1.Pe) annotation(Line(visible = true, origin = {-111.2201, 65.5087}, points={{-7.7799,
-          19.4913},{1.2201,19.4913},{1.2201,-12.8593},{2.6699,-12.8593},{2.6699,
-          -13.2639}},                                                                                                    color = {0, 0, 127}));
+  connect(Change_Base.y, rotor_Model1.Pe) annotation(Line(visible = true, origin = {-111.2201, 65.5087}, points = {{-7.7799, 19.4913}, {1.2201, 19.4913}, {1.2201, -12.8593}, {2.6699, -12.8593}, {2.6699, -13.2639}}, color = {0, 0, 127}));
   connect(rotor_Model1.omega_gen, add2.u2) annotation(Line(visible = true, origin = {-64.1526, 52.1236}, points = {{-28.3976, -0.1136}, {14.1526, -0.1136}, {14.1526, 0.1136}, {17.1526, 0.1136}}, color = {0, 0, 127}));
   connect(wind_Power_Model1.Pm, rotor_Model1.Pm) annotation(Line(visible = true, origin = {-114.9521, 38.2345}, points = {{-9.1806, -0.31293}, {1.3894, -0.31293}, {1.3894, 0.31291}, {6.4019, 0.31291}}, color = {0, 0, 127}));
   connect(rotor_Model1.omega_turb, wind_Power_Model1.omega) annotation(Line(visible = true, origin = {-116.3415, 31.1587}, points = {{23.7913, 7.24754}, {28.8037, 7.24754}, {28.8037, -6.5139}, {-28.8037, -6.5139}, {-28.8037, -0.73366}, {-23.7912, -0.73366}}, color = {0, 0, 127}));
@@ -122,8 +115,7 @@ equation
   thlim1 = not (limIntegrator1.y <= pimin + eps and limiter1.y < 0);
   pwlim2 = not (limIntegrator2.y >= pwmax and limiter2.y > 0);
   annotation(Icon(coordinateSystem(extent = {{-100.0, -100.0}, {100.0, 100.0}}, preserveAspectRatio = true, initialScale = 0.1, grid = {10, 10}), graphics={  Rectangle(visible=  true, fillColor=  {255, 255, 255}, extent=  {{-100.0, -100.0}, {100.0, 100.0}}), Text(visible=  true,
-            fillPattern=                                                                                                    FillPattern.Solid, extent=  {{-44.9792, -41.316}, {44.9792, 41.316}}, textString=  "Turbine", fontName=  "Arial")}), Diagram(coordinateSystem(extent = {{-210.0, -148.5}, {210.0, 148.5}}, preserveAspectRatio = true, initialScale = 0.1, grid = {5, 5})),
-    Documentation(info="<html>
+            fillPattern=                                                                                                    FillPattern.Solid, extent=  {{-44.9792, -41.316}, {44.9792, 41.316}}, textString=  "Turbine", fontName=  "Arial")}), Diagram(coordinateSystem(extent = {{-210.0, -148.5}, {210.0, 148.5}}, preserveAspectRatio = true, initialScale = 0.1, grid = {5, 5})), Documentation(info = "<html>
 <p><br><span style=\"font-family: MS Shell Dlg 2;\">&LT;iPSL: iTesla Power System Library&GT;</span></p>
 <p><span style=\"font-family: MS Shell Dlg 2;\">Copyright 2015 RTE (France), AIA (Spain), KTH (Sweden) and DTU (Denmark)</span></p>
 <ul>

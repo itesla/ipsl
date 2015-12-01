@@ -2,27 +2,21 @@ within iPSL.Examples.REN_Groups.Configuration.Data;
 record GROUP1
   extends Modelica.Icons.Record;
   replaceable record GENROU_N44 =
-      iPSL.Examples.REN_Groups.Configuration.Data.GENROU_data               annotation(choicesAllMatching);
+      iPSL.Examples.REN_Groups.Configuration.Data.GENROU_data                             annotation(choicesAllMatching);
   GENROU_N44 genrou;
-
   replaceable record IEEET2_N44 =
-      iPSL.Examples.REN_Groups.Configuration.Data.IEEET2_data                                      annotation(choicesAllMatching);
+      iPSL.Examples.REN_Groups.Configuration.Data.IEEET2_data                             annotation(choicesAllMatching);
   IEEET2_N44 ieeet2;
-
   replaceable record STAB2A_N44 =
-      iPSL.Examples.REN_Groups.Configuration.Data.STAB2A_data                                      annotation(choicesAllMatching);
+      iPSL.Examples.REN_Groups.Configuration.Data.STAB2A_data                             annotation(choicesAllMatching);
   STAB2A_N44 stab2a;
-
   replaceable record IEESGO_N44 =
-      iPSL.Examples.REN_Groups.Configuration.Data.IEESGO_data                 annotation(choicesAllMatching);
+      iPSL.Examples.REN_Groups.Configuration.Data.IEESGO_data                             annotation(choicesAllMatching);
   IEESGO_N44 ieesgo;
-
-replaceable record INI_GEN_N44 =
-      iPSL.Examples.REN_Groups.Configuration.Data.INI_GENROU_data
-                                                   annotation(choicesAllMatching);
-INI_GEN_N44 ini_gen;
-  annotation(Icon(graphics={  Rectangle(extent=  {{-40, 40}, {40, -40}}, lineColor=  {0, 0, 255}), Text(extent=  {{-32, 14}, {32, -10}}, lineColor=  {0, 0, 255}, textStyle=  {TextStyle.Bold}, textString=  "|x|"), Text(extent=  {{-58, 4}, {-46, -4}}, lineColor=  {255, 255, 255}, textString=  "p1")}), Diagram(graphics),
-    Documentation(info="<html>
+  replaceable record INI_GEN_N44 =
+      iPSL.Examples.REN_Groups.Configuration.Data.INI_GENROU_data                              annotation(choicesAllMatching);
+  INI_GEN_N44 ini_gen;
+  annotation(Icon(graphics = {Rectangle(extent=  {{-40, 40}, {40, -40}}, lineColor=  {0, 0, 255}), Text(extent=  {{-32, 14}, {32, -10}}, lineColor=  {0, 0, 255}, textStyle=  {TextStyle.Bold}, textString=  "|x|"), Text(extent=  {{-58, 4}, {-46, -4}}, lineColor=  {255, 255, 255}, textString=  "p1")}), Diagram(graphics), Documentation(info = "<html>
 <p><br><span style=\"font-family: MS Shell Dlg 2;\">&LT;iPSL: iTesla Power System Library&GT;</span></p>
 <p><span style=\"font-family: MS Shell Dlg 2;\">Copyright 2015 RTE (France), AIA (Spain), KTH (Sweden) and DTU (Denmark)</span></p>
 <ul>
@@ -38,3 +32,4 @@ INI_GEN_N44 ini_gen;
 <p><span style=\"font-family: MS Shell Dlg 2;\">You should have received a copy of the GNU Lesser General Public License along with the iPSL. If not, see &LT;http://www.gnu.org/licenses/&GT;.</span></p>
 </html>"));
 end GROUP1;
+

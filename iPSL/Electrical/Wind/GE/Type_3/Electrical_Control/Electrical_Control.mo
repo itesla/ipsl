@@ -1,4 +1,6 @@
 within iPSL.Electrical.Wind.GE.Type_3.Electrical_Control;
+
+
 model Electrical_Control
   import Modelica.Constants.inf;
   parameter Real qmax = 1;
@@ -9,7 +11,6 @@ model Electrical_Control
   parameter Real KVi = 1;
   parameter Real xiqmax = 1;
   parameter Real xiqmin = 1;
-public
   Modelica.Blocks.Interfaces.RealInput Qgen
     "Reactive Power produced by the Generator"                                         annotation(Placement(transformation(extent = {{-102.0, 54.0}, {-62.0, 94.0}}, origin = {-148.0, 42.372}, rotation = 0), visible = true, iconTransformation(origin = {2.0, -154.0}, extent = {{-102.0, 54.0}, {-62.0, 94.0}}, rotation = 0)));
   Modelica.Blocks.Interfaces.RealInput Qord "Reactive power command" annotation(Placement(transformation(extent = {{-102.0, 54.0}, {-62.0, 94.0}}, origin = {-148.0, -25.5774}, rotation = 0), visible = true, iconTransformation(origin = {2.0, 6.0}, extent = {{-102.0, 54.0}, {-62.0, 94.0}}, rotation = 0)));
@@ -49,10 +50,7 @@ equation
   connect(add1.y, limIntegrator1.u) annotation(Line(visible = true, origin = {-132.9568, 80.0}, points = {{-6.0432, 0}, {6.0431, 0}}, color = {0, 0, 127}));
   connect(limiter2.y, add1.u2) annotation(Line(visible = true, origin = {-166.7949, 60.6443}, points = {{-8.3847, -13.3556}, {1.7949, -13.3556}, {1.7949, 13.3557}, {4.7949, 13.3557}}, color = {0, 0, 127}));
   connect(division1.y, limiter1.u) annotation(Line(visible = true, origin = {-151.6905, -80.0}, points = {{-3.997, 0.0}, {3.997, 0.0}}, color = {0, 0, 127}));
-  annotation(Diagram(coordinateSystem(extent = {{-210.0, -148.5}, {210.0, 148.5}}, preserveAspectRatio = true, initialScale = 0.1, grid = {10, 10}), graphics), Icon(coordinateSystem(extent = {{-100.0, -100.0}, {100.0, 100.0}}, preserveAspectRatio = true, initialScale = 0.1, grid = {10, 10}), graphics={  Rectangle(visible=  true, fillColor=  {255, 255, 255},
-            fillPattern=                                                                                                    FillPattern.Solid, extent=  {{-100.0, -100.0}, {100.0, 100.0}}), Text(visible=  true, origin=  {-2.5076, 2.901},
-            fillPattern=                                                                                                    FillPattern.Solid, extent=  {{-67.4924, -47.099}, {67.4924, 47.099}}, textString=  "Electrical Control", fontName=  "Arial")}),
-    Documentation(info="<html>
+  annotation(Diagram(coordinateSystem(extent = {{-210.0, -148.5}, {210.0, 148.5}}, preserveAspectRatio = true, initialScale = 0.1, grid = {10, 10}), graphics), Icon(coordinateSystem(extent = {{-100.0, -100.0}, {100.0, 100.0}}, preserveAspectRatio = true, initialScale = 0.1, grid = {10, 10}), graphics = {Rectangle(visible=  true, fillColor=  {255, 255, 255}, fillPattern=  FillPattern.Solid, extent=  {{-100.0, -100.0}, {100.0, 100.0}}), Text(visible=  true, origin=  {-2.5076, 2.901}, fillPattern=  FillPattern.Solid, extent=  {{-67.4924, -47.099}, {67.4924, 47.099}}, textString=  "Electrical Control", fontName=  "Arial")}), Documentation(info = "<html>
 <p><br><span style=\"font-family: MS Shell Dlg 2;\">&LT;iPSL: iTesla Power System Library&GT;</span></p>
 <p><span style=\"font-family: MS Shell Dlg 2;\">Copyright 2015 RTE (France), AIA (Spain), KTH (Sweden) and DTU (Denmark)</span></p>
 <ul>

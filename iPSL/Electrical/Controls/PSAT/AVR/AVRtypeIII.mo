@@ -1,7 +1,9 @@
 within iPSL.Electrical.Controls.PSAT.AVR;
+
+
 model AVRtypeIII "PSAT AVR Type 3"
   parameter Real vref = 1 "Reference voltage (pu)";
-  parameter Real V_0 = 1 "Voltage magnitude (pu)" annotation(Dialog(group="Power flow data"));
+  parameter Real V_0 = 1 "Voltage magnitude (pu)" annotation(Dialog(group = "Power flow data"));
   parameter Real vfmax = 5 "Maximum field voltage (pu)";
   parameter Real vfmin = -5 "Minimum field voltage (pu)";
   parameter Real K0 = 20 "Regulator gain (p.u./p.u.)";
@@ -11,11 +13,9 @@ model AVRtypeIII "PSAT AVR Type 3"
   Modelica.Blocks.Sources.Constant const(k = vref) annotation(Placement(visible = true, transformation(origin = {-137.3382, -80.0}, extent = {{-10.0, -10.0}, {10.0, 10.0}}, rotation = -270)));
   Modelica.Blocks.Sources.Constant const1(k = 1) annotation(Placement(visible = true, transformation(origin = {35.0, 41.5204}, extent = {{-10.0, -10.0}, {10.0, 10.0}}, rotation = -90)));
   Modelica.Blocks.Interfaces.RealInput v(start = 1)
-    "Bus voltage magnitude (pu)"                    annotation(Placement(visible = true, transformation(origin = {-167.9721, 0.0}, extent = {{-20.0, -20.0}, {20.0, 20.0}}, rotation = 0), iconTransformation(origin = {-120.0, 50.0}, extent = {{-20.0, -20.0}, {20.0, 20.0}}, rotation = 0)));
-  Modelica.Blocks.Interfaces.RealInput vf0 "Field voltage reference (pu)"
-                                           annotation(Placement(visible = true, transformation(origin = {3.1272, -105.0}, extent = {{-20.0, -20.0}, {20.0, 20.0}}, rotation = -270), iconTransformation(origin = {-120.0, -30.0}, extent = {{-20.0, -20.0}, {20.0, 20.0}}, rotation = 0)));
-  Modelica.Blocks.Interfaces.RealOutput vf "Field voltage (pu)"
-                                           annotation(Placement(visible = true, transformation(origin = {160.0, 0.0}, extent = {{-10.0, -10.0}, {10.0, 10.0}}, rotation = 0), iconTransformation(origin = {110.0, 0.0}, extent = {{-10.0, -10.0}, {10.0, 10.0}}, rotation = 0)));
+    "Bus voltage magnitude (pu)"                                                 annotation(Placement(visible = true, transformation(origin = {-167.9721, 0.0}, extent = {{-20.0, -20.0}, {20.0, 20.0}}, rotation = 0), iconTransformation(origin = {-120.0, 50.0}, extent = {{-20.0, -20.0}, {20.0, 20.0}}, rotation = 0)));
+  Modelica.Blocks.Interfaces.RealInput vf0 "Field voltage reference (pu)" annotation(Placement(visible = true, transformation(origin = {3.1272, -105.0}, extent = {{-20.0, -20.0}, {20.0, 20.0}}, rotation = -270), iconTransformation(origin = {-120.0, -30.0}, extent = {{-20.0, -20.0}, {20.0, 20.0}}, rotation = 0)));
+  Modelica.Blocks.Interfaces.RealOutput vf "Field voltage (pu)" annotation(Placement(visible = true, transformation(origin = {160.0, 0.0}, extent = {{-10.0, -10.0}, {10.0, 10.0}}, rotation = 0), iconTransformation(origin = {110.0, 0.0}, extent = {{-10.0, -10.0}, {10.0, 10.0}}, rotation = 0)));
   Modelica.Blocks.Continuous.TransferFunction transferFunction2(a = {T2, 1}, b = {T1, 1}) annotation(Placement(visible = true, transformation(origin = {-17.5488, 0.0}, extent = {{-10.0, -10.0}, {10.0, 10.0}}, rotation = 0)));
   Modelica.Blocks.Continuous.TransferFunction transferFunction3(a = {Te, 1}, b = {1}) annotation(Placement(visible = true, transformation(origin = {90.0, -0.0}, extent = {{-10.0, -10.0}, {10.0, 10.0}}, rotation = 0)));
   Modelica.Blocks.Math.Gain gain1(k = K0) annotation(Placement(visible = true, transformation(origin = {-47.4512, 0.0}, extent = {{-10.0, -10.0}, {10.0, 10.0}}, rotation = 0)));
@@ -25,7 +25,6 @@ model AVRtypeIII "PSAT AVR Type 3"
   Modelica.Blocks.Math.Product product2 annotation(Placement(visible = true, transformation(origin = {55.0, 0.0}, extent = {{-10.0, -10.0}, {10.0, 10.0}}, rotation = 0)));
 initial equation
   vf = vf0;
-
 equation
   connect(v, add1.u1) annotation(Line(visible = true, origin = {-112.493, 3.0}, points = {{-55.4791, -3.0}, {17.493, -3.0}, {17.493, 3.0}, {20.493, 3.0}}, color = {0, 0, 127}));
   connect(const.y, add1.u2) annotation(Line(visible = true, origin = {-122.2255, -27.0}, points = {{-15.1127, -42.0}, {-15.1127, 21.0}, {30.2255, 21.0}}, color = {0, 0, 127}));
@@ -38,13 +37,7 @@ equation
   connect(transferFunction2.y, add2.u1) annotation(Line(visible = true, origin = {-0.8872, 3.0}, points = {{-5.6616, -3.0}, {0.8872, -3.0}, {0.8872, 3.0}, {3.8872, 3.0}}, color = {0, 0, 127}));
   connect(gain1.y, transferFunction2.u) annotation(Line(visible = true, origin = {-33.0, 0.0}, points = {{-3.4512, -0.0}, {3.4512, 0.0}}, color = {0, 0, 127}));
   connect(transferFunction3.y, limiter1.u) annotation(Line(visible = true, origin = {104.5, -0.0}, points = {{-3.5, -0.0}, {3.5, 0.0}}, color = {0, 0, 127}));
-  annotation(Icon(coordinateSystem(extent = {{-100.0, -100.0}, {100.0, 100.0}}, preserveAspectRatio = true, initialScale = 0.1, grid = {10, 10}), graphics={  Rectangle(visible=  true, fillColor=  {255, 255, 255}, extent=  {{-100.0, -100.0}, {100.0, 100.0}}), Text(visible=  true, origin=  {1.5941, 2.9728},
-            fillPattern=                                                                                                    FillPattern.Solid, extent=  {{-31.5941, -24.9719}, {31.5941, 24.9719}}, textString=  "AVRtypeIII", fontName=  "Arial"), Text(visible=  true, origin=  {-77.3525, 52.4473},
-            fillPattern=                                                                                                    FillPattern.Solid, extent=  {{-17.3525, -17.5527}, {17.3525, 17.5527}}, textString=  "v", fontName=  "Arial"), Text(visible=  true, origin=  {-74.7671, -32.7013},
-            fillPattern=                                                                                                    FillPattern.Solid, extent=  {{-11.7427, -9.8104}, {11.7427, 9.8104}}, textString=  "vf0", fontName=  "Arial"), Text(visible=  true, origin=  {84.2416, -0.0},
-            fillPattern=                                                                                                    FillPattern.Solid, extent=  {{-8.7313, -11.5403}, {8.7313, 11.5403}}, textString=  "vf", fontName=  "Arial")}), Diagram(coordinateSystem(extent={{-148.5,
-            -105},{148.5,105}},                                                                                                    preserveAspectRatio=false,  initialScale = 0.1, grid = {5, 5})),
-    Documentation(info="<html>
+  annotation(Icon(coordinateSystem(extent = {{-100.0, -100.0}, {100.0, 100.0}}, preserveAspectRatio = true, initialScale = 0.1, grid = {10, 10}), graphics = {Rectangle(visible=  true, fillColor=  {255, 255, 255}, extent=  {{-100.0, -100.0}, {100.0, 100.0}}), Text(visible=  true, origin=  {1.5941, 2.9728}, fillPattern=  FillPattern.Solid, extent=  {{-31.5941, -24.9719}, {31.5941, 24.9719}}, textString=  "AVRtypeIII", fontName=  "Arial"), Text(visible=  true, origin=  {-77.3525, 52.4473}, fillPattern=  FillPattern.Solid, extent=  {{-17.3525, -17.5527}, {17.3525, 17.5527}}, textString=  "v", fontName=  "Arial"), Text(visible=  true, origin=  {-74.7671, -32.7013}, fillPattern=  FillPattern.Solid, extent=  {{-11.7427, -9.8104}, {11.7427, 9.8104}}, textString=  "vf0", fontName=  "Arial"), Text(visible=  true, origin=  {84.2416, -0.0}, fillPattern=  FillPattern.Solid, extent=  {{-8.7313, -11.5403}, {8.7313, 11.5403}}, textString=  "vf", fontName=  "Arial")}), Diagram(coordinateSystem(extent = {{-148.5, -105}, {148.5, 105}}, preserveAspectRatio = false, initialScale = 0.1, grid = {5, 5})), Documentation(info = "<html>
 <table cellspacing=\"1\" cellpadding=\"1\" border=\"1\">
 <tr>
 <td><p>Reference</p></td>

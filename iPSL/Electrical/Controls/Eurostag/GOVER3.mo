@@ -9,63 +9,32 @@ model GOVER3 "Voltage governor. Developed by AIA. 2013"
   parameter Real init_V7;
   parameter Real T5;
   parameter Real PN;
-  iPSL.NonElectrical.Math.ImSetPoint imSetPoint1(V=init_V1)
-    annotation (Placement(transformation(extent={{-40,12},{-2,50}})));
-  iPSL.NonElectrical.Continuous.ImLeadLag imLeadLag(
-    nStartValue=init_V2,
-    K=25.0,
-    T1=4.0,
-    T2=1.0) annotation (Placement(transformation(extent={{-48,38},{18,86}})));
+  Modelica.Blocks.Sources.Constant imSetPoint1(k = init_V1) annotation(Placement(transformation(extent = {{-24, 20}, {-4, 40}})));
+  iPSL.NonElectrical.Continuous.LeadLag imLeadLag(y_start = init_V2, K = 25.0, T1 = 4.0, T2 = 1.0) annotation(Placement(transformation(extent = {{-24, 52}, {-4, 72}})));
   Modelica.Blocks.Interfaces.RealInput pin_OMEGA annotation(Placement(transformation(extent = {{-61, -10}, {-41, 10}}), iconTransformation(extent = {{-61, -10}, {-41, 10}})));
   Modelica.Blocks.Interfaces.RealOutput pin_CM annotation(Placement(transformation(extent = {{59, -11}, {78, 11}}), iconTransformation(extent = {{59, -10}, {80, 10}})));
-  iPSL.NonElectrical.Math.ImSum1 imSum1_1(a0=1.0, a1=-1.0)
-    annotation (Placement(transformation(extent={{-82,40},{-30,84}})));
-  iPSL.NonElectrical.Nonlinear.ImLimiter imLimiter(Ymin=0.0, Ymax=1.05)
-    annotation (Placement(transformation(extent={{42,30},{100,82}})));
-  iPSL.NonElectrical.Continuous.ImSimpleLag imSimpleLag(
-    K=1.0,
-    T=0.1,
-    nStartValue=init_V3)
-    annotation (Placement(transformation(extent={{74,32},{128,80}})));
-  iPSL.NonElectrical.Continuous.ImSimpleLag imSimpleLag1(
-    K=1.0,
-    T=0.5,
-    nStartValue=init_V4)
-    annotation (Placement(transformation(extent={{-22,-64},{32,-16}})));
-  iPSL.NonElectrical.Continuous.ImLeadLag imLeadLag1(
-    K=1.0,
-    T2=T5,
-    nStartValue=init_V5,
-    T1=0.3*T5)
-    annotation (Placement(transformation(extent={{20,-64},{86,-16}})));
-  iPSL.NonElectrical.Math.ImDiv2 imDiv2_1(
-    a0=0.0,
-    a1=1.0,
-    a2=1.0,
-    nStartValue=init_V7)
-    annotation (Placement(transformation(extent={{72,-70},{126,-20}})));
-  iPSL.NonElectrical.Math.ImSumStart2 imSumStart2_1(
-    a0=0.0,
-    a1=1.0,
-    a2=1/PN,
-    nStartValue=init_V6)
-    annotation (Placement(transformation(extent={{6,34},{56,80}})));
+  Modelica.Blocks.Nonlinear.Limiter imLimiter(uMin = 0.0, uMax = 1.05) annotation(Placement(transformation(extent = {{46, 50}, {66, 70}})));
+  iPSL.NonElectrical.Continuous.SimpleLag imSimpleLag(K = 1.0, T = 0.1, y_start = init_V3) annotation(Placement(transformation(extent = {{80, 50}, {100, 70}})));
+  iPSL.NonElectrical.Continuous.SimpleLag imSimpleLag1(K = 1.0, T = 0.5, y_start = init_V4) annotation(Placement(transformation(extent = {{0, -50}, {20, -30}})));
+  iPSL.NonElectrical.Continuous.LeadLag imLeadLag1(K = 1.0, T2 = T5, y_start = init_V5, T1 = 0.3 * T5) annotation(Placement(transformation(extent = {{40, -50}, {60, -30}})));
+  Modelica.Blocks.Math.Add add(k2 = 1 / PN) annotation(Placement(transformation(extent = {{16, 50}, {36, 70}})));
+  Modelica.Blocks.Math.Division division annotation(Placement(transformation(extent = {{80, -56}, {100, -36}})));
+  Modelica.Blocks.Math.Add add1(k2 = -1) annotation(Placement(transformation(extent = {{-60, 52}, {-40, 72}})));
+  Modelica.Blocks.Sources.Constant const(k = 1) annotation(Placement(transformation(extent = {{-100, 60}, {-80, 80}})));
 equation
-  connect(pin_OMEGA, imSum1_1.p1) annotation(Line(points = {{-51, 0}, {-80, 0}, {-80, 62}, {-69.26, 62}}, color = {0, 0, 255}, smooth = Smooth.None));
-  connect(imSum1_1.n1, imLeadLag.p1) annotation(Line(points = {{-43.26, 62}, {-31.83, 62}}, color = {0, 0, 255}, smooth = Smooth.None));
-  connect(imLimiter.n1, imSimpleLag.p1) annotation(Line(points = {{85.21, 56}, {92.63, 56}}, color = {0, 0, 255}, smooth = Smooth.None));
-  connect(imSimpleLag.n1, imSimpleLag1.p1) annotation(Line(points={{119.9,56},{124,
-          56},{124,16},{-12,16},{-12,-40},{-3.37,-40}},                                                                                        color = {0, 0, 255}, smooth = Smooth.None));
-  connect(imSimpleLag1.n1, imLeadLag1.p1) annotation(Line(points={{23.9,-40},{36.17,
-          -40}},                                                                                 color = {0, 0, 255}, smooth = Smooth.None));
-  connect(imLeadLag1.n1, imDiv2_1.p1) annotation(Line(points = {{69.17, -40}, {85.23, -40}}, color = {0, 0, 255}, smooth = Smooth.None));
-  connect(pin_OMEGA, imDiv2_1.p2) annotation(Line(points = {{-51, 0}, {-86, 0}, {-86, -56}, {85.23, -56}, {85.23, -50}}, color = {0, 0, 255}, smooth = Smooth.None));
-  connect(imDiv2_1.n1, pin_CM) annotation(Line(points = {{112.23, -45}, {134, -45}, {134, 0}, {68.5, 0}}, color = {0, 0, 255}, smooth = Smooth.None));
-  connect(imSumStart2_1.p2, imSetPoint1.n1) annotation(Line(points = {{18.25, 52.4}, {18.25, 31}, {-11.69, 31}}, color = {0, 0, 255}, smooth = Smooth.None));
-  connect(imSumStart2_1.p1, imLeadLag.n1) annotation(Line(points = {{18.25, 61.6}, {2, 61.6}, {2, 62}, {1.17, 62}}, color = {0, 0, 255}, smooth = Smooth.None));
-  connect(imSumStart2_1.n1, imLimiter.p1) annotation(Line(points = {{43.25, 57}, {43.25, 56}, {56.21, 56}}, color = {0, 0, 255}, smooth = Smooth.None));
-  annotation(Diagram(coordinateSystem(extent = {{-120, -100}, {180, 100}}, preserveAspectRatio = true), graphics), Icon(coordinateSystem(extent = {{-120, -100}, {180, 100}}, preserveAspectRatio = true), graphics={  Rectangle(extent = {{-40, 40}, {60, -40}}, lineColor = {0, 0, 255}), Text(extent = {{-20, -6}, {38, 8}}, lineColor = {0, 0, 255}, textString = "GOVER3")}),
-    Documentation(info="<html>
+  connect(imLeadLag.y, add.u1) annotation(Line(points = {{-3, 62}, {4, 62}, {4, 66}, {14, 66}}, color = {0, 0, 127}));
+  connect(imSetPoint1.y, add.u2) annotation(Line(points = {{-3, 30}, {4, 30}, {4, 54}, {14, 54}}, color = {0, 0, 127}));
+  connect(add.y, imLimiter.u) annotation(Line(points = {{37, 60}, {40.5, 60}, {44, 60}}, color = {0, 0, 127}));
+  connect(imLimiter.y, imSimpleLag.u) annotation(Line(points = {{67, 60}, {72.5, 60}, {78, 60}}, color = {0, 0, 127}));
+  connect(imSimpleLag1.u, imSimpleLag.y) annotation(Line(points = {{-2, -40}, {-2, -40}, {-20, -40}, {-20, 0}, {20, 0}, {20, 20}, {120, 20}, {120, 60}, {101, 60}}, color = {0, 0, 127}));
+  connect(imSimpleLag1.y, imLeadLag1.u) annotation(Line(points = {{21, -40}, {29.5, -40}, {38, -40}}, color = {0, 0, 127}));
+  connect(imLeadLag1.y, division.u1) annotation(Line(points = {{61, -40}, {70, -40}, {78, -40}}, color = {0, 0, 127}));
+  connect(division.u2, pin_OMEGA) annotation(Line(points = {{78, -52}, {66, -52}, {66, -60}, {-60, -60}, {-60, 0}, {-51, 0}}, color = {0, 0, 127}));
+  connect(const.y, add1.u1) annotation(Line(points = {{-79, 70}, {-70, 70}, {-70, 68}, {-62, 68}}, color = {0, 0, 127}));
+  connect(add1.u2, pin_OMEGA) annotation(Line(points = {{-62, 56}, {-72, 56}, {-72, 0}, {-51, 0}}, color = {0, 0, 127}));
+  connect(division.y, pin_CM) annotation(Line(points = {{101, -46}, {112, -46}, {112, 0}, {68.5, 0}}, color = {0, 0, 127}));
+  connect(add1.y, imLeadLag.u) annotation(Line(points = {{-39, 62}, {-26, 62}}, color = {0, 0, 127}));
+  annotation(Diagram(coordinateSystem(extent = {{-120, -100}, {180, 100}}, preserveAspectRatio = false)), Icon(coordinateSystem(extent = {{-120, -100}, {180, 100}}, preserveAspectRatio = true), graphics={  Rectangle(extent=  {{-40, 40}, {60, -40}}, lineColor=  {0, 0, 255}), Text(extent=  {{-20, -6}, {38, 8}}, lineColor=  {0, 0, 255}, textString=  "GOVER3")}), Documentation(info = "<html>
 <p><br><span style=\"font-family: MS Shell Dlg 2;\">&LT;iPSL: iTesla Power System Library&GT;</span></p>
 <p><span style=\"font-family: MS Shell Dlg 2;\">Copyright 2015 RTE (France), AIA (Spain), KTH (Sweden) and DTU (Denmark)</span></p>
 <ul>
@@ -81,3 +50,4 @@ equation
 <p><span style=\"font-family: MS Shell Dlg 2;\">You should have received a copy of the GNU Lesser General Public License along with the iPSL. If not, see &LT;http://www.gnu.org/licenses/&GT;.</span></p>
 </html>"));
 end GOVER3;
+

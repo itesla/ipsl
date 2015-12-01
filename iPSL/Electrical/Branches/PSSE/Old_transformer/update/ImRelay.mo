@@ -1,34 +1,14 @@
 within iPSL.Electrical.Branches.PSSE.Old_transformer.update;
-model ImRelay "input dependent output"
 
-  Modelica.Blocks.Interfaces.RealInput p1 annotation(Placement(transformation(extent={{-54,-26},
-            {-41,-12}}),                                                                                         iconTransformation(extent={{-54,-26},
-            {-41,-12}})));
-  Modelica.Blocks.Interfaces.RealInput p2 annotation(Placement(transformation(extent={{-54,18},
-            {-41,32}}),                                                                                        iconTransformation(extent={{-54,18},
-            {-41,32}})));
-  Modelica.Blocks.Interfaces.RealOutput n1
-                                          annotation(Placement(transformation(extent={{39,-10},
-            {59,10}}),                                                                                       iconTransformation(extent={{39,-10},
-            {59,10}})));
+
+model ImRelay "input dependent output"
+  Modelica.Blocks.Interfaces.RealInput p1 annotation(Placement(transformation(extent = {{-54, -26}, {-41, -12}}), iconTransformation(extent = {{-54, -26}, {-41, -12}})));
+  Modelica.Blocks.Interfaces.RealInput p2 annotation(Placement(transformation(extent = {{-54, 18}, {-41, 32}}), iconTransformation(extent = {{-54, 18}, {-41, 32}})));
+  Modelica.Blocks.Interfaces.RealOutput n1 annotation(Placement(transformation(extent = {{39, -10}, {59, 10}}), iconTransformation(extent = {{39, -10}, {59, 10}})));
   parameter Real COD = 0 "Enable OLTC";
 equation
-  n1 = if COD > 0 then p1 else  p2;
-  annotation(Icon(coordinateSystem(preserveAspectRatio=true,   extent={{-100,-100},
-            {100,100}}),                                                                              graphics={  Rectangle(extent = {{-40, 40}, {40, -40}}, lineColor = {0, 0, 255}),                                                                                                    Line(points={{
-              -2,12},{14,2},{34,2}},                                                                                                    color = {0, 0, 255}, smooth = Smooth.None),
-        Line(
-          points={{-40,24},{-14,24}},
-          color={0,0,255},
-          smooth=Smooth.None),
-        Line(
-          points={{-40,-20},{-14,-20}},
-          color={0,0,255},
-          smooth=Smooth.None),
-        Ellipse(extent={{-14,26},{-8,20}}, lineColor={0,0,255}),
-        Ellipse(extent={{-14,-16},{-8,-22}}, lineColor={0,0,255})}),                                                                                                    Diagram(coordinateSystem(preserveAspectRatio=true,   extent={{-100,
-            -100},{100,100}}),                                                                                                    graphics),
-      Documentation(info="<html>
+  n1 = if COD > 0 then p1 else p2;
+  annotation(Icon(coordinateSystem(preserveAspectRatio = true, extent = {{-100, -100}, {100, 100}}), graphics = {Rectangle(extent=  {{-40, 40}, {40, -40}}, lineColor=  {0, 0, 255}), Line(points=  {{-2, 12}, {14, 2}, {34, 2}}, color=  {0, 0, 255}, smooth=  Smooth.None), Line(points=  {{-40, 24}, {-14, 24}}, color=  {0, 0, 255}, smooth=  Smooth.None), Line(points=  {{-40, -20}, {-14, -20}}, color=  {0, 0, 255}, smooth=  Smooth.None), Ellipse(extent=  {{-14, 26}, {-8, 20}}, lineColor=  {0, 0, 255}), Ellipse(extent=  {{-14, -16}, {-8, -22}}, lineColor=  {0, 0, 255})}), Diagram(coordinateSystem(preserveAspectRatio = true, extent = {{-100, -100}, {100, 100}}), graphics), Documentation(info = "<html>
 <p><br><span style=\"font-family: MS Shell Dlg 2;\">&LT;iPSL: iTesla Power System Library&GT;</span></p>
 <p><span style=\"font-family: MS Shell Dlg 2;\">Copyright 2015 RTE (France), AIA (Spain), KTH (Sweden) and DTU (Denmark)</span></p>
 <ul>
