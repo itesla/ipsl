@@ -1,9 +1,9 @@
 within iPSL.Electrical.Controls.PSAT.TG;
+
+
 model TGTypeIII
   "Hydro Turbine (Linear model) and Governor (Standard model)- control scheme Type 3"
-
-  parameter Real P_0 "Active power (pu)" annotation(Dialog(group="Power flow data"));
-
+  parameter Real P_0 "Active power (pu)" annotation(Dialog(group = "Power flow data"));
   parameter Real wref = 1 "Reference speed (pu)";
   parameter Real Tg "Pilot valve droop (pu)";
   parameter Real gmax "Maximum gate opening (pu)";
@@ -20,7 +20,6 @@ model TGTypeIII
   parameter Real a21 "Deriv. of torque vs. turbine head";
   parameter Real a23 "Deriv. of torque vs. gate position";
   parameter Real int3;
-
   Real deltaG "Gate position variation (pu)";
   Real G "Gate position (pu)";
   Modelica.Blocks.Continuous.Integrator integrator(initType = Modelica.Blocks.Types.Init.NoInit, y_start = 0) annotation(Placement(transformation(extent = {{-8, 56}, {4, 68}})));
@@ -38,21 +37,16 @@ model TGTypeIII
   Modelica.Blocks.Math.Feedback feedback2 annotation(Placement(transformation(extent = {{-6, -6}, {6, 6}}, rotation = 0, origin = {86, 30})));
   Modelica.Blocks.Math.Gain G6(k = (a11 * a23 - a13 * a21) / a11) annotation(Placement(transformation(extent = {{80, 58}, {92, 70}})));
   Modelica.Blocks.Math.Gain gain7(k = a13 * a21 / (a11 * a11 * Tw)) annotation(Placement(transformation(extent = {{66, 24}, {78, 36}})));
-public
-  Modelica.Blocks.Interfaces.RealInput w "Rotor speed (pu)" annotation(Placement(transformation(extent = {{-52, -6}, {-40, 6}}), iconTransformation(extent={{-116,
-            -18},{-80,18}})));
-  Modelica.Blocks.Interfaces.RealOutput Pm "Mechanical power (pu)"
-                                                           annotation(Placement(transformation(extent = {{100, -6}, {112, 6}}), iconTransformation(extent = {{100, -10}, {128, 18}})));
+  Modelica.Blocks.Interfaces.RealInput w "Rotor speed (pu)" annotation(Placement(transformation(extent = {{-52, -6}, {-40, 6}}), iconTransformation(extent = {{-116, -18}, {-80, 18}})));
+  Modelica.Blocks.Interfaces.RealOutput Pm "Mechanical power (pu)" annotation(Placement(transformation(extent = {{100, -6}, {112, 6}}), iconTransformation(extent = {{100, -10}, {128, 18}})));
   Modelica.Blocks.Nonlinear.Limiter limiter(uMax = vmax, uMin = vmin) annotation(Placement(transformation(extent = {{-28, 56}, {-16, 68}})));
   Modelica.Blocks.Nonlinear.Limiter limiter1(uMax = gmax, uMin = gmin) annotation(Placement(transformation(extent = {{14, 56}, {26, 68}})));
   Modelica.Blocks.Math.Add add(k1 = +1, k2 = -1) annotation(Placement(transformation(extent = {{-140, 56}, {-128, 68}})));
   Modelica.Blocks.Math.Add3 add3_1(k1 = -1, k2 = 1, k3 = 1) annotation(Placement(transformation(extent = {{-110, 56}, {-98, 68}})));
   Modelica.Blocks.Math.Add add1 annotation(Placement(transformation(extent = {{46, 58}, {58, 70}})));
   Modelica.Blocks.Math.Add add2 annotation(Placement(transformation(extent = {{126, 56}, {138, 68}})));
-  Modelica.Blocks.Sources.Constant const(k=P_0)
-    annotation (Placement(transformation(extent={{0,78},{12,90}})));
-  Modelica.Blocks.Sources.Constant const1(k=wref)
-    annotation (Placement(transformation(extent={{-160,60},{-148,72}})));
+  Modelica.Blocks.Sources.Constant const(k = P_0) annotation(Placement(transformation(extent = {{0, 78}, {12, 90}})));
+  Modelica.Blocks.Sources.Constant const1(k = wref) annotation(Placement(transformation(extent = {{-160, 60}, {-148, 72}})));
 equation
   deltaG = limiter1.y;
   G = add1.y;
@@ -84,19 +78,10 @@ equation
   connect(G6.y, add2.u1) annotation(Line(points = {{92.6, 64}, {123.6, 64}, {123.6, 65.6}, {124.8, 65.6}}, color = {0, 0, 127}, smooth = Smooth.None));
   connect(integrator3.y, add2.u2) annotation(Line(points = {{110.6, 30}, {122, 30}, {122, 58.4}, {124.8, 58.4}}, color = {0, 0, 127}, smooth = Smooth.None));
   connect(add2.y, Pm) annotation(Line(points = {{138.6, 62}, {144, 62}, {144, 0}, {106, 0}}, color = {0, 0, 127}, smooth = Smooth.None));
-  connect(Pm, Pm) annotation(Line(points={{106,0},{106,0}},                          color = {0, 0, 127}, smooth = Smooth.None));
-  connect(const.y, add1.u1) annotation (Line(points={{12.6,84},{26,84},{40,84},{
-          40,67.6},{44.8,67.6}}, color={0,0,127}));
-  connect(const1.y, add.u1) annotation (Line(points={{-147.4,66},{-141.2,66},{-141.2,
-          65.6}}, color={0,0,127}));
-  annotation(Icon(coordinateSystem(preserveAspectRatio=false,   extent={{-100,-100},
-            {100,100}}),                                                                              graphics={  Rectangle(extent=  {{-100, 100}, {100, -100}}, lineColor=  {0, 0, 255}), Text(extent=  {{-44, 38}, {34, -30}}, lineColor=  {0, 0, 255}, textString=  "TGTypeIII"), Text(visible=  true, origin={
-              -71,-1},
-            fillPattern=                                                                                                    FillPattern.Solid, extent=  {{-19, -11}, {19, 11}}, textString=  "W", fontName=  "Arial"), Text(visible=  true, origin=  {83.0002, 5},
-            fillPattern=                                                                                                    FillPattern.Solid, extent=  {{-15.0002, -11}, {15.0002, 11}}, fontName=  "Arial", textString=  "Pm", lineColor=  {0, 0, 0})}),
-                                                                                          Diagram(coordinateSystem(preserveAspectRatio=false,   extent={{-100,
-            -100},{100,100}})),
-    Documentation(info="<html>
+  connect(Pm, Pm) annotation(Line(points = {{106, 0}, {106, 0}}, color = {0, 0, 127}, smooth = Smooth.None));
+  connect(const.y, add1.u1) annotation(Line(points = {{12.6, 84}, {26, 84}, {40, 84}, {40, 67.6}, {44.8, 67.6}}, color = {0, 0, 127}));
+  connect(const1.y, add.u1) annotation(Line(points = {{-147.4, 66}, {-141.2, 66}, {-141.2, 65.6}}, color = {0, 0, 127}));
+  annotation(Icon(coordinateSystem(preserveAspectRatio = false, extent = {{-100, -100}, {100, 100}}), graphics = {Rectangle(extent=  {{-100, 100}, {100, -100}}, lineColor=  {0, 0, 255}), Text(extent=  {{-44, 38}, {34, -30}}, lineColor=  {0, 0, 255}, textString=  "TGTypeIII"), Text(visible=  true, origin=  {-71, -1}, fillPattern=  FillPattern.Solid, extent=  {{-19, -11}, {19, 11}}, textString=  "W", fontName=  "Arial"), Text(visible=  true, origin=  {83.0002, 5}, fillPattern=  FillPattern.Solid, extent=  {{-15.0002, -11}, {15.0002, 11}}, fontName=  "Arial", textString=  "Pm", lineColor=  {0, 0, 0})}), Diagram(coordinateSystem(preserveAspectRatio = false, extent = {{-100, -100}, {100, 100}})), Documentation(info = "<html>
 <table cellspacing=\"1\" cellpadding=\"1\" border=\"1\">
 <tr>
 <td><p>Reference</p></td>

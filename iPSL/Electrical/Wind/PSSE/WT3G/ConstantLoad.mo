@@ -1,12 +1,8 @@
 within iPSL.Electrical.Wind.PSSE.WT3G;
-model ConstantLoad
 
-  iPSL.Connectors.PwPin p(
-    vr(start=vr0),
-    vi(start=vi0),
-    ir(start=ir0),
-    ii(start=ii0)) annotation (Placement(transformation(extent={{-56,-10},{-36,
-            10}}), iconTransformation(extent={{-80,0},{-60,20}})));
+
+model ConstantLoad
+  iPSL.Connectors.PwPin p(vr(start = vr0), vi(start = vi0), ir(start = ir0), ii(start = ii0)) annotation(Placement(transformation(extent = {{-56, -10}, {-36, 10}}), iconTransformation(extent = {{-80, 0}, {-60, 20}})));
   constant Real pi = Modelica.Constants.pi;
   parameter Real v0 "initial value of bus voltage";
   parameter Real anglev0 "initial value of bus anglev in degree";
@@ -22,6 +18,12 @@ model ConstantLoad
   parameter Complex S_P = Complex((1 - a.re - b.re) * S_p.re, (1 - a.im - b.im) * S_p.im);
   parameter Complex S_I = S_i + Complex(a.re * S_p.re / v0, a.im * S_p.im / v0);
   parameter Complex S_Y = S_y + Complex(b.re * S_p.re / v0 ^ 2, b.im * S_p.im / v0 ^ 2);
+  Real angle(start = anglev_rad);
+  //Real v(start = v0);
+  Real k(start = 1);
+  Real P;
+  Real Q;
+  Modelica.Blocks.Interfaces.RealOutput v annotation(Placement(transformation(extent = {{40, -40}, {60, -20}}), iconTransformation(extent = {{40, -40}, {60, -20}})));
 protected
   parameter Real anglev_rad = anglev0 * pi / 180
     "initial value of bus anglev in rad";
@@ -34,15 +36,6 @@ protected
     "Initialitation";
   parameter Real ii0 = (p0 * vi0 - q0 * vr0) / (vr0 ^ 2 + vi0 ^ 2)
     "Initialitation";
-public
-  Real angle(start = anglev_rad);
-  //Real v(start = v0);
-  Real k(start = 1);
-  Real P;
-  Real Q;
-  Modelica.Blocks.Interfaces.RealOutput v
-    annotation (Placement(transformation(extent={{40,-40},{60,-20}}),
-        iconTransformation(extent={{40,-40},{60,-20}})));
 equation
   if v < PQBRAK / 2 and v > 0 then
     k = 2 * (v / PQBRAK) ^ 2;
@@ -59,12 +52,7 @@ equation
   1 * (S_I.im * v + S_Y.im * v ^ 2 + S_P.im) = (-p.vr * p.ii) + p.vi * p.ir;
   P = p.vr * p.ir + p.vi * p.ii;
   Q = (-p.vr * p.ii) + p.vi * p.ir;
-  annotation(Diagram(coordinateSystem(preserveAspectRatio=true, extent={{
-            -100,-100},{100,100}}),
-                     graphics), Icon(coordinateSystem(preserveAspectRatio=
-            false, extent={{-100,-100},{100,100}}),
-                                     graphics={  Rectangle(extent=  {{-60, 60}, {40, -40}}, lineColor=  {0, 0, 255}), Rectangle(extent=  {{-40, 40}, {20, -20}}, lineColor=  {0, 0, 255}), Line(points=  {{-40, 40}, {20, -20}}, color=  {0, 0, 255}, smooth=  Smooth.None), Line(points=  {{-40, -20}, {20, 40}}, color=  {0, 0, 255}, smooth=  Smooth.None)}),
-    Documentation(info="<html>
+  annotation(Diagram(coordinateSystem(preserveAspectRatio = true, extent = {{-100, -100}, {100, 100}}), graphics), Icon(coordinateSystem(preserveAspectRatio = false, extent = {{-100, -100}, {100, 100}}), graphics={  Rectangle(extent=  {{-60, 60}, {40, -40}}, lineColor=  {0, 0, 255}), Rectangle(extent=  {{-40, 40}, {20, -20}}, lineColor=  {0, 0, 255}), Line(points=  {{-40, 40}, {20, -20}}, color=  {0, 0, 255}, smooth=  Smooth.None), Line(points=  {{-40, -20}, {20, 40}}, color=  {0, 0, 255}, smooth=  Smooth.None)}), Documentation(info = "<html>
 <p><br><span style=\"font-family: MS Shell Dlg 2;\">&LT;iPSL: iTesla Power System Library&GT;</span></p>
 <p><span style=\"font-family: MS Shell Dlg 2;\">Copyright 2015 RTE (France), AIA (Spain), KTH (Sweden) and DTU (Denmark)</span></p>
 <ul>

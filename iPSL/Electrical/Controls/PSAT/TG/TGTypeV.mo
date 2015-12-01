@@ -1,4 +1,6 @@
 within iPSL.Electrical.Controls.PSAT.TG;
+
+
 model TGTypeV
   "Hydro Turbine (Nonlinear model) and Governor (PI controller combined with servomotor)- control scheme Type 5"
   parameter Real Tg "Servomotor droop (pu)";
@@ -18,7 +20,6 @@ model TGTypeV
   Modelica.Blocks.Continuous.Integrator integrator3(initType = Modelica.Blocks.Types.Init.SteadyState, y_start = Pref) annotation(Placement(transformation(extent = {{-6, -6}, {6, 6}}, rotation = 0, origin = {218, 62})));
   Modelica.Blocks.Math.Gain gain7(k = 1 / Tw) annotation(Placement(transformation(extent = {{192, 56}, {204, 68}})));
   Modelica.Blocks.Math.MultiSum multiSum3(k = {-1, 1}, nu = 2) annotation(Placement(transformation(extent = {{172, 56}, {184, 68}})));
-public
   Modelica.Blocks.Interfaces.RealInput w "Rotor speed (pu)" annotation(Placement(transformation(extent = {{-54, 16}, {-44, 26}}), iconTransformation(extent = {{-134, -8}, {-100, 26}})));
   Modelica.Blocks.Interfaces.RealOutput Pm "Power Pm (pu)" annotation(Placement(transformation(extent = {{20, 14}, {32, 26}}), iconTransformation(extent = {{100, 6}, {126, 32}})));
   Modelica.Blocks.Continuous.Integrator integrator4(initType = Modelica.Blocks.Types.Init.SteadyState, y_start = Pref) annotation(Placement(transformation(extent = {{-46, 58}, {-34, 70}})));
@@ -33,7 +34,6 @@ public
   Modelica.Blocks.Math.Product product1 annotation(Placement(transformation(extent = {{244, 70}, {256, 82}})));
   Modelica.Blocks.Math.MultiProduct multiProduct(nu = 2) annotation(Placement(transformation(extent = {{146, 58}, {158, 70}})));
   Modelica.Blocks.Sources.Constant const1(k = 1) annotation(Placement(transformation(extent = {{-6, -6}, {6, 6}}, rotation = 90, origin = {168, 42})));
-public
   Modelica.Blocks.Interfaces.RealInput w1 "Rotor speed (pu)" annotation(Placement(transformation(extent = {{-124, 110}, {-114, 120}}), iconTransformation(extent = {{-136, 58}, {-100, 94}})));
   Modelica.Blocks.Math.Add add(k1 = +1, k2 = -1) annotation(Placement(transformation(extent = {{-6, -6}, {6, 6}}, rotation = 180, origin = {-94, 86})));
   Modelica.Blocks.Nonlinear.Limiter limiter2(uMax = vmax, uMin = vmin) annotation(Placement(transformation(extent = {{46, 54}, {58, 66}})));
@@ -41,8 +41,7 @@ public
   Modelica.Blocks.Math.Add add1 annotation(Placement(transformation(extent = {{-20, 56}, {-10, 66}})));
   Modelica.Blocks.Math.Add add2(k1 = +1, k2 = -1) annotation(Placement(transformation(extent = {{6, 54}, {18, 66}})));
   Modelica.Blocks.Math.Add add3(k1 = +1, k2 = -1) annotation(Placement(transformation(extent = {{-114, 58}, {-104, 68}})));
-  Modelica.Blocks.Interfaces.RealInput wref "Reference rotor speed (pu)"
-                                            annotation(Placement(transformation(extent = {{-54, 6}, {-44, 16}}), iconTransformation(extent = {{-134, -62}, {-100, -28}})));
+  Modelica.Blocks.Interfaces.RealInput wref "Reference rotor speed (pu)" annotation(Placement(transformation(extent = {{-54, 6}, {-44, 16}}), iconTransformation(extent = {{-134, -62}, {-100, -28}})));
   Modelica.Blocks.Math.Add add4(k1 = +1, k2 = -1) annotation(Placement(transformation(extent = {{-182, 56}, {-168, 70}})));
 equation
   G = limiter3.y;
@@ -80,13 +79,7 @@ equation
   connect(add4.y, multiSum6.u[2]) annotation(Line(points = {{-167.3, 63}, {-162.65, 63}, {-162.65, 63.9}, {-158, 63.9}}, color = {0, 0, 127}, smooth = Smooth.None));
   connect(add4.u1, wref) annotation(Line(points = {{-183.4, 67.2}, {-200, 67.2}, {-200, 11}, {-49, 11}}, color = {0, 0, 127}, smooth = Smooth.None));
   connect(add4.u2, w) annotation(Line(points = {{-183.4, 58.8}, {-194, 58.8}, {-194, 21}, {-49, 21}}, color = {0, 0, 127}, smooth = Smooth.None));
-  annotation(Icon(coordinateSystem(extent={{-100,-80},{100,120}},      preserveAspectRatio=false),   graphics={  Rectangle(extent=  {{-100, 120}, {100, -80}}, lineColor=  {0, 0, 255}), Text(extent=  {{-32, 44}, {34, -4}}, lineColor=  {0, 0, 255}, textString=  "TGTypeV"), Text(visible=  true, origin=  {-82, 9},
-            fillPattern=                                                                                                    FillPattern.Solid, extent=  {{-18, -13}, {18, 13}}, textString=  "W", fontName=  "Arial"), Text(visible=  true, origin=  {80.0002, 20},
-            fillPattern=                                                                                                    FillPattern.Solid, extent=  {{-18.0002, -14}, {18.0002, 14}}, fontName=  "Arial", textString=  "Pm", lineColor=  {0, 0, 0}), Text(visible=  true, origin=  {-78, 76},
-            fillPattern=                                                                                                    FillPattern.Solid, extent=  {{-22, -14}, {22, 14}}, fontName=  "Arial", textString=  "P0", lineColor=  {0, 0, 0}), Text(visible=  true, origin=  {-74, -47},
-            fillPattern=                                                                                                    FillPattern.Solid, extent=  {{-18, -13}, {18, 13}}, fontName=  "Arial", textString=  "Wref", lineColor=  {0, 0, 0})}), Diagram(coordinateSystem(preserveAspectRatio=false,   extent={{-100,
-            -80},{100,120}})),
-    Documentation(info="<html>
+  annotation(Icon(coordinateSystem(extent = {{-100, -80}, {100, 120}}, preserveAspectRatio = false), graphics = {Rectangle(extent=  {{-100, 120}, {100, -80}}, lineColor=  {0, 0, 255}), Text(extent=  {{-32, 44}, {34, -4}}, lineColor=  {0, 0, 255}, textString=  "TGTypeV"), Text(visible=  true, origin=  {-82, 9}, fillPattern=  FillPattern.Solid, extent=  {{-18, -13}, {18, 13}}, textString=  "W", fontName=  "Arial"), Text(visible=  true, origin=  {80.0002, 20}, fillPattern=  FillPattern.Solid, extent=  {{-18.0002, -14}, {18.0002, 14}}, fontName=  "Arial", textString=  "Pm", lineColor=  {0, 0, 0}), Text(visible=  true, origin=  {-78, 76}, fillPattern=  FillPattern.Solid, extent=  {{-22, -14}, {22, 14}}, fontName=  "Arial", textString=  "P0", lineColor=  {0, 0, 0}), Text(visible=  true, origin=  {-74, -47}, fillPattern=  FillPattern.Solid, extent=  {{-18, -13}, {18, 13}}, fontName=  "Arial", textString=  "Wref", lineColor=  {0, 0, 0})}), Diagram(coordinateSystem(preserveAspectRatio = false, extent = {{-100, -80}, {100, 120}})), Documentation(info = "<html>
 <table cellspacing=\"1\" cellpadding=\"1\" border=\"1\">
 <tr>
 <td><p>Reference</p></td>

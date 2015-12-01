@@ -1,12 +1,22 @@
 within iPSL.Electrical.Wind.GE.Type_3.Turbine;
 model Rotor_Model
-
   Modelica.Blocks.Interfaces.RealInput Pm "Mechanical Power Input" annotation(Placement(transformation(extent = {{-102.0, 54.0}, {-62.0, 94.0}}, origin = {-66.2513, -29.0}, rotation = 0), visible = true, iconTransformation(origin = {2.0, -138.6259}, extent = {{-102.0, 54.0}, {-62.0, 94.0}}, rotation = 0)));
   Modelica.Blocks.Interfaces.RealInput Pe "Electrical Power Input" annotation(Placement(transformation(extent = {{-102.0, 54.0}, {-62.0, 94.0}}, origin = {-65.7168, -104.0}, rotation = 0), visible = true, iconTransformation(origin = {2.0, -1.6523}, extent = {{-102.0, 54.0}, {-62.0, 94.0}}, rotation = 0)));
   Modelica.Blocks.Interfaces.RealOutput omega_gen
     "Engine shaft angular velocity"                                               annotation(Placement(transformation(extent = {{102.0, 54.0}, {62.0, 94.0}}, origin = {-144.7168, -169.0}, rotation = 0), visible = true, iconTransformation(origin = {-2.0, -4.0}, extent = {{102.0, 54.0}, {62.0, 94.0}}, rotation = 0)));
   Modelica.Blocks.Interfaces.RealOutput omega_turb
     "engine shaft angular velocity"                                                annotation(Placement(visible = true, transformation(origin = {-142.0, 21.0}, extent = {{102.0, 54.0}, {62.0, 94.0}}, rotation = 0), iconTransformation(origin = {-2.0, -140.0376}, extent = {{102.0, 54.0}, {62.0, 94.0}}, rotation = 0)));
+  parameter Real H = 0.3 "inertia (pu)";
+  parameter Real Hg = 0.3;
+  parameter Real wbase = 1;
+  parameter Real Dtg = 1;
+  parameter Real Ktg = 1;
+  parameter Real wt_x6_0 = 1;
+  parameter Real wt_x7_0 = 1;
+  parameter Real wt_x8_0 = 1;
+  parameter Real wt_x9_0 = 1;
+  parameter Real wndtge_ang0 = 1;
+  parameter Real wndtge_spd0 = 1;
 protected
   Modelica.Blocks.Continuous.Integrator integrator1(y_start = wt_x6_0) annotation(Placement(visible = true, transformation(origin = {-27.2938, 51.715}, extent = {{-10.0, -10.0}, {10.0, 10.0}}, rotation = 0)));
   Modelica.Blocks.Continuous.Integrator integrator2(y_start = wt_x8_0) annotation(Placement(visible = true, transformation(origin = {-25.0, -38.4407}, extent = {{-10.0, -10.0}, {10.0, 10.0}}, rotation = 0)));
@@ -30,18 +40,6 @@ protected
   Modelica.Blocks.Sources.Constant Const1_wndtge_spd0(k = wndtge_spd0) annotation(Placement(visible = true, transformation(origin = {22.1822, -90.0}, extent = {{10.0, -10.0}, {-10.0, 10.0}}, rotation = 0)));
   Modelica.Blocks.Sources.Constant Const_wndtge_spd0(k = wndtge_spd0) annotation(Placement(visible = true, transformation(origin = {15.0, 90.0}, extent = {{10.0, -10.0}, {-10.0, 10.0}}, rotation = 0)));
   Modelica.Blocks.Sources.Constant Const_wndtge_ang0(k = wndtge_ang0) annotation(Placement(visible = true, transformation(origin = {25.0, -2.4551}, extent = {{-10.0, -10.0}, {10.0, 10.0}}, rotation = 0)));
-public
-  parameter Real H = 0.3 "inertia (pu)";
-  parameter Real Hg = 0.3;
-  parameter Real wbase = 1;
-  parameter Real Dtg = 1;
-  parameter Real Ktg = 1;
-  parameter Real wt_x6_0 = 1;
-  parameter Real wt_x7_0 = 1;
-  parameter Real wt_x8_0 = 1;
-  parameter Real wt_x9_0 = 1;
-  parameter Real wndtge_ang0 = 1;
-  parameter Real wndtge_spd0 = 1;
 equation
   connect(Const_wndtge_spd0.y, add5.u1) annotation(Line(visible = true, origin = {-7.25, 88.0}, points = {{11.25, 2.0}, {-2.75, 2.0}, {-2.75, -2.0}, {-5.75, -2.0}}, color = {0, 0, 127}));
   connect(Const1_wndtge_spd0.y, add4.u2) annotation(Line(visible = true, origin = {-5.4544, -88.0}, points = {{16.6366, -2}, {-4.5456, -2}, {-4.5456, 2}, {-7.5456, 2}}, color = {0, 0, 127}));
@@ -76,8 +74,7 @@ equation
   connect(division2.y, add32.u2) annotation(Line(visible = true, origin = {-90.25, -38.0734}, points = {{-3.75, 0.1336}, {0.25, 0.1336}, {0.25, -0.1337}, {3.25, -0.1337}}, color = {0, 0, 127}));
   connect(division1.y, add31.u2) annotation(Line(visible = true, origin = {-91.4627, 51.6982}, points = {{-2.5373, 0.0947}, {0.5124, 0.0947}, {0.5124, -0.0947}, {1.5124, -0.0947}}, color = {0, 0, 127}));
   annotation(Icon(coordinateSystem(extent = {{-100.0, -100.0}, {100.0, 100.0}}, preserveAspectRatio = true, initialScale = 0.1, grid = {10, 10}), graphics={  Rectangle(visible=  true, fillColor=  {255, 255, 255}, extent=  {{-100.0, -100.0}, {100.0, 100.0}}), Text(visible=  true, origin=  {-1.9109, 6.1667},
-            fillPattern=                                                                                                    FillPattern.Solid, extent=  {{-49.8299, -36.1667}, {49.8299, 36.1667}}, textString=  "Rotor", fontName=  "Arial")}), Diagram(coordinateSystem(extent = {{-148.5, -105.0}, {148.5, 105.0}}, preserveAspectRatio = true, initialScale = 0.1, grid = {5, 5})),
-    Documentation(info="<html>
+            fillPattern=                                                                                                    FillPattern.Solid, extent=  {{-49.8299, -36.1667}, {49.8299, 36.1667}}, textString=  "Rotor", fontName=  "Arial")}), Diagram(coordinateSystem(extent = {{-148.5, -105.0}, {148.5, 105.0}}, preserveAspectRatio = true, initialScale = 0.1, grid = {5, 5})), Documentation(info = "<html>
 <p><br><span style=\"font-family: MS Shell Dlg 2;\">&LT;iPSL: iTesla Power System Library&GT;</span></p>
 <p><span style=\"font-family: MS Shell Dlg 2;\">Copyright 2015 RTE (France), AIA (Spain), KTH (Sweden) and DTU (Denmark)</span></p>
 <ul>
@@ -93,3 +90,4 @@ equation
 <p><span style=\"font-family: MS Shell Dlg 2;\">You should have received a copy of the GNU Lesser General Public License along with the iPSL. If not, see &LT;http://www.gnu.org/licenses/&GT;.</span></p>
 </html>"));
 end Rotor_Model;
+

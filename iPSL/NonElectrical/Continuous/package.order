@@ -1,12 +1,9 @@
+IntegratorLimVar
 SimpleLag
 SimpleLagLim
 SimpleLagLimVar
+SimpleLagRateLimBlock
+SimpleLagRateLimVar
 SimpleLead
 LeadLag
 LeadLagLim
-Delay
-ImIntegratorvarnonwindup
-ImSimpleLag_varnonwindup
-ImSimpleLag_frznonwindup
-ImSimpleLag_nonwindup
-ImIntegrator_adpt

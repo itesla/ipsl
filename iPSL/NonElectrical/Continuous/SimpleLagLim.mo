@@ -1,18 +1,17 @@
 within iPSL.NonElectrical.Continuous;
-model SimpleLagLim "Integrator with a non-windup limiter"
+model SimpleLagLim
+  "First order lag transfer function block with a non windup limiter"
   extends Modelica.Blocks.Interfaces.SISO(y(start=y_start));
 
-  parameter Real K "Gain";
-  parameter Modelica.SIunits.Time T "Lag time constant";
-  parameter Real y_start "Output start value";
-  parameter Real outMax "Maximum output value";
-  parameter Real outMin "Minimum output value";
-protected
-  parameter Boolean zeroT = abs(T) < Modelica.Constants.eps;
+  parameter Real K "Gain" annotation(Evaluate=false);
+  parameter Modelica.SIunits.Time T "Lag time constant" annotation(Evaluate=false);
+  parameter Real y_start "Output start value" annotation (Dialog(group="Initialization"));
+  parameter Real outMax "Maximum output value" annotation(Evaluate=false);
+  parameter Real outMin "Minimum output value" annotation(Evaluate=false);
+
 equation
-  if zeroT then
-    y=u*K;
-  else
+    assert(T >= 1e-10, "Time constant must be greater than 0", AssertionLevel.error);
+    assert(outMax > outMin, "Upper limit must be greater than lower limit", AssertionLevel.error);
     if (y>=outMax) and (((K*u-y)/T) > 0) then
       der(y) = 0;
     elseif (y<=outMin) and (((K*u-y)/T) < 0) then
@@ -20,7 +19,6 @@ equation
     else
       T*der(y) = K*u - y;
     end if;
-  end if;
 
   annotation (Documentation(info="<html>
 <table cellspacing=\"1\" cellpadding=\"1\" border=\"1\">
@@ -41,6 +39,19 @@ equation
 <td><p><a href=\"mailto:luigiv@kth.se\">luigiv@kth.se</a></p></td>
 </tr>
 </table>
+<p><br><span style=\"font-family: MS Shell Dlg 2;\">&LT;iPSL: iTesla Power System Library&GT;</span></p>
+<p><span style=\"font-family: MS Shell Dlg 2;\">Copyright 2015 RTE (France), AIA (Spain), KTH (Sweden) and DTU (Denmark)</span></p>
+<ul>
+<li><span style=\"font-family: MS Shell Dlg 2;\">RTE: http://www.rte-france.com/ </span></li>
+<li><span style=\"font-family: MS Shell Dlg 2;\">AIA: http://www.aia.es/en/energy/</span></li>
+<li><span style=\"font-family: MS Shell Dlg 2;\">KTH: https://www.kth.se/en</span></li>
+<li><span style=\"font-family: MS Shell Dlg 2;\">DTU:http://www.dtu.dk/english</span></li>
+</ul>
+<p><span style=\"font-family: MS Shell Dlg 2;\">The authors can be contacted by email: info at itesla-ipsl dot org</span></p>
+<p><span style=\"font-family: MS Shell Dlg 2;\">This package is part of the iTesla Power System Library (&QUOT;iPSL&QUOT;) .</span></p>
+<p><span style=\"font-family: MS Shell Dlg 2;\">The iPSL is free software: you can redistribute it and/or modify it under the terms of the GNU Lesser General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.</span></p>
+<p><span style=\"font-family: MS Shell Dlg 2;\">The iPSL is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU Lesser General Public License for more details.</span></p>
+<p><span style=\"font-family: MS Shell Dlg 2;\">You should have received a copy of the GNU Lesser General Public License along with the iPSL. If not, see &LT;http://www.gnu.org/licenses/&GT;.</span></p>
 </html>"), Icon(graphics={
     Line(points={{40,100},{60,140},{100,140}},         color={0,0,0}),                             Text(extent={{
               -20,68},{20,8}},                                                                                                    lineColor = {0, 0, 255}, textString = "K"),

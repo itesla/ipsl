@@ -1,4 +1,6 @@
 within iPSL.Electrical.Wind.GE.Type_3.Electrical_Control;
+
+
 model lim_exc_s1
   extends Modelica.Blocks.Interfaces.BlockIcon;
   parameter Real xiqmin = 1;
@@ -27,8 +29,7 @@ equation
   else
     y = 0;
   end if;
-  annotation(Icon(coordinateSystem(extent = {{-100.0, -100.0}, {100.0, 100.0}}, preserveAspectRatio = true, initialScale = 0.1, grid = {10, 10}), graphics={  Text(visible=  true, origin=  {-1.349, 1.6286},
-            fillPattern=                                                                                                    FillPattern.Solid, extent=  {{-55.1519, -28.3714}, {55.1519, 28.3714}}, textString=  "lim_exc_s1", fontName=  "Arial")}), Documentation(info="<html>
+  annotation(Icon(coordinateSystem(extent = {{-100.0, -100.0}, {100.0, 100.0}}, preserveAspectRatio = true, initialScale = 0.1, grid = {10, 10}), graphics = {Text(visible=  true, origin=  {-1.349, 1.6286}, fillPattern=  FillPattern.Solid, extent=  {{-55.1519, -28.3714}, {55.1519, 28.3714}}, textString=  "lim_exc_s1", fontName=  "Arial")}), Documentation(info = "<html>
 <p>
 Block has two continuous Real input vectors u1 and u2 and one
 continuous Real output vector y.
@@ -47,9 +48,5 @@ All vectors have the same number of elements.
 <p><span style=\"font-family: MS Shell Dlg 2;\">The iPSL is free software: you can redistribute it and/or modify it under the terms of the GNU Lesser General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.</span></p>
 <p><span style=\"font-family: MS Shell Dlg 2;\">The iPSL is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU Lesser General Public License for more details.</span></p>
 <p><span style=\"font-family: MS Shell Dlg 2;\">You should have received a copy of the GNU Lesser General Public License along with the iPSL. If not, see &LT;http://www.gnu.org/licenses/&GT;.</span></p>
-</html>"),
-    Diagram(coordinateSystem(
-        preserveAspectRatio=true,
-        extent={{-100,-100},{100,100}},
-        grid={2,2}), graphics));
+</html>"), Diagram(coordinateSystem(preserveAspectRatio = true, extent = {{-100, -100}, {100, 100}}, grid = {2, 2}), graphics));
 end lim_exc_s1;

@@ -1,30 +1,23 @@
-within iPSL.NonElectrical.Nonlinear;
-model ImMonostable "Temporary overshoot for a threshold. The output's changeover from 0 to 1 (switching on) takes place when the input 
-              becomes greater than the threshold. The switched position is held during a time at least equal to T. Then, the changeover from 1 to 0 
-              (switching off) takes place when the input once more falls (or has already fallen) below the threshold.
-              2014/03/10"
+within iPSL.NonElectrical.Continuous;
 
-  Modelica.Blocks.Interfaces.RealInput p1 annotation(Placement(transformation(extent = {{-61, -10}, {-41, 10}}), iconTransformation(extent = {{-61, -10}, {-41, 10}})));
-  Modelica.Blocks.Interfaces.RealOutput n1 annotation(Placement(transformation(extent = {{39, -10}, {59, 10}}), iconTransformation(extent = {{39, -10}, {59, 10}})));
-  discrete Real tau(start = -T);
-  parameter Real S "Start";
-  parameter Real T "Pulse period";
-  Boolean mode;
-  Boolean cond1;
-  Boolean cond2;
+
+model IntegratorLimVar
+  "Integrator with a non windup limiter and variable limits"
+  extends Modelica.Blocks.Interfaces.SISO(y(start = y_start));
+  parameter Real K "Gain"  annotation(Evaluate=false);
+  parameter Real y_start "Output start value" annotation (Dialog(group="Initialization"));
+  Modelica.Blocks.Interfaces.RealInput outMax annotation(Placement(transformation(extent = {{98, 106}, {138, 146}}), iconTransformation(extent = {{-20, -20}, {20, 20}}, rotation = -90, origin = {80, 140})));
+  Modelica.Blocks.Interfaces.RealInput outMin annotation(Placement(transformation(extent = {{-90, -6}, {-50, 34}}), iconTransformation(extent = {{-20, -20}, {20, 20}}, rotation = 90, origin = {-80, -140})));
 equation
-  cond1 = p1 > S and pre(mode) == false;
-  cond2 = p1 <= S and time - pre(tau) >= T;
-  when {cond1, cond2} then
-    mode = not pre(mode);
-    tau = time;
-  end when;
-  if mode then
-    n1 = 1;
+  assert(outMax > outMin, "Upper limit must be greater than lower limit", AssertionLevel.error);
+  if y >= outMax and u > 0 then
+    der(y) = 0;
+  elseif y <= outMin and u < 0 then
+    der(y) = 0;
   else
-    n1 = 0;
+    der(y) = K * u;
   end if;
-  annotation(Icon(graphics={  Rectangle(extent = {{-40, 40}, {40, -40}}, lineColor = {0, 0, 255}), Text(extent = {{-40, -22}, {-22, -34}}, lineColor = {0, 0, 255}, textStyle = {TextStyle.Bold}, textString = "T"), Line(points = {{-24, 16}, {-12, 16}, {-12, 34}, {12, 34}, {12, 16}, {24, 16}}, color = {0, 0, 255}, smooth = Smooth.None), Text(extent = {{-40, -10}, {-22, -22}}, lineColor = {0, 0, 255}, textStyle = {TextStyle.Bold}, textString = "S")}), Diagram(graphics),
+  annotation(Icon(graphics={  Line(points = {{40, 100}, {60, 140}, {100, 140}}, color = {0, 0, 0}), Text(extent = {{-20, 68}, {20, 8}}, lineColor = {0, 0, 255}, textString = "K"), Line(points = {{-80, 0}, {78, 0}}, color = {0, 0, 255}, smooth = Smooth.Bezier, thickness = 0.5), Text(extent = {{-70, -20}, {70, -80}}, lineColor = {0, 0, 255}, textString = "s"), Line(points = {{-100, -140}, {-60, -140}, {-40, -100}}, color = {0, 0, 0})}), Diagram,
     Documentation(info="<html>
 <p><br><span style=\"font-family: MS Shell Dlg 2;\">&LT;iPSL: iTesla Power System Library&GT;</span></p>
 <p><span style=\"font-family: MS Shell Dlg 2;\">Copyright 2015 RTE (France), AIA (Spain), KTH (Sweden) and DTU (Denmark)</span></p>
@@ -40,4 +33,4 @@ equation
 <p><span style=\"font-family: MS Shell Dlg 2;\">The iPSL is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU Lesser General Public License for more details.</span></p>
 <p><span style=\"font-family: MS Shell Dlg 2;\">You should have received a copy of the GNU Lesser General Public License along with the iPSL. If not, see &LT;http://www.gnu.org/licenses/&GT;.</span></p>
 </html>"));
-end ImMonostable;
+end IntegratorLimVar;

@@ -1,4 +1,6 @@
 within iPSL.Electrical.Wind.GE.Type_3.Generator;
+
+
 model Generator
   import Modelica.Constants.pi;
   parameter Real freq = 50;
@@ -10,22 +12,12 @@ model Generator
   parameter Real GEN_base = 1;
   parameter Real SYS_base = 1;
   parameter Real Lpp = 1;
-public
   Modelica.Blocks.Interfaces.RealInput Efd "Excitation voltage" annotation(Placement(transformation(extent = {{-102.0, 54.0}, {-62.0, 94.0}}, origin = {-86.1542, 14.0368}, rotation = 0), visible = true, iconTransformation(origin = {2.0, -130.6017}, extent = {{-102.0, 54.0}, {-62.0, 94.0}}, rotation = 0)));
   Modelica.Blocks.Interfaces.RealInput Ipcmd "Current command" annotation(Placement(transformation(extent = {{-102.0, 54.0}, {-62.0, 94.0}}, origin = {-86.1542, -12.4057}, rotation = 0), visible = true, iconTransformation(origin = {2.0, -22.352}, extent = {{-102.0, 54.0}, {-62.0, 94.0}}, rotation = 0)));
   Modelica.Blocks.Interfaces.RealOutput Vt "Terminal voltage" annotation(Placement(visible = true, transformation(origin = {68.0, -29.8146}, extent = {{102.0, 54.0}, {62.0, 94.0}}, rotation = 0), iconTransformation(origin = {-2.0, 0.2537}, extent = {{102.0, 54.0}, {62.0, 94.0}}, rotation = 0)));
   Modelica.Blocks.Interfaces.RealOutput Pgen "Active power" annotation(Placement(visible = true, transformation(origin = {68.0, -114.0}, extent = {{102.0, 54.0}, {62.0, 94.0}}, rotation = 0), iconTransformation(origin = {-2.0, -94.0}, extent = {{102.0, 54.0}, {62.0, 94.0}}, rotation = 0)));
   Modelica.Blocks.Interfaces.RealOutput Qgen "Reactive power" annotation(Placement(visible = true, transformation(origin = {68.0, -151.9188}, extent = {{102.0, 54.0}, {62.0, 94.0}}, rotation = 0), iconTransformation(origin = {-2.0, -134.0}, extent = {{102.0, 54.0}, {62.0, 94.0}}, rotation = 0)));
-  iPSL.Connectors.PwPin p annotation (Placement(
-      visible=true,
-      transformation(
-        origin={-158.1542,-62.9104},
-        extent={{-10.0,-10.0},{10.0,10.0}},
-        rotation=0),
-      iconTransformation(
-        origin={0.0,-110.0},
-        extent={{-10.0,-10.0},{10.0,10.0}},
-        rotation=0)));
+  iPSL.Connectors.PwPin p annotation(Placement(visible = true, transformation(origin = {-158.1542, -62.9104}, extent = {{-10.0, -10.0}, {10.0, 10.0}}, rotation = 0), iconTransformation(origin = {0.0, -110.0}, extent = {{-10.0, -10.0}, {10.0, 10.0}}, rotation = 0)));
   Real Anglet;
 protected
   Real Vt_re;
@@ -98,10 +90,7 @@ equation
   gain3.u = Vt_im;
   Pgen = Vt_re * add7.y + Vt_im * add6.y;
   Qgen = Vt_im * add7.y - Vt_re * add6.y;
-  annotation(Diagram(coordinateSystem(extent = {{-148.5, -105.0}, {148.5, 105.0}}, preserveAspectRatio = true, initialScale = 0.1, grid = {10, 10}), graphics), Icon(coordinateSystem(extent = {{-100.0, -100.0}, {100.0, 100.0}}, preserveAspectRatio = true, initialScale = 0.1, grid = {10, 10}), graphics={  Rectangle(visible=  true, fillColor=  {255, 255, 255},
-            fillPattern=                                                                                                    FillPattern.Solid, extent=  {{-100.0, -100.0}, {100.0, 100.0}}), Text(visible=  true, origin=  {0.0, -3.1866},
-            fillPattern=                                                                                                    FillPattern.Solid, extent=  {{-64.7389, -33.1866}, {64.7389, 33.1866}}, textString=  "Generator", fontName=  "Arial")}),
-    Documentation(info="<html>
+  annotation(Diagram(coordinateSystem(extent = {{-148.5, -105.0}, {148.5, 105.0}}, preserveAspectRatio = true, initialScale = 0.1, grid = {10, 10}), graphics), Icon(coordinateSystem(extent = {{-100.0, -100.0}, {100.0, 100.0}}, preserveAspectRatio = true, initialScale = 0.1, grid = {10, 10}), graphics = {Rectangle(visible=  true, fillColor=  {255, 255, 255}, fillPattern=  FillPattern.Solid, extent=  {{-100.0, -100.0}, {100.0, 100.0}}), Text(visible=  true, origin=  {0.0, -3.1866}, fillPattern=  FillPattern.Solid, extent=  {{-64.7389, -33.1866}, {64.7389, 33.1866}}, textString=  "Generator", fontName=  "Arial")}), Documentation(info = "<html>
 <p><br><span style=\"font-family: MS Shell Dlg 2;\">&LT;iPSL: iTesla Power System Library&GT;</span></p>
 <p><span style=\"font-family: MS Shell Dlg 2;\">Copyright 2015 RTE (France), AIA (Spain), KTH (Sweden) and DTU (Denmark)</span></p>
 <ul>

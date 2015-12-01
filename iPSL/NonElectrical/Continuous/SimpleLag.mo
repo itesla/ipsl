@@ -1,27 +1,14 @@
 within iPSL.NonElectrical.Continuous;
 model SimpleLag "First order lag transfer function block"
-  extends Modelica.Blocks.Interfaces.SISO(y(start=y_start));
+  extends Modelica.Blocks.Interfaces.SISO(y(start = y_start));
+  parameter Real K "Gain" annotation(Evaluate=false);
+  parameter Modelica.SIunits.Time T "Lag time constant" annotation(Evaluate=false);
+  parameter Real y_start "Output start value" annotation (Dialog(group="Initialization"));
 
-  parameter Real K "Gain";
-  parameter Modelica.SIunits.Time T "Lag time constant";
-  parameter Real y_start "Output start value";
-protected
-  parameter Boolean zeroT = abs(T) < Modelica.Constants.eps;
 equation
-  if zeroT then
-    y=u*K;
-  else
-    T*der(y) = K*u - y;
-  end if;
-  annotation(Icon(coordinateSystem(preserveAspectRatio=true,  extent={{-100,-100},
-            {100,100}}),
-                  graphics={                                                                       Text(extent={{
-              -18,68},{22,8}},                                                                                                    lineColor = {0, 0, 255}, textString = "K"), Text(extent={{
-              -68,-20},{72,-80}},                                                                                                    lineColor=
-              {0,0,255},
-          textString="1 + Ts"),                                                                                                    Line(points={{
-              -78,0},{80,0}},                                                                                                    color = {0, 0, 255}, smooth = Smooth.Bezier, thickness = 0.5)}), Diagram(graphics),
-    Documentation(info="<html>
+  assert(T >= 1e-10, "Time constant must be greater than 0", AssertionLevel.error);
+  T * der(y) = K * u - y;
+  annotation(Icon(coordinateSystem(preserveAspectRatio = true, extent = {{-100, -100}, {100, 100}}), graphics={  Text(extent = {{-18, 68}, {22, 8}}, lineColor = {0, 0, 255}, textString = "K"), Text(extent = {{-68, -20}, {72, -80}}, lineColor = {0, 0, 255}, textString = "1 + Ts"), Line(points = {{-78, 0}, {80, 0}}, color = {0, 0, 255}, smooth = Smooth.Bezier, thickness = 0.5)}), Diagram(graphics), Documentation(info = "<html>
 <table cellspacing=\"1\" cellpadding=\"1\" border=\"1\">
 <tr>
 <td><p>Reference</p></td>
@@ -55,3 +42,4 @@ equation
 <p><span style=\"font-family: MS Shell Dlg 2;\">You should have received a copy of the GNU Lesser General Public License along with the iPSL. If not, see &LT;http://www.gnu.org/licenses/&GT;.</span></p>
 </html>"));
 end SimpleLag;
+

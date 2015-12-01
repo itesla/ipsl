@@ -1,11 +1,12 @@
 within iPSL.Interfaces;
+
+
 model OutPutPort "OutPutPort for plotting output results"
   output Real vo;
   input Real vi;
 equation
   vi = vo;
-  annotation(Icon(graphics={  Rectangle(extent=  {{-20, 20}, {40, -20}}, lineColor=  {0, 0, 255}), Text(extent=  {{-8, 10}, {26, -8}}, lineColor=  {0, 0, 255}, textString=  "Out")}), Diagram(graphics={  Rectangle(extent=  {{-30, 20}, {30, -20}}, lineColor=  {0, 0, 255}), Text(extent=  {{-18, 10}, {16, -8}}, lineColor=  {0, 0, 255}, textString=  "Out")}),
-    Documentation(info="<html>
+  annotation(Icon(graphics={  Rectangle(extent=  {{-20, 20}, {40, -20}}, lineColor=  {0, 0, 255}), Text(extent=  {{-8, 10}, {26, -8}}, lineColor=  {0, 0, 255}, textString=  "Out")}), Diagram(graphics = {Rectangle(extent=  {{-30, 20}, {30, -20}}, lineColor=  {0, 0, 255}), Text(extent=  {{-18, 10}, {16, -8}}, lineColor=  {0, 0, 255}, textString=  "Out")}), Documentation(info = "<html>
 <p><br><span style=\"font-family: MS Shell Dlg 2;\">&LT;iPSL: iTesla Power System Library&GT;</span></p>
 <p><span style=\"font-family: MS Shell Dlg 2;\">Copyright 2015 RTE (France), AIA (Spain), KTH (Sweden) and DTU (Denmark)</span></p>
 <ul>

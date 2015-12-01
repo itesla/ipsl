@@ -1,4 +1,6 @@
 within iPSL.Examples.N44_Groups.Configuration.Data;
+
+
 record IEEET2_data
   parameter Real J = 0.20000E-01 "Voltage input time constant (s)";
   //0
@@ -16,8 +18,7 @@ record IEEET2_data
   parameter Real J11 = 0.30000 "Saturation at E1";
   parameter Real J12 = 3.8000 "Exciter saturation point 2 (pu)";
   parameter Real J13 = 0.60000 "Saturation at E2";
-  annotation(Icon(graphics={  Rectangle(extent=  {{-40, 40}, {40, -40}}, lineColor=  {0, 0, 255}), Text(extent=  {{-32, 14}, {32, -10}}, lineColor=  {0, 0, 255}, textStyle=  {TextStyle.Bold}, textString=  "|x|"), Text(extent=  {{-58, 4}, {-46, -4}}, lineColor=  {255, 255, 255}, textString=  "p1")}), Diagram(graphics),
-    Documentation(info="<html>
+  annotation(Icon(graphics = {Rectangle(extent=  {{-40, 40}, {40, -40}}, lineColor=  {0, 0, 255}), Text(extent=  {{-32, 14}, {32, -10}}, lineColor=  {0, 0, 255}, textStyle=  {TextStyle.Bold}, textString=  "|x|"), Text(extent=  {{-58, 4}, {-46, -4}}, lineColor=  {255, 255, 255}, textString=  "p1")}), Diagram(graphics), Documentation(info = "<html>
 <p><br><span style=\"font-family: MS Shell Dlg 2;\">&LT;iPSL: iTesla Power System Library&GT;</span></p>
 <p><span style=\"font-family: MS Shell Dlg 2;\">Copyright 2015 RTE (France), AIA (Spain), KTH (Sweden) and DTU (Denmark)</span></p>
 <ul>

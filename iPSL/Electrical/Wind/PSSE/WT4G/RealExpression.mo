@@ -1,38 +1,11 @@
 within iPSL.Electrical.Wind.PSSE.WT4G;
-block RealExpression "Set output signal to a time varying Real expression"
-parameter Real ImaxTD "Converter current limit";
-  Modelica.Blocks.Interfaces.RealOutput y=0.0 "Value of Real output"
-    annotation (                            Dialog(group=
-          "Time varying output signal"), Placement(transformation(extent={{
-            100,-10},{120,10}}, rotation=0)));
 
-  Modelica.Blocks.Interfaces.RealInput u annotation (Placement(transformation(
-          extent={{-134,-20},{-94,20}}), iconTransformation(extent={{-134,-20},{
-            -94,20}})));
-  annotation (
-    Icon(coordinateSystem(
-        preserveAspectRatio=true,
-        extent={{-100,-100},{100,100}},
-        grid={2,2}), graphics={
-        Rectangle(
-          extent={{-100,40},{100,-40}},
-          lineColor={0,0,0},
-          fillColor={235,235,235},
-          fillPattern=FillPattern.Solid,
-          borderPattern=BorderPattern.Raised),
-        Text(
-          extent={{-96,15},{96,-15}},
-          lineColor={0,0,0},
-          textString="%y"),
-        Text(
-          extent={{-150,90},{140,50}},
-          textString="%name",
-          lineColor={0,0,255})}),
-    Diagram(coordinateSystem(
-        preserveAspectRatio=true,
-        extent={{-100,-100},{100,100}},
-        grid={2,2}), graphics),
-    Documentation(info="<html>
+
+block RealExpression "Set output signal to a time varying Real expression"
+  parameter Real ImaxTD "Converter current limit";
+  Modelica.Blocks.Interfaces.RealOutput y = 0.0 "Value of Real output" annotation(Dialog(group = "Time varying output signal"), Placement(transformation(extent = {{100, -10}, {120, 10}}, rotation = 0)));
+  Modelica.Blocks.Interfaces.RealInput u annotation(Placement(transformation(extent = {{-134, -20}, {-94, 20}}), iconTransformation(extent = {{-134, -20}, {-94, 20}})));
+  annotation(Icon(coordinateSystem(preserveAspectRatio = true, extent = {{-100, -100}, {100, 100}}, grid = {2, 2}), graphics = {Rectangle(extent=  {{-100, 40}, {100, -40}}, lineColor=  {0, 0, 0}, fillColor=  {235, 235, 235}, fillPattern=  FillPattern.Solid, borderPattern=  BorderPattern.Raised), Text(extent=  {{-96, 15}, {96, -15}}, lineColor=  {0, 0, 0}, textString=  "%y"), Text(extent=  {{-150, 90}, {140, 50}}, textString=  "%name", lineColor=  {0, 0, 255})}), Diagram(coordinateSystem(preserveAspectRatio = true, extent = {{-100, -100}, {100, 100}}, grid = {2, 2}), graphics), Documentation(info = "<html>
 <p>
 The (time varying) Real output signal of this block can be defined in its
 parameter menu via variable <b>y</b>. The purpose is to support the
@@ -57,5 +30,4 @@ Variable <b>y</b> is both a variable and a connector.
 <p><span style=\"font-family: MS Shell Dlg 2;\">The iPSL is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU Lesser General Public License for more details.</span></p>
 <p><span style=\"font-family: MS Shell Dlg 2;\">You should have received a copy of the GNU Lesser General Public License along with the iPSL. If not, see &LT;http://www.gnu.org/licenses/&GT;.</span></p>
 </html>"));
-
 end RealExpression;

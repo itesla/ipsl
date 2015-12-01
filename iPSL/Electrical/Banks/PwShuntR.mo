@@ -1,8 +1,6 @@
 within iPSL.Electrical.Banks;
 model PwShuntR "Shunt inductor"
-
-  iPSL.Connectors.PwPin p annotation (Placement(transformation(extent={{-10,40},
-            {10,60}}), iconTransformation(extent={{-10,40},{10,60}})));
+  iPSL.Connectors.PwPin p annotation(Placement(transformation(extent = {{-10, 40}, {10, 60}}), iconTransformation(extent = {{-10, 40}, {10, 60}})));
   constant Real pi = Modelica.Constants.pi;
   parameter Real Qnom = 75
     "Reactive power produced by the shunt inductor under 1 p.u voltage, -Mvar";
@@ -32,8 +30,7 @@ equation
             fillPattern=                                                                                                    FillPattern.Solid, pattern=  LinePattern.None), Ellipse(extent=  {{-12, -14}, {10, -36}}, lineColor=  {0, 0, 255},
             lineThickness=                                                                                                    0.5), Rectangle(extent=  {{0, -6}, {30, -42}},
             lineThickness=                                                                                                    1, fillColor=  {255, 255, 255},
-            fillPattern=                                                                                                    FillPattern.Solid, pattern=  LinePattern.None), Rectangle(extent=  {{-40, 40}, {40, -46}}, lineColor=  {0, 0, 255})}),
-      Documentation(info="<html>
+            fillPattern=                                                                                                    FillPattern.Solid, pattern=  LinePattern.None), Rectangle(extent=  {{-40, 40}, {40, -46}}, lineColor=  {0, 0, 255})}), Documentation(info = "<html>
 <p><br><span style=\"font-family: MS Shell Dlg 2;\">&LT;iPSL: iTesla Power System Library&GT;</span></p>
 <p><span style=\"font-family: MS Shell Dlg 2;\">Copyright 2015 RTE (France), AIA (Spain), KTH (Sweden) and DTU (Denmark)</span></p>
 <ul>
@@ -49,3 +46,4 @@ equation
 <p><span style=\"font-family: MS Shell Dlg 2;\">You should have received a copy of the GNU Lesser General Public License along with the iPSL. If not, see &LT;http://www.gnu.org/licenses/&GT;.</span></p>
 </html>"));
 end PwShuntR;
+

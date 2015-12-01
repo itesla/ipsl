@@ -7,24 +7,13 @@ model PSAT_WT "Wind Turbine Doubly Fed Induction Generator"
   MechaBlk mechaBlk1(Sbase = S_b, Pnom = Pnom, Hm = Hm, Pc = P_0) annotation(Placement(visible = true, transformation(origin = {70.3869, -20.0}, extent = {{-10.0, -10.0}, {10.0, 10.0}}, rotation = 0)));
   PitchControl pitchControl1(Kp = Kp, Tp = Tp, theta_p0 = theta_p0, theta_p_max = theta_max, theta_p_min = theta_min) annotation(Placement(visible = true, transformation(origin = {-46.9875, -15.0}, extent = {{-10.0, -10.0}, {10.0, 10.0}}, rotation = 0)));
   Modelica.Blocks.Interfaces.RealInput Wind_Speed annotation(Placement(visible = true, transformation(origin = {-111.9875, -2.3928}, extent = {{-20.0, -20.0}, {20.0, 20.0}}, rotation = 0), iconTransformation(origin = {0.0, 77.9903}, extent = {{-20.0, -20.0}, {20.0, 20.0}}, rotation = -90)));
-  iPSL.Connectors.PwPin pin annotation (Placement(
-      visible=true,
-      transformation(
-        origin={-101.9875,-70.0},
-        extent={{-10.0,-10.0},{10.0,10.0}},
-        rotation=0),
-      iconTransformation(
-        origin={-110.0,0.0},
-        extent={{-10.0,-10.0},{10.0,10.0}},
-        rotation=0)));
-
-  parameter Real V_0 = 1 "Voltage magnitude (pu)" annotation(Dialog(group="Power flow data"));
-  parameter Real angle_0 = -0.00243 "Voltage angle (deg.)" annotation(Dialog(group="Power flow data"));
-  parameter Real P_0 = 0.0160000000000082 "Active power (pu)" annotation(Dialog(group="Power flow data"));
-  parameter Real Q_0 = 0.030527374471207 "Reactive power (pu)" annotation(Dialog(group="Power flow data"));
-  parameter Real S_b = 100 "System base power(MVA)" annotation(Dialog(group="Power flow data"));
-  parameter Real V_b = 400 "Voltage rating kV" annotation(Dialog(group="Power flow data"));
-
+  iPSL.Connectors.PwPin pin annotation(Placement(visible = true, transformation(origin = {-101.9875, -70.0}, extent = {{-10.0, -10.0}, {10.0, 10.0}}, rotation = 0), iconTransformation(origin = {-110.0, 0.0}, extent = {{-10.0, -10.0}, {10.0, 10.0}}, rotation = 0)));
+  parameter Real V_0 = 1 "Voltage magnitude (pu)" annotation(Dialog(group = "Power flow data"));
+  parameter Real angle_0 = -0.00243 "Voltage angle (deg.)" annotation(Dialog(group = "Power flow data"));
+  parameter Real P_0 = 0.0160000000000082 "Active power (pu)" annotation(Dialog(group = "Power flow data"));
+  parameter Real Q_0 = 0.030527374471207 "Reactive power (pu)" annotation(Dialog(group = "Power flow data"));
+  parameter Real S_b = 100 "System base power(MVA)" annotation(Dialog(group = "Power flow data"));
+  parameter Real V_b = 400 "Voltage rating kV" annotation(Dialog(group = "Power flow data"));
   parameter Real Pnom = 10 "Nominal Power (MVA)";
   parameter Real fn = 50 "Frequency rating (Hz)";
   parameter Real rho = 1.225 "Air Density (kg/m^3)";
@@ -84,31 +73,19 @@ protected
   parameter Real vdr0 = (-Rr * idr0) + (1 - omega_m0) * (x2 * iqr0 + Xm * iqs0);
   parameter Real vqr0 = (-Rr * iqr0) - (1 - omega_m0) * (x2 * idr0 + Xm * ids0);
 equation
-  connect(pin, elecCircuit.pin) annotation(Line(visible = true, origin = {-5.4875, -55.7974}, points={{-96.5,
-          -14.2026},{48.5,-14.2026},{48.5,-5.2026}}));
+  connect(pin, elecCircuit.pin) annotation(Line(visible = true, origin = {-5.4875, -55.7974}, points = {{-96.5, -14.2026}, {48.5, -14.2026}, {48.5, -5.2026}}));
   connect(mechaBlk1.omega_m, elecDyn.omega_m) annotation(Line(visible = true, origin = {40.3844, -34.0062}, points = {{38.0025, 14.0062}, {42.6281, 14.0062}, {42.6281, 0.9937}, {44.6156, 0.9937}, {37.6281, 0.9937}, {-100.3844, 0.9937}, {-100.3844, -15.9937}, {-95.3719, -15.9938}}, color = {0, 0, 127}));
   connect(elecDyn.Vbus, elecCircuit.Vbus) annotation(Line(visible = true, origin = {-2.65, -55.6607}, points = {{-52.3375, 15.6607}, {-59.3375, 15.6607}, {-59.3375, -16.3215}, {58.675, -16.3215}, {58.675, 0.6607}, {53.6625, 0.6607}}, color = {0, 0, 127}));
-  connect(elecDyn.idr, elecCircuit.idr) annotation(Line(visible = true, origin = {14.0062, -41.6194}, points={{
-          -52.9937,1.6194},{15.9938,1.6194},{15.9938,-1.61938},{21.0063,
-          -1.61938}},                                                                                                    color = {0, 0, 127}));
+  connect(elecDyn.idr, elecCircuit.idr) annotation(Line(visible = true, origin = {14.0062, -41.6194}, points = {{-52.9937, 1.6194}, {15.9938, 1.6194}, {15.9938, -1.61938}, {21.0063, -1.61938}}, color = {0, 0, 127}));
   connect(elecDyn.iqr, elecCircuit.iqr) annotation(Line(visible = true, origin = {-1.9875, -50.0}, points = {{-37.0, 0.0}, {37.0, 0.0}}, color = {0, 0, 127}));
   connect(mechaBlk1.omega_m, elecCircuit.omega_m) annotation(Line(visible = true, origin = {59.8363, -27.8632}, points = {{18.5506, 7.8632}, {23.1762, 7.8632}, {23.1762, -5.2097}, {-66.8238, -5.2097}, {-66.8238, -29.1368}, {-24.8238, -29.1368}}, color = {0, 0, 127}));
-  connect(mechaBlk1.Tel, elecCircuit.Tel) annotation(Line(visible = true, origin = {56.3623, -35.0}, points={{6.0246,
-          10},{-0.3373,10},{-0.3373,-10},{-5.3498,-10}},                                                                                                    color = {0, 0, 127}));
-  connect(pitchControl1.theta_p, windBlk1.theta_p) annotation(Line(visible = true, origin = {-6.6693, -15.1284}, points={{
-          -32.3182,0.1284},{9.1019,0.1284},{9.1019,-0.12848},{14.1144,-0.12848}},                                                                                                    color = {0, 0, 127}));
-  connect(windBlk1.Tm, mechaBlk1.Tm) annotation(Line(visible = true, origin = {50.1452, -14.8679}, points={{
-          -26.7001,0.13217},{7.2292,0.13217},{7.2292,-0.1321},{12.2417,-0.1321}},                                                                                                    color = {0, 0, 127}));
-  connect(mechaBlk1.omega_m, windBlk1.omega_m) annotation(Line(visible = true, origin = {42.916, -25.0816}, points={{35.4709,
-          5.0816},{40.4834,5.0816},{40.4834,-7.9309},{-40.4834,-7.9309},{
-          -40.4834,2.84934},{-35.4709,2.84934}},                                                                                                    color = {0, 0, 127}));
-  connect(Wind_Speed, windBlk1.vw) annotation(Line(visible = true, origin = {-24.9193, -5.1166}, points={{
-          -87.0682,2.7238},{27.3519,2.7238},{27.3519,-2.72393},{32.3644,
-          -2.72393}},                                                                                                    color = {0, 0, 127}));
+  connect(mechaBlk1.Tel, elecCircuit.Tel) annotation(Line(visible = true, origin = {56.3623, -35.0}, points = {{6.0246, 10}, {-0.3373, 10}, {-0.3373, -10}, {-5.3498, -10}}, color = {0, 0, 127}));
+  connect(pitchControl1.theta_p, windBlk1.theta_p) annotation(Line(visible = true, origin = {-6.6693, -15.1284}, points = {{-32.3182, 0.1284}, {9.1019, 0.1284}, {9.1019, -0.12848}, {14.1144, -0.12848}}, color = {0, 0, 127}));
+  connect(windBlk1.Tm, mechaBlk1.Tm) annotation(Line(visible = true, origin = {50.1452, -14.8679}, points = {{-26.7001, 0.13217}, {7.2292, 0.13217}, {7.2292, -0.1321}, {12.2417, -0.1321}}, color = {0, 0, 127}));
+  connect(mechaBlk1.omega_m, windBlk1.omega_m) annotation(Line(visible = true, origin = {42.916, -25.0816}, points = {{35.4709, 5.0816}, {40.4834, 5.0816}, {40.4834, -7.9309}, {-40.4834, -7.9309}, {-40.4834, 2.84934}, {-35.4709, 2.84934}}, color = {0, 0, 127}));
+  connect(Wind_Speed, windBlk1.vw) annotation(Line(visible = true, origin = {-24.9193, -5.1166}, points = {{-87.0682, 2.7238}, {27.3519, 2.7238}, {27.3519, -2.72393}, {32.3644, -2.72393}}, color = {0, 0, 127}));
   connect(pitchControl1.omega_m, mechaBlk1.omega_m) annotation(Line(visible = true, origin = {25.5125, -22.0292}, points = {{-80.5, 7.0292}, {-85.5125, 7.0292}, {-85.5125, -11.0437}, {57.5, -11.0437}, {57.5, 2.0292}, {52.8744, 2.0292}}, color = {0, 0, 127}));
-  annotation(Icon(coordinateSystem(extent = {{-100.0, -100.0}, {100.0, 100.0}}, preserveAspectRatio = true, initialScale = 0.1, grid = {10, 10}), graphics={  Text(visible=  true,
-            fillPattern=                                                                                                    FillPattern.Solid, extent=  {{-55.0, -28.0231}, {55.0, 28.0231}}, textString=  "Dfig", fontName=  "Arial"), Ellipse(visible=  true, fillColor=  {255, 255, 255}, extent=  {{-100.0, -100.0}, {100.0, 100.0}})}), Diagram(coordinateSystem(extent = {{-148.5, -105.0}, {148.5, 105.0}}, preserveAspectRatio = true, initialScale = 0.1, grid = {5, 5})),
-    Documentation(info="<html>
+  annotation(Icon(coordinateSystem(extent = {{-100.0, -100.0}, {100.0, 100.0}}, preserveAspectRatio = true, initialScale = 0.1, grid = {10, 10}), graphics = {Text(visible=  true, fillPattern=  FillPattern.Solid, extent=  {{-55.0, -28.0231}, {55.0, 28.0231}}, textString=  "Dfig", fontName=  "Arial"), Ellipse(visible=  true, fillColor=  {255, 255, 255}, extent=  {{-100.0, -100.0}, {100.0, 100.0}})}), Diagram(coordinateSystem(extent = {{-148.5, -105.0}, {148.5, 105.0}}, preserveAspectRatio = true, initialScale = 0.1, grid = {5, 5})), Documentation(info = "<html>
 <table cellspacing=\"1\" cellpadding=\"1\" border=\"1\"><tr>
 <td><p>Reference</p></td>
 <td><p>WT Doubly Fed Induction Generator, PSAT Manual 2.1.8</p></td>
@@ -141,3 +118,4 @@ equation
 <p><span style=\"font-family: MS Shell Dlg 2;\">You should have received a copy of the GNU Lesser General Public License along with the iPSL. If not, see &LT;http://www.gnu.org/licenses/&GT;.</span></p>
 </html>"));
 end PSAT_WT;
+

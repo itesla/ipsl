@@ -1,6 +1,7 @@
 within iPSL.Electrical.Wind.DTU;
-model VoltageDrop "Developed by DTU"
 
+
+model VoltageDrop "Developed by DTU"
   Modelica.Blocks.Interfaces.RealInput Pwt annotation(Placement(transformation(extent = {{-70, 33}, {-60, 47}}), iconTransformation(extent = {{-70, 33}, {-60, 47}})));
   Modelica.Blocks.Interfaces.RealInput Qwt annotation(Placement(transformation(extent = {{-70, -7}, {-60, 7}})));
   Modelica.Blocks.Interfaces.RealInput Uwt annotation(Placement(transformation(extent = {{-70, -47}, {-60, -33}})));
@@ -9,12 +10,8 @@ model VoltageDrop "Developed by DTU"
   parameter Real Xdroop "Inductive component of voltage drop impedance";
 equation
   deltaU = sqrt((Uwt - Rdroop * Pwt / Uwt - Xdroop * Qwt / Uwt) ^ 2 + (Xdroop * Pwt / Uwt - Rdroop * Qwt / Uwt) ^ 2);
-  annotation(Diagram(coordinateSystem(preserveAspectRatio = false, extent = {{-100, -100}, {100, 100}}), graphics), Icon(coordinateSystem(preserveAspectRatio = false, extent = {{-100, -100}, {100, 100}}), graphics={  Rectangle(extent = {{-60, 40}, {60, -40}}, lineColor = {0, 0, 255},
-            lineThickness =                                                                                                   0.5), Text(extent = {{-40, 20}, {38, -20}}, lineColor = {0, 0, 255},
-            lineThickness =                                                                                                   0.5, fillColor = {0, 0, 255},
-            fillPattern =                                                                                                   FillPattern.Solid, textString = "Voltage Droop
-(Rdroop+jXdroop)")}),
-    Documentation(info="<html>
+  annotation(Diagram(coordinateSystem(preserveAspectRatio = false, extent = {{-100, -100}, {100, 100}}), graphics), Icon(coordinateSystem(preserveAspectRatio = false, extent = {{-100, -100}, {100, 100}}), graphics = {Rectangle(extent=  {{-60, 40}, {60, -40}}, lineColor=  {0, 0, 255}, lineThickness=  0.5), Text(extent=  {{-40, 20}, {38, -20}}, lineColor=  {0, 0, 255}, lineThickness=  0.5, fillColor=  {0, 0, 255}, fillPattern=  FillPattern.Solid, textString=  "Voltage Droop
+(Rdroop+jXdroop)")}), Documentation(info = "<html>
 <p><br><span style=\"font-family: MS Shell Dlg 2;\">&LT;iPSL: iTesla Power System Library&GT;</span></p>
 <p><span style=\"font-family: MS Shell Dlg 2;\">Copyright 2015 RTE (France), AIA (Spain), KTH (Sweden) and DTU (Denmark)</span></p>
 <ul>
