@@ -36,13 +36,33 @@ model PSS2B
   Modelica.Blocks.Nonlinear.Limiter limiter(uMax = V_STMAX, uMin = V_STMIN) annotation(Placement(transformation(extent = {{148, -10}, {168, 10}})));
   Modelica.Blocks.Nonlinear.Limiter limiter1(uMax = V_S1MAX, uMin = V_S1MIN) annotation(Placement(transformation(extent = {{-164, 10}, {-144, 30}})));
   Modelica.Blocks.Nonlinear.Limiter limiter2(uMax = V_S2MAX, uMin = V_S2MIN) annotation(Placement(transformation(extent = {{-166, -30}, {-146, -10}})));
-  Modelica.Blocks.Continuous.Derivative derivativeLag(k = T_w1, T = T_w1, y_start = 0, initType = Modelica.Blocks.Types.Init.InitialOutput) annotation(Placement(transformation(extent = {{-132, 10}, {-112, 30}})));
-  Modelica.Blocks.Continuous.Derivative derivativeLag1(k = T_w2, T = T_w2, y_start = 0, initType = Modelica.Blocks.Types.Init.InitialOutput) annotation(Placement(transformation(extent = {{-100, 10}, {-80, 30}})));
-  Modelica.Blocks.Continuous.Derivative derivativeLag2(k = T_w3, T = T_w3, y_start = 0, initType = Modelica.Blocks.Types.Init.InitialOutput) annotation(Placement(transformation(extent = {{-132, -30}, {-112, -10}})));
-  Modelica.Blocks.Continuous.Derivative derivativeLag3(k = T_w4, T = T_w4, y_start = 0, initType = Modelica.Blocks.Types.Init.InitialOutput) annotation(Placement(transformation(extent = {{-100, -30}, {-80, -10}})));
   Modelica.Blocks.Math.Add add(k2 = +K_S3) annotation(Placement(transformation(extent = {{-36, 4}, {-16, 24}})));
   Modelica.Blocks.Math.Add add1(k2 = -1) annotation(Placement(transformation(extent = {{0, -10}, {20, 10}})));
   Modelica.Blocks.Math.Gain gain(k = K_S1) annotation(Placement(transformation(extent = {{30, -10}, {50, 10}})));
+  Modelica.Blocks.Continuous.TransferFunction Washout4(
+    b={1,0},
+    initType=Modelica.Blocks.Types.Init.InitialOutput,
+    y_start=0,
+    a={1,1/T_w4})
+    annotation (Placement(transformation(extent={{-100,-30},{-80,-10}})));
+  Modelica.Blocks.Continuous.TransferFunction Washout3(
+    b={1,0},
+    initType=Modelica.Blocks.Types.Init.InitialOutput,
+    y_start=0,
+    a={1,1/T_w3})
+    annotation (Placement(transformation(extent={{-132,-30},{-112,-10}})));
+  Modelica.Blocks.Continuous.TransferFunction Washout1(
+    b={1,0},
+    a={1,1/T_w1},
+    initType=Modelica.Blocks.Types.Init.InitialOutput,
+    y_start=0)
+    annotation (Placement(transformation(extent={{-132,10},{-112,30}})));
+  Modelica.Blocks.Continuous.TransferFunction Washout2(
+    b={1,0},
+    initType=Modelica.Blocks.Types.Init.InitialOutput,
+    y_start=0,
+    a={1,1/T_w2})
+    annotation (Placement(transformation(extent={{-100,10},{-80,30}})));
 equation
   connect(limiter.y, VOTHSG) annotation(Line(points = {{169, 0}, {186, 0}}, color = {0, 0, 127}));
   connect(Leadlag3.y, limiter.u) annotation(Line(points = {{139, 0}, {146, 0}}, color = {0, 0, 127}));
@@ -50,19 +70,26 @@ equation
   connect(Leadlag2.u, Leadlag1.y) annotation(Line(points = {{86, 0}, {81, 0}}, color = {0, 0, 127}));
   connect(V_S2, limiter2.u) annotation(Line(points = {{-180, -20}, {-168, -20}}, color = {0, 0, 127}));
   connect(V_S1, limiter1.u) annotation(Line(points = {{-180, 20}, {-173, 20}, {-166, 20}}, color = {0, 0, 127}));
-  connect(derivativeLag2.y, derivativeLag3.u) annotation(Line(points = {{-111, -20}, {-106.5, -20}, {-102, -20}}, color = {0, 0, 127}));
-  connect(limiter2.y, derivativeLag2.u) annotation(Line(points = {{-145, -20}, {-139.5, -20}, {-134, -20}}, color = {0, 0, 127}));
-  connect(limiter1.y, derivativeLag.u) annotation(Line(points = {{-143, 20}, {-134, 20}}, color = {0, 0, 127}));
-  connect(derivativeLag.y, derivativeLag1.u) annotation(Line(points = {{-111, 20}, {-106.5, 20}, {-102, 20}}, color = {0, 0, 127}));
-  connect(derivativeLag1.y, SimpleLag1.u) annotation(Line(points = {{-79, 20}, {-74.5, 20}, {-70, 20}}, color = {0, 0, 127}));
-  connect(derivativeLag3.y, SimpleLag2.u) annotation(Line(points = {{-79, -20}, {-74.5, -20}, {-70, -20}}, color = {0, 0, 127}));
   connect(SimpleLag1.y, add.u1) annotation(Line(points = {{-47, 20}, {-38, 20}}, color = {0, 0, 127}));
   connect(SimpleLag2.y, add.u2) annotation(Line(points = {{-47, -20}, {-44, -20}, {-44, 8}, {-38, 8}}, color = {0, 0, 127}));
   connect(add1.u2, add.u2) annotation(Line(points = {{-2, -6}, {-10, -6}, {-10, -20}, {-44, -20}, {-44, 8}, {-38, 8}}, color = {0, 0, 127}));
   connect(add.y, add1.u1) annotation(Line(points = {{-15, 14}, {-10, 14}, {-10, 6}, {-2, 6}}, color = {0, 0, 127}));
   connect(add1.y, gain.u) annotation(Line(points = {{21, 0}, {24.5, 0}, {28, 0}}, color = {0, 0, 127}));
   connect(gain.y, Leadlag1.u) annotation(Line(points = {{51, 0}, {54.5, 0}, {58, 0}}, color = {0, 0, 127}));
-  annotation(Diagram(coordinateSystem(preserveAspectRatio = false, extent = {{-180, -40}, {180, 40}})), Icon(coordinateSystem(preserveAspectRatio = false, extent = {{-180, -40}, {180, 40}}), graphics = {Rectangle(extent=  {{-180, 40}, {180, -40}}, lineColor=  {0, 0, 255}), Text(extent=  {{-34, 14}, {32, -16}}, lineColor=  {0, 0, 255}, textString=  "PSS2B"), Text(extent=  {{-172, 26}, {-132, 12}}, lineColor=  {0, 0, 255}, textString=  "V_S1"), Text(extent=  {{130, 14}, {176, -16}}, lineColor=  {0, 0, 255}, textString=  "VOTHSG"), Text(extent=  {{-174, -14}, {-134, -28}}, lineColor=  {0, 0, 255}, textString=  "V_S2")}), Documentation(info = "<html>
+  connect(Washout3.y, Washout4.u)
+    annotation (Line(points={{-111,-20},{-102,-20}}, color={0,0,127}));
+  connect(Washout1.y, Washout2.u)
+    annotation (Line(points={{-111,20},{-111,20},{-102,20}}, color={0,0,127}));
+  connect(Washout1.u, limiter1.y)
+    annotation (Line(points={{-134,20},{-143,20}}, color={0,0,127}));
+  connect(limiter2.y, Washout3.u)
+    annotation (Line(points={{-145,-20},{-134,-20}}, color={0,0,127}));
+  connect(Washout4.y, SimpleLag2.u)
+    annotation (Line(points={{-79,-20},{-79,-20},{-70,-20}}, color={0,0,127}));
+  connect(Washout2.y, SimpleLag1.u)
+    annotation (Line(points={{-79,20},{-74,20},{-70,20}}, color={0,0,127}));
+  annotation(Diagram(coordinateSystem(preserveAspectRatio=false,   extent={{-180,
+            -40},{180,40}})),                                                                           Icon(coordinateSystem(preserveAspectRatio = false, extent = {{-180, -40}, {180, 40}}), graphics={  Rectangle(extent = {{-180, 40}, {180, -40}}, lineColor = {0, 0, 255}), Text(extent = {{-34, 14}, {32, -16}}, lineColor = {0, 0, 255}, textString = "PSS2B"), Text(extent = {{-172, 26}, {-132, 12}}, lineColor = {0, 0, 255}, textString = "V_S1"), Text(extent = {{130, 14}, {176, -16}}, lineColor = {0, 0, 255}, textString = "VOTHSG"), Text(extent = {{-174, -14}, {-134, -28}}, lineColor = {0, 0, 255}, textString = "V_S2")}), Documentation(info = "<html>
 <table cellspacing=\"1\" cellpadding=\"1\" border=\"1\">
 <tr>
 <td><p>Reference</p></td>
