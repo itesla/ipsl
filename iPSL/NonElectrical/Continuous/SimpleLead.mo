@@ -1,13 +1,33 @@
 within iPSL.NonElectrical.Continuous;
 model SimpleLead "First order lead transfer function block"
-  extends Modelica.Blocks.Interfaces.SISO(y(start = y_start));
-  parameter Real K "Gain"  annotation(Evaluate=false);
-  parameter Modelica.SIunits.Time T "Lead time constant"  annotation(Evaluate=false);
-  parameter Real y_start "Output start value" annotation (Dialog(group="Initialization"));
+  extends Modelica.Blocks.Interfaces.SISO(y(start=y_start));
+  parameter Real K "Gain" annotation (Evaluate=false);
+  parameter Modelica.SIunits.Time T "Lead time constant"
+    annotation (Evaluate=false);
+  parameter Real y_start "Output start value"
+    annotation (Dialog(group="Initialization"));
 equation
-  assert(T >= 1e-10, "Time constant must be greater than 0", AssertionLevel.error);
-  T * der(u) = K * y - u;
-  annotation(Icon(coordinateSystem(preserveAspectRatio = true, extent = {{-100, -100}, {100, 100}}), graphics={  Text(extent = {{-56, 68}, {58, 8}}, lineColor = {0, 0, 255}, textString = "1+Ts"), Line(points = {{-76, 0}, {82, 0}}, color = {0, 0, 255}, smooth = Smooth.Bezier, thickness = 0.5), Text(extent = {{-66, -20}, {74, -80}}, lineColor = {0, 0, 255}, textString = "K")}), Diagram(coordinateSystem(preserveAspectRatio = true, extent = {{-100, -100}, {100, 100}}), graphics), Documentation(info = "<html>
+  assert(
+    T >= 1e-10,
+    "Time constant must be greater than 0",
+    AssertionLevel.error);
+  T*der(u) = K*y - u;
+  annotation (
+    Icon(coordinateSystem(preserveAspectRatio=true, extent={{-100,-100},{100,
+            100}}), graphics={Text(
+          extent={{-56,68},{58,8}},
+          lineColor={0,0,255},
+          textString="1+Ts"),Line(
+          points={{-76,0},{82,0}},
+          color={0,0,255},
+          smooth=Smooth.Bezier,
+          thickness=0.5),Text(
+          extent={{-66,-20},{74,-80}},
+          lineColor={0,0,255},
+          textString="K")}),
+    Diagram(coordinateSystem(preserveAspectRatio=true, extent={{-100,-100},{100,
+            100}}), graphics),
+    Documentation(info="<html>
 <p><br><span style=\"font-family: MS Shell Dlg 2;\">&LT;iPSL: iTesla Power System Library&GT;</span></p>
 <p><span style=\"font-family: MS Shell Dlg 2;\">Copyright 2015 RTE (France), AIA (Spain), KTH (Sweden) and DTU (Denmark)</span></p>
 <ul>

@@ -1,6 +1,6 @@
 within iPSL.Electrical.Machines.PSSE;
 package GENROU 
-  annotation(Documentation(info = "<html>
+annotation (Documentation(info="<html>
 <table cellspacing=\"1\" cellpadding=\"1\" border=\"1\">
 <tr>
 <td><p>Reference</p></td>

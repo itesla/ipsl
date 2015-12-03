@@ -1,27 +1,38 @@
 within iPSL.Electrical.Loads.PSAT;
 model ZIP_Jimma "Jimma's Load"
   extends BaseClasses.baseLoad;
-  parameter Real Tf = 0.01 "Time constant of the high-pass filter (s)";
-  parameter Real Pz = 0.33 "Conductance";
-  parameter Real Pi = 0.33 "Active current";
-  parameter Real Pp = 1 - Pz - Pi "Active power";
-  parameter Real Qz = 0.33 "Susceptance";
-  parameter Real Qi = 0.33 "Reactive current";
-  parameter Real Qp = 1 - Qz - Qi "Reactive power";
-  parameter Real Kv = 100 "coefficient of the voltage time derivative (1/s)";
+  parameter Real Tf=0.01 "Time constant of the high-pass filter (s)";
+  parameter Real Pz=0.33 "Conductance";
+  parameter Real Pi=0.33 "Active current";
+  parameter Real Pp=1 - Pz - Pi "Active power";
+  parameter Real Qz=0.33 "Susceptance";
+  parameter Real Qi=0.33 "Reactive current";
+  parameter Real Qp=1 - Qz - Qi "Reactive power";
+  parameter Real Kv=100 "coefficient of the voltage time derivative (1/s)";
 protected
   Real a "Auxiliary variable, voltage division";
   Real b "Auxiliary variable, derivation";
-  Real x(start = 0);
+  Real x(start=0);
 initial equation
   der(x) = 0;
 equation
-  a = v / V_0;
-  der(x) = ((-v / Tf) - x) / Tf;
-  b = x + v / Tf;
-  P = P_0 * CoB * (Pz * a ^ 2 + Pi * a + Pp);
-  Q = Q_0 * CoB * (Qz * a ^ 2 + Qi * a + Qp + Kv * b);
-  annotation(Icon(coordinateSystem(extent = {{-100.0, -100.0}, {100.0, 100.0}}, preserveAspectRatio = true, initialScale = 0.1, grid = {10, 10})), Diagram(coordinateSystem(extent = {{-148.5, -105.0}, {148.5, 105.0}}, preserveAspectRatio = true, initialScale = 0.1, grid = {5, 5})), Documentation(info = "<html>
+  a = v/V_0;
+  der(x) = ((-v/Tf) - x)/Tf;
+  b = x + v/Tf;
+  P = P_0*CoB*(Pz*a^2 + Pi*a + Pp);
+  Q = Q_0*CoB*(Qz*a^2 + Qi*a + Qp + Kv*b);
+  annotation (
+    Icon(coordinateSystem(
+        extent={{-100.0,-100.0},{100.0,100.0}},
+        preserveAspectRatio=true,
+        initialScale=0.1,
+        grid={10,10})),
+    Diagram(coordinateSystem(
+        extent={{-148.5,-105.0},{148.5,105.0}},
+        preserveAspectRatio=true,
+        initialScale=0.1,
+        grid={5,5})),
+    Documentation(info="<html>
 <table cellspacing=\"1\" cellpadding=\"1\" border=\"1\">
 <tr>
 <td><p>Reference</p></td>
@@ -53,7 +64,7 @@ equation
 <p><span style=\"font-family: MS Shell Dlg 2;\">The iPSL is free software: you can redistribute it and/or modify it under the terms of the GNU Lesser General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.</span></p>
 <p><span style=\"font-family: MS Shell Dlg 2;\">The iPSL is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU Lesser General Public License for more details.</span></p>
 <p><span style=\"font-family: MS Shell Dlg 2;\">You should have received a copy of the GNU Lesser General Public License along with the iPSL. If not, see &LT;http://www.gnu.org/licenses/&GT;.</span></p>
-</html>", revisions = "<html>
+</html>", revisions="<html>
 <pre><span style=\"font-family: Courier New,courier; color: #006400;\">Remember:&nbsp;Pz+Pi+Pp=1&nbsp;and&nbsp;Qz+Qi+Qp=1</span></pre>
 </html>"));
 end ZIP_Jimma;

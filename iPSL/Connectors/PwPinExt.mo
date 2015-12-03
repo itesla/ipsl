@@ -2,7 +2,29 @@ within iPSL.Connectors;
 expandable connector PwPinExt
   "connector for electrical blocks treating voltage and current as complex variables"
   iPSL.Connectors.PwPin p;
-  annotation(defaultComponentName = "u", Icon(graphics = {Ellipse(extent=  {{-100, 100}, {100, -100}}, lineColor=  {0, 0, 127}, fillColor=  {0, 0, 127}, fillPattern=  FillPattern.Solid)}, coordinateSystem(extent = {{-100, -100}, {100, 100}}, preserveAspectRatio = true, initialScale = 0.2)), Diagram(coordinateSystem(preserveAspectRatio = false, initialScale = 0.2, extent = {{-100, -100}, {100, 100}}, grid = {1, 1}), graphics = {Text(extent=  {{-10, 85}, {-10, 60}}, lineColor=  {0, 0, 127}, textString=  "%name"), Ellipse(extent=  {{-50, 50}, {50, -50}}, lineColor=  {0, 0, 127}, fillColor=  {0, 0, 127}, fillPattern=  FillPattern.Solid)}), Documentation(info = "<html>
+  annotation (
+    defaultComponentName="u",
+    Icon(graphics={Ellipse(
+          extent={{-100,100},{100,-100}},
+          lineColor={0,0,127},
+          fillColor={0,0,127},
+          fillPattern=FillPattern.Solid)}, coordinateSystem(
+        extent={{-100,-100},{100,100}},
+        preserveAspectRatio=true,
+        initialScale=0.2)),
+    Diagram(coordinateSystem(
+        preserveAspectRatio=false,
+        initialScale=0.2,
+        extent={{-100,-100},{100,100}},
+        grid={1,1}), graphics={Text(
+          extent={{-10,85},{-10,60}},
+          lineColor={0,0,127},
+          textString="%name"),Ellipse(
+          extent={{-50,50},{50,-50}},
+          lineColor={0,0,127},
+          fillColor={0,0,127},
+          fillPattern=FillPattern.Solid)}),
+    Documentation(info="<html>
 <p>
 Connector of type V, I.
 </p>

@@ -2,8 +2,12 @@ within iPSL.Electrical.Branches.Simulink.LTC;
 
 
 model LTC_deadband
-  Modelica.Blocks.Interfaces.RealOutput signal annotation(Placement(transformation(extent = {{56, -2}, {76, 18}}), iconTransformation(extent = {{56, -2}, {76, 18}})));
-  Modelica.Blocks.Interfaces.RealInput u annotation(Placement(transformation(extent = {{-68, 0}, {-48, 20}}), iconTransformation(extent = {{-70, -2}, {-50, 18}})));
+  Modelica.Blocks.Interfaces.RealOutput signal annotation (Placement(
+        transformation(extent={{56,-2},{76,18}}), iconTransformation(extent={{
+            56,-2},{76,18}})));
+  Modelica.Blocks.Interfaces.RealInput u annotation (Placement(transformation(
+          extent={{-68,0},{-48,20}}), iconTransformation(extent={{-70,-2},{-50,
+            18}})));
   parameter Real Uplim;
   parameter Real Downlim;
 equation
@@ -12,7 +16,21 @@ equation
   else
     signal = -100;
   end if;
-  annotation(Icon(coordinateSystem(preserveAspectRatio = false, extent = {{-100, -100}, {100, 100}}), graphics = {Rectangle(extent=  {{-50, 52}, {56, -38}}, lineColor=  {0, 0, 255}, fillColor=  {255, 255, 255}, fillPattern=  FillPattern.Solid), Text(extent=  {{-34, 32}, {40, -24}}, lineColor=  {0, 0, 255}, fillColor=  {255, 255, 255}, fillPattern=  FillPattern.Solid, textString=  "deadband")}), Diagram(coordinateSystem(preserveAspectRatio = false, extent = {{-100, -100}, {100, 100}}), graphics), Documentation(info = "<html>
+  annotation (
+    Icon(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,
+            100}}), graphics={Rectangle(
+          extent={{-50,52},{56,-38}},
+          lineColor={0,0,255},
+          fillColor={255,255,255},
+          fillPattern=FillPattern.Solid),Text(
+          extent={{-34,32},{40,-24}},
+          lineColor={0,0,255},
+          fillColor={255,255,255},
+          fillPattern=FillPattern.Solid,
+          textString="deadband")}),
+    Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{
+            100,100}}), graphics),
+    Documentation(info="<html>
 <table cellspacing=\"1\" cellpadding=\"1\" border=\"1\">
 <tr>
 <td><p>Reference</p></td>

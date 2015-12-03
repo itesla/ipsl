@@ -2,17 +2,24 @@ within iPSL.NonElectrical.Continuous;
 
 
 class LeadLagLim "Lead-Lag filter with a non-windup limiter"
-  extends Modelica.Blocks.Interfaces.SISO(y(start = y_start));
-  parameter Real K "Gain" annotation(Evaluate=false);
-  parameter Real T1 "Lead time constant" annotation(Evaluate=false);
-  parameter Real T2 "Lag time constant" annotation(Evaluate=false);
-  parameter Real y_start "Output start value" annotation (Dialog(group="Initialization"));
-  parameter Real outMax "Maximum output value" annotation(Evaluate=false);
-  parameter Real outMin "Minimum output value" annotation(Evaluate=false);
-  Real s(start = y_start) "State variable";
+  extends Modelica.Blocks.Interfaces.SISO(y(start=y_start));
+  parameter Real K "Gain" annotation (Evaluate=false);
+  parameter Real T1 "Lead time constant" annotation (Evaluate=false);
+  parameter Real T2 "Lag time constant" annotation (Evaluate=false);
+  parameter Real y_start "Output start value"
+    annotation (Dialog(group="Initialization"));
+  parameter Real outMax "Maximum output value" annotation (Evaluate=false);
+  parameter Real outMin "Minimum output value" annotation (Evaluate=false);
+  Real s(start=y_start) "State variable";
 equation
-  assert(abs(T1) >= 1e-10 and abs(T2) >= 1e-10,  "Time constants must be greater than zero", AssertionLevel.error);
-  assert(outMax > outMin, "Upper limit must be greater than lower limit", AssertionLevel.error);
+  assert(
+    abs(T1) >= 1e-10 and abs(T2) >= 1e-10,
+    "Time constants must be greater than zero",
+    AssertionLevel.error);
+  assert(
+    outMax > outMin,
+    "Upper limit must be greater than lower limit",
+    AssertionLevel.error);
   if y > outMax then
     der(s) = 0;
     y = outMax;
@@ -20,10 +27,32 @@ equation
     der(s) = 0;
     y = outMin;
   else
-    T2 * der(s) = (-s) + K * u;
-    T2 * y = ((-s) + K * u) * T1 + T2 * s;
+    T2*der(s) = (-s) + K*u;
+    T2*y = ((-s) + K*u)*T1 + T2*s;
   end if;
-  annotation(Icon(graphics={  Line(points = {{38, 100}, {58, 140}, {98, 140}}, color = {0, 0, 0}), Line(points = {{-102, -140}, {-62, -140}, {-42, -100}}, color = {0, 0, 0}), Text(extent = {{-50, 82}, {70, 22}}, lineColor = {0, 0, 255}, textString = "1+sT"), Text(extent = {{56, 44}, {76, 24}}, lineColor = {0, 0, 255}, textString = "1"), Line(points = {{-52, 0}, {76, 0}}, color = {0, 0, 255}, smooth = Smooth.Bezier, thickness = 0.5), Text(extent = {{-50, -20}, {70, -80}}, lineColor = {0, 0, 255}, textString = "1+sT"), Text(extent = {{58, -58}, {78, -78}}, lineColor = {0, 0, 255}, textString = "2"), Text(extent = {{-106, 28}, {-46, -32}}, lineColor = {0, 0, 255}, textString = "K")}), Diagram,
+  annotation (
+    Icon(graphics={Line(points={{38,100},{58,140},{98,140}}, color={0,0,0}),
+          Line(points={{-102,-140},{-62,-140},{-42,-100}}, color={0,0,0}),Text(
+          extent={{-50,82},{70,22}},
+          lineColor={0,0,255},
+          textString="1+sT"),Text(
+          extent={{56,44},{76,24}},
+          lineColor={0,0,255},
+          textString="1"),Line(
+          points={{-52,0},{76,0}},
+          color={0,0,255},
+          smooth=Smooth.Bezier,
+          thickness=0.5),Text(
+          extent={{-50,-20},{70,-80}},
+          lineColor={0,0,255},
+          textString="1+sT"),Text(
+          extent={{58,-58},{78,-78}},
+          lineColor={0,0,255},
+          textString="2"),Text(
+          extent={{-106,28},{-46,-32}},
+          lineColor={0,0,255},
+          textString="K")}),
+    Diagram,
     Documentation(info="<html>
 <p><br><span style=\"font-family: MS Shell Dlg 2;\">&LT;iPSL: iTesla Power System Library&GT;</span></p>
 <p><span style=\"font-family: MS Shell Dlg 2;\">Copyright 2015 RTE (France), AIA (Spain), KTH (Sweden) and DTU (Denmark)</span></p>

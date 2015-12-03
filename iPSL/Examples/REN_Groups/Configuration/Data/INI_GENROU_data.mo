@@ -1,14 +1,25 @@
 within iPSL.Examples.REN_Groups.Configuration.Data;
 record INI_GENROU_data
-  parameter Real V = 0.999999 "terminal voltage";
+  parameter Real V=0.999999 "terminal voltage";
   //1.0
-  parameter Real V1 = 4.0463 "Power flow, node angle in degree";
-  parameter Real V2 = 0.399989 * 100 "active power MVA";
+  parameter Real V1=4.0463 "Power flow, node angle in degree";
+  parameter Real V2=0.399989*100 "active power MVA";
   //80.0
-  parameter Real V3 = 5.41649 * 0.01 * 100 "reactive power MVA";
+  parameter Real V3=5.41649*0.01*100 "reactive power MVA";
   //50.0
-  parameter Real V4 = 0 "amature resistance";
-  annotation(Icon(graphics = {Rectangle(extent=  {{-40, 40}, {40, -40}}, lineColor=  {0, 0, 255}), Text(extent=  {{-32, 14}, {32, -10}}, lineColor=  {0, 0, 255}, textStyle=  {TextStyle.Bold}, textString=  "|x|"), Text(extent=  {{-58, 4}, {-46, -4}}, lineColor=  {255, 255, 255}, textString=  "p1")}), Diagram(graphics), Documentation(info = "<html>
+  parameter Real V4=0 "amature resistance";
+  annotation (
+    Icon(graphics={Rectangle(extent={{-40,40},{40,-40}}, lineColor={0,0,255}),
+          Text(
+          extent={{-32,14},{32,-10}},
+          lineColor={0,0,255},
+          textStyle={TextStyle.Bold},
+          textString="|x|"),Text(
+          extent={{-58,4},{-46,-4}},
+          lineColor={255,255,255},
+          textString="p1")}),
+    Diagram(graphics),
+    Documentation(info="<html>
 <p><br><span style=\"font-family: MS Shell Dlg 2;\">&LT;iPSL: iTesla Power System Library&GT;</span></p>
 <p><span style=\"font-family: MS Shell Dlg 2;\">Copyright 2015 RTE (France), AIA (Spain), KTH (Sweden) and DTU (Denmark)</span></p>
 <ul>

@@ -8,9 +8,9 @@ function SE "Scaled Quadratic Saturation Function (PTI PSS/E) "
   input Real E2;
   output Real sys "Saturated Output";
 protected
-  parameter Real a = sqrt(SE1 * E1 / (SE2 * E2));
-  parameter Real A = E2 - (E1 - E2) / (a - 1);
-  parameter Real B = SE2 * E2 * (a - 1) ^ 2 / (E1 - E2) ^ 2;
+  parameter Real a=sqrt(SE1*E1/(SE2*E2));
+  parameter Real A=E2 - (E1 - E2)/(a - 1);
+  parameter Real B=SE2*E2*(a - 1)^2/(E1 - E2)^2;
 algorithm
   if SE1 == 0.0 or u <= 0.0 then
     sys := 0.0;
@@ -18,10 +18,10 @@ algorithm
     if u <= A then
       sys := 0.0;
     else
-      sys := B * (u - A) ^ 2 / u;
+      sys := B*(u - A)^2/u;
     end if;
   end if;
-  annotation(Documentation(info = "<html>
+  annotation (Documentation(info="<html>
 <p><br><span style=\"font-family: MS Shell Dlg 2;\">&LT;iPSL: iTesla Power System Library&GT;</span></p>
 <p><span style=\"font-family: MS Shell Dlg 2;\">Copyright 2015 RTE (France), AIA (Spain), KTH (Sweden) and DTU (Denmark)</span></p>
 <ul>
