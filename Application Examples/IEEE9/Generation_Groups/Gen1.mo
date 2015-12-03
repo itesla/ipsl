@@ -1,5 +1,6 @@
 within IEEE9.Generation_Groups;
 model Gen1
+  extends iPSL.Electrical.Essentials.pfComponent;
   parameter Real ra1(min=0.00,max=0.02) "Armature resistance (pu) ";
   parameter Real xd1(min=0.6,max=2.3) "d-axis reactance (pu)";
   parameter Real xq1(min=0.4,max=2.3) "q-axis reactance (pu) ";
@@ -9,31 +10,27 @@ model Gen1
   parameter Real T1q1(min=1.5,max=10) "q-axis transient time constant (s) ";
   parameter Real M1 "Machanical starting time (2H) (kWs/kVA)";
   parameter Real D1;
-  parameter Real S_b "(MVA)";
-  parameter Real f_b "(Hz)";
+  parameter Real Ka_1;
+  parameter Real Ta_1 "(s)";
+  parameter Real Kf_1;
+  parameter Real Tf_1 "(s)";
+  parameter Real Ke_1;
+  parameter Real Te_1 "(s) ";
+  parameter Real Tr_1;
+  parameter Real Ae_1;
+  parameter Real Be_1;
+  parameter Real height_1;
+  parameter Real tstart_1;
+  parameter Boolean refdisturb_1;
 
-   parameter Real Ka_1;
-   parameter Real Ta_1 "(s)";
-   parameter Real Kf_1;
-   parameter Real Tf_1 "(s)";
-   parameter Real Ke_1;
-   parameter Real Te_1 "(s) ";
-   parameter Real Tr_1;
-   parameter Real Ae_1;
-   parameter Real Be_1;
-
-   parameter Real height_1;
-   parameter Real tstart_1;
-   parameter Boolean refdisturb_1;
-
-  PowerSystems.Electrical.Machines.PSAT.FourthOrder.Order4_Inputs_Outputs gen(
+  iPSL.Electrical.Machines.PSAT.FourthOrder.Order4 gen(
     Sn=100,
     Vn=18000,
-    V_b=18000,
-    V_0=1.025000000000000,
-    angle_0=0.160490018910725,
-    P_0=1.630000000000000,
-    Q_0=0.001552891584958,
+    V_b=V_b,
+    V_0=V_0,
+    angle_0=angle_0,
+    P_0=P_0,
+    Q_0=Q_0,
     ra=ra1,
     xd=xd1,
     xq=xq1,
@@ -42,13 +39,11 @@ model Gen1
     Td10=T1d1,
     Tq10=T1q1,
     M=M1,
-    D=D1,
-    S_b=S_b,
-    fn=f_b)  annotation (Placement(transformation(
+    D=D1)  annotation (Placement(transformation(
         extent={{-10,-10},{10,10}},
         rotation=0,
         origin={28,14})));
-  PowerSystems.Electrical.Controls.PSAT.AVR.AVRTypeII AVR(
+  iPSL.Electrical.Controls.PSAT.AVR.AVRTypeII AVR(
     vrmin=-5,
     vrmax=5,
     v0=1.025000000000000,
@@ -81,7 +76,7 @@ model Gen1
     annotation (Placement(transformation(extent={{-50,12},{-40,22}})));
   Modelica.Blocks.Sources.BooleanConstant booleanConstant(k=refdisturb_1)
     annotation (Placement(transformation(extent={{-80,2},{-70,12}})));
-  PowerSystems.Connectors.PwPin pwPin
+  iPSL.Connectors.PwPin pwPin
     annotation (Placement(transformation(extent={{100,-10},{120,10}})));
   Real P_MW;
   Real Q_MVA;
@@ -89,15 +84,15 @@ equation
   P_MW = gen.P*S_b;
   Q_MVA = gen.Q*S_b;
   connect(AVR.vf,gen. vf) annotation (Line(
-      points={{2.5,12.6},{10,12.6},{10,19.6852},{16,19.6852}},
+      points={{2.5,12.6},{10,12.6},{10,19},{18,19}},
       color={0,0,127},
       smooth=Smooth.None));
   connect(gen.pm0,gen. pm) annotation (Line(
-      points={{39,20.2839},{46,20.2839},{46,30},{12,30},{12,10},{16,10}},
+      points={{20,3},{46,3},{46,30},{12,30},{12,9},{18,9}},
       color={0,0,127},
       smooth=Smooth.None));
   connect(gen.v,AVR. v) annotation (Line(
-      points={{39,17.5403},{48,17.5403},{48,-14},{-22,-14},{-22,9},{-14,9}},
+      points={{39,17},{48,17},{48,-14},{-22,-14},{-22,9},{-14,9}},
       color={0,0,127},
       smooth=Smooth.None));
   connect(switch1.y,AVR. vref) annotation (Line(points={{-39.5,17},{-26.75,17},
@@ -108,7 +103,7 @@ equation
           13},{-51,13}},  color={0,0,127}));
   connect(step.y,switch1. u1) annotation (Line(points={{-56,2.4},{-56,21},{-51,21}},
                 color={0,0,127}));
-  connect(gen.p, pwPin) annotation (Line(points={{39,13.8496},{66,13.8496},{66,
+  connect(gen.p, pwPin) annotation (Line(points={{39,14.0496},{66,14.0496},{66,
           0},{110,0}}, color={0,0,255}));
   annotation (Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,
             -100},{100,100}})), Icon(coordinateSystem(preserveAspectRatio=false,

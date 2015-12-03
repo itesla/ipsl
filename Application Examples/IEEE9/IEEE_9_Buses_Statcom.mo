@@ -1,7 +1,17 @@
 within IEEE9;
 model IEEE_9_Buses_Statcom
-  parameter Real S_b= 100 "(MVA) @{conditions|System base power}";
-  parameter Real f_b= 60 "(Hz) @{conditions|System frequency}";
+  function Angle
+      input Real slack_r;
+      input Real slack_i;
+      input Real bus_r;
+      input Real bus_i;
+      output Real angle;
+  algorithm
+      angle := acos((slack_r*bus_r+slack_i*bus_i)/(sqrt(slack_r^2+slack_i^2)*sqrt(bus_r^2+bus_i^2)))/Modelica.Constants.pi*180;
+  end Angle;
+
+  parameter Real S_b=SysData.S_b;
+  parameter Real f_b=SysData.fn;
   //Generator 1
   parameter Real ra1(min=0.00,max=0.02) = 0.00
     "Armature resistance (pu) @{Generator 1|slider:Armature resistance r_a}";
@@ -154,7 +164,7 @@ model IEEE_9_Buses_Statcom
     "(s) @{Change of voltage reference 3|Time of disturbance}";
    parameter Boolean refdisturb_3 = false
     "(s) @{Change of voltage reference 3|switch:Enable/Disable disturbance}";
-  PowerSystems.Electrical.Branches.PSAT.TwoWindingTransformer
+  iPSL.Electrical.Branches.PSAT.TwoWindingTransformer
     twoWindingTransformer(
     V_b=16500,
     Vn=16500,
@@ -165,7 +175,7 @@ model IEEE_9_Buses_Statcom
         extent={{-10,-10},{10,10}},
         rotation=90,
         origin={0,-66})));
-  PowerSystems.Electrical.Branches.PwLine line_6_4(
+  iPSL.Electrical.Branches.PwLine line_6_4(
     R=0.017,
     X=0.092,
     G=0,
@@ -174,7 +184,7 @@ model IEEE_9_Buses_Statcom
         extent={{-10,-10},{10,10}},
         rotation=90,
         origin={86,-20})));
-  PowerSystems.Electrical.Branches.PwLine line_4_5(
+  iPSL.Electrical.Branches.PwLine line_4_5(
     G=0,
     R=0.01,
     X=0.085,
@@ -183,7 +193,7 @@ model IEEE_9_Buses_Statcom
         extent={{-10,-10},{10,10}},
         rotation=90,
         origin={-72,-20})));
-  PowerSystems.Electrical.Loads.PSAT.LOADPQ lOADPQ(
+  iPSL.Electrical.Loads.PSAT.LOADPQ lOADPQ(
     S_b=S_b,
     P_0=P2,
     Q_0=Q2)
@@ -191,7 +201,7 @@ model IEEE_9_Buses_Statcom
         extent={{-7,-7},{7,7}},
         rotation=-90,
         origin={-91,-13})));
-  PowerSystems.Electrical.Loads.PSAT.LOADPQ PQ1(
+  iPSL.Electrical.Loads.PSAT.LOADPQ PQ1(
     S_b=S_b,
     P_0=P3,
     Q_0=Q3)                                                        annotation (
@@ -199,7 +209,7 @@ model IEEE_9_Buses_Statcom
         extent={{-7,-7},{7,7}},
         rotation=-90,
         origin={111,-13})));
-  PowerSystems.Electrical.Branches.PwLine line_9_6(
+  iPSL.Electrical.Branches.PwLine line_9_6(
     G=0,
     R=0.039,
     X=0.170,
@@ -208,7 +218,7 @@ model IEEE_9_Buses_Statcom
         extent={{-10,-10},{10,10}},
         rotation=90,
         origin={86,58})));
-  PowerSystems.Electrical.Branches.PwLine line_5_7(
+  iPSL.Electrical.Branches.PwLine line_5_7(
     G=0,
     R=0.032,
     X=0.161,
@@ -217,7 +227,7 @@ model IEEE_9_Buses_Statcom
         extent={{-10,-10},{10,10}},
         rotation=90,
         origin={-72,54})));
-  PowerSystems.Electrical.Branches.PwLine line_8_9(
+  iPSL.Electrical.Branches.PwLine line_8_9(
     G=0,
     R=0.0119,
     X=0.1008,
@@ -226,7 +236,7 @@ model IEEE_9_Buses_Statcom
         extent={{-10,-10},{10,10}},
         rotation=0,
         origin={40,90})));
-  PowerSystems.Electrical.Branches.PSAT.TwoWindingTransformer
+  iPSL.Electrical.Branches.PSAT.TwoWindingTransformer
     twoWindingTransformer1(
     r=0,
     V_b=13800,
@@ -237,7 +247,7 @@ model IEEE_9_Buses_Statcom
         extent={{-10,-10},{10,10}},
         rotation=180,
         origin={102,90})));
-  PowerSystems.Electrical.Branches.PSAT.TwoWindingTransformer
+  iPSL.Electrical.Branches.PSAT.TwoWindingTransformer
     twoWindingTransformer2(
     r=0,
     V_b=18000,
@@ -249,7 +259,7 @@ model IEEE_9_Buses_Statcom
         extent={{-10,-10},{10,10}},
         rotation=0,
         origin={-102,90})));
-  PowerSystems.Electrical.Loads.PSAT.LOADPQ lOADPQ1(
+  iPSL.Electrical.Loads.PSAT.LOADPQ lOADPQ1(
     S_b=S_b,
     P_0=P1,
     Q_0=Q1)                                                         annotation (
@@ -257,7 +267,7 @@ model IEEE_9_Buses_Statcom
         extent={{-7,-7},{7,7}},
         rotation=-90,
         origin={-9,65})));
-  PowerSystems.Electrical.Controls.PSAT.FACTS.STATCOM.STATCOM sTATCOM3_1(
+  iPSL.Electrical.Controls.PSAT.FACTS.STATCOM.STATCOM sTATCOM3_1(
     Vbus=230000,
     Vn=230000,
     Qg=0.128730182132440,
@@ -272,35 +282,35 @@ model IEEE_9_Buses_Statcom
         extent={{-7,-7},{7,7}},
         rotation=90,
         origin={9,65})));
-  PowerSystems.Electrical.Buses.Bus B2
+  iPSL.Electrical.Buses.Bus B2
     annotation (Placement(transformation(extent={{-130,80},{-110,100}})));
-  PowerSystems.Electrical.Buses.Bus B7
+  iPSL.Electrical.Buses.Bus B7
     annotation (Placement(transformation(extent={{-90,80},{-70,100}})));
-  PowerSystems.Electrical.Buses.Bus B8 annotation (Placement(transformation(
+  iPSL.Electrical.Buses.Bus B8 annotation (Placement(transformation(
         extent={{-10,-10},{10,10}},
         rotation=0,
         origin={0,90})));
-  PowerSystems.Electrical.Buses.Bus B9
+  iPSL.Electrical.Buses.Bus B9
     annotation (Placement(transformation(extent={{70,80},{90,100}})));
-  PowerSystems.Electrical.Buses.Bus B3
+  iPSL.Electrical.Buses.Bus B3
     annotation (Placement(transformation(extent={{110,80},{130,100}})));
-  PowerSystems.Electrical.Buses.Bus B6 annotation (Placement(transformation(
+  iPSL.Electrical.Buses.Bus B6 annotation (Placement(transformation(
         extent={{-10,-10},{10,10}},
         rotation=-90,
         origin={86,20})));
-  PowerSystems.Electrical.Buses.Bus B5 annotation (Placement(transformation(
+  iPSL.Electrical.Buses.Bus B5 annotation (Placement(transformation(
         extent={{-12,-12},{12,12}},
         rotation=90,
         origin={-72,20})));
-  PowerSystems.Electrical.Buses.Bus B4 annotation (Placement(transformation(
+  iPSL.Electrical.Buses.Bus B4 annotation (Placement(transformation(
         extent={{-12,-12},{12,12}},
         rotation=-90,
         origin={0,-46})));
-  PowerSystems.Electrical.Buses.Bus B1 annotation (Placement(transformation(
+  iPSL.Electrical.Buses.Bus B1 annotation (Placement(transformation(
         extent={{-12,-12},{12,12}},
         rotation=-90,
         origin={0,-86})));
-  PowerSystems.Electrical.Events.PwFaultPQ pwFaultPQ(
+  iPSL.Electrical.Events.PwFaultPQ pwFaultPQ(
     X=0.001,
     t1=3,
     t2=3.1,
@@ -397,7 +407,7 @@ model IEEE_9_Buses_Statcom
     output Real PL3 "Load active power 3 @{.animation|Active Power}";
     output Real QL3 "Load reactive power 3 @{.animation|Reactive Power}";
 
-  PowerSystems.Electrical.Branches.PwLine2Openings ine_7_8(
+  iPSL.Electrical.Branches.PwLine2Openings ine_7_8(
     R=0.0085,
     X=0.072,
     G=0,
@@ -405,17 +415,6 @@ model IEEE_9_Buses_Statcom
     t1=t1_Line,
     t2=t2_Line,
     S_b=S_b) annotation (Placement(transformation(extent={{-50,80},{-30,100}})));
-
-    function Angle
-      input Real slack_r;
-      input Real slack_i;
-      input Real bus_r;
-      input Real bus_i;
-      output Real angle;
-    algorithm
-      angle := acos((slack_r*bus_r+slack_i*bus_i)/(sqrt(slack_r^2+slack_i^2)*sqrt(bus_r^2+bus_i^2)))/Modelica.Constants.pi*180;
-    end Angle;
-
   Generation_Groups.Gen1 gen1(
     ra1=ra1,
     xd1=xd1,
@@ -426,8 +425,6 @@ model IEEE_9_Buses_Statcom
     T1q1=T1q1,
     M1=M1,
     D1=D1,
-    S_b=S_b,
-    f_b=f_b,
     Ka_1=Ka_1,
     Ta_1=Ta_1,
     Kf_1=Kf_1,
@@ -439,7 +436,12 @@ model IEEE_9_Buses_Statcom
     Be_1=Be_1,
     height_1=height_1,
     tstart_1=tstart_1,
-    refdisturb_1=refdisturb_1)
+    V_b=18000,
+    V_0=1.025000000000000,
+    angle_0=0.160490018910725,
+    P_0=1.630000000000000,
+    Q_0=0.001552891584958,
+    refdisturb_1=true)
     annotation (Placement(transformation(extent={{-160,80},{-140,100}})));
   Generation_Groups.Gen2 gen2(
     ra2=ra2,
@@ -451,8 +453,6 @@ model IEEE_9_Buses_Statcom
     T1q2=T1q2,
     M2=M2,
     D2=D2,
-    S_b=S_b,
-    f_b=f_b,
     Ka_2=Ka_2,
     Ta_2=Ta_2,
     Kf_2=Kf_2,
@@ -464,7 +464,12 @@ model IEEE_9_Buses_Statcom
     Be_2=Be_2,
     height_2=height_2,
     tstart_2=tstart_2,
-    refdisturb_2=refdisturb_2)
+    refdisturb_2=refdisturb_2,
+    V_b=13800,
+    V_0=1.025000000000000,
+    angle_0=0.080629575357894,
+    P_0=0.850000000000000,
+    Q_0=-0.163501111031896)
     annotation (Placement(transformation(extent={{160,80},{140,100}})));
   Generation_Groups.Gen3 gen3(
     ra3=ra3,
@@ -476,8 +481,6 @@ model IEEE_9_Buses_Statcom
     T1q3=T1q3,
     M3=M3,
     D3=D3,
-    S_b=S_b,
-    f_b=f_b,
     Ka_3=Ka_3,
     Ta_3=Ta_3,
     Kf_3=Kf_3,
@@ -489,20 +492,27 @@ model IEEE_9_Buses_Statcom
     Be_3=Be_3,
     height_3=height_3,
     tstart_3=tstart_3,
-    refdisturb_3=refdisturb_3) annotation (Placement(transformation(
+    refdisturb_3=refdisturb_3,
+    V_b=16500,
+    V_0=1.040000000000000,
+    angle_0=0,
+    P_0=0.715870954698345,
+    Q_0=0.248141030193284)     annotation (Placement(transformation(
         extent={{-10,-10},{10,10}},
         rotation=90,
         origin={0,-106})));
+  inner iPSL.Electrical.SystemBase SysData(S_b=100, fn=60)
+    annotation (Placement(transformation(extent={{-152,-90},{-76,-66}})));
 equation
 
         PL1 = lOADPQ1.P;
-        QL1 = loadPQ1.Q;
+        QL1 = lOADPQ1.Q;
 
-        PL1 = lOADPQ.P;
-        QL1 = loadPQ.Q;
+        PL2 = lOADPQ.P;
+        QL2 = lOADPQ.Q;
 
-        PL1 = PQ1.P;
-        QL1 = PQ1.Q;
+        PL3 = PQ1.P;
+        QL3 = PQ1.Q;
 
   //Line variables
         P12_45 = line_4_5.P12;
@@ -617,7 +627,7 @@ equation
       smooth=Smooth.None));
 
   connect(B8.p, pwFaultPQ.p) annotation (Line(
-      points={{0,90},{8,90},{8,111},{17,111}},
+      points={{0,90},{8,90},{8,110},{12.3333,110}},
       color={0,0,255},
       smooth=Smooth.None));
   connect(B7.p, ine_7_8.p)
@@ -632,26 +642,29 @@ equation
     annotation (Line(points={{-91,90},{-91,90},{-80,90}}, color={0,0,255}));
   connect(gen2.pwPin, B3.p)
     annotation (Line(points={{139,90},{129.5,90},{120,90}}, color={0,0,255}));
-  connect(lOADPQ.p, B5.p) annotation (Line(points={{-91,-5.3},{-91,4},{-72,4},{
-          -72,20}}, color={0,0,255}));
+  connect(lOADPQ.p, B5.p) annotation (Line(points={{-83.3,-13},{-83.3,4},{-72,4},
+          {-72,20}},color={0,0,255}));
   connect(line_4_5.p, B4.p) annotation (Line(points={{-72,-27},{-72,-27},{-72,
           -42},{0,-42},{0,-46}}, color={0,0,255}));
   connect(line_6_4.p, B4.p) annotation (Line(points={{86,-27},{86,-42},{0,-42},
           {0,-46}}, color={0,0,255}));
-  connect(PQ1.p, B6.p) annotation (Line(points={{111,-5.3},{111,0},{86,0},{86,
+  connect(PQ1.p, B6.p) annotation (Line(points={{118.7,-13},{118.7,0},{86,0},{86,
           20}},   color={0,0,255}));
   connect(lOADPQ1.p, B8.p)
-    annotation (Line(points={{-9,72.7},{-9,90},{0,90}}, color={0,0,255}));
+    annotation (Line(points={{-1.3,65},{-1.3,90},{0,90}},
+                                                        color={0,0,255}));
   connect(B4.p, twoWindingTransformer.n) annotation (Line(points={{0,-46},{0,
           -55}},               color={0,0,255}));
   connect(gen3.pwPin, B1.p)
     annotation (Line(points={{0,-95},{0,-86}},              color={0,0,255}));
-  connect(line_8_9.p, pwFaultPQ.p) annotation (Line(points={{33,90},{8,90},{8,111},
-          {17,111}},      color={0,0,255}));
+  connect(line_8_9.p, pwFaultPQ.p) annotation (Line(points={{33,90},{8,90},{8,
+          110},{12.3333,110}},
+                          color={0,0,255}));
   connect(line_8_9.n, B9.p)
     annotation (Line(points={{47,90},{63.5,90},{80,90}}, color={0,0,255}));
-  connect(sTATCOM3_1.p, pwFaultPQ.p) annotation (Line(points={{9,72.7},{9,90},{8,
-          90},{8,111},{17,111}},   color={0,0,255}));
+  connect(sTATCOM3_1.p, pwFaultPQ.p) annotation (Line(points={{9,72.7},{9,90},{
+          8,90},{8,110},{12.3333,110}},
+                                   color={0,0,255}));
   annotation (Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-180,
             -120},{180,120}})),                Icon(coordinateSystem(extent={{-180,
             -120},{180,120}})),
