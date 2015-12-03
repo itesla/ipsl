@@ -20,8 +20,8 @@ model PSS2A "IEEE Dual-Input Stabilizer Model"
   parameter Real T_4 = 0.025 "Leadlag2 time constant";
   parameter Real V_STMAX = 0.1 "PSS output limiation";
   parameter Real V_STMIN = -0.1 "PSS output limiation";
-  parameter Integer M "Ramp tracking filter coefficient";
-  parameter Integer N "Ramp tracking filter coefficient";
+  parameter Real M "Ramp tracking filter coefficient";
+  parameter Real N "Ramp tracking filter coefficient";
   Modelica.Blocks.Interfaces.RealInput V_S1 "PSS input signal 1" annotation(Placement(transformation(extent = {{-186, 14}, {-174, 26}}), iconTransformation(extent = {{-186, 14}, {-174, 26}})));
   iPSL.NonElectrical.Continuous.LeadLag Leadlag1(K = 1, T1 = T_1, T2 = T_2, y_start = 0) annotation(Placement(transformation(extent = {{80, -10}, {100, 10}})));
   iPSL.NonElectrical.Continuous.LeadLag Leadlag2(K = 1, T1 = T_3, T2 = T_4, y_start = 0) annotation(Placement(transformation(extent = {{112, -10}, {132, 10}})));
@@ -55,7 +55,7 @@ equation
   connect(add.y, gain1.u) annotation(Line(points = {{-19, 14}, {-12, 14}}, color = {0, 0, 127}));
   connect(gain1.y, add1.u1) annotation(Line(points = {{11, 14}, {12, 14}, {12, 6}, {18, 6}}, color = {0, 0, 127}));
   connect(limiter.y, VOTHSG) annotation(Line(points = {{167, 0}, {206, 0}}, color = {0, 0, 127}));
-  annotation(Diagram(coordinateSystem(preserveAspectRatio = false, extent = {{-180, -40}, {200, 40}}), graphics = {Text(extent=  {{-20, 38}, {22, 28}}, lineColor=  {28, 108, 200}, textString=  "RampTracking filter missing")}), Icon(coordinateSystem(preserveAspectRatio = false, extent = {{-180, -40}, {200, 40}}), graphics = {Rectangle(extent=  {{-180, 40}, {200, -40}}, lineColor=  {0, 0, 255}), Text(extent=  {{-34, 16}, {32, -14}}, lineColor=  {0, 0, 255}, textString=  "PSS2A"), Text(extent=  {{-170, 30}, {-142, 10}}, lineColor=  {0, 0, 255}, textString=  "V_S1"), Text(extent=  {{-170, -10}, {-142, -30}}, lineColor=  {0, 0, 255}, textString=  "V_S2"), Text(extent=  {{140, 10}, {196, -10}}, lineColor=  {0, 0, 255}, textString=  "VOTHSG")}), Documentation(info = "<html>
+  annotation(Diagram(coordinateSystem(preserveAspectRatio = false, extent = {{-180, -40}, {200, 40}}), graphics={  Text(extent = {{-20, 38}, {22, 28}}, lineColor = {28, 108, 200}, textString = "RampTracking filter missing")}), Icon(coordinateSystem(preserveAspectRatio = false, extent = {{-180, -40}, {200, 40}}), graphics={  Rectangle(extent = {{-180, 40}, {200, -40}}, lineColor = {0, 0, 255}), Text(extent = {{-34, 16}, {32, -14}}, lineColor = {0, 0, 255}, textString = "PSS2A"), Text(extent = {{-170, 30}, {-142, 10}}, lineColor = {0, 0, 255}, textString = "V_S1"), Text(extent = {{-170, -10}, {-142, -30}}, lineColor = {0, 0, 255}, textString = "V_S2"), Text(extent = {{140, 10}, {196, -10}}, lineColor = {0, 0, 255}, textString = "VOTHSG")}), Documentation(info = "<html>
 <table cellspacing=\"1\" cellpadding=\"1\" border=\"1\">
 <tr>
 <td><p>Reference</p></td>
