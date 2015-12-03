@@ -35,8 +35,7 @@ model REN_SMIB1L_Group2
     P_0=51.66447,
     Q_0=97.411,
     H=0) annotation (Placement(transformation(extent={{105,-10},{83,12}})));
-  iPSL.Examples.REN_Groups.Configuration.RGroup2 group2 annotation (Placement(
-        transformation(rotation=0, extent={{-70,-10},{-50,10}})));
+  iPSL.Examples.REN_Groups.Configuration.RGroup2 group2 annotation (Placement(transformation(rotation=0, extent={{-70,-10},{-50,10}})));
   Electrical.Branches.PwLine2Openings pwLine2(
     t2=100,
     t1=100,
@@ -55,10 +54,8 @@ model REN_SMIB1L_Group2
     t1=0,
     V_0=0.9948733,
     angle_0=-0.1207206,
-    S_p(re=0.45, im=0.1))
-    annotation (Placement(transformation(extent={{20,-56},{44,-32}})));
-  inner Electrical.SystemBase SysData(S_b=1000)
-    annotation (Placement(transformation(extent={{-40,60},{-16,80}})));
+    S_p(re=0.45, im=0.1)) annotation (Placement(transformation(extent={{20,-56},{44,-32}})));
+  inner Electrical.SystemBase SysData(S_b=1000) annotation (Placement(transformation(extent={{-40,60},{-16,80}})));
 equation
   connect(pwLine.n, pwLine1.p) annotation (Line(
       points={{-4,0},{3,0},{3,14},{26,14}},
@@ -76,16 +73,11 @@ equation
       points={{-49,0},{-18,0}},
       color={0,0,255},
       smooth=Smooth.None));
-  connect(pwLine3.n, pwLine2.p)
-    annotation (Line(points={{24,-20},{32,-20},{40,-20}}, color={0,0,255}));
-  connect(pwLine2.n, gENCLS.p) annotation (Line(points={{54,-20},{68,-20},{68,0},
-          {80.8,0.834604}}, color={0,0,255}));
-  connect(constantLoad.p, pwLine3.p) annotation (Line(points={{32,-30.8},{32,-42},
-          {10,-42},{10,-20}}, color={0,0,255}));
-  connect(pwFault.p, pwLine2.p) annotation (Line(points={{62.0833,-45},{56,-45},
-          {56,-40},{40,-40},{40,-20}}, color={0,0,255}));
-  annotation (Diagram(coordinateSystem(preserveAspectRatio=true, extent={{-100,
-            -100},{100,100}})), Documentation(info="<html>
+  connect(pwLine3.n, pwLine2.p) annotation (Line(points={{24,-20},{32,-20},{40,-20}}, color={0,0,255}));
+  connect(pwLine2.n, gENCLS.p) annotation (Line(points={{54,-20},{68,-20},{68,0},{80.8,0.834604}}, color={0,0,255}));
+  connect(constantLoad.p, pwLine3.p) annotation (Line(points={{32,-30.8},{32,-42},{10,-42},{10,-20}}, color={0,0,255}));
+  connect(pwFault.p, pwLine2.p) annotation (Line(points={{62.0833,-45},{56,-45},{56,-40},{40,-40},{40,-20}}, color={0,0,255}));
+  annotation (Diagram(coordinateSystem(preserveAspectRatio=true, extent={{-100,-100},{100,100}})), Documentation(info="<html>
 <p><br><span style=\"font-family: MS Shell Dlg 2;\">&LT;iPSL: iTesla Power System Library&GT;</span></p>
 <p><span style=\"font-family: MS Shell Dlg 2;\">Copyright 2015 RTE (France), AIA (Spain), KTH (Sweden) and DTU (Denmark)</span></p>
 <ul>

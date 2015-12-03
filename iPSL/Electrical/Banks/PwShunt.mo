@@ -1,11 +1,7 @@
 within iPSL.Electrical.Banks;
 model PwShunt "Thyristor controlled Shunt reactor/capacitor"
-  iPSL.Connectors.PwPin p annotation (Placement(transformation(extent={{-8,44},
-            {12,64}}), iconTransformation(extent={{-10,42},{10,62}})));
-  Modelica.Blocks.Interfaces.RealInput Q
-    "Reactive power produced by the shunt (pu)" annotation (Placement(
-        transformation(extent={{-62,-2},{-42,18}}), iconTransformation(extent={
-            {-40,0},{-58,18}})));
+  iPSL.Connectors.PwPin p annotation (Placement(transformation(extent={{-8,44},{12,64}}), iconTransformation(extent={{-10,42},{10,62}})));
+  Modelica.Blocks.Interfaces.RealInput Q "Reactive power produced by the shunt (pu)" annotation (Placement(transformation(extent={{-62,-2},{-42,18}}), iconTransformation(extent={{-40,0},{-58,18}})));
   constant Real pi=Modelica.Constants.pi;
   parameter Real fn=50 "Frequency rating, Hz";
   Real C "Capacitance in p.u";
@@ -33,10 +29,8 @@ equation
   //p.u
   //p.u
   annotation (
-    Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{
-            100,100}}), graphics),
-    Icon(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,
-            100}}), graphics={Line(
+    Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,100}}), graphics),
+    Icon(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,100}}), graphics={Line(
           points={{0,42},{0,30}},
           color={0,0,255},
           smooth=Smooth.None,
@@ -48,8 +42,7 @@ equation
           points={{-16,16},{-4,16}},
           color={0,0,255},
           smooth=Smooth.None,
-          thickness=0.5),Rectangle(extent={{-40,42},{42,-24}}, lineColor={0,0,
-          255}),Line(
+          thickness=0.5),Rectangle(extent={{-40,42},{42,-24}}, lineColor={0,0,255}),Line(
           points={{-16,10},{-4,10}},
           color={0,0,255},
           smooth=Smooth.None,
@@ -92,9 +85,7 @@ equation
           smooth=Smooth.None),Line(
           points={{10,30},{10,22},{10,20}},
           color={0,0,255},
-          smooth=Smooth.None),Ellipse(extent={{6,20},{14,14}}, lineColor={0,0,
-          255}),Ellipse(extent={{6,14},{14,8}}, lineColor={0,0,255}),Ellipse(
-          extent={{6,8},{14,2}}, lineColor={0,0,255}),Rectangle(
+          smooth=Smooth.None),Ellipse(extent={{6,20},{14,14}}, lineColor={0,0,255}),Ellipse(extent={{6,14},{14,8}}, lineColor={0,0,255}),Ellipse(extent={{6,8},{14,2}}, lineColor={0,0,255}),Rectangle(
           extent={{10,20},{20,-4}},
           pattern=LinePattern.None,
           lineColor={255,255,255},

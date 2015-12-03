@@ -2,10 +2,8 @@ within iPSL.Electrical.Wind.PSSE.WT3G;
 
 
 model Zeq_tn1 "Transformer equivalent impedance"
-  iPSL.Connectors.PwPin p annotation (Placement(transformation(extent={{-80,-10},
-            {-60,10}}), iconTransformation(extent={{-80,-10},{-60,10}})));
-  iPSL.Connectors.PwPin n annotation (Placement(transformation(extent={{60,-10},
-            {80,10}}), iconTransformation(extent={{60,-10},{80,10}})));
+  iPSL.Connectors.PwPin p annotation (Placement(transformation(extent={{-80,-10},{-60,10}}), iconTransformation(extent={{-80,-10},{-60,10}})));
+  iPSL.Connectors.PwPin n annotation (Placement(transformation(extent={{60,-10},{80,10}}), iconTransformation(extent={{60,-10},{80,10}})));
   parameter Real R "Resistance p.u.";
   parameter Real X "Reactance p.u.";
   parameter Real ti=1 "primary side turn's ratio";
@@ -27,15 +25,12 @@ equation
   -t*(Req*p.ir - Xeq*p.ii) = n.vr - p.vr*t;
   -t*(Req*p.ii + Xeq*p.ir) = n.vi - p.vi*t;
   annotation (
-    Icon(coordinateSystem(preserveAspectRatio=true, extent={{-100,-100},{100,
-            100}}), graphics={Rectangle(extent={{-60,40},{60,-42}}, lineColor={
-          0,0,255}),Rectangle(
+    Icon(coordinateSystem(preserveAspectRatio=true, extent={{-100,-100},{100,100}}), graphics={Rectangle(extent={{-60,40},{60,-42}}, lineColor={0,0,255}),Rectangle(
           extent={{-36,8},{32,-6}},
           lineColor={0,0,255},
           fillColor={95,95,95},
           fillPattern=FillPattern.Solid)}),
-    Diagram(coordinateSystem(preserveAspectRatio=true, extent={{-100,-100},{100,
-            100}}), graphics),
+    Diagram(coordinateSystem(preserveAspectRatio=true, extent={{-100,-100},{100,100}}), graphics),
     Documentation(info="<html>
 <p><br><span style=\"font-family: MS Shell Dlg 2;\">&LT;iPSL: iTesla Power System Library&GT;</span></p>
 <p><span style=\"font-family: MS Shell Dlg 2;\">Copyright 2015 RTE (France), AIA (Spain), KTH (Sweden) and DTU (Denmark)</span></p>

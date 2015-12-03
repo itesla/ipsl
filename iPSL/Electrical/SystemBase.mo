@@ -5,8 +5,7 @@ model SystemBase "System Base Definition"
   parameter Real S_b=100 "System base in MVA";
   parameter Real fn=50 "System Frequency in Hz";
   annotation (
-    Icon(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{140,
-            100}}), graphics={Rectangle(
+    Icon(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{140,100}}), graphics={Rectangle(
           extent={{-100,100},{140,-100}},
           lineColor={28,108,200},
           fillColor={255,255,255},
@@ -43,7 +42,6 @@ model SystemBase "System Base Definition"
     defaultAttributes="inner",
     missingInnerMessage="
 No 'System Data' component is defined. A default component will be used, and generate a system base of 100 MVA, and a frequency of 50 Hz",
-
     Diagram(coordinateSystem(extent={{-100,-100},{140,100}})),
     Documentation(info="<html>
 <p><br><span style=\"font-family: MS Shell Dlg 2;\">&LT;iPSL: iTesla Power System Library&GT;</span></p>

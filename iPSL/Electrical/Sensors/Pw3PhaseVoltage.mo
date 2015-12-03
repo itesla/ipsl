@@ -1,29 +1,21 @@
 within iPSL.Electrical.Sensors;
 
 
-model Pw3PhaseVoltage
-  "Voltage sensor for generator machine with internal transformer"
+model Pw3PhaseVoltage "Voltage sensor for generator machine with internal transformer"
   parameter Real RT "Step-up trafo Resistance in Machine (pu)";
   parameter Real XT "Step-up trafo Resistance in Machine (pu)";
   parameter Real r "Step-up trafo ratio in Machine";
-  iPSL.Connectors.PwPin p annotation (Placement(transformation(extent={{-60,-10},
-            {-40,10}}), iconTransformation(extent={{-60,-10},{-40,10}})));
-  Modelica.Blocks.Interfaces.RealOutput v annotation (Placement(transformation(
-          extent={{39,-32},{59,-12}}), iconTransformation(extent={{39,-32},{59,
-            -12}})));
-  iPSL.Connectors.PwPin n annotation (Placement(transformation(extent={{40,12},
-            {60,32}}), iconTransformation(extent={{40,12},{60,32}})));
+  iPSL.Connectors.PwPin p annotation (Placement(transformation(extent={{-60,-10},{-40,10}}), iconTransformation(extent={{-60,-10},{-40,10}})));
+  Modelica.Blocks.Interfaces.RealOutput v annotation (Placement(transformation(extent={{39,-32},{59,-12}}), iconTransformation(extent={{39,-32},{59,-12}})));
+  iPSL.Connectors.PwPin n annotation (Placement(transformation(extent={{40,12},{60,32}}), iconTransformation(extent={{40,12},{60,32}})));
 equation
   n.vr = p.vr;
   n.vi = p.vi;
   n.ir = -p.ir;
   n.ii = -p.ii;
-  v = sqrt((p.vr + RT*p.ir - XT*p.ii)*(p.vr + RT*p.ir - XT*p.ii) + (p.vi + RT*p.ii
-     + XT*p.ir)*(p.vi + RT*p.ii + XT*p.ir))*1.0/r;
+  v = sqrt((p.vr + RT*p.ir - XT*p.ii)*(p.vr + RT*p.ir - XT*p.ii) + (p.vi + RT*p.ii + XT*p.ir)*(p.vi + RT*p.ii + XT*p.ir))*1.0/r;
   annotation (
-    Icon(graphics={Rectangle(extent={{-40,40},{40,-40}}, lineColor={0,0,255}),
-          Rectangle(extent={{-30,32},{30,-32}}, lineColor={0,0,255}),Rectangle(
-          extent={{-20,20},{20,0}}, lineColor={0,0,255}),Text(
+    Icon(graphics={Rectangle(extent={{-40,40},{40,-40}}, lineColor={0,0,255}),Rectangle(extent={{-30,32},{30,-32}}, lineColor={0,0,255}),Rectangle(extent={{-20,20},{20,0}}, lineColor={0,0,255}),Text(
           extent={{-28,-18},{28,-30}},
           lineColor={0,0,255},
           textStyle={TextStyle.Bold},

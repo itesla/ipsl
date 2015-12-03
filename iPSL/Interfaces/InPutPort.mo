@@ -7,13 +7,11 @@ model InPutPort
 equation
   vi = vo;
   annotation (
-    Icon(graphics={Rectangle(extent={{-20,20},{20,-20}}, lineColor={0,0,255}),
-          Text(
+    Icon(graphics={Rectangle(extent={{-20,20},{20,-20}}, lineColor={0,0,255}),Text(
           extent={{-18,8},{18,-6}},
           lineColor={0,0,255},
           textString="Input")}),
-    Diagram(graphics={Rectangle(extent={{-20,20},{20,-20}}, lineColor={0,0,255}),
-          Text(
+    Diagram(graphics={Rectangle(extent={{-20,20},{20,-20}}, lineColor={0,0,255}),Text(
           extent={{-18,8},{18,-6}},
           lineColor={0,0,255},
           textString="Input")}),

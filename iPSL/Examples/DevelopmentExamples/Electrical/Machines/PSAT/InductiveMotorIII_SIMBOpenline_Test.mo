@@ -29,13 +29,11 @@ model InductiveMotorIII_SIMBOpenline_Test
         extent={{-25,-16},{25,16}},
         rotation=180,
         origin={-9,4})));
-  iPSL.Electrical.Buses.InfiniteBus infiniteBus(V=1.05, angle=0) annotation (
-      Placement(transformation(
+  iPSL.Electrical.Buses.InfiniteBus infiniteBus(V=1.05, angle=0) annotation (Placement(transformation(
         extent={{-16.5,-13.5},{16.5,13.5}},
         rotation=0,
         origin={-86.5,-15.5})));
-  inner iPSL.Electrical.SystemBase SysData(fn=60)
-    annotation (Placement(transformation(extent={{40,60},{64,80}})));
+  inner iPSL.Electrical.SystemBase SysData(fn=60) annotation (Placement(transformation(extent={{40,60},{64,80}})));
 equation
   connect(infiniteBus.p, pwLine2.n) annotation (Line(
       points={{-68.35,-15.5},{-48.175,-15.5},{-48.175,4},{-26.5,4}},
@@ -53,8 +51,7 @@ equation
       points={{8.5,-38},{30,-38},{30,-16},{42.32,-16}},
       color={0,0,255},
       smooth=Smooth.None));
-  annotation (Diagram(coordinateSystem(preserveAspectRatio=true, extent={{-100,
-            -100},{100,100}}), graphics), Documentation(info="<html>
+  annotation (Diagram(coordinateSystem(preserveAspectRatio=true, extent={{-100,-100},{100,100}}), graphics), Documentation(info="<html>
 <p><span style=\"font-family: MS Shell Dlg 2;\">&LT;iPSL: iTesla Power System Library&GT;</span></p>
 <p><span style=\"font-family: MS Shell Dlg 2;\">Copyright 2015 RTE (France), AIA (Spain), KTH (Sweden) and DTU (Denmark)</span></p>
 <ul>

@@ -66,8 +66,7 @@ model Order4test2_TG
         origin={127.5,-50.0},
         extent={{-10.0,-10.0},{10.0,10.0}},
         rotation=0)));
-  iPSL.Electrical.Controls.PSAT.TG.TGtypeII TGtypeII1 annotation (Placement(
-        visible=true, transformation(
+  iPSL.Electrical.Controls.PSAT.TG.TGtypeII TGtypeII1 annotation (Placement(visible=true, transformation(
         origin={-67.5,-27.5},
         extent={{-17.5,-12.5},{17.5,12.5}},
         rotation=0)));
@@ -83,8 +82,7 @@ model Order4test2_TG
     D=0,
     Sn=370,
     Vn=200) annotation (Placement(transformation(extent={{-55,30},{-25,60}})));
-  inner iPSL.Electrical.SystemBase SysData
-    annotation (Placement(transformation(extent={{50,80},{75,100}})));
+  inner iPSL.Electrical.SystemBase SysData annotation (Placement(transformation(extent={{50,80},{75,100}})));
 equation
   connect(pwLine4.n, pwLoadPQ1.p) annotation (Line(
       visible=true,
@@ -128,17 +126,14 @@ equation
       smooth=Smooth.None));
   connect(Generator.pm0, TGtypeII1.pm0) annotation (Line(
       points={{-52,28.5},{-5,28.5},{-5,85},{-85,85},{-85,-12.5},{-67.5,-12.5}},
-
       color={0,0,127},
       smooth=Smooth.None));
   connect(TGtypeII1.pm, Generator.pm) annotation (Line(
       points={{-48.25,-27.5},{-35,-27.5},{-35,25},{-65,25},{-65,37.5},{-55,37.5}},
-
       color={0,0,127},
       smooth=Smooth.None));
   connect(Generator.w, TGtypeII1.W) annotation (Line(
       points={{-23.5,58.5},{-15,58.5},{-15,-65},{-90,-65},{-90,-27.5},{-88.5,-27.5}},
-
       color={0,0,127},
       smooth=Smooth.None));
   connect(Generator.p, pwLine2.p) annotation (Line(

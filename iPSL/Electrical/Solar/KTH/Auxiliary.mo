@@ -1,7 +1,8 @@
 within iPSL.Electrical.Solar.KTH;
+
+
 model Auxiliary
   model InputSelectorEpsilon
-
     Modelica.Blocks.Interfaces.RealInput vd(start=700) annotation (Placement(
         visible=true,
         transformation(
@@ -176,9 +177,7 @@ model Auxiliary
   end InputSelectorEpsilon;
 
   model PVarray
-
-    Modelica.Blocks.Interfaces.RealInput V1(start=Vmp) "Voltage" annotation (
-        Placement(
+    Modelica.Blocks.Interfaces.RealInput V1(start=Vmp) "Voltage" annotation (Placement(
         visible=true,
         transformation(
           origin={-168.2602,-0.0},
@@ -188,11 +187,9 @@ model Auxiliary
           origin={-120.0,70.0},
           extent={{-20.0,-20.0},{20.0,20.0}},
           rotation=0)));
-    parameter Real Vt=(2*Vmp - Vocref)*(Iscref - Imp)/(Imp + (Iscref - Imp)*log(
-        (Iscref - Imp)/Iscref));
+    parameter Real Vt=(2*Vmp - Vocref)*(Iscref - Imp)/(Imp + (Iscref - Imp)*log((Iscref - Imp)/Iscref));
     parameter Real Rs=(Vt*log((Iscref - Imp)/Iscref) + Vocref - Vmp)/Imp;
-    Modelica.Blocks.Interfaces.RealInput E(start=Estc) "Irradiance" annotation
-      (Placement(
+    Modelica.Blocks.Interfaces.RealInput E(start=Estc) "Irradiance" annotation (Placement(
         visible=true,
         transformation(
           origin={-170.0,80.0},
@@ -202,8 +199,7 @@ model Auxiliary
           origin={-120.0,0.0},
           extent={{-20.0,-20.0},{20.0,20.0}},
           rotation=0)));
-    Modelica.Blocks.Interfaces.RealInput T(start=Tstc) "Temperature"
-      annotation (Placement(
+    Modelica.Blocks.Interfaces.RealInput T(start=Tstc) "Temperature" annotation (Placement(
         visible=true,
         transformation(
           origin={-168.0185,40.0},
@@ -215,10 +211,8 @@ model Auxiliary
           rotation=0)));
     parameter Real Imp=1;
     parameter Real Vmp=1;
-    parameter Real Iscref=1
-      "Module short-circuit current reference at reference temp and irradiance";
-    parameter Real Vocref=1
-      "Module open-circuit voltage reference at reference temp and irradiance";
+    parameter Real Iscref=1 "Module short-circuit current reference at reference temp and irradiance";
+    parameter Real Vocref=1 "Module open-circuit voltage reference at reference temp and irradiance";
     parameter Real Kv=1 "temperature correction factor for the voltage";
     parameter Real Ki=1 "temperature correction factor for the current";
     parameter Real Tstc=1 "Temperature at the standard test conditions";
@@ -346,7 +340,6 @@ model Auxiliary
   end PVarray;
 
   model AtoPU
-
     Modelica.Blocks.Interfaces.RealOutput y0 annotation (Placement(
         visible=true,
         transformation(
@@ -534,7 +527,6 @@ model Auxiliary
   end Calcurrent;
 
   model Capacitor
-
     Modelica.Blocks.Interfaces.RealOutput y0 annotation (Placement(
         visible=true,
         transformation(
@@ -618,7 +610,6 @@ model Auxiliary
   end Capacitor;
 
   model pu_to_A
-
     Modelica.Blocks.Interfaces.RealOutput y0 annotation (Placement(
         visible=true,
         transformation(
@@ -699,7 +690,6 @@ model Auxiliary
   end pu_to_A;
 
   model CurrentLimitdeadband
-
     Modelica.Blocks.Interfaces.RealInput idin annotation (Placement(
         visible=true,
         transformation(
@@ -750,8 +740,7 @@ model Auxiliary
           origin={17.4772,31.6741},
           extent={{-10.0,-10.0},{10.0,10.0}},
           rotation=0)));
-    Modelica.Blocks.Math.Abs abs1 annotation (Placement(visible=true,
-          transformation(
+    Modelica.Blocks.Math.Abs abs1 annotation (Placement(visible=true, transformation(
           origin={52.1853,70.0},
           extent={{-10.0,-10.0},{10.0,10.0}},
           rotation=0)));
@@ -760,28 +749,23 @@ model Auxiliary
           origin={5.0,70.0},
           extent={{-10.0,-10.0},{10.0,10.0}},
           rotation=0)));
-    Modelica.Blocks.Sources.Constant const(k=maxAbsCur) annotation (Placement(
-          visible=true, transformation(
+    Modelica.Blocks.Sources.Constant const(k=maxAbsCur) annotation (Placement(visible=true, transformation(
           origin={-140.0,95.0},
           extent={{-10.0,-10.0},{10.0,10.0}},
           rotation=0)));
-    Modelica.Blocks.Math.Product product1 annotation (Placement(visible=true,
-          transformation(
+    Modelica.Blocks.Math.Product product1 annotation (Placement(visible=true, transformation(
           origin={-75.0,83.3156},
           extent={{-10.0,-10.0},{10.0,10.0}},
           rotation=0)));
-    Modelica.Blocks.Math.Product product2 annotation (Placement(visible=true,
-          transformation(
+    Modelica.Blocks.Math.Product product2 annotation (Placement(visible=true, transformation(
           origin={-75.0,57.5},
           extent={{-10.0,-10.0},{10.0,10.0}},
           rotation=0)));
-    Modelica.Blocks.Math.Add add1(k2=-1) annotation (Placement(visible=true,
-          transformation(
+    Modelica.Blocks.Math.Add add1(k2=-1) annotation (Placement(visible=true, transformation(
           origin={-40.0,70.0},
           extent={{-10.0,-10.0},{10.0,10.0}},
           rotation=0)));
-    Modelica.Blocks.Math.Sqrt sqrt1 annotation (Placement(visible=true,
-          transformation(
+    Modelica.Blocks.Math.Sqrt sqrt1 annotation (Placement(visible=true, transformation(
           origin={82.1897,70.0},
           extent={{-10.0,-10.0},{10.0,10.0}},
           rotation=0)));
@@ -811,11 +795,11 @@ model Auxiliary
         origin={-56.5,79.6578},
         points={{-7.5,3.6578},{1.5,3.6578},{1.5,-3.6578},{4.5,-3.6578}},
         color={0,0,127}));
-    connect(iqin, product2.u1) annotation (Line(
+    connect(iqin, product2.u1)
+      annotation (Line(
         visible=true,
         origin={-102.8,54.8073},
-        points={{-57.2,-12.3073},{12.8,-12.3073},{12.8,7.9609},{15.8,7.9609},{
-            15.8,8.6927}},
+        points={{-57.2,-12.3073},{12.8,-12.3073},{12.8,7.9609},{15.8,7.9609},{15.8,8.6927}},
         color={0,0,127}));
     connect(iqin, product2.u2) annotation (Line(
         visible=true,
@@ -872,7 +856,6 @@ model Auxiliary
   end CurrentLimitdeadband;
 
   model PQ1
-
     iPSL.Connectors.PwPin p annotation (Placement(
         visible=true,
         transformation(
@@ -887,8 +870,7 @@ model Auxiliary
     parameter Real Sn=10;
     parameter Real CoB=Sn/SystemBase;
     parameter Real v0=1.00018548610126 "voltage magnitude after power flow, pu";
-    parameter Real anglev0=-0.0000253046024029618
-      "voltage angle after power flow";
+    parameter Real anglev0=-0.0000253046024029618 "voltage angle after power flow";
     parameter Real P0=0.4 "active power,pu";
     parameter Real Q0=0.3 "reactive power,pu";
     parameter Real Pref=P0*CoB;
@@ -898,8 +880,7 @@ model Auxiliary
     parameter Real Td=15 "d-axis inverter time constant";
     parameter Real Tq=15 "q-axis inverter time constant";
     parameter Real idref=(vq0*Qref + Pref*vd0)/(vq0^2 + vd0^2) "Initialitation";
-    parameter Real iqref=((-vd0*Qref) + Pref*vq0)/(vq0^2 + vd0^2)
-      "Initialitation";
+    parameter Real iqref=((-vd0*Qref) + Pref*vq0)/(vq0^2 + vd0^2) "Initialitation";
     Real idref1(start=idref);
     Real iqref1(start=iqref);
     Real v;
@@ -929,10 +910,8 @@ model Auxiliary
     der(iq) = (iqref1 - iq)/Tq;
     v = sqrt(p.vr^2 + p.vi^2);
     anglev = atan2(p.vi, p.vr);
-    p.ir = -iq
-      "change of sign due to the fact than in modelica when entering is + and in this case is going out";
-    p.ii = id
-      "change of sign due to the fact than in modelica when entering is + and in this case is going out";
+    p.ir = -iq "change of sign due to the fact than in modelica when entering is + and in this case is going out";
+    p.ii = id "change of sign due to the fact than in modelica when entering is + and in this case is going out";
     p.vr = vq;
     p.vi = -vd;
     annotation (
@@ -991,7 +970,6 @@ model Auxiliary
   end PQ1;
 
   model PI
-
     Modelica.Blocks.Interfaces.RealInput yi annotation (Placement(
         visible=true,
         transformation(
@@ -1089,7 +1067,6 @@ model Auxiliary
   end PI;
 
   model SimpleLagg
-
     Modelica.Blocks.Interfaces.RealInput yi annotation (Placement(
         visible=true,
         transformation(
@@ -1176,7 +1153,6 @@ model Auxiliary
   end SimpleLagg;
 
   model Terminator
-
     Modelica.Blocks.Interfaces.RealInput V annotation (Placement(
         visible=true,
         transformation(

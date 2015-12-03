@@ -2,8 +2,7 @@ within iPSL.Examples.DevelopmentExamples.Electrical.Branches.PSAT;
 
 
 model PhaseShiftingTransformer_Test
-  iPSL.Electrical.Loads.PSAT.LOADPQ lOADPQ2(Q_0=0.001, P_0=0.03)
-    annotation (Placement(transformation(extent={{34,-44},{54,-24}})));
+  iPSL.Electrical.Loads.PSAT.LOADPQ lOADPQ2(Q_0=0.001, P_0=0.03) annotation (Placement(transformation(extent={{34,-44},{54,-24}})));
   iPSL.Electrical.Branches.PwLine pwLine(
     R=0.01,
     X=0.1,
@@ -19,9 +18,7 @@ model PhaseShiftingTransformer_Test
     X=0.1,
     G=0,
     B=0.001/2) annotation (Placement(transformation(extent={{52,0},{72,20}})));
-  iPSL.Electrical.Branches.PSAT.PhaseShiftingTransformer.PSTransformer
-    pSTransformer
-    annotation (Placement(transformation(extent={{54,-22},{74,-2}})));
+  iPSL.Electrical.Branches.PSAT.PhaseShiftingTransformer.PSTransformer pSTransformer annotation (Placement(transformation(extent={{54,-22},{74,-2}})));
   iPSL.Electrical.Loads.PSAT.LOADPQ_variation lOADPQ1(
     P_0=0.02,
     Q_0=0.01,
@@ -32,15 +29,13 @@ model PhaseShiftingTransformer_Test
     Q2=0.01,
     Q3=-0.01,
     P2=0.02,
-    P3=-0.02)
-    annotation (Placement(transformation(extent={{110,-10},{130,10}})));
-  Modelica.Blocks.Sources.Sine sine1(amplitude=0.001, freqHz=0.2) annotation (
-      Placement(visible=true, transformation(
+    P3=-0.02) annotation (Placement(transformation(extent={{110,-10},{130,10}})));
+  Modelica.Blocks.Sources.Sine sine1(amplitude=0.001, freqHz=0.2)
+    annotation (Placement(visible=true, transformation(
         origin={-135.783,37.4652},
         extent={{-4.4802,-4.4802},{4.4802,4.4802}},
         rotation=0)));
-  Modelica.Blocks.Math.Add add2(k2=-1) annotation (Placement(visible=true,
-        transformation(
+  Modelica.Blocks.Math.Add add2(k2=-1) annotation (Placement(visible=true, transformation(
         origin={-113.106,30.6621},
         extent={{-6.3229,-6.3229},{6.3229,6.3229}},
         rotation=0)));
@@ -63,25 +58,18 @@ model PhaseShiftingTransformer_Test
     ra=0.001,
     xd1=0.302,
     M=10) annotation (Placement(transformation(extent={{-101,-11},{-81,9}})));
-  Modelica.Blocks.Math.Add add
-    annotation (Placement(transformation(extent={{-97,20},{-77,40}})));
+  Modelica.Blocks.Math.Add add annotation (Placement(transformation(extent={{-97,20},{-77,40}})));
   iPSL.Electrical.Branches.PSAT.TwoWindingTransformer twoWindingTransformer(
     Vn=13800,
     x=0.1,
     r=0.01,
     V_b=13800,
-    kT=13.8/20)
-    annotation (Placement(transformation(extent={{-60,-10},{-40,10}})));
-  iPSL.Electrical.Buses.Bus B1
-    annotation (Placement(transformation(extent={{-78,-10},{-58,10}})));
-  iPSL.Electrical.Buses.Bus B2
-    annotation (Placement(transformation(extent={{-42,-10},{-22,10}})));
-  iPSL.Electrical.Buses.Bus B3
-    annotation (Placement(transformation(extent={{14,-10},{34,10}})));
-  iPSL.Electrical.Buses.Bus B4
-    annotation (Placement(transformation(extent={{88,-10},{108,10}})));
-  inner iPSL.Electrical.SystemBase SysData
-    annotation (Placement(transformation(extent={{-40,60},{2,80}})));
+    kT=13.8/20) annotation (Placement(transformation(extent={{-60,-10},{-40,10}})));
+  iPSL.Electrical.Buses.Bus B1 annotation (Placement(transformation(extent={{-78,-10},{-58,10}})));
+  iPSL.Electrical.Buses.Bus B2 annotation (Placement(transformation(extent={{-42,-10},{-22,10}})));
+  iPSL.Electrical.Buses.Bus B3 annotation (Placement(transformation(extent={{14,-10},{34,10}})));
+  iPSL.Electrical.Buses.Bus B4 annotation (Placement(transformation(extent={{88,-10},{108,10}})));
+  inner iPSL.Electrical.SystemBase SysData annotation (Placement(transformation(extent={{-40,60},{2,80}})));
 equation
   connect(pwLine.n, pwLine1.n) annotation (Line(
       points={{-7,10},{10,10},{10,-10},{-5,-10}},
@@ -100,13 +88,11 @@ equation
       color={0,0,255},
       smooth=Smooth.None));
   connect(sine1.y, add2.u1) annotation (Line(
-      points={{-130.855,37.4652},{-127.427,37.4652},{-127.427,34.4558},{-120.693,
-          34.4558}},
+      points={{-130.855,37.4652},{-127.427,37.4652},{-127.427,34.4558},{-120.693,34.4558}},
       color={0,0,127},
       smooth=Smooth.None));
   connect(sine2.y, add2.u2) annotation (Line(
-      points={{-130.454,20.4802},{-127.227,20.4802},{-127.227,26.8684},{-120.693,
-          26.8684}},
+      points={{-130.454,20.4802},{-127.227,20.4802},{-127.227,26.8684},{-120.693,26.8684}},
       color={0,0,127},
       smooth=Smooth.None));
   connect(add2.y, add.u1) annotation (Line(
@@ -118,8 +104,7 @@ equation
       color={0,0,127},
       smooth=Smooth.None));
   connect(Gen1.pm0, Gen1.pm) annotation (Line(
-      points={{-99,-12},{-72,-12},{-72,8},{-70,8},{-70,-22},{-108,-22},{-108,-6},
-          {-101,-6}},
+      points={{-99,-12},{-72,-12},{-72,8},{-70,8},{-70,-22},{-108,-22},{-108,-6},{-101,-6}},
       color={0,0,127},
       smooth=Smooth.None));
   connect(Gen1.vf0, add.u2) annotation (Line(
@@ -167,8 +152,7 @@ equation
       color={0,0,255},
       smooth=Smooth.None));
   annotation (
-    Diagram(coordinateSystem(preserveAspectRatio=true, extent={{-140,-100},{140,
-            100}}), graphics),
+    Diagram(coordinateSystem(preserveAspectRatio=true, extent={{-140,-100},{140,100}}), graphics),
     Icon(coordinateSystem(extent={{-140,-100},{140,100}})),
     Documentation(info="<html>
 <table cellspacing=\"1\" cellpadding=\"1\" border=\"1\"><tr>

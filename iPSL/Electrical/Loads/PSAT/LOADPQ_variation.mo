@@ -1,6 +1,5 @@
 within iPSL.Electrical.Loads.PSAT;
-model LOADPQ_variation
-  "Equations come from the mathematical separation in between reals and imaginary of S=P+jQ=UI*"
+model LOADPQ_variation "Equations come from the mathematical separation in between reals and imaginary of S=P+jQ=UI*"
   extends BaseClasses.baseLoad;
   parameter Real t1 "Start time of first load variation (s)";
   parameter Real t2 "End time of first load variation (s)";

@@ -1,13 +1,11 @@
 within iPSL.Electrical.Controls.PSSE.TG.GGOV1;
 
 
-block Dm_select
-  "Output the minimum and the maximum element of the input vector"
+block Dm_select "Output the minimum and the maximum element of the input vector"
   parameter Real Dm;
-  Modelica.Blocks.Interfaces.RealOutput y annotation (Placement(transformation(
-          extent={{100,-12},{120,8}}, rotation=0)));
-  Modelica.Blocks.Interfaces.RealInput speed annotation (Placement(
-        transformation(extent={{6,-136},{46,-96}}), iconTransformation(
+  Modelica.Blocks.Interfaces.RealOutput y annotation (Placement(transformation(extent={{100,-12},{120,8}}, rotation=0)));
+  Modelica.Blocks.Interfaces.RealInput speed
+    annotation (Placement(transformation(extent={{6,-136},{46,-96}}), iconTransformation(
         extent={{-20,-20},{20,20}},
         rotation=0,
         origin={-120,-2})));
@@ -23,8 +21,7 @@ equation
           horizontalAlignment=TextAlignment.Left,
           origin={1,5},
           rotation=360,
-          textString="Dm_select"),Rectangle(extent={{-98,90},{96,-92}},
-          lineColor={0,0,255})}),
+          textString="Dm_select"),Rectangle(extent={{-98,90},{96,-92}}, lineColor={0,0,255})}),
     Documentation(info="<html>
 <p>
 Determines the minimum and maximum element of the input vector and
@@ -44,6 +41,5 @@ provide both values as output.
 <p><span style=\"font-family: MS Shell Dlg 2;\">The iPSL is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU Lesser General Public License for more details.</span></p>
 <p><span style=\"font-family: MS Shell Dlg 2;\">You should have received a copy of the GNU Lesser General Public License along with the iPSL. If not, see &LT;http://www.gnu.org/licenses/&GT;.</span></p>
 </html>"),
-    Diagram(coordinateSystem(preserveAspectRatio=true, extent={{-100,-100},{100,
-            100}}), graphics));
+    Diagram(coordinateSystem(preserveAspectRatio=true, extent={{-100,-100},{100,100}}), graphics));
 end Dm_select;

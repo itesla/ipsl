@@ -5,9 +5,7 @@ model LVACL
   //  The protection function is activated when
   //the terminal voltage drops below 0.8 pu and strangling power completely if the terminal voltage is lower than
   //0.4 pu. For voltages between 0.8 pu and 0.4 pu to reduce the active power is linear according to equation
-  Modelica.Blocks.Interfaces.RealOutput Ip_LVACL annotation (Placement(
-        transformation(extent={{54,-8},{72,10}}), iconTransformation(extent={{
-            54,-8},{72,10}})));
+  Modelica.Blocks.Interfaces.RealOutput Ip_LVACL annotation (Placement(transformation(extent={{54,-8},{72,10}}), iconTransformation(extent={{54,-8},{72,10}})));
   Modelica.Blocks.Interfaces.RealInput Vt annotation (Placement(transformation(
         extent={{-9,-9},{9,9}},
         rotation=90,
@@ -15,8 +13,8 @@ model LVACL
         extent={{-9,-9},{9,9}},
         rotation=90,
         origin={6,-60})));
-  Modelica.Blocks.Interfaces.RealInput Ip_LVPL annotation (Placement(
-        transformation(
+  Modelica.Blocks.Interfaces.RealInput Ip_LVPL
+    annotation (Placement(transformation(
         extent={{-9,-9},{9,9}},
         rotation=0,
         origin={-33,-3}), iconTransformation(extent={{-73,-3},{-55,15}})));
@@ -29,12 +27,8 @@ equation
     Ip_LVACL = Ip_LVPL*1.25*Vt;
   end if;
   annotation (
-    Diagram(coordinateSystem(preserveAspectRatio=true, extent={{-100,-100},{100,
-            100}}), graphics={Rectangle(extent={{-26,18},{20,-22}}, lineColor={
-          0,0,255})}),
-    Icon(coordinateSystem(preserveAspectRatio=true, extent={{-100,-100},{100,
-            100}}), graphics={Rectangle(extent={{-58,46},{56,-54}}, lineColor={
-          0,0,255}),Text(
+    Diagram(coordinateSystem(preserveAspectRatio=true, extent={{-100,-100},{100,100}}), graphics={Rectangle(extent={{-26,18},{20,-22}}, lineColor={0,0,255})}),
+    Icon(coordinateSystem(preserveAspectRatio=true, extent={{-100,-100},{100,100}}), graphics={Rectangle(extent={{-58,46},{56,-54}}, lineColor={0,0,255}),Text(
           extent={{-42,60},{46,0}},
           lineColor={0,0,255},
           textString="LVACL"),Line(

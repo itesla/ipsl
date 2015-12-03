@@ -11,17 +11,11 @@ model PwReactivePower "Active Power sensor. This model has been built assuming t
   parameter Real PN=1000;
   parameter Real PNALT=1100;
   parameter Real QNALT=sqrt(SN*SN - PN*PN);
-  parameter Real PUI=if UNIT == "SNREF" then SNREF elseif UNIT == "SN" then SN
-       elseif UNIT == "PN" then PN elseif UNIT == "MW" then 1 elseif UNIT ==
-      "PNALT" then PNALT else QNALT;
+  parameter Real PUI=if UNIT == "SNREF" then SNREF elseif UNIT == "SN" then SN elseif UNIT == "PN" then PN elseif UNIT == "MW" then 1 elseif UNIT == "PNALT" then PNALT else QNALT;
   parameter Real yScale=SNREF/PUI;
-  iPSL.Connectors.PwPin p annotation (Placement(transformation(extent={{-60,-10},
-            {-40,10}}), iconTransformation(extent={{-60,-10},{-40,10}})));
-  Modelica.Blocks.Interfaces.RealOutput sortie annotation (Placement(
-        transformation(extent={{39,-32},{59,-12}}), iconTransformation(extent={
-            {39,-32},{59,-12}})));
-  iPSL.Connectors.PwPin n annotation (Placement(transformation(extent={{40,12},
-            {60,32}}), iconTransformation(extent={{40,12},{60,32}})));
+  iPSL.Connectors.PwPin p annotation (Placement(transformation(extent={{-60,-10},{-40,10}}), iconTransformation(extent={{-60,-10},{-40,10}})));
+  Modelica.Blocks.Interfaces.RealOutput sortie annotation (Placement(transformation(extent={{39,-32},{59,-12}}), iconTransformation(extent={{39,-32},{59,-12}})));
+  iPSL.Connectors.PwPin n annotation (Placement(transformation(extent={{40,12},{60,32}}), iconTransformation(extent={{40,12},{60,32}})));
 equation
   n.vr = p.vr;
   n.vi = p.vi;
@@ -29,9 +23,7 @@ equation
   n.ii = -p.ii;
   sortie = (p.vi*p.ir - p.vr*p.ii)*yScale;
   annotation (
-    Icon(graphics={Rectangle(extent={{-40,40},{40,-40}}, lineColor={0,0,255}),
-          Rectangle(extent={{-30,32},{30,-32}}, lineColor={0,0,255}),Rectangle(
-          extent={{-20,20},{20,0}}, lineColor={0,0,255}),Text(
+    Icon(graphics={Rectangle(extent={{-40,40},{40,-40}}, lineColor={0,0,255}),Rectangle(extent={{-30,32},{30,-32}}, lineColor={0,0,255}),Rectangle(extent={{-20,20},{20,0}}, lineColor={0,0,255}),Text(
           extent={{-26,-12},{-6,-28}},
           lineColor={0,0,255},
           textStyle={TextStyle.Bold},

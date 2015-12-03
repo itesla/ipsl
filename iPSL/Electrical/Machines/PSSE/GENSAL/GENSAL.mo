@@ -39,28 +39,20 @@ protected
   parameter Complex a(re=0, im=Xq - Xppd);
   parameter Complex Epqp=PSIpp0 + a*It;
   parameter Real delta0=arg(Epqp) "rotor angle in radians";
-  parameter Complex VT(re=V_0*cos(anglev_rad), im=V_0*sin(anglev_rad))
-    "Complex terminal voltage";
+  parameter Complex VT(re=V_0*cos(anglev_rad), im=V_0*sin(anglev_rad)) "Complex terminal voltage";
   parameter Complex S(re=p0, im=q0) "Complex power on machine base";
   parameter Complex It=conj(S/VT) "Terminal current";
-  parameter Complex DQ_dq(re=cos(delta0), im=-sin(delta0))
-    "Parks transformation";
+  parameter Complex DQ_dq(re=cos(delta0), im=-sin(delta0)) "Parks transformation";
   parameter Complex I_dq=conj(It*DQ_dq);
   //Initialization of current and voltage components in synchronous reference frame.
   parameter Real iq0=real(I_dq) "q-axis component of intitial current";
   parameter Real id0=imag(I_dq) "d-axis component of intitial current";
-  parameter Real ud0=V_0*cos(anglev_rad - delta0 + pi/2)
-    "d-axis component of intitial voltage";
-  parameter Real uq0=V_0*sin(anglev_rad - delta0 + pi/2)
-    "q-axis component of intitial voltage";
-  parameter Complex PSIpp0_dq=PSIpp0*DQ_dq
-    "Flux linkage in rotor reference frame";
-  parameter Real PSIppq0=-imag(PSIpp0_dq)
-    "q-axis component of the sub-transient flux linkage";
-  parameter Real PSIppd0=real(PSIpp0_dq)
-    "d-axis component of the sub-transient flux linkage";
-  parameter Real PSIkd0=(PSIppd0 - (Xpd - Xl)*K3d*id0)/(K3d + K4d)
-    "d-axis initial rotor flux linkage";
+  parameter Real ud0=V_0*cos(anglev_rad - delta0 + pi/2) "d-axis component of intitial voltage";
+  parameter Real uq0=V_0*sin(anglev_rad - delta0 + pi/2) "q-axis component of intitial voltage";
+  parameter Complex PSIpp0_dq=PSIpp0*DQ_dq "Flux linkage in rotor reference frame";
+  parameter Real PSIppq0=-imag(PSIpp0_dq) "q-axis component of the sub-transient flux linkage";
+  parameter Real PSIppd0=real(PSIpp0_dq) "d-axis component of the sub-transient flux linkage";
+  parameter Real PSIkd0=(PSIppd0 - (Xpd - Xl)*K3d*id0)/(K3d + K4d) "d-axis initial rotor flux linkage";
   parameter Real PSId0=PSIppd0 - Xppd*id0;
   parameter Real PSIq0=(-PSIppq0) - Xppq*iq0;
   //Initialization mechanical power and field voltage.
@@ -71,10 +63,8 @@ protected
       S12,
       1,
       1.2);
-  parameter Real efd0=Epq0*(1 + dsat) + (Xd - Xpd)*id0
-    "Initial field voltage magnitude";
-  parameter Real pm0=p0 + R_a*iq0*iq0 + R_a*id0*id0
-    "Initial mechanical power, machine base";
+  parameter Real efd0=Epq0*(1 + dsat) + (Xd - Xpd)*id0 "Initial field voltage magnitude";
+  parameter Real pm0=p0 + R_a*iq0*iq0 + R_a*id0*id0 "Initial mechanical power, machine base";
   // Constants
   parameter Real K1d=(Xpd - Xppd)*(Xd - Xpd)/(Xpd - Xl)^2;
   parameter Real K2d=(Xpd - Xl)*(Xppd - Xl)/(Xpd - Xppd);
@@ -107,12 +97,9 @@ equation
   uq = PSId - R_a*iq;
   //flow, changed from machine base to system bas
   annotation (
-    Placement(transformation(extent={{74,6},{94,26}}), iconTransformation(
-          extent={{58,-90},{74,-74}})),
-    Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{
-            100,100}})),
-    Icon(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,
-            100}}), graphics={Text(
+    Placement(transformation(extent={{74,6},{94,26}}), iconTransformation(extent={{58,-90},{74,-74}})),
+    Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,100}})),
+    Icon(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,100}}), graphics={Text(
           extent={{-58,62},{52,-64}},
           lineColor={0,0,255},
           textString="GENSAL")}),

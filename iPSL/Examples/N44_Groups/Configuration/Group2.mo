@@ -21,33 +21,22 @@ model Group2 "Machine configuration of synchronous machine with regulators: GENS
     Xl=0.1154 "leakage reactance",
     S10=0.1024,
     S12=0.2742,
-    S_b=1000)
-    annotation (Placement(transformation(extent={{-80,-28},{-28,26}})));
-  Modelica.Blocks.Sources.Constant cte(k=0)
-    annotation (Placement(transformation(extent={{-143,-17},{-133,-7}})));
-  iPSL.Connectors.PwPin p annotation (Placement(transformation(rotation=0,
-          extent={{100,-10},{120,10}}), iconTransformation(extent={{100,-10},{
-            120,10}})));
+    S_b=1000) annotation (Placement(transformation(extent={{-80,-28},{-28,26}})));
+  Modelica.Blocks.Sources.Constant cte(k=0) annotation (Placement(transformation(extent={{-143,-17},{-133,-7}})));
+  iPSL.Connectors.PwPin p annotation (Placement(transformation(rotation=0, extent={{100,-10},{120,10}}), iconTransformation(extent={{100,-10},{120,10}})));
 equation
-  connect(p, gENSAL.p) annotation (Line(points={{110,0},{32,0},{32,-1},{-25.4,-1}},
-        color={0,0,255}));
+  connect(p, gENSAL.p) annotation (Line(points={{110,0},{32,0},{32,-1},{-25.4,-1}}, color={0,0,255}));
   connect(p, p) annotation (Line(
       points={{110,0},{104,0},{104,0},{110,0}},
       color={0,0,255},
       smooth=Smooth.None));
-  connect(gENSAL.EFD, gENSAL.EFD0) annotation (Line(points={{-79.48,-14.5},{-92,
-          -14.5},{-92,-44},{-14,-44},{-14,-19.9},{-25.92,-19.9}}, color={0,0,
-          127}));
-  connect(gENSAL.PMECH, gENSAL.PMECH0) annotation (Line(points={{-79.48,12.5},{
-          -92,12.5},{-92,42},{-8,42},{-8,-9.1},{-25.92,-9.1}}, color={0,0,127}));
+  connect(gENSAL.EFD, gENSAL.EFD0) annotation (Line(points={{-79.48,-14.5},{-92,-14.5},{-92,-44},{-14,-44},{-14,-19.9},{-25.92,-19.9}}, color={0,0,127}));
+  connect(gENSAL.PMECH, gENSAL.PMECH0) annotation (Line(points={{-79.48,12.5},{-92,12.5},{-92,42},{-8,42},{-8,-9.1},{-25.92,-9.1}}, color={0,0,127}));
   annotation (
-    Icon(coordinateSystem(preserveAspectRatio=true, extent={{-100,-100},{100,
-            100}}), graphics={Ellipse(extent={{-14,-42},{74,38}}, lineColor={0,
-          0,255}),Line(
+    Icon(coordinateSystem(preserveAspectRatio=true, extent={{-100,-100},{100,100}}), graphics={Ellipse(extent={{-14,-42},{74,38}}, lineColor={0,0,255}),Line(
           points={{-2,-12},{18,8},{38,-12},{58,8}},
           color={0,0,255},
-          smooth=Smooth.None),Ellipse(extent={{-100,-100},{101,100}}, lineColor
-          ={0,0,255}),Text(
+          smooth=Smooth.None),Ellipse(extent={{-100,-100},{101,100}}, lineColor={0,0,255}),Text(
           extent={{-91,6},{-22,-12}},
           lineColor={0,0,255},
           textStyle={TextStyle.Italic},
@@ -69,7 +58,6 @@ HYGOV")}),
 <p><span style=\"font-family: MS Shell Dlg 2;\">The iPSL is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU Lesser General Public License for more details.</span></p>
 <p><span style=\"font-family: MS Shell Dlg 2;\">You should have received a copy of the GNU Lesser General Public License along with the iPSL. If not, see &LT;http://www.gnu.org/licenses/&GT;.</span></p>
 </html>"),
-    Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{
-            100,100}})));
+    Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,100}})));
 end Group2;
 

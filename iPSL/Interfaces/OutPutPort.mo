@@ -7,13 +7,11 @@ model OutPutPort "OutPutPort for plotting output results"
 equation
   vi = vo;
   annotation (
-    Icon(graphics={Rectangle(extent={{-20,20},{40,-20}}, lineColor={0,0,255}),
-          Text(
+    Icon(graphics={Rectangle(extent={{-20,20},{40,-20}}, lineColor={0,0,255}),Text(
           extent={{-8,10},{26,-8}},
           lineColor={0,0,255},
           textString="Out")}),
-    Diagram(graphics={Rectangle(extent={{-30,20},{30,-20}}, lineColor={0,0,255}),
-          Text(
+    Diagram(graphics={Rectangle(extent={{-30,20},{30,-20}}, lineColor={0,0,255}),Text(
           extent={{-18,10},{16,-8}},
           lineColor={0,0,255},
           textString="Out")}),

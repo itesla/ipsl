@@ -1,15 +1,11 @@
 within iPSL.NonElectrical.Nonlinear;
 
 
-model SaturationBlockTan
-  "Block 1 in the OEL to decide the input signal of MIN Gate"
+model SaturationBlockTan "Block 1 in the OEL to decide the input signal of MIN Gate"
   parameter Real r "Exiciter parameter";
   parameter Real f "Exiciter parameter";
-  Modelica.Blocks.Interfaces.RealInput p1 annotation (Placement(transformation(
-          extent={{-86,-10},{-66,10}}), iconTransformation(extent={{-80,-10},{-60,
-            10}})));
-  Modelica.Blocks.Interfaces.RealOutput n1 annotation (Placement(transformation(
-          extent={{46,-10},{66,10}}), iconTransformation(extent={{60,-6},{72,6}})));
+  Modelica.Blocks.Interfaces.RealInput p1 annotation (Placement(transformation(extent={{-86,-10},{-66,10}}), iconTransformation(extent={{-80,-10},{-60,10}})));
+  Modelica.Blocks.Interfaces.RealOutput n1 annotation (Placement(transformation(extent={{46,-10},{66,10}}), iconTransformation(extent={{60,-6},{72,6}})));
 equation
   if p1 <= (-0.1) then
     n1 = -1;
@@ -19,10 +15,8 @@ equation
     n1 = tan(r)*p1 + f;
   end if;
   annotation (
-    Diagram(coordinateSystem(preserveAspectRatio=true, extent={{-60,-60},{60,60}}),
-        graphics),
-    Icon(coordinateSystem(preserveAspectRatio=true, extent={{-60,-60},{60,60}}),
-        graphics={Rectangle(
+    Diagram(coordinateSystem(preserveAspectRatio=true, extent={{-60,-60},{60,60}}), graphics),
+    Icon(coordinateSystem(preserveAspectRatio=true, extent={{-60,-60},{60,60}}), graphics={Rectangle(
           extent={{-60,60},{60,-60}},
           lineColor={0,0,255},
           fillColor={255,255,255},

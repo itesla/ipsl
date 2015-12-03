@@ -3,20 +3,16 @@ within iPSL.Electrical.Branches.Eurostag;
 
 model PwDetailedTransformer "Two winding tap changer transformer.
                   2014/03/10"
-  iPSL.Connectors.PwPin p annotation (Placement(transformation(extent={{-80,-8},
-            {-60,12}}), iconTransformation(extent={{-80,-8},{-60,12}})));
-  iPSL.Connectors.PwPin n annotation (Placement(transformation(extent={{60,-8},
-            {80,12}}), iconTransformation(extent={{60,-8},{80,12}})));
+  iPSL.Connectors.PwPin p annotation (Placement(transformation(extent={{-80,-8},{-60,12}}), iconTransformation(extent={{-80,-8},{-60,12}})));
+  iPSL.Connectors.PwPin n annotation (Placement(transformation(extent={{60,-8},{80,12}}), iconTransformation(extent={{60,-8},{80,12}})));
   parameter Real Snom "apparent nominal power";
   parameter Real SNREF "network base power";
   parameter Real Pcu "rated copper losses (% base tfo)";
   parameter Real Pfe "rated iron losses (% base tfo)";
-  parameter Real IM
-    "magnetizing current (noload current) (% base (Snom,V(Nnom)))";
+  parameter Real IM "magnetizing current (noload current) (% base (Snom,V(Nnom)))";
   parameter Real ESAT=0 "exponent expressing saturation";
   parameter Real Nnom "nominal tap number";
-  parameter Real Ntap
-    "initial tap number (here tap N because taps are considered fixed)";
+  parameter Real Ntap "initial tap number (here tap N because taps are considered fixed)";
   //  parameter Real V1tnom "Sending side voltage for nominal tap";
   //  parameter Real V2tnom "Receiving side voltage for nominal tap";
   parameter Real V1 "Sending side voltage for tap N";
@@ -56,17 +52,13 @@ equation
   end if;
   Go = Pfe*Snom/(SNREF*100);
   //B = Snom/SNREF*(CIM/100)*(U1nom/V1)^(ESAT+1)*1^(-ESAT)*(sqrt(p.vr*p.vr+p.vi*p.vi))^(ESAT-1); "If ESAT>1 use this equation"
-  B = Snom/SNREF*CIM/100*(U1nom/V1)^(ESAT + 1)*1^(-ESAT)
-    "If ESAT=1 use this equation";
-  p.ir*R - p.ii*X = (-n.vi*ki) - n.vr*kr + p.vr*(kr*kr + ki*ki + k*k*Go*R + B*X)
-     - p.vi*(k*k*Go*X - B*R);
-  p.ir*X + p.ii*R = n.vr*ki - n.vi*kr + p.vr*(k*k*Go*X - B*R) + p.vi*(kr*kr +
-    ki*ki + k*k*Go*R + B*X);
+  B = Snom/SNREF*CIM/100*(U1nom/V1)^(ESAT + 1)*1^(-ESAT) "If ESAT=1 use this equation";
+  p.ir*R - p.ii*X = (-n.vi*ki) - n.vr*kr + p.vr*(kr*kr + ki*ki + k*k*Go*R + B*X) - p.vi*(k*k*Go*X - B*R);
+  p.ir*X + p.ii*R = n.vr*ki - n.vi*kr + p.vr*(k*k*Go*X - B*R) + p.vi*(kr*kr + ki*ki + k*k*Go*R + B*X);
   n.ir*R - n.ii*X = n.vr - kr*p.vr + ki*p.vi;
   n.ir*X + n.ii*R = n.vi - kr*p.vi - ki*p.vr;
   annotation (
-    Icon(graphics={Rectangle(extent={{-60,40},{60,-40}}, lineColor={0,0,255}),
-          Ellipse(
+    Icon(graphics={Rectangle(extent={{-60,40},{60,-40}}, lineColor={0,0,255}),Ellipse(
           extent={{-26,16},{6,-16}},
           lineColor={0,0,255},
           lineThickness=1),Ellipse(

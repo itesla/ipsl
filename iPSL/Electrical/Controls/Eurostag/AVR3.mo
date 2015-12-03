@@ -7,37 +7,23 @@ model AVR3 "Voltage regulator. Developed by AIA. 2013"
   parameter Real TE;
   parameter Real init_V1;
   parameter Real init_V2;
-  Modelica.Blocks.Math.Gain imGain(k=Kgain)
-    annotation (Placement(transformation(extent={{-2,18},{20,40}})));
-  Modelica.Blocks.Interfaces.RealOutput pin_EFD annotation (Placement(
-        transformation(extent={{60,-10},{79,10}}), iconTransformation(extent={{
-            59,-10},{79,10}})));
-  Modelica.Blocks.Interfaces.RealInput pin_TerminalVoltage annotation (
-      Placement(transformation(extent={{-61,-10},{-41,10}}), iconTransformation(
-          extent={{-61,-10},{-41,10}})));
-  Modelica.Blocks.Sources.Constant imSetPoint(k=init_V1)
-    annotation (Placement(transformation(extent={{-90,38},{-68,60}})));
+  Modelica.Blocks.Math.Gain imGain(k=Kgain) annotation (Placement(transformation(extent={{-2,18},{20,40}})));
+  Modelica.Blocks.Interfaces.RealOutput pin_EFD annotation (Placement(transformation(extent={{60,-10},{79,10}}), iconTransformation(extent={{59,-10},{79,10}})));
+  Modelica.Blocks.Interfaces.RealInput pin_TerminalVoltage annotation (Placement(transformation(extent={{-61,-10},{-41,10}}), iconTransformation(extent={{-61,-10},{-41,10}})));
+  Modelica.Blocks.Sources.Constant imSetPoint(k=init_V1) annotation (Placement(transformation(extent={{-90,38},{-68,60}})));
   iPSL.NonElectrical.Continuous.SimpleLag imSimpleLag(
     K=KE,
     T=TE,
-    y_start=init_V2)
-    annotation (Placement(transformation(extent={{34,20},{52,38}})));
-  Modelica.Blocks.Math.Add add1(k2=-1)
-    annotation (Placement(transformation(extent={{-40,20},{-20,40}})));
+    y_start=init_V2) annotation (Placement(transformation(extent={{34,20},{52,38}})));
+  Modelica.Blocks.Math.Add add1(k2=-1) annotation (Placement(transformation(extent={{-40,20},{-20,40}})));
 equation
-  connect(imGain.y, imSimpleLag.u) annotation (Line(points={{21.1,29},{26.55,29},
-          {26.55,29},{32.2,29}}, color={0,0,127}));
-  connect(imSimpleLag.y, pin_EFD) annotation (Line(points={{52.9,29},{80,29},{
-          80,0},{69.5,0}}, color={0,0,127}));
-  connect(add1.y, imGain.u)
-    annotation (Line(points={{-19,30},{-4.2,30},{-4.2,29}}, color={0,0,127}));
-  connect(imSetPoint.y, add1.u1) annotation (Line(points={{-66.9,49},{-50,49},{
-          -50,36},{-42,36}}, color={0,0,127}));
-  connect(add1.u2, pin_TerminalVoltage)
-    annotation (Line(points={{-42,24},{-51,24},{-51,0}}, color={0,0,127}));
+  connect(imGain.y, imSimpleLag.u) annotation (Line(points={{21.1,29},{26.55,29},{26.55,29},{32.2,29}}, color={0,0,127}));
+  connect(imSimpleLag.y, pin_EFD) annotation (Line(points={{52.9,29},{80,29},{80,0},{69.5,0}}, color={0,0,127}));
+  connect(add1.y, imGain.u) annotation (Line(points={{-19,30},{-4.2,30},{-4.2,29}}, color={0,0,127}));
+  connect(imSetPoint.y, add1.u1) annotation (Line(points={{-66.9,49},{-50,49},{-50,36},{-42,36}}, color={0,0,127}));
+  connect(add1.u2, pin_TerminalVoltage) annotation (Line(points={{-42,24},{-51,24},{-51,0}}, color={0,0,127}));
   annotation (
-    Icon(graphics={Rectangle(extent={{-40,40},{60,-40}}, lineColor={0,0,255}),
-          Text(
+    Icon(graphics={Rectangle(extent={{-40,40},{60,-40}}, lineColor={0,0,255}),Text(
           extent={{58,-10},{-40,12}},
           lineColor={0,0,255},
           textString="AVR3")}),
@@ -56,6 +42,5 @@ equation
 <p><span style=\"font-family: MS Shell Dlg 2;\">The iPSL is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU Lesser General Public License for more details.</span></p>
 <p><span style=\"font-family: MS Shell Dlg 2;\">You should have received a copy of the GNU Lesser General Public License along with the iPSL. If not, see &LT;http://www.gnu.org/licenses/&GT;.</span></p>
 </html>"),
-    Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{
-            100,100}})));
+    Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,100}})));
 end AVR3;

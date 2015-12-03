@@ -11,9 +11,7 @@ model InfiniteBus2
         extent={{-10.0,-10.0},{10.0,10.0}},
         rotation=0)));
   parameter Real angle "Bus voltage angle (deg)";
-  Modelica.Blocks.Interfaces.RealInput V "Bus voltage magnitude (pu)"
-    annotation (Placement(transformation(extent={{-120,-10},{-100,10}}),
-        iconTransformation(extent={{-120,-10},{-100,10}})));
+  Modelica.Blocks.Interfaces.RealInput V "Bus voltage magnitude (pu)" annotation (Placement(transformation(extent={{-120,-10},{-100,10}}), iconTransformation(extent={{-120,-10},{-100,10}})));
 equation
   p.vr = V*cos(angle);
   p.vi = V*sin(angle);

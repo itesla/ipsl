@@ -77,8 +77,7 @@ model TGTypeV_test
     gmax=1,
     gmin=0,
     Tw=1,
-    Pref=0.160552)
-    annotation (Placement(transformation(extent={{-78,-22},{-56,-6}})));
+    Pref=0.160552) annotation (Placement(transformation(extent={{-78,-22},{-56,-6}})));
   Modelica.Blocks.Sources.Sine sine(
     amplitude=0.001,
     freqHz=0.2,
@@ -99,8 +98,7 @@ model TGTypeV_test
         extent={{-8,-8},{8,8}},
         rotation=180,
         origin={-28,-36})));
-  inner iPSL.Electrical.SystemBase SysData
-    annotation (Placement(transformation(extent={{0,60},{44,80}})));
+  inner iPSL.Electrical.SystemBase SysData annotation (Placement(transformation(extent={{0,60},{44,80}})));
 equation
   connect(pwLine4.n, pwLoadPQ1.p) annotation (Line(
       visible=true,
@@ -131,27 +129,24 @@ equation
       origin={8.8634,-5.6714},
       points={{0,10},{0,-4},{0,-4}}));
   connect(GenOrder3.vf0, GenOrder3.vf) annotation (Line(
-      points={{-40.6689,10.9112},{-2,10.9112},{-2,16},{-54,16},{-54,0.936599},{
-          -44,0.936599}},
+      points={{-40.6689,10.9112},{-2,10.9112},{-2,16},{-54,16},{-54,0.936599},{-44,0.936599}},
       color={0,0,127},
       smooth=Smooth.None));
   connect(tGModel5_1.Pm, GenOrder3.pm) annotation (Line(
       points={{-54.57,-14.08},{-48,-14.08},{-48,-15.6878},{-44,-15.6878}},
       color={0,0,127},
       smooth=Smooth.None));
-  connect(GenOrder3.w, tGModel5_1.w) annotation (Line(
-      points={{-9.02303,7.58636},{0,7.58636},{0,-26},{-86,-26},{-86,-14},{-80,-14},
-          {-80,-14.88},{-79.87,-14.88}},
+  connect(GenOrder3.w, tGModel5_1.w)
+    annotation (Line(
+      points={{-9.02303,7.58636},{0,7.58636},{0,-26},{-86,-26},{-86,-14},{-80,-14},{-80,-14.88},{-79.87,-14.88}},
       color={0,0,127},
       smooth=Smooth.None));
   connect(GenOrder3.pm0, tGModel5_1.w1) annotation (Line(
-      points={{-40.6689,-25.6624},{0,-25.6624},{0,18},{-88,18},{-88,-9.52},{-79.98,
-          -9.52}},
+      points={{-40.6689,-25.6624},{0,-25.6624},{0,18},{-88,18},{-88,-9.52},{-79.98,-9.52}},
       color={0,0,127},
       smooth=Smooth.None));
   connect(sine.y, add.u1) annotation (Line(
       points={{39.4,-40},{-16,-40},{-16,-40},{-18,-40},{-18,-40},{-18.4,-40.8}},
-
       color={0,0,127},
       smooth=Smooth.None));
   connect(sine1.y, add.u2) annotation (Line(
@@ -162,8 +157,7 @@ equation
       points={{-36.8,-36},{-88,-36},{-88,-19.2},{-79.87,-19.2}},
       color={0,0,127},
       smooth=Smooth.None));
-  annotation (Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,
-            -100},{100,100}})), Documentation(info="<html>
+  annotation (Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,100}})), Documentation(info="<html>
 <p><span style=\"font-family: MS Shell Dlg 2;\">&LT;iPSL: iTesla Power System Library&GT;</span></p>
 <p><span style=\"font-family: MS Shell Dlg 2;\">Copyright 2015 RTE (France), AIA (Spain), KTH (Sweden) and DTU (Denmark)</span></p>
 <ul>

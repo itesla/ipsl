@@ -1,6 +1,5 @@
 within iPSL.Connectors;
-expandable connector PwPinExt
-  "connector for electrical blocks treating voltage and current as complex variables"
+expandable connector PwPinExt "connector for electrical blocks treating voltage and current as complex variables"
   iPSL.Connectors.PwPin p;
   annotation (
     defaultComponentName="u",

@@ -1,30 +1,18 @@
 within iPSL.Electrical.Branches.PSAT;
 
 
-model TwoWindingTransformerFixedTapRatio
-  "Modeled as series reactances without iron losses"
-  iPSL.Connectors.PwPin p
-    annotation (Placement(transformation(extent={{-120,-10},{-100,10}})));
-  iPSL.Connectors.PwPin n
-    annotation (Placement(transformation(extent={{100,-10},{120,10}})));
-  parameter Real Sb=100 "System base power (MVA)"
-    annotation (Dialog(group="Power flow data"));
-  parameter Real Sn=100 "Power rating (MVA)"
-    annotation (Dialog(group="Power flow data"));
-  parameter Real Vbus=400000 "Sending end bus voltage"
-    annotation (Dialog(group="Power flow data"));
-  parameter Real Vn=400000 "Voltage rating (kV)"
-    annotation (Dialog(group="Power flow data"));
-  parameter Real fn=50 "Frequency rating (Hz)"
-    annotation (Dialog(group="Power flow data"));
-  parameter Real kT=1 "Nominal tap ratio (V1/V2)"
-    annotation (Dialog(group="Transformer data"));
-  parameter Real x=0.20 "Reactance (pu)"
-    annotation (Dialog(group="Transformer data"));
-  parameter Real r=0.01 "resistance (pu)"
-    annotation (Dialog(group="Transformer data"));
-  parameter Real m=1.0 "Fixed tap ratio"
-    annotation (Dialog(group="Transformer data"));
+model TwoWindingTransformerFixedTapRatio "Modeled as series reactances without iron losses"
+  iPSL.Connectors.PwPin p annotation (Placement(transformation(extent={{-120,-10},{-100,10}})));
+  iPSL.Connectors.PwPin n annotation (Placement(transformation(extent={{100,-10},{120,10}})));
+  parameter Real Sb=100 "System base power (MVA)" annotation (Dialog(group="Power flow data"));
+  parameter Real Sn=100 "Power rating (MVA)" annotation (Dialog(group="Power flow data"));
+  parameter Real Vbus=400000 "Sending end bus voltage" annotation (Dialog(group="Power flow data"));
+  parameter Real Vn=400000 "Voltage rating (kV)" annotation (Dialog(group="Power flow data"));
+  parameter Real fn=50 "Frequency rating (Hz)" annotation (Dialog(group="Power flow data"));
+  parameter Real kT=1 "Nominal tap ratio (V1/V2)" annotation (Dialog(group="Transformer data"));
+  parameter Real x=0.20 "Reactance (pu)" annotation (Dialog(group="Transformer data"));
+  parameter Real r=0.01 "resistance (pu)" annotation (Dialog(group="Transformer data"));
+  parameter Real m=1.0 "Fixed tap ratio" annotation (Dialog(group="Transformer data"));
 protected
   parameter Real Vb2new=Vbus*Vbus;
   parameter Real Vb2old=Vn*Vn;
@@ -36,8 +24,7 @@ equation
   rT*n.ir - xT*n.ii = n.vr - 1/m*p.vr;
   xT*n.ir + rT*n.ii = n.vi - 1/m*p.vi;
   annotation (
-    Diagram(coordinateSystem(preserveAspectRatio=true, extent={{-100,-100},{100,
-            100}}), graphics),
+    Diagram(coordinateSystem(preserveAspectRatio=true, extent={{-100,-100},{100,100}}), graphics),
     Documentation(info="<html>
 <table cellspacing=\"1\" cellpadding=\"1\" border=\"1\"><tr>
 <td><p>Reference</p></td>
@@ -70,16 +57,13 @@ equation
 <p><span style=\"font-family: MS Shell Dlg 2;\">The iPSL is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU Lesser General Public License for more details.</span></p>
 <p><span style=\"font-family: MS Shell Dlg 2;\">You should have received a copy of the GNU Lesser General Public License along with the iPSL. If not, see &LT;http://www.gnu.org/licenses/&GT;.</span></p>
 </html>"),
-    Icon(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,
-            100}}), graphics={Ellipse(extent={{-46,30},{8,-30}}, lineColor={0,0,
-          255}),Ellipse(extent={{-10,30},{44,-30}}, lineColor={0,0,255}),Line(
+    Icon(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,100}}), graphics={Ellipse(extent={{-46,30},{8,-30}}, lineColor={0,0,255}),Ellipse(extent={{-10,30},{44,-30}}, lineColor={
+          0,0,255}),Line(
           points={{100,0},{44,0},{44,0}},
           color={0,0,255},
           smooth=Smooth.None),Line(
           points={{-100,0},{-46,0}},
           color={0,0,255},
-          smooth=Smooth.None),Line(points={{-64,-44},{-22,12}}, color={28,108,
-          200}),Line(points={{-34,6},{-22,12}}, color={28,108,200}),Line(points
-          ={{-24,0}}, color={28,108,200}),Line(points={{-26,0},{-22,12}}, color
-          ={28,108,200})}));
+          smooth=Smooth.None),Line(points={{-64,-44},{-22,12}}, color={28,108,200}),Line(points={{-34,6},{-22,12}}, color={28,108,200}),Line(points={{-24,0}}, color={28,108,200}),Line(points={{-26,0},
+          {-22,12}}, color={28,108,200})}));
 end TwoWindingTransformerFixedTapRatio;

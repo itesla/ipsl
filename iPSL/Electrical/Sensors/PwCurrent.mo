@@ -2,22 +2,16 @@ within iPSL.Electrical.Sensors;
 
 
 model PwCurrent "Current sensor"
-  iPSL.Connectors.PwPin p annotation (Placement(transformation(extent={{-60,-10},
-            {-40,10}}), iconTransformation(extent={{-60,-10},{-40,10}})));
-  iPSL.Connectors.PwPin n annotation (Placement(transformation(extent={{40,10},
-            {60,30}}), iconTransformation(extent={{40,10},{60,30}})));
-  Modelica.Blocks.Interfaces.RealOutput outp annotation (Placement(
-        transformation(extent={{39,-30},{59,-10}}), iconTransformation(extent={
-            {39,-30},{59,-10}})));
+  iPSL.Connectors.PwPin p annotation (Placement(transformation(extent={{-60,-10},{-40,10}}), iconTransformation(extent={{-60,-10},{-40,10}})));
+  iPSL.Connectors.PwPin n annotation (Placement(transformation(extent={{40,10},{60,30}}), iconTransformation(extent={{40,10},{60,30}})));
+  Modelica.Blocks.Interfaces.RealOutput outp annotation (Placement(transformation(extent={{39,-30},{59,-10}}), iconTransformation(extent={{39,-30},{59,-10}})));
 equation
   n.vr = p.vr;
   n.vi = p.vi;
   n.ir = -p.ir;
   n.ii = -p.ii;
-  outp = sqrt(p.ir*p.ir + p.ii*p.ii) annotation (Icon(graphics={Rectangle(
-          extent={{-40,40},{40,-40}}, lineColor={0,0,255}),Rectangle(extent={{-30,
-          32},{30,-32}}, lineColor={0,0,255}),Rectangle(extent={{-20,20},{20,0}},
-          lineColor={0,0,255}),Text(
+  outp = sqrt(p.ir*p.ir + p.ii*p.ii) annotation (Icon(graphics={Rectangle(extent={{-40,40},{40,-40}}, lineColor={0,0,255}),Rectangle(extent={{-30,32},{30,-32}}, lineColor={0,0,255}),Rectangle(extent=
+          {{-20,20},{20,0}}, lineColor={0,0,255}),Text(
           extent={{-26,-12},{-6,-28}},
           lineColor={0,0,255},
           textStyle={TextStyle.Bold},

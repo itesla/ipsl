@@ -117,11 +117,9 @@ model AVRTypeII_OEL_TGI_Test
     Tc=1,
     T3=0.04,
     T4=5,
-    T5=0.04)
-    annotation (Placement(transformation(extent={{-24,-64},{-90,-20}})));
+    T5=0.04) annotation (Placement(transformation(extent={{-24,-64},{-90,-20}})));
   parameter Real p0=0.160352698692006 "Power flow, node active power";
-  inner iPSL.Electrical.SystemBase SysData
-    annotation (Placement(transformation(extent={{-80,-80},{-56,-60}})));
+  inner iPSL.Electrical.SystemBase SysData annotation (Placement(transformation(extent={{-80,-80},{-56,-60}})));
 equation
   connect(pwLine4.n, pwLoadPQ2.p) annotation (Line(
       visible=true,
@@ -180,8 +178,7 @@ equation
       color={0,0,127},
       smooth=Smooth.None));
   connect(order6Type2_Inputs_Outputs.P, oXL.p) annotation (Line(
-      points={{16,15.237},{32,15.237},{32,-62},{136,-62},{136,101.4},{78.72,
-          101.4}},
+      points={{16,15.237},{32,15.237},{32,-62},{136,-62},{136,101.4},{78.72,101.4}},
       color={0,0,127},
       smooth=Smooth.None));
   connect(tGTypeI.w, order6Type2_Inputs_Outputs.w) annotation (Line(
@@ -192,11 +189,9 @@ equation
       points={{-78.175,-39.14},{-90,-39.14},{-90,7.5},{-68,7.5}},
       color={0,0,127},
       smooth=Smooth.None));
-  connect(exciter_Type_II.vref, oXL.v_OXL) annotation (Line(points={{15.8,98.04},
-          {30.9,98.04},{30.9,96.4},{44.4,96.4}}, color={0,0,127}));
+  connect(exciter_Type_II.vref, oXL.v_OXL) annotation (Line(points={{15.8,98.04},{30.9,98.04},{30.9,96.4},{44.4,96.4}}, color={0,0,127}));
   annotation (
-    Diagram(coordinateSystem(extent={{-100,-100},{140,120}},
-          preserveAspectRatio=false)),
+    Diagram(coordinateSystem(extent={{-100,-100},{140,120}}, preserveAspectRatio=false)),
     Icon(coordinateSystem(extent={{-100,-100},{140,120}})),
     Documentation(info="<html>
 <p><span style=\"font-family: MS Shell Dlg 2;\">&LT;iPSL: iTesla Power System Library&GT;</span></p>

@@ -7,37 +7,33 @@ model CCL
   parameter Real ImaxTD "Converter current limit";
   parameter Real Iphl "Hard active current limit";
   parameter Real Iqhl "Hard reactive current limit";
-  Modelica.Blocks.Interfaces.RealOutput IQmin annotation (Placement(
-        transformation(
+  Modelica.Blocks.Interfaces.RealOutput IQmin annotation (Placement(transformation(
         extent={{-10,-10},{10,10}},
         rotation=90,
         origin={-12,96}), iconTransformation(
         extent={{-10,-10},{10,10}},
         rotation=90,
         origin={-52,42})));
-  Modelica.Blocks.Interfaces.RealInput IpCMD annotation (Placement(
-        transformation(
+  Modelica.Blocks.Interfaces.RealInput IpCMD annotation (Placement(transformation(
         extent={{-16,-16},{16,16}},
         rotation=180,
         origin={134,-20}), iconTransformation(
         extent={{-9,-9},{9,9}},
         rotation=90,
         origin={55,-35})));
-  Modelica.Blocks.Interfaces.RealInput IqCMD annotation (Placement(
-        transformation(extent={{-146,-30},{-120,-4}}), iconTransformation(
+  Modelica.Blocks.Interfaces.RealInput IqCMD
+    annotation (Placement(transformation(extent={{-146,-30},{-120,-4}}), iconTransformation(
         extent={{-9,-9},{9,9}},
         rotation=270,
         origin={55,35})));
-  Modelica.Blocks.Interfaces.RealOutput IQmax annotation (Placement(
-        transformation(
+  Modelica.Blocks.Interfaces.RealOutput IQmax annotation (Placement(transformation(
         extent={{-10,-10},{10,10}},
         rotation=90,
         origin={16,96}), iconTransformation(
         extent={{-10,-10},{10,10}},
         rotation=90,
         origin={2,42})));
-  Modelica.Blocks.Interfaces.RealOutput IPmax annotation (Placement(
-        transformation(
+  Modelica.Blocks.Interfaces.RealOutput IPmax annotation (Placement(transformation(
         extent={{-10,-10},{10,10}},
         rotation=270,
         origin={-2,-84}), iconTransformation(
@@ -48,13 +44,11 @@ model CCL
         extent={{-6,6},{6,-6}},
         rotation=270,
         origin={-52,-38})));
-  Modelica.Blocks.Sources.Constant const1(k=Iphl) annotation (Placement(
-        transformation(
+  Modelica.Blocks.Sources.Constant const1(k=Iphl) annotation (Placement(transformation(
         extent={{-7,-7},{7,7}},
         rotation=270,
         origin={-9,-19})));
-  Modelica.Blocks.Sources.Constant const2(k=Iqhl) annotation (Placement(
-        transformation(
+  Modelica.Blocks.Sources.Constant const2(k=Iqhl) annotation (Placement(transformation(
         extent={{-7,-7},{7,7}},
         rotation=0,
         origin={-19,23})));
@@ -90,8 +84,7 @@ model CCL
         rotation=0,
         origin={-101,5})));
 protected
-  Modelica.Blocks.Interfaces.RealInput Iqmax annotation (Placement(
-        transformation(
+  Modelica.Blocks.Interfaces.RealInput Iqmax annotation (Placement(transformation(
         extent={{-20,-20},{20,20}},
         rotation=270,
         origin={0,40}), iconTransformation(
@@ -99,64 +92,56 @@ protected
         rotation=0,
         origin={-101,5})));
 protected
-  Modelica.Blocks.Interfaces.RealOutput IQmin1 annotation (Placement(
-        transformation(
+  Modelica.Blocks.Interfaces.RealOutput IQmin1 annotation (Placement(transformation(
         extent={{-10,-10},{10,10}},
         rotation=90,
         origin={44,80}), iconTransformation(
         extent={{-10,-10},{10,10}},
         rotation=90,
         origin={-52,42})));
-  Modelica.Blocks.Interfaces.RealOutput IQmax1 annotation (Placement(
-        transformation(
+  Modelica.Blocks.Interfaces.RealOutput IQmax1 annotation (Placement(transformation(
         extent={{-10,-10},{10,10}},
         rotation=90,
         origin={74,80}), iconTransformation(
         extent={{-10,-10},{10,10}},
         rotation=90,
         origin={2,42})));
-  Modelica.Blocks.Interfaces.RealOutput IQmin2 annotation (Placement(
-        transformation(
+  Modelica.Blocks.Interfaces.RealOutput IQmin2 annotation (Placement(transformation(
         extent={{-10,-10},{10,10}},
         rotation=90,
         origin={-82,80}), iconTransformation(
         extent={{-10,-10},{10,10}},
         rotation=90,
         origin={-52,42})));
-  Modelica.Blocks.Interfaces.RealOutput IQmax2 annotation (Placement(
-        transformation(
+  Modelica.Blocks.Interfaces.RealOutput IQmax2 annotation (Placement(transformation(
         extent={{-10,-10},{10,10}},
         rotation=90,
         origin={-52,80}), iconTransformation(
         extent={{-10,-10},{10,10}},
         rotation=90,
         origin={2,42})));
-  Modelica.Blocks.Interfaces.RealOutput IPmax1 annotation (Placement(
-        transformation(
+  Modelica.Blocks.Interfaces.RealOutput IPmax1 annotation (Placement(transformation(
         extent={{-10,-10},{10,10}},
         rotation=270,
         origin={44,-68}), iconTransformation(
         extent={{-10,-10},{10,10}},
         rotation=270,
         origin={-50,-40})));
-  Modelica.Blocks.Interfaces.RealOutput IPmax2 annotation (Placement(
-        transformation(
+  Modelica.Blocks.Interfaces.RealOutput IPmax2 annotation (Placement(transformation(
         extent={{-10,-10},{10,10}},
         rotation=270,
         origin={-52,-68}), iconTransformation(
         extent={{-10,-10},{10,10}},
         rotation=270,
         origin={-50,-40})));
-  Modelica.Blocks.Interfaces.RealInput Available_remain1
-    "sqrt(ImaxTD^2 - IpCMD^2)" annotation (Placement(transformation(
+  Modelica.Blocks.Interfaces.RealInput Available_remain1 "sqrt(ImaxTD^2 - IpCMD^2)" annotation (Placement(transformation(
         extent={{-16,-16},{16,16}},
         rotation=180,
         origin={76,-18}), iconTransformation(
         extent={{-9,-9},{9,9}},
         rotation=90,
         origin={55,-35})));
-  Modelica.Blocks.Interfaces.RealInput Available_remain2
-    "sqrt(ImaxTD^2 - IqCMD^2)" annotation (Placement(transformation(
+  Modelica.Blocks.Interfaces.RealInput Available_remain2 "sqrt(ImaxTD^2 - IqCMD^2)" annotation (Placement(transformation(
         extent={{-16,-16},{16,16}},
         rotation=0,
         origin={-90,-20}), iconTransformation(
@@ -249,15 +234,12 @@ equation
       color={0,0,127},
       smooth=Smooth.None));
   annotation (
-    Icon(coordinateSystem(preserveAspectRatio=true, extent={{-100,-100},{100,
-            100}}), graphics={Rectangle(extent={{-100,32},{100,-30}}, lineColor
-          ={0,0,255}),Text(
+    Icon(coordinateSystem(preserveAspectRatio=true, extent={{-100,-100},{100,100}}), graphics={Rectangle(extent={{-100,32},{100,-30}}, lineColor={0,0,255}),Text(
           extent={{-66,12},{60,-22}},
           lineColor={0,0,255},
           textString="Converter Current Limit
 ")}),
-    Diagram(coordinateSystem(preserveAspectRatio=true, extent={{-100,-100},{100,
-            100}}), graphics={Rectangle(
+    Diagram(coordinateSystem(preserveAspectRatio=true, extent={{-100,-100},{100,100}}), graphics={Rectangle(
           extent={{-112,96},{-34,-86}},
           lineColor={255,0,0},
           pattern=LinePattern.Dot,

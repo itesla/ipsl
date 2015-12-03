@@ -4,17 +4,11 @@ model VE
   parameter Real KI=0.1;
   parameter Real XL=0;
   parameter Real THETAP=0;
-  Modelica.Blocks.Interfaces.RealInput Vr
-    annotation (Placement(transformation(extent={{-140,56},{-100,96}})));
-  Modelica.Blocks.Interfaces.RealInput Vi
-    annotation (Placement(transformation(extent={{-140,10},{-100,50}})));
-  Modelica.Blocks.Interfaces.RealInput Ir
-    annotation (Placement(transformation(extent={{-140,-36},{-100,4}})));
-  Modelica.Blocks.Interfaces.RealInput Ii
-    annotation (Placement(transformation(extent={{-140,-84},{-100,-44}})));
-  Modelica.Blocks.Interfaces.RealOutput VE annotation (Placement(transformation(
-          extent={{100,-18},{140,22}}), iconTransformation(extent={{100,-18},{
-            140,22}})));
+  Modelica.Blocks.Interfaces.RealInput Vr annotation (Placement(transformation(extent={{-140,56},{-100,96}})));
+  Modelica.Blocks.Interfaces.RealInput Vi annotation (Placement(transformation(extent={{-140,10},{-100,50}})));
+  Modelica.Blocks.Interfaces.RealInput Ir annotation (Placement(transformation(extent={{-140,-36},{-100,4}})));
+  Modelica.Blocks.Interfaces.RealInput Ii annotation (Placement(transformation(extent={{-140,-84},{-100,-44}})));
+  Modelica.Blocks.Interfaces.RealOutput VE annotation (Placement(transformation(extent={{100,-18},{140,22}}), iconTransformation(extent={{100,-18},{140,22}})));
   Real Re;
   Real Im;
   Real VE2;
@@ -27,14 +21,11 @@ equation
   VE2 = Re*Re + Im*Im;
   VE = sqrt(VE2);
   annotation (
-    Diagram(coordinateSystem(preserveAspectRatio=true, extent={{-100,-100},{100,
-            100}}), graphics),
-    Icon(coordinateSystem(preserveAspectRatio=true, extent={{-100,-100},{100,
-            100}}), graphics={Text(
+    Diagram(coordinateSystem(preserveAspectRatio=true, extent={{-100,-100},{100,100}}), graphics),
+    Icon(coordinateSystem(preserveAspectRatio=true, extent={{-100,-100},{100,100}}), graphics={Text(
           extent={{-88,86},{90,-68}},
           lineColor={0,0,255},
-          textString="VE=| KP*VT+j(KI+KP*XL)*IT |"),Rectangle(extent={{-100,80},
-          {100,-84}}, lineColor={0,0,255})}),
+          textString="VE=| KP*VT+j(KI+KP*XL)*IT |"),Rectangle(extent={{-100,80},{100,-84}}, lineColor={0,0,255})}),
     Documentation(info="<html>
 <table cellspacing=\"1\" cellpadding=\"1\" border=\"1\">
 <tr>

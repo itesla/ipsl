@@ -1,6 +1,5 @@
 within iPSL.Electrical.Branches.PSSE.Old_transformer.update;
-model PhaseshiftTwoWindingTransformer_withOLTC
-  "Two Winding Transformer with Phaseshift and OLTC"
+model PhaseshiftTwoWindingTransformer_withOLTC "Two Winding Transformer with Phaseshift and OLTC"
   extends TransformerParameter;
   inner parameter Real initialtapratio=1;
   parameter Real phase " From side and To side phase shift in degree";
@@ -8,25 +7,16 @@ model PhaseshiftTwoWindingTransformer_withOLTC
   parameter Real Vmin=0.9 annotation (Dialog(group=" OLTC control"));
   parameter Real rmax=1.1 annotation (Dialog(group=" OLTC control"));
   parameter Real rmin=0.9 annotation (Dialog(group=" OLTC control"));
-  parameter Real Ntap=33 "Number of tap positions"
-    annotation (Dialog(group=" OLTC control"));
-  parameter Real Td=17.0 "Regulator delay"
-    annotation (Dialog(group=" OLTC control"));
+  parameter Real Ntap=33 "Number of tap positions" annotation (Dialog(group=" OLTC control"));
+  parameter Real Td=17.0 "Regulator delay" annotation (Dialog(group=" OLTC control"));
   parameter Real TC=5 "motor delay" annotation (Dialog(group=" OLTC control"));
-  parameter Real TSD "delay between two subsequent tap changes"
-    annotation (Dialog(group=" OLTC control"));
-  parameter Real dtap=(rmax - rmin)/(Ntap - 1)
-    annotation (Dialog(group=" OLTC control"));
-  parameter Real Rmax=1 + (rmax - rmin)/2
-    annotation (Dialog(group=" OLTC control"));
-  parameter Real Rmin=1 - (rmax - rmin)/2
-    annotation (Dialog(group=" OLTC control"));
-  iPSL.Connectors.PwPin F
-    annotation (Placement(transformation(extent={{-114,-4},{-94,16}})));
-  iPSL.Connectors.PwPin T
-    annotation (Placement(transformation(extent={{86,-6},{106,14}})));
-  phaseshift phaseship1(phase=phase)
-    annotation (Placement(transformation(extent={{-86,-26},{-10,30}})));
+  parameter Real TSD "delay between two subsequent tap changes" annotation (Dialog(group=" OLTC control"));
+  parameter Real dtap=(rmax - rmin)/(Ntap - 1) annotation (Dialog(group=" OLTC control"));
+  parameter Real Rmax=1 + (rmax - rmin)/2 annotation (Dialog(group=" OLTC control"));
+  parameter Real Rmin=1 - (rmax - rmin)/2 annotation (Dialog(group=" OLTC control"));
+  iPSL.Connectors.PwPin F annotation (Placement(transformation(extent={{-114,-4},{-94,16}})));
+  iPSL.Connectors.PwPin T annotation (Placement(transformation(extent={{86,-6},{106,14}})));
+  phaseshift phaseship1(phase=phase) annotation (Placement(transformation(extent={{-86,-26},{-10,30}})));
   Transformer_Tap transformer_Tap(
     R=R,
     X=X,
@@ -34,10 +24,8 @@ model PhaseshiftTwoWindingTransformer_withOLTC
     B=B,
     ti=ti,
     tj=tj) annotation (Placement(transformation(extent={{10,-20},{66,24}})));
-  OLTC oLTC(TSD=0)
-    annotation (Placement(transformation(extent={{-62,26},{-26,52}})));
-  Modelica.Blocks.Interfaces.RealInput V
-    annotation (Placement(transformation(extent={{-112,30},{-88,54}})));
+  OLTC oLTC(TSD=0) annotation (Placement(transformation(extent={{-62,26},{-26,52}})));
+  Modelica.Blocks.Interfaces.RealInput V annotation (Placement(transformation(extent={{-112,30},{-88,54}})));
 equation
   connect(phaseship1.F, F) annotation (Line(
       points={{-82.96,4.24},{-86.6934,4.24},{-86.6934,6},{-104,6}},
@@ -65,10 +53,8 @@ equation
       thickness=0.5,
       smooth=Smooth.None));
   annotation (
-    Diagram(coordinateSystem(preserveAspectRatio=true, extent={{-100,-100},{100,
-            100}}), graphics),
-    Icon(coordinateSystem(preserveAspectRatio=true, extent={{-100,-100},{100,
-            100}}), graphics={Text(
+    Diagram(coordinateSystem(preserveAspectRatio=true, extent={{-100,-100},{100,100}}), graphics),
+    Icon(coordinateSystem(preserveAspectRatio=true, extent={{-100,-100},{100,100}}), graphics={Text(
           extent={{26,54},{114,2}},
           lineColor={0,0,255},
           fillColor={0,0,255},
@@ -81,8 +67,7 @@ equation
           extent={{-10,44},{70,-40}},
           lineColor={0,0,255},
           lineThickness=0.5),Line(
-          points={{-13,-12},{-5,-12},{-5,-6},{1,-6},{1,0},{9,0},{9,6},{15,6},{
-            15,12}},
+          points={{-13,-12},{-5,-12},{-5,-6},{1,-6},{1,0},{9,0},{9,6},{15,6},{15,12}},
           color={0,0,255},
           smooth=Smooth.None,
           origin={-29,4},

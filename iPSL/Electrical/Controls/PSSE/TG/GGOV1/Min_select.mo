@@ -1,12 +1,8 @@
 within iPSL.Electrical.Controls.PSSE.TG.GGOV1;
-block Min_select
-  "Output the minimum and the maximum element of the input vector"
-  parameter Integer nu(min=0) = 0 "Number of input connections"
-    annotation (Dialog(connectorSizing=true), HideResult=true);
-  Modelica.Blocks.Interfaces.RealVectorInput u[nu]
-    annotation (Placement(transformation(extent={{-120,70},{-80,-70}})));
-  Modelica.Blocks.Interfaces.RealOutput yMin(start=frs0) annotation (Placement(
-        transformation(extent={{100,-94},{120,-74}}, rotation=0)));
+block Min_select "Output the minimum and the maximum element of the input vector"
+  parameter Integer nu(min=0) = 0 "Number of input connections" annotation (Dialog(connectorSizing=true), HideResult=true);
+  Modelica.Blocks.Interfaces.RealVectorInput u[nu] annotation (Placement(transformation(extent={{-120,70},{-80,-70}})));
+  Modelica.Blocks.Interfaces.RealOutput yMin(start=frs0) annotation (Placement(transformation(extent={{100,-94},{120,-74}}, rotation=0)));
   parameter Real frs0;
 equation
   yMin = min(u);
@@ -38,7 +34,6 @@ provide both values as output.
 <p><span style=\"font-family: MS Shell Dlg 2;\">The iPSL is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU Lesser General Public License for more details.</span></p>
 <p><span style=\"font-family: MS Shell Dlg 2;\">You should have received a copy of the GNU Lesser General Public License along with the iPSL. If not, see &LT;http://www.gnu.org/licenses/&GT;.</span></p>
 </html>"),
-    Diagram(coordinateSystem(preserveAspectRatio=true, extent={{-100,-100},{100,
-            100}}), graphics));
+    Diagram(coordinateSystem(preserveAspectRatio=true, extent={{-100,-100},{100,100}}), graphics));
 end Min_select;
 

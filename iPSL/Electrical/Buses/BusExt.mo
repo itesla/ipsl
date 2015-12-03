@@ -3,10 +3,8 @@ within iPSL.Electrical.Buses;
 
 model BusExt
   iPSL.Connectors.PwPinExt Ext;
-  parameter Integer nu(min=0) = 0 "Number of inputs"
-    annotation (Dialog(connectorSizing=true), HideResult=true);
-  parameter Integer no(min=0) = 0 "Number of outputs"
-    annotation (Dialog(connectorSizing=true), HideResult=true);
+  parameter Integer nu(min=0) = 0 "Number of inputs" annotation (Dialog(connectorSizing=true), HideResult=true);
+  parameter Integer no(min=0) = 0 "Number of outputs" annotation (Dialog(connectorSizing=true), HideResult=true);
   iPSL.Connectors.PwPin u[nu] annotation (Placement(
       visible=true,
       transformation(
@@ -29,10 +27,8 @@ model BusExt
         rotation=0)));
   Real V "Bus voltage magnitude";
   Real angle "Bus voltage angle";
-  parameter Real V_b=130 "Base voltage (kV)"
-    annotation (Dialog(group="Power flow data"));
-  parameter Real S_b=100 "System base power (MVA)"
-    annotation (Dialog(group="Power flow data"));
+  parameter Real V_b=130 "Base voltage (kV)" annotation (Dialog(group="Power flow data"));
+  parameter Real S_b=100 "System base power (MVA)" annotation (Dialog(group="Power flow data"));
 equation
   if nu > 0 then
     for i in 1:nu loop
@@ -48,8 +44,7 @@ equation
   angle = atan2(Ext.p.vi, Ext.p.vr);
   annotation (
     Diagram(coordinateSystem(extent={{0,-100},{20,100}})),
-    Icon(coordinateSystem(extent={{0,-100},{20,100}}, preserveAspectRatio=false),
-        graphics={Rectangle(
+    Icon(coordinateSystem(extent={{0,-100},{20,100}}, preserveAspectRatio=false), graphics={Rectangle(
           extent={{0,100},{20,-100}},
           lineColor={0,0,255},
           fillColor={85,170,255},

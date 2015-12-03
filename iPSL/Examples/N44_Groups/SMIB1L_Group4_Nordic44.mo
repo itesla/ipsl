@@ -56,10 +56,8 @@ model SMIB1L_Group4_Nordic44
     V_0=1,
     H=0,
     D=0,
-    angle_0=-3.00563e-7)
-    annotation (Placement(transformation(extent={{104,-10},{82,12}})));
-  iPSL.Examples.N44_Groups.Configuration.Group4 group4 annotation (Placement(
-        transformation(rotation=0, extent={{-87,-10},{-67,10}})));
+    angle_0=-3.00563e-7) annotation (Placement(transformation(extent={{104,-10},{82,12}})));
+  iPSL.Examples.N44_Groups.Configuration.Group4 group4 annotation (Placement(transformation(rotation=0, extent={{-87,-10},{-67,10}})));
 equation
   connect(pwFault.p, pwLine.p) annotation (Line(
       points={{-13.6667,28},{-20,28},{-20,0},{-19,0},{-19,0}},

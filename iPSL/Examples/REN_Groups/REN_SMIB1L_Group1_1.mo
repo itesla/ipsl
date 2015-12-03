@@ -56,12 +56,9 @@ model REN_SMIB1L_Group1_1
     M_b=1000,
     H=4,
     P_0=45.0213,
-    Q_0=32.30648)
-    annotation (Placement(transformation(extent={{105,-10},{83,12}})));
-  iPSL.Examples.REN_Groups.Configuration.RGroup1_1 group1_1 annotation (
-      Placement(transformation(rotation=0, extent={{-84,-10},{-64,10}})));
-  inner Electrical.SystemBase SysData(S_b=1000)
-    annotation (Placement(transformation(extent={{-78,62},{-54,82}})));
+    Q_0=32.30648) annotation (Placement(transformation(extent={{105,-10},{83,12}})));
+  iPSL.Examples.REN_Groups.Configuration.RGroup1_1 group1_1 annotation (Placement(transformation(rotation=0, extent={{-84,-10},{-64,10}})));
+  inner Electrical.SystemBase SysData(S_b=1000) annotation (Placement(transformation(extent={{-78,62},{-54,82}})));
 equation
   connect(pwFault.p, pwLine.p) annotation (Line(
       points={{-11.9167,24},{-19,24},{-19,0},{-18,0}},
@@ -95,8 +92,7 @@ equation
       points={{-63,0},{-18,0}},
       color={0,0,255},
       smooth=Smooth.None));
-  annotation (Diagram(coordinateSystem(preserveAspectRatio=true, extent={{-100,
-            -100},{100,100}}), graphics), Documentation(info="<html>
+  annotation (Diagram(coordinateSystem(preserveAspectRatio=true, extent={{-100,-100},{100,100}}), graphics), Documentation(info="<html>
 <p><br><span style=\"font-family: MS Shell Dlg 2;\">&LT;iPSL: iTesla Power System Library&GT;</span></p>
 <p><span style=\"font-family: MS Shell Dlg 2;\">Copyright 2015 RTE (France), AIA (Spain), KTH (Sweden) and DTU (Denmark)</span></p>
 <ul>

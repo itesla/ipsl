@@ -11,14 +11,9 @@ model GAST "Gas Turbine-Governor"
   parameter Real V_MAX "Upper limits of input signals";
   parameter Real V_MIN "Lower limits of input signals";
   parameter Real D_turb "Gain value multiplied with input signal";
-  Modelica.Blocks.Interfaces.RealInput SPEED
-    "Machine electrical power (pu on M_b)" annotation (Placement(transformation(
-          extent={{-120,30},{-80,70}}), iconTransformation(extent={{-120,30},{-80,
-            70}})));
-  Modelica.Blocks.Interfaces.RealOutput PMECH "Turbine mechanical power (pu)"
-    annotation (Placement(transformation(extent={{100,-10},{120,10}})));
-  Modelica.Blocks.Math.Add add(k1=-1)
-    annotation (Placement(transformation(extent={{-78,-22},{-68,-12}})));
+  Modelica.Blocks.Interfaces.RealInput SPEED "Machine electrical power (pu on M_b)" annotation (Placement(transformation(extent={{-120,30},{-80,70}}), iconTransformation(extent={{-120,30},{-80,70}})));
+  Modelica.Blocks.Interfaces.RealOutput PMECH "Turbine mechanical power (pu)" annotation (Placement(transformation(extent={{100,-10},{120,10}})));
+  Modelica.Blocks.Math.Add add(k1=-1) annotation (Placement(transformation(extent={{-78,-22},{-68,-12}})));
   Modelica.Blocks.Math.Add add1(k2=-1) annotation (Placement(transformation(
         extent={{-5,-5},{5,5}},
         rotation=180,
@@ -27,10 +22,8 @@ model GAST "Gas Turbine-Governor"
         extent={{-5,-5},{5,5}},
         rotation=180,
         origin={-37,-47})));
-  Modelica.Blocks.Math.Add add3(k1=-1)
-    annotation (Placement(transformation(extent={{80,-5},{90,5}})));
-  Modelica.Blocks.Math.Gain gDturb(k=D_turb)
-    annotation (Placement(transformation(extent={{-54,55},{-44,65}})));
+  Modelica.Blocks.Math.Add add3(k1=-1) annotation (Placement(transformation(extent={{80,-5},{90,5}})));
+  Modelica.Blocks.Math.Gain gDturb(k=D_turb) annotation (Placement(transformation(extent={{-54,55},{-44,65}})));
   Modelica.Blocks.Math.Gain gKt(k=K_T) annotation (Placement(transformation(
         extent={{-5,-5},{5,5}},
         rotation=180,
@@ -39,20 +32,14 @@ model GAST "Gas Turbine-Governor"
         extent={{-5,-5},{5,5}},
         rotation=270,
         origin={-85,33})));
-  Modelica.Blocks.Interfaces.RealInput Reference "Speed reference (pu)"
-    annotation (Placement(transformation(extent={{-120,-70},{-80,-30}}),
-        iconTransformation(extent={{-120,-70},{-80,-30}})));
-  NonElectrical.Logical.LV_GATE lV_Gate
-    annotation (Placement(transformation(extent={{-46,-10},{-26,10}})));
-  Modelica.Blocks.Continuous.TransferFunction transferFunction1(a={T_2,1})
-    annotation (Placement(transformation(extent={{48,-6},{60,6}})));
-  Modelica.Blocks.Continuous.TransferFunction transferFunction2(a={T_3,1})
-    annotation (Placement(transformation(
+  Modelica.Blocks.Interfaces.RealInput Reference "Speed reference (pu)" annotation (Placement(transformation(extent={{-120,-70},{-80,-30}}), iconTransformation(extent={{-120,-70},{-80,-30}})));
+  NonElectrical.Logical.LV_GATE lV_Gate annotation (Placement(transformation(extent={{-46,-10},{-26,10}})));
+  Modelica.Blocks.Continuous.TransferFunction transferFunction1(a={T_2,1}) annotation (Placement(transformation(extent={{48,-6},{60,6}})));
+  Modelica.Blocks.Continuous.TransferFunction transferFunction2(a={T_3,1}) annotation (Placement(transformation(
         extent={{-6,-6},{6,6}},
         rotation=180,
         origin={54,-40})));
-  Modelica.Blocks.Sources.Constant const(k=AT)
-    annotation (Placement(transformation(extent={{-48,-94},{-28,-74}})));
+  Modelica.Blocks.Sources.Constant const(k=AT) annotation (Placement(transformation(extent={{-48,-94},{-28,-74}})));
   NonElectrical.Continuous.SimpleLagLim simpleLagLim(
     outMax=V_MAX,
     outMin=V_MIN,
@@ -112,20 +99,13 @@ equation
       points={{-43,-2.6},{-43,-25.3},{-42.5,-25.3},{-42.5,-47}},
       color={0,0,127},
       smooth=Smooth.None));
-  connect(const.y, add2.u1) annotation (Line(points={{-27,-84},{-8,-84},{-8,-50},
-          {-31,-50}}, color={0,0,127}));
-  connect(add1.u1, add2.u1) annotation (Line(points={{31,-50},{38,-50},{38,-84},
-          {-8,-84},{-8,-50},{-31,-50}}, color={0,0,127}));
-  connect(simpleLagLim.u, lV_Gate.p) annotation (Line(points={{-5,1},{-17.5,1},
-          {-17.5,-0.5},{-30.1,-0.5}}, color={0,0,127}));
-  connect(simpleLagLim.y, transferFunction1.u) annotation (Line(points={{6.5,1},
-          {26.25,1},{26.25,0},{46.8,0}}, color={0,0,127}));
+  connect(const.y, add2.u1) annotation (Line(points={{-27,-84},{-8,-84},{-8,-50},{-31,-50}}, color={0,0,127}));
+  connect(add1.u1, add2.u1) annotation (Line(points={{31,-50},{38,-50},{38,-84},{-8,-84},{-8,-50},{-31,-50}}, color={0,0,127}));
+  connect(simpleLagLim.u, lV_Gate.p) annotation (Line(points={{-5,1},{-17.5,1},{-17.5,-0.5},{-30.1,-0.5}}, color={0,0,127}));
+  connect(simpleLagLim.y, transferFunction1.u) annotation (Line(points={{6.5,1},{26.25,1},{26.25,0},{46.8,0}}, color={0,0,127}));
   annotation (
-    Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{
-            100,100}})),
-    Icon(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,
-            100}}), graphics={Rectangle(extent={{-100,100},{100,-100}},
-          lineColor={0,0,255}),Text(
+    Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,100}})),
+    Icon(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,100}}), graphics={Rectangle(extent={{-100,100},{100,-100}}, lineColor={0,0,255}),Text(
           extent={{-90,56},{-30,44}},
           lineColor={0,0,255},
           textString="SPEED"),Text(

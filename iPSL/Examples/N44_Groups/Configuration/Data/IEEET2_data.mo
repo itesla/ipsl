@@ -19,8 +19,7 @@ record IEEET2_data
   parameter Real J12=3.8000 "Exciter saturation point 2 (pu)";
   parameter Real J13=0.60000 "Saturation at E2";
   annotation (
-    Icon(graphics={Rectangle(extent={{-40,40},{40,-40}}, lineColor={0,0,255}),
-          Text(
+    Icon(graphics={Rectangle(extent={{-40,40},{40,-40}}, lineColor={0,0,255}),Text(
           extent={{-32,14},{32,-10}},
           lineColor={0,0,255},
           textStyle={TextStyle.Bold},

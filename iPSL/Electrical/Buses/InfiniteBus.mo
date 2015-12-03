@@ -1,5 +1,5 @@
 within iPSL.Electrical.Buses;
-model InfiniteBus
+model InfiniteBus "Test"
   iPSL.Connectors.PwPin p annotation (Placement(
       visible=true,
       transformation(

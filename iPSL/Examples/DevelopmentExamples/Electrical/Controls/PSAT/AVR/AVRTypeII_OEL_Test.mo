@@ -104,8 +104,7 @@ model AVRTypeII_OEL_Test
     Ka=400,
     vf0=1.064,
     Ke=0.01) annotation (Placement(transformation(extent={{22,58},{-40,110}})));
-  inner iPSL.Electrical.SystemBase SysData
-    annotation (Placement(transformation(extent={{-80,-80},{-56,-60}})));
+  inner iPSL.Electrical.SystemBase SysData annotation (Placement(transformation(extent={{-80,-80},{-56,-60}})));
 equation
   connect(pwLine4.n, pwLoadPQ2.p) annotation (Line(
       visible=true,
@@ -169,15 +168,12 @@ equation
       color={0,0,127},
       smooth=Smooth.None));
   connect(order6Type2_Inputs_Outputs.P, oXL.p) annotation (Line(
-      points={{16,15.237},{32,15.237},{32,-62},{136,-62},{136,101.4},{78.72,
-          101.4}},
+      points={{16,15.237},{32,15.237},{32,-62},{136,-62},{136,101.4},{78.72,101.4}},
       color={0,0,127},
       smooth=Smooth.None));
-  connect(oXL.v_OXL, exciter_Type_II.vref) annotation (Line(points={{44.4,96.4},
-          {31.2,96.4},{31.2,98.04},{15.8,98.04}}, color={0,0,127}));
+  connect(oXL.v_OXL, exciter_Type_II.vref) annotation (Line(points={{44.4,96.4},{31.2,96.4},{31.2,98.04},{15.8,98.04}}, color={0,0,127}));
   annotation (
-    Diagram(coordinateSystem(extent={{-100,-100},{140,120}},
-          preserveAspectRatio=false)),
+    Diagram(coordinateSystem(extent={{-100,-100},{140,120}}, preserveAspectRatio=false)),
     Icon(coordinateSystem(extent={{-100,-100},{140,120}})),
     Documentation(info="<html>
 <p><span style=\"font-family: MS Shell Dlg 2;\">&LT;iPSL: iTesla Power System Library&GT;</span></p>

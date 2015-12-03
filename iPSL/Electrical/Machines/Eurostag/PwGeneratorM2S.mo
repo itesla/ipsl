@@ -3,17 +3,10 @@ model PwGeneratorM2S "Synchronous machine model according to Park's classical th
                    The model corresponds to Eurostag's full model for M2S machine 
                    (defined by external parameters). Developed by RTE and adapted by AIA.
                    2014/03/10"
-  iPSL.Connectors.PwPin sortie annotation (Placement(transformation(extent={{40,
-            10},{60,30}}), iconTransformation(extent={{40,10},{60,30}})));
-  Modelica.Blocks.Interfaces.RealInput pin_EFD annotation (Placement(
-        transformation(extent={{-61,-40},{-41,-20}}), iconTransformation(extent
-          ={{-61,-40},{-41,-20}})));
-  Modelica.Blocks.Interfaces.RealInput pin_OMEGA annotation (Placement(
-        transformation(extent={{-61,20},{-41,40}}), iconTransformation(extent={
-            {-61,20},{-41,40}})));
-  Modelica.Blocks.Interfaces.RealInput pin_CM annotation (Placement(
-        transformation(extent={{-61,-10},{-41,10}}), iconTransformation(extent=
-            {{-61,-10},{-41,10}})));
+  iPSL.Connectors.PwPin sortie annotation (Placement(transformation(extent={{40,10},{60,30}}), iconTransformation(extent={{40,10},{60,30}})));
+  Modelica.Blocks.Interfaces.RealInput pin_EFD annotation (Placement(transformation(extent={{-61,-40},{-41,-20}}), iconTransformation(extent={{-61,-40},{-41,-20}})));
+  Modelica.Blocks.Interfaces.RealInput pin_OMEGA annotation (Placement(transformation(extent={{-61,20},{-41,40}}), iconTransformation(extent={{-61,20},{-41,40}})));
+  Modelica.Blocks.Interfaces.RealInput pin_CM annotation (Placement(transformation(extent={{-61,-10},{-41,10}}), iconTransformation(extent={{-61,-10},{-41,10}})));
   Modelica.Blocks.Interfaces.RealInput omegaRef;
   // EXTERNAL TO INTERNAL COMPUTATION
   iPSL.Electrical.Machines.Eurostag.PwExtIntParameters extern(
@@ -89,8 +82,7 @@ model PwGeneratorM2S "Synchronous machine model according to Park's classical th
   // EXTERNAL PARAMETERS (GIVEN) per-unit in the machine SN base.
   parameter Real rStatIn=0 "Stator resistance p.u. in the machine SN base";
   parameter Real lStatIn=0 "Stator leakage p.u. in the machine SN base";
-  parameter Real WLMDVPu=0
-    "d axis mutual inductance corresponding to magnetic condition taken for setting the voltage regulator";
+  parameter Real WLMDVPu=0 "d axis mutual inductance corresponding to magnetic condition taken for setting the voltage regulator";
   parameter Real XD=0 "Direct reactance";
   parameter Real XPD=0 "Direct trans. reactance";
   parameter Real XSD=0 "Direct subtrans. reactance";
@@ -110,40 +102,27 @@ model PwGeneratorM2S "Synchronous machine model according to Park's classical th
   parameter Real snd=6 "Coefficient nd of the saturation curve";
   parameter Real snq=6 "Coefficient nq of the saturation curve";
   // INTERNAL PARAMETERS (COMPUTED) per-unit in the machine SN base.
-  parameter Real mCanPu=extern.mrc
-    "CANAY's inductance p.u. in the machine SN base";
-  parameter Real rDPu=extern.rD
-    "d axis damper winding resistance p.u. in the machine SN base";
-  parameter Real lDPu=extern.lD
-    "d axis damper winding leakage p.u. in the machine SN base";
-  parameter Real rRotIn=extern.rf
-    "Rotor resistance p.u. in the machine SN base";
+  parameter Real mCanPu=extern.mrc "CANAY's inductance p.u. in the machine SN base";
+  parameter Real rDPu=extern.rD "d axis damper winding resistance p.u. in the machine SN base";
+  parameter Real lDPu=extern.lD "d axis damper winding leakage p.u. in the machine SN base";
+  parameter Real rRotIn=extern.rf "Rotor resistance p.u. in the machine SN base";
   parameter Real lRotIn=extern.lf "Rotor leakage p.u. in the machine SN base";
-  parameter Real mQ0Pu=extern.mQ0Pu_
-    "q axis mutual inductance p.u. in the machine SN base";
-  parameter Real mD0Pu=extern.mD0Pu_
-    "d axis mutual inductance p.u. in the machine SN base";
-  parameter Real rQ1Pu=extern.rQ1
-    "q axis damper 1 winding resistance p.u. in the machine SN base";
-  parameter Real lQ1Pu=extern.lQ1
-    "q axis damper 1 winding leakeage p.u. in the machine SN base";
-  parameter Real rQ2Pu=extern.rQ2
-    "q axis damper 2 winding resistance p.u. in the machine SN base";
-  parameter Real lQ2Pu=extern.lQ2
-    "q axis damper 2 winding leakeage p.u. in the machine SN base";
+  parameter Real mQ0Pu=extern.mQ0Pu_ "q axis mutual inductance p.u. in the machine SN base";
+  parameter Real mD0Pu=extern.mD0Pu_ "d axis mutual inductance p.u. in the machine SN base";
+  parameter Real rQ1Pu=extern.rQ1 "q axis damper 1 winding resistance p.u. in the machine SN base";
+  parameter Real lQ1Pu=extern.lQ1 "q axis damper 1 winding leakeage p.u. in the machine SN base";
+  parameter Real rQ2Pu=extern.rQ2 "q axis damper 2 winding resistance p.u. in the machine SN base";
+  parameter Real lQ2Pu=extern.lQ2 "q axis damper 2 winding leakeage p.u. in the machine SN base";
   parameter Real U1N=24 "nominal voltage machine side";
   parameter Real V1=24 "base voltage machine side";
   parameter Real U2N=400 "nominal voltage machine side";
   parameter Real V2=380 "base voltage machine side";
   parameter Boolean transformerIncluded=false;
-  parameter Real RTfoPu=if transformerIncluded then 0.000185 else 0
-    "Machine transoformer resistance p.u. in the SNTfo base";
-  parameter Real XTfoPu=if transformerIncluded then 0.00769 else 0
-    "Machine transoformer resistance p.u. in the SNTfo base";
+  parameter Real RTfoPu=if transformerIncluded then 0.000185 else 0 "Machine transoformer resistance p.u. in the SNTfo base";
+  parameter Real XTfoPu=if transformerIncluded then 0.00769 else 0 "Machine transoformer resistance p.u. in the SNTfo base";
   // CALCULATION AND PER-UNITING OF PARAMETERS.
   //parameter Real yscale=SNREF/SN;
-  parameter Real yscale=if RT > 0.0 or XT > 0.0 then SNREF/SN*rtfo*rtfo else
-      SNREF/SN;
+  parameter Real yscale=if RT > 0.0 or XT > 0.0 then SNREF/SN*rtfo*rtfo else SNREF/SN;
   parameter Real SNtfo=1300 "Machine transformer rating";
   parameter Real r=rStatIn*yscale "Stator Resistance";
   parameter Real rf=rRotIn*yscale "Rotor Resistance";
@@ -156,17 +135,14 @@ model PwGeneratorM2S "Synchronous machine model according to Park's classical th
   parameter Real rQ2=rQ2Pu*yscale "q axis damper 2 winding resistance";
   parameter Real lQ1=lQ1Pu*yscale "q axis damper 1 winding leakeage";
   parameter Real lQ2=lQ2Pu*yscale "q axis damper 2 winding leakeage";
-  parameter Real RT=RTfoPu*SNREF/SNtfo*rtfo*rtfo
-    "Machine transformer resistance (pu), enter value*SNREF/SNtfo";
-  parameter Real XT=XTfoPu*SNREF/SNtfo*rtfo*rtfo
-    "Machine transformer reactance (pu), enter value*SNREF/SNtfo";
+  parameter Real RT=RTfoPu*SNREF/SNtfo*rtfo*rtfo "Machine transformer resistance (pu), enter value*SNREF/SNtfo";
+  parameter Real XT=XTfoPu*SNREF/SNtfo*rtfo*rtfo "Machine transformer reactance (pu), enter value*SNREF/SNtfo";
   parameter Real Md0=mD0Pu*yscale "d axis mutual inductance";
   parameter Real Mq0=mQ0Pu*yscale "q axis mutual inductance";
   parameter Real Mdv=WLMDVPu*yscale;
   parameter Real D=DIn*SN/SNREF "Mechanical damping coefficient";
   parameter Real H=HIn*SN/SNREF "Constant of inertia";
-  parameter Real rtfo=if transformerIncluded then U2N/V2/(U1N/V1) else 1
-    "Transformer ratio";
+  parameter Real rtfo=if transformerIncluded then U2N/V2/(U1N/V1) else 1 "Transformer ratio";
   parameter Real DET=lf*lD + mrc*lf + mrc*lD;
   parameter Real Mdif=Md0 - Mq0;
   parameter Real Sdet=lf/DET + lD/DET;
@@ -191,45 +167,37 @@ model PwGeneratorM2S "Synchronous machine model according to Park's classical th
   parameter Real Coef51=PN/(SNREF*2*H);
   parameter Real Coef52=D/(2*H);
   parameter Real Coef53=1.0/(2*H);
-  Modelica.Blocks.Interfaces.RealOutput pin_TETA annotation (Placement(
-        transformation(extent={{39,-30},{59,-10}}), iconTransformation(extent={
-            {39,-30},{59,-10}})));
-  Modelica.Blocks.Interfaces.RealOutput pin_UR annotation (Placement(
-        transformation(
+  Modelica.Blocks.Interfaces.RealOutput pin_TETA annotation (Placement(transformation(extent={{39,-30},{59,-10}}), iconTransformation(extent={{39,-30},{59,-10}})));
+  Modelica.Blocks.Interfaces.RealOutput pin_UR annotation (Placement(transformation(
         extent={{-10,-10},{10,10}},
         rotation=-90,
         origin={-30,-49}), iconTransformation(
         extent={{-10,-10},{10,10}},
         rotation=-90,
         origin={-30,-49})));
-  Modelica.Blocks.Interfaces.RealOutput pin_UI annotation (Placement(
-        transformation(
+  Modelica.Blocks.Interfaces.RealOutput pin_UI annotation (Placement(transformation(
         extent={{-10,-10},{10,10}},
         rotation=-90,
         origin={0,-49}), iconTransformation(
         extent={{-10,-10},{10,10}},
         rotation=-90,
         origin={0,-49})));
-  Modelica.Blocks.Interfaces.RealOutput pin_FieldCurrent annotation (Placement(
-        transformation(
+  Modelica.Blocks.Interfaces.RealOutput pin_FieldCurrent annotation (Placement(transformation(
         extent={{-10,-10},{10,10}},
         rotation=90,
         origin={-30,49}), iconTransformation(
         extent={{-10,-10},{10,10}},
         rotation=90,
         origin={-30,49})));
-  Modelica.Blocks.Interfaces.RealOutput pin_TerminalVoltage annotation (
-      Placement(transformation(
+  Modelica.Blocks.Interfaces.RealOutput pin_TerminalVoltage annotation (Placement(transformation(
         extent={{-10,-10},{10,10}},
         rotation=-90,
         origin={30,-49})));
-  Modelica.Blocks.Interfaces.RealOutput pin_ActivePowerPNALT annotation (
-      Placement(transformation(
+  Modelica.Blocks.Interfaces.RealOutput pin_ActivePowerPNALT annotation (Placement(transformation(
         extent={{-10,-10},{10,10}},
         rotation=90,
         origin={0,49})));
-  Modelica.Blocks.Interfaces.RealOutput pin_ActivePowerPN annotation (Placement(
-        transformation(
+  Modelica.Blocks.Interfaces.RealOutput pin_ActivePowerPN annotation (Placement(transformation(
         extent={{-10,-10},{10,10}},
         rotation=90,
         origin={30,49})));
@@ -243,13 +211,11 @@ model PwGeneratorM2S "Synchronous machine model according to Park's classical th
   Modelica.Blocks.Interfaces.RealOutput pin_FRZPU;
   Modelica.Blocks.Interfaces.RealOutput pin_FRZHZ;
 equation
-  der(lambdaf) = (-efd*Coef11) - lambdaf*Coef12 + lambdad*Coef13 + lambdaad*
-    Coef14;
+  der(lambdaf) = (-efd*Coef11) - lambdaf*Coef12 + lambdad*Coef13 + lambdaad*Coef14;
   der(lambdad) = lambdaf*Coef21 - lambdad*Coef22 + lambdaad*Coef23;
   der(lambdaq1) = (-lambdaq1*Coef31) + lambdaaq*Coef32;
   der(lambdaq2) = (-lambdaq2*Coef41) + lambdaaq*Coef42;
-  der(omega) = cm*Coef51 + (omegaRef - omega)*Coef52 + lambdaad*iq*Coef53 -
-    lambdaaq*id*Coef53;
+  der(omega) = cm*Coef51 + (omegaRef - omega)*Coef52 + lambdaad*iq*Coef53 - lambdaaq*id*Coef53;
   der(theta) = (omega - omegaRef)*omega0;
   E = sqrt(lambdaad*lambdaad + lambdaaq*lambdaaq);
   if Saturated then
@@ -279,47 +245,38 @@ equation
   sortie.vr = ur;
   sortie.vi = ui;
   //Terminal Voltage
-  pin_TerminalVoltage = sqrt((sortie.vr - RT*sortie.ir + XT*sortie.ii)*(sortie.vr
-     - RT*sortie.ir + XT*sortie.ii) + (sortie.vi - RT*sortie.ii - XT*sortie.ir)
-    *(sortie.vi - RT*sortie.ii - XT*sortie.ir))*1/rtfo;
+  pin_TerminalVoltage = sqrt((sortie.vr - RT*sortie.ir + XT*sortie.ii)*(sortie.vr - RT*sortie.ir + XT*sortie.ii) + (sortie.vi - RT*sortie.ii - XT*sortie.ir)*(sortie.vi - RT*sortie.ii - XT*sortie.ir))
+    *1/rtfo;
   //TerminalVoltage = sqrt(sortie.vr*sortie.vr+sortie.vi*sortie.vi);
   //ActivePower PN-base
-  pin_ActivePowerPN = (sortie.vr*(-sortie.ir) + sortie.vi*(-sortie.ii))*SNREF/
-    PN;
+  pin_ActivePowerPN = (sortie.vr*(-sortie.ir) + sortie.vi*(-sortie.ii))*SNREF/PN;
   //ActivePower PNALT-base
   if PNALT == 0 then
     pin_ActivePowerPNALT = 0;
   else
-    pin_ActivePowerPNALT = (sortie.vr*(-sortie.ir) + sortie.vi*(-sortie.ii))*
-      SNREF/PNALT;
+    pin_ActivePowerPNALT = (sortie.vr*(-sortie.ir) + sortie.vi*(-sortie.ii))*SNREF/PNALT;
   end if;
   //ActivePower SNREF-base
   pin_ActivePowerSNREF = sortie.vr*(-sortie.ir) + sortie.vi*(-sortie.ii);
   //ReactivePower PN-base
-  pin_ReactivePowerPN = (sortie.vi*(-sortie.ir) - sortie.vr*(-sortie.ii))*SNREF
-    /PN;
+  pin_ReactivePowerPN = (sortie.vi*(-sortie.ir) - sortie.vr*(-sortie.ii))*SNREF/PN;
   //ReactivePower PNALT-base
   if PNALT == 0 then
     pin_ReactivePowerPNALT = 0;
   else
-    pin_ReactivePowerPNALT = (sortie.vi*(-sortie.ir) - sortie.vr*(-sortie.ii))*
-      SNREF/PNALT;
+    pin_ReactivePowerPNALT = (sortie.vi*(-sortie.ir) - sortie.vr*(-sortie.ii))*SNREF/PNALT;
   end if;
   //ReactivePower SNREF-base
   pin_ReactivePowerSNREF = sortie.vi*(-sortie.ir) - sortie.vr*(-sortie.ii);
   //ActivePower SN
-  pin_ActivePowerSN = (sortie.vr*(-sortie.ir) + sortie.vi*(-sortie.ii))*SNREF/
-    SN;
+  pin_ActivePowerSN = (sortie.vr*(-sortie.ir) + sortie.vi*(-sortie.ii))*SNREF/SN;
   //ReactivePower SN
-  pin_ReactivePowerSN = (sortie.vi*(-sortie.ir) - sortie.vr*(-sortie.ii))*SNREF
-    /SN;
+  pin_ReactivePowerSN = (sortie.vi*(-sortie.ir) - sortie.vr*(-sortie.ii))*SNREF/SN;
   //Field Current
   if md == 0 and mq == 0 and snd == 0 and snq == 0 then
-    pin_FieldCurrent = -Mdv/rtfo*((Md0 + lD + mrc)*lambdaf - (Md0 + mrc)*
-      lambdad - Md0*lD*id)/((Md0 + mrc)*(lf + lD) + lf*lD);
+    pin_FieldCurrent = -Mdv/rtfo*((Md0 + lD + mrc)*lambdaf - (Md0 + mrc)*lambdad - Md0*lD*id)/((Md0 + mrc)*(lf + lD) + lf*lD);
   else
-    pin_FieldCurrent = -Mdv/rtfo*((lD + mrc)*lambdaf - mrc*lambdad - lD*
-      lambdaad)/(mrc*(lf + lD) + lf*lD);
+    pin_FieldCurrent = -Mdv/rtfo*((lD + mrc)*lambdaf - mrc*lambdad - lD*lambdaad)/(mrc*(lf + lD) + lf*lD);
   end if;
   //Current module
   pin_Current = sqrt(sortie.ir*sortie.ir + sortie.ii*sortie.ii);
@@ -327,8 +284,7 @@ equation
   pin_FRZPU = omegaRef;
   pin_FRZHZ = omegaRef*omega0;
   annotation (
-    Icon(graphics={Rectangle(extent={{-40,40},{40,-40}}, lineColor={0,0,255}),
-          Ellipse(
+    Icon(graphics={Rectangle(extent={{-40,40},{40,-40}}, lineColor={0,0,255}),Ellipse(
           extent={{-24,22},{24,-24}},
           lineColor={0,0,255},
           lineThickness=1),Line(

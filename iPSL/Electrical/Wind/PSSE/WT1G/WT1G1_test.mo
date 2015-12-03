@@ -39,8 +39,7 @@ model WT1G1_test
     Q_0=Q1,
     R_a=Zr,
     X_d=Zi,
-    M_b=100)
-    annotation (Placement(transformation(extent={{-120,-10},{-100,12}})));
+    M_b=100) annotation (Placement(transformation(extent={{-120,-10},{-100,12}})));
   iPSL.Electrical.Wind.PSSE.WT1G.WT1G1_oneMass_nosaturation wT3G1_pt(
     eterm=V5,
     anglev0=A5,
@@ -73,8 +72,7 @@ equation
       points={{13,0},{46,0},{46,1.34},{77.02,1.34}},
       color={0,0,255},
       smooth=Smooth.None));
-  annotation (Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,
-            -100},{100,100}}), graphics={Text(
+  annotation (Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,100}}), graphics={Text(
           extent={{-116,74},{-36,50}},
           lineColor={0,0,255},
           textString="100 60HZ

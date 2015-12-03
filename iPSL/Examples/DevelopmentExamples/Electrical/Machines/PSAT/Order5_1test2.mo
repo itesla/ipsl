@@ -63,10 +63,8 @@ model Order5_1test2
     t1=3,
     t2=3.1,
     R=10) annotation (Placement(transformation(extent={{40,-55},{60,-35}})));
-  inner iPSL.Electrical.SystemBase SysData
-    annotation (Placement(transformation(extent={{50,80},{75,100}})));
-  iPSL.Electrical.Machines.PSAT.FifthOrder.Order5_Type1
-    order5Type1_Inputs_Outputs(
+  inner iPSL.Electrical.SystemBase SysData annotation (Placement(transformation(extent={{50,80},{75,100}})));
+  iPSL.Electrical.Machines.PSAT.FifthOrder.Order5_Type1 order5Type1_Inputs_Outputs(
     Sn=370,
     Vn=200,
     ra=0.001,
@@ -110,14 +108,9 @@ equation
       points={{38.3333,-45},{38.3333,-34.5},{27,-34.5},{27,-25}},
       color={0,0,255},
       smooth=Smooth.None));
-  connect(order5Type1_Inputs_Outputs.p, pwLine2.p) annotation (Line(points={{-79,
-          10.0496},{-40,10.0496},{-40,20},{-27,20}}, color={0,0,255}));
-  connect(order5Type1_Inputs_Outputs.vf, order5Type1_Inputs_Outputs.vf0)
-    annotation (Line(points={{-100,15},{-105,15},{-105,25},{-98,25},{-98,21}},
-        color={0,0,127}));
-  connect(order5Type1_Inputs_Outputs.pm, order5Type1_Inputs_Outputs.pm0)
-    annotation (Line(points={{-100,5},{-105,5},{-105,-5},{-98,-5},{-98,-1}},
-        color={0,0,127}));
+  connect(order5Type1_Inputs_Outputs.p, pwLine2.p) annotation (Line(points={{-79,10.0496},{-40,10.0496},{-40,20},{-27,20}}, color={0,0,255}));
+  connect(order5Type1_Inputs_Outputs.vf, order5Type1_Inputs_Outputs.vf0) annotation (Line(points={{-100,15},{-105,15},{-105,25},{-98,25},{-98,21}}, color={0,0,127}));
+  connect(order5Type1_Inputs_Outputs.pm, order5Type1_Inputs_Outputs.pm0) annotation (Line(points={{-100,5},{-105,5},{-105,-5},{-98,-5},{-98,-1}}, color={0,0,127}));
   annotation (
     Diagram(coordinateSystem(
         extent={{-148.5,-105},{148.5,105}},

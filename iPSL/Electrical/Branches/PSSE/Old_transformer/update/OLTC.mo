@@ -1,6 +1,5 @@
 within iPSL.Electrical.Branches.PSSE.Old_transformer.update;
-model OLTC
-  "Original developed by Mengjia and has been improved by Jan from KTH"
+model OLTC "Original developed by Mengjia and has been improved by Jan from KTH"
   //outer parameter Boolean ControlledOnFromSide;
   outer parameter Real initialtapratio=1;
   parameter Real Vmax=1.1;
@@ -14,14 +13,10 @@ model OLTC
   parameter Real dtap=(rmax - rmin)/(Ntap - 1);
   parameter Real Rmax=1 + (rmax - rmin)/2;
   parameter Real Rmin=1 - (rmax - rmin)/2;
-  Modelica.Blocks.Interfaces.RealInput u "Measured input, typically Voltage"
-    annotation (Placement(transformation(extent={{-124,-6},{-84,34}})));
-  Modelica.Blocks.Interfaces.RealOutput y(start=initialtapratio, fixed=true)
-    "Tap-ratio output"
-    annotation (Placement(transformation(extent={{84,4},{104,24}})));
+  Modelica.Blocks.Interfaces.RealInput u "Measured input, typically Voltage" annotation (Placement(transformation(extent={{-124,-6},{-84,34}})));
+  Modelica.Blocks.Interfaces.RealOutput y(start=initialtapratio, fixed=true) "Tap-ratio output" annotation (Placement(transformation(extent={{84,4},{104,24}})));
   Real RegulatorTimer(start=0, fixed=true) "Timer for the regulator";
-  Integer voltageDiff(start=0, fixed=true)
-    "Direction of the voltage difference";
+  Integer voltageDiff(start=0, fixed=true) "Direction of the voltage difference";
   Integer tapMoved(start=0, fixed=true) "Number of steps the taps has moved.";
   Integer tapDirection(start=0, fixed=true);
   discrete Real m(start=initialtapratio, fixed=true);
@@ -44,8 +39,7 @@ equation
   end when;
   // Let timer run if we have a large enough difference
   when voltageDiff <> 0 and StartTimer then
-    tapDirection = if RegulatorTimer <= 0 then voltageDiff else pre(
-      tapDirection);
+    tapDirection = if RegulatorTimer <= 0 then voltageDiff else pre(tapDirection);
   end when;
   when RegulatorTimer <= 0 or RegulatorTimer >= 1 then
     MotorEnabled = if RegulatorTimer >= 1 then true else false;
@@ -86,11 +80,8 @@ equation
     y = m;
   end if;
   annotation (
-    Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{
-            100,100}}), graphics),
-    Icon(coordinateSystem(preserveAspectRatio=true, extent={{-100,-100},{100,
-            100}}), graphics={Rectangle(extent={{-94,70},{90,-80}}, lineColor={
-          0,0,255}),Text(
+    Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,100}}), graphics),
+    Icon(coordinateSystem(preserveAspectRatio=true, extent={{-100,-100},{100,100}}), graphics={Rectangle(extent={{-94,70},{90,-80}}, lineColor={0,0,255}),Text(
           extent={{-50,34},{54,-50}},
           lineColor={0,0,255},
           textString="OLTC")}),

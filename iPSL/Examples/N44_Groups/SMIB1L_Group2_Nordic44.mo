@@ -57,10 +57,8 @@ model SMIB1L_Group2_Nordic44 "Single-Machine Infinite Bus model testing the dyna
     V_0=1,
     H=0,
     D=0,
-    angle_0=-3.00563e-7)
-    annotation (Placement(transformation(extent={{122,-10},{100,12}})));
-  iPSL.Examples.N44_Groups.Configuration.Group2 group2 annotation (Placement(
-        transformation(rotation=0, extent={{-72,-10},{-52,10}})));
+    angle_0=-3.00563e-7) annotation (Placement(transformation(extent={{122,-10},{100,12}})));
+  iPSL.Examples.N44_Groups.Configuration.Group2 group2 annotation (Placement(transformation(rotation=0, extent={{-72,-10},{-52,10}})));
 equation
   connect(group2.p, pwLine.p) annotation (Line(
       points={{-51,0},{-1,0}},
@@ -94,8 +92,7 @@ equation
       points={{27,-20},{26,-20},{26,-57.2},{37,-57.2}},
       color={0,0,255},
       smooth=Smooth.None));
-  annotation (Diagram(coordinateSystem(preserveAspectRatio=true, extent={{-100,
-            -100},{100,100}}), graphics), Documentation(info="<html>
+  annotation (Diagram(coordinateSystem(preserveAspectRatio=true, extent={{-100,-100},{100,100}}), graphics), Documentation(info="<html>
 <p><br><span style=\"font-family: MS Shell Dlg 2;\">&LT;iPSL: iTesla Power System Library&GT;</span></p>
 <p><span style=\"font-family: MS Shell Dlg 2;\">Copyright 2015 RTE (France), AIA (Spain), KTH (Sweden) and DTU (Denmark)</span></p>
 <ul>

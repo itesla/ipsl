@@ -75,8 +75,7 @@ model Order6test2
     xd1=0.302,
     M=10,
     D=0) annotation (Placement(transformation(extent={{-140,-10},{-100,30}})));
-  inner iPSL.Electrical.SystemBase SysData
-    annotation (Placement(transformation(extent={{50,50},{75,70}})));
+  inner iPSL.Electrical.SystemBase SysData annotation (Placement(transformation(extent={{50,50},{75,70}})));
 equation
   connect(pwLine4.n, pwLoadPQ2.p) annotation (Line(
       visible=true,
@@ -118,10 +117,8 @@ equation
       points={{-53,10},{-53,10},{-53,-20}},
       color={0,0,255},
       smooth=Smooth.None));
-  connect(order6Type2_1.vf0, order6Type2_1.vf) annotation (Line(points={{-136,
-          32},{-136,35},{-150,35},{-150,20},{-140,20}}, color={0,0,127}));
-  connect(order6Type2_1.pm, order6Type2_1.pm0) annotation (Line(points={{-140,0},
-          {-150,0},{-150,-15},{-136,-15},{-136,-12}}, color={0,0,127}));
+  connect(order6Type2_1.vf0, order6Type2_1.vf) annotation (Line(points={{-136,32},{-136,35},{-150,35},{-150,20},{-140,20}}, color={0,0,127}));
+  connect(order6Type2_1.pm, order6Type2_1.pm0) annotation (Line(points={{-140,0},{-150,0},{-150,-15},{-136,-15},{-136,-12}}, color={0,0,127}));
   annotation (
     Diagram(coordinateSystem(
         extent={{-148.5,-105},{148.5,105}},

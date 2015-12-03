@@ -1,8 +1,7 @@
 within iPSL.Electrical.Wind.DTU;
 
 
-model Type4B_WT_CDV
-  "IEC Type 4B Full-Scale Wind Turbine Model. Developed by DTU"
+model Type4B_WT_CDV "IEC Type 4B Full-Scale Wind Turbine Model. Developed by DTU"
   parameter Real w_init=1 "Initial steady state generator speed";
   parameter Real T_Ufilt=0.01 "Voltage measurement filter time constant";
   parameter Real dPmax=99 "Wind turbine maximum power ramp rate";
@@ -18,8 +17,7 @@ model Type4B_WT_CDV
   parameter Real Qmin=-0.33 "Minimum reactive power";
   parameter Real Tufilt=0.01 "Voltage measurement filter time constant";
   parameter Real Uqdip=0.8 "Voltage threshold value for LVRT detection";
-  parameter Real Tpost=1
-    "Length of time period where post fault reactive power is injected";
+  parameter Real Tpost=1 "Length of time period where post fault reactive power is injected";
   parameter Real Udb1=0.1 "Voltage dead band lower limit";
   parameter Real Udb2=0.1 "Voltage dead band upper limit";
   parameter Real Kqv=4 "Voltage scaling factor for LVRT current";
@@ -27,10 +25,8 @@ model Type4B_WT_CDV
   parameter Real iqmin=-1.1 "Minimum reactive current injection";
   parameter Real iqmax=1.1 "Maximum reactive current injection";
   parameter Real iq_post=-0.2 "Post fault reactive current injection";
-  parameter Real Umax=1.05
-    "Maximum voltage in voltage PI controller integral term";
-  parameter Real Umin=0
-    "Minimum voltage in voltage PI controller integral term";
+  parameter Real Umax=1.05 "Maximum voltage in voltage PI controller integral term";
+  parameter Real Umin=0 "Minimum voltage in voltage PI controller integral term";
   parameter Real KiQ=0.1 "Reactive power PI controller integration gain";
   parameter Real KpQ=1 "Reactive power PI controller proportional gain";
   parameter Real Tqord=0.01 "Time constant in reactive power order lag";
@@ -42,12 +38,9 @@ model Type4B_WT_CDV
   parameter Real k_sh=140 "Drive Train Stiffness";
   parameter Real c_sh=0.8 "Drive Train Damping";
   parameter Real T_init=0.9 "Initial Steady State Shaft Torque";
-  parameter Real i_maxdip=1.1
-    "Maximum current during voltage dip at the wind turbine terminals";
-  parameter Real i_max=1.23
-    "Maximum continuous current at the wind turbine terminals";
-  parameter Real M_Qpri=1
-    "Prioritisation of q control during LVRT (0: active power priority - 1: reactive power priority)";
+  parameter Real i_maxdip=1.1 "Maximum current during voltage dip at the wind turbine terminals";
+  parameter Real i_max=1.23 "Maximum continuous current at the wind turbine terminals";
+  parameter Real M_Qpri=1 "Prioritisation of q control during LVRT (0: active power priority - 1: reactive power priority)";
   parameter Real Tg=0.005 "Current generation time constant";
   parameter Real diPmax=99 "Maximum active current ramp rate ";
   parameter Real diQmin=-99 "Minimum reactive current ramp rate";
@@ -60,26 +53,22 @@ model Type4B_WT_CDV
     i_maxdip=i_maxdip,
     i_max=i_max,
     M_Qpri=M_Qpri,
-    T_Ufilt=T_Ufilt)
-    annotation (Placement(transformation(extent={{-8,36},{62,84}})));
-  iPSL.Electrical.Sensors.PwPowerMeas pwPowerMeas
-    annotation (Placement(transformation(extent={{100,-4},{120,16}})));
+    T_Ufilt=T_Ufilt) annotation (Placement(transformation(extent={{-8,36},{62,84}})));
+  iPSL.Electrical.Sensors.PwPowerMeas pwPowerMeas annotation (Placement(transformation(extent={{100,-4},{120,16}})));
   iPSL.Electrical.Wind.DTU.DriveTrain driveTrain(
     Hgen=Hgen,
     Hwtr=Hwtr,
     k_sh=k_sh,
     c_sh=c_sh,
     w_init=w_init,
-    T_init=T_init)
-    annotation (Placement(transformation(extent={{-14,-86},{40,-44}})));
+    T_init=T_init) annotation (Placement(transformation(extent={{-14,-86},{40,-44}})));
   iPSL.Electrical.Wind.DTU.GenSet_Type4 genSet_Type4_2(
     Tg=Tg,
     diPmax=diPmax,
     diQmin=diQmin,
     diQmax=diQmax,
     ini_iPref=ini_iPref,
-    ini_iQref=ini_iQref)
-    annotation (Placement(transformation(extent={{12,-10},{64,26}})));
+    ini_iQref=ini_iQref) annotation (Placement(transformation(extent={{12,-10},{64,26}})));
   iPSL.Electrical.Wind.DTU.QControl_Type4B qControl_Type4B1(
     Tpfilt=Tpfilt,
     MwttPF=MwttPF,
@@ -108,29 +97,20 @@ model Type4B_WT_CDV
     KpU=KpU,
     Tiq=Tiq,
     Xdroop=Xdroop,
-    Rdroop=Rdroop)
-    annotation (Placement(transformation(extent={{-86,-54},{10,-8}})));
-  Modelica.Blocks.Interfaces.RealInput Uref
-    annotation (Placement(transformation(extent={{-150,34},{-140,46}})));
-  Modelica.Blocks.Interfaces.RealInput Qref
-    annotation (Placement(transformation(extent={{-150,-6},{-140,6}})));
-  Modelica.Blocks.Interfaces.RealInput Pref
-    annotation (Placement(transformation(extent={{-150,-46},{-140,-34}})));
-  iPSL.Connectors.PwPin WTG_terminal
-    annotation (Placement(transformation(extent={{140,-5},{150,5}})));
-  iPSL.Electrical.Sensors.PwVoltage pwVoltage
-    annotation (Placement(transformation(extent={{86,-70},{66,-50}})));
+    Rdroop=Rdroop) annotation (Placement(transformation(extent={{-86,-54},{10,-8}})));
+  Modelica.Blocks.Interfaces.RealInput Uref annotation (Placement(transformation(extent={{-150,34},{-140,46}})));
+  Modelica.Blocks.Interfaces.RealInput Qref annotation (Placement(transformation(extent={{-150,-6},{-140,6}})));
+  Modelica.Blocks.Interfaces.RealInput Pref annotation (Placement(transformation(extent={{-150,-46},{-140,-34}})));
+  iPSL.Connectors.PwPin WTG_terminal annotation (Placement(transformation(extent={{140,-5},{150,5}})));
+  iPSL.Electrical.Sensors.PwVoltage pwVoltage annotation (Placement(transformation(extent={{86,-70},{66,-50}})));
   iPSL.Electrical.Wind.DTU.PControl_Type4B_CDV pControl_Type4B_CDV(
     w_init=w_init,
     T_Ufilt=T_Ufilt,
     dPmax=dPmax,
     Tpord=Tpord,
-    Tpaero=Tpaero)
-    annotation (Placement(transformation(extent={{-98,-4},{-6,54}})));
-  iPSL.Electrical.Machines.DTU.PwdqCurrentSource pwdqCurrentSource
-    annotation (Placement(transformation(extent={{58,-6},{92,24}})));
-  iPSL.Electrical.Controls.DTU.pwPLL pwPLL
-    annotation (Placement(transformation(extent={{82,-30},{62,-10}})));
+    Tpaero=Tpaero) annotation (Placement(transformation(extent={{-98,-4},{-6,54}})));
+  iPSL.Electrical.Machines.DTU.PwdqCurrentSource pwdqCurrentSource annotation (Placement(transformation(extent={{58,-6},{92,24}})));
+  iPSL.Electrical.Controls.DTU.pwPLL pwPLL annotation (Placement(transformation(extent={{82,-30},{62,-10}})));
 initial equation
   ini_iPref = Pref/pwVoltage.v;
   ini_iQref = Qref/pwVoltage.v;
@@ -139,41 +119,38 @@ equation
       points={{114.5,5},{122,5},{122,-88},{-4.55,-88},{-4.55,-73.4}},
       color={0,0,127},
       smooth=Smooth.None));
-  connect(genSet_Type4_2.iQcmd, CurrentLimitationModel.iQcmdlmt) annotation (
-      Line(
+  connect(genSet_Type4_2.iQcmd, CurrentLimitationModel.iQcmdlmt)
+    annotation (Line(
       points={{16.2545,3.77391},{-14,3.77391},{-14,44.4706},{-2.75,44.4706}},
       color={0,0,127},
       smooth=Smooth.None));
-  connect(genSet_Type4_2.iQmax, CurrentLimitationModel.iQmax) annotation (Line(
-      points={{16.2545,-3.73913},{2,-3.73913},{2,34},{70,34},{70,64.2353},{
-          56.75,64.2353}},
+  connect(genSet_Type4_2.iQmax, CurrentLimitationModel.iQmax)
+    annotation (Line(
+      points={{16.2545,-3.73913},{2,-3.73913},{2,34},{70,34},{70,64.2353},{56.75,64.2353}},
       color={0,0,127},
       smooth=Smooth.None));
-  connect(genSet_Type4_2.iPcmd, CurrentLimitationModel.iPcmdlmt) annotation (
-      Line(
+  connect(genSet_Type4_2.iPcmd, CurrentLimitationModel.iPcmdlmt)
+    annotation (Line(
       points={{16.2545,13.7913},{-20,13.7913},{-20,67.0588},{-2.75,67.0588}},
       color={0,0,127},
       smooth=Smooth.None));
-  connect(pwPowerMeas.Q, qControl_Type4B1.Qwtt) annotation (Line(
-      points={{114.5,2.6},{128,2.6},{128,-94},{-110,-94},{-110,-18.2222},{-81.7333,
-          -18.2222}},
+  connect(pwPowerMeas.Q, qControl_Type4B1.Qwtt)
+    annotation (Line(
+      points={{114.5,2.6},{128,2.6},{128,-94},{-110,-94},{-110,-18.2222},{-81.7333,-18.2222}},
       color={0,0,127},
       smooth=Smooth.None));
   connect(qControl_Type4B1.Pwtt, driveTrain.Pag) annotation (Line(
-      points={{-81.7333,-33.5556},{-116,-33.5556},{-116,-88},{-4.55,-88},{-4.55,
-          -73.4}},
+      points={{-81.7333,-33.5556},{-116,-33.5556},{-116,-88},{-4.55,-88},{-4.55,-73.4}},
       color={0,0,127},
       smooth=Smooth.None));
-  connect(qControl_Type4B1.F_LVRT, CurrentLimitationModel.F_LVRT) annotation (
-      Line(
+  connect(qControl_Type4B1.F_LVRT, CurrentLimitationModel.F_LVRT)
+    annotation (Line(
       points={{-26.2667,-23.3333},{-24,-23.3333},{-24,80},{27,80},{27,74.1176}},
-
       color={0,0,127},
       smooth=Smooth.None));
-  connect(qControl_Type4B1.Iqcmd, CurrentLimitationModel.iQcmdlmt) annotation (
-      Line(
+  connect(qControl_Type4B1.Iqcmd, CurrentLimitationModel.iQcmdlmt)
+    annotation (Line(
       points={{-26.2667,-33.5556},{-14,-33.5556},{-14,44.4706},{-2.75,44.4706}},
-
       color={0,0,127},
       smooth=Smooth.None));
   connect(Uref, qControl_Type4B1.Uref) annotation (Line(
@@ -188,42 +165,40 @@ equation
       points={{114.6,8.6},{134.3,8.6},{134.3,0},{145,0}},
       color={0,0,255},
       smooth=Smooth.None));
-  connect(pControl_Type4B_CDV.Uwtt, pwVoltage.v) annotation (Line(
-      points={{-77.76,34.28},{-102,34.28},{-102,-82},{-98,-82},{-98,-84},{71.1,
-          -84},{71.1,-63}},
+  connect(pControl_Type4B_CDV.Uwtt, pwVoltage.v)
+    annotation (Line(
+      points={{-77.76,34.28},{-102,34.28},{-102,-82},{-98,-82},{-98,-84},{71.1,-84},{71.1,-63}},
       color={0,0,127},
       smooth=Smooth.None));
-  connect(qControl_Type4B1.Uwtt, pwVoltage.v) annotation (Line(
-      points={{-81.7333,-38.6667},{-102,-38.6667},{-102,-82},{-98,-82},{-98,-84},
-          {71.1,-84},{71.1,-63}},
+  connect(qControl_Type4B1.Uwtt, pwVoltage.v)
+    annotation (Line(
+      points={{-81.7333,-38.6667},{-102,-38.6667},{-102,-82},{-98,-82},{-98,-84},{71.1,-84},{71.1,-63}},
       color={0,0,127},
       smooth=Smooth.None));
-  connect(CurrentLimitationModel.Uwtt, pwVoltage.v) annotation (Line(
-      points={{-2.75,55.7647},{-102,55.7647},{-102,-82},{-98,-82},{-98,-84},{
-          71.1,-84},{71.1,-63}},
+  connect(CurrentLimitationModel.Uwtt, pwVoltage.v)
+    annotation (Line(
+      points={{-2.75,55.7647},{-102,55.7647},{-102,-82},{-98,-82},{-98,-84},{71.1,-84},{71.1,-63}},
       color={0,0,127},
       smooth=Smooth.None));
-  connect(CurrentLimitationModel.iPmax, genSet_Type4_2.iPmax) annotation (Line(
-      points={{56.75,46.7294},{80,46.7294},{80,32},{6,32},{6,21.3043},{16.2545,
-          21.3043}},
+  connect(CurrentLimitationModel.iPmax, genSet_Type4_2.iPmax)
+    annotation (Line(
+      points={{56.75,46.7294},{80,46.7294},{80,32},{6,32},{6,21.3043},{16.2545,21.3043}},
       color={0,0,127},
       smooth=Smooth.None));
-  connect(pControl_Type4B_CDV.iPmax, genSet_Type4_2.iPmax) annotation (Line(
-      points={{-77.76,27.9},{-90,27.9},{-90,92},{80,92},{80,32},{6,32},{6,
-          21.3043},{16.2545,21.3043}},
+  connect(pControl_Type4B_CDV.iPmax, genSet_Type4_2.iPmax)
+    annotation (Line(
+      points={{-77.76,27.9},{-90,27.9},{-90,92},{80,92},{80,32},{6,32},{6,21.3043},{16.2545,21.3043}},
       color={0,0,127},
       smooth=Smooth.None));
   connect(driveTrain.w_gen, pControl_Type4B_CDV.w_gen) annotation (Line(
       points={{27.85,-73.4},{44,-73.4},{44,-6},{-90,-6},{-90,22.1},{-77.76,22.1}},
-
       color={0,0,127},
       smooth=Smooth.None));
   connect(Pref, pControl_Type4B_CDV.Pwtt_ref) annotation (Line(
       points={{-145,-40},{-126,-40},{-126,6},{-77.76,6},{-77.76,15.72}},
       color={0,0,127},
       smooth=Smooth.None));
-  connect(pControl_Type4B_CDV.iPcmd, CurrentLimitationModel.iPcmdlmt)
-    annotation (Line(
+  connect(pControl_Type4B_CDV.iPcmd, CurrentLimitationModel.iPcmdlmt) annotation (Line(
       points={{-31.76,25},{-20,25},{-20,67.0588},{-2.75,67.0588}},
       color={0,0,127},
       smooth=Smooth.None));
@@ -256,8 +231,7 @@ equation
       color={0,0,127},
       smooth=Smooth.None));
   annotation (
-    Diagram(coordinateSystem(extent={{-180,-100},{160,100}},
-          preserveAspectRatio=false), graphics={Text(
+    Diagram(coordinateSystem(extent={{-180,-100},{160,100}}, preserveAspectRatio=false), graphics={Text(
           extent={{-2,-42},{36,-54}},
           lineColor={0,0,255},
           textString="Mechanical Model"),Text(
@@ -279,8 +253,7 @@ equation
           extent={{102,36},{156,2}},
           lineColor={0,0,255},
           textString="Wind Turbine Terminal")}),
-    Icon(coordinateSystem(extent={{-180,-100},{160,100}}, preserveAspectRatio=
-            false), graphics={Rectangle(
+    Icon(coordinateSystem(extent={{-180,-100},{160,100}}, preserveAspectRatio=false), graphics={Rectangle(
           extent={{-140,80},{140,-80}},
           lineColor={0,0,255},
           fillColor={255,255,255},

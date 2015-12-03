@@ -1,8 +1,7 @@
 within iPSL.Examples.N44_Groups;
 model SMIB1L_Group1_Nordic44 "Single-Machine Infinite Bus model testing the dynamic configuration of generator and controls,
   from Nordic 44 model: Buses 3000, 7000"
-  iPSL.Examples.N44_Groups.Configuration.Group1 group1_1
-    annotation (Placement(transformation(extent={{-85,-10},{-65,10}})));
+  iPSL.Examples.N44_Groups.Configuration.Group1 group1_1 annotation (Placement(transformation(extent={{-85,-10},{-65,10}})));
   Electrical.Branches.PwLine2Openings pwLine(
     R=0.1,
     X=0.1,
@@ -59,8 +58,7 @@ model SMIB1L_Group1_Nordic44 "Single-Machine Infinite Bus model testing the dyna
     V_0=1,
     H=0,
     D=0,
-    angle_0=-3.00563e-7)
-    annotation (Placement(transformation(extent={{89,-10},{67,12}})));
+    angle_0=-3.00563e-7) annotation (Placement(transformation(extent={{89,-10},{67,12}})));
 equation
   connect(pwFault.p, pwLine.p) annotation (Line(
       points={{-28.6667,28},{-35,28},{-35,0},{-34,0},{-34,0}},

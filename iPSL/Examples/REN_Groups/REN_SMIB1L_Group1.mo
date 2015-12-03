@@ -1,5 +1,5 @@
 within iPSL.Examples.REN_Groups;
-model REN_SMIB1L_Group1
+model REN_SMIB1L_Group1 "test"
   Electrical.Branches.PwLine2Openings pwLine(
     X=0.1,
     t1=100,
@@ -57,10 +57,8 @@ model REN_SMIB1L_Group1
     P_0=51.66447,
     Q_0=97.41116,
     H=0) annotation (Placement(transformation(extent={{93,18},{71,40}})));
-  iPSL.Examples.REN_Groups.Configuration.RGroup1 group1 annotation (Placement(
-        transformation(rotation=0, extent={{-68,18},{-48,38}})));
-  inner Electrical.SystemBase SysData(S_b=1000)
-    annotation (Placement(transformation(extent={{-80,80},{-34,100}})));
+  iPSL.Examples.REN_Groups.Configuration.RGroup1 group1 annotation (Placement(transformation(rotation=0, extent={{-68,18},{-48,38}})));
+  inner Electrical.SystemBase SysData(S_b=1000) annotation (Placement(transformation(extent={{-80,80},{-34,100}})));
 equation
   connect(pwLine.n, pwLine1.p) annotation (Line(
       points={{-16,28},{-9,28},{-9,42},{14,42}},
@@ -90,10 +88,8 @@ equation
       points={{-47,28},{-40,28},{-40,28},{-30,28}},
       color={0,0,255},
       smooth=Smooth.None));
-  connect(pwFault.p, pwLine4.p) annotation (Line(points={{33.9167,-16},{33.9167,
-          -16},{24,-16},{24,8}}, color={0,0,255}));
-  annotation (Diagram(coordinateSystem(preserveAspectRatio=true, extent={{-100,
-            -100},{100,100}})), Documentation(info="<html>
+  connect(pwFault.p, pwLine4.p) annotation (Line(points={{33.9167,-16},{33.9167,-16},{24,-16},{24,8}}, color={0,0,255}));
+  annotation (Diagram(coordinateSystem(preserveAspectRatio=true, extent={{-100,-100},{100,100}})), Documentation(info="<html>
 <p><br><span style=\"font-family: MS Shell Dlg 2;\">&LT;iPSL: iTesla Power System Library&GT;</span></p>
 <p><span style=\"font-family: MS Shell Dlg 2;\">Copyright 2015 RTE (France), AIA (Spain), KTH (Sweden) and DTU (Denmark)</span></p>
 <ul>

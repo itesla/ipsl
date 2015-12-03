@@ -75,8 +75,7 @@ model AVRTypeII_Test
     xd1=0.302,
     M=10,
     D=0) annotation (Placement(transformation(extent={{-68,-12},{12,66}})));
-  Modelica.Blocks.Sources.Constant imSetPoint(k=1)
-    annotation (Placement(transformation(extent={{52,88},{32,108}})));
+  Modelica.Blocks.Sources.Constant imSetPoint(k=1) annotation (Placement(transformation(extent={{52,88},{32,108}})));
   iPSL.Electrical.Controls.PSAT.AVR.AVRTypeII exciter_Type_II(
     vref0=1,
     vrmin=-5,
@@ -91,8 +90,7 @@ model AVRTypeII_Test
     Ka=400,
     vf0=1.064,
     Ke=0.01) annotation (Placement(transformation(extent={{4,58},{-58,110}})));
-  inner iPSL.Electrical.SystemBase SysData
-    annotation (Placement(transformation(extent={{100,80},{124,100}})));
+  inner iPSL.Electrical.SystemBase SysData annotation (Placement(transformation(extent={{100,80},{124,100}})));
 equation
   connect(pwLine4.n, pwLoadPQ2.p) annotation (Line(
       visible=true,
@@ -136,8 +134,7 @@ equation
       smooth=Smooth.None));
   connect(order6Type2_Inputs_Outputs.pm0, order6Type2_Inputs_Outputs.pm)
     annotation (Line(
-      points={{-60,-15.9},{38,-15.9},{38,52},{60,52},{60,112},{-92,112},{-92,
-          7.5},{-68,7.5}},
+      points={{-60,-15.9},{38,-15.9},{38,52},{60,52},{60,112},{-92,112},{-92,7.5},{-68,7.5}},
       color={0,0,127},
       smooth=Smooth.None));
   connect(order6Type2_Inputs_Outputs.v, exciter_Type_II.v) annotation (Line(
@@ -148,11 +145,9 @@ equation
       points={{-53.35,90.76},{-68,90.76},{-68,46.5}},
       color={0,0,127},
       smooth=Smooth.None));
-  connect(exciter_Type_II.vref, imSetPoint.y) annotation (Line(points={{-2.2,
-          98.04},{14.9,98.04},{14.9,98},{31,98}}, color={0,0,127}));
+  connect(exciter_Type_II.vref, imSetPoint.y) annotation (Line(points={{-2.2,98.04},{14.9,98.04},{14.9,98},{31,98}}, color={0,0,127}));
   annotation (
-    Diagram(coordinateSystem(extent={{-100,-100},{140,120}},
-          preserveAspectRatio=false)),
+    Diagram(coordinateSystem(extent={{-100,-100},{140,120}}, preserveAspectRatio=false)),
     Icon(coordinateSystem(extent={{-100,-100},{140,120}})),
     Documentation(info="<html>
 <p><span style=\"font-family: MS Shell Dlg 2;\">&LT;iPSL: iTesla Power System Library&GT;</span></p>

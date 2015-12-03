@@ -89,8 +89,7 @@ model TGTypeI_Test
     T3=0.04,
     T4=5,
     T5=0.04) annotation (Placement(transformation(extent={{-2,-64},{-68,-20}})));
-  inner iPSL.Electrical.SystemBase SysData
-    annotation (Placement(transformation(extent={{80,80},{128,106}})));
+  inner iPSL.Electrical.SystemBase SysData annotation (Placement(transformation(extent={{80,80},{128,106}})));
 equation
   connect(pwLine4.n, pwLoadPQ2.p) annotation (Line(
       visible=true,
@@ -146,8 +145,7 @@ equation
       color={0,0,127},
       smooth=Smooth.None));
   annotation (
-    Diagram(coordinateSystem(extent={{-100,-100},{140,120}},
-          preserveAspectRatio=false), graphics),
+    Diagram(coordinateSystem(extent={{-100,-100},{140,120}}, preserveAspectRatio=false), graphics),
     Icon(coordinateSystem(extent={{-100,-100},{140,120}})),
     Documentation(info="<html>
 <p><span style=\"font-family: MS Shell Dlg 2;\">&LT;iPSL: iTesla Power System Library&GT;</span></p>

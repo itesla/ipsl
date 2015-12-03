@@ -1,16 +1,9 @@
 within iPSL.Electrical.Branches.Simulink.LTC;
 model LTC_switch
-  Modelica.Blocks.Interfaces.RealInput Signalin annotation (Placement(
-        transformation(extent={{-68,-4},{-48,16}}), iconTransformation(extent={
-            {-78,-16},{-48,16}})));
-  Modelica.Blocks.Interfaces.RealInput LTCin annotation (Placement(
-        transformation(extent={{-68,46},{-48,66}}), iconTransformation(extent={
-            {-80,32},{-48,66}})));
-  Modelica.Blocks.Interfaces.RealInput Normalin annotation (Placement(
-        transformation(extent={{-68,-58},{-48,-38}}), iconTransformation(extent
-          ={{-78,-68},{-48,-38}})));
-  Modelica.Blocks.Interfaces.RealOutput r annotation (Placement(transformation(
-          extent={{54,0},{74,20}}), iconTransformation(extent={{56,-8},{86,24}})));
+  Modelica.Blocks.Interfaces.RealInput Signalin annotation (Placement(transformation(extent={{-68,-4},{-48,16}}), iconTransformation(extent={{-78,-16},{-48,16}})));
+  Modelica.Blocks.Interfaces.RealInput LTCin annotation (Placement(transformation(extent={{-68,46},{-48,66}}), iconTransformation(extent={{-80,32},{-48,66}})));
+  Modelica.Blocks.Interfaces.RealInput Normalin annotation (Placement(transformation(extent={{-68,-58},{-48,-38}}), iconTransformation(extent={{-78,-68},{-48,-38}})));
+  Modelica.Blocks.Interfaces.RealOutput r annotation (Placement(transformation(extent={{54,0},{74,20}}), iconTransformation(extent={{56,-8},{86,24}})));
 equation
   if Signalin > 0 then
     r = LTCin;
@@ -18,10 +11,8 @@ equation
     r = Normalin;
   end if;
   annotation (
-    Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{
-            100,100}}), graphics),
-    Icon(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,
-            100}}), graphics={Rectangle(
+    Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,100}}), graphics),
+    Icon(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,100}}), graphics={Rectangle(
           extent={{-46,94},{56,-94}},
           lineColor={0,0,255},
           fillColor={255,255,255},

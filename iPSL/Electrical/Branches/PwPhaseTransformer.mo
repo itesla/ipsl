@@ -2,10 +2,8 @@ within iPSL.Electrical.Branches;
 model PwPhaseTransformer "Two winding fixed transformer composed of an ideal transformer, a series 
               impedance and a shunt admittance.
               2014/03/10"
-  iPSL.Connectors.PwPin p annotation (Placement(transformation(extent={{-80,-8},
-            {-60,12}}), iconTransformation(extent={{-80,-8},{-60,12}})));
-  iPSL.Connectors.PwPin n annotation (Placement(transformation(extent={{60,-8},
-            {80,12}}), iconTransformation(extent={{60,-8},{80,12}})));
+  iPSL.Connectors.PwPin p annotation (Placement(transformation(extent={{-80,-8},{-60,12}}), iconTransformation(extent={{-80,-8},{-60,12}})));
+  iPSL.Connectors.PwPin n annotation (Placement(transformation(extent={{60,-8},{80,12}}), iconTransformation(extent={{60,-8},{80,12}})));
   // INPUT parameters
   parameter Real R "Resistance p.u.";
   parameter Real X "Reactance p.u.";
@@ -23,26 +21,21 @@ model PwPhaseTransformer "Two winding fixed transformer composed of an ideal tra
   parameter Real Gj=G0/2;
   parameter Real Bj=B0/2;
   //ADMITTANCE matrix
-  parameter Real G11=G*(r*r - r*cos(theta_rad)) + B*r*sin(theta_rad) + Gi + G*r
-      *cos(theta_rad) - B*r*sin(theta_rad);
-  parameter Real B11=B*(r*r - r*cos(theta_rad)) - G*r*sin(theta_rad) + Bi + B*r
-      *cos(theta_rad) + G*r*sin(theta_rad);
+  parameter Real G11=G*(r*r - r*cos(theta_rad)) + B*r*sin(theta_rad) + Gi + G*r*cos(theta_rad) - B*r*sin(theta_rad);
+  parameter Real B11=B*(r*r - r*cos(theta_rad)) - G*r*sin(theta_rad) + Bi + B*r*cos(theta_rad) + G*r*sin(theta_rad);
   parameter Real G12=(-G*r*cos(theta_rad)) + B*r*sin(theta_rad);
   parameter Real B12=(-B*r*cos(theta_rad)) - G*r*sin(theta_rad);
   parameter Real G21=(-G*r*cos(theta_rad)) - B*r*sin(theta_rad);
   parameter Real B21=(-B*r*cos(theta_rad)) + G*r*sin(theta_rad);
-  parameter Real G22=G*(1 - r*cos(theta_rad)) - B*r*sin(theta_rad) + Gj + G*r*
-      cos(theta_rad) + B*r*sin(theta_rad);
-  parameter Real B22=B*(1 - r*cos(theta_rad)) + G*r*sin(theta_rad) + Bj + B*r*
-      cos(theta_rad) - G*r*sin(theta_rad);
+  parameter Real G22=G*(1 - r*cos(theta_rad)) - B*r*sin(theta_rad) + Gj + G*r*cos(theta_rad) + B*r*sin(theta_rad);
+  parameter Real B22=B*(1 - r*cos(theta_rad)) + G*r*sin(theta_rad) + Bj + B*r*cos(theta_rad) - G*r*sin(theta_rad);
 equation
   p.ir = p.vr*G11 - p.vi*B11 + n.vr*G12 - n.vi*B12;
   p.ii = p.vi*G11 + p.vr*B11 + n.vi*G12 + n.vr*B12;
   n.ir = p.vr*G21 - p.vi*B21 + n.vr*G22 - n.vi*B22;
   n.ii = p.vi*G21 + p.vr*B21 + n.vi*G22 + n.vr*B22;
   annotation (
-    Icon(graphics={Rectangle(extent={{-60,40},{60,-40}}, lineColor={0,0,255}),
-          Ellipse(
+    Icon(graphics={Rectangle(extent={{-60,40},{60,-40}}, lineColor={0,0,255}),Ellipse(
           extent={{-26,16},{6,-16}},
           lineColor={0,0,255},
           lineThickness=1),Ellipse(

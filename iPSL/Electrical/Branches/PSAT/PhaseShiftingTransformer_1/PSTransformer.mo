@@ -21,27 +21,18 @@ model PSTransformer
   parameter Real m=0.98 "Transformer fixed tap  ratio, p.u./p.u.";
   parameter Real alpha0=0.002062339234360 "Initial angle, from power flow";
   parameter Real pmes0=0.01 "from power flow";
-  parameter Real vk0=0.997649085060455
-    "Sending end bus voltage, from power flow";
-  parameter Real vm0=1.007257703014177
-    "Receiving end bus voltage, from power flow";
-  parameter Real anglevk0=-0.007392164704867
-    "Sending end bus angle, from power flow";
-  parameter Real anglevm0=-0.009372077496959
-    "Receiving end bus angle, from power flow";
+  parameter Real vk0=0.997649085060455 "Sending end bus voltage, from power flow";
+  parameter Real vm0=1.007257703014177 "Receiving end bus voltage, from power flow";
+  parameter Real anglevk0=-0.007392164704867 "Sending end bus angle, from power flow";
+  parameter Real anglevm0=-0.009372077496959 "Receiving end bus angle, from power flow";
   Real vk(start=vk0);
   Real vm(start=vm0);
   Real anglevk(start=anglevk0);
   Real anglevm(start=anglevm0);
-  iPSL.Connectors.PwPin p(vr(start=vr0), vi(start=vi0))
-    annotation (Placement(transformation(extent={{-122,-8},{-102,12}})));
-  iPSL.Connectors.PwPin n
-    annotation (Placement(transformation(extent={{100,-10},{120,10}})));
-  Modelica.Blocks.Interfaces.RealOutput pk(start=p_ref) annotation (Placement(
-        transformation(extent={{100,-50},{120,-30}}), iconTransformation(extent
-          ={{100,-50},{120,-30}})));
-  Modelica.Blocks.Interfaces.RealInput u
-    annotation (Placement(transformation(extent={{-144,36},{-104,76}})));
+  iPSL.Connectors.PwPin p(vr(start=vr0), vi(start=vi0)) annotation (Placement(transformation(extent={{-122,-8},{-102,12}})));
+  iPSL.Connectors.PwPin n annotation (Placement(transformation(extent={{100,-10},{120,10}})));
+  Modelica.Blocks.Interfaces.RealOutput pk(start=p_ref) annotation (Placement(transformation(extent={{100,-50},{120,-30}}), iconTransformation(extent={{100,-50},{120,-30}})));
+  Modelica.Blocks.Interfaces.RealInput u annotation (Placement(transformation(extent={{-144,36},{-104,76}})));
   pst1 pst1_1(
     alpha_max=alpha_max,
     SystemBase=SystemBase,
@@ -62,8 +53,7 @@ model PSTransformer
     alpha0=alpha0,
     pmes0=pmes0,
     vk0=vk0,
-    anglevk0=anglevk0)
-    annotation (Placement(transformation(extent={{-46,-10},{-26,10}})));
+    anglevk0=anglevk0) annotation (Placement(transformation(extent={{-46,-10},{-26,10}})));
   pst2 pst2_1(
     SystemBase=SystemBase,
     Vbus1=Vbus1,
@@ -84,15 +74,12 @@ model PSTransformer
     alpha0=alpha0,
     pmes0=pmes0,
     vm0=vm0,
-    anglevm0=anglevm0)
-    annotation (Placement(transformation(extent={{16,-10},{36,10}})));
+    anglevm0=anglevm0) annotation (Placement(transformation(extent={{16,-10},{36,10}})));
 protected
   parameter Real Vb2new=Vbus1*Vbus1;
   parameter Real Vb2old=Vn1*Vn1;
-  parameter Real R=rT*(Vb2old*SystemBase)/(Vb2new*Sn)
-    "Transformer Resistance, p.u.";
-  parameter Real X=xT*(Vb2old*SystemBase)/(Vb2new*Sn)
-    "Transformer Reactance, p.u.";
+  parameter Real R=rT*(Vb2old*SystemBase)/(Vb2new*Sn) "Transformer Resistance, p.u.";
+  parameter Real X=xT*(Vb2old*SystemBase)/(Vb2new*Sn) "Transformer Reactance, p.u.";
   parameter Real pref=p_ref*(Sn/SystemBase);
   parameter Real gt=R/(R^2 + X^2) "Converting resistance to conductance p.u.";
   parameter Real bt=-X/(R^2 + X^2) "Converting reactance to susceptance p.u.";
@@ -121,15 +108,12 @@ equation
       color={0,0,127},
       smooth=Smooth.None));
   annotation (
-    Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{
-            100,100}}), graphics),
-    Icon(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,
-            100}}), graphics={Ellipse(extent={{-48,24},{10,-32}}, lineColor={0,
-          0,255}),Ellipse(extent={{-6,26},{52,-30}}, lineColor={0,0,255}),Line(
+    Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,100}}), graphics),
+    Icon(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,100}}), graphics={Ellipse(extent={{-48,24},{10,-32}}, lineColor={0,0,255}),Ellipse(extent={{-6,26},{52,-30}}, lineColor={
+          0,0,255}),Line(
           points={{-104,0},{-48,0}},
           color={0,0,255},
-          smooth=Smooth.None),Rectangle(extent={{66,10},{94,-12}}, lineColor={0,
-          0,255}),Line(
+          smooth=Smooth.None),Rectangle(extent={{66,10},{94,-12}}, lineColor={0,0,255}),Line(
           points={{50,0},{66,0},{66,0}},
           color={0,0,255},
           smooth=Smooth.None),Line(

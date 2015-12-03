@@ -6,20 +6,16 @@ partial model baseLoad
   extends iPSL.Electrical.Essentials.pfComponent;
   parameter Complex S_p(re=P_0, im=Q_0) "Original constant power load (pu)";
   parameter Complex S_i(re=0, im=0) "Original constant current load (pu)";
-  parameter Complex S_y(re=0, im=0)
-    "Original constant shunt admittance load (pu)";
-  parameter Complex a(re=1, im=0)
-    "Load transfer fraction for constant current load";
-  parameter Complex b(re=0, im=1)
-    "Load transfer fraction for constant shunt admittance load";
+  parameter Complex S_y(re=0, im=0) "Original constant shunt admittance load (pu)";
+  parameter Complex a(re=1, im=0) "Load transfer fraction for constant current load";
+  parameter Complex b(re=0, im=1) "Load transfer fraction for constant shunt admittance load";
   parameter Real PQBRAK=0.7 "Constant power characteristic threshold";
   parameter Integer characteristic=1 annotation (choices(choice=1, choice=2));
   iPSL.Connectors.PwPin p(
     vr(start=vr0),
     vi(start=vi0),
     ir(start=ir0),
-    ii(start=ii0)) annotation (Placement(transformation(extent={{-56,-10},{-36,
-            10}}), iconTransformation(extent={{-10,100},{10,120}})));
+    ii(start=ii0)) annotation (Placement(transformation(extent={{-56,-10},{-36,10}}), iconTransformation(extent={{-10,100},{10,120}})));
   Real angle(start=anglev_rad) "Bus voltage angle (rad)";
   Real v(start=V_0) "Bus voltage magnitude (pu)";
   Real P "Active power consumption (pu)";
@@ -79,8 +75,7 @@ equation
     Icon(coordinateSystem(
         preserveAspectRatio=false,
         extent={{-100,-100},{100,100}},
-        initialScale=0.1), graphics={Line(points={{-100,100},{100,100},{0,-100},
-          {-100,100}}, color={28,108,200}),Text(
+        initialScale=0.1), graphics={Line(points={{-100,100},{100,100},{0,-100},{-100,100}}, color={28,108,200}),Text(
           extent={{-62,66},{66,34}},
           lineColor={28,108,200},
           textString="%P_0+j%Q_0")}),

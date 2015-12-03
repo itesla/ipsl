@@ -26,9 +26,7 @@ equation
   Q = p.vi*p.ir - p.vr*p.ii;
   v = sqrt(p.vr^2 + p.vi^2);
   anglev = atan2(p.vi, p.vr);
-  annotation (Icon(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},
-            {100,100}}), graphics={Line(points={{-100,100},{100,100},{0,-100},{
-          -100,100}}, color={28,108,200}),Text(
+  annotation (Icon(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,100}}), graphics={Line(points={{-100,100},{100,100},{0,-100},{-100,100}}, color={28,108,200}),Text(
           extent={{-62,66},{66,34}},
           lineColor={28,108,200},
           textString="%P_0+j%Q_0")}), Documentation(info="<html>

@@ -28,12 +28,9 @@ model Group1 "Machine configuration of synchronous machine with regulators: GENR
     T_1=0.01 "controller lag (s)",
     T_2=0 "controller lead compensation (s)",
     T_3=0.15 "governor lag (s)",
-    T_4=0.3
-      "delay due to steam inlet volumes associated with steam chest and inlet piping(s)",
-
+    T_4=0.3 "delay due to steam inlet volumes associated with steam chest and inlet piping(s)",
     T_5=8 "reheater delay including hot and cold leads (s)",
     T_6=0.4 "delay due to IP-LP turbine, crossover pipes, and LP end hoods (s)",
-
     K_1=0 "1/p.u regulation ",
     K_2=0.7 "fraction ",
     K_3=0.43 "fraction ",
@@ -69,12 +66,9 @@ model Group1 "Machine configuration of synchronous machine with regulators: GENR
     K_4=0.55,
     K_5=1,
     T_5=0.01,
-    H_LIM=0.03)
-    annotation (Placement(transformation(extent={{-141,24},{-99,39}})));
-  Modelica.Blocks.Sources.Constant cte(k=0)
-    annotation (Placement(transformation(extent={{-120,-14},{-110,-4}})));
-  iPSL.Connectors.PwPin pwPin
-    annotation (Placement(transformation(extent={{100,-10},{120,10}})));
+    H_LIM=0.03) annotation (Placement(transformation(extent={{-141,24},{-99,39}})));
+  Modelica.Blocks.Sources.Constant cte(k=0) annotation (Placement(transformation(extent={{-120,-14},{-110,-4}})));
+  iPSL.Connectors.PwPin pwPin annotation (Placement(transformation(extent={{100,-10},{120,10}})));
 equation
   connect(cte.y, iEEET2.VOEL) annotation (Line(
       points={{-109.5,-9},{-104,-9},{-104,0},{-79.05,0}},
@@ -90,21 +84,19 @@ equation
       smooth=Smooth.None));
   connect(gENROU.EFD0, iEEET2.EFD0) annotation (Line(
       points={{40.84,-4.1},{54,-4.1},{54,-53},{-86,-53},{-86,-16},{-79.05,-16}},
-
       color={0,0,127},
       smooth=Smooth.None));
   connect(gENROU.ETERM, iEEET2.ECOMP) annotation (Line(
       points={{40.84,23.5},{66,23.5},{66,57},{-86,57},{-86,16},{-79.05,16}},
       color={0,0,127},
       smooth=Smooth.None));
-  connect(gENROU.PELEC, sTAB2A.PELEC) annotation (Line(
-      points={{40.84,0.5},{60,0.5},{60,-11},{73,-11},{73,-59},{-146,-59},{-146,
-          31.5},{-140.427,31.5}},
+  connect(gENROU.PELEC, sTAB2A.PELEC)
+    annotation (Line(
+      points={{40.84,0.5},{60,0.5},{60,-11},{73,-11},{73,-59},{-146,-59},{-146,31.5},{-140.427,31.5}},
       color={0,0,127},
       smooth=Smooth.None));
   connect(gENROU.SPEED, iEESGO.SPEED) annotation (Line(
-      points={{40.84,32.7},{56,32.7},{56,49},{-83,49},{-83,46.2143},{-87.35,
-          46.2143}},
+      points={{40.84,32.7},{56,32.7},{56,49},{-83,49},{-83,46.2143},{-87.35,46.2143}},
       color={0,0,127},
       smooth=Smooth.None));
   connect(sTAB2A.VOTHSG, iEEET2.VOTHSG) annotation (Line(
@@ -112,17 +104,14 @@ equation
       color={0,0,127},
       smooth=Smooth.None));
   connect(gENROU.PMECH0, iEESGO.PMECH0) annotation (Line(
-      points={{40.84,5.1},{63,5.1},{63,-57},{-90,-57},{-90,18.7143},{-87.35,
-          18.7143}},
+      points={{40.84,5.1},{63,5.1},{63,-57},{-90,-57},{-90,18.7143},{-87.35,18.7143}},
       color={0,0,127},
       smooth=Smooth.None));
   connect(gENROU.p, pwPin) annotation (Line(
       points={{41.3,12},{76.475,12},{76.475,0},{110,0}},
       color={0,0,255},
       smooth=Smooth.None));
-  connect(gENROU.PMECH, iEESGO.PMECH0) annotation (Line(points={{-6.54,23.5},{-14,
-          23.5},{-14,42},{48,42},{48,5},{63,5},{63,-57},{-90,-57},{-90,18.7143},
-          {-87.35,18.7143}}, color={0,0,127}));
+  connect(gENROU.PMECH, iEESGO.PMECH0) annotation (Line(points={{-6.54,23.5},{-14,23.5},{-14,42},{48,42},{48,5},{63,5},{63,-57},{-90,-57},{-90,18.7143},{-87.35,18.7143}}, color={0,0,127}));
   annotation (
     Diagram(coordinateSystem(
         extent={{-100,-100},{100,100}},
@@ -133,12 +122,10 @@ equation
         extent={{-100,-100},{100,100}},
         preserveAspectRatio=true,
         initialScale=0.1,
-        grid={1,1}), graphics={Ellipse(extent={{-14,-42},{74,38}}, lineColor={0,
-          0,255}),Line(
+        grid={1,1}), graphics={Ellipse(extent={{-14,-42},{74,38}}, lineColor={0,0,255}),Line(
           points={{-2,-12},{18,8},{38,-12},{58,8}},
           color={0,0,255},
-          smooth=Smooth.None),Ellipse(extent={{-100,-100},{101,100}}, lineColor
-          ={0,0,255}),Text(
+          smooth=Smooth.None),Ellipse(extent={{-100,-100},{101,100}}, lineColor={0,0,255}),Text(
           extent={{-91,6},{-22,-12}},
           lineColor={0,0,255},
           textString="GENROU & 

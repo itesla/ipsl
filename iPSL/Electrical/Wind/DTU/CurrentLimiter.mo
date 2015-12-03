@@ -1,93 +1,53 @@
 within iPSL.Electrical.Wind.DTU;
 
 
-model CurrentLimiter
-  "The current limitation model combines the physical limit. Developed by DTU"
-  parameter Real i_maxdip
-    "Maximum current during voltage dip at the wind turbine terminals";
-  parameter Real i_max
-    "Maximum continuous current at the wind turbine terminals";
-  parameter Real M_Qpri
-    "Prioritisation of q control during LVRT (0: active power priority - 1: reactive power priority)";
+model CurrentLimiter "The current limitation model combines the physical limit. Developed by DTU"
+  parameter Real i_maxdip "Maximum current during voltage dip at the wind turbine terminals";
+  parameter Real i_max "Maximum continuous current at the wind turbine terminals";
+  parameter Real M_Qpri "Prioritisation of q control during LVRT (0: active power priority - 1: reactive power priority)";
   parameter Real ini_Uwttfilt(fixed=false) "initial voltage magnitude";
   parameter Real T_Ufilt "filter time constant of the voltage measurement";
-  Modelica.Blocks.Interfaces.RealInput iPcmdlmt
-    annotation (Placement(transformation(extent={{-90,34},{-80,46}})));
-  Modelica.Blocks.Interfaces.RealInput Uwtt
-    annotation (Placement(transformation(extent={{-90,-6},{-80,6}})));
-  Modelica.Blocks.Interfaces.RealInput iQcmdlmt
-    annotation (Placement(transformation(extent={{-90,-46},{-80,-34}})));
-  Modelica.Blocks.Interfaces.RealOutput iQmax
-    annotation (Placement(transformation(extent={{80,24},{90,36}})));
-  Modelica.Blocks.Interfaces.RealOutput iPmax
-    annotation (Placement(transformation(extent={{80,-38},{90,-26}})));
-  Modelica.Blocks.Sources.Constant Imax(k=i_max)
-    "Maximum continuous current at the wind turbine terminals"
-    annotation (Placement(transformation(extent={{-96,48},{-86,58}})));
-  Modelica.Blocks.Logical.GreaterThreshold greaterThreshold(threshold=0.5)
-    annotation (Placement(transformation(extent={{-80,58},{-72,66}})));
-  Modelica.Blocks.Logical.Switch switch1
-    annotation (Placement(transformation(extent={{-64,56},{-52,68}})));
-  Modelica.Blocks.Math.Add add(k1=1, k2=1)
-    annotation (Placement(transformation(extent={{-28,51},{-18,61}})));
-  Modelica.Blocks.Math.Product product1
-    annotation (Placement(transformation(extent={{-48,32},{-38,42}})));
-  Modelica.Blocks.Math.Sqrt sqrt1
-    annotation (Placement(transformation(extent={{6,51},{16,61}})));
-  Modelica.Blocks.Math.Min min1
-    annotation (Placement(transformation(extent={{22,48},{32,58}})));
-  Modelica.Blocks.Nonlinear.Limiter limiter(uMax=999, uMin=0)
-    annotation (Placement(transformation(extent={{-14,51},{-4,61}})));
-  Modelica.Blocks.Interfaces.RealInput F_LVRT annotation (Placement(
-        transformation(
+  Modelica.Blocks.Interfaces.RealInput iPcmdlmt annotation (Placement(transformation(extent={{-90,34},{-80,46}})));
+  Modelica.Blocks.Interfaces.RealInput Uwtt annotation (Placement(transformation(extent={{-90,-6},{-80,6}})));
+  Modelica.Blocks.Interfaces.RealInput iQcmdlmt annotation (Placement(transformation(extent={{-90,-46},{-80,-34}})));
+  Modelica.Blocks.Interfaces.RealOutput iQmax annotation (Placement(transformation(extent={{80,24},{90,36}})));
+  Modelica.Blocks.Interfaces.RealOutput iPmax annotation (Placement(transformation(extent={{80,-38},{90,-26}})));
+  Modelica.Blocks.Sources.Constant Imax(k=i_max) "Maximum continuous current at the wind turbine terminals" annotation (Placement(transformation(extent={{-96,48},{-86,58}})));
+  Modelica.Blocks.Logical.GreaterThreshold greaterThreshold(threshold=0.5) annotation (Placement(transformation(extent={{-80,58},{-72,66}})));
+  Modelica.Blocks.Logical.Switch switch1 annotation (Placement(transformation(extent={{-64,56},{-52,68}})));
+  Modelica.Blocks.Math.Add add(k1=1, k2=1) annotation (Placement(transformation(extent={{-28,51},{-18,61}})));
+  Modelica.Blocks.Math.Product product1 annotation (Placement(transformation(extent={{-48,32},{-38,42}})));
+  Modelica.Blocks.Math.Sqrt sqrt1 annotation (Placement(transformation(extent={{6,51},{16,61}})));
+  Modelica.Blocks.Math.Min min1 annotation (Placement(transformation(extent={{22,48},{32,58}})));
+  Modelica.Blocks.Nonlinear.Limiter limiter(uMax=999, uMin=0) annotation (Placement(transformation(extent={{-14,51},{-4,61}})));
+  Modelica.Blocks.Interfaces.RealInput F_LVRT annotation (Placement(transformation(
         extent={{-5,-6},{5,6}},
         rotation=-90,
         origin={0,65})));
-  Modelica.Blocks.Math.Product product2
-    annotation (Placement(transformation(extent={{26,-3},{36,7}})));
-  Modelica.Blocks.Sources.Constant Imaxdip(k=i_maxdip)
-    "Maximum current during voltage dip at the wind turbine terminals"
-    annotation (Placement(transformation(extent={{-96,68},{-86,78}})));
-  Modelica.Blocks.Math.Product product3
-    annotation (Placement(transformation(extent={{-46,54},{-36,64}})));
-  Modelica.Blocks.Logical.Switch switch2
-    annotation (Placement(transformation(extent={{54,52},{66,64}})));
-  Modelica.Blocks.Math.Add add1(k1=1, k2=-1)
-    annotation (Placement(transformation(extent={{-28,-45},{-18,-35}})));
-  Modelica.Blocks.Nonlinear.Limiter limiter1(uMax=999, uMin=0)
-    annotation (Placement(transformation(extent={{-12,-45},{-2,-35}})));
-  Modelica.Blocks.Math.Sqrt sqrt2
-    annotation (Placement(transformation(extent={{6,-45},{16,-35}})));
-  Modelica.Blocks.Math.Min min2
-    annotation (Placement(transformation(extent={{24,-42},{34,-32}})));
-  Modelica.Blocks.Logical.Switch switch3
-    annotation (Placement(transformation(extent={{60,-38},{72,-26}})));
-  Modelica.Blocks.Math.Product product4
-    annotation (Placement(transformation(extent={{-44,-48},{-34,-38}})));
-  Modelica.Blocks.Tables.CombiTable1D iP_VDL(table=[0.1, 0; 0.15, 1; 0.9, 1;
-        0.925, 1; 1.075, 1; 1.1, 1])
-    "Lookup table for voltage dependency of active current limits"
+  Modelica.Blocks.Math.Product product2 annotation (Placement(transformation(extent={{26,-3},{36,7}})));
+  Modelica.Blocks.Sources.Constant Imaxdip(k=i_maxdip) "Maximum current during voltage dip at the wind turbine terminals" annotation (Placement(transformation(extent={{-96,68},{-86,78}})));
+  Modelica.Blocks.Math.Product product3 annotation (Placement(transformation(extent={{-46,54},{-36,64}})));
+  Modelica.Blocks.Logical.Switch switch2 annotation (Placement(transformation(extent={{54,52},{66,64}})));
+  Modelica.Blocks.Math.Add add1(k1=1, k2=-1) annotation (Placement(transformation(extent={{-28,-45},{-18,-35}})));
+  Modelica.Blocks.Nonlinear.Limiter limiter1(uMax=999, uMin=0) annotation (Placement(transformation(extent={{-12,-45},{-2,-35}})));
+  Modelica.Blocks.Math.Sqrt sqrt2 annotation (Placement(transformation(extent={{6,-45},{16,-35}})));
+  Modelica.Blocks.Math.Min min2 annotation (Placement(transformation(extent={{24,-42},{34,-32}})));
+  Modelica.Blocks.Logical.Switch switch3 annotation (Placement(transformation(extent={{60,-38},{72,-26}})));
+  Modelica.Blocks.Math.Product product4 annotation (Placement(transformation(extent={{-44,-48},{-34,-38}})));
+  Modelica.Blocks.Tables.CombiTable1D iP_VDL(table=[0.1, 0; 0.15, 1; 0.9, 1; 0.925, 1; 1.075, 1; 1.1, 1]) "Lookup table for voltage dependency of active current limits"
     annotation (Placement(transformation(extent={{-26,-18},{-14,-6}})));
-  Modelica.Blocks.Sources.Constant MQpri(k=M_Qpri)
-    "Prioritisation of q control during LVRT (0: active power priority - 1: reactive power priority)"
+  Modelica.Blocks.Sources.Constant MQpri(k=M_Qpri) "Prioritisation of q control during LVRT (0: active power priority - 1: reactive power priority)"
     annotation (Placement(transformation(extent={{4,0},{14,10}})));
-  Modelica.Blocks.Logical.GreaterThreshold greaterThreshold1(threshold=0.5)
-    annotation (Placement(transformation(extent={{40,-2},{48,6}})));
+  Modelica.Blocks.Logical.GreaterThreshold greaterThreshold1(threshold=0.5) annotation (Placement(transformation(extent={{40,-2},{48,6}})));
   iPSL.NonElectrical.Continuous.SimpleLag imSimpleLag(
     K=1,
     T=T_Ufilt,
-    y_start=ini_Uwttfilt)
-    annotation (Placement(transformation(extent={{-66,-6},{-54,6}})));
-  Modelica.Blocks.Tables.CombiTable1D iQ_VDL(table=[0.1, 0; 0.15, 1; 0.9, 1;
-        0.925, 0.33; 1.075, 0.33; 1.1, 1])
-    "Lookup table for voltage dependency of reactive current limits"
+    y_start=ini_Uwttfilt) annotation (Placement(transformation(extent={{-66,-6},{-54,6}})));
+  Modelica.Blocks.Tables.CombiTable1D iQ_VDL(table=[0.1, 0; 0.15, 1; 0.9, 1; 0.925, 0.33; 1.075, 0.33; 1.1, 1]) "Lookup table for voltage dependency of reactive current limits"
     annotation (Placement(transformation(extent={{-22,24},{-10,36}})));
-  Modelica.Blocks.Math.Min min3
-    annotation (Placement(transformation(extent={{-62,32},{-52,42}})));
-  Modelica.Blocks.Math.Min min4
-    annotation (Placement(transformation(extent={{-56,-26},{-50,-20}})));
-  Modelica.Blocks.Math.Abs abs1
-    annotation (Placement(transformation(extent={{-64,-44},{-58,-38}})));
+  Modelica.Blocks.Math.Min min3 annotation (Placement(transformation(extent={{-62,32},{-52,42}})));
+  Modelica.Blocks.Math.Min min4 annotation (Placement(transformation(extent={{-56,-26},{-50,-20}})));
+  Modelica.Blocks.Math.Abs abs1 annotation (Placement(transformation(extent={{-64,-44},{-58,-38}})));
 initial equation
   ini_Uwttfilt = Uwtt;
 equation
@@ -204,8 +164,7 @@ equation
       color={0,0,127},
       smooth=Smooth.None));
   connect(min3.u2, min2.u1) annotation (Line(
-      points={{-63,34},{-66,34},{-66,12},{-12,12},{-12,-8},{-2,-8},{-2,-34},{23,
-          -34}},
+      points={{-63,34},{-66,34},{-66,12},{-12,12},{-12,-8},{-2,-8},{-2,-34},{23,-34}},
       color={0,0,127},
       smooth=Smooth.None));
   connect(min3.y, product1.u1) annotation (Line(
@@ -232,24 +191,15 @@ equation
       points={{-49,34},{-50,34},{-50,38},{-49.75,40},{-49,40}},
       color={0,0,127},
       smooth=Smooth.None));
-  connect(F_LVRT, greaterThreshold.u) annotation (Line(points={{0,65},{-2,65},{
-          -2,88},{-2,90},{-110,90},{-110,62},{-80.8,62}}, color={0,0,127}));
-  connect(iQcmdlmt, abs1.u) annotation (Line(points={{-85,-40},{-64.6,-40},{-64.6,
-          -41}}, color={0,0,127}));
-  connect(iPcmdlmt, min3.u1)
-    annotation (Line(points={{-85,40},{-63,40},{-63,40}}, color={0,0,127}));
-  connect(Uwtt, imSimpleLag.u)
-    annotation (Line(points={{-85,0},{-67.2,0},{-67.2,0}}, color={0,0,127}));
-  connect(imSimpleLag.y, iP_VDL.u[1]) annotation (Line(points={{-53.4,0},{-36,0},
-          {-36,-12},{-27.2,-12}}, color={0,0,127}));
-  connect(iQ_VDL.u[1], imSimpleLag.y) annotation (Line(points={{-23.2,30},{-38,
-          30},{-38,0},{-53.4,0}}, color={0,0,127}));
+  connect(F_LVRT, greaterThreshold.u) annotation (Line(points={{0,65},{-2,65},{-2,88},{-2,90},{-110,90},{-110,62},{-80.8,62}}, color={0,0,127}));
+  connect(iQcmdlmt, abs1.u) annotation (Line(points={{-85,-40},{-64.6,-40},{-64.6,-41}}, color={0,0,127}));
+  connect(iPcmdlmt, min3.u1) annotation (Line(points={{-85,40},{-63,40},{-63,40}}, color={0,0,127}));
+  connect(Uwtt, imSimpleLag.u) annotation (Line(points={{-85,0},{-67.2,0},{-67.2,0}}, color={0,0,127}));
+  connect(imSimpleLag.y, iP_VDL.u[1]) annotation (Line(points={{-53.4,0},{-36,0},{-36,-12},{-27.2,-12}}, color={0,0,127}));
+  connect(iQ_VDL.u[1], imSimpleLag.y) annotation (Line(points={{-23.2,30},{-38,30},{-38,0},{-53.4,0}}, color={0,0,127}));
   annotation (
-    Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-70},{100,
-            100}})),
-    Icon(coordinateSystem(preserveAspectRatio=false, extent={{-100,-70},{100,
-            100}}), graphics={Rectangle(extent={{-79,60},{81,-60}}, lineColor={
-          0,0,255}),Ellipse(
+    Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-70},{100,100}})),
+    Icon(coordinateSystem(preserveAspectRatio=false, extent={{-100,-70},{100,100}}), graphics={Rectangle(extent={{-79,60},{81,-60}}, lineColor={0,0,255}),Ellipse(
           extent={{-22,20},{22,-22}},
           lineColor={0,0,255},
           lineThickness=0.5),Polygon(

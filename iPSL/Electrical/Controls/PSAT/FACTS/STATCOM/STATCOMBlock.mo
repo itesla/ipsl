@@ -1,34 +1,23 @@
 within iPSL.Electrical.Controls.PSAT.FACTS.STATCOM;
 
 
-model STATCOMBlock
-  "Static Synchronous Compensator model with Modelica components"
-  parameter Real Sb=100 "System base power (MVA)"
-    annotation (Dialog(group="Power flow data"));
-  parameter Real Vbus=400000 "Bus nominal voltage (V)"
-    annotation (Dialog(group="Power flow data"));
-  parameter Real Sn=100 "Power rating (MVA)"
-    annotation (Dialog(group="Power flow data"));
-  parameter Real Vn=400000 "Voltage rating (V)"
-    annotation (Dialog(group="Power flow data"));
-  parameter Real fn=50 "Frequency rating (Hz)"
-    annotation (Dialog(group="Power flow data"));
-  parameter Real V_0=1 "Voltage magnitude (pu)"
-    annotation (Dialog(group="Power flow data"));
-  parameter Real angle_0=-0.000213067852480 "Voltage angle (deg.)"
-    annotation (Dialog(group="Power flow data"));
-  parameter Real Qg=0.139557595258338 "Reactive power injection(p.u.)"
-    annotation (Dialog(group="Power flow data"));
+model STATCOMBlock "Static Synchronous Compensator model with Modelica components"
+  parameter Real Sb=100 "System base power (MVA)" annotation (Dialog(group="Power flow data"));
+  parameter Real Vbus=400000 "Bus nominal voltage (V)" annotation (Dialog(group="Power flow data"));
+  parameter Real Sn=100 "Power rating (MVA)" annotation (Dialog(group="Power flow data"));
+  parameter Real Vn=400000 "Voltage rating (V)" annotation (Dialog(group="Power flow data"));
+  parameter Real fn=50 "Frequency rating (Hz)" annotation (Dialog(group="Power flow data"));
+  parameter Real V_0=1 "Voltage magnitude (pu)" annotation (Dialog(group="Power flow data"));
+  parameter Real angle_0=-0.000213067852480 "Voltage angle (deg.)" annotation (Dialog(group="Power flow data"));
+  parameter Real Qg=0.139557595258338 "Reactive power injection(p.u.)" annotation (Dialog(group="Power flow data"));
   //parameter Real v_ref=1.002791151905167 "Reference voltage of the STATCOM regulator (pu)" annotation(Dialog(group="Power flow data"));
   parameter Real Kr=50 "Regulator gain (p.u./p.u.)";
   parameter Real Tr=0.01 "Regulator time constant (s)";
   parameter Real i_Max=0.7 "Maximum current (pu)";
   parameter Real i_Min=-0.1 "Minimum current (pu)";
   parameter Real v_POD=0 "Power oscillation damper signal";
-  Modelica.Blocks.Math.Add3 add3_1(k2=-1)
-    annotation (Placement(transformation(extent={{-90,-10},{-70,10}})));
-  Modelica.Blocks.Math.Gain gain(k=Kr)
-    annotation (Placement(transformation(extent={{-52,-10},{-32,10}})));
+  Modelica.Blocks.Math.Add3 add3_1(k2=-1) annotation (Placement(transformation(extent={{-90,-10},{-70,10}})));
+  Modelica.Blocks.Math.Gain gain(k=Kr) annotation (Placement(transformation(extent={{-52,-10},{-32,10}})));
   Modelica.Blocks.Continuous.TransferFunction transferFunction(
     a={Tr,1},
     initType=Modelica.Blocks.Types.Init.InitialState,
@@ -37,27 +26,22 @@ model STATCOMBlock
   Modelica.Blocks.Nonlinear.Limiter limiter(
     uMax=i_max,
     uMin=i_min,
-    limitsAtInit=true)
-    annotation (Placement(transformation(extent={{36,-10},{56,10}})));
-  Modelica.Blocks.Interfaces.RealOutput i_SH "STATCOM current (pu)"
-    annotation (Placement(transformation(extent={{70,-10},{90,10}})));
+    limitsAtInit=true) annotation (Placement(transformation(extent={{36,-10},{56,10}})));
+  Modelica.Blocks.Interfaces.RealOutput i_SH "STATCOM current (pu)" annotation (Placement(transformation(extent={{70,-10},{90,10}})));
   Modelica.Blocks.Interfaces.RealInput v=volt "Bus voltage magnitude (pu)"
     annotation (Placement(
       visible=false,
       transformation(extent={{-140,-20},{-100,20}}),
       iconTransformation(extent={{-140,-20},{-100,20}})));
-  iPSL.Connectors.PwPin p(vr(start=vr0), vi(start=vi0))
-    annotation (Placement(transformation(extent={{100,-8},{120,12}})));
+  iPSL.Connectors.PwPin p(vr(start=vr0), vi(start=vi0)) annotation (Placement(transformation(extent={{100,-8},{120,12}})));
   Real Q "Injected reactive power";
   Real volt "Bus voltage magnitude (pu)";
   Real angle "Bus voltage angle (deg)";
-  Modelica.Blocks.Interfaces.RealInput vs_POD "POD signal (pu)" annotation (
-      Placement(transformation(
+  Modelica.Blocks.Interfaces.RealInput vs_POD "POD signal (pu)" annotation (Placement(transformation(
         extent={{-20,-20},{20,20}},
         rotation=90,
         origin={-108,-60})));
-  Modelica.Blocks.Sources.Constant const(k=v_ref)
-    annotation (Placement(transformation(extent={{-128,24},{-108,44}})));
+  Modelica.Blocks.Sources.Constant const(k=v_ref) annotation (Placement(transformation(extent={{-128,24},{-108,44}})));
 protected
   parameter Real Iold=Sn/Vn;
   parameter Real Inew=Sb/Vbus;
@@ -102,22 +86,18 @@ equation
       points={{-108,-60},{-106,-60},{-106,-8},{-92,-8}},
       color={0,0,127},
       smooth=Smooth.None));
-  connect(const.y, add3_1.u1) annotation (Line(points={{-107,34},{-100,34},{-100,
-          8},{-92,8}}, color={0,0,127}));
+  connect(const.y, add3_1.u1) annotation (Line(points={{-107,34},{-100,34},{-100,8},{-92,8}}, color={0,0,127}));
   annotation (
     Placement(transformation(extent={{-82,34},{-62,54}})),
     Placement(transformation(extent={{-136,-22},{-96,18}})),
-    Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{
-            100,100}})),
-    Icon(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,
-            100}}), graphics={Text(
+    Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,100}})),
+    Icon(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,100}}), graphics={Text(
           extent={{-26,-36},{38,-66}},
           lineColor={0,0,0},
           lineThickness=0.5,
           fillColor={255,0,0},
           fillPattern=FillPattern.Solid,
-          textString="%StatcomBlock"),Rectangle(extent={{-100,100},{100,-100}},
-          lineColor={0,0,255}),Ellipse(
+          textString="%StatcomBlock"),Rectangle(extent={{-100,100},{100,-100}}, lineColor={0,0,255}),Ellipse(
           extent={{-16,20},{34,-24}},
           lineColor={0,0,0},
           fillColor={215,215,215},
@@ -143,8 +123,7 @@ equation
           points={{-52,-2},{-60,-2},{-60,-2}},
           color={0,0,255},
           smooth=Smooth.None),Line(
-          points={{-98,4},{-98,24},{-60,24},{-60,-26},{-96,-26},{-98,-26},{-98,
-            -8},{-98,-8}},
+          points={{-98,4},{-98,24},{-60,24},{-60,-26},{-96,-26},{-98,-26},{-98,-8},{-98,-8}},
           color={255,0,0},
           thickness=0.5,
           smooth=Smooth.None)}),

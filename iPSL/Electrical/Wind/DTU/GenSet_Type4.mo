@@ -6,24 +6,14 @@ model GenSet_Type4 "Generator Type 4 Set Model. Developed by DTU"
   parameter Real diQmax;
   parameter Real ini_iPref;
   parameter Real ini_iQref;
-  Modelica.Blocks.Interfaces.RealInput iPmax
-    annotation (Placement(transformation(extent={{-51,34},{-41,46}})));
-  Modelica.Blocks.Interfaces.RealInput iPcmd
-    annotation (Placement(transformation(extent={{-51,10},{-41,22}})));
-  Modelica.Blocks.Interfaces.RealInput iQmax
-    annotation (Placement(transformation(extent={{-51,-46},{-41,-34}})));
-  Modelica.Blocks.Interfaces.RealInput iQcmd
-    annotation (Placement(transformation(extent={{-51,-22},{-41,-10}})));
-  Modelica.Blocks.Interfaces.RealOutput iPref annotation (Placement(
-        transformation(extent={{25,14},{35,26}}), iconTransformation(extent={{
-            25,14},{35,26}})));
-  Modelica.Blocks.Interfaces.RealOutput iQref annotation (Placement(
-        transformation(extent={{25,-26},{35,-14}}), iconTransformation(extent={
-            {25,-26},{35,-14}})));
-  Modelica.Blocks.Sources.Constant imSetPoint(k=-999)
-    annotation (Placement(transformation(extent={{-38,0},{-26,12}})));
-  Modelica.Blocks.Math.Gain imGain2(k=-1)
-    annotation (Placement(transformation(extent={{-22,-30},{-14,-22}})));
+  Modelica.Blocks.Interfaces.RealInput iPmax annotation (Placement(transformation(extent={{-51,34},{-41,46}})));
+  Modelica.Blocks.Interfaces.RealInput iPcmd annotation (Placement(transformation(extent={{-51,10},{-41,22}})));
+  Modelica.Blocks.Interfaces.RealInput iQmax annotation (Placement(transformation(extent={{-51,-46},{-41,-34}})));
+  Modelica.Blocks.Interfaces.RealInput iQcmd annotation (Placement(transformation(extent={{-51,-22},{-41,-10}})));
+  Modelica.Blocks.Interfaces.RealOutput iPref annotation (Placement(transformation(extent={{25,14},{35,26}}), iconTransformation(extent={{25,14},{35,26}})));
+  Modelica.Blocks.Interfaces.RealOutput iQref annotation (Placement(transformation(extent={{25,-26},{35,-14}}), iconTransformation(extent={{25,-26},{35,-14}})));
+  Modelica.Blocks.Sources.Constant imSetPoint(k=-999) annotation (Placement(transformation(extent={{-38,0},{-26,12}})));
+  Modelica.Blocks.Math.Gain imGain2(k=-1) annotation (Placement(transformation(extent={{-22,-30},{-14,-22}})));
   iPSL.NonElectrical.Continuous.SimpleLagRateLimVar imSimpleLag_varnonwindup(
     T=Tg,
     rmax=diPmax,
@@ -33,8 +23,7 @@ model GenSet_Type4 "Generator Type 4 Set Model. Developed by DTU"
     T=Tg,
     rmin=diQmin,
     rmax=diQmax,
-    y_start=ini_iQref)
-    annotation (Placement(transformation(extent={{-10,-22},{4,-8}})));
+    y_start=ini_iQref) annotation (Placement(transformation(extent={{-10,-22},{4,-8}})));
 equation
   connect(imSimpleLag_varnonwindup.u, iPcmd) annotation (Line(
       points={{-17.6,16},{-46,16}},
@@ -56,14 +45,10 @@ equation
       points={{4.7,-15},{14,-15},{14,-20},{30,-20}},
       color={0,0,127},
       smooth=Smooth.None));
-  connect(imSetPoint.y, imSimpleLag_varnonwindup.outMin) annotation (Line(
-        points={{-25.4,6},{-14.4,6},{-14.4,4.8}}, color={0,0,127}));
-  connect(imGain2.y, imSimpleLag_varnonwindup1.outMin) annotation (Line(points=
-          {{-13.6,-26},{-8.6,-26},{-8.6,-24.8}}, color={0,0,127}));
-  connect(iQmax, imGain2.u) annotation (Line(points={{-46,-40},{-34,-40},{-34,-26},
-          {-22.8,-26}}, color={0,0,127}));
-  connect(imSimpleLag_varnonwindup1.outMax, imGain2.u) annotation (Line(points=
-          {{2.6,-5.2},{-26,-5.2},{-26,-26},{-22.8,-26}}, color={0,0,127}));
+  connect(imSetPoint.y, imSimpleLag_varnonwindup.outMin) annotation (Line(points={{-25.4,6},{-14.4,6},{-14.4,4.8}}, color={0,0,127}));
+  connect(imGain2.y, imSimpleLag_varnonwindup1.outMin) annotation (Line(points={{-13.6,-26},{-8.6,-26},{-8.6,-24.8}}, color={0,0,127}));
+  connect(iQmax, imGain2.u) annotation (Line(points={{-46,-40},{-34,-40},{-34,-26},{-22.8,-26}}, color={0,0,127}));
+  connect(imSimpleLag_varnonwindup1.outMax, imGain2.u) annotation (Line(points={{2.6,-5.2},{-26,-5.2},{-26,-26},{-22.8,-26}}, color={0,0,127}));
   annotation (
     Diagram(coordinateSystem(
         preserveAspectRatio=false,

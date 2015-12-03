@@ -2,8 +2,7 @@ within iPSL.Electrical.Wind.PSSE.WT3G;
 
 
 model speedtw
-  Modelica.Blocks.Interfaces.RealOutput y
-    annotation (Placement(transformation(extent={{98,2},{118,22}})));
+  Modelica.Blocks.Interfaces.RealOutput y annotation (Placement(transformation(extent={{98,2},{118,22}})));
   parameter Real wmin=0;
   parameter Real w20=0.2;
   parameter Real w40=0.3;
@@ -90,8 +89,7 @@ equation
     w60,
     Pmin,
     w100);
-  annotation (Diagram(coordinateSystem(preserveAspectRatio=true, extent={{-100,
-            -100},{100,100}}), graphics), Documentation(info="<html>
+  annotation (Diagram(coordinateSystem(preserveAspectRatio=true, extent={{-100,-100},{100,100}}), graphics), Documentation(info="<html>
 <p><br><span style=\"font-family: MS Shell Dlg 2;\">&LT;iPSL: iTesla Power System Library&GT;</span></p>
 <p><span style=\"font-family: MS Shell Dlg 2;\">Copyright 2015 RTE (France), AIA (Spain), KTH (Sweden) and DTU (Denmark)</span></p>
 <ul>

@@ -56,10 +56,8 @@ model SMIB1L_Group3_Nordic44
     V_0=1,
     H=0,
     D=0,
-    angle_0=-3.00563e-7)
-    annotation (Placement(transformation(extent={{85,-10},{63,12}})));
-  iPSL.Examples.N44_Groups.Configuration.Group3 group3 annotation (Placement(
-        transformation(rotation=0, extent={{-94,-10},{-74,10}})));
+    angle_0=-3.00563e-7) annotation (Placement(transformation(extent={{85,-10},{63,12}})));
+  iPSL.Examples.N44_Groups.Configuration.Group3 group3 annotation (Placement(transformation(rotation=0, extent={{-94,-10},{-74,10}})));
 equation
   connect(pwFault.p, pwLine.p) annotation (Line(
       points={{-32.6667,28},{-39,28},{-39,0},{-38,0},{-38,0}},
@@ -93,8 +91,7 @@ equation
       points={{-73,0},{-38,0}},
       color={0,0,255},
       smooth=Smooth.None));
-  annotation (Diagram(coordinateSystem(preserveAspectRatio=true, extent={{-100,
-            -100},{100,100}}), graphics), Documentation(info="<html>
+  annotation (Diagram(coordinateSystem(preserveAspectRatio=true, extent={{-100,-100},{100,100}}), graphics), Documentation(info="<html>
 <p><br><span style=\"font-family: MS Shell Dlg 2;\">&LT;iPSL: iTesla Power System Library&GT;</span></p>
 <p><span style=\"font-family: MS Shell Dlg 2;\">Copyright 2015 RTE (France), AIA (Spain), KTH (Sweden) and DTU (Denmark)</span></p>
 <ul>

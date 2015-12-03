@@ -2,8 +2,7 @@ within iPSL.Electrical.Wind.PSAT.PSAT_Type_3;
 
 
 model MechaBlk
-  Modelica.Blocks.Interfaces.RealInput Tm "engine shaft torque" annotation (
-      Placement(
+  Modelica.Blocks.Interfaces.RealInput Tm "engine shaft torque" annotation (Placement(
       transformation(
         extent={{-102.0,54.0},{-62.0,94.0}},
         origin={-43.0,7.7602},
@@ -13,8 +12,7 @@ model MechaBlk
         origin={2.0,-24.0},
         extent={{-102.0,54.0},{-62.0,94.0}},
         rotation=0)));
-  Modelica.Blocks.Interfaces.RealInput Tel "electromagnetical torque"
-    annotation (Placement(
+  Modelica.Blocks.Interfaces.RealInput Tel "electromagnetical torque" annotation (Placement(
       transformation(
         extent={{-102.0,54.0},{-62.0,94.0}},
         origin={-43.0,-34.0},
@@ -24,8 +22,7 @@ model MechaBlk
         origin={2.0,-124.0},
         extent={{-102.0,54.0},{-62.0,94.0}},
         rotation=0)));
-  Modelica.Blocks.Interfaces.RealOutput omega_m "engine shaft angular velocity"
-    annotation (Placement(
+  Modelica.Blocks.Interfaces.RealOutput omega_m "engine shaft angular velocity" annotation (Placement(
       transformation(
         extent={{102.0,54.0},{62.0,94.0}},
         origin={43.0,-74.0},

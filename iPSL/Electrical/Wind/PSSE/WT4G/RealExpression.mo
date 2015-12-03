@@ -3,12 +3,8 @@ within iPSL.Electrical.Wind.PSSE.WT4G;
 
 block RealExpression "Set output signal to a time varying Real expression"
   parameter Real ImaxTD "Converter current limit";
-  Modelica.Blocks.Interfaces.RealOutput y=0.0 "Value of Real output"
-    annotation (Dialog(group="Time varying output signal"), Placement(
-        transformation(extent={{100,-10},{120,10}}, rotation=0)));
-  Modelica.Blocks.Interfaces.RealInput u annotation (Placement(transformation(
-          extent={{-134,-20},{-94,20}}), iconTransformation(extent={{-134,-20},
-            {-94,20}})));
+  Modelica.Blocks.Interfaces.RealOutput y=0.0 "Value of Real output" annotation (Dialog(group="Time varying output signal"), Placement(transformation(extent={{100,-10},{120,10}}, rotation=0)));
+  Modelica.Blocks.Interfaces.RealInput u annotation (Placement(transformation(extent={{-134,-20},{-94,20}}), iconTransformation(extent={{-134,-20},{-94,20}})));
   annotation (
     Icon(coordinateSystem(
         preserveAspectRatio=true,

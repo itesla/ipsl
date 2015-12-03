@@ -2,12 +2,8 @@ within iPSL.NonElectrical.Nonlinear;
 
 
 model FEX "FEX=f(IN)"
-  Modelica.Blocks.Interfaces.RealInput u annotation (Placement(transformation(
-          extent={{-70,-10},{-50,10}}), iconTransformation(extent={{-110,-10},{
-            -90,10}})));
-  Modelica.Blocks.Interfaces.RealOutput y annotation (Placement(transformation(
-          extent={{58,-10},{78,10}}), iconTransformation(extent={{100,-10},{120,
-            10}})));
+  Modelica.Blocks.Interfaces.RealInput u annotation (Placement(transformation(extent={{-70,-10},{-50,10}}), iconTransformation(extent={{-110,-10},{-90,10}})));
+  Modelica.Blocks.Interfaces.RealOutput y annotation (Placement(transformation(extent={{58,-10},{78,10}}), iconTransformation(extent={{100,-10},{120,10}})));
 equation
   if u <= 0 then
     y = 1;
@@ -21,10 +17,8 @@ equation
     y = 0;
   end if;
   annotation (
-    Diagram(coordinateSystem(preserveAspectRatio=true, extent={{-100,-100},{100,
-            100}}), graphics),
-    Icon(coordinateSystem(preserveAspectRatio=true, extent={{-100,-100},{100,
-            100}}), graphics={Rectangle(
+    Diagram(coordinateSystem(preserveAspectRatio=true, extent={{-100,-100},{100,100}}), graphics),
+    Icon(coordinateSystem(preserveAspectRatio=true, extent={{-100,-100},{100,100}}), graphics={Rectangle(
           extent={{-100,100},{100,-100}},
           lineColor={0,0,255},
           fillColor={255,255,255},

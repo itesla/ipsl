@@ -2,8 +2,7 @@ within iPSL.Electrical.Wind;
 model WindGenerator
   import Modelica.Constants.pi;
   import Modelica.Constants.e;
-  Modelica.Blocks.Interfaces.RealOutput Vw "Connector of Real output signal"
-    annotation (Placement(
+  Modelica.Blocks.Interfaces.RealOutput Vw "Connector of Real output signal" annotation (Placement(
       transformation(
         extent={{100.0,-10.0},{120.0,10.0}},
         rotation=0,
@@ -27,14 +26,12 @@ equation
     Vw = v0;
   elseif typ == 2 then
     if time > tstart and time < tstop then
-      Vw = v0 + wmag*(1 - cos((time - tstart)*2*Modelica.Constants.pi/wgwidth))
-        /2;
+      Vw = v0 + wmag*(1 - cos((time - tstart)*2*Modelica.Constants.pi/wgwidth))/2;
     else
       Vw = v0;
     end if;
   else
-    Vw = v0 + (vmax - v0)*(1 - (time - (tstop + tstart)/2)^2/sigma^2)*Modelica.Constants.e
-      ^(-(time - (tstop + tstart)/2)^2/(2*sigma^2))
+    Vw = v0 + (vmax - v0)*(1 - (time - (tstop + tstart)/2)^2/sigma^2)*Modelica.Constants.e^(-(time - (tstop + tstart)/2)^2/(2*sigma^2))
       "2/(sqrt(3*sigma)*Modelica.Constants.pi^(1/4))*(1 - ((time - (tstop + tstart)/2)/sigma)^2)*Modelica.Constants.e^((-((time - (tstop + tstart)/2)/sigma)^2)/(2*sigma^2)) + v0";
   end if;
   annotation (

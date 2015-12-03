@@ -56,12 +56,9 @@ model REN_SMIB1L_Group1_4
     M_b=1000,
     H=4,
     P_0=45.0213,
-    Q_0=32.30648)
-    annotation (Placement(transformation(extent={{105,-10},{83,12}})));
-  iPSL.Examples.REN_Groups.Configuration.RGroup1_4 group1_4 annotation (
-      Placement(transformation(rotation=0, extent={{-84,-10},{-64,10}})));
-  inner Electrical.SystemBase SysData(S_b=1000)
-    annotation (Placement(transformation(extent={{-46,52},{-22,72}})));
+    Q_0=32.30648) annotation (Placement(transformation(extent={{105,-10},{83,12}})));
+  iPSL.Examples.REN_Groups.Configuration.RGroup1_4 group1_4 annotation (Placement(transformation(rotation=0, extent={{-84,-10},{-64,10}})));
+  inner Electrical.SystemBase SysData(S_b=1000) annotation (Placement(transformation(extent={{-46,52},{-22,72}})));
 equation
   connect(pwLine.n, pwLine1.p) annotation (Line(
       points={{-4,0},{3,0},{3,14},{26,14}},
@@ -91,10 +88,8 @@ equation
       points={{-63,0},{-18,0}},
       color={0,0,255},
       smooth=Smooth.None));
-  connect(pwFault.p, pwLine4.p) annotation (Line(points={{44.0833,-52},{44.0833,
-          -49},{36,-49},{36,-20}}, color={0,0,255}));
-  annotation (Diagram(coordinateSystem(preserveAspectRatio=true, extent={{-100,
-            -100},{100,100}})), Documentation(info="<html>
+  connect(pwFault.p, pwLine4.p) annotation (Line(points={{44.0833,-52},{44.0833,-49},{36,-49},{36,-20}}, color={0,0,255}));
+  annotation (Diagram(coordinateSystem(preserveAspectRatio=true, extent={{-100,-100},{100,100}})), Documentation(info="<html>
 <p><br><span style=\"font-family: MS Shell Dlg 2;\">&LT;iPSL: iTesla Power System Library&GT;</span></p>
 <p><span style=\"font-family: MS Shell Dlg 2;\">Copyright 2015 RTE (France), AIA (Spain), KTH (Sweden) and DTU (Denmark)</span></p>
 <ul>

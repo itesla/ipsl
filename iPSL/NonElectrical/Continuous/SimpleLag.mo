@@ -2,11 +2,8 @@ within iPSL.NonElectrical.Continuous;
 model SimpleLag "First order lag transfer function block"
   extends Modelica.Blocks.Interfaces.SISO(y(start=y_start));
   parameter Real K "Gain" annotation (Evaluate=false);
-  parameter Modelica.SIunits.Time T "Lag time constant"
-    annotation (Evaluate=false);
-  parameter Real y_start "Output start value"
-    annotation (Dialog(group="Initialization"));
-
+  parameter Modelica.SIunits.Time T "Lag time constant" annotation (Evaluate=false);
+  parameter Real y_start "Output start value" annotation (Dialog(group="Initialization"));
 equation
   assert(
     T >= 1e-10,
@@ -14,8 +11,7 @@ equation
     AssertionLevel.error);
   T*der(y) = K*u - y;
   annotation (
-    Icon(coordinateSystem(preserveAspectRatio=true, extent={{-100,-100},{100,
-            100}}), graphics={Text(
+    Icon(coordinateSystem(preserveAspectRatio=true, extent={{-100,-100},{100,100}}), graphics={Text(
           extent={{-18,68},{22,8}},
           lineColor={0,0,255},
           textString="K"),Text(

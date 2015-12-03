@@ -3,10 +3,8 @@ within iPSL.Electrical.Branches.PSSE.Old_transformer.update;
 
 model phaseshift
   constant Real pi=Modelica.Constants.pi;
-  iPSL.Connectors.PwPin T annotation (Placement(transformation(extent={{76,-2},
-            {96,18}}), iconTransformation(extent={{76,-2},{96,18}})));
-  iPSL.Connectors.PwPin F annotation (Placement(transformation(extent={{-102,-2},
-            {-82,18}}), iconTransformation(extent={{-102,-2},{-82,18}})));
+  iPSL.Connectors.PwPin T annotation (Placement(transformation(extent={{76,-2},{96,18}}), iconTransformation(extent={{76,-2},{96,18}})));
+  iPSL.Connectors.PwPin F annotation (Placement(transformation(extent={{-102,-2},{-82,18}}), iconTransformation(extent={{-102,-2},{-82,18}})));
   parameter Real phase " From side and To side phase shift in degree";
 protected
   parameter Real A=(-phase*pi/180) + 0.5*pi;
@@ -14,11 +12,8 @@ equation
   [T.ir; T.ii] = -[sin(A), cos(A); -cos(A), sin(A)]*[F.ir; F.ii];
   [T.vr; T.vi] = [sin(A), cos(A); -cos(A), sin(A)]*[F.vr; F.vi];
   annotation (
-    Diagram(coordinateSystem(preserveAspectRatio=true, extent={{-100,-100},{100,
-            100}}), graphics),
-    Icon(coordinateSystem(preserveAspectRatio=true, extent={{-100,-100},{100,
-            100}}), graphics={Rectangle(extent={{-90,48},{92,-34}}, lineColor={
-          0,0,255}),Text(
+    Diagram(coordinateSystem(preserveAspectRatio=true, extent={{-100,-100},{100,100}}), graphics),
+    Icon(coordinateSystem(preserveAspectRatio=true, extent={{-100,-100},{100,100}}), graphics={Rectangle(extent={{-90,48},{92,-34}}, lineColor={0,0,255}),Text(
           extent={{-70,36},{-26,-20}},
           lineColor={0,0,255},
           lineThickness=0.5,

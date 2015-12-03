@@ -2,14 +2,11 @@ within iPSL.Electrical.Branches.PSSE.Old_transformer;
 
 
 model ThreeWinding
-  parameter Real C1[1, 6]=[1.1, 0.9, 1.1, 0.9, 33, 0]
-    "Primary winding: Vmax Vmin Rmax Rmin Ntap angle  ";
+  parameter Real C1[1, 6]=[1.1, 0.9, 1.1, 0.9, 33, 0] "Primary winding: Vmax Vmin Rmax Rmin Ntap angle  ";
   parameter Real D1[1, 3]=[17, 5, 0] "Delay TD TC TSD";
-  parameter Real C2[1, 6]=[1.1, 0.9, 1.1, 0.9, 33, 0]
-    "Secondary winding: Vmax Vmin Rmax Rmin Ntap angle  ";
+  parameter Real C2[1, 6]=[1.1, 0.9, 1.1, 0.9, 33, 0] "Secondary winding: Vmax Vmin Rmax Rmin Ntap angle  ";
   parameter Real D2[1, 3]=[17, 5, 0] "Delay TD TC TSD";
-  parameter Real C3[1, 6]=[1.1, 0.9, 1.1, 0.9, 33, 0]
-    "Tertiary winding: Vmax Vmin Rmax Rmin Ntap angle  ";
+  parameter Real C3[1, 6]=[1.1, 0.9, 1.1, 0.9, 33, 0] "Tertiary winding: Vmax Vmin Rmax Rmin Ntap angle  ";
   parameter Real D3[1, 3]=[17, 5, 0] "Delay TD TC TSD";
   // parameter Complex Z12"short circuit test impedance";
   // parameter Complex Z23 "short circuit test impedance";
@@ -23,12 +20,9 @@ model ThreeWinding
   //    "equivalent impedance of winding 2";
   // parameter Complex Z3 = 0.5 * (Z31 + Z23 - Z12)
   //  "equivalent impedance of winding 3";
-  iPSL.Connectors.PwPin P1 annotation (Placement(transformation(extent={{-100,-2},
-            {-80,18}}), iconTransformation(extent={{-100,-8},{-92,0}})));
-  iPSL.Connectors.PwPin P2 annotation (Placement(transformation(extent={{80,50},
-            {100,70}}), iconTransformation(extent={{90,10},{98,18}})));
-  iPSL.Connectors.PwPin P3 annotation (Placement(transformation(extent={{80,-50},
-            {100,-30}}), iconTransformation(extent={{90,-28},{98,-20}})));
+  iPSL.Connectors.PwPin P1 annotation (Placement(transformation(extent={{-100,-2},{-80,18}}), iconTransformation(extent={{-100,-8},{-92,0}})));
+  iPSL.Connectors.PwPin P2 annotation (Placement(transformation(extent={{80,50},{100,70}}), iconTransformation(extent={{90,10},{98,18}})));
+  iPSL.Connectors.PwPin P3 annotation (Placement(transformation(extent={{80,-50},{100,-30}}), iconTransformation(extent={{90,-28},{98,-20}})));
   iPSL.Electrical.Branches.PSSE.Old_transformer.TwoWindingTapRatio No_1(
     initialtapratio=1,
     angle_d=0,
@@ -41,9 +35,7 @@ model ThreeWinding
         extent={{-7,-9},{7,9}},
         rotation=90,
         origin={-71,-25})));
-  iPSL.Connectors.PwPin P1_control annotation (Placement(transformation(extent=
-            {{-100,-60},{-80,-40}}), iconTransformation(extent={{-102,24},{-94,
-            32}})));
+  iPSL.Connectors.PwPin P1_control annotation (Placement(transformation(extent={{-100,-60},{-80,-40}}), iconTransformation(extent={{-102,24},{-94,32}})));
   iPSL.Electrical.Branches.PSSE.Old_transformer.TwoWindingTapRatio No_2(
     initialtapratio=1,
     angle_d=0,
@@ -52,8 +44,7 @@ model ThreeWinding
         extent={{-28,-23},{28,23}},
         rotation=0,
         origin={38,15})));
-  iPSL.Connectors.PwPin P2_control annotation (Placement(transformation(extent=
-            {{80,14},{100,34}}), iconTransformation(extent={{90,42},{98,50}})));
+  iPSL.Connectors.PwPin P2_control annotation (Placement(transformation(extent={{80,14},{100,34}}), iconTransformation(extent={{90,42},{98,50}})));
   iPSL.Electrical.Sensors.PwVoltage V2 annotation (Placement(transformation(
         extent={{-7,-9},{7,9}},
         rotation=180,
@@ -70,8 +61,7 @@ model ThreeWinding
         extent={{-7,-9},{7,9}},
         rotation=180,
         origin={71,-51})));
-  iPSL.Connectors.PwPin P3_control annotation (Placement(transformation(extent=
-            {{80,-82},{100,-62}}), iconTransformation(extent={{90,-60},{98,-52}})));
+  iPSL.Connectors.PwPin P3_control annotation (Placement(transformation(extent={{80,-82},{100,-62}}), iconTransformation(extent={{90,-60},{98,-52}})));
 equation
   connect(V1.p, P1_control) annotation (Line(
       points={{-71,-28.5},{-71,-50},{-90,-50}},

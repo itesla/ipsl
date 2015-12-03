@@ -5,18 +5,12 @@ partial model baseMachine
   extends iPSL.Electrical.Essentials.pfComponent;
   import Modelica.Constants.pi;
   import Modelica.Blocks.Interfaces.*;
-  parameter Real Sn "Power rating (MVA)"
-    annotation (Dialog(group="Machine parameters"));
-  parameter Real Vn "Voltage rating (kV)"
-    annotation (Dialog(group="Machine parameters"));
-  parameter Real ra "Armature resistance (pu)"
-    annotation (Dialog(group="Machine parameters"));
-  parameter Real xd1 "d-axis transient reactance (pu)"
-    annotation (Dialog(group="Machine parameters"));
-  parameter Real M "Machanical starting time (2H), kWs/kVA"
-    annotation (Dialog(group="Machine parameters"));
-  parameter Real D "Damping coefficient"
-    annotation (Dialog(group="Machine parameters"));
+  parameter Real Sn "Power rating (MVA)" annotation (Dialog(group="Machine parameters"));
+  parameter Real Vn "Voltage rating (kV)" annotation (Dialog(group="Machine parameters"));
+  parameter Real ra "Armature resistance (pu)" annotation (Dialog(group="Machine parameters"));
+  parameter Real xd1 "d-axis transient reactance (pu)" annotation (Dialog(group="Machine parameters"));
+  parameter Real M "Machanical starting time (2H), kWs/kVA" annotation (Dialog(group="Machine parameters"));
+  parameter Real D "Damping coefficient" annotation (Dialog(group="Machine parameters"));
   //Initialization
   //Initialization of currents and voltages
   iPSL.Connectors.PwPin p(
@@ -53,8 +47,7 @@ partial model baseMachine
         origin={110,90},
         extent={{-10.0,-10.0},{10.0,10.0}},
         rotation=0)));
-  RealOutput v(start=V_0) "Generator terminal voltage (pu)" annotation (
-      Placement(
+  RealOutput v(start=V_0) "Generator terminal voltage (pu)" annotation (Placement(
       visible=true,
       transformation(
         origin={146.6,6.3277},
@@ -205,8 +198,7 @@ equation
           lineColor={28,108,200}),Rectangle(
           fillColor={255,255,255},
           extent={{-100,-100},{100,100}},
-          lineColor={28,108,200}),Ellipse(extent={{-40,40},{40,-40}}, lineColor
-          ={28,108,200}),Line(
+          lineColor={28,108,200}),Ellipse(extent={{-40,40},{40,-40}}, lineColor={28,108,200}),Line(
           points={{-20,0},{-9,15},{9,-15},{20,0}},
           color={28,108,200},
           smooth=Smooth.Bezier),Text(

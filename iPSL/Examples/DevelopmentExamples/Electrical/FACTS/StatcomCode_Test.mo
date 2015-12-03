@@ -65,24 +65,19 @@ model StatcomCode_Test
     amplitude=0.045,
     width=58,
     nperiod=-1,
-    offset=0.999885177318814)
-    annotation (Placement(transformation(extent={{-158,14},{-138,34}})));
+    offset=0.999885177318814) annotation (Placement(transformation(extent={{-158,14},{-138,34}})));
   Modelica.Blocks.Sources.Pulse pulse1(
     period=10,
     amplitude=-0.045,
     width=42,
     startTime=0,
-    nperiod=-1)
-    annotation (Placement(transformation(extent={{-156,-22},{-136,-2}})));
+    nperiod=-1) annotation (Placement(transformation(extent={{-156,-22},{-136,-2}})));
   Modelica.Blocks.Math.Add3 add3_1(
     k3=0,
     k1=1,
     k2=1) annotation (Placement(transformation(extent={{-118,-10},{-98,10}})));
-  iPSL.Electrical.Controls.PSAT.FACTS.STATCOM.STATCOM sTATCOM3_1(V_0=1, angle_0
-      =-0.000213067852480)
-    annotation (Placement(transformation(extent={{-14,-54},{6,-34}})));
-  iPSL.Electrical.Buses.Bus bus
-    annotation (Placement(transformation(extent={{4,-8},{24,12}})));
+  iPSL.Electrical.Controls.PSAT.FACTS.STATCOM.STATCOM sTATCOM3_1(V_0=1, angle_0=-0.000213067852480) annotation (Placement(transformation(extent={{-14,-54},{6,-34}})));
+  iPSL.Electrical.Buses.Bus bus annotation (Placement(transformation(extent={{4,-8},{24,12}})));
   iPSL.Electrical.Loads.PSAT.LOADPQ_variation lOADPQ(
     P2=0,
     P3=0,
@@ -94,8 +89,7 @@ model StatcomCode_Test
     t2=7.001,
     P_0=0.8,
     Q_0=0.6) annotation (Placement(transformation(extent={{38,-52},{58,-32}})));
-  inner iPSL.Electrical.SystemBase SysData
-    annotation (Placement(transformation(extent={{-100,60},{-76,80}})));
+  inner iPSL.Electrical.SystemBase SysData annotation (Placement(transformation(extent={{-100,60},{-76,80}})));
 equation
   connect(pwLine1.n, pwLine3.n) annotation (Line(
       points={{60,17},{78,17},{78,-17},{62,-17}},
@@ -157,13 +151,10 @@ equation
       points={{-76,-9},{-54,-9},{-54,-16},{-90,-16},{-90,-3},{-78,-3}},
       color={0,0,127},
       smooth=Smooth.None));
-  connect(Syn2.pm, Syn2.pm0) annotation (Line(points={{138,8},{148,8},{148,26},
-          {135,26},{135,17.6}}, color={0,0,127}));
-  connect(Syn2.vf0, Syn2.vf) annotation (Line(points={{135,-17.6},{135,-26},{
-          152,-26},{152,-8},{138,-8}}, color={0,0,127}));
+  connect(Syn2.pm, Syn2.pm0) annotation (Line(points={{138,8},{148,8},{148,26},{135,26},{135,17.6}}, color={0,0,127}));
+  connect(Syn2.vf0, Syn2.vf) annotation (Line(points={{135,-17.6},{135,-26},{152,-26},{152,-8},{138,-8}}, color={0,0,127}));
   annotation (
-    Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-160,-100},{
-            160,100}})),
+    Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-160,-100},{160,100}})),
     Icon(coordinateSystem(extent={{-160,-100},{160,100}})),
     Documentation(info="<html>
 <table cellspacing=\"2\" cellpadding=\"1\" border=\"1\"><tr>

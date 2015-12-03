@@ -23,8 +23,7 @@ model GGOV "three phase to ground fault test of GGOV"
     V_0=1,
     angle_0=4.05,
     P_0=39.99995,
-    Q_0=5.416571)
-    annotation (Placement(transformation(extent={{-84,-4},{-44,30}})));
+    Q_0=5.416571) annotation (Placement(transformation(extent={{-84,-4},{-44,30}})));
   iPSL.Electrical.Branches.PwLine pwLine(
     R=0.001,
     X=0.2,
@@ -108,14 +107,12 @@ model GGOV "three phase to ground fault test of GGOV"
     V_0=0.991992,
     d_P=5*0.01,
     d_t=0.1,
-    t1=2 - 0.005)
-    annotation (Placement(transformation(extent={{-8,-28},{-28,-6}})));
+    t1=2 - 0.005) annotation (Placement(transformation(extent={{-8,-28},{-28,-6}})));
   iPSL.Electrical.Events.PwFault pwFault(
     R=0,
     X=-2e-9,
     t1=10 - 0.005,
-    t2=10.15 - 0.005)
-    annotation (Placement(transformation(extent={{34,-26},{54,-6}})));
+    t2=10.15 - 0.005) annotation (Placement(transformation(extent={{34,-26},{54,-6}})));
 equation
   connect(generator.p, pwLine.p) annotation (Line(
       points={{-42,13},{-50.6,13},{-50.6,12},{-37,12}},
@@ -135,7 +132,6 @@ equation
       smooth=Smooth.None));
   connect(generator.EFD0, generator.EFD) annotation (Line(
       points={{-42.4,1.1},{-36,1.1},{-36,-18},{-86,-18},{-86,4.5},{-83.6,4.5}},
-
       color={0,0,127},
       smooth=Smooth.None));
   connect(pwLine3.p, pwLine.n) annotation (Line(
@@ -158,12 +154,9 @@ equation
       points={{32.3333,-16},{23,-16},{23,-6}},
       color={0,0,255},
       smooth=Smooth.None));
-  connect(gGOV1pele.PMECH, generator.PMECH) annotation (Line(points={{-68.5517,
-          52.7826},{-90,52.7826},{-90,21.5},{-83.6,21.5}}, color={0,0,127}));
-  connect(generator.SPEED, gGOV1pele.SPEED) annotation (Line(points={{-42.4,
-          28.3},{-24,28.3},{-24,43.3913},{-27.3103,43.3913}}, color={0,0,127}));
-  annotation (Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,
-            -100},{100,100}})), Documentation(info="<html>
+  connect(gGOV1pele.PMECH, generator.PMECH) annotation (Line(points={{-68.5517,52.7826},{-90,52.7826},{-90,21.5},{-83.6,21.5}}, color={0,0,127}));
+  connect(generator.SPEED, gGOV1pele.SPEED) annotation (Line(points={{-42.4,28.3},{-24,28.3},{-24,43.3913},{-27.3103,43.3913}}, color={0,0,127}));
+  annotation (Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,100}})), Documentation(info="<html>
 <p><br><span style=\"font-family: MS Shell Dlg 2;\">&LT;iPSL: iTesla Power System Library&GT;</span></p>
 <p><span style=\"font-family: MS Shell Dlg 2;\">Copyright 2015 RTE (France), AIA (Spain), KTH (Sweden) and DTU (Denmark)</span></p>
 <ul>

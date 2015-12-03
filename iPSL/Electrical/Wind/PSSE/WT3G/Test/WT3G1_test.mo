@@ -30,8 +30,7 @@ model WT3G1_test
   parameter Real Rt2=0.00000E+0;
   parameter Real Xt2=1.00000E-3;
   parameter Real dyrw[1, 5]=[0.20000, 30.000, 0.0000, 0.10000, 1.5000];
-  parameter Real dyrsvg[1, 10]=[100.00, 0.0000, 0.0000, 100.00, 0.0000, 0.0000,
-      0.0000, 1.1000, 0.0000, 100.00];
+  parameter Real dyrsvg[1, 10]=[100.00, 0.0000, 0.0000, 100.00, 0.0000, 0.0000, 0.0000, 1.1000, 0.0000, 100.00];
   iPSL.Electrical.Branches.PwLine pwLine(
     R=R1,
     X=X1,
@@ -69,8 +68,7 @@ model WT3G1_test
     Q_0=Q1,
     R_a=Zr,
     X_d=Zi,
-    M_b=100)
-    annotation (Placement(transformation(extent={{-120,-10},{-100,12}})));
+    M_b=100) annotation (Placement(transformation(extent={{-120,-10},{-100,12}})));
   CSVGN1 cSVGN1_1(
     K=100,
     T1=0,
@@ -87,8 +85,7 @@ model WT3G1_test
     T4=0,
     Vc0=V5,
     Psh=Psh,
-    Qsh=Qsh)
-    annotation (Placement(transformation(extent={{-52,-60},{-18,-26}})));
+    Qsh=Qsh) annotation (Placement(transformation(extent={{-52,-60},{-18,-26}})));
   WT3G1_pt wT3G1_pt(
     eterm=V5,
     anglev0=A5,
@@ -106,8 +103,7 @@ model WT3G1_test
         extent={{-17,17},{17,-17}},
         rotation=180,
         origin={85,1})));
-  Electrical.Wind.PSSE.WT3G.shunt1 shunt1(B=-0.25, v0=V5)
-    annotation (Placement(transformation(extent={{46,-32},{66,-12}})));
+  Electrical.Wind.PSSE.WT3G.shunt1 shunt1(B=-0.25, v0=V5) annotation (Placement(transformation(extent={{46,-32},{66,-12}})));
   Events.PwFault pwFault(
     R=0.5,
     X=0.5,
@@ -167,8 +163,7 @@ equation
       color={0,0,255},
       smooth=Smooth.None));
   annotation (
-    Diagram(coordinateSystem(preserveAspectRatio=true, extent={{-100,-80},{160,
-            100}}), graphics={Text(
+    Diagram(coordinateSystem(preserveAspectRatio=true, extent={{-100,-80},{160,100}}), graphics={Text(
           extent={{-134,98},{-54,74}},
           lineColor={0,0,255},
           textString="100 60HZ

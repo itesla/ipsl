@@ -17,10 +17,8 @@ model TwoWinding
   //regulator delay
   parameter Real TC=5;
   //motor delay
-  iPSL.Connectors.PwPin P1 annotation (Placement(transformation(extent={{-104,2},
-            {-84,22}}), iconTransformation(extent={{-104,2},{-84,22}})));
-  iPSL.Connectors.PwPin P2 annotation (Placement(transformation(extent={{78,6},
-            {100,26}}), iconTransformation(extent={{80,6},{100,26}})));
+  iPSL.Connectors.PwPin P1 annotation (Placement(transformation(extent={{-104,2},{-84,22}}), iconTransformation(extent={{-104,2},{-84,22}})));
+  iPSL.Connectors.PwPin P2 annotation (Placement(transformation(extent={{78,6},{100,26}}), iconTransformation(extent={{80,6},{100,26}})));
   iPSL.Electrical.Branches.PwLine pwLine1(
     R=Zeq.re,
     X=Zeq.im,
@@ -30,8 +28,7 @@ model TwoWinding
         rotation=0,
         origin={-37,12})));
   Real v;
-  iPSL.Electrical.Branches.PSSE.Old_transformer.phaseShift phaseship(phase=
-        angle_d) annotation (Placement(transformation(extent={{4,-4},{58,26}})));
+  iPSL.Electrical.Branches.PSSE.Old_transformer.phaseShift phaseship(phase=angle_d) annotation (Placement(transformation(extent={{4,-4},{58,26}})));
 protected
   parameter Real angle=angle_d/180*pi "angel shift in rad";
 equation
@@ -49,10 +46,8 @@ equation
       color={0,0,255},
       smooth=Smooth.None));
   annotation (
-    Diagram(coordinateSystem(preserveAspectRatio=true, extent={{-100,-100},{100,
-            100}}), graphics),
-    Icon(coordinateSystem(preserveAspectRatio=true, extent={{-100,-100},{100,
-            100}}), graphics={Text(
+    Diagram(coordinateSystem(preserveAspectRatio=true, extent={{-100,-100},{100,100}}), graphics),
+    Icon(coordinateSystem(preserveAspectRatio=true, extent={{-100,-100},{100,100}}), graphics={Text(
           extent={{26,54},{114,2}},
           lineColor={0,0,255},
           fillColor={0,0,255},

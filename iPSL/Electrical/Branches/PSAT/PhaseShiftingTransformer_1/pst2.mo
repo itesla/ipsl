@@ -19,29 +19,22 @@ model pst2 "Angle part of PST"
   parameter Real m=0.98 "Transformer fixed tap  ratio, p.u./p.u.";
   parameter Real alpha0=0.002062339234360 "Initial angle, from power flow";
   parameter Real pmes0=0.01 "from power flow";
-  parameter Real vm0=1.007257703014177
-    "Receiving end bus voltage, from power flow";
-  parameter Real anglevm0=-0.009372077496959
-    "Receiving end bus angle, from power flow";
+  parameter Real vm0=1.007257703014177 "Receiving end bus voltage, from power flow";
+  parameter Real anglevm0=-0.009372077496959 "Receiving end bus angle, from power flow";
   Real vk;
   Real vm(start=vm0) "Voltage at secondary p.u.";
   Real anglevk "Angle at primary";
   Real anglevm;
   Real alpha;
   Real pmes;
-  iPSL.Connectors.PwPin p annotation (Placement(visible=true, transformation(
-          extent={{-120,-8},{-100,12}})));
-  iPSL.Connectors.PwPin n
-    annotation (Placement(transformation(extent={{100,-8},{120,12}})));
-  Modelica.Blocks.Interfaces.RealInput pk
-    annotation (Placement(transformation(extent={{-142,-62},{-102,-22}})));
+  iPSL.Connectors.PwPin p annotation (Placement(visible=true, transformation(extent={{-120,-8},{-100,12}})));
+  iPSL.Connectors.PwPin n annotation (Placement(transformation(extent={{100,-8},{120,12}})));
+  Modelica.Blocks.Interfaces.RealInput pk annotation (Placement(transformation(extent={{-142,-62},{-102,-22}})));
 protected
   parameter Real Vb2new=Vbus1*Vbus1;
   parameter Real Vb2old=Vn1*Vn1;
-  parameter Real R=rT*(Vb2old*SystemBase)/(Vb2new*Sn)
-    "Transformer Resistance, p.u.";
-  parameter Real X=xT*(Vb2old*SystemBase)/(Vb2new*Sn)
-    "Transformer Reactance, p.u.";
+  parameter Real R=rT*(Vb2old*SystemBase)/(Vb2new*Sn) "Transformer Resistance, p.u.";
+  parameter Real X=xT*(Vb2old*SystemBase)/(Vb2new*Sn) "Transformer Reactance, p.u.";
   parameter Real pref=p_ref*(Sn/SystemBase);
   parameter Real gt=R/(R^2 + X^2) "Converting resistance to conductance p.u.";
   parameter Real bt=-X/(R^2 + X^2) "Converting reactance to susceptance p.u.";
@@ -78,8 +71,7 @@ equation
   annotation (
     Placement(transformation(extent={{-120,-10},{-100,10}})),
     Placement(transformation(extent={{100,-10},{120,10}})),
-    Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{
-            100,100}}), graphics),
+    Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,100}}), graphics),
     Documentation(info="<html>
 <p><br><span style=\"font-family: MS Shell Dlg 2;\">&LT;iPSL: iTesla Power System Library&GT;</span></p>
 <p><span style=\"font-family: MS Shell Dlg 2;\">Copyright 2015 RTE (France), AIA (Spain), KTH (Sweden) and DTU (Denmark)</span></p>

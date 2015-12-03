@@ -18,15 +18,13 @@ model TCSC_Reactance_Test
     amplitude=0.045,
     width=58,
     offset=1.005017533847740,
-    nperiod=2)
-    annotation (Placement(transformation(extent={{-116,10},{-96,30}})));
+    nperiod=2) annotation (Placement(transformation(extent={{-116,10},{-96,30}})));
   Modelica.Blocks.Sources.Pulse pulse1(
     period=10,
     amplitude=-0.045,
     width=42,
     startTime=0,
-    nperiod=2)
-    annotation (Placement(transformation(extent={{-118,-26},{-98,-6}})));
+    nperiod=2) annotation (Placement(transformation(extent={{-118,-26},{-98,-6}})));
   Modelica.Blocks.Math.Add3 add3_1(
     k3=0,
     k1=1,
@@ -47,10 +45,8 @@ model TCSC_Reactance_Test
     t4=20,
     P2=0.01,
     P3=-0.01) annotation (Placement(transformation(extent={{96,-10},{116,10}})));
-  iPSL.Electrical.Controls.PSAT.FACTS.TCSC.TCSCReactance tCSCReactance
-    annotation (Placement(transformation(extent={{26,-10},{46,10}})));
-  inner iPSL.Electrical.SystemBase SysData
-    annotation (Placement(transformation(extent={{-100,60},{-76,80}})));
+  iPSL.Electrical.Controls.PSAT.FACTS.TCSC.TCSCReactance tCSCReactance annotation (Placement(transformation(extent={{26,-10},{46,10}})));
+  inner iPSL.Electrical.SystemBase SysData annotation (Placement(transformation(extent={{-100,60},{-76,80}})));
 equation
   connect(pulse1.y, add3_1.u2) annotation (Line(
       points={{-97,-16},{-68,-16},{-68,0},{-60,0}},
@@ -85,8 +81,7 @@ equation
       color={0,0,255},
       smooth=Smooth.None));
   annotation (
-    Diagram(coordinateSystem(preserveAspectRatio=true, extent={{-140,-100},{120,
-            100}}), graphics),
+    Diagram(coordinateSystem(preserveAspectRatio=true, extent={{-140,-100},{120,100}}), graphics),
     Icon(coordinateSystem(extent={{-140,-100},{120,100}})),
     Documentation(info="<html>
 <table cellspacing=\"1\" cellpadding=\"1\" border=\"1\"><tr>

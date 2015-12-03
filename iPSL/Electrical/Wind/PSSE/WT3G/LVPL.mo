@@ -6,10 +6,8 @@ model LVPL "Low voltage power logic"
   parameter Real VLVPL2 "LVPL voltage 2";
   parameter Real GLVPL "LVPL gain";
   parameter Real K=GLVPL/(VLVPL2 - VLVPL1);
-  Modelica.Blocks.Interfaces.RealInput Vt
-    annotation (Placement(transformation(extent={{-112,-18},{-72,22}})));
-  Modelica.Blocks.Interfaces.RealOutput LVPL
-    annotation (Placement(transformation(extent={{90,-10},{110,10}})));
+  Modelica.Blocks.Interfaces.RealInput Vt annotation (Placement(transformation(extent={{-112,-18},{-72,22}})));
+  Modelica.Blocks.Interfaces.RealOutput LVPL annotation (Placement(transformation(extent={{90,-10},{110,10}})));
 equation
   if Vt < VLVPL1 then
     LVPL = 0;
@@ -19,18 +17,13 @@ equation
     LVPL = K*(Vt - VLVPL1);
   end if;
   annotation (
-    Diagram(coordinateSystem(preserveAspectRatio=true, extent={{-100,-100},{100,
-            100}}), graphics={Rectangle(extent={{-78,30},{92,-58}}, lineColor={
-          0,0,255})}),
-    Icon(coordinateSystem(preserveAspectRatio=true, extent={{-100,-100},{100,
-            100}}), graphics={Rectangle(extent={{-86,50},{92,-68}}, lineColor={
-          0,0,255}),Line(
+    Diagram(coordinateSystem(preserveAspectRatio=true, extent={{-100,-100},{100,100}}), graphics={Rectangle(extent={{-78,30},{92,-58}}, lineColor={0,0,255})}),
+    Icon(coordinateSystem(preserveAspectRatio=true, extent={{-100,-100},{100,100}}), graphics={Rectangle(extent={{-86,50},{92,-68}}, lineColor={0,0,255}),Line(
           points={{-36,-54},{22,16},{22,30},{22,30}},
           color={0,0,255},
           smooth=Smooth.None,
           thickness=0.5),Line(
-          points={{52,-54},{-50,-54},{-50,40},{-48,36},{-54,36},{-50,40},{-50,
-            40}},
+          points={{52,-54},{-50,-54},{-50,40},{-48,36},{-54,36},{-50,40},{-50,40}},
           color={0,0,255},
           smooth=Smooth.None,
           thickness=0.5),Text(

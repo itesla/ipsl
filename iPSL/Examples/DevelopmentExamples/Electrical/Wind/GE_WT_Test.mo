@@ -2,13 +2,12 @@ within iPSL.Examples.DevelopmentExamples.Electrical.Wind;
 
 
 model GE_WT_Test
-  iPSL.Electrical.Wind.GE.Type_3.GE_WT GE_WT_init1 annotation (Placement(
-        visible=true, transformation(
+  iPSL.Electrical.Wind.GE.Type_3.GE_WT GE_WT_init1 annotation (Placement(visible=true, transformation(
         origin={75.0,1.7487},
         extent={{-10.0,-10.0},{10.0,10.0}},
         rotation=0)));
-  iPSL.Electrical.Buses.InfiniteBus infBus2(angle=-0.000216626610049175, V=
-        1.05999999985841) annotation (Placement(visible=true, transformation(
+  iPSL.Electrical.Buses.InfiniteBus infBus2(angle=-0.000216626610049175, V=1.05999999985841)
+    annotation (Placement(visible=true, transformation(
         origin={-42.5798,1.9703},
         extent={{-10.0,-10.0},{10.0,10.0}},
         rotation=0)));
@@ -44,8 +43,7 @@ model GE_WT_Test
         origin={53.0297,1.8373},
         extent={{-10.0,-10.0},{10.0,10.0}},
         rotation=0)));
-  iPSL.Electrical.Wind.WindGenerator windGenerator1 annotation (Placement(
-        visible=true, transformation(
+  iPSL.Electrical.Wind.WindGenerator windGenerator1 annotation (Placement(visible=true, transformation(
         origin={50.0,17.493},
         extent={{-10.0,-10.0},{10.0,10.0}},
         rotation=0)));
@@ -86,7 +84,8 @@ equation
       origin={6.8642,1.7091},
       points={{-1.553,-0.0613},{-1.553,0.0307},{3.1061,0.0307}},
       color={0,0,255}));
-  connect(windGenerator1.Vw, GE_WT_init1.Wind_Speed) annotation (Line(
+  connect(windGenerator1.Vw, GE_WT_init1.Wind_Speed)
+    annotation (Line(
       visible=true,
       origin={70.3333,14.8446},
       points={{-9.3333,2.6484},{4.6667,2.6484},{4.6667,-5.29687}},

@@ -6,8 +6,7 @@ model SolarPQtest
     P_0=0.4,
     Q_0=0.3,
     V_0=1.00018548610126,
-    angle_0=-0.0000253046024029618) annotation (Placement(visible=true,
-        transformation(
+    angle_0=-0.0000253046024029618) annotation (Placement(visible=true, transformation(
         origin={35.0,10.0},
         extent={{-10.0,-10.0},{10.0,10.0}},
         rotation=0)));
@@ -87,28 +86,23 @@ model SolarPQtest
         origin={-110.0,10.0},
         extent={{-10.0,-10.0},{10.0,10.0}},
         rotation=0)));
-  iPSL.Electrical.Buses.Bus bus1 annotation (Placement(visible=true,
-        transformation(
+  iPSL.Electrical.Buses.Bus bus1 annotation (Placement(visible=true, transformation(
         origin={-87.5421,10.0},
         extent={{-10.0,-10.0},{10.0,10.0}},
         rotation=0)));
-  iPSL.Electrical.Buses.Bus bus2 annotation (Placement(visible=true,
-        transformation(
+  iPSL.Electrical.Buses.Bus bus2 annotation (Placement(visible=true, transformation(
         origin={-46.7243,11.8063},
         extent={{-10.0,-10.0},{10.0,10.0}},
         rotation=0)));
-  iPSL.Electrical.Buses.Bus bus3 annotation (Placement(visible=true,
-        transformation(
+  iPSL.Electrical.Buses.Bus bus3 annotation (Placement(visible=true, transformation(
         origin={5.0,12.1033},
         extent={{-10.0,-10.0},{10.0,10.0}},
         rotation=0)));
-  iPSL.Electrical.Buses.Bus bus4 annotation (Placement(visible=true,
-        transformation(
+  iPSL.Electrical.Buses.Bus bus4 annotation (Placement(visible=true, transformation(
         origin={-3.3112,-30.0},
         extent={{-10.0,-10.0},{10.0,10.0}},
         rotation=0)));
-  inner iPSL.Electrical.SystemBase SysData
-    annotation (Placement(transformation(extent={{50,50},{75,70}})));
+  inner iPSL.Electrical.SystemBase SysData annotation (Placement(transformation(extent={{50,50},{75,70}})));
 equation
   connect(pwLine2.p, pwLine1.p) annotation (Line(
       visible=true,
@@ -166,10 +160,8 @@ equation
       visible=true,
       origin={17.4388,13.7927},
       points={{6.5612,-3.7927},{6.2194,-1.6893},{-12.4388,-1.6894}}));
-  connect(order31.vf0, order31.vf) annotation (Line(points={{-118,21},{-118,25},
-          {-125,25},{-125,15},{-120,15}}, color={0,0,127}));
-  connect(order31.pm, order31.pm0) annotation (Line(points={{-120,5},{-125,5},{
-          -125,-5},{-118,-5},{-118,-1}}, color={0,0,127}));
+  connect(order31.vf0, order31.vf) annotation (Line(points={{-118,21},{-118,25},{-125,25},{-125,15},{-120,15}}, color={0,0,127}));
+  connect(order31.pm, order31.pm0) annotation (Line(points={{-120,5},{-125,5},{-125,-5},{-118,-5},{-118,-1}}, color={0,0,127}));
   annotation (Diagram(coordinateSystem(
         extent={{-148.5,-105},{148.5,105}},
         preserveAspectRatio=false,

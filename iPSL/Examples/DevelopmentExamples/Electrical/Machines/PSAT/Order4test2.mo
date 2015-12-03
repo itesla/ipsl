@@ -74,10 +74,8 @@ model Order4test2
     ra=0.001,
     M=10,
     D=0,
-    xd1=0.302)
-    annotation (Placement(transformation(extent={{-120,40},{-90,70}})));
-  inner iPSL.Electrical.SystemBase SysData
-    annotation (Placement(transformation(extent={{50,80},{75,100}})));
+    xd1=0.302) annotation (Placement(transformation(extent={{-120,40},{-90,70}})));
+  inner iPSL.Electrical.SystemBase SysData annotation (Placement(transformation(extent={{50,80},{75,100}})));
 equation
   connect(pwLinewithOpening1.n, pwLine4.n) annotation (Line(
       visible=true,
@@ -119,10 +117,8 @@ equation
       points={{-38,35},{-35,35},{-35,-2.5},{-27.0833,-2.5}},
       color={0,0,255},
       smooth=Smooth.None));
-  connect(Generator.vf0, Generator.vf) annotation (Line(points={{-117,71.5},{-117,
-          75},{-130,75},{-130,62.5},{-120,62.5}}, color={0,0,127}));
-  connect(Generator.pm, Generator.pm0) annotation (Line(points={{-120,47.5},{-125,
-          47.5},{-125,50},{-125,38.5},{-117,38.5}}, color={0,0,127}));
+  connect(Generator.vf0, Generator.vf) annotation (Line(points={{-117,71.5},{-117,75},{-130,75},{-130,62.5},{-120,62.5}}, color={0,0,127}));
+  connect(Generator.pm, Generator.pm0) annotation (Line(points={{-120,47.5},{-125,47.5},{-125,50},{-125,38.5},{-117,38.5}}, color={0,0,127}));
   annotation (
     Diagram(coordinateSystem(
         extent={{-148.5,-105},{148.5,105}},

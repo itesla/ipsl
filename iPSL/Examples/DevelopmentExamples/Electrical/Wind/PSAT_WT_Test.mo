@@ -31,8 +31,8 @@ model PSAT_WT_Test
         origin={25.0,40.0},
         extent={{-10.0,-10.0},{10.0,10.0}},
         rotation=0)));
-  iPSL.Electrical.Buses.InfiniteBus infiniteBus1(V=1, angle=0) annotation (
-      Placement(visible=true, transformation(
+  iPSL.Electrical.Buses.InfiniteBus infiniteBus1(V=1, angle=0)
+    annotation (Placement(visible=true, transformation(
         origin={-28.2108,15.0},
         extent={{-10.0,-10.0},{10.0,10.0}},
         rotation=0)));
@@ -42,7 +42,8 @@ equation
       origin={-8.8299,15.0},
       points={{-8.3809,0.0},{8.3809,0.0}},
       color={0,0,255}));
-  connect(windGenerator1.Vw, dfig_Turbine1.Wind_Speed) annotation (Line(
+  connect(windGenerator1.Vw, dfig_Turbine1.Wind_Speed)
+    annotation (Line(
       visible=true,
       origin={43.101,34.2663},
       points={{-7.101,5.7337},{3.5505,5.7337},{3.5505,-11.4673}},

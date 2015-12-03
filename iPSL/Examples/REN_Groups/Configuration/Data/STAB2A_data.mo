@@ -9,8 +9,7 @@ record STAB2A_data
   parameter Real J6=0.10000E-01 "T5";
   parameter Real J7=0.50000E-01 "HLIM";
   annotation (
-    Icon(graphics={Rectangle(extent={{-40,40},{40,-40}}, lineColor={0,0,255}),
-          Text(
+    Icon(graphics={Rectangle(extent={{-40,40},{40,-40}}, lineColor={0,0,255}),Text(
           extent={{-32,14},{32,-10}},
           lineColor={0,0,255},
           textStyle={TextStyle.Bold},

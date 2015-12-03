@@ -2,29 +2,20 @@ within iPSL.Electrical.Controls.DTU;
 
 
 model pwPLL "Developed by DTU"
-  iPSL.Connectors.PwPin pwPin annotation (Placement(transformation(extent={{-60,
-            -6},{-48,6}}), iconTransformation(extent={{-60,-6},{-48,6}})));
-  Modelica.Blocks.Interfaces.RealOutput imPin annotation (Placement(
-        transformation(extent={{48,-6},{60,6}}), iconTransformation(extent={{45,
-            -6},{59,6}})));
-  iPSL.Electrical.Sensors.PwVoltage pwVoltage
-    annotation (Placement(transformation(extent={{-44,-10},{-24,10}})));
-  Modelica.Blocks.Math.Atan2 atan2_1
-    annotation (Placement(transformation(extent={{-4,-10},{16,10}})));
+  iPSL.Connectors.PwPin pwPin annotation (Placement(transformation(extent={{-60,-6},{-48,6}}), iconTransformation(extent={{-60,-6},{-48,6}})));
+  Modelica.Blocks.Interfaces.RealOutput imPin annotation (Placement(transformation(extent={{48,-6},{60,6}}), iconTransformation(extent={{45,-6},{59,6}})));
+  iPSL.Electrical.Sensors.PwVoltage pwVoltage annotation (Placement(transformation(extent={{-44,-10},{-24,10}})));
+  Modelica.Blocks.Math.Atan2 atan2_1 annotation (Placement(transformation(extent={{-4,-10},{16,10}})));
 equation
   connect(pwVoltage.p, pwPin) annotation (Line(
       points={{-39,0},{-54,0}},
       color={0,0,255},
       smooth=Smooth.None));
-  connect(pwVoltage.vr, atan2_1.u2) annotation (Line(points={{-29.1,3},{-18,3},
-          {-18,-6},{-6,-6}}, color={0,0,127}));
-  connect(pwVoltage.vi, atan2_1.u1) annotation (Line(points={{-29.1,0},{-16,0},
-          {-16,6},{-6,6}}, color={0,0,127}));
-  connect(atan2_1.y, imPin)
-    annotation (Line(points={{17,0},{54,0},{54,0}}, color={0,0,127}));
+  connect(pwVoltage.vr, atan2_1.u2) annotation (Line(points={{-29.1,3},{-18,3},{-18,-6},{-6,-6}}, color={0,0,127}));
+  connect(pwVoltage.vi, atan2_1.u1) annotation (Line(points={{-29.1,0},{-16,0},{-16,6},{-6,6}}, color={0,0,127}));
+  connect(atan2_1.y, imPin) annotation (Line(points={{17,0},{54,0},{54,0}}, color={0,0,127}));
   annotation (
-    Icon(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,
-            100}}), graphics={Rectangle(
+    Icon(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,100}}), graphics={Rectangle(
           extent={{-48,50},{46,-50}},
           lineColor={0,0,255},
           lineThickness=0.5),Text(
@@ -33,8 +24,7 @@ equation
           lineThickness=0.5,
           fillPattern=FillPattern.Solid,
           textString="PLL")}),
-    Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{
-            100,100}})),
+    Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,100}})),
     Documentation(info="<html>
 <p><br><span style=\"font-family: MS Shell Dlg 2;\">&LT;iPSL: iTesla Power System Library&GT;</span></p>
 <p><span style=\"font-family: MS Shell Dlg 2;\">Copyright 2015 RTE (France), AIA (Spain), KTH (Sweden) and DTU (Denmark)</span></p>

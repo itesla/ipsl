@@ -84,38 +84,32 @@ model Order3test2_TG
         origin={127.5,-50.0},
         extent={{-10.0,-10.0},{10.0,10.0}},
         rotation=0)));
-  iPSL.Electrical.Controls.PSAT.TG.TGtypeII TGtypeII1 annotation (Placement(
-        visible=true, transformation(
+  iPSL.Electrical.Controls.PSAT.TG.TGtypeII TGtypeII1 annotation (Placement(visible=true, transformation(
         origin={-50.0,-40.0},
         extent={{-10.0,-10.0},{10.0,10.0}},
         rotation=0)));
-  inner iPSL.Electrical.SystemBase SysData
-    annotation (Placement(transformation(extent={{100,80},{135,100}})));
+  inner iPSL.Electrical.SystemBase SysData annotation (Placement(transformation(extent={{100,80},{135,100}})));
 equation
-  connect(order3_Inputs_Outputs1.vf0, order3_Inputs_Outputs1.vf) annotation (
-      Line(
+  connect(order3_Inputs_Outputs1.vf0, order3_Inputs_Outputs1.vf) annotation (Line(
       visible=true,
       origin={3.3742,-9.512},
-      points={{-8.0629,-0.2393},{13.9371,-0.2393},{13.9371,7.8232},{-13.3742,
-          7.8232},{-13.3742,-6.2393},{-10.0629,-6.2393}},
+      points={{-8.0629,-0.2393},{13.9371,-0.2393},{13.9371,7.8232},{-13.3742,7.8232},{-13.3742,-6.2393},{-10.0629,-6.2393}},
       color={0,0,127}));
-  connect(order3_Inputs_Outputs1.pm, TGtypeII1.pm) annotation (Line(
+  connect(order3_Inputs_Outputs1.pm, TGtypeII1.pm)
+    annotation (Line(
       visible=true,
       origin={-29.9222,-32.3757},
       points={{23.2335,6.6244},{-6.0778,6.6244},{-6.0778,-7.6243},{-9.0778,-7.6243}},
-
       color={0,0,127}));
   connect(order3_Inputs_Outputs1.pm0, TGtypeII1.pm0) annotation (Line(
       visible=true,
       origin={-23.7162,-4.1558},
-      points={{19.0275,-27.5955},{45.412,-27.5955},{45.412,34.1558},{-51.2838,
-          34.1558},{-51.2838,-23.8442},{-26.2838,-23.8442}},
+      points={{19.0275,-27.5955},{45.412,-27.5955},{45.412,34.1558},{-51.2838,34.1558},{-51.2838,-23.8442},{-26.2838,-23.8442}},
       color={0,0,127}));
   connect(order3_Inputs_Outputs1.w, TGtypeII1.W) annotation (Line(
       visible=true,
       origin={-23.7171,-43.5838},
-      points={{38.0284,31.8325},{51.4102,31.8325},{51.4102,-21.4162},{-51.2829,
-          -21.4162},{-51.2829,3.5838},{-38.2829,3.5838}},
+      points={{38.0284,31.8325},{51.4102,31.8325},{51.4102,-21.4162},{-51.2829,-21.4162},{-51.2829,3.5838},{-38.2829,3.5838}},
       color={0,0,127}));
   connect(pwLine4.n, pwLoadPQ1.p) annotation (Line(
       visible=true,

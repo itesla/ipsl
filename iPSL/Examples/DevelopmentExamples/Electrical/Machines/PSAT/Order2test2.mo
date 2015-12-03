@@ -81,8 +81,7 @@ model Order2test2
         origin={15.0,-30.0},
         extent={{-10.0,-10.0},{10.0,10.0}},
         rotation=0)));
-  inner iPSL.Electrical.SystemBase SysData
-    annotation (Placement(transformation(extent={{100,80},{135,100}})));
+  inner iPSL.Electrical.SystemBase SysData annotation (Placement(transformation(extent={{100,80},{135,100}})));
 equation
   connect(pwFault1.p, pwLine3.n) annotation (Line(
       visible=true,
@@ -123,12 +122,9 @@ equation
   connect(order21.p, pwLine2.p) annotation (Line(
       visible=true,
       origin={-98.2365,9.9248},
-      points={{-7.7093,0.12484},{-6.7635,0.12484},{-6.7635,0.0752},{21.2365,
-          0.0752}}));
-  connect(order21.vf, order21.vf0) annotation (Line(points={{-126.946,15},{-130,
-          15},{-130,25},{-124.946,25},{-124.946,21}}, color={0,0,127}));
-  connect(order21.pm, order21.pm0) annotation (Line(points={{-126.946,5},{-130,
-          5},{-130,-5},{-124.946,-5},{-124.946,-1}}, color={0,0,127}));
+      points={{-7.7093,0.12484},{-6.7635,0.12484},{-6.7635,0.0752},{21.2365,0.0752}}));
+  connect(order21.vf, order21.vf0) annotation (Line(points={{-126.946,15},{-130,15},{-130,25},{-124.946,25},{-124.946,21}}, color={0,0,127}));
+  connect(order21.pm, order21.pm0) annotation (Line(points={{-126.946,5},{-130,5},{-130,-5},{-124.946,-5},{-124.946,-1}}, color={0,0,127}));
   annotation (Diagram(coordinateSystem(
         extent={{-148.5,-105},{148.5,105}},
         preserveAspectRatio=false,

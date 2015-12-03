@@ -2,10 +2,8 @@ within iPSL.Electrical.Branches.PSAT.ThreeWindingTransformer;
 
 
 model Branch3
-  iPSL.Connectors.PwPin p3
-    annotation (Placement(transformation(extent={{-120,-10},{-100,10}})));
-  iPSL.Connectors.PwPin n3
-    annotation (Placement(transformation(extent={{100,-10},{120,10}})));
+  iPSL.Connectors.PwPin p3 annotation (Placement(transformation(extent={{-120,-10},{-100,10}})));
+  iPSL.Connectors.PwPin n3 annotation (Placement(transformation(extent={{100,-10},{120,10}})));
   parameter Real SystemBase=100;
   parameter Real Sn=100 "Power rating MVA";
   parameter Real Vbus=400000 "Sending end bus voltage, V";

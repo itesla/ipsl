@@ -19,15 +19,13 @@ model TCSC_Alpha_Test
     amplitude=0.045,
     width=58,
     offset=1.005017533847740,
-    nperiod=2)
-    annotation (Placement(transformation(extent={{-126,6},{-106,26}})));
+    nperiod=2) annotation (Placement(transformation(extent={{-126,6},{-106,26}})));
   Modelica.Blocks.Sources.Pulse pulse1(
     period=10,
     amplitude=-0.045,
     width=42,
     startTime=0,
-    nperiod=2)
-    annotation (Placement(transformation(extent={{-128,-28},{-108,-8}})));
+    nperiod=2) annotation (Placement(transformation(extent={{-128,-28},{-108,-8}})));
   Modelica.Blocks.Math.Add3 add3_1(
     k3=0,
     k1=1,
@@ -48,10 +46,8 @@ model TCSC_Alpha_Test
     P3=-0.01,
     Q2=0.01,
     Q3=-0.01) annotation (Placement(transformation(extent={{94,-10},{114,10}})));
-  iPSL.Electrical.Controls.PSAT.FACTS.TCSC.TCSCAlpha tCSCAlpha
-    annotation (Placement(transformation(extent={{18,-10},{38,10}})));
-  inner iPSL.Electrical.SystemBase SysData
-    annotation (Placement(transformation(extent={{-120,60},{-96,80}})));
+  iPSL.Electrical.Controls.PSAT.FACTS.TCSC.TCSCAlpha tCSCAlpha annotation (Placement(transformation(extent={{18,-10},{38,10}})));
+  inner iPSL.Electrical.SystemBase SysData annotation (Placement(transformation(extent={{-120,60},{-96,80}})));
 equation
   connect(pulse1.y, add3_1.u2) annotation (Line(
       points={{-107,-18},{-92,-18},{-92,0},{-80,0}},
@@ -70,8 +66,7 @@ equation
       color={0,0,127},
       smooth=Smooth.None));
   connect(Gen1.vf0, add3_1.u3) annotation (Line(
-      points={{-22,11},{2,11},{2,22},{-42,22},{-42,-16},{-86,-16},{-86,-8},{-80,
-          -8}},
+      points={{-22,11},{2,11},{2,22},{-42,22},{-42,-16},{-86,-16},{-86,-8},{-80,-8}},
       color={0,0,127},
       smooth=Smooth.None));
   connect(Gen1.pm0, Gen1.pm) annotation (Line(
@@ -87,8 +82,7 @@ equation
       color={0,0,255},
       smooth=Smooth.None));
   annotation (
-    Diagram(coordinateSystem(preserveAspectRatio=true, extent={{-140,-100},{120,
-            100}}), graphics),
+    Diagram(coordinateSystem(preserveAspectRatio=true, extent={{-140,-100},{120,100}}), graphics),
     Icon(coordinateSystem(extent={{-140,-100},{120,100}})),
     Documentation(info="<html>
 <table cellspacing=\"1\" cellpadding=\"1\" border=\"1\"><tr>

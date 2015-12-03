@@ -66,33 +66,30 @@ model Order4test2_perturbation
         origin={127.5,-50.0},
         extent={{-10.0,-10.0},{10.0,10.0}},
         rotation=0)));
-  Modelica.Blocks.Math.Add3 add31 annotation (Placement(visible=true,
-        transformation(
+  Modelica.Blocks.Math.Add3 add31 annotation (Placement(visible=true, transformation(
         origin={-45.0,13.9829},
         extent={{-10.0,-10.0},{10.0,10.0}},
         rotation=0)));
-  Modelica.Blocks.Math.Add add1 annotation (Placement(visible=true,
-        transformation(
+  Modelica.Blocks.Math.Add add1 annotation (Placement(visible=true, transformation(
         origin={-79.1062,34.6621},
         extent={{-6.3229,-6.3229},{6.3229,6.3229}},
         rotation=0)));
-  Modelica.Blocks.Sources.Step step1(height=0.0005, startTime=2) annotation (
-      Placement(visible=true, transformation(
+  Modelica.Blocks.Sources.Step step1(height=0.0005, startTime=2)
+    annotation (Placement(visible=true, transformation(
         origin={-107.7833,40.985},
         extent={{-5.0,-5.0},{5.0,5.0}},
         rotation=0)));
-  Modelica.Blocks.Sources.Step step2(height=-0.0005, startTime=2.1) annotation
-    (Placement(visible=true, transformation(
+  Modelica.Blocks.Sources.Step step2(height=-0.0005, startTime=2.1)
+    annotation (Placement(visible=true, transformation(
         origin={-107.7833,25.985},
         extent={{-5.0,-5.0},{5.0,5.0}},
         rotation=0)));
-  Modelica.Blocks.Sources.Sine sine1(amplitude=0.001, freqHz=0.2) annotation (
-      Placement(visible=true, transformation(
+  Modelica.Blocks.Sources.Sine sine1(amplitude=0.001, freqHz=0.2)
+    annotation (Placement(visible=true, transformation(
         origin={-107.7833,10.4652},
         extent={{-4.4802,-4.4802},{4.4802,4.4802}},
         rotation=0)));
-  Modelica.Blocks.Math.Add add2(k2=-1) annotation (Placement(visible=true,
-        transformation(
+  Modelica.Blocks.Math.Add add2(k2=-1) annotation (Placement(visible=true, transformation(
         origin={-79.1062,14.6621},
         extent={{-6.3229,-6.3229},{6.3229,6.3229}},
         rotation=0)));
@@ -110,8 +107,7 @@ model Order4test2_perturbation
         origin={-107.3823,-76.5048},
         extent={{-4.4802,-4.4802},{4.4802,4.4802}},
         rotation=0)));
-  Modelica.Blocks.Math.Add add3(k2=-1) annotation (Placement(visible=true,
-        transformation(
+  Modelica.Blocks.Math.Add add3(k2=-1) annotation (Placement(visible=true, transformation(
         origin={-79.1062,-56.3229},
         extent={{-6.3229,-6.3229},{6.3229,6.3229}},
         rotation=0)));
@@ -122,23 +118,21 @@ model Order4test2_perturbation
         origin={-107.7833,-60.5198},
         extent={{-4.4802,-4.4802},{4.4802,4.4802}},
         rotation=0)));
-  Modelica.Blocks.Sources.Step step3(height=-0.0005, startTime=7.1) annotation
-    (Placement(visible=true, transformation(
+  Modelica.Blocks.Sources.Step step3(height=-0.0005, startTime=7.1)
+    annotation (Placement(visible=true, transformation(
         origin={-107.7833,-45.0},
         extent={{-5.0,-5.0},{5.0,5.0}},
         rotation=0)));
-  Modelica.Blocks.Sources.Step step4(height=0.0005, startTime=7) annotation (
-      Placement(visible=true, transformation(
+  Modelica.Blocks.Sources.Step step4(height=0.0005, startTime=7)
+    annotation (Placement(visible=true, transformation(
         origin={-107.7833,-30.0},
         extent={{-5.0,-5.0},{5.0,5.0}},
         rotation=0)));
-  Modelica.Blocks.Math.Add add4 annotation (Placement(visible=true,
-        transformation(
+  Modelica.Blocks.Math.Add add4 annotation (Placement(visible=true, transformation(
         origin={-79.1062,-36.3229},
         extent={{-6.3229,-6.3229},{6.3229,6.3229}},
         rotation=0)));
-  Modelica.Blocks.Math.Add3 add32 annotation (Placement(visible=true,
-        transformation(
+  Modelica.Blocks.Math.Add3 add32 annotation (Placement(visible=true, transformation(
         origin={-45.0,-57.0021},
         extent={{-10.0,-10.0},{10.0,10.0}},
         rotation=0)));
@@ -154,80 +148,75 @@ model Order4test2_perturbation
     D=0,
     Sn=370,
     Vn=200) annotation (Placement(transformation(extent={{-15,-25},{5,-5}})));
-  inner iPSL.Electrical.SystemBase SysData
-    annotation (Placement(transformation(extent={{50,80},{75,100}})));
+  inner iPSL.Electrical.SystemBase SysData annotation (Placement(transformation(extent={{50,80},{75,100}})));
 equation
-  connect(step3.y, add4.u2) annotation (Line(
+  connect(step3.y, add4.u2)
+    annotation (Line(
       visible=true,
       origin={-92.0911,-42.5583},
-      points={{-10.1922,-2.4417},{2.3974,-2.4417},{2.3974,2.44166},{5.39742,
-          2.44166}},
+      points={{-10.1922,-2.4417},{2.3974,-2.4417},{2.3974,2.44166},{5.39742,2.44166}},
       color={0,0,127}));
   connect(add3.y, add32.u2) annotation (Line(
       visible=true,
       origin={-62.2878,-56.6625},
       points={{-9.86321,0.3396},{2.2878,0.3396},{2.2878,-0.3396},{5.2878,-0.3396}},
-
       color={0,0,127}));
-  connect(step4.y, add4.u1) annotation (Line(
+  connect(step4.y, add4.u1)
+    annotation (Line(
       visible=true,
       origin={-92.0911,-31.2646},
       points={{-10.1922,1.2646},{2.3974,1.2646},{2.3974,-1.26456},{5.39742,-1.26456}},
-
       color={0,0,127}));
   connect(add4.y, add32.u1) annotation (Line(
       visible=true,
       origin={-62.2878,-42.6625},
       points={{-9.86321,6.3396},{2.2878,6.3396},{2.2878,-6.3396},{5.2878,-6.3396}},
-
       color={0,0,127}));
-  connect(add3.u2, sine3.y) annotation (Line(
+  connect(add3.u2, sine3.y)
+    annotation (Line(
       visible=true,
       origin={-95.6692,-69.1821},
-      points={{8.97552,9.06546},{2.2971,9.06546},{2.2971,-5.4041},{-6.78488,-5.4041},
-          {-6.78488,-7.3227}},
+      points={{8.97552,9.06546},{2.2971,9.06546},{2.2971,-5.4041},{-6.78488,-5.4041},{-6.78488,-7.3227}},
       color={0,0,127}));
-  connect(sine4.y, add3.u1) annotation (Line(
+  connect(sine4.y, add3.u1)
+    annotation (Line(
       visible=true,
       origin={-93.5606,-55.5207},
-      points={{-9.29448,-4.9991},{-1.4394,-0.9841},{3.8669,2.9916},{6.86692,
-          2.99154}},
+      points={{-9.29448,-4.9991},{-1.4394,-0.9841},{3.8669,2.9916},{6.86692,2.99154}},
       color={0,0,127}));
-  connect(sine1.y, add2.u1) annotation (Line(
+  connect(sine1.y, add2.u1)
+    annotation (Line(
       visible=true,
       origin={-93.5606,15.4643},
-      points={{-9.29448,-4.9991},{-1.4394,-0.9841},{3.8669,2.9916},{6.86692,
-          2.99154}},
+      points={{-9.29448,-4.9991},{-1.4394,-0.9841},{3.8669,2.9916},{6.86692,2.99154}},
       color={0,0,127}));
-  connect(add2.u2, sine2.y) annotation (Line(
+  connect(add2.u2, sine2.y)
+    annotation (Line(
       visible=true,
       origin={-95.6692,1.8029},
-      points={{8.97552,9.06546},{2.2971,9.06546},{2.2971,-5.4041},{-6.78488,-5.4041},
-          {-6.78488,-7.3227}},
+      points={{8.97552,9.06546},{2.2971,9.06546},{2.2971,-5.4041},{-6.78488,-5.4041},{-6.78488,-7.3227}},
       color={0,0,127}));
-  connect(step2.y, add1.u2) annotation (Line(
+  connect(step2.y, add1.u2)
+    annotation (Line(
       visible=true,
       origin={-92.0911,28.4267},
-      points={{-10.1922,-2.4417},{2.3974,-2.4417},{2.3974,2.44166},{5.39742,
-          2.44166}},
+      points={{-10.1922,-2.4417},{2.3974,-2.4417},{2.3974,2.44166},{5.39742,2.44166}},
       color={0,0,127}));
-  connect(step1.y, add1.u1) annotation (Line(
+  connect(step1.y, add1.u1)
+    annotation (Line(
       visible=true,
       origin={-92.0911,39.7204},
       points={{-10.1922,1.2646},{2.3974,1.2646},{2.3974,-1.26456},{5.39742,-1.26456}},
-
       color={0,0,127}));
   connect(add1.y, add31.u1) annotation (Line(
       visible=true,
       origin={-62.2878,28.3225},
       points={{-9.86321,6.3396},{2.2878,6.3396},{2.2878,-6.3396},{5.2878,-6.3396}},
-
       color={0,0,127}));
   connect(add2.y, add31.u2) annotation (Line(
       visible=true,
       origin={-62.2878,14.3225},
       points={{-9.86321,0.3396},{2.2878,0.3396},{2.2878,-0.3396},{5.2878,-0.3396}},
-
       color={0,0,127}));
   connect(pwLine1.n, pwLine3.p) annotation (Line(
       visible=true,
@@ -267,7 +256,6 @@ equation
       points={{0.0,10.0},{0.0,-10.0}}));
   connect(order4_Inputs_Outputs.p, pwLine2.p) annotation (Line(
       points={{6,-14.9504},{20.5,-14.9504},{20.5,-15.6714},{32.8634,-15.6714}},
-
       color={0,0,255},
       smooth=Smooth.None));
   connect(order4_Inputs_Outputs.vf0, add31.u3) annotation (Line(
@@ -276,7 +264,6 @@ equation
       smooth=Smooth.None));
   connect(order4_Inputs_Outputs.pm0, add32.u3) annotation (Line(
       points={{-13,-26},{10,-26},{10,-75},{-65,-75},{-65,-65.0021},{-57,-65.0021}},
-
       color={0,0,127},
       smooth=Smooth.None));
   connect(add32.y, order4_Inputs_Outputs.pm) annotation (Line(

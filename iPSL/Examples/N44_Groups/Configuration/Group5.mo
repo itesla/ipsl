@@ -34,8 +34,7 @@ model Group5 "Machine configuration of synchronous machine with regulators: GENS
     T_w=1 "Water time constant, s",
     A_t=1.1 "Turbine gain (pu)",
     D_turb=0.5 "Turbine damping (pu)",
-    q_NL=0.1 "Water flow at no load. p.u")
-    annotation (Placement(transformation(extent={{-94,0},{-38,28}})));
+    q_NL=0.1 "Water flow at no load. p.u") annotation (Placement(transformation(extent={{-94,0},{-38,28}})));
   Electrical.Controls.PSSE.ES.SEXS.SEXS sEXS(
     T_AT_B=0.05,
     T_B=100,
@@ -44,10 +43,8 @@ model Group5 "Machine configuration of synchronous machine with regulators: GENS
     E_MIN=0,
     E_MAX=4,
     Ec0=1) annotation (Placement(transformation(extent={{-90,-24},{-42,4}})));
-  Modelica.Blocks.Sources.Constant cte(k=0)
-    annotation (Placement(transformation(extent={{-109,-17},{-99,-7}})));
-  Connectors.PwPin p annotation (Placement(transformation(rotation=0, extent={{
-            100,-10},{120,10}}), iconTransformation(extent={{100,-10},{120,10}})));
+  Modelica.Blocks.Sources.Constant cte(k=0) annotation (Placement(transformation(extent={{-109,-17},{-99,-7}})));
+  Connectors.PwPin p annotation (Placement(transformation(rotation=0, extent={{100,-10},{120,10}}), iconTransformation(extent={{100,-10},{120,10}})));
 equation
   connect(hYGOV.PMECH, gENSAL.PMECH) annotation (Line(
       points={{-36.6,14},{-45.9,14},{-45.9,12.5},{-45.48,12.5}},
@@ -71,7 +68,6 @@ equation
       smooth=Smooth.None));
   connect(gENSAL.ETERM, sEXS.ECOMP) annotation (Line(
       points={{8.08,12.5},{10,12.5},{10,42},{-96,42},{-96,-1.25},{-88.56,-1.25}},
-
       color={0,0,127},
       smooth=Smooth.None));
   connect(cte.y, sEXS.VOTHSG) annotation (Line(
@@ -80,30 +76,25 @@ equation
       smooth=Smooth.None));
   connect(gENSAL.EFD0, sEXS.EFD0) annotation (Line(
       points={{8.08,-19.9},{4,-19.9},{4,-34},{-84,-34},{-84,-18.75},{-88.56,-18.75}},
-
       color={0,0,127},
       smooth=Smooth.None));
-  connect(p, gENSAL.p)
-    annotation (Line(points={{110,0},{8.6,-1}}, color={0,0,255}));
+  connect(p, gENSAL.p) annotation (Line(points={{110,0},{8.6,-1}}, color={0,0,255}));
   connect(gENSAL.PMECH0, hYGOV.PMECH0) annotation (Line(
       points={{8.08,-9.1},{6,-9.1},{6,-40},{-114,-40},{-114,7},{-93.3,7}},
       color={0,0,127},
       smooth=Smooth.None));
   annotation (
-    Icon(graphics={Ellipse(extent={{-14,-42},{74,38}}, lineColor={0,0,255}),
-          Line(
+    Icon(graphics={Ellipse(extent={{-14,-42},{74,38}}, lineColor={0,0,255}),Line(
           points={{-2,-12},{18,8},{38,-12},{58,8}},
           color={0,0,255},
-          smooth=Smooth.None),Ellipse(extent={{-100,-100},{101,100}}, lineColor
-          ={0,0,255}),Text(
+          smooth=Smooth.None),Ellipse(extent={{-100,-100},{101,100}}, lineColor={0,0,255}),Text(
           extent={{-91,6},{-22,-12}},
           lineColor={0,0,255},
           textStyle={TextStyle.Italic},
           textString="GENSAL & 
 SEXS &
 HYGOV")}),
-    Diagram(coordinateSystem(preserveAspectRatio=true, extent={{-100,-100},{100,
-            100}}), graphics),
+    Diagram(coordinateSystem(preserveAspectRatio=true, extent={{-100,-100},{100,100}}), graphics),
     Documentation(info="<html>
 <p><br><span style=\"font-family: MS Shell Dlg 2;\">&LT;iPSL: iTesla Power System Library&GT;</span></p>
 <p><span style=\"font-family: MS Shell Dlg 2;\">Copyright 2015 RTE (France), AIA (Spain), KTH (Sweden) and DTU (Denmark)</span></p>

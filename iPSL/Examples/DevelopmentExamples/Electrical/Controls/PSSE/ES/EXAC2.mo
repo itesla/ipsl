@@ -70,8 +70,7 @@ model EXAC2 "SMIB system with one load and GENROE model"
     P_0=40,
     angle_0=4.046276,
     Q_0=5.416582,
-    Xppq=0.2)
-    annotation (Placement(transformation(extent={{-82,-10},{-42,30}})));
+    Xppq=0.2) annotation (Placement(transformation(extent={{-82,-10},{-42,30}})));
   iPSL.Electrical.Controls.PSSE.ES.EXAC2.EXAC2 eXAC2_1(
     K_B=2,
     V_RMAX=2,
@@ -79,8 +78,7 @@ model EXAC2 "SMIB system with one load and GENROE model"
     K_L=2,
     K_H=2,
     V_LR=2) annotation (Placement(transformation(extent={{-36,-42},{-82,-20}})));
-  Modelica.Blocks.Sources.Constant const(k=0)
-    annotation (Placement(transformation(extent={{-2,-46},{-22,-26}})));
+  Modelica.Blocks.Sources.Constant const(k=0) annotation (Placement(transformation(extent={{-2,-46},{-22,-26}})));
 equation
   connect(pwLine.n, pwLine1.p) annotation (Line(
       points={{-9,10},{3.5,10},{3.5,24},{29,24}},
@@ -110,26 +108,16 @@ equation
       points={{54.3333,-27},{54.3333,-25.5},{45,-25.5},{45,-10}},
       color={0,0,255},
       smooth=Smooth.None));
-  connect(gENROE.p, pwLine.p)
-    annotation (Line(points={{-40,10},{-23,10}}, color={0,0,255}));
-  connect(gENROE.PMECH, gENROE.PMECH0) annotation (Line(points={{-81.6,20},{-92,
-          20},{-92,36},{-30,36},{-30,4},{-40.4,4}}, color={0,0,127}));
-  connect(gENROE.EFD0, eXAC2_1.EFD0) annotation (Line(points={{-40.4,-4},{-30,-4},
-          {-30,-22.75},{-36.2875,-22.75}}, color={0,0,127}));
-  connect(gENROE.XADIFD, eXAC2_1.XADIFD) annotation (Line(points={{-40.4,-8},{-32,
-          -8},{-32,-25.5},{-36.1437,-25.5}}, color={0,0,127}));
-  connect(gENROE.ETERM, eXAC2_1.ECOMP) annotation (Line(points={{-40.4,20},{-28,
-          20},{-28,-28.25},{-36.2875,-28.25}}, color={0,0,127}));
-  connect(eXAC2_1.VOTHSG, const.y) annotation (Line(points={{-36.2875,-33.75},{
-          -28,-33.75},{-28,-36},{-23,-36}}, color={0,0,127}));
-  connect(eXAC2_1.VUEL, const.y) annotation (Line(points={{-36.2875,-36.5},{-28,
-          -36.5},{-28,-36},{-23,-36}}, color={0,0,127}));
-  connect(eXAC2_1.VOEL, const.y) annotation (Line(points={{-36.2875,-39.25},{-28,
-          -39.25},{-28,-36},{-23,-36}}, color={0,0,127}));
-  connect(eXAC2_1.EFD, gENROE.EFD) annotation (Line(points={{-82.7188,-31},{-92,
-          -31},{-92,0},{-81.6,0}}, color={0,0,127}));
-  annotation (Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,
-            -100},{100,100}})), Documentation(info="<html>
+  connect(gENROE.p, pwLine.p) annotation (Line(points={{-40,10},{-23,10}}, color={0,0,255}));
+  connect(gENROE.PMECH, gENROE.PMECH0) annotation (Line(points={{-81.6,20},{-92,20},{-92,36},{-30,36},{-30,4},{-40.4,4}}, color={0,0,127}));
+  connect(gENROE.EFD0, eXAC2_1.EFD0) annotation (Line(points={{-40.4,-4},{-30,-4},{-30,-22.75},{-36.2875,-22.75}}, color={0,0,127}));
+  connect(gENROE.XADIFD, eXAC2_1.XADIFD) annotation (Line(points={{-40.4,-8},{-32,-8},{-32,-25.5},{-36.1437,-25.5}}, color={0,0,127}));
+  connect(gENROE.ETERM, eXAC2_1.ECOMP) annotation (Line(points={{-40.4,20},{-28,20},{-28,-28.25},{-36.2875,-28.25}}, color={0,0,127}));
+  connect(eXAC2_1.VOTHSG, const.y) annotation (Line(points={{-36.2875,-33.75},{-28,-33.75},{-28,-36},{-23,-36}}, color={0,0,127}));
+  connect(eXAC2_1.VUEL, const.y) annotation (Line(points={{-36.2875,-36.5},{-28,-36.5},{-28,-36},{-23,-36}}, color={0,0,127}));
+  connect(eXAC2_1.VOEL, const.y) annotation (Line(points={{-36.2875,-39.25},{-28,-39.25},{-28,-36},{-23,-36}}, color={0,0,127}));
+  connect(eXAC2_1.EFD, gENROE.EFD) annotation (Line(points={{-82.7188,-31},{-92,-31},{-92,0},{-81.6,0}}, color={0,0,127}));
+  annotation (Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,100}})), Documentation(info="<html>
 <p><span style=\"font-family: MS Shell Dlg 2;\">&LT;iPSL: iTesla Power System Library&GT;</span></p>
 <p><span style=\"font-family: MS Shell Dlg 2;\">Copyright 2015 RTE (France), AIA (Spain), KTH (Sweden) and DTU (Denmark)</span></p>
 <ul>

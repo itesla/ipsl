@@ -1,10 +1,8 @@
 within iPSL.Electrical.Branches;
 model PwTransformer "Two winding fixed transformer composed of an ideal transformer, a series 
               impedance and a shunt admittance. 2013"
-  iPSL.Connectors.PwPin p annotation (Placement(transformation(extent={{-80,-8},
-            {-60,12}}), iconTransformation(extent={{-80,-8},{-60,12}})));
-  iPSL.Connectors.PwPin n annotation (Placement(transformation(extent={{60,-8},
-            {80,12}}), iconTransformation(extent={{60,-8},{80,12}})));
+  iPSL.Connectors.PwPin p annotation (Placement(transformation(extent={{-80,-8},{-60,12}}), iconTransformation(extent={{-80,-8},{-60,12}})));
+  iPSL.Connectors.PwPin n annotation (Placement(transformation(extent={{60,-8},{80,12}}), iconTransformation(extent={{60,-8},{80,12}})));
   parameter Real R "Resistance p.u.";
   parameter Real X "Reactance p.u.";
   parameter Real G "Shunt conductance p.u.";
@@ -16,8 +14,7 @@ equation
   R*p.ir - X*p.ii = r*r*p.vr - r*n.vr;
   R*p.ii + X*p.ir = r*r*p.vi - r*n.vi;
   annotation (
-    Icon(graphics={Rectangle(extent={{-60,40},{60,-40}}, lineColor={0,0,255}),
-          Ellipse(
+    Icon(graphics={Rectangle(extent={{-60,40},{60,-40}}, lineColor={0,0,255}),Ellipse(
           extent={{-26,16},{6,-16}},
           lineColor={0,0,255},
           lineThickness=1),Ellipse(

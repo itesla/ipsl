@@ -68,28 +68,22 @@ model ESST4B "SMIB model example of GENROU with Excitation System ESST4B"
     V_0=0.991992,
     d_P=5*0.01,
     d_t=0.1,
-    t1=2 - 0.005)
-    annotation (Placement(transformation(extent={{26,-14},{6,8}})));
+    t1=2 - 0.005) annotation (Placement(transformation(extent={{26,-14},{6,8}})));
   iPSL.Electrical.Events.PwFault pwFault(
     R=0,
     X=-2e-9,
     t1=10 - 0.005,
-    t2=10.15 - 0.005)
-    annotation (Placement(transformation(extent={{66,-14},{86,6}})));
-  Modelica.Blocks.Sources.Constant const(k=0) annotation (Placement(
-        transformation(
+    t2=10.15 - 0.005) annotation (Placement(transformation(extent={{66,-14},{86,6}})));
+  Modelica.Blocks.Sources.Constant const(k=0) annotation (Placement(transformation(
         extent={{-4,-4},{4,4}},
         rotation=0,
         origin={-60,-40})));
-  Modelica.Blocks.Sources.Constant const2(k=0)
-    annotation (Placement(transformation(extent={{-110,166},{-94,182}})));
-  Modelica.Blocks.Sources.Constant const5(k=0) annotation (Placement(
-        transformation(
+  Modelica.Blocks.Sources.Constant const2(k=0) annotation (Placement(transformation(extent={{-110,166},{-94,182}})));
+  Modelica.Blocks.Sources.Constant const5(k=0) annotation (Placement(transformation(
         extent={{-5,-5},{5,5}},
         rotation=0,
         origin={-59,-25})));
-  iPSL.Electrical.Controls.PSSE.ES.ESST4B.ESST4B eSST4B annotation (Placement(
-        transformation(
+  iPSL.Electrical.Controls.PSSE.ES.ESST4B.ESST4B eSST4B annotation (Placement(transformation(
         extent={{-16,-11},{16,11}},
         rotation=0,
         origin={-24,5})));
@@ -149,25 +143,21 @@ equation
       smooth=Smooth.None));
   connect(generator.PMECH0, generator.PMECH) annotation (Line(
       points={{-52.88,7.9},{-52,7.9},{-52,34},{-84,34},{-84,21.5},{-81.72,21.5}},
-
       color={0,0,127},
       smooth=Smooth.None));
   connect(eSST4B.EFD, generator.EFD) annotation (Line(
-      points={{-15.2727,-1.1875},{-10,-1.1875},{-10,-12},{-86,-12},{-86,4.5},{-81.72,
-          4.5}},
+      points={{-15.2727,-1.1875},{-10,-1.1875},{-10,-12},{-86,-12},{-86,4.5},{-81.72,4.5}},
       color={0,0,127},
       smooth=Smooth.None));
   connect(generator.XADIFD, eSST4B.XADIFD) annotation (Line(
       points={{-52.88,-2.3},{-52.88,-8},{-56,-8},{-56,-3.04375},{-41.3818,-3.04375}},
-
       color={0,0,127},
       smooth=Smooth.None));
   connect(generator.PELEC, eSST4B.ECOMP) annotation (Line(
       points={{-52.88,4.5},{-50,4.5},{-50,2.59375},{-41.3818,2.59375}},
       color={0,0,127},
       smooth=Smooth.None));
-  annotation (Diagram(coordinateSystem(preserveAspectRatio=true, extent={{-100,
-            -100},{100,100}}), graphics), Documentation(info="<html>
+  annotation (Diagram(coordinateSystem(preserveAspectRatio=true, extent={{-100,-100},{100,100}}), graphics), Documentation(info="<html>
 <p><br><span style=\"font-family: MS Shell Dlg 2;\">&LT;iPSL: iTesla Power System Library&GT;</span></p>
 <p><span style=\"font-family: MS Shell Dlg 2;\">Copyright 2015 RTE (France), AIA (Spain), KTH (Sweden) and DTU (Denmark)</span></p>
 <ul>

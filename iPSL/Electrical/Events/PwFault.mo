@@ -3,8 +3,7 @@ within iPSL.Electrical.Events;
 
 model PwFault "Transitory short-circuit on a node. Shunt impedance connected only during a specified interval of time.
               Developed by AIA. 2014/12/16"
-  iPSL.Connectors.PwPin p annotation (Placement(transformation(extent={{-80,-10},
-            {-60,10}}), iconTransformation(extent={{-80,-10},{-60,10}})));
+  iPSL.Connectors.PwPin p annotation (Placement(transformation(extent={{-80,-10},{-60,10}}), iconTransformation(extent={{-80,-10},{-60,10}})));
   parameter Real R "Resistance (pu)";
   parameter Real X "Conductance (pu)";
   parameter Real t1 "Start time of the fault (s)";
@@ -30,8 +29,7 @@ equation
     Icon(coordinateSystem(
         preserveAspectRatio=true,
         extent={{-60,-60},{60,60}},
-        initialScale=0.1), graphics={Rectangle(extent={{-60,60},{60,-60}},
-          lineColor={0,0,255}),Rectangle(
+        initialScale=0.1), graphics={Rectangle(extent={{-60,60},{60,-60}}, lineColor={0,0,255}),Rectangle(
           extent={{-28,26},{12,6}},
           lineColor={0,0,0},
           fillColor={95,95,95},

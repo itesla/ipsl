@@ -3,21 +3,11 @@ model PwGenerator "Synchronous machine model according to Park's classical theor
                    The model corresponds to Eurostag's full model for M1S machine 
                    (defined by internal parameters). Initial values must be inserted manually.
                    Developed by RTE and adapted by AIA. 2014/03/10"
-  iPSL.Connectors.PwPin sortie(vr(start=1), vi(start=0)) annotation (Placement(
-        transformation(extent={{40,10},{60,30}}), iconTransformation(extent={{
-            40,10},{60,30}})));
-  Modelica.Blocks.Interfaces.RealInput eefd annotation (Placement(
-        transformation(extent={{-61,-40},{-41,-20}}), iconTransformation(extent
-          ={{-61,-40},{-41,-20}})));
-  Modelica.Blocks.Interfaces.RealInput oomega annotation (Placement(
-        transformation(extent={{-61,-10},{-41,10}}), iconTransformation(extent=
-            {{-61,-10},{-41,10}})));
-  Modelica.Blocks.Interfaces.RealInput ccm annotation (Placement(transformation(
-          extent={{-61,20},{-41,40}}), iconTransformation(extent={{-61,20},{-41,
-            40}})));
-  Modelica.Blocks.Interfaces.RealOutput ttheta annotation (Placement(
-        transformation(extent={{39,-30},{59,-10}}), iconTransformation(extent={
-            {39,-30},{59,-10}})));
+  iPSL.Connectors.PwPin sortie(vr(start=1), vi(start=0)) annotation (Placement(transformation(extent={{40,10},{60,30}}), iconTransformation(extent={{40,10},{60,30}})));
+  Modelica.Blocks.Interfaces.RealInput eefd annotation (Placement(transformation(extent={{-61,-40},{-41,-20}}), iconTransformation(extent={{-61,-40},{-41,-20}})));
+  Modelica.Blocks.Interfaces.RealInput oomega annotation (Placement(transformation(extent={{-61,-10},{-41,10}}), iconTransformation(extent={{-61,-10},{-41,10}})));
+  Modelica.Blocks.Interfaces.RealInput ccm annotation (Placement(transformation(extent={{-61,20},{-41,40}}), iconTransformation(extent={{-61,20},{-41,40}})));
+  Modelica.Blocks.Interfaces.RealOutput ttheta annotation (Placement(transformation(extent={{39,-30},{59,-10}}), iconTransformation(extent={{39,-30},{59,-10}})));
   Real cm(start=0.60139);
   Real efd(start=0.66174);
   Real ur(start=1);
@@ -57,10 +47,8 @@ model PwGenerator "Synchronous machine model according to Park's classical theor
   parameter Real rQ2=0.03923*yscale "q axis damper 2 winding resistance";
   parameter Real lQ1=0.08921*yscale "q axis damper 1 winding leakeage";
   parameter Real lQ2=1.78484*yscale "q axis damper 2 winding leakeage";
-  parameter Real RT=0
-    "Machine transformer resistance (pu), enter value*SNREF/SNtfo";
-  parameter Real XT=0
-    "Machine transformer reactance (pu), enter value*SNREF/SNtfo";
+  parameter Real RT=0 "Machine transformer resistance (pu), enter value*SNREF/SNtfo";
+  parameter Real XT=0 "Machine transformer reactance (pu), enter value*SNREF/SNtfo";
   parameter Real Md0=2.351*yscale "d axis mutual inductance";
   parameter Real Mq0=2.351*yscale "q axis mutual inductance";
   parameter Real Mdv=0.7459*yscale;
@@ -96,13 +84,11 @@ model PwGenerator "Synchronous machine model according to Park's classical theor
   parameter Real Coef52=D/(2*H);
   parameter Real Coef53=1.0/(2*H);
 equation
-  der(lambdaf) = (-efd*Coef11) - lambdaf*Coef12 + lambdad*Coef13 + lambdaad*
-    Coef14;
+  der(lambdaf) = (-efd*Coef11) - lambdaf*Coef12 + lambdad*Coef13 + lambdaad*Coef14;
   der(lambdad) = lambdaf*Coef21 - lambdad*Coef22 + lambdaad*Coef23;
   der(lambdaq1) = (-lambdaq1*Coef31) + lambdaaq*Coef32;
   der(lambdaq2) = (-lambdaq2*Coef41) + lambdaaq*Coef42;
-  der(omega) = cm*Coef51 + (1 - omega)*Coef52 + lambdaad*iq*Coef53 - lambdaaq*
-    id*Coef53;
+  der(omega) = cm*Coef51 + (1 - omega)*Coef52 + lambdaad*iq*Coef53 - lambdaaq*id*Coef53;
   der(theta) = (omega - 1)*omega0;
   E = sqrt(lambdaad*lambdaad + lambdaaq*lambdaaq);
   Mds = Md0/(1 + md*E^snd);
@@ -125,8 +111,7 @@ equation
   sortie.vr = ur;
   sortie.vi = ui;
   annotation (
-    Icon(graphics={Rectangle(extent={{-40,40},{40,-40}}, lineColor={0,0,255}),
-          Ellipse(
+    Icon(graphics={Rectangle(extent={{-40,40},{40,-40}}, lineColor={0,0,255}),Ellipse(
           extent={{-24,22},{24,-24}},
           lineColor={0,0,255},
           lineThickness=1),Line(

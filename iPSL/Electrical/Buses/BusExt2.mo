@@ -3,10 +3,8 @@ within iPSL.Electrical.Buses;
 
 model BusExt2
   iPSL.Connectors.PwPinExt Ext(p(vr(start=vr0), vi(start=vi0)));
-  parameter Integer nu(min=0) = 0 "Number of left connection"
-    annotation (Dialog(connectorSizing=true), HideResult=true);
-  parameter Integer no(min=0) = 0 "Number of right connections"
-    annotation (Dialog(connectorSizing=true), HideResult=true);
+  parameter Integer nu(min=0) = 0 "Number of left connection" annotation (Dialog(connectorSizing=true), HideResult=true);
+  parameter Integer no(min=0) = 0 "Number of right connections" annotation (Dialog(connectorSizing=true), HideResult=true);
   iPSL.Connectors.PwPin u[nu] annotation (Placement(
       visible=true,
       transformation(
@@ -29,14 +27,10 @@ model BusExt2
         rotation=0)));
   Real V "Bus voltage magnitude (pu)";
   Real angle "Bus voltage angle (deg";
-  parameter Real V_0 "Voltage magnitude (pu)"
-    annotation (Dialog(group="Power flow data"));
-  parameter Real angle_0 "Voltage angle (deg)"
-    annotation (Dialog(group="Power flow data"));
-  parameter Real V_b=130 "Base voltage (kV)"
-    annotation (Dialog(group="Power flow data"));
-  parameter Real S_b=100 "System base power (MVA)"
-    annotation (Dialog(group="Power flow data"));
+  parameter Real V_0 "Voltage magnitude (pu)" annotation (Dialog(group="Power flow data"));
+  parameter Real angle_0 "Voltage angle (deg)" annotation (Dialog(group="Power flow data"));
+  parameter Real V_b=130 "Base voltage (kV)" annotation (Dialog(group="Power flow data"));
+  parameter Real S_b=100 "System base power (MVA)" annotation (Dialog(group="Power flow data"));
 protected
   parameter Real vr0=V_0*cos(angle_0);
   parameter Real vi0=V_0*sin(angle_0);
@@ -55,8 +49,7 @@ equation
   angle = atan2(Ext.p.vi, Ext.p.vr);
   annotation (
     Diagram(coordinateSystem(extent={{0,-100},{20,100}})),
-    Icon(coordinateSystem(extent={{0,-100},{20,100}}, preserveAspectRatio=false),
-        graphics={Rectangle(
+    Icon(coordinateSystem(extent={{0,-100},{20,100}}, preserveAspectRatio=false), graphics={Rectangle(
           extent={{0,100},{20,-100}},
           lineColor={0,0,255},
           fillColor={85,170,255},

@@ -6,8 +6,7 @@ class LeadLagLim "Lead-Lag filter with a non-windup limiter"
   parameter Real K "Gain" annotation (Evaluate=false);
   parameter Real T1 "Lead time constant" annotation (Evaluate=false);
   parameter Real T2 "Lag time constant" annotation (Evaluate=false);
-  parameter Real y_start "Output start value"
-    annotation (Dialog(group="Initialization"));
+  parameter Real y_start "Output start value" annotation (Dialog(group="Initialization"));
   parameter Real outMax "Maximum output value" annotation (Evaluate=false);
   parameter Real outMin "Minimum output value" annotation (Evaluate=false);
   Real s(start=y_start) "State variable";
@@ -31,8 +30,7 @@ equation
     T2*y = ((-s) + K*u)*T1 + T2*s;
   end if;
   annotation (
-    Icon(graphics={Line(points={{38,100},{58,140},{98,140}}, color={0,0,0}),
-          Line(points={{-102,-140},{-62,-140},{-42,-100}}, color={0,0,0}),Text(
+    Icon(graphics={Line(points={{38,100},{58,140},{98,140}}, color={0,0,0}),Line(points={{-102,-140},{-62,-140},{-42,-100}}, color={0,0,0}),Text(
           extent={{-50,82},{70,22}},
           lineColor={0,0,255},
           textString="1+sT"),Text(

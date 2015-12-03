@@ -10,8 +10,7 @@ model PwLineFault "Transitory short-circuit on a line at the point of location f
   parameter Real X1 "Conductance";
   parameter Real G1 "Shunt half conductance p.u.";
   parameter Real B1 "Shunt half susceptance p.u.";
-  parameter Real k
-    "Point of the line where the short circuit occurs (between 0.1 and 0.99)";
+  parameter Real k "Point of the line where the short circuit occurs (between 0.1 and 0.99)";
   parameter Real Rfault "Fault resistance";
   parameter Real Xfault "Fault reactance";
   parameter Real time_1 "Start time of the fault";
@@ -28,8 +27,7 @@ model PwLineFault "Transitory short-circuit on a line at the point of location f
   parameter Real V0fict_real=V0fict.re;
   parameter Real V0fict_img=V0fict.im;
   // FICTITIOUS BUS
-  iPSL.Electrical.Buses.Bus FICT(V_0=V0fict_real^2 + V0fict_img^2, angle_0=
-        atan2(V0fict_real^2, V0fict_img)) annotation (Placement(transformation));
+  iPSL.Electrical.Buses.Bus FICT(V_0=V0fict_real^2 + V0fict_img^2, angle_0=atan2(V0fict_real^2, V0fict_img)) annotation (Placement(transformation));
   // THE ORIGINAL LINE IS SEPARATED IN TWO PARTS
   iPSL.Electrical.Branches.PwLine_2 Line_1(
     R=k*R1,
@@ -53,8 +51,7 @@ equation
   connect(FICT.p, Line_2.p) annotation (Line);
   connect(Line_2.n, n) annotation (Line);
   connect(Fault.p, FICT.p) annotation (
-    Icon(graphics={Rectangle(extent={{-60,60},{60,-60}}, lineColor={0,0,255}),
-          Rectangle(
+    Icon(graphics={Rectangle(extent={{-60,60},{60,-60}}, lineColor={0,0,255}),Rectangle(
           extent={{-28,30},{12,10}},
           lineColor={0,0,0},
           fillColor={95,95,95},

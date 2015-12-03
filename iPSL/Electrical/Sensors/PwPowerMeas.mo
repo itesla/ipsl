@@ -2,15 +2,10 @@ within iPSL.Electrical.Sensors;
 
 
 model PwPowerMeas
-  iPSL.Connectors.PwPin p
-    annotation (Placement(transformation(extent={{-52,-6},{-40,6}})));
-  iPSL.Connectors.PwPin n annotation (Placement(transformation(extent={{40,20},
-            {52,32}}), iconTransformation(extent={{40,20},{52,32}})));
-  Modelica.Blocks.Interfaces.RealOutput P annotation (Placement(transformation(
-          extent={{40,-16},{50,-4}}), iconTransformation(extent={{40,-16},{50,-4}})));
-  Modelica.Blocks.Interfaces.RealOutput Q annotation (Placement(transformation(
-          extent={{40,-40},{50,-28}}), iconTransformation(extent={{40,-40},{50,
-            -28}})));
+  iPSL.Connectors.PwPin p annotation (Placement(transformation(extent={{-52,-6},{-40,6}})));
+  iPSL.Connectors.PwPin n annotation (Placement(transformation(extent={{40,20},{52,32}}), iconTransformation(extent={{40,20},{52,32}})));
+  Modelica.Blocks.Interfaces.RealOutput P annotation (Placement(transformation(extent={{40,-16},{50,-4}}), iconTransformation(extent={{40,-16},{50,-4}})));
+  Modelica.Blocks.Interfaces.RealOutput Q annotation (Placement(transformation(extent={{40,-40},{50,-28}}), iconTransformation(extent={{40,-40},{50,-28}})));
 equation
   n.vr = p.vr;
   n.vi = p.vi;
@@ -19,10 +14,8 @@ equation
   -Q = (-n.vr*n.ii) + n.vi*n.ir;
   P = n.vr*n.ir + n.vi*n.ii;
   annotation (
-    Icon(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,
-            100}}), graphics={Rectangle(extent={{-40,40},{40,-40}}, lineColor={
-          0,0,255}),Rectangle(extent={{-30,32},{30,-32}}, lineColor={0,0,255}),
-          Rectangle(extent={{-20,20},{20,0}}, lineColor={0,0,255}),Text(
+    Icon(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,100}}), graphics={Rectangle(extent={{-40,40},{40,-40}}, lineColor={0,0,255}),Rectangle(extent={{-30,32},{30,-32}},
+          lineColor={0,0,255}),Rectangle(extent={{-20,20},{20,0}}, lineColor={0,0,255}),Text(
           extent={{-20,-12},{0,-28}},
           lineColor={0,0,255},
           textStyle={TextStyle.Bold},
@@ -34,8 +27,7 @@ equation
           lineColor={0,0,255},
           textStyle={TextStyle.Bold},
           textString="P/")}),
-    Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{
-            100,100}}), graphics),
+    Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,100}}), graphics),
     Documentation(info="<html>
 <p><br><span style=\"font-family: MS Shell Dlg 2;\">&LT;iPSL: iTesla Power System Library&GT;</span></p>
 <p><span style=\"font-family: MS Shell Dlg 2;\">Copyright 2015 RTE (France), AIA (Spain), KTH (Sweden) and DTU (Denmark)</span></p>

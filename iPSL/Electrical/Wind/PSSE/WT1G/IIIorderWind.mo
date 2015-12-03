@@ -39,8 +39,7 @@ model IIIorderWind "IM order III"
     vr(start=vr0),
     vi(start=vi0),
     ir(start=ir0),
-    ii(start=ii0))
-    annotation (Placement(transformation(extent={{74,-10},{94,10}})));
+    ii(start=ii0)) annotation (Placement(transformation(extent={{74,-10},{94,10}})));
 protected
   parameter Real vr0=v0*cos(anglev0);
   parameter Real vi0=v0*sin(anglev0);
@@ -78,8 +77,7 @@ equation
   der(epm) = (-wbase*s*epr) - (epm - (X - Xp)*(-1)*Ir)/T;
   Im = (-a23*(-1)*((-Vr) - epr)) + a13*(-1)*(Vm - epm);
   Ir = a13*(-1)*((-Vr) - epr) + a23*(-1)*(Vm - epm);
-  annotation (Icon(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},
-            {100,100}}), graphics={Rectangle(
+  annotation (Icon(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,100}}), graphics={Rectangle(
           visible=true,
           fillColor={255,255,255},
           extent={{-100,-100},{100,100}}),Ellipse(

@@ -7,18 +7,14 @@ model PwShuntB
   Complex V;
   Real v;
   Complex S;
-  iPSL.Connectors.PwPin p
-    annotation (Placement(transformation(extent={{-14,66},{6,86}})));
+  iPSL.Connectors.PwPin p annotation (Placement(transformation(extent={{-14,66},{6,86}})));
 equation
   v = sqrt(p.vr^2 + p.vi^2);
   I = Complex(p.ir, p.ii);
   V = Complex(p.vr, p.vi);
   I = Complex(0, B)*V;
-  S = Complex(p.vr, p.vi)*Complex(p.ir, -p.ii) annotation (Diagram(
-        coordinateSystem(preserveAspectRatio=true, extent={{-100,-100},{100,100}}),
-        graphics), Icon(coordinateSystem(preserveAspectRatio=true, extent={{-100,
-            -100},{100,100}}), graphics={Rectangle(extent={{-66,72},{66,-82}},
-          lineColor={0,0,255}),Text(
+  S = Complex(p.vr, p.vi)*Complex(p.ir, -p.ii) annotation (Diagram(coordinateSystem(preserveAspectRatio=true, extent={{-100,-100},{100,100}}), graphics), Icon(coordinateSystem(preserveAspectRatio=
+            true, extent={{-100,-100},{100,100}}), graphics={Rectangle(extent={{-66,72},{66,-82}}, lineColor={0,0,255}),Text(
           extent={{-36,54},{42,-62}},
           lineColor={0,0,255},
           textStyle={TextStyle.Bold},

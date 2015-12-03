@@ -1,4 +1,6 @@
 within iPSL.NonElectrical.Logical;
+
+
 model Relay4
   Modelica.Blocks.Interfaces.RealInput in1 annotation (Placement(transformation(
         extent={{-5,-6},{5,6}},
@@ -28,19 +30,14 @@ model Relay4
         extent={{-5.5,-6},{5.5,6}},
         rotation=-90,
         origin={30,45.5})));
-  Modelica.Blocks.Interfaces.RealInput p1
-    annotation (Placement(transformation(extent={{-50,14},{-40,26}})));
-  Modelica.Blocks.Interfaces.RealInput p2
-    annotation (Placement(transformation(extent={{-50,-26},{-40,-14}})));
-  Modelica.Blocks.Interfaces.RealOutput n annotation (Placement(transformation(
-          extent={{41,-6},{51,6}}), iconTransformation(extent={{40,-4},{48,4}})));
+  Modelica.Blocks.Interfaces.RealInput p1 annotation (Placement(transformation(extent={{-50,14},{-40,26}})));
+  Modelica.Blocks.Interfaces.RealInput p2 annotation (Placement(transformation(extent={{-50,-26},{-40,-14}})));
+  Modelica.Blocks.Interfaces.RealOutput n annotation (Placement(transformation(extent={{41,-6},{51,6}}), iconTransformation(extent={{40,-4},{48,4}})));
 equation
   n = if in1 == 0 and in2 == 1 and in3 == 0 and in4 == 0 then p1 else p2;
   annotation (
-    Diagram(coordinateSystem(preserveAspectRatio=true, extent={{-40,-40},{40,40}}),
-        graphics),
-    Icon(coordinateSystem(preserveAspectRatio=true, extent={{-40,-40},{40,40}}),
-        graphics={Rectangle(
+    Diagram(coordinateSystem(preserveAspectRatio=true, extent={{-40,-40},{40,40}}), graphics),
+    Icon(coordinateSystem(preserveAspectRatio=true, extent={{-40,-40},{40,40}}), graphics={Rectangle(
           extent={{-40,40},{40,-40}},
           lineColor={0,0,255},
           fillColor={255,255,255},

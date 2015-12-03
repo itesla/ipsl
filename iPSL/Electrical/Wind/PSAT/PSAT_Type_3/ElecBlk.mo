@@ -3,8 +3,7 @@ within iPSL.Electrical.Wind.PSAT.PSAT_Type_3;
 
 model ElecBlk
   import Modelica.Constants.pi;
-  Modelica.Blocks.Interfaces.RealInput omega_m "Rotor Speed" annotation (
-      Placement(
+  Modelica.Blocks.Interfaces.RealInput omega_m "Rotor Speed" annotation (Placement(
       transformation(
         extent={{-102.0,54.0},{-62.0,94.0}},
         origin={-46.1127,-159.0},
@@ -14,8 +13,7 @@ model ElecBlk
         origin={2.0,-144.0},
         extent={{-102.0,54.0},{-62.0,94.0}},
         rotation=0)));
-  Modelica.Blocks.Interfaces.RealInput idr(start=idr0, fixed=false) "idr"
-    annotation (Placement(
+  Modelica.Blocks.Interfaces.RealInput idr(start=idr0, fixed=false) "idr" annotation (Placement(
       transformation(
         extent={{-102.0,54.0},{-62.0,94.0}},
         origin={-45.2181,9.0065},
@@ -25,8 +23,7 @@ model ElecBlk
         origin={2.0,-6.3878},
         extent={{-102.0,54.0},{-62.0,94.0}},
         rotation=0)));
-  Modelica.Blocks.Interfaces.RealInput iqr(start=iqr0, fixed=false) "iqr"
-    annotation (Placement(
+  Modelica.Blocks.Interfaces.RealInput iqr(start=iqr0, fixed=false) "iqr" annotation (Placement(
       transformation(
         extent={{-102.0,54.0},{-62.0,94.0}},
         origin={-44.5564,-24.0},
@@ -36,8 +33,7 @@ model ElecBlk
         origin={2.0,-74.0},
         extent={{-102.0,54.0},{-62.0,94.0}},
         rotation=0)));
-  Modelica.Blocks.Interfaces.RealOutput Tel "Electrical Torque" annotation (
-      Placement(
+  Modelica.Blocks.Interfaces.RealOutput Tel "Electrical Torque" annotation (Placement(
       transformation(
         extent={{102.0,54.0},{62.0,94.0}},
         origin={44.9293,3.7214},
@@ -47,8 +43,7 @@ model ElecBlk
         origin={-2.0,-24.0},
         extent={{102.0,54.0},{62.0,94.0}},
         rotation=0)));
-  Modelica.Blocks.Interfaces.RealOutput Vbus "Bus Voltage Magnitude"
-    annotation (Placement(
+  Modelica.Blocks.Interfaces.RealOutput Vbus "Bus Voltage Magnitude" annotation (Placement(
       transformation(
         extent={{102.0,54.0},{62.0,94.0}},
         origin={46.3073,-49.0},

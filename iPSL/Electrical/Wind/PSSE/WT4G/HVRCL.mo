@@ -10,9 +10,7 @@ model HVRCL
         extent={{-9,-9},{9,9}},
         rotation=90,
         origin={2,-28})));
-  Modelica.Blocks.Interfaces.RealOutput Iq_HVRCL annotation (Placement(
-        transformation(extent={{42,4},{60,22}}), iconTransformation(extent={{42,
-            4},{60,22}})));
+  Modelica.Blocks.Interfaces.RealOutput Iq_HVRCL annotation (Placement(transformation(extent={{42,4},{60,22}}), iconTransformation(extent={{42,4},{60,22}})));
   Modelica.Blocks.Interfaces.RealInput Iq annotation (Placement(transformation(
         extent={{-9,-9},{9,9}},
         rotation=0,
@@ -24,11 +22,8 @@ equation
     Iq_HVRCL = Iq;
   end if;
   annotation (
-    Diagram(coordinateSystem(preserveAspectRatio=true, extent={{-100,-100},{100,
-            100}}), graphics),
-    Icon(coordinateSystem(preserveAspectRatio=true, extent={{-100,-100},{100,
-            100}}), graphics={Rectangle(extent={{-28,42},{40,-20}}, lineColor={
-          0,0,255}),Text(
+    Diagram(coordinateSystem(preserveAspectRatio=true, extent={{-100,-100},{100,100}}), graphics),
+    Icon(coordinateSystem(preserveAspectRatio=true, extent={{-100,-100},{100,100}}), graphics={Rectangle(extent={{-28,42},{40,-20}}, lineColor={0,0,255}),Text(
           extent={{-20,46},{38,10}},
           lineColor={0,0,255},
           textString="HVRCL "),Line(

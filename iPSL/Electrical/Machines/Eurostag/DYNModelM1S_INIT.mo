@@ -109,20 +109,14 @@ model DYNModelM1S_INIT "Initialization model for synchronous mahine M1S.
   // YXTI
   // per unitage complementaire, calcul de rrTfo (puingc.f)
   // ------------------------------------------------------
-  parameter Real ri=if rTfoIn > 0. or xTfoIn > 0. then uNResTfo/uNomNw/(
-      uNMacTfo/uBMac) else 1.;
-  parameter Real rs=if rTfoIn > 0. or xTfoIn > 0. then (uNResTfo/uNomNw)^2*
-      SNREF/sNTfo else 1.;
+  parameter Real ri=if rTfoIn > 0. or xTfoIn > 0. then uNResTfo/uNomNw/(uNMacTfo/uBMac) else 1.;
+  parameter Real rs=if rTfoIn > 0. or xTfoIn > 0. then (uNResTfo/uNomNw)^2*SNREF/sNTfo else 1.;
   parameter Real mSalNom=mD0Nom - mQ0Nom;
   parameter Real xQNom0=mQ0Nom + lQINom;
-  parameter Real tetaNomNum0=uiNom + omegaNom*(xTfoNom + xQNom0)*irNom + (
-      rTfoNom + rStatNom)*iiNom;
-  parameter Real tetaNomDenom0=urNom + (rTfoNom + rStatNom)*irNom - omegaNom*(
-      xTfoNom + xQNom0)*iiNom;
-  parameter Real lambdaADNom0=-(urNom + (rStatNom + rTfoNom)*irNom + omegaNom*(
-      lStatNom + xTfoNom)*(-iiNom))/omegaNom;
-  parameter Real lambdaAQNom0=((-uiNom) + (rStatNom + rTfoNom)*(-iiNom) -
-      omegaNom*(lQINom + xTfoNom)*irNom)/omegaNom;
+  parameter Real tetaNomNum0=uiNom + omegaNom*(xTfoNom + xQNom0)*irNom + (rTfoNom + rStatNom)*iiNom;
+  parameter Real tetaNomDenom0=urNom + (rTfoNom + rStatNom)*irNom - omegaNom*(xTfoNom + xQNom0)*iiNom;
+  parameter Real lambdaADNom0=-(urNom + (rStatNom + rTfoNom)*irNom + omegaNom*(lStatNom + xTfoNom)*(-iiNom))/omegaNom;
+  parameter Real lambdaAQNom0=((-uiNom) + (rStatNom + rTfoNom)*(-iiNom) - omegaNom*(lQINom + xTfoNom)*irNom)/omegaNom;
   parameter Real lambdaADNom20=lambdaADNom0*lambdaADNom0;
   parameter Real lambdaAQNom20=lambdaAQNom0*lambdaAQNom0;
   Real u2(start=1.0);
@@ -225,10 +219,8 @@ model DYNModelM1S_INIT "Initialization model for synchronous mahine M1S.
   // YID
   Real iQ0(start=ir0_0);
   // YIQ
-  parameter Real lambdaAD0_0=-(ur0 + (rStatIn + rTfoIn)*ir0_0 + (lStatIn +
-      xTfoIn)*(-ii0_0))/omega_0;
-  parameter Real lambdaAQ0_0=((-ui0) + (rStatIn + rTfoIn)*(-ii0_0) - (lStatIn
-       + xTfoIn)*ir0_0)/omega_0;
+  parameter Real lambdaAD0_0=-(ur0 + (rStatIn + rTfoIn)*ir0_0 + (lStatIn + xTfoIn)*(-ii0_0))/omega_0;
+  parameter Real lambdaAQ0_0=((-ui0) + (rStatIn + rTfoIn)*(-ii0_0) - (lStatIn + xTfoIn)*ir0_0)/omega_0;
   Real lambdaAD0(start=lambdaAD0_0);
   // YLAMAD
   Real lambdaAQ0(start=lambdaAQ0_0);
@@ -284,15 +276,12 @@ equation
   //{
   xQNom = mQNom + lQINom;
   // YXQ
-  tetaNomNum = uiNom + omegaNom*(xTfoNom + xQNom)*irNom + (rTfoNom + rStatNom)*
-    iiNom;
+  tetaNomNum = uiNom + omegaNom*(xTfoNom + xQNom)*irNom + (rTfoNom + rStatNom)*iiNom;
   // YNUM
-  tetaNomDenom = urNom + (rTfoNom + rStatNom)*irNom - omegaNom*(xTfoNom + xQNom)
-    *iiNom;
+  tetaNomDenom = urNom + (rTfoNom + rStatNom)*irNom - omegaNom*(xTfoNom + xQNom)*iiNom;
   // YDENOM
   //tetaNom = atan2(tetaNomNum,tetaNomDenom); // YTETA
-  tetaNom = 2*atan(tetaNomNum/(sqrt(tetaNomNum*tetaNomNum + tetaNomDenom*
-    tetaNomDenom) + tetaNomDenom));
+  tetaNom = 2*atan(tetaNomNum/(sqrt(tetaNomNum*tetaNomNum + tetaNomDenom*tetaNomDenom) + tetaNomDenom));
   iDNom = sin(tetaNom)*irNom - cos(tetaNom)*iiNom;
   // YID
   iQNom = cos(tetaNom)*irNom + sin(tetaNom)*iiNom;
@@ -301,11 +290,9 @@ equation
   // YUD
   uQNom = cos(tetaNom)*urNom + sin(tetaNom)*uiNom;
   // YUQ
-  lambdaADNom = -(uQNom + (rStatNom + rTfoNom)*iQNom + omegaNom*(lStatNom +
-    xTfoNom)*iDNom)/omegaNom;
+  lambdaADNom = -(uQNom + (rStatNom + rTfoNom)*iQNom + omegaNom*(lStatNom + xTfoNom)*iDNom)/omegaNom;
   // YLAMAD
-  lambdaAQNom = (uDNom + (rStatNom + rTfoNom)*iDNom - omegaNom*(lQINom +
-    xTfoNom)*iQNom)/omegaNom;
+  lambdaAQNom = (uDNom + (rStatNom + rTfoNom)*iDNom - omegaNom*(lQINom + xTfoNom)*iQNom)/omegaNom;
   // YLAMAQ
   lambdaADNom2 = lambdaADNom*lambdaADNom;
   // YV72
@@ -340,8 +327,7 @@ equation
   end if;
   // per unitage de parametres (park2.f)
   // -----------------------------------
-  ONE*yScale = if rTfoIn > 0. or xTfoIn > 0. then SNREF/SN*rrTfo*rrTfo else
-    SNREF/SN;
+  ONE*yScale = if rTfoIn > 0. or xTfoIn > 0. then SNREF/SN*rrTfo*rrTfo else SNREF/SN;
   // YSCALE
   rStat = rStatIn*yScale;
   // YI = RESARM * yScale;
@@ -377,8 +363,7 @@ equation
   // YDENOM
   //expression ange moitié
   //ONE*teta0 = atan2(teta0Num ,teta0Denom); // YTETA = ATAN2(YNUM,YDENOM)
-  ONE*teta0 = 2*atan(teta0Num/(sqrt(teta0Num*teta0Num + teta0Denom*teta0Denom)
-     + teta0Denom));
+  ONE*teta0 = 2*atan(teta0Num/(sqrt(teta0Num*teta0Num + teta0Denom*teta0Denom) + teta0Denom));
   ONE*iD0 = sin(teta0)*ir0 - cos(teta0)*ii0;
   // YID
   ONE*iQ0 = cos(teta0)*ir0 + sin(teta0)*ii0;
@@ -438,9 +423,7 @@ equation
   ONE*uiReg0 = 1/rrTfo*u1i;
   ir = -(sin(pin_TETA)*pin_ID + cos(pin_TETA)*pin_IQ);
   ii = -((-cos(pin_TETA)*pin_ID) + sin(pin_TETA)*pin_IQ);
-  pin_TerminalVoltage = sqrt((pin_UR - rTfo*ir + xTfo*ii)*(pin_UR - rTfo*ir +
-    xTfo*ii) + (pin_UI - rTfo*ii - xTfo*ir)*(pin_UI - rTfo*ii - xTfo*ir))*1/
-    rrTfo;
+  pin_TerminalVoltage = sqrt((pin_UR - rTfo*ir + xTfo*ii)*(pin_UR - rTfo*ir + xTfo*ii) + (pin_UI - rTfo*ii - xTfo*ir)*(pin_UI - rTfo*ii - xTfo*ir))*1/rrTfo;
   pin_CM = cm0;
   pin_EFD = efd0;
   pin_LAMBDAF = lambdaF0;
@@ -473,11 +456,9 @@ equation
   pin_ReactivePowerSN = (pin_UI*(-ir) - pin_UR*(-ii))*SNREF/SN;
   //Field Current
   if mDSatIn == 0 and mQSatIn == 0 and nDSat == 0 and nQSat == 0 then
-    pin_FieldCurrent = -mDV/rrTfo*((mD0 + lD + mrc)*pin_LAMBDAF - (mD0 + mrc)*
-      pin_LAMBDAD - mD0*lD*pin_ID)/((mD0 + mrc)*(lRot + lD) + lRot*lD);
+    pin_FieldCurrent = -mDV/rrTfo*((mD0 + lD + mrc)*pin_LAMBDAF - (mD0 + mrc)*pin_LAMBDAD - mD0*lD*pin_ID)/((mD0 + mrc)*(lRot + lD) + lRot*lD);
   else
-    pin_FieldCurrent = -mDV/rrTfo*((lD + mrc)*pin_LAMBDAF - mrc*pin_LAMBDAD -
-      lD*pin_LAMBDAAD)/(mrc*(lRot + lD) + lRot*lD);
+    pin_FieldCurrent = -mDV/rrTfo*((lD + mrc)*pin_LAMBDAF - mrc*pin_LAMBDAD - lD*pin_LAMBDAAD)/(mrc*(lRot + lD) + lRot*lD);
   end if;
   annotation (Documentation(info="<html>
 <p><br><span style=\"font-family: MS Shell Dlg 2;\">&LT;iPSL: iTesla Power System Library&GT;</span></p>

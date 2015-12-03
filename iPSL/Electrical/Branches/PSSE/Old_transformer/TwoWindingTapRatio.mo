@@ -19,12 +19,9 @@ model TwoWindingTapRatio
   //regulator delay
   parameter Real TC=5;
   //motor delay
-  Connectors.PwPin P1 annotation (Placement(transformation(extent={{-104,2},{-84,
-            22}}), iconTransformation(extent={{-104,2},{-84,22}})));
-  Connectors.PwPin P2 annotation (Placement(transformation(extent={{78,6},{100,
-            26}}), iconTransformation(extent={{80,6},{100,26}})));
-  iPSL.Electrical.Branches.PSSE.Old_transformer.Zeq pwLine1(R=Zeq.re, X=Zeq.im)
-    annotation (Placement(transformation(
+  Connectors.PwPin P1 annotation (Placement(transformation(extent={{-104,2},{-84,22}}), iconTransformation(extent={{-104,2},{-84,22}})));
+  Connectors.PwPin P2 annotation (Placement(transformation(extent={{78,6},{100,26}}), iconTransformation(extent={{80,6},{100,26}})));
+  iPSL.Electrical.Branches.PSSE.Old_transformer.Zeq pwLine1(R=Zeq.re, X=Zeq.im) annotation (Placement(transformation(
         extent={{-29,-22},{29,22}},
         rotation=0,
         origin={-39,0})));
@@ -35,13 +32,11 @@ model TwoWindingTapRatio
     rmin=rmin,
     Ntap=Ntap,
     TC=TC,
-    TSD=dV) "base on controlled bus voltage base" annotation (Placement(
-        transformation(
+    TSD=dV) "base on controlled bus voltage base" annotation (Placement(transformation(
         extent={{-14,-9},{14,9}},
         rotation=180,
         origin={56,67})));
-  Modelica.Blocks.Interfaces.RealInput sensored_voltage(start=(tap_ratio.Vmax
-         + tap_ratio.Vmin)/2) annotation (Placement(transformation(
+  Modelica.Blocks.Interfaces.RealInput sensored_voltage(start=(tap_ratio.Vmax + tap_ratio.Vmin)/2) annotation (Placement(transformation(
         extent={{-20,-20},{20,20}},
         rotation=180,
         origin={100,66}), iconTransformation(
@@ -49,8 +44,7 @@ model TwoWindingTapRatio
         rotation=180,
         origin={88,-18})));
   Real v;
-  Modelica.Blocks.Sources.Constant const(k=1) annotation (Placement(
-        transformation(
+  Modelica.Blocks.Sources.Constant const(k=1) annotation (Placement(transformation(
         extent={{-13,-13},{13,13}},
         rotation=180,
         origin={75,35})));
@@ -58,8 +52,7 @@ model TwoWindingTapRatio
         extent={{-22,-21},{22,21}},
         rotation=180,
         origin={-2,41})));
-  iPSL.Electrical.Branches.PSSE.Old_transformer.phaseShift phaseship(phase=0)
-    annotation (Placement(transformation(extent={{4,-16},{58,14}})));
+  iPSL.Electrical.Branches.PSSE.Old_transformer.phaseShift phaseship(phase=0) annotation (Placement(transformation(extent={{4,-16},{58,14}})));
 protected
   parameter Real angle=angle_d/180*pi "angel shift in rad";
 protected
@@ -105,10 +98,8 @@ equation
       color={0,0,255},
       smooth=Smooth.None));
   annotation (
-    Diagram(coordinateSystem(preserveAspectRatio=true, extent={{-100,-100},{100,
-            100}}), graphics),
-    Icon(coordinateSystem(preserveAspectRatio=true, extent={{-100,-100},{100,
-            100}}), graphics={Text(
+    Diagram(coordinateSystem(preserveAspectRatio=true, extent={{-100,-100},{100,100}}), graphics),
+    Icon(coordinateSystem(preserveAspectRatio=true, extent={{-100,-100},{100,100}}), graphics={Text(
           extent={{26,54},{114,2}},
           lineColor={0,0,255},
           fillColor={0,0,255},

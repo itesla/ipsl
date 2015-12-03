@@ -1,8 +1,7 @@
 within iPSL.Examples.DevelopmentExamples.Electrical.Controls.PSSE.PSS;
 
 
-model STAB3
-  "Simple Machine Infinite Bus with Machine, Governor and Excitation system"
+model STAB3 "Simple Machine Infinite Bus with Machine, Governor and Excitation system"
   iPSL.Electrical.Machines.PSSE.GENSAL.GENSAL generator(
     Xppd=0.2,
     Xppq=0.2,
@@ -21,8 +20,7 @@ model STAB3
     Xq=0.76000,
     Xpd=0.29700,
     S10=0.18600,
-    S12=0.802)
-    annotation (Placement(transformation(extent={{-78,-2},{-50,24}})));
+    S12=0.802) annotation (Placement(transformation(extent={{-78,-2},{-50,24}})));
   iPSL.Electrical.Branches.PwLine2Openings pwLine(
     t1=100,
     t2=100,
@@ -72,8 +70,7 @@ model STAB3
     t1=2,
     d_P=5*0.01,
     d_t=0) annotation (Placement(transformation(extent={{0,-40},{24,-16}})));
-  iPSL.Electrical.Controls.PSSE.TG.HYGOV HYGOV(VELM=0.02, G_MAX=0.415)
-    annotation (Placement(transformation(
+  iPSL.Electrical.Controls.PSSE.TG.HYGOV HYGOV(VELM=0.02, G_MAX=0.415) annotation (Placement(transformation(
         extent={{-19,-14},{19,14}},
         rotation=180,
         origin={-55,40})));
@@ -91,8 +88,7 @@ model STAB3
         extent={{-18,-16},{18,16}},
         rotation=180,
         origin={-66,-26})));
-  Modelica.Blocks.Sources.Constant const(k=0) annotation (Placement(
-        transformation(
+  Modelica.Blocks.Sources.Constant const(k=0) annotation (Placement(transformation(
         extent={{-2,-2},{2,2}},
         rotation=180,
         origin={-40,-24})));
@@ -146,25 +142,16 @@ equation
       points={{-48.88,1.9},{-46,1.9},{-46,-6.64},{-48.15,-6.64}},
       color={0,0,127},
       smooth=Smooth.None));
-  connect(generator.XADIFD, SCRX.XADIFD) annotation (Line(points={{-48.88,-0.7},
-          {-42,-0.7},{-42,-17.52},{-47.85,-17.52}}, color={0,0,127}));
-  connect(SCRX.ECOMP, generator.ETERM) annotation (Line(points={{-48.15,-33.52},
-          {-38,-33.52},{-38,17.5},{-48.88,17.5}}, color={0,0,127}));
-  connect(generator.SPEED, HYGOV.SPEED) annotation (Line(points={{-48.88,22.7},
-          {-30,22.7},{-30,33},{-36.475,33}}, color={0,0,127}));
-  connect(generator.PMECH0, HYGOV.PMECH0) annotation (Line(points={{-48.88,7.1},
-          {-36,7.1},{-36,20},{-20,20},{-20,47},{-36.475,47}}, color={0,0,127}));
-  connect(HYGOV.PMECH, generator.PMECH) annotation (Line(points={{-74.95,40},{-84,
-          40},{-84,17.5},{-77.72,17.5}}, color={0,0,127}));
-  connect(generator.EFD, SCRX.EFD) annotation (Line(points={{-77.72,4.5},{-88,
-          4.5},{-88,-19.76},{-84.6,-19.76}}, color={0,0,127}));
-  connect(SCRX.VOTHSG, const.y) annotation (Line(points={{-48.15,-29.04},{-46,-29.04},
-          {-46,-26},{-43.67,-25.2},{-43.67,-24},{-42.2,-24}}, color={0,0,127}));
-  connect(SCRX.ETERM, generator.ETERM) annotation (Line(points={{-47.85,-12.24},
-          {-38,-12},{-38,17.5},{-48.88,17.5}}, color={0,0,127}));
+  connect(generator.XADIFD, SCRX.XADIFD) annotation (Line(points={{-48.88,-0.7},{-42,-0.7},{-42,-17.52},{-47.85,-17.52}}, color={0,0,127}));
+  connect(SCRX.ECOMP, generator.ETERM) annotation (Line(points={{-48.15,-33.52},{-38,-33.52},{-38,17.5},{-48.88,17.5}}, color={0,0,127}));
+  connect(generator.SPEED, HYGOV.SPEED) annotation (Line(points={{-48.88,22.7},{-30,22.7},{-30,33},{-36.475,33}}, color={0,0,127}));
+  connect(generator.PMECH0, HYGOV.PMECH0) annotation (Line(points={{-48.88,7.1},{-36,7.1},{-36,20},{-20,20},{-20,47},{-36.475,47}}, color={0,0,127}));
+  connect(HYGOV.PMECH, generator.PMECH) annotation (Line(points={{-74.95,40},{-84,40},{-84,17.5},{-77.72,17.5}}, color={0,0,127}));
+  connect(generator.EFD, SCRX.EFD) annotation (Line(points={{-77.72,4.5},{-88,4.5},{-88,-19.76},{-84.6,-19.76}}, color={0,0,127}));
+  connect(SCRX.VOTHSG, const.y) annotation (Line(points={{-48.15,-29.04},{-46,-29.04},{-46,-26},{-43.67,-25.2},{-43.67,-24},{-42.2,-24}}, color={0,0,127}));
+  connect(SCRX.ETERM, generator.ETERM) annotation (Line(points={{-47.85,-12.24},{-38,-12},{-38,17.5},{-48.88,17.5}}, color={0,0,127}));
   annotation (
-    Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-120},{
-            100,80}})),
+    Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-120},{100,80}})),
     Icon(coordinateSystem(extent={{-100,-120},{100,80}})),
     Documentation(info="<html>
 <p><br><span style=\"font-family: MS Shell Dlg 2;\">&LT;iPSL: iTesla Power System Library&GT;</span></p>

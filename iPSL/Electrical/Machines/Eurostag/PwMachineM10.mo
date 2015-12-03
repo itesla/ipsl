@@ -2,14 +2,12 @@ within iPSL.Electrical.Machines.Eurostag;
 model PwMachineM10 "Induction Machine. The model corresponds to Eurostag's full model for M10 machine.
                   Developed by RTE and adapted by AIA. 2014/03/10"
   // Connectors
-  Modelica.Blocks.Interfaces.RealInput omegaRef(start=omegaRef0)
-    annotation (Placement(transformation(extent={{-61,-10},{-41,10}})));
+  Modelica.Blocks.Interfaces.RealInput omegaRef(start=omegaRef0) annotation (Placement(transformation(extent={{-61,-10},{-41,10}})));
   iPSL.Connectors.PwPin sortie(
     vr(start=ur0),
     vi(start=ui0),
     ir(start=ir0),
-    ii(start=ii0))
-    annotation (Placement(transformation(extent={{40,-10},{60,10}})));
+    ii(start=ii0)) annotation (Placement(transformation(extent={{40,-10},{60,10}})));
   //
   // Generic parameters for simulation
   // --------------------------------
@@ -147,22 +145,17 @@ equation
   ur = Coef11*ir - omegaRef*(Coef12*ii + Coef13*psi2I + Coef14*psi3I);
   ui = Coef11*ii + omegaRef*(Coef12*ir + Coef13*psi2R + Coef14*psi3R);
   // Park's equations
-  der(psi2R) = Coef31*ir - Coef32*psi2R + (omegaRef - omega)*psi2I*omega0 +
-    Coef33*psi3R;
-  der(psi2I) = Coef31*ii - Coef32*psi2I - (omegaRef - omega)*psi2R*omega0 +
-    Coef33*psi3I;
-  der(psi3R) = Coef51*ir + Coef52*psi2R + (omegaRef - omega)*psi3I*omega0 -
-    Coef53*psi3R;
-  der(psi3I) = Coef51*ii + Coef52*psi2I - (omegaRef - omega)*psi3R*omega0 -
-    Coef53*psi3I;
+  der(psi2R) = Coef31*ir - Coef32*psi2R + (omegaRef - omega)*psi2I*omega0 + Coef33*psi3R;
+  der(psi2I) = Coef31*ii - Coef32*psi2I - (omegaRef - omega)*psi2R*omega0 + Coef33*psi3I;
+  der(psi3R) = Coef51*ir + Coef52*psi2R + (omegaRef - omega)*psi3I*omega0 - Coef53*psi3R;
+  der(psi3I) = Coef51*ii + Coef52*psi2I - (omegaRef - omega)*psi3R*omega0 - Coef53*psi3I;
   // equation of the rotating masses
   if omega < cmX2 then
     cm = isLoad*(Coefcm1*(omega - cmX1) + CoefcmY1);
   else
     cm = isLoad*(Coefcm2*(omega - cmX2) + CoefcmY2);
   end if;
-  der(omega) = (-Coef71*cm) + Coef72*(psi2R*ii - psi2I*ir) + Coef73*(psi3R*ii
-     - psi3I*ir) - Coef74*(ir*ir + ii*ii)^Coef75;
+  der(omega) = (-Coef71*cm) + Coef72*(psi2R*ii - psi2I*ir) + Coef73*(psi3R*ii - psi3I*ir) - Coef74*(ir*ir + ii*ii)^Coef75;
   // connecteur PwPin
   // ----------------
   ur = sortie.vr;
@@ -171,8 +164,7 @@ equation
   ii = sortie.ii;
   annotation (
     Diagram(graphics),
-    Icon(graphics={Rectangle(extent={{-40,40},{40,-40}}, lineColor={0,0,255}),
-          Ellipse(
+    Icon(graphics={Rectangle(extent={{-40,40},{40,-40}}, lineColor={0,0,255}),Ellipse(
           extent={{-24,22},{24,-24}},
           lineColor={0,0,255},
           lineThickness=1),Text(

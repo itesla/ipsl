@@ -27,42 +27,29 @@ source-controlled rectifier exciter "
         extent={{-7,-7},{7,7}},
         rotation=0,
         origin={-89,-35})));
-  Modelica.Blocks.Interfaces.RealInput EC annotation (Placement(transformation(
-          extent={{-138,-54},{-100,-16}}), iconTransformation(extent={{-138,-54},
-            {-100,-16}})));
-  Modelica.Blocks.Interfaces.RealInput VOTHSG annotation (Placement(
-        transformation(extent={{-138,-6},{-100,32}}), iconTransformation(extent
-          ={{-138,-6},{-100,32}})));
-  Modelica.Blocks.Sources.Constant V_REF(k=VREF)
-    annotation (Placement(transformation(extent={{-96,-64},{-84,-52}})));
-  NonElectrical.Logical.LV_GATE lV_Gate
-    annotation (Placement(transformation(extent={{264,-4},{286,18}})));
-  Modelica.Blocks.Sources.Constant V_OEL(k=1000)
-    annotation (Placement(transformation(extent={{232,-28},{244,-16}})));
-  Modelica.Blocks.Interfaces.RealInput IFD annotation (Placement(transformation(
+  Modelica.Blocks.Interfaces.RealInput EC annotation (Placement(transformation(extent={{-138,-54},{-100,-16}}), iconTransformation(extent={{-138,-54},{-100,-16}})));
+  Modelica.Blocks.Interfaces.RealInput VOTHSG annotation (Placement(transformation(extent={{-138,-6},{-100,32}}), iconTransformation(extent={{-138,-6},{-100,32}})));
+  Modelica.Blocks.Sources.Constant V_REF(k=VREF) annotation (Placement(transformation(extent={{-96,-64},{-84,-52}})));
+  NonElectrical.Logical.LV_GATE lV_Gate annotation (Placement(transformation(extent={{264,-4},{286,18}})));
+  Modelica.Blocks.Sources.Constant V_OEL(k=1000) annotation (Placement(transformation(extent={{232,-28},{244,-16}})));
+  Modelica.Blocks.Interfaces.RealInput IFD
+    annotation (Placement(transformation(
         extent={{-19,-19},{19,19}},
         rotation=0,
-        origin={-119,-141}), iconTransformation(extent={{-17,-17},{17,17}},
-          origin={-119,-117})));
-  NonElectrical.Nonlinear.FEX fEX
-    annotation (Placement(transformation(extent={{92,-150},{122,-120}})));
-  Modelica.Blocks.Math.Product product
-    annotation (Placement(transformation(extent={{292,-4},{306,10}})));
-  Modelica.Blocks.Interfaces.RealOutput EFD annotation (Placement(
-        transformation(extent={{230,-100},{250,-80}}), iconTransformation(
-          extent={{230,-100},{250,-80}})));
-  Modelica.Blocks.Interfaces.RealInput EFD0 annotation (Placement(
-        transformation(
+        origin={-119,-141}), iconTransformation(extent={{-17,-17},{17,17}}, origin={-119,-117})));
+  NonElectrical.Nonlinear.FEX fEX annotation (Placement(transformation(extent={{92,-150},{122,-120}})));
+  Modelica.Blocks.Math.Product product annotation (Placement(transformation(extent={{292,-4},{306,10}})));
+  Modelica.Blocks.Interfaces.RealOutput EFD annotation (Placement(transformation(extent={{230,-100},{250,-80}}), iconTransformation(extent={{230,-100},{250,-80}})));
+  Modelica.Blocks.Interfaces.RealInput EFD0
+    annotation (Placement(transformation(
         extent={{-17,-17},{17,17}},
         rotation=0,
-        origin={-121,-195}), iconTransformation(extent={{-17,-17},{17,17}},
-          origin={-121,-161})));
-  Modelica.Blocks.Interfaces.RealInput VUEL annotation (Placement(
-        transformation(
+        origin={-121,-195}), iconTransformation(extent={{-17,-17},{17,17}}, origin={-121,-161})));
+  Modelica.Blocks.Interfaces.RealInput VUEL
+    annotation (Placement(transformation(
         extent={{-19,-19},{19,19}},
         rotation=0,
-        origin={-123,-77}), iconTransformation(extent={{-17,-17},{17,17}},
-          origin={-121,-75})));
+        origin={-123,-77}), iconTransformation(extent={{-17,-17},{17,17}}, origin={-121,-75})));
   NonElectrical.Continuous.SimpleLag VA(
     T=T_A,
     y_start=Efd0*K_G,
@@ -74,16 +61,11 @@ source-controlled rectifier exciter "
     k=K_IR,
     outMin=V_RMIN/K_PR,
     outMax=V_RMAX/K_PR,
-    y_start=Efd0*K_G)
-    annotation (Placement(transformation(extent={{-12,-22},{6,-4}})));
-  Modelica.Blocks.Math.Gain Gain1(k=K_PR)
-    annotation (Placement(transformation(extent={{-12,12},{8,32}})));
-  Modelica.Blocks.Nonlinear.Limiter limiter(uMax=V_RMAX, uMin=V_RMIN)
-    annotation (Placement(transformation(extent={{54,-6},{74,14}})));
-  Modelica.Blocks.Math.Add add
-    annotation (Placement(transformation(extent={{34,-2},{46,10}})));
-  Modelica.Blocks.Math.Add add1(k1=-1)
-    annotation (Placement(transformation(extent={{128,2},{138,12}})));
+    y_start=Efd0*K_G) annotation (Placement(transformation(extent={{-12,-22},{6,-4}})));
+  Modelica.Blocks.Math.Gain Gain1(k=K_PR) annotation (Placement(transformation(extent={{-12,12},{8,32}})));
+  Modelica.Blocks.Nonlinear.Limiter limiter(uMax=V_RMAX, uMin=V_RMIN) annotation (Placement(transformation(extent={{54,-6},{74,14}})));
+  Modelica.Blocks.Math.Add add annotation (Placement(transformation(extent={{34,-2},{46,10}})));
+  Modelica.Blocks.Math.Add add1(k1=-1) annotation (Placement(transformation(extent={{128,2},{138,12}})));
   Modelica.Blocks.Math.Gain gain(k=K_G) annotation (Placement(transformation(
         extent={{-9,-9},{9,9}},
         rotation=180,
@@ -92,23 +74,15 @@ source-controlled rectifier exciter "
     k=K_IR,
     outMin=V_MMIN/K_PM,
     outMax=V_MMAX/K_PM,
-    y_start=Efd0/VB0)
-    annotation (Placement(transformation(extent={{166,-26},{186,-6}})));
-  Modelica.Blocks.Math.Gain Gain2(k=K_PM)
-    annotation (Placement(transformation(extent={{164,12},{184,32}})));
-  Modelica.Blocks.Nonlinear.Limiter limiter1(uMax=V_RMAX, uMin=V_RMIN)
-    annotation (Placement(transformation(extent={{228,2},{248,22}})));
-  Modelica.Blocks.Math.Add add2
-    annotation (Placement(transformation(extent={{210,6},{222,18}})));
+    y_start=Efd0/VB0) annotation (Placement(transformation(extent={{166,-26},{186,-6}})));
+  Modelica.Blocks.Math.Gain Gain2(k=K_PM) annotation (Placement(transformation(extent={{164,12},{184,32}})));
+  Modelica.Blocks.Nonlinear.Limiter limiter1(uMax=V_RMAX, uMin=V_RMIN) annotation (Placement(transformation(extent={{228,2},{248,22}})));
+  Modelica.Blocks.Math.Add add2 annotation (Placement(transformation(extent={{210,6},{222,18}})));
   VE vE annotation (Placement(transformation(extent={{-20,-92},{44,-56}})));
-  Modelica.Blocks.Math.Product VB
-    annotation (Placement(transformation(extent={{146,-86},{160,-72}})));
-  Modelica.Blocks.Nonlinear.Limiter maxLimiter(uMax=V_BMAX, uMin=-Modelica.Constants.inf)
-    annotation (Placement(transformation(extent={{176,-90},{198,-68}})));
-  Modelica.Blocks.Math.Add3 add3_1
-    annotation (Placement(transformation(extent={{-48,-8},{-28,12}})));
-  Modelica.Blocks.Math.Add add3(k1=-1)
-    annotation (Placement(transformation(extent={{-68,-28},{-54,-14}})));
+  Modelica.Blocks.Math.Product VB annotation (Placement(transformation(extent={{146,-86},{160,-72}})));
+  Modelica.Blocks.Nonlinear.Limiter maxLimiter(uMax=V_BMAX, uMin=-Modelica.Constants.inf) annotation (Placement(transformation(extent={{176,-90},{198,-68}})));
+  Modelica.Blocks.Math.Add3 add3_1 annotation (Placement(transformation(extent={{-48,-8},{-28,12}})));
+  Modelica.Blocks.Math.Add add3(k1=-1) annotation (Placement(transformation(extent={{-68,-28},{-54,-14}})));
   Modelica.Blocks.Math.Division division annotation (Placement(transformation(
         extent={{-7,7},{7,-7}},
         rotation=0,
@@ -151,14 +125,10 @@ protected
     end if;
   end FEX_INI;
 
-  Modelica.Blocks.Sources.Constant cons(k=Vr0)
-    annotation (Placement(transformation(extent={{-66,-52},{-54,-40}})));
-  Modelica.Blocks.Sources.Constant cons1(k=Vi0)
-    annotation (Placement(transformation(extent={{-66,-74},{-54,-62}})));
-  Modelica.Blocks.Sources.Constant cons2(k=Ir0)
-    annotation (Placement(transformation(extent={{-66,-100},{-54,-88}})));
-  Modelica.Blocks.Sources.Constant cons3(k=Ii0)
-    annotation (Placement(transformation(extent={{-66,-122},{-54,-110}})));
+  Modelica.Blocks.Sources.Constant cons(k=Vr0) annotation (Placement(transformation(extent={{-66,-52},{-54,-40}})));
+  Modelica.Blocks.Sources.Constant cons1(k=Vi0) annotation (Placement(transformation(extent={{-66,-74},{-54,-62}})));
+  Modelica.Blocks.Sources.Constant cons2(k=Ir0) annotation (Placement(transformation(extent={{-66,-100},{-54,-88}})));
+  Modelica.Blocks.Sources.Constant cons3(k=Ii0) annotation (Placement(transformation(extent={{-66,-122},{-54,-110}})));
 initial equation
   KCIFD0 = K_C*IFD;
   Efd0 = EFD0;
@@ -242,46 +212,26 @@ equation
       points={{281.49,6.45},{285.745,6.45},{285.745,7.2},{290.6,7.2}},
       color={0,0,127},
       smooth=Smooth.None));
-  connect(VR1.y, add.u2) annotation (Line(points={{6.9,-13},{26,-13},{26,0.4},{
-          32.8,0.4}}, color={0,0,127}));
-  connect(VM1.y, add2.u2) annotation (Line(points={{187,-16},{200,-16},{200,8.4},
-          {208.8,8.4}}, color={0,0,127}));
-  connect(EC, Vm.u)
-    annotation (Line(points={{-119,-35},{-97.4,-35}}, color={0,0,127}));
-  connect(add3_1.y, Gain1.u) annotation (Line(points={{-27,2},{-20,2},{-20,22},
-          {-14,22}}, color={0,0,127}));
-  connect(VR1.u, Gain1.u) annotation (Line(points={{-13.8,-13},{-20,-13},{-20,
-          22},{-14,22}}, color={0,0,127}));
-  connect(Vm.y, add3.u1) annotation (Line(points={{-81.3,-35},{-80,-35},{-80,-36},
-          {-78,-36},{-78,-16.8},{-69.4,-16.8}}, color={0,0,127}));
-  connect(V_REF.y, add3.u2) annotation (Line(points={{-83.4,-58},{-76,-58},{-76,
-          -25.2},{-69.4,-25.2}}, color={0,0,127}));
-  connect(add3.y, add3_1.u3) annotation (Line(points={{-53.3,-21},{-50,-21},{-50,
-          -6}}, color={0,0,127}));
-  connect(VOTHSG, add3_1.u1) annotation (Line(points={{-119,13},{-84.5,13},{-84.5,
-          10},{-50,10}}, color={0,0,127}));
-  connect(VUEL, add3_1.u2) annotation (Line(points={{-123,-77},{-76,-77},{-76,2},
-          {-50,2}}, color={0,0,127}));
-  connect(VA.y, add1.u2)
-    annotation (Line(points={{119,4},{127,4},{127,4}}, color={0,0,127}));
-  connect(limiter.y, VA.u)
-    annotation (Line(points={{75,4},{96,4},{96,4}}, color={0,0,127}));
-  connect(VM1.u, add1.y) annotation (Line(points={{164,-16},{154,-16},{154,-18},
-          {142,-18},{142,7},{138.5,7}}, color={0,0,127}));
-  connect(fEX.y, VB.u2) annotation (Line(points={{123.5,-135},{134,-135},{134,-83.2},
-          {144.6,-83.2}}, color={0,0,127}));
-  connect(division.y, fEX.u) annotation (Line(points={{82.7,-135},{87.35,-135},
-          {87.35,-135},{92,-135}}, color={0,0,127}));
-  connect(gain2.y, division.u2) annotation (Line(points={{52.7,-131},{59.35,-131},
-          {59.35,-130.8},{66.6,-130.8}}, color={0,0,127}));
-  connect(gain2.u, VB.u1) annotation (Line(points={{36.6,-131},{20,-131},{20,-100},
-          {72,-100},{72,-74},{81.2,-73.64},{81.2,-74.8},{144.6,-74.8}}, color={
-          0,0,127}));
-  connect(IFD, division.u1) annotation (Line(points={{-119,-141},{-26.5,-141},{
-          -26.5,-139.2},{66.6,-139.2}}, color={0,0,127}));
+  connect(VR1.y, add.u2) annotation (Line(points={{6.9,-13},{26,-13},{26,0.4},{32.8,0.4}}, color={0,0,127}));
+  connect(VM1.y, add2.u2) annotation (Line(points={{187,-16},{200,-16},{200,8.4},{208.8,8.4}}, color={0,0,127}));
+  connect(EC, Vm.u) annotation (Line(points={{-119,-35},{-97.4,-35}}, color={0,0,127}));
+  connect(add3_1.y, Gain1.u) annotation (Line(points={{-27,2},{-20,2},{-20,22},{-14,22}}, color={0,0,127}));
+  connect(VR1.u, Gain1.u) annotation (Line(points={{-13.8,-13},{-20,-13},{-20,22},{-14,22}}, color={0,0,127}));
+  connect(Vm.y, add3.u1) annotation (Line(points={{-81.3,-35},{-80,-35},{-80,-36},{-78,-36},{-78,-16.8},{-69.4,-16.8}}, color={0,0,127}));
+  connect(V_REF.y, add3.u2) annotation (Line(points={{-83.4,-58},{-76,-58},{-76,-25.2},{-69.4,-25.2}}, color={0,0,127}));
+  connect(add3.y, add3_1.u3) annotation (Line(points={{-53.3,-21},{-50,-21},{-50,-6}}, color={0,0,127}));
+  connect(VOTHSG, add3_1.u1) annotation (Line(points={{-119,13},{-84.5,13},{-84.5,10},{-50,10}}, color={0,0,127}));
+  connect(VUEL, add3_1.u2) annotation (Line(points={{-123,-77},{-76,-77},{-76,2},{-50,2}}, color={0,0,127}));
+  connect(VA.y, add1.u2) annotation (Line(points={{119,4},{127,4},{127,4}}, color={0,0,127}));
+  connect(limiter.y, VA.u) annotation (Line(points={{75,4},{96,4},{96,4}}, color={0,0,127}));
+  connect(VM1.u, add1.y) annotation (Line(points={{164,-16},{154,-16},{154,-18},{142,-18},{142,7},{138.5,7}}, color={0,0,127}));
+  connect(fEX.y, VB.u2) annotation (Line(points={{123.5,-135},{134,-135},{134,-83.2},{144.6,-83.2}}, color={0,0,127}));
+  connect(division.y, fEX.u) annotation (Line(points={{82.7,-135},{87.35,-135},{87.35,-135},{92,-135}}, color={0,0,127}));
+  connect(gain2.y, division.u2) annotation (Line(points={{52.7,-131},{59.35,-131},{59.35,-130.8},{66.6,-130.8}}, color={0,0,127}));
+  connect(gain2.u, VB.u1) annotation (Line(points={{36.6,-131},{20,-131},{20,-100},{72,-100},{72,-74},{81.2,-73.64},{81.2,-74.8},{144.6,-74.8}}, color={0,0,127}));
+  connect(IFD, division.u1) annotation (Line(points={{-119,-141},{-26.5,-141},{-26.5,-139.2},{66.6,-139.2}}, color={0,0,127}));
   annotation (
-    Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-180},{
-            340,100}}), graphics={Text(
+    Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-180},{340,100}}), graphics={Text(
           extent={{70,26},{94,12}},
           lineColor={255,0,0},
           textString="VR"),Text(
@@ -297,12 +247,10 @@ equation
           extent={{210,-54},{234,-68}},
           lineColor={255,0,0},
           textString="VB")}),
-    Icon(coordinateSystem(extent={{-100,-180},{340,100}}, preserveAspectRatio=
-            true), graphics={Text(
+    Icon(coordinateSystem(extent={{-100,-180},{340,100}}, preserveAspectRatio=true), graphics={Text(
           extent={{-18,-10},{190,-106}},
           lineColor={0,0,255},
-          textString="ESST4B"),Rectangle(extent={{-98,62},{228,-178}},
-          lineColor={0,0,255}),Text(
+          textString="ESST4B"),Rectangle(extent={{-98,62},{228,-178}}, lineColor={0,0,255}),Text(
           extent={{-88,8},{-22,-72}},
           lineColor={0,0,255},
           textString="ECOMP"),Text(

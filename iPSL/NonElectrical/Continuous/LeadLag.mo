@@ -4,12 +4,9 @@ within iPSL.NonElectrical.Continuous;
 class LeadLag "Lead-Lag filter"
   extends Modelica.Blocks.Interfaces.SISO(y(start=y_start));
   parameter Real K "Gain" annotation (Evaluate=false);
-  parameter Modelica.SIunits.Time T1 "Lead time constant"
-    annotation (Evaluate=false);
-  parameter Modelica.SIunits.Time T2 "Lag time constant"
-    annotation (Evaluate=false);
-  parameter Real y_start "Output start value"
-    annotation (Dialog(group="Initialization"));
+  parameter Modelica.SIunits.Time T1 "Lead time constant" annotation (Evaluate=false);
+  parameter Modelica.SIunits.Time T2 "Lag time constant" annotation (Evaluate=false);
+  parameter Real y_start "Output start value" annotation (Dialog(group="Initialization"));
 protected
   Real s(start=y_start) "State variable";
 equation

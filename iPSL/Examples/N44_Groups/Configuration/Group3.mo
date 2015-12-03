@@ -34,8 +34,7 @@ model Group3 "Machine configuration of synchronous machine with regulators: GENS
     T_w=1 "Water time constant, s",
     A_t=1.1 "Turbine gain (pu)",
     D_turb=0.5 "Turbine damping (pu)",
-    q_NL=0.1 "Water flow at no load. p.u")
-    annotation (Placement(transformation(extent={{-104,6},{-48,34}})));
+    q_NL=0.1 "Water flow at no load. p.u") annotation (Placement(transformation(extent={{-104,6},{-48,34}})));
   Electrical.Controls.PSSE.ES.SCRX.SCRX sCRX(
     V_c0=1 "initial value of ECOMP",
     V_0=1 "initial value of ETERM",
@@ -46,11 +45,8 @@ model Group3 "Machine configuration of synchronous machine with regulators: GENS
     E_MIN=0 "EMIN (pu on EFD base)",
     E_MAX=4 "EMAX (pu on EFD base)",
     r_cr_fd=0 "rc/rfd",
-    C_SWITCH=false)
-    annotation (Placement(transformation(extent={{-94,-20},{-60,6}})));
-
-  Modelica.Blocks.Sources.Constant cte(k=0)
-    annotation (Placement(transformation(extent={{-119,-21},{-109,-11}})));
+    C_SWITCH=false) annotation (Placement(transformation(extent={{-94,-20},{-60,6}})));
+  Modelica.Blocks.Sources.Constant cte(k=0) annotation (Placement(transformation(extent={{-119,-21},{-109,-11}})));
   Electrical.Controls.PSSE.PSS.STAB2A.STAB2A sTAB2A(
     K_2=1 "fraction ",
     T_2=4.5 "controller lead compensation (s)",
@@ -59,10 +55,8 @@ model Group3 "Machine configuration of synchronous machine with regulators: GENS
     K_4=0.55,
     K_5=1,
     T_5=0.01,
-    H_LIM=0.03)
-    annotation (Placement(transformation(extent={{-136,-12},{-106,8}})));
-  Connectors.PwPin p annotation (Placement(transformation(rotation=0, extent={{
-            100,-10},{120,10}}), iconTransformation(extent={{100,-10},{120,10}})));
+    H_LIM=0.03) annotation (Placement(transformation(extent={{-136,-12},{-106,8}})));
+  Connectors.PwPin p annotation (Placement(transformation(rotation=0, extent={{100,-10},{120,10}}), iconTransformation(extent={{100,-10},{120,10}})));
 equation
   connect(hYGOV.PMECH, gENSAL.PMECH) annotation (Line(
       points={{-46.6,20},{-55.9,20},{-55.9,18.5},{-55.48,18.5}},
@@ -85,8 +79,7 @@ equation
       color={0,0,127},
       smooth=Smooth.None));
   connect(gENSAL.EFD0, sCRX.EFD0) annotation (Line(
-      points={{-1.92,-13.9},{-6,-13.9},{-6,-30},{-92,-30},{-92,-17.53},{-93.8583,
-          -17.53}},
+      points={{-1.92,-13.9},{-6,-13.9},{-6,-30},{-92,-30},{-92,-17.53},{-93.8583,-17.53}},
       color={0,0,127},
       smooth=Smooth.None));
   connect(sCRX.EFD, gENSAL.EFD) annotation (Line(
@@ -94,18 +87,16 @@ equation
       color={0,0,127},
       smooth=Smooth.None));
   connect(gENSAL.ETERM, sCRX.ETERM) annotation (Line(
-      points={{-1.92,18.5},{-10,18.5},{-10,-34},{-94,-34},{-94,-12.98},{-94.1417,
-          -12.98}},
+      points={{-1.92,18.5},{-10,18.5},{-10,-34},{-94,-34},{-94,-12.98},{-94.1417,-12.98}},
       color={0,0,127},
       smooth=Smooth.None));
   connect(gENSAL.XADIFD, sCRX.XADIFD) annotation (Line(
       points={{-1.92,-19.3},{-1.92,-38},{-96,-38},{-96,-8.69},{-94.1417,-8.69}},
-
       color={0,0,127},
       smooth=Smooth.None));
-  connect(sCRX.ECOMP, sCRX.ETERM) annotation (Line(
-      points={{-93.8583,4.31},{-106,4.31},{-106,46},{0,46},{0,18},{-10,18},{-10,
-          -34},{-94,-34},{-94,-12.98},{-94.1417,-12.98}},
+  connect(sCRX.ECOMP, sCRX.ETERM)
+    annotation (Line(
+      points={{-93.8583,4.31},{-106,4.31},{-106,46},{0,46},{0,18},{-10,18},{-10,-34},{-94,-34},{-94,-12.98},{-94.1417,-12.98}},
       color={0,0,127},
       smooth=Smooth.None));
   connect(sTAB2A.VOTHSG, sCRX.VOTHSG) annotation (Line(
@@ -116,14 +107,11 @@ equation
       points={{-1.92,-8.5},{4,-8.5},{4,50},{-140,50},{-140,-2},{-135.591,-2}},
       color={0,0,127},
       smooth=Smooth.None));
-  connect(p, gENSAL.p) annotation (Line(points={{110,0},{44,0},{44,5},{-1.4,5}},
-        color={0,0,255}));
-  annotation (Icon(graphics={Ellipse(extent={{-14,-42},{74,38}}, lineColor={0,0,
-          255}),Line(
+  connect(p, gENSAL.p) annotation (Line(points={{110,0},{44,0},{44,5},{-1.4,5}}, color={0,0,255}));
+  annotation (Icon(graphics={Ellipse(extent={{-14,-42},{74,38}}, lineColor={0,0,255}),Line(
           points={{-2,-12},{18,8},{38,-12},{58,8}},
           color={0,0,255},
-          smooth=Smooth.None),Ellipse(extent={{-100,-100},{101,100}}, lineColor
-          ={0,0,255}),Text(
+          smooth=Smooth.None),Ellipse(extent={{-100,-100},{101,100}}, lineColor={0,0,255}),Text(
           extent={{-91,6},{-22,-12}},
           lineColor={0,0,255},
           textStyle={TextStyle.Italic},

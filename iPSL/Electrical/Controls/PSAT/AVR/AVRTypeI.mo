@@ -18,8 +18,7 @@ model AVRTypeI "PSAT Exciter Type 1"
   parameter Real vf0=1.046883400898693 "Initialization";
   parameter Real vm0=v0 "Initialization";
   parameter Real vr10=K0*(1 - T2/T1)*(vref0 - vm0) "Initialization";
-  parameter Real vr20=1/K0*(1 - T4/T3)*(vr10 + K0*(vref0 - vm0)*T2/T1)
-    "Initialization";
+  parameter Real vr20=1/K0*(1 - T4/T3)*(vr10 + K0*(vref0 - vm0)*T2/T1) "Initialization";
   parameter Real e=Modelica.Constants.e;
   Real Se;
   Real vm(start=vm0, fixed=true);
@@ -27,12 +26,9 @@ model AVRTypeI "PSAT Exciter Type 1"
   Real vr2(start=vr20, fixed=true);
   Real vrs;
   Real vr;
-  Modelica.Blocks.Interfaces.RealInput v
-    annotation (Placement(transformation(extent={{-144,-56},{-104,-16}})));
-  Modelica.Blocks.Interfaces.RealInput vref
-    annotation (Placement(transformation(extent={{-142,36},{-102,76}})));
-  Modelica.Blocks.Interfaces.RealOutput vf
-    annotation (Placement(transformation(extent={{100,-8},{120,12}})));
+  Modelica.Blocks.Interfaces.RealInput v annotation (Placement(transformation(extent={{-144,-56},{-104,-16}})));
+  Modelica.Blocks.Interfaces.RealInput vref annotation (Placement(transformation(extent={{-142,36},{-102,76}})));
+  Modelica.Blocks.Interfaces.RealOutput vf annotation (Placement(transformation(extent={{100,-8},{120,12}})));
 equation
   der(vm) = (v - vm)/Tr;
   der(vr1) = (K0*(1 - T2/T1)*(vref - vm) - vr1)/T1;
@@ -48,11 +44,8 @@ equation
   der(vf) = -(vf*(1 + Se) - vr)/Te;
   Se = Ae*e^(Be*abs(vf));
   annotation (
-    Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{
-            100,100}})),
-    Icon(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,
-            100}}), graphics={Rectangle(extent={{-60,70},{70,-28}}, lineColor={
-          0,0,255}),Text(
+    Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,100}})),
+    Icon(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,100}}), graphics={Rectangle(extent={{-60,70},{70,-28}}, lineColor={0,0,255}),Text(
           extent={{-56,68},{-24,46}},
           lineColor={0,0,255},
           textString="vref"),Text(

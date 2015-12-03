@@ -6,8 +6,7 @@ model ConstantLoad
     vr(start=vr0),
     vi(start=vi0),
     ir(start=ir0),
-    ii(start=ii0)) annotation (Placement(transformation(extent={{-56,-10},{-36,
-            10}}), iconTransformation(extent={{-80,0},{-60,20}})));
+    ii(start=ii0)) annotation (Placement(transformation(extent={{-56,-10},{-36,10}}), iconTransformation(extent={{-80,0},{-60,20}})));
   constant Real pi=Modelica.Constants.pi;
   parameter Real v0 "initial value of bus voltage";
   parameter Real anglev0 "initial value of bus anglev in degree";
@@ -17,8 +16,7 @@ model ConstantLoad
   parameter Complex S_i "Original Constant current load in p.u.";
   parameter Complex S_y "Original Constant shunt admittance load in p.u.";
   parameter Complex a "load transfer fraction for constant current load";
-  parameter Complex b
-    "load transfer fraction for constant shunt admittance load";
+  parameter Complex b "load transfer fraction for constant shunt admittance load";
   parameter Real PQBRAK "Constant power characteristic threshold";
   parameter Complex S_P=Complex((1 - a.re - b.re)*S_p.re, (1 - a.im - b.im)*S_p.im);
   parameter Complex S_I=S_i + Complex(a.re*S_p.re/v0, a.im*S_p.im/v0);
@@ -28,9 +26,7 @@ model ConstantLoad
   Real k(start=1);
   Real P;
   Real Q;
-  Modelica.Blocks.Interfaces.RealOutput v annotation (Placement(transformation(
-          extent={{40,-40},{60,-20}}), iconTransformation(extent={{40,-40},{60,
-            -20}})));
+  Modelica.Blocks.Interfaces.RealOutput v annotation (Placement(transformation(extent={{40,-40},{60,-20}}), iconTransformation(extent={{40,-40},{60,-20}})));
 protected
   parameter Real anglev_rad=anglev0*pi/180 "initial value of bus anglev in rad";
   parameter Real p0=S_i.re*v0 + S_y.re*v0^2 + S_p.re;
@@ -57,12 +53,9 @@ equation
   P = p.vr*p.ir + p.vi*p.ii;
   Q = (-p.vr*p.ii) + p.vi*p.ir;
   annotation (
-    Diagram(coordinateSystem(preserveAspectRatio=true, extent={{-100,-100},{100,
-            100}}), graphics),
-    Icon(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,
-            100}}), graphics={Rectangle(extent={{-60,60},{40,-40}}, lineColor={
-          0,0,255}),Rectangle(extent={{-40,40},{20,-20}}, lineColor={0,0,255}),
-          Line(
+    Diagram(coordinateSystem(preserveAspectRatio=true, extent={{-100,-100},{100,100}}), graphics),
+    Icon(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,100}}), graphics={Rectangle(extent={{-60,60},{40,-40}}, lineColor={0,0,255}),Rectangle(extent={{-40,40},{20,-20}},
+          lineColor={0,0,255}),Line(
           points={{-40,40},{20,-20}},
           color={0,0,255},
           smooth=Smooth.None),Line(

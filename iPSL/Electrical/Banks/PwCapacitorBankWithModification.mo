@@ -1,8 +1,7 @@
 within iPSL.Electrical.Banks;
 model PwCapacitorBankWithModification "Capacitor Bank with Bank modification at time t1.
               2014/03/10"
-  iPSL.Connectors.PwPin p annotation (Placement(transformation(extent={{0,60},{
-            20,80}}), iconTransformation(extent={{0,60},{20,80}})));
+  iPSL.Connectors.PwPin p annotation (Placement(transformation(extent={{0,60},{20,80}}), iconTransformation(extent={{0,60},{20,80}})));
   parameter Real nsteps "number of steps";
   parameter Real Go "active losses (pu) in each element";
   parameter Real Bo "reactive power (pu) in each element";
@@ -21,8 +20,7 @@ equation
   B = nt*Bo;
   p.vr = (p.ir*G + p.ii*B)/(G*G + B*B);
   p.vi = ((-p.ir*B) + p.ii*G)/(G*G + B*B);
-  annotation (Icon(graphics={Rectangle(extent={{-40,60},{60,-40}}, lineColor={0,
-          0,255}),Line(
+  annotation (Icon(graphics={Rectangle(extent={{-40,60},{60,-40}}, lineColor={0,0,255}),Line(
           points={{10,50},{10,34}},
           color={0,0,255},
           smooth=Smooth.None),Line(

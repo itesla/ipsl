@@ -13,8 +13,7 @@ model PSS2A "IEEE Dual-Input Stabilizer Model"
   parameter Real T_8=0.5 "Ramp-tracking filter time constant";
   parameter Real T_9=0.1 "Ramp-tracking filter time constant";
   parameter Real K_S1=20 "PSS gain";
-  parameter Real T_1=0.15
-    "Leadlag1 time constant (data from IEEE std, not representive, need to be tuned following system parameters)";
+  parameter Real T_1=0.15 "Leadlag1 time constant (data from IEEE std, not representive, need to be tuned following system parameters)";
   parameter Real T_2=0.025 "Leadlag1 time constant";
   parameter Real T_3=0.15 "Leadlag2 time constant";
   parameter Real T_4=0.025 "Leadlag2 time constant";
@@ -22,113 +21,75 @@ model PSS2A "IEEE Dual-Input Stabilizer Model"
   parameter Real V_STMIN=-0.1 "PSS output limiation";
   parameter Real M "Ramp tracking filter coefficient";
   parameter Real N "Ramp tracking filter coefficient";
-  Modelica.Blocks.Interfaces.RealInput V_S1 "PSS input signal 1" annotation (
-      Placement(transformation(extent={{-186,14},{-174,26}}),
-        iconTransformation(extent={{-186,14},{-174,26}})));
+  Modelica.Blocks.Interfaces.RealInput V_S1 "PSS input signal 1" annotation (Placement(transformation(extent={{-186,14},{-174,26}}), iconTransformation(extent={{-186,14},{-174,26}})));
   iPSL.NonElectrical.Continuous.LeadLag Leadlag1(
     K=1,
     T1=T_1,
     T2=T_2,
-    y_start=0)
-    annotation (Placement(transformation(extent={{80,-10},{100,10}})));
+    y_start=0) annotation (Placement(transformation(extent={{80,-10},{100,10}})));
   iPSL.NonElectrical.Continuous.LeadLag Leadlag2(
     K=1,
     T1=T_3,
     T2=T_4,
-    y_start=0)
-    annotation (Placement(transformation(extent={{112,-10},{132,10}})));
-  Modelica.Blocks.Interfaces.RealOutput VOTHSG "PSS output" annotation (
-      Placement(transformation(extent={{200,-6},{212,6}}), iconTransformation(
-          extent={{200,-6},{212,6}})));
-  Modelica.Blocks.Interfaces.RealInput V_S2 "PSS input signal 2" annotation (
-      Placement(transformation(extent={{-186,-26},{-174,-14}}),
-        iconTransformation(extent={{-186,-26},{-174,-14}})));
+    y_start=0) annotation (Placement(transformation(extent={{112,-10},{132,10}})));
+  Modelica.Blocks.Interfaces.RealOutput VOTHSG "PSS output" annotation (Placement(transformation(extent={{200,-6},{212,6}}), iconTransformation(extent={{200,-6},{212,6}})));
+  Modelica.Blocks.Interfaces.RealInput V_S2 "PSS input signal 2" annotation (Placement(transformation(extent={{-186,-26},{-174,-14}}), iconTransformation(extent={{-186,-26},{-174,-14}})));
   iPSL.NonElectrical.Continuous.SimpleLag SimpleLag1(
     K=1,
     T=T_6,
-    y_start=0)
-    annotation (Placement(transformation(extent={{-80,10},{-60,30}})));
+    y_start=0) annotation (Placement(transformation(extent={{-80,10},{-60,30}})));
   iPSL.NonElectrical.Continuous.SimpleLag SimpleLag2(
     K=K_S2,
     T=T_7,
-    y_start=0)
-    annotation (Placement(transformation(extent={{-80,-30},{-60,-10}})));
-  Modelica.Blocks.Math.Add add(k2=+K_S3)
-    annotation (Placement(transformation(extent={{-40,4},{-20,24}})));
-  Modelica.Blocks.Math.Add add1(k2=-1)
-    annotation (Placement(transformation(extent={{20,-10},{40,10}})));
-  Modelica.Blocks.Math.Gain gain(k=K_S1)
-    annotation (Placement(transformation(extent={{50,-10},{70,10}})));
-  Modelica.Blocks.Nonlinear.Limiter limiter(uMax=V_STMAX, uMin=V_STMIN)
-    annotation (Placement(transformation(extent={{146,-10},{166,10}})));
-  Modelica.Blocks.Math.Gain gain1(k=1)
-    annotation (Placement(transformation(extent={{-10,4},{10,24}})));
+    y_start=0) annotation (Placement(transformation(extent={{-80,-30},{-60,-10}})));
+  Modelica.Blocks.Math.Add add(k2=+K_S3) annotation (Placement(transformation(extent={{-40,4},{-20,24}})));
+  Modelica.Blocks.Math.Add add1(k2=-1) annotation (Placement(transformation(extent={{20,-10},{40,10}})));
+  Modelica.Blocks.Math.Gain gain(k=K_S1) annotation (Placement(transformation(extent={{50,-10},{70,10}})));
+  Modelica.Blocks.Nonlinear.Limiter limiter(uMax=V_STMAX, uMin=V_STMIN) annotation (Placement(transformation(extent={{146,-10},{166,10}})));
+  Modelica.Blocks.Math.Gain gain1(k=1) annotation (Placement(transformation(extent={{-10,4},{10,24}})));
   Modelica.Blocks.Continuous.TransferFunction Washout1(
     b={1,0},
     a={1,1/T_w1},
     initType=Modelica.Blocks.Types.Init.InitialOutput,
-    y_start=0)
-    annotation (Placement(transformation(extent={{-160,10},{-140,30}})));
+    y_start=0) annotation (Placement(transformation(extent={{-160,10},{-140,30}})));
   Modelica.Blocks.Continuous.TransferFunction Washout2(
     b={1,0},
     initType=Modelica.Blocks.Types.Init.InitialOutput,
     y_start=0,
-    a={1,1/T_w2})
-    annotation (Placement(transformation(extent={{-120,10},{-100,30}})));
+    a={1,1/T_w2}) annotation (Placement(transformation(extent={{-120,10},{-100,30}})));
   Modelica.Blocks.Continuous.TransferFunction Washout3(
     b={1,0},
     initType=Modelica.Blocks.Types.Init.InitialOutput,
     y_start=0,
-    a={1,1/T_w3})
-    annotation (Placement(transformation(extent={{-160,-30},{-140,-10}})));
+    a={1,1/T_w3}) annotation (Placement(transformation(extent={{-160,-30},{-140,-10}})));
   Modelica.Blocks.Continuous.TransferFunction Washout4(
     b={1,0},
     initType=Modelica.Blocks.Types.Init.InitialOutput,
     y_start=0,
-    a={1,1/T_w4})
-    annotation (Placement(transformation(extent={{-120,-30},{-100,-10}})));
+    a={1,1/T_w4}) annotation (Placement(transformation(extent={{-120,-30},{-100,-10}})));
 equation
-  connect(SimpleLag1.y, add.u1)
-    annotation (Line(points={{-59,20},{-50,20},{-42,20}}, color={0,0,127}));
-  connect(SimpleLag2.y, add.u2) annotation (Line(points={{-59,-20},{-52,-20},{-52,
-          8},{-42,8}}, color={0,0,127}));
-  connect(add1.u2, add.u2) annotation (Line(points={{18,-6},{14,-6},{14,-20},{-52,
-          -20},{-52,8},{-42,8}}, color={0,0,127}));
-  connect(add1.y, gain.u)
-    annotation (Line(points={{41,0},{48,0}}, color={0,0,127}));
-  connect(gain.y, Leadlag1.u)
-    annotation (Line(points={{71,0},{78,0}}, color={0,0,127}));
-  connect(Leadlag1.y, Leadlag2.u)
-    annotation (Line(points={{101,0},{110,0}}, color={0,0,127}));
-  connect(Leadlag2.y, limiter.u)
-    annotation (Line(points={{133,0},{144,0}}, color={0,0,127}));
-  connect(add.y, gain1.u)
-    annotation (Line(points={{-19,14},{-12,14}}, color={0,0,127}));
-  connect(gain1.y, add1.u1)
-    annotation (Line(points={{11,14},{12,14},{12,6},{18,6}}, color={0,0,127}));
-  connect(limiter.y, VOTHSG)
-    annotation (Line(points={{167,0},{206,0}}, color={0,0,127}));
-  connect(Washout1.y, Washout2.u)
-    annotation (Line(points={{-139,20},{-139,20},{-122,20}}, color={0,0,127}));
-  connect(Washout2.y, SimpleLag1.u)
-    annotation (Line(points={{-99,20},{-90.5,20},{-82,20}}, color={0,0,127}));
-  connect(Washout1.u, V_S1)
-    annotation (Line(points={{-162,20},{-180,20}}, color={0,0,127}));
-  connect(Washout3.u, V_S2) annotation (Line(points={{-162,-20},{-171,-20},{-180,
-          -20}}, color={0,0,127}));
-  connect(Washout3.y, Washout4.u)
-    annotation (Line(points={{-139,-20},{-122,-20}}, color={0,0,127}));
-  connect(Washout4.y, SimpleLag2.u)
-    annotation (Line(points={{-99,-20},{-90,-20},{-82,-20}}, color={0,0,127}));
+  connect(SimpleLag1.y, add.u1) annotation (Line(points={{-59,20},{-50,20},{-42,20}}, color={0,0,127}));
+  connect(SimpleLag2.y, add.u2) annotation (Line(points={{-59,-20},{-52,-20},{-52,8},{-42,8}}, color={0,0,127}));
+  connect(add1.u2, add.u2) annotation (Line(points={{18,-6},{14,-6},{14,-20},{-52,-20},{-52,8},{-42,8}}, color={0,0,127}));
+  connect(add1.y, gain.u) annotation (Line(points={{41,0},{48,0}}, color={0,0,127}));
+  connect(gain.y, Leadlag1.u) annotation (Line(points={{71,0},{78,0}}, color={0,0,127}));
+  connect(Leadlag1.y, Leadlag2.u) annotation (Line(points={{101,0},{110,0}}, color={0,0,127}));
+  connect(Leadlag2.y, limiter.u) annotation (Line(points={{133,0},{144,0}}, color={0,0,127}));
+  connect(add.y, gain1.u) annotation (Line(points={{-19,14},{-12,14}}, color={0,0,127}));
+  connect(gain1.y, add1.u1) annotation (Line(points={{11,14},{12,14},{12,6},{18,6}}, color={0,0,127}));
+  connect(limiter.y, VOTHSG) annotation (Line(points={{167,0},{206,0}}, color={0,0,127}));
+  connect(Washout1.y, Washout2.u) annotation (Line(points={{-139,20},{-139,20},{-122,20}}, color={0,0,127}));
+  connect(Washout2.y, SimpleLag1.u) annotation (Line(points={{-99,20},{-90.5,20},{-82,20}}, color={0,0,127}));
+  connect(Washout1.u, V_S1) annotation (Line(points={{-162,20},{-180,20}}, color={0,0,127}));
+  connect(Washout3.u, V_S2) annotation (Line(points={{-162,-20},{-171,-20},{-180,-20}}, color={0,0,127}));
+  connect(Washout3.y, Washout4.u) annotation (Line(points={{-139,-20},{-122,-20}}, color={0,0,127}));
+  connect(Washout4.y, SimpleLag2.u) annotation (Line(points={{-99,-20},{-90,-20},{-82,-20}}, color={0,0,127}));
   annotation (
-    Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-180,-40},{200,
-            40}}), graphics={Text(
+    Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-180,-40},{200,40}}), graphics={Text(
           extent={{-20,38},{22,28}},
           lineColor={28,108,200},
           textString="RampTracking filter missing")}),
-    Icon(coordinateSystem(preserveAspectRatio=false, extent={{-180,-40},{200,40}}),
-        graphics={Rectangle(extent={{-180,40},{200,-40}}, lineColor={0,0,255}),
-          Text(
+    Icon(coordinateSystem(preserveAspectRatio=false, extent={{-180,-40},{200,40}}), graphics={Rectangle(extent={{-180,40},{200,-40}}, lineColor={0,0,255}),Text(
           extent={{-34,16},{32,-14}},
           lineColor={0,0,255},
           textString="PSS2A"),Text(

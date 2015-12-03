@@ -1,12 +1,7 @@
 within iPSL.Electrical.Wind.DTU;
-model VoltageDepCurrent
-  "Part of the Q Control, to generate voltage dependent current. Developed by DTU"
-  Modelica.Blocks.Interfaces.RealInput Uwtt annotation (Placement(
-        transformation(extent={{-60,-6},{-48,6}}), iconTransformation(extent={{
-            -60,-6},{-48,6}})));
-  Modelica.Blocks.Interfaces.RealOutput iqv annotation (Placement(
-        transformation(extent={{47,-6},{59,6}}), iconTransformation(extent={{47,
-            -6},{59,6}})));
+model VoltageDepCurrent "Part of the Q Control, to generate voltage dependent current. Developed by DTU"
+  Modelica.Blocks.Interfaces.RealInput Uwtt annotation (Placement(transformation(extent={{-60,-6},{-48,6}}), iconTransformation(extent={{-60,-6},{-48,6}})));
+  Modelica.Blocks.Interfaces.RealOutput iqv annotation (Placement(transformation(extent={{47,-6},{59,6}}), iconTransformation(extent={{47,-6},{59,6}})));
   parameter Real Udb1 "voltage dead band lower limit";
   parameter Real Udb2 "voltage dead band upper limit";
   parameter Real Kqv;
@@ -14,13 +9,10 @@ model VoltageDepCurrent
 initial equation
   Uini = Uwtt;
 equation
-  iqv = if Uwtt < Uini - Udb1 then Kqv*(Uwtt - Uini + Udb1) elseif Uwtt > Uini
-     + Udb2 then Kqv*(Uwtt - Uini - Udb2) else 0;
+  iqv = if Uwtt < Uini - Udb1 then Kqv*(Uwtt - Uini + Udb1) elseif Uwtt > Uini + Udb2 then Kqv*(Uwtt - Uini - Udb2) else 0;
   annotation (
-    Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{
-            100,100}}), graphics),
-    Icon(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,
-            100}}), graphics={Rectangle(
+    Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,100}}), graphics),
+    Icon(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,100}}), graphics={Rectangle(
           extent={{-48,30},{48,-28}},
           lineColor={0,0,255},
           lineThickness=0.5),Line(

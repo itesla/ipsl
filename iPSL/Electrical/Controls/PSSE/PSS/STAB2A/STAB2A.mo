@@ -13,27 +13,20 @@ model STAB2A "Models STAB2A, STAB3, and STAB4 are special representations of spe
   parameter Real K_5=1;
   parameter Real T_5=1;
   parameter Real H_LIM=5;
-  input Modelica.Blocks.Interfaces.RealInput PELEC
-    "Machine electrical power (pu)" annotation (Placement(transformation(extent
-          ={{-109,-6},{-98,10}}), iconTransformation(extent={{-107,-10},{-87,10}})));
-  output Modelica.Blocks.Interfaces.RealOutput VOTHSG "PSS output signal"
-    annotation (Placement(transformation(extent={{120,-10},{140,10}}),
-        iconTransformation(extent={{120,-10},{140,10}})));
+  input Modelica.Blocks.Interfaces.RealInput PELEC "Machine electrical power (pu)" annotation (Placement(transformation(extent={{-109,-6},{-98,10}}), iconTransformation(extent={{-107,-10},{-87,10}})));
+  output Modelica.Blocks.Interfaces.RealOutput VOTHSG "PSS output signal" annotation (Placement(transformation(extent={{120,-10},{140,10}}), iconTransformation(extent={{120,-10},{140,10}})));
   Modelica.Blocks.Continuous.TransferFunction transferFunction(
     b={-K_2*T_2,0},
     a={T_2,1},
-    initType=Modelica.Blocks.Types.Init.SteadyState)
-    annotation (Placement(transformation(extent={{-90,-8},{-70,12}})));
+    initType=Modelica.Blocks.Types.Init.SteadyState) annotation (Placement(transformation(extent={{-90,-8},{-70,12}})));
   Modelica.Blocks.Continuous.TransferFunction transferFunction1(
     a={T_2,1},
     initType=Modelica.Blocks.Types.Init.SteadyState,
-    b={K_2*T_2,0})
-    annotation (Placement(transformation(extent={{-62,-8},{-42,12}})));
+    b={K_2*T_2,0}) annotation (Placement(transformation(extent={{-62,-8},{-42,12}})));
   Modelica.Blocks.Continuous.TransferFunction transferFunction2(
     a={T_2,1},
     initType=Modelica.Blocks.Types.Init.SteadyState,
-    b={K_2*T_2,0})
-    annotation (Placement(transformation(extent={{-34,-8},{-14,12}})));
+    b={K_2*T_2,0}) annotation (Placement(transformation(extent={{-34,-8},{-14,12}})));
   Modelica.Blocks.Continuous.TransferFunction transferFunction3(
     initType=Modelica.Blocks.Types.Init.SteadyState,
     b={K_3},
@@ -46,12 +39,9 @@ model STAB2A "Models STAB2A, STAB3, and STAB4 are special representations of spe
     initType=Modelica.Blocks.Types.Init.SteadyState,
     b={K_5},
     a={T_5,1}) annotation (Placement(transformation(extent={{70,-10},{90,10}})));
-  Modelica.Blocks.Math.Gain K(k=K_4)
-    annotation (Placement(transformation(extent={{0,-26},{14,-12}})));
-  Modelica.Blocks.Math.Add add
-    annotation (Placement(transformation(extent={{26,-4},{34,4}})));
-  Modelica.Blocks.Nonlinear.Limiter limiter(uMax=H_LIM, uMin=-H_LIM)
-    annotation (Placement(transformation(extent={{98,-10},{118,10}})));
+  Modelica.Blocks.Math.Gain K(k=K_4) annotation (Placement(transformation(extent={{0,-26},{14,-12}})));
+  Modelica.Blocks.Math.Add add annotation (Placement(transformation(extent={{26,-4},{34,4}})));
+  Modelica.Blocks.Nonlinear.Limiter limiter(uMax=H_LIM, uMin=-H_LIM) annotation (Placement(transformation(extent={{98,-10},{118,10}})));
 equation
   connect(PELEC, transferFunction.u) annotation (Line(
       points={{-103.5,2},{-103.5,1},{-92,1},{-92,2}},
@@ -89,10 +79,8 @@ equation
       points={{14.7,-19},{20,-19},{20,-2.4},{25.2,-2.4}},
       color={0,0,127},
       smooth=Smooth.None));
-  connect(transferFunction5.y, limiter.u)
-    annotation (Line(points={{91,0},{96,0}}, color={0,0,127}));
-  connect(VOTHSG, limiter.y)
-    annotation (Line(points={{130,0},{119,0}}, color={0,0,127}));
+  connect(transferFunction5.y, limiter.u) annotation (Line(points={{91,0},{96,0}}, color={0,0,127}));
+  connect(VOTHSG, limiter.y) annotation (Line(points={{130,0},{119,0}}, color={0,0,127}));
   annotation (
     Diagram(coordinateSystem(
         preserveAspectRatio=false,
@@ -101,8 +89,7 @@ equation
     Icon(coordinateSystem(
         preserveAspectRatio=false,
         extent={{-100,-40},{120,40}},
-        grid={2,2}), graphics={Rectangle(extent={{-100,40},{120,-40}},
-          lineColor={0,0,255}),Text(
+        grid={2,2}), graphics={Rectangle(extent={{-100,40},{120,-40}}, lineColor={0,0,255}),Text(
           extent={{-34,24},{34,-24}},
           lineColor={0,0,255},
           textString="STAB2A"),Text(

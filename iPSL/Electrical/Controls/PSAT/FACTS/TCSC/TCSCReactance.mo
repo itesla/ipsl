@@ -1,26 +1,16 @@
 within iPSL.Electrical.Controls.PSAT.FACTS.TCSC;
 model TCSCReactance
-  iPSL.Connectors.PwPin p
-    annotation (Placement(transformation(extent={{-119,-8},{-99,12}})));
-  iPSL.Connectors.PwPin n
-    annotation (Placement(transformation(extent={{100,-10},{120,10}})));
+  iPSL.Connectors.PwPin p annotation (Placement(transformation(extent={{-119,-8},{-99,12}})));
+  iPSL.Connectors.PwPin n annotation (Placement(transformation(extent={{100,-10},{120,10}})));
   constant Real pi=Modelica.Constants.pi;
-  parameter Real Sb=100 "System base power (MVA)"
-    annotation (Dialog(group="Power flow data"));
-  parameter Real Vbus=400000 "Bus nominal voltage (V)"
-    annotation (Dialog(group="Power flow data"));
-  parameter Real Sn=100 "Power rating (MVA)"
-    annotation (Dialog(group="Power flow data"));
-  parameter Real Vn=400000 "Voltage rating (V)"
-    annotation (Dialog(group="Power flow data"));
-  parameter Real f=50 "Frequency rating (Hz)"
-    annotation (Dialog(group="Power flow data"));
-  parameter Real x_TCSCO=0.01 "Value of the state varialbe x1"
-    annotation (Dialog(group="Power flow data"));
-  parameter Real x20=0.01 "Value of the state varible x2"
-    annotation (Dialog(group="Power flow data"));
-  parameter Real pref=0.080101913348342 "Reference power (pu)"
-    annotation (Dialog(group="Power flow data"));
+  parameter Real Sb=100 "System base power (MVA)" annotation (Dialog(group="Power flow data"));
+  parameter Real Vbus=400000 "Bus nominal voltage (V)" annotation (Dialog(group="Power flow data"));
+  parameter Real Sn=100 "Power rating (MVA)" annotation (Dialog(group="Power flow data"));
+  parameter Real Vn=400000 "Voltage rating (V)" annotation (Dialog(group="Power flow data"));
+  parameter Real f=50 "Frequency rating (Hz)" annotation (Dialog(group="Power flow data"));
+  parameter Real x_TCSCO=0.01 "Value of the state varialbe x1" annotation (Dialog(group="Power flow data"));
+  parameter Real x20=0.01 "Value of the state varible x2" annotation (Dialog(group="Power flow data"));
+  parameter Real pref=0.080101913348342 "Reference power (pu)" annotation (Dialog(group="Power flow data"));
   parameter Real Cp=0.10 "Percentage of series compensation (%)";
   parameter Real Tr=0.5 "Regulator time constant (s)";
   parameter Real xTCSCmax=0.05 "Maximum reactance (pu)";
@@ -75,10 +65,8 @@ equation
   p.ii - B*p.vr - G*p.vi = (y - b)*(n.vr - p.vr);
   p.ir - G*p.vr + B*p.vi = (y - b)*(p.vi - n.vi);
   annotation (
-    Diagram(coordinateSystem(preserveAspectRatio=true, extent={{-100,-100},{100,
-            100}}), graphics),
-    Icon(coordinateSystem(preserveAspectRatio=true, extent={{-100,-100},{100,
-            100}}), graphics={Rectangle(
+    Diagram(coordinateSystem(preserveAspectRatio=true, extent={{-100,-100},{100,100}}), graphics),
+    Icon(coordinateSystem(preserveAspectRatio=true, extent={{-100,-100},{100,100}}), graphics={Rectangle(
           extent={{-60,38},{60,-40}},
           lineColor={0,0,255},
           fillColor={175,175,175},

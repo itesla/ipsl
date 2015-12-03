@@ -13,8 +13,7 @@ model WindBlk
         origin={2.0,-2.4053},
         extent={{-102.0,54.0},{-62.0,94.0}},
         rotation=0)));
-  Modelica.Blocks.Interfaces.RealInput theta_p "Real voltage" annotation (
-      Placement(
+  Modelica.Blocks.Interfaces.RealInput theta_p "Real voltage" annotation (Placement(
       transformation(
         extent={{-102.0,54.0},{-62.0,94.0}},
         origin={-43.0,-34.0},
@@ -24,8 +23,7 @@ model WindBlk
         origin={2.0,-76.5688},
         extent={{-102.0,54.0},{-62.0,94.0}},
         rotation=0)));
-  Modelica.Blocks.Interfaces.RealInput omega_m "Real voltage" annotation (
-      Placement(
+  Modelica.Blocks.Interfaces.RealInput omega_m "Real voltage" annotation (Placement(
       transformation(
         extent={{-102.0,54.0},{-62.0,94.0}},
         origin={-43.0,-74.0},

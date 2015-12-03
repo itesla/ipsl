@@ -27,17 +27,13 @@ model pst1
   Real vm;
   Real anglevk(start=anglevk0);
   Real anglevm;
-  iPSL.Connectors.PwPin p annotation (Placement(visible=true, transformation(
-          extent={{-120,-8},{-100,12}})));
-  iPSL.Connectors.PwPin n
-    annotation (Placement(transformation(extent={{100,-8},{120,12}})));
+  iPSL.Connectors.PwPin p annotation (Placement(visible=true, transformation(extent={{-120,-8},{-100,12}})));
+  iPSL.Connectors.PwPin n annotation (Placement(transformation(extent={{100,-8},{120,12}})));
 protected
   parameter Real Vb2new=Vbus1*Vbus1;
   parameter Real Vb2old=Vn1*Vn1;
-  parameter Real R=rT*(Vb2old*SystemBase)/(Vb2new*Sn)
-    "Transformer Resistance, p.u.";
-  parameter Real X=xT*(Vb2old*SystemBase)/(Vb2new*Sn)
-    "Transformer Reactance, p.u.";
+  parameter Real R=rT*(Vb2old*SystemBase)/(Vb2new*Sn) "Transformer Resistance, p.u.";
+  parameter Real X=xT*(Vb2old*SystemBase)/(Vb2new*Sn) "Transformer Reactance, p.u.";
   parameter Real pref=p_ref*(Sn/SystemBase);
   parameter Real gt=R/(R^2 + X^2) "Converting resistance to conductance p.u.";
   parameter Real bt=-X/(R^2 + X^2) "Converting reactance to susceptance p.u.";
@@ -53,8 +49,7 @@ equation
   annotation (
     Placement(transformation(extent={{-120,-10},{-100,10}})),
     Placement(transformation(extent={{100,-10},{120,10}})),
-    Diagram(coordinateSystem(preserveAspectRatio=true, extent={{-100,-100},{100,
-            100}}), graphics),
+    Diagram(coordinateSystem(preserveAspectRatio=true, extent={{-100,-100},{100,100}}), graphics),
     Documentation(info="<html>
 <p><br><span style=\"font-family: MS Shell Dlg 2;\">&LT;iPSL: iTesla Power System Library&GT;</span></p>
 <p><span style=\"font-family: MS Shell Dlg 2;\">Copyright 2015 RTE (France), AIA (Spain), KTH (Sweden) and DTU (Denmark)</span></p>

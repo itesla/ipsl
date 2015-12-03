@@ -18,13 +18,12 @@ model ThreeWindingTransformer_Test
         origin={40,20},
         extent={{-10.0,-10.0},{10.0,10.0}},
         rotation=0)));
-  Modelica.Blocks.Sources.Sine sine1(amplitude=0.001, freqHz=0.2) annotation (
-      Placement(visible=true, transformation(
+  Modelica.Blocks.Sources.Sine sine1(amplitude=0.001, freqHz=0.2)
+    annotation (Placement(visible=true, transformation(
         origin={-107.783,15.4652},
         extent={{-4.4802,-4.4802},{4.4802,4.4802}},
         rotation=0)));
-  Modelica.Blocks.Math.Add add2(k2=-1) annotation (Placement(visible=true,
-        transformation(
+  Modelica.Blocks.Math.Add add2(k2=-1) annotation (Placement(visible=true, transformation(
         origin={-79.1062,14.6621},
         extent={{-6.3229,-6.3229},{6.3229,6.3229}},
         rotation=0)));
@@ -47,8 +46,7 @@ model ThreeWindingTransformer_Test
     ra=0.001,
     xd1=0.302,
     M=10) annotation (Placement(transformation(extent={{-20,0},{0,20}})));
-  Modelica.Blocks.Math.Add add
-    annotation (Placement(transformation(extent={{-60,0},{-40,20}})));
+  Modelica.Blocks.Math.Add add annotation (Placement(transformation(extent={{-60,0},{-40,20}})));
   iPSL.Electrical.Loads.PSAT.LOADPQ_variation lOADPQ(
     t1=5,
     t2=8,
@@ -71,31 +69,24 @@ model ThreeWindingTransformer_Test
     Q2=0,
     P3=0,
     Q3=0) annotation (Placement(transformation(extent={{115,-20},{135,0}})));
-  iPSL.Electrical.Branches.PSAT.ThreeWindingTransformer.ThreeWindingTransformer
-    threeWindingTransformer
-    annotation (Placement(transformation(extent={{70,0},{90,20}})));
-  iPSL.Electrical.Buses.Bus Bus1
-    annotation (Placement(transformation(extent={{10,0},{30,20}})));
-  iPSL.Electrical.Buses.Bus Bus2
-    annotation (Placement(transformation(extent={{50,0},{70,20}})));
-  iPSL.Electrical.Buses.Bus Bus3
-    annotation (Placement(transformation(extent={{95,15},{115,35}})));
-  iPSL.Electrical.Buses.Bus Bus4
-    annotation (Placement(transformation(extent={{95,-20},{115,0}})));
-  inner iPSL.Electrical.SystemBase SysData
-    annotation (Placement(transformation(extent={{-50,50},{-5,70}})));
+  iPSL.Electrical.Branches.PSAT.ThreeWindingTransformer.ThreeWindingTransformer threeWindingTransformer annotation (Placement(transformation(extent={{70,0},{90,20}})));
+  iPSL.Electrical.Buses.Bus Bus1 annotation (Placement(transformation(extent={{10,0},{30,20}})));
+  iPSL.Electrical.Buses.Bus Bus2 annotation (Placement(transformation(extent={{50,0},{70,20}})));
+  iPSL.Electrical.Buses.Bus Bus3 annotation (Placement(transformation(extent={{95,15},{115,35}})));
+  iPSL.Electrical.Buses.Bus Bus4 annotation (Placement(transformation(extent={{95,-20},{115,0}})));
+  inner iPSL.Electrical.SystemBase SysData annotation (Placement(transformation(extent={{-50,50},{-5,70}})));
 equation
-  connect(sine1.y, add2.u1) annotation (Line(
+  connect(sine1.y, add2.u1)
+    annotation (Line(
       visible=true,
       origin={-93.5606,15.4643},
-      points={{-9.29418,0.0009},{-1.4394,0.0009},{6.86692,0.0009},{6.86692,
-          2.99154}},
+      points={{-9.29418,0.0009},{-1.4394,0.0009},{6.86692,0.0009},{6.86692,2.99154}},
       color={0,0,127}));
-  connect(add2.u2, sine2.y) annotation (Line(
+  connect(add2.u2, sine2.y)
+    annotation (Line(
       visible=true,
       origin={-95.6692,1.8029},
-      points={{8.97552,9.06546},{2.2971,9.06546},{2.2971,-5.4041},{-6.78488,-5.4041},
-          {-6.78488,-7.3227}},
+      points={{8.97552,9.06546},{2.2971,9.06546},{2.2971,-5.4041},{-6.78488,-5.4041},{-6.78488,-7.3227}},
       color={0,0,127}));
   connect(add2.y, add.u1) annotation (Line(
       points={{-72.151,14.6621},{-66.0755,14.6621},{-66.0755,16},{-62,16}},

@@ -41,9 +41,7 @@ model AVRtypeIII
         origin={110.0,0.0},
         extent={{-10.0,-10.0},{10.0,10.0}},
         rotation=0)));
-  Modelica.Blocks.Interfaces.RealInput vs annotation (Placement(transformation(
-          extent={{-140,-60},{-100,-20}}), iconTransformation(extent={{-140,-60},
-            {-100,-20}})));
+  Modelica.Blocks.Interfaces.RealInput vs annotation (Placement(transformation(extent={{-140,-60},{-100,-20}}), iconTransformation(extent={{-140,-60},{-100,-20}})));
 initial equation
   vf1 = vf0;
   vm = v0;
@@ -51,8 +49,7 @@ initial equation
 equation
   der(vm) = (v - vm)/Tr;
   der(vr) = (K0*(1 - T1/T2)*(vref + vs - vm) - vr)/T2;
-  der(vf1) = ((vr + K0*(T1/T2)*(vref + vs - vm) + vf0)*(1 + s0*(v/v0 - 1)) -
-    vf1)/Te;
+  der(vf1) = ((vr + K0*(T1/T2)*(vref + vs - vm) + vf0)*(1 + s0*(v/v0 - 1)) - vf1)/Te;
   limiter1.u = vf1;
   limiter1.y = vf;
   annotation (

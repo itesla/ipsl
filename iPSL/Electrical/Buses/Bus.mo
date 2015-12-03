@@ -1,10 +1,9 @@
 within iPSL.Electrical.Buses;
 
 
-model Bus "Bus model.
+model Bus "Bus model
               2014/03/10"
-  iPSL.Connectors.PwPin p(vr(start=V_0*cos(angle_0)), vi(start=V_0*sin(angle_0)))
-    annotation (Placement(
+  iPSL.Connectors.PwPin p(vr(start=V_0*cos(angle_0)), vi(start=V_0*sin(angle_0))) annotation (Placement(
       visible=true,
       transformation(
         origin={1.5559,0.0},
@@ -16,10 +15,8 @@ model Bus "Bus model.
         rotation=0)));
   Real V "Bus voltage magnitude (pu)";
   Real angle "Bus voltage angle (deg)";
-  parameter Real V_0=1 "Voltage magnitude (pu)"
-    annotation (Dialog(group="Power flow data"));
-  parameter Real angle_0=0 "Voltage angle (deg)"
-    annotation (Dialog(group="Power flow data"));
+  parameter Real V_0=1 "Voltage magnitude (pu)" annotation (Dialog(group="Power flow data"));
+  parameter Real angle_0=0 "Voltage angle (deg)" annotation (Dialog(group="Power flow data"));
   Real anglevdeg;
 equation
   anglevdeg = angle/Modelica.Constants.pi*180;

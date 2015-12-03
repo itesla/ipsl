@@ -1,7 +1,8 @@
 within iPSL.Electrical.Solar.PSAT;
+
+
 model ConstantPQPV
   model PQ1 "Constant PQ Generator, Solar Photo-Voltaic Generator"
-
     iPSL.Connectors.PwPin p annotation (Placement(
         visible=true,
         transformation(
@@ -12,19 +13,12 @@ model ConstantPQPV
           origin={-110.0,0.0},
           extent={{-10.0,-10.0},{10.0,10.0}},
           rotation=0)));
-    parameter Real S_b=100 "System base power (MVA)"
-      annotation (Dialog(group="Power flow data"));
+    parameter Real S_b=100 "System base power (MVA)" annotation (Dialog(group="Power flow data"));
     parameter Real Sn=10 "Nominal power (MVA)";
-
-    parameter Real V_0=1.00018548610126 "Voltage magnitude (pu)"
-      annotation (Dialog(group="Power flow data"));
-    parameter Real angle_0=-0.0000253046024029618 "Voltage angle (deg)"
-      annotation (Dialog(group="Power flow data"));
-    parameter Real P_0=0.4 "Active power (pu)"
-      annotation (Dialog(group="Power flow data"));
-    parameter Real Q_0=0.3 "Reactive power (pu)"
-      annotation (Dialog(group="Power flow data"));
-
+    parameter Real V_0=1.00018548610126 "Voltage magnitude (pu)" annotation (Dialog(group="Power flow data"));
+    parameter Real angle_0=-0.0000253046024029618 "Voltage angle (deg)" annotation (Dialog(group="Power flow data"));
+    parameter Real P_0=0.4 "Active power (pu)" annotation (Dialog(group="Power flow data"));
+    parameter Real Q_0=0.3 "Reactive power (pu)" annotation (Dialog(group="Power flow data"));
     parameter Real Td=15 "d-axis inverter time constant (s)";
     parameter Real Tq=15 "q-axis inverter time constant (s)";
   protected
@@ -34,9 +28,7 @@ model ConstantPQPV
     parameter Real vd0=-V_0*sin(angle_0) "Initialitation";
     parameter Real vq0=V_0*cos(angle_0) "Initialitation";
     parameter Real idref=(vq0*Qref + Pref*vd0)/(vq0^2 + vd0^2) "Initialitation";
-    parameter Real iqref=((-vd0*Qref) + Pref*vq0)/(vq0^2 + vd0^2)
-      "Initialitation";
-
+    parameter Real iqref=((-vd0*Qref) + Pref*vq0)/(vq0^2 + vd0^2) "Initialitation";
   public
     Real v "Bus voltage magnitude (pu)";
     Real anglev "Bus voltage angle (deg)";
@@ -57,10 +49,8 @@ model ConstantPQPV
     der(iq) = (iqref1 - iq)/Tq;
     v = sqrt(p.vr^2 + p.vi^2);
     anglev = atan2(p.vi, p.vr);
-    p.ir = -iq
-      "change of sign due to the fact than in modelica when entering is + and in this case is going out";
-    p.ii = id
-      "change of sign due to the fact than in modelica when entering is + and in this case is going out";
+    p.ir = -iq "change of sign due to the fact than in modelica when entering is + and in this case is going out";
+    p.ii = id "change of sign due to the fact than in modelica when entering is + and in this case is going out";
     p.vr = vq;
     p.vi = -vd;
     annotation (
@@ -119,7 +109,6 @@ model ConstantPQPV
   end PQ1;
 
   model PV1 "Constant PV Generator, Solar Photo-Voltaic Generator"
-
     iPSL.Connectors.PwPin p annotation (Placement(
         visible=true,
         transformation(
@@ -130,19 +119,12 @@ model ConstantPQPV
           origin={-110.0,0.0},
           extent={{-10.0,-10.0},{10.0,10.0}},
           rotation=0)));
-    parameter Real S_b=100 "System base power (MVA)"
-      annotation (Dialog(group="Power flow data"));
+    parameter Real S_b=100 "System base power (MVA)" annotation (Dialog(group="Power flow data"));
     parameter Real Sn=10 "Nominal power (MVA)";
-
-    parameter Real V_0=1.00018548610126 "Voltage magnitude (pu)"
-      annotation (Dialog(group="Power flow data"));
-    parameter Real angle_0=-0.0000253046024029618 "Voltage angle (deg)"
-      annotation (Dialog(group="Power flow data"));
-    parameter Real P_0=0.4 "Active power (pu)"
-      annotation (Dialog(group="Power flow data"));
-    parameter Real Q_0=0.3 "Reactive power (pu)"
-      annotation (Dialog(group="Power flow data"));
-
+    parameter Real V_0=1.00018548610126 "Voltage magnitude (pu)" annotation (Dialog(group="Power flow data"));
+    parameter Real angle_0=-0.0000253046024029618 "Voltage angle (deg)" annotation (Dialog(group="Power flow data"));
+    parameter Real P_0=0.4 "Active power (pu)" annotation (Dialog(group="Power flow data"));
+    parameter Real Q_0=0.3 "Reactive power (pu)" annotation (Dialog(group="Power flow data"));
     parameter Real vref=1.0002 "Voltage reference (pu)";
     parameter Real Td=0.15 "d-axis inverter time constant (s)";
     parameter Real Tq=0.15 "q-axis inverter time constant (s)";
@@ -153,11 +135,8 @@ model ConstantPQPV
     parameter Real Pref=P_0*CoB;
     parameter Real vd0=-V_0*sin(angle_0) "Initialitation";
     parameter Real vq0=V_0*cos(angle_0) "Initialitation";
-    parameter Real idref=(vq0*Q_0*CoB + Pref*vd0)/(vq0^2 + vd0^2)
-      "Initialitation";
-    parameter Real iqref=((-vd0*Q_0*CoB) + Pref*vq0)/(vq0^2 + vd0^2)
-      "Initialitation";
-
+    parameter Real idref=(vq0*Q_0*CoB + Pref*vd0)/(vq0^2 + vd0^2) "Initialitation";
+    parameter Real iqref=((-vd0*Q_0*CoB) + Pref*vq0)/(vq0^2 + vd0^2) "Initialitation";
     Real x(start=Q_0*CoB);
     Real Qref(start=Q_0*CoB);
   public
@@ -182,10 +161,8 @@ model ConstantPQPV
     der(iq) = (iqref1 - iq)/Tq;
     v = sqrt(p.vr^2 + p.vi^2);
     anglev = atan2(p.vi, p.vr);
-    p.ir = -iq
-      "change of sign due to the fact than in modelica when entering is + and in this case is going out";
-    p.ii = id
-      "change of sign due to the fact than in modelica when entering is + and in this case is going out";
+    p.ir = -iq "change of sign due to the fact than in modelica when entering is + and in this case is going out";
+    p.ii = id "change of sign due to the fact than in modelica when entering is + and in this case is going out";
     p.vr = vq;
     p.vi = -vd;
     annotation (

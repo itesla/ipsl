@@ -66,8 +66,8 @@ model Order4test2_AVR
         origin={127.5,-50.0},
         extent={{-10.0,-10.0},{10.0,10.0}},
         rotation=0)));
-  iPSL.Electrical.Controls.PSAT.AVR.AVRtypeIII AVRtypeIII1 annotation (
-      Placement(visible=true, transformation(
+  iPSL.Electrical.Controls.PSAT.AVR.AVRtypeIII AVRtypeIII1
+    annotation (Placement(visible=true, transformation(
         origin={-56.6542,-7.4083},
         extent={{-10.0,-10.0},{10.0,10.0}},
         rotation=0)));
@@ -83,8 +83,7 @@ model Order4test2_AVR
     xd1=0.302,
     M=10,
     D=0) annotation (Placement(transformation(extent={{-10,-5},{10,15}})));
-  inner iPSL.Electrical.SystemBase SysData
-    annotation (Placement(transformation(extent={{50,50},{75,70}})));
+  inner iPSL.Electrical.SystemBase SysData annotation (Placement(transformation(extent={{50,50},{75,70}})));
 equation
   connect(pwLine4.n, pwLoadPQ1.p) annotation (Line(
       visible=true,
@@ -128,12 +127,10 @@ equation
       smooth=Smooth.None));
   connect(order4_Inputs_Outputs.vf0, AVRtypeIII1.vf0) annotation (Line(
       points={{-8,16},{20,16},{20,35},{-80,35},{-80,-10.4083},{-68.6542,-10.4083}},
-
       color={0,0,127},
       smooth=Smooth.None));
   connect(order4_Inputs_Outputs.v, AVRtypeIII1.v) annotation (Line(
       points={{11,8},{25,8},{25,25},{-75,25},{-75,-2.4083},{-68.6542,-2.4083}},
-
       color={0,0,127},
       smooth=Smooth.None));
   connect(order4_Inputs_Outputs.pm0, order4_Inputs_Outputs.pm) annotation (Line(

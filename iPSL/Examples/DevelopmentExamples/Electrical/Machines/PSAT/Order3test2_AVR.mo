@@ -84,38 +84,29 @@ model Order3test2_AVR
         origin={127.5,-50.0},
         extent={{-10.0,-10.0},{10.0,10.0}},
         rotation=0)));
-  iPSL.Electrical.Controls.PSAT.AVR.AVRtypeIII AVRtypeIII1 annotation (
-      Placement(visible=true, transformation(
-        origin={-56.6542,-7.4083},
+  iPSL.Electrical.Controls.PSAT.AVR.AVRtypeIII AVRtypeIII1
+    annotation (Placement(visible=true, transformation(
+        origin={-51.6542,-7.4083},
         extent={{-10.0,-10.0},{10.0,10.0}},
         rotation=0)));
-  inner iPSL.Electrical.SystemBase SysData
-    annotation (Placement(transformation(extent={{50,80},{75,100}})));
+  inner iPSL.Electrical.SystemBase SysData annotation (Placement(transformation(extent={{50,80},{75,100}})));
 equation
-  connect(order3_Inputs_Outputs1.v, AVRtypeIII1.v) annotation (Line(
+  connect(order3_Inputs_Outputs1.v, AVRtypeIII1.v)
+    annotation (Line(
       visible=true,
       origin={-13.9377,2.581},
-      points={{28.249,-20.3323},{38.9377,-20.3323},{38.9377,22.419},{-54.7165,
-          22.419},{-54.7165,-4.9893}},
+      points={{28.249,-20.3323},{38.9377,-20.3323},{38.9377,22.419},{-49.7165,22.419},{-49.7165,-4.9893}},
       color={0,0,127}));
-  connect(order3_Inputs_Outputs1.vf0, AVRtypeIII1.vf0) annotation (Line(
-      visible=true,
-      origin={-31.3444,4.1919},
-      points={{26.6557,-13.9432},{48.6557,-13.9432},{48.6557,30.8081},{-53.6556,
-          30.8081},{-53.6556,-14.6002},{-37.3098,-14.6002}},
-      color={0,0,127}));
-  connect(order3_Inputs_Outputs1.vf, AVRtypeIII1.vf) annotation (Line(
+  connect(order3_Inputs_Outputs1.vf, AVRtypeIII1.vf)
+    annotation (Line(
       visible=true,
       origin={-33.6722,-11.3844},
-      points={{26.9835,-4.3669},{-7.3278,-4.3669},{-7.3278,3.9761},{-11.982,
-          3.9761}},
+      points={{26.9835,-4.3669},{-7.3278,-4.3669},{-7.3278,3.9761},{-6.982,3.9761}},
       color={0,0,127}));
-  connect(order3_Inputs_Outputs1.pm0, order3_Inputs_Outputs1.pm) annotation (
-      Line(
+  connect(order3_Inputs_Outputs1.pm0, order3_Inputs_Outputs1.pm) annotation (Line(
       visible=true,
       origin={4.3767,-24.7396},
-      points={{-9.0654,-7.0117},{18.179,-7.0117},{18.179,-10.2604},{-16.6137,-10.2604},
-          {-16.6137,-1.0117},{-11.0654,-1.0117}},
+      points={{-9.0654,-7.0117},{18.179,-7.0117},{18.179,-10.2604},{-16.6137,-10.2604},{-16.6137,-1.0117},{-11.0654,-1.0117}},
       color={0,0,127}));
   connect(pwLine4.n, pwLoadPQ1.p) annotation (Line(
       visible=true,
@@ -157,9 +148,10 @@ equation
       visible=true,
       origin={32.8634,-25.6714},
       points={{0.0,10.0},{0.0,-10.0}}));
+  connect(order3_Inputs_Outputs1.vf0, AVRtypeIII1.vs) annotation (Line(points={{-4.6887,-9.7513},{-4.6887,45},{-63.6542,45},{-63.6542,-11.4083}}, color={0,0,127}));
   annotation (Diagram(coordinateSystem(
-        extent={{-148.5,-105.0},{148.5,105.0}},
-        preserveAspectRatio=true,
+        extent={{-148.5,-105},{148.5,105}},
+        preserveAspectRatio=false,
         initialScale=0.1,
         grid={5,5})), Documentation(info="<html>
 <p><span style=\"font-family: MS Shell Dlg 2;\">&LT;iPSL: iTesla Power System Library&GT;</span></p>

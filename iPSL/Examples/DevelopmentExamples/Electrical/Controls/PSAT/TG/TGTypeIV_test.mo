@@ -79,13 +79,11 @@ model TGTypeIV_test
         origin={26.863,-12.6714},
         extent={{-10.0,-10.0},{10.0,10.0}},
         rotation=0)));
-  iPSL.Electrical.Buses.InfiniteBus infiniteBus(V=1, angle=0) annotation (
-      Placement(transformation(
+  iPSL.Electrical.Buses.InfiniteBus infiniteBus(V=1, angle=0) annotation (Placement(transformation(
         extent={{-5,-5},{5,5}},
         rotation=180,
         origin={77,-11})));
-  inner iPSL.Electrical.SystemBase SysData
-    annotation (Placement(transformation(extent={{0,60},{46,80}})));
+  inner iPSL.Electrical.SystemBase SysData annotation (Placement(transformation(extent={{0,60},{46,80}})));
 equation
   connect(pwLine4.n, pwLoadPQ1.p) annotation (Line(
       visible=true,
@@ -100,13 +98,11 @@ equation
       origin={11.2254,11.7135},
       points={{-10.2484,-9.00658},{1.638,-9.00658},{1.638,2.6151},{7.638,2.6151}}));
   connect(Generator.vf0, Generator.vf) annotation (Line(
-      points={{-30.6689,20.9112},{8,20.9112},{8,26},{-44,26},{-44,10.9366},{-34,
-          10.9366}},
+      points={{-30.6689,20.9112},{8,20.9112},{8,26},{-44,26},{-44,10.9366},{-34,10.9366}},
       color={0,0,127},
       smooth=Smooth.None));
   connect(Generator.w, tGModel4_1.w) annotation (Line(
-      points={{0.97697,17.5864},{0.97697,-6},{8,-6},{8,-20},{-90,-20},{-90,-4.2},
-          {-84.34,-4.2}},
+      points={{0.97697,17.5864},{0.97697,-6},{8,-6},{8,-20},{-90,-20},{-90,-4.2},{-84.34,-4.2}},
       color={0,0,127},
       smooth=Smooth.None));
   connect(tGModel4_1.Pm, Generator.pm) annotation (Line(
@@ -129,8 +125,7 @@ equation
       points={{58.5,-12},{72,-12},{72,-11},{71.5,-11}},
       color={0,0,255},
       smooth=Smooth.None));
-  annotation (Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,
-            -100},{100,100}}), graphics={Text(
+  annotation (Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,100}}), graphics={Text(
           extent={{-96,42},{-22,30}},
           lineColor={0,0,255},
           textString="Wref perturbation with sine signal 5-10s"),Text(

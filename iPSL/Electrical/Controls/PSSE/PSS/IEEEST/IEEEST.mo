@@ -34,37 +34,25 @@ model IEEEST "IEEE Stabilizing Model with single Input"
     T1=T_3,
     T2=T_4,
     y_start=0) annotation (Placement(transformation(extent={{16,-10},{36,10}})));
-  output Modelica.Blocks.Interfaces.RealOutput VOTHSG(start=0)
-    "PSS output signal" annotation (Placement(transformation(extent={{120,-10},
-            {140,10}}, rotation=0), iconTransformation(extent={{120,-10},{140,
-            10}})));
+  output Modelica.Blocks.Interfaces.RealOutput VOTHSG(start=0) "PSS output signal"
+    annotation (Placement(transformation(extent={{120,-10},{140,10}}, rotation=0), iconTransformation(extent={{120,-10},{140,10}})));
   input Modelica.Blocks.Interfaces.RealInput V_S(start=0) "PSS input signal"
-    annotation (Placement(transformation(extent={{-126,-20},{-98,8}}, rotation=
-            0), iconTransformation(extent={{-128,-30},{-108,-10}})));
-  Modelica.Blocks.Nonlinear.Limiter VSS(uMax=L_SMAX, uMin=L_SMIN)
-    annotation (Placement(transformation(extent={{80,-8},{96,8}})));
-  Modelica.Blocks.Interfaces.RealInput V_CT
-    "Compensated machine terminal voltage (pu)" annotation (Placement(
-        transformation(extent={{-124,0},{-98,26}}, rotation=0),
-        iconTransformation(extent={{-128,10},{-108,30}})));
+    annotation (Placement(transformation(extent={{-126,-20},{-98,8}}, rotation=0), iconTransformation(extent={{-128,-30},{-108,-10}})));
+  Modelica.Blocks.Nonlinear.Limiter VSS(uMax=L_SMAX, uMin=L_SMIN) annotation (Placement(transformation(extent={{80,-8},{96,8}})));
+  Modelica.Blocks.Interfaces.RealInput V_CT "Compensated machine terminal voltage (pu)"
+    annotation (Placement(transformation(extent={{-124,0},{-98,26}}, rotation=0), iconTransformation(extent={{-128,10},{-108,30}})));
   Modelica.Blocks.Continuous.Derivative imDerivativeLag(
     k=K_S*T_5,
     T=T_6,
     y_start=0,
-    initType=Modelica.Blocks.Types.Init.InitialOutput)
-    annotation (Placement(transformation(extent={{48,-10},{68,10}})));
-  Modelica.Blocks.Sources.Constant const(k=Switch)
-    annotation (Placement(transformation(extent={{-90,34},{-78,46}})));
-  Modelica.Blocks.Logical.Greater greater
-    annotation (Placement(transformation(extent={{-68,20},{-56,32}})));
-  Modelica.Blocks.Logical.Switch switch1
-    annotation (Placement(transformation(extent={{-38,-6},{-26,6}})));
-  Modelica.Blocks.Sources.Constant const1(k=0)
-    annotation (Placement(transformation(extent={{-90,16},{-78,28}})));
+    initType=Modelica.Blocks.Types.Init.InitialOutput) annotation (Placement(transformation(extent={{48,-10},{68,10}})));
+  Modelica.Blocks.Sources.Constant const(k=Switch) annotation (Placement(transformation(extent={{-90,34},{-78,46}})));
+  Modelica.Blocks.Logical.Greater greater annotation (Placement(transformation(extent={{-68,20},{-56,32}})));
+  Modelica.Blocks.Logical.Switch switch1 annotation (Placement(transformation(extent={{-38,-6},{-26,6}})));
+  Modelica.Blocks.Sources.Constant const1(k=0) annotation (Placement(transformation(extent={{-90,16},{-78,28}})));
 protected
   Modelica.Blocks.Interfaces.RealOutput Vs "Connector of Real output signal"
-    annotation (Placement(transformation(extent={{102,-10},{122,10}}, rotation=
-            0), iconTransformation(extent={{32,-8},{36,-4}})));
+    annotation (Placement(transformation(extent={{102,-10},{122,10}}, rotation=0), iconTransformation(extent={{32,-8},{36,-4}})));
 protected
   parameter Real A(fixed=false);
   parameter Real Switch(fixed=false);
@@ -111,30 +99,18 @@ equation
       points={{-112,-6},{-91.5,-6},{-91.5,6},{-87.2,6}},
       color={0,0,127},
       smooth=Smooth.None));
-  connect(T_1_T_2.y, T_3_T_4.u)
-    annotation (Line(points={{9,0},{14,0}}, color={0,0,127}));
-  connect(T_3_T_4.y, imDerivativeLag.u)
-    annotation (Line(points={{37,0},{41.5,0},{46,0}}, color={0,0,127}));
-  connect(imDerivativeLag.y, VSS.u)
-    annotation (Line(points={{69,0},{78.4,0}}, color={0,0,127}));
-  connect(const.y, greater.u1) annotation (Line(points={{-77.4,40},{-69.2,40},{
-          -69.2,26}}, color={0,0,127}));
-  connect(greater.y, switch1.u2) annotation (Line(points={{-55.4,26},{-46,26},{
-          -46,0},{-39.2,0}}, color={255,0,255}));
-  connect(const1.y, greater.u2) annotation (Line(points={{-77.4,22},{-69.2,22},
-          {-69.2,21.2}}, color={0,0,127}));
-  connect(switch1.y, T_1_T_2.u)
-    annotation (Line(points={{-25.4,0},{-25.4,0},{-14,0}}, color={0,0,127}));
-  connect(Filter.y, switch1.u1) annotation (Line(points={{-73.4,6},{-56,6},{-56,
-          4.8},{-39.2,4.8}}, color={0,0,127}));
-  connect(switch1.u3, Filter.u) annotation (Line(points={{-39.2,-4.8},{-90,-4.8},
-          {-90,-6},{-91.5,-6},{-91.5,6},{-87.2,6}}, color={0,0,127}));
+  connect(T_1_T_2.y, T_3_T_4.u) annotation (Line(points={{9,0},{14,0}}, color={0,0,127}));
+  connect(T_3_T_4.y, imDerivativeLag.u) annotation (Line(points={{37,0},{41.5,0},{46,0}}, color={0,0,127}));
+  connect(imDerivativeLag.y, VSS.u) annotation (Line(points={{69,0},{78.4,0}}, color={0,0,127}));
+  connect(const.y, greater.u1) annotation (Line(points={{-77.4,40},{-69.2,40},{-69.2,26}}, color={0,0,127}));
+  connect(greater.y, switch1.u2) annotation (Line(points={{-55.4,26},{-46,26},{-46,0},{-39.2,0}}, color={255,0,255}));
+  connect(const1.y, greater.u2) annotation (Line(points={{-77.4,22},{-69.2,22},{-69.2,21.2}}, color={0,0,127}));
+  connect(switch1.y, T_1_T_2.u) annotation (Line(points={{-25.4,0},{-25.4,0},{-14,0}}, color={0,0,127}));
+  connect(Filter.y, switch1.u1) annotation (Line(points={{-73.4,6},{-56,6},{-56,4.8},{-39.2,4.8}}, color={0,0,127}));
+  connect(switch1.u3, Filter.u) annotation (Line(points={{-39.2,-4.8},{-90,-4.8},{-90,-6},{-91.5,-6},{-91.5,6},{-87.2,6}}, color={0,0,127}));
   annotation (
-    Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-120,-40},{120,
-            40}})),
-    Icon(coordinateSystem(preserveAspectRatio=false, extent={{-120,-40},{120,40}}),
-        graphics={Rectangle(extent={{-120,40},{120,-40}}, lineColor={0,0,255}),
-          Text(
+    Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-120,-40},{120,40}})),
+    Icon(coordinateSystem(preserveAspectRatio=false, extent={{-120,-40},{120,40}}), graphics={Rectangle(extent={{-120,40},{120,-40}}, lineColor={0,0,255}),Text(
           extent={{-46,40},{54,-44}},
           lineColor={0,0,255},
           textString="IEEEST"),Text(

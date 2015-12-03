@@ -68,35 +68,27 @@ model URST5T "SMIB model example of GENROU with Excitation System URST5T"
     V_0=0.991992,
     d_P=5*0.01,
     d_t=0.1,
-    t1=2 - 0.005)
-    annotation (Placement(transformation(extent={{26,-14},{6,8}})));
+    t1=2 - 0.005) annotation (Placement(transformation(extent={{26,-14},{6,8}})));
   iPSL.Electrical.Events.PwFault pwFault(
     R=0,
     X=-2e-9,
     t1=10 - 0.005,
-    t2=10.15 - 0.005)
-    annotation (Placement(transformation(extent={{66,-14},{86,6}})));
-  Modelica.Blocks.Sources.Constant const2(k=0)
-    annotation (Placement(transformation(extent={{-110,166},{-94,182}})));
-  Modelica.Blocks.Sources.Constant VOEL(k=1000) annotation (Placement(
-        transformation(
+    t2=10.15 - 0.005) annotation (Placement(transformation(extent={{66,-14},{86,6}})));
+  Modelica.Blocks.Sources.Constant const2(k=0) annotation (Placement(transformation(extent={{-110,166},{-94,182}})));
+  Modelica.Blocks.Sources.Constant VOEL(k=1000) annotation (Placement(transformation(
         extent={{-5,-5},{5,5}},
         rotation=0,
         origin={-73,-55})));
-  iPSL.Electrical.Controls.PSSE.ES.URST5T.URST5T uRST5T
-    annotation (Placement(transformation(extent={{-42,-16},{2,10}})));
-  Modelica.Blocks.Sources.Constant VUEL(k=-1000) annotation (Placement(
-        transformation(
+  iPSL.Electrical.Controls.PSSE.ES.URST5T.URST5T uRST5T annotation (Placement(transformation(extent={{-42,-16},{2,10}})));
+  Modelica.Blocks.Sources.Constant VUEL(k=-1000) annotation (Placement(transformation(
         extent={{-5,-5},{5,5}},
         rotation=0,
         origin={-59,-69})));
-  Modelica.Blocks.Sources.Constant VOTHSG(k=0) annotation (Placement(
-        transformation(
+  Modelica.Blocks.Sources.Constant VOTHSG(k=0) annotation (Placement(transformation(
         extent={{-5,-5},{5,5}},
         rotation=0,
         origin={-59,-43})));
-  Modelica.Blocks.Sources.Constant VREF(k=0) annotation (Placement(
-        transformation(
+  Modelica.Blocks.Sources.Constant VREF(k=0) annotation (Placement(transformation(
         extent={{-5,-5},{5,5}},
         rotation=0,
         origin={-69,-21})));
@@ -155,7 +147,6 @@ equation
       smooth=Smooth.None));
   connect(generator.PMECH0, generator.PMECH) annotation (Line(
       points={{-60.88,7.9},{-56,7.9},{-56,34},{-90,34},{-90,21.5},{-89.72,21.5}},
-
       color={0,0,127},
       smooth=Smooth.None));
   connect(generator.PELEC, uRST5T.ECOMP) annotation (Line(
@@ -164,15 +155,13 @@ equation
       smooth=Smooth.None));
   connect(uRST5T.EFD, generator.EFD) annotation (Line(
       points={{2,-2.1875},{0,-2.1875},{0,-32},{-90,-32},{-90,4.5},{-89.72,4.5}},
-
       color={0,0,127},
       smooth=Smooth.None));
   connect(VREF.y, uRST5T.V_REF) annotation (Line(
       points={{-63.5,-21},{-52,-21},{-52,5.04375},{-41.2667,5.04375}},
       color={0,0,127},
       smooth=Smooth.None));
-  annotation (Diagram(coordinateSystem(preserveAspectRatio=true, extent={{-100,
-            -100},{100,100}}), graphics), Documentation(info="<html>
+  annotation (Diagram(coordinateSystem(preserveAspectRatio=true, extent={{-100,-100},{100,100}}), graphics), Documentation(info="<html>
 <p><br><span style=\"font-family: MS Shell Dlg 2;\">&LT;iPSL: iTesla Power System Library&GT;</span></p>
 <p><span style=\"font-family: MS Shell Dlg 2;\">Copyright 2015 RTE (France), AIA (Spain), KTH (Sweden) and DTU (Denmark)</span></p>
 <ul>

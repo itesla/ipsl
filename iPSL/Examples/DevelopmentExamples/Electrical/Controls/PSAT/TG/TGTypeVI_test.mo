@@ -17,8 +17,7 @@ model TGTypeVI_test
     beta=0.1,
     Tw=2.67,
     dref=0,
-    po=0.16074)
-    annotation (Placement(transformation(extent={{-44,16},{-10,50}})));
+    po=0.16074) annotation (Placement(transformation(extent={{-44,16},{-10,50}})));
   iPSL.Electrical.Machines.PSAT.ThirdOrder.Order3 order3_Inputs_Outputs1(
     P_0=0.16041,
     Q_0=0.12012,
@@ -93,8 +92,7 @@ model TGTypeVI_test
         origin={-90.0594,49.8126},
         extent={{-5.9406,-5.8126},{5.9406,5.8126}},
         rotation=0)));
-  Modelica.Blocks.Math.Add Perturbation(k2=+1) annotation (Placement(visible=
-          true, transformation(
+  Modelica.Blocks.Math.Add Perturbation(k2=+1) annotation (Placement(visible=true, transformation(
         origin={-64.3229,61.327},
         extent={{-6.3229,-6.3229},{6.3229,6.3229}},
         rotation=0)));
@@ -106,8 +104,7 @@ model TGTypeVI_test
         origin={-90.2599,69.8051},
         extent={{-5.7401,-5.8051},{5.7401,5.8051}},
         rotation=0)));
-  inner iPSL.Electrical.SystemBase SysData
-    annotation (Placement(transformation(extent={{0,80},{60,100}})));
+  inner iPSL.Electrical.SystemBase SysData annotation (Placement(transformation(extent={{0,80},{60,100}})));
 equation
   connect(pwLine4.n, pwLoadPQ1.p) annotation (Line(
       visible=true,
@@ -136,44 +133,40 @@ equation
   connect(pwLine2.p, pwLine1.p) annotation (Line(
       visible=true,
       origin={10.8634,-27.6714},
-      points={{-0.00000000000000177636,10},{-0.00000000000000177636,5},{-0.00000000000000355272,
-          5},{-0.00000000000000355272,0},{-0.00000000000000177636,0},{-0.00000000000000177636,
-          -10}}));
-  connect(order3_Inputs_Outputs1.w, tGModel6_1.we) annotation (Line(
-      points={{-7.02303,-2.41364},{-7.02303,-40},{-58,-40},{-58,35.72},{-46.72,
-          35.72}},
+      points={{-0.00000000000000177636,10},{-0.00000000000000177636,5},{-0.00000000000000355272,5},{-0.00000000000000355272,0},{-0.00000000000000177636,0},{-0.00000000000000177636,-10}}));
+  connect(order3_Inputs_Outputs1.w, tGModel6_1.we)
+    annotation (Line(
+      points={{-7.02303,-2.41364},{-7.02303,-40},{-58,-40},{-58,35.72},{-46.72,35.72}},
       color={0,0,127},
       smooth=Smooth.None));
-  connect(order3_Inputs_Outputs1.vf0, tGModel6_1.Pe) annotation (Line(
-      points={{-38.6689,0.91124},{6,0.91124},{6,-46},{-66,-46},{-66,29.26},{-46.72,
-          29.26}},
+  connect(order3_Inputs_Outputs1.vf0, tGModel6_1.Pe)
+    annotation (Line(
+      points={{-38.6689,0.91124},{6,0.91124},{6,-46},{-66,-46},{-66,29.26},{-46.72,29.26}},
       color={0,0,127},
       smooth=Smooth.None));
-  connect(order3_Inputs_Outputs1.vf0, order3_Inputs_Outputs1.vf) annotation (
-      Line(
+  connect(order3_Inputs_Outputs1.vf0, order3_Inputs_Outputs1.vf)
+    annotation (Line(
       points={{-38.6689,0.91124},{0,0.91124},{0,6},{-52,6},{-52,-9.0634},{-42,-9.0634}},
-
       color={0,0,127},
       smooth=Smooth.None));
-  connect(order3_Inputs_Outputs1.pm0, tGModel6_1.Pref) annotation (Line(
-      points={{-38.6689,-35.6624},{8,-35.6624},{8,12},{-56,12},{-56,22.12},{-46.72,
-          22.12}},
+  connect(order3_Inputs_Outputs1.pm0, tGModel6_1.Pref)
+    annotation (Line(
+      points={{-38.6689,-35.6624},{8,-35.6624},{8,12},{-56,12},{-56,22.12},{-46.72,22.12}},
       color={0,0,127},
       smooth=Smooth.None));
-  connect(tGModel6_1.Pm, order3_Inputs_Outputs1.pm) annotation (Line(
+  connect(tGModel6_1.Pm, order3_Inputs_Outputs1.pm)
+    annotation (Line(
       points={{-7.79,35.89},{-4,35.89},{-4,52},{-78,52},{-78,-25.6878},{-42,-25.6878}},
-
       color={0,0,127},
       smooth=Smooth.None));
-  connect(Perturbation.u2, sine3.y) annotation (Line(
+  connect(Perturbation.u2, sine3.y)
+    annotation (Line(
       visible=true,
       origin={-78.886,58.468},
-      points={{6.97562,-0.93474},{2.886,-0.93474},{2.886,-4.4679},{-4.63874,-4.4679},
-          {-4.63874,-8.6554}},
+      points={{6.97562,-0.93474},{2.886,-0.93474},{2.886,-4.4679},{-4.63874,-4.4679},{-4.63874,-8.6554}},
       color={0,0,127}));
   connect(sine4.y, Perturbation.u1) annotation (Line(
       points={{-83.9458,69.8051},{-82,69.8051},{-82,65.1207},{-71.9104,65.1207}},
-
       color={0,0,127},
       smooth=Smooth.None));
   connect(Perturbation.y, tGModel6_1.wref) annotation (Line(
@@ -181,8 +174,7 @@ equation
       color={0,0,127},
       smooth=Smooth.None));
   annotation (
-    Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-120,-80},{80,
-            120}})),
+    Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-120,-80},{80,120}})),
     Icon(coordinateSystem(extent={{-120,-80},{80,120}})),
     Documentation(info="<html>
 <p><span style=\"font-family: MS Shell Dlg 2;\">&LT;iPSL: iTesla Power System Library&GT;</span></p>

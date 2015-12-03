@@ -19,15 +19,11 @@ model WT12T1
   parameter Real Paero(fixed=false) "power on the rotor blade side, pu";
   parameter Real w0(fixed=false) "Initial rotor slip";
   parameter Real delta0(fixed=false) "Initial internal angle";
-  Modelica.Blocks.Interfaces.RealOutput WTRBSP annotation (Placement(
-        transformation(extent={{94,0},{114,20}}), iconTransformation(extent={{
-            90,-64},{110,-44}})));
+  Modelica.Blocks.Interfaces.RealOutput WTRBSP annotation (Placement(transformation(extent={{94,0},{114,20}}), iconTransformation(extent={{90,-64},{110,-44}})));
   Modelica.Blocks.Continuous.Integrator dwt(
     y_start=k10,
     k=1/(2*Ht),
-    initType=Modelica.Blocks.Types.Init.InitialOutput)
-    "Turbine speed deviation, pu"
-    annotation (Placement(transformation(extent={{0,14},{10,24}})));
+    initType=Modelica.Blocks.Types.Init.InitialOutput) "Turbine speed deviation, pu" annotation (Placement(transformation(extent={{0,14},{10,24}})));
   Modelica.Blocks.Math.Add Tmech1 annotation (Placement(transformation(
         extent={{-5,-5},{5,5}},
         rotation=0,
@@ -36,10 +32,8 @@ model WT12T1
         extent={{-5,-5},{5,5}},
         rotation=0,
         origin={-11,19})));
-  Modelica.Blocks.Interfaces.RealInput WAEROT "From WT12A"
-    annotation (Placement(transformation(extent={{-106,60},{-92,74}})));
-  Modelica.Blocks.Math.Gain D_shaft(k=Dshaft) annotation (Placement(
-        transformation(
+  Modelica.Blocks.Interfaces.RealInput WAEROT "From WT12A" annotation (Placement(transformation(extent={{-106,60},{-92,74}})));
+  Modelica.Blocks.Math.Gain D_shaft(k=Dshaft) annotation (Placement(transformation(
         extent={{-6,-6},{6,6}},
         rotation=180,
         origin={-36,-14})));
@@ -47,30 +41,23 @@ model WT12T1
         extent={{-4,4},{4,-4}},
         rotation=180,
         origin={12,-14})));
-  Modelica.Blocks.Math.Gain WBASE(k=wbase)
-    annotation (Placement(transformation(extent={{26,14},{36,24}})));
+  Modelica.Blocks.Math.Gain WBASE(k=wbase) annotation (Placement(transformation(extent={{26,14},{36,24}})));
   Modelica.Blocks.Math.Add add5(k2=-1) annotation (Placement(transformation(
         extent={{-5,-5},{5,5}},
         rotation=0,
         origin={45,1})));
-  Modelica.Blocks.Math.Gain WBASE1(k=wbase)
-    annotation (Placement(transformation(extent={{24,-54},{34,-44}})));
-  Modelica.Blocks.Interfaces.RealOutput SPEED annotation (Placement(
-        transformation(extent={{94,-42},{114,-22}}), iconTransformation(extent=
-            {{90,-36},{110,-16}})));
+  Modelica.Blocks.Math.Gain WBASE1(k=wbase) annotation (Placement(transformation(extent={{24,-54},{34,-44}})));
+  Modelica.Blocks.Interfaces.RealOutput SPEED annotation (Placement(transformation(extent={{94,-42},{114,-22}}), iconTransformation(extent={{90,-36},{110,-16}})));
   Modelica.Blocks.Continuous.Integrator dwg(
     k=1/(2*Hg),
     y_start=k20,
-    initType=Modelica.Blocks.Types.Init.InitialOutput)
-    annotation (Placement(transformation(extent={{-36,-54},{-26,-44}})));
+    initType=Modelica.Blocks.Types.Init.InitialOutput) annotation (Placement(transformation(extent={{-36,-54},{-26,-44}})));
   Modelica.Blocks.Math.Gain Damp(k=DAMP) annotation (Placement(transformation(
         extent={{-4,-4},{4,4}},
         rotation=180,
         origin={-28,-34})));
-  Modelica.Blocks.Math.Add3 add3_1(k1=-1, k3=-1)
-    annotation (Placement(transformation(extent={{-54,-54},{-44,-44}})));
-  Modelica.Blocks.Interfaces.RealInput Pelec annotation (Placement(
-        transformation(
+  Modelica.Blocks.Math.Add3 add3_1(k1=-1, k3=-1) annotation (Placement(transformation(extent={{-54,-54},{-44,-44}})));
+  Modelica.Blocks.Interfaces.RealInput Pelec annotation (Placement(transformation(
         extent={{-11,-11},{11,11}},
         rotation=90,
         origin={-67,-91}), iconTransformation(
@@ -84,24 +71,18 @@ model WT12T1
   Modelica.Blocks.Continuous.Integrator theta_tg(
     k=Kshaft,
     y_start=k0,
-    initType=Modelica.Blocks.Types.Init.InitialOutput)
-    annotation (Placement(transformation(extent={{56,-4},{66,6}})));
-  Modelica.Blocks.Interfaces.RealOutput RotorAD "Rotor angle deviation"
-    annotation (Placement(transformation(extent={{94,-80},{112,-62}}),
-        iconTransformation(extent={{90,-88},{108,-70}})));
-  Modelica.Blocks.Continuous.Integrator state4(k=1, y_start=k30)
-    annotation (Placement(transformation(extent={{62,-76},{72,-66}})));
+    initType=Modelica.Blocks.Types.Init.InitialOutput) annotation (Placement(transformation(extent={{56,-4},{66,6}})));
+  Modelica.Blocks.Interfaces.RealOutput RotorAD "Rotor angle deviation" annotation (Placement(transformation(extent={{94,-80},{112,-62}}), iconTransformation(extent={{90,-88},{108,-70}})));
+  Modelica.Blocks.Continuous.Integrator state4(k=1, y_start=k30) annotation (Placement(transformation(extent={{62,-76},{72,-66}})));
   Modelica.Blocks.Math.Add add2(k2=-1) annotation (Placement(transformation(
         extent={{-5,-5},{5,5}},
         rotation=0,
         origin={33,-71})));
-  Modelica.Blocks.Sources.Constant VAR1(k=w0) "Initial rotor slip" annotation (
-      Placement(transformation(
+  Modelica.Blocks.Sources.Constant VAR1(k=w0) "Initial rotor slip" annotation (Placement(transformation(
         extent={{6,-6},{-6,6}},
         rotation=180,
         origin={8,-74})));
-  Modelica.Blocks.Math.Gain WBASE2(k=wbase)
-    annotation (Placement(transformation(extent={{48,-76},{58,-66}})));
+  Modelica.Blocks.Math.Gain WBASE2(k=wbase) annotation (Placement(transformation(extent={{48,-76},{58,-66}})));
   Modelica.Blocks.Math.Division product2 annotation (Placement(transformation(
         extent={{-4,-4},{4,4}},
         rotation=90,
@@ -110,8 +91,7 @@ model WT12T1
         extent={{-5,-5},{5,5}},
         rotation=180,
         origin={-37,-79})));
-  Modelica.Blocks.Sources.Constant const(k=1) "Initial rotor slip" annotation (
-      Placement(transformation(
+  Modelica.Blocks.Sources.Constant const(k=1) "Initial rotor slip" annotation (Placement(transformation(
         extent={{6,-6},{-6,6}},
         rotation=0,
         origin={-18,-86})));
@@ -197,35 +177,21 @@ equation
       points={{38.5,-71},{42.25,-71},{42.25,-71},{47,-71}},
       color={0,0,127},
       smooth=Smooth.None));
-  connect(dwt.u, add3.y)
-    annotation (Line(points={{-1,19},{-4,19},{-5.5,19}}, color={0,0,127}));
-  connect(dwt.y, WBASE.u)
-    annotation (Line(points={{10.5,19},{17.25,19},{25,19}}, color={0,0,127}));
-  connect(dwtg.u1, WBASE.u) annotation (Line(points={{16.8,-11.6},{20,-11.6},{
-          20,19},{25,19}}, color={0,0,127}));
-  connect(WTRBSP, WBASE.u) annotation (Line(points={{104,10},{20,10},{20,19},{
-          25,19}}, color={0,0,127}));
-  connect(add3_1.y, dwg.u)
-    annotation (Line(points={{-43.5,-49},{-37,-49}}, color={0,0,127}));
-  connect(dwg.y, WBASE1.u)
-    annotation (Line(points={{-25.5,-49},{20,-49},{23,-49}}, color={0,0,127}));
-  connect(Damp.u, WBASE1.u) annotation (Line(points={{-23.2,-34},{-8,-34},{-8,-49},
-          {20,-49},{23,-49}}, color={0,0,127}));
-  connect(wg.u2, WBASE1.u) annotation (Line(points={{-31,-76},{-8,-76},{-8,-49},
-          {20,-49},{23,-49}}, color={0,0,127}));
-  connect(WBASE2.y, state4.u) annotation (Line(points={{58.5,-71},{59.25,-71},{
-          59.25,-71},{61,-71}}, color={0,0,127}));
-  connect(state4.y, RotorAD) annotation (Line(points={{72.5,-71},{84.25,-71},{
-          84.25,-71},{103,-71}}, color={0,0,127}));
-  connect(add5.y, theta_tg.u)
-    annotation (Line(points={{50.5,1},{52.25,1},{55,1}}, color={0,0,127}));
-  connect(theta_tg.y, Tmech1.u1) annotation (Line(points={{66.5,1},{76,1},{76,
-          38},{-98,38},{-98,18},{-83,18}}, color={0,0,127}));
-  connect(Tmech.u2, Tmech1.u1) annotation (Line(points={{-83,-52},{-98,-52},{-98,
-          -96},{76,-96},{76,38},{-98,38},{-98,18},{-83,18}}, color={0,0,127}));
+  connect(dwt.u, add3.y) annotation (Line(points={{-1,19},{-4,19},{-5.5,19}}, color={0,0,127}));
+  connect(dwt.y, WBASE.u) annotation (Line(points={{10.5,19},{17.25,19},{25,19}}, color={0,0,127}));
+  connect(dwtg.u1, WBASE.u) annotation (Line(points={{16.8,-11.6},{20,-11.6},{20,19},{25,19}}, color={0,0,127}));
+  connect(WTRBSP, WBASE.u) annotation (Line(points={{104,10},{20,10},{20,19},{25,19}}, color={0,0,127}));
+  connect(add3_1.y, dwg.u) annotation (Line(points={{-43.5,-49},{-37,-49}}, color={0,0,127}));
+  connect(dwg.y, WBASE1.u) annotation (Line(points={{-25.5,-49},{20,-49},{23,-49}}, color={0,0,127}));
+  connect(Damp.u, WBASE1.u) annotation (Line(points={{-23.2,-34},{-8,-34},{-8,-49},{20,-49},{23,-49}}, color={0,0,127}));
+  connect(wg.u2, WBASE1.u) annotation (Line(points={{-31,-76},{-8,-76},{-8,-49},{20,-49},{23,-49}}, color={0,0,127}));
+  connect(WBASE2.y, state4.u) annotation (Line(points={{58.5,-71},{59.25,-71},{59.25,-71},{61,-71}}, color={0,0,127}));
+  connect(state4.y, RotorAD) annotation (Line(points={{72.5,-71},{84.25,-71},{84.25,-71},{103,-71}}, color={0,0,127}));
+  connect(add5.y, theta_tg.u) annotation (Line(points={{50.5,1},{52.25,1},{55,1}}, color={0,0,127}));
+  connect(theta_tg.y, Tmech1.u1) annotation (Line(points={{66.5,1},{76,1},{76,38},{-98,38},{-98,18},{-83,18}}, color={0,0,127}));
+  connect(Tmech.u2, Tmech1.u1) annotation (Line(points={{-83,-52},{-98,-52},{-98,-96},{76,-96},{76,38},{-98,38},{-98,18},{-83,18}}, color={0,0,127}));
   annotation (
-    Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{
-            100,100}}), graphics={Text(
+    Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,100}}), graphics={Text(
           extent={{48,0},{72,-24}},
           lineColor={255,0,0},
           textString="K
@@ -258,9 +224,7 @@ Initial Rotor Slip"),Text(
           extent={{76,4},{92,-10}},
           lineColor={255,0,0},
           textString="theta_tg")}),
-    Icon(coordinateSystem(preserveAspectRatio=true, extent={{-100,-100},{100,
-            100}}), graphics={Rectangle(extent={{-104,92},{94,-92}}, lineColor=
-          {0,0,255}),Text(
+    Icon(coordinateSystem(preserveAspectRatio=true, extent={{-100,-100},{100,100}}), graphics={Rectangle(extent={{-104,92},{94,-92}}, lineColor={0,0,255}),Text(
           extent={{-84,68},{80,-60}},
           lineColor={0,0,255},
           textString="Wind Turbine 

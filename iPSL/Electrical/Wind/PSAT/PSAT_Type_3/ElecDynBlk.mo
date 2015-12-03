@@ -2,8 +2,7 @@ within iPSL.Electrical.Wind.PSAT.PSAT_Type_3;
 
 
 model ElecDynBlk
-  Modelica.Blocks.Interfaces.RealInput omega_m "Rotor Speed" annotation (
-      Placement(
+  Modelica.Blocks.Interfaces.RealInput omega_m "Rotor Speed" annotation (Placement(
       transformation(
         extent={{-102.0,54.0},{-62.0,94.0}},
         origin={-45.2439,-151.0508},
@@ -23,8 +22,7 @@ model ElecDynBlk
         origin={2.0,-24.0},
         extent={{-102.0,54.0},{-62.0,94.0}},
         rotation=0)));
-  Modelica.Blocks.Interfaces.RealOutput idr(start=idr0, fixed=false)
-    "saturated idr" annotation (Placement(
+  Modelica.Blocks.Interfaces.RealOutput idr(start=idr0, fixed=false) "saturated idr" annotation (Placement(
       transformation(
         extent={{102.0,54.0},{62.0,94.0}},
         origin={43.0,-29.0},
@@ -34,8 +32,7 @@ model ElecDynBlk
         origin={-2.0,-24.0},
         extent={{102.0,54.0},{62.0,94.0}},
         rotation=0)));
-  Modelica.Blocks.Interfaces.RealOutput iqr(start=iqr0, fixed=false)
-    "saturated iqr" annotation (Placement(
+  Modelica.Blocks.Interfaces.RealOutput iqr(start=iqr0, fixed=false) "saturated iqr" annotation (Placement(
       transformation(
         extent={{102.0,54.0},{62.0,94.0}},
         origin={43.0,-94.0},

@@ -2,21 +2,15 @@ within iPSL.Electrical.Machines.DTU;
 
 
 model PwreimCurrentSource "Developed by DTU"
-  iPSL.Connectors.PwPin n annotation (Placement(transformation(extent={{60,-6},
-            {72,6}}), iconTransformation(extent={{60,-6},{72,6}})));
-  Modelica.Blocks.Interfaces.RealInput id_ref
-    annotation (Placement(transformation(extent={{-73,33},{-61,47}})));
-  Modelica.Blocks.Interfaces.RealInput iq_ref
-    annotation (Placement(transformation(extent={{-73,-47},{-61,-33}})));
+  iPSL.Connectors.PwPin n annotation (Placement(transformation(extent={{60,-6},{72,6}}), iconTransformation(extent={{60,-6},{72,6}})));
+  Modelica.Blocks.Interfaces.RealInput id_ref annotation (Placement(transformation(extent={{-73,33},{-61,47}})));
+  Modelica.Blocks.Interfaces.RealInput iq_ref annotation (Placement(transformation(extent={{-73,-47},{-61,-33}})));
 equation
   n.ir = id_ref;
   n.ii = iq_ref;
   annotation (
-    Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{
-            100,100}}), graphics),
-    Icon(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,
-            100}}), graphics={Rectangle(extent={{-60,60},{60,-60}}, lineColor={
-          0,0,255}),Ellipse(
+    Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,100}}), graphics),
+    Icon(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,100}}), graphics={Rectangle(extent={{-60,60},{60,-60}}, lineColor={0,0,255}),Ellipse(
           extent={{-22,22},{22,-20}},
           lineColor={0,0,255},
           lineThickness=0.5),Polygon(

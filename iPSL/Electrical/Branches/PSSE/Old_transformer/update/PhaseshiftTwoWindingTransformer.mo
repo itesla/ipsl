@@ -1,14 +1,10 @@
 within iPSL.Electrical.Branches.PSSE.Old_transformer.update;
-model PhaseshiftTwoWindingTransformer
-  "Basic Two Winding Transformer with Phaseshift"
+model PhaseshiftTwoWindingTransformer "Basic Two Winding Transformer with Phaseshift"
   extends TransformerParameter;
   parameter Real phase " From side and To side phase shift in degree";
-  iPSL.Connectors.PwPin F
-    annotation (Placement(transformation(extent={{-114,-4},{-94,16}})));
-  iPSL.Connectors.PwPin T
-    annotation (Placement(transformation(extent={{94,-6},{114,14}})));
-  phaseshift phaseship1(phase=phase)
-    annotation (Placement(transformation(extent={{-76,-24},{-18,30}})));
+  iPSL.Connectors.PwPin F annotation (Placement(transformation(extent={{-114,-4},{-94,16}})));
+  iPSL.Connectors.PwPin T annotation (Placement(transformation(extent={{94,-6},{114,14}})));
+  phaseshift phaseship1(phase=phase) annotation (Placement(transformation(extent={{-76,-24},{-18,30}})));
   TransformerBasicEquation zeq(
     R=R,
     X=X,
@@ -33,8 +29,7 @@ equation
       thickness=0.5,
       smooth=Smooth.None));
   annotation (
-    Diagram(coordinateSystem(preserveAspectRatio=true, extent={{-100,-100},{100,
-            100}}), graphics),
+    Diagram(coordinateSystem(preserveAspectRatio=true, extent={{-100,-100},{100,100}}), graphics),
     Icon(graphics={Text(
           extent={{26,52},{114,0}},
           lineColor={0,0,255},

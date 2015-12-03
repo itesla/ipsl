@@ -2,14 +2,10 @@ within iPSL.Electrical.Machines.DTU;
 
 
 model PwdqCurrentSource "Developed by DTU"
-  iPSL.Connectors.PwPin n annotation (Placement(transformation(extent={{60,-6},
-            {72,6}}), iconTransformation(extent={{60,-6},{72,6}})));
-  Modelica.Blocks.Interfaces.RealInput id_ref
-    annotation (Placement(transformation(extent={{-73,33},{-61,47}})));
-  Modelica.Blocks.Interfaces.RealInput iq_ref
-    annotation (Placement(transformation(extent={{-73,-47},{-61,-33}})));
-  Modelica.Blocks.Interfaces.RealInput phi_meas annotation (Placement(
-        transformation(
+  iPSL.Connectors.PwPin n annotation (Placement(transformation(extent={{60,-6},{72,6}}), iconTransformation(extent={{60,-6},{72,6}})));
+  Modelica.Blocks.Interfaces.RealInput id_ref annotation (Placement(transformation(extent={{-73,33},{-61,47}})));
+  Modelica.Blocks.Interfaces.RealInput iq_ref annotation (Placement(transformation(extent={{-73,-47},{-61,-33}})));
+  Modelica.Blocks.Interfaces.RealInput phi_meas annotation (Placement(transformation(
         extent={{-6,-6},{6,6}},
         rotation=90,
         origin={0,-46}), iconTransformation(
@@ -20,11 +16,8 @@ equation
   n.ir = id_ref*cos(phi_meas) - iq_ref*sin(phi_meas);
   n.ii = id_ref*sin(phi_meas) + iq_ref*cos(phi_meas);
   annotation (
-    Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{
-            100,100}}), graphics),
-    Icon(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,
-            100}}), graphics={Rectangle(extent={{-60,60},{60,-60}}, lineColor={
-          0,0,255}),Ellipse(
+    Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,100}}), graphics),
+    Icon(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,100}}), graphics={Rectangle(extent={{-60,60},{60,-60}}, lineColor={0,0,255}),Ellipse(
           extent={{-22,22},{22,-20}},
           lineColor={0,0,255},
           lineThickness=0.5),Polygon(

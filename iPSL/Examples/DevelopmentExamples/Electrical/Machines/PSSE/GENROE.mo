@@ -72,8 +72,7 @@ model GENROE "SMIB system with one load and GENROE model"
     P_0=40,
     angle_0=4.046276,
     Q_0=5.416582,
-    Xppq=0.2)
-    annotation (Placement(transformation(extent={{-82,-10},{-42,30}})));
+    Xppq=0.2) annotation (Placement(transformation(extent={{-82,-10},{-42,30}})));
 equation
   connect(pwLine.n, pwLine1.p) annotation (Line(
       points={{-9,10},{3.5,10},{3.5,24},{29,24}},
@@ -103,14 +102,10 @@ equation
       points={{54.3333,-27},{54.3333,-25.5},{45,-25.5},{45,-10}},
       color={0,0,255},
       smooth=Smooth.None));
-  connect(gENROE.p, pwLine.p)
-    annotation (Line(points={{-40,10},{-23,10}}, color={0,0,255}));
-  connect(gENROE.PMECH, gENROE.PMECH0) annotation (Line(points={{-81.6,20},{-92,
-          20},{-92,36},{-30,36},{-30,4},{-40.4,4}}, color={0,0,127}));
-  connect(gENROE.EFD, gENROE.EFD0) annotation (Line(points={{-81.6,0},{-90,0},{
-          -90,-20},{-32,-20},{-32,-4},{-40.4,-4}}, color={0,0,127}));
-  annotation (Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,
-            -100},{100,100}})), Documentation(info="<html>
+  connect(gENROE.p, pwLine.p) annotation (Line(points={{-40,10},{-23,10}}, color={0,0,255}));
+  connect(gENROE.PMECH, gENROE.PMECH0) annotation (Line(points={{-81.6,20},{-92,20},{-92,36},{-30,36},{-30,4},{-40.4,4}}, color={0,0,127}));
+  connect(gENROE.EFD, gENROE.EFD0) annotation (Line(points={{-81.6,0},{-90,0},{-90,-20},{-32,-20},{-32,-4},{-40.4,-4}}, color={0,0,127}));
+  annotation (Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,100}})), Documentation(info="<html>
 <p><span style=\"font-family: MS Shell Dlg 2;\">&LT;iPSL: iTesla Power System Library&GT;</span></p>
 <p><span style=\"font-family: MS Shell Dlg 2;\">Copyright 2015 RTE (France), AIA (Spain), KTH (Sweden) and DTU (Denmark)</span></p>
 <ul>

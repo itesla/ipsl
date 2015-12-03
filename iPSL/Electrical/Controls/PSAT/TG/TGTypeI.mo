@@ -2,12 +2,8 @@ within iPSL.Electrical.Controls.PSAT.TG;
 
 
 model TGTypeI
-  Modelica.Blocks.Interfaces.RealInput w "Rotor speed (pu)" annotation (
-      Placement(transformation(extent={{-92,-10},{-72,10}}), iconTransformation(
-          extent={{-94,-4},{-60,34}})));
-  Modelica.Blocks.Interfaces.RealOutput pm "Mechanical power (pu)" annotation (
-      Placement(transformation(extent={{70,2},{90,22}}), iconTransformation(
-          extent={{78,-8},{116,34}})));
+  Modelica.Blocks.Interfaces.RealInput w "Rotor speed (pu)" annotation (Placement(transformation(extent={{-92,-10},{-72,10}}), iconTransformation(extent={{-94,-4},{-60,34}})));
+  Modelica.Blocks.Interfaces.RealOutput pm "Mechanical power (pu)" annotation (Placement(transformation(extent={{70,2},{90,22}}), iconTransformation(extent={{78,-8},{116,34}})));
   parameter Real wref=1 "Speed reference (pu)";
   parameter Real pref "Active power reference (pu)";
   parameter Real R "Droop (pu)";
@@ -42,11 +38,8 @@ equation
   der(xg3) = ((1 - T4/T5)*(xg2 + T3*xg1/Tc) - xg3)/T5;
   pm = xg3 + (xg2 + T3*xg1/Tc)*T4/T5;
   annotation (
-    Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{
-            140,100}}), graphics),
-    Icon(coordinateSystem(extent={{-100,-100},{140,100}}, preserveAspectRatio=
-            false), graphics={Rectangle(extent={{-58,74},{80,-50}}, lineColor={
-          0,0,255}),Text(
+    Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{140,100}}), graphics),
+    Icon(coordinateSystem(extent={{-100,-100},{140,100}}, preserveAspectRatio=false), graphics={Rectangle(extent={{-58,74},{80,-50}}, lineColor={0,0,255}),Text(
           extent={{-74,38},{-12,0}},
           lineColor={0,0,255},
           textString="w"),Text(

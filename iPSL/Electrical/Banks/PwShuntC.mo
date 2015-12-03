@@ -1,10 +1,8 @@
 within iPSL.Electrical.Banks;
 model PwShuntC "Shunt capacitor"
-  iPSL.Connectors.PwPin p annotation (Placement(transformation(extent={{-8,44},
-            {12,64}}), iconTransformation(extent={{-10,42},{10,62}})));
+  iPSL.Connectors.PwPin p annotation (Placement(transformation(extent={{-8,44},{12,64}}), iconTransformation(extent={{-10,42},{10,62}})));
   constant Real pi=Modelica.Constants.pi;
-  parameter Real Qnom
-    "Reactive power produced by the shunt capacitor under 1 p.u voltage, Mvar";
+  parameter Real Qnom "Reactive power produced by the shunt capacitor under 1 p.u voltage, Mvar";
   parameter Real Vbase "Base voltage of the bus, kV";
   parameter Real fn=50 "Frequency rating, Hz";
   Real Zbase;
@@ -23,10 +21,8 @@ equation
   anglei = anglev + pi/2;
   i = v*2*pi*fn*C "I=U/Z";
   annotation (
-    Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{
-            100,100}}), graphics),
-    Icon(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,
-            100}}), graphics={Line(
+    Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,100}}), graphics),
+    Icon(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,100}}), graphics={Line(
           points={{0,42},{0,20}},
           color={0,0,255},
           smooth=Smooth.None,
@@ -38,8 +34,7 @@ equation
           points={{-30,0},{34,0}},
           color={0,0,255},
           smooth=Smooth.None,
-          thickness=0.5),Rectangle(extent={{-40,42},{42,-24}}, lineColor={0,0,
-          255})}),
+          thickness=0.5),Rectangle(extent={{-40,42},{42,-24}}, lineColor={0,0,255})}),
     Documentation(info="<html>
 <p><br><span style=\"font-family: MS Shell Dlg 2;\">&LT;iPSL: iTesla Power System Library&GT;</span></p>
 <p><span style=\"font-family: MS Shell Dlg 2;\">Copyright 2015 RTE (France), AIA (Spain), KTH (Sweden) and DTU (Denmark)</span></p>

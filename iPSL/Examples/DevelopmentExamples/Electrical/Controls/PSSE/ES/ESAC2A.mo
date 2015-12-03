@@ -68,33 +68,26 @@ model ESAC2A "SMIB model example of GENROU with Excitation System ESAC2A"
     V_0=0.991992,
     d_P=5*0.01,
     d_t=0.1,
-    t1=2 - 0.005)
-    annotation (Placement(transformation(extent={{-6,-16},{-26,6}})));
+    t1=2 - 0.005) annotation (Placement(transformation(extent={{-6,-16},{-26,6}})));
   iPSL.Electrical.Events.PwFault pwFault(
     R=0,
     X=-2e-9,
     t1=10 - 0.005,
-    t2=10.15 - 0.005)
-    annotation (Placement(transformation(extent={{34,-16},{48,-2}})));
-  Modelica.Blocks.Sources.Constant const(k=0) annotation (Placement(
-        transformation(
+    t2=10.15 - 0.005) annotation (Placement(transformation(extent={{34,-16},{48,-2}})));
+  Modelica.Blocks.Sources.Constant const(k=0) annotation (Placement(transformation(
         extent={{-4,-4},{4,4}},
         rotation=180,
         origin={-12,-18})));
-  Modelica.Blocks.Sources.Constant const2(k=0)
-    annotation (Placement(transformation(extent={{-110,166},{-94,182}})));
-  Modelica.Blocks.Sources.Constant const4(k=1000) annotation (Placement(
-        transformation(
+  Modelica.Blocks.Sources.Constant const2(k=0) annotation (Placement(transformation(extent={{-110,166},{-94,182}})));
+  Modelica.Blocks.Sources.Constant const4(k=1000) annotation (Placement(transformation(
         extent={{-5,-5},{5,5}},
         rotation=180,
         origin={-11,-33})));
-  Modelica.Blocks.Sources.Constant const5(k=-1000) annotation (Placement(
-        transformation(
+  Modelica.Blocks.Sources.Constant const5(k=-1000) annotation (Placement(transformation(
         extent={{-5,-5},{5,5}},
         rotation=180,
         origin={-11,-49})));
-  iPSL.Electrical.Controls.PSSE.ES.ESAC2A.ESAC2A eSAC2A
-    annotation (Placement(transformation(extent={{-44,-58},{-114,-12}})));
+  iPSL.Electrical.Controls.PSSE.ES.ESAC2A.ESAC2A eSAC2A annotation (Placement(transformation(extent={{-44,-58},{-114,-12}})));
 equation
   connect(generator.p, pwLine.p) annotation (Line(
       points={{-48.6,13},{-50.6,13},{-50.6,12},{-37,12}},
@@ -142,7 +135,6 @@ equation
       smooth=Smooth.None));
   connect(eSAC2A.VOEL, const4.y) annotation (Line(
       points={{-41.375,-33.9267},{-28.6875,-33.9267},{-28.6875,-33},{-16.5,-33}},
-
       color={0,0,127},
       smooth=Smooth.None));
   connect(const5.y, eSAC2A.VUEL) annotation (Line(
@@ -155,15 +147,13 @@ equation
       smooth=Smooth.None));
   connect(generator.PMECH0, generator.PMECH) annotation (Line(
       points={{-48.88,8.5},{-44,8.5},{-44,32},{-80,32},{-80,20.5},{-77.72,20.5}},
-
       color={0,0,127},
       smooth=Smooth.None));
   connect(eSAC2A.EFD, generator.EFD) annotation (Line(
       points={{-115.75,-35.3067},{-120,-35.3067},{-120,5.5},{-77.72,5.5}},
       color={0,0,127},
       smooth=Smooth.None));
-  annotation (Diagram(coordinateSystem(preserveAspectRatio=true, extent={{-100,
-            -100},{100,100}}), graphics), Documentation(info="<html>
+  annotation (Diagram(coordinateSystem(preserveAspectRatio=true, extent={{-100,-100},{100,100}}), graphics), Documentation(info="<html>
 <p><br><span style=\"font-family: MS Shell Dlg 2;\">&LT;iPSL: iTesla Power System Library&GT;</span></p>
 <p><span style=\"font-family: MS Shell Dlg 2;\">Copyright 2015 RTE (France), AIA (Spain), KTH (Sweden) and DTU (Denmark)</span></p>
 <ul>

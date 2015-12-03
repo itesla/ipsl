@@ -28,8 +28,7 @@ model PwExtIntParameters "Transformation of external parameters to internal para
   parameter Real mD0Pu_=xDPu_ - lStatIn_;
   parameter Real wtx=omega0_*tX_;
   parameter Real Ad=(xDPu_*B2d - lStatIn_*B1d)/mD0Pu_;
-  parameter Real Bd=if tX_ > 0 then (xDPu_*C2d - lStatIn_*C1d)/mD0Pu_ else C2d
-       - C1d*lStatIn_/xDPu_;
+  parameter Real Bd=if tX_ > 0 then (xDPu_*C2d - lStatIn_*C1d)/mD0Pu_ else C2d - C1d*lStatIn_/xDPu_;
   parameter Real Cd=xDPu_*(B1d - B2d)/mD0Pu_*mD0Pu_;
   parameter Real Dd=(C1d - C2d)/(B1d - B2d);
   parameter Real denom1=(Dd*Ad - Dd*Dd - Bd)*Cd;
@@ -59,20 +58,16 @@ model PwExtIntParameters "Transformation of external parameters to internal para
   parameter Real err2d=abs(arf - rf2d);
   parameter Real Vd=if err1d < err2d then V1d else V2d;
   parameter Real Ud=if err1d < err2d then U1d else U2d;
-  parameter Real Ed=if tX_ > 0 then Cd*rf - 1 elseif err1d < err2d then E1d
-       else E2d;
-  parameter Real rf=if tX_ > 0 then (Ad*Dd + wtx*wtx - 2*wtx*Dd - Bd)/denom1
-       elseif err1d < err2d then rf1d else rf2d;
+  parameter Real Ed=if tX_ > 0 then Cd*rf - 1 elseif err1d < err2d then E1d else E2d;
+  parameter Real rf=if tX_ > 0 then (Ad*Dd + wtx*wtx - 2*wtx*Dd - Bd)/denom1 elseif err1d < err2d then rf1d else rf2d;
   parameter Real Fd=(B2d + Pd/Qd)/xd - Ed;
   parameter Real rD=if tX_ > 0 then rf/Ed else 1/Fd;
   parameter Real lD=if tX_ > 0 then wtx*rD else Ud*rD;
   parameter Real lf=if tX_ > 0 then rf*(Dd*Cd*rf - wtx)/Ed else Vd*rf;
-  parameter Real mrc=if tX_ > 0 then (Bd*Ed - wtx*Dd*Cd*rf + wtx*wtx)/denom2
-       else 0;
+  parameter Real mrc=if tX_ > 0 then (Bd*Ed - wtx*Dd*Cd*rf + wtx*wtx)/denom2 else 0;
   //axe q
   parameter Real tpq=xpQPu_*tpQO_/xQPu_;
-  parameter Real tppq=if IENR == 4 then xppQPu_*tppQO_/xpQPu_ else xppQPu_*
-      tppQO_/xQPu_;
+  parameter Real tppq=if IENR == 4 then xppQPu_*tppQO_/xpQPu_ else xppQPu_*tppQO_/xQPu_;
   parameter Real B1q=(tpQO_ + tppQO_)*omega0_;
   parameter Real B2q=(tpq + tppq)*omega0_;
   parameter Real C1q=tpQO_*tppQO_*omega0_*omega0_;
@@ -98,21 +93,18 @@ model PwExtIntParameters "Transformation of external parameters to internal para
   parameter Real E2q=if IENR == 4 then (C1q - Z2q/xq)/denom10 else 1;
   parameter Real rf1q=1/E1q;
   parameter Real rf2q=1/E2q;
-  parameter Real alfq=if IENR == 4 then (tpq*mQ0Pu_ - tpQO_*xq)/(tpQO_ - tpq)
-       else 0;
+  parameter Real alfq=if IENR == 4 then (tpq*mQ0Pu_ - tpQO_*xq)/(tpQO_ - tpq) else 0;
   parameter Real arfq=if IENR == 4 then (mQ0Pu_ + alfq)/(tpQO_*omega0_) else 0;
   parameter Real err1q=abs(arfq - rf1q);
   parameter Real err2q=abs(arfq - rf2q);
   parameter Real Vq=if err1q < err2q then V1q else V2q;
   parameter Real Uq=if err1q < err2q then U1q else U2q;
   parameter Real Eq=if err1q < err2q then E1q else E2q;
-  parameter Real rQ1=if IENR == 4 then if err1q < err2q then rf1q else rf2q
-       else (mQ0Pu_ + lQ1)/(omega0_*tppQO_);
+  parameter Real rQ1=if IENR == 4 then if err1q < err2q then rf1q else rf2q else (mQ0Pu_ + lQ1)/(omega0_*tppQO_);
   parameter Real Fq=(B2q + Pq/Qq)/xq - Eq;
   parameter Real rQ2=if IENR == 4 then 1/Fq else 0;
   parameter Real lQ2=if IENR == 4 then Uq*rQ2 else 100000000;
-  parameter Real lQ1=if IENR == 4 then Vq*rQ1 else (tppq*mQ0Pu_ - tppQO_*Y)/(
-      tppQO_ - tppq);
+  parameter Real lQ1=if IENR == 4 then Vq*rQ1 else (tppq*mQ0Pu_ - tppQO_*Y)/(tppQO_ - tppq);
   parameter Real lq=lStatIn_;
   parameter Real Y=mQ0Pu_*lq/xQPu_;
   annotation (Documentation(info="<html>

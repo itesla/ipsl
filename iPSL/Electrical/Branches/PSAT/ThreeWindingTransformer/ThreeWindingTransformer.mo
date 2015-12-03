@@ -2,40 +2,23 @@ within iPSL.Electrical.Branches.PSAT.ThreeWindingTransformer;
 
 
 model ThreeWindingTransformer
-  iPSL.Connectors.PwPin b1
-    annotation (Placement(transformation(extent={{-120,-10},{-100,10}})));
-  iPSL.Connectors.PwPin b2
-    annotation (Placement(transformation(extent={{100,20},{120,40}})));
-  iPSL.Connectors.PwPin b3
-    annotation (Placement(transformation(extent={{100,-40},{120,-20}})));
-  parameter Real Sb=100 "System base power (MVA)"
-    annotation (Dialog(group="Power flow data"));
-  parameter Real Sn=100 "Power rating (MVA)"
-    annotation (Dialog(group="Power flow data"));
-  parameter Real Vbus=400000 "Sending end bus voltage (V)"
-    annotation (Dialog(group="Power flow data"));
-  parameter Real Vn1=400000 "Voltage rating of the first winding (V)"
-    annotation (Dialog(group="Power flow data"));
-  parameter Real Vn2=100000 "Voltage rating of the second winding (V)"
-    annotation (Dialog(group="Power flow data"));
-  parameter Real Vn3=40000 "Voltage rating of the third winding (V)"
-    annotation (Dialog(group="Power flow data"));
-  parameter Real fn=50 "Frequency rating (Hz)"
-    annotation (Dialog(group="Power flow data"));
-  parameter Real R12=0.01 "Resistance of the branch 1-2 (pu)"
-    annotation (Dialog(group="Transformer data"));
-  parameter Real R13=0.01 "Resistance of the branch 1-3 (pu)"
-    annotation (Dialog(group="Transformer data"));
-  parameter Real R23=0.01 "Resistance of the branch 2-3 (pu)"
-    annotation (Dialog(group="Transformer data"));
-  parameter Real X12=0.1 "Reactance of the branch 1-2 (pu)"
-    annotation (Dialog(group="Transformer data"));
-  parameter Real X13=0.1 "Reactance of the branch 1-3 (pu)"
-    annotation (Dialog(group="Transformer data"));
-  parameter Real X23=0.1 "Reactance of the branch 2-3 (pu)"
-    annotation (Dialog(group="Transformer data"));
-  parameter Real m=0.98 "Fixed tap ratio"
-    annotation (Dialog(group="Transformer data"));
+  iPSL.Connectors.PwPin b1 annotation (Placement(transformation(extent={{-120,-10},{-100,10}})));
+  iPSL.Connectors.PwPin b2 annotation (Placement(transformation(extent={{100,20},{120,40}})));
+  iPSL.Connectors.PwPin b3 annotation (Placement(transformation(extent={{100,-40},{120,-20}})));
+  parameter Real Sb=100 "System base power (MVA)" annotation (Dialog(group="Power flow data"));
+  parameter Real Sn=100 "Power rating (MVA)" annotation (Dialog(group="Power flow data"));
+  parameter Real Vbus=400000 "Sending end bus voltage (V)" annotation (Dialog(group="Power flow data"));
+  parameter Real Vn1=400000 "Voltage rating of the first winding (V)" annotation (Dialog(group="Power flow data"));
+  parameter Real Vn2=100000 "Voltage rating of the second winding (V)" annotation (Dialog(group="Power flow data"));
+  parameter Real Vn3=40000 "Voltage rating of the third winding (V)" annotation (Dialog(group="Power flow data"));
+  parameter Real fn=50 "Frequency rating (Hz)" annotation (Dialog(group="Power flow data"));
+  parameter Real R12=0.01 "Resistance of the branch 1-2 (pu)" annotation (Dialog(group="Transformer data"));
+  parameter Real R13=0.01 "Resistance of the branch 1-3 (pu)" annotation (Dialog(group="Transformer data"));
+  parameter Real R23=0.01 "Resistance of the branch 2-3 (pu)" annotation (Dialog(group="Transformer data"));
+  parameter Real X12=0.1 "Reactance of the branch 1-2 (pu)" annotation (Dialog(group="Transformer data"));
+  parameter Real X13=0.1 "Reactance of the branch 1-3 (pu)" annotation (Dialog(group="Transformer data"));
+  parameter Real X23=0.1 "Reactance of the branch 2-3 (pu)" annotation (Dialog(group="Transformer data"));
+  parameter Real m=0.98 "Fixed tap ratio" annotation (Dialog(group="Transformer data"));
   Real v1;
   Real v2;
   Real v3;
@@ -118,12 +101,9 @@ equation
       color={0,0,255},
       smooth=Smooth.None));
   annotation (
-    Diagram(coordinateSystem(preserveAspectRatio=true, extent={{-100,-100},{100,
-            100}}), graphics),
-    Icon(coordinateSystem(preserveAspectRatio=true, extent={{-100,-100},{100,
-            100}}), graphics={Ellipse(extent={{-52,34},{12,-28}}, lineColor={0,
-          0,255}),Ellipse(extent={{-4,64},{60,2}}, lineColor={0,0,255}),Ellipse(
-          extent={{-2,16},{62,-46}}, lineColor={0,0,255}),Line(
+    Diagram(coordinateSystem(preserveAspectRatio=true, extent={{-100,-100},{100,100}}), graphics),
+    Icon(coordinateSystem(preserveAspectRatio=true, extent={{-100,-100},{100,100}}), graphics={Ellipse(extent={{-52,34},{12,-28}}, lineColor={0,0,255}),Ellipse(extent={{-4,64},{60,2}}, lineColor={0,0,
+          255}),Ellipse(extent={{-2,16},{62,-46}}, lineColor={0,0,255}),Line(
           points={{-54,-22},{10,42},{10,42}},
           color={0,0,255},
           smooth=Smooth.None),Line(
