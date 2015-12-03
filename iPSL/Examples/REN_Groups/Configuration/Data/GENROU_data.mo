@@ -19,11 +19,14 @@ record GENROU_data
   parameter Real J13=0.42;
   // paremeter Real gentype = 1;
   annotation (
-    Icon(graphics={Rectangle(extent={{-40,40},{40,-40}}, lineColor={0,0,255}),Text(
+    Icon(graphics={
+        Rectangle(extent={{-40,40},{40,-40}}, lineColor={0,0,255}),
+        Text(
           extent={{-32,14},{32,-10}},
           lineColor={0,0,255},
           textStyle={TextStyle.Bold},
-          textString="|x|"),Text(
+          textString="|x|"),
+        Text(
           extent={{-58,4},{-46,-4}},
           lineColor={255,255,255},
           textString="p1")}),

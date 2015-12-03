@@ -23,10 +23,13 @@ equation
   end if;
   annotation (
     Diagram(coordinateSystem(preserveAspectRatio=true, extent={{-100,-100},{100,100}}), graphics),
-    Icon(coordinateSystem(preserveAspectRatio=true, extent={{-100,-100},{100,100}}), graphics={Rectangle(extent={{-28,42},{40,-20}}, lineColor={0,0,255}),Text(
+    Icon(coordinateSystem(preserveAspectRatio=true, extent={{-100,-100},{100,100}}), graphics={
+        Rectangle(extent={{-28,42},{40,-20}}, lineColor={0,0,255}),
+        Text(
           extent={{-20,46},{38,10}},
           lineColor={0,0,255},
-          textString="HVRCL "),Line(
+          textString="HVRCL "),
+        Line(
           points={{30,14},{8,14},{-14,-12},{-14,-12}},
           color={0,0,255},
           thickness=0.5,

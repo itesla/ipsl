@@ -12,11 +12,14 @@ record GROUP1
   replaceable record INI_GEN_N44 = iPSL.Examples.REN_Groups.Configuration.Data.INI_GENROU_data annotation (choicesAllMatching);
   INI_GEN_N44 ini_gen;
   annotation (
-    Icon(graphics={Rectangle(extent={{-40,40},{40,-40}}, lineColor={0,0,255}),Text(
+    Icon(graphics={
+        Rectangle(extent={{-40,40},{40,-40}}, lineColor={0,0,255}),
+        Text(
           extent={{-32,14},{32,-10}},
           lineColor={0,0,255},
           textStyle={TextStyle.Bold},
-          textString="|x|"),Text(
+          textString="|x|"),
+        Text(
           extent={{-58,4},{-46,-4}},
           lineColor={255,255,255},
           textString="p1")}),

@@ -118,31 +118,41 @@ equation
           extent={{24,0},{38,-16}},
           lineColor={255,0,0},
           textString="VERR")}),
-    Icon(coordinateSystem(extent={{-120,-200},{300,100}}, preserveAspectRatio=true), graphics={Text(
+    Icon(coordinateSystem(extent={{-120,-200},{300,100}}, preserveAspectRatio=true), graphics={
+        Text(
           extent={{28,-18},{188,-60}},
           lineColor={0,0,255},
-          textString="EXST1"),Rectangle(extent={{-100,82},{280,-160}}, lineColor={0,0,255}),Text(
+          textString="EXST1"),
+        Rectangle(extent={{-100,82},{280,-160}}, lineColor={0,0,255}),
+        Text(
           extent={{-90,100},{-30,38}},
           lineColor={0,0,255},
-          textString="ECOMP"),Text(
+          textString="ECOMP"),
+        Text(
           extent={{-88,24},{-28,-40}},
           lineColor={0,0,255},
-          textString="XADIFD"),Text(
+          textString="XADIFD"),
+        Text(
           extent={{-44,-124},{18,-146}},
           lineColor={0,0,255},
-          textString="EFD0"),Text(
+          textString="EFD0"),
+        Text(
           extent={{-90,46},{-32,20}},
           lineColor={0,0,255},
-          textString="ETERM"),Text(
+          textString="ETERM"),
+        Text(
           extent={{-92,-18},{-26,-82}},
           lineColor={0,0,255},
-          textString="VOTHSG"),Text(
+          textString="VOTHSG"),
+        Text(
           extent={{-94,-52},{-48,-116}},
           lineColor={0,0,255},
-          textString="VOEL"),Text(
+          textString="VOEL"),
+        Text(
           extent={{-94,-94},{-46,-156}},
           lineColor={0,0,255},
-          textString="VUEL"),Text(
+          textString="VUEL"),
+        Text(
           extent={{238,-10},{274,-74}},
           lineColor={0,0,255},
           textString="EFD")}),

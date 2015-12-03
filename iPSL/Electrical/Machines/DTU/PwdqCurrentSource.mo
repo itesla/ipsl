@@ -17,26 +17,32 @@ equation
   n.ii = id_ref*sin(phi_meas) + iq_ref*cos(phi_meas);
   annotation (
     Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,100}}), graphics),
-    Icon(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,100}}), graphics={Rectangle(extent={{-60,60},{60,-60}}, lineColor={0,0,255}),Ellipse(
+    Icon(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,100}}), graphics={
+        Rectangle(extent={{-60,60},{60,-60}}, lineColor={0,0,255}),
+        Ellipse(
           extent={{-22,22},{22,-20}},
           lineColor={0,0,255},
-          lineThickness=0.5),Polygon(
+          lineThickness=0.5),
+        Polygon(
           points={{0,22},{-2,16},{2,16},{0,22}},
           lineColor={0,0,255},
           lineThickness=0.5,
           smooth=Smooth.None,
           fillPattern=FillPattern.Solid,
-          fillColor={0,0,255}),Line(
+          fillColor={0,0,255}),
+        Line(
           points={{0,38},{0,-42}},
           color={0,0,255},
           thickness=0.5,
-          smooth=Smooth.None),Text(
+          smooth=Smooth.None),
+        Text(
           extent={{-56,48},{-36,32}},
           lineColor={0,0,255},
           lineThickness=1,
           fillColor={0,0,255},
           fillPattern=FillPattern.Solid,
-          textString="Id_ref"),Text(
+          textString="Id_ref"),
+        Text(
           extent={{-56,-32},{-36,-48}},
           lineColor={0,0,255},
           lineThickness=1,

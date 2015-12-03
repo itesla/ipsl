@@ -22,26 +22,39 @@ equation
   R*(p.ir - G*p.vr + B*p.vi) - X*(p.ii - B*p.vr - G*p.vi) = p.vr - n.vr;
   R*(p.ii - B*p.vr - G*p.vi) + X*(p.ir - G*p.vr + B*p.vi) = p.vi - n.vi;
   annotation (
-    Icon(graphics={Rectangle(extent={{-60,40},{60,-42}}, lineColor={0,0,255}),Rectangle(
+    Icon(graphics={
+        Rectangle(extent={{-60,40},{60,-42}}, lineColor={0,0,255}),
+        Rectangle(
           extent={{-40,10},{40,-10}},
           lineColor={0,0,255},
           fillColor={95,95,95},
-          fillPattern=FillPattern.Solid),Text(
+          fillPattern=FillPattern.Solid),
+        Text(
           extent={{-106,82},{-18,36}},
           lineColor={238,46,47},
-          textString=DynamicSelect("0.0", String(P12, significantDigits=2))),Text(
+          textString=DynamicSelect("0.0", String(P12, significantDigits=2))),
+        Text(
           extent={{24,82},{112,36}},
           lineColor={238,46,47},
-          textString=DynamicSelect("0.0", String(P21, significantDigits=2))),Text(
+          textString=DynamicSelect("0.0", String(P21, significantDigits=2))),
+        Text(
           extent={{20,-54},{108,-100}},
           lineColor={0,255,0},
-          textString=DynamicSelect("0.0", String(Q21, significantDigits=2))),Text(
+          textString=DynamicSelect("0.0", String(Q21, significantDigits=2))),
+        Text(
           extent={{-108,-54},{-20,-100}},
           lineColor={0,255,0},
-          textString=DynamicSelect("0.0", String(Q12, significantDigits=2))),Line(points={{-86,86},{-38,86},{-46,92}}, color={0,0,0}),Line(points={{-38,86},{-46,80}}, color={0,0,0}),Line(points={{42,
-          86},{90,86},{82,92}}, color={0,0,0}),Line(points={{90,86},{82,80}}, color={0,0,0}),Line(points={{-88,-54},{-40,-54},{-48,-48}}, color={0,0,0}),Line(points={{-80,-48},{-80,-60}}, color={0,0,
-          0}),Line(points={{-40,-54},{-48,-60}}, color={0,0,0}),Line(points={{48,-48},{48,-60}}, color={0,0,0}),Line(points={{40,-54},{88,-54},{80,-48}}, color={0,0,0}),Line(points={{88,-54},{80,-60}},
-          color={0,0,0})}),
+          textString=DynamicSelect("0.0", String(Q12, significantDigits=2))),
+        Line(points={{-86,86},{-38,86},{-46,92}}, color={0,0,0}),
+        Line(points={{-38,86},{-46,80}}, color={0,0,0}),
+        Line(points={{42,86},{90,86},{82,92}}, color={0,0,0}),
+        Line(points={{90,86},{82,80}}, color={0,0,0}),
+        Line(points={{-88,-54},{-40,-54},{-48,-48}}, color={0,0,0}),
+        Line(points={{-80,-48},{-80,-60}}, color={0,0,0}),
+        Line(points={{-40,-54},{-48,-60}}, color={0,0,0}),
+        Line(points={{48,-48},{48,-60}}, color={0,0,0}),
+        Line(points={{40,-54},{88,-54},{80,-48}}, color={0,0,0}),
+        Line(points={{88,-54},{80,-60}}, color={0,0,0})}),
     Diagram(graphics),
     uses(Modelica(version="3.2.1")),
     Documentation(info="<html>

@@ -33,23 +33,29 @@ equation
 <p><span style=\"font-family: MS Shell Dlg 2;\">The iPSL is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU Lesser General Public License for more details.</span></p>
 <p><span style=\"font-family: MS Shell Dlg 2;\">You should have received a copy of the GNU Lesser General Public License along with the iPSL. If not, see &LT;http://www.gnu.org/licenses/&GT;.</span></p>
 </html>"),
-    Icon(graphics={Text(
+    Icon(graphics={
+        Text(
           extent={{-44,82},{76,22}},
           lineColor={0,0,255},
-          textString="1+sT"),Line(
+          textString="1+sT"),
+        Line(
           points={{-46,0},{82,0}},
           color={0,0,255},
           smooth=Smooth.Bezier,
-          thickness=0.5),Text(
+          thickness=0.5),
+        Text(
           extent={{-44,-20},{76,-80}},
           lineColor={0,0,255},
-          textString="1+sT"),Text(
+          textString="1+sT"),
+        Text(
           extent={{-100,28},{-40,-32}},
           lineColor={0,0,255},
-          textString="K"),Text(
+          textString="K"),
+        Text(
           extent={{62,44},{82,24}},
           lineColor={0,0,255},
-          textString="1"),Text(
+          textString="1"),
+        Text(
           extent={{64,-58},{84,-78}},
           lineColor={0,0,255},
           textString="2")}));

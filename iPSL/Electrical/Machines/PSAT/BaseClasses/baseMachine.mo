@@ -153,67 +153,80 @@ equation
     Icon(coordinateSystem(
         preserveAspectRatio=false,
         extent={{-100,-100},{100,100}},
-        grid={1,1}), graphics={Text(
+        grid={1,1}), graphics={
+        Text(
           origin={-81,50.5},
           fillPattern=FillPattern.Solid,
           extent={{-10,-10.5},{10,10.5}},
           fontName="Arial",
           textString="vf",
-          lineColor={28,108,200}),Text(
+          lineColor={28,108,200}),
+        Text(
           origin={-77.3761,-48},
           fillPattern=FillPattern.Solid,
           extent={{-9.6086,-11.4189},{9.6086,11.4189}},
           fontName="Arial",
           textString="pm",
-          lineColor={28,108,200}),Text(
+          lineColor={28,108,200}),
+        Text(
           origin={-80,90},
           fillPattern=FillPattern.Solid,
           extent={{-10,-10},{10,10}},
           fontName="Arial",
           textString="vf0",
-          lineColor={28,108,200}),Text(
+          lineColor={28,108,200}),
+        Text(
           origin={-80.6294,-89.5811},
           fillPattern=FillPattern.Solid,
           extent={{-15.3706,-13.4189},{15.3706,13.4189}},
           fontName="Arial",
           textString="pm0",
-          lineColor={28,108,200}),Text(
+          lineColor={28,108,200}),
+        Text(
           origin={80.5,60.6367},
           fillPattern=FillPattern.Solid,
           extent={{-23.5,-8.6367},{23.5,8.6367}},
           fontName="Arial",
           lineColor={28,108,200},
-          textString="delta"),Text(
+          textString="delta"),
+        Text(
           origin={90,90.5},
           fillPattern=FillPattern.Solid,
           extent={{-10,-10.5},{10,10.5}},
           textString="w",
           fontName="Arial",
-          lineColor={28,108,200}),Text(
+          lineColor={28,108,200}),
+        Text(
           origin={90,30},
           fillPattern=FillPattern.Solid,
           extent={{-10,-10},{10,10}},
           textString="v",
           fontName="Arial",
-          lineColor={28,108,200}),Rectangle(
+          lineColor={28,108,200}),
+        Rectangle(
           fillColor={255,255,255},
           extent={{-100,-100},{100,100}},
-          lineColor={28,108,200}),Ellipse(extent={{-40,40},{40,-40}}, lineColor={28,108,200}),Line(
+          lineColor={28,108,200}),
+        Ellipse(extent={{-40,40},{40,-40}}, lineColor={28,108,200}),
+        Line(
           points={{-20,0},{-9,15},{9,-15},{20,0}},
           color={28,108,200},
-          smooth=Smooth.Bezier),Text(
+          smooth=Smooth.Bezier),
+        Text(
           origin={4,-58.0978},
           fillPattern=FillPattern.Solid,
           extent={{-57.2101,-15.0},{57.2101,15.0}},
           textString="%name",
           fontName="Arial",
-          lineColor={28,108,200}),Text(
+          lineColor={28,108,200}),
+        Text(
           origin={90,-31},
           fillPattern=FillPattern.Solid,
           extent={{-10,-10},{10,10}},
           fontName="Arial",
           lineColor={28,108,200},
-          textString="P"),Text(
+          textString="P"),
+        Text(
           origin={90,-60},
           fillPattern=FillPattern.Solid,
           extent={{-10,-10},{10,10}},

@@ -59,10 +59,14 @@ equation
   connect(iEEEX1.VUEL, iEEEX1.VOTHSG) annotation (Line(points={{-57.8154,4.23333},{-64,4.23333},{-64,13.5667},{-57.8154,13.5667}}, color={0,0,127}));
   connect(iEEEX1.EFD, gENROU.EFD) annotation (Line(points={{-9.07692,4},{-9.07692,-14.5},{6.52,-14.5}}, color={0,0,127}));
   annotation (
-    Icon(graphics={Ellipse(extent={{-14,-42},{74,38}}, lineColor={0,0,255}),Line(
+    Icon(graphics={
+        Ellipse(extent={{-14,-42},{74,38}}, lineColor={0,0,255}),
+        Line(
           points={{-2,-12},{18,8},{38,-12},{58,8}},
           color={0,0,255},
-          smooth=Smooth.None),Ellipse(extent={{-100,-100},{101,100}}, lineColor={0,0,255}),Text(
+          smooth=Smooth.None),
+        Ellipse(extent={{-100,-100},{101,100}}, lineColor={0,0,255}),
+        Text(
           extent={{-91,6},{-22,-12}},
           lineColor={0,0,255},
           textStyle={TextStyle.Italic},

@@ -14,15 +14,20 @@ equation
   -Q = (-n.vr*n.ii) + n.vi*n.ir;
   P = n.vr*n.ir + n.vi*n.ii;
   annotation (
-    Icon(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,100}}), graphics={Rectangle(extent={{-40,40},{40,-40}}, lineColor={0,0,255}),Rectangle(extent={{-30,32},{30,-32}},
-          lineColor={0,0,255}),Rectangle(extent={{-20,20},{20,0}}, lineColor={0,0,255}),Text(
+    Icon(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,100}}), graphics={
+        Rectangle(extent={{-40,40},{40,-40}}, lineColor={0,0,255}),
+        Rectangle(extent={{-30,32},{30,-32}}, lineColor={0,0,255}),
+        Rectangle(extent={{-20,20},{20,0}}, lineColor={0,0,255}),
+        Text(
           extent={{-20,-12},{0,-28}},
           lineColor={0,0,255},
           textStyle={TextStyle.Bold},
-          textString="Q"),Line(
+          textString="Q"),
+        Line(
           points={{0,0},{10,10}},
           color={0,0,255},
-          smooth=Smooth.None),Text(
+          smooth=Smooth.None),
+        Text(
           extent={{-32,-12},{-12,-28}},
           lineColor={0,0,255},
           textStyle={TextStyle.Bold},

@@ -37,25 +37,31 @@ equation
   n = if in1 == 0 and in2 == 1 and in3 == 0 and in4 == 0 then p1 else p2;
   annotation (
     Diagram(coordinateSystem(preserveAspectRatio=true, extent={{-40,-40},{40,40}}), graphics),
-    Icon(coordinateSystem(preserveAspectRatio=true, extent={{-40,-40},{40,40}}), graphics={Rectangle(
+    Icon(coordinateSystem(preserveAspectRatio=true, extent={{-40,-40},{40,40}}), graphics={
+        Rectangle(
           extent={{-40,40},{40,-40}},
           lineColor={0,0,255},
           fillColor={255,255,255},
-          fillPattern=FillPattern.Solid),Line(
+          fillPattern=FillPattern.Solid),
+        Line(
           points={{-34,20},{-6,20}},
           color={0,0,255},
           smooth=Smooth.None,
-          thickness=0.5),Line(
+          thickness=0.5),
+        Line(
           points={{-34,-20},{-6,-20}},
           color={0,0,255},
           smooth=Smooth.None,
-          thickness=0.5),Ellipse(
+          thickness=0.5),
+        Ellipse(
           extent={{-6,23},{0,17}},
           lineColor={0,0,255},
-          lineThickness=0.5),Ellipse(
+          lineThickness=0.5),
+        Ellipse(
           extent={{-6,-17},{0,-23}},
           lineColor={0,0,255},
-          lineThickness=0.5),Line(
+          lineThickness=0.5),
+        Line(
           points={{0,16},{12,0},{40,0}},
           color={0,0,255},
           smooth=Smooth.None,

@@ -136,31 +136,36 @@ equation
   connect(Iperr.u2, lVACL.Ip_LVPL) annotation (Line(points={{-65,30.2},{-65,20},{46,20},{46,40},{48,40},{48,43.2},{58.28,43.2}}, color={0,0,127}));
   connect(const.y, variableLimiter.limit2) annotation (Line(points={{1,-10},{10,-10},{10,32},{18,32}}, color={0,0,127}));
   annotation (
-    Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,100}}), graphics={Text(
+    Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,100}}), graphics={
+        Text(
           extent={{-52,52},{-28,46}},
           lineColor={0,0,127},
           fillColor={0,0,255},
           fillPattern=FillPattern.Solid,
-          textString="RIp_LVPL"),Text(
+          textString="RIp_LVPL"),
+        Text(
           extent={{12,62},{36,56}},
           lineColor={0,0,127},
           fillColor={0,0,255},
           fillPattern=FillPattern.Solid,
-          textString="LVPL"),Text(
+          textString="LVPL"),
+        Text(
           extent={{-64,18},{-22,-34}},
           lineColor={0,0,255},
           textString="if Iperr.y<RIp_LVPL then
 Tipcmd.p1=Iperr.y;
 else
 Tipcmd.p1=RIp_LVPL;
-end if;"),Text(
+end if;"),
+        Text(
           extent={{0,16},{42,-36}},
           lineColor={0,0,255},
           textString="if Tipcmd.n1<LVPL then
 Ix=Tipcmd.n1;
 else
 Ix=LVPL;
-end if;"),Text(
+end if;"),
+        Text(
           extent={{-100,-92},{-2,-108}},
           lineColor={255,0,0},
           fontSize=16,

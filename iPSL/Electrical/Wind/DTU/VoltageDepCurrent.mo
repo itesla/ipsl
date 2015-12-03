@@ -12,20 +12,25 @@ equation
   iqv = if Uwtt < Uini - Udb1 then Kqv*(Uwtt - Uini + Udb1) elseif Uwtt > Uini + Udb2 then Kqv*(Uwtt - Uini - Udb2) else 0;
   annotation (
     Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,100}}), graphics),
-    Icon(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,100}}), graphics={Rectangle(
+    Icon(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,100}}), graphics={
+        Rectangle(
           extent={{-48,30},{48,-28}},
           lineColor={0,0,255},
-          lineThickness=0.5),Line(
+          lineThickness=0.5),
+        Line(
           points={{-10,20},{-10,-20}},
           color={0,0,255},
-          smooth=Smooth.None),Line(
+          smooth=Smooth.None),
+        Line(
           points={{-30,0},{10,0}},
           color={0,0,255},
-          smooth=Smooth.None),Line(
+          smooth=Smooth.None),
+        Line(
           points={{-26,-10},{-20,0},{0,0},{6,10}},
           color={0,0,255},
           thickness=0.5,
-          smooth=Smooth.None),Text(
+          smooth=Smooth.None),
+        Text(
           extent={{16,6},{34,-6}},
           lineColor={0,0,255},
           lineThickness=0.5,

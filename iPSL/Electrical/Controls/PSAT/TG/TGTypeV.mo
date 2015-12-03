@@ -197,30 +197,36 @@ equation
       color={0,0,127},
       smooth=Smooth.None));
   annotation (
-    Icon(coordinateSystem(extent={{-100,-80},{100,120}}, preserveAspectRatio=false), graphics={Rectangle(extent={{-100,120},{100,-80}}, lineColor={0,0,255}),Text(
+    Icon(coordinateSystem(extent={{-100,-80},{100,120}}, preserveAspectRatio=false), graphics={
+        Rectangle(extent={{-100,120},{100,-80}}, lineColor={0,0,255}),
+        Text(
           extent={{-32,44},{34,-4}},
           lineColor={0,0,255},
-          textString="TGTypeV"),Text(
+          textString="TGTypeV"),
+        Text(
           visible=true,
           origin={-82,9},
           fillPattern=FillPattern.Solid,
           extent={{-18,-13},{18,13}},
           textString="W",
-          fontName="Arial"),Text(
+          fontName="Arial"),
+        Text(
           visible=true,
           origin={80.0002,20},
           fillPattern=FillPattern.Solid,
           extent={{-18.0002,-14},{18.0002,14}},
           fontName="Arial",
           textString="Pm",
-          lineColor={0,0,0}),Text(
+          lineColor={0,0,0}),
+        Text(
           visible=true,
           origin={-78,76},
           fillPattern=FillPattern.Solid,
           extent={{-22,-14},{22,14}},
           fontName="Arial",
           textString="P0",
-          lineColor={0,0,0}),Text(
+          lineColor={0,0,0}),
+        Text(
           visible=true,
           origin={-74,-47},
           fillPattern=FillPattern.Solid,

@@ -204,105 +204,134 @@ equation
     Diagram(coordinateSystem(
         preserveAspectRatio=false,
         extent={{-100,-80},{180,80}},
-        grid={1,1}), graphics={Text(
+        grid={1,1}), graphics={
+        Text(
           extent={{-11.2,35.6},{-1.2,29.6}},
           lineColor={255,0,0},
-          textString="V"),Text(
+          textString="V"),
+        Text(
           extent={{-1.5,32.3},{-7.5,30.3}},
           lineColor={255,0,0},
-          textString="F"),Text(
+          textString="F"),
+        Text(
           extent={{80.3,28.3},{90.3,22.3}},
           lineColor={255,0,0},
-          textString="V"),Text(
+          textString="V"),
+        Text(
           extent={{90.3,24.3},{84.3,22.3}},
           lineColor={255,0,0},
-          textString="A"),Text(
+          textString="A"),
+        Text(
           extent={{-93.4,80.6},{-78.4,65.3}},
           lineColor={0,0,255},
-          textString="VOTHSG1"),Text(
+          textString="VOTHSG1"),
+        Text(
           extent={{-96.3,49.9},{-84.9,39.4}},
           lineColor={0,0,255},
-          textString="VUEL1"),Text(
+          textString="VUEL1"),
+        Text(
           extent={{-97.1,16.6},{-83.7,1.1}},
           lineColor={0,0,255},
-          textString="ECOMP"),Text(
+          textString="ECOMP"),
+        Text(
           extent={{-96.6,-10.1},{-81.6,-25.4}},
           lineColor={0,0,255},
-          textString="VOTHSG2"),Text(
+          textString="VOTHSG2"),
+        Text(
           extent={{-96.4,-33.8},{-85,-44.3}},
           lineColor={0,0,255},
-          textString="VUEL2"),Text(
+          textString="VUEL2"),
+        Text(
           extent={{-96.8,-54},{-85.4,-64.5}},
           lineColor={0,0,255},
-          textString="VUEL3"),Text(
+          textString="VUEL3"),
+        Text(
           extent={{25.2,-67.2},{38.6,-82.7}},
           lineColor={0,0,255},
           textString="EFD0")}),
     Icon(coordinateSystem(
         preserveAspectRatio=true,
         extent={{-100,-80},{180,80}},
-        grid={1,1}), graphics={Rectangle(extent={{-72,78},{148,-80}}, lineColor={0,0,255}),Text(
+        grid={1,1}), graphics={
+        Rectangle(extent={{-72,78},{148,-80}}, lineColor={0,0,255}),
+        Text(
           extent={{98,-68},{120,-78}},
           lineColor={0,0,255},
-          textString="IFD"),Text(
+          textString="IFD"),
+        Text(
           extent={{-78,14},{-36,-14}},
           lineColor={0,0,255},
-          textString="Ec"),Text(
+          textString="Ec"),
+        Text(
           extent={{2,78},{38,50}},
           lineColor={0,128,0},
           textString="VOTHSG
-(VOS=1)"),Text(
+(VOS=1)"),
+        Text(
           extent={{26,-68},{58,-78}},
           lineColor={0,0,255},
-          textString="VOEL"),Text(
+          textString="VOEL"),
+        Text(
           extent={{116,8},{146,-8}},
           lineColor={0,0,255},
-          textString="EFD"),Text(
+          textString="EFD"),
+        Text(
           extent={{-16,36},{88,-26}},
           lineColor={0,0,255},
-          textString="ESST1A"),Text(
+          textString="ESST1A"),
+        Text(
           extent={{74,-68},{96,-78}},
           lineColor={0,0,255},
-          textString="VT"),Text(
+          textString="VT"),
+        Text(
           extent={{-42,-64},{-14,-78}},
           lineColor={0,128,0},
           textString="VUEL2
-(UEL=2)"),Text(
+(UEL=2)"),
+        Text(
           extent={{-72,-64},{-44,-78}},
           lineColor={0,128,0},
           textString="VUEL1
-(UEL=1)"),Text(
+(UEL=1)"),
+        Text(
           extent={{-10,-64},{18,-78}},
           lineColor={0,128,0},
           textString="VUEL3
-(UEL=3)"),Text(
+(UEL=3)"),
+        Text(
           extent={{-40,74},{-2,56}},
           lineColor={0,128,0},
           textString="VOTHSG2
-(VOS=2)"),Text(
+(VOS=2)"),
+        Text(
           extent={{124,-68},{146,-78}},
           lineColor={0,0,255},
-          textString="ILR"),Text(
+          textString="ILR"),
+        Text(
           extent={{-72,-4},{18,-94}},
           lineColor={0,128,0},
           fontName="Calibri",
           textStyle={TextStyle.Bold,TextStyle.Italic},
-          textString="Alternate UEL inputs"),Text(
+          textString="Alternate UEL inputs"),
+        Text(
           extent={{-42,88},{46,-8}},
           lineColor={0,128,0},
           fontName="Calibri",
           textStyle={TextStyle.Bold,TextStyle.Italic},
-          textString="Alternate stabilizer inputs"),Text(
+          textString="Alternate stabilizer inputs"),
+        Text(
           extent={{3,20},{-3,-20}},
           lineColor={0,128,0},
           textString="}",
           origin={2,49},
-          rotation=270),Text(
+          rotation=270),
+        Text(
           extent={{3,20},{-3,-20}},
           lineColor={0,128,0},
           textString="}",
           origin={-26,-59},
-          rotation=90),Text(
+          rotation=90),
+        Text(
           extent={{78.2,75.2},{110.2,65.2}},
           lineColor={0,0,255},
           textString="EFD0")}),

@@ -122,16 +122,21 @@ equation
         extent={{-100,-100},{100,100}},
         preserveAspectRatio=true,
         initialScale=0.1,
-        grid={1,1}), graphics={Ellipse(extent={{-14,-42},{74,38}}, lineColor={0,0,255}),Line(
+        grid={1,1}), graphics={
+        Ellipse(extent={{-14,-42},{74,38}}, lineColor={0,0,255}),
+        Line(
           points={{-2,-12},{18,8},{38,-12},{58,8}},
           color={0,0,255},
-          smooth=Smooth.None),Ellipse(extent={{-100,-100},{101,100}}, lineColor={0,0,255}),Text(
+          smooth=Smooth.None),
+        Ellipse(extent={{-100,-100},{101,100}}, lineColor={0,0,255}),
+        Text(
           extent={{-91,6},{-22,-12}},
           lineColor={0,0,255},
           textString="GENROU & 
 IEESGO & 
 STAB2A & 
-IEEET2",  textStyle={TextStyle.Italic})}),
+IEEET2",
+          textStyle={TextStyle.Italic})}),
     Documentation(info="<html>
 <p><br><span style=\"font-family: MS Shell Dlg 2;\">&LT;iPSL: iTesla Power System Library&GT;</span></p>
 <p><span style=\"font-family: MS Shell Dlg 2;\">Copyright 2015 RTE (France), AIA (Spain), KTH (Sweden) and DTU (Denmark)</span></p>

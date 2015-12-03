@@ -184,23 +184,23 @@ equation
       color={0,0,127},
       smooth=Smooth.None));
   connect(hV_Gate.n1, VUEL) annotation (Line(
-      points={{-18.1,2.52},{-24.05,2.52},{-24.05,79},{-135,79}},
+      points={{-23.625,7},{-24.05,7},{-24.05,79},{-135,79}},
       color={0,0,127},
       smooth=Smooth.None));
   connect(hV_Gate.n2, selectLogic.VERR) annotation (Line(
-      points={{-18.1,-3.64},{-36,-3.64},{-36,28},{256,28},{256,9.2}},
+      points={{-23.625,-7},{-36,-7},{-36,28},{256,28},{256,9.2}},
       color={0,0,127},
       smooth=Smooth.None));
   connect(hV_Gate.p, lV_Gate.n2) annotation (Line(
-      points={{-1.33,-0.7},{8.335,-0.7},{8.335,-0.9},{21.9,-0.9}},
+      points={{2.375,0},{8.335,0},{8.335,-4.5},{16.375,-4.5}},
       color={0,0,127},
       smooth=Smooth.None));
   connect(lV_Gate.p, VERR1.u2) annotation (Line(
-      points={{38.67,2.25},{42.335,2.25},{42.335,6},{50,6}},
+      points={{42.375,3},{42.335,3},{42.335,6},{50,6}},
       color={0,0,127},
       smooth=Smooth.None));
   connect(lV_Gate.n1, selectLogic.VOEL) annotation (Line(
-      points={{21.9,5.7},{21.9,100},{244,100},{244,9.2}},
+      points={{16.375,10.5},{16.375,100},{244,100},{244,9.2}},
       color={0,0,127},
       smooth=Smooth.None));
   connect(VERR1.y, imLimitedLeadLag.u) annotation (Line(points={{73,0},{85.5,0},{98,0}}, color={0,0,127}));
@@ -220,31 +220,41 @@ equation
   connect(EFD, simpleLagLimVar.y) annotation (Line(points={{470,0},{468,0},{435,0}}, color={0,0,127}));
   annotation (
     Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-160,-160},{160,160}})),
-    Icon(coordinateSystem(extent={{-160,-160},{160,160}}, preserveAspectRatio=false), graphics={Text(
+    Icon(coordinateSystem(extent={{-160,-160},{160,160}}, preserveAspectRatio=false), graphics={
+        Text(
           extent={{-56,22},{66,-22}},
           lineColor={0,0,255},
-          textString="ST5B"),Rectangle(extent={{-160,160},{160,-160}}, lineColor={0,0,255}),Text(
+          textString="ST5B"),
+        Rectangle(extent={{-160,160},{160,-160}}, lineColor={0,0,255}),
+        Text(
           extent={{-120,176},{-54,96}},
           lineColor={0,0,255},
-          textString="ECOMP"),Text(
+          textString="ECOMP"),
+        Text(
           extent={{-120,-10},{-42,-44}},
           lineColor={0,0,255},
-          textString="VOTHSG"),Text(
+          textString="VOTHSG"),
+        Text(
           extent={{-118,-34},{-58,-98}},
           lineColor={0,0,255},
-          textString="XADIFD"),Text(
+          textString="XADIFD"),
+        Text(
           extent={{-122,86},{-70,22}},
           lineColor={0,0,255},
-          textString="VUEL"),Text(
+          textString="VUEL"),
+        Text(
           extent={{-130,-98},{-66,-118}},
           lineColor={0,0,255},
-          textString="EFD0"),Text(
+          textString="EFD0"),
+        Text(
           extent={{-120,44},{-68,-18}},
           lineColor={0,0,255},
-          textString="VOEL"),Text(
+          textString="VOEL"),
+        Text(
           extent={{118,32},{156,-30}},
           lineColor={0,0,255},
-          textString="EFD"),Text(
+          textString="EFD"),
+        Text(
           extent={{-118,126},{-68,62}},
           lineColor={0,0,255},
           textString="VREF")}),

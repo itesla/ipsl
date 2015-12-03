@@ -262,34 +262,43 @@ equation
   connect(simpleLagLimBlock.Block, imRelay1.u1) annotation (Line(points={{174,16},{136,16},{136,-4},{2,-4},{2,42.75},{28.75,42.75}}, color={0,0,127}));
   connect(division.y, simpleLagLimBlock.u) annotation (Line(points={{108.7,7},{140.35,7},{140.35,8},{174,8}}, color={0,0,127}));
   annotation (
-    Icon(coordinateSystem(extent={{-100,-100},{260,80}}, preserveAspectRatio=false), graphics={Rectangle(
+    Icon(coordinateSystem(extent={{-100,-100},{260,80}}, preserveAspectRatio=false), graphics={
+        Rectangle(
           extent={{-80,40},{120,-40}},
           lineColor={0,0,255},
-          lineThickness=0.5),Text(
+          lineThickness=0.5),
+        Text(
           extent={{-25,26},{52,-22}},
           lineColor={0,0,255},
           lineThickness=0.5,
           fillPattern=FillPattern.Solid,
           textString="Type 4B
-Q Control"),Text(
+Q Control"),
+        Text(
           extent={{-74,36},{-54,30}},
           lineColor={0,0,255},
-          textString="Qwtt"),Text(
+          textString="Qwtt"),
+        Text(
           extent={{-74,22},{-54,16}},
           lineColor={0,0,255},
-          textString="Uref"),Text(
+          textString="Uref"),
+        Text(
           extent={{-74,3},{-54,-3}},
           lineColor={0,0,255},
-          textString="Qref"),Text(
+          textString="Qref"),
+        Text(
           extent={{-74,-17},{-54,-23}},
           lineColor={0,0,255},
-          textString="Pwtt"),Text(
+          textString="Pwtt"),
+        Text(
           extent={{-74,-32},{-54,-38}},
           lineColor={0,0,255},
-          textString="Uwtt"),Text(
+          textString="Uwtt"),
+        Text(
           extent={{96,22},{116,16}},
           lineColor={0,0,255},
-          textString="LVRT"),Text(
+          textString="LVRT"),
+        Text(
           extent={{96,-16},{116,-22}},
           lineColor={0,0,255},
           textString="iQcmd")}),

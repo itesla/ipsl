@@ -59,31 +59,39 @@ equation
         preserveAspectRatio=false,
         extent={{-55,-60},{55,55}},
         initialScale=0.1,
-        grid={2,2}), graphics={Rectangle(
+        grid={2,2}), graphics={
+        Rectangle(
           extent={{-40,40},{26,-40}},
           lineColor={0,0,255},
-          lineThickness=0.5),Text(
+          lineThickness=0.5),
+        Text(
           extent={{-18,8},{8,-8}},
           lineColor={0,0,255},
           lineThickness=0.5,
           fillPattern=FillPattern.Solid,
           textString="Type 4
-Gen Set"),Text(
+Gen Set"),
+        Text(
           extent={{-38,36},{-26,30}},
           lineColor={0,0,255},
-          textString="i_Pmax"),Text(
+          textString="i_Pmax"),
+        Text(
           extent={{-38,18},{-26,12}},
           lineColor={0,0,255},
-          textString="i_Pcmd"),Text(
+          textString="i_Pcmd"),
+        Text(
           extent={{-38,-10},{-26,-16}},
           lineColor={0,0,255},
-          textString="i_Qcmd"),Text(
+          textString="i_Qcmd"),
+        Text(
           extent={{-38,-32},{-26,-38}},
           lineColor={0,0,255},
-          textString="i_Qmax"),Text(
+          textString="i_Qmax"),
+        Text(
           extent={{11,24},{23,18}},
           lineColor={0,0,255},
-          textString="i_Pref"),Text(
+          textString="i_Pref"),
+        Text(
           extent={{10,-17},{22,-23}},
           lineColor={0,0,255},
           textString="i_Qref")}),

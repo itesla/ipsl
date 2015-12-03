@@ -200,16 +200,20 @@ equation
   connect(const.y, add1.u1) annotation (Line(points={{12.6,84},{26,84},{40,84},{40,67.6},{44.8,67.6}}, color={0,0,127}));
   connect(const1.y, add.u1) annotation (Line(points={{-147.4,66},{-141.2,66},{-141.2,65.6}}, color={0,0,127}));
   annotation (
-    Icon(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,100}}), graphics={Rectangle(extent={{-100,100},{100,-100}}, lineColor={0,0,255}),Text(
+    Icon(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,100}}), graphics={
+        Rectangle(extent={{-100,100},{100,-100}}, lineColor={0,0,255}),
+        Text(
           extent={{-44,38},{34,-30}},
           lineColor={0,0,255},
-          textString="TGTypeIII"),Text(
+          textString="TGTypeIII"),
+        Text(
           visible=true,
           origin={-71,-1},
           fillPattern=FillPattern.Solid,
           extent={{-19,-11},{19,11}},
           textString="W",
-          fontName="Arial"),Text(
+          fontName="Arial"),
+        Text(
           visible=true,
           origin={83.0002,5},
           fillPattern=FillPattern.Solid,

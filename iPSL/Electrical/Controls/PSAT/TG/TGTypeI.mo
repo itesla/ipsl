@@ -39,14 +39,19 @@ equation
   pm = xg3 + (xg2 + T3*xg1/Tc)*T4/T5;
   annotation (
     Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{140,100}}), graphics),
-    Icon(coordinateSystem(extent={{-100,-100},{140,100}}, preserveAspectRatio=false), graphics={Rectangle(extent={{-58,74},{80,-50}}, lineColor={0,0,255}),Text(
+    Icon(coordinateSystem(extent={{-100,-100},{140,100}}, preserveAspectRatio=false), graphics={
+        Rectangle(extent={{-58,74},{80,-50}}, lineColor={0,0,255}),
+        Text(
           extent={{-74,38},{-12,0}},
           lineColor={0,0,255},
-          textString="w"),Text(
+          textString="w"),
+        Text(
           extent={{34,22},{82,-14}},
           lineColor={0,0,255},
           textString="pm
-"),Text(  extent={{-18,-4},{44,-44}},
+"),
+        Text(
+          extent={{-18,-4},{44,-44}},
           lineColor={0,0,255},
           textString="TG1")}),
     Documentation(info="<html>

@@ -110,16 +110,21 @@ equation
   connect(switch1.u3, Filter.u) annotation (Line(points={{-39.2,-4.8},{-90,-4.8},{-90,-6},{-91.5,-6},{-91.5,6},{-87.2,6}}, color={0,0,127}));
   annotation (
     Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-120,-40},{120,40}})),
-    Icon(coordinateSystem(preserveAspectRatio=false, extent={{-120,-40},{120,40}}), graphics={Rectangle(extent={{-120,40},{120,-40}}, lineColor={0,0,255}),Text(
+    Icon(coordinateSystem(preserveAspectRatio=false, extent={{-120,-40},{120,40}}), graphics={
+        Rectangle(extent={{-120,40},{120,-40}}, lineColor={0,0,255}),
+        Text(
           extent={{-46,40},{54,-44}},
           lineColor={0,0,255},
-          textString="IEEEST"),Text(
+          textString="IEEEST"),
+        Text(
           extent={{-106,-10},{-84,-30}},
           lineColor={0,0,255},
-          textString="V_S"),Text(
+          textString="V_S"),
+        Text(
           extent={{84,14},{118,-16}},
           lineColor={0,0,255},
-          textString="VOTHSG"),Text(
+          textString="VOTHSG"),
+        Text(
           extent={{-106,32},{-78,8}},
           lineColor={0,0,255},
           textString="V_CT")}),

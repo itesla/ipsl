@@ -114,10 +114,14 @@ equation
       color={0,0,127},
       smooth=Smooth.None));
   connect(p, gENROU.p) annotation (Line(points={{110,0},{44,0},{44,12},{-3.5,12}}, color={0,0,255}));
-  annotation (Icon(graphics={Ellipse(extent={{-14,-42},{74,38}}, lineColor={0,0,255}),Line(
+  annotation (Icon(graphics={
+        Ellipse(extent={{-14,-42},{74,38}}, lineColor={0,0,255}),
+        Line(
           points={{-2,-12},{18,8},{38,-12},{58,8}},
           color={0,0,255},
-          smooth=Smooth.None),Ellipse(extent={{-100,-100},{101,100}}, lineColor={0,0,255}),Text(
+          smooth=Smooth.None),
+        Ellipse(extent={{-100,-100},{101,100}}, lineColor={0,0,255}),
+        Text(
           extent={{-91,6},{-22,-12}},
           lineColor={0,0,255},
           textStyle={TextStyle.Italic},

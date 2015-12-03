@@ -100,21 +100,21 @@ initial equation
   VREF = vr0/K_A + ECOMP0;
 equation
   connect(VUEL, hV_GATE.n2) annotation (Line(
-      points={{-91,-74},{-16.7,-74},{-16.7,-32.6}},
+      points={{-91,-74},{-21.375,-74},{-21.375,-35}},
       color={0,0,127},
       smooth=Smooth.None));
-  connect(imSE.VE_IN, EFD) annotation (Line(points={{82.45,47.9},{98,47.9},{98,0},{105,0}}, color={0,0,127}));
+  connect(imSE.VE_IN, EFD) annotation (Line(points={{82.9,48},{98,48},{98,0},{105,0}}, color={0,0,127}));
   connect(Vref.y, add3_2.u1) annotation (Line(points={{-79.4,18},{-76,18},{-76,-3},{-71,-3}}, color={0,0,127}));
   connect(VOTHSG, add3_2.u2) annotation (Line(points={{-95,8},{-88,8},{-88,-7},{-71,-7}}, color={0,0,127}));
   connect(VOEL, add3_2.u3) annotation (Line(points={{-95,-10},{-71,-10},{-71,-11}}, color={0,0,127}));
   connect(add3_1.y, imLeadLag.u) annotation (Line(points={{-39.6,-28},{-35.2,-28}}, color={0,0,127}));
-  connect(imLeadLag.y, hV_GATE.n1) annotation (Line(points={{-21.4,-28},{-16.7,-28},{-16.7,-28.2}}, color={0,0,127}));
+  connect(imLeadLag.y, hV_GATE.n1) annotation (Line(points={{-21.4,-28},{-21.375,-28},{-21.375,-25}}, color={0,0,127}));
   connect(imDerivativeLag.y, add3_1.u2) annotation (Line(points={{-4.6,0},{-52,0},{-52,-28},{-48.8,-28}}, color={0,0,127}));
   connect(ECOMP, imSimpleLag1.u) annotation (Line(points={{-95,30},{-74.8,30}}, color={0,0,127}));
   connect(imSimpleLag1.y, add3_1.u1) annotation (Line(points={{-65.6,30},{-56,30},{-56,-24.8},{-48.8,-24.8}}, color={0,0,127}));
   connect(add3_2.y, add3_1.u3) annotation (Line(points={{-59.5,-7},{-54,-7},{-54,-31.2},{-48.8,-31.2}}, color={0,0,127}));
   connect(product1.u1, const.y) annotation (Line(points={{55.4,21.2},{64.7,21.2},{64.7,24},{73.4,24}}, color={0,0,127}));
-  connect(product.u1, imSE.VE_OUT) annotation (Line(points={{43.4,47.2},{53.7,47.2},{53.7,47.9},{63.55,47.9}}, color={0,0,127}));
+  connect(product.u1, imSE.VE_OUT) annotation (Line(points={{43.4,47.2},{53.7,47.2},{53.7,48},{63.46,48}}, color={0,0,127}));
   connect(product.u2, EFD) annotation (Line(points={{43.4,38.8},{98,38},{98,0},{105,0}}, color={0,0,127}));
   connect(add1.u1, product.y) annotation (Line(points={{13.4,37.2},{20,37.2},{20,43},{27.3,43}}, color={0,0,127}));
   connect(add1.u2, product1.y) annotation (Line(points={{13.4,28.8},{26,28.8},{26,17},{39.3,17}}, color={0,0,127}));
@@ -123,7 +123,7 @@ equation
   connect(integrator.y, EFD) annotation (Line(points={{82.6,-26},{98,-26},{98,0},{105,0}}, color={0,0,127}));
   connect(imDerivativeLag.u, EFD) annotation (Line(points={{9.2,0},{105,0}}, color={0,0,127}));
   connect(product1.u2, EFD) annotation (Line(points={{55.4,12.8},{98,12.8},{98,0},{105,0}}, color={0,0,127}));
-  connect(hV_GATE.p, simpleLagLimVar.u) annotation (Line(points={{-2.51,-30.5},{4.745,-30.5},{4.745,-29},{11,-29}}, color={0,0,127}));
+  connect(hV_GATE.p, simpleLagLimVar.u) annotation (Line(points={{0.625,-30},{4.745,-30},{4.745,-29},{11,-29}}, color={0,0,127}));
   connect(simpleLagLimVar.y, add.u2) annotation (Line(points={{22.5,-29},{33.25,-29},{33.25,-28.4},{43.2,-28.4}}, color={0,0,127}));
   connect(gain.y, simpleLagLimVar.outMin) annotation (Line(points={{13,-43.7},{13,-39.85},{13,-36}}, color={0,0,127}));
   connect(gain1.y, simpleLagLimVar.outMax) annotation (Line(points={{29,-43.7},{29,-16},{21,-16},{21,-22}}, color={0,0,127}));
@@ -131,28 +131,37 @@ equation
   connect(gain1.u, gain.u) annotation (Line(points={{29,-50.6},{29,-56},{13,-56},{13,-50.6}}, color={0,0,127}));
   annotation (
     Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-40},{100,40}})),
-    Icon(coordinateSystem(preserveAspectRatio=false, extent={{-100,-40},{100,40}}), graphics={Rectangle(extent={{-100,40},{100,-40}}, lineColor={0,0,255}),Text(
+    Icon(coordinateSystem(preserveAspectRatio=false, extent={{-100,-40},{100,40}}), graphics={
+        Rectangle(extent={{-100,40},{100,-40}}, lineColor={0,0,255}),
+        Text(
           extent={{74,4},{102,-6}},
           lineColor={0,0,255},
-          textString="EFD"),Text(
+          textString="EFD"),
+        Text(
           extent={{-42,8},{40,-12}},
           lineColor={0,0,255},
-          textString="ESDC2A"),Text(
+          textString="ESDC2A"),
+        Text(
           extent={{-86,38},{-56,22}},
           lineColor={0,0,255},
-          textString="ECOMP"),Text(
+          textString="ECOMP"),
+        Text(
           extent={{-86,16},{-54,6}},
           lineColor={0,0,255},
-          textString="VOTHSG"),Text(
+          textString="VOTHSG"),
+        Text(
           extent={{-88,-4},{-62,-14}},
           lineColor={0,0,255},
-          textString="VOEL"),Text(
+          textString="VOEL"),
+        Text(
           extent={{-92,-24},{-60,-34}},
           lineColor={0,0,255},
-          textString="VUEL"),Text(
+          textString="VUEL"),
+        Text(
           extent={{-66,-18},{-34,-28}},
           lineColor={0,0,255},
-          textString="EFD0"),Text(
+          textString="EFD0"),
+        Text(
           extent={{-26,-18},{6,-28}},
           lineColor={0,0,255},
           textString="VT")}),

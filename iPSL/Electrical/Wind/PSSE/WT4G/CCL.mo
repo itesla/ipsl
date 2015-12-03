@@ -239,21 +239,25 @@ equation
           lineColor={0,0,255},
           textString="Converter Current Limit
 ")}),
-    Diagram(coordinateSystem(preserveAspectRatio=true, extent={{-100,-100},{100,100}}), graphics={Rectangle(
+    Diagram(coordinateSystem(preserveAspectRatio=true, extent={{-100,-100},{100,100}}), graphics={
+        Rectangle(
           extent={{-112,96},{-34,-86}},
           lineColor={255,0,0},
           pattern=LinePattern.Dot,
-          lineThickness=0.5),Text(
+          lineThickness=0.5),
+        Text(
           extent={{-52,90},{-40,80}},
           lineColor={255,0,0},
           pattern=LinePattern.Dot,
           lineThickness=0.5,
           fillColor={0,0,255},
           fillPattern=FillPattern.Solid,
-          textString="Q"),Text(
+          textString="Q"),
+        Text(
           extent={{64,-38},{120,-62}},
           lineColor={0,0,255},
-          textString="sqrt(ImaxTD^2 - IpCMD^2)"),Text(
+          textString="sqrt(ImaxTD^2 - IpCMD^2)"),
+        Text(
           extent={{-112,-42},{-58,-58}},
           lineColor={0,0,255},
           textString="sqrt(ImaxTD^2 - IqCMD^2)")}),

@@ -93,34 +93,43 @@ equation
   der(delta) = w_b*w;
   annotation (
     Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,100}})),
-    Icon(graphics={Rectangle(extent={{-100,100},{100,-100}}, lineColor={0,0,255}),Text(
+    Icon(graphics={
+        Rectangle(extent={{-100,100},{100,-100}}, lineColor={0,0,255}),
+        Text(
           extent={{66,98},{96,82}},
           lineColor={0,0,255},
           lineThickness=0.5,
-          textString="SPEED"),Text(
+          textString="SPEED"),
+        Text(
           extent={{64,78},{96,62}},
           lineColor={0,0,255},
           lineThickness=0.5,
-          textString="ISORCE"),Text(
+          textString="ISORCE"),
+        Text(
           extent={{66,56},{96,42}},
           lineColor={0,0,255},
-          textString="ETERM"),Text(
+          textString="ETERM"),
+        Text(
           extent={{66,38},{96,22}},
           lineColor={0,0,255},
           lineThickness=0.5,
-          textString="ANGLE"),Text(
+          textString="ANGLE"),
+        Text(
           extent={{62,-24},{96,-36}},
           lineColor={0,0,255},
           lineThickness=0.5,
-          textString="PMECH0"),Text(
+          textString="PMECH0"),
+        Text(
           extent={{66,-46},{96,-56}},
           lineColor={0,0,255},
           lineThickness=0.5,
-          textString="PELEC"),Text(
+          textString="PELEC"),
+        Text(
           extent={{66,-66},{100,-76}},
           lineColor={0,0,255},
           lineThickness=0.5,
-          textString="EFD0"),Text(
+          textString="EFD0"),
+        Text(
           extent={{62,-86},{98,-96}},
           lineColor={0,0,255},
           lineThickness=0.5,

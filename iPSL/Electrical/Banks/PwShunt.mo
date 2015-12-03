@@ -30,79 +30,105 @@ equation
   //p.u
   annotation (
     Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,100}}), graphics),
-    Icon(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,100}}), graphics={Line(
+    Icon(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,100}}), graphics={
+        Line(
           points={{0,42},{0,30}},
           color={0,0,255},
           smooth=Smooth.None,
-          thickness=0.5),Line(
+          thickness=0.5),
+        Line(
           points={{-16,20},{-4,20}},
           color={0,0,255},
           smooth=Smooth.None,
-          thickness=0.5),Line(
+          thickness=0.5),
+        Line(
           points={{-16,16},{-4,16}},
           color={0,0,255},
           smooth=Smooth.None,
-          thickness=0.5),Rectangle(extent={{-40,42},{42,-24}}, lineColor={0,0,255}),Line(
+          thickness=0.5),
+        Rectangle(extent={{-40,42},{42,-24}}, lineColor={0,0,255}),
+        Line(
           points={{-16,10},{-4,10}},
           color={0,0,255},
           smooth=Smooth.None,
-          thickness=0.5),Line(
+          thickness=0.5),
+        Line(
           points={{-16,6},{-4,6}},
           color={0,0,255},
           smooth=Smooth.None,
-          thickness=0.5),Line(
+          thickness=0.5),
+        Line(
           points={{-16,0},{-4,0}},
           color={0,0,255},
           smooth=Smooth.None,
-          thickness=0.5),Line(
+          thickness=0.5),
+        Line(
           points={{-16,-4},{-4,-4}},
           color={0,0,255},
           smooth=Smooth.None,
-          thickness=0.5),Line(
+          thickness=0.5),
+        Line(
           points={{-10,30},{-10,22},{-10,20}},
           color={0,0,255},
-          smooth=Smooth.None),Line(
+          smooth=Smooth.None),
+        Line(
           points={{-10,16},{-10,10}},
           color={0,0,255},
-          smooth=Smooth.None),Line(
+          smooth=Smooth.None),
+        Line(
           points={{-10,6},{-10,0}},
           color={0,0,255},
-          smooth=Smooth.None),Line(
+          smooth=Smooth.None),
+        Line(
           points={{-10,-4},{-10,-8}},
           color={0,0,255},
-          smooth=Smooth.None),Line(
+          smooth=Smooth.None),
+        Line(
           points={{-14,-8},{-6,-8}},
           color={0,0,255},
-          smooth=Smooth.None),Line(
+          smooth=Smooth.None),
+        Line(
           points={{-12,-10},{-8,-10}},
           color={0,0,255},
-          smooth=Smooth.None),Line(
+          smooth=Smooth.None),
+        Line(
           points={{-10,30},{0,30}},
           color={0,0,255},
-          smooth=Smooth.None),Line(
+          smooth=Smooth.None),
+        Line(
           points={{0,30},{10,30}},
           color={0,0,255},
-          smooth=Smooth.None),Line(
+          smooth=Smooth.None),
+        Line(
           points={{10,30},{10,22},{10,20}},
           color={0,0,255},
-          smooth=Smooth.None),Ellipse(extent={{6,20},{14,14}}, lineColor={0,0,255}),Ellipse(extent={{6,14},{14,8}}, lineColor={0,0,255}),Ellipse(extent={{6,8},{14,2}}, lineColor={0,0,255}),Rectangle(
+          smooth=Smooth.None),
+        Ellipse(extent={{6,20},{14,14}}, lineColor={0,0,255}),
+        Ellipse(extent={{6,14},{14,8}}, lineColor={0,0,255}),
+        Ellipse(extent={{6,8},{14,2}}, lineColor={0,0,255}),
+        Rectangle(
           extent={{10,20},{20,-4}},
           pattern=LinePattern.None,
           lineColor={255,255,255},
           fillColor={255,255,255},
-          fillPattern=FillPattern.Solid),Line(
+          fillPattern=FillPattern.Solid),
+        Line(
           points={{10,2},{10,-4},{10,-4}},
           color={0,0,255},
-          smooth=Smooth.None),Line(
+          smooth=Smooth.None),
+        Line(
           points={{10,-4},{10,-8}},
           color={0,0,255},
-          smooth=Smooth.None),Line(
+          smooth=Smooth.None),
+        Line(
           points={{6,-8},{14,-8}},
           color={0,0,255},
-          smooth=Smooth.None),Line(
+          smooth=Smooth.None),
+        Line(
           points={{8,-10},{12,-10}},
           color={0,0,255},
-          smooth=Smooth.None),Text(
+          smooth=Smooth.None),
+        Text(
           extent={{-38,14},{-28,0}},
           lineColor={0,0,255},
           fillColor={255,255,255},

@@ -25,15 +25,18 @@ algorithm
     end if;
   end when;
   annotation (
-    Icon(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,100}}), graphics={Rectangle(
+    Icon(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,100}}), graphics={
+        Rectangle(
           extent={{-40,30},{40,-30}},
           lineColor={0,0,255},
-          lineThickness=0.5),Text(
+          lineThickness=0.5),
+        Text(
           extent={{-18,38},{20,6}},
           lineColor={0,0,255},
           lineThickness=0.5,
           fillPattern=FillPattern.Solid,
-          textString="LVRT Mode"),Line(
+          textString="LVRT Mode"),
+        Line(
           points={{-26,10},{-10,10},{-10,-20},{6,-20},{20,4},{36,4}},
           color={0,0,255},
           smooth=Smooth.None,

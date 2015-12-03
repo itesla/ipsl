@@ -30,23 +30,31 @@ equation
     T2*y = ((-s) + K*u)*T1 + T2*s;
   end if;
   annotation (
-    Icon(graphics={Line(points={{38,100},{58,140},{98,140}}, color={0,0,0}),Line(points={{-102,-140},{-62,-140},{-42,-100}}, color={0,0,0}),Text(
+    Icon(graphics={
+        Line(points={{38,100},{58,140},{98,140}}, color={0,0,0}),
+        Line(points={{-102,-140},{-62,-140},{-42,-100}}, color={0,0,0}),
+        Text(
           extent={{-50,82},{70,22}},
           lineColor={0,0,255},
-          textString="1+sT"),Text(
+          textString="1+sT"),
+        Text(
           extent={{56,44},{76,24}},
           lineColor={0,0,255},
-          textString="1"),Line(
+          textString="1"),
+        Line(
           points={{-52,0},{76,0}},
           color={0,0,255},
           smooth=Smooth.Bezier,
-          thickness=0.5),Text(
+          thickness=0.5),
+        Text(
           extent={{-50,-20},{70,-80}},
           lineColor={0,0,255},
-          textString="1+sT"),Text(
+          textString="1+sT"),
+        Text(
           extent={{58,-58},{78,-78}},
           lineColor={0,0,255},
-          textString="2"),Text(
+          textString="2"),
+        Text(
           extent={{-106,28},{-46,-32}},
           lineColor={0,0,255},
           textString="K")}),

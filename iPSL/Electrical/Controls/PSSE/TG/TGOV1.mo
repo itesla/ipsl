@@ -47,19 +47,24 @@ equation
     Icon(coordinateSystem(
         extent={{-80,-60},{80,60}},
         preserveAspectRatio=false,
-        grid={1,1}), graphics={Rectangle(extent={{-80,60},{80,-60}}, lineColor={0,0,255}),Text(
+        grid={1,1}), graphics={
+        Rectangle(extent={{-80,60},{80,-60}}, lineColor={0,0,255}),
+        Text(
           extent={{-69,-25},{-24,-36}},
           lineColor={0,0,255},
           fillPattern=FillPattern.Solid,
-          textString="SPEED"),Text(
+          textString="SPEED"),
+        Text(
           extent={{44,7},{79,-8}},
           lineColor={0,0,255},
           fillPattern=FillPattern.Solid,
-          textString="PMECH"),Text(
+          textString="PMECH"),
+        Text(
           extent={{-48,14},{42,-14}},
           lineColor={0,0,255},
           fillPattern=FillPattern.Solid,
-          textString="TGOV1"),Text(
+          textString="TGOV1"),
+        Text(
           extent={{-63,37},{-24,23}},
           lineColor={0,0,255},
           fillPattern=FillPattern.Solid,

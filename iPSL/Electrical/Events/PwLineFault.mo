@@ -51,34 +51,44 @@ equation
   connect(FICT.p, Line_2.p) annotation (Line);
   connect(Line_2.n, n) annotation (Line);
   connect(Fault.p, FICT.p) annotation (
-    Icon(graphics={Rectangle(extent={{-60,60},{60,-60}}, lineColor={0,0,255}),Rectangle(
+    Icon(graphics={
+        Rectangle(extent={{-60,60},{60,-60}}, lineColor={0,0,255}),
+        Rectangle(
           extent={{-28,30},{12,10}},
           lineColor={0,0,0},
           fillColor={95,95,95},
-          fillPattern=FillPattern.Solid),Line(
+          fillPattern=FillPattern.Solid),
+        Line(
           points={{12,20},{26,20},{26,-20}},
           color={0,0,255},
-          smooth=Smooth.None),Line(
+          smooth=Smooth.None),
+        Line(
           points={{14,-20},{38,-20}},
           color={0,0,255},
-          smooth=Smooth.None),Line(
+          smooth=Smooth.None),
+        Line(
           points={{16,-24},{36,-24}},
           color={0,0,255},
-          smooth=Smooth.None),Line(
+          smooth=Smooth.None),
+        Line(
           points={{20,-28},{34,-28}},
           color={0,0,255},
-          smooth=Smooth.None),Line(
+          smooth=Smooth.None),
+        Line(
           points={{22,-32},{30,-32}},
           color={0,0,255},
-          smooth=Smooth.None),Rectangle(
+          smooth=Smooth.None),
+        Rectangle(
           extent={{-38,22},{-28,18}},
           lineColor={0,0,0},
           fillColor={0,0,0},
-          fillPattern=FillPattern.Solid),Line(
+          fillPattern=FillPattern.Solid),
+        Line(
           points={{-12,38},{-4,20},{-18,20},{-6,-2}},
           color={255,0,0},
           smooth=Smooth.None,
-          thickness=0.5),Line(
+          thickness=0.5),
+        Line(
           points={{-12,0},{-6,-2},{-6,4}},
           color={255,0,0},
           smooth=Smooth.None)}),

@@ -117,28 +117,33 @@ equation
         extent={{-100.0,-100.0},{100.0,100.0}},
         preserveAspectRatio=true,
         initialScale=0.1,
-        grid={10,10}), graphics={Rectangle(
+        grid={10,10}), graphics={
+        Rectangle(
           visible=true,
           fillColor={255,255,255},
-          extent={{-100.0,-100.0},{100.0,100.0}}),Text(
+          extent={{-100.0,-100.0},{100.0,100.0}}),
+        Text(
           visible=true,
           origin={0.0,2.0143},
           fillPattern=FillPattern.Solid,
           extent={{-35.7561,-17.9857},{35.7561,17.9857}},
           textString="TGtype2",
-          fontName="Arial"),Text(
+          fontName="Arial"),
+        Text(
           visible=true,
           origin={0.0,84.3902},
           fillPattern=FillPattern.Solid,
           extent={{-21.9862,-7.9881},{21.9862,7.9881}},
           textString="pm0",
-          fontName="Arial"),Text(
+          fontName="Arial"),
+        Text(
           visible=true,
           origin={-80.0,-2.4321},
           fillPattern=FillPattern.Solid,
           extent={{-11.4068,-12.4321},{11.4068,12.4321}},
           textString="W",
-          fontName="Arial"),Text(
+          fontName="Arial"),
+        Text(
           visible=true,
           origin={80.0,1.5812},
           fillPattern=FillPattern.Solid,

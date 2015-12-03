@@ -201,15 +201,15 @@ equation
       color={0,0,127},
       smooth=Smooth.None));
   connect(limiter1.y, lV_Gate.n1) annotation (Line(
-      points={{249,12},{258,12},{258,8.98},{267.3,8.98}},
+      points={{249,12},{258,12},{258,12.5},{262.625,12.5}},
       color={0,0,127},
       smooth=Smooth.None));
   connect(V_OEL.y, lV_Gate.n2) annotation (Line(
-      points={{244.6,-22},{256,-22},{256,4.14},{267.3,4.14}},
+      points={{244.6,-22},{256,-22},{256,1.5},{262.625,1.5}},
       color={0,0,127},
       smooth=Smooth.None));
   connect(lV_Gate.p, product.u1) annotation (Line(
-      points={{281.49,6.45},{285.745,6.45},{285.745,7.2},{290.6,7.2}},
+      points={{284.625,7},{285.745,7},{285.745,7.2},{290.6,7.2}},
       color={0,0,127},
       smooth=Smooth.None));
   connect(VR1.y, add.u2) annotation (Line(points={{6.9,-13},{26,-13},{26,0.4},{32.8,0.4}}, color={0,0,127}));
@@ -231,41 +231,54 @@ equation
   connect(gain2.u, VB.u1) annotation (Line(points={{36.6,-131},{20,-131},{20,-100},{72,-100},{72,-74},{81.2,-73.64},{81.2,-74.8},{144.6,-74.8}}, color={0,0,127}));
   connect(IFD, division.u1) annotation (Line(points={{-119,-141},{-26.5,-141},{-26.5,-139.2},{66.6,-139.2}}, color={0,0,127}));
   annotation (
-    Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-180},{340,100}}), graphics={Text(
+    Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-180},{340,100}}), graphics={
+        Text(
           extent={{70,26},{94,12}},
           lineColor={255,0,0},
-          textString="VR"),Text(
+          textString="VR"),
+        Text(
           extent={{44,-6},{50,-16}},
           lineColor={255,0,0},
-          textString="VH"),Text(
+          textString="VH"),
+        Text(
           extent={{116,-140},{142,-148}},
           lineColor={255,0,0},
-          textString="FEX"),Text(
+          textString="FEX"),
+        Text(
           extent={{66,-52},{90,-66}},
           lineColor={255,0,0},
-          textString="VE"),Text(
+          textString="VE"),
+        Text(
           extent={{210,-54},{234,-68}},
           lineColor={255,0,0},
           textString="VB")}),
-    Icon(coordinateSystem(extent={{-100,-180},{340,100}}, preserveAspectRatio=true), graphics={Text(
+    Icon(coordinateSystem(extent={{-100,-180},{340,100}}, preserveAspectRatio=true), graphics={
+        Text(
           extent={{-18,-10},{190,-106}},
           lineColor={0,0,255},
-          textString="ESST4B"),Rectangle(extent={{-98,62},{228,-178}}, lineColor={0,0,255}),Text(
+          textString="ESST4B"),
+        Rectangle(extent={{-98,62},{228,-178}}, lineColor={0,0,255}),
+        Text(
           extent={{-88,8},{-22,-72}},
           lineColor={0,0,255},
-          textString="ECOMP"),Text(
+          textString="ECOMP"),
+        Text(
           extent={{-90,52},{-18,-32}},
           lineColor={0,0,255},
-          textString="VOTHSG"),Text(
+          textString="VOTHSG"),
+        Text(
           extent={{-88,-88},{-38,-146}},
           lineColor={0,0,255},
-          textString="XadIfd"),Text(
+          textString="XadIfd"),
+        Text(
           extent={{-92,-150},{-34,-174}},
           lineColor={0,0,255},
-          textString="EFD0"),Text(
+          textString="EFD0"),
+        Text(
           extent={{-84,-46},{-34,-104}},
           lineColor={0,0,255},
-          textString="VUEL"),Text(
+          textString="VUEL"),
+        Text(
           extent={{-60,76},{-10,18}},
           lineColor={0,0,255},
           textString="GenT")}),

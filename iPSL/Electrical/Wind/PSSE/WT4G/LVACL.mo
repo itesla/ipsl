@@ -28,27 +28,34 @@ equation
   end if;
   annotation (
     Diagram(coordinateSystem(preserveAspectRatio=true, extent={{-100,-100},{100,100}}), graphics={Rectangle(extent={{-26,18},{20,-22}}, lineColor={0,0,255})}),
-    Icon(coordinateSystem(preserveAspectRatio=true, extent={{-100,-100},{100,100}}), graphics={Rectangle(extent={{-58,46},{56,-54}}, lineColor={0,0,255}),Text(
+    Icon(coordinateSystem(preserveAspectRatio=true, extent={{-100,-100},{100,100}}), graphics={
+        Rectangle(extent={{-58,46},{56,-54}}, lineColor={0,0,255}),
+        Text(
           extent={{-42,60},{46,0}},
           lineColor={0,0,255},
-          textString="LVACL"),Line(
+          textString="LVACL"),
+        Line(
           points={{-32,-36},{-14,-36},{8,0},{30,0},{30,0}},
           color={0,0,255},
           thickness=0.5,
-          smooth=Smooth.None),Line(
+          smooth=Smooth.None),
+        Line(
           points={{-32,6},{-32,-36},{-32,-36}},
           color={0,0,255},
           thickness=0.5,
-          smooth=Smooth.None),Line(
+          smooth=Smooth.None),
+        Line(
           points={{8,0},{8,-24},{8,-36}},
           color={0,0,255},
           thickness=0.5,
           smooth=Smooth.None,
-          pattern=LinePattern.Dot),Line(
+          pattern=LinePattern.Dot),
+        Line(
           points={{36,-36},{-32,-36},{-32,-36}},
           color={0,0,255},
           thickness=0.5,
-          smooth=Smooth.None),Line(
+          smooth=Smooth.None),
+        Line(
           points={{-32,0},{-2,0},{12,0}},
           color={0,0,255},
           thickness=0.5,

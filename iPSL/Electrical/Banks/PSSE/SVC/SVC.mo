@@ -73,32 +73,41 @@ equation
   connect(add.y, add3_1.u2) annotation (Line(points={{-45.4,6},{-38,6},{-38,9},{-29.4,9}}, color={0,0,127}));
   connect(imRelay.u1, add3_1.u2) annotation (Line(points={{50.4,-38},{36,-38},{36,-54},{-36,-54},{-36,9},{-29.4,9}}, color={0,0,127}));
   annotation (
-    Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{140,100}}), graphics={Text(
+    Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{140,100}}), graphics={
+        Text(
           extent={{-44,16},{-34,12}},
           lineColor={255,0,0},
-          textString="Verr"),Text(
+          textString="Verr"),
+        Text(
           extent={{-82,28},{-58,24}},
           lineColor={255,0,0},
-          textString="Vref"),Text(
+          textString="Vref"),
+        Text(
           extent={{-58,28},{-34,24}},
           lineColor={255,0,0},
-          textString="Bref"),Text(
+          textString="Bref"),
+        Text(
           extent={{-80,-4},{-68,-10}},
           lineColor={255,0,0},
           textString="|VB|")}),
-    Icon(coordinateSystem(extent={{-100,-100},{140,100}}, preserveAspectRatio=false), graphics={Line(
+    Icon(coordinateSystem(extent={{-100,-100},{140,100}}, preserveAspectRatio=false), graphics={
+        Line(
           points={{-88,0},{-60,0}},
           color={0,0,255},
           smooth=Smooth.None,
-          thickness=0.5),Line(
+          thickness=0.5),
+        Line(
           points={{-60,16},{-60,-18}},
           color={0,0,255},
           smooth=Smooth.None,
-          thickness=0.5),Line(
+          thickness=0.5),
+        Line(
           points={{-44,20},{-48,16},{-52,10},{-54,2},{-54,-4},{-52,-10},{-50,-14},{-46,-20},{-44,-20}},
           color={0,0,255},
           smooth=Smooth.Bezier,
-          thickness=0.5),Rectangle(extent={{-86,34},{-14,-34}}, lineColor={0,0,255}),Text(
+          thickness=0.5),
+        Rectangle(extent={{-86,34},{-14,-34}}, lineColor={0,0,255}),
+        Text(
           extent={{-40,-18},{-14,-40}},
           lineColor={0,0,255},
           fillColor={0,0,255},

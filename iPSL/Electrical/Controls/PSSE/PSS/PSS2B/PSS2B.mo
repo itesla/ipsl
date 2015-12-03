@@ -98,16 +98,21 @@ equation
   connect(Washout2.y, SimpleLag1.u) annotation (Line(points={{-79,20},{-74,20},{-70,20}}, color={0,0,127}));
   annotation (
     Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-180,-40},{180,40}})),
-    Icon(coordinateSystem(preserveAspectRatio=false, extent={{-180,-40},{180,40}}), graphics={Rectangle(extent={{-180,40},{180,-40}}, lineColor={0,0,255}),Text(
+    Icon(coordinateSystem(preserveAspectRatio=false, extent={{-180,-40},{180,40}}), graphics={
+        Rectangle(extent={{-180,40},{180,-40}}, lineColor={0,0,255}),
+        Text(
           extent={{-34,14},{32,-16}},
           lineColor={0,0,255},
-          textString="PSS2B"),Text(
+          textString="PSS2B"),
+        Text(
           extent={{-172,26},{-132,12}},
           lineColor={0,0,255},
-          textString="V_S1"),Text(
+          textString="V_S1"),
+        Text(
           extent={{130,14},{176,-16}},
           lineColor={0,0,255},
-          textString="VOTHSG"),Text(
+          textString="VOTHSG"),
+        Text(
           extent={{-174,-14},{-134,-28}},
           lineColor={0,0,255},
           textString="V_S2")}),

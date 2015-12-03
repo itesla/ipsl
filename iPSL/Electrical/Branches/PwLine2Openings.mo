@@ -41,32 +41,48 @@ equation
     R*(p.ii - B*p.vr - G*p.vi) + X*(p.ir - G*p.vr + B*p.vi) = p.vi - n.vi;
   end if;
   annotation (
-    Icon(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,100}}), graphics={Rectangle(extent={{-60,40},{60,-42}}, lineColor={0,0,255}),Rectangle(
+    Icon(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,100}}), graphics={
+        Rectangle(extent={{-60,40},{60,-42}}, lineColor={0,0,255}),
+        Rectangle(
           extent={{-40,10},{40,-10}},
           lineColor={0,0,255},
           fillColor={95,95,95},
-          fillPattern=FillPattern.Solid),Line(
+          fillPattern=FillPattern.Solid),
+        Line(
           points={{-38,16},{4,16},{24,30}},
           color={0,0,255},
-          smooth=Smooth.None),Line(
+          smooth=Smooth.None),
+        Line(
           points={{34,18},{40,18}},
           color={0,0,255},
-          smooth=Smooth.None),Ellipse(extent={{28,22},{34,16}}, lineColor={0,0,255}),Text(
+          smooth=Smooth.None),
+        Ellipse(extent={{28,22},{34,16}}, lineColor={0,0,255}),
+        Text(
           extent={{-108,86},{-20,40}},
           lineColor={238,46,47},
-          textString=DynamicSelect("0.0", String(P12, significantDigits=2))),Text(
+          textString=DynamicSelect("0.0", String(P12, significantDigits=2))),
+        Text(
           extent={{22,86},{110,40}},
           lineColor={238,46,47},
-          textString=DynamicSelect("0.0", String(P21, significantDigits=2))),Text(
+          textString=DynamicSelect("0.0", String(P21, significantDigits=2))),
+        Text(
           extent={{-108,-56},{-20,-102}},
           lineColor={0,255,0},
-          textString=DynamicSelect("0.0", String(Q12, significantDigits=2))),Text(
+          textString=DynamicSelect("0.0", String(Q12, significantDigits=2))),
+        Text(
           extent={{22,-56},{110,-102}},
           lineColor={0,255,0},
-          textString=DynamicSelect("0.0", String(Q21, significantDigits=2))),Line(points={{-88,86},{-40,86},{-48,92}}, color={0,0,0}),Line(points={{-40,86},{-48,80}}, color={0,0,0}),Line(points={{-88,
-          -54},{-40,-54},{-48,-48}}, color={0,0,0}),Line(points={{-40,-54},{-48,-60}}, color={0,0,0}),Line(points={{-80,-48},{-80,-60}}, color={0,0,0}),Line(points={{40,-54},{88,-54},{80,-48}}, color
-          ={0,0,0}),Line(points={{88,-54},{80,-60}}, color={0,0,0}),Line(points={{48,-48},{48,-60}}, color={0,0,0}),Line(points={{40,86},{88,86},{80,92}}, color={0,0,0}),Line(points={{88,86},{80,80}},
-          color={0,0,0})}),
+          textString=DynamicSelect("0.0", String(Q21, significantDigits=2))),
+        Line(points={{-88,86},{-40,86},{-48,92}}, color={0,0,0}),
+        Line(points={{-40,86},{-48,80}}, color={0,0,0}),
+        Line(points={{-88,-54},{-40,-54},{-48,-48}}, color={0,0,0}),
+        Line(points={{-40,-54},{-48,-60}}, color={0,0,0}),
+        Line(points={{-80,-48},{-80,-60}}, color={0,0,0}),
+        Line(points={{40,-54},{88,-54},{80,-48}}, color={0,0,0}),
+        Line(points={{88,-54},{80,-60}}, color={0,0,0}),
+        Line(points={{48,-48},{48,-60}}, color={0,0,0}),
+        Line(points={{40,86},{88,86},{80,92}}, color={0,0,0}),
+        Line(points={{88,86},{80,80}}, color={0,0,0})}),
     uses(PowerSystems(version="0.6"), Modelica(version="3.2.1")),
     Documentation(info="<html>
 <p><br><span style=\"font-family: MS Shell Dlg 2;\">&LT;iPSL: iTesla Power System Library&GT;</span></p>

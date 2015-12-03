@@ -63,28 +63,35 @@ equation
   connect(Pwtt_ref, imGain.u) annotation (Line(points={{-56,-32},{-48,-32},{-48,-43},{-43.4,-43}}, color={0,0,127}));
   annotation (
     Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,100}})),
-    Icon(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,100}}), graphics={Rectangle(
+    Icon(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,100}}), graphics={
+        Rectangle(
           extent={{-50,32},{40,-32}},
           lineColor={0,0,255},
-          lineThickness=0.5),Text(
+          lineThickness=0.5),
+        Text(
           extent={{-26,14},{18,-10}},
           lineColor={0,0,255},
           lineThickness=0.5,
           fillPattern=FillPattern.Solid,
           textString="Type 4B
-P Control"),Text(
+P Control"),
+        Text(
           extent={{-50,30},{-30,24}},
           lineColor={0,0,255},
-          textString="Uwtt"),Text(
+          textString="Uwtt"),
+        Text(
           extent={{-49,13},{-29,7}},
           lineColor={0,0,255},
-          textString="iPmax"),Text(
+          textString="iPmax"),
+        Text(
           extent={{-49,-6},{-29,-12}},
           lineColor={0,0,255},
-          textString="w_gen"),Text(
+          textString="w_gen"),
+        Text(
           extent={{-47,-24},{-27,-30}},
           lineColor={0,0,255},
-          textString="Pwtt_ref"),Text(
+          textString="Pwtt_ref"),
+        Text(
           extent={{20,3},{40,-3}},
           lineColor={0,0,255},
           textString="iPcmd")}),

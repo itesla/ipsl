@@ -130,23 +130,23 @@ equation
       color={0,0,127},
       smooth=Smooth.None));
   connect(VUEL, hV_Gate.n1) annotation (Line(
-      points={{-119,93},{15.5,93},{15.5,-3.48},{21.9,-3.48}},
+      points={{-119,93},{15.5,93},{15.5,1},{16.375,1}},
       color={0,0,127},
       smooth=Smooth.None));
   connect(VERR.y, hV_Gate.n2) annotation (Line(
-      points={{-5.2,-8},{8,-8},{8,-9.64},{21.9,-9.64}},
+      points={{-5.2,-8},{8,-8},{8,-13},{16.375,-13}},
       color={0,0,127},
       smooth=Smooth.None));
   connect(VOEL, lV_Gate.n2) annotation (Line(
-      points={{-121,-43},{42,-43},{42,-20.9},{45.9,-20.9}},
+      points={{-121,-43},{42,-43},{42,-24.5},{40.375,-24.5}},
       color={0,0,127},
       smooth=Smooth.None));
   connect(hV_Gate.p, lV_Gate.n1) annotation (Line(
-      points={{38.67,-6.7},{42,-6.7},{42,-14.3},{45.9,-14.3}},
+      points={{42.375,-6},{42,-6},{42,-9.5},{40.375,-9.5}},
       color={0,0,127},
       smooth=Smooth.None));
   connect(VERR1.u1, lV_Gate.p) annotation (Line(
-      points={{86.2,-20.4},{74,-20.4},{74,-17.75},{62.67,-17.75}},
+      points={{86.2,-20.4},{74,-20.4},{74,-17},{66.375,-17}},
       color={0,0,127},
       smooth=Smooth.None));
   connect(Vm.u, ECOMP) annotation (Line(points={{-89.8,-13},{-100.9,-13},{-125,-13}}, color={0,0,127}));
@@ -168,31 +168,41 @@ equation
           extent={{-24,16},{-10,0}},
           lineColor={255,0,0},
           textString="VERR")}),
-    Icon(coordinateSystem(extent={{-120,-200},{420,120}}, preserveAspectRatio=true), graphics={Text(
+    Icon(coordinateSystem(extent={{-120,-200},{420,120}}, preserveAspectRatio=true), graphics={
+        Text(
           extent={{42,14},{234,-78}},
           lineColor={0,0,255},
-          textString="URST5T"),Rectangle(extent={{-100,120},{300,-200}}, lineColor={0,0,255}),Text(
+          textString="URST5T"),
+        Rectangle(extent={{-100,120},{300,-200}}, lineColor={0,0,255}),
+        Text(
           extent={{-76,136},{-10,56}},
           lineColor={0,0,255},
-          textString="ECOMP"),Text(
+          textString="ECOMP"),
+        Text(
           extent={{-76,-50},{2,-84}},
           lineColor={0,0,255},
-          textString="VOTHSG"),Text(
+          textString="VOTHSG"),
+        Text(
           extent={{-76,-94},{-16,-158}},
           lineColor={0,0,255},
-          textString="XADIFD"),Text(
+          textString="XADIFD"),
+        Text(
           extent={{-76,52},{-24,-12}},
           lineColor={0,0,255},
-          textString="VUEL"),Text(
+          textString="VUEL"),
+        Text(
           extent={{-90,-168},{-26,-188}},
           lineColor={0,0,255},
-          textString="EFD0"),Text(
+          textString="EFD0"),
+        Text(
           extent={{-76,10},{-24,-52}},
           lineColor={0,0,255},
-          textString="VOEL"),Text(
+          textString="VOEL"),
+        Text(
           extent={{256,-6},{294,-68}},
           lineColor={0,0,255},
-          textString="EFD"),Text(
+          textString="EFD"),
+        Text(
           extent={{-76,92},{-26,28}},
           lineColor={0,0,255},
           textString="VREF")}),

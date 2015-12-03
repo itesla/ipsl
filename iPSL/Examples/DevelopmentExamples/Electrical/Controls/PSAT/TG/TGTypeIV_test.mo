@@ -125,13 +125,16 @@ equation
       points={{58.5,-12},{72,-12},{72,-11},{71.5,-11}},
       color={0,0,255},
       smooth=Smooth.None));
-  annotation (Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,100}}), graphics={Text(
+  annotation (Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,100}}), graphics={
+        Text(
           extent={{-96,42},{-22,30}},
           lineColor={0,0,255},
-          textString="Wref perturbation with sine signal 5-10s"),Text(
+          textString="Wref perturbation with sine signal 5-10s"),
+        Text(
           extent={{68,-18},{92,-24}},
           lineColor={0,0,255},
-          textString="Infinite bus"),Text(
+          textString="Infinite bus"),
+        Text(
           extent={{70,32},{84,20}},
           lineColor={0,0,255},
           textString="PQ load")}), Documentation(info="<html>

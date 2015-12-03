@@ -15,17 +15,22 @@ equation
   n.ir = (-1/r*p.ir) + G*n.vr - B*n.vi;
   n.ii = (-1/r*p.ii) + G*n.vi + B*n.vr;
   annotation (
-    Icon(graphics={Rectangle(extent={{-60,40},{60,-40}}, lineColor={0,0,255}),Ellipse(
+    Icon(graphics={
+        Rectangle(extent={{-60,40},{60,-40}}, lineColor={0,0,255}),
+        Ellipse(
           extent={{-26,16},{6,-16}},
           lineColor={0,0,255},
-          lineThickness=1),Ellipse(
+          lineThickness=1),
+        Ellipse(
           extent={{-8,16},{24,-16}},
           lineColor={0,0,255},
-          lineThickness=1),Line(
+          lineThickness=1),
+        Line(
           points={{-42,0},{-26,0}},
           color={0,0,255},
           thickness=1,
-          smooth=Smooth.None),Line(
+          smooth=Smooth.None),
+        Line(
           points={{24,0},{40,0}},
           color={0,0,255},
           thickness=1,

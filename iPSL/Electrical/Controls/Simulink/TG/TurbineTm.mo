@@ -30,32 +30,42 @@ equation
   connect(z, division1.u2) annotation (Line(points={{-91.5,6},{-84,6},{-84,16.8},{-79.4,16.8}}, color={0,0,127}));
   connect(product.u1, add.u1) annotation (Line(points={{50.4,6.8},{46,6.8},{46,28},{-34,28},{-34,8},{-30,8}}, color={0,0,127}));
   annotation (
-    Icon(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,100}}), graphics={Rectangle(extent={{-78,46},{32,-44}}, lineColor={0,0,255}),Text(
+    Icon(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,100}}), graphics={
+        Rectangle(extent={{-78,46},{32,-44}}, lineColor={0,0,255}),
+        Text(
           extent={{-78,32},{-64,20}},
           lineColor={0,0,255},
-          textString="z"),Text(
+          textString="z"),
+        Text(
           extent={{-76,-8},{-56,-28}},
           lineColor={0,0,255},
-          textString="omega"),Text(
+          textString="omega"),
+        Text(
           extent={{18,14},{28,0}},
           lineColor={0,0,255},
-          textString="Tm"),Text(
+          textString="Tm"),
+        Text(
           extent={{-52,18},{8,-20}},
           lineColor={0,0,255},
           textString="Hy turbine")}),
-    Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,100}}), graphics={Text(
+    Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,100}}), graphics={
+        Text(
           extent={{-96,0},{-80,-2}},
           lineColor={0,0,127},
-          textString="z (gate opening)"),Text(
+          textString="z (gate opening)"),
+        Text(
           extent={{-96,-28},{-80,-30}},
           lineColor={0,0,127},
-          textString="w (rotor speed)"),Text(
+          textString="w (rotor speed)"),
+        Text(
           extent={{102,10},{128,8}},
           lineColor={0,0,127},
-          textString="Tm (mech. torque)"),Text(
+          textString="Tm (mech. torque)"),
+        Text(
           extent={{52,14},{70,14}},
           lineColor={0,0,127},
-          textString="Pm (mech. power)"),Text(
+          textString="Pm (mech. power)"),
+        Text(
           extent={{-8,-6},{22,-8}},
           lineColor={0,0,127},
           textString="1/Tw (water time constant)")}),

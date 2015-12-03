@@ -24,24 +24,31 @@ equation
   From.ir = (-1/t*(1/(Req*Req + Xeq*Xeq)*(Req*(t*t*To.vr - t*From.vr) + Xeq*(t*t*To.vi - t*From.vi)))) + G*From.vr - B*From.vi;
   From.ii = (-1/t*(1/(Req*Req + Xeq*Xeq)*(Req*(t*t*To.vi - t*From.vi) - Xeq*(t*t*To.vr - t*From.vr)))) + G*From.vi + B*From.vr;
   annotation (
-    Icon(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,100}}), graphics={Rectangle(extent={{-60,40},{60,-40}}, lineColor={0,0,255}),Ellipse(
+    Icon(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,100}}), graphics={
+        Rectangle(extent={{-60,40},{60,-40}}, lineColor={0,0,255}),
+        Ellipse(
           extent={{-28,22},{14,-22}},
           lineColor={0,0,255},
-          lineThickness=1),Line(
+          lineThickness=1),
+        Line(
           points={{-60,0},{-28,0}},
           color={0,0,255},
           thickness=1,
-          smooth=Smooth.None),Line(
+          smooth=Smooth.None),
+        Line(
           points={{28,0},{60,0}},
           color={0,0,255},
           thickness=1,
-          smooth=Smooth.None),Text(
+          smooth=Smooth.None),
+        Text(
           extent={{-94,34},{-62,14}},
           lineColor={0,0,255},
-          textString="From"),Text(
+          textString="From"),
+        Text(
           extent={{62,34},{94,14}},
           lineColor={0,0,255},
-          textString="To"),Ellipse(
+          textString="To"),
+        Ellipse(
           extent={{-14,22},{28,-22}},
           lineColor={0,0,255},
           lineThickness=1)}),

@@ -81,38 +81,50 @@ equation
   connect(Integrator.y, add3.u2) annotation (Line(points={{44.7,7},{48,7},{48,12.4},{50.8,12.4}}, color={0,0,127}));
   connect(Gain1.y, add3.u1) annotation (Line(points={{24.7,25},{44,25},{44,19.6},{50.8,19.6}}, color={0,0,127}));
   annotation (
-    Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{160,100}}), graphics={Text(
+    Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{160,100}}), graphics={
+        Text(
           extent={{90,-6},{128,-10}},
           lineColor={0,0,127},
-          textString="Servomotor"),Text(
+          textString="Servomotor"),
+        Text(
           extent={{14,34},{52,30}},
           lineColor={0,0,127},
-          textString="PI Control"),Text(
+          textString="PI Control"),
+        Text(
           extent={{-102,36},{-78,34}},
           lineColor={0,0,127},
-          textString="w (rotor speed)"),Text(
+          textString="w (rotor speed)"),
+        Text(
           extent={{-100,-40},{-76,-42}},
           lineColor={0,0,127},
-          textString="P (active power)"),Text(
+          textString="P (active power)"),
+        Text(
           extent={{-98,-8},{-74,-10}},
           lineColor={0,0,127},
-          textString="P0 (power set point)"),Text(
+          textString="P0 (power set point)"),
+        Text(
           extent={{-50,6},{-32,8}},
           lineColor={0,0,127},
           textString="Speed drop")}),
-    Icon(coordinateSystem(extent={{-100,-100},{160,100}}, preserveAspectRatio=false), graphics={Rectangle(extent={{-4,46},{150,-20}}, lineColor={0,0,255}),Text(
+    Icon(coordinateSystem(extent={{-100,-100},{160,100}}, preserveAspectRatio=false), graphics={
+        Rectangle(extent={{-4,46},{150,-20}}, lineColor={0,0,255}),
+        Text(
           extent={{24,30},{126,6}},
           lineColor={0,0,255},
-          textString="Speed Governor"),Text(
+          textString="Speed Governor"),
+        Text(
           extent={{0,42},{20,26}},
           lineColor={0,0,255},
-          textString="Omega"),Text(
+          textString="Omega"),
+        Text(
           extent={{136,24},{152,12}},
           lineColor={0,0,255},
-          textString="z"),Text(
+          textString="z"),
+        Text(
           extent={{0,20},{20,4}},
           lineColor={0,0,255},
-          textString="Pmset"),Text(
+          textString="Pmset"),
+        Text(
           extent={{0,-2},{20,-18}},
           lineColor={0,0,255},
           textString="Pe")}),

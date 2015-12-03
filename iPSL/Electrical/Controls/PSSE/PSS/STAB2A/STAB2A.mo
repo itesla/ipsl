@@ -89,13 +89,17 @@ equation
     Icon(coordinateSystem(
         preserveAspectRatio=false,
         extent={{-100,-40},{120,40}},
-        grid={2,2}), graphics={Rectangle(extent={{-100,40},{120,-40}}, lineColor={0,0,255}),Text(
+        grid={2,2}), graphics={
+        Rectangle(extent={{-100,40},{120,-40}}, lineColor={0,0,255}),
+        Text(
           extent={{-34,24},{34,-24}},
           lineColor={0,0,255},
-          textString="STAB2A"),Text(
+          textString="STAB2A"),
+        Text(
           extent={{72,16},{116,-18}},
           lineColor={0,0,255},
-          textString="VOTHSG"),Text(
+          textString="VOTHSG"),
+        Text(
           extent={{-86,16},{-48,-16}},
           lineColor={0,0,255},
           textString="PELEC")}),

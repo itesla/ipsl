@@ -39,13 +39,17 @@ equation
   connect(add.u2, imSimpleLag.u) annotation (Line(points={{-47.8,7.6},{-74,7.6},{-74,18},{-69.6,18}}, color={0,0,127}));
   annotation (
     Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,100}})),
-    Icon(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,100}}), graphics={Rectangle(extent={{-88,44},{56,-18}}, lineColor={0,0,255}),Text(
+    Icon(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,100}}), graphics={
+        Rectangle(extent={{-88,44},{56,-18}}, lineColor={0,0,255}),
+        Text(
           extent={{-44,28},{22,-2}},
           lineColor={0,0,255},
-          textString="PSS"),Text(
+          textString="PSS"),
+        Text(
           extent={{-86,24},{-62,4}},
           lineColor={0,0,255},
-          textString="omega"),Text(
+          textString="omega"),
+        Text(
           extent={{34,20},{54,0}},
           lineColor={0,0,255},
           textString="Upss")}),

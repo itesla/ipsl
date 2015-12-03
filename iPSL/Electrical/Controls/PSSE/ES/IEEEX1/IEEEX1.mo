@@ -132,7 +132,7 @@ initial equation
   VREF = VR0/K_A + VT0 - V_Erro2.y;
 equation
   connect(se1.VE_OUT, VE.u2) annotation (Line(
-      points={{65.6,36.1},{60.8,36.1},{60.8,30.4}},
+      points={{65.52,36},{60.8,36},{60.8,30.4}},
       color={0,0,127},
       smooth=Smooth.None));
   connect(VE.y, imSum2_4.u2) annotation (Line(
@@ -163,47 +163,60 @@ equation
   connect(imSum2_3.y, integrator.u) annotation (Line(points={{50.5,-1},{57.25,-1},{65,-1}}, color={0,0,127}));
   connect(integrator.y, EFD) annotation (Line(points={{76.5,-1},{99.25,-1},{99.25,0},{125,0}}, color={0,0,127}));
   connect(imDerivativeLag.u, EFD) annotation (Line(points={{1.8,-39},{100,-39},{100,2},{99.25,1},{99.25,0},{125,0}}, color={0,0,127}));
-  connect(se1.VE_IN, EFD) annotation (Line(points={{82.4,36.1},{100,36.1},{100,2},{99.25,1},{99.25,0},{125,0}}, color={0,0,127}));
+  connect(se1.VE_IN, EFD) annotation (Line(points={{82.8,36},{100,36},{100,2},{100,1},{100,0},{125,0}}, color={0,0,127}));
   connect(VE.u1, EFD) annotation (Line(points={{60.8,25.6},{100,25.6},{100,2},{100,1},{100,0},{125,0}}, color={0,0,127}));
   connect(KE_EFD.u, EFD) annotation (Line(points={{60.8,12},{100,12},{100,2},{99.25,1},{99.25,0},{125,0}}, color={0,0,127}));
   connect(LL.y, simpleLagLim.u) annotation (Line(points={{-27.1,-3},{-16.55,-3},{-16.55,-3},{-5.8,-3}}, color={0,0,127}));
   connect(simpleLagLim.y, imSum2_3.u2) annotation (Line(points={{14.9,-3},{26.45,-3},{26.45,-4},{39,-4}}, color={0,0,127}));
   annotation (
-    Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-140,-60},{120,60}}), graphics={Text(
+    Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-140,-60},{120,60}}), graphics={
+        Text(
           extent={{-90,32},{-84,26}},
           lineColor={0,0,255},
-          textString="Vs"),Text(
+          textString="Vs"),
+        Text(
           extent={{-120,18},{-108,12}},
           lineColor={0,0,255},
-          textString="Vref"),Text(
+          textString="Vref"),
+        Text(
           extent={{30,42},{58,34}},
           lineColor={0,0,255},
-          textString="VE=SE*EFD"),Text(
+          textString="VE=SE*EFD"),
+        Text(
           extent={{-140,16},{-124,10}},
           lineColor={0,0,255},
-          textString="Efd0"),Text(
+          textString="Efd0"),
+        Text(
           extent={{-142,0},{-114,-6}},
           lineColor={0,0,255},
           textString="Ec")}),
-    Icon(coordinateSystem(preserveAspectRatio=false, extent={{-140,-60},{120,60}}), graphics={Rectangle(extent={{-140,60},{120,-60}}, lineColor={0,0,255}),Text(
+    Icon(coordinateSystem(preserveAspectRatio=false, extent={{-140,-60},{120,60}}), graphics={
+        Rectangle(extent={{-140,60},{120,-60}}, lineColor={0,0,255}),
+        Text(
           extent={{-136,-16},{-110,-24}},
           lineColor={0,0,255},
-          textString="Ec"),Text(
+          textString="Ec"),
+        Text(
           extent={{-132,46},{-108,36}},
           lineColor={0,0,255},
-          textString="VOTHSG"),Text(
+          textString="VOTHSG"),
+        Text(
           extent={{-134,4},{-110,-2}},
           lineColor={0,0,255},
-          textString="VUEL"),Text(
+          textString="VUEL"),
+        Text(
           extent={{88,8},{118,-8}},
           lineColor={0,0,255},
-          textString="EFD"),Text(
+          textString="EFD"),
+        Text(
           extent={{-52,34},{48,-38}},
           lineColor={0,0,255},
-          textString="IEEEX1"),Text(
+          textString="IEEEX1"),
+        Text(
           extent={{-140,22},{-104,16}},
           lineColor={0,0,255},
-          textString="VOEL"),Text(
+          textString="VOEL"),
+        Text(
           extent={{-132,-34},{-108,-42}},
           lineColor={0,0,255},
           textString="Efd0")}),

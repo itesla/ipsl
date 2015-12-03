@@ -1,6 +1,7 @@
 within iPSL.Examples.N44_Groups;
 model SMIB1L_Group1_Nordic44 "Single-Machine Infinite Bus model testing the dynamic configuration of generator and controls,
-  from Nordic 44 model: Buses 3000, 7000"
+  from Nordic 44 model: Buses 3000, 7000 to be deleted"
+
   iPSL.Examples.N44_Groups.Configuration.Group1 group1_1 annotation (Placement(transformation(extent={{-85,-10},{-65,10}})));
   Electrical.Branches.PwLine2Openings pwLine(
     R=0.1,

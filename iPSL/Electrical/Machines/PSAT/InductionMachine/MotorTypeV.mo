@@ -88,16 +88,20 @@ equation
   der(e2r) = (-Omegab*s*(e1m - e2m)) + der(e1r) + (e1r - e2r - a45*Im)/T20;
   der(e2m) = Omegab*s*(e1r - e2r) + der(e1m) + (e1m - e2m + a45*Ir)/T20;
   Tm = A + B*s + C*s*s;
-  annotation (Icon(coordinateSystem(preserveAspectRatio=true, extent={{-100,-100},{100,100}}), graphics={Rectangle(
+  annotation (Icon(coordinateSystem(preserveAspectRatio=true, extent={{-100,-100},{100,100}}), graphics={
+        Rectangle(
           visible=true,
           fillColor={255,255,255},
-          extent={{-100,-100},{100,100}}),Ellipse(
+          extent={{-100,-100},{100,100}}),
+        Ellipse(
           visible=true,
           fillColor={255,255,255},
-          extent={{-56,-58},{55.9318,54}}),Text(
+          extent={{-56,-58},{55.9318,54}}),
+        Text(
           extent={{-50,48},{50,-52}},
           lineColor={0,0,0},
-          textString="M"),Text(
+          textString="M"),
+        Text(
           origin={0,-76.0978},
           fillPattern=FillPattern.Solid,
           extent={{-57.2101,-15.0},{57.2101,15.0}},

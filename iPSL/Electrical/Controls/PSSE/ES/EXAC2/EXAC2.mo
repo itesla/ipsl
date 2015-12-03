@@ -150,20 +150,20 @@ equation
   connect(add1.y, imLeadLag.u) annotation (Line(points={{-63.4,-28},{-61.2,-28}}, color={0,0,127}));
   connect(add3_2.y, add1.u2) annotation (Line(points={{-83.5,-33},{-80,-33},{-80,-31.6},{-77.2,-31.6}}, color={0,0,127}));
   connect(imDerivativeLag.y, add1.u1) annotation (Line(points={{-66.7,0},{-82,0},{-82,-24.4},{-77.2,-24.4}}, color={0,0,127}));
-  connect(add2.y, lV_GATE.n1) annotation (Line(points={{2.6,-24},{13,-24},{13,-26.2}}, color={0,0,127}));
+  connect(add2.y, lV_GATE.n1) annotation (Line(points={{2.6,-24},{8.75,-24},{8.75,-23}}, color={0,0,127}));
   connect(add2.u1, gain.y) annotation (Line(points={{-11.2,-20.4},{-20,-20.4},{-20,-14},{-27.6,-14},{-27.6,-12}}, color={0,0,127}));
   connect(Vref1.y, add3.u2) annotation (Line(points={{-17,45.1},{-17,26.525},{-17.6,26.525},{-17.6,17.2}}, color={0,0,127}));
   connect(gain3.u, add3.y) annotation (Line(points={{-14,-3.2},{-14,3.4}}, color={0,0,127}));
-  connect(gain3.y, lV_GATE.n2) annotation (Line(points={{-14,-12.4},{-14,-12.4},{-14,-40},{10,-40},{10,-30.6},{13,-30.6}}, color={0,0,127}));
-  connect(lV_GATE.p, gain1.u) annotation (Line(points={{25.9,-28.5},{30.95,-28.5},{30.95,-29},{31,-29}}, color={0,0,127}));
+  connect(gain3.y, lV_GATE.n2) annotation (Line(points={{-14,-12.4},{-14,-12.4},{-14,-40},{10,-40},{10,-33},{8.75,-33}}, color={0,0,127}));
+  connect(lV_GATE.p, gain1.u) annotation (Line(points={{28.75,-28},{30.95,-28},{30.95,-29},{31,-29}}, color={0,0,127}));
   connect(gain1.y, limiter.u) annotation (Line(points={{42.5,-29},{46.25,-29},{49,-29}}, color={0,0,127}));
   connect(limiter.y, add4.u2) annotation (Line(points={{60.5,-29},{64.25,-29},{64.25,-29.6},{66.8,-29.6}}, color={0,0,127}));
   connect(add4.y, limIntegrator.u) annotation (Line(points={{80.6,-26},{90.8,-26}}, color={0,0,127}));
   connect(product.y, EFD) annotation (Line(points={{156.8,0},{165,0},{165,0}}, color={0,0,127}));
   connect(limIntegrator.y, product.u2) annotation (Line(points={{104.6,-26},{130,-26},{130,-4.8},{138.4,-4.8}}, color={0,0,127}));
-  connect(imSE.VE_IN, product.u2) annotation (Line(points={{92.5,23.9},{130,23.9},{130,-4.8},{138.4,-4.8}}, color={0,0,127}));
+  connect(imSE.VE_IN, product.u2) annotation (Line(points={{93,24},{130,24},{130,-4.8},{138.4,-4.8}}, color={0,0,127}));
   connect(gain2.u, product.u2) annotation (Line(points={{86.8,4},{130,4},{130,-4.8},{138.4,-4.8}}, color={0,0,127}));
-  connect(add5.u1, imSE.VE_OUT) annotation (Line(points={{65.2,15.6},{68,15.6},{68,23.9},{71.5,23.9}}, color={0,0,127}));
+  connect(add5.u1, imSE.VE_OUT) annotation (Line(points={{65.2,15.6},{68,15.6},{68,24},{71.4,24}}, color={0,0,127}));
   connect(add5.u2, gain2.y) annotation (Line(points={{65.2,8.4},{68,8.4},{68,4},{77.6,4}}, color={0,0,127}));
   connect(XADIFD, division.u2) annotation (Line(points={{-160,40},{-14,40},{130,40},{130,50.8},{119.4,50.8}}, color={0,0,127}));
   connect(gain4.u, division.y) annotation (Line(points={{99,55},{106,55},{103.3,55}}, color={0,0,127}));
@@ -180,44 +180,58 @@ equation
   connect(fEX.u, gain4.y) annotation (Line(points={{80,56},{84,56},{84,55},{87.5,55}}, color={0,0,127}));
   connect(fEX.y, product.u1) annotation (Line(points={{63.2,56},{58,56},{58,34},{134,34},{134,4.8},{138.4,4.8}}, color={0,0,127}));
   annotation (
-    Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-160,-80},{160,80}}), graphics={Text(
+    Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-160,-80},{160,80}}), graphics={
+        Text(
           extent={{-124,-18},{-114,-26}},
           lineColor={0,0,255},
-          textString="VREF"),Text(
+          textString="VREF"),
+        Text(
           extent={{-8,28},{2,22}},
           lineColor={255,0,0},
-          textString="V"),Text(
+          textString="V"),
+        Text(
           extent={{-4,24},{4,22}},
           lineColor={255,0,0},
-          textString="FE"),Text(
+          textString="FE"),
+        Text(
           extent={{-170,60},{-160,54}},
           lineColor={255,0,0},
-          textString="V"),Text(
+          textString="V"),
+        Text(
           extent={{-160,56},{-166,54}},
           lineColor={255,0,0},
           textString="F")}),
-    Icon(coordinateSystem(preserveAspectRatio=false, extent={{-160,-80},{160,80}}), graphics={Rectangle(extent={{-160,80},{160,-80}}, lineColor={0,0,255}),Text(
+    Icon(coordinateSystem(preserveAspectRatio=false, extent={{-160,-80},{160,80}}), graphics={
+        Rectangle(extent={{-160,80},{160,-80}}, lineColor={0,0,255}),
+        Text(
           extent={{-150,64},{-128,54}},
           lineColor={0,0,255},
-          textString="EFD0"),Text(
+          textString="EFD0"),
+        Text(
           extent={{-150,28},{-120,12}},
           lineColor={0,0,255},
-          textString="ECOMP"),Text(
+          textString="ECOMP"),
+        Text(
           extent={{-154,-16},{-106,-26}},
           lineColor={0,0,255},
-          textString="VOTHSG"),Text(
+          textString="VOTHSG"),
+        Text(
           extent={{-154,-36},{-122,-46}},
           lineColor={0,0,255},
-          textString="VUEL"),Text(
+          textString="VUEL"),
+        Text(
           extent={{128,8},{158,-8}},
           lineColor={0,0,255},
-          textString="EFD"),Text(
+          textString="EFD"),
+        Text(
           extent={{-52,32},{52,-30}},
           lineColor={0,0,255},
-          textString="EXAC2"),Text(
+          textString="EXAC2"),
+        Text(
           extent={{-150,50},{-118,30}},
           lineColor={0,0,255},
-          textString="XADIFD"),Text(
+          textString="XADIFD"),
+        Text(
           extent={{-154,-56},{-122,-66}},
           lineColor={0,0,255},
           textString="VOEL")}),

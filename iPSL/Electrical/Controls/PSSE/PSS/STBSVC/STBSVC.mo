@@ -62,16 +62,21 @@ equation
   connect(add.y, imDerivativeLag.u) annotation (Line(points={{9,0},{12.5,0},{16,0}}, color={0,0,127}));
   annotation (
     Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-120,-100},{120,100}})),
-    Icon(coordinateSystem(extent={{-120,-100},{120,100}}, preserveAspectRatio=true), graphics={Rectangle(extent={{-120,100},{120,-100}}, lineColor={28,108,200}),Text(
+    Icon(coordinateSystem(extent={{-120,-100},{120,100}}, preserveAspectRatio=true), graphics={
+        Rectangle(extent={{-120,100},{120,-100}}, lineColor={28,108,200}),
+        Text(
           extent={{-112,58},{-66,44}},
           lineColor={28,108,200},
-          textString="V_S1"),Text(
+          textString="V_S1"),
+        Text(
           extent={{-120,-42},{-58,-56}},
           lineColor={28,108,200},
-          textString="V_S2"),Text(
+          textString="V_S2"),
+        Text(
           extent={{70,10},{118,-6}},
           lineColor={28,108,200},
-          textString="VOTHSG"),Text(
+          textString="VOTHSG"),
+        Text(
           extent={{-62,30},{66,-32}},
           lineColor={28,108,200},
           textString="STBSVC")}),

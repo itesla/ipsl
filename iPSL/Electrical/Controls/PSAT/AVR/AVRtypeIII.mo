@@ -57,28 +57,33 @@ equation
         extent={{-100.0,-100.0},{100.0,100.0}},
         preserveAspectRatio=true,
         initialScale=0.1,
-        grid={10,10}), graphics={Rectangle(
+        grid={10,10}), graphics={
+        Rectangle(
           visible=true,
           fillColor={255,255,255},
-          extent={{-100.0,-100.0},{100.0,100.0}}),Text(
+          extent={{-100.0,-100.0},{100.0,100.0}}),
+        Text(
           visible=true,
           origin={1.5941,2.9728},
           fillPattern=FillPattern.Solid,
           extent={{-31.5941,-24.9719},{31.5941,24.9719}},
           textString="AVRtypeIII",
-          fontName="Arial"),Text(
+          fontName="Arial"),
+        Text(
           visible=true,
           origin={-77.3525,52.4473},
           fillPattern=FillPattern.Solid,
           extent={{-17.3525,-17.5527},{17.3525,17.5527}},
           textString="v",
-          fontName="Arial"),Text(
+          fontName="Arial"),
+        Text(
           visible=true,
           origin={-74.7671,-32.7013},
           fillPattern=FillPattern.Solid,
           extent={{-11.7427,-9.8104},{11.7427,9.8104}},
           textString="vf0",
-          fontName="Arial"),Text(
+          fontName="Arial"),
+        Text(
           visible=true,
           origin={84.2416,-0.0},
           fillPattern=FillPattern.Solid,

@@ -92,29 +92,34 @@ equation
       color={0,0,127},
       smooth=Smooth.None));
   connect(add.y, lV_Gate.n1) annotation (Line(
-      points={{-67.5,-17},{-55.75,-17},{-55.75,1.8},{-43,1.8}},
+      points={{-67.5,-17},{-55.75,-17},{-55.75,5},{-47.25,5}},
       color={0,0,127},
       smooth=Smooth.None));
   connect(lV_Gate.n2, add2.y) annotation (Line(
-      points={{-43,-2.6},{-43,-25.3},{-42.5,-25.3},{-42.5,-47}},
+      points={{-47.25,-5},{-47.25,-25.3},{-42.5,-25.3},{-42.5,-47}},
       color={0,0,127},
       smooth=Smooth.None));
   connect(const.y, add2.u1) annotation (Line(points={{-27,-84},{-8,-84},{-8,-50},{-31,-50}}, color={0,0,127}));
   connect(add1.u1, add2.u1) annotation (Line(points={{31,-50},{38,-50},{38,-84},{-8,-84},{-8,-50},{-31,-50}}, color={0,0,127}));
-  connect(simpleLagLim.u, lV_Gate.p) annotation (Line(points={{-5,1},{-17.5,1},{-17.5,-0.5},{-30.1,-0.5}}, color={0,0,127}));
+  connect(simpleLagLim.u, lV_Gate.p) annotation (Line(points={{-5,1},{-17.5,1},{-17.5,0},{-27.25,0}}, color={0,0,127}));
   connect(simpleLagLim.y, transferFunction1.u) annotation (Line(points={{6.5,1},{26.25,1},{26.25,0},{46.8,0}}, color={0,0,127}));
   annotation (
     Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,100}})),
-    Icon(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,100}}), graphics={Rectangle(extent={{-100,100},{100,-100}}, lineColor={0,0,255}),Text(
+    Icon(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,100}}), graphics={
+        Rectangle(extent={{-100,100},{100,-100}}, lineColor={0,0,255}),
+        Text(
           extent={{-90,56},{-30,44}},
           lineColor={0,0,255},
-          textString="SPEED"),Text(
+          textString="SPEED"),
+        Text(
           extent={{-90,-44},{-32,-56}},
           lineColor={0,0,255},
-          textString="VAR(L)"),Text(
+          textString="VAR(L)"),
+        Text(
           extent={{48,6},{108,-6}},
           lineColor={0,0,255},
-          textString="PMECH"),Text(
+          textString="PMECH"),
+        Text(
           extent={{-40,18},{36,-18}},
           lineColor={0,0,255},
           textString="GAST")}),

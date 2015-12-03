@@ -515,56 +515,74 @@ equation
   connect(delay.y, gain1.u) annotation (Line(points={{150,35.4},{150,50.4},{150,50.4}}, color={0,0,127}));
   connect(delay.u, add4.y) annotation (Line(points={{150,3.2},{150,-17.4},{150,-17.4}}, color={0,0,127}));
   annotation (
-    Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-320,-240},{260,220}}), graphics={Text(
+    Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-320,-240},{260,220}}), graphics={
+        Text(
           extent={{-272,-98},{-260,-106}},
           lineColor={255,0,0},
-          textString="s7"),Text(
+          textString="s7"),
+        Text(
           extent={{-188,-8},{-178,-16}},
           lineColor={255,0,0},
-          textString="s8"),Text(
+          textString="s8"),
+        Text(
           extent={{-72,136},{-58,126}},
           lineColor={255,0,0},
-          textString="tlim"),Text(
+          textString="tlim"),
+        Text(
           extent={{-62,110},{-46,102}},
           lineColor={255,0,0},
-          textString="texm"),Text(
+          textString="texm"),
+        Text(
           extent={{-162,108},{-152,100}},
           lineColor={255,0,0},
-          textString="s6"),Text(
+          textString="s6"),
+        Text(
           extent={{-88,-36},{-78,-44}},
           lineColor={255,0,0},
-          textString="s1"),Text(
+          textString="s1"),
+        Text(
           extent={{-68,-122},{-58,-130}},
           lineColor={255,0,0},
-          textString="s2"),Text(
+          textString="s2"),
+        Text(
           extent={{16,132},{26,124}},
           lineColor={255,0,0},
-          textString="s9"),Text(
+          textString="s9"),
+        Text(
           extent={{-28,132},{-18,124}},
           lineColor={255,0,0},
-          textString="s5"),Text(
+          textString="s5"),
+        Text(
           extent={{100,-76},{110,-84}},
           lineColor={255,0,0},
-          textString="s3"),Text(
+          textString="s3"),
+        Text(
           extent={{168,98},{178,90}},
           lineColor={255,0,0},
-          textString="s4"),Text(
+          textString="s4"),
+        Text(
           extent={{-254,-182},{-242,-190}},
           lineColor={255,0,0},
-          textString="s0"),Text(
+          textString="s0"),
+        Text(
           extent={{-306,232},{-158,190}},
           lineColor={0,0,255},
           textString="input should be speed")}),
-    Icon(coordinateSystem(extent={{-320,-240},{260,220}}, preserveAspectRatio=false), graphics={Rectangle(extent={{-320,220},{260,-240}}, lineColor={0,0,255}),Text(
+    Icon(coordinateSystem(extent={{-320,-240},{260,220}}, preserveAspectRatio=false), graphics={
+        Rectangle(extent={{-320,220},{260,-240}}, lineColor={0,0,255}),
+        Text(
           extent={{-306,146},{-216,92}},
           lineColor={0,0,255},
-          textString="SPEED"),Text(
+          textString="SPEED"),
+        Text(
           extent={{-306,-74},{-222,-126}},
           lineColor={0,0,255},
-          textString="PELEC"),Text(
+          textString="PELEC"),
+        Text(
           extent={{-114,64},{92,-64}},
           lineColor={0,0,255},
-          textString="GGOV1"),Text(
+          textString="GGOV1"),
+        Text(
           extent={{172,24},{256,-28}},
           lineColor={0,0,255},
           textString="PMECH")}),

@@ -85,10 +85,14 @@ equation
   connect(gENSAL.p, p) annotation (Line(points={{-1.4,5},{84,5},{84,0},{110,0}}, color={0,0,255}));
   connect(pSS2A.V_S1, hYGOV.SPEED) annotation (Line(points={{-130,-1.5},{-140,-1.5},{-140,42},{-4,42},{-4,28},{12,28},{12,35},{6.7,35}}, color={0,0,127}));
   annotation (
-    Icon(graphics={Ellipse(extent={{-14,-42},{74,38}}, lineColor={0,0,255}),Line(
+    Icon(graphics={
+        Ellipse(extent={{-14,-42},{74,38}}, lineColor={0,0,255}),
+        Line(
           points={{-2,-12},{18,8},{38,-12},{58,8}},
           color={0,0,255},
-          smooth=Smooth.None),Ellipse(extent={{-100,-100},{101,100}}, lineColor={0,0,255}),Text(
+          smooth=Smooth.None),
+        Ellipse(extent={{-100,-100},{101,100}}, lineColor={0,0,255}),
+        Text(
           extent={{-91,6},{-22,-12}},
           lineColor={0,0,255},
           textStyle={TextStyle.Italic},

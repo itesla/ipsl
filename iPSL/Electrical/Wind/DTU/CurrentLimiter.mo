@@ -199,54 +199,69 @@ equation
   connect(iQ_VDL.u[1], imSimpleLag.y) annotation (Line(points={{-23.2,30},{-38,30},{-38,0},{-53.4,0}}, color={0,0,127}));
   annotation (
     Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-70},{100,100}})),
-    Icon(coordinateSystem(preserveAspectRatio=false, extent={{-100,-70},{100,100}}), graphics={Rectangle(extent={{-79,60},{81,-60}}, lineColor={0,0,255}),Ellipse(
+    Icon(coordinateSystem(preserveAspectRatio=false, extent={{-100,-70},{100,100}}), graphics={
+        Rectangle(extent={{-79,60},{81,-60}}, lineColor={0,0,255}),
+        Ellipse(
           extent={{-22,20},{22,-22}},
           lineColor={0,0,255},
-          lineThickness=0.5),Polygon(
+          lineThickness=0.5),
+        Polygon(
           points={{0,20},{-2,14},{2,14},{0,20}},
           lineColor={0,0,255},
           lineThickness=0.5,
           smooth=Smooth.None,
           fillPattern=FillPattern.Solid,
-          fillColor={0,0,255}),Line(
+          fillColor={0,0,255}),
+        Line(
           points={{-10,-20},{-22,-38}},
           color={0,0,255},
           thickness=0.5,
-          smooth=Smooth.None),Line(
+          smooth=Smooth.None),
+        Line(
           points={{24,34},{12,16}},
           color={0,0,255},
           thickness=0.5,
-          smooth=Smooth.None),Line(
+          smooth=Smooth.None),
+        Line(
           points={{24,34},{36,34}},
           color={0,0,255},
           smooth=Smooth.None,
-          thickness=0.5),Line(
+          thickness=0.5),
+        Line(
           points={{-34,-38},{-22,-38}},
           color={0,0,255},
           smooth=Smooth.None,
-          thickness=0.5),Line(
+          thickness=0.5),
+        Line(
           points={{0,16},{0,-22}},
           color={0,0,255},
           thickness=0.5,
-          smooth=Smooth.None),Text(
+          smooth=Smooth.None),
+        Text(
           extent={{-74,45},{-56,35}},
           lineColor={0,0,255},
-          textString="i_Pcmd"),Text(
+          textString="i_Pcmd"),
+        Text(
           extent={{-73,5},{-59,-4}},
           lineColor={0,0,255},
-          textString="U_wtt"),Text(
+          textString="U_wtt"),
+        Text(
           extent={{-8,55},{10,45}},
           lineColor={0,0,255},
-          textString="F_LVRT"),Text(
+          textString="F_LVRT"),
+        Text(
           extent={{58,35},{76,25}},
           lineColor={0,0,255},
-          textString="i_Qmax"),Text(
+          textString="i_Qmax"),
+        Text(
           extent={{60,-27},{78,-37}},
           lineColor={0,0,255},
-          textString="i_Pmax"),Text(
+          textString="i_Pmax"),
+        Text(
           extent={{-72,-34},{-54,-44}},
           lineColor={0,0,255},
-          textString="i_Qcmd"),Text(
+          textString="i_Qcmd"),
+        Text(
           extent={{-26,-43},{26,-54}},
           lineColor={0,0,255},
           textString="Current Limitation Model")}),

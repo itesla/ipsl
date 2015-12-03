@@ -10,12 +10,16 @@ equation
   n.vi = p.vi;
   n.ir = -p.ir;
   n.ii = -p.ii;
-  outp = sqrt(p.ir*p.ir + p.ii*p.ii) annotation (Icon(graphics={Rectangle(extent={{-40,40},{40,-40}}, lineColor={0,0,255}),Rectangle(extent={{-30,32},{30,-32}}, lineColor={0,0,255}),Rectangle(extent=
-          {{-20,20},{20,0}}, lineColor={0,0,255}),Text(
+  outp = sqrt(p.ir*p.ir + p.ii*p.ii) annotation (Icon(graphics={
+        Rectangle(extent={{-40,40},{40,-40}}, lineColor={0,0,255}),
+        Rectangle(extent={{-30,32},{30,-32}}, lineColor={0,0,255}),
+        Rectangle(extent={{-20,20},{20,0}}, lineColor={0,0,255}),
+        Text(
           extent={{-26,-12},{-6,-28}},
           lineColor={0,0,255},
           textStyle={TextStyle.Bold},
-          textString="I"),Line(
+          textString="I"),
+        Line(
           points={{0,0},{10,10}},
           color={0,0,255},
           smooth=Smooth.None)}), Diagram(graphics));

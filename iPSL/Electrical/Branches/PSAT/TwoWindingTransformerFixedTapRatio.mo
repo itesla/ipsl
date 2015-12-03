@@ -57,13 +57,19 @@ equation
 <p><span style=\"font-family: MS Shell Dlg 2;\">The iPSL is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU Lesser General Public License for more details.</span></p>
 <p><span style=\"font-family: MS Shell Dlg 2;\">You should have received a copy of the GNU Lesser General Public License along with the iPSL. If not, see &LT;http://www.gnu.org/licenses/&GT;.</span></p>
 </html>"),
-    Icon(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,100}}), graphics={Ellipse(extent={{-46,30},{8,-30}}, lineColor={0,0,255}),Ellipse(extent={{-10,30},{44,-30}}, lineColor={
-          0,0,255}),Line(
+    Icon(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,100}}), graphics={
+        Ellipse(extent={{-46,30},{8,-30}}, lineColor={0,0,255}),
+        Ellipse(extent={{-10,30},{44,-30}}, lineColor={0,0,255}),
+        Line(
           points={{100,0},{44,0},{44,0}},
           color={0,0,255},
-          smooth=Smooth.None),Line(
+          smooth=Smooth.None),
+        Line(
           points={{-100,0},{-46,0}},
           color={0,0,255},
-          smooth=Smooth.None),Line(points={{-64,-44},{-22,12}}, color={28,108,200}),Line(points={{-34,6},{-22,12}}, color={28,108,200}),Line(points={{-24,0}}, color={28,108,200}),Line(points={{-26,0},
-          {-22,12}}, color={28,108,200})}));
+          smooth=Smooth.None),
+        Line(points={{-64,-44},{-22,12}}, color={28,108,200}),
+        Line(points={{-34,6},{-22,12}}, color={28,108,200}),
+        Line(points={{-24,0}}, color={28,108,200}),
+        Line(points={{-26,0},{-22,12}}, color={28,108,200})}));
 end TwoWindingTransformerFixedTapRatio;

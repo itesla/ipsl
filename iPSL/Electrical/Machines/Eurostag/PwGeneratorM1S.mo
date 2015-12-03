@@ -250,44 +250,59 @@ equation
   pin_FRZPU = omegaRef;
   pin_FRZHZ = omegaRef*omega0;
   annotation (
-    Icon(graphics={Rectangle(extent={{-40,40},{40,-40}}, lineColor={0,0,255}),Ellipse(
+    Icon(graphics={
+        Rectangle(extent={{-40,40},{40,-40}}, lineColor={0,0,255}),
+        Ellipse(
           extent={{-24,22},{24,-24}},
           lineColor={0,0,255},
-          lineThickness=1),Line(
+          lineThickness=1),
+        Line(
           points={{-16,0},{-12,8},{-6,8},{6,-10},{12,-10},{16,0}},
           color={0,0,255},
           smooth=Smooth.Bezier,
-          thickness=1),Text(
+          thickness=1),
+        Text(
           extent={{-74,48},{-54,42}},
           lineColor={0,0,255},
-          textString="pin_OMEGA"),Text(
+          textString="pin_OMEGA"),
+        Text(
           extent={{-70,16},{-60,10}},
           lineColor={0,0,255},
-          textString="pin_CM"),Text(
+          textString="pin_CM"),
+        Text(
           extent={{-70,-14},{-60,-20}},
           lineColor={0,0,255},
-          textString="pin_EFD"),Text(
+          textString="pin_EFD"),
+        Text(
           extent={{54,38},{70,32}},
           lineColor={0,0,255},
-          textString="sortie"),Text(
+          textString="sortie"),
+        Text(
           extent={{52,-8},{70,-16}},
           lineColor={0,0,255},
-          textString="pin_THETA"),Text(
+          textString="pin_THETA"),
+        Text(
           extent={{-52,-46},{-42,-52}},
           lineColor={0,0,255},
-          textString="ur"),Text(
+          textString="ur"),
+        Text(
           extent={{4,-48},{14,-54}},
           lineColor={0,0,255},
           textString="ui
-"),Text(  extent={{-56,56},{-36,52}},
+"),
+        Text(
+          extent={{-56,56},{-36,52}},
           lineColor={0,0,255},
-          textString="FieldCurrent"),Text(
+          textString="FieldCurrent"),
+        Text(
           extent={{34,-50},{54,-54}},
           lineColor={0,0,255},
-          textString="TerminalVoltage"),Text(
+          textString="TerminalVoltage"),
+        Text(
           extent={{-24,56},{-4,52}},
           lineColor={0,0,255},
-          textString="ActivePowerPNALT"),Text(
+          textString="ActivePowerPNALT"),
+        Text(
           extent={{8,56},{28,52}},
           lineColor={0,0,255},
           textString="ActivePowerPN")}),

@@ -9,38 +9,47 @@ equation
   Vre_ref = n.vr + R*n.ir - X*n.ii;
   Vim_ref = n.vi + R*n.ii + X*n.ir;
   annotation (
-    Icon(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,100}}), graphics={Rectangle(extent={{-60,60},{60,-60}}, lineColor={0,0,255}),Ellipse(
+    Icon(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,100}}), graphics={
+        Rectangle(extent={{-60,60},{60,-60}}, lineColor={0,0,255}),
+        Ellipse(
           extent={{-22,22},{22,-20}},
           lineColor={0,0,255},
-          lineThickness=0.5),Line(
+          lineThickness=0.5),
+        Line(
           points={{0,38},{0,22}},
           color={0,0,255},
           thickness=0.5,
-          smooth=Smooth.None),Text(
+          smooth=Smooth.None),
+        Text(
           extent={{-56,48},{-36,32}},
           lineColor={0,0,255},
           lineThickness=1,
           fillColor={0,0,255},
           fillPattern=FillPattern.Solid,
-          textString="Vre_ref"),Text(
+          textString="Vre_ref"),
+        Text(
           extent={{-56,-32},{-36,-48}},
           lineColor={0,0,255},
           lineThickness=1,
           fillColor={0,0,255},
           fillPattern=FillPattern.Solid,
-          textString="Vim_ref"),Line(
+          textString="Vim_ref"),
+        Line(
           points={{0,-20},{0,-36}},
           color={0,0,255},
           thickness=0.5,
-          smooth=Smooth.None),Line(
+          smooth=Smooth.None),
+        Line(
           points={{-4,14},{4,14}},
           color={0,0,255},
           smooth=Smooth.None,
-          thickness=0.5),Line(
+          thickness=0.5),
+        Line(
           points={{0,18},{0,10}},
           color={0,0,255},
           smooth=Smooth.None,
-          thickness=0.5),Line(
+          thickness=0.5),
+        Line(
           points={{-4,-12},{4,-12}},
           color={0,0,255},
           smooth=Smooth.None,

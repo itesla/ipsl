@@ -60,23 +60,30 @@ equation
   end if;
   annotation (
     Diagram(coordinateSystem(preserveAspectRatio=true, extent={{-100,-100},{100,100}}), graphics),
-    Icon(coordinateSystem(preserveAspectRatio=true, extent={{-100,-100},{100,100}}), graphics={Ellipse(extent={{-46,30},{8,-30}}, lineColor={0,0,255}),Ellipse(extent={{-10,30},{44,-30}}, lineColor={0,
-          0,255}),Line(
+    Icon(coordinateSystem(preserveAspectRatio=true, extent={{-100,-100},{100,100}}), graphics={
+        Ellipse(extent={{-46,30},{8,-30}}, lineColor={0,0,255}),
+        Ellipse(extent={{-10,30},{44,-30}}, lineColor={0,0,255}),
+        Line(
           points={{100,0},{44,0},{44,0}},
           color={0,0,255},
-          smooth=Smooth.None),Line(
+          smooth=Smooth.None),
+        Line(
           points={{-100,0},{-46,0}},
           color={0,0,255},
-          smooth=Smooth.None),Line(
+          smooth=Smooth.None),
+        Line(
           points={{70,0},{70,-40},{-36,-40},{-20,18},{-20,18}},
           color={0,0,255},
-          smooth=Smooth.None),Line(
+          smooth=Smooth.None),
+        Line(
           points={{-30,6},{-20,18}},
           color={0,0,255},
-          smooth=Smooth.None),Line(
+          smooth=Smooth.None),
+        Line(
           points={{-20,2},{-20,16}},
           color={0,0,255},
-          smooth=Smooth.None),Text(
+          smooth=Smooth.None),
+        Text(
           extent={{-32,66},{32,54}},
           lineColor={0,128,0},
           textString="%ULTC%")}),

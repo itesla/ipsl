@@ -69,7 +69,7 @@ initial algorithm
   end if;
 equation
   connect(XADIFD, negCurLogic.XadIfd) annotation (Line(
-      points={{-95,-50},{64,-50},{64,-5.84},{76.8,-5.84}},
+      points={{-95,-50},{64,-50},{64,-8.5},{66.6667,-8.5}},
       color={0,0,127},
       smooth=Smooth.None));
   connect(EFD, EFD) annotation (Line(
@@ -89,38 +89,47 @@ equation
   connect(simpleLag1.y, add.u2) annotation (Line(points={{-22.7,-19},{-38,-19},{-38,0.8},{-31.4,0.8}}, color={0,0,127}));
   connect(VR.y, limiter.u) annotation (Line(points={{6.7,5},{12.35,5},{18.6,5}}, color={0,0,127}));
   connect(derivativeLag.u, limiter.y) annotation (Line(points={{27.4,-19},{40,-19},{40,5},{34.7,5}}, color={0,0,127}));
-  connect(EFD, negCurLogic.Efd) annotation (Line(points={{126,-1},{115,-1},{115,-1.66},{104.4,-1.66}}, color={0,0,127}));
+  connect(EFD, negCurLogic.Efd) annotation (Line(points={{126,-1},{115,-1},{115,1},{113.333,1}}, color={0,0,127}));
   connect(product.u1, ETERM) annotation (Line(points={{26.8,43.6},{-33.6,43.6},{-33.6,45},{-99,45}}, color={0,0,127}));
   connect(product.u2, limiter.y) annotation (Line(points={{26.8,36.4},{20,36.4},{20,20},{40,20},{40,5},{34.7,5}}, color={0,0,127}));
   connect(product.y, switch1.u3) annotation (Line(points={{40.6,40},{48,40},{48,35.2},{58.8,35.2}}, color={0,0,127}));
   connect(switch1.u1, limiter.y) annotation (Line(points={{58.8,44.8},{50,44.8},{50,5},{40,5},{34.7,5}}, color={0,0,127}));
-  connect(switch1.y, negCurLogic.Vd) annotation (Line(points={{72.6,40},{80,40},{80,14},{64,14},{64,4.8},{76.8,4.8}}, color={0,0,127}));
+  connect(switch1.y, negCurLogic.Vd) annotation (Line(points={{72.6,40},{80,40},{80,14},{64,14},{64,10.5},{66.6667,10.5}}, color={0,0,127}));
   connect(booleanConstant.y, switch1.u2) annotation (Line(points={{40.6,66},{54,66},{54,40},{58.8,40}}, color={255,0,255}));
-  annotation (Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,100}}), graphics={Text(
+  annotation (Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,100}}), graphics={
+        Text(
           extent={{-58,-8},{-52,-14}},
           lineColor={0,0,255},
-          textString="Vs"),Text(
+          textString="Vs"),
+        Text(
           extent={{-84,34},{-76,26}},
           lineColor={0,0,255},
-          textString="Vref"),Text(
+          textString="Vref"),
+        Text(
           extent={{-94,-30},{-78,-36}},
           lineColor={0,0,255},
-          textString="Efd0"),Text(
+          textString="Efd0"),
+        Text(
           extent={{-102,16},{-74,10}},
           lineColor={0,0,255},
-          textString="Ec"),Text(
+          textString="Ec"),
+        Text(
           extent={{-94,2},{-76,-8}},
           lineColor={0,0,255},
-          textString="VOTHSG"),Text(
+          textString="VOTHSG"),
+        Text(
           extent={{-96,-8},{-74,-14}},
           lineColor={0,0,255},
-          textString="VOEL"),Text(
+          textString="VOEL"),
+        Text(
           extent={{-96,-16},{-74,-22}},
           lineColor={0,0,255},
-          textString="VUEL"),Text(
+          textString="VUEL"),
+        Text(
           extent={{-92,54},{-80,46}},
           lineColor={0,0,255},
-          textString="Et"),Text(
+          textString="Et"),
+        Text(
           extent={{-88,-42},{-70,-50}},
           lineColor={0,0,255},
           textString="XadIfd")}), Documentation(info="<html>

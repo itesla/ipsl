@@ -102,26 +102,35 @@ equation
       smooth=Smooth.None));
   annotation (
     Diagram(coordinateSystem(preserveAspectRatio=true, extent={{-100,-100},{100,100}}), graphics),
-    Icon(coordinateSystem(preserveAspectRatio=true, extent={{-100,-100},{100,100}}), graphics={Ellipse(extent={{-52,34},{12,-28}}, lineColor={0,0,255}),Ellipse(extent={{-4,64},{60,2}}, lineColor={0,0,
-          255}),Ellipse(extent={{-2,16},{62,-46}}, lineColor={0,0,255}),Line(
+    Icon(coordinateSystem(preserveAspectRatio=true, extent={{-100,-100},{100,100}}), graphics={
+        Ellipse(extent={{-52,34},{12,-28}}, lineColor={0,0,255}),
+        Ellipse(extent={{-4,64},{60,2}}, lineColor={0,0,255}),
+        Ellipse(extent={{-2,16},{62,-46}}, lineColor={0,0,255}),
+        Line(
           points={{-54,-22},{10,42},{10,42}},
           color={0,0,255},
-          smooth=Smooth.None),Line(
+          smooth=Smooth.None),
+        Line(
           points={{2,40},{10,42},{10,42}},
           color={0,0,255},
-          smooth=Smooth.None),Line(
+          smooth=Smooth.None),
+        Line(
           points={{8,34},{10,42}},
           color={0,0,255},
-          smooth=Smooth.None),Line(
+          smooth=Smooth.None),
+        Line(
           points={{60,32},{100,32},{100,32}},
           color={0,0,255},
-          smooth=Smooth.None),Line(
+          smooth=Smooth.None),
+        Line(
           points={{58,-28},{102,-28},{100,-28}},
           color={0,0,255},
-          smooth=Smooth.None),Line(
+          smooth=Smooth.None),
+        Line(
           points={{-100,0},{-52,0}},
           color={0,0,255},
-          smooth=Smooth.None),Text(
+          smooth=Smooth.None),
+        Text(
           extent={{-54,-62},{54,-78}},
           lineColor={0,128,0},
           textString="%TWT%")}),

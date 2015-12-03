@@ -45,8 +45,10 @@ equation
   connect(generator.EFD, generator.EFD0) annotation (Line(points={{-59.2,20},{-80,20},{-80,-4},{40,-4},{40,12},{23.2,12}}, color={0,0,127}));
   annotation (
     Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,100}})),
-    Icon(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,100}}), graphics={Ellipse(extent={{-100,100},{100,-100}}, lineColor={28,108,200}),Line(points={{-40,-20}}, color={28,108,
-          200}),Line(points={{-40,0},{-20,40},{20,-42},{40,0}}, color={28,108,200})}),
+    Icon(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,100}}), graphics={
+        Ellipse(extent={{-100,100},{100,-100}}, lineColor={28,108,200}),
+        Line(points={{-40,-20}}, color={28,108,200}),
+        Line(points={{-40,0},{-20,40},{20,-42},{40,0}}, color={28,108,200})}),
     Documentation(info="<html>
 <p><span style=\"font-family: MS Shell Dlg 2;\">&LT;iPSL: iTesla Power System Library&GT;</span></p>
 <p><span style=\"font-family: MS Shell Dlg 2;\">Copyright 2015 RTE (France), AIA (Spain), KTH (Sweden) and DTU (Denmark)</span></p>

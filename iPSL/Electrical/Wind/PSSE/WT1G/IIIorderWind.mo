@@ -77,16 +77,20 @@ equation
   der(epm) = (-wbase*s*epr) - (epm - (X - Xp)*(-1)*Ir)/T;
   Im = (-a23*(-1)*((-Vr) - epr)) + a13*(-1)*(Vm - epm);
   Ir = a13*(-1)*((-Vr) - epr) + a23*(-1)*(Vm - epm);
-  annotation (Icon(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,100}}), graphics={Rectangle(
+  annotation (Icon(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,100}}), graphics={
+        Rectangle(
           visible=true,
           fillColor={255,255,255},
-          extent={{-100,-100},{100,100}}),Ellipse(
+          extent={{-100,-100},{100,100}}),
+        Ellipse(
           visible=true,
           fillColor={255,255,255},
-          extent={{-56,-58},{55.9318,54}}),Text(
+          extent={{-56,-58},{55.9318,54}}),
+        Text(
           extent={{-50,48},{50,-52}},
           lineColor={0,0,0},
-          textString="M"),Text(
+          textString="M"),
+        Text(
           origin={0,-76.0978},
           fillPattern=FillPattern.Solid,
           extent={{-57.2101,-15.0},{57.2101,15.0}},

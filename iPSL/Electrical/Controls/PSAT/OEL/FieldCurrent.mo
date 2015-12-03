@@ -16,19 +16,24 @@ equation
   ifield = sqrt((v + gamaq)^2 + p^2) + (xd/xq + 1)*(gamaq*(v + gamaq) + gamap)/sqrt((v + gamaq)^2 + p^2);
   annotation (
     Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,100}}), graphics),
-    Icon(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,100}}), graphics={Rectangle(extent={{-48,66},{60,-52}}, lineColor={0,0,255}),Text(
+    Icon(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,100}}), graphics={
+        Rectangle(extent={{-48,66},{60,-52}}, lineColor={0,0,255}),
+        Text(
           extent={{-52,62},{-20,42}},
           lineColor={0,0,255},
           fillPattern=FillPattern.Solid,
-          textString="v"),Text(
+          textString="v"),
+        Text(
           extent={{-48,14},{-20,-2}},
           lineColor={0,0,255},
           fillPattern=FillPattern.Solid,
-          textString="p"),Text(
+          textString="p"),
+        Text(
           extent={{-50,-28},{-22,-44}},
           lineColor={0,0,255},
           fillPattern=FillPattern.Solid,
-          textString="q"),Text(
+          textString="q"),
+        Text(
           extent={{36,12},{64,-4}},
           lineColor={0,0,255},
           fillPattern=FillPattern.Solid,

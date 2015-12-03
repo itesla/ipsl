@@ -59,15 +59,15 @@ model ConstantPQPV
           preserveAspectRatio=true,
           initialScale=0.1,
           grid={10,10}), graphics={Rectangle(
-              visible=true,
-              fillColor={255,255,255},
-              extent={{-100.0,-100.0},{100.0,100.0}}),Text(
-              visible=true,
-              origin={0.0,15.3102},
-              fillPattern=FillPattern.Solid,
-              extent={{-31.415,-20.0667},{31.415,20.0667}},
-              textString="%name",
-              fontName="Arial")}),
+            visible=true,
+            fillColor={255,255,255},
+            extent={{-100.0,-100.0},{100.0,100.0}}), Text(
+            visible=true,
+            origin={0.0,15.3102},
+            fillPattern=FillPattern.Solid,
+            extent={{-31.415,-20.0667},{31.415,20.0667}},
+            textString="%name",
+            fontName="Arial")}),
       Diagram(coordinateSystem(
           extent={{-148.5,-105.0},{148.5,105.0}},
           preserveAspectRatio=true,
@@ -171,15 +171,15 @@ model ConstantPQPV
           preserveAspectRatio=true,
           initialScale=0.1,
           grid={10,10}), graphics={Rectangle(
-              visible=true,
-              fillColor={255,255,255},
-              extent={{-100.0,-100.0},{100.0,100.0}}),Text(
-              visible=true,
-              origin={0.0,15.3102},
-              fillPattern=FillPattern.Solid,
-              extent={{-31.415,-20.0667},{31.415,20.0667}},
-              textString="%name",
-              fontName="Arial")}),
+            visible=true,
+            fillColor={255,255,255},
+            extent={{-100.0,-100.0},{100.0,100.0}}), Text(
+            visible=true,
+            origin={0.0,15.3102},
+            fillPattern=FillPattern.Solid,
+            extent={{-31.415,-20.0667},{31.415,20.0667}},
+            textString="%name",
+            fontName="Arial")}),
       Diagram(coordinateSystem(
           extent={{-148.5,-105.0},{148.5,105.0}},
           preserveAspectRatio=true,

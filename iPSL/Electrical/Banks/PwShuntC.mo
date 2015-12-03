@@ -22,19 +22,23 @@ equation
   i = v*2*pi*fn*C "I=U/Z";
   annotation (
     Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,100}}), graphics),
-    Icon(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,100}}), graphics={Line(
+    Icon(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,100}}), graphics={
+        Line(
           points={{0,42},{0,20}},
           color={0,0,255},
           smooth=Smooth.None,
-          thickness=0.5),Line(
+          thickness=0.5),
+        Line(
           points={{-30,20},{34,20}},
           color={0,0,255},
           smooth=Smooth.None,
-          thickness=0.5),Line(
+          thickness=0.5),
+        Line(
           points={{-30,0},{34,0}},
           color={0,0,255},
           smooth=Smooth.None,
-          thickness=0.5),Rectangle(extent={{-40,42},{42,-24}}, lineColor={0,0,255})}),
+          thickness=0.5),
+        Rectangle(extent={{-40,42},{42,-24}}, lineColor={0,0,255})}),
     Documentation(info="<html>
 <p><br><span style=\"font-family: MS Shell Dlg 2;\">&LT;iPSL: iTesla Power System Library&GT;</span></p>
 <p><span style=\"font-family: MS Shell Dlg 2;\">Copyright 2015 RTE (France), AIA (Spain), KTH (Sweden) and DTU (Denmark)</span></p>

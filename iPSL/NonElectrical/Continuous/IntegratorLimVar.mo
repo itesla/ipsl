@@ -28,17 +28,22 @@ equation
     der(y) = K*u;
   end if;
   annotation (
-    Icon(graphics={Line(points={{40,100},{60,140},{100,140}}, color={0,0,0}),Text(
+    Icon(graphics={
+        Line(points={{40,100},{60,140},{100,140}}, color={0,0,0}),
+        Text(
           extent={{-20,68},{20,8}},
           lineColor={0,0,255},
-          textString="K"),Line(
+          textString="K"),
+        Line(
           points={{-80,0},{78,0}},
           color={0,0,255},
           smooth=Smooth.Bezier,
-          thickness=0.5),Text(
+          thickness=0.5),
+        Text(
           extent={{-70,-20},{70,-80}},
           lineColor={0,0,255},
-          textString="s"),Line(points={{-100,-140},{-60,-140},{-40,-100}}, color={0,0,0})}),
+          textString="s"),
+        Line(points={{-100,-140},{-60,-140},{-40,-100}}, color={0,0,0})}),
     Diagram,
     Documentation(info="<html>
 <p><br><span style=\"font-family: MS Shell Dlg 2;\">&LT;iPSL: iTesla Power System Library&GT;</span></p>

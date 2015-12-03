@@ -128,51 +128,65 @@ equation
   connect(sum4.u1, sum5.y) annotation (Line(points={{19,2},{14,2},{14,18},{15.6,18}}, color={0,0,127}));
   connect(sum5.u2, VE.y) annotation (Line(points={{24.8,20.4},{30,20.4},{30,26},{31.6,26}}, color={0,0,127}));
   connect(sum5.u1, KE_EFD.y) annotation (Line(points={{24.8,15.6},{33.4,15.6},{33.4,16},{41.6,16}}, color={0,0,127}));
-  connect(se1.VE_OUT, VE.u2) annotation (Line(points={{45.6,38.1},{44,38.1},{44,28.4},{40.8,28.4}}, color={0,0,127}));
+  connect(se1.VE_OUT, VE.u2) annotation (Line(points={{45.52,38},{44,38},{44,28.4},{40.8,28.4}}, color={0,0,127}));
   connect(sum4.y, integrator.u) annotation (Line(points={{30.5,-1},{35.25,-1},{35.25,-1},{41,-1}}, color={0,0,127}));
   connect(integrator.y, EFD) annotation (Line(points={{52.5,-1},{74,-1},{74,-22},{83,-22}}, color={0,0,127}));
   connect(derivativeLag.u, EFD) annotation (Line(points={{13,-35},{74,-35},{74,-22},{83,-22}}, color={0,0,127}));
-  connect(se1.VE_IN, EFD) annotation (Line(points={{62.4,38.1},{74,38.1},{74,-22},{83,-22}}, color={0,0,127}));
+  connect(se1.VE_IN, EFD) annotation (Line(points={{62.8,38},{74,38},{74,-22},{83,-22}}, color={0,0,127}));
   connect(VE.u1, EFD) annotation (Line(points={{40.8,23.6},{74,23.6},{74,-22},{83,-22}}, color={0,0,127}));
   connect(KE_EFD.u, EFD) annotation (Line(points={{50.8,16},{74,16},{74,-22},{83,-22}}, color={0,0,127}));
   connect(sum3.y, simpleLagLim.u) annotation (Line(points={{-21.5,-3},{-15.75,-3},{-15.75,-3},{-9,-3}}, color={0,0,127}));
   connect(simpleLagLim.y, sum4.u2) annotation (Line(points={{2.5,-3},{10.25,-3},{10.25,-4},{19,-4}}, color={0,0,127}));
   annotation (
-    Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-140,-100},{120,100}}), graphics={Text(
+    Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-140,-100},{120,100}}), graphics={
+        Text(
           extent={{10,40},{38,32}},
           lineColor={0,0,255},
-          textString="VE=SE*EFD"),Text(
+          textString="VE=SE*EFD"),
+        Text(
           extent={{-110,10},{-82,4}},
           lineColor={0,0,255},
-          textString="Ec"),Text(
+          textString="Ec"),
+        Text(
           extent={{-102,-20},{-80,-26}},
           lineColor={0,0,255},
-          textString="VUEL"),Text(
+          textString="VUEL"),
+        Text(
           extent={{-102,-12},{-80,-18}},
           lineColor={0,0,255},
-          textString="VOEL"),Text(
+          textString="VOEL"),
+        Text(
           extent={{-100,-2},{-82,-12}},
           lineColor={0,0,255},
           textString="VOTHSG")}),
-    Icon(coordinateSystem(preserveAspectRatio=false, extent={{-140,-100},{120,100}}), graphics={Rectangle(extent={{-140,100},{120,-100}}, lineColor={0,0,255}),Text(
+    Icon(coordinateSystem(preserveAspectRatio=false, extent={{-140,-100},{120,100}}), graphics={
+        Rectangle(extent={{-140,100},{120,-100}}, lineColor={0,0,255}),
+        Text(
           extent={{-126,-36},{-68,-62}},
           lineColor={0,0,255},
           textString="ECOMP
-"),Text(  extent={{-124,92},{-60,68}},
+"),
+        Text(
+          extent={{-124,92},{-60,68}},
           lineColor={0,0,255},
-          textString="VOTHSG"),Text(
+          textString="VOTHSG"),
+        Text(
           extent={{-130,8},{-80,-8}},
           lineColor={0,0,255},
-          textString="VUEL"),Text(
+          textString="VUEL"),
+        Text(
           extent={{88,8},{118,-8}},
           lineColor={0,0,255},
-          textString="EFD"),Text(
+          textString="EFD"),
+        Text(
           extent={{-46,36},{54,-36}},
           lineColor={0,0,255},
-          textString="IEEET1"),Text(
+          textString="IEEET1"),
+        Text(
           extent={{-126,48},{-84,32}},
           lineColor={0,0,255},
-          textString="VOEL"),Text(
+          textString="VOEL"),
+        Text(
           extent={{-132,-72},{-76,-88}},
           lineColor={0,0,255},
           textString="EFD0")}),

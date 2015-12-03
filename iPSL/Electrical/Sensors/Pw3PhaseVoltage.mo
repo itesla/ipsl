@@ -15,11 +15,16 @@ equation
   n.ii = -p.ii;
   v = sqrt((p.vr + RT*p.ir - XT*p.ii)*(p.vr + RT*p.ir - XT*p.ii) + (p.vi + RT*p.ii + XT*p.ir)*(p.vi + RT*p.ii + XT*p.ir))*1.0/r;
   annotation (
-    Icon(graphics={Rectangle(extent={{-40,40},{40,-40}}, lineColor={0,0,255}),Rectangle(extent={{-30,32},{30,-32}}, lineColor={0,0,255}),Rectangle(extent={{-20,20},{20,0}}, lineColor={0,0,255}),Text(
+    Icon(graphics={
+        Rectangle(extent={{-40,40},{40,-40}}, lineColor={0,0,255}),
+        Rectangle(extent={{-30,32},{30,-32}}, lineColor={0,0,255}),
+        Rectangle(extent={{-20,20},{20,0}}, lineColor={0,0,255}),
+        Text(
           extent={{-28,-18},{28,-30}},
           lineColor={0,0,255},
           textStyle={TextStyle.Bold},
-          textString="3-Phase V"),Line(
+          textString="3-Phase V"),
+        Line(
           points={{0,0},{10,10}},
           color={0,0,255},
           smooth=Smooth.None)}),

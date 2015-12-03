@@ -54,11 +54,14 @@ equation
   Q = (-p.vr*p.ii) + p.vi*p.ir;
   annotation (
     Diagram(coordinateSystem(preserveAspectRatio=true, extent={{-100,-100},{100,100}}), graphics),
-    Icon(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,100}}), graphics={Rectangle(extent={{-60,60},{40,-40}}, lineColor={0,0,255}),Rectangle(extent={{-40,40},{20,-20}},
-          lineColor={0,0,255}),Line(
+    Icon(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,100}}), graphics={
+        Rectangle(extent={{-60,60},{40,-40}}, lineColor={0,0,255}),
+        Rectangle(extent={{-40,40},{20,-20}}, lineColor={0,0,255}),
+        Line(
           points={{-40,40},{20,-20}},
           color={0,0,255},
-          smooth=Smooth.None),Line(
+          smooth=Smooth.None),
+        Line(
           points={{-40,-20},{20,40}},
           color={0,0,255},
           smooth=Smooth.None)}),

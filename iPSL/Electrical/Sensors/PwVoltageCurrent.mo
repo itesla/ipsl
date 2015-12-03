@@ -18,24 +18,32 @@ equation
   Ir = p.ir;
   Ii = p.ii;
   annotation (
-    Icon(coordinateSystem(preserveAspectRatio=true, extent={{-100,-100},{100,100}}), graphics={Rectangle(extent={{-40,40},{40,-40}}, lineColor={0,0,255}),Rectangle(extent={{-30,32},{30,-32}},
-          lineColor={0,0,255}),Rectangle(extent={{-20,20},{20,0}}, lineColor={0,0,255}),Text(
+    Icon(coordinateSystem(preserveAspectRatio=true, extent={{-100,-100},{100,100}}), graphics={
+        Rectangle(extent={{-40,40},{40,-40}}, lineColor={0,0,255}),
+        Rectangle(extent={{-30,32},{30,-32}}, lineColor={0,0,255}),
+        Rectangle(extent={{-20,20},{20,0}}, lineColor={0,0,255}),
+        Text(
           extent={{-26,-12},{-6,-28}},
           lineColor={0,0,255},
           textString="U",
-          textStyle={TextStyle.Bold}),Line(
+          textStyle={TextStyle.Bold}),
+        Line(
           points={{0,0},{10,10}},
           color={0,0,255},
-          smooth=Smooth.None),Text(
+          smooth=Smooth.None),
+        Text(
           extent={{52,12},{60,6}},
           lineColor={0,0,255},
-          textString="vr"),Text(
+          textString="vr"),
+        Text(
           extent={{52,-2},{60,-8}},
           lineColor={0,0,255},
-          textString="vi"),Text(
+          textString="vi"),
+        Text(
           extent={{52,-16},{60,-22}},
           lineColor={0,0,255},
-          textString="Ir"),Text(
+          textString="Ir"),
+        Text(
           extent={{52,-32},{60,-38}},
           lineColor={0,0,255},
           textString="Ii")}),

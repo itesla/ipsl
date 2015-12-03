@@ -9,11 +9,14 @@ record INI_GENROU_data
   //50.0
   parameter Real V4=0 "amature resistance";
   annotation (
-    Icon(graphics={Rectangle(extent={{-40,40},{40,-40}}, lineColor={0,0,255}),Text(
+    Icon(graphics={
+        Rectangle(extent={{-40,40},{40,-40}}, lineColor={0,0,255}),
+        Text(
           extent={{-32,14},{32,-10}},
           lineColor={0,0,255},
           textStyle={TextStyle.Bold},
-          textString="|x|"),Text(
+          textString="|x|"),
+        Text(
           extent={{-58,4},{-46,-4}},
           lineColor={255,255,255},
           textString="p1")}),

@@ -9,15 +9,18 @@ block RealExpression "Set output signal to a time varying Real expression"
     Icon(coordinateSystem(
         preserveAspectRatio=true,
         extent={{-100,-100},{100,100}},
-        grid={2,2}), graphics={Rectangle(
+        grid={2,2}), graphics={
+        Rectangle(
           extent={{-100,40},{100,-40}},
           lineColor={0,0,0},
           fillColor={235,235,235},
           fillPattern=FillPattern.Solid,
-          borderPattern=BorderPattern.Raised),Text(
+          borderPattern=BorderPattern.Raised),
+        Text(
           extent={{-96,15},{96,-15}},
           lineColor={0,0,0},
-          textString="%y"),Text(
+          textString="%y"),
+        Text(
           extent={{-150,90},{140,50}},
           textString="%name",
           lineColor={0,0,255})}),

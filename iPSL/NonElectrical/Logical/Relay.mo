@@ -9,27 +9,38 @@ model Relay "Relay"
 equation
   y = if u1 > 0 then u2 else u3;
   annotation (
-    Icon(coordinateSystem(extent={{-40,-40},{40,40}}, preserveAspectRatio=true), graphics={Rectangle(
+    Icon(coordinateSystem(extent={{-40,-40},{40,40}}, preserveAspectRatio=true), graphics={
+        Rectangle(
           extent={{-40,40},{40,-40}},
           lineColor={0,0,0},
           fillColor={255,255,255},
-          fillPattern=FillPattern.Solid),Line(
+          fillPattern=FillPattern.Solid),
+        Line(
           points={{-28,0},{-8,0}},
           color={0,0,255},
-          smooth=Smooth.None),Line(
+          smooth=Smooth.None),
+        Line(
           points={{-28,-20},{-8,-20}},
           color={0,0,255},
-          smooth=Smooth.None),Line(
+          smooth=Smooth.None),
+        Line(
           points={{-12,-2},{4,-12},{24,-12}},
           color={0,0,255},
-          smooth=Smooth.None),Ellipse(extent={{-8,2},{-4,-2}}, lineColor={0,0,255}),Ellipse(extent={{-8,-18},{-4,-22}}, lineColor={0,0,255}),Rectangle(
+          smooth=Smooth.None),
+        Ellipse(extent={{-8,2},{-4,-2}}, lineColor={0,0,255}),
+        Ellipse(extent={{-8,-18},{-4,-22}}, lineColor={0,0,255}),
+        Rectangle(
           extent={{-12,36},{12,24}},
           lineColor={0,0,255},
           fillColor={255,255,255},
-          fillPattern=FillPattern.Solid),Line(points={{-12,30},{-28,30}}, color={0,0,255}),Line(points={{28,30},{12,30}}, color={0,0,255}),Line(
+          fillPattern=FillPattern.Solid),
+        Line(points={{-12,30},{-28,30}}, color={0,0,255}),
+        Line(points={{28,30},{12,30}}, color={0,0,255}),
+        Line(
           points={{0,24},{0,-10}},
           color={0,0,255},
-          pattern=LinePattern.Dash),Text(
+          pattern=LinePattern.Dash),
+        Text(
           extent={{-110,58},{110,42}},
           lineColor={0,0,255},
           textString="%name")}),

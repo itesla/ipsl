@@ -16,27 +16,33 @@ equation
   end if;
   annotation (
     Diagram(coordinateSystem(preserveAspectRatio=true, extent={{-100,-100},{100,100}}), graphics={Rectangle(extent={{-78,30},{92,-58}}, lineColor={0,0,255})}),
-    Icon(coordinateSystem(preserveAspectRatio=true, extent={{-100,-100},{100,100}}), graphics={Rectangle(extent={{-86,50},{92,-68}}, lineColor={0,0,255}),Line(
+    Icon(coordinateSystem(preserveAspectRatio=true, extent={{-100,-100},{100,100}}), graphics={
+        Rectangle(extent={{-86,50},{92,-68}}, lineColor={0,0,255}),
+        Line(
           points={{-36,-54},{22,16},{22,30},{22,30}},
           color={0,0,255},
           smooth=Smooth.None,
-          thickness=0.5),Line(
+          thickness=0.5),
+        Line(
           points={{52,-54},{-50,-54},{-50,40},{-48,36},{-54,36},{-50,40},{-50,40}},
           color={0,0,255},
           smooth=Smooth.None,
-          thickness=0.5),Text(
+          thickness=0.5),
+        Text(
           extent={{44,-40},{74,-58}},
           lineColor={0,0,255},
           lineThickness=0.5,
           fillColor={0,0,255},
           fillPattern=FillPattern.Solid,
-          textString="V"),Text(
+          textString="V"),
+        Text(
           extent={{-44,46},{-14,28}},
           lineColor={0,0,255},
           lineThickness=0.5,
           fillColor={0,0,255},
           fillPattern=FillPattern.Solid,
-          textString="LVPL"),Line(
+          textString="LVPL"),
+        Line(
           points={{-56,12},{-44,12},{-44,12}},
           color={0,0,255},
           thickness=0.5,

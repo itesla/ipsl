@@ -191,36 +191,45 @@ equation
   connect(theta_tg.y, Tmech1.u1) annotation (Line(points={{66.5,1},{76,1},{76,38},{-98,38},{-98,18},{-83,18}}, color={0,0,127}));
   connect(Tmech.u2, Tmech1.u1) annotation (Line(points={{-83,-52},{-98,-52},{-98,-96},{76,-96},{76,38},{-98,38},{-98,18},{-83,18}}, color={0,0,127}));
   annotation (
-    Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,100}}), graphics={Text(
+    Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,100}}), graphics={
+        Text(
           extent={{48,0},{72,-24}},
           lineColor={255,0,0},
           textString="K
-Shaft twist angle, rad."),Text(
+Shaft twist angle, rad."),
+        Text(
           extent={{-16,18},{8,-6}},
           lineColor={255,0,0},
           textString="K+1
-Turbine rotor speed deviation, pu"),Text(
+Turbine rotor speed deviation, pu"),
+        Text(
           extent={{-44,-48},{-20,-72}},
           lineColor={255,0,0},
           textString="K+2
-Generator speed deviation, pu"),Text(
+Generator speed deviation, pu"),
+        Text(
           extent={{52,-70},{76,-94}},
           lineColor={255,0,0},
           textString="K+3
-Generator rotor angle deviation, pu"),Text(
+Generator rotor angle deviation, pu"),
+        Text(
           extent={{-2,-78},{18,-94}},
           lineColor={255,0,0},
           textString="VAR(L+1)
-Initial Rotor Slip"),Text(
+Initial Rotor Slip"),
+        Text(
           extent={{0,32},{10,24}},
           lineColor={255,0,0},
-          textString="dwt"),Text(
+          textString="dwt"),
+        Text(
           extent={{-24,-38},{-14,-46}},
           lineColor={255,0,0},
-          textString="dwg"),Text(
+          textString="dwg"),
+        Text(
           extent={{-16,-4},{-2,-12}},
           lineColor={255,0,0},
-          textString="dwtg"),Text(
+          textString="dwtg"),
+        Text(
           extent={{76,4},{92,-10}},
           lineColor={255,0,0},
           textString="theta_tg")}),

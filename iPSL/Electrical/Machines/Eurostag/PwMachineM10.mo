@@ -164,10 +164,13 @@ equation
   ii = sortie.ii;
   annotation (
     Diagram(graphics),
-    Icon(graphics={Rectangle(extent={{-40,40},{40,-40}}, lineColor={0,0,255}),Ellipse(
+    Icon(graphics={
+        Rectangle(extent={{-40,40},{40,-40}}, lineColor={0,0,255}),
+        Ellipse(
           extent={{-24,22},{24,-24}},
           lineColor={0,0,255},
-          lineThickness=1),Text(
+          lineThickness=1),
+        Text(
           extent={{-12,-7},{12,7}},
           lineColor={0,0,255},
           textString="M10")}),

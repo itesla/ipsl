@@ -210,28 +210,37 @@ equation
     Icon(coordinateSystem(
         preserveAspectRatio=false,
         extent={{-220,-60},{240,60}},
-        grid={2,2}), graphics={Rectangle(extent={{-220,60},{240,-60}}, lineColor={0,0,255}),Text(
+        grid={2,2}), graphics={
+        Rectangle(extent={{-220,60},{240,-60}}, lineColor={0,0,255}),
+        Text(
           extent={{-26,-32},{26,-54}},
           lineColor={0,0,255},
-          textString="XADIFD"),Text(
+          textString="XADIFD"),
+        Text(
           extent={{-204,40},{-164,20}},
           lineColor={0,0,255},
-          textString="ECOMP"),Text(
+          textString="ECOMP"),
+        Text(
           extent={{-210,-24},{-158,-36}},
           lineColor={0,0,255},
-          textString="VOTHSG"),Text(
+          textString="VOTHSG"),
+        Text(
           extent={{-76,-36},{-42,-50}},
           lineColor={0,0,255},
-          textString="VOEL"),Text(
+          textString="VOEL"),
+        Text(
           extent={{208,8},{238,-8}},
           lineColor={0,0,255},
-          textString="EFD"),Text(
+          textString="EFD"),
+        Text(
           extent={{-54,32},{50,-30}},
           lineColor={0,0,255},
-          textString="ESAC1A"),Text(
+          textString="ESAC1A"),
+        Text(
           extent={{-136,-36},{-103,-49}},
           lineColor={0,0,255},
-          textString="VUEL"),Text(
+          textString="VUEL"),
+        Text(
           extent={{38,-36},{82,-50}},
           lineColor={0,0,255},
           textString="EFD0")}),

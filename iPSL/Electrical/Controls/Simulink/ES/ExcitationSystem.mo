@@ -69,19 +69,25 @@ equation
   connect(add3_1.y, oEL.VolContinput) annotation (Line(points={{-25,28},{-18,28},{-18,42},{-24.4,42},{-24.4,51.16}}, color={0,0,127}));
   annotation (
     Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{140,100}})),
-    Icon(coordinateSystem(extent={{-100,-100},{140,100}}, preserveAspectRatio=false), graphics={Rectangle(extent={{-84,78},{128,-20}}, lineColor={0,0,255}),Text(
+    Icon(coordinateSystem(extent={{-100,-100},{140,100}}, preserveAspectRatio=false), graphics={
+        Rectangle(extent={{-84,78},{128,-20}}, lineColor={0,0,255}),
+        Text(
           extent={{-80,72},{-62,60}},
           lineColor={0,0,255},
-          textString="ifd"),Text(
+          textString="ifd"),
+        Text(
           extent={{-80,34},{-62,22}},
           lineColor={0,0,255},
-          textString="V "),Text(
+          textString="V "),
+        Text(
           extent={{-78,2},{-54,-12}},
           lineColor={0,0,255},
-          textString="omega"),Text(
+          textString="omega"),
+        Text(
           extent={{106,36},{130,22}},
           lineColor={0,0,255},
-          textString="vfd"),Text(
+          textString="vfd"),
+        Text(
           extent={{-34,58},{88,0}},
           lineColor={0,0,255},
           textString="Exciter AVR OEL PSS")}),

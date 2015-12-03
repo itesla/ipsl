@@ -97,10 +97,14 @@ equation
   connect(hYGOV.PMECH, gENSAL.PMECH) annotation (Line(points={{-74.7,14},{-82,14},{-82,12.5},{-79.48,12.5}}, color={0,0,127}));
   connect(eSAC1A.EFD, gENSAL.EFD) annotation (Line(points={{-79.6304,-13},{-76,-13},{-76,-14.5},{-79.48,-14.5}}, color={0,0,127}));
   annotation (
-    Icon(coordinateSystem(preserveAspectRatio=true, extent={{-100,-100},{100,100}}), graphics={Ellipse(extent={{-14,-42},{74,38}}, lineColor={0,0,255}),Line(
+    Icon(coordinateSystem(preserveAspectRatio=true, extent={{-100,-100},{100,100}}), graphics={
+        Ellipse(extent={{-14,-42},{74,38}}, lineColor={0,0,255}),
+        Line(
           points={{-2,-12},{18,8},{38,-12},{58,8}},
           color={0,0,255},
-          smooth=Smooth.None),Ellipse(extent={{-100,-100},{101,100}}, lineColor={0,0,255}),Text(
+          smooth=Smooth.None),
+        Ellipse(extent={{-100,-100},{101,100}}, lineColor={0,0,255}),
+        Text(
           extent={{-91,6},{-22,-12}},
           lineColor={0,0,255},
           textStyle={TextStyle.Italic},

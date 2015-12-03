@@ -96,22 +96,28 @@ equation
   connect(add.y, imDerivativeLag.u) annotation (Line(points={{-79,0},{-62,0}}, color={0,0,127}));
   annotation (
     Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-180,-60},{180,60}})),
-    Icon(coordinateSystem(extent={{-180,-60},{180,60}}, preserveAspectRatio=false), graphics={Text(
+    Icon(coordinateSystem(extent={{-180,-60},{180,60}}, preserveAspectRatio=false), graphics={
+        Text(
           extent={{-156,52},{-114,28}},
           lineColor={28,108,200},
-          textString="ICS1"),Text(
+          textString="ICS1"),
+        Text(
           extent={{-158,-28},{-114,-54}},
           lineColor={28,108,200},
-          textString="ICS2"),Text(
+          textString="ICS2"),
+        Text(
           extent={{-20,-20},{22,-42}},
           lineColor={28,108,200},
-          textString="VCT"),Text(
+          textString="VCT"),
+        Text(
           extent={{106,12},{178,-14}},
           lineColor={28,108,200},
-          textString="VOTHSG"),Text(
+          textString="VOTHSG"),
+        Text(
           extent={{-50,32},{58,-32}},
           lineColor={28,108,200},
-          textString="IEE2ST"),Rectangle(extent={{-180,60},{180,-60}}, lineColor={28,108,200})}),
+          textString="IEE2ST"),
+        Rectangle(extent={{-180,60},{180,-60}}, lineColor={28,108,200})}),
     Documentation(info="<html>
 <table cellspacing=\"1\" cellpadding=\"1\" border=\"1\">
 <tr>

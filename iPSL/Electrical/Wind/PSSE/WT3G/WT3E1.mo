@@ -376,173 +376,221 @@ equation
       choice=0 "0 Bypass V control",
       choice=1 "1 WT3G1 Eqcmd limits",
       choice=-1 "-1 WT3G2 Eqcmd limits"),
-    Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-200,-140},{180,140}}), graphics={Text(
+    Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-200,-140},{180,140}}), graphics={
+        Text(
           extent={{-30,-70},{-20,-74}},
           lineColor={255,0,0},
-          textString="K+5"),Text(
+          textString="K+5"),
+        Text(
           extent={{12,-40},{22,-44}},
           lineColor={255,0,0},
-          textString="K+3"),Text(
+          textString="K+3"),
+        Text(
           extent={{96,-44},{116,-48}},
           lineColor={255,0,0},
           textString="Pord:WPCMND
 K+2
-"),Text(  extent={{66,92},{106,76}},
+"),
+        Text(
+          extent={{66,92},{106,76}},
           lineColor={0,0,255},
           textString="simplified one
-"),Text(  extent={{62,54},{72,50}},
+"),
+        Text(
+          extent={{62,54},{72,50}},
           lineColor={255,0,0},
-          textString="K+6"),Line(
+          textString="K+6"),
+        Line(
           points={{100,44},{108,46}},
           color={0,0,255},
-          smooth=Smooth.None),Line(
+          smooth=Smooth.None),
+        Line(
           points={{106,48},{106,64}},
           color={0,0,255},
-          smooth=Smooth.None),Line(
+          smooth=Smooth.None),
+        Line(
           points={{106,64},{144,64}},
           color={0,0,255},
-          smooth=Smooth.None),Line(
+          smooth=Smooth.None),
+        Line(
           points={{144,44},{144,64}},
           color={0,0,255},
-          smooth=Smooth.None),Line(
+          smooth=Smooth.None),
+        Line(
           points={{108,44},{118,44}},
           color={0,0,255},
-          smooth=Smooth.None),Text(
+          smooth=Smooth.None),
+        Text(
           extent={{102,30},{126,20}},
           lineColor={255,0,0},
-          textString="VLTFLG"),Line(
+          textString="VLTFLG"),
+        Line(
           points={{106,30},{106,40}},
           color={0,0,255},
-          smooth=Smooth.None),Line(
+          smooth=Smooth.None),
+        Line(
           points={{136,44},{160,44}},
           color={0,0,255},
-          smooth=Smooth.None),Text(
+          smooth=Smooth.None),
+        Text(
           extent={{102,58},{112,54}},
           lineColor={255,0,0},
-          textString="0"),Text(
+          textString="0"),
+        Text(
           extent={{108,42},{118,38}},
           lineColor={255,0,0},
-          textString="1 or 2"),Text(
+          textString="1 or 2"),
+        Text(
           extent={{70,32},{80,26}},
           lineColor={0,0,255},
-          textString="Vterm"),Text(
+          textString="Vterm"),
+        Text(
           extent={{24,52},{46,48}},
           lineColor={255,0,0},
           textString="Qord:QCMD
-"),Rectangle(
+"),
+        Rectangle(
           extent={{-90,-50},{-54,-76}},
           lineColor={0,0,255},
-          lineThickness=0.5),Line(
+          lineThickness=0.5),
+        Line(
           points={{-86,-54},{-86,-74},{-58,-74},{-60,-72},{-60,-76},{-58,-74},{-58,-74}},
           color={0,0,255},
           smooth=Smooth.None,
-          thickness=0.5),Line(
+          thickness=0.5),
+        Line(
           points={{-82,-72},{-80,-68},{-76,-64},{-70,-60},{-64,-58},{-64,-58}},
           color={0,0,255},
           thickness=0.5,
-          smooth=Smooth.None),Line(
+          smooth=Smooth.None),
+        Line(
           points={{-86,-54},{-88,-56},{-84,-56},{-86,-54},{-86,-54}},
           color={0,0,255},
           thickness=0.5,
-          smooth=Smooth.None),Text(
+          smooth=Smooth.None),
+        Text(
           extent={{-84,-54},{-80,-56}},
           lineColor={0,0,255},
           lineThickness=0.5,
           fillColor={0,0,255},
           fillPattern=FillPattern.Solid,
-          textString="Speed"),Text(
+          textString="Speed"),
+        Text(
           extent={{-60,-70},{-56,-72}},
           lineColor={0,0,255},
           lineThickness=0.5,
           fillColor={0,0,255},
           fillPattern=FillPattern.Solid,
-          textString="P"),Rectangle(
+          textString="P"),
+        Rectangle(
           extent={{-122,-16},{164,-124}},
           lineColor={255,0,0},
           lineThickness=0.5,
-          pattern=LinePattern.Dash),Text(
+          pattern=LinePattern.Dash),
+        Text(
           extent={{102,-116},{164,-122}},
           lineColor={255,0,0},
           pattern=LinePattern.Dash,
           lineThickness=0.5,
           fillColor={0,0,255},
           fillPattern=FillPattern.Solid,
-          textString="Active Power Control"),Rectangle(
+          textString="Active Power Control"),
+        Rectangle(
           extent={{-110,64},{-24,8}},
           lineColor={255,0,0},
           lineThickness=0.5,
-          pattern=LinePattern.Dash),Text(
+          pattern=LinePattern.Dash),
+        Text(
           extent={{-108,14},{-24,8}},
           lineColor={255,0,0},
           pattern=LinePattern.Dash,
           lineThickness=0.5,
           fillColor={0,0,255},
           fillPattern=FillPattern.Solid,
-          textString="Constant Power Factor Control"),Text(
+          textString="Constant Power Factor Control"),
+        Text(
           extent={{-34,102},{-14,98}},
           lineColor={255,0,0},
           textString="K
-"),Text(  extent={{-76,24},{-56,20}},
+"),
+        Text(
+          extent={{-76,24},{-56,20}},
           lineColor={255,0,0},
-          textString="K+9"),Text(
+          textString="K+9"),
+        Text(
           extent={{116,36},{136,32}},
           lineColor={255,0,0},
-          textString="K+7"),Line(
+          textString="K+7"),
+        Line(
           points={{-26,42},{-2,42}},
           color={0,0,255},
           smooth=Smooth.None,
-          thickness=0.5),Line(
+          thickness=0.5),
+        Line(
           points={{0,90},{0,52}},
           color={0,0,255},
           smooth=Smooth.None,
-          thickness=0.5),Line(
+          thickness=0.5),
+        Line(
           points={{10,56},{4,46}},
           color={255,0,0},
           smooth=Smooth.None,
           pattern=LinePattern.Dot,
-          thickness=0.5),Text(
+          thickness=0.5),
+        Text(
           extent={{-14,40},{-4,36}},
           lineColor={255,0,0},
-          textString="-1"),Text(
+          textString="-1"),
+        Text(
           extent={{-4,56},{6,52}},
           lineColor={255,0,0},
-          textString="1"),Text(
+          textString="1"),
+        Text(
           extent={{2,34},{12,30}},
           lineColor={255,0,0},
-          textString="0"),Line(
+          textString="0"),
+        Line(
           points={{0,38},{0,30}},
           color={0,0,255},
           smooth=Smooth.None,
-          thickness=0.5),Line(
+          thickness=0.5),
+        Line(
           points={{4,42},{28,42}},
           color={0,0,255},
           smooth=Smooth.None,
-          thickness=0.5),Line(
+          thickness=0.5),
+        Line(
           points={{0,46},{4,42}},
           color={0,0,255},
           smooth=Smooth.None,
-          thickness=0.5),Rectangle(
+          thickness=0.5),
+        Rectangle(
           extent={{-196,136},{-12,68}},
           lineColor={255,0,0},
           lineThickness=0.5,
-          pattern=LinePattern.Dash),Text(
+          pattern=LinePattern.Dash),
+        Text(
           extent={{-138,94},{-118,90}},
           lineColor={255,0,0},
-          textString="K+4"),Line(
+          textString="K+4"),
+        Line(
           points={{-16,90},{0,90}},
           color={0,0,255},
           smooth=Smooth.None,
-          thickness=0.5),Text(
+          thickness=0.5),
+        Text(
           extent={{-84,128},{-22,122}},
           lineColor={255,0,0},
           pattern=LinePattern.Dash,
           lineThickness=0.5,
           fillColor={0,0,255},
           fillPattern=FillPattern.Solid,
-          textString="Reactive Power Control"),Text(
+          textString="Reactive Power Control"),
+        Text(
           extent={{4,64},{26,56}},
           lineColor={255,0,0},
-          textString="VARFLG"),Text(
+          textString="VARFLG"),
+        Text(
           extent={{34,18},{66,-14}},
           lineColor={0,0,255},
           lineThickness=0.5,
@@ -555,20 +603,28 @@ Qord.p1=Qcmdn1.y;
 else
 VARFLG==0;
 end if;
- "),Text( extent={{-78,110},{-58,106}},
+ "),
+        Text(
+          extent={{-78,110},{-58,106}},
           lineColor={255,0,0},
           textString="K+1
-"),Text(  extent={{-80,76},{-60,72}},
+"),
+        Text(
+          extent={{-80,76},{-60,72}},
           lineColor={255,0,0},
-          textString="K+8"),Text(
+          textString="K+8"),
+        Text(
           extent={{72,-104},{114,-106}},
           lineColor={0,0,255},
           textString="avoid div by zero error
-",        textStyle={TextStyle.Bold}),Line(
+",
+          textStyle={TextStyle.Bold}),
+        Line(
           points={{-82,-72},{-86,-72},{-86,-72}},
           color={0,0,255},
           thickness=0.5,
-          smooth=Smooth.None),Line(
+          smooth=Smooth.None),
+        Line(
           points={{-64,-58},{-56,-58},{-56,-58}},
           color={0,0,255},
           thickness=0.5,

@@ -68,16 +68,21 @@ equation
           lineColor={0,0,255},
           textString="Pm0*(1-K_2)+Pm0*K_2*(1-K_3)+Pm0*K_3*K_2
 =0+0+0+Pm0")}),
-    Icon(coordinateSystem(preserveAspectRatio=false, extent={{-160,-80},{160,60}}), graphics={Rectangle(extent={{-160,60},{160,-80}}, lineColor={0,0,255}),Text(
+    Icon(coordinateSystem(preserveAspectRatio=false, extent={{-160,-80},{160,60}}), graphics={
+        Rectangle(extent={{-160,60},{160,-80}}, lineColor={0,0,255}),
+        Text(
           extent={{-52,20},{68,-20}},
           lineColor={0,0,255},
-          textString="IEESGO"),Text(
+          textString="IEESGO"),
+        Text(
           extent={{-142,36},{-118,22}},
           lineColor={0,0,255},
-          textString="SPEED"),Text(
+          textString="SPEED"),
+        Text(
           extent={{-142,-32},{-116,-48}},
           lineColor={0,0,255},
-          textString="PMECH0"),Text(
+          textString="PMECH0"),
+        Text(
           extent={{134,6},{156,-6}},
           lineColor={0,0,255},
           textString="PMECH")}),

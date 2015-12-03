@@ -220,23 +220,28 @@ equation
       smooth=Smooth.None));
   connect(const1.y, add1.u1) annotation (Line(points={{-197.4,66},{-173.4,66},{-173.4,65.2}}, color={0,0,127}));
   annotation (
-    Icon(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,100}}), graphics={Rectangle(extent={{-100,100},{100,-100}}, lineColor={0,0,255}),Text(
+    Icon(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,100}}), graphics={
+        Rectangle(extent={{-100,100},{100,-100}}, lineColor={0,0,255}),
+        Text(
           extent={{-34,20},{32,-18}},
           lineColor={0,0,255},
-          textString="TGTypeIV"),Text(
+          textString="TGTypeIV"),
+        Text(
           visible=true,
           origin={-81,-1},
           fillPattern=FillPattern.Solid,
           extent={{-23,-13},{23,13}},
           textString="W",
-          fontName="Arial"),Text(
+          fontName="Arial"),
+        Text(
           visible=true,
           origin={81.0002,1},
           fillPattern=FillPattern.Solid,
           extent={{-25.0002,-13},{25.0002,13}},
           fontName="Arial",
           textString="Pm",
-          lineColor={0,0,0}),Text(
+          lineColor={0,0,0}),
+        Text(
           visible=true,
           origin={-69,-57},
           fillPattern=FillPattern.Solid,

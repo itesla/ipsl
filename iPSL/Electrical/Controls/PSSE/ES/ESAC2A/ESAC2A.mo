@@ -243,35 +243,46 @@ equation
   connect(integratorLimVar.y, product.u1) annotation (Line(points={{274.6,-6},{282,-6},{282,2},{344,2},{344,1.6},{342.8,1.6}}, color={0,0,127}));
   connect(VX.u2, product.u1) annotation (Line(points={{270.6,-49.2},{282,-49.2},{282,2},{344,2},{344,1.6},{342.8,1.6}}, color={0,0,127}));
   annotation (
-    Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-200},{300,100}}), graphics={Text(
+    Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-200},{300,100}}), graphics={
+        Text(
           extent={{252,-44},{280,-48}},
           lineColor={0,0,255},
-          textString="VX=SE*VE"),Text(
+          textString="VX=SE*VE"),
+        Text(
           extent={{210,18},{216,8}},
           lineColor={255,0,0},
-          textString="VR"),Text(
+          textString="VR"),
+        Text(
           extent={{266,18},{272,8}},
           lineColor={255,0,0},
           textString="VE")}),
-    Icon(coordinateSystem(extent={{-100,-200},{300,100}}, preserveAspectRatio=false), graphics={Text(
+    Icon(coordinateSystem(extent={{-100,-200},{300,100}}, preserveAspectRatio=false), graphics={
+        Text(
           extent={{32,-2},{240,-98}},
           lineColor={0,0,255},
-          textString="ESAC2A"),Rectangle(extent={{-100,100},{300,-200}}, lineColor={0,0,255}),Text(
+          textString="ESAC2A"),
+        Rectangle(extent={{-100,100},{300,-200}}, lineColor={0,0,255}),
+        Text(
           extent={{-90,80},{-24,0}},
           lineColor={0,0,255},
-          textString="ECOMP"),Text(
+          textString="ECOMP"),
+        Text(
           extent={{-90,122},{-24,42}},
           lineColor={0,0,255},
-          textString="VOTHSG"),Text(
+          textString="VOTHSG"),
+        Text(
           extent={{-88,32},{-28,-32}},
           lineColor={0,0,255},
-          textString="XadIfd"),Text(
+          textString="XadIfd"),
+        Text(
           extent={{-96,-120},{-32,-146}},
           lineColor={0,0,255},
-          textString="EFD0"),Text(
+          textString="EFD0"),
+        Text(
           extent={{-86,-10},{-26,-74}},
           lineColor={0,0,255},
-          textString="VOEL"),Text(
+          textString="VOEL"),
+        Text(
           extent={{-88,-52},{-28,-116}},
           lineColor={0,0,255},
           textString="VUEL")}),

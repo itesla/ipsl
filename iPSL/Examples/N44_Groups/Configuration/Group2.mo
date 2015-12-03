@@ -33,10 +33,14 @@ equation
   connect(gENSAL.EFD, gENSAL.EFD0) annotation (Line(points={{-79.48,-14.5},{-92,-14.5},{-92,-44},{-14,-44},{-14,-19.9},{-25.92,-19.9}}, color={0,0,127}));
   connect(gENSAL.PMECH, gENSAL.PMECH0) annotation (Line(points={{-79.48,12.5},{-92,12.5},{-92,42},{-8,42},{-8,-9.1},{-25.92,-9.1}}, color={0,0,127}));
   annotation (
-    Icon(coordinateSystem(preserveAspectRatio=true, extent={{-100,-100},{100,100}}), graphics={Ellipse(extent={{-14,-42},{74,38}}, lineColor={0,0,255}),Line(
+    Icon(coordinateSystem(preserveAspectRatio=true, extent={{-100,-100},{100,100}}), graphics={
+        Ellipse(extent={{-14,-42},{74,38}}, lineColor={0,0,255}),
+        Line(
           points={{-2,-12},{18,8},{38,-12},{58,8}},
           color={0,0,255},
-          smooth=Smooth.None),Ellipse(extent={{-100,-100},{101,100}}, lineColor={0,0,255}),Text(
+          smooth=Smooth.None),
+        Ellipse(extent={{-100,-100},{101,100}}, lineColor={0,0,255}),
+        Text(
           extent={{-91,6},{-22,-12}},
           lineColor={0,0,255},
           textStyle={TextStyle.Italic},

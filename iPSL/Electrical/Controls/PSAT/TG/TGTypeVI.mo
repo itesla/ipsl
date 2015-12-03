@@ -243,38 +243,45 @@ equation
       color={0,0,127},
       smooth=Smooth.None));
   annotation (
-    Icon(coordinateSystem(extent={{-100,-80},{100,120}}, preserveAspectRatio=false), graphics={Rectangle(extent={{-100,120},{100,-80}}, lineColor={0,0,255}),Text(
+    Icon(coordinateSystem(extent={{-100,-80},{100,120}}, preserveAspectRatio=false), graphics={
+        Rectangle(extent={{-100,120},{100,-80}}, lineColor={0,0,255}),
+        Text(
           extent={{-38,46},{36,0}},
           lineColor={0,0,255},
-          textString="TGTypeVI"),Text(
+          textString="TGTypeVI"),
+        Text(
           visible=true,
           origin={-73,78},
           fillPattern=FillPattern.Solid,
           extent={{-29,-10},{29,10}},
           fontName="Arial",
           lineColor={0,0,0},
-          textString="wref"),Text(
+          textString="wref"),
+        Text(
           visible=true,
           origin={-76,37},
           fillPattern=FillPattern.Solid,
           extent={{-28,-11},{28,11}},
           fontName="Arial",
           lineColor={0,0,0},
-          textString="we"),Text(
+          textString="we"),
+        Text(
           visible=true,
           origin={-73,-7},
           fillPattern=FillPattern.Solid,
           extent={{-21,-13},{21,13}},
           fontName="Arial",
           textString="Pe",
-          lineColor={0,0,0}),Text(
+          lineColor={0,0,0}),
+        Text(
           visible=true,
           origin={-71,-42},
           fillPattern=FillPattern.Solid,
           extent={{-17,-12},{17,12}},
           fontName="Arial",
           textString="Pref",
-          lineColor={0,0,0}),Text(
+          lineColor={0,0,0}),
+        Text(
           visible=true,
           origin={79.0002,37},
           fillPattern=FillPattern.Solid,

@@ -35,17 +35,22 @@ equation
   n.ir = p.vr*G21 - p.vi*B21 + n.vr*G22 - n.vi*B22;
   n.ii = p.vi*G21 + p.vr*B21 + n.vi*G22 + n.vr*B22;
   annotation (
-    Icon(graphics={Rectangle(extent={{-60,40},{60,-40}}, lineColor={0,0,255}),Ellipse(
+    Icon(graphics={
+        Rectangle(extent={{-60,40},{60,-40}}, lineColor={0,0,255}),
+        Ellipse(
           extent={{-26,16},{6,-16}},
           lineColor={0,0,255},
-          lineThickness=1),Ellipse(
+          lineThickness=1),
+        Ellipse(
           extent={{-8,16},{24,-16}},
           lineColor={0,0,255},
-          lineThickness=1),Line(
+          lineThickness=1),
+        Line(
           points={{-42,0},{-26,0}},
           color={0,0,255},
           thickness=1,
-          smooth=Smooth.None),Line(
+          smooth=Smooth.None),
+        Line(
           points={{24,0},{40,0}},
           color={0,0,255},
           thickness=1,

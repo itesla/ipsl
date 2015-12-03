@@ -74,51 +74,63 @@ equation
         extent={{0,-100},{100,100}},
         preserveAspectRatio=false,
         initialScale=0.1,
-        grid={10,10}), graphics={Rectangle(
+        grid={10,10}), graphics={
+        Rectangle(
           extent={{80,100},{100,-100}},
           lineColor={0,0,255},
           fillPattern=FillPattern.Solid,
-          fillColor={0,0,255}),Line(
+          fillColor={0,0,255}),
+        Line(
           points={{40,110},{80,90},{90,90}},
           color={0,0,255},
           smooth=Smooth.None,
-          thickness=0.5),Line(
+          thickness=0.5),
+        Line(
           points={{40,-70},{80,-90},{90,-90}},
           color={0,0,255},
           smooth=Smooth.None,
-          thickness=0.5),Line(
+          thickness=0.5),
+        Line(
           points={{40,70},{80,50},{90,50}},
           color={0,0,255},
           smooth=Smooth.None,
-          thickness=0.5),Line(
+          thickness=0.5),
+        Line(
           points={{40,50},{80,30},{90,30}},
           color={0,0,255},
           smooth=Smooth.None,
-          thickness=0.5),Line(
+          thickness=0.5),
+        Line(
           points={{40,30},{80,10},{90,10}},
           color={0,0,255},
           smooth=Smooth.None,
-          thickness=0.5),Line(
+          thickness=0.5),
+        Line(
           points={{40,10},{80,-10},{90,-10}},
           color={0,0,255},
           smooth=Smooth.None,
-          thickness=0.5),Line(
+          thickness=0.5),
+        Line(
           points={{40,-10},{80,-30},{90,-30}},
           color={0,0,255},
           smooth=Smooth.None,
-          thickness=0.5),Line(
+          thickness=0.5),
+        Line(
           points={{40,90},{80,70},{90,70}},
           color={0,0,255},
           smooth=Smooth.None,
-          thickness=0.5),Line(
+          thickness=0.5),
+        Line(
           points={{40,-30},{80,-50},{90,-50}},
           color={0,0,255},
           smooth=Smooth.None,
-          thickness=0.5),Line(
+          thickness=0.5),
+        Line(
           points={{40,-50},{80,-70},{90,-70}},
           color={0,0,255},
           smooth=Smooth.None,
-          thickness=0.5),Text(
+          thickness=0.5),
+        Text(
           extent={{50,150},{100,110}},
           lineColor={0,0,255},
           lineThickness=0.5,

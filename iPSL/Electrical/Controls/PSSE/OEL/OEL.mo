@@ -62,13 +62,17 @@ equation
   connect(imLimitedIntegrator3.y, multiSum.u[4]) annotation (Line(points={{16.8,-6},{38,-6},{38,36.85},{42,36.85}}, color={0,0,127}));
   annotation (
     Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-80},{100,80}})),
-    Icon(coordinateSystem(preserveAspectRatio=false, extent={{-100,-80},{100,80}}), graphics={Rectangle(extent={{-100,80},{100,-80}}, lineColor={0,0,255}),Text(
+    Icon(coordinateSystem(preserveAspectRatio=false, extent={{-100,-80},{100,80}}), graphics={
+        Rectangle(extent={{-100,80},{100,-80}}, lineColor={0,0,255}),
+        Text(
           extent={{-36,12},{38,-16}},
           lineColor={0,0,255},
-          textString="OEL"),Text(
+          textString="OEL"),
+        Text(
           extent={{-96,4},{-72,-6}},
           lineColor={0,0,255},
-          textString="IFD/EFD"),Text(
+          textString="IFD/EFD"),
+        Text(
           extent={{82,4},{100,-4}},
           lineColor={0,0,255},
           textString="VOEL")}),
