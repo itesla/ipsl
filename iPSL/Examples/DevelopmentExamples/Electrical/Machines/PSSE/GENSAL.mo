@@ -1,7 +1,5 @@
 within iPSL.Examples.DevelopmentExamples.Electrical.Machines.PSSE;
-
-
-model GENROE "SMIB system with one load and GENROE model"
+model GENSAL "SMIB system with one load and GENROE model"
 
   iPSL.Electrical.Branches.PwLine pwLine(
     R=0.001,
@@ -54,18 +52,16 @@ model GENROE "SMIB system with one load and GENROE model"
     t2=2.15,
     R=0,
     X=0) annotation (Placement(transformation(extent={{56,-38},{76,-16}})));
-  iPSL.Electrical.Machines.PSSE.GENROE.GENROE gENROE(
+  iPSL.Electrical.Machines.PSSE.GENSAL.GENSAL gENROE(
     M_b=100,
     Tpd0=5,
     Tppd0=0.07,
-    Tpq0=0.9,
     Tppq0=0.09,
     H=4.28,
     D=0,
     Xd=1.84,
     Xq=1.75,
     Xpd=0.41,
-    Xpq=0.6,
     Xppd=0.2,
     Xl=0.12,
     S10=0.11,
@@ -75,8 +71,7 @@ model GENROE "SMIB system with one load and GENROE model"
     angle_0=4.046276,
     Q_0=5.416582,
     Xppq=0.2,
-    R_a=0,
-    Xpp=0.2) annotation (Placement(transformation(extent={{-82,-10},{-42,30}})));
+    R_a=0) annotation (Placement(transformation(extent={{-82,-10},{-42,30}})));
 equation
   connect(pwLine.n, pwLine1.p) annotation (Line(
       points={{-9,10},{3.5,10},{3.5,24},{29,24}},
@@ -124,4 +119,4 @@ equation
 <p><span style=\"font-family: MS Shell Dlg 2;\">The iPSL is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU Lesser General Public License for more details.</span></p>
 <p><span style=\"font-family: MS Shell Dlg 2;\">You should have received a copy of the GNU Lesser General Public License along with the iPSL. If not, see &LT;http://www.gnu.org/licenses/&GT;.</span></p>
 </html>"));
-end GENROE;
+end GENSAL;

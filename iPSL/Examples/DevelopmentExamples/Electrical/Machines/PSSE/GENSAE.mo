@@ -1,7 +1,5 @@
 within iPSL.Examples.DevelopmentExamples.Electrical.Machines.PSSE;
-
-
-model GENROE "SMIB system with one load and GENROE model"
+model GENSAE "SMIB system with one load and GENROE model"
 
   iPSL.Electrical.Branches.PwLine pwLine(
     R=0.001,
@@ -54,7 +52,7 @@ model GENROE "SMIB system with one load and GENROE model"
     t2=2.15,
     R=0,
     X=0) annotation (Placement(transformation(extent={{56,-38},{76,-16}})));
-  iPSL.Electrical.Machines.PSSE.GENROE.GENROE gENROE(
+  iPSL.Electrical.Machines.PSSE.GENROU.GENROU gENROE(
     M_b=100,
     Tpd0=5,
     Tppd0=0.07,
@@ -124,4 +122,4 @@ equation
 <p><span style=\"font-family: MS Shell Dlg 2;\">The iPSL is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU Lesser General Public License for more details.</span></p>
 <p><span style=\"font-family: MS Shell Dlg 2;\">You should have received a copy of the GNU Lesser General Public License along with the iPSL. If not, see &LT;http://www.gnu.org/licenses/&GT;.</span></p>
 </html>"));
-end GENROE;
+end GENSAE;

@@ -1,7 +1,6 @@
 within iPSL.Examples.DevelopmentExamples.Electrical.Machines.PSSE;
-
-
-model GENROE "SMIB system with one load and GENROE model"
+model GENROU "SMIB system with one load and GENROE model"
+  import iPSL;
 
   iPSL.Electrical.Branches.PwLine pwLine(
     R=0.001,
@@ -10,9 +9,9 @@ model GENROE "SMIB system with one load and GENROE model"
     B=0) annotation (Placement(transformation(extent={{-26,0},{-6,20}})));
   iPSL.Electrical.Branches.PwLine pwLine1(
     R=0.001,
-    X=0.2,
     G=0,
-    B=0) annotation (Placement(transformation(extent={{26,14},{46,34}})));
+    B=0,
+    X=0.2) annotation (Placement(transformation(extent={{26,14},{46,34}})));
   iPSL.Electrical.Branches.PwLine2Openings pwLine3(
     t2=100,
     R=0.0005,
@@ -54,13 +53,12 @@ model GENROE "SMIB system with one load and GENROE model"
     t2=2.15,
     R=0,
     X=0) annotation (Placement(transformation(extent={{56,-38},{76,-16}})));
-  iPSL.Electrical.Machines.PSSE.GENROE.GENROE gENROE(
+  iPSL.Electrical.Machines.PSSE.GENROU.GENROU gENROE(
     M_b=100,
     Tpd0=5,
     Tppd0=0.07,
     Tpq0=0.9,
     Tppq0=0.09,
-    H=4.28,
     D=0,
     Xd=1.84,
     Xq=1.75,
@@ -76,7 +74,9 @@ model GENROE "SMIB system with one load and GENROE model"
     Q_0=5.416582,
     Xppq=0.2,
     R_a=0,
-    Xpp=0.2) annotation (Placement(transformation(extent={{-82,-10},{-42,30}})));
+    Xpp=0.2,
+    H=4.28) annotation (Placement(transformation(extent={{-82,-10},{-42,30}})));
+  iPSL.Electrical.Buses.Bus GEN annotation (Placement(transformation(extent={{-44,0},{-24,20}})));
 equation
   connect(pwLine.n, pwLine1.p) annotation (Line(
       points={{-9,10},{3.5,10},{3.5,24},{29,24}},
@@ -106,9 +106,10 @@ equation
       points={{54.3333,-27},{54.3333,-25.5},{45,-25.5},{45,-10}},
       color={0,0,255},
       smooth=Smooth.None));
-  connect(gENROE.p, pwLine.p) annotation (Line(points={{-40,10},{-23,10}}, color={0,0,255}));
   connect(gENROE.PMECH, gENROE.PMECH0) annotation (Line(points={{-81.6,20},{-92,20},{-92,36},{-30,36},{-30,4},{-40.4,4}}, color={0,0,127}));
   connect(gENROE.EFD, gENROE.EFD0) annotation (Line(points={{-81.6,0},{-90,0},{-90,-20},{-32,-20},{-32,-4},{-40.4,-4}}, color={0,0,127}));
+  connect(gENROE.p, GEN.p) annotation (Line(points={{-40,10},{-37,10},{-34,10}}, color={0,0,255}));
+  connect(GEN.p, pwLine.p) annotation (Line(points={{-34,10},{-23,10}}, color={0,0,255}));
   annotation (Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,100}})), Documentation(info="<html>
 <p><span style=\"font-family: MS Shell Dlg 2;\">&LT;iPSL: iTesla Power System Library&GT;</span></p>
 <p><span style=\"font-family: MS Shell Dlg 2;\">Copyright 2015 RTE (France), AIA (Spain), KTH (Sweden) and DTU (Denmark)</span></p>
@@ -124,4 +125,4 @@ equation
 <p><span style=\"font-family: MS Shell Dlg 2;\">The iPSL is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU Lesser General Public License for more details.</span></p>
 <p><span style=\"font-family: MS Shell Dlg 2;\">You should have received a copy of the GNU Lesser General Public License along with the iPSL. If not, see &LT;http://www.gnu.org/licenses/&GT;.</span></p>
 </html>"));
-end GENROE;
+end GENROU;
