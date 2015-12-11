@@ -7,8 +7,6 @@ block SimpleLag "First order lag transfer function block"
   parameter Real K "Gain";
   parameter Modelica.SIunits.Time T "Lag time constant";
   parameter Real y_start "Output start value";
-  parameter Real outMax "Maximum output value";
-  parameter Real outMin "Minimum output value";
 protected
   parameter Real T_mod = if (T<Modelica.Constants.eps) then 1000 else T;
 equation
