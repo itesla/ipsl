@@ -93,9 +93,9 @@ model EXAC2 "SMIB system with one load and GENROE model"
     E_2=7,
     S_EE_1=0.03,
     S_EE_2=0.1,
-    T_R=1e-9,
-    T_B=1e-9,
-    T_C=1e-9) annotation (Placement(transformation(extent={{-36,-42},{-82,-20}})));
+    T_R=0.005,
+    T_B=0.005,
+    T_C=0.005) annotation (Placement(transformation(extent={{-36,-42},{-82,-20}})));
   Modelica.Blocks.Sources.Constant const(k=0) annotation (Placement(transformation(extent={{-2,-46},{-22,-26}})));
 equation
   connect(pwLine.n, pwLine1.p) annotation (Line(

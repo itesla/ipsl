@@ -1,7 +1,5 @@
 within iPSL.Examples.DevelopmentExamples.Electrical.Controls.PSSE.ES;
-
-
-model EXST1 "SMIB system with one load and GENROE model"
+model EXAC1 "SMIB system with one load and GENROE model"
   import iPSL;
   iPSL.Electrical.Branches.PwLine pwLine(
     R=0.001,
@@ -75,19 +73,24 @@ model EXST1 "SMIB system with one load and GENROE model"
     Q_0=5.416582,
     Xppq=0.2) annotation (Placement(transformation(extent={{-82,-10},{-42,30}})));
   Modelica.Blocks.Sources.Constant const(k=0) annotation (Placement(transformation(extent={{-2,-46},{-22,-26}})));
-  iPSL.Electrical.Controls.PSSE.ES.EXST1.EXST1 eXST1_1(
-    V_IMAX=10,
-    V_IMIN=-10,
-    T_R=0.02,
-    T_B=1,
-    K_A=80,
-    T_A=0.05,
-    V_RMAX=8,
-    V_RMIN=-3,
-    K_C=0.2,
-    K_F=0.1,
+  iPSL.Electrical.Controls.PSSE.ES.EXAC1.EXAC1 eXAC1_1(
+    K_A=400,
+    T_A=0.02,
+    V_RMAX=9,
+    V_RMIN=-5.43,
+    T_E=0.8,
+    K_F=0.03,
     T_F=1,
-    T_C=0.1) annotation (Placement(transformation(extent={{-40,-48},{-82,-18}})));
+    K_C=0.2,
+    K_D=0.48,
+    K_E=1,
+    E_1=5.25,
+    E_2=7,
+    S_EE_1=0.03,
+    S_EE_2=0.1,
+    T_R=0.004,
+    T_B=0.004,
+    T_C=0.004) annotation (Placement(transformation(extent={{-42,-40},{-80,-14}})));
 equation
   connect(pwLine.n, pwLine1.p) annotation (Line(
       points={{-9,10},{3.5,10},{3.5,24},{29,24}},
@@ -119,14 +122,13 @@ equation
       smooth=Smooth.None));
   connect(gENROE.p, pwLine.p) annotation (Line(points={{-40,10},{-23,10}}, color={0,0,255}));
   connect(gENROE.PMECH, gENROE.PMECH0) annotation (Line(points={{-81.6,20},{-92,20},{-92,36},{-30,36},{-30,4},{-40.4,4}}, color={0,0,127}));
-  connect(eXST1_1.EFD, gENROE.EFD) annotation (Line(points={{-81,-32},{-92,-32},{-92,0},{-81.6,0}}, color={0,0,127}));
-  connect(eXST1_1.ECOMP, gENROE.ETERM) annotation (Line(points={{-40.5,-21.1},{-32,-21.1},{-32,20},{-40.4,20}}, color={0,0,127}));
-  connect(eXST1_1.ETERM, gENROE.ETERM) annotation (Line(points={{-40.5,-24.7},{-32,-24.7},{-32,20},{-40.4,20}}, color={0,0,127}));
-  connect(const.y, eXST1_1.VOEL) annotation (Line(points={{-23,-36},{-40.5,-36},{-40.5,-36.7}}, color={0,0,127}));
-  connect(eXST1_1.VOTHSG, eXST1_1.VOEL) annotation (Line(points={{-40.5,-33.1},{-32,-33.1},{-32,-36},{-40.5,-36},{-40.5,-36.7}}, color={0,0,127}));
-  connect(eXST1_1.VUEL, eXST1_1.VOEL) annotation (Line(points={{-40.5,-40.5},{-32,-40.5},{-32,-36},{-40.5,-36},{-40.5,-36.7}}, color={0,0,127}));
-  connect(eXST1_1.XADIFD, gENROE.XADIFD) annotation (Line(points={{-40.5,-28.9},{-36,-28.9},{-36,-8},{-40.4,-8}}, color={0,0,127}));
-  connect(eXST1_1.EFD0, gENROE.EFD0) annotation (Line(points={{-48.1,-44.5},{-48.1,-50},{-30,-50},{-30,-4},{-40.4,-4}}, color={0,0,127}));
+  connect(eXAC1_1.EFD, gENROE.EFD) annotation (Line(points={{-80.95,-27},{-92,-27},{-92,0},{-81.6,0}}, color={0,0,127}));
+  connect(eXAC1_1.XADIFD, gENROE.XADIFD) annotation (Line(points={{-42.95,-17.25},{-38,-17.25},{-38,-8},{-40.4,-8}}, color={0,0,127}));
+  connect(eXAC1_1.VOTHSG, const.y) annotation (Line(points={{-42.95,-20.5},{-30,-20.5},{-30,-36},{-23,-36}}, color={0,0,127}));
+  connect(eXAC1_1.VUEL, const.y) annotation (Line(points={{-43.14,-31.875},{-30,-32},{-30,-36},{-23,-36}}, color={0,0,127}));
+  connect(eXAC1_1.VOEL, const.y) annotation (Line(points={{-42.95,-35.125},{-30,-34},{-30,-36},{-23,-36}}, color={0,0,127}));
+  connect(eXAC1_1.ECOMP, gENROE.ETERM) annotation (Line(points={{-42.95,-27},{-34,-27},{-34,20},{-40.4,20}}, color={0,0,127}));
+  connect(eXAC1_1.EFD0, gENROE.EFD0) annotation (Line(points={{-42.95,-38.2125},{-36,-38.2125},{-36,-4},{-40.4,-4}}, color={0,0,127}));
   annotation (Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,100}})), Documentation(info="<html>
 <p><span style=\"font-family: MS Shell Dlg 2;\">&LT;iPSL: iTesla Power System Library&GT;</span></p>
 <p><span style=\"font-family: MS Shell Dlg 2;\">Copyright 2015 RTE (France), AIA (Spain), KTH (Sweden) and DTU (Denmark)</span></p>
@@ -142,4 +144,4 @@ equation
 <p><span style=\"font-family: MS Shell Dlg 2;\">The iPSL is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU Lesser General Public License for more details.</span></p>
 <p><span style=\"font-family: MS Shell Dlg 2;\">You should have received a copy of the GNU Lesser General Public License along with the iPSL. If not, see &LT;http://www.gnu.org/licenses/&GT;.</span></p>
 </html>"));
-end EXST1;
+end EXAC1;
