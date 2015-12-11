@@ -1,9 +1,12 @@
 within iPSL.NonElectrical.Continuous;
 model SimpleLag "First order lag transfer function block"
-  extends Modelica.Blocks.Interfaces.SISO(y(start=y_start));
+  extends Modelica.Blocks.Interfaces.SISO;
   parameter Real K "Gain" annotation (Evaluate=false);
   parameter Modelica.SIunits.Time T "Lag time constant" annotation (Evaluate=false);
   parameter Real y_start "Output start value" annotation (Dialog(group="Initialization"));
+
+initial equation
+  y = y_start;
 equation
   assert(
     T >= 1e-10,

@@ -2,7 +2,7 @@ within iPSL.NonElectrical.Continuous;
 
 
 class LeadLagLim "Lead-Lag filter with a non-windup limiter"
-  extends Modelica.Blocks.Interfaces.SISO(y(start=y_start));
+  extends Modelica.Blocks.Interfaces.SISO;
   parameter Real K "Gain" annotation (Evaluate=false);
   parameter Real T1 "Lead time constant" annotation (Evaluate=false);
   parameter Real T2 "Lag time constant" annotation (Evaluate=false);
@@ -10,6 +10,9 @@ class LeadLagLim "Lead-Lag filter with a non-windup limiter"
   parameter Real outMax "Maximum output value" annotation (Evaluate=false);
   parameter Real outMin "Minimum output value" annotation (Evaluate=false);
   Real s(start=y_start) "State variable";
+initial equation
+  y = y_start;
+  s = y_start;
 equation
   assert(
     abs(T1) >= 1e-10 and abs(T2) >= 1e-10,

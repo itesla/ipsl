@@ -1,6 +1,6 @@
 within iPSL.NonElectrical.Continuous;
 model SimpleLagLimVar "First order lag transfer function block with a non windup limiter and variable limits"
-  extends Modelica.Blocks.Interfaces.SISO(y(start=y_start));
+  extends Modelica.Blocks.Interfaces.SISO;
   parameter Real K "Gain" annotation (Evaluate=false);
   parameter Modelica.SIunits.Time T "Lag time constant" annotation (Evaluate=false);
   parameter Real y_start "Output start value" annotation (Dialog(group="Initialization"));
@@ -14,6 +14,8 @@ model SimpleLagLimVar "First order lag transfer function block with a non windup
         extent={{-20,-20},{20,20}},
         rotation=90,
         origin={-80,-140})));
+initial equation
+  y = y_start;
 equation
   assert(
     T >= 1e-10,

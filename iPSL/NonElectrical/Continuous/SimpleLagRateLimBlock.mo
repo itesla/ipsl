@@ -11,6 +11,8 @@ model SimpleLagRateLimBlock "First order lag transfer function block with a non 
   Real x;
   Real rate;
   Modelica.Blocks.Interfaces.RealInput Block annotation (Placement(transformation(extent={{-140,60},{-100,100}}), iconTransformation(extent={{-140,60},{-100,100}})));
+initial equation
+  y = y_start;
 equation
   assert(
     T >= 1e-10,
