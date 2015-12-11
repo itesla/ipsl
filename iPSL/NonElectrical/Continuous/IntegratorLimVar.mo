@@ -1,7 +1,7 @@
 within iPSL.NonElectrical.Continuous;
 
 
-model IntegratorLimVar "Integrator with a non windup limiter and variable limits"
+block IntegratorLimVar "Integrator with a non windup limiter and variable limits"
   extends Modelica.Blocks.Interfaces.SISO;
   parameter Real K "Gain" annotation (Evaluate=false);
   parameter Real y_start "Output start value" annotation (Dialog(group="Initialization"));

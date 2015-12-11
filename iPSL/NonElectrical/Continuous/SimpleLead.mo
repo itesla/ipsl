@@ -1,5 +1,5 @@
 within iPSL.NonElectrical.Continuous;
-model SimpleLead "First order lead transfer function block"
+block SimpleLead "First order lead transfer function block"
   extends Modelica.Blocks.Interfaces.SISO;
   parameter Real K "Gain" annotation (Evaluate=false);
   parameter Modelica.SIunits.Time T "Lead time constant" annotation (Evaluate=false);

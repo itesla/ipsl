@@ -1,5 +1,5 @@
 within iPSL.NonElectrical.Continuous;
-model SimpleLagRateLimVar "First order lag transfer function block with a non windup limiter, rate limits, variable output limits and blocking input"
+block SimpleLagRateLimVar "First order lag transfer function block with a non windup limiter, rate limits, variable output limits and blocking input"
   extends Modelica.Blocks.Interfaces.SISO;
   parameter Modelica.SIunits.Time T "Lag time constant" annotation (Evaluate=false);
   parameter Real y_start "Output start value" annotation (Dialog(group="Initialization"));

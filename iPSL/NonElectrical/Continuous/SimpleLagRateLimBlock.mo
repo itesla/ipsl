@@ -1,5 +1,5 @@
 within iPSL.NonElectrical.Continuous;
-model SimpleLagRateLimBlock "First order lag transfer function block with a non windup limiter, rate limits and blocking input"
+block SimpleLagRateLimBlock "First order lag transfer function block with a non windup limiter, rate limits and blocking input"
   extends Modelica.Blocks.Interfaces.SISO(y(start=y_start));
   parameter Real K "Gain" annotation (Evaluate=false);
   parameter Modelica.SIunits.Time T "Lag time constant" annotation (Evaluate=false);
