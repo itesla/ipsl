@@ -2,9 +2,10 @@ within iPSL.Electrical.Buses;
 
 
 model BusExt
-  iPSL.Connectors.PwPinExt Ext;
-  parameter Integer nu(min=0) = 0 "Number of inputs" annotation (Dialog(connectorSizing=true), HideResult=true);
-  parameter Integer no(min=0) = 0 "Number of outputs" annotation (Dialog(connectorSizing=true), HideResult=true);
+  iPSL.Connectors.PwPinExt Ext(p(vr(start=vr0), vi(start=vi0)));
+  outer iPSL.Electrical.SystemBase SysData "Must add this line in all models";
+  outer parameter Integer nu(min=0) = 0 "Number of left connection" annotation (Dialog(connectorSizing=true), HideResult=true);
+  parameter Integer no(min=0) = 0 "Number of right connections" annotation (Dialog(connectorSizing=true), HideResult=true);
   iPSL.Connectors.PwPin u[nu] annotation (Placement(
       visible=true,
       transformation(
@@ -25,10 +26,15 @@ model BusExt
         origin={0,0},
         extent={{-4,-60},{4,60}},
         rotation=0)));
-  Real V "Bus voltage magnitude";
-  Real angle "Bus voltage angle";
+  Real V "Bus voltage magnitude (pu)";
+  Real angle "Bus voltage angle (deg";
+  parameter Real V_0 "Voltage magnitude (pu)" annotation (Dialog(group="Power flow data"));
+  parameter Real angle_0 "Voltage angle (deg)" annotation (Dialog(group="Power flow data"));
   parameter Real V_b=130 "Base voltage (kV)" annotation (Dialog(group="Power flow data"));
-  parameter Real S_b=100 "System base power (MVA)" annotation (Dialog(group="Power flow data"));
+  parameter Real S_b=SysData.S_b "System base power (MVA)" annotation (Dialog(group="Power flow data"));
+protected
+  parameter Real vr0=V_0*cos(angle_0*Modelica.Constants.pi/180);
+  parameter Real vi0=V_0*sin(angle_0*Modelica.Constants.pi/180);
 equation
   if nu > 0 then
     for i in 1:nu loop
