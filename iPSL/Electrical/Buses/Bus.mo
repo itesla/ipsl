@@ -1,21 +1,67 @@
 within iPSL.Electrical.Buses;
 
 
-model Bus "Bus model.
+model Bus "Bus model
               2014/03/10"
-  iPSL.Connectors.PwPin p(vr(start = V_0 * cos(angle_0)), vi(start = V_0 * sin(angle_0))) annotation(Placement(visible = true, transformation(origin = {1.5559, 0.0}, extent = {{-10.0, -10.0}, {10.0, 10.0}}, rotation = 0), iconTransformation(origin = {0.0, -0.0}, extent = {{-10.0, -10.0}, {10.0, 10.0}}, rotation = 0)));
+  iPSL.Connectors.PwPin p(vr(start=V_0*cos(angle_0)), vi(start=V_0*sin(angle_0))) annotation (Placement(
+      visible=true,
+      transformation(
+        origin={1.5559,0.0},
+        extent={{-10.0,-10.0},{10.0,10.0}},
+        rotation=0),
+      iconTransformation(
+        origin={0.0,-0.0},
+        extent={{-10.0,-10.0},{10.0,10.0}},
+        rotation=0)));
   Real V "Bus voltage magnitude (pu)";
   Real angle "Bus voltage angle (deg)";
-  parameter Real V_0 = 1 "Voltage magnitude (pu)" annotation(Dialog(group = "Power flow data"));
-  parameter Real angle_0 = 0 "Voltage angle (deg)" annotation(Dialog(group = "Power flow data"));
+  parameter Real V_0=1 "Voltage magnitude (pu)" annotation (Dialog(group="Power flow data"));
+  parameter Real angle_0=0 "Voltage angle (deg)" annotation (Dialog(group="Power flow data"));
   Real anglevdeg;
 equation
-  anglevdeg = angle / Modelica.Constants.pi * 180;
-  V = sqrt(p.vr ^ 2 + p.vi ^ 2);
+  anglevdeg = angle/Modelica.Constants.pi*180;
+  V = sqrt(p.vr^2 + p.vi^2);
   angle = atan2(p.vi, p.vr);
   p.ir = 0;
   p.ii = 0;
-  annotation(Icon(coordinateSystem(extent = {{-100, -100}, {100, 100}}, preserveAspectRatio = true, initialScale = 0.1, grid = {2, 2}), graphics = {Rectangle(visible=  true, fillPattern=  FillPattern.Solid, extent=  {{-10.0, -100.0}, {10.0, 100.0}}), Text(visible=  true, origin=  {0.9738, 119.0625}, fillPattern=  FillPattern.Solid, extent=  {{-39.0262, -16.7966}, {39.0262, 16.7966}}, textString=  "%name", fontName=  "Arial"), Text(origin=  {0.9738, -114.937}, fillPattern=  FillPattern.Solid, extent=  {{-39.0262, -16.7966}, {39.0262, 16.7966}}, fontName=  "Arial", textString=  DynamicSelect("0.0", String(v, significantDigits=  3)), lineColor=  {238, 46, 47}), Text(origin=  {0.9738, -140.937}, fillPattern=  FillPattern.Solid, extent=  {{-39.0262, -16.7966}, {39.0262, 16.7966}}, fontName=  "Arial", textString=  DynamicSelect("0.0", String(anglevdeg, significantDigits=  3)), lineColor=  {238, 46, 47})}), Diagram(coordinateSystem(extent = {{-148.5, -105.0}, {148.5, 105.0}}, preserveAspectRatio = true, initialScale = 0.1, grid = {5, 5})), uses(Modelica(version = "3.2.1")), Documentation(info = "<html>
+  annotation (
+    Icon(coordinateSystem(
+        extent={{-100,-100},{100,100}},
+        preserveAspectRatio=true,
+        initialScale=0.1,
+        grid={2,2}), graphics={
+        Rectangle(
+          visible=true,
+          fillPattern=FillPattern.Solid,
+          extent={{-10.0,-100.0},{10.0,100.0}}),
+        Text(
+          visible=true,
+          origin={0.9738,119.0625},
+          fillPattern=FillPattern.Solid,
+          extent={{-39.0262,-16.7966},{39.0262,16.7966}},
+          textString="%name",
+          fontName="Arial"),
+        Text(
+          origin={0.9738,-114.937},
+          fillPattern=FillPattern.Solid,
+          extent={{-39.0262,-16.7966},{39.0262,16.7966}},
+          fontName="Arial",
+          textString=DynamicSelect("0.0", String(v, significantDigits=3)),
+          lineColor={238,46,47}),
+        Text(
+          origin={0.9738,-140.937},
+          fillPattern=FillPattern.Solid,
+          extent={{-39.0262,-16.7966},{39.0262,16.7966}},
+          fontName="Arial",
+          textString=DynamicSelect("0.0", String(anglevdeg, significantDigits=3)),
+          lineColor={238,46,47})}),
+    Diagram(coordinateSystem(
+        extent={{-148.5,-105.0},{148.5,105.0}},
+        preserveAspectRatio=true,
+        initialScale=0.1,
+        grid={5,5})),
+    uses(Modelica(version="3.2.1")),
+    Documentation(info="<html>
 <p><br><span style=\"font-family: MS Shell Dlg 2;\">&LT;iPSL: iTesla Power System Library&GT;</span></p>
 <p><span style=\"font-family: MS Shell Dlg 2;\">Copyright 2015 RTE (France), AIA (Spain), KTH (Sweden) and DTU (Denmark)</span></p>
 <ul>

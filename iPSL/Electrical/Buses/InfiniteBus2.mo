@@ -1,12 +1,35 @@
 within iPSL.Electrical.Buses;
 model InfiniteBus2
-  iPSL.Connectors.PwPin p annotation(Placement(visible = true, transformation(origin = {160.0, -0.0}, extent = {{-10.0, -10.0}, {10.0, 10.0}}, rotation = 0), iconTransformation(origin = {110.0, -0.0}, extent = {{-10.0, -10.0}, {10.0, 10.0}}, rotation = 0)));
+  iPSL.Connectors.PwPin p annotation (Placement(
+      visible=true,
+      transformation(
+        origin={160.0,-0.0},
+        extent={{-10.0,-10.0},{10.0,10.0}},
+        rotation=0),
+      iconTransformation(
+        origin={110.0,-0.0},
+        extent={{-10.0,-10.0},{10.0,10.0}},
+        rotation=0)));
   parameter Real angle "Bus voltage angle (deg)";
-  Modelica.Blocks.Interfaces.RealInput V "Bus voltage magnitude (pu)" annotation(Placement(transformation(extent = {{-120, -10}, {-100, 10}}), iconTransformation(extent = {{-120, -10}, {-100, 10}})));
+  Modelica.Blocks.Interfaces.RealInput V "Bus voltage magnitude (pu)" annotation (Placement(transformation(extent={{-120,-10},{-100,10}}), iconTransformation(extent={{-120,-10},{-100,10}})));
 equation
-  p.vr = V * cos(angle);
-  p.vi = V * sin(angle);
-  annotation(Icon(coordinateSystem(extent = {{-100.0, -100.0}, {100.0, 100.0}}, preserveAspectRatio = true, initialScale = 0.1, grid = {10, 10}), graphics={  Rectangle(visible = true, fillColor = {255, 255, 255}, extent = {{-100.0, -100.0}, {100.0, 100.0}})}), Diagram(coordinateSystem(extent = {{-148.5, -105}, {148.5, 105}}, preserveAspectRatio = false, initialScale = 0.1, grid = {5, 5}), graphics), Documentation(info = "<html>
+  p.vr = V*cos(angle);
+  p.vi = V*sin(angle);
+  annotation (
+    Icon(coordinateSystem(
+        extent={{-100.0,-100.0},{100.0,100.0}},
+        preserveAspectRatio=true,
+        initialScale=0.1,
+        grid={10,10}), graphics={Rectangle(
+          visible=true,
+          fillColor={255,255,255},
+          extent={{-100.0,-100.0},{100.0,100.0}})}),
+    Diagram(coordinateSystem(
+        extent={{-148.5,-105},{148.5,105}},
+        preserveAspectRatio=false,
+        initialScale=0.1,
+        grid={5,5}), graphics),
+    Documentation(info="<html>
 <p><br><span style=\"font-family: MS Shell Dlg 2;\">&LT;iPSL: iTesla Power System Library&GT;</span></p>
 <p><span style=\"font-family: MS Shell Dlg 2;\">Copyright 2015 RTE (France), AIA (Spain), KTH (Sweden) and DTU (Denmark)</span></p>
 <ul>

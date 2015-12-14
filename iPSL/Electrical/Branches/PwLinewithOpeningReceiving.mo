@@ -2,8 +2,8 @@ within iPSL.Electrical.Branches;
 model PwLinewithOpeningReceiving "Transmission Line based on the pi-equivalent circuit
               with an opening event on the receiving node. Developed by AIA.
               2014/03/10"
-  iPSL.Connectors.PwPin p annotation(Placement(transformation(extent = {{-80, -10}, {-60, 10}}), iconTransformation(extent = {{-80, -10}, {-60, 10}})));
-  iPSL.Connectors.PwPin n annotation(Placement(transformation(extent = {{60, -10}, {80, 10}}), iconTransformation(extent = {{60, -10}, {80, 10}})));
+  iPSL.Connectors.PwPin p annotation (Placement(transformation(extent={{-80,-10},{-60,10}}), iconTransformation(extent={{-80,-10},{-60,10}})));
+  iPSL.Connectors.PwPin n annotation (Placement(transformation(extent={{60,-10},{80,10}}), iconTransformation(extent={{60,-10},{80,10}})));
   parameter Real R "Resistance p.u.";
   parameter Real X "Reactance p.u.";
   parameter Real G "Shunt half conductance p.u.";
@@ -13,27 +13,45 @@ model PwLinewithOpeningReceiving "Transmission Line based on the pi-equivalent c
   Real Zr;
   Real Zi;
 equation
-  Zr = R * G + X * B;
-  Zi = R * B + X * G;
+  Zr = R*G + X*B;
+  Zi = R*B + X*G;
   if time > t1 then
     if time < t2 then
-      p.vr * (2.0 * G + G * Zr - B * Zi) - p.vi * (2.0 * B + Zr * B + Zi * G) = p.ir * (1.0 + Zr) - p.ii * Zi;
-      p.vr * (2.0 * B + Zr * B + Zi * G) + p.vi * (2.0 * G + G * Zr - B * Zi) = p.ir * Zi + p.ii * (1.0 + Zr);
+      p.vr*(2.0*G + G*Zr - B*Zi) - p.vi*(2.0*B + Zr*B + Zi*G) = p.ir*(1.0 + Zr) - p.ii*Zi;
+      p.vr*(2.0*B + Zr*B + Zi*G) + p.vi*(2.0*G + G*Zr - B*Zi) = p.ir*Zi + p.ii*(1.0 + Zr);
       n.ii = 0.0;
       n.ir = 0.0;
     else
-      R * (n.ir - G * n.vr + B * n.vi) - X * (n.ii - B * n.vr - G * n.vi) = n.vr - p.vr;
-      R * (n.ii - B * n.vr - G * n.vi) + X * (n.ir - G * n.vr + B * n.vi) = n.vi - p.vi;
-      R * (p.ir - G * p.vr + B * p.vi) - X * (p.ii - B * p.vr - G * p.vi) = p.vr - n.vr;
-      R * (p.ii - B * p.vr - G * p.vi) + X * (p.ir - G * p.vr + B * p.vi) = p.vi - n.vi;
+      R*(n.ir - G*n.vr + B*n.vi) - X*(n.ii - B*n.vr - G*n.vi) = n.vr - p.vr;
+      R*(n.ii - B*n.vr - G*n.vi) + X*(n.ir - G*n.vr + B*n.vi) = n.vi - p.vi;
+      R*(p.ir - G*p.vr + B*p.vi) - X*(p.ii - B*p.vr - G*p.vi) = p.vr - n.vr;
+      R*(p.ii - B*p.vr - G*p.vi) + X*(p.ir - G*p.vr + B*p.vi) = p.vi - n.vi;
     end if;
   else
-    R * (n.ir - G * n.vr + B * n.vi) - X * (n.ii - B * n.vr - G * n.vi) = n.vr - p.vr;
-    R * (n.ii - B * n.vr - G * n.vi) + X * (n.ir - G * n.vr + B * n.vi) = n.vi - p.vi;
-    R * (p.ir - G * p.vr + B * p.vi) - X * (p.ii - B * p.vr - G * p.vi) = p.vr - n.vr;
-    R * (p.ii - B * p.vr - G * p.vi) + X * (p.ir - G * p.vr + B * p.vi) = p.vi - n.vi;
+    R*(n.ir - G*n.vr + B*n.vi) - X*(n.ii - B*n.vr - G*n.vi) = n.vr - p.vr;
+    R*(n.ii - B*n.vr - G*n.vi) + X*(n.ir - G*n.vr + B*n.vi) = n.vi - p.vi;
+    R*(p.ir - G*p.vr + B*p.vi) - X*(p.ii - B*p.vr - G*p.vi) = p.vr - n.vr;
+    R*(p.ii - B*p.vr - G*p.vi) + X*(p.ir - G*p.vr + B*p.vi) = p.vi - n.vi;
   end if;
-  annotation(Icon(graphics = {Rectangle(extent=  {{-60, 40}, {60, -42}}, lineColor=  {0, 0, 255}), Rectangle(extent=  {{-40, 10}, {40, -10}}, lineColor=  {0, 0, 255}, fillColor=  {95, 95, 95}, fillPattern=  FillPattern.Solid), Line(points=  {{-38, 16}, {4, 16}, {24, 30}}, color=  {0, 0, 255}, smooth=  Smooth.None), Line(points=  {{34, 18}, {40, 18}}, color=  {0, 0, 255}, smooth=  Smooth.None), Ellipse(extent=  {{28, 22}, {34, 16}}, lineColor=  {0, 0, 255})}), Diagram(graphics), Documentation(info = "<html>
+  annotation (
+    Icon(graphics={
+        Rectangle(extent={{-60,40},{60,-42}}, lineColor={0,0,255}),
+        Rectangle(
+          extent={{-40,10},{40,-10}},
+          lineColor={0,0,255},
+          fillColor={95,95,95},
+          fillPattern=FillPattern.Solid),
+        Line(
+          points={{-38,16},{4,16},{24,30}},
+          color={0,0,255},
+          smooth=Smooth.None),
+        Line(
+          points={{34,18},{40,18}},
+          color={0,0,255},
+          smooth=Smooth.None),
+        Ellipse(extent={{28,22},{34,16}}, lineColor={0,0,255})}),
+    Diagram(graphics),
+    Documentation(info="<html>
 <p><br><span style=\"font-family: MS Shell Dlg 2;\">&LT;iPSL: iTesla Power System Library&GT;</span></p>
 <p><span style=\"font-family: MS Shell Dlg 2;\">Copyright 2015 RTE (France), AIA (Spain), KTH (Sweden) and DTU (Denmark)</span></p>
 <ul>

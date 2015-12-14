@@ -1,35 +1,69 @@
 within iPSL.Electrical.Branches.PSSE.Old_transformer;
 model TwoWinding
-  constant Real pi = Modelica.Constants.pi;
+  constant Real pi=Modelica.Constants.pi;
   parameter Complex Zeq "equivalent impedance";
   parameter Real COD;
   parameter Real t "initial tap ration";
   parameter Real angle_d "W1-2 angel shift in degree";
-  parameter Real Vmax = 1.1;
-  parameter Real Vmin = 0.9;
-  parameter Real rmax = 1.1;
-  parameter Real rmin = 0.9;
-  parameter Real Ntap = 33;
+  parameter Real Vmax=1.1;
+  parameter Real Vmin=0.9;
+  parameter Real rmax=1.1;
+  parameter Real rmin=0.9;
+  parameter Real Ntap=33;
   //total tap position
-  parameter Real dV = 0.001;
+  parameter Real dV=0.001;
   //dead band
-  parameter Real tau = 17.0;
+  parameter Real tau=17.0;
   //regulator delay
-  parameter Real TC = 5;
+  parameter Real TC=5;
   //motor delay
-  iPSL.Connectors.PwPin P1 annotation(Placement(transformation(extent = {{-104, 2}, {-84, 22}}), iconTransformation(extent = {{-104, 2}, {-84, 22}})));
-  iPSL.Connectors.PwPin P2 annotation(Placement(transformation(extent = {{78, 6}, {100, 26}}), iconTransformation(extent = {{80, 6}, {100, 26}})));
-  iPSL.Electrical.Branches.PwLine pwLine1(R = Zeq.re, X = Zeq.im, G = 0, B = 0) annotation(Placement(transformation(extent = {{-29, -22}, {29, 22}}, rotation = 0, origin = {-37, 12})));
+  iPSL.Connectors.PwPin P1 annotation (Placement(transformation(extent={{-104,2},{-84,22}}), iconTransformation(extent={{-104,2},{-84,22}})));
+  iPSL.Connectors.PwPin P2 annotation (Placement(transformation(extent={{78,6},{100,26}}), iconTransformation(extent={{80,6},{100,26}})));
+  iPSL.Electrical.Branches.PwLine pwLine1(
+    R=Zeq.re,
+    X=Zeq.im,
+    G=0,
+    B=0) annotation (Placement(transformation(
+        extent={{-29,-22},{29,22}},
+        rotation=0,
+        origin={-37,12})));
   Real v;
-  iPSL.Electrical.Branches.PSSE.Old_transformer.phaseShift phaseship(phase = angle_d) annotation(Placement(transformation(extent = {{4, -4}, {58, 26}})));
+  iPSL.Electrical.Branches.PSSE.Old_transformer.phaseShift phaseship(phase=angle_d) annotation (Placement(transformation(extent={{4,-4},{58,26}})));
 protected
-  parameter Real angle = angle_d / 180 * pi "angel shift in rad";
+  parameter Real angle=angle_d/180*pi "angel shift in rad";
 equation
-  v = sqrt(P2.vr ^ 2 + P2.vi ^ 2);
-  connect(pwLine1.p, P1) annotation(Line(points = {{-57.3, 12}, {-94, 12}}, color = {0, 0, 255}, smooth = Smooth.None));
-  connect(phaseship.n, P2) annotation(Line(points = {{54.76, 12.5}, {74.16, 12.5}, {74.16, 16}, {89, 16}}, color = {0, 0, 255}, smooth = Smooth.None));
-  connect(phaseship.p, pwLine1.n) annotation(Line(points = {{6.7, 12.5}, {6.7, 12}, {-16.7, 12}}, color = {0, 0, 255}, smooth = Smooth.None));
-  annotation(Diagram(coordinateSystem(preserveAspectRatio = true, extent = {{-100, -100}, {100, 100}}), graphics), Icon(coordinateSystem(preserveAspectRatio = true, extent = {{-100, -100}, {100, 100}}), graphics = {Text(extent=  {{26, 54}, {114, 2}}, lineColor=  {0, 0, 255}, fillColor=  {0, 0, 255}, fillPattern=  FillPattern.Solid, textString=  "*", textStyle=  {TextStyle.Bold}), Ellipse(extent=  {{-74, 44}, {6, -40}}, lineColor=  {0, 0, 255}, lineThickness=  0.5), Ellipse(extent=  {{-10, 44}, {70, -40}}, lineColor=  {0, 0, 255}, lineThickness=  0.5)}), Documentation(info = "<html>
+  v = sqrt(P2.vr^2 + P2.vi^2);
+  connect(pwLine1.p, P1) annotation (Line(
+      points={{-57.3,12},{-94,12}},
+      color={0,0,255},
+      smooth=Smooth.None));
+  connect(phaseship.n, P2) annotation (Line(
+      points={{54.76,12.5},{74.16,12.5},{74.16,16},{89,16}},
+      color={0,0,255},
+      smooth=Smooth.None));
+  connect(phaseship.p, pwLine1.n) annotation (Line(
+      points={{6.7,12.5},{6.7,12},{-16.7,12}},
+      color={0,0,255},
+      smooth=Smooth.None));
+  annotation (
+    Diagram(coordinateSystem(preserveAspectRatio=true, extent={{-100,-100},{100,100}}), graphics),
+    Icon(coordinateSystem(preserveAspectRatio=true, extent={{-100,-100},{100,100}}), graphics={
+        Text(
+          extent={{26,54},{114,2}},
+          lineColor={0,0,255},
+          fillColor={0,0,255},
+          fillPattern=FillPattern.Solid,
+          textString="*",
+          textStyle={TextStyle.Bold}),
+        Ellipse(
+          extent={{-74,44},{6,-40}},
+          lineColor={0,0,255},
+          lineThickness=0.5),
+        Ellipse(
+          extent={{-10,44},{70,-40}},
+          lineColor={0,0,255},
+          lineThickness=0.5)}),
+    Documentation(info="<html>
 <table cellspacing=\"1\" cellpadding=\"1\" border=\"1\">
 <tr>
 <td><p>Reference</p></td>

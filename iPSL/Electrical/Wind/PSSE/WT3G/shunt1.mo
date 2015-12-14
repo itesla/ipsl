@@ -5,14 +5,21 @@ model shunt1
   parameter Real B "(pu) on system base";
   parameter Real v0;
   Real Q;
-  iPSL.Connectors.PwPin p annotation(Placement(transformation(extent = {{-14, 66}, {6, 86}})));
+  iPSL.Connectors.PwPin p annotation (Placement(transformation(extent={{-14,66},{6,86}})));
   Real v;
 equation
-  v = sqrt(p.vr * p.vr + p.vi * p.vi);
-  0 = p.vr * p.ir + p.vi * p.ii;
-  Q = p.vi * p.ir - p.vr * p.ii;
-  Q = -B * v * v / v0 ^ 2;
-  annotation(Diagram(coordinateSystem(preserveAspectRatio = true, extent = {{-100, -100}, {100, 100}}), graphics), Icon(coordinateSystem(preserveAspectRatio = true, extent = {{-100, -100}, {100, 100}}), graphics={  Rectangle(extent=  {{-66, 72}, {66, -82}}, lineColor=  {0, 0, 255}), Text(extent=  {{-36, 54}, {42, -62}}, lineColor=  {0, 0, 255}, textStyle=  {TextStyle.Bold}, textString=  "jB")}), Documentation(info = "<html>
+  v = sqrt(p.vr*p.vr + p.vi*p.vi);
+  0 = p.vr*p.ir + p.vi*p.ii;
+  Q = p.vi*p.ir - p.vr*p.ii;
+  Q = -B*v*v/v0^2;
+  annotation (
+    Diagram(coordinateSystem(preserveAspectRatio=true, extent={{-100,-100},{100,100}}), graphics),
+    Icon(coordinateSystem(preserveAspectRatio=true, extent={{-100,-100},{100,100}}), graphics={Rectangle(extent={{-66,72},{66,-82}}, lineColor={0,0,255}),Text(
+          extent={{-36,54},{42,-62}},
+          lineColor={0,0,255},
+          textStyle={TextStyle.Bold},
+          textString="jB")}),
+    Documentation(info="<html>
 <p><br><span style=\"font-family: MS Shell Dlg 2;\">&LT;iPSL: iTesla Power System Library&GT;</span></p>
 <p><span style=\"font-family: MS Shell Dlg 2;\">Copyright 2015 RTE (France), AIA (Spain), KTH (Sweden) and DTU (Denmark)</span></p>
 <ul>

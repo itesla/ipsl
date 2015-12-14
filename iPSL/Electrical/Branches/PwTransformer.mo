@@ -1,19 +1,41 @@
 within iPSL.Electrical.Branches;
 model PwTransformer "Two winding fixed transformer composed of an ideal transformer, a series 
               impedance and a shunt admittance. 2013"
-  iPSL.Connectors.PwPin p annotation(Placement(transformation(extent = {{-80, -8}, {-60, 12}}), iconTransformation(extent = {{-80, -8}, {-60, 12}})));
-  iPSL.Connectors.PwPin n annotation(Placement(transformation(extent = {{60, -8}, {80, 12}}), iconTransformation(extent = {{60, -8}, {80, 12}})));
+  iPSL.Connectors.PwPin p annotation (Placement(transformation(extent={{-80,-8},{-60,12}}), iconTransformation(extent={{-80,-8},{-60,12}})));
+  iPSL.Connectors.PwPin n annotation (Placement(transformation(extent={{60,-8},{80,12}}), iconTransformation(extent={{60,-8},{80,12}})));
   parameter Real R "Resistance p.u.";
   parameter Real X "Reactance p.u.";
   parameter Real G "Shunt conductance p.u.";
   parameter Real B "Shunt susceptance p.u.";
   parameter Real r "Transformation ratio";
 equation
-  r * (G * n.vr - B * n.vi - n.ir) = p.ir;
-  r * (G * n.vi + B * n.vr - n.ii) = p.ii;
-  R * p.ir - X * p.ii = r * r * p.vr - r * n.vr;
-  R * p.ii + X * p.ir = r * r * p.vi - r * n.vi;
-  annotation(Icon(graphics = {Rectangle(extent=  {{-60, 40}, {60, -40}}, lineColor=  {0, 0, 255}), Ellipse(extent=  {{-26, 16}, {6, -16}}, lineColor=  {0, 0, 255}, lineThickness=  1), Ellipse(extent=  {{-8, 16}, {24, -16}}, lineColor=  {0, 0, 255}, lineThickness=  1), Line(points=  {{-42, 0}, {-26, 0}}, color=  {0, 0, 255}, thickness=  1, smooth=  Smooth.None), Line(points=  {{24, 0}, {40, 0}}, color=  {0, 0, 255}, thickness=  1, smooth=  Smooth.None)}), Diagram(graphics), Documentation(info = "<html>
+  r*(G*n.vr - B*n.vi - n.ir) = p.ir;
+  r*(G*n.vi + B*n.vr - n.ii) = p.ii;
+  R*p.ir - X*p.ii = r*r*p.vr - r*n.vr;
+  R*p.ii + X*p.ir = r*r*p.vi - r*n.vi;
+  annotation (
+    Icon(graphics={
+        Rectangle(extent={{-60,40},{60,-40}}, lineColor={0,0,255}),
+        Ellipse(
+          extent={{-26,16},{6,-16}},
+          lineColor={0,0,255},
+          lineThickness=1),
+        Ellipse(
+          extent={{-8,16},{24,-16}},
+          lineColor={0,0,255},
+          lineThickness=1),
+        Line(
+          points={{-42,0},{-26,0}},
+          color={0,0,255},
+          thickness=1,
+          smooth=Smooth.None),
+        Line(
+          points={{24,0},{40,0}},
+          color={0,0,255},
+          thickness=1,
+          smooth=Smooth.None)}),
+    Diagram(graphics),
+    Documentation(info="<html>
 <p><br><span style=\"font-family: MS Shell Dlg 2;\">&LT;iPSL: iTesla Power System Library&GT;</span></p>
 <p><span style=\"font-family: MS Shell Dlg 2;\">Copyright 2015 RTE (France), AIA (Spain), KTH (Sweden) and DTU (Denmark)</span></p>
 <ul>

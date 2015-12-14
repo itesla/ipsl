@@ -2,9 +2,18 @@ within iPSL.Electrical.Loads.PSSE;
 model Load "PSS/E Load"
   extends BaseClasses.baseLoad;
 equation
-  kI * S_I.re * v + S_Y.re * v ^ 2 + kP * S_P.re = p.vr * p.ir + p.vi * p.ii;
-  kI * S_I.im * v + S_Y.im * v ^ 2 + kP * S_P.im = (-p.vr * p.ii) + p.vi * p.ir;
-  annotation(Diagram(coordinateSystem(extent = {{-100, -100}, {100, 100}}, preserveAspectRatio = false, initialScale = 0.05), graphics), Icon(coordinateSystem(extent = {{-100, -100}, {100, 100}}, preserveAspectRatio = false, initialScale = 0.05)), Documentation(info = "<html>
+  kI*S_I.re*v + S_Y.re*v^2 + kP*S_P.re = p.vr*p.ir + p.vi*p.ii;
+  kI*S_I.im*v + S_Y.im*v^2 + kP*S_P.im = (-p.vr*p.ii) + p.vi*p.ir;
+  annotation (
+    Diagram(coordinateSystem(
+        extent={{-100,-100},{100,100}},
+        preserveAspectRatio=false,
+        initialScale=0.05), graphics),
+    Icon(coordinateSystem(
+        extent={{-100,-100},{100,100}},
+        preserveAspectRatio=false,
+        initialScale=0.05)),
+    Documentation(info="<html>
 <table cellspacing=\"1\" cellpadding=\"1\" border=\"1\">
 <tr>
 <td><p>Reference</p></td>

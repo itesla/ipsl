@@ -2,21 +2,19 @@ within iPSL.Electrical.Branches.PSSE.Old_transformer.update;
 
 
 model TransformerParameter "Basic Two Winding Transformer"
-  constant Real pi = Modelica.Constants.pi;
-  parameter Real R "Resistance p.u." annotation(Dialog(group = " The measured impedance across the windings"));
-  parameter Real X "Reactance p.u." annotation(Dialog(group = " The measured impedance across the windings"));
-  parameter Real G "Magnetizing impedance on From side p.u." annotation(Dialog(group = " The measured impedance across the windings"));
-  parameter Real B "Magnetizing impedance on From side p.u." annotation(Dialog(group = " The measured impedance across the windings"));
-  parameter Real ti "From side winding tap ratio" annotation(Dialog(group = " Norminal turns ratio"));
-  parameter Real tj "To side winding tap ratio" annotation(Dialog(group = " Norminal turns ratio"));
+  constant Real pi=Modelica.Constants.pi;
+  parameter Real R "Resistance p.u." annotation (Dialog(group=" The measured impedance across the windings"));
+  parameter Real X "Reactance p.u." annotation (Dialog(group=" The measured impedance across the windings"));
+  parameter Real G "Magnetizing impedance on From side p.u." annotation (Dialog(group=" The measured impedance across the windings"));
+  parameter Real B "Magnetizing impedance on From side p.u." annotation (Dialog(group=" The measured impedance across the windings"));
+  parameter Real ti "From side winding tap ratio" annotation (Dialog(group=" Norminal turns ratio"));
+  parameter Real tj "To side winding tap ratio" annotation (Dialog(group=" Norminal turns ratio"));
   //parameter Real phase " From side and To side phase shift in degree";
   //protected
   // parameter Real A = (-phase * pi / 180) + 0.5 * pi;
-  parameter Real Req = tj ^ 2 * R
-    "Equivalent impedance is always transfered to the 'To' side circuit";
-  parameter Real Xeq = tj ^ 2 * X
-    "Equivalent impedance is always transfered to the 'To' side circuit";
-  annotation(Documentation(info = "<html>
+  parameter Real Req=tj^2*R "Equivalent impedance is always transfered to the 'To' side circuit";
+  parameter Real Xeq=tj^2*X "Equivalent impedance is always transfered to the 'To' side circuit";
+  annotation (Documentation(info="<html>
 <p><br><span style=\"font-family: MS Shell Dlg 2;\">&LT;iPSL: iTesla Power System Library&GT;</span></p>
 <p><span style=\"font-family: MS Shell Dlg 2;\">Copyright 2015 RTE (France), AIA (Spain), KTH (Sweden) and DTU (Denmark)</span></p>
 <ul>

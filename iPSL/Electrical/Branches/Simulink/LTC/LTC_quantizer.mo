@@ -1,8 +1,9 @@
 within iPSL.Electrical.Branches.Simulink.LTC;
 model LTC_quantizer
-  Modelica.Blocks.Interfaces.RealInput p annotation(Placement(transformation(extent = {{-76, -2}, {-56, 18}}), iconTransformation(extent = {{-90, -18}, {-56, 18}})));
-  Modelica.Blocks.Interfaces.RealOutput n annotation(Placement(transformation(extent = {{70, -4}, {90, 16}}), iconTransformation(extent = {{70, -14}, {100, 16}})));
-  parameter Real Ratio[1, 33] = [0.88, 0.89, 0.9, 0.91, 0.92, 0.93, 0.94, 0.95, 0.96, 0.97, 0.98, 0.99, 1, 1.01, 1.02, 1.03, 1.04, 1.05, 1.06, 1.07, 1.08, 1.09, 1.1, 1.11, 1.12, 1.13, 1.14, 1.15, 1.16, 1.17, 1.18, 1.19, 1.2];
+  Modelica.Blocks.Interfaces.RealInput p annotation (Placement(transformation(extent={{-76,-2},{-56,18}}), iconTransformation(extent={{-90,-18},{-56,18}})));
+  Modelica.Blocks.Interfaces.RealOutput n annotation (Placement(transformation(extent={{70,-4},{90,16}}), iconTransformation(extent={{70,-14},{100,16}})));
+  parameter Real Ratio[1, 33]=[0.88, 0.89, 0.9, 0.91, 0.92, 0.93, 0.94, 0.95, 0.96, 0.97, 0.98, 0.99, 1, 1.01, 1.02, 1.03, 1.04, 1.05, 1.06, 1.07, 1.08, 1.09, 1.1, 1.11, 1.12, 1.13, 1.14, 1.15, 1.16,
+      1.17, 1.18, 1.19, 1.2];
 equation
   if 0.77 <= p and p < Ratio[1, 2] then
     n = Ratio[1, 1];
@@ -71,7 +72,13 @@ equation
   else
     n = Ratio[1, 33];
   end if;
-  annotation(Diagram(coordinateSystem(preserveAspectRatio = false, extent = {{-100, -100}, {100, 100}}), graphics), Icon(coordinateSystem(preserveAspectRatio = false, extent = {{-100, -100}, {100, 100}}), graphics = {Rectangle(extent=  {{-54, 46}, {70, -42}}, lineColor=  {0, 0, 255}), Line(points=  {{-36, -36}, {-26, -36}, {-26, -28}, {-16, -28}, {-16, -18}, {-8, -18}, {-8, -8}, {2, -8}, {2, 2}, {10, 2}, {10, 10}, {18, 10}, {18, 18}, {26, 18}, {26, 26}, {34, 26}, {34, 32}, {42, 32}, {42, 38}, {50, 38}, {50, 44}, {60, 44}}, color=  {0, 0, 255}, smooth=  Smooth.None)}), Documentation(info = "<html>
+  annotation (
+    Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,100}}), graphics),
+    Icon(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,100}}), graphics={Rectangle(extent={{-54,46},{70,-42}}, lineColor={0,0,255}),Line(
+          points={{-36,-36},{-26,-36},{-26,-28},{-16,-28},{-16,-18},{-8,-18},{-8,-8},{2,-8},{2,2},{10,2},{10,10},{18,10},{18,18},{26,18},{26,26},{34,26},{34,32},{42,32},{42,38},{50,38},{50,44},{60,44}},
+          color={0,0,255},
+          smooth=Smooth.None)}),
+    Documentation(info="<html>
 <table cellspacing=\"1\" cellpadding=\"1\" border=\"1\">
 <tr>
 <td><p>Reference</p></td>

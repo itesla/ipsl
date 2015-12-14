@@ -1,7 +1,7 @@
 within iPSL.Electrical.Banks;
 model PwCapacitorBankWithModification "Capacitor Bank with Bank modification at time t1.
               2014/03/10"
-  iPSL.Connectors.PwPin p annotation(Placement(transformation(extent = {{0, 60}, {20, 80}}), iconTransformation(extent = {{0, 60}, {20, 80}})));
+  iPSL.Connectors.PwPin p annotation (Placement(transformation(extent={{0,60},{20,80}}), iconTransformation(extent={{0,60},{20,80}})));
   parameter Real nsteps "number of steps";
   parameter Real Go "active losses (pu) in each element";
   parameter Real Bo "reactive power (pu) in each element";
@@ -16,11 +16,72 @@ equation
   else
     nt = nsteps;
   end if;
-  G = nt * Go;
-  B = nt * Bo;
-  p.vr = (p.ir * G + p.ii * B) / (G * G + B * B);
-  p.vi = ((-p.ir * B) + p.ii * G) / (G * G + B * B);
-  annotation(Icon(graphics={  Rectangle(extent=  {{-40, 60}, {60, -40}}, lineColor=  {0, 0, 255}), Line(points=  {{10, 50}, {10, 34}}, color=  {0, 0, 255}, smooth=  Smooth.None), Line(points=  {{-14, 22}, {36, 22}}, color=  {0, 0, 255}, smooth=  Smooth.None), Line(points=  {{-14, 34}, {36, 34}}, color=  {0, 0, 255}, smooth=  Smooth.None), Line(points=  {{10, 22}, {10, 6}}, color=  {0, 0, 255}, smooth=  Smooth.None), Line(points=  {{-14, -6}, {36, -6}}, color=  {0, 0, 255}, smooth=  Smooth.None), Line(points=  {{-14, 6}, {36, 6}}, color=  {0, 0, 255}, smooth=  Smooth.None), Line(points=  {{10, -6}, {10, -22}}, color=  {0, 0, 255}, smooth=  Smooth.None), Line(points=  {{-16, -22}, {40, -22}}, color=  {0, 0, 255}, smooth=  Smooth.None), Line(points=  {{-18, -30}, {-10, -22}}, color=  {0, 0, 255}, smooth=  Smooth.None), Line(points=  {{-10, -30}, {-2, -22}}, color=  {0, 0, 255}, smooth=  Smooth.None), Line(points=  {{-2, -30}, {6, -22}}, color=  {0, 0, 255}, smooth=  Smooth.None), Line(points=  {{6, -30}, {14, -22}}, color=  {0, 0, 255}, smooth=  Smooth.None), Line(points=  {{14, -30}, {22, -22}}, color=  {0, 0, 255}, smooth=  Smooth.None), Line(points=  {{22, -30}, {30, -22}}, color=  {0, 0, 255}, smooth=  Smooth.None), Line(points=  {{30, -30}, {38, -22}}, color=  {0, 0, 255}, smooth=  Smooth.None)}), Documentation(info = "<html>
+  G = nt*Go;
+  B = nt*Bo;
+  p.vr = (p.ir*G + p.ii*B)/(G*G + B*B);
+  p.vi = ((-p.ir*B) + p.ii*G)/(G*G + B*B);
+  annotation (Icon(graphics={
+        Rectangle(extent={{-40,60},{60,-40}}, lineColor={0,0,255}),
+        Line(
+          points={{10,50},{10,34}},
+          color={0,0,255},
+          smooth=Smooth.None),
+        Line(
+          points={{-14,22},{36,22}},
+          color={0,0,255},
+          smooth=Smooth.None),
+        Line(
+          points={{-14,34},{36,34}},
+          color={0,0,255},
+          smooth=Smooth.None),
+        Line(
+          points={{10,22},{10,6}},
+          color={0,0,255},
+          smooth=Smooth.None),
+        Line(
+          points={{-14,-6},{36,-6}},
+          color={0,0,255},
+          smooth=Smooth.None),
+        Line(
+          points={{-14,6},{36,6}},
+          color={0,0,255},
+          smooth=Smooth.None),
+        Line(
+          points={{10,-6},{10,-22}},
+          color={0,0,255},
+          smooth=Smooth.None),
+        Line(
+          points={{-16,-22},{40,-22}},
+          color={0,0,255},
+          smooth=Smooth.None),
+        Line(
+          points={{-18,-30},{-10,-22}},
+          color={0,0,255},
+          smooth=Smooth.None),
+        Line(
+          points={{-10,-30},{-2,-22}},
+          color={0,0,255},
+          smooth=Smooth.None),
+        Line(
+          points={{-2,-30},{6,-22}},
+          color={0,0,255},
+          smooth=Smooth.None),
+        Line(
+          points={{6,-30},{14,-22}},
+          color={0,0,255},
+          smooth=Smooth.None),
+        Line(
+          points={{14,-30},{22,-22}},
+          color={0,0,255},
+          smooth=Smooth.None),
+        Line(
+          points={{22,-30},{30,-22}},
+          color={0,0,255},
+          smooth=Smooth.None),
+        Line(
+          points={{30,-30},{38,-22}},
+          color={0,0,255},
+          smooth=Smooth.None)}), Documentation(info="<html>
 <p><br><span style=\"font-family: MS Shell Dlg 2;\">&LT;iPSL: iTesla Power System Library&GT;</span></p>
 <p><span style=\"font-family: MS Shell Dlg 2;\">Copyright 2015 RTE (France), AIA (Spain), KTH (Sweden) and DTU (Denmark)</span></p>
 <ul>

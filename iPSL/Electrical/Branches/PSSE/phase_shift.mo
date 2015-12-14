@@ -1,15 +1,15 @@
 within iPSL.Electrical.Branches.PSSE;
 model phase_shift
-  constant Real pi = Modelica.Constants.pi;
-  iPSL.Connectors.PwPin p annotation(Placement(transformation(extent = {{-100, 0}, {-80, 20}})));
-  iPSL.Connectors.PwPin n annotation(Placement(transformation(extent = {{78, 0}, {98, 20}})));
-  parameter Real phase = 150 "Phase shift (deg.)";
+  constant Real pi=Modelica.Constants.pi;
+  iPSL.Connectors.PwPin p annotation (Placement(transformation(extent={{-100,0},{-80,20}})));
+  iPSL.Connectors.PwPin n annotation (Placement(transformation(extent={{78,0},{98,20}})));
+  parameter Real phase=150 "Phase shift (deg.)";
 protected
-  parameter Real A = (-phase * pi / 180) + 0.5 * pi;
+  parameter Real A=(-phase*pi/180) + 0.5*pi;
 equation
-  [p.ir; p.ii] = -[sin(A), cos(A); -cos(A), sin(A)] * [n.ir; n.ii];
-  [p.vr; p.vi] = [sin(A), cos(A); -cos(A), sin(A)] * [n.vr; n.vi];
-  annotation(Diagram(coordinateSystem(preserveAspectRatio = true, extent = {{-100, -100}, {100, 100}}), graphics), Documentation(info = "<html>
+  [p.ir; p.ii] = -[sin(A), cos(A); -cos(A), sin(A)]*[n.ir; n.ii];
+  [p.vr; p.vi] = [sin(A), cos(A); -cos(A), sin(A)]*[n.vr; n.vi];
+  annotation (Diagram(coordinateSystem(preserveAspectRatio=true, extent={{-100,-100},{100,100}}), graphics), Documentation(info="<html>
 <table cellspacing=\"1\" cellpadding=\"1\" border=\"1\">
 <tr>
 <td><p>Reference</p></td>

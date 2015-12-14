@@ -2,18 +2,56 @@ within iPSL.Electrical;
 
 
 model SystemBase "System Base Definition"
-  parameter Real S_b = 100 "System base in MVA";
-  parameter Real fn = 50 "System Frequency in Hz";
-  annotation(Icon(coordinateSystem(preserveAspectRatio = false, extent = {{-100, -100}, {140, 100}}), graphics={  Rectangle(extent = {{-100, 100}, {140, -100}}, lineColor = {28, 108, 200}, fillColor = {255, 255, 255},
-            fillPattern =                                                                                                    FillPattern.Solid), Text(extent = {{-90, 40}, {40, 20}}, lineColor = {28, 108, 200},
-            horizontalAlignment =                                                                                                    TextAlignment.Left, textString = "System Base"), Text(extent = {{88, 40}, {124, 20}}, lineColor = {28, 108, 200},
-            horizontalAlignment =                                                                                                    TextAlignment.Left, textString = "MVA"), Text(extent = {{20, 40}, {72, 20}}, lineColor = {28, 108, 200},
-            horizontalAlignment =                                                                                                    TextAlignment.Right, textString = DynamicSelect("0.0", String(S_b))), Text(extent = {{-90, 0}, {40, -20}}, lineColor = {28, 108, 200},
-            horizontalAlignment =                                                                                                    TextAlignment.Left, textString = "Frequency"), Text(extent = {{40, 0}, {72, -20}}, lineColor = {28, 108, 200},
-            horizontalAlignment =                                                                                                    TextAlignment.Right, textString = DynamicSelect("0.0", String(fn))), Text(extent = {{88, 0}, {118, -20}}, lineColor = {28, 108, 200},
-            horizontalAlignment =                                                                                                    TextAlignment.Left, textString = "Hz"), Text(extent = {{-42, 80}, {88, 60}}, lineColor = {28, 108, 200},
-            horizontalAlignment =                                                                                                    TextAlignment.Left, textString = "System Data")}), defaultComponentName = "SysData", defaultAttributes = "inner", missingInnerMessage = "
-No 'System Data' component is defined. A default component will be used, and generate a system base of 100 MVA, and a frequency of 50 Hz", Diagram(coordinateSystem(extent = {{-100, -100}, {140, 100}})), Documentation(info = "<html>
+  parameter Real S_b=100 "System base in MVA";
+  parameter Real fn=50 "System Frequency in Hz";
+  annotation (
+    Icon(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{140,100}}), graphics={
+        Rectangle(
+          extent={{-100,100},{140,-100}},
+          lineColor={28,108,200},
+          fillColor={255,255,255},
+          fillPattern=FillPattern.Solid),
+        Text(
+          extent={{-90,40},{40,20}},
+          lineColor={28,108,200},
+          horizontalAlignment=TextAlignment.Left,
+          textString="System Base"),
+        Text(
+          extent={{88,40},{124,20}},
+          lineColor={28,108,200},
+          horizontalAlignment=TextAlignment.Left,
+          textString="MVA"),
+        Text(
+          extent={{20,40},{72,20}},
+          lineColor={28,108,200},
+          horizontalAlignment=TextAlignment.Right,
+          textString=DynamicSelect("0.0", String(S_b))),
+        Text(
+          extent={{-90,0},{40,-20}},
+          lineColor={28,108,200},
+          horizontalAlignment=TextAlignment.Left,
+          textString="Frequency"),
+        Text(
+          extent={{40,0},{72,-20}},
+          lineColor={28,108,200},
+          horizontalAlignment=TextAlignment.Right,
+          textString=DynamicSelect("0.0", String(fn))),
+        Text(
+          extent={{88,0},{118,-20}},
+          lineColor={28,108,200},
+          horizontalAlignment=TextAlignment.Left,
+          textString="Hz"),
+        Text(
+          extent={{-42,80},{88,60}},
+          lineColor={28,108,200},
+          horizontalAlignment=TextAlignment.Left,
+          textString="System Data")}),
+    defaultComponentName="SysData",
+    defaultAttributes="inner",
+    missingInnerMessage="
+No 'System Data' component is defined. A default component will be used, and generate a system base of 100 MVA, and a frequency of 50 Hz",
+    Diagram(coordinateSystem(extent={{-100,-100},{140,100}})),
+    Documentation(info="<html>
 <p><br><span style=\"font-family: MS Shell Dlg 2;\">&LT;iPSL: iTesla Power System Library&GT;</span></p>
 <p><span style=\"font-family: MS Shell Dlg 2;\">Copyright 2015 RTE (France), AIA (Spain), KTH (Sweden) and DTU (Denmark)</span></p>
 <ul>

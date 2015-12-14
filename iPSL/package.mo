@@ -1,6 +1,12 @@
 within ;
 package iPSL "iTesla Power System Library"
-  annotation(uses(Modelica(version = "3.2.1"), Complex(version = "3.2.1")), version = "0.8", conversion(noneFromVersion = ""), Documentation(info = "<html>
+
+
+annotation (
+  uses(Modelica(version="3.2.1"), Complex(version="3.2.1")),
+  version="0.8.1",
+  conversion(noneFromVersion="0.8"),
+  Documentation(info="<html>
 <p>&LT;iPSL: iTesla Power System Library&GT;</p>
 <p>Copyright 2015 RTE (France), AIA (Spain), KTH (Sweden) and DTU (Denmark)</p>
 <ul>

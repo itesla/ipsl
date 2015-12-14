@@ -2,22 +2,31 @@ within iPSL.NonElectrical.Nonlinear;
 
 
 model FEX "FEX=f(IN)"
-  Modelica.Blocks.Interfaces.RealInput u annotation(Placement(transformation(extent = {{-70, -10}, {-50, 10}}), iconTransformation(extent = {{-110, -10}, {-90, 10}})));
-  Modelica.Blocks.Interfaces.RealOutput y annotation(Placement(transformation(extent = {{58, -10}, {78, 10}}), iconTransformation(extent = {{100, -10}, {120, 10}})));
+  Modelica.Blocks.Interfaces.RealInput u annotation (Placement(transformation(extent={{-70,-10},{-50,10}}), iconTransformation(extent={{-110,-10},{-90,10}})));
+  Modelica.Blocks.Interfaces.RealOutput y annotation (Placement(transformation(extent={{58,-10},{78,10}}), iconTransformation(extent={{100,-10},{120,10}})));
 equation
   if u <= 0 then
     y = 1;
   elseif u > 0 and u <= 0.433 then
-    y = 1 - 0.577 * u;
+    y = 1 - 0.577*u;
   elseif u > 0.433 and u < 0.75 then
-    y = sqrt(0.75 - u ^ 2);
+    y = sqrt(0.75 - u^2);
   elseif u >= 0.75 and u <= 1 then
-    y = 1.732 * (1 - u);
+    y = 1.732*(1 - u);
   else
     y = 0;
   end if;
-  annotation(Diagram(coordinateSystem(preserveAspectRatio = true, extent = {{-100, -100}, {100, 100}}), graphics), Icon(coordinateSystem(preserveAspectRatio = true, extent = {{-100, -100}, {100, 100}}), graphics={  Rectangle(extent=  {{-100, 100}, {100, -100}}, lineColor=  {0, 0, 255}, fillColor=  {255, 255, 255},
-            fillPattern=                                                                                                    FillPattern.Solid), Text(extent=  {{-62, 28}, {64, -30}}, lineColor=  {0, 0, 255}, textString=  "FEX=f(IN)")}), Documentation(info = "<html>
+  annotation (
+    Diagram(coordinateSystem(preserveAspectRatio=true, extent={{-100,-100},{100,100}}), graphics),
+    Icon(coordinateSystem(preserveAspectRatio=true, extent={{-100,-100},{100,100}}), graphics={Rectangle(
+          extent={{-100,100},{100,-100}},
+          lineColor={0,0,255},
+          fillColor={255,255,255},
+          fillPattern=FillPattern.Solid),Text(
+          extent={{-62,28},{64,-30}},
+          lineColor={0,0,255},
+          textString="FEX=f(IN)")}),
+    Documentation(info="<html>
 <p><br><span style=\"font-family: MS Shell Dlg 2;\">&LT;iPSL: iTesla Power System Library&GT;</span></p>
 <p><span style=\"font-family: MS Shell Dlg 2;\">Copyright 2015 RTE (France), AIA (Spain), KTH (Sweden) and DTU (Denmark)</span></p>
 <ul>

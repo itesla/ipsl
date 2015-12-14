@@ -8,10 +8,10 @@ function SE_exp "Exponential Saturation Function (PTI PSS/E) "
   input Real E_2 "Second saturation point";
   output Real sys "Saturated Output";
 protected
-  parameter Real X = log(S_EE_2 / S_EE_1) / log(E_2);
+  parameter Real X=log(S_EE_2/S_EE_1)/log(E_2);
 algorithm
-  sys := S_EE_1 * u ^ X;
-  annotation(Documentation(info = "<html>
+  sys := S_EE_1*u^X;
+  annotation (Documentation(info="<html>
 <p><br><span style=\"font-family: MS Shell Dlg 2;\">&LT;iPSL: iTesla Power System Library&GT;</span></p>
 <p><span style=\"font-family: MS Shell Dlg 2;\">Copyright 2015 RTE (France), AIA (Spain), KTH (Sweden) and DTU (Denmark)</span></p>
 <ul>
