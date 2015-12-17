@@ -20,7 +20,7 @@ partial model baseLoad
   Real P "Active power (pu)";
   Real Q "Reactive power (pu)";
 protected
-  parameter Real CoB=Sn/S_b "Chang of base between Machine and System";
+  parameter Real CoB=Sn/S_b "Change of base between Machine and System";
 equation
   P = p.vr*p.ir + p.vi*p.ii;
   Q = p.vi*p.ir - p.vr*p.ii;
