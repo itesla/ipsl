@@ -10,13 +10,11 @@ model SMIB
     x=0.15,
     r=0,
     V_b=400,
-    Vn=400,
-    fn=SysData.S_b) annotation (Placement(transformation(extent={{-60,-10},{-40,10}})));
+    Vn=400) annotation (Placement(transformation(extent={{-60,-10},{-40,10}})));
   iPSL.Electrical.Branches.PwLine line_1(
     R=0,
     G=0,
     B=0,
-    S_b=SysData.S_b,
     X=0.5) annotation (Placement(transformation(extent={{10,10},{30,30}})));
   iPSL.Electrical.Loads.PSAT.LOADPQ load(
     Sn=100,
@@ -38,7 +36,6 @@ model SMIB
     R=0,
     G=0,
     B=0,
-    S_b=SysData.S_b,
     X=0.93) annotation (Placement(transformation(extent={{10,-30},{30,-10}})));
   inner iPSL.Electrical.SystemBase SysData(S_b=2220, fn=60) annotation (Placement(transformation(extent={{-140,80},{-98,98}})));
 equation

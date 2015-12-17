@@ -10,18 +10,15 @@ model SMIB_AVR_PSS
     Sn=2220,
     V_b=400000,
     Vn=400000,
-    fn=60,
     x=0.15,
     r=0) annotation (Placement(transformation(extent={{-60,-10},{-40,10}})));
   iPSL.Electrical.Branches.PwLine Line_1(
     R=0,
     G=0,
     B=0,
-    X=0.022522522522523,
-    S_b=SysData.S_b) annotation (Placement(transformation(extent={{10,10},{30,30}})));
+    X=0.022522522522523) annotation (Placement(transformation(extent={{10,10},{30,30}})));
   iPSL.Electrical.Loads.PSAT.LOADPQ Load(
     Sn=100,
-    S_b=100,
     P_0=19.979999999894400,
     Q_0=-0.870664705119217) annotation (Placement(transformation(
         extent={{-6,-6},{6,6}},
@@ -40,21 +37,21 @@ model SMIB_AVR_PSS
     R=0,
     G=0,
     B=0,
-    S_b=100,
     X=0.041891891891892) annotation (Placement(transformation(extent={{10,-30},{30,-10}})));
   inner iPSL.Electrical.SystemBase SysData annotation (Placement(transformation(extent={{-140,80},{-116,100}})));
 equation
-  connect(G1.pwPin, B1.p) annotation (Line(points={{-99,0},{-80,0},{-80,0}}, color={0,0,255}));
+  connect(G1.pwPin, B1.p) annotation (Line(points={{-99,0},{-80,0}}, color={0,0,255}));
   connect(B1.p, Transformer.p) annotation (Line(points={{-80,0},{-70,0},{-61,0}}, color={0,0,255}));
   connect(Transformer.n, B2.p) annotation (Line(points={{-39,0},{-20,0}}, color={0,0,255}));
   connect(B2.p, Line_1.p) annotation (Line(points={{-20,0},{-14,0},{-10,0},{-10,20},{13,20}}, color={0,0,255}));
   connect(Load.p, infinite_bus.p) annotation (Line(points={{80,-19.4},{80,0},{99,0},{99,1.38778e-015}}, color={0,0,255}));
   connect(Fault.p, Line_1.p) annotation (Line(points={{-1.66667,-50},{-14,-50},{-14,0},{-10,0},{-10,20},{13,20}}, color={0,0,255}));
   connect(Line_2.p, Line_1.p) annotation (Line(points={{13,-20},{-10,-20},{-10,20},{13,20}}, color={0,0,255}));
-  connect(B3.p, infinite_bus.p) annotation (Line(points={{60,0},{70,0},{70,0},{99,0},{99,1.38778e-015}}, color={0,0,255}));
+  connect(B3.p, infinite_bus.p) annotation (Line(points={{60,0},{70,0},{99,0},{99,1.38778e-015}}, color={0,0,255}));
   connect(B3.p, Line_1.n) annotation (Line(points={{60,0},{56,0},{50,0},{50,20},{27,20}}, color={0,0,255}));
   connect(Line_2.n, Line_1.n) annotation (Line(points={{27,-20},{50,-20},{50,20},{27,20}}, color={0,0,255}));
-  annotation (Diagram(coordinateSystem(extent={{-140,-100},{120,100}}, preserveAspectRatio=false), graphics={Text(
+  annotation (
+    Diagram(coordinateSystem(extent={{-140,-100},{120,100}}, preserveAspectRatio=false), graphics={Text(
           extent={{-120,100},{100,80}},
           lineColor={0,0,0},
           lineThickness=1,
@@ -67,5 +64,7 @@ equation
           lineThickness=1,
           fillPattern=FillPattern.Solid,
           fontSize=12,
-          textString="*P. Kundur, \"Power System Stability and Control\", Example 13.2")}), Icon(coordinateSystem(extent={{-140,-100},{120,100}})));
+          textString="*P. Kundur, \"Power System Stability and Control\", Example 13.2")}),
+    Icon(coordinateSystem(extent={{-140,-100},{120,100}})),
+    experiment(StopTime=10, __Dymola_Algorithm="Rkfix2"));
 end SMIB_AVR_PSS;

@@ -7,7 +7,6 @@ model SMIB_AVR
   Generation_Groups.Generator_AVR G1 annotation (Placement(transformation(extent={{-120,-10},{-100,10}})));
   iPSL.Electrical.Branches.PSAT.TwoWindingTransformer transformer(
     Sn=2220,
-    fn=60,
     x=0.15,
     r=0,
     V_b=400,
@@ -16,11 +15,9 @@ model SMIB_AVR
     R=0,
     G=0,
     B=0,
-    S_b=100,
     X=0.5*100/2220) annotation (Placement(transformation(extent={{10,10},{30,30}})));
   iPSL.Electrical.Loads.PSAT.LOADPQ load(
     Sn=100,
-    S_b=100,
     P_0=19.979999999894400,
     Q_0=-0.870664705119217) annotation (Placement(transformation(
         extent={{-6,-6},{6,6}},
@@ -39,16 +36,15 @@ model SMIB_AVR
     R=0,
     G=0,
     B=0,
-    S_b=100,
     X=0.93*100/2220) annotation (Placement(transformation(extent={{10,-30},{30,-10}})));
   inner iPSL.Electrical.SystemBase SysData(S_b=2220, fn=60) annotation (Placement(transformation(extent={{-140,80},{-116,100}})));
 equation
-  connect(G1.pwPin, B1.p) annotation (Line(points={{-99,0},{-80,0},{-80,0}}, color={0,0,255}));
-  connect(B1.p, transformer.p) annotation (Line(points={{-80,0},{-70,0},{-70,0},{-61,0}}, color={0,0,255}));
-  connect(transformer.n, B2.p) annotation (Line(points={{-39,0},{-20,0},{-20,0}}, color={0,0,255}));
+  connect(G1.pwPin, B1.p) annotation (Line(points={{-99,0},{-80,0}}, color={0,0,255}));
+  connect(B1.p, transformer.p) annotation (Line(points={{-80,0},{-70,0},{-61,0}}, color={0,0,255}));
+  connect(transformer.n, B2.p) annotation (Line(points={{-39,0},{-20,0}}, color={0,0,255}));
   connect(B2.p, line_1.p) annotation (Line(points={{-20,0},{-14,0},{-10,0},{-10,20},{13,20}}, color={0,0,255}));
   connect(line_1.n, B3.p) annotation (Line(points={{27,20},{50,20},{50,0},{60,0}}, color={0,0,255}));
-  connect(B3.p, infinite_bus.p) annotation (Line(points={{60,0},{80,0},{80,0},{99,0}}, color={0,0,255}));
+  connect(B3.p, infinite_bus.p) annotation (Line(points={{60,0},{80,0},{99,0}}, color={0,0,255}));
   connect(load.p, infinite_bus.p) annotation (Line(points={{80,-19.4},{80,0},{99,0},{99,1.38778e-015}}, color={0,0,255}));
   connect(fault.p, line_1.p) annotation (Line(points={{-1.66667,-50},{-14,-50},{-14,0},{-10,0},{-10,20},{13,20}}, color={0,0,255}));
   connect(line_2.n, B3.p) annotation (Line(points={{27,-20},{50,-20},{50,0},{60,0}}, color={0,0,255}));
@@ -61,7 +57,7 @@ equation
           fillPattern=FillPattern.Solid,
           fontSize=15,
           textStyle={TextStyle.Bold},
-          textString="Example 1: Single-machine infinite bus model*"), Text(
+          textString="Example 1: Single-machine infinite bus model*"),Text(
           extent={{-164,-88},{54,-106}},
           lineColor={0,0,0},
           lineThickness=1,

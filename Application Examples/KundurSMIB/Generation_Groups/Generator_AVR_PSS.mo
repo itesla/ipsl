@@ -44,7 +44,7 @@ model Generator_AVR_PSS
     T3=1,
     T4=1) annotation (Placement(transformation(extent={{-40,-4},{-20,16}})));
 equation
-  connect(avr.vf, machine.vf) annotation (Line(points={{21,10},{30,10},{30,10},{40,10}}, color={0,0,127}));
+  connect(avr.vf, machine.vf) annotation (Line(points={{21,10},{40,10}}, color={0,0,127}));
   connect(machine.p, pwPin) annotation (Line(points={{82,0.09928},{92,0.09928},{92,0},{110,0}}, color={0,0,255}));
   connect(pss.vSI, machine.w) annotation (Line(points={{-41,6},{-60,6},{-60,-40},{96,-40},{96,18},{82,18}}, color={0,0,127}));
   connect(pss.vs, avr.vs) annotation (Line(points={{-19,6},{-2,6}}, color={0,0,127}));

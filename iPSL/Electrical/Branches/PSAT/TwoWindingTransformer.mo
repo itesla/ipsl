@@ -1,12 +1,14 @@
 within iPSL.Electrical.Branches.PSAT;
 model TwoWindingTransformer "Modeled as series reactances without iron losses"
+
+  outer iPSL.Electrical.SystemBase SysData;
   iPSL.Connectors.PwPin p annotation (Placement(transformation(extent={{-120,-10},{-100,10}})));
   iPSL.Connectors.PwPin n annotation (Placement(transformation(extent={{100,-10},{120,10}})));
-  parameter Real Sb=100 "System base power (MVA)" annotation (Dialog(group="Power flow"));
+  parameter Real Sb=SysData.S_b "System base power (MVA)" annotation (Dialog(group="Power flow"));
   parameter Real Sn=100 "Power rating (MVA)" annotation (Dialog(group="Power flow"));
   parameter Real V_b=400000 "Sending end bus voltage" annotation (Dialog(group="Power flow"));
   parameter Real Vn=400000 "Voltage rating (kV)" annotation (Dialog(group="Power flow"));
-  parameter Real fn=50 "Frequency rating (Hz)" annotation (Dialog(group="Power flow"));
+  parameter Real fn=SysData.fn "Frequency rating (Hz)" annotation (Dialog(group="Power flow"));
   parameter Real kT=1 "Nominal tap ratio (V1/V2)" annotation (Dialog(group="Transformer parameters"));
   parameter Real x=0.001 "Reactance (pu)" annotation (Dialog(group="Transformer parameters"));
   parameter Real r=0.1 "Resistance (pu)" annotation (Dialog(group="Transformer parameters"));
