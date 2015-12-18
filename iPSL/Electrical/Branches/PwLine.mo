@@ -1,13 +1,14 @@
 within iPSL.Electrical.Branches;
-model PwLine "Model for a transmission Line based on the pi-equivalent circuit.
-              2013"
+model PwLine "Model for a transmission Line based on the pi-equivalent circuit"
+
+  outer iPSL.Electrical.SystemBase SysData;
   iPSL.Connectors.PwPin p annotation (Placement(transformation(extent={{-80,-10},{-60,10}}), iconTransformation(extent={{-80,-10},{-60,10}})));
   iPSL.Connectors.PwPin n annotation (Placement(transformation(extent={{60,-10},{80,10}}), iconTransformation(extent={{60,-10},{80,10}})));
   parameter Real R "Resistance p.u.";
   parameter Real X "Reactance p.u.";
   parameter Real G "Shunt half conductance p.u.";
   parameter Real B "Shunt half susceptance p.u.";
-  parameter Real S_b=100 "System base power (MVA)";
+  parameter Real S_b=SysData.S_b "System base power (MVA)";
   Real P12;
   Real P21;
   Real Q12;
