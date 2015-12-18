@@ -37,7 +37,7 @@ model SMIB
     G=0,
     B=0,
     X=0.93) annotation (Placement(transformation(extent={{10,-30},{30,-10}})));
-  inner iPSL.Electrical.SystemBase SysData(S_b=2220, fn=60) annotation (Placement(transformation(extent={{-140,80},{-98,98}})));
+  inner iPSL.Electrical.SystemBase SysData(S_b=2220, fn=60) annotation (Placement(transformation(extent={{-140,80},{-86,100}})));
 equation
   connect(G1.pwPin, B1.p) annotation (Line(points={{-99,0},{-80,0}}, color={0,0,255}));
   connect(B1.p, transformer.p) annotation (Line(points={{-80,0},{-70,0},{-61,0}}, color={0,0,255}));
@@ -66,8 +66,10 @@ equation
           textString="*P. Kundur, \"Power System Stability and Control\", Example 13.2")}),
     Icon(coordinateSystem(extent={{-140,-100},{120,100}})),
     experiment(
-      StartTime=0,
       StopTime=10,
-      Tolerance=1e-6,
-      Interval=1e-4));
+      Interval=0.0001,
+      Tolerance=1e-006,
+      __Dymola_fixedstepsize=0.0001,
+      __Dymola_Algorithm="Rkfix2"),
+    __Dymola_experimentSetupOutput);
 end SMIB;

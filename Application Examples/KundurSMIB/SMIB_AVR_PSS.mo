@@ -66,5 +66,11 @@ equation
           fontSize=12,
           textString="*P. Kundur, \"Power System Stability and Control\", Example 13.2")}),
     Icon(coordinateSystem(extent={{-140,-100},{120,100}})),
-    experiment(StopTime=10, __Dymola_Algorithm="Rkfix2"));
+    experiment(
+      StopTime=10,
+      __Dymola_NumberOfIntervals=1000,
+      Tolerance=1e-006,
+      __Dymola_fixedstepsize=0.0001,
+      __Dymola_Algorithm="Rkfix2"),
+    __Dymola_experimentSetupOutput);
 end SMIB_AVR_PSS;
