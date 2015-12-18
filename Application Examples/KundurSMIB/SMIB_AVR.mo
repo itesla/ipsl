@@ -15,7 +15,7 @@ model SMIB_AVR
     R=0,
     G=0,
     B=0,
-    X=0.5*100/2220) annotation (Placement(transformation(extent={{10,10},{30,30}})));
+    X=0.5) annotation (Placement(transformation(extent={{10,10},{30,30}})));
   iPSL.Electrical.Loads.PSAT.LOADPQ load(
     Sn=100,
     P_0=19.979999999894400,
@@ -36,7 +36,7 @@ model SMIB_AVR
     R=0,
     G=0,
     B=0,
-    X=0.93*100/2220) annotation (Placement(transformation(extent={{10,-30},{30,-10}})));
+    X=0.93) annotation (Placement(transformation(extent={{10,-30},{30,-10}})));
   inner iPSL.Electrical.SystemBase SysData(S_b=2220, fn=60) annotation (Placement(transformation(extent={{-140,80},{-116,100}})));
 equation
   connect(G1.pwPin, B1.p) annotation (Line(points={{-99,0},{-80,0}}, color={0,0,255}));

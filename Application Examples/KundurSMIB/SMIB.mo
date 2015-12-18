@@ -1,10 +1,14 @@
 within KundurSMIB;
 model SMIB
-
+  import Modelica.Constants.pi;
   iPSL.Electrical.Buses.Bus B1 annotation (Placement(transformation(extent={{-92,-12},{-68,12}})));
   iPSL.Electrical.Buses.Bus B2 annotation (Placement(transformation(extent={{-32,-12},{-8,12}})));
   iPSL.Electrical.Buses.Bus B3 annotation (Placement(transformation(extent={{48,-12},{72,12}})));
-  Generation_Groups.Generator G1 annotation (Placement(transformation(extent={{-120,-10},{-100,10}})));
+  Generation_Groups.Generator G1(
+    V_0=1,
+    angle_0=0.494677176989154*180/pi,
+    P_0=0.908181818178928*S_b,
+    Q_0=0.439965895412080*S_b) annotation (Placement(transformation(extent={{-120,-10},{-100,10}})));
   iPSL.Electrical.Branches.PSAT.TwoWindingTransformer transformer(
     Sn=2220,
     x=0.15,
@@ -17,13 +21,13 @@ model SMIB
     B=0,
     X=0.5) annotation (Placement(transformation(extent={{10,10},{30,30}})));
   iPSL.Electrical.Loads.PSAT.LOADPQ load(
-    Sn=100,
-    P_0=19.979999999894400,
-    Q_0=-0.870664705119217) annotation (Placement(transformation(
+    P_0=0.908181818177018*S_b,
+    Q_0=-0.039575668414510*S_b,
+    V_0=0.900810000000000) annotation (Placement(transformation(
         extent={{-6,-6},{6,6}},
         rotation=0,
         origin={80,-26})));
-  iPSL.Electrical.Buses.InfiniteBus infinite_bus(V=0.90081, angle=0) annotation (Placement(transformation(
+  iPSL.Electrical.Buses.InfiniteBus infinite_bus(angle=0, V=0.900810000000000) annotation (Placement(transformation(
         extent={{-10,10},{10,-10}},
         rotation=180,
         origin={110,0})));
@@ -31,13 +35,15 @@ model SMIB
     R=0,
     t1=0.5,
     t2=0.57,
-    X=0.01) annotation (Placement(transformation(extent={{0,-60},{20,-40}})));
+    X=1e-5) annotation (Placement(transformation(extent={{0,-60},{20,-40}})));
   iPSL.Electrical.Branches.PwLine line_2(
     R=0,
     G=0,
     B=0,
     X=0.93) annotation (Placement(transformation(extent={{10,-30},{30,-10}})));
   inner iPSL.Electrical.SystemBase SysData(S_b=2220, fn=60) annotation (Placement(transformation(extent={{-140,80},{-86,100}})));
+protected
+  parameter Real S_b=SysData.S_b;
 equation
   connect(G1.pwPin, B1.p) annotation (Line(points={{-99,0},{-80,0}}, color={0,0,255}));
   connect(B1.p, transformer.p) annotation (Line(points={{-80,0},{-70,0},{-61,0}}, color={0,0,255}));
