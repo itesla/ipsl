@@ -48,25 +48,25 @@ model PSS2A "IEEE Dual-Input Stabilizer Model"
   Modelica.Blocks.Nonlinear.Limiter limiter(uMax=V_STMAX, uMin=V_STMIN) annotation (Placement(transformation(extent={{146,-10},{166,10}})));
   Modelica.Blocks.Math.Gain gain1(k=1) annotation (Placement(transformation(extent={{-10,4},{10,24}})));
   Modelica.Blocks.Continuous.TransferFunction Washout1(
-    b={1,0},
-    a={1,1/T_w1},
     initType=Modelica.Blocks.Types.Init.InitialOutput,
-    y_start=0) annotation (Placement(transformation(extent={{-160,10},{-140,30}})));
+    y_start=0,
+    b={T_w1,0},
+    a={T_w1,1}) annotation (Placement(transformation(extent={{-160,10},{-140,30}})));
   Modelica.Blocks.Continuous.TransferFunction Washout2(
-    b={1,0},
     initType=Modelica.Blocks.Types.Init.InitialOutput,
     y_start=0,
-    a={1,1/T_w2}) annotation (Placement(transformation(extent={{-120,10},{-100,30}})));
+    b={T_w2,0},
+    a={T_w2,1}) annotation (Placement(transformation(extent={{-120,10},{-100,30}})));
   Modelica.Blocks.Continuous.TransferFunction Washout3(
-    b={1,0},
     initType=Modelica.Blocks.Types.Init.InitialOutput,
     y_start=0,
-    a={1,1/T_w3}) annotation (Placement(transformation(extent={{-160,-30},{-140,-10}})));
+    b={T_w3,0},
+    a={T_w3,1}) annotation (Placement(transformation(extent={{-160,-30},{-140,-10}})));
   Modelica.Blocks.Continuous.TransferFunction Washout4(
-    b={1,0},
     initType=Modelica.Blocks.Types.Init.InitialOutput,
     y_start=0,
-    a={1,1/T_w4}) annotation (Placement(transformation(extent={{-120,-30},{-100,-10}})));
+    b={T_w4,0},
+    a={T_w4,1}) annotation (Placement(transformation(extent={{-120,-30},{-100,-10}})));
 equation
   connect(SimpleLag1.y, add.u1) annotation (Line(points={{-59,20},{-50,20},{-42,20}}, color={0,0,127}));
   connect(SimpleLag2.y, add.u2) annotation (Line(points={{-59,-20},{-52,-20},{-52,8},{-42,8}}, color={0,0,127}));
