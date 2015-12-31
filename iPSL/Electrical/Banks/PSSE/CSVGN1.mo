@@ -1,6 +1,4 @@
-within iPSL.Electrical.Wind.PSSE.WT3G;
-
-
+within iPSL.Electrical.Banks.PSSE;
 model CSVGN1 "STATC SHUNT COMPENSATOR MODEL"
   constant Real pi=Modelica.Constants.pi;
   parameter Real K;
@@ -112,7 +110,7 @@ equation
       color={0,0,127},
       smooth=Smooth.None));
   connect(add1.y, ImSimpleLagnonwinduplimit.u) annotation (Line(points={{-61.3,-1},{-52.65,-1},{-52.65,-2},{-44,-2}}, color={0,0,127}));
-  connect(ImSimpleLagnonwinduplimit.y, imLimited.u) annotation (Line(points={{-21,-2},{-4,-2},{-4,-2}}, color={0,0,127}));
+  connect(ImSimpleLagnonwinduplimit.y, imLimited.u) annotation (Line(points={{-21,-2},{-4,-2}}, color={0,0,127}));
   connect(imLimited.y, product1.u2) annotation (Line(points={{19,-2},{24,-2},{24,9.6},{35.2,9.6}}, color={0,0,127}));
   annotation (
     Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,100}}), graphics={Text(
