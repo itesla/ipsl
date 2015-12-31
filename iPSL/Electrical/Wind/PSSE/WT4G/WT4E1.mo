@@ -1,16 +1,9 @@
 within iPSL.Electrical.Wind.PSSE.WT4G;
 model WT4E1
 
-  //3 'WT4E1' 1              0         0         0         0
-  // 0.15000              18.000              5.0000             0.50000E-01         0.10000
-  //         0.0000             0.80000E-01         0.47000            -0.47000              1.1000
-  //         0.0000             0.50000            -0.50000             0.50000E-01         0.10000
-  //        0.90000              1.1000              120.00             0.50000E-01         0.50000E-01
-  //         1.7000              1.1100              1.1100
-
-  parameter menu1 PFAFLG "PF fast control, 1 enable, 0 unable";
-  parameter menu2 VARFLG "0 constant Q;1 Reactive control";
-  parameter menu3 PQFLAG "P/Q priority flag, 0 for Q, 1 for P";
+  parameter Integer PFAFLG "PF fast control, 1 enable, 0 disable" annotation (choices(choice=1 "Enabled", choice=0 "Disabled"));
+  parameter Integer VARFLG "0 constant Q;1 Reactive control" annotation (choices(choice=0 " Qord is not provided by WindVar", choice=1 " Qord is provided by WindVar"));
+  parameter Integer PQFLAG "P/Q priority flag, 0 for Q, 1 for P" annotation (choices(choice=0 "Q priority", choice=1 "P priority"));
 
   parameter Real Tfv=0.15 "Filter time constant in voltage regulator (sec)";
   parameter Real Kpv=18 " Proportional gain in voltage regulator (pu)";
