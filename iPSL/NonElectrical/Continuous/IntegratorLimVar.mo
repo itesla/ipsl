@@ -1,7 +1,6 @@
 within iPSL.NonElectrical.Continuous;
-
-
-model IntegratorLimVar "Integrator with a non windup limiter and variable limits"
+model IntegratorLimVar
+  "Integrator with a non windup limiter and variable limits"
   extends Modelica.Blocks.Interfaces.SISO(y(start=y_start));
   parameter Real K "Gain" annotation (Evaluate=false);
   parameter Real y_start "Output start value" annotation (Dialog(group="Initialization"));
@@ -11,24 +10,37 @@ model IntegratorLimVar "Integrator with a non windup limiter and variable limits
         rotation=-90,
         origin={80,140})));
   Modelica.Blocks.Interfaces.RealInput outMin
-    annotation (Placement(transformation(extent={{-90,-6},{-50,34}}), iconTransformation(
+    annotation (Placement(transformation(extent={{-98,14},{-58,54}}), iconTransformation(
         extent={{-20,-20},{20,20}},
         rotation=90,
         origin={-80,-140})));
+ Real y_i "internal state";
+initial equation
+  y_i=y_start;
 equation
   assert(
     outMax > outMin,
     "Upper limit must be greater than lower limit",
     AssertionLevel.error);
-  if y >= outMax and u > 0 then
-    der(y) = 0;
-  elseif y <= outMin and u < 0 then
-    der(y) = 0;
+  if u >= outMax and u > 0 then
+    der(y_i) = 0;
+  elseif y_i <= outMin and u < 0 then
+    der(y_i) = 0;
   else
-    der(y) = K*u;
+    der(y_i) = K*u;
   end if;
+
+  if y_i > outMin and y_i<outMax then
+    y=y_i;
+   elseif y_i<=outMin then
+     y=outMin;
+   else
+     y=outMax;
+   end if;
   annotation (
-    Icon(graphics={
+    Icon(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,
+            100}}),
+         graphics={
         Line(points={{40,100},{60,140},{100,140}}, color={0,0,0}),
         Text(
           extent={{-20,68},{20,8}},
@@ -44,7 +56,8 @@ equation
           lineColor={0,0,255},
           textString="s"),
         Line(points={{-100,-140},{-60,-140},{-40,-100}}, color={0,0,0})}),
-    Diagram,
+    Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{
+            100,100}}), graphics),
     Documentation(info="<html>
 <p><br><span style=\"font-family: MS Shell Dlg 2;\">&LT;iPSL: iTesla Power System Library&GT;</span></p>
 <p><span style=\"font-family: MS Shell Dlg 2;\">Copyright 2015 RTE (France), AIA (Spain), KTH (Sweden) and DTU (Denmark)</span></p>
@@ -61,3 +74,4 @@ equation
 <p><span style=\"font-family: MS Shell Dlg 2;\">You should have received a copy of the GNU Lesser General Public License along with the iPSL. If not, see &LT;http://www.gnu.org/licenses/&GT;.</span></p>
 </html>"));
 end IntegratorLimVar;
+
