@@ -2,6 +2,7 @@ within iPSL.Electrical.Controls.PSSE.ES.ESST1A;
 
 
 model ESST1A "IEEE Type ST1A Excitation System"
+
   Modelica.Blocks.Sources.Constant Vref(k=VREF) annotation (Placement(transformation(extent={{-75.6,15.9},{-66,26}})));
   Modelica.Blocks.Interfaces.RealInput ECOMP "Input, generator terminal voltage"
     annotation (Placement(transformation(extent={{-100.3,-5.6},{-90.3,6.4}}), iconTransformation(
@@ -149,9 +150,10 @@ protected
   parameter Real VA0(fixed=false);
 initial equation
   Efd0 = EFD0;
-  IFD0 = 1.23;
+  IFD0 = XADIFD;
   VA0 = Efd0 + K_LR*(IFD0 - I_LR);
   VREF = VA0/K_A + V_0;
+
 equation
   connect(VUEL2, hV_GATE.n2) annotation (Line(
       points={{-95.5,-46},{-55.4,-46},{-55.4,-45.6},{-0.7,-45.6},{-0.7,15.7},{1.01875,15.7}},
