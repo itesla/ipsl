@@ -8,13 +8,14 @@ block DerivativeLag "Derivative lag transfer function blcok"
   parameter Real x_start=0 "Start value of state variable" annotation (Dialog(group="Initialization"));
 protected
   parameter Modelica.SIunits.Time T_dummy=if abs(T) < Modelica.Constants.eps then 1000 else T "Lead time constant";
+  parameter Modelica.SIunits.Time K_dummy=if abs(K) < Modelica.Constants.eps then 1 else K "Lead time constant";
 public
   Modelica.Blocks.Sources.RealExpression par1(y=T) annotation (Placement(transformation(extent={{-80,54},{-60,74}})));
   Modelica.Blocks.Continuous.TransferFunction TF(
     initType=Modelica.Blocks.Types.Init.InitialOutput,
     x_start={x_start},
-    b={K,0},
-    y_start=0,
+    b={K_dummy,0},
+    y_start=y_start,
     a={T_dummy,1}) annotation (Placement(transformation(extent={{-8,-10},{12,10}})));
 equation
   if (abs(par1.y) < Modelica.Constants.eps) then

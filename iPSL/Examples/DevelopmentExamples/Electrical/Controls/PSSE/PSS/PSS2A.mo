@@ -95,7 +95,6 @@ model PSS2A "SMIB system with one load and GENROE model"
   Modelica.Blocks.Sources.Constant const1(k=-Modelica.Constants.inf) annotation (Placement(transformation(extent={{-2,-110},{-22,-90}})));
   Modelica.Blocks.Sources.Constant const2(k=Modelica.Constants.inf) annotation (Placement(transformation(extent={{0,-140},{-20,-120}})));
   iPSL.Electrical.Controls.PSSE.PSS.PSS2A.PSS2A pSS2A(
-    T_w1=5,
     T_w2=5,
     T_6=0,
     T_w3=5,
@@ -113,7 +112,8 @@ model PSS2A "SMIB system with one load and GENROE model"
     V_STMAX=0.1,
     V_STMIN=-0.1,
     M=5,
-    N=1) annotation (Placement(transformation(extent={{-138,-30},{-100,-22}})));
+    N=1,
+    T_w1=0) annotation (Placement(transformation(extent={{-138,-30},{-100,-22}})));
 equation
   connect(pwLine.n, pwLine1.p) annotation (Line(
       points={{-9,10},{3.5,10},{3.5,24},{29,24}},
@@ -146,18 +146,18 @@ equation
   connect(gENROE.p, pwLine.p) annotation (Line(points={{-40,10},{-23,10}}, color={0,0,255}));
   connect(gENROE.PMECH, gENROE.PMECH0) annotation (Line(points={{-81.6,20},{-92,20},{-92,36},{-30,36},{-30,4},{-40.4,4}}, color={0,0,127}));
   connect(eSST1A.ECOMP, gENROE.ETERM) annotation (Line(points={{-39.0833,-65},{-34,-65},{-34,20},{-40.4,20}}, color={0,0,127}));
-  connect(eSST1A.XADIFD, gENROE.XADIFD) annotation (Line(points={{-39.0833,-77.1875},{-39.0833,-94},{-30,-94},{-30,-8},{-40.4,-8}}, color={0,0,127}));
-  connect(eSST1A.VT, gENROE.ETERM) annotation (Line(points={{-39.2458,-69.7344},{-39.2458,-88},{-34,-88},{-34,20},{-40.4,20}}, color={0,0,127}));
-  connect(eSST1A.EFD0, gENROE.EFD0) annotation (Line(points={{-39.0833,-73.4094},{-39.0833,-42},{-38,-42},{-38,-4},{-40.4,-4}}, color={0,0,127}));
-  connect(eSST1A.VOTHSG2, const.y) annotation (Line(points={{-39.0833,-56.5625},{-39.0833,-44},{-26,-44},{-26,-66},{-23,-66}}, color={0,0,127}));
   connect(const1.y, eSST1A.VUEL2) annotation (Line(points={{-23,-100},{-60.7717,-100},{-60.7717,-79.0438}}, color={0,0,127}));
   connect(eSST1A.VUEL1, const.y) annotation (Line(points={{-54.2175,-79.0625},{-54.2175,-84},{-28,-84},{-28,-66},{-23,-66}}, color={0,0,127}));
   connect(eSST1A.VUEL3, eSST1A.VUEL2) annotation (Line(points={{-67.2175,-79.0531},{-67.2175,-100},{-60.7717,-100},{-60.7717,-79.0438}}, color={0,0,127}));
   connect(const2.y, eSST1A.VOEL) annotation (Line(points={{-21,-130},{-73.75,-130},{-73.75,-79.0625}}, color={0,0,127}));
-  connect(gENROE.EFD, eSST1A.EFD) annotation (Line(points={{-81.6,0},{-86,0},{-92,0},{-92,-65.0375},{-91.0833,-65.0375}}, color={0,0,127}));
-  connect(pSS2A.VOTHSG, eSST1A.VOTHSG) annotation (Line(points={{-99.4,-26},{-88,-26},{-39.0833,-26},{-39.0833,-52.8125}}, color={0,0,127}));
   connect(pSS2A.V_S2, gENROE.PELEC) annotation (Line(points={{-138,-28},{-140,-28},{-140,-38},{-28,-38},{-28,0},{-40.4,0}}, color={0,0,127}));
   connect(pSS2A.V_S1, gENROE.SPEED) annotation (Line(points={{-138,-24},{-140,-24},{-140,40},{-26,40},{-26,28},{-40.4,28}}, color={0,0,127}));
+  connect(eSST1A.EFD, gENROE.EFD) annotation (Line(points={{-91.0833,-65.0375},{-96,-65.0375},{-96,0},{-81.6,0}}, color={0,0,127}));
+  connect(eSST1A.VT, gENROE.ETERM) annotation (Line(points={{-39.2458,-69.7344},{-34,-69.7344},{-34,20},{-40.4,20}}, color={0,0,127}));
+  connect(eSST1A.EFD0, gENROE.EFD0) annotation (Line(points={{-39.0833,-73.4094},{-32,-73.4094},{-32,-4},{-40.4,-4}}, color={0,0,127}));
+  connect(eSST1A.XADIFD, gENROE.XADIFD) annotation (Line(points={{-39.0833,-77.1875},{-30,-77.1875},{-30,-8},{-40.4,-8}}, color={0,0,127}));
+  connect(eSST1A.VOTHSG2, pSS2A.VOTHSG) annotation (Line(points={{-39.0833,-56.5625},{-26,-56.5625},{-26,-26},{-99.4,-26}}, color={0,0,127}));
+  connect(eSST1A.VOTHSG, const.y) annotation (Line(points={{-39.0833,-52.8125},{-28,-52.8125},{-28,-66},{-23,-66}}, color={0,0,127}));
   annotation (Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,100}})), Documentation(info="<html>
 <p><span style=\"font-family: MS Shell Dlg 2;\">&LT;iPSL: iTesla Power System Library&GT;</span></p>
 <p><span style=\"font-family: MS Shell Dlg 2;\">Copyright 2015 RTE (France), AIA (Spain), KTH (Sweden) and DTU (Denmark)</span></p>
