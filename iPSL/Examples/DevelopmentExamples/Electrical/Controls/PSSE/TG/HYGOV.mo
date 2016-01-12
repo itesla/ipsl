@@ -68,7 +68,19 @@ model HYGOV "Simple Machine Infinite Bus with Machine, Governor and Excitation s
     t1=2,
     d_P=5*0.01,
     d_t=0) annotation (Placement(transformation(extent={{0,-40},{24,-16}})));
-  iPSL.Electrical.Controls.PSSE.TG.HYGOV HYGOV(VELM=0.02, G_MAX=0.415) annotation (Placement(transformation(
+  iPSL.Electrical.Controls.PSSE.TG.HYGOV HYGOV(
+    VELM=0.02,
+    G_MAX=0.415,
+    R=0.05,
+    r=0.3,
+    T_r=5,
+    T_f=0.05,
+    T_g=0.5,
+    G_MIN=0,
+    T_w=1.25,
+    A_t=1.2,
+    D_turb=0.2,
+    q_NL=0.08) annotation (Placement(transformation(
         extent={{-19,-14},{19,14}},
         rotation=180,
         origin={-65,48})));
