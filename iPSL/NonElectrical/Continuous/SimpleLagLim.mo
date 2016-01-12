@@ -8,9 +8,8 @@ block SimpleLagLim "First order lag transfer function block with a non windup li
   parameter Real y_start "Output start value";
   parameter Real outMax "Maximum output value";
   parameter Real outMin "Minimum output value";
-
+protected
   parameter Real T_mod=if (T < Modelica.Constants.eps) then 1000 else T;
-
 initial equation
   state = y_start;
 equation
