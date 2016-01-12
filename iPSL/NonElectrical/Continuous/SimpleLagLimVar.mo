@@ -12,29 +12,27 @@ block SimpleLagLimVar "First order lag transfer function block with a non windup
         extent={{-20,-20},{20,20}},
         rotation=90,
         origin={-80,-140})));
-  Modelica.Blocks.Sources.RealExpression const(y=T)
-    annotation (Placement(transformation(extent={{-58,32},{-38,52}})));
+  Modelica.Blocks.Sources.RealExpression const(y=T) annotation (Placement(transformation(extent={{-58,32},{-38,52}})));
 
   Real state(start=y_start);
   parameter Real K "Gain";
   parameter Modelica.SIunits.Time T "Lag time constant";
   parameter Real y_start "Output start value";
 protected
-  parameter Real T_mod = if (T<Modelica.Constants.eps) then 1000 else T;
+  parameter Real T_mod=if (T < Modelica.Constants.eps) then 1000 else T;
 equation
-   T_mod*der(state) = K*u - state;
-   when (state > outMax) and ((K*u-state) < 0) then
-     reinit(state,outMax);
-        elsewhen
-             (state < outMin) and ((K*u-state) > 0) then
-     reinit(state,outMin);
-   end when;
+  T_mod*der(state) = K*u - state;
+  when (state > outMax) and ((K*u - state) < 0) then
+    reinit(state, outMax);
+  elsewhen (state < outMin) and ((K*u - state) > 0) then
+    reinit(state, outMin);
+  end when;
 
   if abs(const.y) <= Modelica.Constants.eps then
-     y=max(min(u*K,outMax),outMin);
-     else
-     y=max(min(state,outMax),outMin);
-   end if;
+    y = max(min(u*K, outMax), outMin);
+  else
+    y = max(min(state, outMax), outMin);
+  end if;
   annotation (
     Documentation(info="<html>
 <table cellspacing=\"1\" cellpadding=\"1\" border=\"1\">

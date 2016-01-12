@@ -13,26 +13,23 @@ block LeadLagLim "Lead-Lag filter with a non-windup limiter"
 protected
   Real x1(start=y_start);
   Real x2(start=y_start);
-  parameter Modelica.SIunits.Time T2_dummy = if abs(T1-T2) < Modelica.Constants.eps then 1000 else T2 "Lead time constant";
+  parameter Modelica.SIunits.Time T2_dummy=if abs(T1 - T2) < Modelica.Constants.eps then 1000 else T2 "Lead time constant";
 public
-  Modelica.Blocks.Sources.RealExpression par1(y=T1)
-    annotation (Placement(transformation(extent={{-80,54},{-60,74}})));
-  Modelica.Blocks.Sources.RealExpression par2(y=T2)
-    annotation (Placement(transformation(extent={{-80,34},{-60,54}})));
+  Modelica.Blocks.Sources.RealExpression par1(y=T1) annotation (Placement(transformation(extent={{-80,54},{-60,74}})));
+  Modelica.Blocks.Sources.RealExpression par2(y=T2) annotation (Placement(transformation(extent={{-80,34},{-60,54}})));
 equation
-   x1 + der(x1)*T2_dummy = u*K;
-   x1 + T1/T2_dummy*(u*K-x1) = x2;
-   when (y >= outMax) and der(x1) < 0 then
-     reinit(x1,outMax);
-        elsewhen
-             (y <= outMin) and der(x1) > 0 then
-     reinit(x1,outMin);
-   end when;
-   if (abs(par1.y-par2.y) < Modelica.Constants.eps) then
-     y=max(min(K*u,outMax),outMin);
-   else
-     y=max(min(x2,outMax),outMin);
-   end if;
+  x1 + der(x1)*T2_dummy = u*K;
+  x1 + T1/T2_dummy*(u*K - x1) = x2;
+  when (y >= outMax) and der(x1) < 0 then
+    reinit(x1, outMax);
+  elsewhen (y <= outMin) and der(x1) > 0 then
+    reinit(x1, outMin);
+  end when;
+  if (abs(par1.y - par2.y) < Modelica.Constants.eps) then
+    y = max(min(K*u, outMax), outMin);
+  else
+    y = max(min(x2, outMax), outMin);
+  end if;
   annotation (
     Icon(graphics={
         Line(points={{38,100},{58,140},{98,140}}, color={0,0,0}),
