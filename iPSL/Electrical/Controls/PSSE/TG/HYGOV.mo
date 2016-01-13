@@ -69,11 +69,10 @@ protected
   parameter Real P_m0(fixed=false);
 public
   Modelica.Blocks.Math.Product product2 annotation (Placement(transformation(extent={{108,-2},{120,10}})));
-  Modelica.Blocks.Continuous.TransferFunction transferFunction(
-    initType=Modelica.Blocks.Types.Init.InitialOutput,
-    y_start=0,
-    b={T_r,1},
-    a={r*T_r,0}) annotation (Placement(transformation(extent={{-106,0},{-94,12}})));
+  NonElectrical.Continuous.SimpleLead simpleLead(
+    K=r*T_r,
+    T=T_r,
+    y_start=0) annotation (Placement(transformation(extent={{-106,0},{-94,12}})));
 initial algorithm
   P_m0 := PMECH0;
   q0 := P_m0/(A_t*h0) + q_NL;
@@ -115,8 +114,8 @@ equation
   connect(product2.y, Gain6.u) annotation (Line(points={{120.6,4},{130.8,4},{130.8,4}}, color={0,0,127}));
   connect(add3.y, product2.u2) annotation (Line(points={{94.6,2},{100,2},{100,0.4},{106.8,0.4}}, color={0,0,127}));
   connect(product2.u1, add2.u1) annotation (Line(points={{106.8,7.6},{100,7.6},{100,16},{36,16},{36,5.6},{40.8,5.6}}, color={0,0,127}));
-  connect(SimpleLag1.y, transferFunction.u) annotation (Line(points={{-113.4,6},{-107.2,6}}, color={0,0,127}));
-  connect(transferFunction.y, Velocity_Limiter.u) annotation (Line(points={{-93.4,6},{-87.2,6}}, color={0,0,127}));
+  connect(simpleLead.y, Velocity_Limiter.u) annotation (Line(points={{-93.4,6},{-87.2,6}}, color={0,0,127}));
+  connect(simpleLead.u, SimpleLag1.y) annotation (Line(points={{-107.2,6},{-113.4,6}}, color={0,0,127}));
   annotation (
     Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-80,-60},{80,60}}), graphics={
         Rectangle(
