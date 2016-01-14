@@ -54,8 +54,8 @@ equation
   limiter1.y = vf;
   annotation (
     Icon(coordinateSystem(
-        extent={{-100.0,-100.0},{100.0,100.0}},
-        preserveAspectRatio=true,
+        extent={{-100,-100},{100,100}},
+        preserveAspectRatio=false,
         initialScale=0.1,
         grid={10,10}), graphics={
         Rectangle(
@@ -77,12 +77,12 @@ equation
           textString="v",
           fontName="Arial"),
         Text(
-          visible=true,
           origin={-74.7671,-32.7013},
           fillPattern=FillPattern.Solid,
           extent={{-11.7427,-9.8104},{11.7427,9.8104}},
-          textString="vf0",
-          fontName="Arial"),
+          fontName="Arial",
+          textString="vs",
+          lineColor={0,0,0}),
         Text(
           visible=true,
           origin={84.2416,-0.0},
