@@ -4,8 +4,6 @@ block SimpleLead "First order lead transfer function block"
   parameter Real K "Gain" annotation (Evaluate=false);
   parameter Modelica.SIunits.Time T "Lead time constant" annotation (Evaluate=false);
   parameter Real y_start "Output start value" annotation (Dialog(group="Initialization"));
-initial equation
-  y = y_start;
 equation
   assert(
     T >= 1e-10,
