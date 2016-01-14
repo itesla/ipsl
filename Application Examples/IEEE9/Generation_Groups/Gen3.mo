@@ -1,27 +1,11 @@
 within IEEE9.Generation_Groups;
 model Gen3
   extends iPSL.Electrical.Essentials.pfComponent;
-  parameter Real ra3(min=0.00,max=0.02) "Armature resistance (pu) ";
-  parameter Real xd3(min=0.6,max=2.3) "d-axis reactance (pu)";
-  parameter Real xq3(min=0.4,max=2.3) "q-axis reactance (pu) ";
-  parameter Real x1d3(min=0.15,max=0.5) "d-axis transient reactance (pu)";
-  parameter Real x1q3(min=0.15,max=1.0) "q-axis transient reactance (pu)";
-  parameter Real T1d3(min=1.5,max=9.0) "d-axis transient time constant (s)";
-  parameter Real T1q3(min=1.5,max=10) "q-axis transient time constant (s) ";
-  parameter Real M3 "Machanical starting time (2H) (kWs/kVA)";
-  parameter Real D3;
-  parameter Real Ka_3;
-  parameter Real Ta_3;
-  parameter Real Kf_3;
-  parameter Real Tf_3;
-  parameter Real Ke_3;
-  parameter Real Te_3;
-  parameter Real Tr_3;
-  parameter Real Ae_3;
-  parameter Real Be_3;
-  parameter Real height_3;
-  parameter Real tstart_3;
-  parameter Boolean refdisturb_3;
+
+  parameter Real height_3 annotation (Dialog(group="AVR Disturbance"));
+  parameter Real tstart_3 annotation (Dialog(group="AVR Disturbance"));
+  parameter Boolean refdisturb_3 annotation (Dialog(group="AVR Disturbance"));
+
   iPSL.Electrical.Machines.PSAT.FourthOrder.Order4 gen(
     Sn=100,
     ra=0,
@@ -31,13 +15,13 @@ model Gen3
     xq1=0.0969,
     Td10=8.96,
     Tq10=0.310,
-    Vn=16500,
     V_b=V_b,
     V_0=V_0,
     P_0=P_0,
     Q_0=Q_0,
     M=47.28,
-    D=0)  annotation (Placement(transformation(
+    D=0,
+    Vn=16.5) annotation (Placement(transformation(
         extent={{-10,-10},{10,10}},
         rotation=0,
         origin={28,14})));
@@ -47,65 +31,49 @@ model Gen3
     v0=1.04,
     vf0=1.079018784709528,
     vref0=1.095077501312303,
-    Ka=Ka_3,
-    Ta=Ta_3,
-    Kf=Kf_3,
-    Tf=Tf_3,
-    Ke=Ke_3,
-    Te=Te_3,
-    Tr=Tr_3,
-    Ae=Ae_3,
-    Be=Be_3)                 annotation (Placement(transformation(
+    Ka=20,
+    Ta=0.2,
+    Kf=0.063,
+    Tf=0.35,
+    Ke=1,
+    Te=0.314,
+    Tr=0.001,
+    Ae=0.0039,
+    Be=1.555) annotation (Placement(transformation(
         extent={{-10,-10},{10,10}},
         rotation=0,
         origin={-6,10})));
-  Modelica.Blocks.Sources.Constant vref2(k=1.095077501312303)
-    annotation (Placement(transformation(extent={{-5,-5},{5,5}},
+  Modelica.Blocks.Sources.Constant vref2(k=1.095077501312303) annotation (Placement(transformation(
+        extent={{-5,-5},{5,5}},
         rotation=0,
         origin={-71,25})));
-  Modelica.Blocks.Sources.Step step(                 startTime=tstart_3,
+  Modelica.Blocks.Sources.Step step(
+    startTime=tstart_3,
     height=height_3,
-    offset=1.095077501312303)
-    annotation (Placement(transformation(
+    offset=1.095077501312303) annotation (Placement(transformation(
         extent={{-4,-4},{4,4}},
         rotation=90,
         origin={-56,-2})));
-  Modelica.Blocks.Logical.Switch switch1
-    annotation (Placement(transformation(extent={{-50,12},{-40,22}})));
-  Modelica.Blocks.Sources.BooleanConstant booleanConstant(k=refdisturb_3)
-    annotation (Placement(transformation(extent={{-80,2},{-70,12}})));
-  iPSL.Connectors.PwPin pwPin
-    annotation (Placement(transformation(extent={{100,-10},{120,10}})));
+  Modelica.Blocks.Logical.Switch switch1 annotation (Placement(transformation(extent={{-50,12},{-40,22}})));
+  Modelica.Blocks.Sources.BooleanConstant booleanConstant(k=refdisturb_3) annotation (Placement(transformation(extent={{-80,2},{-70,12}})));
+  iPSL.Connectors.PwPin pwPin annotation (Placement(transformation(extent={{100,-10},{120,10}})));
   Real P_MW;
   Real Q_MVA;
 equation
   P_MW = gen.P*S_b;
   Q_MVA = gen.Q*S_b;
-  connect(AVR.vf,gen. vf) annotation (Line(
-      points={{2.5,12.6},{10,12.6},{10,19},{18,19}},
-      color={0,0,127},
-      smooth=Smooth.None));
-  connect(gen.pm0,gen. pm) annotation (Line(
-      points={{20,3},{46,3},{46,30},{12,30},{12,9},{18,9}},
-      color={0,0,127},
-      smooth=Smooth.None));
-  connect(gen.v,AVR.v) annotation (Line(
+  connect(gen.v, AVR.v) annotation (Line(
       points={{39,17},{48,17},{48,-14},{-22,-14},{-22,9},{-14,9}},
       color={0,0,127},
       smooth=Smooth.None));
-  connect(switch1.y,AVR.vref) annotation (Line(points={{-39.5,17},{-26.75,17},
-          {-26.75,15.4},{-14,15.4}},       color={0,0,127}));
-  connect(booleanConstant.y,switch1. u2) annotation (Line(points={{-69.5,7},{-66,
-          7},{-66,17},{-51,17}},         color={255,0,255}));
-  connect(vref2.y,switch1. u3) annotation (Line(points={{-65.5,25},{-60,25},{-60,
-          13},{-51,13}},  color={0,0,127}));
-  connect(step.y,switch1. u1) annotation (Line(points={{-56,2.4},{-56,21},{-51,21}},
-                color={0,0,127}));
-  connect(gen.p, pwPin) annotation (Line(points={{39,14.0496},{66,14.0496},{66,
-          0},{110,0}}, color={0,0,255}));
-  annotation (Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,
-            -100},{100,100}})), Icon(coordinateSystem(preserveAspectRatio=false,
-          extent={{-100,-100},{100,100}}), graphics={
+  connect(switch1.y, AVR.vref) annotation (Line(points={{-39.5,17},{-26.75,17},{-26.75,15.4},{-14,15.4}}, color={0,0,127}));
+  connect(booleanConstant.y, switch1.u2) annotation (Line(points={{-69.5,7},{-66,7},{-66,17},{-51,17}}, color={255,0,255}));
+  connect(vref2.y, switch1.u3) annotation (Line(points={{-65.5,25},{-60,25},{-60,13},{-51,13}}, color={0,0,127}));
+  connect(step.y, switch1.u1) annotation (Line(points={{-56,2.4},{-56,21},{-51,21}}, color={0,0,127}));
+  connect(gen.p, pwPin) annotation (Line(points={{39,14.0496},{66,14.0496},{66,0},{110,0}}, color={0,0,255}));
+  connect(AVR.vf, gen.vf) annotation (Line(points={{2.5,12.6},{8,12.6},{8,19},{18,19}}, color={0,0,127}));
+  connect(gen.pm0, gen.pm) annotation (Line(points={{20,3},{20,0},{14,0},{14,9},{18,9}}, color={0,0,127}));
+  annotation (Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,100}})), Icon(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,100}}), graphics={
         Ellipse(extent={{-100,-100},{100,100}}, lineColor={28,108,200}),
         Line(points={{-60,-20},{-20,20},{20,-20},{60,20}}, color={28,108,200}),
         Text(
