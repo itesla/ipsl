@@ -29,16 +29,16 @@ model ESDC1A
     T=T_F1,
     y_start=0,
     initType=Modelica.Blocks.Types.Init.InitialOutput) annotation (Placement(transformation(extent={{8,-14},{-2,-4}})));
-  NonElectrical.Logical.HV_GATE hV_GATE annotation (Placement(transformation(extent={{-2,-36},{14,-20}})));
+  NonElectrical.Logical.HV_GATE hV_GATE annotation (Placement(transformation(extent={{0,-32},{16,-24}})));
   Modelica.Blocks.Interfaces.RealInput VUEL "UEL output"
     annotation (Placement(transformation(
         extent={{-5,-6},{5,6}},
         rotation=90,
         origin={-3,-56}), iconTransformation(extent={{-80,-36},{-70,-24}})));
   Modelica.Blocks.Interfaces.RealInput EFD0 annotation (Placement(transformation(
-        extent={{-7,-7},{7,7}},
+        extent={{-5,-5},{5,5}},
         rotation=0,
-        origin={-79,33}), iconTransformation(
+        origin={-75,39}), iconTransformation(
         extent={{-6,-6},{6,6}},
         rotation=90,
         origin={-10,-34})));
@@ -84,17 +84,18 @@ protected
 initial equation
   ECOMP0 = ECOMP;
   vf00 = EFD0;
-  vr0 = vf00*(1 + K_E + SE(
+  vr0 = vf00*(K_E + SE(
     vf00,
     S_EE_1,
     S_EE_2,
     E_1,
     E_2));
   VREF = vr0/K_A + ECOMP0;
+
 equation
-  connect(VUEL, hV_GATE.n2) annotation (Line(points={{-3,-56},{-3,-32},{-3,-32}}, color={0,0,127}));
+  connect(VUEL, hV_GATE.n2) annotation (Line(points={{-3,-56},{-3,-30},{-1,-30}}, color={0,0,127}));
   connect(imSE.VE_IN, EFD) annotation (Line(points={{72.9,45},{86,45},{86,0},{105,0}}, color={0,0,127}));
-  connect(imLeadLag.y, hV_GATE.n1) annotation (Line(points={{-9.4,-26},{-3,-26},{-3,-24}}, color={0,0,127}));
+  connect(imLeadLag.y, hV_GATE.n1) annotation (Line(points={{-9.4,-26},{-1,-26}}, color={0,0,127}));
   connect(add.y, limIntegrator.u) annotation (Line(points={{74.7,-23},{74.7,-23},{79,-23}}, color={0,0,127}));
   connect(limIntegrator.y, EFD) annotation (Line(points={{90.5,-23},{94,-23},{94,0},{105,0}}, color={0,0,127}));
   connect(add1.y, add.u1) annotation (Line(points={{-12.7,29},{-20,29},{-20,2},{52,2},{52,-18},{56,-18},{56,-18.8},{58.6,-18.8}}, color={0,0,127}));
@@ -113,12 +114,16 @@ equation
   connect(VOTHSG, add3_2.u1) annotation (Line(points={{-75,10},{-66,10},{-66,5},{-63,5}}, color={0,0,127}));
   connect(VOEL, add3_2.u2) annotation (Line(points={{-75,-10},{-66,-10},{-66,1},{-63,1}}, color={0,0,127}));
   connect(const1.y, add3_2.u3) annotation (Line(points={{-69.6,-20},{-63,-20},{-63,-3}}, color={0,0,127}));
-  connect(hV_GATE.p, simpleLagLim.u) annotation (Line(points={{13,-28},{19.36,-28},{19.36,-29},{29,-29}}, color={0,0,127}));
+  connect(hV_GATE.p, simpleLagLim.u) annotation (Line(points={{15,-28},{19.36,-28},{19.36,-29},{29,-29}}, color={0,0,127}));
   connect(simpleLagLim.y, add.u2) annotation (Line(points={{40.5,-29},{54,-29},{54,-27.2},{58.6,-27.2}}, color={0,0,127}));
   annotation (
     Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-80,-40},{100,40}})),
     Icon(coordinateSystem(preserveAspectRatio=false, extent={{-80,-40},{100,40}}), graphics={
-        Rectangle(extent={{-80,40},{100,-40}}, lineColor={0,0,255}),
+        Rectangle(
+          extent={{-80,40},{100,-40}},
+          lineColor={0,0,255},
+          fillColor={255,255,255},
+          fillPattern=FillPattern.Solid),
         Text(
           extent={{-68,36},{-38,20}},
           lineColor={0,0,255},

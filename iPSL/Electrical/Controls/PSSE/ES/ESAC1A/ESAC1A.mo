@@ -159,7 +159,7 @@ initial equation
   VREF = VR0/K_A + V0 - VOTHSG;
 equation
   connect(hV_GATE.p, lV_GATE.n1) annotation (Line(
-      points={{38.75,44},{38.75,41},{38.75,41}},
+      points={{38.75,44},{38.75,41}},
       color={0,0,127},
       smooth=Smooth.None));
   connect(VOEL, lV_GATE.n2) annotation (Line(
@@ -211,7 +211,11 @@ equation
         preserveAspectRatio=false,
         extent={{-220,-60},{240,60}},
         grid={2,2}), graphics={
-        Rectangle(extent={{-220,60},{240,-60}}, lineColor={0,0,255}),
+        Rectangle(
+          extent={{-220,60},{240,-60}},
+          lineColor={0,0,255},
+          fillColor={255,255,255},
+          fillPattern=FillPattern.Solid),
         Text(
           extent={{-26,-32},{26,-54}},
           lineColor={0,0,255},
