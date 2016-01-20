@@ -23,17 +23,19 @@ model IEEEST "IEEE Stabilizing Model with single Input"
     b={A6,A5,1},
     a={A2*A4,A1*A4 + A2*A3,A4 + A2 + A1*A3,A3 + A1,1},
     initType=Modelica.Blocks.Types.Init.InitialOutput,
-    y_start=0) annotation (Placement(transformation(extent={{-86,0},{-74,12}})));
+    y_start=V_S0) annotation (Placement(transformation(extent={{-86,0},{-74,12}})));
   iPSL.NonElectrical.Continuous.LeadLag T_1_T_2(
     K=1,
     T1=T_1,
     T2=T_2,
-    y_start=0) annotation (Placement(transformation(extent={{-12,-10},{8,10}})));
+    x_start=V_S0,
+    y_start=V_S0) annotation (Placement(transformation(extent={{-12,-10},{8,10}})));
   iPSL.NonElectrical.Continuous.LeadLag T_3_T_4(
     K=1,
     T1=T_3,
     T2=T_4,
-    y_start=0) annotation (Placement(transformation(extent={{16,-10},{36,10}})));
+    x_start=V_S0,
+    y_start=V_S0) annotation (Placement(transformation(extent={{16,-10},{36,10}})));
   output Modelica.Blocks.Interfaces.RealOutput VOTHSG(start=0) "PSS output signal"
     annotation (Placement(transformation(extent={{120,-10},{140,10}}, rotation=0), iconTransformation(extent={{120,-10},{140,10}})));
   input Modelica.Blocks.Interfaces.RealInput V_S(start=0) "PSS input signal"
@@ -45,7 +47,8 @@ model IEEEST "IEEE Stabilizing Model with single Input"
     k=K_S*T_5,
     T=T_6,
     y_start=0,
-    initType=Modelica.Blocks.Types.Init.InitialOutput) annotation (Placement(transformation(extent={{48,-10},{68,10}})));
+    initType=Modelica.Blocks.Types.Init.InitialOutput,
+    x_start=V_S0) annotation (Placement(transformation(extent={{48,-10},{68,10}})));
   Modelica.Blocks.Sources.Constant const(k=Switch) annotation (Placement(transformation(extent={{-90,34},{-78,46}})));
   Modelica.Blocks.Logical.Greater greater annotation (Placement(transformation(extent={{-68,20},{-56,32}})));
   Modelica.Blocks.Logical.Switch switch1 annotation (Placement(transformation(extent={{-38,-6},{-26,6}})));
@@ -53,7 +56,8 @@ model IEEEST "IEEE Stabilizing Model with single Input"
 protected
   Modelica.Blocks.Interfaces.RealOutput Vs "Connector of Real output signal"
     annotation (Placement(transformation(extent={{102,-10},{122,10}}, rotation=0), iconTransformation(extent={{32,-8},{36,-4}})));
-protected
+
+  parameter Real V_S0(fixed=false);
   parameter Real A(fixed=false);
   parameter Real Switch(fixed=false);
   parameter Real A1(fixed=false);
@@ -71,6 +75,7 @@ initial algorithm
   A4 := if not A_4 == 0 then A_4 else 1;
   A5 := if not A_5 == 0 then A_5 else 1;
   A6 := if not A_6 == 0 then A_6 else 1;
+  V_S0 := V_S;
 equation
   if V_CU == 0 and not V_CL == 0 then
     if V_CT > V_CL then
