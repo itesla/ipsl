@@ -152,10 +152,10 @@ equation
   connect(eSST1A.VT, gENROE.ETERM) annotation (Line(points={{-39.2458,-69.7344},{-34,-69.7344},{-34,20},{-40.4,20}}, color={0,0,127}));
   connect(eSST1A.EFD0, gENROE.EFD0) annotation (Line(points={{-39.0833,-73.4094},{-32,-73.4094},{-32,-4},{-40.4,-4}}, color={0,0,127}));
   connect(eSST1A.XADIFD, gENROE.XADIFD) annotation (Line(points={{-39.0833,-77.1875},{-30,-77.1875},{-30,-8},{-40.4,-8}}, color={0,0,127}));
-  connect(eSST1A.VOTHSG, const.y) annotation (Line(points={{-39.0833,-52.8125},{-28,-52.8125},{-28,-66},{-23,-66}}, color={0,0,127}));
-  connect(iEEEST.VOTHSG, eSST1A.VOTHSG2) annotation (Line(points={{-46.8333,-28},{-26,-28},{-26,-56.5625},{-39.0833,-56.5625}}, color={0,0,127}));
-  connect(iEEEST.V_S, gENROE.SPEED) annotation (Line(points={{-75.7667,-31},{-82,-31},{-82,-38},{-28,-38},{-28,28},{-40.4,28}}, color={0,0,127}));
-  connect(iEEEST.V_CT, gENROE.PELEC) annotation (Line(points={{-75.7667,-25},{-82,-25},{-82,-16},{-26,-16},{-26,0},{-40.4,0}}, color={0,0,127}));
+  connect(iEEEST.V_CT, gENROE.ETERM) annotation (Line(points={{-75.7667,-25},{-82,-25},{-82,-18},{-34,-18},{-34,20},{-40.4,20}}, color={0,0,127}));
+  connect(iEEEST.V_S, gENROE.PELEC) annotation (Line(points={{-75.7667,-31},{-82,-31},{-82,-42},{-36,-42},{-36,0},{-40.4,0}}, color={0,0,127}));
+  connect(eSST1A.VOTHSG2, const.y) annotation (Line(points={{-39.0833,-56.5625},{-26,-56.5625},{-26,-66},{-23,-66}}, color={0,0,127}));
+  connect(iEEEST.VOTHSG, eSST1A.VOTHSG) annotation (Line(points={{-46.8333,-28},{-28,-28},{-28,-52.8125},{-39.0833,-52.8125}}, color={0,0,127}));
   annotation (Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,100}})), Documentation(info="<html>
 <p><span style=\"font-family: MS Shell Dlg 2;\">&LT;iPSL: iTesla Power System Library&GT;</span></p>
 <p><span style=\"font-family: MS Shell Dlg 2;\">Copyright 2015 RTE (France), AIA (Spain), KTH (Sweden) and DTU (Denmark)</span></p>

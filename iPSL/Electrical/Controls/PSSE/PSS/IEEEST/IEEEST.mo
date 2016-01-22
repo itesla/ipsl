@@ -51,7 +51,7 @@ model IEEEST "IEEE Stabilizing Model with single Input"
     k=K_S*T_5) annotation (Placement(transformation(extent={{80,-5},{90,5}})));
 
   Modelica.Blocks.Interfaces.RealOutput Vs "Connector of Real output signal" annotation (Placement(transformation(extent={{113,-5},{123,5}}, rotation=0), iconTransformation(extent={{32,-8},{36,-4}})));
-
+protected
   parameter Real V_S0(fixed=false);
   parameter Boolean bypass_filter2(fixed=false);
   parameter Boolean bypass_filter1(fixed=false);
