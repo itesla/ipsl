@@ -68,9 +68,8 @@ package PSSE
         t1=1,
         t2=1.5) annotation (Placement(transformation(extent={{20,-60},{40,-40}})));
       iPSL.Electrical.Wind.PSSE.WT4G.WT4E1 wT4E1_1(
-        PFAFLG=0,
-        VARFLG=1,
-        PQFLAG=0,
+        PFAFLG=false,
+        VARFLG=true,
         Tfv=0.15,
         Kpv=18,
         KIV=5,
@@ -94,7 +93,7 @@ package PSSE
         ImaxTD=1.7,
         Iphl=1.11,
         Iqhl=1.11,
-        Vref=V3) annotation (Placement(transformation(extent={{-96,12},{-72,-12}})));
+        PQFLAG=false) annotation (Placement(transformation(extent={{-96,12},{-72,-12}})));
       inner iPSL.Electrical.SystemBase SysData(S_b=100, fn=60) annotation (Placement(transformation(extent={{-100,80},{-48,100}})));
       iPSL.Electrical.Buses.Bus GEN annotation (Placement(transformation(extent={{-40,-10},{-20,10}})));
       iPSL.Electrical.Buses.Bus BUS1 annotation (Placement(transformation(extent={{0,-10},{20,10}})));
