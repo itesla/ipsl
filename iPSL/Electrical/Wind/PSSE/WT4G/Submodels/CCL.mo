@@ -1,6 +1,4 @@
-within iPSL.Electrical.Wind.PSSE.WT4G;
-
-
+within iPSL.Electrical.Wind.PSSE.WT4G.Submodels;
 model CCL
   parameter Real Qmax;
   parameter Integer pqflag;

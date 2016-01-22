@@ -1,34 +1,27 @@
 within iPSL.Electrical.Wind.PSSE.WT4G;
-model WT4E1
+model WT4E1 "Electrical Control for Type 4 Wind Generator"
 
-  //3 'WT4E1' 1              0         0         0         0
-  // 0.15000              18.000              5.0000             0.50000E-01         0.10000
-  //         0.0000             0.80000E-01         0.47000            -0.47000              1.1000
-  //         0.0000             0.50000            -0.50000             0.50000E-01         0.10000
-  //        0.90000              1.1000              120.00             0.50000E-01         0.50000E-01
-  //         1.7000              1.1100              1.1100
+  parameter Integer PFAFLG "PF fast control" annotation (choices(choice=1 "Enable",choice=0 "Disable"));
+  parameter Integer VARFLG annotation (choices(choice=0 " Qord is not provided by WindVar", choice=1 " Qord is provided by WindVar"));
+  parameter Integer PQFLAG "P/Q priority flag" annotation (choices(choice=0 "Q priority",choice=1 "P priority"));
 
-  parameter menu1 PFAFLG "PF fast control, 1 enable, 0 unable";
-  parameter menu2 VARFLG "0 constant Q;1 Reactive control";
-  parameter menu3 PQFLAG "P/Q priority flag, 0 for Q, 1 for P";
+  parameter Real Tfv "Filter time constant in voltage regulator (sec)";
+  parameter Real Kpv " Proportional gain in voltage regulator (pu)";
+  parameter Real KIV " Integrator gain in voltage regulator (pu)";
 
-  parameter Real Tfv=0.15 "Filter time constant in voltage regulator (sec)";
-  parameter Real Kpv=18 " Proportional gain in voltage regulator (pu)";
-  parameter Real KIV=5 " Integrator gain in voltage regulator (pu)";
-
-  parameter Real Kpp=0.50000E-01 " Proportional gain in torque regulator (pu)";
-  parameter Real KIP=0.150000 " Integrator gain in torque regulator (pu)";
+  parameter Real Kpp " Proportional gain in torque regulator (pu)";
+  parameter Real KIP " Integrator gain in torque regulator (pu)";
   //should be 0.1 in PSSE
-  parameter Real Kf=0 "Rate feedback gain (pu)";
-  parameter Real Tf=0.80000E-01 "Rate feedback time constant (sec.)";
-  parameter Real QMX=0.47000 " Max limit in voltage regulator (pu)";
-  parameter Real QMN=-0.47000 " Min limit in voltage regulator (pu)";
-  parameter Real IPMAX=1.1 " Max active current limit";
-  parameter Real TRV=0 " Voltage sensor time constant";
-  parameter Real dPMX=0.5 " Max limit in power PI controller";
-  parameter Real dPMN=-0.5 " Min limit in power PI controller";
-  parameter Real T_Power=0.50000E-01 " Power filter time constant";
-  parameter Real KQI=0.150000 " MVAR/Voltage gain";
+  parameter Real Kf "Rate feedback gain (pu)";
+  parameter Real Tf "Rate feedback time constant (sec.)";
+  parameter Real QMX " Max limit in voltage regulator (pu)";
+  parameter Real QMN " Min limit in voltage regulator (pu)";
+  parameter Real IPMAX " Max active current limit";
+  parameter Real TRV " Voltage sensor time constant";
+  parameter Real dPMX " Max limit in power PI controller";
+  parameter Real dPMN " Min limit in power PI controller";
+  parameter Real T_Power " Power filter time constant";
+  parameter Real KQI " MVAR/Voltage gain";
   //should be 0.1 in PSSE
 
   parameter Real VMINCL=0.9 " Min voltage limit";
@@ -41,15 +34,18 @@ model WT4E1
   parameter Real ImaxTD=1.7 "Converter current limit";
   parameter Real Iphl=1.11 "Hard active current limit";
   parameter Real Iqhl=1.11 "Hard reactive current limit";
-  parameter Real v0;
-  parameter Real p0;
-  parameter Real q0;
-  parameter Real Vref=1 "Remote bus ref voltage";
-  //parameter Real Qord "MVAR order from MVAR emulator";
-  parameter Real Pref(fixed=false);
-  parameter Real Qref=q0 "Q reference if PFAFLG=0 & VARFLG";
-  parameter Real Thetaref(fixed=false) "PF angle reference if PFAFLG=1";
 
+  //parameter Real Qord "MVAR order from MVAR emulator";
+
+protected
+  parameter Real Vref(fixed=false);
+  parameter Real Pref=p0;
+  parameter Real Qref=q0 "Q reference if PFAFLG=0 & VARFLG";
+  parameter Real PFA_ref=atan2(q0, p0) "PF angle reference if PFAFLG=1";
+
+  parameter Real p0(fixed=false);
+  parameter Real q0(fixed=false);
+  parameter Real v0(fixed=false);
   parameter Real Ip0(fixed=false);
   parameter Real Iq0(fixed=false);
 
@@ -66,27 +62,28 @@ model WT4E1
   parameter Real k80(fixed=false) "Lag of the WindVar controller";
   parameter Real k90(fixed=false) "Input filter of Pelec for PF fast controller";
 
-  Modelica.Blocks.Interfaces.RealInput Pelec(start=p0)
-    annotation (Placement(transformation(extent={{-120,-74},{-90,-44}}), iconTransformation(
-        extent={{-10,-10},{10,10}},
+public
+  Modelica.Blocks.Interfaces.RealInput P(start=p0)
+    annotation (Placement(transformation(extent={{-200,-74},{-170,-44}}), iconTransformation(
+        extent={{-20,-20},{20,20}},
         rotation=180,
-        origin={138,-8})));
-  Modelica.Blocks.Interfaces.RealInput Qelec(start=q0) annotation (Placement(transformation(
+        origin={180,40})));
+  Modelica.Blocks.Interfaces.RealInput Q(start=q0) annotation (Placement(transformation(
         extent={{-16,-16},{16,16}},
         rotation=270,
         origin={50,110}), iconTransformation(
-        extent={{-11,-11},{11,11}},
+        extent={{-20,-20},{20,20}},
         rotation=180,
-        origin={137,31})));
+        origin={180,100})));
 
-  Modelica.Blocks.Interfaces.RealInput Vterm(start=v0)
+  Modelica.Blocks.Interfaces.RealInput V(start=v0)
     annotation (Placement(transformation(extent={{-206,-114},{-172,-80}}), iconTransformation(
-        extent={{-12,-12},{12,12}},
+        extent={{-20,-20},{20,20}},
         rotation=180,
-        origin={136,68})));
+        origin={180,160})));
 
   Modelica.Blocks.Nonlinear.VariableLimiter imLimited_max annotation (Placement(transformation(extent={{104,-74},{128,-46}})));
-  Modelica.Blocks.Interfaces.RealOutput WIPCMD annotation (Placement(transformation(extent={{178,-70},{196,-52}}), iconTransformation(extent={{148,-50},{166,-32}})));
+  Modelica.Blocks.Interfaces.RealOutput WIPCMD annotation (Placement(transformation(extent={{178,-70},{196,-52}}), iconTransformation(extent={{200,-80},{240,-40}})));
 
   Modelica.Blocks.Nonlinear.Limiter Qord(uMin=QMN, uMax=QMX) annotation (Placement(transformation(extent={{8,18},{44,66}})));
 
@@ -97,7 +94,7 @@ model WT4E1
     k=KQI,
     y_start=k60) annotation (Placement(transformation(extent={{56,32},{76,54}})));
   Modelica.Blocks.Math.Feedback Vcl annotation (Placement(transformation(extent={{76,36},{90,50}})));
-  Modelica.Blocks.Interfaces.RealOutput WIQCMD annotation (Placement(transformation(extent={{178,34},{196,52}}), iconTransformation(extent={{148,-88},{166,-70}})));
+  Modelica.Blocks.Interfaces.RealOutput WIQCMD annotation (Placement(transformation(extent={{178,34},{196,52}}), iconTransformation(extent={{200,-160},{240,-120}})));
   iPSL.NonElectrical.Continuous.IntegratorLimVar K7(K=KVI, y_start=k70) annotation (Placement(transformation(extent={{92,18},{160,68}})));
 
   Modelica.Blocks.Math.Division division annotation (Placement(transformation(extent={{92,-66},{102,-56}})));
@@ -114,7 +111,7 @@ model WT4E1
     outMax=dPMX,
     k=KIP) annotation (Placement(transformation(extent={{-6,-52},{14,-30}})));
   Modelica.Blocks.Math.Add Pord(k2=-1) annotation (Placement(transformation(extent={{54,-60},{68,-46}})));
-  CCL cCL(
+  Submodels.CCL cCL(
     Qmax=QMX,
     ImaxTD=ImaxTD,
     Iphl=Iphl,
@@ -128,21 +125,17 @@ model WT4E1
         extent={{13,-13},{-13,13}},
         rotation=0,
         origin={-19,-87})));
-  Modelica.Blocks.Math.Tan tan1 annotation (Placement(transformation(extent={{-96,40},{-86,50}})));
-  Modelica.Blocks.Continuous.Derivative K9(
-    k=1,
-    T=Tp,
-    x_start=k90) annotation (Placement(transformation(extent={{-100,10},{-80,30}})));
-  Modelica.Blocks.Math.Product Qcmdn1 annotation (Placement(transformation(extent={{-64,22},{-54,32}})));
-  Modelica.Blocks.Sources.Constant VAR2(k=Thetaref) annotation (Placement(transformation(extent={{-128,38},{-116,50}})));
+  Modelica.Blocks.Math.Tan tan1 annotation (Placement(transformation(extent={{-120,50},{-100,70}})));
+  Modelica.Blocks.Math.Product Qcmdn1 annotation (Placement(transformation(extent={{-80,30},{-60,50}})));
+  Modelica.Blocks.Sources.Constant VAR2(k=PFA_ref) annotation (Placement(transformation(extent={{-160,50},{-140,70}})));
   iPSL.NonElectrical.Continuous.SimpleLag K(
     K=1,
     T=Tfv,
-    y_start=k0) annotation (Placement(transformation(extent={{-28,92},{-12,108}})));
-  Modelica.Blocks.Math.Add add3(k2=-1) annotation (Placement(transformation(extent={{-136,96},{-126,106}})));
-  Modelica.Blocks.Sources.Constant VARL(k=Vref) annotation (Placement(transformation(extent={{-170,126},{-160,136}})));
-  Modelica.Blocks.Math.Add add4 annotation (Placement(transformation(extent={{-58,98},{-52,104}})));
-  Modelica.Blocks.Nonlinear.Limiter Qord1(uMin=QMN, uMax=QMX) annotation (Placement(transformation(extent={{-46,94},{-34,106}})));
+    y_start=k0) annotation (Placement(transformation(extent={{-4,140},{16,160}})));
+  Modelica.Blocks.Math.Add add3(k2=-1) annotation (Placement(transformation(extent={{-162,140},{-142,160}})));
+  Modelica.Blocks.Sources.Constant VARL(k=Vref) annotation (Placement(transformation(extent={{-194,162},{-174,182}})));
+  Modelica.Blocks.Math.Add add4 annotation (Placement(transformation(extent={{-64,140},{-44,160}})));
+  Modelica.Blocks.Nonlinear.Limiter Qord1(uMin=QMN, uMax=QMX) annotation (Placement(transformation(extent={{-34,140},{-14,160}})));
   Modelica.Blocks.Sources.Constant Qcmd0(k=Qref) annotation (Placement(transformation(
         extent={{-7,-7},{7,7}},
         rotation=0,
@@ -152,20 +145,21 @@ model WT4E1
     outMax=-0.051730465143919,
     y_start=k10,
     k=KIV,
-    initType=Modelica.Blocks.Types.Init.InitialOutput) annotation (Placement(transformation(extent={{-84,110},{-64,130}})));
+    initType=Modelica.Blocks.Types.Init.InitialOutput) annotation (Placement(transformation(extent={{-94,160},{-74,180}})));
   iPSL.NonElectrical.Continuous.SimpleLag K8(
     K=Kpv,
     y_start=k80,
-    T=Tv) annotation (Placement(transformation(extent={{-114,80},{-94,100}})));
+    T=Tv) annotation (Placement(transformation(extent={{-124,120},{-104,140}})));
   iPSL.NonElectrical.Continuous.SimpleLag K8_extra(
     y_start=k80,
     K=1,
-    T=0.05) annotation (Placement(transformation(extent={{-82,82},{-64,100}})));
+    T=0.05) annotation (Placement(transformation(extent={{-94,120},{-74,140}})));
   NonElectrical.Continuous.LeadLag K11(
     y_start=0,
     T2=0.05,
     K=1.5,
-    T1=0.025) annotation (Placement(transformation(extent={{-118,108},{-94,132}})));
+    T1=0.025,
+    x_start=0) annotation (Placement(transformation(extent={{-124,160},{-104,180}})));
   iPSL.NonElectrical.Continuous.SimpleLag K5(
     K=1,
     T=T_Power,
@@ -174,16 +168,19 @@ model WT4E1
         extent={{-7,-7},{7,7}},
         rotation=0,
         origin={99,-89})));
+  NonElectrical.Continuous.SimpleLag K0(
+    K=1,
+    y_start=p0,
+    T=Tp) annotation (Placement(transformation(extent={{-140,10},{-120,30}})));
 initial equation
-  Thetaref = atan2(q0, p0);
-  //v0=Vterm;
-  //p0=Pelec;
-  //q0=Qelec;
+  Vref = v0;
+  p0 = P;
+  q0 = Q;
+  v0 = V;
   Ip0 = WIPCMD;
   Iq0 = WIQCMD;
   Pord0 = v0*Ip0;
 
-  Pref = p0;
   k0 = q0;
   k10 = q0;
   k80 = 0;
@@ -213,11 +210,11 @@ equation
       points={{129.2,-60},{171.205,-60},{171.205,-61},{187,-61}},
       color={0,0,127},
       smooth=Smooth.None));
-  connect(Qelec, feedback1.u2) annotation (Line(
+  connect(Q, feedback1.u2) annotation (Line(
       points={{50,110},{51,110},{51,48.6}},
       color={0,0,127},
       smooth=Smooth.None));
-  connect(Vterm, Vcl.u2) annotation (Line(
+  connect(V, Vcl.u2) annotation (Line(
       points={{-189,-97},{83,-97},{83,37.4}},
       color={0,0,127},
       smooth=Smooth.None));
@@ -233,7 +230,7 @@ equation
       points={{52.6,-48.8},{50.4,-48.8},{50.4,-34},{-69.2,-34}},
       color={0,0,127},
       smooth=Smooth.None));
-  connect(imLimited_min.u, Vterm) annotation (Line(
+  connect(imLimited_min.u, V) annotation (Line(
       points={{31.6,-105},{-4.06,-105},{-4.06,-97},{-189,-97}},
       color={0,0,127},
       smooth=Smooth.None));
@@ -254,7 +251,7 @@ equation
       points={{147.4,-8.4},{147.4,-60},{129.2,-60}},
       color={0,0,127},
       smooth=Smooth.None));
-  connect(cCL.Vt, Vterm) annotation (Line(
+  connect(cCL.Vt, V) annotation (Line(
       points={{103.72,1.2},{76,1.2},{76,-97},{-189,-97}},
       color={0,0,127},
       smooth=Smooth.None));
@@ -270,32 +267,12 @@ equation
       points={{40.5,-57},{46.25,-57},{46.25,-57.2},{52.6,-57.2}},
       color={0,0,127},
       smooth=Smooth.None));
-  connect(tan1.y, Qcmdn1.u1) annotation (Line(
-      points={{-85.5,45},{-76,45},{-76,30},{-65,30}},
-      color={0,0,127},
-      smooth=Smooth.None));
-  connect(K9.y, Qcmdn1.u2) annotation (Line(
-      points={{-79,20},{-74,20},{-74,24},{-65,24}},
-      color={0,0,127},
-      smooth=Smooth.None));
-  connect(VAR2.y, tan1.u) annotation (Line(
-      points={{-115.4,44},{-97,44},{-97,45}},
-      color={0,0,127},
-      smooth=Smooth.None));
-  connect(K9.u, Pelec) annotation (Line(
-      points={{-102,20},{-105,20},{-105,-59}},
-      color={0,0,127},
-      smooth=Smooth.None));
-  connect(VARL.y, add3.u1) annotation (Line(
-      points={{-159.5,131},{-146,131},{-146,104},{-137,104}},
-      color={0,0,127},
-      smooth=Smooth.None));
   connect(add4.y, Qord1.u) annotation (Line(
-      points={{-51.7,101},{-51.7,100},{-47.2,100}},
+      points={{-43,150},{-36,150}},
       color={0,0,127},
       smooth=Smooth.None));
   connect(Qord1.y, K.u) annotation (Line(
-      points={{-33.4,100},{-29.6,100}},
+      points={{-13,150},{-6,150}},
       color={0,0,127},
       smooth=Smooth.None));
   connect(Qord.y, feedback1.u1) annotation (Line(
@@ -339,36 +316,20 @@ equation
       points={{54,43},{57.3,43}},
       color={0,0,127},
       smooth=Smooth.None));
-  connect(K8.u, add3.y) annotation (Line(
-      points={{-116,90},{-125.5,90},{-125.5,101}},
-      color={0,0,127},
-      smooth=Smooth.None));
-  connect(add4.u2, K8_extra.y) annotation (Line(
-      points={{-58.6,99.2},{-60,99.2},{-60,91},{-63.1,91}},
-      color={0,0,127},
-      smooth=Smooth.None));
   connect(K8.y, K8_extra.u) annotation (Line(
-      points={{-93,90},{-84,90},{-84,91},{-83.8,91}},
-      color={0,0,127},
-      smooth=Smooth.None));
-  connect(K1.y, add4.u1) annotation (Line(
-      points={{-63,120},{-60,120},{-60,102.8},{-58.6,102.8}},
+      points={{-103,130},{-96,130}},
       color={0,0,127},
       smooth=Smooth.None));
   connect(K11.y, K1.u) annotation (Line(
-      points={{-92.8,120},{-86,120}},
-      color={0,0,127},
-      smooth=Smooth.None));
-  connect(K11.u, add3.y) annotation (Line(
-      points={{-120.4,120},{-120.4,119.5},{-125.5,119.5},{-125.5,101}},
+      points={{-103,170},{-96,170}},
       color={0,0,127},
       smooth=Smooth.None));
   connect(add3_1.u2, K5.y) annotation (Line(
       points={{-49.2,-60},{-47.3,-60}},
       color={0,0,127},
       smooth=Smooth.None));
-  connect(Pelec, K5.u) annotation (Line(
-      points={{-105,-59},{-94.5,-59},{-94.5,-60},{-109.4,-60}},
+  connect(P, K5.u) annotation (Line(
+      points={{-185,-59},{-94.5,-59},{-94.5,-60},{-109.4,-60}},
       color={0,0,127},
       smooth=Smooth.None));
   connect(add3_1.y, K2.u) annotation (Line(
@@ -383,11 +344,20 @@ equation
       points={{106.7,-89},{114,-89},{114,-76},{101.6,-76},{101.6,-71.2}},
       color={0,0,127},
       smooth=Smooth.None));
-  connect(add3.u2, Vterm) annotation (Line(
-      points={{-137,98},{-162,98},{-162,-97},{-189,-97}},
-      color={0,0,127},
-      smooth=Smooth.None));
-  annotation (Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-200,-140},{200,220}}), graphics={
+  connect(add3.y, K11.u) annotation (Line(points={{-141,150},{-134,150},{-134,170},{-126,170}}, color={0,0,127}));
+  connect(K8.u, K11.u) annotation (Line(points={{-126,130},{-134,130},{-134,170},{-126,170}}, color={0,0,127}));
+  connect(VARL.y, add3.u1) annotation (Line(points={{-173,172},{-170,172},{-170,156},{-164,156}}, color={0,0,127}));
+  connect(K8_extra.y, add4.u2) annotation (Line(points={{-73,130},{-70,130},{-70,144},{-66,144}}, color={0,0,127}));
+  connect(add4.u1, K1.y) annotation (Line(points={{-66,156},{-70,156},{-70,170},{-73,170}}, color={0,0,127}));
+  connect(P, K0.u) annotation (Line(points={{-185,-59},{-185,20},{-142,20}}, color={0,0,127}));
+  connect(add3.u2, V) annotation (Line(points={{-164,144},{-189,144},{-189,-97}}, color={0,0,127}));
+  connect(tan1.y, Qcmdn1.u1) annotation (Line(points={{-99,60},{-92,60},{-92,46},{-82,46}}, color={0,0,127}));
+  connect(K0.y, Qcmdn1.u2) annotation (Line(points={{-119,20},{-92,20},{-92,34},{-82,34}}, color={0,0,127}));
+  connect(VAR2.y, tan1.u) annotation (Line(points={{-139,60},{-122,60},{-122,60}}, color={0,0,127}));
+  annotation (Diagram(coordinateSystem(
+        preserveAspectRatio=false,
+        extent={{-200,-200},{200,200}},
+        initialScale=0.05), graphics={
         Text(
           extent={{-68,-68},{-58,-72}},
           lineColor={255,0,0},
@@ -449,59 +419,30 @@ equation
           lineColor={255,0,0},
           textString="K+2"),
         Rectangle(
-          extent={{-136,56},{-50,0}},
+          extent={{-166,90},{-56,8}},
           lineColor={255,0,0},
           lineThickness=0.5,
           pattern=LinePattern.Dash),
-        Text(
-          extent={{-136,10},{-52,4}},
-          lineColor={255,0,0},
-          pattern=LinePattern.Dash,
-          lineThickness=0.5,
-          fillColor={0,0,255},
-          fillPattern=FillPattern.Solid,
-          textString="Constant Power Factor Control"),
-        Text(
-          extent={{-100,16},{-80,12}},
-          lineColor={255,0,0},
-          textString="K+9"),
-        Text(
-          extent={{-36,104},{-16,100}},
-          lineColor={255,0,0},
-          textString="K"),
         Rectangle(
-          extent={{-192,150},{-14,70}},
+          extent={{-196,198},{22,108}},
           lineColor={255,0,0},
           lineThickness=0.5,
           pattern=LinePattern.Dash),
         Text(
-          extent={{-160,80},{-140,76}},
-          lineColor={255,0,0},
-          textString="K+4"),
-        Text(
-          extent={{-78,150},{-16,144}},
+          extent={{-118,196},{-56,190}},
           lineColor={255,0,0},
           pattern=LinePattern.Dash,
           lineThickness=0.5,
           fillColor={0,0,255},
           fillPattern=FillPattern.Solid,
           textString="Reactive Power Control"),
-        Text(
-          extent={{-66,108},{-46,104}},
-          lineColor={255,0,0},
-          textString="K1
-"),
-        Text(
-          extent={{-100,76},{-80,72}},
-          lineColor={255,0,0},
-          textString="K+8"),
         Line(
           points={{-52,26},{-20,26}},
           color={0,0,255},
           smooth=Smooth.None,
           thickness=0.5),
         Line(
-          points={{-6,92},{-6,52}},
+          points={{4,130},{4,90}},
           color={0,0,255},
           smooth=Smooth.None,
           thickness=0.5),
@@ -557,7 +498,7 @@ equation
           lineColor={255,0,0},
           textString="0"),
         Line(
-          points={{-16,92},{-6,92}},
+          points={{-6,130},{4,130}},
           color={0,0,255},
           smooth=Smooth.None,
           thickness=0.5),
@@ -597,10 +538,23 @@ M+3 PQFLAG,
           lineColor={0,0,255},
           textString="Current North American configuration with WindVAR:
 varflg = 1; pfaflg = 0; Kqi small (0.1)",
-          horizontalAlignment=TextAlignment.Left)}), Icon(coordinateSystem(extent={{-200,-140},{200,220}}, preserveAspectRatio=false), graphics={Rectangle(extent={{-96,90},{148,-104}}, lineColor={0,0,
-              255}), Text(
-          extent={{-74,68},{106,-76}},
+          horizontalAlignment=TextAlignment.Left),
+        Text(
+          extent={{-144,88},{-82,82}},
+          lineColor={255,0,0},
+          pattern=LinePattern.Dash,
+          lineThickness=0.5,
+          fillColor={0,0,255},
+          fillPattern=FillPattern.Solid,
+          textString="Power Factor Regulator")}), Icon(coordinateSystem(
+        extent={{-200,-200},{200,200}},
+        preserveAspectRatio=true,
+        initialScale=0.05), graphics={Rectangle(
+          extent={{-200,200},{200,-200}},
           lineColor={0,0,255},
-          textString="Converter Control
-Model ( WT4E1 )")}));
+          fillColor={255,255,255},
+          fillPattern=FillPattern.Solid), Text(
+          extent={{-100,60},{120,-60}},
+          lineColor={0,0,255},
+          textString="WT4E1")}));
 end WT4E1;
