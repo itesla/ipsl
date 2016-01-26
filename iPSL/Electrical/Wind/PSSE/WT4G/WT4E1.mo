@@ -1,5 +1,6 @@
 within iPSL.Electrical.Wind.PSSE.WT4G;
 model WT4E1 "Electrical Control for Type 4 Wind Generator"
+  import iPSL;
 
   parameter Boolean PFAFLG "PF fast control" annotation (choices(choice=true "Enable",choice=false "Disable"));
   parameter Boolean VARFLG annotation (choices(choice=false " Qord is not provided by WindVar", choice=true " Qord is provided by WindVar"));
@@ -96,7 +97,7 @@ public
   Modelica.Blocks.Interfaces.RealOutput WIQCMD annotation (Placement(transformation(extent={{200,50},{220,70}}), iconTransformation(extent={{200,-160},{240,-120}})));
   iPSL.NonElectrical.Continuous.IntegratorLimVar K7(K=KVI, y_start=k70) annotation (Placement(transformation(extent={{142,50},{162,70}})));
 
-  Submodels.CCL cCL(
+  iPSL.Electrical.Wind.PSSE.Submodels.CCL cCL(
     Qmax=QMX,
     ImaxTD=ImaxTD,
     Iphl=Iphl,
@@ -288,19 +289,19 @@ protected
     connect(VTERM, imLimited_min.u) annotation (Line(points={{0,-200},{0,-60},{34,-60}}, color={0,0,127}));
     connect(I_PMAX, imLimited_max.limit1) annotation (Line(points={{170,204},{168,204},{168,86},{122,86},{122,18},{128,18}}, color={0,0,127}));
     annotation (Diagram(coordinateSystem(extent={{-200,-200},{200,200}}, preserveAspectRatio=false),graphics={Text(
-              extent={{-88,16},{-84,14}},
-              lineColor={0,0,255},
-              lineThickness=0.5,
-              fillColor={0,0,255},
-              fillPattern=FillPattern.Solid,
-              textString="Speed"),Text(
-              extent={{-80,200},{80,180}},
-              lineColor={255,0,0},
-              pattern=LinePattern.Dash,
-              lineThickness=0.5,
-              fillColor={0,0,255},
-              fillPattern=FillPattern.Solid,
-              textString="Active Power Control")}), Icon(coordinateSystem(extent={{-200,-200},{200,200}}, preserveAspectRatio=true), graphics={
+            extent={{-88,16},{-84,14}},
+            lineColor={0,0,255},
+            lineThickness=0.5,
+            fillColor={0,0,255},
+            fillPattern=FillPattern.Solid,
+            textString="Speed"), Text(
+            extent={{-80,200},{80,180}},
+            lineColor={255,0,0},
+            pattern=LinePattern.Dash,
+            lineThickness=0.5,
+            fillColor={0,0,255},
+            fillPattern=FillPattern.Solid,
+            textString="Active Power Control")}), Icon(coordinateSystem(extent={{-200,-200},{200,200}}, preserveAspectRatio=true), graphics={
           Rectangle(
             extent={{-200,200},{200,-200}},
             lineColor={28,108,200},
@@ -353,13 +354,13 @@ protected
     connect(u, K0.u) annotation (Line(points={{-204,0},{-158,0},{-122,0}}, color={0,0,127}));
     connect(Qcmdn1.y, Q_REF_PF) annotation (Line(points={{-39,0},{10,0},{10,0}}, color={0,0,127}));
     annotation (Diagram(coordinateSystem(extent={{-200,-100},{0,100}}, preserveAspectRatio=true), graphics={Text(
-              extent={{-160,100},{-40,80}},
-              lineColor={255,0,0},
-              pattern=LinePattern.Dash,
-              lineThickness=0.5,
-              fillColor={0,0,255},
-              fillPattern=FillPattern.Solid,
-              textString="Power Factor Regulator")}), Icon(coordinateSystem(extent={{-200,-100},{0,100}}, preserveAspectRatio=true), graphics={
+            extent={{-160,100},{-40,80}},
+            lineColor={255,0,0},
+            pattern=LinePattern.Dash,
+            lineThickness=0.5,
+            fillColor={0,0,255},
+            fillPattern=FillPattern.Solid,
+            textString="Power Factor Regulator")}), Icon(coordinateSystem(extent={{-200,-100},{0,100}}, preserveAspectRatio=true), graphics={
           Rectangle(
             extent={{-200,100},{0,-100}},
             lineColor={28,108,200},
@@ -449,17 +450,17 @@ protected
     connect(V_REG, add3.u2) annotation (Line(points={{-204,0},{-80,0},{-80,-6},{-62,-6}}, color={0,0,127}));
     connect(K.y, Q_ord) annotation (Line(points={{119,0},{210,0}}, color={0,0,127}));
     annotation (Diagram(coordinateSystem(extent={{-200,-200},{200,200}}, preserveAspectRatio=true), graphics={Rectangle(
-              extent={{-94,48},{124,-42}},
-              lineColor={255,0,0},
-              lineThickness=0.5,
-              pattern=LinePattern.Dash),Text(
-              extent={{-16,46},{46,40}},
-              lineColor={255,0,0},
-              pattern=LinePattern.Dash,
-              lineThickness=0.5,
-              fillColor={0,0,255},
-              fillPattern=FillPattern.Solid,
-              textString="WindControl Emulator")}), Icon(coordinateSystem(extent={{-200,-200},{200,200}}, preserveAspectRatio=true), graphics={
+            extent={{-94,48},{124,-42}},
+            lineColor={255,0,0},
+            lineThickness=0.5,
+            pattern=LinePattern.Dash), Text(
+            extent={{-16,46},{46,40}},
+            lineColor={255,0,0},
+            pattern=LinePattern.Dash,
+            lineThickness=0.5,
+            fillColor={0,0,255},
+            fillPattern=FillPattern.Solid,
+            textString="WindControl Emulator")}), Icon(coordinateSystem(extent={{-200,-200},{200,200}}, preserveAspectRatio=true), graphics={
           Rectangle(
             extent={{-200,200},{200,-200}},
             lineColor={28,108,200},
