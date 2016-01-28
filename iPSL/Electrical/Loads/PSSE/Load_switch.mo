@@ -1,37 +1,45 @@
-within iPSL.Electrical.Wind.PSSE.WT3G;
-
-
-model Zeq_tn1 "Transformer equivalent impedance"
-  iPSL.Connectors.PwPin p annotation (Placement(transformation(extent={{-80,-10},{-60,10}}), iconTransformation(extent={{-80,-10},{-60,10}})));
-  iPSL.Connectors.PwPin n annotation (Placement(transformation(extent={{60,-10},{80,10}}), iconTransformation(extent={{60,-10},{80,10}})));
-  parameter Real R "Resistance p.u.";
-  parameter Real X "Reactance p.u.";
-  parameter Real ti=1 "primary side turn's ratio";
-  parameter Real tj=1 "secondary side turn's ratio";
-protected
-  parameter Real t=ti/tj;
-  parameter Real Req=tj^2*R;
-  parameter Real Xeq=tj^2*X;
-  //   Modelica.Blocks.Interfaces.RealInput t(start = 1) annotation(Placement(transformation(extent={{-20,-20},
-  //             {20,20}},
-  //         rotation=180,
-  //         origin={82,50}),  iconTransformation(
-  //         extent={{-20,-20},{20,20}},
-  //         rotation=180,
-  //         origin={60,40})));
+within iPSL.Electrical.Loads.PSSE;
+model Load_switch "PSS/E Load"
+  import PSSE;
+  extends PSSE.BaseClasses.baseLoad;
+  parameter Real t1 "Time of switching on";
+  parameter Real t2 "Time of switching off";
 equation
-  Req*n.ir - Xeq*n.ii = n.vr - p.vr*t;
-  Req*n.ii + Xeq*n.ir = n.vi - p.vi*t;
-  -t*(Req*p.ir - Xeq*p.ii) = n.vr - p.vr*t;
-  -t*(Req*p.ii + Xeq*p.ir) = n.vi - p.vi*t;
+  if time >= t1 and time < t2 then
+    kI*S_I.re*v + S_Y.re*v^2 + kP*S_P.re = p.vr*p.ir + p.vi*p.ii;
+    kI*S_I.im*v + S_Y.im*v^2 + kP*S_P.im = (-p.vr*p.ii) + p.vi*p.ir;
+  else
+    p.ir = 0;
+    p.ii = 0;
+  end if;
   annotation (
-    Icon(coordinateSystem(preserveAspectRatio=true, extent={{-100,-100},{100,100}}), graphics={Rectangle(extent={{-60,40},{60,-42}}, lineColor={0,0,255}),Rectangle(
-          extent={{-36,8},{32,-6}},
-          lineColor={0,0,255},
-          fillColor={95,95,95},
-          fillPattern=FillPattern.Solid)}),
-    Diagram(coordinateSystem(preserveAspectRatio=true, extent={{-100,-100},{100,100}}), graphics),
+    Diagram(coordinateSystem(
+        extent={{-100,-100},{100,100}},
+        preserveAspectRatio=false,
+        initialScale=0.05), graphics),
+    Icon(coordinateSystem(
+        extent={{-100,-100},{100,100}},
+        preserveAspectRatio=false,
+        initialScale=0.05)),
     Documentation(info="<html>
+<table cellspacing=\"1\" cellpadding=\"1\" border=\"1\">
+<tr>
+<td><p>Reference</p></td>
+<td>PSS/E Manual</td>
+</tr>
+<tr>
+<td><p>Last update</p></td>
+<td>Unknown</td>
+</tr>
+<tr>
+<td><p>Author</p></td>
+<td><p>Mengjia Zhang,SmarTS Lab, KTH Royal Institute of Technology</p></td>
+</tr>
+<tr>
+<td><p>Contact</p></td>
+<td><p><a href=\"mailto:luigiv@kth.se\">luigiv@kth.se</a></p></td>
+</tr>
+</table>
 <p><br><span style=\"font-family: MS Shell Dlg 2;\">&LT;iPSL: iTesla Power System Library&GT;</span></p>
 <p><span style=\"font-family: MS Shell Dlg 2;\">Copyright 2015 RTE (France), AIA (Spain), KTH (Sweden) and DTU (Denmark)</span></p>
 <ul>
@@ -46,4 +54,4 @@ equation
 <p><span style=\"font-family: MS Shell Dlg 2;\">The iPSL is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU Lesser General Public License for more details.</span></p>
 <p><span style=\"font-family: MS Shell Dlg 2;\">You should have received a copy of the GNU Lesser General Public License along with the iPSL. If not, see &LT;http://www.gnu.org/licenses/&GT;.</span></p>
 </html>"));
-end Zeq_tn1;
+end Load_switch;

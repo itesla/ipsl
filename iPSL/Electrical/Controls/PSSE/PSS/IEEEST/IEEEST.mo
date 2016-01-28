@@ -22,8 +22,8 @@ model IEEEST "IEEE Stabilizing Model with single Input"
   Modelica.Blocks.Continuous.TransferFunction Filter1_1(
     initType=Modelica.Blocks.Types.Init.InitialOutput,
     y_start=V_S0,
-    b={A_6,A_5,1},
-    a=a1) annotation (Placement(transformation(extent={{-90,-30},{-80,-20}})));
+    a=a1,
+    b=b) annotation (Placement(transformation(extent={{-90,-30},{-80,-20}})));
   iPSL.NonElectrical.Continuous.LeadLag T_1_T_2(
     K=1,
     T1=T_1,
@@ -36,9 +36,9 @@ model IEEEST "IEEE Stabilizing Model with single Input"
     T2=T_4,
     x_start=V_S0,
     y_start=V_S0) annotation (Placement(transformation(extent={{60,-5},{70,5}})));
-  output Modelica.Blocks.Interfaces.RealOutput VOTHSG(start=0) "PSS output signal"
+  Modelica.Blocks.Interfaces.RealOutput VOTHSG(start=0) "PSS output signal"
     annotation (Placement(transformation(extent={{120,-5},{130,5}}, rotation=0), iconTransformation(extent={{120,-10},{140,10}})));
-  input Modelica.Blocks.Interfaces.RealInput V_S(start=0) "PSS input signal"
+  Modelica.Blocks.Interfaces.RealInput V_S(start=0) "PSS input signal"
     annotation (Placement(transformation(extent={{-125,-5},{-115,5}}, rotation=0), iconTransformation(extent={{-128,-30},{-108,-10}})));
   Modelica.Blocks.Nonlinear.Limiter VSS(uMax=L_SMAX, uMin=L_SMIN) annotation (Placement(transformation(extent={{100,-5},{110,5}})));
   Modelica.Blocks.Interfaces.RealInput V_CT "Compensated machine terminal voltage (pu)"
@@ -49,17 +49,19 @@ model IEEEST "IEEE Stabilizing Model with single Input"
     initType=Modelica.Blocks.Types.Init.InitialOutput,
     x_start=V_S0,
     k=K_S*T_5) annotation (Placement(transformation(extent={{80,-5},{90,5}})));
-
-  Modelica.Blocks.Interfaces.RealOutput Vs "Connector of Real output signal" annotation (Placement(transformation(extent={{113,-5},{123,5}}, rotation=0), iconTransformation(extent={{32,-8},{36,-4}})));
 protected
+  Modelica.Blocks.Interfaces.RealOutput Vs "Connector of Real output signal" annotation (Placement(transformation(extent={{113,-5},{123,5}}, rotation=0), iconTransformation(extent={{32,-8},{36,-4}})));
+
   parameter Real V_S0(fixed=false);
   parameter Boolean bypass_filter2(fixed=false);
   parameter Boolean bypass_filter1(fixed=false);
 
   parameter Integer n1=if (A_1 == 0 and A_2 == 0) then 4 elseif (A_2 == 0) then 2 else 3;
   parameter Integer n2=if (A_3 == 0 and A_4 == 0) then 4 elseif (A_4 == 0) then 2 else 3;
+  parameter Integer n3=if (A_6 == 0 and A_5 == 0) then 1 elseif (A_6 == 0) then 2 else 3;
   parameter Real a1[n1](fixed=false);
   parameter Real a2[n2](fixed=false);
+  parameter Real b[n3](fixed=false);
 
   Modelica.Blocks.Continuous.TransferFunction Filter2_1(
     initType=Modelica.Blocks.Types.Init.InitialOutput,
@@ -77,13 +79,20 @@ protected
     initType=Modelica.Blocks.Types.Init.InitialOutput,
     y_start=V_S0,
     a=a2,
-    b={A_6,A_5,1}) annotation (Placement(transformation(extent={{-60,10},{-50,20}})));
+    b=b) annotation (Placement(transformation(extent={{-60,10},{-50,20}})));
   Modelica.Blocks.Logical.Switch swith_filter1 annotation (Placement(transformation(extent={{-75,-5},{-65,5}})));
   Modelica.Blocks.Sources.BooleanConstant booleanConstant1(k=bypass_filter1) annotation (Placement(transformation(extent={{-95,-15},{-85,-5}})));
   Modelica.Blocks.Logical.Switch swith_filter3 annotation (Placement(transformation(extent={{20,-5},{30,5}})));
   Modelica.Blocks.MathBoolean.And and1(nu=2) annotation (Placement(transformation(extent={{-30,-13},{-20,-3}})));
   Modelica.Blocks.Logical.Switch swith_filter4 annotation (Placement(transformation(extent={{-6,-5},{4,5}})));
 initial equation
+  if (n3 == 1) then
+    b = {1};
+  elseif (n3 == 2) then
+    b = {A_5,1};
+  else
+    b = {A_6,A_5,1};
+  end if;
   if (n1 == 4) then
     a1 = {1,1,1,1};
     bypass_filter1 = true;

@@ -1,5 +1,6 @@
 within iPSL.Electrical.Wind.PSSE.WT4G;
 model WT4G1 "Wind Generator Model with Power Converter (Type 4)"
+  import iPSL;
   // Extending the PF component
   extends iPSL.Electrical.Essentials.pfComponent;
 
@@ -56,11 +57,11 @@ public
         rotation=180,
         origin={-110,-80})));
   Modelica.Blocks.Math.Feedback Iperr(y(start=0, fixed=true)) annotation (Placement(transformation(extent={{-80,35},{-70,45}})));
-  Submodels.LVACL lVACL annotation (Placement(transformation(extent={{68,30},{88,50}})));
-  Submodels.HVRCL hVRCL(VHVRCR=V_HVRCR, CurHVRCR=CUR_HVRCR) annotation (Placement(transformation(extent={{50,65},{70,85}})));
+  iPSL.Electrical.Wind.PSSE.Submodels.LVACL lVACL annotation (Placement(transformation(extent={{68,30},{88,50}})));
+  iPSL.Electrical.Wind.PSSE.Submodels.HVRCL hVRCL(VHVRCR=V_HVRCR, CurHVRCR=CUR_HVRCR) annotation (Placement(transformation(extent={{50,65},{70,85}})));
   Modelica.Blocks.Interfaces.RealOutput IyL(start=Iy0) annotation (Placement(transformation(extent={{100,65},{120,85}}), iconTransformation(extent={{100,70},{120,90}})));
   Modelica.Blocks.Interfaces.RealOutput IxL(start=Ix0) annotation (Placement(transformation(extent={{96,34},{114,52}}), iconTransformation(extent={{100,30},{120,50}})));
-  Submodels.LVPL lVPL(
+  iPSL.Electrical.Wind.PSSE.Submodels.LVPL lVPL(
     VLVPL1=V_LVPL1,
     VLVPL2=V_LVPL2,
     GLVPL=G_LVPL) annotation (Placement(transformation(extent={{40,-40},{20,-20}})));
@@ -148,20 +149,17 @@ equation
     Diagram(coordinateSystem(
         preserveAspectRatio=true,
         extent={{-100,-100},{100,100}},
-        grid={2,2}), graphics={
-        Text(
+        grid={2,2}), graphics={Text(
           extent={{-55,51},{-36,48}},
           lineColor={0,0,127},
           fillColor={0,0,255},
           fillPattern=FillPattern.Solid,
-          textString="RIp_LVPL"),
-        Text(
+          textString="RIp_LVPL"),Text(
           extent={{12,62},{36,56}},
           lineColor={0,0,127},
           fillColor={0,0,255},
           fillPattern=FillPattern.Solid,
-          textString="LVPL"),
-        Text(
+          textString="LVPL"),Text(
           extent={{-98,-78},{0,-100}},
           lineColor={255,0,0},
           textStyle={TextStyle.Bold},
