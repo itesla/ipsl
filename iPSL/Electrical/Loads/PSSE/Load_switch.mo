@@ -1,7 +1,6 @@
 within iPSL.Electrical.Loads.PSSE;
 model Load_switch "PSS/E Load"
-  import PSSE;
-  extends PSSE.BaseClasses.baseLoad;
+  extends iPSL.Electrical.Loads.PSSE.BaseClasses.baseLoad;
   parameter Real t1 "Time of switching on";
   parameter Real t2 "Time of switching off";
 equation
