@@ -15,13 +15,29 @@ model Two_Areas_PSSE
   iPSL.Electrical.Buses.Bus bus9 annotation (Placement(transformation(extent={{50,20},{70,40}})));
   iPSL.Electrical.Buses.Bus bus10 annotation (Placement(transformation(extent={{90,20},{110,40}})));
   iPSL.Electrical.Buses.Bus bus11 annotation (Placement(transformation(extent={{130,20},{150,40}})));
-  TwoAreas.Groups.PSSE.G1 g1 annotation (Placement(transformation(extent={{-214,24},{-202,36}})));
-  TwoAreas.Groups.PSSE.G2 g2 annotation (Placement(transformation(extent={{-214,-16},{-202,-4}})));
-  TwoAreas.Groups.PSSE.G3 g3 annotation (Placement(transformation(
+  TwoAreas.Groups.PSSE.G1 g1(
+    V_0=1.03,
+    angle_0=20.27066,
+    P_0=700,
+    Q_0=185.0296) annotation (Placement(transformation(extent={{-214,24},{-202,36}})));
+  TwoAreas.Groups.PSSE.G2 g2(
+    V_0=1.01,
+    angle_0=10.50628,
+    P_0=700,
+    Q_0=234.6113) annotation (Placement(transformation(extent={{-214,-16},{-202,-4}})));
+  TwoAreas.Groups.PSSE.G3 g3(
+    V_0=1.03,
+    angle_0=-6.8,
+    P_0=719.0941,
+    Q_0=176.0262) annotation (Placement(transformation(
         extent={{-6,-6},{6,6}},
         rotation=180,
         origin={208,30})));
-  TwoAreas.Groups.PSSE.G4 g4 annotation (Placement(transformation(
+  TwoAreas.Groups.PSSE.G4 g4(
+    V_0=1.01,
+    angle_0=-16.9921,
+    P_0=700,
+    Q_0=202.0827) annotation (Placement(transformation(
         extent={{-6,-6},{6,6}},
         rotation=180,
         origin={208,-10})));
@@ -117,7 +133,7 @@ model Two_Areas_PSSE
     R=0,
     X=0.01667,
     B=0) annotation (Placement(transformation(extent={{150,-20},{170,0}})));
-  inner iPSL.Electrical.SystemBase SysData annotation (Placement(transformation(extent={{-220,40},{-196,60}})));
+  inner iPSL.Electrical.SystemBase SysData(fn=60) annotation (Placement(transformation(extent={{-220,48},{-172,62}})));
 equation
   connect(g1.pwPin, bus1.p) annotation (Line(points={{-201,30},{-190.5,30},{-180,30}}, color={0,0,255}));
   connect(g2.pwPin, bus2.p) annotation (Line(points={{-201,-10},{-190.5,-10},{-180,-10}}, color={0,0,255}));

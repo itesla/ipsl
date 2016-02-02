@@ -1,5 +1,6 @@
 within TwoAreas.Groups.PSSE;
 model G2
+  extends iPSL.Electrical.Essentials.pfComponent;
 
   iPSL.Connectors.PwPin pwPin annotation (Placement(transformation(extent={{60,-10},{80,10}}), iconTransformation(extent={{60,-10},{80,10}})));
   iPSL.Electrical.Machines.PSSE.GENSAL.GENSAL gENSAL(
@@ -13,16 +14,16 @@ model G2
     Xppd=0.25,
     Xppq=0.25,
     Xl=0.2,
-    P_0=700,
-    V_0=1.01,
     R_a=0.0025,
     D=0.02,
     S12=0.802,
     S10=0.18600,
     M_b=900,
-    angle_0=10.50628,
-    Q_0=234.6113) annotation (Placement(transformation(extent={{-16,-14},{24,22}})));
-  inner iPSL.Electrical.SystemBase SysData annotation (Placement(transformation(extent={{-60,40},{-36,60}})));
+    V_b=V_b,
+    V_0=V_0,
+    angle_0=angle_0,
+    P_0=P_0,
+    Q_0=Q_0) annotation (Placement(transformation(extent={{-16,-14},{24,22}})));
 equation
 
   connect(gENSAL.EFD, gENSAL.EFD0) annotation (Line(points={{-15.6,-5},{-26,-5},{-26,-30},{26,-30},{26,-8.6},{25.6,-8.6}}, color={0,0,127}));
