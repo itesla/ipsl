@@ -21,19 +21,19 @@ model Two_Areas_PSAT
     Q_0=182.450226027067,
     V_0=1.03000000000000,
     angle_0=0.353381617759011*180/pi,
-    V_b=230) annotation (Placement(transformation(extent={{-214,24},{-202,36}})));
+    V_b=20) annotation (Placement(transformation(extent={{-214,24},{-202,36}})));
   Groups.PSAT.G2 g2(
     P_0=700,
     Q_0=228.434194888742,
     V_0=1.01000000000000,
     angle_0=0.183079867930759*180/pi,
-    V_b=230) annotation (Placement(transformation(extent={{-214,-16},{-202,-4}})));
+    V_b=20) annotation (Placement(transformation(extent={{-214,-16},{-202,-4}})));
   Groups.PSAT.G3 g3(
     Q_0=172.421333322957,
     P_0=718.906215107731,
     V_0=1.03000000000000,
     angle_0=-0.118682400000000*180/pi,
-    V_b=230) annotation (Placement(transformation(
+    V_b=20) annotation (Placement(transformation(
         extent={{-6,-6},{6,6}},
         rotation=180,
         origin={208,30})));
@@ -42,7 +42,7 @@ model Two_Areas_PSAT
     Q_0=193.556043309309,
     V_0=1.01000000000000,
     angle_0=-0.296314118513724*180/pi,
-    V_b=230) annotation (Placement(transformation(
+    V_b=20) annotation (Placement(transformation(
         extent={{-6,-6},{6,6}},
         rotation=180,
         origin={208,-10})));
@@ -108,7 +108,8 @@ model Two_Areas_PSAT
     Qz=0,
     Qi=0,
     V_0=0.962831011348560,
-    angle_0=-0.0815909472281613*180/pi) annotation (Placement(transformation(extent={{-70,-12},{-58,0}})));
+    angle_0=-0.0815909472281613*180/pi,
+    V_b=230) annotation (Placement(transformation(extent={{-76,-30},{-52,-6}})));
   iPSL.Electrical.Loads.PSAT.ZIP Load9(
     P_0=1767,
     Q_0=-250,
@@ -117,31 +118,36 @@ model Two_Areas_PSAT
     Qz=0,
     Qi=0,
     V_0=0.973864710338689,
-    angle_0=-0.560256955944523*180/pi) annotation (Placement(transformation(extent={{72,-12},{60,0}})));
+    angle_0=-0.560256955944523*180/pi,
+    V_b=230) annotation (Placement(transformation(extent={{80,-30},{54,-4}})));
   iPSL.Electrical.Branches.PSAT.TwoWindingTransformer trafo1(
     Sn=900,
     r=0,
-    V_b=230,
     x=0.15,
-    Vn=230) annotation (Placement(transformation(extent={{-170,20},{-150,40}})));
+    kT=20/230,
+    V_b=20,
+    Vn=20) annotation (Placement(transformation(extent={{-170,20},{-150,40}})));
   iPSL.Electrical.Branches.PSAT.TwoWindingTransformer trafo2(
     Sn=900,
     r=0,
-    V_b=230,
     x=0.15,
-    Vn=230) annotation (Placement(transformation(extent={{-170,-20},{-150,0}})));
+    kT=20/230,
+    V_b=20,
+    Vn=20) annotation (Placement(transformation(extent={{-170,-20},{-150,0}})));
   iPSL.Electrical.Branches.PSAT.TwoWindingTransformer trafo3(
     Sn=900,
-    V_b=230,
     r=0,
     x=0.15,
-    Vn=230) annotation (Placement(transformation(extent={{150,20},{170,40}})));
+    kT=20/230,
+    V_b=20,
+    Vn=20) annotation (Placement(transformation(extent={{170,20},{150,40}})));
   iPSL.Electrical.Branches.PSAT.TwoWindingTransformer trafo4(
     Sn=900,
-    Vn=230,
     r=0,
     x=0.15,
-    V_b=230) annotation (Placement(transformation(extent={{150,-20},{170,0}})));
+    kT=20/230,
+    V_b=20,
+    Vn=20) annotation (Placement(transformation(extent={{170,-20},{150,0}})));
   inner iPSL.Electrical.SystemBase SysData(fn=60) annotation (Placement(transformation(extent={{-220,46},{-170,60}})));
 equation
   connect(g1.pwPin, bus1.p) annotation (Line(points={{-201.4,30},{-201.4,30},{-180,30}}, color={0,0,255}));
@@ -164,17 +170,17 @@ equation
   connect(Line10_11.n, bus11.p) annotation (Line(points={{127,30},{133.5,30},{140,30}}, color={0,0,255}));
   connect(g4.pwPin, bus4.p) annotation (Line(points={{201.4,-10},{201.4,-10},{180,-10}}, color={0,0,255}));
   connect(g3.pwPin, bus3.p) annotation (Line(points={{201.4,30},{180,30}}, color={0,0,255}));
-  connect(Load7.p, bus7.p) annotation (Line(points={{-64,0.6},{-64,0.6},{-64,30},{-60,30}}, color={0,0,255}));
-  connect(Load9.p, Line9_10.p) annotation (Line(points={{66,0.6},{66,0.6},{66,30},{73,30}}, color={0,0,255}));
+  connect(Load7.p, bus7.p) annotation (Line(points={{-64,-4.8},{-64,-4.8},{-64,0},{-64,28},{-64,30},{-60,30}}, color={0,0,255}));
+  connect(Load9.p, Line9_10.p) annotation (Line(points={{67,-2.7},{67,-2.7},{67,30},{73,30}}, color={0,0,255}));
   connect(pwFault.p, bus8.p) annotation (Line(points={{2,-4.33333},{2,30},{0,30}}, color={0,0,255}));
   connect(bus1.p, trafo1.p) annotation (Line(points={{-180,30},{-171,30}}, color={0,0,255}));
   connect(bus5.p, trafo1.n) annotation (Line(points={{-140,30},{-149,30}}, color={0,0,255}));
   connect(bus2.p, trafo2.p) annotation (Line(points={{-180,-10},{-171,-10}}, color={0,0,255}));
   connect(trafo2.n, bus6.p) annotation (Line(points={{-149,-10},{-104,-10},{-104,30},{-100,30}}, color={0,0,255}));
-  connect(bus11.p, trafo3.p) annotation (Line(points={{140,30},{149,30}}, color={0,0,255}));
-  connect(trafo3.n, bus3.p) annotation (Line(points={{171,30},{171,30},{180,30}}, color={0,0,255}));
-  connect(bus4.p, trafo4.n) annotation (Line(points={{180,-10},{171,-10}}, color={0,0,255}));
-  connect(trafo4.p, Line10_11.p) annotation (Line(points={{149,-10},{104,-10},{104,30},{113,30}}, color={0,0,255}));
+  connect(trafo4.n, bus10.p) annotation (Line(points={{149,-10},{108,-10},{108,30},{100,30}}, color={0,0,255}));
+  connect(trafo4.p, bus4.p) annotation (Line(points={{171,-10},{176,-10},{180,-10}}, color={0,0,255}));
+  connect(trafo3.p, bus3.p) annotation (Line(points={{171,30},{175.5,30},{180,30}}, color={0,0,255}));
+  connect(bus11.p, trafo3.n) annotation (Line(points={{140,30},{149,30}}, color={0,0,255}));
   annotation (
     Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-220,-40},{220,60}})),
     Icon(coordinateSystem(extent={{-220,-40},{220,60}})),

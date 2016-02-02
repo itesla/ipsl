@@ -5,7 +5,7 @@ model G1
 
   iPSL.Electrical.Machines.PSAT.SixthOrder.Order6 order6_1(
     Sn=900,
-    Vn=230,
+    Vn=20,
     ra=0.0025,
     xd1=0.3,
     M=13,
