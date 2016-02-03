@@ -130,7 +130,7 @@ protected
   //Change of base constants
   parameter Real CoB=S_b*Vn/(Sn*V_b);
   parameter Real CoB2=S_b/Sn;
-  parameter Real m=M/CoB2 "Machanical starting time (2H), kWs/kVA";
+  parameter Real m=M/CoB2 "Mechanical starting time (2H), kWs/kVA";
   parameter Real d=D/CoB2 "Damping coefficient";
   parameter Real Ra=ra*CoB "armature resistance, p.u.";
   parameter Real x1d=xd1*CoB "d-axis transient reactance, p.u.";
