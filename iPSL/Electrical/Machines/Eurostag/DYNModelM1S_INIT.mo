@@ -1,6 +1,4 @@
-within iPSL.Electrical.Machines.Eurostag;
-
-
+﻿within iPSL.Electrical.Machines.Eurostag;
 model DYNModelM1S_INIT "Initialization model for synchronous mahine M1S.
                   Developed by RTE and adapted by AIA. 2014/03/10"
   Modelica.Blocks.Interfaces.RealInput pin_CM;
@@ -74,7 +72,7 @@ model DYNModelM1S_INIT "Initialization model for synchronous mahine M1S.
   parameter Real PI=3.14159265;
   parameter Integer IWLMDV=3;
   parameter Boolean Saturated=true;
-  // paramètres calcules
+  // paramÃ¨tres calcules
   parameter Real yScaleNom=SNREF/SN;
   // YSCALE
   parameter Real rStatNom=rStatIn*yScaleNom;
@@ -197,7 +195,7 @@ model DYNModelM1S_INIT "Initialization model for synchronous mahine M1S.
   Real u1i(start=ui0);
   Real mSal;
   // YMSAL
-  // variables conservées par le compilateur:
+  // variables conservÃ©es par le compilateur:
   // ---------------------------------------
   parameter Real ir0_0=p0*ur0 + q0*ui0;
   parameter Real ii0_0=p0*ui0 - q0*ur0;
@@ -361,7 +359,7 @@ equation
   // YNUM
   teta0Denom = ur0 + (rTfo + rStat)*ir0 - omega_0*(xTfo + xQ)*ii0;
   // YDENOM
-  //expression ange moitié
+  //expression ange moitiÃ©
   //ONE*teta0 = atan2(teta0Num ,teta0Denom); // YTETA = ATAN2(YNUM,YDENOM)
   ONE*teta0 = 2*atan(teta0Num/(sqrt(teta0Num*teta0Num + teta0Denom*teta0Denom) + teta0Denom));
   ONE*iD0 = sin(teta0)*ir0 - cos(teta0)*ii0;
@@ -372,7 +370,7 @@ equation
   // YUD
   uQ0 = cos(teta0)*ur0 + sin(teta0)*ui0;
   // YUQ
-  // expression angle moitié
+  // expression angle moitiÃ©
   //ONE*tetaInterne0 = atan2(uD0,uQ0);
   ONE*tetaInterne0 = 2*atan(uD0/(sqrt(uD0*uD0 + uQ0*uQ0) + uQ0));
   ONE*lambdaAD0 = -(uQ0 + (rStat + rTfo)*iQ0 + (lStat + xTfo)*iD0)/omega_0;
@@ -460,19 +458,16 @@ equation
   else
     pin_FieldCurrent = -mDV/rrTfo*((lD + mrc)*pin_LAMBDAF - mrc*pin_LAMBDAD - lD*pin_LAMBDAAD)/(mrc*(lRot + lD) + lRot*lD);
   end if;
-  annotation (Documentation(info="<html>
-<p><br><span style=\"font-family: MS Shell Dlg 2;\">&LT;iPSL: iTesla Power System Library&GT;</span></p>
-<p><span style=\"font-family: MS Shell Dlg 2;\">Copyright 2015 RTE (France), AIA (Spain), KTH (Sweden) and DTU (Denmark)</span></p>
-<ul>
-<li><span style=\"font-family: MS Shell Dlg 2;\">RTE: http://www.rte-france.com/ </span></li>
-<li><span style=\"font-family: MS Shell Dlg 2;\">AIA: http://www.aia.es/en/energy/</span></li>
-<li><span style=\"font-family: MS Shell Dlg 2;\">KTH: https://www.kth.se/en</span></li>
-<li><span style=\"font-family: MS Shell Dlg 2;\">DTU:http://www.dtu.dk/english</span></li>
-</ul>
-<p><span style=\"font-family: MS Shell Dlg 2;\">The authors can be contacted by email: info at itesla-ipsl dot org</span></p>
-<p><span style=\"font-family: MS Shell Dlg 2;\">This package is part of the iTesla Power System Library (&QUOT;iPSL&QUOT;) .</span></p>
-<p><span style=\"font-family: MS Shell Dlg 2;\">The iPSL is free software: you can redistribute it and/or modify it under the terms of the GNU Lesser General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.</span></p>
-<p><span style=\"font-family: MS Shell Dlg 2;\">The iPSL is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU Lesser General Public License for more details.</span></p>
-<p><span style=\"font-family: MS Shell Dlg 2;\">You should have received a copy of the GNU Lesser General Public License along with the iPSL. If not, see &LT;http://www.gnu.org/licenses/&GT;.</span></p>
+  annotation (Documentation(info="", revisions="<!--DISCLAIMER-->
+<html>
+<p>Copyright 2015 RTE (France), SmarTS Lab (Sweden), AIA (Spain) and DTU (Denmark)</p>
+<p>​- ​RTE: http://www.rte-france.com/</p>
+<p>- SmarTS Lab, research group at KTH: https://www.kth.se/en</p>
+<p>​- ​AIA: http://www.aia.es/en/energy/</p>
+<p>​- ​DTU: http://www.dtu.dk/english</p>
+<p>The authors can be contacted by email: info@itesla-ipsl.org </p>
+<p>​</p>
+<p>​​This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
+<p>If a copy of the MPL was not distributed with this file, You can obtain one at http://mozilla.org/MPL/2.0/.</p>
 </html>"));
 end DYNModelM1S_INIT;

@@ -1,6 +1,6 @@
-within iPSL.Electrical.Machines.Eurostag;
+﻿within iPSL.Electrical.Machines.Eurostag;
 model PwGenerator "Synchronous machine model according to Park's classical theory (Full model description).
-                   The model corresponds to Eurostag's full model for M1S machine 
+                   The model corresponds to Eurostag's full model for M1S machine
                    (defined by internal parameters). Initial values must be inserted manually.
                    Developed by RTE and adapted by AIA. 2014/03/10"
   iPSL.Connectors.PwPin sortie(vr(start=1), vi(start=0)) annotation (Placement(transformation(extent={{40,10},{60,30}}), iconTransformation(extent={{40,10},{60,30}})));
@@ -111,52 +111,40 @@ equation
   sortie.vr = ur;
   sortie.vi = ui;
   annotation (
-    Icon(graphics={
-        Rectangle(extent={{-40,40},{40,-40}}, lineColor={0,0,255}),
-        Ellipse(
+    Icon(graphics={Rectangle(extent={{-40,40},{40,-40}}, lineColor={0,0,255}),Ellipse(
           extent={{-24,22},{24,-24}},
           lineColor={0,0,255},
-          lineThickness=1),
-        Line(
+          lineThickness=1),Line(
           points={{-16,0},{-12,8},{-6,8},{6,-10},{12,-10},{16,0}},
           color={0,0,255},
           smooth=Smooth.Bezier,
-          thickness=1),
-        Text(
+          thickness=1),Text(
           extent={{-68,46},{-60,40}},
           lineColor={0,0,255},
-          textString="ccm"),
-        Text(
+          textString="ccm"),Text(
           extent={{-74,18},{-60,10}},
           lineColor={0,0,255},
-          textString="oomega"),
-        Text(
+          textString="oomega"),Text(
           extent={{-70,-14},{-60,-20}},
           lineColor={0,0,255},
-          textString="eefd"),
-        Text(
+          textString="eefd"),Text(
           extent={{54,38},{68,32}},
           lineColor={0,0,255},
-          textString="sortie"),
-        Text(
+          textString="sortie"),Text(
           extent={{50,-6},{64,-12}},
           lineColor={0,0,255},
           textString="ttheta")}),
     Diagram(graphics),
-    Documentation(info="<html>
-<p><br><span style=\"font-family: MS Shell Dlg 2;\">&LT;iPSL: iTesla Power System Library&GT;</span></p>
-<p><span style=\"font-family: MS Shell Dlg 2;\">Copyright 2015 RTE (France), AIA (Spain), KTH (Sweden) and DTU (Denmark)</span></p>
-<ul>
-<li><span style=\"font-family: MS Shell Dlg 2;\">RTE: http://www.rte-france.com/ </span></li>
-<li><span style=\"font-family: MS Shell Dlg 2;\">AIA: http://www.aia.es/en/energy/</span></li>
-<li><span style=\"font-family: MS Shell Dlg 2;\">KTH: https://www.kth.se/en</span></li>
-<li><span style=\"font-family: MS Shell Dlg 2;\">DTU:http://www.dtu.dk/english</span></li>
-</ul>
-<p><span style=\"font-family: MS Shell Dlg 2;\">The authors can be contacted by email: info at itesla-ipsl dot org</span></p>
-<p><span style=\"font-family: MS Shell Dlg 2;\">This package is part of the iTesla Power System Library (&QUOT;iPSL&QUOT;) .</span></p>
-<p><span style=\"font-family: MS Shell Dlg 2;\">The iPSL is free software: you can redistribute it and/or modify it under the terms of the GNU Lesser General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.</span></p>
-<p><span style=\"font-family: MS Shell Dlg 2;\">The iPSL is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU Lesser General Public License for more details.</span></p>
-<p><span style=\"font-family: MS Shell Dlg 2;\">You should have received a copy of the GNU Lesser General Public License along with the iPSL. If not, see &LT;http://www.gnu.org/licenses/&GT;.</span></p>
+    Documentation(info="", revisions="<!--DISCLAIMER-->
+<html>
+<p>Copyright 2015 RTE (France), SmarTS Lab (Sweden), AIA (Spain) and DTU (Denmark)</p>
+<p>​- ​RTE: http://www.rte-france.com/</p>
+<p>- SmarTS Lab, research group at KTH: https://www.kth.se/en</p>
+<p>​- ​AIA: http://www.aia.es/en/energy/</p>
+<p>​- ​DTU: http://www.dtu.dk/english</p>
+<p>The authors can be contacted by email: info@itesla-ipsl.org </p>
+<p>​</p>
+<p>​​This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
+<p>If a copy of the MPL was not distributed with this file, You can obtain one at http://mozilla.org/MPL/2.0/.</p>
 </html>"));
 end PwGenerator;
-

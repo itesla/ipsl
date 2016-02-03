@@ -1,4 +1,4 @@
-within iPSL.Electrical.Controls.PSAT.OEL;
+﻿within iPSL.Electrical.Controls.PSAT.OEL;
 model OEL "PSAT Over Excitation Limiter"
   Modelica.Blocks.Interfaces.RealInput v "Generator terminal voltage (pu)" annotation (Placement(transformation(extent={{-110,68},{-90,88}}), iconTransformation(extent={{-90,66},{-62,98}})));
   Modelica.Blocks.Interfaces.RealInput p "Active power (pu)" annotation (Placement(transformation(extent={{-110,36},{-90,56}}), iconTransformation(extent={{-90,32},{-62,62}})));
@@ -48,34 +48,27 @@ equation
   connect(limIntegrator.y, v_OXL) annotation (Line(points={{89,10},{92,10},{92,38},{108,38}}, color={0,0,127}));
   annotation (
     Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,100}})),
-    Icon(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,100}}), graphics={
-        Rectangle(extent={{-60,92},{68,-48}}, lineColor={0,0,255}),
-        Text(
+    Icon(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,100}}), graphics={Rectangle(extent={{-60,92},{68,-48}}, lineColor={0,0,255}),Text(
           extent={{-68,100},{-30,64}},
           lineColor={0,0,255},
           fillPattern=FillPattern.Solid,
-          textString="v"),
-        Text(
+          textString="v"),Text(
           extent={{-64,64},{-30,30}},
           lineColor={0,0,255},
           fillPattern=FillPattern.Solid,
-          textString="p"),
-        Text(
+          textString="p"),Text(
           extent={{-62,24},{-34,-10}},
           lineColor={0,0,255},
           fillPattern=FillPattern.Solid,
-          textString="q"),
-        Text(
+          textString="q"),Text(
           extent={{-52,-16},{-16,-48}},
           lineColor={0,0,255},
           fillPattern=FillPattern.Solid,
-          textString="vref0"),
-        Text(
+          textString="vref0"),Text(
           extent={{26,46},{60,12}},
           lineColor={0,0,255},
           fillPattern=FillPattern.Solid,
-          textString="v_OXL"),
-        Text(
+          textString="v_OXL"),Text(
           extent={{-18,102},{44,24}},
           lineColor={0,0,255},
           fillPattern=FillPattern.Solid,
@@ -99,19 +92,16 @@ equation
 <td><p><a href=\"mailto:luigiv@kth.se\">luigiv@kth.se</a></p></td>
 </tr>
 </table>
-<p><br><span style=\"font-family: MS Shell Dlg 2;\">&LT;iPSL: iTesla Power System Library&GT;</span></p>
-<p><span style=\"font-family: MS Shell Dlg 2;\">Copyright 2015 RTE (France), AIA (Spain), KTH (Sweden) and DTU (Denmark)</span></p>
-<ul>
-<li><span style=\"font-family: MS Shell Dlg 2;\">RTE: http://www.rte-france.com/ </span></li>
-<li><span style=\"font-family: MS Shell Dlg 2;\">AIA: http://www.aia.es/en/energy/</span></li>
-<li><span style=\"font-family: MS Shell Dlg 2;\">KTH: https://www.kth.se/en</span></li>
-<li><span style=\"font-family: MS Shell Dlg 2;\">DTU:http://www.dtu.dk/english</span></li>
-</ul>
-<p><span style=\"font-family: MS Shell Dlg 2;\">The authors can be contacted by email: info at itesla-ipsl dot org</span></p>
-<p><span style=\"font-family: MS Shell Dlg 2;\">This package is part of the iTesla Power System Library (&QUOT;iPSL&QUOT;) .</span></p>
-<p><span style=\"font-family: MS Shell Dlg 2;\">The iPSL is free software: you can redistribute it and/or modify it under the terms of the GNU Lesser General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.</span></p>
-<p><span style=\"font-family: MS Shell Dlg 2;\">The iPSL is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU Lesser General Public License for more details.</span></p>
-<p><span style=\"font-family: MS Shell Dlg 2;\">You should have received a copy of the GNU Lesser General Public License along with the iPSL. If not, see &LT;http://www.gnu.org/licenses/&GT;.</span></p>
+</html>", revisions="<!--DISCLAIMER-->
+<html>
+<p>Copyright 2015 RTE (France), SmarTS Lab (Sweden), AIA (Spain) and DTU (Denmark)</p>
+<p>​- ​RTE: http://www.rte-france.com/</p>
+<p>- SmarTS Lab, research group at KTH: https://www.kth.se/en</p>
+<p>​- ​AIA: http://www.aia.es/en/energy/</p>
+<p>​- ​DTU: http://www.dtu.dk/english</p>
+<p>The authors can be contacted by email: info@itesla-ipsl.org </p>
+<p>​</p>
+<p>​​This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
+<p>If a copy of the MPL was not distributed with this file, You can obtain one at http://mozilla.org/MPL/2.0/.</p>
 </html>"));
 end OEL;
-

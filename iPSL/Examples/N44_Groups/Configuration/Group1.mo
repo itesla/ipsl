@@ -1,4 +1,4 @@
-within iPSL.Examples.N44_Groups.Configuration;
+﻿within iPSL.Examples.N44_Groups.Configuration;
 model Group1 "Machine configuration of synchronous machine with regulators: GENROU, STAB2A, IEEET2, IEESGO;
   from Nordic 44 model: Buses 3000, 7000.
   Configuration values at bus 3000"
@@ -122,35 +122,26 @@ equation
         extent={{-100,-100},{100,100}},
         preserveAspectRatio=true,
         initialScale=0.1,
-        grid={1,1}), graphics={
-        Ellipse(extent={{-14,-42},{74,38}}, lineColor={0,0,255}),
-        Line(
+        grid={1,1}), graphics={Ellipse(extent={{-14,-42},{74,38}}, lineColor={0,0,255}),Line(
           points={{-2,-12},{18,8},{38,-12},{58,8}},
           color={0,0,255},
-          smooth=Smooth.None),
-        Ellipse(extent={{-100,-100},{101,100}}, lineColor={0,0,255}),
-        Text(
+          smooth=Smooth.None),Ellipse(extent={{-100,-100},{101,100}}, lineColor={0,0,255}),Text(
           extent={{-91,6},{-22,-12}},
           lineColor={0,0,255},
-          textString="GENROU & 
-IEESGO & 
-STAB2A & 
-IEEET2",
-          textStyle={TextStyle.Italic})}),
-    Documentation(info="<html>
-<p><br><span style=\"font-family: MS Shell Dlg 2;\">&LT;iPSL: iTesla Power System Library&GT;</span></p>
-<p><span style=\"font-family: MS Shell Dlg 2;\">Copyright 2015 RTE (France), AIA (Spain), KTH (Sweden) and DTU (Denmark)</span></p>
-<ul>
-<li><span style=\"font-family: MS Shell Dlg 2;\">RTE: http://www.rte-france.com/ </span></li>
-<li><span style=\"font-family: MS Shell Dlg 2;\">AIA: http://www.aia.es/en/energy/</span></li>
-<li><span style=\"font-family: MS Shell Dlg 2;\">KTH: https://www.kth.se/en</span></li>
-<li><span style=\"font-family: MS Shell Dlg 2;\">DTU:http://www.dtu.dk/english</span></li>
-</ul>
-<p><span style=\"font-family: MS Shell Dlg 2;\">The authors can be contacted by email: info at itesla-ipsl dot org</span></p>
-<p><span style=\"font-family: MS Shell Dlg 2;\">This package is part of the iTesla Power System Library (&QUOT;iPSL&QUOT;) .</span></p>
-<p><span style=\"font-family: MS Shell Dlg 2;\">The iPSL is free software: you can redistribute it and/or modify it under the terms of the GNU Lesser General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.</span></p>
-<p><span style=\"font-family: MS Shell Dlg 2;\">The iPSL is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU Lesser General Public License for more details.</span></p>
-<p><span style=\"font-family: MS Shell Dlg 2;\">You should have received a copy of the GNU Lesser General Public License along with the iPSL. If not, see &LT;http://www.gnu.org/licenses/&GT;.</span></p>
+          textString="GENROU &
+IEESGO &
+STAB2A &
+IEEET2",  textStyle={TextStyle.Italic})}),
+    Documentation(info="", revisions="<!--DISCLAIMER-->
+<html>
+<p>Copyright 2015 RTE (France), SmarTS Lab (Sweden), AIA (Spain) and DTU (Denmark)</p>
+<p>​- ​RTE: http://www.rte-france.com/</p>
+<p>- SmarTS Lab, research group at KTH: https://www.kth.se/en</p>
+<p>​- ​AIA: http://www.aia.es/en/energy/</p>
+<p>​- ​DTU: http://www.dtu.dk/english</p>
+<p>The authors can be contacted by email: info@itesla-ipsl.org </p>
+<p>​</p>
+<p>​​This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
+<p>If a copy of the MPL was not distributed with this file, You can obtain one at http://mozilla.org/MPL/2.0/.</p>
 </html>"));
 end Group1;
-

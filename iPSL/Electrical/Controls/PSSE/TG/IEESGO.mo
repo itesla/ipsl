@@ -1,4 +1,4 @@
-within iPSL.Electrical.Controls.PSSE.TG;
+﻿within iPSL.Electrical.Controls.PSSE.TG;
 model IEESGO "IEEE Standard Model for Turbine-Governor"
   input Modelica.Blocks.Interfaces.RealInput SPEED "Machine speed deviation from nominal (pu)"
     annotation (Placement(transformation(extent={{-140,-2},{-128,10}}), iconTransformation(extent={{-160,22},{-144,38}})));
@@ -68,38 +68,29 @@ equation
           lineColor={0,0,255},
           textString="Pm0*(1-K_2)+Pm0*K_2*(1-K_3)+Pm0*K_3*K_2
 =0+0+0+Pm0")}),
-    Icon(coordinateSystem(preserveAspectRatio=false, extent={{-160,-80},{160,60}}), graphics={
-        Rectangle(extent={{-160,60},{160,-80}}, lineColor={0,0,255}),
-        Text(
+    Icon(coordinateSystem(preserveAspectRatio=false, extent={{-160,-80},{160,60}}), graphics={Rectangle(extent={{-160,60},{160,-80}}, lineColor={0,0,255}),Text(
           extent={{-52,20},{68,-20}},
           lineColor={0,0,255},
-          textString="IEESGO"),
-        Text(
+          textString="IEESGO"),Text(
           extent={{-142,36},{-118,22}},
           lineColor={0,0,255},
-          textString="SPEED"),
-        Text(
+          textString="SPEED"),Text(
           extent={{-142,-32},{-116,-48}},
           lineColor={0,0,255},
-          textString="PMECH0"),
-        Text(
+          textString="PMECH0"),Text(
           extent={{134,6},{156,-6}},
           lineColor={0,0,255},
           textString="PMECH")}),
-    Documentation(info="<html>
-<p><br><span style=\"font-family: MS Shell Dlg 2;\">&LT;iPSL: iTesla Power System Library&GT;</span></p>
-<p><span style=\"font-family: MS Shell Dlg 2;\">Copyright 2015 RTE (France), AIA (Spain), KTH (Sweden) and DTU (Denmark)</span></p>
-<ul>
-<li><span style=\"font-family: MS Shell Dlg 2;\">RTE: http://www.rte-france.com/ </span></li>
-<li><span style=\"font-family: MS Shell Dlg 2;\">AIA: http://www.aia.es/en/energy/</span></li>
-<li><span style=\"font-family: MS Shell Dlg 2;\">KTH: https://www.kth.se/en</span></li>
-<li><span style=\"font-family: MS Shell Dlg 2;\">DTU:http://www.dtu.dk/english</span></li>
-</ul>
-<p><span style=\"font-family: MS Shell Dlg 2;\">The authors can be contacted by email: info at itesla-ipsl dot org</span></p>
-<p><span style=\"font-family: MS Shell Dlg 2;\">This package is part of the iTesla Power System Library (&QUOT;iPSL&QUOT;) .</span></p>
-<p><span style=\"font-family: MS Shell Dlg 2;\">The iPSL is free software: you can redistribute it and/or modify it under the terms of the GNU Lesser General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.</span></p>
-<p><span style=\"font-family: MS Shell Dlg 2;\">The iPSL is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU Lesser General Public License for more details.</span></p>
-<p><span style=\"font-family: MS Shell Dlg 2;\">You should have received a copy of the GNU Lesser General Public License along with the iPSL. If not, see &LT;http://www.gnu.org/licenses/&GT;.</span></p>
+    Documentation(info="", revisions="<!--DISCLAIMER-->
+<html>
+<p>Copyright 2015 RTE (France), SmarTS Lab (Sweden), AIA (Spain) and DTU (Denmark)</p>
+<p>​- ​RTE: http://www.rte-france.com/</p>
+<p>- SmarTS Lab, research group at KTH: https://www.kth.se/en</p>
+<p>​- ​AIA: http://www.aia.es/en/energy/</p>
+<p>​- ​DTU: http://www.dtu.dk/english</p>
+<p>The authors can be contacted by email: info@itesla-ipsl.org </p>
+<p>​</p>
+<p>​​This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
+<p>If a copy of the MPL was not distributed with this file, You can obtain one at http://mozilla.org/MPL/2.0/.</p>
 </html>"));
 end IEESGO;
-

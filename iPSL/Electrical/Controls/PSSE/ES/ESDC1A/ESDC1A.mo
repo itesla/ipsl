@@ -1,6 +1,4 @@
-within iPSL.Electrical.Controls.PSSE.ES.ESDC1A;
-
-
+﻿within iPSL.Electrical.Controls.PSSE.ES.ESDC1A;
 model ESDC1A
   import iPSL.NonElectrical.Functions.SE;
   Modelica.Blocks.Interfaces.RealInput ECOMP "Input, generator terminal voltage" annotation (Placement(transformation(extent={{-80,23},{-70,35}}), iconTransformation(extent={{-80,23},{-70,35}})));
@@ -110,6 +108,18 @@ public
       K_E := K_E_init;
     end if;
 
+    annotation (Documentation(revisions="<!--DISCLAIMER-->
+<html>
+<p>Copyright 2015 RTE (France), SmarTS Lab (Sweden), AIA (Spain) and DTU (Denmark)</p>
+<p>​- ​RTE: http://www.rte-france.com/</p>
+<p>- SmarTS Lab, research group at KTH: https://www.kth.se/en</p>
+<p>​- ​AIA: http://www.aia.es/en/energy/</p>
+<p>​- ​DTU: http://www.dtu.dk/english</p>
+<p>The authors can be contacted by email: info@itesla-ipsl.org </p>
+<p>​</p>
+<p>​​This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
+<p>If a copy of the MPL was not distributed with this file, You can obtain one at http://mozilla.org/MPL/2.0/.</p>
+</html>"));
   end param_init;
 
 initial equation
@@ -170,37 +180,29 @@ equation
     Icon(coordinateSystem(
         preserveAspectRatio=false,
         extent={{-80,-40},{100,40}},
-        grid={1,1}), graphics={
-        Rectangle(
+        grid={1,1}), graphics={Rectangle(
           extent={{-80,40},{100,-40}},
           lineColor={0,0,255},
           fillColor={255,255,255},
-          fillPattern=FillPattern.Solid),
-        Text(
+          fillPattern=FillPattern.Solid),Text(
           extent={{-68,36},{-38,20}},
           lineColor={0,0,255},
-          textString="ECOMP"),
-        Text(
+          textString="ECOMP"),Text(
           extent={{-68,14},{-36,4}},
           lineColor={0,0,255},
-          textString="VOTHSG"),
-        Text(
+          textString="VOTHSG"),Text(
           extent={{-70,-6},{-44,-16}},
           lineColor={0,0,255},
-          textString="VOEL"),
-        Text(
+          textString="VOEL"),Text(
           extent={{78,4},{100,-6}},
           lineColor={0,0,255},
-          textString="EFD"),
-        Text(
+          textString="EFD"),Text(
           extent={{-28,10},{36,-8}},
           lineColor={0,0,255},
-          textString="ESDC1A"),
-        Text(
+          textString="ESDC1A"),Text(
           extent={{-74,-26},{-42,-36}},
           lineColor={0,0,255},
-          textString="VUEL"),
-        Text(
+          textString="VUEL"),Text(
           extent={{-26,-18},{6,-28}},
           lineColor={0,0,255},
           textString="EFD0")}),
@@ -223,18 +225,16 @@ equation
 <td><p><a href=\"mailto:luigiv@kth.se\">luigiv@kth.se</a></p></td>
 </tr>
 </table>
-<p><br><span style=\"font-family: MS Shell Dlg 2;\">&LT;iPSL: iTesla Power System Library&GT;</span></p>
-<p><span style=\"font-family: MS Shell Dlg 2;\">Copyright 2015 RTE (France), AIA (Spain), KTH (Sweden) and DTU (Denmark)</span></p>
-<ul>
-<li><span style=\"font-family: MS Shell Dlg 2;\">RTE: http://www.rte-france.com/ </span></li>
-<li><span style=\"font-family: MS Shell Dlg 2;\">AIA: http://www.aia.es/en/energy/</span></li>
-<li><span style=\"font-family: MS Shell Dlg 2;\">KTH: https://www.kth.se/en</span></li>
-<li><span style=\"font-family: MS Shell Dlg 2;\">DTU:http://www.dtu.dk/english</span></li>
-</ul>
-<p><span style=\"font-family: MS Shell Dlg 2;\">The authors can be contacted by email: info at ipsl dot org</span></p>
-<p><span style=\"font-family: MS Shell Dlg 2;\">This package is part of the iTesla Power System Library (&QUOT;iPSL&QUOT;) .</span></p>
-<p><span style=\"font-family: MS Shell Dlg 2;\">The iPSL is free software: you can redistribute it and/or modify it under the terms of the GNU Lesser General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.</span></p>
-<p><span style=\"font-family: MS Shell Dlg 2;\">The iPSL is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU Lesser General Public License for more details.</span></p>
-<p><span style=\"font-family: MS Shell Dlg 2;\">You should have received a copy of the GNU Lesser General Public License along with the iPSL. If not, see &LT;http://www.gnu.org/licenses/&GT;.</span></p>
+</html>", revisions="<!--DISCLAIMER-->
+<html>
+<p>Copyright 2015 RTE (France), SmarTS Lab (Sweden), AIA (Spain) and DTU (Denmark)</p>
+<p>​- ​RTE: http://www.rte-france.com/</p>
+<p>- SmarTS Lab, research group at KTH: https://www.kth.se/en</p>
+<p>​- ​AIA: http://www.aia.es/en/energy/</p>
+<p>​- ​DTU: http://www.dtu.dk/english</p>
+<p>The authors can be contacted by email: info@itesla-ipsl.org </p>
+<p>​</p>
+<p>​​This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
+<p>If a copy of the MPL was not distributed with this file, You can obtain one at http://mozilla.org/MPL/2.0/.</p>
 </html>"));
 end ESDC1A;

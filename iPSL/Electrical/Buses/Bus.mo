@@ -1,6 +1,4 @@
-within iPSL.Electrical.Buses;
-
-
+﻿within iPSL.Electrical.Buses;
 model Bus "Bus model
               2014/03/10"
 
@@ -28,26 +26,22 @@ equation
         extent={{-100,-100},{100,100}},
         preserveAspectRatio=true,
         initialScale=0.1,
-        grid={2,2}), graphics={
-        Rectangle(
+        grid={2,2}), graphics={Rectangle(
           visible=true,
           fillPattern=FillPattern.Solid,
-          extent={{-10.0,-100.0},{10.0,100.0}}),
-        Text(
+          extent={{-10.0,-100.0},{10.0,100.0}}),Text(
           visible=true,
           origin={0.9738,119.0625},
           fillPattern=FillPattern.Solid,
           extent={{-39.0262,-16.7966},{39.0262,16.7966}},
           textString="%name",
-          fontName="Arial"),
-        Text(
+          fontName="Arial"),Text(
           origin={0.9738,-114.937},
           fillPattern=FillPattern.Solid,
           extent={{-39.0262,-16.7966},{39.0262,16.7966}},
           fontName="Arial",
           textString=DynamicSelect("0.0", String(v, significantDigits=3)),
-          lineColor={238,46,47}),
-        Text(
+          lineColor={238,46,47}),Text(
           origin={0.9738,-140.937},
           fillPattern=FillPattern.Solid,
           extent={{-39.0262,-16.7966},{39.0262,16.7966}},
@@ -78,18 +72,16 @@ equation
 <td><p><a href=\"mailto:luigiv@kth.se\">luigiv@kth.se</a></p></td>
 </tr>
 </table>
-<p><br><span style=\"font-family: MS Shell Dlg 2;\">&LT;iPSL: iTesla Power System Library&GT;</span></p>
-<p><span style=\"font-family: MS Shell Dlg 2;\">Copyright 2015 RTE (France), AIA (Spain), KTH (Sweden) and DTU (Denmark)</span></p>
-<ul>
-<li><span style=\"font-family: MS Shell Dlg 2;\">RTE: http://www.rte-france.com/ </span></li>
-<li><span style=\"font-family: MS Shell Dlg 2;\">AIA: http://www.aia.es/en/energy/</span></li>
-<li><span style=\"font-family: MS Shell Dlg 2;\">KTH: https://www.kth.se/en</span></li>
-<li><span style=\"font-family: MS Shell Dlg 2;\">DTU:http://www.dtu.dk/english</span></li>
-</ul>
-<p><span style=\"font-family: MS Shell Dlg 2;\">The authors can be contacted by email: info at itesla-ipsl dot org</span></p>
-<p><span style=\"font-family: MS Shell Dlg 2;\">This package is part of the iTesla Power System Library (&QUOT;iPSL&QUOT;) .</span></p>
-<p><span style=\"font-family: MS Shell Dlg 2;\">The iPSL is free software: you can redistribute it and/or modify it under the terms of the GNU Lesser General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.</span></p>
-<p><span style=\"font-family: MS Shell Dlg 2;\">The iPSL is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU Lesser General Public License for more details.</span></p>
-<p><span style=\"font-family: MS Shell Dlg 2;\">You should have received a copy of the GNU Lesser General Public License along with the iPSL. If not, see &LT;http://www.gnu.org/licenses/&GT;.</span></p>
+</html>", revisions="<!--DISCLAIMER-->
+<html>
+<p>Copyright 2015 RTE (France), SmarTS Lab (Sweden), AIA (Spain) and DTU (Denmark)</p>
+<p>​- ​RTE: http://www.rte-france.com/</p>
+<p>- SmarTS Lab, research group at KTH: https://www.kth.se/en</p>
+<p>​- ​AIA: http://www.aia.es/en/energy/</p>
+<p>​- ​DTU: http://www.dtu.dk/english</p>
+<p>The authors can be contacted by email: info@itesla-ipsl.org </p>
+<p>​</p>
+<p>​​This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
+<p>If a copy of the MPL was not distributed with this file, You can obtain one at http://mozilla.org/MPL/2.0/.</p>
 </html>"));
 end Bus;

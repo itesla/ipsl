@@ -1,4 +1,4 @@
-within iPSL.NonElectrical.Continuous;
+﻿within iPSL.NonElectrical.Continuous;
 model RampTrackingFilter "Ramp-tracking filter"
   extends Modelica.Blocks.Interfaces.SISO;
   parameter Real T_1;
@@ -159,41 +159,31 @@ equation
     Icon(coordinateSystem(
         preserveAspectRatio=true,
         extent={{-100,-100},{100,100}},
-        initialScale=0.05), graphics={
-        Rectangle(extent={{-100,100},{100,-100}}, lineColor={0,0,0}),
-        Text(
+        initialScale=0.05), graphics={Rectangle(extent={{-100,100},{100,-100}}, lineColor={0,0,0}),Text(
           extent={{-58,40},{40,-4}},
           lineColor={0,0,255},
-          textString="1+sT"),
-        Text(
+          textString="1+sT"),Text(
           extent={{-64,20},{56,-58}},
           lineColor={0,0,255},
-          textString="(1+sT )"),
-        Text(
+          textString="(1+sT )"),Text(
           extent={{22,28},{44,-4}},
           lineColor={0,0,255},
-          textString="1"),
-        Text(
+          textString="1"),Text(
           extent={{24,-10},{46,-42}},
           lineColor={0,0,255},
-          textString="2"),
-        Text(
+          textString="2"),Text(
           extent={{54,2},{66,-16}},
           lineColor={0,0,255},
-          textString="M"),
-        Line(
+          textString="M"),Line(
           points={{-60,40},{-74,40},{-74,-40},{-60,-40}},
           color={0,0,255},
-          thickness=1),
-        Line(
+          thickness=1),Line(
           points={{60,40},{76,40},{76,-40},{60,-40}},
           color={0,0,255},
-          thickness=1),
-        Text(
+          thickness=1),Text(
           extent={{76,48},{94,28}},
           lineColor={0,0,255},
-          textString="N"),
-        Line(
+          textString="N"),Line(
           points={{-68,0},{70,0}},
           color={0,0,255},
           thickness=1)}),
@@ -218,5 +208,16 @@ Ramp-tracking filter up to M*N<=8
 <td><p><a href=\"mailto:luigiv@kth.se\">luigiv@kth.se</a></p></td>
 </tr>
 </table>
+</html>", revisions="<!--DISCLAIMER-->
+<html>
+<p>Copyright 2015 RTE (France), SmarTS Lab (Sweden), AIA (Spain) and DTU (Denmark)</p>
+<p>​- ​RTE: http://www.rte-france.com/</p>
+<p>- SmarTS Lab, research group at KTH: https://www.kth.se/en</p>
+<p>​- ​AIA: http://www.aia.es/en/energy/</p>
+<p>​- ​DTU: http://www.dtu.dk/english</p>
+<p>The authors can be contacted by email: info@itesla-ipsl.org </p>
+<p>​</p>
+<p>​​This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
+<p>If a copy of the MPL was not distributed with this file, You can obtain one at http://mozilla.org/MPL/2.0/.</p>
 </html>"));
 end RampTrackingFilter;

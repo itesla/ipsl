@@ -1,4 +1,4 @@
-within iPSL.Electrical.Solar.KTH;
+﻿within iPSL.Electrical.Solar.KTH;
 function Inputselectorfunction
   input Real vd;
   input Real id;
@@ -26,14 +26,27 @@ algorithm
       end if;
     end if;
   end if;
-  annotation (Diagram(coordinateSystem(
+  annotation (
+    Diagram(coordinateSystem(
         extent={{-148.5,-105.0},{148.5,105.0}},
         preserveAspectRatio=true,
         initialScale=0.1,
-        grid={5,5})), Diagram(coordinateSystem(
+        grid={5,5})),
+    Diagram(coordinateSystem(
         extent={{-148.5,-105.0},{148.5,105.0}},
         preserveAspectRatio=true,
         initialScale=0.1,
-        grid={5,5})));
+        grid={5,5})),
+    Documentation(revisions="<!--DISCLAIMER-->
+<html>
+<p>Copyright 2015 RTE (France), SmarTS Lab (Sweden), AIA (Spain) and DTU (Denmark)</p>
+<p>​- ​RTE: http://www.rte-france.com/</p>
+<p>- SmarTS Lab, research group at KTH: https://www.kth.se/en</p>
+<p>​- ​AIA: http://www.aia.es/en/energy/</p>
+<p>​- ​DTU: http://www.dtu.dk/english</p>
+<p>The authors can be contacted by email: info@itesla-ipsl.org </p>
+<p>​</p>
+<p>​​This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
+<p>If a copy of the MPL was not distributed with this file, You can obtain one at http://mozilla.org/MPL/2.0/.</p>
+</html>"));
 end Inputselectorfunction;
-

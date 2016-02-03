@@ -1,6 +1,4 @@
-within iPSL.Electrical.Controls.Simulink.TG;
-
-
+﻿within iPSL.Electrical.Controls.Simulink.TG;
 model Governor "Speed governor model for hydro turbines"
   Modelica.Blocks.Interfaces.RealInput Omega "Rotor speed in p.u" annotation (Placement(transformation(extent={{-96,26},{-86,38}}), iconTransformation(extent={{-14,30},{-4,40}})));
   Modelica.Blocks.Sources.Constant Omega_n(k=1) "Nominal rotor speed in p.u" annotation (Placement(transformation(extent={{-94,6},{-82,18}})));
@@ -81,66 +79,51 @@ equation
   connect(Integrator.y, add3.u2) annotation (Line(points={{44.7,7},{48,7},{48,12.4},{50.8,12.4}}, color={0,0,127}));
   connect(Gain1.y, add3.u1) annotation (Line(points={{24.7,25},{44,25},{44,19.6},{50.8,19.6}}, color={0,0,127}));
   annotation (
-    Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{160,100}}), graphics={
-        Text(
+    Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{160,100}}), graphics={Text(
           extent={{90,-6},{128,-10}},
           lineColor={0,0,127},
-          textString="Servomotor"),
-        Text(
+          textString="Servomotor"),Text(
           extent={{14,34},{52,30}},
           lineColor={0,0,127},
-          textString="PI Control"),
-        Text(
+          textString="PI Control"),Text(
           extent={{-102,36},{-78,34}},
           lineColor={0,0,127},
-          textString="w (rotor speed)"),
-        Text(
+          textString="w (rotor speed)"),Text(
           extent={{-100,-40},{-76,-42}},
           lineColor={0,0,127},
-          textString="P (active power)"),
-        Text(
+          textString="P (active power)"),Text(
           extent={{-98,-8},{-74,-10}},
           lineColor={0,0,127},
-          textString="P0 (power set point)"),
-        Text(
+          textString="P0 (power set point)"),Text(
           extent={{-50,6},{-32,8}},
           lineColor={0,0,127},
           textString="Speed drop")}),
-    Icon(coordinateSystem(extent={{-100,-100},{160,100}}, preserveAspectRatio=false), graphics={
-        Rectangle(extent={{-4,46},{150,-20}}, lineColor={0,0,255}),
-        Text(
+    Icon(coordinateSystem(extent={{-100,-100},{160,100}}, preserveAspectRatio=false), graphics={Rectangle(extent={{-4,46},{150,-20}}, lineColor={0,0,255}),Text(
           extent={{24,30},{126,6}},
           lineColor={0,0,255},
-          textString="Speed Governor"),
-        Text(
+          textString="Speed Governor"),Text(
           extent={{0,42},{20,26}},
           lineColor={0,0,255},
-          textString="Omega"),
-        Text(
+          textString="Omega"),Text(
           extent={{136,24},{152,12}},
           lineColor={0,0,255},
-          textString="z"),
-        Text(
+          textString="z"),Text(
           extent={{0,20},{20,4}},
           lineColor={0,0,255},
-          textString="Pmset"),
-        Text(
+          textString="Pmset"),Text(
           extent={{0,-2},{20,-18}},
           lineColor={0,0,255},
           textString="Pe")}),
-    Documentation(info="<html>
-<p><br><span style=\"font-family: MS Shell Dlg 2;\">&LT;iPSL: iTesla Power System Library&GT;</span></p>
-<p><span style=\"font-family: MS Shell Dlg 2;\">Copyright 2015 RTE (France), AIA (Spain), KTH (Sweden) and DTU (Denmark)</span></p>
-<ul>
-<li><span style=\"font-family: MS Shell Dlg 2;\">RTE: http://www.rte-france.com/ </span></li>
-<li><span style=\"font-family: MS Shell Dlg 2;\">AIA: http://www.aia.es/en/energy/</span></li>
-<li><span style=\"font-family: MS Shell Dlg 2;\">KTH: https://www.kth.se/en</span></li>
-<li><span style=\"font-family: MS Shell Dlg 2;\">DTU:http://www.dtu.dk/english</span></li>
-</ul>
-<p><span style=\"font-family: MS Shell Dlg 2;\">The authors can be contacted by email: info at itesla-ipsl dot org</span></p>
-<p><span style=\"font-family: MS Shell Dlg 2;\">This package is part of the iTesla Power System Library (&QUOT;iPSL&QUOT;) .</span></p>
-<p><span style=\"font-family: MS Shell Dlg 2;\">The iPSL is free software: you can redistribute it and/or modify it under the terms of the GNU Lesser General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.</span></p>
-<p><span style=\"font-family: MS Shell Dlg 2;\">The iPSL is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU Lesser General Public License for more details.</span></p>
-<p><span style=\"font-family: MS Shell Dlg 2;\">You should have received a copy of the GNU Lesser General Public License along with the iPSL. If not, see &LT;http://www.gnu.org/licenses/&GT;.</span></p>
+    Documentation(info="", revisions="<!--DISCLAIMER-->
+<html>
+<p>Copyright 2015 RTE (France), SmarTS Lab (Sweden), AIA (Spain) and DTU (Denmark)</p>
+<p>​- ​RTE: http://www.rte-france.com/</p>
+<p>- SmarTS Lab, research group at KTH: https://www.kth.se/en</p>
+<p>​- ​AIA: http://www.aia.es/en/energy/</p>
+<p>​- ​DTU: http://www.dtu.dk/english</p>
+<p>The authors can be contacted by email: info@itesla-ipsl.org </p>
+<p>​</p>
+<p>​​This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
+<p>If a copy of the MPL was not distributed with this file, You can obtain one at http://mozilla.org/MPL/2.0/.</p>
 </html>"));
 end Governor;

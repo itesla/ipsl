@@ -1,6 +1,4 @@
-within iPSL.Electrical.Controls.PSSE.ES.EXNI;
-
-
+﻿within iPSL.Electrical.Controls.PSSE.ES.EXNI;
 model EXNI "Bus or Solid Fed SCR Bridge Excitation System Model Type NI (NVE)"
   parameter Real T_R=0.60000E-01 "Voltage input time constant (s)";
   //0
@@ -96,55 +94,43 @@ equation
   connect(switch1.u1, limiter.y) annotation (Line(points={{58.8,44.8},{50,44.8},{50,5},{40,5},{34.7,5}}, color={0,0,127}));
   connect(switch1.y, negCurLogic.Vd) annotation (Line(points={{72.6,40},{80,40},{80,14},{64,14},{64,10.5},{66.6667,10.5}}, color={0,0,127}));
   connect(booleanConstant.y, switch1.u2) annotation (Line(points={{40.6,66},{54,66},{54,40},{58.8,40}}, color={255,0,255}));
-  annotation (Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,100}}), graphics={
-        Text(
+  annotation (Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,100}}), graphics={Text(
           extent={{-58,-8},{-52,-14}},
           lineColor={0,0,255},
-          textString="Vs"),
-        Text(
+          textString="Vs"),Text(
           extent={{-84,34},{-76,26}},
           lineColor={0,0,255},
-          textString="Vref"),
-        Text(
+          textString="Vref"),Text(
           extent={{-94,-30},{-78,-36}},
           lineColor={0,0,255},
-          textString="Efd0"),
-        Text(
+          textString="Efd0"),Text(
           extent={{-102,16},{-74,10}},
           lineColor={0,0,255},
-          textString="Ec"),
-        Text(
+          textString="Ec"),Text(
           extent={{-94,2},{-76,-8}},
           lineColor={0,0,255},
-          textString="VOTHSG"),
-        Text(
+          textString="VOTHSG"),Text(
           extent={{-96,-8},{-74,-14}},
           lineColor={0,0,255},
-          textString="VOEL"),
-        Text(
+          textString="VOEL"),Text(
           extent={{-96,-16},{-74,-22}},
           lineColor={0,0,255},
-          textString="VUEL"),
-        Text(
+          textString="VUEL"),Text(
           extent={{-92,54},{-80,46}},
           lineColor={0,0,255},
-          textString="Et"),
-        Text(
+          textString="Et"),Text(
           extent={{-88,-42},{-70,-50}},
           lineColor={0,0,255},
-          textString="XadIfd")}), Documentation(info="<html>
-<p><br><span style=\"font-family: MS Shell Dlg 2;\">&LT;iPSL: iTesla Power System Library&GT;</span></p>
-<p><span style=\"font-family: MS Shell Dlg 2;\">Copyright 2015 RTE (France), AIA (Spain), KTH (Sweden) and DTU (Denmark)</span></p>
-<ul>
-<li><span style=\"font-family: MS Shell Dlg 2;\">RTE: http://www.rte-france.com/ </span></li>
-<li><span style=\"font-family: MS Shell Dlg 2;\">AIA: http://www.aia.es/en/energy/</span></li>
-<li><span style=\"font-family: MS Shell Dlg 2;\">KTH: https://www.kth.se/en</span></li>
-<li><span style=\"font-family: MS Shell Dlg 2;\">DTU:http://www.dtu.dk/english</span></li>
-</ul>
-<p><span style=\"font-family: MS Shell Dlg 2;\">The authors can be contacted by email: info at itesla-ipsl dot org</span></p>
-<p><span style=\"font-family: MS Shell Dlg 2;\">This package is part of the iTesla Power System Library (&QUOT;iPSL&QUOT;) .</span></p>
-<p><span style=\"font-family: MS Shell Dlg 2;\">The iPSL is free software: you can redistribute it and/or modify it under the terms of the GNU Lesser General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.</span></p>
-<p><span style=\"font-family: MS Shell Dlg 2;\">The iPSL is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU Lesser General Public License for more details.</span></p>
-<p><span style=\"font-family: MS Shell Dlg 2;\">You should have received a copy of the GNU Lesser General Public License along with the iPSL. If not, see &LT;http://www.gnu.org/licenses/&GT;.</span></p>
+          textString="XadIfd")}), Documentation(info="", revisions="<!--DISCLAIMER-->
+<html>
+<p>Copyright 2015 RTE (France), SmarTS Lab (Sweden), AIA (Spain) and DTU (Denmark)</p>
+<p>​- ​RTE: http://www.rte-france.com/</p>
+<p>- SmarTS Lab, research group at KTH: https://www.kth.se/en</p>
+<p>​- ​AIA: http://www.aia.es/en/energy/</p>
+<p>​- ​DTU: http://www.dtu.dk/english</p>
+<p>The authors can be contacted by email: info@itesla-ipsl.org </p>
+<p>​</p>
+<p>​​This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
+<p>If a copy of the MPL was not distributed with this file, You can obtain one at http://mozilla.org/MPL/2.0/.</p>
 </html>"));
 end EXNI;

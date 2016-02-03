@@ -1,4 +1,4 @@
-within iPSL.Electrical.Controls.Simulink.TG;
+﻿within iPSL.Electrical.Controls.Simulink.TG;
 model TurbineTm "Hydraulic turbine model. Mechanical torque as output"
   Modelica.Blocks.Interfaces.RealInput z "Gate openning" annotation (Placement(transformation(extent={{-95,2},{-88,10}}), iconTransformation(extent={{-92,20},{-78,34}})));
   Modelica.Blocks.Sources.Constant Hs(k=1) annotation (Placement(transformation(extent={{-74,-12},{-58,4}})));
@@ -30,59 +30,45 @@ equation
   connect(z, division1.u2) annotation (Line(points={{-91.5,6},{-84,6},{-84,16.8},{-79.4,16.8}}, color={0,0,127}));
   connect(product.u1, add.u1) annotation (Line(points={{50.4,6.8},{46,6.8},{46,28},{-34,28},{-34,8},{-30,8}}, color={0,0,127}));
   annotation (
-    Icon(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,100}}), graphics={
-        Rectangle(extent={{-78,46},{32,-44}}, lineColor={0,0,255}),
-        Text(
+    Icon(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,100}}), graphics={Rectangle(extent={{-78,46},{32,-44}}, lineColor={0,0,255}),Text(
           extent={{-78,32},{-64,20}},
           lineColor={0,0,255},
-          textString="z"),
-        Text(
+          textString="z"),Text(
           extent={{-76,-8},{-56,-28}},
           lineColor={0,0,255},
-          textString="omega"),
-        Text(
+          textString="omega"),Text(
           extent={{18,14},{28,0}},
           lineColor={0,0,255},
-          textString="Tm"),
-        Text(
+          textString="Tm"),Text(
           extent={{-52,18},{8,-20}},
           lineColor={0,0,255},
           textString="Hy turbine")}),
-    Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,100}}), graphics={
-        Text(
+    Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,100}}), graphics={Text(
           extent={{-96,0},{-80,-2}},
           lineColor={0,0,127},
-          textString="z (gate opening)"),
-        Text(
+          textString="z (gate opening)"),Text(
           extent={{-96,-28},{-80,-30}},
           lineColor={0,0,127},
-          textString="w (rotor speed)"),
-        Text(
+          textString="w (rotor speed)"),Text(
           extent={{102,10},{128,8}},
           lineColor={0,0,127},
-          textString="Tm (mech. torque)"),
-        Text(
+          textString="Tm (mech. torque)"),Text(
           extent={{52,14},{70,14}},
           lineColor={0,0,127},
-          textString="Pm (mech. power)"),
-        Text(
+          textString="Pm (mech. power)"),Text(
           extent={{-8,-6},{22,-8}},
           lineColor={0,0,127},
           textString="1/Tw (water time constant)")}),
-    Documentation(info="<html>
-<p><br><span style=\"font-family: MS Shell Dlg 2;\">&LT;iPSL: iTesla Power System Library&GT;</span></p>
-<p><span style=\"font-family: MS Shell Dlg 2;\">Copyright 2015 RTE (France), AIA (Spain), KTH (Sweden) and DTU (Denmark)</span></p>
-<ul>
-<li><span style=\"font-family: MS Shell Dlg 2;\">RTE: http://www.rte-france.com/ </span></li>
-<li><span style=\"font-family: MS Shell Dlg 2;\">AIA: http://www.aia.es/en/energy/</span></li>
-<li><span style=\"font-family: MS Shell Dlg 2;\">KTH: https://www.kth.se/en</span></li>
-<li><span style=\"font-family: MS Shell Dlg 2;\">DTU:http://www.dtu.dk/english</span></li>
-</ul>
-<p><span style=\"font-family: MS Shell Dlg 2;\">The authors can be contacted by email: info at itesla-ipsl dot org</span></p>
-<p><span style=\"font-family: MS Shell Dlg 2;\">This package is part of the iTesla Power System Library (&QUOT;iPSL&QUOT;) .</span></p>
-<p><span style=\"font-family: MS Shell Dlg 2;\">The iPSL is free software: you can redistribute it and/or modify it under the terms of the GNU Lesser General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.</span></p>
-<p><span style=\"font-family: MS Shell Dlg 2;\">The iPSL is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU Lesser General Public License for more details.</span></p>
-<p><span style=\"font-family: MS Shell Dlg 2;\">You should have received a copy of the GNU Lesser General Public License along with the iPSL. If not, see &LT;http://www.gnu.org/licenses/&GT;.</span></p>
+    Documentation(info="", revisions="<!--DISCLAIMER-->
+<html>
+<p>Copyright 2015 RTE (France), SmarTS Lab (Sweden), AIA (Spain) and DTU (Denmark)</p>
+<p>​- ​RTE: http://www.rte-france.com/</p>
+<p>- SmarTS Lab, research group at KTH: https://www.kth.se/en</p>
+<p>​- ​AIA: http://www.aia.es/en/energy/</p>
+<p>​- ​DTU: http://www.dtu.dk/english</p>
+<p>The authors can be contacted by email: info@itesla-ipsl.org </p>
+<p>​</p>
+<p>​​This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
+<p>If a copy of the MPL was not distributed with this file, You can obtain one at http://mozilla.org/MPL/2.0/.</p>
 </html>"));
 end TurbineTm;
-
