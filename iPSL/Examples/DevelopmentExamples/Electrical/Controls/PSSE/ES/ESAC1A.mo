@@ -1,4 +1,4 @@
-﻿within iPSL.Examples.DevelopmentExamples.Electrical.Controls.PSSE.ES;
+within iPSL.Examples.DevelopmentExamples.Electrical.Controls.PSSE.ES;
 model ESAC1A "SMIB system with one load and GENROE model"
   import iPSL;
   iPSL.Electrical.Branches.PwLine pwLine(
@@ -133,16 +133,18 @@ equation
   connect(eSAC1A.EFD, gENROE.EFD) annotation (Line(points={{-88.587,-38},{-92,-38},{-92,0},{-81.6,0}}, color={0,0,127}));
   connect(const1.y, eSAC1A.VUEL) annotation (Line(points={{-20.5,-65},{-45.7391,-65},{-45.7391,-47.1}}, color={0,0,127}));
   connect(const2.y, eSAC1A.VOEL) annotation (Line(points={{-20.5,-85},{-20.5,-85},{-52.7591,-85},{-52.7591,-47.15}}, color={0,0,127}));
-  annotation (Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,100}})), Documentation(revisions="<!--DISCLAIMER-->
-<html>
-<p>Copyright 2015 RTE (France), SmarTS Lab (Sweden), AIA (Spain) and DTU (Denmark)</p>
-<p>​- ​RTE: http://www.rte-france.com/</p>
-<p>- SmarTS Lab, research group at KTH: https://www.kth.se/en</p>
-<p>​- ​AIA: http://www.aia.es/en/energy/</p>
-<p>​- ​DTU: http://www.dtu.dk/english</p>
-<p>The authors can be contacted by email: info@itesla-ipsl.org </p>
-<p>​</p>
-<p>​​This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
-<p>If a copy of the MPL was not distributed with this file, You can obtain one at http://mozilla.org/MPL/2.0/.</p>
+  annotation (Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,100}})), Documentation(revisions="<html>
+<!--DISCLAIMER-->
+<p>Copyright 2015-2016 RTE (France), SmarTS Lab (Sweden), AIA (Spain) and DTU (Denmark)</p>
+<ul>
+<li>RTE: <a href=\"http://www.rte-france.com\">http://www.rte-france.com</a></li>
+<li>SmarTS Lab, research group at KTH: <a href=\"https://www.kth.se/en\">https://www.kth.se/en</a></li>
+<li>AIA: <a href=\"http://www.aia.es/en/energy\"> http://www.aia.es/en/energy</a></li>
+<li>DTU: <a href=\"http://www.dtu.dk/english\"> http://www.dtu.dk/english</a></li>
+</ul>
+<p>The authors can be contacted by email: <a href=\"mailto:info@itesla-ipsl.org\">info@itesla-ipsl.org</a></p>
+
+<p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
+<p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
 </html>"));
 end ESAC1A;

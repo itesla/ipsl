@@ -1,4 +1,4 @@
-﻿within iPSL.Electrical.Machines.Eurostag;
+within iPSL.Electrical.Machines.Eurostag;
 model PwMachineM10 "Induction Machine. The model corresponds to Eurostag's full model for M10 machine.
                   Developed by RTE and adapted by AIA. 2014/03/10"
   // Connectors
@@ -27,7 +27,7 @@ model PwMachineM10 "Induction Machine. The model corresponds to Eurostag's full 
   parameter Real lStatIn(fixed=false);
   // Stator leakage reactance (READST)
   parameter Real mQ0Pu(fixed=false);
-  // Rotor-stator mutual reactance (FMUQST) (le champ REAQST est sautÃÂ© puis =READST)
+  // Rotor-stator mutual reactance (FMUQST) (le champ REAQST est sautÃ© puis =READST)
   parameter Real rQ1Pu(fixed=false);
   // Leakage resistance - winding 1 (RESQA1)
   parameter Real lQ1Pu(fixed=false);
@@ -171,16 +171,18 @@ equation
           extent={{-12,-7},{12,7}},
           lineColor={0,0,255},
           textString="M10")}),
-    Documentation(revisions="<!--DISCLAIMER-->
-<html>
-<p>Copyright 2015 RTE (France), SmarTS Lab (Sweden), AIA (Spain) and DTU (Denmark)</p>
-<p>​- ​RTE: http://www.rte-france.com/</p>
-<p>- SmarTS Lab, research group at KTH: https://www.kth.se/en</p>
-<p>​- ​AIA: http://www.aia.es/en/energy/</p>
-<p>​- ​DTU: http://www.dtu.dk/english</p>
-<p>The authors can be contacted by email: info@itesla-ipsl.org </p>
-<p>​</p>
-<p>​​This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
-<p>If a copy of the MPL was not distributed with this file, You can obtain one at http://mozilla.org/MPL/2.0/.</p>
+    Documentation(revisions="<html>
+<!--DISCLAIMER-->
+<p>Copyright 2015-2016 RTE (France), SmarTS Lab (Sweden), AIA (Spain) and DTU (Denmark)</p>
+<ul>
+<li>RTE: <a href=\"http://www.rte-france.com\">http://www.rte-france.com</a></li>
+<li>SmarTS Lab, research group at KTH: <a href=\"https://www.kth.se/en\">https://www.kth.se/en</a></li>
+<li>AIA: <a href=\"http://www.aia.es/en/energy\"> http://www.aia.es/en/energy</a></li>
+<li>DTU: <a href=\"http://www.dtu.dk/english\"> http://www.dtu.dk/english</a></li>
+</ul>
+<p>The authors can be contacted by email: <a href=\"mailto:info@itesla-ipsl.org\">info@itesla-ipsl.org</a></p>
+
+<p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
+<p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
 </html>"));
 end PwMachineM10;

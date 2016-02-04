@@ -1,4 +1,4 @@
-﻿within iPSL.Examples.DevelopmentExamples.Electrical.Wind.PSSE.WT4G;
+within iPSL.Examples.DevelopmentExamples.Electrical.Wind.PSSE.WT4G;
 model WT4G1_WT4E1
   import iPSL;
   constant Real pi=Modelica.Constants.pi;
@@ -110,16 +110,18 @@ equation
   connect(wT4G1.P, wT4E1_1.P) annotation (Line(points={{-65.2,-4.8},{-68,-4.8},{-68,-2.4},{-73.2,-2.4}}, color={0,0,127}));
   connect(wT4G1.V, wT4E1_1.V) annotation (Line(points={{-65.2,0},{-70,0},{-70,-9.6},{-73.2,-9.6}}, color={0,0,127}));
   connect(wT4G1.Q, wT4E1_1.Q) annotation (Line(points={{-65.2,-9.6},{-68,-9.6},{-68,-6},{-73.2,-6}}, color={0,0,127}));
-  annotation (Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,100}})), Documentation(revisions="<!--DISCLAIMER-->
-<html>
-<p>Copyright 2015 RTE (France), SmarTS Lab (Sweden), AIA (Spain) and DTU (Denmark)</p>
-<p>​- ​RTE: http://www.rte-france.com/</p>
-<p>- SmarTS Lab, research group at KTH: https://www.kth.se/en</p>
-<p>​- ​AIA: http://www.aia.es/en/energy/</p>
-<p>​- ​DTU: http://www.dtu.dk/english</p>
-<p>The authors can be contacted by email: info@itesla-ipsl.org </p>
-<p>​</p>
-<p>​​This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
-<p>If a copy of the MPL was not distributed with this file, You can obtain one at http://mozilla.org/MPL/2.0/.</p>
+  annotation (Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,100}})), Documentation(revisions="<html>
+<!--DISCLAIMER-->
+<p>Copyright 2015-2016 RTE (France), SmarTS Lab (Sweden), AIA (Spain) and DTU (Denmark)</p>
+<ul>
+<li>RTE: <a href=\"http://www.rte-france.com\">http://www.rte-france.com</a></li>
+<li>SmarTS Lab, research group at KTH: <a href=\"https://www.kth.se/en\">https://www.kth.se/en</a></li>
+<li>AIA: <a href=\"http://www.aia.es/en/energy\"> http://www.aia.es/en/energy</a></li>
+<li>DTU: <a href=\"http://www.dtu.dk/english\"> http://www.dtu.dk/english</a></li>
+</ul>
+<p>The authors can be contacted by email: <a href=\"mailto:info@itesla-ipsl.org\">info@itesla-ipsl.org</a></p>
+
+<p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
+<p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
 </html>"));
 end WT4G1_WT4E1;

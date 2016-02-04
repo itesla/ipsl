@@ -1,4 +1,4 @@
-﻿within iPSL.Electrical.Wind.PSSE.WT3G;
+within iPSL.Electrical.Wind.PSSE.WT3G;
 model WT3E1
   parameter Integer VARFLG "0 constant Q; 1 Reactive control; -1 Constant PF control"
     annotation (choices(
@@ -39,7 +39,7 @@ model WT3E1
   parameter Real wP20=0.78000 "  Shaft speed at 20% rated power (pu) ";
   parameter Real wP40=0.98000 "  Shaft speed at 40% rated power (pu)";
   parameter Real wP60=1.1200 "  Shaft speed at 60% rated power (pu)";
-  parameter Real Pmin=0.74000 "  Minimum power for operating at ï·P100 speed (pu)";
+  parameter Real Pmin=0.74000 "  Minimum power for operating at P100 speed (pu)";
   parameter Real wP100=1.2000 "  Shaft speed at 100% rated power (pu)";
 protected
   parameter Real v0;
@@ -344,7 +344,7 @@ protected
     parameter Real wP20=0.78000 "  Shaft speed at 20% rated power (pu) ";
     parameter Real wP40=0.98000 "  Shaft speed at 40% rated power (pu)";
     parameter Real wP60=1.1200 "  Shaft speed at 60% rated power (pu)";
-    parameter Real Pmin=0.74000 "  Minimum power for operating at ï·P100 speed (pu)";
+    parameter Real Pmin=0.74000 "  Minimum power for operating at P100 speed (pu)";
     parameter Real wP100=1.2000 "  Shaft speed at 100% rated power (pu)";
     parameter Real k20;
     parameter Real k30;
@@ -608,16 +608,18 @@ equation
           extent={{-80,60},{80,-60}},
           lineColor={28,108,200},
           textString="WT3E1")}),
-    Documentation(revisions="<!--DISCLAIMER-->
-<html>
-<p>Copyright 2015 RTE (France), SmarTS Lab (Sweden), AIA (Spain) and DTU (Denmark)</p>
-<p>​- ​RTE: http://www.rte-france.com/</p>
-<p>- SmarTS Lab, research group at KTH: https://www.kth.se/en</p>
-<p>​- ​AIA: http://www.aia.es/en/energy/</p>
-<p>​- ​DTU: http://www.dtu.dk/english</p>
-<p>The authors can be contacted by email: info@itesla-ipsl.org </p>
-<p>​</p>
-<p>​​This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
-<p>If a copy of the MPL was not distributed with this file, You can obtain one at http://mozilla.org/MPL/2.0/.</p>
+    Documentation(revisions="<html>
+<!--DISCLAIMER-->
+<p>Copyright 2015-2016 RTE (France), SmarTS Lab (Sweden), AIA (Spain) and DTU (Denmark)</p>
+<ul>
+<li>RTE: <a href=\"http://www.rte-france.com\">http://www.rte-france.com</a></li>
+<li>SmarTS Lab, research group at KTH: <a href=\"https://www.kth.se/en\">https://www.kth.se/en</a></li>
+<li>AIA: <a href=\"http://www.aia.es/en/energy\"> http://www.aia.es/en/energy</a></li>
+<li>DTU: <a href=\"http://www.dtu.dk/english\"> http://www.dtu.dk/english</a></li>
+</ul>
+<p>The authors can be contacted by email: <a href=\"mailto:info@itesla-ipsl.org\">info@itesla-ipsl.org</a></p>
+
+<p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
+<p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
 </html>"));
 end WT3E1;

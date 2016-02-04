@@ -1,4 +1,4 @@
-﻿within iPSL.Electrical.Loads.PSAT;
+within iPSL.Electrical.Loads.PSAT;
 model Mixed_Load "Mixed Load"
   import Modelica.Constants.pi;
   extends BaseClasses.baseLoad;
@@ -57,16 +57,18 @@ equation
 </html>
 <html>
 <pre><span style=\"font-family: Courier New,courier; color: #006400;\">Remember:&nbsp;Pz+Pi+Pp=1&nbsp;and&nbsp;Qz+Qi+Qp=1&QUOT;</span></pre>
-</html>", revisions="<!--DISCLAIMER-->
-<html>
-<p>Copyright 2015 RTE (France), SmarTS Lab (Sweden), AIA (Spain) and DTU (Denmark)</p>
-<p>​- ​RTE: http://www.rte-france.com/</p>
-<p>- SmarTS Lab, research group at KTH: https://www.kth.se/en</p>
-<p>​- ​AIA: http://www.aia.es/en/energy/</p>
-<p>​- ​DTU: http://www.dtu.dk/english</p>
-<p>The authors can be contacted by email: info@itesla-ipsl.org </p>
-<p>​</p>
-<p>​​This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
-<p>If a copy of the MPL was not distributed with this file, You can obtain one at http://mozilla.org/MPL/2.0/.</p>
+</html>", revisions="<html>
+<!--DISCLAIMER-->
+<p>Copyright 2015-2016 RTE (France), SmarTS Lab (Sweden), AIA (Spain) and DTU (Denmark)</p>
+<ul>
+<li>RTE: <a href=\"http://www.rte-france.com\">http://www.rte-france.com</a></li>
+<li>SmarTS Lab, research group at KTH: <a href=\"https://www.kth.se/en\">https://www.kth.se/en</a></li>
+<li>AIA: <a href=\"http://www.aia.es/en/energy\"> http://www.aia.es/en/energy</a></li>
+<li>DTU: <a href=\"http://www.dtu.dk/english\"> http://www.dtu.dk/english</a></li>
+</ul>
+<p>The authors can be contacted by email: <a href=\"mailto:info@itesla-ipsl.org\">info@itesla-ipsl.org</a></p>
+
+<p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
+<p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
 </html>"));
 end Mixed_Load;

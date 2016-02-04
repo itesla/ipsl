@@ -1,4 +1,4 @@
-﻿within iPSL.Electrical.Machines.Eurostag;
+within iPSL.Electrical.Machines.Eurostag;
 model DYNModelM2S_INIT "Initialization model for synchronous mahine M2S.
                   Developed by RTE and adapted by AIA. 2014/03/10"
   Modelica.Blocks.Interfaces.RealInput pin_CM;
@@ -222,7 +222,7 @@ model DYNModelM2S_INIT "Initialization model for synchronous mahine M2S.
   Real u1i(start=ui0);
   Real mSal;
   // YMSAL
-  // variables conservÃ©es par le compilateur:
+  // variables conservées par le compilateur:
   // ---------------------------------------
   parameter Real ir0_0=p0*ur0 + q0*ui0;
   parameter Real ii0_0=p0*ui0 - q0*ur0;
@@ -387,7 +387,7 @@ equation
   // YNUM
   teta0Denom = ur0 + (rTfo + rStat)*ir0 - omega_0*(xTfo + xQ)*ii0;
   // YDENOM
-  //expression ange moitiÃ©
+  //expression ange moitié
   //ONE*teta0 = atan2(teta0Num ,teta0Denom); // YTETA = ATAN2(YNUM,YDENOM)
   ONE*teta0 = 2*atan(teta0Num/(sqrt(teta0Num*teta0Num + teta0Denom*teta0Denom) + teta0Denom));
   ONE*iD0 = sin(teta0)*ir0 - cos(teta0)*ii0;
@@ -398,7 +398,7 @@ equation
   // YUD
   uQ0 = cos(teta0)*ur0 + sin(teta0)*ui0;
   // YUQ
-  // expression angle moitiÃ©
+  // expression angle moitié
   //ONE*tetaInterne0 = atan2(uD0,uQ0);
   ONE*tetaInterne0 = 2*atan(uD0/(sqrt(uD0*uD0 + uQ0*uQ0) + uQ0));
   ONE*lambdaAD0 = -(uQ0 + (rStat + rTfo)*iQ0 + (lStat + xTfo)*iD0)/omega_0;
@@ -486,16 +486,18 @@ equation
   else
     pin_FieldCurrent = -mDV/rrTfo*((lD + mrc)*pin_LAMBDAF - mrc*pin_LAMBDAD - lD*pin_LAMBDAAD)/(mrc*(lRot + lD) + lRot*lD);
   end if;
-  annotation (Documentation(revisions="<!--DISCLAIMER-->
-<html>
-<p>Copyright 2015 RTE (France), SmarTS Lab (Sweden), AIA (Spain) and DTU (Denmark)</p>
-<p>​- ​RTE: http://www.rte-france.com/</p>
-<p>- SmarTS Lab, research group at KTH: https://www.kth.se/en</p>
-<p>​- ​AIA: http://www.aia.es/en/energy/</p>
-<p>​- ​DTU: http://www.dtu.dk/english</p>
-<p>The authors can be contacted by email: info@itesla-ipsl.org </p>
-<p>​</p>
-<p>​​This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
-<p>If a copy of the MPL was not distributed with this file, You can obtain one at http://mozilla.org/MPL/2.0/.</p>
+  annotation (Documentation(revisions="<html>
+<!--DISCLAIMER-->
+<p>Copyright 2015-2016 RTE (France), SmarTS Lab (Sweden), AIA (Spain) and DTU (Denmark)</p>
+<ul>
+<li>RTE: <a href=\"http://www.rte-france.com\">http://www.rte-france.com</a></li>
+<li>SmarTS Lab, research group at KTH: <a href=\"https://www.kth.se/en\">https://www.kth.se/en</a></li>
+<li>AIA: <a href=\"http://www.aia.es/en/energy\"> http://www.aia.es/en/energy</a></li>
+<li>DTU: <a href=\"http://www.dtu.dk/english\"> http://www.dtu.dk/english</a></li>
+</ul>
+<p>The authors can be contacted by email: <a href=\"mailto:info@itesla-ipsl.org\">info@itesla-ipsl.org</a></p>
+
+<p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
+<p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
 </html>"));
 end DYNModelM2S_INIT;
