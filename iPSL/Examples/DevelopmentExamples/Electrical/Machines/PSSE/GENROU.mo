@@ -1,7 +1,6 @@
 within iPSL.Examples.DevelopmentExamples.Electrical.Machines.PSSE;
 model GENROU "SMIB system with one load and GENROE model"
   import iPSL;
-
   iPSL.Electrical.Branches.PwLine pwLine(
     R=0.001,
     X=0.2,
@@ -77,6 +76,7 @@ model GENROU "SMIB system with one load and GENROE model"
     Xpp=0.2,
     H=4.28) annotation (Placement(transformation(extent={{-82,-10},{-42,30}})));
   iPSL.Electrical.Buses.Bus GEN annotation (Placement(transformation(extent={{-44,0},{-24,20}})));
+  iPSL.Copyright copyright annotation (Placement(transformation(extent={{-100,-100},{-80,-80}})));
 equation
   connect(pwLine.n, pwLine1.p) annotation (Line(
       points={{-9,10},{3.5,10},{3.5,24},{29,24}},
