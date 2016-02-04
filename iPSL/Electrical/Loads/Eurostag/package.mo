@@ -1,6 +1,6 @@
 ﻿within iPSL.Electrical.Loads;
 package Eurostag "Load models from Eurostag components"
-annotation (Documentation(info="", revisions="<!--DISCLAIMER-->
+annotation (Documentation(revisions="<!--DISCLAIMER-->
 <html>
 <p>Copyright 2015 RTE (France), SmarTS Lab (Sweden), AIA (Spain) and DTU (Denmark)</p>
 <p>​- ​RTE: http://www.rte-france.com/</p>

@@ -125,7 +125,7 @@ equation
   connect(eXST1_1.VUEL, eXST1_1.VOEL) annotation (Line(points={{-40.5,-40.5},{-32,-40.5},{-32,-36},{-40.5,-36},{-40.5,-36.7}}, color={0,0,127}));
   connect(eXST1_1.XADIFD, gENROE.XADIFD) annotation (Line(points={{-40.5,-28.9},{-36,-28.9},{-36,-8},{-40.4,-8}}, color={0,0,127}));
   connect(eXST1_1.EFD0, gENROE.EFD0) annotation (Line(points={{-48.1,-44.5},{-48.1,-50},{-30,-50},{-30,-4},{-40.4,-4}}, color={0,0,127}));
-  annotation (Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,100}})), Documentation(info="", revisions="<!--DISCLAIMER-->
+  annotation (Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,100}})), Documentation(revisions="<!--DISCLAIMER-->
 <html>
 <p>Copyright 2015 RTE (France), SmarTS Lab (Sweden), AIA (Spain) and DTU (Denmark)</p>
 <p>​- ​RTE: http://www.rte-france.com/</p>

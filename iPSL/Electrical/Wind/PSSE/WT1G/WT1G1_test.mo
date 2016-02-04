@@ -78,7 +78,7 @@ equation
           textString="100 60HZ
 
 The B in Pwline stands for half charging B in PSSE transmission line",
-          fontSize=10)}), Documentation(info="", revisions="<!--DISCLAIMER-->
+          fontSize=10)}), Documentation(revisions="<!--DISCLAIMER-->
 <html>
 <p>Copyright 2015 RTE (France), SmarTS Lab (Sweden), AIA (Spain) and DTU (Denmark)</p>
 <p>​- ​RTE: http://www.rte-france.com/</p>

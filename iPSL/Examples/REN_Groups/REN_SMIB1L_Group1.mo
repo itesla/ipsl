@@ -89,7 +89,7 @@ equation
       color={0,0,255},
       smooth=Smooth.None));
   connect(pwFault.p, pwLine4.p) annotation (Line(points={{33.9167,-16},{33.9167,-16},{24,-16},{24,8}}, color={0,0,255}));
-  annotation (Diagram(coordinateSystem(preserveAspectRatio=true, extent={{-100,-100},{100,100}})), Documentation(info="", revisions="<!--DISCLAIMER-->
+  annotation (Diagram(coordinateSystem(preserveAspectRatio=true, extent={{-100,-100},{100,100}})), Documentation(revisions="<!--DISCLAIMER-->
 <html>
 <p>Copyright 2015 RTE (France), SmarTS Lab (Sweden), AIA (Spain) and DTU (Denmark)</p>
 <p>​- ​RTE: http://www.rte-france.com/</p>

@@ -30,7 +30,7 @@ equation
           fillColor={95,95,95},
           fillPattern=FillPattern.Solid)}),
     Diagram(graphics),
-    Documentation(info="", revisions="<!--DISCLAIMER-->
+    Documentation(revisions="<!--DISCLAIMER-->
 <html>
 <p>Copyright 2015 RTE (France), SmarTS Lab (Sweden), AIA (Spain) and DTU (Denmark)</p>
 <p>​- ​RTE: http://www.rte-france.com/</p>

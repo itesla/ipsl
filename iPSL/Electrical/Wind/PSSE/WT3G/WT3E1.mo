@@ -608,7 +608,7 @@ equation
           extent={{-80,60},{80,-60}},
           lineColor={28,108,200},
           textString="WT3E1")}),
-    Documentation(info="", revisions="<!--DISCLAIMER-->
+    Documentation(revisions="<!--DISCLAIMER-->
 <html>
 <p>Copyright 2015 RTE (France), SmarTS Lab (Sweden), AIA (Spain) and DTU (Denmark)</p>
 <p>​- ​RTE: http://www.rte-france.com/</p>

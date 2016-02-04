@@ -116,7 +116,7 @@ equation
   connect(sEXS.EFD, gENROE.EFD) annotation (Line(points={{-95.14,-40},{-100,-40},{-100,-10},{-95.6,-10}}, color={0,0,127}));
   annotation (
     Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-120,-100},{120,100}})),
-    Documentation(info="", revisions="<!--DISCLAIMER-->
+    Documentation(revisions="<!--DISCLAIMER-->
 <html>
 <p>Copyright 2015 RTE (France), SmarTS Lab (Sweden), AIA (Spain) and DTU (Denmark)</p>
 <p>​- ​RTE: http://www.rte-france.com/</p>

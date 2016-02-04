@@ -27,7 +27,7 @@ equation
   annotation (Icon(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,100}}), graphics={Line(points={{-100,100},{100,100},{0,-100},{-100,100}}, color={28,108,200}),Text(
           extent={{-62,66},{66,34}},
           lineColor={28,108,200},
-          textString="%P_0+j%Q_0")}), Documentation(info="", revisions="<!--DISCLAIMER-->
+          textString="%P_0+j%Q_0")}), Documentation(revisions="<!--DISCLAIMER-->
 <html>
 <p>Copyright 2015 RTE (France), SmarTS Lab (Sweden), AIA (Spain) and DTU (Denmark)</p>
 <p>​- ​RTE: http://www.rte-france.com/</p>

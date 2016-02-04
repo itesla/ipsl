@@ -7,8 +7,7 @@ package Data "Parameters for all the components for the Nordic 44 configuration"
 
 
 
-
-annotation (Documentation(info="", revisions="<!--DISCLAIMER-->
+annotation (Documentation(revisions="<!--DISCLAIMER-->
 <html>
 <p>Copyright 2015 RTE (France), SmarTS Lab (Sweden), AIA (Spain) and DTU (Denmark)</p>
 <p>​- ​RTE: http://www.rte-france.com/</p>

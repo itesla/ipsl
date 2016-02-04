@@ -133,7 +133,7 @@ equation
   connect(eSAC1A.EFD, gENROE.EFD) annotation (Line(points={{-88.587,-38},{-92,-38},{-92,0},{-81.6,0}}, color={0,0,127}));
   connect(const1.y, eSAC1A.VUEL) annotation (Line(points={{-20.5,-65},{-45.7391,-65},{-45.7391,-47.1}}, color={0,0,127}));
   connect(const2.y, eSAC1A.VOEL) annotation (Line(points={{-20.5,-85},{-20.5,-85},{-52.7591,-85},{-52.7591,-47.15}}, color={0,0,127}));
-  annotation (Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,100}})), Documentation(info="", revisions="<!--DISCLAIMER-->
+  annotation (Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,100}})), Documentation(revisions="<!--DISCLAIMER-->
 <html>
 <p>Copyright 2015 RTE (France), SmarTS Lab (Sweden), AIA (Spain) and DTU (Denmark)</p>
 <p>​- ​RTE: http://www.rte-france.com/</p>

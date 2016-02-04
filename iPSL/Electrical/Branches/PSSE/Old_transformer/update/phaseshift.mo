@@ -42,7 +42,7 @@ equation
           color={0,0,255},
           thickness=0.5,
           smooth=Smooth.None)}),
-    Documentation(info="", revisions="<!--DISCLAIMER-->
+    Documentation(revisions="<!--DISCLAIMER-->
 <html>
 <p>Copyright 2015 RTE (France), SmarTS Lab (Sweden), AIA (Spain) and DTU (Denmark)</p>
 <p>​- ​RTE: http://www.rte-france.com/</p>

@@ -114,7 +114,7 @@ equation
   connect(tGOV1_1.SPEED, gENROE.SPEED) annotation (Line(points={{-55,51},{-34,51},{-34,28},{-40.4,28}}, color={0,0,127}));
   connect(tGOV1_1.PMECH0, gENROE.PMECH0) annotation (Line(points={{-55,45},{-30,45},{-30,4},{-40.4,4}}, color={0,0,127}));
   connect(tGOV1_1.PMECH, gENROE.PMECH) annotation (Line(points={{-71,48},{-92,48},{-92,20},{-81.6,20}}, color={0,0,127}));
-  annotation (Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,100}})), Documentation(info="", revisions="<!--DISCLAIMER-->
+  annotation (Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,100}})), Documentation(revisions="<!--DISCLAIMER-->
 <html>
 <p>Copyright 2015 RTE (France), SmarTS Lab (Sweden), AIA (Spain) and DTU (Denmark)</p>
 <p>​- ​RTE: http://www.rte-france.com/</p>

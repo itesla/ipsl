@@ -128,7 +128,7 @@ equation
   connect(eSDC2A.EFD0, gENROE.EFD0) annotation (Line(points={{-50.5,-38.65},{-50.5,-44},{-36,-44},{-36,-4},{-40.4,-4}}, color={0,0,127}));
   connect(eSDC2A.VOEL, const.y) annotation (Line(points={{-41.05,-33.25},{-24,-33.25},{-24,-31},{-20.5,-31}}, color={0,0,127}));
   connect(const1.y, eSDC2A.VUEL) annotation (Line(points={{-20.5,-45},{-28,-45},{-28,-37.75},{-41.05,-37.75}}, color={0,0,127}));
-  annotation (Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,100}})), Documentation(info="", revisions="<!--DISCLAIMER-->
+  annotation (Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,100}})), Documentation(revisions="<!--DISCLAIMER-->
 <html>
 <p>Copyright 2015 RTE (France), SmarTS Lab (Sweden), AIA (Spain) and DTU (Denmark)</p>
 <p>​- ​RTE: http://www.rte-france.com/</p>

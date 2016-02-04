@@ -68,7 +68,7 @@ equation
           ={0,0,0}),Line(points={{88,-54},{80,-60}}, color={0,0,0}),Line(points={{48,-48},{48,-60}}, color={0,0,0}),Line(points={{40,86},{88,86},{80,92}}, color={0,0,0}),Line(points={{88,86},{80,80}},
           color={0,0,0})}),
     uses(PowerSystems(version="0.6"), Modelica(version="3.2.1")),
-    Documentation(info="", revisions="<!--DISCLAIMER-->
+    Documentation(revisions="<!--DISCLAIMER-->
 <html>
 <p>Copyright 2015 RTE (France), SmarTS Lab (Sweden), AIA (Spain) and DTU (Denmark)</p>
 <p>​- ​RTE: http://www.rte-france.com/</p>

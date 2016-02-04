@@ -12,7 +12,7 @@ connector PwPin "connector for electrical blocks treating voltage and current as
           extent={{-100,98},{100,-102}},
           lineColor={0,0,255},
           fillColor={0,0,255},
-          fillPattern=FillPattern.Solid)}), Documentation(info="", revisions="<!--DISCLAIMER-->
+          fillPattern=FillPattern.Solid)}), Documentation(revisions="<!--DISCLAIMER-->
 <html>
 <p>Copyright 2015 RTE (France), SmarTS Lab (Sweden), AIA (Spain) and DTU (Denmark)</p>
 <p>​- ​RTE: http://www.rte-france.com/</p>

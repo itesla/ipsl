@@ -154,7 +154,7 @@ equation
       smooth=Smooth.None));
   connect(gGOV1pele.PMECH, generator.PMECH) annotation (Line(points={{-68.5517,52.7826},{-90,52.7826},{-90,21.5},{-83.6,21.5}}, color={0,0,127}));
   connect(generator.SPEED, gGOV1pele.SPEED) annotation (Line(points={{-42.4,28.3},{-24,28.3},{-24,43.3913},{-27.3103,43.3913}}, color={0,0,127}));
-  annotation (Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,100}})), Documentation(info="", revisions="<!--DISCLAIMER-->
+  annotation (Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,100}})), Documentation(revisions="<!--DISCLAIMER-->
 <html>
 <p>Copyright 2015 RTE (France), SmarTS Lab (Sweden), AIA (Spain) and DTU (Denmark)</p>
 <p>​- ​RTE: http://www.rte-france.com/</p>

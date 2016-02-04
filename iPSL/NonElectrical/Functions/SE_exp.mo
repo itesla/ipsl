@@ -11,7 +11,7 @@ protected
   parameter Real X=log(S_EE_2/S_EE_1)/log(E_2);
 algorithm
   sys := S_EE_1*u^X;
-  annotation (Documentation(info="", revisions="<!--DISCLAIMER-->
+  annotation (Documentation(revisions="<!--DISCLAIMER-->
 <html>
 <p>Copyright 2015 RTE (France), SmarTS Lab (Sweden), AIA (Spain) and DTU (Denmark)</p>
 <p>​- ​RTE: http://www.rte-france.com/</p>

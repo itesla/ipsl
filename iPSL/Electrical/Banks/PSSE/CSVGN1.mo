@@ -115,7 +115,7 @@ equation
           extent={{-46,20},{40,-26}},
           lineColor={0,0,255},
           textString="CSVGN1")}),
-    Documentation(info="", revisions="<!--DISCLAIMER-->
+    Documentation(revisions="<!--DISCLAIMER-->
 <html>
 <p>Copyright 2015 RTE (France), SmarTS Lab (Sweden), AIA (Spain) and DTU (Denmark)</p>
 <p>​- ​RTE: http://www.rte-france.com/</p>

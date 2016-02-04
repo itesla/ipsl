@@ -121,7 +121,7 @@ equation
           extent={{44,66},{80,38}},
           lineColor={0,0,255},
           textStyle={TextStyle.Bold},
-          textString="Wref perturbation")}), Documentation(info="", revisions="<!--DISCLAIMER-->
+          textString="Wref perturbation")}), Documentation(revisions="<!--DISCLAIMER-->
 <html>
 <p>Copyright 2015 RTE (France), SmarTS Lab (Sweden), AIA (Spain) and DTU (Denmark)</p>
 <p>​- ​RTE: http://www.rte-france.com/</p>

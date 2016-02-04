@@ -25,7 +25,7 @@ equation
   r3*p3.ii + x3*p3.ir = p3.vi - n3.vi;
   r3*n3.ir - x3*n3.ii = n3.vr - p3.vr;
   x3*n3.ir + r3*n3.ii = n3.vi - p3.vi;
-  annotation (Documentation(info="", revisions="<!--DISCLAIMER-->
+  annotation (Documentation(revisions="<!--DISCLAIMER-->
 <html>
 <p>Copyright 2015 RTE (France), SmarTS Lab (Sweden), AIA (Spain) and DTU (Denmark)</p>
 <p>​- ​RTE: http://www.rte-france.com/</p>

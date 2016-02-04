@@ -217,7 +217,7 @@ model ConstantPQPV
         extent={{-148.5,-105.0},{148.5,105.0}},
         preserveAspectRatio=true,
         initialScale=0.1,
-        grid={5,5})), Documentation(info="", revisions="<!--DISCLAIMER-->
+        grid={5,5})), Documentation(revisions="<!--DISCLAIMER-->
 <html>
 <p>Copyright 2015 RTE (France), SmarTS Lab (Sweden), AIA (Spain) and DTU (Denmark)</p>
 <p>​- ​RTE: http://www.rte-france.com/</p>

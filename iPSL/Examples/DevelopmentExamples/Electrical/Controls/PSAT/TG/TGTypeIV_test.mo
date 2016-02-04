@@ -132,7 +132,7 @@ equation
           textString="Infinite bus"),Text(
           extent={{70,32},{84,20}},
           lineColor={0,0,255},
-          textString="PQ load")}), Documentation(info="", revisions="<!--DISCLAIMER-->
+          textString="PQ load")}), Documentation(revisions="<!--DISCLAIMER-->
 <html>
 <p>Copyright 2015 RTE (France), SmarTS Lab (Sweden), AIA (Spain) and DTU (Denmark)</p>
 <p>​- ​RTE: http://www.rte-france.com/</p>

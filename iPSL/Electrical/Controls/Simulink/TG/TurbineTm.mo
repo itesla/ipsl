@@ -59,7 +59,7 @@ equation
           extent={{-8,-6},{22,-8}},
           lineColor={0,0,127},
           textString="1/Tw (water time constant)")}),
-    Documentation(info="", revisions="<!--DISCLAIMER-->
+    Documentation(revisions="<!--DISCLAIMER-->
 <html>
 <p>Copyright 2015 RTE (France), SmarTS Lab (Sweden), AIA (Spain) and DTU (Denmark)</p>
 <p>​- ​RTE: http://www.rte-france.com/</p>

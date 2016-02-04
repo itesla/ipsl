@@ -42,7 +42,7 @@ equation
           extent={{-70,-20},{70,-80}},
           lineColor={0,0,255},
           textString="1 + Ts"),Line(points={{-60,100},{-80,140},{-120,140}}, color={255,0,0}),Line(points={{120,-140},{80,-140},{60,-100}}, color={255,0,0})}),
-    Documentation(info="", revisions="<!--DISCLAIMER-->
+    Documentation(revisions="<!--DISCLAIMER-->
 <html>
 <p>Copyright 2015 RTE (France), SmarTS Lab (Sweden), AIA (Spain) and DTU (Denmark)</p>
 <p>​- ​RTE: http://www.rte-france.com/</p>

@@ -3,6 +3,7 @@ package Examples
 
 
 
+
 annotation (Icon(graphics={
       Rectangle(
         extent={{-80,100},{100,-80}},
@@ -19,7 +20,7 @@ annotation (Icon(graphics={
         lineColor={0,0,255},
         pattern=LinePattern.None,
         fillColor={95,95,95},
-        fillPattern=FillPattern.Solid)}), Documentation(info="", revisions="<!--DISCLAIMER-->
+        fillPattern=FillPattern.Solid)}), Documentation(revisions="<!--DISCLAIMER-->
 <html>
 <p>Copyright 2015 RTE (France), SmarTS Lab (Sweden), AIA (Spain) and DTU (Denmark)</p>
 <p>​- ​RTE: http://www.rte-france.com/</p>

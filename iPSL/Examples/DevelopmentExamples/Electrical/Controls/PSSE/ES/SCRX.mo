@@ -121,7 +121,7 @@ equation
   connect(sCRX.ETERM, sCRX.ECOMP) annotation (Line(points={{-57.8583,-50.44},{-50,-50.44},{-50,-31.82},{-58.1417,-31.82}}, color={0,0,127}));
   annotation (
     Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-120,-100},{120,100}})),
-    Documentation(info="", revisions="<!--DISCLAIMER-->
+    Documentation(revisions="<!--DISCLAIMER-->
 <html>
 <p>Copyright 2015 RTE (France), SmarTS Lab (Sweden), AIA (Spain) and DTU (Denmark)</p>
 <p>​- ​RTE: http://www.rte-france.com/</p>

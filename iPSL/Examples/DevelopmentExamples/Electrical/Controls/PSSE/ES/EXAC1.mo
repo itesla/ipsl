@@ -129,7 +129,7 @@ equation
   connect(eXAC1_1.VOEL, const.y) annotation (Line(points={{-42.95,-35.125},{-30,-34},{-30,-36},{-23,-36}}, color={0,0,127}));
   connect(eXAC1_1.ECOMP, gENROE.ETERM) annotation (Line(points={{-42.95,-27},{-34,-27},{-34,20},{-40.4,20}}, color={0,0,127}));
   connect(eXAC1_1.EFD0, gENROE.EFD0) annotation (Line(points={{-42.95,-38.2125},{-36,-38.2125},{-36,-4},{-40.4,-4}}, color={0,0,127}));
-  annotation (Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,100}})), Documentation(info="", revisions="<!--DISCLAIMER-->
+  annotation (Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,100}})), Documentation(revisions="<!--DISCLAIMER-->
 <html>
 <p>Copyright 2015 RTE (France), SmarTS Lab (Sweden), AIA (Spain) and DTU (Denmark)</p>
 <p>​- ​RTE: http://www.rte-france.com/</p>

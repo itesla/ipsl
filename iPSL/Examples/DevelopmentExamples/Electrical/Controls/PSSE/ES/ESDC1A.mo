@@ -127,7 +127,7 @@ equation
   connect(eSDC1A.VOTHSG, const.y) annotation (Line(points={{-43.1111,-31.25},{-31.5556,-31.25},{-31.5556,-31},{-20.5,-31}}, color={0,0,127}));
   connect(eSDC1A.VOEL, const.y) annotation (Line(points={{-43.1111,-34.75},{-24,-34.75},{-24,-31},{-20.5,-31}}, color={0,0,127}));
   connect(eSDC1A.VUEL, const1.y) annotation (Line(points={{-43.1111,-38.25},{-36,-38.25},{-36,-45},{-20.5,-45}}, color={0,0,127}));
-  annotation (Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,100}})), Documentation(info="", revisions="<!--DISCLAIMER-->
+  annotation (Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,100}})), Documentation(revisions="<!--DISCLAIMER-->
 <html>
 <p>Copyright 2015 RTE (France), SmarTS Lab (Sweden), AIA (Spain) and DTU (Denmark)</p>
 <p>​- ​RTE: http://www.rte-france.com/</p>

@@ -25,7 +25,7 @@ equation
   r2*p2.ii + x2*p2.ir = p2.vi - n2.vi;
   r2*n2.ir - x2*n2.ii = n2.vr - p2.vr;
   x2*n2.ir + r2*n2.ii = n2.vi - p2.vi;
-  annotation (Documentation(info="", revisions="<!--DISCLAIMER-->
+  annotation (Documentation(revisions="<!--DISCLAIMER-->
 <html>
 <p>Copyright 2015 RTE (France), SmarTS Lab (Sweden), AIA (Spain) and DTU (Denmark)</p>
 <p>​- ​RTE: http://www.rte-france.com/</p>

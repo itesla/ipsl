@@ -65,7 +65,7 @@ equation
           smooth=Smooth.None),Line(
           points={{30,-30},{38,-22}},
           color={0,0,255},
-          smooth=Smooth.None)}), Documentation(info="", revisions="<!--DISCLAIMER-->
+          smooth=Smooth.None)}), Documentation(revisions="<!--DISCLAIMER-->
 <html>
 <p>Copyright 2015 RTE (France), SmarTS Lab (Sweden), AIA (Spain) and DTU (Denmark)</p>
 <p>​- ​RTE: http://www.rte-france.com/</p>

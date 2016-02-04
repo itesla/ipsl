@@ -156,7 +156,7 @@ equation
   connect(iEEEST.V_S, gENROE.PELEC) annotation (Line(points={{-75.7667,-31},{-82,-31},{-82,-42},{-36,-42},{-36,0},{-40.4,0}}, color={0,0,127}));
   connect(eSST1A.VOTHSG2, const.y) annotation (Line(points={{-39.0833,-56.5625},{-26,-56.5625},{-26,-66},{-23,-66}}, color={0,0,127}));
   connect(iEEEST.VOTHSG, eSST1A.VOTHSG) annotation (Line(points={{-46.8333,-28},{-28,-28},{-28,-52.8125},{-39.0833,-52.8125}}, color={0,0,127}));
-  annotation (Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,100}})), Documentation(info="", revisions="<!--DISCLAIMER-->
+  annotation (Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,100}})), Documentation(revisions="<!--DISCLAIMER-->
 <html>
 <p>Copyright 2015 RTE (France), SmarTS Lab (Sweden), AIA (Spain) and DTU (Denmark)</p>
 <p>​- ​RTE: http://www.rte-france.com/</p>

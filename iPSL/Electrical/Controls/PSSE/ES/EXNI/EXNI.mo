@@ -121,7 +121,7 @@ equation
           textString="Et"),Text(
           extent={{-88,-42},{-70,-50}},
           lineColor={0,0,255},
-          textString="XadIfd")}), Documentation(info="", revisions="<!--DISCLAIMER-->
+          textString="XadIfd")}), Documentation(revisions="<!--DISCLAIMER-->
 <html>
 <p>Copyright 2015 RTE (France), SmarTS Lab (Sweden), AIA (Spain) and DTU (Denmark)</p>
 <p>​- ​RTE: http://www.rte-france.com/</p>

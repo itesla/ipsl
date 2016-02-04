@@ -179,7 +179,7 @@ equation
   annotation (
     Diagram(coordinateSystem(preserveAspectRatio=false,extent={{-140,-80},{160,100}})),
     Icon(coordinateSystem(extent={{-140,-80},{160,100}})),
-    Documentation(info="", revisions="<!--DISCLAIMER-->
+    Documentation(revisions="<!--DISCLAIMER-->
 <html>
 <p>Copyright 2015 RTE (France), SmarTS Lab (Sweden), AIA (Spain) and DTU (Denmark)</p>
 <p>​- ​RTE: http://www.rte-france.com/</p>

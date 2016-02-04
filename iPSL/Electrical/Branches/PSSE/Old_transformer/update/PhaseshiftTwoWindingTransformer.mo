@@ -43,7 +43,7 @@ equation
           extent={{-10,42},{70,-42}},
           lineColor={0,0,255},
           lineThickness=0.5)}),
-    Documentation(info="", revisions="<!--DISCLAIMER-->
+    Documentation(revisions="<!--DISCLAIMER-->
 <html>
 <p>Copyright 2015 RTE (France), SmarTS Lab (Sweden), AIA (Spain) and DTU (Denmark)</p>
 <p>​- ​RTE: http://www.rte-france.com/</p>

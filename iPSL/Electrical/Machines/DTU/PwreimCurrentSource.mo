@@ -34,7 +34,7 @@ equation
           fillColor={0,0,255},
           fillPattern=FillPattern.Solid,
           textString="Iim_ref")}),
-    Documentation(info="", revisions="<!--DISCLAIMER-->
+    Documentation(revisions="<!--DISCLAIMER-->
 <html>
 <p>Copyright 2015 RTE (France), SmarTS Lab (Sweden), AIA (Spain) and DTU (Denmark)</p>
 <p>​- ​RTE: http://www.rte-france.com/</p>

@@ -124,7 +124,7 @@ equation
           textString="GENROU &
 STAB2A &
 SCRX &
-IEESGO")}), Documentation(info="", revisions="<!--DISCLAIMER-->
+IEESGO")}), Documentation(revisions="<!--DISCLAIMER-->
 <html>
 <p>Copyright 2015 RTE (France), SmarTS Lab (Sweden), AIA (Spain) and DTU (Denmark)</p>
 <p>​- ​RTE: http://www.rte-france.com/</p>

@@ -65,7 +65,7 @@ equation
           points={{-12,-46},{22,-46}},
           color={0,0,255},
           smooth=Smooth.None),Ellipse(extent={{-16,-44},{-12,-48}}, lineColor={0,0,255})}),
-    Documentation(info="", revisions="<!--DISCLAIMER-->
+    Documentation(revisions="<!--DISCLAIMER-->
 <html>
 <p>Copyright 2015 RTE (France), SmarTS Lab (Sweden), AIA (Spain) and DTU (Denmark)</p>
 <p>​- ​RTE: http://www.rte-france.com/</p>

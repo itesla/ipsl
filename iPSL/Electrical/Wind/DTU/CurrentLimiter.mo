@@ -248,7 +248,7 @@ equation
           extent={{-26,-43},{26,-54}},
           lineColor={0,0,255},
           textString="Current Limitation Model")}),
-    Documentation(info="", revisions="<!--DISCLAIMER-->
+    Documentation(revisions="<!--DISCLAIMER-->
 <html>
 <p>Copyright 2015 RTE (France), SmarTS Lab (Sweden), AIA (Spain) and DTU (Denmark)</p>
 <p>​- ​RTE: http://www.rte-france.com/</p>

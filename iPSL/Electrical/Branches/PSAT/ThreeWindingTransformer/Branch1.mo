@@ -29,7 +29,7 @@ equation
   r1*p.ii + x1*p.ir = 1/m^2*p.vi - 1/m*n1.vi;
   r1*n1.ir - x1*n1.ii = n1.vr - 1/m*p.vr;
   x1*n1.ir + r1*n1.ii = n1.vi - 1/m*p.vi;
-  annotation (Documentation(info="", revisions="<!--DISCLAIMER-->
+  annotation (Documentation(revisions="<!--DISCLAIMER-->
 <html>
 <p>Copyright 2015 RTE (France), SmarTS Lab (Sweden), AIA (Spain) and DTU (Denmark)</p>
 <p>​- ​RTE: http://www.rte-france.com/</p>

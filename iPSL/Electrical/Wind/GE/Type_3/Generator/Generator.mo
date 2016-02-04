@@ -378,7 +378,7 @@ equation
           extent={{-64.7389,-33.1866},{64.7389,33.1866}},
           textString="Generator",
           fontName="Arial")}),
-    Documentation(info="", revisions="<!--DISCLAIMER-->
+    Documentation(revisions="<!--DISCLAIMER-->
 <html>
 <p>Copyright 2015 RTE (France), SmarTS Lab (Sweden), AIA (Spain) and DTU (Denmark)</p>
 <p>​- ​RTE: http://www.rte-france.com/</p>

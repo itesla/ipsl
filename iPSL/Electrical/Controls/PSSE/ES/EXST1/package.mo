@@ -2,7 +2,7 @@
 package EXST1 "IEEE Type ST1 Excitation System"
 
 
-annotation (Documentation(info="", revisions="<!--DISCLAIMER-->
+annotation (Documentation(revisions="<!--DISCLAIMER-->
 <html>
 <p>Copyright 2015 RTE (France), SmarTS Lab (Sweden), AIA (Spain) and DTU (Denmark)</p>
 <p>​- ​RTE: http://www.rte-france.com/</p>

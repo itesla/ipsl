@@ -49,7 +49,7 @@ equation
           extent={{-98,-4},{-82,4}},
           lineColor={0,0,127},
           textString="z (gate opening)")}),
-    Documentation(info="", revisions="<!--DISCLAIMER-->
+    Documentation(revisions="<!--DISCLAIMER-->
 <html>
 <p>Copyright 2015 RTE (France), SmarTS Lab (Sweden), AIA (Spain) and DTU (Denmark)</p>
 <p>​- ​RTE: http://www.rte-france.com/</p>

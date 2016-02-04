@@ -126,7 +126,7 @@ equation
   connect(iEEEX1_1.ECOMP, gENROE.ETERM) annotation (Line(points={{-39.2083,-44},{-34,-44},{-34,20},{-40.4,20}}, color={0,0,127}));
   connect(iEEEX1_1.VOEL, const.y) annotation (Line(points={{-39.2083,-36.5},{-28,-36.5},{-28,-32},{-23,-32}},color={0,0,127}));
   connect(iEEEX1_1.VUEL, const.y) annotation (Line(points={{-39.2083,-30.5},{-28,-30.5},{-28,-32},{-23,-32}},color={0,0,127}));
-  annotation (Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,100}})), Documentation(info="", revisions="<!--DISCLAIMER-->
+  annotation (Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,100}})), Documentation(revisions="<!--DISCLAIMER-->
 <html>
 <p>Copyright 2015 RTE (France), SmarTS Lab (Sweden), AIA (Spain) and DTU (Denmark)</p>
 <p>​- ​RTE: http://www.rte-france.com/</p>

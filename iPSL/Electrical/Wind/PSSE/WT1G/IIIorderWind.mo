@@ -90,7 +90,7 @@ equation
           extent={{-57.2101,-15.0},{57.2101,15.0}},
           fontName="Arial",
           textString="%name",
-          lineColor={0,0,0})}), Documentation(info="", revisions="<!--DISCLAIMER-->
+          lineColor={0,0,0})}), Documentation(revisions="<!--DISCLAIMER-->
 <html>
 <p>Copyright 2015 RTE (France), SmarTS Lab (Sweden), AIA (Spain) and DTU (Denmark)</p>
 <p>​- ​RTE: http://www.rte-france.com/</p>

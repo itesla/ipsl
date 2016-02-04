@@ -148,7 +148,7 @@ equation
       color={0,0,127},
       smooth=Smooth.None));
   connect(eSAC2A.EFD, generator.EFD) annotation (Line(points={{-115.75,-35.3067},{-120,-35.3067},{-120,5.5},{-77.72,5.5}}, color={0,0,127}));
-  annotation (Diagram(coordinateSystem(preserveAspectRatio=false,extent={{-100,-100},{100,100}})), Documentation(info="", revisions="<!--DISCLAIMER-->
+  annotation (Diagram(coordinateSystem(preserveAspectRatio=false,extent={{-100,-100},{100,100}})), Documentation(revisions="<!--DISCLAIMER-->
 <html>
 <p>Copyright 2015 RTE (France), SmarTS Lab (Sweden), AIA (Spain) and DTU (Denmark)</p>
 <p>​- ​RTE: http://www.rte-france.com/</p>

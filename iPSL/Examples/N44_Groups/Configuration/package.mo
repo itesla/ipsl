@@ -7,7 +7,7 @@ package Configuration "Machine configuration for the Nordic 44-buses model"
 
 
 
-annotation (Documentation(info="", revisions="<!--DISCLAIMER-->
+annotation (Documentation(revisions="<!--DISCLAIMER-->
 <html>
 <p>Copyright 2015 RTE (France), SmarTS Lab (Sweden), AIA (Spain) and DTU (Denmark)</p>
 <p>​- ​RTE: http://www.rte-france.com/</p>

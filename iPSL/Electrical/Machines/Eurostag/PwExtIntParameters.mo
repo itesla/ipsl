@@ -107,7 +107,7 @@ model PwExtIntParameters "Transformation of external parameters to internal para
   parameter Real lQ1=if IENR == 4 then Vq*rQ1 else (tppq*mQ0Pu_ - tppQO_*Y)/(tppQO_ - tppq);
   parameter Real lq=lStatIn_;
   parameter Real Y=mQ0Pu_*lq/xQPu_;
-  annotation (Documentation(info="", revisions="<!--DISCLAIMER-->
+  annotation (Documentation(revisions="<!--DISCLAIMER-->
 <html>
 <p>Copyright 2015 RTE (France), SmarTS Lab (Sweden), AIA (Spain) and DTU (Denmark)</p>
 <p>​- ​RTE: http://www.rte-france.com/</p>

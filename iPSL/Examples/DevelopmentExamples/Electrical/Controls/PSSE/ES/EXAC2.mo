@@ -135,7 +135,7 @@ equation
   connect(eXAC2_1.VUEL, const.y) annotation (Line(points={{-36.2875,-36.5},{-28,-36.5},{-28,-36},{-23,-36}}, color={0,0,127}));
   connect(eXAC2_1.VOEL, const.y) annotation (Line(points={{-36.2875,-39.25},{-28,-39.25},{-28,-36},{-23,-36}}, color={0,0,127}));
   connect(eXAC2_1.EFD, gENROE.EFD) annotation (Line(points={{-82.7188,-31},{-92,-31},{-92,0},{-81.6,0}}, color={0,0,127}));
-  annotation (Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,100}})), Documentation(info="", revisions="<!--DISCLAIMER-->
+  annotation (Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,100}})), Documentation(revisions="<!--DISCLAIMER-->
 <html>
 <p>Copyright 2015 RTE (France), SmarTS Lab (Sweden), AIA (Spain) and DTU (Denmark)</p>
 <p>​- ​RTE: http://www.rte-france.com/</p>

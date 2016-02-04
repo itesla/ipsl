@@ -129,7 +129,7 @@ equation
           fillPattern=FillPattern.Solid,
           extent={{-41.1319,-13.2857},{41.1319,13.2857}},
           textString="VoltageGrid=10000 (1p.u.)",
-          fontName="Arial")}), Documentation(info="", revisions="<!--DISCLAIMER-->
+          fontName="Arial")}), Documentation(revisions="<!--DISCLAIMER-->
 <html>
 <p>Copyright 2015 RTE (France), SmarTS Lab (Sweden), AIA (Spain) and DTU (Denmark)</p>
 <p>​- ​RTE: http://www.rte-france.com/</p>

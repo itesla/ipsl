@@ -117,7 +117,7 @@ equation
   connect(order2_1.pm, order2_1.pm0) annotation (Line(points={{-122,-5},{-130,-5},{-130,-16},{-120,-16},{-120,-11}}, color={0,0,127}));
   annotation (
     Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-140,-100},{140,100}})),
-    Documentation(info="", revisions="<!--DISCLAIMER-->
+    Documentation(revisions="<!--DISCLAIMER-->
 <html>
 <p>Copyright 2015 RTE (France), SmarTS Lab (Sweden), AIA (Spain) and DTU (Denmark)</p>
 <p>​- ​RTE: http://www.rte-france.com/</p>

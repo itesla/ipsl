@@ -10,7 +10,7 @@ annotation (
   uses(Modelica(version="3.2.1"), Complex(version="3.2.1")),
   version="0.8.1",
   conversion(noneFromVersion="0.8"),
-  Documentation(info="", revisions="<!--DISCLAIMER-->
+  Documentation(revisions="<!--DISCLAIMER-->
 <html>
 <p>Copyright 2015 RTE (France), SmarTS Lab (Sweden), AIA (Spain) and DTU (Denmark)</p>
 <p>​- ​RTE: http://www.rte-france.com/</p>

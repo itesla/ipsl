@@ -136,7 +136,7 @@ equation
   connect(eSST1A.VT, eSST1A.ECOMP) annotation (Line(points={{-39.2458,-39.7344},{-34,-39.7344},{-34,-35},{-39.0833,-35}}, color={0,0,127}));
   connect(eSST1A.EFD0, gENROE.EFD0) annotation (Line(points={{-39.0833,-43.4094},{-32,-43.4094},{-32,-4},{-40.4,-4}}, color={0,0,127}));
   connect(eSST1A.XADIFD, gENROE.XADIFD) annotation (Line(points={{-39.0833,-47.1875},{-30,-47.1875},{-30,-8},{-40.4,-8}}, color={0,0,127}));
-  annotation (Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,100}})), Documentation(info="", revisions="<!--DISCLAIMER-->
+  annotation (Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,100}})), Documentation(revisions="<!--DISCLAIMER-->
 <html>
 <p>Copyright 2015 RTE (France), SmarTS Lab (Sweden), AIA (Spain) and DTU (Denmark)</p>
 <p>​- ​RTE: http://www.rte-france.com/</p>
