@@ -20,7 +20,7 @@ If a copy of the MPL was not distributed with this file, You can obtain one at
           lineColor={0,127,0},
           textString="%name%"),
         Text(
-          extent={{-100,100},{100,-100}},
+          extent={{-100,90},{100,-80}},
           lineColor={0,127,0},
           textString="C",
           textStyle={TextStyle.Bold}),
