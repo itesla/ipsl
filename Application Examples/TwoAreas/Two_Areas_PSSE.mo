@@ -15,17 +15,17 @@ model Two_Areas_PSSE
   iPSL.Electrical.Buses.Bus bus9 annotation (Placement(transformation(extent={{50,20},{70,40}})));
   iPSL.Electrical.Buses.Bus bus10 annotation (Placement(transformation(extent={{90,20},{110,40}})));
   iPSL.Electrical.Buses.Bus bus11 annotation (Placement(transformation(extent={{130,20},{150,40}})));
-  TwoAreas.Groups.PSSE.G1 g1(
+  TwoAreas.Groups.PSSE.No_Controls.G1 g1(
     V_0=1.03,
     angle_0=20.27066,
     P_0=700,
     Q_0=185.0296) annotation (Placement(transformation(extent={{-214,24},{-202,36}})));
-  TwoAreas.Groups.PSSE.G2 g2(
+  TwoAreas.Groups.PSSE.No_Controls.G2 g2(
     V_0=1.01,
     angle_0=10.50628,
     P_0=700,
     Q_0=234.6113) annotation (Placement(transformation(extent={{-214,-16},{-202,-4}})));
-  TwoAreas.Groups.PSSE.G3 g3(
+  TwoAreas.Groups.PSSE.No_Controls.G3 g3(
     V_0=1.03,
     angle_0=-6.8,
     P_0=719.0941,
@@ -33,7 +33,7 @@ model Two_Areas_PSSE
         extent={{-6,-6},{6,6}},
         rotation=180,
         origin={208,30})));
-  TwoAreas.Groups.PSSE.G4 g4(
+  TwoAreas.Groups.PSSE.No_Controls.G4 g4(
     V_0=1.01,
     angle_0=-16.9921,
     P_0=700,
@@ -167,7 +167,11 @@ equation
   connect(bus4.p, Line5_4.n) annotation (Line(points={{180,-10},{167,-10}}, color={0,0,255}));
   connect(Line5_4.p, Line10_11.p) annotation (Line(points={{153,-10},{104,-10},{104,30},{113,30}}, color={0,0,255}));
   annotation (
-    Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-220,-40},{220,60}})),
+    Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-220,-40},{220,60}}), graphics={Text(
+          extent={{-70,-30},{52,-38}},
+          lineColor={28,108,200},
+          textString="Two-Area System 
+Prabha Kundur, \"Power System Stability and Control\", Example 12.6, page 813")}),
     Icon(coordinateSystem(extent={{-220,-40},{220,60}})),
     Documentation(revisions="<html>
 <p>Using commit  [77c2c74] from iTesla-Modelica-SmartsLab repository</p>

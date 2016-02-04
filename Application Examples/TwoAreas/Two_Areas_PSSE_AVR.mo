@@ -1,7 +1,6 @@
 within TwoAreas;
-model Two_Areas_PSAT
+model Two_Areas_PSSE_AVR
 
-  import Modelica.Constants.pi;
   parameter Real r=0.0001;
   parameter Real x=0.001;
   parameter Real b=0.00175*0.5;
@@ -16,33 +15,29 @@ model Two_Areas_PSAT
   iPSL.Electrical.Buses.Bus bus9 annotation (Placement(transformation(extent={{50,20},{70,40}})));
   iPSL.Electrical.Buses.Bus bus10 annotation (Placement(transformation(extent={{90,20},{110,40}})));
   iPSL.Electrical.Buses.Bus bus11 annotation (Placement(transformation(extent={{130,20},{150,40}})));
-  Groups.PSAT.G1 g1(
+  Groups.PSSE.AVR.G1 g1(
+    V_0=1.03,
+    angle_0=20.27066,
     P_0=700,
-    Q_0=182.450226027067,
-    V_0=1.03000000000000,
-    angle_0=0.353381617759011*180/pi,
-    V_b=20) annotation (Placement(transformation(extent={{-214,24},{-202,36}})));
-  Groups.PSAT.G2 g2(
+    Q_0=185.0296) annotation (Placement(transformation(extent={{-214,24},{-202,36}})));
+  Groups.PSSE.AVR.G2 g2(
+    V_0=1.01,
+    angle_0=10.50628,
     P_0=700,
-    Q_0=228.434194888742,
-    V_0=1.01000000000000,
-    angle_0=0.183079867930759*180/pi,
-    V_b=20) annotation (Placement(transformation(extent={{-214,-16},{-202,-4}})));
-  Groups.PSAT.G3 g3(
-    Q_0=172.421333322957,
-    P_0=718.906215107731,
-    V_0=1.03000000000000,
-    angle_0=-0.118682400000000*180/pi,
-    V_b=20) annotation (Placement(transformation(
+    Q_0=234.6113) annotation (Placement(transformation(extent={{-214,-16},{-202,-4}})));
+  Groups.PSSE.AVR.G3 g3(
+    V_0=1.03,
+    angle_0=-6.8,
+    P_0=719.0941,
+    Q_0=176.0262) annotation (Placement(transformation(
         extent={{-6,-6},{6,6}},
         rotation=180,
         origin={208,30})));
-  Groups.PSAT.G4 g4(
+  Groups.PSSE.AVR.G4 g4(
+    V_0=1.01,
+    angle_0=-16.9921,
     P_0=700,
-    Q_0=193.556043309309,
-    V_0=1.01000000000000,
-    angle_0=-0.296314118513724*180/pi,
-    V_b=20) annotation (Placement(transformation(
+    Q_0=202.0827) annotation (Placement(transformation(
         extent={{-6,-6},{6,6}},
         rotation=180,
         origin={208,-10})));
@@ -62,7 +57,7 @@ model Two_Areas_PSAT
     R=r*110,
     X=x*110,
     G=0,
-    B=b*110/2) annotation (Placement(transformation(extent={{-40,30},{-20,50}})));
+    B=b*110) annotation (Placement(transformation(extent={{-40,30},{-20,50}})));
   iPSL.Electrical.Branches.PwLine Line7_8_2(
     R=r*110,
     X=x*110,
@@ -77,7 +72,7 @@ model Two_Areas_PSAT
     R=r*110,
     X=x*110,
     G=0,
-    B=b*110/2) annotation (Placement(transformation(extent={{20,30},{40,50}})));
+    B=b*110) annotation (Placement(transformation(extent={{20,30},{40,50}})));
 
   iPSL.Electrical.Branches.PwLine Line9_10(
     R=r*10,
@@ -92,66 +87,56 @@ model Two_Areas_PSAT
     B=b*25) annotation (Placement(transformation(extent={{110,20},{130,40}})));
 
   iPSL.Electrical.Events.PwFault pwFault(
+    X=0,
     R=0,
-    t1=1,
-    t2=1.050,
-    X=1e-5) annotation (Placement(transformation(
+    t1=3,
+    t2=3.2) annotation (Placement(transformation(
         extent={{-10,-10},{10,10}},
         rotation=270,
         origin={2,-16})));
 
-  iPSL.Electrical.Loads.PSAT.ZIP Load7(
-    P_0=967,
-    Q_0=-100,
-    Pz=0,
-    Pi=1,
-    Qz=0,
-    Qi=0,
-    V_0=0.962831011348560,
-    angle_0=-0.0815909472281613*180/pi,
-    V_b=230) annotation (Placement(transformation(extent={{-76,-30},{-52,-6}})));
-  iPSL.Electrical.Loads.PSAT.ZIP Load9(
-    P_0=1767,
-    Q_0=-250,
-    Pz=0,
-    Pi=1,
-    Qz=0,
-    Qi=0,
-    V_0=0.973864710338689,
-    angle_0=-0.560256955944523*180/pi,
-    V_b=230) annotation (Placement(transformation(extent={{80,-30},{54,-4}})));
-  iPSL.Electrical.Branches.PSAT.TwoWindingTransformer trafo1(
-    Sn=900,
-    r=0,
-    x=0.15,
-    kT=20/230,
-    V_b=20,
-    Vn=20) annotation (Placement(transformation(extent={{-170,20},{-150,40}})));
-  iPSL.Electrical.Branches.PSAT.TwoWindingTransformer trafo2(
-    Sn=900,
-    r=0,
-    x=0.15,
-    kT=20/230,
-    V_b=20,
-    Vn=20) annotation (Placement(transformation(extent={{-170,-20},{-150,0}})));
-  iPSL.Electrical.Branches.PSAT.TwoWindingTransformer trafo3(
-    Sn=900,
-    r=0,
-    x=0.15,
-    kT=20/230,
-    V_b=20,
-    Vn=20) annotation (Placement(transformation(extent={{170,20},{150,40}})));
-  iPSL.Electrical.Branches.PSAT.TwoWindingTransformer trafo4(
-    Sn=900,
-    r=0,
-    x=0.15,
-    kT=20/230,
-    V_b=20,
-    Vn=20) annotation (Placement(transformation(extent={{170,-20},{150,0}})));
-  inner iPSL.Electrical.SystemBase SysData(fn=60) annotation (Placement(transformation(extent={{-220,46},{-170,60}})));
+  iPSL.Electrical.Loads.PSSE.Load Load7(
+    S_i(re=0, im=0),
+    S_y(re=0, im=0),
+    a(re=1, im=0),
+    b(re=0, im=1),
+    PQBRAK=0.7,
+    V_0=0.9610106,
+    angle_0=-4.68651,
+    S_p(re=9.67, im=(100 - 184.7)/100)) annotation (Placement(transformation(extent={{-70,-12},{-58,0}})));
+  iPSL.Electrical.Loads.PSSE.Load Load9(
+    S_i(re=0, im=0),
+    S_y(re=0, im=0),
+    a(re=1, im=0),
+    b(re=0, im=1),
+    PQBRAK=0.7,
+    V_0=0.9713628,
+    angle_0=-32.15403,
+    S_p(re=17.67, im=(100 - 330.2)/100)) annotation (Placement(transformation(extent={{72,-12},{60,0}})));
+  iPSL.Electrical.Branches.PwLine Line5_1(
+    G=0,
+    R=0,
+    X=0.01667,
+    B=0) annotation (Placement(transformation(extent={{-170,20},{-150,40}})));
+  iPSL.Electrical.Branches.PwLine Line5_2(
+    G=0,
+    R=0,
+    X=0.01667,
+    B=0) annotation (Placement(transformation(extent={{-170,-20},{-150,0}})));
+  iPSL.Electrical.Branches.PwLine Line5_3(
+    G=0,
+    R=0,
+    X=0.01667,
+    B=0) annotation (Placement(transformation(extent={{150,20},{170,40}})));
+  iPSL.Electrical.Branches.PwLine Line5_4(
+    G=0,
+    R=0,
+    X=0.01667,
+    B=0) annotation (Placement(transformation(extent={{150,-20},{170,0}})));
+  inner iPSL.Electrical.SystemBase SysData(fn=60) annotation (Placement(transformation(extent={{-220,48},{-172,62}})));
 equation
-  connect(g1.pwPin, bus1.p) annotation (Line(points={{-201.4,30},{-201.4,30},{-180,30}}, color={0,0,255}));
-  connect(g2.pwPin, bus2.p) annotation (Line(points={{-201.4,-10},{-201.4,-10},{-180,-10}}, color={0,0,255}));
+  connect(g1.pwPin, bus1.p) annotation (Line(points={{-201,30},{-190.5,30},{-180,30}}, color={0,0,255}));
+  connect(g2.pwPin, bus2.p) annotation (Line(points={{-201,-10},{-190.5,-10},{-180,-10}}, color={0,0,255}));
   connect(Line6_7.n, bus7.p) annotation (Line(points={{-73,30},{-66.5,30},{-60,30}}, color={0,0,255}));
   connect(Line6_7.p, bus6.p) annotation (Line(points={{-87,30},{-93.5,30},{-100,30}}, color={0,0,255}));
   connect(Line5_6.n, bus6.p) annotation (Line(points={{-113,30},{-106.5,30},{-100,30}}, color={0,0,255}));
@@ -168,40 +153,37 @@ equation
   connect(Line9_10.n, bus10.p) annotation (Line(points={{87,30},{93.5,30},{100,30}}, color={0,0,255}));
   connect(bus10.p, Line10_11.p) annotation (Line(points={{100,30},{113,30}}, color={0,0,255}));
   connect(Line10_11.n, bus11.p) annotation (Line(points={{127,30},{133.5,30},{140,30}}, color={0,0,255}));
-  connect(g4.pwPin, bus4.p) annotation (Line(points={{201.4,-10},{201.4,-10},{180,-10}}, color={0,0,255}));
-  connect(g3.pwPin, bus3.p) annotation (Line(points={{201.4,30},{180,30}}, color={0,0,255}));
-  connect(Load7.p, bus7.p) annotation (Line(points={{-64,-4.8},{-64,-4.8},{-64,0},{-64,28},{-64,30},{-60,30}}, color={0,0,255}));
-  connect(Load9.p, Line9_10.p) annotation (Line(points={{67,-2.7},{67,-2.7},{67,30},{73,30}}, color={0,0,255}));
+  connect(g4.pwPin, bus4.p) annotation (Line(points={{201,-10},{201,-10},{180,-10}}, color={0,0,255}));
+  connect(g3.pwPin, bus3.p) annotation (Line(points={{201,30},{180,30}}, color={0,0,255}));
+  connect(Load7.p, bus7.p) annotation (Line(points={{-64,0.6},{-64,0.6},{-64,30},{-60,30}}, color={0,0,255}));
+  connect(Load9.p, Line9_10.p) annotation (Line(points={{66,0.6},{66,0.6},{66,30},{73,30}}, color={0,0,255}));
   connect(pwFault.p, bus8.p) annotation (Line(points={{2,-4.33333},{2,30},{0,30}}, color={0,0,255}));
-  connect(bus1.p, trafo1.p) annotation (Line(points={{-180,30},{-171,30}}, color={0,0,255}));
-  connect(bus5.p, trafo1.n) annotation (Line(points={{-140,30},{-149,30}}, color={0,0,255}));
-  connect(bus2.p, trafo2.p) annotation (Line(points={{-180,-10},{-171,-10}}, color={0,0,255}));
-  connect(trafo2.n, bus6.p) annotation (Line(points={{-149,-10},{-104,-10},{-104,30},{-100,30}}, color={0,0,255}));
-  connect(trafo4.n, bus10.p) annotation (Line(points={{149,-10},{108,-10},{108,30},{100,30}}, color={0,0,255}));
-  connect(trafo4.p, bus4.p) annotation (Line(points={{171,-10},{176,-10},{180,-10}}, color={0,0,255}));
-  connect(trafo3.p, bus3.p) annotation (Line(points={{171,30},{175.5,30},{180,30}}, color={0,0,255}));
-  connect(bus11.p, trafo3.n) annotation (Line(points={{140,30},{149,30}}, color={0,0,255}));
+  connect(bus1.p, Line5_1.p) annotation (Line(points={{-180,30},{-174,30},{-167,30}}, color={0,0,255}));
+  connect(bus5.p, Line5_1.n) annotation (Line(points={{-140,30},{-146,30},{-153,30}}, color={0,0,255}));
+  connect(bus2.p, Line5_2.p) annotation (Line(points={{-180,-10},{-174,-10},{-167,-10}}, color={0,0,255}));
+  connect(Line5_2.n, bus6.p) annotation (Line(points={{-153,-10},{-104,-10},{-104,30},{-100,30}}, color={0,0,255}));
+  connect(bus11.p, Line5_3.p) annotation (Line(points={{140,30},{153,30}}, color={0,0,255}));
+  connect(Line5_3.n, bus3.p) annotation (Line(points={{167,30},{173.5,30},{180,30}}, color={0,0,255}));
+  connect(bus4.p, Line5_4.n) annotation (Line(points={{180,-10},{167,-10}}, color={0,0,255}));
+  connect(Line5_4.p, Line10_11.p) annotation (Line(points={{153,-10},{104,-10},{104,30},{113,30}}, color={0,0,255}));
   annotation (
-    Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-220,-40},{220,60}}), graphics={Text(
-          extent={{-68,-34},{46,-38}},
-          lineColor={28,108,200},
-          textString="Two-Area System 
-Prabha Kundur, \"Power System Stability and Control\", Example 12.6, page 813")}),
+    Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-220,-40},{220,60}})),
     Icon(coordinateSystem(extent={{-220,-40},{220,60}})),
     Documentation(revisions="<html>
 <p>Using commit  [77c2c74] from iTesla-Modelica-SmartsLab repository</p>
 </html>", info="<html>
-<table cellspacing=\"1\" cellpadding=\"1\" border=\"1\"<tr>
+<table cellspacing=\"1\" cellpadding=\"1\" border=\"1\">
+<tr>
 <td><p>Reference</p></td>
-<td><p>Klein-Rogers-Kundur power network (PSAT)</p></td>
+<td>Klein-Rogers-Kundur power network</td>
 </tr>
 <tr>
 <td><p>Last update</p></td>
-<td><p>2016-01-29</p></td>
+<td>2015-12-01</td>
 </tr>
 <tr>
 <td><p>Author</p></td>
-<td><p>Maxime Baudette, SmarTS Lab, KTH Royal Institute of Technology</p></td>
+<td><p>Tin Rabuzin, SmarTS Lab, KTH Royal Institute of Technology</p></td>
 </tr>
 <tr>
 <td><p>Contact</p></td>
@@ -209,11 +191,5 @@ Prabha Kundur, \"Power System Stability and Control\", Example 12.6, page 813")}
 </tr>
 </table>
 </html>"),
-    experiment(
-      StopTime=10,
-      Interval=0.0001,
-      Tolerance=1e-006,
-      __Dymola_fixedstepsize=0.0001,
-      __Dymola_Algorithm="Rkfix2"),
-    __Dymola_experimentSetupOutput);
-end Two_Areas_PSAT;
+    experiment(StopTime=10, Tolerance=0.001));
+end Two_Areas_PSSE_AVR;

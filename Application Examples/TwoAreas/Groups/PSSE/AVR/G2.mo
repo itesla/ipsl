@@ -1,4 +1,4 @@
-within TwoAreas.Groups.PSSE;
+within TwoAreas.Groups.PSSE.AVR;
 model G2
   extends iPSL.Electrical.Essentials.pfComponent;
 

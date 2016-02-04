@@ -44,5 +44,4 @@ equation
           fillColor={255,255,255},
           fillPattern=FillPattern.Solid,
           textString="%name")}), Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,100}})));
-
 end G1;
