@@ -27,18 +27,14 @@ model HYGOV
     initType=Modelica.Blocks.Types.Init.InitialOutput,
     k=1/T_w) annotation (Placement(transformation(extent={{62,-4},{74,8}})));
   Modelica.Blocks.Sources.Constant qNL(k=q_NL) annotation (Placement(transformation(extent={{92,-18},{84,-10}})));
-  Modelica.Blocks.Math.Gain Gain6(k=A_t) annotation (Placement(transformation(extent={{100,-4},{112,8}})));
-  Modelica.Blocks.Interfaces.RealOutput PMECH "Turbine mechanical power (pu)" annotation (Placement(transformation(extent={{138,-6},{150,6}}), iconTransformation(extent={{80,-4},{88,4}})));
+  Modelica.Blocks.Math.Gain Gain6(k=A_t) annotation (Placement(transformation(extent={{132,-2},{144,10}})));
+  Modelica.Blocks.Interfaces.RealOutput PMECH "Turbine mechanical power (pu)" annotation (Placement(transformation(extent={{170,-6},{182,6}}), iconTransformation(extent={{80,-4},{88,4}})));
   iPSL.NonElectrical.Continuous.SimpleLag g(
     K=1,
     T=T_g,
     y_start=g0) "servo_motor" annotation (Placement(transformation(extent={{-40,0},{-28,12}})));
   Modelica.Blocks.Interfaces.RealInput PMECH0 "Initial turbine mechanical power (pu)"
     annotation (Placement(transformation(extent={{-84,-62},{-76,-52}}), iconTransformation(extent={{-84,-36},{-72,-24}})));
-  iPSL.NonElectrical.Continuous.SimpleLead imLead(
-    K=r*T_r,
-    T=T_r,
-    y_start=0) annotation (Placement(transformation(extent={{-106,0},{-94,12}})));
   Modelica.Blocks.Nonlinear.Limiter Velocity_Limiter(uMin=-VELM, uMax=VELM) annotation (Placement(transformation(extent={{-86,0},{-74,12}})));
   Modelica.Blocks.Continuous.LimIntegrator Position_Limiter(
     outMin=G_MIN,
@@ -56,7 +52,7 @@ model HYGOV
   Modelica.Blocks.Math.Product product annotation (Placement(transformation(extent={{20,-4},{32,8}})));
   Modelica.Blocks.Math.Add add2(k1=-1) annotation (Placement(transformation(extent={{42,-4},{54,8}})));
   Modelica.Blocks.Math.Add add3(k2=-1) annotation (Placement(transformation(extent={{82,-4},{94,8}})));
-  Modelica.Blocks.Math.Add add4(k2=-1) annotation (Placement(transformation(extent={{120,-6},{132,6}})));
+  Modelica.Blocks.Math.Add add4(k2=-1) annotation (Placement(transformation(extent={{152,-6},{164,6}})));
   Modelica.Blocks.Math.Product product1 annotation (Placement(transformation(extent={{58,-30},{70,-18}})));
 protected
   parameter Real h0=1 "water head initial value";
@@ -71,6 +67,12 @@ protected
   parameter Real nref(fixed=false);
   //=R*c0 "speed reference";
   parameter Real P_m0(fixed=false);
+public
+  Modelica.Blocks.Math.Product product2 annotation (Placement(transformation(extent={{108,-2},{120,10}})));
+  NonElectrical.Continuous.SimpleLead simpleLead(
+    K=r*T_r,
+    T=T_r,
+    y_start=0) annotation (Placement(transformation(extent={{-106,0},{-94,12}})));
 initial algorithm
   P_m0 := PMECH0;
   q0 := P_m0/(A_t*h0) + q_NL;
@@ -92,8 +94,6 @@ equation
   connect(add1.u1, SPEED) annotation (Line(points={{-169.2,-2.4},{-177.6,-2.4},{-177.6,-3},{-199,-3}}, color={0,0,127}));
   connect(Gain3.y, add1.u2) annotation (Line(points={{-142.6,-16},{-178,-16},{-178,-9.6},{-169.2,-9.6}}, color={0,0,127}));
   connect(Gain4.u, SPEED) annotation (Line(points={{-63.2,-28},{-188,-28},{-188,-3},{-199,-3}}, color={0,0,127}));
-  connect(SimpleLag1.y, imLead.u) annotation (Line(points={{-113.4,6},{-107.2,6}}, color={0,0,127}));
-  connect(imLead.y, Velocity_Limiter.u) annotation (Line(points={{-93.4,6},{-87.2,6}}, color={0,0,127}));
   connect(Velocity_Limiter.y, Position_Limiter.u) annotation (Line(points={{-73.4,6},{-69.2,6}}, color={0,0,127}));
   connect(Position_Limiter.y, Gain3.u) annotation (Line(points={{-55.4,6},{-52,6},{-52,-16},{-128.8,-16}}, color={0,0,127}));
   connect(g.u, Gain3.u) annotation (Line(points={{-41.2,6},{-52,6},{-52,-16},{-128.8,-16}}, color={0,0,127}));
@@ -104,70 +104,63 @@ equation
   connect(add2.y, q.u) annotation (Line(points={{54.6,2},{60.8,2}}, color={0,0,127}));
   connect(q.y, add3.u1) annotation (Line(points={{74.6,2},{76,2},{76,5.6},{80.8,5.6}}, color={0,0,127}));
   connect(qNL.y, add3.u2) annotation (Line(points={{83.6,-14},{76,-14},{76,-1.6},{80.8,-1.6}}, color={0,0,127}));
-  connect(add3.y, Gain6.u) annotation (Line(points={{94.6,2},{98.8,2}}, color={0,0,127}));
-  connect(Gain6.y, add4.u1) annotation (Line(points={{112.6,2},{114,2},{114,3.6},{118.8,3.6}}, color={0,0,127}));
   connect(Gain4.y, product1.u2) annotation (Line(points={{-49.4,-28},{4,-28},{4,-27.6},{56.8,-27.6}}, color={0,0,127}));
-  connect(product1.y, add4.u2) annotation (Line(points={{70.6,-24},{114,-24},{114,-3.6},{118.8,-3.6}}, color={0,0,127}));
-  connect(add4.y, PMECH) annotation (Line(points={{132.6,0},{144,0},{144,0}}, color={0,0,127}));
+  connect(product1.y, add4.u2) annotation (Line(points={{70.6,-24},{144,-24},{144,-3.6},{150.8,-3.6}}, color={0,0,127}));
+  connect(add4.y, PMECH) annotation (Line(points={{164.6,0},{176,0}}, color={0,0,127}));
   connect(product1.u1, g.y) annotation (Line(points={{56.8,-20.4},{-16,-20.4},{-16,6},{-27.4,6}}, color={0,0,127}));
-  connect(division.u2, g.y) annotation (Line(points={{-1.2,-1.6},{-16,-2},{-16,6},{-27.4,6}}, color={0,0,127}));
-  connect(division.u1, add3.u1) annotation (Line(points={{-1.2,5.6},{-6,5.6},{-6,-34},{78,-34},{78,6},{80.8,5.6}}, color={0,0,127}));
+  connect(division.u2, g.y) annotation (Line(points={{-1.2,-1.6},{-16,-1.6},{-16,6},{-27.4,6}}, color={0,0,127}));
+  connect(division.u1, add3.u1) annotation (Line(points={{-1.2,5.6},{-6,5.6},{-6,20},{76,20},{76,5.6},{80.8,5.6}}, color={0,0,127}));
+  connect(Gain6.y, add4.u1) annotation (Line(points={{144.6,4},{150.8,4},{150.8,3.6}}, color={0,0,127}));
+  connect(product2.y, Gain6.u) annotation (Line(points={{120.6,4},{130.8,4},{130.8,4}}, color={0,0,127}));
+  connect(add3.y, product2.u2) annotation (Line(points={{94.6,2},{100,2},{100,0.4},{106.8,0.4}}, color={0,0,127}));
+  connect(product2.u1, add2.u1) annotation (Line(points={{106.8,7.6},{100,7.6},{100,16},{36,16},{36,5.6},{40.8,5.6}}, color={0,0,127}));
+  connect(simpleLead.y, Velocity_Limiter.u) annotation (Line(points={{-93.4,6},{-87.2,6}}, color={0,0,127}));
+  connect(simpleLead.u, SimpleLag1.y) annotation (Line(points={{-107.2,6},{-113.4,6}}, color={0,0,127}));
   annotation (
-    Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-80,-60},{80,60}}), graphics={
-        Rectangle(
+    Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-80,-60},{80,60}}), graphics={Rectangle(
           extent={{-190,32},{-12,-38}},
           lineColor={255,128,0},
           pattern=LinePattern.Dash,
-          lineThickness=1),
-        Text(
+          lineThickness=1),Text(
           extent={{-126,40},{-82,34}},
           lineColor={255,128,0},
           textStyle={TextStyle.Bold},
-          textString="Governor System"),
-        Rectangle(
-          extent={{-8,32},{134,-38}},
+          textString="Governor System"),Rectangle(
+          extent={{-8,32},{166,-38}},
           lineColor={85,170,255},
           pattern=LinePattern.Dash,
-          lineThickness=1),
-        Text(
+          lineThickness=1),Text(
           extent={{38,42},{98,32}},
           lineColor={85,170,255},
           textStyle={TextStyle.Bold},
           textString="Hydrauli Turbine System")}),
-    Icon(coordinateSystem(extent={{-80,-60},{80,60}}, preserveAspectRatio=false), graphics={
-        Text(
+    Icon(coordinateSystem(extent={{-80,-60},{80,60}}, preserveAspectRatio=false), graphics={Text(
           extent={{-48,12},{52,-14}},
           lineColor={0,0,255},
           fillPattern=FillPattern.Solid,
-          textString="HYGOV"),
-        Text(
+          textString="HYGOV"),Text(
           extent={{-70,-20},{-42,-40}},
           lineColor={0,0,255},
           fillPattern=FillPattern.Solid,
-          textString="PMECH0"),
-        Rectangle(extent={{-80,60},{80,-60}}, lineColor={0,0,255}),
-        Text(
+          textString="PMECH0"),Rectangle(extent={{-80,60},{80,-60}}, lineColor={0,0,255}),Text(
           extent={{-78,34},{-40,26}},
           lineColor={0,0,255},
-          textString="SPEED"),
-        Text(
+          textString="SPEED"),Text(
           extent={{52,6},{78,-8}},
           lineColor={0,0,255},
           textString="PMECH")}),
-    Documentation(info="<html>
-<p><br><span style=\"font-family: MS Shell Dlg 2;\">&LT;iPSL: iTesla Power System Library&GT;</span></p>
-<p><span style=\"font-family: MS Shell Dlg 2;\">Copyright 2015 RTE (France), AIA (Spain), KTH (Sweden) and DTU (Denmark)</span></p>
+    Documentation(revisions="<html>
+<!--DISCLAIMER-->
+<p>Copyright 2015-2016 RTE (France), SmarTS Lab (Sweden), AIA (Spain) and DTU (Denmark)</p>
 <ul>
-<li><span style=\"font-family: MS Shell Dlg 2;\">RTE: http://www.rte-france.com/ </span></li>
-<li><span style=\"font-family: MS Shell Dlg 2;\">AIA: http://www.aia.es/en/energy/</span></li>
-<li><span style=\"font-family: MS Shell Dlg 2;\">KTH: https://www.kth.se/en</span></li>
-<li><span style=\"font-family: MS Shell Dlg 2;\">DTU:http://www.dtu.dk/english</span></li>
+<li>RTE: <a href=\"http://www.rte-france.com\">http://www.rte-france.com</a></li>
+<li>SmarTS Lab, research group at KTH: <a href=\"https://www.kth.se/en\">https://www.kth.se/en</a></li>
+<li>AIA: <a href=\"http://www.aia.es/en/energy\"> http://www.aia.es/en/energy</a></li>
+<li>DTU: <a href=\"http://www.dtu.dk/english\"> http://www.dtu.dk/english</a></li>
 </ul>
-<p><span style=\"font-family: MS Shell Dlg 2;\">The authors can be contacted by email: info at itesla-ipsl dot org</span></p>
-<p><span style=\"font-family: MS Shell Dlg 2;\">This package is part of the iTesla Power System Library (&QUOT;iPSL&QUOT;) .</span></p>
-<p><span style=\"font-family: MS Shell Dlg 2;\">The iPSL is free software: you can redistribute it and/or modify it under the terms of the GNU Lesser General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.</span></p>
-<p><span style=\"font-family: MS Shell Dlg 2;\">The iPSL is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU Lesser General Public License for more details.</span></p>
-<p><span style=\"font-family: MS Shell Dlg 2;\">You should have received a copy of the GNU Lesser General Public License along with the iPSL. If not, see &LT;http://www.gnu.org/licenses/&GT;.</span></p>
+<p>The authors can be contacted by email: <a href=\"mailto:info@itesla-ipsl.org\">info@itesla-ipsl.org</a></p>
+
+<p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
+<p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
 </html>"));
 end HYGOV;
-

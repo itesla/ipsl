@@ -1,6 +1,4 @@
 within iPSL.Electrical.Controls.PSSE.PSS.PSS2A;
-
-
 model PSS2A "IEEE Dual-Input Stabilizer Model"
   parameter Real T_w1=10 "Washout 1 time constant";
   parameter Real T_w2=10 "Washout 2 time constant";
@@ -26,12 +24,14 @@ model PSS2A "IEEE Dual-Input Stabilizer Model"
     K=1,
     T1=T_1,
     T2=T_2,
-    y_start=0) annotation (Placement(transformation(extent={{80,-10},{100,10}})));
+    y_start=0,
+    x_start=0) annotation (Placement(transformation(extent={{80,-10},{100,10}})));
   iPSL.NonElectrical.Continuous.LeadLag Leadlag2(
     K=1,
     T1=T_3,
     T2=T_4,
-    y_start=0) annotation (Placement(transformation(extent={{112,-10},{132,10}})));
+    y_start=0,
+    x_start=0) annotation (Placement(transformation(extent={{112,-10},{132,10}})));
   Modelica.Blocks.Interfaces.RealOutput VOTHSG "PSS output" annotation (Placement(transformation(extent={{200,-6},{212,6}}), iconTransformation(extent={{200,-6},{212,6}})));
   Modelica.Blocks.Interfaces.RealInput V_S2 "PSS input signal 2" annotation (Placement(transformation(extent={{-186,-26},{-174,-14}}), iconTransformation(extent={{-186,-26},{-174,-14}})));
   iPSL.NonElectrical.Continuous.SimpleLag SimpleLag1(
@@ -46,27 +46,28 @@ model PSS2A "IEEE Dual-Input Stabilizer Model"
   Modelica.Blocks.Math.Add add1(k2=-1) annotation (Placement(transformation(extent={{20,-10},{40,10}})));
   Modelica.Blocks.Math.Gain gain(k=K_S1) annotation (Placement(transformation(extent={{50,-10},{70,10}})));
   Modelica.Blocks.Nonlinear.Limiter limiter(uMax=V_STMAX, uMin=V_STMIN) annotation (Placement(transformation(extent={{146,-10},{166,10}})));
-  Modelica.Blocks.Math.Gain gain1(k=1) annotation (Placement(transformation(extent={{-10,4},{10,24}})));
-  Modelica.Blocks.Continuous.TransferFunction Washout1(
-    initType=Modelica.Blocks.Types.Init.InitialOutput,
+  NonElectrical.Continuous.RampTrackingFilter rampTrackingFilter(
+    M=M,
+    N=N,
+    startValue=0,
+    T_1=T_8,
+    T_2=T_9) annotation (Placement(transformation(extent={{-10,4},{10,24}})));
+  NonElectrical.Continuous.DerivativeLag derivativeLag(
+    K=T_w1,
+    T=T_w1,
+    y_start=0) annotation (Placement(transformation(extent={{-160,10},{-140,30}})));
+  NonElectrical.Continuous.DerivativeLag derivativeLag1(
     y_start=0,
-    b={T_w1,0},
-    a={T_w1,1}) annotation (Placement(transformation(extent={{-160,10},{-140,30}})));
-  Modelica.Blocks.Continuous.TransferFunction Washout2(
-    initType=Modelica.Blocks.Types.Init.InitialOutput,
+    K=T_w2,
+    T=T_w2) annotation (Placement(transformation(extent={{-120,10},{-100,30}})));
+  NonElectrical.Continuous.DerivativeLag derivativeLag2(
     y_start=0,
-    b={T_w2,0},
-    a={T_w2,1}) annotation (Placement(transformation(extent={{-120,10},{-100,30}})));
-  Modelica.Blocks.Continuous.TransferFunction Washout3(
-    initType=Modelica.Blocks.Types.Init.InitialOutput,
+    K=T_w3,
+    T=T_w3) annotation (Placement(transformation(extent={{-160,-30},{-140,-10}})));
+  NonElectrical.Continuous.DerivativeLag derivativeLag3(
     y_start=0,
-    b={T_w3,0},
-    a={T_w3,1}) annotation (Placement(transformation(extent={{-160,-30},{-140,-10}})));
-  Modelica.Blocks.Continuous.TransferFunction Washout4(
-    initType=Modelica.Blocks.Types.Init.InitialOutput,
-    y_start=0,
-    b={T_w4,0},
-    a={T_w4,1}) annotation (Placement(transformation(extent={{-120,-30},{-100,-10}})));
+    K=T_w4,
+    T=T_w4) annotation (Placement(transformation(extent={{-120,-30},{-100,-10}})));
 equation
   connect(SimpleLag1.y, add.u1) annotation (Line(points={{-59,20},{-50,20},{-42,20}}, color={0,0,127}));
   connect(SimpleLag2.y, add.u2) annotation (Line(points={{-59,-20},{-52,-20},{-52,8},{-42,8}}, color={0,0,127}));
@@ -75,35 +76,27 @@ equation
   connect(gain.y, Leadlag1.u) annotation (Line(points={{71,0},{78,0}}, color={0,0,127}));
   connect(Leadlag1.y, Leadlag2.u) annotation (Line(points={{101,0},{110,0}}, color={0,0,127}));
   connect(Leadlag2.y, limiter.u) annotation (Line(points={{133,0},{144,0}}, color={0,0,127}));
-  connect(add.y, gain1.u) annotation (Line(points={{-19,14},{-12,14}}, color={0,0,127}));
-  connect(gain1.y, add1.u1) annotation (Line(points={{11,14},{12,14},{12,6},{18,6}}, color={0,0,127}));
   connect(limiter.y, VOTHSG) annotation (Line(points={{167,0},{206,0}}, color={0,0,127}));
-  connect(Washout1.y, Washout2.u) annotation (Line(points={{-139,20},{-139,20},{-122,20}}, color={0,0,127}));
-  connect(Washout2.y, SimpleLag1.u) annotation (Line(points={{-99,20},{-90.5,20},{-82,20}}, color={0,0,127}));
-  connect(Washout1.u, V_S1) annotation (Line(points={{-162,20},{-180,20}}, color={0,0,127}));
-  connect(Washout3.u, V_S2) annotation (Line(points={{-162,-20},{-171,-20},{-180,-20}}, color={0,0,127}));
-  connect(Washout3.y, Washout4.u) annotation (Line(points={{-139,-20},{-122,-20}}, color={0,0,127}));
-  connect(Washout4.y, SimpleLag2.u) annotation (Line(points={{-99,-20},{-90,-20},{-82,-20}}, color={0,0,127}));
+  connect(add.y, rampTrackingFilter.u) annotation (Line(points={{-19,14},{-15.5,14},{-12,14}}, color={0,0,127}));
+  connect(rampTrackingFilter.y, add1.u1) annotation (Line(points={{11,14},{14,14},{14,6},{18,6}}, color={0,0,127}));
+  connect(V_S1, derivativeLag.u) annotation (Line(points={{-180,20},{-172,20},{-162,20}}, color={0,0,127}));
+  connect(derivativeLag.y, derivativeLag1.u) annotation (Line(points={{-139,20},{-130.5,20},{-122,20}}, color={0,0,127}));
+  connect(derivativeLag1.y, SimpleLag1.u) annotation (Line(points={{-99,20},{-82,20},{-82,20}}, color={0,0,127}));
+  connect(derivativeLag2.u, V_S2) annotation (Line(points={{-162,-20},{-180,-20}}, color={0,0,127}));
+  connect(derivativeLag3.u, derivativeLag2.y) annotation (Line(points={{-122,-20},{-139,-20}}, color={0,0,127}));
+  connect(derivativeLag3.y, SimpleLag2.u) annotation (Line(points={{-99,-20},{-82,-20}}, color={0,0,127}));
   annotation (
-    Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-180,-40},{200,40}}), graphics={Text(
-          extent={{-20,38},{22,28}},
-          lineColor={28,108,200},
-          textString="RampTracking filter missing")}),
-    Icon(coordinateSystem(preserveAspectRatio=false, extent={{-180,-40},{200,40}}), graphics={
-        Rectangle(extent={{-180,40},{200,-40}}, lineColor={0,0,255}),
-        Text(
+    Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-180,-40},{200,40}})),
+    Icon(coordinateSystem(preserveAspectRatio=false, extent={{-180,-40},{200,40}}), graphics={Rectangle(extent={{-180,40},{200,-40}}, lineColor={0,0,255}),Text(
           extent={{-34,16},{32,-14}},
           lineColor={0,0,255},
-          textString="PSS2A"),
-        Text(
+          textString="PSS2A"),Text(
           extent={{-170,30},{-142,10}},
           lineColor={0,0,255},
-          textString="V_S1"),
-        Text(
+          textString="V_S1"),Text(
           extent={{-170,-10},{-142,-30}},
           lineColor={0,0,255},
-          textString="V_S2"),
-        Text(
+          textString="V_S2"),Text(
           extent={{140,10},{196,-10}},
           lineColor={0,0,255},
           textString="VOTHSG")}),
@@ -128,18 +121,18 @@ PSS2A, PSS/E Manual
 <td><p><a href=\"mailto:luigiv@kth.se\">luigiv@kth.se</a></p></td>
 </tr>
 </table>
-<p><br><span style=\"font-family: MS Shell Dlg 2;\">&LT;iPSL: iTesla Power System Library&GT;</span></p>
-<p><span style=\"font-family: MS Shell Dlg 2;\">Copyright 2015 RTE (France), AIA (Spain), KTH (Sweden) and DTU (Denmark)</span></p>
+</html>", revisions="<html>
+<!--DISCLAIMER-->
+<p>Copyright 2015-2016 RTE (France), SmarTS Lab (Sweden), AIA (Spain) and DTU (Denmark)</p>
 <ul>
-<li><span style=\"font-family: MS Shell Dlg 2;\">RTE: http://www.rte-france.com/ </span></li>
-<li><span style=\"font-family: MS Shell Dlg 2;\">AIA: http://www.aia.es/en/energy/</span></li>
-<li><span style=\"font-family: MS Shell Dlg 2;\">KTH: https://www.kth.se/en</span></li>
-<li><span style=\"font-family: MS Shell Dlg 2;\">DTU:http://www.dtu.dk/english</span></li>
+<li>RTE: <a href=\"http://www.rte-france.com\">http://www.rte-france.com</a></li>
+<li>SmarTS Lab, research group at KTH: <a href=\"https://www.kth.se/en\">https://www.kth.se/en</a></li>
+<li>AIA: <a href=\"http://www.aia.es/en/energy\"> http://www.aia.es/en/energy</a></li>
+<li>DTU: <a href=\"http://www.dtu.dk/english\"> http://www.dtu.dk/english</a></li>
 </ul>
-<p><span style=\"font-family: MS Shell Dlg 2;\">The authors can be contacted by email: info at itesla-ipsl dot org</span></p>
-<p><span style=\"font-family: MS Shell Dlg 2;\">This package is part of the iTesla Power System Library (&QUOT;iPSL&QUOT;) .</span></p>
-<p><span style=\"font-family: MS Shell Dlg 2;\">The iPSL is free software: you can redistribute it and/or modify it under the terms of the GNU Lesser General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.</span></p>
-<p><span style=\"font-family: MS Shell Dlg 2;\">The iPSL is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU Lesser General Public License for more details.</span></p>
-<p><span style=\"font-family: MS Shell Dlg 2;\">You should have received a copy of the GNU Lesser General Public License along with the iPSL. If not, see &LT;http://www.gnu.org/licenses/&GT;.</span></p>
+<p>The authors can be contacted by email: <a href=\"mailto:info@itesla-ipsl.org\">info@itesla-ipsl.org</a></p>
+
+<p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
+<p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
 </html>"));
 end PSS2A;

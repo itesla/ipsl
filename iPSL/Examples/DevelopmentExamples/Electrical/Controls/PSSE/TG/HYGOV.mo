@@ -1,5 +1,6 @@
 within iPSL.Examples.DevelopmentExamples.Electrical.Controls.PSSE.TG;
 model HYGOV "Simple Machine Infinite Bus with Machine, Governor and Excitation system"
+
   iPSL.Electrical.Machines.PSSE.GENSAL.GENSAL generator(
     Xppd=0.2,
     Xppq=0.2,
@@ -10,8 +11,8 @@ model HYGOV "Simple Machine Infinite Bus with Machine, Governor and Excitation s
     Q_0=5.416571,
     M_b=100,
     Tpd0=6.7000,
-    Tppd0=0.28000E-01,
-    Tppq0=0.35000E-01,
+    Tppd0=0.028,
+    Tppq0=0.0358,
     H=4.4100,
     D=0,
     Xd=1.2200,
@@ -67,25 +68,37 @@ model HYGOV "Simple Machine Infinite Bus with Machine, Governor and Excitation s
     V_0=0.991992,
     t1=2,
     d_P=5*0.01,
-    d_t=0) annotation (Placement(transformation(extent={{0,-40},{24,-16}})));
-  iPSL.Electrical.Controls.PSSE.TG.HYGOV HYGOV(VELM=0.02, G_MAX=0.415) annotation (Placement(transformation(
+    d_t=0) annotation (Placement(transformation(extent={{-10,-42},{6,-28}})));
+  iPSL.Electrical.Controls.PSSE.TG.HYGOV HYGOV(
+    VELM=0.02,
+    G_MAX=0.415,
+    R=0.05,
+    r=0.3,
+    T_r=5,
+    T_f=0.05,
+    T_g=0.5,
+    G_MIN=0,
+    T_w=1.25,
+    A_t=1.2,
+    D_turb=0.2,
+    q_NL=0.08) annotation (Placement(transformation(
         extent={{-19,-14},{19,14}},
         rotation=180,
         origin={-65,48})));
   iPSL.Electrical.Controls.PSSE.ES.SCRX.SCRX SCRX(
     V_0=1,
     V_c0=1,
-    T_AT_B=0.01,
     T_B=10,
     K=100,
     T_E=0.05,
     E_MIN=0,
     E_MAX=5,
     r_cr_fd=0,
-    C_SWITCH=false) annotation (Placement(transformation(
+    C_SWITCH=false,
+    T_AT_B=0.1) annotation (Placement(transformation(
         extent={{-18,-16},{18,16}},
         rotation=180,
-        origin={-66,-26})));
+        origin={-70,-24})));
   Modelica.Blocks.Sources.Constant const(k=0) annotation (Placement(transformation(
         extent={{-2,-2},{2,2}},
         rotation=180,
@@ -94,7 +107,7 @@ model HYGOV "Simple Machine Infinite Bus with Machine, Governor and Excitation s
     R=0,
     t1=2,
     t2=2.15,
-    X=-0.5) annotation (Placement(transformation(extent={{-22,-4},{-12,6}})));
+    X=0) annotation (Placement(transformation(extent={{38,-36},{48,-26}})));
 equation
   connect(generator.p, pwLine.p) annotation (Line(
       points={{-59,10},{-31,10}},
@@ -121,53 +134,48 @@ equation
       color={0,0,255},
       smooth=Smooth.None));
   connect(constantLoad.p, pwLine3.p) annotation (Line(
-      points={{12,-14.8},{12,-27.5},{-3,-27.5},{-3,-10}},
+      points={{-2,-27.3},{-2,-27.5},{-3,-27.5},{-3,-10}},
       color={0,0,255},
       smooth=Smooth.None));
   connect(SCRX.VUEL, const.y) annotation (Line(
-      points={{-48.15,-21.04},{-43.67,-21.04},{-43.67,-24},{-42.2,-24}},
+      points={{-52.15,-19.04},{-43.67,-19.04},{-43.67,-24},{-42.2,-24}},
       color={0,0,127},
       smooth=Smooth.None));
   connect(SCRX.VOEL, const.y) annotation (Line(
-      points={{-48.15,-25.2},{-43.67,-25.2},{-43.67,-24},{-42.2,-24}},
+      points={{-52.15,-23.2},{-43.67,-23.2},{-43.67,-24},{-42.2,-24}},
       color={0,0,127},
       smooth=Smooth.None));
   connect(SCRX.VOTHSG, const.y) annotation (Line(
-      points={{-48.15,-29.04},{-43.67,-29.04},{-43.67,-24},{-42.2,-24}},
+      points={{-52.15,-27.04},{-43.67,-27.04},{-43.67,-24},{-42.2,-24}},
       color={0,0,127},
       smooth=Smooth.None));
-  connect(pwFault.p, pwLine.p) annotation (Line(
-      points={{-22.8333,1},{-22.8333,0.5},{-31,0.5},{-31,10}},
-      color={0,0,255},
-      smooth=Smooth.None));
   connect(generator.EFD0, SCRX.EFD0) annotation (Line(
-      points={{-59.2,3},{-59.2,-6.64},{-48.15,-6.64}},
+      points={{-59.2,3},{-59.2,-4.64},{-52.15,-4.64}},
       color={0,0,127},
       smooth=Smooth.None));
   connect(generator.PMECH0, HYGOV.PMECH0) annotation (Line(points={{-59.2,7},{-36,7},{-36,55},{-46.475,55}}, color={0,0,127}));
   connect(generator.SPEED, HYGOV.SPEED) annotation (Line(points={{-59.2,19},{-42,19},{-42,41},{-46.475,41}}, color={0,0,127}));
   connect(HYGOV.PMECH, generator.PMECH) annotation (Line(points={{-84.95,48},{-94,48},{-94,15},{-79.8,15}}, color={0,0,127}));
-  connect(SCRX.EFD, generator.EFD) annotation (Line(points={{-84.6,-19.76},{-94,-19.76},{-94,5},{-79.8,5}}, color={0,0,127}));
-  connect(generator.ETERM, SCRX.ECOMP) annotation (Line(points={{-59.2,15},{-34,15},{-34,-33.52},{-48.15,-33.52}}, color={0,0,127}));
-  connect(SCRX.ETERM, SCRX.ECOMP) annotation (Line(points={{-47.85,-12.24},{-34,-12},{-34,-33.52},{-48.15,-33.52}}, color={0,0,127}));
-  connect(generator.XADIFD, SCRX.XADIFD) annotation (Line(points={{-59.2,1},{-42,1},{-42,-17.52},{-47.85,-17.52}}, color={0,0,127}));
+  connect(SCRX.EFD, generator.EFD) annotation (Line(points={{-88.6,-17.76},{-94,-17.76},{-94,5},{-79.8,5}}, color={0,0,127}));
+  connect(generator.ETERM, SCRX.ECOMP) annotation (Line(points={{-59.2,15},{-34,15},{-34,-31.52},{-52.15,-31.52}}, color={0,0,127}));
+  connect(SCRX.ETERM, SCRX.ECOMP) annotation (Line(points={{-51.85,-10.24},{-34,-10.24},{-34,-31.52},{-52.15,-31.52}}, color={0,0,127}));
+  connect(generator.XADIFD, SCRX.XADIFD) annotation (Line(points={{-59.2,1},{-42,1},{-42,-15.52},{-51.85,-15.52}}, color={0,0,127}));
+  connect(pwFault.p, pwLine4.p) annotation (Line(points={{37.1667,-31},{23,-31},{23,-10}}, color={0,0,255}));
   annotation (
     Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-120},{100,80}})),
     Icon(coordinateSystem(extent={{-100,-120},{100,80}})),
-    Documentation(info="<html>
-<p><br><span style=\"font-family: MS Shell Dlg 2;\">&LT;iPSL: iTesla Power System Library&GT;</span></p>
-<p><span style=\"font-family: MS Shell Dlg 2;\">Copyright 2015 RTE (France), AIA (Spain), KTH (Sweden) and DTU (Denmark)</span></p>
+    Documentation(revisions="<html>
+<!--DISCLAIMER-->
+<p>Copyright 2015-2016 RTE (France), SmarTS Lab (Sweden), AIA (Spain) and DTU (Denmark)</p>
 <ul>
-<li><span style=\"font-family: MS Shell Dlg 2;\">RTE: http://www.rte-france.com/ </span></li>
-<li><span style=\"font-family: MS Shell Dlg 2;\">AIA: http://www.aia.es/en/energy/</span></li>
-<li><span style=\"font-family: MS Shell Dlg 2;\">KTH: https://www.kth.se/en</span></li>
-<li><span style=\"font-family: MS Shell Dlg 2;\">DTU:http://www.dtu.dk/english</span></li>
+<li>RTE: <a href=\"http://www.rte-france.com\">http://www.rte-france.com</a></li>
+<li>SmarTS Lab, research group at KTH: <a href=\"https://www.kth.se/en\">https://www.kth.se/en</a></li>
+<li>AIA: <a href=\"http://www.aia.es/en/energy\"> http://www.aia.es/en/energy</a></li>
+<li>DTU: <a href=\"http://www.dtu.dk/english\"> http://www.dtu.dk/english</a></li>
 </ul>
-<p><span style=\"font-family: MS Shell Dlg 2;\">The authors can be contacted by email: info at itesla-ipsl dot org</span></p>
-<p><span style=\"font-family: MS Shell Dlg 2;\">This package is part of the iTesla Power System Library (&QUOT;iPSL&QUOT;) .</span></p>
-<p><span style=\"font-family: MS Shell Dlg 2;\">The iPSL is free software: you can redistribute it and/or modify it under the terms of the GNU Lesser General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.</span></p>
-<p><span style=\"font-family: MS Shell Dlg 2;\">The iPSL is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU Lesser General Public License for more details.</span></p>
-<p><span style=\"font-family: MS Shell Dlg 2;\">You should have received a copy of the GNU Lesser General Public License along with the iPSL. If not, see &LT;http://www.gnu.org/licenses/&GT;.</span></p>
+<p>The authors can be contacted by email: <a href=\"mailto:info@itesla-ipsl.org\">info@itesla-ipsl.org</a></p>
+
+<p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
+<p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
 </html>"));
 end HYGOV;
-

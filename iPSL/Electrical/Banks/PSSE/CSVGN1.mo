@@ -29,15 +29,15 @@ model CSVGN1 "STATC SHUNT COMPENSATOR MODEL"
   Real vq(start=vq0) "voltage quadrature axis";
   Real id(start=id0) "current direct axis";
   Real iq(start=iq0) "current quadrature axis";
-  Modelica.Blocks.Math.Product product1 annotation (Placement(transformation(extent={{36,8},{44,16}})));
-  Modelica.Blocks.Math.Add add(k2=-1) annotation (Placement(transformation(extent={{62,10},{72,20}})));
+  Modelica.Blocks.Math.Product product1 annotation (Placement(transformation(extent={{36,-10},{56,10}})));
+  Modelica.Blocks.Math.Add add(k2=-1) annotation (Placement(transformation(extent={{68,-2},{88,18}})));
   Modelica.Blocks.Interfaces.RealOutput Y(start=Y0) annotation (Placement(transformation(extent={{86,6},{104,24}}), iconTransformation(extent={{86,6},{104,24}})));
   Modelica.Blocks.Interfaces.RealInput V
     annotation (Placement(transformation(extent={{-118,-18},{-92,8}}), iconTransformation(
         extent={{-13,-13},{13,13}},
         rotation=180,
         origin={39,29})));
-  Modelica.Blocks.Math.Add add1(k1=-1) annotation (Placement(transformation(extent={{-76,-8},{-62,6}})));
+  Modelica.Blocks.Math.Add add1(k1=-1) annotation (Placement(transformation(extent={{-70,-10},{-50,10}})));
   Modelica.Blocks.Sources.Constant const(k=MBASE/SBASE) annotation (Placement(transformation(extent={{6,54},{16,64}})));
   Modelica.Blocks.Sources.Constant const1(k=CBASE/SBASE) annotation (Placement(transformation(extent={{34,54},{44,64}})));
   iPSL.NonElectrical.Continuous.SimpleLagLim ImSimpleLagnonwinduplimit(
@@ -45,9 +45,9 @@ model CSVGN1 "STATC SHUNT COMPENSATOR MODEL"
     outMax=VMAX,
     T=T3,
     K=K,
-    y_start=k30) annotation (Placement(transformation(extent={{-42,-12},{-22,8}})));
-  Modelica.Blocks.Sources.Constant const2(k=Vref) annotation (Placement(transformation(extent={{-112,14},{-98,28}})));
-  Modelica.Blocks.Nonlinear.Limiter imLimited(uMin=0, uMax=1) annotation (Placement(transformation(extent={{-2,-12},{18,8}})));
+    y_start=k30) annotation (Placement(transformation(extent={{-40,-10},{-20,10}})));
+  Modelica.Blocks.Sources.Constant const2(k=Vref) annotation (Placement(transformation(extent={{-100,20},{-80,40}})));
+  Modelica.Blocks.Nonlinear.Limiter imLimited(uMin=0, uMax=1) annotation (Placement(transformation(extent={{-10,-10},{10,10}})));
   iPSL.Connectors.PwPin p(
     vr(start=vr0),
     vi(start=vi0),
@@ -86,54 +86,47 @@ equation
   -P = p.vr*p.ir + p.vi*p.ii;
   -Q = p.vi*p.ir - p.vr*p.ii;
   connect(const1.y, add.u1) annotation (Line(
-      points={{44.5,59},{61,59},{61,18}},
+      points={{44.5,59},{66,59},{66,14}},
       color={0,0,127},
       smooth=Smooth.None));
   connect(add.y, Y) annotation (Line(
-      points={{72.5,15},{95,15}},
+      points={{89,8},{88,8},{88,15},{95,15}},
       color={0,0,127},
       smooth=Smooth.None));
   connect(product1.y, add.u2) annotation (Line(
-      points={{44.4,12},{61,12}},
+      points={{57,0},{54,0},{54,2},{66,2}},
       color={0,0,127},
       smooth=Smooth.None));
   connect(V, add1.u2) annotation (Line(
-      points={{-105,-5},{-93.5,-5},{-93.5,-5.2},{-77.4,-5.2}},
-      color={0,0,127},
-      smooth=Smooth.None));
-  connect(const2.y, add1.u1) annotation (Line(
-      points={{-97.3,21},{-82,21},{-82,3.2},{-77.4,3.2}},
+      points={{-105,-5},{-93.5,-5},{-93.5,-6},{-72,-6}},
       color={0,0,127},
       smooth=Smooth.None));
   connect(const.y, product1.u1) annotation (Line(
-      points={{16.5,59},{24,59},{24,14.4},{35.2,14.4}},
+      points={{16.5,59},{24,59},{24,6},{34,6}},
       color={0,0,127},
       smooth=Smooth.None));
-  connect(add1.y, ImSimpleLagnonwinduplimit.u) annotation (Line(points={{-61.3,-1},{-52.65,-1},{-52.65,-2},{-44,-2}}, color={0,0,127}));
-  connect(ImSimpleLagnonwinduplimit.y, imLimited.u) annotation (Line(points={{-21,-2},{-4,-2}}, color={0,0,127}));
-  connect(imLimited.y, product1.u2) annotation (Line(points={{19,-2},{24,-2},{24,9.6},{35.2,9.6}}, color={0,0,127}));
+  connect(add1.y, ImSimpleLagnonwinduplimit.u) annotation (Line(points={{-49,0},{-49,0},{-42,0}}, color={0,0,127}));
+  connect(ImSimpleLagnonwinduplimit.y, imLimited.u) annotation (Line(points={{-19,0},{-12,0}}, color={0,0,127}));
+  connect(imLimited.y, product1.u2) annotation (Line(points={{11,0},{24,0},{24,-6},{34,-6}}, color={0,0,127}));
+  connect(const2.y, add1.u1) annotation (Line(points={{-79,30},{-76,30},{-76,6},{-72,6}}, color={0,0,127}));
   annotation (
-    Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,100}}), graphics={Text(
-          extent={{-144,92},{-108,84}},
-          lineColor={0,0,255},
-          textString="Simplified one")}),
-    Icon(coordinateSystem(preserveAspectRatio=true, extent={{-100,-100},{100,100}}), graphics={Rectangle(extent={{-60,42},{52,-68}}, lineColor={0,0,255}),Text(
+    Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,100}})),
+    Icon(coordinateSystem(preserveAspectRatio=true, extent={{-100,-100},{100,100}}), graphics={Rectangle(extent={{-100,100},{100,-100}}, lineColor={0,0,255}),Text(
           extent={{-46,20},{40,-26}},
           lineColor={0,0,255},
           textString="CSVGN1")}),
-    Documentation(info="<html>
-<p><br><span style=\"font-family: MS Shell Dlg 2;\">&LT;iPSL: iTesla Power System Library&GT;</span></p>
-<p><span style=\"font-family: MS Shell Dlg 2;\">Copyright 2015 RTE (France), AIA (Spain), KTH (Sweden) and DTU (Denmark)</span></p>
+    Documentation(revisions="<html>
+<!--DISCLAIMER-->
+<p>Copyright 2015-2016 RTE (France), SmarTS Lab (Sweden), AIA (Spain) and DTU (Denmark)</p>
 <ul>
-<li><span style=\"font-family: MS Shell Dlg 2;\">RTE: http://www.rte-france.com/ </span></li>
-<li><span style=\"font-family: MS Shell Dlg 2;\">AIA: http://www.aia.es/en/energy/</span></li>
-<li><span style=\"font-family: MS Shell Dlg 2;\">KTH: https://www.kth.se/en</span></li>
-<li><span style=\"font-family: MS Shell Dlg 2;\">DTU:http://www.dtu.dk/english</span></li>
+<li>RTE: <a href=\"http://www.rte-france.com\">http://www.rte-france.com</a></li>
+<li>SmarTS Lab, research group at KTH: <a href=\"https://www.kth.se/en\">https://www.kth.se/en</a></li>
+<li>AIA: <a href=\"http://www.aia.es/en/energy\"> http://www.aia.es/en/energy</a></li>
+<li>DTU: <a href=\"http://www.dtu.dk/english\"> http://www.dtu.dk/english</a></li>
 </ul>
-<p><span style=\"font-family: MS Shell Dlg 2;\">The authors can be contacted by email: info at itesla-ipsl dot org</span></p>
-<p><span style=\"font-family: MS Shell Dlg 2;\">This package is part of the iTesla Power System Library (&QUOT;iPSL&QUOT;) .</span></p>
-<p><span style=\"font-family: MS Shell Dlg 2;\">The iPSL is free software: you can redistribute it and/or modify it under the terms of the GNU Lesser General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.</span></p>
-<p><span style=\"font-family: MS Shell Dlg 2;\">The iPSL is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU Lesser General Public License for more details.</span></p>
-<p><span style=\"font-family: MS Shell Dlg 2;\">You should have received a copy of the GNU Lesser General Public License along with the iPSL. If not, see &LT;http://www.gnu.org/licenses/&GT;.</span></p>
+<p>The authors can be contacted by email: <a href=\"mailto:info@itesla-ipsl.org\">info@itesla-ipsl.org</a></p>
+
+<p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
+<p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
 </html>"));
 end CSVGN1;
