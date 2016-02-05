@@ -15,7 +15,8 @@ If a copy of the MPL was not distributed with this file, You can obtain one at
 </p>
 </html>"
 
-  annotation (Icon(graphics={Text(
+  annotation (preferredView="info", DocumentationClass=false,
+        Icon(graphics={Text(
           extent={{-100,140},{100,100}},
           lineColor={0,127,0},
           textString="%name%"),
