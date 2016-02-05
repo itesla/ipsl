@@ -165,60 +165,52 @@ model PFblocks
           extent={{-100.0,-100.0},{100.0,100.0}},
           preserveAspectRatio=true,
           initialScale=0.1,
-          grid={10,10}), graphics={
-          Rectangle(
-            visible=true,
-            fillColor={255,255,255},
-            extent={{-100.0,-100.0},{100.0,100.0}}),
-          Text(
-            visible=true,
-            origin={0.8251,1.0405},
-            fillPattern=FillPattern.Solid,
-            extent={{-39.1749,-15.0129},{39.1749,15.0129}},
-            textString="PVnew",
-            fontName="Arial"),
-          Text(
-            visible=true,
-            origin={-74.7566,70.0},
-            fillPattern=FillPattern.Solid,
-            extent={{-20.0,-13.9876},{20.0,13.9876}},
-            textString="Vdc(700)",
-            fontName="Arial"),
-          Text(
-            visible=true,
-            origin={-75.6751,-0.0},
-            fillPattern=FillPattern.Solid,
-            extent={{-20.0,-13.9876},{20.0,13.9876}},
-            textString="E(1000)",
-            fontName="Arial"),
-          Text(
-            visible=true,
-            origin={-74.8099,-67.7542},
-            fillPattern=FillPattern.Solid,
-            extent={{-20.0,-13.9876},{20.0,13.9876}},
-            textString="Tref(25)",
-            fontName="Arial"),
-          Text(
-            visible=true,
-            origin={68.1573,71.699},
-            fillPattern=FillPattern.Solid,
-            extent={{-20.0,-13.9876},{20.0,13.9876}},
-            textString="Varray",
-            fontName="Arial"),
-          Text(
-            visible=true,
-            origin={74.6709,-0.0},
-            fillPattern=FillPattern.Solid,
-            extent={{-20.0,-13.9876},{20.0,13.9876}},
-            textString="Iarray",
-            fontName="Arial"),
-          Text(
-            visible=true,
-            origin={74.3469,-62.1058},
-            fillPattern=FillPattern.Solid,
-            extent={{-20.0,-13.9876},{20.0,13.9876}},
-            textString="Parray",
-            fontName="Arial")}),
+          grid={10,10}), graphics={Rectangle(
+              visible=true,
+              fillColor={255,255,255},
+              extent={{-100.0,-100.0},{100.0,100.0}}),Text(
+              visible=true,
+              origin={0.8251,1.0405},
+              fillPattern=FillPattern.Solid,
+              extent={{-39.1749,-15.0129},{39.1749,15.0129}},
+              textString="PVnew",
+              fontName="Arial"),Text(
+              visible=true,
+              origin={-74.7566,70.0},
+              fillPattern=FillPattern.Solid,
+              extent={{-20.0,-13.9876},{20.0,13.9876}},
+              textString="Vdc(700)",
+              fontName="Arial"),Text(
+              visible=true,
+              origin={-75.6751,-0.0},
+              fillPattern=FillPattern.Solid,
+              extent={{-20.0,-13.9876},{20.0,13.9876}},
+              textString="E(1000)",
+              fontName="Arial"),Text(
+              visible=true,
+              origin={-74.8099,-67.7542},
+              fillPattern=FillPattern.Solid,
+              extent={{-20.0,-13.9876},{20.0,13.9876}},
+              textString="Tref(25)",
+              fontName="Arial"),Text(
+              visible=true,
+              origin={68.1573,71.699},
+              fillPattern=FillPattern.Solid,
+              extent={{-20.0,-13.9876},{20.0,13.9876}},
+              textString="Varray",
+              fontName="Arial"),Text(
+              visible=true,
+              origin={74.6709,-0.0},
+              fillPattern=FillPattern.Solid,
+              extent={{-20.0,-13.9876},{20.0,13.9876}},
+              textString="Iarray",
+              fontName="Arial"),Text(
+              visible=true,
+              origin={74.3469,-62.1058},
+              fillPattern=FillPattern.Solid,
+              extent={{-20.0,-13.9876},{20.0,13.9876}},
+              textString="Parray",
+              fontName="Arial")}),
       Diagram(coordinateSystem(
           extent={{-148.5,-105.0},{148.5,105.0}},
           preserveAspectRatio=true,
@@ -243,19 +235,19 @@ model PFblocks
 <td><p><a href=\"mailto:luigiv@kth.se\">luigiv@kth.se</a></p></td>
 </tr>
 </table>
-<p><br><span style=\"font-family: MS Shell Dlg 2;\">&LT;iPSL: iTesla Power System Library&GT;</span></p>
-<p><span style=\"font-family: MS Shell Dlg 2;\">Copyright 2015 RTE (France), AIA (Spain), KTH (Sweden) and DTU (Denmark)</span></p>
+</html>", revisions="<html>
+<!--DISCLAIMER-->
+<p>Copyright 2015-2016 RTE (France), SmarTS Lab (Sweden), AIA (Spain) and DTU (Denmark)</p>
 <ul>
-<li><span style=\"font-family: MS Shell Dlg 2;\">RTE: http://www.rte-france.com/ </span></li>
-<li><span style=\"font-family: MS Shell Dlg 2;\">AIA: http://www.aia.es/en/energy/</span></li>
-<li><span style=\"font-family: MS Shell Dlg 2;\">KTH: https://www.kth.se/en</span></li>
-<li><span style=\"font-family: MS Shell Dlg 2;\">DTU:http://www.dtu.dk/english</span></li>
+<li>RTE: <a href=\"http://www.rte-france.com\">http://www.rte-france.com</a></li>
+<li>SmarTS Lab, research group at KTH: <a href=\"https://www.kth.se/en\">https://www.kth.se/en</a></li>
+<li>AIA: <a href=\"http://www.aia.es/en/energy\"> http://www.aia.es/en/energy</a></li>
+<li>DTU: <a href=\"http://www.dtu.dk/english\"> http://www.dtu.dk/english</a></li>
 </ul>
-<p><span style=\"font-family: MS Shell Dlg 2;\">The authors can be contacted by email: info at itesla-ipsl dot org</span></p>
-<p><span style=\"font-family: MS Shell Dlg 2;\">This package is part of the iTesla Power System Library (&QUOT;iPSL&QUOT;) .</span></p>
-<p><span style=\"font-family: MS Shell Dlg 2;\">The iPSL is free software: you can redistribute it and/or modify it under the terms of the GNU Lesser General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.</span></p>
-<p><span style=\"font-family: MS Shell Dlg 2;\">The iPSL is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU Lesser General Public License for more details.</span></p>
-<p><span style=\"font-family: MS Shell Dlg 2;\">You should have received a copy of the GNU Lesser General Public License along with the iPSL. If not, see &LT;http://www.gnu.org/licenses/&GT;.</span></p>
+<p>The authors can be contacted by email: <a href=\"mailto:info@itesla-ipsl.org\">info@itesla-ipsl.org</a></p>
+
+<p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
+<p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
 </html>"));
   end PVnew;
 
@@ -429,39 +421,34 @@ model PFblocks
           extent={{-100.0,-100.0},{100.0,100.0}},
           preserveAspectRatio=true,
           initialScale=0.1,
-          grid={10,10}), graphics={
-          Rectangle(
-            visible=true,
-            fillColor={255,255,255},
-            extent={{-100.0,-100.0},{100.0,100.0}}),
-          Text(
-            visible=true,
-            origin={-2.5936,-0.1486},
-            fillPattern=FillPattern.Solid,
-            extent={{-42.5936,-24.8233},{42.5936,24.8233}},
-            textString="%name",
-            fontName="Arial"),
-          Text(
-            visible=true,
-            origin={-76.6608,38.9853},
-            fillPattern=FillPattern.Solid,
-            extent={{-13.3392,-18.9853},{13.3392,18.9853}},
-            textString="Varray",
-            fontName="Arial"),
-          Text(
-            visible=true,
-            origin={-73.5779,-52.1735},
-            fillPattern=FillPattern.Solid,
-            extent={{-18.8776,-14.7156},{18.8776,14.7156}},
-            textString="Iarray",
-            fontName="Arial"),
-          Text(
-            visible=true,
-            origin={83.3883,-0.7022},
-            fillPattern=FillPattern.Solid,
-            extent={{-9.6618,-10.7022},{9.6618,10.7022}},
-            textString="Vdref",
-            fontName="Arial")}),
+          grid={10,10}), graphics={Rectangle(
+              visible=true,
+              fillColor={255,255,255},
+              extent={{-100.0,-100.0},{100.0,100.0}}),Text(
+              visible=true,
+              origin={-2.5936,-0.1486},
+              fillPattern=FillPattern.Solid,
+              extent={{-42.5936,-24.8233},{42.5936,24.8233}},
+              textString="%name",
+              fontName="Arial"),Text(
+              visible=true,
+              origin={-76.6608,38.9853},
+              fillPattern=FillPattern.Solid,
+              extent={{-13.3392,-18.9853},{13.3392,18.9853}},
+              textString="Varray",
+              fontName="Arial"),Text(
+              visible=true,
+              origin={-73.5779,-52.1735},
+              fillPattern=FillPattern.Solid,
+              extent={{-18.8776,-14.7156},{18.8776,14.7156}},
+              textString="Iarray",
+              fontName="Arial"),Text(
+              visible=true,
+              origin={83.3883,-0.7022},
+              fillPattern=FillPattern.Solid,
+              extent={{-9.6618,-10.7022},{9.6618,10.7022}},
+              textString="Vdref",
+              fontName="Arial")}),
       Diagram(coordinateSystem(
           extent={{-148.5,-105.0},{148.5,105.0}},
           preserveAspectRatio=true,
@@ -486,19 +473,19 @@ model PFblocks
 <td><p><a href=\"mailto:luigiv@kth.se\">luigiv@kth.se</a></p></td>
 </tr>
 </table>
-<p><br><span style=\"font-family: MS Shell Dlg 2;\">&LT;iPSL: iTesla Power System Library&GT;</span></p>
-<p><span style=\"font-family: MS Shell Dlg 2;\">Copyright 2015 RTE (France), AIA (Spain), KTH (Sweden) and DTU (Denmark)</span></p>
+</html>", revisions="<html>
+<!--DISCLAIMER-->
+<p>Copyright 2015-2016 RTE (France), SmarTS Lab (Sweden), AIA (Spain) and DTU (Denmark)</p>
 <ul>
-<li><span style=\"font-family: MS Shell Dlg 2;\">RTE: http://www.rte-france.com/ </span></li>
-<li><span style=\"font-family: MS Shell Dlg 2;\">AIA: http://www.aia.es/en/energy/</span></li>
-<li><span style=\"font-family: MS Shell Dlg 2;\">KTH: https://www.kth.se/en</span></li>
-<li><span style=\"font-family: MS Shell Dlg 2;\">DTU:http://www.dtu.dk/english</span></li>
+<li>RTE: <a href=\"http://www.rte-france.com\">http://www.rte-france.com</a></li>
+<li>SmarTS Lab, research group at KTH: <a href=\"https://www.kth.se/en\">https://www.kth.se/en</a></li>
+<li>AIA: <a href=\"http://www.aia.es/en/energy\"> http://www.aia.es/en/energy</a></li>
+<li>DTU: <a href=\"http://www.dtu.dk/english\"> http://www.dtu.dk/english</a></li>
 </ul>
-<p><span style=\"font-family: MS Shell Dlg 2;\">The authors can be contacted by email: info at itesla-ipsl dot org</span></p>
-<p><span style=\"font-family: MS Shell Dlg 2;\">This package is part of the iTesla Power System Library (&QUOT;iPSL&QUOT;) .</span></p>
-<p><span style=\"font-family: MS Shell Dlg 2;\">The iPSL is free software: you can redistribute it and/or modify it under the terms of the GNU Lesser General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.</span></p>
-<p><span style=\"font-family: MS Shell Dlg 2;\">The iPSL is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU Lesser General Public License for more details.</span></p>
-<p><span style=\"font-family: MS Shell Dlg 2;\">You should have received a copy of the GNU Lesser General Public License along with the iPSL. If not, see &LT;http://www.gnu.org/licenses/&GT;.</span></p>
+<p>The authors can be contacted by email: <a href=\"mailto:info@itesla-ipsl.org\">info@itesla-ipsl.org</a></p>
+
+<p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
+<p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
 </html>"));
   end MPPT;
 
@@ -621,32 +608,28 @@ model PFblocks
           extent={{-100.0,-100.0},{100.0,100.0}},
           preserveAspectRatio=true,
           initialScale=0.1,
-          grid={10,10}), graphics={
-          Rectangle(
-            visible=true,
-            fillColor={255,255,255},
-            extent={{-100.0,-100.0},{100.0,100.0}}),
-          Text(
-            visible=true,
-            origin={-50.0,60.0},
-            fillPattern=FillPattern.Solid,
-            extent={{-47.2303,-30.0},{47.2303,30.0}},
-            textString="Pac [MW]",
-            fontName="Arial"),
-          Text(
-            visible=true,
-            origin={-68.5241,-31.9581},
-            fillPattern=FillPattern.Solid,
-            extent={{-15.9047,-15.0129},{15.9047,15.0129}},
-            textString="Ipv",
-            fontName="Arial"),
-          Text(
-            visible=true,
-            origin={70.0,0.0},
-            fillPattern=FillPattern.Solid,
-            extent={{-23.1601,-13.4726},{23.1601,13.4726}},
-            textString="Vdc",
-            fontName="Arial")}),
+          grid={10,10}), graphics={Rectangle(
+              visible=true,
+              fillColor={255,255,255},
+              extent={{-100.0,-100.0},{100.0,100.0}}),Text(
+              visible=true,
+              origin={-50.0,60.0},
+              fillPattern=FillPattern.Solid,
+              extent={{-47.2303,-30.0},{47.2303,30.0}},
+              textString="Pac [MW]",
+              fontName="Arial"),Text(
+              visible=true,
+              origin={-68.5241,-31.9581},
+              fillPattern=FillPattern.Solid,
+              extent={{-15.9047,-15.0129},{15.9047,15.0129}},
+              textString="Ipv",
+              fontName="Arial"),Text(
+              visible=true,
+              origin={70.0,0.0},
+              fillPattern=FillPattern.Solid,
+              extent={{-23.1601,-13.4726},{23.1601,13.4726}},
+              textString="Vdc",
+              fontName="Arial")}),
       Diagram(coordinateSystem(
           extent={{-148.5,-105.0},{148.5,105.0}},
           preserveAspectRatio=true,
@@ -671,19 +654,19 @@ model PFblocks
 <td><p><a href=\"mailto:luigiv@kth.se\">luigiv@kth.se</a></p></td>
 </tr>
 </table>
-<p><br><span style=\"font-family: MS Shell Dlg 2;\">&LT;iPSL: iTesla Power System Library&GT;</span></p>
-<p><span style=\"font-family: MS Shell Dlg 2;\">Copyright 2015 RTE (France), AIA (Spain), KTH (Sweden) and DTU (Denmark)</span></p>
+</html>", revisions="<html>
+<!--DISCLAIMER-->
+<p>Copyright 2015-2016 RTE (France), SmarTS Lab (Sweden), AIA (Spain) and DTU (Denmark)</p>
 <ul>
-<li><span style=\"font-family: MS Shell Dlg 2;\">RTE: http://www.rte-france.com/ </span></li>
-<li><span style=\"font-family: MS Shell Dlg 2;\">AIA: http://www.aia.es/en/energy/</span></li>
-<li><span style=\"font-family: MS Shell Dlg 2;\">KTH: https://www.kth.se/en</span></li>
-<li><span style=\"font-family: MS Shell Dlg 2;\">DTU:http://www.dtu.dk/english</span></li>
+<li>RTE: <a href=\"http://www.rte-france.com\">http://www.rte-france.com</a></li>
+<li>SmarTS Lab, research group at KTH: <a href=\"https://www.kth.se/en\">https://www.kth.se/en</a></li>
+<li>AIA: <a href=\"http://www.aia.es/en/energy\"> http://www.aia.es/en/energy</a></li>
+<li>DTU: <a href=\"http://www.dtu.dk/english\"> http://www.dtu.dk/english</a></li>
 </ul>
-<p><span style=\"font-family: MS Shell Dlg 2;\">The authors can be contacted by email: info at itesla-ipsl dot org</span></p>
-<p><span style=\"font-family: MS Shell Dlg 2;\">This package is part of the iTesla Power System Library (&QUOT;iPSL&QUOT;) .</span></p>
-<p><span style=\"font-family: MS Shell Dlg 2;\">The iPSL is free software: you can redistribute it and/or modify it under the terms of the GNU Lesser General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.</span></p>
-<p><span style=\"font-family: MS Shell Dlg 2;\">The iPSL is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU Lesser General Public License for more details.</span></p>
-<p><span style=\"font-family: MS Shell Dlg 2;\">You should have received a copy of the GNU Lesser General Public License along with the iPSL. If not, see &LT;http://www.gnu.org/licenses/&GT;.</span></p>
+<p>The authors can be contacted by email: <a href=\"mailto:info@itesla-ipsl.org\">info@itesla-ipsl.org</a></p>
+
+<p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
+<p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
 </html>"));
   end DCBusBar;
 
@@ -885,60 +868,52 @@ model PFblocks
           extent={{-100.0,-100.0},{100.0,100.0}},
           preserveAspectRatio=true,
           initialScale=0.1,
-          grid={10,10}), graphics={
-          Rectangle(
-            visible=true,
-            fillColor={255,255,255},
-            extent={{-100.0,-100.0},{100.0,100.0}}),
-          Text(
-            visible=true,
-            origin={2.9728,2.2168},
-            fillPattern=FillPattern.Solid,
-            extent={{-41.0253,-27.7832},{41.0253,27.7832}},
-            textString="Controller",
-            fontName="Arial"),
-          Text(
-            visible=true,
-            origin={-70.0,72.8039},
-            fillPattern=FillPattern.Solid,
-            extent={{-25.3921,-17.1961},{25.3921,17.1961}},
-            textString="vac",
-            fontName="Arial"),
-          Text(
-            visible=true,
-            origin={-71.5131,22.8039},
-            fillPattern=FillPattern.Solid,
-            extent={{-25.3921,-17.1961},{25.3921,17.1961}},
-            textString="vacref",
-            fontName="Arial"),
-          Text(
-            visible=true,
-            origin={-70.0,-27.1961},
-            fillPattern=FillPattern.Solid,
-            extent={{-25.3921,-17.1961},{25.3921,17.1961}},
-            textString="vdc",
-            fontName="Arial"),
-          Text(
-            visible=true,
-            origin={-71.8371,-80.0},
-            fillPattern=FillPattern.Solid,
-            extent={{-25.3921,-17.1961},{25.3921,17.1961}},
-            textString="vdcref",
-            fontName="Arial"),
-          Text(
-            visible=true,
-            origin={67.86,42.8039},
-            fillPattern=FillPattern.Solid,
-            extent={{-25.3921,-17.1961},{25.3921,17.1961}},
-            textString="id_ref",
-            fontName="Arial"),
-          Text(
-            visible=true,
-            origin={68.1306,-47.1961},
-            fillPattern=FillPattern.Solid,
-            extent={{-25.3921,-17.1961},{25.3921,17.1961}},
-            textString="iq_ref",
-            fontName="Arial")}),
+          grid={10,10}), graphics={Rectangle(
+              visible=true,
+              fillColor={255,255,255},
+              extent={{-100.0,-100.0},{100.0,100.0}}),Text(
+              visible=true,
+              origin={2.9728,2.2168},
+              fillPattern=FillPattern.Solid,
+              extent={{-41.0253,-27.7832},{41.0253,27.7832}},
+              textString="Controller",
+              fontName="Arial"),Text(
+              visible=true,
+              origin={-70.0,72.8039},
+              fillPattern=FillPattern.Solid,
+              extent={{-25.3921,-17.1961},{25.3921,17.1961}},
+              textString="vac",
+              fontName="Arial"),Text(
+              visible=true,
+              origin={-71.5131,22.8039},
+              fillPattern=FillPattern.Solid,
+              extent={{-25.3921,-17.1961},{25.3921,17.1961}},
+              textString="vacref",
+              fontName="Arial"),Text(
+              visible=true,
+              origin={-70.0,-27.1961},
+              fillPattern=FillPattern.Solid,
+              extent={{-25.3921,-17.1961},{25.3921,17.1961}},
+              textString="vdc",
+              fontName="Arial"),Text(
+              visible=true,
+              origin={-71.8371,-80.0},
+              fillPattern=FillPattern.Solid,
+              extent={{-25.3921,-17.1961},{25.3921,17.1961}},
+              textString="vdcref",
+              fontName="Arial"),Text(
+              visible=true,
+              origin={67.86,42.8039},
+              fillPattern=FillPattern.Solid,
+              extent={{-25.3921,-17.1961},{25.3921,17.1961}},
+              textString="id_ref",
+              fontName="Arial"),Text(
+              visible=true,
+              origin={68.1306,-47.1961},
+              fillPattern=FillPattern.Solid,
+              extent={{-25.3921,-17.1961},{25.3921,17.1961}},
+              textString="iq_ref",
+              fontName="Arial")}),
       Diagram(coordinateSystem(
           extent={{-148.5,-105.0},{148.5,105.0}},
           preserveAspectRatio=true,
@@ -963,19 +938,19 @@ model PFblocks
 <td><p><a href=\"mailto:luigiv@kth.se\">luigiv@kth.se</a></p></td>
 </tr>
 </table>
-<p><br><span style=\"font-family: MS Shell Dlg 2;\">&LT;iPSL: iTesla Power System Library&GT;</span></p>
-<p><span style=\"font-family: MS Shell Dlg 2;\">Copyright 2015 RTE (France), AIA (Spain), KTH (Sweden) and DTU (Denmark)</span></p>
+</html>", revisions="<html>
+<!--DISCLAIMER-->
+<p>Copyright 2015-2016 RTE (France), SmarTS Lab (Sweden), AIA (Spain) and DTU (Denmark)</p>
 <ul>
-<li><span style=\"font-family: MS Shell Dlg 2;\">RTE: http://www.rte-france.com/ </span></li>
-<li><span style=\"font-family: MS Shell Dlg 2;\">AIA: http://www.aia.es/en/energy/</span></li>
-<li><span style=\"font-family: MS Shell Dlg 2;\">KTH: https://www.kth.se/en</span></li>
-<li><span style=\"font-family: MS Shell Dlg 2;\">DTU:http://www.dtu.dk/english</span></li>
+<li>RTE: <a href=\"http://www.rte-france.com\">http://www.rte-france.com</a></li>
+<li>SmarTS Lab, research group at KTH: <a href=\"https://www.kth.se/en\">https://www.kth.se/en</a></li>
+<li>AIA: <a href=\"http://www.aia.es/en/energy\"> http://www.aia.es/en/energy</a></li>
+<li>DTU: <a href=\"http://www.dtu.dk/english\"> http://www.dtu.dk/english</a></li>
 </ul>
-<p><span style=\"font-family: MS Shell Dlg 2;\">The authors can be contacted by email: info at itesla-ipsl dot org</span></p>
-<p><span style=\"font-family: MS Shell Dlg 2;\">This package is part of the iTesla Power System Library (&QUOT;iPSL&QUOT;) .</span></p>
-<p><span style=\"font-family: MS Shell Dlg 2;\">The iPSL is free software: you can redistribute it and/or modify it under the terms of the GNU Lesser General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.</span></p>
-<p><span style=\"font-family: MS Shell Dlg 2;\">The iPSL is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU Lesser General Public License for more details.</span></p>
-<p><span style=\"font-family: MS Shell Dlg 2;\">You should have received a copy of the GNU Lesser General Public License along with the iPSL. If not, see &LT;http://www.gnu.org/licenses/&GT;.</span></p>
+<p>The authors can be contacted by email: <a href=\"mailto:info@itesla-ipsl.org\">info@itesla-ipsl.org</a></p>
+
+<p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
+<p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
 </html>"));
   end Controller;
 
@@ -1058,46 +1033,40 @@ model PFblocks
           extent={{-100.0,-100.0},{100.0,100.0}},
           preserveAspectRatio=true,
           initialScale=0.1,
-          grid={10,10}), graphics={
-          Text(
-            visible=true,
-            origin={-77.7013,70.0105},
-            fillPattern=FillPattern.Solid,
-            extent={{-12.2987,-8.1753},{12.2987,8.1753}},
-            textString="idref",
-            fontName="Arial"),
-          Text(
-            visible=true,
-            origin={-77.7013,21.8247},
-            fillPattern=FillPattern.Solid,
-            extent={{-12.2987,-8.1753},{12.2987,8.1753}},
-            textString="iqref",
-            fontName="Arial"),
-          Text(
-            visible=true,
-            origin={74.8853,-74.849},
-            fillPattern=FillPattern.Solid,
-            extent={{-12.2987,-8.1753},{12.2987,8.1753}},
-            textString="P,pu",
-            fontName="Arial"),
-          Text(
-            visible=true,
-            origin={16.0747,3.9219},
-            fillPattern=FillPattern.Solid,
-            extent={{-66.0747,-43.9219},{66.0747,43.9219}},
-            textString="StaticGen",
-            fontName="Arial"),
-          Rectangle(
-            visible=true,
-            fillColor={255,255,255},
-            extent={{-100.0,-100.0},{100.0,100.0}}),
-          Text(
-            visible=true,
-            origin={73.4293,69.8619},
-            fillPattern=FillPattern.Solid,
-            extent={{-19.0262,-13.6751},{19.0262,13.6751}},
-            textString="Vac,pu",
-            fontName="Arial")}),
+          grid={10,10}), graphics={Text(
+              visible=true,
+              origin={-77.7013,70.0105},
+              fillPattern=FillPattern.Solid,
+              extent={{-12.2987,-8.1753},{12.2987,8.1753}},
+              textString="idref",
+              fontName="Arial"),Text(
+              visible=true,
+              origin={-77.7013,21.8247},
+              fillPattern=FillPattern.Solid,
+              extent={{-12.2987,-8.1753},{12.2987,8.1753}},
+              textString="iqref",
+              fontName="Arial"),Text(
+              visible=true,
+              origin={74.8853,-74.849},
+              fillPattern=FillPattern.Solid,
+              extent={{-12.2987,-8.1753},{12.2987,8.1753}},
+              textString="P,pu",
+              fontName="Arial"),Text(
+              visible=true,
+              origin={16.0747,3.9219},
+              fillPattern=FillPattern.Solid,
+              extent={{-66.0747,-43.9219},{66.0747,43.9219}},
+              textString="StaticGen",
+              fontName="Arial"),Rectangle(
+              visible=true,
+              fillColor={255,255,255},
+              extent={{-100.0,-100.0},{100.0,100.0}}),Text(
+              visible=true,
+              origin={73.4293,69.8619},
+              fillPattern=FillPattern.Solid,
+              extent={{-19.0262,-13.6751},{19.0262,13.6751}},
+              textString="Vac,pu",
+              fontName="Arial")}),
       Diagram(coordinateSystem(
           extent={{-148.5,-105.0},{148.5,105.0}},
           preserveAspectRatio=true,
@@ -1122,39 +1091,37 @@ model PFblocks
 <td><p><a href=\"mailto:luigiv@kth.se\">luigiv@kth.se</a></p></td>
 </tr>
 </table>
-<p><br><span style=\"font-family: MS Shell Dlg 2;\">&LT;iPSL: iTesla Power System Library&GT;</span></p>
-<p><span style=\"font-family: MS Shell Dlg 2;\">Copyright 2015 RTE (France), AIA (Spain), KTH (Sweden) and DTU (Denmark)</span></p>
+</html>", revisions="<html>
+<!--DISCLAIMER-->
+<p>Copyright 2015-2016 RTE (France), SmarTS Lab (Sweden), AIA (Spain) and DTU (Denmark)</p>
 <ul>
-<li><span style=\"font-family: MS Shell Dlg 2;\">RTE: http://www.rte-france.com/ </span></li>
-<li><span style=\"font-family: MS Shell Dlg 2;\">AIA: http://www.aia.es/en/energy/</span></li>
-<li><span style=\"font-family: MS Shell Dlg 2;\">KTH: https://www.kth.se/en</span></li>
-<li><span style=\"font-family: MS Shell Dlg 2;\">DTU:http://www.dtu.dk/english</span></li>
+<li>RTE: <a href=\"http://www.rte-france.com\">http://www.rte-france.com</a></li>
+<li>SmarTS Lab, research group at KTH: <a href=\"https://www.kth.se/en\">https://www.kth.se/en</a></li>
+<li>AIA: <a href=\"http://www.aia.es/en/energy\"> http://www.aia.es/en/energy</a></li>
+<li>DTU: <a href=\"http://www.dtu.dk/english\"> http://www.dtu.dk/english</a></li>
 </ul>
-<p><span style=\"font-family: MS Shell Dlg 2;\">The authors can be contacted by email: info at itesla-ipsl dot org</span></p>
-<p><span style=\"font-family: MS Shell Dlg 2;\">This package is part of the iTesla Power System Library (&QUOT;iPSL&QUOT;) .</span></p>
-<p><span style=\"font-family: MS Shell Dlg 2;\">The iPSL is free software: you can redistribute it and/or modify it under the terms of the GNU Lesser General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.</span></p>
-<p><span style=\"font-family: MS Shell Dlg 2;\">The iPSL is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU Lesser General Public License for more details.</span></p>
-<p><span style=\"font-family: MS Shell Dlg 2;\">You should have received a copy of the GNU Lesser General Public License along with the iPSL. If not, see &LT;http://www.gnu.org/licenses/&GT;.</span></p>
+<p>The authors can be contacted by email: <a href=\"mailto:info@itesla-ipsl.org\">info@itesla-ipsl.org</a></p>
+
+<p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
+<p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
 </html>"));
   end Staticgenerator;
   annotation (Diagram(coordinateSystem(
         extent={{-148.5,-105.0},{148.5,105.0}},
         preserveAspectRatio=true,
         initialScale=0.1,
-        grid={5,5})), Documentation(info="<html>
-<p><br><span style=\"font-family: MS Shell Dlg 2;\">&LT;iPSL: iTesla Power System Library&GT;</span></p>
-<p><span style=\"font-family: MS Shell Dlg 2;\">Copyright 2015 RTE (France), AIA (Spain), KTH (Sweden) and DTU (Denmark)</span></p>
+        grid={5,5})), Documentation(revisions="<html>
+<!--DISCLAIMER-->
+<p>Copyright 2015-2016 RTE (France), SmarTS Lab (Sweden), AIA (Spain) and DTU (Denmark)</p>
 <ul>
-<li><span style=\"font-family: MS Shell Dlg 2;\">RTE: http://www.rte-france.com/ </span></li>
-<li><span style=\"font-family: MS Shell Dlg 2;\">AIA: http://www.aia.es/en/energy/</span></li>
-<li><span style=\"font-family: MS Shell Dlg 2;\">KTH: https://www.kth.se/en</span></li>
-<li><span style=\"font-family: MS Shell Dlg 2;\">DTU:http://www.dtu.dk/english</span></li>
+<li>RTE: <a href=\"http://www.rte-france.com\">http://www.rte-france.com</a></li>
+<li>SmarTS Lab, research group at KTH: <a href=\"https://www.kth.se/en\">https://www.kth.se/en</a></li>
+<li>AIA: <a href=\"http://www.aia.es/en/energy\"> http://www.aia.es/en/energy</a></li>
+<li>DTU: <a href=\"http://www.dtu.dk/english\"> http://www.dtu.dk/english</a></li>
 </ul>
-<p><span style=\"font-family: MS Shell Dlg 2;\">The authors can be contacted by email: info at itesla-ipsl dot org</span></p>
-<p><span style=\"font-family: MS Shell Dlg 2;\">This package is part of the iTesla Power System Library (&QUOT;iPSL&QUOT;) .</span></p>
-<p><span style=\"font-family: MS Shell Dlg 2;\">The iPSL is free software: you can redistribute it and/or modify it under the terms of the GNU Lesser General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.</span></p>
-<p><span style=\"font-family: MS Shell Dlg 2;\">The iPSL is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU Lesser General Public License for more details.</span></p>
-<p><span style=\"font-family: MS Shell Dlg 2;\">You should have received a copy of the GNU Lesser General Public License along with the iPSL. If not, see &LT;http://www.gnu.org/licenses/&GT;.</span></p>
+<p>The authors can be contacted by email: <a href=\"mailto:info@itesla-ipsl.org\">info@itesla-ipsl.org</a></p>
+
+<p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
+<p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
 </html>"));
 end PFblocks;
-

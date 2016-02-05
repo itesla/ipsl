@@ -159,41 +159,31 @@ equation
     Icon(coordinateSystem(
         preserveAspectRatio=true,
         extent={{-100,-100},{100,100}},
-        initialScale=0.05), graphics={
-        Rectangle(extent={{-100,100},{100,-100}}, lineColor={0,0,0}),
-        Text(
+        initialScale=0.05), graphics={Rectangle(extent={{-100,100},{100,-100}}, lineColor={0,0,0}),Text(
           extent={{-58,40},{40,-4}},
           lineColor={0,0,255},
-          textString="1+sT"),
-        Text(
+          textString="1+sT"),Text(
           extent={{-64,20},{56,-58}},
           lineColor={0,0,255},
-          textString="(1+sT )"),
-        Text(
+          textString="(1+sT )"),Text(
           extent={{22,28},{44,-4}},
           lineColor={0,0,255},
-          textString="1"),
-        Text(
+          textString="1"),Text(
           extent={{24,-10},{46,-42}},
           lineColor={0,0,255},
-          textString="2"),
-        Text(
+          textString="2"),Text(
           extent={{54,2},{66,-16}},
           lineColor={0,0,255},
-          textString="M"),
-        Line(
+          textString="M"),Line(
           points={{-60,40},{-74,40},{-74,-40},{-60,-40}},
           color={0,0,255},
-          thickness=1),
-        Line(
+          thickness=1),Line(
           points={{60,40},{76,40},{76,-40},{60,-40}},
           color={0,0,255},
-          thickness=1),
-        Text(
+          thickness=1),Text(
           extent={{76,48},{94,28}},
           lineColor={0,0,255},
-          textString="N"),
-        Line(
+          textString="N"),Line(
           points={{-68,0},{70,0}},
           color={0,0,255},
           thickness=1)}),
@@ -218,5 +208,18 @@ Ramp-tracking filter up to M*N<=8
 <td><p><a href=\"mailto:luigiv@kth.se\">luigiv@kth.se</a></p></td>
 </tr>
 </table>
+</html>", revisions="<html>
+<!--DISCLAIMER-->
+<p>Copyright 2015-2016 RTE (France), SmarTS Lab (Sweden), AIA (Spain) and DTU (Denmark)</p>
+<ul>
+<li>RTE: <a href=\"http://www.rte-france.com\">http://www.rte-france.com</a></li>
+<li>SmarTS Lab, research group at KTH: <a href=\"https://www.kth.se/en\">https://www.kth.se/en</a></li>
+<li>AIA: <a href=\"http://www.aia.es/en/energy\"> http://www.aia.es/en/energy</a></li>
+<li>DTU: <a href=\"http://www.dtu.dk/english\"> http://www.dtu.dk/english</a></li>
+</ul>
+<p>The authors can be contacted by email: <a href=\"mailto:info@itesla-ipsl.org\">info@itesla-ipsl.org</a></p>
+
+<p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
+<p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
 </html>"));
 end RampTrackingFilter;
