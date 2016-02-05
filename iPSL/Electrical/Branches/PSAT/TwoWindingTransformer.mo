@@ -10,13 +10,13 @@ model TwoWindingTransformer "Modeled as series reactances without iron losses"
   parameter Real Vn=400000 "Voltage rating (kV)" annotation (Dialog(group="Power flow"));
   parameter Real fn=SysData.fn "Frequency rating (Hz)" annotation (Dialog(group="Power flow"));
   parameter Real kT=1 "Nominal tap ratio (V1/V2)" annotation (Dialog(group="Transformer parameters"));
-  parameter Real x=0.001 "Reactance (pu)" annotation (Dialog(group="Transformer parameters"));
-  parameter Real r=0.1 "Resistance (pu)" annotation (Dialog(group="Transformer parameters"));
+  parameter Real x=0.001 "Reactance (pu machine base)" annotation (Dialog(group="Transformer parameters"));
+  parameter Real r=0.1 "Resistance (pu machine base)" annotation (Dialog(group="Transformer parameters"));
 protected
   parameter Real Vb2new=V_b^2;
   parameter Real Vb2old=Vn*Vn;
-  parameter Real xT=x*(Vb2old*Sb)/(Vb2new*Sn) "Reactance(inductive),p.u";
-  parameter Real rT=r*(Vb2old*Sb)/(Vb2new*Sn) "Reactance(capacitive),p.u";
+  parameter Real xT=x*(Vb2old*Sb)/(Vb2new*Sn) "Reactance, p.u system base";
+  parameter Real rT=r*(Vb2old*Sb)/(Vb2new*Sn) "Resistance, p.u system base";
 equation
   rT*p.ir - xT*p.ii = p.vr - n.vr;
   rT*p.ii + xT*p.ir = p.vi - n.vi;
@@ -24,7 +24,7 @@ equation
   xT*n.ir + rT*n.ii = n.vi - p.vi;
   annotation (
     Diagram(coordinateSystem(preserveAspectRatio=true, extent={{-100,-100},{100,100}}), graphics),
-    Icon(graphics={
+    Icon(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,100}}), graphics={
         Ellipse(extent={{-46,30},{8,-30}}, lineColor={0,0,255}),
         Ellipse(extent={{-10,30},{44,-30}}, lineColor={0,0,255}),
         Line(
@@ -34,7 +34,15 @@ equation
         Line(
           points={{-100,0},{-46,0}},
           color={0,0,255},
-          smooth=Smooth.None)}),
+          smooth=Smooth.None),
+        Text(
+          extent={{-38,20},{-4,-20}},
+          lineColor={28,108,200},
+          textString="1"),
+        Text(
+          extent={{4,18},{32,-16}},
+          lineColor={28,108,200},
+          textString="2")}),
     Documentation(info="<html>
 <table cellspacing=\"1\" cellpadding=\"1\" border=\"1\"><tr>
 <td><p>Reference</p></td>
