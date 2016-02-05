@@ -1,5 +1,5 @@
 within iPSL;
-record Copyright "Disclaimer<html>
+class Copyright "Disclaimer<html>
 <p>Copyright &copy; 2015-2016 RTE (France), SmarTS Lab (Sweden), AIA (Spain) and DTU (Denmark)</p>
 <ul>
 <li>RTE: <a href=\"http://www.rte-france.com\">http://www.rte-france.com</a></li>
