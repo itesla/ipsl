@@ -23,7 +23,7 @@ model SystemBase "System Base Definition"
           extent={{20,40},{72,20}},
           lineColor={28,108,200},
           horizontalAlignment=TextAlignment.Right,
-          textString=DynamicSelect("0.0", String(S_b))),
+          textString="%S_b"),
         Text(
           extent={{-90,0},{40,-20}},
           lineColor={28,108,200},
@@ -33,7 +33,7 @@ model SystemBase "System Base Definition"
           extent={{40,0},{72,-20}},
           lineColor={28,108,200},
           horizontalAlignment=TextAlignment.Right,
-          textString=DynamicSelect("0.0", String(fn))),
+          textString="%fn"),
         Text(
           extent={{88,0},{118,-20}},
           lineColor={28,108,200},
