@@ -32,7 +32,7 @@ Each contributor should send an email to info@itesla-ipsl.org with the following
 ## License Information:
 Copyright 2015-2016 RTE (France), SmarTS Lab (Sweden), AIA (Spain) and DTU (Denmark)
 - RTE: http://www.rte-france.com
-- SmarTS Lab, research group at KTH: https://www.kth.se/en
+- [SmarTS Lab](https://github.com/itesla/ipsl/wiki/Our-contributors#smarts-labs-people), research group at KTH: https://www.kth.se/en
 - AIA: http://www.aia.es/en/energy
 - DTU: http://www.dtu.dk/english
 
