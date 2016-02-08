@@ -41,10 +41,25 @@ equation
   connect(gENSAL.PMECH0, gENSAL.PMECH) annotation (Line(points={{37.56,-9.6},{56,-9.6},{56,42},{-38,42},{-38,16},{-28.36,16}}, color={0,0,127}));
   connect(gENSAL.EFD0, gENSAL.EFD) annotation (Line(points={{37.56,-22.4},{56,-22.4},{56,-44},{-38,-44},{-38,-16},{-28.36,-16}}, color={0,0,127}));
   connect(gENSAL.p, pwPin) annotation (Line(points={{38.2,0},{90,0}}, color={0,0,255}));
-  annotation (Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,100}})), Icon(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,100}}), graphics={Ellipse(
-            extent={{-60,60},{60,-60}}, lineColor={0,0,255}), Text(
+  annotation (
+    Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,100}})),
+    Icon(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,100}}), graphics={Ellipse(extent={{-60,60},{60,-60}}, lineColor={0,0,255}), Text(
           extent={{-34,24},{32,-28}},
           lineColor={0,0,255},
           fillPattern=FillPattern.Solid,
-          textString="GEN")}));
+          textString="GEN")}),
+    Documentation(revisions="<html>
+<!--DISCLAIMER-->
+<p>Copyright 2015-2016 RTE (France), SmarTS Lab (Sweden), AIA (Spain) and DTU (Denmark)</p>
+<ul>
+<li>RTE: <a href=\"http://www.rte-france.com\">http://www.rte-france.com</a></li>
+<li>SmarTS Lab, research group at KTH: <a href=\"https://www.kth.se/en\">https://www.kth.se/en</a></li>
+<li>AIA: <a href=\"http://www.aia.es/en/energy\"> http://www.aia.es/en/energy</a></li>
+<li>DTU: <a href=\"http://www.dtu.dk/english\"> http://www.dtu.dk/english</a></li>
+</ul>
+<p>The authors can be contacted by email: <a href=\"mailto:info@itesla-ipsl.org\">info@itesla-ipsl.org</a></p>
+
+<p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
+<p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
+</html>"));
 end Gen_no_contr;

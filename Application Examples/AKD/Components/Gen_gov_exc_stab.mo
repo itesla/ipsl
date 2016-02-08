@@ -141,10 +141,25 @@ equation
   connect(const.y, iEEET2_1.VOEL) annotation (Line(points={{-12.6,-52},{-16,-52},{-16,-46},{-21.1333,-46}}, color={0,0,127}));
   connect(iEEET2_1.VUEL, iEEET2_1.VOEL) annotation (Line(points={{-21.1333,-57.2},{-16,-57.2},{-16,-46},{-21.1333,-46}}, color={0,0,127}));
   connect(gENSAL.EFD0, iEEET2_1.EFD0) annotation (Line(points={{27.56,3.6},{38,3.6},{38,-14},{6,-14},{6,-68.4},{-21.1333,-68.4}}, color={0,0,127}));
-  annotation (Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,100}})), Icon(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,100}}), graphics={Ellipse(
-            extent={{-60,60},{60,-60}}, lineColor={0,0,255}), Text(
+  annotation (
+    Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,100}})),
+    Icon(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,100}}), graphics={Ellipse(extent={{-60,60},{60,-60}}, lineColor={0,0,255}), Text(
           extent={{-34,24},{32,-28}},
           lineColor={0,0,255},
           fillPattern=FillPattern.Solid,
-          textString="GEN")}));
+          textString="GEN")}),
+    Documentation(revisions="<html>
+<!--DISCLAIMER-->
+<p>Copyright 2015-2016 RTE (France), SmarTS Lab (Sweden), AIA (Spain) and DTU (Denmark)</p>
+<ul>
+<li>RTE: <a href=\"http://www.rte-france.com\">http://www.rte-france.com</a></li>
+<li>SmarTS Lab, research group at KTH: <a href=\"https://www.kth.se/en\">https://www.kth.se/en</a></li>
+<li>AIA: <a href=\"http://www.aia.es/en/energy\"> http://www.aia.es/en/energy</a></li>
+<li>DTU: <a href=\"http://www.dtu.dk/english\"> http://www.dtu.dk/english</a></li>
+</ul>
+<p>The authors can be contacted by email: <a href=\"mailto:info@itesla-ipsl.org\">info@itesla-ipsl.org</a></p>
+
+<p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
+<p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
+</html>"));
 end Gen_gov_exc_stab;
