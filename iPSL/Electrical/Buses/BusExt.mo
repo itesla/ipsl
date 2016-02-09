@@ -64,7 +64,7 @@ equation
 </tr>
 <tr>
 <td><p>Author</p></td>
-<td><p>Jan Lavenius & Giuseppe Laera, SmarTS Lab, KTH Royal Institute of Technology</p></td>
+<td><p>Jan Lavenius, Giuseppe Laera, SmarTS Lab, KTH Royal Institute of Technology</p></td>
 </tr>
 <tr>
 <td><p>Contact</p></td>
