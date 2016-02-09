@@ -87,30 +87,32 @@ equation
   connect(derivativeLag3.y, SimpleLag2.u) annotation (Line(points={{-99,-20},{-82,-20}}, color={0,0,127}));
   annotation (
     Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-180,-40},{200,40}})),
-    Icon(coordinateSystem(preserveAspectRatio=false, extent={{-180,-40},{200,40}}), graphics={Rectangle(extent={{-180,40},{200,-40}}, lineColor={0,0,255}),Text(
+    Icon(coordinateSystem(preserveAspectRatio=false, extent={{-180,-40},{200,40}}), graphics={
+        Rectangle(extent={{-180,40},{200,-40}}, lineColor={0,0,255}),
+        Text(
           extent={{-34,16},{32,-14}},
           lineColor={0,0,255},
-          textString="PSS2A"),Text(
+          textString="PSS2A"),
+        Text(
           extent={{-170,30},{-142,10}},
           lineColor={0,0,255},
-          textString="V_S1"),Text(
+          textString="V_S1"),
+        Text(
           extent={{-170,-10},{-142,-30}},
           lineColor={0,0,255},
-          textString="V_S2"),Text(
+          textString="V_S2"),
+        Text(
           extent={{140,10},{196,-10}},
           lineColor={0,0,255},
           textString="VOTHSG")}),
     Documentation(info="<html>
-<table cellspacing=\"1\" cellpadding=\"1\" border=\"1\">
-<tr>
+<table cellspacing=\"1\" cellpadding=\"1\" border=\"1\"><tr>
 <td><p>Reference</p></td>
-<td></td>
-PSS2A, PSS/E Manual
+<td><p>PSS2A, PSS/E Manual </p></td>
 </tr>
 <tr>
 <td><p>Last update</p></td>
-<td></td>
-2015-08-03
+<td><p>2015-08-03</p></td>
 </tr>
 <tr>
 <td><p>Author</p></td>

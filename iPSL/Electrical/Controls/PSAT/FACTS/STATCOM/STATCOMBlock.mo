@@ -89,44 +89,54 @@ equation
     Placement(transformation(extent={{-82,34},{-62,54}})),
     Placement(transformation(extent={{-136,-22},{-96,18}})),
     Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,100}})),
-    Icon(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,100}}), graphics={Text(
+    Icon(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,100}}), graphics={
+        Text(
           extent={{-26,-36},{38,-66}},
           lineColor={0,0,0},
           lineThickness=0.5,
           fillColor={255,0,0},
           fillPattern=FillPattern.Solid,
-          textString="%StatcomBlock"),Rectangle(extent={{-100,100},{100,-100}}, lineColor={0,0,255}),Ellipse(
+          textString="%StatcomBlock"),
+        Rectangle(extent={{-100,100},{100,-100}}, lineColor={0,0,255}),
+        Ellipse(
           extent={{-16,20},{34,-24}},
           lineColor={0,0,0},
           fillColor={215,215,215},
-          fillPattern=FillPattern.Solid),Ellipse(
+          fillPattern=FillPattern.Solid),
+        Ellipse(
           extent={{20,22},{70,-22}},
           lineColor={0,0,0},
           fillPattern=FillPattern.Solid,
-          fillColor={215,215,215}),Line(
+          fillColor={215,215,215}),
+        Line(
           points={{-52,-2},{-16,-2},{-16,-2}},
           color={0,0,255},
-          smooth=Smooth.None),Line(
+          smooth=Smooth.None),
+        Line(
           points={{70,0},{86,0},{96,0}},
           color={0,0,255},
-          smooth=Smooth.None),Line(
+          smooth=Smooth.None),
+        Line(
           points={{-104,4},{-96,4},{-90,4}},
           color={255,0,0},
           smooth=Smooth.None,
-          thickness=0.5),Line(
+          thickness=0.5),
+        Line(
           points={{-104,-8},{-96,-8},{-90,-8}},
           color={255,0,0},
           smooth=Smooth.None,
-          thickness=0.5),Line(
+          thickness=0.5),
+        Line(
           points={{-52,-2},{-60,-2},{-60,-2}},
           color={0,0,255},
-          smooth=Smooth.None),Line(
+          smooth=Smooth.None),
+        Line(
           points={{-98,4},{-98,24},{-60,24},{-60,-26},{-96,-26},{-98,-26},{-98,-8},{-98,-8}},
           color={255,0,0},
           thickness=0.5,
           smooth=Smooth.None)}),
     Documentation(info="<html>
-<table cellspacing=\"2\" cellpadding=\"0\" border=\"0\"<tr>
+<table cellspacing=\"2\" cellpadding=\"0\" border=\"1\"><tr>
 <td><p>Reference</p></td>
 <td><p>PSAT Manual 2.1.8</p></td>
 </tr>

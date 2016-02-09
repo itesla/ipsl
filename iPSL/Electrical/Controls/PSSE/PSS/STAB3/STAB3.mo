@@ -40,27 +40,28 @@ equation
   connect(const.y, feedback.u2) annotation (Line(points={{-39,-30},{-30,-30},{-30,-8}}, color={0,0,127}));
   annotation (
     Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-40},{100,40}})),
-    Icon(coordinateSystem(extent={{-100,-40},{100,40}}, preserveAspectRatio=false), graphics={Rectangle(extent={{-100,40},{100,-40}}, lineColor={28,108,200}),Text(
+    Icon(coordinateSystem(extent={{-100,-40},{100,40}}, preserveAspectRatio=false), graphics={
+        Rectangle(extent={{-100,40},{100,-40}}, lineColor={28,108,200}),
+        Text(
           extent={{-70,20},{70,-20}},
           lineColor={28,108,200},
-          textString="STAB3"),Text(
+          textString="STAB3"),
+        Text(
           extent={{-88,10},{-58,-10}},
           lineColor={28,108,200},
-          textString="PELEC"),Text(
+          textString="PELEC"),
+        Text(
           extent={{64,14},{98,-12}},
           lineColor={28,108,200},
           textString="VOTHSG")}),
     Documentation(info="<html>
-<table cellspacing=\"1\" cellpadding=\"1\" border=\"1\">
-<tr>
+<table cellspacing=\"1\" cellpadding=\"1\" border=\"1\"><tr>
 <td><p>Reference</p></td>
-<td></td>
-STAB3, PSSE Manual
+<td><p>STAB3, PSSE Manual</p></td>
 </tr>
 <tr>
 <td><p>Last update</p></td>
-<td></td>
-2015-08-03
+<td><p>2015-08-03 </p></td>
 </tr>
 <tr>
 <td><p>Author</p></td>

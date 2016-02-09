@@ -48,27 +48,28 @@ equation
   connect(limiter.u, imSimpleLag1.y) annotation (Line(points={{58,0},{41,0}}, color={0,0,127}));
   annotation (
     Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-120,-40},{120,40}})),
-    Icon(coordinateSystem(extent={{-120,-40},{120,40}}, preserveAspectRatio=false), graphics={Rectangle(extent={{-120,40},{120,-40}}, lineColor={28,108,200}),Text(
+    Icon(coordinateSystem(extent={{-120,-40},{120,40}}, preserveAspectRatio=false), graphics={
+        Rectangle(extent={{-120,40},{120,-40}}, lineColor={28,108,200}),
+        Text(
           extent={{-64,20},{56,-20}},
           lineColor={28,108,200},
-          textString="STABNI"),Text(
+          textString="STABNI"),
+        Text(
           extent={{-108,8},{-72,-10}},
           lineColor={28,108,200},
-          textString="PELEC"),Text(
+          textString="PELEC"),
+        Text(
           extent={{82,10},{118,-8}},
           lineColor={28,108,200},
           textString="VOTHSG")}),
     Documentation(info="<html>
-<table cellspacing=\"1\" cellpadding=\"1\" border=\"1\">
-<tr>
+<table cellspacing=\"1\" cellpadding=\"1\" border=\"1\"><tr>
 <td><p>Reference</p></td>
-<td></td>
-STABNI, PSSE Manual
+<td><p>STABNI, PSSE Manual</p></td>
 </tr>
 <tr>
 <td><p>Last update</p></td>
-<td></td>
-2015-08-03
+<td><p>2015-08-03 </p></td>
 </tr>
 <tr>
 <td><p>Author</p></td>
