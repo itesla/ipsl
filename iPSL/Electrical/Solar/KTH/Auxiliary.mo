@@ -116,40 +116,46 @@ model Auxiliary
           extent={{-100.0,-100.0},{100.0,100.0}},
           preserveAspectRatio=true,
           initialScale=0.1,
-          grid={10,10}), graphics={Text(
-              visible=true,
-              origin={-85.4693,77.294},
-              fillPattern=FillPattern.Solid,
-              extent={{-8.7699,-10.7022},{8.7699,10.7022}},
-              textString="0",
-              fontName="Arial"),Text(
-              visible=true,
-              origin={-83.7123,27.3769},
-              fillPattern=FillPattern.Solid,
-              extent={{-8.7699,-10.7022},{8.7699,10.7022}},
-              textString="1",
-              fontName="Arial"),Text(
-              visible=true,
-              origin={-84.3336,-26.9995},
-              fillPattern=FillPattern.Solid,
-              extent={{-8.7699,-10.7022},{8.7699,10.7022}},
-              textString="2",
-              fontName="Arial"),Text(
-              visible=true,
-              origin={-83.4684,-82.2678},
-              fillPattern=FillPattern.Solid,
-              extent={{-8.7699,-10.7022},{8.7699,10.7022}},
-              textString="3",
-              fontName="Arial"),Text(
-              visible=true,
-              origin={75.8495,0.7022},
-              fillPattern=FillPattern.Solid,
-              extent={{-8.7699,-10.7022},{8.7699,10.7022}},
-              textString="k",
-              fontName="Arial"),Rectangle(
-              visible=true,
-              fillColor={255,255,255},
-              extent={{-100.0,-100.0},{100.0,100.0}})}),
+          grid={10,10}), graphics={
+          Text(
+            visible=true,
+            origin={-85.4693,77.294},
+            fillPattern=FillPattern.Solid,
+            extent={{-8.7699,-10.7022},{8.7699,10.7022}},
+            textString="0",
+            fontName="Arial"),
+          Text(
+            visible=true,
+            origin={-83.7123,27.3769},
+            fillPattern=FillPattern.Solid,
+            extent={{-8.7699,-10.7022},{8.7699,10.7022}},
+            textString="1",
+            fontName="Arial"),
+          Text(
+            visible=true,
+            origin={-84.3336,-26.9995},
+            fillPattern=FillPattern.Solid,
+            extent={{-8.7699,-10.7022},{8.7699,10.7022}},
+            textString="2",
+            fontName="Arial"),
+          Text(
+            visible=true,
+            origin={-83.4684,-82.2678},
+            fillPattern=FillPattern.Solid,
+            extent={{-8.7699,-10.7022},{8.7699,10.7022}},
+            textString="3",
+            fontName="Arial"),
+          Text(
+            visible=true,
+            origin={75.8495,0.7022},
+            fillPattern=FillPattern.Solid,
+            extent={{-8.7699,-10.7022},{8.7699,10.7022}},
+            textString="k",
+            fontName="Arial"),
+          Rectangle(
+            visible=true,
+            fillColor={255,255,255},
+            extent={{-100.0,-100.0},{100.0,100.0}})}),
       Diagram(coordinateSystem(
           extent={{-148.5,-105.0},{148.5,105.0}},
           preserveAspectRatio=true,
@@ -159,11 +165,11 @@ model Auxiliary
 <table cellspacing=\"1\" cellpadding=\"1\" border=\"1\">
 <tr>
 <td><p>Reference</p></td>
-<td><p></p></td>
+<td><p>TBD</p></td>
 </tr>
 <tr>
 <td><p>Last update</p></td>
-<td></td>
+<td>TBD</td>
 </tr>
 <tr>
 <td><p>Author</p></td>
@@ -273,46 +279,53 @@ model Auxiliary
           extent={{-100.0,-100.0},{100.0,100.0}},
           preserveAspectRatio=true,
           initialScale=0.1,
-          grid={10,10}), graphics={Rectangle(
-              visible=true,
-              fillColor={255,255,255},
-              extent={{-100.0,-100.0},{100.0,100.0}}),Text(
-              visible=true,
-              origin={40.0,0.0},
-              fillPattern=FillPattern.Solid,
-              extent={{-45.9305,-23.3368},{45.9305,23.3368}},
-              textString="%name",
-              fontName="Arial"),Text(
-              visible=true,
-              origin={-46.5008,63.2046},
-              fillPattern=FillPattern.Solid,
-              extent={{-51.9003,-55.1779},{51.9003,55.1779}},
-              textString="Vdc(ex=35)",
-              fontName="Arial"),Text(
-              visible=true,
-              origin={-80.0,0.0},
-              fillPattern=FillPattern.Solid,
-              extent={{-12.8628,-13.6751},{12.8628,13.6751}},
-              textString="E",
-              fontName="Arial"),Text(
-              visible=true,
-              origin={-80.0,-70.0},
-              fillPattern=FillPattern.Solid,
-              extent={{-12.8628,-13.6751},{12.8628,13.6751}},
-              textString="T",
-              fontName="Arial"),Text(
-              visible=true,
-              origin={70.7131,40.0},
-              fillPattern=FillPattern.Solid,
-              extent={{-20.7131,-17.8652},{20.7131,17.8652}},
-              textString="Ipv(4.58)",
-              fontName="Arial"),Text(
-              visible=true,
-              origin={70.0,-37.1013},
-              fillPattern=FillPattern.Solid,
-              extent={{-25.1013,-17.1013},{25.1013,17.1013}},
-              textString="Vpv(35)",
-              fontName="Arial")}),
+          grid={10,10}), graphics={
+          Rectangle(
+            visible=true,
+            fillColor={255,255,255},
+            extent={{-100.0,-100.0},{100.0,100.0}}),
+          Text(
+            visible=true,
+            origin={40.0,0.0},
+            fillPattern=FillPattern.Solid,
+            extent={{-45.9305,-23.3368},{45.9305,23.3368}},
+            textString="%name",
+            fontName="Arial"),
+          Text(
+            visible=true,
+            origin={-46.5008,63.2046},
+            fillPattern=FillPattern.Solid,
+            extent={{-51.9003,-55.1779},{51.9003,55.1779}},
+            textString="Vdc(ex=35)",
+            fontName="Arial"),
+          Text(
+            visible=true,
+            origin={-80.0,0.0},
+            fillPattern=FillPattern.Solid,
+            extent={{-12.8628,-13.6751},{12.8628,13.6751}},
+            textString="E",
+            fontName="Arial"),
+          Text(
+            visible=true,
+            origin={-80.0,-70.0},
+            fillPattern=FillPattern.Solid,
+            extent={{-12.8628,-13.6751},{12.8628,13.6751}},
+            textString="T",
+            fontName="Arial"),
+          Text(
+            visible=true,
+            origin={70.7131,40.0},
+            fillPattern=FillPattern.Solid,
+            extent={{-20.7131,-17.8652},{20.7131,17.8652}},
+            textString="Ipv(4.58)",
+            fontName="Arial"),
+          Text(
+            visible=true,
+            origin={70.0,-37.1013},
+            fillPattern=FillPattern.Solid,
+            extent={{-25.1013,-17.1013},{25.1013,17.1013}},
+            textString="Vpv(35)",
+            fontName="Arial")}),
       Diagram(coordinateSystem(
           extent={{-148.5,-105.0},{148.5,105.0}},
           preserveAspectRatio=true,
@@ -322,11 +335,11 @@ model Auxiliary
 <table cellspacing=\"1\" cellpadding=\"1\" border=\"1\">
 <tr>
 <td><p>Reference</p></td>
-<td><p></p></td>
+<td><p>TBD</p></td>
 </tr>
 <tr>
 <td><p>Last update</p></td>
-<td></td>
+<td>TBD</td>
 </tr>
 <tr>
 <td><p>Author</p></td>
@@ -384,15 +397,15 @@ model Auxiliary
           preserveAspectRatio=true,
           initialScale=0.1,
           grid={10,10}), graphics={Text(
-              visible=true,
-              origin={1.9581,1.6889},
-              fillPattern=FillPattern.Solid,
-              extent={{-31.9581,-31.6889},{31.9581,31.6889}},
-              textString="A_to_pu",
-              fontName="Arial"),Rectangle(
-              visible=true,
-              fillColor={255,255,255},
-              extent={{-100.0,-100.0},{100.0,100.0}})}),
+            visible=true,
+            origin={1.9581,1.6889},
+            fillPattern=FillPattern.Solid,
+            extent={{-31.9581,-31.6889},{31.9581,31.6889}},
+            textString="A_to_pu",
+            fontName="Arial"), Rectangle(
+            visible=true,
+            fillColor={255,255,255},
+            extent={{-100.0,-100.0},{100.0,100.0}})}),
       Diagram(coordinateSystem(
           extent={{-148.5,-105.0},{148.5,105.0}},
           preserveAspectRatio=true,
@@ -402,11 +415,11 @@ model Auxiliary
 <table cellspacing=\"1\" cellpadding=\"1\" border=\"1\">
 <tr>
 <td><p>Reference</p></td>
-<td><p></p></td>
+<td><p>TBD</p></td>
 </tr>
 <tr>
 <td><p>Last update</p></td>
-<td></td>
+<td>TBD</td>
 </tr>
 <tr>
 <td><p>Author</p></td>
@@ -472,34 +485,39 @@ model Auxiliary
           extent={{-100.0,-100.0},{100.0,100.0}},
           preserveAspectRatio=true,
           initialScale=0.1,
-          grid={10,10}), graphics={Text(
-              visible=true,
-              origin={-80.1182,38.5265},
-              fillPattern=FillPattern.Solid,
-              extent={{-13.2292,-11.4735},{13.2292,11.4735}},
-              textString="0",
-              fontName="Arial"),Text(
-              visible=true,
-              origin={-80.0,-51.4735},
-              fillPattern=FillPattern.Solid,
-              extent={{-13.2292,-11.4735},{13.2292,11.4735}},
-              textString="1",
-              fontName="Arial"),Text(
-              visible=true,
-              origin={76.7708,-0.0},
-              fillPattern=FillPattern.Solid,
-              extent={{-13.2292,-11.4735},{13.2292,11.4735}},
-              textString="out",
-              fontName="Arial"),Rectangle(
-              visible=true,
-              fillColor={255,255,255},
-              extent={{-100.0,-100.0},{100.0,100.0}}),Text(
-              visible=true,
-              origin={-2.514,58.5651},
-              fillPattern=FillPattern.Solid,
-              extent={{-27.486,-14.5669},{27.486,14.5669}},
-              textString="Calc_current",
-              fontName="Arial")}),
+          grid={10,10}), graphics={
+          Text(
+            visible=true,
+            origin={-80.1182,38.5265},
+            fillPattern=FillPattern.Solid,
+            extent={{-13.2292,-11.4735},{13.2292,11.4735}},
+            textString="0",
+            fontName="Arial"),
+          Text(
+            visible=true,
+            origin={-80.0,-51.4735},
+            fillPattern=FillPattern.Solid,
+            extent={{-13.2292,-11.4735},{13.2292,11.4735}},
+            textString="1",
+            fontName="Arial"),
+          Text(
+            visible=true,
+            origin={76.7708,-0.0},
+            fillPattern=FillPattern.Solid,
+            extent={{-13.2292,-11.4735},{13.2292,11.4735}},
+            textString="out",
+            fontName="Arial"),
+          Rectangle(
+            visible=true,
+            fillColor={255,255,255},
+            extent={{-100.0,-100.0},{100.0,100.0}}),
+          Text(
+            visible=true,
+            origin={-2.514,58.5651},
+            fillPattern=FillPattern.Solid,
+            extent={{-27.486,-14.5669},{27.486,14.5669}},
+            textString="Calc_current",
+            fontName="Arial")}),
       Diagram(coordinateSystem(
           extent={{-148.5,-105.0},{148.5,105.0}},
           preserveAspectRatio=true,
@@ -509,11 +527,11 @@ model Auxiliary
 <table cellspacing=\"1\" cellpadding=\"1\" border=\"1\">
 <tr>
 <td><p>Reference</p></td>
-<td><p></p></td>
+<td><p>TBD</p></td>
 </tr>
 <tr>
 <td><p>Last update</p></td>
-<td></td>
+<td>TBD</td>
 </tr>
 <tr>
 <td><p>Author</p></td>
@@ -574,15 +592,15 @@ model Auxiliary
           preserveAspectRatio=true,
           initialScale=0.1,
           grid={10,10}), graphics={Rectangle(
-              visible=true,
-              fillColor={255,255,255},
-              extent={{-100.0,-100.0},{100.0,100.0}}),Text(
-              visible=true,
-              origin={0.0,2.2296},
-              fillPattern=FillPattern.Solid,
-              extent={{-23.283,-44.4441},{23.283,44.4441}},
-              textString="Capacitor",
-              fontName="Arial")}),
+            visible=true,
+            fillColor={255,255,255},
+            extent={{-100.0,-100.0},{100.0,100.0}}), Text(
+            visible=true,
+            origin={0.0,2.2296},
+            fillPattern=FillPattern.Solid,
+            extent={{-23.283,-44.4441},{23.283,44.4441}},
+            textString="Capacitor",
+            fontName="Arial")}),
       Diagram(coordinateSystem(
           extent={{-148.5,-105.0},{148.5,105.0}},
           preserveAspectRatio=true,
@@ -592,11 +610,11 @@ model Auxiliary
 <table cellspacing=\"1\" cellpadding=\"1\" border=\"1\">
 <tr>
 <td><p>Reference</p></td>
-<td><p></p></td>
+<td><p>TBD</p></td>
 </tr>
 <tr>
 <td><p>Last update</p></td>
-<td></td>
+<td>TBD</td>
 </tr>
 <tr>
 <td><p>Author</p></td>
@@ -654,15 +672,15 @@ model Auxiliary
           preserveAspectRatio=true,
           initialScale=0.1,
           grid={10,10}), graphics={Text(
-              visible=true,
-              origin={1.9581,1.6889},
-              fillPattern=FillPattern.Solid,
-              extent={{-31.9581,-31.6889},{31.9581,31.6889}},
-              textString="A_to_pu",
-              fontName="Arial"),Rectangle(
-              visible=true,
-              fillColor={255,255,255},
-              extent={{-100.0,-100.0},{100.0,100.0}})}),
+            visible=true,
+            origin={1.9581,1.6889},
+            fillPattern=FillPattern.Solid,
+            extent={{-31.9581,-31.6889},{31.9581,31.6889}},
+            textString="A_to_pu",
+            fontName="Arial"), Rectangle(
+            visible=true,
+            fillColor={255,255,255},
+            extent={{-100.0,-100.0},{100.0,100.0}})}),
       Diagram(coordinateSystem(
           extent={{-148.5,-105.0},{148.5,105.0}},
           preserveAspectRatio=true,
@@ -672,11 +690,11 @@ model Auxiliary
 <table cellspacing=\"1\" cellpadding=\"1\" border=\"1\">
 <tr>
 <td><p>Reference</p></td>
-<td><p></p></td>
+<td><p>TBD</p></td>
 </tr>
 <tr>
 <td><p>Last update</p></td>
-<td></td>
+<td>TBD</td>
 </tr>
 <tr>
 <td><p>Author</p></td>
@@ -838,11 +856,11 @@ model Auxiliary
 <table cellspacing=\"1\" cellpadding=\"1\" border=\"1\">
 <tr>
 <td><p>Reference</p></td>
-<td><p></p></td>
+<td><p>TBD</p></td>
 </tr>
 <tr>
 <td><p>Last update</p></td>
-<td></td>
+<td>TBD</td>
 </tr>
 <tr>
 <td><p>Author</p></td>
@@ -934,15 +952,15 @@ model Auxiliary
           preserveAspectRatio=true,
           initialScale=0.1,
           grid={10,10}), graphics={Rectangle(
-              visible=true,
-              fillColor={255,255,255},
-              extent={{-100.0,-100.0},{100.0,100.0}}),Text(
-              visible=true,
-              origin={0.0,15.3102},
-              fillPattern=FillPattern.Solid,
-              extent={{-31.415,-20.0667},{31.415,20.0667}},
-              textString="%name",
-              fontName="Arial")}),
+            visible=true,
+            fillColor={255,255,255},
+            extent={{-100.0,-100.0},{100.0,100.0}}), Text(
+            visible=true,
+            origin={0.0,15.3102},
+            fillPattern=FillPattern.Solid,
+            extent={{-31.415,-20.0667},{31.415,20.0667}},
+            textString="%name",
+            fontName="Arial")}),
       Diagram(coordinateSystem(
           extent={{-148.5,-105.0},{148.5,105.0}},
           preserveAspectRatio=true,
@@ -952,11 +970,11 @@ model Auxiliary
 <table cellspacing=\"1\" cellpadding=\"1\" border=\"1\">
 <tr>
 <td><p>Reference</p></td>
-<td><p></p></td>
+<td><p>TBD</p></td>
 </tr>
 <tr>
 <td><p>Last update</p></td>
-<td></td>
+<td>TBD</td>
 </tr>
 <tr>
 <td><p>Author</p></td>
@@ -1026,20 +1044,23 @@ model Auxiliary
           extent={{-100.0,-100.0},{100.0,100.0}},
           preserveAspectRatio=true,
           initialScale=0.1,
-          grid={10,10}), graphics={Text(
-              visible=true,
-              origin={-13.5393,7.4321},
-              fillPattern=FillPattern.Solid,
-              extent={{-43.5393,-25.2692},{43.5393,25.2692}},
-              textString="PI",
-              fontName="Arial"),Rectangle(
-              visible=true,
-              fillColor={255,255,255},
-              extent={{-100.0,-100.0},{100.0,100.0}}),Rectangle(
-              visible=true,
-              origin={151.9125,3.2701},
-              fillColor={255,255,255},
-              extent={{-0.2973,-3.2701},{0.2973,3.2701}})}),
+          grid={10,10}), graphics={
+          Text(
+            visible=true,
+            origin={-13.5393,7.4321},
+            fillPattern=FillPattern.Solid,
+            extent={{-43.5393,-25.2692},{43.5393,25.2692}},
+            textString="PI",
+            fontName="Arial"),
+          Rectangle(
+            visible=true,
+            fillColor={255,255,255},
+            extent={{-100.0,-100.0},{100.0,100.0}}),
+          Rectangle(
+            visible=true,
+            origin={151.9125,3.2701},
+            fillColor={255,255,255},
+            extent={{-0.2973,-3.2701},{0.2973,3.2701}})}),
       Diagram(coordinateSystem(
           extent={{-148.5,-105.0},{148.5,105.0}},
           preserveAspectRatio=true,
@@ -1049,11 +1070,11 @@ model Auxiliary
 <table cellspacing=\"1\" cellpadding=\"1\" border=\"1\">
 <tr>
 <td><p>Reference</p></td>
-<td><p></p></td>
+<td><p>TBD</p></td>
 </tr>
 <tr>
 <td><p>Last update</p></td>
-<td></td>
+<td>TBD</td>
 </tr>
 <tr>
 <td><p>Author</p></td>
@@ -1112,20 +1133,23 @@ model Auxiliary
           extent={{-100.0,-100.0},{100.0,100.0}},
           preserveAspectRatio=true,
           initialScale=0.1,
-          grid={10,10}), graphics={Text(
-              visible=true,
-              origin={-13.5393,7.4321},
-              fillPattern=FillPattern.Solid,
-              extent={{-43.5393,-25.2692},{43.5393,25.2692}},
-              textString="SimpleLagg",
-              fontName="Arial"),Rectangle(
-              visible=true,
-              fillColor={255,255,255},
-              extent={{-100.0,-100.0},{100.0,100.0}}),Rectangle(
-              visible=true,
-              origin={151.9125,3.2701},
-              fillColor={255,255,255},
-              extent={{-0.2973,-3.2701},{0.2973,3.2701}})}),
+          grid={10,10}), graphics={
+          Text(
+            visible=true,
+            origin={-13.5393,7.4321},
+            fillPattern=FillPattern.Solid,
+            extent={{-43.5393,-25.2692},{43.5393,25.2692}},
+            textString="SimpleLagg",
+            fontName="Arial"),
+          Rectangle(
+            visible=true,
+            fillColor={255,255,255},
+            extent={{-100.0,-100.0},{100.0,100.0}}),
+          Rectangle(
+            visible=true,
+            origin={151.9125,3.2701},
+            fillColor={255,255,255},
+            extent={{-0.2973,-3.2701},{0.2973,3.2701}})}),
       Diagram(coordinateSystem(
           extent={{-148.5,-105.0},{148.5,105.0}},
           preserveAspectRatio=true,
@@ -1135,11 +1159,11 @@ model Auxiliary
 <table cellspacing=\"1\" cellpadding=\"1\" border=\"1\">
 <tr>
 <td><p>Reference</p></td>
-<td><p></p></td>
+<td><p>TBD</p></td>
 </tr>
 <tr>
 <td><p>Last update</p></td>
-<td></td>
+<td>TBD</td>
 </tr>
 <tr>
 <td><p>Author</p></td>
@@ -1202,9 +1226,9 @@ model Auxiliary
           preserveAspectRatio=true,
           initialScale=0.1,
           grid={10,10}), graphics={Rectangle(
-              visible=true,
-              fillColor={255,255,255},
-              extent={{-100.0,-100.0},{100.0,100.0}})}),
+            visible=true,
+            fillColor={255,255,255},
+            extent={{-100.0,-100.0},{100.0,100.0}})}),
       Diagram(coordinateSystem(
           extent={{-148.5,-105.0},{148.5,105.0}},
           preserveAspectRatio=true,
@@ -1214,11 +1238,11 @@ model Auxiliary
 <table cellspacing=\"1\" cellpadding=\"1\" border=\"1\">
 <tr>
 <td><p>Reference</p></td>
-<td><p></p></td>
+<td><p>TBD</p></td>
 </tr>
 <tr>
 <td><p>Last update</p></td>
-<td></td>
+<td>TBD</td>
 </tr>
 <tr>
 <td><p>Author</p></td>

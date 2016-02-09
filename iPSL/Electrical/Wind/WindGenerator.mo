@@ -55,7 +55,7 @@ equation
         initialScale=0.1,
         grid={5,5})),
     Documentation(info="<html>
-<table cellspacing=\"1\" cellpadding=\"1\" border=\"1\"<tr>
+<table cellspacing=\"1\" cellpadding=\"1\" border=\"1\"><tr>
 <td><p>Reference</p></td>
 <td><p>Mexican Hat, PSAT Manual 2.1.8</p></td>
 </tr>

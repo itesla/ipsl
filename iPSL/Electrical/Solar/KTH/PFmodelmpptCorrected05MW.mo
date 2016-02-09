@@ -162,19 +162,22 @@ equation
         extent={{-100.0,-100.0},{100.0,100.0}},
         preserveAspectRatio=true,
         initialScale=0.1,
-        grid={10,10}), graphics={Text(
+        grid={10,10}), graphics={
+        Text(
           visible=true,
           origin={-72.3502,50.0},
           fillPattern=FillPattern.Solid,
           extent={{-17.6498,-10.0},{17.6498,10.0}},
           textString="E",
-          fontName="Arial"),Text(
+          fontName="Arial"),
+        Text(
           visible=true,
           origin={-72.3502,-50.0},
           fillPattern=FillPattern.Solid,
           extent={{-17.6498,-10.0},{17.6498,10.0}},
           textString="T",
-          fontName="Arial"),Rectangle(
+          fontName="Arial"),
+        Rectangle(
           visible=true,
           fillColor={255,255,255},
           extent={{-100.0,-100.0},{100.0,100.0}})}),
@@ -187,11 +190,11 @@ equation
 <table cellspacing=\"1\" cellpadding=\"1\" border=\"1\">
 <tr>
 <td><p>Reference</p></td>
-<td><p></p></td>
+<td><p>TBD</p></td>
 </tr>
 <tr>
 <td><p>Last update</p></td>
-<td></td>
+<td>TBD</td>
 </tr>
 <tr>
 <td><p>Author</p></td>
