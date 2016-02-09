@@ -3,12 +3,18 @@ within iPSL.Electrical.Loads.PSSE.BaseClasses;
 
 partial model baseLoad
   import Modelica.Constants.pi;
+  import Modelica.ComplexMath.j;
   extends iPSL.Electrical.Essentials.pfComponent;
-  parameter Complex S_p(re=P_0/S_b, im=Q_0/S_b) "Original constant power load (pu)";
-  parameter Complex S_i(re=0, im=0) "Original constant current load (pu)";
-  parameter Complex S_y(re=0, im=0) "Original constant shunt admittance load (pu)";
-  parameter Complex a(re=1, im=0) "Load transfer fraction for constant current load";
-  parameter Complex b(re=0, im=1) "Load transfer fraction for constant shunt admittance load";
+  
+  parameter Complex S_p= P_0+j*Q_0
+    "Consumption of original constant power load (MVA)";
+  parameter Complex S_i=0+j*0
+    "Consumption of original constant current load (MVA)";
+  parameter Complex S_y=0+j*0
+    "Consumption of original constant shunt admittance load (MVA)";
+  parameter Complex a= 1+j*0 "Load transfer fraction for constant current load";
+  parameter Complex b=0+j*1
+    "Load transfer fraction for constant shunt admittance load";
   parameter Real PQBRAK=0.7 "Constant power characteristic threshold";
   parameter Integer characteristic=1 annotation (choices(choice=1, choice=2));
   iPSL.Connectors.PwPin p(

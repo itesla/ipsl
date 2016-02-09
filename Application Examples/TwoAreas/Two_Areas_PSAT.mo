@@ -182,7 +182,11 @@ equation
   connect(trafo3.p, bus3.p) annotation (Line(points={{171,30},{175.5,30},{180,30}}, color={0,0,255}));
   connect(bus11.p, trafo3.n) annotation (Line(points={{140,30},{149,30}}, color={0,0,255}));
   annotation (
-    Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-220,-40},{220,60}})),
+    Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-220,-40},{220,60}}), graphics={Text(
+          extent={{-68,-34},{46,-38}},
+          lineColor={28,108,200},
+          textString="Two-Area System 
+Prabha Kundur, \"Power System Stability and Control\", Example 12.6, page 813")}),
     Icon(coordinateSystem(extent={{-220,-40},{220,60}})),
     Documentation(revisions="<html>
 <!--DISCLAIMER-->

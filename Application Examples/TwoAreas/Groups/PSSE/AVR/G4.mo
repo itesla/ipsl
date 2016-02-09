@@ -1,5 +1,5 @@
-within TwoAreas.Groups.PSSE;
-model G2
+within TwoAreas.Groups.PSSE.AVR;
+model G4
   extends iPSL.Electrical.Essentials.pfComponent;
 
   iPSL.Connectors.PwPin pwPin annotation (Placement(transformation(extent={{60,-10},{80,10}}), iconTransformation(extent={{60,-10},{80,10}})));
@@ -7,7 +7,7 @@ model G2
     Tpd0=8,
     Tppd0=0.03,
     Tppq0=0.05,
-    H=6.5,
+    H=6.175,
     Xd=1.8,
     Xq=1.7,
     Xpd=0.3,
@@ -26,9 +26,9 @@ model G2
     Q_0=Q_0) annotation (Placement(transformation(extent={{-16,-14},{24,22}})));
 equation
 
-  connect(gENSAL.EFD, gENSAL.EFD0) annotation (Line(points={{-15.6,-5},{-26,-5},{-26,-30},{26,-30},{26,-8.6},{25.6,-8.6}}, color={0,0,127}));
-  connect(gENSAL.PMECH, gENSAL.PMECH0) annotation (Line(points={{-15.6,13},{-26,13},{-26,34},{28,34},{28,-1.4},{25.6,-1.4}}, color={0,0,127}));
-  connect(gENSAL.p, pwPin) annotation (Line(points={{26,4},{44,4},{44,0},{70,0}}, color={0,0,255}));
+  connect(gENSAL.p, pwPin) annotation (Line(points={{26,4},{42,4},{42,0},{70,0}}, color={0,0,255}));
+  connect(gENSAL.EFD0, gENSAL.EFD) annotation (Line(points={{25.6,-8.6},{34,-8.6},{34,-20},{-24,-20},{-24,-5},{-15.6,-5}}, color={0,0,127}));
+  connect(gENSAL.PMECH, gENSAL.PMECH0) annotation (Line(points={{-15.6,13},{-14,13},{-14,12},{-24,12},{-24,30},{34,30},{34,-1.4},{25.6,-1.4}}, color={0,0,127}));
   annotation (
     Diagram(coordinateSystem(
         preserveAspectRatio=false,
@@ -42,9 +42,9 @@ equation
         Line(points={{-40,0},{-20,20}}, color={28,108,200}),
         Line(points={{-20,20},{20,-20},{40,0}}, color={28,108,200}),
         Text(
-          extent={{-20,-22},{16,-52}},
+          extent={{-24,-22},{18,-52}},
           lineColor={28,108,200},
-          textString="G2")}),
+          textString="G4")}),
     Documentation(revisions="<html>
 <!--DISCLAIMER-->
 <p>Copyright 2015-2016 RTE (France), SmarTS Lab (Sweden), AIA (Spain) and DTU (Denmark)</p>
@@ -78,4 +78,4 @@ equation
 </tr>
 </table>
 </html>"));
-end G2;
+end G4;
