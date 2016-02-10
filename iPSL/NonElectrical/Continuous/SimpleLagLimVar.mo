@@ -14,12 +14,14 @@ block SimpleLagLimVar "First order lag transfer function block with a non windup
         origin={-80,-140})));
   Modelica.Blocks.Sources.RealExpression const(y=T) annotation (Placement(transformation(extent={{-58,32},{-38,52}})));
 
-  Real state(start=y_start);
+  Real state;
   parameter Real K "Gain";
   parameter Modelica.SIunits.Time T "Lag time constant";
   parameter Real y_start "Output start value";
 protected
   parameter Real T_mod=if (T < Modelica.Constants.eps) then 1000 else T;
+initial equation
+  state = y_start;
 equation
   T_mod*der(state) = K*u - state;
   when (state > outMax) and ((K*u - state) < 0) then
@@ -67,16 +69,21 @@ equation
 <p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
 <p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
 </html>"),
-    Icon(coordinateSystem(preserveAspectRatio=true, extent={{-100,-100},{100,100}}), graphics={Line(points={{40,100},{60,140},{100,140}}, color={0,0,0}),Text(
+    Icon(coordinateSystem(preserveAspectRatio=true, extent={{-100,-100},{100,100}}), graphics={
+        Line(points={{40,100},{60,140},{100,140}}, color={0,0,0}),
+        Text(
           extent={{-20,68},{20,8}},
           lineColor={0,0,255},
-          textString="K"),Line(
+          textString="K"),
+        Line(
           points={{-80,0},{78,0}},
           color={0,0,255},
           smooth=Smooth.Bezier,
-          thickness=0.5),Text(
+          thickness=0.5),
+        Text(
           extent={{-70,-20},{70,-80}},
           lineColor={0,0,255},
-          textString="1 + Ts"),Line(points={{-100,-140},{-60,-140},{-40,-100}}, color={0,0,0})}),
+          textString="1 + Ts"),
+        Line(points={{-100,-140},{-60,-140},{-40,-100}}, color={0,0,0})}),
     Diagram);
 end SimpleLagLimVar;
