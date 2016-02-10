@@ -88,7 +88,6 @@ model ST5B "IEEE 421.5 2005 ST5B Excitation System"
         extent={{-10,-10},{10,10}},
         rotation=90,
         origin={210,-92})));
-  Modelica.Blocks.Continuous.TransferFunction sTR(a={T_R,1}) annotation (Placement(transformation(extent={{-260,-10},{-240,10}})));
   NonElectrical.Continuous.LeadLagLim imLimitedLeadLag1(
     K=1,
     T1=T_UC1,
@@ -117,7 +116,6 @@ model ST5B "IEEE 421.5 2005 ST5B Excitation System"
     T2=T_OB1,
     outMin=V_RMIN/K_R,
     y_start=VR0/K_R) annotation (Placement(transformation(extent={{10,-94},{30,-74}})));
-  SelectLogic selectLogic annotation (Placement(transformation(extent={{80,-14},{104,10}})));
   NonElectrical.Continuous.SimpleLagLimVar simpleLagLimVar(
     K=1,
     T=T_1,
@@ -131,7 +129,6 @@ model ST5B "IEEE 421.5 2005 ST5B Excitation System"
         rotation=0,
         origin={180,-70})));
 protected
-  parameter Real VT(fixed=false);
   parameter Real VREF(fixed=false);
   parameter Real Vm0(fixed=false);
   parameter Real VR0(fixed=false);
@@ -142,21 +139,18 @@ public
         extent={{-10,-10},{10,10}},
         rotation=90,
         origin={110,-124}), iconTransformation(extent={{-300,20},{-280,40}})));
+  NonElectrical.Continuous.SimpleLag simpleLag(
+    K=1,
+    T=T_R,
+    y_start=Vm0) annotation (Placement(transformation(extent={{-270,-10},{-250,10}})));
 initial equation
   VR0 = EFD0 + K_C*XADIFD;
   VREF = VR0/K_R + ECOMP;
   Vm0 = ECOMP;
+
 equation
   connect(K_r.y, limiter.u) annotation (Line(
       points={{141,0.5},{152,0.5},{152,0},{158,0}},
-      color={0,0,127},
-      smooth=Smooth.None));
-  connect(ECOMP, sTR.u) annotation (Line(
-      points={{-306,0},{-262,0}},
-      color={0,0,127},
-      smooth=Smooth.None));
-  connect(sTR.y, VERR.u1) annotation (Line(
-      points={{-239,0},{-222,0}},
       color={0,0,127},
       smooth=Smooth.None));
   connect(VOTHSG, VERR1.u1) annotation (Line(
@@ -165,18 +159,6 @@ equation
       smooth=Smooth.None));
   connect(limiter.y, VERR2.u2) annotation (Line(
       points={{181,0},{200,0},{200,6},{218,6}},
-      color={0,0,127},
-      smooth=Smooth.None));
-  connect(K_r.u, selectLogic.Vout) annotation (Line(
-      points={{118,0.5},{112,0.5},{112,0.4},{105.2,0.4}},
-      color={0,0,127},
-      smooth=Smooth.None));
-  connect(VERR.y, selectLogic.VERR) annotation (Line(
-      points={{-199,6},{-196,6},{-196,34},{99.2,34},{99.2,11.44}},
-      color={0,0,127},
-      smooth=Smooth.None));
-  connect(hV_Gate.n2, selectLogic.VERR) annotation (Line(
-      points={{-183.625,5.5},{-196,5.5},{-196,34},{99.2,34},{99.2,11.44}},
       color={0,0,127},
       smooth=Smooth.None));
   connect(hV_Gate.p, lV_Gate.n2) annotation (Line(
@@ -189,29 +171,28 @@ equation
       smooth=Smooth.None));
   connect(VERR1.y, imLimitedLeadLag.u) annotation (Line(points={{-87,6},{-52,6}}, color={0,0,127}));
   connect(imLimitedLeadLag.y, imLimitedLeadLag2.u) annotation (Line(points={{-29,6},{8,6}}, color={0,0,127}));
-  connect(imLimitedLeadLag2.y, selectLogic.V1) annotation (Line(points={{31,6},{77.84,6},{77.84,5.2}}, color={0,0,127}));
   connect(imLimitedLeadLag1.u, imLimitedLeadLag.u) annotation (Line(points={{-52,-44},{-80,-44},{-80,6},{-52,6}}, color={0,0,127}));
   connect(imLimitedLeadLag1.y, imLimitedLeadLag3.u) annotation (Line(points={{-29,-44},{-29,-44},{8,-44}}, color={0,0,127}));
-  connect(imLimitedLeadLag3.y, selectLogic.V2) annotation (Line(points={{31,-44},{60,-44},{60,-2},{77.84,-2}}, color={0,0,127}));
   connect(imLimitedLeadLag4.u, imLimitedLeadLag.u) annotation (Line(points={{-52,-84},{-80,-84},{-80,6},{-52,6}}, color={0,0,127}));
-  connect(imLimitedLeadLag5.y, selectLogic.V3) annotation (Line(points={{31,-84},{64,-84},{64,-9.2},{77.84,-9.2}}, color={0,0,127}));
   connect(VERR2.y, simpleLagLimVar.u) annotation (Line(points={{241,0},{241,0},{258,0}}, color={0,0,127}));
   connect(low.y, simpleLagLimVar.outMin) annotation (Line(points={{191,-70},{262,-70},{262,-14}}, color={0,0,127}));
   connect(high.y, simpleLagLimVar.outMax) annotation (Line(points={{193,-30},{244,-30},{244,32},{278,32},{278,14}}, color={0,0,127}));
-  connect(EFD, simpleLagLimVar.y) annotation (Line(points={{310,0},{281,0}}, color={0,0,127}));
   connect(VOEL, lV_Gate.n1) annotation (Line(points={{-48,104},{-48,66},{-152,66},{-152,15},{-143.375,15}}, color={0,0,127}));
-  connect(selectLogic.VOEL, lV_Gate.n1) annotation (Line(points={{84.8,11.44},{84.8,66},{-152,66},{-152,15},{-143.375,15}}, color={0,0,127}));
   connect(hV_Gate.n1, VUEL) annotation (Line(points={{-183.625,12.5},{-190,12.5},{-190,86},{-100,86},{-100,104}}, color={0,0,127}));
-  connect(selectLogic.VUEL, VUEL) annotation (Line(points={{92,11.44},{92,86},{-100,86},{-100,104}}, color={0,0,127}));
   connect(K_c.u, XADIFD) annotation (Line(points={{210,-104},{210,-126}}, color={0,0,127}));
   connect(K_c.y, VERR2.u1) annotation (Line(points={{210,-81},{210,-81},{210,-6},{218,-6}}, color={0,0,127}));
   connect(imLimitedLeadLag4.y, imLimitedLeadLag5.u) annotation (Line(points={{-29,-84},{-10.5,-84},{8,-84}}, color={0,0,127}));
   connect(const.y, VERR.u2) annotation (Line(points={{-239,46},{-232,46},{-232,12},{-222,12}}, color={0,0,127}));
   connect(high.u, ETERM) annotation (Line(points={{170,-30},{110,-30},{110,-124}}, color={0,0,127}));
   connect(low.u, ETERM) annotation (Line(points={{168,-70},{110,-70},{110,-124}}, color={0,0,127}));
+  connect(simpleLag.y, VERR.u1) annotation (Line(points={{-249,0},{-222,0}}, color={0,0,127}));
+  connect(ECOMP, simpleLag.u) annotation (Line(points={{-306,0},{-289,0},{-272,0}}, color={0,0,127}));
+  connect(imLimitedLeadLag2.y, K_r.u) annotation (Line(points={{31,6},{74,6},{74,0.5},{118,0.5}}, color={0,0,127}));
+  connect(VERR.y, hV_Gate.n2) annotation (Line(points={{-199,6},{-183.625,6},{-183.625,5.5}}, color={0,0,127}));
+  connect(simpleLagLimVar.y, EFD) annotation (Line(points={{281,0},{310,0},{310,0}}, color={0,0,127}));
   annotation (
     Diagram(coordinateSystem(
-        preserveAspectRatio=true,
+        preserveAspectRatio=false,
         extent={{-300,-120},{300,120}},
         grid={2,2})),
     Icon(coordinateSystem(
