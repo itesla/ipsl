@@ -3,7 +3,7 @@ model G1
   extends iPSL.Electrical.Essentials.pfComponent;
 
   iPSL.Connectors.PwPin pwPin annotation (Placement(transformation(extent={{60,-10},{80,10}}), iconTransformation(extent={{60,-10},{80,10}})));
-  iPSL.Electrical.Machines.PSSE.GENSAL.GENSAL gENSAL(
+  iPSL.Electrical.Machines.PSSE.GENROU.GENROU g1(
     Tpd0=8,
     Tppd0=0.03,
     Tppq0=0.05,
@@ -23,12 +23,28 @@ model G1
     V_0=V_0,
     angle_0=angle_0,
     P_0=P_0,
-    Q_0=Q_0) annotation (Placement(transformation(extent={{-16,-14},{24,22}})));
+    Q_0=Q_0,
+    Xpq=0.55,
+    Tpq0=0.4) annotation (Placement(transformation(extent={{-2,-18},{38,18}})));
+  iPSL.Electrical.Controls.PSSE.ES.SEXS.SEXS sEXS(
+    T_AT_B=1,
+    T_B=1,
+    K=200,
+    T_E=0.01,
+    E_MIN=0,
+    E_MAX=4,
+    Ec0=1) annotation (Placement(transformation(extent={{-42,-18},{-8,0}})));
+  Modelica.Blocks.Sources.Constant const(k=0) annotation (Placement(transformation(extent={{-56,18},{-46,28}})));
 equation
 
-  connect(gENSAL.EFD0, gENSAL.EFD) annotation (Line(points={{25.6,-8.6},{26,-8.6},{26,-20},{-18,-20},{-18,-5},{-15.6,-5}}, color={0,0,127}));
-  connect(gENSAL.PMECH, gENSAL.PMECH0) annotation (Line(points={{-15.6,13},{-18,13},{-18,30},{24,30},{24,-1.4},{25.6,-1.4}}, color={0,0,127}));
-  connect(gENSAL.p, pwPin) annotation (Line(points={{26,4},{42,4},{42,0},{70,0}}, color={0,0,255}));
+  connect(g1.PMECH, g1.PMECH0) annotation (Line(points={{-1.6,9},{-6,9},{-12,9},{-12,10},{-12,26},{44,26},{44,-5.4},{39.6,-5.4}}, color={0,0,127}));
+  connect(g1.p, pwPin) annotation (Line(points={{40,0},{40,0},{70,0}}, color={0,0,255}));
+  connect(sEXS.EFD, g1.EFD) annotation (Line(points={{-6.98,-9},{-6.98,-9},{-1.6,-9}}, color={0,0,127}));
+  connect(sEXS.EFD0, g1.EFD0) annotation (Line(points={{-40.98,-14.625},{-46,-14.625},{-46,-26},{46,-26},{46,-12.6},{39.6,-12.6}}, color={0,0,127}));
+  connect(sEXS.VOEL, const.y) annotation (Line(points={{-40.98,-9},{-40.98,-9.5},{-45.5,-9.5},{-45.5,23}}, color={0,0,127}));
+  connect(sEXS.VOTHSG, const.y) annotation (Line(points={{-40.98,-5.625},{-40.98,-6.1875},{-45.5,-6.1875},{-45.5,23}}, color={0,0,127}));
+  connect(sEXS.ECOMP, const.y) annotation (Line(points={{-40.98,-3.375},{-40.98,-3.3125},{-45.5,-3.3125},{-45.5,23}}, color={0,0,127}));
+  connect(sEXS.VUEL, const.y) annotation (Line(points={{-40.98,-12.375},{-40.98,-12.1875},{-45.5,-12.1875},{-45.5,23}}, color={0,0,127}));
   annotation (
     Diagram(coordinateSystem(
         preserveAspectRatio=false,
