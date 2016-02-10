@@ -119,7 +119,7 @@ model ST5B "IEEE 421.5 2005 ST5B Excitation System"
   NonElectrical.Continuous.SimpleLagLimVar simpleLagLimVar(
     K=1,
     T=T_1,
-    y_start=VR0) annotation (Placement(transformation(extent={{260,-10},{280,10}})));
+    y_start=Efd0) annotation (Placement(transformation(extent={{260,-10},{280,10}})));
   Modelica.Blocks.Math.Gain high(k=V_RMAX) annotation (Placement(transformation(
         extent={{-10,-10},{10,10}},
         rotation=0,
@@ -132,6 +132,7 @@ protected
   parameter Real VREF(fixed=false);
   parameter Real Vm0(fixed=false);
   parameter Real VR0(fixed=false);
+  parameter Real Efd0(fixed=false);
 public
   Modelica.Blocks.Sources.Constant const(k=VREF) annotation (Placement(transformation(extent={{-260,36},{-240,56}})));
   Modelica.Blocks.Interfaces.RealInput ETERM
@@ -147,6 +148,7 @@ initial equation
   VR0 = EFD0 + K_C*XADIFD;
   VREF = VR0/K_R + ECOMP;
   Vm0 = ECOMP;
+  Efd0 = EFD0;
 
 equation
   connect(K_r.y, limiter.u) annotation (Line(
@@ -189,7 +191,7 @@ equation
   connect(ECOMP, simpleLag.u) annotation (Line(points={{-306,0},{-289,0},{-272,0}}, color={0,0,127}));
   connect(imLimitedLeadLag2.y, K_r.u) annotation (Line(points={{31,6},{74,6},{74,0.5},{118,0.5}}, color={0,0,127}));
   connect(VERR.y, hV_Gate.n2) annotation (Line(points={{-199,6},{-183.625,6},{-183.625,5.5}}, color={0,0,127}));
-  connect(simpleLagLimVar.y, EFD) annotation (Line(points={{281,0},{310,0},{310,0}}, color={0,0,127}));
+  connect(simpleLagLimVar.y, EFD) annotation (Line(points={{281,0},{310,0}}, color={0,0,127}));
   annotation (
     Diagram(coordinateSystem(
         preserveAspectRatio=false,
