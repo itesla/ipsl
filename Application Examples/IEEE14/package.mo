@@ -2,7 +2,8 @@ within ;
 package IEEE14 
 
 
-annotation (uses(                             Modelica(version="3.2.1"),
+annotation (uses(
+    Modelica(version="3.2.1"),
     iPSL(version="0.8"),
     PowerSystems(version="0.6")), Documentation(info="<html>
 <table cellspacing=\"1\" cellpadding=\"1\" border=\"1\">
