@@ -30,12 +30,10 @@ equation
           smooth=Smooth.None),Line(
           points={{-100,0},{-46,0}},
           color={0,0,255},
-          smooth=Smooth.None),
-        Text(
+          smooth=Smooth.None),Text(
           extent={{-38,20},{-4,-20}},
           lineColor={28,108,200},
-          textString="1"),
-        Text(
+          textString="1"),Text(
           extent={{4,18},{32,-16}},
           lineColor={28,108,200},
           textString="2")}),

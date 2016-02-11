@@ -200,45 +200,35 @@ equation
     Icon(coordinateSystem(
         extent={{-300,-120},{300,120}},
         preserveAspectRatio=false,
-        grid={2,2}), graphics={
-        Rectangle(
+        grid={2,2}), graphics={Rectangle(
           extent={{-300,120},{300,-120}},
           lineColor={28,108,200},
           fillColor={255,255,255},
-          fillPattern=FillPattern.Solid),
-        Text(
+          fillPattern=FillPattern.Solid),Text(
           extent={{-56,22},{66,-22}},
           lineColor={28,108,200},
-          textString="ST5B"),
-        Text(
+          textString="ST5B"),Text(
           extent={{-274,100},{-202,80}},
           lineColor={28,108,200},
-          textString="ECOMP"),
-        Text(
+          textString="ECOMP"),Text(
           extent={{-6,-80},{70,-100}},
           lineColor={28,108,200},
-          textString="VOTHSG"),
-        Text(
+          textString="VOTHSG"),Text(
           extent={{-274,-20},{-204,-40}},
           lineColor={28,108,200},
-          textString="XADIFD"),
-        Text(
+          textString="XADIFD"),Text(
           extent={{-156,-80},{-108,-100}},
           lineColor={28,108,200},
-          textString="VUEL"),
-        Text(
+          textString="VUEL"),Text(
           extent={{-272,-80},{-226,-100}},
           lineColor={28,108,200},
-          textString="EFD0"),
-        Text(
+          textString="EFD0"),Text(
           extent={{-72,-80},{-26,-100}},
           lineColor={28,108,200},
-          textString="VOEL"),
-        Text(
+          textString="VOEL"),Text(
           extent={{254,10},{294,-10}},
           lineColor={28,108,200},
-          textString="EFD"),
-        Text(
+          textString="EFD"),Text(
           extent={{-276,40},{-204,20}},
           lineColor={28,108,200},
           textString="ETERM")}),
