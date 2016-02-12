@@ -3,7 +3,7 @@ model G2
   extends iPSL.Electrical.Essentials.pfComponent;
 
   iPSL.Connectors.PwPin pwPin annotation (Placement(transformation(extent={{60,-10},{80,10}}), iconTransformation(extent={{60,-10},{80,10}})));
-  iPSL.Electrical.Machines.PSSE.GENSAL.GENSAL gENSAL(
+  iPSL.Electrical.Machines.PSSE.GENROU.GENROU g2(
     Tpd0=8,
     Tppd0=0.03,
     Tppq0=0.05,
@@ -23,12 +23,36 @@ model G2
     V_0=V_0,
     angle_0=angle_0,
     P_0=P_0,
-    Q_0=Q_0) annotation (Placement(transformation(extent={{-16,-14},{24,22}})));
+    Q_0=Q_0,
+    Xpq=0.55,
+    Tpq0=0.4) annotation (Placement(transformation(extent={{6,-18},{46,18}})));
+  iPSL.Electrical.Controls.PSSE.ES.ESDC1A.ESDC1A eSDC1A(
+    T_R=0.5,
+    K_A=20,
+    T_A=0.055,
+    T_B=1,
+    T_C=1,
+    V_RMAX=4,
+    V_RMIN=-4,
+    K_E=-0.052927,
+    T_E=0.36,
+    K_F=0.125,
+    T_F1=1.8,
+    E_1=1,
+    E_2=2,
+    S_EE_1=0.0164,
+    S_EE_2=0.0481) annotation (Placement(transformation(extent={{-38,-18},{-4,0}})));
+  Modelica.Blocks.Sources.Constant const(k=0) annotation (Placement(transformation(extent={{-56,4},{-48,12}})));
 equation
 
-  connect(gENSAL.EFD, gENSAL.EFD0) annotation (Line(points={{-15.6,-5},{-26,-5},{-26,-30},{26,-30},{26,-8.6},{25.6,-8.6}}, color={0,0,127}));
-  connect(gENSAL.PMECH, gENSAL.PMECH0) annotation (Line(points={{-15.6,13},{-26,13},{-26,34},{28,34},{28,-1.4},{25.6,-1.4}}, color={0,0,127}));
-  connect(gENSAL.p, pwPin) annotation (Line(points={{26,4},{44,4},{44,0},{70,0}}, color={0,0,255}));
+  connect(g2.PMECH, g2.PMECH0) annotation (Line(points={{6.4,9},{-2,9},{-2,32},{52,32},{52,-5.4},{47.6,-5.4}}, color={0,0,127}));
+  connect(g2.p, pwPin) annotation (Line(points={{48,0},{44,0},{70,0}}, color={0,0,255}));
+  connect(g2.EFD, eSDC1A.EFD) annotation (Line(points={{6.4,-9},{-3.05556,-9}}, color={0,0,127}));
+  connect(eSDC1A.EFD0, g2.EFD0) annotation (Line(points={{-24.7778,-16.65},{-24.7778,-24},{56,-24},{56,-12.6},{47.6,-12.6}}, color={0,0,127}));
+  connect(const.y, eSDC1A.VUEL) annotation (Line(points={{-47.6,8},{-42,8},{-42,-15.75},{-37.0556,-15.75}}, color={0,0,127}));
+  connect(eSDC1A.VOEL, eSDC1A.VUEL) annotation (Line(points={{-37.0556,-11.25},{-42,-11.25},{-42,-15.75},{-37.0556,-15.75}}, color={0,0,127}));
+  connect(eSDC1A.VOTHSG, eSDC1A.VUEL) annotation (Line(points={{-37.0556,-6.75},{-42,-6.75},{-42,-15.75},{-37.0556,-15.75}}, color={0,0,127}));
+  connect(eSDC1A.ECOMP, eSDC1A.VUEL) annotation (Line(points={{-37.0556,-2.475},{-42,-2.475},{-42,-15.75},{-37.0556,-15.75}}, color={0,0,127}));
   annotation (
     Diagram(coordinateSystem(
         preserveAspectRatio=false,

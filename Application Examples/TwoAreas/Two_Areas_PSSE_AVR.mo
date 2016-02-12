@@ -96,23 +96,13 @@ model Two_Areas_PSSE_AVR
         origin={2,-16})));
 
   iPSL.Electrical.Loads.PSSE.Load Load7(
-    S_i(re=0, im=0),
-    S_y(re=0, im=0),
-    a(re=1, im=0),
-    b(re=0, im=1),
     PQBRAK=0.7,
     V_0=0.9610106,
-    angle_0=-4.68651,
-    S_p(re=9.67, im=(100 - 184.7)/100)) annotation (Placement(transformation(extent={{-70,-12},{-58,0}})));
+    angle_0=-4.68651) annotation (Placement(transformation(extent={{-70,-12},{-58,0}})));
   iPSL.Electrical.Loads.PSSE.Load Load9(
-    S_i(re=0, im=0),
-    S_y(re=0, im=0),
-    a(re=1, im=0),
-    b(re=0, im=1),
     PQBRAK=0.7,
     V_0=0.9713628,
-    angle_0=-32.15403,
-    S_p(re=17.67, im=(100 - 330.2)/100)) annotation (Placement(transformation(extent={{72,-12},{60,0}})));
+    angle_0=-32.15403) annotation (Placement(transformation(extent={{72,-12},{60,0}})));
   iPSL.Electrical.Branches.PwLine Line5_1(
     G=0,
     R=0,
@@ -170,7 +160,18 @@ equation
     Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-220,-40},{220,60}})),
     Icon(coordinateSystem(extent={{-220,-40},{220,60}})),
     Documentation(revisions="<html>
-<p>Using commit  [77c2c74] from iTesla-Modelica-SmartsLab repository</p>
+<!--DISCLAIMER-->
+<p>Copyright 2015-2016 RTE (France), SmarTS Lab (Sweden), AIA (Spain) and DTU (Denmark)</p>
+<ul>
+<li>RTE: <a href=\"http://www.rte-france.com\">http://www.rte-france.com</a></li>
+<li>SmarTS Lab, research group at KTH: <a href=\"https://www.kth.se/en\">https://www.kth.se/en</a></li>
+<li>AIA: <a href=\"http://www.aia.es/en/energy\"> http://www.aia.es/en/energy</a></li>
+<li>DTU: <a href=\"http://www.dtu.dk/english\"> http://www.dtu.dk/english</a></li>
+</ul>
+<p>The authors can be contacted by email: <a href=\"mailto:info@itesla-ipsl.org\">info@itesla-ipsl.org</a></p>
+
+<p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
+<p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
 </html>", info="<html>
 <table cellspacing=\"1\" cellpadding=\"1\" border=\"1\">
 <tr>
@@ -179,11 +180,11 @@ equation
 </tr>
 <tr>
 <td><p>Last update</p></td>
-<td>2015-12-01</td>
+<td>February 2016</td>
 </tr>
 <tr>
 <td><p>Author</p></td>
-<td><p>Tin Rabuzin, SmarTS Lab, KTH Royal Institute of Technology</p></td>
+<td><p>Maxime Baudette, Tin Rabuzin, SmarTS Lab, KTH Royal Institute of Technology</p></td>
 </tr>
 <tr>
 <td><p>Contact</p></td>
