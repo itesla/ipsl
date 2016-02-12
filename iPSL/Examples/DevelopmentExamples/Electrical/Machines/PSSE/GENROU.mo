@@ -112,16 +112,9 @@ equation
   connect(GEN.p, pwLine.p) annotation (Line(points={{-34,10},{-23,10}}, color={0,0,255}));
   annotation (Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,100}})), Documentation(revisions="<html>
 <!--DISCLAIMER-->
-<p>Copyright 2015-2016 RTE (France), SmarTS Lab (Sweden), AIA (Spain) and DTU (Denmark)</p>
-<ul>
-<li>RTE: <a href=\"http://www.rte-france.com\">http://www.rte-france.com</a></li>
-<li>SmarTS Lab, research group at KTH: <a href=\"https://www.kth.se/en\">https://www.kth.se/en</a></li>
-<li>AIA: <a href=\"http://www.aia.es/en/energy\"> http://www.aia.es/en/energy</a></li>
-<li>DTU: <a href=\"http://www.dtu.dk/english\"> http://www.dtu.dk/english</a></li>
-</ul>
-<p>The authors can be contacted by email: <a href=\"mailto:info@itesla-ipsl.org\">info@itesla-ipsl.org</a></p>
-
-<p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
-<p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
+<h5>DISCLAIMER</h5>
+<p>This file is subject to the terms and conditions defined in
+<a href=\"modelica://iPSL.Copyright\">iPSL.Copyright</a>,
+which is part of this source code package.</p>
 </html>"));
 end GENROU;
