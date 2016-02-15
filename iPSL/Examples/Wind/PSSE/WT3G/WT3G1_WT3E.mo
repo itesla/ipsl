@@ -1,4 +1,6 @@
 within iPSL.Examples.Wind.PSSE.WT3G;
+
+
 model WT3G1_WT3E
   constant Real pi=Modelica.Constants.pi;
   parameter Real V1=1.00000;
@@ -177,7 +179,7 @@ equation
   connect(wT3E1_1.PELEC, wT3G1_pt.P) annotation (Line(points={{149.65,-12.7143},{140,-12.7143},{140,-26},{68,-26},{68,23.1},{77.8,23.1}}, color={0,0,127}));
   connect(cSVGN1_1.V, wT3G1_pt.Iterm) annotation (Line(points={{-28.37,-38.07},{132,-38.07},{132,0},{126.2,0.1}}, color={0,0,127}));
   annotation (
-    Diagram(coordinateSystem(preserveAspectRatio=false,extent={{-140,-80},{160,100}})),
+    Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-140,-80},{160,100}})),
     Icon(coordinateSystem(extent={{-140,-80},{160,100}})),
     Documentation(revisions="<html>
 <!--DISCLAIMER-->

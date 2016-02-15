@@ -1,4 +1,6 @@
 within iPSL.Electrical.Controls.PSSE.PSS.PSS2A;
+
+
 model PSS2A "IEEE Dual-Input Stabilizer Model"
   parameter Real T_w1=10 "Washout 1 time constant";
   parameter Real T_w2=10 "Washout 2 time constant";
