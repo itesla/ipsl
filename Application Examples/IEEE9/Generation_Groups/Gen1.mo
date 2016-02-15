@@ -1,7 +1,8 @@
 within IEEE9.Generation_Groups;
 model Gen1
   extends iPSL.Electrical.Essentials.pfComponent;
-
+  parameter Real vf0=1.755517086537914;
+  parameter Real vref0=1.118023800520641;
   parameter Real height_1 annotation (Dialog(group="AVR Disturbance"));
   parameter Real tstart_1 annotation (Dialog(group="AVR Disturbance"));
   parameter Boolean refdisturb_1 annotation (Dialog(group="AVR Disturbance"));
@@ -29,9 +30,9 @@ model Gen1
   iPSL.Electrical.Controls.PSAT.AVR.AVRTypeII AVR(
     vrmin=-5,
     vrmax=5,
-    v0=1.025000000000000,
-    vf0=1.755517086537914,
-    vref0=1.118023800520641,
+    v0=V_0,
+    vf0=vf0,
+    vref0=vref0,
     Ka=20,
     Ta=0.2,
     Kf=0.063,
@@ -40,17 +41,17 @@ model Gen1
     Te=0.314,
     Tr=0.001,
     Ae=0.0039,
-    Be=1.55) annotation (Placement(transformation(
+    Be=1.555) annotation (Placement(transformation(
         extent={{-10,-10},{10,10}},
         rotation=0,
         origin={-6,10})));
-  Modelica.Blocks.Sources.Constant vref2(k=1.118023800520641) annotation (Placement(transformation(
+  Modelica.Blocks.Sources.Constant vref2(k=vref0) annotation (Placement(transformation(
         extent={{-5,-5},{5,5}},
         rotation=0,
         origin={-71,25})));
   Modelica.Blocks.Sources.Step step(
     startTime=tstart_1,
-    offset=1.118023800520641,
+    offset=vref0,
     height=height_1) annotation (Placement(transformation(
         extent={{-4,-4},{4,4}},
         rotation=90,
@@ -58,11 +59,11 @@ model Gen1
   Modelica.Blocks.Logical.Switch switch1 annotation (Placement(transformation(extent={{-50,12},{-40,22}})));
   Modelica.Blocks.Sources.BooleanConstant booleanConstant(k=refdisturb_1) annotation (Placement(transformation(extent={{-80,2},{-70,12}})));
   iPSL.Connectors.PwPin pwPin annotation (Placement(transformation(extent={{100,-10},{120,10}})));
-  Real P_MW;
-  Real Q_MVA;
+  //Real P_MW;
+  //Real Q_MVA;
 equation
-  P_MW = gen.P*S_b;
-  Q_MVA = gen.Q*S_b;
+  //P_MW = gen.P*S_b;
+  // Q_MVA = gen.Q*S_b;
   connect(gen.v, AVR.v) annotation (Line(
       points={{39,17},{48,17},{48,-14},{-22,-14},{-22,9},{-14,9}},
       color={0,0,127},
