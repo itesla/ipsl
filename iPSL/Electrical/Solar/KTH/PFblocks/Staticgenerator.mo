@@ -80,34 +80,40 @@ equation
         extent={{-100.0,-100.0},{100.0,100.0}},
         preserveAspectRatio=true,
         initialScale=0.1,
-        grid={10,10}), graphics={Text(
+        grid={10,10}), graphics={
+        Text(
           visible=true,
           origin={-77.7013,70.0105},
           fillPattern=FillPattern.Solid,
           extent={{-12.2987,-8.1753},{12.2987,8.1753}},
           textString="idref",
-          fontName="Arial"),Text(
+          fontName="Arial"),
+        Text(
           visible=true,
           origin={-77.7013,21.8247},
           fillPattern=FillPattern.Solid,
           extent={{-12.2987,-8.1753},{12.2987,8.1753}},
           textString="iqref",
-          fontName="Arial"),Text(
+          fontName="Arial"),
+        Text(
           visible=true,
           origin={74.8853,-74.849},
           fillPattern=FillPattern.Solid,
           extent={{-12.2987,-8.1753},{12.2987,8.1753}},
           textString="P,pu",
-          fontName="Arial"),Text(
+          fontName="Arial"),
+        Text(
           visible=true,
           origin={16.0747,3.9219},
           fillPattern=FillPattern.Solid,
           extent={{-66.0747,-43.9219},{66.0747,43.9219}},
           textString="StaticGen",
-          fontName="Arial"),Rectangle(
+          fontName="Arial"),
+        Rectangle(
           visible=true,
           fillColor={255,255,255},
-          extent={{-100.0,-100.0},{100.0,100.0}}),Text(
+          extent={{-100.0,-100.0},{100.0,100.0}}),
+        Text(
           visible=true,
           origin={73.4293,69.8619},
           fillPattern=FillPattern.Solid,

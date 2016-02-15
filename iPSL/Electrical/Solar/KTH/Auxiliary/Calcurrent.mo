@@ -40,28 +40,33 @@ equation
         extent={{-100.0,-100.0},{100.0,100.0}},
         preserveAspectRatio=true,
         initialScale=0.1,
-        grid={10,10}), graphics={Text(
+        grid={10,10}), graphics={
+        Text(
           visible=true,
           origin={-80.1182,38.5265},
           fillPattern=FillPattern.Solid,
           extent={{-13.2292,-11.4735},{13.2292,11.4735}},
           textString="0",
-          fontName="Arial"),Text(
+          fontName="Arial"),
+        Text(
           visible=true,
           origin={-80.0,-51.4735},
           fillPattern=FillPattern.Solid,
           extent={{-13.2292,-11.4735},{13.2292,11.4735}},
           textString="1",
-          fontName="Arial"),Text(
+          fontName="Arial"),
+        Text(
           visible=true,
           origin={76.7708,-0.0},
           fillPattern=FillPattern.Solid,
           extent={{-13.2292,-11.4735},{13.2292,11.4735}},
           textString="out",
-          fontName="Arial"),Rectangle(
+          fontName="Arial"),
+        Rectangle(
           visible=true,
           fillColor={255,255,255},
-          extent={{-100.0,-100.0},{100.0,100.0}}),Text(
+          extent={{-100.0,-100.0},{100.0,100.0}}),
+        Text(
           visible=true,
           origin={-2.514,58.5651},
           fillPattern=FillPattern.Solid,

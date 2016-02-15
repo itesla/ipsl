@@ -5,19 +5,23 @@ model SystemBase "System Base Definition"
   parameter Real S_b=100 "System base in MVA";
   parameter Real fn=50 "System Frequency in Hz";
   annotation (
-    Icon(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{140,100}}), graphics={Rectangle(
+    Icon(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{140,100}}), graphics={
+        Rectangle(
           extent={{-100,100},{140,-100}},
           lineColor={28,108,200},
           fillColor={255,255,255},
-          fillPattern=FillPattern.Solid),Text(
+          fillPattern=FillPattern.Solid),
+        Text(
           extent={{-80,40},{120,0}},
           lineColor={28,108,200},
           horizontalAlignment=TextAlignment.Left,
-          textString="System Base: %S_b MVA"),Text(
+          textString="System Base: %S_b MVA"),
+        Text(
           extent={{-80,-20},{120,-60}},
           lineColor={28,108,200},
           horizontalAlignment=TextAlignment.Left,
-          textString="Frequency: %fn Hz"),Text(
+          textString="Frequency: %fn Hz"),
+        Text(
           extent={{-80,100},{120,60}},
           lineColor={28,108,200},
           horizontalAlignment=TextAlignment.Center,

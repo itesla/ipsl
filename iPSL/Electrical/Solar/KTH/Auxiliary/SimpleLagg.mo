@@ -33,16 +33,19 @@ equation
         extent={{-100.0,-100.0},{100.0,100.0}},
         preserveAspectRatio=true,
         initialScale=0.1,
-        grid={10,10}), graphics={Text(
+        grid={10,10}), graphics={
+        Text(
           visible=true,
           origin={-13.5393,7.4321},
           fillPattern=FillPattern.Solid,
           extent={{-43.5393,-25.2692},{43.5393,25.2692}},
           textString="SimpleLagg",
-          fontName="Arial"),Rectangle(
+          fontName="Arial"),
+        Rectangle(
           visible=true,
           fillColor={255,255,255},
-          extent={{-100.0,-100.0},{100.0,100.0}}),Rectangle(
+          extent={{-100.0,-100.0},{100.0,100.0}}),
+        Rectangle(
           visible=true,
           origin={151.9125,3.2701},
           fillColor={255,255,255},

@@ -117,37 +117,43 @@ algorithm
         extent={{-100.0,-100.0},{100.0,100.0}},
         preserveAspectRatio=true,
         initialScale=0.1,
-        grid={10,10}), graphics={Text(
+        grid={10,10}), graphics={
+        Text(
           visible=true,
           origin={-85.4693,77.294},
           fillPattern=FillPattern.Solid,
           extent={{-8.7699,-10.7022},{8.7699,10.7022}},
           textString="0",
-          fontName="Arial"),Text(
+          fontName="Arial"),
+        Text(
           visible=true,
           origin={-83.7123,27.3769},
           fillPattern=FillPattern.Solid,
           extent={{-8.7699,-10.7022},{8.7699,10.7022}},
           textString="1",
-          fontName="Arial"),Text(
+          fontName="Arial"),
+        Text(
           visible=true,
           origin={-84.3336,-26.9995},
           fillPattern=FillPattern.Solid,
           extent={{-8.7699,-10.7022},{8.7699,10.7022}},
           textString="2",
-          fontName="Arial"),Text(
+          fontName="Arial"),
+        Text(
           visible=true,
           origin={-83.4684,-82.2678},
           fillPattern=FillPattern.Solid,
           extent={{-8.7699,-10.7022},{8.7699,10.7022}},
           textString="3",
-          fontName="Arial"),Text(
+          fontName="Arial"),
+        Text(
           visible=true,
           origin={75.8495,0.7022},
           fillPattern=FillPattern.Solid,
           extent={{-8.7699,-10.7022},{8.7699,10.7022}},
           textString="k",
-          fontName="Arial"),Rectangle(
+          fontName="Arial"),
+        Rectangle(
           visible=true,
           fillColor={255,255,255},
           extent={{-100.0,-100.0},{100.0,100.0}})}),

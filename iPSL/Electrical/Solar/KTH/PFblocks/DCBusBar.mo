@@ -120,22 +120,26 @@ equation
         extent={{-100.0,-100.0},{100.0,100.0}},
         preserveAspectRatio=true,
         initialScale=0.1,
-        grid={10,10}), graphics={Rectangle(
+        grid={10,10}), graphics={
+        Rectangle(
           visible=true,
           fillColor={255,255,255},
-          extent={{-100.0,-100.0},{100.0,100.0}}),Text(
+          extent={{-100.0,-100.0},{100.0,100.0}}),
+        Text(
           visible=true,
           origin={-50.0,60.0},
           fillPattern=FillPattern.Solid,
           extent={{-47.2303,-30.0},{47.2303,30.0}},
           textString="Pac [MW]",
-          fontName="Arial"),Text(
+          fontName="Arial"),
+        Text(
           visible=true,
           origin={-68.5241,-31.9581},
           fillPattern=FillPattern.Solid,
           extent={{-15.9047,-15.0129},{15.9047,15.0129}},
           textString="Ipv",
-          fontName="Arial"),Text(
+          fontName="Arial"),
+        Text(
           visible=true,
           origin={70.0,0.0},
           fillPattern=FillPattern.Solid,

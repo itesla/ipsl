@@ -197,46 +197,54 @@ equation
         extent={{-100.0,-100.0},{100.0,100.0}},
         preserveAspectRatio=true,
         initialScale=0.1,
-        grid={10,10}), graphics={Rectangle(
+        grid={10,10}), graphics={
+        Rectangle(
           visible=true,
           fillColor={255,255,255},
-          extent={{-100.0,-100.0},{100.0,100.0}}),Text(
+          extent={{-100.0,-100.0},{100.0,100.0}}),
+        Text(
           visible=true,
           origin={2.9728,2.2168},
           fillPattern=FillPattern.Solid,
           extent={{-41.0253,-27.7832},{41.0253,27.7832}},
           textString="Controller",
-          fontName="Arial"),Text(
+          fontName="Arial"),
+        Text(
           visible=true,
           origin={-70.0,72.8039},
           fillPattern=FillPattern.Solid,
           extent={{-25.3921,-17.1961},{25.3921,17.1961}},
           textString="vac",
-          fontName="Arial"),Text(
+          fontName="Arial"),
+        Text(
           visible=true,
           origin={-71.5131,22.8039},
           fillPattern=FillPattern.Solid,
           extent={{-25.3921,-17.1961},{25.3921,17.1961}},
           textString="vacref",
-          fontName="Arial"),Text(
+          fontName="Arial"),
+        Text(
           visible=true,
           origin={-70.0,-27.1961},
           fillPattern=FillPattern.Solid,
           extent={{-25.3921,-17.1961},{25.3921,17.1961}},
           textString="vdc",
-          fontName="Arial"),Text(
+          fontName="Arial"),
+        Text(
           visible=true,
           origin={-71.8371,-80.0},
           fillPattern=FillPattern.Solid,
           extent={{-25.3921,-17.1961},{25.3921,17.1961}},
           textString="vdcref",
-          fontName="Arial"),Text(
+          fontName="Arial"),
+        Text(
           visible=true,
           origin={67.86,42.8039},
           fillPattern=FillPattern.Solid,
           extent={{-25.3921,-17.1961},{25.3921,17.1961}},
           textString="id_ref",
-          fontName="Arial"),Text(
+          fontName="Arial"),
+        Text(
           visible=true,
           origin={68.1306,-47.1961},
           fillPattern=FillPattern.Solid,
