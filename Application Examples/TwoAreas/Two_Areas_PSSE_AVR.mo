@@ -16,28 +16,32 @@ model Two_Areas_PSSE_AVR
   iPSL.Electrical.Buses.Bus bus10 annotation (Placement(transformation(extent={{90,20},{110,40}})));
   iPSL.Electrical.Buses.Bus bus11 annotation (Placement(transformation(extent={{130,20},{150,40}})));
   Groups.PSSE.AVR.G1 g1(
-    V_0=1.03,
-    angle_0=20.27066,
-    P_0=700,
-    Q_0=185.0296) annotation (Placement(transformation(extent={{-214,24},{-202,36}})));
+    P_0=1100.0000,
+    V_0=1.02999997139,
+    angle_0=39.419670105,
+    Q_0=187.957901001,
+    V_b=34.5) annotation (Placement(transformation(extent={{-214,24},{-202,36}})));
   Groups.PSSE.AVR.G2 g2(
-    V_0=1.01,
-    angle_0=10.50628,
     P_0=700,
-    Q_0=234.6113) annotation (Placement(transformation(extent={{-214,-16},{-202,-4}})));
+    V_0=1.04999995232,
+    angle_0=22.7480773926,
+    Q_0=260.817138672,
+    V_b=34.5) annotation (Placement(transformation(extent={{-214,-16},{-202,-4}})));
   Groups.PSSE.AVR.G3 g3(
-    V_0=1.03,
-    angle_0=-6.8,
-    P_0=719.0941,
-    Q_0=176.0262) annotation (Placement(transformation(
+    V_0=1.02999997139,
+    angle_0=-7.00000047684,
+    P_0=757.885437012,
+    Q_0=218.426849365,
+    V_b=34.5) annotation (Placement(transformation(
         extent={{-6,-6},{6,6}},
         rotation=180,
         origin={208,30})));
   Groups.PSSE.AVR.G4 g4(
-    V_0=1.01,
-    angle_0=-16.9921,
-    P_0=700,
-    Q_0=202.0827) annotation (Placement(transformation(
+    P_0=300,
+    V_0=1.00999999046,
+    angle_0=-17.5402793884,
+    Q_0=112.58140564,
+    V_b=34.5) annotation (Placement(transformation(
         extent={{-6,-6},{6,6}},
         rotation=180,
         origin={208,-10})));
@@ -97,12 +101,16 @@ model Two_Areas_PSSE_AVR
 
   iPSL.Electrical.Loads.PSSE.Load Load7(
     PQBRAK=0.7,
-    V_0=0.9610106,
-    angle_0=-4.68651) annotation (Placement(transformation(extent={{-70,-12},{-58,0}})));
+    V_0=1.01935839653,
+    angle_0=6.56502771378,
+    P_0=1166.999877934,
+    Q_0=-523.4548797604) annotation (Placement(transformation(extent={{-70,-12},{-58,0}})));
   iPSL.Electrical.Loads.PSSE.Load Load9(
     PQBRAK=0.7,
-    V_0=0.9713628,
-    angle_0=-32.15403) annotation (Placement(transformation(extent={{72,-12},{60,0}})));
+    P_0=1567.0,
+    V_0=0.960842967033,
+    angle_0=-31.4690284729,
+    Q_0=-223.1267089844) annotation (Placement(transformation(extent={{72,-12},{60,0}})));
   iPSL.Electrical.Branches.PwLine Line5_1(
     G=0,
     R=0,
