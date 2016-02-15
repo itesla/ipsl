@@ -1,24 +1,15 @@
 within iPSL.Examples.N44_Groups.Configuration.Data;
+
 record STAB2A_data
-  parameter Real J=1.0000 "K2";
-  parameter Real J1=4.40000 "T2";
-  parameter Real J2=10.0000 "K3";
-  parameter Real J3=1.80000 "T3";
-  parameter Real J4=1.0000 "K4";
-  parameter Real J5=1.410000 "K5";
-  parameter Real J6=0.10000E-01 "T5";
-  parameter Real J7=0.50000E-01 "HLIM";
-  annotation (
-    Icon(graphics={Rectangle(extent={{-40,40},{40,-40}}, lineColor={0,0,255}),Text(
-          extent={{-32,14},{32,-10}},
-          lineColor={0,0,255},
-          textStyle={TextStyle.Bold},
-          textString="|x|"),Text(
-          extent={{-58,4},{-46,-4}},
-          lineColor={255,255,255},
-          textString="p1")}),
-    Diagram(graphics),
-    Documentation(revisions="<html>
+  parameter Real J = 1.0000 "K2";
+  parameter Real J1 = 4.40000 "T2";
+  parameter Real J2 = 10.0000 "K3";
+  parameter Real J3 = 1.80000 "T3";
+  parameter Real J4 = 1.0000 "K4";
+  parameter Real J5 = 1.410000 "K5";
+  parameter Real J6 = 0.10000E-01 "T5";
+  parameter Real J7 = 0.50000E-01 "HLIM";
+  annotation(Icon(graphics = {Rectangle(extent = {{-40, 40}, {40, -40}}, lineColor = {0, 0, 255}), Text(extent = {{-32, 14}, {32, -10}}, lineColor = {0, 0, 255}, textStyle = {TextStyle.Bold}, textString = "|x|"), Text(extent = {{-58, 4}, {-46, -4}}, lineColor = {255, 255, 255}, textString = "p1")}), Diagram(graphics), Documentation(revisions = "<html>
 <!--DISCLAIMER-->
 <p>Copyright 2015-2016 RTE (France), SmarTS Lab (Sweden), AIA (Spain) and DTU (Denmark)</p>
 <ul>

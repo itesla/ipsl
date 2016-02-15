@@ -1,13 +1,7 @@
 within iPSL.Examples.REN_Groups;
+
 package Configuration "Machine configuration for the Portugal model"
-
-
-
-
-
-
-
-annotation (Documentation(revisions="<html>
+  annotation(Documentation(revisions = "<html>
 <!--DISCLAIMER-->
 <p>Copyright 2015-2016 RTE (France), SmarTS Lab (Sweden), AIA (Spain) and DTU (Denmark)</p>
 <ul>

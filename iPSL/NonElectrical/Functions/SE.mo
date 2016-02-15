@@ -1,4 +1,5 @@
 within iPSL.NonElectrical.Functions;
+
 function SE "Scaled Quadratic Saturation Function (PTI PSS/E) "
   extends Modelica.Icons.Function;
   input Real u "Unsaturated Input";
@@ -8,9 +9,9 @@ function SE "Scaled Quadratic Saturation Function (PTI PSS/E) "
   input Real E2;
   output Real sys "Saturated Output";
 protected
-  parameter Real a=if (SE2 <> 0) then sqrt(SE1*E1/(SE2*E2)) else 0;
-  parameter Real A=E2 - (E1 - E2)/(a - 1);
-  parameter Real B=SE2*E2*(a - 1)^2/(E1 - E2)^2;
+  parameter Real a = if SE2 <> 0 then sqrt(SE1 * E1 / (SE2 * E2)) else 0;
+  parameter Real A = E2 - (E1 - E2) / (a - 1);
+  parameter Real B = SE2 * E2 * (a - 1) ^ 2 / (E1 - E2) ^ 2;
 algorithm
   if SE1 == 0.0 or u <= 0.0 then
     sys := 0.0;
@@ -18,11 +19,11 @@ algorithm
     if u <= A then
       sys := 0.0;
     else
-      sys := B*(u - A)^2/u;
+      sys := B * (u - A) ^ 2 / u;
     end if;
   end if;
-  annotation (Documentation(info="<html>
-</html>", revisions="<html>
+  annotation(Documentation(info = "<html>
+</html>", revisions = "<html>
 <!--DISCLAIMER-->
 <p>Copyright 2015-2016 RTE (France), SmarTS Lab (Sweden), AIA (Spain) and DTU (Denmark)</p>
 <ul>
