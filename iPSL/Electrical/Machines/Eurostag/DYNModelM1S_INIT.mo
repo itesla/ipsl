@@ -1,4 +1,6 @@
 within iPSL.Electrical.Machines.Eurostag;
+
+
 model DYNModelM1S_INIT "Initialization model for synchronous mahine M1S.
                   Developed by RTE and adapted by AIA. 2014/03/10"
   Modelica.Blocks.Interfaces.RealInput pin_CM;

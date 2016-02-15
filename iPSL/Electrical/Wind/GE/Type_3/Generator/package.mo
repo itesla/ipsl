@@ -1,7 +1,10 @@
 within iPSL.Electrical.Wind.GE.Type_3;
-
-package Generator
-  annotation(Diagram(coordinateSystem(extent = {{-148.5, -105.0}, {148.5, 105.0}}, preserveAspectRatio = true, initialScale = 0.1, grid = {5, 5})), Documentation(revisions = "<html>
+package Generator 
+annotation (Diagram(coordinateSystem(
+      extent={{-148.5,-105.0},{148.5,105.0}},
+      preserveAspectRatio=true,
+      initialScale=0.1,
+      grid={5,5})), Documentation(revisions="<html>
 <!--DISCLAIMER-->
 <p>Copyright 2015-2016 RTE (France), SmarTS Lab (Sweden), AIA (Spain) and DTU (Denmark)</p>
 <ul>

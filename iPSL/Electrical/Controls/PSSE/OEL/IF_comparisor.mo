@@ -1,4 +1,6 @@
 within iPSL.Electrical.Controls.PSSE.OEL;
+
+
 model IF_comparisor
   Modelica.Blocks.Interfaces.RealInput p annotation (Placement(transformation(extent={{-84,4},{-64,24}})));
   Modelica.Blocks.Interfaces.RealOutput n1 annotation (Placement(transformation(extent={{48,44},{68,64}})));

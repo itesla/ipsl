@@ -1,4 +1,6 @@
 within iPSL.Electrical.Controls.PSAT.TG;
+
+
 model TGtypeII "TG Type II"
   Modelica.Blocks.Interfaces.RealInput pm0 "Initial mechanical power (pu)" annotation (Placement(
       visible=true,

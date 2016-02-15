@@ -1,24 +1,36 @@
 within iPSL.NonElectrical.Continuous;
-
 block SimpleLag "First order lag transfer function block"
-  extends Modelica.Blocks.Interfaces.SISO(y(start = y_start));
-  Modelica.Blocks.Sources.RealExpression const(y = T) annotation(Placement(transformation(extent = {{-58, 32}, {-38, 52}})));
-  Real state(start = y_start);
+  extends Modelica.Blocks.Interfaces.SISO(y(start=y_start));
+  Modelica.Blocks.Sources.RealExpression const(y=T) annotation (Placement(transformation(extent={{-58,32},{-38,52}})));
+  Real state(start=y_start);
   parameter Real K "Gain";
   parameter Modelica.SIunits.Time T "Lag time constant";
   parameter Real y_start "Output start value";
 protected
-  parameter Real T_mod = if T < Modelica.Constants.eps then 1000 else T;
+  parameter Real T_mod=if T < Modelica.Constants.eps then 1000 else T;
 initial equation
   state = y_start;
 equation
-  T_mod * der(state) = K * u - state;
+  T_mod*der(state) = K*u - state;
   if abs(const.y) <= Modelica.Constants.eps then
-    y = u * K;
+    y = u*K;
   else
     y = state;
   end if;
-  annotation(Icon(coordinateSystem(preserveAspectRatio = true, extent = {{-100, -100}, {100, 100}}), graphics = {Text(extent = {{-18, 68}, {22, 8}}, lineColor = {0, 0, 255}, textString = "K"), Text(extent = {{-68, -20}, {72, -80}}, lineColor = {0, 0, 255}, textString = "1 + Ts"), Line(points = {{-78, 0}, {80, 0}}, color = {0, 0, 255}, smooth = Smooth.Bezier, thickness = 0.5)}), Diagram(graphics), Documentation(info = "<html>
+  annotation (
+    Icon(coordinateSystem(preserveAspectRatio=true, extent={{-100,-100},{100,100}}), graphics={Text(
+          extent={{-18,68},{22,8}},
+          lineColor={0,0,255},
+          textString="K"),Text(
+          extent={{-68,-20},{72,-80}},
+          lineColor={0,0,255},
+          textString="1 + Ts"),Line(
+          points={{-78,0},{80,0}},
+          color={0,0,255},
+          smooth=Smooth.Bezier,
+          thickness=0.5)}),
+    Diagram(graphics),
+    Documentation(info="<html>
 <table cellspacing=\"1\" cellpadding=\"1\" border=\"1\">
 <tr>
 <td><p>Reference</p></td>
@@ -37,7 +49,7 @@ equation
 <td><p><a href=\"mailto:luigiv@kth.se\">luigiv@kth.se</a></p></td>
 </tr>
 </table>
-</html>", revisions = "<html>
+</html>", revisions="<html>
 <!--DISCLAIMER-->
 <p>Copyright 2015-2016 RTE (France), SmarTS Lab (Sweden), AIA (Spain) and DTU (Denmark)</p>
 <ul>
@@ -52,3 +64,4 @@ equation
 <p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
 </html>"));
 end SimpleLag;
+

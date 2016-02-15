@@ -1,16 +1,26 @@
 within iPSL.Electrical.Solar.KTH.Auxiliary;
 
+
 model Terminator
-  Modelica.Blocks.Interfaces.RealInput V annotation(Placement(visible = true, transformation(origin = {-155.0, 1.9703}, extent = {{-20.0, -20.0}, {20.0, 20.0}}, rotation = 0), iconTransformation(origin = {-120.0, 0.0}, extent = {{-20.0, -20.0}, {20.0, 20.0}}, rotation = 0)));
-  parameter Real T1 = 0.1;
-  parameter Real T2 = 0.05;
-  parameter Real Step = 0.001;
+  Modelica.Blocks.Interfaces.RealInput V annotation (Placement(
+      visible=true,
+      transformation(
+        origin={-155.0,1.9703},
+        extent={{-20.0,-20.0},{20.0,20.0}},
+        rotation=0),
+      iconTransformation(
+        origin={-120.0,0.0},
+        extent={{-20.0,-20.0},{20.0,20.0}},
+        rotation=0)));
+  parameter Real T1=0.1;
+  parameter Real T2=0.05;
+  parameter Real Step=0.001;
   parameter Real Iniv123;
   parameter Real Inidv;
   Real[:] Value;
-  Real v123(start = Iniv123);
-  Real dv(start = Inidv);
-  Integer i(start = 1);
+  Real v123(start=Iniv123);
+  Real dv(start=Inidv);
+  Integer i(start=1);
 algorithm
   Value[i] := V;
   if time < T1 then
@@ -21,7 +31,21 @@ algorithm
     dv := Value[i - 100];
   end if;
   i := i + 1;
-  annotation(Icon(coordinateSystem(extent = {{-100.0, -100.0}, {100.0, 100.0}}, preserveAspectRatio = true, initialScale = 0.1, grid = {10, 10}), graphics = {Rectangle(visible = true, fillColor = {255, 255, 255}, extent = {{-100.0, -100.0}, {100.0, 100.0}})}), Diagram(coordinateSystem(extent = {{-148.5, -105.0}, {148.5, 105.0}}, preserveAspectRatio = true, initialScale = 0.1, grid = {5, 5})), Documentation(info = "<html>
+  annotation (
+    Icon(coordinateSystem(
+        extent={{-100.0,-100.0},{100.0,100.0}},
+        preserveAspectRatio=true,
+        initialScale=0.1,
+        grid={10,10}), graphics={Rectangle(
+          visible=true,
+          fillColor={255,255,255},
+          extent={{-100.0,-100.0},{100.0,100.0}})}),
+    Diagram(coordinateSystem(
+        extent={{-148.5,-105.0},{148.5,105.0}},
+        preserveAspectRatio=true,
+        initialScale=0.1,
+        grid={5,5})),
+    Documentation(info="<html>
 <table cellspacing=\"1\" cellpadding=\"1\" border=\"1\">
 <tr>
 <td><p>Reference</p></td>
@@ -40,7 +64,7 @@ algorithm
 <td><p><a href=\"mailto:luigiv@kth.se\">luigiv@kth.se</a></p></td>
 </tr>
 </table>
-</html>", revisions = "<html>
+</html>", revisions="<html>
 <!--DISCLAIMER-->
 <p>Copyright 2015-2016 RTE (France), SmarTS Lab (Sweden), AIA (Spain) and DTU (Denmark)</p>
 <ul>

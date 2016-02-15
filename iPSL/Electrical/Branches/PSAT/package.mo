@@ -1,13 +1,5 @@
 within iPSL.Electrical.Branches;
 package PSAT 
-
-
-
-
-
-
-
-
 annotation (Documentation(revisions="<html>
 <!--DISCLAIMER-->
 <p>Copyright 2015-2016 RTE (France), SmarTS Lab (Sweden), AIA (Spain) and DTU (Denmark)</p>

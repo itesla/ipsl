@@ -1,4 +1,6 @@
 within iPSL.Electrical.Machines.PSAT.SecondOrder;
+
+
 model Order2 "Second Order Synchronous Machine with Inputs and Outputs"
   import Modelica.Constants.pi;
   extends BaseClasses.baseMachine(

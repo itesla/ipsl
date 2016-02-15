@@ -1,11 +1,5 @@
 within iPSL.Electrical.Controls.PSSE.TG;
 package GGOV1 "GE General Governor/Turbine Model"
-
-
-
-
-
-
 annotation (Documentation(revisions="<html>
 <!--DISCLAIMER-->
 <p>Copyright 2015-2016 RTE (France), SmarTS Lab (Sweden), AIA (Spain) and DTU (Denmark)</p>

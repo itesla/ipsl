@@ -1,4 +1,6 @@
 within iPSL.Electrical.Branches.Data;
+
+
 record LinePSSE
   parameter Real R "Resistance p.u.";
   parameter Real X "Reactance p.u.";

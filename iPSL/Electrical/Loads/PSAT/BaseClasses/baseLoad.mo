@@ -1,4 +1,6 @@
 within iPSL.Electrical.Loads.PSAT.BaseClasses;
+
+
 partial model baseLoad
   import Modelica.Constants.pi;
   extends iPSL.Electrical.Essentials.pfComponent;

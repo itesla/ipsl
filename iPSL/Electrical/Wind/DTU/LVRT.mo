@@ -1,11 +1,10 @@
 within iPSL.Electrical.Wind.DTU;
-
 model LVRT "Enables low voltage ride through signal. Developed by DTU"
-  Modelica.Blocks.Interfaces.RealInput Uwtt annotation(Placement(transformation(extent = {{-51, -6}, {-41, 6}}), iconTransformation(extent = {{-51, -6}, {-41, 6}})));
-  Modelica.Blocks.Interfaces.RealOutput F_LVRT annotation(Placement(transformation(extent = {{39, 14}, {49, 26}}), iconTransformation(extent = {{39, 14}, {49, 26}})));
-  Modelica.Blocks.Interfaces.RealOutput Fpost annotation(Placement(transformation(extent = {{39, -26}, {49, -14}}), iconTransformation(extent = {{39, -26}, {49, -14}})));
+  Modelica.Blocks.Interfaces.RealInput Uwtt annotation (Placement(transformation(extent={{-51,-6},{-41,6}}), iconTransformation(extent={{-51,-6},{-41,6}})));
+  Modelica.Blocks.Interfaces.RealOutput F_LVRT annotation (Placement(transformation(extent={{39,14},{49,26}}), iconTransformation(extent={{39,14},{49,26}})));
+  Modelica.Blocks.Interfaces.RealOutput Fpost annotation (Placement(transformation(extent={{39,-26},{49,-14}}), iconTransformation(extent={{39,-26},{49,-14}})));
   parameter Real Uqdip "Voltage threshold value for LVRT detection in Q control";
-  parameter Modelica.SIunits.Time Tpost = 0 "Length of time period where post fault reactive power is injected";
+  parameter Modelica.SIunits.Time Tpost=0 "Length of time period where post fault reactive power is injected";
   discrete Modelica.SIunits.Time LVRTstop "Time instant when post fault period started";
 initial equation
   F_LVRT = if Uwtt < Uqdip then 1 else 0;
@@ -25,7 +24,22 @@ algorithm
       Fpost := pre(Fpost);
     end if;
   end when;
-  annotation(Icon(coordinateSystem(preserveAspectRatio = false, extent = {{-100, -100}, {100, 100}}), graphics = {Rectangle(extent = {{-40, 30}, {40, -30}}, lineColor = {0, 0, 255}, lineThickness = 0.5), Text(extent = {{-18, 38}, {20, 6}}, lineColor = {0, 0, 255}, lineThickness = 0.5, fillPattern = FillPattern.Solid, textString = "LVRT Mode"), Line(points = {{-26, 10}, {-10, 10}, {-10, -20}, {6, -20}, {20, 4}, {36, 4}}, color = {0, 0, 255}, smooth = Smooth.None, thickness = 0.5)}), Diagram(coordinateSystem(preserveAspectRatio = false, extent = {{-100, -100}, {100, 100}}), graphics), Documentation(revisions = "<html>
+  annotation (
+    Icon(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,100}}), graphics={Rectangle(
+          extent={{-40,30},{40,-30}},
+          lineColor={0,0,255},
+          lineThickness=0.5),Text(
+          extent={{-18,38},{20,6}},
+          lineColor={0,0,255},
+          lineThickness=0.5,
+          fillPattern=FillPattern.Solid,
+          textString="LVRT Mode"),Line(
+          points={{-26,10},{-10,10},{-10,-20},{6,-20},{20,4},{36,4}},
+          color={0,0,255},
+          smooth=Smooth.None,
+          thickness=0.5)}),
+    Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,100}}), graphics),
+    Documentation(revisions="<html>
 <!--DISCLAIMER-->
 <p>Copyright 2015-2016 RTE (France), SmarTS Lab (Sweden), AIA (Spain) and DTU (Denmark)</p>
 <ul>
@@ -40,3 +54,4 @@ algorithm
 <p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
 </html>"));
 end LVRT;
+

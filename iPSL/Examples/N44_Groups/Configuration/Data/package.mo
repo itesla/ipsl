@@ -1,7 +1,6 @@
 within iPSL.Examples.N44_Groups.Configuration;
-
 package Data "Parameters for all the components for the Nordic 44 configuration"
-  annotation(Documentation(revisions = "<html>
+annotation (Documentation(revisions="<html>
 <!--DISCLAIMER-->
 <p>Copyright 2015-2016 RTE (France), SmarTS Lab (Sweden), AIA (Spain) and DTU (Denmark)</p>
 <ul>

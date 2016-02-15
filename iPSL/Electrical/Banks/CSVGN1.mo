@@ -1,4 +1,6 @@
 within iPSL.Electrical.Banks;
+
+
 model CSVGN1 "STATC SHUNT COMPENSATOR MODEL"
   constant Real pi=Modelica.Constants.pi;
   parameter Real K;

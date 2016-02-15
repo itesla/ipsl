@@ -1,6 +1,5 @@
 within iPSL.Electrical.Controls.PSSE.TG;
 model TGOV1 "Steam Turbine-Governor"
-
   Modelica.Blocks.Interfaces.RealInput SPEED "Machine speed deviation from nominal (pu)"
     annotation (Placement(transformation(extent={{-85,-20},{-75,-8}}), iconTransformation(extent={{-80,20},{-60,40}})));
   iPSL.NonElectrical.Continuous.LeadLag imLeadLag(
@@ -9,7 +8,6 @@ model TGOV1 "Steam Turbine-Governor"
     K=1,
     y_start=P0) annotation (Placement(transformation(extent={{30,7},{40,17}})));
   Modelica.Blocks.Interfaces.RealOutput PMECH "Turbine mechanical power (pu)" annotation (Placement(transformation(extent={{80,-6},{90,6}}), iconTransformation(extent={{80,-10},{100,10}})));
-
   parameter Real R "Governor gain, 1/R (pu)";
   parameter Real D_t "(pu)";
   parameter Real T_1 "Control time constant (s)";
@@ -23,21 +21,19 @@ model TGOV1 "Steam Turbine-Governor"
   Modelica.Blocks.Math.Add add1(k2=-1) annotation (Placement(transformation(extent={{60,-5},{70,5}})));
   Modelica.Blocks.Sources.Constant REF(k=P_REF) annotation (Placement(transformation(extent={{-80,10},{-70,20}})));
   Modelica.Blocks.Interfaces.RealInput PMECH0 annotation (Placement(transformation(extent={{-85,-41},{-75,-31}}), iconTransformation(extent={{-80,-40},{-60,-20}})));
-protected
-  parameter Real P0(fixed=false) "Power reference of the governor";
-  parameter Real P_REF(fixed=false);
-public
   NonElectrical.Continuous.SimpleLagLim simpleLagLim(
     K=1,
     T=T_1,
     y_start=P0,
     outMax=V_MAX,
     outMin=V_MIN) annotation (Placement(transformation(extent={{0,7},{10,17}})));
+protected
+  parameter Real P0(fixed=false) "Power reference of the governor";
+  parameter Real P_REF(fixed=false);
 initial equation
   P0 = PMECH0;
   P_REF = P0*R;
 equation
-
   connect(add.y, imGain9.u) annotation (Line(points={{-39.5,12},{-31,12}}, color={0,0,127}));
   connect(add.u2, SPEED) annotation (Line(points={{-51,9},{-60,9},{-60,-14},{-80,-14}}, color={0,0,127}));
   connect(imGain1.u, SPEED) annotation (Line(points={{-17,-14},{-80,-14}}, color={0,0,127}));
@@ -87,3 +83,4 @@ equation
 <p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
 </html>"));
 end TGOV1;
+

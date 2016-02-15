@@ -1,23 +1,5 @@
 within iPSL.Electrical.Controls.PSSE;
 package ES 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 annotation (Documentation(info="<html>
 </html>", revisions="<html>
 <!--DISCLAIMER-->

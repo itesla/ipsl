@@ -1,4 +1,6 @@
 within iPSL.Electrical.Events;
+
+
 model PwLineFault "Transitory short-circuit on a line at the point of location from the sending node
    given by parameter k. A fictitious node is created with where a shunt impedance is connected only
    during a specified interval of time. Developed by AIA. 2015/03/20."

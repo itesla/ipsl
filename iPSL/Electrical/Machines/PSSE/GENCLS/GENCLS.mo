@@ -1,4 +1,6 @@
 within iPSL.Electrical.Machines.PSSE.GENCLS;
+
+
 model GENCLS
   extends iPSL.Electrical.Essentials.pfComponent;
   iPSL.Connectors.PwPin p(

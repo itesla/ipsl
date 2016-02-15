@@ -1,4 +1,6 @@
 within iPSL.Electrical.Machines.PSAT.FourthOrder;
+
+
 model Order4 "Fourth Order Synchronous Machine with Inputs and Outputs"
   import Modelica.Constants.pi;
   extends BaseClasses.baseMachine(

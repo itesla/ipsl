@@ -1,6 +1,7 @@
 within iPSL.Electrical.Controls.PSSE.ES.IEEEX1;
-model IEEEX1
 
+
+model IEEEX1
   parameter Real T_R "Voltage input time constant (s)";
   parameter Real K_A "AVR gain";
   parameter Real T_A "AVR time constant (s)";
@@ -75,8 +76,8 @@ model IEEEX1
     y_start=VR0,
     outMax=V_RMAX0,
     outMin=V_RMIN0) annotation (Placement(transformation(extent={{-10,-10},{0,0}})));
-
   // Parameter initialization as it is specified in section 15.2.4 of PAGV2 from PSS/E
+
   function param_init
     input Real V_RMAX_init;
     input Real K_E_init;
@@ -87,8 +88,8 @@ model IEEEX1
     output Real V_RMAX;
     output Real K_E;
   algorithm
-    if (V_RMAX_init == 0) then
-      if (K_E_init <= 0) then
+    if V_RMAX_init == 0 then
+      if K_E_init <= 0 then
         V_RMAX := S_EE_2*E_2;
       else
         V_RMAX := S_EE_2 + K_E_init;
@@ -96,13 +97,11 @@ model IEEEX1
     else
       V_RMAX := V_RMAX_init;
     end if;
-
-    if (K_E_init == 0) then
+    if K_E_init == 0 then
       K_E := V_RMAX/(10*Efd0) - SE_Efd0;
     else
       K_E := K_E_init;
     end if;
-
     annotation (Documentation(revisions="<html>
 <!--DISCLAIMER-->
 <p>Copyright 2015-2016 RTE (France), SmarTS Lab (Sweden), AIA (Spain) and DTU (Denmark)</p>
@@ -130,14 +129,12 @@ protected
 initial equation
   ECOMP0 = ECOMP;
   Efd0 = EFD0;
-
   SE_Efd0 = iPSL.NonElectrical.Functions.SE(
     EFD0,
     S_EE_1,
     S_EE_2,
     E_1,
     E_2);
-
   (V_RMAX0,K_E0) = param_init(
     V_RMAX,
     K_E,
@@ -145,15 +142,13 @@ initial equation
     S_EE_2,
     Efd0,
     SE_Efd0);
-  if (V_RMAX == 0) then
+  if V_RMAX == 0 then
     V_RMIN0 = -V_RMAX0;
   else
     V_RMIN0 = V_RMIN;
   end if;
-
   VR0 = Efd0*(K_E0 + SE_Efd0);
   VREF = VR0/K_A + ECOMP0;
-
 equation
   connect(se1.VE_OUT, VE.u2) annotation (Line(
       points={{61.52,37},{50,37}},
@@ -177,7 +172,7 @@ equation
       smooth=Smooth.None));
   connect(imSimpleLag1.y, imSum2_2.u2) annotation (Line(points={{-99.5,-8},{-89.65,-8},{-81,-8}}, color={0,0,127}));
   connect(imSimpleLag1.u, ECOMP) annotation (Line(points={{-111,-8},{-111,-8},{-130,-8}}, color={0,0,127}));
-  connect(Vref.y, imSum2_2.u1) annotation (Line(points={{-99.5,15},{-88,15},{-88,-2},{-81,-2}},color={0,0,127}));
+  connect(Vref.y, imSum2_2.u1) annotation (Line(points={{-99.5,15},{-88,15},{-88,-2},{-81,-2}}, color={0,0,127}));
   connect(VOTHSG, V_Erro2.u1) annotation (Line(points={{-130,39},{-91,39}}, color={0,0,127}));
   connect(VOEL, V_Erro2.u2) annotation (Line(points={{-130,32},{-106,32},{-106,35},{-91,35}}, color={0,0,127}));
   connect(VUEL, V_Erro2.u3) annotation (Line(points={{-130,25},{-102,25},{-102,31},{-91,31}}, color={0,0,127}));

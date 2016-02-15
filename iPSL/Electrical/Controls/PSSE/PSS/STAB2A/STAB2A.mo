@@ -1,4 +1,6 @@
 within iPSL.Electrical.Controls.PSSE.PSS.STAB2A;
+
+
 model STAB2A "Models STAB2A, STAB3, and STAB4 are special representations of specific types of supplementary
   stabilizing units. Both produce a supplementary signal by introducing phase-lead into a signal
   proportional to electrical power output measured at the generator terminals."

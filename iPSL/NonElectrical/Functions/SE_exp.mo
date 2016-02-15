@@ -1,5 +1,4 @@
 within iPSL.NonElectrical.Functions;
-
 function SE_exp "Exponential Saturation Function (PTI PSS/E) "
   extends Modelica.Icons.Function;
   input Real u "Unsaturated Input";
@@ -9,10 +8,10 @@ function SE_exp "Exponential Saturation Function (PTI PSS/E) "
   input Real E_2 "Second saturation point";
   output Real sys "Saturated Output";
 protected
-  parameter Real X = log(S_EE_2 / S_EE_1) / log(E_2);
+  parameter Real X=log(S_EE_2/S_EE_1)/log(E_2);
 algorithm
-  sys := S_EE_1 * u ^ X;
-  annotation(Documentation(revisions = "<html>
+  sys := S_EE_1*u^X;
+  annotation (Documentation(revisions="<html>
 <!--DISCLAIMER-->
 <p>Copyright 2015-2016 RTE (France), SmarTS Lab (Sweden), AIA (Spain) and DTU (Denmark)</p>
 <ul>
@@ -27,3 +26,4 @@ algorithm
 <p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
 </html>"));
 end SE_exp;
+

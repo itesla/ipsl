@@ -1,13 +1,15 @@
 within iPSL.Electrical.Controls.PSSE.TG.GGOV1;
+
+
 model GGOV1 "GE General Governor/Turbine Mode"
   parameter Integer Rselect=1 "Feedback signal for
-      governor droop" annotation (Evaluate=true, choices(
+        governor droop" annotation (Evaluate=true, choices(
       choice=1 "Electrical power",
       choice=0 "None (isochronous governor)",
       choice=-1 "Governor output (requested stroke)",
       choice=-2 "Fuel valve stroke (true stoke)"));
   parameter Integer Flag=1 "Switch for fuel source
-      characteristic" annotation (Evaluate=true, choices(choice=0 "Fuel flow independent of speed", choice=1 "Fuel flow proportional to speed"));
+        characteristic" annotation (Evaluate=true, choices(choice=0 "Fuel flow independent of speed", choice=1 "Fuel flow proportional to speed"));
   parameter Real R "Permanent droop (pu)";
   parameter Real T_pelec "Electrical power transducer time constant (s)";
   parameter Real maxerr "Maximum value for speed error signal";

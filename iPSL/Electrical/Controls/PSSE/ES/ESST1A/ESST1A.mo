@@ -1,24 +1,24 @@
 within iPSL.Electrical.Controls.PSSE.ES.ESST1A;
-model ESST1A "IEEE Type ST1A Excitation System"
 
+
+model ESST1A "IEEE Type ST1A Excitation System"
   Modelica.Blocks.Sources.Constant Vref(k=VREF) annotation (Placement(transformation(extent={{-116.6,21.9},{-107,32}})));
   Modelica.Blocks.Interfaces.RealInput ECOMP "Input, generator terminal voltage"
-    annotation (Placement(transformation(extent={{-141.3,0.4},{-131.3,12.4}}),iconTransformation(
+    annotation (Placement(transformation(extent={{-141.3,0.4},{-131.3,12.4}}), iconTransformation(
         extent={{-5,-5},{5,5}},
         rotation=0,
         origin={-115,0})));
   Modelica.Blocks.Interfaces.RealInput VOTHSG "VOS=1"
-    annotation (Placement(transformation(extent={{-141.2,67.8},{-131.2,79.8}}),iconTransformation(
+    annotation (Placement(transformation(extent={{-141.2,67.8},{-131.2,79.8}}), iconTransformation(
         extent={{-5,-5},{5,5}},
         rotation=0,
         origin={-115,65})));
   Modelica.Blocks.Interfaces.RealInput VUEL1 "UEL=1"
-    annotation (Placement(transformation(extent={{-141.1,36.6},{-131.1,48.6}}),iconTransformation(
+    annotation (Placement(transformation(extent={{-141.1,36.6},{-131.1,48.6}}), iconTransformation(
         extent={{5,-5.15},{-5,5.15}},
         rotation=270,
         origin={-45.15,-75})));
   Modelica.Blocks.Interfaces.RealOutput EFD "Output,excitation voltage" annotation (Placement(transformation(extent={{138.3,0.2},{148.3,12.2}}), iconTransformation(extent={{120,-5.4},{130,5}})));
-
   parameter Real T_R=0 "Voltage input time constant (s)" annotation (Dialog(group="Excitation system parameters"));
   parameter Real V_IMAX annotation (Dialog(group="Excitation system parameters"));
   parameter Real V_IMIN annotation (Dialog(group="Excitation system parameters"));
@@ -44,7 +44,7 @@ model ESST1A "IEEE Type ST1A Excitation System"
     initType=Modelica.Blocks.Types.Init.InitialOutput,
     x_start=Efd0) annotation (Placement(transformation(extent={{9,56},{-1.6,66.6}})));
   Modelica.Blocks.Interfaces.RealInput VOTHSG2 "VOS=2"
-    annotation (Placement(transformation(extent={{-141.4,-25},{-131.4,-13}}),iconTransformation(
+    annotation (Placement(transformation(extent={{-141.4,-25},{-131.4,-13}}), iconTransformation(
         extent={{-5,-5},{5,5}},
         rotation=0,
         origin={-115,45})));
@@ -56,7 +56,7 @@ model ESST1A "IEEE Type ST1A Excitation System"
   Modelica.Blocks.Nonlinear.Limiter imLimited(uMin=V_IMIN, uMax=V_IMAX) annotation (Placement(transformation(extent={{-57.2,25.8},{-47,36}})));
   NonElectrical.Logical.HV_GATE hV_GATE annotation (Placement(transformation(extent={{-38.7,16.5},{-18.2,37.3}})));
   Modelica.Blocks.Interfaces.RealInput VUEL2 "UEL=2"
-    annotation (Placement(transformation(extent={{-141.5,-46},{-131.5,-34}}),iconTransformation(
+    annotation (Placement(transformation(extent={{-141.5,-46},{-131.5,-34}}), iconTransformation(
         extent={{4.9,-4.9},{-4.9,4.9}},
         rotation=270,
         origin={-14.9,-74.9})));
@@ -159,7 +159,6 @@ initial equation
   VA0 = Efd0 + K_LR*(IFD0 - I_LR);
   VREF = VA0/K_A + ECOMP0;
   ECOMP0 = ECOMP;
-
 equation
   connect(VUEL2, hV_GATE.n2) annotation (Line(
       points={{-136.5,-40},{-96.4,-40},{-96.4,-39.6},{-41.7,-39.6},{-41.7,21.7},{-39.9813,21.7}},
@@ -181,7 +180,7 @@ equation
   connect(Vref.y, add.u1) annotation (Line(points={{-106.52,26.95},{-101,26.95},{-101,14},{-97,14}}, color={0,0,127}));
   connect(imSimpleLag.y, add.u2) annotation (Line(points={{-105.51,6},{-103,6},{-101,6},{-101,8},{-97,8}}, color={0,0,127}));
   connect(VOTHSG, add1.u1) annotation (Line(points={{-136.2,73.8},{-111,73.8},{-111,65},{-102,65},{-102,58}}, color={0,0,127}));
-  connect(VUEL1, add1.u2) annotation (Line(points={{-136.1,42.6},{-111,42.6},{-111,52},{-102,52}},color={0,0,127}));
+  connect(VUEL1, add1.u2) annotation (Line(points={{-136.1,42.6},{-111,42.6},{-111,52},{-102,52}}, color={0,0,127}));
   connect(add.y, add3_1.u3) annotation (Line(points={{-85.5,11},{-81,11},{-81,27},{-76,27}}, color={0,0,127}));
   connect(add1.y, add3_1.u2) annotation (Line(points={{-90.5,55},{-81,55},{-81,31},{-76,31}}, color={0,0,127}));
   connect(add3_1.y, imLimited.u) annotation (Line(points={{-64.5,31},{-58.22,31},{-58.22,30.9}}, color={0,0,127}));
@@ -195,7 +194,7 @@ equation
   connect(imGain.y, imLimited1.u) annotation (Line(points={{44.15,-20.235},{44.15,-17.6175},{43.9,-17.6175},{43.9,-15.22}}, color={0,0,127}));
   connect(add3_2.y, hV_GATE1.n1) annotation (Line(points={{65.5,22},{70.4438,22},{70.4438,22.325}}, color={0,0,127}));
   connect(simpleLagLim.y, add3_2.u1) annotation (Line(points={{33.5,26},{43.75,26},{54,26}}, color={0,0,127}));
-  connect(VOTHSG2, add3_2.u3) annotation (Line(points={{-136.4,-19},{-69,-19},{-1,-19},{-1,18},{54,18}},color={0,0,127}));
+  connect(VOTHSG2, add3_2.u3) annotation (Line(points={{-136.4,-19},{-69,-19},{-1,-19},{-1,18},{54,18}}, color={0,0,127}));
   connect(imLimited1.y, add3_2.u2) annotation (Line(points={{43.9,-3.49},{43.9,22},{54,22}}, color={0,0,127}));
   connect(VT, imGain1.u) annotation (Line(points={{104.3,-63.7},{89.15,-63.7},{89.15,-44.93}}, color={0,0,127}));
   connect(VT, imGain2.u) annotation (Line(points={{104.3,-63.7},{104.3,-54.35},{104.15,-54.35},{104.15,-44.93}}, color={0,0,127}));

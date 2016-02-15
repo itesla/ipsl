@@ -1,4 +1,6 @@
 within iPSL.Electrical.Controls.PSSE.ES.ESDC1A;
+
+
 model ESDC1A
   import iPSL.NonElectrical.Functions.SE;
   Modelica.Blocks.Interfaces.RealInput ECOMP "Input, generator terminal voltage" annotation (Placement(transformation(extent={{-80,23},{-70,35}}), iconTransformation(extent={{-80,23},{-70,35}})));
@@ -71,17 +73,8 @@ model ESDC1A
     y_start=vr0,
     outMax=V_RMAX0,
     outMin=V_RMIN0) annotation (Placement(transformation(extent={{31,-33},{41,-23}})));
-protected
-  parameter Real VREF(fixed=false);
-  parameter Real vf00(fixed=false) "Initial field voltage";
-  parameter Real vr0(fixed=false);
-  parameter Real ECOMP0(fixed=false);
-  parameter Real V_RMAX0(fixed=false);
-  parameter Real K_E0(fixed=false);
-  parameter Real V_RMIN0(fixed=false);
-  parameter Real SE_Efd0(fixed=false);
-public
   Modelica.Blocks.Math.Gain gain(k=K_E0) annotation (Placement(transformation(extent={{67,17},{57,27}})));
+
   function param_init
     input Real V_RMAX_init;
     input Real K_E_init;
@@ -92,8 +85,8 @@ public
     output Real V_RMAX;
     output Real K_E;
   algorithm
-    if (V_RMAX_init == 0) then
-      if (K_E_init <= 0) then
+    if V_RMAX_init == 0 then
+      if K_E_init <= 0 then
         V_RMAX := S_EE_2*E_2;
       else
         V_RMAX := S_EE_2 + K_E_init;
@@ -101,13 +94,11 @@ public
     else
       V_RMAX := V_RMAX_init;
     end if;
-
-    if (K_E_init == 0) then
+    if K_E_init == 0 then
       K_E := V_RMAX/(10*Efd0) - SE_Efd0;
     else
       K_E := K_E_init;
     end if;
-
     annotation (Documentation(revisions="<html>
 <!--DISCLAIMER-->
 <p>Copyright 2015-2016 RTE (France), SmarTS Lab (Sweden), AIA (Spain) and DTU (Denmark)</p>
@@ -123,18 +114,24 @@ public
 <p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
 </html>"));
   end param_init;
-
+protected
+  parameter Real VREF(fixed=false);
+  parameter Real vf00(fixed=false) "Initial field voltage";
+  parameter Real vr0(fixed=false);
+  parameter Real ECOMP0(fixed=false);
+  parameter Real V_RMAX0(fixed=false);
+  parameter Real K_E0(fixed=false);
+  parameter Real V_RMIN0(fixed=false);
+  parameter Real SE_Efd0(fixed=false);
 initial equation
   ECOMP0 = ECOMP;
   vf00 = EFD0;
-
   SE_Efd0 = iPSL.NonElectrical.Functions.SE(
     vf00,
     S_EE_1,
     S_EE_2,
     E_1,
     E_2);
-
   (V_RMAX0,K_E0) = param_init(
     V_RMAX,
     K_E,
@@ -142,15 +139,13 @@ initial equation
     S_EE_2,
     vf00,
     SE_Efd0);
-  if (V_RMAX == 0) then
+  if V_RMAX == 0 then
     V_RMIN0 = -V_RMAX0;
   else
     V_RMIN0 = V_RMIN;
   end if;
-
   vr0 = vf00*(K_E0 + SE_Efd0);
   VREF = vr0/K_A + ECOMP0;
-
 equation
   connect(VUEL, hV_GATE.n2) annotation (Line(points={{-3,-56},{-3,-30},{6,-30}}, color={0,0,127}));
   connect(imSE.VE_IN, EFD) annotation (Line(points={{89.8,43},{94,43},{94,0},{105,0}}, color={0,0,127}));

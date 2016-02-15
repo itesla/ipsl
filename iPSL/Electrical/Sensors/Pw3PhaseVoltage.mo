@@ -1,4 +1,6 @@
 within iPSL.Electrical.Sensors;
+
+
 model Pw3PhaseVoltage "Voltage sensor for generator machine with internal transformer"
   parameter Real RT "Step-up trafo Resistance in Machine (pu)";
   parameter Real XT "Step-up trafo Resistance in Machine (pu)";

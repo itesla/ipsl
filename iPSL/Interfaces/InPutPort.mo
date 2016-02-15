@@ -1,11 +1,21 @@
 within iPSL.Interfaces;
 
+
 model InPutPort
   input Real vi;
   Real vo;
 equation
   vi = vo;
-  annotation(Icon(graphics = {Rectangle(extent = {{-20, 20}, {20, -20}}, lineColor = {0, 0, 255}), Text(extent = {{-18, 8}, {18, -6}}, lineColor = {0, 0, 255}, textString = "Input")}), Diagram(graphics = {Rectangle(extent = {{-20, 20}, {20, -20}}, lineColor = {0, 0, 255}), Text(extent = {{-18, 8}, {18, -6}}, lineColor = {0, 0, 255}, textString = "Input")}), Documentation(revisions = "<html>
+  annotation (
+    Icon(graphics={Rectangle(extent={{-20,20},{20,-20}}, lineColor={0,0,255}),Text(
+          extent={{-18,8},{18,-6}},
+          lineColor={0,0,255},
+          textString="Input")}),
+    Diagram(graphics={Rectangle(extent={{-20,20},{20,-20}}, lineColor={0,0,255}),Text(
+          extent={{-18,8},{18,-6}},
+          lineColor={0,0,255},
+          textString="Input")}),
+    Documentation(revisions="<html>
 <!--DISCLAIMER-->
 <p>Copyright 2015-2016 RTE (France), SmarTS Lab (Sweden), AIA (Spain) and DTU (Denmark)</p>
 <ul>

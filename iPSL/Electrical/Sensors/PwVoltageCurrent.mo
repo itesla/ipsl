@@ -1,4 +1,6 @@
 within iPSL.Electrical.Sensors;
+
+
 class PwVoltageCurrent "Voltage sensor."
   iPSL.Connectors.PwPin p annotation (Placement(transformation(extent={{-60,-40},{-40,-20}}), iconTransformation(extent={{-60,-40},{-40,-20}})));
   iPSL.Connectors.PwPin n annotation (Placement(transformation(extent={{-10,50},{10,70}}), iconTransformation(extent={{40,20},{60,40}})));

@@ -1,4 +1,6 @@
 within iPSL.Electrical.Machines.PSSE.GENROU;
+
+
 model GENROU "ROUND ROTOR GENERATOR MODEL (QUADRATIC SATURATION)"
   extends iPSL.Electrical.Essentials.pfComponent;
   //Import of dependencies
@@ -86,7 +88,7 @@ protected
   parameter Real PSIkd0=(PSIppd0 - (Xpd - Xl)*K3d*id0)/(K3d + K4d) "d-axis initial rotor flux linkage";
   parameter Real PSIkq0=((-PSIppq0) + (Xpq - Xl)*K3q*iq0)/(K3q + K4q) "q-axis initial rotor flux linkage";
   parameter Real PSId0=PSIppd0 - Xppd*id0;
-  parameter Real PSIq0=-PSIppq0 - Xppq*iq0;
+  parameter Real PSIq0=(-PSIppq0) - Xppq*iq0;
   // Constants
   parameter Real K1d=(Xpd - Xppd)*(Xd - Xpd)/(Xpd - Xl)^2;
   parameter Real K2d=(Xpd - Xl)*(Xppd - Xl)/(Xpd - Xppd);

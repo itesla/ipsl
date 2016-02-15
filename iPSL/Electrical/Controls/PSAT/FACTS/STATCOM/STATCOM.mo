@@ -1,4 +1,6 @@
 within iPSL.Electrical.Controls.PSAT.FACTS.STATCOM;
+
+
 model STATCOM "Static Synchronous Compensator model with equation"
   iPSL.Connectors.PwPin p(vr(start=vr0), vi(start=vi0)) annotation (Placement(transformation(extent={{100,-10},{120,10}}), iconTransformation(extent={{100,-10},{120,10}})));
   constant Real pi=Modelica.Constants.pi;
@@ -46,46 +48,36 @@ equation
     Q = i_SH*v;
   end if;
   annotation (
-    Icon(coordinateSystem(preserveAspectRatio=true, extent={{-100,-100},{100,100}}), graphics={
-        Rectangle(extent={{-100,100},{100,-100}}, lineColor={0,0,255}),
-        Ellipse(
+    Icon(coordinateSystem(preserveAspectRatio=true, extent={{-100,-100},{100,100}}), graphics={Rectangle(extent={{-100,100},{100,-100}}, lineColor={0,0,255}),Ellipse(
           extent={{-2,22},{48,-22}},
           lineColor={0,0,0},
           fillColor={215,215,215},
-          fillPattern=FillPattern.Solid),
-        Ellipse(
+          fillPattern=FillPattern.Solid),Ellipse(
           extent={{34,24},{84,-20}},
           lineColor={0,0,0},
           fillPattern=FillPattern.Solid,
-          fillColor={215,215,215}),
-        Line(
+          fillColor={215,215,215}),Line(
           points={{-38,0},{-2,0},{-2,0}},
           color={0,0,255},
-          smooth=Smooth.None),
-        Line(
+          smooth=Smooth.None),Line(
           points={{84,2},{100,2},{100,2}},
           color={0,0,255},
-          smooth=Smooth.None),
-        Line(
+          smooth=Smooth.None),Line(
           points={{-90,6},{-82,6},{-76,6}},
           color={255,0,0},
           smooth=Smooth.None,
-          thickness=0.5),
-        Line(
+          thickness=0.5),Line(
           points={{-90,-6},{-82,-6},{-76,-6}},
           color={255,0,0},
           smooth=Smooth.None,
-          thickness=0.5),
-        Line(
+          thickness=0.5),Line(
           points={{-38,0},{-46,0},{-46,0}},
           color={0,0,255},
-          smooth=Smooth.None),
-        Line(
+          smooth=Smooth.None),Line(
           points={{-84,6},{-84,26},{-46,26},{-46,-24},{-82,-24},{-84,-24},{-84,-6},{-84,-6}},
           color={255,0,0},
           thickness=0.5,
-          smooth=Smooth.None),
-        Text(
+          smooth=Smooth.None),Text(
           extent={{-34,-38},{24,-68}},
           lineColor={0,0,0},
           lineThickness=0.5,

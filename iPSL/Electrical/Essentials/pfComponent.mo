@@ -1,4 +1,6 @@
 within iPSL.Electrical.Essentials;
+
+
 partial model pfComponent "Partial model containing all the Data for entering Power Flow data"
   outer iPSL.Electrical.SystemBase SysData "Must add this line in all models";
   parameter Real V_b=400 "Base voltage of the bus (kV)" annotation (Dialog(group="Power flow data"));

@@ -1,4 +1,6 @@
 within iPSL.Electrical.Controls.PSAT.AVR;
+
+
 model AVRTypeI "PSAT Exciter Type 1"
   parameter Real vrmax=7.57 "Maximum regulator voltage, p.u";
   parameter Real vrmin=0 "Minimum regulator voltage, p.u";
