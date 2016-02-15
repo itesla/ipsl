@@ -1,6 +1,4 @@
 within iPSL.Electrical.Controls.PSSE.ES.EXAC1;
-
-
 model EXAC1
   import iPSL.NonElectrical.Functions.SE;
   Modelica.Blocks.Sources.Constant Vref(k=VREF) annotation (Placement(transformation(extent={{-108,-86},{-94,-72}})));

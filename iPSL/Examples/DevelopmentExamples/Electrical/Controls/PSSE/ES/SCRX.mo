@@ -102,7 +102,7 @@ equation
   connect(pwLine.n, LOAD.p) annotation (Line(points={{-9,0},{-3.5,0},{2,0}}, color={0,0,255}));
   connect(LOAD.p, pwLine1.p) annotation (Line(points={{2,0},{12,0},{12,40},{37,40}}, color={0,0,255}));
   connect(pwLine3.p, pwLine1.p) annotation (Line(points={{19,-40},{12,-40},{12,40},{37,40}}, color={0,0,255}));
-  connect(pwLine3.n, FAULT.p) annotation (Line(points={{33,-40},{38.5,-40},{44,-40}}, color={0,0,255}));
+  connect(pwLine3.n, FAULT.p) annotation (Line(points={{33,-40},{38.5,-40},{44,-40}},color={0,0,255}));
   connect(FAULT.p, pwLine4.p) annotation (Line(points={{44,-40},{55,-40}}, color={0,0,255}));
   connect(pwLine1.n, GEN02.p) annotation (Line(points={{51,40},{51,40},{76,40},{76,2},{84,2}}, color={0,0,255}));
   connect(pwLine4.n, GEN02.p) annotation (Line(points={{69,-40},{76,-40},{76,2},{84,2}}, color={0,0,255}));
@@ -137,4 +137,3 @@ equation
 </html>"),
     Icon(coordinateSystem(extent={{-120,-100},{120,100}})));
 end SCRX;
-

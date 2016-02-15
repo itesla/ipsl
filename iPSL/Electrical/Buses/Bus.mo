@@ -1,8 +1,7 @@
 within iPSL.Electrical.Buses;
-
-
 model Bus "Bus model
               2014/03/10"
+
   iPSL.Connectors.PwPin p(vr(start=V_0*cos(angle_0*Modelica.Constants.pi/180)), vi(start=V_0*sin(angle_0*Modelica.Constants.pi/180))) annotation (Placement(
       visible=true,
       transformation(

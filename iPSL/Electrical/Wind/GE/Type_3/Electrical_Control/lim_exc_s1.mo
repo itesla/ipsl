@@ -1,6 +1,4 @@
 within iPSL.Electrical.Wind.GE.Type_3.Electrical_Control;
-
-
 model lim_exc_s1
   extends Modelica.Blocks.Interfaces.BlockIcon;
   parameter Real xiqmin=1;

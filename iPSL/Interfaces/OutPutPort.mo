@@ -1,6 +1,4 @@
 within iPSL.Interfaces;
-
-
 model OutPutPort "OutPutPort for plotting output results"
   output Real vo;
   input Real vi;

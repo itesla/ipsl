@@ -1,6 +1,4 @@
 within iPSL.Examples.DevelopmentExamples.Electrical.Controls.PSAT.TG;
-
-
 model TGTypeVI_test
   iPSL.Electrical.Controls.PSAT.TG.TGTypeVI tGModel6_1(
     Ka=3.33333,

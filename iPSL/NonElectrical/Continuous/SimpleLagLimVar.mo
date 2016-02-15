@@ -20,7 +20,6 @@ protected
   parameter Real T_mod=if T < Modelica.Constants.eps then 1000 else T;
 initial equation
   state = y_start;
-  der(state) = 0;
 equation
   T_mod*der(state) = K*u - state;
   when state > outMax and K*u - state < 0 then

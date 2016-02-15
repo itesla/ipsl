@@ -1,7 +1,6 @@
 within iPSL.Examples.DevelopmentExamples.Electrical.Machines.PSSE;
-
-
 model GENSAE "SMIB system with one load and GENROE model"
+
   iPSL.Electrical.Branches.PwLine pwLine(
     R=0.001,
     X=0.2,

@@ -1,6 +1,4 @@
 within iPSL.Electrical.Wind.GE.Type_3.Turbine;
-
-
 model Cp_function
   extends Modelica.Blocks.Interfaces.BlockIcon;
   Modelica.Blocks.Interfaces.RealInput Lambda "Lambda" annotation (Placement(

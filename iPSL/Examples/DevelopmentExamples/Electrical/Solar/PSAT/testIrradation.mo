@@ -1,6 +1,4 @@
 within iPSL.Examples.DevelopmentExamples.Electrical.Solar.PSAT;
-
-
 model testIrradation
   Modelica.Blocks.Sources.Constant const(k=25)
     annotation (Placement(visible=true, transformation(

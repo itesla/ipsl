@@ -1,6 +1,4 @@
 within iPSL.Electrical.Sensors;
-
-
 model PwCurrent "Current sensor"
   iPSL.Connectors.PwPin p annotation (Placement(transformation(extent={{-60,-10},{-40,10}}), iconTransformation(extent={{-60,-10},{-40,10}})));
   iPSL.Connectors.PwPin n annotation (Placement(transformation(extent={{40,10},{60,30}}), iconTransformation(extent={{40,10},{60,30}})));

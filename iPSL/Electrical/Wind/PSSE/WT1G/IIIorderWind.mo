@@ -1,6 +1,4 @@
 within iPSL.Electrical.Wind.PSSE.WT1G;
-
-
 model IIIorderWind "IM order III"
   constant Real pi=Modelica.Constants.pi;
   parameter Real wbase=2*pi*60 "System base speed";

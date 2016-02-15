@@ -133,4 +133,3 @@ equation
 </html>"),
     Icon(coordinateSystem(extent={{-140,-100},{140,100}})));
 end TWTPST_smib_test;
-

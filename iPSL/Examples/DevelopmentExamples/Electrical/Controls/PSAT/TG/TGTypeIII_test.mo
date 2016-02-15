@@ -1,6 +1,4 @@
 within iPSL.Examples.DevelopmentExamples.Electrical.Controls.PSAT.TG;
-
-
 model TGTypeIII_test
   iPSL.Electrical.Machines.PSAT.ThirdOrder.Order3 order3_Inputs_Outputs1(
     P_0=0.16041,

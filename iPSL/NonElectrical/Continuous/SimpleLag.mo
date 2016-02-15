@@ -7,7 +7,7 @@ block SimpleLag "First order lag transfer function block"
   parameter Modelica.SIunits.Time T "Lag time constant";
   parameter Real y_start "Output start value";
 protected
-  parameter Real T_mod=if T < Modelica.Constants.eps then 1000 else T;
+  parameter Real T_mod=if (T < Modelica.Constants.eps) then 1000 else T;
 initial equation
   state = y_start;
 equation
@@ -64,4 +64,3 @@ equation
 <p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
 </html>"));
 end SimpleLag;
-

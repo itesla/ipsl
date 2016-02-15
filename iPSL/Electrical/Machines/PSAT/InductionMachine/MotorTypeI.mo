@@ -1,6 +1,4 @@
 within iPSL.Electrical.Machines.PSAT.InductionMachine;
-
-
 model MotorTypeI "Induction Machine - Order I"
   extends iPSL.Electrical.Essentials.pfComponent;
   parameter Integer Sup=1 "Start-up control" annotation (Dialog(group="Machine parameters"), choices(choice=0, choice=1));

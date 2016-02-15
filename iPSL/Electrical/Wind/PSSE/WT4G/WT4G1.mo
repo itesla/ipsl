@@ -3,8 +3,10 @@ model WT4G1 "Wind Generator Model with Power Converter (Type 4)"
   import iPSL;
   // Extending the PF component
   extends iPSL.Electrical.Essentials.pfComponent;
+
   //Constants
   constant Real pi=Modelica.Constants.pi;
+
   // Model parameters
   parameter Real M_b "Machine base power (MVA)";
   parameter Real T_IQCmd "Converter time constant for I_Qcmd";
@@ -16,13 +18,20 @@ model WT4G1 "Wind Generator Model with Power Converter (Type 4)"
   parameter Real CUR_HVRCR "HVRCR current (Max. reactive current at VHVRCR)";
   parameter Real RIp_LVPL "Rate of LVACR active current change";
   parameter Real T_LVPL "Voltage sensor for LVACR time constant";
+
   // Variables
+protected
+  Real delta(start=anglev_rad);
+  Real VT(start=V_0) "Bus voltage magnitude (pu)";
+  Real anglev(start=anglev_rad) "Bus voltage angle (rad)";
+public
   Complex Is "Equivalent internal current source";
+
   iPSL.Connectors.PwPin p(
     vr(start=vr0),
     vi(start=vi0),
     ir(start=ir1),
-    ii(start=ii1)) annotation (Placement(transformation(extent={{100,-10},{120,10}}), iconTransformation(extent={{100,-10},{120,10}})));
+    ii(start=ii1)) annotation (Placement(transformation(extent={{100,-10},{120,10}}),iconTransformation(extent={{100,-10},{120,10}})));
   iPSL.NonElectrical.Continuous.SimpleLag K1(
     K=1,
     T=T_IQCmd,
@@ -59,23 +68,8 @@ model WT4G1 "Wind Generator Model with Power Converter (Type 4)"
   Modelica.Blocks.Nonlinear.Limiter imLimited_max(uMin=-Modelica.Constants.inf, uMax=RIp_LVPL) annotation (Placement(transformation(extent={{-50,35},{-40,45}})));
   Modelica.Blocks.Nonlinear.VariableLimiter variableLimiter(y(start=Ipcmd0)) annotation (Placement(transformation(extent={{20,35},{30,45}})));
   Modelica.Blocks.Sources.Constant const(k=-Modelica.Constants.inf) annotation (Placement(transformation(extent={{-10,25},{0,35}})));
+
   //Initialization parameters
-  Modelica.Blocks.Interfaces.RealInput I_qcmd(start=Iy0) annotation (Placement(transformation(extent={{-110,65},{-90,85}}), iconTransformation(extent={{-100,70},{-80,90}})));
-  Modelica.Blocks.Interfaces.RealInput I_pcmd(start=Ipcmd0) annotation (Placement(transformation(extent={{-110,30},{-90,50}}), iconTransformation(extent={{-100,30},{-80,50}})));
-  Modelica.Blocks.Interfaces.RealOutput I_qcmd0
-    annotation (Placement(transformation(extent={{-50,85},{-30,105}}), iconTransformation(
-        extent={{-10,-10},{10,10}},
-        rotation=90,
-        origin={-60,110})));
-  Modelica.Blocks.Interfaces.RealOutput I_pcmd0
-    annotation (Placement(transformation(extent={{-78,85},{-58,105}}), iconTransformation(
-        extent={{-10,-10},{10,10}},
-        rotation=90,
-        origin={-20,110})));
-protected
-  Real delta(start=anglev_rad);
-  Real VT(start=V_0) "Bus voltage magnitude (pu)";
-  Real anglev(start=anglev_rad) "Bus voltage angle (rad)";
 protected
   parameter Real p0=P_0/M_b "initial value of bus active power in p.u. machinebase";
   parameter Real q0=Q_0/M_b "initial value of bus reactive power in p.u. machinebase";
@@ -93,13 +87,28 @@ protected
   parameter Real anglev_rad=angle_0*pi/180 "initial value of bus anglev in rad";
   parameter Real Ix0=Isr0*cos(-anglev_rad) - Isi0*sin(-anglev_rad);
   parameter Real Iy0=-(Isr0*sin(-anglev_rad) + cos(-anglev_rad)*Isi0);
+public
+  Modelica.Blocks.Interfaces.RealInput I_qcmd(start=Iy0) annotation (Placement(transformation(extent={{-110,65},{-90,85}}), iconTransformation(extent={{-100,70},{-80,90}})));
+  Modelica.Blocks.Interfaces.RealInput I_pcmd(start=Ipcmd0) annotation (Placement(transformation(extent={{-110,30},{-90,50}}), iconTransformation(extent={{-100,30},{-80,50}})));
 protected
   Modelica.Blocks.Interfaces.RealInput Vtt=VT
     annotation (Placement(transformation(
         extent={{-10,-10},{10,10}},
         rotation=90,
-        origin={60,-100}), iconTransformation(extent={{-110,52},{-94,68}})));
+        origin={60,-100}),iconTransformation(extent={{-110,52},{-94,68}})));
+public
+  Modelica.Blocks.Interfaces.RealOutput I_qcmd0
+    annotation (Placement(transformation(extent={{-50,85},{-30,105}}), iconTransformation(
+        extent={{-10,-10},{10,10}},
+        rotation=90,
+        origin={-60,110})));
+  Modelica.Blocks.Interfaces.RealOutput I_pcmd0
+    annotation (Placement(transformation(extent={{-78,85},{-58,105}}), iconTransformation(
+        extent={{-10,-10},{10,10}},
+        rotation=90,
+        origin={-20,110})));
 equation
+
   I_qcmd0 = Iy0;
   I_pcmd0 = Ix0;
   anglev = atan2(p.vi, p.vr);
@@ -110,6 +119,7 @@ equation
   [IxL; -IyL] = -[cos(delta), sin(delta); -sin(delta), cos(delta)]*[Is.re; Is.im];
   -P = p.vr*p.ir + p.vi*p.ii;
   -Q = p.vi*p.ir - p.vr*p.ii;
+
   connect(Iperr.u1, I_pcmd) annotation (Line(
       points={{-79,40},{-100,40}},
       color={0,0,127},
@@ -243,4 +253,3 @@ specified at PSSE model dialog")}),
 <p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
 </html>"));
 end WT4G1;
-

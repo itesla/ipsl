@@ -1,6 +1,4 @@
 within iPSL.Electrical.Wind.GE.Type_3.Turbine;
-
-
 model Turbine_Model
   parameter Real GEN_base=1;
   parameter Real WT_base=1;

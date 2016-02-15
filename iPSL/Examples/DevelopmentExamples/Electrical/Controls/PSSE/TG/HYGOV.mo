@@ -1,5 +1,6 @@
 within iPSL.Examples.DevelopmentExamples.Electrical.Controls.PSSE.TG;
 model HYGOV "Simple Machine Infinite Bus with Machine, Governor and Excitation system"
+
   iPSL.Electrical.Machines.PSSE.GENSAL.GENSAL generator(
     Xppd=0.2,
     Xppq=0.2,
@@ -178,4 +179,3 @@ equation
 <p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
 </html>"));
 end HYGOV;
-

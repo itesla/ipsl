@@ -1,6 +1,4 @@
 within iPSL.Electrical.Controls.PSSE.ES.SCRX;
-
-
 model SCRX "Bus Fed or Solid Fed Static Exciter"
   parameter Real V_c0 "Magnitude of the compensated generator terminal voltage" annotation (Dialog(group="Power flow data"));
   parameter Real V_0 "Magnitude of the generator terminal voltage" annotation (Dialog(group="Power flow data"));

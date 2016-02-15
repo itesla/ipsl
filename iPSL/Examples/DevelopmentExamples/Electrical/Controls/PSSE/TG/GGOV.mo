@@ -1,6 +1,4 @@
 within iPSL.Examples.DevelopmentExamples.Electrical.Controls.PSSE.TG;
-
-
 model GGOV "three phase to ground fault test of GGOV"
   iPSL.Electrical.Machines.PSSE.GENROU.GENROU generator(
     Xppd=0.2,

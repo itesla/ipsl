@@ -1,6 +1,4 @@
 within iPSL.Electrical.Controls.PSSE.ES.SEXS;
-
-
 model SEXS "Simplified excitation system model"
   parameter Real Ec0;
   parameter Real T_AT_B;

@@ -1,6 +1,4 @@
 within iPSL.Electrical.Branches.PSSE.Old_transformer.update;
-
-
 model ImRelay "input dependent output"
   Modelica.Blocks.Interfaces.RealInput p1 annotation (Placement(transformation(extent={{-54,-26},{-41,-12}}), iconTransformation(extent={{-54,-26},{-41,-12}})));
   Modelica.Blocks.Interfaces.RealInput p2 annotation (Placement(transformation(extent={{-54,18},{-41,32}}), iconTransformation(extent={{-54,18},{-41,32}})));

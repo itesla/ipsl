@@ -8,7 +8,7 @@ function SE "Scaled Quadratic Saturation Function (PTI PSS/E) "
   input Real E2;
   output Real sys "Saturated Output";
 protected
-  parameter Real a=if SE2 <> 0 then sqrt(SE1*E1/(SE2*E2)) else 0;
+  parameter Real a=if (SE2 <> 0) then sqrt(SE1*E1/(SE2*E2)) else 0;
   parameter Real A=E2 - (E1 - E2)/(a - 1);
   parameter Real B=SE2*E2*(a - 1)^2/(E1 - E2)^2;
 algorithm
@@ -37,4 +37,3 @@ algorithm
 <p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
 </html>"));
 end SE;
-

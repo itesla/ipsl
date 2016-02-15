@@ -93,4 +93,3 @@ The B in Pwline stands for half charging B in PSSE transmission line",
 <p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
 </html>"));
 end WT1G1_test;
-

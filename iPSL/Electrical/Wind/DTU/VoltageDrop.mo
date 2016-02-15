@@ -1,6 +1,4 @@
 within iPSL.Electrical.Wind.DTU;
-
-
 model VoltageDrop "Developed by DTU"
   Modelica.Blocks.Interfaces.RealInput Pwt annotation (Placement(transformation(extent={{-70,33},{-60,47}}), iconTransformation(extent={{-70,33},{-60,47}})));
   Modelica.Blocks.Interfaces.RealInput Qwt annotation (Placement(transformation(extent={{-70,-7},{-60,7}})));

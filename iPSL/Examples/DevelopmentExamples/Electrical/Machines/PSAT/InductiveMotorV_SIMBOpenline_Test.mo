@@ -1,6 +1,4 @@
 within iPSL.Examples.DevelopmentExamples.Electrical.Machines.PSAT;
-
-
 model InductiveMotorV_SIMBOpenline_Test
   iPSL.Electrical.Machines.PSAT.InductionMachine.MotorTypeV motorTypeI(
     Sup=0,

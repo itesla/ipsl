@@ -1,6 +1,4 @@
 within iPSL.Examples.DevelopmentExamples.Electrical.FACTS;
-
-
 model TCSC_Alpha_Test
   iPSL.Electrical.Machines.PSAT.SecondOrder.Order2 Gen1(
     Sn=370,

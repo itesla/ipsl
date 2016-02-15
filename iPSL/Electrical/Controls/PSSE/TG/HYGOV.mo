@@ -54,11 +54,6 @@ model HYGOV
   Modelica.Blocks.Math.Add add3(k2=-1) annotation (Placement(transformation(extent={{82,-4},{94,8}})));
   Modelica.Blocks.Math.Add add4(k2=-1) annotation (Placement(transformation(extent={{152,-6},{164,6}})));
   Modelica.Blocks.Math.Product product1 annotation (Placement(transformation(extent={{58,-30},{70,-18}})));
-  Modelica.Blocks.Math.Product product2 annotation (Placement(transformation(extent={{108,-2},{120,10}})));
-  NonElectrical.Continuous.SimpleLead simpleLead(
-    K=r*T_r,
-    T=T_r,
-    y_start=0) annotation (Placement(transformation(extent={{-106,0},{-94,12}})));
 protected
   parameter Real h0=1 "water head initial value";
   // Real T_w(start=T_w);//=1.25 "Water time constant, s";
@@ -72,6 +67,12 @@ protected
   parameter Real nref(fixed=false);
   //=R*c0 "speed reference";
   parameter Real P_m0(fixed=false);
+public
+  Modelica.Blocks.Math.Product product2 annotation (Placement(transformation(extent={{108,-2},{120,10}})));
+  NonElectrical.Continuous.SimpleLead simpleLead(
+    K=r*T_r,
+    T=T_r,
+    y_start=0) annotation (Placement(transformation(extent={{-106,0},{-94,12}})));
 initial algorithm
   P_m0 := PMECH0;
   q0 := P_m0/(A_t*h0) + q_NL;
@@ -163,4 +164,3 @@ equation
 <p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
 </html>"));
 end HYGOV;
-

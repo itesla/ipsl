@@ -1,6 +1,4 @@
 within iPSL.Examples.DevelopmentExamples.Electrical.Solar.PSAT;
-
-
 model SolarPQtest
   iPSL.Electrical.Solar.PSAT.ConstantPQPV.PQ1 PQ11(
     P_0=0.4,

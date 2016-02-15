@@ -1,6 +1,4 @@
 within iPSL.Electrical.Branches.PSAT.PhaseShiftingTransformer_1;
-
-
 model PSTransformer
   constant Real pi=Modelica.Constants.pi;
   parameter Real SystemBase=100;

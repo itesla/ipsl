@@ -1,6 +1,4 @@
 within iPSL.Electrical.Wind.GE.Type_3.Electrical_Control;
-
-
 model Electrical_Control
   import Modelica.Constants.inf;
   parameter Real qmax=1;
@@ -152,6 +150,7 @@ equation
       origin={-86.5355,-18.5464},
       points={{136.0474,84.9551},{119.0414,84.5771},{119.0414,68.9244},{-10.9824,68.9244},{-10.9824,-35.1262},{-108.1222,-35.1262},{-108.1222,-78.2155},{-143.4645,-78.2155},{-143.4645,-81.4536}},
       color={0,0,127}));
+
   connect(lim_exc_s12.y, Efd) annotation (Line(
       visible=true,
       origin={164.128,72.1493},
@@ -174,6 +173,7 @@ equation
       origin={-127.081,-18.8882},
       points={{101.0304,86.2156},{91.9292,85.8376},{91.9292,68.8882},{29.1852,68.8882},{29.1852,-35.5403},{-67.9547,-35.5403},{-67.9547,-78.6296},{-102.919,-78.6296},{-102.919,-81.1118}},
       color={0,0,127}));
+
   connect(Qgen, add1.u1) annotation (Line(
       visible=true,
       origin={-180.5,101.186},

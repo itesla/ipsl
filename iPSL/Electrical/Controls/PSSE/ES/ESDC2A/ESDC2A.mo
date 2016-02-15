@@ -1,6 +1,4 @@
 within iPSL.Electrical.Controls.PSSE.ES.ESDC2A;
-
-
 model ESDC2A
   import iPSL.NonElectrical.Functions.SE;
   Modelica.Blocks.Sources.Constant Vref(k=VREF) annotation (Placement(transformation(extent={{-92,12},{-80,24}})));
@@ -81,7 +79,6 @@ model ESDC2A
         extent={{-3,-3},{3,3}},
         rotation=90,
         origin={29,-47})));
-
   function param_init
     input Real V_RMAX_init;
     input Real K_E_init;
@@ -92,8 +89,8 @@ model ESDC2A
     output Real V_RMAX;
     output Real K_E;
   algorithm
-    if V_RMAX_init == 0 then
-      if K_E_init <= 0 then
+    if (V_RMAX_init == 0) then
+      if (K_E_init <= 0) then
         V_RMAX := S_EE_2*E_2;
       else
         V_RMAX := S_EE_2 + K_E_init;
@@ -101,7 +98,8 @@ model ESDC2A
     else
       V_RMAX := V_RMAX_init;
     end if;
-    if K_E_init == 0 then
+
+    if (K_E_init == 0) then
       K_E := V_RMAX/(10*Efd0) - SE_Efd0;
     else
       K_E := K_E_init;
@@ -139,6 +137,7 @@ initial equation
     S_EE_2,
     E_1,
     E_2);
+
   (V_RMAX0,K_E0) = param_init(
     V_RMAX,
     K_E,
@@ -146,11 +145,12 @@ initial equation
     S_EE_2,
     vf00,
     SE_Efd0);
-  if V_RMAX == 0 then
+  if (V_RMAX == 0) then
     V_RMIN0 = -V_RMAX0;
   else
     V_RMIN0 = V_RMIN;
   end if;
+
   vr0 = vf00*(K_E0 + SE(
     vf00,
     S_EE_1,
@@ -158,6 +158,7 @@ initial equation
     E_1,
     E_2));
   VREF = vr0/K_A + ECOMP0;
+
 equation
   connect(VUEL, hV_GATE.n2) annotation (Line(
       points={{-91,-74},{-17,-74},{-17,-32}},

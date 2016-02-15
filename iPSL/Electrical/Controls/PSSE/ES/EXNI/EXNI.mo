@@ -1,6 +1,4 @@
 within iPSL.Electrical.Controls.PSSE.ES.EXNI;
-
-
 model EXNI "Bus or Solid Fed SCR Bridge Excitation System Model Type NI (NVE)"
   parameter Real T_R=0.60000E-01 "Voltage input time constant (s)";
   //0

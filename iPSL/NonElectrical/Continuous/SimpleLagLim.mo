@@ -9,16 +9,17 @@ block SimpleLagLim "First order lag transfer function block with a non windup li
   parameter Real outMax "Maximum output value";
   parameter Real outMin "Minimum output value";
 protected
-  parameter Real T_mod=if T < Modelica.Constants.eps then 1000 else T;
+  parameter Real T_mod=if (T < Modelica.Constants.eps) then 1000 else T;
 initial equation
   state = y_start;
 equation
   T_mod*der(state) = K*u - state;
-  when state > outMax and K*u - state < 0 then
+  when (state > outMax) and ((K*u - state) < 0) then
     reinit(state, outMax);
-  elsewhen state < outMin and K*u - state > 0 then
+  elsewhen (state < outMin) and ((K*u - state) > 0) then
     reinit(state, outMin);
   end when;
+
   if abs(const.y) <= Modelica.Constants.eps then
     y = max(min(u*K, outMax), outMin);
   else
@@ -68,4 +69,3 @@ equation
           lineColor={0,0,255},
           textString="1 + Ts"),Line(points={{-100,-140},{-60,-140},{-40,-100}}, color={0,0,0})}));
 end SimpleLagLim;
-

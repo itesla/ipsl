@@ -1,6 +1,4 @@
 within iPSL.Interfaces;
-
-
 model InPutPort
   input Real vi;
   Real vo;

@@ -1,5 +1,8 @@
 within iPSL.Electrical.Wind.GE.Type_3;
 package Electrical_Control 
+
+
+
 annotation (Diagram(coordinateSystem(
       extent={{-148.5,-105.0},{148.5,105.0}},
       preserveAspectRatio=true,

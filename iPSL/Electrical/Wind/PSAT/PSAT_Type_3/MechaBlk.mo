@@ -1,6 +1,4 @@
 within iPSL.Electrical.Wind.PSAT.PSAT_Type_3;
-
-
 model MechaBlk
   Modelica.Blocks.Interfaces.RealInput Tm "engine shaft torque" annotation (Placement(
       transformation(

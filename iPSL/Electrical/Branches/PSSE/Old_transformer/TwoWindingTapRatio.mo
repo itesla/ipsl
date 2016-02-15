@@ -1,6 +1,4 @@
 within iPSL.Electrical.Branches.PSSE.Old_transformer;
-
-
 model TwoWindingTapRatio
   constant Real pi=Modelica.Constants.pi;
   parameter Complex Zeq "equivalent impedance";

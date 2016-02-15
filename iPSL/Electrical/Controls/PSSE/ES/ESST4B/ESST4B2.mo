@@ -1,6 +1,4 @@
 within iPSL.Electrical.Controls.PSSE.ES.ESST4B;
-
-
 model ESST4B2 " IEEE type ST4B potential or compounded
 source-controlled rectifier exciter "
   parameter Real T_R=0.3;

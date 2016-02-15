@@ -1,6 +1,4 @@
 within iPSL.Electrical.Branches.Eurostag;
-
-
 model PwDetailedTransformer "Two winding tap changer transformer.
                   2014/03/10"
   iPSL.Connectors.PwPin p annotation (Placement(transformation(extent={{-80,-8},{-60,12}}), iconTransformation(extent={{-80,-8},{-60,12}})));

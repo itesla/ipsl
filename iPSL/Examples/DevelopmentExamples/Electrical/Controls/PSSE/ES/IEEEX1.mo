@@ -121,11 +121,11 @@ equation
   connect(gENROE.p, pwLine.p) annotation (Line(points={{-40,10},{-23,10}}, color={0,0,255}));
   connect(gENROE.PMECH, gENROE.PMECH0) annotation (Line(points={{-81.6,20},{-92,20},{-92,36},{-30,36},{-30,4},{-40.4,4}}, color={0,0,127}));
   connect(iEEEX1_1.EFD, gENROE.EFD) annotation (Line(points={{-97.2083,-44},{-100,-44},{-100,0},{-81.6,0}}, color={0,0,127}));
-  connect(iEEEX1_1.VOTHSG, const.y) annotation (Line(points={{-39.2083,-51.5},{-30.1116,-51.5},{-30.1116,-32},{-23,-32}}, color={0,0,127}));
-  connect(iEEEX1_1.EFD0, gENROE.EFD0) annotation (Line(points={{-39.2083,-57.5},{-36,-57.5},{-36,-4},{-40.4,-4}}, color={0,0,127}));
+  connect(iEEEX1_1.VOTHSG, const.y) annotation (Line(points={{-39.2083,-51.5},{-30.1116,-51.5},{-30.1116,-32},{-23,-32}},color={0,0,127}));
+  connect(iEEEX1_1.EFD0, gENROE.EFD0) annotation (Line(points={{-39.2083,-57.5},{-36,-57.5},{-36,-4},{-40.4,-4}},color={0,0,127}));
   connect(iEEEX1_1.ECOMP, gENROE.ETERM) annotation (Line(points={{-39.2083,-44},{-34,-44},{-34,20},{-40.4,20}}, color={0,0,127}));
-  connect(iEEEX1_1.VOEL, const.y) annotation (Line(points={{-39.2083,-36.5},{-28,-36.5},{-28,-32},{-23,-32}}, color={0,0,127}));
-  connect(iEEEX1_1.VUEL, const.y) annotation (Line(points={{-39.2083,-30.5},{-28,-30.5},{-28,-32},{-23,-32}}, color={0,0,127}));
+  connect(iEEEX1_1.VOEL, const.y) annotation (Line(points={{-39.2083,-36.5},{-28,-36.5},{-28,-32},{-23,-32}},color={0,0,127}));
+  connect(iEEEX1_1.VUEL, const.y) annotation (Line(points={{-39.2083,-30.5},{-28,-30.5},{-28,-32},{-23,-32}},color={0,0,127}));
   annotation (Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,100}})), Documentation(revisions="<html>
 <!--DISCLAIMER-->
 <p>Copyright 2015-2016 RTE (France), SmarTS Lab (Sweden), AIA (Spain) and DTU (Denmark)</p>
@@ -141,4 +141,3 @@ equation
 <p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
 </html>"));
 end IEEEX1;
-

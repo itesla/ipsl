@@ -85,4 +85,3 @@ equation
           fillPattern=FillPattern.Solid)}),
     Diagram);
 end SimpleLagRateLimBlock;
-

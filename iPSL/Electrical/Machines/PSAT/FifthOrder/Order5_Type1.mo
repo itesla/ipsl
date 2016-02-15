@@ -1,6 +1,4 @@
 within iPSL.Electrical.Machines.PSAT.FifthOrder;
-
-
 model Order5_Type1
   import Modelica.Constants.pi;
   extends BaseClasses.baseMachine(

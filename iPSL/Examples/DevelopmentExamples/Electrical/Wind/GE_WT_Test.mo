@@ -1,6 +1,4 @@
 within iPSL.Examples.DevelopmentExamples.Electrical.Wind;
-
-
 model GE_WT_Test
   iPSL.Electrical.Wind.GE.Type_3.GE_WT GE_WT_init1 annotation (Placement(visible=true, transformation(
         origin={75.0,1.7487},

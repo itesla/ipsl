@@ -1,6 +1,4 @@
 within iPSL.Electrical.Controls.PSSE.ES.ESAC2A;
-
-
 model ESAC2A "IEEE Type AC2A Excitation System"
   parameter Real T_R=0.1;
   parameter Real T_B=8;

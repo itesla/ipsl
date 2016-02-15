@@ -1,6 +1,4 @@
 within iPSL.Electrical.Wind.DTU;
-
-
 model CurrentLimiter "The current limitation model combines the physical limit. Developed by DTU"
   parameter Real i_maxdip "Maximum current during voltage dip at the wind turbine terminals";
   parameter Real i_max "Maximum continuous current at the wind turbine terminals";

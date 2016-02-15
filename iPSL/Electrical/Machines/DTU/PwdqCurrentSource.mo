@@ -1,6 +1,4 @@
 within iPSL.Electrical.Machines.DTU;
-
-
 model PwdqCurrentSource "Developed by DTU"
   iPSL.Connectors.PwPin n annotation (Placement(transformation(extent={{60,-6},{72,6}}), iconTransformation(extent={{60,-6},{72,6}})));
   Modelica.Blocks.Interfaces.RealInput id_ref annotation (Placement(transformation(extent={{-73,33},{-61,47}})));

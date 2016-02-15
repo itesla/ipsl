@@ -1,6 +1,4 @@
 within iPSL.Examples.DevelopmentExamples.Electrical.Controls.PSSE.TG;
-
-
 model TGOV1 "SMIB system with one load and GENROE model"
   import iPSL;
   iPSL.Electrical.Branches.PwLine pwLine(

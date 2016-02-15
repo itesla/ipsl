@@ -1,6 +1,4 @@
 within iPSL.Electrical.Sensors.Eurostag;
-
-
 model PwReactivePower "Active Power sensor. This model has been built assuming that the three
   non-Fortescue phases are identical and thus the only non-zero component
   for the Fortescue sequence is the positive. The output is the 3-phase active

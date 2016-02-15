@@ -1,6 +1,4 @@
 within iPSL.Examples.DevelopmentExamples.Electrical.Machines.PSAT;
-
-
 model InductiveMotorI_SIMBOpenline_Test "Order 1 inductive machine from PSAT, line opened at 2 s for 1 s"
   iPSL.Electrical.Machines.PSAT.InductionMachine.MotorTypeI motorTypeI(
     Sup=0,

@@ -53,4 +53,3 @@ explicitly defined via parameters n1, n2, n3 and n4.
           fillPattern=FillPattern.Solid,
           lineColor={0,0,255}),Line(points={{-100,30},{-60,30},{-9,0}}, color={0,0,255}),Line(points={{-99,-30},{-59,-30},{-10,-5}}, color={0,0,255})}));
 end Multi_Powers;
-

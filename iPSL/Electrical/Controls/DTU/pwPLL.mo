@@ -1,6 +1,4 @@
 within iPSL.Electrical.Controls.DTU;
-
-
 model pwPLL "Developed by DTU"
   iPSL.Connectors.PwPin pwPin annotation (Placement(transformation(extent={{-60,-6},{-48,6}}), iconTransformation(extent={{-60,-6},{-48,6}})));
   Modelica.Blocks.Interfaces.RealOutput imPin annotation (Placement(transformation(extent={{48,-6},{60,6}}), iconTransformation(extent={{45,-6},{59,6}})));

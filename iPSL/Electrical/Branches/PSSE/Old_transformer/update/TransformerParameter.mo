@@ -1,6 +1,4 @@
 within iPSL.Electrical.Branches.PSSE.Old_transformer.update;
-
-
 model TransformerParameter "Basic Two Winding Transformer"
   constant Real pi=Modelica.Constants.pi;
   parameter Real R "Resistance p.u." annotation (Dialog(group=" The measured impedance across the windings"));

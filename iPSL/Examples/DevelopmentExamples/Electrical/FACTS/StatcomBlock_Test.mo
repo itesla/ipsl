@@ -1,6 +1,4 @@
 within iPSL.Examples.DevelopmentExamples.Electrical.FACTS;
-
-
 model StatcomBlock_Test
   iPSL.Electrical.Branches.PwLine pwLine4(
     B=0.001/2,

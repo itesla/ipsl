@@ -1,6 +1,4 @@
 within iPSL.Electrical.Wind.PSAT.PSAT_Type_3;
-
-
 model WindBlk
   import Modelica.Constants.pi;
   Modelica.Blocks.Interfaces.RealInput vw "Real voltage" annotation (Placement(

@@ -1,7 +1,6 @@
 within iPSL.Electrical.Controls.PSSE.ES.IEEET2;
-
-
 model IEEET2 "IEEE Type 2 excitation system"
+
   parameter Real T_R=0.02 "Voltage input time constant (s)";
   parameter Real K_A=200.0 "AVR gain";
   parameter Real T_A=0.001 "AVR time constant (s)";
@@ -16,6 +15,7 @@ model IEEET2 "IEEE Type 2 excitation system"
   parameter Real S_EE_1=0.3 "Saturation at E_1";
   parameter Real E_2=3.8 "Exciter saturation point 2 (pu)";
   parameter Real S_EE_2=0.6 "Saturation at E_2";
+
   Modelica.Blocks.Interfaces.RealInput VOTHSG "PSS output Upss" annotation (Placement(transformation(extent={{-110,-20},{-104,-12}}), iconTransformation(extent={{-126,30},{-106,50}})));
   Modelica.Blocks.Interfaces.RealInput VOEL "OEL output" annotation (Placement(transformation(extent={{-110,-28},{-104,-20}}), iconTransformation(extent={{-126,-10},{-106,10}})));
   Modelica.Blocks.Sources.Constant Vref(k=VREF) annotation (Placement(transformation(extent={{-96,14},{-84,26}})));
@@ -32,8 +32,8 @@ model IEEET2 "IEEE Type 2 excitation system"
     output Real V_RMAX;
     output Real K_E;
   algorithm
-    if V_RMAX_init == 0 then
-      if K_E_init <= 0 then
+    if (V_RMAX_init == 0) then
+      if (K_E_init <= 0) then
         V_RMAX := S_EE_2*E_2;
       else
         V_RMAX := S_EE_2 + K_E_init;
@@ -41,11 +41,13 @@ model IEEET2 "IEEE Type 2 excitation system"
     else
       V_RMAX := V_RMAX_init;
     end if;
-    if K_E_init == 0 then
+
+    if (K_E_init == 0) then
       K_E := V_RMAX/(10*Efd0) - SE_Efd0;
     else
       K_E := K_E_init;
     end if;
+
     annotation (Documentation(revisions="<html>
 <!--DISCLAIMER-->
 <p>Copyright 2015-2016 RTE (France), SmarTS Lab (Sweden), AIA (Spain) and DTU (Denmark)</p>
@@ -128,6 +130,7 @@ protected
   //
   parameter Real SE_Efd0(fixed=false);
   parameter Real VR0(fixed=false);
+
 initial algorithm
   VT0 := ECOMP;
   Efd0 := EFD0;
@@ -137,6 +140,7 @@ initial algorithm
     S_EE_2,
     E_1,
     E_2);
+
   (V_RMAX0,K_E0) := param_init(
     V_RMAX,
     K_E,
@@ -144,13 +148,15 @@ initial algorithm
     S_EE_2,
     Efd0,
     SE_Efd0);
-  if V_RMAX == 0 then
+  if (V_RMAX == 0) then
     V_RMIN0 := -V_RMAX0;
   else
     V_RMIN0 := V_RMIN;
   end if;
+
   VR0 := Efd0*(K_E0 + SE_Efd0);
   VREF := VR0/K_A + VT0 - add3_2.y;
+
 equation
   connect(ECOMP, imSimpleLag1.u) annotation (Line(points={{-114,2},{-77.4,2},{-77.4,3}}, color={0,0,127}));
   connect(imSimpleLag1.y, add3_1.u2) annotation (Line(points={{-61.3,3},{-53.4,3}}, color={0,0,127}));

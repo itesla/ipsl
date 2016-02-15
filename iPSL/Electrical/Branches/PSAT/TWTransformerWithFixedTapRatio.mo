@@ -1,6 +1,4 @@
 within iPSL.Electrical.Branches.PSAT;
-
-
 model TWTransformerWithFixedTapRatio "Modeled as series reactances without iron losses"
   iPSL.Connectors.PwPin p annotation (Placement(transformation(extent={{-120,-10},{-100,10}})));
   iPSL.Connectors.PwPin n annotation (Placement(transformation(extent={{100,-10},{120,10}})));

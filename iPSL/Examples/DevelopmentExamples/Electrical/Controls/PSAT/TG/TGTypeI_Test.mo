@@ -1,6 +1,4 @@
 within iPSL.Examples.DevelopmentExamples.Electrical.Controls.PSAT.TG;
-
-
 model TGTypeI_Test
   iPSL.Electrical.Loads.PSAT.LOADPQ pwLoadPQ2(
     P_0=0.08,

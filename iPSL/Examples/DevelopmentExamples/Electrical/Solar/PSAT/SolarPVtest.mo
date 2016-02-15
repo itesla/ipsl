@@ -1,6 +1,4 @@
 within iPSL.Examples.DevelopmentExamples.Electrical.Solar.PSAT;
-
-
 model SolarPVtest
   iPSL.Electrical.Branches.PwLine pwLine1(
     B=0.001/2,

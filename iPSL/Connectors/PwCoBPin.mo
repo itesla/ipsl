@@ -1,6 +1,4 @@
 within iPSL.Connectors;
-
-
 model PwCoBPin "connector for change from machine power base to system power base "
   parameter Real mbase "machine base power rating MVA";
   parameter Real Sbase "system base power rating MVA";

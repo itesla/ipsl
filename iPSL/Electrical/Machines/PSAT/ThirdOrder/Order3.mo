@@ -1,6 +1,4 @@
 within iPSL.Electrical.Machines.PSAT.ThirdOrder;
-
-
 model Order3 "Third Order Synchronous Machine with Inputs and Outputs"
   import Modelica.Constants.pi;
   extends BaseClasses.baseMachine(

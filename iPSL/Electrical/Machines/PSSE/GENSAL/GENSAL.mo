@@ -1,6 +1,4 @@
 within iPSL.Electrical.Machines.PSSE.GENSAL;
-
-
 model GENSAL "SALIENT POLE GENERATOR MODEL (QUADRATIC SATURATION ON D-AXIS)"
   // Import of Dependencies
   import iPSL.NonElectrical.Functions.SE;

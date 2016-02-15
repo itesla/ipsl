@@ -148,7 +148,7 @@ equation
       color={0,0,127},
       smooth=Smooth.None));
   connect(eSAC2A.EFD, generator.EFD) annotation (Line(points={{-115.75,-35.3067},{-120,-35.3067},{-120,5.5},{-77.72,5.5}}, color={0,0,127}));
-  annotation (Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,100}})), Documentation(revisions="<html>
+  annotation (Diagram(coordinateSystem(preserveAspectRatio=false,extent={{-100,-100},{100,100}})), Documentation(revisions="<html>
 <!--DISCLAIMER-->
 <p>Copyright 2015-2016 RTE (France), SmarTS Lab (Sweden), AIA (Spain) and DTU (Denmark)</p>
 <ul>
@@ -163,4 +163,3 @@ equation
 <p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
 </html>"));
 end ESAC2A;
-

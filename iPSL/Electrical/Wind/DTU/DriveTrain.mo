@@ -1,6 +1,4 @@
 within iPSL.Electrical.Wind.DTU;
-
-
 model DriveTrain "Two mass model. Developed by DTU"
   Modelica.Blocks.Interfaces.RealInput Paero annotation (Placement(transformation(extent={{-70,34},{-60,46}})));
   Modelica.Blocks.Interfaces.RealInput Pag annotation (Placement(transformation(extent={{-70,-46},{-60,-34}})));

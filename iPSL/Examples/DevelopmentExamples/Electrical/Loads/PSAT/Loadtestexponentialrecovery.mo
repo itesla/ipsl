@@ -1,6 +1,4 @@
 within iPSL.Examples.DevelopmentExamples.Electrical.Loads.PSAT;
-
-
 model Loadtestexponentialrecovery
   iPSL.Electrical.Branches.PwLine pwLine1(
     X=0.1,

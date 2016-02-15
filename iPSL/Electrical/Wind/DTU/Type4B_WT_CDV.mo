@@ -1,6 +1,4 @@
 within iPSL.Electrical.Wind.DTU;
-
-
 model Type4B_WT_CDV "IEC Type 4B Full-Scale Wind Turbine Model. Developed by DTU"
   parameter Real w_init=1 "Initial steady state generator speed";
   parameter Real T_Ufilt=0.01 "Voltage measurement filter time constant";

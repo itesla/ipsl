@@ -1,6 +1,4 @@
 within iPSL.Examples.DevelopmentExamples.Electrical.Branches.PSAT;
-
-
 model PhaseShiftingTransformer_Test
   iPSL.Electrical.Loads.PSAT.LOADPQ lOADPQ2(Q_0=0.001, P_0=0.03) annotation (Placement(transformation(extent={{34,-44},{54,-24}})));
   iPSL.Electrical.Branches.PwLine pwLine(
