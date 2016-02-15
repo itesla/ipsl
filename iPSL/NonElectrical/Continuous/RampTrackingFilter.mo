@@ -1,4 +1,6 @@
 within iPSL.NonElectrical.Continuous;
+
+
 model RampTrackingFilter "Ramp-tracking filter"
   extends Modelica.Blocks.Interfaces.SISO;
   parameter Real T_1;
@@ -6,7 +8,6 @@ model RampTrackingFilter "Ramp-tracking filter"
   parameter Real M;
   parameter Real N;
   parameter Real startValue;
-
   LeadLag LL_1(
     K=1,
     T1=T_1,
@@ -55,9 +56,6 @@ model RampTrackingFilter "Ramp-tracking filter"
     T2=T_2,
     y_start=startValue,
     x_start=startValue) annotation (Placement(transformation(extent={{60,10},{80,30}})));
-protected
-  Modelica.Blocks.Interfaces.RealInput LL_out annotation (Placement(transformation(extent={{-126,-100},{-86,-60}})));
-public
   SimpleLag SL_1(
     K=1,
     T=T_2,
@@ -91,45 +89,47 @@ public
     T=T_2,
     y_start=startValue) annotation (Placement(transformation(extent={{60,-30},{80,-10}})));
 protected
+  Modelica.Blocks.Interfaces.RealInput LL_out annotation (Placement(transformation(extent={{-126,-100},{-86,-60}})));
+protected
   Modelica.Blocks.Interfaces.RealInput SL_out annotation (Placement(transformation(extent={{-22,-18},{10,14}})));
 initial equation
 
 equation
-  if (N == 1) then
+  if N == 1 then
     LL_1.y = LL_out;
-  elseif (N == 2) then
+  elseif N == 2 then
     LL_2.y = LL_out;
-  elseif (N == 3) then
+  elseif N == 3 then
     LL_3.y = LL_out;
-  elseif (N == 4) then
+  elseif N == 4 then
     LL_4.y = LL_out;
-  elseif (N == 5) then
+  elseif N == 5 then
     LL_5.y = LL_out;
-  elseif (N == 6) then
+  elseif N == 6 then
     LL_6.y = LL_out;
-  elseif (N == 7) then
+  elseif N == 7 then
     LL_7.y = LL_out;
   else
     LL_8.y = LL_out;
   end if;
-  if not (M == 0) then
+  if not M == 0 then
     connect(SL_out, y);
   else
     connect(u, y);
   end if;
-  if (M == 1) then
+  if M == 1 then
     SL_1.y = SL_out;
-  elseif (M == 2) then
+  elseif M == 2 then
     SL_2.y = SL_out;
-  elseif (M == 3) then
+  elseif M == 3 then
     SL_3.y = SL_out;
-  elseif (M == 4) then
+  elseif M == 4 then
     SL_4.y = SL_out;
-  elseif (M == 5) then
+  elseif M == 5 then
     SL_5.y = SL_out;
-  elseif (M == 6) then
+  elseif M == 6 then
     SL_6.y = SL_out;
-  elseif (M == 7) then
+  elseif M == 7 then
     SL_7.y = SL_out;
   else
     SL_8.y = SL_out;

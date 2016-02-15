@@ -1,4 +1,6 @@
 within iPSL.Electrical.Controls.PSAT.FACTS.STATCOM;
+
+
 model STATCOMBlock "Static Synchronous Compensator model with Modelica components"
   parameter Real Sb=100 "System base power (MVA)" annotation (Dialog(group="Power flow data"));
   parameter Real Vbus=400000 "Bus nominal voltage (V)" annotation (Dialog(group="Power flow data"));

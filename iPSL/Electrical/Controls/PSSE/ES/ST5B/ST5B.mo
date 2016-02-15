@@ -28,7 +28,7 @@ model ST5B "IEEE 421.5 2005 ST5B Excitation System"
   Modelica.Blocks.Interfaces.RealInput VUEL annotation (Placement(transformation(
         extent={{-10,-10},{10,10}},
         rotation=-90,
-        origin={-100,104}),iconTransformation(
+        origin={-100,104}), iconTransformation(
         extent={{-10,-10},{10,10}},
         origin={-130,-110},
         rotation=90)));
@@ -128,12 +128,6 @@ model ST5B "IEEE 421.5 2005 ST5B Excitation System"
         extent={{-10,-10},{10,10}},
         rotation=0,
         origin={180,-70})));
-protected
-  parameter Real VREF(fixed=false);
-  parameter Real Vm0(fixed=false);
-  parameter Real VR0(fixed=false);
-  parameter Real Efd0(fixed=false);
-public
   Modelica.Blocks.Sources.Constant const(k=VREF) annotation (Placement(transformation(extent={{-260,36},{-240,56}})));
   Modelica.Blocks.Interfaces.RealInput ETERM
     annotation (Placement(transformation(
@@ -144,12 +138,16 @@ public
     K=1,
     T=T_R,
     y_start=Vm0) annotation (Placement(transformation(extent={{-270,-10},{-250,10}})));
+protected
+  parameter Real VREF(fixed=false);
+  parameter Real Vm0(fixed=false);
+  parameter Real VR0(fixed=false);
+  parameter Real Efd0(fixed=false);
 initial equation
   VR0 = EFD0 + K_C*XADIFD;
   VREF = VR0/K_R + ECOMP;
   Vm0 = ECOMP;
   Efd0 = EFD0;
-
 equation
   connect(K_r.y, limiter.u) annotation (Line(
       points={{141,0.5},{152,0.5},{152,0},{158,0}},
@@ -247,3 +245,4 @@ equation
 <p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
 </html>"));
 end ST5B;
+
