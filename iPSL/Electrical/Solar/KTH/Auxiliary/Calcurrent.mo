@@ -1,104 +1,87 @@
-within iPSL.Electrical.Controls.PSAT.AVR;
+within iPSL.Electrical.Solar.KTH.Auxiliary;
 
 
-model AVRtypeIII
-  parameter Real vref=1;
-  parameter Real v0=1 "initial voltage after power flow";
-  parameter Real vfmax=5;
-  parameter Real vfmin=-5;
-  parameter Real K0=20 "regulator gain";
-  parameter Real T2=0.1 "regulator pole";
-  parameter Real T1=0.45 "Regulator zero";
-  parameter Real Te=0.1 "Field circuit time constant";
-  parameter Real vf0 "Initial field voltage";
-  parameter Real Tr=0.0015 "Measurement time constant";
-  parameter Real s0;
-  Real vm;
-  Real vr;
-  Real vf1;
-  Modelica.Blocks.Nonlinear.Limiter limiter1(uMax=vfmax, uMin=vfmin)
-    annotation (Placement(visible=true, transformation(
-        origin={5,0},
-        extent={{-10.0,-10.0},{10.0,10.0}},
-        rotation=0)));
-  Modelica.Blocks.Interfaces.RealInput v(start=1) annotation (Placement(
+model Calcurrent
+  parameter Real Udc0=700 "Intial dc voltage";
+  Modelica.Blocks.Interfaces.RealInput yi annotation (Placement(
       visible=true,
       transformation(
-        origin={-157.972,50},
+        origin={-155.0,40.0},
         extent={{-20.0,-20.0},{20.0,20.0}},
         rotation=0),
       iconTransformation(
-        origin={-120.0,50.0},
+        origin={-120.0,40.0},
         extent={{-20.0,-20.0},{20.0,20.0}},
         rotation=0)));
-  Modelica.Blocks.Interfaces.RealOutput vf annotation (Placement(
+  Modelica.Blocks.Interfaces.RealInput udc(start=Udc0) annotation (Placement(
       visible=true,
       transformation(
-        origin={160,0},
+        origin={-150.0,-15.0},
+        extent={{-20.0,-20.0},{20.0,20.0}},
+        rotation=0),
+      iconTransformation(
+        origin={-120.0,-50.0},
+        extent={{-20.0,-20.0},{20.0,20.0}},
+        rotation=0)));
+  Modelica.Blocks.Interfaces.RealOutput yo annotation (Placement(
+      visible=true,
+      transformation(
+        origin={157.5089,7.3692},
         extent={{-10.0,-10.0},{10.0,10.0}},
         rotation=0),
       iconTransformation(
         origin={110.0,0.0},
         extent={{-10.0,-10.0},{10.0,10.0}},
         rotation=0)));
-  Modelica.Blocks.Interfaces.RealInput vs annotation (Placement(transformation(extent={{-140,-60},{-100,-20}}), iconTransformation(extent={{-140,-60},{-100,-20}})));
-initial equation
-  vf1 = vf0;
-  vm = v0;
-  vr = K0*(1 - T1/T2)*(vref + vs - vm);
 equation
-  der(vm) = (v - vm)/Tr;
-  der(vr) = (K0*(1 - T1/T2)*(vref + vs - vm) - vr)/T2;
-  der(vf1) = ((vr + K0*(T1/T2)*(vref + vs - vm) + vf0)*(1 + s0*(v/v0 - 1)) - vf1)/Te;
-  limiter1.u = vf1;
-  limiter1.y = vf;
+  yo = yi/udc*1000000;
   annotation (
     Icon(coordinateSystem(
         extent={{-100.0,-100.0},{100.0,100.0}},
         preserveAspectRatio=true,
         initialScale=0.1,
-        grid={10,10}), graphics={Rectangle(
+        grid={10,10}), graphics={Text(
+          visible=true,
+          origin={-80.1182,38.5265},
+          fillPattern=FillPattern.Solid,
+          extent={{-13.2292,-11.4735},{13.2292,11.4735}},
+          textString="0",
+          fontName="Arial"),Text(
+          visible=true,
+          origin={-80.0,-51.4735},
+          fillPattern=FillPattern.Solid,
+          extent={{-13.2292,-11.4735},{13.2292,11.4735}},
+          textString="1",
+          fontName="Arial"),Text(
+          visible=true,
+          origin={76.7708,-0.0},
+          fillPattern=FillPattern.Solid,
+          extent={{-13.2292,-11.4735},{13.2292,11.4735}},
+          textString="out",
+          fontName="Arial"),Rectangle(
           visible=true,
           fillColor={255,255,255},
           extent={{-100.0,-100.0},{100.0,100.0}}),Text(
           visible=true,
-          origin={1.5941,2.9728},
+          origin={-2.514,58.5651},
           fillPattern=FillPattern.Solid,
-          extent={{-31.5941,-24.9719},{31.5941,24.9719}},
-          textString="AVRtypeIII",
-          fontName="Arial"),Text(
-          visible=true,
-          origin={-77.3525,52.4473},
-          fillPattern=FillPattern.Solid,
-          extent={{-17.3525,-17.5527},{17.3525,17.5527}},
-          textString="v",
-          fontName="Arial"),Text(
-          visible=true,
-          origin={-74.7671,-32.7013},
-          fillPattern=FillPattern.Solid,
-          extent={{-11.7427,-9.8104},{11.7427,9.8104}},
-          textString="vf0",
-          fontName="Arial"),Text(
-          visible=true,
-          origin={84.2416,-0.0},
-          fillPattern=FillPattern.Solid,
-          extent={{-8.7313,-11.5403},{8.7313,11.5403}},
-          textString="vf",
+          extent={{-27.486,-14.5669},{27.486,14.5669}},
+          textString="Calc_current",
           fontName="Arial")}),
     Diagram(coordinateSystem(
-        extent={{-148.5,-105},{148.5,105}},
-        preserveAspectRatio=false,
+        extent={{-148.5,-105.0},{148.5,105.0}},
+        preserveAspectRatio=true,
         initialScale=0.1,
         grid={5,5})),
     Documentation(info="<html>
 <table cellspacing=\"1\" cellpadding=\"1\" border=\"1\">
 <tr>
 <td><p>Reference</p></td>
-<td><p>AVR Type III, PSAT Manual 2.1.8</p></td>
+<td><p>TBD</p></td>
 </tr>
 <tr>
 <td><p>Last update</p></td>
-<td>September 2015</td>
+<td>TBD</td>
 </tr>
 <tr>
 <td><p>Author</p></td>
@@ -123,4 +106,4 @@ equation
 <p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
 <p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
 </html>"));
-end AVRtypeIII;
+end Calcurrent;

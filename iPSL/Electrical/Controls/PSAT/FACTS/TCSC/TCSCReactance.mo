@@ -66,26 +66,21 @@ equation
   p.ir - G*p.vr + B*p.vi = (y - b)*(p.vi - n.vi);
   annotation (
     Diagram(coordinateSystem(preserveAspectRatio=true, extent={{-100,-100},{100,100}}), graphics),
-    Icon(coordinateSystem(preserveAspectRatio=true, extent={{-100,-100},{100,100}}), graphics={
-        Rectangle(
+    Icon(coordinateSystem(preserveAspectRatio=true, extent={{-100,-100},{100,100}}), graphics={Rectangle(
           extent={{-60,38},{60,-40}},
           lineColor={0,0,255},
           fillColor={175,175,175},
-          fillPattern=FillPattern.Solid),
-        Line(
+          fillPattern=FillPattern.Solid),Line(
           points={{-60,0},{-100,0},{-100,0}},
           color={0,0,255},
-          smooth=Smooth.None),
-        Line(
+          smooth=Smooth.None),Line(
           points={{100,0},{60,0},{60,0}},
           color={0,0,255},
-          smooth=Smooth.None),
-        Line(
+          smooth=Smooth.None),Line(
           points={{-58,-60},{-42,-60},{40,58},{60,58},{60,58}},
           smooth=Smooth.None,
           color={255,0,0},
-          thickness=0.5),
-        Text(
+          thickness=0.5),Text(
           extent={{-24,62},{20,52}},
           lineColor={0,0,255},
           fillColor={175,175,175},
@@ -124,3 +119,4 @@ equation
 <p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
 </html>"));
 end TCSCReactance;
+

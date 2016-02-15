@@ -1,6 +1,10 @@
-within iPSL.Electrical.Solar;
-package KTH 
-annotation (Documentation(revisions="<html>
+within iPSL.Electrical.Solar.KTH;
+package PFblocks 
+annotation (Diagram(coordinateSystem(
+      extent={{-148.5,-105.0},{148.5,105.0}},
+      preserveAspectRatio=true,
+      initialScale=0.1,
+      grid={5,5})), Documentation(revisions="<html>
 <!--DISCLAIMER-->
 <p>Copyright 2015-2016 RTE (France), SmarTS Lab (Sweden), AIA (Spain) and DTU (Denmark)</p>
 <ul>
@@ -14,4 +18,4 @@ annotation (Documentation(revisions="<html>
 <p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
 <p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
 </html>"));
-end KTH;
+end PFblocks;

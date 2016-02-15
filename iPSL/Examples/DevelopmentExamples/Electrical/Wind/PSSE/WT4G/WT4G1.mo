@@ -1,4 +1,6 @@
 within iPSL.Examples.DevelopmentExamples.Electrical.Wind.PSSE.WT4G;
+
+
 model WT4G1
   import iPSL;
   constant Real pi=Modelica.Constants.pi;
@@ -15,7 +17,6 @@ model WT4G1
   parameter Real R1=2.50000E-2;
   parameter Real X1=2.50000E-2;
   parameter Real B1=0.05000;
-
   parameter Real dyrw[1, 9]=[0.20000E-01, 0.20000E-01, 0.40000, 0.90000, 1.1100, 1.2000, 2.0000, 2.0000, 0.20000E-01];
   iPSL.Electrical.Branches.PwLine pwLine(
     R=R1,
@@ -68,7 +69,6 @@ model WT4G1
   iPSL.Electrical.Buses.Bus BUS1 annotation (Placement(transformation(extent={{0,-10},{20,10}})));
   iPSL.Electrical.Buses.Bus INF annotation (Placement(transformation(extent={{60,-10},{80,10}})));
 equation
-
   connect(wT4G1.p, GEN.p) annotation (Line(points={{-38.8,-1.77636e-015},{-40,-1.77636e-015},{-40,0},{-30,0}}, color={0,0,255}));
   connect(GEN.p, pwLine2.p) annotation (Line(points={{-30,0},{-17,0}}, color={0,0,255}));
   connect(pwLine2.n, BUS1.p) annotation (Line(points={{-3,0},{3.5,0},{10,0}}, color={0,0,255}));

@@ -1,35 +1,45 @@
-within iPSL.Electrical.Loads.PSAT;
-model Mixed_Load "Mixed Load"
-  import Modelica.Constants.pi;
-  extends BaseClasses.baseLoad;
-  parameter Real Kpf=0 "Frequency coefficient for the active power (pu)";
-  parameter Real alpha=0 "Voltage exponent for the active power";
-  parameter Real Tpv=0.12 "Time constant of dV/dt for the active power (s)";
-  parameter Real Kqf=0 "Frequency coefficient for the reactive power (pu)";
-  parameter Real beta=0 "Voltage exponent for the reactive power";
-  parameter Real Tqv=0.075 "Time constant of dV/dt for the reactive power (s)";
-  parameter Real Tfv=0.005 "Time constant of voltage magnitude filter (s)";
-  parameter Real Tft=0.007 "Time constant of voltage angle filter (s)";
-  Real deltaw "Frequency deviation (pu)";
-protected
-  Real a "Auxiliary variable, voltage division";
-  Real b "Auxiliary variable, derivation";
-  Real x(start=-V_0/Tfv);
-  Real y(start=0);
-equation
-  a = V/V_0;
-  der(x) = ((-V/Tfv) - x)/Tfv;
-  b = x + V/Tfv;
-  der(y) = -1/Tft*(1/(2*pi*fn*Tft)*(Angle_V - angle_0) + y);
-  deltaw = y + 1/(2*pi*fn*Tft)*(Angle_V - angle_0);
-  P = Kpf*deltaw + P_0/S_b*(a^alpha + Tpv*b);
-  Q = Kqf*deltaw + Q_0/S_b*(a^beta + Tqv*b);
+within iPSL.Electrical.Solar.KTH.Auxiliary;
+
+
+model Terminator
+  Modelica.Blocks.Interfaces.RealInput V annotation (Placement(
+      visible=true,
+      transformation(
+        origin={-155.0,1.9703},
+        extent={{-20.0,-20.0},{20.0,20.0}},
+        rotation=0),
+      iconTransformation(
+        origin={-120.0,0.0},
+        extent={{-20.0,-20.0},{20.0,20.0}},
+        rotation=0)));
+  parameter Real T1=0.1;
+  parameter Real T2=0.05;
+  parameter Real Step=0.001;
+  parameter Real Iniv123;
+  parameter Real Inidv;
+  Real[:] Value;
+  Real v123(start=Iniv123);
+  Real dv(start=Inidv);
+  Integer i(start=1);
+algorithm
+  Value[i] := V;
+  if time < T1 then
+    v123 := Iniv123;
+    dv := Inidv;
+  else
+    v123 := Value[i - 50];
+    dv := Value[i - 100];
+  end if;
+  i := i + 1;
   annotation (
     Icon(coordinateSystem(
         extent={{-100.0,-100.0},{100.0,100.0}},
         preserveAspectRatio=true,
         initialScale=0.1,
-        grid={10,10})),
+        grid={10,10}), graphics={Rectangle(
+          visible=true,
+          fillColor={255,255,255},
+          extent={{-100.0,-100.0},{100.0,100.0}})}),
     Diagram(coordinateSystem(
         extent={{-148.5,-105.0},{148.5,105.0}},
         preserveAspectRatio=true,
@@ -39,11 +49,11 @@ equation
 <table cellspacing=\"1\" cellpadding=\"1\" border=\"1\">
 <tr>
 <td><p>Reference</p></td>
-<td><p>Mixed Load, PSAT Manual 2.1.8</p></td>
+<td><p>TBD</p></td>
 </tr>
 <tr>
 <td><p>Last update</p></td>
-<td>September 2015</td>
+<td>TBD</td>
 </tr>
 <tr>
 <td><p>Author</p></td>
@@ -54,9 +64,6 @@ equation
 <td><p><a href=\"mailto:luigiv@kth.se\">luigiv@kth.se</a></p></td>
 </tr>
 </table>
-</html>
-<html>
-<pre><span style=\"font-family: Courier New,courier; color: #006400;\">Remember:&nbsp;Pz+Pi+Pp=1&nbsp;and&nbsp;Qz+Qi+Qp=1;</span></pre>
 </html>", revisions="<html>
 <!--DISCLAIMER-->
 <p>Copyright 2015-2016 RTE (France), SmarTS Lab (Sweden), AIA (Spain) and DTU (Denmark)</p>
@@ -71,5 +78,4 @@ equation
 <p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
 <p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
 </html>"));
-end Mixed_Load;
-
+end Terminator;
