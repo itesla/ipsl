@@ -1,5 +1,7 @@
 within iPSL.Examples.FACTS;
 model StatcomCode_Test
+  import Modelica.Constants.pi;
+
   iPSL.Electrical.Branches.PwLine pwLine4(
     B=0.001/2,
     G=0,
@@ -20,14 +22,14 @@ model StatcomCode_Test
     D=1,
     Sn=370,
     V_0=1.027606413803688,
-    angle_0=0.036282466109908,
-    P_0=0.800000000076548,
-    Q_0=0.500000000133379,
     V_b=400,
-    Vn=200,
     ra=0.001,
     xd1=0.302,
-    M=10) annotation (Placement(transformation(
+    M=10,
+    angle_0=0.036282466109908*180/pi,
+    P_0=0.800000000076548*SysData.S_b,
+    Q_0=0.500000000133379*SysData.S_b,
+    Vn=400) annotation (Placement(transformation(
         extent={{-15,-16},{15,16}},
         rotation=180,
         origin={123,0})));
@@ -50,15 +52,15 @@ model StatcomCode_Test
   iPSL.Electrical.Machines.PSAT.SecondOrder.Order2 order2_Inputs_Outputs(
     Sn=370,
     D=5,
-    P_0=0.004219210312137,
-    Q_0=-0.001421467052118,
     V_b=400,
     V_0=1,
     angle_0=0,
     Vn=400,
     ra=0.001,
     xd1=0.302,
-    M=10) annotation (Placement(transformation(extent={{-78,-8},{-58,12}})));
+    M=10,
+    P_0=0.004219210312137*SysData.S_b,
+    Q_0=-0.001421467052118*SysData.S_b) annotation (Placement(transformation(extent={{-78,-8},{-58,12}})));
   Modelica.Blocks.Sources.Pulse pulse(
     period=10,
     startTime=4.2,
@@ -76,20 +78,22 @@ model StatcomCode_Test
     k3=0,
     k1=1,
     k2=1) annotation (Placement(transformation(extent={{-118,-10},{-98,10}})));
-  iPSL.Electrical.Controls.PSAT.FACTS.STATCOM.STATCOM sTATCOM3_1(V_0=1, angle_0=-0.000213067852480) annotation (Placement(transformation(extent={{-14,-54},{6,-34}})));
+  iPSL.Electrical.Controls.PSAT.FACTS.STATCOM.STATCOM sTATCOM3_1(V_0=1, angle_0=-0.000213067852480*180/pi) annotation (Placement(transformation(extent={{-14,-54},{6,-34}})));
   iPSL.Electrical.Buses.Bus bus annotation (Placement(transformation(extent={{4,-8},{24,12}})));
   iPSL.Electrical.Loads.PSAT.LOADPQ_variation lOADPQ(
-    P2=0,
-    P3=0,
-    t1=7,
-    t3=8,
-    t4=30,
-    Q3=+0.42,
-    Q2=0.1,
-    t2=7.001,
-    P_0=0.8,
-    Q_0=0.6) annotation (Placement(transformation(extent={{38,-52},{58,-32}})));
-  inner iPSL.Electrical.SystemBase SysData annotation (Placement(transformation(extent={{-100,60},{-76,80}})));
+    t_start_1=7,
+    t_end_1=7.001,
+    dP1=0,
+    t_start_2=8,
+    dP2=0,
+    P_0=0.8*SysData.S_b,
+    Q_0=0.6*SysData.S_b,
+    t_end_2=50,
+    angle_0=-0.000213067852480*180/pi,
+    dQ1=0.1*SysData.S_b,
+    dQ2=0.42*SysData.S_b) annotation (Placement(transformation(extent={{38,-52},{58,-32}})));
+
+  inner iPSL.Electrical.SystemBase SysData annotation (Placement(transformation(extent={{-116,60},{-76,80}})));
 equation
   connect(pwLine1.n, pwLine3.n) annotation (Line(
       points={{60,17},{78,17},{78,-17},{62,-17}},
