@@ -33,9 +33,9 @@ protected
   parameter Real vi0=V_0*sin(anglev_rad) "Initialitation";
   parameter Real ir0=(p0*vr0 + q0*vi0)/(vr0^2 + vi0^2) "Initialitation";
   parameter Real ii0=(p0*vi0 - q0*vr0)/(vr0^2 + vi0^2) "Initialitation";
-  parameter Complex S_P=(Complex((1 - a.re - b.re)*S_p.re, (1 - a.im - b.im)*S_p.im))/S_b;
-  parameter Complex S_I=(S_i + Complex(a.re*S_p.re/V_0, a.im*S_p.im/V_0))/S_b;
-  parameter Complex S_Y=(S_y + Complex(b.re*S_p.re/V_0^2, b.im*S_p.im/V_0^2))/S_b;
+  parameter Complex S_P=(Complex((1 - a.re - b.re)*S_p.re, (1 - a.im - b.im)*S_p.im))/S_b "pu";
+  parameter Complex S_I=(S_i + Complex(a.re*S_p.re/V_0, a.im*S_p.im/V_0))/S_b "pu";
+  parameter Complex S_Y=(S_y + Complex(b.re*S_p.re/V_0^2, b.im*S_p.im/V_0^2))/S_b "pu";
   //Constant current load vary function when voltage is below 0.5
   parameter Real a2=1.502;
   parameter Real b2=1.769;
