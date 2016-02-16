@@ -2,7 +2,6 @@ within iPSL.Electrical.Controls.PSAT.FACTS;
 package TCSC 
 
 
-
 annotation (Documentation(revisions="<html>
 <!--DISCLAIMER-->
 <p>Copyright 2015-2016 RTE (France), SmarTS Lab (Sweden), AIA (Spain) and DTU (Denmark)</p>

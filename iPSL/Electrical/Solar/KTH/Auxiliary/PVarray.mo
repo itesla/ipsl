@@ -84,40 +84,47 @@ equation
         extent={{-100.0,-100.0},{100.0,100.0}},
         preserveAspectRatio=true,
         initialScale=0.1,
-        grid={10,10}), graphics={Rectangle(
+        grid={10,10}), graphics={
+        Rectangle(
           visible=true,
           fillColor={255,255,255},
-          extent={{-100.0,-100.0},{100.0,100.0}}),Text(
+          extent={{-100.0,-100.0},{100.0,100.0}}),
+        Text(
           visible=true,
           origin={40.0,0.0},
           fillPattern=FillPattern.Solid,
           extent={{-45.9305,-23.3368},{45.9305,23.3368}},
           textString="%name",
-          fontName="Arial"),Text(
+          fontName="Arial"),
+        Text(
           visible=true,
           origin={-46.5008,63.2046},
           fillPattern=FillPattern.Solid,
           extent={{-51.9003,-55.1779},{51.9003,55.1779}},
           textString="Vdc(ex=35)",
-          fontName="Arial"),Text(
+          fontName="Arial"),
+        Text(
           visible=true,
           origin={-80.0,0.0},
           fillPattern=FillPattern.Solid,
           extent={{-12.8628,-13.6751},{12.8628,13.6751}},
           textString="E",
-          fontName="Arial"),Text(
+          fontName="Arial"),
+        Text(
           visible=true,
           origin={-80.0,-70.0},
           fillPattern=FillPattern.Solid,
           extent={{-12.8628,-13.6751},{12.8628,13.6751}},
           textString="T",
-          fontName="Arial"),Text(
+          fontName="Arial"),
+        Text(
           visible=true,
           origin={70.7131,40.0},
           fillPattern=FillPattern.Solid,
           extent={{-20.7131,-17.8652},{20.7131,17.8652}},
           textString="Ipv(4.58)",
-          fontName="Arial"),Text(
+          fontName="Arial"),
+        Text(
           visible=true,
           origin={70.0,-37.1013},
           fillPattern=FillPattern.Solid,

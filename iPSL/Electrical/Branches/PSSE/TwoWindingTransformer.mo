@@ -53,20 +53,14 @@ equation
   conj(ii - ei*Ym)*t = conj(-ij);
 
   annotation (
-    Icon(coordinateSystem(preserveAspectRatio=false, extent={{-60,-40},{60,40}}), graphics={
-        Rectangle(
+    Icon(coordinateSystem(preserveAspectRatio=false, extent={{-60,-40},{60,40}}), graphics={Rectangle(
           extent={{-60,40},{60,-40}},
           lineColor={255,255,255},
           fillColor={255,255,255},
-          fillPattern=FillPattern.Solid),
-        Ellipse(extent={{-50,30},{10,-30}},lineColor={28,108,200}),
-        Ellipse(extent={{-12,30},{52,-30}},lineColor={28,108,200}),
-        Line(
+          fillPattern=FillPattern.Solid),Ellipse(extent={{-50,30},{10,-30}}, lineColor={28,108,200}),Ellipse(extent={{-12,30},{52,-30}}, lineColor={28,108,200}),Line(
           points={{-60,0},{-50,0}},
           color={28,108,200},
-          arrow={Arrow.None,Arrow.Filled}),
-        Line(points={{52,0},{60,0}}, color={28,108,200}),
-        Polygon(
+          arrow={Arrow.None,Arrow.Filled}),Line(points={{52,0},{60,0}}, color={28,108,200}),Polygon(
           points={{-56,4},{-50,0},{-56,-4},{-56,4}},
           lineColor={28,108,200},
           fillColor={28,108,200},
