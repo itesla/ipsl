@@ -1,5 +1,5 @@
 within IEEE9;
-model IEEE_9_Buses_Statcom
+model IEEE_9_Buses
   import Modelica.Constants.pi;
   iPSL.Electrical.Branches.PSAT.TwoWindingTransformer twoWindingTransformer(
     kT=16.5/230,
@@ -16,7 +16,7 @@ model IEEE_9_Buses_Statcom
     G=0,
     B=0.079) annotation (Placement(transformation(
         extent={{-10,-10},{10,10}},
-        rotation=90,
+        rotation=270,
         origin={86,-20})));
   iPSL.Electrical.Branches.PwLine line_4_5(
     G=0,
@@ -24,23 +24,25 @@ model IEEE_9_Buses_Statcom
     X=0.085,
     B=0.088) annotation (Placement(transformation(
         extent={{-10,-10},{10,10}},
-        rotation=90,
+        rotation=270,
         origin={-72,-20})));
   iPSL.Electrical.Loads.PSAT.VoltDependant lOADPQ(
     V_b=230,
-    V_0=0.997968971576412,
-    angle_0=-0.069547629203294*180/pi,
+    angle_0=-0.069617784448685*180/pi,
+    V_0=0.995630859628167,
+    Sn=100,
     P_0=1.25*SysData.S_b,
     Q_0=0.5*SysData.S_b) annotation (Placement(transformation(
         extent={{-7,-7},{7,7}},
         rotation=0,
-        origin={-99,-9})));
+        origin={-99,-11})));
   iPSL.Electrical.Loads.PSAT.VoltDependant PQ1(
     V_b=230,
-    V_0=1.014662489636656,
-    angle_0=-0.064300235023830*180/pi,
     P_0=0.9*SysData.S_b,
-    Q_0=0.3*SysData.S_b) annotation (Placement(transformation(
+    Q_0=0.3*SysData.S_b,
+    angle_0=-0.064357203188830*180/pi,
+    V_0=1.012654326639182,
+    Sn=100) annotation (Placement(transformation(
         extent={{-7,-7},{7,7}},
         rotation=0,
         origin={109,-13})));
@@ -66,7 +68,7 @@ model IEEE_9_Buses_Statcom
     X=0.1008,
     B=0.1045) annotation (Placement(transformation(
         extent={{-10,-10},{10,10}},
-        rotation=0,
+        rotation=180,
         origin={40,90})));
   iPSL.Electrical.Branches.PSAT.TwoWindingTransformer twoWindingTransformer1(
     r=0,
@@ -88,33 +90,18 @@ model IEEE_9_Buses_Statcom
         rotation=0,
         origin={-102,90})));
   iPSL.Electrical.Loads.PSAT.VoltDependant lOADPQ1(
-    V_0=1.025,
-    angle_0=0.011660880329004*180/pi,
     V_b=230,
     P_0=1*SysData.S_b,
-    Q_0=0.35*SysData.S_b) annotation (Placement(transformation(
+    Q_0=0.35*SysData.S_b,
+    angle_0=0.012697901381466*180/pi,
+    V_0=1.015882581760390,
+    Sn=100) annotation (Placement(transformation(
         extent={{-7,-7},{7,7}},
         rotation=0,
-        origin={-9,65})));
-  iPSL.Electrical.Controls.PSAT.FACTS.STATCOM.STATCOM sTATCOM3_1(
-    Qg=0.128730182132440,
-    Tr=0.1,
-    Sn=100,
-    fn=60,
-    V_0=1.025,
-    Vbus=230,
-    Vn=230,
-    Sb=SysData.S_b,
-    angle_0=0.011660880329004*180/pi,
-    i_Min=-0.8,
-    Kr=100,
-    i_Max=1.2) annotation (Placement(transformation(
-        extent={{-6,-6},{6,6}},
-        rotation=90,
-        origin={12,66})));
-  iPSL.Electrical.Buses.Bus B2 annotation (Placement(transformation(extent={{-130,80},{-110,100}})));
+        origin={7,53})));
+  iPSL.Electrical.Buses.Bus B2(V_0=1.025, angle_0=0.161966652912444*180/pi) annotation (Placement(transformation(extent={{-130,80},{-110,100}})));
   iPSL.Electrical.Buses.Bus B7 annotation (Placement(transformation(extent={{-90,80},{-70,100}})));
-  iPSL.Electrical.Buses.Bus B8(V_0=1.025) annotation (Placement(transformation(
+  iPSL.Electrical.Buses.Bus B8 annotation (Placement(transformation(
         extent={{-10,-10},{10,10}},
         rotation=0,
         origin={0,90})));
@@ -132,35 +119,32 @@ model IEEE_9_Buses_Statcom
         extent={{-12,-12},{12,12}},
         rotation=-90,
         origin={0,-46})));
-  iPSL.Electrical.Buses.Bus B1 annotation (Placement(transformation(
+  iPSL.Electrical.Buses.Bus B1(angle_0=0) annotation (Placement(transformation(
         extent={{-12,-12},{12,12}},
         rotation=-90,
         origin={0,-86})));
-  iPSL.Electrical.Branches.PwLine2Openings ine_7_8(
-    R=0.0085,
-    X=0.072,
-    G=0,
-    B=0.0745,
-    t2=110,
-    t1=30) annotation (Placement(transformation(extent={{-50,80},{-30,100}})));
   Generation_Groups.Gen1 gen1(
     V_b=18,
     V_0=1.025,
     height_1=0.05,
     tstart_1=2,
-    angle_0=0.160490018910725*180/pi,
-    P_0=1.63*SysData.S_b,
-    Q_0=0.001552891584958*SysData.S_b,
-    refdisturb_1=false) annotation (Placement(transformation(extent={{-160,80},{-140,100}})));
+    refdisturb_1=false,
+    angle_0=0.161966652912444*180/pi,
+    vref0=1.120103884682511,
+    P_0=1.629999999999999*SysData.S_b,
+    Q_0=0.066536560198189*SysData.S_b,
+    vf0=1.789323314329606) annotation (Placement(transformation(extent={{-160,80},{-140,100}})));
   Generation_Groups.Gen2 gen2(
     V_b=13.8,
     V_0=1.025,
     height_2=0.05,
     tstart_2=2,
     refdisturb_2=false,
-    P_0=0.85*SysData.S_b,
-    Q_0=-0.163501111031896*SysData.S_b,
-    angle_0=0.080629575357894*180/pi) annotation (Placement(transformation(extent={{160,80},{140,100}})));
+    angle_0=0.081415270775183*180/pi,
+    vref0=1.097573933623472,
+    P_0=0.850000000000000*SysData.S_b,
+    Q_0=-0.108597088920594*SysData.S_b,
+    vf0=1.402994304406186) annotation (Placement(transformation(extent={{160,80},{140,100}})));
   Generation_Groups.Gen3 gen3(
     V_0=1.040000000000000,
     angle_0=0,
@@ -168,20 +152,29 @@ model IEEE_9_Buses_Statcom
     tstart_3=2,
     refdisturb_3=false,
     V_b=16.5,
-    Q_0=0.248141030193284*SysData.S_b,
-    P_0=0.715870954698346*SysData.S_b) annotation (Placement(transformation(
+    vref0=1.095242742681042,
+    Q_0=0.270459279594234*SysData.S_b,
+    vf0=1.082148046273888,
+    P_0=0.716410214993680*SysData.S_b) annotation (Placement(transformation(
         extent={{-10,-10},{10,10}},
         rotation=90,
-        origin={0,-106})));
-  inner iPSL.Electrical.SystemBase SysData(S_b=100, fn=60) annotation (Placement(transformation(extent={{120,-120},{180,-80}})));
+        origin={0,-104})));
+  inner iPSL.Electrical.SystemBase SysData(S_b=100, fn=60) annotation (Placement(transformation(extent={{152,-118},{176,-98}})));
   iPSL.Electrical.Events.PwFault pwFault2(
     X=0.01,
-    R=0.01,
     t1=3,
-    t2=3.1) annotation (Placement(transformation(
+    t2=3.1,
+    R=0.01) annotation (Placement(transformation(
         extent={{-7,-7},{7,7}},
         rotation=270,
-        origin={59,67})));
+        origin={57,61})));
+  iPSL.Electrical.Branches.PwLine2Openings pwLine2Openings(
+    R=0.0085,
+    X=0.072,
+    G=0,
+    B=0.0745,
+    t1=30,
+    t2=35) annotation (Placement(transformation(extent={{-52,80},{-32,100}})));
 equation
 
   connect(line_5_7.n, B7.p) annotation (Line(
@@ -200,16 +193,8 @@ equation
       points={{113,90},{120,90}},
       color={0,0,255},
       smooth=Smooth.None));
-  connect(line_6_4.n, B6.p) annotation (Line(
-      points={{86,-13},{86,20}},
-      color={0,0,255},
-      smooth=Smooth.None));
   connect(B6.p, line_9_6.p) annotation (Line(
       points={{86,20},{86,51}},
-      color={0,0,255},
-      smooth=Smooth.None));
-  connect(line_4_5.n, B5.p) annotation (Line(
-      points={{-72,-13},{-72,20}},
       color={0,0,255},
       smooth=Smooth.None));
   connect(line_5_7.p, B5.p) annotation (Line(
@@ -221,23 +206,24 @@ equation
       color={0,0,255},
       smooth=Smooth.None));
 
-  connect(B7.p, ine_7_8.p) annotation (Line(points={{-80,90},{-47,90}}, color={0,0,255}));
-  connect(ine_7_8.n, B8.p) annotation (Line(points={{-33,90},{-33,90},{0,90}}, color={0,0,255}));
   connect(B2.p, gen1.pwPin) annotation (Line(points={{-120,90},{-139,90}}, color={0,0,255}));
   connect(B2.p, twoWindingTransformer2.p) annotation (Line(points={{-120,90},{-110,90},{-113,90}}, color={0,0,255}));
   connect(twoWindingTransformer2.n, B7.p) annotation (Line(points={{-91,90},{-91,90},{-80,90}}, color={0,0,255}));
   connect(gen2.pwPin, B3.p) annotation (Line(points={{139,90},{129.5,90},{120,90}}, color={0,0,255}));
-  connect(lOADPQ.p, B5.p) annotation (Line(points={{-99,-1.3},{-99,4},{-72,4},{-72,20}}, color={0,0,255}));
-  connect(line_4_5.p, B4.p) annotation (Line(points={{-72,-27},{-72,-27},{-72,-42},{0,-42},{0,-46}}, color={0,0,255}));
-  connect(line_6_4.p, B4.p) annotation (Line(points={{86,-27},{86,-42},{0,-42},{0,-46}}, color={0,0,255}));
-  connect(PQ1.p, B6.p) annotation (Line(points={{109,-5.3},{109,0},{86,0},{86,20}}, color={0,0,255}));
-  connect(lOADPQ1.p, B8.p) annotation (Line(points={{-9,72.7},{-9,90},{0,90}}, color={0,0,255}));
+  connect(lOADPQ.p, B5.p) annotation (Line(points={{-99,-3.3},{-99,4},{-72,4},{-72,20}}, color={0,0,255}));
   connect(B4.p, twoWindingTransformer.n) annotation (Line(points={{0,-46},{0,-55}}, color={0,0,255}));
-  connect(gen3.pwPin, B1.p) annotation (Line(points={{0,-95},{0,-86}}, color={0,0,255}));
-  connect(line_8_9.n, B9.p) annotation (Line(points={{47,90},{63.5,90},{80,90}}, color={0,0,255}));
-  connect(B8.p, line_8_9.p) annotation (Line(points={{0,90},{33,90}}, color={0,0,255}));
-  connect(sTATCOM3_1.p, line_8_9.p) annotation (Line(points={{12,72.6},{12,90},{33,90}}, color={0,0,255}));
-  connect(B9.p, pwFault2.p) annotation (Line(points={{80,90},{59,90},{59,75.1667}}, color={0,0,255}));
+  connect(gen3.pwPin, B1.p) annotation (Line(points={{0,-93},{0,-86}}, color={0,0,255}));
+  connect(B8.p, lOADPQ1.p) annotation (Line(points={{0,90},{6,90},{6,88},{7,88},{7,60.7}}, color={0,0,255}));
+  connect(line_8_9.p, B9.p) annotation (Line(points={{47,90},{80,90}}, color={0,0,255}));
+  connect(B8.p, line_8_9.n) annotation (Line(points={{0,90},{33,90}}, color={0,0,255}));
+  connect(B5.p, line_4_5.p) annotation (Line(points={{-72,20},{-72,-13}}, color={0,0,255}));
+  connect(B4.p, line_4_5.n) annotation (Line(points={{0,-46},{0,-42},{-72,-42},{-72,-27}}, color={0,0,255}));
+  connect(B6.p, line_6_4.p) annotation (Line(points={{86,20},{86,-13}}, color={0,0,255}));
+  connect(B4.p, line_6_4.n) annotation (Line(points={{0,-46},{-2,-46},{-2,-42},{86,-42},{86,-27}}, color={0,0,255}));
+  connect(B6.p, PQ1.p) annotation (Line(points={{86,20},{86,20},{86,2},{86,4},{109,4},{109,-5.3}}, color={0,0,255}));
+  connect(B9.p, pwFault2.p) annotation (Line(points={{80,90},{57,90},{57,69.1667}}, color={0,0,255}));
+  connect(B7.p, pwLine2Openings.p) annotation (Line(points={{-80,90},{-49,90}}, color={0,0,255}));
+  connect(B8.p, pwLine2Openings.n) annotation (Line(points={{0,90},{-35,90}}, color={0,0,255}));
   annotation (
     Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-180,-120},{180,120}})),
     Icon(coordinateSystem(extent={{-180,-120},{180,120}})),
@@ -267,4 +253,4 @@ equation
       __Dymola_fixedstepsize=0.001,
       __Dymola_Algorithm="Rkfix2"),
     __Dymola_experimentSetupOutput);
-end IEEE_9_Buses_Statcom;
+end IEEE_9_Buses;
