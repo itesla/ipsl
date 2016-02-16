@@ -1,7 +1,6 @@
 within iPSL.Examples.DevelopmentExamples.Electrical.Machines.PSSE;
 model GENROU "SMIB system with one load and GENROE model"
   import iPSL;
-
   iPSL.Electrical.Branches.PwLine pwLine(
     R=0.001,
     X=0.2,
@@ -77,6 +76,7 @@ model GENROU "SMIB system with one load and GENROE model"
     Xpp=0.2,
     H=4.28) annotation (Placement(transformation(extent={{-82,-10},{-42,30}})));
   iPSL.Electrical.Buses.Bus GEN annotation (Placement(transformation(extent={{-44,0},{-24,20}})));
+  iPSL.Copyright copyright annotation (Placement(transformation(extent={{-100,-100},{-80,-80}})));
 equation
   connect(pwLine.n, pwLine1.p) annotation (Line(
       points={{-9,10},{3.5,10},{3.5,24},{29,24}},
@@ -112,16 +112,9 @@ equation
   connect(GEN.p, pwLine.p) annotation (Line(points={{-34,10},{-23,10}}, color={0,0,255}));
   annotation (Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,100}})), Documentation(revisions="<html>
 <!--DISCLAIMER-->
-<p>Copyright 2015-2016 RTE (France), SmarTS Lab (Sweden), AIA (Spain) and DTU (Denmark)</p>
-<ul>
-<li>RTE: <a href=\"http://www.rte-france.com\">http://www.rte-france.com</a></li>
-<li>SmarTS Lab, research group at KTH: <a href=\"https://www.kth.se/en\">https://www.kth.se/en</a></li>
-<li>AIA: <a href=\"http://www.aia.es/en/energy\"> http://www.aia.es/en/energy</a></li>
-<li>DTU: <a href=\"http://www.dtu.dk/english\"> http://www.dtu.dk/english</a></li>
-</ul>
-<p>The authors can be contacted by email: <a href=\"mailto:info@itesla-ipsl.org\">info@itesla-ipsl.org</a></p>
-
-<p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
-<p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
+<h5>DISCLAIMER</h5>
+<p>This file is subject to the terms and conditions defined in
+<a href=\"modelica://iPSL.Copyright\">iPSL.Copyright</a>,
+which is part of this source code package.</p>
 </html>"));
 end GENROU;
