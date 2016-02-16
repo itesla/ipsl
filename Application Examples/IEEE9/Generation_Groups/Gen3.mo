@@ -1,6 +1,8 @@
 within IEEE9.Generation_Groups;
 model Gen3
   extends iPSL.Electrical.Essentials.pfComponent;
+  parameter Real vf0=1.079018784709528;
+  parameter Real vref0=1.095077501312303;
 
   parameter Real height_3 annotation (Dialog(group="AVR Disturbance"));
   parameter Real tstart_3 annotation (Dialog(group="AVR Disturbance"));
@@ -21,16 +23,17 @@ model Gen3
     Q_0=Q_0,
     M=47.28,
     D=0,
-    Vn=16.5) annotation (Placement(transformation(
+    Vn=16.5,
+    angle_0=angle_0) annotation (Placement(transformation(
         extent={{-10,-10},{10,10}},
         rotation=0,
         origin={28,14})));
   iPSL.Electrical.Controls.PSAT.AVR.AVRTypeII AVR(
     vrmin=-5,
     vrmax=5,
-    v0=1.04,
-    vf0=1.079018784709528,
-    vref0=1.095077501312303,
+    v0=V_0,
+    vf0=vf0,
+    vref0=vref0,
     Ka=20,
     Ta=0.2,
     Kf=0.063,
@@ -43,25 +46,25 @@ model Gen3
         extent={{-10,-10},{10,10}},
         rotation=0,
         origin={-6,10})));
-  Modelica.Blocks.Sources.Constant vref2(k=1.095077501312303) annotation (Placement(transformation(
+  Modelica.Blocks.Sources.Constant vref2(k=vref0) annotation (Placement(transformation(
         extent={{-5,-5},{5,5}},
         rotation=0,
         origin={-71,25})));
   Modelica.Blocks.Sources.Step step(
     startTime=tstart_3,
     height=height_3,
-    offset=1.095077501312303) annotation (Placement(transformation(
+    offset=vref0) annotation (Placement(transformation(
         extent={{-4,-4},{4,4}},
         rotation=90,
         origin={-56,-2})));
   Modelica.Blocks.Logical.Switch switch1 annotation (Placement(transformation(extent={{-50,12},{-40,22}})));
   Modelica.Blocks.Sources.BooleanConstant booleanConstant(k=refdisturb_3) annotation (Placement(transformation(extent={{-80,2},{-70,12}})));
   iPSL.Connectors.PwPin pwPin annotation (Placement(transformation(extent={{100,-10},{120,10}})));
-  Real P_MW;
-  Real Q_MVA;
+  //Real P_MW;
+  //Real Q_MVA;
 equation
-  P_MW = gen.P*S_b;
-  Q_MVA = gen.Q*S_b;
+  //P_MW = gen.P*S_b;
+  //Q_MVA = gen.Q*S_b;
   connect(gen.v, AVR.v) annotation (Line(
       points={{39,17},{48,17},{48,-14},{-22,-14},{-22,9},{-14,9}},
       color={0,0,127},
