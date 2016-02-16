@@ -36,18 +36,15 @@ model GENROU "SMIB system with one load and GENROE model"
     Q_0=8.006544,
     H=0) annotation (Placement(transformation(extent={{108,0},{86,22}})));
   iPSL.Electrical.Loads.PSSE.Load_variation constantLoad(
-    S_p(re=0.5, im=0.1),
-    S_i(im=0, re=0),
-    S_y(re=0, im=0),
-    a(re=1, im=0),
-    b(re=0, im=1),
     PQBRAK=0.7,
     d_t=0,
     d_P=0,
     V_0=0.9919935,
     angle_0=-0.5762684,
     t1=0,
-    characteristic=2) annotation (Placement(transformation(extent={{8,-52},{30,-28}})));
+    characteristic=2,
+    P_0=50,
+    Q_0=10)           annotation (Placement(transformation(extent={{8,-52},{30,-28}})));
   iPSL.Electrical.Events.PwFault pwFault(
     t1=2,
     t2=2.15,
@@ -77,6 +74,8 @@ model GENROU "SMIB system with one load and GENROE model"
     Xpp=0.2,
     H=4.28) annotation (Placement(transformation(extent={{-82,-10},{-42,30}})));
   iPSL.Electrical.Buses.Bus GEN annotation (Placement(transformation(extent={{-44,0},{-24,20}})));
+  inner iPSL.Electrical.SystemBase SysData
+    annotation (Placement(transformation(extent={{-98,78},{-46,98}})));
 equation
   connect(pwLine.n, pwLine1.p) annotation (Line(
       points={{-9,10},{3.5,10},{3.5,24},{29,24}},
