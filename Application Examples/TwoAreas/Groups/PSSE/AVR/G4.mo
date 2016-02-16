@@ -18,14 +18,14 @@ model G4
     D=0.02,
     S12=0.802,
     S10=0.18600,
-    M_b=900,
     V_b=V_b,
     V_0=V_0,
     angle_0=angle_0,
     P_0=P_0,
     Q_0=Q_0,
     Xpq=0.55,
-    Tpq0=0.4) annotation (Placement(transformation(extent={{4,-18},{44,18}})));
+    Tpq0=0.4,
+    M_b=350) annotation (Placement(transformation(extent={{4,-18},{44,18}})));
   iPSL.Electrical.Controls.PSSE.ES.ESDC1A.ESDC1A eSDC1A(
     T_R=0.05,
     K_A=20,

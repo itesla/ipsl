@@ -1,4 +1,6 @@
 within iPSL.Electrical.Controls.PSSE.PSS.STAB3;
+
+
 model STAB3
   parameter Real T_t "(s)";
   parameter Real T_X1 ">0 (s)";

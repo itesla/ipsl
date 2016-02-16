@@ -1,4 +1,6 @@
 within iPSL.Electrical.Controls.PSSE.PSS.STABNI;
+
+
 model STABNI
   parameter Real K ">= 0";
   parameter Real T_1 ">0 (s)";

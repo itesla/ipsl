@@ -1,4 +1,6 @@
 within iPSL.Electrical.Machines.PSAT.BaseClasses;
+
+
 partial model baseMachine
   extends iPSL.Electrical.Essentials.pfComponent;
   import Modelica.Constants.pi;
