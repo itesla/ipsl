@@ -2,11 +2,12 @@ within iPSL.Electrical.Branches.PSSE;
 model TwoWindingTransformer "Static Two-winding transformer according to PSS/E, without phase shift"
   outer iPSL.Electrical.SystemBase SysData;
   import Modelica.Constants.pi;
-  import Modelica.ComplexMath.*;
+  import Modelica.ComplexMath.j;
+  import Modelica.ComplexMath.conj;
   iPSL.Connectors.PwPin p annotation (Placement(transformation(extent={{-80,-10},{-60,10}}), iconTransformation(extent={{-80,-10},{-60,10}})));
   iPSL.Connectors.PwPin n annotation (Placement(transformation(extent={{60,-10},{80,10}}),iconTransformation(extent={{60,-10},{80,10}})));
 
-  parameter Real S_b=SysData.S_b "System base power (MVA)";
+  parameter Real S_b=SysData.S_b "System base power (MVA)" annotation (Dialog(enable=false));
 
   parameter Integer CZ=1 "Impedance I/O code"
     annotation (Dialog(tab="Transformer impedance data"), choices(
@@ -36,7 +37,7 @@ protected
   parameter Real r=if (CZ == 1) then R else R*S_b/S_n;
   parameter Real x=if (CZ == 1) then X else X*S_b/S_n;
 
-  parameter Real t=T1/T2;
+  parameter Complex t=T1/T2*(cos(ANG1/180*pi) + j*sin(ANG1/180*pi));
   parameter Real T2=if (CW == 1) then t2 elseif (CW == 3) then t2*(VNOM2_int/VB2) else t2/VB2;
   parameter Real T1=if (CW == 1) then t1 elseif (CW == 3) then t1*(VNOM1_int/VB1) else t1/VB1;
 
@@ -50,17 +51,23 @@ protected
 
 equation
   ej = ei/t + xeq*ij;
-  conj(ii - ei*Ym)*t = conj(-ij);
+  (ii - ei*Ym)*conj(t) = -ij;
 
   annotation (
-    Icon(coordinateSystem(preserveAspectRatio=false, extent={{-60,-40},{60,40}}), graphics={Rectangle(
+    Icon(coordinateSystem(preserveAspectRatio=false, extent={{-60,-40},{60,40}}), graphics={
+        Rectangle(
           extent={{-60,40},{60,-40}},
           lineColor={255,255,255},
           fillColor={255,255,255},
-          fillPattern=FillPattern.Solid),Ellipse(extent={{-50,30},{10,-30}}, lineColor={28,108,200}),Ellipse(extent={{-12,30},{52,-30}}, lineColor={28,108,200}),Line(
+          fillPattern=FillPattern.Solid),
+        Ellipse(extent={{-50,30},{10,-30}},lineColor={28,108,200}),
+        Ellipse(extent={{-12,30},{52,-30}},lineColor={28,108,200}),
+        Line(
           points={{-60,0},{-50,0}},
           color={28,108,200},
-          arrow={Arrow.None,Arrow.Filled}),Line(points={{52,0},{60,0}}, color={28,108,200}),Polygon(
+          arrow={Arrow.None,Arrow.Filled}),
+        Line(points={{52,0},{60,0}}, color={28,108,200}),
+        Polygon(
           points={{-56,4},{-50,0},{-56,-4},{-56,4}},
           lineColor={28,108,200},
           fillColor={28,108,200},
