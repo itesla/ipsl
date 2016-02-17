@@ -8,7 +8,6 @@ block LeadLagLim "Lead-Lag filter with a non-windup limiter"
   parameter Real outMin "Minimum output value";
   parameter Real y_start "Output start value" annotation (Dialog(group="Initialization"));
 
-protected
   Real x1(start=y_start);
   Real x2(start=y_start);
   parameter Modelica.SIunits.Time T2_dummy=if abs(T1 - T2) < Modelica.Constants.eps then 1000 else T2 "Lead time constant";
@@ -18,10 +17,12 @@ public
 equation
   x1 + der(x1)*T2_dummy = u*K;
   x1 + T1/T2_dummy*(u*K - x1) = x2;
-  when (y >= outMax) and der(x1) < 0 then
+  when ((outMax*(T2/T1 - 1) + u)*T1/T2 < outMax) and (x2 >= outMax) then
     reinit(x1, outMax);
-  elsewhen (y <= outMin) and der(x1) > 0 then
+    reinit(x2, outMax);
+  elsewhen ((outMin*(T2/T1 - 1) + u)*T1/T2 > outMin) and (x2 <= outMin) then
     reinit(x1, outMin);
+    reinit(x2, outMin);
   end when;
   if (abs(par1.y - par2.y) < Modelica.Constants.eps) then
     y = max(min(K*u, outMax), outMin);
@@ -29,23 +30,31 @@ equation
     y = max(min(x2, outMax), outMin);
   end if;
   annotation (
-    Icon(graphics={Line(points={{38,100},{58,140},{98,140}}, color={0,0,0}),Line(points={{-102,-140},{-62,-140},{-42,-100}}, color={0,0,0}),Text(
+    Icon(graphics={
+        Line(points={{38,100},{58,140},{98,140}}, color={0,0,0}),
+        Line(points={{-102,-140},{-62,-140},{-42,-100}}, color={0,0,0}),
+        Text(
           extent={{-50,82},{70,22}},
           lineColor={0,0,255},
-          textString="1+sT"),Text(
+          textString="1+sT"),
+        Text(
           extent={{56,44},{76,24}},
           lineColor={0,0,255},
-          textString="1"),Line(
+          textString="1"),
+        Line(
           points={{-52,0},{76,0}},
           color={0,0,255},
           smooth=Smooth.Bezier,
-          thickness=0.5),Text(
+          thickness=0.5),
+        Text(
           extent={{-50,-20},{70,-80}},
           lineColor={0,0,255},
-          textString="1+sT"),Text(
+          textString="1+sT"),
+        Text(
           extent={{58,-58},{78,-78}},
           lineColor={0,0,255},
-          textString="2"),Text(
+          textString="2"),
+        Text(
           extent={{-106,28},{-46,-32}},
           lineColor={0,0,255},
           textString="K")}),
