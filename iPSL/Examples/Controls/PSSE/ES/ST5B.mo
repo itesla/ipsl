@@ -1,4 +1,4 @@
-within iPSL.Examples.DevelopmentExamples.Electrical.Controls.PSSE.ES;
+within iPSL.Examples.Controls.PSSE.ES;
 model ST5B "SMIB system with one load and GENROE model"
   import iPSL;
   iPSL.Electrical.Branches.PwLine pwLine(
@@ -35,17 +35,14 @@ model ST5B "SMIB system with one load and GENROE model"
     Q_0=8.006544,
     H=0) annotation (Placement(transformation(extent={{108,0},{86,22}})));
   iPSL.Electrical.Loads.PSSE.Load_variation constantLoad(
-    S_p(re=0.5, im=0.1),
-    S_i(im=0, re=0),
-    S_y(re=0, im=0),
-    a(re=1, im=0),
-    b(re=0, im=1),
     PQBRAK=0.7,
     d_t=0,
     d_P=0,
     V_0=0.9919935,
     angle_0=-0.5762684,
-    t1=0) annotation (Placement(transformation(extent={{8,-50},{30,-26}})));
+    t1=0,
+    P_0=50,
+    Q_0=10) annotation (Placement(transformation(extent={{8,-50},{30,-26}})));
   iPSL.Electrical.Events.PwFault pwFault(
     R=0,
     X=0,

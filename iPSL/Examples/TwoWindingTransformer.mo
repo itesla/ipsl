@@ -1,4 +1,4 @@
-within iPSL.Examples.DevelopmentExamples;
+within iPSL.Examples;
 model TwoWindingTransformer "SMIB system with one load and GENROE model"
 
   iPSL.Electrical.Branches.PwLine pwLine1(
