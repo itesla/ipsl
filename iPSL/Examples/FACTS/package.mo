@@ -1,5 +1,5 @@
 within iPSL.Examples;
-package FACTS 
+package FACTS
 
 
 annotation (Documentation(revisions="<html>

@@ -1,5 +1,5 @@
 within ;
-package IEEE14 
+package IEEE14
 
 
 annotation (uses(

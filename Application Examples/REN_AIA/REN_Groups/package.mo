@@ -1,5 +1,5 @@
 within REN_AIA;
-package REN_Groups 
+package REN_Groups
 
 
 annotation (Documentation(revisions="<html>

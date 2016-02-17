@@ -79,7 +79,7 @@ protected
   parameter Real B=vr*cos(anglev0) + vi*sin(anglev0);
   parameter Real idref0=(p0*B + q0*A)/(A^2 + B^2);
   parameter Real iqref0=((-q0*B) + p0*A)/(A^2 + B^2) "
-    
+
                                 parameter Real vd0=-v0*sin(anglev0) ;
                                 parameter Real vq0=v0*cos(anglev0) ;
                                 parameter Real iqref0=2*(vq0*q0 + p0*vd0)/(vq0^2 + vd0^2) ;

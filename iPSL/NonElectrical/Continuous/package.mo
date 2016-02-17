@@ -1,5 +1,5 @@
 within iPSL.NonElectrical;
-package Continuous 
+package Continuous
 
 
 annotation (Documentation(info="<html>

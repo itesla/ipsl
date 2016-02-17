@@ -1,5 +1,5 @@
 within N44.Subsystems_Original_case;
-model Gen3_bus_6100 "Configuration of synchronous generator with regulators: GENSAL, HYGOV, SCRX, STAB2A; 
+model Gen3_bus_6100 "Configuration of synchronous generator with regulators: GENSAL, HYGOV, SCRX, STAB2A;
   Nordic 44 model: Buses 3115, 5300, 6100, 6700, 7100"
   iPSL.Electrical.Machines.PSSE.GENSAL.GENSAL gENSAL(
     Tppd0=0.05 "T''do (> 0)",

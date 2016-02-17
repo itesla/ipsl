@@ -2575,12 +2575,12 @@ equation
           extent={{-278,12},{-290,16}},
           lineColor={0,128,0},
           textStyle={TextStyle.Bold},
-          textString="bus 
+          textString="bus
 7010"),Text(
           extent={{-266,-110},{-254,-114}},
           lineColor={0,128,0},
           textStyle={TextStyle.Bold},
-          textString="bus 
+          textString="bus
 7000"),Text(
           extent={{-280,-10},{-292,-6}},
           lineColor={0,128,0},
@@ -2589,82 +2589,82 @@ equation
           extent={{-256,-54},{-244,-58}},
           lineColor={0,128,0},
           textStyle={TextStyle.Bold},
-          textString="bus 
+          textString="bus
 7100"),Text(
           extent={{-232,42},{-220,38}},
           lineColor={0,128,0},
           textStyle={TextStyle.Bold},
-          textString="bus 
+          textString="bus
 3115"),Text(
           extent={{-264,44},{-252,40}},
           lineColor={0,128,0},
           textStyle={TextStyle.Bold},
-          textString="bus 
+          textString="bus
 3000"),Text(
           extent={{-288,98},{-276,94}},
           lineColor={0,128,0},
           textStyle={TextStyle.Bold},
-          textString="bus 
+          textString="bus
 3020"),Text(
           extent={{-224,84},{-212,80}},
           lineColor={0,128,0},
           textStyle={TextStyle.Bold},
-          textString="bus 
+          textString="bus
 3300"),Text(
           extent={{-184,114},{-172,110}},
           lineColor={0,128,0},
           textStyle={TextStyle.Bold},
-          textString="bus 
+          textString="bus
 3200"),Text(
           extent={{-182,34},{-170,30}},
           lineColor={0,128,0},
           textStyle={TextStyle.Bold},
-          textString="bus 
+          textString="bus
 3100"),Text(
           extent={{-202,172},{-190,168}},
           lineColor={0,128,0},
           textStyle={TextStyle.Bold},
-          textString="bus 
+          textString="bus
 8500"),Text(
           extent={{-242,154},{-230,150}},
           lineColor={0,128,0},
           textStyle={TextStyle.Bold},
-          textString="bus 
+          textString="bus
 8700"),Text(
           extent={{-166,154},{-154,150}},
           lineColor={0,128,0},
           textStyle={TextStyle.Bold},
-          textString="bus 
+          textString="bus
 8600"),Text(
           extent={{-128,118},{-116,114}},
           lineColor={0,128,0},
           textStyle={TextStyle.Bold},
-          textString="bus 
+          textString="bus
 3359"),Text(
           extent={{-100,156},{-88,152}},
           lineColor={0,128,0},
           textStyle={TextStyle.Bold},
-          textString="bus 
+          textString="bus
 3360"),Text(
           extent={{-182,-54},{-170,-58}},
           lineColor={0,128,0},
           textStyle={TextStyle.Bold},
-          textString="bus 
+          textString="bus
 3249"),Text(
           extent={{-124,-42},{-112,-46}},
           lineColor={0,128,0},
           textStyle={TextStyle.Bold},
-          textString="bus 
+          textString="bus
 3701"),Text(
           extent={{-212,-84},{-200,-88}},
           lineColor={0,128,0},
           textStyle={TextStyle.Bold},
-          textString="bus 
+          textString="bus
 3245"),Text(
           extent={{-182,-112},{-170,-116}},
           lineColor={0,128,0},
           textStyle={TextStyle.Bold},
-          textString="bus 
+          textString="bus
 3244"),Text(
           extent={{-150,-96},{-138,-100}},
           lineColor={0,128,0},

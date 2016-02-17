@@ -1,5 +1,5 @@
 within iPSL.Electrical;
-package Machines 
+package Machines
 
 
 annotation (Documentation(revisions="<html>

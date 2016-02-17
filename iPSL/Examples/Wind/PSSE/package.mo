@@ -1,5 +1,5 @@
 within iPSL.Examples.Wind;
-package PSSE 
+package PSSE
 
 
 annotation (Documentation(revisions="<html>

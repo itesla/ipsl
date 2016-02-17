@@ -1,5 +1,5 @@
 within iPSL.Examples;
-package Wind 
+package Wind
 
 
 annotation (Documentation(revisions="<html>

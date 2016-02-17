@@ -1,5 +1,5 @@
 within N44_AIA;
-package N44_Groups 
+package N44_Groups
 
 
 annotation (Documentation(revisions="<html>

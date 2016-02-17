@@ -1,5 +1,5 @@
 within iPSL.Examples.Branches;
-package PSAT 
+package PSAT
 
 
 annotation (Documentation(revisions="<html>
