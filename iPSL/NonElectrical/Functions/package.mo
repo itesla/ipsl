@@ -1,5 +1,5 @@
 within iPSL.NonElectrical;
-package Functions 
+package Functions
 
 
 annotation (Documentation(revisions="<html>

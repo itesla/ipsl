@@ -1,5 +1,5 @@
 within iPSL.Electrical.Machines;
-package Eurostag 
+package Eurostag
 
 
 annotation (Documentation(revisions="<html>

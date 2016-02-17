@@ -1,5 +1,5 @@
 within iPSL.NonElectrical;
-package Nonlinear 
+package Nonlinear
 
 
 annotation (Documentation(revisions="<html>

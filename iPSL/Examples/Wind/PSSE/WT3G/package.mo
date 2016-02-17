@@ -1,5 +1,5 @@
 within iPSL.Examples.Wind.PSSE;
-package WT3G 
+package WT3G
 annotation (Documentation(revisions="<html>
 <!--DISCLAIMER-->
 <p>Copyright 2015-2016 RTE (France), SmarTS Lab (Sweden), AIA (Spain) and DTU (Denmark)</p>

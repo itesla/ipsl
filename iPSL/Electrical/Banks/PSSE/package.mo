@@ -1,5 +1,5 @@
 within iPSL.Electrical.Banks;
-package PSSE 
+package PSSE
 
 
 annotation (Documentation(revisions="<html>

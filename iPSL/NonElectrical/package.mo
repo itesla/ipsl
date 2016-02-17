@@ -1,5 +1,5 @@
 within iPSL;
-package NonElectrical 
+package NonElectrical
 
 
 annotation (Documentation(revisions="<html>

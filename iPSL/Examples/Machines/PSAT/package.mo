@@ -1,5 +1,5 @@
 within iPSL.Examples.Machines;
-package PSAT 
+package PSAT
 
 
 annotation (Documentation(revisions="<html>

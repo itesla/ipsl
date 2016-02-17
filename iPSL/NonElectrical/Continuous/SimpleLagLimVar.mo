@@ -79,4 +79,3 @@ equation
           textString="1 + Ts"),Line(points={{-100,-140},{-60,-140},{-40,-100}}, color={0,0,0})}),
     Diagram);
 end SimpleLagLimVar;
-

@@ -1,5 +1,5 @@
 within iPSL.Electrical.Wind;
-package DTU 
+package DTU
 
 
 annotation (Documentation(revisions="<html>

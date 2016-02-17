@@ -1,3 +1,3 @@
 within TwoAreas.Groups.PSSE;
-package AVR 
+package AVR
 end AVR;

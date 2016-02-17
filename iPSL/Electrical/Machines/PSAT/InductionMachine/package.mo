@@ -1,5 +1,5 @@
 within iPSL.Electrical.Machines.PSAT;
-package InductionMachine 
+package InductionMachine
 
 
 annotation (Documentation(revisions="<html>

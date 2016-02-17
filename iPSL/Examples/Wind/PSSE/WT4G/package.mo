@@ -1,5 +1,5 @@
 within iPSL.Examples.Wind.PSSE;
-package WT4G 
+package WT4G
 
 
 annotation (Documentation(revisions="<html>
