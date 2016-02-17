@@ -1,5 +1,6 @@
 within iPSL.Examples.Controls.PSSE.ES;
 model ESAC2A "SMIB model example of GENROU with Excitation System ESAC2A"
+  extends iPSL.Examples.SMIBpartial;
   iPSL.Electrical.Machines.PSSE.GENROU.GENROU generator(
     Xppd=0.2,
     Xppq=0.2,
@@ -21,133 +22,52 @@ model ESAC2A "SMIB model example of GENROU with Excitation System ESAC2A"
     S10=0.1,
     S12=0.5,
     Xpq=0.6,
-    Tpq0=0.7) annotation (Placement(transformation(extent={{-78,-2},{-50,28}})));
-  iPSL.Electrical.Branches.PwLine pwLine(
-    R=0.001,
-    X=0.2,
-    G=0,
-    B=0) annotation (Placement(transformation(extent={{-40,2},{-20,22}})));
-  iPSL.Electrical.Branches.PwLine pwLine1(
-    R=0.001,
-    X=0.2,
-    G=0,
-    B=0) annotation (Placement(transformation(extent={{2,8},{22,28}})));
-  iPSL.Electrical.Branches.PwLine2Openings pwLine3(
-    t2=100,
-    t1=10.15 - 0.005,
-    R=0.0005,
-    X=0.1,
-    G=0,
-    B=0) annotation (Placement(transformation(extent={{-6,-6},{14,14}})));
-  iPSL.Electrical.Branches.PwLine2Openings pwLine4(
-    t2=100,
-    t1=10.15 - 0.005,
-    R=0.0005,
-    X=0.1,
-    G=0,
-    B=0) annotation (Placement(transformation(extent={{20,-6},{40,14}})));
-  iPSL.Electrical.Machines.PSSE.GENCLS.GENCLS gENCLS(
-    X_d=0.2,
-    P_0=10.01716,
-    Q_0=8.006525,
-    H=0,
-    D=0,
-    M_b=100,
-    V_0=1,
-    angle_0=0) annotation (Placement(transformation(extent={{84,-6},{62,16}})));
-  iPSL.Electrical.Loads.PSSE.Load_variation constantLoad(
-    angle_0=-0.57627,
-    S_p(re=0.5, im=0.1),
-    S_i(im=0, re=0),
-    S_y(re=0, im=0),
-    a(re=1, im=0),
-    b(re=0, im=1),
-    PQBRAK=0.7,
-    V_0=0.991992,
-    d_P=5*0.01,
-    d_t=0.1,
-    t1=2 - 0.005) annotation (Placement(transformation(extent={{-6,-16},{-26,6}})));
-  iPSL.Electrical.Events.PwFault pwFault(
-    R=0,
-    X=-2e-9,
-    t1=10 - 0.005,
-    t2=10.15 - 0.005) annotation (Placement(transformation(extent={{34,-16},{48,-2}})));
+    Tpq0=0.7) annotation (Placement(transformation(extent={{-108,-14},{-80,16}})));
   Modelica.Blocks.Sources.Constant const(k=0) annotation (Placement(transformation(
         extent={{-4,-4},{4,4}},
         rotation=180,
-        origin={-12,-18})));
+        origin={-42,-26})));
   Modelica.Blocks.Sources.Constant const2(k=0) annotation (Placement(transformation(extent={{-110,166},{-94,182}})));
   Modelica.Blocks.Sources.Constant const4(k=1000) annotation (Placement(transformation(
         extent={{-5,-5},{5,5}},
         rotation=180,
-        origin={-11,-33})));
+        origin={-41,-45})));
   Modelica.Blocks.Sources.Constant const5(k=-1000) annotation (Placement(transformation(
         extent={{-5,-5},{5,5}},
         rotation=180,
-        origin={-11,-49})));
-  iPSL.Electrical.Controls.PSSE.ES.ESAC2A.ESAC2A eSAC2A annotation (Placement(transformation(extent={{-44,-58},{-114,-12}})));
+        origin={-41,-61})));
+  iPSL.Electrical.Controls.PSSE.ES.ESAC2A.ESAC2A eSAC2A annotation (Placement(transformation(extent={{-74,-70},{-144,-24}})));
 equation
-  connect(generator.p, pwLine.p) annotation (Line(
-      points={{-48.6,13},{-50.6,13},{-50.6,12},{-37,12}},
-      color={0,0,255},
-      smooth=Smooth.None));
-  connect(pwLine.n, pwLine1.p) annotation (Line(
-      points={{-23,12},{-16.5,12},{-16.5,18},{5,18}},
-      color={0,0,255},
-      smooth=Smooth.None));
-  connect(pwLine1.n, gENCLS.p) annotation (Line(
-      points={{19,18},{52,18},{52,4.8346},{59.8,4.8346}},
-      color={0,0,255},
-      smooth=Smooth.None));
-  connect(pwLine3.p, pwLine.n) annotation (Line(
-      points={{-3,4},{-17.5,4},{-17.5,12},{-23,12}},
-      color={0,0,255},
-      smooth=Smooth.None));
-  connect(pwLine3.n, pwLine4.p) annotation (Line(
-      points={{11,4},{23,4}},
-      color={0,0,255},
-      smooth=Smooth.None));
-  connect(pwLine4.n, gENCLS.p) annotation (Line(
-      points={{37,4},{52,4},{52,4.8346},{59.8,4.8346}},
-      color={0,0,255},
-      smooth=Smooth.None));
-  connect(constantLoad.p, pwLine3.p) annotation (Line(
-      points={{-16,7.1},{-16,-5.5},{-3,-5.5},{-3,4}},
-      color={0,0,255},
-      smooth=Smooth.None));
-  connect(pwFault.p, pwLine4.p) annotation (Line(
-      points={{32.8333,-9},{23,-9},{23,4}},
-      color={0,0,255},
-      smooth=Smooth.None));
   connect(eSAC2A.EFD0, generator.EFD0) annotation (Line(
-      points={{-41.025,-48.0333},{-30,-48.0333},{-30,2.5},{-48.88,2.5}},
+      points={{-71.025,-60.0333},{-60,-60.0333},{-60,-9.5},{-78.88,-9.5}},
       color={0,0,127},
       smooth=Smooth.None));
   connect(const.y, eSAC2A.VOTHSG) annotation (Line(
-      points={{-16.4,-18},{-33.25,-18},{-33.25,-14.6067},{-41.375,-14.6067}},
+      points={{-46.4,-26},{-63.25,-26},{-63.25,-26.6067},{-71.375,-26.6067}},
       color={0,0,127},
       smooth=Smooth.None));
   connect(generator.XADIFD, eSAC2A.XADIFD) annotation (Line(
-      points={{-48.88,-0.5},{-26,-0.5},{-26,-27.4867},{-41.025,-27.4867}},
+      points={{-78.88,-12.5},{-56,-12.5},{-56,-39.4867},{-71.025,-39.4867}},
       color={0,0,127},
       smooth=Smooth.None));
   connect(eSAC2A.VOEL, const4.y) annotation (Line(
-      points={{-41.375,-33.9267},{-28.6875,-33.9267},{-28.6875,-33},{-16.5,-33}},
+      points={{-71.375,-45.9267},{-58.6875,-45.9267},{-58.6875,-45},{-46.5,-45}},
       color={0,0,127},
       smooth=Smooth.None));
   connect(const5.y, eSAC2A.VUEL) annotation (Line(
-      points={{-16.5,-49},{-24,-49},{-24,-40.3667},{-41.375,-40.3667}},
+      points={{-46.5,-61},{-54,-61},{-54,-52.3667},{-71.375,-52.3667}},
       color={0,0,127},
       smooth=Smooth.None));
   connect(generator.PELEC, eSAC2A.ECOMP) annotation (Line(
-      points={{-48.88,5.5},{-34,5.5},{-34,-21.0467},{-41.375,-21.0467}},
+      points={{-78.88,-6.5},{-64,-6.5},{-64,-33.0467},{-71.375,-33.0467}},
       color={0,0,127},
       smooth=Smooth.None));
   connect(generator.PMECH0, generator.PMECH) annotation (Line(
-      points={{-48.88,8.5},{-44,8.5},{-44,32},{-80,32},{-80,20.5},{-77.72,20.5}},
+      points={{-78.88,-3.5},{-74,-3.5},{-74,20},{-110,20},{-110,8.5},{-107.72,8.5}},
       color={0,0,127},
       smooth=Smooth.None));
-  connect(eSAC2A.EFD, generator.EFD) annotation (Line(points={{-115.75,-35.3067},{-120,-35.3067},{-120,5.5},{-77.72,5.5}}, color={0,0,127}));
+  connect(eSAC2A.EFD, generator.EFD) annotation (Line(points={{-145.75,-47.3067},{-150,-47.3067},{-150,-6.5},{-107.72,-6.5}}, color={0,0,127}));
+  connect(generator.p, GEN1.p) annotation (Line(points={{-78.6,1},{-58.3,1},{-58.3,0},{-40,0}}, color={0,0,255}));
   annotation (Diagram(coordinateSystem(preserveAspectRatio=false,extent={{-100,-100},{100,100}})), Documentation(revisions="<html>
 <!--DISCLAIMER-->
 <p>Copyright 2015-2016 RTE (France), SmarTS Lab (Sweden), AIA (Spain) and DTU (Denmark)</p>

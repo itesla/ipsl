@@ -1,56 +1,7 @@
 within iPSL.Examples.Controls.PSSE.ES;
 model ESDC1A "SMIB system with one load and GENROE model"
   import iPSL;
-  iPSL.Electrical.Branches.PwLine pwLine(
-    R=0.001,
-    X=0.2,
-    G=0,
-    B=0) annotation (Placement(transformation(extent={{-26,0},{-6,20}})));
-  iPSL.Electrical.Branches.PwLine pwLine1(
-    R=0.001,
-    X=0.2,
-    G=0,
-    B=0) annotation (Placement(transformation(extent={{26,14},{46,34}})));
-  iPSL.Electrical.Branches.PwLine2Openings pwLine3(
-    t2=100,
-    R=0.0005,
-    X=0.1,
-    G=0,
-    B=0,
-    t1=100) annotation (Placement(transformation(extent={{16,-20},{36,0}})));
-  iPSL.Electrical.Branches.PwLine2Openings pwLine4(
-    t2=100,
-    t1=100,
-    R=0.0005,
-    X=0.1,
-    G=0,
-    B=0) annotation (Placement(transformation(extent={{42,-20},{62,0}})));
-  iPSL.Electrical.Machines.PSSE.GENCLS.GENCLS gENCLS(
-    M_b=100,
-    D=0,
-    V_0=1,
-    angle_0=0,
-    X_d=0.2,
-    P_0=10.01711,
-    Q_0=8.006544,
-    H=0) annotation (Placement(transformation(extent={{108,0},{86,22}})));
-  iPSL.Electrical.Loads.PSSE.Load_variation constantLoad(
-    S_p(re=0.5, im=0.1),
-    S_i(im=0, re=0),
-    S_y(re=0, im=0),
-    a(re=1, im=0),
-    b(re=0, im=1),
-    PQBRAK=0.7,
-    d_t=0,
-    d_P=0,
-    V_0=0.9919935,
-    angle_0=-0.5762684,
-    t1=0) annotation (Placement(transformation(extent={{12,-40},{28,-26}})));
-  iPSL.Electrical.Events.PwFault pwFault(
-    R=0,
-    X=0,
-    t1=2,
-    t2=2.15) annotation (Placement(transformation(extent={{52,-34},{66,-20}})));
+  extends iPSL.Examples.SMIBpartial;
   iPSL.Electrical.Machines.PSSE.GENROE.GENROE gENROE(
     M_b=100,
     Tpd0=5,
@@ -71,9 +22,9 @@ model ESDC1A "SMIB system with one load and GENROE model"
     P_0=40,
     angle_0=4.046276,
     Q_0=5.416582,
-    Xppq=0.2) annotation (Placement(transformation(extent={{-82,-10},{-42,30}})));
-  Modelica.Blocks.Sources.Constant const(k=0) annotation (Placement(transformation(extent={{-10,-36},{-20,-26}})));
-  Modelica.Blocks.Sources.Constant const1(k=-Modelica.Constants.inf) annotation (Placement(transformation(extent={{-10,-50},{-20,-40}})));
+    Xppq=0.2) annotation (Placement(transformation(extent={{-100,-20},{-60,20}})));
+  Modelica.Blocks.Sources.Constant const(k=0) annotation (Placement(transformation(extent={{-28,-46},{-38,-36}})));
+  Modelica.Blocks.Sources.Constant const1(k=-Modelica.Constants.inf) annotation (Placement(transformation(extent={{-28,-60},{-38,-50}})));
   iPSL.Electrical.Controls.PSSE.ES.ESDC1A.ESDC1A eSDC1A(
     T_R=0.04,
     T_F1=1,
@@ -89,44 +40,16 @@ model ESDC1A "SMIB system with one load and GENROE model"
     K_E=0,
     T_E=0.5,
     K_F=0.07,
-    V_RMAX=0) annotation (Placement(transformation(extent={{-42,-40},{-82,-26}})));
+    V_RMAX=0) annotation (Placement(transformation(extent={{-60,-50},{-100,-36}})));
 equation
-  connect(pwLine.n, pwLine1.p) annotation (Line(
-      points={{-9,10},{3.5,10},{3.5,24},{29,24}},
-      color={0,0,255},
-      smooth=Smooth.None));
-  connect(pwLine1.n, gENCLS.p) annotation (Line(
-      points={{43,24},{74,24},{74,10.8346},{83.8,10.8346}},
-      color={0,0,255},
-      smooth=Smooth.None));
-  connect(pwLine3.p, pwLine.n) annotation (Line(
-      points={{19,-10},{2.5,-10},{2.5,10},{-9,10}},
-      color={0,0,255},
-      smooth=Smooth.None));
-  connect(pwLine3.n, pwLine4.p) annotation (Line(
-      points={{33,-10},{45,-10}},
-      color={0,0,255},
-      smooth=Smooth.None));
-  connect(pwLine4.n, gENCLS.p) annotation (Line(
-      points={{59,-10},{74,-10},{74,10.8346},{83.8,10.8346}},
-      color={0,0,255},
-      smooth=Smooth.None));
-  connect(constantLoad.p, pwLine3.p) annotation (Line(
-      points={{20,-25.3},{20,-18},{19,-18},{19,-10}},
-      color={0,0,255},
-      smooth=Smooth.None));
-  connect(pwFault.p, pwLine4.p) annotation (Line(
-      points={{50.8333,-27},{50.8333,-26},{40,-26},{40,-10},{45,-10}},
-      color={0,0,255},
-      smooth=Smooth.None));
-  connect(gENROE.p, pwLine.p) annotation (Line(points={{-40,10},{-23,10}}, color={0,0,255}));
-  connect(gENROE.PMECH, gENROE.PMECH0) annotation (Line(points={{-81.6,20},{-92,20},{-92,36},{-30,36},{-30,4},{-40.4,4}}, color={0,0,127}));
-  connect(eSDC1A.EFD, gENROE.EFD) annotation (Line(points={{-83.1111,-33},{-88,-33},{-88,0},{-81.6,0}}, color={0,0,127}));
-  connect(eSDC1A.EFD0, gENROE.EFD0) annotation (Line(points={{-57.5556,-38.95},{-57.5556,-48},{-30,-48},{-30,-4},{-40.4,-4}}, color={0,0,127}));
-  connect(gENROE.ETERM, eSDC1A.ECOMP) annotation (Line(points={{-40.4,20},{-38,20},{-38,-27.925},{-43.1111,-27.925}}, color={0,0,127}));
-  connect(eSDC1A.VOTHSG, const.y) annotation (Line(points={{-43.1111,-31.25},{-31.5556,-31.25},{-31.5556,-31},{-20.5,-31}}, color={0,0,127}));
-  connect(eSDC1A.VOEL, const.y) annotation (Line(points={{-43.1111,-34.75},{-24,-34.75},{-24,-31},{-20.5,-31}}, color={0,0,127}));
-  connect(eSDC1A.VUEL, const1.y) annotation (Line(points={{-43.1111,-38.25},{-36,-38.25},{-36,-45},{-20.5,-45}}, color={0,0,127}));
+  connect(gENROE.PMECH, gENROE.PMECH0) annotation (Line(points={{-99.6,10},{-110,10},{-110,26},{-48,26},{-48,-6},{-58.4,-6}}, color={0,0,127}));
+  connect(eSDC1A.EFD, gENROE.EFD) annotation (Line(points={{-101.111,-43},{-106,-43},{-106,-10},{-99.6,-10}}, color={0,0,127}));
+  connect(eSDC1A.EFD0, gENROE.EFD0) annotation (Line(points={{-75.5556,-48.95},{-75.5556,-58},{-48,-58},{-48,-14},{-58.4,-14}}, color={0,0,127}));
+  connect(gENROE.ETERM, eSDC1A.ECOMP) annotation (Line(points={{-58.4,10},{-54,10},{-54,-38},{-58,-38},{-58,-37.925},{-61.1111,-37.925}}, color={0,0,127}));
+  connect(eSDC1A.VOTHSG, const.y) annotation (Line(points={{-61.1111,-41.25},{-49.5556,-41.25},{-49.5556,-41},{-38.5,-41}}, color={0,0,127}));
+  connect(eSDC1A.VOEL, const.y) annotation (Line(points={{-61.1111,-44.75},{-42,-44.75},{-42,-41},{-38.5,-41}}, color={0,0,127}));
+  connect(eSDC1A.VUEL, const1.y) annotation (Line(points={{-61.1111,-48.25},{-54,-48.25},{-54,-55},{-38.5,-55}}, color={0,0,127}));
+  connect(gENROE.p, GEN1.p) annotation (Line(points={{-58,0},{-58,0},{-40,0}}, color={0,0,255}));
   annotation (Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,100}})), Documentation(revisions="<html>
 <!--DISCLAIMER-->
 <p>Copyright 2015-2016 RTE (France), SmarTS Lab (Sweden), AIA (Spain) and DTU (Denmark)</p>
