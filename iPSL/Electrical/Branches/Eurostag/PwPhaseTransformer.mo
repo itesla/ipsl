@@ -1,18 +1,39 @@
-within iPSL.Electrical.Branches;
-model PwTransformer "Two winding fixed transformer composed of an ideal transformer, a series
-              impedance and a shunt admittance. 2013"
+within iPSL.Electrical.Branches.Eurostag;
+model PwPhaseTransformer "Two winding fixed transformer composed of an ideal transformer, a series
+              impedance and a shunt admittance.
+              2014/03/10"
   iPSL.Connectors.PwPin p annotation (Placement(transformation(extent={{-80,-8},{-60,12}}), iconTransformation(extent={{-80,-8},{-60,12}})));
   iPSL.Connectors.PwPin n annotation (Placement(transformation(extent={{60,-8},{80,12}}), iconTransformation(extent={{60,-8},{80,12}})));
+  // INPUT parameters
   parameter Real R "Resistance p.u.";
   parameter Real X "Reactance p.u.";
-  parameter Real G "Shunt conductance p.u.";
-  parameter Real B "Shunt susceptance p.u.";
   parameter Real r "Transformation ratio";
+  parameter Real G0 "Shunt conductance p.u.";
+  parameter Real B0 "Shunt susceptance p.u.";
+  parameter Real theta;
+  // Calculated parameters
+  parameter Real theta_rad=-theta*3.141592/180;
+  parameter Real Z2=R*R + X*X;
+  parameter Real G=if Z2 == 0 then 0 else R/Z2;
+  parameter Real B=if Z2 == 0 then 0 else -X/Z2;
+  parameter Real Gi=G0/2;
+  parameter Real Bi=B0/2;
+  parameter Real Gj=G0/2;
+  parameter Real Bj=B0/2;
+  //ADMITTANCE matrix
+  parameter Real G11=G*(r*r - r*cos(theta_rad)) + B*r*sin(theta_rad) + Gi + G*r*cos(theta_rad) - B*r*sin(theta_rad);
+  parameter Real B11=B*(r*r - r*cos(theta_rad)) - G*r*sin(theta_rad) + Bi + B*r*cos(theta_rad) + G*r*sin(theta_rad);
+  parameter Real G12=(-G*r*cos(theta_rad)) + B*r*sin(theta_rad);
+  parameter Real B12=(-B*r*cos(theta_rad)) - G*r*sin(theta_rad);
+  parameter Real G21=(-G*r*cos(theta_rad)) - B*r*sin(theta_rad);
+  parameter Real B21=(-B*r*cos(theta_rad)) + G*r*sin(theta_rad);
+  parameter Real G22=G*(1 - r*cos(theta_rad)) - B*r*sin(theta_rad) + Gj + G*r*cos(theta_rad) + B*r*sin(theta_rad);
+  parameter Real B22=B*(1 - r*cos(theta_rad)) + G*r*sin(theta_rad) + Bj + B*r*cos(theta_rad) - G*r*sin(theta_rad);
 equation
-  r*(G*n.vr - B*n.vi - n.ir) = p.ir;
-  r*(G*n.vi + B*n.vr - n.ii) = p.ii;
-  R*p.ir - X*p.ii = r*r*p.vr - r*n.vr;
-  R*p.ii + X*p.ir = r*r*p.vi - r*n.vi;
+  p.ir = p.vr*G11 - p.vi*B11 + n.vr*G12 - n.vi*B12;
+  p.ii = p.vi*G11 + p.vr*B11 + n.vi*G12 + n.vr*B12;
+  n.ir = p.vr*G21 - p.vi*B21 + n.vr*G22 - n.vi*B22;
+  n.ii = p.vi*G21 + p.vr*B21 + n.vi*G22 + n.vr*B22;
   annotation (
     Icon(graphics={Rectangle(extent={{-60,40},{60,-40}}, lineColor={0,0,255}),Ellipse(
           extent={{-26,16},{6,-16}},
@@ -44,4 +65,4 @@ equation
 <p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
 <p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
 </html>"));
-end PwTransformer;
+end PwPhaseTransformer;
