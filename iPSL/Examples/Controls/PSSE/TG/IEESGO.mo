@@ -46,11 +46,11 @@ model IEESGO "Simple Machine Infinite Bus with Machine, Governor and Excitation 
     T_4=0.3,
     T_5=8.0,
     T_6=0.4,
-    K_1=0.0,
     K_2=0.7,
     K_3=0.43,
     P_MAX=1.0,
-    P_MIN=0.0) annotation (Placement(transformation(extent={{-64,24},{-96,38}})));
+    P_MIN=0.0,
+    K_1=0.1) annotation (Placement(transformation(extent={{-64,24},{-96,38}})));
 equation
   connect(SCRX.VUEL, const.y) annotation (Line(
       points={{-62.15,-29.04},{-53.67,-29.04},{-53.67,-34},{-52.2,-34}},
