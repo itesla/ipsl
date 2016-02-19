@@ -306,7 +306,8 @@ equation
   connect(twoWindingTransformer3.n, FVERGE.o[1]) annotation (Line(points={{0,143},{0,123}}, color={0,0,255}));
   connect(twoWindingTransformer1.p, GEN1.pwPin) annotation (Line(points={{-237,-100},{-259,-100}}, color={0,0,255}));
   connect(twoWindingTransformer1.n, FSSV.o[1]) annotation (Line(points={{-223,-100},{-200,-100},{-200,-99}}, color={0,0,255}));
-  annotation (Diagram(coordinateSystem(extent={{-280,-200},{280,180}}, preserveAspectRatio=false), graphics={
+  annotation (
+    Diagram(coordinateSystem(extent={{-280,-200},{280,180}}, preserveAspectRatio=false), graphics={
         Text(
           extent={{-222,-50},{-198,-60}},
           lineColor={28,108,200},
@@ -334,5 +335,20 @@ equation
         Text(
           extent={{-114,-78},{-84,-88}},
           lineColor={28,108,200},
-          textString="FTILL5")}), Icon(coordinateSystem(extent={{-280,-200},{280,180}})));
+          textString="FTILL5")}),
+    Icon(coordinateSystem(extent={{-280,-200},{280,180}})),
+    Documentation(revisions="<html>
+<!--DISCLAIMER-->
+<p>Copyright 2015-2016 RTE (France), SmarTS Lab (Sweden), AIA (Spain) and DTU (Denmark)</p>
+<ul>
+<li>RTE: <a href=\"http://www.rte-france.com\">http://www.rte-france.com</a></li>
+<li>SmarTS Lab, research group at KTH: <a href=\"https://www.kth.se/en\">https://www.kth.se/en</a></li>
+<li>AIA: <a href=\"http://www.aia.es/en/energy\"> http://www.aia.es/en/energy</a></li>
+<li>DTU: <a href=\"http://www.dtu.dk/english\"> http://www.dtu.dk/english</a></li>
+</ul>
+<p>The authors can be contacted by email: <a href=\"mailto:info@itesla-ipsl.org\">info@itesla-ipsl.org</a></p>
+
+<p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
+<p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
+</html>"));
 end Network;
