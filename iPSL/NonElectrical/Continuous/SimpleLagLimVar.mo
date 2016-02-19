@@ -18,8 +18,10 @@ block SimpleLagLimVar "First order lag transfer function block with a non windup
 
   parameter Real T_mod=if T < Modelica.Constants.eps then 1000 else T;
 
-  Real state(start=y_start);
-  Boolean switch(start=true);
+  Real state;
+  Boolean switch(start=true, fixed=true);
+initial equation
+  state = y_start;
 equation
   if (abs(y - outMax) < Modelica.Constants.eps and u - y > 0) or (abs(y - outMin) < Modelica.Constants.eps and u - y < 0) then
     der(state) = 0;
