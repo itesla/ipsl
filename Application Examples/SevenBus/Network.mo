@@ -2,32 +2,32 @@ within SevenBus;
 model Network
   import SevenBus;
   parameter Real V_FPAND=1.06959;
-  parameter Real angle_FPAND=0.0174;
+  parameter Real angle_FPAND=0.0173;
   parameter Real V_FSSV=1.0696;
-  parameter Real angle_FSSV=0.0936;
+  parameter Real angle_FSSV=0.09350001;
   parameter Real V_FSBIS=1.06958;
   parameter Real angle_FSBIS=-0.0035;
   parameter Real V_FTDPRA=1.06959;
-  parameter Real angle_FTDPRA=-0.0173;
+  parameter Real angle_FTDPRA=-0.0174;
   parameter Real V_FTILL=1.06957;
-  parameter Real angle_FTILL=0.0035;
+  parameter Real angle_FTILL=0.0034;
   parameter Real V_FVALDI=1.0696;
-  parameter Real angle_FVALDI=0.0312;
+  parameter Real angle_FVALDI=0.0311;
   parameter Real V_FVERGE=1.0696;
   parameter Real angle_FVERGE=0;
-  parameter Real V_FSSVG=0.9871199;
-  parameter Real angle_FSSVG=6.1565;
-  parameter Real V_FVALDIG=1.00556;
-  parameter Real angle_FVALDIG=2.2519;
-  parameter Real V_FVERGEG=0.98015;
-  parameter Real angle_FVERGEG=-0.0012;
-  SevenBus.G1 GEN1(
+  parameter Real V_FSSVG=0.9898801;
+  parameter Real angle_FSSVG=7.309099;
+  parameter Real V_FVALDIG=1.00595;
+  parameter Real angle_FVALDIG=2.5534;
+  parameter Real V_FVERGEG=0.9803;
+  parameter Real angle_FVERGEG=-0.001;
+  SevenBus.Generators.G1 GEN1(
     M_b=1078,
     V_b=24,
     V_0=V_FSSVG,
     angle_0=angle_FSSVG,
-    P_0=962,
-    Q_0=105.064) annotation (Placement(transformation(extent={{-280,-110},{-260,-90}})));
+    P_0=962.2,
+    Q_0=124.763) annotation (Placement(transformation(extent={{-280,-110},{-260,-90}})));
   iPSL.Electrical.Branches.PwLine pwLine(
     R=6e-006,
     X=0.000692,
@@ -188,20 +188,20 @@ model Network
     VNOM2=380,
     VB2=380,
     ANG1=0) annotation (Placement(transformation(extent={{-12,-8},{8,8}})));
-  SevenBus.G2 GEN2(
+  SevenBus.Generators.G2 GEN2(
     V_b=20,
     V_0=V_FVALDIG,
     angle_0=angle_FVALDIG,
     M_b=1710,
-    P_0=480.277,
-    Q_0=25.044) annotation (Placement(transformation(extent={{280,-110},{260,-90}})));
-  SevenBus.G3 GEN3(
+    P_0=480.428,
+    Q_0=27.609) annotation (Placement(transformation(extent={{280,-110},{260,-90}})));
+  SevenBus.Generators.G3 GEN3(
     M_b=1211,
     V_b=24,
     V_0=V_FVERGEG,
     angle_0=angle_FVERGEG,
-    Q_0=7.046,
-    P_0=-0.05358902) annotation (Placement(transformation(
+    P_0=-0.05358902,
+    Q_0=7.038) annotation (Placement(transformation(
         extent={{-10,-10},{10,10}},
         rotation=270,
         origin={0,190})));
@@ -232,7 +232,6 @@ model Network
     G=0,
     B=0,
     CW=1,
-    ANG1=1,
     VB2=380,
     VB1=20,
     VNOM2=405,
@@ -242,7 +241,8 @@ model Network
     t1=1,
     VNOM1=20,
     t2=405/380,
-    S_n=1710) annotation (Placement(transformation(
+    S_n=1710,
+    ANG1=0) annotation (Placement(transformation(
         extent={{-6,-4},{6,4}},
         rotation=180,
         origin={230,-100})));
@@ -250,7 +250,6 @@ model Network
     G=0,
     B=0,
     CW=1,
-    ANG1=1,
     VB2=380,
     VB1=24,
     VNOM2=415,
@@ -260,7 +259,8 @@ model Network
     t1=1,
     VNOM1=24,
     t2=415/380,
-    S_n=1080) annotation (Placement(transformation(
+    S_n=1080,
+    ANG1=0) annotation (Placement(transformation(
         extent={{6,-4},{-6,4}},
         rotation=90,
         origin={0,150})));
