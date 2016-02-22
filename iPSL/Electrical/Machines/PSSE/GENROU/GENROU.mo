@@ -43,9 +43,9 @@ protected
   parameter Complex Zs(re=R_a, im=Xpp) "Equivalent impedance";
   parameter Complex VT(re=V_0*cos(anglev_rad), im=V_0*sin(anglev_rad)) "Complex terminal voltage";
   parameter Complex S(re=p0, im=q0) "Complex power on machine base";
-  parameter Complex It=conj(S/VT) "Complex current, machine base";
-  parameter Complex Is=It + VT/Zs "Equivalent internal current source";
-  parameter Complex PSIpp0=Zs*Is "Sub-transient flux linkage in stator reference frame";
+  parameter Complex It(re=real(S/VT),im=-imag(S/VT)) "Complex current, machine base";
+  parameter Complex Is(re=real(It + VT/Zs),im=imag(It + VT/Zs)) "Equivalent internal current source";
+  parameter Complex PSIpp0(re=real(Zs*Is),im=imag(Zs*Is)) "Sub-transient flux linkage in stator reference frame";
   parameter Real ang_PSIpp0=arg(PSIpp0) "flux angle";
   parameter Real ang_It=arg(It) "current angle";
   parameter Real ang_PSIpp0andIt=ang_PSIpp0 - ang_It "angle difference";
@@ -61,8 +61,8 @@ protected
   //Initializion rotor angle position
   parameter Real delta0=atan(b*cos(ang_PSIpp0andIt)/(b*sin(ang_PSIpp0andIt) - a)) + ang_PSIpp0 "intial rotor angle in radians";
   parameter Complex DQ_dq(re=cos(delta0), im=-sin(delta0)) "Parks transformation, from stator to rotor reference frame";
-  parameter Complex PSIpp0_dq=PSIpp0*DQ_dq "Flux linkage in rotor reference frame";
-  parameter Complex I_dq=conj(It*DQ_dq);
+  parameter Complex PSIpp0_dq(re=real(PSIpp0*DQ_dq),im=imag(PSIpp0*DQ_dq)) "Flux linkage in rotor reference frame";
+  parameter Complex I_dq(re=real(It*DQ_dq),im=-imag(It*DQ_dq));
   //"The terminal current in rotor reference frame"
   parameter Real PSIppq0=imag(PSIpp0_dq) "q-axis component of the sub-transient flux linkage";
   parameter Real PSIppd0=real(PSIpp0_dq) "d-axis component of the sub-transient flux linkage";
