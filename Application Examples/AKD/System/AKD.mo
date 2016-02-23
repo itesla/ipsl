@@ -124,26 +124,26 @@ model AKD
     angle_0=PF_data.voltages.A58573,
     P_0=PF_data.powers.P58573,
     Q_0=PF_data.powers.Q58573) annotation (Placement(transformation(extent={{82,4},{60,26}})));
-  iPSL.Electrical.Branches.PwLine_Bis line_58553_58563(
+  iPSL.Electrical.Branches.PwLine line_58553_58563(
     R=0.19224,
     X=0.78070,
     G=0,
-    B=0.00257*0.5) annotation (Placement(transformation(extent={{-40,-18},{-20,2}})));
-  iPSL.Electrical.Branches.PwLine_Bis line_58563_58573(
+    B=0.00257*0.5) annotation (Placement(transformation(extent={{-36,-10},{-24,-2}})));
+  iPSL.Electrical.Branches.PwLine line_58563_58573(
     R=0.37478,
     X=1.52958,
     G=0,
-    B=0.00408*0.5) annotation (Placement(transformation(extent={{20,-18},{40,2}})));
-  iPSL.Electrical.Branches.PwLine_Bis line_58553_58583(
+    B=0.00408*0.5) annotation (Placement(transformation(extent={{24,-16},{36,-8}})));
+  iPSL.Electrical.Branches.PwLine line_58553_58583(
     R=0.22669,
     X=1.30550,
     B=0.00526*0.5,
-    G=0) annotation (Placement(transformation(extent={{-40,6},{-20,26}})));
-  iPSL.Electrical.Branches.PwLine_Bis line_58573_58583(
+    G=0) annotation (Placement(transformation(extent={{-36,16},{-24,24}})));
+  iPSL.Electrical.Branches.PwLine line_58573_58583(
     R=0.25195,
     X=1.30183,
     G=0,
-    B=0.00272*0.5) annotation (Placement(transformation(extent={{20,6},{40,26}})));
+    B=0.00272*0.5) annotation (Placement(transformation(extent={{22,16},{34,24}})));
   Components.Gen_no_contr gen58653(
     V_b=130,
     M_b=120,
@@ -164,14 +164,14 @@ model AKD
     angle_0=PF_data.voltages.A58653,
     P_0=PF_data.powers.P58653,
     Q_0=PF_data.powers.Q58653) annotation (Placement(transformation(extent={{120,-11},{98,11}})));
-  iPSL.Electrical.Branches.PwLine_Bis line_58573_58653(
+  iPSL.Electrical.Branches.PwLine line_58573_58653(
     G=0,
     R=0.49047,
     X=2.01225,
     B=0.00404*0.5) annotation (Placement(transformation(
-        extent={{-10,-10},{10,10}},
+        extent={{-7,-4.5},{7,4.5}},
         rotation=0,
-        origin={68,-1})));
+        origin={69,-0.5})));
   iPSL.Electrical.Buses.BusExt bus_58583(
     no=2,
     nu=1,
@@ -189,14 +189,14 @@ model AKD
     angle_0=PF_data.voltages.A58563) annotation (Placement(transformation(extent={{-2,-50},{0,4}})));
   iPSL.Electrical.Buses.BusExt bus_58567(
     no=1,
-    nu=1,
     V_0=PF_data.voltages.V58567,
-    angle_0=PF_data.voltages.A58567) annotation (Placement(transformation(extent={{-70,-45},{-68,-25}})));
+    angle_0=PF_data.voltages.A58567,
+    nu=1) annotation (Placement(transformation(extent={{-70,-45},{-68,-25}})));
   iPSL.Electrical.Buses.BusExt bus_58566(
-    no=1,
     nu=1,
     V_0=PF_data.voltages.V58566,
-    angle_0=PF_data.voltages.A58566) annotation (Placement(transformation(extent={{69,-45},{71,-25}})));
+    angle_0=PF_data.voltages.A58566,
+    no=1) annotation (Placement(transformation(extent={{69,-45},{71,-25}})));
   iPSL.Electrical.Buses.BusExt bus_58573(
     no=2,
     nu=2,
@@ -212,22 +212,6 @@ model AKD
   iPSL.Electrical.Banks.PwShuntB shunt_58563_58553(B=0.0005) annotation (Placement(transformation(extent={{-22,-22},{-14,-14}})));
   iPSL.Electrical.Banks.PwShuntB shunt_58563_58573(B=0.0005) annotation (Placement(transformation(extent={{16,-22},{24,-14}})));
   iPSL.Electrical.Banks.PwShuntB shunt_58573_58563(B=-0.0005) annotation (Placement(transformation(extent={{38,-22},{46,-14}})));
-  Components.equiv_trafo trafo_58563_58567(
-    R=0.027500,
-    X=0.989170,
-    G=0,
-    B=0,
-    t1=1,
-    t2=1,
-    PrimaryOnFromSide=true) annotation (Placement(transformation(extent={{-53,-49},{-21,-21}})));
-  Components.equiv_trafo trafo_58563_58566(
-    R=0.065,
-    X=2.113330,
-    G=0,
-    B=0,
-    t1=1,
-    t2=1,
-    PrimaryOnFromSide=true) annotation (Placement(transformation(extent={{56,-49},{24,-21}})));
   Data.PF_data PF_data annotation (Placement(transformation(extent={{-80,60},{-60,80}})));
   inner iPSL.Electrical.SystemBase SysData(S_b=1000) annotation (Placement(transformation(extent={{72,60},{110,80}})));
   iPSL.Electrical.Loads.PSSE.Load Load_58563(
@@ -294,9 +278,25 @@ model AKD
     angle_0=PF_data.voltages.A58566,
     P_0=PF_data.powers.P58566,
     Q_0=PF_data.powers.Q58566) annotation (Placement(transformation(extent={{112,-46},{90,-24}})));
+  iPSL.Electrical.Branches.PSSE.TwoWindingTransformer twoWindingTransformer(
+    R=0.027500,
+    X=0.989170,
+    G=0,
+    B=0,
+    t1=1,
+    t2=1,
+    ANG1=150) annotation (Placement(transformation(extent={{-30,-38},{-42,-30}})));
+  iPSL.Electrical.Branches.PSSE.TwoWindingTransformer twoWindingTransformer1(
+    G=0,
+    B=0,
+    t1=1,
+    t2=1,
+    ANG1=150,
+    R=0.065,
+    X=2.113330) annotation (Placement(transformation(extent={{34,-38},{46,-30}})));
 equation
   connect(line_58553_58583.n, bus_58583.o[1]) annotation (Line(
-      points={{-23,16},{-6,16},{-6,37},{-2,37}},
+      points={{-23,20},{-6,20},{-6,37},{-2,37}},
       color={0,0,255},
       smooth=Smooth.None));
   connect(gen58583.pwPin, bus_58583.o[2]) annotation (Line(
@@ -304,7 +304,7 @@ equation
       color={0,0,255},
       smooth=Smooth.None));
   connect(bus_58583.u[1], line_58573_58583.p) annotation (Line(
-      points={{0,40},{5,40},{5,16},{23,16}},
+      points={{0,40},{5,40},{5,20},{21,20}},
       color={0,0,255},
       smooth=Smooth.None));
   connect(gen58553.pwPin, bus_58553.o[1]) annotation (Line(
@@ -312,23 +312,23 @@ equation
       color={0,0,255},
       smooth=Smooth.None));
   connect(bus_58553.u[1], line_58553_58563.p) annotation (Line(
-      points={{-60,5},{-56,5},{-56,-8},{-37,-8}},
+      points={{-60,5},{-56,5},{-56,-6},{-37,-6}},
       color={0,0,255},
       smooth=Smooth.None));
   connect(line_58553_58583.p, bus_58553.u[2]) annotation (Line(
-      points={{-37,16},{-56,16},{-56,11},{-60,11}},
+      points={{-37,20},{-56,20},{-56,11},{-60,11}},
       color={0,0,255},
       smooth=Smooth.None));
   connect(line_58563_58573.n, bus_58573.o[1]) annotation (Line(
-      points={{37,-8},{44,-8},{44,0.6},{50,0.6}},
+      points={{37,-12},{44,-12},{44,0.6},{50,0.6}},
       color={0,0,255},
       smooth=Smooth.None));
   connect(line_58573_58583.n, bus_58573.o[2]) annotation (Line(
-      points={{37,16},{44,16},{44,11.4},{50,11.4}},
+      points={{35,20},{44,20},{44,11.4},{50,11.4}},
       color={0,0,255},
       smooth=Smooth.None));
   connect(line_58573_58653.p, bus_58573.u[1]) annotation (Line(
-      points={{61,-1},{56.5,-1},{56.5,0.6},{52,0.6}},
+      points={{60.8333,-0.5},{60.8333,0.6},{52,0.6}},
       color={0,0,255},
       smooth=Smooth.None));
   connect(gen58573.pwPin, bus_58573.u[2]) annotation (Line(
@@ -336,7 +336,7 @@ equation
       color={0,0,255},
       smooth=Smooth.None));
   connect(line_58573_58653.n, bus_58653.o[1]) annotation (Line(
-      points={{75,-1},{88,-1}},
+      points={{77.1667,-0.5},{82,-0.5},{82,-1},{88,-1}},
       color={0,0,255},
       smooth=Smooth.None));
   connect(bus_58653.u[1], gen58653.pwPin) annotation (Line(
@@ -344,36 +344,30 @@ equation
       color={0,0,255},
       smooth=Smooth.None));
   connect(shunt_58553_58563.p, line_58553_58563.p) annotation (Line(
-      points={{-42.16,-14.96},{-42.16,-11.48},{-37,-11.48},{-37,-8}},
+      points={{-42.16,-14.96},{-42.16,-11.48},{-37,-11.48},{-37,-6}},
       color={0,0,255},
       smooth=Smooth.None));
   connect(shunt_58563_58553.p, line_58553_58563.n) annotation (Line(
-      points={{-18.16,-14.96},{-18.16,-11.48},{-23,-11.48},{-23,-8}},
+      points={{-18.16,-14.96},{-18.16,-11.48},{-23,-11.48},{-23,-6}},
       color={0,0,255},
       smooth=Smooth.None));
   connect(shunt_58563_58573.p, line_58563_58573.p) annotation (Line(
-      points={{19.84,-14.96},{19.84,-12.48},{23,-12.48},{23,-8}},
+      points={{19.84,-14.96},{19.84,-12.48},{23,-12.48},{23,-12}},
       color={0,0,255},
       smooth=Smooth.None));
   connect(shunt_58573_58563.p, line_58563_58573.n) annotation (Line(
-      points={{41.84,-14.96},{41.84,-12.48},{37,-12.48},{37,-8}},
-      color={0,0,255},
-      smooth=Smooth.None));
-  connect(trafo_58563_58567.pTo, bus_58567.u[1]) annotation (Line(
-      points={{-47.56,-34.93},{-58.28,-34.93},{-58.28,-35},{-68,-35}},
-      color={0,0,255},
-      smooth=Smooth.None));
-  connect(trafo_58563_58566.pTo, bus_58566.o[1]) annotation (Line(
-      points={{50.56,-34.93},{59.28,-34.93},{59.28,-35},{69,-35}},
+      points={{41.84,-14.96},{41.84,-12.48},{37,-12.48},{37,-12}},
       color={0,0,255},
       smooth=Smooth.None));
   connect(gen58567.pwPin, bus_58567.o[1]) annotation (Line(points={{-81.6,-35},{-75.8,-35},{-70,-35}}, color={0,0,255}));
-  connect(Load_58563.p, bus_58563.u[1]) annotation (Line(points={{20,-51.4},{20,-42},{6,-42},{6,-38},{6,-34},{6,-33.8},{0,-33.8}}, color={0,0,255}));
-  connect(trafo_58563_58566.pFrom, bus_58563.u[2]) annotation (Line(points={{29.44,-34.93},{14.72,-34.93},{14.72,-23},{0,-23}}, color={0,0,255}));
-  connect(line_58563_58573.p, bus_58563.u[3]) annotation (Line(points={{23,-8},{12,-8},{12,-12.2},{0,-12.2}}, color={0,0,255}));
-  connect(trafo_58563_58567.pFrom, bus_58563.o[1]) annotation (Line(points={{-26.44,-34.93},{-14.22,-34.93},{-14.22,-31.1},{-2,-31.1}}, color={0,0,255}));
-  connect(line_58553_58563.n, bus_58563.o[2]) annotation (Line(points={{-23,-8},{-12,-8},{-12,-14.9},{-2,-14.9}}, color={0,0,255}));
+  connect(Load_58563.p, bus_58563.u[1]) annotation (Line(points={{20,-51.4},{20,-38},{6,-38},{6,-38},{0,-38},{0,-36},{0,-34},{0,-33.8}}, color={0,0,255}));
+  connect(line_58563_58573.p, bus_58563.u[2]) annotation (Line(points={{23,-12},{12,-12},{12,-23},{0,-23}}, color={0,0,255}));
+  connect(line_58553_58563.n, bus_58563.o[1]) annotation (Line(points={{-23,-6},{-12,-6},{-12,-31.1},{-2,-31.1}}, color={0,0,255}));
   connect(gen58566.pwPin, bus_58566.u[1]) annotation (Line(points={{93.3,-35},{82.65,-35},{71,-35}}, color={0,0,255}));
+  connect(twoWindingTransformer.n, bus_58567.u[1]) annotation (Line(points={{-43,-34},{-68,-34},{-68,-35}}, color={0,0,255}));
+  connect(twoWindingTransformer.p, bus_58563.o[2]) annotation (Line(points={{-29,-34},{-2,-34},{-2,-14.9}}, color={0,0,255}));
+  connect(twoWindingTransformer1.n, bus_58566.o[1]) annotation (Line(points={{47,-34},{69,-34},{69,-35}}, color={0,0,255}));
+  connect(twoWindingTransformer1.p, bus_58563.u[3]) annotation (Line(points={{33,-34},{0,-34},{0,-12.2}}, color={0,0,255}));
   annotation (
     Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{120,100}}), graphics={
         Text(
