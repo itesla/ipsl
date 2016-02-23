@@ -58,7 +58,7 @@ equation
     end if;
   else
     (vs - vr) = (is - vs*Y)*Z;
-    ir = -(is - vs*Y);
+    ir = -(is - vs*Y - vr*Y);
   end if;
 
   annotation (
