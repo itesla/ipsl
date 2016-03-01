@@ -61,11 +61,8 @@ equation
     Icon(coordinateSystem(
         preserveAspectRatio=true,
         extent={{-60,-60},{60,60}},
-        initialScale=0.1), graphics={
-        Ellipse(extent={{-60,60},{60,-60}}, lineColor={28,108,200}),
-        Line(points={{-40,0},{-20,20}}, color={28,108,200}),
-        Line(points={{-20,20},{20,-20},{40,0}}, color={28,108,200}),
-        Text(
+        initialScale=0.1), graphics={Ellipse(extent={{-60,60},{60,-60}}, lineColor={28,108,200}),Line(points={{-40,0},{-20,20}}, color={28,108,200}),Line(points={{-20,20},{20,-20},{40,0}}, color={28,
+          108,200}),Text(
           extent={{-20,-22},{16,-52}},
           lineColor={28,108,200},
           textString="G2")}),

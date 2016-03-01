@@ -100,13 +100,13 @@ model Two_Areas_PSSE
     V_0=0.9610106,
     angle_0=-4.68651,
     P_0=967,
-    Q_0=-100) annotation (Placement(transformation(extent={{-70,-12},{-58,0}})));
+    Q_0=-84.70) annotation (Placement(transformation(extent={{-76,-12},{-50,0}})));
   iPSL.Electrical.Loads.PSSE.Load Load9(
     PQBRAK=0.7,
     V_0=0.9713628,
     angle_0=-32.15403,
     P_0=1767,
-    Q_0=-250) annotation (Placement(transformation(extent={{72,-12},{60,0}})));
+    Q_0=-230.2) annotation (Placement(transformation(extent={{80,-12},{50,0}})));
   iPSL.Electrical.Branches.PwLine Line5_1(
     G=0,
     R=0,
@@ -149,8 +149,8 @@ equation
   connect(Line10_11.n, bus11.p) annotation (Line(points={{131.667,30},{131.667,30},{140,30}}, color={0,0,255}));
   connect(g4.pwPin, bus4.p) annotation (Line(points={{201,-10},{201,-10},{180,-10}}, color={0,0,255}));
   connect(g3.pwPin, bus3.p) annotation (Line(points={{201,30},{180,30}}, color={0,0,255}));
-  connect(Load7.p, bus7.p) annotation (Line(points={{-64,0.6},{-64,0.6},{-64,30},{-60,30}}, color={0,0,255}));
-  connect(Load9.p, Line9_10.p) annotation (Line(points={{66,0.6},{66,0.6},{66,30},{68.3333,30}}, color={0,0,255}));
+  connect(Load7.p, bus7.p) annotation (Line(points={{-63,0.6},{-64,0.6},{-64,30},{-60,30}}, color={0,0,255}));
+  connect(Load9.p, Line9_10.p) annotation (Line(points={{65,0.6},{66,0.6},{66,30},{68.3333,30}}, color={0,0,255}));
   connect(pwFault.p, bus8.p) annotation (Line(points={{2,-4.33333},{2,30},{0,30}}, color={0,0,255}));
   connect(bus1.p, Line5_1.p) annotation (Line(points={{-180,30},{-171.667,30}}, color={0,0,255}));
   connect(bus5.p, Line5_1.n) annotation (Line(points={{-140,30},{-148.333,30}}, color={0,0,255}));

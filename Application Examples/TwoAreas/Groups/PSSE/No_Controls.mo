@@ -36,14 +36,11 @@ package No_Controls
           initialScale=0.1)), Icon(coordinateSystem(
           preserveAspectRatio=true,
           extent={{-60,-60},{60,60}},
-          initialScale=0.1), graphics={
-          Ellipse(extent={{-60,60},{60,-60}}, lineColor={28,108,200}),
-          Line(points={{-40,0},{-20,20}}, color={28,108,200}),
-          Line(points={{-20,20},{20,-20},{40,0}}, color={28,108,200}),
-          Text(
-            extent={{-20,-24},{16,-54}},
-            lineColor={28,108,200},
-            textString="%name")}));
+          initialScale=0.1), graphics={Ellipse(extent={{-60,60},{60,-60}}, lineColor={28,108,200}),Line(points={{-40,0},{-20,20}}, color={28,108,200}),Line(points={{-20,20},{20,-20},{40,0}}, color={
+            28,108,200}),Text(
+              extent={{-20,-24},{16,-54}},
+              lineColor={28,108,200},
+              textString="%name")}));
   end G1;
 
   model G2
@@ -82,14 +79,11 @@ package No_Controls
           initialScale=0.1)), Icon(coordinateSystem(
           preserveAspectRatio=true,
           extent={{-60,-60},{60,60}},
-          initialScale=0.1), graphics={
-          Ellipse(extent={{-60,60},{60,-60}}, lineColor={28,108,200}),
-          Line(points={{-40,0},{-20,20}}, color={28,108,200}),
-          Line(points={{-20,20},{20,-20},{40,0}}, color={28,108,200}),
-          Text(
-            extent={{-20,-22},{16,-52}},
-            lineColor={28,108,200},
-            textString="G2")}));
+          initialScale=0.1), graphics={Ellipse(extent={{-60,60},{60,-60}}, lineColor={28,108,200}),Line(points={{-40,0},{-20,20}}, color={28,108,200}),Line(points={{-20,20},{20,-20},{40,0}}, color={
+            28,108,200}),Text(
+              extent={{-20,-22},{16,-52}},
+              lineColor={28,108,200},
+              textString="G2")}));
   end G2;
 
   model G3
@@ -129,14 +123,11 @@ package No_Controls
           initialScale=0.1)), Icon(coordinateSystem(
           preserveAspectRatio=true,
           extent={{-60,-60},{60,60}},
-          initialScale=0.1), graphics={
-          Ellipse(extent={{-60,60},{60,-60}}, lineColor={28,108,200}),
-          Line(points={{-40,0},{-20,20}}, color={28,108,200}),
-          Line(points={{-20,20},{20,-20},{40,0}}, color={28,108,200}),
-          Text(
-            extent={{-22,-24},{18,-54}},
-            lineColor={28,108,200},
-            textString="G3")}));
+          initialScale=0.1), graphics={Ellipse(extent={{-60,60},{60,-60}}, lineColor={28,108,200}),Line(points={{-40,0},{-20,20}}, color={28,108,200}),Line(points={{-20,20},{20,-20},{40,0}}, color={
+            28,108,200}),Text(
+              extent={{-22,-24},{18,-54}},
+              lineColor={28,108,200},
+              textString="G3")}));
   end G3;
 
   model G4
@@ -175,13 +166,10 @@ package No_Controls
           initialScale=0.1)), Icon(coordinateSystem(
           preserveAspectRatio=true,
           extent={{-60,-60},{60,60}},
-          initialScale=0.1), graphics={
-          Ellipse(extent={{-60,60},{60,-60}}, lineColor={28,108,200}),
-          Line(points={{-40,0},{-20,20}}, color={28,108,200}),
-          Line(points={{-20,20},{20,-20},{40,0}}, color={28,108,200}),
-          Text(
-            extent={{-24,-22},{18,-52}},
-            lineColor={28,108,200},
-            textString="G4")}));
+          initialScale=0.1), graphics={Ellipse(extent={{-60,60},{60,-60}}, lineColor={28,108,200}),Line(points={{-40,0},{-20,20}}, color={28,108,200}),Line(points={{-20,20},{20,-20},{40,0}}, color={
+            28,108,200}),Text(
+              extent={{-24,-22},{18,-52}},
+              lineColor={28,108,200},
+              textString="G4")}));
   end G4;
 end No_Controls;
