@@ -1,11 +1,11 @@
 within ;
-package IEEE14
+package IEEE14 
 
 
-annotation (uses(
-    Modelica(version="3.2.1"),
-    iPSL(version="0.8"),
-    PowerSystems(version="0.6")), Documentation(info="<html>
+
+annotation (
+  uses(Modelica(version="3.2.1"), iPSL(version="0.8.1")),
+  Documentation(info="<html>
 <table cellspacing=\"1\" cellpadding=\"1\" border=\"1\">
 <tr>
 <td><p>Reference</p></td>
@@ -37,5 +37,6 @@ annotation (uses(
 <p><span style=\"font-family: MS Shell Dlg 2;\">The iPSL is free software: you can redistribute it and/or modify it under the terms of the GNU Lesser General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.</span></p>
 <p><span style=\"font-family: MS Shell Dlg 2;\">The iPSL is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU Lesser General Public License for more details.</span></p>
 <p><span style=\"font-family: MS Shell Dlg 2;\">You should have received a copy of the GNU Lesser General Public License along with the iPSL. If not, see &LT;http://www.gnu.org/licenses/&GT;.</span></p>
-</html>"));
+</html>"),
+  version="1");
 end IEEE14;

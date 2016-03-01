@@ -25,10 +25,10 @@ model TwoWindingTransformer "Static Two-winding transformer according to PSS/E, 
       choice=3 "Turns ratio (pu on nom wind kV)"));
   parameter Real t1=1 "Winding 1 ratio (pu)" annotation (Dialog(tab="Transformer Nominal Ratings Data"));
   parameter Real VNOM1=0 "Winding 1 Nominal kV" annotation (Dialog(tab="Transformer Nominal Ratings Data"));
-  parameter Real VB1 "Bus Base kV on the side of winding 1" annotation (Dialog(tab="Transformer Nominal Ratings Data"));
+  parameter Real VB1=300 "Bus Base kV on the side of winding 1" annotation (Dialog(tab="Transformer Nominal Ratings Data"));
   parameter Real t2=1 "Secondary winding tap ratio" annotation (Dialog(tab="Transformer Nominal Ratings Data"));
   parameter Real VNOM2=0 "Winding 2 Nominal kV" annotation (Dialog(tab="Transformer Nominal Ratings Data"));
-  parameter Real VB2 "Bus Base kV on the side of winding 2" annotation (Dialog(tab="Transformer Nominal Ratings Data"));
+  parameter Real VB2=300 "Bus Base kV on the side of winding 2" annotation (Dialog(tab="Transformer Nominal Ratings Data"));
   parameter Real ANG1=0 "Winding (1-2) Angle (degrees)" annotation (Dialog(tab="Transformer Nominal Ratings Data"));
   parameter Real S_n=S_b "Winding MVA" annotation (Dialog(tab="Transformer Nominal Ratings Data"));
 protected

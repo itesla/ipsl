@@ -159,7 +159,7 @@ model IEEE_9_Buses
         extent={{-10,-10},{10,10}},
         rotation=90,
         origin={0,-104})));
-  inner iPSL.Electrical.SystemBase SysData(S_b=100, fn=60) annotation (Placement(transformation(extent={{152,-118},{176,-98}})));
+  inner iPSL.Electrical.SystemBase SysData(S_b=100, fn=60) annotation (Placement(transformation(extent={{80,-120},{180,-80}})));
   iPSL.Electrical.Events.PwFault pwFault2(
     X=0.01,
     t1=3,
