@@ -245,7 +245,7 @@ model Network
         extent={{6,-4},{-6,4}},
         rotation=90,
         origin={0,150})));
-  inner SevenBus.Data.PF_results PF_results annotation (Placement(transformation(extent={{-256,148},{-236,168}})));
+  SevenBus.Data.PF_results PF_results annotation (Placement(transformation(extent={{-256,148},{-236,168}})));
 equation
   connect(pwLine.n, FTILL.o[1]) annotation (Line(points={{-142.333,-100},{-100,-100},{-100,-116}}, color={0,0,255}));
   connect(pwLine1.n, FTILL.o[2]) annotation (Line(points={{-142.333,-120},{-100,-120},{-100,-104}}, color={0,0,255}));
