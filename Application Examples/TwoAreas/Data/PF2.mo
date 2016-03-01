@@ -1,7 +1,7 @@
 within TwoAreas.Data;
 record PF2
   import Modelica.Constants.pi;
-  extends PF_TwoAreas(
+  extends Support.PF_TwoAreas(
     voltages(
       V1=1.03,
       A1=0.353381617759011*180/pi,

@@ -5,7 +5,7 @@ model Two_Areas_PSAT
   parameter Real r=0.0001;
   parameter Real x=0.001;
   parameter Real b=0.00175*0.5;
-  replaceable Data.PF1 PF_results constrainedby Data.PF_TwoAreas annotation (Placement(transformation(extent={{-220,-40},{-200,-20}})));
+  replaceable Data.PF1 PF_results constrainedby Support.PF_TwoAreas annotation (Placement(transformation(extent={{-220,-40},{-200,-20}})));
   iPSL.Electrical.Buses.Bus bus1 annotation (Placement(transformation(extent={{-190,20},{-170,40}})));
   iPSL.Electrical.Buses.Bus bus2 annotation (Placement(transformation(extent={{-190,-10},{-170,10}})));
   iPSL.Electrical.Buses.Bus bus3 annotation (Placement(transformation(extent={{170,20},{190,40}})));

@@ -1,4 +1,4 @@
-within TwoAreas.Data;
+within TwoAreas.Support;
 partial record PF_TwoAreas
   record Voltages
     // Bus number 1
