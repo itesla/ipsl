@@ -81,6 +81,8 @@ equation
 
 <p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
 <p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
+</html>", info="<html>
+<p>Marcelo </p>
 </html>"),
     experiment(StopTime=10));
 end SMIBpartial;
