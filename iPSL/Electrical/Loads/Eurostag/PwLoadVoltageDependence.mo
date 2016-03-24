@@ -1,7 +1,8 @@
 within iPSL.Electrical.Loads.Eurostag;
 
 
-model PwLoadVoltageDependence "Load with voltage dependence.Developed by AIA. 2014/03/10"
+model PwLoadVoltageDependence
+  "Load with voltage dependence.Developed by AIA. 2014/03/10"
   iPSL.Connectors.PwPin p(
     vr(start=Vo_real),
     vi(start=Vo_img),
