@@ -1,16 +1,17 @@
 within iPSL.Electrical.Loads.Eurostag;
-
-
-iPSL.Connectors.PwPin p(
+model PwLoadVoltageDependence 
+  "Load with voltage dependence.Developed by AIA. 2014/03/10"
+  extends iPSL.Electrical.Essentials.pfComponent;
+  iPSL.Connectors.PwPin p(
     vr(start=V_0*cos(angle_0*Modelica.Constants.pi/180)),
     vi(start=V_0*sin(angle_0*Modelica.Constants.pi/180)),
     ir(start=1),
     ii(start=0)) annotation (Placement(transformation(extent={{-80,0},{-60,
             20}}), iconTransformation(extent={{-80,0},{-60,20}})));
-  parameter Real P "Active Power p.u.";
-  parameter Real Q "Reactive Power in p.u.";
-  parameter Real V_0 = 1 "Initial magnitud voltage at node in p.u. ";
-  parameter Real angle_0 = 0 "Initial voltageangle at node in deg. ";
+  parameter Real P = P_0/S_b "Active Power p.u.";
+  parameter Real Q = P_0/S_b "Reactive Power in p.u.";
+ // parameter Real V_0 = 1 "Initial magnitud voltage at node in p.u. ";
+ // parameter Real angle_0 = 0 "Initial voltageangle at node in deg. ";
   parameter Real vo = V_0;
   parameter Real omega0 = 1;
   Real v(start = vo);
