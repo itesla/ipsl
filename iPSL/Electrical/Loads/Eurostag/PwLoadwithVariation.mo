@@ -2,8 +2,8 @@ within iPSL.Electrical.Loads.Eurostag;
 model PwLoadwithVariation "Load with a power variation event.
               2014/03/10"
   iPSL.Connectors.PwPin p annotation(Placement(transformation(extent = {{-80, 0}, {-60, 20}}), iconTransformation(extent = {{-80, 0}, {-60, 20}})));
-  parameter Real Vo_real "Initial voltage at node in p.u.";
-  parameter Real Vo_img "Initial voltage at node in p.u.";
+  parameter Real V_0 "Initial magnitud voltage at node in p.u. ";
+  parameter Real angle_0 "Initial voltageangle at node in deg. ";
   parameter Real Po "Initial Active Power in p.u.";
   parameter Real Qo "Initial Reactive Power in p.u.";
   parameter Real t1 "Time of Load variation";
@@ -16,7 +16,7 @@ model PwLoadwithVariation "Load with a power variation event.
   Real X;
   Real a;
 equation
-  Vo = sqrt(Vo_real * Vo_real + Vo_img * Vo_img);
+  Vo = V_0;
   if time > t1 then
     P = Po + P2;
     Q = Qo + Q2;
