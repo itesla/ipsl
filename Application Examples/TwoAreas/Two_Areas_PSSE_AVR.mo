@@ -5,17 +5,17 @@ model Two_Areas_PSSE_AVR
   parameter Real x=0.001;
   parameter Real b=0.00175*0.5;
   replaceable Data.PF3 PF_results constrainedby Support.PF_TwoAreas annotation (Placement(transformation(extent={{-220,-40},{-200,-20}})));
-  iPSL.Electrical.Buses.Bus bus1 annotation (Placement(transformation(extent={{-190,20},{-170,40}})));
-  iPSL.Electrical.Buses.Bus bus2 annotation (Placement(transformation(extent={{-190,-10},{-170,10}})));
-  iPSL.Electrical.Buses.Bus bus3 annotation (Placement(transformation(extent={{170,20},{190,40}})));
-  iPSL.Electrical.Buses.Bus bus4 annotation (Placement(transformation(extent={{170,-20},{190,0}})));
-  iPSL.Electrical.Buses.Bus bus5 annotation (Placement(transformation(extent={{-150,20},{-130,40}})));
-  iPSL.Electrical.Buses.Bus bus6 annotation (Placement(transformation(extent={{-110,20},{-90,40}})));
-  iPSL.Electrical.Buses.Bus bus7 annotation (Placement(transformation(extent={{-70,20},{-50,40}})));
-  iPSL.Electrical.Buses.Bus bus8 annotation (Placement(transformation(extent={{-10,20},{10,40}})));
-  iPSL.Electrical.Buses.Bus bus9 annotation (Placement(transformation(extent={{50,20},{70,40}})));
-  iPSL.Electrical.Buses.Bus bus10 annotation (Placement(transformation(extent={{90,20},{110,40}})));
-  iPSL.Electrical.Buses.Bus bus11 annotation (Placement(transformation(extent={{130,20},{150,40}})));
+  OpenIPSL.Electrical.Buses.Bus bus1 annotation (Placement(transformation(extent={{-190,20},{-170,40}})));
+  OpenIPSL.Electrical.Buses.Bus bus2 annotation (Placement(transformation(extent={{-190,-10},{-170,10}})));
+  OpenIPSL.Electrical.Buses.Bus bus3 annotation (Placement(transformation(extent={{170,20},{190,40}})));
+  OpenIPSL.Electrical.Buses.Bus bus4 annotation (Placement(transformation(extent={{170,-20},{190,0}})));
+  OpenIPSL.Electrical.Buses.Bus bus5 annotation (Placement(transformation(extent={{-150,20},{-130,40}})));
+  OpenIPSL.Electrical.Buses.Bus bus6 annotation (Placement(transformation(extent={{-110,20},{-90,40}})));
+  OpenIPSL.Electrical.Buses.Bus bus7 annotation (Placement(transformation(extent={{-70,20},{-50,40}})));
+  OpenIPSL.Electrical.Buses.Bus bus8 annotation (Placement(transformation(extent={{-10,20},{10,40}})));
+  OpenIPSL.Electrical.Buses.Bus bus9 annotation (Placement(transformation(extent={{50,20},{70,40}})));
+  OpenIPSL.Electrical.Buses.Bus bus10 annotation (Placement(transformation(extent={{90,20},{110,40}})));
+  OpenIPSL.Electrical.Buses.Bus bus11 annotation (Placement(transformation(extent={{130,20},{150,40}})));
   Groups.PSSE.AVR.G1 g1(
     V_0=PF_results.voltages.V1,
     angle_0=PF_results.voltages.A1,
@@ -43,51 +43,51 @@ model Two_Areas_PSSE_AVR
         rotation=180,
         origin={208,-10})));
 
-  iPSL.Electrical.Branches.PwLine Line6_7(
+  OpenIPSL.Electrical.Branches.PwLine Line6_7(
     R=r*10,
     X=x*10,
     G=0,
     B=b*10) annotation (Placement(transformation(extent={{-90,20},{-70,40}})));
-  iPSL.Electrical.Branches.PwLine Line5_6(
+  OpenIPSL.Electrical.Branches.PwLine Line5_6(
     R=r*25,
     X=x*25,
     G=0,
     B=b*25) annotation (Placement(transformation(extent={{-130,20},{-110,40}})));
 
-  iPSL.Electrical.Branches.PwLine Line7_8_1(
+  OpenIPSL.Electrical.Branches.PwLine Line7_8_1(
     R=r*110,
     X=x*110,
     G=0,
     B=b*110) annotation (Placement(transformation(extent={{-40,30},{-20,50}})));
-  iPSL.Electrical.Branches.PwLine Line7_8_2(
+  OpenIPSL.Electrical.Branches.PwLine Line7_8_2(
     R=r*110,
     X=x*110,
     G=0,
     B=b*110) annotation (Placement(transformation(extent={{-40,10},{-20,30}})));
-  iPSL.Electrical.Branches.PwLine Line8_9_2(
+  OpenIPSL.Electrical.Branches.PwLine Line8_9_2(
     R=r*110,
     X=x*110,
     G=0,
     B=b*110) annotation (Placement(transformation(extent={{20,10},{40,30}})));
-  iPSL.Electrical.Branches.PwLine Line8_9_1(
+  OpenIPSL.Electrical.Branches.PwLine Line8_9_1(
     R=r*110,
     X=x*110,
     G=0,
     B=b*110) annotation (Placement(transformation(extent={{20,30},{40,50}})));
 
-  iPSL.Electrical.Branches.PwLine Line9_10(
+  OpenIPSL.Electrical.Branches.PwLine Line9_10(
     R=r*10,
     X=x*10,
     G=0,
     B=b*10) annotation (Placement(transformation(extent={{70,20},{90,40}})));
 
-  iPSL.Electrical.Branches.PwLine Line10_11(
+  OpenIPSL.Electrical.Branches.PwLine Line10_11(
     R=r*25,
     X=x*25,
     G=0,
     B=b*25) annotation (Placement(transformation(extent={{110,20},{130,40}})));
 
-  iPSL.Electrical.Events.PwFault pwFault(
+  OpenIPSL.Electrical.Events.PwFault pwFault(
     X=0,
     R=0,
     t1=3,
@@ -96,39 +96,39 @@ model Two_Areas_PSSE_AVR
         rotation=270,
         origin={2,-16})));
 
-  iPSL.Electrical.Loads.PSSE.Load Load7(
+  OpenIPSL.Electrical.Loads.PSSE.Load Load7(
     PQBRAK=0.7,
     V_0=PF_results.voltages.V7,
     angle_0=PF_results.voltages.A7,
     P_0=PF_results.loads.PL7_1,
     Q_0=PF_results.loads.QL7_1) annotation (Placement(transformation(extent={{-78,-26},{-50,0}})));
-  iPSL.Electrical.Loads.PSSE.Load Load9(
+  OpenIPSL.Electrical.Loads.PSSE.Load Load9(
     PQBRAK=0.7,
     V_0=PF_results.voltages.V9,
     angle_0=PF_results.voltages.A9,
     P_0=PF_results.loads.PL9_1,
     Q_0=PF_results.loads.QL9_1) annotation (Placement(transformation(extent={{80,-26},{50,0}})));
-  iPSL.Electrical.Branches.PwLine Line5_1(
+  OpenIPSL.Electrical.Branches.PwLine Line5_1(
     G=0,
     R=0,
     X=0.01667,
     B=0) annotation (Placement(transformation(extent={{-170,20},{-150,40}})));
-  iPSL.Electrical.Branches.PwLine Line5_2(
+  OpenIPSL.Electrical.Branches.PwLine Line5_2(
     G=0,
     R=0,
     X=0.01667,
     B=0) annotation (Placement(transformation(extent={{-170,-10},{-150,10}})));
-  iPSL.Electrical.Branches.PwLine Line5_3(
+  OpenIPSL.Electrical.Branches.PwLine Line5_3(
     G=0,
     R=0,
     X=0.01667,
     B=0) annotation (Placement(transformation(extent={{150,20},{170,40}})));
-  iPSL.Electrical.Branches.PwLine Line5_4(
+  OpenIPSL.Electrical.Branches.PwLine Line5_4(
     G=0,
     R=0,
     X=0.01667,
     B=0) annotation (Placement(transformation(extent={{150,-20},{170,0}})));
-  inner iPSL.Electrical.SystemBase SysData(fn=60) annotation (Placement(transformation(extent={{-220,48},{-172,62}})));
+  inner OpenIPSL.Electrical.SystemBase SysData(fn=60) annotation (Placement(transformation(extent={{-220,48},{-172,62}})));
 equation
   connect(g1.pwPin, bus1.p) annotation (Line(points={{-201.4,30},{-201.4,30},{-180,30}}, color={0,0,255}));
   connect(g2.pwPin, bus2.p) annotation (Line(points={{-201.4,0},{-201.4,0},{-180,0}}, color={0,0,255}));

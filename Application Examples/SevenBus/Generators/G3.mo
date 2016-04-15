@@ -1,8 +1,8 @@
 within SevenBus.Generators;
 model G3
-  extends iPSL.Electrical.Essentials.pfComponent;
+  extends OpenIPSL.Electrical.Essentials.pfComponent;
   parameter Real M_b "Machine base power (MVA)" annotation (Dialog(group="Power flow data"));
-  iPSL.Electrical.Machines.PSSE.GENROU.GENROU gENROU(
+  OpenIPSL.Electrical.Machines.PSSE.GENROU.GENROU gENROU(
     V_b=V_b,
     V_0=V_0,
     angle_0=angle_0,
@@ -25,8 +25,8 @@ model G3
     Xppq=0.264,
     Xppd=0.264,
     R_a=0.002796) annotation (Placement(transformation(extent={{-30,-30},{30,30}})));
-  iPSL.Connectors.PwPin pwPin annotation (Placement(transformation(extent={{100,-10},{120,10}})));
-  iPSL.Electrical.Controls.PSSE.ES.ST5B.ST5B sT5B(
+  OpenIPSL.Connectors.PwPin pwPin annotation (Placement(transformation(extent={{100,-10},{120,10}})));
+  OpenIPSL.Electrical.Controls.PSSE.ES.ST5B.ST5B sT5B(
     T_R=0,
     T_C1=0.8,
     T_B1=6,
@@ -45,7 +45,7 @@ model G3
     T_OB1=2,
     T_OC2=0.08,
     T_OB2=0.08) annotation (Placement(transformation(extent={{30,-76},{-30,-44}})));
-  iPSL.Electrical.Controls.PSSE.PSS.PSS2B.PSS2B pSS2B(
+  OpenIPSL.Electrical.Controls.PSSE.PSS.PSS2B.PSS2B pSS2B(
     T_w1=2,
     T_w2=2,
     T_6=0,
@@ -74,7 +74,7 @@ model G3
   Modelica.Blocks.Sources.Constant VUEL(k=-100) annotation (Placement(transformation(extent={{-72,-92},{-60,-80}})));
   Modelica.Blocks.Sources.Constant VOEL(k=100) annotation (Placement(transformation(extent={{-72,-60},{-60,-48}})));
   Modelica.Blocks.Sources.Constant PSS_off(k=0) annotation (Placement(transformation(extent={{-72,-120},{-60,-108}})));
-  iPSL.Electrical.Controls.PSSE.TG.IEESGO iEESGO(
+  OpenIPSL.Electrical.Controls.PSSE.TG.IEESGO iEESGO(
     T_1=0.3,
     T_2=1,
     T_3=0.5,

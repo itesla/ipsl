@@ -1,7 +1,8 @@
 within N44.Subsystems_Original_case;
 model Gen1_bus_3000 "Configuration of synchronous generator with regulators: GENROU, STAB2A, IEEET2, IEESGO;
    Nordic 44 model: Buses 3000, 7000"
-  iPSL.Electrical.Machines.PSSE.GENROU.GENROU gENROU(
+
+  OpenIPSL.Electrical.Machines.PSSE.GENROU.GENROU gENROU(
     Tpd0=5 "d-axis transient open-circuit time constant s",
     Tppd0=0.05 "d-axis sub-transient open-circuit time constant s",
     Tpq0=1 "q-axis transient open-circuit time constant s",
@@ -24,7 +25,7 @@ model Gen1_bus_3000 "Configuration of synchronous generator with regulators: GEN
     S10=0.1089,
     S12=0.378,
     R_a=0) annotation (Placement(transformation(extent={{18,-43},{87,43}})));
-  iPSL.Electrical.Controls.PSSE.TG.IEESGO iEESGO(
+  OpenIPSL.Electrical.Controls.PSSE.TG.IEESGO iEESGO(
     T_1=0.01,
     T_2=0,
     T_3=0.15,
@@ -40,7 +41,7 @@ model Gen1_bus_3000 "Configuration of synchronous generator with regulators: GEN
         rotation=0,
         origin={-48.5,19.5})));
 
-  iPSL.Electrical.Controls.PSSE.ES.IEEET2.IEEET2 iEEET2(
+  OpenIPSL.Electrical.Controls.PSSE.ES.IEEET2.IEEET2 iEEET2(
     T_R=0,
     K_A=729,
     T_A=0.04,
@@ -58,7 +59,7 @@ model Gen1_bus_3000 "Configuration of synchronous generator with regulators: GEN
         extent={{-40,-33.5},{40,33.5}},
         rotation=0,
         origin={-48,-43.5})));
-  iPSL.Electrical.Controls.PSSE.PSS.STAB2A.STAB2A sTAB2A(
+  OpenIPSL.Electrical.Controls.PSSE.PSS.STAB2A.STAB2A sTAB2A(
     H_LIM=0.03,
     K_2=1,
     T_2=2,
@@ -69,7 +70,7 @@ model Gen1_bus_3000 "Configuration of synchronous generator with regulators: GEN
     T_5=0.01) annotation (Placement(transformation(extent={{-33,62},{29,94}})));
 
   Modelica.Blocks.Sources.Constant cte(k=0) annotation (Placement(transformation(extent={{-114.5,-51},{-103,-39}})));
-  iPSL.Connectors.PwPin pwPin annotation (Placement(transformation(extent={{100,-10},{120,10}})));
+  OpenIPSL.Connectors.PwPin pwPin annotation (Placement(transformation(extent={{100,-10},{120,10}})));
 
   Data.PSSE_data_Original_case PSSE_data annotation (Placement(transformation(extent={{88,88},{99,99}})));
 equation

@@ -2,7 +2,7 @@ within TwoAreas.Groups.PSAT;
 model G4
   extends TwoAreas.Support.Generator;
 
-  iPSL.Electrical.Machines.PSAT.SixthOrder.Order6 order6_1(
+  OpenIPSL.Electrical.Machines.PSAT.SixthOrder.Order6 order6_1(
     Sn=900,
     Vn=20,
     ra=0.0025,

@@ -1,7 +1,8 @@
 within N44.Subsystems_Original_case;
 model Gen3_bus_7100 "Configuration of synchronous generator with regulators: GENSAL, HYGOV, SCRX, STAB2A;
   Nordic 44 model: Buses 3115, 5300, 6100, 6700, 7100"
-  iPSL.Electrical.Machines.PSSE.GENSAL.GENSAL gENSAL(
+
+  OpenIPSL.Electrical.Machines.PSSE.GENSAL.GENSAL gENSAL(
     D=0 "Speed Damping",
     Tpd0=5,
     Tppd0=0.06,
@@ -22,7 +23,7 @@ model Gen3_bus_7100 "Configuration of synchronous generator with regulators: GEN
     S10=0.10239,
     S12=0.2742,
     R_a=0) annotation (Placement(transformation(extent={{-56,-20},{4,32}})));
-  iPSL.Electrical.Controls.PSSE.TG.HYGOV hYGOV(
+  OpenIPSL.Electrical.Controls.PSSE.TG.HYGOV hYGOV(
     R=0.06 "Permanent droop, p.u",
     r=0.4 "Temporary droop, p.u",
     VELM=0.1,
@@ -35,7 +36,7 @@ model Gen3_bus_7100 "Configuration of synchronous generator with regulators: GEN
     A_t=1.01,
     D_turb=0.5,
     q_NL=0.1) annotation (Placement(transformation(extent={{-50,50},{0,72}})));
-  iPSL.Electrical.Controls.PSSE.ES.SCRX.SCRX sCRX(
+  OpenIPSL.Electrical.Controls.PSSE.ES.SCRX.SCRX sCRX(
     K=61 "K",
     V_c0=PSSE_data.voltages.V7100,
     V_0=PSSE_data.voltages.V7100,
@@ -47,7 +48,7 @@ model Gen3_bus_7100 "Configuration of synchronous generator with regulators: GEN
     r_cr_fd=0,
     C_SWITCH=true) annotation (Placement(transformation(extent={{30,-80},{86,-34}})));
   Modelica.Blocks.Sources.Constant cte(k=0) annotation (Placement(transformation(extent={{-7,-59},{3,-49}})));
-  iPSL.Electrical.Controls.PSSE.PSS.STAB2A.STAB2A sTAB2A(
+  OpenIPSL.Electrical.Controls.PSSE.PSS.STAB2A.STAB2A sTAB2A(
     H_LIM=0.03,
     K_2=1,
     T_2=4.5,
@@ -56,7 +57,7 @@ model Gen3_bus_7100 "Configuration of synchronous generator with regulators: GEN
     K_4=0.55,
     K_5=1,
     T_5=0.01) annotation (Placement(transformation(extent={{-58,-50},{-12,-30}})));
-  iPSL.Connectors.PwPin p annotation (Placement(transformation(rotation=0, extent={{100,-10},{120,10}}), iconTransformation(extent={{100,-10},{120,10}})));
+  OpenIPSL.Connectors.PwPin p annotation (Placement(transformation(rotation=0, extent={{100,-10},{120,10}}), iconTransformation(extent={{100,-10},{120,10}})));
   Data.PSSE_data_Original_case PSSE_data annotation (Placement(transformation(extent={{86,88},{96,98}})));
 equation
 

@@ -1,6 +1,6 @@
 within AKD.Components;
 model Gen_gov_exc_stab
-  extends iPSL.Electrical.Essentials.pfComponent;
+  extends OpenIPSL.Electrical.Essentials.pfComponent;
   parameter Real M_b "Machine base power (MVA)" annotation (Dialog(group="Power flow data"));
   parameter Real Tpd0 "d-axis transient open-circuit time constant (s)" annotation (Dialog(group="Machine parameters"));
   parameter Real Tppd0 "d-axis sub-transient open-circuit time constant (s)" annotation (Dialog(group="Machine parameters"));
@@ -58,7 +58,7 @@ model Gen_gov_exc_stab
   parameter Real L_SMIN=-0.1 "Output Limits";
   parameter Real V_CU=999 "Output Limits";
   parameter Real V_CL=-999 "Output Limits";
-  iPSL.Electrical.Machines.PSSE.GENSAL.GENSAL gENSAL(
+  OpenIPSL.Electrical.Machines.PSSE.GENSAL.GENSAL gENSAL(
     V_b=V_b,
     V_0=V_0,
     angle_0=angle_0,
@@ -79,8 +79,8 @@ model Gen_gov_exc_stab
     S10=S10,
     S12=S12,
     R_a=R_a) annotation (Placement(transformation(extent={{-39,-6},{25,58}})));
-  iPSL.Connectors.PwPin pwPin annotation (Placement(transformation(extent={{80,16},{100,36}}), iconTransformation(extent={{60,-10},{80,10}})));
-  iPSL.Electrical.Controls.PSSE.TG.HYGOV hYGOV(
+  OpenIPSL.Connectors.PwPin pwPin annotation (Placement(transformation(extent={{80,16},{100,36}}), iconTransformation(extent={{60,-10},{80,10}})));
+  OpenIPSL.Electrical.Controls.PSSE.TG.HYGOV hYGOV(
     R=R,
     r=r,
     T_r=T_r,
@@ -93,7 +93,7 @@ model Gen_gov_exc_stab
     A_t=A_t,
     D_turb=D_turb,
     q_NL=q_NL) annotation (Placement(transformation(extent={{26,72},{-30,94}})));
-  iPSL.Electrical.Controls.PSSE.ES.IEEET2.IEEET2 iEEET2_1(
+  OpenIPSL.Electrical.Controls.PSSE.ES.IEEET2.IEEET2 iEEET2_1(
     T_R=T_R,
     K_A=K_A,
     T_A=T_A,
@@ -108,7 +108,7 @@ model Gen_gov_exc_stab
     S_EE_1=S_EE_1,
     E_2=E_2,
     S_EE_2=S_EE_2) annotation (Placement(transformation(extent={{-20,-74},{-88,-18}})));
-  iPSL.Electrical.Controls.PSSE.PSS.IEEEST.IEEEST iEEEST(
+  OpenIPSL.Electrical.Controls.PSSE.PSS.IEEEST.IEEEST iEEEST(
     A_1=A_1,
     A_2=A_2,
     A_3=A_3,

@@ -1,6 +1,6 @@
 within IEEE9.Generation_Groups;
 model Gen2
-  extends iPSL.Electrical.Essentials.pfComponent;
+  extends OpenIPSL.Electrical.Essentials.pfComponent;
   parameter Real vf0=1.359665419632471;
   parameter Real vref0=1.095179545801796;
 
@@ -8,7 +8,7 @@ model Gen2
   parameter Real tstart_2 annotation (Dialog(group="AVR Disturbance"));
   parameter Boolean refdisturb_2 annotation (Dialog(group="AVR Disturbance"));
 
-  iPSL.Electrical.Machines.PSAT.FourthOrder.Order4 gen(
+  OpenIPSL.Electrical.Machines.PSAT.FourthOrder.Order4 gen(
     Sn=100,
     Vn=13.8,
     V_b=V_b,
@@ -28,7 +28,7 @@ model Gen2
         extent={{-10,-10},{10,10}},
         rotation=0,
         origin={28,14})));
-  iPSL.Electrical.Controls.PSAT.AVR.AVRTypeII AVR(
+  OpenIPSL.Electrical.Controls.PSAT.AVR.AVRTypeII AVR(
     vrmin=-5,
     vrmax=5,
     v0=V_0,
@@ -59,7 +59,7 @@ model Gen2
         origin={-56,-2})));
   Modelica.Blocks.Logical.Switch switch1 annotation (Placement(transformation(extent={{-50,12},{-40,22}})));
   Modelica.Blocks.Sources.BooleanConstant booleanConstant(k=refdisturb_2) annotation (Placement(transformation(extent={{-80,2},{-70,12}})));
-  iPSL.Connectors.PwPin pwPin annotation (Placement(transformation(extent={{100,-10},{120,10}})));
+  OpenIPSL.Connectors.PwPin pwPin annotation (Placement(transformation(extent={{100,-10},{120,10}})));
   //Real P_MW;
   //Real Q_MVA;
 equation

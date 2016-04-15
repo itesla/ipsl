@@ -1,7 +1,8 @@
 within N44.Subsystems_Original_case;
 model Gen2_bus_3249 "Configuration of synchronous generator with regulators: GENSAL, HYGOV, SCRX;
   Nordic 44 model: Buses 3245, 3249, 5600"
-  iPSL.Electrical.Machines.PSSE.GENSAL.GENSAL gENSAL(
+
+  OpenIPSL.Electrical.Machines.PSSE.GENSAL.GENSAL gENSAL(
     Tppd0=0.06 "T''do (> 0)",
     Tppq0=0.1 "T''qo (> 0)",
     D=0 "Speed Damping",
@@ -22,7 +23,7 @@ model Gen2_bus_3249 "Configuration of synchronous generator with regulators: GEN
     S10=0.10239,
     S12=0.2742,
     R_a=0) annotation (Placement(transformation(extent={{-60,-20},{6,48}})));
-  iPSL.Electrical.Controls.PSSE.TG.HYGOV hYGOV(
+  OpenIPSL.Electrical.Controls.PSSE.TG.HYGOV hYGOV(
     R=0.06 "Permanent droop, p.u",
     r=0.4 "Temporary droop, p.u",
     VELM=0.1 "Gate open/close velosiy limit, p.u/sec",
@@ -35,7 +36,7 @@ model Gen2_bus_3249 "Configuration of synchronous generator with regulators: GEN
     A_t=1.1,
     D_turb=0.5,
     q_NL=0.1) annotation (Placement(transformation(extent={{-62,62},{-2,88}})));
-  iPSL.Electrical.Controls.PSSE.ES.SCRX.SCRX sCRX(
+  OpenIPSL.Electrical.Controls.PSSE.ES.SCRX.SCRX sCRX(
     K=31,
     V_c0=PSSE_data.voltages.V3249,
     V_0=PSSE_data.voltages.A3249,
@@ -47,7 +48,7 @@ model Gen2_bus_3249 "Configuration of synchronous generator with regulators: GEN
     r_cr_fd=0,
     C_SWITCH=true) annotation (Placement(transformation(extent={{26,-90},{81,-30}})));
   Modelica.Blocks.Sources.Constant cte(k=0) annotation (Placement(transformation(extent={{-21,-55},{-11,-45}})));
-  iPSL.Connectors.PwPin p annotation (Placement(transformation(rotation=0, extent={{100,-10},{120,10}}), iconTransformation(extent={{100,-10},{120,10}})));
+  OpenIPSL.Connectors.PwPin p annotation (Placement(transformation(rotation=0, extent={{100,-10},{120,10}}), iconTransformation(extent={{100,-10},{120,10}})));
   Data.PSSE_data_Original_case PSSE_data annotation (Placement(transformation(extent={{88,88},{98,98}})));
 equation
 

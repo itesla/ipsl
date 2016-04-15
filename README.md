@@ -1,6 +1,8 @@
-# **iPSL**: iTesla Power System Library:
-The iTesla Power System Library is a [Modelica](https://www.modelica.org) library developed as part of the [iTesla project](http://www.itesla-project.eu/).
-The library contains a set of power system component models for phasor time domain simulations.
+# **OpenIPSL**: Open iTesla Power System Library:
+The OpenIPSL or Open-Instance Power System Library is the forked project of the [iTesla Power System Library](https://github.com/itesla/ipsl) edited by the [SmarTS Lab](https://www.kth.se/en/ees/omskolan/organisation/avdelningar/epe/research/smart-transmission-systems-laboratory-smarts-lab-1.627203) research group.
+
+is a [Modelica](https://www.modelica.org) library developed as part of the [iTesla project](http://www.itesla-project.eu/).
+The library contains a set of power system component models for phasor-time domain simulations.
 
 ## Notice to Users:
 This project encompasses the development of a Modelica library for Power System simulation.

@@ -1,8 +1,8 @@
 within KundurSMIB.Generation_Groups;
 model Generator_AVR
-  extends iPSL.Electrical.Essentials.pfComponent;
+  extends OpenIPSL.Electrical.Essentials.pfComponent;
 
-  iPSL.Electrical.Machines.PSAT.SixthOrder.Order6 machine(
+  OpenIPSL.Electrical.Machines.PSAT.SixthOrder.Order6 machine(
     Vn=400,
     V_b=V_b,
     ra=0.003,
@@ -24,8 +24,8 @@ model Generator_AVR
     angle_0=angle_0,
     Sn=2220,
     Taa=0) annotation (Placement(transformation(extent={{14,-30},{74,30}})));
-  iPSL.Connectors.PwPin pwPin annotation (Placement(transformation(extent={{100,-10},{120,10}}), iconTransformation(extent={{100,-10},{120,10}})));
-  iPSL.Electrical.Controls.PSAT.AVR.AVRtypeIII avr(
+  OpenIPSL.Connectors.PwPin pwPin annotation (Placement(transformation(extent={{100,-10},{120,10}}), iconTransformation(extent={{100,-10},{120,10}})));
+  OpenIPSL.Electrical.Controls.PSAT.AVR.AVRtypeIII avr(
     vfmax=7,
     vfmin=-6.40,
     K0=200,
