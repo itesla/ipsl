@@ -22,8 +22,7 @@ model ESST1A "SMIB system with one load and GENROE model"
     P_0=40,
     angle_0=4.046276,
     Q_0=5.416582,
-    Xppq=0.2)
-    annotation (Placement(transformation(extent={{-100,-20},{-60,20}})));
+    Xppq=0.2) annotation (Placement(transformation(extent={{-100,-20},{-60,20}})));
   Modelica.Blocks.Sources.Constant const(k=0) annotation (Placement(transformation(extent={{-20,-56},{-40,-36}})));
   iPSL.Electrical.Controls.PSSE.ES.ESST1A eSST1A(
     V_IMAX=0.3,
@@ -43,8 +42,7 @@ model ESST1A "SMIB system with one load and GENROE model"
     K_LR=1,
     I_LR=0,
     T_A=0.1,
-    T_R=0.1)
-    annotation (Placement(transformation(extent={{-56,-60},{-108,-30}})));
+    T_R=0.1) annotation (Placement(transformation(extent={{-56,-60},{-108,-30}})));
   Modelica.Blocks.Sources.Constant const1(k=-Modelica.Constants.inf) annotation (Placement(transformation(extent={{-20,-90},{-40,-70}})));
   Modelica.Blocks.Sources.Constant const2(k=Modelica.Constants.inf) annotation (Placement(transformation(extent={{-18,-120},{-38,-100}})));
 equation

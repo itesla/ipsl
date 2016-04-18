@@ -22,8 +22,7 @@ model EXST1 "SMIB system with one load and GENROE model"
     P_0=40,
     angle_0=4.046276,
     Q_0=5.416582,
-    Xppq=0.2)
-    annotation (Placement(transformation(extent={{-100,-20},{-60,20}})));
+    Xppq=0.2) annotation (Placement(transformation(extent={{-100,-20},{-60,20}})));
   Modelica.Blocks.Sources.Constant const(k=0) annotation (Placement(transformation(extent={{-20,-56},{-40,-36}})));
   iPSL.Electrical.Controls.PSSE.ES.EXST1 eXST1_1(
     V_IMAX=10,
@@ -37,8 +36,7 @@ model EXST1 "SMIB system with one load and GENROE model"
     K_C=0.2,
     K_F=0.1,
     T_F=1,
-    T_C=0.1)
-    annotation (Placement(transformation(extent={{-58,-58},{-100,-28}})));
+    T_C=0.1) annotation (Placement(transformation(extent={{-58,-58},{-100,-28}})));
 equation
   connect(gENROE.PMECH, gENROE.PMECH0) annotation (Line(points={{-99.6,10},{-110,10},{-110,26},{-48,26},{-48,-6},{-58.4,-6}}, color={0,0,127}));
   connect(eXST1_1.EFD, gENROE.EFD) annotation (Line(points={{-99,-42},{-110,-42},{-110,-10},{-99.6,-10}}, color={0,0,127}));

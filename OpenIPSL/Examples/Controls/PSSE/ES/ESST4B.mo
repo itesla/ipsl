@@ -22,8 +22,7 @@ model ESST4B "SMIB model example of GENROU with Excitation System ESST4B"
     S10=0.1,
     S12=0.5,
     Xpq=0.6,
-    Tpq0=0.7)
-    annotation (Placement(transformation(extent={{-120,-16},{-92,18}})));
+    Tpq0=0.7) annotation (Placement(transformation(extent={{-120,-16},{-92,18}})));
   Modelica.Blocks.Sources.Constant const(k=0) annotation (Placement(transformation(
         extent={{-4,-4},{4,4}},
         rotation=0,
@@ -33,8 +32,7 @@ model ESST4B "SMIB model example of GENROU with Excitation System ESST4B"
         extent={{-5,-5},{5,5}},
         rotation=0,
         origin={-97,-37})));
-  OpenIPSL.Electrical.Controls.PSSE.ES.ESST4B eSST4B annotation (Placement(
-        transformation(
+  OpenIPSL.Electrical.Controls.PSSE.ES.ESST4B eSST4B annotation (Placement(transformation(
         extent={{-16,-11},{16,11}},
         rotation=0,
         origin={-62,-3})));

@@ -22,8 +22,7 @@ model ESDC2A "SMIB system with one load and GENROE model"
     P_0=40,
     angle_0=4.046276,
     Q_0=5.416582,
-    Xppq=0.2)
-    annotation (Placement(transformation(extent={{-104,-20},{-64,20}})));
+    Xppq=0.2) annotation (Placement(transformation(extent={{-104,-20},{-64,20}})));
   Modelica.Blocks.Sources.Constant const(k=0) annotation (Placement(transformation(extent={{-32,-46},{-42,-36}})));
   Modelica.Blocks.Sources.Constant const1(k=-Modelica.Constants.inf) annotation (Placement(transformation(extent={{-32,-60},{-42,-50}})));
   iPSL.Electrical.Controls.PSSE.ES.ESDC2A eSDC2A(

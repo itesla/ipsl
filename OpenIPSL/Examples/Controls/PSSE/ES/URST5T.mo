@@ -22,15 +22,13 @@ model URST5T "SMIB model example of GENROU with Excitation System URST5T"
     S10=0.1,
     S12=0.5,
     Xpq=0.6,
-    Tpq0=0.7)
-    annotation (Placement(transformation(extent={{-104,-16},{-76,18}})));
+    Tpq0=0.7) annotation (Placement(transformation(extent={{-104,-16},{-76,18}})));
   Modelica.Blocks.Sources.Constant const2(k=0) annotation (Placement(transformation(extent={{-110,166},{-94,182}})));
   Modelica.Blocks.Sources.Constant VOEL(k=1000) annotation (Placement(transformation(
         extent={{-5,-5},{5,5}},
         rotation=0,
         origin={-87,-67})));
-  OpenIPSL.Electrical.Controls.PSSE.ES.URST5T uRST5T
-    annotation (Placement(transformation(extent={{-56,-40},{-12,-14}})));
+  OpenIPSL.Electrical.Controls.PSSE.ES.URST5T uRST5T annotation (Placement(transformation(extent={{-56,-40},{-12,-14}})));
   Modelica.Blocks.Sources.Constant VUEL(k=-1000) annotation (Placement(transformation(
         extent={{-5,-5},{5,5}},
         rotation=0,
