@@ -61,8 +61,7 @@ model StatcomCode_Test
     xd1=0.302,
     M=10,
     P_0=0.004219210312137*SysData.S_b,
-    Q_0=-0.001421467052118*SysData.S_b)
-    annotation (Placement(transformation(extent={{-78,-8},{-58,12}})));
+    Q_0=-0.001421467052118*SysData.S_b) annotation (Placement(transformation(extent={{-78,-8},{-58,12}})));
   Modelica.Blocks.Sources.Pulse pulse(
     period=10,
     startTime=4.2,
@@ -80,9 +79,7 @@ model StatcomCode_Test
     k3=0,
     k1=1,
     k2=1) annotation (Placement(transformation(extent={{-118,-10},{-98,10}})));
-  OpenIPSL.Electrical.FACTS.PSAT.STATCOM sTATCOM3_1(V_0=1, angle_0=-0.000213067852480
-        *180/pi)
-    annotation (Placement(transformation(extent={{-14,-54},{6,-34}})));
+  OpenIPSL.Electrical.FACTS.PSAT.STATCOM sTATCOM3_1(V_0=1, angle_0=-0.000213067852480*180/pi) annotation (Placement(transformation(extent={{-14,-54},{6,-34}})));
   OpenIPSL.Electrical.Buses.Bus bus annotation (Placement(transformation(extent={{4,-8},{24,12}})));
   OpenIPSL.Electrical.Loads.PSAT.LOADPQ_variation lOADPQ(
     t_start_1=7,

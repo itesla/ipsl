@@ -1,10 +1,9 @@
 within OpenIPSL.Examples.Machines.PSAT;
 model InductiveMotorV_SIMBOpenline_Test
 
-
   extends Modelica.Icons.Example;
 
-  OpenIPSL.Electrical.Machines.PSAT.InductionMachine.MotorTypeV motorTypeI(
+  OpenIPSL.Electrical.Machines.PSAT.MotorTypeV motorTypeI(
     Sup=0,
     V_0=1.0336,
     angle_0=-0.02173,
@@ -51,7 +50,7 @@ equation
       color={0,0,255},
       smooth=Smooth.None));
   connect(pwLine1.p, motorTypeI.p) annotation (Line(
-      points={{20.1667,-38},{26,-38},{26,-16},{42.32,-16}},
+      points={{7,-20},{26,-20},{26,0},{51.6,0}},
       color={0,0,255},
       smooth=Smooth.None));
   annotation (Diagram(coordinateSystem(preserveAspectRatio=true, extent={{-100,-100},{100,100}}), graphics), Documentation(revisions="<html>

@@ -1,10 +1,9 @@
 within OpenIPSL.Examples.Machines.PSAT;
 model InductiveMotorIII_SIMBOpenline_Test
 
-
   extends Modelica.Icons.Example;
 
-  OpenIPSL.Electrical.Machines.PSAT.InductionMachine.MotorTypeIII motorTypeI(
+  OpenIPSL.Electrical.Machines.PSAT.MotorTypeIII motorTypeI(
     Sup=0,
     V_0=1.0336,
     angle_0=-0.02173,

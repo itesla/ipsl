@@ -2,7 +2,7 @@ within OpenIPSL.Examples.Controls.PSAT.TG;
 model TGTypeV_test
 
   extends Modelica.Icons.Example;
-  OpenIPSL.Electrical.Machines.PSAT.ThirdOrder.Order3 GenOrder3(
+  OpenIPSL.Electrical.Machines.PSAT.Order3 GenOrder3(
     P_0=0.16041,
     Q_0=0.12012,
     V_b=400,

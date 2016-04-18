@@ -5,7 +5,7 @@ model Order3test2
   extends OpenIPSL.Examples.BaseTest;
   extends Modelica.Icons.Example;
 
-  OpenIPSL.Electrical.Machines.PSAT.ThirdOrder.Order3 order31(
+  OpenIPSL.Electrical.Machines.PSAT.Order3 order31(
     V_b=400,
     V_0=1,
     angle_0=0,

@@ -4,7 +4,7 @@ model Order4test2_perturbation
   import OpenIPSL;
   extends OpenIPSL.Examples.BaseTest;
   extends Modelica.Icons.Example;
-  OpenIPSL.Electrical.Machines.PSAT.FourthOrder.Order4 Generator(
+  OpenIPSL.Electrical.Machines.PSAT.Order4 Generator(
     Sn=100,
     Vn=20,
     V_b=400,

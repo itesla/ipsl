@@ -1,11 +1,10 @@
 within OpenIPSL.Examples.Machines.PSAT;
 model Order3test2_AVR
 
-
   extends Modelica.Icons.Example;
   import OpenIPSL;
   extends OpenIPSL.Examples.BaseTest;
-  OpenIPSL.Electrical.Machines.PSAT.ThirdOrder.Order3 order3_Inputs_Outputs1(
+  OpenIPSL.Electrical.Machines.PSAT.Order3 order3_Inputs_Outputs1(
     V_b=400,
     V_0=1,
     angle_0=0,

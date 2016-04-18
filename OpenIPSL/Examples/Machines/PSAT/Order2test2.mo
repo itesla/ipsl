@@ -4,7 +4,7 @@ model Order2test2
   import OpenIPSL;
   extends OpenIPSL.Examples.BaseTest;
   extends Modelica.Icons.Example;
-  OpenIPSL.Electrical.Machines.PSAT.SecondOrder.Order2 order21(
+  OpenIPSL.Electrical.Machines.PSAT.Order2 order21(
     Sn=20,
     V_b=400,
     V_0=1,
