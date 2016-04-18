@@ -1,5 +1,5 @@
 within OpenIPSL.Electrical.Machines.PSSE;
-package GENSAL 
+package GENSAL
 
 
 annotation (Documentation(revisions="<html>
