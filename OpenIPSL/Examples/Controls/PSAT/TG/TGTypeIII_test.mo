@@ -79,13 +79,11 @@ model TGTypeIII_test
 equation
   connect(order3_Inputs_Outputs1.vf0, order3_Inputs_Outputs1.vf)
     annotation (Line(
-      points={{-48.6689,30.9112},{-12,30.9112},{-12,36},{-62,36},{-62,20.9366},
-          {-52,20.9366}},
+      points={{-48.6689,30.9112},{-12,30.9112},{-12,36},{-62,36},{-62,20.9366},{-52,20.9366}},
       color={0,0,127},
       smooth=Smooth.None));
   connect(order3_Inputs_Outputs1.w, tGTypeIII1.w) annotation (Line(
-      points={{-17.023,27.5864},{-10,27.5864},{-10,-12},{-98,-12},{-98,5},{
-          -87.78,5}},
+      points={{-17.023,27.5864},{-10,27.5864},{-10,-12},{-98,-12},{-98,5},{-87.78,5}},
       color={0,0,127},
       smooth=Smooth.None));
   connect(tGTypeIII1.Pm, order3_Inputs_Outputs1.pm) annotation (Line(
@@ -113,8 +111,7 @@ equation
       color={0,0,255},
       smooth=Smooth.None));
   connect(order3_Inputs_Outputs1.p, pwLine2.p) annotation (Line(
-      points={{-17.023,12.7069},{-17.5115,12.7069},{-17.5115,12.3286},{-1.80327,
-          12.3286}},
+      points={{-17.023,12.7069},{-17.5115,12.7069},{-17.5115,12.3286},{-1.80327,12.3286}},
       color={0,0,255},
       smooth=Smooth.None));
   connect(pwLine1.p, pwLine2.p) annotation (Line(

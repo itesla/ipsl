@@ -16,16 +16,12 @@ model Order4test2
     D=0,
     xd1=0.302,
     P_0=16.0352698692006,
-    Q_0=11.859436505981)
-               annotation (Placement(transformation(extent={{-65,-15},{-35,15}})));
+    Q_0=11.859436505981) annotation (Placement(transformation(extent={{-65,-15},{-35,15}})));
 equation
 
-  connect(Generator.vf0, Generator.vf) annotation (Line(points={{-62,16.5},{-62,
-          20},{-70,20},{-70,7.5},{-65,7.5}}, color={0,0,127}));
-  connect(Generator.pm, Generator.pm0) annotation (Line(points={{-65,-7.5},{-70,
-          -7.5},{-70,-10},{-70,-20},{-62,-20},{-62,-16.5}}, color={0,0,127}));
-  connect(Generator.p, bus.p) annotation (Line(points={{-33.5,0.07446},{-16.75,
-          0.07446},{-16.75,0},{0,0}}, color={0,0,255}));
+  connect(Generator.vf0, Generator.vf) annotation (Line(points={{-62,16.5},{-62,20},{-70,20},{-70,7.5},{-65,7.5}}, color={0,0,127}));
+  connect(Generator.pm, Generator.pm0) annotation (Line(points={{-65,-7.5},{-70,-7.5},{-70,-10},{-70,-20},{-62,-20},{-62,-16.5}}, color={0,0,127}));
+  connect(Generator.p, bus.p) annotation (Line(points={{-33.5,0.07446},{-16.75,0.07446},{-16.75,0},{0,0}}, color={0,0,255}));
   annotation (
     Diagram(coordinateSystem(
         extent={{-100,-100},{100,100}},

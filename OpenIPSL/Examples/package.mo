@@ -1,16 +1,9 @@
 within OpenIPSL;
 package Examples 
-  extends Modelica.Icons.ExamplesPackage;
+extends Modelica.Icons.ExamplesPackage;
 
 
-
-
-
-
-
-
-
-annotation (                              Documentation(revisions="<html>
+annotation (Documentation(revisions="<html>
 <!--DISCLAIMER-->
 <p>Copyright 2015-2016 RTE (France), SmarTS Lab (Sweden), AIA (Spain) and DTU (Denmark)</p>
 <ul>

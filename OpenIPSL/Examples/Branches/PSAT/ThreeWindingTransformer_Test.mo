@@ -68,8 +68,7 @@ model ThreeWindingTransformer_Test
     Q2=0,
     P3=0,
     Q3=0) annotation (Placement(transformation(extent={{115,-20},{135,0}})));
-  OpenIPSL.Electrical.Branches.PSAT.ThreeWindingTransformer.ThreeWindingTransformer
-                                                                                    threeWindingTransformer annotation (Placement(transformation(extent={{70,0},{90,20}})));
+  OpenIPSL.Electrical.Branches.PSAT.ThreeWindingTransformer.ThreeWindingTransformer threeWindingTransformer annotation (Placement(transformation(extent={{70,0},{90,20}})));
   OpenIPSL.Electrical.Buses.Bus Bus1 annotation (Placement(transformation(extent={{10,0},{30,20}})));
   OpenIPSL.Electrical.Buses.Bus Bus2 annotation (Placement(transformation(extent={{50,0},{70,20}})));
   OpenIPSL.Electrical.Buses.Bus Bus3 annotation (Placement(transformation(extent={{95,15},{115,35}})));

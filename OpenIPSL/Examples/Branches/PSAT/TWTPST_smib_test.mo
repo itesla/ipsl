@@ -63,8 +63,7 @@ equation
       color={0,0,255},
       smooth=Smooth.None));
   connect(lOADPQ2.p, pwLine1.n) annotation (Line(
-      points={{44,-23},{26,-23},{26,-36},{14,-36},{14,-4},{10,-4},{10,-12},{
-          -0.333333,-12}},
+      points={{44,-23},{26,-23},{26,-36},{14,-36},{14,-4},{10,-4},{10,-12},{-0.333333,-12}},
       color={0,0,255},
       smooth=Smooth.None));
   connect(infiniteBus.p, order2_1.p) annotation (Line(
@@ -72,8 +71,7 @@ equation
       color={0,0,255},
       smooth=Smooth.None));
   connect(pSTransformer.n, pwLine2.n) annotation (Line(
-      points={{75,-12},{82,-12},{82,-14},{94,-14},{94,-4},{92,-4},{92,10},{
-          73.6667,10}},
+      points={{75,-12},{82,-12},{82,-14},{94,-14},{94,-4},{92,-4},{92,10},{73.6667,10}},
       color={0,0,255},
       smooth=Smooth.None));
   connect(bus4.p, lOADPQ1.p) annotation (Line(
@@ -116,8 +114,7 @@ equation
       points={{75,-16},{80,-16},{80,0},{46,0},{46,-6.4},{51.6,-6.4}},
       color={0,0,127},
       smooth=Smooth.None));
-  connect(order2_1.vf0, order2_1.vf) annotation (Line(points={{-120,11},{-120,
-          14},{-130,14},{-130,5},{-122,5}},                                                                     color={0,0,127}));
+  connect(order2_1.vf0, order2_1.vf) annotation (Line(points={{-120,11},{-120,14},{-130,14},{-130,5},{-122,5}}, color={0,0,127}));
   connect(order2_1.pm, order2_1.pm0) annotation (Line(points={{-122,-5},{-130,-5},{-130,-16},{-120,-16},{-120,-11}}, color={0,0,127}));
   annotation (
     Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-140,-100},{140,100}})),

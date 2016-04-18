@@ -24,15 +24,11 @@ model Order6test2
     Tq20=0.02,
     Taa=2e-3,
     P_0=16.0352698692006,
-    Q_0=11.859436505981)
-         annotation (Placement(transformation(extent={{-61,-20},{-21,20}})));
+    Q_0=11.859436505981) annotation (Placement(transformation(extent={{-61,-20},{-21,20}})));
 equation
-  connect(order6Type2_1.vf0, order6Type2_1.vf) annotation (Line(points={{-57,22},
-          {-57,25},{-71,25},{-71,10},{-61,10}},                                                                             color={0,0,127}));
-  connect(order6Type2_1.pm, order6Type2_1.pm0) annotation (Line(points={{-61,-10},
-          {-71,-10},{-71,-25},{-57,-25},{-57,-22}},                                                                          color={0,0,127}));
-  connect(order6Type2_1.p, bus.p) annotation (Line(points={{-19,0.09928},{-10,
-          0.09928},{-10,0},{0,0}}, color={0,0,255}));
+  connect(order6Type2_1.vf0, order6Type2_1.vf) annotation (Line(points={{-57,22},{-57,25},{-71,25},{-71,10},{-61,10}}, color={0,0,127}));
+  connect(order6Type2_1.pm, order6Type2_1.pm0) annotation (Line(points={{-61,-10},{-71,-10},{-71,-25},{-57,-25},{-57,-22}}, color={0,0,127}));
+  connect(order6Type2_1.p, bus.p) annotation (Line(points={{-19,0.09928},{-10,0.09928},{-10,0},{0,0}}, color={0,0,255}));
   annotation (
     Diagram(coordinateSystem(
         extent={{-100,-100},{100,100}},

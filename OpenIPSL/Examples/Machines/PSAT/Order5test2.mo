@@ -20,15 +20,11 @@ model Order5test2
     xq1=0.5,
     Td10=8,
     Tq10=0.8,
-    Tq20=0.02)
-         annotation (Placement(transformation(extent={{-32,-10},{-12,10}})));
+    Tq20=0.02) annotation (Placement(transformation(extent={{-32,-10},{-12,10}})));
 equation
-  connect(order5Type1_Inputs_Outputs.vf, order5Type1_Inputs_Outputs.vf0) annotation (Line(points={{-32,5},
-          {-37,5},{-37,15},{-30,15},{-30,11}},                                                                                                    color={0,0,127}));
-  connect(order5Type1_Inputs_Outputs.pm, order5Type1_Inputs_Outputs.pm0) annotation (Line(points={{-32,-5},
-          {-37,-5},{-37,-15},{-30,-15},{-30,-11}},                                                                                                color={0,0,127}));
-  connect(order5Type1_Inputs_Outputs.p, bus.p) annotation (Line(points={{-11,
-          0.04964},{-6,0.04964},{-6,0},{0,0}}, color={0,0,255}));
+  connect(order5Type1_Inputs_Outputs.vf, order5Type1_Inputs_Outputs.vf0) annotation (Line(points={{-32,5},{-37,5},{-37,15},{-30,15},{-30,11}}, color={0,0,127}));
+  connect(order5Type1_Inputs_Outputs.pm, order5Type1_Inputs_Outputs.pm0) annotation (Line(points={{-32,-5},{-37,-5},{-37,-15},{-30,-15},{-30,-11}}, color={0,0,127}));
+  connect(order5Type1_Inputs_Outputs.p, bus.p) annotation (Line(points={{-11,0.04964},{-6,0.04964},{-6,0},{0,0}}, color={0,0,255}));
   annotation (
     Diagram(coordinateSystem(
         extent={{-100,-100},{100,100}},

@@ -129,11 +129,11 @@ equation
       visible=true,
       origin={3.2254,-20.2865},
       points={{-10.2484,2.99342},{1.638,2.99342},{1.638,2.6151},{2.97133,2.6151}}));
-  connect(pwLine2.p, pwLine1.p) annotation (Line(
+  connect(pwLine2.p, pwLine1.p)
+    annotation (Line(
       visible=true,
       origin={10.8634,-27.6714},
-      points={{-4.66667,10},{-4.66667,5},{-3.55272e-015,5},{-3.55272e-015,0},{
-          -4.66667,0},{-4.66667,-10}}));
+      points={{-4.66667,10},{-4.66667,5},{-3.55272e-015,5},{-3.55272e-015,0},{-4.66667,0},{-4.66667,-10}}));
   connect(order3_Inputs_Outputs1.w, tGModel6_1.we)
     annotation (Line(
       points={{-7.02303,-2.41364},{-7.02303,-40},{-58,-40},{-58,35.72},{-46.72,35.72}},
@@ -141,20 +141,17 @@ equation
       smooth=Smooth.None));
   connect(order3_Inputs_Outputs1.vf0, tGModel6_1.Pe)
     annotation (Line(
-      points={{-38.6689,0.91124},{6,0.91124},{6,-46},{-66,-46},{-66,29.26},{
-          -46.72,29.26}},
+      points={{-38.6689,0.91124},{6,0.91124},{6,-46},{-66,-46},{-66,29.26},{-46.72,29.26}},
       color={0,0,127},
       smooth=Smooth.None));
   connect(order3_Inputs_Outputs1.vf0, order3_Inputs_Outputs1.vf)
     annotation (Line(
-      points={{-38.6689,0.91124},{0,0.91124},{0,6},{-52,6},{-52,-9.0634},{-42,
-          -9.0634}},
+      points={{-38.6689,0.91124},{0,0.91124},{0,6},{-52,6},{-52,-9.0634},{-42,-9.0634}},
       color={0,0,127},
       smooth=Smooth.None));
   connect(order3_Inputs_Outputs1.pm0, tGModel6_1.Pref)
     annotation (Line(
-      points={{-38.6689,-35.6624},{8,-35.6624},{8,12},{-56,12},{-56,22.12},{
-          -46.72,22.12}},
+      points={{-38.6689,-35.6624},{8,-35.6624},{8,12},{-56,12},{-56,22.12},{-46.72,22.12}},
       color={0,0,127},
       smooth=Smooth.None));
   connect(tGModel6_1.Pm, order3_Inputs_Outputs1.pm)

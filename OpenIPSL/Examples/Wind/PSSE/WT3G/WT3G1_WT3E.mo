@@ -1,6 +1,6 @@
 within OpenIPSL.Examples.Wind.PSSE.WT3G;
 model WT3G1_WT3E
-    extends Modelica.Icons.Example;
+  extends Modelica.Icons.Example;
   constant Real pi=Modelica.Constants.pi;
   parameter Real V1=1.00000;
   parameter Real A1=0.0000;
@@ -169,19 +169,13 @@ equation
       points={{59.6667,4},{70,4},{70,7},{77.8,7}},
       color={0,0,255},
       smooth=Smooth.None));
-  connect(wT3G1_pt.ipcmd0, wT3E1_1.WIPCMD0) annotation (Line(points={{104.2,
-          32.3},{104.2,40},{156.25,40},{156.25,28.3571}},                                                                   color={0,0,127}));
-  connect(wT3G1_pt.eqcmd0, wT3E1_1.WEQCMD0) annotation (Line(points={{113,32.3},
-          {113,46},{162.85,46},{162.85,28.3571}},                                                                       color={0,0,127}));
-  connect(wT3G1_pt.Eqcmd, wT3E1_1.WEQCMD) annotation (Line(points={{121.8,23.1},
-          {133.9,23.1},{133.9,21.7857},{146.35,21.7857}},                                                                       color={0,0,127}));
+  connect(wT3G1_pt.ipcmd0, wT3E1_1.WIPCMD0) annotation (Line(points={{104.2,32.3},{104.2,40},{156.25,40},{156.25,28.3571}}, color={0,0,127}));
+  connect(wT3G1_pt.eqcmd0, wT3E1_1.WEQCMD0) annotation (Line(points={{113,32.3},{113,46},{162.85,46},{162.85,28.3571}}, color={0,0,127}));
+  connect(wT3G1_pt.Eqcmd, wT3E1_1.WEQCMD) annotation (Line(points={{121.8,23.1},{133.9,23.1},{133.9,21.7857},{146.35,21.7857}}, color={0,0,127}));
   connect(wT3E1_1.ITERM, wT3G1_pt.V) annotation (Line(points={{149.65,7},{134,7},{134,-9.1},{126.2,-9.1}}, color={0,0,127}));
-  connect(wT3E1_1.VTERM, wT3G1_pt.Iterm) annotation (Line(points={{149.65,
-          0.428571},{137.825,0.428571},{137.825,0.1},{126.2,0.1}},                                                                 color={0,0,127}));
-  connect(wT3E1_1.Qelec, wT3G1_pt.Q) annotation (Line(points={{149.65,-6.14286},
-          {136,-6.14286},{136,-20},{72,-20},{72,13.9},{77.8,13.9}},                                                                       color={0,0,127}));
-  connect(wT3E1_1.PELEC, wT3G1_pt.P) annotation (Line(points={{149.65,-12.7143},
-          {140,-12.7143},{140,-26},{68,-26},{68,23.1},{77.8,23.1}},                                                                       color={0,0,127}));
+  connect(wT3E1_1.VTERM, wT3G1_pt.Iterm) annotation (Line(points={{149.65,0.428571},{137.825,0.428571},{137.825,0.1},{126.2,0.1}}, color={0,0,127}));
+  connect(wT3E1_1.Qelec, wT3G1_pt.Q) annotation (Line(points={{149.65,-6.14286},{136,-6.14286},{136,-20},{72,-20},{72,13.9},{77.8,13.9}}, color={0,0,127}));
+  connect(wT3E1_1.PELEC, wT3G1_pt.P) annotation (Line(points={{149.65,-12.7143},{140,-12.7143},{140,-26},{68,-26},{68,23.1},{77.8,23.1}}, color={0,0,127}));
   connect(cSVGN1_1.V, wT3G1_pt.Iterm) annotation (Line(points={{-28.37,-38.07},{132,-38.07},{132,0},{126.2,0.1}}, color={0,0,127}));
   annotation (
     Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-140,-80},{160,100}})),

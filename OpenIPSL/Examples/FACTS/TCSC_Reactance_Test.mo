@@ -47,8 +47,7 @@ model TCSC_Reactance_Test
     dP1=0,
     dQ1=0.01,
     dP2=0,
-    dQ2=-0.01)
-              annotation (Placement(transformation(extent={{96,-10},{116,10}})));
+    dQ2=-0.01) annotation (Placement(transformation(extent={{96,-10},{116,10}})));
   OpenIPSL.Electrical.Controls.PSAT.FACTS.TCSC.TCSCReactance tCSCReactance annotation (Placement(transformation(extent={{26,-10},{46,10}})));
   inner OpenIPSL.Electrical.SystemBase SysData annotation (Placement(transformation(extent={{-100,60},{-76,80}})));
 equation

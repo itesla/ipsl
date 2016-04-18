@@ -1,6 +1,7 @@
 within OpenIPSL.Examples;
 package Branches 
-    extends Modelica.Icons.ExamplesPackage;
+extends Modelica.Icons.ExamplesPackage;
+
 
 annotation (Documentation(revisions="<html>
 <!--DISCLAIMER-->

@@ -46,8 +46,7 @@ model TCSC_Alpha_Test
     t_start_2=12,
     t_end_2=20,
     dP2=-0.01,
-    dQ2=-0.01)
-              annotation (Placement(transformation(extent={{94,-10},{114,10}})));
+    dQ2=-0.01) annotation (Placement(transformation(extent={{94,-10},{114,10}})));
   OpenIPSL.Electrical.Controls.PSAT.FACTS.TCSC.TCSCAlpha tCSCAlpha annotation (Placement(transformation(extent={{18,-10},{38,10}})));
   inner OpenIPSL.Electrical.SystemBase SysData annotation (Placement(transformation(extent={{-120,60},{-96,80}})));
 equation

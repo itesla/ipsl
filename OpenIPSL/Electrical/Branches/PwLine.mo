@@ -65,58 +65,74 @@ equation
     Icon(coordinateSystem(
         extent={{-60,-40},{60,40}},
         preserveAspectRatio=true,
-        initialScale=0.1), graphics={Rectangle(
+        initialScale=0.1), graphics={
+        Rectangle(
           extent={{-60,40},{60,-40}},
           lineColor={0,0,255},
           fillColor={255,255,255},
-          fillPattern=FillPattern.Solid),Rectangle(
+          fillPattern=FillPattern.Solid),
+        Rectangle(
           extent={{-40,10},{40,-10}},
           lineColor={0,0,255},
           fillColor={95,95,95},
-          fillPattern=FillPattern.Solid),Text(
+          fillPattern=FillPattern.Solid),
+        Text(
           visible=displayPF,
           extent={{-106,82},{-18,36}},
           lineColor={238,46,47},
-          textString=DynamicSelect("0.0", String(P12, significantDigits=2))),Text(
+          textString=DynamicSelect("0.0", String(P12, significantDigits=2))),
+        Text(
           visible=displayPF,
           extent={{24,82},{112,36}},
           lineColor={238,46,47},
-          textString=DynamicSelect("0.0", String(P21, significantDigits=2))),Text(
+          textString=DynamicSelect("0.0", String(P21, significantDigits=2))),
+        Text(
           visible=displayPF,
           extent={{20,-54},{108,-100}},
           lineColor={0,255,0},
-          textString=DynamicSelect("0.0", String(Q21, significantDigits=2))),Text(
+          textString=DynamicSelect("0.0", String(Q21, significantDigits=2))),
+        Text(
           visible=displayPF,
           extent={{-108,-54},{-20,-100}},
           lineColor={0,255,0},
-          textString=DynamicSelect("0.0", String(Q12, significantDigits=2))),Line(
+          textString=DynamicSelect("0.0", String(Q12, significantDigits=2))),
+        Line(
           visible=displayPF,
           points={{-86,86},{-38,86},{-46,92}},
-          color={0,0,0}),Line(
+          color={0,0,0}),
+        Line(
           visible=displayPF,
           points={{-38,86},{-46,80}},
-          color={0,0,0}),Line(
+          color={0,0,0}),
+        Line(
           visible=displayPF,
           points={{42,86},{90,86},{82,92}},
-          color={0,0,0}),Line(
+          color={0,0,0}),
+        Line(
           visible=displayPF,
           points={{90,86},{82,80}},
-          color={0,0,0}),Line(
+          color={0,0,0}),
+        Line(
           visible=displayPF,
           points={{-88,-54},{-40,-54},{-48,-48}},
-          color={0,0,0}),Line(
+          color={0,0,0}),
+        Line(
           visible=displayPF,
           points={{-80,-48},{-80,-60}},
-          color={0,0,0}),Line(
+          color={0,0,0}),
+        Line(
           visible=displayPF,
           points={{-40,-54},{-48,-60}},
-          color={0,0,0}),Line(
+          color={0,0,0}),
+        Line(
           visible=displayPF,
           points={{48,-48},{48,-60}},
-          color={0,0,0}),Line(
+          color={0,0,0}),
+        Line(
           visible=displayPF,
           points={{40,-54},{88,-54},{80,-48}},
-          color={0,0,0}),Line(
+          color={0,0,0}),
+        Line(
           visible=displayPF,
           points={{88,-54},{80,-60}},
           color={0,0,0})}),

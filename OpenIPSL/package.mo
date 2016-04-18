@@ -1,5 +1,10 @@
 within ;
 package OpenIPSL "Open-Instance Power System Library"
+extends Modelica.Icons.Package;
+
+
+
+
 
 
 annotation (
@@ -19,5 +24,6 @@ annotation (
 
 <p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
 <p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
-</html>"));
+</html>"),
+  Icon(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,100}}), graphics={Bitmap(extent={{-100,100},{100,-100}}, fileName="modelica://OpenIPSL/Resources/Images/OpenIPSL_Logo.png")}));
 end OpenIPSL;

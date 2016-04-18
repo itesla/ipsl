@@ -76,19 +76,16 @@ equation
     annotation (Line(
       visible=true,
       origin={-33.9057,8.3006},
-      points={{-35.7544,3.3007},{10.9182,3.3007},{10.9182,-3.3006},{13.9182,
-          -3.3006}},
+      points={{-35.7544,3.3007},{10.9182,3.3007},{10.9182,-3.3006},{13.9182,-3.3006}},
       color={0,0,127}));
   connect(PFmodel1.pwPin1, pwLine13.p) annotation (Line(
       visible=true,
       origin={32.2688,0.1454},
-      points={{-29.2563,-0.1454},{9.7437,-0.1454},{9.7437,-0.143},{5.10213,
-          -0.143}}));
+      points={{-29.2563,-0.1454},{9.7437,-0.1454},{9.7437,-0.143},{5.10213,-0.143}}));
   connect(const1.y, add1.u1) annotation (Line(
       visible=true,
       origin={-68.3155,-9.4113},
-      points={{-12.9459,1.0126},{3.3154,1.0126},{3.3154,-1.0127},{6.3155,
-          -1.0127}},
+      points={{-12.9459,1.0126},{3.3154,1.0126},{3.3154,-1.0127},{6.3155,-1.0127}},
       color={0,0,127}));
   connect(add2.y, add1.u2) annotation (Line(
       visible=true,
@@ -99,15 +96,13 @@ equation
     annotation (Line(
       visible=true,
       origin={-92.2764,-36.5036},
-      points={{-14.1086,5.1749},{3.7029,5.1749},{3.7029,-5.17496},{6.70292,
-          -5.17496}},
+      points={{-14.1086,5.1749},{3.7029,5.1749},{3.7029,-5.17496},{6.70292,-5.17496}},
       color={0,0,127}));
   connect(add2.u2, step2.y)
     annotation (Line(
       visible=true,
       origin={-98.2684,-53.2338},
-      points={{12.6949,8.11496},{-3.2317,8.11496},{-3.2317,-8.115},{-6.2316,
-          -8.115}},
+      points={{12.6949,8.11496},{-3.2317,8.11496},{-3.2317,-8.115},{-6.2316,-8.115}},
       color={0,0,127}));
   connect(pwLine13.n, pwLine14.p) annotation (Line(
       visible=true,
@@ -124,8 +119,7 @@ equation
   connect(infiniteBus8.p, pwLine14.n) annotation (Line(
       visible=true,
       origin={97.3801,2.1498},
-      points={{31.6073,-3.3002},{-1.2024,-3.3002},{-1.2024,3.3003},{-2.53573,
-          3.3003}}));
+      points={{31.6073,-3.3002},{-1.2024,-3.3002},{-1.2024,3.3003},{-2.53573,3.3003}}));
   annotation (Diagram(coordinateSystem(
         extent={{-148.5,-105.0},{148.5,105.0}},
         preserveAspectRatio=true,

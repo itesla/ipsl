@@ -15,23 +15,21 @@ model Order2test2
     M=10,
     D=0,
     P_0=16.0352698692006,
-    Q_0=11.859436505981)
-         annotation (Placement(visible=true, transformation(
+    Q_0=11.859436505981) annotation (Placement(visible=true, transformation(
         origin={-29.946,0},
         extent={{-10.0,-10.0},{10.0,10.0}},
         rotation=0)));
 equation
-  connect(order21.vf, order21.vf0) annotation (Line(points={{-39.946,5},{-46,5},
-          {-46,14},{-37.946,14},{-37.946,11}}, color={0,0,127}));
-  connect(order21.pm, order21.pm0) annotation (Line(points={{-39.946,-5},{-46,-5},
-          {-46,-14},{-37.946,-14},{-37.946,-11}}, color={0,0,127}));
-  connect(order21.p, bus.p) annotation (Line(points={{-18.946,0.04964},{-9.473,
-          0.04964},{-9.473,0},{0,0}}, color={0,0,255}));
-  annotation (Diagram(coordinateSystem(
+  connect(order21.vf, order21.vf0) annotation (Line(points={{-39.946,5},{-46,5},{-46,14},{-37.946,14},{-37.946,11}}, color={0,0,127}));
+  connect(order21.pm, order21.pm0) annotation (Line(points={{-39.946,-5},{-46,-5},{-46,-14},{-37.946,-14},{-37.946,-11}}, color={0,0,127}));
+  connect(order21.p, bus.p) annotation (Line(points={{-18.946,0.04964},{-9.473,0.04964},{-9.473,0},{0,0}}, color={0,0,255}));
+  annotation (
+    Diagram(coordinateSystem(
         extent={{-100,-100},{100,100}},
         preserveAspectRatio=false,
         initialScale=0.1,
-        grid={2,2})),          Documentation(revisions="<html>
+        grid={2,2})),
+    Documentation(revisions="<html>
 <!--DISCLAIMER-->
 <p>Copyright 2015-2016 RTE (France), SmarTS Lab (Sweden), AIA (Spain) and DTU (Denmark)</p>
 <ul>
