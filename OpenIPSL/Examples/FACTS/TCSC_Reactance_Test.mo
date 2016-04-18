@@ -1,6 +1,10 @@
 within OpenIPSL.Examples.FACTS;
 model TCSC_Reactance_Test
-  OpenIPSL.Electrical.Machines.PSAT.Order2 Gen1(
+
+
+  extends Modelica.Icons.Example;
+
+  OpenIPSL.Electrical.Machines.PSAT.SecondOrder.Order2 Gen1(
     Sn=370,
     P_0=0.080101913348342,
     Q_0=0.060948619430301,
@@ -37,16 +41,15 @@ model TCSC_Reactance_Test
   OpenIPSL.Electrical.Loads.PSAT.LOADPQ_variation lOADPQ(
     P_0=0.08,
     Q_0=0.06,
-    Q2=0,
-    Q3=0,
-    t1=2,
-    t2=10,
-    t3=12,
-    t4=20,
-    P2=0.01,
-    P3=-0.01) annotation (Placement(transformation(extent={{96,-10},{116,10}})));
-  OpenIPSL.Electrical.FACTS.PSAT.TCSCReactance tCSCReactance
-    annotation (Placement(transformation(extent={{26,-10},{46,10}})));
+    t_start_1=2,
+    t_end_1=10,
+    t_start_2=12,
+    t_end_2=20,
+    dP1=0,
+    dQ1=0.01,
+    dP2=0,
+    dQ2=-0.01) annotation (Placement(transformation(extent={{96,-10},{116,10}})));
+  OpenIPSL.Electrical.Controls.PSAT.FACTS.TCSC.TCSCReactance tCSCReactance annotation (Placement(transformation(extent={{26,-10},{46,10}})));
   inner OpenIPSL.Electrical.SystemBase SysData annotation (Placement(transformation(extent={{-100,60},{-76,80}})));
 equation
   connect(pulse1.y, add3_1.u2) annotation (Line(
@@ -58,7 +61,7 @@ equation
       color={0,0,127},
       smooth=Smooth.None));
   connect(pwLine1.n, lOADPQ.p) annotation (Line(
-      points={{79,0},{92,0},{92,11},{106,11}},
+      points={{83.6667,0},{92,0},{92,11},{106,11}},
       color={0,0,255},
       smooth=Smooth.None));
   connect(add3_1.y, Gen1.vf) annotation (Line(
@@ -74,7 +77,7 @@ equation
       color={0,0,127},
       smooth=Smooth.None));
   connect(tCSCReactance.n, pwLine1.p) annotation (Line(
-      points={{47,0},{65,0}},
+      points={{47,0},{60.3333,0}},
       color={0,0,255},
       smooth=Smooth.None));
   connect(Gen1.p, tCSCReactance.p) annotation (Line(

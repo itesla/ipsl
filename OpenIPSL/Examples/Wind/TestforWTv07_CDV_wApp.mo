@@ -1,5 +1,6 @@
 within OpenIPSL.Examples.Wind;
 model TestforWTv07_CDV_wApp "Developed by DTU"
+  extends Modelica.Icons.Example;
   Modelica.Blocks.Sources.Constant imSetPoint1(k=0.9) annotation (Placement(transformation(extent={{-108,-44},{-88,-24}})));
   Modelica.Blocks.Sources.Constant imSetPoint5(k=1) annotation (Placement(transformation(extent={{-106,-20},{-94,-8}})));
   Modelica.Blocks.Sources.Constant imSetPoint6(k=0) annotation (Placement(transformation(extent={{-106,-30},{-86,-10}})));

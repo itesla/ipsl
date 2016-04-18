@@ -1,5 +1,6 @@
 within OpenIPSL.Examples.Solar.PSAT;
 model testTemperature
+  extends Modelica.Icons.Example;
   Modelica.Blocks.Sources.Constant const(k=1000)
     annotation (Placement(visible=true, transformation(
         origin={-73.3987,11.6013},
@@ -80,7 +81,7 @@ equation
   connect(PFmodel1.pwPin1, pwLine13.p) annotation (Line(
       visible=true,
       origin={32.2688,0.1454},
-      points={{-29.2563,-0.1454},{9.7437,0.1429},{9.7437,-0.143},{9.7688,-0.143}}));
+      points={{-29.2563,-0.1454},{9.7437,-0.1454},{9.7437,-0.143},{5.10213,-0.143}}));
   connect(const1.y, add1.u1) annotation (Line(
       visible=true,
       origin={-68.3155,-9.4113},
@@ -106,19 +107,19 @@ equation
   connect(pwLine13.n, pwLine14.p) annotation (Line(
       visible=true,
       origin={68.1427,2.7263},
-      points={{-12.1051,-2.7239},{2.035,-2.7238},{2.035,2.7238},{8.035,2.7238}}));
+      points={{-7.43843,-2.7239},{2.035,-2.7239},{2.035,2.7238},{3.36833,2.7238}}));
   connect(pwLine14.n, pwLine15.n) annotation (Line(
       visible=true,
       origin={90.2103,-4.5499},
-      points={{-0.0326,10},{-0.0326,-5},{0.0649,-5}}));
+      points={{4.63407,10},{4.63407,-5},{4.73157,-5}}));
   connect(pwLine14.p, pwLine15.p) annotation (Line(
       visible=true,
       origin={76.2102,-4.5499},
-      points={{-0.0325,10.0},{-0.0325,-5.0},{0.065,-5.0}}));
+      points={{-4.69917,10},{-4.69917,-5},{-4.60167,-5}}));
   connect(infiniteBus8.p, pwLine14.n) annotation (Line(
       visible=true,
       origin={97.3801,2.1498},
-      points={{9.6073,-3.3002},{-1.2024,-3.3002},{-1.2024,3.3002},{-7.2024,3.3003}}));
+      points={{31.6073,-3.3002},{-1.2024,-3.3002},{-1.2024,3.3003},{-2.53573,3.3003}}));
   annotation (Diagram(coordinateSystem(
         extent={{-148.5,-105.0},{148.5,105.0}},
         preserveAspectRatio=true,

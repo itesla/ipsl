@@ -1,6 +1,9 @@
 within OpenIPSL.Examples;
 partial model SMIBpartial "SMIB system with one load"
 
+  import iPSL = OpenIPSL;
+  extends Modelica.Icons.Example;
+
   OpenIPSL.Electrical.Branches.PwLine pwLine(
     R=0.001,
     X=0.2,

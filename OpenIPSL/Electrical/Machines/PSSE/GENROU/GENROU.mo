@@ -1,6 +1,7 @@
 within OpenIPSL.Electrical.Machines.PSSE.GENROU;
+
+
 model GENROU "ROUND ROTOR GENERATOR MODEL (QUADRATIC SATURATION)"
-  extends OpenIPSL.Electrical.Essentials.pfComponent;
   //Import of dependencies
   import Complex;
   import Modelica.ComplexMath.arg;
@@ -9,13 +10,12 @@ model GENROU "ROUND ROTOR GENERATOR MODEL (QUADRATIC SATURATION)"
   import Modelica.ComplexMath.'abs';
   import Modelica.ComplexMath.conj;
   import Modelica.ComplexMath.fromPolar;
+  import Modelica.ComplexMath.j;
   import OpenIPSL.NonElectrical.Functions.SE;
   import Modelica.Constants.pi;
   extends BaseClasses.baseMachine(
     w(start=0),
-    EFD(start=efd0),
     XADIFD(start=efd0),
-    PMECH(start=pm0),
     ANGLE(start=delta0),
     delta(start=delta0),
     id(start=id0),
@@ -40,12 +40,12 @@ model GENROU "ROUND ROTOR GENERATOR MODEL (QUADRATIC SATURATION)"
   Real XadIfd(start=efd0) "d-axis machine field current (pu)";
   Real XaqIlq(start=0) "q-axis Machine field current (pu)";
 protected
-  parameter Complex Zs(re=R_a, im=Xpp) "Equivalent impedance";
-  parameter Complex VT(re=V_0*cos(anglev_rad), im=V_0*sin(anglev_rad)) "Complex terminal voltage";
-  parameter Complex S(re=p0, im=q0) "Complex power on machine base";
-  parameter Complex It=conj(S/VT) "Complex current, machine base";
-  parameter Complex Is=It + VT/Zs "Equivalent internal current source";
-  parameter Complex PSIpp0=Zs*Is "Sub-transient flux linkage in stator reference frame";
+  parameter Complex Zs=R_a + j*Xpp "Equivalent impedance";
+  parameter Complex VT=V_0*cos(anglev_rad) + j*V_0*sin(anglev_rad) "Complex terminal voltage";
+  parameter Complex S=p0 + j*q0 "Complex power on machine base";
+  parameter Complex It=real(S/VT) - j*imag(S/VT) "Complex current, machine base";
+  parameter Complex Is=real(It + VT/Zs) + j*imag(It + VT/Zs) "Equivalent internal current source";
+  parameter Complex PSIpp0=real(Zs*Is) + j*imag(Zs*Is) "Sub-transient flux linkage in stator reference frame";
   parameter Real ang_PSIpp0=arg(PSIpp0) "flux angle";
   parameter Real ang_It=arg(It) "current angle";
   parameter Real ang_PSIpp0andIt=ang_PSIpp0 - ang_It "angle difference";
@@ -60,7 +60,7 @@ protected
   parameter Real b=(It.re^2 + It.im^2)^0.5*(Xpp - Xq);
   //Initializion rotor angle position
   parameter Real delta0=atan(b*cos(ang_PSIpp0andIt)/(b*sin(ang_PSIpp0andIt) - a)) + ang_PSIpp0 "intial rotor angle in radians";
-  parameter Complex DQ_dq(re=cos(delta0), im=-sin(delta0)) "Parks transformation, from stator to rotor reference frame";
+  parameter Complex DQ_dq=cos(delta0) - j*sin(delta0) "Parks transformation, from stator to rotor reference frame";
   parameter Complex PSIpp0_dq=PSIpp0*DQ_dq "Flux linkage in rotor reference frame";
   parameter Complex I_dq=conj(It*DQ_dq);
   //"The terminal current in rotor reference frame"
@@ -86,7 +86,7 @@ protected
   parameter Real PSIkd0=(PSIppd0 - (Xpd - Xl)*K3d*id0)/(K3d + K4d) "d-axis initial rotor flux linkage";
   parameter Real PSIkq0=((-PSIppq0) + (Xpq - Xl)*K3q*iq0)/(K3q + K4q) "q-axis initial rotor flux linkage";
   parameter Real PSId0=PSIppd0 - Xppd*id0;
-  parameter Real PSIq0=-PSIppq0 - Xppq*iq0;
+  parameter Real PSIq0=(-PSIppq0) - Xppq*iq0;
   // Constants
   parameter Real K1d=(Xpd - Xppd)*(Xd - Xpd)/(Xpd - Xl)^2;
   parameter Real K2d=(Xpd - Xl)*(Xppd - Xl)/(Xpd - Xppd);

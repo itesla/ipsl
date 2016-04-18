@@ -1,5 +1,6 @@
 within OpenIPSL.Examples.Branches.PSAT;
 model ULTC_Test
+  extends Modelica.Icons.Example;
   OpenIPSL.Electrical.Branches.PwLine pwLine3(
     B=0.001/2,
     G=0,
@@ -71,7 +72,7 @@ equation
       color={0,0,127},
       smooth=Smooth.None));
   connect(pwLine4.n, pwLine3.n) annotation (Line(
-      points={{37,10},{45,10},{45,-10},{37,-10}},
+      points={{41.6667,10},{45,10},{45,-10},{41.6667,-10}},
       color={0,0,255},
       smooth=Smooth.None));
   connect(sine1.y, add2.u1) annotation (Line(
@@ -83,7 +84,7 @@ equation
       color={0,0,127},
       smooth=Smooth.None));
   connect(pwLine4.p, pwLine3.p) annotation (Line(
-      points={{23,10},{15,10},{15,-10},{23,-10}},
+      points={{18.3333,10},{15,10},{15,-10},{18.3333,-10}},
       color={0,0,255},
       smooth=Smooth.None));
   connect(order2_Inputs_Outputs.vf0, add.u2) annotation (Line(
@@ -95,11 +96,11 @@ equation
       color={0,0,255},
       smooth=Smooth.None));
   connect(B1.p, pwLine3.p) annotation (Line(
-      points={{5,0},{15,0},{15,-10},{23,-10}},
+      points={{5,0},{15,0},{15,-10},{18.3333,-10}},
       color={0,0,255},
       smooth=Smooth.None));
   connect(B2.p, pwLine3.n) annotation (Line(
-      points={{55,0},{45,0},{45,-10},{37,-10}},
+      points={{55,0},{45,0},{45,-10},{41.6667,-10}},
       color={0,0,255},
       smooth=Smooth.None));
   connect(uLTC_VoltageControl.n, B3.p) annotation (Line(

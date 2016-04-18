@@ -1,5 +1,6 @@
 within OpenIPSL.Examples.Wind.PSSE;
 package WT3G 
+extends Modelica.Icons.ExamplesPackage;
 
 
 annotation (Documentation(revisions="<html>
