@@ -19,25 +19,23 @@ model Order3test2
     Td10=8,
     xq=1.7,
     P_0=16.0352698692006,
-    Q_0=11.859436505981)
-            annotation (Placement(visible=true, transformation(
+    Q_0=11.859436505981) annotation (Placement(visible=true, transformation(
         origin={-25,0},
         extent={{-10.0,-10.0},{10.0,10.0}},
         rotation=0)));
 equation
 
-  connect(order31.vf, order31.vf0) annotation (Line(points={{-35,5},{-40,5},{
-          -40,15},{-33,15},{-33,11}},                                                                           color={0,0,127}));
-  connect(order31.pm, order31.pm0) annotation (Line(points={{-35,-5},{-40,-5},{
-          -40,-15},{-33,-15},{-33,-11}},                                                                      color={0,0,127}));
-  connect(order31.p, bus.p) annotation (Line(points={{-14,0.04964},{-7,0.04964},
-          {-7,0},{0,0}}, color={0,0,255}));
+  connect(order31.vf, order31.vf0) annotation (Line(points={{-35,5},{-40,5},{-40,15},{-33,15},{-33,11}}, color={0,0,127}));
+  connect(order31.pm, order31.pm0) annotation (Line(points={{-35,-5},{-40,-5},{-40,-15},{-33,-15},{-33,-11}}, color={0,0,127}));
+  connect(order31.p, bus.p) annotation (Line(points={{-14,0.04964},{-7,0.04964},{-7,0},{0,0}}, color={0,0,255}));
 
-  annotation (Diagram(coordinateSystem(
+  annotation (
+    Diagram(coordinateSystem(
         extent={{-100,-100},{100,100}},
         preserveAspectRatio=false,
         initialScale=0.1,
-        grid={2,2})), Documentation(revisions="<html>
+        grid={2,2})),
+    Documentation(revisions="<html>
 <!--DISCLAIMER-->
 <p>Copyright 2015-2016 RTE (France), SmarTS Lab (Sweden), AIA (Spain) and DTU (Denmark)</p>
 <ul>

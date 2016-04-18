@@ -115,15 +115,12 @@ equation
       color={0,0,255},
       smooth=Smooth.None));
   connect(Syn1.pm0, Syn1.pm) annotation (Line(points={{-113,-11.4},{-76,-11.4},{-76,-18},{-126,-18},{-126,-3},{-116,-3}}, color={0,0,127}));
-  connect(bus3.p, pwFault.p) annotation (Line(points={{32,32},{36,32},{36,28},{
-          36,2},{36,2},{36.3333,2}},                                                                      color={0,0,255}));
-  connect(aVRI.vf, Syn1.vf) annotation (Line(points={{-127,18.2},{-116,18.2},{
-          -116,11}},                                                                     color={0,0,127}));
+  connect(bus3.p, pwFault.p) annotation (Line(points={{32,32},{36,32},{36,28},{36,2},{36,2},{36.3333,2}}, color={0,0,255}));
+  connect(aVRI.vf, Syn1.vf) annotation (Line(points={{-127,18.2},{-116,18.2},{-116,11}}, color={0,0,127}));
   connect(vref2.y, aVRI.vref) annotation (Line(points={{-161.5,23},{-155.75,23},{-155.75,23.6},{-150.2,23.6}}, color={0,0,127}));
   connect(Syn1.v, aVRI.v) annotation (Line(points={{-84.5,8.2},{-74,8.2},{-74,-28},{-160,-28},{-160,14.4},{-150.4,14.4}}, color={0,0,127}));
   connect(Syn2.pm0, Syn2.pm) annotation (Line(points={{148,11},{148,20},{156,20},{156,5},{150,5}}, color={0,0,127}));
-  connect(Syn2.vf, Syn2.vf0) annotation (Line(points={{150,-5},{154,-5},{154,-4},
-          {156,-4},{156,-16},{148,-16},{148,-11}},                                                                        color={0,0,127}));
+  connect(Syn2.vf, Syn2.vf0) annotation (Line(points={{150,-5},{154,-5},{154,-4},{156,-4},{156,-16},{148,-16},{148,-11}}, color={0,0,127}));
   annotation (
     Diagram(coordinateSystem(extent={{-180,-100},{160,100}}, preserveAspectRatio=false)),
     Icon(coordinateSystem(extent={{-180,-100},{160,100}})),

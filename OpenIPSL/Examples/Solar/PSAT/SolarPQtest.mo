@@ -106,8 +106,7 @@ equation
   connect(pwLine2.p, pwLine1.p) annotation (Line(
       visible=true,
       origin={-77.0,0.0},
-      points={{-4.66667,10},{-4.66667,5},{-5,5},{-5,0},{-4.66667,0},{-4.66667,
-          -10}}));
+      points={{-4.66667,10},{-4.66667,5},{-5,5},{-5,0},{-4.66667,0},{-4.66667,-10}}));
   connect(pwLine1.n, pwLine2.n) annotation (Line(
       visible=true,
       origin={-63.0,0.0},
@@ -160,8 +159,7 @@ equation
       visible=true,
       origin={17.4388,13.7927},
       points={{6.5612,-3.7927},{6.2194,-1.6893},{-12.4388,-1.6894}}));
-  connect(order31.vf0, order31.vf) annotation (Line(points={{-118,21},{-118,25},
-          {-125,25},{-125,15},{-120,15}},                                                                       color={0,0,127}));
+  connect(order31.vf0, order31.vf) annotation (Line(points={{-118,21},{-118,25},{-125,25},{-125,15},{-120,15}}, color={0,0,127}));
   connect(order31.pm, order31.pm0) annotation (Line(points={{-120,5},{-125,5},{-125,-5},{-118,-5},{-118,-1}}, color={0,0,127}));
   annotation (Diagram(coordinateSystem(
         extent={{-148.5,-105},{148.5,105}},

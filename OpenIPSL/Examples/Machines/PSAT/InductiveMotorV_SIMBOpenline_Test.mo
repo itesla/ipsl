@@ -27,8 +27,7 @@ model InductiveMotorV_SIMBOpenline_Test
     X=0.1,
     t1=2,
     t2=3,
-    opening=1)
-          annotation (Placement(transformation(
+    opening=1) annotation (Placement(transformation(
         extent={{-6,-4},{6,4}},
         rotation=180,
         origin={0,20})));
@@ -36,8 +35,7 @@ model InductiveMotorV_SIMBOpenline_Test
         extent={{10,-10},{-10,10}},
         rotation=0,
         origin={-60,0})));
-  inner OpenIPSL.Electrical.SystemBase SysData(fn=60) annotation (Placement(transformation(extent={{-100,80},
-            {-40,100}})));
+  inner OpenIPSL.Electrical.SystemBase SysData(fn=60) annotation (Placement(transformation(extent={{-100,80},{-40,100}})));
 equation
   connect(infiniteBus.p, pwLine2.n) annotation (Line(
       points={{-49,0},{-38.175,0},{-38.175,20},{-7,20}},

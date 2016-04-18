@@ -118,8 +118,7 @@ equation
       color={0,0,255},
       smooth=Smooth.None));
   connect(pwLine2.n, pwLine1.n) annotation (Line(
-      points={{55.6667,26},{55.6667,20},{56,20},{56,12},{55.6667,12},{55.6667,
-          -4}},
+      points={{55.6667,26},{55.6667,20},{56,20},{56,12},{55.6667,12},{55.6667,-4}},
       color={0,0,255},
       smooth=Smooth.None));
   connect(pwFault.p, pwLine3.n) annotation (Line(

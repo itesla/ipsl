@@ -27,8 +27,7 @@ model InductiveMotorIII_SIMBOpenline_Test
     t1=2,
     t2=3,
     B=1e-3,
-    opening=1)
-            annotation (Placement(transformation(
+    opening=1) annotation (Placement(transformation(
         extent={{-6,-3.99997},{6,4}},
         rotation=180,
         origin={0,20})));
@@ -36,23 +35,17 @@ model InductiveMotorIII_SIMBOpenline_Test
         extent={{10,-10},{-10,10}},
         rotation=0,
         origin={-60,0})));
-  inner OpenIPSL.Electrical.SystemBase SysData(fn=60) annotation (Placement(transformation(extent={{-100,80},
-            {-40,100}})));
+  inner OpenIPSL.Electrical.SystemBase SysData(fn=60) annotation (Placement(transformation(extent={{-100,80},{-40,100}})));
 equation
   connect(infiniteBus.p, pwLine2.n) annotation (Line(
       points={{-49,0},{-38.175,0},{-38.175,20},{-7,20}},
       color={0,0,255},
       smooth=Smooth.None));
-  connect(pwLine1.n, infiniteBus.p) annotation (Line(
-      color={0,0,255},
-      smooth=Smooth.None));
-  connect(pwLine2.p, motorTypeI.p) annotation (Line(points={{7,20},{40,20},{40,
-          0},{51.6,0}}, color={0,0,255}));
-  connect(pwLine1.p, motorTypeI.p) annotation (Line(points={{7,-20},{40,-20},{
-          40,0},{51.6,0}}, color={0,0,255}));
-  connect(pwLine1.n, pwLine2.n) annotation (Line(points={{-7,-20},{-38,-20},{
-          -38,0},{-38.175,0},{-38.175,20},{-7,20}}, color={0,0,255}));
-  annotation (Diagram(coordinateSystem(preserveAspectRatio=true, extent={{-100,-100},{100,100}})),           Documentation(revisions="<html>
+  connect(pwLine1.n, infiniteBus.p) annotation (Line(color={0,0,255}, smooth=Smooth.None));
+  connect(pwLine2.p, motorTypeI.p) annotation (Line(points={{7,20},{40,20},{40,0},{51.6,0}}, color={0,0,255}));
+  connect(pwLine1.p, motorTypeI.p) annotation (Line(points={{7,-20},{40,-20},{40,0},{51.6,0}}, color={0,0,255}));
+  connect(pwLine1.n, pwLine2.n) annotation (Line(points={{-7,-20},{-38,-20},{-38,0},{-38.175,0},{-38.175,20},{-7,20}}, color={0,0,255}));
+  annotation (Diagram(coordinateSystem(preserveAspectRatio=true, extent={{-100,-100},{100,100}})), Documentation(revisions="<html>
 <!--DISCLAIMER-->
 <p>Copyright 2015-2016 RTE (France), SmarTS Lab (Sweden), AIA (Spain) and DTU (Denmark)</p>
 <ul>

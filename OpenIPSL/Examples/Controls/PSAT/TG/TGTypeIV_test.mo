@@ -95,16 +95,13 @@ equation
   connect(Generator.p, pwLine2.p) annotation (Line(
       visible=true,
       origin={11.2254,11.7135},
-      points={{-10.2484,-9.00658},{1.638,-9.00658},{1.638,2.6151},{2.97133,
-          2.6151}}));
+      points={{-10.2484,-9.00658},{1.638,-9.00658},{1.638,2.6151},{2.97133,2.6151}}));
   connect(Generator.vf0, Generator.vf) annotation (Line(
-      points={{-30.6689,20.9112},{8,20.9112},{8,26},{-44,26},{-44,10.9366},{-34,
-          10.9366}},
+      points={{-30.6689,20.9112},{8,20.9112},{8,26},{-44,26},{-44,10.9366},{-34,10.9366}},
       color={0,0,127},
       smooth=Smooth.None));
   connect(Generator.w, tGModel4_1.w) annotation (Line(
-      points={{0.97697,17.5864},{0.97697,-6},{8,-6},{8,-20},{-90,-20},{-90,-4.2},
-          {-84.34,-4.2}},
+      points={{0.97697,17.5864},{0.97697,-6},{8,-6},{8,-20},{-90,-20},{-90,-4.2},{-84.34,-4.2}},
       color={0,0,127},
       smooth=Smooth.None));
   connect(tGModel4_1.Pm, Generator.pm) annotation (Line(

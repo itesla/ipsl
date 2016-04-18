@@ -19,7 +19,7 @@ model Order3test2_TG
     Td10=8,
     xq=1.7,
     P_0=16.0352698692006,
-    Q_0=11.859436505981)    annotation (Placement(visible=true, transformation(
+    Q_0=11.859436505981) annotation (Placement(visible=true, transformation(
         origin={-32.3443,-0.375601},
         extent={{-11.6557,-11.6244},{11.6556,11.6244}},
         rotation=0)));
@@ -29,26 +29,18 @@ model Order3test2_TG
         rotation=0)));
 equation
 
-  connect(TGtypeII1.pm, order3_Inputs_Outputs1.pm) annotation (Line(points={{-53,-6},
-          {-50,-6},{-50,-6.1878},{-44,-6.1878}},     color={0,0,127}));
-  connect(order3_Inputs_Outputs1.vf0, order3_Inputs_Outputs1.vf) annotation (
-      Line(points={{-41.6689,12.4112},{-41.6689,16},{-48,16},{-48,6},{-48,
-          5.4366},{-44,5.4366}},      color={0,0,127}));
-  connect(order3_Inputs_Outputs1.pm0, TGtypeII1.pm0) annotation (Line(points={{
-          -41.6689,-13.1624},{-41.6689,-28},{-42,-28},{-86,-28},{-86,10},{-64,
-          10},{-64,6}},
-        color={0,0,127}));
-  connect(order3_Inputs_Outputs1.w, TGtypeII1.W) annotation (Line(points={{
-          -19.5231,10.0864},{-16,10.0864},{-16,20},{-80,20},{-80,-6},{-76,-6}},
-                                                                       color={0,
-          0,127}));
-  connect(order3_Inputs_Outputs1.p, bus.p) annotation (Line(points={{-19.5231,
-          -0.317897},{-9.76155,-0.317897},{-9.76155,0},{0,0}}, color={0,0,255}));
-  annotation (Diagram(coordinateSystem(
+  connect(TGtypeII1.pm, order3_Inputs_Outputs1.pm) annotation (Line(points={{-53,-6},{-50,-6},{-50,-6.1878},{-44,-6.1878}}, color={0,0,127}));
+  connect(order3_Inputs_Outputs1.vf0, order3_Inputs_Outputs1.vf) annotation (Line(points={{-41.6689,12.4112},{-41.6689,16},{-48,16},{-48,6},{-48,5.4366},{-44,5.4366}}, color={0,0,127}));
+  connect(order3_Inputs_Outputs1.pm0, TGtypeII1.pm0) annotation (Line(points={{-41.6689,-13.1624},{-41.6689,-28},{-42,-28},{-86,-28},{-86,10},{-64,10},{-64,6}}, color={0,0,127}));
+  connect(order3_Inputs_Outputs1.w, TGtypeII1.W) annotation (Line(points={{-19.5231,10.0864},{-16,10.0864},{-16,20},{-80,20},{-80,-6},{-76,-6}}, color={0,0,127}));
+  connect(order3_Inputs_Outputs1.p, bus.p) annotation (Line(points={{-19.5231,-0.317897},{-9.76155,-0.317897},{-9.76155,0},{0,0}}, color={0,0,255}));
+  annotation (
+    Diagram(coordinateSystem(
         extent={{-100,-100},{100,100}},
         preserveAspectRatio=true,
         initialScale=0.1,
-        grid={2,2})), Documentation(revisions="<html>
+        grid={2,2})),
+    Documentation(revisions="<html>
 <!--DISCLAIMER-->
 <p>Copyright 2015-2016 RTE (France), SmarTS Lab (Sweden), AIA (Spain) and DTU (Denmark)</p>
 <ul>

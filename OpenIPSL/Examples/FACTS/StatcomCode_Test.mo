@@ -1,7 +1,7 @@
 within OpenIPSL.Examples.FACTS;
 model StatcomCode_Test
   import Modelica.Constants.pi;
-    extends Modelica.Icons.Example;
+  extends Modelica.Icons.Example;
 
   OpenIPSL.Electrical.Branches.PwLine pwLine4(
     B=0.001/2,
@@ -157,8 +157,7 @@ equation
       color={0,0,127},
       smooth=Smooth.None));
   connect(Syn2.pm, Syn2.pm0) annotation (Line(points={{138,8},{148,8},{148,26},{135,26},{135,17.6}}, color={0,0,127}));
-  connect(Syn2.vf0, Syn2.vf) annotation (Line(points={{135,-17.6},{135,-26},{
-          152,-26},{152,-8},{138,-8}},                                                                    color={0,0,127}));
+  connect(Syn2.vf0, Syn2.vf) annotation (Line(points={{135,-17.6},{135,-26},{152,-26},{152,-8},{138,-8}}, color={0,0,127}));
   annotation (
     Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-160,-100},{160,100}})),
     Icon(coordinateSystem(extent={{-160,-100},{160,100}})),

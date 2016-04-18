@@ -1,6 +1,5 @@
 within OpenIPSL.Examples.Controls.PSSE.PSS;
-model STABNI
-  "Simple Machine Infinite Bus with Machine, Governor and Excitation system"
+model STABNI "Simple Machine Infinite Bus with Machine, Governor and Excitation system"
   extends OpenIPSL.Examples.SMIBpartial;
   OpenIPSL.Electrical.Machines.PSSE.GENSAL.GENSAL generator(
     Xppd=0.2,

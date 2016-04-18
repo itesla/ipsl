@@ -124,15 +124,13 @@ equation
   connect(GenOrder3.p, pwLine2.p) annotation (Line(
       visible=true,
       origin={1.2254,1.7135},
-      points={{-10.2484,-9.00658},{1.638,-9.00658},{1.638,2.6151},{2.97133,
-          2.6151}}));
+      points={{-10.2484,-9.00658},{1.638,-9.00658},{1.638,2.6151},{2.97133,2.6151}}));
   connect(pwLine2.p, pwLine1.p) annotation (Line(
       visible=true,
       origin={8.8634,-5.6714},
       points={{-4.66667,10},{-4.66667,-4},{-4.66667,-4}}));
   connect(GenOrder3.vf0, GenOrder3.vf) annotation (Line(
-      points={{-40.6689,10.9112},{-2,10.9112},{-2,16},{-54,16},{-54,0.936599},{
-          -44,0.936599}},
+      points={{-40.6689,10.9112},{-2,10.9112},{-2,16},{-54,16},{-54,0.936599},{-44,0.936599}},
       color={0,0,127},
       smooth=Smooth.None));
   connect(tGModel5_1.Pm, GenOrder3.pm) annotation (Line(
@@ -145,8 +143,7 @@ equation
       color={0,0,127},
       smooth=Smooth.None));
   connect(GenOrder3.pm0, tGModel5_1.w1) annotation (Line(
-      points={{-40.6689,-25.6624},{0,-25.6624},{0,18},{-88,18},{-88,-9.52},{
-          -79.98,-9.52}},
+      points={{-40.6689,-25.6624},{0,-25.6624},{0,18},{-88,18},{-88,-9.52},{-79.98,-9.52}},
       color={0,0,127},
       smooth=Smooth.None));
   connect(sine.y, add.u1) annotation (Line(
