@@ -1,6 +1,5 @@
 within ;
 package OpenIPSL "Open-Instance Power System Library"
-extends Modelica.Icons.Package;
 
 
 

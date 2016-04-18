@@ -386,19 +386,16 @@ equation
         extent={{-100.0,-100.0},{100.0,100.0}},
         preserveAspectRatio=true,
         initialScale=0.1,
-        grid={10,10}), graphics={
-        Ellipse(
+        grid={10,10}), graphics={Ellipse(
           visible=true,
           fillColor={255,255,255},
-          extent={{-100.0,-100.0},{100.0,100.0}}),
-        Text(
+          extent={{-100.0,-100.0},{100.0,100.0}}),Text(
           visible=true,
           origin={0.0,16.6286},
           fillPattern=FillPattern.Solid,
           extent={{-44.8085,-23.3714},{44.8085,23.3714}},
           textString="DFIG",
-          fontName="Arial"),
-        Text(
+          fontName="Arial"),Text(
           visible=true,
           origin={0.0,-17.9447},
           fillPattern=FillPattern.Solid,
