@@ -1,5 +1,6 @@
 within OpenIPSL.Examples.Controls.PSAT.TG;
 model TGTypeIII_test
+  extends Modelica.Icons.Example;
   OpenIPSL.Electrical.Machines.PSAT.ThirdOrder.Order3 order3_Inputs_Outputs1(
     P_0=0.16041,
     Q_0=0.12012,
@@ -98,23 +99,23 @@ equation
       color={0,0,127},
       smooth=Smooth.None));
   connect(pwLine2.n, pwLine1.n) annotation (Line(
-      points={{16.8634,12.3286},{22,12.3286},{22,-14.6714},{17.863,-14.6714}},
+      points={{21.5301,12.3286},{22,12.3286},{22,-14.6714},{22.5297,-14.6714}},
       color={0,0,255},
       smooth=Smooth.None));
   connect(pwLine1.n, pwLine3.p) annotation (Line(
-      points={{17.863,-14.6714},{28,-14.6714},{28,-14},{28.5,-14}},
+      points={{22.5297,-14.6714},{28,-14.6714},{28,-14},{23.8333,-14}},
       color={0,0,255},
       smooth=Smooth.None));
   connect(pwLine3.n, infiniteBus.p) annotation (Line(
-      points={{42.5,-14},{47.4,-14}},
+      points={{47.1667,-14},{60.6,-14}},
       color={0,0,255},
       smooth=Smooth.None));
   connect(order3_Inputs_Outputs1.p, pwLine2.p) annotation (Line(
-      points={{-17.023,12.7069},{-17.5115,12.7069},{-17.5115,12.3286},{2.8634,12.3286}},
+      points={{-17.023,12.7069},{-17.5115,12.7069},{-17.5115,12.3286},{-1.80327,12.3286}},
       color={0,0,255},
       smooth=Smooth.None));
   connect(pwLine1.p, pwLine2.p) annotation (Line(
-      points={{3.863,-14.6714},{-4,-14.6714},{-4,12.3286},{2.8634,12.3286}},
+      points={{-0.803667,-14.6714},{-4,-14.6714},{-4,12.3286},{-1.80327,12.3286}},
       color={0,0,255},
       smooth=Smooth.None));
   annotation (Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,100}}), graphics={Text(

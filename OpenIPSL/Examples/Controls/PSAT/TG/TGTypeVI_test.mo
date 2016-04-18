@@ -1,5 +1,6 @@
 within OpenIPSL.Examples.Controls.PSAT.TG;
 model TGTypeVI_test
+  extends Modelica.Icons.Example;
   OpenIPSL.Electrical.Controls.PSAT.TG.TGTypeVI tGModel6_1(
     Ka=3.33333,
     Ta=0.07,
@@ -107,31 +108,32 @@ equation
   connect(pwLine4.n, pwLoadPQ1.p) annotation (Line(
       visible=true,
       origin={63.076,-14.6714},
-      points={{-15.2126,-4},{-15.2126,6},{0.071,6}}));
+      points={{-10.5459,-4},{-10.5459,6},{0.071,6}}));
   connect(pwLine3.n, pwLoadPQ2.p) annotation (Line(
       visible=true,
       origin={67,-51.5},
-      points={{-20.5,13.5},{-3.5,13.5},{-3.5,24.5}}));
+      points={{-15.8333,13.5},{-3.5,13.5},{-3.5,24.5}}));
   connect(pwLine2.n, pwLine4.p) annotation (Line(
       visible=true,
       origin={23.1134,-15.1714},
-      points={{1.75,-2.5},{4.75,-2.5},{4.75,-3.5},{10.75,-3.5}}));
+      points={{6.41667,-2.5},{4.75,-2.5},{4.75,-3.5},{6.08333,-3.5}}));
   connect(pwLine1.n, pwLine3.p) annotation (Line(
       visible=true,
       origin={23.0909,-44.8357},
-      points={{1.7725,7.1643},{5.4091,7.1643},{5.4091,6.8357},{9.4091,6.8357}}));
+      points={{6.43917,7.1643},{5.4091,7.1643},{5.4091,6.8357},{4.74243,6.8357}}));
   connect(pwLine1.n, pwLine2.n) annotation (Line(
       visible=true,
       origin={24.8634,-27.6714},
-      points={{0.0,-10.0},{0.0,10.0}}));
+      points={{4.66667,-10},{4.66667,-6},{4,-6},{4,0},{4.66667,0},{4.66667,10}}));
   connect(order3_Inputs_Outputs1.p, pwLine2.p) annotation (Line(
       visible=true,
       origin={3.2254,-20.2865},
-      points={{-10.2484,2.99342},{1.638,2.99342},{1.638,2.6151},{7.638,2.6151}}));
-  connect(pwLine2.p, pwLine1.p) annotation (Line(
+      points={{-10.2484,2.99342},{1.638,2.99342},{1.638,2.6151},{2.97133,2.6151}}));
+  connect(pwLine2.p, pwLine1.p)
+    annotation (Line(
       visible=true,
       origin={10.8634,-27.6714},
-      points={{-0.00000000000000177636,10},{-0.00000000000000177636,5},{-0.00000000000000355272,5},{-0.00000000000000355272,0},{-0.00000000000000177636,0},{-0.00000000000000177636,-10}}));
+      points={{-4.66667,10},{-4.66667,5},{-3.55272e-015,5},{-3.55272e-015,0},{-4.66667,0},{-4.66667,-10}}));
   connect(order3_Inputs_Outputs1.w, tGModel6_1.we)
     annotation (Line(
       points={{-7.02303,-2.41364},{-7.02303,-40},{-58,-40},{-58,35.72},{-46.72,35.72}},

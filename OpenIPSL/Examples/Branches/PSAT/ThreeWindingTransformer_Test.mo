@@ -1,5 +1,6 @@
 within OpenIPSL.Examples.Branches.PSAT;
 model ThreeWindingTransformer_Test
+  extends Modelica.Icons.Example;
   OpenIPSL.Electrical.Branches.PwLine pwLine3(
     B=0.001/2,
     G=0,
@@ -103,11 +104,11 @@ equation
       color={0,0,127},
       smooth=Smooth.None));
   connect(pwLine4.n, pwLine3.n) annotation (Line(
-      points={{47,20},{55,20},{55,0},{47,0}},
+      points={{51.6667,20},{55,20},{55,0},{51.6667,0}},
       color={0,0,255},
       smooth=Smooth.None));
   connect(pwLine4.p, pwLine3.p) annotation (Line(
-      points={{33,20},{25,20},{25,0},{33,0}},
+      points={{28.3333,20},{25,20},{25,0},{28.3333,0}},
       color={0,0,255},
       smooth=Smooth.None));
   connect(Gen1.p, Bus1.p) annotation (Line(
@@ -115,11 +116,11 @@ equation
       color={0,0,255},
       smooth=Smooth.None));
   connect(Bus1.p, pwLine3.p) annotation (Line(
-      points={{20,10},{25,10},{25,0},{33,0}},
+      points={{20,10},{25,10},{25,0},{28.3333,0}},
       color={0,0,255},
       smooth=Smooth.None));
   connect(Bus2.p, pwLine3.n) annotation (Line(
-      points={{60,10},{55,10},{55,0},{47,0}},
+      points={{60,10},{55,10},{55,0},{51.6667,0}},
       color={0,0,255},
       smooth=Smooth.None));
   connect(Bus2.p, threeWindingTransformer.b1) annotation (Line(

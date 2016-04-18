@@ -45,7 +45,7 @@ partial model baseMachine
         origin={110,90},
         extent={{-10.0,-10.0},{10.0,10.0}},
         rotation=0)));
-  RealOutput v(start=V_0) "Generator terminal voltage (pu)" annotation (Placement(
+  RealOutput v(start=V_0, fixed=true) "Generator terminal voltage (pu)" annotation (Placement(
       visible=true,
       transformation(
         origin={146.6,6.3277},

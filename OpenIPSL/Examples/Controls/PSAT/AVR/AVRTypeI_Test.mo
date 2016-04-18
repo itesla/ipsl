@@ -1,5 +1,6 @@
 within OpenIPSL.Examples.Controls.PSAT.AVR;
 model AVRTypeI_Test
+  extends Modelica.Icons.Example;
   OpenIPSL.Electrical.Machines.PSAT.SixthOrder.Order6 Syn1(
     Sn=991,
     V_0=1.05,
@@ -78,35 +79,35 @@ equation
       color={0,0,255},
       smooth=Smooth.None));
   connect(bus1.p, pwLine1to4.p) annotation (Line(
-      points={{-68,0},{-45,0}},
+      points={{-68,0},{-49.6667,0}},
       color={0,0,255},
       smooth=Smooth.None));
   connect(pwLine1to4.n, bus4.p) annotation (Line(
-      points={{-31,0},{-10,0}},
+      points={{-26.3333,0},{-10,0}},
       color={0,0,255},
       smooth=Smooth.None));
   connect(bus4.p, pwLine1.p) annotation (Line(
-      points={{-10,0},{7,0}},
+      points={{-10,0},{2.33333,0}},
       color={0,0,255},
       smooth=Smooth.None));
   connect(bus3.p, pwLine1.n) annotation (Line(
-      points={{32,32},{26,32},{26,0},{21,0}},
+      points={{32,32},{26,32},{26,0},{25.6667,0}},
       color={0,0,255},
       smooth=Smooth.None));
   connect(bus3.p, pwLine2.p) annotation (Line(
-      points={{32,32},{45,32}},
+      points={{32,32},{40.3333,32}},
       color={0,0,255},
       smooth=Smooth.None));
   connect(pwLine2.n, bus5.p) annotation (Line(
-      points={{59,32},{72,32}},
+      points={{63.6667,32},{72,32}},
       color={0,0,255},
       smooth=Smooth.None));
   connect(bus5.p, pwLine3.p) annotation (Line(
-      points={{72,32},{91,32},{91,0}},
+      points={{72,32},{86.3333,32},{86.3333,0}},
       color={0,0,255},
       smooth=Smooth.None));
   connect(pwLine3.n, bus2.p) annotation (Line(
-      points={{105,0},{114,0}},
+      points={{109.667,0},{114,0}},
       color={0,0,255},
       smooth=Smooth.None));
   connect(bus2.p, Syn2.p) annotation (Line(

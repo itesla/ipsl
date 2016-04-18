@@ -1,5 +1,6 @@
 within OpenIPSL.Examples.Branches.PSAT;
 model TWTPST_smib_test
+  extends Modelica.Icons.Example;
   OpenIPSL.Electrical.Machines.PSAT.SecondOrder.Order2 order2_1(
     Sn=100,
     D=5,
@@ -54,23 +55,23 @@ model TWTPST_smib_test
   inner OpenIPSL.Electrical.SystemBase SysData annotation (Placement(transformation(extent={{-40,60},{2,80}})));
 equation
   connect(pwLine.n, pwLine1.n) annotation (Line(
-      points={{-5,6},{10,6},{10,-12},{-5,-12}},
+      points={{-0.333333,6},{10,6},{10,-12},{-0.333333,-12}},
       color={0,0,255},
       smooth=Smooth.None));
   connect(pwLine.p, pwLine1.p) annotation (Line(
-      points={{-19,6},{-32,6},{-32,-12},{-19,-12}},
+      points={{-23.6667,6},{-32,6},{-32,-12},{-23.6667,-12}},
       color={0,0,255},
       smooth=Smooth.None));
   connect(lOADPQ2.p, pwLine1.n) annotation (Line(
-      points={{44,-23},{26,-23},{26,-36},{14,-36},{14,-4},{10,-4},{10,-12},{-5,-12}},
+      points={{44,-23},{26,-23},{26,-36},{14,-36},{14,-4},{10,-4},{10,-12},{-0.333333,-12}},
       color={0,0,255},
       smooth=Smooth.None));
   connect(infiniteBus.p, order2_1.p) annotation (Line(
-      points={{-103,-34},{-98,-34},{-98,0.04964},{-101,0.04964}},
+      points={{-125,-34},{-98,-34},{-98,0.04964},{-101,0.04964}},
       color={0,0,255},
       smooth=Smooth.None));
   connect(pSTransformer.n, pwLine2.n) annotation (Line(
-      points={{75,-12},{82,-12},{82,-14},{94,-14},{94,-4},{92,-4},{92,10},{69,10}},
+      points={{75,-12},{82,-12},{82,-14},{94,-14},{94,-4},{92,-4},{92,10},{73.6667,10}},
       color={0,0,255},
       smooth=Smooth.None));
   connect(bus4.p, lOADPQ1.p) annotation (Line(
@@ -78,11 +79,11 @@ equation
       color={0,0,255},
       smooth=Smooth.None));
   connect(bus4.p, pwLine2.n) annotation (Line(
-      points={{104,0},{92,0},{92,10},{69,10}},
+      points={{104,0},{92,0},{92,10},{73.6667,10}},
       color={0,0,255},
       smooth=Smooth.None));
   connect(pwLine2.p, bus3.p) annotation (Line(
-      points={{55,10},{40,10},{40,0},{26,0}},
+      points={{50.3333,10},{40,10},{40,0},{26,0}},
       color={0,0,255},
       smooth=Smooth.None));
   connect(pSTransformer.p, bus3.p) annotation (Line(
@@ -90,7 +91,7 @@ equation
       color={0,0,255},
       smooth=Smooth.None));
   connect(bus3.p, pwLine1.n) annotation (Line(
-      points={{26,0},{10,0},{10,-12},{-5,-12}},
+      points={{26,0},{10,0},{10,-12},{-0.333333,-12}},
       color={0,0,255},
       smooth=Smooth.None));
   connect(twoWindingTransformer.n, bus2.p) annotation (Line(
@@ -106,7 +107,7 @@ equation
       color={0,0,255},
       smooth=Smooth.None));
   connect(bus2.p, pwLine1.p) annotation (Line(
-      points={{-46,0},{-32,0},{-32,-12},{-19,-12}},
+      points={{-46,0},{-32,0},{-32,-12},{-23.6667,-12}},
       color={0,0,255},
       smooth=Smooth.None));
   connect(pSTransformer.pk, pSTransformer.u) annotation (Line(
