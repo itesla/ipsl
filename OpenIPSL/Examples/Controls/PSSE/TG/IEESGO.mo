@@ -1,5 +1,6 @@
 within OpenIPSL.Examples.Controls.PSSE.TG;
-model IEESGO "Simple Machine Infinite Bus with Machine, Governor and Excitation system"
+model IEESGO
+  "Simple Machine Infinite Bus with Machine, Governor and Excitation system"
   import iPSL = OpenIPSL;
   extends iPSL.Examples.SMIBpartial;
   iPSL.Electrical.Machines.PSSE.GENSAL.GENSAL generator(

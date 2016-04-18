@@ -1,6 +1,7 @@
 within OpenIPSL.Examples.FACTS;
 model StatcomCode_Test
   import Modelica.Constants.pi;
+    extends Modelica.Icons.Example;
 
   OpenIPSL.Electrical.Branches.PwLine pwLine4(
     B=0.001/2,
@@ -96,7 +97,7 @@ model StatcomCode_Test
   inner OpenIPSL.Electrical.SystemBase SysData annotation (Placement(transformation(extent={{-116,60},{-76,80}})));
 equation
   connect(pwLine1.n, pwLine3.n) annotation (Line(
-      points={{60,17},{78,17},{78,-17},{62,-17}},
+      points={{64.6667,17},{78,17},{78,-17},{66.6667,-17}},
       color={0,0,255},
       smooth=Smooth.None));
   connect(bus.p, lOADPQ.p) annotation (Line(
@@ -108,31 +109,31 @@ equation
       color={0,0,255},
       smooth=Smooth.None));
   connect(pwLine3.p, lOADPQ.p) annotation (Line(
-      points={{48,-17},{38,-17},{38,2},{24,2},{24,-31},{48,-31}},
+      points={{43.3333,-17},{38,-17},{38,2},{24,2},{24,-31},{48,-31}},
       color={0,0,255},
       smooth=Smooth.None));
   connect(pwLine1.p, lOADPQ.p) annotation (Line(
-      points={{46,17},{38,17},{38,2},{24,2},{24,-31},{48,-31}},
+      points={{41.3333,17},{38,17},{38,2},{24,2},{24,-31},{48,-31}},
       color={0,0,255},
       smooth=Smooth.None));
   connect(Syn2.p, pwLine3.n) annotation (Line(
-      points={{106.5,-0.079424},{78,-0.079424},{78,-17},{62,-17}},
+      points={{106.5,-0.079424},{78,-0.079424},{78,-17},{66.6667,-17}},
       color={0,0,255},
       smooth=Smooth.None));
   connect(pwLine2.n, bus.p) annotation (Line(
-      points={{-8,-17},{0,-17},{0,2},{14,2}},
+      points={{-3.33333,-17},{0,-17},{0,2},{14,2}},
       color={0,0,255},
       smooth=Smooth.None));
   connect(pwLine4.n, bus.p) annotation (Line(
-      points={{-6,13},{0,13},{0,2},{14,2}},
+      points={{-1.33333,13},{0,13},{0,2},{14,2}},
       color={0,0,255},
       smooth=Smooth.None));
   connect(pwLine4.p, pwLine2.p) annotation (Line(
-      points={{-20,13},{-28,13},{-28,-17},{-22,-17}},
+      points={{-24.6667,13},{-28,13},{-28,-17},{-26.6667,-17}},
       color={0,0,255},
       smooth=Smooth.None));
   connect(order2_Inputs_Outputs.p, pwLine2.p) annotation (Line(
-      points={{-57,2.04964},{-28,2.04964},{-28,-17},{-22,-17}},
+      points={{-57,2.04964},{-28,2.04964},{-28,-17},{-26.6667,-17}},
       color={0,0,255},
       smooth=Smooth.None));
   connect(add3_1.y, order2_Inputs_Outputs.vf) annotation (Line(
@@ -156,7 +157,8 @@ equation
       color={0,0,127},
       smooth=Smooth.None));
   connect(Syn2.pm, Syn2.pm0) annotation (Line(points={{138,8},{148,8},{148,26},{135,26},{135,17.6}}, color={0,0,127}));
-  connect(Syn2.vf0, Syn2.vf) annotation (Line(points={{135,-17.6},{135,-26},{152,-26},{152,-8},{138,-8}}, color={0,0,127}));
+  connect(Syn2.vf0, Syn2.vf) annotation (Line(points={{135,-17.6},{135,-26},{
+          152,-26},{152,-8},{138,-8}},                                                                    color={0,0,127}));
   annotation (
     Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-160,-100},{160,100}})),
     Icon(coordinateSystem(extent={{-160,-100},{160,100}})),

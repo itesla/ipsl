@@ -1,5 +1,6 @@
 within OpenIPSL.Examples.Machines.PSAT;
 model Order4test2_AVR
+  extends Modelica.Icons.Example;
   OpenIPSL.Electrical.Loads.PSAT.LOADPQ pwLoadPQ1(
     P_0=0.08,
     Q_0=0.06,
@@ -88,7 +89,7 @@ equation
   connect(pwLine4.n, pwLoadPQ1.p) annotation (Line(
       visible=true,
       origin={107.0759,-12.6714},
-      points={{-15.2125,2},{3.0709,2},{3.0709,8},{16.0709,8}}));
+      points={{-10.5458,2},{3.0709,2},{3.0709,8},{16.0709,8}}));
   connect(pwLine4.p, pwLinewithOpening1.p) annotation (Line(
       visible=true,
       origin={77.8634,-18.1714},
@@ -96,11 +97,11 @@ equation
   connect(pwFault1.p, pwLine3.n) annotation (Line(
       visible=true,
       origin={105.25,-63.15},
-      points={{15.5833,-14.15},{-4.75,-14.15},{-4.75,13.15},{-10.75,13.15}}));
+      points={{15.5833,-14.15},{-4.75,-14.15},{-4.75,13.15},{-6.08333,13.15}}));
   connect(pwLine3.n, pwLoadPQ2.p) annotation (Line(
       visible=true,
       origin={111.0,-49.5},
-      points={{-16.5,-0.5},{3.5,-0.5},{3.5,10.5},{16.5,10.5}}));
+      points={{-11.8333,-0.5},{3.5,-0.5},{3.5,10.5},{16.5,10.5}}));
   connect(pwLinewithOpening1.n, pwLine4.n) annotation (Line(
       visible=true,
       origin={91.8634,-18.1714},
@@ -108,19 +109,21 @@ equation
   connect(pwLine2.n, pwLine4.p) annotation (Line(
       visible=true,
       origin={67.1134,-13.1714},
-      points={{-20.25,-2.5},{4.75,-2.5},{4.75,2.5},{10.75,2.5}}));
+      points={{-15.5833,-2.5},{4.75,-2.5},{4.75,2.5},{6.08333,2.5}}));
   connect(pwLine1.n, pwLine3.p) annotation (Line(
       visible=true,
       origin={69.0909,-42.8357},
-      points={{-22.2275,7.1643},{5.4091,7.1643},{5.4091,-7.1643},{11.4091,-7.1643}}));
+      points={{-17.5608,7.1643},{5.4091,7.1643},{5.4091,-7.1643},{6.74243,
+          -7.1643}}));
   connect(pwLine1.n, pwLine2.n) annotation (Line(
       visible=true,
       origin={46.8634,-25.6714},
-      points={{0.0,-10.0},{0.0,10.0}}));
+      points={{4.66667,-10},{4.66667,-5},{5,-5},{5,0},{4.66667,0},{4.66667,10}}));
   connect(pwLine2.p, pwLine1.p) annotation (Line(
       visible=true,
       origin={32.8634,-25.6714},
-      points={{0.0,10.0},{0.0,-10.0}}));
+      points={{-4.66667,10},{-4.66667,5},{-5,5},{-5,0},{-4.66667,0},{-4.66667,
+          -10}}));
   connect(AVRtypeIII1.vf, order4_Inputs_Outputs.vf) annotation (Line(
       points={{-45.6542,-7.4083},{-40,-7.4083},{-40,10},{-10,10}},
       color={0,0,127},
@@ -138,7 +141,7 @@ equation
       color={0,0,127},
       smooth=Smooth.None));
   connect(order4_Inputs_Outputs.p, pwLine2.p) annotation (Line(
-      points={{11,5.04964},{20,5.04964},{20,-15.6714},{32.8634,-15.6714}},
+      points={{11,5.04964},{20,5.04964},{20,-15.6714},{28.1967,-15.6714}},
       color={0,0,255},
       smooth=Smooth.None));
   annotation (Diagram(coordinateSystem(

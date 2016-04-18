@@ -1,5 +1,6 @@
 within OpenIPSL.Examples.Machines.PSAT;
 model Order6test2
+  extends Modelica.Icons.Example;
   OpenIPSL.Electrical.Loads.PSAT.LOADPQ pwLoadPQ2(
     P_0=0.08,
     Q_0=0.06,
@@ -80,7 +81,7 @@ equation
   connect(pwLine4.n, pwLoadPQ2.p) annotation (Line(
       visible=true,
       origin={-2.7875,13},
-      points={{-15.2125,2},{3.0708,2},{3.0708,8},{21.0709,8}}));
+      points={{-10.5458,2},{3.0708,2},{3.0708,8},{21.0709,8}}));
   connect(pwLinewithOpening1.n, pwLine4.n) annotation (Line(
       visible=true,
       origin={-18,7.5},
@@ -92,32 +93,33 @@ equation
   connect(pwLine3.n, pwLoadPQ1.p) annotation (Line(
       visible=true,
       origin={3.5,-34.5},
-      points={{-16.5,-0.5},{3.5,-0.5},{3.5,10.5},{16.5,10.5}}));
+      points={{-11.8333,-0.5},{3.5,-0.5},{3.5,10.5},{16.5,10.5}}));
   connect(pwLine2.n, pwLine4.p) annotation (Line(
-      points={{-53,10},{-40,10},{-40,15},{-32,15}},
+      points={{-48.3333,10},{-40,10},{-40,15},{-36.6667,15}},
       color={0,0,255},
       smooth=Smooth.None));
   connect(pwLine1.n, pwLine3.p) annotation (Line(
-      points={{-53,-20},{-40,-20},{-40,-35},{-27,-35}},
+      points={{-48.3333,-20},{-40,-20},{-40,-35},{-31.6667,-35}},
       color={0,0,255},
       smooth=Smooth.None));
   connect(pwFault.p, pwLine3.n) annotation (Line(
-      points={{23.3333,-60},{23.3333,-44.5},{-13,-44.5},{-13,-35}},
+      points={{23.3333,-60},{23.3333,-44.5},{-8.33333,-44.5},{-8.33333,-35}},
       color={0,0,255},
       smooth=Smooth.None));
   connect(order6Type2_1.p, pwLine2.p) annotation (Line(
-      points={{-98,10.0993},{-94.5,10.0993},{-94.5,10},{-67,10}},
+      points={{-98,10.0993},{-94.5,10.0993},{-94.5,10},{-71.6667,10}},
       color={0,0,255},
       smooth=Smooth.None));
   connect(pwLine2.p, pwLine1.p) annotation (Line(
-      points={{-67,10},{-67,10},{-67,-20}},
+      points={{-71.6667,10},{-71.6667,-20},{-71.6667,-20}},
       color={0,0,255},
       smooth=Smooth.None));
   connect(pwLine2.n, pwLine1.n) annotation (Line(
-      points={{-53,10},{-53,10},{-53,-20}},
+      points={{-48.3333,10},{-48.3333,-20},{-48.3333,-20}},
       color={0,0,255},
       smooth=Smooth.None));
-  connect(order6Type2_1.vf0, order6Type2_1.vf) annotation (Line(points={{-136,32},{-136,35},{-150,35},{-150,20},{-140,20}}, color={0,0,127}));
+  connect(order6Type2_1.vf0, order6Type2_1.vf) annotation (Line(points={{-136,32},
+          {-136,35},{-150,35},{-150,20},{-140,20}},                                                                         color={0,0,127}));
   connect(order6Type2_1.pm, order6Type2_1.pm0) annotation (Line(points={{-140,0},{-150,0},{-150,-15},{-136,-15},{-136,-12}}, color={0,0,127}));
   annotation (
     Diagram(coordinateSystem(

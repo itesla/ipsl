@@ -1,5 +1,6 @@
 within OpenIPSL.Examples.FACTS;
 model TCSC_Alpha_Test
+  extends Modelica.Icons.Example;
   OpenIPSL.Electrical.Machines.PSAT.SecondOrder.Order2 Gen1(
     Sn=370,
     P_0=0.080101913348342,
@@ -56,7 +57,7 @@ equation
       color={0,0,127},
       smooth=Smooth.None));
   connect(pwLine1.n, lOADPQ.p) annotation (Line(
-      points={{73,0},{88,0},{88,11},{104,11}},
+      points={{77.6667,0},{88,0},{88,11},{104,11}},
       color={0,0,255},
       smooth=Smooth.None));
   connect(add3_1.y, Gen1.vf) annotation (Line(
@@ -72,7 +73,7 @@ equation
       color={0,0,127},
       smooth=Smooth.None));
   connect(tCSCAlpha.n, pwLine1.p) annotation (Line(
-      points={{39,0},{59,0}},
+      points={{39,0},{54.3333,0}},
       color={0,0,255},
       smooth=Smooth.None));
   connect(Gen1.p, tCSCAlpha.p) annotation (Line(

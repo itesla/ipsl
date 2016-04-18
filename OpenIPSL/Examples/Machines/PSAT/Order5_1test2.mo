@@ -1,5 +1,6 @@
 within OpenIPSL.Examples.Machines.PSAT;
 model Order5_1test2
+  extends Modelica.Icons.Example;
   OpenIPSL.Electrical.Loads.PSAT.LOADPQ pwLoadPQ2(
     P_0=0.08,
     Q_0=0.06,
@@ -75,7 +76,7 @@ equation
   connect(pwLine4.n, pwLoadPQ2.p) annotation (Line(
       visible=true,
       origin={37.2125,23},
-      points={{-15.2125,2},{3.0708,2},{3.0708,8},{16.0709,8}}));
+      points={{-10.5458,2},{3.0708,2},{3.0708,8},{16.0709,8}}));
   connect(pwLinewithOpening1.n, pwLine4.n) annotation (Line(
       visible=true,
       origin={22,17.5},
@@ -87,29 +88,33 @@ equation
   connect(pwLine3.n, pwLoadPQ1.p) annotation (Line(
       visible=true,
       origin={43.5,-24.5},
-      points={{-16.5,-0.5},{3.5,-0.5},{3.5,10.5},{16.5,10.5}}));
+      points={{-11.8333,-0.5},{3.5,-0.5},{3.5,10.5},{16.5,10.5}}));
   connect(pwLine1.p, pwLine2.p) annotation (Line(
-      points={{-27,5},{-27,20}},
+      points={{-31.6667,5},{-31.6667,10},{-30,10},{-36.3334,10},{-31.6667,10},{
+          -31.6667,20}},
       color={0,0,255},
       smooth=Smooth.None));
   connect(pwLine1.n, pwLine2.n) annotation (Line(
-      points={{-13,5},{-13,20}},
+      points={{-8.33333,5},{-8.33333,10},{-10,10},{-3.66666,10},{-8.33333,10},{
+          -8.33333,20}},
       color={0,0,255},
       smooth=Smooth.None));
   connect(pwLine2.n, pwLine4.p) annotation (Line(
-      points={{-13,20},{0,20},{0,25},{8,25}},
+      points={{-8.33333,20},{0,20},{0,25},{3.33333,25}},
       color={0,0,255},
       smooth=Smooth.None));
   connect(pwLine1.n, pwLine3.p) annotation (Line(
-      points={{-13,5},{0,5},{0,-25},{13,-25}},
+      points={{-8.33333,5},{0,5},{0,-25},{8.33333,-25}},
       color={0,0,255},
       smooth=Smooth.None));
   connect(pwFault.p, pwLine3.n) annotation (Line(
-      points={{38.3333,-45},{38.3333,-34.5},{27,-34.5},{27,-25}},
+      points={{38.3333,-45},{38.3333,-34.5},{31.6667,-34.5},{31.6667,-25}},
       color={0,0,255},
       smooth=Smooth.None));
-  connect(order5Type1_Inputs_Outputs.p, pwLine2.p) annotation (Line(points={{-79,10.0496},{-40,10.0496},{-40,20},{-27,20}}, color={0,0,255}));
-  connect(order5Type1_Inputs_Outputs.vf, order5Type1_Inputs_Outputs.vf0) annotation (Line(points={{-100,15},{-105,15},{-105,25},{-98,25},{-98,21}}, color={0,0,127}));
+  connect(order5Type1_Inputs_Outputs.p, pwLine2.p) annotation (Line(points={{-79,
+          10.0496},{-40,10.0496},{-40,20},{-31.6667,20}},                                                                   color={0,0,255}));
+  connect(order5Type1_Inputs_Outputs.vf, order5Type1_Inputs_Outputs.vf0) annotation (Line(points={{-100,15},
+          {-105,15},{-105,25},{-98,25},{-98,21}},                                                                                                   color={0,0,127}));
   connect(order5Type1_Inputs_Outputs.pm, order5Type1_Inputs_Outputs.pm0) annotation (Line(points={{-100,5},{-105,5},{-105,-5},{-98,-5},{-98,-1}}, color={0,0,127}));
   annotation (
     Diagram(coordinateSystem(

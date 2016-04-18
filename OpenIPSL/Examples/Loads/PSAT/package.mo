@@ -1,5 +1,11 @@
 within OpenIPSL.Examples.Loads;
 package PSAT 
+  extends Modelica.Icons.ExamplesPackage;
+
+
+
+
+
 
 
 annotation (Documentation(revisions="<html>

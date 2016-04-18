@@ -1,5 +1,6 @@
 within OpenIPSL.Examples.Controls.PSAT.AVR;
 model AVRTypeI_Test
+  extends Modelica.Icons.Example;
   OpenIPSL.Electrical.Machines.PSAT.SixthOrder.Order6 Syn1(
     Sn=991,
     V_0=1.05,
@@ -78,35 +79,35 @@ equation
       color={0,0,255},
       smooth=Smooth.None));
   connect(bus1.p, pwLine1to4.p) annotation (Line(
-      points={{-68,0},{-45,0}},
+      points={{-68,0},{-49.6667,0}},
       color={0,0,255},
       smooth=Smooth.None));
   connect(pwLine1to4.n, bus4.p) annotation (Line(
-      points={{-31,0},{-10,0}},
+      points={{-26.3333,0},{-10,0}},
       color={0,0,255},
       smooth=Smooth.None));
   connect(bus4.p, pwLine1.p) annotation (Line(
-      points={{-10,0},{7,0}},
+      points={{-10,0},{2.33333,0}},
       color={0,0,255},
       smooth=Smooth.None));
   connect(bus3.p, pwLine1.n) annotation (Line(
-      points={{32,32},{26,32},{26,0},{21,0}},
+      points={{32,32},{26,32},{26,0},{25.6667,0}},
       color={0,0,255},
       smooth=Smooth.None));
   connect(bus3.p, pwLine2.p) annotation (Line(
-      points={{32,32},{45,32}},
+      points={{32,32},{40.3333,32}},
       color={0,0,255},
       smooth=Smooth.None));
   connect(pwLine2.n, bus5.p) annotation (Line(
-      points={{59,32},{72,32}},
+      points={{63.6667,32},{72,32}},
       color={0,0,255},
       smooth=Smooth.None));
   connect(bus5.p, pwLine3.p) annotation (Line(
-      points={{72,32},{91,32},{91,0}},
+      points={{72,32},{86.3333,32},{86.3333,0}},
       color={0,0,255},
       smooth=Smooth.None));
   connect(pwLine3.n, bus2.p) annotation (Line(
-      points={{105,0},{114,0}},
+      points={{109.667,0},{114,0}},
       color={0,0,255},
       smooth=Smooth.None));
   connect(bus2.p, Syn2.p) annotation (Line(
@@ -114,12 +115,15 @@ equation
       color={0,0,255},
       smooth=Smooth.None));
   connect(Syn1.pm0, Syn1.pm) annotation (Line(points={{-113,-11.4},{-76,-11.4},{-76,-18},{-126,-18},{-126,-3},{-116,-3}}, color={0,0,127}));
-  connect(bus3.p, pwFault.p) annotation (Line(points={{32,32},{36,32},{36,28},{36,2},{36,2},{36.3333,2}}, color={0,0,255}));
-  connect(aVRI.vf, Syn1.vf) annotation (Line(points={{-127,18.2},{-116,18.2},{-116,11}}, color={0,0,127}));
+  connect(bus3.p, pwFault.p) annotation (Line(points={{32,32},{36,32},{36,28},{
+          36,2},{36,2},{36.3333,2}},                                                                      color={0,0,255}));
+  connect(aVRI.vf, Syn1.vf) annotation (Line(points={{-127,18.2},{-116,18.2},{
+          -116,11}},                                                                     color={0,0,127}));
   connect(vref2.y, aVRI.vref) annotation (Line(points={{-161.5,23},{-155.75,23},{-155.75,23.6},{-150.2,23.6}}, color={0,0,127}));
   connect(Syn1.v, aVRI.v) annotation (Line(points={{-84.5,8.2},{-74,8.2},{-74,-28},{-160,-28},{-160,14.4},{-150.4,14.4}}, color={0,0,127}));
   connect(Syn2.pm0, Syn2.pm) annotation (Line(points={{148,11},{148,20},{156,20},{156,5},{150,5}}, color={0,0,127}));
-  connect(Syn2.vf, Syn2.vf0) annotation (Line(points={{150,-5},{154,-5},{154,-4},{156,-4},{156,-16},{148,-16},{148,-11}}, color={0,0,127}));
+  connect(Syn2.vf, Syn2.vf0) annotation (Line(points={{150,-5},{154,-5},{154,-4},
+          {156,-4},{156,-16},{148,-16},{148,-11}},                                                                        color={0,0,127}));
   annotation (
     Diagram(coordinateSystem(extent={{-180,-100},{160,100}}, preserveAspectRatio=false)),
     Icon(coordinateSystem(extent={{-180,-100},{160,100}})),

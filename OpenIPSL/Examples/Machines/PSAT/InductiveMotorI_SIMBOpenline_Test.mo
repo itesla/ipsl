@@ -1,5 +1,7 @@
 within OpenIPSL.Examples.Machines.PSAT;
-model InductiveMotorI_SIMBOpenline_Test "Order 1 inductive machine from PSAT, line opened at 2 s for 1 s"
+model InductiveMotorI_SIMBOpenline_Test
+  "Order 1 inductive machine from PSAT, line opened at 2 s for 1 s"
+  extends Modelica.Icons.Example;
   OpenIPSL.Electrical.Machines.PSAT.InductionMachine.MotorTypeI motorTypeI(
     Sup=0,
     V_0=1.0336,
@@ -38,7 +40,7 @@ equation
       color={0,0,255},
       smooth=Smooth.None));
   connect(pwLine1.n, infiniteBus.p) annotation (Line(
-      points={{-26.5,-38},{-48,-38},{-48,-15.5},{-68.35,-15.5}},
+      points={{-38.1667,-38},{-48,-38},{-48,-15.5},{-104.65,-15.5}},
       color={0,0,255},
       smooth=Smooth.None));
   connect(pwLine2.p, motorTypeI.p) annotation (Line(
@@ -46,7 +48,7 @@ equation
       color={0,0,255},
       smooth=Smooth.None));
   connect(pwLine1.p, motorTypeI.p) annotation (Line(
-      points={{8.5,-38},{26,-38},{26,-16},{42.32,-16}},
+      points={{20.1667,-38},{26,-38},{26,-16},{42.32,-16}},
       color={0,0,255},
       smooth=Smooth.None));
   annotation (Diagram(coordinateSystem(preserveAspectRatio=true, extent={{-100,-100},{100,100}}), graphics), Documentation(revisions="<html>

@@ -1,5 +1,6 @@
 within OpenIPSL.Examples.Machines.PSAT;
 model Order4test2
+  extends Modelica.Icons.Example;
   OpenIPSL.Electrical.Loads.PSAT.LOADPQ pwLoadPQ2(
     P_0=0.08,
     Q_0=0.06,
@@ -86,38 +87,40 @@ equation
       origin={-52,62.5},
       points={{0,7.5},{0,-7.5}}));
   connect(pwLine1.n, pwLine2.n) annotation (Line(
-      points={{-63,45},{-63,60}},
+      points={{-58.3333,45},{-58.3333,50},{-60,50},{-53.6666,50},{-58.3333,50},
+          {-58.3333,60}},
       color={0,0,255},
       smooth=Smooth.None));
   connect(pwLine2.n, pwLine4.p) annotation (Line(
-      points={{-63,60},{-60,60},{-60,70},{-52,70}},
+      points={{-58.3333,60},{-60,60},{-60,70},{-56.6667,70}},
       color={0,0,255},
       smooth=Smooth.None));
   connect(pwLine1.n, pwLine3.p) annotation (Line(
-      points={{-63,45},{-60,45},{-60,35},{-52,35}},
+      points={{-58.3333,45},{-60,45},{-60,35},{-56.6667,35}},
       color={0,0,255},
       smooth=Smooth.None));
   connect(Generator.p, pwLine2.p) annotation (Line(
-      points={{-88.5,55.0745},{-80,55.0745},{-80,60},{-77,60}},
+      points={{-88.5,55.0745},{-80,55.0745},{-80,60},{-81.6667,60}},
       color={0,0,255},
       smooth=Smooth.None));
   connect(Generator.p, pwLine1.p) annotation (Line(
-      points={{-88.5,55.0745},{-80,55.0745},{-80,45},{-77,45}},
+      points={{-88.5,55.0745},{-80,55.0745},{-80,45},{-81.6667,45}},
       color={0,0,255},
       smooth=Smooth.None));
   connect(pwLine3.n, pwLoadPQ1.p) annotation (Line(
-      points={{-38,35},{-22.5,35},{-22.5,56.25}},
+      points={{-33.3333,35},{-22.5,35},{-22.5,56.25}},
       color={0,0,255},
       smooth=Smooth.None));
   connect(pwLine4.n, pwLoadPQ2.p) annotation (Line(
-      points={{-38,70},{-32.125,70},{-32.125,81.25},{-22.5,81.25}},
+      points={{-33.3333,70},{-32.125,70},{-32.125,81.25},{-22.5,81.25}},
       color={0,0,255},
       smooth=Smooth.None));
   connect(pwLine3.n, pwFault.p) annotation (Line(
-      points={{-38,35},{-35,35},{-35,-2.5},{-27.0833,-2.5}},
+      points={{-33.3333,35},{-35,35},{-35,-2.5},{-27.0833,-2.5}},
       color={0,0,255},
       smooth=Smooth.None));
-  connect(Generator.vf0, Generator.vf) annotation (Line(points={{-117,71.5},{-117,75},{-130,75},{-130,62.5},{-120,62.5}}, color={0,0,127}));
+  connect(Generator.vf0, Generator.vf) annotation (Line(points={{-117,71.5},{
+          -117,75},{-130,75},{-130,62.5},{-120,62.5}},                                                                    color={0,0,127}));
   connect(Generator.pm, Generator.pm0) annotation (Line(points={{-120,47.5},{-125,47.5},{-125,50},{-125,38.5},{-117,38.5}}, color={0,0,127}));
   annotation (
     Diagram(coordinateSystem(

@@ -1,5 +1,6 @@
 within OpenIPSL.Examples.FACTS;
 model TCSC_Reactance_Test
+  extends Modelica.Icons.Example;
   OpenIPSL.Electrical.Machines.PSAT.SecondOrder.Order2 Gen1(
     Sn=370,
     P_0=0.080101913348342,
@@ -57,7 +58,7 @@ equation
       color={0,0,127},
       smooth=Smooth.None));
   connect(pwLine1.n, lOADPQ.p) annotation (Line(
-      points={{79,0},{92,0},{92,11},{106,11}},
+      points={{83.6667,0},{92,0},{92,11},{106,11}},
       color={0,0,255},
       smooth=Smooth.None));
   connect(add3_1.y, Gen1.vf) annotation (Line(
@@ -73,7 +74,7 @@ equation
       color={0,0,127},
       smooth=Smooth.None));
   connect(tCSCReactance.n, pwLine1.p) annotation (Line(
-      points={{47,0},{65,0}},
+      points={{47,0},{60.3333,0}},
       color={0,0,255},
       smooth=Smooth.None));
   connect(Gen1.p, tCSCReactance.p) annotation (Line(
