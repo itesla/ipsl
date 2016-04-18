@@ -93,58 +93,12 @@ model Order6test2
     Q_0=11.859436505981)
          annotation (Placement(transformation(extent={{-61,-20},{-21,20}})));
 equation
-<<<<<<< HEAD
-  connect(pwLine4.n, pwLoadPQ2.p) annotation (Line(
-      visible=true,
-      origin={-2.7875,13},
-      points={{-10.5458,2},{3.0708,2},{3.0708,8},{21.0709,8}}));
-  connect(pwLinewithOpening1.n, pwLine4.n) annotation (Line(
-      visible=true,
-      origin={-18,7.5},
-      points={{0,-7.5},{0,7.5}}));
-  connect(pwLine4.p, pwLinewithOpening1.p) annotation (Line(
-      visible=true,
-      origin={-32,7.5},
-      points={{0,7.5},{0,-7.5}}));
-  connect(pwLine3.n, pwLoadPQ1.p) annotation (Line(
-      visible=true,
-      origin={3.5,-34.5},
-      points={{-11.8333,-0.5},{3.5,-0.5},{3.5,10.5},{16.5,10.5}}));
-  connect(pwLine2.n, pwLine4.p) annotation (Line(
-      points={{-48.3333,10},{-40,10},{-40,15},{-36.6667,15}},
-      color={0,0,255},
-      smooth=Smooth.None));
-  connect(pwLine1.n, pwLine3.p) annotation (Line(
-      points={{-48.3333,-20},{-40,-20},{-40,-35},{-31.6667,-35}},
-      color={0,0,255},
-      smooth=Smooth.None));
-  connect(pwFault.p, pwLine3.n) annotation (Line(
-      points={{23.3333,-60},{23.3333,-44.5},{-8.33333,-44.5},{-8.33333,-35}},
-      color={0,0,255},
-      smooth=Smooth.None));
-  connect(order6Type2_1.p, pwLine2.p) annotation (Line(
-      points={{-98,10.0993},{-94.5,10.0993},{-94.5,10},{-71.6667,10}},
-      color={0,0,255},
-      smooth=Smooth.None));
-  connect(pwLine2.p, pwLine1.p) annotation (Line(
-      points={{-71.6667,10},{-71.6667,-20},{-71.6667,-20}},
-      color={0,0,255},
-      smooth=Smooth.None));
-  connect(pwLine2.n, pwLine1.n) annotation (Line(
-      points={{-48.3333,10},{-48.3333,-20},{-48.3333,-20}},
-      color={0,0,255},
-      smooth=Smooth.None));
-  connect(order6Type2_1.vf0, order6Type2_1.vf) annotation (Line(points={{-136,32},
-          {-136,35},{-150,35},{-150,20},{-140,20}},                                                                         color={0,0,127}));
-  connect(order6Type2_1.pm, order6Type2_1.pm0) annotation (Line(points={{-140,0},{-150,0},{-150,-15},{-136,-15},{-136,-12}}, color={0,0,127}));
-=======
   connect(order6Type2_1.vf0, order6Type2_1.vf) annotation (Line(points={{-57,22},
           {-57,25},{-71,25},{-71,10},{-61,10}},                                                                             color={0,0,127}));
   connect(order6Type2_1.pm, order6Type2_1.pm0) annotation (Line(points={{-61,-10},
           {-71,-10},{-71,-25},{-57,-25},{-57,-22}},                                                                          color={0,0,127}));
   connect(order6Type2_1.p, bus.p) annotation (Line(points={{-19,0.09928},{-10,
           0.09928},{-10,0},{0,0}}, color={0,0,255}));
->>>>>>> 6658c692febc6156d620cda78989ccdb3475fa9b
   annotation (
     Diagram(coordinateSystem(
         extent={{-100,-100},{100,100}},

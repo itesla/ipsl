@@ -134,7 +134,6 @@ equation
   annotation (
     Diagram(coordinateSystem(
         extent={{-100,-100},{100,100}},
->>>>>>> 6658c692febc6156d620cda78989ccdb3475fa9b
         preserveAspectRatio=false,
         initialScale=0.1,
         grid={1,1})),
