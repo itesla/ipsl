@@ -1,74 +1,8 @@
 within OpenIPSL.Examples.Machines.PSAT;
 model Order6test2
-<<<<<<< HEAD
-  extends Modelica.Icons.Example;
-  OpenIPSL.Electrical.Loads.PSAT.LOADPQ pwLoadPQ2(
-    P_0=0.08,
-    Q_0=0.06,
-    V_0=1,
-    angle_0=0) annotation (Placement(visible=true, transformation(
-        origin={18.2834,10},
-        extent={{-10.0,-10.0},{10.0,10.0}},
-        rotation=0)));
-  OpenIPSL.Electrical.Branches.PwLinewithOpeningReceiving pwLinewithOpening1(
-    B=0.001/2,
-    G=0,
-    R=0.01,
-    X=0.1,
-    t1=12,
-    t2=12.1) annotation (Placement(visible=true, transformation(
-        origin={-25,0},
-        extent={{-10.0,-10.0},{10.0,10.0}},
-        rotation=0)));
-  OpenIPSL.Electrical.Branches.PwLine pwLine4(
-    B=0.001/2,
-    G=0,
-    R=0.01,
-    X=0.1) annotation (Placement(visible=true, transformation(
-        origin={-25,15},
-        extent={{-10.0,-10.0},{10.0,10.0}},
-        rotation=0)));
-  OpenIPSL.Electrical.Branches.PwLine pwLine3(
-    B=0.001/2,
-    G=0,
-    R=0.01,
-    X=0.1) annotation (Placement(visible=true, transformation(
-        origin={-20,-35},
-        extent={{-10.0,-10.0},{10.0,10.0}},
-        rotation=0)));
-  OpenIPSL.Electrical.Loads.PSAT.LOADPQ pwLoadPQ1(
-    P_0=0.08,
-    Q_0=0.06,
-    V_0=1,
-    angle_0=0) annotation (Placement(visible=true, transformation(
-        origin={20,-35},
-        extent={{-10.0,-10.0},{10.0,10.0}},
-        rotation=0)));
-  OpenIPSL.Electrical.Branches.PwLine pwLine2(
-    B=0.001/2,
-    G=0,
-    R=0.01,
-    X=0.1) annotation (Placement(visible=true, transformation(
-        origin={-60,10},
-        extent={{-10.0,-10.0},{10.0,10.0}},
-        rotation=0)));
-  OpenIPSL.Electrical.Branches.PwLine pwLine1(
-    B=0.001/2,
-    G=0,
-    R=0.01,
-    X=0.1) annotation (Placement(visible=true, transformation(
-        origin={-60,-20},
-        extent={{-10.0,-10.0},{10.0,10.0}},
-        rotation=0)));
-  OpenIPSL.Electrical.Events.PwFault pwFault(
-    X=0.001,
-    t1=3,
-    t2=3.1,
-    R=10) annotation (Placement(transformation(extent={{25,-70},{45,-50}})));
-=======
   import OpenIPSL;
   extends OpenIPSL.Examples.BaseTest;
->>>>>>> 6658c692febc6156d620cda78989ccdb3475fa9b
+  extends Modelica.Icons.Example;
   OpenIPSL.Electrical.Machines.PSAT.SixthOrder.Order6 order6Type2_1(
     Sn=100,
     V_0=1,
