@@ -1,35 +1,23 @@
 within OpenIPSL.Electrical.Controls.PSSE.ES;
 model ST5B "IEEE 421.5 2005 ST5B Excitation System"
   parameter Real T_R=0.025 "Regulator input filter time constant (s)";
-  parameter Real T_C1=0.1
-    "Lead time constant of first lead-lag block (voltage regulator channel) (s)";
-  parameter Real T_B1=0.2
-    "Lag time constant of first lead-lag block (voltage regulator channel) (s)";
-  parameter Real T_C2=1
-    "Lead time constant of second lead-lag block (voltage regulator channel) (s)";
-  parameter Real T_B2=1
-    "Lag time constant of second lead-lag block (voltage regulator channel) (s)";
+  parameter Real T_C1=0.1 "Lead time constant of first lead-lag block (voltage regulator channel) (s)";
+  parameter Real T_B1=0.2 "Lag time constant of first lead-lag block (voltage regulator channel) (s)";
+  parameter Real T_C2=1 "Lead time constant of second lead-lag block (voltage regulator channel) (s)";
+  parameter Real T_B2=1 "Lag time constant of second lead-lag block (voltage regulator channel) (s)";
   parameter Real K_R=1 "Voltage regulator gain (pu)";
   parameter Real V_RMAX=10 "Voltage regulator maximum limit (pu)";
   parameter Real V_RMIN=-10 "Voltage regulator minimum limit (pu)";
   parameter Real T_1=0.58 "voltage regulator time constant (s)";
   parameter Real K_C=0.3 "(pu)";
-  parameter Real T_UC1=1
-    "Lead time constant of first lead-lag block (under- excitation channel) (s)";
-  parameter Real T_UB1=1
-    "Lag time constant of first lead-lag block (under- excitation channel) (s)";
-  parameter Real T_UC2=1
-    "Lead time constant of second lead-lag block (under- excitation channel) (s)";
-  parameter Real T_UB2=1
-    "Lag time constant of second lead-lag block (under- excitation channel) (s)";
-  parameter Real T_OC1=1
-    "Lead time constant of first lead-lag block (over- excitation channel) (s)";
-  parameter Real T_OB1=1
-    "Lag time constant of first lead-lag block (over- excitation channel) (s)";
-  parameter Real T_OC2=1
-    "Lead time constant of second lead-lag block (over- excitation channel) (s)";
-  parameter Real T_OB2=1
-    "Lag time constant of second lead-lag block (over- excitation channel) (s)";
+  parameter Real T_UC1=1 "Lead time constant of first lead-lag block (under- excitation channel) (s)";
+  parameter Real T_UB1=1 "Lag time constant of first lead-lag block (under- excitation channel) (s)";
+  parameter Real T_UC2=1 "Lead time constant of second lead-lag block (under- excitation channel) (s)";
+  parameter Real T_UB2=1 "Lag time constant of second lead-lag block (under- excitation channel) (s)";
+  parameter Real T_OC1=1 "Lead time constant of first lead-lag block (over- excitation channel) (s)";
+  parameter Real T_OB1=1 "Lag time constant of first lead-lag block (over- excitation channel) (s)";
+  parameter Real T_OC2=1 "Lead time constant of second lead-lag block (over- excitation channel) (s)";
+  parameter Real T_OB2=1 "Lag time constant of second lead-lag block (over- excitation channel) (s)";
   Modelica.Blocks.Interfaces.RealInput ECOMP annotation (Placement(transformation(extent={{-316,-10},{-296,10}}), iconTransformation(extent={{-300,80},{-280,100}})));
   Modelica.Blocks.Interfaces.RealInput XADIFD
     annotation (Placement(transformation(
@@ -210,35 +198,45 @@ equation
     Icon(coordinateSystem(
         extent={{-300,-120},{300,120}},
         preserveAspectRatio=false,
-        grid={2,2}), graphics={Rectangle(
+        grid={2,2}), graphics={
+        Rectangle(
           extent={{-300,120},{300,-120}},
           lineColor={28,108,200},
           fillColor={255,255,255},
-          fillPattern=FillPattern.Solid),Text(
+          fillPattern=FillPattern.Solid),
+        Text(
           extent={{-56,22},{66,-22}},
           lineColor={28,108,200},
-          textString="ST5B"),Text(
+          textString="ST5B"),
+        Text(
           extent={{-274,100},{-202,80}},
           lineColor={28,108,200},
-          textString="ECOMP"),Text(
+          textString="ECOMP"),
+        Text(
           extent={{-6,-80},{70,-100}},
           lineColor={28,108,200},
-          textString="VOTHSG"),Text(
+          textString="VOTHSG"),
+        Text(
           extent={{-274,-20},{-204,-40}},
           lineColor={28,108,200},
-          textString="XADIFD"),Text(
+          textString="XADIFD"),
+        Text(
           extent={{-156,-80},{-108,-100}},
           lineColor={28,108,200},
-          textString="VUEL"),Text(
+          textString="VUEL"),
+        Text(
           extent={{-272,-80},{-226,-100}},
           lineColor={28,108,200},
-          textString="EFD0"),Text(
+          textString="EFD0"),
+        Text(
           extent={{-72,-80},{-26,-100}},
           lineColor={28,108,200},
-          textString="VOEL"),Text(
+          textString="VOEL"),
+        Text(
           extent={{254,10},{294,-10}},
           lineColor={28,108,200},
-          textString="EFD"),Text(
+          textString="EFD"),
+        Text(
           extent={{-276,40},{-204,20}},
           lineColor={28,108,200},
           textString="ETERM")}),

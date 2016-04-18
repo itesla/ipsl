@@ -2,8 +2,7 @@ within OpenIPSL.Electrical.Controls.PSSE.ES;
 model ESST1A "IEEE Type ST1A Excitation System"
 
   Modelica.Blocks.Sources.Constant Vref(k=VREF) annotation (Placement(transformation(extent={{-116.6,21.9},{-107,32}})));
-  Modelica.Blocks.Interfaces.RealInput ECOMP
-    "Input, generator terminal voltage"
+  Modelica.Blocks.Interfaces.RealInput ECOMP "Input, generator terminal voltage"
     annotation (Placement(transformation(extent={{-141.3,0.4},{-131.3,12.4}}),iconTransformation(
         extent={{-5,-5},{5,5}},
         rotation=0,
@@ -150,8 +149,7 @@ model ESST1A "IEEE Type ST1A Excitation System"
   Modelica.Blocks.Nonlinear.VariableLimiter variableLimiter annotation (Placement(transformation(extent={{117,0},{129,12}})));
 protected
   parameter Real VREF(fixed=false) "Reference terminal voltage (pu)";
-  parameter Real Efd0(fixed=false)
-    "Initial value of the excitation voltage as a parameter";
+  parameter Real Efd0(fixed=false) "Initial value of the excitation voltage as a parameter";
   parameter Real IFD0(fixed=false);
   parameter Real VA0(fixed=false);
   parameter Real ECOMP0(fixed=false);
@@ -251,65 +249,82 @@ equation
     Icon(coordinateSystem(
         preserveAspectRatio=false,
         extent={{-120,-80},{120,80}},
-        grid={1,1}), graphics={Rectangle(extent={{-120,80},{120,-80}}, lineColor={0,0,255}),Text(
+        grid={1,1}), graphics={
+        Rectangle(extent={{-120,80},{120,-80}}, lineColor={0,0,255}),
+        Text(
           extent={{-110,-60},{-77,-70}},
           lineColor={0,0,255},
-          textString="XADIFD"),Text(
+          textString="XADIFD"),
+        Text(
           extent={{-109,5},{-74,-5}},
           lineColor={0,0,255},
-          textString="ECOMP"),Text(
+          textString="ECOMP"),
+        Text(
           extent={{-108,72},{-80,55}},
           lineColor={0,128,0},
           textString="VOTHSG
-(VOS=1)"),Text(
+(VOS=1)"),
+        Text(
           extent={{31,-58},{63,-68}},
           lineColor={0,0,255},
-          textString="VOEL"),Text(
+          textString="VOEL"),
+        Text(
           extent={{86,7},{116,-9}},
           lineColor={0,0,255},
-          textString="EFD"),Text(
+          textString="EFD"),
+        Text(
           extent={{-50,30},{50,-30}},
           lineColor={0,0,255},
-          textString="ESST1A"),Text(
+          textString="ESST1A"),
+        Text(
           extent={{-112,-20},{-90,-30}},
           lineColor={0,0,255},
-          textString="VT"),Text(
+          textString="VT"),
+        Text(
           extent={{-27,-54},{1,-68}},
           lineColor={0,128,0},
           textString="VUEL2
-(UEL=2)"),Text(
+(UEL=2)"),
+        Text(
           extent={{-58,-54},{-30,-68}},
           lineColor={0,128,0},
           textString="VUEL1
-(UEL=1)"),Text(
+(UEL=1)"),
+        Text(
           extent={{3,-54},{31,-68}},
           lineColor={0,128,0},
           textString="VUEL3
-(UEL=3)"),Text(
+(UEL=3)"),
+        Text(
           extent={{-110,52},{-79,34}},
           lineColor={0,128,0},
           textString="VOTHSG2
-(VOS=2)"),Text(
+(VOS=2)"),
+        Text(
           extent={{-55,-32},{26,-45}},
           lineColor={0,128,0},
           fontName="Calibri",
           textStyle={TextStyle.Bold,TextStyle.Italic},
-          textString="Alternate UEL inputs"),Text(
+          textString="Alternate UEL inputs"),
+        Text(
           extent={{-71,62},{25,47}},
           lineColor={0,128,0},
           fontName="Calibri",
           textStyle={TextStyle.Bold,TextStyle.Italic},
-          textString="Alternate stabilizer inputs"),Text(
+          textString="Alternate stabilizer inputs"),
+        Text(
           extent={{3,20},{-3,-20}},
           lineColor={0,128,0},
           textString="}",
           origin={-75,56},
-          rotation=360),Text(
+          rotation=360),
+        Text(
           extent={{3,20},{-3,-20}},
           lineColor={0,128,0},
           textString="}",
           origin={-16,-47},
-          rotation=90),Text(
+          rotation=90),
+        Text(
           extent={{-107.8,-39.8},{-84,-50}},
           lineColor={0,0,255},
           textString="EFD0")}),

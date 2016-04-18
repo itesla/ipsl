@@ -61,11 +61,9 @@ model EXST1 "IEEE Type AC2A Excitation System"
         rotation=0,
         origin={154,-20})));
   Modelica.Blocks.Interfaces.RealInput VOTHSG annotation (Placement(transformation(extent={{-138,-52},{-98,-12}}), iconTransformation(extent={{-132,-68},{-98,-34}})));
-  Modelica.Blocks.Interfaces.RealInput VOEL
-    "Input from voltage over excitation limiter"
+  Modelica.Blocks.Interfaces.RealInput VOEL "Input from voltage over excitation limiter"
     annotation (Placement(transformation(extent={{-138,-110},{-98,-70}}), iconTransformation(extent={{-132,-104},{-98,-70}})));
-  Modelica.Blocks.Interfaces.RealInput VUEL
-    "Input from voltage under excitation limiter"
+  Modelica.Blocks.Interfaces.RealInput VUEL "Input from voltage under excitation limiter"
     annotation (Placement(transformation(extent={{-140,-158},{-100,-118}}), iconTransformation(extent={{-132,-142},{-98,-108}})));
   Modelica.Blocks.Continuous.Derivative imDerivativeLag(
     k=K_F,
@@ -118,31 +116,41 @@ equation
           extent={{24,0},{38,-16}},
           lineColor={255,0,0},
           textString="VERR")}),
-    Icon(coordinateSystem(extent={{-120,-200},{300,100}}, preserveAspectRatio=true), graphics={Text(
+    Icon(coordinateSystem(extent={{-120,-200},{300,100}}, preserveAspectRatio=true), graphics={
+        Text(
           extent={{28,-18},{188,-60}},
           lineColor={0,0,255},
-          textString="EXST1"),Rectangle(extent={{-100,82},{280,-160}}, lineColor={0,0,255}),Text(
+          textString="EXST1"),
+        Rectangle(extent={{-100,82},{280,-160}}, lineColor={0,0,255}),
+        Text(
           extent={{-90,100},{-30,38}},
           lineColor={0,0,255},
-          textString="ECOMP"),Text(
+          textString="ECOMP"),
+        Text(
           extent={{-88,24},{-28,-40}},
           lineColor={0,0,255},
-          textString="XADIFD"),Text(
+          textString="XADIFD"),
+        Text(
           extent={{-44,-124},{18,-146}},
           lineColor={0,0,255},
-          textString="EFD0"),Text(
+          textString="EFD0"),
+        Text(
           extent={{-90,46},{-32,20}},
           lineColor={0,0,255},
-          textString="ETERM"),Text(
+          textString="ETERM"),
+        Text(
           extent={{-92,-18},{-26,-82}},
           lineColor={0,0,255},
-          textString="VOTHSG"),Text(
+          textString="VOTHSG"),
+        Text(
           extent={{-94,-52},{-48,-116}},
           lineColor={0,0,255},
-          textString="VOEL"),Text(
+          textString="VOEL"),
+        Text(
           extent={{-94,-94},{-46,-156}},
           lineColor={0,0,255},
-          textString="VUEL"),Text(
+          textString="VUEL"),
+        Text(
           extent={{238,-10},{274,-74}},
           lineColor={0,0,255},
           textString="EFD")}),

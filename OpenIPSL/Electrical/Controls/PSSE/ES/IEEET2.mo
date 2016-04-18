@@ -19,8 +19,7 @@ model IEEET2 "IEEE Type 2 excitation system"
   Modelica.Blocks.Interfaces.RealInput VOTHSG "PSS output Upss" annotation (Placement(transformation(extent={{-110,-20},{-104,-12}}), iconTransformation(extent={{-126,30},{-106,50}})));
   Modelica.Blocks.Interfaces.RealInput VOEL "OEL output" annotation (Placement(transformation(extent={{-110,-28},{-104,-20}}), iconTransformation(extent={{-126,-10},{-106,10}})));
   Modelica.Blocks.Sources.Constant Vref(k=VREF) annotation (Placement(transformation(extent={{-96,14},{-84,26}})));
-  Modelica.Blocks.Interfaces.RealOutput EFD(start=Efd0)
-    "Output,excitation voltage"                                                     annotation (Placement(transformation(extent={{100,-6},{110,6}}), iconTransformation(extent={{120,-10},{138,10}})));
+  Modelica.Blocks.Interfaces.RealOutput EFD(start=Efd0) "Output,excitation voltage" annotation (Placement(transformation(extent={{100,-6},{110,6}}), iconTransformation(extent={{120,-10},{138,10}})));
   Modelica.Blocks.Interfaces.RealInput VUEL annotation (Placement(transformation(extent={{-112,-38},{-106,-30}}), iconTransformation(extent={{-126,-50},{-106,-30}})));
 
   function param_init
@@ -75,8 +74,7 @@ model IEEET2 "IEEE Type 2 excitation system"
         extent={{-8,-9},{8,9}},
         rotation=180,
         origin={78,41})));
-  Modelica.Blocks.Interfaces.RealInput ECOMP
-    "Input, generator terminal voltage"                                          annotation (Placement(
+  Modelica.Blocks.Interfaces.RealInput ECOMP "Input, generator terminal voltage" annotation (Placement(
       visible=true,
       transformation(
         origin={-114,2},
@@ -202,29 +200,37 @@ equation
           extent={{-106,-26},{-84,-32}},
           lineColor={0,0,255},
           textString="VUEL")}),
-    Icon(coordinateSystem(preserveAspectRatio=true, extent={{-120,-100},{120,100}}), graphics={Rectangle(
+    Icon(coordinateSystem(preserveAspectRatio=true, extent={{-120,-100},{120,100}}), graphics={
+        Rectangle(
           extent={{-120,100},{120,-100}},
           lineColor={0,0,255},
           fillColor={255,255,255},
-          fillPattern=FillPattern.Solid),Text(
+          fillPattern=FillPattern.Solid),
+        Text(
           extent={{100,8},{118,-8}},
           lineColor={0,0,255},
-          textString="EFD"),Text(
+          textString="EFD"),
+        Text(
           extent={{-38,14},{44,-18}},
           lineColor={0,0,255},
-          textString="IEEET2"),Text(
+          textString="IEEET2"),
+        Text(
           extent={{-102,-74},{-78,-86}},
           lineColor={0,0,255},
-          textString="EFD0"),Text(
+          textString="EFD0"),
+        Text(
           extent={{-98,46},{-60,34}},
           lineColor={0,0,255},
-          textString="VOTHSG "),Text(
+          textString="VOTHSG "),
+        Text(
           extent={{-102,-32},{-74,-48}},
           lineColor={0,0,255},
-          textString=" VUEL "),Text(
+          textString=" VUEL "),
+        Text(
           extent={{-102,6},{-72,-8}},
           lineColor={0,0,255},
-          textString=" VOEL"),Text(
+          textString=" VOEL"),
+        Text(
           extent={{-100,84},{-68,74}},
           lineColor={0,0,255},
           textString="ECOMP")}),

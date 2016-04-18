@@ -1,5 +1,6 @@
 within OpenIPSL.NonElectrical.Continuous;
-block SimpleLagLimVar "First order lag transfer function block with a non windup limiter and variable limits"
+block SimpleLagLimVar
+  "First order lag transfer function block with a non windup limiter and variable limits"
   extends Modelica.Blocks.Interfaces.SISO(y(start=y_start));
   Modelica.Blocks.Interfaces.RealInput outMax
     annotation (Placement(transformation(extent={{98,106},{138,146}}), iconTransformation(
@@ -19,22 +20,15 @@ block SimpleLagLimVar "First order lag transfer function block with a non windup
   parameter Real T_mod=if T < Modelica.Constants.eps then 1000 else T;
 
   Real state;
-  Boolean switch(start=true, fixed=true);
 initial equation
   state = y_start;
 equation
-  if (abs(y - outMax) < Modelica.Constants.eps and u - y > 0) or (abs(y - outMin) < Modelica.Constants.eps and u - y < 0) then
-    der(state) = 0;
-    switch = false;
-  else
-    T_mod*der(state) = u - y;
-    switch = true;
-  end if;
-
-  when (switch) then
-    reinit(state, pre(y));
+  T_mod*der(state) = K*u - state;
+  when state > outMax and K*u - state < 0 then
+    reinit(state, outMax);
+  elsewhen state < outMin and K*u - state > 0 then
+    reinit(state, outMin);
   end when;
-
   if abs(const.y) <= Modelica.Constants.eps then
     y = max(min(u*K, outMax), outMin);
   else

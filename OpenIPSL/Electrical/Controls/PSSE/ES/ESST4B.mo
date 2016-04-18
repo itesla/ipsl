@@ -78,8 +78,7 @@ source-controlled rectifier exciter "
   Modelica.Blocks.Math.Gain Gain2(k=K_PM) annotation (Placement(transformation(extent={{164,62},{184,82}})));
   Modelica.Blocks.Nonlinear.Limiter limiter1(uMax=V_RMAX, uMin=V_RMIN) annotation (Placement(transformation(extent={{230,52},{250,72}})));
   Modelica.Blocks.Math.Add add2 annotation (Placement(transformation(extent={{210,56},{222,68}})));
-  BaseClasses.VE vE
-    annotation (Placement(transformation(extent={{-14,-44},{50,-8}})));
+  BaseClasses.VE vE annotation (Placement(transformation(extent={{-14,-44},{50,-8}})));
   Modelica.Blocks.Math.Product product1 annotation (Placement(transformation(extent={{146,-36},{160,-22}})));
   Modelica.Blocks.Nonlinear.Limiter maxLimiter(uMin=-Modelica.Constants.inf, uMax=V_BMAX) annotation (Placement(transformation(extent={{176,-40},{198,-18}})));
   Sensors.PwVoltageCurrent pwVoltageCurrent annotation (Placement(transformation(extent={{-98,-68},{-34,32}})));
@@ -258,25 +257,33 @@ equation
           extent={{210,-4},{234,-18}},
           lineColor={255,0,0},
           textString="VB")}),
-    Icon(coordinateSystem(extent={{-100,-160},{340,160}}, preserveAspectRatio=true), graphics={Text(
+    Icon(coordinateSystem(extent={{-100,-160},{340,160}}, preserveAspectRatio=true), graphics={
+        Text(
           extent={{-18,-10},{190,-106}},
           lineColor={0,0,255},
-          textString="ESST4B"),Rectangle(extent={{-98,62},{228,-178}}, lineColor={0,0,255}),Text(
+          textString="ESST4B"),
+        Rectangle(extent={{-98,62},{228,-178}}, lineColor={0,0,255}),
+        Text(
           extent={{-88,8},{-22,-72}},
           lineColor={0,0,255},
-          textString="ECOMP"),Text(
+          textString="ECOMP"),
+        Text(
           extent={{-90,52},{-18,-32}},
           lineColor={0,0,255},
-          textString="VOTHSG"),Text(
+          textString="VOTHSG"),
+        Text(
           extent={{-88,-88},{-38,-146}},
           lineColor={0,0,255},
-          textString="XadIfd"),Text(
+          textString="XadIfd"),
+        Text(
           extent={{-92,-150},{-34,-174}},
           lineColor={0,0,255},
-          textString="EFD0"),Text(
+          textString="EFD0"),
+        Text(
           extent={{-84,-46},{-34,-104}},
           lineColor={0,0,255},
-          textString="VUEL"),Text(
+          textString="VUEL"),
+        Text(
           extent={{-60,76},{-10,18}},
           lineColor={0,0,255},
           textString="GenT")}),

@@ -29,8 +29,7 @@ model IEEET1 "IEEE Type 1 excitation system"
         origin={54,38})));
   Modelica.Blocks.Interfaces.RealInput VUEL annotation (Placement(transformation(extent={{-106,-30},{-100,-24}}), iconTransformation(extent={{-146,-10},{-126,10}})));
   Modelica.Blocks.Interfaces.RealInput EC "Input, generator terminal voltage" annotation (Placement(transformation(extent={{-106,0},{-100,6}}), iconTransformation(extent={{-146,-50},{-126,-30}})));
-  Modelica.Blocks.Interfaces.RealInput EFD0 "Input, generator terminal voltage"
-                                                                                annotation (Placement(transformation(extent={{-108,20},{-102,26}}), iconTransformation(extent={{-146,-90},{-126,-70}})));
+  Modelica.Blocks.Interfaces.RealInput EFD0 "Input, generator terminal voltage" annotation (Placement(transformation(extent={{-108,20},{-102,26}}), iconTransformation(extent={{-146,-90},{-126,-70}})));
   Modelica.Blocks.Math.Add3 sum2(k2=-1) annotation (Placement(transformation(extent={{-48,-2},{-38,8}})));
   Modelica.Blocks.Math.Add sum3(k2=-1) annotation (Placement(transformation(extent={{-32,-8},{-22,2}})));
   Modelica.Blocks.Math.Gain KE_EFD(k=KE0) annotation (Placement(transformation(
@@ -153,25 +152,34 @@ equation
           extent={{-100,-2},{-82,-12}},
           lineColor={0,0,255},
           textString="VOTHSG")}),
-    Icon(coordinateSystem(preserveAspectRatio=false, extent={{-140,-100},{120,100}}), graphics={Rectangle(extent={{-140,100},{120,-100}}, lineColor={0,0,255}),Text(
+    Icon(coordinateSystem(preserveAspectRatio=false, extent={{-140,-100},{120,100}}), graphics={
+        Rectangle(extent={{-140,100},{120,-100}}, lineColor={0,0,255}),
+        Text(
           extent={{-126,-36},{-68,-62}},
           lineColor={0,0,255},
           textString="ECOMP
-"),Text(  extent={{-124,92},{-60,68}},
+"),
+        Text(
+          extent={{-124,92},{-60,68}},
           lineColor={0,0,255},
-          textString="VOTHSG"),Text(
+          textString="VOTHSG"),
+        Text(
           extent={{-130,8},{-80,-8}},
           lineColor={0,0,255},
-          textString="VUEL"),Text(
+          textString="VUEL"),
+        Text(
           extent={{88,8},{118,-8}},
           lineColor={0,0,255},
-          textString="EFD"),Text(
+          textString="EFD"),
+        Text(
           extent={{-46,36},{54,-36}},
           lineColor={0,0,255},
-          textString="IEEET1"),Text(
+          textString="IEEET1"),
+        Text(
           extent={{-126,48},{-84,32}},
           lineColor={0,0,255},
-          textString="VOEL"),Text(
+          textString="VOEL"),
+        Text(
           extent={{-132,-72},{-76,-88}},
           lineColor={0,0,255},
           textString="EFD0")}),
