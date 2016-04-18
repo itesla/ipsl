@@ -2,7 +2,7 @@ within SevenBus.Generators;
 model G1
   extends OpenIPSL.Electrical.Essentials.pfComponent;
   parameter Real M_b "Machine base power (MVA)" annotation (Dialog(group="Power flow data"));
-  OpenIPSL.Electrical.Machines.PSSE.GENROU.GENROU gENROU(
+  OpenIPSL.Electrical.Machines.PSSE.GENROU gENROU(
     V_b=V_b,
     V_0=V_0,
     angle_0=angle_0,
@@ -26,7 +26,7 @@ model G1
     Xppd=0.289,
     R_a=0.00344) annotation (Placement(transformation(extent={{-30,-30},{30,30}})));
   OpenIPSL.Connectors.PwPin pwPin annotation (Placement(transformation(extent={{100,-10},{120,10}})));
-  OpenIPSL.Electrical.Controls.PSSE.ES.ST5B.ST5B sT5B(
+  OpenIPSL.Electrical.Controls.PSSE.ES.ST5B sT5B(
     T_R=0,
     T_C1=0.8,
     T_B1=6,
@@ -45,7 +45,7 @@ model G1
     T_OB1=2,
     T_OC2=0.08,
     T_OB2=0.08) annotation (Placement(transformation(extent={{30,-76},{-30,-44}})));
-  OpenIPSL.Electrical.Controls.PSSE.PSS.PSS2B.PSS2B pSS2B(
+  OpenIPSL.Electrical.Controls.PSSE.PSS.PSS2B pSS2B(
     T_w1=2,
     T_w2=2,
     T_6=0,
@@ -94,13 +94,19 @@ equation
   connect(sT5B.EFD0, gENROU.EFD0) annotation (Line(points={{29,-72},{40,-72},{40,-21},{32.4,-21}}, color={0,0,127}));
   connect(gENROU.SPEED, pSS2B.V_S1) annotation (Line(points={{32.4,27},{66,27},{66,-90},{56,-90}}, color={0,0,127}));
   connect(gENROU.PELEC, pSS2B.V_S2) annotation (Line(points={{32.4,-15},{72,-15},{72,-94},{56,-94}}, color={0,0,127}));
-  connect(VUEL.y, sT5B.VUEL) annotation (Line(points={{-67.4,-86},{13,-86},{13,-74.6667}}, color={0,0,127}));
-  connect(VOEL.y, sT5B.VOEL) annotation (Line(points={{-67.4,-54},{-60,-54},{-60,-80},{5,-80},{5,-74.6667}}, color={0,0,127}));
-  connect(pSS2B.VOTHSG, sT5B.VOTHSG) annotation (Line(points={{19.4,-92},{-3,-92},{-3,-74.6667}}, color={0,0,127}));
+  connect(VUEL.y, sT5B.VUEL) annotation (Line(points={{-67.4,-86},{13,-86},{13,
+          -74.6667}},                                                                      color={0,0,127}));
+  connect(VOEL.y, sT5B.VOEL) annotation (Line(points={{-67.4,-54},{-60,-54},{
+          -60,-80},{5,-80},{5,-74.6667}},                                                                    color={0,0,127}));
+  connect(pSS2B.VOTHSG, sT5B.VOTHSG) annotation (Line(points={{19.4,-92},{-3,
+          -92},{-3,-74.6667}},                                                                    color={0,0,127}));
   connect(gENROU.EFD, sT5B.EFD) annotation (Line(points={{-29.4,-15},{-40,-15},{-40,-60},{-31,-60}}, color={0,0,127}));
-  connect(iEESGO.SPEED, gENROU.SPEED) annotation (Line(points={{24.6,75.2857},{32.4,75.2857},{32.4,27}}, color={0,0,127}));
-  connect(iEESGO.PMECH0, gENROU.PMECH0) annotation (Line(points={{24.6,64.2857},{52,64.2857},{52,-9},{32.4,-9}}, color={0,0,127}));
-  connect(iEESGO.PMECH, gENROU.PMECH) annotation (Line(points={{-31.75,70.5714},{-40,70.5714},{-40,15},{-29.4,15}}, color={0,0,127}));
+  connect(iEESGO.SPEED, gENROU.SPEED) annotation (Line(points={{24.6,75.2857},{
+          32.4,75.2857},{32.4,27}},                                                                      color={0,0,127}));
+  connect(iEESGO.PMECH0, gENROU.PMECH0) annotation (Line(points={{24.6,64.2857},
+          {52,64.2857},{52,-9},{32.4,-9}},                                                                       color={0,0,127}));
+  connect(iEESGO.PMECH, gENROU.PMECH) annotation (Line(points={{-31.75,70.5714},
+          {-40,70.5714},{-40,15},{-29.4,15}},                                                                       color={0,0,127}));
   annotation (
     Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,100}})),
     Icon(graphics={

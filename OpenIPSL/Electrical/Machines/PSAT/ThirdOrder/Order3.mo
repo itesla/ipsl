@@ -26,11 +26,16 @@ protected
   parameter Real c2=x1d*K "CONSTANT";
   parameter Real c3=Xq*K " CONSTANT";
   parameter Real K=1/(Ra*Ra + Xq*x1d) "CONSTANT";
-  parameter Real delta0=atan2(vi0 + Ra*ii0 + Xq*ir0, vr0 + Ra*ir0 - Xq*ii0) "Initialitation";
-  parameter Real vd0=vr0*cos(pi/2 - delta0) - vi0*sin(pi/2 - delta0) "Initialitation";
-  parameter Real vq0=vr0*sin(pi/2 - delta0) + vi0*cos(pi/2 - delta0) "Initialitation";
-  parameter Real id0=ir0*cos(pi/2 - delta0) - ii0*sin(pi/2 - delta0) "Initialitation";
-  parameter Real iq0=ir0*sin(pi/2 - delta0) + ii0*cos(pi/2 - delta0) "Initialitation";
+  parameter Real delta0=atan2(vi0 + Ra*ii0 + Xq*ir0, vr0 + Ra*ir0 - Xq*ii0)
+    "Initialitation";
+  parameter Real vd0=vr0*cos(pi/2 - delta0) - vi0*sin(pi/2 - delta0)
+    "Initialitation";
+  parameter Real vq0=vr0*sin(pi/2 - delta0) + vi0*cos(pi/2 - delta0)
+    "Initialitation";
+  parameter Real id0=ir0*cos(pi/2 - delta0) - ii0*sin(pi/2 - delta0)
+    "Initialitation";
+  parameter Real iq0=ir0*sin(pi/2 - delta0) + ii0*cos(pi/2 - delta0)
+    "Initialitation";
   parameter Real pm00=(vq0 + Ra*iq0)*iq0 + (vd0 + Ra*id0)*id0 "Initialitation";
   parameter Real vf00=e1q0 + (Xd - x1d)*id0 "Initialitation";
   parameter Real e1q0=vq0 + Ra*iq0 + x1d*id0 "Initialitation";

@@ -63,7 +63,7 @@ model Order6test2
     t1=3,
     t2=3.1,
     R=10) annotation (Placement(transformation(extent={{25,-70},{45,-50}})));
-  OpenIPSL.Electrical.Machines.PSAT.SixthOrder.Order6 order6Type2_1(
+  OpenIPSL.Electrical.Machines.PSAT.Order6 order6Type2_1(
     Sn=100,
     P_0=0.160352698692006,
     Q_0=0.11859436505981,

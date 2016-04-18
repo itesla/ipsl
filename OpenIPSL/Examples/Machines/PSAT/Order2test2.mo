@@ -24,7 +24,7 @@ model Order2test2
         origin={20.0,-57.3},
         extent={{-10.0,-10.0},{10.0,10.0}},
         rotation=0)));
-  OpenIPSL.Electrical.Machines.PSAT.SecondOrder.Order2 order21(
+  OpenIPSL.Electrical.Machines.PSAT.Order2 order21(
     Sn=20,
     Q_0=0.11859436505981,
     P_0=0.160352698692006,

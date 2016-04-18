@@ -1,7 +1,7 @@
 within OpenIPSL.Examples.Controls.PSSE.ES;
 model ESAC2A "SMIB model example of GENROU with Excitation System ESAC2A"
   extends OpenIPSL.Examples.SMIBpartial;
-  OpenIPSL.Electrical.Machines.PSSE.GENROU.GENROU generator(
+  OpenIPSL.Electrical.Machines.PSSE.GENROU generator(
     Xppd=0.2,
     Xppq=0.2,
     Xpp=0.2,
@@ -22,7 +22,8 @@ model ESAC2A "SMIB model example of GENROU with Excitation System ESAC2A"
     S10=0.1,
     S12=0.5,
     Xpq=0.6,
-    Tpq0=0.7) annotation (Placement(transformation(extent={{-108,-14},{-80,16}})));
+    Tpq0=0.7)
+    annotation (Placement(transformation(extent={{-108,-14},{-80,16}})));
   Modelica.Blocks.Sources.Constant const(k=0) annotation (Placement(transformation(
         extent={{-4,-4},{4,4}},
         rotation=180,
@@ -36,7 +37,8 @@ model ESAC2A "SMIB model example of GENROU with Excitation System ESAC2A"
         extent={{-5,-5},{5,5}},
         rotation=180,
         origin={-41,-61})));
-  OpenIPSL.Electrical.Controls.PSSE.ES.ESAC2A.ESAC2A eSAC2A annotation (Placement(transformation(extent={{-74,-70},{-144,-24}})));
+  OpenIPSL.Electrical.Controls.PSSE.ES.ESAC2A eSAC2A
+    annotation (Placement(transformation(extent={{-74,-70},{-144,-24}})));
 equation
   connect(eSAC2A.EFD0, generator.EFD0) annotation (Line(
       points={{-71.025,-60.0333},{-60,-60.0333},{-60,-9.5},{-78.88,-9.5}},

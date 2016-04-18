@@ -1,7 +1,7 @@
 within OpenIPSL.Examples.Controls.PSSE.ES;
 model EXAC2 "SMIB system with one load and GENROE model"
   extends OpenIPSL.Examples.SMIBpartial;
-  OpenIPSL.Electrical.Machines.PSSE.GENROE.GENROE gENROE(
+  OpenIPSL.Electrical.Machines.PSSE.GENROE gENROE(
     M_b=100,
     Tpd0=5,
     Tppd0=0.07,
@@ -21,8 +21,9 @@ model EXAC2 "SMIB system with one load and GENROE model"
     P_0=40,
     angle_0=4.046276,
     Q_0=5.416582,
-    Xppq=0.2) annotation (Placement(transformation(extent={{-100,-20},{-60,20}})));
-  OpenIPSL.Electrical.Controls.PSSE.ES.EXAC2.EXAC2 eXAC2_1(
+    Xppq=0.2)
+    annotation (Placement(transformation(extent={{-100,-20},{-60,20}})));
+  OpenIPSL.Electrical.Controls.PSSE.ES.EXAC2 eXAC2_1(
     K_B=2,
     V_RMAX=2,
     V_RMIN=2,
@@ -46,7 +47,8 @@ model EXAC2 "SMIB system with one load and GENROE model"
     S_EE_2=0.1,
     T_R=0.005,
     T_B=0.005,
-    T_C=0.005) annotation (Placement(transformation(extent={{-54,-52},{-100,-30}})));
+    T_C=0.005)
+    annotation (Placement(transformation(extent={{-54,-52},{-100,-30}})));
   Modelica.Blocks.Sources.Constant const(k=0) annotation (Placement(transformation(
         extent={{-4,-4},{4,4}},
         rotation=180,

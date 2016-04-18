@@ -3,7 +3,7 @@ model SCRX "SMIB model example of GENROU with Excitation System EXST1"
   import iPSL = OpenIPSL;
   extends iPSL.Examples.SMIBpartial;
   Modelica.Blocks.Sources.Constant const2(k=0) annotation (Placement(transformation(extent={{-110,166},{-94,182}})));
-  iPSL.Electrical.Machines.PSSE.GENROU.GENROU gENROE(
+  iPSL.Electrical.Machines.PSSE.GENROU gENROE(
     M_b=100,
     Tpd0=5,
     Tppd0=0.07,
@@ -30,7 +30,7 @@ model SCRX "SMIB model example of GENROU with Excitation System EXST1"
         extent={{4,-4},{-4,4}},
         rotation=0,
         origin={-52,-36})));
-  iPSL.Electrical.Controls.PSSE.ES.SCRX.SCRX sCRX(
+  iPSL.Electrical.Controls.PSSE.ES.SCRX sCRX(
     T_AT_B=0.1,
     T_B=1,
     K=100,
@@ -40,7 +40,8 @@ model SCRX "SMIB model example of GENROU with Excitation System EXST1"
     r_cr_fd=0,
     V_c0=1,
     V_0=1,
-    T_E=0.005) annotation (Placement(transformation(extent={{-74,-58},{-108,-30}})));
+    T_E=0.005)
+    annotation (Placement(transformation(extent={{-74,-58},{-108,-30}})));
 equation
   connect(gENROE.PMECH, gENROE.PMECH0) annotation (Line(points={{-111.6,10},{-116,10},{-116,26},{-62,26},{-62,-6},{-70.4,-6}},color={0,0,127}));
   connect(sCRX.EFD, gENROE.EFD) annotation (Line(points={{-108.567,-43.86},{-116,-43.86},{-116,-10},{-111.6,-10}},color={0,0,127}));

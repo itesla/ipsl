@@ -2,7 +2,7 @@ within OpenIPSL.Examples.Controls.PSSE.ES;
 model ST5B "SMIB system with one load and GENROE model"
   import iPSL = OpenIPSL;
   extends iPSL.Examples.SMIBpartial;
-  iPSL.Electrical.Controls.PSSE.ES.ST5B.ST5B sT5B(
+  iPSL.Electrical.Controls.PSSE.ES.ST5B sT5B(
     T_R=0,
     T_C1=0.8,
     T_B1=6,
@@ -20,11 +20,12 @@ model ST5B "SMIB system with one load and GENROE model"
     T_1=0.001,
     K_R=200,
     V_RMAX=5,
-    V_RMIN=-4) annotation (Placement(transformation(extent={{-64,-76},{-124,-44}})));
+    V_RMIN=-4)
+    annotation (Placement(transformation(extent={{-64,-76},{-124,-44}})));
   Modelica.Blocks.Sources.Constant PSS_off(k=0) annotation (Placement(transformation(extent={{-140,-102},{-128,-90}})));
   Modelica.Blocks.Sources.Constant VOEL(k=100) annotation (Placement(transformation(extent={{-140,-122},{-128,-110}})));
   Modelica.Blocks.Sources.Constant VUEL(k=-100) annotation (Placement(transformation(extent={{-140,-142},{-128,-130}})));
-  iPSL.Electrical.Machines.PSSE.GENROE.GENROE gENROE(
+  iPSL.Electrical.Machines.PSSE.GENROE gENROE(
     M_b=100,
     Tpd0=5,
     Tppd0=0.07,
@@ -44,7 +45,8 @@ model ST5B "SMIB system with one load and GENROE model"
     P_0=40,
     angle_0=4.046276,
     Q_0=5.416582,
-    Xppq=0.2) annotation (Placement(transformation(extent={{-112,-20},{-72,20}})));
+    Xppq=0.2)
+    annotation (Placement(transformation(extent={{-112,-20},{-72,20}})));
 equation
   connect(sT5B.ETERM, sT5B.ECOMP) annotation (Line(points={{-65,-56},{-50,-56},{-50,-48},{-65,-48}}, color={0,0,127}));
   connect(PSS_off.y, sT5B.VOTHSG) annotation (Line(points={{-127.4,-96},{-97,-96},{-97,-74.6667}}, color={0,0,127}));

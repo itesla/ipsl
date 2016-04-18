@@ -2,7 +2,7 @@ within OpenIPSL.Examples.Controls.PSSE.ES;
 model EXAC1 "SMIB system with one load and GENROE model"
   import iPSL = OpenIPSL;
   extends iPSL.Examples.SMIBpartial;
-  iPSL.Electrical.Machines.PSSE.GENROE.GENROE gENROE(
+  iPSL.Electrical.Machines.PSSE.GENROE gENROE(
     M_b=100,
     Tpd0=5,
     Tppd0=0.07,
@@ -22,9 +22,10 @@ model EXAC1 "SMIB system with one load and GENROE model"
     P_0=40,
     angle_0=4.046276,
     Q_0=5.416582,
-    Xppq=0.2) annotation (Placement(transformation(extent={{-100,-20},{-60,20}})));
+    Xppq=0.2)
+    annotation (Placement(transformation(extent={{-100,-20},{-60,20}})));
   Modelica.Blocks.Sources.Constant const(k=0) annotation (Placement(transformation(extent={{-20,-56},{-40,-36}})));
-  iPSL.Electrical.Controls.PSSE.ES.EXAC1.EXAC1 eXAC1_1(
+  iPSL.Electrical.Controls.PSSE.ES.EXAC1 eXAC1_1(
     K_A=400,
     T_A=0.02,
     V_RMAX=9,
@@ -41,7 +42,8 @@ model EXAC1 "SMIB system with one load and GENROE model"
     S_EE_2=0.1,
     T_R=0.004,
     T_B=0.004,
-    T_C=0.004) annotation (Placement(transformation(extent={{-60,-50},{-98,-24}})));
+    T_C=0.004)
+    annotation (Placement(transformation(extent={{-60,-50},{-98,-24}})));
 equation
   connect(gENROE.PMECH, gENROE.PMECH0) annotation (Line(points={{-99.6,10},{-110,10},{-110,26},{-48,26},{-48,-6},{-58.4,-6}}, color={0,0,127}));
   connect(eXAC1_1.EFD, gENROE.EFD) annotation (Line(points={{-98.95,-37},{-110,-37},{-110,-10},{-99.6,-10}}, color={0,0,127}));

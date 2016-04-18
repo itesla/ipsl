@@ -1,6 +1,6 @@
 within OpenIPSL.Examples.Controls.PSAT.TG;
 model TGTypeIV_test
-  OpenIPSL.Electrical.Machines.PSAT.ThirdOrder.Order3 Generator(
+  OpenIPSL.Electrical.Machines.PSAT.Order3 Generator(
     P_0=0.16041,
     Q_0=0.12012,
     V_b=400,

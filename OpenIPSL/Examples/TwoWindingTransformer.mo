@@ -20,7 +20,7 @@ model TwoWindingTransformer "SMIB system with one load and GENROE model"
     X=0.1,
     G=0,
     B=0) annotation (Placement(transformation(extent={{60,-40},{80,-20}})));
-  OpenIPSL.Electrical.Machines.PSSE.GENCLS.GENCLS gENCLS(
+  OpenIPSL.Electrical.Machines.PSSE.GENCLS gENCLS(
     M_b=100,
     D=0,
     V_0=1,
@@ -28,7 +28,8 @@ model TwoWindingTransformer "SMIB system with one load and GENROE model"
     X_d=0.2,
     H=0,
     P_0=10.0278,
-    Q_0=32.05072) annotation (Placement(transformation(extent={{118,-12},{106,12}})));
+    Q_0=32.05072)
+    annotation (Placement(transformation(extent={{118,-12},{106,12}})));
   OpenIPSL.Electrical.Loads.PSSE.Load_variation constantLoad(
     S_p(re=0.5, im=0.1),
     S_i(im=0, re=0),
@@ -50,7 +51,7 @@ model TwoWindingTransformer "SMIB system with one load and GENROE model"
         extent={{-6,-6},{6,6}},
         rotation=-90,
         origin={54,-58})));
-  OpenIPSL.Electrical.Machines.PSSE.GENSAL.GENSAL gENROE(
+  OpenIPSL.Electrical.Machines.PSSE.GENSAL gENROE(
     M_b=100,
     Tpd0=5,
     D=0,
@@ -70,7 +71,8 @@ model TwoWindingTransformer "SMIB system with one load and GENROE model"
     V_0=1,
     angle_0=4.747869,
     P_0=40,
-    Q_0=-16.46028) annotation (Placement(transformation(extent={{-92,-20},{-58,20}})));
+    Q_0=-16.46028)
+    annotation (Placement(transformation(extent={{-92,-20},{-58,20}})));
   OpenIPSL.Electrical.Branches.PSSE.TwoWindingTransformer twoWindingTransformer(
     CZ=1,
     R=0.001,

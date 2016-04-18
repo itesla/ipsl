@@ -1,6 +1,6 @@
 within OpenIPSL.Examples.Machines.PSAT;
 model InductiveMotorV_SIMBOpenline_Test
-  OpenIPSL.Electrical.Machines.PSAT.InductionMachine.MotorTypeV motorTypeI(
+  OpenIPSL.Electrical.Machines.PSAT.MotorTypeV motorTypeI(
     Sup=0,
     V_0=1.0336,
     angle_0=-0.02173,

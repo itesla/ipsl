@@ -1,7 +1,7 @@
 within OpenIPSL.Examples.Controls.PSSE.TG;
 model GGOV "three phase to ground fault test of GGOV"
   extends OpenIPSL.Examples.SMIBpartial;
-  OpenIPSL.Electrical.Machines.PSSE.GENROU.GENROU generator(
+  OpenIPSL.Electrical.Machines.PSSE.GENROU generator(
     Xppd=0.2,
     Xppq=0.2,
     Xpp=0.2,
@@ -22,7 +22,8 @@ model GGOV "three phase to ground fault test of GGOV"
     V_0=1,
     angle_0=4.05,
     P_0=39.99995,
-    Q_0=5.416571) annotation (Placement(transformation(extent={{-100,-16},{-60,18}})));
+    Q_0=5.416571)
+    annotation (Placement(transformation(extent={{-100,-16},{-60,18}})));
   OpenIPSL.Electrical.Controls.PSSE.TG.GGOV1.GGOV1 gGOV1pele(
     R=0.04,
     T_pelec=1,

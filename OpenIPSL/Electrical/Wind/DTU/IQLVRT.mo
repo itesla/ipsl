@@ -1,5 +1,6 @@
 within OpenIPSL.Electrical.Wind.DTU;
-model IQLVRT "Selects the reactive current during fault and post fault. Developed by DTU"
+model IQLVRT
+  "Selects the reactive current during fault and post fault. Developed by DTU"
   Modelica.Blocks.Interfaces.RealInput F_LVRT annotation (Placement(transformation(
         extent={{-5,-6},{5,6}},
         rotation=-90,

@@ -1,6 +1,6 @@
 within OpenIPSL.Examples.FACTS;
 model TCSC_Reactance_Test
-  OpenIPSL.Electrical.Machines.PSAT.SecondOrder.Order2 Gen1(
+  OpenIPSL.Electrical.Machines.PSAT.Order2 Gen1(
     Sn=370,
     P_0=0.080101913348342,
     Q_0=0.060948619430301,
@@ -45,7 +45,8 @@ model TCSC_Reactance_Test
     t4=20,
     P2=0.01,
     P3=-0.01) annotation (Placement(transformation(extent={{96,-10},{116,10}})));
-  OpenIPSL.Electrical.Controls.PSAT.FACTS.TCSC.TCSCReactance tCSCReactance annotation (Placement(transformation(extent={{26,-10},{46,10}})));
+  OpenIPSL.Electrical.FACTS.PSAT.TCSCReactance tCSCReactance
+    annotation (Placement(transformation(extent={{26,-10},{46,10}})));
   inner OpenIPSL.Electrical.SystemBase SysData annotation (Placement(transformation(extent={{-100,60},{-76,80}})));
 equation
   connect(pulse1.y, add3_1.u2) annotation (Line(

@@ -70,7 +70,7 @@ model Order4test2_TG
         origin={-67.5,-27.5},
         extent={{-17.5,-12.5},{17.5,12.5}},
         rotation=0)));
-  OpenIPSL.Electrical.Machines.PSAT.FourthOrder.Order4 Generator(
+  OpenIPSL.Electrical.Machines.PSAT.Order4 Generator(
     V_b=200,
     V_0=1,
     angle_0=0,

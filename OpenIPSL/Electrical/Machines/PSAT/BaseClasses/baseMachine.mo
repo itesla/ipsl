@@ -123,8 +123,10 @@ partial model baseMachine
 protected
   parameter Real vr0=V_0*cos(angle_0/180*pi) "Initialitation";
   parameter Real vi0=V_0*sin(angle_0/180*pi) "Initialitation";
-  parameter Real ir0=(P_0/S_b*vr0 + Q_0/S_b*vi0)/(vr0^2 + vi0^2) "Initialitation";
-  parameter Real ii0=(P_0/S_b*vi0 - Q_0/S_b*vr0)/(vr0^2 + vi0^2) "Initialitation";
+  parameter Real ir0=(P_0/S_b*vr0 + Q_0/S_b*vi0)/(vr0^2 + vi0^2)
+    "Initialitation";
+  parameter Real ii0=(P_0/S_b*vi0 - Q_0/S_b*vr0)/(vr0^2 + vi0^2)
+    "Initialitation";
   //Change of base constants
   parameter Real CoB=S_b*Vn/(Sn*V_b);
   parameter Real CoB2=S_b/Sn;

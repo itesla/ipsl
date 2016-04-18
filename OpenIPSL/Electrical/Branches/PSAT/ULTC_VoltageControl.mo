@@ -1,5 +1,6 @@
 within OpenIPSL.Electrical.Branches.PSAT;
-model ULTC_VoltageControl "Under Load Tap Changer, continous model, secondary voltage control"
+model ULTC_VoltageControl
+  "Under Load Tap Changer, continous model, secondary voltage control"
   OpenIPSL.Connectors.PwPin p annotation (Placement(transformation(extent={{-120,-10},{-100,10}})));
   OpenIPSL.Connectors.PwPin n annotation (Placement(transformation(extent={{100,-10},{120,10}})));
   parameter Real Sb=100 "System base power (MVA)" annotation (Dialog(group="Power flow data"));
@@ -8,7 +9,8 @@ model ULTC_VoltageControl "Under Load Tap Changer, continous model, secondary vo
   parameter Real Sn=100 "Power rating (MVA)" annotation (Dialog(group="Power flow data"));
   parameter Real Vn=400000 "Voltage rating (V)" annotation (Dialog(group="Power flow data"));
   parameter Real fn=50 "Frequency rating (Hz)" annotation (Dialog(group="Power flow data"));
-  parameter Real V_0=1.008959700699460 "Voltage magnitude of the controlled bus (pu)" annotation (Dialog(group="Power flow data"));
+  parameter Real V_0=1.008959700699460
+    "Voltage magnitude of the controlled bus (pu)"                                    annotation (Dialog(group="Power flow data"));
   parameter Real m0=0.98 "Initial tap ratio" annotation (Dialog(group="Power flow data"));
   parameter Real kT=4 "Nominal tap ratio (V1/V2)" annotation (Dialog(group="ULTC data"));
   parameter Real H=0.001 "Integral deviation (pu)" annotation (Dialog(group="ULTC data"));

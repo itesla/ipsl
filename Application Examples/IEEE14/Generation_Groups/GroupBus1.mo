@@ -17,7 +17,7 @@ model GroupBus1
     vf0=vf0,
     Ka=200,
     v0=V_0) annotation (Placement(transformation(extent={{-52,-6},{0,42}})));
-  OpenIPSL.Electrical.Machines.PSAT.FifthOrder.Order5_Type2 Syn1(
+  OpenIPSL.Electrical.Machines.PSAT.Order5_Type2 Syn1(
     Sn=615,
     Vn=69,
     V_b=V_b,
@@ -43,7 +43,8 @@ model GroupBus1
         origin={-72,28})));
   OpenIPSL.Connectors.PwPin pwPin annotation (Placement(transformation(extent={{100,-12},{120,8}}), iconTransformation(extent={{100,-12},{120,8}})));
 equation
-  connect(AVR1.vf, Syn1.vf) annotation (Line(points={{-3.9,24.24},{12,24.24},{12,14.5},{34,14.5}}, color={0,0,127}));
+  connect(AVR1.vf, Syn1.vf) annotation (Line(points={{-3.9,24.24},{12,24.24},{
+          12,14.5},{34,14.5}},                                                                     color={0,0,127}));
   connect(Syn1.v, AVR1.v) annotation (Line(points={{90.7,8.3},{96,8.3},{96,-56},{-82,-56},{-82,4},{-46.8,4},{-46.8,15.6}}, color={0,0,127}));
   connect(const5.y, AVR1.vref) annotation (Line(points={{-58.8,28},{-54,28},{-54,30},{-54,30.96},{-46.8,30.96}}, color={0,0,127}));
   connect(Syn1.p, pwPin) annotation (Line(points={{90.7,-0.846116},{100.35,-0.846116},{100.35,-2},{110,-2}}, color={0,0,255}));

@@ -26,7 +26,7 @@ model WT4G1
     X=X1,
     G=0,
     B=B1/2) annotation (Placement(transformation(extent={{30,-30},{50,-10}})));
-  iPSL.Electrical.Machines.PSSE.GENCLS.GENCLS gENCLS2_1(
+  iPSL.Electrical.Machines.PSSE.GENCLS gENCLS2_1(
     V_0=V1,
     angle_0=A1,
     P_0=P1,

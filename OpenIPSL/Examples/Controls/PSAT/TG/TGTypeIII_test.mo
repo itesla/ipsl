@@ -1,6 +1,6 @@
 within OpenIPSL.Examples.Controls.PSAT.TG;
 model TGTypeIII_test
-  OpenIPSL.Electrical.Machines.PSAT.ThirdOrder.Order3 order3_Inputs_Outputs1(
+  OpenIPSL.Electrical.Machines.PSAT.Order3 order3_Inputs_Outputs1(
     P_0=0.16041,
     Q_0=0.12012,
     V_b=400,

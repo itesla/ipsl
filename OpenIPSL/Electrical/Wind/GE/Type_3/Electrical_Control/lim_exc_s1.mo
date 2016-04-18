@@ -24,7 +24,8 @@ model lim_exc_s1
         origin={0.0,0.0},
         extent={{-140.0,-80.0},{-100.0,-40.0}},
         rotation=0)));
-  Modelica.Blocks.Interfaces.RealOutput y "Output: saturated excitation voltage" annotation (Placement(transformation(extent={{100,-10},{120,10}}, rotation=0)));
+  Modelica.Blocks.Interfaces.RealOutput y
+    "Output: saturated excitation voltage"                                       annotation (Placement(transformation(extent={{100,-10},{120,10}}, rotation=0)));
   Modelica.Blocks.Interfaces.RealInput Vref "Reference Voltage " annotation (Placement(
       visible=true,
       transformation(

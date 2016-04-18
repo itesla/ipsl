@@ -8,7 +8,8 @@ model PwLineFault "Transitory short-circuit on a line at the point of location f
   parameter Real X1 "Conductance";
   parameter Real G1 "Shunt half conductance p.u.";
   parameter Real B1 "Shunt half susceptance p.u.";
-  parameter Real k "Point of the line where the short circuit occurs (between 0.1 and 0.99)";
+  parameter Real k
+    "Point of the line where the short circuit occurs (between 0.1 and 0.99)";
   parameter Real Rfault "Fault resistance";
   parameter Real Xfault "Fault reactance";
   parameter Real time_1 "Start time of the fault";

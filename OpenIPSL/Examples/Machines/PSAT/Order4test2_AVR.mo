@@ -71,7 +71,7 @@ model Order4test2_AVR
         origin={-56.6542,-7.4083},
         extent={{-10.0,-10.0},{10.0,10.0}},
         rotation=0)));
-  OpenIPSL.Electrical.Machines.PSAT.FourthOrder.Order4 order4_Inputs_Outputs(
+  OpenIPSL.Electrical.Machines.PSAT.Order4 order4_Inputs_Outputs(
     V_b=200,
     V_0=1,
     angle_0=0,

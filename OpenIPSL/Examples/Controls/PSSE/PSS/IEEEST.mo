@@ -2,7 +2,7 @@ within OpenIPSL.Examples.Controls.PSSE.PSS;
 model IEEEST "SMIB system with one load and GENROE model"
   import iPSL = OpenIPSL;
   extends iPSL.Examples.SMIBpartial;
-  iPSL.Electrical.Machines.PSSE.GENROE.GENROE gENROE(
+  iPSL.Electrical.Machines.PSSE.GENROE gENROE(
     M_b=100,
     Tpd0=5,
     Tppd0=0.07,
@@ -22,9 +22,10 @@ model IEEEST "SMIB system with one load and GENROE model"
     P_0=40,
     angle_0=4.046276,
     Q_0=5.416582,
-    Xppq=0.2) annotation (Placement(transformation(extent={{-102,-20},{-62,20}})));
+    Xppq=0.2)
+    annotation (Placement(transformation(extent={{-102,-20},{-62,20}})));
   Modelica.Blocks.Sources.Constant const(k=0) annotation (Placement(transformation(extent={{-22,-86},{-42,-66}})));
-  iPSL.Electrical.Controls.PSSE.ES.ESST1A.ESST1A eSST1A(
+  iPSL.Electrical.Controls.PSSE.ES.ESST1A eSST1A(
     V_IMAX=0.3,
     V_IMIN=-0.3,
     T_C=2,
@@ -42,10 +43,11 @@ model IEEEST "SMIB system with one load and GENROE model"
     K_LR=1,
     I_LR=0,
     T_A=0.1,
-    T_R=0.1) annotation (Placement(transformation(extent={{-58,-90},{-110,-60}})));
+    T_R=0.1)
+    annotation (Placement(transformation(extent={{-58,-90},{-110,-60}})));
   Modelica.Blocks.Sources.Constant const1(k=-Modelica.Constants.inf) annotation (Placement(transformation(extent={{-22,-120},{-42,-100}})));
   Modelica.Blocks.Sources.Constant const2(k=Modelica.Constants.inf) annotation (Placement(transformation(extent={{-20,-150},{-40,-130}})));
-  iPSL.Electrical.Controls.PSSE.PSS.IEEEST.IEEEST iEEEST(
+  iPSL.Electrical.Controls.PSSE.PSS.IEEEST iEEEST(
     A_1=48.7435,
     A_2=4.7488,
     A_3=0.0,
@@ -62,7 +64,8 @@ model IEEEST "SMIB system with one load and GENROE model"
     L_SMAX=0.1,
     L_SMIN=-0.1,
     V_CU=0.0,
-    V_CL=0.0) annotation (Placement(transformation(extent={{-96,-44},{-68,-32}})));
+    V_CL=0.0)
+    annotation (Placement(transformation(extent={{-96,-44},{-68,-32}})));
 equation
   connect(gENROE.PMECH, gENROE.PMECH0) annotation (Line(points={{-101.6,10},{-112,10},{-112,26},{-50,26},{-50,-6},{-60.4,-6}}, color={0,0,127}));
   connect(eSST1A.ECOMP, gENROE.ETERM) annotation (Line(points={{-59.0833,-75},{-54,-75},{-54,10},{-60.4,10}}, color={0,0,127}));

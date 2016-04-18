@@ -1,11 +1,13 @@
 within OpenIPSL.Electrical.Wind.PSSE.WT3G;
 model WT3E1
-  parameter Integer VARFLG "0 constant Q; 1 Reactive control; -1 Constant PF control"
+  parameter Integer VARFLG
+    "0 constant Q; 1 Reactive control; -1 Constant PF control"
     annotation (choices(
       choice=0 "Constant Q",
       choice=1 "Reactive power control",
       choice=-1 "Constant PF control"));
-  parameter Integer VLRFLG "0 Bypass V control; 1 WT3G1 Eqcmd limits;2 WT3G2 Eqcmd limits"
+  parameter Integer VLRFLG
+    "0 Bypass V control; 1 WT3G1 Eqcmd limits;2 WT3G2 Eqcmd limits"
     annotation (choices(
       choice=0 "Disable terminal voltage control",
       choice=1 "Enable terminal voltage control ",
@@ -39,7 +41,8 @@ model WT3E1
   parameter Real wP20=0.78000 "  Shaft speed at 20% rated power (pu) ";
   parameter Real wP40=0.98000 "  Shaft speed at 40% rated power (pu)";
   parameter Real wP60=1.1200 "  Shaft speed at 60% rated power (pu)";
-  parameter Real Pmin=0.74000 "  Minimum power for operating at P100 speed (pu)";
+  parameter Real Pmin=0.74000
+    "  Minimum power for operating at P100 speed (pu)";
   parameter Real wP100=1.2000 "  Shaft speed at 100% rated power (pu)";
 protected
   parameter Real v0;
@@ -344,7 +347,8 @@ protected
     parameter Real wP20=0.78000 "  Shaft speed at 20% rated power (pu) ";
     parameter Real wP40=0.98000 "  Shaft speed at 40% rated power (pu)";
     parameter Real wP60=1.1200 "  Shaft speed at 60% rated power (pu)";
-    parameter Real Pmin=0.74000 "  Minimum power for operating at P100 speed (pu)";
+    parameter Real Pmin=0.74000
+      "  Minimum power for operating at P100 speed (pu)";
     parameter Real wP100=1.2000 "  Shaft speed at 100% rated power (pu)";
     parameter Real k20;
     parameter Real k30;
@@ -427,7 +431,8 @@ protected
     Modelica.Blocks.Math.Gain XC(k=Xc) "Line drop compensation reactance (pu)" annotation (Placement(transformation(extent={{-180,-30},{-160,-10}})));
     Modelica.Blocks.Math.Add add3(k2=-1) annotation (Placement(transformation(extent={{-48,-10},{-28,10}})));
     Modelica.Blocks.Sources.Constant VARL(k=Vref) annotation (Placement(transformation(extent={{-98,40},{-78,60}})));
-    Modelica.Blocks.Math.Gain portion(k=1/Fn) "Line drop compensation reactance (pu)" annotation (Placement(transformation(extent={{-18,-10},{2,10}})));
+    Modelica.Blocks.Math.Gain portion(k=1/Fn)
+      "Line drop compensation reactance (pu)"                                         annotation (Placement(transformation(extent={{-18,-10},{2,10}})));
     NonElectrical.Continuous.SimpleLag K1(
       y_start=k10,
       K=KIV,
@@ -439,7 +444,8 @@ protected
       T=Tv,
       y_start=k80,
       K=1) annotation (Placement(transformation(extent={{22,20},{42,40}})));
-    parameter Real Tfv=0.15000 "Filter time constant in voltage regulator (sec)";
+    parameter Real Tfv=0.15000
+      "Filter time constant in voltage regulator (sec)";
     parameter Real Kpv=18.000 "  Proportional gain in voltage regulator (pu)";
     parameter Real KIV=5.0000 "  Integrator gain in voltage regulator (pu)";
     parameter Real Xc=0.0000 "  Line drop compensation reactance (pu)";

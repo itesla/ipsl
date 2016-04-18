@@ -93,8 +93,10 @@ model PVnew
   parameter Real Tdelay=0.05;
   parameter Real Imp=4.58 "Current at maximum power";
   parameter Real Vmp=35 "Voltage at maximum power";
-  parameter Real Iscref=5 "Module short-circuit current reference at reference temp and irradiance";
-  parameter Real Vocref=43.8 "Module open-circuit voltage reference at reference temp and irradiance";
+  parameter Real Iscref=5
+    "Module short-circuit current reference at reference temp and irradiance";
+  parameter Real Vocref=43.8
+    "Module open-circuit voltage reference at reference temp and irradiance";
   parameter Real Kv=-0.0039 "temperature correction factor for the voltage";
   parameter Real Ki=0.0004 "temperature correction factor for the current";
   parameter Real Tstc=25 "Temperature at the standard test conditions";

@@ -63,7 +63,7 @@ model AVRTypeII_OEL_Test
     t1=3,
     R=0.3,
     t2=3.1) annotation (Placement(transformation(extent={{115,-52},{135,-32}})));
-  OpenIPSL.Electrical.Machines.PSAT.SixthOrder.Order6 order6Type2_Inputs_Outputs(
+  OpenIPSL.Electrical.Machines.PSAT.Order6 order6Type2_Inputs_Outputs(
     Sn=Sn,
     Vn=Vn,
     V_b=Vbus,

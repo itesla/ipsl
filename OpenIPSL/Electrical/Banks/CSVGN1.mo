@@ -14,7 +14,8 @@ model CSVGN1 "STATC SHUNT COMPENSATOR MODEL"
   parameter Real MBASE=100 "MVAr range of SVC";
   parameter Real SBASE=100;
   parameter Real ra=0 "amature resistance";
-  parameter Real x1d=1 "d-axis transient reactance, p.u., should be set to 9999";
+  parameter Real x1d=1
+    "d-axis transient reactance, p.u., should be set to 9999";
   parameter Real v0 "init. voltage at terminal bus";
   parameter Real anglev0 "init voltage angle in degree";
   parameter Real Vc0 "init. voltage at controlled bus";
@@ -62,11 +63,16 @@ protected
   parameter Real vi0=v0*sin(anglev_rad) "Initialitation";
   parameter Real ir0=(p0*vr0 + q0*vi0)/(vr0^2 + vi0^2) "Initialitation";
   parameter Real ii0=(p0*vi0 - q0*vr0)/(vr0^2 + vi0^2) "Initialitation";
-  parameter Real delta0=atan2(vi0 + ra*ii0 + x1d*ir0, vr0 + ra*ir0 - x1d*ii0) "Initialitation";
-  parameter Real vd0=vr0*cos(pi/2 - delta0) - vi0*sin(pi/2 - delta0) "Initialitation";
-  parameter Real vq0=vr0*sin(pi/2 - delta0) + vi0*cos(pi/2 - delta0) "Initialitation";
-  parameter Real id0=ir0*cos(pi/2 - delta0) - ii0*sin(pi/2 - delta0) "Initialitation";
-  parameter Real iq0=ir0*sin(pi/2 - delta0) + ii0*cos(pi/2 - delta0) "Initialitation";
+  parameter Real delta0=atan2(vi0 + ra*ii0 + x1d*ir0, vr0 + ra*ir0 - x1d*ii0)
+    "Initialitation";
+  parameter Real vd0=vr0*cos(pi/2 - delta0) - vi0*sin(pi/2 - delta0)
+    "Initialitation";
+  parameter Real vq0=vr0*sin(pi/2 - delta0) + vi0*cos(pi/2 - delta0)
+    "Initialitation";
+  parameter Real id0=ir0*cos(pi/2 - delta0) - ii0*sin(pi/2 - delta0)
+    "Initialitation";
+  parameter Real iq0=ir0*sin(pi/2 - delta0) + ii0*cos(pi/2 - delta0)
+    "Initialitation";
   parameter Real k50(fixed=false);
   parameter Real k30(fixed=false);
   parameter Real k0(fixed=false);

@@ -23,7 +23,7 @@ model GroupBus6
         extent={{-16,-16},{16,16}},
         rotation=0,
         origin={-60,40})));
-  OpenIPSL.Electrical.Machines.PSAT.SixthOrder.Order6 Syn5(
+  OpenIPSL.Electrical.Machines.PSAT.Order6 Syn5(
     fn=60,
     D=2,
     Sn=25,
@@ -51,7 +51,8 @@ model GroupBus6
   OpenIPSL.Connectors.PwPin pwPin annotation (Placement(transformation(extent={{100,-10},{120,10}}), iconTransformation(extent={{100,-10},{120,10}})));
 equation
   connect(const4.y, aVR4TypeII1.vref) annotation (Line(points={{-42.4,40},{-26,40},{-26,36.18},{-11.4,36.18}}, color={0,0,127}));
-  connect(aVR4TypeII1.vf, Syn5.vf) annotation (Line(points={{26.55,31.42},{32,31.42},{32,12},{46,12}}, color={0,0,127}));
+  connect(aVR4TypeII1.vf, Syn5.vf) annotation (Line(points={{26.55,31.42},{32,
+          31.42},{32,12},{46,12}},                                                                     color={0,0,127}));
   connect(Syn5.v, aVR4TypeII1.v) annotation (Line(points={{94.3,8},{98,8},{98,-66},{-28,-66},{-28,25.3},{-11.4,25.3}}, color={0,0,127}));
   connect(Syn5.p, pwPin) annotation (Line(points={{94.3,2.09928},{113.15,2.09928},{113.15,0},{110,0}}, color={0,0,255}));
   connect(Syn5.pm0, Syn5.pm) annotation (Line(points={{50.6,-20},{50.6,-26},{28,-26},{28,-8},{46,-8}}, color={0,0,127}));

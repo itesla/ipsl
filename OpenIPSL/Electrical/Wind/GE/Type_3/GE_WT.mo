@@ -21,14 +21,19 @@ model GE_WT
   parameter Real pirat=10.0 "maximum variation rate of pitch angle";
   parameter Real pwmax=1.12 "Maximal power taken from the wind";
   parameter Real pwmin=0.1 "Minimal power taken from the wind";
-  parameter Real pwrat=0.45 "maximum variation rate of power taken from the wind";
+  parameter Real pwrat=0.45
+    "maximum variation rate of power taken from the wind";
   parameter Real Kptrq=3.0 "Gain Torque Controller";
   parameter Real Kitrq=0.6 "Gain of integrator of Torque Controller";
   parameter Real Tpc=0.05 "Time Constant Torque controller";
-  parameter Real KQi=0.1 "Gain constant of first PI in DFIG electrical control model";
-  parameter Real KVi=40 "Gain constant of second PI in DFIG electrical control model";
-  parameter Real xiqmax=0.4 "Up saturation of second PI in DFIG electrical control model";
-  parameter Real xiqmin=-0.5 "Down saturation of second PI in DFIG electrical control model";
+  parameter Real KQi=0.1
+    "Gain constant of first PI in DFIG electrical control model";
+  parameter Real KVi=40
+    "Gain constant of second PI in DFIG electrical control model";
+  parameter Real xiqmax=0.4
+    "Up saturation of second PI in DFIG electrical control model";
+  parameter Real xiqmin=-0.5
+    "Down saturation of second PI in DFIG electrical control model";
   parameter Real Kpllp=30;
   parameter Real Xpp=0.8;
   parameter Real qmax=0.312;

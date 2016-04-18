@@ -20,7 +20,8 @@ model QControl_Type4B "Developed by DTU"
   parameter Real Qmin "Minimum reactive power";
   parameter Real Tufilt "Voltage measurement filter time constant";
   parameter Real Uqdip "Voltage threshold value for LVRT detection";
-  parameter Real Tpost "Length of time period where post fault reactive power is injected";
+  parameter Real Tpost
+    "Length of time period where post fault reactive power is injected";
   parameter Real Udb1 "Voltage dead band lower limit";
   parameter Real Udb2 "Voltage dead band upper limit";
   parameter Real Kqv "Voltage scaling factor for LVRT current";
@@ -36,10 +37,14 @@ model QControl_Type4B "Developed by DTU"
   parameter Real KiU "Voltage PI controller integration gain";
   parameter Real KpU "Voltage PI controller proportional gain";
   parameter Real Tiq "Time constant in reactive current lag";
-  parameter Real ini_Pwtt(fixed=false) "Initial value of the state (Active power order lag)";
-  parameter Real ini_Uwtt(fixed=false) "Initial value of the state (Voltage order lag)";
-  parameter Real ini_Qpi(fixed=false) "Initial value of the state (Reactive power PI controller)";
-  parameter Real ini_Qwtt(fixed=false) "Initial value of the state (Reactive power order lag)";
+  parameter Real ini_Pwtt(fixed=false)
+    "Initial value of the state (Active power order lag)";
+  parameter Real ini_Uwtt(fixed=false)
+    "Initial value of the state (Voltage order lag)";
+  parameter Real ini_Qpi(fixed=false)
+    "Initial value of the state (Reactive power PI controller)";
+  parameter Real ini_Qwtt(fixed=false)
+    "Initial value of the state (Reactive power order lag)";
   parameter Real ini_Iqwtt(fixed=false) "Initial reactive current";
   parameter Real Rdroop "Resistive component of voltage drop impedance";
   parameter Real Xdroop "Inductive component of voltage drop impedance";

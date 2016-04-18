@@ -44,7 +44,7 @@ model PhaseShiftingTransformer_Test
         origin={-135.382,20.4802},
         extent={{-4.4802,-4.4802},{4.4802,4.4802}},
         rotation=0)));
-  OpenIPSL.Electrical.Machines.PSAT.SecondOrder.Order2 Gen1(
+  OpenIPSL.Electrical.Machines.PSAT.Order2 Gen1(
     D=5,
     Sn=100,
     Vn=13800,

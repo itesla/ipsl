@@ -32,14 +32,15 @@ model WT1G1_test
     X=X2,
     G=0,
     B=B2/2) annotation (Placement(transformation(extent={{-4,-10},{16,10}})));
-  OpenIPSL.Electrical.Machines.PSSE.GENCLS.GENCLS gENCLS2_1(
+  OpenIPSL.Electrical.Machines.PSSE.GENCLS gENCLS2_1(
     V_0=V1,
     angle_0=A1,
     P_0=P1,
     Q_0=Q1,
     R_a=Zr,
     X_d=Zi,
-    M_b=100) annotation (Placement(transformation(extent={{-120,-10},{-100,12}})));
+    M_b=100)
+    annotation (Placement(transformation(extent={{-120,-10},{-100,12}})));
   OpenIPSL.Electrical.Wind.PSSE.WT1G.WT1G1_oneMass_nosaturation wT3G1_pt(
     eterm=V5,
     anglev0=A5,

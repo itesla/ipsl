@@ -18,7 +18,7 @@ model StatcomCode_Test
         origin={-15,-17},
         extent={{-10.0,-10.0},{10.0,10.0}},
         rotation=0)));
-  OpenIPSL.Electrical.Machines.PSAT.SecondOrder.Order2 Syn2(
+  OpenIPSL.Electrical.Machines.PSAT.Order2 Syn2(
     D=1,
     Sn=370,
     V_0=1.027606413803688,
@@ -49,7 +49,7 @@ model StatcomCode_Test
         origin={55,-17},
         extent={{-10.0,-10.0},{10.0,10.0}},
         rotation=0)));
-  OpenIPSL.Electrical.Machines.PSAT.SecondOrder.Order2 order2_Inputs_Outputs(
+  OpenIPSL.Electrical.Machines.PSAT.Order2 order2_Inputs_Outputs(
     Sn=370,
     D=5,
     V_b=400,
@@ -60,7 +60,8 @@ model StatcomCode_Test
     xd1=0.302,
     M=10,
     P_0=0.004219210312137*SysData.S_b,
-    Q_0=-0.001421467052118*SysData.S_b) annotation (Placement(transformation(extent={{-78,-8},{-58,12}})));
+    Q_0=-0.001421467052118*SysData.S_b)
+    annotation (Placement(transformation(extent={{-78,-8},{-58,12}})));
   Modelica.Blocks.Sources.Pulse pulse(
     period=10,
     startTime=4.2,
@@ -78,7 +79,9 @@ model StatcomCode_Test
     k3=0,
     k1=1,
     k2=1) annotation (Placement(transformation(extent={{-118,-10},{-98,10}})));
-  OpenIPSL.Electrical.Controls.PSAT.FACTS.STATCOM.STATCOM sTATCOM3_1(V_0=1, angle_0=-0.000213067852480*180/pi) annotation (Placement(transformation(extent={{-14,-54},{6,-34}})));
+  OpenIPSL.Electrical.FACTS.PSAT.STATCOM sTATCOM3_1(V_0=1, angle_0=-0.000213067852480
+        *180/pi)
+    annotation (Placement(transformation(extent={{-14,-54},{6,-34}})));
   OpenIPSL.Electrical.Buses.Bus bus annotation (Placement(transformation(extent={{4,-8},{24,12}})));
   OpenIPSL.Electrical.Loads.PSAT.LOADPQ_variation lOADPQ(
     t_start_1=7,

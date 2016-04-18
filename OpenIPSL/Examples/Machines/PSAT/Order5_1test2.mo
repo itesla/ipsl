@@ -64,7 +64,7 @@ model Order5_1test2
     t2=3.1,
     R=10) annotation (Placement(transformation(extent={{40,-55},{60,-35}})));
   inner OpenIPSL.Electrical.SystemBase SysData annotation (Placement(transformation(extent={{50,80},{75,100}})));
-  OpenIPSL.Electrical.Machines.PSAT.FifthOrder.Order5_Type1 order5Type1_Inputs_Outputs(
+  OpenIPSL.Electrical.Machines.PSAT.Order5_Type1 order5Type1_Inputs_Outputs(
     Sn=370,
     Vn=200,
     ra=0.001,

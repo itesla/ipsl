@@ -96,7 +96,7 @@ model IEEE_9_Buses_Statcom
         extent={{-7,-7},{7,7}},
         rotation=0,
         origin={-9,65})));
-  OpenIPSL.Electrical.Controls.PSAT.FACTS.STATCOM.STATCOM sTATCOM3_1(
+  OpenIPSL.Electrical.FACTS.PSAT.STATCOM sTATCOM3_1(
     Qg=0.128730182132440,
     Tr=0.1,
     Sn=100,
@@ -237,8 +237,10 @@ equation
   connect(gen3.pwPin, B1.p) annotation (Line(points={{0,-95},{0,-86}}, color={0,0,255}));
   connect(line_8_9.n, B9.p) annotation (Line(points={{45.5,90},{45.5,90},{80,90}}, color={0,0,255}));
   connect(B8.p, line_8_9.p) annotation (Line(points={{0,90},{24.5,90}}, color={0,0,255}));
-  connect(sTATCOM3_1.p, line_8_9.p) annotation (Line(points={{12,72.6},{12,90},{24.5,90}}, color={0,0,255}));
-  connect(B9.p, pwFault2.p) annotation (Line(points={{80,90},{59,90},{59,75.1667}}, color={0,0,255}));
+  connect(sTATCOM3_1.p, line_8_9.p) annotation (Line(points={{12,72.6},{12,90},
+          {24.5,90}},                                                                      color={0,0,255}));
+  connect(B9.p, pwFault2.p) annotation (Line(points={{80,90},{59,90},{59,
+          75.1667}},                                                                color={0,0,255}));
   annotation (
     Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-180,-120},{180,120}})),
     Icon(coordinateSystem(extent={{-180,-120},{180,120}})),

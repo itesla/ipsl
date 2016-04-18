@@ -88,17 +88,26 @@ model DYNModelM2S_INIT "Initialization model for synchronous mahine M2S.
     tX_=TX,
     IENR=IENR);
   // INTERNAL PARAMETERS (COMPUTED) per-unit in the machine SN base.
-  parameter Real mD0Pu=extern.mD0Pu_ "d axis mutual inductance p.u. in the machine SN base";
-  parameter Real mQ0Pu=extern.mQ0Pu_ "q axis mutual inductance p.u. in the machine SN base";
+  parameter Real mD0Pu=extern.mD0Pu_
+    "d axis mutual inductance p.u. in the machine SN base";
+  parameter Real mQ0Pu=extern.mQ0Pu_
+    "q axis mutual inductance p.u. in the machine SN base";
   //parameter Real pNom(fixed = false);
-  parameter Real lDPu=extern.lD "d axis damper winding leakage p.u. in the machine SN base";
-  parameter Real rRotIn=extern.rf "Rotor resistance p.u. in the machine SN base";
+  parameter Real lDPu=extern.lD
+    "d axis damper winding leakage p.u. in the machine SN base";
+  parameter Real rRotIn=extern.rf
+    "Rotor resistance p.u. in the machine SN base";
   parameter Real lRotIn=extern.lf "Rotor leakage p.u. in the machine SN base";
-  parameter Real rQ1Pu=extern.rQ1 "q axis damper 1 winding resistance p.u. in the machine SN base";
-  parameter Real lQ1Pu=extern.lQ1 "q axis damper 1 winding leakeage p.u. in the machine SN base";
-  parameter Real rQ2Pu=extern.rQ2 "q axis damper 2 winding resistance p.u. in the machine SN base";
-  parameter Real lQ2Pu=extern.lQ2 "q axis damper 2 winding leakeage p.u. in the machine SN base";
-  parameter Real mCanPu=extern.mrc "CANAY's inductance p.u. in the machine SN base";
+  parameter Real rQ1Pu=extern.rQ1
+    "q axis damper 1 winding resistance p.u. in the machine SN base";
+  parameter Real lQ1Pu=extern.lQ1
+    "q axis damper 1 winding leakeage p.u. in the machine SN base";
+  parameter Real rQ2Pu=extern.rQ2
+    "q axis damper 2 winding resistance p.u. in the machine SN base";
+  parameter Real lQ2Pu=extern.lQ2
+    "q axis damper 2 winding leakeage p.u. in the machine SN base";
+  parameter Real mCanPu=extern.mrc
+    "CANAY's inductance p.u. in the machine SN base";
   //parameter Real omega0(fixed=false);
   // Computed parameters
   parameter Real yScaleNom=SNREF/SN;

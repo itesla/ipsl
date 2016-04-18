@@ -63,7 +63,7 @@ model Order4test2
     t1=3,
     t2=3.1,
     R=10) annotation (Placement(transformation(extent={{-25,-15},{0,10}})));
-  OpenIPSL.Electrical.Machines.PSAT.FourthOrder.Order4 Generator(
+  OpenIPSL.Electrical.Machines.PSAT.Order4 Generator(
     Sn=100,
     P_0=0.160352698692006,
     Q_0=0.11859436505981,
@@ -74,7 +74,8 @@ model Order4test2
     ra=0.001,
     M=10,
     D=0,
-    xd1=0.302) annotation (Placement(transformation(extent={{-120,40},{-90,70}})));
+    xd1=0.302)
+    annotation (Placement(transformation(extent={{-120,40},{-90,70}})));
   inner OpenIPSL.Electrical.SystemBase SysData annotation (Placement(transformation(extent={{50,80},{75,100}})));
 equation
   connect(pwLinewithOpening1.n, pwLine4.n) annotation (Line(

@@ -62,14 +62,20 @@ partial model baseMachine
   Real uq "q-axis terminal voltage (pu)";
 protected
   parameter Real w_b=2*pi*fn "System base speed (rad/s)";
-  parameter Real anglev_rad=angle_0*pi/180 "initial value of bus voltage angle in rad";
+  parameter Real anglev_rad=angle_0*pi/180
+    "initial value of bus voltage angle in rad";
   parameter Real CoB=M_b/S_b;
-  parameter Real vr0=V_0*cos(anglev_rad) "Real component of initial terminal voltage";
-  parameter Real vi0=V_0*sin(anglev_rad) "Imaginary component of intitial terminal voltage";
-  parameter Real ir0=-CoB*(p0*vr0 + q0*vi0)/(vr0^2 + vi0^2) "Real component of initial armature current, systembase";
-  parameter Real ii0=-CoB*(p0*vi0 - q0*vr0)/(vr0^2 + vi0^2) "Imaginary component of initial armature current, systembase";
+  parameter Real vr0=V_0*cos(anglev_rad)
+    "Real component of initial terminal voltage";
+  parameter Real vi0=V_0*sin(anglev_rad)
+    "Imaginary component of intitial terminal voltage";
+  parameter Real ir0=-CoB*(p0*vr0 + q0*vi0)/(vr0^2 + vi0^2)
+    "Real component of initial armature current, systembase";
+  parameter Real ii0=-CoB*(p0*vi0 - q0*vr0)/(vr0^2 + vi0^2)
+    "Imaginary component of initial armature current, systembase";
   parameter Real p0=P_0/M_b "initial active power generation in pu machinebase";
-  parameter Real q0=Q_0/M_b "initial reactive power generation in pu machinebase";
+  parameter Real q0=Q_0/M_b
+    "initial reactive power generation in pu machinebase";
 equation
   //Interfacing outputs with the internal variables
   ANGLE = delta;

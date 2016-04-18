@@ -46,7 +46,8 @@ model PwGeneratorM1S "Synchronous machine model according to Park's classical th
   parameter Real init_efd=0;
   //parameters coming from .lf
   parameter Real ur0=1 "Initial real voltage component p.u. in the SNREF base";
-  parameter Real ui0=0 "Initial imaginary voltage component p.u. in the SNREF base";
+  parameter Real ui0=0
+    "Initial imaginary voltage component p.u. in the SNREF base";
   //parameter Real ir0 = 1;
   //parameter Real ii0 = 0;
   //parameter Real p0_0 = 0 "Initial active power";
@@ -60,18 +61,27 @@ model PwGeneratorM1S "Synchronous machine model according to Park's classical th
   //per-unit in the machine SN base
   parameter Real rStatIn=0.004 "Stator resistance p.u. in the machine SN base";
   parameter Real lStatIn=0.219 "Stator leakage p.u. in the machine SN base";
-  parameter Real mD0Pu=2.351 "d axis mutual inductance p.u. in the machine SN base";
-  parameter Real WLMDVPu=0.7459 "d axis mutual inductance corresponding to magnetic condition taken for setting the voltage regulator";
+  parameter Real mD0Pu=2.351
+    "d axis mutual inductance p.u. in the machine SN base";
+  parameter Real WLMDVPu=0.7459
+    "d axis mutual inductance corresponding to magnetic condition taken for setting the voltage regulator";
   parameter Real mCanPu=0.0 "CANAY's inductance p.u. in the machine SN base";
-  parameter Real rDPu=0.01723 "d axis damper winding resistance p.u. in the machine SN base";
-  parameter Real lDPu=0.12825 "d axis damper winding leakage p.u. in the machine SN base";
+  parameter Real rDPu=0.01723
+    "d axis damper winding resistance p.u. in the machine SN base";
+  parameter Real lDPu=0.12825
+    "d axis damper winding leakage p.u. in the machine SN base";
   parameter Real rRotIn=0.00113 "Rotor resistance p.u. in the machine SN base";
   parameter Real lRotIn=0.24253 "Rotor leakage p.u. in the machine SN base";
-  parameter Real mQ0Pu=2.351 "q axis mutual inductance p.u. in the machine SN base";
-  parameter Real rQ1Pu=0.0193 "q axis damper 1 winding resistance p.u. in the machine SN base";
-  parameter Real lQ1Pu=0.08921 "q axis damper 1 winding leakeage p.u. in the machine SN base";
-  parameter Real rQ2Pu=0.03923 "q axis damper 2 winding resistance p.u. in the machine SN base";
-  parameter Real lQ2Pu=1.78484 "q axis damper 2 winding leakeage p.u. in the machine SN base";
+  parameter Real mQ0Pu=2.351
+    "q axis mutual inductance p.u. in the machine SN base";
+  parameter Real rQ1Pu=0.0193
+    "q axis damper 1 winding resistance p.u. in the machine SN base";
+  parameter Real lQ1Pu=0.08921
+    "q axis damper 1 winding leakeage p.u. in the machine SN base";
+  parameter Real rQ2Pu=0.03923
+    "q axis damper 2 winding resistance p.u. in the machine SN base";
+  parameter Real lQ2Pu=1.78484
+    "q axis damper 2 winding leakeage p.u. in the machine SN base";
   parameter Real md=0.1 "Coefficient md of the saturation curve";
   parameter Real mq=0.1 "Coefficient mq of the saturation curve";
   parameter Real snd=6 "Coefficient nd of the saturation curve";
@@ -83,8 +93,10 @@ model PwGeneratorM1S "Synchronous machine model according to Park's classical th
   parameter Real U2N=400 "nominal voltage machine side";
   parameter Real V2=380 "base voltage machine side";
   parameter Boolean transformerIncluded=false;
-  parameter Real RTfoPu=if transformerIncluded then 0.000185 else 0 "Machine transoformer resistance p.u. in the SNTfo base";
-  parameter Real XTfoPu=if transformerIncluded then 0.00769 else 0 "Machine transoformer resistance p.u. in the SNTfo base";
+  parameter Real RTfoPu=if transformerIncluded then 0.000185 else 0
+    "Machine transoformer resistance p.u. in the SNTfo base";
+  parameter Real XTfoPu=if transformerIncluded then 0.00769 else 0
+    "Machine transoformer resistance p.u. in the SNTfo base";
   parameter Integer IWLMDV=3;
   parameter Boolean Saturated=true;
   //Calculation and per-uniting of parameters.
@@ -102,14 +114,17 @@ model PwGeneratorM1S "Synchronous machine model according to Park's classical th
   parameter Real rQ2=rQ2Pu*yscale "q axis damper 2 winding resistance";
   parameter Real lQ1=lQ1Pu*yscale "q axis damper 1 winding leakeage";
   parameter Real lQ2=lQ2Pu*yscale "q axis damper 2 winding leakeage";
-  parameter Real RT=RTfoPu*SNREF/SNtfo*rtfo*rtfo "Machine transformer resistance (p.u.), enter value*SNREF/SNtfo";
-  parameter Real XT=XTfoPu*SNREF/SNtfo*rtfo*rtfo "Machine transformer reactance (p.u.), enter value*SNREF/SNtfo";
+  parameter Real RT=RTfoPu*SNREF/SNtfo*rtfo*rtfo
+    "Machine transformer resistance (p.u.), enter value*SNREF/SNtfo";
+  parameter Real XT=XTfoPu*SNREF/SNtfo*rtfo*rtfo
+    "Machine transformer reactance (p.u.), enter value*SNREF/SNtfo";
   parameter Real Md0=mD0Pu*yscale "d axis mutual inductance";
   parameter Real Mq0=mQ0Pu*yscale "q axis mutual inductance";
   parameter Real Mdv=WLMDVPu*yscale;
   parameter Real D=DIn*SN/SNREF "Mechanical damping coefficient";
   parameter Real H=HIn*SN/SNREF "Constant of inertia";
-  parameter Real rtfo=if transformerIncluded then (U2N/V2)/(U1N/V1) else 1 "Transformer ratio";
+  parameter Real rtfo=if transformerIncluded then (U2N/V2)/(U1N/V1) else 1
+    "Transformer ratio";
   parameter Real DET=lf*lD + mrc*lf + mrc*lD;
   parameter Real Mdif=Md0 - Mq0;
   parameter Real Sdet=lf/DET + lD/DET;

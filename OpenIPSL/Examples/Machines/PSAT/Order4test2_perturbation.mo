@@ -136,7 +136,7 @@ model Order4test2_perturbation
         origin={-45.0,-57.0021},
         extent={{-10.0,-10.0},{10.0,10.0}},
         rotation=0)));
-  OpenIPSL.Electrical.Machines.PSAT.FourthOrder.Order4 order4_Inputs_Outputs(
+  OpenIPSL.Electrical.Machines.PSAT.Order4 order4_Inputs_Outputs(
     V_b=200,
     V_0=1,
     angle_0=0,

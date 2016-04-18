@@ -1,5 +1,6 @@
 within OpenIPSL.Electrical.Wind.DTU;
-model PControl_Type4B_CDV "Active Power Control for IEC Type4B Model. Developed by DTU"
+model PControl_Type4B_CDV
+  "Active Power Control for IEC Type4B Model. Developed by DTU"
   parameter Real w_init "Initial steady state generator speed";
   parameter Real T_Ufilt "Voltage measurement filter time constant";
   parameter Real dPmax "Wind turbine maximum power ramp rate";

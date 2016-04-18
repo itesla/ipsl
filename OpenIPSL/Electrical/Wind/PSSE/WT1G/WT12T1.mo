@@ -23,7 +23,8 @@ model WT12T1
   Modelica.Blocks.Continuous.Integrator dwt(
     y_start=k10,
     k=1/(2*Ht),
-    initType=Modelica.Blocks.Types.Init.InitialOutput) "Turbine speed deviation, pu" annotation (Placement(transformation(extent={{0,14},{10,24}})));
+    initType=Modelica.Blocks.Types.Init.InitialOutput)
+    "Turbine speed deviation, pu"                                                    annotation (Placement(transformation(extent={{0,14},{10,24}})));
   Modelica.Blocks.Math.Add Tmech1 annotation (Placement(transformation(
         extent={{-5,-5},{5,5}},
         rotation=0,

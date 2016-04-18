@@ -2,7 +2,7 @@ within OpenIPSL.Examples.Machines.PSSE;
 model GENROU
   import iPSL = OpenIPSL;
   extends iPSL.Examples.SMIBpartial;
-  Electrical.Machines.PSSE.GENROU.GENROU gENROE(
+  iPSL.Electrical.Machines.PSSE.GENROU gENROE(
     M_b=100,
     Tpd0=5,
     Tppd0=0.07,

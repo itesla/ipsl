@@ -1,8 +1,12 @@
 within OpenIPSL.Electrical.Wind.DTU;
-model CurrentLimiter "The current limitation model combines the physical limit. Developed by DTU"
-  parameter Real i_maxdip "Maximum current during voltage dip at the wind turbine terminals";
-  parameter Real i_max "Maximum continuous current at the wind turbine terminals";
-  parameter Real M_Qpri "Prioritisation of q control during LVRT (0: active power priority - 1: reactive power priority)";
+model CurrentLimiter
+  "The current limitation model combines the physical limit. Developed by DTU"
+  parameter Real i_maxdip
+    "Maximum current during voltage dip at the wind turbine terminals";
+  parameter Real i_max
+    "Maximum continuous current at the wind turbine terminals";
+  parameter Real M_Qpri
+    "Prioritisation of q control during LVRT (0: active power priority - 1: reactive power priority)";
   parameter Real ini_Uwttfilt(fixed=false) "initial voltage magnitude";
   parameter Real T_Ufilt "filter time constant of the voltage measurement";
   Modelica.Blocks.Interfaces.RealInput iPcmdlmt annotation (Placement(transformation(extent={{-90,34},{-80,46}})));
@@ -10,7 +14,8 @@ model CurrentLimiter "The current limitation model combines the physical limit. 
   Modelica.Blocks.Interfaces.RealInput iQcmdlmt annotation (Placement(transformation(extent={{-90,-46},{-80,-34}})));
   Modelica.Blocks.Interfaces.RealOutput iQmax annotation (Placement(transformation(extent={{80,24},{90,36}})));
   Modelica.Blocks.Interfaces.RealOutput iPmax annotation (Placement(transformation(extent={{80,-38},{90,-26}})));
-  Modelica.Blocks.Sources.Constant Imax(k=i_max) "Maximum continuous current at the wind turbine terminals" annotation (Placement(transformation(extent={{-96,48},{-86,58}})));
+  Modelica.Blocks.Sources.Constant Imax(k=i_max)
+    "Maximum continuous current at the wind turbine terminals"                                              annotation (Placement(transformation(extent={{-96,48},{-86,58}})));
   Modelica.Blocks.Logical.GreaterThreshold greaterThreshold(threshold=0.5) annotation (Placement(transformation(extent={{-80,58},{-72,66}})));
   Modelica.Blocks.Logical.Switch switch1 annotation (Placement(transformation(extent={{-64,56},{-52,68}})));
   Modelica.Blocks.Math.Add add(k1=1, k2=1) annotation (Placement(transformation(extent={{-28,51},{-18,61}})));
@@ -23,7 +28,8 @@ model CurrentLimiter "The current limitation model combines the physical limit. 
         rotation=-90,
         origin={0,65})));
   Modelica.Blocks.Math.Product product2 annotation (Placement(transformation(extent={{26,-3},{36,7}})));
-  Modelica.Blocks.Sources.Constant Imaxdip(k=i_maxdip) "Maximum current during voltage dip at the wind turbine terminals" annotation (Placement(transformation(extent={{-96,68},{-86,78}})));
+  Modelica.Blocks.Sources.Constant Imaxdip(k=i_maxdip)
+    "Maximum current during voltage dip at the wind turbine terminals"                                                    annotation (Placement(transformation(extent={{-96,68},{-86,78}})));
   Modelica.Blocks.Math.Product product3 annotation (Placement(transformation(extent={{-46,54},{-36,64}})));
   Modelica.Blocks.Logical.Switch switch2 annotation (Placement(transformation(extent={{54,52},{66,64}})));
   Modelica.Blocks.Math.Add add1(k1=1, k2=-1) annotation (Placement(transformation(extent={{-28,-45},{-18,-35}})));
@@ -32,16 +38,19 @@ model CurrentLimiter "The current limitation model combines the physical limit. 
   Modelica.Blocks.Math.Min min2 annotation (Placement(transformation(extent={{24,-42},{34,-32}})));
   Modelica.Blocks.Logical.Switch switch3 annotation (Placement(transformation(extent={{60,-38},{72,-26}})));
   Modelica.Blocks.Math.Product product4 annotation (Placement(transformation(extent={{-44,-48},{-34,-38}})));
-  Modelica.Blocks.Tables.CombiTable1D iP_VDL(table=[0.1, 0; 0.15, 1; 0.9, 1; 0.925, 1; 1.075, 1; 1.1, 1]) "Lookup table for voltage dependency of active current limits"
+  Modelica.Blocks.Tables.CombiTable1D iP_VDL(table=[0.1, 0; 0.15, 1; 0.9, 1; 0.925, 1; 1.075, 1; 1.1, 1])
+    "Lookup table for voltage dependency of active current limits"
     annotation (Placement(transformation(extent={{-26,-18},{-14,-6}})));
-  Modelica.Blocks.Sources.Constant MQpri(k=M_Qpri) "Prioritisation of q control during LVRT (0: active power priority - 1: reactive power priority)"
+  Modelica.Blocks.Sources.Constant MQpri(k=M_Qpri)
+    "Prioritisation of q control during LVRT (0: active power priority - 1: reactive power priority)"
     annotation (Placement(transformation(extent={{4,0},{14,10}})));
   Modelica.Blocks.Logical.GreaterThreshold greaterThreshold1(threshold=0.5) annotation (Placement(transformation(extent={{40,-2},{48,6}})));
   OpenIPSL.NonElectrical.Continuous.SimpleLag imSimpleLag(
     K=1,
     T=T_Ufilt,
     y_start=ini_Uwttfilt) annotation (Placement(transformation(extent={{-66,-6},{-54,6}})));
-  Modelica.Blocks.Tables.CombiTable1D iQ_VDL(table=[0.1, 0; 0.15, 1; 0.9, 1; 0.925, 0.33; 1.075, 0.33; 1.1, 1]) "Lookup table for voltage dependency of reactive current limits"
+  Modelica.Blocks.Tables.CombiTable1D iQ_VDL(table=[0.1, 0; 0.15, 1; 0.9, 1; 0.925, 0.33; 1.075, 0.33; 1.1, 1])
+    "Lookup table for voltage dependency of reactive current limits"
     annotation (Placement(transformation(extent={{-22,24},{-10,36}})));
   Modelica.Blocks.Math.Min min3 annotation (Placement(transformation(extent={{-62,32},{-52,42}})));
   Modelica.Blocks.Math.Min min4 annotation (Placement(transformation(extent={{-56,-26},{-50,-20}})));

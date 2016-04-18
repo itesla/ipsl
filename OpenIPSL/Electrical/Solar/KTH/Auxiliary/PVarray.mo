@@ -34,8 +34,10 @@ model PVarray
         rotation=0)));
   parameter Real Imp=1;
   parameter Real Vmp=1;
-  parameter Real Iscref=1 "Module short-circuit current reference at reference temp and irradiance";
-  parameter Real Vocref=1 "Module open-circuit voltage reference at reference temp and irradiance";
+  parameter Real Iscref=1
+    "Module short-circuit current reference at reference temp and irradiance";
+  parameter Real Vocref=1
+    "Module open-circuit voltage reference at reference temp and irradiance";
   parameter Real Kv=1 "temperature correction factor for the voltage";
   parameter Real Ki=1 "temperature correction factor for the current";
   parameter Real Tstc=1 "Temperature at the standard test conditions";

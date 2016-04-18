@@ -136,7 +136,7 @@ model Order2test2_perturbation
         origin={-62.2167,-53.3521},
         extent={{-10.0,-10.0},{10.0,10.0}},
         rotation=0)));
-  OpenIPSL.Electrical.Machines.PSAT.SecondOrder.Order2 order2_Inputs_Outputs1(
+  OpenIPSL.Electrical.Machines.PSAT.Order2 order2_Inputs_Outputs1(
     D=0,
     V_b=400,
     V_0=1,

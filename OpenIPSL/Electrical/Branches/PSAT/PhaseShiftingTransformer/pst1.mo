@@ -30,8 +30,10 @@ model pst1
 protected
   parameter Real Vb2new=Vbus1*Vbus1;
   parameter Real Vb2old=Vn1*Vn1;
-  parameter Real R=rT*(Vb2old*SystemBase)/(Vb2new*Sn) "Transformer Resistance, p.u.";
-  parameter Real X=xT*(Vb2old*SystemBase)/(Vb2new*Sn) "Transformer Reactance, p.u.";
+  parameter Real R=rT*(Vb2old*SystemBase)/(Vb2new*Sn)
+    "Transformer Resistance, p.u.";
+  parameter Real X=xT*(Vb2old*SystemBase)/(Vb2new*Sn)
+    "Transformer Reactance, p.u.";
   parameter Real pref=p_ref*(Sn/SystemBase);
   parameter Real gt=R/(R^2 + X^2) "Converting resistance to conductance p.u.";
   parameter Real bt=-X/(R^2 + X^2) "Converting reactance to susceptance p.u.";

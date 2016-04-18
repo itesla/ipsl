@@ -1,6 +1,7 @@
 within OpenIPSL.Examples.Machines.PSAT;
-model InductiveMotorI_SIMBOpenline_Test "Order 1 inductive machine from PSAT, line opened at 2 s for 1 s"
-  OpenIPSL.Electrical.Machines.PSAT.InductionMachine.MotorTypeI motorTypeI(
+model InductiveMotorI_SIMBOpenline_Test
+  "Order 1 inductive machine from PSAT, line opened at 2 s for 1 s"
+  OpenIPSL.Electrical.Machines.PSAT.MotorTypeI motorTypeI(
     Sup=0,
     V_0=1.0336,
     angle_0=-0.02173,

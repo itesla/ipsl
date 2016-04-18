@@ -2,7 +2,7 @@ within N44.Subsystems_Original_case;
 model Gen3_bus_3115 "Configuration of synchronous generator with regulators: GENSAL, HYGOV, SCRX, STAB2A;
   Nordic 44 model: Buses 3115, 5300, 6100, 6700, 7100"
 
-  OpenIPSL.Electrical.Machines.PSSE.GENSAL.GENSAL gENSAL(
+  OpenIPSL.Electrical.Machines.PSSE.GENSAL gENSAL(
     D=0 "Speed Damping",
     Tpd0=7.57,
     Tppd0=0.045,
@@ -36,7 +36,7 @@ model Gen3_bus_3115 "Configuration of synchronous generator with regulators: GEN
     A_t=1.0577,
     D_turb=0.5,
     q_NL=0.1) annotation (Placement(transformation(extent={{-44,56},{20,86}})));
-  OpenIPSL.Electrical.Controls.PSSE.ES.SCRX.SCRX sCRX(
+  OpenIPSL.Electrical.Controls.PSSE.ES.SCRX sCRX(
     K=31,
     V_c0=PSSE_data.voltages.V3115,
     V_0=PSSE_data.voltages.V3115,
@@ -48,7 +48,7 @@ model Gen3_bus_3115 "Configuration of synchronous generator with regulators: GEN
     r_cr_fd=0,
     C_SWITCH=true) annotation (Placement(transformation(extent={{36,-86},{90,-32}})));
   Modelica.Blocks.Sources.Constant cte(k=0) annotation (Placement(transformation(extent={{-11,-69},{-1,-59}})));
-  OpenIPSL.Electrical.Controls.PSSE.PSS.STAB2A.STAB2A sTAB2A(
+  OpenIPSL.Electrical.Controls.PSSE.PSS.STAB2A sTAB2A(
     H_LIM=0.04,
     K_2=1,
     T_2=4.5,

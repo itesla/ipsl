@@ -66,7 +66,7 @@ model Order3test2
         origin={15.0,-30.0},
         extent={{-10.0,-10.0},{10.0,10.0}},
         rotation=0)));
-  OpenIPSL.Electrical.Machines.PSAT.ThirdOrder.Order3 order31(
+  OpenIPSL.Electrical.Machines.PSAT.Order3 order31(
     V_b=400,
     V_0=1,
     angle_0=0,

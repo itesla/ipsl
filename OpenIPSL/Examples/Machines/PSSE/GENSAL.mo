@@ -2,7 +2,7 @@ within OpenIPSL.Examples.Machines.PSSE;
 model GENSAL "SMIB system with one load and GENROE model"
   extends OpenIPSL.Examples.SMIBpartial;
 
-  OpenIPSL.Electrical.Machines.PSSE.GENSAL.GENSAL gENROE(
+  OpenIPSL.Electrical.Machines.PSSE.GENSAL gENROE(
     M_b=100,
     Tpd0=5,
     Tppd0=0.07,

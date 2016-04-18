@@ -9,7 +9,8 @@ model Electrical_Control
   parameter Real KVi=1;
   parameter Real xiqmax=1;
   parameter Real xiqmin=1;
-  Modelica.Blocks.Interfaces.RealInput Qgen "Reactive Power produced by the Generator" annotation (Placement(
+  Modelica.Blocks.Interfaces.RealInput Qgen
+    "Reactive Power produced by the Generator"                                         annotation (Placement(
       transformation(
         extent={{-102.0,54.0},{-62.0,94.0}},
         origin={-148.0,42.372},

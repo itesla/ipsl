@@ -3,8 +3,12 @@ model WT4E1 "Electrical Control for Type 4 Wind Generator"
   import iPSL = OpenIPSL;
 
   parameter Boolean PFAFLG "PF fast control" annotation (choices(choice=true "Enable",choice=false "Disable"));
-  parameter Boolean VARFLG annotation (choices(choice=false " Qord is not provided by WindVar", choice=true " Qord is provided by WindVar"));
-  parameter Boolean PQFLAG "P/Q priority flag" annotation (choices(choice=false "Q priority",choice=true "P priority"));
+  parameter Boolean VARFLG annotation (choices(choice=false
+        " Qord is not provided by WindVar",                                                     choice=true
+        " Qord is provided by WindVar"));
+  parameter Boolean PQFLAG "P/Q priority flag" annotation (choices(choice=false
+        "Q priority",                                                                        choice=true
+        "P priority"));
 
   parameter Real Tfv "Filter time constant in voltage regulator (sec)";
   parameter Real Kpv " Proportional gain in voltage regulator (pu)";
@@ -61,7 +65,8 @@ protected
   parameter Real k60(fixed=false) "MVAR/Vref integrator";
   parameter Real k70(fixed=false) "Verror/Internal machine voltage integrator";
   parameter Real k80(fixed=false) "Lag of the WindVar controller";
-  parameter Real k90(fixed=false) "Input filter of Pelec for PF fast controller";
+  parameter Real k90(fixed=false)
+    "Input filter of Pelec for PF fast controller";
 
 public
   Modelica.Blocks.Interfaces.RealInput P(start=p0)
