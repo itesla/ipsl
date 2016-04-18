@@ -1,7 +1,6 @@
 within OpenIPSL.Examples.Machines.PSAT;
 model Order2test2
 
-  import OpenIPSL;
   extends OpenIPSL.Examples.BaseTest;
   extends Modelica.Icons.Example;
   OpenIPSL.Electrical.Machines.PSAT.Order2 order21(

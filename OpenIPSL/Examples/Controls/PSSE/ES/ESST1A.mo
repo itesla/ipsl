@@ -1,8 +1,7 @@
 within OpenIPSL.Examples.Controls.PSSE.ES;
 model ESST1A "SMIB system with one load and GENROE model"
-  import iPSL = OpenIPSL;
-  extends iPSL.Examples.SMIBpartial;
-  iPSL.Electrical.Machines.PSSE.GENROE gENROE(
+  extends OpenIPSL.Examples.SMIBpartial;
+  OpenIPSL.Electrical.Machines.PSSE.GENROE gENROE(
     M_b=100,
     Tpd0=5,
     Tppd0=0.07,
@@ -25,7 +24,7 @@ model ESST1A "SMIB system with one load and GENROE model"
     Xppq=0.2)
     annotation (Placement(transformation(extent={{-100,-20},{-60,20}})));
   Modelica.Blocks.Sources.Constant const(k=0) annotation (Placement(transformation(extent={{-20,-56},{-40,-36}})));
-  iPSL.Electrical.Controls.PSSE.ES.ESST1A eSST1A(
+  OpenIPSL.Electrical.Controls.PSSE.ES.ESST1A eSST1A(
     V_IMAX=0.3,
     V_IMIN=-0.3,
     T_C=2,

@@ -1,8 +1,8 @@
 within OpenIPSL.Examples.Machines.PSSE;
 model GENROE
-  import iPSL = OpenIPSL;
-  extends iPSL.Examples.SMIBpartial;
-  iPSL.Electrical.Machines.PSSE.GENROE gENROE(
+
+  extends OpenIPSL.Examples.SMIBpartial;
+  OpenIPSL.Electrical.Machines.PSSE.GENROE gENROE(
     M_b=100,
     Tpd0=5,
     Tppd0=0.07,
