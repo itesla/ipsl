@@ -1,4 +1,6 @@
 within OpenIPSL.Electrical.Machines.PSSE.GENSAL;
+
+
 model GENSAL "SALIENT POLE GENERATOR MODEL (QUADRATIC SATURATION ON D-AXIS)"
   // Import of Dependencies
   import OpenIPSL.NonElectrical.Functions.SE;
@@ -10,6 +12,7 @@ model GENSAL "SALIENT POLE GENERATOR MODEL (QUADRATIC SATURATION ON D-AXIS)"
   import Modelica.ComplexMath.'abs';
   import Modelica.ComplexMath.conj;
   import Modelica.ComplexMath.fromPolar;
+  import Modelica.ComplexMath.j;
   //Extending machine base class
   extends BaseClasses.baseMachine(
     w(start=0),
@@ -31,23 +34,23 @@ model GENSAL "SALIENT POLE GENERATOR MODEL (QUADRATIC SATURATION ON D-AXIS)"
   Real PSIq(start=PSIq0) "q-axis flux linkage (pu)";
   Real XadIfd(start=efd0) "Machine field current (pu)";
 protected
-  parameter Complex Zs(re=R_a, im=Xppd) "Equivalent impedance";
-  parameter Complex Is=It + VT/Zs;
-  parameter Complex PSIpp0=Zs*Is;
-  parameter Complex a(re=0, im=Xq - Xppd);
-  parameter Complex Epqp=PSIpp0 + a*It;
+  parameter Complex Zs=R_a + j*Xppd "Equivalent impedance";
+  parameter Complex Is=real(It + VT/Zs) + j*imag(It + VT/Zs);
+  parameter Complex PSIpp0=real(Zs*Is) + j*imag(Zs*Is);
+  parameter Complex a=0 + j*(Xq - Xppd);
+  parameter Complex Epqp=real(PSIpp0 + a*It) + j*imag(PSIpp0 + a*It);
   parameter Real delta0=arg(Epqp) "rotor angle in radians";
-  parameter Complex VT(re=V_0*cos(anglev_rad), im=V_0*sin(anglev_rad)) "Complex terminal voltage";
-  parameter Complex S(re=p0, im=q0) "Complex power on machine base";
-  parameter Complex It=conj(S/VT) "Terminal current";
-  parameter Complex DQ_dq(re=cos(delta0), im=-sin(delta0)) "Parks transformation";
-  parameter Complex I_dq=conj(It*DQ_dq);
+  parameter Complex VT=V_0*cos(anglev_rad) + j*V_0*sin(anglev_rad) "Complex terminal voltage";
+  parameter Complex S=p0 + j*q0 "Complex power on machine base";
+  parameter Complex It=real(S/VT) - j*imag(S/VT) "Terminal current";
+  parameter Complex DQ_dq=cos(delta0) - j*sin(delta0) "Parks transformation";
+  parameter Complex I_dq=real(It*DQ_dq) - j*imag(It*DQ_dq);
   //Initialization of current and voltage components in synchronous reference frame.
   parameter Real iq0=real(I_dq) "q-axis component of intitial current";
   parameter Real id0=imag(I_dq) "d-axis component of intitial current";
   parameter Real ud0=V_0*cos(anglev_rad - delta0 + pi/2) "d-axis component of intitial voltage";
   parameter Real uq0=V_0*sin(anglev_rad - delta0 + pi/2) "q-axis component of intitial voltage";
-  parameter Complex PSIpp0_dq=PSIpp0*DQ_dq "Flux linkage in rotor reference frame";
+  parameter Complex PSIpp0_dq=real(PSIpp0*DQ_dq) + j*imag(PSIpp0*DQ_dq) "Flux linkage in rotor reference frame";
   parameter Real PSIppq0=-imag(PSIpp0_dq) "q-axis component of the sub-transient flux linkage";
   parameter Real PSIppd0=real(PSIpp0_dq) "d-axis component of the sub-transient flux linkage";
   parameter Real PSIkd0=(PSIppd0 - (Xpd - Xl)*K3d*id0)/(K3d + K4d) "d-axis initial rotor flux linkage";

@@ -1,6 +1,8 @@
 within OpenIPSL.Examples.FACTS;
 model TCSC_Reactance_Test
+
   extends Modelica.Icons.Example;
+
   OpenIPSL.Electrical.Machines.PSAT.SecondOrder.Order2 Gen1(
     Sn=370,
     P_0=0.080101913348342,
@@ -38,14 +40,15 @@ model TCSC_Reactance_Test
   OpenIPSL.Electrical.Loads.PSAT.LOADPQ_variation lOADPQ(
     P_0=0.08,
     Q_0=0.06,
-    Q2=0,
-    Q3=0,
-    t1=2,
-    t2=10,
-    t3=12,
-    t4=20,
-    P2=0.01,
-    P3=-0.01) annotation (Placement(transformation(extent={{96,-10},{116,10}})));
+    t_start_1=2,
+    t_end_1=10,
+    t_start_2=12,
+    t_end_2=20,
+    dP1=0,
+    dQ1=0.01,
+    dP2=0,
+    dQ2=-0.01)
+              annotation (Placement(transformation(extent={{96,-10},{116,10}})));
   OpenIPSL.Electrical.Controls.PSAT.FACTS.TCSC.TCSCReactance tCSCReactance annotation (Placement(transformation(extent={{26,-10},{46,10}})));
   inner OpenIPSL.Electrical.SystemBase SysData annotation (Placement(transformation(extent={{-100,60},{-76,80}})));
 equation
