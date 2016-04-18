@@ -2,7 +2,7 @@ within OpenIPSL.Examples.Controls.PSSE.ES;
 model IEEET2 "SMIB system with one load and GENROE model"
   import iPSL = OpenIPSL;
   extends iPSL.Examples.SMIBpartial;
-  iPSL.Electrical.Machines.PSSE.GENROE.GENROE gENROE(
+  iPSL.Electrical.Machines.PSSE.GENROE gENROE(
     M_b=100,
     Tpd0=5,
     Tppd0=0.07,
@@ -22,9 +22,10 @@ model IEEET2 "SMIB system with one load and GENROE model"
     P_0=40,
     angle_0=4.046276,
     Q_0=5.416582,
-    Xppq=0.2) annotation (Placement(transformation(extent={{-108,-20},{-68,20}})));
+    Xppq=0.2)
+    annotation (Placement(transformation(extent={{-108,-20},{-68,20}})));
   Modelica.Blocks.Sources.Constant const(k=0) annotation (Placement(transformation(extent={{-28,-50},{-48,-30}})));
-  iPSL.Electrical.Controls.PSSE.ES.IEEET2.IEEET2 iEEET2_1(
+  iPSL.Electrical.Controls.PSSE.ES.IEEET2 iEEET2_1(
     T_R=0.02,
     K_A=200,
     T_A=0.001,
@@ -38,7 +39,8 @@ model IEEET2 "SMIB system with one load and GENROE model"
     S_EE_2=0.6,
     V_RMIN=-1,
     K_E=0,
-    V_RMAX=0) annotation (Placement(transformation(extent={{-74,-58},{-106,-32}})));
+    V_RMAX=0)
+    annotation (Placement(transformation(extent={{-74,-58},{-106,-32}})));
   inner iPSL.Electrical.SystemBase SysData annotation (Placement(transformation(extent={{-100,80},{-40,100}})));
 equation
   connect(gENROE.PMECH, gENROE.PMECH0) annotation (Line(points={{-107.6,10},{-118,10},{-118,26},{-56,26},{-56,-6},{-66.4,-6}}, color={0,0,127}));

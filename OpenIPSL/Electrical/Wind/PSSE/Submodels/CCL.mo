@@ -132,14 +132,16 @@ protected
         extent={{-10,-10},{10,10}},
         rotation=270,
         origin={-50,-40})));
-  Modelica.Blocks.Interfaces.RealInput Available_remain1 "sqrt(ImaxTD^2 - IpCMD^2)" annotation (Placement(transformation(
+  Modelica.Blocks.Interfaces.RealInput Available_remain1
+    "sqrt(ImaxTD^2 - IpCMD^2)"                                                      annotation (Placement(transformation(
         extent={{-16,-16},{16,16}},
         rotation=180,
         origin={76,-18}), iconTransformation(
         extent={{-9,-9},{9,9}},
         rotation=90,
         origin={55,-35})));
-  Modelica.Blocks.Interfaces.RealInput Available_remain2 "sqrt(ImaxTD^2 - IqCMD^2)" annotation (Placement(transformation(
+  Modelica.Blocks.Interfaces.RealInput Available_remain2
+    "sqrt(ImaxTD^2 - IqCMD^2)"                                                      annotation (Placement(transformation(
         extent={{-16,-16},{16,16}},
         rotation=0,
         origin={-90,-20}), iconTransformation(

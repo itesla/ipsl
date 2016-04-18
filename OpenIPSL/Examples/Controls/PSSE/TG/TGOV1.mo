@@ -2,7 +2,7 @@ within OpenIPSL.Examples.Controls.PSSE.TG;
 model TGOV1 "SMIB system with one load and GENROE model"
   import iPSL = OpenIPSL;
   extends iPSL.Examples.SMIBpartial;
-  iPSL.Electrical.Machines.PSSE.GENROE.GENROE gENROE(
+  iPSL.Electrical.Machines.PSSE.GENROE gENROE(
     M_b=100,
     Tpd0=5,
     Tppd0=0.07,
@@ -22,7 +22,8 @@ model TGOV1 "SMIB system with one load and GENROE model"
     P_0=40,
     angle_0=4.046276,
     Q_0=5.416582,
-    Xppq=0.2) annotation (Placement(transformation(extent={{-100,-20},{-60,20}})));
+    Xppq=0.2)
+    annotation (Placement(transformation(extent={{-100,-20},{-60,20}})));
   iPSL.Electrical.Controls.PSSE.TG.TGOV1 tGOV1_1(
     R=0.04,
     D_t=0,

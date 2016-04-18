@@ -4,7 +4,7 @@ model Order3test2_perturbation
   import OpenIPSL;
   extends OpenIPSL.Examples.BaseTest;
   extends Modelica.Icons.Example;
-  OpenIPSL.Electrical.Machines.PSAT.ThirdOrder.Order3 order3_Inputs_Outputs1(
+  OpenIPSL.Electrical.Machines.PSAT.Order3 order3_Inputs_Outputs1(
     V_b=400,
     V_0=1,
     angle_0=0,
@@ -87,8 +87,10 @@ model Order3test2_perturbation
         origin={-45,-25},
         extent={{-5.00007,-5.00012},{5.00001,4.99999}},
         rotation=0)));
-equation
 
+  inner OpenIPSL.Electrical.SystemBase SysData annotation (Placement(transformation(extent={{100,80},{135,100}})));
+
+equation
   connect(step3.y, add4.u2) annotation (Line(
       visible=true,
       origin={-86.308,-30.9083},

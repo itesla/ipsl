@@ -1,7 +1,8 @@
 within OpenIPSL.Examples.Controls.PSAT.AVR;
 model AVRTypeI_Test
+
   extends Modelica.Icons.Example;
-  OpenIPSL.Electrical.Machines.PSAT.SixthOrder.Order6 Syn1(
+  OpenIPSL.Electrical.Machines.PSAT.Order6 Syn1(
     Sn=991,
     V_0=1.05,
     angle_0=0.159255652433349,
@@ -48,7 +49,7 @@ model AVRTypeI_Test
     X=0.05,
     G=0,
     B=0) annotation (Placement(transformation(extent={{88,-10},{108,10}})));
-  OpenIPSL.Electrical.Machines.PSAT.SecondOrder.Order2 Syn2(
+  OpenIPSL.Electrical.Machines.PSAT.Order2 Syn2(
     Sn=991,
     Vn=20000,
     V_b=20000,

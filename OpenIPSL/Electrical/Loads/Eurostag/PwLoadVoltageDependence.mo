@@ -1,5 +1,6 @@
 within OpenIPSL.Electrical.Loads.Eurostag;
-model PwLoadVoltageDependence "Load with voltage dependence.Developed by AIA. 2014/03/10"
+model PwLoadVoltageDependence
+  "Load with voltage dependence.Developed by AIA. 2014/03/10"
   extends OpenIPSL.Electrical.Essentials.pfComponent;
   OpenIPSL.Connectors.PwPin p(
     vr(start=V_0*cos(angle_0*Modelica.Constants.pi/180)),

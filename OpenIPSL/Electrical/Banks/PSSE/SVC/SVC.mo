@@ -1,6 +1,7 @@
 within OpenIPSL.Electrical.Banks.PSSE.SVC;
 model SVC "On bus 10106 & 10114"
-  OpenIPSL.Connectors.PwPin VIB "Voltage signal connected to stepdown transformer (pu)" annotation (Placement(transformation(extent={{-98,-4},{-86,8}})));
+  OpenIPSL.Connectors.PwPin VIB
+    "Voltage signal connected to stepdown transformer (pu)"                             annotation (Placement(transformation(extent={{-98,-4},{-86,8}})));
   Modelica.Blocks.Sources.Constant imSetPoint(k=Vref) annotation (Placement(transformation(extent={{-76,20},{-64,32}})));
   Modelica.Blocks.Sources.Constant imSetPoint1(k=Bref) annotation (Placement(transformation(extent={{-52,20},{-38,34}})));
   OpenIPSL.NonElectrical.Continuous.LeadLag imLeadLag(
@@ -40,8 +41,10 @@ model SVC "On bus 10106 & 10114"
   parameter Real init_SVC_Leadlag "Initial value";
   parameter Real init_SVC_Lag "Initial value";
   parameter Real OtherSignals;
-  parameter Real Mvar_C=100 "Total compensation capacity of shunt capacitor, 100(10106)/200(10114) MVar";
-  parameter Real Mvar_R=-50 "Total compensation capacity of shunt reactor, MVar";
+  parameter Real Mvar_C=100
+    "Total compensation capacity of shunt capacitor, 100(10106)/200(10114) MVar";
+  parameter Real Mvar_R=-50
+    "Total compensation capacity of shunt reactor, MVar";
   Modelica.Blocks.Sources.Constant imSetPoint2(k=OtherSignals) annotation (Placement(transformation(extent={{-52,-18},{-40,-6}})));
   OpenIPSL.Electrical.Sensors.PwVoltage pwVoltage annotation (Placement(transformation(extent={{-90,-14},{-58,20}})));
   Modelica.Blocks.Math.Add add(k1=1, k2=-1) annotation (Placement(transformation(extent={{-58,0},{-46,12}})));

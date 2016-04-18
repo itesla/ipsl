@@ -1,5 +1,6 @@
 within OpenIPSL.Electrical.Branches.PSSE.Old_transformer.update;
-model OLTC "Original developed by Mengjia and has been improved by Jan from KTH"
+model OLTC
+  "Original developed by Mengjia and has been improved by Jan from KTH"
   //outer parameter Boolean ControlledOnFromSide;
   outer parameter Real initialtapratio=1;
   parameter Real Vmax=1.1;
@@ -14,9 +15,11 @@ model OLTC "Original developed by Mengjia and has been improved by Jan from KTH"
   parameter Real Rmax=1 + (rmax - rmin)/2;
   parameter Real Rmin=1 - (rmax - rmin)/2;
   Modelica.Blocks.Interfaces.RealInput u "Measured input, typically Voltage" annotation (Placement(transformation(extent={{-124,-6},{-84,34}})));
-  Modelica.Blocks.Interfaces.RealOutput y(start=initialtapratio, fixed=true) "Tap-ratio output" annotation (Placement(transformation(extent={{84,4},{104,24}})));
+  Modelica.Blocks.Interfaces.RealOutput y(start=initialtapratio, fixed=true)
+    "Tap-ratio output"                                                                          annotation (Placement(transformation(extent={{84,4},{104,24}})));
   Real RegulatorTimer(start=0, fixed=true) "Timer for the regulator";
-  Integer voltageDiff(start=0, fixed=true) "Direction of the voltage difference";
+  Integer voltageDiff(start=0, fixed=true)
+    "Direction of the voltage difference";
   Integer tapMoved(start=0, fixed=true) "Number of steps the taps has moved.";
   Integer tapDirection(start=0, fixed=true);
   discrete Real m(start=initialtapratio, fixed=true);

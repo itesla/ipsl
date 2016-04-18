@@ -4,7 +4,7 @@ model Order4test2_perturbation
   import OpenIPSL;
   extends OpenIPSL.Examples.BaseTest;
   extends Modelica.Icons.Example;
-  OpenIPSL.Electrical.Machines.PSAT.FourthOrder.Order4 Generator(
+  OpenIPSL.Electrical.Machines.PSAT.Order4 Generator(
     Sn=100,
     Vn=20,
     V_b=400,
@@ -81,6 +81,8 @@ model Order4test2_perturbation
         origin={-45,-25},
         extent={{-5.00007,-5.00012},{5.00001,4.99999}},
         rotation=0)));
+
+  inner OpenIPSL.Electrical.SystemBase SysData annotation (Placement(transformation(extent={{50,80},{75,100}})));
 equation
   connect(Generator.p, bus.p) annotation (Line(points={{-5,0.04964},{-4.25,0.04964},{-4.25,0},{0,0}}, color={0,0,255}));
   connect(step3.y, add4.u2) annotation (Line(

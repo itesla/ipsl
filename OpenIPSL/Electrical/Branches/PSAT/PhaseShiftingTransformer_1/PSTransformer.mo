@@ -19,10 +19,14 @@ model PSTransformer
   parameter Real m=0.98 "Transformer fixed tap  ratio, p.u./p.u.";
   parameter Real alpha0=0.002062339234360 "Initial angle, from power flow";
   parameter Real pmes0=0.01 "from power flow";
-  parameter Real vk0=0.997649085060455 "Sending end bus voltage, from power flow";
-  parameter Real vm0=1.007257703014177 "Receiving end bus voltage, from power flow";
-  parameter Real anglevk0=-0.007392164704867 "Sending end bus angle, from power flow";
-  parameter Real anglevm0=-0.009372077496959 "Receiving end bus angle, from power flow";
+  parameter Real vk0=0.997649085060455
+    "Sending end bus voltage, from power flow";
+  parameter Real vm0=1.007257703014177
+    "Receiving end bus voltage, from power flow";
+  parameter Real anglevk0=-0.007392164704867
+    "Sending end bus angle, from power flow";
+  parameter Real anglevm0=-0.009372077496959
+    "Receiving end bus angle, from power flow";
   Real vk(start=vk0);
   Real vm(start=vm0);
   Real anglevk(start=anglevk0);
@@ -76,8 +80,10 @@ model PSTransformer
 protected
   parameter Real Vb2new=Vbus1*Vbus1;
   parameter Real Vb2old=Vn1*Vn1;
-  parameter Real R=rT*(Vb2old*SystemBase)/(Vb2new*Sn) "Transformer Resistance, p.u.";
-  parameter Real X=xT*(Vb2old*SystemBase)/(Vb2new*Sn) "Transformer Reactance, p.u.";
+  parameter Real R=rT*(Vb2old*SystemBase)/(Vb2new*Sn)
+    "Transformer Resistance, p.u.";
+  parameter Real X=xT*(Vb2old*SystemBase)/(Vb2new*Sn)
+    "Transformer Reactance, p.u.";
   parameter Real pref=p_ref*(Sn/SystemBase);
   parameter Real gt=R/(R^2 + X^2) "Converting resistance to conductance p.u.";
   parameter Real bt=-X/(R^2 + X^2) "Converting reactance to susceptance p.u.";

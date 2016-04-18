@@ -1,10 +1,13 @@
 within OpenIPSL.Electrical.Branches.PSSE.Old_transformer;
 model ThreeWinding
-  parameter Real C1[1, 6]=[1.1, 0.9, 1.1, 0.9, 33, 0] "Primary winding: Vmax Vmin Rmax Rmin Ntap angle  ";
+  parameter Real C1[1, 6]=[1.1, 0.9, 1.1, 0.9, 33, 0]
+    "Primary winding: Vmax Vmin Rmax Rmin Ntap angle  ";
   parameter Real D1[1, 3]=[17, 5, 0] "Delay TD TC TSD";
-  parameter Real C2[1, 6]=[1.1, 0.9, 1.1, 0.9, 33, 0] "Secondary winding: Vmax Vmin Rmax Rmin Ntap angle  ";
+  parameter Real C2[1, 6]=[1.1, 0.9, 1.1, 0.9, 33, 0]
+    "Secondary winding: Vmax Vmin Rmax Rmin Ntap angle  ";
   parameter Real D2[1, 3]=[17, 5, 0] "Delay TD TC TSD";
-  parameter Real C3[1, 6]=[1.1, 0.9, 1.1, 0.9, 33, 0] "Tertiary winding: Vmax Vmin Rmax Rmin Ntap angle  ";
+  parameter Real C3[1, 6]=[1.1, 0.9, 1.1, 0.9, 33, 0]
+    "Tertiary winding: Vmax Vmin Rmax Rmin Ntap angle  ";
   parameter Real D3[1, 3]=[17, 5, 0] "Delay TD TC TSD";
   // parameter Complex Z12"short circuit test impedance";
   // parameter Complex Z23 "short circuit test impedance";

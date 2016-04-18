@@ -14,7 +14,8 @@ model PQ1
   parameter Real Sn=10;
   parameter Real CoB=Sn/SystemBase;
   parameter Real v0=1.00018548610126 "voltage magnitude after power flow, pu";
-  parameter Real anglev0=-0.0000253046024029618 "voltage angle after power flow";
+  parameter Real anglev0=-0.0000253046024029618
+    "voltage angle after power flow";
   parameter Real P0=0.4 "active power,pu";
   parameter Real Q0=0.3 "reactive power,pu";
   parameter Real Pref=P0*CoB;
@@ -24,7 +25,8 @@ model PQ1
   parameter Real Td=15 "d-axis inverter time constant";
   parameter Real Tq=15 "q-axis inverter time constant";
   parameter Real idref=(vq0*Qref + Pref*vd0)/(vq0^2 + vd0^2) "Initialitation";
-  parameter Real iqref=((-vd0*Qref) + Pref*vq0)/(vq0^2 + vd0^2) "Initialitation";
+  parameter Real iqref=((-vd0*Qref) + Pref*vq0)/(vq0^2 + vd0^2)
+    "Initialitation";
   Real idref1(start=idref);
   Real iqref1(start=iqref);
   Real v;
@@ -54,8 +56,10 @@ equation
   der(iq) = (iqref1 - iq)/Tq;
   v = sqrt(p.vr^2 + p.vi^2);
   anglev = atan2(p.vi, p.vr);
-  p.ir = -iq "change of sign due to the fact than in modelica when entering is + and in this case is going out";
-  p.ii = id "change of sign due to the fact than in modelica when entering is + and in this case is going out";
+  p.ir = -iq
+    "change of sign due to the fact than in modelica when entering is + and in this case is going out";
+  p.ii = id
+    "change of sign due to the fact than in modelica when entering is + and in this case is going out";
   p.vr = vq;
   p.vi = -vd;
   annotation (

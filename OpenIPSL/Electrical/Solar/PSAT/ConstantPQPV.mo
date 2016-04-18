@@ -26,7 +26,8 @@ model ConstantPQPV
     parameter Real vd0=-V_0*sin(angle_0) "Initialitation";
     parameter Real vq0=V_0*cos(angle_0) "Initialitation";
     parameter Real idref=(vq0*Qref + Pref*vd0)/(vq0^2 + vd0^2) "Initialitation";
-    parameter Real iqref=((-vd0*Qref) + Pref*vq0)/(vq0^2 + vd0^2) "Initialitation";
+    parameter Real iqref=((-vd0*Qref) + Pref*vq0)/(vq0^2 + vd0^2)
+      "Initialitation";
   public
     Real v "Bus voltage magnitude (pu)";
     Real anglev "Bus voltage angle (deg)";
@@ -47,8 +48,10 @@ model ConstantPQPV
     der(iq) = (iqref1 - iq)/Tq;
     v = sqrt(p.vr^2 + p.vi^2);
     anglev = atan2(p.vi, p.vr);
-    p.ir = -iq "change of sign due to the fact than in modelica when entering is + and in this case is going out";
-    p.ii = id "change of sign due to the fact than in modelica when entering is + and in this case is going out";
+    p.ir = -iq
+      "change of sign due to the fact than in modelica when entering is + and in this case is going out";
+    p.ii = id
+      "change of sign due to the fact than in modelica when entering is + and in this case is going out";
     p.vr = vq;
     p.vi = -vd;
     annotation (
@@ -133,8 +136,10 @@ model ConstantPQPV
     parameter Real Pref=P_0*CoB;
     parameter Real vd0=-V_0*sin(angle_0) "Initialitation";
     parameter Real vq0=V_0*cos(angle_0) "Initialitation";
-    parameter Real idref=(vq0*Q_0*CoB + Pref*vd0)/(vq0^2 + vd0^2) "Initialitation";
-    parameter Real iqref=((-vd0*Q_0*CoB) + Pref*vq0)/(vq0^2 + vd0^2) "Initialitation";
+    parameter Real idref=(vq0*Q_0*CoB + Pref*vd0)/(vq0^2 + vd0^2)
+      "Initialitation";
+    parameter Real iqref=((-vd0*Q_0*CoB) + Pref*vq0)/(vq0^2 + vd0^2)
+      "Initialitation";
     Real x(start=Q_0*CoB);
     Real Qref(start=Q_0*CoB);
   public
@@ -159,8 +164,10 @@ model ConstantPQPV
     der(iq) = (iqref1 - iq)/Tq;
     v = sqrt(p.vr^2 + p.vi^2);
     anglev = atan2(p.vi, p.vr);
-    p.ir = -iq "change of sign due to the fact than in modelica when entering is + and in this case is going out";
-    p.ii = id "change of sign due to the fact than in modelica when entering is + and in this case is going out";
+    p.ir = -iq
+      "change of sign due to the fact than in modelica when entering is + and in this case is going out";
+    p.ii = id
+      "change of sign due to the fact than in modelica when entering is + and in this case is going out";
     p.vr = vq;
     p.vi = -vd;
     annotation (

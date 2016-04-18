@@ -1,9 +1,10 @@
 within OpenIPSL.Examples.Machines.PSAT;
 model Order6test2
+
   import OpenIPSL;
   extends OpenIPSL.Examples.BaseTest;
   extends Modelica.Icons.Example;
-  OpenIPSL.Electrical.Machines.PSAT.SixthOrder.Order6 order6Type2_1(
+  OpenIPSL.Electrical.Machines.PSAT.Order6 order6Type2_1(
     Sn=100,
     V_0=1,
     angle_0=0,

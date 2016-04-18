@@ -1,5 +1,6 @@
 within OpenIPSL.Electrical.Wind.DTU;
-model VoltageDepCurrent "Part of the Q Control, to generate voltage dependent current. Developed by DTU"
+model VoltageDepCurrent
+  "Part of the Q Control, to generate voltage dependent current. Developed by DTU"
   Modelica.Blocks.Interfaces.RealInput Uwtt annotation (Placement(transformation(extent={{-60,-6},{-48,6}}), iconTransformation(extent={{-60,-6},{-48,6}})));
   Modelica.Blocks.Interfaces.RealOutput iqv annotation (Placement(transformation(extent={{47,-6},{59,6}}), iconTransformation(extent={{47,-6},{59,6}})));
   parameter Real Udb1 "voltage dead band lower limit";

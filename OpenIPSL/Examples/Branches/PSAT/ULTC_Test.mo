@@ -33,7 +33,7 @@ model ULTC_Test
         origin={-132.382,-10.5198},
         extent={{-4.4802,-4.4802},{4.4802,4.4802}},
         rotation=0)));
-  OpenIPSL.Electrical.Machines.PSAT.SecondOrder.Order2 order2_Inputs_Outputs(
+  OpenIPSL.Electrical.Machines.PSAT.Order2 order2_Inputs_Outputs(
     Sn=370,
     P_0=0.081032877181982,
     Q_0=0.058523044412627,

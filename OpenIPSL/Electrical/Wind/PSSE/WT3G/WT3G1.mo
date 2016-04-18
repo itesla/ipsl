@@ -14,18 +14,26 @@ model WT3G1
 
 protected
   parameter Real wbase=2*pi*fn "System base speed";
-  parameter Real p0=P_0/M_b "initial value of bus active power in p.u. machinebase";
-  parameter Real q0=Q_0/M_b "initial value of bus reactive power in p.u. machinebase";
+  parameter Real p0=P_0/M_b
+    "initial value of bus active power in p.u. machinebase";
+  parameter Real q0=Q_0/M_b
+    "initial value of bus reactive power in p.u. machinebase";
   parameter Real v0=V_0;
-  parameter Real vr0=v0*cos(anglev_rad) "Real component of initial terminal voltage";
-  parameter Real vi0=v0*sin(anglev_rad) "Imaginary component of intitial terminal voltage";
-  parameter Real ir0=(p0*vr0 + q0*vi0)/(vr0^2 + vi0^2) "Real component of initial armature current, mbase";
-  parameter Real ii0=(p0*vi0 - q0*vr0)/(vr0^2 + vi0^2) "Imaginary component of initial armature current, mbase";
+  parameter Real vr0=v0*cos(anglev_rad)
+    "Real component of initial terminal voltage";
+  parameter Real vi0=v0*sin(anglev_rad)
+    "Imaginary component of intitial terminal voltage";
+  parameter Real ir0=(p0*vr0 + q0*vi0)/(vr0^2 + vi0^2)
+    "Real component of initial armature current, mbase";
+  parameter Real ii0=(p0*vi0 - q0*vr0)/(vr0^2 + vi0^2)
+    "Imaginary component of initial armature current, mbase";
   parameter Real Isr0=ir0 + vi0/X_eq "Sorce current re mbase";
   parameter Real Isi0=ii0 - vr0/X_eq "Sorce current im mbase";
   parameter Real CoB=M_b/S_b;
-  parameter Real ir1=-CoB*(p0*vr0 + q0*vi0)/(vr0^2 + vi0^2) "Real component of initial armature current, sbase";
-  parameter Real ii1=-CoB*(p0*vi0 - q0*vr0)/(vr0^2 + vi0^2) "Imaginary component of initial armature current, sbase";
+  parameter Real ir1=-CoB*(p0*vr0 + q0*vi0)/(vr0^2 + vi0^2)
+    "Real component of initial armature current, sbase";
+  parameter Real ii1=-CoB*(p0*vi0 - q0*vr0)/(vr0^2 + vi0^2)
+    "Imaginary component of initial armature current, sbase";
   parameter Real Ix0=Isr0*cos(-anglev_rad) - Isi0*sin(-anglev_rad);
   parameter Real Iy0=Isr0*sin(-anglev_rad) + cos(-anglev_rad)*Isi0;
   parameter Real Eqcmd0=-Iy0*X_eq;

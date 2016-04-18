@@ -2,7 +2,7 @@ within N44.Subsystems_Original_case;
 model Gen5_bus_5100 "Configuration of synchronous generator with regulators: GENSAL, SEXS, HYGOV;
   Nordic 44 model: Buses 5100, 5400, 5500, 6000, 6500"
 
-  OpenIPSL.Electrical.Machines.PSSE.GENSAL.GENSAL gENSAL(
+  OpenIPSL.Electrical.Machines.PSSE.GENSAL gENSAL(
     Tpd0=4.9629 "T'do (> 0)",
     Tppd0=0.05 "T''do (> 0)",
     Tppq0=0.15 "T''qo (> 0)",
@@ -36,7 +36,7 @@ model Gen5_bus_5100 "Configuration of synchronous generator with regulators: GEN
     A_t=1.1,
     D_turb=0.5,
     q_NL=0.1) annotation (Placement(transformation(extent={{-62,46},{-10,74}})));
-  OpenIPSL.Electrical.Controls.PSSE.ES.SEXS.SEXS sEXS(
+  OpenIPSL.Electrical.Controls.PSSE.ES.SEXS sEXS(
     K=200,
     T_AT_B=0.05,
     T_B=100,

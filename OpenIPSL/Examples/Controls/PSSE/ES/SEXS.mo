@@ -3,7 +3,7 @@ model SEXS "SMIB model example of GENROU with Excitation System EXST1"
   import iPSL = OpenIPSL;
   extends iPSL.Examples.SMIBpartial;
   Modelica.Blocks.Sources.Constant const2(k=0) annotation (Placement(transformation(extent={{-110,166},{-94,182}})));
-  iPSL.Electrical.Machines.PSSE.GENROU.GENROU gENROE(
+  iPSL.Electrical.Machines.PSSE.GENROU gENROE(
     M_b=100,
     Tpd0=5,
     Tppd0=0.07,
@@ -26,7 +26,7 @@ model SEXS "SMIB model example of GENROU with Excitation System EXST1"
     R_a=0,
     Xpp=0.2,
     H=4.28) annotation (Placement(transformation(extent={{-110,-20},{-70,20}})));
-  iPSL.Electrical.Controls.PSSE.ES.SEXS.SEXS sEXS(
+  iPSL.Electrical.Controls.PSSE.ES.SEXS sEXS(
     T_AT_B=0.1,
     T_B=1,
     K=100,

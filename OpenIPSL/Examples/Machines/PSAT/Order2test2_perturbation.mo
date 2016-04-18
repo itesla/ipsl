@@ -70,7 +70,7 @@ model Order2test2_perturbation
         origin={-45,-25},
         extent={{-5.00007,-5.00012},{5.00001,4.99999}},
         rotation=0)));
-  OpenIPSL.Electrical.Machines.PSAT.SecondOrder.Order2 order2_Inputs_Outputs1(
+  OpenIPSL.Electrical.Machines.PSAT.Order2 order2_Inputs_Outputs1(
     D=0,
     V_b=400,
     V_0=1,

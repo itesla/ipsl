@@ -1,7 +1,8 @@
 within OpenIPSL.Examples.Branches.PSAT;
 model TWTPST_smib_test
+
   extends Modelica.Icons.Example;
-  OpenIPSL.Electrical.Machines.PSAT.SecondOrder.Order2 order2_1(
+  OpenIPSL.Electrical.Machines.PSAT.Order2 order2_1(
     Sn=100,
     D=5,
     V_0=1,

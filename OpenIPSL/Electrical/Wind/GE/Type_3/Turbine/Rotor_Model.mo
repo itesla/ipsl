@@ -20,7 +20,8 @@ model Rotor_Model
         origin={2.0,-1.6523},
         extent={{-102.0,54.0},{-62.0,94.0}},
         rotation=0)));
-  Modelica.Blocks.Interfaces.RealOutput omega_gen "Engine shaft angular velocity" annotation (Placement(
+  Modelica.Blocks.Interfaces.RealOutput omega_gen
+    "Engine shaft angular velocity"                                               annotation (Placement(
       transformation(
         extent={{102.0,54.0},{62.0,94.0}},
         origin={-144.7168,-169.0},
@@ -30,7 +31,8 @@ model Rotor_Model
         origin={-2.0,-4.0},
         extent={{102.0,54.0},{62.0,94.0}},
         rotation=0)));
-  Modelica.Blocks.Interfaces.RealOutput omega_turb "engine shaft angular velocity" annotation (Placement(
+  Modelica.Blocks.Interfaces.RealOutput omega_turb
+    "engine shaft angular velocity"                                                annotation (Placement(
       visible=true,
       transformation(
         origin={-142.0,21.0},

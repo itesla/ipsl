@@ -15,7 +15,7 @@ model Gen_no_contr
   parameter Real S10 "Saturation factor at 1.0 pu" annotation (Dialog(group="Machine parameters"));
   parameter Real S12 "Saturation factor at 1.2 pu" annotation (Dialog(group="Machine parameters"));
   parameter Real R_a=0 "amature resistance" annotation (Dialog(group="Machine parameters"));
-  OpenIPSL.Electrical.Machines.PSSE.GENSAL.GENSAL gENSAL(
+  OpenIPSL.Electrical.Machines.PSSE.GENSAL gENSAL(
     V_b=V_b,
     V_0=V_0,
     angle_0=angle_0,

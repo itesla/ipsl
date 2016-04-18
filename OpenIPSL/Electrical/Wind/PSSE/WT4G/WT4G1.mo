@@ -14,7 +14,8 @@ model WT4G1 "Wind Generator Model with Power Converter (Type 4)"
   parameter Real V_LVPL1 "LVPL voltage 1 (Low voltage power logic)";
   parameter Real V_LVPL2 "LVPL voltage 2";
   parameter Real G_LVPL "LVPL gain";
-  parameter Real V_HVRCR "HVRCR voltage (High voltage reactive current limiter)";
+  parameter Real V_HVRCR
+    "HVRCR voltage (High voltage reactive current limiter)";
   parameter Real CUR_HVRCR "HVRCR current (Max. reactive current at VHVRCR)";
   parameter Real RIp_LVPL "Rate of LVACR active current change";
   parameter Real T_LVPL "Voltage sensor for LVACR time constant";
@@ -71,18 +72,26 @@ public
 
   //Initialization parameters
 protected
-  parameter Real p0=P_0/M_b "initial value of bus active power in p.u. machinebase";
-  parameter Real q0=Q_0/M_b "initial value of bus reactive power in p.u. machinebase";
+  parameter Real p0=P_0/M_b
+    "initial value of bus active power in p.u. machinebase";
+  parameter Real q0=Q_0/M_b
+    "initial value of bus reactive power in p.u. machinebase";
   parameter Real v0=V_0;
-  parameter Real vr0=v0*cos(anglev_rad) "Real component of initial terminal voltage";
-  parameter Real vi0=v0*sin(anglev_rad) "Imaginary component of intitial terminal voltage";
-  parameter Real ir0=(p0*vr0 + q0*vi0)/(vr0^2 + vi0^2) "Real component of initial armature current, M_b";
-  parameter Real ii0=(p0*vi0 - q0*vr0)/(vr0^2 + vi0^2) "Imaginary component of initial armature current, M_b";
+  parameter Real vr0=v0*cos(anglev_rad)
+    "Real component of initial terminal voltage";
+  parameter Real vi0=v0*sin(anglev_rad)
+    "Imaginary component of intitial terminal voltage";
+  parameter Real ir0=(p0*vr0 + q0*vi0)/(vr0^2 + vi0^2)
+    "Real component of initial armature current, M_b";
+  parameter Real ii0=(p0*vi0 - q0*vr0)/(vr0^2 + vi0^2)
+    "Imaginary component of initial armature current, M_b";
   parameter Real Isr0=ir0 "Sorce current re M_b";
   parameter Real Isi0=ii0 "Sorce current im M_b";
   parameter Real CoB=M_b/S_b;
-  parameter Real ir1=-CoB*(p0*vr0 + q0*vi0)/(vr0^2 + vi0^2) "Real component of initial armature current, S_b";
-  parameter Real ii1=-CoB*(p0*vi0 - q0*vr0)/(vr0^2 + vi0^2) "Imaginary component of initial armature current, S_b";
+  parameter Real ir1=-CoB*(p0*vr0 + q0*vi0)/(vr0^2 + vi0^2)
+    "Real component of initial armature current, S_b";
+  parameter Real ii1=-CoB*(p0*vi0 - q0*vr0)/(vr0^2 + vi0^2)
+    "Imaginary component of initial armature current, S_b";
   parameter Real Ipcmd0=Ix0;
   parameter Real anglev_rad=angle_0*pi/180 "initial value of bus anglev in rad";
   parameter Real Ix0=Isr0*cos(-anglev_rad) - Isi0*sin(-anglev_rad);

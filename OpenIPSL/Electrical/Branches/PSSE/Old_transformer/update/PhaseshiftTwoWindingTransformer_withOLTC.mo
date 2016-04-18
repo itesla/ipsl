@@ -1,5 +1,6 @@
 within OpenIPSL.Electrical.Branches.PSSE.Old_transformer.update;
-model PhaseshiftTwoWindingTransformer_withOLTC "Two Winding Transformer with Phaseshift and OLTC"
+model PhaseshiftTwoWindingTransformer_withOLTC
+  "Two Winding Transformer with Phaseshift and OLTC"
   extends TransformerParameter;
   inner parameter Real initialtapratio=1;
   parameter Real phase " From side and To side phase shift in degree";

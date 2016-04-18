@@ -1,5 +1,6 @@
 within OpenIPSL.Electrical.Branches.PSAT;
-model TWTransformerWithFixedTapRatio "Modeled as series reactances without iron losses"
+model TWTransformerWithFixedTapRatio
+  "Modeled as series reactances without iron losses"
   outer OpenIPSL.Electrical.SystemBase SysData;
 
   OpenIPSL.Connectors.PwPin p annotation (Placement(transformation(extent={{-120,-10},{-100,10}})));
@@ -16,7 +17,8 @@ model TWTransformerWithFixedTapRatio "Modeled as series reactances without iron 
 protected
   parameter Real Vb2new=Vbus*Vbus;
   parameter Real Vb2old=Vn1*Vn1;
-  parameter Real xT=X*(Vb2old*SystemBase)/(Vb2new*Sn) "Reactance(inductive),p.u";
+  parameter Real xT=X*(Vb2old*SystemBase)/(Vb2new*Sn)
+    "Reactance(inductive),p.u";
   parameter Real rT=R*(Vb2old*SystemBase)/(Vb2new*Sn) "Resistance,p.u";
 equation
   rT*p.ir - xT*p.ii = 1/m^2*p.vr - 1/m*n.vr;

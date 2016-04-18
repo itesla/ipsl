@@ -17,7 +17,7 @@ model GroupBus2
     vref0=vref0,
     vf0=vf0) annotation (Placement(transformation(extent={{-50,0},{0,38}})));
   Modelica.Blocks.Sources.Constant const1(k=1.181847826013889) annotation (Placement(transformation(extent={{-94,24},{-68,50}})));
-  OpenIPSL.Electrical.Machines.PSAT.SixthOrder.Order6 Syn3(
+  OpenIPSL.Electrical.Machines.PSAT.Order6 Syn3(
     Sn=60,
     Vn=69,
     V_b=V_b,
@@ -40,7 +40,8 @@ model GroupBus2
     Q_0=Q_0) annotation (Placement(transformation(extent={{20,-36},{86,34}})));
   OpenIPSL.Connectors.PwPin pwPin annotation (Placement(transformation(extent={{122,-10},{142,10}}), iconTransformation(extent={{122,-10},{142,10}})));
 equation
-  connect(aVR1TypeII1.vf, Syn3.vf) annotation (Line(points={{-3.75,23.94},{-2.65,23.94},{-2.65,16.5},{20,16.5}}, color={0,0,127}));
+  connect(aVR1TypeII1.vf, Syn3.vf) annotation (Line(points={{-3.75,23.94},{
+          -2.65,23.94},{-2.65,16.5},{20,16.5}},                                                                  color={0,0,127}));
   connect(Syn3.v, aVR1TypeII1.v) annotation (Line(points={{89.3,9.5},{116,9.5},{116,-88},{-82,-88},{-82,-84},{-82,14},{-82,17.1},{-45,17.1}}, color={0,0,127}));
   connect(const1.y, aVR1TypeII1.vref) annotation (Line(points={{-66.7,37},{-54,37},{-54,29.26},{-45,29.26}}, color={0,0,127}));
   connect(Syn3.p, pwPin) annotation (Line(points={{89.3,-0.82626},{110.65,-0.82626},{110.65,0},{132,0}}, color={0,0,255}));

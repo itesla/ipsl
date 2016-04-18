@@ -59,7 +59,7 @@ model SolarPVtest
         origin={15.0,-30.0},
         extent={{-10.0,-10.0},{10.0,10.0}},
         rotation=0)));
-  OpenIPSL.Electrical.Machines.PSAT.ThirdOrder.Order3 order31(
+  OpenIPSL.Electrical.Machines.PSAT.Order3 order31(
     Sn=20,
     P_0=0.0401256732154526,
     Q_0=0.0262725307404601,

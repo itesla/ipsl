@@ -47,8 +47,10 @@ model PwGenerator "Synchronous machine model according to Park's classical theor
   parameter Real rQ2=0.03923*yscale "q axis damper 2 winding resistance";
   parameter Real lQ1=0.08921*yscale "q axis damper 1 winding leakeage";
   parameter Real lQ2=1.78484*yscale "q axis damper 2 winding leakeage";
-  parameter Real RT=0 "Machine transformer resistance (pu), enter value*SNREF/SNtfo";
-  parameter Real XT=0 "Machine transformer reactance (pu), enter value*SNREF/SNtfo";
+  parameter Real RT=0
+    "Machine transformer resistance (pu), enter value*SNREF/SNtfo";
+  parameter Real XT=0
+    "Machine transformer reactance (pu), enter value*SNREF/SNtfo";
   parameter Real Md0=2.351*yscale "d axis mutual inductance";
   parameter Real Mq0=2.351*yscale "q axis mutual inductance";
   parameter Real Mdv=0.7459*yscale;

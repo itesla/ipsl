@@ -1,7 +1,8 @@
 within OpenIPSL.Examples.Controls.PSSE.PSS;
-model STAB3 "Simple Machine Infinite Bus with Machine, Governor and Excitation system"
+model STAB3
+  "Simple Machine Infinite Bus with Machine, Governor and Excitation system"
   extends OpenIPSL.Examples.SMIBpartial;
-  OpenIPSL.Electrical.Machines.PSSE.GENSAL.GENSAL generator(
+  OpenIPSL.Electrical.Machines.PSSE.GENSAL generator(
     Xppd=0.2,
     Xppq=0.2,
     Xl=0.12,
@@ -19,12 +20,13 @@ model STAB3 "Simple Machine Infinite Bus with Machine, Governor and Excitation s
     Xq=0.76000,
     Xpd=0.29700,
     S10=0.18600,
-    S12=0.802) annotation (Placement(transformation(extent={{-106,-12},{-78,14}})));
+    S12=0.802)
+    annotation (Placement(transformation(extent={{-106,-12},{-78,14}})));
   OpenIPSL.Electrical.Controls.PSSE.TG.HYGOV HYGOV(VELM=0.02, G_MAX=0.415) annotation (Placement(transformation(
         extent={{-19,-14},{19,14}},
         rotation=180,
         origin={-83,30})));
-  OpenIPSL.Electrical.Controls.PSSE.ES.SCRX.SCRX SCRX(
+  OpenIPSL.Electrical.Controls.PSSE.ES.SCRX SCRX(
     V_0=1,
     V_c0=1,
     T_AT_B=0.01,

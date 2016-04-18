@@ -64,7 +64,7 @@ model AVRTypeII_Test
     t1=3,
     t2=3.1,
     R=0.2) annotation (Placement(transformation(extent={{115,-52},{135,-32}})));
-  OpenIPSL.Electrical.Machines.PSAT.SixthOrder.Order6 order6Type2_Inputs_Outputs(
+  OpenIPSL.Electrical.Machines.PSAT.Order6 order6Type2_Inputs_Outputs(
     V_0=1,
     angle_0=0,
     P_0=0.160352698692006,

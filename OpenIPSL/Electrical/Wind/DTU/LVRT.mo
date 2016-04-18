@@ -3,9 +3,12 @@ model LVRT "Enables low voltage ride through signal. Developed by DTU"
   Modelica.Blocks.Interfaces.RealInput Uwtt annotation (Placement(transformation(extent={{-51,-6},{-41,6}}), iconTransformation(extent={{-51,-6},{-41,6}})));
   Modelica.Blocks.Interfaces.RealOutput F_LVRT annotation (Placement(transformation(extent={{39,14},{49,26}}), iconTransformation(extent={{39,14},{49,26}})));
   Modelica.Blocks.Interfaces.RealOutput Fpost annotation (Placement(transformation(extent={{39,-26},{49,-14}}), iconTransformation(extent={{39,-26},{49,-14}})));
-  parameter Real Uqdip "Voltage threshold value for LVRT detection in Q control";
-  parameter Modelica.SIunits.Time Tpost=0 "Length of time period where post fault reactive power is injected";
-  discrete Modelica.SIunits.Time LVRTstop "Time instant when post fault period started";
+  parameter Real Uqdip
+    "Voltage threshold value for LVRT detection in Q control";
+  parameter Modelica.SIunits.Time Tpost=0
+    "Length of time period where post fault reactive power is injected";
+  discrete Modelica.SIunits.Time LVRTstop
+    "Time instant when post fault period started";
 initial equation
   F_LVRT = if Uwtt < Uqdip then 1 else 0;
   Fpost = 0;

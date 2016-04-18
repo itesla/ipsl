@@ -1,7 +1,10 @@
-SecondOrder
-ThirdOrder
-FourthOrder
-FifthOrder
-SixthOrder
-InductionMachine
+Order2
+Order3
+Order4
+Order5_Type1
+Order5_Type2
+Order6
+MotorTypeI
+MotorTypeIII
+MotorTypeV
 BaseClasses

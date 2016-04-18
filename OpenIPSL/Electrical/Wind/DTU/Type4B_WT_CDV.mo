@@ -1,5 +1,6 @@
 within OpenIPSL.Electrical.Wind.DTU;
-model Type4B_WT_CDV "IEC Type 4B Full-Scale Wind Turbine Model. Developed by DTU"
+model Type4B_WT_CDV
+  "IEC Type 4B Full-Scale Wind Turbine Model. Developed by DTU"
   parameter Real w_init=1 "Initial steady state generator speed";
   parameter Real T_Ufilt=0.01 "Voltage measurement filter time constant";
   parameter Real dPmax=99 "Wind turbine maximum power ramp rate";
@@ -15,7 +16,8 @@ model Type4B_WT_CDV "IEC Type 4B Full-Scale Wind Turbine Model. Developed by DTU
   parameter Real Qmin=-0.33 "Minimum reactive power";
   parameter Real Tufilt=0.01 "Voltage measurement filter time constant";
   parameter Real Uqdip=0.8 "Voltage threshold value for LVRT detection";
-  parameter Real Tpost=1 "Length of time period where post fault reactive power is injected";
+  parameter Real Tpost=1
+    "Length of time period where post fault reactive power is injected";
   parameter Real Udb1=0.1 "Voltage dead band lower limit";
   parameter Real Udb2=0.1 "Voltage dead band upper limit";
   parameter Real Kqv=4 "Voltage scaling factor for LVRT current";
@@ -23,8 +25,10 @@ model Type4B_WT_CDV "IEC Type 4B Full-Scale Wind Turbine Model. Developed by DTU
   parameter Real iqmin=-1.1 "Minimum reactive current injection";
   parameter Real iqmax=1.1 "Maximum reactive current injection";
   parameter Real iq_post=-0.2 "Post fault reactive current injection";
-  parameter Real Umax=1.05 "Maximum voltage in voltage PI controller integral term";
-  parameter Real Umin=0 "Minimum voltage in voltage PI controller integral term";
+  parameter Real Umax=1.05
+    "Maximum voltage in voltage PI controller integral term";
+  parameter Real Umin=0
+    "Minimum voltage in voltage PI controller integral term";
   parameter Real KiQ=0.1 "Reactive power PI controller integration gain";
   parameter Real KpQ=1 "Reactive power PI controller proportional gain";
   parameter Real Tqord=0.01 "Time constant in reactive power order lag";
@@ -36,9 +40,12 @@ model Type4B_WT_CDV "IEC Type 4B Full-Scale Wind Turbine Model. Developed by DTU
   parameter Real k_sh=140 "Drive Train Stiffness";
   parameter Real c_sh=0.8 "Drive Train Damping";
   parameter Real T_init=0.9 "Initial Steady State Shaft Torque";
-  parameter Real i_maxdip=1.1 "Maximum current during voltage dip at the wind turbine terminals";
-  parameter Real i_max=1.23 "Maximum continuous current at the wind turbine terminals";
-  parameter Real M_Qpri=1 "Prioritisation of q control during LVRT (0: active power priority - 1: reactive power priority)";
+  parameter Real i_maxdip=1.1
+    "Maximum current during voltage dip at the wind turbine terminals";
+  parameter Real i_max=1.23
+    "Maximum continuous current at the wind turbine terminals";
+  parameter Real M_Qpri=1
+    "Prioritisation of q control during LVRT (0: active power priority - 1: reactive power priority)";
   parameter Real Tg=0.005 "Current generation time constant";
   parameter Real diPmax=99 "Maximum active current ramp rate ";
   parameter Real diQmin=-99 "Minimum reactive current ramp rate";
