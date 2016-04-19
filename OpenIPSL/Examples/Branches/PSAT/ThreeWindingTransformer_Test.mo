@@ -47,29 +47,28 @@ model ThreeWindingTransformer_Test
     M=10) annotation (Placement(transformation(extent={{-20,0},{0,20}})));
   Modelica.Blocks.Math.Add add annotation (Placement(transformation(extent={{-60,0},{-40,20}})));
   OpenIPSL.Electrical.Loads.PSAT.LOADPQ_variation lOADPQ(
-    t1=5,
-    t2=8,
-    t3=8,
-    t4=12,
-    P2=0,
-    P3=0,
+    t_start_1=5,
+    t_end_1=8,
+    t_start_2=8,
+    t_end_2=12,
+    dP1=0,
+    dP2=0,
     P_0=0.04,
     Q_0=0.02,
-    Q2=0.01,
-    Q3=-0.01) annotation (Placement(transformation(extent={{115,15},{135,35}})));
+    dQ1=0.01,
+    dQ2=-0.01) annotation (Placement(transformation(extent={{115,15},{135,35}})));
   OpenIPSL.Electrical.Loads.PSAT.LOADPQ_variation lOADPQ1(
     P_0=0.04,
     Q_0=0.04,
-    t1=0,
-    t2=0,
-    t3=0,
-    t4=0,
-    P2=0,
-    Q2=0,
-    P3=0,
-    Q3=0) annotation (Placement(transformation(extent={{115,-20},{135,0}})));
-  OpenIPSL.Electrical.Branches.PSAT.ThreeWindingTransformer.ThreeWindingTransformer
-                                                                                    threeWindingTransformer annotation (Placement(transformation(extent={{70,0},{90,20}})));
+    t_start_1=0,
+    t_end_1=0,
+    t_start_2=0,
+    t_end_2=0,
+    dP1=0,
+    dQ1=0,
+    dP2=0,
+    dQ2=0) annotation (Placement(transformation(extent={{115,-20},{135,0}})));
+  OpenIPSL.Electrical.Branches.PSAT.ThreeWindingTransformer.ThreeWindingTransformer threeWindingTransformer annotation (Placement(transformation(extent={{70,0},{90,20}})));
   OpenIPSL.Electrical.Buses.Bus Bus1 annotation (Placement(transformation(extent={{10,0},{30,20}})));
   OpenIPSL.Electrical.Buses.Bus Bus2 annotation (Placement(transformation(extent={{50,0},{70,20}})));
   OpenIPSL.Electrical.Buses.Bus Bus3 annotation (Placement(transformation(extent={{95,15},{115,35}})));

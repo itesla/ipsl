@@ -49,14 +49,14 @@ model ULTC_Test
   OpenIPSL.Electrical.Loads.PSAT.LOADPQ_variation lOADPQ(
     P_0=0.08,
     Q_0=0.06,
-    t1=5,
-    t2=8,
-    t3=8,
-    t4=12,
-    P2=0,
-    P3=0,
-    Q3=-0.05,
-    Q2=0.05) annotation (Placement(transformation(extent={{115,-10},{135,10}})));
+    t_start_1=5,
+    t_end_1=8,
+    t_start_2=8,
+    t_end_2=12,
+    dP1=0,
+    dP2=0,
+    dQ1=-0.05,
+    dQ2=0.05) annotation (Placement(transformation(extent={{115,-10},{135,10}})));
   OpenIPSL.Electrical.Branches.PSAT.ULTC_VoltageControl uLTC_VoltageControl annotation (Placement(transformation(extent={{70,-10},{90,10}})));
   OpenIPSL.Electrical.Buses.Bus B1 annotation (Placement(transformation(extent={{-5,-10},{15,10}})));
   OpenIPSL.Electrical.Buses.Bus B2 annotation (Placement(transformation(extent={{45,-10},{65,10}})));
