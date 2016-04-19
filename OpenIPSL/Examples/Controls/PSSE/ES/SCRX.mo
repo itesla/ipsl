@@ -1,9 +1,8 @@
 within OpenIPSL.Examples.Controls.PSSE.ES;
 model SCRX "SMIB model example of GENROU with Excitation System EXST1"
-  import iPSL = OpenIPSL;
-  extends iPSL.Examples.SMIBpartial;
+  extends OpenIPSL.Examples.SMIBpartial;
   Modelica.Blocks.Sources.Constant const2(k=0) annotation (Placement(transformation(extent={{-110,166},{-94,182}})));
-  iPSL.Electrical.Machines.PSSE.GENROU gENROE(
+  OpenIPSL.Electrical.Machines.PSSE.GENROU gENROE(
     M_b=100,
     Tpd0=5,
     Tppd0=0.07,
@@ -30,7 +29,7 @@ model SCRX "SMIB model example of GENROU with Excitation System EXST1"
         extent={{4,-4},{-4,4}},
         rotation=0,
         origin={-52,-36})));
-  iPSL.Electrical.Controls.PSSE.ES.SCRX sCRX(
+  OpenIPSL.Electrical.Controls.PSSE.ES.SCRX sCRX(
     T_AT_B=0.1,
     T_B=1,
     K=100,

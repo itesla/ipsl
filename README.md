@@ -11,6 +11,8 @@ This project encompasses the development of a Modelica library for power system 
 As such, there are no solver tools provided in this repository (no Power Flow Solvers, no Time-Domain solvers, etc.).
 You can find more information on the [Wiki - Page] (update link).
 
+The OpenIPSL contains the models developed by SmarTS Lab during the iTesla project, and necesssary models that were implemented by RTE and AIA, that we can maintain. Note tha several models have been removed from what it is available in iPSL (see here:[link](https://github.com/SmarTS-Lab/OpenIPSL/pull/10)). However, we have removed all models that are dependent on a specific software tool from the power systems domain that we don't have access for Software-to-Software validation, and those that require us access to closed standards that we don't have money to buy in order to maintain them (i.e. IEC Wind Turbine models).
+
 ## Documentation:
 Currently, we are developing an 'application guide' with examples how to use the library and documentation on many of the test networks developed by different people.
 Documentation on the use of thi library will most likely be in the form of tutorials, as the use of Modelica tools is not the main interest of this fork.

@@ -1,7 +1,6 @@
 within OpenIPSL.Examples.Machines.PSAT;
 model Order2test2_perturbation
 
-  import OpenIPSL;
   extends OpenIPSL.Examples.BaseTest;
   extends Modelica.Icons.Example;
 

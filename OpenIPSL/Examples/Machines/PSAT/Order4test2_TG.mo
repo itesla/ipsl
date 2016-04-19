@@ -1,7 +1,6 @@
 within OpenIPSL.Examples.Machines.PSAT;
 model Order4test2_TG
 
-  import OpenIPSL;
   extends OpenIPSL.Examples.BaseTest;
   extends Modelica.Icons.Example;
   OpenIPSL.Electrical.Controls.PSAT.TG.TGtypeII TGtypeII1 annotation (Placement(visible=true, transformation(

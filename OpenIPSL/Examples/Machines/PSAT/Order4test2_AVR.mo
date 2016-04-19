@@ -1,7 +1,6 @@
 within OpenIPSL.Examples.Machines.PSAT;
 model Order4test2_AVR
 
-  import OpenIPSL;
   extends OpenIPSL.Examples.BaseTest;
   extends Modelica.Icons.Example;
   OpenIPSL.Electrical.Controls.PSAT.AVR.AVRtypeIII AVRtypeIII1(s0=0, vf0=1.0641)
