@@ -31,18 +31,13 @@ model TwoWindingTransformer "SMIB system with one load and GENROE model"
     P_0=10.0278,
     Q_0=32.05072) annotation (Placement(transformation(extent={{118,-12},{106,12}})));
   OpenIPSL.Electrical.Loads.PSSE.Load_variation constantLoad(
-    S_p(re=0.5, im=0.1),
-    S_i(im=0, re=0),
-    S_y(re=0, im=0),
-    a(re=1, im=0),
-    b(re=0, im=1),
-    PQBRAK=0.7,
     d_t=0,
     d_P=0,
     t1=0,
-    characteristic=2,
     V_0=0.9679495,
-    angle_0=-0.5840921) annotation (Placement(transformation(extent={{-4,-52},{8,-40}})));
+    angle_0=-0.5840921,
+    P_0=50,
+    Q_0=10) annotation (Placement(transformation(extent={{-4,-52},{8,-40}})));
   OpenIPSL.Electrical.Events.PwFault pwFault(
     t1=2,
     t2=2.15,
