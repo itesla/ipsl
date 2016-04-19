@@ -29,8 +29,7 @@ model TwoWindingTransformer "SMIB system with one load and GENROE model"
     X_d=0.2,
     H=0,
     P_0=10.0278,
-    Q_0=32.05072)
-    annotation (Placement(transformation(extent={{118,-12},{106,12}})));
+    Q_0=32.05072) annotation (Placement(transformation(extent={{118,-12},{106,12}})));
   OpenIPSL.Electrical.Loads.PSSE.Load_variation constantLoad(
     S_p(re=0.5, im=0.1),
     S_i(im=0, re=0),
@@ -72,8 +71,7 @@ model TwoWindingTransformer "SMIB system with one load and GENROE model"
     V_0=1,
     angle_0=4.747869,
     P_0=40,
-    Q_0=-16.46028)
-    annotation (Placement(transformation(extent={{-92,-20},{-58,20}})));
+    Q_0=-16.46028) annotation (Placement(transformation(extent={{-92,-20},{-58,20}})));
   OpenIPSL.Electrical.Branches.PSSE.TwoWindingTransformer twoWindingTransformer(
     CZ=1,
     R=0.001,
@@ -108,7 +106,7 @@ equation
   connect(BUS03.p, pwLine4.p) annotation (Line(points={{50,-30},{58.3333,-30}}, color={0,0,255}));
   connect(BUS1.p, gENCLS.p) annotation (Line(points={{90,0},{104.8,0},{104.8,-0.180432}}, color={0,0,255}));
   connect(pwLine1.n, BUS1.p) annotation (Line(points={{61.6667,30},{86,30},{86,0},{90,0}}, color={0,0,255}));
-  connect(pwLine4.n, BUS1.p) annotation (Line(points={{77,-30},{86,-30},{86,0},{90,0}}, color={0,0,255}));
+  connect(pwLine4.n, BUS1.p) annotation (Line(points={{81.6667,-30},{86,-30},{86,0},{90,0}}, color={0,0,255}));
   connect(pwFault.p, BUS03.p) annotation (Line(points={{54,-51},{54,-30},{50,-30}}, color={0,0,255}));
   annotation (Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,100}})), Documentation(revisions="<html>
 <!--DISCLAIMER-->

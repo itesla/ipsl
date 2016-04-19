@@ -9,7 +9,7 @@ model AVRTypeII_Test
         origin={122.283,26},
         extent={{-10.0,-10.0},{10.0,10.0}},
         rotation=0)));
-  OpenIPSL.Electrical.Branches.PwLine2Openings pwLinewithOpening1(
+  OpenIPSL.Electrical.Branches.PwLine pwLinewithOpening1(
     B=0.001/2,
     G=0,
     R=0.01,

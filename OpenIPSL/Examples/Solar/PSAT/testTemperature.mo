@@ -26,7 +26,7 @@ model testTemperature
         origin={83.1777,5.4501},
         extent={{-10.0,-10.0},{10.0,10.0}},
         rotation=0)));
-  OpenIPSL.Electrical.Buses.InfiniteBus infiniteBus8(angle=0, V=1)
+  OpenIPSL.Electrical.Buses.InfiniteBus infiniteBus8(angle_0=0, V_0=1)
     annotation (Placement(visible=true, transformation(
         origin={117.9874,-1.1504},
         extent={{10.0,-10.0},{-10.0,10.0}},

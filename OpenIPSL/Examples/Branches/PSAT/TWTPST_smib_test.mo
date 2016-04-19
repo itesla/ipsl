@@ -21,7 +21,7 @@ model TWTPST_smib_test
     r=0.01,
     V_b=13800,
     kT=13.8/20) annotation (Placement(transformation(extent={{-80,-10},{-60,10}})));
-  OpenIPSL.Electrical.Buses.InfiniteBus infiniteBus(V=1, angle=0) annotation (Placement(transformation(extent={{-124,-44},{-104,-24}})));
+  OpenIPSL.Electrical.Buses.InfiniteBus infiniteBus(V_0=1, angle_0=0) annotation (Placement(transformation(extent={{-124,-44},{-104,-24}})));
   OpenIPSL.Electrical.Branches.PwLine pwLine(
     R=0.01,
     X=0.1,

@@ -17,7 +17,7 @@ model SolarPVtest
         origin={20.0,-57.3},
         extent={{-10.0,-10.0},{10.0,10.0}},
         rotation=0)));
-  OpenIPSL.Electrical.Branches.PwLinewithOpeningReceiving pwLinewithOpening1(
+  OpenIPSL.Electrical.Branches.PwLine pwLinewithOpening1(
     B=0.001/2,
     G=0,
     R=0.01,
