@@ -1,9 +1,8 @@
 within OpenIPSL.Examples.Controls.PSSE.TG;
 model IEESGO
   "Simple Machine Infinite Bus with Machine, Governor and Excitation system"
-  import iPSL = OpenIPSL;
-  extends iPSL.Examples.SMIBpartial;
-  iPSL.Electrical.Machines.PSSE.GENSAL generator(
+  extends OpenIPSL.Examples.SMIBpartial;
+  OpenIPSL.Electrical.Machines.PSSE.GENSAL generator(
     Xppd=0.2,
     Xppq=0.2,
     Xl=0.12,
@@ -23,7 +22,7 @@ model IEESGO
     S10=0.18600,
     S12=0.802)
     annotation (Placement(transformation(extent={{-90,-10},{-70,10}})));
-  iPSL.Electrical.Controls.PSSE.ES.SCRX SCRX(
+  OpenIPSL.Electrical.Controls.PSSE.ES.SCRX SCRX(
     V_0=1,
     V_c0=1,
     T_B=10,
@@ -41,7 +40,7 @@ model IEESGO
         extent={{-2,-2},{2,2}},
         rotation=180,
         origin={-50,-34})));
-  iPSL.Electrical.Controls.PSSE.TG.IEESGO iEESGO(
+  OpenIPSL.Electrical.Controls.PSSE.TG.IEESGO iEESGO(
     T_1=0.01,
     T_2=0.0,
     T_3=0.15,

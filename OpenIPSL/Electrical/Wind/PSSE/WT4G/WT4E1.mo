@@ -1,14 +1,9 @@
 within OpenIPSL.Electrical.Wind.PSSE.WT4G;
 model WT4E1 "Electrical Control for Type 4 Wind Generator"
-  import iPSL = OpenIPSL;
 
   parameter Boolean PFAFLG "PF fast control" annotation (choices(choice=true "Enable",choice=false "Disable"));
-  parameter Boolean VARFLG annotation (choices(choice=false
-        " Qord is not provided by WindVar",                                                     choice=true
-        " Qord is provided by WindVar"));
-  parameter Boolean PQFLAG "P/Q priority flag" annotation (choices(choice=false
-        "Q priority",                                                                        choice=true
-        "P priority"));
+  parameter Boolean VARFLG annotation (choices(choice=false " Qord is not provided by WindVar", choice=true " Qord is provided by WindVar"));
+  parameter Boolean PQFLAG "P/Q priority flag" annotation (choices(choice=false "Q priority",choice=true "P priority"));
 
   parameter Real Tfv "Filter time constant in voltage regulator (sec)";
   parameter Real Kpv " Proportional gain in voltage regulator (pu)";
@@ -65,8 +60,7 @@ protected
   parameter Real k60(fixed=false) "MVAR/Vref integrator";
   parameter Real k70(fixed=false) "Verror/Internal machine voltage integrator";
   parameter Real k80(fixed=false) "Lag of the WindVar controller";
-  parameter Real k90(fixed=false)
-    "Input filter of Pelec for PF fast controller";
+  parameter Real k90(fixed=false) "Input filter of Pelec for PF fast controller";
 
 public
   Modelica.Blocks.Interfaces.RealInput P(start=p0)
@@ -100,9 +94,9 @@ public
     y_start=k60) annotation (Placement(transformation(extent={{80,50},{100,70}})));
   Modelica.Blocks.Math.Feedback Vcl annotation (Placement(transformation(extent={{108,50},{128,70}})));
   Modelica.Blocks.Interfaces.RealOutput WIQCMD annotation (Placement(transformation(extent={{200,50},{220,70}}), iconTransformation(extent={{200,-160},{240,-120}})));
-  iPSL.NonElectrical.Continuous.IntegratorLimVar K7(K=KVI, y_start=k70) annotation (Placement(transformation(extent={{142,50},{162,70}})));
+  OpenIPSL.NonElectrical.Continuous.IntegratorLimVar K7(K=KVI, y_start=k70) annotation (Placement(transformation(extent={{142,50},{162,70}})));
 
-  iPSL.Electrical.Wind.PSSE.Submodels.CCL cCL(
+  OpenIPSL.Electrical.Wind.PSSE.Submodels.CCL cCL(
     Qmax=QMX,
     ImaxTD=ImaxTD,
     Iphl=Iphl,
@@ -306,26 +300,33 @@ protected
               lineThickness=0.5,
               fillColor={0,0,255},
               fillPattern=FillPattern.Solid,
-              textString="Active Power Control")}), Icon(coordinateSystem(extent={{-200,-200},{200,200}}, preserveAspectRatio=true), graphics={Rectangle(
-              extent={{-200,200},{200,-200}},
-              lineColor={28,108,200},
-              fillColor={255,255,255},
-              fillPattern=FillPattern.Solid),Text(
-              extent={{-100,160},{100,0}},
-              lineColor={0,140,72},
-              textString="Active Power
-PI"),Text(    extent={{-40,180},{40,140}},
-              lineColor={28,108,200},
-              textString="I_PMAX"),Text(
-              extent={{112,20},{192,-20}},
-              lineColor={28,108,200},
-              textString="I_PCMD"),Text(
-              extent={{-40,-140},{40,-180}},
-              lineColor={28,108,200},
-              textString="VTERM"),Text(
-              extent={{-174,20},{-94,-20}},
-              lineColor={28,108,200},
-              textString="PELEC")}));
+              textString="Active Power Control")}), Icon(coordinateSystem(extent={{-200,-200},{200,200}}, preserveAspectRatio=true), graphics={
+          Rectangle(
+            extent={{-200,200},{200,-200}},
+            lineColor={28,108,200},
+            fillColor={255,255,255},
+            fillPattern=FillPattern.Solid),
+          Text(
+            extent={{-100,160},{100,0}},
+            lineColor={0,140,72},
+            textString="Active Power
+PI"),
+          Text(
+            extent={{-40,180},{40,140}},
+            lineColor={28,108,200},
+            textString="I_PMAX"),
+          Text(
+            extent={{112,20},{192,-20}},
+            lineColor={28,108,200},
+            textString="I_PCMD"),
+          Text(
+            extent={{-40,-140},{40,-180}},
+            lineColor={28,108,200},
+            textString="VTERM"),
+          Text(
+            extent={{-174,20},{-94,-20}},
+            lineColor={28,108,200},
+            textString="PELEC")}));
   end ActivePowerController;
 equation
   connect(activePowerController.ipcmd, WIPCMD) annotation (Line(points={{82,-80},{82,-80},{210,-80}}, color={0,0,127}));
@@ -358,20 +359,24 @@ protected
               lineThickness=0.5,
               fillColor={0,0,255},
               fillPattern=FillPattern.Solid,
-              textString="Power Factor Regulator")}), Icon(coordinateSystem(extent={{-200,-100},{0,100}}, preserveAspectRatio=true), graphics={Rectangle(
-              extent={{-200,100},{0,-100}},
-              lineColor={28,108,200},
-              fillColor={255,255,255},
-              fillPattern=FillPattern.Solid),Text(
-              extent={{-188,6},{-148,-6}},
-              lineColor={28,108,200},
-              textString="P_FAREF"),Text(
-              extent={{-60,6},{-2,-6}},
-              lineColor={28,108,200},
-              textString="Q_REF_PF"),Text(
-              extent={{-160,80},{-40,40}},
-              lineColor={238,46,47},
-              textString="PF Controller")}));
+              textString="Power Factor Regulator")}), Icon(coordinateSystem(extent={{-200,-100},{0,100}}, preserveAspectRatio=true), graphics={
+          Rectangle(
+            extent={{-200,100},{0,-100}},
+            lineColor={28,108,200},
+            fillColor={255,255,255},
+            fillPattern=FillPattern.Solid),
+          Text(
+            extent={{-188,6},{-148,-6}},
+            lineColor={28,108,200},
+            textString="P_FAREF"),
+          Text(
+            extent={{-60,6},{-2,-6}},
+            lineColor={28,108,200},
+            textString="Q_REF_PF"),
+          Text(
+            extent={{-160,80},{-40,40}},
+            lineColor={238,46,47},
+            textString="PF Controller")}));
   end pf_Controller;
 equation
   connect(P, PF_Controller.u) annotation (Line(points={{-200,0},{-170,0},{-140,0},{-140,48},{-120.8,48}}, color={0,150,00}));
@@ -454,20 +459,24 @@ protected
               lineThickness=0.5,
               fillColor={0,0,255},
               fillPattern=FillPattern.Solid,
-              textString="WindControl Emulator")}), Icon(coordinateSystem(extent={{-200,-200},{200,200}}, preserveAspectRatio=true), graphics={Rectangle(
-              extent={{-200,200},{200,-200}},
-              lineColor={28,108,200},
-              fillColor={255,255,255},
-              fillPattern=FillPattern.Solid),Text(
-              extent={{-196,14},{-76,-16}},
-              lineColor={28,108,200},
-              textString="V_REG"),Text(
-              extent={{80,14},{200,-16}},
-              lineColor={28,108,200},
-              textString="Q_ORD"),Text(
-              extent={{-172,162},{180,72}},
-              lineColor={180,56,148},
-              textString="WindCONTROL Emulator")}));
+              textString="WindControl Emulator")}), Icon(coordinateSystem(extent={{-200,-200},{200,200}}, preserveAspectRatio=true), graphics={
+          Rectangle(
+            extent={{-200,200},{200,-200}},
+            lineColor={28,108,200},
+            fillColor={255,255,255},
+            fillPattern=FillPattern.Solid),
+          Text(
+            extent={{-196,14},{-76,-16}},
+            lineColor={28,108,200},
+            textString="V_REG"),
+          Text(
+            extent={{80,14},{200,-16}},
+            lineColor={28,108,200},
+            textString="Q_ORD"),
+          Text(
+            extent={{-172,162},{180,72}},
+            lineColor={180,56,148},
+            textString="WindCONTROL Emulator")}));
   end windControlEmulator;
 equation
   connect(windControlEmulator1.V_REG, Vcl.u2) annotation (Line(points={{-120.4,160},{-160,160},{-160,-160},{118,-160},{118,52}}, color={255,0,00}));
@@ -487,33 +496,39 @@ equation
     Diagram(coordinateSystem(
         preserveAspectRatio=false,
         extent={{-200,-200},{200,200}},
-        initialScale=0.05), graphics={Rectangle(
+        initialScale=0.05), graphics={
+        Rectangle(
           extent={{46,118},{192,24}},
           lineColor={255,0,0},
           lineThickness=0.5,
-          pattern=LinePattern.Dash),Text(
+          pattern=LinePattern.Dash),
+        Text(
           extent={{64,116},{170,108}},
           lineColor={255,0,0},
           pattern=LinePattern.Dash,
           lineThickness=0.5,
           fillColor={0,0,255},
           fillPattern=FillPattern.Solid,
-          textString="Reactive Power Control"),Rectangle(
+          textString="Reactive Power Control"),
+        Rectangle(
           extent={{-134,130},{14,-20}},
           lineColor={0,140,72},
           lineThickness=0.5,
-          pattern=LinePattern.Dash),Text(
+          pattern=LinePattern.Dash),
+        Text(
           extent={{-130,128},{-24,120}},
           lineColor={0,140,72},
           pattern=LinePattern.Dash,
           lineThickness=0.5,
           fillColor={0,0,255},
           fillPattern=FillPattern.Solid,
-          textString="Reactive Power Reference Switching"),Rectangle(
+          textString="Reactive Power Reference Switching"),
+        Rectangle(
           extent={{104,104},{190,26}},
           lineColor={102,44,145},
           lineThickness=0.5,
-          pattern=LinePattern.Dash),Text(
+          pattern=LinePattern.Dash),
+        Text(
           extent={{92,104},{198,96}},
           lineColor={180,56,148},
           pattern=LinePattern.Dash,
@@ -524,38 +539,45 @@ equation
     Icon(coordinateSystem(
         extent={{-200,-200},{200,200}},
         preserveAspectRatio=false,
-        initialScale=0.05), graphics={Rectangle(
+        initialScale=0.05), graphics={
+        Rectangle(
           extent={{-200,200},{200,-200}},
           lineColor={28,108,200},
           fillColor={255,255,255},
-          fillPattern=FillPattern.Solid),Text(
+          fillPattern=FillPattern.Solid),
+        Text(
           extent={{-70,42},{82,-36}},
           lineColor={28,108,200},
-          textString="WT4E1"),Text(
+          textString="WT4E1"),
+        Text(
           extent={{110,172},{170,142}},
           lineColor={28,108,200},
           lineThickness=0.5,
           fillColor={255,255,255},
           fillPattern=FillPattern.Solid,
-          textString="V"),Text(
+          textString="V"),
+        Text(
           extent={{110,114},{170,84}},
           lineColor={28,108,200},
           lineThickness=0.5,
           fillColor={255,255,255},
           fillPattern=FillPattern.Solid,
-          textString="Q"),Text(
+          textString="Q"),
+        Text(
           extent={{110,56},{170,26}},
           lineColor={28,108,200},
           lineThickness=0.5,
           fillColor={255,255,255},
           fillPattern=FillPattern.Solid,
-          textString="P"),Text(
+          textString="P"),
+        Text(
           extent={{82,-42},{194,-74}},
           lineColor={28,108,200},
           lineThickness=0.5,
           fillColor={255,255,255},
           fillPattern=FillPattern.Solid,
-          textString="WIPCMD"),Text(
+          textString="WIPCMD"),
+        Text(
           extent={{82,-124},{194,-156}},
           lineColor={28,108,200},
           lineThickness=0.5,

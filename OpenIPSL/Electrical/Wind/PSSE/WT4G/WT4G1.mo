@@ -1,8 +1,7 @@
 within OpenIPSL.Electrical.Wind.PSSE.WT4G;
 model WT4G1 "Wind Generator Model with Power Converter (Type 4)"
-  import iPSL = OpenIPSL;
   // Extending the PF component
-  extends iPSL.Electrical.Essentials.pfComponent;
+  extends OpenIPSL.Electrical.Essentials.pfComponent;
 
   //Constants
   constant Real pi=Modelica.Constants.pi;
@@ -14,8 +13,7 @@ model WT4G1 "Wind Generator Model with Power Converter (Type 4)"
   parameter Real V_LVPL1 "LVPL voltage 1 (Low voltage power logic)";
   parameter Real V_LVPL2 "LVPL voltage 2";
   parameter Real G_LVPL "LVPL gain";
-  parameter Real V_HVRCR
-    "HVRCR voltage (High voltage reactive current limiter)";
+  parameter Real V_HVRCR "HVRCR voltage (High voltage reactive current limiter)";
   parameter Real CUR_HVRCR "HVRCR current (Max. reactive current at VHVRCR)";
   parameter Real RIp_LVPL "Rate of LVACR active current change";
   parameter Real T_LVPL "Voltage sensor for LVACR time constant";
@@ -28,12 +26,12 @@ protected
 public
   Complex Is "Equivalent internal current source";
 
-  iPSL.Connectors.PwPin p(
+  OpenIPSL.Connectors.PwPin p(
     vr(start=vr0),
     vi(start=vi0),
     ir(start=ir1),
     ii(start=ii1)) annotation (Placement(transformation(extent={{100,-10},{120,10}}),iconTransformation(extent={{100,-10},{120,10}})));
-  iPSL.NonElectrical.Continuous.SimpleLag K1(
+  OpenIPSL.NonElectrical.Continuous.SimpleLag K1(
     K=1,
     T=T_IQCmd,
     y_start=Iy0) annotation (Placement(transformation(extent={{-30,70},{-20,80}})));
@@ -58,11 +56,11 @@ public
         rotation=180,
         origin={-110,-80})));
   Modelica.Blocks.Math.Feedback Iperr(y(start=0, fixed=true)) annotation (Placement(transformation(extent={{-80,35},{-70,45}})));
-  iPSL.Electrical.Wind.PSSE.Submodels.LVACL lVACL annotation (Placement(transformation(extent={{68,30},{88,50}})));
-  iPSL.Electrical.Wind.PSSE.Submodels.HVRCL hVRCL(VHVRCR=V_HVRCR, CurHVRCR=CUR_HVRCR) annotation (Placement(transformation(extent={{50,65},{70,85}})));
+  OpenIPSL.Electrical.Wind.PSSE.Submodels.LVACL lVACL annotation (Placement(transformation(extent={{68,30},{88,50}})));
+  OpenIPSL.Electrical.Wind.PSSE.Submodels.HVRCL hVRCL(VHVRCR=V_HVRCR, CurHVRCR=CUR_HVRCR) annotation (Placement(transformation(extent={{50,65},{70,85}})));
   Modelica.Blocks.Interfaces.RealOutput IyL(start=Iy0) annotation (Placement(transformation(extent={{100,65},{120,85}}), iconTransformation(extent={{100,70},{120,90}})));
   Modelica.Blocks.Interfaces.RealOutput IxL(start=Ix0) annotation (Placement(transformation(extent={{96,34},{114,52}}), iconTransformation(extent={{100,30},{120,50}})));
-  iPSL.Electrical.Wind.PSSE.Submodels.LVPL lVPL(
+  OpenIPSL.Electrical.Wind.PSSE.Submodels.LVPL lVPL(
     VLVPL1=V_LVPL1,
     VLVPL2=V_LVPL2,
     GLVPL=G_LVPL) annotation (Placement(transformation(extent={{40,-40},{20,-20}})));
@@ -72,26 +70,18 @@ public
 
   //Initialization parameters
 protected
-  parameter Real p0=P_0/M_b
-    "initial value of bus active power in p.u. machinebase";
-  parameter Real q0=Q_0/M_b
-    "initial value of bus reactive power in p.u. machinebase";
+  parameter Real p0=P_0/M_b "initial value of bus active power in p.u. machinebase";
+  parameter Real q0=Q_0/M_b "initial value of bus reactive power in p.u. machinebase";
   parameter Real v0=V_0;
-  parameter Real vr0=v0*cos(anglev_rad)
-    "Real component of initial terminal voltage";
-  parameter Real vi0=v0*sin(anglev_rad)
-    "Imaginary component of intitial terminal voltage";
-  parameter Real ir0=(p0*vr0 + q0*vi0)/(vr0^2 + vi0^2)
-    "Real component of initial armature current, M_b";
-  parameter Real ii0=(p0*vi0 - q0*vr0)/(vr0^2 + vi0^2)
-    "Imaginary component of initial armature current, M_b";
+  parameter Real vr0=v0*cos(anglev_rad) "Real component of initial terminal voltage";
+  parameter Real vi0=v0*sin(anglev_rad) "Imaginary component of intitial terminal voltage";
+  parameter Real ir0=(p0*vr0 + q0*vi0)/(vr0^2 + vi0^2) "Real component of initial armature current, M_b";
+  parameter Real ii0=(p0*vi0 - q0*vr0)/(vr0^2 + vi0^2) "Imaginary component of initial armature current, M_b";
   parameter Real Isr0=ir0 "Sorce current re M_b";
   parameter Real Isi0=ii0 "Sorce current im M_b";
   parameter Real CoB=M_b/S_b;
-  parameter Real ir1=-CoB*(p0*vr0 + q0*vi0)/(vr0^2 + vi0^2)
-    "Real component of initial armature current, S_b";
-  parameter Real ii1=-CoB*(p0*vi0 - q0*vr0)/(vr0^2 + vi0^2)
-    "Imaginary component of initial armature current, S_b";
+  parameter Real ir1=-CoB*(p0*vr0 + q0*vi0)/(vr0^2 + vi0^2) "Real component of initial armature current, S_b";
+  parameter Real ii1=-CoB*(p0*vi0 - q0*vr0)/(vr0^2 + vi0^2) "Imaginary component of initial armature current, S_b";
   parameter Real Ipcmd0=Ix0;
   parameter Real anglev_rad=angle_0*pi/180 "initial value of bus anglev in rad";
   parameter Real Ix0=Isr0*cos(-anglev_rad) - Isi0*sin(-anglev_rad);
@@ -158,17 +148,20 @@ equation
     Diagram(coordinateSystem(
         preserveAspectRatio=true,
         extent={{-100,-100},{100,100}},
-        grid={2,2}), graphics={Text(
+        grid={2,2}), graphics={
+        Text(
           extent={{-55,51},{-36,48}},
           lineColor={0,0,127},
           fillColor={0,0,255},
           fillPattern=FillPattern.Solid,
-          textString="RIp_LVPL"),Text(
+          textString="RIp_LVPL"),
+        Text(
           extent={{12,62},{36,56}},
           lineColor={0,0,127},
           fillColor={0,0,255},
           fillPattern=FillPattern.Solid,
-          textString="LVPL"),Text(
+          textString="LVPL"),
+        Text(
           extent={{-98,-78},{0,-100}},
           lineColor={255,0,0},
           textStyle={TextStyle.Bold},
@@ -179,68 +172,80 @@ specified at PSSE model dialog")}),
     Icon(coordinateSystem(
         preserveAspectRatio=true,
         extent={{-100,-100},{100,100}},
-        grid={2,2}), graphics={Rectangle(
+        grid={2,2}), graphics={
+        Rectangle(
           extent={{-100,100},{100,-100}},
           lineColor={28,108,200},
           fillColor={255,255,255},
-          fillPattern=FillPattern.Solid),Text(
+          fillPattern=FillPattern.Solid),
+        Text(
           extent={{-34,18},{42,-14}},
           lineColor={28,108,200},
-          textString="WT4G1"),Text(
+          textString="WT4G1"),
+        Text(
           extent={{-76,86},{-42,74}},
           lineColor={28,108,200},
           lineThickness=0.5,
           fillColor={255,255,255},
           fillPattern=FillPattern.Solid,
-          textString="I_qcmd"),Text(
+          textString="I_qcmd"),
+        Text(
           extent={{-76,46},{-42,34}},
           lineColor={28,108,200},
           lineThickness=0.5,
           fillColor={255,255,255},
           fillPattern=FillPattern.Solid,
-          textString="I_pcmd"),Text(
+          textString="I_pcmd"),
+        Text(
           extent={{-94,6},{-80,-6}},
           lineColor={28,108,200},
           lineThickness=0.5,
           fillColor={255,255,255},
           fillPattern=FillPattern.Solid,
-          textString="V"),Text(
+          textString="V"),
+        Text(
           extent={{-94,-34},{-80,-46}},
           lineColor={28,108,200},
           lineThickness=0.5,
           fillColor={255,255,255},
           fillPattern=FillPattern.Solid,
-          textString="P"),Text(
+          textString="P"),
+        Text(
           extent={{-96,-74},{-82,-86}},
           lineColor={28,108,200},
           lineThickness=0.5,
           fillColor={255,255,255},
           fillPattern=FillPattern.Solid,
-          textString="Q"),Text(
+          textString="Q"),
+        Text(
           extent={{-80,100},{-40,88}},
           lineColor={28,108,200},
           lineThickness=0.5,
           fillColor={255,255,255},
           fillPattern=FillPattern.Solid,
-          textString="I_qcmd0"),Text(
+          textString="I_qcmd0"),
+        Text(
           extent={{-36,100},{4,88}},
           lineColor={28,108,200},
           lineThickness=0.5,
           fillColor={255,255,255},
           fillPattern=FillPattern.Solid,
-          textString="I_pcmd0"),Text(
+          textString="I_pcmd0"),
+        Text(
           extent={{74,86},{98,74}},
           lineColor={28,108,200},
           lineThickness=0.5,
           fillColor={255,255,255},
           fillPattern=FillPattern.Solid,
-          textString="I_yL"),Text(
+          textString="I_yL"),
+        Text(
           extent={{74,46},{98,34}},
           lineColor={28,108,200},
           lineThickness=0.5,
           fillColor={255,255,255},
           fillPattern=FillPattern.Solid,
-          textString="I_xL"),Text(
+          textString="I_xL"),
+        Text(
           extent={{76,-54},{100,-66}},
           lineColor={28,108,200},
           lineThickness=0.5,

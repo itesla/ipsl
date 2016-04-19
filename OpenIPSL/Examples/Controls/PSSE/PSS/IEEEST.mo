@@ -1,8 +1,7 @@
 within OpenIPSL.Examples.Controls.PSSE.PSS;
 model IEEEST "SMIB system with one load and GENROE model"
-  import iPSL = OpenIPSL;
-  extends iPSL.Examples.SMIBpartial;
-  iPSL.Electrical.Machines.PSSE.GENROE gENROE(
+  extends OpenIPSL.Examples.SMIBpartial;
+  OpenIPSL.Electrical.Machines.PSSE.GENROE gENROE(
     M_b=100,
     Tpd0=5,
     Tppd0=0.07,
@@ -25,7 +24,7 @@ model IEEEST "SMIB system with one load and GENROE model"
     Xppq=0.2)
     annotation (Placement(transformation(extent={{-102,-20},{-62,20}})));
   Modelica.Blocks.Sources.Constant const(k=0) annotation (Placement(transformation(extent={{-22,-86},{-42,-66}})));
-  iPSL.Electrical.Controls.PSSE.ES.ESST1A eSST1A(
+  OpenIPSL.Electrical.Controls.PSSE.ES.ESST1A eSST1A(
     V_IMAX=0.3,
     V_IMIN=-0.3,
     T_C=2,
@@ -47,7 +46,7 @@ model IEEEST "SMIB system with one load and GENROE model"
     annotation (Placement(transformation(extent={{-58,-90},{-110,-60}})));
   Modelica.Blocks.Sources.Constant const1(k=-Modelica.Constants.inf) annotation (Placement(transformation(extent={{-22,-120},{-42,-100}})));
   Modelica.Blocks.Sources.Constant const2(k=Modelica.Constants.inf) annotation (Placement(transformation(extent={{-20,-150},{-40,-130}})));
-  iPSL.Electrical.Controls.PSSE.PSS.IEEEST iEEEST(
+  OpenIPSL.Electrical.Controls.PSSE.PSS.IEEEST iEEEST(
     A_1=48.7435,
     A_2=4.7488,
     A_3=0.0,

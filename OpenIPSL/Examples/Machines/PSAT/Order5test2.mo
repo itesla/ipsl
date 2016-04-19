@@ -1,6 +1,5 @@
 within OpenIPSL.Examples.Machines.PSAT;
 model Order5test2
-  import OpenIPSL;
   extends OpenIPSL.Examples.BaseTest;
   extends Modelica.Icons.Example;
   OpenIPSL.Electrical.Machines.PSAT.Order5_Type1 order5Type1_Inputs_Outputs(

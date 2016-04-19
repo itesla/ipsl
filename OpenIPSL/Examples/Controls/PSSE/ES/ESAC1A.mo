@@ -1,8 +1,7 @@
 within OpenIPSL.Examples.Controls.PSSE.ES;
 model ESAC1A "SMIB system with one load and GENROE model"
-  import iPSL = OpenIPSL;
-  extends iPSL.Examples.SMIBpartial;
-  iPSL.Electrical.Machines.PSSE.GENROE gENROE(
+  extends OpenIPSL.Examples.SMIBpartial;
+  OpenIPSL.Electrical.Machines.PSSE.GENROE gENROE(
     M_b=100,
     Tpd0=5,
     Tppd0=0.07,
@@ -27,7 +26,7 @@ model ESAC1A "SMIB system with one load and GENROE model"
   Modelica.Blocks.Sources.Constant const(k=0) annotation (Placement(transformation(extent={{-28,-58},{-38,-48}})));
   Modelica.Blocks.Sources.Constant const1(k=-Modelica.Constants.inf) annotation (Placement(transformation(extent={{-28,-80},{-38,-70}})));
   Modelica.Blocks.Sources.Constant const2(k=Modelica.Constants.inf) annotation (Placement(transformation(extent={{-28,-100},{-38,-90}})));
-  iPSL.Electrical.Controls.PSSE.ES.ESAC1A eSAC1A(
+  OpenIPSL.Electrical.Controls.PSSE.ES.ESAC1A eSAC1A(
     T_R=0.04,
     T_B=2,
     T_C=10,
@@ -48,7 +47,7 @@ model ESAC1A "SMIB system with one load and GENROE model"
     V_RMAX=3,
     V_RMIN=-3)
     annotation (Placement(transformation(extent={{-52,-58},{-106,-38}})));
-  inner iPSL.Electrical.SystemBase SysData annotation (Placement(transformation(extent={{-100,80},{-40,100}})));
+  inner OpenIPSL.Electrical.SystemBase SysData annotation (Placement(transformation(extent={{-100,80},{-40,100}})));
 equation
   connect(gENROE.PMECH, gENROE.PMECH0) annotation (Line(points={{-99.6,10},{-110,10},{-110,26},{-48,26},{-48,-6},{-58.4,-6}}, color={0,0,127}));
   connect(eSAC1A.VOTHSG, const.y) annotation (Line(points={{-52.587,-53},{-52.587,-53},{-38.5,-53}}, color={0,0,127}));

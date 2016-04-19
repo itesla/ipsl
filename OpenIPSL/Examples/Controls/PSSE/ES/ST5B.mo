@@ -1,8 +1,7 @@
 within OpenIPSL.Examples.Controls.PSSE.ES;
 model ST5B "SMIB system with one load and GENROE model"
-  import iPSL = OpenIPSL;
-  extends iPSL.Examples.SMIBpartial;
-  iPSL.Electrical.Controls.PSSE.ES.ST5B sT5B(
+  extends OpenIPSL.Examples.SMIBpartial;
+  OpenIPSL.Electrical.Controls.PSSE.ES.ST5B sT5B(
     T_R=0,
     T_C1=0.8,
     T_B1=6,
@@ -25,7 +24,7 @@ model ST5B "SMIB system with one load and GENROE model"
   Modelica.Blocks.Sources.Constant PSS_off(k=0) annotation (Placement(transformation(extent={{-140,-102},{-128,-90}})));
   Modelica.Blocks.Sources.Constant VOEL(k=100) annotation (Placement(transformation(extent={{-140,-122},{-128,-110}})));
   Modelica.Blocks.Sources.Constant VUEL(k=-100) annotation (Placement(transformation(extent={{-140,-142},{-128,-130}})));
-  iPSL.Electrical.Machines.PSSE.GENROE gENROE(
+  OpenIPSL.Electrical.Machines.PSSE.GENROE gENROE(
     M_b=100,
     Tpd0=5,
     Tppd0=0.07,
