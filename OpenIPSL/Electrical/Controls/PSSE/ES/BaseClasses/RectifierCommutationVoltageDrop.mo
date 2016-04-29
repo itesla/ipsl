@@ -31,7 +31,7 @@ equation
   connect(product1.y, EFD) annotation (Line(points={{81,0},{110,0}}, color={0,0,127}));
   connect(fEX.y, product1.u2) annotation (Line(points={{21,0},{48,0},{48,-6},{58,-6}}, color={0,0,127}));
   connect(product1.u1, division.u2) annotation (Line(points={{58,6},{48,6},{48,20},{-80,20},{-80,-6},{-42,-6}}, color={0,0,127}));
-  annotation (Icon(coordinateSystem(preserveAspectRatio=false), graphics={
+  annotation (Icon(coordinateSystem(initialScale=0.1), graphics={
         Rectangle(
           extent={{-100,100},{100,-100}},
           lineColor={28,108,200},
@@ -55,5 +55,5 @@ Voltage Drop"),
         Text(
           extent={{76,6},{98,-4}},
           lineColor={28,108,200},
-          textString="EFD")}), Diagram(coordinateSystem(preserveAspectRatio=false)));
+          textString="EFD")}), Diagram(coordinateSystem(initialScale=0.1)));
 end RectifierCommutationVoltageDrop;

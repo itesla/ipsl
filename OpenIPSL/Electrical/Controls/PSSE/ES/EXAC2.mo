@@ -145,8 +145,8 @@ equation
   connect(gain3.y, lV_GATE.n2) annotation (Line(points={{51,-30},{44.625,-30},{44.625,-3}}, color={0,0,127}));
   connect(DiffV1.y, lV_GATE.n1) annotation (Line(points={{41,0},{44.625,0},{44.625,3}}, color={0,0,127}));
   annotation (
-    Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-200,-200},{200,160}})),
-    Icon(coordinateSystem(preserveAspectRatio=false, extent={{-200,-200},{200,160}}), graphics={Text(
+    Diagram(coordinateSystem(extent={{-200,-200},{200,160}}, initialScale=0.1)),
+    Icon(coordinateSystem(extent={{-200,-200},{200,160}}, initialScale=0.1), graphics={Text(
           extent={{-184,-62},{-114,-82}},
           lineColor={28,108,200},
           textString="XADIFD"), Text(

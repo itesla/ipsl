@@ -109,8 +109,8 @@ equation
   connect(add3_2.y, add3_1.u1) annotation (Line(points={{-100,-79},{-98,-79},{-98,-20},{-90,-20},{-90,8},{-62,8}}, color={0,0,127}));
   connect(imDerivativeLag.y, add3_1.u3) annotation (Line(points={{-1,-50},{-26,-50},{-70,-50},{-70,-8},{-62,-8}}, color={0,0,127}));
   annotation (
-    Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-200,-200},{200,160}})),
-    Icon(coordinateSystem(preserveAspectRatio=false, extent={{-200,-200},{200,160}}), graphics={Text(
+    Diagram(coordinateSystem(extent={{-200,-200},{200,160}}, initialScale=0.1)),
+    Icon(coordinateSystem(extent={{-200,-200},{200,160}}, initialScale=0.1), graphics={Text(
           extent={{-184,-62},{-114,-82}},
           lineColor={28,108,200},
           textString="XADIFD"), Text(

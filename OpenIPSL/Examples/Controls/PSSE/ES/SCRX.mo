@@ -47,7 +47,6 @@ equation
   connect(sCRX.VUEL, sCRX.VOTHSG) annotation (Line(points={{-79.95,-58},{-70,-58},{-70,-36},{-74,-36},{-74,-35.4444}}, color={0,0,127}));
   connect(sCRX.XADIFD, gENROE.XADIFD) annotation (Line(points={{-74,-47.8889},{-64,-47.8889},{-64,-18},{-70.4,-18}}, color={0,0,127}));
   connect(sCRX.EFD0, gENROE.EFD0) annotation (Line(points={{-74,-52.5556},{-62,-52.5556},{-62,-14},{-70.4,-14}}, color={0,0,127}));
-  connect(sCRX.ETERM, sCRX.ECOMP) annotation (Line(points={{-73.8583,-50.44},{-66,-50.44},{-66,-31.82},{-74.1417,-31.82}}, color={0,0,127}));
   connect(gENROE.p, GEN1.p) annotation (Line(points={{-70,0},{-70,0},{-40,0}}, color={0,0,255}));
   annotation (
     Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-120,-100},{120,100}})),

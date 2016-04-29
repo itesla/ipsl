@@ -34,9 +34,9 @@ model IEEET1 "SMIB system with one load and GENROE model"
     S_EE_1=0.3,
     E_2=3.8,
     S_EE_2=0.6,
-    K_E=0,
     V_RMAX=2,
-    V_RMIN=-2) annotation (Placement(transformation(extent={{-74,-58},{-106,-32}})));
+    V_RMIN=-2,
+    K_E=0.1) annotation (Placement(transformation(extent={{-74,-58},{-106,-32}})));
   inner iPSL.Electrical.SystemBase SysData annotation (Placement(transformation(extent={{-100,80},{-40,100}})));
 equation
   connect(gENROE.PMECH, gENROE.PMECH0) annotation (Line(points={{-107.6,10},{-118,10},{-118,26},{-56,26},{-56,-6},{-66.4,-6}}, color={0,0,127}));

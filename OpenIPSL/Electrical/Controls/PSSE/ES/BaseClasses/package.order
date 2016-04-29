@@ -1,8 +1,10 @@
 SelectLogic
-VE
 BaseExciter
 RotatingExciter
 RotatingExciterLimited
 RotatingExciterWithDemagnetization
 RotatingExciterWithDemagnetizationLimited
+RotatingExciterWithDemagnetizationVarLim
 RectifierCommutationVoltageDrop
+calculate_dc_exciter_params
+RotatingExciterBase

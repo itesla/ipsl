@@ -66,8 +66,11 @@ equation
   connect(XADIFD, negCurLogic.XadIfd) annotation (Line(points={{-200,-70},{-32,-70},{140,-70},{140,-5},{147.5,-5}}, color={0,0,127}));
   annotation (
     Placement(transformation(extent={{-114,44},{-102,58}}), iconTransformation(extent={{-100,-50},{-90,-40}})),
-    Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-200,-200},{200,160}})),
-    Icon(coordinateSystem(preserveAspectRatio=true, extent={{-200,-200},{200,160}}), graphics={Text(
+    Diagram(coordinateSystem(extent={{-200,-200},{200,160}}, initialScale=0.1)),
+    Icon(coordinateSystem(
+        preserveAspectRatio=true,
+        extent={{-200,-200},{200,160}},
+        initialScale=0.1), graphics={Text(
           extent={{-186,-62},{-116,-82}},
           lineColor={28,108,200},
           textString="XADIFD"), Text(

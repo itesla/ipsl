@@ -44,7 +44,7 @@ initial algorithm
 
 equation
   connect(VoltageReference.y, DiffV.u1) annotation (Line(points={{-149,50},{-132,50},{-132,6},{-122,6}}, color={0,0,127}));
-  annotation (Icon(coordinateSystem(preserveAspectRatio=false, extent={{-200,-200},{200,160}}), graphics={
+  annotation (Icon(coordinateSystem(extent={{-200,-200},{200,160}}, initialScale=0.1), graphics={
         Rectangle(
           extent={{-200,160},{200,-200}},
           lineColor={28,108,200},
@@ -73,5 +73,5 @@ equation
         Text(
           extent={{152,12},{194,-8}},
           lineColor={28,108,200},
-          textString="EFD")}), Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-200,-200},{200,160}})));
+          textString="EFD")}), Diagram(coordinateSystem(extent={{-200,-200},{200,160}}, initialScale=0.1)));
 end BaseExciter;

@@ -2,6 +2,7 @@ within OpenIPSL.Electrical.Controls.PSSE.ES;
 model IEEET1 "IEEE Type 1 excitation system"
   extends OpenIPSL.Electrical.Controls.PSSE.ES.BaseClasses.BaseExciter;
   import OpenIPSL.NonElectrical.Functions.SE;
+  import OpenIPSL.Electrical.Controls.PSSE.ES.BaseClasses.calculate_dc_exciter_params;
 
   parameter Real T_R=1 "Voltage input time constant (s)";
   parameter Real K_A=40 "AVR gain";
@@ -37,26 +38,6 @@ protected
   parameter Real SE_Efd0(fixed=false);
   parameter Real VR0(fixed=false);
 
-  function ini0
-    input Real VRMAX;
-    input Real KE;
-    input Real E2;
-    input Real SE2;
-    input Real Efd0;
-    input Real SE_Efd0;
-    output Real Vrmax;
-    output Real Ke;
-  algorithm
-    Vrmax := if VRMAX == 0 and KE > 0 then (SE2 + KE)*E2 else SE2*E2;
-    if VRMAX > 0 then
-      Vrmax := VRMAX;
-    end if;
-    if KE == 0 then
-      Ke := Vrmax/(10*Efd0) - SE_Efd0;
-    else
-      Ke := KE;
-    end if;
-  end ini0;
 public
   BaseClasses.RotatingExciter rotatingExciter(
     T_E=T_E,
@@ -82,8 +63,9 @@ initial algorithm
     S_EE_2,
     E_1,
     E_2);
-  (VRMAX0,KE0) := ini0(
+  (VRMAX0,VRMIN0,KE0) := calculate_dc_exciter_params(
     V_RMAX,
+    V_RMIN,
     K_E,
     E_2,
     S_EE_2,
@@ -108,11 +90,11 @@ equation
   connect(DiffV1.u2, VOEL) annotation (Line(points={{-94,-142},{-94,-160},{-70,-160},{-70,-200}}, color={0,0,127}));
   connect(DiffV1.y, sum2.u3) annotation (Line(points={{-100,-119},{-100,-20},{-80,-20},{-80,-8},{-62,-8}}, color={0,0,127}));
   annotation (
-    Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-200,-200},{200,160}})),
-    Icon(coordinateSystem(preserveAspectRatio=false, extent={{-200,-200},{200,160}}), graphics={Text(
-          extent={{-130,8},{-80,-8}},
-          lineColor={0,0,255},
-          textString="VUEL")}),
+    Diagram(coordinateSystem(extent={{-200,-200},{200,160}}, initialScale=0.1)),
+    Icon(coordinateSystem(extent={{-200,-200},{200,160}}, initialScale=0.1), graphics={Text(
+          extent={{-100,154},{100,94}},
+          lineColor={28,108,200},
+          textString="IEEET1")}),
     Documentation(revisions="<html>
 <!--DISCLAIMER-->
 <p>Copyright 2015-2016 RTE (France), SmarTS Lab (Sweden), AIA (Spain) and DTU (Denmark)</p>
@@ -126,5 +108,24 @@ equation
 
 <p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
 <p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
+</html>", info="<html>
+<table cellspacing=\"1\" cellpadding=\"1\" border=\"1\">
+<tr>
+<td><p>Reference</p></td>
+<td>PSS/E Manual</td>
+</tr>
+<tr>
+<td><p>Last update</p></td>
+<td>2016-04-29</td>
+</tr>
+<tr>
+<td><p>Author</p></td>
+<td><p>Tin Rabuzin,SmarTS Lab, KTH Royal Institute of Technology</p></td>
+</tr>
+<tr>
+<td><p>Contact</p></td>
+<td><p><a href=\"mailto:luigiv@kth.se\">luigiv@kth.se</a></p></td>
+</tr>
+</table>
 </html>"));
 end IEEET1;

@@ -34,27 +34,12 @@ model ESAC1A
     K=1,
     T1=T_C,
     T2=T_B,
-    y_start=VR0/K_A) annotation (Placement(transformation(extent={{-52,30},{-32,50}})));
+    y_start=VR0/K_A,
+    x_start=VR0/K_A) annotation (Placement(transformation(extent={{-52,30},{-32,50}})));
   NonElectrical.Continuous.SimpleLag imSimpleLag(
     K=1,
     y_start=ECOMP0,
     T=T_R) annotation (Placement(transformation(extent={{-170,-10},{-150,10}})));
-  Modelica.Blocks.Math.Gain gain2(k=K_C) annotation (Placement(transformation(
-        extent={{-10,-10},{10,10}},
-        rotation=90,
-        origin={198,-66})));
-  Modelica.Blocks.Math.Division division annotation (Placement(transformation(
-        extent={{-10,10},{10,-10}},
-        rotation=90,
-        origin={192,-34})));
-  NonElectrical.Nonlinear.FEX fEX annotation (Placement(transformation(
-        extent={{-8,-8},{8,8}},
-        rotation=90,
-        origin={192,2})));
-  Modelica.Blocks.Math.Product product1 annotation (Placement(transformation(
-        extent={{-10,-10},{10,10}},
-        rotation=0,
-        origin={212,32})));
   Modelica.Blocks.Nonlinear.Limiter limiter1(uMax=V_RMAX, uMin=V_RMIN) annotation (Placement(transformation(extent={{94,30},{114,50}})));
   NonElectrical.Continuous.SimpleLagLim simpleLagLim(
     K=K_A,
@@ -66,7 +51,8 @@ model ESAC1A
     k=K_F,
     T=T_F,
     initType=Modelica.Blocks.Types.Init.InitialOutput,
-    y_start=0) annotation (Placement(transformation(extent={{40,-10},{20,10}})));
+    y_start=0,
+    x_start=VFE0) annotation (Placement(transformation(extent={{40,-10},{20,10}})));
 
 protected
   parameter Real VR0(fixed=false);
@@ -76,16 +62,17 @@ protected
   parameter Real VFE0(fixed=false);
 
 public
-  BaseClasses.RotatingExciterWithDemagnetization rotatingExciterWithDemagnetization(
+  BaseClasses.RotatingExciterWithDemagnetizationLimited rotatingExciterWithDemagnetization(
     T_E=T_E,
     K_E=K_E,
     E_1=E_1,
     E_2=E_2,
     S_EE_1=S_EE_1,
     S_EE_2=S_EE_2,
-    Efd0=Efd0,
-    K_D=K_D) annotation (Placement(transformation(extent={{124,30},{144,50}})));
+    K_D=K_D,
+    Efd0=VE0) annotation (Placement(transformation(extent={{124,30},{144,50}})));
   Modelica.Blocks.Math.Add3 add3_1(k3=-1) annotation (Placement(transformation(extent={{-88,30},{-68,50}})));
+  BaseClasses.RectifierCommutationVoltageDrop rectifierCommutationVoltageDrop(K_C=K_C) annotation (Placement(transformation(extent={{160,30},{180,50}})));
 initial algorithm
 
   Ifd0 := XADIFD;
@@ -110,36 +97,26 @@ initial algorithm
   V_REF := VR0/K_A + ECOMP0;
 
 equation
-  connect(gain2.y, division.u1) annotation (Line(points={{198,-55},{198,-50.5},{198,-46}}, color={0,0,127}));
-  connect(division.u2, product1.u1) annotation (Line(points={{186,-46},{186,-52},{176,-52},{176,38},{200,38}}, color={0,0,127}));
   connect(imLeadLag.y, simpleLagLim.u) annotation (Line(points={{-31,40},{-18,40}}, color={0,0,127}));
-  connect(division.y, fEX.u) annotation (Line(points={{192,-23},{192,-14.5},{192,-6}}, color={0,0,127}));
-  connect(fEX.y, product1.u2) annotation (Line(points={{192,10.8},{192,26},{200,26}}, color={0,0,127}));
-  connect(product1.y, EFD) annotation (Line(points={{223,32},{226,32},{226,12},{210,12},{210,0}}, color={0,0,127}));
   connect(limiter1.y, rotatingExciterWithDemagnetization.I_C) annotation (Line(points={{115,40},{122.75,40}}, color={0,0,127}));
-  connect(rotatingExciterWithDemagnetization.EFD, product1.u1) annotation (Line(points={{145.25,40},{176,40},{176,38},{200,38}}, color={0,0,127}));
-  connect(XADIFD, gain2.u) annotation (Line(points={{200,-110},{198,-110},{198,-78}}, color={0,0,127}));
-  connect(rotatingExciterWithDemagnetization.XADIFD, gain2.u) annotation (Line(points={{134,28.75},{134,-86},{198,-86},{198,-78}}, color={0,0,127}));
-  connect(derivative.u, gain2.u) annotation (Line(points={{42,0},{134,0},{134,-86},{198,-86},{198,-78}}, color={0,0,127}));
   connect(ECOMP, imSimpleLag.u) annotation (Line(points={{-200,0},{-172,0}}, color={0,0,127}));
-  connect(VOEL, lV_GATE.n2) annotation (Line(points={{-70,-200},{-56,-200},{-56,-20},{48,-20},{48,43},{56.5,43}}, color={0,0,127}));
   connect(simpleLagLim.y, hV_GATE.n1) annotation (Line(points={{5,40},{12,40},{12,37},{18.5,37}}, color={0,0,127}));
   connect(VUEL, hV_GATE.n2) annotation (Line(points={{-130,-200},{-130,-40},{14,-40},{14,43},{18.5,43}}, color={0,0,127}));
   connect(imSimpleLag.y, DiffV.u2) annotation (Line(points={{-149,0},{-132,0},{-132,-6},{-122,-6}}, color={0,0,127}));
-  connect(add3_1.y, imLeadLag.u) annotation (Line(points={{-67,40},{-54,40},{-54,40}}, color={0,0,127}));
+  connect(add3_1.y, imLeadLag.u) annotation (Line(points={{-67,40},{-54,40}}, color={0,0,127}));
   connect(DiffV.y, add3_1.u2) annotation (Line(points={{-99,0},{-96,0},{-96,40},{-90,40}}, color={0,0,127}));
   connect(VOTHSG, add3_1.u1) annotation (Line(points={{-200,90},{-150,90},{-96,90},{-96,48},{-90,48}}, color={0,0,127}));
   connect(derivative.y, add3_1.u3) annotation (Line(points={{19,0},{-94,0},{-94,32},{-90,32}}, color={0,0,127}));
-  connect(limiter1.u, hV_GATE.n1) annotation (Line(points={{92,40},{82,40},{82,28},{8,28},{8,40},{12,40},{12,37},{18.5,37}}, color={0,0,127}));
-  connect(lV_GATE.n1, hV_GATE.n1) annotation (Line(points={{56.5,37},{56.5,28},{8,28},{8,40},{12,40},{12,37},{18.5,37}}, color={0,0,127}));
+  connect(derivative.u, rotatingExciterWithDemagnetization.V_FE) annotation (Line(points={{42,0},{82,0},{120,0},{120,33.75},{122.75,33.75}}, color={0,0,127}));
+  connect(XADIFD, rotatingExciterWithDemagnetization.XADIFD) annotation (Line(points={{200,-110},{134,-110},{134,28.75}}, color={0,0,127}));
+  connect(rotatingExciterWithDemagnetization.EFD, rectifierCommutationVoltageDrop.V_EX) annotation (Line(points={{145.25,40},{159,40}}, color={0,0,127}));
+  connect(rectifierCommutationVoltageDrop.XADIFD, rotatingExciterWithDemagnetization.XADIFD) annotation (Line(points={{170,29},{170,30},{170,-110},{134,-110},{134,28.75}}, color={0,0,127}));
+  connect(rectifierCommutationVoltageDrop.EFD, EFD) annotation (Line(points={{181,40},{190,40},{190,0},{210,0}}, color={0,0,127}));
+  connect(hV_GATE.p, lV_GATE.n2) annotation (Line(points={{42.5,40},{50,40},{50,43},{56.5,43}}, color={0,0,127}));
+  connect(VOEL, lV_GATE.n1) annotation (Line(points={{-70,-200},{-70,-200},{-70,-60},{50,-60},{50,37},{56.5,37}}, color={0,0,127}));
+  connect(lV_GATE.p, limiter1.u) annotation (Line(points={{80.5,40},{92,40},{92,40}}, color={0,0,127}));
   annotation (
-    Diagram(coordinateSystem(extent={{-200,-200},{200,160}}, initialScale=0.1), graphics={Text(
-          extent={{200,-20},{194,-18}},
-          lineColor={255,0,0},
-          textString="N"),Text(
-          extent={{192,-14},{198,-20}},
-          lineColor={255,0,0},
-          textString="I")}),
+    Diagram(coordinateSystem(extent={{-200,-200},{200,160}}, initialScale=0.1)),
     Icon(coordinateSystem(extent={{-200,-200},{200,160}}, initialScale=0.1), graphics={Text(
           extent={{-186,-60},{-116,-80}},
           lineColor={28,108,200},

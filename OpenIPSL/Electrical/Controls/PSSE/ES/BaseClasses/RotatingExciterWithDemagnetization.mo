@@ -1,7 +1,10 @@
 within OpenIPSL.Electrical.Controls.PSSE.ES.BaseClasses;
 model RotatingExciterWithDemagnetization
 
-  extends OpenIPSL.Electrical.Controls.PSSE.ES.BaseClasses.RotatingExciter(redeclare Modelica.Blocks.Math.Add3 Sum(k3=K_D));
+  extends OpenIPSL.Electrical.Controls.PSSE.ES.BaseClasses.RotatingExciterBase(redeclare Modelica.Blocks.Math.Add3 Sum(k3=K_D), redeclare Modelica.Blocks.Continuous.Integrator sISO(
+      k=1/T_E,
+      initType=Modelica.Blocks.Types.Init.InitialOutput,
+      y_start=Efd0));
   parameter Real K_D "Exciter demagnetizing factor (pu)";
 
   Modelica.Blocks.Interfaces.RealInput XADIFD annotation (Placement(transformation(
@@ -26,7 +29,7 @@ equation
           fillColor={255,255,255},
           fillPattern=FillPattern.Solid),
         Text(
-          extent={{-52,70},{44,56}},
+          extent={{-50,70},{46,56}},
           lineColor={28,108,200},
           fillColor={255,255,255},
           fillPattern=FillPattern.Solid,
