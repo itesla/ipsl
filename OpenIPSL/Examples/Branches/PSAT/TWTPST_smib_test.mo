@@ -21,7 +21,7 @@ model TWTPST_smib_test
     r=0.01,
     V_b=13800,
     kT=13.8/20) annotation (Placement(transformation(extent={{-80,-10},{-60,10}})));
-  OpenIPSL.Electrical.Buses.InfiniteBus infiniteBus(V=1, angle=0) annotation (Placement(transformation(extent={{-124,-44},{-104,-24}})));
+  OpenIPSL.Electrical.Buses.InfiniteBus infiniteBus(V_0=1, angle_0=0) annotation (Placement(transformation(extent={{-124,-44},{-104,-24}})));
   OpenIPSL.Electrical.Branches.PwLine pwLine(
     R=0.01,
     X=0.1,
@@ -41,14 +41,14 @@ model TWTPST_smib_test
   OpenIPSL.Electrical.Loads.PSAT.LOADPQ_variation lOADPQ1(
     P_0=0.02,
     Q_0=0.01,
-    Q2=0,
-    Q3=0,
-    t1=0,
-    t2=0,
-    t3=0,
-    t4=0,
-    P2=0,
-    P3=0) annotation (Placement(transformation(extent={{116,-10},{136,10}})));
+    dQ1=0,
+    dQ2=0,
+    t_start_1=0,
+    t_end_1=0,
+    t_start_2=0,
+    t_end_2=0,
+    dP1=0,
+    dP2=0) annotation (Placement(transformation(extent={{116,-10},{136,10}})));
   OpenIPSL.Electrical.Buses.Bus bus1 annotation (Placement(transformation(extent={{-100,-10},{-80,10}})));
   OpenIPSL.Electrical.Buses.Bus bus2 annotation (Placement(transformation(extent={{-56,-10},{-36,10}})));
   OpenIPSL.Electrical.Buses.Bus bus3 annotation (Placement(transformation(extent={{16,-10},{36,10}})));

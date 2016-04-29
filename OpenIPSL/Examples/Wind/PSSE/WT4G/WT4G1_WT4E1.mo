@@ -16,17 +16,17 @@ model WT4G1_WT4E1
   parameter Real X1=2.50000E-2;
   parameter Real B1=0.05000;
   parameter Real dyrw[1, 9]=[0.20000E-01, 0.20000E-01, 0.40000, 0.90000, 1.1100, 1.2000, 2.0000, 2.0000, 0.20000E-01];
-  iPSL.Electrical.Branches.PwLine pwLine(
+  OpenIPSL.Electrical.Branches.PwLine pwLine(
     R=R1,
     X=X1,
     G=0,
     B=B1/2) annotation (Placement(transformation(extent={{30,10},{50,30}})));
-  iPSL.Electrical.Branches.PwLine pwLine1(
+  OpenIPSL.Electrical.Branches.PwLine pwLine1(
     R=R1,
     X=X1,
     G=0,
     B=B1/2) annotation (Placement(transformation(extent={{30,-30},{50,-10}})));
-  iPSL.Electrical.Machines.PSSE.GENCLS gENCLS2_1(
+  OpenIPSL.Electrical.Machines.PSSE.GENCLS gENCLS2_1(
     V_0=V1,
     angle_0=A1,
     P_0=P1,
@@ -34,12 +34,12 @@ model WT4G1_WT4E1
     R_a=Zr,
     X_d=Zi,
     M_b=100) annotation (Placement(transformation(extent={{102,-12},{90,12}})));
-  iPSL.Electrical.Branches.PwLine pwLine2(
+  OpenIPSL.Electrical.Branches.PwLine pwLine2(
     G=0,
     B=0,
     R=2.50000E-3,
     X=2.50000E-3) annotation (Placement(transformation(extent={{-20,-10},{0,10}})));
-  iPSL.Electrical.Wind.PSSE.WT4G.WT4G1 wT4G1(
+  OpenIPSL.Electrical.Wind.PSSE.WT4G.WT4G1 wT4G1(
     V_0=V3,
     angle_0=A3,
     M_b=100,
@@ -57,12 +57,12 @@ model WT4G1_WT4E1
         extent={{12,12},{-12,-12}},
         rotation=180,
         origin={-52,0})));
-  iPSL.Electrical.Events.PwFault pwFault(
+  OpenIPSL.Electrical.Events.PwFault pwFault(
     R=0.5,
     X=0.5,
     t1=1,
     t2=1.5) annotation (Placement(transformation(extent={{20,-60},{40,-40}})));
-  iPSL.Electrical.Wind.PSSE.WT4G.WT4E1 wT4E1_1(
+  OpenIPSL.Electrical.Wind.PSSE.WT4G.WT4E1 wT4E1_1(
     PFAFLG=false,
     VARFLG=true,
     Tfv=0.15,
@@ -89,10 +89,10 @@ model WT4G1_WT4E1
     Iphl=1.11,
     Iqhl=1.11,
     PQFLAG=false) annotation (Placement(transformation(extent={{-96,12},{-72,-12}})));
-  inner iPSL.Electrical.SystemBase SysData(S_b=100, fn=60) annotation (Placement(transformation(extent={{-100,80},{-48,100}})));
-  iPSL.Electrical.Buses.Bus GEN annotation (Placement(transformation(extent={{-40,-10},{-20,10}})));
-  iPSL.Electrical.Buses.Bus BUS1 annotation (Placement(transformation(extent={{0,-10},{20,10}})));
-  iPSL.Electrical.Buses.Bus INF annotation (Placement(transformation(extent={{60,-10},{80,10}})));
+  inner OpenIPSL.Electrical.SystemBase SysData(S_b=100, fn=60) annotation (Placement(transformation(extent={{-100,80},{-48,100}})));
+  OpenIPSL.Electrical.Buses.Bus GEN annotation (Placement(transformation(extent={{-40,-10},{-20,10}})));
+  OpenIPSL.Electrical.Buses.Bus BUS1 annotation (Placement(transformation(extent={{0,-10},{20,10}})));
+  OpenIPSL.Electrical.Buses.Bus INF annotation (Placement(transformation(extent={{60,-10},{80,10}})));
 equation
   connect(wT4G1.p, GEN.p) annotation (Line(points={{-38.8,-1.77636e-015},{-40,-1.77636e-015},{-40,0},{-30,0}}, color={0,0,255}));
   connect(GEN.p, pwLine2.p) annotation (Line(points={{-30,0},{-21.6667,0}}, color={0,0,255}));
@@ -117,7 +117,7 @@ equation
 <li>AIA: <a href=\"http://www.aia.es/en/energy\"> http://www.aia.es/en/energy</a></li>
 <li>DTU: <a href=\"http://www.dtu.dk/english\"> http://www.dtu.dk/english</a></li>
 </ul>
-<p>The authors can be contacted by email: <a href=\"mailto:info@itesla-ipsl.org\">info@itesla-ipsl.org</a></p>
+<p>The authors can be contacted by email: <a href=\"mailto:info@itesla-OpenIPSL.org\">info@itesla-OpenIPSL.org</a></p>
 
 <p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
 <p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>

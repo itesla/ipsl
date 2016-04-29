@@ -2,7 +2,7 @@ within OpenIPSL.Examples.Controls.PSAT.TG;
 model TGTypeIII_test
 
   extends Modelica.Icons.Example;
-  OpenIPSL.Electrical.Machines.PSAT.ThirdOrder.Order3 order3_Inputs_Outputs1(
+  OpenIPSL.Electrical.Machines.PSAT.Order3 order3_Inputs_Outputs1(
     P_0=0.16041,
     Q_0=0.12012,
     V_b=400,
@@ -72,7 +72,7 @@ model TGTypeIII_test
         origin={10.863,-14.6714},
         extent={{-10.0,-10.0},{10.0,10.0}},
         rotation=0)));
-  OpenIPSL.Electrical.Buses.InfiniteBus infiniteBus(V=1, angle=0) annotation (Placement(transformation(
+  OpenIPSL.Electrical.Buses.InfiniteBus infiniteBus(V_0=1, angle_0=0) annotation (Placement(transformation(
         extent={{-6,-6},{6,6}},
         rotation=180,
         origin={54,-14})));

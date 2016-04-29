@@ -21,14 +21,14 @@ model PhaseShiftingTransformer_Test
   OpenIPSL.Electrical.Loads.PSAT.LOADPQ_variation lOADPQ1(
     P_0=0.02,
     Q_0=0.01,
-    t1=5,
-    t2=7.99,
-    t3=8,
-    t4=12,
-    Q2=0.01,
-    Q3=-0.01,
-    P2=0.02,
-    P3=-0.02) annotation (Placement(transformation(extent={{110,-10},{130,10}})));
+    t_start_1=5,
+    t_end_1=7.99,
+    t_start_2=8,
+    t_end_2=12,
+    dQ1=0.01,
+    dQ2=-0.01,
+    dP1=0.02,
+    dP2=-0.02) annotation (Placement(transformation(extent={{110,-10},{130,10}})));
   Modelica.Blocks.Sources.Sine sine1(amplitude=0.001, freqHz=0.2)
     annotation (Placement(visible=true, transformation(
         origin={-135.783,37.4652},

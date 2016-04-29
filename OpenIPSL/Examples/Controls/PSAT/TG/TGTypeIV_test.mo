@@ -79,7 +79,7 @@ model TGTypeIV_test
         origin={26.863,-12.6714},
         extent={{-10.0,-10.0},{10.0,10.0}},
         rotation=0)));
-  OpenIPSL.Electrical.Buses.InfiniteBus infiniteBus(V=1, angle=0) annotation (Placement(transformation(
+  OpenIPSL.Electrical.Buses.InfiniteBus infiniteBus(V_0=1, angle_0=0) annotation (Placement(transformation(
         extent={{-5,-5},{5,5}},
         rotation=180,
         origin={77,-11})));
