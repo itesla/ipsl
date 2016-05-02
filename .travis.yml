@@ -1,5 +1,4 @@
 language: bash
-branches: TravisCI
 python:
   - "2.7"
 
@@ -7,12 +6,6 @@ services: docker
 
 install:
   - docker pull smartslab/ci_openipsl
-  - docker run -d smartslab/ci_openipsl
 
 script:
-  - python runTests.py
-  - docker ps -a
-
-branches:
-  only:
-    - master
+  - docker run -i -t -v $(pwd):/OpenIPSL smartslab/ci_openipsl sh /OpenIPSL/CI/changeUser.sh
