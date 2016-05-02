@@ -80,24 +80,24 @@ protected
   parameter Real VA0(fixed=false);
   parameter Real VR0(fixed=false);
   parameter Real VE0(fixed=false);
-initial algorithm
-  Ifd0 := XADIFD;
-  VE0 := VE;
-  IN0 := K_C*Ifd0/VE0;
+initial equation
+  Ifd0 = XADIFD;
+  VE0 = VE;
+  IN0 = K_C*Ifd0/VE0;
   if IN0 <= 0 then
-    VB0 := IN0*1;
+    VB0 = IN0*1;
   elseif IN0 > 0 and IN0 <= 0.433 then
-    VB0 := IN0*(1 - 0.577*IN0);
+    VB0 = IN0*(1 - 0.577*IN0);
   elseif IN0 > 0.433 and IN0 < 0.75 then
-    VB0 := IN0*sqrt(0.75 - IN0^2);
+    VB0 = IN0*sqrt(0.75 - IN0^2);
   elseif IN0 >= 0.75 and IN0 <= 1 then
-    VB0 := IN0*1.732*(1 - IN0);
+    VB0 = IN0*1.732*(1 - IN0);
   else
-    VB0 := IN0*0;
+    VB0 = IN0*0;
   end if;
-  VA0 := Efd0/VB0;
-  VR0 := Efd0*K_G;
-  V_REF := ECOMP;
+  VA0 = Efd0/VB0;
+  VR0 = Efd0*K_G;
+  V_REF = ECOMP;
 
 equation
   VE = 'abs'(K_P_comp*V_T + j*(K_I + K_P_comp*X_L)*I_T);

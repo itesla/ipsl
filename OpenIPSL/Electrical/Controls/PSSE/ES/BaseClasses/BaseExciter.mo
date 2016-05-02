@@ -38,9 +38,9 @@ protected
   parameter Real Efd0(fixed=false);
   parameter Real V_REF(fixed=false);
   parameter Real ECOMP0(fixed=false);
-initial algorithm
-  Efd0 := EFD0;
-  ECOMP0 := ECOMP;
+initial equation
+  Efd0 = EFD0;
+  ECOMP0 = ECOMP;
 
 equation
   connect(VoltageReference.y, DiffV.u1) annotation (Line(points={{-149,50},{-132,50},{-132,6},{-122,6}}, color={0,0,127}));

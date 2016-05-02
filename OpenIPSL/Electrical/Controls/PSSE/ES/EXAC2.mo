@@ -93,29 +93,28 @@ public
         extent={{10,-10},{-10,10}},
         rotation=0,
         origin={150,-90})));
-initial algorithm
-
-  Ifd0 := XADIFD;
+initial equation
+  Ifd0 = XADIFD;
   // Finding initial value of excitation voltage, VE0, via going through conditions of FEX function
   if Ifd0 <= 0 then
-    VE0 := Efd0;
+    VE0 = Efd0;
   elseif K_C*Ifd0/(Efd0 + 0.577*K_C*Ifd0) <= 0.433 then
-    VE0 := Efd0 + 0.577*K_C*Ifd0;
+    VE0 = Efd0 + 0.577*K_C*Ifd0;
   elseif K_C*Ifd0/sqrt((Efd0^2 + (K_C*Ifd0)^2)/0.75) > 0.433 and K_C*Ifd0/sqrt((Efd0^2 + (K_C*Ifd0)^2)/0.75) < 0.75 then
-    VE0 := sqrt((Efd0^2 + (K_C*Ifd0)^2)/0.75);
+    VE0 = sqrt((Efd0^2 + (K_C*Ifd0)^2)/0.75);
   else
-    VE0 := (Efd0 + 1.732*K_C*Ifd0)/1.732;
+    VE0 = (Efd0 + 1.732*K_C*Ifd0)/1.732;
   end if;
   // Case IN>0 not checked because it will be resolved in the next iteration
-  VFE0 := VE0*(SE(
+  VFE0 = VE0*(SE(
     VE0,
     S_EE_1,
     S_EE_2,
     E_1,
     E_2) + K_E) + Ifd0*K_D;
-  VR0 := VFE0;
-  VA0 := VR0/K_B + VFE0*K_H;
-  V_REF := VA0/K_A + ECOMP0;
+  VR0 = VFE0;
+  VA0 = VR0/K_B + VFE0*K_H;
+  V_REF = VA0/K_A + ECOMP0;
 
 equation
   connect(leadLag.y, imLimitedSimpleLag.u) annotation (Line(points={{-29,0},{-29,0},{-22,0}}, color={0,0,127}));

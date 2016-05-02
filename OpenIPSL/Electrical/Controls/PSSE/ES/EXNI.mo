@@ -45,13 +45,13 @@ public
         extent={{-10,-10},{10,10}},
         rotation=90,
         origin={-100,-150})));
-initial algorithm
+initial equation
   if SWITCH then
-    VR0 := Efd0;
-    V_REF := VR0/K_A + ECOMP0;
+    VR0 = Efd0;
+    V_REF = VR0/K_A + ECOMP0;
   else
-    VR0 := Efd0/ECOMP0;
-    V_REF := VR0/K_A + ECOMP0;
+    VR0 = Efd0/ECOMP0;
+    V_REF = VR0/K_A + ECOMP0;
   end if;
 
 equation

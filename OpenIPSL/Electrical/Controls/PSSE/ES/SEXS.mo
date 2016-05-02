@@ -29,8 +29,8 @@ model SEXS "Simplified excitation system model"
     T2=T_B,
     y_start=Efd0/K,
     x_start=Efd0/K) annotation (Placement(transformation(extent={{40,-10},{60,10}})));
-initial algorithm
-  V_REF := Efd0/K + ECOMP0;
+initial equation
+  V_REF = Efd0/K + ECOMP0;
 
 equation
   connect(simpleLagLim.y, EFD) annotation (Line(points={{141,0},{210,0}}, color={0,0,127}));

@@ -38,13 +38,13 @@ public
         extent={{-20,-20},{20,20}},
         rotation=0,
         origin={-200,-70}), iconTransformation(extent={{-10,-10},{10,10}}, origin={-200,-70})));
-initial algorithm
+initial equation
   if not C_SWITCH then
-    VR0 := Efd0/ECOMP0;
-    V_REF := VR0/K + ECOMP0;
+    VR0 = Efd0/ECOMP0;
+    V_REF = VR0/K + ECOMP0;
   else
-    VR0 := Efd0;
-    V_REF := VR0/K + ECOMP0;
+    VR0 = Efd0;
+    V_REF = VR0/K + ECOMP0;
   end if;
 
 equation

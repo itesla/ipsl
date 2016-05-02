@@ -55,15 +55,14 @@ public
         extent={{-10,-10},{10,10}},
         rotation=90,
         origin={-100,-130})));
-initial algorithm
-
-  SE_Efd0 := SE(
+initial equation
+  SE_Efd0 = SE(
     Efd0,
     S_EE_1,
     S_EE_2,
     E_1,
     E_2);
-  (VRMAX0,VRMIN0,KE0) := calculate_dc_exciter_params(
+  (VRMAX0,VRMIN0,KE0) = calculate_dc_exciter_params(
     V_RMAX,
     V_RMIN,
     K_E,
@@ -71,9 +70,9 @@ initial algorithm
     S_EE_2,
     Efd0,
     SE_Efd0);
-  VRMIN0 := -VRMAX0;
-  VR0 := Efd0*(KE0 + SE_Efd0);
-  V_REF := VR0/K_A + ECOMP0;
+  VRMIN0 = -VRMAX0;
+  VR0 = Efd0*(KE0 + SE_Efd0);
+  V_REF = VR0/K_A + ECOMP0;
 
 equation
   connect(sum3.u2, derivativeLag.y) annotation (Line(points={{-22,-6},{-34,-6},{-34,-28},{-34,-50},{59,-50}}, color={0,0,127}));

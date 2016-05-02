@@ -16,7 +16,6 @@ model IEEET2 "IEEE Type 2 excitation system"
   parameter Real S_EE_1=0.3 "Saturation at E_1";
   parameter Real E_2=3.8 "Exciter saturation point 2 (pu)";
   parameter Real S_EE_2=0.6 "Saturation at E_2";
-
   Modelica.Blocks.Math.Add3 add3_1 annotation (Placement(transformation(extent={{-60,-10},{-40,10}})));
   Modelica.Blocks.Math.Add add(k2=-1) annotation (Placement(transformation(extent={{-20,-10},{0,10}})));
   NonElectrical.Continuous.SimpleLag simpleLag(
@@ -35,15 +34,6 @@ model IEEET2 "IEEE Type 2 excitation system"
     y_start=VR0,
     outMax=V_RMAX0,
     outMin=V_RMIN0) annotation (Placement(transformation(extent={{60,-10},{80,10}})));
-protected
-  parameter Real V_RMAX0(fixed=false);
-  parameter Real V_RMIN0(fixed=false);
-  parameter Real K_E0(fixed=false);
-  parameter Real Efd0(fixed=false);
-  parameter Real SE_Efd0(fixed=false);
-  parameter Real VR0(fixed=false);
-
-public
   BaseClasses.RotatingExciter rotatingExciter(
     T_E=T_E,
     K_E=K_E0,
@@ -60,15 +50,21 @@ public
         extent={{-10,-10},{10,10}},
         rotation=90,
         origin={-100,-150})));
-initial algorithm
-  SE_Efd0 := OpenIPSL.NonElectrical.Functions.SE(
+protected
+  parameter Real V_RMAX0(fixed=false);
+  parameter Real V_RMIN0(fixed=false);
+  parameter Real K_E0(fixed=false);
+  parameter Real Efd0(fixed=false);
+  parameter Real SE_Efd0(fixed=false);
+  parameter Real VR0(fixed=false);
+initial equation
+  SE_Efd0 = OpenIPSL.NonElectrical.Functions.SE(
     EFD0,
     S_EE_1,
     S_EE_2,
     E_1,
     E_2);
-
-  (V_RMAX0,V_RMIN0,K_E0) := calculate_dc_exciter_params(
+  (V_RMAX0,V_RMIN0,K_E0) = calculate_dc_exciter_params(
     V_RMAX,
     V_RMIN,
     K_E,
@@ -76,10 +72,8 @@ initial algorithm
     S_EE_2,
     Efd0,
     SE_Efd0);
-
-  VR0 := Efd0*(K_E0 + SE_Efd0);
-  V_REF := VR0/K_A + ECOMP0;
-
+  VR0 = Efd0*(K_E0 + SE_Efd0);
+  V_REF = VR0/K_A + ECOMP0;
 equation
   connect(add3_1.y, add.u1) annotation (Line(points={{-39,0},{-33.65,0},{-33.65,6},{-22,6}}, color={0,0,127}));
   connect(simpleLag.y, add.u2) annotation (Line(points={{-1,-50},{-34,-50},{-34,-6},{-22,-6}}, color={0,0,127}));
@@ -138,3 +132,4 @@ equation
 </table>
 </html>"));
 end IEEET2;
+
