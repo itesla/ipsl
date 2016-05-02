@@ -1,3 +1,4 @@
+within OpenIPSL.NonElectrical.Continuous;
 block SimpleLagLimVar "First order lag transfer function block with a non windup limiter and variable limits"
   extends Modelica.Blocks.Interfaces.SISO(y(start=y_start));
   Modelica.Blocks.Interfaces.RealInput outMax
