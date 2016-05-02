@@ -1,3 +1,4 @@
+[![Build Status](https://travis-ci.org/SmarTS-Lab/OpenIPSL.svg?branch=master)](https://travis-ci.org/SmarTS-Lab/OpenIPSL)
 # **OpenIPSL**: Open-Instance Power System Library:
 The OpenIPSL or Open-Instance Power System Library is a fork of of the [iTesla Power System Library](https://github.com/itesla/ipsl) developed and maintained by the [SmarTS Lab](https://www.kth.se/en/ees/omskolan/organisation/avdelningar/epe/research/smart-transmission-systems-laboratory-smarts-lab-1.627203) research group, collaborators and friends (contributions are welcome!).
 
