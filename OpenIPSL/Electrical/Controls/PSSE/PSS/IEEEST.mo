@@ -1,11 +1,11 @@
 within OpenIPSL.Electrical.Controls.PSSE.PSS;
 model IEEEST "IEEE Stabilizing Model with single Input"
-  parameter Real A_1 "Filter Coefficient";
-  parameter Real A_2 "Filter Coefficient";
-  parameter Real A_3 "Filter Coefficient";
-  parameter Real A_4 "Filter Coefficient";
-  parameter Real A_5 "Filter Coefficient";
-  parameter Real A_6 "Filter Coefficient";
+  parameter Real A_1 = 0 "Filter Coefficient";
+  parameter Real A_2 = 0 "Filter Coefficient";
+  parameter Real A_3 = 0 "Filter Coefficient";
+  parameter Real A_4 = 0 "Filter Coefficient";
+  parameter Real A_5 = 0 "Filter Coefficient";
+  parameter Real A_6 = 0 "Filter Coefficient";
   parameter Real T_1=0 "Lead Time Constant";
   parameter Real T_2=0 "Lag Time Constant";
   parameter Real T_3=0 "Lead Time Constant";
@@ -58,9 +58,9 @@ protected
   parameter Integer n1=if (A_1 == 0 and A_2 == 0) then 4 elseif (A_2 == 0) then 2 else 3;
   parameter Integer n2=if (A_3 == 0 and A_4 == 0) then 4 elseif (A_4 == 0) then 2 else 3;
   parameter Integer n3=if (A_6 == 0 and A_5 == 0) then 1 elseif (A_6 == 0) then 2 else 3;
-  parameter Real a1[n1](each fixed=false);
-  parameter Real a2[n2](each fixed=false);
-  parameter Real b[n3](each fixed=false);
+  parameter Real a1[n1](fixed=false);
+  parameter Real a2[n2](fixed=false);
+  parameter Real b[n3](fixed=false);
 
   Modelica.Blocks.Continuous.TransferFunction Filter2_1(
     initType=Modelica.Blocks.Types.Init.InitialOutput,
