@@ -44,7 +44,7 @@ equation
       connect(o[1], o[i]);
     end for;
   end if;
-  connect(o[nu],u[no]);
+  connect(o[no],u[nu]);
   V = sqrt(o[1].vr^2 + o[1].vi^2);
   angle = atan2(o[1].vi, o[1].vr)*180/Modelica.Constants.pi;
   annotation (
