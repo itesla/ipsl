@@ -58,9 +58,9 @@ protected
   parameter Integer n1=if (A_1 == 0 and A_2 == 0) then 4 elseif (A_2 == 0) then 2 else 3;
   parameter Integer n2=if (A_3 == 0 and A_4 == 0) then 4 elseif (A_4 == 0) then 2 else 3;
   parameter Integer n3=if (A_6 == 0 and A_5 == 0) then 1 elseif (A_6 == 0) then 2 else 3;
-  parameter Real a1[n1](fixed=false);
-  parameter Real a2[n2](fixed=false);
-  parameter Real b[n3](fixed=false);
+  parameter Real a1[n1](each fixed=false);
+  parameter Real a2[n2](each fixed=false);
+  parameter Real b[n3](each fixed=false);
 
   Modelica.Blocks.Continuous.TransferFunction Filter2_1(
     initType=Modelica.Blocks.Types.Init.InitialOutput,
