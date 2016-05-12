@@ -1,7 +1,6 @@
 within OpenIPSL.Electrical.Controls.PSSE.ES;
 model SEXS "Simplified excitation system model"
   extends OpenIPSL.Electrical.Controls.PSSE.ES.BaseClasses.BaseExciter;
-  parameter Real Ec0;
   parameter Real T_AT_B;
   parameter Real T_B;
   parameter Real K;
