@@ -13,14 +13,21 @@ omc.sendExpression("loadModel(Modelica)")
 omc.sendExpression('loadFile("C:\dev\OSS\OpenIPSL_Repo\OpenIPSL\package.mo")')
 list_models = omc.sendExpression('getClassNames(OpenIPSL,recursive=true)')
 
-newCopyrightFile  = open('copyrightStatement')
+newCopyrightFile = open('copyrightStatement')
 newCopyright = newCopyrightFile.read()
 
 # Loop on all models:
-for model in list_models:
-    #Get the current annotation
+for model in list_models[0:1]:
+    # Get the current annotation
     anno = omc.sendExpression("getDocumentationAnnotation(%s)" % (model))
-    omc.sendExpression("setDocumentationAnnotation(%s,%s,%s,%s)" % (model,anno[0],newCopyright,anno[2]))
+    info = anno[0].replace('"', '\\"')
 
-omc.sendExpression("save(OpenIPSL)")
-
+    cmdString = 'setDocumentationAnnotation(%s,info="%s",revisions="%s")' % (model, info, newCopyright)
+    print cmdString
+    try:
+        omc.sendExpression(cmdString)
+        omc.sendExpression("save(%s)" % model)
+    except:
+        print model
+        print info
+        raise
