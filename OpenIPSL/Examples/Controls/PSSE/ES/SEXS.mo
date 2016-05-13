@@ -31,8 +31,7 @@ model SEXS "SMIB model example of GENROU with Excitation System EXST1"
     K=100,
     T_E=0.1,
     E_MIN=-10,
-    E_MAX=10,
-    Ec0=1) annotation (Placement(transformation(extent={{-70,-54},{-108,-26}})));
+    E_MAX=10) annotation (Placement(transformation(extent={{-70,-54},{-108,-26}})));
   Modelica.Blocks.Sources.Constant const(k=0) annotation (Placement(transformation(
         extent={{4,-4},{-4,4}},
         rotation=0,
