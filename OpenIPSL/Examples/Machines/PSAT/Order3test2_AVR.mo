@@ -21,8 +21,7 @@ model Order3test2_AVR
         origin={-31.6887,-10.7513},
         extent={{-10.0,-10.0},{10.0,10.0}},
         rotation=0)));
-  OpenIPSL.Electrical.Controls.PSAT.AVR.AVRtypeIII AVRtypeIII1(s0=0, vf0=2.61819)
-    annotation (Placement(visible=true, transformation(
+  OpenIPSL.Electrical.Controls.PSAT.AVR.AVRtypeIII AVRtypeIII1 annotation (Placement(visible=true, transformation(
         origin={-70,-5.99998},
         extent={{-10,-10},{10,10}},
         rotation=0)));
@@ -33,6 +32,7 @@ equation
   connect(AVRtypeIII1.v, order3_Inputs_Outputs1.v) annotation (Line(points={{-82,-0.99998},{-88,-0.99998},{-88,10},{-15,10},{-15,-7.7513},{-20.6887,-7.7513}}, color={0,0,127}));
   connect(order3_Inputs_Outputs1.pm0, order3_Inputs_Outputs1.pm) annotation (Line(points={{-39.6887,-21.7513},{-39.6887,-24},{-45,-24},{-45,-15.7513},{-41.6887,-15.7513}}, color={0,0,127}));
   connect(const.y, AVRtypeIII1.vs) annotation (Line(points={{-88.5,-10},{-82,-10},{-82,-9.99998}}, color={0,0,127}));
+  connect(AVRtypeIII1.vf0, order3_Inputs_Outputs1.vf0) annotation (Line(points={{-70,6.00002},{-70,12},{-39.6887,12},{-39.6887,0.2487}}, color={0,0,127}));
   annotation (
     Diagram(coordinateSystem(
         extent={{-100,-100},{100,100}},
