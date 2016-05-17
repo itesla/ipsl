@@ -10,7 +10,6 @@ model FifthOrder_AVRIII "ABC system with 5th-order machine (Syn2) and AVR Type I
     T2=10,
     T1=1,
     Te=0.01,
-    vref=1.05,
     K0=25) annotation (Placement(transformation(extent={{170,0},{160,10}})));
   Modelica.Blocks.Sources.Constant vs_1(k=0) annotation (Placement(transformation(
         extent={{-4,-4},{4,4}},

@@ -6,7 +6,7 @@ model SixthOrder_AVRI "5-bus system with 6th-order machine and AVR Type I"
         extent={{-5,-5},{5,5}},
         rotation=0,
         origin={-149,9})));
-  PowerSystems.Electrical.Controls.PSAT.AVR.AVRTypeI aVRTypeI(
+  OpenIPSL.Electrical.Controls.PSAT.AVR.AVRTypeI aVRTypeI(
     v0=1.05,
     vrmin=0,
     vrmax=7.57,
