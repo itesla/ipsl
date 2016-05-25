@@ -13,3 +13,4 @@ dymosim.lib
 *.fmu
 *.h
 *.bak-mo
+docs/.idea/
