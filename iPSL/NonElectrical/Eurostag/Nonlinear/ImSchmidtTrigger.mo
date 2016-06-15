@@ -1,4 +1,4 @@
-within iPSL.NonElectrical.Eurostag.Nonlinear;
+ï»¿within iPSL.NonElectrical.Eurostag.Nonlinear;
 class ImSchmidtTrigger "Switching with hysteresis. 2014/03/10"
 
   extends Modelica.Blocks.Interfaces.SISO;
@@ -77,8 +77,8 @@ Trigger")}),                    Icon(graphics={                                 
 </tr>
 </table>
 <p>
-In this Block, if y = 0, y remains equal to 0 as long as x £ xmax and becomes equal to 1 as soon as x > xmax
-if y = 1, y remains equal to 1 as long as x > xmin and becomes equal to 0 as soon as x £ xmin 
+In this Block, if y = 0, y remains equal to 0 as long as x Â£ xmax and becomes equal to 1 as soon as x > xmax
+if y = 1, y remains equal to 1 as long as x > xmin and becomes equal to 0 as soon as x Â£ xmin 
 </p>
 <p>
 This Block is equivalent to spesific SCHMIDT-TRIGGER Block from Eurostag.
