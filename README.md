@@ -34,7 +34,7 @@ If you use OpenIPSL in your work or research, all we ask you in exchange is that
 Please consult our [Publication List](https://github.com/SmarTS-Lab/OpenIPSL/wiki/Publications/), for browsing the reference publications.
 
 Preferably, please cite the following paper:
-L. Vanfretti, T. Rabuzin, M. Baudette, and M. Murad, iTesla Power Systems Library (iPSL): A Modelica library for phasor time-domain simulations, SoftwareX, Available online 18 May 2016, ISSN 2352-7110, [DOI: 10.1016/j.softx.2016.05.001.](http://dx.doi.org/10.1016/j.softx.2016.05.001.).
+L. Vanfretti, T. Rabuzin, M. Baudette, and M. Murad, iTesla Power Systems Library (iPSL): A Modelica library for phasor time-domain simulations, SoftwareX, Available online 18 May 2016, ISSN 2352-7110, [DOI: 10.1016/j.softx.2016.05.001](http://dx.doi.org/10.1016/j.softx.2016.05.001).
 Link to Publisher's Website: [SoftwareX](http://www.sciencedirect.com/science/article/pii/S2352711016300097)
 
 You are also welcome to submit your contributions as stated above.
