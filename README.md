@@ -20,7 +20,12 @@ Please consult the [contribution guidelines](https://github.com/itesla/ipsl/wiki
 
 ## Citing iPSL in Publications:
 If you use iPSL in your work or research, all we ask you in exchange is that you **cite the reference publications**, according to your use.
-Please consult our [Publication list](https://github.com/itesla/ipsl/wiki/Publications), for browsing the reference publications
+
+Preferably, please cite the following paper:
+
+* L. Vanfretti, T. Rabuzin, M. Baudette, and M. Murad, iTesla Power Systems Library (iPSL): A Modelica library for phasor time-domain simulations, SoftwareX, Available online 18 May 2016, ISSN 2352-7110, [DOI: 10.1016/j.softx.2016.05.001](http://dx.doi.org/10.1016/j.softx.2016.05.001)
+
+Otherwise, please consult our [Publication list](https://github.com/itesla/ipsl/wiki/Publications), for browsing the reference publications
 
 You are also welcome to submit your contributions as stated above.
 
