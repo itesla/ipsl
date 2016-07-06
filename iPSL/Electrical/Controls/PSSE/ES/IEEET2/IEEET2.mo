@@ -140,14 +140,29 @@ initial algorithm
     S_EE_2,
     E_1,
     E_2);
-
-  (V_RMAX0,K_E0) := param_init(
+    
+  if (V_RMAX == 0) then
+    if (K_E <= 0) then
+        V_RMAX0 := S_EE_2*E_2;
+      else
+        V_RMAX0 := S_EE_2 + K_E;
+      end if;
+    else
+      V_RMAX0 := V_RMAX;
+  end if;
+  if (K_E == 0) then
+    K_E0 := V_RMAX0/(10*EFD0) - SE_Efd0;
+  else
+    K_E0 := K_E;
+  end if;
+ 
+  /*(V_RMAX0,K_E0) := param_init(
     V_RMAX,
     K_E,
     E_2,
     S_EE_2,
     Efd0,
-    SE_Efd0);
+    SE_Efd0);*/
   if (V_RMAX == 0) then
     V_RMIN0 := -V_RMAX0;
   else
