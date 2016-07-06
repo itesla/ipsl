@@ -11,26 +11,26 @@ model PwGeneratorM1S "Synchronous machine model according to Park's classical th
   Modelica.Blocks.Interfaces.RealInput omegaRef;
   Real cm(start = init_cm);
   Real efd(start = init_efd);
-  Real ur;
-  Real ui;
-  Real lambdaf(start = init_lambdaf);
-  Real lambdad(start = init_lambdad);
-  Real lambdaad(start = init_lambdaad);
-  Real lambdaaq(start = init_lambdaaq);
-  Real lambdaq1(start = init_lambdaq1);
-  Real lambdaq2(start = init_lambdaq2);
+  Real ur(start = ur0, fixed = false);
+  Real ui(start = ui0, fixed = false);
+  Real lambdaf(start = init_lambdaf, fixed = false);
+  Real lambdad(start = init_lambdad, fixed =  false);
+  Real lambdaad(start = init_lambdaad, fixed = false);
+  Real lambdaaq(start = init_lambdaaq, fixed = false);
+  Real lambdaq1(start = init_lambdaq1, fixed = false);
+  Real lambdaq2(start = init_lambdaq2, fixed = false);
   Real id(start = init_id);
   Real iq(start = init_iq);
-  Real theta(start = init_theta);
-  Real omega(start = init_omega);
-  Real E;
-  Real Mds;
-  Real Mqs;
-  Real Md;
-  Real Mq;
-  Real Mi;
-  Real LMD;
-  Real LMQ;
+  Real theta(start = init_theta, fixed = false);
+  Real omega(start = init_omega, fixed = false);
+  Real E(start=init_E);
+  Real Mds(start = init_Mds);
+  Real Mqs(start = init_Mqs);
+  Real Md(start = init_Md);
+  Real Mq(start = init_Mq);
+  Real Mi(start = init_Mi);
+  Real LMD(start = init_LMD);
+  Real LMQ(start = init_LMQ);
   //Initial values
   parameter Real init_lambdaf = 0;
   parameter Real init_lambdad = 0;
@@ -45,9 +45,10 @@ model PwGeneratorM1S "Synchronous machine model according to Park's classical th
   parameter Real init_cm = 0;
   parameter Real init_efd = 0;
   //parameters coming from .lf
- // parameter Real ur0 = 1 "Initial real voltage component p.u. in the SNREF base";
- // parameter Real ui0 = 0
-   // "Initial imaginary voltage component p.u. in the SNREF base";
+  parameter Real ur0 = 1 
+  "Initial real voltage component p.u. in the SNREF base";
+  parameter Real ui0 = 0
+  "Initial imaginary voltage component p.u. in the SNREF base";
   //parameter Real ir0 = 1;
   //parameter Real ii0 = 0;
   //parameter Real p0_0 = 0 "Initial active power";
