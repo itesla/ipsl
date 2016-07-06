@@ -25,21 +25,20 @@ model PwGeneratorM2S "Synchronous machine model according to Park's classical th
     tppQO_=TSQ0,
     tX_=TX,
     IENR=IENR);
-   Real cm(start = init_cm);
+  Real cm(start = init_cm);
   Real efd(start = init_efd);
-  Real ur;
-  //(start = ur0);
-  Real ui;
-  Real lambdaf(start = init_lambdaf);
-  Real lambdad(start = init_lambdad);
-  Real lambdaad(start = init_lambdaad);
-  Real lambdaaq(start = init_lambdaaq);
-  Real lambdaq1(start = init_lambdaq1);
-  Real lambdaq2(start = init_lambdaq2);
+  Real ur(start = ur0, fixed = true);
+  Real ui(start = ui0, fixed = true);
+  Real lambdaf(start = init_lambdaf, fixed = false);
+  Real lambdad(start = init_lambdad, fixed =  false);
+  Real lambdaad(start = init_lambdaad, fixed = false);
+  Real lambdaaq(start = init_lambdaaq, fixed = false);
+  Real lambdaq1(start = init_lambdaq1, fixed = false);
+  Real lambdaq2(start = init_lambdaq2, fixed = false);
   Real id(start = init_id);
   Real iq(start = init_iq);
-  Real theta(start = init_theta);
-  Real omega(start = init_omega);
+  Real theta(start = init_theta, fixed = false);
+  Real omega(start = init_omega, fixed = true);
   Real E(start=init_E);
   Real Mds(start = init_Mds);
   Real Mqs(start = init_Mqs);
@@ -80,10 +79,10 @@ model PwGeneratorM2S "Synchronous machine model according to Park's classical th
   parameter Real HIn=6.3 "Constant of inertia";
   parameter Real IENR=3 "number of windings";
   // PARAMETERS COMING FROM LF
- //    parameter Real ur0 = 1
-   // "Initial real voltage component p.u. in the SNREF base";
-   //  parameter Real ui0 = 0
-   // "Initial imaginary voltage component p.u. in the SNREF base";
+  parameter Real ur0 = 1
+  "Initial real voltage component p.u. in the SNREF base";
+  parameter Real ui0 = 0
+  "Initial imaginary voltage component p.u. in the SNREF base";
     //   parameter Real ir0 = 1;
     //   parameter Real ii0 = 0;
  // parameter Real p0_0=0 "Initial active power";
