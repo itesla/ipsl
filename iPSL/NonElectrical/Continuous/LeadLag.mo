@@ -5,7 +5,7 @@ block LeadLag "Lead-Lag filter"
   parameter Modelica.SIunits.Time T1 "Lead time constant";
   parameter Modelica.SIunits.Time T2 "Lag time constant";
   parameter Real y_start "Output start value" annotation (Dialog(group="Initialization"));
-  parameter Real x_start=y_start/K "Start value of state variable" annotation (Dialog(group="Initialization"));
+  parameter Real x_start= 0 "Start value of state variable" annotation (Dialog(group="Initialization"));
 protected
   parameter Modelica.SIunits.Time T2_dummy=if abs(T1 - T2) < Modelica.Constants.eps then 1000 else T2
     "Lead time constant";
