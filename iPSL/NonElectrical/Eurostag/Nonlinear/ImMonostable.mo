@@ -1,5 +1,5 @@
 within iPSL.NonElectrical.Eurostag.Nonlinear;
-class ImMonostable "Monostable. 2014/03/10"
+block ImMonostable "Monostable. 2014/03/10"
 
   extends Modelica.Blocks.Interfaces.SISO;
   parameter Real S "Start";
