@@ -1,5 +1,5 @@
 within iPSL.NonElectrical.Eurostag.Continuous;
-class ImIntegratorFollower "Integrator Follower. 2014/03/10"
+block ImIntegratorFollower "Integrator Follower. 2014/03/10"
 
   Modelica.Blocks.Interfaces.RealInput u1 annotation(Placement(transformation(extent={{-119,60},
             {-99,80}}),                                                                                         iconTransformation(extent={{-119,60},
