@@ -1,5 +1,5 @@
 within iPSL.NonElectrical.Eurostag.Math;
-class ImSetReset "Set Reset. 2014/03/10"
+block ImSetReset "Set Reset. 2014/03/10"
 
    Modelica.Blocks.Interfaces.RealInput u1 annotation (Placement(transformation(extent={{-140,20},
             {-100,60}},
