@@ -1,5 +1,5 @@
 within iPSL.NonElectrical.Eurostag.Math;
-class ImExponential "Output exponential of input.
+block ImExponential "Output exponential of input.
               2014/03/10"
   extends Modelica.Blocks.Interfaces.SISO;
   parameter Real A "exponential gain";
