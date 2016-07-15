@@ -1,5 +1,5 @@
 within iPSL.NonElectrical.Eurostag.Nonlinear;
-class ImDelay_2 "Delay_2. 2014/03/10"
+block ImDelay_2 "Delay_2. 2014/03/10"
 
   extends Modelica.Blocks.Interfaces.SISO;
   parameter Real T "Delay time";
