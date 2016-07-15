@@ -16,8 +16,8 @@ block ImIntegratorFollower "Integrator Follower. 2014/03/10"
   parameter Real y_start "Output start value";
   parameter Real K "Gain Value";
   parameter Real T "Time Constant";
-//initial equation
- // y = if u1 <= 0 then u3 else 0;
+initial equation
+   y = if u1 <= 0 then u3 else 0;
 equation
   if u1 > 0 then
     der(y) = K * u2;
