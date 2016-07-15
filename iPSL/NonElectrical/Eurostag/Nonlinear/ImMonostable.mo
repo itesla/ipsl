@@ -8,15 +8,7 @@ block ImMonostable "Monostable. 2014/03/10"
   Boolean cond1;
   Boolean cond2;
 protected
-  discrete Modelica.SIunits.Time tau;//(start = -T);
-initial equation
-  pre(tau) = -T;
-  mode = false;
-  if u > S then
-    y = 1;
-  else
-    y = 0;
-  end if;
+  discrete Modelica.SIunits.Time tau(start = -T);
 equation
   cond1 = u > S and pre(mode) == false;
   cond2 = u <= S and time - pre(tau) >= T;
