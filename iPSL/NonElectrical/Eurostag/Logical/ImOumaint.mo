@@ -1,5 +1,5 @@
 within iPSL.NonElectrical.Eurostag.Logical;
-class ImOumaint "Logical OR with Hold. 2014/03/10"
+block ImOumaint "Logical OR with Hold. 2014/03/10"
   extends Modelica.Blocks.Interfaces.PartialRealMISO;
   parameter Real y_start;
 equation

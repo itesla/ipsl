@@ -1,5 +1,5 @@
 ﻿within iPSL.NonElectrical.Eurostag.Nonlinear;
-class ImSchmidtTrigger "Switching with hysteresis. 2014/03/10"
+block ImSchmidtTrigger "Switching with hysteresis. 2014/03/10"
 
   extends Modelica.Blocks.Interfaces.SISO;
   parameter Real XMAX;

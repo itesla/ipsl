@@ -1,5 +1,5 @@
 within iPSL.NonElectrical.Eurostag.Math;
-class ImSqrt "Square Root. 2014/03/10"
+block ImSqrt "Square Root. 2014/03/10"
   extends Modelica.Blocks.Interfaces.SISO;
 equation
   y = sqrt(abs(u));

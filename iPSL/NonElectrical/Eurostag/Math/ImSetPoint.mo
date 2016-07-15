@@ -1,5 +1,5 @@
 within iPSL.NonElectrical.Eurostag.Math;
-class ImSetPoint "Set Point. 2014/03/10"
+block ImSetPoint "Set Point. 2014/03/10"
   parameter Real V "Voltage Set Point";
   parameter Boolean setPointWithModification = false;
   parameter Real t1 = 0 "Time of change Voltage Set Point";

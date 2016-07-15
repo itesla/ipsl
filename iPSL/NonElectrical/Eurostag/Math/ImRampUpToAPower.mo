@@ -1,5 +1,5 @@
 within iPSL.NonElectrical.Eurostag.Math;
-class ImRampUpToAPower "power of the input signal 2014/03/10"
+block ImRampUpToAPower "power of the input signal 2014/03/10"
   parameter Real A "Exponent parameter";
   extends Modelica.Blocks.Interfaces.SISO;
 equation

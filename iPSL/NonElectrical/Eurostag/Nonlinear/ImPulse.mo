@@ -1,5 +1,5 @@
 within iPSL.NonElectrical.Eurostag.Nonlinear;
-class ImPulse "Generate pulse signal. 2014/03/10"
+block ImPulse "Generate pulse signal. 2014/03/10"
 
   extends Modelica.Blocks.Interfaces.SISO;
   discrete Real tau(start = -Modelica.Constants.inf);
