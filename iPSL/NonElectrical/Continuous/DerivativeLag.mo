@@ -12,7 +12,7 @@ protected
 public
   Modelica.Blocks.Sources.RealExpression par1(y=T) annotation (Placement(transformation(extent={{-80,54},{-60,74}})));
   Modelica.Blocks.Continuous.TransferFunction TF(
-    initType=Modelica.Blocks.Types.Init.InitialOutput,
+    initType=Modelica.Blocks.Types.Init.InitialState,
     x_start={x_start},
     b={K_dummy,0},
     y_start=y_start,
