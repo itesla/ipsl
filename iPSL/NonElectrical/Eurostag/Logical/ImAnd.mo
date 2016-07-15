@@ -1,5 +1,5 @@
 within iPSL.NonElectrical.Eurostag.Logical;
-class ImAnd "Logical 'and': u[1]>0 and u[2]>0 and u[3]>0..... and u[nu]>0 .
+block ImAnd "Logical 'and': u[1]>0 and u[2]>0 and u[3]>0..... and u[nu]>0 .
               2016/04/26"
   extends Modelica.Blocks.Interfaces.PartialRealMISO;
 
