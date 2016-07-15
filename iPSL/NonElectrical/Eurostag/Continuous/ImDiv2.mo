@@ -8,7 +8,7 @@ block ImDiv2 "Quotient block.
   Modelica.Blocks.Interfaces.RealInput u2 annotation(Placement(transformation(extent={{-127,
             -64},{-100,-36}}),                                                                                 iconTransformation(extent={{-119,
             -80},{-99,-60}})));
-  Modelica.Blocks.Interfaces.RealOutput y(start = y_start) annotation(Placement(transformation(extent={{100,-14},
+  Modelica.Blocks.Interfaces.RealOutput y annotation(Placement(transformation(extent={{100,-14},
             {128,14}}),                                                                                                    iconTransformation(extent={{99,-10},
             {119,10}})));
   parameter Real a0 "Offset";
