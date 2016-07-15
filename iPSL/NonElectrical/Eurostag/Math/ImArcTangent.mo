@@ -1,5 +1,5 @@
 within iPSL.NonElectrical.Eurostag.Math;
-class ImArcTangent "ArcTangent. 2014/03/10"
+block ImArcTangent "ArcTangent. 2014/03/10"
 
   Modelica.Blocks.Interfaces.RealInput u1 "numerator"  annotation (Placement(transformation(extent={{-140,20},
             {-100,60}},
