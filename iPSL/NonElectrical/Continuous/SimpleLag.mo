@@ -15,7 +15,7 @@ initial equation
      der(state) = 0;
   else
     state = y_start;
-  end if
+  end if;
 equation
   T_mod*der(state) = K*u - state;
   if abs(const.y) <= Modelica.Constants.eps then
