@@ -1,5 +1,5 @@
 within iPSL.NonElectrical.Eurostag.Continuous;
-class ImDiv2 "Quotient block.
+block ImDiv2 "Quotient block.
               2014/03/10"
 
   Modelica.Blocks.Interfaces.RealInput u1 annotation(Placement(transformation(extent={{-128,34},
