@@ -1,5 +1,5 @@
 within iPSL.NonElectrical.Eurostag.Logical;
-class ImOr "Logical 'or': p1>0 or p2>0 or p3>0 or p4>0 or p5>0.
+block ImOr "Logical 'or': p1>0 or p2>0 or p3>0 or p4>0 or p5>0.
               2016/04/26"
  extends Modelica.Blocks.Interfaces.PartialRealMISO;
 initial equation
