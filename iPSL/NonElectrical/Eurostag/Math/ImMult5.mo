@@ -1,5 +1,5 @@
 within iPSL.NonElectrical.Eurostag.Math;
-class ImMult5 "Product. 2016/04/56"
+block ImMult5 "Product. 2016/04/56"
   extends Modelica.Blocks.Interfaces.PartialRealMISO;
   parameter Real a[nu] = fill(1,nu) "Integrator gain";
   parameter Real a0 = 0 "Offset Parameter";
