@@ -76,5 +76,5 @@ for package in appExamples.keys():
 
 
 # The tests are failing if the number of failed check > 0
-if (not passAppEx) or (not passingCheck):
+if (not passLib) or (not passAppEx):
     sys.exit(1)
