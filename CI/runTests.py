@@ -19,7 +19,7 @@ class CITests():
 
     def loadLib(self, libPath):
         # Attempt to load the library
-        if self.omc.sendExpression('loadFile("%s")' % (self.rootPath + self.libPath)):
+        if self.omc.sendExpression('loadFile("%s")' % (self.rootPath + libPath)):
             print "%s is successfully loaded." % libPath
         else:
             raise Exception('%s was not loaded! Check the library path.')  % libPath
