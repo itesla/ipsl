@@ -22,7 +22,7 @@ class CITests():
         if self.omc.sendExpression('loadFile("%s")' % (self.rootPath + libPath)):
             print "%s is successfully loaded." % libPath
         else:
-            raise Exception('%s was not loaded! Check the library path.')  % libPath
+            raise Exception("%s was not loaded! Check the library path.")  % libPath
 
     def runCheck(self, libName, libPath):
         # Load library
@@ -40,11 +40,11 @@ class CITests():
         for test in test_list:
             if self.omc.sendExpression("isModel(%s)" % (test)):  # Check if a class is a model
                 passMsg = self.omc.sendExpression("checkModel(%s)" % (test))
-                failMsg = self.omc.sendExpression("getErrorString()")
                 if "completed successfully." in passMsg:
                     # print passMsg
                     nPassed += 1
                 else:
+                    failMsg = self.omc.sendExpression("getErrorString()")
                     print failMsg
                     nFailed += 1
         # Print a check summary
@@ -61,14 +61,14 @@ passLib = ci.runCheck("OpenIPSL","/OpenIPSL/package.mo")
 # Libs in Application Examples
 passAppEx = 0
 appExamples = {
-"KundurSMIB":"/Application\ Examples/KundurSMIB/package.mo",
-"TwoAreas":"/Application\ Examples/TwoAreas/package.mo",
-"SevenBus":"/Application\ Examples/SevenBus/package.mo",
-"IEEE9":"/Application\ Examples/IEEE9/package.mo",
-"IEEE14":"/Application\ Examples/IEEE14/package.mo",
-"AKD":"/Application\ Examples/AKD/package.mo",
-"PSAT_Systems":"/Application\ Examples/PSAT_Systems/package.mo",
-"N44":"/Application\ Examples/N44/package.mo",
+"KundurSMIB":"/Application Examples/KundurSMIB/package.mo",
+"TwoAreas":"/Application Examples/TwoAreas/package.mo",
+"SevenBus":"/Application Examples/SevenBus/package.mo",
+"IEEE9":"/Application Examples/IEEE9/package.mo",
+"IEEE14":"/Application Examples/IEEE14/package.mo",
+"AKD":"/Application Examples/AKD/package.mo",
+"PSAT_Systems":"/Application Examples/PSAT_Systems/package.mo",
+"N44":"/Application Examples/N44/package.mo",
 }
 
 for package in appExamples.keys():
