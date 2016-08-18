@@ -26,7 +26,7 @@ class CITests():
 
     def runCheck(self, libName, libPath):
         # Load library
-        loadLib(libPath)
+        self.loadLib(libPath)
         '''
         Checks all of the models in the library and returns number of faild checks
         '''
