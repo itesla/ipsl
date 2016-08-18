@@ -1,4 +1,5 @@
 import sys
+import os
 from OMPython import OMCSession
 
 
