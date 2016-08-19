@@ -67,7 +67,6 @@ appExamples = {
 "IEEE9":"/Application Examples/IEEE9/package.mo",
 "IEEE14":"/Application Examples/IEEE14/package.mo",
 "AKD":"/Application Examples/AKD/package.mo",
-"PSAT_Systems":"/Application Examples/PSAT_Systems/package.mo",
 "N44":"/Application Examples/N44/package.mo",
 }
 
