@@ -59,7 +59,7 @@ ci = CITests("/OpenIPSL")
 passLib = ci.runCheck("OpenIPSL","/OpenIPSL/package.mo")
 
 # Libs in Application Examples
-passAppEx = 0
+notPassAppEx = 0
 appExamples = {
 "KundurSMIB":"/Application Examples/KundurSMIB/package.mo",
 "TwoAreas":"/Application Examples/TwoAreas/package.mo",
@@ -72,9 +72,9 @@ appExamples = {
 }
 
 for package in appExamples.keys():
-    passAppEx = passAppEx + ci.runCheck(package,appExamples[package])
+    notPassAppEx = notPassAppEx + (not ci.runCheck(package,appExamples[package]))
 
 
 # The tests are failing if the number of failed check > 0
-if (not passLib) or (not passAppEx):
+if (not passLib) or notPassAppEx :
     sys.exit(1)
