@@ -36,7 +36,6 @@ class CITests():
         nPassed = 0
 
         # Run the check for all classes that are model and print result msgs
-        print "============================ Checking Models ============================="
         for test in test_list:
             if self.omc.sendExpression("isModel(%s)" % (test)):  # Check if a class is a model
                 passMsg = self.omc.sendExpression("checkModel(%s)" % (test))
@@ -48,7 +47,7 @@ class CITests():
                     print failMsg
                     nFailed += 1
         # Print a check summary
-        print "============================= Check Summary =============================="
+        print "==== Check Summary for %s ====" libName
         print "Number of models that passed the check is: %s" % nPassed
         print "Number of models that failed the check is: %s" % nFailed
         return (nFailed == 0)
