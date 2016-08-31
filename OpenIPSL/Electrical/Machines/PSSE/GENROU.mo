@@ -24,7 +24,7 @@ model GENROU "ROUND ROTOR GENERATOR MODEL (QUADRATIC SATURATION)"
     uq(start=uq0),
     Te(start=pm0));
   //Machine parameters
-  parameter Real Xpq "Sub-transient reactance (pu)" annotation (Dialog(group="Machine parameters"));
+  parameter Real Xpq "q-axis transient reactance (pu)" annotation (Dialog(group="Machine parameters"));
   parameter Real Tpq0 "q-axis transient open-circuit time constant (s)" annotation (Dialog(group="Machine parameters"));
   parameter Real Xpp=Xppd "Sub-transient reactance (pu)" annotation (Dialog(group="Machine parameters"));
   Real Epd(start=Epd0) "d-axis voltage behind transient reactance (pu)";
