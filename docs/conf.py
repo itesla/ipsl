@@ -46,8 +46,8 @@ master_doc = 'index'
 
 # General information about the project.
 project = u'OpenIPSL'
-copyright = u'2016, Maxime'
-author = u'Maxime'
+copyright = u'2016, SmarTS Lab, KTH Royal Institute of Technology'
+author = u'SmarTS Lab, KTH Royal Institute of Technology'
 
 # The version info for the project you're documenting, acts as replacement for
 # |version| and |release|, also used in various other places throughout the
@@ -108,7 +108,7 @@ todo_include_todos = False
 
 # The theme to use for HTML and HTML Help pages.  See the documentation for
 # a list of builtin themes.
-html_theme = 'alabaster'
+html_theme = 'sphinx_rtd_theme'
 
 # Theme options are theme-specific and customize the look and feel of a theme
 # further.  For a list of options available for each theme, see the
@@ -269,7 +269,7 @@ man_pages = [
 #  dir menu entry, description, category)
 texinfo_documents = [
     (master_doc, 'OpenIPSL', u'OpenIPSL Documentation',
-     author, 'OpenIPSL', 'One line description of project.',
+     author, 'OpenIPSL', 'The OpenIPSL is a fork of the iTesla Power System Library developed and maintained by the SmarTS Lab Research Group and its collaborators, and a Modelica library containing a set of power system component models for phasor time domain simulations.',
      'Miscellaneous'),
 ]
 
