@@ -36,18 +36,18 @@ Future work in the OpenIPSL effort will include to generate Modelica "records" f
 Questions or need help?
 -----------------------
 
-Check out our :ref:`Talk-to-us` page for different ways of getting in touch.
+Check out our :ref:`talk-to-us` page for different ways of getting in touch.
 
 .. toctree::
    :caption: Table of Contents
    :name: mastertoc
    :maxdepth: 2
+   :includehidden:
 
+   self
    Publications <publications>
-   User Guide <get-started>
-
-
-
+   User Guide <user-guide/get-started>
+   Community <community/community-home>
 
 Indices and tables
 ------------------

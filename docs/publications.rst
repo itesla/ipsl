@@ -39,6 +39,6 @@ Otherwise, you cite one of the following papers, according to a specific use of 
   “Unambiguous Power System Modeling and Simulation using Modelica Tools”,
   IEEE PES General Meeting 2013. `Link <http://kth.diva-portal.org/smash/record.jsf?pid=diva2%3A695601&dswid=4147>`_.
 
-.. Links
+.. Links:
 
 .. _SoftwareX: http://www.sciencedirect.com/science/article/pii/S2352711016300097
