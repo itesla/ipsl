@@ -7,6 +7,10 @@
 OpenIPSL's documentation!
 *************************
 
+.. image:: img/puppy.png
+      :width: 200 px
+      :align: right
+
 Welcome to **OpenIPSL** - The Open-Instance Power System Library.
 
 This documentation is the main source of information for **users** and **developers** working with (or contributing to) the **OpenIPSL** project.
@@ -21,7 +25,7 @@ The library contains a set of power system component models and test power syste
 
 All models in a Modelica library require *initial guess* values that should come from a solution of the steady state of the overall model.
 From these values, a Modelica tool solves the initialization problem for all algebraic and differential - state variables.
-There are many ways to provide **initial guess** values, but following the standard "workflow" in power system analysis practice, all models in OpenIPSL are programmed in such way that by introducing a `power flow solution`_ (from another tool), the **initial guess** is computed as a parameter within each model and are provided into the initial equations that are used to solve the overall initialization problem.
+There are many ways to provide *initial guess* values, but following the standard "workflow" in power system analysis practice, all models in OpenIPSL are programmed in such way that by introducing a `power flow solution`_ (from another tool), the *initial guess* is computed as a parameter within each model and are provided into the initial equations that are used to solve the overall initialization problem.
 See `this paper`_ for a more detailed explanation.
 
 Almost all of our models have been developed to provide the same response than a "reference" power system simulation tool, e.g. `PSAT`_ and `PSS/E`_.
@@ -30,7 +34,7 @@ If you do not have access to these tools or do not want to use them, there are s
 Future work in the OpenIPSL effort will include to generate Modelica "records" from open source power flow solvers such as `GridCal`_ or `PyPSA`_.
 
 Questions or need help?
-=======================
+-----------------------
 
 Check out our :ref:`Talk-to-us` page for different ways of getting in touch.
 
@@ -39,12 +43,14 @@ Check out our :ref:`Talk-to-us` page for different ways of getting in touch.
    :name: mastertoc
    :maxdepth: 2
 
-   Get Started <get-started>
+   Publications <publications>
+   User Guide <get-started>
+
 
 
 
 Indices and tables
-==================
+------------------
 
 * :ref:`genindex`
 * :ref:`modindex`
