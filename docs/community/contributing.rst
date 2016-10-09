@@ -34,7 +34,7 @@ Useful Links
 Here is a collection of resources to learn about the reStructuredText markup language:
 
 - `OpenIPSL Documentation <http://openipsl.readthedocs.io/en/latest/?badge=latest>`_
-- `Get Started with Read the Docs<https://docs.readthedocs.io/en/latest/getting_started.html>`_
+- `Get Started with Read the Docs <https://docs.readthedocs.io/en/latest/getting_started.html>`_
 - `Some infos about reStructuredText <http://build-me-the-docs-please.readthedocs.io/en/latest/Using_Sphinx/OnReStructuredText.html>`_
 - `Some more infos about reStructuredText <http://www.sphinx-doc.org/en/stable/rest.html#>`_
 
@@ -44,7 +44,7 @@ Improve the Library
 The library has been in development for a couple years now, and comprises many models for power system simulation.
 We are, however, always interested in adding new models to the library, or improve the existing models.
 
-Please always document your contribution in an issue in our `Issue Tracker`_, feel free to create a new issue if none of the existing one fit your contribution.
+Please always document your contribution in an issue in our `Issue`_  Tracker, feel free to create a new issue if none of the existing one fit your contribution.
 This will allow the team managing the repository to review the suggested changes, and discuss the motivation behind them.
 
 .. note::
@@ -63,11 +63,11 @@ When submitting new models to the library, please also include the following in 
 Useful Links
 ^^^^^^^^^^^^
 
-- `Issue Tracker`_
+- `Issues`_ Tracker
 - `MapleSoft Modelica Syntax Checker <http://www.maplesoft.com/products/maplesim/modelicachecker/>`_
 
 
-.. _Issue Tracker: https://github.com/SmarTS-Lab/OpenIPSL/issues
+.. _Issues : https://github.com/SmarTS-Lab/OpenIPSL/issues
 
 
 

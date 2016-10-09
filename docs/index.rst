@@ -48,6 +48,7 @@ Check out our :ref:`talk-to-us` page for different ways of getting in touch.
    Publications <publications>
    User Guide <user-guide/get-started>
    Community <community/community-home>
+   Technical Documentation <tech-doc/tech-doc-home>
 
 Indices and tables
 ------------------

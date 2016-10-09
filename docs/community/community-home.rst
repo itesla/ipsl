@@ -40,7 +40,7 @@ SmarTS Lab's people
 ^^^^^^^^^^^^^^^^^^^
 
 SmarTS Lab is a research group at KTH Royal Institute of Technology, Stockholm, Sweden.
-You can learn more about our research on our `departments webpage`_ or on `Luigi's website`_ (http://www.eps.ee.kth.se/personal/vanfretti/Luigi_Vanfrettis_Website/SmarTS_Lab.html).
+You can learn more about our research on our `departments webpage`_ or on `Luigi's website`_.
 We were participating in the `iTesla project`_ and several people have contributed to this Modelica library.
 Here is a complete list of the contributor (alphabetical order):
 
@@ -75,7 +75,7 @@ Talk to Us
 
 The team of collaborators involved in the development of the OpenIPSL can be reached at openipsl@googlegroups.com.
 
-For more information about contributing to this repository, please head to `contributing`_.
+For more information about contributing to this repository, please head to :ref:`contributing`.
 
 .. Links:
 
