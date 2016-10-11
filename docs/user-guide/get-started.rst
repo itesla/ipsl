@@ -1,14 +1,17 @@
-.. _get-started:
+**********
+User Guide
+**********
 
-*************************
+.. _Get Started:
+
 Get Started with OpenIPSL
-*************************
+=========================
 
 The OpenIPSL was developed to be a familiar alternative to traditional power system analysis tools.
 There are, however, some particularities to the nature of the library, presented in this Section.
 
 Package Content
-===============
+---------------
 
 The OpenIPSL has been developed as a `Modelica`_ library for power system simulations.
 The repository contains the following:
@@ -24,7 +27,7 @@ The repository contains the following:
 
 
 Power Flow Solvers / Software
-=============================
+-----------------------------
 
 There is no power flow solver associated to the library.
 When building a use case, initialization of all variables must be performed with a power flow software.
@@ -37,7 +40,7 @@ Within the iTesla Toolbox (i.e. the whole platform), there are different power f
 Therefore, there was no need to develop a power flow solver.
 
 Running Time-Domain Simulations
-===============================
+-------------------------------
 
 There is no Modelica-compliant tool provided to run the time domain simulations.
 Users of the OpenIPSL are free to choose their tool of choice.
