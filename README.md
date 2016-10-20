@@ -13,7 +13,7 @@ As such, the purpose of OpenIPSL are to be used as a research library (therefore
 ## Notice to Users:
 This project encompasses the development of a Modelica library for power system simulation.
 As such, there are no solver tools provided in this repository (no Power Flow Solvers, no Time-Domain solvers, etc.).
-You can find more information in our [**documentation**](http://openipsl.readthedocs.io/).
+You can find more information in our [**documentation**](http://openipsl.readthedocs.io/en/latest/user-guide/get-started.html).
 
 The OpenIPSL contains the models developed by SmarTS Lab during the iTesla project, and necesssary models that were implemented by RTE and AIA, that we can maintain.
 Note that several models have been removed from what it is available in iPSL (see [here](https://github.com/SmarTS-Lab/OpenIPSL/pull/10)).
@@ -28,7 +28,7 @@ Contributions can be of different nature, such as addition of a new component mo
 
 Please consult the [contribution guidelines](http://openipsl.readthedocs.io/en/latest/community/contributing.html).
 
-More information about our contributors can be found over [here](http://openipsl.readthedocs.io/en/latest/community/community-home.html). Don't hesitate to contact us. 
+More information about our contributors can be found over [here](http://openipsl.readthedocs.io/en/latest/community/community-home.html). Don't hesitate to contact us.
 
 ## Citing OpenIPSL in Publications:
 If you use OpenIPSL in your work or research, all we ask you in exchange is that you **cite the reference publications**, according to your use.
