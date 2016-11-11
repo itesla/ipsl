@@ -65,7 +65,7 @@ Other Collaborators
 
 Thanks to the following people who have contributed patches, new code or given us helpful suggestions:
 
-- Dietmar Winkler (HIT, Norway, Dietmar.Winkler@hit.no)
+- Dietmar Winkler (HSN, Norway, `@dietmarw <https://github.com/dietmarw>`_)
 
 
 .. _talk-to-us:
