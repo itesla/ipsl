@@ -1,5 +1,7 @@
 within Tutorial.Example_1.Generator;
 partial model Step_1
+  extends Tutorial.Support.Generator_Example;
+
   OpenIPSL.Electrical.Machines.PSAT.Order6 machine(
     Vn=400,
     V_b=400,
