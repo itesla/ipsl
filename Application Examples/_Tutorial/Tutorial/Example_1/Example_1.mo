@@ -7,7 +7,6 @@ model Example_1
   OpenIPSL.Electrical.Buses.Bus B3 annotation (Placement(transformation(extent={{48,-12},{72,12}})));
   Generator.Generator G1(
     angle_0=0.494677176989154,
-    V_b=400,
     V_0=1,
     P_0=1997.9999999936396,
     Q_0=967.9249699065775) annotation (Placement(transformation(extent={{-120,-10},{-100,10}})));

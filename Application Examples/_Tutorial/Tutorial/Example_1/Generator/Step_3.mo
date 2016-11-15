@@ -4,7 +4,6 @@ model Step_3
 
   OpenIPSL.Electrical.Machines.PSAT.Order6 machine(
     Vn=400,
-    V_b=400,
     ra=0.003,
     xd=1.81,
     xq=1.76,
@@ -19,11 +18,12 @@ model Step_3
     Taa=0.002,
     M=7,
     D=0,
-    P_0=19.979999999936396,
-    Q_0=9.679249699065775,
-    V_0=1,
-    angle_0=0.494677176989154,
-    Sn=2220) annotation (Placement(visible=true, transformation(extent={{16,-70},{76,-10}}, rotation=0)));
+    Sn=2220,
+    V_b=V_b,
+    V_0=V_0,
+    angle_0=angle_0,
+    P_0=P_0,
+    Q_0=Q_0) annotation (Placement(visible=true, transformation(extent={{16,-70},{76,-10}}, rotation=0)));
   OpenIPSL.Electrical.Controls.PSAT.AVR.AVRtypeIII avr(
     vfmax=7,
     vfmin=-6.40,
@@ -37,7 +37,7 @@ equation
   connect(pss_off.y, avr.vs) annotation (Line(points={{-77,-34},{-58,-34}}, color={0,0,127}));
   connect(avr.v, machine.v) annotation (Line(points={{-58,-16},{-70,-16},{-70,6},{86,6},{86,-31},{82.5,-31},{79,-31}}, color={0,0,127}));
   connect(avr.vf, machine.vf) annotation (Line(points={{-12,-26},{16,-26},{16,-25}}, color={0,0,127}));
-  connect(machine.pm, machine.pm0) annotation (Line(points={{16,-55},{6,-55},{6,-55},{-4,-55},{-4,-80},{22,-80},{22,-76.5},{22,-76.5},{22,-73}}, color={0,0,127}));
+  connect(machine.pm, machine.pm0) annotation (Line(points={{16,-55},{6,-55},{-4,-55},{-4,-80},{22,-80},{22,-76.5},{22,-73}}, color={0,0,127}));
   connect(avr.vf0, machine.vf0) annotation (Line(points={{-34,-2},{-34,4},{22,4},{22,-7}}, color={0,0,127}));
   connect(machine.p, pwPin) annotation (Line(points={{79,-39.8511},{79,-40.9256},{110,-40.9256},{110,0}}, color={0,0,255}));
   annotation (Diagram(coordinateSystem(
