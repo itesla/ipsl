@@ -30,11 +30,11 @@ model PwGeneratorM2S "Synchronous machine model according to Park's classical th
   Real ur(start = ur0, fixed = true);
   Real ui(start = ui0, fixed = true);
   Real lambdaf(start = init_lambdaf, fixed = true);
-  Real lambdad(start = init_lambdad, fixed =  false);
-  Real lambdaad(start = init_lambdaad, fixed = false);
-  Real lambdaaq(start = init_lambdaaq, fixed = false);
-  Real lambdaq1(start = init_lambdaq1, fixed = false);
-  Real lambdaq2(start = init_lambdaq2, fixed = false);
+  Real lambdad(start = init_lambdad);
+  Real lambdaad(start = init_lambdaad);
+  Real lambdaaq(start = init_lambdaaq);
+  Real lambdaq1(start = init_lambdaq1, fixed = true);
+  Real lambdaq2(start = init_lambdaq2, fixed = true);
   Real id(start = init_id);
   Real iq(start = init_iq);
   Real theta(start = init_theta, fixed = false);
