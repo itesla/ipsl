@@ -73,6 +73,7 @@ model DYNModelM2S_INIT "Initialization model for synchronous mahine M2S.
   parameter Real PI=3.14159265;
   parameter Integer IWLMDV=3;
   parameter Boolean Saturated=true;
+  parameter Real HIn;
   iPSL.Electrical.Machines.Eurostag.PwExtIntParameters extern(
     rStatIn_=rStatIn,
     lStatIn_=lStatIn,
