@@ -13,7 +13,7 @@ protected
 initial equation
   if initType == Init.SteadyState then
      der(state) = 0;
-  else
+  elseif initType == Init.InitialOutput then
     state = y_start;
   end if;
 equation
