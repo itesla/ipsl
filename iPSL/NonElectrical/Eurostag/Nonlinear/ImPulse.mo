@@ -5,6 +5,8 @@ block ImPulse "Generate pulse signal. 2014/03/10"
   discrete Real tau(start = -Modelica.Constants.inf);
   parameter Real S "Start";
   parameter Real T "Pulse period";
+initial equation
+ y = 0;
 equation
   when u >= S then
     tau = time;
