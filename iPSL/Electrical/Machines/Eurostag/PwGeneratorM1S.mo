@@ -14,7 +14,7 @@ model PwGeneratorM1S "Synchronous machine model according to Park's classical th
   Real ur(start = ur0, fixed = true);
   Real ui(start = ui0, fixed = true);
   Real lambdaf(start = init_lambdaf, fixed = true);
-  Real lambdad(start = init_lambdad, fixed =  true);
+  Real lambdad(start = init_lambdad);
   Real lambdaad(start = init_lambdaad);
   Real lambdaaq(start = init_lambdaaq);
   Real lambdaq1(start = init_lambdaq1, fixed = true);
