@@ -1,3 +1,4 @@
+within iPSL.Electrical.Machines.Eurostag;
 block omegaRef
     parameter Integer nGenerators = 1;
     Modelica.Blocks.Interfaces.RealInput pin_HIn[nGenerators];
