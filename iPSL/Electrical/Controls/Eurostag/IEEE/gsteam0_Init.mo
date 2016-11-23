@@ -1,5 +1,5 @@
 within iPSL.Electrical.Controls.Eurostag.IEEE;
-model gsteam0_init
+model gsteam0_Init
 //GSTEAM0 GSTEAM0_1(DT=0.,RR=0.05,T1=0.5,T2=3.,T3=10.,VMAX=1.,VMIN=0.);
 //GSTEAM0 GSTEAM0_2(DT=0.,RR=0.05,T1=.4900000,T2=2.100000,T3=7.,VMAX=1.,VMIN=0.);
 //GSTEAM0 GSTEAM0_3(DT=0.,RR=0.05,T1=.4900000,T2=2.100000,T3=7.,VMAX=1.,VMIN=0.);
@@ -53,4 +53,4 @@ equation
   connect(pin_CM, ImMult5_2.u[2]);
   connect(pin_REF, Gain_1.y);
   connect(pin_PMECH, ImMult5_2.y);
-end gsteam0_init;
+end gsteam0_Init;
