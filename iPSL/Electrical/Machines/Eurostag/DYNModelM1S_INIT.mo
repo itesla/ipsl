@@ -1,5 +1,5 @@
 within iPSL.Electrical.Machines.Eurostag;
-model PwGeneratorM2S_Init "Initialization model for synchronous mahine M1S.
+model PwGeneratorM1S_Init "Initialization model for synchronous mahine M1S.
                   Developed by RTE and adapted by AIA. 2014/03/10"
   Modelica.Blocks.Interfaces.RealOutput pin_CM;
   Modelica.Blocks.Interfaces.RealOutput pin_EFD;
@@ -473,4 +473,4 @@ equation
 <p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
 <p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
 </html>"));
-end PwGeneratorM2S_Init;
+end PwGeneratorM1S_Init;
