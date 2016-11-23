@@ -204,7 +204,11 @@ model PwGeneratorM1S "Synchronous machine model according to Park's classical th
   Modelica.Blocks.Interfaces.RealOutput pin_Current;
   Modelica.Blocks.Interfaces.RealOutput pin_FRZPU;
   Modelica.Blocks.Interfaces.RealOutput pin_FRZHZ;
+  Modelica.Blocks.Interfaces.RealOutput pin_HIn;
+  Modelica.Blocks.Interfaces.RealOutput pin_SN;
 equation
+  pin_HIn = HIn;
+  pin_SN = SN;
   der(lambdaf) = (-efd * Coef11) - lambdaf * Coef12 + lambdad * Coef13 + lambdaad * Coef14;
   der(lambdad) = lambdaf * Coef21 - lambdad * Coef22 + lambdaad * Coef23;
   der(lambdaq1) = (-lambdaq1 * Coef31) + lambdaaq * Coef32;
