@@ -1,30 +1,29 @@
 within iPSL.NonElectrical.Continuous;
 block SimpleLagLim "First order lag transfer function block with a non windup limiter"
   extends Modelica.Blocks.Interfaces.SISO(y(start=y_start));
-  Modelica.Blocks.Sources.RealExpression const(y=T) annotation (Placement(transformation(extent={{-58,32},{-38,52}})));
-  Real state;
   parameter Real K "Gain";
   parameter Modelica.SIunits.Time T "Lag time constant";
   parameter Real y_start "Output start value";
   parameter Real outMax "Maximum output value";
   parameter Real outMin "Minimum output value";
+  Real state;
 protected
   parameter Real T_mod=if (T < Modelica.Constants.eps) then 1000 else T;
 initial equation
   state = y_start;
 equation
-  T_mod*der(state) = K*u - state;
   when (state > outMax) and ((K*u - state) < 0) then
     reinit(state, outMax);
   elsewhen (state < outMin) and ((K*u - state) > 0) then
     reinit(state, outMin);
   end when;
 
-  if abs(const.y) <= Modelica.Constants.eps then
-    y = max(min(u*K, outMax), outMin);
+  if T <= Modelica.Constants.eps then
+    state = K*u;
   else
-    y = max(min(state, outMax), outMin);
+   T_mod*der(state) = K*u - state;
   end if;
+   y = max(min(state, outMax), outMin);
   annotation (Documentation(info="<html>
 <table cellspacing=\"1\" cellpadding=\"1\" border=\"1\">
 <tr>
