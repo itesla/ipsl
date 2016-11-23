@@ -11,18 +11,18 @@ model PwGeneratorM1S "Synchronous machine model according to Park's classical th
   Modelica.Blocks.Interfaces.RealInput omegaRef;
   Real cm(start = init_cm);
   Real efd(start = init_efd);
-  Real ur(start = ur0, fixed = false);
-  Real ui(start = ui0, fixed = false);
-  Real lambdaf(start = init_lambdaf, fixed = false);
-  Real lambdad(start = init_lambdad, fixed =  false);
-  Real lambdaad(start = init_lambdaad, fixed = false);
-  Real lambdaaq(start = init_lambdaaq, fixed = false);
-  Real lambdaq1(start = init_lambdaq1, fixed = false);
-  Real lambdaq2(start = init_lambdaq2, fixed = false);
+  Real ur(start = ur0, fixed = true);
+  Real ui(start = ui0, fixed = true);
+  Real lambdaf(start = init_lambdaf, fixed = true);
+  Real lambdad(start = init_lambdad, fixed =  true);
+  Real lambdaad(start = init_lambdaad);
+  Real lambdaaq(start = init_lambdaaq);
+  Real lambdaq1(start = init_lambdaq1, fixed = true);
+  Real lambdaq2(start = init_lambdaq2, fixed = true);
   Real id(start = init_id);
   Real iq(start = init_iq);
-  Real theta(start = init_theta, fixed = false);
-  Real omega(start = init_omega, fixed = false);
+  Real theta(start = init_theta);
+  Real omega(start = init_omega, fixed = true);
   Real E(start=init_E);
   Real Mds(start = init_Mds);
   Real Mqs(start = init_Mqs);
@@ -44,6 +44,14 @@ model PwGeneratorM1S "Synchronous machine model according to Park's classical th
   parameter Real init_omega = 1;
   parameter Real init_cm = 0;
   parameter Real init_efd = 0;
+  parameter Real init_E = sqrt(init_lambdaad*init_lambdaad + init_lambdaaq*init_lambdaaq);
+  parameter Real init_Mds = if Saturated then Md0/(1 + md/rtfo^snd*init_E^snd) else Md0;
+  parameter Real init_Mqs = if Saturated then  Mq0/(1 + mq/rtfo^snq*init_E^snq) else Mq0;
+  parameter Real init_Mi = init_Mds*init_lambdaad*init_lambdaad/(init_E*init_E) + init_Mqs*init_lambdaaq*init_lambdaaq/(init_E*init_E);
+  parameter Real init_Md = init_Mi + Mdif*init_lambdaaq*init_lambdaaq/(init_E*init_E);
+  parameter Real init_Mq = init_Mi - Mdif*init_lambdaad*init_lambdaad/(init_E*init_E);
+  parameter Real init_LMD = 1.0/(1.0/init_Md + Sdet);
+  parameter Real init_LMQ = 1.0/(1.0/init_Mq + Slq);
   //parameters coming from .lf
   parameter Real ur0 = 1 
   "Initial real voltage component p.u. in the SNREF base";
