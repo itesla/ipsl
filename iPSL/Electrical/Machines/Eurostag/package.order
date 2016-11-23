@@ -3,6 +3,6 @@ PwGenerator
 PwGeneratorM1S
 PwGeneratorM2S
 PwMachineM10
-DYNModelM1S_INIT
-DYNModelM2S_INIT
+PwGeneratorM1S_Init
+PwGeneratorM2S_Init
 omegaRef
