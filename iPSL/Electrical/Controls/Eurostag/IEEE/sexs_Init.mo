@@ -1,5 +1,5 @@
 within iPSL.Electrical.Controls.Eurostag.IEEE;
-model sexs_init
+model sexs_Init
 //SEXS SEXS_1(EFDMAX=999.,EFDMIN=-999.,EMAX=4.,EMIN=0.,K=200.,KC=1.,TA=3.,TB=10.,TE=0.05);
 //SEXS SEXS_2(EFDMAX=5.,EFDMIN=-5.,EMAX=6.,EMIN=0.,K=400.,KC=1.,TA=1.,TB=10.,TE=0.0001);
 //SEXS SEXS_3(EFDMAX=5.,EFDMIN=-5.,EMAX=4.,EMIN=0.,K=100.,KC=1.,TA=1.,TB=10.,TE=0.0001);
@@ -36,4 +36,4 @@ equation
   connect(pin_YLL, Gain_1.y);
   connect(pin_VREF, MultiSum_2.y);
   connect(pin_At_V, pin_TerminalVoltage);
-end sexs_init;
+end sexs_Init;
