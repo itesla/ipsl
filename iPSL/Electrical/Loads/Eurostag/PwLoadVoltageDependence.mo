@@ -13,12 +13,15 @@ model PwLoadVoltageDependence
   Real a(start = 1) "auxiliary variable. Voltage division";
   parameter Real alpha = 0;
   parameter Real beta = 0;
+  Real P(start = P_0/S_b);
+  Real Q(start = Q_0/S_b);
 equation
   a = v / vo;
   (P_0/S_b) * a ^ alpha = p.vr * p.ir + p.vi * p.ii;
   (Q_0/S_b)* a ^ beta = (-p.vr * p.ii) + p.vi * p.ir;
   v = sqrt(p.vr ^ 2 + p.vi ^ 2);
-
+  P = p.vr * p.ir + p.vi * p.ii;
+  Q = (-p.vr * p.ii) + p.vi * p.ir;
   annotation (
     Placement(transformation(extent={{-56,-10},{-36,10}}), iconTransformation(extent={{-80,0},{-60,20}})),
     Diagram(graphics),
