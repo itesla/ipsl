@@ -36,8 +36,8 @@ model GENCLS
   Real Q(start=Q_0/S_b) "Reactive power (pu of S_b)";
 
 
-  // Initialization
-
+protected
+  parameter Real CoB=M_b/S_b "Change from system to machine base";
   parameter Real anglev_rad=angle_0*pi/180 "Initial bus voltage angle (rad)";
   parameter Real p0=P_0/M_b "Initial active power (pu on M_b)";
   parameter Real q0=Q_0/M_b "Initial reactive power in (pu on M_b)";
@@ -46,6 +46,7 @@ model GENCLS
   parameter Real vi0=V_0*sin(anglev_rad);
   parameter Real ir0=(p0*vr0 + q0*vi0)/(vr0^2 + vi0^2);
   parameter Real ii0=(p0*vi0 - q0*vr0)/(vr0^2 + vi0^2);
+
   parameter Real delta0=atan2(vi0 + R_a*ii0 + X_d*ir0, vr0 + R_a*ir0 - X_d*ii0);
 
   parameter Real vd0=vr0*cos(pi/2 - delta0) - vi0*sin(pi/2 - delta0);
@@ -54,16 +55,16 @@ model GENCLS
   parameter Real iq0=ir0*sin(pi/2 - delta0) + ii0*cos(pi/2 - delta0);
 
   parameter Real vf0=vq0 + R_a*iq0 + X_d*id0;
-
-  //Real deltaminusanglev=delta - anglev;
-
-  parameter Real CoB=M_b/S_b "Change from system to machine base";
 equation
 
   //Swing equation
-  der(delta) = omega*2*pi*50;
-  der(omega) = (P_0/S_b - P - D*omega)/(2*H);
+  //der(delta) = omega*2*pi*50;
+  //der(omega) = (P_0/S_b - P - D*omega)/(2*H);
+  // Swing equation was ommited becase it causes derivative by zero in examples
+  // where the inertia constant is zero (in PSS/E setting to zero is equivalent
+  // to removing the swing equation
 
+  der(delta) = 0;
 
   // d-q voltage and current equations
   der(eq) = 0 "Classical model assumes constant emf";
