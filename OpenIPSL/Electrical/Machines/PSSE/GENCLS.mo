@@ -65,6 +65,7 @@ equation
   // to removing the swing equation
 
   der(delta) = 0;
+  omega = 0;
 
   // d-q voltage and current equations
   der(eq) = 0 "Classical model assumes constant emf";
