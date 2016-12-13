@@ -2,19 +2,11 @@ within OpenIPSL.Electrical.Machines.PSSE;
 model Plant
 
   redeclare replaceable OpenIPSL.Electrical.Machines.PSSE.BaseClasses.baseMachine machine
-    annotation (choices(choice(redeclare OpenIPSL.Electrical.Machines.PSSE.GENSAL machine),
-                        choice(redeclare OpenIPSL.Electrical.Machines.PSSE.GENSAE machine),
-                        choice(redeclare OpenIPSL.Electrical.Machines.PSSE.GENROE machine),
-                        choice(redeclare OpenIPSL.Electrical.Machines.PSSE.GENROU machine)),
+    annotation (choicesAllMatching=true,
                 Placement(transformation(extent={{40,-10},
             {60,10}})));
   replaceable Controls.PSSE.ES.BaseClasses.BaseExciter exciter
-    annotation (choices(
-    choice(redeclare OpenIPSL.Electrical.Controls.PSSE.ES.ConstantExcitation exciter),
-    choice(redeclare OpenIPSL.Electrical.Controls.PSSE.ES.SEXS exciter),
-    choice(redeclare OpenIPSL.Electrical.Controls.PSSE.ES.EXNI exciter),
-    choice(redeclare OpenIPSL.Electrical.Controls.PSSE.ES.ST5B exciter),
-    choice(redeclare OpenIPSL.Electrical.Controls.PSSE.ES.IEEEX1 exciter)),
+    annotation (choicesAllMatching=true,
       Placement(transformation(extent={{-28,-24},{10,10}})));
   Connectors.PwPin pwPin
     annotation (Placement(transformation(extent={{100,-10},{120,10}})));
@@ -23,14 +15,10 @@ model Plant
   Modelica.Blocks.Sources.Constant const1(k=0)
     annotation (Placement(transformation(extent={{-40,-72},{-32,-64}})));
   replaceable Controls.PSSE.TG.BaseClasses.BaseGovernor governor
-    annotation (choices(
-    choice(redeclare OpenIPSL.Electrical.Controls.PSSE.TG.ConstantPower governor),
-    choice(redeclare OpenIPSL.Electrical.Controls.PSSE.TG.IEESGO governor)),
+    annotation (choicesAllMatching=true,
     Placement(transformation(extent={{-30,40},{-10,60}})));
   replaceable Controls.PSSE.PSS.BaseClasses.BasePSS pss
-    annotation (choices(
-    choice(redeclare OpenIPSL.Electrical.Controls.PSSE.PSS.DisabledPSS pss),
-    choice(redeclare OpenIPSL.Electrical.Controls.PSSE.PSS.PSS2A pss)),
+    annotation (choicesAllMatching=true,
     Placement(transformation(extent={{-90,-6},{-50,12}})));
 equation
   connect(exciter.EFD, machine.EFD) annotation (Line(points={{10.95,-5.11111},{
