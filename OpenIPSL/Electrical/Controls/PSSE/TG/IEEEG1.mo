@@ -1,6 +1,7 @@
 within OpenIPSL.Electrical.Controls.PSSE.TG;
 model IEEEG1
-
+  Modelica.Blocks.Interfaces.RealInput SPEED_HP "Machine speed deviation from nominal (pu)"
+    annotation (Placement(transformation(extent={{-172,2},{-162,14}}), iconTransformation(extent={{-162,-16},{-132,16}})));
   OpenIPSL.NonElectrical.Continuous.LeadLag imLeadLag(
     K=K,
     T1=T_2,
@@ -111,6 +112,7 @@ model IEEEG1
   Modelica.Blocks.Math.Add add5
     annotation (Placement(transformation(extent={{138,52},{150,64}})));
 equation
+  connect(SPEED_HP, imLeadLag.u) annotation (Line(points={{-167,8},{-145.6,8}}, color={0,0,127}));
   connect(Pref.y, add3_1.u1) annotation (Line(points={{-127.2,42},{-122,42},{-122,14.4},{-113.6,14.4}}, color={0,0,127}));
   connect(add3_1.u2, imLeadLag.y) annotation (Line(points={{-113.6,8},{-113.6,8},{-127.2,8}}, color={0,0,127}));
   connect(add3_1.y, gain.u) annotation (Line(points={{-95.2,8},{-91.6,8}}, color={0,0,127}));
@@ -184,5 +186,28 @@ equation
 <td><p><a href=\"mailto:luigiv@kth.se\">luigiv@kth.se</a></p></td>
 </tr>
 </table>
-</html>"));
+</html>", revisions="<html>
+<!--DISCLAIMER-->
+<p>OpenIPSL:</p>
+<p>Copyright 2016 SmarTS Lab (Sweden)</p>
+<ul>
+<li>SmarTS Lab, research group at KTH: <a href=\"https://www.kth.se/en\">https://www.kth.se/en</a></li>
+</ul>
+<p>The authors can be contacted by email: <a href=\"mailto:luigiv@kth.se\">luigiv@kth.se</a></p>
+<p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
+<p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
+<p></p>
+<p>iPSL:</p>
+<p>Copyright 2015-2016 RTE (France), SmarTS Lab (Sweden), AIA (Spain) and DTU (Denmark)</p>
+<ul>
+<li>RTE: <a href=\"http://www.rte-france.com\">http://www.rte-france.com</a></li>
+<li>SmarTS Lab, research group at KTH: <a href=\"https://www.kth.se/en\">https://www.kth.se/en</a></li>
+<li>AIA: <a href=\"http://www.aia.es/en/energy\"> http://www.aia.es/en/energy</a></li>
+<li>DTU: <a href=\"http://www.dtu.dk/english\"> http://www.dtu.dk/english</a></li>
+</ul>
+<p>The authors can be contacted by email: <a href=\"mailto:info@itesla-ipsl.org\">info@itesla-ipsl.org</a></p>
+<p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
+<p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
+</html>
+"));
 end IEEEG1;
