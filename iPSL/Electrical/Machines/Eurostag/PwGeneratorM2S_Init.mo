@@ -277,8 +277,8 @@ model PwGeneratorM2S_Init "Initialization model for synchronous mahine M2S.
   // YLAMF
   Real cm0(start=1.0);
   Real efd0(start=1.0);
-  Real lMD0(start=1.0);
-  Real lMQ0(start=1.0);
+ // Real lMD0(start=1.0);
+ // Real lMQ0(start=1.0);
   Real mD_0(start=1.0);
   Real mQ_0(start=1.0);
   Real urReg0(start=ur0);
@@ -449,8 +449,8 @@ equation
   ONE*efd0 = -mDV*if0/rrTfo;
   // YEFD = - YMDIM * YRIF / YRI
   DET = lRot*lD + mCan*(lRot + lD);
-  ONE*lMD0 = lambdaAD0/(iD0 + lD*lambdaF0/DET + lRot*lambdaD0/DET);
-  ONE*lMQ0 = lambdaAQ0/(iQ0 + lambdaQ10/lQ1 + lambdaQ20/lQ2);
+//  ONE*lMD0 = lambdaAD0/(iD0 + lD*lambdaF0/DET + lRot*lambdaD0/DET);
+//  ONE*lMQ0 = lambdaAQ0/(iQ0 + lambdaQ10/lQ1 + lambdaQ20/lQ2);
   ONE*mD_0 = mDS0;
   ONE*mQ_0 = mQS0;
   // calcul du ureg0
