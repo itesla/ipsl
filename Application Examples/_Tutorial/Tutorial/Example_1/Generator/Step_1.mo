@@ -28,19 +28,16 @@ partial model Step_1
         extent={{-100,-100},{100,100}},
         preserveAspectRatio=false,
         initialScale=0.1,
-        grid={2,2}), graphics={
-        Rectangle(
+        grid={2,2}), graphics={Rectangle(
           lineColor={255,0,0},
           lineThickness=1,
-          extent={{-26,46},{80,-46}}),
-        Text(
+          extent={{-26,46},{80,-46}}),Text(
           fillPattern=FillPattern.Solid,
           lineThickness=1,
           extent={{-72,60},{118,42}},
           fontSize=12,
           textString="Electrical.Machines.PSAT.Order6",
-          lineColor={0,0,0}),
-        Text(
+          lineColor={0,0,0}),Text(
           fillPattern=FillPattern.Solid,
           lineThickness=1,
           extent={{-96,104},{94,86}},
