@@ -41,16 +41,19 @@ partial model Step_3
         extent={{-140,-100},{120,100}},
         preserveAspectRatio=false,
         initialScale=0.1,
-        grid={2,2}), graphics={Text(
+        grid={2,2}), graphics={
+        Text(
           fillPattern=FillPattern.Solid,
           lineThickness=1,
           extent={{-106,102},{84,84}},
           textString="Step 3: Adding infinite bus model",
           fontSize=15,
-          textStyle={TextStyle.Bold}),Rectangle(
+          textStyle={TextStyle.Bold}),
+        Rectangle(
           lineColor={255,0,0},
           lineThickness=1,
-          extent={{78,14},{102,-12}}),Text(
+          extent={{78,14},{102,-12}}),
+        Text(
           origin={-16,-2},
           fillPattern=FillPattern.Solid,
           lineThickness=1,
