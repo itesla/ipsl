@@ -85,8 +85,8 @@ model PwGeneratorM2S "Synchronous machine model according to Park's classical th
   "Initial imaginary voltage component p.u. in the SNREF base";
     //   parameter Real ir0 = 1;
     //   parameter Real ii0 = 0;
- // parameter Real p0_0=0 "Initial active power";
- // parameter Real q0_0=0 "Initial active power";
+  parameter Real P_0=0 "Initial active power (MW)";
+  parameter Real Q_0=0 "Initial active power (MVA)";
   // EXTERNAL PARAMETERS (GIVEN) per-unit in the machine SN base.
   parameter Real rStatIn=0 "Stator resistance p.u. in the machine SN base";
   parameter Real lStatIn=0 "Stator leakage p.u. in the machine SN base";

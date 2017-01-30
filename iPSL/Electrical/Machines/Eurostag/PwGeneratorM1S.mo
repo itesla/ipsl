@@ -59,8 +59,8 @@ model PwGeneratorM1S "Synchronous machine model according to Park's classical th
   "Initial imaginary voltage component p.u. in the SNREF base";
   //parameter Real ir0 = 1;
   //parameter Real ii0 = 0;
-  //parameter Real p0_0 = 0 "Initial active power";
-  //parameter Real q0_0 = 0 "Initial active power";
+  parameter Real P_0 = 0 "Initial active power (MW)";
+  parameter Real Q_0 = 0 "Initial active power (MVA)";
   //General parameters.
   parameter Real omega0 = 2 * 3.14159265 * 50
     "Nominal network angular frequency";
