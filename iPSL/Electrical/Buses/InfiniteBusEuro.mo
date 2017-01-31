@@ -1,34 +1,26 @@
 within iPSL.Electrical.Buses;
-model Bus "Bus model 2014/03/10"
-  iPSL.Connectors.PwPin p(vr(start=V_0*cos(angle_0*Modelica.Constants.pi/180)), vi(start=V_0*sin(angle_0*Modelica.Constants.pi/180))) annotation (Placement(
-      visible=true,
-      transformation(
-        origin={1.5559,0.0},
-        extent={{-10.0,-10.0},{10.0,10.0}},
-        rotation=0),
-      iconTransformation(
-        origin={0.0,-0.0},
-        extent={{-10.0,-10.0},{10.0,10.0}},
-        rotation=0)));
-  Real V(start=V_0) "Bus voltage magnitude (pu)";
-  Real angle(start=angle_0) "Bus voltage angle (deg)";
+model InfiniteBusEuro  "Infinite bus model 2016/05/12"
+
+  iPSL.Connectors.PwPin p(vr(start=V_0*cos(angle_0*Modelica.Constants.pi/180)), vi(start=V_0*sin(angle_0*Modelica.Constants.pi/180)));
+  parameter Real R;
+  parameter Real X;
+  parameter Real Y1 = R/(R*R + X*X);
+  parameter Real Y2 = X/(R*R + X*X);
   parameter Real V_0=1 "Voltage magnitude (pu)" annotation (Dialog(group="Power flow data"));
   parameter Real angle_0=0 "Voltage angle (deg)" annotation (Dialog(group="Power flow data"));
   parameter Real Vo_real = V_0*cos(angle_0*Modelica.Constants.pi/180)
     "Initial voltage at node in p.u. (Real part)";
   parameter Real Vo_img = V_0*sin(angle_0*Modelica.Constants.pi/180)
     "Initial voltage at node in p.u. (Imaginary part)";
- 
+  parameter Real Irn =  Y1*Vo_real + Y2*Vo_img;
+  parameter Real Iin = Y1*Vo_img - Y2*Vo_real;
+  Real V(start=V_0) "Bus voltage magnitude (pu)";
+  parameter Real angle =  atan2(R, X) "Bus voltage angle (deg)";
+
 equation
- if sqrt(p.vr^2 + p.vi^2) > Modelica.Constants.eps then
-  angle = atan2(p.vi, p.vr)*180/Modelica.Constants.pi;
-  V = sqrt(p.vr^2 + p.vi^2);
- else
-  angle = 0.0;
-  V = 0.0;
- end if; 
-  p.ir = 0;
-  p.ii = 0;
+     V = sqrt(p.vr^2 + p.vi^2);
+     p.ii + Iin = (R*p.vi - X*p.vr)/(X*X + R*R);
+     p.ir + Irn = (R*p.vr + X*p.vi)/(R*R + X*X);
   annotation (
     Icon(coordinateSystem(
         extent={{-100,-100},{100,100}},
@@ -94,4 +86,4 @@ equation
 <p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
 <p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
 </html>"));
-end Bus;
+end InfiniteBusEuro;
