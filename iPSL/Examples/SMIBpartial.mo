@@ -42,8 +42,8 @@ partial model SMIBpartial "SMIB system with one load"
     P_0=50,
     Q_0=10) annotation (Placement(transformation(extent={{-4,-52},{8,-40}})));
   iPSL.Electrical.Events.PwFault pwFault(
-    t1=2,
-    t2=2.15,
+    startTime=2,
+    endTime=2.15,
     R=0,
     X=0) annotation (Placement(transformation(
         extent={{-6,-6},{6,6}},

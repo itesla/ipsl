@@ -1,5 +1,6 @@
 within iPSL.Examples.Machines.PSAT;
 model InductiveMotorIII_SIMBOpenline_Test
+
   iPSL.Electrical.Machines.PSAT.InductionMachine.MotorTypeIII motorTypeI(
     Sup=0,
     V_0=1.0336,
@@ -21,24 +22,24 @@ model InductiveMotorIII_SIMBOpenline_Test
     G=0,
     R=0.01,
     X=0.1,
-    t1=2,
-    t2=3,
+    startTime=2,
+    endTime=3,
     B=1e-3) annotation (Placement(transformation(
         extent={{-25,-16},{25,16}},
         rotation=180,
         origin={-9,4})));
-  iPSL.Electrical.Buses.InfiniteBus infiniteBus(V=1.05, angle=0) annotation (Placement(transformation(
+  iPSL.Electrical.Buses.InfiniteBus infiniteBus(V_0=1.05, angle_0=0) annotation (Placement(transformation(
         extent={{-16.5,-13.5},{16.5,13.5}},
         rotation=0,
         origin={-86.5,-15.5})));
   inner iPSL.Electrical.SystemBase SysData(fn=60) annotation (Placement(transformation(extent={{40,60},{64,80}})));
 equation
   connect(infiniteBus.p, pwLine2.n) annotation (Line(
-      points={{-68.35,-15.5},{-48.175,-15.5},{-48.175,4},{-26.5,4}},
+      points={{-104.65,-15.5},{-48.175,-15.5},{-48.175,4},{-26.5,4}},
       color={0,0,255},
       smooth=Smooth.None));
   connect(pwLine1.n, infiniteBus.p) annotation (Line(
-      points={{-26.5,-38},{-48,-38},{-48,-15.5},{-68.35,-15.5}},
+      points={{-38.1667,-38},{-48,-38},{-48,-15.5},{-104.65,-15.5}},
       color={0,0,255},
       smooth=Smooth.None));
   connect(pwLine2.p, motorTypeI.p) annotation (Line(
@@ -46,7 +47,7 @@ equation
       color={0,0,255},
       smooth=Smooth.None));
   connect(pwLine1.p, motorTypeI.p) annotation (Line(
-      points={{8.5,-38},{30,-38},{30,-16},{42.32,-16}},
+      points={{20.1667,-38},{30,-38},{30,-16},{42.32,-16}},
       color={0,0,255},
       smooth=Smooth.None));
   annotation (Diagram(coordinateSystem(preserveAspectRatio=true, extent={{-100,-100},{100,100}}), graphics), Documentation(revisions="<html>
