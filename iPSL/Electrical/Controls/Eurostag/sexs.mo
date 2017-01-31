@@ -10,12 +10,12 @@ model sexs
   parameter Real init_1=init_EFD;
   parameter Real init_6=0;
   parameter Real init_4=init_EFD;
-  parameter Real EFDMAX;
-  parameter Real EFDMIN;
+  parameter Real EFDMAX = 999;
+  parameter Real EFDMIN = -999;
   parameter Real EMAX;
   parameter Real EMIN;
-  parameter Real K;
-  parameter Real KC;
+  parameter Real K = 1;
+  parameter Real KC = 1;
   parameter Real TA;
   parameter Real TB;
   parameter Real TE;
@@ -39,10 +39,16 @@ model sexs
   Modelica.Blocks.Interfaces.RealOutput pin_At_VERR;
   Modelica.Blocks.Interfaces.RealOutput pin_PSSREF;//Start = 0
   Modelica.Blocks.Interfaces.RealOutput pin_EFD; //EFD
+  iPSL.Interfaces.AddedConnector setPointModification_6;
+  iPSL.Interfaces.AddedConnector setPointModification_12;
+
+
 equation
   connect(ImSetPoint_12.y, MultiSum_13.u[2]);
+  connect(ImSetPoint_12.setPointModification, setPointModification_12);
   connect(MultiSum_13.y, LeadLag_2.u);
   connect(ImSetPoint_6.y, MultiSum_13.u[3]);
+   connect(ImSetPoint_6.setPointModification, setPointModification_6);
   connect(LeadLag_2.y, Gain_7.u);
   connect(Gain_7.y, SimpleLagLim_1.u);
   connect(SimpleLagLim_1.y, Limiter_4.u);

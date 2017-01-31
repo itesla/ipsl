@@ -47,7 +47,7 @@ model pssi3e2b
   Modelica.Blocks.Math.MultiSum MultiSum_16( nu= 2, k={1, -1}); //Eurostag Block number: 16
   iPSL.NonElectrical.Continuous.SimpleLag SimpleLag_2( K=KS2, T=T7, y_start=init_2); //Eurostag Block number: 2
   Modelica.Blocks.Continuous.Derivative Derivative_15( k=TW2, T=TW2, y_start=0, x_start=init_15, initType = Modelica.Blocks.Types.Init.InitialOutput); //Eurostag Block number: 15
-  Modelica.Blocks.Math.MultiSum MultiSum_20( nu= 2, k={KS3, 1}); //Eurostag Block number: 20
+  Modelica.Blocks.Math.MultiSum MultiSum_20(nu= 2, k={KS3, 1}); //Eurostag Block number: 20
   Modelica.Blocks.Math.MultiSum MultiSum_27( nu= 2, k={-1, 1}); //Eurostag Block number: 27
   Modelica.Blocks.Continuous.Derivative Derivative_4( k=TW3, T=TW3, y_start=0, x_start=init_4, initType = Modelica.Blocks.Types.Init.InitialOutput); //Eurostag Block number: 4
   iPSL.NonElectrical.Continuous.SimpleLag SimpleLag_7( K=1, T=T6, y_start=init_7); //Eurostag Block number: 7
@@ -68,6 +68,7 @@ model pssi3e2b
   Modelica.Blocks.Interfaces.RealOutput pin_At_IN;
   Modelica.Blocks.Interfaces.RealOutput pin_VS;//Start = 0
   Modelica.Blocks.Interfaces.RealOutput pin_At_OUT;
+  
 equation
   connect(LeadLag_11.y, SimpleLag_12.u);
   connect(SimpleLag_2.y, MultiSum_20.u[1]);

@@ -39,17 +39,17 @@ model pss2ab
   parameter Real PNALT;
   parameter Real init_IN;
   parameter Real init_AP;
-  Modelica.Blocks.Nonlinear.Limiter Limiter_11 (uMax=VSTMAX, uMin=VSTMIN); //Eurostag Block number: 11
-  Modelica.Blocks.Continuous.Derivative Derivative_4 (k=TW1, T=TW1, y_start=0, x_start=init_4, initType = Modelica.Blocks.Types.Init.InitialOutput); //Eurostag Block number: 4
-  Modelica.Blocks.Continuous.Derivative Derivative_5 (k=TW2, T=TW2, y_start=0, x_start=init_5, initType = Modelica.Blocks.Types.Init.InitialOutput); //Eurostag Block number: 5
-  Modelica.Blocks.Continuous.Derivative Derivative_2 (k=TW3, T=TW3, y_start=0, x_start=init_2, initType = Modelica.Blocks.Types.Init.InitialOutput); //Eurostag Block number: 2
-  iPSL.NonElectrical.Continuous.SimpleLag SimpleLag_8 (K=KS2, T=T7, y_start=init_8, initType = Modelica.Blocks.Types.Init.InitialOutput); //Eurostag Block number: 8
-  Modelica.Blocks.Math.MultiSum MultiSum_9 (nu =3, k={1, 1, M}); //Eurostag Block number: 9
-  Modelica.Blocks.Math.Gain Gain_10 (k=KS3); //Eurostag Block number: 10
-  Modelica.Blocks.Math.MultiSum MultiSum_17 (nu =3, k={1, -1, N}); //Eurostag Block number: 17
-  Modelica.Blocks.Math.Gain Gain_18 (k=KS1); //Eurostag Block number: 18
-  iPSL.NonElectrical.Continuous.LeadLag LeadLag_19 (K=1, T1=T1, T2=T2, y_start=init_19); //Eurostag Block number: 19
-  iPSL.NonElectrical.Continuous.LeadLag LeadLag_20 (K=1, T1=T3, T2=T4, y_start=init_20); //Eurostag Block number: 20
+  Modelica.Blocks.Nonlinear.Limiter Limiter_11( uMax=VSTMAX, uMin=VSTMIN); //Eurostag Block number: 11
+  Modelica.Blocks.Continuous.Derivative Derivative_4( k=TW1, T=TW1, y_start=0, x_start=init_4, initType = Modelica.Blocks.Types.Init.InitialOutput); //Eurostag Block number: 4
+  Modelica.Blocks.Continuous.Derivative Derivative_5( k=TW2, T=TW2, y_start=0, x_start=init_5, initType = Modelica.Blocks.Types.Init.InitialOutput); //Eurostag Block number: 5
+  Modelica.Blocks.Continuous.Derivative Derivative_2( k=TW3, T=TW3, y_start=0, x_start=init_2, initType = Modelica.Blocks.Types.Init.InitialOutput); //Eurostag Block number: 2
+  iPSL.NonElectrical.Continuous.SimpleLag SimpleLag_8( K=KS2, T=T7, y_start=init_8, initType = Modelica.Blocks.Types.Init.InitialOutput); //Eurostag Block number: 8
+  Modelica.Blocks.Math.MultiSum MultiSum_9( nu= 3, k={1, 1, M}); //Eurostag Block number: 9
+  Modelica.Blocks.Math.Gain Gain_10( k=KS3); //Eurostag Block number: 10
+  Modelica.Blocks.Math.MultiSum MultiSum_17( nu= 3, k={1, -1, N}); //Eurostag Block number: 17
+  Modelica.Blocks.Math.Gain Gain_18( k=KS1); //Eurostag Block number: 18
+  iPSL.NonElectrical.Continuous.LeadLag LeadLag_19( K=1, T1=T1, T2=T2, y_start=init_19); //Eurostag Block number: 19
+  iPSL.NonElectrical.Continuous.LeadLag LeadLag_20( K=1, T1=T3, T2=T4, y_start=init_20); //Eurostag Block number: 20
   Modelica.Blocks.Interfaces.RealInput pin_ActivePowerSN;
   Modelica.Blocks.Interfaces.RealInput pin_OMEGA;
   Modelica.Blocks.Interfaces.RealOutput pin_VS;
