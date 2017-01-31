@@ -1,8 +1,8 @@
 within iPSL.Electrical.Events;
 model Breaker
-  parameter Real t_o=Modelica.Constants.inf "Opening time (s)";
+  parameter Real startTime=Modelica.Constants.inf "Opening time (s)";
   parameter Boolean rc_enabled=false "Enable reclosure";
-  parameter Real t_rc=Modelica.Constants.inf "Reclosing time (s)";
+  parameter Real endTime=Modelica.Constants.inf "Reclosing time (s)";
 
   Connectors.PwPin s annotation (Placement(transformation(extent={{-60,-10},{-40,10}}), iconTransformation(extent={{-60,-10},{-40,10}})));
   Connectors.PwPin r annotation (Placement(transformation(extent={{40,-10},{60,10}}), iconTransformation(extent={{40,-10},{60,10}})));
@@ -12,10 +12,10 @@ model Breaker
   Complex ir(re=r.ir, im=r.ii);
 
 equation
-  if time < t_o then
+  if time < startTime then
     vs = vr;
     is = -ir;
-  elseif (time > t_o + t_rc) and rc_enabled then
+  elseif (time > startTime + endTime) and rc_enabled then
     vs = vr;
     is = -ir;
   else

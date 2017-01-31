@@ -65,8 +65,11 @@ model gsteam0
   Modelica.Blocks.Interfaces.RealOutput pin_PMECH; //PMECH
   Modelica.Blocks.Interfaces.RealOutput pin_CM; //CM
   Modelica.Blocks.Interfaces.RealOutput pin_CMREF;//Start = 0
+  iPSL.Interfaces.AddedConnector setPointModification_3;
+  iPSL.Interfaces.AddedConnector setPointModification_11;
 equation
   connect(ImSetPoint_3.y, MultiSum_2.u[1]);
+  connect(ImSetPoint_3.setPointModification, setPointModification_3);
   connect(MultiSum_2.y, Gain_1.u);
   connect(Gain_1.y, SimpleLagLim_4.u);
   connect(SimpleLagLim_4.y, LeadLag_5.u);
@@ -77,6 +80,7 @@ equation
   connect(MultiSum_7.y, MultiSum_2.u[2]);
   connect(ImDiv2_9.y, MultiSum_10.u[1]);
   connect(ImSetPoint_11.y, MultiSum_10.u[2]);
+  connect(ImSetPoint_11.setPointModification, setPointModification_11);
   connect(pin_OMEGA, MultiSum_7.u[1]);
   connect(pin_OMEGA, ImDiv2_9.u2);
   connect(pin_PMECH, MultiSum_8.y);

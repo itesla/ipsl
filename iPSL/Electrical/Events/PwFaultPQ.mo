@@ -1,15 +1,16 @@
 within iPSL.Electrical.Events;
 model PwFaultPQ
+
   iPSL.Connectors.PwPin p annotation (Placement(transformation(extent={{-40,-10},{-20,10}}), iconTransformation(extent={{-80,-10},{-60,10}})));
   parameter Real R "Resistance (pu)";
   parameter Real X "Reactance (pu)";
-  parameter Real t1 "Start time of the fault (s)";
-  parameter Real t2 "End time of the fault (s)";
+  parameter Real startTime "Start time of the fault (s)";
+  parameter Real endTime "End time of the fault (s)";
   Real P "Active power supplied to the fault (pu)";
   Real Q "Reactive power supplied to the fault (pu)";
 equation
-  p.ir = if time < t1 then 0 else if time < t2 then 1/X*(p.vi - R*p.ii) else 0;
-  p.ii = if time < t1 then 0 else if time < t2 then (R*p.vi - X*p.vr)/(X*X + R*R) else 0;
+  p.ir = if time < startTime then 0 else if time < endTime then 1/X*(p.vi - R*p.ii) else 0;
+  p.ii = if time < startTime then 0 else if time < endTime then (R*p.vi - X*p.vr)/(X*X + R*R) else 0;
   P = p.vr*p.ir + p.vi*p.ii;
   Q = (-p.vr*p.ii) + p.vi*p.ir;
   annotation (

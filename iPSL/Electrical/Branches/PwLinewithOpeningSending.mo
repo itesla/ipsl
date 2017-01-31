@@ -2,31 +2,27 @@ within iPSL.Electrical.Branches;
 model PwLinewithOpeningSending "Transmission Line based on the pi-equivalent circuit
               with an opening event on the sending node.
               2014/03/10"
+
   iPSL.Connectors.PwPin p annotation (Placement(transformation(extent={{-80,-10},{-60,10}}), iconTransformation(extent={{-80,-10},{-60,10}})));
   iPSL.Connectors.PwPin n annotation (Placement(transformation(extent={{60,-10},{80,10}}), iconTransformation(extent={{60,-10},{80,10}})));
   parameter Real R "Resistance p.u.";
   parameter Real X "Reactance p.u.";
   parameter Real G "Shunt half conductance p.u.";
   parameter Real B "Shunt half susceptance p.u.";
-  parameter Real t1 "Start time of the opening";
-  parameter Real t2 "End time of the opening";
+  parameter Real startTime "Start time of the opening";
+  parameter Real endTime "End time of the opening";
+
   Real Zr;
   Real Zi;
 equation
   Zr = R*G + X*B;
   Zi = R*B + X*G;
-  if time > t1 then
-    if time < t2 then
+
+  if time >= startTime and time < endTime then
       n.vr*(2.0*G + G*Zr - B*Zi) - n.vi*(2.0*B + Zr*B + Zi*G) = n.ir*(1.0 + Zr) - n.ii*Zi;
       n.vr*(2.0*B + Zr*B + Zi*G) + n.vi*(2.0*G + G*Zr - B*Zi) = n.ir*Zi + n.ii*(1.0 + Zr);
       p.ii = 0.0;
       p.ir = 0.0;
-    else
-      R*(n.ir - G*n.vr + B*n.vi) - X*(n.ii - B*n.vr - G*n.vi) = n.vr - p.vr;
-      R*(n.ii - B*n.vr - G*n.vi) + X*(n.ir - G*n.vr + B*n.vi) = n.vi - p.vi;
-      R*(p.ir - G*p.vr + B*p.vi) - X*(p.ii - B*p.vr - G*p.vi) = p.vr - n.vr;
-      R*(p.ii - B*p.vr - G*p.vi) + X*(p.ir - G*p.vr + B*p.vi) = p.vi - n.vi;
-    end if;
   else
     R*(n.ir - G*n.vr + B*n.vi) - X*(n.ii - B*n.vr - G*n.vi) = n.vr - p.vr;
     R*(n.ii - B*n.vr - G*n.vi) + X*(n.ir - G*n.vr + B*n.vi) = n.vi - p.vi;

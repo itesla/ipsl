@@ -30,7 +30,7 @@ model pss2ab_Init
   parameter Real SN;
   parameter Real PN;
   parameter Real PNALT;
-  Modelica.Blocks.Math.Gain Gain_2 (k=1); //Eurostag Block number: 2
+  Modelica.Blocks.Math.Gain Gain_2( k=1); //Eurostag Block number: 2
   Modelica.Blocks.Interfaces.RealInput pin_ActivePowerSN;
   Modelica.Blocks.Interfaces.RealInput pin_OMEGA;
   Modelica.Blocks.Interfaces.RealOutput pin_AP; //isInitValue

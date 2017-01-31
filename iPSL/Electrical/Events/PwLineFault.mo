@@ -2,17 +2,18 @@ within iPSL.Electrical.Events;
 model PwLineFault "Transitory short-circuit on a line at the point of location from the sending node
    given by parameter k. A fictitious node is created with where a shunt impedance is connected only
    during a specified interval of time. Developed by AIA. 2015/03/20."
+
   iPSL.Connectors.PwPin p annotation (Placement(transformation));
   iPSL.Connectors.PwPin n annotation (Placement(transformation));
   parameter Real R1 "Resistance";
   parameter Real X1 "Conductance";
   parameter Real G1 "Shunt half conductance p.u.";
   parameter Real B1 "Shunt half susceptance p.u.";
-  parameter Real k "Point of the line where the short circuit occurs (between 0.1 and 0.99)";
+  parameter Real k  "Point of the line where the short circuit occurs (between 0.1 and 0.99)";
   parameter Real Rfault "Fault resistance";
   parameter Real Xfault "Fault reactance";
-  parameter Real time_1 "Start time of the fault";
-  parameter Real time_2 "End time of the fault";
+  parameter Real startTime "Start time of the fault";
+  parameter Real endTime "End time of the fault";
   parameter Real V1_0 "Initial voltage magnitude at Sending node";
   parameter Real angle1_0 "Initial  voltage angle Sending node";
   parameter Real V2_0 "Initial voltage magnitude Receiving node";
@@ -41,8 +42,8 @@ model PwLineFault "Transitory short-circuit on a line at the point of location f
   iPSL.Electrical.Events.PwFault Fault(
     R=Rfault,
     X=Xfault,
-    t1=time_1,
-    t2=time_2) annotation (Placement(transformation));
+    startTime=startTime,
+    endTime=endTime) annotation (Placement(transformation));
 equation
   connect(p, Line_1.p) annotation (Line);
   connect(Line_1.n, FICT.p) annotation (Line);

@@ -1,22 +1,13 @@
 within iPSL.NonElectrical.Eurostag.Math;
-block ImSetPoint "Set Point. 2014/03/10"
+model ImSetPoint "Set Point. 2014/03/10"
   parameter Real V "Voltage Set Point";
-  parameter Boolean setPointWithModification = false;
-  parameter Real t1 = 0 "Time of change Voltage Set Point";
-  parameter Real V_t1 = 0 "Voltage Set Point at Timi t1";
+  iPSL.Interfaces.AddedConnector setPointModification;
   Modelica.Blocks.Interfaces.RealOutput y "Output signal connector"
     annotation (Placement(transformation(extent={{100,-10},{120,10}},
       rotation=0)));
 equation
-  if setPointWithModification then
-    if time < t1 then
-      y = V;
-    else
-      y = V_t1;
-    end if;
-  else
-    y = V;
-  end if;
+    y = V + setPointModification.deltaV;
+    setPointModification.V1 = V;
   annotation (Icon(coordinateSystem(
           preserveAspectRatio=false,
           extent={{-100,-100},{100,100}},
@@ -27,9 +18,9 @@ equation
           lineColor={0,0,255},
           textString="Set
           "),
-          Rectangle(extent={{-100,100},{100,-100}}, lineColor={0,0,255})}),
+         Rectangle(extent={{-100,100},{100,-100}}, lineColor={0,0,255})}),
          Diagram(coordinateSystem(
-        preserveAspectRatio=false,
+           preserveAspectRatio=false,
         extent={{-100,-100},{100,100}}), graphics={
         Rectangle(extent={{-60,60},{60,-60}}, lineColor={0,0,255}),
         Line(points={{60,0},{100,0}}, color={0,0,255}),

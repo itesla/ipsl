@@ -2,21 +2,22 @@ within iPSL.Electrical.Branches;
 model PwLinewithOpeningReceiving "Transmission Line based on the pi-equivalent circuit
               with an opening event on the receiving node. Developed by AIA.
               2014/03/10"
+
   iPSL.Connectors.PwPin p annotation (Placement(transformation(extent={{-80,-10},{-60,10}}), iconTransformation(extent={{-80,-10},{-60,10}})));
   iPSL.Connectors.PwPin n annotation (Placement(transformation(extent={{60,-10},{80,10}}), iconTransformation(extent={{60,-10},{80,10}})));
   parameter Real R "Resistance p.u.";
   parameter Real X "Reactance p.u.";
   parameter Real G "Shunt half conductance p.u.";
   parameter Real B "Shunt half susceptance p.u.";
-  parameter Real t1 "Start time of the opening";
-  parameter Real t2 "End time of the opening";
+  parameter Real startTime "Start time of the opening";
+  parameter Real endTime "End time of the opening";
   Real Zr;
   Real Zi;
 equation
   Zr = R*G + X*B;
   Zi = R*B + X*G;
-  if time > t1 then
-    if time < t2 then
+  if time > startTime then
+    if time < endTime then
       p.vr*(2.0*G + G*Zr - B*Zi) - p.vi*(2.0*B + Zr*B + Zi*G) = p.ir*(1.0 + Zr) - p.ii*Zi;
       p.vr*(2.0*B + Zr*B + Zi*G) + p.vi*(2.0*G + G*Zr - B*Zi) = p.ir*Zi + p.ii*(1.0 + Zr);
       n.ii = 0.0;
