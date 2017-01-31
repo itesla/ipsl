@@ -2,10 +2,11 @@ within iPSL.Electrical.Loads.Eurostag;
 model PwLoadwithVariation "Load with a power variation event.
               2014/03/10"
  extends iPSL.Electrical.Essentials.pfComponent;
+ inner iPSL.Electrical.SystemBase SysData;
   iPSL.Connectors.PwPin p annotation(Placement(transformation(extent = {{-80, 0}, {-60, 20}}), iconTransformation(extent = {{-80, 0}, {-60, 20}})));
   parameter Real Po = P_0/S_b "Initial Active Power in p.u.";
   parameter Real Qo = Q_0/S_b "Initial Reactive Power in p.u.";
-  parameter Real t1 "Time of Load variation";
+  parameter Real startTime "Time of Load variation";
   parameter Real P2 "Active load variation in p.u.";
   parameter Real Q2 "Reactive load variation in p.u";
   Real Vo;
@@ -16,7 +17,7 @@ model PwLoadwithVariation "Load with a power variation event.
   Real a;
 equation
   Vo = V_0;
-  if time > t1 then
+  if time > startTime then
     P = Po + P2;
     Q = Qo + Q2;
   else
