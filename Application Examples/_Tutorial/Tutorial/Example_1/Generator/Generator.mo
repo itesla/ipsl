@@ -1,6 +1,4 @@
 within Tutorial.Example_1.Generator;
-
-
 model Generator
   extends Tutorial.Support.Generator_Example;
   OpenIPSL.Electrical.Controls.PSAT.AVR.AVRtypeIII avr(
@@ -33,13 +31,18 @@ model Generator
     P_0=P_0,
     Q_0=Q_0,
     Vn=400) annotation (Placement(transformation(extent={{14,-30},{74,30}})));
-  Modelica.Blocks.Sources.Constant pss_off(k=0) annotation (Placement(transformation(extent={{-100,-2},{-80,18}})));
+  Modelica.Blocks.Sources.Constant pss_off(k=0) annotation (Placement(transformation(extent={{-90,-4},
+            {-70,16}})));
 equation
-  connect(avr.vf, machine.vf) annotation (Line(points={{-12,16},{14,16},{14,15}}, color={0,0,127}));
-  connect(avr.v, machine.v) annotation (Line(points={{-58,26},{-72,26},{-72,50},{94,50},{94,9},{77,9}}, color={0,0,127}));
+  connect(avr.vf, machine.vf) annotation (Line(points={{-12.3333,16},{14,16},{
+          14,15}},                                                                color={0,0,127}));
+  connect(avr.v, machine.v) annotation (Line(points={{-52.3333,26},{-72,26},{
+          -72,50},{94,50},{94,9},{77,9}},                                                               color={0,0,127}));
   connect(machine.pm0, machine.pm) annotation (Line(points={{20,-33},{20,-33},{20,-40},{0,-40},{0,-15},{14,-15}}, color={0,0,127}));
-  connect(pss_off.y, avr.vs) annotation (Line(points={{-79,8},{-58,8},{-58,8}}, color={0,0,127}));
-  connect(avr.vf0, machine.vf0) annotation (Line(points={{-34,40},{-34,46},{20,46},{20,33}}, color={0,0,127}));
+  connect(pss_off.y, avr.vs) annotation (Line(points={{-69,6},{-62,6},{-52.3333,
+          6}},                                                                  color={0,0,127}));
+  connect(avr.vf0, machine.vf0) annotation (Line(points={{-34,34.3333},{-34,46},
+          {20,46},{20,33}},                                                                  color={0,0,127}));
   connect(machine.p, pwPin) annotation (Line(points={{77,0.14892},{93.5,0.14892},{93.5,0},{110,0}}, color={0,0,255}));
   annotation (Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,100}})), Documentation(revisions="<html>
 <!--DISCLAIMER-->
