@@ -12,20 +12,24 @@ partial model Step_1
         extent={{-33.3332,-20},{46.6668,20}},
         rotation=0)));
   annotation (
-    Diagram(coordinateSystem(extent={{-140,-100},{120,100}}, preserveAspectRatio=false), graphics={Text(
+    Diagram(coordinateSystem(extent={{-140,-100},{120,100}}, preserveAspectRatio=false), graphics={
+        Text(
           extent={{-106,102},{84,84}},
           lineColor={0,0,0},
           lineThickness=1,
           fillPattern=FillPattern.Solid,
           fontSize=15,
           textStyle={TextStyle.Bold},
-          textString="Step 1: Adding generator and bus models"),Rectangle(
+          textString="Step 1: Adding generator and bus models"),
+        Rectangle(
           extent={{-126,14},{-94,-14}},
           lineColor={255,0,0},
-          lineThickness=1),Rectangle(
+          lineThickness=1),
+        Rectangle(
           extent={{-86,20},{66,-22}},
           lineColor={255,0,0},
-          lineThickness=1),Text(
+          lineThickness=1),
+        Text(
           extent={{-104,36},{86,18}},
           lineColor={0,0,0},
           lineThickness=1,

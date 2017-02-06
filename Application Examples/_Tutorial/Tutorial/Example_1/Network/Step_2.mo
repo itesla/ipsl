@@ -31,26 +31,31 @@ partial model Step_2
         extent={{-33.4102,-20},{46.7741,20}},
         rotation=0)));
   annotation (
-    Diagram(coordinateSystem(extent={{-140,-100},{120,100}}, preserveAspectRatio=false), graphics={Text(
+    Diagram(coordinateSystem(extent={{-140,-100},{120,100}}, preserveAspectRatio=false), graphics={
+        Text(
           extent={{-106,102},{84,84}},
           lineColor={0,0,0},
           lineThickness=1,
           fillPattern=FillPattern.Solid,
           fontSize=15,
           textStyle={TextStyle.Bold},
-          textString="Step 2: Adding transformer and line models"),Rectangle(
+          textString="Step 2: Adding transformer and line models"),
+        Rectangle(
           extent={{-66,10},{-34,-10}},
           lineColor={255,0,0},
-          lineThickness=1),Text(
+          lineThickness=1),
+        Text(
           extent={{-20,44},{56,34}},
           lineColor={0,0,0},
           lineThickness=1,
           fillPattern=FillPattern.Solid,
           fontSize=12,
-          textString="Electrical.Branches.PwLine"),Rectangle(
+          textString="Electrical.Branches.PwLine"),
+        Rectangle(
           extent={{4,34},{36,-32}},
           lineColor={255,0,0},
-          lineThickness=1),Text(
+          lineThickness=1),
+        Text(
           extent={{-128,26},{8,14}},
           lineColor={0,0,0},
           lineThickness=1,
