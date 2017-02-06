@@ -1,6 +1,4 @@
 within OpenIPSL.Electrical.Controls.PSAT.AVR;
-
-
 model AVRtypeIII
   parameter Real vfmax=5;
   parameter Real vfmin=-5;
@@ -24,20 +22,21 @@ model AVRtypeIII
         extent={{-20.0,-20.0},{20.0,20.0}},
         rotation=0),
       iconTransformation(
-        origin={-120,60},
-        extent={{-20,-20},{20,20}},
+        origin={-110,60},
+        extent={{-10,-10},{10,10}},
         rotation=0)));
   Modelica.Blocks.Interfaces.RealOutput vf annotation (Placement(
       visible=true,
       transformation(
-        origin={160,0},
+        origin={130,0},
         extent={{-10.0,-10.0},{10.0,10.0}},
         rotation=0),
       iconTransformation(
-        origin={126,0},
-        extent={{-26,-26},{26,26}},
+        origin={130,0},
+        extent={{-10,-10},{10,10}},
         rotation=0)));
-  Modelica.Blocks.Interfaces.RealInput vs annotation (Placement(transformation(extent={{-140,-82},{-100,-42}}), iconTransformation(extent={{-140,-82},{-100,-42}})));
+  Modelica.Blocks.Interfaces.RealInput vs annotation (Placement(transformation(extent={{-140,-82},{-100,-42}}), iconTransformation(extent={{-120,
+            -70},{-100,-50}})));
   Modelica.Blocks.Interfaces.RealInput vf0(start=1) annotation (Placement(
       visible=true,
       transformation(
@@ -45,8 +44,8 @@ model AVRtypeIII
         extent={{-20.0,-20.0},{20.0,20.0}},
         rotation=-90),
       iconTransformation(
-        origin={1,79},
-        extent={{-21,-21},{21,21}},
+        origin={0,110},
+        extent={{-10,-10},{10,10}},
         rotation=-90)));
 protected
   parameter Real vref(fixed=false);
@@ -64,9 +63,10 @@ equation
   limiter1.u = vf1;
   limiter1.y = vf;
   annotation (
-    Icon(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,100}}), graphics={
+    Icon(coordinateSystem(preserveAspectRatio=false, extent={{-120,-120},{120,
+            120}}),                                                                   graphics={
         Rectangle(
-          extent={{-100,100},{100,-100}},
+          extent={{-120,120},{120,-120}},
           lineColor={0,0,255},
           fillColor={255,255,255},
           fillPattern=FillPattern.Solid),
@@ -75,19 +75,19 @@ equation
           lineColor={0,0,255},
           textString="v"),
         Text(
-          extent={{-96,-52},{-64,-74}},
+          extent={{-100,-48},{-68,-70}},
           lineColor={0,0,255},
           textString="vs"),
         Text(
-          extent={{74,14},{106,-8}},
+          extent={{88,10},{120,-12}},
           lineColor={0,0,255},
           textString="vf"),
         Text(
-          extent={{-36,20},{40,-40}},
+          extent={{-34,36},{42,-24}},
           lineColor={0,0,255},
           textString="AVRTypeIII"),
         Text(
-          extent={{-16,60},{16,38}},
+          extent={{-16,100},{16,78}},
           lineColor={0,0,255},
           textString="vf0")}),
     Documentation(revisions="<html>
@@ -136,5 +136,5 @@ equation
 </tr>
 </table>
 </html>"),
-    Diagram(coordinateSystem(extent={{-900,-100},{100,900}})));
+    Diagram(coordinateSystem(extent={{-120,-120},{120,120}})));
 end AVRtypeIII;

@@ -41,12 +41,17 @@ partial model Step_2
     T3=1,
     T4=1) annotation (Placement(transformation(extent={{-40,-4},{-20,16}})));
 equation
-  connect(avr.vf, machine.vf) annotation (Line(points={{22.6,10},{40,10},{40,10}}, color={0,0,127}));
-  connect(pss.vSI, machine.w) annotation (Line(points={{-41,6},{-60,6},{-60,-40},{96,-40},{96,18},{82,18}}, color={0,0,127}));
-  connect(pss.vs, avr.vs) annotation (Line(points={{-19,6},{-10,6},{-10,3.8},{-2,3.8}}, color={0,0,127}));
-  connect(avr.v, machine.v) annotation (Line(points={{-2,16},{-10,16},{-10,-34},{92,-34},{92,6},{82,6}}, color={0,0,127}));
+  connect(avr.vf, machine.vf) annotation (Line(points={{20.8333,10},{40,10},{40,
+          10}},                                                                    color={0,0,127}));
+  connect(pss.vSI, machine.w) annotation (Line(points={{-41,6},{-60,6},{-60,-40},
+          {96,-40},{96,18},{82,18}},                                                                        color={0,0,127}));
+  connect(pss.vs, avr.vs) annotation (Line(points={{-19,6},{-10,6},{-10,5},{
+          0.833333,5}},                                                                 color={0,0,127}));
+  connect(avr.v, machine.v) annotation (Line(points={{0.833333,15},{-10,15},{
+          -10,-34},{92,-34},{92,6},{82,6}},                                                              color={0,0,127}));
   connect(machine.pm, machine.pm0) annotation (Line(points={{40,-10},{32,-10},{32,-26},{44,-26},{44,-22}}, color={0,0,127}));
-  connect(avr.vf0, machine.vf0) annotation (Line(points={{10.1,17.9},{10.1,28},{44,28},{44,22}}, color={0,0,127}));
+  connect(avr.vf0, machine.vf0) annotation (Line(points={{10,19.1667},{10,28},{
+          44,28},{44,22}},                                                                       color={0,0,127}));
   connect(machine.p, pwPin) annotation (Line(points={{82,0.09928},{96,0.09928},{96,0},{110,0}}, color={0,0,255}));
   annotation (Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,100}}), graphics={Text(
           extent={{-92,102},{98,84}},
@@ -94,4 +99,3 @@ equation
 </html>
 "));
 end Step_2;
-
