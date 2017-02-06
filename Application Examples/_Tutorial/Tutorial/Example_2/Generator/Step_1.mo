@@ -39,23 +39,27 @@ partial model Step_1
     T1=0.154,
     T2=0.033,
     T3=1,
-    T4=1) annotation (Placement(transformation(extent={{-40,-4},{-20,16}})));
+    T4=1) annotation (Placement(transformation(extent={{-40,-6},{-20,14}})));
 equation
-  connect(avr.vf, machine.vf) annotation (Line(points={{21,10},{30,10},{40,10}}, color={0,0,127}));
+  connect(avr.vf, machine.vf) annotation (Line(points={{20.8333,10},{20.8333,10},
+          {40,10}},                                                                  color={0,0,127}));
   connect(machine.pm, machine.pm0) annotation (Line(points={{40,-10},{34,-10},{34,-28},{44,-28},{44,-22}}, color={0,0,127}));
   connect(machine.p, pwPin) annotation (Line(points={{82,0.09928},{96,0.09928},{96,0},{110,0}}, color={0,0,255}));
-  annotation (Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,100}}), graphics={Rectangle(
-          extent={{-46,20},{-14,-8}},
+  annotation (Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,100}}), graphics={
+        Rectangle(
+          extent={{-46,18},{-14,-10}},
           lineColor={255,0,0},
-          lineThickness=1),Text(
+          lineThickness=1),
+        Text(
           extent={{-92,102},{98,84}},
           lineColor={0,0,0},
           lineThickness=1,
           fillPattern=FillPattern.Solid,
           fontSize=15,
           textStyle={TextStyle.Bold},
-          textString="Step 1: Adding PSS to the generator model"),Text(
-          extent={{-76,32},{28,24}},
+          textString="Step 1: Adding PSS to the generator model"),
+        Text(
+          extent={{-84,28},{20,20}},
           lineColor={0,0,0},
           lineThickness=1,
           fillPattern=FillPattern.Solid,
@@ -88,4 +92,3 @@ equation
 </html>
 "));
 end Step_1;
-
