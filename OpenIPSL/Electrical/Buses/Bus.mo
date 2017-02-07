@@ -41,13 +41,14 @@ equation
           fillPattern=FillPattern.Solid,
           extent={{-39.0262,-16.7966},{39.0262,16.7966}},
           fontName="Arial",
-          textString=DynamicSelect("0.0", String(v, significantDigits=3)),
-          lineColor={238,46,47}),Text(
+          textString=DynamicSelect("0.0", String(V, significantDigits=3)),
+          lineColor={238,46,47}),
+        Text(
           origin={0.9738,-140.937},
           fillPattern=FillPattern.Solid,
           extent={{-39.0262,-16.7966},{39.0262,16.7966}},
           fontName="Arial",
-          textString=DynamicSelect("0.0", String(anglevdeg, significantDigits=3)),
+          textString=DynamicSelect("0.0", String(angle, significantDigits=3)),
           lineColor={238,46,47})}),
     Diagram(coordinateSystem(
         extent={{-148.5,-105.0},{148.5,105.0}},
