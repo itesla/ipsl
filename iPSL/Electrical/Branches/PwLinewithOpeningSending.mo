@@ -11,24 +11,77 @@ model PwLinewithOpeningSending "Transmission Line based on the pi-equivalent cir
   parameter Real B "Shunt half susceptance p.u.";
   parameter Real startTime "Start time of the opening";
   parameter Real endTime "End time of the opening";
-
-  Real Zr;
-  Real Zi;
+   parameter Real Y=1/sqrt(R*R + X*X);
+  parameter Real angle=atan2(R, X);
+  parameter Real S1=B;
+  parameter Real S2=B;
+  parameter Real C1=G;
+  parameter Real C2=G;
+  //I=f(U);
+  //I1
+  parameter Real ir1_dur1=Y*sin(angle) + C1;
+  parameter Real ir1_dui1=(-S1) + Y*cos(angle);
+  parameter Real ir1_dur2=-Y*sin(angle);
+  parameter Real ir1_dui2=-Y*cos(angle);
+  parameter Real ii1_dur1=S1 - Y*cos(angle);
+  parameter Real ii1_dui1=Y*sin(angle) + C1;
+  parameter Real ii1_dur2=Y*cos(angle);
+  parameter Real ii1_dui2=-Y*sin(angle);
+  // I2
+  parameter Real ir2_dur1=-Y*sin(angle);
+  parameter Real ir2_dui1=-Y*cos(angle);
+  parameter Real ir2_dur2=C2 + Y*sin(angle);
+  parameter Real ir2_dui2=(-S2) + Y*cos(angle);
+  parameter Real ii2_dur1=Y*cos(angle);
+  parameter Real ii2_dui1=-Y*sin(angle);
+  parameter Real ii2_dur2=S2 - Y*cos(angle);
+  parameter Real ii2_dui2=C2 + Y*sin(angle);
+  parameter Real Zr  =  R*G + X*B;
+  parameter Real Zi  =  R*B + X*G;
+  Real zr2;
+  Real zi2;
 equation
-  Zr = R*G + X*B;
-  Zi = R*B + X*G;
-
-  if time >= startTime and time < endTime then
+   zr2 = (1+Zr)^2;
+   zi2 =  Zi^2;
+   
+   if time > startTime then
+    if time < endTime then
       n.vr*(2.0*G + G*Zr - B*Zi) - n.vi*(2.0*B + Zr*B + Zi*G) = n.ir*(1.0 + Zr) - n.ii*Zi;
       n.vr*(2.0*B + Zr*B + Zi*G) + n.vi*(2.0*G + G*Zr - B*Zi) = n.ir*Zi + n.ii*(1.0 + Zr);
       p.ii = 0.0;
       p.ir = 0.0;
+    else
+      R*(n.ir - G*n.vr + B*n.vi) - X*(n.ii - B*n.vr - G*n.vi) = n.vr - p.vr;
+      R*(n.ii - B*n.vr - G*n.vi) + X*(n.ir - G*n.vr + B*n.vi) = n.vi - p.vi;
+      R*(p.ir - G*p.vr + B*p.vi) - X*(p.ii - B*p.vr - G*p.vi) = p.vr - n.vr;
+      R*(p.ii - B*p.vr - G*p.vi) + X*(p.ir - G*p.vr + B*p.vi) = p.vi - n.vi;
+    end if;
   else
     R*(n.ir - G*n.vr + B*n.vi) - X*(n.ii - B*n.vr - G*n.vi) = n.vr - p.vr;
     R*(n.ii - B*n.vr - G*n.vi) + X*(n.ir - G*n.vr + B*n.vi) = n.vi - p.vi;
     R*(p.ir - G*p.vr + B*p.vi) - X*(p.ii - B*p.vr - G*p.vi) = p.vr - n.vr;
     R*(p.ii - B*p.vr - G*p.vi) + X*(p.ir - G*p.vr + B*p.vi) = p.vi - n.vi;
   end if;
+   
+/* if time > startTime then
+    if time < endTime then
+      n.ii  = ((2.0*B + Zr*B + Zi*G)*(1.0 + Zr) - (2.0*G + G*Zr - B*Zi)*Zi)*n.vr +  (-1*(2.0*B + Zr*B + Zi*G)*(Zi) + (2.0*G + G*Zr - B*Zi)*Zr)*n.vi;
+      n.ir =  ((2.0*B + Zr*B + Zi*G)*(1.0 + Zr) - (2.0*G + G*Zr - B*Zi)*Zi)*n.vi -  (-1*(2.0*B + Zr*B + Zi*G)*(Zi) + (2.0*G + G*Zr - B*Zi)*Zr)*n.vr; 
+      p.ii = 0.0;
+      p.ir = 0.0;
+    else
+   n.ir = ir1_dur1*n.vr + ir1_dui1*n.vi + ir1_dur2*p.vr + ir1_dui2*p.vi;
+   n.ii = ii1_dur1*n.vr + ii1_dui1*n.vi + ii1_dur2*p.vr + ii1_dui2*p.vi;
+   p.ir = ir2_dur1*n.vr + ir2_dui1*n.vi + ir2_dur2*p.vr + ir2_dui2*p.vi;
+   p.ii = ii2_dur1*n.vr + ii2_dui1*n.vi + ii2_dur2*p.vr + ii2_dui2*p.vi;
+    end if;
+  else
+   n.ir = ir1_dur1*n.vr + ir1_dui1*n.vi + ir1_dur2*p.vr + ir1_dui2*p.vi;
+   n.ii = ii1_dur1*n.vr + ii1_dui1*n.vi + ii1_dur2*p.vr + ii1_dui2*p.vi;
+   p.ir = ir2_dur1*n.vr + ir2_dui1*n.vi + ir2_dur2*p.vr + ir2_dui2*p.vi;
+   p.ii = ii2_dur1*n.vr + ii2_dui1*n.vi + ii2_dur2*p.vr + ii2_dui2*p.vi;
+  end if;*/
+
   annotation (
     Icon(graphics={Rectangle(extent={{-60,40},{60,-42}}, lineColor={0,0,255}),Rectangle(
           extent={{-40,10},{40,-10}},
