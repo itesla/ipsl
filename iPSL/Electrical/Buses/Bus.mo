@@ -20,12 +20,12 @@ model Bus "Bus model 2014/03/10"
     "Initial voltage at node in p.u. (Imaginary part)";
  
 equation
- if sqrt(p.vr^2 + p.vi^2) > Modelica.Constants.eps then
+ if abs(p.vi) > Modelica.Constants.eps then
   angle = atan2(p.vi, p.vr)*180/Modelica.Constants.pi;
   V = sqrt(p.vr^2 + p.vi^2);
  else
   angle = 0.0;
-  V = 0.0;
+  V = sqrt(p.vr^2 + p.vi^2);
  end if; 
   p.ir = 0;
   p.ii = 0;
