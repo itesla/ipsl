@@ -15,7 +15,7 @@ model InfiniteBusEuro  "Infinite bus model 2016/05/12"
   parameter Real Irn =  Y1*Vo_real + Y2*Vo_img;
   parameter Real Iin = Y1*Vo_img - Y2*Vo_real;
   Real V(start=V_0) "Bus voltage magnitude (pu)";
-  parameter Real angle =  atan2(R, X) "Bus voltage angle (deg)";
+
 
 equation
      V = sqrt(p.vr^2 + p.vi^2);

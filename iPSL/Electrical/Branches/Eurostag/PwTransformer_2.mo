@@ -12,8 +12,8 @@ model PwTransformer_2 "Two winding fixed transformer composed of an ideal transf
 equation
   p.ir = 1/(R*R + X*X)*(R*(r*r*p.vr - r*n.vr) + X*(r*r*p.vi - r*n.vi));
   p.ii = 1/(R*R + X*X)*(R*(r*r*p.vi - r*n.vi) - X*(r*r*p.vr - r*n.vr));
-  n.ir = (-1/r*p.ir) + G*n.vr - B*n.vi;
-  n.ii = (-1/r*p.ii) + G*n.vi + B*n.vr;
+  n.ir = (-1/r)*(1/(R*R + X*X))*(R*(r*r*p.vr - r*n.vr) + X*(r*r*p.vi - r*n.vi)) + G*n.vr - B*n.vi;
+  n.ii = (-1/r)*(1/(R*R + X*X))*(R*(r*r*p.vi - r*n.vi) - X*(r*r*p.vr - r*n.vr)) + G*n.vi + B*n.vr;
   annotation (
     Icon(graphics={Rectangle(extent={{-60,40},{60,-40}}, lineColor={0,0,255}),Ellipse(
           extent={{-26,16},{6,-16}},

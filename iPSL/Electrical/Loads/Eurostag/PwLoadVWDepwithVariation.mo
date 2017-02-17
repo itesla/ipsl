@@ -1,6 +1,6 @@
 within iPSL.Electrical.Loads.Eurostag;
 model PwLoadVWDepwithVariation
-  "Load with voltage and frecuncy dependence variation.Developed by AIA. 2016/12/10"
+  "Load with voltage and frequency dependence variation.Developed by AIA. 2016/12/10"
  extends iPSL.Electrical.Essentials.pfComponent;
  inner iPSL.Electrical.SystemBase SysData;
   iPSL.Connectors.PwPin p(vr(start=Vo_real),  vi(start=Vo_img),  ir(start=1), ii(start=0)) annotation(Placement(transformation(extent = {{-80, 0}, {-60, 20}}), iconTransformation(extent = {{-80, 0}, {-60, 20}})));
@@ -15,7 +15,7 @@ model PwLoadVWDepwithVariation
   parameter Real vo = sqrt(Vo_real ^ 2 + Vo_img ^ 2);
   Real v(start = vo);
   Real a(start = 1) "auxiliary variable. Voltage division";
-  Real b(start = 1) "auxiliary variable. Frecuency division";
+  Real b(start = 1) "auxiliary variable. Frequency division";
   parameter Real omega_0 = 1; 
   parameter Real alpha = 0;
   parameter Real beta = 0;

@@ -13,8 +13,8 @@ model PwLine "Model for a transmission Line based on the pi-equivalent circuit"
   parameter Real B "Shunt half susceptance (pu)" annotation (Dialog(group="Line parameters"));
   parameter Real S_b=SysData.S_b "System base power (MVA)" annotation (Dialog(group="Line parameters",enable=false));
 
-  parameter Real t1=Modelica.Constants.inf annotation (Dialog(group="Perturbation parameters"));
-  parameter Real t2=Modelica.Constants.inf annotation (Dialog(group="Perturbation parameters"));
+  parameter Real startTime=Modelica.Constants.inf annotation (Dialog(group="Perturbation parameters"));
+  parameter Real endTime=Modelica.Constants.inf annotation (Dialog(group="Perturbation parameters"));
   parameter Integer opening=1
     annotation (Dialog(group="Perturbation parameters"), choices(
       choice=1 "Line opening at both ends",
@@ -45,7 +45,7 @@ equation
   Q21 = -imag(vr*conj(ir))*S_b;
 
   //PI model with different line openings
-  if (time >= t1) and (time < t2) then
+  if (time >= startTime) and (time < endTime) then
     if (opening == 1) then
       is = 0 + j*0;
       ir = 0 + j*0;

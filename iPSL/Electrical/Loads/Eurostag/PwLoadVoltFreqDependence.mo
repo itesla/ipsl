@@ -1,6 +1,6 @@
 within iPSL.Electrical.Loads.Eurostag;
-model PwLoadVoltFrecDependence
-  "Load with voltage and frecuncy dependence.Developed by AIA. 2016/12/10"
+model PwLoadVoltFreqDependence
+  "Load with voltage and frequency dependence.Developed by AIA. 2016/12/10"
  extends iPSL.Electrical.Essentials.pfComponent;
  inner iPSL.Electrical.SystemBase SysData;
 iPSL.Connectors.PwPin p(vr(start=Vo_real),  vi(start=Vo_img),  ir(start=1), ii(start=0)) annotation(Placement(transformation(extent = {{-80, 0}, {-60, 20}}), iconTransformation(extent = {{-80, 0}, {-60, 20}})));
@@ -13,7 +13,7 @@ iPSL.Connectors.PwPin p(vr(start=Vo_real),  vi(start=Vo_img),  ir(start=1), ii(s
   parameter Real omega0 = 1;
   Real v(start = vo);
   Real a(start = 1) "auxiliary variable. Voltage division";
-  Real b(start = 1) "auxiliary variable. Frecuency division";
+  Real b(start = 1) "auxiliary variable. Frequency division";
   parameter Real omega_0 = 1; 
   parameter Real alpha = 0;
   parameter Real beta = 0;
@@ -28,8 +28,9 @@ equation
   (P_0/S_b) * (a ^ alpha) * (b ^ gamma) = p.vr * p.ir + p.vi * p.ii;
   (Q_0/S_b)* (a ^ beta) * (b ^ delta)  = (-p.vr * p.ii) + p.vi * p.ir;
   v = sqrt(p.vr ^ 2 + p.vi ^ 2);
-  P = p.vr * p.ir + p.vi * p.ii;
-  Q = (-p.vr * p.ii) + p.vi * p.ir;
+algorithm  
+  P := p.vr * p.ir + p.vi * p.ii;
+  Q := (-p.vr * p.ii) + p.vi * p.ir;
   annotation (
     Placement(transformation(extent={{-56,-10},{-36,10}}), iconTransformation(extent={{-80,0},{-60,20}})),
     Diagram(graphics),
@@ -63,4 +64,4 @@ equation
 	</p>
 
 	</HTML>")));
-end PwLoadVoltFrecDependence;
+end PwLoadVoltFreqDependence;

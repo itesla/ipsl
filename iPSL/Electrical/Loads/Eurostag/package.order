@@ -1,6 +1,6 @@
 PwLoadVoltageDependence
-PwLoadVoltFrecDependence
 PwLoadVDepwithVariation
 PwLoadVWDepwithVariation
 PwLoadwithVariation
 PwLoadPQ
+PwLoadVoltFreqDependence
