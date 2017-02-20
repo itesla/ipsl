@@ -55,19 +55,19 @@ equation
   if alpha_TCSC > alpha_max and der(alpha_TCSC) > 0 and der(x2) > 0 then
     der(alpha_TCSC) = 0;
     der(x2) = -Ki*(pkm - pref);
-    b = pi*(kx^4 - 2*kx^2 + 1)*cos(kx*(pi - alpha_max))/(xC*(pi*kx^4*cos(kx*(pi - alpha_max))) - pi*cos(kx*(pi - alpha_max)) - 2*kx^4*alpha_max*cos(kx*(pi - alpha_max)) + 2*kx^2*alpha_max*cos(kx*(pi
+    b = pi * (kx^4 - 2*kx^2 + 1)*cos(kx*(pi - alpha_max))/(xC*(pi*kx^4*cos(kx*(pi - alpha_max))) - pi*cos(kx*(pi - alpha_max)) - 2*kx^4*alpha_max*cos(kx*(pi - alpha_max)) + 2*kx^2*alpha_max*cos(kx*(pi
        - alpha_max)) - kx^4*sin(2*alpha_max)*cos(kx*(pi - alpha_max)) + kx^2*sin(2*alpha_max)*cos(kx*(pi - alpha_max)) - 4*kx^3*cos(alpha_max)^2*sin(kx*(pi - alpha_max)) - 4*kx^2*cos(alpha_max)*sin(
       alpha_max)*cos(kx*(pi - alpha_max)));
   elseif alpha_TCSC < alpha_min and der(alpha_TCSC) < 0 and der(x2) < 0 then
     der(alpha_TCSC) = 0;
     der(x2) = -Ki*(pkm - pref);
-    b = pi*(kx^4 - 2*kx^2 + 1)*cos(kx*(pi - alpha_min))/(xC*(pi*kx^4*cos(kx*(pi - alpha_min))) - pi*cos(kx*(pi - alpha_min)) - 2*kx^4*alpha_min*cos(kx*(pi - alpha_min)) + 2*kx^2*alpha_min*cos(kx*(pi
+    b = pi * (kx^4 - 2*kx^2 + 1)*cos(kx*(pi - alpha_min))/(xC*(pi*kx^4*cos(kx*(pi - alpha_min))) - pi*cos(kx*(pi - alpha_min)) - 2*kx^4*alpha_min*cos(kx*(pi - alpha_min)) + 2*kx^2*alpha_min*cos(kx*(pi
        - alpha_min)) - kx^4*sin(2*alpha_min)*cos(kx*(pi - alpha_min)) + kx^2*sin(2*alpha_min)*cos(kx*(pi - alpha_min)) - 4*kx^3*cos(alpha_min)^2*sin(kx*(pi - alpha_min)) - 4*kx^2*cos(alpha_min)*sin(
       alpha_min)*cos(kx*(pi - alpha_min)));
   else
     der(alpha_TCSC) = (Kr*Vs_POD - Kp*(pkm - pref) + x2 - alpha_TCSC)/Tr;
     der(x2) = -Ki*(pkm - pref);
-    b = pi*(kx^4 - 2*kx^2 + 1)*cos(kx*(pi - alpha_TCSC))/(xC*(pi*kx^4*cos(kx*(pi - alpha_TCSC))) - pi*cos(kx*(pi - alpha_TCSC)) - 2*kx^4*alpha_TCSC*cos(kx*(pi - alpha_TCSC)) + 2*kx^2*alpha_TCSC*cos(
+    b = pi * (kx^4 - 2*kx^2 + 1)*cos(kx*(pi - alpha_TCSC))/(xC*(pi*kx^4*cos(kx*(pi - alpha_TCSC))) - pi*cos(kx*(pi - alpha_TCSC)) - 2*kx^4*alpha_TCSC*cos(kx*(pi - alpha_TCSC)) + 2*kx^2*alpha_TCSC*cos(
       kx*(pi - alpha_TCSC)) - kx^4*sin(2*alpha_TCSC)*cos(kx*(pi - alpha_TCSC)) + kx^2*sin(2*alpha_TCSC)*cos(kx*(pi - alpha_TCSC)) - 4*kx^3*cos(alpha_TCSC)^2*sin(kx*(pi - alpha_TCSC)) - 4*kx^2*cos(
       alpha_TCSC)*sin(alpha_TCSC)*cos(kx*(pi - alpha_TCSC)));
   end if;

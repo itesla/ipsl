@@ -20,9 +20,9 @@ model sexs_Init
   parameter Real SN;
   parameter Real PN;
   parameter Real PNALT;
-  Modelica.Blocks.Math.Gain Gain_1( k=1/K); //Eurostag Block number: 1
-  Modelica.Blocks.Math.MultiSum MultiSum_2( nu= 3, k={+1, +1, -1}); //Eurostag Block number: 2
-  Modelica.Blocks.Math.Gain Gain_4( k=1/KC); //Eurostag Block number: 4
+  Modelica.Blocks.Math.Gain Gain_1 (k = 1 / K); //Eurostag Block number: 1
+  Modelica.Blocks.Math.MultiSum MultiSum_2 (nu = 3, k={+1, +1, -1}); //Eurostag Block number: 2
+  Modelica.Blocks.Math.Gain Gain_4 (k = 1 / KC); //Eurostag Block number: 4
   Modelica.Blocks.Interfaces.RealInput pin_VS;
   Modelica.Blocks.Interfaces.RealInput pin_TerminalVoltage;
   Modelica.Blocks.Interfaces.RealInput pin_EFD;
