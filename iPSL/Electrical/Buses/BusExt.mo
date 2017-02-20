@@ -4,8 +4,8 @@ within iPSL.Electrical.Buses;
 model BusExt
   iPSL.Connectors.PwPinExt Ext(p(vr(start=vr0), vi(start=vi0)));
   outer iPSL.Electrical.SystemBase SysData "Must add this line in all models";
-  parameter Integer nu(min=0) = 0 "Number of left connection" annotation (Dialog(connectorSizing=true), HideResult=true);
-  parameter Integer no(min=0) = 0 "Number of right connections" annotation (Dialog(connectorSizing=true), HideResult=true);
+  parameter Integer nu(min = 1) = 1 "Number of left connection" annotation (Dialog(connectorSizing=true), HideResult=true);
+  parameter Integer no(min = 1) = 1 "Number of right connections" annotation (Dialog(connectorSizing=true), HideResult=true);
   iPSL.Connectors.PwPin u[nu] annotation (Placement(
       visible=true,
       transformation(
@@ -26,28 +26,29 @@ model BusExt
         origin={0,0},
         extent={{-4,-60},{4,60}},
         rotation=0)));
-  Real V(start=V_0) "Bus voltage magnitude (pu)";
-  Real angle(start=angle_0) "Bus voltage angle (deg)";
-  parameter Real V_0 "Voltage magnitude (pu)" annotation (Dialog(group="Power flow data"));
-  parameter Real angle_0 "Voltage angle (deg)" annotation (Dialog(group="Power flow data"));
-  parameter Real V_b=130 "Base voltage (kV)" annotation (Dialog(group="Power flow data"));
-  parameter Real S_b=SysData.S_b "System base power (MVA)" annotation (Dialog(group="Power flow data"));
+  Real V(start = V_0) "Bus voltage magnitude (pu)";
+  Real angle(start = angle_0) "Bus voltage angle (deg)";
+  parameter Real V_0 "Voltage magnitude (pu)" annotation(Dialog(group = "Power flow data"));
+  parameter Real angle_0 "Voltage angle (deg)" annotation(Dialog(group = "Power flow data"));
+  parameter Real V_b = 130 "Base voltage (kV)" annotation(Dialog(group = "Power flow data"));
+  parameter Real S_b = SysData.S_b "System base power (MVA)" annotation(Dialog(group = "Power flow data"));
 protected
-  parameter Real vr0=V_0*cos(angle_0*Modelica.Constants.pi/180);
-  parameter Real vi0=V_0*sin(angle_0*Modelica.Constants.pi/180);
+  parameter Real vr0 = V_0 * cos(angle_0 * Modelica.Constants.pi / 180);
+  parameter Real vi0 = V_0 * sin(angle_0 * Modelica.Constants.pi / 180);
 equation
-  if nu > 0 then
-    for i in 1:nu loop
-      connect(Ext.p, u[i]);
+  if nu > 1 then
+    for i in 2:nu loop
+      connect(u[1], u[i]);
     end for;
   end if;
-  if no > 0 then
-    for i in 1:no loop
-      connect(Ext.p, o[i]);
+  if no > 1 then
+    for i in 2:no loop
+      connect(o[1], o[i]);
     end for;
   end if;
-  V = sqrt(Ext.p.vr^2 + Ext.p.vi^2);
-  angle = atan2(Ext.p.vi, Ext.p.vr)*180/Modelica.Constants.pi;
+  connect(o[no], u[nu]);
+  V = sqrt(o[1].vr ^ 2 + o[1].vi ^ 2);
+  angle = atan2(o[1].vi, o[1].vr) * 180 / Modelica.Constants.pi;
   annotation (
     Diagram(coordinateSystem(extent={{0,-100},{20,100}})),
     Icon(coordinateSystem(extent={{0,-100},{20,100}}, preserveAspectRatio=false), graphics={Rectangle(
