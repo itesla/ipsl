@@ -1,9 +1,9 @@
 within iPSL.Electrical.Controls.DTU;
 model pwPLL "Developed by DTU"
-  iPSL.Connectors.PwPin pwPin annotation (Placement(transformation(extent={{-60,-6},{-48,6}}), iconTransformation(extent={{-60,-6},{-48,6}})));
-  Modelica.Blocks.Interfaces.RealOutput imPin annotation (Placement(transformation(extent={{48,-6},{60,6}}), iconTransformation(extent={{45,-6},{59,6}})));
-  iPSL.Electrical.Sensors.PwVoltage pwVoltage annotation (Placement(transformation(extent={{-44,-10},{-24,10}})));
-  Modelica.Blocks.Math.Atan2 atan2_1 annotation (Placement(transformation(extent={{-4,-10},{16,10}})));
+  iPSL.Connectors.PwPin pwPin annotation(Placement(transformation(extent = {{-60, -6}, {-48, 6}}), iconTransformation(extent = {{-60, -6}, {-48, 6}})));
+  Modelica.Blocks.Interfaces.RealOutput imPin annotation(Placement(transformation(extent = {{48, -6}, {60, 6}}), iconTransformation(extent = {{45, -6}, {59, 6}})));
+  iPSL.Electrical.Sensors.PwVoltage pwVoltage annotation(Placement(transformation(extent = {{-44, -10}, {-24, 10}})));
+  Modelica.Blocks.Math.Atan2 atan2_1 annotation(Placement(transformation(extent = {{-4, -10}, {16, 10}})));
 equation
   connect(pwVoltage.p, pwPin) annotation (Line(
       points={{-39,0},{-54,0}},

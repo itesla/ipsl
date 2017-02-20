@@ -14,7 +14,7 @@ model govpsat1_Init
   parameter Real SN;
   parameter Real PN;
   parameter Real PNALT;
-  Modelica.Blocks.Math.Gain Gain_1 (k=1); //Eurostag Block number: 1
+  Modelica.Blocks.Math.Gain Gain_1 (k = 1); //Eurostag Block number: 1
   Modelica.Blocks.Interfaces.RealInput pin_OMEGA;
   Modelica.Blocks.Interfaces.RealOutput pin_OMREF; //isInitValue
 equation

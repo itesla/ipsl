@@ -1,12 +1,12 @@
 within iPSL.Electrical.Controls.DTU;
 model pwPLL2 "Developed by DTU"
-  parameter Real Kp=10;
-  parameter Real Ki=30;
-  parameter Real fmin=0.8;
-  parameter Real fmax=1.2;
-  parameter Real fnom=50;
+  parameter Real Kp = 10;
+  parameter Real Ki = 30;
+  parameter Real fmin = 0.8;
+  parameter Real fmax = 1.2;
+  parameter Real fnom = 50;
   parameter Real ini_PIIntegrator;
-  parameter Real ini_Integrator(fixed=false);
+  parameter Real ini_Integrator(fixed = false);
   iPSL.Connectors.PwPin Vpin annotation (Placement(transformation(extent={{-80,-6},{-68,6}}), iconTransformation(extent={{-80,-6},{-68,6}})));
   Modelica.Blocks.Interfaces.RealOutput freq_meas annotation (Placement(transformation(extent={{68,-26},{80,-14}}), iconTransformation(extent={{45,-36},{59,-24}})));
   iPSL.Electrical.Sensors.PwVoltage pwVoltage annotation (Placement(transformation(extent={{-68,-10},{-48,10}})));
@@ -39,7 +39,7 @@ model pwPLL2 "Developed by DTU"
   Modelica.Blocks.Math.Sin sin annotation (Placement(transformation(extent={{16,52},{0,68}})));
   Modelica.Blocks.Math.Sin sin1 annotation (Placement(transformation(extent={{16,-68},{0,-52}})));
 initial equation
-  ini_Integrator = Modelica.Math.atan(Vpin.vi/Vpin.vr);
+  ini_Integrator = Modelica.Math.atan(Vpin.vi / Vpin.vr);
 equation
   connect(pwVoltage.p, Vpin) annotation (Line(
       points={{-63,0},{-74,0}},
