@@ -8,16 +8,16 @@ model PwLine_Bis "Model for a transmission Line based on the pi-equivalent circu
   parameter Real G "Shunt half conductance p.u.";
   parameter Real B "Shunt half susceptance p.u.";
 protected
-  parameter Real Y=1/sqrt(R*R + X*X);
-  parameter Real angle=atan2(R, X);
-  parameter Real A=Y*sin(angle) + G;
-  parameter Real A1=(-B) + Y*cos(angle);
-  parameter Real A2=-Y*sin(angle);
-  parameter Real A3=-Y*cos(angle);
-  parameter Real A4=Y*cos(angle);
-  parameter Real A5=-Y*sin(angle);
-  parameter Real A6=B - Y*cos(angle);
-  parameter Real A7=Y*sin(angle) + G;
+  parameter Real Y = 1 / sqrt(R * R + X * X);
+  parameter Real angle = atan2(R, X);
+  parameter Real A = Y * sin(angle) + G;
+  parameter Real A1 = (-B) + Y * cos(angle);
+  parameter Real A2 = -Y * sin(angle);
+  parameter Real A3 = -Y * cos(angle);
+  parameter Real A4 = Y * cos(angle);
+  parameter Real A5 = -Y * sin(angle);
+  parameter Real A6 = B - Y * cos(angle);
+  parameter Real A7 = Y * sin(angle) + G;
 equation
   n.ir = A*n.vr + A1*n.vi + A2*p.vr + A3*p.vi;
   n.ii = A6*n.vr + A7*n.vi + A4*p.vr + A2*p.vi;

@@ -14,12 +14,12 @@ model PwLinewithOpeningReceiving "Transmission Line based on the pi-equivalent c
   Real Zr;
   Real Zi;
 equation
-  Zr = R*G + X*B;
-  Zi = R*B + X*G;
+  Zr = R * G + X * B;
+  Zi = R * B + X * G;
   if time > startTime then
     if time < endTime then
-      p.vr*(2.0*G + G*Zr - B*Zi) - p.vi*(2.0*B + Zr*B + Zi*G) = p.ir*(1.0 + Zr) - p.ii*Zi;
-      p.vr*(2.0*B + Zr*B + Zi*G) + p.vi*(2.0*G + G*Zr - B*Zi) = p.ir*Zi + p.ii*(1.0 + Zr);
+      p.vr * (2.0 * G + G * Zr - B * Zi) - p.vi * (2.0 * B + Zr * B + Zi * G) = p.ir * (1.0 + Zr) - p.ii * Zi;
+      p.vr * (2.0 * B + Zr * B + Zi * G) + p.vi * (2.0 * G + G * Zr - B * Zi) = p.ir * Zi + p.ii * (1.0 + Zr);
       n.ii = 0.0;
       n.ir = 0.0;
     else
