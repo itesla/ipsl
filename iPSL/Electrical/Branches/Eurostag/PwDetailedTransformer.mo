@@ -8,7 +8,7 @@ model PwDetailedTransformer "Two winding tap changer transformer.
   parameter Real Pcu "rated copper losses (% base tfo)";
   parameter Real Pfe "rated iron losses (% base tfo)";
   parameter Real IM "magnetizing current (noload current) (% base (Snom,V(Nnom)))";
-  parameter Real ESAT=0 "exponent expressing saturation";
+  parameter Real ESAT = 0 "exponent expressing saturation";
   parameter Real Nnom "nominal tap number";
   parameter Real Ntap "initial tap number (here tap N because taps are considered fixed)";
   //  parameter Real V1tnom "Sending side voltage for nominal tap";
@@ -19,7 +19,7 @@ model PwDetailedTransformer "Two winding tap changer transformer.
   parameter Real U2nom "Receiving side Nominal Voltage";
   parameter Real Ucc "Leakeage impedance (% base tfo) (short-circuit voltage)";
   parameter Real theta "Phase shift angle";
-  parameter Real CIM=sqrt(IM*IM - Pfe*Pfe);
+  parameter Real CIM = sqrt(IM * IM - Pfe * Pfe);
   Real kr "real part of complex ratio";
   Real ki "imaginary part of complex ratio";
   Real k "module of complex ratio";
@@ -33,22 +33,22 @@ model PwDetailedTransformer "Two winding tap changer transformer.
   Real B;
   Real theta_rad;
 equation
-  theta_rad = theta*3.141592/180;
-  k1 = V2/U2nom;
-  k2 = V1/U1nom;
-  k = k1/k2;
-  kr = k*cos(theta_rad);
-  ki = k*sin(theta_rad);
-  R = Pcu*SNREF/(100*Snom);
+  theta_rad = theta * 3.141592 / 180;
+  k1 = V2 / U2nom;
+  k2 = V1 / U1nom;
+  k = k1 / k2;
+  kr = k * cos(theta_rad);
+  ki = k * sin(theta_rad);
+  R = Pcu * SNREF / (100 * Snom);
   //R = (Pcu*SNREF*V2tnom*V2tnom) / (100*Snom*U2nom*U2nom)   Usually V2tnom = U2nom.
-  Z = Ucc*SNREF/(100*Snom);
+  Z = Ucc * SNREF / (100 * Snom);
   //Z = (Ucc*SNREF*V2tnom*V2tnom) / (100*Snom*U2nom*U2nom)   Usually V2tnom = U2nom.
   if Z < 0 then
-    X = -sqrt(Z*Z - R*R);
+    X = -sqrt(Z * Z - R * R);
   else
-    X = sqrt(Z*Z - R*R);
+    X = sqrt(Z * Z - R * R);
   end if;
-  Go = Pfe*Snom/(SNREF*100);
+  Go = Pfe * Snom / (SNREF * 100);
   //B = Snom/SNREF*(CIM/100)*(U1nom/V1)^(ESAT+1)*1^(-ESAT)*(sqrt(p.vr*p.vr+p.vi*p.vi))^(ESAT-1); "If ESAT>1 use this equation"
   B = Snom/SNREF*CIM/100*(U1nom/V1)^(ESAT + 1)*1^(-ESAT) "If ESAT=1 use this equation";
   p.ir*R - p.ii*X = (-n.vi*ki) - n.vr*kr + p.vr*(kr*kr + ki*ki + k*k*Go*R + B*X) - p.vi*(k*k*Go*X - B*R);

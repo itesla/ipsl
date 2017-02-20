@@ -12,14 +12,14 @@ model PwPhaseTransformer "Two winding fixed transformer composed of an ideal tra
   parameter Real B0 "Shunt susceptance p.u.";
   parameter Real theta;
   // Calculated parameters
-  parameter Real theta_rad=-theta*3.141592/180;
-  parameter Real Z2=R*R + X*X;
-  parameter Real G=if Z2 == 0 then 0 else R/Z2;
-  parameter Real B=if Z2 == 0 then 0 else -X/Z2;
-  parameter Real Gi=G0/2;
-  parameter Real Bi=B0/2;
-  parameter Real Gj=G0/2;
-  parameter Real Bj=B0/2;
+  parameter Real theta_rad = -theta * 3.141592 / 180;
+  parameter Real Z2 = R * R + X * X;
+  parameter Real G = if Z2 == 0 then 0 else R / Z2;
+  parameter Real B = if Z2 == 0 then 0 else -X / Z2;
+  parameter Real Gi = G0 / 2;
+  parameter Real Bi = B0 / 2;
+  parameter Real Gj = G0 / 2;
+  parameter Real Bj = B0 / 2;
   //ADMITTANCE matrix
   parameter Real G11=G*(r*r - r*cos(theta_rad)) + B*r*sin(theta_rad) + Gi + G*r*cos(theta_rad) - B*r*sin(theta_rad);
   parameter Real B11=B*(r*r - r*cos(theta_rad)) - G*r*sin(theta_rad) + Bi + B*r*cos(theta_rad) + G*r*sin(theta_rad);
