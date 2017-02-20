@@ -3,7 +3,7 @@ model PwLoadVoltFreqDependence
   "Load with voltage and frequency dependence.Developed by AIA. 2016/12/10"
  extends iPSL.Electrical.Essentials.pfComponent;
  inner iPSL.Electrical.SystemBase SysData;
-iPSL.Connectors.PwPin p(vr(start=Vo_real),  vi(start=Vo_img),  ir(start=1), ii(start=0)) annotation(Placement(transformation(extent = {{-80, 0}, {-60, 20}}), iconTransformation(extent = {{-80, 0}, {-60, 20}})));
+iPSL.Connectors.PwPin p(vr(start=Vo_real),  vi(start=Vo_img)) annotation(Placement(transformation(extent = {{-80, 0}, {-60, 20}}), iconTransformation(extent = {{-80, 0}, {-60, 20}})));
   Modelica.Blocks.Interfaces.RealInput omegaRef;
   parameter Real Vo_real = V_0*cos(angle_0*Modelica.Constants.pi/180)
     "Initial voltage at node in p.u. (Real part)";
@@ -21,16 +21,17 @@ iPSL.Connectors.PwPin p(vr(start=Vo_real),  vi(start=Vo_img),  ir(start=1), ii(s
   parameter Real gamma = 0;
   Real P(start = P_0/S_b);
   Real Q(start = Q_0/S_b);
-  
+initial equation
+   (P_0/S_b) = p.vr * p.ir + p.vi * p.ii;
+   (Q_0/S_b)  = (-p.vr * p.ii) + p.vi * p.ir;
 equation
   a = v / vo;
   b = omegaRef/omega_0;
   (P_0/S_b) * (a ^ alpha) * (b ^ gamma) = p.vr * p.ir + p.vi * p.ii;
   (Q_0/S_b)* (a ^ beta) * (b ^ delta)  = (-p.vr * p.ii) + p.vi * p.ir;
   v = sqrt(p.vr ^ 2 + p.vi ^ 2);
-algorithm  
-  P := p.vr * p.ir + p.vi * p.ii;
-  Q := (-p.vr * p.ii) + p.vi * p.ir;
+  P = p.vr * p.ir + p.vi * p.ii;
+  Q = (-p.vr * p.ii) + p.vi * p.ir;
   annotation (
     Placement(transformation(extent={{-56,-10},{-36,10}}), iconTransformation(extent={{-80,0},{-60,20}})),
     Diagram(graphics),

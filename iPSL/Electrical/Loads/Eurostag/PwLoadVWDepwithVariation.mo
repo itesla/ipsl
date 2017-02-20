@@ -3,7 +3,7 @@ model PwLoadVWDepwithVariation
   "Load with voltage and frequency dependence variation.Developed by AIA. 2016/12/10"
  extends iPSL.Electrical.Essentials.pfComponent;
  inner iPSL.Electrical.SystemBase SysData;
-  iPSL.Connectors.PwPin p(vr(start=Vo_real),  vi(start=Vo_img),  ir(start=1), ii(start=0)) annotation(Placement(transformation(extent = {{-80, 0}, {-60, 20}}), iconTransformation(extent = {{-80, 0}, {-60, 20}})));
+  iPSL.Connectors.PwPin p(vr(start=Vo_real),  vi(start=Vo_img)) annotation(Placement(transformation(extent = {{-80, 0}, {-60, 20}}), iconTransformation(extent = {{-80, 0}, {-60, 20}})));
   Modelica.Blocks.Interfaces.RealInput omegaRef;
   parameter Real Vo_real = V_0*cos(angle_0*Modelica.Constants.pi/180)
     "Initial voltage at node in p.u. (Real part)";
