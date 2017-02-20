@@ -43,8 +43,8 @@ model Staticgenerator
   Real id;
   Real iq;
   Real Q;
-  Modelica.Blocks.Interfaces.RealOutput P(start=p0) annotation (Placement(
-      visible=true,
+  Modelica.Blocks.Interfaces.RealOutput P(start = p0) annotation (Placement(
+      visible = true,
       transformation(
         origin={165.1089,-78.9737},
         extent={{-10.0,-10.0},{10.0,10.0}},
