@@ -2,20 +2,20 @@ within iPSL.Electrical.Branches.PSAT;
 model TwoWindingTransformerFixedTapRatio "Modeled as series reactances without iron losses"
   iPSL.Connectors.PwPin p annotation (Placement(transformation(extent={{-120,-10},{-100,10}})));
   iPSL.Connectors.PwPin n annotation (Placement(transformation(extent={{100,-10},{120,10}})));
-  parameter Real Sb=100 "System base power (MVA)" annotation (Dialog(group="Power flow data"));
-  parameter Real Sn=100 "Power rating (MVA)" annotation (Dialog(group="Power flow data"));
-  parameter Real Vbus=400000 "Sending end bus voltage" annotation (Dialog(group="Power flow data"));
-  parameter Real Vn=400000 "Voltage rating (kV)" annotation (Dialog(group="Power flow data"));
-  parameter Real fn=50 "Frequency rating (Hz)" annotation (Dialog(group="Power flow data"));
-  parameter Real kT=1 "Nominal tap ratio (V1/V2)" annotation (Dialog(group="Transformer data"));
-  parameter Real x=0.20 "Reactance (pu)" annotation (Dialog(group="Transformer data"));
-  parameter Real r=0.01 "resistance (pu)" annotation (Dialog(group="Transformer data"));
-  parameter Real m=1.0 "Fixed tap ratio" annotation (Dialog(group="Transformer data"));
+  parameter Real Sb = 100 "System base power (MVA)" annotation (Dialog(group="Power flow data"));
+  parameter Real Sn = 100 "Power rating (MVA)" annotation (Dialog(group="Power flow data"));
+  parameter Real Vbus = 400000 "Sending end bus voltage" annotation (Dialog(group="Power flow data"));
+  parameter Real Vn = 400000 "Voltage rating (kV)" annotation (Dialog(group="Power flow data"));
+  parameter Real fn = 50 "Frequency rating (Hz)" annotation (Dialog(group="Power flow data"));
+  parameter Real kT = 1 "Nominal tap ratio (V1/V2)" annotation (Dialog(group="Transformer data"));
+  parameter Real x = 0.20 "Reactance (pu)" annotation (Dialog(group="Transformer data"));
+  parameter Real r = 0.01 "resistance (pu)" annotation (Dialog(group="Transformer data"));
+  parameter Real m = 1.0 "Fixed tap ratio" annotation (Dialog(group="Transformer data"));
 protected
-  parameter Real Vb2new=Vbus*Vbus;
-  parameter Real Vb2old=Vn*Vn;
-  parameter Real xT=x*(Vb2old*Sb)/(Vb2new*Sn) "Reactance(inductive),p.u";
-  parameter Real rT=r*(Vb2old*Sb)/(Vb2new*Sn) "Reactance(capacitive),p.u";
+  parameter Real Vb2new = Vbus * Vbus;
+  parameter Real Vb2old = Vn * Vn;
+  parameter Real xT = x * (Vb2old * Sb) / (Vb2new * Sn) "Reactance(inductive),p.u";
+  parameter Real rT = r * (Vb2old * Sb) / (Vb2new * Sn) "Reactance(capacitive),p.u";
 equation
   rT*p.ir - xT*p.ii = 1/m^2*p.vr - 1/m*n.vr;
   rT*p.ii + xT*p.ir = 1/m^2*p.vi - 1/m*n.vi;
