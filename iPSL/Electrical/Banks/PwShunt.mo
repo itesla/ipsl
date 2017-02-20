@@ -2,8 +2,8 @@ within iPSL.Electrical.Banks;
 model PwShunt "Thyristor controlled Shunt reactor/capacitor"
   iPSL.Connectors.PwPin p annotation (Placement(transformation(extent={{-8,44},{12,64}}), iconTransformation(extent={{-10,42},{10,62}})));
   Modelica.Blocks.Interfaces.RealInput Q "Reactive power produced by the shunt (pu)" annotation (Placement(transformation(extent={{-62,-2},{-42,18}}), iconTransformation(extent={{-40,0},{-58,18}})));
-  constant Real pi=Modelica.Constants.pi;
-  parameter Real fn=50 "Frequency rating, Hz";
+  constant Real pi = Modelica.Constants.pi;
+  parameter Real fn = 50 "Frequency rating, Hz";
   Real C "Capacitance in p.u";
   Real L "Inductance in p.u";
   Real v;
@@ -11,20 +11,20 @@ model PwShunt "Thyristor controlled Shunt reactor/capacitor"
   Real i;
   Real anglei;
 equation
-  v = sqrt(p.vr^2 + p.vi^2);
+  v = sqrt(p.vr ^ 2 + p.vi ^ 2);
   anglev = atan2(p.vi, p.vr);
-  i = sqrt(p.ir^2 + p.ii^2);
+  i = sqrt(p.ir ^ 2 + p.ii ^ 2);
   anglei = atan2(p.ii, p.ir);
   if Q >= 0 then
-    C = Q/(v^2*2*pi*fn);
+    C = Q / (v ^ 2 * 2 * pi * fn);
     L = 0;
-    anglei = anglev + pi/2;
-    i = v*2*pi*fn*C;
+    anglei = anglev + pi / 2;
+    i = v * 2 * pi * fn * C;
   else
-    L = v^2/(2*pi*fn*(-Q));
+    L = v ^ 2 / (2 * pi * fn * (-Q));
     C = 0;
-    anglei = anglev - pi/2;
-    i = v/(2*pi*fn*L);
+    anglei = anglev - pi / 2;
+    i = v / (2 * pi * fn * L);
   end if;
   //p.u
   //p.u
