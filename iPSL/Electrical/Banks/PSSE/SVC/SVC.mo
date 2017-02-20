@@ -1,8 +1,8 @@
 within iPSL.Electrical.Banks.PSSE.SVC;
 model SVC "On bus 10106 & 10114"
   iPSL.Connectors.PwPin VIB "Voltage signal connected to stepdown transformer (pu)" annotation (Placement(transformation(extent={{-98,-4},{-86,8}})));
-  Modelica.Blocks.Sources.Constant imSetPoint(k=Vref) annotation (Placement(transformation(extent={{-76,20},{-64,32}})));
-  Modelica.Blocks.Sources.Constant imSetPoint1(k=Bref) annotation (Placement(transformation(extent={{-52,20},{-38,34}})));
+  Modelica.Blocks.Sources.Constant imSetPoint(k = Vref) annotation (Placement(transformation(extent={{-76,20},{-64,32}})));
+  Modelica.Blocks.Sources.Constant imSetPoint1(k = Bref) annotation (Placement(transformation(extent={{-52,20},{-38,34}})));
   iPSL.NonElectrical.Continuous.LeadLag imLeadLag(
     K=K,
     T1=T1,
@@ -27,25 +27,25 @@ model SVC "On bus 10106 & 10114"
   Modelica.Blocks.Math.Gain imGain(k=1/Sbase) annotation (Placement(transformation(extent={{80,-32},{92,-20}})));
   parameter Real Vref "Reference voltage (pu)";
   parameter Real Bref "Reference susceptance (pu)";
-  parameter Real K=150 "Steady-state gain";
+  parameter Real K = 150 "Steady-state gain";
   parameter Real T1 "Time constant (s)";
   parameter Real T2 "Time constant (s)";
   parameter Real T3 "Time constant (s)";
   parameter Real T4 "Time constant (s)";
-  parameter Real T5=0.03 "Time constant of thyristor bridge (s)";
+  parameter Real T5 = 0.03 "Time constant of thyristor bridge (s)";
   parameter Real Vmax;
   parameter Real Vmin;
-  parameter Real Vov=0.5 "Override voltage (pu)";
+  parameter Real Vov = 0.5 "Override voltage (pu)";
   parameter Real Sbase "Base power of the bus (MVA)";
   parameter Real init_SVC_Leadlag "Initial value";
   parameter Real init_SVC_Lag "Initial value";
   parameter Real OtherSignals;
-  parameter Real Mvar_C=100 "Total compensation capacity of shunt capacitor, 100(10106)/200(10114) MVar";
-  parameter Real Mvar_R=-50 "Total compensation capacity of shunt reactor, MVar";
+  parameter Real Mvar_C = 100 "Total compensation capacity of shunt capacitor, 100(10106)/200(10114) MVar";
+  parameter Real Mvar_R = -50 "Total compensation capacity of shunt reactor, MVar";
   Modelica.Blocks.Sources.Constant imSetPoint2(k=OtherSignals) annotation (Placement(transformation(extent={{-52,-18},{-40,-6}})));
   iPSL.Electrical.Sensors.PwVoltage pwVoltage annotation (Placement(transformation(extent={{-90,-14},{-58,20}})));
-  Modelica.Blocks.Math.Add add(k1=1, k2=-1) annotation (Placement(transformation(extent={{-58,0},{-46,12}})));
-  Modelica.Blocks.Math.Add3 add3_1(k1=-1, k3=-1) annotation (Placement(transformation(extent={{-28,2},{-14,16}})));
+  Modelica.Blocks.Math.Add add(k1 = 1, k2 = -1) annotation (Placement(transformation(extent={{-58,0},{-46,12}})));
+  Modelica.Blocks.Math.Add3 add3_1(k1 = -1, k3 = -1) annotation (Placement(transformation(extent={{-28,2},{-14,16}})));
 equation
   connect(VIB, pwVoltage.p) annotation (Line(
       points={{-92,2},{-87,2},{-87,3},{-82,3}},
