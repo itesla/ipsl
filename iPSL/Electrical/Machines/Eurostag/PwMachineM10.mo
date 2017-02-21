@@ -3,11 +3,7 @@ model PwMachineM10 "Induction Machine. The model corresponds to Eurostag's full 
                   Developed by RTE and adapted by AIA. 2014/03/10"
   // Connectors
   Modelica.Blocks.Interfaces.RealInput omegaRef(start=omegaRef0) annotation (Placement(transformation(extent={{-61,-10},{-41,10}})));
-  iPSL.Connectors.PwPin sortie(
-    vr(start=ur0),
-    vi(start=ui0),
-    ir(start=ir0),
-    ii(start=ii0)) annotation (Placement(transformation(extent={{40,-10},{60,10}})));
+  iPSL.Connectors.PwPin sortie(vr(start = ur0), vi(start = ui0), ir(start = ir0), ii(start = ii0)) annotation(Placement(transformation(extent = {{40, -10}, {60, 10}})));
   //
   // Generic parameters for simulation
   // --------------------------------
