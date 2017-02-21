@@ -3,6 +3,7 @@ Calcurrent
 Capacitor
 CurrentLimitdeadband
 InputSelectorEpsilon
+Inputselectorfunction
 PI
 PQ1
 pu_to_A
