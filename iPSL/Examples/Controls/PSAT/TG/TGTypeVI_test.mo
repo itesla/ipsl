@@ -1,5 +1,6 @@
 within iPSL.Examples.Controls.PSAT.TG;
 model TGTypeVI_test
+extends Modelica.Icons.UnderConstruction;
   iPSL.Electrical.Controls.PSAT.TG.TGTypeVI tGModel6_1(
     Ka=3.33333,
     Ta=0.07,
@@ -16,7 +17,7 @@ model TGTypeVI_test
     Tw=2.67,
     dref=0,
     po=0.16074) annotation (Placement(transformation(extent={{-44,16},{-10,50}})));
-  iPSL.Electrical.Machines.PSAT.ThirdOrder.Order3 order3_Inputs_Outputs1(
+  iPSL.Electrical.Machines.PSAT.Order3 order3_Inputs_Outputs1(
     P_0=0.16041,
     Q_0=0.12012,
     V_b=400,

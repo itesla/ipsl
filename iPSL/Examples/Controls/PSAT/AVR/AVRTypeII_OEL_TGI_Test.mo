@@ -1,5 +1,6 @@
 within iPSL.Examples.Controls.PSAT.AVR;
 model AVRTypeII_OEL_TGI_Test
+extends Modelica.Icons.UnderConstruction;
   iPSL.Electrical.Loads.PSAT.LOADPQ pwLoadPQ2(
     P_0=0.08,
     Q_0=0.06,
@@ -13,8 +14,8 @@ model AVRTypeII_OEL_TGI_Test
     G=0,
     R=0.01,
     X=0.1,
-    t1=8,
-    t2=8.1) annotation (Placement(visible=true, transformation(
+    startTime=8,
+    endTime=8.1) annotation (Placement(visible=true, transformation(
         origin={79,16},
         extent={{-10.0,-10.0},{10.0,10.0}},
         rotation=0)));
@@ -60,10 +61,10 @@ model AVRTypeII_OEL_TGI_Test
         rotation=0)));
   iPSL.Electrical.Events.PwFaultPQ pwFault(
     X=0.001,
-    t1=3,
+    startTime=3,
     R=0.3,
-    t2=3.1) annotation (Placement(transformation(extent={{115,-52},{135,-32}})));
-  iPSL.Electrical.Machines.PSAT.SixthOrder.Order6 order6Type2_Inputs_Outputs(
+    endTime=3.1) annotation (Placement(transformation(extent={{115,-52},{135,-32}})));
+  iPSL.Electrical.Machines.PSAT.Order6 order6Type2_Inputs_Outputs(
     Sn=Sn,
     Vn=Vn,
     V_b=Vbus,

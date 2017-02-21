@@ -1,6 +1,7 @@
 within iPSL.Examples.Controls.PSAT.TG;
 model TGTypeIV_test
-  iPSL.Electrical.Machines.PSAT.ThirdOrder.Order3 Generator(
+extends Modelica.Icons.UnderConstruction;
+  iPSL.Electrical.Machines.PSAT.Order3 Generator(
     P_0=0.16041,
     Q_0=0.12012,
     V_b=400,
@@ -77,7 +78,7 @@ model TGTypeIV_test
         origin={26.863,-12.6714},
         extent={{-10.0,-10.0},{10.0,10.0}},
         rotation=0)));
-  iPSL.Electrical.Buses.InfiniteBus infiniteBus(V=1, angle=0) annotation (Placement(transformation(
+  iPSL.Electrical.Buses.InfiniteBus infiniteBus(V_0=1, angle_0=0) annotation (Placement(transformation(
         extent={{-5,-5},{5,5}},
         rotation=180,
         origin={77,-11})));
