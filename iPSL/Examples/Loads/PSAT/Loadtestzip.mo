@@ -1,5 +1,6 @@
 within iPSL.Examples.Loads.PSAT;
 model Loadtestzip
+  extends Modelica.Icons.VariantsPackage;
   iPSL.Electrical.Branches.PwLine pwLine1(
     X=0.1,
     R=0.01,
@@ -102,7 +103,7 @@ model Loadtestzip
         origin={-45.0,-57.0021},
         extent={{-10.0,-10.0},{10.0,10.0}},
         rotation=0)));
-  iPSL.Electrical.Machines.PSAT.ThirdOrder.Order3 order3_Inputs_Outputs1(
+  iPSL.Electrical.Machines.PSAT.Order3 order3_Inputs_Outputs1(
     P_0=0.0800989878477798,
     Q_0=0.0570163388727956,
     Sn=20,
@@ -137,23 +138,23 @@ equation
   connect(pwLine4.n, ZIP1.p) annotation (Line(
       visible=true,
       origin={105.7773,-12.5},
-      points={{-13.7773,-2.5},{3.5924,-2.5},{3.5924,13.5},{17.5924,13.5}}));
+      points={{-9.11063,-2.5},{3.5924,-2.5},{3.5924,13.5},{17.5924,13.5}}));
   connect(pwLine4.n, pwLine3.n) annotation (Line(
       visible=true,
       origin={92.0,-25.0},
-      points={{0.0,10.0},{0.0,-10.0}}));
+      points={{4.66667,10},{4.66667,5},{5,5},{5,0},{4.66667,0},{4.66667,-10}}));
   connect(pwLine3.p, pwLine4.p) annotation (Line(
       visible=true,
       origin={78.0,-25.0},
-      points={{0.0,-10.0},{0.0,10.0}}));
+      points={{-4.66667,-10},{-4.66667,-5},{-5,-5},{-5,0},{-4.66667,0},{-4.66667,10}}));
   connect(pwLine1.n, pwLine3.p) annotation (Line(
       visible=true,
       origin={67.2159,-35.3357},
-      points={{-20.3525,-0.3357},{4.7841,-0.3357},{4.7841,0.3357},{10.7841,0.3357}}));
+      points={{-15.6858,-0.3357},{4.7841,-0.3357},{4.7841,0.3357},{6.11743,0.3357}}));
   connect(pwLine2.n, pwLine4.p) annotation (Line(
       visible=true,
       origin={67.2159,-15.3357},
-      points={{-20.3525,-0.3357},{4.7841,-0.3357},{4.7841,0.3357},{10.7841,0.3357}}));
+      points={{-15.6858,-0.3357},{4.7841,-0.3357},{4.7841,0.3357},{6.11743,0.3357}}));
   connect(order3_Inputs_Outputs1.pm0, add32.u3) annotation (Line(
       visible=true,
       origin={-19.0108,-51.4898},
@@ -245,15 +246,15 @@ equation
   connect(order3_Inputs_Outputs1.p, pwLine2.p) annotation (Line(
       visible=true,
       origin={25.2254,-18.2865},
-      points={{-10.9141,-2.41516},{1.638,-2.41516},{1.638,2.6151},{7.638,2.6151}}));
+      points={{-10.9141,-2.41516},{1.638,-2.41516},{1.638,2.6151},{2.97133,2.6151}}));
   connect(pwLine1.n, pwLine2.n) annotation (Line(
       visible=true,
       origin={46.8634,-25.6714},
-      points={{-0.0,-10.0},{-0.0,10.0}}));
+      points={{4.66667,-10},{4.66667,-5},{5,-5},{5,0},{4.66667,0},{4.66667,10}}));
   connect(pwLine2.p, pwLine1.p) annotation (Line(
       visible=true,
       origin={32.8634,-25.6714},
-      points={{0.0,10.0},{0.0,-10.0}}));
+      points={{-4.66667,10},{-4.66667,5},{-5,5},{-5,0},{-4.66667,0},{-4.66667,-10}}));
   annotation (Diagram(coordinateSystem(
         extent={{-148.5,-105.0},{148.5,105.0}},
         preserveAspectRatio=true,
