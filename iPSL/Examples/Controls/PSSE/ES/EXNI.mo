@@ -1,5 +1,7 @@
 within iPSL.Examples.Controls.PSSE.ES;
-model ESDC1A "SMIB system with one load and GENROE model"
+
+
+model EXNI "SMIB system with one load and GENROE model"
   extends iPSL.Examples.SMIBpartial;
   extends Modelica.Icons.Example;
   iPSL.Electrical.Machines.PSSE.GENROE gENROE(
@@ -23,33 +25,18 @@ model ESDC1A "SMIB system with one load and GENROE model"
     angle_0=4.046276,
     Q_0=5.416582,
     Xppq=0.2) annotation (Placement(transformation(extent={{-100,-20},{-60,20}})));
-  Modelica.Blocks.Sources.Constant const(k=0) annotation (Placement(transformation(extent={{-28,-46},{-38,-36}})));
-  Modelica.Blocks.Sources.Constant const1(k=-Modelica.Constants.inf) annotation (Placement(transformation(extent={{-28,-60},{-38,-50}})));
-  iPSL.Electrical.Controls.PSSE.ES.ESDC1A eSDC1A(
-    T_R=0.04,
-    T_F1=1,
-    E_1=2.47,
-    S_EE_1=0.035,
-    E_2=4.5,
-    S_EE_2=0.47,
-    K_A=75,
-    T_A=0.05,
-    T_B=1,
-    T_C=1,
-    V_RMIN=-3.9,
-    K_E=0,
-    T_E=0.5,
-    K_F=0.07,
-    V_RMAX=0) annotation (Placement(transformation(extent={{-60,-50},{-100,-36}})));
+  Modelica.Blocks.Sources.Constant const(k=0) annotation (Placement(transformation(extent={{-20,-56},{-40,-36}})));
+  Electrical.Controls.PSSE.ES.EXNI eXNI annotation (Placement(transformation(extent={{-64,-54},{-94,-26}})));
 equation
   connect(gENROE.PMECH, gENROE.PMECH0) annotation (Line(points={{-99.6,10},{-110,10},{-110,26},{-48,26},{-48,-6},{-58.4,-6}}, color={0,0,127}));
-  connect(eSDC1A.EFD, gENROE.EFD) annotation (Line(points={{-101.111,-43},{-106,-43},{-106,-10},{-99.6,-10}}, color={0,0,127}));
-  connect(eSDC1A.EFD0, gENROE.EFD0) annotation (Line(points={{-75.5556,-48.95},{-75.5556,-58},{-48,-58},{-48,-14},{-58.4,-14}}, color={0,0,127}));
-  connect(gENROE.ETERM, eSDC1A.ECOMP) annotation (Line(points={{-58.4,10},{-54,10},{-54,-38},{-58,-38},{-58,-37.925},{-61.1111,-37.925}}, color={0,0,127}));
-  connect(eSDC1A.VOTHSG, const.y) annotation (Line(points={{-61.1111,-41.25},{-49.5556,-41.25},{-49.5556,-41},{-38.5,-41}}, color={0,0,127}));
-  connect(eSDC1A.VOEL, const.y) annotation (Line(points={{-61.1111,-44.75},{-42,-44.75},{-42,-41},{-38.5,-41}}, color={0,0,127}));
-  connect(eSDC1A.VUEL, const1.y) annotation (Line(points={{-61.1111,-48.25},{-54,-48.25},{-54,-55},{-38.5,-55}}, color={0,0,127}));
-  connect(gENROE.p, GEN1.p) annotation (Line(points={{-58,0},{-58,0},{-40,0}}, color={0,0,255}));
+  connect(gENROE.p, GEN1.p) annotation (Line(points={{-58,0},{-49,0},{-40,0}}, color={0,0,255}));
+  connect(eXNI.VOTHSG, const.y) annotation (Line(points={{-64,-31.4444},{-60,-31.4444},{-60,-32},{-41,-32},{-41,-46}}, color={0,0,127}));
+  connect(eXNI.ECOMP, gENROE.ETERM) annotation (Line(points={{-64,-38.4444},{-60,-38.4444},{-60,-38},{-52,-38},{-52,10},{-58.4,10}}, color={0,0,127}));
+  connect(eXNI.XADIFD, gENROE.XADIFD) annotation (Line(points={{-64,-43.8889},{-60,-43.8889},{-60,-44},{-60,-18},{-58.4,-18}}, color={0,0,127}));
+  connect(eXNI.EFD0, gENROE.EFD0) annotation (Line(points={{-64,-48.5556},{-60,-48.5556},{-60,-48},{-56,-48},{-56,-14},{-58.4,-14}}, color={0,0,127}));
+  connect(eXNI.VUEL, const.y) annotation (Line(points={{-69.25,-54},{-70,-54},{-70,-60},{-46,-60},{-46,-46},{-41,-46}}, color={0,0,127}));
+  connect(eXNI.VOEL, const.y) annotation (Line(points={{-73.75,-54},{-74,-54},{-74,-60},{-46,-60},{-46,-46},{-41,-46}}, color={0,0,127}));
+  connect(eXNI.EFD, gENROE.EFD) annotation (Line(points={{-94.75,-38.4444},{-110,-38.4444},{-110,-10},{-99.6,-10}}, color={0,0,127}));
   annotation (Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,100}})), Documentation(revisions="<html>
 <!--DISCLAIMER-->
 <p>Copyright 2015-2016 RTE (France), SmarTS Lab (Sweden), AIA (Spain) and DTU (Denmark)</p>
@@ -64,4 +51,4 @@ equation
 <p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
 <p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
 </html>"));
-end ESDC1A;
+end EXNI;

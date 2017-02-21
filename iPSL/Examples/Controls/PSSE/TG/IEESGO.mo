@@ -1,8 +1,8 @@
 within iPSL.Examples.Controls.PSSE.TG;
 model IEESGO "Simple Machine Infinite Bus with Machine, Governor and Excitation system"
-  import iPSL;
   extends iPSL.Examples.SMIBpartial;
-  iPSL.Electrical.Machines.PSSE.GENSAL.GENSAL generator(
+  extends Modelica.Icons.Example;
+  iPSL.Electrical.Machines.PSSE.GENSAL generator(
     Xppd=0.2,
     Xppq=0.2,
     Xl=0.12,
@@ -21,9 +21,7 @@ model IEESGO "Simple Machine Infinite Bus with Machine, Governor and Excitation 
     Xpd=0.29700,
     S10=0.18600,
     S12=0.802) annotation (Placement(transformation(extent={{-90,-10},{-70,10}})));
-  iPSL.Electrical.Controls.PSSE.ES.SCRX.SCRX SCRX(
-    V_0=1,
-    V_c0=1,
+  iPSL.Electrical.Controls.PSSE.ES.SCRX SCRX( 
     T_B=10,
     K=100,
     T_E=0.05,
@@ -35,10 +33,7 @@ model IEESGO "Simple Machine Infinite Bus with Machine, Governor and Excitation 
         extent={{-18,-16},{18,16}},
         rotation=180,
         origin={-80,-34})));
-  Modelica.Blocks.Sources.Constant const(k=0) annotation (Placement(transformation(
-        extent={{-2,-2},{2,2}},
-        rotation=180,
-        origin={-50,-34})));
+  Modelica.Blocks.Sources.Constant const(k=0) annotation (Placement(visible = true, transformation(origin = {-50, -32}, extent = {{-2, -2}, {2, 2}}, rotation = 180)));
   iPSL.Electrical.Controls.PSSE.TG.IEESGO iEESGO(
     T_1=0.01,
     T_2=0.0,
@@ -52,26 +47,20 @@ model IEESGO "Simple Machine Infinite Bus with Machine, Governor and Excitation 
     P_MIN=0.0,
     K_1=0.1) annotation (Placement(transformation(extent={{-64,24},{-96,38}})));
 equation
-  connect(SCRX.VUEL, const.y) annotation (Line(
-      points={{-62.15,-29.04},{-53.67,-29.04},{-53.67,-34},{-52.2,-34}},
-      color={0,0,127},
-      smooth=Smooth.None));
-  connect(SCRX.VOEL, const.y) annotation (Line(
-      points={{-62.15,-33.2},{-53.67,-33.2},{-53.67,-34},{-52.2,-34}},
-      color={0,0,127},
-      smooth=Smooth.None));
-  connect(SCRX.VOTHSG, const.y) annotation (Line(
-      points={{-62.15,-37.04},{-53.67,-37.04},{-53.67,-34},{-52.2,-34}},
-      color={0,0,127},
-      smooth=Smooth.None));
-  connect(generator.EFD0, SCRX.EFD0) annotation (Line(
-      points={{-69.2,-7},{-69.2,-14.64},{-62.15,-14.64}},
-      color={0,0,127},
-      smooth=Smooth.None));
-  connect(SCRX.EFD, generator.EFD) annotation (Line(points={{-98.6,-27.76},{-104,-27.76},{-104,-5},{-89.8,-5}}, color={0,0,127}));
-  connect(generator.ETERM, SCRX.ECOMP) annotation (Line(points={{-69.2,5},{-44,5},{-44,-41.52},{-62.15,-41.52}}, color={0,0,127}));
-  connect(SCRX.ETERM, SCRX.ECOMP) annotation (Line(points={{-61.85,-20.24},{-44,-20.24},{-44,-41.52},{-62.15,-41.52}}, color={0,0,127}));
-  connect(generator.XADIFD, SCRX.XADIFD) annotation (Line(points={{-69.2,-9},{-52,-9},{-52,-25.52},{-61.85,-25.52}}, color={0,0,127}));
+  connect(SCRX.XADIFD, generator.XADIFD) annotation(
+    Line(points = {{-62, -30}, {-58, -30}, {-58, -10}, {-70, -10}, {-70, -8}}, color = {0, 0, 127}));
+  connect(SCRX.VOTHSG, const.y) annotation(
+    Line(points = {{-62, -44}, {-54, -44}, {-54, -32}, {-52, -32}}, color = {0, 0, 127}));
+  connect(SCRX.VUEL, const.y) annotation(
+    Line(points = {{-68, -18}, {-68, -16}, {-56, -16}, {-56, -32}, {-52, -32}}, color = {0, 0, 127}));
+  connect(const.y, SCRX.VOEL) annotation(
+    Line(points = {{-52, -32}, {-54, -32}, {-54, -14}, {-74, -14}, {-74, -18}}, color = {0, 0, 127}));
+  connect(generator.ETERM, SCRX.ECOMP) annotation(
+    Line(points = {{-70, 6}, {-44, 6}, {-44, -36}, {-62, -36}, {-62, -36}}, color = {0, 0, 127}));
+  connect(generator.EFD0, SCRX.EFD0) annotation(
+    Line(points = {{-70, -6}, {-50, -6}, {-50, -24}, {-62, -24}, {-62, -24}}, color = {0, 0, 127}));
+  connect(SCRX.EFD, generator.EFD) annotation(
+    Line(points = {{-98, -36}, {-122, -36}, {-122, -4}, {-90, -4}, {-90, -4}}, color = {0, 0, 127}));
   connect(iEESGO.SPEED, generator.SPEED) annotation (Line(points={{-64.8,35},{-62,35},{-62,9},{-69.2,9}}, color={0,0,127}));
   connect(iEESGO.PMECH, generator.PMECH) annotation (Line(points={{-97,32},{-104,32},{-104,5},{-89.8,5}}, color={0,0,127}));
   connect(iEESGO.PMECH0, generator.PMECH0) annotation (Line(points={{-64.8,28},{-62,28},{-62,-3},{-69.2,-3}}, color={0,0,127}));
