@@ -3,10 +3,7 @@ model TurbineTm "Hydraulic turbine model. Mechanical torque as output"
   Modelica.Blocks.Interfaces.RealInput z "Gate openning" annotation (Placement(transformation(extent={{-95,2},{-88,10}}), iconTransformation(extent={{-92,20},{-78,34}})));
   Modelica.Blocks.Sources.Constant Hs(k=1) annotation (Placement(transformation(extent={{-74,-12},{-58,4}})));
   Modelica.Blocks.Math.Gain Tw(k=1/1) "Water time constant" annotation (Placement(transformation(extent={{0,-8},{20,12}})));
-  Modelica.Blocks.Continuous.Integrator imIntegrator(
-    k=1,
-    y_start=init_Turbine_V1,
-    initType=Modelica.Blocks.Types.Init.InitialOutput) annotation (Placement(transformation(extent={{28,-6},{44,10}})));
+  Modelica.Blocks.Continuous.Integrator imIntegrator(k = 1, y_start = init_Turbine_V1, initType = Modelica.Blocks.Types.Init.InitialOutput) annotation(Placement(transformation(extent = {{28, -6}, {44, 10}})));
   Modelica.Blocks.Interfaces.RealInput Omega "Rotor speed in p.u" annotation (Placement(transformation(extent={{-96,-26},{-90,-18}}), iconTransformation(extent={{-92,-22},{-78,-8}})));
   Modelica.Blocks.Interfaces.RealOutput Tm "Mechanical Torque Tm as output" annotation (Placement(transformation(extent={{106,-2},{112,6}}), iconTransformation(extent={{30,-4},{46,14}})));
   parameter Real init_Turbine_V1;

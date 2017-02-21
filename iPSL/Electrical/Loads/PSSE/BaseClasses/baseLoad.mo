@@ -3,24 +3,14 @@ partial model baseLoad
   import Modelica.Constants.pi;
   import Modelica.ComplexMath.j;
   extends iPSL.Electrical.Essentials.pfComponent;
-
-  parameter Complex S_p=P_0 + j*Q_0
-    "Consumption of original constant power load (MVA)";
-  parameter Complex S_i=0 + j*0
-    "Consumption of original constant current load (MVA)";
-  parameter Complex S_y=0 + j*0
-    "Consumption of original constant shunt admittance load (MVA)";
-  parameter Complex a=1 + j*0
-    "Load transfer fraction for constant current load";
-  parameter Complex b=0 + j*1
-    "Load transfer fraction for constant shunt admittance load";
+  parameter Complex S_p = P_0 + j * Q_0 "Consumption of original constant power load (MVA)";
+  parameter Complex S_i = Complex (0) "Consumption of original constant current load (MVA)";
+  parameter Complex S_y = Complex (0) "Consumption of original constant shunt admittance load (MVA)";
+  parameter Complex a = 1 + j * 0 "Load transfer fraction for constant current load";
+  parameter Complex b = 0 + j * 1 "Load transfer fraction for constant shunt admittance load";
   parameter Real PQBRAK=0.7 "Constant power characteristic threshold";
   parameter Integer characteristic=1 annotation (choices(choice=1, choice=2));
-  iPSL.Connectors.PwPin p(
-    vr(start=vr0),
-    vi(start=vi0),
-    ir(start=ir0),
-    ii(start=ii0)) annotation (Placement(transformation(extent={{-56,-10},{-36,10}}), iconTransformation(extent={{-10,100},{10,120}})));
+  iPSL.Connectors.PwPin p(vr(start = vr0), vi(start = vi0), ir(start = ir0), ii(start = ii0)) annotation(Placement(transformation(extent = {{-56, -10}, {-36, 10}}), iconTransformation(extent = {{-10, 100}, {10, 120}})));
   Real angle(start=anglev_rad) "Bus voltage angle (rad)";
   Real v(start=V_0) "Bus voltage magnitude (pu)";
   Real P "Active power consumption (pu)";
@@ -33,7 +23,7 @@ protected
   parameter Real vi0=V_0*sin(anglev_rad) "Initialitation";
   parameter Real ir0=(p0*vr0 + q0*vi0)/(vr0^2 + vi0^2) "Initialitation";
   parameter Real ii0=(p0*vi0 - q0*vr0)/(vr0^2 + vi0^2) "Initialitation";
-  parameter Complex S_P=(Complex((1 - a.re - b.re)*S_p.re, (1 - a.im - b.im)*S_p.im))/S_b "pu";
+  parameter Complex S_P = Complex((1 - a.re - b.re) * S_p.re, (1 - a.im - b.im) * S_p.im) / S_b "pu";
   parameter Complex S_I=(S_i + Complex(a.re*S_p.re/V_0, a.im*S_p.im/V_0))/S_b "pu";
   parameter Complex S_Y=(S_y + Complex(b.re*S_p.re/V_0^2, b.im*S_p.im/V_0^2))/S_b "pu";
   //Constant current load vary function when voltage is below 0.5

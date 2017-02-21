@@ -23,21 +23,14 @@ model TGOV1 "Steam Turbine-Governor"
   Modelica.Blocks.Math.Add add1(k2=-1) annotation (Placement(transformation(extent={{60,-5},{70,5}})));
   Modelica.Blocks.Sources.Constant REF(k=P_REF) annotation (Placement(transformation(extent={{-80,10},{-70,20}})));
   Modelica.Blocks.Interfaces.RealInput PMECH0 annotation (Placement(transformation(extent={{-85,-41},{-75,-31}}), iconTransformation(extent={{-80,-40},{-60,-20}})));
+  NonElectrical.Continuous.SimpleLagLim simpleLagLim(K = 1, T = T_1, y_start = P0, outMax = V_MAX, outMin = V_MIN) annotation(Placement(transformation(extent = {{0, 7}, {10, 17}})));
 protected
   parameter Real P0(fixed=false) "Power reference of the governor";
   parameter Real P_REF(fixed=false);
-public
-  NonElectrical.Continuous.SimpleLagLim simpleLagLim(
-    K=1,
-    T=T_1,
-    y_start=P0,
-    outMax=V_MAX,
-    outMin=V_MIN) annotation (Placement(transformation(extent={{0,7},{10,17}})));
 initial equation
   P0 = PMECH0;
   P_REF = P0*R;
 equation
-
   connect(add.y, imGain9.u) annotation (Line(points={{-39.5,12},{-31,12}}, color={0,0,127}));
   connect(add.u2, SPEED) annotation (Line(points={{-51,9},{-60,9},{-60,-14},{-80,-14}}, color={0,0,127}));
   connect(imGain1.u, SPEED) annotation (Line(points={{-17,-14},{-80,-14}}, color={0,0,127}));

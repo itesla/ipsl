@@ -4,10 +4,8 @@ model PwLoadVoltageDependence
  extends iPSL.Electrical.Essentials.pfComponent;
  inner iPSL.Electrical.SystemBase SysData;
   iPSL.Connectors.PwPin p(vr(start=Vo_real),  vi(start=Vo_img),  ir(start=1), ii(start=0)) annotation(Placement(transformation(extent = {{-80, 0}, {-60, 20}}), iconTransformation(extent = {{-80, 0}, {-60, 20}})));
-  parameter Real Vo_real = V_0*cos(angle_0*Modelica.Constants.pi/180)
-    "Initial voltage at node in p.u. (Real part)";
-  parameter Real Vo_img = V_0*sin(angle_0*Modelica.Constants.pi/180)
-    "Initial voltage at node in p.u. (Imaginary part)";
+  parameter Real Vo_real = V_0 * cos(angle_0 * Modelica.Constants.pi / 180) "Initial voltage at node in p.u. (Real part)";
+  parameter Real Vo_img = V_0 * sin(angle_0 * Modelica.Constants.pi / 180) "Initial voltage at node in p.u. (Imaginary part)";
   parameter Real vo = sqrt(Vo_real ^ 2 + Vo_img ^ 2);
   Real v(start = vo);
   Real a(start = 1) "auxiliary variable. Voltage division";
@@ -18,8 +16,8 @@ model PwLoadVoltageDependence
 
 equation
   a = v / vo;
-  (P_0/S_b) * (a ^ alpha) = p.vr * p.ir + p.vi * p.ii;
-  (Q_0/S_b)* (a ^ beta)  = (-p.vr * p.ii) + p.vi * p.ir;
+  (P_0 / S_b) * (a ^ alpha) = p.vr * p.ir + p.vi * p.ii;
+  (Q_0 / S_b)* (a ^ beta)  = (-p.vr * p.ii) + p.vi * p.ir;
   v = sqrt(p.vr ^ 2 + p.vi ^ 2);
   P = p.vr * p.ir + p.vi * p.ii;
   Q = (-p.vr * p.ii) + p.vi * p.ir;
