@@ -1,6 +1,5 @@
 within iPSL.Examples;
 partial model SMIBpartial "SMIB system with one load"
-  import iPSL;
 
   iPSL.Electrical.Branches.PwLine pwLine(
     R=0.001,
@@ -22,7 +21,7 @@ partial model SMIBpartial "SMIB system with one load"
     X=0.1,
     G=0,
     B=0) annotation (Placement(transformation(extent={{54,-34},{66,-26}})));
-  iPSL.Electrical.Machines.PSSE.GENCLS.GENCLS gENCLS(
+  iPSL.Electrical.Machines.PSSE.GENCLS gENCLS(
     M_b=100,
     D=0,
     V_0=1,
