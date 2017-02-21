@@ -4,14 +4,14 @@ model Shunt "Shunt Inductor or Capacitor"
   constant Real pi=Modelica.Constants.pi;
   parameter Real Qnom "Reactive power produced by the shunt under 1 p.u voltage, (negative for inductive charge, positive for capacitive charge) Mvar";
   parameter Real Sbase "Base power of the system, MVA";
-  parameter Real X=Sbase/(-Qnom) "Reactance in p.u";
+  parameter Real X = Sbase / (-Qnom) "Reactance in p.u";
   Real Q "Consumed power";
   Real v;
 equation
-  v = sqrt(p.vr*p.vr + p.vi*p.vi);
-  0 = p.vr*p.ir + p.vi*p.ii;
-  Q = p.vi*p.ir - p.vr*p.ii;
-  Q = 1/X*v*v;
+  v = sqrt(p.vr * p.vr + p.vi * p.vi);
+  0 = p.vr * p.ir + p.vi * p.ii;
+  Q = p.vi * p.ir - p.vr * p.ii;
+  Q = 1 / X * v * v;
   annotation (Icon(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,100}}), graphics={Line(
           points={{0,40},{0,30}},
           smooth=Smooth.None,

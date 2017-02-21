@@ -1,10 +1,10 @@
 within iPSL.Electrical.Banks;
 model PwShuntR "Shunt inductor"
   iPSL.Connectors.PwPin p annotation (Placement(transformation(extent={{-10,40},{10,60}}), iconTransformation(extent={{-10,40},{10,60}})));
-  constant Real pi=Modelica.Constants.pi;
-  parameter Real Qnom=75 "Reactive power produced by the shunt inductor under 1 p.u voltage, -Mvar";
-  parameter Real Vbase=138 "Base volatage of the bus, kV";
-  parameter Real fn=50 "Frequency rating, Hz";
+  constant Real pi = Modelica.Constants.pi;
+  parameter Real Qnom = 75 "Reactive power produced by the shunt inductor under 1 p.u voltage, -Mvar";
+  parameter Real Vbase = 138 "Base volatage of the bus, kV";
+  parameter Real fn = 50 "Frequency rating, Hz";
   Real Zbase;
   Real L "Inductance in p.u";
   Real v;
@@ -12,12 +12,12 @@ model PwShuntR "Shunt inductor"
   Real i;
   Real anglei;
 equation
-  v = sqrt(p.vr^2 + p.vi^2);
+  v = sqrt(p.vr ^ 2 + p.vi ^ 2);
   anglev = atan2(p.vi, p.vr);
-  i = sqrt(p.ir^2 + p.ii^2);
+  i = sqrt(p.ir ^ 2 + p.ii ^ 2);
   anglei = atan2(p.ii, p.ir);
-  Zbase = Vbase^2/(-Qnom);
-  L = Vbase^2/(2*pi*fn*(-Qnom)*Zbase) "S=U*I";
+  Zbase = Vbase ^ 2 / (-Qnom);
+  L = Vbase^2 / (2*pi*fn*(-Qnom)*Zbase) "S=U*I";
   anglei = anglev - pi/2;
   i = v/(2*pi*fn*L) "I=U/Z";
   annotation (Icon(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,100}}), graphics={Ellipse(

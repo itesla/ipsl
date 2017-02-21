@@ -1,5 +1,7 @@
 within iPSL.Examples.Solar.PSAT;
 model testIrradation
+extends Modelica.Icons.UnderConstruction;
+
   Modelica.Blocks.Sources.Constant const(k=25)
     annotation (Placement(visible=true, transformation(
         origin={-59.5887,-17.0499},

@@ -4,60 +4,22 @@ model Governor "Speed governor model for hydro turbines"
   Modelica.Blocks.Sources.Constant Omega_n(k=1) "Nominal rotor speed in p.u" annotation (Placement(transformation(extent={{-94,6},{-82,18}})));
   Modelica.Blocks.Math.Gain Gain1(k=2) annotation (Placement(transformation(extent={{10,18},{24,32}})));
   Modelica.Blocks.Math.Gain Gain2(k=0.4) annotation (Placement(transformation(extent={{10,0},{24,14}})));
-  Modelica.Blocks.Continuous.Integrator Integrator(
-    k=1,
-    y_start=p0,
-    initType=Modelica.Blocks.Types.Init.InitialOutput) annotation (Placement(transformation(extent={{30,0},{44,14}})));
-  Modelica.Blocks.Math.Gain Droop(k=D) "Permanent speed droop" annotation (Placement(transformation(
-        extent={{5.5,-5.5},{-5.5,5.5}},
-        rotation=270,
-        origin={-53.5,6.5})));
+  Modelica.Blocks.Continuous.Integrator Integrator(k = 1, y_start = p0, initType = Modelica.Blocks.Types.Init.InitialOutput) annotation(Placement(transformation(extent = {{30, 0}, {44, 14}})));
+  Modelica.Blocks.Math.Gain Droop(k = D) "Permanent speed droop" annotation(Placement(transformation(extent = {{5.5, -5.5}, {-5.5, 5.5}}, rotation = 270, origin = {-53.5, 6.5})));
   Modelica.Blocks.Math.Gain Gain3(k=5) annotation (Placement(transformation(extent={{92,10},{106,24}})));
   Modelica.Blocks.Nonlinear.Limiter Limited(uMin=-0.1, uMax=0.1) annotation (Placement(transformation(extent={{112,10},{126,24}})));
-  Modelica.Blocks.Continuous.LimIntegrator imLimitedIntegrator(
-    outMax=1,
-    k=1,
-    outMin=0,
-    y_start=p0,
-    initType=Modelica.Blocks.Types.Init.InitialOutput) annotation (Placement(transformation(extent={{132,10},{146,24}})));
+  Modelica.Blocks.Continuous.LimIntegrator imLimitedIntegrator(outMax = 1, k = 1, outMin = 0, y_start = p0, initType = Modelica.Blocks.Types.Init.InitialOutput) annotation(Placement(transformation(extent = {{132, 10}, {146, 24}})));
   Modelica.Blocks.Interfaces.RealOutput z "Gate opening" annotation (Placement(transformation(extent={{156,12},{166,22}}), iconTransformation(extent={{148,12},{158,22}})));
   parameter Real D "Permanent speed droop, g19=g20=0.08, all others=0.04";
   parameter Real p0 "Initialization, initial electrical power";
-  Modelica.Blocks.Interfaces.RealInput Pm_set annotation (Placement(transformation(
-        extent={{5,-6},{-5,6}},
-        rotation=180,
-        origin={-90,-17}), iconTransformation(
-        extent={{5,-6},{-5,6}},
-        rotation=180,
-        origin={-10,14})));
-  Modelica.Blocks.Interfaces.RealInput Pe annotation (Placement(transformation(
-        extent={{5,-6},{-5,6}},
-        rotation=180,
-        origin={-90,-33}), iconTransformation(
-        extent={{5,-6},{-5,6}},
-        rotation=180,
-        origin={-10,-8})));
-  iPSL.NonElectrical.Continuous.SimpleLag SimpleLag1(
-    K=1,
-    T=2,
-    y_start=p0) annotation (Placement(transformation(extent={{-72,-40},{-58,-26}})));
+  Modelica.Blocks.Interfaces.RealInput Pm_set annotation(Placement(transformation(extent = {{5, -6}, {-5, 6}}, rotation = 180, origin = {-90, -17}), iconTransformation(extent = {{5, -6}, {-5, 6}}, rotation = 180, origin = {-10, 14})));
+  Modelica.Blocks.Interfaces.RealInput Pe annotation(Placement(transformation(extent = {{5, -6}, {-5, 6}}, rotation = 180, origin = {-90, -33}), iconTransformation(extent = {{5, -6}, {-5, 6}}, rotation = 180, origin = {-10, -8})));
+  iPSL.NonElectrical.Continuous.SimpleLag SimpleLag1(K = 1, T = 2, y_start = p0) annotation(Placement(transformation(extent = {{-72, -40}, {-58, -26}})));
   Modelica.Blocks.Math.Feedback feedback annotation (Placement(transformation(extent={{68,6},{88,26}})));
-  Modelica.Blocks.Math.Add add(k2=-1) annotation (Placement(transformation(
-        extent={{-5,-5},{5,5}},
-        rotation=90,
-        origin={-53,-9})));
-  Modelica.Blocks.Math.Add add1 annotation (Placement(transformation(
-        extent={{-5,-5},{5,5}},
-        rotation=0,
-        origin={-41,25})));
-  Modelica.Blocks.Math.Add add2(k1=-1) annotation (Placement(transformation(
-        extent={{-5,-5},{5,5}},
-        rotation=0,
-        origin={-65,29})));
-  Modelica.Blocks.Math.Add add3 annotation (Placement(transformation(
-        extent={{-6,-6},{6,6}},
-        rotation=0,
-        origin={58,16})));
+  Modelica.Blocks.Math.Add add(k2 = -1) annotation(Placement(transformation(extent = {{-5, -5}, {5, 5}}, rotation = 90, origin = {-53, -9})));
+  Modelica.Blocks.Math.Add add1 annotation(Placement(transformation(extent = {{-5, -5}, {5, 5}}, rotation = 0, origin = {-41, 25})));
+  Modelica.Blocks.Math.Add add2(k1 = -1) annotation(Placement(transformation(extent = {{-5, -5}, {5, 5}}, rotation = 0, origin = {-65, 29})));
+  Modelica.Blocks.Math.Add add3 annotation(Placement(transformation(extent = {{-6, -6}, {6, 6}}, rotation = 0, origin = {58, 16})));
 equation
   connect(Gain3.y, Limited.u) annotation (Line(points={{106.7,17},{106.7,17},{110.6,17}}, color={0,0,127}));
   connect(Limited.y, imLimitedIntegrator.u) annotation (Line(points={{126.7,17},{128.35,17},{128.35,17},{130.6,17}}, color={0,0,127}));

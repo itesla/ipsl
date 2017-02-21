@@ -7,11 +7,8 @@ class PwLoadPQ "Constant Power load defined by active power P and reactive power
   parameter Real Q "Reactive Power in p.u.";
   parameter Real V_0=1 "Voltage magnitude (pu)" annotation (Dialog(group="Power flow data"));
   parameter Real angle_0=0 "Voltage angle (deg)" annotation (Dialog(group="Power flow data"));
-  parameter Real Vo_real = V_0*cos(angle_0*Modelica.Constants.pi/180)
-    "Initial voltage at node in p.u. (Real part)";
-  parameter Real Vo_img = V_0*sin(angle_0*Modelica.Constants.pi/180)
-    "Initial voltage at node in p.u. (Imaginary part)";
-
+  parameter Real Vo_real = V_0 * cos(angle_0 * Modelica.Constants.pi / 180) "Initial voltage at node in p.u. (Real part)";
+  parameter Real Vo_img = V_0 * sin(angle_0 * Modelica.Constants.pi / 180) "Initial voltage at node in p.u. (Imaginary part)";
 equation
   P = p.vr * p.ir + p.vi * p.ii;
   Q = (-p.vr * p.ii) + p.vi * p.ir;

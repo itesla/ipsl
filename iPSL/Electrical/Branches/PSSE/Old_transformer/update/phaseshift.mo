@@ -5,7 +5,7 @@ model phaseshift
   iPSL.Connectors.PwPin F annotation (Placement(transformation(extent={{-102,-2},{-82,18}}), iconTransformation(extent={{-102,-2},{-82,18}})));
   parameter Real phase " From side and To side phase shift in degree";
 protected
-  parameter Real A=(-phase*pi/180) + 0.5*pi;
+  parameter Real A = (-phase * pi / 180) + 0.5 * pi;
 equation
   [T.ir; T.ii] = -[sin(A), cos(A); -cos(A), sin(A)]*[F.ir; F.ii];
   [T.vr; T.vi] = [sin(A), cos(A); -cos(A), sin(A)]*[F.vr; F.vi];

@@ -4,20 +4,20 @@ model TWTransformerWithFixedTapRatio "Modeled as series reactances without iron 
 
   iPSL.Connectors.PwPin p annotation (Placement(transformation(extent={{-120,-10},{-100,10}})));
   iPSL.Connectors.PwPin n annotation (Placement(transformation(extent={{100,-10},{120,10}})));
-  parameter Real SystemBase=SysData.S_b;
-  parameter Real Sn=100 "Power rating MVA";
-  parameter Real Vbus=400000 "Sending end bus voltage";
-  parameter Real Vn1=400000 "Voltage rating of primary winding KV";
-  parameter Real fn=50 "Frequency rating Hz";
-  parameter Real kT=1 "Nominal Tap ratio (V1/V2), kV/kV";
-  parameter Real X=0.20 "Transformer reactance, p.u.";
-  parameter Real R=0.01 "Transformer resistance, p.u.";
-  parameter Real m=1.0 "Fixed Tap ratio";
+  parameter Real SystemBase = SysData.S_b;
+  parameter Real Sn = 100 "Power rating MVA";
+  parameter Real Vbus = 400000 "Sending end bus voltage";
+  parameter Real Vn1 = 400000 "Voltage rating of primary winding KV";
+  parameter Real fn = 50 "Frequency rating Hz";
+  parameter Real kT = 1 "Nominal Tap ratio (V1/V2), kV/kV";
+  parameter Real X = 0.20 "Transformer reactance, p.u.";
+  parameter Real R = 0.01 "Transformer resistance, p.u.";
+  parameter Real m = 1.0 "Fixed Tap ratio";
 protected
-  parameter Real Vb2new=Vbus*Vbus;
-  parameter Real Vb2old=Vn1*Vn1;
-  parameter Real xT=X*(Vb2old*SystemBase)/(Vb2new*Sn) "Reactance(inductive),p.u";
-  parameter Real rT=R*(Vb2old*SystemBase)/(Vb2new*Sn) "Resistance,p.u";
+  parameter Real Vb2new = Vbus * Vbus;
+  parameter Real Vb2old = Vn1 * Vn1;
+  parameter Real xT = X * (Vb2old * SystemBase) / (Vb2new * Sn) "Reactance(inductive),p.u";
+  parameter Real rT = R * (Vb2old * SystemBase) / (Vb2new * Sn) "Resistance,p.u";
 equation
   rT*p.ir - xT*p.ii = 1/m^2*p.vr - 1/m*n.vr;
   rT*p.ii + xT*p.ir = 1/m^2*p.vi - 1/m*n.vi;

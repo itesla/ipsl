@@ -28,11 +28,7 @@ partial model baseMachine
   parameter Real S12 "Saturation factor at 1.2 pu" annotation (Dialog(group="Machine parameters"));
   parameter Real R_a=0 "amature resistance" annotation (Dialog(group="Machine parameters"));
   //Initialization
-  iPSL.Connectors.PwPin p(
-    vr(start=vr0),
-    vi(start=vi0),
-    ir(start=ir0),
-    ii(start=ii0)) annotation (Placement(transformation(extent={{100,-10},{120,10}}), iconTransformation(extent={{100,-10},{120,10}})));
+  iPSL.Connectors.PwPin p(vr(start = vr0), vi(start = vi0), ir(start = ir0), ii(start = ii0)) annotation(Placement(transformation(extent = {{100, -10}, {120, 10}}), iconTransformation(extent = {{100, -10}, {120, 10}})));
   RealOutput SPEED(start=0) "Machine speed deviation from nominal (pu)" annotation (Placement(transformation(extent={{100,60},{120,80}}), iconTransformation(extent={{100,82},{116,98}})));
   RealInput PMECH "Turbine mechanical power (pu on M_b)" annotation (Placement(transformation(extent={{-114,40},{-94,60}}), iconTransformation(extent={{-108,40},{-88,60}})));
   RealOutput PMECH0 "Initial value of machine electrical power (pu on M_b)" annotation (Placement(transformation(extent={{100,40},{120,60}}), iconTransformation(extent={{100,-38},{116,-22}})));
@@ -42,13 +38,7 @@ partial model baseMachine
   RealOutput PELEC(start=p0) "Machine electrical power (pu on M_b)" annotation (Placement(transformation(extent={{100,20},{120,40}}), iconTransformation(extent={{100,-58},{116,-42}})));
   RealOutput ISORCE "Machine source current (pu)" annotation (Placement(transformation(extent={{100,-80},{120,-60}}), iconTransformation(extent={{100,62},{116,78}})));
   RealOutput ANGLE "Machine relative rotor angle (deg.)" annotation (Placement(transformation(extent={{100,78},{120,98}}), iconTransformation(extent={{100,22},{116,38}})));
-  RealOutput XADIFD "Machine field current (pu)" annotation (Placement(transformation(
-        extent={{-10,-10},{10,10}},
-        rotation=0,
-        origin={110,-90}), iconTransformation(
-        extent={{-8,-8},{8,8}},
-        rotation=0,
-        origin={108,-90})));
+  RealOutput XADIFD "Machine field current (pu)" annotation(Placement(transformation(extent = {{-10, -10}, {10, 10}}, rotation = 0, origin = {110, -90}), iconTransformation(extent = {{-8, -8}, {8, 8}}, rotation = 0, origin = {108, -90})));
   Real w(start=0) "Machine speed deviation (pu)";
   Real delta "Rotor angle (deg.)";
   Real Vt(start=V_0) "Bus voltage magnitude (pu)";
@@ -73,7 +63,7 @@ protected
   parameter Real p0=P_0/M_b "initial active power generation in pu machinebase";
   parameter Real q0=Q_0/M_b "initial reactive power generation in pu machinebase";
 equation
-  //Interfacing outputs with the internal variables
+//Interfacing outputs with the internal variables
   ANGLE = delta;
   SPEED = w;
   ETERM = Vt;
@@ -90,38 +80,7 @@ equation
   der(delta) = w_b*w;
   annotation (
     Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,100}})),
-    Icon(graphics={Rectangle(extent={{-100,100},{100,-100}}, lineColor={0,0,255}),Text(
-          extent={{66,98},{96,82}},
-          lineColor={0,0,255},
-          lineThickness=0.5,
-          textString="SPEED"),Text(
-          extent={{64,78},{96,62}},
-          lineColor={0,0,255},
-          lineThickness=0.5,
-          textString="ISORCE"),Text(
-          extent={{66,56},{96,42}},
-          lineColor={0,0,255},
-          textString="ETERM"),Text(
-          extent={{66,38},{96,22}},
-          lineColor={0,0,255},
-          lineThickness=0.5,
-          textString="ANGLE"),Text(
-          extent={{62,-24},{96,-36}},
-          lineColor={0,0,255},
-          lineThickness=0.5,
-          textString="PMECH0"),Text(
-          extent={{66,-46},{96,-56}},
-          lineColor={0,0,255},
-          lineThickness=0.5,
-          textString="PELEC"),Text(
-          extent={{66,-66},{100,-76}},
-          lineColor={0,0,255},
-          lineThickness=0.5,
-          textString="EFD0"),Text(
-          extent={{62,-86},{98,-96}},
-          lineColor={0,0,255},
-          lineThickness=0.5,
-          textString="XADIFD0")}),
+    Icon(graphics = {Rectangle(lineColor = {0, 0, 255}, extent = {{-100, 100}, {100, -100}}), Text(origin = {-8, -4},lineColor = {0, 0, 255}, lineThickness = 0.5, extent = {{66, 98}, {90, 86}}, textString = "SPEED"), Text(origin = {-8, 0},lineColor = {0, 0, 255}, lineThickness = 0.5, extent = {{64, 78}, {96, 62}}, textString = "ISORCE"), Text(origin = {-8, -2},lineColor = {0, 0, 255}, extent = {{66, 56}, {92, 44}}, textString = "ETERM"), Text(origin = {-6, -4},lineColor = {0, 0, 255}, lineThickness = 0.5, extent = {{66, 38}, {92, 28}}, textString = "ANGLE"), Text(origin = {-8, -2},lineColor = {0, 0, 255}, lineThickness = 0.5, extent = {{62, -24}, {92, -34}}, textString = "PMECH0"), Text(origin = {-12, 0},lineColor = {0, 0, 255}, lineThickness = 0.5, extent = {{66, -46}, {96, -56}}, textString = "PELEC"), Text(origin = {-12, 0},lineColor = {0, 0, 255}, lineThickness = 0.5, extent = {{66, -66}, {100, -76}}, textString = "EFD0"), Text(origin = {-14, 0},lineColor = {0, 0, 255}, lineThickness = 0.5, extent = {{62, -86}, {98, -94}}, textString = "XADIFD0"), Text(origin = {-46, 64}, lineColor = {85, 0, 255}, extent = {{-32, 10}, {8, 0}}, textString = "PMECH"), Text(origin = {-52, -70}, lineColor = {85, 0, 255}, extent = {{-32, 10}, {12, 0}}, textString = "EFD")}, coordinateSystem(initialScale = 0.1)),
     Documentation(revisions="<html>
 <!--DISCLAIMER-->
 <p>Copyright 2015-2016 RTE (France), SmarTS Lab (Sweden), AIA (Spain) and DTU (Denmark)</p>

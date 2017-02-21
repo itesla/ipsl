@@ -42,10 +42,7 @@ model WT12T1
         rotation=180,
         origin={12,-14})));
   Modelica.Blocks.Math.Gain WBASE(k=wbase) annotation (Placement(transformation(extent={{26,14},{36,24}})));
-  Modelica.Blocks.Math.Add add5(k2=-1) annotation (Placement(transformation(
-        extent={{-5,-5},{5,5}},
-        rotation=0,
-        origin={45,1})));
+  Modelica.Blocks.Math.Add add5(k2 = -1) annotation(Placement(transformation(extent = {{-5, -5}, {5, 5}}, rotation = 0, origin = {45, 1})));
   Modelica.Blocks.Math.Gain WBASE1(k=wbase) annotation (Placement(transformation(extent={{24,-54},{34,-44}})));
   Modelica.Blocks.Interfaces.RealOutput SPEED annotation (Placement(transformation(extent={{94,-42},{114,-22}}), iconTransformation(extent={{90,-36},{110,-16}})));
   Modelica.Blocks.Continuous.Integrator dwg(
@@ -74,27 +71,12 @@ model WT12T1
     initType=Modelica.Blocks.Types.Init.InitialOutput) annotation (Placement(transformation(extent={{56,-4},{66,6}})));
   Modelica.Blocks.Interfaces.RealOutput RotorAD "Rotor angle deviation" annotation (Placement(transformation(extent={{94,-80},{112,-62}}), iconTransformation(extent={{90,-88},{108,-70}})));
   Modelica.Blocks.Continuous.Integrator state4(k=1, y_start=k30) annotation (Placement(transformation(extent={{62,-76},{72,-66}})));
-  Modelica.Blocks.Math.Add add2(k2=-1) annotation (Placement(transformation(
-        extent={{-5,-5},{5,5}},
-        rotation=0,
-        origin={33,-71})));
-  Modelica.Blocks.Sources.Constant VAR1(k=w0) "Initial rotor slip" annotation (Placement(transformation(
-        extent={{6,-6},{-6,6}},
-        rotation=180,
-        origin={8,-74})));
+  Modelica.Blocks.Math.Add add2(k2 = -1) annotation(Placement(transformation(extent = {{-5, -5}, {5, 5}}, rotation = 0, origin = {33, -71})));
+  Modelica.Blocks.Sources.Constant VAR1(k = w0) "Initial rotor slip" annotation(Placement(transformation(extent = {{6, -6}, {-6, 6}}, rotation = 180, origin = {8, -74})));
   Modelica.Blocks.Math.Gain WBASE2(k=wbase) annotation (Placement(transformation(extent={{48,-76},{58,-66}})));
-  Modelica.Blocks.Math.Division product2 annotation (Placement(transformation(
-        extent={{-4,-4},{4,4}},
-        rotation=90,
-        origin={-64,-68})));
-  Modelica.Blocks.Math.Add wg annotation (Placement(transformation(
-        extent={{-5,-5},{5,5}},
-        rotation=180,
-        origin={-37,-79})));
-  Modelica.Blocks.Sources.Constant const(k=1) "Initial rotor slip" annotation (Placement(transformation(
-        extent={{6,-6},{-6,6}},
-        rotation=0,
-        origin={-18,-86})));
+  Modelica.Blocks.Math.Division product2 annotation(Placement(transformation(extent = {{-4, -4}, {4, 4}}, rotation = 90, origin = {-64, -68})));
+  Modelica.Blocks.Math.Add wg annotation(Placement(transformation(extent = {{-5, -5}, {5, 5}}, rotation = 180, origin = {-37, -79})));
+  Modelica.Blocks.Sources.Constant const(k = 1) "Initial rotor slip" annotation(Placement(transformation(extent = {{6, -6}, {-6, 6}}, rotation = 0, origin = {-18, -86})));
 initial equation
   k0 = 0;
   k10 = 0;

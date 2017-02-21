@@ -21,7 +21,7 @@ model Branch1 "First winding of Three Winding Transformer"
   Real anglev2 "Angle of the fictious bus";
   Real vbus2 "Voltage of the fictious bus";
 equation
-  vbus2 = sqrt(n1.vr^2 + n1.vi^2);
+  vbus2 = sqrt(n1.vr ^ 2 + n1.vi ^ 2);
   anglev2 = atan2(n1.vi, n1.vr);
   r1 = 0.5*(R12 + R13 - R23);
   x1 = 0.5*(X12 + X13 - X23);

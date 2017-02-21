@@ -3,13 +3,7 @@ model PwdqCurrentSource "Developed by DTU"
   iPSL.Connectors.PwPin n annotation (Placement(transformation(extent={{60,-6},{72,6}}), iconTransformation(extent={{60,-6},{72,6}})));
   Modelica.Blocks.Interfaces.RealInput id_ref annotation (Placement(transformation(extent={{-73,33},{-61,47}})));
   Modelica.Blocks.Interfaces.RealInput iq_ref annotation (Placement(transformation(extent={{-73,-47},{-61,-33}})));
-  Modelica.Blocks.Interfaces.RealInput phi_meas annotation (Placement(transformation(
-        extent={{-6,-6},{6,6}},
-        rotation=90,
-        origin={0,-46}), iconTransformation(
-        extent={{-6,-6},{6,6}},
-        rotation=90,
-        origin={0,-66})));
+  Modelica.Blocks.Interfaces.RealInput phi_meas annotation(Placement(transformation(extent = {{-6, -6}, {6, 6}}, rotation = 90, origin = {0, -46}), iconTransformation(extent = {{-6, -6}, {6, 6}}, rotation = 90, origin = {0, -66})));
 equation
   n.ir = id_ref*cos(phi_meas) - iq_ref*sin(phi_meas);
   n.ii = id_ref*sin(phi_meas) + iq_ref*cos(phi_meas);

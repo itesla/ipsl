@@ -9,7 +9,7 @@ model PwLine2Openings "Transmission Line based on the pi-equivalent circuit with
   parameter Real B "Shunt half susceptance";
   parameter Real startTime "Start time of the opening";
   parameter Real endTime "End time of the opening";
-  parameter Real S_b=100 "System base power (MVA)";
+  parameter Real S_b = 100 "System base power (MVA)";
   Real Zr;
   Real Zi;
   Real P12;
@@ -17,12 +17,12 @@ model PwLine2Openings "Transmission Line based on the pi-equivalent circuit with
   Real Q12;
   Real Q21;
 equation
-  P12 = (p.vr*p.ir - p.vi*p.ii)*S_b;
-  P21 = -(n.vr*n.ir - n.vi*n.ii)*S_b;
-  Q12 = (p.vr*p.ii - p.vi*p.ir)*S_b;
-  Q21 = -(n.vr*n.ii - n.vi*n.ir)*S_b;
-  Zr = R*G + X*B;
-  Zi = R*B + X*G;
+  P12 = (p.vr * p.ir - p.vi * p.ii) * S_b;
+  P21 = -(n.vr * n.ir - n.vi * n.ii) * S_b;
+  Q12 = (p.vr * p.ii - p.vi * p.ir) * S_b;
+  Q21 = -(n.vr * n.ii - n.vi * n.ir) * S_b;
+  Zr = R * G + X * B;
+  Zi = R * B + X * G;
   if time >= startTime then
     if time < endTime then
       p.ir = 0;
@@ -30,16 +30,16 @@ equation
       n.ii = 0.0;
       n.ir = 0.0;
     else
-      R*(n.ir - G*n.vr + B*n.vi) - X*(n.ii - B*n.vr - G*n.vi) = n.vr - p.vr;
-      R*(n.ii - B*n.vr - G*n.vi) + X*(n.ir - G*n.vr + B*n.vi) = n.vi - p.vi;
-      R*(p.ir - G*p.vr + B*p.vi) - X*(p.ii - B*p.vr - G*p.vi) = p.vr - n.vr;
-      R*(p.ii - B*p.vr - G*p.vi) + X*(p.ir - G*p.vr + B*p.vi) = p.vi - n.vi;
+      R * (n.ir - G * n.vr + B * n.vi) - X * (n.ii - B * n.vr - G * n.vi) = n.vr - p.vr;
+      R * (n.ii - B * n.vr - G * n.vi) + X * (n.ir - G * n.vr + B * n.vi) = n.vi - p.vi;
+      R * (p.ir - G * p.vr + B * p.vi) - X * (p.ii - B * p.vr - G * p.vi) = p.vr - n.vr;
+      R * (p.ii - B * p.vr - G * p.vi) + X * (p.ir - G * p.vr + B * p.vi) = p.vi - n.vi;
     end if;
   else
-    R*(n.ir - G*n.vr + B*n.vi) - X*(n.ii - B*n.vr - G*n.vi) = n.vr - p.vr;
-    R*(n.ii - B*n.vr - G*n.vi) + X*(n.ir - G*n.vr + B*n.vi) = n.vi - p.vi;
-    R*(p.ir - G*p.vr + B*p.vi) - X*(p.ii - B*p.vr - G*p.vi) = p.vr - n.vr;
-    R*(p.ii - B*p.vr - G*p.vi) + X*(p.ir - G*p.vr + B*p.vi) = p.vi - n.vi;
+    R * (n.ir - G * n.vr + B * n.vi) - X * (n.ii - B * n.vr - G * n.vi) = n.vr - p.vr;
+    R * (n.ii - B * n.vr - G * n.vi) + X * (n.ir - G * n.vr + B * n.vi) = n.vi - p.vi;
+    R * (p.ir - G * p.vr + B * p.vi) - X * (p.ii - B * p.vr - G * p.vi) = p.vr - n.vr;
+    R * (p.ii - B * p.vr - G * p.vi) + X * (p.ir - G * p.vr + B * p.vi) = p.vi - n.vi;
   end if;
   annotation (
     Icon(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,100}}), graphics={Rectangle(extent={{-60,40},{60,-42}}, lineColor={0,0,255}),Rectangle(

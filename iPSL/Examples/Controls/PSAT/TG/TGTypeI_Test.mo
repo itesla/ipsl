@@ -1,21 +1,12 @@
 within iPSL.Examples.Controls.PSAT.TG;
 model TGTypeI_Test
+extends Modelica.Icons.Example;
   iPSL.Electrical.Loads.PSAT.LOADPQ pwLoadPQ2(
-    P_0=0.08,
-    Q_0=0.06,
+    P_0= 10,
+    Q_0= 5,
     V_0=1,
     angle_0=0) annotation (Placement(visible=true, transformation(
         origin={122.283,26},
-        extent={{-10.0,-10.0},{10.0,10.0}},
-        rotation=0)));
-  iPSL.Electrical.Branches.PwLine2Openings pwLinewithOpening1(
-    B=0.001/2,
-    G=0,
-    R=0.01,
-    X=0.1,
-    t1=8,
-    t2=8.1) annotation (Placement(visible=true, transformation(
-        origin={79,16},
         extent={{-10.0,-10.0},{10.0,10.0}},
         rotation=0)));
   iPSL.Electrical.Branches.PwLine pwLine4(
@@ -35,8 +26,8 @@ model TGTypeI_Test
         extent={{-10.0,-10.0},{10.0,10.0}},
         rotation=0)));
   iPSL.Electrical.Loads.PSAT.LOADPQ pwLoadPQ1(
-    P_0=0.08,
-    Q_0=0.06,
+    P_0= 10,
+    Q_0= 5,
     V_0=1,
     angle_0=0) annotation (Placement(visible=true, transformation(
         origin={124,-19},
@@ -60,10 +51,10 @@ model TGTypeI_Test
         rotation=0)));
   iPSL.Electrical.Events.PwFaultPQ pwFault(
     X=0.001,
-    t1=3,
-    t2=3.1,
+    startTime=3,
+    endTime=3.1,
     R=10) annotation (Placement(transformation(extent={{115,-52},{135,-32}})));
-  iPSL.Electrical.Machines.PSAT.SixthOrder.Order6 order6Type2_Inputs_Outputs(
+  iPSL.Electrical.Machines.PSAT.Order6 order6Type2_Inputs_Outputs(
     V_0=1,
     angle_0=0,
     P_0=0.160352698692006,
@@ -88,64 +79,39 @@ model TGTypeI_Test
     T4=5,
     T5=0.04) annotation (Placement(transformation(extent={{-2,-64},{-68,-20}})));
   inner iPSL.Electrical.SystemBase SysData annotation (Placement(transformation(extent={{80,80},{128,106}})));
+  iPSL.Electrical.Branches.PwLine pwLine5(B = 0.001 / 2, G = 0, R = 0.01, X = 0.1, startTime = 8, endTime = 8.1) annotation(
+    Placement(visible = true, transformation(origin = {79, 7}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
 equation
-  connect(pwLine4.n, pwLoadPQ2.p) annotation (Line(
-      visible=true,
-      origin={101.213,29},
-      points={{-15.213,2},{3.0708,2},{3.0708,8},{21.07,8}}));
-  connect(pwLinewithOpening1.n, pwLine4.n) annotation (Line(
-      visible=true,
-      origin={86,23.5},
-      points={{0,-7.5},{0,7.5}}));
-  connect(pwLine4.p, pwLinewithOpening1.p) annotation (Line(
-      visible=true,
-      origin={72,23.5},
-      points={{0,7.5},{0,-7.5}}));
-  connect(pwLine3.n, pwLoadPQ1.p) annotation (Line(
-      visible=true,
-      origin={107.5,-18.5},
-      points={{-16.5,-0.5},{3.5,-0.5},{3.5,10.5},{16.5,10.5}}));
-  connect(pwLine2.n, pwLine4.p) annotation (Line(
-      points={{51,26},{64,26},{64,31},{72,31}},
-      color={0,0,255},
-      smooth=Smooth.None));
-  connect(pwLine1.n, pwLine3.p) annotation (Line(
-      points={{51,-4},{64,-4},{64,-19},{77,-19}},
-      color={0,0,255},
-      smooth=Smooth.None));
-  connect(pwLine2.n, pwLine1.n) annotation (Line(
-      points={{51,26},{51,-4}},
-      color={0,0,255},
-      smooth=Smooth.None));
-  connect(pwFault.p, pwLine3.n) annotation (Line(
-      points={{113.333,-42},{104,-42},{104,-19},{91,-19}},
-      color={0,0,255},
-      smooth=Smooth.None));
-  connect(order6Type2_Inputs_Outputs.p, pwLine2.p) annotation (Line(
-      points={{16,27.1936},{27,27.1936},{27,26},{37,26}},
-      color={0,0,255},
-      smooth=Smooth.None));
-  connect(pwLine1.p, pwLine2.p) annotation (Line(
-      points={{37,-4},{37,26}},
-      color={0,0,255},
-      smooth=Smooth.None));
-  connect(order6Type2_Inputs_Outputs.vf0, order6Type2_Inputs_Outputs.vf)
-    annotation (Line(
-      points={{-60,69.9},{28,69.9},{28,80},{-88,80},{-88,46.5},{-68,46.5}},
-      color={0,0,127},
-      smooth=Smooth.None));
-  connect(order6Type2_Inputs_Outputs.w, tGTypeI.w) annotation (Line(
-      points={{16,62.1},{30,62.1},{30,-38.7},{-8.325,-38.7}},
-      color={0,0,127},
-      smooth=Smooth.None));
-  connect(tGTypeI.pm, order6Type2_Inputs_Outputs.pm) annotation (Line(
-      points={{-56.175,-39.14},{-88,-39.14},{-88,7.5},{-68,7.5}},
-      color={0,0,127},
-      smooth=Smooth.None));
+  connect(pwLine5.p, pwLine4.p) annotation(
+    Line(points = {{68, 8}, {66, 8}, {66, 32}, {68, 32}}, color = {0, 0, 255}));
+  connect(pwLine5.n, pwLine4.n) annotation(
+    Line(points = {{90, 8}, {90, 8}, {90, 32}, {90, 32}}, color = {0, 0, 255}));
+  connect(pwLine4.n, pwLoadPQ2.p) annotation(
+    Line(visible = true, origin = {101.213, 29}, points = {{-15.213, 2}, {3.0708, 2}, {3.0708, 8}, {21.07, 8}}));
+  connect(pwLine3.n, pwLoadPQ1.p) annotation(
+    Line(visible = true, origin = {107.5, -18.5}, points = {{-16.5, -0.5}, {3.5, -0.5}, {3.5, 10.5}, {16.5, 10.5}}));
+  connect(pwLine2.n, pwLine4.p) annotation(
+    Line(points = {{51, 26}, {64, 26}, {64, 31}, {72, 31}}, color = {0, 0, 255}, smooth = Smooth.None));
+  connect(pwLine1.n, pwLine3.p) annotation(
+    Line(points = {{51, -4}, {64, -4}, {64, -19}, {77, -19}}, color = {0, 0, 255}, smooth = Smooth.None));
+  connect(pwLine2.n, pwLine1.n) annotation(
+    Line(points = {{51, 26}, {51, -4}}, color = {0, 0, 255}, smooth = Smooth.None));
+  connect(pwFault.p, pwLine3.n) annotation(
+    Line(points = {{113.333, -42}, {104, -42}, {104, -19}, {91, -19}}, color = {0, 0, 255}, smooth = Smooth.None));
+  connect(order6Type2_Inputs_Outputs.p, pwLine2.p) annotation(
+    Line(points = {{16, 27.1936}, {27, 27.1936}, {27, 26}, {37, 26}}, color = {0, 0, 255}, smooth = Smooth.None));
+  connect(pwLine1.p, pwLine2.p) annotation(
+    Line(points = {{37, -4}, {37, 26}}, color = {0, 0, 255}, smooth = Smooth.None));
+  connect(order6Type2_Inputs_Outputs.vf0, order6Type2_Inputs_Outputs.vf) annotation(
+    Line(points = {{-60, 69.9}, {28, 69.9}, {28, 80}, {-88, 80}, {-88, 46.5}, {-68, 46.5}}, color = {0, 0, 127}, smooth = Smooth.None));
+  connect(order6Type2_Inputs_Outputs.w, tGTypeI.w) annotation(
+    Line(points = {{16, 62.1}, {30, 62.1}, {30, -38.7}, {-8.325, -38.7}}, color = {0, 0, 127}, smooth = Smooth.None));
+  connect(tGTypeI.pm, order6Type2_Inputs_Outputs.pm) annotation(
+    Line(points = {{-56.175, -39.14}, {-88, -39.14}, {-88, 7.5}, {-68, 7.5}}, color = {0, 0, 127}, smooth = Smooth.None));
   annotation (
-    Diagram(coordinateSystem(extent={{-100,-100},{140,120}}, preserveAspectRatio=false), graphics),
-    Icon(coordinateSystem(extent={{-100,-100},{140,120}})),
-    Documentation(revisions="<html>
+    Diagram(coordinateSystem(extent={{-160,-100},{160,100}}, preserveAspectRatio=false)),
+    Icon(coordinateSystem(extent={{-100,-100},{100,100}})),
+    Documentation(info="<html>
 <!--DISCLAIMER-->
 <p>Copyright 2015-2016 RTE (France), SmarTS Lab (Sweden), AIA (Spain) and DTU (Denmark)</p>
 <ul>

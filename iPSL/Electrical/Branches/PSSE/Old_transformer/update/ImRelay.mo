@@ -3,7 +3,7 @@ model ImRelay "input dependent output"
   Modelica.Blocks.Interfaces.RealInput p1 annotation (Placement(transformation(extent={{-54,-26},{-41,-12}}), iconTransformation(extent={{-54,-26},{-41,-12}})));
   Modelica.Blocks.Interfaces.RealInput p2 annotation (Placement(transformation(extent={{-54,18},{-41,32}}), iconTransformation(extent={{-54,18},{-41,32}})));
   Modelica.Blocks.Interfaces.RealOutput n1 annotation (Placement(transformation(extent={{39,-10},{59,10}}), iconTransformation(extent={{39,-10},{59,10}})));
-  parameter Real COD=0 "Enable OLTC";
+  parameter Real COD = 0 "Enable OLTC";
 equation
   n1 = if COD > 0 then p1 else p2;
   annotation (

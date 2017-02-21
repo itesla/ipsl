@@ -17,10 +17,7 @@ model TGTypeVI "Hydro Turbine (Nonlinear model) and Governor (PID controller com
   parameter Real po;
   Real G "Gate opening (pu)";
   Modelica.Blocks.Continuous.Integrator integrator(initType=Modelica.Blocks.Types.Init.NoInit, y_start=po*(gmax - gmin)) annotation (Placement(transformation(extent={{50,52},{62,64}})));
-  Modelica.Blocks.Sources.Step step(
-    height=1,
-    offset=0,
-    startTime=0) annotation (Placement(transformation(
+  Modelica.Blocks.Sources.Step step(height = 1, offset = 0, startTime = 0) annotation (Placement(transformation(
         extent={{-6,-6},{6,6}},
         rotation=180,
         origin={258,-2})));
@@ -35,7 +32,7 @@ model TGTypeVI "Hydro Turbine (Nonlinear model) and Governor (PID controller com
   Modelica.Blocks.Math.Gain gain9(k=Kp) annotation (Placement(transformation(extent={{-98,74},{-86,86}})));
   Modelica.Blocks.Math.MultiSum multiSum5(nu=3, k={1,1,1}) annotation (Placement(transformation(extent={{-52,54},{-40,66}})));
   Modelica.Blocks.Math.MultiSum multiSum6(k={1,-1}, nu=2) annotation (Placement(transformation(extent={{-130,54},{-118,66}})));
-  Modelica.Blocks.Math.Gain gain6(k=Rp) annotation (Placement(transformation(
+  Modelica.Blocks.Math.Gain gain6(k = Rp) annotation (Placement(transformation(
         extent={{-6,-6},{6,6}},
         rotation=180,
         origin={-120,18})));
@@ -45,7 +42,7 @@ model TGTypeVI "Hydro Turbine (Nonlinear model) and Governor (PID controller com
         origin={-148,84})));
   Modelica.Blocks.Continuous.Integrator integrator5(initType=Modelica.Blocks.Types.Init.NoInit, y_start=po*(gmax - gmin)) annotation (Placement(transformation(extent={{-76,54},{-64,66}})));
   Modelica.Blocks.Math.Gain Proportional(k=beta) annotation (Placement(transformation(extent={{80,96},{92,108}})));
-  Modelica.Blocks.Math.Gain gain8(k=Ki) annotation (Placement(transformation(
+  Modelica.Blocks.Math.Gain gain8(k = Ki) annotation (Placement(transformation(
         extent={{-6,-6},{6,6}},
         rotation=0,
         origin={-92,60})));
@@ -59,11 +56,11 @@ model TGTypeVI "Hydro Turbine (Nonlinear model) and Governor (PID controller com
   Modelica.Blocks.Continuous.TransferFunction transferFunction(a={Ta,1}, b={Ka}) annotation (Placement(transformation(extent={{0,52},{12,64}})));
   Modelica.Blocks.Math.MultiSum multiSum2(nu=2, k={1,-1}) annotation (Placement(transformation(extent={{-28,52},{-16,64}})));
   Modelica.Blocks.Math.Gain Gain10(k=1/(gmax - gmin)) annotation (Placement(transformation(extent={{114,52},{126,64}})));
-  Modelica.Blocks.Math.MultiSum multiSum4(nu=2, k={-1,1}) annotation (Placement(transformation(
+  Modelica.Blocks.Math.MultiSum multiSum4(nu = 2, k = {-1,1}) annotation (Placement(transformation(
         extent={{-6,-6},{6,6}},
         rotation=180,
         origin={224,-2})));
-  Modelica.Blocks.Math.Gain gain7(k=1/Tw) annotation (Placement(transformation(
+  Modelica.Blocks.Math.Gain gain7(k = 1 / Tw) annotation (Placement(transformation(
         extent={{-6,-6},{6,6}},
         rotation=180,
         origin={192,-2})));

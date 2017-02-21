@@ -2,7 +2,8 @@ within iPSL.Examples.Controls.PSAT.AVR;
 
 
 model AVRTypeI_Test
-  iPSL.Electrical.Machines.PSAT.SixthOrder.Order6 Syn1(
+  extends Modelica.Icons.Example;
+  iPSL.Electrical.Machines.PSAT.Order6 Syn1(
     Sn=991,
     V_0=1.05,
     angle_0=0.159255652433349,
@@ -24,6 +25,7 @@ model AVRTypeI_Test
     xq=1.91,
     Taa=0.002,
     D=0) annotation (Placement(transformation(extent={{-116,-10},{-86,18}})));
+  
   iPSL.Electrical.Buses.Bus bus1 annotation (Placement(transformation(extent={{-80,-12},{-56,12}})));
   iPSL.Electrical.Buses.Bus bus2 annotation (Placement(transformation(extent={{102,-12},{126,12}})));
   iPSL.Electrical.Buses.Bus bus3 annotation (Placement(transformation(extent={{20,20},{44,44}})));
@@ -49,7 +51,7 @@ model AVRTypeI_Test
     X=0.05,
     G=0,
     B=0) annotation (Placement(transformation(extent={{88,-10},{108,10}})));
-  iPSL.Electrical.Machines.PSAT.SecondOrder.Order2 Syn2(
+  iPSL.Electrical.Machines.PSAT.Order2 Syn2(
     Sn=991,
     Vn=20000,
     V_b=20000,
@@ -70,8 +72,8 @@ model AVRTypeI_Test
   iPSL.Electrical.Events.PwFault pwFault(
     R=0.15,
     X=0,
-    t1=2,
-    t2=2.1) annotation (Placement(transformation(extent={{38,-8},{58,12}})));
+    startTime=2,
+    endTime= 2.5) annotation (Placement(transformation(extent={{38,-8},{58,12}})));
   iPSL.Electrical.Controls.PSAT.AVR.AVRTypeI aVRI(vrmax=7.57) annotation (Placement(transformation(extent={{-148,8},{-128,28}})));
   inner iPSL.Electrical.SystemBase SysData annotation (Placement(transformation(extent={{-80,60},{-38,80}})));
 equation
@@ -80,35 +82,35 @@ equation
       color={0,0,255},
       smooth=Smooth.None));
   connect(bus1.p, pwLine1to4.p) annotation (Line(
-      points={{-68,0},{-45,0}},
+      points={{-68,0},{-49.6667,0}},
       color={0,0,255},
       smooth=Smooth.None));
   connect(pwLine1to4.n, bus4.p) annotation (Line(
-      points={{-31,0},{-10,0}},
+      points={{-26.3333,0},{-10,0}},
       color={0,0,255},
       smooth=Smooth.None));
   connect(bus4.p, pwLine1.p) annotation (Line(
-      points={{-10,0},{7,0}},
+      points={{-10,0},{2.33333,0}},
       color={0,0,255},
       smooth=Smooth.None));
   connect(bus3.p, pwLine1.n) annotation (Line(
-      points={{32,32},{26,32},{26,0},{21,0}},
+      points={{32,32},{26,32},{26,0},{25.6667,0}},
       color={0,0,255},
       smooth=Smooth.None));
   connect(bus3.p, pwLine2.p) annotation (Line(
-      points={{32,32},{45,32}},
+      points={{32,32},{40.3333,32}},
       color={0,0,255},
       smooth=Smooth.None));
   connect(pwLine2.n, bus5.p) annotation (Line(
-      points={{59,32},{72,32}},
+      points={{63.6667,32},{72,32}},
       color={0,0,255},
       smooth=Smooth.None));
   connect(bus5.p, pwLine3.p) annotation (Line(
-      points={{72,32},{91,32},{91,0}},
+      points={{72,32},{86.3333,32},{86.3333,0}},
       color={0,0,255},
       smooth=Smooth.None));
   connect(pwLine3.n, bus2.p) annotation (Line(
-      points={{105,0},{114,0}},
+      points={{109.667,0},{114,0}},
       color={0,0,255},
       smooth=Smooth.None));
   connect(bus2.p, Syn2.p) annotation (Line(
@@ -123,8 +125,8 @@ equation
   connect(Syn2.pm0, Syn2.pm) annotation (Line(points={{148,11},{148,20},{156,20},{156,5},{150,5}}, color={0,0,127}));
   connect(Syn2.vf, Syn2.vf0) annotation (Line(points={{150,-5},{154,-5},{154,-4},{156,-4},{156,-16},{148,-16},{148,-11}}, color={0,0,127}));
   annotation (
-    Diagram(coordinateSystem(extent={{-180,-100},{160,100}}, preserveAspectRatio=false)),
-    Icon(coordinateSystem(extent={{-180,-100},{160,100}})),
+    Diagram(coordinateSystem(extent={{-160,-100},{160,100}}, preserveAspectRatio=false)),
+    Icon(coordinateSystem(extent={{-100,-100},{100,100}})),
     Documentation(info="<html>
 <table cellspacing=\"1\" cellpadding=\"1\" border=\"1\"><tr>
 <td><p>Reference</p></td>

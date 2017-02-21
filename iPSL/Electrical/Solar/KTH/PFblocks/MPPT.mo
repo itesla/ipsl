@@ -37,11 +37,11 @@ model MPPT
   parameter Real Vbase=1;
   parameter Real Vmpp0_array=700;
   parameter Real Step=125;
-  Modelica.Blocks.Math.Add add1(k2=-1) annotation (Placement(visible=true, transformation(
+  Modelica.Blocks.Math.Add add1(k2 = -1) annotation (Placement(visible=true, transformation(
         origin={0.0,40.0},
         extent={{-10.0,-10.0},{10.0,10.0}},
         rotation=0)));
-  Modelica.Blocks.Math.Add add2(k2=-1) annotation (Placement(visible=true, transformation(
+  Modelica.Blocks.Math.Add add2(k2 = -1) annotation (Placement(visible=true, transformation(
         origin={-1.9703,-25.0},
         extent={{-10.0,-10.0},{10.0,10.0}},
         rotation=0)));
@@ -50,11 +50,11 @@ model MPPT
         origin={65.0,5.0},
         extent={{-10.0,-10.0},{10.0,10.0}},
         rotation=0)));
-  Modelica.Blocks.Math.Gain gain1(k=Vmpp0_array*Tdelay/Step) annotation (Placement(visible=true, transformation(
+  Modelica.Blocks.Math.Gain gain1(k = Vmpp0_array*Tdelay/Step) annotation (Placement(visible=true, transformation(
         origin={95.0,5.0},
         extent={{-10.0,-10.0},{10.0,10.0}},
         rotation=0)));
-  Modelica.Blocks.Math.Add add3(k2=+1) annotation (Placement(visible=true, transformation(
+  Modelica.Blocks.Math.Add add3(k2 = +1) annotation (Placement(visible=true, transformation(
         origin={123.0297,35.0},
         extent={{-10.0,-10.0},{10.0,10.0}},
         rotation=0)));

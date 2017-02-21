@@ -1,7 +1,8 @@
 within iPSL.Examples.Controls.PSSE.ES;
 model ESAC2A "SMIB model example of GENROU with Excitation System ESAC2A"
   extends iPSL.Examples.SMIBpartial;
-  iPSL.Electrical.Machines.PSSE.GENROU.GENROU generator(
+  extends Modelica.Icons.Example;
+  iPSL.Electrical.Machines.PSSE.GENROU generator(
     Xppd=0.2,
     Xppq=0.2,
     Xpp=0.2,
@@ -32,43 +33,32 @@ model ESAC2A "SMIB model example of GENROU with Excitation System ESAC2A"
         extent={{-5,-5},{5,5}},
         rotation=180,
         origin={-41,-45})));
-  Modelica.Blocks.Sources.Constant const5(k=-1000) annotation (Placement(transformation(
-        extent={{-5,-5},{5,5}},
-        rotation=180,
-        origin={-41,-61})));
-  iPSL.Electrical.Controls.PSSE.ES.ESAC2A.ESAC2A eSAC2A annotation (Placement(transformation(extent={{-74,-70},{-144,-24}})));
+  Modelica.Blocks.Sources.Constant const5(k=-1000) annotation (Placement(visible = true, transformation(origin = {-43, -85}, extent = {{-5, -5}, {5, 5}}, rotation = 180)));
+  iPSL.Electrical.Controls.PSSE.ES.ESAC2A eSAC2A(
+    V_RMAX=4,
+    V_RMIN=-4,
+    V_FEMAX=10) annotation (Placement(visible = true, transformation(extent = {{-76, -72}, {-146, -26}}, rotation = 0)));
 equation
-  connect(eSAC2A.EFD0, generator.EFD0) annotation (Line(
-      points={{-71.025,-60.0333},{-60,-60.0333},{-60,-9.5},{-78.88,-9.5}},
-      color={0,0,127},
-      smooth=Smooth.None));
-  connect(const.y, eSAC2A.VOTHSG) annotation (Line(
-      points={{-46.4,-26},{-63.25,-26},{-63.25,-26.6067},{-71.375,-26.6067}},
-      color={0,0,127},
-      smooth=Smooth.None));
-  connect(generator.XADIFD, eSAC2A.XADIFD) annotation (Line(
-      points={{-78.88,-12.5},{-56,-12.5},{-56,-39.4867},{-71.025,-39.4867}},
-      color={0,0,127},
-      smooth=Smooth.None));
-  connect(eSAC2A.VOEL, const4.y) annotation (Line(
-      points={{-71.375,-45.9267},{-58.6875,-45.9267},{-58.6875,-45},{-46.5,-45}},
-      color={0,0,127},
-      smooth=Smooth.None));
-  connect(const5.y, eSAC2A.VUEL) annotation (Line(
-      points={{-46.5,-61},{-54,-61},{-54,-52.3667},{-71.375,-52.3667}},
-      color={0,0,127},
-      smooth=Smooth.None));
-  connect(generator.PELEC, eSAC2A.ECOMP) annotation (Line(
-      points={{-78.88,-6.5},{-64,-6.5},{-64,-33.0467},{-71.375,-33.0467}},
-      color={0,0,127},
-      smooth=Smooth.None));
+  connect(eSAC2A.VOEL, const4.y) annotation(
+    Line(points = {{-99, -73}, {-99.8438, -73}, {-99.8438, -87}, {-58.6875, -87}, {-58.6875, -45}, {-46.5, -45}}, color = {0, 0, 127}));
+  connect(const5.y, eSAC2A.VUEL) annotation(
+    Line(points = {{-48.5, -85}, {-63.75, -85}, {-63.75, -93}, {-89, -93}, {-89, -73}, {-88, -73}}, color = {0, 0, 127}));
+  connect(eSAC2A.EFD0, generator.EFD0) annotation(
+    Line(points = {{-76, -64}, {-76, -9.5}, {-78.88, -9.5}}, color = {0, 0, 127}));
+  connect(const.y, eSAC2A.VOTHSG) annotation(
+    Line(points = {{-46.4, -26}, {-63.25, -26}, {-63.25, -35}, {-76, -35}}, color = {0, 0, 127}));
+  connect(generator.XADIFD, eSAC2A.XADIFD) annotation(
+    Line(points = {{-78.88, -12.5}, {-56, -12.5}, {-56, -56}, {-76, -56}}, color = {0, 0, 127}));
+  connect(generator.PELEC, eSAC2A.ECOMP) annotation(
+    Line(points = {{-78.88, -6.5}, {-76, -6.5}, {-76, -47}}, color = {0, 0, 127}));
+  connect(eSAC2A.EFD, generator.EFD) annotation(
+    Line(points = {{-148, -47}, {-148, -6.5}, {-107.72, -6.5}}, color = {0, 0, 127}));
   connect(generator.PMECH0, generator.PMECH) annotation (Line(
       points={{-78.88,-3.5},{-74,-3.5},{-74,20},{-110,20},{-110,8.5},{-107.72,8.5}},
       color={0,0,127},
       smooth=Smooth.None));
-  connect(eSAC2A.EFD, generator.EFD) annotation (Line(points={{-145.75,-47.3067},{-150,-47.3067},{-150,-6.5},{-107.72,-6.5}}, color={0,0,127}));
   connect(generator.p, GEN1.p) annotation (Line(points={{-78.6,1},{-58.3,1},{-58.3,0},{-40,0}}, color={0,0,255}));
-  annotation (Diagram(coordinateSystem(preserveAspectRatio=false,extent={{-100,-100},{100,100}})), Documentation(revisions="<html>
+  annotation (Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,100}})), Documentation(revisions="<html>
 <!--DISCLAIMER-->
 <p>Copyright 2015-2016 RTE (France), SmarTS Lab (Sweden), AIA (Spain) and DTU (Denmark)</p>
 <ul>

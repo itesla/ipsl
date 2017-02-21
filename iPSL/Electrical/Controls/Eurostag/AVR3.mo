@@ -5,10 +5,10 @@ model AVR3 "Voltage regulator. Developed by AIA. 2013"
   parameter Real TE;
   parameter Real init_V1;
   parameter Real init_V2;
-  Modelica.Blocks.Math.Gain imGain(k=Kgain) annotation (Placement(transformation(extent={{-2,18},{20,40}})));
+  Modelica.Blocks.Math.Gain imGain(k = Kgain) annotation (Placement(transformation(extent={{-2,18},{20,40}})));
   Modelica.Blocks.Interfaces.RealOutput pin_EFD annotation (Placement(transformation(extent={{60,-10},{79,10}}), iconTransformation(extent={{59,-10},{79,10}})));
   Modelica.Blocks.Interfaces.RealInput pin_TerminalVoltage annotation (Placement(transformation(extent={{-61,-10},{-41,10}}), iconTransformation(extent={{-61,-10},{-41,10}})));
-  Modelica.Blocks.Sources.Constant imSetPoint(k=init_V1) annotation (Placement(transformation(extent={{-90,38},{-68,60}})));
+  Modelica.Blocks.Sources.Constant imSetPoint(k = init_V1) annotation (Placement(transformation(extent={{-90,38},{-68,60}})));
   iPSL.NonElectrical.Continuous.SimpleLag imSimpleLag(
     K=KE,
     T=TE,

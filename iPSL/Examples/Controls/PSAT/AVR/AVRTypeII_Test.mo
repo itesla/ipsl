@@ -1,8 +1,9 @@
 within iPSL.Examples.Controls.PSAT.AVR;
 model AVRTypeII_Test
+  extends Modelica.Icons.Example;
   iPSL.Electrical.Loads.PSAT.LOADPQ pwLoadPQ2(
-    P_0=0.08,
-    Q_0=0.06,
+    P_0= 0.08,
+    Q_0= 0.06,
     V_0=1,
     angle_0=0) annotation (Placement(visible=true, transformation(
         origin={122.283,26},
@@ -13,8 +14,8 @@ model AVRTypeII_Test
     G=0,
     R=0.01,
     X=0.1,
-    t1=12,
-    t2=12.1) annotation (Placement(visible=true, transformation(
+    startTime=12,
+    endTime=12.1) annotation (Placement(visible=true, transformation(
         origin={79,16},
         extent={{-10.0,-10.0},{10.0,10.0}},
         rotation=0)));
@@ -60,10 +61,10 @@ model AVRTypeII_Test
         rotation=0)));
   iPSL.Electrical.Events.PwFaultPQ pwFault(
     X=0.001,
-    t1=3,
-    t2=3.1,
+    startTime=3,
+    endTime=3.1,
     R=0.2) annotation (Placement(transformation(extent={{115,-52},{135,-32}})));
-  iPSL.Electrical.Machines.PSAT.SixthOrder.Order6 order6Type2_Inputs_Outputs(
+  iPSL.Electrical.Machines.PSAT.Order6 order6Type2_Inputs_Outputs(
     V_0=1,
     angle_0=0,
     P_0=0.160352698692006,
@@ -147,9 +148,9 @@ equation
       smooth=Smooth.None));
   connect(exciter_Type_II.vref, imSetPoint.y) annotation (Line(points={{-2.2,98.04},{14.9,98.04},{14.9,98},{31,98}}, color={0,0,127}));
   annotation (
-    Diagram(coordinateSystem(extent={{-100,-100},{140,120}}, preserveAspectRatio=false)),
-    Icon(coordinateSystem(extent={{-100,-100},{140,120}})),
-    Documentation(revisions="<html>
+    Diagram(coordinateSystem(extent={{-160,-100},{160,100}}, preserveAspectRatio=false)),
+    Icon(coordinateSystem(extent={{-100,-100},{100,100}})),
+    Documentation(info="<html>
 <!--DISCLAIMER-->
 <p>Copyright 2015-2016 RTE (France), SmarTS Lab (Sweden), AIA (Spain) and DTU (Denmark)</p>
 <ul>

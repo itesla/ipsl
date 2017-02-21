@@ -47,11 +47,11 @@ model TGtypeII "TG Type II"
   parameter Real T3=-0.1 "Transient gain time constant (s)";
   parameter Real S_b=100 "System base power (MVA)" annotation (Dialog(group="Power flow data"));
   parameter Real Sn=20 "Nominal power (MVA)";
-  Modelica.Blocks.Math.Gain gain1(k=1/Ro) annotation (Placement(visible=true, transformation(
+  Modelica.Blocks.Math.Gain gain1(k = 1 / Ro) annotation (Placement(visible=true, transformation(
         origin={-26.9038,-12.7482},
         extent={{-10.0,-10.0},{10.0,10.0}},
         rotation=0)));
-  Modelica.Blocks.Sources.Constant const(k=wref) annotation (Placement(visible=true, transformation(
+  Modelica.Blocks.Sources.Constant const(k = wref) annotation (Placement(visible=true, transformation(
         origin={-125.0,-6.9858},
         extent={{-10.0,-10.0},{10.0,10.0}},
         rotation=0)));
@@ -59,7 +59,7 @@ model TGtypeII "TG Type II"
         origin={50.0,-5.0},
         extent={{-10.0,-10.0},{10.0,10.0}},
         rotation=0)));
-  Modelica.Blocks.Nonlinear.Limiter limiter1(uMax=pmax, uMin=pmin)
+  Modelica.Blocks.Nonlinear.Limiter limiter1(uMax = pmax, uMin = pmin)
     annotation (Placement(visible=true, transformation(
         origin={82.1897,-7.0368},
         extent={{-10.0,-10.0},{10.0,10.0}},

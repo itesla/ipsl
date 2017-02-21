@@ -1,7 +1,8 @@
 within iPSL.Examples.Controls.PSSE.TG;
 model HYGOV "Simple Machine Infinite Bus with Machine, Governor and Excitation system"
   extends iPSL.Examples.SMIBpartial;
-  iPSL.Electrical.Machines.PSSE.GENSAL.GENSAL generator(
+  extends Modelica.Icons.Example;
+  iPSL.Electrical.Machines.PSSE.GENSAL generator(
     Xppd=0.2,
     Xppq=0.2,
     Xl=0.12,
@@ -36,9 +37,7 @@ model HYGOV "Simple Machine Infinite Bus with Machine, Governor and Excitation s
         extent={{-19,-14},{19,14}},
         rotation=180,
         origin={-81,38})));
-  iPSL.Electrical.Controls.PSSE.ES.SCRX.SCRX SCRX(
-    V_0=1,
-    V_c0=1,
+  iPSL.Electrical.Controls.PSSE.ES.SCRX SCRX(
     T_B=10,
     K=100,
     T_E=0.05,
@@ -46,38 +45,29 @@ model HYGOV "Simple Machine Infinite Bus with Machine, Governor and Excitation s
     E_MAX=5,
     r_cr_fd=0,
     C_SWITCH=false,
-    T_AT_B=0.1) annotation (Placement(transformation(
-        extent={{-18,-16},{18,16}},
-        rotation=180,
-        origin={-86,-34})));
+    T_AT_B=0.1) annotation (Placement(visible = true, transformation(origin = {-86, -36}, extent = {{-18, -16}, {18, 16}}, rotation = 180)));
   Modelica.Blocks.Sources.Constant const(k=0) annotation (Placement(transformation(
         extent={{-2,-2},{2,2}},
         rotation=180,
         origin={-56,-34})));
 equation
-  connect(SCRX.VUEL, const.y) annotation (Line(
-      points={{-68.15,-29.04},{-59.67,-29.04},{-59.67,-34},{-58.2,-34}},
-      color={0,0,127},
-      smooth=Smooth.None));
-  connect(SCRX.VOEL, const.y) annotation (Line(
-      points={{-68.15,-33.2},{-59.67,-33.2},{-59.67,-34},{-58.2,-34}},
-      color={0,0,127},
-      smooth=Smooth.None));
-  connect(SCRX.VOTHSG, const.y) annotation (Line(
-      points={{-68.15,-37.04},{-59.67,-37.04},{-59.67,-34},{-58.2,-34}},
-      color={0,0,127},
-      smooth=Smooth.None));
-  connect(generator.EFD0, SCRX.EFD0) annotation (Line(
-      points={{-75.2,-7},{-75.2,-14.64},{-68.15,-14.64}},
-      color={0,0,127},
-      smooth=Smooth.None));
+  connect(SCRX.VOEL, const.y) annotation(
+    Line(points = {{-80, -20}, {-69.835, -20}, {-69.835, -16}, {-59.67, -16}, {-59.67, -34}, {-58.2, -34}}, color = {0, 0, 127}));
+  connect(generator.XADIFD, SCRX.XADIFD) annotation(
+    Line(points = {{-75.2, -9}, {-58, -9}, {-58, -32}, {-68, -32}}, color = {0, 0, 127}));
+  connect(generator.ETERM, SCRX.ECOMP) annotation(
+    Line(points = {{-75.2, 5}, {-50, 5}, {-50, -38}, {-68, -38}}, color = {0, 0, 127}));
+  connect(SCRX.EFD, generator.EFD) annotation(
+    Line(points = {{-105, -38}, {-110, -38}, {-110, -5}, {-95.8, -5}}, color = {0, 0, 127}));
+  connect(generator.EFD0, SCRX.EFD0) annotation(
+    Line(points = {{-75.2, -7}, {-75.2, -26}, {-68, -26}}, color = {0, 0, 127}));
+  connect(SCRX.VOTHSG, const.y) annotation(
+    Line(points = {{-68, -46}, {-59.67, -46}, {-59.67, -34}, {-58.2, -34}}, color = {0, 0, 127}));
+  connect(SCRX.VUEL, const.y) annotation(
+    Line(points = {{-74, -20}, {-59.67, -20}, {-59.67, -34}, {-58.2, -34}}, color = {0, 0, 127}));
   connect(generator.PMECH0, HYGOV.PMECH0) annotation (Line(points={{-75.2,-3},{-52,-3},{-52,45},{-62.475,45}}, color={0,0,127}));
   connect(generator.SPEED, HYGOV.SPEED) annotation (Line(points={{-75.2,9},{-58,9},{-58,31},{-62.475,31}}, color={0,0,127}));
-  connect(HYGOV.PMECH, generator.PMECH) annotation (Line(points={{-100.95,38},{-110,38},{-110,5},{-95.8,5}},color={0,0,127}));
-  connect(SCRX.EFD, generator.EFD) annotation (Line(points={{-104.6,-27.76},{-110,-27.76},{-110,-5},{-95.8,-5}}, color={0,0,127}));
-  connect(generator.ETERM, SCRX.ECOMP) annotation (Line(points={{-75.2,5},{-50,5},{-50,-41.52},{-68.15,-41.52}}, color={0,0,127}));
-  connect(SCRX.ETERM, SCRX.ECOMP) annotation (Line(points={{-67.85,-20.24},{-50,-20.24},{-50,-41.52},{-68.15,-41.52}}, color={0,0,127}));
-  connect(generator.XADIFD, SCRX.XADIFD) annotation (Line(points={{-75.2,-9},{-58,-9},{-58,-25.52},{-67.85,-25.52}}, color={0,0,127}));
+  connect(HYGOV.PMECH, generator.PMECH) annotation (Line(points={{-100.95,38},{-110,38},{-110,5},{-95.8,5}}, color={0,0,127}));
   connect(generator.p, GEN1.p) annotation (Line(points={{-75,0},{-58,0},{-40,0}}, color={0,0,255}));
   annotation (
     Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-120},{100,80}})),

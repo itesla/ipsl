@@ -1,7 +1,8 @@
 within iPSL.Examples.Controls.PSSE.ES;
 model ESST4B "SMIB model example of GENROU with Excitation System ESST4B"
   extends iPSL.Examples.SMIBpartial;
-  iPSL.Electrical.Machines.PSSE.GENROU.GENROU generator(
+  extends Modelica.Icons.VariantsPackage;// must run in MODELICA
+  iPSL.Electrical.Machines.PSSE.GENROU generator(
     Xppd=0.2,
     Xppq=0.2,
     Xpp=0.2,
@@ -32,52 +33,32 @@ model ESST4B "SMIB model example of GENROU with Excitation System ESST4B"
         extent={{-5,-5},{5,5}},
         rotation=0,
         origin={-97,-37})));
-  iPSL.Electrical.Controls.PSSE.ES.ESST4B.ESST4B eSST4B annotation (Placement(transformation(
-        extent={{-16,-11},{16,11}},
-        rotation=0,
-        origin={-62,-3})));
+  iPSL.Electrical.Controls.PSSE.ES.ESST4B eSST4B annotation (Placement(visible = true, transformation(origin = {-64, -6}, extent = {{-14, -10}, {14, 10}}, rotation = 0)));
   inner Electrical.SystemBase SysData annotation (Placement(transformation(extent={{-100,80},{-40,100}})));
-initial equation
-  eSST4B.Vr0 = generator.vr0;
-  eSST4B.Vi0 = generator.vi0;
-  eSST4B.Ir0 = generator.ir0;
-  eSST4B.Ii0 = generator.ii0;
-
+  Modelica.Blocks.Sources.Constant const1(k=Modelica.Constants.inf) annotation (Placement(transformation(extent={{-40,-48},{-56,-32}})));
 equation
-  connect(generator.p, eSST4B.Gen_terminal) annotation (Line(
-      points={{-90.6,1},{-66.7,1},{-66.7,0.3},{-76.8364,0.3}},
-      color={0,0,255},
-      smooth=Smooth.None));
-  connect(const.y, eSST4B.VOTHSG) annotation (Line(
-      points={{-93.6,-52},{-86,-52},{-86,-2.10625},{-79.3818,-2.10625}},
-      color={0,0,127},
-      smooth=Smooth.None));
-  connect(generator.EFD0, eSST4B.EFD0) annotation (Line(
-      points={{-90.88,-10.9},{-90,-10.9},{-90,-14.0688},{-79.5273,-14.0688}},
-      color={0,0,127},
-      smooth=Smooth.None));
-  connect(const5.y, eSST4B.VUEL) annotation (Line(
-      points={{-91.5,-37},{-84,-37},{-84,-8.15625},{-79.5273,-8.15625}},
-      color={0,0,127},
-      smooth=Smooth.None));
+  connect(const1.y, eSST4B.VOEL) annotation(
+    Line(points = {{-56.8, -40}, {-69, -40}, {-69, -15}}, color = {0, 0, 127}));
+  connect(eSST4B.Bus, GEN1.p) annotation(
+    Line(points = {{-52, 3}, {-47.5818, 3}, {-47.5818, 0}, {-40, 0}}, color = {0, 0, 255}));
+  connect(generator.PELEC, eSST4B.ECOMP) annotation(
+    Line(points = {{-90.88, -7.5}, {-68, -7.5}, {-68, -4}, {-78, -4}}, color = {0, 0, 127}));
+  connect(generator.XADIFD, eSST4B.XADIFD) annotation(
+    Line(points = {{-90.88, -14.3}, {-90.88, -20}, {-94, -20}, {-94, -8}, {-78, -8}}, color = {0, 0, 127}));
+  connect(eSST4B.EFD, generator.EFD) annotation(
+    Line(points = {{-49, -4}, {-48, -4}, {-48, -24}, {-124, -24}, {-124, -7.5}, {-119.72, -7.5}}, color = {0, 0, 127}));
+  connect(const5.y, eSST4B.VUEL) annotation(
+    Line(points = {{-91.5, -37}, {-82, -37}, {-82, -17}, {-78.5, -17}, {-78.5, -15}, {-73, -15}}, color = {0, 0, 127}));
+  connect(generator.EFD0, eSST4B.EFD0) annotation(
+    Line(points = {{-90.88, -10.9}, {-90, -10.9}, {-90, -11}, {-78, -11}}, color = {0, 0, 127}));
+  connect(const.y, eSST4B.VOTHSG) annotation(
+    Line(points = {{-93.6, -52}, {-86, -52}, {-86, 1}, {-78, 1}}, color = {0, 0, 127}));
+  connect(generator.p, eSST4B.Gen_terminal) annotation(
+    Line(points = {{-90.6, 1}, {-66.7, 1}, {-66.7, 3}, {-76, 3}}, color = {0, 0, 255}));
   connect(generator.PMECH0, generator.PMECH) annotation (Line(
-      points={{-90.88,-4.1},{-70,-4.1},{-70,22},{-102,22},{-102,9.5},{-119.72,9.5}},
-      color={0,0,127},
-      smooth=Smooth.None));
-  connect(eSST4B.EFD, generator.EFD) annotation (Line(
-      points={{-53.2727,-9.1875},{-48,-9.1875},{-48,-24},{-124,-24},{-124,-7.5},{-119.72,-7.5}},
-      color={0,0,127},
-      smooth=Smooth.None));
-  connect(generator.XADIFD, eSST4B.XADIFD) annotation (Line(
-      points={{-90.88,-14.3},{-90.88,-20},{-94,-20},{-94,-11.0438},{-79.3818,-11.0438}},
-      color={0,0,127},
-      smooth=Smooth.None));
-  connect(generator.PELEC, eSST4B.ECOMP) annotation (Line(
-      points={{-90.88,-7.5},{-68,-7.5},{-68,-5.40625},{-79.3818,-5.40625}},
-      color={0,0,127},
-      smooth=Smooth.None));
-  connect(eSST4B.Bus, GEN1.p) annotation (Line(points={{-55.1636,0.3},{-47.5818,0.3},{-47.5818,0},{-40,0}}, color={0,0,255}));
-  annotation (Diagram(coordinateSystem(preserveAspectRatio=false,extent={{-100,-100},{100,100}})), Documentation(revisions="<html>
+      points = {{-90.88, -4.1}, {-64, -4.1}, {-64, 32}, {-102, 32}, {-102, 9.5}, {-119.72, 9.5}},
+      color={0,0,127}));
+  annotation (Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,100}})), Documentation(revisions="<html>
 <!--DISCLAIMER-->
 <p>Copyright 2015-2016 RTE (France), SmarTS Lab (Sweden), AIA (Spain) and DTU (Denmark)</p>
 <ul>

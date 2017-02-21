@@ -13,8 +13,8 @@ model LTC
   parameter Real Ymax=1.2 "Max Ratio";
   parameter Real delay1;
   parameter Real delay2;
-  parameter Real positionNo=33;
-  parameter Real r0=1 "Transformer Ratio";
+  parameter Real positionNo = 33;
+  parameter Real r0 = 1 "Transformer Ratio";
   LTC_switch lTC_switch annotation (Placement(transformation(extent={{88,6},{108,26}})));
   Modelica.Blocks.Sources.Constant imSetPoint(k=0) annotation (Placement(transformation(extent={{62,-20},{82,0}})));
   Modelica.Blocks.Sources.Constant imSetPoint1(k=1) annotation (Placement(transformation(extent={{-76,-38},{-56,-18}})));

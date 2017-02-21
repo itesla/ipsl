@@ -41,6 +41,24 @@ model WT3E1
   parameter Real wP60=1.1200 "  Shaft speed at 60% rated power (pu)";
   parameter Real Pmin=0.74000 "  Minimum power for operating at P100 speed (pu)";
   parameter Real wP100=1.2000 "  Shaft speed at 100% rated power (pu)";
+  Modelica.Blocks.Interfaces.RealInput PELEC annotation(Placement(transformation(extent = {{-210, 30}, {-190, 50}}), iconTransformation(extent = {{10, -10}, {-10, 10}}, rotation = 180, origin = {-190, -120})));
+  Modelica.Blocks.Interfaces.RealInput VTERM(start = v0) annotation(Placement(transformation(extent = {{-210, -110}, {-190, -90}}), iconTransformation(extent = {{10, -10}, {-10, 10}}, rotation = 180, origin = {-190, -40})));
+  Modelica.Blocks.Interfaces.RealOutput WIPCMD annotation(Placement(transformation(extent = {{180, -70}, {200, -50}}), iconTransformation(extent = {{-200, 40}, {-220, 60}})));
+  Modelica.Blocks.Nonlinear.Limiter Qord(uMin = QMN, uMax = QMX) annotation(Placement(transformation(extent = {{12, 30}, {32, 50}})));
+  Modelica.Blocks.Interfaces.RealInput Qelec annotation(Placement(transformation(extent = {{-10, -10}, {10, 10}}, rotation = 270, origin = {50, 140}), iconTransformation(extent = {{10, -10}, {-10, 10}}, rotation = 180, origin = {-190, -80})));
+  Modelica.Blocks.Math.Feedback feedback1 annotation(Placement(transformation(extent = {{40, 50}, {60, 30}})));
+  Modelica.Blocks.Continuous.LimIntegrator K6(outMin = VMINCL, outMax = VMAXCL, k = Kqi, y_start = k60, initType = Modelica.Blocks.Types.Init.InitialOutput) annotation(Placement(transformation(extent = {{70, 30}, {90, 50}})));
+  Modelica.Blocks.Math.Feedback Vcl annotation(Placement(transformation(extent = {{100, 30}, {120, 50}})));
+  Modelica.Blocks.Interfaces.RealOutput WEQCMD annotation(Placement(transformation(extent = {{180, 32}, {198, 50}}), iconTransformation(extent = {{-200, 80}, {-220, 100}})));
+  Modelica.Blocks.Interfaces.RealOutput WPCMND annotation(Placement(transformation(extent = {{180, -102}, {200, -82}}), iconTransformation(extent = {{-10, -10}, {10, 10}}, rotation = 270, origin = {-150, -150})));
+  Modelica.Blocks.Continuous.LimIntegrator K7(k = Kqv, y_start = k70, outMax = 1 + XIQmax, outMin = XIQmin - 1) annotation(Placement(transformation(extent = {{138, 30}, {158, 50}})));
+  Modelica.Blocks.Interfaces.RealInput ITERM "magenitute of terminal current" annotation(Placement(transformation(extent = {{-210, 88}, {-190, 108}}), iconTransformation(extent = {{10, -10}, {-10, 10}}, rotation = 180, origin = {-190, 0})));
+  Modelica.Blocks.Sources.Constant Qcmd0(k = Qref) annotation(Placement(transformation(extent = {{-10, -10}, {10, 10}}, rotation = 90, origin = {-10, -2})));
+  Modelica.Blocks.Interfaces.RealInput WEQCMD0 annotation(Placement(transformation(extent = {{-140, 120}, {-120, 140}}), iconTransformation(extent = {{-10, -10}, {10, 10}}, rotation = 270, origin = {-110, 130})));
+  Modelica.Blocks.Interfaces.RealInput WIPCMD0 annotation(Placement(transformation(extent = {{-180, 120}, {-160, 140}}), iconTransformation(extent = {{-10, -10}, {10, 10}}, rotation = 270, origin = {-150, 130})));
+  pf_Controller pf_Controller1(Tp = Tp, p0 = p0, PFA_ref = PFA_ref) annotation(Placement(transformation(rotation = 0, extent = {{-114, 20}, {-74, 60}})));
+  ActivePowerControl activePowerControl(TFP = TFP, Kpp = Kpp, KIP = KIP, PMX = PMX, PMN = PMN, IPMAX = IPMAX, RPMX = RPMX, RPMN = RPMN, T_Power = T_Power, k20 = k20, k30 = k30, k50 = k50, wPmin = wPmin, wP20 = wP20, wP40 = wP40, wP60 = wP60, Pmin = Pmin, wP100 = wP100) annotation(Placement(transformation(rotation = 0, extent = {{-40, -80}, {40, -40}})));
+  ReactivePowerControl reactivePowerControl(Tfv = Tfv, Kpv = Kpv, KIV = KIV, Xc = Xc, QMX = QMX, QMN = QMN, TRV = TRV, Tv = Tv, Fn = Fn, Vref = Vref, k0 = k0, k10 = k10, k40 = k40, k80 = k80) annotation(Placement(transformation(rotation = 0, extent = {{-104, 80}, {-46, 104}})));
 protected
   parameter Real v0;
   parameter Real p0;
@@ -49,15 +67,7 @@ protected
   parameter Real Vref " Remote bus ref voltage";
   //parameter Real Qord "MVAR order from MVAR emulator";
   parameter Real Qref=q0 "Q reference if PFAFLG=0 & VARFLG";
-  parameter Real sp0=Speed(
-      p0,
-      PMN,
-      wPmin,
-      wP20,
-      wP40,
-      wP60,
-      wP100,
-      Pmin);
+  parameter Real sp0 = Speed(p0, PMN, wPmin, wP20, wP40, wP60, wP100, Pmin);
   parameter Real k0(fixed=false);
   parameter Real k10(fixed=false);
   parameter Real k20(fixed=false);
@@ -114,109 +124,8 @@ protected
     end if;
     y := K*(x - x0) + y0 - 1;
   end Speed;
-public
-  Modelica.Blocks.Interfaces.RealInput PELEC
-    annotation (Placement(transformation(extent={{-210,30},{-190,50}}), iconTransformation(
-        extent={{10,-10},{-10,10}},
-        rotation=180,
-        origin={-190,-120})));
-  Modelica.Blocks.Interfaces.RealInput VTERM(start=v0)
-    annotation (Placement(transformation(extent={{-210,-110},{-190,-90}}),iconTransformation(
-        extent={{10,-10},{-10,10}},
-        rotation=180,
-        origin={-190,-40})));
-  Modelica.Blocks.Interfaces.RealOutput WIPCMD annotation (Placement(transformation(extent={{180,-70},{200,-50}}), iconTransformation(extent={{-200,40},{-220,60}})));
-  Modelica.Blocks.Nonlinear.Limiter Qord(uMin=QMN, uMax=QMX) annotation (Placement(transformation(extent={{12,30},{32,50}})));
-  Modelica.Blocks.Interfaces.RealInput Qelec annotation (Placement(transformation(
-        extent={{-10,-10},{10,10}},
-        rotation=270,
-        origin={50,140}), iconTransformation(
-        extent={{10,-10},{-10,10}},
-        rotation=180,
-        origin={-190,-80})));
-  Modelica.Blocks.Math.Feedback feedback1 annotation (Placement(transformation(extent={{40,50},{60,30}})));
-  Modelica.Blocks.Continuous.LimIntegrator K6(
-    outMin=VMINCL,
-    outMax=VMAXCL,
-    k=Kqi,
-    y_start=k60,
-    initType=Modelica.Blocks.Types.Init.InitialOutput) annotation (Placement(transformation(extent={{70,30},{90,50}})));
-  Modelica.Blocks.Math.Feedback Vcl annotation (Placement(transformation(extent={{100,30},{120,50}})));
-  Modelica.Blocks.Interfaces.RealOutput WEQCMD annotation (Placement(transformation(extent={{180,32},{198,50}}), iconTransformation(extent={{-200,80},{-220,100}})));
-  Modelica.Blocks.Interfaces.RealOutput WPCMND
-    annotation (Placement(transformation(extent={{180,-102},{200,-82}}), iconTransformation(
-        extent={{-10,-10},{10,10}},
-        rotation=270,
-        origin={-150,-150})));
-  Modelica.Blocks.Continuous.LimIntegrator K7(
-    k=Kqv,
-    y_start=k70,
-    outMax=1 + XIQmax,
-    outMin=XIQmin - 1) annotation (Placement(transformation(extent={{138,30},{158,50}})));
-  Modelica.Blocks.Interfaces.RealInput ITERM "magenitute of terminal current"
-    annotation (Placement(transformation(extent={{-210,88},{-190,108}}),iconTransformation(
-        extent={{10,-10},{-10,10}},
-        rotation=180,
-        origin={-190,0})));
-  Modelica.Blocks.Sources.Constant Qcmd0(k=Qref) annotation (Placement(transformation(
-        extent={{-10,-10},{10,10}},
-        rotation=90,
-        origin={-10,-2})));
-  Modelica.Blocks.Interfaces.RealInput WEQCMD0
-    annotation (Placement(transformation(extent={{-140,120},{-120,140}}), iconTransformation(
-        extent={{-10,-10},{10,10}},
-        rotation=270,
-        origin={-110,130})));
-  Modelica.Blocks.Interfaces.RealInput WIPCMD0
-    annotation (Placement(transformation(extent={{-180,120},{-160,140}}), iconTransformation(
-        extent={{-10,-10},{10,10}},
-        rotation=270,
-        origin={-150,130})));
 protected
-  Modelica.Blocks.Interfaces.RealInput SPEED=sp0
-    annotation (Placement(transformation(extent={{-210,-60},{-190,-40}}), iconTransformation(
-        extent={{-12,-12},{12,12}},
-        rotation=90,
-        origin={80,-92})));
-public
-  pf_Controller pf_Controller1(
-    Tp=Tp,
-    p0=p0,
-    PFA_ref=PFA_ref) annotation (Placement(transformation(rotation=0, extent={{-114,20},{-74,60}})));
-  ActivePowerControl activePowerControl(
-    TFP=TFP,
-    Kpp=Kpp,
-    KIP=KIP,
-    PMX=PMX,
-    PMN=PMN,
-    IPMAX=IPMAX,
-    RPMX=RPMX,
-    RPMN=RPMN,
-    T_Power=T_Power,
-    k20=k20,
-    k30=k30,
-    k50=k50,
-    wPmin=wPmin,
-    wP20=wP20,
-    wP40=wP40,
-    wP60=wP60,
-    Pmin=Pmin,
-    wP100=wP100) annotation (Placement(transformation(rotation=0, extent={{-40,-80},{40,-40}})));
-  ReactivePowerControl reactivePowerControl(
-    Tfv=Tfv,
-    Kpv=Kpv,
-    KIV=KIV,
-    Xc=Xc,
-    QMX=QMX,
-    QMN=QMN,
-    TRV=TRV,
-    Tv=Tv,
-    Fn=Fn,
-    Vref=Vref,
-    k0=k0,
-    k10=k10,
-    k40=k40,
-    k80=k80) annotation (Placement(transformation(rotation=0, extent={{-104,80},{-46,104}})));
+  Modelica.Blocks.Interfaces.RealInput SPEED = sp0 annotation(Placement(transformation(extent = {{-210, -60}, {-190, -40}}), iconTransformation(extent = {{-12, -12}, {12, 12}}, rotation = 90, origin = {80, -92})));
 initial equation
   PFA_ref = atan2(q0, p0);
   k40 = v0;
@@ -242,10 +151,7 @@ equation
   else
     Qord.u = Qref;
   end if;
-  connect(Qelec, feedback1.u2) annotation (Line(
-      points={{50,140},{50,48}},
-      color={0,0,127},
-      smooth=Smooth.None));
+  connect(Qelec, feedback1.u2) annotation(Line(points = {{50, 140}, {50, 48}}, color = {0, 0, 127}, smooth = Smooth.None));
   connect(Vcl.u2, VTERM) annotation (Line(points={{110,32},{110,32},{110,-100},{-46,-100},{-46,-100},{-200,-100}}, color={0,0,127}));
   connect(feedback1.y, K6.u) annotation (Line(points={{59,40},{68,40}}, color={0,0,127}));
   connect(K6.y, Vcl.u1) annotation (Line(points={{91,40},{91,40},{102,40}}, color={0,0,127}));
@@ -256,10 +162,7 @@ protected
     Modelica.Blocks.Math.Tan tan1 annotation (Placement(transformation(extent={{-120,40},{-100,60}})));
     Modelica.Blocks.Math.Product Qcmdn1 annotation (Placement(transformation(extent={{-60,-10},{-40,10}})));
     Modelica.Blocks.Sources.Constant VAR2(k=PFA_ref) annotation (Placement(transformation(extent={{-160,40},{-140,60}})));
-    NonElectrical.Continuous.SimpleLag K0(
-      K=1,
-      y_start=p0,
-      T=Tp) annotation (Placement(transformation(extent={{-120,-10},{-100,10}})));
+    NonElectrical.Continuous.SimpleLag K0(K = 1, y_start = p0, T = Tp) annotation(Placement(transformation(extent = {{-120, -10}, {-100, 10}})));
     parameter Real Tp=0.50000E-01 " Pelec filter in fast PF controller";
     parameter Real PFA_ref=atan2(q0, p0) "PF angle reference if PFAFLG=1";
     parameter Real p0;
@@ -297,37 +200,21 @@ equation
   connect(PELEC, pf_Controller1.u) annotation (Line(points={{-200,40},{-140,40},{-114.8,40}}, color={0,0,127}));
 protected
   model ActivePowerControl
-
-    NonElectrical.Continuous.SimpleLag K5(
-      K=1,
-      T=T_Power,
-      y_start=k50) annotation (Placement(transformation(extent={{-180,-70},{-160,-50}})));
+    NonElectrical.Continuous.SimpleLag K5(K = 1, T = T_Power, y_start = k50) annotation(Placement(transformation(extent = {{-180, -70}, {-160, -50}})));
     Modelica.Blocks.Math.Add add(k2=-1) annotation (Placement(transformation(extent={{-140,-70},{-120,-50}})));
-    Modelica.Blocks.Continuous.Integrator K3(
-      y_start=k30,
-      k=KIP,
-      initType=Modelica.Blocks.Types.Init.InitialOutput) annotation (Placement(transformation(extent={{-100,-40},{-80,-20}})));
+    Modelica.Blocks.Continuous.Integrator K3(y_start = k30, k = KIP, initType = Modelica.Blocks.Types.Init.InitialOutput) annotation(Placement(transformation(extent = {{-100, -40}, {-80, -20}})));
     Modelica.Blocks.Math.Gain imGain(k=Kpp) annotation (Placement(transformation(extent={{-100,-100},{-80,-80}})));
     Modelica.Blocks.Math.Add add1 annotation (Placement(transformation(extent={{-60,-70},{-40,-50}})));
     Modelica.Blocks.Math.Feedback feedback annotation (Placement(transformation(extent={{20,-70},{40,-50}})));
     Modelica.Blocks.Nonlinear.Limiter imLimited(uMin=RPMN, uMax=RPMX) annotation (Placement(transformation(extent={{50,-70},{70,-50}})));
-    Modelica.Blocks.Continuous.LimIntegrator K2(
-      outMin=PMN,
-      outMax=PMX,
-      k=1/TFP,
-      y_start=k20,
-      initType=Modelica.Blocks.Types.Init.InitialOutput) annotation (Placement(transformation(extent={{80,-70},{100,-50}})));
+    Modelica.Blocks.Continuous.LimIntegrator K2(outMin = PMN, outMax = PMX, k = 1 / TFP, y_start = k20, initType = Modelica.Blocks.Types.Init.InitialOutput) annotation(Placement(transformation(extent = {{80, -70}, {100, -50}})));
     Modelica.Blocks.Nonlinear.Limiter imLimited_max(uMin=-Modelica.Constants.inf, uMax=IPMAX) annotation (Placement(transformation(extent={{160,-70},{180,-50}})));
     Modelica.Blocks.Math.Add add2 annotation (Placement(transformation(extent={{-100,44},{-80,64}})));
     Modelica.Blocks.Sources.Constant const(k=1) annotation (Placement(transformation(extent={{-140,10},{-120,30}})));
     Modelica.Blocks.Math.Division division annotation (Placement(transformation(extent={{120,-70},{140,-50}})));
     Modelica.Blocks.Nonlinear.Limiter imLimited_min(uMin=0.01, uMax=Modelica.Constants.inf) annotation (Placement(transformation(extent={{80,-10},{100,10}})));
     Modelica.Blocks.Math.Product Qcmdn2 annotation (Placement(transformation(extent={{-20,-70},{0,-50}})));
-    Modelica.Blocks.Interfaces.RealOutput WPCMND
-      annotation (Placement(transformation(extent={{200,-100},{220,-80}}), iconTransformation(
-          extent={{-10,-10},{10,10}},
-          rotation=270,
-          origin={1.77636e-015,-110})));
+    Modelica.Blocks.Interfaces.RealOutput WPCMND annotation(Placement(transformation(extent = {{200, -100}, {220, -80}}), iconTransformation(extent = {{-10, -10}, {10, 10}}, rotation = 270, origin = {1.77636e-015, -110})));
   protected
     Modelica.Blocks.Interfaces.RealInput WNDSP_1 annotation (Placement(transformation(extent={{-210,-70},{-190,-50}})));
   public
@@ -354,19 +241,8 @@ protected
     Modelica.Blocks.Interfaces.RealInput VTERM annotation (Placement(transformation(rotation=0, extent={{-210,-10},{-190,10}}), iconTransformation(extent={{-200,-60},{-180,-40}})));
     Modelica.Blocks.Interfaces.RealInput PELEC annotation (Placement(transformation(extent={{-210,80},{-190,100}}), iconTransformation(extent={{-200,-10},{-180,10}})));
   equation
-    WNDSP_1 = Speed(
-        PELEC,
-        PMN,
-        wPmin,
-        wP20,
-        wP40,
-        wP60,
-        wP100,
-        Pmin);
-    connect(imLimited_min.y, division.u2) annotation (Line(
-        points={{101,0},{112,0},{112,-66},{118,-66}},
-        color={0,0,127},
-        smooth=Smooth.None));
+    WNDSP_1 = Speed(PELEC, PMN, wPmin, wP20, wP40, wP60, wP100, Pmin);
+    connect(imLimited_min.y, division.u2) annotation(Line(points = {{101, 0}, {112, 0}, {112, -66}, {118, -66}}, color = {0, 0, 127}, smooth = Smooth.None));
     connect(WNDSP_1, K5.u) annotation (Line(points={{-200,-60},{-200,-60},{-182,-60}}, color={0,0,127}));
     connect(K2.y, division.u1) annotation (Line(points={{101,-60},{114,-60},{114,-54},{118,-54}}, color={0,0,127}));
     connect(division.y, imLimited_max.u) annotation (Line(points={{141,-60},{141,-60},{158,-60}}, color={0,0,127}));
@@ -411,34 +287,18 @@ equation
   connect(PELEC, activePowerControl.PELEC) annotation (Line(points={{-200,40},{-140,40},{-140,-60},{-38,-60}}, color={0,0,127}));
 protected
   model ReactivePowerControl
-
-    NonElectrical.Continuous.SimpleLag K4(
-      K=1,
-      T=TRV,
-      y_start=k40) annotation (Placement(transformation(extent={{-98,-10},{-78,10}})));
-    NonElectrical.Continuous.SimpleLag K8(
-      K=Kpv,
-      T=Tv,
-      y_start=k80) annotation (Placement(transformation(extent={{34,-40},{54,-20}})));
-    NonElectrical.Continuous.SimpleLag K(
-      K=1,
-      T=Tfv,
-      y_start=k0) annotation (Placement(transformation(extent={{160,-10},{180,10}})));
+    NonElectrical.Continuous.SimpleLag K4(K = 1, T = TRV, y_start = k40) annotation(Placement(transformation(extent = {{-98, -10}, {-78, 10}})));
+    NonElectrical.Continuous.SimpleLag K8(K = Kpv, T = Tv, y_start = k80) annotation(Placement(transformation(extent = {{34, -40}, {54, -20}})));
+    NonElectrical.Continuous.SimpleLag K(K = 1, T = Tfv, y_start = k0) annotation(Placement(transformation(extent = {{160, -10}, {180, 10}})));
     Modelica.Blocks.Math.Gain XC(k=Xc) "Line drop compensation reactance (pu)" annotation (Placement(transformation(extent={{-180,-30},{-160,-10}})));
     Modelica.Blocks.Math.Add add3(k2=-1) annotation (Placement(transformation(extent={{-48,-10},{-28,10}})));
     Modelica.Blocks.Sources.Constant VARL(k=Vref) annotation (Placement(transformation(extent={{-98,40},{-78,60}})));
     Modelica.Blocks.Math.Gain portion(k=1/Fn) "Line drop compensation reactance (pu)" annotation (Placement(transformation(extent={{-18,-10},{2,10}})));
-    NonElectrical.Continuous.SimpleLag K1(
-      y_start=k10,
-      K=KIV,
-      T=Tv) annotation (Placement(transformation(extent={{54,20},{74,40}})));
+    NonElectrical.Continuous.SimpleLag K1(y_start = k10, K = KIV, T = Tv) annotation(Placement(transformation(extent = {{54, 20}, {74, 40}})));
     Modelica.Blocks.Math.Add add4 annotation (Placement(transformation(extent={{94,-10},{114,10}})));
     Modelica.Blocks.Math.Add add5(k2=-1) annotation (Placement(transformation(extent={{-138,-10},{-118,10}})));
     Modelica.Blocks.Nonlinear.Limiter Qord1(uMin=QMN, uMax=QMX) annotation (Placement(transformation(extent={{128,-10},{148,10}})));
-    NonElectrical.Continuous.SimpleLag K10(
-      T=Tv,
-      y_start=k80,
-      K=1) annotation (Placement(transformation(extent={{22,20},{42,40}})));
+    NonElectrical.Continuous.SimpleLag K10(T = Tv, y_start = k80, K = 1) annotation(Placement(transformation(extent = {{22, 20}, {42, 40}})));
     parameter Real Tfv=0.15000 "Filter time constant in voltage regulator (sec)";
     parameter Real Kpv=18.000 "  Proportional gain in voltage regulator (pu)";
     parameter Real KIV=5.0000 "  Integrator gain in voltage regulator (pu)";
@@ -457,18 +317,9 @@ protected
     Modelica.Blocks.Interfaces.RealInput VTERM annotation (Placement(transformation(rotation=0, extent={{-210.5,-4},{-190,16}}), iconTransformation(extent={{-200,-50},{-180,-30}})));
     Modelica.Blocks.Interfaces.RealOutput Q_ord annotation (Placement(transformation(extent={{200,-10},{220,10}}), iconTransformation(extent={{200,-10},{220,10}})));
   equation
-    connect(VARL.y, add3.u1) annotation (Line(
-        points={{-77,50},{-54,50},{-54,6},{-50,6}},
-        color={0,0,127},
-        smooth=Smooth.None));
-    connect(XC.y, add5.u2) annotation (Line(
-        points={{-159,-20},{-144,-20},{-144,-6},{-140,-6}},
-        color={0,0,127},
-        smooth=Smooth.None));
-    connect(add3.y, portion.u) annotation (Line(
-        points={{-27,0},{-20,0}},
-        color={0,0,127},
-        smooth=Smooth.None));
+    connect(VARL.y, add3.u1) annotation(Line(points = {{-77, 50}, {-54, 50}, {-54, 6}, {-50, 6}}, color = {0, 0, 127}, smooth = Smooth.None));
+    connect(XC.y, add5.u2) annotation(Line(points = {{-159, -20}, {-144, -20}, {-144, -6}, {-140, -6}}, color = {0, 0, 127}, smooth = Smooth.None));
+    connect(add3.y, portion.u) annotation(Line(points = {{-27, 0}, {-20, 0}}, color = {0, 0, 127}, smooth = Smooth.None));
     connect(add5.y, K4.u) annotation (Line(points={{-117,0},{-100,0}}, color={0,0,127}));
     connect(K4.y, add3.u2) annotation (Line(points={{-77,0},{-54,0},{-54,-6},{-50,-6}}, color={0,0,127}));
     connect(Qord1.y, K.u) annotation (Line(points={{149,0},{158,0}}, color={0,0,127}));

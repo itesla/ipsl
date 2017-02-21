@@ -1,7 +1,8 @@
 within iPSL.Examples.Controls.PSSE.TG;
 model GGOV "three phase to ground fault test of GGOV"
   extends iPSL.Examples.SMIBpartial;
-  iPSL.Electrical.Machines.PSSE.GENROU.GENROU generator(
+  extends Modelica.Icons.Example;
+  iPSL.Electrical.Machines.PSSE.GENROU generator(
     Xppd=0.2,
     Xppq=0.2,
     Xpp=0.2,
@@ -58,21 +59,15 @@ model GGOV "three phase to ground fault test of GGOV"
     Rup=99,
     Rdown=-99,
     DELT=0.005,
-    Flag=0) annotation (Placement(transformation(
-        extent={{-20,-18},{20,18}},
-        rotation=180,
-        origin={-68,40})));
+    Flag=0) annotation (Placement(visible = true, transformation(origin = {-66, 40}, extent = {{-20, -18}, {20, 18}}, rotation = 180)));
 equation
-  connect(gGOV1pele.PELEC, generator.PELEC) annotation (Line(
-      points={{-43.2414,48.5304},{-34,48.5304},{-34,-7.5},{-58.4,-7.5}},
-      color={0,0,127},
-      smooth=Smooth.None));
+  connect(generator.SPEED, gGOV1pele.SPEED) annotation(Line(points = {{-58.4, 16.3}, {-40, 16.3}, {-40, 30}, {-46, 30}}, color = {0, 0, 127}));
+  connect(gGOV1pele.PMECH, generator.PMECH) annotation(Line(points = {{-88, 39}, {-106, 39}, {-106, 9.5}, {-99.6, 9.5}}, color = {0, 0, 127}));
+  connect(gGOV1pele.PELEC, generator.PELEC) annotation(Line(points = {{-46, 47}, {-34, 47}, {-34, -7.5}, {-58.4, -7.5}}, color = {0, 0, 127}));
   connect(generator.EFD0, generator.EFD) annotation (Line(
       points={{-58.4,-10.9},{-52,-10.9},{-52,-30},{-102,-30},{-102,-7.5},{-99.6,-7.5}},
       color={0,0,127},
       smooth=Smooth.None));
-  connect(gGOV1pele.PMECH, generator.PMECH) annotation (Line(points={{-84.5517,40.7826},{-106,40.7826},{-106,9.5},{-99.6,9.5}}, color={0,0,127}));
-  connect(generator.SPEED, gGOV1pele.SPEED) annotation (Line(points={{-58.4,16.3},{-40,16.3},{-40,31.3913},{-43.3103,31.3913}}, color={0,0,127}));
   connect(generator.p, GEN1.p) annotation (Line(points={{-58,1},{-50,1},{-50,0},{-40,0}}, color={0,0,255}));
   annotation (Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,100}})), Documentation(revisions="<html>
 <!--DISCLAIMER-->

@@ -27,25 +27,25 @@ model TGTypeV "Hydro Turbine (Nonlinear model) and Governor (PI controller combi
   Modelica.Blocks.Math.Gain Integral(k=Ki) annotation (Placement(transformation(extent={{-64,58},{-52,70}})));
   Modelica.Blocks.Math.Gain gain9(k=1/Tp) annotation (Placement(transformation(extent={{-138,60},{-126,72}})));
   Modelica.Blocks.Math.MultiSum multiSum6(nu=2, k={-1,1}) annotation (Placement(transformation(extent={{-158,60},{-146,72}})));
-  Modelica.Blocks.Math.Gain gain6(k=sigma) annotation (Placement(transformation(
+  Modelica.Blocks.Math.Gain gain6(k = sigma) annotation (Placement(transformation(
         extent={{-6,-6},{6,6}},
         rotation=180,
         origin={-142,86})));
   Modelica.Blocks.Continuous.Integrator integrator5(initType=Modelica.Blocks.Types.Init.NoInit, y_start=0) annotation (Placement(transformation(extent={{-94,58},{-82,70}})));
   Modelica.Blocks.Math.Gain Proportional(k=Kp) annotation (Placement(transformation(extent={{-54,34},{-42,46}})));
-  Modelica.Blocks.Math.Gain gain8(k=1/Tp) annotation (Placement(transformation(
+  Modelica.Blocks.Math.Gain gain8(k = 1 / Tp) annotation (Placement(transformation(
         extent={{-6,-6},{6,6}},
         rotation=180,
         origin={-98,40})));
-  Modelica.Blocks.Math.Division division(y(start=1)) annotation (Placement(transformation(extent={{120,58},{132,70}})));
+  Modelica.Blocks.Math.Division division(y(start = 1)) annotation (Placement(transformation(extent={{120,58},{132,70}})));
   Modelica.Blocks.Math.Product product1 annotation (Placement(transformation(extent={{244,70},{256,82}})));
-  Modelica.Blocks.Math.MultiProduct multiProduct(nu=2) annotation (Placement(transformation(extent={{146,58},{158,70}})));
-  Modelica.Blocks.Sources.Constant const1(k=1) annotation (Placement(transformation(
+  Modelica.Blocks.Math.MultiProduct multiProduct(nu = 2) annotation (Placement(transformation(extent={{146,58},{158,70}})));
+  Modelica.Blocks.Sources.Constant const1(k = 1) annotation (Placement(transformation(
         extent={{-6,-6},{6,6}},
         rotation=90,
         origin={168,42})));
   Modelica.Blocks.Interfaces.RealInput w1 "Rotor speed (pu)" annotation (Placement(transformation(extent={{-124,110},{-114,120}}), iconTransformation(extent={{-136,58},{-100,94}})));
-  Modelica.Blocks.Math.Add add(k1=+1, k2=-1) annotation (Placement(transformation(
+  Modelica.Blocks.Math.Add add(k1 = +1, k2 = -1) annotation (Placement(transformation(
         extent={{-6,-6},{6,6}},
         rotation=180,
         origin={-94,86})));

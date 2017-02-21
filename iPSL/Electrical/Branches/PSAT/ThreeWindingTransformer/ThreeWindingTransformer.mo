@@ -72,9 +72,9 @@ model ThreeWindingTransformer
         rotation=180,
         origin={30,-30})));
 equation
-  v1 = sqrt(b1.vr^2 + b1.vi^2);
-  v2 = sqrt(b2.vr^2 + b2.vi^2);
-  v3 = sqrt(b3.vr^2 + b3.vi^2);
+  v1 = sqrt(b1.vr ^ 2 + b1.vi ^ 2);
+  v2 = sqrt(b2.vr ^ 2 + b2.vi ^ 2);
+  v3 = sqrt(b3.vr ^ 2 + b3.vi ^ 2);
   anglev1 = atan2(b1.vi, b1.vr);
   anglev2 = atan2(b2.vi, b2.vr);
   anglev3 = atan2(b3.vi, b3.vr);

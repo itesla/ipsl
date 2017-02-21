@@ -33,11 +33,7 @@ model IIIorderWind "IM order III"
   Real epd(start=epm0);
   Real I;
   Real anglei;
-  iPSL.Connectors.PwPin p(
-    vr(start=vr0),
-    vi(start=vi0),
-    ir(start=ir0),
-    ii(start=ii0)) annotation (Placement(transformation(extent={{74,-10},{94,10}})));
+  iPSL.Connectors.PwPin p(vr(start = vr0), vi(start = vi0), ir(start = ir0), ii(start = ii0)) annotation(Placement(transformation(extent = {{74, -10}, {94, 10}})));
 protected
   parameter Real vr0=v0*cos(anglev0);
   parameter Real vi0=v0*sin(anglev0);

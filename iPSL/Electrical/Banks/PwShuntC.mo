@@ -1,10 +1,10 @@
 within iPSL.Electrical.Banks;
 model PwShuntC "Shunt capacitor"
   iPSL.Connectors.PwPin p annotation (Placement(transformation(extent={{-8,44},{12,64}}), iconTransformation(extent={{-10,42},{10,62}})));
-  constant Real pi=Modelica.Constants.pi;
+  constant Real pi = Modelica.Constants.pi;
   parameter Real Qnom "Reactive power produced by the shunt capacitor under 1 p.u voltage, Mvar";
   parameter Real Vbase "Base voltage of the bus, kV";
-  parameter Real fn=50 "Frequency rating, Hz";
+  parameter Real fn = 50 "Frequency rating, Hz";
   Real Zbase;
   Real C "Capacitance in p.u";
   Real v;
@@ -12,14 +12,14 @@ model PwShuntC "Shunt capacitor"
   Real i;
   Real anglei;
 equation
-  v = sqrt(p.vr^2 + p.vi^2);
+  v = sqrt(p.vr ^ 2 + p.vi ^ 2);
   anglev = atan2(p.vi, p.vr);
-  i = sqrt(p.ir^2 + p.ii^2);
+  i = sqrt(p.ir ^ 2 + p.ii ^ 2);
   anglei = atan2(p.ii, p.ir);
-  Zbase = Vbase^2/Qnom;
-  C = Qnom/(Vbase^2*2*pi*fn*Zbase) "S=U*I";
-  anglei = anglev + pi/2;
-  i = v*2*pi*fn*C "I=U/Z";
+  Zbase = Vbase ^ 2 / Qnom;
+  C = Qnom / (Vbase ^ 2 * 2 * pi * fn * Zbase) "S=U*I";
+  anglei = anglev + pi / 2;
+  i = v * 2 * pi * fn * C "I=U/Z";
   annotation (
     Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,100}}), graphics),
     Icon(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,100}}), graphics={Line(

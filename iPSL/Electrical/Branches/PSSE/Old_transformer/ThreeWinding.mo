@@ -9,9 +9,9 @@ model ThreeWinding
   // parameter Complex Z12"short circuit test impedance";
   // parameter Complex Z23 "short circuit test impedance";
   // parameter Complex Z31 "short circuit test impedance";
-  parameter Real COD1=1 "enable control for winding 1 primary side voltage";
-  parameter Real COD2=0 "enable control for winding 2 primary side voltage";
-  parameter Real COD3=0 "enable control for winding 3 primary side voltage";
+  parameter Real COD1 = 1 "enable control for winding 1 primary side voltage";
+  parameter Real COD2 = 0 "enable control for winding 2 primary side voltage";
+  parameter Real COD3 = 0 "enable control for winding 3 primary side voltage";
   // parameter Complex Z1 = 0.5 * (Z12 + Z31 - Z23)
   //  "equivalent impedance of winding 1";
   //  parameter Complex Z2 = 0.5 * (Z12 + Z23 - Z31)

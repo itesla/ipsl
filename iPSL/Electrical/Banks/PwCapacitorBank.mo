@@ -2,12 +2,11 @@ within iPSL.Electrical.Banks;
 model PwCapacitorBank "Capacitor Bank with Bank.2013"
   iPSL.Connectors.PwPin p annotation (Placement(transformation(extent={{0,60},{20,80}}), iconTransformation(extent={{0,60},{20,80}})));
   parameter Real nsteps "Number of steps connected";
-  parameter Real G=0;
-  parameter Real B=0;
+  parameter Real G = 0;
+  parameter Real B = 0;
 equation
-  p.vr = (p.ir*G + p.ii*B)/(G*G + B*B);
-  p.vi = ((-p.ir*B) + p.ii*G)/(G*G + B*B);
-
+  p.vr = (p.ir * G + p.ii * B) / (G * G + B * B);
+  p.vi = ((-p.ir * B) + p.ii * G) / (G * G + B * B);
   annotation (Icon(graphics={Rectangle(extent={{-40,60},{60,-40}}, lineColor={0,0,255}),Line(
           points={{10,50},{10,34}},
           color={0,0,255},

@@ -15,33 +15,22 @@ model HYGOV
   Modelica.Blocks.Sources.Constant n_ref(k=nref) annotation (Placement(transformation(extent={{-178,14},{-166,26}})));
   Modelica.Blocks.Interfaces.RealInput SPEED "Machine speed deviation from nominal (pu)"
     annotation (Placement(transformation(extent={{-206,-10},{-192,4}}), iconTransformation(extent={{-84,24},{-72,36}})));
-  iPSL.NonElectrical.Continuous.SimpleLag SimpleLag1(
-    K=1,
-    T=T_f,
-    y_start=0) annotation (Placement(transformation(extent={{-126,0},{-114,12}})));
+  iPSL.NonElectrical.Continuous.SimpleLag SimpleLag1(K = 1, T = T_f, y_start = 0) annotation (Placement(transformation(extent={{-126,0},{-114,12}})));
   Modelica.Blocks.Math.Gain Gain3(k=R) annotation (Placement(transformation(extent={{-130,-22},{-142,-10}})));
   Modelica.Blocks.Math.Gain Gain4(k=D_turb) annotation (Placement(transformation(extent={{-62,-34},{-50,-22}})));
   Modelica.Blocks.Sources.Constant hs(k=1) annotation (Placement(transformation(extent={{20,-20},{32,-8}})));
-  Modelica.Blocks.Continuous.Integrator q(
-    y_start=q0,
-    initType=Modelica.Blocks.Types.Init.InitialOutput,
+  Modelica.Blocks.Continuous.Integrator q(y_start = q0, initType = Modelica.Blocks.Types.Init.InitialOutput,
     k=1/T_w) annotation (Placement(transformation(extent={{62,-4},{74,8}})));
   Modelica.Blocks.Sources.Constant qNL(k=q_NL) annotation (Placement(transformation(extent={{92,-18},{84,-10}})));
   Modelica.Blocks.Math.Gain Gain6(k=A_t) annotation (Placement(transformation(extent={{132,-2},{144,10}})));
   Modelica.Blocks.Interfaces.RealOutput PMECH "Turbine mechanical power (pu)" annotation (Placement(transformation(extent={{170,-6},{182,6}}), iconTransformation(extent={{80,-4},{88,4}})));
-  iPSL.NonElectrical.Continuous.SimpleLag g(
-    K=1,
-    T=T_g,
-    y_start=g0) "servo_motor" annotation (Placement(transformation(extent={{-40,0},{-28,12}})));
+  iPSL.NonElectrical.Continuous.SimpleLag g(K = 1, T = T_g, y_start = g0) "servo_motor" annotation (Placement(transformation(extent={{-40,0},{-28,12}})));
   Modelica.Blocks.Interfaces.RealInput PMECH0 "Initial turbine mechanical power (pu)"
     annotation (Placement(transformation(extent={{-84,-62},{-76,-52}}), iconTransformation(extent={{-84,-36},{-72,-24}})));
   Modelica.Blocks.Nonlinear.Limiter Velocity_Limiter(uMin=-VELM, uMax=VELM) annotation (Placement(transformation(extent={{-86,0},{-74,12}})));
   Modelica.Blocks.Continuous.LimIntegrator Position_Limiter(
-    outMin=G_MIN,
-    outMax=G_MAX,
-    k=1,
-    y_start=c0,
-    initType=Modelica.Blocks.Types.Init.InitialOutput) annotation (Placement(transformation(extent={{-68,0},{-56,12}})));
+    outMin = G_MIN, outMax = G_MAX,
+    k = 1, y_start = c0, initType=Modelica.Blocks.Types.Init.InitialOutput) annotation (Placement(transformation(extent={{-68,0},{-56,12}})));
   Real G "Gate opening (pu)";
   Real c "Desired gate opening (pu)";
   Real Q "Turbine flow (pu)";
@@ -54,6 +43,8 @@ model HYGOV
   Modelica.Blocks.Math.Add add3(k2=-1) annotation (Placement(transformation(extent={{82,-4},{94,8}})));
   Modelica.Blocks.Math.Add add4(k2=-1) annotation (Placement(transformation(extent={{152,-6},{164,6}})));
   Modelica.Blocks.Math.Product product1 annotation (Placement(transformation(extent={{58,-30},{70,-18}})));
+  Modelica.Blocks.Math.Product product2 annotation(Placement(transformation(extent = {{108, -2}, {120, 10}})));
+  NonElectrical.Continuous.SimpleLead simpleLead(K = r * T_r, T = T_r, y_start = 0) annotation(Placement(transformation(extent = {{-106, 0}, {-94, 12}})));
 protected
   parameter Real h0=1 "water head initial value";
   // Real T_w(start=T_w);//=1.25 "Water time constant, s";
@@ -67,12 +58,6 @@ protected
   parameter Real nref(fixed=false);
   //=R*c0 "speed reference";
   parameter Real P_m0(fixed=false);
-public
-  Modelica.Blocks.Math.Product product2 annotation (Placement(transformation(extent={{108,-2},{120,10}})));
-  NonElectrical.Continuous.SimpleLead simpleLead(
-    K=r*T_r,
-    T=T_r,
-    y_start=0) annotation (Placement(transformation(extent={{-106,0},{-94,12}})));
 initial algorithm
   P_m0 := PMECH0;
   q0 := P_m0/(A_t*h0) + q_NL;

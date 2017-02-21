@@ -4,10 +4,8 @@ model PwLoadVDepwithVariation
  extends iPSL.Electrical.Essentials.pfComponent;
  inner iPSL.Electrical.SystemBase SysData;
   iPSL.Connectors.PwPin p(vr(start=Vo_real),  vi(start=Vo_img),  ir(start=1), ii(start=0)) annotation(Placement(transformation(extent = {{-80, 0}, {-60, 20}}), iconTransformation(extent = {{-80, 0}, {-60, 20}})));
-  parameter Real Vo_real = V_0*cos(angle_0*Modelica.Constants.pi/180)
-    "Initial voltage at node in p.u. (Real part)";
-  parameter Real Vo_img = V_0*sin(angle_0*Modelica.Constants.pi/180)
-    "Initial voltage at node in p.u. (Imaginary part)";
+  parameter Real Vo_real = V_0 * cos(angle_0 * Modelica.Constants.pi / 180) "Initial voltage at node in p.u. (Real part)";
+  parameter Real Vo_img = V_0 * sin(angle_0 * Modelica.Constants.pi / 180) "Initial voltage at node in p.u. (Imaginary part)";
   parameter Real startTime= 999 "Time of Load variation";
   parameter Real P_1 = 0 "New Active reference power";
   parameter Real Q_1 = 0 "New Reactive reference power";
@@ -22,11 +20,11 @@ model PwLoadVDepwithVariation
 equation
   a = v / vo;
   if time > startTime then
- (P_1/S_b) * a ^ alpha = p.vr * p.ir + p.vi * p.ii;
- (Q_1/S_b)* a ^ beta = (-p.vr * p.ii) + p.vi * p.ir;
+ (P_1 / S_b) * a ^ alpha = p.vr * p.ir + p.vi * p.ii;
+ (Q_1 / S_b)* a ^ beta = (-p.vr * p.ii) + p.vi * p.ir;
   else
- (P_0/S_b) * a ^ alpha = p.vr * p.ir + p.vi * p.ii;
- (Q_0/S_b)* a ^ beta = (-p.vr * p.ii) + p.vi * p.ir;
+ (P_0 / S_b) * a ^ alpha = p.vr * p.ir + p.vi * p.ii;
+ (Q_0 / S_b)* a ^ beta = (-p.vr * p.ii) + p.vi * p.ir;
   end if;
 
   v = sqrt(p.vr ^ 2 + p.vi ^ 2);

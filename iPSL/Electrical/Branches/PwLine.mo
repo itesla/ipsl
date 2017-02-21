@@ -11,16 +11,16 @@ model PwLine "Model for a transmission Line based on the pi-equivalent circuit"
   parameter Real X "Reactance (pu)" annotation (Dialog(group="Line parameters"));
   parameter Real G "Shunt half conductance (pu)" annotation (Dialog(group="Line parameters"));
   parameter Real B "Shunt half susceptance (pu)" annotation (Dialog(group="Line parameters"));
-  parameter Real S_b=SysData.S_b "System base power (MVA)" annotation (Dialog(group="Line parameters",enable=false));
+  parameter Real S_b = SysData.S_b "System base power (MVA)" annotation (Dialog(group="Line parameters",enable=false));
 
-  parameter Real startTime=Modelica.Constants.inf annotation (Dialog(group="Perturbation parameters"));
-  parameter Real endTime=Modelica.Constants.inf annotation (Dialog(group="Perturbation parameters"));
+  parameter Real startTime = Modelica.Constants.inf annotation (Dialog(group="Perturbation parameters"));
+  parameter Real endTime = Modelica.Constants.inf annotation (Dialog(group="Perturbation parameters"));
   parameter Integer opening=1
     annotation (Dialog(group="Perturbation parameters"), choices(
       choice=1 "Line opening at both ends",
       choice=2 "Line opening at sending end",
       choice=3 "Line opening at receiving end"));
-  parameter Boolean displayPF=false "Enable/Disable"
+  parameter Boolean displayPF = false "Enable/Disable"
     annotation (Dialog(
       group="Display Power Flow Results",
       __Dymola_compact=true,
@@ -29,36 +29,34 @@ model PwLine "Model for a transmission Line based on the pi-equivalent circuit"
   Real P21;
   Real Q12;
   Real Q21;
-  Complex vs(re=p.vr, im=p.vi);
-  Complex is(re=p.ir, im=p.ii);
-  Complex vr(re=n.vr, im=n.vi);
-  Complex ir(re=n.ir, im=n.ii);
-
+  Complex vs(re = p.vr, im = p.vi);
+  Complex is(re = p.ir, im = p.ii);
+  Complex vr(re = n.vr, im = n.vi);
+  Complex ir(re = n.ir, im = n.ii);
 protected
-  parameter Complex Y(re=G, im=B);
-  parameter Complex Z(re=R, im=X);
+  parameter Complex Y(re = G, im = B);
+  parameter Complex Z(re = R, im = X);
 equation
   //Calculations for the power flow display
-  P12 = real(vs*conj(is))*S_b;
-  P21 = -real(vr*conj(ir))*S_b;
-  Q12 = imag(vs*conj(is))*S_b;
-  Q21 = -imag(vr*conj(ir))*S_b;
-
+  P12 = real(vs * conj(is)) * S_b;
+  P21 = -real(vr * conj(ir)) * S_b;
+  Q12 = imag(vs * conj(is)) * S_b;
+  Q21 = -imag(vr * conj(ir)) * S_b;
   //PI model with different line openings
   if (time >= startTime) and (time < endTime) then
     if (opening == 1) then
-      is = 0 + j*0;
-      ir = 0 + j*0;
+      is = Complex (0);
+      ir = Complex (0);
     elseif (opening == 2) then
-      is = 0 + j*0;
+      is = Complex (0);
       ir = (vr - ir*Z)*Y;
     else
-      ir = 0 + j*0;
-      is = (vs - is*Z)*Y;
+      ir = Complex(0);
+      is = (vs - is * Z) * Y;
     end if;
   else
-    vs - vr = Z*(is - vs*Y);
-    vr - vs = Z*(ir - vr*Y);
+    vs - vr = Z * (is - vs * Y);
+    vr - vs = Z * (ir - vr * Y);
   end if;
 
   annotation (

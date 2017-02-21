@@ -1,26 +1,23 @@
 within iPSL.Electrical.Buses;
 model InfiniteBusEuro  "Infinite bus model 2016/05/12"
 
-  iPSL.Connectors.PwPin p(vr(start=V_0*cos(angle_0*Modelica.Constants.pi/180)), vi(start=V_0*sin(angle_0*Modelica.Constants.pi/180)));
+  iPSL.Connectors.PwPin p(vr(start=Vo_real), vi(start=Vo_img));
   parameter Real R;
   parameter Real X;
-  parameter Real Y1 = R/(R*R + X*X);
-  parameter Real Y2 = X/(R*R + X*X);
-  parameter Real V_0=1 "Voltage magnitude (pu)" annotation (Dialog(group="Power flow data"));
-  parameter Real angle_0=0 "Voltage angle (deg)" annotation (Dialog(group="Power flow data"));
-  parameter Real Vo_real = V_0*cos(angle_0*Modelica.Constants.pi/180)
-    "Initial voltage at node in p.u. (Real part)";
-  parameter Real Vo_img = V_0*sin(angle_0*Modelica.Constants.pi/180)
-    "Initial voltage at node in p.u. (Imaginary part)";
-  parameter Real Irn =  Y1*Vo_real + Y2*Vo_img;
-  parameter Real Iin = Y1*Vo_img - Y2*Vo_real;
-  Real V(start=V_0) "Bus voltage magnitude (pu)";
-
-
+  parameter Real Z2 = (R * R + X * X);
+  parameter Real Y1 = R / Z2;
+  parameter Real Y2 = X / Z2;
+  parameter Real V_0 = 1 "Voltage magnitude (pu)" annotation(Dialog(group = "Power flow data"));
+  parameter Real angle_0 = 0 "Voltage angle (deg)" annotation(Dialog(group = "Power flow data"));
+  parameter Real Vo_real = V_0 * cos(angle_0 * Modelica.Constants.pi / 180) "Initial voltage at node in p.u. (Real part)";
+  parameter Real Vo_img = V_0 * sin(angle_0 * Modelica.Constants.pi / 180) "Initial voltage at node in p.u. (Imaginary part)";
+  parameter Real Irn = Y1 * Vo_real + Y2 * Vo_img;
+  parameter Real Iin = Y1 * Vo_img - Y2 * Vo_real;
+  Real V (start = V_0) "Bus voltage magnitude (pu)";
 equation
-     V = sqrt(p.vr^2 + p.vi^2);
-     p.ii + Iin = (R*p.vi - X*p.vr)/(X*X + R*R);
-     p.ir + Irn = (R*p.vr + X*p.vi)/(R*R + X*X);
+  V = sqrt(p.vr ^ 2 + p.vi ^ 2);
+  p.ii + Iin = (R * p.vi - X * p.vr) / Z2;
+  p.ir + Irn = (R * p.vr + X * p.vi) / Z2;
   annotation (
     Icon(coordinateSystem(
         extent={{-100,-100},{100,100}},

@@ -30,12 +30,12 @@ model gsteam0
 //GSTEAM0 GSTEAM0_28(DT=.3000000,RR=0.04,T1=.3000000,T2=1.5,T3=5.,VMAX=1.,VMIN=0.);
 //GSTEAM0 GSTEAM0_29(DT=0.,RR=0.05,T1=.4000000,T2=1.5,T3=5.,VMAX=1.,VMIN=0.);
 //GSTEAM0 GSTEAM0_30(DT=.3000000,RR=0.08,T1=0.05,T2=1.5,T3=5.,VMAX=1.,VMIN=0.);
-  parameter Real init_3=init_REF;
-  parameter Real init_4=init_PMECH;
-  parameter Real init_5=init_PMECH;
-  parameter Real init_8=init_PMECH;
-  parameter Real init_10=init_CM;
-  parameter Real init_11=0;
+  parameter Real init_3 = init_REF;
+  parameter Real init_4 = init_PMECH;
+  parameter Real init_5 = init_PMECH;
+  parameter Real init_8 = init_PMECH;
+  parameter Real init_10 = init_CM;
+  parameter Real init_11 = 0;
   parameter Real DT;
   parameter Real RR;
   parameter Real T1;
@@ -86,5 +86,5 @@ equation
   connect(pin_PMECH, MultiSum_8.y);
   connect(pin_CM, MultiSum_10.y);
   connect(pin_CMREF, ImSetPoint_11.y);
-  MultiSum_7.u[2] =1;
+  MultiSum_7.u[2] = 1;
 end gsteam0;

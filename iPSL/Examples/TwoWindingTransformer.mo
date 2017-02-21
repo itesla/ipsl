@@ -20,7 +20,7 @@ model TwoWindingTransformer "SMIB system with one load and GENROE model"
     X=0.1,
     G=0,
     B=0) annotation (Placement(transformation(extent={{60,-40},{80,-20}})));
-  iPSL.Electrical.Machines.PSSE.GENCLS.GENCLS gENCLS(
+  iPSL.Electrical.Machines.PSSE.GENCLS gENCLS(
     M_b=100,
     D=0,
     V_0=1,
@@ -70,7 +70,7 @@ model TwoWindingTransformer "SMIB system with one load and GENROE model"
     V_0=1,
     angle_0=4.747869,
     P_0=40,
-    Q_0=-16.46028) annotation (Placement(transformation(extent={{-92,-20},{-58,20}})));
+    Q_0=-16.46028) annotation (Placement(visible = true, transformation(extent = {{-98, -20}, {-64, 20}}, rotation = 0)));
   iPSL.Electrical.Branches.PSSE.TwoWindingTransformer twoWindingTransformer(
     CZ=1,
     R=0.001,
@@ -92,9 +92,9 @@ model TwoWindingTransformer "SMIB system with one load and GENROE model"
   iPSL.Electrical.Buses.Bus BUS1 annotation (Placement(transformation(extent={{80,-10},{100,10}})));
   inner iPSL.Electrical.SystemBase SysData(S_b=100, fn=50) annotation (Placement(transformation(extent={{-100,80},{-40,100}})));
 equation
-  connect(gENROE.PMECH, gENROE.PMECH0) annotation (Line(points={{-91.66,10},{-98,10},{-98,26},{-50,26},{-50,-6},{-56.64,-6}}, color={0,0,127}));
-  connect(gENROE.EFD, gENROE.EFD0) annotation (Line(points={{-91.66,-10},{-98,-10},{-98,-24},{-50,-24},{-50,-14},{-56.64,-14}}, color={0,0,127}));
-  connect(gENROE.p, BUS01.p) annotation (Line(points={{-56.3,0},{-40,0}}, color={0,0,255}));
+  connect(gENROE.p, BUS01.p) annotation(Line(points = {{-81, 0}, {-40, 0}}, color = {0, 0, 255}));
+  connect(gENROE.EFD, gENROE.EFD0) annotation(Line(points = {{-81, 0}, {-89.34, 0}, {-89.34, -14}, {-41.34, -14}, {-41.34, 0}, {-81, 0}}, color = {0, 0, 127}));
+  connect(gENROE.PMECH, gENROE.PMECH0) annotation(Line(points = {{-81, 0}, {-89.34, 0}, {-89.34, 16}, {-41.34, 16}, {-41.34, 0}, {-81, 0}}, color = {0, 0, 127}));
   connect(BUS01.p, twoWindingTransformer.p) annotation (Line(points={{-40,0},{-27,0}}, color={0,0,255}));
   connect(twoWindingTransformer.n, BUS02.p) annotation (Line(points={{-13,0},{0,0}}, color={0,0,255}));
   connect(pwLine1.p, BUS02.p) annotation (Line(points={{43,30},{4,30},{4,0},{0,0}}, color={0,0,255}));

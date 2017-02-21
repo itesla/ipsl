@@ -1,8 +1,9 @@
 within iPSL.Examples.Controls.PSSE.TG;
 model TGOV1 "SMIB system with one load and GENROE model"
-  import iPSL;
+
   extends iPSL.Examples.SMIBpartial;
-  iPSL.Electrical.Machines.PSSE.GENROE.GENROE gENROE(
+  extends Modelica.Icons.Example;
+  iPSL.Electrical.Machines.PSSE.GENROE gENROE(
     M_b=100,
     Tpd0=5,
     Tppd0=0.07,

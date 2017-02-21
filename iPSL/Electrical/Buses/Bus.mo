@@ -10,18 +10,16 @@ model Bus "Bus model 2014/03/10"
         origin={0.0,-0.0},
         extent={{-10.0,-10.0},{10.0,10.0}},
         rotation=0)));
-  Real V(start=V_0) "Bus voltage magnitude (pu)";
-  Real angle(start=angle_0) "Bus voltage angle (deg)";
-  parameter Real V_0=1 "Voltage magnitude (pu)" annotation (Dialog(group="Power flow data"));
-  parameter Real angle_0=0 "Voltage angle (deg)" annotation (Dialog(group="Power flow data"));
-  parameter Real Vo_real = V_0*cos(angle_0*Modelica.Constants.pi/180)
-    "Initial voltage at node in p.u. (Real part)";
-  parameter Real Vo_img = V_0*sin(angle_0*Modelica.Constants.pi/180)
-    "Initial voltage at node in p.u. (Imaginary part)";
+  Real V(start = V_0) "Bus voltage magnitude (pu)";
+  Real angle(start = angle_0) "Bus voltage angle (deg)";
+  parameter Real V_0 = 1 "Voltage magnitude (pu)" annotation (Dialog(group="Power flow data"));
+  parameter Real angle_0 = 0 "Voltage angle (deg)" annotation (Dialog(group="Power flow data"));
+  Complex v (re(start = V_0*cos(angle_0*Modelica.Constants.pi/180)), im(start=V_0*sin(angle_0*Modelica.Constants.pi/180)));
  
 equation
-  angle =  if abs(p.vi) > Modelica.Constants.eps then atan2(p.vi, p.vr)*180/Modelica.Constants.pi else 0;
-  V = sqrt(p.vr^2 + p.vi^2);
+  v = Complex (p.vr, p.vi);
+  angle = if (v == Complex (0)) then 0 else ComplexMath.arg (v) * 180 / Modelica.Constants.pi;
+  V = ComplexMath.'abs' (v);
   p.ir = 0;
   p.ii = 0;
   annotation (
@@ -49,7 +47,7 @@ equation
           fillPattern=FillPattern.Solid,
           extent={{-39.0262,-16.7966},{39.0262,16.7966}},
           fontName="Arial",
-          textString=DynamicSelect("0.0", String(anglevdeg, significantDigits=3)),
+          textString=DynamicSelect("0.0", String(angle, significantDigits=3)),
           lineColor={238,46,47})}),
     Diagram(coordinateSystem(
         extent={{-148.5,-105.0},{148.5,105.0}},

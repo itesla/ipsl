@@ -1,12 +1,9 @@
 within iPSL.Electrical.Wind.PSSE.WT4G;
 model WT4G1 "Wind Generator Model with Power Converter (Type 4)"
-  import iPSL;
   // Extending the PF component
   extends iPSL.Electrical.Essentials.pfComponent;
-
   //Constants
   constant Real pi=Modelica.Constants.pi;
-
   // Model parameters
   parameter Real M_b "Machine base power (MVA)";
   parameter Real T_IQCmd "Converter time constant for I_Qcmd";
@@ -18,59 +15,33 @@ model WT4G1 "Wind Generator Model with Power Converter (Type 4)"
   parameter Real CUR_HVRCR "HVRCR current (Max. reactive current at VHVRCR)";
   parameter Real RIp_LVPL "Rate of LVACR active current change";
   parameter Real T_LVPL "Voltage sensor for LVACR time constant";
-
   // Variables
-protected
-  Real delta(start=anglev_rad);
-  Real VT(start=V_0) "Bus voltage magnitude (pu)";
-  Real anglev(start=anglev_rad) "Bus voltage angle (rad)";
-public
   Complex Is "Equivalent internal current source";
-
-  iPSL.Connectors.PwPin p(
-    vr(start=vr0),
-    vi(start=vi0),
-    ir(start=ir1),
-    ii(start=ii1)) annotation (Placement(transformation(extent={{100,-10},{120,10}}),iconTransformation(extent={{100,-10},{120,10}})));
-  iPSL.NonElectrical.Continuous.SimpleLag K1(
-    K=1,
-    T=T_IQCmd,
-    y_start=Iy0) annotation (Placement(transformation(extent={{-30,70},{-20,80}})));
-  Modelica.Blocks.Continuous.Integrator K(
-    y_start=Ix0,
-    k=1/T_IPCmd,
-    initType=Modelica.Blocks.Types.Init.SteadyState) annotation (Placement(transformation(extent={{-30,35},{-20,45}})));
+  iPSL.Connectors.PwPin p(vr(start = vr0), vi(start = vi0), ir(start = ir1), ii(start = ii1)) annotation(Placement(transformation(extent = {{100, -10}, {120, 10}}), iconTransformation(extent = {{100, -10}, {120, 10}})));
+  iPSL.NonElectrical.Continuous.SimpleLag K1(K = 1, T = T_IQCmd, y_start = Iy0) annotation(Placement(transformation(extent = {{-30, 70}, {-20, 80}})));
+  Modelica.Blocks.Continuous.Integrator K(y_start = Ix0, k = 1 / T_IPCmd, initType = Modelica.Blocks.Types.Init.SteadyState) annotation(Placement(transformation(extent = {{-30, 35}, {-20, 45}})));
   Modelica.Blocks.Interfaces.RealOutput Iy(start=Iy0) annotation (Placement(transformation(extent={{100,80},{120,100}}), iconTransformation(extent={{100,-70},{120,-50}})));
-  Modelica.Blocks.Interfaces.RealOutput V=VT
-    annotation (Placement(transformation(extent={{110,-60},{128,-42}}), iconTransformation(
-        extent={{-10,-10},{10,10}},
-        rotation=180,
-        origin={-110,0})));
-  Modelica.Blocks.Interfaces.RealOutput P(start=p0)
-    annotation (Placement(transformation(extent={{110,-78},{128,-60}}), iconTransformation(
-        extent={{-10,-10},{10,10}},
-        rotation=180,
-        origin={-110,-40})));
-  Modelica.Blocks.Interfaces.RealOutput Q(start=q0)
-    annotation (Placement(transformation(extent={{110,-100},{128,-82}}), iconTransformation(
-        extent={{-10,-10},{10,10}},
-        rotation=180,
-        origin={-110,-80})));
-  Modelica.Blocks.Math.Feedback Iperr(y(start=0, fixed=true)) annotation (Placement(transformation(extent={{-80,35},{-70,45}})));
+  Modelica.Blocks.Interfaces.RealOutput V = VT annotation(Placement(transformation(extent = {{110, -60}, {128, -42}}), iconTransformation(extent = {{-10, -10}, {10, 10}}, rotation = 180, origin = {-110, 0})));
+  Modelica.Blocks.Interfaces.RealOutput P(start = p0) annotation(Placement(transformation(extent = {{110, -78}, {128, -60}}), iconTransformation(extent = {{-10, -10}, {10, 10}}, rotation = 180, origin = {-110, -40})));
+  Modelica.Blocks.Interfaces.RealOutput Q(start = q0) annotation(Placement(transformation(extent = {{110, -100}, {128, -82}}), iconTransformation(extent = {{-10, -10}, {10, 10}}, rotation = 180, origin = {-110, -80})));
+  Modelica.Blocks.Math.Feedback Iperr(y(start=0, fixed=false)) annotation (Placement(transformation(extent={{-80,35},{-70,45}})));
   iPSL.Electrical.Wind.PSSE.Submodels.LVACL lVACL annotation (Placement(transformation(extent={{68,30},{88,50}})));
   iPSL.Electrical.Wind.PSSE.Submodels.HVRCL hVRCL(VHVRCR=V_HVRCR, CurHVRCR=CUR_HVRCR) annotation (Placement(transformation(extent={{50,65},{70,85}})));
   Modelica.Blocks.Interfaces.RealOutput IyL(start=Iy0) annotation (Placement(transformation(extent={{100,65},{120,85}}), iconTransformation(extent={{100,70},{120,90}})));
   Modelica.Blocks.Interfaces.RealOutput IxL(start=Ix0) annotation (Placement(transformation(extent={{96,34},{114,52}}), iconTransformation(extent={{100,30},{120,50}})));
-  iPSL.Electrical.Wind.PSSE.Submodels.LVPL lVPL(
-    VLVPL1=V_LVPL1,
-    VLVPL2=V_LVPL2,
-    GLVPL=G_LVPL) annotation (Placement(transformation(extent={{40,-40},{20,-20}})));
+  iPSL.Electrical.Wind.PSSE.Submodels.LVPL lVPL(VLVPL1 = V_LVPL1, VLVPL2 = V_LVPL2, GLVPL = G_LVPL) annotation(Placement(transformation(extent = {{40, -40}, {20, -20}})));
   Modelica.Blocks.Nonlinear.Limiter imLimited_max(uMin=-Modelica.Constants.inf, uMax=RIp_LVPL) annotation (Placement(transformation(extent={{-50,35},{-40,45}})));
   Modelica.Blocks.Nonlinear.VariableLimiter variableLimiter(y(start=Ipcmd0)) annotation (Placement(transformation(extent={{20,35},{30,45}})));
   Modelica.Blocks.Sources.Constant const(k=-Modelica.Constants.inf) annotation (Placement(transformation(extent={{-10,25},{0,35}})));
-
   //Initialization parameters
+  Modelica.Blocks.Interfaces.RealInput I_qcmd(start = Iy0) annotation(Placement(transformation(extent = {{-110, 65}, {-90, 85}}), iconTransformation(extent = {{-100, 70}, {-80, 90}})));
+  Modelica.Blocks.Interfaces.RealInput I_pcmd(start = Ipcmd0) annotation(Placement(transformation(extent = {{-110, 30}, {-90, 50}}), iconTransformation(extent = {{-100, 30}, {-80, 50}})));
+  Modelica.Blocks.Interfaces.RealOutput I_qcmd0 annotation(Placement(transformation(extent = {{-50, 85}, {-30, 105}}), iconTransformation(extent = {{-10, -10}, {10, 10}}, rotation = 90, origin = {-60, 110})));
+  Modelica.Blocks.Interfaces.RealOutput I_pcmd0 annotation(Placement(transformation(extent = {{-78, 85}, {-58, 105}}), iconTransformation(extent = {{-10, -10}, {10, 10}}, rotation = 90, origin = {-20, 110})));
 protected
+  Real delta(start = anglev_rad);
+  Real VT(start = V_0) "Bus voltage magnitude (pu)";
+  Real anglev(start = anglev_rad) "Bus voltage angle (rad)";
   parameter Real p0=P_0/M_b "initial value of bus active power in p.u. machinebase";
   parameter Real q0=Q_0/M_b "initial value of bus reactive power in p.u. machinebase";
   parameter Real v0=V_0;
@@ -87,28 +58,9 @@ protected
   parameter Real anglev_rad=angle_0*pi/180 "initial value of bus anglev in rad";
   parameter Real Ix0=Isr0*cos(-anglev_rad) - Isi0*sin(-anglev_rad);
   parameter Real Iy0=-(Isr0*sin(-anglev_rad) + cos(-anglev_rad)*Isi0);
-public
-  Modelica.Blocks.Interfaces.RealInput I_qcmd(start=Iy0) annotation (Placement(transformation(extent={{-110,65},{-90,85}}), iconTransformation(extent={{-100,70},{-80,90}})));
-  Modelica.Blocks.Interfaces.RealInput I_pcmd(start=Ipcmd0) annotation (Placement(transformation(extent={{-110,30},{-90,50}}), iconTransformation(extent={{-100,30},{-80,50}})));
 protected
-  Modelica.Blocks.Interfaces.RealInput Vtt=VT
-    annotation (Placement(transformation(
-        extent={{-10,-10},{10,10}},
-        rotation=90,
-        origin={60,-100}),iconTransformation(extent={{-110,52},{-94,68}})));
-public
-  Modelica.Blocks.Interfaces.RealOutput I_qcmd0
-    annotation (Placement(transformation(extent={{-50,85},{-30,105}}), iconTransformation(
-        extent={{-10,-10},{10,10}},
-        rotation=90,
-        origin={-60,110})));
-  Modelica.Blocks.Interfaces.RealOutput I_pcmd0
-    annotation (Placement(transformation(extent={{-78,85},{-58,105}}), iconTransformation(
-        extent={{-10,-10},{10,10}},
-        rotation=90,
-        origin={-20,110})));
+  Modelica.Blocks.Interfaces.RealInput Vtt = VT annotation(Placement(transformation(extent = {{-10, -10}, {10, 10}}, rotation = 90, origin = {60, -100}), iconTransformation(extent = {{-110, 52}, {-94, 68}})));
 equation
-
   I_qcmd0 = Iy0;
   I_pcmd0 = Ix0;
   anglev = atan2(p.vi, p.vr);
@@ -119,19 +71,9 @@ equation
   [IxL; -IyL] = -[cos(delta), sin(delta); -sin(delta), cos(delta)]*[Is.re; Is.im];
   -P = p.vr*p.ir + p.vi*p.ii;
   -Q = p.vi*p.ir - p.vr*p.ii;
-
-  connect(Iperr.u1, I_pcmd) annotation (Line(
-      points={{-79,40},{-100,40}},
-      color={0,0,127},
-      smooth=Smooth.None));
-  connect(lVACL.Ip_LVACL, IxL) annotation (Line(
-      points={{89,40},{93.745,40},{93.745,43},{105,43}},
-      color={0,0,127},
-      smooth=Smooth.None));
-  connect(hVRCL.Iq_HVRCL, IyL) annotation (Line(
-      points={{72.5,75},{110,75}},
-      color={0,0,127},
-      smooth=Smooth.None));
+  connect(Iperr.u1, I_pcmd) annotation(Line(points = {{-79, 40}, {-100, 40}}, color = {0, 0, 127}, smooth = Smooth.None));
+  connect(lVACL.Ip_LVACL, IxL) annotation(Line(points = {{89, 40}, {93.745, 40}, {93.745, 43}, {105, 43}}, color = {0, 0, 127}, smooth = Smooth.None));
+  connect(hVRCL.Iq_HVRCL, IyL) annotation(Line(points = {{72.5, 75}, {110, 75}}, color = {0, 0, 127}, smooth = Smooth.None));
   connect(I_qcmd, K1.u) annotation (Line(points={{-100,75},{-67,75},{-31,75}}, color={0,0,127}));
   connect(Iperr.y, imLimited_max.u) annotation (Line(points={{-70.5,40},{-51,40}}, color={0,0,127}));
   connect(imLimited_max.y, K.u) annotation (Line(points={{-39.5,40},{-31,40}}, color={0,0,127}));

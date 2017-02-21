@@ -1,18 +1,18 @@
 within iPSL.Electrical.Buses;
 model InternalBus "Bus for change base"
   outer iPSL.Electrical.SystemBase SysData;
-  constant Real pi=Modelica.Constants.pi;
-  parameter Real M_b=120 "Machine base power rating (MVA)" annotation (Dialog(group="Power flow data"));
-  parameter Real S_b=SysData.S_b "System base power rating (MVA)" annotation (Dialog(group="Power flow data"));
-  iPSL.Connectors.PwPin p "Machine base" annotation (Placement(transformation(extent={{-32,-4},{-12,16}}), iconTransformation(extent={{-32,-4},{-12,16}})));
-  iPSL.Connectors.PwPin n "System base" annotation (Placement(transformation(extent={{8,-4},{28,16}}), iconTransformation(extent={{8,-4},{28,16}})));
+  constant Real pi = Modelica.Constants.pi;
+  parameter Real M_b = 120 "Machine base power rating (MVA)" annotation(Dialog(group = "Power flow data"));
+  parameter Real S_b = SysData.S_b "System base power rating (MVA)" annotation(Dialog(group = "Power flow data"));
+  iPSL.Connectors.PwPin p "Machine base" annotation(Placement(transformation(extent = {{-32, -4}, {-12, 16}}), iconTransformation(extent = {{-32, -4}, {-12, 16}})));
+  iPSL.Connectors.PwPin n "System base" annotation(Placement(transformation(extent = {{8, -4}, {28, 16}}), iconTransformation(extent = {{8, -4}, {28, 16}})));
 protected
-  parameter Real CoB=M_b/S_b;
+  parameter Real CoB = M_b / S_b;
 equation
   0 = n.vr - p.vr;
   0 = n.vi - p.vi;
-  0 = p.ir*CoB + n.ir;
-  0 = p.ii*CoB + n.ii;
+  0 = p.ir * CoB + n.ir;
+  0 = p.ii * CoB + n.ii;
   annotation (
     Icon(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,100}}), graphics={Rectangle(
           extent={{8,96},{-12,-88}},

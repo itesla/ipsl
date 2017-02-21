@@ -1,18 +1,13 @@
 within iPSL.Electrical.Controls.PSAT.AVR;
 
-
 model AVRtypeIII
-  parameter Real vref=1;
-  parameter Real v0=1 "initial voltage after power flow";
   parameter Real vfmax=5;
   parameter Real vfmin=-5;
   parameter Real K0=20 "regulator gain";
   parameter Real T2=0.1 "regulator pole";
   parameter Real T1=0.45 "Regulator zero";
   parameter Real Te=0.1 "Field circuit time constant";
-  parameter Real vf0 "Initial field voltage";
   parameter Real Tr=0.0015 "Measurement time constant";
-  parameter Real s0;
   Real vm;
   Real vr;
   Real vf1;
@@ -24,67 +19,54 @@ model AVRtypeIII
   Modelica.Blocks.Interfaces.RealInput v(start=1) annotation (Placement(
       visible=true,
       transformation(
-        origin={-157.972,50},
+        origin={-119.972,50},
         extent={{-20.0,-20.0},{20.0,20.0}},
         rotation=0),
       iconTransformation(
-        origin={-120.0,50.0},
-        extent={{-20.0,-20.0},{20.0,20.0}},
+        origin={-110,60},
+        extent={{-10,-10},{10,10}},
         rotation=0)));
   Modelica.Blocks.Interfaces.RealOutput vf annotation (Placement(
       visible=true,
       transformation(
-        origin={160,0},
-        extent={{-10.0,-10.0},{10.0,10.0}},
+        origin={130,0},
+        extent={{-10, -10}, {10, 10}},
         rotation=0),
       iconTransformation(
-        origin={110.0,0.0},
-        extent={{-10.0,-10.0},{10.0,10.0}},
+        origin={130, 0},
+        extent={{-10, -10}, {10, 10}},
         rotation=0)));
-  Modelica.Blocks.Interfaces.RealInput vs annotation (Placement(transformation(extent={{-140,-60},{-100,-20}}), iconTransformation(extent={{-140,-60},{-100,-20}})));
+  Modelica.Blocks.Interfaces.RealInput vs annotation (Placement(transformation(extent={{-140,-82},{-100,-42}}), iconTransformation(extent={{-120,
+            -70},{-100,-50}})));
+  Modelica.Blocks.Interfaces.RealInput vf0(start=1) annotation (Placement(
+      visible=true,
+      transformation(
+        origin={0.028,120},
+        extent={{-20.0,-20.0},{20.0,20.0}},
+        rotation=-90),
+      iconTransformation(
+        origin={0,110},
+        extent={{-10,-10},{10,10}},
+        rotation=-90)));
+protected
+  parameter Real vref(fixed=false);
+  parameter Real s0(fixed=false);
 initial equation
+  vref = v;
+  s0 = vs;
   vf1 = vf0;
-  vm = v0;
+  vm = v;
   vr = K0*(1 - T1/T2)*(vref + vs - vm);
 equation
   der(vm) = (v - vm)/Tr;
   der(vr) = (K0*(1 - T1/T2)*(vref + vs - vm) - vr)/T2;
-  der(vf1) = ((vr + K0*(T1/T2)*(vref + vs - vm) + vf0)*(1 + s0*(v/v0 - 1)) - vf1)/Te;
+  der(vf1) = ((vr + K0*(T1/T2)*(vref + vs - vm) + vf0)*(1 + s0*(v/vm - 1)) - vf1)/Te;
   limiter1.u = vf1;
   limiter1.y = vf;
-  annotation (Icon(
-      coordinateSystem(
-        extent={{-100,-100},{100,100}},
-        preserveAspectRatio=false,
-        initialScale=0.1,
-        grid={10,10}),
-      graphics={Rectangle(
-          visible=true,
-          fillColor={255,255,255},
-          extent={{-100.0,-100.0},{100.0,100.0}}),Text(
-          visible=true,
-          origin={1.5941,2.9728},
-          fillPattern=FillPattern.Solid,
-          extent={{-31.5941,-24.9719},{31.5941,24.9719}},
-          textString="AVRtypeIII",
-          fontName="Arial"),Text(
-          visible=true,
-          origin={-77.3525,52.4473},
-          fillPattern=FillPattern.Solid,
-          extent={{-17.3525,-17.5527},{17.3525,17.5527}},
-          textString="v",
-          fontName="Arial"),Text(
-          origin={-74.7671,-32.7013},
-          fillPattern=FillPattern.Solid,
-          extent={{-11.7427,-9.8104},{11.7427,9.8104}},
-          fontName="Arial",
-          textString="vs",
-          lineColor={0,0,0})},
-      origin={84.2416,-0.0},
-      fillPattern=FillPattern.Solid,
-      extent={{-8.7313,-11.5403},{8.7313,11.5403}},
-      textString="vf",
-      fontName="Arial"), Documentation(revisions="<html>
+  annotation (
+    Icon(coordinateSystem(preserveAspectRatio=false, extent={{-120,-120},{120,
+            120}}, initialScale = 0.1),                                                                   graphics={Rectangle(lineColor = {0, 0, 255}, fillColor = {255, 255, 255}, fillPattern = FillPattern.Solid, extent = {{-120, 120}, {120, -120}}), Text(lineColor = {0, 0, 255}, extent = {{-104, 72}, {-72, 50}}, textString = "v"), Text(lineColor = {0, 0, 255}, extent = {{-100, -48}, {-68, -70}}, textString = "vs"), Text(lineColor = {0, 0, 255}, extent = {{88, 10}, {120, -12}}, textString = "vf"), Text(lineColor = {0, 0, 255}, extent = {{-34, 36}, {42, -24}}, textString = "AVRTypeIII"), Text(lineColor = {0, 0, 255}, extent = {{-16, 100}, {16, 78}}, textString = "vf0")}),
+    Documentation(revisions="<html>
 <!--DISCLAIMER-->
 <p>Copyright 2015-2016 RTE (France), SmarTS Lab (Sweden), AIA (Spain) and DTU (Denmark)</p>
 <ul>
@@ -116,5 +98,6 @@ equation
 <td><p><a href=\"mailto:luigiv@kth.se\">luigiv@kth.se</a></p></td>
 </tr>
 </table>
-</html>"));
+</html>"),
+    Diagram(coordinateSystem(extent={{-120,-120},{120,120}})));
 end AVRtypeIII;

@@ -4,10 +4,7 @@ model TurbinePm "Hydraulic turbine model. Mechanical Power Pm as output"
   Modelica.Blocks.Interfaces.RealInput z "Gate openning" annotation (Placement(transformation(extent={{-95,2},{-88,10}}), iconTransformation(extent={{-92,-6},{-78,8}})));
   Modelica.Blocks.Sources.Constant Hs(k=1) "set point" annotation (Placement(transformation(extent={{-78,-14},{-58,6}})));
   Modelica.Blocks.Math.Gain Tw(k=1) "Water constant" annotation (Placement(transformation(extent={{-16,0},{0,16}})));
-  Modelica.Blocks.Continuous.Integrator imIntegrator(
-    k=1,
-    y_start=p0,
-    initType=Modelica.Blocks.Types.Init.InitialOutput) annotation (Placement(transformation(extent={{12,0},{28,16}})));
+  Modelica.Blocks.Continuous.Integrator imIntegrator(k = 1, y_start = p0, initType = Modelica.Blocks.Types.Init.InitialOutput) annotation(Placement(transformation(extent = {{12, 0}, {28, 16}})));
   Modelica.Blocks.Interfaces.RealOutput Pm "Mechanical power" annotation (Placement(transformation(extent={{88,2},{94,10}}), iconTransformation(extent={{32,-6},{48,12}})));
   Modelica.Blocks.Math.Product product1 annotation (Placement(transformation(extent={{-54,26},{-40,40}})));
   Modelica.Blocks.Math.Division division1 annotation (Placement(transformation(extent={{-80,26},{-66,40}})));

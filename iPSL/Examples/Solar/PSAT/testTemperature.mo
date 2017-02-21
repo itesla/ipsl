@@ -1,5 +1,6 @@
 within iPSL.Examples.Solar.PSAT;
 model testTemperature
+extends Modelica.Icons.UnderConstruction;
   Modelica.Blocks.Sources.Constant const(k=1000)
     annotation (Placement(visible=true, transformation(
         origin={-73.3987,11.6013},
@@ -25,7 +26,7 @@ model testTemperature
         origin={83.1777,5.4501},
         extent={{-10.0,-10.0},{10.0,10.0}},
         rotation=0)));
-  iPSL.Electrical.Buses.InfiniteBus infiniteBus8(angle=0, V=1)
+  iPSL.Electrical.Buses.InfiniteBus infiniteBus8(angle_0=0, V_0=1)
     annotation (Placement(visible=true, transformation(
         origin={117.9874,-1.1504},
         extent={{10.0,-10.0},{-10.0,10.0}},

@@ -1,128 +1,35 @@
 within iPSL.Examples.Machines.PSAT;
 model Order5_1test2
-  iPSL.Electrical.Loads.PSAT.LOADPQ pwLoadPQ2(
-    P_0=0.08,
-    Q_0=0.06,
-    V_0=1,
-    angle_0=0) annotation (Placement(visible=true, transformation(
-        origin={53.2834,20},
-        extent={{-10.0,-10.0},{10.0,10.0}},
-        rotation=0)));
-  iPSL.Electrical.Branches.PwLinewithOpeningReceiving pwLinewithOpening1(
-    B=0.001/2,
-    G=0,
-    R=0.01,
-    X=0.1,
-    t1=8,
-    t2=8.1) annotation (Placement(visible=true, transformation(
-        origin={15,10},
-        extent={{-10.0,-10.0},{10.0,10.0}},
-        rotation=0)));
-  iPSL.Electrical.Branches.PwLine pwLine4(
-    B=0.001/2,
-    G=0,
-    R=0.01,
-    X=0.1) annotation (Placement(visible=true, transformation(
-        origin={15,25},
-        extent={{-10.0,-10.0},{10.0,10.0}},
-        rotation=0)));
-  iPSL.Electrical.Branches.PwLine pwLine3(
-    B=0.001/2,
-    G=0,
-    R=0.01,
-    X=0.1) annotation (Placement(visible=true, transformation(
-        origin={20,-25},
-        extent={{-10.0,-10.0},{10.0,10.0}},
-        rotation=0)));
-  iPSL.Electrical.Loads.PSAT.LOADPQ pwLoadPQ1(
-    P_0=0.08,
-    Q_0=0.06,
-    V_0=1,
-    angle_0=0) annotation (Placement(visible=true, transformation(
-        origin={60,-25},
-        extent={{-10.0,-10.0},{10.0,10.0}},
-        rotation=0)));
-  iPSL.Electrical.Branches.PwLine pwLine2(
-    B=0.001/2,
-    G=0,
-    R=0.01,
-    X=0.1) annotation (Placement(visible=true, transformation(
-        origin={-20,20},
-        extent={{-10.0,-10.0},{10.0,10.0}},
-        rotation=0)));
-  iPSL.Electrical.Branches.PwLine pwLine1(
-    B=0.001/2,
-    G=0,
-    R=0.01,
-    X=0.1) annotation (Placement(visible=true, transformation(
-        origin={-20,5},
-        extent={{-10.0,-10.0},{10.0,10.0}},
-        rotation=0)));
-  iPSL.Electrical.Events.PwFault pwFault(
-    X=0.001,
-    t1=3,
-    t2=3.1,
-    R=10) annotation (Placement(transformation(extent={{40,-55},{60,-35}})));
-  inner iPSL.Electrical.SystemBase SysData annotation (Placement(transformation(extent={{50,80},{75,100}})));
-  iPSL.Electrical.Machines.PSAT.FifthOrder.Order5_Type1 order5Type1_Inputs_Outputs(
+  extends Modelica.Icons.Example;
+
+  extends iPSL.Examples.BaseTest;
+  iPSL.Electrical.Machines.PSAT.Order5_Type1 order5Type1_Inputs_Outputs(
     Sn=370,
     Vn=200,
     ra=0.001,
     xd1=0.302,
     M=10,
-    D=0) annotation (Placement(transformation(extent={{-100,0},{-80,20}})));
+    D=0,
+    V_b=400,
+    V_0=1,
+    angle_0=0,
+    P_0=16.0352698692006,
+    Q_0=11.859436505981,
+    xd=1.9,
+    xq=1.7,
+    xq1=0.5,
+    Td10=8,
+    Tq10=0.8,
+    Tq20=0.02) annotation (Placement(visible = true, transformation(origin = {-42.5, -2.5}, extent = {{-12.5, -12.5}, {12.5, 12.5}}, rotation = 0)));
 equation
-  connect(pwLine4.n, pwLoadPQ2.p) annotation (Line(
-      visible=true,
-      origin={37.2125,23},
-      points={{-15.2125,2},{3.0708,2},{3.0708,8},{16.0709,8}}));
-  connect(pwLinewithOpening1.n, pwLine4.n) annotation (Line(
-      visible=true,
-      origin={22,17.5},
-      points={{0,-7.5},{0,7.5}}));
-  connect(pwLine4.p, pwLinewithOpening1.p) annotation (Line(
-      visible=true,
-      origin={8,17.5},
-      points={{0,7.5},{0,-7.5}}));
-  connect(pwLine3.n, pwLoadPQ1.p) annotation (Line(
-      visible=true,
-      origin={43.5,-24.5},
-      points={{-16.5,-0.5},{3.5,-0.5},{3.5,10.5},{16.5,10.5}}));
-  connect(pwLine1.p, pwLine2.p) annotation (Line(
-      points={{-27,5},{-27,20}},
-      color={0,0,255},
-      smooth=Smooth.None));
-  connect(pwLine1.n, pwLine2.n) annotation (Line(
-      points={{-13,5},{-13,20}},
-      color={0,0,255},
-      smooth=Smooth.None));
-  connect(pwLine2.n, pwLine4.p) annotation (Line(
-      points={{-13,20},{0,20},{0,25},{8,25}},
-      color={0,0,255},
-      smooth=Smooth.None));
-  connect(pwLine1.n, pwLine3.p) annotation (Line(
-      points={{-13,5},{0,5},{0,-25},{13,-25}},
-      color={0,0,255},
-      smooth=Smooth.None));
-  connect(pwFault.p, pwLine3.n) annotation (Line(
-      points={{38.3333,-45},{38.3333,-34.5},{27,-34.5},{27,-25}},
-      color={0,0,255},
-      smooth=Smooth.None));
-  connect(order5Type1_Inputs_Outputs.p, pwLine2.p) annotation (Line(points={{-79,10.0496},{-40,10.0496},{-40,20},{-27,20}}, color={0,0,255}));
-  connect(order5Type1_Inputs_Outputs.vf, order5Type1_Inputs_Outputs.vf0) annotation (Line(points={{-100,15},{-105,15},{-105,25},{-98,25},{-98,21}}, color={0,0,127}));
-  connect(order5Type1_Inputs_Outputs.pm, order5Type1_Inputs_Outputs.pm0) annotation (Line(points={{-100,5},{-105,5},{-105,-5},{-98,-5},{-98,-1}}, color={0,0,127}));
+  connect(order5Type1_Inputs_Outputs.vf0, order5Type1_Inputs_Outputs.vf) annotation(
+    Line(points = {{-50, 10}, {-50, 10}, {-50, 15}, {-70, 15}, {-70, 5}, {-55, 5}, {-55, 5}}, color = {0, 0, 127}));
+  connect(order5Type1_Inputs_Outputs.pm0, order5Type1_Inputs_Outputs.pm) annotation(
+    Line(points = {{-52.5, -16.25}, {-52.5, -15.75}, {-70, -15.75}, {-70, -7.25}, {-54, -7.25}}, color = {0, 0, 127}));
+  connect(order5Type1_Inputs_Outputs.p, bus.p) annotation(
+    Line(points = {{-29, -2}, {-14.5, -2}, {-14.5, 0}, {0, 0}}, color = {0, 0, 255}));
   annotation (
-    Diagram(coordinateSystem(
-        extent={{-148.5,-105},{148.5,105}},
-        preserveAspectRatio=false,
-        initialScale=0.1,
-        grid={5,5}), graphics={Text(
-          visible=true,
-          origin={-60,54.1417},
-          fillPattern=FillPattern.Solid,
-          extent={{-35.0,-5.8583},{35.0,5.8583}},
-          textString="SystemSbase=100 MVA",
-          fontName="Arial")}),
+    Diagram(coordinateSystem(extent = {{-148.5, -105}, {148.5, 105}}, preserveAspectRatio = false, initialScale = 0.1, grid = {5, 5})),
     experiment(StopTime=20),
     __Dymola_experimentSetupOutput,
     Documentation(revisions="<html>

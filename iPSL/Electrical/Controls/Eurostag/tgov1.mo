@@ -50,7 +50,7 @@ model tgov1
   parameter Real init_REF;
   parameter Real init_PMECH;
   parameter Real init_CM;
-  Modelica.Blocks.Math.Gain Gain_1( k=1/RR); //Eurostag Block number: 1
+  Modelica.Blocks.Math.Gain Gain_1 (k = 1 / RR); //Eurostag Block number: 1
   Modelica.Blocks.Math.MultiSum MultiSum_2( nu= 2, k={1, -1}); //Eurostag Block number: 2
   iPSL.NonElectrical.Eurostag.Math.ImSetPoint ImSetPoint_3( V=init_3); //Eurostag Block number: 3
   iPSL.NonElectrical.Continuous.SimpleLagLim SimpleLagLim_4( outMax=VMAX, K=1, T=T1, outMin=VMIN, y_start=init_4); //Eurostag Block number: 4

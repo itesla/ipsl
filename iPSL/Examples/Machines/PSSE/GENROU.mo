@@ -1,8 +1,9 @@
 within iPSL.Examples.Machines.PSSE;
 model GENROU
-  import iPSL;
+  extends Modelica.Icons.Example;
+
   extends iPSL.Examples.SMIBpartial;
-  Electrical.Machines.PSSE.GENROU.GENROU gENROE(
+  Electrical.Machines.PSSE.GENROU gENROE(
     M_b=100,
     Tpd0=5,
     Tppd0=0.07,

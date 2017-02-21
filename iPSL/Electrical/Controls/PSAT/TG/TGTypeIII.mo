@@ -21,17 +21,17 @@ model TGTypeIII "Hydro Turbine (Linear model) and Governor (Standard model)- con
   Real G "Gate position (pu)";
   Modelica.Blocks.Continuous.Integrator integrator(initType=Modelica.Blocks.Types.Init.NoInit, y_start=0) annotation (Placement(transformation(extent={{-8,56},{4,68}})));
   Modelica.Blocks.Math.Gain gain(k=1/(Tg*Tp)) annotation (Placement(transformation(extent={{-88,56},{-76,68}})));
-  Modelica.Blocks.Math.Gain gain1(k=1/Tp) annotation (Placement(transformation(
+  Modelica.Blocks.Math.Gain gain1(k= 1 / Tp) annotation (Placement(transformation(
         extent={{-6,-6},{6,6}},
         rotation=180,
         origin={-54,42})));
   Modelica.Blocks.Continuous.Integrator integrator1(initType=Modelica.Blocks.Types.Init.NoInit, y_start=0) annotation (Placement(transformation(extent={{-56,56},{-44,68}})));
   Modelica.Blocks.Math.Feedback feedback annotation (Placement(transformation(extent={{-72,56},{-60,68}})));
-  Modelica.Blocks.Math.Gain gain2(k=delta + sigma) annotation (Placement(transformation(
+  Modelica.Blocks.Math.Gain gain2(k = delta + sigma) annotation (Placement(transformation(
         extent={{-6,-6},{6,6}},
         rotation=180,
         origin={-42,82})));
-  Modelica.Blocks.Math.Gain gain3(k=sigma/Tr) annotation (Placement(transformation(
+  Modelica.Blocks.Math.Gain gain3(k = sigma / Tr) annotation (Placement(transformation(
         extent={{-6,-6},{6,6}},
         rotation=180,
         origin={-82,26})));
@@ -68,10 +68,7 @@ model TGTypeIII "Hydro Turbine (Linear model) and Governor (Standard model)- con
   Modelica.Blocks.Nonlinear.Limiter limiter(uMax=vmax, uMin=vmin) annotation (Placement(transformation(extent={{-28,56},{-16,68}})));
   Modelica.Blocks.Nonlinear.Limiter limiter1(uMax=gmax, uMin=gmin) annotation (Placement(transformation(extent={{14,56},{26,68}})));
   Modelica.Blocks.Math.Add add(k1=+1, k2=-1) annotation (Placement(transformation(extent={{-140,56},{-128,68}})));
-  Modelica.Blocks.Math.Add3 add3_1(
-    k1=-1,
-    k2=1,
-    k3=1) annotation (Placement(transformation(extent={{-110,56},{-98,68}})));
+  Modelica.Blocks.Math.Add3 add3_1(k1 = -1, k2 = 1, k3 = 1) annotation (Placement(transformation(extent={{-110,56},{-98,68}})));
   Modelica.Blocks.Math.Add add1 annotation (Placement(transformation(extent={{46,58},{58,70}})));
   Modelica.Blocks.Math.Add add2 annotation (Placement(transformation(extent={{126,56},{138,68}})));
   Modelica.Blocks.Sources.Constant const(k=P_0) annotation (Placement(transformation(extent={{0,78},{12,90}})));

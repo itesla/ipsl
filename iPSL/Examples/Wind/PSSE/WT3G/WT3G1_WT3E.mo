@@ -2,6 +2,8 @@ within iPSL.Examples.Wind.PSSE.WT3G;
 
 
 model WT3G1_WT3E
+  extends Modelica.Icons.UnderConstruction;
+
   constant Real pi=Modelica.Constants.pi;
   parameter Real V1=1.00000;
   parameter Real A1=0.0000;
@@ -61,7 +63,7 @@ model WT3G1_WT3E
     X=Xt2,
     G=0,
     B=0) annotation (Placement(transformation(extent={{38,-6},{58,14}})));
-  iPSL.Electrical.Machines.PSSE.GENCLS.GENCLS gENCLS2_1(
+  iPSL.Electrical.Machines.PSSE.GENCLS gENCLS2_1(
     V_0=V1,
     angle_0=A1,
     P_0=P1,
@@ -90,8 +92,8 @@ model WT3G1_WT3E
   iPSL.Electrical.Events.PwFault pwFault(
     R=0.5,
     X=0.5,
-    t1=1,
-    t2=1.5) annotation (Placement(transformation(extent={{32,-34},{48,-18}})));
+    startTime=1,
+    endTime=1.5) annotation (Placement(transformation(extent={{32,-34},{48,-18}})));
   iPSL.Electrical.SystemBase SysData annotation (Placement(transformation(extent={{-126,48},{-102,68}})));
   iPSL.Electrical.Wind.PSSE.WT3G.WT3G1 wT3G1_pt(
     eterm=V5,
@@ -180,7 +182,7 @@ equation
   connect(cSVGN1_1.V, wT3G1_pt.Iterm) annotation (Line(points={{-28.37,-38.07},{132,-38.07},{132,0},{126.2,0.1}}, color={0,0,127}));
   annotation (
     Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-140,-80},{160,100}})),
-    Icon(coordinateSystem(extent={{-140,-80},{160,100}})),
+    Icon(coordinateSystem(extent={{-100,-100},{100,100}})),
     Documentation(revisions="<html>
 <!--DISCLAIMER-->
 <p>Copyright 2015-2016 RTE (France), SmarTS Lab (Sweden), AIA (Spain) and DTU (Denmark)</p>

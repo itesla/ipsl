@@ -8,23 +8,12 @@ model PSS "Power system stabilizer"
   parameter Real init_PSS_Leadlag1=0 "initial output value";
   parameter Real init_PSS_Leadlag2=0 "initial output value";
   Modelica.Blocks.Interfaces.RealInput omega "Speed" annotation (Placement(transformation(extent={{-106,12},{-94,24}}), iconTransformation(extent={{-100,8},{-88,20}})));
-  iPSL.NonElectrical.Continuous.LeadLag Leadlag1(
-    K=1,
-    T1=T1,
-    T2=T2,
-    y_start=init_PSS_Leadlag1) annotation (Placement(transformation(extent={{-22,4},{-4,22}})));
-  iPSL.NonElectrical.Continuous.LeadLag Leadlag2(
-    K=1,
-    T1=T1,
-    T2=T2,
-    y_start=init_PSS_Leadlag2) annotation (Placement(transformation(extent={{4,4},{22,22}})));
+  iPSL.NonElectrical.Continuous.LeadLag Leadlag1(K = 1, T1 = T1, T2 = T2, y_start = init_PSS_Leadlag1) annotation(Placement(transformation(extent = {{-22, 4}, {-4, 22}})));
+  iPSL.NonElectrical.Continuous.LeadLag Leadlag2(K = 1, T1 = T1, T2 = T2, y_start = init_PSS_Leadlag2) annotation(Placement(transformation(extent = {{4, 4}, {22, 22}})));
   Modelica.Blocks.Interfaces.RealOutput Upss "PSS output" annotation (Placement(transformation(extent={{56,6},{68,18}}), iconTransformation(extent={{56,6},{68,18}})));
   Modelica.Blocks.Nonlinear.Limiter limit(uMin=-C, uMax=C) annotation (Placement(transformation(extent={{30,4},{48,22}})));
   Modelica.Blocks.Math.Gain imGain(k=Kp/Tw) annotation (Placement(transformation(extent={{-90,12},{-78,24}})));
-  iPSL.NonElectrical.Continuous.SimpleLag imSimpleLag(
-    K=1,
-    T=Tw,
-    y_start=0) annotation (Placement(transformation(extent={{-68,10},{-52,26}})));
+  iPSL.NonElectrical.Continuous.SimpleLag imSimpleLag(K = 1, T = Tw, y_start = 0) annotation(Placement(transformation(extent = {{-68, 10}, {-52, 26}})));
   Modelica.Blocks.Math.Add add(k1=-1) annotation (Placement(transformation(extent={{-46,4},{-28,22}})));
 equation
   connect(limit.y, Upss) annotation (Line(points={{48.9,13},{51.45,13},{51.45,12},{62,12}}, color={0,0,127}));

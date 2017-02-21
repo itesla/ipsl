@@ -41,8 +41,8 @@ model tgov1_Init
   parameter Real SN;
   parameter Real PN;
   parameter Real PNALT;
-  Modelica.Blocks.Math.Gain Gain_1( k=RR); //Eurostag Block number: 1
-  iPSL.NonElectrical.Eurostag.Math.ImMult5 ImMult5_2( nu= 2, a={1, 1}); //Eurostag Block number: 2
+  Modelica.Blocks.Math.Gain Gain_1 (k = RR); //Eurostag Block number: 1
+  iPSL.NonElectrical.Eurostag.Math.ImMult5 ImMult5_2 (nu = 2, a = {1, 1}); //Eurostag Block number: 2
   Modelica.Blocks.Interfaces.RealInput pin_OMEGA;
   Modelica.Blocks.Interfaces.RealInput pin_CM;
   Modelica.Blocks.Interfaces.RealOutput pin_REF; //isInitValue

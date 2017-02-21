@@ -5,17 +5,17 @@ model TwoWindingTapRatio
   parameter Real COD;
   inner parameter Real initialtapratio "initial tap ration";
   parameter Real angle_d "angel shift in degree";
-  parameter Real Vmax=1.1;
-  parameter Real Vmin=0.9;
-  parameter Real rmax=1.1;
-  parameter Real rmin=0.9;
-  parameter Real Ntap=33;
+  parameter Real Vmax = 1.1;
+  parameter Real Vmin = 0.9;
+  parameter Real rmax = 1.1;
+  parameter Real rmin = 0.9;
+  parameter Real Ntap = 33;
   //total tap position
-  parameter Real dV=0.001;
+  parameter Real dV = 0.001;
   //dead band
-  parameter Real tau=17.0;
+  parameter Real tau = 17.0;
   //regulator delay
-  parameter Real TC=5;
+  parameter Real TC = 5;
   //motor delay
   Connectors.PwPin P1 annotation (Placement(transformation(extent={{-104,2},{-84,22}}), iconTransformation(extent={{-104,2},{-84,22}})));
   Connectors.PwPin P2 annotation (Placement(transformation(extent={{78,6},{100,26}}), iconTransformation(extent={{80,6},{100,26}})));
@@ -52,7 +52,7 @@ model TwoWindingTapRatio
         origin={-2,41})));
   iPSL.Electrical.Branches.PSSE.Old_transformer.phaseShift phaseship(phase=0) annotation (Placement(transformation(extent={{4,-16},{58,14}})));
 protected
-  parameter Real angle=angle_d/180*pi "angel shift in rad";
+  parameter Real angle = angle_d / 180 * pi "angel shift in rad";
 protected
   Modelica.Blocks.Interfaces.RealOutput ti annotation (Placement(transformation(
         extent={{-10,-10},{10,10}},

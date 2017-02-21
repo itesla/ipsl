@@ -1,8 +1,9 @@
 within iPSL.Examples.Machines.PSSE;
 model GENROE
-  import iPSL;
+  extends Modelica.Icons.Example;
+
   extends iPSL.Examples.SMIBpartial;
-  Electrical.Machines.PSSE.GENROE.GENROE gENROE(
+  Electrical.Machines.PSSE.GENROE gENROE(
     M_b=100,
     Tpd0=5,
     Tppd0=0.07,
@@ -24,7 +25,7 @@ model GENROE
     Q_0=5.416582,
     Xppq=0.2,
     R_a=0,
-    Xpp=0.2) annotation (Placement(transformation(extent={{-100,-20},{-60,20}})));
+    Xpp=0.2) annotation (Placement(visible = true, transformation(extent = {{-100, -20}, {-60, 20}}, rotation = 0)));
 equation
   connect(gENROE.PMECH, gENROE.PMECH0) annotation (Line(points={{-99.6,10},{-108,10},{-108,26},{-50,26},{-50,-6},{-58.4,-6}}, color={0,0,127}));
   connect(gENROE.EFD, gENROE.EFD0) annotation (Line(points={{-99.6,-10},{-108,-10},{-108,-30},{-50,-30},{-50,-14},{-58.4,-14}}, color={0,0,127}));
