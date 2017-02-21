@@ -1,7 +1,9 @@
 within iPSL.Examples.Machines.PSAT;
 model InductiveMotorV_SIMBOpenline_Test
+  extends Modelica.Icons.Example;
 
-  iPSL.Electrical.Machines.PSAT.InductionMachine.MotorTypeV motorTypeI(
+
+  iPSL.Electrical.Machines.PSAT.MotorTypeV motorTypeV(
     Sup=0,
     V_0=1.0336,
     angle_0=-0.02173,
@@ -42,11 +44,11 @@ equation
       points={{-38.1667,-38},{-48,-38},{-48,-15.5},{-104.65,-15.5}},
       color={0,0,255},
       smooth=Smooth.None));
-  connect(pwLine2.p, motorTypeI.p) annotation (Line(
+  connect(pwLine2.p, motorTypeV.p) annotation (Line(
       points={{8.5,4},{26,4},{26,-16},{42.32,-16}},
       color={0,0,255},
       smooth=Smooth.None));
-  connect(pwLine1.p, motorTypeI.p) annotation (Line(
+  connect(pwLine1.p, motorTypeV.p) annotation (Line(
       points={{20.1667,-38},{26,-38},{26,-16},{42.32,-16}},
       color={0,0,255},
       smooth=Smooth.None));
