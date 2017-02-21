@@ -18,7 +18,7 @@ model Bus "Bus model 2014/03/10"
  
 equation
   v = Complex (p.vr, p.vi);
-  angle = ComplexMath.arg (v) * 180 / Modelica.Constants.pi;
+  angle = if (v == Complex (0)) then 0 else ComplexMath.arg (v) * 180 / Modelica.Constants.pi;
   V = ComplexMath.'abs' (v);
   p.ir = 0;
   p.ii = 0;
@@ -47,7 +47,7 @@ equation
           fillPattern=FillPattern.Solid,
           extent={{-39.0262,-16.7966},{39.0262,16.7966}},
           fontName="Arial",
-          textString=DynamicSelect("0.0", String(anglevdeg, significantDigits=3)),
+          textString=DynamicSelect("0.0", String(angle, significantDigits=3)),
           lineColor={238,46,47})}),
     Diagram(coordinateSystem(
         extent={{-148.5,-105.0},{148.5,105.0}},
