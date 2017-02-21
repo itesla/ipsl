@@ -1,5 +1,6 @@
 within iPSL.Examples.Wind;
 model PSAT_WT_Test
+  extends Modelica.Icons.Example;
   iPSL.Electrical.Wind.PSAT.PSAT_Type_3.PSAT_WT dfig_Turbine1(
     V_b=1,
     angle_0=0.00161587015139445,
@@ -31,7 +32,7 @@ model PSAT_WT_Test
         origin={25.0,40.0},
         extent={{-10.0,-10.0},{10.0,10.0}},
         rotation=0)));
-  iPSL.Electrical.Buses.InfiniteBus infiniteBus1(V=1, angle=0)
+  iPSL.Electrical.Buses.InfiniteBus infiniteBus1(V_0=1, angle_0=0)
     annotation (Placement(visible=true, transformation(
         origin={-28.2108,15.0},
         extent={{-10.0,-10.0},{10.0,10.0}},

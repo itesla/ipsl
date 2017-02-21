@@ -2,7 +2,8 @@ within iPSL.Examples.Wind.PSSE.WT4G;
 
 
 model WT4G1
-  import iPSL;
+  extends Modelica.Icons.Example;
+  
   constant Real pi=Modelica.Constants.pi;
   parameter Real V1=1.00000;
   parameter Real A1=-1.570655e-005;
@@ -28,7 +29,7 @@ model WT4G1
     X=X1,
     G=0,
     B=B1/2) annotation (Placement(transformation(extent={{30,-30},{50,-10}})));
-  iPSL.Electrical.Machines.PSSE.GENCLS.GENCLS gENCLS2_1(
+  iPSL.Electrical.Machines.PSSE.GENCLS gENCLS2_1(
     V_0=V1,
     angle_0=A1,
     P_0=P1,
@@ -62,8 +63,8 @@ model WT4G1
   iPSL.Electrical.Events.PwFault pwFault(
     R=0.5,
     X=0.5,
-    t1=1,
-    t2=1.5) annotation (Placement(transformation(extent={{20,-60},{40,-40}})));
+    startTime=1,
+    endTime=1.5) annotation (Placement(transformation(extent={{20,-60},{40,-40}})));
   inner iPSL.Electrical.SystemBase SysData(S_b=100, fn=60) annotation (Placement(transformation(extent={{-100,80},{-48,100}})));
   iPSL.Electrical.Buses.Bus GEN annotation (Placement(transformation(extent={{-40,-10},{-20,10}})));
   iPSL.Electrical.Buses.Bus BUS1 annotation (Placement(transformation(extent={{0,-10},{20,10}})));

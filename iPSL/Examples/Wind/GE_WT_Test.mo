@@ -1,10 +1,12 @@
 within iPSL.Examples.Wind;
 model GE_WT_Test
+  extends Modelica.Icons.Example;
+
   iPSL.Electrical.Wind.GE.Type_3.GE_WT GE_WT_init1 annotation (Placement(visible=true, transformation(
         origin={75.0,1.7487},
         extent={{-10.0,-10.0},{10.0,10.0}},
         rotation=0)));
-  iPSL.Electrical.Buses.InfiniteBus infBus2(angle=-0.000216626610049175, V=1.05999999985841)
+  iPSL.Electrical.Buses.InfiniteBus infBus2(angle_0=-0.000216626610049175, V_0=1.05999999985841)
     annotation (Placement(visible=true, transformation(
         origin={-42.5798,1.9703},
         extent={{-10.0,-10.0},{10.0,10.0}},
@@ -55,8 +57,8 @@ model GE_WT_Test
         rotation=0)));
   iPSL.Electrical.Events.PwFault pwFault1(
     R=1/99999.999,
-    t1=10,
-    t2=10.1,
+    startTime=10,
+    endTime=10.1,
     X=1/99999.999) annotation (Placement(visible=true, transformation(
         origin={0.9428,15.0},
         extent={{-14.0572,-11.7143},{14.0572,11.7143}},
