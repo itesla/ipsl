@@ -1,5 +1,6 @@
 within iPSL.Examples.FACTS;
 model StatcomCode_Test
+  extends Modelica.Icons.Example;
   import Modelica.Constants.pi;
 
   iPSL.Electrical.Branches.PwLine pwLine4(
@@ -18,7 +19,7 @@ model StatcomCode_Test
         origin={-15,-17},
         extent={{-10.0,-10.0},{10.0,10.0}},
         rotation=0)));
-  iPSL.Electrical.Machines.PSAT.SecondOrder.Order2 Syn2(
+  iPSL.Electrical.Machines.PSAT.Order2 Syn2(
     D=1,
     Sn=370,
     V_0=1.027606413803688,
@@ -49,7 +50,7 @@ model StatcomCode_Test
         origin={55,-17},
         extent={{-10.0,-10.0},{10.0,10.0}},
         rotation=0)));
-  iPSL.Electrical.Machines.PSAT.SecondOrder.Order2 order2_Inputs_Outputs(
+  iPSL.Electrical.Machines.PSAT.Order2 order2_Inputs_Outputs(
     Sn=370,
     D=5,
     V_b=400,
@@ -159,7 +160,7 @@ equation
   connect(Syn2.vf0, Syn2.vf) annotation (Line(points={{135,-17.6},{135,-26},{152,-26},{152,-8},{138,-8}}, color={0,0,127}));
   annotation (
     Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-160,-100},{160,100}})),
-    Icon(coordinateSystem(extent={{-160,-100},{160,100}})),
+    Icon(coordinateSystem(extent={{-100,-100},{100,100}})),
     Documentation(info="<html>
 <table cellspacing=\"2\" cellpadding=\"1\" border=\"1\"><tr>
 <td><p>Reference</p></td>

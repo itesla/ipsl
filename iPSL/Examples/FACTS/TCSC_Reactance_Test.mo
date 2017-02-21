@@ -1,6 +1,7 @@
 within iPSL.Examples.FACTS;
 model TCSC_Reactance_Test
-  iPSL.Electrical.Machines.PSAT.SecondOrder.Order2 Gen1(
+  extends Modelica.Icons.Example;
+  iPSL.Electrical.Machines.PSAT.Order2 Gen1(
     Sn=370,
     P_0=0.080101913348342,
     Q_0=0.060948619430301,
@@ -28,7 +29,7 @@ model TCSC_Reactance_Test
   Modelica.Blocks.Math.Add3 add3_1(
     k3=0,
     k1=1,
-    k2=1) annotation (Placement(transformation(extent={{-58,-10},{-38,10}})));
+    k2=1) annotation (Placement(visible = true, transformation(extent = {{-60, -10}, {-40, 10}}, rotation = 0)));
   iPSL.Electrical.Branches.PwLine pwLine1(
     R=0.01,
     X=0.1,
@@ -37,39 +38,30 @@ model TCSC_Reactance_Test
   iPSL.Electrical.Loads.PSAT.LOADPQ_variation lOADPQ(
     P_0=0.08,
     Q_0=0.06,
-    Q2=0,
-    Q3=0,
-    t1=2,
-    t2=10,
-    t3=12,
-    t4=20,
-    P2=0.01,
-    P3=-0.01) annotation (Placement(transformation(extent={{96,-10},{116,10}})));
+    t_start_1=2,
+    t_end_1=10,
+    t_start_2=12,
+    t_end_2=20,
+    dP1=0,
+    dQ1=0.01,
+    dP2=0,
+    dQ2=-0.01) annotation (Placement(visible = true, transformation(origin = {106, 0}, extent = {{-10, -10}, {10, 10}}, rotation = 90)));
   iPSL.Electrical.Controls.PSAT.FACTS.TCSC.TCSCReactance tCSCReactance annotation (Placement(transformation(extent={{26,-10},{46,10}})));
   inner iPSL.Electrical.SystemBase SysData annotation (Placement(transformation(extent={{-100,60},{-76,80}})));
 equation
-  connect(pulse1.y, add3_1.u2) annotation (Line(
-      points={{-97,-16},{-68,-16},{-68,0},{-60,0}},
-      color={0,0,127},
-      smooth=Smooth.None));
-  connect(pulse.y, add3_1.u1) annotation (Line(
-      points={{-95,20},{-70,20},{-70,8},{-60,8}},
-      color={0,0,127},
-      smooth=Smooth.None));
+  connect(Gen1.vf0, add3_1.u3) annotation(
+    Line(points = {{-20, 11}, {4, 11}, {4, 22}, {-36, 22}, {-36, -20}, {-62, -20}, {-62, -8}}, color = {0, 0, 127}));
+  connect(add3_1.y, Gen1.vf) annotation(
+    Line(points = {{-39, 0}, {-32, 0}, {-32, 5}, {-22, 5}}, color = {0, 0, 127}));
+  connect(pulse.y, add3_1.u1) annotation(
+    Line(points = {{-95, 20}, {-70, 20}, {-70, 8}, {-62, 8}}, color = {0, 0, 127}));
+  connect(pulse1.y, add3_1.u2) annotation(
+    Line(points = {{-97, -16}, {-68, -16}, {-68, 0}, {-62, 0}}, color = {0, 0, 127}));
   connect(pwLine1.n, lOADPQ.p) annotation (Line(
-      points={{79,0},{92,0},{92,11},{106,11}},
-      color={0,0,255},
-      smooth=Smooth.None));
-  connect(add3_1.y, Gen1.vf) annotation (Line(
-      points={{-37,0},{-32,0},{-32,5},{-22,5}},
-      color={0,0,127},
-      smooth=Smooth.None));
+      points = {{79, 0}, {95, 0}},
+      color={0,0,255}));
   connect(Gen1.pm0, Gen1.pm) annotation (Line(
       points={{-20,-11},{8,-11},{8,-20},{-32,-20},{-32,-5},{-22,-5}},
-      color={0,0,127},
-      smooth=Smooth.None));
-  connect(Gen1.vf0, add3_1.u3) annotation (Line(
-      points={{-20,11},{4,11},{4,22},{-36,22},{-36,-20},{-60,-20},{-60,-8}},
       color={0,0,127},
       smooth=Smooth.None));
   connect(tCSCReactance.n, pwLine1.p) annotation (Line(
@@ -82,7 +74,7 @@ equation
       smooth=Smooth.None));
   annotation (
     Diagram(coordinateSystem(preserveAspectRatio=true, extent={{-140,-100},{120,100}}), graphics),
-    Icon(coordinateSystem(extent={{-140,-100},{120,100}})),
+    Icon(coordinateSystem(extent={{-100,-100},{100,100}})),
     Documentation(info="<html>
 <table cellspacing=\"1\" cellpadding=\"1\" border=\"1\"><tr>
 <td><p>Reference</p></td>
