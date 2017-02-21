@@ -107,11 +107,7 @@ model InputSelectorEpsilon
 </html>"));
   end Inputselectorfunction;
 algorithm
-  k := Inputselectorfunction(
-    vd,
-    id,
-    dv,
-    di);
+  k := Inputselectorfunction(vd, id, dv, di);
   annotation (
     Icon(coordinateSystem(
         extent={{-100.0,-100.0},{100.0,100.0}},

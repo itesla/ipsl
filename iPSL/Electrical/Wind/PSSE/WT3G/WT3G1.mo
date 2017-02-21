@@ -11,7 +11,31 @@ model WT3G1
   parameter Real P_rated "Turbine MW rating, not used in the equation";
   parameter Complex Zs(re=0, im=X_eq) "Equivalent impedance (ZSORCE)" annotation (Dialog(group="Power flow data"));
   parameter Real M_b=100 "Machine base power (MVA)" annotation (Dialog(group="Power flow data"));
-
+  Real VT(start = V_0) "Bus voltage magnitude";
+  Real anglev(start = anglev_rad) "Bus voltage angle";
+  Real VY(start = 0) "y-axis terminal voltage";
+  Real VX(start = V_0) "x-axis terminal voltage";
+  Complex Is "Equivalent internal current source";
+  iPSL.Connectors.PwPin p(vr(start = vr0), vi(start = vi0), ir(start = ir1), ii(start = ii1)) annotation(Placement(transformation(extent = {{100, -10}, {120, 10}}), iconTransformation(extent = {{100, -10}, {120, 10}})));
+  Modelica.Blocks.Continuous.Integrator imIntegrator(k = wbase, y_start = anglev_rad, initType = Modelica.Blocks.Types.Init.InitialOutput) annotation(Placement(transformation(extent = {{50, -30}, {70, -10}})));
+  Modelica.Blocks.Continuous.LimIntegrator imIntegrator1(outMin = -P_llmax, outMax = P_llmax, y_start = 0, initType = Modelica.Blocks.Types.Init.InitialOutput, k = K_ipll) annotation(Placement(transformation(extent = {{-40, 0}, {-20, 20}})));
+  iPSL.NonElectrical.Continuous.SimpleLag imSimpleLag(K = 1, T = 0.02, y_start = Eqcmd0) annotation(Placement(transformation(extent = {{-60, 70}, {-40, 90}})));
+  iPSL.NonElectrical.Continuous.SimpleLag imSimpleLag1(K = 1, T = 0.02, y_start = Ix0) annotation(Placement(transformation(extent = {{-60, 30}, {-40, 50}})));
+  Modelica.Blocks.Math.Gain imGain(k = -1 / X_eq) annotation(Placement(transformation(extent = {{-20, 70}, {0, 90}})));
+  Modelica.Blocks.Interfaces.RealOutput Iy(start = Iy0) annotation(Placement(transformation(extent = {{20, 70}, {40, 90}}), iconTransformation(extent = {{100, -100}, {120, -80}})));
+  Modelica.Blocks.Interfaces.RealOutput Ix(start = Ix0) annotation(Placement(transformation(extent = {{20, 30}, {40, 50}}), iconTransformation(extent = {{100, -70}, {120, -50}})));
+  Modelica.Blocks.Interfaces.RealOutput Iterm(start = Iy0) annotation(Placement(transformation(extent = {{98, 60}, {118, 80}}), iconTransformation(extent = {{-100, -40}, {-120, -20}})));
+  Modelica.Blocks.Interfaces.RealInput Eqcmd(start = Eqcmd0) annotation(Placement(transformation(extent = {{-110, 70}, {-90, 90}}), iconTransformation(extent = {{-10, -10}, {10, 10}}, rotation = 0, origin = {-90, 70})));
+  Modelica.Blocks.Interfaces.RealInput Ipcmd(start = Ipcmd0) annotation(Placement(transformation(extent = {{-110, 30}, {-90, 50}}), iconTransformation(extent = {{-10, -10}, {10, 10}}, rotation = 0, origin = {-90, 30})));
+  Modelica.Blocks.Math.Gain imGain1(k = K_pll / wbase) annotation(Placement(transformation(extent = {{-80, -30}, {-60, -10}})));
+  Modelica.Blocks.Math.Add add annotation(Placement(transformation(extent = {{-10, -30}, {10, -10}})));
+  Modelica.Blocks.Nonlinear.Limiter imLimited(uMin = -P_llmax, uMax = P_llmax) annotation(Placement(transformation(extent = {{20, -30}, {40, -10}})));
+  Modelica.Blocks.Interfaces.RealOutput delta(start = anglev_rad) annotation(Placement(transformation(extent = {{80, -30}, {100, -10}}), iconTransformation(extent = {{-10, -10}, {10, 10}}, rotation = 0, origin = {110, -30})));
+  Modelica.Blocks.Interfaces.RealOutput V = VT annotation(Placement(transformation(extent = {{100, 20}, {120, 40}}), iconTransformation(extent = {{-100, -80}, {-120, -60}})));
+  Modelica.Blocks.Interfaces.RealOutput P "On machine base" annotation(Placement(transformation(extent = {{100, -40}, {120, -20}}), iconTransformation(extent = {{-10, -10}, {10, 10}}, rotation = 0, origin = {110, 70})));
+  Modelica.Blocks.Interfaces.RealOutput Q annotation(Placement(transformation(extent = {{100, -80}, {120, -60}}), iconTransformation(extent = {{-10, -10}, {10, 10}}, rotation = 0, origin = {110, 30})));
+  Modelica.Blocks.Interfaces.RealOutput ipcmd0 = Ipcmd0 annotation(Placement(transformation(extent = {{10, -10}, {-10, 10}}, rotation = -90, origin = {-50, 110}), iconTransformation(extent = {{-10, -10}, {10, 10}}, rotation = 90, origin = {-10, 110})));
+  Modelica.Blocks.Interfaces.RealOutput eqcmd0 = Eqcmd0 annotation(Placement(transformation(extent = {{10, -10}, {-10, 10}}, rotation = -90, origin = {-70, 108}), iconTransformation(extent = {{-10, -10}, {10, 10}}, rotation = 90, origin = {-50, 110})));
 protected
   parameter Real wbase=2*pi*fn "System base speed";
   parameter Real p0=P_0/M_b "initial value of bus active power in p.u. machinebase";
@@ -33,82 +57,6 @@ protected
   parameter Real anglev_rad=angle_0*pi/180 "initial value of bus anglev in rad";
   parameter Real VX0=cos(anglev_rad)*vr0 + sin(anglev_rad)*vi0;
   parameter Real VY0=(-sin(anglev_rad)*vr0) + cos(anglev_rad)*vi0;
-public
-  Real VT(start=V_0) "Bus voltage magnitude";
-  Real anglev(start=anglev_rad) "Bus voltage angle";
-  Real VY(start=0) "y-axis terminal voltage";
-  Real VX(start=V_0) "x-axis terminal voltage";
-  Complex Is "Equivalent internal current source";
-  iPSL.Connectors.PwPin p(
-    vr(start=vr0),
-    vi(start=vi0),
-    ir(start=ir1),
-    ii(start=ii1)) annotation (Placement(transformation(extent={{100,-10},{120,10}}), iconTransformation(extent={{100,-10},{120,10}})));
-  Modelica.Blocks.Continuous.Integrator imIntegrator(
-    k=wbase,
-    y_start=anglev_rad,
-    initType=Modelica.Blocks.Types.Init.InitialOutput) annotation (Placement(transformation(extent={{50,-30},{70,-10}})));
-  Modelica.Blocks.Continuous.LimIntegrator imIntegrator1(
-    outMin=-P_llmax,
-    outMax=P_llmax,
-    y_start=0,
-    initType=Modelica.Blocks.Types.Init.InitialOutput,
-    k=K_ipll) annotation (Placement(transformation(extent={{-40,0},{-20,20}})));
-  iPSL.NonElectrical.Continuous.SimpleLag imSimpleLag(
-    K=1,
-    T=0.02,
-    y_start=Eqcmd0) annotation (Placement(transformation(extent={{-60,70},{-40,90}})));
-  iPSL.NonElectrical.Continuous.SimpleLag imSimpleLag1(
-    K=1,
-    T=0.02,
-    y_start=Ix0) annotation (Placement(transformation(extent={{-60,30},{-40,50}})));
-  Modelica.Blocks.Math.Gain imGain(k=-1/X_eq) annotation (Placement(transformation(extent={{-20,70},{0,90}})));
-  Modelica.Blocks.Interfaces.RealOutput Iy(start=Iy0) annotation (Placement(transformation(extent={{20,70},{40,90}}), iconTransformation(extent={{100,-100},{120,-80}})));
-  Modelica.Blocks.Interfaces.RealOutput Ix(start=Ix0) annotation (Placement(transformation(extent={{20,30},{40,50}}),iconTransformation(extent={{100,-70},{120,-50}})));
-  Modelica.Blocks.Interfaces.RealOutput Iterm(start=Iy0) annotation (Placement(transformation(extent={{98,60},{118,80}}), iconTransformation(extent={{-100,-40},{-120,-20}})));
-  Modelica.Blocks.Interfaces.RealInput Eqcmd(start=Eqcmd0)
-    annotation (Placement(transformation(extent={{-110,70},{-90,90}}), iconTransformation(
-        extent={{-10,-10},{10,10}},
-        rotation=0,
-        origin={-90,70})));
-  Modelica.Blocks.Interfaces.RealInput Ipcmd(start=Ipcmd0)
-    annotation (Placement(transformation(extent={{-110,30},{-90,50}}), iconTransformation(
-        extent={{-10,-10},{10,10}},
-        rotation=0,
-        origin={-90,30})));
-  Modelica.Blocks.Math.Gain imGain1(k=K_pll/wbase) annotation (Placement(transformation(extent={{-80,-30},{-60,-10}})));
-  Modelica.Blocks.Math.Add add annotation (Placement(transformation(extent={{-10,-30},{10,-10}})));
-  Modelica.Blocks.Nonlinear.Limiter imLimited(uMin=-P_llmax, uMax=P_llmax) annotation (Placement(transformation(extent={{20,-30},{40,-10}})));
-  Modelica.Blocks.Interfaces.RealOutput delta(start=anglev_rad)
-    annotation (Placement(transformation(extent={{80,-30},{100,-10}}), iconTransformation(
-        extent={{-10,-10},{10,10}},
-        rotation=0,
-        origin={110,-30})));
-  Modelica.Blocks.Interfaces.RealOutput V=VT annotation (Placement(transformation(extent={{100,20},{120,40}}),iconTransformation(extent={{-100,-80},{-120,-60}})));
-  Modelica.Blocks.Interfaces.RealOutput P "On machine base"
-    annotation (Placement(transformation(extent={{100,-40},{120,-20}}), iconTransformation(
-        extent={{-10,-10},{10,10}},
-        rotation=0,
-        origin={110,70})));
-  Modelica.Blocks.Interfaces.RealOutput Q
-    annotation (Placement(transformation(extent={{100,-80},{120,-60}}), iconTransformation(
-        extent={{-10,-10},{10,10}},
-        rotation=0,
-        origin={110,30})));
-  Modelica.Blocks.Interfaces.RealOutput ipcmd0=Ipcmd0 annotation (Placement(transformation(
-        extent={{10,-10},{-10,10}},
-        rotation=-90,
-        origin={-50,110}), iconTransformation(
-        extent={{-10,-10},{10,10}},
-        rotation=90,
-        origin={-10,110})));
-  Modelica.Blocks.Interfaces.RealOutput eqcmd0=Eqcmd0 annotation (Placement(transformation(
-        extent={{10,-10},{-10,10}},
-        rotation=-90,
-        origin={-70,108}), iconTransformation(
-        extent={{-10,-10},{10,10}},
-        rotation=90,
-        origin={-50,110})));
 protected
   Modelica.Blocks.Interfaces.RealInput Vy annotation (Placement(transformation(extent={{-110,-30},{-90,-10}}),iconTransformation(extent={{-118,-40},{-96,-18}})));
 initial equation
