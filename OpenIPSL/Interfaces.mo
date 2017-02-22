@@ -1,26 +1,21 @@
-within OpenIPSL.Electrical.Banks.PSSE;
-model Shunt
-  parameter Real G "(p.u.) on system base";
-  parameter Real B "(p.u.) on system base";
-  Complex I;
-  Complex V;
-  Real v;
-  Complex S;
-  OpenIPSL.Interfaces.PwPin p annotation (Placement(transformation(extent={{-14,66},{6,86}})));
-equation
-  v = sqrt(p.vr^2 + p.vi^2);
-  I = Complex(p.ir, p.ii);
-  V = Complex(p.vr, p.vi);
-  I = Complex(G, B)*V;
-  S = Complex(p.vr, p.vi)*Complex(p.ir, -p.ii) annotation (Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,100}}), graphics), Icon(coordinateSystem(preserveAspectRatio=
-            false, extent={{-100,-100},{100,100}}), graphics={Rectangle(extent={{-66,72},{66,-82}}, lineColor={0,0,255}),Text(
-          extent={{-42,52},{42,-66}},
-          lineColor={0,0,255},
-          textStyle={TextStyle.Bold},
-          textString="Y")}));
-  annotation (Documentation(info="<html>
-Shunt model from Nordic44 system developed by Giuseppe.
-</html>", revisions="<html>
+within OpenIPSL;
+package Interfaces
+  "Package for interface models used in this library. "
+  extends Modelica.Icons.InterfacesPackage;
+  connector PwPin "connector for electrical blocks treating voltage and current as complex variables"
+    Real vr;
+    // real part of the voltage
+    Real vi;
+    // imaginary part of the voltage
+    flow Real ir;
+    // real part of the current
+    flow Real ii;
+    // imaginary part of the current
+    annotation (Icon(graphics={Rectangle(
+            extent={{-100,98},{100,-102}},
+            lineColor={0,0,255},
+            fillColor={0,0,255},
+            fillPattern=FillPattern.Solid)}), Documentation(revisions="<html>
 <!--DISCLAIMER-->
 <p>OpenIPSL:</p>
 <p>Copyright 2016 SmarTS Lab (Sweden)</p>
@@ -47,4 +42,5 @@ Shunt model from Nordic44 system developed by Giuseppe.
 <p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
 </html>
 "));
-end Shunt;
+  end PwPin;
+end Interfaces;

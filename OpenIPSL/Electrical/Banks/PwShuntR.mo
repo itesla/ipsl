@@ -1,6 +1,6 @@
 within OpenIPSL.Electrical.Banks;
 model PwShuntR "Shunt inductor"
-  OpenIPSL.Connectors.PwPin p annotation (Placement(transformation(extent={{-10,40},{10,60}}), iconTransformation(extent={{-10,40},{10,60}})));
+  OpenIPSL.Interfaces.PwPin p annotation (Placement(transformation(extent={{-10,40},{10,60}}), iconTransformation(extent={{-10,40},{10,60}})));
   constant Real pi=Modelica.Constants.pi;
   parameter Real Qnom=75 "Reactive power produced by the shunt inductor under 1 p.u voltage, -Mvar";
   parameter Real Vbase=138 "Base volatage of the bus, kV";

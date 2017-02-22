@@ -4,7 +4,7 @@ model GENCLS
   import Modelica.Constants.eps;
 
   extends OpenIPSL.Electrical.Essentials.pfComponent;
-  OpenIPSL.Connectors.PwPin p(
+  OpenIPSL.Interfaces.PwPin p(
     vr(start=vr0),
     vi(start=vi0),
     ir(start=ir0),

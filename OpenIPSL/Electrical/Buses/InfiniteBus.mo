@@ -1,7 +1,7 @@
 within OpenIPSL.Electrical.Buses;
 model InfiniteBus "PSAT Infinite Bus"
   extends OpenIPSL.Electrical.Essentials.pfComponent;
-  OpenIPSL.Connectors.PwPin p annotation (Placement(
+  OpenIPSL.Interfaces.PwPin p annotation (Placement(
       visible=true,
       transformation(
         origin={160.0,-0.0},

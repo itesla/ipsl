@@ -1,6 +1,6 @@
 within OpenIPSL.Electrical.Banks;
 model PwCapacitorBank "Capacitor Bank with Bank.2013"
-  OpenIPSL.Connectors.PwPin p annotation (Placement(transformation(extent={{0,60},{20,80}}), iconTransformation(extent={{0,60},{20,80}})));
+  OpenIPSL.Interfaces.PwPin p annotation (Placement(transformation(extent={{0,60},{20,80}}), iconTransformation(extent={{0,60},{20,80}})));
   parameter Real nsteps "number of steps";
   parameter Real G=0;
   parameter Real B=0;

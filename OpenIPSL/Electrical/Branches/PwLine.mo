@@ -5,8 +5,8 @@ model PwLine "Model for a transmission Line based on the pi-equivalent circuit"
   import Modelica.ComplexMath.real;
   import Modelica.ComplexMath.imag;
   import Modelica.ComplexMath.j;
-  OpenIPSL.Connectors.PwPin p annotation (Placement(transformation(extent={{-80,-10},{-60,10}}), iconTransformation(extent={{-80,-10},{-60,10}})));
-  OpenIPSL.Connectors.PwPin n annotation (Placement(transformation(extent={{60,-10},{80,10}}), iconTransformation(extent={{60,-10},{80,10}})));
+  OpenIPSL.Interfaces.PwPin p annotation (Placement(transformation(extent={{-80,-10},{-60,10}}), iconTransformation(extent={{-80,-10},{-60,10}})));
+  OpenIPSL.Interfaces.PwPin n annotation (Placement(transformation(extent={{60,-10},{80,10}}), iconTransformation(extent={{60,-10},{80,10}})));
   parameter Real R "Resistance (pu)" annotation (Dialog(group="Line parameters"));
   parameter Real X "Reactance (pu)" annotation (Dialog(group="Line parameters"));
   parameter Real G "Shunt half conductance (pu)" annotation (Dialog(group="Line parameters"));

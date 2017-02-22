@@ -87,7 +87,7 @@ model ElecBlk
   Real iqs(start=iqs0, fixed=false) "stator current, in dq";
   Real vdr(start=vdr0, fixed=false) "rotor voltage in dq";
   Real vqr(start=vqr0, fixed=false) "rotor voltage in dq";
-  OpenIPSL.Connectors.PwPin pin annotation (Placement(
+  OpenIPSL.Interfaces.PwPin pin annotation (Placement(
       visible=true,
       transformation(
         origin={-158.3073,1.6927},

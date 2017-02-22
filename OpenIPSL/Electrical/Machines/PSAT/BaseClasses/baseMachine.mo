@@ -11,7 +11,7 @@ partial model baseMachine
   parameter Real D "Damping coefficient" annotation (Dialog(group="Machine parameters"));
   //Initialization
   //Initialization of currents and voltages
-  OpenIPSL.Connectors.PwPin p(
+  OpenIPSL.Interfaces.PwPin p(
     vr(start=vr0),
     vi(start=vi0),
     ir(start=ir0),

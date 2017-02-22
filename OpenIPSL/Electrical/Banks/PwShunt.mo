@@ -1,6 +1,6 @@
 within OpenIPSL.Electrical.Banks;
 model PwShunt "Thyristor controlled Shunt reactor/capacitor"
-  OpenIPSL.Connectors.PwPin p annotation (Placement(transformation(extent={{-8,44},{12,64}}), iconTransformation(extent={{-10,42},{10,62}})));
+  OpenIPSL.Interfaces.PwPin p annotation (Placement(transformation(extent={{-8,44},{12,64}}), iconTransformation(extent={{-10,42},{10,62}})));
   Modelica.Blocks.Interfaces.RealInput Q "Reactive power produced by the shunt (pu)" annotation (Placement(transformation(extent={{-62,-2},{-42,18}}), iconTransformation(extent={{-40,0},{-58,18}})));
   constant Real pi=Modelica.Constants.pi;
   parameter Real fn=50 "Frequency rating, Hz";

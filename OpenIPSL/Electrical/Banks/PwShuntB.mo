@@ -5,7 +5,7 @@ model PwShuntB
   Complex V;
   Real v;
   Complex S;
-  OpenIPSL.Connectors.PwPin p annotation (Placement(transformation(extent={{-14,66},{6,86}})));
+  OpenIPSL.Interfaces.PwPin p annotation (Placement(transformation(extent={{-14,66},{6,86}})));
 equation
   v = sqrt(p.vr^2 + p.vi^2);
   I = Complex(p.ir, p.ii);

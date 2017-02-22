@@ -41,7 +41,7 @@ model GE_WT
   parameter Real Kl=56.6;
   Real P "Active Power produced in SYS_base";
   Real Q "Reactive Power produced in SYS_base";
-  OpenIPSL.Connectors.PwPin pwPin1 annotation (Placement(
+  OpenIPSL.Interfaces.PwPin pwPin1 annotation (Placement(
       visible=true,
       transformation(
         origin={-77.9122,32.2584},

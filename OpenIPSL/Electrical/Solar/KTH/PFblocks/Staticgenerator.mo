@@ -27,7 +27,7 @@ model Staticgenerator
         origin={-120.0,20.0},
         extent={{-20.0,-20.0},{20.0,20.0}},
         rotation=0)));
-  OpenIPSL.Connectors.PwPin p(vr(start=v0*cos(anglev0)), vi(start=v0*sin(anglev0))) annotation (Placement(
+  OpenIPSL.Interfaces.PwPin p(vr(start=v0*cos(anglev0)), vi(start=v0*sin(anglev0))) annotation (Placement(
       visible=true,
       transformation(
         origin={147.2097,10.0},

@@ -26,7 +26,7 @@ partial model baseMachine
   parameter Real S12 "Saturation factor at 1.2 pu" annotation (Dialog(group="Machine parameters"));
   parameter Real R_a=0 "amature resistance" annotation (Dialog(group="Machine parameters"));
   //Initialization
-  OpenIPSL.Connectors.PwPin p(
+  OpenIPSL.Interfaces.PwPin p(
     vr(start=vr0),
     vi(start=vi0),
     ir(start=ir0),

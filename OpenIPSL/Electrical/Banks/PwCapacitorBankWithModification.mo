@@ -1,7 +1,7 @@
 within OpenIPSL.Electrical.Banks;
 model PwCapacitorBankWithModification "Capacitor Bank with Bank modification at time t1.
               2014/03/10"
-  OpenIPSL.Connectors.PwPin p annotation (Placement(transformation(extent={{0,60},{20,80}}), iconTransformation(extent={{0,60},{20,80}})));
+  OpenIPSL.Interfaces.PwPin p annotation (Placement(transformation(extent={{0,60},{20,80}}), iconTransformation(extent={{0,60},{20,80}})));
   parameter Real nsteps "number of steps";
   parameter Real Go "active losses (pu) in each element";
   parameter Real Bo "reactive power (pu) in each element";

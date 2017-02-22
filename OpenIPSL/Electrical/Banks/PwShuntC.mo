@@ -1,6 +1,6 @@
 within OpenIPSL.Electrical.Banks;
 model PwShuntC "Shunt capacitor"
-  OpenIPSL.Connectors.PwPin p annotation (Placement(transformation(extent={{-8,44},{12,64}}), iconTransformation(extent={{-10,42},{10,62}})));
+  OpenIPSL.Interfaces.PwPin p annotation (Placement(transformation(extent={{-8,44},{12,64}}), iconTransformation(extent={{-10,42},{10,62}})));
   constant Real pi=Modelica.Constants.pi;
   parameter Real Qnom "Reactive power produced by the shunt capacitor under 1 p.u voltage, Mvar";
   parameter Real Vbase "Base voltage of the bus, kV";

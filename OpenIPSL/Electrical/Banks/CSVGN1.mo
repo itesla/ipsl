@@ -48,7 +48,7 @@ model CSVGN1 "STATC SHUNT COMPENSATOR MODEL"
     y_start=k30) annotation (Placement(transformation(extent={{-42,-12},{-22,8}})));
   Modelica.Blocks.Sources.Constant const2(k=Vref) annotation (Placement(transformation(extent={{-112,14},{-98,28}})));
   Modelica.Blocks.Nonlinear.Limiter imLimited(uMin=0, uMax=1) annotation (Placement(transformation(extent={{-2,-12},{18,8}})));
-  OpenIPSL.Connectors.PwPin p(
+  OpenIPSL.Interfaces.PwPin p(
     vr(start=vr0),
     vi(start=vi0),
     ir(start=ir0),

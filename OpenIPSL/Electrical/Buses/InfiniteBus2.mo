@@ -1,6 +1,6 @@
 within OpenIPSL.Electrical.Buses;
 model InfiniteBus2
-  OpenIPSL.Connectors.PwPin p annotation (Placement(
+  OpenIPSL.Interfaces.PwPin p annotation (Placement(
       visible=true,
       transformation(
         origin={160.0,-0.0},

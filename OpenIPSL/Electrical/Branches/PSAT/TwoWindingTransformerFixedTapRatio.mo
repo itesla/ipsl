@@ -1,7 +1,7 @@
 within OpenIPSL.Electrical.Branches.PSAT;
 model TwoWindingTransformerFixedTapRatio "Modeled as series reactances without iron losses"
-  OpenIPSL.Connectors.PwPin p annotation (Placement(transformation(extent={{-120,-10},{-100,10}})));
-  OpenIPSL.Connectors.PwPin n annotation (Placement(transformation(extent={{100,-10},{120,10}})));
+  OpenIPSL.Interfaces.PwPin p annotation (Placement(transformation(extent={{-120,-10},{-100,10}})));
+  OpenIPSL.Interfaces.PwPin n annotation (Placement(transformation(extent={{100,-10},{120,10}})));
   parameter Real Sb=100 "System base power (MVA)" annotation (Dialog(group="Power flow data"));
   parameter Real Sn=100 "Power rating (MVA)" annotation (Dialog(group="Power flow data"));
   parameter Real Vbus=400000 "Sending end bus voltage" annotation (Dialog(group="Power flow data"));
