@@ -1,6 +1,6 @@
 within iPSL.Examples.Machines.PSAT;
 
-model Order4test2_AVR  extends Modelica.Icons.Example;
+model Order4test2_AVR
   extends Modelica.Icons.Example;
 
   extends iPSL.Examples.BaseTest;
