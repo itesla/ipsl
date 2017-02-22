@@ -81,7 +81,13 @@ equation
   annotation (
     Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,100}})),
     Icon(graphics = {Rectangle(lineColor = {0, 0, 255}, extent = {{-100, 100}, {100, -100}}), Text(origin = {-8, -4},lineColor = {0, 0, 255}, lineThickness = 0.5, extent = {{66, 98}, {90, 86}}, textString = "SPEED"), Text(origin = {-8, 0},lineColor = {0, 0, 255}, lineThickness = 0.5, extent = {{64, 78}, {96, 62}}, textString = "ISORCE"), Text(origin = {-8, -2},lineColor = {0, 0, 255}, extent = {{66, 56}, {92, 44}}, textString = "ETERM"), Text(origin = {-6, -4},lineColor = {0, 0, 255}, lineThickness = 0.5, extent = {{66, 38}, {92, 28}}, textString = "ANGLE"), Text(origin = {-8, -2},lineColor = {0, 0, 255}, lineThickness = 0.5, extent = {{62, -24}, {92, -34}}, textString = "PMECH0"), Text(origin = {-12, 0},lineColor = {0, 0, 255}, lineThickness = 0.5, extent = {{66, -46}, {96, -56}}, textString = "PELEC"), Text(origin = {-12, 0},lineColor = {0, 0, 255}, lineThickness = 0.5, extent = {{66, -66}, {100, -76}}, textString = "EFD0"), Text(origin = {-14, 0},lineColor = {0, 0, 255}, lineThickness = 0.5, extent = {{62, -86}, {98, -94}}, textString = "XADIFD0"), Text(origin = {-46, 64}, lineColor = {85, 0, 255}, extent = {{-32, 10}, {8, 0}}, textString = "PMECH"), Text(origin = {-52, -70}, lineColor = {85, 0, 255}, extent = {{-32, 10}, {12, 0}}, textString = "EFD")}, coordinateSystem(initialScale = 0.1)),
-    Documentation(revisions="<html>
+    Documentation(info="<html>
+<table cellspacing=\"1\" cellpadding=\"1\" border=\"1\"><tr>
+<td align=center  width=50%><p>Development level</p></td>
+<td align=center width=25% bgcolor=#00FF00><p> 4 </p></td>
+</tr> 
+</table> 
+<p></p></html>", revisions="<html>
 <!--DISCLAIMER-->
 <p>Copyright 2015-2016 RTE (France), SmarTS Lab (Sweden), AIA (Spain) and DTU (Denmark)</p>
 <ul>
