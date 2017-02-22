@@ -1,6 +1,4 @@
 within OpenIPSL.Electrical.Branches.PSAT.PhaseShiftingTransformer;
-
-
 model pst1
   constant Real pi=Modelica.Constants.pi;
   parameter Real SystemBase=100;

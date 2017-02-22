@@ -1,6 +1,4 @@
 within OpenIPSL.Electrical.Events;
-
-
 model Breaker
   parameter Real t_o=Modelica.Constants.inf "Opening time (s)";
   parameter Boolean rc_enabled=false "Enable reclosure";

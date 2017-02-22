@@ -1,6 +1,4 @@
 within Tutorial.Example_3;
-
-
 model Example_3
   import Modelica.Constants.pi;
   OpenIPSL.Electrical.Branches.PSAT.TwoWindingTransformer twoWindingTransformer(
@@ -272,8 +270,7 @@ equation
 <p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
 <p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
 </html>
-"),
-    experiment(
+"), experiment(
       StopTime=20,
       Interval=0.001,
       Tolerance=1e-006,

@@ -1,6 +1,4 @@
 within OpenIPSL.Electrical.FACTS.PSAT;
-
-
 model TCSCReactance
   OpenIPSL.Connectors.PwPin p annotation (Placement(transformation(extent={{-119,-8},{-99,12}})));
   OpenIPSL.Connectors.PwPin n annotation (Placement(transformation(extent={{100,-10},{120,10}})));

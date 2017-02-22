@@ -1,6 +1,4 @@
 within Tutorial.Example_1.Network;
-
-
 partial model Step_2
   OpenIPSL.Electrical.Buses.Bus B1 annotation (Placement(transformation(extent={{-92,-12},{-68,12}})));
   OpenIPSL.Electrical.Buses.Bus B2 annotation (Placement(transformation(extent={{-32,-12},{-8,12}})));

@@ -1,6 +1,4 @@
 within OpenIPSL.Electrical.Banks.PSSE.SVC;
-
-
 model SVC "On bus 10106 & 10114"
   OpenIPSL.Connectors.PwPin VIB "Voltage signal connected to stepdown transformer (pu)" annotation (Placement(transformation(extent={{-98,-4},{-86,8}})));
   Modelica.Blocks.Sources.Constant imSetPoint(k=Vref) annotation (Placement(transformation(extent={{-76,20},{-64,32}})));

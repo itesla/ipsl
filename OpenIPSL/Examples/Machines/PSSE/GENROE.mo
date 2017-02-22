@@ -1,6 +1,4 @@
 within OpenIPSL.Examples.Machines.PSSE;
-
-
 model GENROE
   extends OpenIPSL.Examples.SMIBpartial;
   OpenIPSL.Electrical.Machines.PSSE.GENROE gENROE(

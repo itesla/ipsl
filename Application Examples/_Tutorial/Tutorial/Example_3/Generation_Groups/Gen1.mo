@@ -1,6 +1,4 @@
 within Tutorial.Example_3.Generation_Groups;
-
-
 model Gen1
   extends Tutorial.Support.Generator_Example;
   parameter Real vf0=1.755517086537914;

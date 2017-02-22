@@ -75,4 +75,3 @@ equation
 </html>
 "));
 end InfiniteBus2;
-

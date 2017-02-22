@@ -1,6 +1,4 @@
 within OpenIPSL.Electrical.Loads.PSSE.BaseClasses;
-
-
 partial model baseLoad
   import Modelica.Constants.pi;
   import Modelica.ComplexMath.j;

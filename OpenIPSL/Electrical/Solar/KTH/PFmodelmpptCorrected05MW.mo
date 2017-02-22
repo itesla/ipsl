@@ -1,6 +1,4 @@
 within OpenIPSL.Electrical.Solar.KTH;
-
-
 model PFmodelmpptCorrected05MW
   parameter Real SystemBase=100 "MVa";
   parameter Real v0=0.99422 "Power flow, node voltage";

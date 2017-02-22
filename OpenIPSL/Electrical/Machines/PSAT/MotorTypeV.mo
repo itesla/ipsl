@@ -148,4 +148,3 @@ equation
 </html>
 "));
 end MotorTypeV;
-

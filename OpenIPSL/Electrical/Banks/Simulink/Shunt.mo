@@ -1,6 +1,4 @@
 within OpenIPSL.Electrical.Banks.Simulink;
-
-
 model Shunt "Shunt Inductor or Capacitor"
   OpenIPSL.Connectors.PwPin p annotation (Placement(transformation(extent={{-22,48},{-2,68}}), iconTransformation(extent={{-10,40},{10,60}})));
   constant Real pi=Modelica.Constants.pi;

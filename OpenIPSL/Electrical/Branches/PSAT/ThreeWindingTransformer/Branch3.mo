@@ -1,6 +1,4 @@
 within OpenIPSL.Electrical.Branches.PSAT.ThreeWindingTransformer;
-
-
 model Branch3
   OpenIPSL.Connectors.PwPin p3 annotation (Placement(transformation(extent={{-120,-10},{-100,10}})));
   OpenIPSL.Connectors.PwPin n3 annotation (Placement(transformation(extent={{100,-10},{120,10}})));

@@ -1,6 +1,4 @@
 within OpenIPSL.Electrical.Solar.KTH.PFblocks;
-
-
 model Staticgenerator
   parameter Real Pnen=0.5 "MW rated power";
   parameter Real v0=1 "Power flow, node voltage";

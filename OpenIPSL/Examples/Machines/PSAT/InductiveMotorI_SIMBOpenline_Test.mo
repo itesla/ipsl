@@ -1,6 +1,4 @@
 within OpenIPSL.Examples.Machines.PSAT;
-
-
 model InductiveMotorI_SIMBOpenline_Test "Order 1 inductive machine from PSAT, line opened at 2 s for 1 s"
   extends Modelica.Icons.Example;
   OpenIPSL.Electrical.Machines.PSAT.MotorTypeI motorTypeI(

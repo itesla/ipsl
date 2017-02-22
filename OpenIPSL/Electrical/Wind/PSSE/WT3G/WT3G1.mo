@@ -237,4 +237,3 @@ equation
 </html>
 "));
 end WT3G1;
-

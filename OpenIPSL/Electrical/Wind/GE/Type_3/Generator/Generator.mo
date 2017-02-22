@@ -1,6 +1,4 @@
 within OpenIPSL.Electrical.Wind.GE.Type_3.Generator;
-
-
 model Generator
   import Modelica.Constants.pi;
   parameter Real freq=50;

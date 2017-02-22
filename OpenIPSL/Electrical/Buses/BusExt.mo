@@ -1,6 +1,4 @@
 within OpenIPSL.Electrical.Buses;
-
-
 model BusExt
   outer OpenIPSL.Electrical.SystemBase SysData "Must add this line in all models";
   parameter Integer nu(min=1) = 1 "Number of left connection" annotation (Dialog(connectorSizing=true), HideResult=true);

@@ -196,4 +196,3 @@ equation
 </html>
 "));
 end GENCLS;
-

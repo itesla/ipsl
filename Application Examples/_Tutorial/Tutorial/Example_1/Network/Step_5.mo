@@ -1,6 +1,4 @@
 within Tutorial.Example_1.Network;
-
-
 model Step_5
   OpenIPSL.Electrical.Buses.Bus B1 annotation (Placement(visible=true, transformation(extent={{-100,-12},{-76,12}}, rotation=0)));
   OpenIPSL.Electrical.Buses.Bus B2 annotation (Placement(visible=true, transformation(extent={{-40,-12},{-16,12}}, rotation=0)));

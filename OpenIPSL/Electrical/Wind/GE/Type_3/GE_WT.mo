@@ -1,6 +1,4 @@
 within OpenIPSL.Electrical.Wind.GE.Type_3;
-
-
 model GE_WT
   import Modelica.Constants.pi;
   import Modelica.Constants.eps;

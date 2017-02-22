@@ -1,6 +1,4 @@
 within OpenIPSL.Electrical.Solar.PSAT;
-
-
 model ConstantPQPV
   model PQ1 "Constant PQ Generator, Solar Photo-Voltaic Generator"
     OpenIPSL.Connectors.PwPin p annotation (Placement(

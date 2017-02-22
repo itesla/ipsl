@@ -141,4 +141,3 @@ equation
 </html>
 "));
 end MotorTypeIII;
-

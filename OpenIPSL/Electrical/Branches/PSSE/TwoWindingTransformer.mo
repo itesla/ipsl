@@ -1,6 +1,4 @@
 within OpenIPSL.Electrical.Branches.PSSE;
-
-
 model TwoWindingTransformer "Static Two-winding transformer according to PSS/E, without phase shift"
   outer OpenIPSL.Electrical.SystemBase SysData;
   import Modelica.Constants.pi;

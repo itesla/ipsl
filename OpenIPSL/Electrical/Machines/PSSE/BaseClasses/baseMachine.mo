@@ -1,6 +1,4 @@
 within OpenIPSL.Electrical.Machines.PSSE.BaseClasses;
-
-
 partial model baseMachine
   import Modelica.Constants.pi;
   import Complex;

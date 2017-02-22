@@ -1,6 +1,4 @@
 within OpenIPSL.Electrical.Sensors;
-
-
 class PwVoltage "Voltage sensor"
   OpenIPSL.Connectors.PwPin p annotation (Placement(transformation(extent={{-60,-10},{-40,10}}), iconTransformation(extent={{-60,-10},{-40,10}})));
   Modelica.Blocks.Interfaces.RealOutput vr annotation (Placement(transformation(extent={{39,20},{59,40}}), iconTransformation(extent={{39,20},{59,40}})));

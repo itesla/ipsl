@@ -1,6 +1,4 @@
 within OpenIPSL.Electrical.FACTS.PSAT;
-
-
 model STATCOM "Static Synchronous Compensator model with equation"
   OpenIPSL.Connectors.PwPin p(vr(start=vr0), vi(start=vi0)) annotation (Placement(transformation(extent={{100,-10},{120,10}}), iconTransformation(extent={{100,-10},{120,10}})));
   constant Real pi=Modelica.Constants.pi;

@@ -1,6 +1,4 @@
 within OpenIPSL.Examples.Machines.PSAT;
-
-
 model InductiveMotorV_SIMBOpenline_Test
   extends Modelica.Icons.Example;
   OpenIPSL.Electrical.Machines.PSAT.MotorTypeV motorTypeI(

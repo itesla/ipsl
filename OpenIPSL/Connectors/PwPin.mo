@@ -1,6 +1,4 @@
 within OpenIPSL.Connectors;
-
-
 connector PwPin "connector for electrical blocks treating voltage and current as complex variables"
   Real vr;
   // real part of the voltage
