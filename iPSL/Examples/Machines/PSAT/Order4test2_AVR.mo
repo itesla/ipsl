@@ -1,7 +1,6 @@
 within iPSL.Examples.Machines.PSAT;
 
 model Order4test2_AVR  extends Modelica.Icons.Example;
-  extends Modelica.Icons.Example;
 
   extends iPSL.Examples.BaseTest;
   iPSL.Electrical.Controls.PSAT.AVR.AVRtypeIII AVRtypeIII1 annotation (Placement(visible=true, transformation(
