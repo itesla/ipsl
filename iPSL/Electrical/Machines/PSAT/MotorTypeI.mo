@@ -60,6 +60,12 @@ equation
 <p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
 </html>
 ", info = "<html>
+<table cellspacing=\"1\" cellpadding=\"1\" border=\"1\"><tr>
+<td align=center  width=50%><p>Development level</p></td>
+<td align=center width=25% bgcolor=yellow><p> 2 </p></td>
+</tr> 
+</table> 
+<p></p>
 <table cellspacing=\"1\" cellpadding=\"1\" border=\"1\">
 <tr>
 <td><p>Reference</p></td>
@@ -78,9 +84,6 @@ equation
 <td><p><a href=\"mailto:luigiv@kth.se\">luigiv@kth.se</a></p></td>
 </tr>
 </table>
-</html>
-
-<html>
 <pre><span style=\"font-family: Courier New,courier; color: #006400;\">&nbsp;with&nbsp;the&nbsp;problem&nbsp;of&nbsp;a&nbsp;constant&nbsp;offset&nbsp;mismatch&nbsp;-0.00012</span></pre>
 </html>"));
 end MotorTypeI;

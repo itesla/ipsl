@@ -12,7 +12,13 @@ model TransformerParameter "Basic Two Winding Transformer"
   // parameter Real A = (-phase * pi / 180) + 0.5 * pi;
   parameter Real Req=tj^2*R "Equivalent impedance is always transfered to the 'To' side circuit";
   parameter Real Xeq=tj^2*X "Equivalent impedance is always transfered to the 'To' side circuit";
-  annotation (Documentation(revisions="<html>
+  annotation (Documentation(info="<html>
+<table cellspacing=\"1\" cellpadding=\"1\" border=\"1\"><tr>
+<td align=center  width=50%><p>Development level</p></td>
+<td align=center width=25% bgcolor=yellow><p> 2 </p></td>
+</tr> 
+</table> 
+<p></p></html>",revisions="<html>
 <!--DISCLAIMER-->
 <p>Copyright 2015-2016 RTE (France), SmarTS Lab (Sweden), AIA (Spain) and DTU (Denmark)</p>
 <ul>

@@ -75,7 +75,13 @@ equation
   annotation(
     Icon(coordinateSystem(preserveAspectRatio = false, grid = {1, 1}, initialScale = 0.1), graphics = {Text(origin = {-69, 50.5}, lineColor = {28, 108, 200}, fillPattern = FillPattern.Solid, extent = {{-10, -10.5}, {10, 10.5}}, textString = "vf", fontName = "Arial"), Text(origin = {-66.3761, -32}, lineColor = {28, 108, 200}, fillPattern = FillPattern.Solid, extent = {{-9.6086, -11.4189}, {9.6086, 11.4189}}, textString = "pm", fontName = "Arial"), Text(origin = {-80, 90}, lineColor = {28, 108, 200}, fillPattern = FillPattern.Solid, extent = {{-10, -10}, {10, 10}}, textString = "vf0", fontName = "Arial"), Text(origin = {-80.6294, -89.5811}, lineColor = {28, 108, 200}, fillPattern = FillPattern.Solid, extent = {{-15.3706, -13.4189}, {15.3706, 13.4189}}, textString = "pm0", fontName = "Arial"), Text(origin = {80.5, 60.6367}, lineColor = {28, 108, 200}, fillPattern = FillPattern.Solid, extent = {{-23.5, -8.6367}, {23.5, 8.6367}}, textString = "delta", fontName = "Arial"), Text(origin = {90, 90.5}, lineColor = {28, 108, 200}, fillPattern = FillPattern.Solid, extent = {{-10, -10.5}, {10, 10.5}}, textString = "w", fontName = "Arial"), Text(origin = {90, 30}, lineColor = {28, 108, 200}, fillPattern = FillPattern.Solid, extent = {{-10, -10}, {10, 10}}, textString = "v", fontName = "Arial"), Rectangle(lineColor = {28, 108, 200}, fillColor = {255, 255, 255}, extent = {{-100, -100}, {100, 100}}), Ellipse(lineColor = {28, 108, 200}, extent = {{-40, 40}, {40, -40}}, endAngle = 360), Line(points = {{-20, 0}, {-9, 15}, {9, -15}, {20, 0}}, color = {28, 108, 200}, smooth = Smooth.Bezier), Text(origin = {4, -58.0978}, lineColor = {28, 108, 200}, fillPattern = FillPattern.Solid, extent = {{-57.2101, -15}, {57.2101, 15}}, textString = "%name", fontName = "Arial"), Text(origin = {90, -31}, lineColor = {28, 108, 200}, fillPattern = FillPattern.Solid, extent = {{-10, -10}, {10, 10}}, textString = "P", fontName = "Arial"), Text(origin = {90, -60}, lineColor = {28, 108, 200}, fillPattern = FillPattern.Solid, extent = {{-10, -10}, {10, 10}}, textString = "Q", fontName = "Arial")}),
     Diagram(coordinateSystem(preserveAspectRatio = false, extent = {{-100, -100}, {100, 100}}, grid = {1, 1})),
-    Documentation(revisions = "<html>
+    Documentation(info="<html>
+<table cellspacing=\"1\" cellpadding=\"1\" border=\"1\"><tr>
+<td align=center  width=50%><p>Development level</p></td>
+<td align=center width=25% bgcolor=yellow><p> 2 </p></td>
+</tr> 
+</table> 
+<p></p></html>", revisions="<html>
 <!--DISCLAIMER-->
 <p>Copyright 2015-2016 RTE (France), SmarTS Lab (Sweden), AIA (Spain) and DTU (Denmark)</p>
 <ul>
