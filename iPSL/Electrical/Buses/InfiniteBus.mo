@@ -14,11 +14,14 @@ model InfiniteBus "PSAT Infinite Bus"
         rotation=0)));
   Real P "Active Power absorbed by the Infinite bus (MW)";
   Real Q "Reactive Power absorbed by the Infinite bus (MVAr)";
+  parameter Complex v = V_0 * ComplexMath.exp (ComplexMath.j  * angle_0 * Modelica.Constants.pi / 180);
+  Complex i;
 equation
-  p.vr = V_0*cos(angle_0*Modelica.Constants.pi/180);
-  p.vi = V_0*sin(angle_0*Modelica.Constants.pi/180);
-  P = (p.vr*p.ir - p.vi*p.ii)*S_b;
-  Q = (p.vr*p.ii - p.vi*p.ir)*S_b;
+  v = Complex (p.vr, p.vi);
+  i = Complex (p.ir, p.ii);
+  
+  Complex (P, Q) = v * ComplexMath.conj (i) * S_b;
+  
   annotation (
     Icon(coordinateSystem(
         extent={{-100,-100},{100,100}},
