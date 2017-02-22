@@ -1,7 +1,7 @@
 within iPSL.Electrical.Loads.Eurostag;
 model PwLoadwithVariation "Load with a power variation event.
               2014/03/10"
- extends iPSL.Electrical.Essentials.pfComponent;
+  extends iPSL.Electrical.Essentials.pfComponent;
   iPSL.Connectors.PwPin p annotation(Placement(transformation(extent = {{-80, 0}, {-60, 20}}), iconTransformation(extent = {{-80, 0}, {-60, 20}})));
   parameter Real Po = P_0/S_b "Initial Active Power in p.u.";
   parameter Real Qo = Q_0/S_b "Initial Reactive Power in p.u.";

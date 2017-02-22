@@ -1,7 +1,7 @@
 within iPSL.Electrical.Loads.Eurostag;
 model PwLoadVoltageDependence
   "Load with voltage dependence.Developed by AIA. 2014/03/10"
- extends iPSL.Electrical.Essentials.pfComponent;
+  extends iPSL.Electrical.Essentials.pfComponent;
   iPSL.Connectors.PwPin p(vr(start=Vo_real),  vi(start=Vo_img),  ir(start=1), ii(start=0)) annotation(Placement(transformation(extent = {{-80, 0}, {-60, 20}}), iconTransformation(extent = {{-80, 0}, {-60, 20}})));
   parameter Real Vo_real = V_0 * cos(angle_0 * Modelica.Constants.pi / 180) "Initial voltage at node in p.u. (Real part)";
   parameter Real Vo_img = V_0 * sin(angle_0 * Modelica.Constants.pi / 180) "Initial voltage at node in p.u. (Imaginary part)";
