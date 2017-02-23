@@ -40,6 +40,12 @@ equation
                                                                                                   Text(extent={{
               -52,-40},{-36,-56}},                                                                                                    lineColor = {0, 0, 255}, textStyle = {TextStyle.Bold}, textString = "T")}),
            Documentation(info="<html>
+<table cellspacing=\"1\" cellpadding=\"1\" border=\"1\"><tr>
+<td align=center  width=50%><p>Development level</p></td>
+<td align=center width=25% bgcolor= #00FF00><p> 4 </p></td>
+</tr> 
+</table> 
+<p></p>            
 <table cellspacing=\"1\" cellpadding=\"1\" border=\"1\">
 <tr>
 <td><p>Reference</p></td>

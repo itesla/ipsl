@@ -14,7 +14,13 @@ annotation(Icon(coordinateSystem(preserveAspectRatio=false, extent={{-100,
         Line(points={{-90,0},{-60,0}}, color={28,108,200}),
         Line(points={{60,0},{100,0}}, color={28,108,200}),                                       Text(extent={{
               -38,20},{38,-16}},                                                                                                    lineColor=  {0, 0, 255}, textStyle=  {TextStyle.Bold}, textString=  "AND")}),
-                  Documentation(info="<html>
+              Documentation(info="<html>
+<table cellspacing=\"1\" cellpadding=\"1\" border=\"1\"><tr>
+<td align=center  width=50%><p>Development level</p></td>
+<td align=center width=25% bgcolor= #00FF00><p> 4 </p></td>
+</tr> 
+</table> 
+<p></p>                   
 <table cellspacing=\"1\" cellpadding=\"1\" border=\"1\">
 <tr>
 <td><p>Reference</p></td>

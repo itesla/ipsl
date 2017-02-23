@@ -66,6 +66,12 @@ equation
           textString="lim_exc_s1",
           fontName="Arial")}),
     Documentation(info="<html>
+<table cellspacing=\"1\" cellpadding=\"1\" border=\"1\"><tr>
+<td align=center  width=50%><p>Development level</p></td>
+<td align=center width=25% bgcolor=yellow><p> 2 </p></td>
+</tr> 
+</table> 
+<p></p>    
 <p>
 Block has two continuous Real input vectors u1 and u2 and one
 continuous Real output vector y.

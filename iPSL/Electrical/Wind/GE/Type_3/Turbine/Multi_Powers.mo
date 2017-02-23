@@ -14,13 +14,18 @@ equation
   [y] = [1; u1; u2; u3; u4];
   annotation (
     Documentation(info="<HTML>
+<table cellspacing=\"1\" cellpadding=\"1\" border=\"1\"><tr>
+<td align=center  width=50%><p>Development level</p></td>
+<td align=center width=25% bgcolor=yellow><p> 2 </p></td>
+</tr> 
+</table> 
+<p></p>     
 <p>
 The output connector is the <b>concatenation</b> of the four input connectors.
 Note, that the dimensions of the input connector signals have to be
 explicitly defined via parameters n1, n2, n3 and n4.
 </p>
-</HTML>
-", revisions="<html>
+</HTML>", revisions="<html>
 <!--DISCLAIMER-->
 <p>Copyright 2015-2016 RTE (France), SmarTS Lab (Sweden), AIA (Spain) and DTU (Denmark)</p>
 <ul>

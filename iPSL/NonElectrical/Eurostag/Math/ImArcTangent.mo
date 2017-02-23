@@ -44,9 +44,14 @@ equation
           Text(
           extent={{-62,66},{58,-44}},
           lineColor={0,0,255},
-          textString="atan
- (N / D)")}),
+          textString="atan(N / D)")}),
           Documentation(info="<html>
+<table cellspacing=\"1\" cellpadding=\"1\" border=\"1\"><tr>
+<td align=center  width=50%><p>Development level</p></td>
+<td align=center width=25% bgcolor= #00FF00><p> 4 </p></td>
+</tr> 
+</table> 
+<p></p>           
 <table cellspacing=\"1\" cellpadding=\"1\" border=\"1\">
 <tr>
 <td><p>Reference</p></td>
@@ -72,16 +77,12 @@ It uses a OFFSET parameter to obtain a value of Y in the [OFFSET - &#960;, OFFSE
 <p>
 This Block is equivalent to spesific ARC-TANGENT Block from Eurostag. 
 </p>
-</html>"),
-    Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},
-            {100,100}}),
-                    graphics={
-        Rectangle(extent={{-60,60},{60,-60}}, lineColor={0,0,255}),
-          Text(
+</html>"), 
+Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100}, {100,100}}),
+graphics={Rectangle(extent={{-60,60},{60,-60}}, lineColor={0,0,255}), Text(
           extent={{-46,42},{42,-26}},
           lineColor={0,0,255},
-          textString="atan
- (u1 / u2)"),
+          textString="atan(u1 / u2)"),
         Line(points={{-100,40},{-60,40}}, color={28,108,200}),
         Line(points={{-100,-40},{-60,-40}}, color={28,108,200}),
         Line(points={{60,0},{100,0}}, color={28,108,200})}));

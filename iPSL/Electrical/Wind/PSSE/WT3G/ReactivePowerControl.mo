@@ -48,5 +48,11 @@ equation
   connect(K.y, Q_ord) annotation(Line(points = {{181, 0}, {210, 0}}, color = {0, 0, 127}));
   annotation(Diagram(coordinateSystem(extent = {{-200, -80}, {200, 80}}, preserveAspectRatio = true), graphics = {Text(extent = {{136, 8}, {156, 4}}, lineColor = {255, 0, 0}, textString = "K
 "), Text(extent = {{-60, 80}, {60, 60}}, lineColor = {255, 0, 0}, pattern = LinePattern.Dash, lineThickness = 0.5, fillColor = {0, 0, 255}, fillPattern = FillPattern.Solid, textString = "Reactive Power Control"), Text(extent = {{18, 26}, {38, 22}}, lineColor = {255, 0, 0}, textString = "K+1
-")}), Icon(coordinateSystem(extent = {{-200, -80}, {200, 80}}, preserveAspectRatio = true), graphics = {Rectangle(extent = {{-200, 80}, {200, -80}}, lineColor = {28, 108, 200}, fillColor = {255, 255, 255}, fillPattern = FillPattern.Solid), Text(extent = {{-120, 80}, {122, 50}}, lineColor = {180, 56, 148}, textString = "Reactive Power Control"), Text(extent = {{-176, 50}, {-116, 30}}, lineColor = {28, 108, 200}, textString = "ITERM"), Text(extent = {{130, 10}, {194, -10}}, lineColor = {28, 108, 200}, textString = "Q_ORD"), Text(extent = {{-176, -32}, {-116, -52}}, lineColor = {28, 108, 200}, textString = "VTERM")}));
+")}), Icon(coordinateSystem(extent = {{-200, -80}, {200, 80}}, preserveAspectRatio = true), graphics = {Rectangle(extent = {{-200, 80}, {200, -80}}, lineColor = {28, 108, 200}, fillColor = {255, 255, 255}, fillPattern = FillPattern.Solid), Text(extent = {{-120, 80}, {122, 50}}, lineColor = {180, 56, 148}, textString = "Reactive Power Control"), Text(extent = {{-176, 50}, {-116, 30}}, lineColor = {28, 108, 200}, textString = "ITERM"), Text(extent = {{130, 10}, {194, -10}}, lineColor = {28, 108, 200}, textString = "Q_ORD"), Text(extent = {{-176, -32}, {-116, -52}}, lineColor = {28, 108, 200}, textString = "VTERM")}), Documentation(info="<html>
+<table cellspacing=\"1\" cellpadding=\"1\" border=\"1\"><tr>
+<td align=center  width=50%><p>Development level</p></td>
+<td align=center width=25% bgcolor=yellow><p> 2 </p></td>
+</tr> 
+</table> 
+<p></p> </html>"));
 end ReactivePowerControl;

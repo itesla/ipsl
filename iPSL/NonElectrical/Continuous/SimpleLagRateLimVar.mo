@@ -42,7 +42,13 @@ equation
           extent={{-70,-20},{70,-80}},
           lineColor={0,0,255},
           textString="1 + Ts"),Line(points={{-60,100},{-80,140},{-120,140}}, color={255,0,0}),Line(points={{120,-140},{80,-140},{60,-100}}, color={255,0,0})}),
-    Documentation(revisions="<html>
+    Documentation(info="<html>
+<table cellspacing=\"1\" cellpadding=\"1\" border=\"1\"><tr>
+<td align=center  width=50%><p>Development level</p></td>
+<td align=center width=25% bgcolor= yellow><p> 2 </p></td>
+</tr> 
+</table> 
+<p></p></html>", revisions="<html>
 <!--DISCLAIMER-->
 <p>Copyright 2015-2016 RTE (France), SmarTS Lab (Sweden), AIA (Spain) and DTU (Denmark)</p>
 <ul>

@@ -28,6 +28,12 @@ equation
             thickness=0.5,
             smooth = Smooth.None)}),
             Documentation(info="<html>
+<table cellspacing=\"1\" cellpadding=\"1\" border=\"1\"><tr>
+<td align=center  width=50%><p>Development level</p></td>
+<td align=center width=25% bgcolor= #00FF00><p> 4 </p></td>
+</tr> 
+</table> 
+<p></p>             
 <table cellspacing=\"1\" cellpadding=\"1\" border=\"1\">
 <tr>
 <td><p>Reference</p></td>

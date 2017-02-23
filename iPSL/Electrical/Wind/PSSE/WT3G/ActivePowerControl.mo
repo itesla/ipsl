@@ -64,5 +64,11 @@ equation
   connect(WPCMND, division.u1) annotation(Line(points = {{210, -90}, {210, -90}, {108, -90}, {108, -60}, {114, -60}, {114, -54}, {118, -54}}, color = {0, 0, 127}));
   connect(imLimited_max.y, WIPCMD) annotation(Line(points = {{181, -60}, {210, -60}}, color = {0, 0, 127}));
   annotation(Diagram(coordinateSystem(extent = {{-200, -100}, {200, 100}}, preserveAspectRatio = true), graphics = {Text(extent = {{-60, 100}, {60, 80}}, lineColor = {255, 0, 0}, pattern = LinePattern.Dash, lineThickness = 0.5, fillColor = {0, 0, 255}, fillPattern = FillPattern.Solid, textString = "Active Power Control")}), Icon(coordinateSystem(extent = {{-200, -100}, {200, 100}}, preserveAspectRatio = true), graphics = {Rectangle(extent = {{-200, 100}, {200, -100}}, lineColor = {28, 108, 200}, fillColor = {255, 255, 255}, fillPattern = FillPattern.Solid), Text(extent = {{-64, 72}, {76, 32}}, lineColor = {0, 140, 72}, textString = "Active Power
-PI")}));
+PI")}), Documentation(info="<html>
+<table cellspacing=\"1\" cellpadding=\"1\" border=\"1\"><tr>
+<td align=center  width=50%><p>Development level</p></td>
+<td align=center width=25% bgcolor=yellow><p> 2 </p></td>
+</tr> 
+</table> 
+<p></p> </html>"));
 end ActivePowerControl;

@@ -49,5 +49,11 @@ equation
   connect(VTERM, imLimited_min.u) annotation(Line(points = {{0, -200}, {0, -60}, {34, -60}}, color = {0, 0, 127}));
   connect(I_PMAX, imLimited_max.limit1) annotation(Line(points = {{170, 204}, {168, 204}, {168, 86}, {122, 86}, {122, 18}, {128, 18}}, color = {0, 0, 127}));
   annotation(Diagram(coordinateSystem(extent = {{-200, -200}, {200, 200}}, preserveAspectRatio = false), graphics = {Text(extent = {{-88, 16}, {-84, 14}}, lineColor = {0, 0, 255}, lineThickness = 0.5, fillColor = {0, 0, 255}, fillPattern = FillPattern.Solid, textString = "Speed"), Text(extent = {{-80, 200}, {80, 180}}, lineColor = {255, 0, 0}, pattern = LinePattern.Dash, lineThickness = 0.5, fillColor = {0, 0, 255}, fillPattern = FillPattern.Solid, textString = "Active Power Control")}), Icon(coordinateSystem(extent = {{-200, -200}, {200, 200}}, preserveAspectRatio = true), graphics = {Rectangle(extent = {{-200, 200}, {200, -200}}, lineColor = {28, 108, 200}, fillColor = {255, 255, 255}, fillPattern = FillPattern.Solid), Text(extent = {{-100, 160}, {100, 0}}, lineColor = {0, 140, 72}, textString = "Active Power
-PI"), Text(extent = {{-40, 180}, {40, 140}}, lineColor = {28, 108, 200}, textString = "I_PMAX"), Text(extent = {{112, 20}, {192, -20}}, lineColor = {28, 108, 200}, textString = "I_PCMD"), Text(extent = {{-40, -140}, {40, -180}}, lineColor = {28, 108, 200}, textString = "VTERM"), Text(extent = {{-174, 20}, {-94, -20}}, lineColor = {28, 108, 200}, textString = "PELEC")}));
+PI"), Text(extent = {{-40, 180}, {40, 140}}, lineColor = {28, 108, 200}, textString = "I_PMAX"), Text(extent = {{112, 20}, {192, -20}}, lineColor = {28, 108, 200}, textString = "I_PCMD"), Text(extent = {{-40, -140}, {40, -180}}, lineColor = {28, 108, 200}, textString = "VTERM"), Text(extent = {{-174, 20}, {-94, -20}}, lineColor = {28, 108, 200}, textString = "PELEC")}),  Documentation(info="<html>
+<table cellspacing=\"1\" cellpadding=\"1\" border=\"1\"><tr>
+<td align=center  width=50%><p>Development level</p></td>
+<td align=center width=25% bgcolor=yellow><p> 2 </p></td>
+</tr> 
+</table> 
+<p></p> </html>"));
 end ActivePowerController;

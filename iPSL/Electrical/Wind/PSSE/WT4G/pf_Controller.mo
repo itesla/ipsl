@@ -17,5 +17,11 @@ equation
   connect(VAR2.y, tan1.u) annotation(Line(points = {{-139, 50}, {-139, 50}, {-122, 50}}, color = {0, 0, 127}));
   connect(u, K0.u) annotation(Line(points = {{-204, 0}, {-158, 0}, {-122, 0}}, color = {0, 0, 127}));
   connect(Qcmdn1.y, Q_REF_PF) annotation(Line(points = {{-39, 0}, {10, 0}, {10, 0}}, color = {0, 0, 127}));
-  annotation(Diagram(coordinateSystem(extent = {{-200, -100}, {0, 100}}, preserveAspectRatio = true), graphics = {Text(extent = {{-160, 100}, {-40, 80}}, lineColor = {255, 0, 0}, pattern = LinePattern.Dash, lineThickness = 0.5, fillColor = {0, 0, 255}, fillPattern = FillPattern.Solid, textString = "Power Factor Regulator")}), Icon(coordinateSystem(extent = {{-200, -100}, {0, 100}}, preserveAspectRatio = true), graphics = {Rectangle(extent = {{-200, 100}, {0, -100}}, lineColor = {28, 108, 200}, fillColor = {255, 255, 255}, fillPattern = FillPattern.Solid), Text(extent = {{-188, 6}, {-148, -6}}, lineColor = {28, 108, 200}, textString = "P_FAREF"), Text(extent = {{-60, 6}, {-2, -6}}, lineColor = {28, 108, 200}, textString = "Q_REF_PF"), Text(extent = {{-160, 80}, {-40, 40}}, lineColor = {238, 46, 47}, textString = "PF Controller")}));
+  annotation(Diagram(coordinateSystem(extent = {{-200, -100}, {0, 100}}, preserveAspectRatio = true), graphics = {Text(extent = {{-160, 100}, {-40, 80}}, lineColor = {255, 0, 0}, pattern = LinePattern.Dash, lineThickness = 0.5, fillColor = {0, 0, 255}, fillPattern = FillPattern.Solid, textString = "Power Factor Regulator")}), Icon(coordinateSystem(extent = {{-200, -100}, {0, 100}}, preserveAspectRatio = true), graphics = {Rectangle(extent = {{-200, 100}, {0, -100}}, lineColor = {28, 108, 200}, fillColor = {255, 255, 255}, fillPattern = FillPattern.Solid), Text(extent = {{-188, 6}, {-148, -6}}, lineColor = {28, 108, 200}, textString = "P_FAREF"), Text(extent = {{-60, 6}, {-2, -6}}, lineColor = {28, 108, 200}, textString = "Q_REF_PF"), Text(extent = {{-160, 80}, {-40, 40}}, lineColor = {238, 46, 47}, textString = "PF Controller")}),  Documentation(info="<html>
+<table cellspacing=\"1\" cellpadding=\"1\" border=\"1\"><tr>
+<td align=center  width=50%><p>Development level</p></td>
+<td align=center width=25% bgcolor=yellow><p> 2 </p></td>
+</tr> 
+</table> 
+<p></p> </html>"));
 end pf_Controller;

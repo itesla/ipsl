@@ -42,6 +42,12 @@ equation
   end if;
   annotation (
     Documentation(info="<html>
+<table cellspacing=\"1\" cellpadding=\"1\" border=\"1\"><tr>
+<td align=center  width=50%><p>Development level</p></td>
+<td align=center width=25% bgcolor= yellow><p> 2 </p></td>
+</tr> 
+</table> 
+<p></p>   
 <table cellspacing=\"1\" cellpadding=\"1\" border=\"1\">
 <tr>
 <td><p>Reference</p></td>

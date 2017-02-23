@@ -34,5 +34,11 @@ equation
   connect(add4.u1, K1.y) annotation(Line(points = {{36, 6}, {32, 6}, {32, 20}, {29, 20}}, color = {0, 0, 127}));
   connect(V_REG, add3.u2) annotation(Line(points = {{-204, 0}, {-80, 0}, {-80, -6}, {-62, -6}}, color = {0, 0, 127}));
   connect(K.y, Q_ord) annotation(Line(points = {{119, 0}, {210, 0}}, color = {0, 0, 127}));
-  annotation(Diagram(coordinateSystem(extent = {{-200, -200}, {200, 200}}, preserveAspectRatio = true), graphics = {Rectangle(extent = {{-94, 48}, {124, -42}}, lineColor = {255, 0, 0}, lineThickness = 0.5, pattern = LinePattern.Dash), Text(extent = {{-16, 46}, {46, 40}}, lineColor = {255, 0, 0}, pattern = LinePattern.Dash, lineThickness = 0.5, fillColor = {0, 0, 255}, fillPattern = FillPattern.Solid, textString = "WindControl Emulator")}), Icon(coordinateSystem(extent = {{-200, -200}, {200, 200}}, preserveAspectRatio = true), graphics = {Rectangle(extent = {{-200, 200}, {200, -200}}, lineColor = {28, 108, 200}, fillColor = {255, 255, 255}, fillPattern = FillPattern.Solid), Text(extent = {{-196, 14}, {-76, -16}}, lineColor = {28, 108, 200}, textString = "V_REG"), Text(extent = {{80, 14}, {200, -16}}, lineColor = {28, 108, 200}, textString = "Q_ORD"), Text(extent = {{-172, 162}, {180, 72}}, lineColor = {180, 56, 148}, textString = "WindCONTROL Emulator")}));
+  annotation(Diagram(coordinateSystem(extent = {{-200, -200}, {200, 200}}, preserveAspectRatio = true), graphics = {Rectangle(extent = {{-94, 48}, {124, -42}}, lineColor = {255, 0, 0}, lineThickness = 0.5, pattern = LinePattern.Dash), Text(extent = {{-16, 46}, {46, 40}}, lineColor = {255, 0, 0}, pattern = LinePattern.Dash, lineThickness = 0.5, fillColor = {0, 0, 255}, fillPattern = FillPattern.Solid, textString = "WindControl Emulator")}), Icon(coordinateSystem(extent = {{-200, -200}, {200, 200}}, preserveAspectRatio = true), graphics = {Rectangle(extent = {{-200, 200}, {200, -200}}, lineColor = {28, 108, 200}, fillColor = {255, 255, 255}, fillPattern = FillPattern.Solid), Text(extent = {{-196, 14}, {-76, -16}}, lineColor = {28, 108, 200}, textString = "V_REG"), Text(extent = {{80, 14}, {200, -16}}, lineColor = {28, 108, 200}, textString = "Q_ORD"), Text(extent = {{-172, 162}, {180, 72}}, lineColor = {180, 56, 148}, textString = "WindCONTROL Emulator")}), Documentation(info="<html>
+<table cellspacing=\"1\" cellpadding=\"1\" border=\"1\"><tr>
+<td align=center  width=50%><p>Development level</p></td>
+<td align=center width=25% bgcolor=yellow><p> 2 </p></td>
+</tr> 
+</table> 
+<p></p> </html>"));
 end windControlEmulator;

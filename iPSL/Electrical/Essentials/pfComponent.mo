@@ -8,7 +8,13 @@ partial model pfComponent "Partial model containing all the Data for entering Po
   parameter Real Q_0=0 "Reactive power (MVAr)" annotation (Dialog(group="Power flow data"));
   parameter Real S_b=SysData.S_b "System base power (MVA)" annotation (Dialog(group="Power flow data", enable=false));
   parameter Real fn=SysData.fn "System Frequency (Hz)" annotation (Dialog(group="Power flow data", enable=false));
-  annotation (Documentation(revisions="<html>
+  annotation (Documentation(info="<html>
+<table cellspacing=\"1\" cellpadding=\"1\" border=\"1\"><tr>
+<td align=center  width=50%><p>Development level</p></td>
+<td align=center width=25% bgcolor=#00F00><p> 3 </p></td>
+</tr> 
+</table> 
+<p></p></html>", revisions="<html>
 <!--DISCLAIMER-->
 <p>Copyright 2015-2016 RTE (France), SmarTS Lab (Sweden), AIA (Spain) and DTU (Denmark)</p>
 <ul>
