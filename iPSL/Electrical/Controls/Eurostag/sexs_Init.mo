@@ -7,8 +7,6 @@ model sexs_Init
 //SEXS SEXS_3(EFDMAX=5.,EFDMIN=-5.,EMAX=4.,EMIN=0.,K=100.,KC=1.,TA=1.,TB=10.,TE=0.0001);
 //SEXS SEXS_4(EFDMAX=5.,EFDMIN=-5.,EMAX=6.,EMIN=0.,K=100.,KC=1.,TA=1.,TB=10.,TE=0.0001);
 //SEXS SEXS_5(EFDMAX=5.,EFDMIN=-5.,EMAX=4.5,EMIN=0.,K=100.,KC=1.,TA=1.,TB=10.,TE=0.0001);
-  parameter Real EFDMAX;
-  parameter Real EFDMIN;
   parameter Real EMAX;
   parameter Real EMIN;
   parameter Real K;
