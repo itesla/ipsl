@@ -37,7 +37,6 @@ model GENCLS
   Real P(start=P_0/S_b) "Active power (pu. of S_b)";
   Real Q(start=Q_0/S_b) "Reactive power (pu of S_b)";
 
-
 protected
   parameter Real CoB=M_b/S_b "Change from system to machine base";
   parameter Real anglev_rad=angle_0*pi/180 "Initial bus voltage angle (rad)";
@@ -85,7 +84,6 @@ equation
   // Terminal voltage magnitude and angle
   V = sqrt(p.vr^2 + p.vi^2);
   anglev = atan2(p.vi, p.vr);
-
 
   annotation (
     Icon(coordinateSystem(
