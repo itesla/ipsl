@@ -13,8 +13,6 @@ model oelpsat_Init
   parameter Real VFMAX;
   parameter Real VFMIN;
   parameter Real VOELMAX;
-  parameter Real XD;
-  parameter Real XQ;
   parameter Real SNREF;
   parameter Real SN;
   parameter Real PN;
