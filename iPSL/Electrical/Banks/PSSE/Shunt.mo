@@ -19,6 +19,12 @@ equation
           textStyle={TextStyle.Bold},
           textString="Y")}));
   annotation (Documentation(info="<html>
+<table cellspacing=\"1\" cellpadding=\"1\" border=\"1\"><tr>
+<td align=center  width=50%><p>Development level</p></td>
+<td align=center width=25% bgcolor=yellow><p> 2 </p></td>
+</tr> 
+</table> 
+<p></p>    
 Shunt model from Nordic44 system developed by Giuseppe.
 </html>", revisions="<html>
 <!--DISCLAIMER-->

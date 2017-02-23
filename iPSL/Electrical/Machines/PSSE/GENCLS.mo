@@ -60,6 +60,12 @@ equation
   V = sqrt(p.vr ^ 2 + p.vi ^ 2);
   anglev = atan2(p.vi, p.vr);
   annotation(Icon(coordinateSystem(extent = {{0, -100}, {100, 100}}, preserveAspectRatio = false, initialScale = 0.1, grid = {10, 10}), graphics = {Rectangle(extent = {{80, 100}, {100, -100}}, lineColor = {0, 0, 255}, fillPattern = FillPattern.Solid, fillColor = {0, 0, 255}), Line(points = {{40, 110}, {80, 90}, {90, 90}}, color = {0, 0, 255}, smooth = Smooth.None, thickness = 0.5), Line(points = {{40, -70}, {80, -90}, {90, -90}}, color = {0, 0, 255}, smooth = Smooth.None, thickness = 0.5), Line(points = {{40, 70}, {80, 50}, {90, 50}}, color = {0, 0, 255}, smooth = Smooth.None, thickness = 0.5), Line(points = {{40, 50}, {80, 30}, {90, 30}}, color = {0, 0, 255}, smooth = Smooth.None, thickness = 0.5), Line(points = {{40, 30}, {80, 10}, {90, 10}}, color = {0, 0, 255}, smooth = Smooth.None, thickness = 0.5), Line(points = {{40, 10}, {80, -10}, {90, -10}}, color = {0, 0, 255}, smooth = Smooth.None, thickness = 0.5), Line(points = {{40, -10}, {80, -30}, {90, -30}}, color = {0, 0, 255}, smooth = Smooth.None, thickness = 0.5), Line(points = {{40, 90}, {80, 70}, {90, 70}}, color = {0, 0, 255}, smooth = Smooth.None, thickness = 0.5), Line(points = {{40, -30}, {80, -50}, {90, -50}}, color = {0, 0, 255}, smooth = Smooth.None, thickness = 0.5), Line(points = {{40, -50}, {80, -70}, {90, -70}}, color = {0, 0, 255}, smooth = Smooth.None, thickness = 0.5), Text(extent = {{50, 150}, {100, 110}}, lineColor = {0, 0, 255}, lineThickness = 0.5, fillColor = {0, 0, 255}, fillPattern = FillPattern.Solid, textStyle = {TextStyle.Bold}, textString = "INF")}), Diagram(coordinateSystem(extent = {{-148.5, -105.0}, {148.5, 105.0}}, preserveAspectRatio = true, initialScale = 0.1, grid = {5, 5})), Documentation(info = "<html>
+  <table cellspacing=\"1\" cellpadding=\"1\" border=\"1\"><tr>
+<td align=center  width=50%><p>Development level</p></td>
+<td align=center width=25% bgcolor= yellow><p> 2 </p></td>
+</tr> 
+</table> 
+<p></p> 
 <table cellspacing=\"1\" cellpadding=\"1\" border=\"1\">
 <tr>
 <td><p>Reference</p></td>
@@ -92,6 +98,5 @@ equation
 
 <p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
 <p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
-</html>
-"));
+</html>"));
 end GENCLS;

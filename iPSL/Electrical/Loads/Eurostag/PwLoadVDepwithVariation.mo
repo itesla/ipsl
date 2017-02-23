@@ -39,19 +39,25 @@ equation
           points={{-40,-20},{20,40}},
           color={0,0,255},
           smooth=Smooth.None)}),
-    Documentation( Documentation(info="<HTML>
+     Documentation(info="<html>
+<table cellspacing=\"1\" cellpadding=\"1\" border=\"1\"><tr>
+<td align=center  width=50%><p>Development level</p></td>
+<td align=center width=25% bgcolor= #00FF00><p> 4 </p></td>
+</tr> 
+</table> 
+<p></p>      
 <table cellspacing=\"1\" cellpadding=\"1\" border=\"1\">
 <tr>
 <td><p>Reference</p></td>
-<td>Eurostag</td>
+<td>Eurostag/User's Manual</td>
 </tr>
 <tr>
 <td><p>Last update</p></td>
-<td>Unknown</td>
+<td>2016/12/20 by AIA </td>
 </tr>
 <tr>
 <td><p>Author</p></td>
-<td><p>AIA</p></td>
+<td><p>RTE-AIA</p></td>
 </tr>
 <tr>
 <td><p>Contact</p></td>
@@ -62,5 +68,5 @@ equation
 This model is a load voltage dependence in witch it allow a variation of the Load P,Q.
 </p>
 
-</HTML>")));
+</HTML>"));
 end PwLoadVDepwithVariation;

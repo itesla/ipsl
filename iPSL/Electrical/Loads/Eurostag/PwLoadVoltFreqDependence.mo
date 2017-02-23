@@ -40,12 +40,17 @@ equation
           smooth=Smooth.None),Line(
           points={{-40,-20},{20,40}},
           color={0,0,255},
-          smooth=Smooth.None)}), 
-	 Documentation(Documentation(info="<HTML>
+          smooth=Smooth.None)}), Documentation(info="<HTML>
+   <table cellspacing=\"1\" cellpadding=\"1\" border=\"1\"><tr>
+   <td align=center  width=50%><p>Development level</p></td>
+   <td align=center width=25% bgcolor= #00FF00><p> 4 </p></td>
+   </tr> 
+   </table> 
+   <p></p>  
 	<table cellspacing=\"1\" cellpadding=\"1\" border=\"1\">
 	<tr>
 	<td><p>Reference</p></td>
-	<td></td>
+	<td>Eurostag/User's Manual</td>
 	</tr>
 	<tr>
 	<td><p>Last update</p></td>
@@ -62,6 +67,5 @@ equation
 	</table>
 	<p> 
 	</p>
-
-	</HTML>")));
+	</HTML>"));
 end PwLoadVoltFreqDependence;

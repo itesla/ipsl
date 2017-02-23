@@ -35,7 +35,13 @@ equation
           color={0,0,255},
           smooth=Smooth.None,
           thickness=0.5),Rectangle(extent={{-40,42},{42,-24}}, lineColor={0,0,255})}),
-    Documentation(revisions="<html>
+    Documentation(info="<HTML>
+<table cellspacing=\"1\" cellpadding=\"1\" border=\"1\"><tr>
+<td align=center  width=50%><p>Development level</p></td>
+<td align=center width=25% bgcolor= cyan><p> 3 </p></td>
+</tr> 
+</table> 
+<p></p></HTML>", revisions="<html>
 <!--DISCLAIMER-->
 <p>Copyright 2015-2016 RTE (France), SmarTS Lab (Sweden), AIA (Spain) and DTU (Denmark)</p>
 <ul>

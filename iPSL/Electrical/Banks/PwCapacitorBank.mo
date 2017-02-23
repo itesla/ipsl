@@ -52,7 +52,13 @@ equation
           smooth=Smooth.None),Line(
           points={{30,-30},{38,-22}},
           color={0,0,255},
-          smooth=Smooth.None)}), Documentation(revisions="<html>
+          smooth=Smooth.None)}), Documentation(info="<HTML>
+<table cellspacing=\"1\" cellpadding=\"1\" border=\"1\"><tr>
+<td align=center  width=50%><p>Development level</p></td>
+<td align=center width=25% bgcolor= #00FF00><p> 4 </p></td>
+</tr> 
+</table> 
+<p></p></HTML>", revisions="<html>
 <!--DISCLAIMER-->
 <p>Copyright 2015-2016 RTE (France), SmarTS Lab (Sweden), AIA (Spain) and DTU (Denmark)</p>
 <ul>
