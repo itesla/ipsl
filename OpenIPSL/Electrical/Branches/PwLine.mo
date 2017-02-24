@@ -83,27 +83,55 @@ equation
         Text(
           visible=displayPF,
           extent={{-200,160},{-20,40}},
-          lineColor={238,46,47},
-          textString=DynamicSelect("0 MW",
+          lineColor={255,0,0},
+          textString=DynamicSelect("0.0 MW",
               OpenIPSL.Functions.displayPower(P12, " MW"))),
+        Polygon(
+          points=DynamicSelect({{-120,70},{-120,50},{-80,60},{-120,70}},
+              if P12 >= 0 then {{-120,70},{-120,50},{-80,60},{-120,70}}
+               else {{-80,70},{-80,50},{-120,60},{-80,70}}),
+          lineColor={255,0,0},
+          fillColor={255,0,0},
+          fillPattern=FillPattern.Solid),
         Text(
           visible=displayPF,
           extent={{20,160},{200,40}},
-          lineColor={238,46,47},
-          textString=DynamicSelect("0 MW",
+          lineColor={255,0,0},
+          textString=DynamicSelect("0.0 MW",
               OpenIPSL.Functions.displayPower(P21, " MW"))),
-        Text(
-          visible=displayPF,
-          extent={{20,-40},{200,-160}},
-          lineColor={0,255,0},
-          textString=DynamicSelect("0 Mvar",
-              OpenIPSL.Functions.displayPower(Q21, " Mvar"))),
+        Polygon(
+          points=DynamicSelect({{80,70},{80,50},{120,60},{80,70}},
+              if P21 >= 0 then {{80,70},{80,50},{120,60},{80,70}}
+               else {{120,70},{120,50},{80,60},{120,70}}),
+          lineColor={255,0,0},
+          fillColor={255,0,0},
+          fillPattern=FillPattern.Solid),
         Text(
           visible=displayPF,
           extent={{-200,-40},{-20,-160}},
           lineColor={0,255,0},
-          textString=DynamicSelect("0 Mvar",
+          textString=DynamicSelect("0.0 Mvar",
               OpenIPSL.Functions.displayPower(Q12, " Mvar"))),
+        Polygon(
+          points=DynamicSelect({{-120,-70},{-120,-50},{-80,-60},{-120,-70}},
+              if Q12 >= 0 then {{-120,-70},{-120,-50},{-80,-60},{-120,-70}}
+               else {{-80,-70},{-80,-50},{-120,-60},{-80,-70}}),
+          lineColor={0,255,0},
+          fillColor={0,255,0},
+          fillPattern=FillPattern.Solid),
+        Text(
+          visible=displayPF,
+          extent={{20,-40},{200,-160}},
+          lineColor={0,255,0},
+          textString=DynamicSelect("0.0 Mvar",
+              OpenIPSL.Functions.displayPower(Q21, " Mvar"))),
+        Polygon(
+          points=DynamicSelect({{80,-70},{80,-50},{120,-60},{80,-70}},
+              if Q21 >= 0 then {{80,-70},{80,-50},{120,-60},{80,-70}}
+              else {{120,-70},{120,-50},{80,-60},{120,-70}}),
+          lineColor={0,255,0},
+          fillColor={0,255,0},
+          fillPattern=FillPattern.Solid),
         Text(
           extent={{-200,180},{200,140}},
           lineColor={0,0,255},
