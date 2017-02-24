@@ -89,6 +89,12 @@ equation
   connect(hV_GATE.p, imLeadLag.u) annotation(Line(points = {{-15.4187, 0.25}, {-12.7094, 0.25}, {-12.7094, 0}, {-10, 0}}, color = {0, 0, 127}));
   connect(VUEL3, hV_GATE1.n2) annotation(Line(points = {{50, -200}, {50, -200}, {50, -174}, {110, -174}, {110, -20}, {104.006, -20}, {104.006, -0.025}}, color = {0, 0, 127}));
   annotation(Diagram(coordinateSystem(extent = {{-200, -200}, {200, 160}}, grid = {2, 2}, initialScale = 0.1)), Icon(coordinateSystem(extent = {{-200, -200}, {200, 160}}, grid = {2, 2}, initialScale = 0.1), graphics = {Text(extent = {{-162, 112}, {-134, 95}}, lineColor = {0, 128, 0}, textString = "(VOS=1)"), Text(extent = {{-23, -160}, {5, -174}}, lineColor = {0, 128, 0}, textString = "(UEL=2)"), Text(extent = {{-144, -160}, {-116, -174}}, lineColor = {0, 128, 0}, textString = "(UEL=1)"), Text(extent = {{33, -160}, {61, -174}}, lineColor = {0, 128, 0}, textString = "(UEL=3)"), Text(extent = {{-190, 140}, {-108, 120}}, lineColor = {28, 108, 200}, textString = "VOTHSG2"), Text(extent = {{-162, 152}, {-134, 135}}, lineColor = {0, 128, 0}, textString = "(VOS=2)"), Text(extent = {{-184, 60}, {-156, 40}}, lineColor = {28, 108, 200}, textString = "VT"), Text(extent = {{-184, -62}, {-114, -82}}, lineColor = {28, 108, 200}, textString = "XADIFD"), Text(extent = {{-36, -170}, {16, -190}}, lineColor = {28, 108, 200}, textString = "VUEL"), Text(extent = {{24, -170}, {76, -190}}, lineColor = {28, 108, 200}, textString = "VUEL")}), Documentation(info = "<html>
+<table cellspacing=\"1\" cellpadding=\"1\" border=\"1\"><tr>
+<td align=center  width=50%><p>Development level</p></td>
+<td align=center width=25% bgcolor=yellow><p> 2 </p></td>
+</tr> 
+</table> 
+<p></p>
 <table cellspacing=\"1\" cellpadding=\"1\" border=\"1\">
 <tr>
 <td><p>Reference</p></td>

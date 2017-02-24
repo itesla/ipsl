@@ -87,6 +87,12 @@ equation
   connect(gain3.y, lV_GATE.n2) annotation(Line(points = {{51, -30}, {44.625, -30}, {44.625, -3}}, color = {0, 0, 127}));
   connect(DiffV1.y, lV_GATE.n1) annotation(Line(points = {{41, 0}, {44.625, 0}, {44.625, 3}}, color = {0, 0, 127}));
   annotation(Diagram(coordinateSystem(extent = {{-200, -200}, {200, 160}}, initialScale = 0.1)), Icon(coordinateSystem(extent = {{-200, -200}, {200, 160}}, initialScale = 0.1), graphics = {Text(extent = {{-184, -62}, {-114, -82}}, lineColor = {28, 108, 200}, textString = "XADIFD"), Text(extent = {{-120, 158}, {140, 98}}, lineColor = {28, 108, 200}, textString = "EXAC2")}), Documentation(info = "<html>
+<table cellspacing=\"1\" cellpadding=\"1\" border=\"1\"><tr>
+<td align=center  width=50%><p>Development level</p></td>
+<td align=center width=25% bgcolor=yellow><p> 2 </p></td>
+</tr> 
+</table> 
+<p></p>
 <table cellspacing=\"1\" cellpadding=\"1\" border=\"1\">
 <tr>
 <td><p>Reference</p></td>

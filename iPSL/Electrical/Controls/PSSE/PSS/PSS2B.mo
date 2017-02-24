@@ -72,6 +72,12 @@ equation
   connect(rampTrackingFilter.y, add1.u1) annotation(Line(points = {{15, 14}, {20, 14}, {20, 6}, {28, 6}}, color = {0, 0, 127}));
   connect(add1.u2, add.u2) annotation(Line(points = {{28, -6}, {20, -6}, {20, -20}, {-44, -20}, {-44, 8}, {-38, 8}}, color = {0, 0, 127}));
   annotation(Diagram(coordinateSystem(preserveAspectRatio = false, extent = {{-180, -40}, {180, 40}})), Icon(coordinateSystem(preserveAspectRatio = false, extent = {{-180, -40}, {180, 40}}), graphics = {Rectangle(extent = {{-180, 40}, {180, -40}}, lineColor = {0, 0, 255}), Text(extent = {{-34, 14}, {32, -16}}, lineColor = {0, 0, 255}, textString = "PSS2B"), Text(extent = {{-172, 26}, {-132, 12}}, lineColor = {0, 0, 255}, textString = "V_S1"), Text(extent = {{130, 14}, {176, -16}}, lineColor = {0, 0, 255}, textString = "VOTHSG"), Text(extent = {{-174, -14}, {-134, -28}}, lineColor = {0, 0, 255}, textString = "V_S2")}), Documentation(info = "<html>
+<table cellspacing=\"1\" cellpadding=\"1\" border=\"1\"><tr>
+<td align=center  width=50%><p>Development level</p></td>
+<td align=center width=25% bgcolor=yellow><p> 2 </p></td>
+</tr> 
+</table> 
+<p></p>  
 <table cellspacing=\"1\" cellpadding=\"1\" border=\"1\">
 <tr>
 <td><p>Reference</p></td>
@@ -104,6 +110,5 @@ equation
 
 <p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
 <p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
-</html>
-"));
+</html>"));
 end PSS2B;

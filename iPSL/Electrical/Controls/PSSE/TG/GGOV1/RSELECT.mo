@@ -32,6 +32,12 @@ equation
           origin={-11,-1},
           rotation=270),Rectangle(extent={{-100,100},{100,-100}}, lineColor={0,0,255})}),
     Documentation(info="<html>
+<table cellspacing=\"1\" cellpadding=\"1\" border=\"1\"><tr>
+<td align=center  width=50%><p>Development level</p></td>
+<td align=center width=25% bgcolor=yellow><p> 2 </p></td>
+</tr> 
+</table> 
+<p></p>  
 <p>
 Determines the minimum and maximum element of the input vector and
 provide both values as output.

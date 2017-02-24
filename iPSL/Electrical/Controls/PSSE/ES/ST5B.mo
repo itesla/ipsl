@@ -82,7 +82,13 @@ equation
     Line(points = {{-200, 90}, {-26, 90}, {-26, -6}, {-22, -6}}, color = {0, 0, 127}));
   connect(XADIFD, K_c.u) annotation(
     Line(points = {{130, -140}, {130, -104}}, color = {0, 0, 127}));
-  annotation(Diagram(coordinateSystem(preserveAspectRatio = true, extent = {{-200, -200}, {200, 160}}, grid = {2, 2})), Icon(coordinateSystem(extent = {{-200, -200}, {200, 160}}, preserveAspectRatio = true, grid = {2, 2}), graphics = {Text(extent = {{-60, 154}, {62, 110}}, lineColor = {28, 108, 200}, textString = "ST5B"), Text(extent = {{-184, -52}, {-114, -72}}, lineColor = {28, 108, 200}, textString = "XADIFD")}), Documentation(revisions = "<html>
+  annotation(Diagram(coordinateSystem(preserveAspectRatio = true, extent = {{-200, -200}, {200, 160}}, grid = {2, 2})), Icon(coordinateSystem(extent = {{-200, -200}, {200, 160}}, preserveAspectRatio = true, grid = {2, 2}), graphics = {Text(extent = {{-60, 154}, {62, 110}}, lineColor = {28, 108, 200}, textString = "ST5B"), Text(extent = {{-184, -52}, {-114, -72}}, lineColor = {28, 108, 200}, textString = "XADIFD")}), Documentation(info="<html>
+<table cellspacing=\"1\" cellpadding=\"1\" border=\"1\"><tr>
+<td align=center  width=50%><p>Development level</p></td>
+<td align=center width=25% bgcolor=cyan><p> 3 </p></td>
+</tr> 
+</table> 
+<p></p></html>", revisions = "<html>
 <!--DISCLAIMER-->
 
 <p>iPSL:</p>

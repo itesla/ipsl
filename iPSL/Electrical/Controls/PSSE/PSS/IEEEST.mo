@@ -120,6 +120,12 @@ equation
   connect(swith_filter3.y, T_1_T_2.u) annotation(Line(points = {{30.5, 0}, {39, 0}}, color = {0, 0, 127}));
   connect(VSS.y, Vs) annotation(Line(points = {{110.5, 0}, {118, 0}, {118, 0}}, color = {0, 0, 127}));
   annotation(Diagram(coordinateSystem(preserveAspectRatio = false, extent = {{-120, -40}, {120, 40}}, grid = {1, 1})), Icon(coordinateSystem(preserveAspectRatio = false, extent = {{-120, -40}, {120, 40}}, grid = {1, 1}), graphics = {Rectangle(extent = {{-120, 40}, {120, -40}}, lineColor = {0, 0, 255}), Text(extent = {{-46, 40}, {54, -44}}, lineColor = {0, 0, 255}, textString = "IEEEST"), Text(extent = {{-106, -10}, {-84, -30}}, lineColor = {0, 0, 255}, textString = "V_S"), Text(extent = {{84, 14}, {118, -16}}, lineColor = {0, 0, 255}, textString = "VOTHSG"), Text(extent = {{-106, 32}, {-78, 8}}, lineColor = {0, 0, 255}, textString = "V_CT")}), Documentation(info = "<html>
+<table cellspacing=\"1\" cellpadding=\"1\" border=\"1\"><tr>
+<td align=center  width=50%><p>Development level</p></td>
+<td align=center width=25% bgcolor=yellow><p> 2 </p></td>
+</tr> 
+</table> 
+<p></p>  
 <table cellspacing=\"1\" cellpadding=\"1\" border=\"1\">
 <tr>
 <td><p>Reference</p></td>
@@ -152,6 +158,5 @@ equation
 
 <p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
 <p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
-</html>
-"));
+</html>"));
 end IEEEST;

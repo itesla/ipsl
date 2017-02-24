@@ -29,7 +29,13 @@ equation
   connect(imDerivativeLag.y, limiter.u) annotation(Line(points = {{55, 0}, {68, 0}}, color = {0, 0, 127}));
   connect(limiter.y, VOTHSG) annotation(Line(points = {{91, 0}, {110, 0}}, color = {0, 0, 127}));
   connect(const.y, feedback.u2) annotation(Line(points = {{-39, -30}, {-30, -30}, {-30, -8}}, color = {0, 0, 127}));
-  annotation(Diagram(coordinateSystem(preserveAspectRatio = false, extent = {{-100, -40}, {100, 40}})), Icon(coordinateSystem(extent = {{-100, -40}, {100, 40}}, preserveAspectRatio = false), graphics = {Rectangle(extent = {{-100, 40}, {100, -40}}, lineColor = {28, 108, 200}), Text(extent = {{-70, 20}, {70, -20}}, lineColor = {28, 108, 200}, textString = "STAB3"), Text(extent = {{-88, 10}, {-58, -10}}, lineColor = {28, 108, 200}, textString = "PELEC"), Text(extent = {{64, 14}, {98, -12}}, lineColor = {28, 108, 200}, textString = "VOTHSG")}), Documentation(info = "<html>
+  annotation(Diagram(coordinateSystem(preserveAspectRatio = false, extent = {{-100, -40}, {100, 40}})), Icon(coordinateSystem(extent = {{-100, -40}, {100, 40}}, preserveAspectRatio = false), graphics = {Rectangle(extent = {{-100, 40}, {100, -40}}, lineColor = {28, 108, 200}), Text(extent = {{-70, 20}, {70, -20}}, lineColor = {28, 108, 200}, textString = "STAB3"), Text(extent = {{-88, 10}, {-58, -10}}, lineColor = {28, 108, 200}, textString = "PELEC"), Text(extent = {{64, 14}, {98, -12}}, lineColor = {28, 108, 200}, textString = "VOTHSG")}), Documentation(info = "<html>  
+<table cellspacing=\"1\" cellpadding=\"1\" border=\"1\"><tr>
+<td align=center  width=50%><p>Development level</p></td>
+<td align=center width=25% bgcolor=yellow><p> 2 </p></td>
+</tr> 
+</table> 
+<p></p>
 <table cellspacing=\"1\" cellpadding=\"1\" border=\"1\"><tr>
 <td><p>Reference</p></td>
 <td><p>STAB3, PSSE Manual</p></td>
@@ -61,6 +67,5 @@ equation
 
 <p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
 <p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
-</html>
-"));
+</html>"));
 end STAB3;

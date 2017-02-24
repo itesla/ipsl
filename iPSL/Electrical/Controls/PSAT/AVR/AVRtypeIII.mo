@@ -66,7 +66,13 @@ equation
   annotation (
     Icon(coordinateSystem(preserveAspectRatio=false, extent={{-120,-120},{120,
             120}}, initialScale = 0.1),                                                                   graphics={Rectangle(lineColor = {0, 0, 255}, fillColor = {255, 255, 255}, fillPattern = FillPattern.Solid, extent = {{-120, 120}, {120, -120}}), Text(lineColor = {0, 0, 255}, extent = {{-104, 72}, {-72, 50}}, textString = "v"), Text(lineColor = {0, 0, 255}, extent = {{-100, -48}, {-68, -70}}, textString = "vs"), Text(lineColor = {0, 0, 255}, extent = {{88, 10}, {120, -12}}, textString = "vf"), Text(lineColor = {0, 0, 255}, extent = {{-34, 36}, {42, -24}}, textString = "AVRTypeIII"), Text(lineColor = {0, 0, 255}, extent = {{-16, 100}, {16, 78}}, textString = "vf0")}),
-    Documentation(revisions="<html>
+    Documentation(info="<html>
+<table cellspacing=\"1\" cellpadding=\"1\" border=\"1\"><tr>
+<td align=center  width=50%><p>Development level</p></td>
+<td align=center width=25% bgcolor=yellow><p> 2 </p></td>
+</tr> 
+</table> 
+<p></p></html>", revisions="<html>
 <!--DISCLAIMER-->
 <p>Copyright 2015-2016 RTE (France), SmarTS Lab (Sweden), AIA (Spain) and DTU (Denmark)</p>
 <ul>

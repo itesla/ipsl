@@ -61,6 +61,12 @@ equation
   connect(add3_2.y, add3_1.u1) annotation(Line(points = {{-100, -79}, {-98, -79}, {-98, -20}, {-90, -20}, {-90, 8}, {-62, 8}}, color = {0, 0, 127}));
   connect(imDerivativeLag.y, add3_1.u3) annotation(Line(points = {{-1, -50}, {-26, -50}, {-70, -50}, {-70, -8}, {-62, -8}}, color = {0, 0, 127}));
   annotation(Diagram(coordinateSystem(extent = {{-200, -200}, {200, 160}}, initialScale = 0.1)), Icon(coordinateSystem(extent = {{-200, -200}, {200, 160}}, initialScale = 0.1), graphics = {Text(extent = {{-184, -62}, {-114, -82}}, lineColor = {28, 108, 200}, textString = "XADIFD"), Text(extent = {{-120, 158}, {140, 98}}, lineColor = {28, 108, 200}, textString = "EXAC1")}), Documentation(info = "<html>
+<table cellspacing=\"1\" cellpadding=\"1\" border=\"1\"><tr>
+<td align=center  width=50%><p>Development level</p></td>
+<td align=center width=25% bgcolor=yellow><p> 2 </p></td>
+</tr> 
+</table> 
+<p></p>
 <table cellspacing=\"1\" cellpadding=\"1\" border=\"1\">
 <tr>
 <td><p>Reference</p></td>

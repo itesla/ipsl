@@ -54,6 +54,12 @@ equation
   connect(VOEL, DiffV1.u2) annotation(Line(points = {{-70, -200}, {-70, -200}, {-70, -60}, {-96, -60}, {-96, 34}, {-92, 34}}, color = {0, 0, 127}));
   connect(DiffV1.y, add3_1.u1) annotation(Line(points = {{-69, 40}, {-66, 40}, {-66, 8}, {-62, 8}}, color = {0, 0, 127}));
   annotation(Placement(transformation(extent = {{50, -5}, {60, 5}})), Diagram(coordinateSystem(extent = {{-200, -200}, {200, 160}}, grid = {2, 2}, initialScale = 0.1)), Icon(coordinateSystem(extent = {{-200, -200}, {200, 160}}, grid = {2, 2}, initialScale = 0.1), graphics = {Text(extent = {{-120, 154}, {140, 94}}, lineColor = {28, 108, 200}, textString = "ESDC1A")}), Documentation(info = "<html>
+<table cellspacing=\"1\" cellpadding=\"1\" border=\"1\"><tr>
+<td align=center  width=50%><p>Development level</p></td>
+<td align=center width=25% bgcolor=cyan><p> 3 </p></td>
+</tr> 
+</table> 
+<p></p>
 <table cellspacing=\"1\" cellpadding=\"1\" border=\"1\">
 <tr>
 <td><p>Reference</p></td>
@@ -87,6 +93,5 @@ equation
 
 <p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
 <p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
-</html>
-"));
+</html>"));
 end ESDC1A;

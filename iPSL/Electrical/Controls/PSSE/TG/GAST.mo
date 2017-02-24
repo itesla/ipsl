@@ -43,7 +43,13 @@ equation
   connect(add1.u1, add2.u1) annotation(Line(points = {{31, -50}, {38, -50}, {38, -84}, {-8, -84}, {-8, -50}, {-31, -50}}, color = {0, 0, 127}));
   connect(simpleLagLim.u, lV_Gate.p) annotation(Line(points = {{-5, 1}, {-17.5, 1}, {-17.5, 0}, {-27.25, 0}}, color = {0, 0, 127}));
   connect(simpleLagLim.y, transferFunction1.u) annotation(Line(points = {{6.5, 1}, {26.25, 1}, {26.25, 0}, {46.8, 0}}, color = {0, 0, 127}));
-  annotation(Diagram(coordinateSystem(preserveAspectRatio = false, extent = {{-100, -100}, {100, 100}})), Icon(coordinateSystem(preserveAspectRatio = false, extent = {{-100, -100}, {100, 100}}), graphics = {Rectangle(extent = {{-100, 100}, {100, -100}}, lineColor = {0, 0, 255}), Text(extent = {{-90, 56}, {-30, 44}}, lineColor = {0, 0, 255}, textString = "SPEED"), Text(extent = {{-90, -44}, {-32, -56}}, lineColor = {0, 0, 255}, textString = "VAR(L)"), Text(extent = {{48, 6}, {108, -6}}, lineColor = {0, 0, 255}, textString = "PMECH"), Text(extent = {{-40, 18}, {36, -18}}, lineColor = {0, 0, 255}, textString = "GAST")}), Documentation(revisions = "<html>
+  annotation(Diagram(coordinateSystem(preserveAspectRatio = false, extent = {{-100, -100}, {100, 100}})), Icon(coordinateSystem(preserveAspectRatio = false, extent = {{-100, -100}, {100, 100}}), graphics = {Rectangle(extent = {{-100, 100}, {100, -100}}, lineColor = {0, 0, 255}), Text(extent = {{-90, 56}, {-30, 44}}, lineColor = {0, 0, 255}, textString = "SPEED"), Text(extent = {{-90, -44}, {-32, -56}}, lineColor = {0, 0, 255}, textString = "VAR(L)"), Text(extent = {{48, 6}, {108, -6}}, lineColor = {0, 0, 255}, textString = "PMECH"), Text(extent = {{-40, 18}, {36, -18}}, lineColor = {0, 0, 255}, textString = "GAST")}), Documentation(info="<html>
+<table cellspacing=\"1\" cellpadding=\"1\" border=\"1\"><tr>
+<td align=center  width=50%><p>Development level</p></td>
+<td align=center width=25% bgcolor=yellow><p> 2 </p></td>
+</tr> 
+</table> 
+<p></p></html>", revisions = "<html>
 <!--DISCLAIMER-->
 <p>iPSL:</p>
 <p>Copyright 2015-2016 RTE (France), SmarTS Lab (Sweden), AIA (Spain) and DTU (Denmark)</p>

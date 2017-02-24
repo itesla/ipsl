@@ -61,6 +61,12 @@ equation
   connect(gain1.y, simpleLagLimVar.outMax) annotation(Line(points = {{110, -59}, {110, -59}, {110, 20}, {98, 20}, {98, 14}}, color = {0, 0, 127}));
   connect(gain1.u, gain.u) annotation(Line(points = {{110, -82}, {110, -92}, {82, -92}, {82, -82}}, color = {0, 0, 127}));
   annotation(Placement(transformation(extent = {{50, -5}, {60, 5}})), Diagram(coordinateSystem(extent = {{-200, -200}, {200, 160}}, grid = {2, 2}, initialScale = 0.1)), Icon(coordinateSystem(extent = {{-200, -200}, {200, 160}}, initialScale = 0.1), graphics = {Text(lineColor = {28, 108, 200}, extent = {{-120, 154}, {140, 94}}, textString = "ESDC2A"), Text(lineColor = {28, 108, 200}, extent = {{-186, -60}, {-150, -80}}, textString = "VT")}), Documentation(info = "<html>
+<table cellspacing=\"1\" cellpadding=\"1\" border=\"1\"><tr>
+<td align=center  width=50%><p>Development level</p></td>
+<td align=center width=25% bgcolor=cyan><p> 3 </p></td>
+</tr> 
+</table> 
+<p></p>
 <table cellspacing=\"1\" cellpadding=\"1\" border=\"1\">
 <tr>
 <td><p>Reference</p></td>
@@ -94,6 +100,5 @@ equation
 
 <p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
 <p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
-</html>
-"));
+</html>"));
 end ESDC2A;
