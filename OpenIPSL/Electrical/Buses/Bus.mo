@@ -1,4 +1,4 @@
-within OpenIPSL.Electrical.Buses;
+﻿within OpenIPSL.Electrical.Buses;
 model Bus "Bus model
               2014/03/10"
 
@@ -46,5 +46,5 @@ equation
           origin={0,-160},
           extent={{-60,-20},{60,20}},
           lineColor={170,0,0},
-          textString=DynamicSelect("Angle", String(angle, significantDigits=3)+"deg"))}));
+          textString=DynamicSelect("Angle", String(angle, significantDigits=3)+"°"))}));
 end Bus;
