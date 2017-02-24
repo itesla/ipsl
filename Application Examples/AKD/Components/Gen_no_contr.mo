@@ -36,7 +36,7 @@ model Gen_no_contr
     S10=S10,
     S12=S12,
     R_a=R_a) annotation (Placement(transformation(extent={{-29,-32},{35,32}})));
-  OpenIPSL.Connectors.PwPin pwPin annotation (Placement(transformation(extent={{80,-10},{100,10}}), iconTransformation(extent={{60,-10},{80,10}})));
+  OpenIPSL.Interfaces.PwPin pwPin annotation (Placement(transformation(extent={{80,-10},{100,10}}), iconTransformation(extent={{60,-10},{80,10}})));
 equation
   connect(gENSAL.PMECH0, gENSAL.PMECH) annotation (Line(points={{37.56,-9.6},{56,-9.6},{56,42},{-38,42},{-38,16},{-28.36,16}}, color={0,0,127}));
   connect(gENSAL.EFD0, gENSAL.EFD) annotation (Line(points={{37.56,-22.4},{56,-22.4},{56,-44},{-38,-44},{-38,-16},{-28.36,-16}}, color={0,0,127}));

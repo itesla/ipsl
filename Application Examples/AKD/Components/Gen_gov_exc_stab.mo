@@ -81,7 +81,7 @@ model Gen_gov_exc_stab
     S10=S10,
     S12=S12,
     R_a=R_a) annotation (Placement(transformation(extent={{-39,-6},{25,58}})));
-  OpenIPSL.Connectors.PwPin pwPin annotation (Placement(transformation(extent={{80,16},{100,36}}), iconTransformation(extent={{60,-10},{80,10}})));
+  OpenIPSL.Interfaces.PwPin pwPin annotation (Placement(transformation(extent={{80,16},{100,36}}), iconTransformation(extent={{60,-10},{80,10}})));
   OpenIPSL.Electrical.Controls.PSSE.TG.HYGOV hYGOV(
     R=R,
     r=r,

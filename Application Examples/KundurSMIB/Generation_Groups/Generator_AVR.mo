@@ -23,7 +23,7 @@ model Generator_AVR
     angle_0=angle_0,
     Sn=2220,
     Taa=0) annotation (Placement(transformation(extent={{14,-30},{74,30}})));
-  OpenIPSL.Connectors.PwPin pwPin annotation (Placement(transformation(extent={{100,-10},{120,10}}), iconTransformation(extent={{100,-10},{120,10}})));
+  OpenIPSL.Interfaces.PwPin pwPin annotation (Placement(transformation(extent={{100,-10},{120,10}}), iconTransformation(extent={{100,-10},{120,10}})));
   OpenIPSL.Electrical.Controls.PSAT.AVR.AVRtypeIII avr(
     vfmax=7,
     vfmin=-6.40,

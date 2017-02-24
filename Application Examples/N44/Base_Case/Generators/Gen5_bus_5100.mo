@@ -46,7 +46,7 @@ model Gen5_bus_5100 "Configuration of synchronous generator with regulators: GEN
     E_MIN=0,
     E_MAX=4) annotation (Placement(transformation(extent={{16,-88},{86,-33}})));
   Modelica.Blocks.Sources.Constant cte(k=0) annotation (Placement(transformation(extent={{-33,-65},{-23,-55}})));
-  OpenIPSL.Connectors.PwPin p annotation (Placement(transformation(rotation=0, extent={{100,-10},{120,10}}), iconTransformation(extent={{100,-10},{120,10}})));
+  OpenIPSL.Interfaces.PwPin p annotation (Placement(transformation(rotation=0, extent={{100,-10},{120,10}}), iconTransformation(extent={{100,-10},{120,10}})));
 equation
   connect(cte.y, sEXS.VOEL) annotation (Line(points={{-22.5,-60},{38.75,-60},{38.75,-88}}, color={0,0,127}));
   connect(sEXS.EFD, gENSAL.EFD) annotation (Line(points={{87.75,-57.4444},{94,-57.4444},{94,-92},{-78,-92},{-78,-7.5},{-67.38,-7.5}}, color={0,0,127}));

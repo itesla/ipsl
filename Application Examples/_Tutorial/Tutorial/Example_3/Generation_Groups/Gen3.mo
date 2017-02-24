@@ -57,7 +57,7 @@ model Gen3
         origin={-56,-2})));
   Modelica.Blocks.Logical.Switch switch1 annotation (Placement(transformation(extent={{-50,12},{-40,22}})));
   Modelica.Blocks.Sources.BooleanConstant booleanConstant(k=refdisturb_3) annotation (Placement(transformation(extent={{-80,2},{-70,12}})));
-  OpenIPSL.Connectors.PwPin pwPin annotation (Placement(transformation(extent={{100,-10},{120,10}})));
+  OpenIPSL.Interfaces.PwPin pwPin annotation (Placement(transformation(extent={{100,-10},{120,10}})));
   //Real P_MW;
   //Real Q_MVA;
 equation

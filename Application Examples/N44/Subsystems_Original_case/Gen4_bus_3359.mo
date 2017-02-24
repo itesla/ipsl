@@ -63,7 +63,7 @@ model Gen4_bus_3359 "Configuration of synchronous generator with regulators: GEN
     K_5=1,
     T_5=0.01) annotation (Placement(transformation(extent={{-61,-61},{-18,-36}})));
   Modelica.Blocks.Sources.Constant cte(k=0) annotation (Placement(transformation(extent={{-10,-63},{0,-53}})));
-  OpenIPSL.Connectors.PwPin pwPin annotation (Placement(transformation(extent={{100,-10},{120,10}}), iconTransformation(extent={{100,-10},{120,10}})));
+  OpenIPSL.Interfaces.PwPin pwPin annotation (Placement(transformation(extent={{100,-10},{120,10}}), iconTransformation(extent={{100,-10},{120,10}})));
   Data.PSSE_data_Original_case PSSE_data annotation (Placement(transformation(extent={{84,86},{96,98}})));
 equation
 

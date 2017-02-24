@@ -49,7 +49,7 @@ model GroupBus3
         extent={{-28,-25},{28,25}},
         rotation=0,
         origin={66,1})));
-  OpenIPSL.Connectors.PwPin pwPin annotation (Placement(transformation(extent={{120,-12},{140,8}}), iconTransformation(extent={{120,-12},{140,8}})));
+  OpenIPSL.Interfaces.PwPin pwPin annotation (Placement(transformation(extent={{120,-12},{140,8}}), iconTransformation(extent={{120,-12},{140,8}})));
 equation
   connect(aVR2TypeII2.vf, Syn2.vf) annotation (Line(points={{-2.5,6.32},{12,6.32},{12,13.5},{38,13.5}}, color={0,0,127}));
   connect(Syn2.v, aVR2TypeII2.v) annotation (Line(points={{96.8,8.5},{112,8.5},{112,-48},{-82,-48},{-82,-5.2},{-52,-5.2}}, color={0,0,127}));

@@ -27,7 +27,7 @@ model G1
     Xppq=0.289,
     Xppd=0.289,
     R_a=0.00344) annotation (Placement(transformation(extent={{-30,-30},{30,30}})));
-  OpenIPSL.Connectors.PwPin pwPin annotation (Placement(transformation(extent={{100,-10},{120,10}})));
+  OpenIPSL.Interfaces.PwPin pwPin annotation (Placement(transformation(extent={{100,-10},{120,10}})));
   OpenIPSL.Electrical.Controls.PSSE.ES.ST5B sT5B(
     T_R=0,
     T_C1=0.8,

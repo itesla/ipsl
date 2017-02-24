@@ -71,7 +71,7 @@ model Gen1_bus_7000 "Configuration of synchronous generator with regulators: GEN
 
   Modelica.Blocks.Sources.Constant cte(k=0) annotation (Placement(transformation(extent={{-90,-35},{-80,-25}})));
 
-  OpenIPSL.Connectors.PwPin pwPin annotation (Placement(transformation(extent={{100,-10},{120,10}}), iconTransformation(extent={{100,-10},{120,10}})));
+  OpenIPSL.Interfaces.PwPin pwPin annotation (Placement(transformation(extent={{100,-10},{120,10}}), iconTransformation(extent={{100,-10},{120,10}})));
   Data.PSSE_data_Original_case PSSE_data annotation (Placement(transformation(extent={{85,86},{97,98}})));
 equation
 

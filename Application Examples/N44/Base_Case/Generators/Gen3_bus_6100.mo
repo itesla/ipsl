@@ -57,7 +57,7 @@ model Gen3_bus_6100 "Configuration of synchronous generator with regulators: GEN
     K_4=0.55,
     K_5=1,
     T_5=0.01) annotation (Placement(transformation(extent={{-60,-46},{-22,-20}})));
-  OpenIPSL.Connectors.PwPin p annotation (Placement(transformation(rotation=0, extent={{100,-10},{120,10}}), iconTransformation(extent={{100,-10},{120,10}})));
+  OpenIPSL.Interfaces.PwPin p annotation (Placement(transformation(rotation=0, extent={{100,-10},{120,10}}), iconTransformation(extent={{100,-10},{120,10}})));
 equation
   connect(gENSAL.p, p) annotation (Line(points={{1.2,22},{30,22},{30,20},{64,20},{64,0},{110,0}}, color={0,0,255}));
   connect(sCRX.EFD, gENSAL.EFD) annotation (Line(points={{77.4,-44.4444},{82,-44.4444},{82,-80},{-76,-80},{-76,7},{-65.36,7}}, color={0,0,127}));

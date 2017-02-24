@@ -1,7 +1,7 @@
 within Namsskogan_Grid;
 model StaticCondenser
   parameter Real B "Susceptance, (p.u.)";
-  OpenIPSL.Connectors.PwPin p annotation (Placement(transformation(extent={{80,-8},{100,12}})));
+  OpenIPSL.Interfaces.PwPin p annotation (Placement(transformation(extent={{80,-8},{100,12}})));
   Real V "Voltage magnitude (pu)";
   Real Angle_V "voltage angle (rad)";
   Real Q "Reactive power (pu)";

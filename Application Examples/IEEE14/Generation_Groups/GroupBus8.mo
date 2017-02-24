@@ -50,7 +50,7 @@ model GroupBus8
         extent={{-17,-17},{17,17}},
         rotation=0,
         origin={55,1})));
-  OpenIPSL.Connectors.PwPin pwPin annotation (Placement(transformation(extent={{102,-8},{122,12}}), iconTransformation(extent={{102,-8},{122,12}})));
+  OpenIPSL.Interfaces.PwPin pwPin annotation (Placement(transformation(extent={{102,-8},{122,12}}), iconTransformation(extent={{102,-8},{122,12}})));
 equation
   connect(aVR3TypeII2.vf, Syn4.vf) annotation (Line(points={{5,16.46},{20.5,16.46},{20.5,9.5},{38,9.5}}, color={0,0,127}));
   connect(Syn4.v, aVR3TypeII2.v) annotation (Line(points={{73.7,6.1},{98,6.1},{98,-34},{-36,-34},{-36,8.9},{-28,8.9}}, color={0,0,127}));
