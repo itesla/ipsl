@@ -20,9 +20,6 @@ model PwLoadVoltFreqDependence
   parameter Real gamma = 0;
   Real P(start = P_0/S_b);
   Real Q(start = Q_0/S_b);
-initial equation
-   (P_0/S_b) = p.vr * p.ir + p.vi * p.ii;
-   (Q_0/S_b)  = (-p.vr * p.ii) + p.vi * p.ir;
 equation
   a = v / vo;
   b = omegaRef/omega_0;
@@ -43,7 +40,7 @@ equation
           smooth=Smooth.None)}), Documentation(info="<HTML>
    <table cellspacing=\"1\" cellpadding=\"1\" border=\"1\"><tr>
    <td align=center  width=50%><p>Development level</p></td>
-   <td align=center width=25% bgcolor= #00FF00><p> 4 </p></td>
+   <td align=center width=25% bgcolor= yellow><p> 2 </p></td>
    </tr> 
    </table> 
    <p></p>  
