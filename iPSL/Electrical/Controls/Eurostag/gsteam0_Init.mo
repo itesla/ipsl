@@ -1,7 +1,7 @@
 within iPSL.Electrical.Controls.Eurostag;
 
 
-model gsteam0_Init
+model gsteam0_Init "Initialiation model of gsteam0 regulator "
 //GSTEAM0 GSTEAM0_1(DT=0.,RR=0.05,T1=0.5,T2=3.,T3=10.,VMAX=1.,VMIN=0.);
 //GSTEAM0 GSTEAM0_2(DT=0.,RR=0.05,T1=.4900000,T2=2.100000,T3=7.,VMAX=1.,VMIN=0.);
 //GSTEAM0 GSTEAM0_3(DT=0.,RR=0.05,T1=.4900000,T2=2.100000,T3=7.,VMAX=1.,VMIN=0.);
@@ -55,4 +55,32 @@ equation
   connect(pin_CM, ImMult5_2.u[2]);
   connect(pin_REF, Gain_1.y);
   connect(pin_PMECH, ImMult5_2.y);
+  annotation(Documentation(info="<HTML>
+   <table cellspacing=\"1\" cellpadding=\"1\" border=\"1\"><tr>
+   <td align=center  width=50%><p>Development level</p></td>
+   <td align=center width=25% bgcolor= #00FF00><p> 4 </p></td>
+   </tr> 
+   </table> 
+   <p></p>  
+	<table cellspacing=\"1\" cellpadding=\"1\" border=\"1\">
+	<tr>
+	<td><p>Reference</p></td>
+	<td></td>
+	</tr>
+	<tr>
+	<td><p>Last update</p></td>
+	<td>Unknown</td>
+	</tr>
+	<tr>
+	<td><p>Author</p></td>
+	<td><p>AIA</p></td>
+	</tr>
+	<tr>
+	<td><p>Contact</p></td>
+	<td><p>modelica@aia.es<a href=\"mailto:modelica@aia.es\"></a></p></td>
+	</tr>
+	</table>
+	<p> 
+	</p>
+	</HTML>"));
 end gsteam0_Init;

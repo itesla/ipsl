@@ -25,4 +25,32 @@ equation
   connect(pin_TerminalVoltage, Gain_1.u);
   connect(pin_VREF, Gain_1.y);
   connect(pin_VV, pin_TerminalVoltage);
+  annotation(Documentation(info="<HTML>
+   <table cellspacing=\"1\" cellpadding=\"1\" border=\"1\"><tr>
+   <td align=center  width=50%><p>Development level</p></td>
+   <td align=center width=25% bgcolor= #00FF00><p> 4 </p></td>
+   </tr> 
+   </table> 
+   <p></p>  
+	<table cellspacing=\"1\" cellpadding=\"1\" border=\"1\">
+	<tr>
+	<td><p>Reference</p></td>
+	<td></td>
+	</tr>
+	<tr>
+	<td><p>Last update</p></td>
+	<td>Unknown</td>
+	</tr>
+	<tr>
+	<td><p>Author</p></td>
+	<td><p>AIA</p></td>
+	</tr>
+	<tr>
+	<td><p>Contact</p></td>
+	<td><p>modelica@aia.es<a href=\"mailto:modelica@aia.es\"></a></p></td>
+	</tr>
+	</table>
+	<p> 
+	</p>
+	</HTML>")); 
 end oelpsat_Init;
