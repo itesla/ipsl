@@ -54,16 +54,16 @@ package Interfaces
             lineColor={0,0,0},
             textString="%name"),
           Text(
+            visible=displayPF,
             extent={{-100,140},{100,100}},
             lineColor={238,46,47},
             fillPattern=FillPattern.Solid,
-            visible=displayPF,
             textString=DynamicSelect("0 MW", OpenIPSL.Functions.displayPower(P," MW"))),
           Text(
+            visible=displayPF,
             extent={{-100,-100},{100,-140}},
             lineColor={0,255,0},
             fillPattern=FillPattern.Solid,
-            visible=displayPF,
             textString=DynamicSelect("0 Mvar", OpenIPSL.Functions.displayPower(Q," Mvar"))),
           Line(
             points={{-20,20},{-50,40},{-80,0}},

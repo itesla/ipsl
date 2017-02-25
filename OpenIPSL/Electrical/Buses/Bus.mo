@@ -1,6 +1,6 @@
 ﻿within OpenIPSL.Electrical.Buses;
 model Bus "Bus model (2014/03/10)"
-
+  extends OpenIPSL.Electrical.Essentials.pfComponent;
   OpenIPSL.Interfaces.PwPin p(vr(start=V_0*cos(angle_0*Modelica.Constants.pi
           /180)), vi(start=V_0*sin(angle_0*Modelica.Constants.pi/180)))
     annotation (Placement(
@@ -19,11 +19,12 @@ model Bus "Bus model (2014/03/10)"
     annotation (Dialog(group="Power flow data"));
   parameter Modelica.SIunits.Conversions.NonSIunits.Angle_deg angle_0=0 "Initial voltage angle"
     annotation (Dialog(group="Power flow data"));
-  parameter Boolean displayPF=false "Enable/Disable" annotation (
+   parameter Boolean displayPF=true "Display voltage values:" annotation (
       Dialog(
-      group="Display Power Flow Results",
+      group="Visualisation",
       __Dymola_compact=true,
-      __Dymola_descriptionLabel=true), choices(checkBox=true));
+      __Dymola_descriptionLabel=true),
+      choices(checkBox=true));
 equation
   V = sqrt(p.vr^2 + p.vi^2);
   angle = atan2(p.vi, p.vr)*180/Modelica.Constants.pi;

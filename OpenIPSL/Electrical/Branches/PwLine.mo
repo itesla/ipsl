@@ -30,11 +30,12 @@ model PwLine "Model for a transmission Line based on the pi-equivalent circuit"
       choice=1 "Line opening at both ends",
       choice=2 "Line opening at sending end",
       choice=3 "Line opening at receiving end"));
-  parameter Boolean displayPF=true "Enable/Disable" annotation (
-      Dialog(
-      group="Display Power Flow Results",
+ parameter Boolean displayPF=false "Display power flow results:"
+    annotation (Dialog(
+      group="Visualisation",
       __Dymola_compact=true,
-      __Dymola_descriptionLabel=true), choices(checkBox=true));
+      __Dymola_descriptionLabel=true),
+      choices(checkBox=true));
   OpenIPSL.Types.ActivePowerMega P12;
   OpenIPSL.Types.ActivePowerMega P21;
   OpenIPSL.Types.ReactivePowerMega Q12;
@@ -87,6 +88,7 @@ equation
           textString=DynamicSelect("0.0 MW",
               OpenIPSL.Functions.displayPower(P12, " MW"))),
         Polygon(
+          visible=displayPF,
           points=DynamicSelect({{-120,70},{-120,50},{-80,60},{-120,70}},
               if P12 >= 0 then {{-120,70},{-120,50},{-80,60},{-120,70}}
                else {{-80,70},{-80,50},{-120,60},{-80,70}}),
@@ -100,6 +102,7 @@ equation
           textString=DynamicSelect("0.0 MW",
               OpenIPSL.Functions.displayPower(P21, " MW"))),
         Polygon(
+          visible=displayPF,
           points=DynamicSelect({{80,70},{80,50},{120,60},{80,70}},
               if P21 >= 0 then {{80,70},{80,50},{120,60},{80,70}}
                else {{120,70},{120,50},{80,60},{120,70}}),
@@ -113,6 +116,7 @@ equation
           textString=DynamicSelect("0.0 Mvar",
               OpenIPSL.Functions.displayPower(Q12, " Mvar"))),
         Polygon(
+          visible=displayPF,
           points=DynamicSelect({{-120,-70},{-120,-50},{-80,-60},{-120,-70}},
               if Q12 >= 0 then {{-120,-70},{-120,-50},{-80,-60},{-120,-70}}
                else {{-80,-70},{-80,-50},{-120,-60},{-80,-70}}),
@@ -126,6 +130,7 @@ equation
           textString=DynamicSelect("0.0 Mvar",
               OpenIPSL.Functions.displayPower(Q21, " Mvar"))),
         Polygon(
+          visible=displayPF,
           points=DynamicSelect({{80,-70},{80,-50},{120,-60},{80,-70}},
               if Q21 >= 0 then {{80,-70},{80,-50},{120,-60},{80,-70}}
               else {{120,-70},{120,-50},{80,-60},{120,-70}}),
