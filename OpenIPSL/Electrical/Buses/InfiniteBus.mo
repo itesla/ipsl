@@ -50,7 +50,11 @@ equation
               else {{20,-30},{20,-10},{-20,-20},{20,-30}}),
           lineColor={0,255,0},
           fillColor={0,255,0},
-          fillPattern=FillPattern.Solid)}),
+          fillPattern=FillPattern.Solid),
+        Text(
+          extent={{-100,160},{100,120}},
+          lineColor={0,0,255},
+          textString="%name")}),
     Diagram(coordinateSystem(
         preserveAspectRatio=true,
         initialScale=0.1,
