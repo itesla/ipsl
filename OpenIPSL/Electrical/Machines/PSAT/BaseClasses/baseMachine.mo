@@ -18,11 +18,11 @@ partial model baseMachine
     ii(start=ii0)) annotation (Placement(
       visible=true,
       transformation(
-        origin={2.2777,10.4683},
+        origin={0,10},
         extent={{-10.0,-10.0},{10.0,10.0}},
         rotation=0),
       iconTransformation(
-        origin={110,0.4964},
+        origin={110,0},
         extent={{-10.0,-10.0},{10.0,10.0}},
         rotation=0)));
   RealOutput delta "Rotor angle (deg)" annotation (Placement(
@@ -151,9 +151,8 @@ equation
   pe = (vq + Ra*iq)*iq + (vd + Ra*id)*id;
   annotation (
     Icon(coordinateSystem(
-        preserveAspectRatio=false,
-        extent={{-100,-100},{100,100}},
-        grid={1,1}), graphics={Text(
+        extent={{-100,-100},{100,100}}, initialScale=0.1),
+                     graphics={Text(
           origin={-81,50.5},
           fillPattern=FillPattern.Solid,
           extent={{-10,-10.5},{10,10.5}},
@@ -221,9 +220,7 @@ equation
           lineColor={28,108,200},
           textString="Q")}),
     Diagram(coordinateSystem(
-        preserveAspectRatio=false,
-        extent={{-100,-100},{100,100}},
-        grid={1,1})),
+        extent={{-100,-100},{100,100}}, initialScale=0.1)),
     Documentation(revisions="<html>
 <!--DISCLAIMER-->
 <p>OpenIPSL:</p>
