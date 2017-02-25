@@ -1,8 +1,11 @@
 within Tutorial.Example_1.Network;
 partial model Step_3
-  OpenIPSL.Electrical.Buses.Bus B1 annotation (Placement(transformation(extent={{-92,-12},{-68,12}})));
-  OpenIPSL.Electrical.Buses.Bus B2 annotation (Placement(transformation(extent={{-32,-12},{-8,12}})));
-  OpenIPSL.Electrical.Buses.Bus B3 annotation (Placement(transformation(extent={{48,-12},{72,12}})));
+  OpenIPSL.Electrical.Buses.Bus B1(displayPF=false)
+                                   annotation (Placement(transformation(extent={{-92,-12},{-68,12}})));
+  OpenIPSL.Electrical.Buses.Bus B2(displayPF=false)
+                                   annotation (Placement(transformation(extent={{-32,-12},{-8,12}})));
+  OpenIPSL.Electrical.Buses.Bus B3(displayPF=false)
+                                   annotation (Placement(transformation(extent={{48,-12},{72,12}})));
   Generator.Generator G1 annotation (Placement(transformation(extent={{-120,-10},{-100,10}})));
   OpenIPSL.Electrical.Branches.PSAT.TwoWindingTransformer twoWindingTransformer(
     Sn=2220,
@@ -16,13 +19,15 @@ partial model Step_3
     G=0,
     B=0,
     X=0.5*100/2220,
-    S_b=100) annotation (Placement(transformation(extent={{14,16},{26,24}})));
+    S_b=100) annotation (Placement(transformation(extent={{10,10},{30,
+            30}})));
   OpenIPSL.Electrical.Branches.PwLine pwLine1(
     R=0,
     G=0,
     B=0,
     S_b=100,
-    X=0.93*100/2220) annotation (Placement(transformation(extent={{14,-24},{26,-16}})));
+    X=0.93*100/2220) annotation (Placement(transformation(extent={{10,-30},
+            {30,-10}})));
   OpenIPSL.Electrical.Buses.InfiniteBus infiniteBus(V_0=0.90081, angle_0=0)
     annotation (Placement(visible=true, transformation(
         origin={90,0},
@@ -50,9 +55,9 @@ partial model Step_3
         Rectangle(
           lineColor={255,0,0},
           lineThickness=1,
-          extent={{78,14},{102,-12}}),
+          extent={{76,16},{104,-14}}),
         Text(
-          origin={-16,-2},
+          origin={-16,2},
           fillPattern=FillPattern.Solid,
           lineThickness=1,
           extent={{62,24},{146,14}},

@@ -1,12 +1,15 @@
 within Tutorial.Example_1.Network;
 partial model Step_1
-  OpenIPSL.Electrical.Buses.Bus B1 annotation (Placement(transformation(extent={{-92,-12},{-68,12}})));
-  OpenIPSL.Electrical.Buses.Bus B2 annotation (Placement(transformation(extent={{-32,-12},{-8,12}})));
-  OpenIPSL.Electrical.Buses.Bus B3 annotation (Placement(transformation(extent={{48,-12},{72,12}})));
+  OpenIPSL.Electrical.Buses.Bus B1(displayPF=false)
+                                   annotation (Placement(transformation(extent={{-92,-12},{-68,12}})));
+  OpenIPSL.Electrical.Buses.Bus B2(displayPF=false)
+                                   annotation (Placement(transformation(extent={{-32,-12},{-8,12}})));
+  OpenIPSL.Electrical.Buses.Bus B3(displayPF=false)
+                                   annotation (Placement(transformation(extent={{48,-12},{72,12}})));
   Generator.Generator G1 annotation (Placement(transformation(extent={{-120,-10},{-100,10}})));
   inner OpenIPSL.Electrical.SystemBase SysData(S_b=100, fn=60)
     annotation (Placement(visible=true, transformation(
-        origin={65.3332,-80},
+        origin={73.3332,-80},
         extent={{-33.3332,-20},{46.6668,20}},
         rotation=0)));
   annotation (

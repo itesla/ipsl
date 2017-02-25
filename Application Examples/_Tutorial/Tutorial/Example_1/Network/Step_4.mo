@@ -1,8 +1,11 @@
 within Tutorial.Example_1.Network;
 partial model Step_4
-  OpenIPSL.Electrical.Buses.Bus B1 annotation (Placement(transformation(extent={{-92,-12},{-68,12}})));
-  OpenIPSL.Electrical.Buses.Bus B2 annotation (Placement(transformation(extent={{-32,-12},{-8,12}})));
-  OpenIPSL.Electrical.Buses.Bus B3 annotation (Placement(transformation(extent={{48,-12},{72,12}})));
+  OpenIPSL.Electrical.Buses.Bus B1(displayPF=false)
+                                   annotation (Placement(transformation(extent={{-92,-12},{-68,12}})));
+  OpenIPSL.Electrical.Buses.Bus B2(displayPF=false)
+                                   annotation (Placement(transformation(extent={{-32,-12},{-8,12}})));
+  OpenIPSL.Electrical.Buses.Bus B3(displayPF=false)
+                                   annotation (Placement(transformation(extent={{48,-12},{72,12}})));
   Generator.Generator G1 annotation (Placement(transformation(extent={{-120,-10},{-100,10}})));
   OpenIPSL.Electrical.Branches.PSAT.TwoWindingTransformer twoWindingTransformer(
     Sn=2220,
@@ -16,7 +19,8 @@ partial model Step_4
     G=0,
     B=0,
     X=0.5*100/2220,
-    S_b=100) annotation (Placement(transformation(extent={{10,10},{30,30}})));
+    S_b=100) annotation (Placement(transformation(extent={{10,10},{30,
+            30}})));
   OpenIPSL.Electrical.Buses.InfiniteBus infiniteBus(V_0=0.90081, angle_0=0) annotation (Placement(transformation(
         extent={{10,10},{-10,-10}},
         rotation=180,
@@ -48,7 +52,7 @@ partial model Step_4
           textStyle={TextStyle.Bold},
           textString="Step 3: Adding fault model"),
         Rectangle(
-          extent={{-20,-36},{10,-64}},
+          extent={{-20,-32},{10,-64}},
           lineColor={255,0,0},
           lineThickness=1),
         Text(

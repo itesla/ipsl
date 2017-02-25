@@ -1,6 +1,6 @@
 within Tutorial.Example_1.Generator;
 partial model Step_1
-  extends Tutorial.Support.Generator_Example;
+  extends OpenIPSL.Interfaces.Generator;
 
   OpenIPSL.Electrical.Machines.PSAT.Order6 machine(
     Vn=400,
@@ -23,7 +23,8 @@ partial model Step_1
     V_0=V_0,
     angle_0=angle_0,
     P_0=P_0,
-    Q_0=Q_0) annotation (Placement(transformation(extent={{0,-30},{60,30}})));
+    Q_0=Q_0) annotation (Placement(transformation(extent={{0,-30},{60,
+            30}})));
   annotation (Diagram(coordinateSystem(
         extent={{-100,-100},{100,100}},
         preserveAspectRatio=false,

@@ -1,6 +1,6 @@
 within Tutorial.Example_1.Generator;
 partial model Step_2
-  extends Tutorial.Support.Generator_Example;
+  extends OpenIPSL.Interfaces.Generator;
 
   OpenIPSL.Electrical.Controls.PSAT.AVR.AVRtypeIII avr(
     vfmax=7,
