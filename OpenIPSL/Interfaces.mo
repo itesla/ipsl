@@ -24,9 +24,9 @@ package Interfaces
   partial model Generator
     "Interface for a generator which provides the PwPin"
     extends OpenIPSL.Electrical.Essentials.pfComponent;
-     parameter Boolean displayPF=false "Enable/Disable"
-      annotation (Dialog(
-        group="Display Power Flow Results",
+     parameter Boolean displayPF=false "Display power flow results:" annotation (
+        Dialog(
+        group="Visualisation",
         __Dymola_compact=true,
         __Dymola_descriptionLabel=true),
         choices(checkBox=true));
@@ -55,16 +55,32 @@ package Interfaces
             textString="%name"),
           Text(
             visible=displayPF,
-            extent={{-100,140},{100,100}},
-            lineColor={238,46,47},
-            fillPattern=FillPattern.Solid,
-            textString=DynamicSelect("0 MW", OpenIPSL.Functions.displayPower(P," MW"))),
+            extent={{-80,160},{80,80}},
+            lineColor={255,0,0},
+            textString=DynamicSelect("0.0 MW",
+                OpenIPSL.Functions.displayPower(P, " MW"))),
+          Polygon(
+            visible=displayPF,
+            points=DynamicSelect({{-20,80},{-20,60},{20,70},{-20,80}},
+                if P >= 0 then {{-20,80},{-20,60},{20,70},{-20,80}}
+                else {{20,80},{20,60},{-20,70},{20,80}}),
+            lineColor={255,0,0},
+            fillColor={255,0,0},
+            fillPattern=FillPattern.Solid),
           Text(
             visible=displayPF,
-            extent={{-100,-100},{100,-140}},
+            extent={{-80,-80},{80,-160}},
             lineColor={0,255,0},
-            fillPattern=FillPattern.Solid,
-            textString=DynamicSelect("0 Mvar", OpenIPSL.Functions.displayPower(Q," Mvar"))),
+            textString=DynamicSelect("0.0 Mvar",
+                OpenIPSL.Functions.displayPower(Q, " Mvar"))),
+          Polygon(
+            visible=displayPF,
+            points=DynamicSelect({{-20,-80},{-20,-60},{20,-70},{-20,-80}},
+                if Q >= 0 then {{-20,-80},{-20,-60},{20,-70},{-20,-80}}
+                else {{20,-80},{20,-60},{-20,-70},{20,-80}}),
+            lineColor={0,255,0},
+            fillColor={0,255,0},
+            fillPattern=FillPattern.Solid),
           Line(
             points={{-20,20},{-50,40},{-80,0}},
             color={0,0,0},
