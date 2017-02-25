@@ -138,7 +138,7 @@ equation
           fillColor={0,255,0},
           fillPattern=FillPattern.Solid),
         Text(
-          extent={{-200,180},{200,140}},
-          lineColor={0,0,255},
+          extent={{-60,20},{60,-20}},
+          lineColor={255,255,0},
           textString="%name")}));
 end PwLine;
