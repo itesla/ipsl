@@ -58,7 +58,11 @@ equation
           thickness=0.5),Line(
           points={{-12,-4},{-6,-6},{-6,0}},
           color={255,0,0},
-          smooth=Smooth.None)}),
+          smooth=Smooth.None),
+        Text(
+          extent={{-110,110},{110,70}},
+          lineColor={0,0,255},
+          textString="%name")}),
     Diagram(coordinateSystem(
         extent={{-60,-60},{60,60}},
         preserveAspectRatio=true,
