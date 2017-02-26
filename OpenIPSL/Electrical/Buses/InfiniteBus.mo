@@ -22,7 +22,9 @@ equation
         preserveAspectRatio=false,
         initialScale=0.1,
         grid={2,2}), graphics={
-        Rectangle(extent={{-100,-100},{100,100}}, lineColor={0,0,0}),
+        Rectangle(extent={{-100,-100},{100,100}}, lineColor={0,0,0},
+          fillColor={241,241,241},
+          fillPattern=FillPattern.Solid),
         Text(
           visible=displayPF,
           extent={{-80,100},{80,20}},
