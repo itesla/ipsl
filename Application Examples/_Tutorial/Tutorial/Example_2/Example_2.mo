@@ -75,18 +75,16 @@ equation
     Diagram(coordinateSystem(
         extent={{-120,-100},{120,100}},
         preserveAspectRatio=false,
-        initialScale=0.1,
-        grid={2,2}), graphics={Text(
+        initialScale=0.1), graphics={Text(
           fillPattern=FillPattern.Solid,
           lineThickness=1,
           extent={{-100,100},{100,80}},
-          fontSize=15,
-          textStyle={TextStyle.Bold},
           textString="Example 2: Single-machine infinite bus model with the PSS*",
-          lineColor={0,0,0}), Text(
+          fontSize=15,
+          textStyle={TextStyle.Bold}), Text(
           fillPattern=FillPattern.Solid,
           lineThickness=1,
-          extent={{-120,-80},{0,-100}},
+          extent={{-120,-80},{40,-100}},
           textString="*P. Kundur, \"Power System Stability and Control\", Example 13.2",
           fontSize=12)}),
     experiment(
@@ -94,5 +92,4 @@ equation
       StopTime=10,
       Tolerance=1e-6,
       Interval=1e-4));
-
 end Example_2;
