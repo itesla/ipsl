@@ -1,39 +1,14 @@
-within Tutorial.Support;
-partial model Generator_Example
-  extends OpenIPSL.Electrical.Essentials.pfComponent;
-  OpenIPSL.Interfaces.PwPin pwPin annotation (Placement(transformation(extent={{100,-10},{120,10}}), iconTransformation(extent={{100,-10},{120,10}})));
-  annotation (
-    Icon(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,100}}), graphics={
-        Ellipse(
-          extent={{-100,100},{100,-100}},
-          lineColor={0,0,0},
-          fillColor={215,215,215},
-          fillPattern=FillPattern.Solid),
-        Line(
-          points={{20,-20},{50,-40},{80,0}},
-          color={0,0,0},
-          thickness=0.5),
-        Text(
-          extent={{-40,20},{40,-20}},
-          lineColor={0,0,0},
-          textString="%name"),
-        Line(
-          points={{-20,20},{-50,40},{-80,0}},
-          color={0,0,0},
-          thickness=0.5)}),
-    Documentation(revisions="<html>
-<!--DISCLAIMER-->
+within Tutorial;
+class Copyright "Disclaimer<html>
 <p>OpenIPSL:</p>
 <p>Copyright 2016 SmarTS Lab (Sweden)</p>
 <ul>
 <li>SmarTS Lab, research group at KTH: <a href=\"https://www.kth.se/en\">https://www.kth.se/en</a></li>
 </ul>
 <p>The authors can be contacted by email: <a href=\"mailto:luigiv@kth.se\">luigiv@kth.se</a></p>
-
 <p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
 <p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
-
-<p></p>
+<p>&nbsp;</p>
 <p>iPSL:</p>
 <p>Copyright 2015-2016 RTE (France), SmarTS Lab (Sweden), AIA (Spain) and DTU (Denmark)</p>
 <ul>
@@ -46,6 +21,29 @@ partial model Generator_Example
 
 <p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
 <p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
-</html>
-"), Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,100}})));
-end Generator_Example;
+</html>"
+
+  annotation (preferredView="info", DocumentationClass=false,
+        Icon(graphics={Text(
+          extent={{-100,140},{100,100}},
+          lineColor={0,127,0},
+          textString="%name%"),
+        Ellipse(extent={{-100,100},{100,-100}}, lineColor={0,127,0},
+          fillColor={255,255,255},
+          fillPattern=FillPattern.Solid),
+        Ellipse(
+          extent={{-60,60},{60,-60}},
+          lineColor={0,127,72},
+          fillColor={0,127,0},
+          fillPattern=FillPattern.Solid),
+        Ellipse(
+          extent={{-40,40},{40,-40}},
+          lineColor={255,255,255},
+          fillColor={255,255,255},
+          fillPattern=FillPattern.Solid),
+        Rectangle(
+          extent={{28,22},{64,-20}},
+          lineColor={255,255,255},
+          fillColor={255,255,255},
+          fillPattern=FillPattern.Solid)}));
+end Copyright;

@@ -35,10 +35,10 @@ model Step_3
   Modelica.Blocks.Sources.Constant pss_off(k=0) annotation (Placement(visible=true, transformation(extent={{-98,-46},
             {-78,-26}},                                                                                                          rotation=0)));
 equation
-  connect(pss_off.y, avr.vs) annotation (Line(points={{-77,-36},{
-          -52.3333,-36},{-52.3333,-36}},                                    color={0,0,127}));
-  connect(avr.v, machine.v) annotation (Line(points={{-52.3333,-16},{
-          -70,-16},{-70,6},{86,6},{86,-31},{82.5,-31},{79,-31}},                                                       color={0,0,127}));
+  connect(pss_off.y, avr.vs) annotation (Line(points={{-77,-36},{-52.3333,
+          -36},{-52.3333,-36}},                                             color={0,0,127}));
+  connect(avr.v, machine.v) annotation (Line(points={{-52.3333,-16},
+          {-70,-16},{-70,6},{86,6},{86,-31},{82.5,-31},{79,-31}},                                                      color={0,0,127}));
   connect(avr.vf, machine.vf) annotation (Line(points={{-12.3333,-26},
           {16,-26},{16,-25}},                                                        color={0,0,127}));
   connect(machine.pm, machine.pm0) annotation (Line(points={{16,-55},{6,-55},{-4,-55},{-4,-80},{22,-80},{22,-76.5},{22,-73}}, color={0,0,127}));
@@ -77,31 +77,5 @@ mechanical power
 
 6. Initial generator field voltage to initial AVR field voltage
 
-7. Generator pin to External pin")}), Documentation(revisions="<html>
-<!--DISCLAIMER-->
-<p>OpenIPSL:</p>
-<p>Copyright 2016 SmarTS Lab (Sweden)</p>
-<ul>
-<li>SmarTS Lab, research group at KTH: <a href=\"https://www.kth.se/en\">https://www.kth.se/en</a></li>
-</ul>
-<p>The authors can be contacted by email: <a href=\"mailto:luigiv@kth.se\">luigiv@kth.se</a></p>
-
-<p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
-<p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
-
-<p></p>
-<p>iPSL:</p>
-<p>Copyright 2015-2016 RTE (France), SmarTS Lab (Sweden), AIA (Spain) and DTU (Denmark)</p>
-<ul>
-<li>RTE: <a href=\"http://www.rte-france.com\">http://www.rte-france.com</a></li>
-<li>SmarTS Lab, research group at KTH: <a href=\"https://www.kth.se/en\">https://www.kth.se/en</a></li>
-<li>AIA: <a href=\"http://www.aia.es/en/energy\"> http://www.aia.es/en/energy</a></li>
-<li>DTU: <a href=\"http://www.dtu.dk/english\"> http://www.dtu.dk/english</a></li>
-</ul>
-<p>The authors can be contacted by email: <a href=\"mailto:info@itesla-ipsl.org\">info@itesla-ipsl.org</a></p>
-
-<p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
-<p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
-</html>
-"));
+7. Generator pin to External pin")}));
 end Step_3;

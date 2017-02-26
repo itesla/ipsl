@@ -1,6 +1,6 @@
 within Tutorial.Example_2.Generator;
 model Generator
-  extends Tutorial.Support.Generator_Example;
+  extends OpenIPSL.Interfaces.Generator;
   OpenIPSL.Electrical.Controls.PSAT.AVR.AVRtypeIII avr(
     vfmax=7,
     vfmin=-6.40,
@@ -39,44 +39,21 @@ model Generator
     T1=0.154,
     T2=0.033,
     T3=1,
-    T4=1) annotation (Placement(transformation(extent={{-40,-4},{-20,16}})));
+    T4=1) annotation (Placement(transformation(extent={{-40,-10},{-20,
+            10}})));
 equation
-  connect(avr.vf, machine.vf) annotation (Line(points={{20.8333,10},{20.8333,10},
-          {40,10}},                                                                color={0,0,127}));
-  connect(pss.vSI, machine.w) annotation (Line(points={{-41,6},{-60,6},{-60,-40},{96,-40},{96,18},{82,18}}, color={0,0,127}));
-  connect(pss.vs, avr.vs) annotation (Line(points={{-19,6},{-10,6},{-10,5},{
-          0.833333,5}},                                                                 color={0,0,127}));
-  connect(avr.v, machine.v) annotation (Line(points={{0.833333,15},{-10,15},{
-          -10,-34},{92,-34},{92,6},{82,6}},                                                              color={0,0,127}));
+  connect(avr.vf, machine.vf) annotation (Line(points={{20.8333,10},{
+          20.8333,10},{40,10}},                                                    color={0,0,127}));
+  connect(pss.vSI, machine.w) annotation (Line(points={{-41,0},{-60,0},
+          {-60,-40},{96,-40},{96,18},{82,18}},                                                              color={0,0,127}));
+  connect(pss.vs, avr.vs) annotation (Line(points={{-19,0},{-6,0},{-6,
+          5},{0.833333,5}},                                                             color={0,0,127}));
+  connect(avr.v, machine.v) annotation (Line(points={{0.833333,15},{
+          -12,15},{-12,-36},{90,-36},{90,6},{82,6}},                                                     color={0,0,127}));
   connect(machine.pm, machine.pm0) annotation (Line(points={{40,-10},{34,-10},{34,-28},{44,-28},{44,-22}}, color={0,0,127}));
-  connect(avr.vf0, machine.vf0) annotation (Line(points={{10,19.1667},{10,28},{
-          44,28},{44,22}},                                                                       color={0,0,127}));
-  connect(machine.p, pwPin) annotation (Line(points={{82,0.09928},{98,0.09928},{98,0},{110,0}}, color={0,0,255}));
-  annotation (Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,100}})), Documentation(revisions="<html>
-<!--DISCLAIMER-->
-<p>OpenIPSL:</p>
-<p>Copyright 2016 SmarTS Lab (Sweden)</p>
-<ul>
-<li>SmarTS Lab, research group at KTH: <a href=\"https://www.kth.se/en\">https://www.kth.se/en</a></li>
-</ul>
-<p>The authors can be contacted by email: <a href=\"mailto:luigiv@kth.se\">luigiv@kth.se</a></p>
+  connect(avr.vf0, machine.vf0) annotation (Line(points={{10,19.1667},
+          {10,28},{44,28},{44,22}},                                                              color={0,0,127}));
+  connect(machine.p, pwPin) annotation (Line(points={{82,0},{98,0},{
+          98,0},{110,0}},                                                                       color={0,0,255}));
 
-<p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
-<p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
-
-<p></p>
-<p>iPSL:</p>
-<p>Copyright 2015-2016 RTE (France), SmarTS Lab (Sweden), AIA (Spain) and DTU (Denmark)</p>
-<ul>
-<li>RTE: <a href=\"http://www.rte-france.com\">http://www.rte-france.com</a></li>
-<li>SmarTS Lab, research group at KTH: <a href=\"https://www.kth.se/en\">https://www.kth.se/en</a></li>
-<li>AIA: <a href=\"http://www.aia.es/en/energy\"> http://www.aia.es/en/energy</a></li>
-<li>DTU: <a href=\"http://www.dtu.dk/english\"> http://www.dtu.dk/english</a></li>
-</ul>
-<p>The authors can be contacted by email: <a href=\"mailto:info@itesla-ipsl.org\">info@itesla-ipsl.org</a></p>
-
-<p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
-<p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
-</html>
-"));
 end Generator;

@@ -47,8 +47,10 @@ equation
   der(vf) = -(vf*(Ke + Se) - simpleLagLim.y)/Te;
   Se = Ae*e^(Be*abs(vf));
   annotation (
-    Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,100}})),
-    Icon(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,100}}), graphics={Rectangle(extent={{
+    Diagram(coordinateSystem(                           extent={{-100,-100},{100,100}},
+          initialScale=0.1)),
+    Icon(coordinateSystem(                           extent={{-100,-100},{100,100}},
+          initialScale=0.1),                                                          graphics={Rectangle(extent={{
               -100,100},{100,-100}},                                                                                                  lineColor={0,0,255}),Text(
           extent={{-90,80},{-50,40}},
           lineColor={0,0,255},
