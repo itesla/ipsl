@@ -1,6 +1,5 @@
 within N44.Base_Case.Data;
 
-
 record PF_results
   extends Modelica.Icons.Record;
 

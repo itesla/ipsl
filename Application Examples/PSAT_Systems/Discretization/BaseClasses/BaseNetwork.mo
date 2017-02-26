@@ -1,6 +1,5 @@
 within PSAT_Systems.Discretization.BaseClasses;
 
-
 partial model BaseNetwork
   OpenIPSL.Electrical.Machines.PSAT.Order4 order4_Inputs_Outputs(
     V_b=20,

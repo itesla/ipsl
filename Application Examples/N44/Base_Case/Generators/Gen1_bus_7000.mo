@@ -1,6 +1,5 @@
 within N44.Base_Case.Generators;
 
-
 model Gen1_bus_7000 "Configuration of synchronous generator with regulators: GENROU, STAB2A, IEEET2, IEESGO;
   Nordic 44 model: Buses 3000, 7000"
   extends OpenIPSL.Electrical.Essentials.pfComponent;

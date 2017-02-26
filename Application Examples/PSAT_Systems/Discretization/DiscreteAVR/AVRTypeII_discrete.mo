@@ -1,6 +1,5 @@
 within PSAT_Systems.Discretization.DiscreteAVR;
 
-
 model AVRTypeII_discrete "Discretized PSAT Exciter Type 2"
   parameter Real vrmin=0 "Minimum regulator voltage, p.u";
   parameter Real vrmax=7.57 "Maximum regulator voltage, p.u";

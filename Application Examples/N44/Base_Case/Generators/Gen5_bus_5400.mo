@@ -1,6 +1,5 @@
 within N44.Base_Case.Generators;
 
-
 model Gen5_bus_5400 "Configuration of synchronous generator with regulators: GENSAL, SEXS, HYGOV;
   Nordic 44 model: Buses 5100, 5400, 5500, 6000, 6500"
   extends OpenIPSL.Electrical.Essentials.pfComponent;

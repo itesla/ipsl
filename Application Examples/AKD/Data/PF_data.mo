@@ -1,6 +1,5 @@
 within AKD.Data;
 
-
 record PF_data "PSSE complete data record"
   extends Modelica.Icons.Record;
   /* PSSE voltages from power flow solution */

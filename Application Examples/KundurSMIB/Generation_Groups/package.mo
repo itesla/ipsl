@@ -1,9 +1,6 @@
 within KundurSMIB;
 package Generation_Groups 
 
-
-
-
 annotation (Documentation(revisions="<html>
 <!--DISCLAIMER-->
 <p>OpenIPSL:</p>

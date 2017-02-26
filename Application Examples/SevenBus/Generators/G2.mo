@@ -1,6 +1,5 @@
 within SevenBus.Generators;
 
-
 model G2
   extends OpenIPSL.Electrical.Essentials.pfComponent;
   parameter Real M_b "Machine base power (MVA)" annotation (Dialog(group="Power flow data"));

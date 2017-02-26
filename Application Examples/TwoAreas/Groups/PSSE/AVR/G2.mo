@@ -1,6 +1,5 @@
 within TwoAreas.Groups.PSSE.AVR;
 
-
 model G2
   extends TwoAreas.Support.Generator;
   OpenIPSL.Electrical.Machines.PSSE.GENROU g2(

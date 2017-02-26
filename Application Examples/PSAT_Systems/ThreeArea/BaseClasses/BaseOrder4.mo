@@ -1,6 +1,5 @@
 within PSAT_Systems.ThreeArea.BaseClasses;
 
-
 partial model BaseOrder4
   extends BaseNetwork;
   OpenIPSL.Electrical.Machines.PSAT.Order4 order4_1(

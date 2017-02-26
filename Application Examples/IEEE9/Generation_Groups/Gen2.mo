@@ -1,6 +1,5 @@
 within IEEE9.Generation_Groups;
 
-
 model Gen2
   extends OpenIPSL.Electrical.Essentials.pfComponent;
   parameter Real vf0=1.359665419632471;

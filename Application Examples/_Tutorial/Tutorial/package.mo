@@ -1,11 +1,6 @@
 within ;
 package Tutorial
 
-
-
-
-
-
 annotation (
   Icon(graphics={
       Rectangle(

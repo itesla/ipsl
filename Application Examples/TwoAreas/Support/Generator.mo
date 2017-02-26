@@ -1,6 +1,5 @@
 within TwoAreas.Support;
 
-
 partial model Generator
   extends OpenIPSL.Electrical.Essentials.pfComponent;
   OpenIPSL.Interfaces.PwPin pwPin annotation (Placement(transformation(extent={{60,-10},{80,10}}), iconTransformation(extent={{100,-10},{120,10}})));

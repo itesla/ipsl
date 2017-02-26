@@ -1,9 +1,6 @@
 within ;
 package IEEE9 
 
-
-
-
 annotation (
   uses(Modelica(version="3.2.1"), OpenIPSL(version="1.0.0")),
   version="1",

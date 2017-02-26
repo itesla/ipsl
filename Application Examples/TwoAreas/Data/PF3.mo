@@ -1,6 +1,5 @@
 within TwoAreas.Data;
 
-
 record PF3
   import Modelica.Constants.pi;
   extends Support.PF_TwoAreas(

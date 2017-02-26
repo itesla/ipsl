@@ -1,10 +1,6 @@
 within ;
 package SevenBus 
 
-
-
-
-
 annotation (uses(OpenIPSL(version="1.0.0"), Modelica(version="3.2.1")), Documentation(revisions="<html>
 <!--DISCLAIMER-->
 <p>OpenIPSL:</p>

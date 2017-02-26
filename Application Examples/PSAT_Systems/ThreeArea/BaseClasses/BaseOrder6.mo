@@ -1,6 +1,5 @@
 within PSAT_Systems.ThreeArea.BaseClasses;
 
-
 partial model BaseOrder6
   extends BaseNetwork;
   OpenIPSL.Electrical.Machines.PSAT.Order6 Syn2(

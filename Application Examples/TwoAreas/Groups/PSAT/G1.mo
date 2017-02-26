@@ -1,6 +1,5 @@
 within TwoAreas.Groups.PSAT;
 
-
 model G1
   extends TwoAreas.Support.Generator;
   OpenIPSL.Electrical.Machines.PSAT.Order6 order6_1(

@@ -1,6 +1,5 @@
 within N44.Base_Case.Generators;
 
-
 model Gen2_bus_3249 "Configuration of synchronous generator with regulators: GENSAL, HYGOV, SCRX;
   Nordic 44 model: Buses 3245, 3249, 5600"
   extends OpenIPSL.Electrical.Essentials.pfComponent;

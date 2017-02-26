@@ -1,9 +1,6 @@
 within ;
 package PSAT_Systems "Different test systems from PSAT"
 
-
-
-
 annotation (uses(
     Modelica(version="3.2.1"),
     OpenIPSL(version="1.0.0"),

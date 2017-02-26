@@ -1,6 +1,5 @@
 within AKD.Data;
 
-
 record AKD_PF_powers
   extends Modelica.Icons.Record;
   parameter Real P58553=20.71144;

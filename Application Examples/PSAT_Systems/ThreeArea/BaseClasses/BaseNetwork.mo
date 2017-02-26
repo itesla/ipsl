@@ -1,6 +1,5 @@
 within PSAT_Systems.ThreeArea.BaseClasses;
 
-
 partial model BaseNetwork
   OpenIPSL.Electrical.Machines.PSAT.Order3 order3_2(
     Sn=900,

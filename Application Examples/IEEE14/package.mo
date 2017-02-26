@@ -1,8 +1,6 @@
 within ;
 package IEEE14 
 
-
-
 annotation (
   uses(Modelica(version="3.2.1"), OpenIPSL(version="1.0.0")),
   Documentation(info="<html>

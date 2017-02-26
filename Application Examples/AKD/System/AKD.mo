@@ -1,6 +1,5 @@
 within AKD.System;
 
-
 model AKD
   constant Real pi=Modelica.Constants.pi;
   Components.Gen_no_contr gen58553(

@@ -1,6 +1,5 @@
 within PSAT_Systems.TwoAreaOld.BaseClasses;
 
-
 partial model BaseNetwork
   OpenIPSL.Electrical.Buses.Bus bus1 annotation (Placement(transformation(extent={{-90,-10},{-70,10}})));
   OpenIPSL.Electrical.Buses.Bus bus2 annotation (Placement(transformation(extent={{70,-10},{90,10}})));

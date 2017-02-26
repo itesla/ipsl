@@ -1,6 +1,5 @@
 within TwoAreas.Data;
 
-
 record PF1
   extends Support.PF_TwoAreas(
     voltages(

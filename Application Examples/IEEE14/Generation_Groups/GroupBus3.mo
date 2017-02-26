@@ -1,6 +1,5 @@
 within IEEE14.Generation_Groups;
 
-
 model GroupBus3
   extends OpenIPSL.Electrical.Essentials.pfComponent;
   parameter Real vf0=2.045032675265054 "Initial field voltage";
