@@ -1,5 +1,5 @@
 within iPSL.Electrical.Controls.Eurostag;
-model htgpsat3_Init
+model htgpsat3_Init "Initialization model of govern HTGPSAT3"
 //HTGPSAT3 HTGPSAT3_1(A11=0.5,A13=1.,A21=1.5,A23=1.,DELTA=.3000000,PMAX=1.,PMIN=0.,SIGMA=0.04,TG=0.2,TP=0.04,TR=5.,TW=1.,UC=-0.1,UO=0.1);
   parameter Real A11;
   parameter Real A13;

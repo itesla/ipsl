@@ -1,5 +1,5 @@
 within iPSL.Electrical.Controls.Eurostag;
-model govpsat1_Init
+model govpsat1_Init "Initialization model of govern GOVPSAT1"
 //GOVPSAT1 GOVPSAT1_1(PMAX=.9500000,PMIN=0.,RD=0.04,T3=5.,T4=0.01,T5=6.,TC=0.2,TS=5.);
 //GOVPSAT1 GOVPSAT1_2(PMAX=.9500000,PMIN=-0.5,RD=0.04,T3=5.,T4=0.01,T5=6.,TC=0.2,TS=5.);
   parameter Real PMAX;

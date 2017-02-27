@@ -1,5 +1,5 @@
 within iPSL.Electrical.Controls.Eurostag;
-model GOVER3 "Voltage governor. Developed by AIA. 2013"
+model GOVER3 "Turbine-Governor model GOVER3. Developed by AIA. 2013"
   parameter Real init_V1;
   parameter Real init_V2;
   parameter Real init_V3;

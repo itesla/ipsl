@@ -1,5 +1,5 @@
-within iPSL.Electrical.Controls.Eurostag;
-model gsteam0
+within iPSL.Electrical.Controls.Eurostag; 
+model gsteam0 "Turbine-Governor model GSTEAM0"
 //GSTEAM0 GSTEAM0_1(DT=0.,RR=0.05,T1=0.5,T2=3.,T3=10.,VMAX=1.,VMIN=0.);
 //GSTEAM0 GSTEAM0_2(DT=0.,RR=0.05,T1=.4900000,T2=2.100000,T3=7.,VMAX=1.,VMIN=0.);
 //GSTEAM0 GSTEAM0_3(DT=0.,RR=0.05,T1=.4900000,T2=2.100000,T3=7.,VMAX=1.,VMIN=0.);

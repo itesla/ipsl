@@ -1,5 +1,5 @@
 within iPSL.Electrical.Controls.Eurostag;
-model oelpsat_Init
+model oelpsat_Init "Initialization model of model OELPSAT"
 //OELPSAT OELPSAT_1(IFDLIM=3.,K0=120.,T0=10.,T1=5.,T2=50.,TE=0.1,TR=0.001,V0=0.,VFMAX=5.,VFMIN=0.,VOELMAX=1.100000);
 //OELPSAT OELPSAT_2(IFDLIM=3.,K0=50.,T0=10.,T1=4.,T2=20.,TE=0.1,TR=0.001,V0=0.,VFMAX=4.,VFMIN=0.,VOELMAX=1.100000);
   parameter Real IFDLIM;
