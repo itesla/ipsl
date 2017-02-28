@@ -7,7 +7,7 @@ This project encompasses the development of a Modelica library for Power System 
 As such, there are no solver tools provided in this repository (no Power Flow Solvers, no Time-Domain solvers, etc.).
 You can find more information on the [Wiki - Page](https://github.com/itesla/ipsl/wiki/Overview).
 
-Models in the library at tagged with a level of development following the categories decsribed below:
+Models in the library are tagged with a level of development following the categories described below:
 
 4 - Validated with very accurate results with regard to the reference software (4 - Green tag)
 
