@@ -10,9 +10,13 @@ You can find more information on the [Wiki - Page](https://github.com/itesla/ips
 Models in the library at tagged with a level of development following the categories decsribed below:
 
 4 - Validated with very accurate results with regard to the reference software (4 - Green tag)
+
 3 - Validated with Acceptable behavior against the reference software (3 - blue tag)
+
 2 - Model usable for simulation but not validated (2 - yellow tag)
+
 1 - Model available but errors in the syntax to be corrected for use in simulation (1 - orange tag)
+
 0 - Data not available or incomplete model (0 - red tag)
 
 ## Documentation:
