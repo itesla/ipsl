@@ -7,6 +7,14 @@ This project encompasses the development of a Modelica library for Power System 
 As such, there are no solver tools provided in this repository (no Power Flow Solvers, no Time-Domain solvers, etc.).
 You can find more information on the [Wiki - Page](https://github.com/itesla/ipsl/wiki/Overview).
 
+Models in the library at tagged with a level of development following the categories decsribed below:
+
+4 - Validated with very accurate results with regard to the reference software (4 - Green tag)
+3 - Validated with Acceptable behavior against the reference software (3 - blue tag)
+2 - Model usable for simulation but not validated (2 - yellow tag)
+1 - Model available but errors in the syntax to be corrected for use in simulation (1 - orange tag)
+0 - Data not available or incomplete model (0 - red tag)
+
 ## Documentation:
 Currently, we are developing an 'application guide' with examples how to use the library and documentation on many of the test networks developed by different project partners, however, because the iTesla project is still on-going, we are not sure when this material will be ready.
 
@@ -21,11 +29,7 @@ Please consult the [contribution guidelines](https://github.com/itesla/ipsl/wiki
 ## Citing iPSL in Publications:
 If you use iPSL in your work or research, all we ask you in exchange is that you **cite the reference publications**, according to your use.
 
-Preferably, please cite the following paper:
-
-* L. Vanfretti, T. Rabuzin, M. Baudette, and M. Murad, iTesla Power Systems Library (iPSL): A Modelica library for phasor time-domain simulations, SoftwareX, Available online 18 May 2016, ISSN 2352-7110, [DOI: 10.1016/j.softx.2016.05.001](http://dx.doi.org/10.1016/j.softx.2016.05.001)
-
-Otherwise, please consult our [Publication list](https://github.com/itesla/ipsl/wiki/Publications), for browsing the reference publications
+Please consult our [Publication list](https://github.com/itesla/ipsl/wiki/Publications), for browsing the reference publications
 
 You are also welcome to submit your contributions as stated above.
 
