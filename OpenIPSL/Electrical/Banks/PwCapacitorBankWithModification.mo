@@ -24,7 +24,6 @@ equation
   p.vi = ((-p.ir*B) + p.ii*G)/(G*G + B*B);
   annotation (Icon(graphics={
         Rectangle(extent={{-100,100},{100,-100}}, lineColor={0,0,255}),
-
         Line(
           points={{0,90},{0,60}},
           color={0,0,255},

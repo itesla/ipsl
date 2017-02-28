@@ -26,7 +26,6 @@ equation
   annotation (Icon(coordinateSystem(extent={{-100,-100},{100,100}},
           initialScale=0.1), graphics={
         Rectangle(extent={{-100,100},{100,-100}}, lineColor={0,0,255}),
-
         Line(
           points={{0,90},{0,10}},
           color={0,0,255},
