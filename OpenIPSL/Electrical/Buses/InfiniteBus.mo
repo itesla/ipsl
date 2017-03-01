@@ -30,7 +30,7 @@ equation
           extent={{-80,100},{80,20}},
           lineColor={255,0,0},
           textString=DynamicSelect("0.0 MW",
-              OpenIPSL.Functions.displayPower(P, " MW"))),
+              OpenIPSL.NonElectrical.Functions.displayPower(P, " MW"))),
         Polygon(
           visible=displayPF,
           points=DynamicSelect({{-20,30},{-20,10},{20,20},{-20,30}},
@@ -44,7 +44,7 @@ equation
           extent={{-80,-20},{80,-100}},
           lineColor={0,255,0},
           textString=DynamicSelect("0.0 Mvar",
-              OpenIPSL.Functions.displayPower(Q, " Mvar"))),
+              OpenIPSL.NonElectrical.Functions.displayPower(Q, " Mvar"))),
         Polygon(
           visible=displayPF,
           points=DynamicSelect({{-20,-30},{-20,-10},{20,-20},{-20,-30}},
