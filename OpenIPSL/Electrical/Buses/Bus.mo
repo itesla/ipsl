@@ -1,8 +1,8 @@
-within OpenIPSL.Electrical.Buses;
+﻿within OpenIPSL.Electrical.Buses;
 model Bus "Bus model (2014/03/10)"
   extends OpenIPSL.Electrical.Essentials.pfComponent;
-  OpenIPSL.Interfaces.PwPin p(vr(start=V_0*cos(angle_0*Modelica.Constants.pi
-          /180)), vi(start=V_0*sin(angle_0*Modelica.Constants.pi/180)))
+  OpenIPSL.Interfaces.PwPin p(vr(start=V_0*cos(angle_0*Modelica.Constants.pi/
+          180)), vi(start=V_0*sin(angle_0*Modelica.Constants.pi/180)))
     annotation (Placement(
       visible=true,
       transformation(
@@ -14,24 +14,18 @@ model Bus "Bus model (2014/03/10)"
         extent={{-10,-10},{10,10}},
         rotation=0)));
   Real V(start=V_0) "Bus voltage magnitude (pu)";
-  Modelica.SIunits.Conversions.NonSIunits.Angle_deg angle(start=angle_0) "Bus voltage angle";
-  parameter Real V_0=1 "Initial voltage magnitude (pu)"
-    annotation (Dialog(group="Power flow data"));
-  parameter Modelica.SIunits.Conversions.NonSIunits.Angle_deg angle_0=0 "Initial voltage angle"
-    annotation (Dialog(group="Power flow data"));
-   parameter Boolean displayPF=true "Display voltage values:" annotation (
-      Dialog(
+  Modelica.SIunits.Conversions.NonSIunits.Angle_deg angle(start=angle_0)
+    "Bus voltage angle";
+  parameter Boolean displayPF=true "Display voltage values:" annotation (Dialog(
       group="Visualisation",
       __Dymola_compact=true,
-      __Dymola_descriptionLabel=true),
-      choices(checkBox=true));
+      __Dymola_descriptionLabel=true), choices(checkBox=true));
 equation
   V = sqrt(p.vr^2 + p.vi^2);
   angle = atan2(p.vi, p.vr)*180/Modelica.Constants.pi;
   p.ir = 0;
   p.ii = 0;
-  annotation (
-    Icon(graphics={
+  annotation (Icon(graphics={
         Rectangle(
           visible=true,
           fillPattern=FillPattern.Solid,
@@ -53,5 +47,6 @@ equation
           origin={0,-160},
           extent={{-60,-20},{60,20}},
           lineColor={170,0,0},
-          textString=DynamicSelect("Angle", String(angle, significantDigits=3)+"°"))}));
+          textString=DynamicSelect("Angle", String(angle, significantDigits=3)
+               + "°"))}));
 end Bus;
