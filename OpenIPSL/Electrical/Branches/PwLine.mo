@@ -86,7 +86,7 @@ equation
           extent={{-200,160},{-20,40}},
           lineColor={255,0,0},
           textString=DynamicSelect("0.0 MW",
-              OpenIPSL.Functions.displayPower(P12, " MW"))),
+              OpenIPSL.NonElectrical.Functions.displayPower(P12, " MW"))),
         Polygon(
           visible=displayPF,
           points=DynamicSelect({{-120,70},{-120,50},{-80,60},{-120,70}},
@@ -100,7 +100,7 @@ equation
           extent={{20,160},{200,40}},
           lineColor={255,0,0},
           textString=DynamicSelect("0.0 MW",
-              OpenIPSL.Functions.displayPower(P21, " MW"))),
+              OpenIPSL.NonElectrical.Functions.displayPower(P21, " MW"))),
         Polygon(
           visible=displayPF,
           points=DynamicSelect({{80,70},{80,50},{120,60},{80,70}},
@@ -114,7 +114,7 @@ equation
           extent={{-200,-40},{-20,-160}},
           lineColor={0,255,0},
           textString=DynamicSelect("0.0 Mvar",
-              OpenIPSL.Functions.displayPower(Q12, " Mvar"))),
+              OpenIPSL.NonElectrical.Functions.displayPower(Q12, " Mvar"))),
         Polygon(
           visible=displayPF,
           points=DynamicSelect({{-120,-70},{-120,-50},{-80,-60},{-120,-70}},
@@ -128,7 +128,7 @@ equation
           extent={{20,-40},{200,-160}},
           lineColor={0,255,0},
           textString=DynamicSelect("0.0 Mvar",
-              OpenIPSL.Functions.displayPower(Q21, " Mvar"))),
+              OpenIPSL.NonElectrical.Functions.displayPower(Q21, " Mvar"))),
         Polygon(
           visible=displayPF,
           points=DynamicSelect({{80,-70},{80,-50},{120,-60},{80,-70}},

@@ -1,4 +1,4 @@
-within OpenIPSL.Functions;
+within OpenIPSL.NonElectrical.Functions;
 function displayPower
   "A function to generate a nice string of a power variable with unit attached."
   extends Modelica.Icons.Function;
