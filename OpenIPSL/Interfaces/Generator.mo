@@ -7,7 +7,7 @@ partial model Generator
       group="Visualisation",
       __Dymola_compact=true,
       __Dymola_descriptionLabel=true),
-      choices(checkbox=true,__Dymola_checkBox=true));
+      choices(checkBox=true));
   OpenIPSL.Interfaces.PwPin pwPin annotation (Placement(transformation(extent={
             {100,-10},{120,10}}), iconTransformation(extent={{100,-10},{120,10}})));
   OpenIPSL.Types.ActivePowerMega P "Active power";

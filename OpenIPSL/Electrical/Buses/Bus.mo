@@ -19,7 +19,7 @@ model Bus "Bus model (2014/03/10)"
   parameter Boolean displayPF=true "Display voltage values:" annotation (Dialog(
       group="Visualisation",
       __Dymola_compact=true,
-      __Dymola_descriptionLabel=true), choices(checkbox=true,__Dymola_checkBox=true));
+      __Dymola_descriptionLabel=true), choices(checkBox=true));
 equation
   V = sqrt(p.vr^2 + p.vi^2);
   angle = atan2(p.vi, p.vr)*180/Modelica.Constants.pi;
