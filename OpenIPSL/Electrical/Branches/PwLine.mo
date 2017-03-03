@@ -35,7 +35,7 @@ model PwLine "Model for a transmission Line based on the pi-equivalent circuit"
       group="Visualisation",
       __Dymola_compact=true,
       __Dymola_descriptionLabel=true),
-      choices(checkBox=true));
+      choices(checkbox=true,__Dymola_checkBox=true));
   OpenIPSL.Types.ActivePowerMega P12;
   OpenIPSL.Types.ActivePowerMega P21;
   OpenIPSL.Types.ReactivePowerMega Q12;
