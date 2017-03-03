@@ -10,7 +10,7 @@ model InfiniteBus "PSAT Infinite Bus"
       group="Visualisation",
       __Dymola_compact=true,
       __Dymola_descriptionLabel=true),
-      choices(checkBox=true));
+      choices(checkbox=true,__Dymola_checkBox=true));
 equation
   p.vr = V_0*cos(angle_0*Modelica.Constants.pi/180);
   p.vi = V_0*sin(angle_0*Modelica.Constants.pi/180);
