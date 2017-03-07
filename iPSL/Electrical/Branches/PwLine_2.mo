@@ -9,47 +9,23 @@ model PwLine_2 "Model for a transmission Line based on the pi-equivalent circuit
   parameter Real B "Shunt half susceptance p.u.";
   parameter Real Y = 1 / sqrt(R * R + X * X);
   parameter Real angle = atan2(R, X);
-  parameter Real S1 = B;
-  parameter Real S2 = B;
-  parameter Real C1 = G;
-  parameter Real C2 = G;
-  //I=f(U);
-  //I1
-  parameter Real ir1_dur1 = Y * sin(angle) + C1;
-  parameter Real ir1_dui1 = (-S1) + Y * cos(angle);
-  parameter Real ir1_dur2 = -Y * sin(angle);
-  parameter Real ir1_dui2 = -Y * cos(angle);
-  parameter Real ii1_dur1 = S1 - Y * cos(angle);
-  parameter Real ii1_dui1 = Y * sin(angle) + C1;
-  parameter Real ii1_dur2 = Y * cos(angle);
-  parameter Real ii1_dui2 = -Y * sin(angle);
-  // I2
-  parameter Real ir2_dur1 = -Y * sin(angle);
-  parameter Real ir2_dui1 = -Y * cos(angle);
-  parameter Real ir2_dur2 = C2 + Y * sin(angle);
-  parameter Real ir2_dui2 = (-S2) + Y * cos(angle);
-  parameter Real ii2_dur1 = Y * cos(angle);
-  parameter Real ii2_dui1 = -Y * sin(angle);
-  parameter Real ii2_dur2 = S2 - Y * cos(angle);
-  parameter Real ii2_dui2 = C2 + Y * sin(angle);
+
   // Active, Reactive and Apparent power
-  Real Ps "Active power at sending";
-  Real Pr "Active power at receiving";
-  Real Qs "Reactive power at sending";
-  Real Qr "Reactive power at receiving";
-  Real Ss "Apparent power at sending";
-  Real Sr "Apparent power at receiving";
+  Complex S_s "power at sending";
+  Complex S_r "power at receiving";
+  Complex V_s(re = p.vr, im = p.vi);
+  Complex I_s(re = p.ir, im = p.ii);
+  Complex V_r(re = n.vr, im = n.vi);
+  Complex I_r(re = n.ir, im = n.ii);
+  protected 
+  parameter Complex Y1(re = Y * sin(angle), im  = -Y * cos(angle));
+  parameter Complex y(re = G , im  = B);  
 equation
-  n.ir = ir1_dur1*n.vr + ir1_dui1*n.vi + ir1_dur2*p.vr + ir1_dui2*p.vi;
-  n.ii = ii1_dur1*n.vr + ii1_dui1*n.vi + ii1_dur2*p.vr + ii1_dui2*p.vi;
-  p.ir = ir2_dur1*n.vr + ir2_dui1*n.vi + ir2_dur2*p.vr + ir2_dui2*p.vi;
-  p.ii = ii2_dur1*n.vr + ii2_dui1*n.vi + ii2_dur2*p.vr + ii2_dui2*p.vi;
-  Ps = p.vr * p.ir + p.vi * p.ii;
-  Qs = (-p.vr * p.ii) + p.vi * p.ir;
-  Ss = sqrt(Ps ^ 2 + Qs ^ 2);
-  Pr = n.vr * n.ir + n.vi * n.ii;
-  Qr = (-n.vr * n.ii) + n.vi * n.ir;
-  Sr = sqrt(Pr^2 + Qr^2);
+   I_s = (V_s - V_r)*Y1 + y*V_s;
+   I_r = (V_r - V_s)*Y1 + y*V_r;
+   S_s =  V_s * I_s;
+   S_r =  V_r * I_r;
+ 
   annotation (
     Icon(graphics={Rectangle(extent={{-60,40},{60,-42}}, lineColor={0,0,255}),Rectangle(
           extent={{-40,10},{40,-10}},

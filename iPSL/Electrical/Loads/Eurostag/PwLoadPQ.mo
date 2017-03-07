@@ -9,10 +9,13 @@ class PwLoadPQ "Constant Power load defined by active power P and reactive power
   parameter Real angle_0=0 "Voltage angle (deg)" annotation (Dialog(group="Power flow data"));
   parameter Real Vo_real = V_0 * cos(angle_0 * Modelica.Constants.pi / 180) "Initial voltage at node in p.u. (Real part)";
   parameter Real Vo_img = V_0 * sin(angle_0 * Modelica.Constants.pi / 180) "Initial voltage at node in p.u. (Imaginary part)";
+  Complex V(re = p.vr, im = p.vi);
+  Complex I(re = p.ir, im = p.ii);
+  protected
+  parameter Complex S(re = P, im = Q); 
 equation
-  P = p.vr * p.ir + p.vi * p.ii;
-  Q = (-p.vr * p.ii) + p.vi * p.ir;
-
+   I =  S/V
+   
   annotation(Diagram(graphics), Icon(graphics={  Rectangle(extent = {{-60, 60}, {40, -40}}, lineColor = {0, 0, 255}), Rectangle(extent = {{-40, 40}, {20, -20}}, lineColor = {0, 0, 255}), Line(points = {{-40, 40}, {20, -20}}, color = {0, 0, 255}, smooth = Smooth.None), Line(points = {{-40, -20}, {20, 40}}, color = {0, 0, 255}, smooth = Smooth.None)}), Documentation(info="<html>
 <table cellspacing=\"1\" cellpadding=\"1\" border=\"1\"><tr>
 <td align=center  width=50%><p>Development level</p></td>
