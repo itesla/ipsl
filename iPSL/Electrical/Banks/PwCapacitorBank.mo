@@ -4,13 +4,12 @@ model PwCapacitorBank "Capacitor Bank with Bank.2013"
   parameter Real nsteps "Number of steps connected";
   parameter Real G = 0;
   parameter Real B = 0;
-  parameter Complex Y(re = G, im = B);
-  Complex V;
+  Complex V(re = p.vr, im = p.vi);
   Complex I;
+protected 
+  parameter Complex Y(re = G, im = B);
 equation
-  I = Y*V;
-  V.re = p.vr;
-  V.im = p.vi;
+  I = V*Y;
   p.ii = I.im;
   p.ir = I.re;
   annotation (Icon(graphics={Rectangle(extent={{-40,60},{60,-40}}, lineColor={0,0,255}),Line(

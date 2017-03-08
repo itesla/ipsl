@@ -8,20 +8,22 @@ model PwFault "Transitory short-circuit on a node. Shunt impedance connected onl
   parameter Real X "Conductance (pu)";
   parameter Real startTime "Start time of the fault (s)";
   parameter Real endTime "End time of the fault (s)";
-  Complex V(re = p.vr, im = p.vi);
+  Complex V;
   Complex I;
-
-protected
-  parameter Complex Z(re = R, im  = X);
+protected  
+  parameter Complex Z(re = R, im = X);
 equation
    V = Z*I;
  if  time > startTime and time < endTime  then 
-     p.ii = I.im;
-     p.ir = I.re;    
-  else 
-      p.ii = 0.0; 
-      p.ir = 0.0; 
-  end if;
+   p.ii = I.im;
+   p.ir = I.re;
+   V.re = p.vr;
+   V.im = p.vi; 
+  else  
+   p.ii = 0.0;
+   p.ir = 0.0; 
+   V = Complex (0); 
+  end if;  
 
   annotation (
     Icon(coordinateSystem(

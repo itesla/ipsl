@@ -15,7 +15,7 @@ model PwLinewithOpeningSending "Transmission Line based on the pi-equivalent cir
   Complex I_s(re = p.ir, im = p.ii);
   Complex V_r(re = n.vr, im = n.vi);
   Complex I_r(re = n.ir, im = n.ii);
-  protected 
+protected 
   parameter Complex Y1(re = R /(X*X + R*R) , im  = -X / (X*X + R*R));
   parameter Complex y(re = G , im = B);
   parameter Complex Z_total (re = if abs(G) > 0 then R + G/(G*G + B*B) else R , im = if abs(B) > 0 then X - B/(G*G + B*B) else X ); 
@@ -23,8 +23,8 @@ model PwLinewithOpeningSending "Transmission Line based on the pi-equivalent cir
 equation
 
   if time > startTime and time < endTime then 
-    I_s = Complex(0);
-    I_r = V_r*Y_total ;
+   I_s = Complex(0);
+   I_r = V_r*Y_total ;
   else
    I_s = (V_s - V_r)*Y1 + y*V_s;
    I_r = (V_r - V_s)*Y1 + y*V_r;

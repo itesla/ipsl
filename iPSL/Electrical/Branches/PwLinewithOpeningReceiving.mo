@@ -11,28 +11,23 @@ model PwLinewithOpeningReceiving "Transmission Line based on the pi-equivalent c
   parameter Real B "Shunt half susceptance p.u.";
   parameter Real startTime "Start time of the opening";
   parameter Real endTime "End time of the opening";
-  Real Zr;
-  Real Zi;
+  Complex V_s(re = p.vr, im = p.vi);
+  Complex I_s(re = p.ir, im = p.ii);
+  Complex V_r(re = n.vr, im = n.vi);
+  Complex I_r(re = n.ir, im = n.ii);
+protected 
+  parameter Complex Y1(re = R /(X*X + R*R) , im  = -X / (X*X + R*R));
+  parameter Complex y(re = G , im = B);
+  parameter Complex Z_total (re = if abs(G) > 0 then R + G/(G*G + B*B) else R , im = if abs(B) > 0 then X - B/(G*G + B*B) else X ); 
+  parameter Complex Y_total = 1/Z_total;  
 equation
-  Zr = R * G + X * B;
-  Zi = R * B + X * G;
-  if time > startTime then
-    if time < endTime then
-      p.vr * (2.0 * G + G * Zr - B * Zi) - p.vi * (2.0 * B + Zr * B + Zi * G) = p.ir * (1.0 + Zr) - p.ii * Zi;
-      p.vr * (2.0 * B + Zr * B + Zi * G) + p.vi * (2.0 * G + G * Zr - B * Zi) = p.ir * Zi + p.ii * (1.0 + Zr);
-      n.ii = 0.0;
-      n.ir = 0.0;
-    else
-      R*(n.ir - G*n.vr + B*n.vi) - X*(n.ii - B*n.vr - G*n.vi) = n.vr - p.vr;
-      R*(n.ii - B*n.vr - G*n.vi) + X*(n.ir - G*n.vr + B*n.vi) = n.vi - p.vi;
-      R*(p.ir - G*p.vr + B*p.vi) - X*(p.ii - B*p.vr - G*p.vi) = p.vr - n.vr;
-      R*(p.ii - B*p.vr - G*p.vi) + X*(p.ir - G*p.vr + B*p.vi) = p.vi - n.vi;
-    end if;
+
+  if time > startTime and time < endTime then 
+   I_s = V_s*Y_total;
+   I_r = Complex(0);
   else
-    R*(n.ir - G*n.vr + B*n.vi) - X*(n.ii - B*n.vr - G*n.vi) = n.vr - p.vr;
-    R*(n.ii - B*n.vr - G*n.vi) + X*(n.ir - G*n.vr + B*n.vi) = n.vi - p.vi;
-    R*(p.ir - G*p.vr + B*p.vi) - X*(p.ii - B*p.vr - G*p.vi) = p.vr - n.vr;
-    R*(p.ii - B*p.vr - G*p.vi) + X*(p.ir - G*p.vr + B*p.vi) = p.vi - n.vi;
+   I_s = (V_s - V_r)*Y1 + y*V_s;
+   I_r = (V_r - V_s)*Y1 + y*V_r;
   end if;
   annotation (
     Icon(graphics={Rectangle(extent={{-60,40},{60,-42}}, lineColor={0,0,255}),Rectangle(
