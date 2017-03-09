@@ -163,8 +163,8 @@ equation
   connect(B4.p, breaker1.p) annotation (Line(points={{80,-20},{80,-14.5}}, color={0,0,255}));
   connect(V_IB, G2.V_IB) annotation (Line(points={{55,-97},{55,-96},{55,-89.8}},           color={0,0,127}));
   connect(breaker1.TRIGGER, G2.TRIGGER) annotation (Line(points={{84.5,-10},{116,-10},{116,-80},{71,-80}}, color={255,0,255}));
-  connect(L2.p, B3.p) annotation (Line(points={{94.6,40},{80,40},{69.5,40},{
-          69.5,40},{60,40}}, color={0,0,255}));
+  connect(L2.p, B3.p) annotation (Line(points={{94.6,40},{80,40},{69.5,40},{69.5,
+          40},{60,40}},      color={0,0,255}));
   connect(L2.n, IB.p) annotation (Line(points={{105.4,40},{120,40},{120,40}},
         color={0,0,255}));
   connect(fi_IB, G2.fi_IB) annotation (Line(points={{43,-85},{46.5,-85},{46.5,

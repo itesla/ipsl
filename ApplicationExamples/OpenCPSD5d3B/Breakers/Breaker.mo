@@ -1,8 +1,8 @@
 within OpenCPSD5d3B.Breakers;
 model Breaker
   import Modelica.ComplexMath.j;
-  OpenIPSL.Connectors.PwPin p annotation (Placement(transformation(extent={{-100,-10},{-80,10}}), iconTransformation(extent={{-100,-10},{-80,10}})));
-  OpenIPSL.Connectors.PwPin n annotation (Placement(transformation(extent={{80,-10},{100,10}}), iconTransformation(extent={{80,-10},{100,10}})));
+  OpenIPSL.Interfaces.PwPin p annotation (Placement(transformation(extent={{-100,-10},{-80,10}}), iconTransformation(extent={{-100,-10},{-80,10}})));
+  OpenIPSL.Interfaces.PwPin n annotation (Placement(transformation(extent={{80,-10},{100,10}}), iconTransformation(extent={{80,-10},{100,10}})));
   Complex vs(re=p.vr, im=p.vi);
   Complex vr(re=n.vr, im=n.vi);
   Complex is(re=p.ir, im=p.ii);

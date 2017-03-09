@@ -8,7 +8,7 @@ partial model BaseClass
   parameter Real samplePeriod = 0.02 "Sample period";
   Real P, Q;
 
-  OpenIPSL.Connectors.PwPin pin annotation(Placement(visible = true, transformation(origin = {-60, 30}, extent = {{-10, -10}, {10, 10}}, rotation = 0), iconTransformation(origin = {-110, 0}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
+  OpenIPSL.Interfaces.PwPin pin annotation(Placement(visible = true, transformation(origin = {-60, 30}, extent = {{-10, -10}, {10, 10}}, rotation = 0), iconTransformation(origin = {-110, 0}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
   Modelica.Blocks.Noise.NormalNoise noise_gen(mu = active_mu, samplePeriod = samplePeriod, sigma = active_sigma)  annotation(Placement(visible = true, transformation(origin = {20, 62}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
 equation
   P = pin.vr*pin.ir - pin.vi*pin.ii;
