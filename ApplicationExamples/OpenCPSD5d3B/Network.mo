@@ -150,9 +150,8 @@ equation
   connect(G2.fi_DN, fi_DN) annotation (Line(points={{50,-75},{40,-75},{40,-76},{22,-76},{22,-90},{10,-90}}, color={0,0,127}));
   connect(G2.fi_IB, fi_IB) annotation (Line(points={{50,-85},{40,-85},{40,-84},{24,-84},{24,-70},{10,-70}}, color={0,0,127}));
   connect(breaker1.TRIGGER, G2.TRIGGER) annotation (Line(points={{84.5,-10},{116,-10},{116,-80},{71,-80}}, color={255,0,255}));
-  connect(L3.p, B3.p) annotation (Line(points={{80,15.4},{80,40},{69.5,40},{
-          69.5,40},{60,40}},
-                        color={0,0,255}));
+  connect(L3.p, B3.p) annotation (Line(points={{80,15.4},{80,40},{69.5,40},{69.5,
+          40},{60,40}}, color={0,0,255}));
   connect(IB.p, B3.p) annotation (Line(points={{100,40},{80,40},{69.5,40},{69.5,
           40},{60,40}},                color={0,0,255}));
   annotation (Icon(coordinateSystem(preserveAspectRatio=false, extent={{-140,-120},{140,120}})), Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-140,-120},{140,120}})));
