@@ -6,20 +6,23 @@ model PwLoadVoltageDependence
   parameter Real Vo_real = V_0 * cos(angle_0 * Modelica.Constants.pi / 180) "Initial voltage at node in p.u. (Real part)";
   parameter Real Vo_img = V_0 * sin(angle_0 * Modelica.Constants.pi / 180) "Initial voltage at node in p.u. (Imaginary part)";
   parameter Real vo = sqrt(Vo_real ^ 2 + Vo_img ^ 2);
-  Real v(start = vo);
-  Real a(start = 1) "auxiliary variable. Voltage division";
   parameter Real alpha = 0;
   parameter Real beta = 0;
   Real P(start = P_0/S_b);
   Real Q(start = Q_0/S_b);
-
+protected
+  Real a(start = 1) "auxiliary variable. Voltage division";  
+  Complex V(re = p.vr, im = p.vi);
+  Complex I(re = p.ir, im = p.ii);
+  Complex S;
 equation
-  a = v / vo;
-  (P_0 / S_b) * (a ^ alpha) = p.vr * p.ir + p.vi * p.ii;
-  (Q_0 / S_b)* (a ^ beta)  = (-p.vr * p.ii) + p.vi * p.ir;
-  v = sqrt(p.vr ^ 2 + p.vi ^ 2);
-  P = p.vr * p.ir + p.vi * p.ii;
-  Q = (-p.vr * p.ii) + p.vi * p.ir;
+   a =  ComplexMath.'abs' (V) / vo;
+   S.re = (P_0 / S_b) * (a^alpha);
+   S.im = (Q_0 / S_b) * (a^beta);
+   S =  V*Modelica.ComplexMath.conj(I); 
+   P = p.vr * p.ir + p.vi * p.ii;
+   Q = (-p.vr * p.ii) + p.vi * p.ir;
+
   annotation (
     Placement(transformation(extent={{-56,-10},{-36,10}}), iconTransformation(extent={{-80,0},{-60,20}})),
     Diagram(graphics),

@@ -13,27 +13,20 @@ model PwPhaseTransformer "Two winding fixed transformer composed of an ideal tra
   parameter Real theta;
   // Calculated parameters
   parameter Real theta_rad = -theta * 3.141592 / 180;
-  parameter Real Z2 = R * R + X * X;
-  parameter Real G = if Z2 == 0 then 0 else R / Z2;
-  parameter Real B = if Z2 == 0 then 0 else -X / Z2;
-  parameter Real Gi = G0 / 2;
-  parameter Real Bi = B0 / 2;
-  parameter Real Gj = G0 / 2;
-  parameter Real Bj = B0 / 2;
-  //ADMITTANCE matrix
-  parameter Real G11=G*(r*r - r*cos(theta_rad)) + B*r*sin(theta_rad) + Gi + G*r*cos(theta_rad) - B*r*sin(theta_rad);
-  parameter Real B11=B*(r*r - r*cos(theta_rad)) - G*r*sin(theta_rad) + Bi + B*r*cos(theta_rad) + G*r*sin(theta_rad);
-  parameter Real G12=(-G*r*cos(theta_rad)) + B*r*sin(theta_rad);
-  parameter Real B12=(-B*r*cos(theta_rad)) - G*r*sin(theta_rad);
-  parameter Real G21=(-G*r*cos(theta_rad)) - B*r*sin(theta_rad);
-  parameter Real B21=(-B*r*cos(theta_rad)) + G*r*sin(theta_rad);
-  parameter Real G22=G*(1 - r*cos(theta_rad)) - B*r*sin(theta_rad) + Gj + G*r*cos(theta_rad) + B*r*sin(theta_rad);
-  parameter Real B22=B*(1 - r*cos(theta_rad)) + G*r*sin(theta_rad) + Bj + B*r*cos(theta_rad) - G*r*sin(theta_rad);
+protected 
+  Complex I_s(re = p.ir, im = p.ii);
+  Complex V_s(re = p.vr, im = p.vi);
+  Complex I_r(re = n.ir, im = n.ii);
+  Complex V_r(re = n.vr, im = n.vi); 
+  parameter Complex K(re = r*cos(theta_rad), im = r*sin(theta_rad));
+  parameter Complex Y_0(re = G0, im = B0);
+  parameter Complex Y = if  R*R + X*X <= Modelica.Constants.eps then Complex(Modelica.Constants.inf) else Complex(re = R/(X*X + R*R), im = -X/(X*X + R*R)) ;
+  parameter Real K2 = r*r;
 equation
-  p.ir = p.vr*G11 - p.vi*B11 + n.vr*G12 - n.vi*B12;
-  p.ii = p.vi*G11 + p.vr*B11 + n.vi*G12 + n.vr*B12;
-  n.ir = p.vr*G21 - p.vi*B21 + n.vr*G22 - n.vi*B22;
-  n.ii = p.vi*G21 + p.vr*B21 + n.vi*G22 + n.vr*B22;
+
+  I_s = (K*(K - 1)*Y + K2*Y_0)*V_s + K*Y*(V_s - V_r);
+  I_r = K*Y*(V_r - V_s) + (1-K)*Y*V_r;
+  
   annotation (
     Icon(graphics={Rectangle(extent={{-60,40},{60,-40}}, lineColor={0,0,255}),Ellipse(
           extent={{-26,16},{6,-16}},

@@ -1,23 +1,21 @@
 within iPSL.Electrical.Branches;
-model PwLine_2 "Model for a transmission Line based on the pi-equivalent circuit
-  with explicit equations for currents. Developed by RTE. 2014/12/16"
+model PwLine_2 "Model for a transmission Line based on the pi-equivalent circuit with explicit equations for currents. Developed by RTE. 2014/12/16"
   iPSL.Connectors.PwPin p annotation (Placement(transformation(extent={{-80,-10},{-60,10}}), iconTransformation(extent={{-80,-10},{-60,10}})));
   iPSL.Connectors.PwPin n annotation (Placement(transformation(extent={{60,-10},{80,10}}), iconTransformation(extent={{60,-10},{80,10}})));
   parameter Real R "Resistance p.u.";
   parameter Real X "Reactance p.u.";
   parameter Real G "Shunt half conductance p.u.";
   parameter Real B "Shunt half susceptance p.u.";
+
+protected 
   parameter Real Y = 1 / sqrt(R * R + X * X);
   parameter Real angle = atan2(R, X);
-
-  // Active, Reactive and Apparent power
   Complex S_s "power at sending";
   Complex S_r "power at receiving";
-  Complex V_s(re = p.vr, im = p.vi);
-  Complex I_s(re = p.ir, im = p.ii);
-  Complex V_r(re = n.vr, im = n.vi);
-  Complex I_r(re = n.ir, im = n.ii);
-  protected 
+  Complex V_s(re = p.vr, im = p.vi) "Volage at sendig";
+  Complex I_s(re = p.ir, im = p.ii) "Current at sendig";
+  Complex V_r(re = n.vr, im = n.vi) "Voltage at receiving";
+  Complex I_r(re = n.ir, im = n.ii) "Current at receiving";
   parameter Complex Y1(re = Y * sin(angle), im  = -Y * cos(angle));
   parameter Complex y(re = G , im  = B);  
 equation
@@ -25,7 +23,6 @@ equation
    I_r = (V_r - V_s)*Y1 + y*V_r;
    S_s =  V_s * I_s;
    S_r =  V_r * I_r;
- 
   annotation (
     Icon(graphics={Rectangle(extent={{-60,40},{60,-42}}, lineColor={0,0,255}),Rectangle(
           extent={{-40,10},{40,-10}},

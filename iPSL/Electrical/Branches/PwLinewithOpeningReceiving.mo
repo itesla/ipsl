@@ -1,7 +1,5 @@
 within iPSL.Electrical.Branches;
-model PwLinewithOpeningReceiving "Transmission Line based on the pi-equivalent circuit
-              with an opening event on the receiving node. Developed by AIA.
-              2014/03/10"
+model PwLinewithOpeningReceiving "Transmission Line based on the pi-equivalent circuit with an opening event on the receiving node. Developed by AIA. 2014/03/10"
 
   iPSL.Connectors.PwPin p annotation (Placement(transformation(extent={{-80,-10},{-60,10}}), iconTransformation(extent={{-80,-10},{-60,10}})));
   iPSL.Connectors.PwPin n annotation (Placement(transformation(extent={{60,-10},{80,10}}), iconTransformation(extent={{60,-10},{80,10}})));
@@ -11,17 +9,18 @@ model PwLinewithOpeningReceiving "Transmission Line based on the pi-equivalent c
   parameter Real B "Shunt half susceptance p.u.";
   parameter Real startTime "Start time of the opening";
   parameter Real endTime "End time of the opening";
-  Complex V_s(re = p.vr, im = p.vi);
-  Complex I_s(re = p.ir, im = p.ii);
-  Complex V_r(re = n.vr, im = n.vi);
-  Complex I_r(re = n.ir, im = n.ii);
 protected 
+  Complex V_s(re = p.vr, im = p.vi) "Volage at sendig";
+  Complex I_s(re = p.ir, im = p.ii) "Current at sendig";
+  Complex V_r(re = n.vr, im = n.vi) "Voltage at receiving";
+  Complex I_r(re = n.ir, im = n.ii) "Current at receiving";
   parameter Complex Y1(re = R /(X*X + R*R) , im  = -X / (X*X + R*R));
+  parameter Complex Z1(re = R , im = X);
   parameter Complex y(re = G , im = B);
-  parameter Complex Z_total (re = if abs(G) > 0 then R + G/(G*G + B*B) else R , im = if abs(B) > 0 then X - B/(G*G + B*B) else X ); 
-  parameter Complex Y_total = 1/Z_total;  
+  parameter Complex z = if  ComplexMath.'abs' (y) >= Modelica.Constants.small then Complex(Modelica.Constants.inf) else 1/y ;
+  parameter Complex Z_total = Z1 + z; 
+  parameter Complex Y_total = if  ComplexMath.'abs' (Z_total) >= Modelica.Constants.inf then Complex(0) else 1/Z_total;  
 equation
-
   if time > startTime and time < endTime then 
    I_s = V_s*Y_total;
    I_r = Complex(0);

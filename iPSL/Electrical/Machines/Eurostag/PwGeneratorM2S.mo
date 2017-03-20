@@ -3,7 +3,7 @@ model PwGeneratorM2S "Synchronous machine model according to Park's classical th
                    The model corresponds to Eurostag's full model for M2S machine
                    (defined by external parameters). Developed by RTE and adapted by AIA.
                    2014/03/10"
-
+  extends iPSL.Electrical.Essentials.pfComponent;
   iPSL.Connectors.PwPin sortie annotation (Placement(transformation(extent={{40,10},{60,30}}), iconTransformation(extent={{40,10},{60,30}})));
   Modelica.Blocks.Interfaces.RealInput pin_EFD annotation (Placement(transformation(extent={{-61,-40},{-41,-20}}), iconTransformation(extent={{-61,-40},{-41,-20}})));
   Modelica.Blocks.Interfaces.RealOutput pin_OMEGA annotation (Placement(transformation(extent={{-61,20},{-41,40}}), iconTransformation(extent={{-61,20},{-41,40}})));
@@ -64,7 +64,7 @@ model PwGeneratorM2S "Synchronous machine model according to Park's classical th
 
   // GENERAL PARAMETERS
   parameter Real omega0=2*3.14159265*50 "Nominal network angular frequency";
-  parameter Real SNREF=100 "MVA system base";
+  parameter Real SNREF= S_b "MVA system base";
   parameter Real SN=1150 "Nominal apparent power (MVA)";
   parameter Real PN=1000 "Nominal turbine (active) power (MW)";
   parameter Real PNALT=1100;
@@ -76,8 +76,7 @@ model PwGeneratorM2S "Synchronous machine model according to Park's classical th
   parameter Real ui0 = 0 "Initial imaginary voltage component p.u. in the SNREF base";
     //   parameter Real ir0 = 1;
     //   parameter Real ii0 = 0;
-  parameter Real P_0=0 "Initial active power (MW)";
-  parameter Real Q_0=0 "Initial active power (MVA)";
+
   // EXTERNAL PARAMETERS (GIVEN) per-unit in the machine SN base.
   parameter Real rStatIn=0 "Stator resistance p.u. in the machine SN base";
   parameter Real lStatIn=0 "Stator leakage p.u. in the machine SN base";

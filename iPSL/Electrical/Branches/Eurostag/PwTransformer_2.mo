@@ -1,7 +1,5 @@
 within iPSL.Electrical.Branches.Eurostag;
-model PwTransformer_2 "Two winding fixed transformer composed of an ideal transformer,
-  a series  impedance and a shunt admittance, with explicit equations for currents.
-  2014/12/16"
+model PwTransformer_2 "Two winding fixed transformer composed of an ideal transformer, a series  impedance and a shunt admittance, with explicit equations for currents. 2014/12/16"
   iPSL.Connectors.PwPin p annotation (Placement(transformation(extent={{-80,-8},{-60,12}}), iconTransformation(extent={{-80,-8},{-60,12}})));
   iPSL.Connectors.PwPin n annotation (Placement(transformation(extent={{60,-8},{80,12}}), iconTransformation(extent={{60,-8},{80,12}})));
   parameter Real R "Resistance p.u.";
@@ -9,11 +7,16 @@ model PwTransformer_2 "Two winding fixed transformer composed of an ideal transf
   parameter Real G "Shunt conductance p.u.";
   parameter Real B "Shunt susceptance p.u.";
   parameter Real r "Transformation ratio";
+protected 
+  Complex V_s(re = p.vr, im = p.vi) "Volage at sendig";
+  Complex I_s(re = p.ir, im = p.ii) "Current at sendig";
+  Complex V_r(re = n.vr, im = n.vi) "Voltage at receiving";
+  Complex I_r(re = n.ir, im = n.ii) "Current at receiving";
+  parameter Complex Y1(re = R /(X*X + R*R) , im  = -X / (X*X + R*R));
+  parameter Complex y(re = G , im = B);
 equation
-  p.ir = 1/(R*R + X*X)*(R*(r*r*p.vr - r*n.vr) + X*(r*r*p.vi - r*n.vi));
-  p.ii = 1/(R*R + X*X)*(R*(r*r*p.vi - r*n.vi) - X*(r*r*p.vr - r*n.vr));
-  n.ir = (-1/r*p.ir) + G*n.vr - B*n.vi;
-  n.ii = (-1/r*p.ii) + G*n.vi + B*n.vr;
+  I_s = r*(r - 1)*Y1*V_s + r*Y1*(V_s - V_r);
+  I_r = r*Y1*(V_r - V_s) + ((1 - r)*Y1 + y)*V_r;
   annotation (
     Icon(graphics={Rectangle(extent={{-60,40},{60,-40}}, lineColor={0,0,255}),Ellipse(
           extent={{-26,16},{6,-16}},

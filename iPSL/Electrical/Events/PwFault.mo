@@ -8,23 +8,18 @@ model PwFault "Transitory short-circuit on a node. Shunt impedance connected onl
   parameter Real X "Conductance (pu)";
   parameter Real startTime "Start time of the fault (s)";
   parameter Real endTime "End time of the fault (s)";
-  Complex V;
-  Complex I;
-protected  
+protected
+  Complex V; 
+  Complex I(re = p.ir, im = p.ii); 
   parameter Complex Z(re = R, im = X);
-equation
-   V = Z*I;
- if  time > startTime and time < endTime  then 
-   p.ii = I.im;
-   p.ir = I.re;
-   V.re = p.vr;
-   V.im = p.vi; 
-  else  
-   p.ii = 0.0;
-   p.ir = 0.0; 
-   V = Complex (0); 
-  end if;  
-
+  parameter Complex Y = if  R*R + X*X <= Modelica.Constants.eps then Complex(Modelica.Constants.inf) else Complex(re = R/(X*X + R*R), im = -X/(X*X + R*R)) ;
+equation    
+   if time > startTime and time < endTime then   
+     V = Complex(re = p.vr, im = p.vi);
+   else 
+     I = Complex(0.0);
+   end if;
+    I = V*Y;  
   annotation (
     Icon(coordinateSystem(
         preserveAspectRatio=true,
