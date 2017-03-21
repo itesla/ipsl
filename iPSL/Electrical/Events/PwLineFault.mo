@@ -1,6 +1,6 @@
 within iPSL.Electrical.Events;
 model PwLineFault "Transitory short-circuit on a line at the point of location from the sending node
-   given by parameter k. A fictitious node is created with where a shunt impedance is connected only
+   given by parameter faultLocalization. A fictitious node is created with where a shunt impedance is connected only
    during a specified interval of time. Developed by AIA. 2015/03/20."
 
   iPSL.Connectors.PwPin p annotation (Placement(transformation));
@@ -9,7 +9,7 @@ model PwLineFault "Transitory short-circuit on a line at the point of location f
   parameter Real X1 "Conductance";
   parameter Real G1 "Shunt half conductance p.u.";
   parameter Real B1 "Shunt half susceptance p.u.";
-  parameter Real k  "Point of the line where the short circuit occurs (between 0.1 and 0.99)";
+  parameter Real faultLocalization  "Point of the line where the short circuit occurs (between 0.1 and 0.99)";
   parameter Real Rfault "Fault resistance";
   parameter Real Xfault "Fault reactance";
   parameter Real startTime "Start time of the fault";
@@ -22,22 +22,22 @@ model PwLineFault "Transitory short-circuit on a line at the point of location f
   parameter Complex Y(re=G1, im=B1);
   parameter Complex V1(re=V1_0*cos(angle1_0*Modelica.Constants.pi/180), im=V1_0*sin(angle1_0*Modelica.Constants.pi/180));
   parameter Complex V2(re=V2_0*cos(angle2_0*Modelica.Constants.pi/180), im=V2_0*sin(angle2_0*Modelica.Constants.pi/180));
-  parameter Complex V0fict=((1 - k)*V1 + k*V2)/(1 + k*(1 - k)*Z*Y);
+  parameter Complex V0fict=((1 - faultLocalization)*V1 + faultLocalization*V2)/(1 + faultLocalization*(1 - faultLocalization)*Z*Y);
   parameter Real V0fict_real=V0fict.re;
   parameter Real V0fict_img=V0fict.im;
   // FICTITIOUS BUS
   iPSL.Electrical.Buses.Bus FICT(V_0=sqrt(V0fict_real^2 + V0fict_img^2), angle_0=atan2(V0fict_img,V0fict_real)) annotation (Placement(transformation));
   // THE ORIGINAL LINE IS SEPARATED IN TWO PARTS
   iPSL.Electrical.Branches.PwLine_2 Line_1(
-    R=k*R1,
-    X=k*X1,
-    G=k*G1,
-    B=k*B1) annotation (Placement(transformation));
+    R=faultLocalization*R1,
+    X=faultLocalization*X1,
+    G=faultLocalization*G1,
+    B=faultLocalization*B1) annotation (Placement(transformation));
   iPSL.Electrical.Branches.PwLine_2 Line_2(
-    R=(1 - k)*R1,
-    X=(1 - k)*X1,
-    G=(1 - k)*G1,
-    B=(1 - k)*B1) annotation (Placement(transformation));
+    R=(1 - faultLocalization)*R1,
+    X=(1 - faultLocalization)*X1,
+    G=(1 - faultLocalization)*G1,
+    B=(1 - faultLocalization)*B1) annotation (Placement(transformation));
   // FAULT ADDED TO FICTITIOUS BUS
   iPSL.Electrical.Events.PwFault Fault(
     R=Rfault,
