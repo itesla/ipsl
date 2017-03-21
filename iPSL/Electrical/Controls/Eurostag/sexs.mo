@@ -19,7 +19,6 @@ model sexs "Excitation system model SEXS"
   parameter Real TA;
   parameter Real TB;
   parameter Real TE;
-  parameter Real SNREF;
   parameter Real SN;
   parameter Real PN;
   parameter Real PNALT;

@@ -10,7 +10,6 @@ model govpsat1_Init "Initialization model of govern GOVPSAT1"
   parameter Real T5;
   parameter Real TC;
   parameter Real TS;
-  parameter Real SNREF;
   parameter Real SN;
   parameter Real PN;
   parameter Real PNALT;

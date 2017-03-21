@@ -14,7 +14,6 @@ model govpsat1 "Turbine-Governor model GOVPSAT1"
   parameter Real T5;
   parameter Real TC;
   parameter Real TS;
-  parameter Real SNREF;
   parameter Real SN;
   parameter Real PN;
   parameter Real PNALT;

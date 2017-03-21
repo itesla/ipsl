@@ -26,7 +26,6 @@ model pssi3e3b "PSS13E3B stabilizer model"
   parameter Real TW3;
   parameter Real VSTMAX;
   parameter Real VSTMIN;
-  parameter Real SNREF;
   parameter Real SN;
   parameter Real PN;
   parameter Real PNALT;

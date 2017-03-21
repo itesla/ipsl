@@ -20,7 +20,6 @@ model htgpsat3 "Turbine-Governor model HTGPSAT3"
   parameter Real TW;
   parameter Real UC;
   parameter Real UO;
-  parameter Real SNREF;
   parameter Real SN;
   parameter Real PN;
   parameter Real PNALT;

@@ -39,7 +39,6 @@ model gsteam0_Init "Initialiation model of GSTEAM0 regulator "
   parameter Real T3;
   parameter Real VMAX;
   parameter Real VMIN;
-  parameter Real SNREF;
   parameter Real SN;
   parameter Real PN;
   parameter Real PNALT;

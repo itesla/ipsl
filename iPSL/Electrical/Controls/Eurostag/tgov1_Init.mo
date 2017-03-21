@@ -37,7 +37,6 @@ model tgov1_Init "Initialization model of govern TGOV1"
   parameter Real T3;
   parameter Real VMAX;
   parameter Real VMIN;
-  parameter Real SNREF;
   parameter Real SN;
   parameter Real PN;
   parameter Real PNALT;

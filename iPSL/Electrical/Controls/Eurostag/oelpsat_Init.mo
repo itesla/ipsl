@@ -13,7 +13,6 @@ model oelpsat_Init "Initialization model of model OELPSAT"
   parameter Real VFMAX;
   parameter Real VFMIN;
   parameter Real VOELMAX;
-  parameter Real SNREF;
   parameter Real SN;
   parameter Real PN;
   parameter Real PNALT;

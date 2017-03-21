@@ -15,7 +15,6 @@ model htgpsat3_Init "Initialization model of govern HTGPSAT3"
   parameter Real TW;
   parameter Real UC;
   parameter Real UO;
-  parameter Real SNREF;
   parameter Real SN;
   parameter Real PN;
   parameter Real PNALT;

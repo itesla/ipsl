@@ -26,7 +26,6 @@ model pss2ab_Init "Initialization model of PSS2AB stabilizer model"
   parameter Real TW3;
   parameter Real VSTMAX;
   parameter Real VSTMIN;
-  parameter Real SNREF;
   parameter Real SN;
   parameter Real PN;
   parameter Real PNALT;

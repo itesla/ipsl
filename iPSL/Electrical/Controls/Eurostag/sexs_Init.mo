@@ -14,7 +14,6 @@ model sexs_Init "Initialization model of SEXS model"
   parameter Real TA;
   parameter Real TB;
   parameter Real TE;
-  parameter Real SNREF;
   parameter Real SN;
   parameter Real PN;
   parameter Real PNALT;

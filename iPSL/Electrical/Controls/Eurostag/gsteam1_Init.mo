@@ -30,7 +30,6 @@ model gsteam1_Init "Initialization model of govern GSTEAM1"
   parameter Real UC;
   parameter Real UO;
   parameter Real VALVE;
-  parameter Real SNREF;
   parameter Real SN;
   parameter Real PN;
   parameter Real PNALT;

@@ -38,7 +38,6 @@ model pssi3e2b "PSSI3E2B stabilizer model"
   parameter Real VSI2MIN;
   parameter Real VSTMAX;
   parameter Real VSTMIN;
-  parameter Real SNREF;
   parameter Real SN;
   parameter Real PN;
   parameter Real PNALT;

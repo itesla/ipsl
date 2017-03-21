@@ -43,7 +43,6 @@ model tgov1 "Turbine-Governor model TGOV1"
   parameter Real T3;
   parameter Real VMAX;
   parameter Real VMIN;
-  parameter Real SNREF;
   parameter Real SN;
   parameter Real PN;
   parameter Real PNALT;
