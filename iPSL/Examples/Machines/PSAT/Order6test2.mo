@@ -3,7 +3,7 @@ within iPSL.Examples.Machines.PSAT;
 model Order6test2
   extends Modelica.Icons.Example;
 
-  extends iPSL.Examples.BaseTest(pwLinewithOpening1.t2 = 2.5);
+  extends iPSL.Examples.BaseTest(pwLinewithOpening1.endTime = 2.5);
   iPSL.Electrical.Machines.PSAT.Order6 order6Type2_1(
     Sn=100,
     V_0=1,
