@@ -10,15 +10,19 @@ model PwLoadVoltageDependence
   parameter Real beta = 0;
   Real P(start = P_0/S_b);
   Real Q(start = Q_0/S_b);
+  iPSL.Interfaces.AddedConnector P_1;
+  iPSL.Interfaces.AddedConnector Q_1;
 protected
   Real a(start = 1) "auxiliary variable. Voltage division";  
   Complex V(re = p.vr, im = p.vi);
   Complex I(re = p.ir, im = p.ii);
   Complex S;
 equation
+   P_1.y = P_0;
+   Q_1.y = Q_0;
    a =  ComplexMath.'abs' (V) / vo;
-   S.re = (P_0 / S_b) * (a^alpha);
-   S.im = (Q_0 / S_b) * (a^beta);
+   S.re = ((P_0 + P_1.deltaY)/ S_b) * (a^alpha);
+   S.im = ((Q_0 + Q_1.deltaY)/ S_b) * (a^beta);
    S =  V*Modelica.ComplexMath.conj(I); 
    P = p.vr * p.ir + p.vi * p.ii;
    Q = (-p.vr * p.ii) + p.vi * p.ir;
