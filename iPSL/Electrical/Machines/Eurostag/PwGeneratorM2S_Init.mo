@@ -40,7 +40,7 @@ model PwGeneratorM2S_Init "Initialization model for synchronous mahine M2S.
   parameter Real TPQ0 "Quadrat trans. time const";
   parameter Real TSQ0 "Quadrat subtrans. time const";
   parameter Real IENR;
-  parameter Real SNREF;
+  parameter Real SNREF = SysData.S_b;
   parameter Real SN;
   //  puissance apparente nominale (SNOMG)
   parameter Real PN;
