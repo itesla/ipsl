@@ -1,7 +1,7 @@
 within iPSL.Electrical.Machines.Eurostag;
 model PwGeneratorM2S_Init "Initialization model for synchronous mahine M2S.
                   Developed by RTE and adapted by AIA. 2014/03/10"
-  
+  extends iPSL.Electrical.Essentials.pfComponent;
   Modelica.Blocks.Interfaces.RealOutput pin_CM;
   Modelica.Blocks.Interfaces.RealOutput pin_EFD;
   Modelica.Blocks.Interfaces.RealOutput pin_LAMBDAF;
