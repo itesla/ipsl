@@ -1,7 +1,7 @@
 within iPSL.Interfaces;
 connector AddedConnector
-  flow Real deltaV;
-  Real V1;
+  flow Real deltaY;
+  Real y;
   annotation (
     Icon(graphics={Rectangle(extent={{-20,20},{40,-20}}, lineColor={0,0,255}),Text(
           extent={{-8,10},{26,-8}},

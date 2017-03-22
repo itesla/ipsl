@@ -5,9 +5,9 @@ model SetPointModification
  parameter Real v2 = 0;
 equation
     if time < startTime then
-      setPointModification.deltaV = 0;
+      setPointModification.deltaY = 0;
     else
-      setPointModification.deltaV = (-v2 + setPointModification.V1);
+      setPointModification.deltaY = (-v2 + setPointModification.y);
     end if;
 
   annotation (

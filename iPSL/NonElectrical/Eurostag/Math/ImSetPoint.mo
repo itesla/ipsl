@@ -6,8 +6,8 @@ model ImSetPoint "Set Point. 2014/03/10"
     annotation (Placement(transformation(extent={{100,-10},{120,10}},
       rotation=0)));
 equation
-    y = V + setPointModification.deltaV;
-    setPointModification.V1 = V;
+    y = V + setPointModification.deltaY;
+    setPointModification.y = V;
   annotation (Icon(coordinateSystem(
           preserveAspectRatio=false,
           extent={{-100,-100},{100,100}},
