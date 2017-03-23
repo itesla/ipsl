@@ -2,13 +2,14 @@ within iPSL.NonElectrical.Eurostag.Nonlinear;
 block ImPulse "Generate pulse signal. 2014/03/10"
 
   extends Modelica.Blocks.Interfaces.SISO;
-  discrete Real tau(start = -Modelica.Constants.inf);
+  discrete Real tau;
   parameter Real S "Start";
   parameter Real T "Pulse period";
 initial equation
  y = 0;
+ tau =  -Modelica.Constants.inf;
 equation
-  when u >= S then
+  when u >= S and pre(u) < S then
     tau = time;
   end when;
   if time - tau < T then
