@@ -4,7 +4,7 @@ block ImMonostable "Monostable. 2014/03/10"
   extends Modelica.Blocks.Interfaces.SISO;
   parameter Real S "Start";
   parameter Modelica.SIunits.Time T "Pulse period";
-  discrete Real tau(start = -T, start = true);
+  discrete Real tau(start = -T, fixed = true);
   Boolean mode(start = false);
   Boolean cond1;
   Boolean cond2;
