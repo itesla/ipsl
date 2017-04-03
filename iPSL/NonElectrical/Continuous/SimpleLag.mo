@@ -16,13 +16,12 @@ initial equation
     state = y_start;
   end if;
 equation
- 
-  if T <= Modelica.Constants.eps then
-    state =  u*K;
-  else
-    T_mod*der(state) = K*u - state;
+  T_mod*der(state) = (K*u - state) ;
+  if noEvent(T >  Modelica.Constants.eps) then 
+   y = state; 
+  else 
+   y = u*K;
   end if;
-  y = state;
   annotation (
     Icon(coordinateSystem(preserveAspectRatio=true, extent={{-100,-100},{100,100}}), graphics={Text(
           extent={{-18,68},{22,8}},
