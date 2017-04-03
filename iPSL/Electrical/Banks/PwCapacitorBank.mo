@@ -5,13 +5,11 @@ model PwCapacitorBank "Capacitor Bank with Bank.2013"
   parameter Real G = 0;
   parameter Real B = 0;
   Complex V(re = p.vr, im = p.vi);
-  Complex I;
+  Complex I(re = p.ir, im = p.ii);
 protected 
   parameter Complex Y(re = G, im = B);
 equation
   I = V*Y;
-  p.ii = I.im;
-  p.ir = I.re;
   annotation (Icon(graphics={Rectangle(extent={{-40,60},{60,-40}}, lineColor={0,0,255}),Line(
           points={{10,50},{10,34}},
           color={0,0,255},
