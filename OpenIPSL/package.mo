@@ -1,5 +1,6 @@
 package OpenIPSL "Open-Instance Power System Library"
 annotation (
+  Protection(access = Access.packageDuplicate),
   uses(Modelica(version="3.2.2"), Complex(version="3.2.2")),
   version="1.5.0",
   conversion(noneFromVersion={"0.8","0.8.1","1.0.0"}),
