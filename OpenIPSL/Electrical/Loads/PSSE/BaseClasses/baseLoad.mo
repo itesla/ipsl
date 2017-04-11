@@ -16,12 +16,12 @@ partial model baseLoad
     ir(start=ir0),
     ii(start=ii0)) annotation (Placement(transformation(extent={{-10,90},
             {10,110}})));
-  Real angle(start=anglev_rad) "Bus voltage angle (rad)";
+  Modelica.SIunits.Angle angle(start=anglev_rad) "Bus voltage angle";
   Real v(start=V_0) "Bus voltage magnitude (pu)";
   Real P "Active power consumption (pu)";
   Real Q "Reactive power consumption (pu)";
 protected
-  parameter Real anglev_rad=angle_0*pi/180;
+  parameter Modelica.SIunits.Angle anglev_rad=angle_0*pi/180;
   parameter Real p0=(S_i.re*V_0 + S_y.re*V_0^2 + S_p.re)/S_b "pu";
   parameter Real q0=(S_i.im*V_0 + S_y.im*V_0^2 + S_p.im)/S_b "pu";
   parameter Real vr0=V_0*cos(anglev_rad) "Initialitation";
