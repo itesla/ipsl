@@ -1,0 +1,130 @@
+<!DOCTYPE OMNotebook>
+<Notebook>
+  <GroupCell closed="false">
+    <TextCell style="Author">
+      <Text>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
+&lt;html>&lt;head>&lt;meta name="qrichtext" content="1" />&lt;style type="text/css">
+p, li { white-space: pre-wrap; }
+&lt;/style>&lt;/head>&lt;body style=" font-family:'.SF NS Text'; font-size:13pt; font-weight:400; font-style:normal;">
+&lt;table border="0" style="-qt-table-type: root; margin-top:5px; margin-bottom:5px; margin-left:5px; margin-right:5px;">
+&lt;tr>
+&lt;td style="border: none;">
+&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;span style=" font-family:'Arial'; font-size:14pt; font-style:italic; color:#000000;">Example 1 - Linearization&lt;/span>&lt;/p>
+&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;span style=" font-family:'Arial'; font-size:14pt; font-style:italic; color:#000000;">Prof. Luigi Vanfretti - 2017-04-19&lt;/span>&lt;/p>&lt;/td>&lt;/tr>&lt;/table>&lt;/body>&lt;/html></Text>
+    </TextCell>
+    <GraphCell style="Graph" closed="false">
+      <Input>//Set the current working directory to your installation
+cd("/Users/luigiv/Downloads/OpenIPSL-Tuto_TAMU_2017/");
+//Load the standard MSL
+loadModel(Modelica); 
+//Load the OpenIPSL
+loadFile("/Users/luigiv/Downloads/OpenIPSL-Tuto_TAMU_2017/OpenIPSL/package.mo");
+// list(OpenIPSL) //enable to check if the library is being loaded</Input>
+      <Output>
+OMC-ERROR: 
+"[/Users/luigiv/Downloads/OpenIPSL-Tuto_TAMU_2017/OpenIPSL/Electrical/Buses/Bus.mo:51:18-51:19:writable] Warning: The file was not encoded in UTF-8:
+  "?".
+  Defaulting to 7-bit ASCII with unknown characters replaced by '?'.
+  To change encoding when loading a file: loadFile(encoding="ISO-XXXX-YY").
+  To change it in a package: add a file package.encoding at the top-level.
+  Note: The Modelica Language Specification only allows files encoded in UTF-8.
+Warning: Requested package Modelica of version 3.2.1, but this package was already loaded with version 3.2.2. You might experience problems if these versions are incompatible.
+"</Output>
+    </GraphCell>
+    <GraphCell style="Graph" closed="false">
+      <Input>// Load the tutorial
+cd("/Users/luigiv/Downloads/OpenIPSL-Tuto_TAMU_2017/ApplicationExamples/_Tutorial/Tutorial/");
+loadFile("package.mo");
+//Check everything is in the model
+list(Tutorial.Example_1.Example_1);</Input>
+      <Output>
+OMC-ERROR: 
+"Warning: Requested package Modelica of version 3.2.1, but this package was already loaded with version 3.2.2. You might experience problems if these versions are incompatible.
+Notification: Skipped loading package Modelica_LinearSystems2 (2.3.2) using MODELICAPATH /Users/luigiv/Downloads/OpenIPSL-Tuto_TAMU_2017/ApplicationExamples/_Tutorial:/opt/openmodelica/lib/omlibrary:/Users/luigiv/.openmodelica/libraries/ (uses-annotation may be wrong).
+"</Output>
+    </GraphCell>
+    <GraphCell style="Graph" closed="false">
+      <Input>// Instantiate the model of the network
+instantiateModel(Tutorial.Example_1.Example_1);
+// Linearize the model
+linearize(Tutorial.Example_1.Example_1, stopTime=0);</Input>
+      <Output>
+OMC-ERROR: 
+"Warning: Alias set with several free start values
+ * candidate: B1.p.vr(start = B1.V_0 * cos(0.0174532925199433 * B1.angle_0))
+ * candidate: G1.machine.p.vr(start = 0.9999627294510722)
+=> select value from B1.p.vr(start = B1.V_0 * cos(0.0174532925199433 * B1.angle_0)) for variable: B1.p.vr
+Warning: Alias set with several free start values
+ * candidate: B1.p.vi(start = B1.V_0 * sin(0.0174532925199433 * B1.angle_0))
+ * candidate: G1.machine.p.vi(start = 0.008633638211187258)
+=> select value from B1.p.vi(start = B1.V_0 * sin(0.0174532925199433 * B1.angle_0)) for variable: B1.p.vi
+Warning: The initial conditions are not fully specified. Use +d=initialization for more information.
+Warning: There are iteration variables with default zero start attribute. Use +d=initialization for more information.
+"</Output>
+    </GraphCell>
+    <GraphCell style="Graph" closed="false">
+      <Input>// Load the linearized model
+loadFile("linear_Tutorial.Example_1.Example_1.mo");  
+// Exctract the A matrix and display it
+instantiateModel(linear_Tutorial_Example__1_Example__1);</Input>
+      <Output>[done]</Output>
+    </GraphCell>
+    <GraphCell style="Graph" closed="false">
+      <Input>list(linear_Tutorial_Example__1_Example__1)</Input>
+      <Output>"model linear_Tutorial_Example__1_Example__1
+  parameter Integer n = 9;
+  // states
+  parameter Integer k = 0;
+  // top-level inputs
+  parameter Integer l = 0;
+  // top-level outputs
+  parameter Real x0[9] = {2.420701642076922, 1, 0, 1.224247464404018, 0.4107654957816429, 1.02748702363574, 0.5742496657902401, 0.9593327097152915, 1};
+  parameter Real u0[0] = {i for i in 1:0};
+  parameter Real A[9, 9] = [-10000, -2000000, 10000, 0, 0, 0, 0, 0, 0; 0, -66.66666666666667, 0, -9.193997621986762, 6.549112611627166e-15, 0, 29.25536745530336, 33.36361865698515, -5.06776165969379e-16; 0, 0, -1, 0, 0, 0, 0, 0, 0; 0, 0, 0, 0, 0, 0, 0, 0, 376.9911184307751; 0, 0, 0, 0.4610796242587042, -1, 0, -1.489428945747467, 0.006336424213860586, -1.215373955322828e-17; 0.12496875, 0, 0, -0.2257865911752657, 6.023845086408405e-17, -0.125, -0.001104105716065041, -0.266889889874036, 3.011922543204202e-17; 0, 0, 0, 2.62155903181871, 14.28571428571428, 0, -22.75415595943628, 0.03602698808039422, -6.910248039557863e-17; 0.008333333333333333, 0, 0, -2.972830759729272, 7.931326599823655e-16, 33.33333333333334, -0.01453726466937616, -36.84735278837885, 3.965663299911827e-16; -0, -0, -0, -0.1593501250388591, 8.249174533413525e-17, -0, 0.06000759107001079, -0.1730203086038577, 1.487405919582988e-17];
+  parameter Real B[9, 0] = zeros(9, 0);
+  parameter Real C[0, 9] = zeros(0, 9);
+  parameter Real D[0, 0] = zeros(0, 0);
+  Real x[9](start = x0);
+  input Real u[0];
+  output Real y[0];
+  Real x_PG1PavrPvf1 = x[1];
+  Real x_PG1PavrPvm = x[2];
+  Real x_PG1PavrPvr = x[3];
+  Real x_PG1PmachinePdelta = x[4];
+  Real x_PG1PmachinePe1d = x[5];
+  Real x_PG1PmachinePe1q = x[6];
+  Real x_PG1PmachinePe2d = x[7];
+  Real x_PG1PmachinePe2q = x[8];
+  Real x_PG1PmachinePw = x[9];
+equation
+  der(x) = A * x + B * u;
+  y = C * x + D * u;
+end linear_Tutorial_Example__1_Example__1;"</Output>
+    </GraphCell>
+    <TextCell style="Text">
+      <Text>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
+&lt;html>&lt;head>&lt;meta name="qrichtext" content="1" />&lt;style type="text/css">
+p, li { white-space: pre-wrap; }
+&lt;/style>&lt;/head>&lt;body style=" font-family:'.SF NS Text'; font-size:13pt; font-weight:400; font-style:normal;">
+&lt;table border="0" style="-qt-table-type: root; margin-top:5px; margin-bottom:5px; margin-left:5px; margin-right:5px;">
+&lt;tr>
+&lt;td style="border: none;">
+&lt;p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;br />&lt;/p>
+&lt;p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;br />&lt;/p>
+&lt;p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;br />&lt;/p>
+&lt;p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;br />&lt;/p>
+&lt;p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;br />&lt;/p>
+&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;span style=" font-family:'Times New Roman'; font-size:12pt; color:#000000;">Now we copy and paste the A matrix of the model defined above, the assignment A:=[...]; makes the A matrix available to the OpenModelicaCompiler.&lt;/span>&lt;/p>
+&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;span style=" font-family:'Times New Roman'; font-size:12pt; color:#000000;">Once in the OMC, we use the MSL mathematical functions to compute the eigenvalues and eigenvectors!&lt;/span>&lt;/p>&lt;/td>&lt;/tr>&lt;/table>&lt;/body>&lt;/html></Text>
+    </TextCell>
+    <GraphCell style="Graph" closed="false">
+      <Input>A := [-10000, -2000000, 10000, 0, 0, 0, 0, 0, 0; 0, -66.66666666666667, 0, -9.193997621986762, 6.549112611627166e-15, 0, 29.25536745530336, 33.36361865698515, -5.06776165969379e-16; 0, 0, -1, 0, 0, 0, 0, 0, 0; 0, 0, 0, 0, 0, 0, 0, 0, 376.9911184307751; 0, 0, 0, 0.4610796242587042, -1, 0, -1.489428945747467, 0.006336424213860586, -1.215373955322828e-17; 0.12496875, 0, 0, -0.2257865911752657, 6.023845086408405e-17, -0.125, -0.001104105716065041, -0.266889889874036, 3.011922543204202e-17; 0, 0, 0, 2.62155903181871, 14.28571428571428, 0, -22.75415595943628, 0.03602698808039422, -6.910248039557863e-17; 0.008333333333333333, 0, 0, -2.972830759729272, 7.931326599823655e-16, 33.33333333333334, -0.01453726466937616, -36.84735278837885, 3.965663299911827e-16; -0, -0, -0, -0.1593501250388591, 8.249174533413525e-17, -0, 0.06000759107001079, -0.1730203086038577, 1.487405919582988e-17];</Input>
+      <Output>[done]</Output>
+    </GraphCell>
+    <GraphCell style="Graph" closed="false">
+      <Input>(eval,evec):= Modelica.Math.Matrices.eigenValues(A);
+eval</Input>
+      <Output>{{-10000.00533773918,0.0},{-74.9958055563845,0.0},{-15.08153495326777,13.52584213953},{-15.08153495326777,-13.52584213953},{-21.1415314117239,0.0},{0.351753399829141,8.06568059314465},{0.351753399829141,-8.06568059314465},{-1.790937600311332,0.0},{-1.0,0.0}}</Output>
+    </GraphCell>
+  </GroupCell>
+</Notebook>
