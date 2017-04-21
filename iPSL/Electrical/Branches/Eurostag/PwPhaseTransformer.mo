@@ -12,20 +12,21 @@ model PwPhaseTransformer "Two winding fixed transformer composed of an ideal tra
   parameter Real B0 "Shunt susceptance p.u.";
   parameter Real theta;
   // Calculated parameters
-  parameter Real theta_rad = -theta * 3.141592 / 180;
+  parameter Real theta_rad = theta * Modelica.Constants.pi / 180;
 protected 
   Complex I_s(re = p.ir, im = p.ii);
   Complex V_s(re = p.vr, im = p.vi);
   Complex I_r(re = n.ir, im = n.ii);
   Complex V_r(re = n.vr, im = n.vi); 
   parameter Complex K(re = r*cos(theta_rad), im = r*sin(theta_rad));
-  parameter Complex Y_0(re = G0, im = B0);
+  parameter Complex Y_0(re = G0/2, im = B0/2);
   parameter Complex Y = if  R*R + X*X <= Modelica.Constants.eps then Complex(Modelica.Constants.inf) else Complex(re = R/(X*X + R*R), im = -X/(X*X + R*R)) ;
   parameter Real K2 = r*r;
+  parameter Complex K_conj(re = r*cos(theta_rad), im = -r*sin(theta_rad));
 equation
 
-  I_s = (K*(K - 1)*Y + K2*Y_0)*V_s + K*Y*(V_s - V_r);
-  I_r = K*Y*(V_r - V_s) + (1-K)*Y*V_r;
+  I_s = K2*(Y + Y_0)*V_s - K_conj*Y*V_r;
+  I_r = -K*Y*V_s + (Y + Y_0)*V_r;
   
   annotation (
     Icon(graphics={Rectangle(extent={{-60,40},{60,-40}}, lineColor={0,0,255}),Ellipse(
