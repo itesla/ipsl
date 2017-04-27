@@ -9,38 +9,24 @@ model PwLine2Openings "Transmission Line based on the pi-equivalent circuit with
   parameter Real B "Shunt half susceptance";
   parameter Real startTime "Start time of the opening";
   parameter Real endTime "End time of the opening";
-  parameter Real S_b = 100 "System base power (MVA)";
-  Real Zr;
-  Real Zi;
-  Real P12;
-  Real P21;
-  Real Q12;
-  Real Q21;
-equation
-  P12 = (p.vr * p.ir - p.vi * p.ii) * S_b;
-  P21 = -(n.vr * n.ir - n.vi * n.ii) * S_b;
-  Q12 = (p.vr * p.ii - p.vi * p.ir) * S_b;
-  Q21 = -(n.vr * n.ii - n.vi * n.ir) * S_b;
-  Zr = R * G + X * B;
-  Zi = R * B + X * G;
-  if time >= startTime then
-    if time < endTime then
-      p.ir = 0;
-      p.ii = 0;
-      n.ii = 0.0;
-      n.ir = 0.0;
-    else
-      R * (n.ir - G * n.vr + B * n.vi) - X * (n.ii - B * n.vr - G * n.vi) = n.vr - p.vr;
-      R * (n.ii - B * n.vr - G * n.vi) + X * (n.ir - G * n.vr + B * n.vi) = n.vi - p.vi;
-      R * (p.ir - G * p.vr + B * p.vi) - X * (p.ii - B * p.vr - G * p.vi) = p.vr - n.vr;
-      R * (p.ii - B * p.vr - G * p.vi) + X * (p.ir - G * p.vr + B * p.vi) = p.vi - n.vi;
-    end if;
-  else
-    R * (n.ir - G * n.vr + B * n.vi) - X * (n.ii - B * n.vr - G * n.vi) = n.vr - p.vr;
-    R * (n.ii - B * n.vr - G * n.vi) + X * (n.ir - G * n.vr + B * n.vi) = n.vi - p.vi;
-    R * (p.ir - G * p.vr + B * p.vi) - X * (p.ii - B * p.vr - G * p.vi) = p.vr - n.vr;
-    R * (p.ii - B * p.vr - G * p.vi) + X * (p.ir - G * p.vr + B * p.vi) = p.vi - n.vi;
-  end if;
+  Complex S_s "power at sending";
+  Complex S_r "power at receiving";
+protected 
+  Complex V_s(re = p.vr, im = p.vi) "Volage at sendig";
+  Complex I_s(re = p.ir, im = p.ii) "Current at sendig";
+  Complex V_r(re = n.vr, im = n.vi) "Voltage at receiving";
+  Complex I_r(re = n.ir, im = n.ii) "Current at receiving";
+  parameter Complex Y1(re = R /(X*X + R*R) , im  = -X / (X*X + R*R));
+  parameter Complex Z1(re = R , im = X);
+  parameter Complex y(re = G , im = B);
+  parameter Complex z = if  ComplexMath.'abs' (y) >= Modelica.Constants.small then Complex(Modelica.Constants.inf) else 1/y ;
+  parameter Complex Z_total = Z1 + z; 
+  parameter Complex Y_total = if  ComplexMath.'abs' (Z_total) >= Modelica.Constants.inf then Complex(0) else 1/Z_total;  
+equation   
+  I_s = if not(time > startTime and time < endTime) then (V_s - V_r)*Y1 + y*V_s  else Complex(0);
+  I_r = if not(time > startTime and time < endTime) then (V_r - V_s)*Y1 + y*V_r  else Complex(0);  
+  S_s =  V_s * I_s;
+  S_r =  V_r * I_r;
   annotation (
     Icon(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,100}}), graphics={Rectangle(extent={{-60,40},{60,-42}}, lineColor={0,0,255}),Rectangle(
           extent={{-40,10},{40,-10}},
