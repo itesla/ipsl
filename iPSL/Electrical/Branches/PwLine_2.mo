@@ -6,12 +6,11 @@ model PwLine_2 "Model for a transmission Line based on the pi-equivalent circuit
   parameter Real X "Reactance p.u.";
   parameter Real G "Shunt half conductance p.u.";
   parameter Real B "Shunt half susceptance p.u.";
-
+  Complex S_s "power at sending";
+  Complex S_r "power at receiving";
 protected 
   parameter Real Y = 1 / sqrt(R * R + X * X);
   parameter Real angle = atan2(R, X);
-  Complex S_s "power at sending";
-  Complex S_r "power at receiving";
   Complex V_s(re = p.vr, im = p.vi) "Volage at sendig";
   Complex I_s(re = p.ir, im = p.ii) "Current at sendig";
   Complex V_r(re = n.vr, im = n.vi) "Voltage at receiving";
