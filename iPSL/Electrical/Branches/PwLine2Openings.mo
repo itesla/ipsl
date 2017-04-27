@@ -19,9 +19,9 @@ protected
   parameter Complex Y1(re = R /(X*X + R*R) , im  = -X / (X*X + R*R));
   parameter Complex Z1(re = R , im = X);
   parameter Complex y(re = G , im = B);
-  parameter Complex z = if  ComplexMath.'abs' (y) >= Modelica.Constants.small then Complex(Modelica.Constants.inf) else 1/y ;
+  parameter Complex z = if  ComplexMath.'abs' (y) <= Modelica.Constants.small then Complex(0) else 1/y ;
   parameter Complex Z_total = Z1 + z; 
-  parameter Complex Y_total = if  ComplexMath.'abs' (Z_total) >= Modelica.Constants.inf then Complex(0) else 1/Z_total;  
+  parameter Complex Y_total = if  ComplexMath.'abs' (Z_total) <= Modelica.Constants.small then Complex(0) else 1/Z_total;  
 equation   
   I_s = if not(time > startTime and time < endTime) then (V_s - V_r)*Y1 + y*V_s  else Complex(0);
   I_r = if not(time > startTime and time < endTime) then (V_r - V_s)*Y1 + y*V_r  else Complex(0);  
