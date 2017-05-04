@@ -18,8 +18,8 @@ model Bus "Bus model 2014/03/10"
  
 equation
   v = Complex (p.vr, p.vi);
-  angle = if (v == Complex (0)) then 0 else ComplexMath.arg (v) * 180 / Modelica.Constants.pi;
   V = ComplexMath.'abs' (v);
+  angle = ComplexMath.arg (v) * 180 / Modelica.Constants.pi;
   p.ir = 0;
   p.ii = 0;
   annotation (
