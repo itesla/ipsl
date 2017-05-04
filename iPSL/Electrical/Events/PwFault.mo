@@ -2,24 +2,21 @@ within iPSL.Electrical.Events;
 
 model PwFault "Transitory short-circuit on a node. Shunt impedance connected only during a specified interval of time.
               Developed by AIA. 2014/12/16"
-
+ 
   iPSL.Connectors.PwPin p annotation (Placement(transformation(extent={{-80,-10},{-60,10}}), iconTransformation(extent={{-80,-10},{-60,10}})));
   parameter Real R "Resistance (pu)";
   parameter Real X "Conductance (pu)";
   parameter Real startTime "Start time of the fault (s)";
   parameter Real endTime "End time of the fault (s)";
 protected
-  Complex V; 
-  Complex I(re = p.ir, im = p.ii); 
+  Complex V(re = p.vr, im = p.vi); 
+  Complex I(re = p.ir, im = p.ii);
   parameter Complex Z(re = R, im = X);
-  parameter Complex Y = if  R*R + X*X <= Modelica.Constants.eps then Complex(Modelica.Constants.inf) else Complex(re = R/(X*X + R*R), im = -X/(X*X + R*R)) ;
-equation    
-   if time > startTime and time < endTime then   
-     V = Complex(re = p.vr, im = p.vi);
-   else 
-     I = Complex(0.0);
-   end if;
-    I = V*Y;  
+  parameter Complex Y = if  R*R + X*X >  Modelica.Constants.eps then Complex(re = R/(R*R + X*X), im = -X/(R*R + X*X))  else Complex(Modelica.Constants.inf) ;
+equation 
+   
+   I = if time > startTime and time < endTime then V*Y else Complex(0.0);
+    
   annotation (
     Icon(coordinateSystem(
         preserveAspectRatio=true,

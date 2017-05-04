@@ -17,7 +17,7 @@ block ImDiv2 "Quotient block.
   parameter Boolean StartValue = false;
   parameter Real y_start = 0 "Output start value";
 equation
-  if u2 > 0 or u2 < 0 then
+  if abs(u2) > 0 then
     y = u1 * a1 / (u2 * a2) + a0;
   else
     y = 1000000;
