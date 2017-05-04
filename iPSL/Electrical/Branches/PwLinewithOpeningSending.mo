@@ -22,7 +22,7 @@ protected
 equation
  if time > startTime and time < endTime then
   I_s =  Complex(0) ; 
-  V_r =   I_r*Z_total;
+  I_r =   V_r*Y_total;
  else 
   I_s = (V_s - V_r)*Y1 + y*V_s ;
   I_r = (V_r - V_s)*Y1 + y*V_r ; 
