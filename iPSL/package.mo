@@ -6,7 +6,7 @@ extends Modelica.Icons.Package;
 
 annotation (
   uses(Modelica(version="3.2.1"), Complex(version="3.2.1")),
-  version="0.8.1",
+  version="1.1.0",
   conversion(noneFromVersion="0.8"),
   Documentation(revisions="<html>
 <!--DISCLAIMER-->
