@@ -18,10 +18,7 @@ protected
   Complex I_r(re = n.ir, im = n.ii) "Current at receiving";
   parameter Complex Y1(re = R /(X*X + R*R) , im  = -X / (X*X + R*R));
   parameter Complex Z1(re = R , im = X);
-  parameter Complex y(re = G , im = B);
-  parameter Complex z = if  ComplexMath.'abs' (y) <= Modelica.Constants.small then Complex(0) else 1/y ;
-  parameter Complex Z_total = Z1 + z; 
-  parameter Complex Y_total = if  ComplexMath.'abs' (Z_total) <= Modelica.Constants.small then Complex(0) else 1/Z_total;  
+  parameter Complex y(re = G , im = B); 
 equation   
   I_s = if not(time > startTime and time < endTime) then (V_s - V_r)*Y1 + y*V_s  else Complex(0);
   I_r = if not(time > startTime and time < endTime) then (V_r - V_s)*Y1 + y*V_r  else Complex(0);  
@@ -54,7 +51,6 @@ equation
           -54},{-40,-54},{-48,-48}}, color={0,0,0}),Line(points={{-40,-54},{-48,-60}}, color={0,0,0}),Line(points={{-80,-48},{-80,-60}}, color={0,0,0}),Line(points={{40,-54},{88,-54},{80,-48}}, color=
            {0,0,0}),Line(points={{88,-54},{80,-60}}, color={0,0,0}),Line(points={{48,-48},{48,-60}}, color={0,0,0}),Line(points={{40,86},{88,86},{80,92}}, color={0,0,0}),Line(points={{88,86},{80,80}},
           color={0,0,0})}),
-    uses(PowerSystems(version="0.6"), Modelica(version="3.2.1")),
     Documentation(info="<html>
 <table cellspacing=\"1\" cellpadding=\"1\" border=\"1\"><tr>
 <td align=center  width=50%><p>Development level</p></td>
