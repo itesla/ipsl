@@ -1,7 +1,7 @@
 within OpenIPSL.Examples.Machines.PSSE;
 model GENROU
   extends OpenIPSL.Examples.SMIBpartial;
-  OpenIPSL.Electrical.Machines.PSSE.GENROU gENROE(
+  OpenIPSL.Electrical.Machines.PSSE.GENROU gENROU(
     M_b=100,
     Tpd0=5,
     Tppd0=0.07,
