@@ -2,7 +2,7 @@ within iPSL.Electrical.Loads.Eurostag;
 model PwLoadVoltageDependence
   "Load with voltage dependence.Developed by AIA. 2014/03/10"
   extends iPSL.Electrical.Essentials.pfComponent;
-  iPSL.Connectors.PwPin p(vr(start=Vo_real),  vi(start=Vo_img),  ir(start=1), ii(start=0)) annotation(Placement(transformation(extent = {{-80, 0}, {-60, 20}}), iconTransformation(extent = {{-80, 0}, {-60, 20}})));
+  iPSL.Connectors.PwPin p(vr(start=Vo_real),  vi(start=Vo_img), ir(start=ir0), ii(start = ii0)) annotation(Placement(transformation(extent = {{-80, 0}, {-60, 20}}), iconTransformation(extent = {{-80, 0}, {-60, 20}})));
   parameter Real Vo_real = V_0 * cos(angle_0 * Modelica.Constants.pi / 180) "Initial voltage at node in p.u. (Real part)";
   parameter Real Vo_img = V_0 * sin(angle_0 * Modelica.Constants.pi / 180) "Initial voltage at node in p.u. (Imaginary part)";
   parameter Real vo = sqrt(Vo_real ^ 2 + Vo_img ^ 2);
@@ -12,11 +12,13 @@ model PwLoadVoltageDependence
   Real Q(start = Q_0/S_b);
   iPSL.Interfaces.AddedConnector P_1;
   iPSL.Interfaces.AddedConnector Q_1;
+  parameter Real ir0=(P_0*Vo_real + Q_0*Vo_img)/((Vo_real^2 + Vo_img^2)*S_b) "Initialitation";
+  parameter Real ii0=(P_0*Vo_img - Q_0*Vo_real)/((Vo_real^2 + Vo_img^2)*S_b)  "Initialitation";
 protected
   Real a(start = 1) "auxiliary variable. Voltage division";  
   Complex V(re = p.vr, im = p.vi);
   Complex I(re = p.ir, im = p.ii);
-  Complex S;
+  Complex S;   
 equation
    P_1.y = P_0;
    Q_1.y = Q_0;
