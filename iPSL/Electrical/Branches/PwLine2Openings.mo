@@ -19,11 +19,19 @@ protected
   parameter Complex Y1(re = R /(X*X + R*R) , im  = -X / (X*X + R*R));
   parameter Complex Z1(re = R , im = X);
   parameter Complex y(re = G , im = B); 
-equation   
-  I_s = if not(time > startTime and time < endTime) then (V_s - V_r)*Y1 + y*V_s  else Complex(0);
-  I_r = if not(time > startTime and time < endTime) then (V_r - V_s)*Y1 + y*V_r  else Complex(0);  
+  Boolean event(start = false); 
+equation
+  event = time > startTime and time < endTime ;
+ if event then
+  I_s =  Complex(0) ; 
+  I_r =  Complex(0);
+ else   
+  I_s = (V_s - V_r)*Y1 + y*V_s ;
+  I_r = (V_r - V_s)*Y1 + y*V_r ; 
+ end if;
   S_s =  V_s * I_s;
-  S_r =  V_r * I_r;
+  S_r =  V_r * I_r;  
+ 
   annotation (
     Icon(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,100}}), graphics={Rectangle(extent={{-60,40},{60,-42}}, lineColor={0,0,255}),Rectangle(
           extent={{-40,10},{40,-10}},

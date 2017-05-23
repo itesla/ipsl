@@ -20,8 +20,10 @@ protected
   parameter Complex z = if  ComplexMath.'abs' (y) == 0 then Complex(Modelica.Constants.inf) else 1/y ;
   parameter Complex Z_total = Z1 + z; 
   parameter Complex Y_total = if  ComplexMath.'abs' (Z_total) >= Modelica.Constants.inf then Complex(0) else 1/Z_total;  
+  Boolean event(start = false); 
 equation
-  if time > startTime and time < endTime then 
+ event = time > startTime and time < endTime ;
+ if event then
    I_s = V_s*Y_total;
    I_r = Complex(0);
   else
