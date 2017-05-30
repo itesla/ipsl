@@ -7,6 +7,8 @@ model PwCapacitorBankWithModification "Capacitor Bank with Bank modification at 
   parameter Real Bo "reactive power (pu) in each element";
   parameter Real t1 "time for Bank Modification";
   parameter Real nmod "number of step to switch on/off (+/-)";
+  Complex V(re = p.vr, im = p.vi);
+  Complex I(re = p.ir, im = p.ii);
   Real G;
   Real B;
   Real nt;
