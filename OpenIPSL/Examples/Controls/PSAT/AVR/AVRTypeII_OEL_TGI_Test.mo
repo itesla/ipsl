@@ -116,9 +116,11 @@ model AVRTypeII_OEL_TGI_Test
     Tc=1,
     T3=0.04,
     T4=5,
-    T5=0.04) annotation (Placement(transformation(extent={{-24,-64},{-90,-20}})));
+    T5=0.04)
+    annotation (Placement(transformation(extent={{-24,-64},{-90,-20}})));
   parameter Real p0=0.160352698692006 "Power flow, node active power";
-  inner OpenIPSL.Electrical.SystemBase SysData annotation (Placement(transformation(extent={{-80,-80},{-56,-60}})));
+  inner OpenIPSL.Electrical.SystemBase SysData
+    annotation (Placement(transformation(extent={{-80,-80},{-56,-60}})));
 equation
   connect(pwLine4.n, pwLoadPQ2.p) annotation (Line(
       visible=true,
@@ -146,6 +148,7 @@ equation
       smooth=Smooth.None));
   connect(pwLine2.n, pwLine1.n) annotation (Line(
       points={{55.6667,26},{55.6667,20},{56,20},{56,12},{55.6667,12},{55.6667,-4}},
+
       color={0,0,255},
       smooth=Smooth.None));
   connect(pwFault.p, pwLine3.n) annotation (Line(
@@ -158,6 +161,7 @@ equation
       smooth=Smooth.None));
   connect(pwLine1.p, pwLine2.p) annotation (Line(
       points={{32.3333,-4},{32.3333,4},{32,4},{32,12},{32.3333,12},{32.3333,26}},
+
       color={0,0,255},
       smooth=Smooth.None));
   connect(oXL.v, order6Type2_Inputs_Outputs.v) annotation (Line(
@@ -177,7 +181,8 @@ equation
       color={0,0,127},
       smooth=Smooth.None));
   connect(order6Type2_Inputs_Outputs.P, oXL.p) annotation (Line(
-      points={{16,15.237},{32,15.237},{32,-62},{136,-62},{136,101.4},{78.72,101.4}},
+      points={{16,15.237},{32,15.237},{32,-62},{136,-62},{136,101.4},{78.72,
+          101.4}},
       color={0,0,127},
       smooth=Smooth.None));
   connect(tGTypeI.w, order6Type2_Inputs_Outputs.w) annotation (Line(
@@ -188,35 +193,11 @@ equation
       points={{-78.175,-39.14},{-90,-39.14},{-90,7.5},{-68,7.5}},
       color={0,0,127},
       smooth=Smooth.None));
-  connect(exciter_Type_II.vref, oXL.v_OXL) annotation (Line(points={{15.8,98.04},{30.9,98.04},{30.9,96.4},{44.4,96.4}}, color={0,0,127}));
+  connect(exciter_Type_II.vref, oXL.v_OXL) annotation (Line(points={{15.8,98.04},
+          {30.9,98.04},{30.9,96.4},{44.4,96.4}}, color={0,0,127}));
   annotation (
-    Diagram(coordinateSystem(extent={{-100,-100},{140,120}}, preserveAspectRatio=false)),
+    Diagram(coordinateSystem(extent={{-100,-100},{140,120}},
+          preserveAspectRatio=false)),
     Icon(coordinateSystem(extent={{-100,-100},{140,120}})),
-    Documentation(revisions="<html>
-<!--DISCLAIMER-->
-<p>OpenIPSL:</p>
-<p>Copyright 2016 SmarTS Lab (Sweden)</p>
-<ul>
-<li>SmarTS Lab, research group at KTH: <a href=\"https://www.kth.se/en\">https://www.kth.se/en</a></li>
-</ul>
-<p>The authors can be contacted by email: <a href=\"mailto:luigiv@kth.se\">luigiv@kth.se</a></p>
-
-<p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
-<p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
-
-<p></p>
-<p>iPSL:</p>
-<p>Copyright 2015-2016 RTE (France), SmarTS Lab (Sweden), AIA (Spain) and DTU (Denmark)</p>
-<ul>
-<li>RTE: <a href=\"http://www.rte-france.com\">http://www.rte-france.com</a></li>
-<li>SmarTS Lab, research group at KTH: <a href=\"https://www.kth.se/en\">https://www.kth.se/en</a></li>
-<li>AIA: <a href=\"http://www.aia.es/en/energy\"> http://www.aia.es/en/energy</a></li>
-<li>DTU: <a href=\"http://www.dtu.dk/english\"> http://www.dtu.dk/english</a></li>
-</ul>
-<p>The authors can be contacted by email: <a href=\"mailto:info@itesla-ipsl.org\">info@itesla-ipsl.org</a></p>
-
-<p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
-<p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
-</html>
-"));
+    Documentation);
 end AVRTypeII_OEL_TGI_Test;

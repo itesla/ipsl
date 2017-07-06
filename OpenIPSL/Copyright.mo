@@ -22,13 +22,17 @@ class Copyright "Disclaimer<html>
 <p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
 <p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
 </html>"
-
-  annotation (preferredView="info", DocumentationClass=false,
-        Icon(graphics={Text(
+  annotation (
+    preferredView="info",
+    DocumentationClass=false,
+    Icon(graphics={
+        Text(
           extent={{-100,140},{100,100}},
           lineColor={0,127,0},
           textString="%name%"),
-        Ellipse(extent={{-100,100},{100,-100}}, lineColor={0,127,0},
+        Ellipse(
+          extent={{-100,100},{100,-100}},
+          lineColor={0,127,0},
           fillColor={255,255,255},
           fillPattern=FillPattern.Solid),
         Ellipse(
@@ -45,5 +49,6 @@ class Copyright "Disclaimer<html>
           extent={{28,22},{64,-20}},
           lineColor={255,255,255},
           fillColor={255,255,255},
-          fillPattern=FillPattern.Solid)}));
+          fillPattern=FillPattern.Solid)}),
+    Documentation);
 end Copyright;
