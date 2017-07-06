@@ -1,12 +1,14 @@
 within N44;
 package Original "Library of original Nordic 44 model"
-  model Nordic44_Original_Case "Original version of the original Nordic 44 model"
+  model Nordic44_Original_Case
+    "Original version of the original Nordic 44 model"
     OpenIPSL.Electrical.Buses.BusExt bus_7020(
       no=1,
       nu=1,
       V_0=pSSE_data.voltages.V7020,
       angle_0=pSSE_data.voltages.A7020,
-      V_b=420) annotation (Placement(transformation(extent={{-282,-20},{-280,-10}})));
+      V_b=420)
+      annotation (Placement(transformation(extent={{-282,-20},{-280,-10}})));
     OpenIPSL.Electrical.Loads.PSSE.Load Load1_bus7020(
       V_b=420,
       V_0=pSSE_data.voltages.V7020,
@@ -22,7 +24,8 @@ package Original "Library of original Nordic 44 model"
       nu=3,
       V_0=pSSE_data.voltages.V7000,
       angle_0=pSSE_data.voltages.A7000,
-      V_b=420) annotation (Placement(transformation(extent={{-272,-108},{-270,-36}})));
+      V_b=420)
+      annotation (Placement(transformation(extent={{-272,-108},{-270,-36}})));
     OpenIPSL.Electrical.Loads.PSSE.Load Load1_bus7000(
       V_b=420,
       V_0=pSSE_data.voltages.V7000,
@@ -73,21 +76,31 @@ package Original "Library of original Nordic 44 model"
           extent={{-2,-2},{2,2}},
           rotation=270,
           origin={-288,-60})));
-    Generators.Gen1_bus_7000 G1_bus7000 annotation (Placement(transformation(extent={{-292,-82},{-286,-76}})));
-    Generators.Gen1_bus_7000 G2_bus7000 annotation (Placement(transformation(extent={{-292,-90},{-286,-84}})));
-    Generators.Gen1_bus_7000 G3_bus7000 annotation (Placement(transformation(extent={{-292,-98},{-286,-92}})));
-    Generators.Gen1_bus_7000 G4_bus7000 annotation (Placement(transformation(extent={{-292,-106},{-286,-100}})));
-    Generators.Gen1_bus_7000 G5_bus7000 annotation (Placement(transformation(extent={{-292,-114},{-286,-108}})));
-    Generators.Gen1_bus_7000 G6_bus7000 annotation (Placement(transformation(extent={{-292,-122},{-286,-116}})));
-    Generators.Gen1_bus_7000 G7_bus7000 annotation (Placement(transformation(extent={{-292,-130},{-286,-124}})));
-    Generators.Gen1_bus_7000 G8_bus7000 annotation (Placement(transformation(extent={{-292,-138},{-286,-132}})));
-    Generators.Gen1_bus_7000 G9_bus7000 annotation (Placement(transformation(extent={{-292,-146},{-286,-140}})));
+    Generators.Gen1_bus_7000 G1_bus7000
+      annotation (Placement(transformation(extent={{-292,-82},{-286,-76}})));
+    Generators.Gen1_bus_7000 G2_bus7000
+      annotation (Placement(transformation(extent={{-292,-90},{-286,-84}})));
+    Generators.Gen1_bus_7000 G3_bus7000
+      annotation (Placement(transformation(extent={{-292,-98},{-286,-92}})));
+    Generators.Gen1_bus_7000 G4_bus7000
+      annotation (Placement(transformation(extent={{-292,-106},{-286,-100}})));
+    Generators.Gen1_bus_7000 G5_bus7000
+      annotation (Placement(transformation(extent={{-292,-114},{-286,-108}})));
+    Generators.Gen1_bus_7000 G6_bus7000
+      annotation (Placement(transformation(extent={{-292,-122},{-286,-116}})));
+    Generators.Gen1_bus_7000 G7_bus7000
+      annotation (Placement(transformation(extent={{-292,-130},{-286,-124}})));
+    Generators.Gen1_bus_7000 G8_bus7000
+      annotation (Placement(transformation(extent={{-292,-138},{-286,-132}})));
+    Generators.Gen1_bus_7000 G9_bus7000
+      annotation (Placement(transformation(extent={{-292,-146},{-286,-140}})));
     OpenIPSL.Electrical.Buses.BusExt bus_7010(
       no=1,
       nu=1,
       V_0=pSSE_data.voltages.V7010,
       angle_0=pSSE_data.voltages.A7010,
-      V_b=420) annotation (Placement(transformation(extent={{-282,0},{-280,10}})));
+      V_b=420)
+      annotation (Placement(transformation(extent={{-282,0},{-280,10}})));
     OpenIPSL.Electrical.Loads.PSSE.Load Load1_bus7010(
       V_b=420,
       V_0=pSSE_data.voltages.V7010,
@@ -98,9 +111,12 @@ package Original "Library of original Nordic 44 model"
           extent={{-1.75,-1.75},{1.75,1.75}},
           rotation=270,
           origin={-288.25,4.25})));
-    Generators.Gen3_bus_7100 G1_bus7100 annotation (Placement(transformation(extent={{-266,-14},{-260,-8}})));
-    Generators.Gen3_bus_7100 G2_bus7100 annotation (Placement(transformation(extent={{-266,-20},{-260,-14}})));
-    Generators.Gen3_bus_7100 G3_bus7100 annotation (Placement(transformation(extent={{-266,-26},{-260,-20}})));
+    Generators.Gen3_bus_7100 G1_bus7100
+      annotation (Placement(transformation(extent={{-266,-14},{-260,-8}})));
+    Generators.Gen3_bus_7100 G2_bus7100
+      annotation (Placement(transformation(extent={{-266,-20},{-260,-14}})));
+    Generators.Gen3_bus_7100 G3_bus7100
+      annotation (Placement(transformation(extent={{-266,-26},{-260,-20}})));
     OpenIPSL.Electrical.Loads.PSSE.Load Load1_bus7100(
       V_b=420,
       V_0=pSSE_data.voltages.V7100,
@@ -126,7 +142,8 @@ package Original "Library of original Nordic 44 model"
       nu=2,
       V_0=pSSE_data.voltages.V7100,
       angle_0=pSSE_data.voltages.A7100,
-      V_b=420) annotation (Placement(transformation(extent={{-252,-52},{-250,-14}})));
+      V_b=420)
+      annotation (Placement(transformation(extent={{-252,-52},{-250,-14}})));
     OpenIPSL.Electrical.Branches.PwLine line_7000_7010(
       R=0.000000,
       X=0.010000,
@@ -172,10 +189,14 @@ package Original "Library of original Nordic 44 model"
       nu=4,
       V_0=pSSE_data.voltages.V3115,
       angle_0=pSSE_data.voltages.A3115,
-      V_b=420) annotation (Placement(transformation(extent={{-228,-20},{-226,34}})));
-    Generators.Gen3_bus_3115 G1_bus3115 annotation (Placement(transformation(extent={{-242,14},{-236,20}})));
-    Generators.Gen3_bus_3115 G2_bus3115 annotation (Placement(transformation(extent={{-242,8},{-236,14}})));
-    Generators.Gen3_bus_3115 G3_bus3115 annotation (Placement(transformation(extent={{-242,0},{-236,6}})));
+      V_b=420)
+      annotation (Placement(transformation(extent={{-228,-20},{-226,34}})));
+    Generators.Gen3_bus_3115 G1_bus3115
+      annotation (Placement(transformation(extent={{-242,14},{-236,20}})));
+    Generators.Gen3_bus_3115 G2_bus3115
+      annotation (Placement(transformation(extent={{-242,8},{-236,14}})));
+    Generators.Gen3_bus_3115 G3_bus3115
+      annotation (Placement(transformation(extent={{-242,0},{-236,6}})));
     OpenIPSL.Electrical.Loads.PSSE.Load Load_bus3115(
       V_b=420,
       V_0=pSSE_data.voltages.V3115,
@@ -247,10 +268,14 @@ package Original "Library of original Nordic 44 model"
       nu=5,
       V_0=pSSE_data.voltages.V3000,
       angle_0=pSSE_data.voltages.A3000,
-      V_b=420) annotation (Placement(transformation(extent={{-258,46},{-256,66}})));
-    Generators.Gen1_bus_3000 G1_bus3000 annotation (Placement(transformation(extent={{-280,64},{-274,70}})));
-    Generators.Gen1_bus_3000 G2_bus3000 annotation (Placement(transformation(extent={{-280,56},{-274,62}})));
-    Generators.Gen1_bus_3000 G3_bus3000 annotation (Placement(transformation(extent={{-280,48},{-274,54}})));
+      V_b=420)
+      annotation (Placement(transformation(extent={{-258,46},{-256,66}})));
+    Generators.Gen1_bus_3000 G1_bus3000
+      annotation (Placement(transformation(extent={{-280,64},{-274,70}})));
+    Generators.Gen1_bus_3000 G2_bus3000
+      annotation (Placement(transformation(extent={{-280,56},{-274,62}})));
+    Generators.Gen1_bus_3000 G3_bus3000
+      annotation (Placement(transformation(extent={{-280,48},{-274,54}})));
     OpenIPSL.Electrical.Loads.PSSE.Load Load1_bus3000(
       V_b=420,
       V_0=pSSE_data.voltages.V3000,
@@ -326,7 +351,8 @@ package Original "Library of original Nordic 44 model"
       nu=1,
       V_0=pSSE_data.voltages.V3020,
       angle_0=pSSE_data.voltages.A3020,
-      V_b=420) annotation (Placement(transformation(extent={{-282,70},{-280,90}})));
+      V_b=420)
+      annotation (Placement(transformation(extent={{-282,70},{-280,90}})));
     OpenIPSL.Electrical.Loads.PSSE.Load Load_bus3020(
       V_b=420,
       V_0=pSSE_data.voltages.V3020,
@@ -342,13 +368,16 @@ package Original "Library of original Nordic 44 model"
       nu=5,
       V_0=pSSE_data.voltages.V3300,
       angle_0=pSSE_data.voltages.A3300,
-      V_b=420) annotation (Placement(transformation(extent={{-220,88},{-218,108}})));
+      V_b=420)
+      annotation (Placement(transformation(extent={{-220,88},{-218,108}})));
     Generators.Gen4_bus_3300 G2_bus3300 annotation (Placement(transformation(
           extent={{-3,-3},{3,3}},
           rotation=180,
           origin={-205,97})));
-    Generators.Gen4_bus_3300 G3_bus3300 annotation (Placement(transformation(extent={{-202,92},{-208,86}})));
-    Generators.Gen4_bus_3300 G1_bus3300 annotation (Placement(transformation(extent={{-236,89},{-230,95}})));
+    Generators.Gen4_bus_3300 G3_bus3300
+      annotation (Placement(transformation(extent={{-202,92},{-208,86}})));
+    Generators.Gen4_bus_3300 G1_bus3300
+      annotation (Placement(transformation(extent={{-236,89},{-230,95}})));
     OpenIPSL.Electrical.Loads.PSSE.Load Load1_bus3300(
       V_b=420,
       V_0=pSSE_data.voltages.V3300,
@@ -374,7 +403,8 @@ package Original "Library of original Nordic 44 model"
       nu=1,
       V_0=pSSE_data.voltages.V3200,
       angle_0=pSSE_data.voltages.A3200,
-      V_b=420) annotation (Placement(transformation(extent={{-178,88},{-176,108}})));
+      V_b=420)
+      annotation (Placement(transformation(extent={{-178,88},{-176,108}})));
     OpenIPSL.Electrical.Branches.PwLine line_3200_3300(
       R=0.020000,
       X=0.200000,
@@ -412,7 +442,8 @@ package Original "Library of original Nordic 44 model"
       nu=2,
       V_0=pSSE_data.voltages.V3100,
       angle_0=pSSE_data.voltages.A3100,
-      V_b=420) annotation (Placement(transformation(extent={{-178,36},{-176,56}})));
+      V_b=420)
+      annotation (Placement(transformation(extent={{-178,36},{-176,56}})));
     OpenIPSL.Electrical.Branches.PwLine line_3300_8500_1(
       R=0.020000,
       X=0.230000,
@@ -434,7 +465,8 @@ package Original "Library of original Nordic 44 model"
       nu=8,
       V_0=pSSE_data.voltages.V8500,
       angle_0=pSSE_data.voltages.A8500,
-      V_b=420) annotation (Placement(transformation(extent={{-198,124},{-196,166}})));
+      V_b=420)
+      annotation (Placement(transformation(extent={{-198,124},{-196,166}})));
     OpenIPSL.Electrical.Loads.PSSE.Load Load1_bus8500(
       V_b=420,
       V_0=pSSE_data.voltages.V8500,
@@ -465,8 +497,10 @@ package Original "Library of original Nordic 44 model"
           extent={{-2,-2},{2,2}},
           rotation=270,
           origin={-214,148})));
-    Generators.Gen4_bus_8500 G1_bus8500 annotation (Placement(transformation(extent={{-218,138},{-212,144}})));
-    Generators.Gen4_bus_8500 G2_bus8500 annotation (Placement(transformation(extent={{-218,130},{-212,136}})));
+    Generators.Gen4_bus_8500 G1_bus8500
+      annotation (Placement(transformation(extent={{-218,138},{-212,144}})));
+    Generators.Gen4_bus_8500 G2_bus8500
+      annotation (Placement(transformation(extent={{-218,130},{-212,136}})));
     OpenIPSL.Electrical.Branches.PwLine line_8500_8700(
       R=0.000000,
       X=0.010000,
@@ -475,7 +509,8 @@ package Original "Library of original Nordic 44 model"
           extent={{-5,-3},{5,3}},
           rotation=0,
           origin={-215,167})));
-    Generators.Gen4_bus_8500 G3_bus8500 annotation (Placement(transformation(extent={{-176,166},{-182,160}})));
+    Generators.Gen4_bus_8500 G3_bus8500
+      annotation (Placement(transformation(extent={{-176,166},{-182,160}})));
     OpenIPSL.Electrical.Branches.PwLine line_8500_8600(
       R=0.000000,
       X=0.010000,
@@ -508,15 +543,19 @@ package Original "Library of original Nordic 44 model"
           extent={{-5,-3},{5,3}},
           rotation=0,
           origin={-161,129})));
-    Generators.Gen4_bus_8500 G4_bus8500 annotation (Placement(transformation(extent={{-178,158},{-184,152}})));
-    Generators.Gen4_bus_8500 G5_bus8500 annotation (Placement(transformation(extent={{-178,150},{-184,144}})));
-    Generators.Gen4_bus_8500 G6_bus8500 annotation (Placement(transformation(extent={{-178,142},{-184,136}})));
+    Generators.Gen4_bus_8500 G4_bus8500
+      annotation (Placement(transformation(extent={{-178,158},{-184,152}})));
+    Generators.Gen4_bus_8500 G5_bus8500
+      annotation (Placement(transformation(extent={{-178,150},{-184,144}})));
+    Generators.Gen4_bus_8500 G6_bus8500
+      annotation (Placement(transformation(extent={{-178,142},{-184,136}})));
     OpenIPSL.Electrical.Buses.BusExt bus_8700(
       no=1,
       nu=1,
       V_0=pSSE_data.voltages.V8700,
       angle_0=pSSE_data.voltages.A8700,
-      V_b=420) annotation (Placement(transformation(extent={{-238,156},{-236,176}})));
+      V_b=420)
+      annotation (Placement(transformation(extent={{-238,156},{-236,176}})));
     OpenIPSL.Electrical.Loads.PSSE.Load Load_bus8700(
       V_0=pSSE_data.voltages.V8700,
       angle_0=pSSE_data.voltages.A8700,
@@ -532,7 +571,8 @@ package Original "Library of original Nordic 44 model"
       nu=1,
       V_0=pSSE_data.voltages.V8600,
       angle_0=pSSE_data.voltages.A8600,
-      V_b=420) annotation (Placement(transformation(extent={{-162,156},{-160,176}})));
+      V_b=420)
+      annotation (Placement(transformation(extent={{-162,156},{-160,176}})));
     OpenIPSL.Electrical.Loads.PSSE.Load Load_bus8600(
       V_b=420,
       V_0=pSSE_data.voltages.V8600,
@@ -548,7 +588,8 @@ package Original "Library of original Nordic 44 model"
       nu=9,
       V_0=pSSE_data.voltages.V3359,
       angle_0=pSSE_data.voltages.A3359,
-      V_b=420) annotation (Placement(transformation(extent={{-124,54},{-122,112}})));
+      V_b=420)
+      annotation (Placement(transformation(extent={{-124,54},{-122,112}})));
     OpenIPSL.Electrical.Branches.PwLine line_3200_3359(
       R=0.010000,
       X=0.200000,
@@ -652,7 +693,8 @@ package Original "Library of original Nordic 44 model"
       no=7,
       V_0=pSSE_data.voltages.V3249,
       angle_0=pSSE_data.voltages.A3249,
-      V_b=420) annotation (Placement(transformation(extent={{-176,-52},{-174,6}})));
+      V_b=420)
+      annotation (Placement(transformation(extent={{-176,-52},{-174,6}})));
     OpenIPSL.Electrical.Loads.PSSE.Load Load_bus3249(
       V_b=420,
       V_0=pSSE_data.voltages.V3249,
@@ -663,44 +705,57 @@ package Original "Library of original Nordic 44 model"
           extent={{-1.75,-1.75},{1.75,1.75}},
           rotation=270,
           origin={-190.25,-9.75})));
-    Generators.Gen2_bus_3249 G1_bus3249 annotation (Placement(transformation(extent={{-198,-20},{-192,-14}})));
-    Generators.Gen2_bus_3249 G2_bus3249 annotation (Placement(transformation(extent={{-198,-28},{-192,-22}})));
-    Generators.Gen2_bus_3249 G3_bus3249 annotation (Placement(transformation(extent={{-198,-36},{-192,-30}})));
-    Generators.Gen2_bus_3249 G4_bus3249 annotation (Placement(transformation(extent={{-158,-12},{-164,-18}})));
-    Generators.Gen2_bus_3249 G5_bus3249 annotation (Placement(transformation(extent={{-158,-20},{-164,-26}})));
-    Generators.Gen2_bus_3249 G6_bus3249 annotation (Placement(transformation(extent={{-158,-26},{-164,-32}})));
-    Generators.Gen2_bus_3249 G7_bus3249 annotation (Placement(transformation(extent={{-158,-34},{-164,-40}})));
+    Generators.Gen2_bus_3249 G1_bus3249
+      annotation (Placement(transformation(extent={{-198,-20},{-192,-14}})));
+    Generators.Gen2_bus_3249 G2_bus3249
+      annotation (Placement(transformation(extent={{-198,-28},{-192,-22}})));
+    Generators.Gen2_bus_3249 G3_bus3249
+      annotation (Placement(transformation(extent={{-198,-36},{-192,-30}})));
+    Generators.Gen2_bus_3249 G4_bus3249
+      annotation (Placement(transformation(extent={{-158,-12},{-164,-18}})));
+    Generators.Gen2_bus_3249 G5_bus3249
+      annotation (Placement(transformation(extent={{-158,-20},{-164,-26}})));
+    Generators.Gen2_bus_3249 G6_bus3249
+      annotation (Placement(transformation(extent={{-158,-26},{-164,-32}})));
+    Generators.Gen2_bus_3249 G7_bus3249
+      annotation (Placement(transformation(extent={{-158,-34},{-164,-40}})));
     OpenIPSL.Electrical.Buses.BusExt bus_3701(
       nu=1,
       V_0=pSSE_data.voltages.V3701,
       angle_0=pSSE_data.voltages.A3701,
       V_b=300,
-      no=1) annotation (Placement(transformation(extent={{-118,-70},{-116,-50}})));
+      no=1)
+      annotation (Placement(transformation(extent={{-118,-70},{-116,-50}})));
     OpenIPSL.Electrical.Buses.BusExt bus_3245(
       no=3,
       nu=2,
       V_0=pSSE_data.voltages.V3245,
       angle_0=pSSE_data.voltages.A3245,
-      V_b=420) annotation (Placement(transformation(extent={{-208,-82},{-206,-62}})));
-    Generators.Gen2_bus_3245 G1_bus3245 annotation (Placement(transformation(extent={{-194,-62},{-200,-68}})));
+      V_b=420)
+      annotation (Placement(transformation(extent={{-208,-82},{-206,-62}})));
+    Generators.Gen2_bus_3245 G1_bus3245
+      annotation (Placement(transformation(extent={{-194,-62},{-200,-68}})));
     OpenIPSL.Electrical.Buses.BusExt bus_3244(
       nu=1,
       V_0=pSSE_data.voltages.V3244,
       angle_0=pSSE_data.voltages.A3244,
       V_b=300,
-      no=1) annotation (Placement(transformation(extent={{-178,-106},{-176,-86}})));
+      no=1)
+      annotation (Placement(transformation(extent={{-178,-106},{-176,-86}})));
     OpenIPSL.Electrical.Buses.BusExt bus_6701(
       no=1,
       V_0=pSSE_data.voltages.V6701,
       angle_0=pSSE_data.voltages.A6701,
       V_b=420,
-      nu=1) annotation (Placement(transformation(extent={{-146,-94},{-144,-74}})));
+      nu=1)
+      annotation (Placement(transformation(extent={{-146,-94},{-144,-74}})));
     OpenIPSL.Electrical.Buses.BusExt bus_6700(
       nu=3,
       no=4,
       V_0=pSSE_data.voltages.V6700,
       angle_0=pSSE_data.voltages.A6700,
-      V_b=300) annotation (Placement(transformation(extent={{-78,-94},{-76,-74}})));
+      V_b=300)
+      annotation (Placement(transformation(extent={{-78,-94},{-76,-74}})));
     OpenIPSL.Electrical.Loads.PSSE.Load Load1_bus6700(
       V_b=300,
       V_0=pSSE_data.voltages.V6700,
@@ -711,8 +766,10 @@ package Original "Library of original Nordic 44 model"
           extent={{-1.75,-1.75},{1.75,1.75}},
           rotation=270,
           origin={-92.25,-87.75})));
-    Generators.Gen3_bus_6700 G1_bus6700 annotation (Placement(transformation(extent={{-98,-98},{-92,-92}})));
-    Generators.Gen3_bus_6700 G2_bus6700 annotation (Placement(transformation(extent={{-58,-74},{-64,-80}})));
+    Generators.Gen3_bus_6700 G1_bus6700
+      annotation (Placement(transformation(extent={{-98,-98},{-92,-92}})));
+    Generators.Gen3_bus_6700 G2_bus6700
+      annotation (Placement(transformation(extent={{-58,-74},{-64,-80}})));
     OpenIPSL.Electrical.Branches.PwLine line_3701_6700(
       R=0.250000,
       X=2.000000,
@@ -734,7 +791,8 @@ package Original "Library of original Nordic 44 model"
       nu=5,
       V_0=pSSE_data.voltages.V6500,
       angle_0=pSSE_data.voltages.A6500,
-      V_b=300) annotation (Placement(transformation(extent={{-20,-122},{-18,-78}})));
+      V_b=300)
+      annotation (Placement(transformation(extent={{-20,-122},{-18,-78}})));
     OpenIPSL.Electrical.Branches.PwLine line_6500_6700_1(
       R=0.170000,
       X=1.800000,
@@ -781,16 +839,21 @@ package Original "Library of original Nordic 44 model"
           extent={{-1.75,-1.75},{1.75,1.75}},
           rotation=270,
           origin={-32.25,-111.75})));
-    Generators.Gen5_bus_6500 G1_bus6500 annotation (Placement(transformation(extent={{2,-90},{-4,-96}})));
-    Generators.Gen5_bus_6500 G2_bus6500 annotation (Placement(transformation(extent={{2,-98},{-4,-104}})));
-    Generators.Gen5_bus_6500 G3_bus6500 annotation (Placement(transformation(extent={{2,-106},{-4,-112}})));
-    Generators.Gen5_bus_6500 G4_bus6500 annotation (Placement(transformation(extent={{2,-114},{-4,-120}})));
+    Generators.Gen5_bus_6500 G1_bus6500
+      annotation (Placement(transformation(extent={{2,-90},{-4,-96}})));
+    Generators.Gen5_bus_6500 G2_bus6500
+      annotation (Placement(transformation(extent={{2,-98},{-4,-104}})));
+    Generators.Gen5_bus_6500 G3_bus6500
+      annotation (Placement(transformation(extent={{2,-106},{-4,-112}})));
+    Generators.Gen5_bus_6500 G4_bus6500
+      annotation (Placement(transformation(extent={{2,-114},{-4,-120}})));
     OpenIPSL.Electrical.Buses.BusExt bus_5100(
       nu=2,
       no=3,
       V_0=pSSE_data.voltages.V5100,
       angle_0=pSSE_data.voltages.A5100,
-      V_b=300) annotation (Placement(transformation(extent={{22,-74},{24,-54}})));
+      V_b=300)
+      annotation (Placement(transformation(extent={{22,-74},{24,-54}})));
     OpenIPSL.Electrical.Branches.PwLine line_5100_6500(
       R=0.080000,
       X=0.900000,
@@ -799,7 +862,8 @@ package Original "Library of original Nordic 44 model"
           extent={{-5,-3},{5,3}},
           rotation=180,
           origin={3,-79})));
-    Generators.Gen5_bus_5100 G1_bus5100 annotation (Placement(transformation(extent={{2,-68},{8,-62}})));
+    Generators.Gen5_bus_5100 G1_bus5100
+      annotation (Placement(transformation(extent={{2,-68},{8,-62}})));
     OpenIPSL.Electrical.Loads.PSSE.Load Load_bus5100(
       V_b=300,
       V_0=pSSE_data.voltages.V5100,
@@ -840,12 +904,18 @@ package Original "Library of original Nordic 44 model"
           extent={{-5,-3},{5,3}},
           rotation=180,
           origin={-65,17})));
-    Generators.Gen4_bus_3359 G1_bus3359 annotation (Placement(transformation(extent={{-92,110},{-98,104}})));
-    Generators.Gen4_bus_3359 G2_bus3359 annotation (Placement(transformation(extent={{-92,102},{-98,96}})));
-    Generators.Gen4_bus_3359 G3_bus3359 annotation (Placement(transformation(extent={{-92,94},{-98,88}})));
-    Generators.Gen4_bus_3359 G4_bus3359 annotation (Placement(transformation(extent={{-92,86},{-98,80}})));
-    Generators.Gen4_bus_3359 G5_bus3359 annotation (Placement(transformation(extent={{-92,78},{-98,72}})));
-    Generators.Gen4_bus_3359 G6_bus3359 annotation (Placement(transformation(extent={{-92,70},{-98,64}})));
+    Generators.Gen4_bus_3359 G1_bus3359
+      annotation (Placement(transformation(extent={{-92,110},{-98,104}})));
+    Generators.Gen4_bus_3359 G2_bus3359
+      annotation (Placement(transformation(extent={{-92,102},{-98,96}})));
+    Generators.Gen4_bus_3359 G3_bus3359
+      annotation (Placement(transformation(extent={{-92,94},{-98,88}})));
+    Generators.Gen4_bus_3359 G4_bus3359
+      annotation (Placement(transformation(extent={{-92,86},{-98,80}})));
+    Generators.Gen4_bus_3359 G5_bus3359
+      annotation (Placement(transformation(extent={{-92,78},{-98,72}})));
+    Generators.Gen4_bus_3359 G6_bus3359
+      annotation (Placement(transformation(extent={{-92,70},{-98,64}})));
     OpenIPSL.Electrical.Branches.PwLine line_5101_5103(
       R=0.010000,
       X=0.140000,
@@ -905,7 +975,8 @@ package Original "Library of original Nordic 44 model"
       no=3,
       V_0=pSSE_data.voltages.V5304,
       angle_0=pSSE_data.voltages.A5304,
-      V_b=420) annotation (Placement(transformation(extent={{122,70},{124,90}})));
+      V_b=420)
+      annotation (Placement(transformation(extent={{122,70},{124,90}})));
     OpenIPSL.Electrical.Buses.BusExt bus_5102(
       no=3,
       nu=1,
@@ -933,7 +1004,8 @@ package Original "Library of original Nordic 44 model"
       no=2,
       V_0=pSSE_data.voltages.V5305,
       angle_0=pSSE_data.voltages.A5305,
-      V_b=420) annotation (Placement(transformation(extent={{162,110},{164,130}})));
+      V_b=420)
+      annotation (Placement(transformation(extent={{162,110},{164,130}})));
     OpenIPSL.Electrical.Branches.PwLine line_5304_5305_1(
       R=0.010000,
       X=0.150000,
@@ -985,9 +1057,12 @@ package Original "Library of original Nordic 44 model"
       no=3,
       V_0=pSSE_data.voltages.V5300,
       angle_0=pSSE_data.voltages.A5300,
-      V_b=300) annotation (Placement(transformation(extent={{240,70},{242,90}})));
-    Generators.Gen3_bus_5300 G1_bus5300 annotation (Placement(transformation(extent={{220,64},{226,70}})));
-    Generators.Gen3_bus_5300 G2_bus5300 annotation (Placement(transformation(extent={{262,88},{256,82}})));
+      V_b=300)
+      annotation (Placement(transformation(extent={{240,70},{242,90}})));
+    Generators.Gen3_bus_5300 G1_bus5300
+      annotation (Placement(transformation(extent={{220,64},{226,70}})));
+    Generators.Gen3_bus_5300 G2_bus5300
+      annotation (Placement(transformation(extent={{262,88},{256,82}})));
     OpenIPSL.Electrical.Loads.PSSE.Load Load_bus5300(
       V_b=300,
       V_0=pSSE_data.voltages.V5300,
@@ -1003,7 +1078,8 @@ package Original "Library of original Nordic 44 model"
       no=5,
       V_0=pSSE_data.voltages.V6100,
       angle_0=pSSE_data.voltages.A6100,
-      V_b=300) annotation (Placement(transformation(extent={{280,38},{282,58}})));
+      V_b=300)
+      annotation (Placement(transformation(extent={{280,38},{282,58}})));
     OpenIPSL.Electrical.Branches.PwLine line_5300_6100(
       R=0.021000,
       X=0.220000,
@@ -1032,11 +1108,16 @@ package Original "Library of original Nordic 44 model"
           extent={{-2.75,-2.75},{2.75,2.75}},
           rotation=270,
           origin={266.75,53.25})));
-    Generators.Gen3_bus_6100 G1_bus6100 annotation (Placement(transformation(extent={{262,42},{268,48}})));
-    Generators.Gen3_bus_6100 G2_bus6100 annotation (Placement(transformation(extent={{296,64},{290,58}})));
-    Generators.Gen3_bus_6100 G4_bus6100 annotation (Placement(transformation(extent={{296,48},{290,42}})));
-    Generators.Gen3_bus_6100 G5_bus6100 annotation (Placement(transformation(extent={{296,40},{290,34}})));
-    Generators.Gen3_bus_6100 G3_bus6100 annotation (Placement(transformation(extent={{296,56},{290,50}})));
+    Generators.Gen3_bus_6100 G1_bus6100
+      annotation (Placement(transformation(extent={{262,42},{268,48}})));
+    Generators.Gen3_bus_6100 G2_bus6100
+      annotation (Placement(transformation(extent={{296,64},{290,58}})));
+    Generators.Gen3_bus_6100 G4_bus6100
+      annotation (Placement(transformation(extent={{296,48},{290,42}})));
+    Generators.Gen3_bus_6100 G5_bus6100
+      annotation (Placement(transformation(extent={{296,40},{290,34}})));
+    Generators.Gen3_bus_6100 G3_bus6100
+      annotation (Placement(transformation(extent={{296,56},{290,50}})));
     OpenIPSL.Electrical.Branches.PwLine line_6000_6100(
       R=0.034000,
       X=0.420000,
@@ -1050,8 +1131,10 @@ package Original "Library of original Nordic 44 model"
       no=3,
       V_0=pSSE_data.voltages.V6000,
       angle_0=pSSE_data.voltages.A6000,
-      V_b=300) annotation (Placement(transformation(extent={{240,-8},{242,12}})));
-    Generators.Gen5_bus_6000 G1_bus6000 annotation (Placement(transformation(extent={{219,-2},{227,6}})));
+      V_b=300)
+      annotation (Placement(transformation(extent={{240,-8},{242,12}})));
+    Generators.Gen5_bus_6000 G1_bus6000
+      annotation (Placement(transformation(extent={{219,-2},{227,6}})));
     OpenIPSL.Electrical.Branches.PwLine line_5400_6000(
       R=0.033000,
       X=0.360000,
@@ -1065,7 +1148,8 @@ package Original "Library of original Nordic 44 model"
       nu=3,
       V_0=pSSE_data.voltages.V6001,
       angle_0=pSSE_data.voltages.A6001,
-      V_b=420) annotation (Placement(transformation(extent={{182,12},{184,32}})));
+      V_b=420)
+      annotation (Placement(transformation(extent={{182,12},{184,32}})));
     OpenIPSL.Electrical.Buses.BusExt bus_5601(
       nu=1,
       V_0=pSSE_data.voltages.V5601,
@@ -1077,7 +1161,8 @@ package Original "Library of original Nordic 44 model"
       nu=4,
       V_0=pSSE_data.voltages.V5600,
       angle_0=pSSE_data.voltages.A5600,
-      V_b=300) annotation (Placement(transformation(extent={{280,-54},{282,-34}})));
+      V_b=300)
+      annotation (Placement(transformation(extent={{280,-54},{282,-34}})));
     OpenIPSL.Electrical.Branches.PwLine line_5600_5601(
       R=0.030000,
       X=0.340000,
@@ -1127,7 +1212,8 @@ package Original "Library of original Nordic 44 model"
       no=1,
       V_0=pSSE_data.voltages.V5620,
       angle_0=pSSE_data.voltages.A5620,
-      V_b=300) annotation (Placement(transformation(extent={{280,-104},{282,-84}})));
+      V_b=300)
+      annotation (Placement(transformation(extent={{280,-104},{282,-84}})));
     OpenIPSL.Electrical.Loads.PSSE.Load Load_bus5620(
       V_b=300,
       V_0=pSSE_data.voltages.V5620,
@@ -1146,20 +1232,24 @@ package Original "Library of original Nordic 44 model"
           extent={{-5,-3},{5,3}},
           rotation=270,
           origin={288,-71})));
-    Generators.Gen2_bus_5600 G1_bus5600 annotation (Placement(transformation(extent={{296,-38},{290,-44}})));
-    Generators.Gen2_bus_5600 G2_bus5600 annotation (Placement(transformation(extent={{296,-46},{290,-52}})));
+    Generators.Gen2_bus_5600 G1_bus5600
+      annotation (Placement(transformation(extent={{296,-38},{290,-44}})));
+    Generators.Gen2_bus_5600 G2_bus5600
+      annotation (Placement(transformation(extent={{296,-46},{290,-52}})));
     OpenIPSL.Electrical.Buses.BusExt bus_5603(
       nu=2,
       no=2,
       V_0=pSSE_data.voltages.V5603,
       angle_0=pSSE_data.voltages.A5603,
-      V_b=300) annotation (Placement(transformation(extent={{220,-86},{222,-66}})));
+      V_b=300)
+      annotation (Placement(transformation(extent={{220,-86},{222,-66}})));
     OpenIPSL.Electrical.Buses.BusExt bus_5610(
       nu=1,
       no=1,
       V_0=pSSE_data.voltages.V5610,
       angle_0=pSSE_data.voltages.A5610,
-      V_b=300) annotation (Placement(transformation(extent={{242,-116},{244,-96}})));
+      V_b=300)
+      annotation (Placement(transformation(extent={{242,-116},{244,-96}})));
     OpenIPSL.Electrical.Branches.PwLine line_5603_5610(
       R=0.000000,
       X=0.010000,
@@ -1189,7 +1279,8 @@ package Original "Library of original Nordic 44 model"
       nu=3,
       V_0=pSSE_data.voltages.V5500,
       angle_0=pSSE_data.voltages.A5500,
-      V_b=300) annotation (Placement(transformation(extent={{76,-90},{78,-58}})));
+      V_b=300)
+      annotation (Placement(transformation(extent={{76,-90},{78,-58}})));
     OpenIPSL.Electrical.Branches.PwLine line_5500_5603(
       R=0.050000,
       X=0.600000,
@@ -1198,7 +1289,8 @@ package Original "Library of original Nordic 44 model"
           extent={{-5,-3},{5,3}},
           rotation=180,
           origin={114,-89})));
-    Generators.Gen5_bus_5500 G1_bus5500 annotation (Placement(transformation(extent={{96,-71},{90,-77}})));
+    Generators.Gen5_bus_5500 G1_bus5500
+      annotation (Placement(transformation(extent={{96,-71},{90,-77}})));
     OpenIPSL.Electrical.Branches.PwLine line_5400_5500(
       R=0.009000,
       X=0.940000,
@@ -1212,7 +1304,8 @@ package Original "Library of original Nordic 44 model"
       nu=3,
       V_0=pSSE_data.voltages.V5401,
       angle_0=pSSE_data.voltages.A5401,
-      V_b=420) annotation (Placement(transformation(extent={{122,-44},{124,-24}})));
+      V_b=420)
+      annotation (Placement(transformation(extent={{122,-44},{124,-24}})));
     OpenIPSL.Electrical.Buses.BusExt bus_5501(
       nu=1,
       no=2,
@@ -1252,7 +1345,8 @@ package Original "Library of original Nordic 44 model"
       no=4,
       V_0=pSSE_data.voltages.V5400,
       angle_0=pSSE_data.voltages.A5400,
-      V_b=300) annotation (Placement(transformation(extent={{180,-56},{182,-36}})));
+      V_b=300)
+      annotation (Placement(transformation(extent={{180,-56},{182,-36}})));
     OpenIPSL.Electrical.Buses.BusExt bus_5402(
       no=1,
       V_0=pSSE_data.voltages.V5402,
@@ -1275,8 +1369,10 @@ package Original "Library of original Nordic 44 model"
           extent={{-5,-3},{5,3}},
           rotation=90,
           origin={135,-50})));
-    Generators.Gen5_bus_5400 G1_bus5400 annotation (Placement(transformation(extent={{162,-60},{168,-54}})));
-    Generators.Gen5_bus_5400 G2_bus5400 annotation (Placement(transformation(extent={{202,-50},{196,-56}})));
+    Generators.Gen5_bus_5400 G1_bus5400
+      annotation (Placement(transformation(extent={{162,-60},{168,-54}})));
+    Generators.Gen5_bus_5400 G2_bus5400
+      annotation (Placement(transformation(extent={{202,-50},{196,-56}})));
     OpenIPSL.Electrical.Loads.PSSE.Load Load1_bus5400(
       V_b=300,
       V_0=pSSE_data.voltages.V5400,
@@ -1295,14 +1391,22 @@ package Original "Library of original Nordic 44 model"
           extent={{-5,-3},{5,3}},
           rotation=90,
           origin={188,3})));
-    OpenIPSL.Electrical.Banks.PSSE.Shunt shunt_5101_5501(G=0.02230, B=-0.97440) annotation (Placement(transformation(extent={{36,-6},{40,0}})));
-    OpenIPSL.Electrical.Banks.PSSE.Shunt shunt_5501_5101(G=-0.02160, B=0.97440) annotation (Placement(transformation(extent={{46,-6},{50,0}})));
-    OpenIPSL.Electrical.Banks.PSSE.Shunt shunt_5102_6001(G=0.00020, B=0.00010) annotation (Placement(transformation(extent={{128,6},{132,12}})));
-    OpenIPSL.Electrical.Banks.PSSE.Shunt shunt_6001_5102(G=0.00020, B=-0.00010) annotation (Placement(transformation(extent={{140,6},{144,12}})));
-    OpenIPSL.Electrical.Banks.PSSE.Shunt shunt_6001_5401(G=0.00020, B=0.00050) annotation (Placement(transformation(extent={{141,-20},{145,-14}})));
-    OpenIPSL.Electrical.Banks.PSSE.Shunt shunt_5401_6001(G=-0.00020, B=-0.00050) annotation (Placement(transformation(extent={{126,-20},{130,-14}})));
-    OpenIPSL.Electrical.Banks.PSSE.Shunt shunt_5500_5603(G=0.00030, B=0.00130) annotation (Placement(transformation(extent={{104,-98},{108,-92}})));
-    OpenIPSL.Electrical.Banks.PSSE.Shunt shunt_5603_5500(G=-0.00030, B=-0.00130) annotation (Placement(transformation(extent={{120,-98},{124,-92}})));
+    OpenIPSL.Electrical.Banks.PSSE.Shunt shunt_5101_5501(G=0.02230, B=-0.97440)
+      annotation (Placement(transformation(extent={{36,-6},{40,0}})));
+    OpenIPSL.Electrical.Banks.PSSE.Shunt shunt_5501_5101(G=-0.02160, B=0.97440)
+      annotation (Placement(transformation(extent={{46,-6},{50,0}})));
+    OpenIPSL.Electrical.Banks.PSSE.Shunt shunt_5102_6001(G=0.00020, B=0.00010)
+      annotation (Placement(transformation(extent={{128,6},{132,12}})));
+    OpenIPSL.Electrical.Banks.PSSE.Shunt shunt_6001_5102(G=0.00020, B=-0.00010)
+      annotation (Placement(transformation(extent={{140,6},{144,12}})));
+    OpenIPSL.Electrical.Banks.PSSE.Shunt shunt_6001_5401(G=0.00020, B=0.00050)
+      annotation (Placement(transformation(extent={{141,-20},{145,-14}})));
+    OpenIPSL.Electrical.Banks.PSSE.Shunt shunt_5401_6001(G=-0.00020, B=-0.00050)
+      annotation (Placement(transformation(extent={{126,-20},{130,-14}})));
+    OpenIPSL.Electrical.Banks.PSSE.Shunt shunt_5500_5603(G=0.00030, B=0.00130)
+      annotation (Placement(transformation(extent={{104,-98},{108,-92}})));
+    OpenIPSL.Electrical.Banks.PSSE.Shunt shunt_5603_5500(G=-0.00030, B=-0.00130)
+      annotation (Placement(transformation(extent={{120,-98},{124,-92}})));
     OpenIPSL.Electrical.Branches.PSSE.TwoWindingTransformer trafo_3244_3245(
       R=0.005,
       X=0.02,
@@ -1419,32 +1523,41 @@ package Original "Library of original Nordic 44 model"
       G=0,
       B=0,
       t1=0.9998,
-      t2=1) annotation (Placement(transformation(extent={{-114,136},{-102,144}})));
-    Original.Data.PSSE_data_Original_case pSSE_data annotation (Placement(transformation(extent={{-286,192},{-266,212}})));
-    inner OpenIPSL.Electrical.SystemBase SysData(S_b=1000) annotation (Placement(transformation(extent={{176,172},{278,208}})));
+      t2=1)
+      annotation (Placement(transformation(extent={{-114,136},{-102,144}})));
+    Original.Data.PSSE_data_Original_case pSSE_data
+      annotation (Placement(transformation(extent={{-286,192},{-266,212}})));
+    inner OpenIPSL.Electrical.SystemBase SysData(S_b=1000)
+      annotation (Placement(transformation(extent={{176,172},{278,208}})));
   equation
     connect(G9_bus7000.pwPin, bus_7000.o[1]) annotation (Line(
         points={{-285.7,-143},{-274.075,-143},{-274.075,-92.25},{-272,-92.25}},
+
         color={0,0,255},
         smooth=Smooth.None));
     connect(G8_bus7000.pwPin, bus_7000.o[2]) annotation (Line(
         points={{-285.7,-135},{-275.075,-135},{-275.075,-89.55},{-272,-89.55}},
+
         color={0,0,255},
         smooth=Smooth.None));
     connect(G7_bus7000.pwPin, bus_7000.o[3]) annotation (Line(
         points={{-285.7,-127},{-276.075,-127},{-276.075,-86.85},{-272,-86.85}},
+
         color={0,0,255},
         smooth=Smooth.None));
     connect(G6_bus7000.pwPin, bus_7000.o[4]) annotation (Line(
         points={{-285.7,-119},{-277.075,-119},{-277.075,-84.15},{-272,-84.15}},
+
         color={0,0,255},
         smooth=Smooth.None));
     connect(G5_bus7000.pwPin, bus_7000.o[5]) annotation (Line(
         points={{-285.7,-111},{-278.075,-111},{-278.075,-81.45},{-272,-81.45}},
+
         color={0,0,255},
         smooth=Smooth.None));
     connect(G4_bus7000.pwPin, bus_7000.o[6]) annotation (Line(
         points={{-285.7,-103},{-279.075,-103},{-279.075,-78.75},{-272,-78.75}},
+
         color={0,0,255},
         smooth=Smooth.None));
     connect(G3_bus7000.pwPin, bus_7000.o[7]) annotation (Line(
@@ -1500,7 +1613,8 @@ package Original "Library of original Nordic 44 model"
         color={0,0,255},
         smooth=Smooth.None));
     connect(line_7000_7010.n, bus_7000.o[16]) annotation (Line(
-        points={{-275,-6.83333},{-275,-26},{-274,-26},{-274,-52},{-272,-52},{-272,-51.75}},
+        points={{-275,-6.83333},{-275,-26},{-274,-26},{-274,-52},{-272,-52},{-272,
+            -51.75}},
         color={0,0,255},
         smooth=Smooth.None));
     connect(line_7000_7100_3.n, bus_7000.u[1]) annotation (Line(
@@ -1512,7 +1626,8 @@ package Original "Library of original Nordic 44 model"
         color={0,0,255},
         smooth=Smooth.None));
     connect(line_7000_7100_1.n, bus_7000.u[3]) annotation (Line(
-        points={{-260,-52.8333},{-260,-54},{-262,-54},{-262,-58},{-270,-58},{-270,-57.6}},
+        points={{-260,-52.8333},{-260,-54},{-262,-54},{-262,-58},{-270,-58},{-270,
+            -57.6}},
         color={0,0,255},
         smooth=Smooth.None));
     connect(line_7000_7100_3.p, bus_7100.o[1]) annotation (Line(
@@ -1641,18 +1756,22 @@ package Original "Library of original Nordic 44 model"
         smooth=Smooth.None));
     connect(line_3300_8500_2.n, bus_3300.u[4]) annotation (Line(
         points={{-207,113.167},{-207,108},{-211,108},{-211,100.4},{-218,100.4}},
+
         color={0,0,255},
         smooth=Smooth.None));
     connect(line_3300_8500_1.n, bus_3300.u[5]) annotation (Line(
         points={{-211,113.167},{-211,110},{-214,110},{-214,102.8},{-218,102.8}},
+
         color={0,0,255},
         smooth=Smooth.None));
     connect(line_3300_8500_2.p, bus_8500.o[1]) annotation (Line(
-        points={{-207,124.833},{-207,126},{-202,126},{-202,133.975},{-198,133.975}},
+        points={{-207,124.833},{-207,126},{-202,126},{-202,133.975},{-198,
+            133.975}},
         color={0,0,255},
         smooth=Smooth.None));
     connect(line_3300_8500_1.p, bus_8500.o[2]) annotation (Line(
-        points={{-211,124.833},{-211,128},{-204,128},{-204,137.125},{-198,137.125}},
+        points={{-211,124.833},{-211,128},{-204,128},{-204,137.125},{-198,
+            137.125}},
         color={0,0,255},
         smooth=Smooth.None));
     connect(G2_bus8500.pwPin, bus_8500.o[3]) annotation (Line(
@@ -1669,10 +1788,12 @@ package Original "Library of original Nordic 44 model"
         smooth=Smooth.None));
     connect(Load2_bus8500.p, bus_8500.o[6]) annotation (Line(
         points={{-210.325,156.25},{-210,156.25},{-210,149.725},{-198,149.725}},
+
         color={0,0,255},
         smooth=Smooth.None));
     connect(Load1_bus8500.p, bus_8500.o[7]) annotation (Line(
         points={{-210.325,162.25},{-206,162.25},{-206,152.875},{-198,152.875}},
+
         color={0,0,255},
         smooth=Smooth.None));
     connect(line_8500_8700.n, bus_8500.o[8]) annotation (Line(
@@ -1680,7 +1801,8 @@ package Original "Library of original Nordic 44 model"
         color={0,0,255},
         smooth=Smooth.None));
     connect(line_3200_8500.p, bus_8500.u[1]) annotation (Line(
-        points={{-189,126.833},{-189,126},{-194,126},{-194,133.975},{-196,133.975}},
+        points={{-189,126.833},{-189,126},{-194,126},{-194,133.975},{-196,
+            133.975}},
         color={0,0,255},
         smooth=Smooth.None));
     connect(line_3359_8500_1.p, bus_8500.u[2]) annotation (Line(
@@ -1729,6 +1851,7 @@ package Original "Library of original Nordic 44 model"
         smooth=Smooth.None));
     connect(line_3200_8500.n, bus_3200.o[5]) annotation (Line(
         points={{-189,115.167},{-189,106},{-180,106},{-180,102.8},{-178,102.8}},
+
         color={0,0,255},
         smooth=Smooth.None));
     connect(line_3200_3359.p, bus_3200.u[1]) annotation (Line(
@@ -1753,10 +1876,12 @@ package Original "Library of original Nordic 44 model"
         smooth=Smooth.None));
     connect(Load4_bus3359.p, bus_3359.o[3]) annotation (Line(
         points={{-136.325,74.25},{-133.9,74.25},{-133.9,75.2667},{-124,75.2667}},
+
         color={0,0,255},
         smooth=Smooth.None));
     connect(Load3_bus3359.p, bus_3359.o[4]) annotation (Line(
         points={{-134.325,78.25},{-129.9,78.25},{-129.9,79.1333},{-124,79.1333}},
+
         color={0,0,255},
         smooth=Smooth.None));
     connect(Load2_bus3359.p, bus_3359.o[5]) annotation (Line(
@@ -1765,19 +1890,22 @@ package Original "Library of original Nordic 44 model"
         smooth=Smooth.None));
     connect(Load1_bus3359.p, bus_3359.o[6]) annotation (Line(
         points={{-130.325,86.75},{-129.9,86.75},{-129.9,86.8667},{-124,86.8667}},
+
         color={0,0,255},
         smooth=Smooth.None));
     connect(line_3200_3359.n, bus_3359.o[7]) annotation (Line(
-        points={{-147.167,99},{-129,99},{-129,92},{-125,92},{-125,90.7333},{-124,90.7333}},
+        points={{-147.167,99},{-129,99},{-129,92},{-125,92},{-125,90.7333},{-124,
+            90.7333}},
         color={0,0,255},
         smooth=Smooth.None));
     connect(line_3359_8500_1.n, bus_3359.o[8]) annotation (Line(
-        points={{-155.167,129},{-137,129},{-137,106},{-127,106},{-127,94.6},{-124,94.6}},
+        points={{-155.167,129},{-137,129},{-137,106},{-127,106},{-127,94.6},{-124,
+            94.6}},
         color={0,0,255},
         smooth=Smooth.None));
-    connect(line_3359_8500_2.n, bus_3359.o[9])
-      annotation (Line(
-        points={{-155.167,133},{-127,133},{-127,108},{-125,108},{-125,98.4667},{-124,98.4667}},
+    connect(line_3359_8500_2.n, bus_3359.o[9]) annotation (Line(
+        points={{-155.167,133},{-127,133},{-127,108},{-125,108},{-125,98.4667},
+            {-124,98.4667}},
         color={0,0,255},
         smooth=Smooth.None));
     connect(Load_bus3360.p, bus_3360.u[1]) annotation (Line(
@@ -1790,6 +1918,7 @@ package Original "Library of original Nordic 44 model"
         smooth=Smooth.None));
     connect(line_3100_3115.p, bus_3100.o[2]) annotation (Line(
         points={{-200.167,34},{-196,34},{-196,40},{-184,40},{-184,43},{-178,43}},
+
         color={0,0,255},
         smooth=Smooth.None));
     connect(Load_bus3100.p, bus_3100.o[3]) annotation (Line(
@@ -1801,11 +1930,13 @@ package Original "Library of original Nordic 44 model"
         color={0,0,255},
         smooth=Smooth.None));
     connect(line_3100_3200_2.n, bus_3100.o[5]) annotation (Line(
-        points={{-187,71.1667},{-187,58},{-182,58},{-182,48},{-180,48},{-180,49},{-178,49}},
+        points={{-187,71.1667},{-187,58},{-182,58},{-182,48},{-180,48},{-180,49},
+            {-178,49}},
         color={0,0,255},
         smooth=Smooth.None));
     connect(line_3100_3200_1.n, bus_3100.o[6]) annotation (Line(
         points={{-181,71.1667},{-181,62},{-180,62},{-180,50},{-178,50},{-178,51}},
+
         color={0,0,255},
         smooth=Smooth.None));
     connect(line_3115_6701.n, bus_6701.o[1]) annotation (Line(
@@ -1829,15 +1960,18 @@ package Original "Library of original Nordic 44 model"
         color={0,0,255},
         smooth=Smooth.None));
     connect(line_3244_6500.p, bus_6500.o[1]) annotation (Line(
-        points={{-105.167,-111},{-46,-111},{-46,-119},{-24,-119},{-24,-111},{-20,-111}},
+        points={{-105.167,-111},{-46,-111},{-46,-119},{-24,-119},{-24,-111},{-20,
+            -111}},
         color={0,0,255},
         smooth=Smooth.None));
     connect(Load3_bus6500.p, bus_6500.o[2]) annotation (Line(
         points={{-30.325,-111.75},{-25.9,-111.75},{-25.9,-106.6},{-20,-106.6}},
+
         color={0,0,255},
         smooth=Smooth.None));
     connect(Load2_bus6500.p, bus_6500.o[3]) annotation (Line(
         points={{-30.325,-103.75},{-25.9,-103.75},{-25.9,-102.2},{-20,-102.2}},
+
         color={0,0,255},
         smooth=Smooth.None));
     connect(Load1_bus6500.p, bus_6500.o[4]) annotation (Line(
@@ -2034,6 +2168,7 @@ package Original "Library of original Nordic 44 model"
         smooth=Smooth.None));
     connect(line_5500_5603.p, bus_5603.o[1]) annotation (Line(
         points={{119.833,-89},{168,-89},{168,-100},{196,-100},{196,-79},{220,-79}},
+
         color={0,0,255},
         smooth=Smooth.None));
     connect(Load2_bus5500.p, bus_5500.o[1]) annotation (Line(
@@ -2338,36 +2473,41 @@ package Original "Library of original Nordic 44 model"
         smooth=Smooth.None));
     connect(G3_bus3249.p, bus_3249.o[2]) annotation (Line(
         points={{-191.7,-33},{-183.85,-33},{-183.85,-32.9429},{-176,-32.9429}},
+
         color={0,0,255},
         smooth=Smooth.None));
     connect(G2_bus3249.p, bus_3249.o[3]) annotation (Line(
         points={{-191.7,-25},{-183.85,-25},{-183.85,-27.9714},{-176,-27.9714}},
+
         color={0,0,255},
         smooth=Smooth.None));
     connect(G1_bus3249.p, bus_3249.o[4]) annotation (Line(
         points={{-191.7,-17},{-183.85,-17},{-183.85,-23},{-176,-23}},
         color={0,0,255},
         smooth=Smooth.None));
-    connect(Load_bus3249.p, bus_3249.o[5])
-      annotation (Line(
-        points={{-188.325,-9.75},{-186,-9.75},{-186,-10},{-184,-10},{-184,-14},{-180,-14},{-180,-18.0286},{-176,-18.0286}},
+    connect(Load_bus3249.p, bus_3249.o[5]) annotation (Line(
+        points={{-188.325,-9.75},{-186,-9.75},{-186,-10},{-184,-10},{-184,-14},
+            {-180,-14},{-180,-18.0286},{-176,-18.0286}},
         color={0,0,255},
         smooth=Smooth.None));
     connect(line_3115_3249.p, bus_3249.o[6]) annotation (Line(
-        points={{-201.167,11},{-194,11},{-194,-4},{-182,-4},{-182,-13.0571},{-176,-13.0571}},
+        points={{-201.167,11},{-194,11},{-194,-4},{-182,-4},{-182,-13.0571},{-176,
+            -13.0571}},
         color={0,0,255},
         smooth=Smooth.None));
     connect(line_3100_3249.n, bus_3249.o[7]) annotation (Line(
         points={{-189,9.16667},{-189,0},{-180,0},{-180,-8.08571},{-176,-8.08571}},
+
         color={0,0,255},
         smooth=Smooth.None));
-    connect(line_3000_3245_2.n, bus_3245.o[1])
-      annotation (Line(
-        points={{-252,9.16667},{-252,-8},{-242,-8},{-242,-22},{-230,-22},{-230,-40},{-218,-40},{-218,-76},{-208,-76}},
+    connect(line_3000_3245_2.n, bus_3245.o[1]) annotation (Line(
+        points={{-252,9.16667},{-252,-8},{-242,-8},{-242,-22},{-230,-22},{-230,
+            -40},{-218,-40},{-218,-76},{-208,-76}},
         color={0,0,255},
         smooth=Smooth.None));
     connect(line_3000_3245_1.n, bus_3245.o[2]) annotation (Line(
-        points={{-228.167,56},{-218,56},{-218,-34},{-214,-34},{-214,-72},{-208,-72}},
+        points={{-228.167,56},{-218,56},{-218,-34},{-214,-34},{-214,-72},{-208,
+            -72}},
         color={0,0,255},
         smooth=Smooth.None));
     connect(line_3115_3245.n, bus_3245.o[3]) annotation (Line(
@@ -2410,32 +2550,57 @@ package Original "Library of original Nordic 44 model"
         points={{188,8.83333},{188,18},{184,18}},
         color={0,0,255},
         smooth=Smooth.None));
-    connect(trafo_3359_3360.n, bus_3360.o[1]) annotation (Line(points={{-101,140},{-101,140},{-96,140}}, color={0,0,255}));
-    connect(trafo_3359_3360.p, bus_3359.u[9]) annotation (Line(points={{-115,140},{-118,140},{-118,98.4667},{-122,98.4667}}, color={0,0,255}));
-    connect(trafo_3249_3701.n, bus_3249.u[5]) annotation (Line(points={{-149.167,-9},{-161.666,-9},{-161.666,-9.08},{-174,-9.08}}, color={0,0,255}));
-    connect(trafo_3249_3701.p, bus_3701.o[1]) annotation (Line(points={{-132.833,-9},{-122,-9},{-122,-60},{-118,-60}}, color={0,0,255}));
-    connect(trafo_3244_3245.p, bus_3244.o[1]) annotation (Line(points={{-183,-80},{-180,-80},{-180,-96},{-178,-96}}, color={0,0,255}));
-    connect(trafo_3244_3245.n, bus_3245.u[2]) annotation (Line(points={{-197,-80},{-200,-80},{-200,-69},{-206,-69}}, color={0,0,255}));
-    connect(trafo_6700_6701.p, bus_6700.o[4]) annotation (Line(points={{-111,-84},{-100,-84},{-100,-79.5},{-78,-79.5}}, color={0,0,255}));
-    connect(trafo_6700_6701.n, bus_6701.u[1]) annotation (Line(points={{-125,-84},{-125,-84},{-144,-84}}, color={0,0,255}));
-    connect(trafo_5100_5101.n, bus_5100.u[2]) annotation (Line(points={{30,-33},{30,-61},{24,-61}}, color={0,0,255}));
-    connect(trafo_5100_5101.p, bus_5101.o[3]) annotation (Line(points={{30,-19},{30,-10},{16,-10},{16,12},{22,12}}, color={0,0,255}));
-    connect(trafo_5500_5501.p, bus_5500.o[4]) annotation (Line(points={{70,-45},{70,-45},{70,-62},{70,-66.8},{76,-66.8}}, color={0,0,255}));
-    connect(trafo_5500_5501.n, bus_5501.o[2]) annotation (Line(points={{70,-31},{70,-13},{80,-13}}, color={0,0,255}));
-    connect(trafo_5400_5401.p, bus_5400.o[4]) annotation (Line(points={{161,-34},{172,-34},{172,-41.5},{180,-41.5}}, color={0,0,255}));
-    connect(trafo_5400_5401.n, bus_5401.u[3]) annotation (Line(points={{147,-34},{124,-34},{124,-30}}, color={0,0,255}));
-    connect(trafo_5602_5603.n, bus_5602.u[1]) annotation (Line(points={{197,-72},{184,-72},{184,-76}}, color={0,0,255}));
-    connect(trafo_5602_5603.p, bus_5603.o[2]) annotation (Line(points={{211,-72},{220,-72},{220,-73}}, color={0,0,255}));
-    connect(trafo_5400_5402.p, bus_5400.u[3]) annotation (Line(points={{200,-35},{200,-42},{182,-42}}, color={0,0,255}));
-    connect(trafo_5400_5402.n, bus_5402.u[1]) annotation (Line(points={{200,-21},{200,-8},{196,-8}}, color={0,0,255}));
-    connect(trafo_6000_6001.p, bus_6000.o[3]) annotation (Line(points={{213,16},{230,16},{230,6},{240,6}}, color={0,0,255}));
-    connect(trafo_6000_6001.n, bus_6001.u[2]) annotation (Line(points={{199,16},{192,16},{192,22},{184,22}}, color={0,0,255}));
-    connect(trafo_5601_6001.n, bus_6001.u[3]) annotation (Line(points={{221,26},{210,26},{184,26}}, color={0,0,255}));
-    connect(trafo_5601_6001.p, bus_5601.o[1]) annotation (Line(points={{235,26},{248,26},{248,8},{280,8}}, color={0,0,255}));
-    connect(trafo_5300_5301.p, bus_5300.o[3]) annotation (Line(points={{227,90},{232,90},{232,84},{240,84}}, color={0,0,255}));
-    connect(trafo_5300_5301.n, bus_5301.u[1]) annotation (Line(points={{213,90},{208,90},{208,80},{202,80}}, color={0,0,255}));
+    connect(trafo_3359_3360.n, bus_3360.o[1]) annotation (Line(points={{-101,
+            140},{-101,140},{-96,140}}, color={0,0,255}));
+    connect(trafo_3359_3360.p, bus_3359.u[9]) annotation (Line(points={{-115,
+            140},{-118,140},{-118,98.4667},{-122,98.4667}}, color={0,0,255}));
+    connect(trafo_3249_3701.n, bus_3249.u[5]) annotation (Line(points={{-149.167,
+            -9},{-161.666,-9},{-161.666,-9.08},{-174,-9.08}}, color={0,0,255}));
+    connect(trafo_3249_3701.p, bus_3701.o[1]) annotation (Line(points={{-132.833,
+            -9},{-122,-9},{-122,-60},{-118,-60}}, color={0,0,255}));
+    connect(trafo_3244_3245.p, bus_3244.o[1]) annotation (Line(points={{-183,-80},
+            {-180,-80},{-180,-96},{-178,-96}}, color={0,0,255}));
+    connect(trafo_3244_3245.n, bus_3245.u[2]) annotation (Line(points={{-197,-80},
+            {-200,-80},{-200,-69},{-206,-69}}, color={0,0,255}));
+    connect(trafo_6700_6701.p, bus_6700.o[4]) annotation (Line(points={{-111,-84},
+            {-100,-84},{-100,-79.5},{-78,-79.5}}, color={0,0,255}));
+    connect(trafo_6700_6701.n, bus_6701.u[1]) annotation (Line(points={{-125,-84},
+            {-125,-84},{-144,-84}}, color={0,0,255}));
+    connect(trafo_5100_5101.n, bus_5100.u[2])
+      annotation (Line(points={{30,-33},{30,-61},{24,-61}}, color={0,0,255}));
+    connect(trafo_5100_5101.p, bus_5101.o[3]) annotation (Line(points={{30,-19},
+            {30,-10},{16,-10},{16,12},{22,12}}, color={0,0,255}));
+    connect(trafo_5500_5501.p, bus_5500.o[4]) annotation (Line(points={{70,-45},
+            {70,-45},{70,-62},{70,-66.8},{76,-66.8}}, color={0,0,255}));
+    connect(trafo_5500_5501.n, bus_5501.o[2])
+      annotation (Line(points={{70,-31},{70,-13},{80,-13}}, color={0,0,255}));
+    connect(trafo_5400_5401.p, bus_5400.o[4]) annotation (Line(points={{161,-34},
+            {172,-34},{172,-41.5},{180,-41.5}}, color={0,0,255}));
+    connect(trafo_5400_5401.n, bus_5401.u[3]) annotation (Line(points={{147,-34},
+            {124,-34},{124,-30}}, color={0,0,255}));
+    connect(trafo_5602_5603.n, bus_5602.u[1]) annotation (Line(points={{197,-72},
+            {184,-72},{184,-76}}, color={0,0,255}));
+    connect(trafo_5602_5603.p, bus_5603.o[2]) annotation (Line(points={{211,-72},
+            {220,-72},{220,-73}}, color={0,0,255}));
+    connect(trafo_5400_5402.p, bus_5400.u[3]) annotation (Line(points={{200,-35},
+            {200,-42},{182,-42}}, color={0,0,255}));
+    connect(trafo_5400_5402.n, bus_5402.u[1])
+      annotation (Line(points={{200,-21},{200,-8},{196,-8}}, color={0,0,255}));
+    connect(trafo_6000_6001.p, bus_6000.o[3]) annotation (Line(points={{213,16},
+            {230,16},{230,6},{240,6}}, color={0,0,255}));
+    connect(trafo_6000_6001.n, bus_6001.u[2]) annotation (Line(points={{199,16},
+            {192,16},{192,22},{184,22}}, color={0,0,255}));
+    connect(trafo_5601_6001.n, bus_6001.u[3])
+      annotation (Line(points={{221,26},{210,26},{184,26}}, color={0,0,255}));
+    connect(trafo_5601_6001.p, bus_5601.o[1]) annotation (Line(points={{235,26},
+            {248,26},{248,8},{280,8}}, color={0,0,255}));
+    connect(trafo_5300_5301.p, bus_5300.o[3]) annotation (Line(points={{227,90},
+            {232,90},{232,84},{240,84}}, color={0,0,255}));
+    connect(trafo_5300_5301.n, bus_5301.u[1]) annotation (Line(points={{213,90},
+            {208,90},{208,80},{202,80}}, color={0,0,255}));
     annotation (
-      Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-300,-220},{300,220}}), graphics={Text(
+      Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-300,-220},{
+              300,220}}), graphics={Text(
               extent={{-278,12},{-290,16}},
               lineColor={0,128,0},
               textStyle={TextStyle.Bold},
@@ -2613,34 +2778,9 @@ package Original "Library of original Nordic 44 model"
               textStyle={TextStyle.Bold},
               textString="bus
 5402")}),
-      Icon(coordinateSystem(extent={{-300,-220},{300,220}}, preserveAspectRatio=false)),
-      Documentation(revisions="<html>
-<!--DISCLAIMER-->
-<p>OpenIPSL:</p>
-<p>Copyright 2016 SmarTS Lab (Sweden)</p>
-<ul>
-<li>SmarTS Lab, research group at KTH: <a href=\"https://www.kth.se/en\">https://www.kth.se/en</a></li>
-</ul>
-<p>The authors can be contacted by email: <a href=\"mailto:luigiv@kth.se\">luigiv@kth.se</a></p>
-
-<p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
-<p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
-
-<p></p>
-<p>iPSL:</p>
-<p>Copyright 2015-2016 RTE (France), SmarTS Lab (Sweden), AIA (Spain) and DTU (Denmark)</p>
-<ul>
-<li>RTE: <a href=\"http://www.rte-france.com\">http://www.rte-france.com</a></li>
-<li>SmarTS Lab, research group at KTH: <a href=\"https://www.kth.se/en\">https://www.kth.se/en</a></li>
-<li>AIA: <a href=\"http://www.aia.es/en/energy\"> http://www.aia.es/en/energy</a></li>
-<li>DTU: <a href=\"http://www.dtu.dk/english\"> http://www.dtu.dk/english</a></li>
-</ul>
-<p>The authors can be contacted by email: <a href=\"mailto:info@itesla-ipsl.org\">info@itesla-ipsl.org</a></p>
-
-<p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
-<p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
-</html>
-"));
+      Icon(coordinateSystem(extent={{-300,-220},{300,220}}, preserveAspectRatio
+            =false)),
+      Documentation);
   end Nordic44_Original_Case;
 
   package Data "Modelica records containing power flow results"
@@ -2759,33 +2899,7 @@ package Original "Library of original Nordic 44 model"
       //Bus 8700
       parameter Real PL8700=0;
       parameter Real QL8700=0;
-      annotation (Documentation(revisions="<html>
-<!--DISCLAIMER-->
-<p>OpenIPSL:</p>
-<p>Copyright 2016 SmarTS Lab (Sweden)</p>
-<ul>
-<li>SmarTS Lab, research group at KTH: <a href=\"https://www.kth.se/en\">https://www.kth.se/en</a></li>
-</ul>
-<p>The authors can be contacted by email: <a href=\"mailto:luigiv@kth.se\">luigiv@kth.se</a></p>
-
-<p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
-<p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
-
-<p></p>
-<p>iPSL:</p>
-<p>Copyright 2015-2016 RTE (France), SmarTS Lab (Sweden), AIA (Spain) and DTU (Denmark)</p>
-<ul>
-<li>RTE: <a href=\"http://www.rte-france.com\">http://www.rte-france.com</a></li>
-<li>SmarTS Lab, research group at KTH: <a href=\"https://www.kth.se/en\">https://www.kth.se/en</a></li>
-<li>AIA: <a href=\"http://www.aia.es/en/energy\"> http://www.aia.es/en/energy</a></li>
-<li>DTU: <a href=\"http://www.dtu.dk/english\"> http://www.dtu.dk/english</a></li>
-</ul>
-<p>The authors can be contacted by email: <a href=\"mailto:info@itesla-ipsl.org\">info@itesla-ipsl.org</a></p>
-
-<p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
-<p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
-</html>
-"));
+      annotation (Documentation);
     end PSSE_powers_Original_case;
 
     record PSSE_voltages_Original_case
@@ -2922,39 +3036,15 @@ package Original "Library of original Nordic 44 model"
       //Bus 8700
       parameter Real V8700=1.02;
       parameter Real A8700=-3.048752;
-      annotation (Documentation(revisions="<html>
-<!--DISCLAIMER-->
-<p>OpenIPSL:</p>
-<p>Copyright 2016 SmarTS Lab (Sweden)</p>
-<ul>
-<li>SmarTS Lab, research group at KTH: <a href=\"https://www.kth.se/en\">https://www.kth.se/en</a></li>
-</ul>
-<p>The authors can be contacted by email: <a href=\"mailto:luigiv@kth.se\">luigiv@kth.se</a></p>
-
-<p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
-<p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
-
-<p></p>
-<p>iPSL:</p>
-<p>Copyright 2015-2016 RTE (France), SmarTS Lab (Sweden), AIA (Spain) and DTU (Denmark)</p>
-<ul>
-<li>RTE: <a href=\"http://www.rte-france.com\">http://www.rte-france.com</a></li>
-<li>SmarTS Lab, research group at KTH: <a href=\"https://www.kth.se/en\">https://www.kth.se/en</a></li>
-<li>AIA: <a href=\"http://www.aia.es/en/energy\"> http://www.aia.es/en/energy</a></li>
-<li>DTU: <a href=\"http://www.dtu.dk/english\"> http://www.dtu.dk/english</a></li>
-</ul>
-<p>The authors can be contacted by email: <a href=\"mailto:info@itesla-ipsl.org\">info@itesla-ipsl.org</a></p>
-
-<p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
-<p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
-</html>
-"));
+      annotation (Documentation);
     end PSSE_voltages_Original_case;
 
     record PSSE_data_Original_case "PSSE complete data record"
       extends Modelica.Icons.Record;
       /* PSSE voltages from power flow solution */
-      replaceable record Voltages_OC = PSSE_voltages_Original_case constrainedby PSSE_voltages_Original_case annotation (choicesAllMatching, Documentation(revisions="<html>
+      replaceable record Voltages_OC = PSSE_voltages_Original_case
+        constrainedby PSSE_voltages_Original_case annotation (
+          choicesAllMatching, Documentation(revisions="<html>
         <!--DISCLAIMER-->
         <p>Copyright 2015-2016 RTE (France), SmarTS Lab (Sweden), AIA (Spain) and DTU (Denmark)</p>
         <ul>
@@ -2970,7 +3060,9 @@ package Original "Library of original Nordic 44 model"
         </html>"));
       Voltages_OC voltages;
       /* PSSE powers from power flow solution */
-      replaceable record Powers_OC = PSSE_powers_Original_case constrainedby PSSE_powers_Original_case annotation (choicesAllMatching, Documentation(revisions="<html>
+      replaceable record Powers_OC = PSSE_powers_Original_case constrainedby
+        PSSE_powers_Original_case annotation (choicesAllMatching, Documentation(
+            revisions="<html>
         <!--DISCLAIMER-->
         <p>Copyright 2015-2016 RTE (France), SmarTS Lab (Sweden), AIA (Spain) and DTU (Denmark)</p>
         <ul>
@@ -2985,66 +3077,14 @@ package Original "Library of original Nordic 44 model"
         <p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
         </html>"));
       Powers_OC powers;
-      annotation (Documentation(revisions="<html>
-<!--DISCLAIMER-->
-<p>OpenIPSL:</p>
-<p>Copyright 2016 SmarTS Lab (Sweden)</p>
-<ul>
-<li>SmarTS Lab, research group at KTH: <a href=\"https://www.kth.se/en\">https://www.kth.se/en</a></li>
-</ul>
-<p>The authors can be contacted by email: <a href=\"mailto:luigiv@kth.se\">luigiv@kth.se</a></p>
-
-<p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
-<p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
-
-<p></p>
-<p>iPSL:</p>
-<p>Copyright 2015-2016 RTE (France), SmarTS Lab (Sweden), AIA (Spain) and DTU (Denmark)</p>
-<ul>
-<li>RTE: <a href=\"http://www.rte-france.com\">http://www.rte-france.com</a></li>
-<li>SmarTS Lab, research group at KTH: <a href=\"https://www.kth.se/en\">https://www.kth.se/en</a></li>
-<li>AIA: <a href=\"http://www.aia.es/en/energy\"> http://www.aia.es/en/energy</a></li>
-<li>DTU: <a href=\"http://www.dtu.dk/english\"> http://www.dtu.dk/english</a></li>
-</ul>
-<p>The authors can be contacted by email: <a href=\"mailto:info@itesla-ipsl.org\">info@itesla-ipsl.org</a></p>
-
-<p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
-<p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
-</html>
-"));
+      annotation (Documentation);
     end PSSE_data_Original_case;
-    annotation (Documentation(revisions="<html>
-<!--DISCLAIMER-->
-<p>OpenIPSL:</p>
-<p>Copyright 2016 SmarTS Lab (Sweden)</p>
-<ul>
-<li>SmarTS Lab, research group at KTH: <a href=\"https://www.kth.se/en\">https://www.kth.se/en</a></li>
-</ul>
-<p>The authors can be contacted by email: <a href=\"mailto:luigiv@kth.se\">luigiv@kth.se</a></p>
-
-<p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
-<p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
-
-<p></p>
-<p>iPSL:</p>
-<p>Copyright 2015-2016 RTE (France), SmarTS Lab (Sweden), AIA (Spain) and DTU (Denmark)</p>
-<ul>
-<li>RTE: <a href=\"http://www.rte-france.com\">http://www.rte-france.com</a></li>
-<li>SmarTS Lab, research group at KTH: <a href=\"https://www.kth.se/en\">https://www.kth.se/en</a></li>
-<li>AIA: <a href=\"http://www.aia.es/en/energy\"> http://www.aia.es/en/energy</a></li>
-<li>DTU: <a href=\"http://www.dtu.dk/english\"> http://www.dtu.dk/english</a></li>
-</ul>
-<p>The authors can be contacted by email: <a href=\"mailto:info@itesla-ipsl.org\">info@itesla-ipsl.org</a></p>
-
-<p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
-<p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
-</html>
-"));
+    annotation (Documentation);
   end Data;
 
   package Generators "Package of generator groups for the Nordic 44 model"
     model Gen1_bus_3000 "Configuration of synchronous generator with regulators: GENROU, STAB2A, IEEET2, IEESGO;
-       Nordic 44 model: Buses 3000, 7000"
+           Nordic 44 model: Buses 3000, 7000"
       OpenIPSL.Electrical.Machines.PSSE.GENROU gENROU(
         Tpd0=5 "d-axis transient open-circuit time constant s",
         Tppd0=0.05 "d-axis sub-transient open-circuit time constant s",
@@ -3109,25 +3149,46 @@ package Original "Library of original Nordic 44 model"
         T_3=2,
         K_4=0.55,
         K_5=1,
-        T_5=0.01) annotation (Placement(transformation(extent={{-33,62},{29,94}})));
-      Modelica.Blocks.Sources.Constant cte(k=0) annotation (Placement(transformation(extent={{-114.5,-51},{-103,-39}})));
-      OpenIPSL.Interfaces.PwPin pwPin annotation (Placement(transformation(extent={{100,-10},{120,10}})));
-      Original.Data.PSSE_data_Original_case PSSE_data annotation (Placement(transformation(extent={{88,88},{99,99}})));
+        T_5=0.01)
+        annotation (Placement(transformation(extent={{-33,62},{29,94}})));
+      Modelica.Blocks.Sources.Constant cte(k=0) annotation (Placement(
+            transformation(extent={{-114.5,-51},{-103,-39}})));
+      OpenIPSL.Interfaces.PwPin pwPin
+        annotation (Placement(transformation(extent={{100,-10},{120,10}})));
+      Original.Data.PSSE_data_Original_case PSSE_data
+        annotation (Placement(transformation(extent={{88,88},{99,99}})));
     equation
       connect(gENROU.p, pwPin) annotation (Line(
           points={{90.45,0},{110,0}},
           color={0,0,255},
           smooth=Smooth.None));
-      connect(gENROU.PELEC, sTAB2A.PELEC) annotation (Line(points={{89.76,-21.5},{99,-21.5},{99,-86},{-116,-86},{-116,78},{-32.1545,78}}, color={0,0,127}));
-      connect(sTAB2A.VOTHSG, iEEET2.VOTHSG) annotation (Line(points={{31.8182,78},{38,78},{38,72},{38,55},{-107,55},{-107,-30.1},{-86.6667,-30.1}}, color={0,0,127}));
-      connect(gENROU.SPEED, iEESGO.SPEED) annotation (Line(points={{89.76,38.7},{95,38.7},{95,46},{-94,46},{-94,26.6429},{-83.175,26.6429}}, color={0,0,127}));
-      connect(iEESGO.PMECH, gENROU.PMECH) annotation (Line(points={{-9.71875,21.2857},{1.6406,21.2857},{1.6406,21.5},{18.69,21.5}}, color={0,0,127}));
-      connect(gENROU.PMECH0, iEESGO.PMECH0) annotation (Line(points={{89.76,-12.9},{107,-12.9},{107,-89},{-94,-89},{-94,14.1429},{-83.175,14.1429}}, color={0,0,127}));
-      connect(gENROU.ETERM, iEEET2.ECOMP) annotation (Line(points={{89.76,21.5},{99,21.5},{99,50},{-99,50},{-99,-16.7},{-86.6667,-16.7}}, color={0,0,127}));
-      connect(gENROU.EFD0, iEEET2.EFD0) annotation (Line(points={{89.76,-30.1},{96,-30.1},{96,-82},{-92,-82},{-92,-70.3},{-86.6667,-70.3}}, color={0,0,127}));
-      connect(iEEET2.EFD, gENROU.EFD) annotation (Line(points={{-5,-43.5},{6,-43.5},{6,-21.5},{18.69,-21.5}}, color={0,0,127}));
-      connect(iEEET2.VUEL, cte.y) annotation (Line(points={{-86.6667,-56.9},{-96,-56.9},{-96,-45},{-102.425,-45}}, color={0,0,127}));
-      connect(iEEET2.VOEL, cte.y) annotation (Line(points={{-86.6667,-43.5},{-96,-43.5},{-96,-45},{-102.425,-45}}, color={0,0,127}));
+      connect(gENROU.PELEC, sTAB2A.PELEC) annotation (Line(points={{89.76,-21.5},
+              {99,-21.5},{99,-86},{-116,-86},{-116,78},{-32.1545,78}}, color={0,
+              0,127}));
+      connect(sTAB2A.VOTHSG, iEEET2.VOTHSG) annotation (Line(points={{31.8182,
+              78},{38,78},{38,72},{38,55},{-107,55},{-107,-30.1},{-86.6667,-30.1}},
+            color={0,0,127}));
+      connect(gENROU.SPEED, iEESGO.SPEED) annotation (Line(points={{89.76,38.7},
+              {95,38.7},{95,46},{-94,46},{-94,26.6429},{-83.175,26.6429}},
+            color={0,0,127}));
+      connect(iEESGO.PMECH, gENROU.PMECH) annotation (Line(points={{-9.71875,
+              21.2857},{1.6406,21.2857},{1.6406,21.5},{18.69,21.5}}, color={0,0,
+              127}));
+      connect(gENROU.PMECH0, iEESGO.PMECH0) annotation (Line(points={{89.76,-12.9},
+              {107,-12.9},{107,-89},{-94,-89},{-94,14.1429},{-83.175,14.1429}},
+            color={0,0,127}));
+      connect(gENROU.ETERM, iEEET2.ECOMP) annotation (Line(points={{89.76,21.5},
+              {99,21.5},{99,50},{-99,50},{-99,-16.7},{-86.6667,-16.7}}, color={
+              0,0,127}));
+      connect(gENROU.EFD0, iEEET2.EFD0) annotation (Line(points={{89.76,-30.1},
+              {96,-30.1},{96,-82},{-92,-82},{-92,-70.3},{-86.6667,-70.3}},
+            color={0,0,127}));
+      connect(iEEET2.EFD, gENROU.EFD) annotation (Line(points={{-5,-43.5},{6,-43.5},
+              {6,-21.5},{18.69,-21.5}}, color={0,0,127}));
+      connect(iEEET2.VUEL, cte.y) annotation (Line(points={{-86.6667,-56.9},{-96,
+              -56.9},{-96,-45},{-102.425,-45}}, color={0,0,127}));
+      connect(iEEET2.VOEL, cte.y) annotation (Line(points={{-86.6667,-43.5},{-96,
+              -43.5},{-96,-45},{-102.425,-45}}, color={0,0,127}));
       annotation (
         Diagram(coordinateSystem(
             extent={{-100,-100},{100,100}},
@@ -3141,38 +3202,13 @@ package Original "Library of original Nordic 44 model"
             grid={1,1}), graphics={Line(
                   points={{-76,-26},{-28,52},{27,-52},{74,23}},
                   color={0,0,255},
-                  smooth=Smooth.Bezier),Ellipse(extent={{-100,-100},{101,100}}, lineColor={0,0,255})}),
-        Documentation(revisions="<html>
-<!--DISCLAIMER-->
-<p>OpenIPSL:</p>
-<p>Copyright 2016 SmarTS Lab (Sweden)</p>
-<ul>
-<li>SmarTS Lab, research group at KTH: <a href=\"https://www.kth.se/en\">https://www.kth.se/en</a></li>
-</ul>
-<p>The authors can be contacted by email: <a href=\"mailto:luigiv@kth.se\">luigiv@kth.se</a></p>
-
-<p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
-<p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
-
-<p></p>
-<p>iPSL:</p>
-<p>Copyright 2015-2016 RTE (France), SmarTS Lab (Sweden), AIA (Spain) and DTU (Denmark)</p>
-<ul>
-<li>RTE: <a href=\"http://www.rte-france.com\">http://www.rte-france.com</a></li>
-<li>SmarTS Lab, research group at KTH: <a href=\"https://www.kth.se/en\">https://www.kth.se/en</a></li>
-<li>AIA: <a href=\"http://www.aia.es/en/energy\"> http://www.aia.es/en/energy</a></li>
-<li>DTU: <a href=\"http://www.dtu.dk/english\"> http://www.dtu.dk/english</a></li>
-</ul>
-<p>The authors can be contacted by email: <a href=\"mailto:info@itesla-ipsl.org\">info@itesla-ipsl.org</a></p>
-
-<p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
-<p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
-</html>
-"));
+                  smooth=Smooth.Bezier),Ellipse(extent={{-100,-100},{101,100}},
+              lineColor={0,0,255})}),
+        Documentation);
     end Gen1_bus_3000;
 
     model Gen1_bus_7000 "Configuration of synchronous generator with regulators: GENROU, STAB2A, IEEET2, IEESGO;
-       Nordic 44 model: Buses 3000, 7000"
+           Nordic 44 model: Buses 3000, 7000"
       OpenIPSL.Electrical.Machines.PSSE.GENROU gENROU(
         Tppd0=0.05 "d-axis sub-transient open-circuit time constant s",
         Tpq0=1 "q-axis transient open-circuit time constant s",
@@ -3237,22 +3273,45 @@ package Original "Library of original Nordic 44 model"
         T_3=2,
         K_4=0.55,
         K_5=1,
-        T_5=0.01) annotation (Placement(transformation(extent={{-23,69},{35,91}})));
-      Modelica.Blocks.Sources.Constant cte(k=0) annotation (Placement(transformation(extent={{-90,-35},{-80,-25}})));
-      OpenIPSL.Interfaces.PwPin pwPin annotation (Placement(transformation(extent={{100,-10},{120,10}}), iconTransformation(extent={{100,-10},{120,10}})));
-      Original.Data.PSSE_data_Original_case PSSE_data annotation (Placement(transformation(extent={{85,86},{97,98}})));
+        T_5=0.01)
+        annotation (Placement(transformation(extent={{-23,69},{35,91}})));
+      Modelica.Blocks.Sources.Constant cte(k=0)
+        annotation (Placement(transformation(extent={{-90,-35},{-80,-25}})));
+      OpenIPSL.Interfaces.PwPin pwPin annotation (Placement(transformation(
+              extent={{100,-10},{120,10}}), iconTransformation(extent={{100,-10},
+                {120,10}})));
+      Original.Data.PSSE_data_Original_case PSSE_data
+        annotation (Placement(transformation(extent={{85,86},{97,98}})));
     equation
-      connect(gENROU.p, pwPin) annotation (Line(points={{87,0.5},{95.675,0.5},{95.675,0},{110,0}}, color={0,0,255}));
-      connect(iEEET2.EFD, gENROU.EFD) annotation (Line(points={{9.625,-30},{15.3125,-30},{15.3125,-18.75},{24.6,-18.75}}, color={0,0,127}));
-      connect(cte.y, iEEET2.VOEL) annotation (Line(points={{-79.5,-30},{-61.8333,-30}}, color={0,0,127}));
-      connect(gENROU.EFD0, iEEET2.EFD0) annotation (Line(points={{86.4,-26.45},{91,-26.45},{91,-62},{-67,-62},{-67,-53.2},{-61.8333,-53.2}}, color={0,0,127}));
-      connect(gENROU.PMECH0, iEESGO.PMECH0) annotation (Line(points={{86.4,-11.05},{93,-11.05},{93,-67},{-92,-67},{-92,18.2857},{-46.95,18.2857}}, color={0,0,127}));
-      connect(gENROU.PELEC, sTAB2A.PELEC) annotation (Line(points={{86.4,-18.75},{96,-18.75},{96,-75},{-96,-75},{-96,80},{-22.2091,80}}, color={0,0,127}));
-      connect(sTAB2A.VOTHSG, iEEET2.VOTHSG) annotation (Line(points={{37.6364,80},{37.6364,80},{50,80},{50,50},{-80,50},{-80,-18.4},{-61.8333,-18.4}}, color={0,0,127}));
-      connect(gENROU.SPEED, iEESGO.SPEED) annotation (Line(points={{86.4,35.15},{91,35.15},{91,42},{-53,42},{-53,29.2857},{-46.95,29.2857}}, color={0,0,127}));
-      connect(gENROU.ETERM, iEEET2.ECOMP) annotation (Line(points={{86.4,19.75},{94,19.75},{94,45},{-73,45},{-73,-6.8},{-61.8333,-6.8}}, color={0,0,127}));
-      connect(iEESGO.PMECH, gENROU.PMECH) annotation (Line(points={{-4.6875,24.5714},{9.15625,24.5714},{9.15625,19.75},{24.6,19.75}}, color={0,0,127}));
-      connect(iEEET2.VUEL, cte.y) annotation (Line(points={{-61.8333,-41.6},{-73,-41.6},{-73,-30},{-79.5,-30}}, color={0,0,127}));
+      connect(gENROU.p, pwPin) annotation (Line(points={{87,0.5},{95.675,0.5},{
+              95.675,0},{110,0}}, color={0,0,255}));
+      connect(iEEET2.EFD, gENROU.EFD) annotation (Line(points={{9.625,-30},{
+              15.3125,-30},{15.3125,-18.75},{24.6,-18.75}}, color={0,0,127}));
+      connect(cte.y, iEEET2.VOEL) annotation (Line(points={{-79.5,-30},{-61.8333,
+              -30}}, color={0,0,127}));
+      connect(gENROU.EFD0, iEEET2.EFD0) annotation (Line(points={{86.4,-26.45},
+              {91,-26.45},{91,-62},{-67,-62},{-67,-53.2},{-61.8333,-53.2}},
+            color={0,0,127}));
+      connect(gENROU.PMECH0, iEESGO.PMECH0) annotation (Line(points={{86.4,-11.05},
+              {93,-11.05},{93,-67},{-92,-67},{-92,18.2857},{-46.95,18.2857}},
+            color={0,0,127}));
+      connect(gENROU.PELEC, sTAB2A.PELEC) annotation (Line(points={{86.4,-18.75},
+              {96,-18.75},{96,-75},{-96,-75},{-96,80},{-22.2091,80}}, color={0,
+              0,127}));
+      connect(sTAB2A.VOTHSG, iEEET2.VOTHSG) annotation (Line(points={{37.6364,
+              80},{37.6364,80},{50,80},{50,50},{-80,50},{-80,-18.4},{-61.8333,-18.4}},
+            color={0,0,127}));
+      connect(gENROU.SPEED, iEESGO.SPEED) annotation (Line(points={{86.4,35.15},
+              {91,35.15},{91,42},{-53,42},{-53,29.2857},{-46.95,29.2857}},
+            color={0,0,127}));
+      connect(gENROU.ETERM, iEEET2.ECOMP) annotation (Line(points={{86.4,19.75},
+              {94,19.75},{94,45},{-73,45},{-73,-6.8},{-61.8333,-6.8}}, color={0,
+              0,127}));
+      connect(iEESGO.PMECH, gENROU.PMECH) annotation (Line(points={{-4.6875,
+              24.5714},{9.15625,24.5714},{9.15625,19.75},{24.6,19.75}}, color={
+              0,0,127}));
+      connect(iEEET2.VUEL, cte.y) annotation (Line(points={{-61.8333,-41.6},{-73,
+              -41.6},{-73,-30},{-79.5,-30}}, color={0,0,127}));
       annotation (
         Diagram(coordinateSystem(
             extent={{-100,-100},{100,100}},
@@ -3266,38 +3325,13 @@ package Original "Library of original Nordic 44 model"
             grid={1,1}), graphics={Line(
                   points={{-76,-26},{-28,52},{27,-52},{74,23}},
                   color={0,0,255},
-                  smooth=Smooth.Bezier),Ellipse(extent={{-100,-100},{101,100}}, lineColor={0,0,255})}),
-        Documentation(revisions="<html>
-<!--DISCLAIMER-->
-<p>OpenIPSL:</p>
-<p>Copyright 2016 SmarTS Lab (Sweden)</p>
-<ul>
-<li>SmarTS Lab, research group at KTH: <a href=\"https://www.kth.se/en\">https://www.kth.se/en</a></li>
-</ul>
-<p>The authors can be contacted by email: <a href=\"mailto:luigiv@kth.se\">luigiv@kth.se</a></p>
-
-<p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
-<p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
-
-<p></p>
-<p>iPSL:</p>
-<p>Copyright 2015-2016 RTE (France), SmarTS Lab (Sweden), AIA (Spain) and DTU (Denmark)</p>
-<ul>
-<li>RTE: <a href=\"http://www.rte-france.com\">http://www.rte-france.com</a></li>
-<li>SmarTS Lab, research group at KTH: <a href=\"https://www.kth.se/en\">https://www.kth.se/en</a></li>
-<li>AIA: <a href=\"http://www.aia.es/en/energy\"> http://www.aia.es/en/energy</a></li>
-<li>DTU: <a href=\"http://www.dtu.dk/english\"> http://www.dtu.dk/english</a></li>
-</ul>
-<p>The authors can be contacted by email: <a href=\"mailto:info@itesla-ipsl.org\">info@itesla-ipsl.org</a></p>
-
-<p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
-<p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
-</html>
-"));
+                  smooth=Smooth.Bezier),Ellipse(extent={{-100,-100},{101,100}},
+              lineColor={0,0,255})}),
+        Documentation);
     end Gen1_bus_7000;
 
     model Gen4_bus_3300 "Configuration of synchronous generator with regulators: GENROU, STAB2A, IEEET2, IEESGO;
-      Nordic 44 model: Buses 3300, 3359, 8500"
+          Nordic 44 model: Buses 3300, 3359, 8500"
       OpenIPSL.Electrical.Machines.PSSE.GENROU gENROU(
         Tpd0=10.8 "d-axis transient open-circuit time constant s",
         Tppd0=0.05 "d-axis sub-transient open-circuit time constant s",
@@ -3356,60 +3390,60 @@ package Original "Library of original Nordic 44 model"
         T_3=2,
         K_4=0.55,
         K_5=1,
-        T_5=0.01) annotation (Placement(transformation(extent={{-75,-60},{-32,-35}})));
-      Modelica.Blocks.Sources.Constant cte(k=0) annotation (Placement(transformation(extent={{-20,-65},{-9,-54}})));
-      OpenIPSL.Interfaces.PwPin pwPin annotation (Placement(transformation(extent={{100,-10},{120,10}}), iconTransformation(extent={{100,-10},{120,10}})));
-      Original.Data.PSSE_data_Original_case PSSE_data annotation (Placement(transformation(extent={{88,88},{98,98}})));
+        T_5=0.01)
+        annotation (Placement(transformation(extent={{-75,-60},{-32,-35}})));
+      Modelica.Blocks.Sources.Constant cte(k=0)
+        annotation (Placement(transformation(extent={{-20,-65},{-9,-54}})));
+      OpenIPSL.Interfaces.PwPin pwPin annotation (Placement(transformation(
+              extent={{100,-10},{120,10}}), iconTransformation(extent={{100,-10},
+                {120,10}})));
+      Original.Data.PSSE_data_Original_case PSSE_data
+        annotation (Placement(transformation(extent={{88,88},{98,98}})));
     equation
-      connect(cte.y, sCRX.VUEL) annotation (Line(points={{-8.45,-59.5},{24.775,-59.5},{24.775,-58.93},{34.2333,-58.93}}, color={0,0,127}));
-      connect(sCRX.VOEL, cte.y) annotation (Line(points={{34.2333,-52.95},{-2,-52.95},{-2,-54},{-2,-59.5},{-8.45,-59.5}}, color={0,0,127}));
-      connect(sTAB2A.VOTHSG, sCRX.VOTHSG) annotation (Line(points={{-30.0455,-47.5},{1.97725,-47.5},{1.97725,-47.43},{34.2333,-47.43}}, color={0,0,127}));
-      connect(gENROU.SPEED, iEESGO.SPEED) annotation (Line(points={{8.56,40.5},{20,40.5},{20,92},{-60,92},{-60,82.8571},{-52.6,82.8571}}, color={0,0,127}));
-      connect(gENROU.PMECH0, iEESGO.PMECH0) annotation (Line(points={{8.56,-1.5},{20,-1.5},{20,-28},{-70,-28},{-70,70.8571},{-52.6,70.8571}}, color={0,0,127}));
-      connect(sCRX.EFD, gENROU.EFD) annotation (Line(points={{90.9333,-60.77},{96,-60.77},{96,-90},{-90,-90},{-90,-8.5},{-57.36,-8.5}}, color={0,0,127}));
-      connect(iEESGO.PMECH, gENROU.PMECH) annotation (Line(points={{3.75,77.7143},{12,77.7143},{12,50},{-66,50},{-66,26.5},{-57.36,26.5}}, color={0,0,127}));
-      connect(gENROU.ETERM, sCRX.ECOMP) annotation (Line(points={{8.56,26.5},{28,26.5},{28,-40.99},{34.2333,-40.99}}, color={0,0,127}));
-      connect(gENROU.EFD0, sCRX.EFD0) annotation (Line(points={{8.56,-15.5},{16,-15.5},{16,-80},{26,-80},{26,-79.63},{34.2333,-79.63}}, color={0,0,127}));
-      connect(gENROU.XADIFD, sCRX.XADIFD) annotation (Line(points={{8.56,-22.5},{12,-22.5},{12,-63.99},{33.7667,-63.99}}, color={0,0,127}));
-      connect(gENROU.p, pwPin) annotation (Line(points={{9.2,9},{76,9},{76,0},{110,0}}, color={0,0,255}));
-      connect(gENROU.PELEC, sTAB2A.PELEC) annotation (Line(points={{8.56,-8.5},{34,-8.5},{34,-32},{-82,-32},{-82,-47.5},{-74.4136,-47.5}}, color={0,0,127}));
+      connect(cte.y, sCRX.VUEL) annotation (Line(points={{-8.45,-59.5},{24.775,
+              -59.5},{24.775,-58.93},{34.2333,-58.93}}, color={0,0,127}));
+      connect(sCRX.VOEL, cte.y) annotation (Line(points={{34.2333,-52.95},{-2,-52.95},
+              {-2,-54},{-2,-59.5},{-8.45,-59.5}}, color={0,0,127}));
+      connect(sTAB2A.VOTHSG, sCRX.VOTHSG) annotation (Line(points={{-30.0455,-47.5},
+              {1.97725,-47.5},{1.97725,-47.43},{34.2333,-47.43}}, color={0,0,
+              127}));
+      connect(gENROU.SPEED, iEESGO.SPEED) annotation (Line(points={{8.56,40.5},
+              {20,40.5},{20,92},{-60,92},{-60,82.8571},{-52.6,82.8571}}, color=
+              {0,0,127}));
+      connect(gENROU.PMECH0, iEESGO.PMECH0) annotation (Line(points={{8.56,-1.5},
+              {20,-1.5},{20,-28},{-70,-28},{-70,70.8571},{-52.6,70.8571}},
+            color={0,0,127}));
+      connect(sCRX.EFD, gENROU.EFD) annotation (Line(points={{90.9333,-60.77},{
+              96,-60.77},{96,-90},{-90,-90},{-90,-8.5},{-57.36,-8.5}}, color={0,
+              0,127}));
+      connect(iEESGO.PMECH, gENROU.PMECH) annotation (Line(points={{3.75,
+              77.7143},{12,77.7143},{12,50},{-66,50},{-66,26.5},{-57.36,26.5}},
+            color={0,0,127}));
+      connect(gENROU.ETERM, sCRX.ECOMP) annotation (Line(points={{8.56,26.5},{
+              28,26.5},{28,-40.99},{34.2333,-40.99}}, color={0,0,127}));
+      connect(gENROU.EFD0, sCRX.EFD0) annotation (Line(points={{8.56,-15.5},{16,
+              -15.5},{16,-80},{26,-80},{26,-79.63},{34.2333,-79.63}}, color={0,
+              0,127}));
+      connect(gENROU.XADIFD, sCRX.XADIFD) annotation (Line(points={{8.56,-22.5},
+              {12,-22.5},{12,-63.99},{33.7667,-63.99}}, color={0,0,127}));
+      connect(gENROU.p, pwPin) annotation (Line(points={{9.2,9},{76,9},{76,0},{
+              110,0}}, color={0,0,255}));
+      connect(gENROU.PELEC, sTAB2A.PELEC) annotation (Line(points={{8.56,-8.5},
+              {34,-8.5},{34,-32},{-82,-32},{-82,-47.5},{-74.4136,-47.5}}, color
+            ={0,0,127}));
       annotation (
         Icon(graphics={Line(
                   points={{-76,-26},{-28,52},{27,-52},{74,23}},
                   color={0,0,255},
-                  smooth=Smooth.Bezier),Ellipse(extent={{-100,-100},{101,100}}, lineColor={0,0,255})}),
-        Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,100}})),
-        Documentation(revisions="<html>
-<!--DISCLAIMER-->
-<p>OpenIPSL:</p>
-<p>Copyright 2016 SmarTS Lab (Sweden)</p>
-<ul>
-<li>SmarTS Lab, research group at KTH: <a href=\"https://www.kth.se/en\">https://www.kth.se/en</a></li>
-</ul>
-<p>The authors can be contacted by email: <a href=\"mailto:luigiv@kth.se\">luigiv@kth.se</a></p>
-
-<p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
-<p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
-
-<p></p>
-<p>iPSL:</p>
-<p>Copyright 2015-2016 RTE (France), SmarTS Lab (Sweden), AIA (Spain) and DTU (Denmark)</p>
-<ul>
-<li>RTE: <a href=\"http://www.rte-france.com\">http://www.rte-france.com</a></li>
-<li>SmarTS Lab, research group at KTH: <a href=\"https://www.kth.se/en\">https://www.kth.se/en</a></li>
-<li>AIA: <a href=\"http://www.aia.es/en/energy\"> http://www.aia.es/en/energy</a></li>
-<li>DTU: <a href=\"http://www.dtu.dk/english\"> http://www.dtu.dk/english</a></li>
-</ul>
-<p>The authors can be contacted by email: <a href=\"mailto:info@itesla-ipsl.org\">info@itesla-ipsl.org</a></p>
-
-<p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
-<p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
-</html>
-"));
+                  smooth=Smooth.Bezier),Ellipse(extent={{-100,-100},{101,100}},
+              lineColor={0,0,255})}),
+        Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},
+                {100,100}})),
+        Documentation);
     end Gen4_bus_3300;
 
     model Gen4_bus_3359 "Configuration of synchronous generator with regulators: GENROU, STAB2A, IEEET2, IEESGO;
-      Nordic 44 model: Buses 3300, 3359, 8500"
+          Nordic 44 model: Buses 3300, 3359, 8500"
       OpenIPSL.Electrical.Machines.PSSE.GENROU gENROU(
         Tppd0=0.05 "d-axis sub-transient open-circuit time constant s",
         Tpq0=1 "q-axis transient open-circuit time constant s",
@@ -3468,60 +3502,58 @@ package Original "Library of original Nordic 44 model"
         T_3=2,
         K_4=0.68,
         K_5=1,
-        T_5=0.01) annotation (Placement(transformation(extent={{-61,-61},{-18,-36}})));
-      Modelica.Blocks.Sources.Constant cte(k=0) annotation (Placement(transformation(extent={{-10,-63},{0,-53}})));
-      OpenIPSL.Interfaces.PwPin pwPin annotation (Placement(transformation(extent={{100,-10},{120,10}}), iconTransformation(extent={{100,-10},{120,10}})));
-      Original.Data.PSSE_data_Original_case PSSE_data annotation (Placement(transformation(extent={{84,86},{96,98}})));
+        T_5=0.01)
+        annotation (Placement(transformation(extent={{-61,-61},{-18,-36}})));
+      Modelica.Blocks.Sources.Constant cte(k=0)
+        annotation (Placement(transformation(extent={{-10,-63},{0,-53}})));
+      OpenIPSL.Interfaces.PwPin pwPin annotation (Placement(transformation(
+              extent={{100,-10},{120,10}}), iconTransformation(extent={{100,-10},
+                {120,10}})));
+      Original.Data.PSSE_data_Original_case PSSE_data
+        annotation (Placement(transformation(extent={{84,86},{96,98}})));
     equation
-      connect(gENROU.p, pwPin) annotation (Line(points={{9.1,9},{66,9},{66,0},{110,0}}, color={0,0,255}));
-      connect(iEESGO.PMECH, gENROU.PMECH) annotation (Line(points={{9.875,72.8571},{20,72.8571},{20,46},{-66,46},{-66,25.5},{-55.38,25.5}}, color={0,0,127}));
-      connect(gENROU.SPEED, iEESGO.SPEED) annotation (Line(points={{8.48,38.7},{24,38.7},{24,88},{-56,88},{-56,78.4286},{-50.5,78.4286}}, color={0,0,127}));
-      connect(gENROU.PMECH0, iEESGO.PMECH0) annotation (Line(points={{8.48,-0.9},{30,-0.9},{30,92},{-60,92},{-60,65.4286},{-50.5,65.4286}}, color={0,0,127}));
-      connect(sTAB2A.VOTHSG, sCRX.VOTHSG) annotation (Line(points={{-16.0455,-48.5},{8,-48.5},{8,-39.735},{31.2292,-39.735}}, color={0,0,127}));
-      connect(gENROU.PELEC, sTAB2A.PELEC) annotation (Line(points={{8.48,-7.5},{18,-7.5},{18,-32},{-68,-32},{-68,-48.5},{-60.4136,-48.5}}, color={0,0,127}));
-      connect(sCRX.EFD, gENROU.EFD) annotation (Line(points={{86.9167,-59.165},{92,-59.165},{92,-96},{-80,-96},{-80,-7.5},{-55.38,-7.5}}, color={0,0,127}));
-      connect(cte.y, sCRX.VUEL) annotation (Line(points={{0.5,-58},{16,-58},{16,-56.485},{31.2292,-56.485}}, color={0,0,127}));
-      connect(gENROU.XADIFD, sCRX.XADIFD) annotation (Line(points={{8.48,-20.7},{14,-20.7},{14,-63.855},{30.7708,-63.855}}, color={0,0,127}));
-      connect(gENROU.ETERM, sCRX.ECOMP) annotation (Line(points={{8.48,25.5},{26,25.5},{26,-30.355},{31.2292,-30.355}}, color={0,0,127}));
-      connect(gENROU.EFD0, sCRX.EFD0) annotation (Line(points={{8.48,-14.1},{22,-14.1},{22,-86.635},{31.2292,-86.635}}, color={0,0,127}));
-      connect(sCRX.VOEL, cte.y) annotation (Line(points={{31.2292,-47.775},{10,-47.775},{10,-58},{0.5,-58}}, color={0,0,127}));
+      connect(gENROU.p, pwPin) annotation (Line(points={{9.1,9},{66,9},{66,0},{
+              110,0}}, color={0,0,255}));
+      connect(iEESGO.PMECH, gENROU.PMECH) annotation (Line(points={{9.875,
+              72.8571},{20,72.8571},{20,46},{-66,46},{-66,25.5},{-55.38,25.5}},
+            color={0,0,127}));
+      connect(gENROU.SPEED, iEESGO.SPEED) annotation (Line(points={{8.48,38.7},
+              {24,38.7},{24,88},{-56,88},{-56,78.4286},{-50.5,78.4286}}, color=
+              {0,0,127}));
+      connect(gENROU.PMECH0, iEESGO.PMECH0) annotation (Line(points={{8.48,-0.9},
+              {30,-0.9},{30,92},{-60,92},{-60,65.4286},{-50.5,65.4286}}, color=
+              {0,0,127}));
+      connect(sTAB2A.VOTHSG, sCRX.VOTHSG) annotation (Line(points={{-16.0455,-48.5},
+              {8,-48.5},{8,-39.735},{31.2292,-39.735}}, color={0,0,127}));
+      connect(gENROU.PELEC, sTAB2A.PELEC) annotation (Line(points={{8.48,-7.5},
+              {18,-7.5},{18,-32},{-68,-32},{-68,-48.5},{-60.4136,-48.5}}, color
+            ={0,0,127}));
+      connect(sCRX.EFD, gENROU.EFD) annotation (Line(points={{86.9167,-59.165},
+              {92,-59.165},{92,-96},{-80,-96},{-80,-7.5},{-55.38,-7.5}}, color=
+              {0,0,127}));
+      connect(cte.y, sCRX.VUEL) annotation (Line(points={{0.5,-58},{16,-58},{16,
+              -56.485},{31.2292,-56.485}}, color={0,0,127}));
+      connect(gENROU.XADIFD, sCRX.XADIFD) annotation (Line(points={{8.48,-20.7},
+              {14,-20.7},{14,-63.855},{30.7708,-63.855}}, color={0,0,127}));
+      connect(gENROU.ETERM, sCRX.ECOMP) annotation (Line(points={{8.48,25.5},{
+              26,25.5},{26,-30.355},{31.2292,-30.355}}, color={0,0,127}));
+      connect(gENROU.EFD0, sCRX.EFD0) annotation (Line(points={{8.48,-14.1},{22,
+              -14.1},{22,-86.635},{31.2292,-86.635}}, color={0,0,127}));
+      connect(sCRX.VOEL, cte.y) annotation (Line(points={{31.2292,-47.775},{10,
+              -47.775},{10,-58},{0.5,-58}}, color={0,0,127}));
       annotation (
         Icon(graphics={Line(
                   points={{-76,-26},{-28,52},{27,-52},{74,23}},
                   color={0,0,255},
-                  smooth=Smooth.Bezier),Ellipse(extent={{-100,-100},{101,100}}, lineColor={0,0,255})}),
-        Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,100}})),
-        Documentation(revisions="<html>
-<!--DISCLAIMER-->
-<p>OpenIPSL:</p>
-<p>Copyright 2016 SmarTS Lab (Sweden)</p>
-<ul>
-<li>SmarTS Lab, research group at KTH: <a href=\"https://www.kth.se/en\">https://www.kth.se/en</a></li>
-</ul>
-<p>The authors can be contacted by email: <a href=\"mailto:luigiv@kth.se\">luigiv@kth.se</a></p>
-
-<p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
-<p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
-
-<p></p>
-<p>iPSL:</p>
-<p>Copyright 2015-2016 RTE (France), SmarTS Lab (Sweden), AIA (Spain) and DTU (Denmark)</p>
-<ul>
-<li>RTE: <a href=\"http://www.rte-france.com\">http://www.rte-france.com</a></li>
-<li>SmarTS Lab, research group at KTH: <a href=\"https://www.kth.se/en\">https://www.kth.se/en</a></li>
-<li>AIA: <a href=\"http://www.aia.es/en/energy\"> http://www.aia.es/en/energy</a></li>
-<li>DTU: <a href=\"http://www.dtu.dk/english\"> http://www.dtu.dk/english</a></li>
-</ul>
-<p>The authors can be contacted by email: <a href=\"mailto:info@itesla-ipsl.org\">info@itesla-ipsl.org</a></p>
-
-<p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
-<p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
-</html>
-"));
+                  smooth=Smooth.Bezier),Ellipse(extent={{-100,-100},{101,100}},
+              lineColor={0,0,255})}),
+        Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},
+                {100,100}})),
+        Documentation);
     end Gen4_bus_3359;
 
     model Gen4_bus_8500 "Configuration of synchronous generator with regulators: GENROU, STAB2A, IEEET2, IEESGO;
-      Nordic 44 model: Buses 3300, 3359, 8500"
+          Nordic 44 model: Buses 3300, 3359, 8500"
       OpenIPSL.Electrical.Machines.PSSE.GENROU gENROU(
         Tppd0=0.05 "d-axis sub-transient open-circuit time constant s",
         Tpq0=1 "q-axis transient open-circuit time constant s",
@@ -3580,60 +3612,58 @@ package Original "Library of original Nordic 44 model"
         T_3=2,
         K_4=0.55,
         K_5=1,
-        T_5=0.01) annotation (Placement(transformation(extent={{-74,-51},{-34,-34}})));
-      Modelica.Blocks.Sources.Constant cte(k=0) annotation (Placement(transformation(extent={{-21,-61},{-11,-51}})));
-      OpenIPSL.Interfaces.PwPin pwPin annotation (Placement(transformation(extent={{100,-10},{120,10}}), iconTransformation(extent={{100,-10},{120,10}})));
-      Original.Data.PSSE_data_Original_case PSSE_data annotation (Placement(transformation(extent={{88,88},{98,98}})));
+        T_5=0.01)
+        annotation (Placement(transformation(extent={{-74,-51},{-34,-34}})));
+      Modelica.Blocks.Sources.Constant cte(k=0)
+        annotation (Placement(transformation(extent={{-21,-61},{-11,-51}})));
+      OpenIPSL.Interfaces.PwPin pwPin annotation (Placement(transformation(
+              extent={{100,-10},{120,10}}), iconTransformation(extent={{100,-10},
+                {120,10}})));
+      Original.Data.PSSE_data_Original_case PSSE_data
+        annotation (Placement(transformation(extent={{88,88},{98,98}})));
     equation
-      connect(sTAB2A.VOTHSG, sCRX.VOTHSG) annotation (Line(points={{-32.1818,-42.5},{-4.0909,-42.5},{-4.0909,-34.505},{25.2292,-34.505}}, color={0,0,127}));
-      connect(cte.y, sCRX.VOEL) annotation (Line(points={{-10.5,-56},{4,-56},{4,-41.825},{25.2292,-41.825}}, color={0,0,127}));
-      connect(gENROU.p, pwPin) annotation (Line(points={{6.9,15},{62,15},{62,0},{110,0}}, color={0,0,255}));
-      connect(iEESGO.PMECH, gENROU.PMECH) annotation (Line(points={{3.59375,71},{16,71},{16,50},{-68,50},{-68,30.5},{-53.42,30.5}}, color={0,0,127}));
-      connect(gENROU.SPEED, iEESGO.SPEED) annotation (Line(points={{6.32,42.9},{20,42.9},{20,82},{-56,82},{-56,75.5},{-47.725,75.5}}, color={0,0,127}));
-      connect(gENROU.PMECH0, iEESGO.PMECH0) annotation (Line(points={{6.32,5.7},{24,5.7},{24,86},{-62,86},{-62,65},{-47.725,65}}, color={0,0,127}));
-      connect(gENROU.PELEC, sTAB2A.PELEC) annotation (Line(points={{6.32,-0.5},{18,-0.5},{18,-22},{-80,-22},{-80,-42.5},{-73.4545,-42.5}}, color={0,0,127}));
-      connect(gENROU.XADIFD, sCRX.XADIFD) annotation (Line(points={{6.32,-12.9},{12,-12.9},{12,-56.465},{24.7708,-56.465}}, color={0,0,127}));
-      connect(gENROU.EFD0, sCRX.EFD0) annotation (Line(points={{6.32,-6.7},{16,-6.7},{16,-77.205},{25.2292,-77.205}}, color={0,0,127}));
-      connect(gENROU.ETERM, sCRX.ECOMP) annotation (Line(points={{6.32,30.5},{22,30.5},{22,-25.965},{25.2292,-25.965}}, color={0,0,127}));
-      connect(sCRX.EFD, gENROU.EFD) annotation (Line(points={{80.9167,-52.195},{86,-52.195},{86,-86},{-84,-86},{-84,-0.5},{-53.42,-0.5}}, color={0,0,127}));
-      connect(sCRX.VUEL, cte.y) annotation (Line(points={{25.2292,-49.755},{14,-49.755},{14,-50},{4,-50},{4,-56},{-10.5,-56}}, color={0,0,127}));
+      connect(sTAB2A.VOTHSG, sCRX.VOTHSG) annotation (Line(points={{-32.1818,-42.5},
+              {-4.0909,-42.5},{-4.0909,-34.505},{25.2292,-34.505}}, color={0,0,
+              127}));
+      connect(cte.y, sCRX.VOEL) annotation (Line(points={{-10.5,-56},{4,-56},{4,
+              -41.825},{25.2292,-41.825}}, color={0,0,127}));
+      connect(gENROU.p, pwPin) annotation (Line(points={{6.9,15},{62,15},{62,0},
+              {110,0}}, color={0,0,255}));
+      connect(iEESGO.PMECH, gENROU.PMECH) annotation (Line(points={{3.59375,71},
+              {16,71},{16,50},{-68,50},{-68,30.5},{-53.42,30.5}}, color={0,0,
+              127}));
+      connect(gENROU.SPEED, iEESGO.SPEED) annotation (Line(points={{6.32,42.9},
+              {20,42.9},{20,82},{-56,82},{-56,75.5},{-47.725,75.5}}, color={0,0,
+              127}));
+      connect(gENROU.PMECH0, iEESGO.PMECH0) annotation (Line(points={{6.32,5.7},
+              {24,5.7},{24,86},{-62,86},{-62,65},{-47.725,65}}, color={0,0,127}));
+      connect(gENROU.PELEC, sTAB2A.PELEC) annotation (Line(points={{6.32,-0.5},
+              {18,-0.5},{18,-22},{-80,-22},{-80,-42.5},{-73.4545,-42.5}}, color
+            ={0,0,127}));
+      connect(gENROU.XADIFD, sCRX.XADIFD) annotation (Line(points={{6.32,-12.9},
+              {12,-12.9},{12,-56.465},{24.7708,-56.465}}, color={0,0,127}));
+      connect(gENROU.EFD0, sCRX.EFD0) annotation (Line(points={{6.32,-6.7},{16,
+              -6.7},{16,-77.205},{25.2292,-77.205}}, color={0,0,127}));
+      connect(gENROU.ETERM, sCRX.ECOMP) annotation (Line(points={{6.32,30.5},{
+              22,30.5},{22,-25.965},{25.2292,-25.965}}, color={0,0,127}));
+      connect(sCRX.EFD, gENROU.EFD) annotation (Line(points={{80.9167,-52.195},
+              {86,-52.195},{86,-86},{-84,-86},{-84,-0.5},{-53.42,-0.5}}, color=
+              {0,0,127}));
+      connect(sCRX.VUEL, cte.y) annotation (Line(points={{25.2292,-49.755},{14,
+              -49.755},{14,-50},{4,-50},{4,-56},{-10.5,-56}}, color={0,0,127}));
       annotation (
         Icon(graphics={Line(
                   points={{-76,-26},{-28,52},{27,-52},{74,23}},
                   color={0,0,255},
-                  smooth=Smooth.Bezier),Ellipse(extent={{-100,-100},{101,100}}, lineColor={0,0,255})}),
-        Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,100}})),
-        Documentation(revisions="<html>
-<!--DISCLAIMER-->
-<p>OpenIPSL:</p>
-<p>Copyright 2016 SmarTS Lab (Sweden)</p>
-<ul>
-<li>SmarTS Lab, research group at KTH: <a href=\"https://www.kth.se/en\">https://www.kth.se/en</a></li>
-</ul>
-<p>The authors can be contacted by email: <a href=\"mailto:luigiv@kth.se\">luigiv@kth.se</a></p>
-
-<p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
-<p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
-
-<p></p>
-<p>iPSL:</p>
-<p>Copyright 2015-2016 RTE (France), SmarTS Lab (Sweden), AIA (Spain) and DTU (Denmark)</p>
-<ul>
-<li>RTE: <a href=\"http://www.rte-france.com\">http://www.rte-france.com</a></li>
-<li>SmarTS Lab, research group at KTH: <a href=\"https://www.kth.se/en\">https://www.kth.se/en</a></li>
-<li>AIA: <a href=\"http://www.aia.es/en/energy\"> http://www.aia.es/en/energy</a></li>
-<li>DTU: <a href=\"http://www.dtu.dk/english\"> http://www.dtu.dk/english</a></li>
-</ul>
-<p>The authors can be contacted by email: <a href=\"mailto:info@itesla-ipsl.org\">info@itesla-ipsl.org</a></p>
-
-<p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
-<p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
-</html>
-"));
+                  smooth=Smooth.Bezier),Ellipse(extent={{-100,-100},{101,100}},
+              lineColor={0,0,255})}),
+        Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},
+                {100,100}})),
+        Documentation);
     end Gen4_bus_8500;
 
     model Gen2_bus_3245 "Configuration of synchronous generator with regulators: GENSAL, HYGOV, SCRX;
-      Nordic 44 model: Buses 3245, 3249, 5600"
+          Nordic 44 model: Buses 3245, 3249, 5600"
       OpenIPSL.Electrical.Machines.PSSE.GENSAL gENSAL(
         Tpd0=5.0 "T'do (> 0)",
         Tppd0=0.06 "T''do (> 0)",
@@ -3667,7 +3697,8 @@ package Original "Library of original Nordic 44 model"
         T_w=1,
         A_t=1.01,
         D_turb=0.5,
-        q_NL=0.1) annotation (Placement(transformation(extent={{-58,58},{0,90}})));
+        q_NL=0.1)
+        annotation (Placement(transformation(extent={{-58,58},{0,90}})));
       OpenIPSL.Electrical.Controls.PSSE.ES.SCRX sCRX(
         K=31,
         T_AT_B=0.25385,
@@ -3676,59 +3707,53 @@ package Original "Library of original Nordic 44 model"
         E_MIN=0,
         E_MAX=4,
         r_cr_fd=0,
-        C_SWITCH=true) annotation (Placement(transformation(extent={{31,-84},{85,-26}})));
-      Modelica.Blocks.Sources.Constant cte(k=0) annotation (Placement(transformation(extent={{-27,-57},{-17,-47}})));
-      OpenIPSL.Interfaces.PwPin p annotation (Placement(transformation(rotation=0, extent={{100,-10},{120,10}}), iconTransformation(extent={{100,-10},{120,10}})));
-      Original.Data.PSSE_data_Original_case PSSE_data annotation (Placement(transformation(extent={{88,88},{98,98}})));
+        C_SWITCH=true)
+        annotation (Placement(transformation(extent={{31,-84},{85,-26}})));
+      Modelica.Blocks.Sources.Constant cte(k=0)
+        annotation (Placement(transformation(extent={{-27,-57},{-17,-47}})));
+      OpenIPSL.Interfaces.PwPin p annotation (Placement(transformation(rotation
+              =0, extent={{100,-10},{120,10}}), iconTransformation(extent={{100,
+                -10},{120,10}})));
+      Original.Data.PSSE_data_Original_case PSSE_data
+        annotation (Placement(transformation(extent={{88,88},{98,98}})));
     equation
-      connect(gENSAL.p, p) annotation (Line(points={{4.15,11},{44,11},{44,0},{110,0}}, color={0,0,255}));
-      connect(sCRX.EFD, gENSAL.EFD) annotation (Line(points={{85.9,-54.71},{94,-54.71},{94,-92},{-74,-92},{-74,-6.5},{-61.37,-6.5}}, color={0,0,127}));
-      connect(cte.y, sCRX.VOTHSG) annotation (Line(points={{-16.5,-52},{6,-52},{6,-37.89},{31.225,-37.89}}, color={0,0,127}));
-      connect(gENSAL.XADIFD, sCRX.XADIFD) annotation (Line(points={{3.52,-20.5},{12,-20.5},{12,-58.77},{30.775,-58.77}}, color={0,0,127}));
-      connect(gENSAL.EFD0, sCRX.EFD0) annotation (Line(points={{3.52,-13.5},{16,-13.5},{16,-78.49},{31.225,-78.49}}, color={0,0,127}));
-      connect(hYGOV.PMECH, gENSAL.PMECH) annotation (Line(points={{1.45,74},{10,74},{10,50},{-72,50},{-72,28.5},{-61.37,28.5}}, color={0,0,127}));
-      connect(gENSAL.SPEED, hYGOV.SPEED) annotation (Line(points={{3.52,42.5},{16,42.5},{16,92},{-64,92},{-64,82},{-57.275,82}}, color={0,0,127}));
-      connect(gENSAL.PMECH0, hYGOV.PMECH0) annotation (Line(points={{3.52,0.5},{24,0.5},{24,94},{-66,94},{-66,66},{-57.275,66}}, color={0,0,127}));
-      connect(gENSAL.ETERM, sCRX.ECOMP) annotation (Line(points={{3.52,28.5},{26,28.5},{26,-29.77},{31.225,-29.77}}, color={0,0,127}));
-      connect(sCRX.VOEL, cte.y) annotation (Line(points={{31.225,-44.85},{6,-44.85},{6,-52},{-16.5,-52}}, color={0,0,127}));
-      connect(sCRX.VUEL, cte.y) annotation (Line(points={{31.225,-52.39},{7.6125,-52.39},{7.6125,-52},{-16.5,-52}}, color={0,0,127}));
+      connect(gENSAL.p, p) annotation (Line(points={{4.15,11},{44,11},{44,0},{
+              110,0}}, color={0,0,255}));
+      connect(sCRX.EFD, gENSAL.EFD) annotation (Line(points={{85.9,-54.71},{94,
+              -54.71},{94,-92},{-74,-92},{-74,-6.5},{-61.37,-6.5}}, color={0,0,
+              127}));
+      connect(cte.y, sCRX.VOTHSG) annotation (Line(points={{-16.5,-52},{6,-52},
+              {6,-37.89},{31.225,-37.89}}, color={0,0,127}));
+      connect(gENSAL.XADIFD, sCRX.XADIFD) annotation (Line(points={{3.52,-20.5},
+              {12,-20.5},{12,-58.77},{30.775,-58.77}}, color={0,0,127}));
+      connect(gENSAL.EFD0, sCRX.EFD0) annotation (Line(points={{3.52,-13.5},{16,
+              -13.5},{16,-78.49},{31.225,-78.49}}, color={0,0,127}));
+      connect(hYGOV.PMECH, gENSAL.PMECH) annotation (Line(points={{1.45,74},{10,
+              74},{10,50},{-72,50},{-72,28.5},{-61.37,28.5}}, color={0,0,127}));
+      connect(gENSAL.SPEED, hYGOV.SPEED) annotation (Line(points={{3.52,42.5},{
+              16,42.5},{16,92},{-64,92},{-64,82},{-57.275,82}}, color={0,0,127}));
+      connect(gENSAL.PMECH0, hYGOV.PMECH0) annotation (Line(points={{3.52,0.5},
+              {24,0.5},{24,94},{-66,94},{-66,66},{-57.275,66}}, color={0,0,127}));
+      connect(gENSAL.ETERM, sCRX.ECOMP) annotation (Line(points={{3.52,28.5},{
+              26,28.5},{26,-29.77},{31.225,-29.77}}, color={0,0,127}));
+      connect(sCRX.VOEL, cte.y) annotation (Line(points={{31.225,-44.85},{6,-44.85},
+              {6,-52},{-16.5,-52}}, color={0,0,127}));
+      connect(sCRX.VUEL, cte.y) annotation (Line(points={{31.225,-52.39},{
+              7.6125,-52.39},{7.6125,-52},{-16.5,-52}}, color={0,0,127}));
       annotation (
-        Icon(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,100}}), graphics={Ellipse(extent={{-100,-100},{101,100}}, lineColor={0,0,255}),Line(
+        Icon(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{
+                100,100}}), graphics={Ellipse(extent={{-100,-100},{101,100}},
+              lineColor={0,0,255}),Line(
                   points={{-76,-26},{-28,52},{27,-52},{74,23}},
                   color={0,0,255},
                   smooth=Smooth.Bezier)}),
-        Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,100}})),
-        Documentation(revisions="<html>
-<!--DISCLAIMER-->
-<p>OpenIPSL:</p>
-<p>Copyright 2016 SmarTS Lab (Sweden)</p>
-<ul>
-<li>SmarTS Lab, research group at KTH: <a href=\"https://www.kth.se/en\">https://www.kth.se/en</a></li>
-</ul>
-<p>The authors can be contacted by email: <a href=\"mailto:luigiv@kth.se\">luigiv@kth.se</a></p>
-
-<p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
-<p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
-
-<p></p>
-<p>iPSL:</p>
-<p>Copyright 2015-2016 RTE (France), SmarTS Lab (Sweden), AIA (Spain) and DTU (Denmark)</p>
-<ul>
-<li>RTE: <a href=\"http://www.rte-france.com\">http://www.rte-france.com</a></li>
-<li>SmarTS Lab, research group at KTH: <a href=\"https://www.kth.se/en\">https://www.kth.se/en</a></li>
-<li>AIA: <a href=\"http://www.aia.es/en/energy\"> http://www.aia.es/en/energy</a></li>
-<li>DTU: <a href=\"http://www.dtu.dk/english\"> http://www.dtu.dk/english</a></li>
-</ul>
-<p>The authors can be contacted by email: <a href=\"mailto:info@itesla-ipsl.org\">info@itesla-ipsl.org</a></p>
-
-<p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
-<p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
-</html>
-"));
+        Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},
+                {100,100}})),
+        Documentation);
     end Gen2_bus_3245;
 
     model Gen2_bus_3249 "Configuration of synchronous generator with regulators: GENSAL, HYGOV, SCRX;
-      Nordic 44 model: Buses 3245, 3249, 5600"
+          Nordic 44 model: Buses 3245, 3249, 5600"
       OpenIPSL.Electrical.Machines.PSSE.GENSAL gENSAL(
         Tppd0=0.06 "T''do (> 0)",
         Tppq0=0.1 "T''qo (> 0)",
@@ -3762,7 +3787,8 @@ package Original "Library of original Nordic 44 model"
         T_w=1,
         A_t=1.1,
         D_turb=0.5,
-        q_NL=0.1) annotation (Placement(transformation(extent={{-62,62},{-2,88}})));
+        q_NL=0.1)
+        annotation (Placement(transformation(extent={{-62,62},{-2,88}})));
       OpenIPSL.Electrical.Controls.PSSE.ES.SCRX sCRX(
         K=31,
         T_AT_B=0.25385,
@@ -3771,59 +3797,55 @@ package Original "Library of original Nordic 44 model"
         E_MIN=0,
         E_MAX=4,
         r_cr_fd=0,
-        C_SWITCH=true) annotation (Placement(transformation(extent={{26,-90},{81,-30}})));
-      Modelica.Blocks.Sources.Constant cte(k=0) annotation (Placement(transformation(extent={{-21,-55},{-11,-45}})));
-      OpenIPSL.Interfaces.PwPin p annotation (Placement(transformation(rotation=0, extent={{100,-10},{120,10}}), iconTransformation(extent={{100,-10},{120,10}})));
-      Original.Data.PSSE_data_Original_case PSSE_data annotation (Placement(transformation(extent={{88,88},{98,98}})));
+        C_SWITCH=true)
+        annotation (Placement(transformation(extent={{26,-90},{81,-30}})));
+      Modelica.Blocks.Sources.Constant cte(k=0)
+        annotation (Placement(transformation(extent={{-21,-55},{-11,-45}})));
+      OpenIPSL.Interfaces.PwPin p annotation (Placement(transformation(rotation
+              =0, extent={{100,-10},{120,10}}), iconTransformation(extent={{100,
+                -10},{120,10}})));
+      Original.Data.PSSE_data_Original_case PSSE_data
+        annotation (Placement(transformation(extent={{88,88},{98,98}})));
     equation
-      connect(cte.y, sCRX.VOEL) annotation (Line(points={{-10.5,-50},{8,-50},{8,-49.5},{26.2292,-49.5}}, color={0,0,127}));
-      connect(sCRX.VOTHSG, cte.y) annotation (Line(points={{26.2292,-42.3},{8,-42.3},{8,-50},{-10.5,-50}}, color={0,0,127}));
-      connect(gENSAL.XADIFD, sCRX.XADIFD) annotation (Line(points={{8.64,-16.6},{14,-16.6},{14,-63.9},{25.7708,-63.9}}, color={0,0,127}));
-      connect(gENSAL.EFD0, sCRX.EFD0) annotation (Line(points={{8.64,-9.8},{18,-9.8},{18,-84.3},{26.2292,-84.3}}, color={0,0,127}));
-      connect(sCRX.EFD, gENSAL.EFD) annotation (Line(points={{81.9167,-59.7},{86,-59.7},{86,-94},{-72,-94},{-72,-3},{-59.34,-3}}, color={0,0,127}));
-      connect(hYGOV.PMECH, gENSAL.PMECH) annotation (Line(points={{-0.5,75},{8,75},{8,50},{-70,50},{-70,31},{-59.34,31}}, color={0,0,127}));
-      connect(gENSAL.SPEED, hYGOV.SPEED) annotation (Line(points={{8.64,44.6},{16,44.6},{16,92},{-68,92},{-68,81.5},{-61.25,81.5}}, color={0,0,127}));
-      connect(gENSAL.PMECH0, hYGOV.PMECH0) annotation (Line(points={{8.64,3.8},{30,3.8},{30,96},{-72,96},{-72,68.5},{-61.25,68.5}}, color={0,0,127}));
-      connect(gENSAL.p, p) annotation (Line(points={{9.3,14},{54,14},{54,0},{110,0}}, color={0,0,255}));
-      connect(sCRX.VUEL, cte.y) annotation (Line(points={{26.2292,-57.3},{8,-57.3},{8,-50},{-10.5,-50}}, color={0,0,127}));
-      connect(sCRX.ECOMP, gENSAL.ETERM) annotation (Line(points={{26.2292,-33.9},{22,-33.9},{22,31},{8.64,31}}, color={0,0,127}));
+      connect(cte.y, sCRX.VOEL) annotation (Line(points={{-10.5,-50},{8,-50},{8,
+              -49.5},{26.2292,-49.5}}, color={0,0,127}));
+      connect(sCRX.VOTHSG, cte.y) annotation (Line(points={{26.2292,-42.3},{8,-42.3},
+              {8,-50},{-10.5,-50}}, color={0,0,127}));
+      connect(gENSAL.XADIFD, sCRX.XADIFD) annotation (Line(points={{8.64,-16.6},
+              {14,-16.6},{14,-63.9},{25.7708,-63.9}}, color={0,0,127}));
+      connect(gENSAL.EFD0, sCRX.EFD0) annotation (Line(points={{8.64,-9.8},{18,
+              -9.8},{18,-84.3},{26.2292,-84.3}}, color={0,0,127}));
+      connect(sCRX.EFD, gENSAL.EFD) annotation (Line(points={{81.9167,-59.7},{
+              86,-59.7},{86,-94},{-72,-94},{-72,-3},{-59.34,-3}}, color={0,0,
+              127}));
+      connect(hYGOV.PMECH, gENSAL.PMECH) annotation (Line(points={{-0.5,75},{8,
+              75},{8,50},{-70,50},{-70,31},{-59.34,31}}, color={0,0,127}));
+      connect(gENSAL.SPEED, hYGOV.SPEED) annotation (Line(points={{8.64,44.6},{
+              16,44.6},{16,92},{-68,92},{-68,81.5},{-61.25,81.5}}, color={0,0,
+              127}));
+      connect(gENSAL.PMECH0, hYGOV.PMECH0) annotation (Line(points={{8.64,3.8},
+              {30,3.8},{30,96},{-72,96},{-72,68.5},{-61.25,68.5}}, color={0,0,
+              127}));
+      connect(gENSAL.p, p) annotation (Line(points={{9.3,14},{54,14},{54,0},{
+              110,0}}, color={0,0,255}));
+      connect(sCRX.VUEL, cte.y) annotation (Line(points={{26.2292,-57.3},{8,-57.3},
+              {8,-50},{-10.5,-50}}, color={0,0,127}));
+      connect(sCRX.ECOMP, gENSAL.ETERM) annotation (Line(points={{26.2292,-33.9},
+              {22,-33.9},{22,31},{8.64,31}}, color={0,0,127}));
       annotation (
-        Icon(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,100}}), graphics={Ellipse(extent={{-100,-100},{101,100}}, lineColor={0,0,255}),Line(
+        Icon(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{
+                100,100}}), graphics={Ellipse(extent={{-100,-100},{101,100}},
+              lineColor={0,0,255}),Line(
                   points={{-76,-26},{-28,52},{27,-52},{74,23}},
                   color={0,0,255},
                   smooth=Smooth.Bezier)}),
-        Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,100}})),
-        Documentation(revisions="<html>
-<!--DISCLAIMER-->
-<p>OpenIPSL:</p>
-<p>Copyright 2016 SmarTS Lab (Sweden)</p>
-<ul>
-<li>SmarTS Lab, research group at KTH: <a href=\"https://www.kth.se/en\">https://www.kth.se/en</a></li>
-</ul>
-<p>The authors can be contacted by email: <a href=\"mailto:luigiv@kth.se\">luigiv@kth.se</a></p>
-
-<p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
-<p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
-
-<p></p>
-<p>iPSL:</p>
-<p>Copyright 2015-2016 RTE (France), SmarTS Lab (Sweden), AIA (Spain) and DTU (Denmark)</p>
-<ul>
-<li>RTE: <a href=\"http://www.rte-france.com\">http://www.rte-france.com</a></li>
-<li>SmarTS Lab, research group at KTH: <a href=\"https://www.kth.se/en\">https://www.kth.se/en</a></li>
-<li>AIA: <a href=\"http://www.aia.es/en/energy\"> http://www.aia.es/en/energy</a></li>
-<li>DTU: <a href=\"http://www.dtu.dk/english\"> http://www.dtu.dk/english</a></li>
-</ul>
-<p>The authors can be contacted by email: <a href=\"mailto:info@itesla-ipsl.org\">info@itesla-ipsl.org</a></p>
-
-<p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
-<p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
-</html>
-"));
+        Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},
+                {100,100}})),
+        Documentation);
     end Gen2_bus_3249;
 
     model Gen2_bus_5600 "Configuration of synchronous generator with regulators: GENSAL, HYGOV, SCRX;
-      Nordic 44 model: Buses 3245, 3249, 5600"
+          Nordic 44 model: Buses 3245, 3249, 5600"
       OpenIPSL.Electrical.Machines.PSSE.GENSAL gENSAL(
         D=0 "Speed Damping",
         Tpd0=7.85,
@@ -3857,7 +3879,8 @@ package Original "Library of original Nordic 44 model"
         T_w=1,
         A_t=1.1,
         D_turb=0.5,
-        q_NL=0.1) annotation (Placement(transformation(extent={{-60,48},{2,76}})));
+        q_NL=0.1)
+        annotation (Placement(transformation(extent={{-60,48},{2,76}})));
       OpenIPSL.Electrical.Controls.PSSE.ES.SCRX sCRX(
         K=61,
         T_AT_B=0.25385,
@@ -3866,59 +3889,54 @@ package Original "Library of original Nordic 44 model"
         E_MIN=0,
         E_MAX=4,
         r_cr_fd=0,
-        C_SWITCH=true) annotation (Placement(transformation(extent={{26,-90},{84,-28}})));
-      Modelica.Blocks.Sources.Constant cte(k=0) annotation (Placement(transformation(extent={{-17,-53},{-7,-43}})));
-      OpenIPSL.Interfaces.PwPin p annotation (Placement(transformation(rotation=0, extent={{100,-10},{120,10}}), iconTransformation(extent={{100,-10},{120,10}})));
-      Original.Data.PSSE_data_Original_case PSSE_data annotation (Placement(transformation(extent={{86,86},{98,98}})));
+        C_SWITCH=true)
+        annotation (Placement(transformation(extent={{26,-90},{84,-28}})));
+      Modelica.Blocks.Sources.Constant cte(k=0)
+        annotation (Placement(transformation(extent={{-17,-53},{-7,-43}})));
+      OpenIPSL.Interfaces.PwPin p annotation (Placement(transformation(rotation
+              =0, extent={{100,-10},{120,10}}), iconTransformation(extent={{100,
+                -10},{120,10}})));
+      Original.Data.PSSE_data_Original_case PSSE_data
+        annotation (Placement(transformation(extent={{86,86},{98,98}})));
     equation
-      connect(gENSAL.p, p) annotation (Line(points={{3.1,3},{54.55,3},{54.55,0},{110,0}}, color={0,0,255}));
-      connect(cte.y, sCRX.VOEL) annotation (Line(points={{-6.5,-48},{26.2417,-48},{26.2417,-48.15}}, color={0,0,127}));
-      connect(gENSAL.EFD0, sCRX.EFD0) annotation (Line(points={{2.48,-18.7},{10,-18.7},{10,-84.11},{26.2417,-84.11}}, color={0,0,127}));
-      connect(gENSAL.XADIFD, sCRX.XADIFD) annotation (Line(points={{2.48,-24.9},{14,-24.9},{14,-63.03},{25.7583,-63.03}}, color={0,0,127}));
-      connect(gENSAL.ETERM, sCRX.ECOMP) annotation (Line(points={{2.48,18.5},{22,18.5},{22,-32.03},{26.2417,-32.03}}, color={0,0,127}));
-      connect(sCRX.EFD, gENSAL.EFD) annotation (Line(points={{84.9667,-58.69},{92,-58.69},{92,-94},{-72,-94},{-72,-12.5},{-61.38,-12.5}}, color={0,0,127}));
-      connect(hYGOV.PMECH, gENSAL.PMECH) annotation (Line(points={{3.55,62},{8,62},{8,60},{8,40},{-68,40},{-68,18.5},{-61.38,18.5}}, color={0,0,127}));
-      connect(gENSAL.SPEED, hYGOV.SPEED) annotation (Line(points={{2.48,30.9},{12,30.9},{12,82},{-66,82},{-66,69},{-59.225,69}}, color={0,0,127}));
-      connect(gENSAL.PMECH0, hYGOV.PMECH0) annotation (Line(points={{2.48,-6.3},{18,-6.3},{18,88},{-72,88},{-72,55},{-59.225,55}}, color={0,0,127}));
-      connect(sCRX.VOTHSG, cte.y) annotation (Line(points={{26.2417,-40.71},{4,-40.71},{4,-48},{-6.5,-48}}, color={0,0,127}));
-      connect(sCRX.VUEL, cte.y) annotation (Line(points={{26.2417,-56.21},{4,-56.21},{4,-48},{-6.5,-48}}, color={0,0,127}));
+      connect(gENSAL.p, p) annotation (Line(points={{3.1,3},{54.55,3},{54.55,0},
+              {110,0}}, color={0,0,255}));
+      connect(cte.y, sCRX.VOEL) annotation (Line(points={{-6.5,-48},{26.2417,-48},
+              {26.2417,-48.15}}, color={0,0,127}));
+      connect(gENSAL.EFD0, sCRX.EFD0) annotation (Line(points={{2.48,-18.7},{10,
+              -18.7},{10,-84.11},{26.2417,-84.11}}, color={0,0,127}));
+      connect(gENSAL.XADIFD, sCRX.XADIFD) annotation (Line(points={{2.48,-24.9},
+              {14,-24.9},{14,-63.03},{25.7583,-63.03}}, color={0,0,127}));
+      connect(gENSAL.ETERM, sCRX.ECOMP) annotation (Line(points={{2.48,18.5},{
+              22,18.5},{22,-32.03},{26.2417,-32.03}}, color={0,0,127}));
+      connect(sCRX.EFD, gENSAL.EFD) annotation (Line(points={{84.9667,-58.69},{
+              92,-58.69},{92,-94},{-72,-94},{-72,-12.5},{-61.38,-12.5}}, color=
+              {0,0,127}));
+      connect(hYGOV.PMECH, gENSAL.PMECH) annotation (Line(points={{3.55,62},{8,
+              62},{8,60},{8,40},{-68,40},{-68,18.5},{-61.38,18.5}}, color={0,0,
+              127}));
+      connect(gENSAL.SPEED, hYGOV.SPEED) annotation (Line(points={{2.48,30.9},{
+              12,30.9},{12,82},{-66,82},{-66,69},{-59.225,69}}, color={0,0,127}));
+      connect(gENSAL.PMECH0, hYGOV.PMECH0) annotation (Line(points={{2.48,-6.3},
+              {18,-6.3},{18,88},{-72,88},{-72,55},{-59.225,55}}, color={0,0,127}));
+      connect(sCRX.VOTHSG, cte.y) annotation (Line(points={{26.2417,-40.71},{4,
+              -40.71},{4,-48},{-6.5,-48}}, color={0,0,127}));
+      connect(sCRX.VUEL, cte.y) annotation (Line(points={{26.2417,-56.21},{4,-56.21},
+              {4,-48},{-6.5,-48}}, color={0,0,127}));
       annotation (
-        Icon(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,100}}), graphics={Ellipse(extent={{-100,-100},{101,100}}, lineColor={0,0,255}),Line(
+        Icon(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{
+                100,100}}), graphics={Ellipse(extent={{-100,-100},{101,100}},
+              lineColor={0,0,255}),Line(
                   points={{-76,-26},{-28,52},{27,-52},{74,23}},
                   color={0,0,255},
                   smooth=Smooth.Bezier)}),
-        Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,100}})),
-        Documentation(revisions="<html>
-<!--DISCLAIMER-->
-<p>OpenIPSL:</p>
-<p>Copyright 2016 SmarTS Lab (Sweden)</p>
-<ul>
-<li>SmarTS Lab, research group at KTH: <a href=\"https://www.kth.se/en\">https://www.kth.se/en</a></li>
-</ul>
-<p>The authors can be contacted by email: <a href=\"mailto:luigiv@kth.se\">luigiv@kth.se</a></p>
-
-<p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
-<p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
-
-<p></p>
-<p>iPSL:</p>
-<p>Copyright 2015-2016 RTE (France), SmarTS Lab (Sweden), AIA (Spain) and DTU (Denmark)</p>
-<ul>
-<li>RTE: <a href=\"http://www.rte-france.com\">http://www.rte-france.com</a></li>
-<li>SmarTS Lab, research group at KTH: <a href=\"https://www.kth.se/en\">https://www.kth.se/en</a></li>
-<li>AIA: <a href=\"http://www.aia.es/en/energy\"> http://www.aia.es/en/energy</a></li>
-<li>DTU: <a href=\"http://www.dtu.dk/english\"> http://www.dtu.dk/english</a></li>
-</ul>
-<p>The authors can be contacted by email: <a href=\"mailto:info@itesla-ipsl.org\">info@itesla-ipsl.org</a></p>
-
-<p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
-<p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
-</html>
-"));
+        Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},
+                {100,100}})),
+        Documentation);
     end Gen2_bus_5600;
 
     model Gen3_bus_3115 "Configuration of synchronous generator with regulators: GENSAL, HYGOV, SCRX, STAB2A;
-      Nordic 44 model: Buses 3115, 5300, 6100, 6700, 7100"
+          Nordic 44 model: Buses 3115, 5300, 6100, 6700, 7100"
       OpenIPSL.Electrical.Machines.PSSE.GENSAL gENSAL(
         D=0 "Speed Damping",
         Tpd0=7.57,
@@ -3939,7 +3957,8 @@ package Original "Library of original Nordic 44 model"
         M_b=1100,
         S10=0.10239,
         S12=0.2742,
-        R_a=0) annotation (Placement(transformation(extent={{-46,-24},{16,42}})));
+        R_a=0)
+        annotation (Placement(transformation(extent={{-46,-24},{16,42}})));
       OpenIPSL.Electrical.Controls.PSSE.TG.HYGOV hYGOV(
         R=0.06 "Permanent droop, p.u",
         r=0.4 "Temporary droop, p.u",
@@ -3952,7 +3971,8 @@ package Original "Library of original Nordic 44 model"
         T_w=1,
         A_t=1.0577,
         D_turb=0.5,
-        q_NL=0.1) annotation (Placement(transformation(extent={{-44,56},{20,86}})));
+        q_NL=0.1)
+        annotation (Placement(transformation(extent={{-44,56},{20,86}})));
       OpenIPSL.Electrical.Controls.PSSE.ES.SCRX sCRX(
         K=31,
         T_AT_B=0.25385,
@@ -3961,8 +3981,10 @@ package Original "Library of original Nordic 44 model"
         E_MIN=0,
         E_MAX=4,
         r_cr_fd=0,
-        C_SWITCH=true) annotation (Placement(transformation(extent={{36,-86},{90,-32}})));
-      Modelica.Blocks.Sources.Constant cte(k=0) annotation (Placement(transformation(extent={{-11,-69},{-1,-59}})));
+        C_SWITCH=true)
+        annotation (Placement(transformation(extent={{36,-86},{90,-32}})));
+      Modelica.Blocks.Sources.Constant cte(k=0)
+        annotation (Placement(transformation(extent={{-11,-69},{-1,-59}})));
       OpenIPSL.Electrical.Controls.PSSE.PSS.STAB2A sTAB2A(
         H_LIM=0.04,
         K_2=1,
@@ -3971,59 +3993,56 @@ package Original "Library of original Nordic 44 model"
         T_3=2,
         K_4=0.087,
         K_5=1,
-        T_5=0.01) annotation (Placement(transformation(extent={{-48,-54},{7,-33}})));
-      OpenIPSL.Interfaces.PwPin p annotation (Placement(transformation(rotation=0, extent={{100,-10},{120,10}}), iconTransformation(extent={{100,-10},{120,10}})));
-      Original.Data.PSSE_data_Original_case PSSE_data annotation (Placement(transformation(extent={{86,88},{96,98}})));
+        T_5=0.01)
+        annotation (Placement(transformation(extent={{-48,-54},{7,-33}})));
+      OpenIPSL.Interfaces.PwPin p annotation (Placement(transformation(rotation
+              =0, extent={{100,-10},{120,10}}), iconTransformation(extent={{100,
+                -10},{120,10}})));
+      Original.Data.PSSE_data_Original_case PSSE_data
+        annotation (Placement(transformation(extent={{86,88},{96,98}})));
     equation
-      connect(sTAB2A.VOTHSG, sCRX.VOTHSG) annotation (Line(points={{9.5,-43.5},{16.75,-43.5},{16.75,-43.07},{36.225,-43.07}}, color={0,0,127}));
-      connect(cte.y, sCRX.VOEL) annotation (Line(points={{-0.5,-64},{16,-64},{16,-49.55},{36.225,-49.55}}, color={0,0,127}));
-      connect(gENSAL.p, p) annotation (Line(points={{19.1,9},{70,9},{70,0},{110,0}}, color={0,0,255}));
-      connect(sCRX.EFD, gENSAL.EFD) annotation (Line(points={{90.9,-58.73},{94,-58.73},{94,-90},{-68,-90},{-68,-7.5},{-45.38,-7.5}}, color={0,0,127}));
-      connect(gENSAL.PELEC, sTAB2A.PELEC) annotation (Line(points={{18.48,-7.5},{30,-7.5},{30,-30},{-56,-30},{-56,-43.5},{-47.25,-43.5}}, color={0,0,127}));
-      connect(gENSAL.XADIFD, sCRX.XADIFD) annotation (Line(points={{18.48,-20.7},{22,-20.7},{22,-62.51},{35.775,-62.51}}, color={0,0,127}));
-      connect(gENSAL.EFD0, sCRX.EFD0) annotation (Line(points={{18.48,-14.1},{28,-14.1},{28,-80.87},{36.225,-80.87}}, color={0,0,127}));
-      connect(hYGOV.PMECH, gENSAL.PMECH) annotation (Line(points={{21.6,71},{28,71},{34,71},{34,48},{-58,48},{-58,25.5},{-45.38,25.5}}, color={0,0,127}));
-      connect(gENSAL.SPEED, hYGOV.SPEED) annotation (Line(points={{18.48,38.7},{38,38.7},{38,90},{-52,90},{-52,78.5},{-43.2,78.5}}, color={0,0,127}));
-      connect(gENSAL.PMECH0, hYGOV.PMECH0) annotation (Line(points={{18.48,-0.9},{42,-0.9},{42,94},{-58,94},{-58,63.5},{-43.2,63.5}}, color={0,0,127}));
-      connect(gENSAL.ETERM, sCRX.ECOMP) annotation (Line(points={{18.48,25.5},{32,25.5},{32,-35.51},{36.225,-35.51}}, color={0,0,127}));
-      connect(sCRX.VUEL, cte.y) annotation (Line(points={{36.225,-56.57},{16,-56.57},{16,-64},{-0.5,-64}}, color={0,0,127}));
+      connect(sTAB2A.VOTHSG, sCRX.VOTHSG) annotation (Line(points={{9.5,-43.5},
+              {16.75,-43.5},{16.75,-43.07},{36.225,-43.07}}, color={0,0,127}));
+      connect(cte.y, sCRX.VOEL) annotation (Line(points={{-0.5,-64},{16,-64},{
+              16,-49.55},{36.225,-49.55}}, color={0,0,127}));
+      connect(gENSAL.p, p) annotation (Line(points={{19.1,9},{70,9},{70,0},{110,
+              0}}, color={0,0,255}));
+      connect(sCRX.EFD, gENSAL.EFD) annotation (Line(points={{90.9,-58.73},{94,
+              -58.73},{94,-90},{-68,-90},{-68,-7.5},{-45.38,-7.5}}, color={0,0,
+              127}));
+      connect(gENSAL.PELEC, sTAB2A.PELEC) annotation (Line(points={{18.48,-7.5},
+              {30,-7.5},{30,-30},{-56,-30},{-56,-43.5},{-47.25,-43.5}}, color={
+              0,0,127}));
+      connect(gENSAL.XADIFD, sCRX.XADIFD) annotation (Line(points={{18.48,-20.7},
+              {22,-20.7},{22,-62.51},{35.775,-62.51}}, color={0,0,127}));
+      connect(gENSAL.EFD0, sCRX.EFD0) annotation (Line(points={{18.48,-14.1},{
+              28,-14.1},{28,-80.87},{36.225,-80.87}}, color={0,0,127}));
+      connect(hYGOV.PMECH, gENSAL.PMECH) annotation (Line(points={{21.6,71},{28,
+              71},{34,71},{34,48},{-58,48},{-58,25.5},{-45.38,25.5}}, color={0,
+              0,127}));
+      connect(gENSAL.SPEED, hYGOV.SPEED) annotation (Line(points={{18.48,38.7},
+              {38,38.7},{38,90},{-52,90},{-52,78.5},{-43.2,78.5}}, color={0,0,
+              127}));
+      connect(gENSAL.PMECH0, hYGOV.PMECH0) annotation (Line(points={{18.48,-0.9},
+              {42,-0.9},{42,94},{-58,94},{-58,63.5},{-43.2,63.5}}, color={0,0,
+              127}));
+      connect(gENSAL.ETERM, sCRX.ECOMP) annotation (Line(points={{18.48,25.5},{
+              32,25.5},{32,-35.51},{36.225,-35.51}}, color={0,0,127}));
+      connect(sCRX.VUEL, cte.y) annotation (Line(points={{36.225,-56.57},{16,-56.57},
+              {16,-64},{-0.5,-64}}, color={0,0,127}));
       annotation (
-        Icon(graphics={Ellipse(extent={{-100,-100},{101,100}}, lineColor={0,0,255}),Line(
+        Icon(graphics={Ellipse(extent={{-100,-100},{101,100}}, lineColor={0,0,
+              255}),Line(
                   points={{-76,-26},{-28,52},{27,-52},{74,23}},
                   color={0,0,255},
                   smooth=Smooth.Bezier)}),
-        Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,100}})),
-        Documentation(revisions="<html>
-<!--DISCLAIMER-->
-<p>OpenIPSL:</p>
-<p>Copyright 2016 SmarTS Lab (Sweden)</p>
-<ul>
-<li>SmarTS Lab, research group at KTH: <a href=\"https://www.kth.se/en\">https://www.kth.se/en</a></li>
-</ul>
-<p>The authors can be contacted by email: <a href=\"mailto:luigiv@kth.se\">luigiv@kth.se</a></p>
-
-<p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
-<p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
-
-<p></p>
-<p>iPSL:</p>
-<p>Copyright 2015-2016 RTE (France), SmarTS Lab (Sweden), AIA (Spain) and DTU (Denmark)</p>
-<ul>
-<li>RTE: <a href=\"http://www.rte-france.com\">http://www.rte-france.com</a></li>
-<li>SmarTS Lab, research group at KTH: <a href=\"https://www.kth.se/en\">https://www.kth.se/en</a></li>
-<li>AIA: <a href=\"http://www.aia.es/en/energy\"> http://www.aia.es/en/energy</a></li>
-<li>DTU: <a href=\"http://www.dtu.dk/english\"> http://www.dtu.dk/english</a></li>
-</ul>
-<p>The authors can be contacted by email: <a href=\"mailto:info@itesla-ipsl.org\">info@itesla-ipsl.org</a></p>
-
-<p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
-<p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
-</html>
-"));
+        Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},
+                {100,100}})),
+        Documentation);
     end Gen3_bus_3115;
 
     model Gen3_bus_5300 "Configuration of synchronous generator with regulators: GENSAL, HYGOV, SCRX, STAB2A;
-      Nordic 44 model: Buses 3115, 5300, 6100, 6700, 7100"
+          Nordic 44 model: Buses 3115, 5300, 6100, 6700, 7100"
       OpenIPSL.Electrical.Machines.PSSE.GENSAL gENSAL(
         Tppd0=0.05 "T''do (> 0)",
         Tppq0=0.15 "T''qo (> 0)",
@@ -4044,7 +4063,8 @@ package Original "Library of original Nordic 44 model"
         M_b=1200,
         S10=0.1,
         S12=0.3,
-        R_a=0) annotation (Placement(transformation(extent={{-64,-24},{-2,40}})));
+        R_a=0)
+        annotation (Placement(transformation(extent={{-64,-24},{-2,40}})));
       OpenIPSL.Electrical.Controls.PSSE.TG.HYGOV hYGOV(
         R=0.06 "Permanent droop, p.u",
         r=0.4 "Temporary droop, p.u",
@@ -4057,7 +4077,8 @@ package Original "Library of original Nordic 44 model"
         T_w=1,
         A_t=1.1,
         D_turb=0.5,
-        q_NL=0.1) annotation (Placement(transformation(extent={{-62,62},{10,90}})));
+        q_NL=0.1)
+        annotation (Placement(transformation(extent={{-62,62},{10,90}})));
       OpenIPSL.Electrical.Controls.PSSE.ES.SCRX sCRX(
         K=61 "K",
         T_AT_B=0.25385,
@@ -4066,8 +4087,10 @@ package Original "Library of original Nordic 44 model"
         E_MIN=0,
         E_MAX=4,
         r_cr_fd=0,
-        C_SWITCH=true) annotation (Placement(transformation(extent={{22,-82},{80,-34}})));
-      Modelica.Blocks.Sources.Constant cte(k=0) annotation (Placement(transformation(extent={{-22,-70},{-10,-58}})));
+        C_SWITCH=true)
+        annotation (Placement(transformation(extent={{22,-82},{80,-34}})));
+      Modelica.Blocks.Sources.Constant cte(k=0)
+        annotation (Placement(transformation(extent={{-22,-70},{-10,-58}})));
       OpenIPSL.Electrical.Controls.PSSE.PSS.STAB2A sTAB2A(
         H_LIM=0.03,
         K_2=1,
@@ -4076,59 +4099,53 @@ package Original "Library of original Nordic 44 model"
         T_3=2,
         K_4=0.55,
         K_5=1,
-        T_5=0.01) annotation (Placement(transformation(extent={{-66,-54},{-20,-34}})));
-      OpenIPSL.Interfaces.PwPin p annotation (Placement(transformation(rotation=0, extent={{100,-10},{120,10}}), iconTransformation(extent={{100,-10},{120,10}})));
-      Original.Data.PSSE_data_Original_case PSSE_data annotation (Placement(transformation(extent={{88,88},{98,98}})));
+        T_5=0.01)
+        annotation (Placement(transformation(extent={{-66,-54},{-20,-34}})));
+      OpenIPSL.Interfaces.PwPin p annotation (Placement(transformation(rotation
+              =0, extent={{100,-10},{120,10}}), iconTransformation(extent={{100,
+                -10},{120,10}})));
+      Original.Data.PSSE_data_Original_case PSSE_data
+        annotation (Placement(transformation(extent={{88,88},{98,98}})));
     equation
-      connect(gENSAL.p, p) annotation (Line(points={{1.1,8},{82,8},{82,0},{110,0}}, color={0,0,255}));
-      connect(sTAB2A.VOTHSG, sCRX.VOTHSG) annotation (Line(points={{-17.9091,-44},{-17.9091,-43.84},{22.2417,-43.84}}, color={0,0,127}));
-      connect(cte.y, sCRX.VOEL) annotation (Line(points={{-9.4,-64},{-6,-64},{-2,-64},{-2,-49.6},{22.2417,-49.6}}, color={0,0,127}));
-      connect(sCRX.EFD, gENSAL.EFD) annotation (Line(points={{80.9667,-57.76},{84,-57.76},{84,-86},{-78,-86},{-78,-8},{-63.38,-8}}, color={0,0,127}));
-      connect(gENSAL.PELEC, sTAB2A.PELEC) annotation (Line(points={{0.48,-8},{10,-8},{10,-30},{-72,-30},{-72,-44},{-65.3727,-44}}, color={0,0,127}));
-      connect(gENSAL.XADIFD, sCRX.XADIFD) annotation (Line(points={{0.48,-20.8},{8,-20.8},{8,-61.12},{21.7583,-61.12}}, color={0,0,127}));
-      connect(gENSAL.EFD0, sCRX.EFD0) annotation (Line(points={{0.48,-14.4},{12,-14.4},{12,-77.44},{22.2417,-77.44}}, color={0,0,127}));
-      connect(hYGOV.PMECH, gENSAL.PMECH) annotation (Line(points={{11.8,76},{18,76},{18,46},{-76,46},{-76,24},{-63.38,24}}, color={0,0,127}));
-      connect(gENSAL.SPEED, hYGOV.SPEED) annotation (Line(points={{0.48,36.8},{24,36.8},{24,92},{-66,92},{-66,83},{-61.1,83}}, color={0,0,127}));
-      connect(gENSAL.PMECH0, hYGOV.PMECH0) annotation (Line(points={{0.48,-1.6},{32,-1.6},{32,96},{-78,96},{-78,69},{-61.1,69}}, color={0,0,127}));
-      connect(gENSAL.ETERM, sCRX.ECOMP) annotation (Line(points={{0.48,24},{16,24},{16,-37.12},{22.2417,-37.12}}, color={0,0,127}));
-      connect(sCRX.VUEL, cte.y) annotation (Line(points={{22.2417,-55.84},{-2,-55.84},{-2,-64},{-9.4,-64}}, color={0,0,127}));
+      connect(gENSAL.p, p) annotation (Line(points={{1.1,8},{82,8},{82,0},{110,
+              0}}, color={0,0,255}));
+      connect(sTAB2A.VOTHSG, sCRX.VOTHSG) annotation (Line(points={{-17.9091,-44},
+              {-17.9091,-43.84},{22.2417,-43.84}}, color={0,0,127}));
+      connect(cte.y, sCRX.VOEL) annotation (Line(points={{-9.4,-64},{-6,-64},{-2,
+              -64},{-2,-49.6},{22.2417,-49.6}}, color={0,0,127}));
+      connect(sCRX.EFD, gENSAL.EFD) annotation (Line(points={{80.9667,-57.76},{
+              84,-57.76},{84,-86},{-78,-86},{-78,-8},{-63.38,-8}}, color={0,0,
+              127}));
+      connect(gENSAL.PELEC, sTAB2A.PELEC) annotation (Line(points={{0.48,-8},{
+              10,-8},{10,-30},{-72,-30},{-72,-44},{-65.3727,-44}}, color={0,0,
+              127}));
+      connect(gENSAL.XADIFD, sCRX.XADIFD) annotation (Line(points={{0.48,-20.8},
+              {8,-20.8},{8,-61.12},{21.7583,-61.12}}, color={0,0,127}));
+      connect(gENSAL.EFD0, sCRX.EFD0) annotation (Line(points={{0.48,-14.4},{12,
+              -14.4},{12,-77.44},{22.2417,-77.44}}, color={0,0,127}));
+      connect(hYGOV.PMECH, gENSAL.PMECH) annotation (Line(points={{11.8,76},{18,
+              76},{18,46},{-76,46},{-76,24},{-63.38,24}}, color={0,0,127}));
+      connect(gENSAL.SPEED, hYGOV.SPEED) annotation (Line(points={{0.48,36.8},{
+              24,36.8},{24,92},{-66,92},{-66,83},{-61.1,83}}, color={0,0,127}));
+      connect(gENSAL.PMECH0, hYGOV.PMECH0) annotation (Line(points={{0.48,-1.6},
+              {32,-1.6},{32,96},{-78,96},{-78,69},{-61.1,69}}, color={0,0,127}));
+      connect(gENSAL.ETERM, sCRX.ECOMP) annotation (Line(points={{0.48,24},{16,
+              24},{16,-37.12},{22.2417,-37.12}}, color={0,0,127}));
+      connect(sCRX.VUEL, cte.y) annotation (Line(points={{22.2417,-55.84},{-2,-55.84},
+              {-2,-64},{-9.4,-64}}, color={0,0,127}));
       annotation (
-        Icon(graphics={Ellipse(extent={{-100,-100},{101,100}}, lineColor={0,0,255}),Line(
+        Icon(graphics={Ellipse(extent={{-100,-100},{101,100}}, lineColor={0,0,
+              255}),Line(
                   points={{-76,-26},{-28,52},{27,-52},{74,23}},
                   color={0,0,255},
                   smooth=Smooth.Bezier)}),
-        Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,100}})),
-        Documentation(revisions="<html>
-<!--DISCLAIMER-->
-<p>OpenIPSL:</p>
-<p>Copyright 2016 SmarTS Lab (Sweden)</p>
-<ul>
-<li>SmarTS Lab, research group at KTH: <a href=\"https://www.kth.se/en\">https://www.kth.se/en</a></li>
-</ul>
-<p>The authors can be contacted by email: <a href=\"mailto:luigiv@kth.se\">luigiv@kth.se</a></p>
-
-<p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
-<p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
-
-<p></p>
-<p>iPSL:</p>
-<p>Copyright 2015-2016 RTE (France), SmarTS Lab (Sweden), AIA (Spain) and DTU (Denmark)</p>
-<ul>
-<li>RTE: <a href=\"http://www.rte-france.com\">http://www.rte-france.com</a></li>
-<li>SmarTS Lab, research group at KTH: <a href=\"https://www.kth.se/en\">https://www.kth.se/en</a></li>
-<li>AIA: <a href=\"http://www.aia.es/en/energy\"> http://www.aia.es/en/energy</a></li>
-<li>DTU: <a href=\"http://www.dtu.dk/english\"> http://www.dtu.dk/english</a></li>
-</ul>
-<p>The authors can be contacted by email: <a href=\"mailto:info@itesla-ipsl.org\">info@itesla-ipsl.org</a></p>
-
-<p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
-<p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
-</html>
-"));
+        Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},
+                {100,100}})),
+        Documentation);
     end Gen3_bus_5300;
 
     model Gen3_bus_6100 "Configuration of synchronous generator with regulators: GENSAL, HYGOV, SCRX, STAB2A;
-      Nordic 44 model: Buses 3115, 5300, 6100, 6700, 7100"
+          Nordic 44 model: Buses 3115, 5300, 6100, 6700, 7100"
       OpenIPSL.Electrical.Machines.PSSE.GENSAL gENSAL(
         Tppd0=0.05 "T''do (> 0)",
         Tppq0=0.15 "T''qo (> 0)",
@@ -4162,7 +4179,8 @@ package Original "Library of original Nordic 44 model"
         T_w=1,
         A_t=1.1,
         D_turb=0.5,
-        q_NL=0.1) annotation (Placement(transformation(extent={{-58,68},{-8,90}})));
+        q_NL=0.1)
+        annotation (Placement(transformation(extent={{-58,68},{-8,90}})));
       OpenIPSL.Electrical.Controls.PSSE.ES.SCRX sCRX(
         K=61 "K",
         T_AT_B=0.25385,
@@ -4171,8 +4189,10 @@ package Original "Library of original Nordic 44 model"
         E_MIN=0,
         E_MAX=4,
         r_cr_fd=0,
-        C_SWITCH=true) annotation (Placement(transformation(extent={{20,-70},{76,-24}})));
-      Modelica.Blocks.Sources.Constant cte(k=0) annotation (Placement(transformation(extent={{-29,-61},{-19,-51}})));
+        C_SWITCH=true)
+        annotation (Placement(transformation(extent={{20,-70},{76,-24}})));
+      Modelica.Blocks.Sources.Constant cte(k=0)
+        annotation (Placement(transformation(extent={{-29,-61},{-19,-51}})));
       OpenIPSL.Electrical.Controls.PSSE.PSS.STAB2A sTAB2A(
         H_LIM=0.03,
         K_2=1,
@@ -4181,59 +4201,53 @@ package Original "Library of original Nordic 44 model"
         T_3=2,
         K_4=0.55,
         K_5=1,
-        T_5=0.01) annotation (Placement(transformation(extent={{-60,-46},{-22,-20}})));
-      OpenIPSL.Interfaces.PwPin p annotation (Placement(transformation(rotation=0, extent={{100,-10},{120,10}}), iconTransformation(extent={{100,-10},{120,10}})));
-      Original.Data.PSSE_data_Original_case PSSE_data annotation (Placement(transformation(extent={{86,88},{96,98}})));
+        T_5=0.01)
+        annotation (Placement(transformation(extent={{-60,-46},{-22,-20}})));
+      OpenIPSL.Interfaces.PwPin p annotation (Placement(transformation(rotation
+              =0, extent={{100,-10},{120,10}}), iconTransformation(extent={{100,
+                -10},{120,10}})));
+      Original.Data.PSSE_data_Original_case PSSE_data
+        annotation (Placement(transformation(extent={{86,88},{96,98}})));
     equation
-      connect(gENSAL.p, p) annotation (Line(points={{1.2,22},{30,22},{30,20},{64,20},{64,0},{110,0}}, color={0,0,255}));
-      connect(sCRX.EFD, gENSAL.EFD) annotation (Line(points={{76.9333,-46.77},{82,-46.77},{82,-80},{-76,-80},{-76,7},{-65.36,7}}, color={0,0,127}));
-      connect(sTAB2A.VOTHSG, sCRX.VOTHSG) annotation (Line(points={{-20.2727,-33},{-0.13635,-33},{-0.13635,-33.43},{20.2333,-33.43}}, color={0,0,127}));
-      connect(cte.y, sCRX.VOEL) annotation (Line(points={{-18.5,-56},{0,-56},{0,-38.95},{20.2333,-38.95}}, color={0,0,127}));
-      connect(gENSAL.PELEC, sTAB2A.PELEC) annotation (Line(points={{0.56,7},{12,7},{12,-18},{-68,-18},{-68,-33},{-59.4818,-33}}, color={0,0,127}));
-      connect(hYGOV.PMECH, gENSAL.PMECH) annotation (Line(points={{-6.75,79},{0,79},{0,56},{-76,56},{-76,37},{-65.36,37}}, color={0,0,127}));
-      connect(gENSAL.SPEED, hYGOV.SPEED) annotation (Line(points={{0.56,49},{10,49},{10,92},{-62,92},{-62,84.5},{-57.375,84.5}}, color={0,0,127}));
-      connect(gENSAL.PMECH0, hYGOV.PMECH0) annotation (Line(points={{0.56,13},{16,13},{16,96},{-66,96},{-66,73.5},{-57.375,73.5}}, color={0,0,127}));
-      connect(gENSAL.XADIFD, sCRX.XADIFD) annotation (Line(points={{0.56,-5},{6,-5},{6,-49.99},{19.7667,-49.99}}, color={0,0,127}));
-      connect(gENSAL.EFD0, sCRX.EFD0) annotation (Line(points={{0.56,1},{10,1},{10,-65.63},{20.2333,-65.63}}, color={0,0,127}));
-      connect(gENSAL.ETERM, sCRX.ECOMP) annotation (Line(points={{0.56,37},{14,37},{14,-26.99},{20.2333,-26.99}}, color={0,0,127}));
-      connect(sCRX.VUEL, cte.y) annotation (Line(points={{20.2333,-44.93},{0,-44.93},{0,-56},{-18.5,-56}}, color={0,0,127}));
+      connect(gENSAL.p, p) annotation (Line(points={{1.2,22},{30,22},{30,20},{
+              64,20},{64,0},{110,0}}, color={0,0,255}));
+      connect(sCRX.EFD, gENSAL.EFD) annotation (Line(points={{76.9333,-46.77},{
+              82,-46.77},{82,-80},{-76,-80},{-76,7},{-65.36,7}}, color={0,0,127}));
+      connect(sTAB2A.VOTHSG, sCRX.VOTHSG) annotation (Line(points={{-20.2727,-33},
+              {-0.13635,-33},{-0.13635,-33.43},{20.2333,-33.43}}, color={0,0,
+              127}));
+      connect(cte.y, sCRX.VOEL) annotation (Line(points={{-18.5,-56},{0,-56},{0,
+              -38.95},{20.2333,-38.95}}, color={0,0,127}));
+      connect(gENSAL.PELEC, sTAB2A.PELEC) annotation (Line(points={{0.56,7},{12,
+              7},{12,-18},{-68,-18},{-68,-33},{-59.4818,-33}}, color={0,0,127}));
+      connect(hYGOV.PMECH, gENSAL.PMECH) annotation (Line(points={{-6.75,79},{0,
+              79},{0,56},{-76,56},{-76,37},{-65.36,37}}, color={0,0,127}));
+      connect(gENSAL.SPEED, hYGOV.SPEED) annotation (Line(points={{0.56,49},{10,
+              49},{10,92},{-62,92},{-62,84.5},{-57.375,84.5}}, color={0,0,127}));
+      connect(gENSAL.PMECH0, hYGOV.PMECH0) annotation (Line(points={{0.56,13},{
+              16,13},{16,96},{-66,96},{-66,73.5},{-57.375,73.5}}, color={0,0,
+              127}));
+      connect(gENSAL.XADIFD, sCRX.XADIFD) annotation (Line(points={{0.56,-5},{6,
+              -5},{6,-49.99},{19.7667,-49.99}}, color={0,0,127}));
+      connect(gENSAL.EFD0, sCRX.EFD0) annotation (Line(points={{0.56,1},{10,1},
+              {10,-65.63},{20.2333,-65.63}}, color={0,0,127}));
+      connect(gENSAL.ETERM, sCRX.ECOMP) annotation (Line(points={{0.56,37},{14,
+              37},{14,-26.99},{20.2333,-26.99}}, color={0,0,127}));
+      connect(sCRX.VUEL, cte.y) annotation (Line(points={{20.2333,-44.93},{0,-44.93},
+              {0,-56},{-18.5,-56}}, color={0,0,127}));
       annotation (
-        Icon(graphics={Ellipse(extent={{-100,-100},{101,100}}, lineColor={0,0,255}),Line(
+        Icon(graphics={Ellipse(extent={{-100,-100},{101,100}}, lineColor={0,0,
+              255}),Line(
                   points={{-76,-26},{-28,52},{27,-52},{74,23}},
                   color={0,0,255},
                   smooth=Smooth.Bezier)}),
-        Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,100}})),
-        Documentation(revisions="<html>
-<!--DISCLAIMER-->
-<p>OpenIPSL:</p>
-<p>Copyright 2016 SmarTS Lab (Sweden)</p>
-<ul>
-<li>SmarTS Lab, research group at KTH: <a href=\"https://www.kth.se/en\">https://www.kth.se/en</a></li>
-</ul>
-<p>The authors can be contacted by email: <a href=\"mailto:luigiv@kth.se\">luigiv@kth.se</a></p>
-
-<p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
-<p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
-
-<p></p>
-<p>iPSL:</p>
-<p>Copyright 2015-2016 RTE (France), SmarTS Lab (Sweden), AIA (Spain) and DTU (Denmark)</p>
-<ul>
-<li>RTE: <a href=\"http://www.rte-france.com\">http://www.rte-france.com</a></li>
-<li>SmarTS Lab, research group at KTH: <a href=\"https://www.kth.se/en\">https://www.kth.se/en</a></li>
-<li>AIA: <a href=\"http://www.aia.es/en/energy\"> http://www.aia.es/en/energy</a></li>
-<li>DTU: <a href=\"http://www.dtu.dk/english\"> http://www.dtu.dk/english</a></li>
-</ul>
-<p>The authors can be contacted by email: <a href=\"mailto:info@itesla-ipsl.org\">info@itesla-ipsl.org</a></p>
-
-<p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
-<p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
-</html>
-"));
+        Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},
+                {100,100}})),
+        Documentation);
     end Gen3_bus_6100;
 
     model Gen3_bus_6700 "Configuration of synchronous generator with regulators: GENSAL, HYGOV, SCRX, STAB2A;
-      Nordic 44 model: Buses 3115, 5300, 6100, 6700, 7100"
+          Nordic 44 model: Buses 3115, 5300, 6100, 6700, 7100"
       OpenIPSL.Electrical.Machines.PSSE.GENSAL gENSAL(
         Tpd0=5.24 "T'do (> 0)",
         Tppd0=0.05 "T''do (> 0)",
@@ -4254,7 +4268,8 @@ package Original "Library of original Nordic 44 model"
         M_b=1200,
         S10=0.1,
         S12=0.3,
-        R_a=0) annotation (Placement(transformation(extent={{-44,-22},{18,34}})));
+        R_a=0)
+        annotation (Placement(transformation(extent={{-44,-22},{18,34}})));
       OpenIPSL.Electrical.Controls.PSSE.TG.HYGOV hYGOV(
         R=0.06 "Permanent droop, p.u",
         r=0.4 "Temporary droop, p.u",
@@ -4267,7 +4282,8 @@ package Original "Library of original Nordic 44 model"
         T_w=1,
         A_t=1.1,
         D_turb=0.5,
-        q_NL=0.1) annotation (Placement(transformation(extent={{-38,54},{20,80}})));
+        q_NL=0.1)
+        annotation (Placement(transformation(extent={{-38,54},{20,80}})));
       OpenIPSL.Electrical.Controls.PSSE.ES.SCRX sCRX(
         K=61 "K",
         T_AT_B=0.25385,
@@ -4276,8 +4292,10 @@ package Original "Library of original Nordic 44 model"
         E_MIN=0,
         E_MAX=4,
         r_cr_fd=0,
-        C_SWITCH=true) annotation (Placement(transformation(extent={{34,-82},{92,-34}})));
-      Modelica.Blocks.Sources.Constant cte(k=0) annotation (Placement(transformation(extent={{-13,-69},{-3,-59}})));
+        C_SWITCH=true)
+        annotation (Placement(transformation(extent={{34,-82},{92,-34}})));
+      Modelica.Blocks.Sources.Constant cte(k=0)
+        annotation (Placement(transformation(extent={{-13,-69},{-3,-59}})));
       OpenIPSL.Electrical.Controls.PSSE.PSS.STAB2A sTAB2A(
         H_LIM=0.03,
         K_2=1,
@@ -4286,59 +4304,55 @@ package Original "Library of original Nordic 44 model"
         T_3=2,
         K_4=0.55,
         K_5=1,
-        T_5=0.01) annotation (Placement(transformation(extent={{-54,-54},{-6,-34}})));
-      OpenIPSL.Interfaces.PwPin p annotation (Placement(transformation(rotation=0, extent={{100,-10},{120,10}}), iconTransformation(extent={{100,-10},{120,10}})));
-      Original.Data.PSSE_data_Original_case PSSE_data annotation (Placement(transformation(extent={{88,88},{98,98}})));
+        T_5=0.01)
+        annotation (Placement(transformation(extent={{-54,-54},{-6,-34}})));
+      OpenIPSL.Interfaces.PwPin p annotation (Placement(transformation(rotation
+              =0, extent={{100,-10},{120,10}}), iconTransformation(extent={{100,
+                -10},{120,10}})));
+      Original.Data.PSSE_data_Original_case PSSE_data
+        annotation (Placement(transformation(extent={{88,88},{98,98}})));
     equation
-      connect(gENSAL.p, p) annotation (Line(points={{21.1,6},{78,6},{78,0},{110,0}}, color={0,0,255}));
-      connect(sTAB2A.VOTHSG, sCRX.VOTHSG) annotation (Line(points={{-3.81818,-44},{-3.81818,-43.84},{34.2417,-43.84}}, color={0,0,127}));
-      connect(sCRX.EFD, gENSAL.EFD) annotation (Line(points={{92.9667,-57.76},{96,-57.76},{96,-84},{-72,-84},{-72,-8},{-43.38,-8}}, color={0,0,127}));
-      connect(gENSAL.PELEC, sTAB2A.PELEC) annotation (Line(points={{20.48,-8},{26,-8},{26,-32},{-62,-32},{-62,-44},{-53.3455,-44}}, color={0,0,127}));
-      connect(hYGOV.PMECH, gENSAL.PMECH) annotation (Line(points={{21.45,67},{28,67},{28,40},{-52,40},{-52,20},{-43.38,20}}, color={0,0,127}));
-      connect(gENSAL.PMECH0, hYGOV.PMECH0) annotation (Line(points={{20.48,-2.4},{42,-2.4},{42,90},{-50,90},{-50,60.5},{-37.275,60.5}}, color={0,0,127}));
-      connect(gENSAL.SPEED, hYGOV.SPEED) annotation (Line(points={{20.48,31.2},{36,31.2},{36,84},{-44,84},{-44,73.5},{-37.275,73.5}}, color={0,0,127}));
-      connect(gENSAL.XADIFD, sCRX.XADIFD) annotation (Line(points={{20.48,-19.2},{24,-19.2},{24,-61.12},{33.7583,-61.12}}, color={0,0,127}));
-      connect(cte.y, sCRX.VOEL) annotation (Line(points={{-2.5,-64},{14,-64},{14,-49.6},{34.2417,-49.6}}, color={0,0,127}));
-      connect(gENSAL.EFD0, sCRX.EFD0) annotation (Line(points={{20.48,-13.6},{28,-13.6},{28,-77.44},{34.2417,-77.44}}, color={0,0,127}));
-      connect(gENSAL.ETERM, sCRX.ECOMP) annotation (Line(points={{20.48,20},{30,20},{30,-37.12},{34.2417,-37.12}}, color={0,0,127}));
-      connect(sCRX.VUEL, cte.y) annotation (Line(points={{34.2417,-55.84},{14,-55.84},{14,-64},{-2.5,-64}}, color={0,0,127}));
+      connect(gENSAL.p, p) annotation (Line(points={{21.1,6},{78,6},{78,0},{110,
+              0}}, color={0,0,255}));
+      connect(sTAB2A.VOTHSG, sCRX.VOTHSG) annotation (Line(points={{-3.81818,-44},
+              {-3.81818,-43.84},{34.2417,-43.84}}, color={0,0,127}));
+      connect(sCRX.EFD, gENSAL.EFD) annotation (Line(points={{92.9667,-57.76},{
+              96,-57.76},{96,-84},{-72,-84},{-72,-8},{-43.38,-8}}, color={0,0,
+              127}));
+      connect(gENSAL.PELEC, sTAB2A.PELEC) annotation (Line(points={{20.48,-8},{
+              26,-8},{26,-32},{-62,-32},{-62,-44},{-53.3455,-44}}, color={0,0,
+              127}));
+      connect(hYGOV.PMECH, gENSAL.PMECH) annotation (Line(points={{21.45,67},{
+              28,67},{28,40},{-52,40},{-52,20},{-43.38,20}}, color={0,0,127}));
+      connect(gENSAL.PMECH0, hYGOV.PMECH0) annotation (Line(points={{20.48,-2.4},
+              {42,-2.4},{42,90},{-50,90},{-50,60.5},{-37.275,60.5}}, color={0,0,
+              127}));
+      connect(gENSAL.SPEED, hYGOV.SPEED) annotation (Line(points={{20.48,31.2},
+              {36,31.2},{36,84},{-44,84},{-44,73.5},{-37.275,73.5}}, color={0,0,
+              127}));
+      connect(gENSAL.XADIFD, sCRX.XADIFD) annotation (Line(points={{20.48,-19.2},
+              {24,-19.2},{24,-61.12},{33.7583,-61.12}}, color={0,0,127}));
+      connect(cte.y, sCRX.VOEL) annotation (Line(points={{-2.5,-64},{14,-64},{
+              14,-49.6},{34.2417,-49.6}}, color={0,0,127}));
+      connect(gENSAL.EFD0, sCRX.EFD0) annotation (Line(points={{20.48,-13.6},{
+              28,-13.6},{28,-77.44},{34.2417,-77.44}}, color={0,0,127}));
+      connect(gENSAL.ETERM, sCRX.ECOMP) annotation (Line(points={{20.48,20},{30,
+              20},{30,-37.12},{34.2417,-37.12}}, color={0,0,127}));
+      connect(sCRX.VUEL, cte.y) annotation (Line(points={{34.2417,-55.84},{14,-55.84},
+              {14,-64},{-2.5,-64}}, color={0,0,127}));
       annotation (
-        Icon(graphics={Ellipse(extent={{-100,-100},{101,100}}, lineColor={0,0,255}),Line(
+        Icon(graphics={Ellipse(extent={{-100,-100},{101,100}}, lineColor={0,0,
+              255}),Line(
                   points={{-76,-26},{-28,52},{27,-52},{74,23}},
                   color={0,0,255},
                   smooth=Smooth.Bezier)}),
-        Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,100}})),
-        Documentation(revisions="<html>
-<!--DISCLAIMER-->
-<p>OpenIPSL:</p>
-<p>Copyright 2016 SmarTS Lab (Sweden)</p>
-<ul>
-<li>SmarTS Lab, research group at KTH: <a href=\"https://www.kth.se/en\">https://www.kth.se/en</a></li>
-</ul>
-<p>The authors can be contacted by email: <a href=\"mailto:luigiv@kth.se\">luigiv@kth.se</a></p>
-
-<p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
-<p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
-
-<p></p>
-<p>iPSL:</p>
-<p>Copyright 2015-2016 RTE (France), SmarTS Lab (Sweden), AIA (Spain) and DTU (Denmark)</p>
-<ul>
-<li>RTE: <a href=\"http://www.rte-france.com\">http://www.rte-france.com</a></li>
-<li>SmarTS Lab, research group at KTH: <a href=\"https://www.kth.se/en\">https://www.kth.se/en</a></li>
-<li>AIA: <a href=\"http://www.aia.es/en/energy\"> http://www.aia.es/en/energy</a></li>
-<li>DTU: <a href=\"http://www.dtu.dk/english\"> http://www.dtu.dk/english</a></li>
-</ul>
-<p>The authors can be contacted by email: <a href=\"mailto:info@itesla-ipsl.org\">info@itesla-ipsl.org</a></p>
-
-<p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
-<p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
-</html>
-"));
+        Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},
+                {100,100}})),
+        Documentation);
     end Gen3_bus_6700;
 
     model Gen3_bus_7100 "Configuration of synchronous generator with regulators: GENSAL, HYGOV, SCRX, STAB2A;
-      Nordic 44 model: Buses 3115, 5300, 6100, 6700, 7100"
+          Nordic 44 model: Buses 3115, 5300, 6100, 6700, 7100"
       OpenIPSL.Electrical.Machines.PSSE.GENSAL gENSAL(
         D=0 "Speed Damping",
         Tpd0=5,
@@ -4372,7 +4386,8 @@ package Original "Library of original Nordic 44 model"
         T_w=1,
         A_t=1.01,
         D_turb=0.5,
-        q_NL=0.1) annotation (Placement(transformation(extent={{-50,50},{0,72}})));
+        q_NL=0.1)
+        annotation (Placement(transformation(extent={{-50,50},{0,72}})));
       OpenIPSL.Electrical.Controls.PSSE.ES.SCRX sCRX(
         K=61 "K",
         T_AT_B=0.25385,
@@ -4381,8 +4396,10 @@ package Original "Library of original Nordic 44 model"
         E_MIN=0,
         E_MAX=4,
         r_cr_fd=0,
-        C_SWITCH=true) annotation (Placement(transformation(extent={{30,-80},{86,-34}})));
-      Modelica.Blocks.Sources.Constant cte(k=0) annotation (Placement(transformation(extent={{-7,-59},{3,-49}})));
+        C_SWITCH=true)
+        annotation (Placement(transformation(extent={{30,-80},{86,-34}})));
+      Modelica.Blocks.Sources.Constant cte(k=0)
+        annotation (Placement(transformation(extent={{-7,-59},{3,-49}})));
       OpenIPSL.Electrical.Controls.PSSE.PSS.STAB2A sTAB2A(
         H_LIM=0.03,
         K_2=1,
@@ -4391,59 +4408,54 @@ package Original "Library of original Nordic 44 model"
         T_3=2,
         K_4=0.55,
         K_5=1,
-        T_5=0.01) annotation (Placement(transformation(extent={{-58,-50},{-12,-30}})));
-      OpenIPSL.Interfaces.PwPin p annotation (Placement(transformation(rotation=0, extent={{100,-10},{120,10}}), iconTransformation(extent={{100,-10},{120,10}})));
-      Original.Data.PSSE_data_Original_case PSSE_data annotation (Placement(transformation(extent={{86,88},{96,98}})));
+        T_5=0.01)
+        annotation (Placement(transformation(extent={{-58,-50},{-12,-30}})));
+      OpenIPSL.Interfaces.PwPin p annotation (Placement(transformation(rotation
+              =0, extent={{100,-10},{120,10}}), iconTransformation(extent={{100,
+                -10},{120,10}})));
+      Original.Data.PSSE_data_Original_case PSSE_data
+        annotation (Placement(transformation(extent={{86,88},{96,98}})));
     equation
-      connect(gENSAL.p, p) annotation (Line(points={{7,6},{56,6},{56,0},{110,0}}, color={0,0,255}));
-      connect(hYGOV.PMECH, gENSAL.PMECH) annotation (Line(points={{1.25,61},{10,61},{10,36},{-64,36},{-64,19},{-55.4,19}}, color={0,0,127}));
-      connect(gENSAL.SPEED, hYGOV.SPEED) annotation (Line(points={{6.4,29.4},{16,29.4},{16,80},{-58,80},{-58,66.5},{-49.375,66.5}}, color={0,0,127}));
-      connect(gENSAL.PMECH0, hYGOV.PMECH0) annotation (Line(points={{6.4,-1.8},{22,-1.8},{22,88},{-68,88},{-68,55.5},{-49.375,55.5}}, color={0,0,127}));
-      connect(sCRX.EFD, gENSAL.EFD) annotation (Line(points={{86.9333,-56.77},{94,-56.77},{94,-86},{-76,-86},{-76,-7},{-55.4,-7}}, color={0,0,127}));
-      connect(gENSAL.PELEC, sTAB2A.PELEC) annotation (Line(points={{6.4,-7},{12,-7},{12,-26},{-64,-26},{-64,-40},{-57.3727,-40}}, color={0,0,127}));
-      connect(sTAB2A.VOTHSG, sCRX.VOTHSG) annotation (Line(points={{-9.90909,-40},{4,-40},{4,-43.43},{30.2333,-43.43}}, color={0,0,127}));
-      connect(cte.y, sCRX.VOEL) annotation (Line(points={{3.5,-54},{6,-54},{6,-48.95},{30.2333,-48.95}}, color={0,0,127}));
-      connect(gENSAL.XADIFD, sCRX.XADIFD) annotation (Line(points={{6.4,-17.4},{14,-17.4},{14,-59.99},{29.7667,-59.99}}, color={0,0,127}));
-      connect(gENSAL.EFD0, sCRX.EFD0) annotation (Line(points={{6.4,-12.2},{18,-12.2},{18,-75.63},{30.2333,-75.63}}, color={0,0,127}));
-      connect(gENSAL.ETERM, sCRX.ECOMP) annotation (Line(points={{6.4,19},{24,19},{24,-36.99},{30.2333,-36.99}}, color={0,0,127}));
-      connect(sCRX.VUEL, cte.y) annotation (Line(points={{30.2333,-54.93},{6,-54.93},{6,-54},{3.5,-54}}, color={0,0,127}));
+      connect(gENSAL.p, p) annotation (Line(points={{7,6},{56,6},{56,0},{110,0}},
+            color={0,0,255}));
+      connect(hYGOV.PMECH, gENSAL.PMECH) annotation (Line(points={{1.25,61},{10,
+              61},{10,36},{-64,36},{-64,19},{-55.4,19}}, color={0,0,127}));
+      connect(gENSAL.SPEED, hYGOV.SPEED) annotation (Line(points={{6.4,29.4},{
+              16,29.4},{16,80},{-58,80},{-58,66.5},{-49.375,66.5}}, color={0,0,
+              127}));
+      connect(gENSAL.PMECH0, hYGOV.PMECH0) annotation (Line(points={{6.4,-1.8},
+              {22,-1.8},{22,88},{-68,88},{-68,55.5},{-49.375,55.5}}, color={0,0,
+              127}));
+      connect(sCRX.EFD, gENSAL.EFD) annotation (Line(points={{86.9333,-56.77},{
+              94,-56.77},{94,-86},{-76,-86},{-76,-7},{-55.4,-7}}, color={0,0,
+              127}));
+      connect(gENSAL.PELEC, sTAB2A.PELEC) annotation (Line(points={{6.4,-7},{12,
+              -7},{12,-26},{-64,-26},{-64,-40},{-57.3727,-40}}, color={0,0,127}));
+      connect(sTAB2A.VOTHSG, sCRX.VOTHSG) annotation (Line(points={{-9.90909,-40},
+              {4,-40},{4,-43.43},{30.2333,-43.43}}, color={0,0,127}));
+      connect(cte.y, sCRX.VOEL) annotation (Line(points={{3.5,-54},{6,-54},{6,-48.95},
+              {30.2333,-48.95}}, color={0,0,127}));
+      connect(gENSAL.XADIFD, sCRX.XADIFD) annotation (Line(points={{6.4,-17.4},
+              {14,-17.4},{14,-59.99},{29.7667,-59.99}}, color={0,0,127}));
+      connect(gENSAL.EFD0, sCRX.EFD0) annotation (Line(points={{6.4,-12.2},{18,
+              -12.2},{18,-75.63},{30.2333,-75.63}}, color={0,0,127}));
+      connect(gENSAL.ETERM, sCRX.ECOMP) annotation (Line(points={{6.4,19},{24,
+              19},{24,-36.99},{30.2333,-36.99}}, color={0,0,127}));
+      connect(sCRX.VUEL, cte.y) annotation (Line(points={{30.2333,-54.93},{6,-54.93},
+              {6,-54},{3.5,-54}}, color={0,0,127}));
       annotation (
-        Icon(graphics={Ellipse(extent={{-100,-100},{101,100}}, lineColor={0,0,255}),Line(
+        Icon(graphics={Ellipse(extent={{-100,-100},{101,100}}, lineColor={0,0,
+              255}),Line(
                   points={{-76,-26},{-28,52},{27,-52},{74,23}},
                   color={0,0,255},
                   smooth=Smooth.Bezier)}),
-        Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,100}})),
-        Documentation(revisions="<html>
-<!--DISCLAIMER-->
-<p>OpenIPSL:</p>
-<p>Copyright 2016 SmarTS Lab (Sweden)</p>
-<ul>
-<li>SmarTS Lab, research group at KTH: <a href=\"https://www.kth.se/en\">https://www.kth.se/en</a></li>
-</ul>
-<p>The authors can be contacted by email: <a href=\"mailto:luigiv@kth.se\">luigiv@kth.se</a></p>
-
-<p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
-<p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
-
-<p></p>
-<p>iPSL:</p>
-<p>Copyright 2015-2016 RTE (France), SmarTS Lab (Sweden), AIA (Spain) and DTU (Denmark)</p>
-<ul>
-<li>RTE: <a href=\"http://www.rte-france.com\">http://www.rte-france.com</a></li>
-<li>SmarTS Lab, research group at KTH: <a href=\"https://www.kth.se/en\">https://www.kth.se/en</a></li>
-<li>AIA: <a href=\"http://www.aia.es/en/energy\"> http://www.aia.es/en/energy</a></li>
-<li>DTU: <a href=\"http://www.dtu.dk/english\"> http://www.dtu.dk/english</a></li>
-</ul>
-<p>The authors can be contacted by email: <a href=\"mailto:info@itesla-ipsl.org\">info@itesla-ipsl.org</a></p>
-
-<p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
-<p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
-</html>
-"));
+        Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},
+                {100,100}})),
+        Documentation);
     end Gen3_bus_7100;
 
     model Gen5_bus_5100 "Configuration of synchronous generator with regulators: GENSAL, SEXS, HYGOV;
-      Nordic 44 model: Buses 5100, 5400, 5500, 6000, 6500"
+          Nordic 44 model: Buses 5100, 5400, 5500, 6000, 6500"
       OpenIPSL.Electrical.Machines.PSSE.GENSAL gENSAL(
         Tpd0=4.9629 "T'do (> 0)",
         Tppd0=0.05 "T''do (> 0)",
@@ -4464,7 +4476,8 @@ package Original "Library of original Nordic 44 model"
         M_b=1200,
         S10=0.1,
         S12=0.3,
-        R_a=0) annotation (Placement(transformation(extent={{-68,-20},{-6,30}})));
+        R_a=0)
+        annotation (Placement(transformation(extent={{-68,-20},{-6,30}})));
       OpenIPSL.Electrical.Controls.PSSE.TG.HYGOV hYGOV(
         R=0.06 "Permanent droop, p.u",
         r=0.4 "Temporary droop, p.u",
@@ -4477,65 +4490,58 @@ package Original "Library of original Nordic 44 model"
         T_w=1,
         A_t=1.1,
         D_turb=0.5,
-        q_NL=0.1) annotation (Placement(transformation(extent={{-62,46},{-10,74}})));
+        q_NL=0.1)
+        annotation (Placement(transformation(extent={{-62,46},{-10,74}})));
       OpenIPSL.Electrical.Controls.PSSE.ES.SEXS sEXS(
         K=200,
         T_AT_B=0.05,
         T_B=100,
         T_E=0.5,
         E_MIN=0,
-        E_MAX=4) annotation (Placement(transformation(extent={{16,-88},{86,-33}})));
-      Modelica.Blocks.Sources.Constant cte(k=0) annotation (Placement(transformation(extent={{-33,-65},{-23,-55}})));
-      OpenIPSL.Interfaces.PwPin p annotation (Placement(transformation(rotation=0, extent={{100,-10},{120,10}}), iconTransformation(extent={{100,-10},{120,10}})));
-      Original.Data.PSSE_data_Original_case PSSE_data annotation (Placement(transformation(extent={{88,88},{98,98}})));
+        E_MAX=4)
+        annotation (Placement(transformation(extent={{16,-88},{86,-33}})));
+      Modelica.Blocks.Sources.Constant cte(k=0)
+        annotation (Placement(transformation(extent={{-33,-65},{-23,-55}})));
+      OpenIPSL.Interfaces.PwPin p annotation (Placement(transformation(rotation
+              =0, extent={{100,-10},{120,10}}), iconTransformation(extent={{100,
+                -10},{120,10}})));
+      Original.Data.PSSE_data_Original_case PSSE_data
+        annotation (Placement(transformation(extent={{88,88},{98,98}})));
     equation
-      connect(cte.y, sEXS.VOEL) annotation (Line(points={{-22.5,-60},{38.75,-60},{38.75,-88}}, color={0,0,127}));
-      connect(sEXS.EFD, gENSAL.EFD) annotation (Line(points={{87.75,-57.4444},{94,-57.4444},{94,-92},{-78,-92},{-78,-7.5},{-67.38,-7.5}}, color={0,0,127}));
-      connect(hYGOV.PMECH, gENSAL.PMECH) annotation (Line(points={{-8.7,60},{0,60},{0,38},{-76,38},{-76,17.5},{-67.38,17.5}}, color={0,0,127}));
-      connect(gENSAL.SPEED, hYGOV.SPEED) annotation (Line(points={{-3.52,27.5},{4,27.5},{4,76},{-70,76},{-70,67},{-61.35,67}}, color={0,0,127}));
-      connect(gENSAL.PMECH0, hYGOV.PMECH0) annotation (Line(points={{-3.52,-2.5},{12,-2.5},{12,84},{-76,84},{-76,53},{-61.35,53}}, color={0,0,127}));
-      connect(gENSAL.EFD0, sEXS.EFD0) annotation (Line(points={{-3.52,-12.5},{4,-12.5},{4,-77.3056},{16,-77.3056}}, color={0,0,127}));
-      connect(gENSAL.ETERM, sEXS.ECOMP) annotation (Line(points={{-3.52,17.5},{8,17.5},{8,-57.4444},{16,-57.4444}}, color={0,0,127}));
-      connect(gENSAL.p, p) annotation (Line(points={{-2.9,5},{46,5},{46,0},{110,0}}, color={0,0,255}));
-      connect(sEXS.VOTHSG, cte.y) annotation (Line(points={{16,-43.6944},{-4,-43.6944},{-4,-60},{-22.5,-60}}, color={0,0,127}));
-      connect(sEXS.VUEL, cte.y) annotation (Line(points={{28.25,-88},{-4,-88},{-4,-60},{-22.5,-60}}, color={0,0,127}));
+      connect(cte.y, sEXS.VOEL) annotation (Line(points={{-22.5,-60},{38.75,-60},
+              {38.75,-88}}, color={0,0,127}));
+      connect(sEXS.EFD, gENSAL.EFD) annotation (Line(points={{87.75,-57.4444},{
+              94,-57.4444},{94,-92},{-78,-92},{-78,-7.5},{-67.38,-7.5}}, color=
+              {0,0,127}));
+      connect(hYGOV.PMECH, gENSAL.PMECH) annotation (Line(points={{-8.7,60},{0,
+              60},{0,38},{-76,38},{-76,17.5},{-67.38,17.5}}, color={0,0,127}));
+      connect(gENSAL.SPEED, hYGOV.SPEED) annotation (Line(points={{-3.52,27.5},
+              {4,27.5},{4,76},{-70,76},{-70,67},{-61.35,67}}, color={0,0,127}));
+      connect(gENSAL.PMECH0, hYGOV.PMECH0) annotation (Line(points={{-3.52,-2.5},
+              {12,-2.5},{12,84},{-76,84},{-76,53},{-61.35,53}}, color={0,0,127}));
+      connect(gENSAL.EFD0, sEXS.EFD0) annotation (Line(points={{-3.52,-12.5},{4,
+              -12.5},{4,-77.3056},{16,-77.3056}}, color={0,0,127}));
+      connect(gENSAL.ETERM, sEXS.ECOMP) annotation (Line(points={{-3.52,17.5},{
+              8,17.5},{8,-57.4444},{16,-57.4444}}, color={0,0,127}));
+      connect(gENSAL.p, p) annotation (Line(points={{-2.9,5},{46,5},{46,0},{110,
+              0}}, color={0,0,255}));
+      connect(sEXS.VOTHSG, cte.y) annotation (Line(points={{16,-43.6944},{-4,-43.6944},
+              {-4,-60},{-22.5,-60}}, color={0,0,127}));
+      connect(sEXS.VUEL, cte.y) annotation (Line(points={{28.25,-88},{-4,-88},{
+              -4,-60},{-22.5,-60}}, color={0,0,127}));
       annotation (
-        Icon(graphics={Ellipse(extent={{-100,-100},{101,100}}, lineColor={0,0,255}),Line(
+        Icon(graphics={Ellipse(extent={{-100,-100},{101,100}}, lineColor={0,0,
+              255}),Line(
                   points={{-76,-26},{-28,52},{27,-52},{74,23}},
                   color={0,0,255},
                   smooth=Smooth.Bezier)}),
-        Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,100}})),
-        Documentation(revisions="<html>
-<!--DISCLAIMER-->
-<p>OpenIPSL:</p>
-<p>Copyright 2016 SmarTS Lab (Sweden)</p>
-<ul>
-<li>SmarTS Lab, research group at KTH: <a href=\"https://www.kth.se/en\">https://www.kth.se/en</a></li>
-</ul>
-<p>The authors can be contacted by email: <a href=\"mailto:luigiv@kth.se\">luigiv@kth.se</a></p>
-
-<p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
-<p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
-
-<p></p>
-<p>iPSL:</p>
-<p>Copyright 2015-2016 RTE (France), SmarTS Lab (Sweden), AIA (Spain) and DTU (Denmark)</p>
-<ul>
-<li>RTE: <a href=\"http://www.rte-france.com\">http://www.rte-france.com</a></li>
-<li>SmarTS Lab, research group at KTH: <a href=\"https://www.kth.se/en\">https://www.kth.se/en</a></li>
-<li>AIA: <a href=\"http://www.aia.es/en/energy\"> http://www.aia.es/en/energy</a></li>
-<li>DTU: <a href=\"http://www.dtu.dk/english\"> http://www.dtu.dk/english</a></li>
-</ul>
-<p>The authors can be contacted by email: <a href=\"mailto:info@itesla-ipsl.org\">info@itesla-ipsl.org</a></p>
-
-<p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
-<p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
-</html>
-"));
+        Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},
+                {100,100}})),
+        Documentation);
     end Gen5_bus_5100;
 
     model Gen5_bus_5400 "Configuration of synchronous generator with regulators: GENSAL, SEXS, HYGOV;
-      Nordic 44 model: Buses 5100, 5400, 5500, 6000, 6500"
+          Nordic 44 model: Buses 5100, 5400, 5500, 6000, 6500"
       OpenIPSL.Electrical.Machines.PSSE.GENSAL gENSAL(
         Tppd0=0.05 "T''do (> 0)",
         Tppq0=0.15 "T''qo (> 0)",
@@ -4569,65 +4575,61 @@ package Original "Library of original Nordic 44 model"
         T_w=1,
         A_t=1.1,
         D_turb=0.5,
-        q_NL=0.1) annotation (Placement(transformation(extent={{-60,50},{0,76}})));
+        q_NL=0.1)
+        annotation (Placement(transformation(extent={{-60,50},{0,76}})));
       OpenIPSL.Electrical.Controls.PSSE.ES.SEXS sEXS(
         K=200,
         T_AT_B=0.05,
         T_B=100,
         T_E=0.5,
         E_MIN=0,
-        E_MAX=4) annotation (Placement(transformation(extent={{14,-76},{86,-29}})));
-      Modelica.Blocks.Sources.Constant cte(k=0) annotation (Placement(transformation(extent={{-19,-57},{-9,-47}})));
-      OpenIPSL.Interfaces.PwPin p annotation (Placement(transformation(rotation=0, extent={{100,-10},{120,10}}), iconTransformation(extent={{100,-10},{120,10}})));
-      Original.Data.PSSE_data_Original_case PSSE_data annotation (Placement(transformation(extent={{88,88},{98,98}})));
+        E_MAX=4)
+        annotation (Placement(transformation(extent={{14,-76},{86,-29}})));
+      Modelica.Blocks.Sources.Constant cte(k=0)
+        annotation (Placement(transformation(extent={{-19,-57},{-9,-47}})));
+      OpenIPSL.Interfaces.PwPin p annotation (Placement(transformation(rotation
+              =0, extent={{100,-10},{120,10}}), iconTransformation(extent={{100,
+                -10},{120,10}})));
+      Original.Data.PSSE_data_Original_case PSSE_data
+        annotation (Placement(transformation(extent={{88,88},{98,98}})));
     equation
-      connect(gENSAL.p, p) annotation (Line(points={{3.2,9},{54,9},{54,0},{110,0}}, color={0,0,255}));
-      connect(hYGOV.PMECH, gENSAL.PMECH) annotation (Line(points={{1.5,63},{10,63},{10,50},{10,40},{-74,40},{-74,22.5},{-63.36,22.5}}, color={0,0,127}));
-      connect(sEXS.EFD, gENSAL.EFD) annotation (Line(points={{87.8,-49.8889},{94,-49.8889},{94,-86},{-74,-86},{-74,-4.5},{-63.36,-4.5}}, color={0,0,127}));
-      connect(cte.y, sEXS.VOEL) annotation (Line(points={{-8.5,-52},{37.4,-52},{37.4,-76}}, color={0,0,127}));
-      connect(gENSAL.EFD0, sEXS.EFD0) annotation (Line(points={{2.56,-9.9},{6,-9.9},{6,-66.8611},{14,-66.8611}}, color={0,0,127}));
-      connect(gENSAL.ETERM, sEXS.ECOMP) annotation (Line(points={{2.56,22.5},{10,22.5},{10,-49.8889},{14,-49.8889}}, color={0,0,127}));
-      connect(gENSAL.SPEED, hYGOV.SPEED) annotation (Line(points={{2.56,33.3},{16,33.3},{16,80},{-66,80},{-66,69.5},{-59.25,69.5}}, color={0,0,127}));
-      connect(gENSAL.PMECH0, hYGOV.PMECH0) annotation (Line(points={{2.56,0.9},{24,0.9},{24,88},{-70,88},{-70,56.5},{-59.25,56.5}}, color={0,0,127}));
-      connect(sEXS.VUEL, cte.y) annotation (Line(points={{26.6,-76},{-2,-76},{-2,-52},{-8.5,-52}}, color={0,0,127}));
-      connect(sEXS.VOTHSG, cte.y) annotation (Line(points={{14,-38.1389},{-2,-38.1389},{-2,-52},{-8.5,-52}}, color={0,0,127}));
+      connect(gENSAL.p, p) annotation (Line(points={{3.2,9},{54,9},{54,0},{110,
+              0}}, color={0,0,255}));
+      connect(hYGOV.PMECH, gENSAL.PMECH) annotation (Line(points={{1.5,63},{10,
+              63},{10,50},{10,40},{-74,40},{-74,22.5},{-63.36,22.5}}, color={0,
+              0,127}));
+      connect(sEXS.EFD, gENSAL.EFD) annotation (Line(points={{87.8,-49.8889},{
+              94,-49.8889},{94,-86},{-74,-86},{-74,-4.5},{-63.36,-4.5}}, color=
+              {0,0,127}));
+      connect(cte.y, sEXS.VOEL) annotation (Line(points={{-8.5,-52},{37.4,-52},
+              {37.4,-76}}, color={0,0,127}));
+      connect(gENSAL.EFD0, sEXS.EFD0) annotation (Line(points={{2.56,-9.9},{6,-9.9},
+              {6,-66.8611},{14,-66.8611}}, color={0,0,127}));
+      connect(gENSAL.ETERM, sEXS.ECOMP) annotation (Line(points={{2.56,22.5},{
+              10,22.5},{10,-49.8889},{14,-49.8889}}, color={0,0,127}));
+      connect(gENSAL.SPEED, hYGOV.SPEED) annotation (Line(points={{2.56,33.3},{
+              16,33.3},{16,80},{-66,80},{-66,69.5},{-59.25,69.5}}, color={0,0,
+              127}));
+      connect(gENSAL.PMECH0, hYGOV.PMECH0) annotation (Line(points={{2.56,0.9},
+              {24,0.9},{24,88},{-70,88},{-70,56.5},{-59.25,56.5}}, color={0,0,
+              127}));
+      connect(sEXS.VUEL, cte.y) annotation (Line(points={{26.6,-76},{-2,-76},{-2,
+              -52},{-8.5,-52}}, color={0,0,127}));
+      connect(sEXS.VOTHSG, cte.y) annotation (Line(points={{14,-38.1389},{-2,-38.1389},
+              {-2,-52},{-8.5,-52}}, color={0,0,127}));
       annotation (
-        Icon(graphics={Ellipse(extent={{-100,-100},{101,100}}, lineColor={0,0,255}),Line(
+        Icon(graphics={Ellipse(extent={{-100,-100},{101,100}}, lineColor={0,0,
+              255}),Line(
                   points={{-76,-26},{-28,52},{27,-52},{74,23}},
                   color={0,0,255},
                   smooth=Smooth.Bezier)}),
-        Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,100}})),
-        Documentation(revisions="<html>
-<!--DISCLAIMER-->
-<p>OpenIPSL:</p>
-<p>Copyright 2016 SmarTS Lab (Sweden)</p>
-<ul>
-<li>SmarTS Lab, research group at KTH: <a href=\"https://www.kth.se/en\">https://www.kth.se/en</a></li>
-</ul>
-<p>The authors can be contacted by email: <a href=\"mailto:luigiv@kth.se\">luigiv@kth.se</a></p>
-
-<p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
-<p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
-
-<p></p>
-<p>iPSL:</p>
-<p>Copyright 2015-2016 RTE (France), SmarTS Lab (Sweden), AIA (Spain) and DTU (Denmark)</p>
-<ul>
-<li>RTE: <a href=\"http://www.rte-france.com\">http://www.rte-france.com</a></li>
-<li>SmarTS Lab, research group at KTH: <a href=\"https://www.kth.se/en\">https://www.kth.se/en</a></li>
-<li>AIA: <a href=\"http://www.aia.es/en/energy\"> http://www.aia.es/en/energy</a></li>
-<li>DTU: <a href=\"http://www.dtu.dk/english\"> http://www.dtu.dk/english</a></li>
-</ul>
-<p>The authors can be contacted by email: <a href=\"mailto:info@itesla-ipsl.org\">info@itesla-ipsl.org</a></p>
-
-<p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
-<p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
-</html>
-"));
+        Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},
+                {100,100}})),
+        Documentation);
     end Gen5_bus_5400;
 
     model Gen5_bus_5500 "Configuration of synchronous generator with regulators: GENSAL, SEXS, HYGOV;
-      Nordic 44 model: Buses 5100, 5400, 5500, 6000, 6500"
+          Nordic 44 model: Buses 5100, 5400, 5500, 6000, 6500"
       OpenIPSL.Electrical.Machines.PSSE.GENSAL gENSAL(
         Tppd0=0.05 "T''do (> 0)",
         Tppq0=0.15 "T''qo (> 0)",
@@ -4648,7 +4650,8 @@ package Original "Library of original Nordic 44 model"
         Q_0=PSSE_data.powers.Q5500,
         S10=0.1,
         S12=0.3,
-        R_a=0) annotation (Placement(transformation(extent={{-68,-20},{-6,32}})));
+        R_a=0)
+        annotation (Placement(transformation(extent={{-68,-20},{-6,32}})));
       OpenIPSL.Electrical.Controls.PSSE.TG.HYGOV hYGOV(
         R=0.06 "Permanent droop, p.u",
         r=0.4 "Temporary droop, p.u",
@@ -4661,65 +4664,60 @@ package Original "Library of original Nordic 44 model"
         T_w=1,
         A_t=1.1,
         D_turb=0.5,
-        q_NL=0.1) annotation (Placement(transformation(extent={{-62,50},{-10,81}})));
+        q_NL=0.1)
+        annotation (Placement(transformation(extent={{-62,50},{-10,81}})));
       OpenIPSL.Electrical.Controls.PSSE.ES.SEXS sEXS(
         K=200,
         T_AT_B=0.05,
         T_B=100,
         T_E=0.5,
         E_MIN=0,
-        E_MAX=4) annotation (Placement(transformation(extent={{10,-82},{80,-36}})));
-      Modelica.Blocks.Sources.Constant cte(k=0) annotation (Placement(transformation(extent={{-30,-66},{-16,-52}})));
-      OpenIPSL.Interfaces.PwPin p annotation (Placement(transformation(rotation=0, extent={{100,-10},{120,10}}), iconTransformation(extent={{100,-10},{120,10}})));
-      Original.Data.PSSE_data_Original_case PSSE_data annotation (Placement(transformation(extent={{88,88},{98,98}})));
+        E_MAX=4)
+        annotation (Placement(transformation(extent={{10,-82},{80,-36}})));
+      Modelica.Blocks.Sources.Constant cte(k=0)
+        annotation (Placement(transformation(extent={{-30,-66},{-16,-52}})));
+      OpenIPSL.Interfaces.PwPin p annotation (Placement(transformation(rotation
+              =0, extent={{100,-10},{120,10}}), iconTransformation(extent={{100,
+                -10},{120,10}})));
+      Original.Data.PSSE_data_Original_case PSSE_data
+        annotation (Placement(transformation(extent={{88,88},{98,98}})));
     equation
-      connect(hYGOV.PMECH, gENSAL.PMECH) annotation (Line(points={{-8.7,65.5},{-2,65.5},{-2,40},{-76,40},{-76,19},{-67.38,19}}, color={0,0,127}));
-      connect(gENSAL.SPEED, hYGOV.SPEED) annotation (Line(points={{-3.52,29.4},{4,29.4},{4,88},{-66,88},{-66,73.25},{-61.35,73.25}}, color={0,0,127}));
-      connect(gENSAL.PMECH0, hYGOV.PMECH0) annotation (Line(points={{-3.52,-1.8},{12,-1.8},{12,92},{-74,92},{-74,57.75},{-61.35,57.75}}, color={0,0,127}));
-      connect(sEXS.EFD, gENSAL.EFD) annotation (Line(points={{81.75,-56.4444},{90,-56.4444},{90,-92},{90,-90},{-84,-90},{-84,-7},{-67.38,-7}}, color={0,0,127}));
-      connect(cte.y, sEXS.VOEL) annotation (Line(points={{-15.3,-59},{32.75,-59},{32.75,-82}}, color={0,0,127}));
-      connect(gENSAL.EFD0, sEXS.EFD0) annotation (Line(points={{-3.52,-12.2},{0,-12.2},{0,-73.0556},{10,-73.0556}}, color={0,0,127}));
-      connect(gENSAL.ETERM, sEXS.ECOMP) annotation (Line(points={{-3.52,19},{6,19},{6,-56.4444},{10,-56.4444}}, color={0,0,127}));
-      connect(gENSAL.p, p) annotation (Line(points={{-2.9,6},{22,6},{50,6},{50,0},{110,0}}, color={0,0,255}));
-      connect(sEXS.VOTHSG, cte.y) annotation (Line(points={{10,-44.9444},{-6,-44.9444},{-6,-59},{-15.3,-59}}, color={0,0,127}));
-      connect(sEXS.VUEL, cte.y) annotation (Line(points={{22.25,-82},{-6,-82},{-6,-59},{-15.3,-59}}, color={0,0,127}));
+      connect(hYGOV.PMECH, gENSAL.PMECH) annotation (Line(points={{-8.7,65.5},{
+              -2,65.5},{-2,40},{-76,40},{-76,19},{-67.38,19}}, color={0,0,127}));
+      connect(gENSAL.SPEED, hYGOV.SPEED) annotation (Line(points={{-3.52,29.4},
+              {4,29.4},{4,88},{-66,88},{-66,73.25},{-61.35,73.25}}, color={0,0,
+              127}));
+      connect(gENSAL.PMECH0, hYGOV.PMECH0) annotation (Line(points={{-3.52,-1.8},
+              {12,-1.8},{12,92},{-74,92},{-74,57.75},{-61.35,57.75}}, color={0,
+              0,127}));
+      connect(sEXS.EFD, gENSAL.EFD) annotation (Line(points={{81.75,-56.4444},{
+              90,-56.4444},{90,-92},{90,-90},{-84,-90},{-84,-7},{-67.38,-7}},
+            color={0,0,127}));
+      connect(cte.y, sEXS.VOEL) annotation (Line(points={{-15.3,-59},{32.75,-59},
+              {32.75,-82}}, color={0,0,127}));
+      connect(gENSAL.EFD0, sEXS.EFD0) annotation (Line(points={{-3.52,-12.2},{0,
+              -12.2},{0,-73.0556},{10,-73.0556}}, color={0,0,127}));
+      connect(gENSAL.ETERM, sEXS.ECOMP) annotation (Line(points={{-3.52,19},{6,
+              19},{6,-56.4444},{10,-56.4444}}, color={0,0,127}));
+      connect(gENSAL.p, p) annotation (Line(points={{-2.9,6},{22,6},{50,6},{50,
+              0},{110,0}}, color={0,0,255}));
+      connect(sEXS.VOTHSG, cte.y) annotation (Line(points={{10,-44.9444},{-6,-44.9444},
+              {-6,-59},{-15.3,-59}}, color={0,0,127}));
+      connect(sEXS.VUEL, cte.y) annotation (Line(points={{22.25,-82},{-6,-82},{
+              -6,-59},{-15.3,-59}}, color={0,0,127}));
       annotation (
-        Icon(graphics={Ellipse(extent={{-100,-100},{101,100}}, lineColor={0,0,255}),Line(
+        Icon(graphics={Ellipse(extent={{-100,-100},{101,100}}, lineColor={0,0,
+              255}),Line(
                   points={{-76,-26},{-28,52},{27,-52},{74,23}},
                   color={0,0,255},
                   smooth=Smooth.Bezier)}),
-        Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,100}})),
-        Documentation(revisions="<html>
-<!--DISCLAIMER-->
-<p>OpenIPSL:</p>
-<p>Copyright 2016 SmarTS Lab (Sweden)</p>
-<ul>
-<li>SmarTS Lab, research group at KTH: <a href=\"https://www.kth.se/en\">https://www.kth.se/en</a></li>
-</ul>
-<p>The authors can be contacted by email: <a href=\"mailto:luigiv@kth.se\">luigiv@kth.se</a></p>
-
-<p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
-<p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
-
-<p></p>
-<p>iPSL:</p>
-<p>Copyright 2015-2016 RTE (France), SmarTS Lab (Sweden), AIA (Spain) and DTU (Denmark)</p>
-<ul>
-<li>RTE: <a href=\"http://www.rte-france.com\">http://www.rte-france.com</a></li>
-<li>SmarTS Lab, research group at KTH: <a href=\"https://www.kth.se/en\">https://www.kth.se/en</a></li>
-<li>AIA: <a href=\"http://www.aia.es/en/energy\"> http://www.aia.es/en/energy</a></li>
-<li>DTU: <a href=\"http://www.dtu.dk/english\"> http://www.dtu.dk/english</a></li>
-</ul>
-<p>The authors can be contacted by email: <a href=\"mailto:info@itesla-ipsl.org\">info@itesla-ipsl.org</a></p>
-
-<p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
-<p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
-</html>
-"));
+        Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},
+                {100,100}})),
+        Documentation);
     end Gen5_bus_5500;
 
     model Gen5_bus_6000 "Configuration of synchronous generator with regulators: GENSAL, SEXS, HYGOV;
-      Nordic 44 model: Buses 5100, 5400, 5500, 6000, 6500"
+          Nordic 44 model: Buses 5100, 5400, 5500, 6000, 6500"
       OpenIPSL.Electrical.Machines.PSSE.GENSAL gENSAL(
         Tppd0=0.05 "T''do (> 0)",
         Tppq0=0.15 "T''qo (> 0)",
@@ -4740,7 +4738,8 @@ package Original "Library of original Nordic 44 model"
         S10=0.1,
         S12=0.3,
         R_a=0,
-        V_0=PSSE_data.voltages.V6000) annotation (Placement(transformation(extent={{-58,-16},{0,32}})));
+        V_0=PSSE_data.voltages.V6000)
+        annotation (Placement(transformation(extent={{-58,-16},{0,32}})));
       OpenIPSL.Electrical.Controls.PSSE.TG.HYGOV hYGOV(
         R=0.06 "Permanent droop, p.u",
         VELM=0.2 "Gate open/close velosiy limit, p.u/sec",
@@ -4753,65 +4752,60 @@ package Original "Library of original Nordic 44 model"
         T_w=1,
         A_t=1.1,
         D_turb=0.5,
-        q_NL=0.1) annotation (Placement(transformation(extent={{-58,48},{2,78}})));
+        q_NL=0.1)
+        annotation (Placement(transformation(extent={{-58,48},{2,78}})));
       OpenIPSL.Electrical.Controls.PSSE.ES.SEXS sEXS(
         K=20,
         T_AT_B=1,
         T_B=0.1,
         T_E=0.1,
         E_MIN=-4,
-        E_MAX=4) annotation (Placement(transformation(extent={{24,-66},{86,-26}})));
-      Modelica.Blocks.Sources.Constant cte(k=0) annotation (Placement(transformation(extent={{-23,-51},{-13,-41}})));
-      OpenIPSL.Interfaces.PwPin p annotation (Placement(transformation(rotation=0, extent={{100,-10},{120,10}}), iconTransformation(extent={{100,-10},{120,10}})));
-      Original.Data.PSSE_data_Original_case PSSE_data annotation (Placement(transformation(extent={{88,88},{98,98}})));
+        E_MAX=4)
+        annotation (Placement(transformation(extent={{24,-66},{86,-26}})));
+      Modelica.Blocks.Sources.Constant cte(k=0)
+        annotation (Placement(transformation(extent={{-23,-51},{-13,-41}})));
+      OpenIPSL.Interfaces.PwPin p annotation (Placement(transformation(rotation
+              =0, extent={{100,-10},{120,10}}), iconTransformation(extent={{100,
+                -10},{120,10}})));
+      Original.Data.PSSE_data_Original_case PSSE_data
+        annotation (Placement(transformation(extent={{88,88},{98,98}})));
     equation
-      connect(hYGOV.PMECH, gENSAL.PMECH) annotation (Line(points={{3.5,63},{8,63},{8,36},{-64,36},{-64,20},{-57.42,20}}, color={0,0,127}));
-      connect(gENSAL.SPEED, hYGOV.SPEED) annotation (Line(points={{2.32,29.6},{14,29.6},{14,82},{-66,82},{-66,70.5},{-57.25,70.5}}, color={0,0,127}));
-      connect(gENSAL.PMECH0, hYGOV.PMECH0) annotation (Line(points={{2.32,0.8},{20,0.8},{20,88},{-70,88},{-70,55.5},{-57.25,55.5}}, color={0,0,127}));
-      connect(sEXS.EFD, gENSAL.EFD) annotation (Line(points={{87.55,-43.7778},{92,-43.7778},{92,-76},{-70,-76},{-70,-4},{-57.42,-4}}, color={0,0,127}));
-      connect(cte.y, sEXS.VOEL) annotation (Line(points={{-12.5,-46},{16,-46},{16,-66},{44.15,-66}}, color={0,0,127}));
-      connect(gENSAL.EFD0, sEXS.EFD0) annotation (Line(points={{2.32,-8.8},{10,-8.8},{10,-58.2222},{24,-58.2222}}, color={0,0,127}));
-      connect(gENSAL.ETERM, sEXS.ECOMP) annotation (Line(points={{2.32,20},{16,20},{16,-43.7778},{24,-43.7778}}, color={0,0,127}));
-      connect(gENSAL.p, p) annotation (Line(points={{2.9,8},{62,8},{62,0},{110,0}}, color={0,0,255}));
-      connect(sEXS.VOTHSG, cte.y) annotation (Line(points={{24,-33.7778},{2,-33.7778},{2,-46},{-12.5,-46}}, color={0,0,127}));
-      connect(sEXS.VUEL, cte.y) annotation (Line(points={{34.85,-66},{2,-66},{2,-46},{-12.5,-46}}, color={0,0,127}));
+      connect(hYGOV.PMECH, gENSAL.PMECH) annotation (Line(points={{3.5,63},{8,
+              63},{8,36},{-64,36},{-64,20},{-57.42,20}}, color={0,0,127}));
+      connect(gENSAL.SPEED, hYGOV.SPEED) annotation (Line(points={{2.32,29.6},{
+              14,29.6},{14,82},{-66,82},{-66,70.5},{-57.25,70.5}}, color={0,0,
+              127}));
+      connect(gENSAL.PMECH0, hYGOV.PMECH0) annotation (Line(points={{2.32,0.8},
+              {20,0.8},{20,88},{-70,88},{-70,55.5},{-57.25,55.5}}, color={0,0,
+              127}));
+      connect(sEXS.EFD, gENSAL.EFD) annotation (Line(points={{87.55,-43.7778},{
+              92,-43.7778},{92,-76},{-70,-76},{-70,-4},{-57.42,-4}}, color={0,0,
+              127}));
+      connect(cte.y, sEXS.VOEL) annotation (Line(points={{-12.5,-46},{16,-46},{
+              16,-66},{44.15,-66}}, color={0,0,127}));
+      connect(gENSAL.EFD0, sEXS.EFD0) annotation (Line(points={{2.32,-8.8},{10,
+              -8.8},{10,-58.2222},{24,-58.2222}}, color={0,0,127}));
+      connect(gENSAL.ETERM, sEXS.ECOMP) annotation (Line(points={{2.32,20},{16,
+              20},{16,-43.7778},{24,-43.7778}}, color={0,0,127}));
+      connect(gENSAL.p, p) annotation (Line(points={{2.9,8},{62,8},{62,0},{110,
+              0}}, color={0,0,255}));
+      connect(sEXS.VOTHSG, cte.y) annotation (Line(points={{24,-33.7778},{2,-33.7778},
+              {2,-46},{-12.5,-46}}, color={0,0,127}));
+      connect(sEXS.VUEL, cte.y) annotation (Line(points={{34.85,-66},{2,-66},{2,
+              -46},{-12.5,-46}}, color={0,0,127}));
       annotation (
-        Icon(graphics={Ellipse(extent={{-100,-100},{101,100}}, lineColor={0,0,255}),Line(
+        Icon(graphics={Ellipse(extent={{-100,-100},{101,100}}, lineColor={0,0,
+              255}),Line(
                   points={{-76,-26},{-28,52},{27,-52},{74,23}},
                   color={0,0,255},
                   smooth=Smooth.Bezier)}),
-        Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,100}})),
-        Documentation(revisions="<html>
-<!--DISCLAIMER-->
-<p>OpenIPSL:</p>
-<p>Copyright 2016 SmarTS Lab (Sweden)</p>
-<ul>
-<li>SmarTS Lab, research group at KTH: <a href=\"https://www.kth.se/en\">https://www.kth.se/en</a></li>
-</ul>
-<p>The authors can be contacted by email: <a href=\"mailto:luigiv@kth.se\">luigiv@kth.se</a></p>
-
-<p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
-<p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
-
-<p></p>
-<p>iPSL:</p>
-<p>Copyright 2015-2016 RTE (France), SmarTS Lab (Sweden), AIA (Spain) and DTU (Denmark)</p>
-<ul>
-<li>RTE: <a href=\"http://www.rte-france.com\">http://www.rte-france.com</a></li>
-<li>SmarTS Lab, research group at KTH: <a href=\"https://www.kth.se/en\">https://www.kth.se/en</a></li>
-<li>AIA: <a href=\"http://www.aia.es/en/energy\"> http://www.aia.es/en/energy</a></li>
-<li>DTU: <a href=\"http://www.dtu.dk/english\"> http://www.dtu.dk/english</a></li>
-</ul>
-<p>The authors can be contacted by email: <a href=\"mailto:info@itesla-ipsl.org\">info@itesla-ipsl.org</a></p>
-
-<p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
-<p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
-</html>
-"));
+        Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},
+                {100,100}})),
+        Documentation);
     end Gen5_bus_6000;
 
     model Gen5_bus_6500 "Configuration of synchronous generator with regulators: GENSAL, SEXS, HYGOV;
-      Nordic 44 model: Buses 5100, 5400, 5500, 6000, 6500"
+          Nordic 44 model: Buses 5100, 5400, 5500, 6000, 6500"
       OpenIPSL.Electrical.Machines.PSSE.GENSAL gENSAL(
         Tppd0=0.05 "T''do (> 0)",
         Tppq0=0.15 "T''qo (> 0)",
@@ -4832,7 +4826,8 @@ package Original "Library of original Nordic 44 model"
         Q_0=PSSE_data.powers.Q6500,
         S10=0.1,
         S12=0.3,
-        R_a=0) annotation (Placement(transformation(extent={{-70,-22},{-10,42}})));
+        R_a=0)
+        annotation (Placement(transformation(extent={{-70,-22},{-10,42}})));
       OpenIPSL.Electrical.Controls.PSSE.TG.HYGOV hYGOV(
         R=0.06 "Permanent droop, p.u",
         r=0.4 "Temporary droop, p.u",
@@ -4845,115 +4840,58 @@ package Original "Library of original Nordic 44 model"
         T_w=1,
         A_t=1.1,
         D_turb=0.5,
-        q_NL=0.1) annotation (Placement(transformation(extent={{-68,62},{-14,88}})));
+        q_NL=0.1)
+        annotation (Placement(transformation(extent={{-68,62},{-14,88}})));
       OpenIPSL.Electrical.Controls.PSSE.ES.SEXS sEXS(
         K=200,
         T_AT_B=0.05,
         T_B=100,
         T_E=0.5,
         E_MIN=0,
-        E_MAX=4) annotation (Placement(transformation(extent={{6,-78},{80,-30}})));
-      Modelica.Blocks.Sources.Constant cte(k=0) annotation (Placement(transformation(extent={{-40,-59},{-30,-49}})));
-      OpenIPSL.Interfaces.PwPin p annotation (Placement(transformation(rotation=0, extent={{100,-10},{120,10}}), iconTransformation(extent={{100,-10},{120,10}})));
-      Original.Data.PSSE_data_Original_case PSSE_data annotation (Placement(transformation(extent={{86,86},{98,98}})));
+        E_MAX=4)
+        annotation (Placement(transformation(extent={{6,-78},{80,-30}})));
+      Modelica.Blocks.Sources.Constant cte(k=0)
+        annotation (Placement(transformation(extent={{-40,-59},{-30,-49}})));
+      OpenIPSL.Interfaces.PwPin p annotation (Placement(transformation(rotation
+              =0, extent={{100,-10},{120,10}}), iconTransformation(extent={{100,
+                -10},{120,10}})));
+      Original.Data.PSSE_data_Original_case PSSE_data
+        annotation (Placement(transformation(extent={{86,86},{98,98}})));
     equation
-      connect(hYGOV.PMECH, gENSAL.PMECH) annotation (Line(points={{-12.65,75},{0,75},{0,46},{-82,46},{-82,26},{-69.4,26}}, color={0,0,127}));
-      connect(gENSAL.p, p) annotation (Line(points={{-7,10},{72,10},{72,0},{110,0}}, color={0,0,255}));
-      connect(cte.y, sEXS.VOEL) annotation (Line(points={{-29.5,-54},{0,-54},{0,-78},{30.05,-78}}, color={0,0,127}));
-      connect(gENSAL.EFD0, sEXS.EFD0) annotation (Line(points={{-7.6,-12.4},{0,-12.4},{0,-68.6667},{6,-68.6667}}, color={0,0,127}));
-      connect(gENSAL.SPEED, hYGOV.SPEED) annotation (Line(points={{-7.6,38.8},{6,38.8},{6,92},{-72,92},{-72,81.5},{-67.325,81.5}}, color={0,0,127}));
-      connect(gENSAL.PMECH0, hYGOV.PMECH0) annotation (Line(points={{-7.6,0.4},{14,0.4},{14,96},{-78,96},{-78,68.5},{-67.325,68.5}}, color={0,0,127}));
-      connect(sEXS.EFD, gENSAL.EFD) annotation (Line(points={{81.85,-51.3333},{86,-51.3333},{86,-56},{86,-92},{-82,-92},{-82,-6},{-69.4,-6}}, color={0,0,127}));
-      connect(gENSAL.ETERM, sEXS.ECOMP) annotation (Line(points={{-7.6,26},{2,26},{2,-51.3333},{6,-51.3333}}, color={0,0,127}));
-      connect(sEXS.VOTHSG, cte.y) annotation (Line(points={{6,-39.3333},{-18,-39.3333},{-18,-54},{-29.5,-54}}, color={0,0,127}));
-      connect(sEXS.VUEL, cte.y) annotation (Line(points={{18.95,-78},{-18,-78},{-18,-54},{-29.5,-54}}, color={0,0,127}));
+      connect(hYGOV.PMECH, gENSAL.PMECH) annotation (Line(points={{-12.65,75},{
+              0,75},{0,46},{-82,46},{-82,26},{-69.4,26}}, color={0,0,127}));
+      connect(gENSAL.p, p) annotation (Line(points={{-7,10},{72,10},{72,0},{110,
+              0}}, color={0,0,255}));
+      connect(cte.y, sEXS.VOEL) annotation (Line(points={{-29.5,-54},{0,-54},{0,
+              -78},{30.05,-78}}, color={0,0,127}));
+      connect(gENSAL.EFD0, sEXS.EFD0) annotation (Line(points={{-7.6,-12.4},{0,
+              -12.4},{0,-68.6667},{6,-68.6667}}, color={0,0,127}));
+      connect(gENSAL.SPEED, hYGOV.SPEED) annotation (Line(points={{-7.6,38.8},{
+              6,38.8},{6,92},{-72,92},{-72,81.5},{-67.325,81.5}}, color={0,0,
+              127}));
+      connect(gENSAL.PMECH0, hYGOV.PMECH0) annotation (Line(points={{-7.6,0.4},
+              {14,0.4},{14,96},{-78,96},{-78,68.5},{-67.325,68.5}}, color={0,0,
+              127}));
+      connect(sEXS.EFD, gENSAL.EFD) annotation (Line(points={{81.85,-51.3333},{
+              86,-51.3333},{86,-56},{86,-92},{-82,-92},{-82,-6},{-69.4,-6}},
+            color={0,0,127}));
+      connect(gENSAL.ETERM, sEXS.ECOMP) annotation (Line(points={{-7.6,26},{2,
+              26},{2,-51.3333},{6,-51.3333}}, color={0,0,127}));
+      connect(sEXS.VOTHSG, cte.y) annotation (Line(points={{6,-39.3333},{-18,-39.3333},
+              {-18,-54},{-29.5,-54}}, color={0,0,127}));
+      connect(sEXS.VUEL, cte.y) annotation (Line(points={{18.95,-78},{-18,-78},
+              {-18,-54},{-29.5,-54}}, color={0,0,127}));
       annotation (
-        Icon(graphics={Ellipse(extent={{-100,-100},{101,100}}, lineColor={0,0,255}),Line(
+        Icon(graphics={Ellipse(extent={{-100,-100},{101,100}}, lineColor={0,0,
+              255}),Line(
                   points={{-76,-26},{-28,52},{27,-52},{74,23}},
                   color={0,0,255},
                   smooth=Smooth.Bezier)}),
-        Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,100}})),
-        Documentation(revisions="<html>
-<!--DISCLAIMER-->
-<p>OpenIPSL:</p>
-<p>Copyright 2016 SmarTS Lab (Sweden)</p>
-<ul>
-<li>SmarTS Lab, research group at KTH: <a href=\"https://www.kth.se/en\">https://www.kth.se/en</a></li>
-</ul>
-<p>The authors can be contacted by email: <a href=\"mailto:luigiv@kth.se\">luigiv@kth.se</a></p>
-
-<p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
-<p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
-
-<p></p>
-<p>iPSL:</p>
-<p>Copyright 2015-2016 RTE (France), SmarTS Lab (Sweden), AIA (Spain) and DTU (Denmark)</p>
-<ul>
-<li>RTE: <a href=\"http://www.rte-france.com\">http://www.rte-france.com</a></li>
-<li>SmarTS Lab, research group at KTH: <a href=\"https://www.kth.se/en\">https://www.kth.se/en</a></li>
-<li>AIA: <a href=\"http://www.aia.es/en/energy\"> http://www.aia.es/en/energy</a></li>
-<li>DTU: <a href=\"http://www.dtu.dk/english\"> http://www.dtu.dk/english</a></li>
-</ul>
-<p>The authors can be contacted by email: <a href=\"mailto:info@itesla-ipsl.org\">info@itesla-ipsl.org</a></p>
-
-<p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
-<p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
-</html>
-"));
+        Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},
+                {100,100}})),
+        Documentation);
     end Gen5_bus_6500;
-    annotation (Documentation(revisions="<html>
-<!--DISCLAIMER-->
-<p>OpenIPSL:</p>
-<p>Copyright 2016 SmarTS Lab (Sweden)</p>
-<ul>
-<li>SmarTS Lab, research group at KTH: <a href=\"https://www.kth.se/en\">https://www.kth.se/en</a></li>
-</ul>
-<p>The authors can be contacted by email: <a href=\"mailto:luigiv@kth.se\">luigiv@kth.se</a></p>
-
-<p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
-<p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
-
-<p></p>
-<p>iPSL:</p>
-<p>Copyright 2015-2016 RTE (France), SmarTS Lab (Sweden), AIA (Spain) and DTU (Denmark)</p>
-<ul>
-<li>RTE: <a href=\"http://www.rte-france.com\">http://www.rte-france.com</a></li>
-<li>SmarTS Lab, research group at KTH: <a href=\"https://www.kth.se/en\">https://www.kth.se/en</a></li>
-<li>AIA: <a href=\"http://www.aia.es/en/energy\"> http://www.aia.es/en/energy</a></li>
-<li>DTU: <a href=\"http://www.dtu.dk/english\"> http://www.dtu.dk/english</a></li>
-</ul>
-<p>The authors can be contacted by email: <a href=\"mailto:info@itesla-ipsl.org\">info@itesla-ipsl.org</a></p>
-
-<p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
-<p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
-</html>
-"));
+    annotation (Documentation);
   end Generators;
-  annotation (Documentation(revisions="<html>
-<!--DISCLAIMER-->
-<p>OpenIPSL:</p>
-<p>Copyright 2016 SmarTS Lab (Sweden)</p>
-<ul>
-<li>SmarTS Lab, research group at KTH: <a href=\"https://www.kth.se/en\">https://www.kth.se/en</a></li>
-</ul>
-<p>The authors can be contacted by email: <a href=\"mailto:luigiv@kth.se\">luigiv@kth.se</a></p>
-
-<p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
-<p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
-
-<p></p>
-<p>iPSL:</p>
-<p>Copyright 2015-2016 RTE (France), SmarTS Lab (Sweden), AIA (Spain) and DTU (Denmark)</p>
-<ul>
-<li>RTE: <a href=\"http://www.rte-france.com\">http://www.rte-france.com</a></li>
-<li>SmarTS Lab, research group at KTH: <a href=\"https://www.kth.se/en\">https://www.kth.se/en</a></li>
-<li>AIA: <a href=\"http://www.aia.es/en/energy\"> http://www.aia.es/en/energy</a></li>
-<li>DTU: <a href=\"http://www.dtu.dk/english\"> http://www.dtu.dk/english</a></li>
-</ul>
-<p>The authors can be contacted by email: <a href=\"mailto:info@itesla-ipsl.org\">info@itesla-ipsl.org</a></p>
-
-<p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
-<p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
-</html>
-"));
+  annotation (Documentation);
 end Original;

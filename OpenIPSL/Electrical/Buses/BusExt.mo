@@ -1,8 +1,11 @@
 within OpenIPSL.Electrical.Buses;
 model BusExt
-  outer OpenIPSL.Electrical.SystemBase SysData "Must add this line in all models";
-  parameter Integer nu(min=1) = 1 "Number of left connection" annotation (Dialog(connectorSizing=true), HideResult=true);
-  parameter Integer no(min=1) = 1 "Number of right connections" annotation (Dialog(connectorSizing=true), HideResult=true);
+  outer OpenIPSL.Electrical.SystemBase SysData
+    "Must add this line in all models";
+  parameter Integer nu(min=1) = 1 "Number of left connection"
+    annotation (Dialog(connectorSizing=true), HideResult=true);
+  parameter Integer no(min=1) = 1 "Number of right connections"
+    annotation (Dialog(connectorSizing=true), HideResult=true);
   OpenIPSL.Interfaces.PwPin u[nu] annotation (Placement(
       visible=true,
       transformation(
@@ -25,10 +28,14 @@ model BusExt
         rotation=0)));
   Real V(start=V_0) "Bus voltage magnitude (pu)";
   Real angle(start=angle_0) "Bus voltage angle (deg)";
-  parameter Real V_0 "Voltage magnitude (pu)" annotation (Dialog(group="Power flow data"));
-  parameter Real angle_0 "Voltage angle (deg)" annotation (Dialog(group="Power flow data"));
-  parameter Real V_b=130 "Base voltage (kV)" annotation (Dialog(group="Power flow data"));
-  parameter Real S_b=SysData.S_b "System base power (MVA)" annotation (Dialog(group="Power flow data"));
+  parameter Real V_0 "Voltage magnitude (pu)"
+    annotation (Dialog(group="Power flow data"));
+  parameter Real angle_0 "Voltage angle (deg)"
+    annotation (Dialog(group="Power flow data"));
+  parameter Real V_b=130 "Base voltage (kV)"
+    annotation (Dialog(group="Power flow data"));
+  parameter Real S_b=SysData.S_b "System base power (MVA)"
+    annotation (Dialog(group="Power flow data"));
 protected
   parameter Real vr0=V_0*cos(angle_0*Modelica.Constants.pi/180);
   parameter Real vi0=V_0*sin(angle_0*Modelica.Constants.pi/180);
@@ -48,7 +55,8 @@ equation
   angle = atan2(o[1].vi, o[1].vr)*180/Modelica.Constants.pi;
   annotation (
     Diagram(coordinateSystem(extent={{0,-100},{20,100}})),
-    Icon(coordinateSystem(extent={{0,-100},{20,100}}, preserveAspectRatio=false), graphics={Rectangle(
+    Icon(coordinateSystem(extent={{0,-100},{20,100}}, preserveAspectRatio=false),
+        graphics={Rectangle(
           extent={{0,100},{20,-100}},
           lineColor={0,0,255},
           fillColor={85,170,255},
@@ -71,31 +79,5 @@ equation
 <td><p><a href=\"mailto:luigiv@kth.se\">luigiv@kth.se</a></p></td>
 </tr>
 </table>
-</html>", revisions="<html>
-<!--DISCLAIMER-->
-<p>OpenIPSL:</p>
-<p>Copyright 2016 SmarTS Lab (Sweden)</p>
-<ul>
-<li>SmarTS Lab, research group at KTH: <a href=\"https://www.kth.se/en\">https://www.kth.se/en</a></li>
-</ul>
-<p>The authors can be contacted by email: <a href=\"mailto:luigiv@kth.se\">luigiv@kth.se</a></p>
-
-<p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
-<p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
-
-<p></p>
-<p>iPSL:</p>
-<p>Copyright 2015-2016 RTE (France), SmarTS Lab (Sweden), AIA (Spain) and DTU (Denmark)</p>
-<ul>
-<li>RTE: <a href=\"http://www.rte-france.com\">http://www.rte-france.com</a></li>
-<li>SmarTS Lab, research group at KTH: <a href=\"https://www.kth.se/en\">https://www.kth.se/en</a></li>
-<li>AIA: <a href=\"http://www.aia.es/en/energy\"> http://www.aia.es/en/energy</a></li>
-<li>DTU: <a href=\"http://www.dtu.dk/english\"> http://www.dtu.dk/english</a></li>
-</ul>
-<p>The authors can be contacted by email: <a href=\"mailto:info@itesla-ipsl.org\">info@itesla-ipsl.org</a></p>
-
-<p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
-<p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
-</html>
-"));
+</html>"));
 end BusExt;
