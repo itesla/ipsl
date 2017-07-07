@@ -2,11 +2,10 @@
 [![Documentation Status](https://readthedocs.org/projects/openipsl/badge/?version=latest)](http://openipsl.readthedocs.io/en/latest/?badge=latest)
 
 # **OpenIPSL**: Open-Instance Power System Library:
-The OpenIPSL or Open-Instance Power System Library is a fork of of the [iTesla Power System Library](https://github.com/itesla/ipsl), currently developed and maintained by the [SmarTS Lab](https://www.kth.se/en/ees/omskolan/organisation/avdelningar/epe/research/smart-transmission-systems-laboratory-smarts-lab-1.627203) research group, collaborators and friends (contributions are welcome!).
+The OpenIPSL or Open-Instance Power System Library is a fork of of the [iTesla Power System Library](https://github.com/itesla/ipsl), currently developed and maintained by the [SmarTS Lab](http://openipsl.readthedocs.io/en/latest/community/community-home.html); Prof. [Luigi Vanfretti's](https://github.com/lvanfretti) research group formerly at KTH Royal Institute of Technology, Stockholm, Sweden, now the [ALSETLab](https://github.com/ALSETLab) at [Rensselaer Polytechnic Institute](http://rpi.edu), [ALSETLab](https://github.com/ALSETLab), Troy, NY., collaborators and friends (contributions are welcome!).
 
-The iPSL is a [Modelica](https://www.modelica.org) library developed during the [iTesla project](http://www.itesla-project.eu/).
-The members of this project (OpenIPSL) at SmarTS Lab where key developers of the iPSL until March 31, 2016, when the iTesla project was completed.
-As iPSL is part of the [iTesla Tool](https://github.com/itesla/ipst), and thus, it is subject to the needs of the consortium that develops the iTesla Tool. We thus decided to create the OpenIPSL fork in order to develop the library in the direction that is most suitable for researchers and teachers/professors.
+The iPSL is a [Modelica](https://www.modelica.org) library developed during the [iTesla project](http://www.itesla-project.eu/). The members of this project (OpenIPSL) at SmarTS Lab (now [ALSETLab](https://github.com/ALSETLab)) where key developers of the iPSL until March 31, 2016, when the iTesla project was completed. Prof. [Luigi Vanfretti's](https://github.com/lvanfretti) lead the development of a large ammount of the models of the library (particularly those that replicate results from PSAT and PSS/E).
+iPSL is part of the [iTesla Tool](https://github.com/itesla/ipst), and thus, it is subject to the needs of the consortium that develops the iTesla Tool. Therefore, the SmarTS Lab / ALSETLab team decided to create the OpenIPSL fork in order to develop the library in a direction that is more suitable for researchers and teachers/professors, and in a transparent, open source software approach.
 
 As such, the purpose of OpenIPSL are to be used as a research library (therefore frequent release times may be available), with maximum compatibility with OpenModelica (to provide a free/libre and cost-free alternative for power system dynamic simulation), to provide as many as possible typical "test networks" for use in research and teaching, and to be developed in such way that the library can efficiently be used for power system simulation within Modelica-based workflows (i.e. helping to give reference power system models for development and testing of Modelica back-end compilers) when faced with power system simulation challenges.
 
@@ -15,9 +14,9 @@ This project encompasses the development of a Modelica library for power system 
 As such, there are no solver tools provided in this repository (no Power Flow Solvers, no Time-Domain solvers, etc.).
 You can find more information in our [**documentation**](http://openipsl.readthedocs.io/en/latest/user-guide/get-started.html).
 
-The OpenIPSL contains the models developed by SmarTS Lab during the iTesla project, and necesssary models that were implemented by RTE and AIA, that we can maintain.
+The OpenIPSL contains the models developed by SmarTS Lab during the iTesla project, and necesssary models that were publically released or implemented by RTE and AIA, that we can maintain properly.
 Note that several models have been removed from what it is available in iPSL (see [here](https://github.com/SmarTS-Lab/OpenIPSL/pull/10)).
-However, we have removed all models that are dependent on a specific software tool from the power systems domain that we don't have access for Software-to-Software validation, and those that require us access to closed standards that we don't have money to buy in order to maintain them (i.e. IEC Wind Turbine models).
+We have removed all models that are dependent on a specific software tool from the power systems domain that we don't have access for Software-to-Software validation, and those that require us to have access to closed (and expensive) standards that we don't have money to buy in order to maintain them (i.e. IEC Wind Turbine models).
 
 ## Documentation:
 Please follow this link to our [**documentation**](http://openipsl.readthedocs.io/).
@@ -28,7 +27,7 @@ Our documentation assumes that you have working knowledge of the Modelica langua
 
 As such, the documentation is limited, and aims to provide very consice information for people who fulfill the requirements above. If you do not fulfill these requirements, we recommend that you first get acquainted with both Modelica and Power Systems.
 
-Additional details about many of the models in OpenIPSL are available in disparate sources. Some of these are a reflection of the results from the efforts of many students that have worked with Prof. Luigi Vanfretti. See our [Publication List](http://openipsl.readthedocs.io/en/latest/publications.html) for more details on the models available.
+Additional details about many of the models in OpenIPSL are available in disparate sources. Some of these are a reflection of the results from the efforts of many students that have worked with  Prof. [Luigi Vanfretti's](https://github.com/lvanfretti). See our [Publication List](http://openipsl.readthedocs.io/en/latest/publications.html) for more details on the models available.
 In addition, you can also browse a few of the MSc thesis of the students that carried out their MSc research under Prof. Vanfretti's group in the following links: Joan Russiñol (2013, [download](http://www.eps.ee.kth.se/personal/vanfretti/documents/mscthesis/2013_Joan_MSc_Thesis.pdf)), Le Qi (2014, [dowload](http://www.eps.ee.kth.se/personal/vanfretti/documents/mscthesis/2014_LeQi_MScThesis.pdf)), M.Ahsan Adib Murad (2015, [download](http://www.eps.ee.kth.se/personal/vanfretti/documents/mscthesis/2015_Ahsan_MScThesis.pdf)), and Mengjia Zhang (2015,[download](http://www.eps.ee.kth.se/personal/vanfretti/documents/mscthesis/2015_MengjiaZhang_MScThesis.pdf)).
 
 We would love to develop a detailed documentation, however, the development of OpenIPSL is being carried out in "best effort" basis by the project contributors. If you want a better documentation, and are willing to pay for our time to develop it, get in touch with use through the "Issues" feature in Github.
@@ -51,30 +50,21 @@ Link to Publisher's Website: [SoftwareX](http://www.sciencedirect.com/science/ar
 
 You are also welcome to submit your contributions as stated above.
 
-## License Information:
+## Copyright and License Information:
 
-The OpenIPSL is released under the same license as the original iPSL project.
-All changes applied in this fork have the following copyright statement.
+The OpenIPSL is released under the same license as former iPSL project. All changes applied in this fork have the following copyright statement.
 
 ### OpenIPSL:
-Copyright August 2017 Luigi Vanfretti, Rensselaer Polytechnic Institute, Troy, NY.
+Copyright July 2017 [Luigi Vanfretti](https://github.com/lvanfretti), [Rensselaer Polytechnic Institute](http://rpi.edu), [ALSETLab](https://github.com/ALSETLab), Troy, NY.
 
-Copyright April 2016 - July 2017 SmarTS Lab
-- [SmarTS Lab](http://openipsl.readthedocs.io/en/latest/community/community-home.html), research group at KTH: https://www.kth.se/en
+Copyright April 2016 - May 2017 [SmarTS Lab](http://openipsl.readthedocs.io/en/latest/community/community-home.html); Prof. [Luigi Vanfretti's](https://github.com/lvanfretti) research group formerly at KTH Royal Institute of Technology, Stockholm, Sweden, now [ALSETLab](https://github.com/ALSETLab) at Rensselaer Polytechnic Institute, Troy, NY, USA.
 
 The authors can be contacted by email: [luigi.vanfretti@gmail.com](href="mailto:luigi.vanfretti@gmail.com?subject=From_OpenIPSL_in_Github").
 This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
 If a copy of the MPL was not distributed with this file, You can obtain one at http://mozilla.org/MPL/2.0.
 
-### iPSL:
-
-Copyright 2015-March 31 2016 RTE (France), SmarTS Lab (Sweden), AIA (Spain) and DTU (Denmark)
-- RTE: http://www.rte-france.com
-- [SmarTS Lab](http://openipsl.readthedocs.io/en/latest/community/community-home.html), research group at KTH: https://www.kth.se/en
-- AIA: http://www.aia.es/en/energy
-- DTU: http://www.dtu.dk/english
-
+iPSL:
+Copyright 2015-March 31 2016 [RTE](http://www.rte-france.com) (France), [SmarTS Lab](http://openipsl.readthedocs.io/en/latest/community/community-home.html) (Prof. [Luigi Vanfretti's](https://github.com/lvanfretti) research group formerly at KTH Royal Institute of Technology, Stockholm, Sweden), [AIA](http://www.aia.es/en/energy) (Spain) and [DTU](http://www.dtu.dk/english) (Denmark).
 The authors can be contacted by email: info@itesla-ipsl.org
-
 This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
 If a copy of the MPL was not distributed with this file, You can obtain one at http://mozilla.org/MPL/2.0.
