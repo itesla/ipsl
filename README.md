@@ -28,7 +28,7 @@ Our documentation assumes that you have working knowledge of the Modelica langua
 
 As such, the documentation is limited, and aims to provide very consice information for people who fulfill the requirements above. If you do not fulfill these requirements, we recommend that you first get acquainted with both Modelica and Power Systems.
 
-Additional details about many of the models in OpenIPSL are available in disparate sources. Some of these are a reflection of the results from the efforts of many students that have worked with Prof. Luigi Vanfretti. See our [Publication List](http://openipsl.readthedocs.io/en/latest/publications.html) for more details on the models available. 
+Additional details about many of the models in OpenIPSL are available in disparate sources. Some of these are a reflection of the results from the efforts of many students that have worked with Prof. Luigi Vanfretti. See our [Publication List](http://openipsl.readthedocs.io/en/latest/publications.html) for more details on the models available.
 In addition, you can also browse a few of the MSc thesis of the students that carried out their MSc research under Prof. Vanfretti's group in the following links: Joan Russiñol (2013, [download](http://www.eps.ee.kth.se/personal/vanfretti/documents/mscthesis/2013_Joan_MSc_Thesis.pdf)), Le Qi (2014, [dowload](http://www.eps.ee.kth.se/personal/vanfretti/documents/mscthesis/2014_LeQi_MScThesis.pdf)), M.Ahsan Adib Murad (2015, [download](http://www.eps.ee.kth.se/personal/vanfretti/documents/mscthesis/2015_Ahsan_MScThesis.pdf)), and Mengjia Zhang (2015,[download](http://www.eps.ee.kth.se/personal/vanfretti/documents/mscthesis/2015_MengjiaZhang_MScThesis.pdf)).
 
 We would love to develop a detailed documentation, however, the development of OpenIPSL is being carried out in "best effort" basis by the project contributors. If you want a better documentation, and are willing to pay for our time to develop it, get in touch with use through the "Issues" feature in Github.
@@ -57,11 +57,12 @@ The OpenIPSL is released under the same license as the original iPSL project.
 All changes applied in this fork have the following copyright statement.
 
 ### OpenIPSL:
+Copyright August 2017 Luigi Vanfretti, Rensselaer Polytechnic Institute, Troy, NY.
 
-Copyright April 2016 - SmarTS Lab
+Copyright April 2016 - July 2017 SmarTS Lab
 - [SmarTS Lab](http://openipsl.readthedocs.io/en/latest/community/community-home.html), research group at KTH: https://www.kth.se/en
 
-The authors can be contacted by email: [luigiv@kth.se](href="mailto:luigiv@kth.se?subject=From_OpenIPSL_in_Github").
+The authors can be contacted by email: [luigi.vanfretti@gmail.com](href="mailto:luigi.vanfretti@gmail.com?subject=From_OpenIPSL_in_Github").
 This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
 If a copy of the MPL was not distributed with this file, You can obtain one at http://mozilla.org/MPL/2.0.
 
