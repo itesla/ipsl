@@ -65,38 +65,38 @@ model Network
     G=0,
     B=0) annotation (Placement(transformation(extent={{-162,-58},{-142,-38}})));
   OpenIPSL.Electrical.Buses.BusExt FSSV(
-    nu=5,
+    np=4,
     V_b=380,
-    no=1,
+    nn=1,
     V_0=PF_results.voltages.V2,
     angle_0=PF_results.voltages.A2)
     annotation (Placement(transformation(extent={{-200,-136},{-198,-62}})));
   OpenIPSL.Electrical.Buses.BusExt FTILL(
-    no=2,
-    nu=4,
+    nn=2,
+    np=4,
     V_b=380,
     V_0=PF_results.voltages.V5,
     angle_0=PF_results.voltages.A5)
     annotation (Placement(transformation(extent={{-100,-130},{-98,-90}})));
   OpenIPSL.Electrical.Buses.BusExt FSBIS(
-    no=2,
-    nu=3,
+    nn=2,
+    np=3,
     V_b=380,
     V_0=PF_results.voltages.V3,
     angle_0=PF_results.voltages.A3)
     annotation (Placement(transformation(extent={{58,-130},{60,-90}})));
   OpenIPSL.Electrical.Buses.BusExt FVERGE(
-    nu=4,
+    np=4,
     V_b=380,
-    no=1,
+    nn=1,
     V_0=PF_results.voltages.V7,
     angle_0=PF_results.voltages.A7) annotation (Placement(transformation(
         extent={{-1,-39},{1,39}},
         rotation=-90,
         origin={1,123})));
   OpenIPSL.Electrical.Buses.BusExt FPAND(
-    nu=4,
-    no=2,
+    np=4,
+    nn=2,
     V_b=380,
     V_0=PF_results.voltages.V1,
     angle_0=PF_results.voltages.A1) annotation (Placement(transformation(
@@ -104,8 +104,8 @@ model Network
         rotation=0,
         origin={-99,19})));
   OpenIPSL.Electrical.Buses.BusExt FTDPRA(
-    nu=2,
-    no=4,
+    np=2,
+    nn=4,
     V_b=380,
     V_0=PF_results.voltages.V4,
     angle_0=PF_results.voltages.A4) annotation (Placement(transformation(
@@ -147,9 +147,9 @@ model Network
     Q_0=PF_results.loads.QL4_1)
     annotation (Placement(transformation(extent={{84,-46},{94,-36}})));
   OpenIPSL.Electrical.Buses.BusExt FVALDI(
-    no=5,
+    nn=4,
     V_b=380,
-    nu=1,
+    np=1,
     V_0=PF_results.voltages.V6,
     angle_0=PF_results.voltages.A6)
     annotation (Placement(transformation(extent={{198,-136},{200,-62}})));
@@ -264,110 +264,116 @@ model Network
   SevenBus.Data.PF_results PF_results
     annotation (Placement(transformation(extent={{-256,148},{-236,168}})));
 equation
-  connect(pwLine.n, FTILL.o[1]) annotation (Line(points={{-142.333,-100},{-100,
-          -100},{-100,-116}}, color={0,0,255}));
-  connect(pwLine1.n, FTILL.o[2]) annotation (Line(points={{-142.333,-120},{-100,
-          -120},{-100,-104}}, color={0,0,255}));
-  connect(pwLine4.p, FTILL.u[1]) annotation (Line(points={{-31.6667,-100},{-98,
-          -100},{-98,-119}}, color={0,0,255}));
-  connect(pwLine5.p, FTILL.u[2]) annotation (Line(points={{-31.6667,-120},{-98,
-          -120},{-98,-113}}, color={0,0,255}));
-  connect(load.p, FTILL.u[3]) annotation (Line(points={{-93,-135.5},{-93,-128},
-          {-93,-122},{-98,-122},{-98,-107}}, color={0,0,255}));
-  connect(pwLine2.p, FSBIS.u[1]) annotation (Line(points={{108.333,-100},{60,-100},
-          {60,-118}}, color={0,0,255}));
-  connect(pwLine3.p, FSBIS.u[2]) annotation (Line(points={{108.333,-120},{60,-120},
-          {60,-110}}, color={0,0,255}));
-  connect(load1.p, FSBIS.u[3]) annotation (Line(points={{65,-135.5},{65,-135.5},
-          {65,-122},{60,-122},{60,-102}}, color={0,0,255}));
-  connect(pwLine4.n, FSBIS.o[1]) annotation (Line(points={{-8.33333,-100},{58,-100},
-          {58,-116}}, color={0,0,255}));
-  connect(pwLine5.n, FSBIS.o[2]) annotation (Line(points={{-8.33333,-120},{58,-120},
-          {58,-104}}, color={0,0,255}));
-  connect(pwLine.p, FSSV.u[1]) annotation (Line(points={{-165.667,-100},{-198,-100},
-          {-198,-116.76}}, color={0,0,255}));
-  connect(pwLine1.p, FSSV.u[2]) annotation (Line(points={{-165.667,-120},{-198,
-          -120},{-198,-107.88}}, color={0,0,255}));
-  connect(pwLine7.p, FSSV.u[3]) annotation (Line(points={{-163.667,-48},{-172,-48},
-          {-172,-98},{-198,-98},{-198,-99}}, color={0,0,255}));
-  connect(pwLine6.p, FSSV.u[4]) annotation (Line(points={{-163.667,-28},{-190,-28},
-          {-190,-90.12},{-198,-90.12}}, color={0,0,255}));
-  connect(pwLine6.n, FPAND.o[1]) annotation (Line(points={{-140.333,-28},{-140,
-          -28},{-140,30},{-100,30},{-100,7.3}}, color={0,0,255}));
-  connect(pwLine7.n, FPAND.o[2]) annotation (Line(points={{-140.333,-48},{-120,
-          -48},{-120,6},{-120,10},{-100,10},{-100,30},{-100,30.7}}, color={0,0,
-          255}));
-  connect(pwLine9.p, FPAND.u[1]) annotation (Line(points={{-61.6667,70},{-70,70},
-          {-70,1.45},{-98,1.45}}, color={0,0,255}));
-  connect(pwLine8.p, FPAND.u[2]) annotation (Line(points={{-61.6667,90},{-90,90},
-          {-90,40},{-98,40},{-98,13.15}}, color={0,0,255}));
-  connect(pwLine8.n, FVERGE.u[1]) annotation (Line(points={{-38.3333,90},{-20,
-          90},{-20,122},{-17.55,122},{-17.55,121}}, color={0,0,255}));
-  connect(pwLine9.n, FVERGE.u[2]) annotation (Line(points={{-38.3333,70},{-2,70},
-          {-2,122},{-5.85,122},{-5.85,121}}, color={0,0,255}));
-  connect(pwLine11.n, FTDPRA.o[1]) annotation (Line(points={{61.6667,70},{64,70},
-          {64,1.45},{98,1.45}}, color={0,0,255}));
-  connect(pwLine10.n, FTDPRA.o[2]) annotation (Line(points={{61.6667,90},{80,90},
-          {80,28},{98,28},{98,13.15}}, color={0,0,255}));
-  connect(pwLine11.p, FVERGE.u[3]) annotation (Line(points={{38.3333,70},{2,70},
-          {2,122},{6,122},{5.85,122},{5.85,121}}, color={0,0,255}));
-  connect(pwLine10.p, FVERGE.u[4]) annotation (Line(points={{38.3333,90},{20,90},
-          {20,122},{17.55,122},{17.55,121}}, color={0,0,255}));
-  connect(load2.p, FPAND.u[3]) annotation (Line(points={{-91,-35.5},{-91,-4},{-98,
+  connect(pwLine.n, FTILL.n[1]) annotation (Line(points={{-145,-100},{-100,-100},
+          {-100,-116}}, color={0,0,255}));
+  connect(pwLine1.n, FTILL.n[2]) annotation (Line(points={{-145,-120},{-100,-120},
+          {-100,-104}}, color={0,0,255}));
+  connect(pwLine4.p, FTILL.p[1]) annotation (Line(points={{-29,-100},{-98,-100},
+          {-98,-119}}, color={0,0,255}));
+  connect(pwLine5.p, FTILL.p[2]) annotation (Line(points={{-29,-120},{-98,-120},
+          {-98,-113}}, color={0,0,255}));
+  connect(load.p, FTILL.p[3]) annotation (Line(points={{-93,-136},{-93,-136},{-93,
+          -122},{-98,-122},{-98,-107}}, color={0,0,255}));
+  connect(pwLine2.p, FSBIS.p[1]) annotation (Line(points={{111,-100},{60,-100},
+          {60,-118}},color={0,0,255}));
+  connect(pwLine3.p, FSBIS.p[2]) annotation (Line(points={{111,-120},{60,-120},
+          {60,-110}},color={0,0,255}));
+  connect(load1.p, FSBIS.p[3]) annotation (Line(points={{65,-136},{65,-136},{65,
+          -122},{60,-122},{60,-102}}, color={0,0,255}));
+  connect(pwLine4.n, FSBIS.n[1]) annotation (Line(points={{-11,-100},{58,-100},
+          {58,-116}},color={0,0,255}));
+  connect(pwLine5.n, FSBIS.n[2]) annotation (Line(points={{-11,-120},{58,-120},
+          {58,-104}},color={0,0,255}));
+  connect(pwLine.p, FSSV.p[1]) annotation (Line(points={{-163,-100},{-198,-100},
+          {-198,-115.65}}, color={0,0,255}));
+  connect(pwLine1.p, FSSV.p[2]) annotation (Line(points={{-163,-120},{-198,-120},
+          {-198,-104.55}}, color={0,0,255}));
+  connect(pwLine7.p, FSSV.p[3]) annotation (Line(points={{-161,-48},{-172,-48},
+          {-172,-98},{-198,-98},{-198,-93.45}}, color={0,0,255}));
+  connect(pwLine6.p, FSSV.p[4]) annotation (Line(points={{-161,-28},{-190,-28},
+          {-190,-82.35},{-198,-82.35}},color={0,0,255}));
+  connect(pwLine6.n, FPAND.n[1]) annotation (Line(points={{-143,-28},{-140,-28},
+          {-140,30},{-100,30},{-100,7.3}}, color={0,0,255}));
+  connect(pwLine7.n, FPAND.n[2]) annotation (Line(points={{-143,-48},{-120,-48},
+          {-120,6},{-120,10},{-100,10},{-100,30},{-100,30.7}}, color={0,0,255}));
+  connect(pwLine9.p, FPAND.p[1]) annotation (Line(points={{-59,70},{-70,70},{-70,
+          1.45},{-98,1.45}}, color={0,0,255}));
+  connect(pwLine8.p, FPAND.p[2]) annotation (Line(points={{-59,90},{-90,90},{-90,
+          40},{-98,40},{-98,13.15}}, color={0,0,255}));
+  connect(pwLine8.n, FVERGE.p[1]) annotation (Line(points={{-41,90},{-20,90},{-20,
+          122},{-17.55,122},{-17.55,121}}, color={0,0,255}));
+  connect(pwLine9.n, FVERGE.p[2]) annotation (Line(points={{-41,70},{-2,70},{-2,
+          122},{-5.85,122},{-5.85,121}}, color={0,0,255}));
+  connect(pwLine11.n, FTDPRA.n[1]) annotation (Line(points={{59,70},{64,70},{64,
+          1.45},{98,1.45}}, color={0,0,255}));
+  connect(pwLine10.n, FTDPRA.n[2]) annotation (Line(points={{59,90},{80,90},{80,
+          28},{98,28},{98,13.15}}, color={0,0,255}));
+  connect(pwLine11.p, FVERGE.p[3]) annotation (Line(points={{41,70},{2,70},{2,
+          122},{6,122},{5.85,122},{5.85,121}}, color={0,0,255}));
+  connect(pwLine10.p, FVERGE.p[4]) annotation (Line(points={{41,90},{20,90},{20,
+          122},{17.55,122},{17.55,121}}, color={0,0,255}));
+  connect(load2.p, FPAND.p[3]) annotation (Line(points={{-91,-36},{-91,-4},{-98,
           -4},{-98,24.85}}, color={0,0,255}));
-  connect(load3.p, FTDPRA.o[3]) annotation (Line(points={{89,-35.5},{89,-18},{
-          89,-4},{98,-4},{98,24.85}}, color={0,0,255}));
-  connect(pwLine3.n, FVALDI.o[1]) annotation (Line(points={{131.667,-120},{198,
-          -120},{198,-116.76}}, color={0,0,255}));
-  connect(pwLine2.n, FVALDI.o[2]) annotation (Line(points={{131.667,-100},{198,
-          -100},{198,-107.88}}, color={0,0,255}));
-  connect(pwLine13.n, FVALDI.o[3]) annotation (Line(points={{161.667,-50},{164,
-          -50},{164,-98},{198,-98},{198,-99}}, color={0,0,255}));
-  connect(pwLine12.n, FVALDI.o[4]) annotation (Line(points={{161.667,-30},{180,
-          -30},{180,-90.12},{198,-90.12}}, color={0,0,255}));
-  connect(pwLine13.p, FTDPRA.u[1]) annotation (Line(points={{138.333,-50},{104,
-          -50},{104,7.3},{100,7.3}}, color={0,0,255}));
-  connect(pwLine12.p, FTDPRA.u[2]) annotation (Line(points={{138.333,-30},{120,
-          -30},{120,30.7},{100,30.7}}, color={0,0,255}));
-  connect(twoWindingTransformer.n, FTDPRA.o[4]) annotation (Line(points={{
+  connect(load3.p, FTDPRA.n[3]) annotation (Line(points={{89,-36},{89,-36},{89,
+          -4},{98,-4},{98,24.85}}, color={0,0,255}));
+  connect(pwLine3.n, FVALDI.n[1]) annotation (Line(points={{129,-120},{198,-120},
+          {198,-115.65}}, color={0,0,255}));
+  connect(pwLine2.n, FVALDI.n[2]) annotation (Line(points={{129,-100},{198,-100},
+          {198,-104.55}}, color={0,0,255}));
+  connect(pwLine13.n, FVALDI.n[3]) annotation (Line(points={{159,-50},{164,-50},
+          {164,-98},{198,-98},{198,-93.45}}, color={0,0,255}));
+  connect(pwLine12.n, FVALDI.n[4]) annotation (Line(points={{159,-30},{180,-30},
+          {180,-82.35},{198,-82.35}}, color={0,0,255}));
+  connect(pwLine13.p, FTDPRA.p[1]) annotation (Line(points={{141,-50},{104,-50},
+          {104,7.3},{100,7.3}}, color={0,0,255}));
+  connect(pwLine12.p, FTDPRA.p[2]) annotation (Line(points={{141,-30},{120,-30},
+          {120,30.7},{100,30.7}}, color={0,0,255}));
+  connect(twoWindingTransformer.n, FTDPRA.n[4]) annotation (Line(points={{
           9.66667,0},{98,0},{98,36},{98,36.55}}, color={0,0,255}));
-  connect(twoWindingTransformer.p, FPAND.u[4]) annotation (Line(points={{-13.6667,
-          0},{-98,0},{-98,36},{-98,36.55}}, color={0,0,255}));
-  connect(pwFault.p, FTILL.u[4]) annotation (Line(points={{-77,-142},{-82,-142},
+  connect(twoWindingTransformer.p, FPAND.p[4]) annotation (Line(points={{
+          -13.6667,0},{-98,0},{-98,36},{-98,36.55}}, color={0,0,255}));
+  connect(pwFault.p, FTILL.p[4]) annotation (Line(points={{-77,-142},{-82,-142},
           {-82,-101},{-98,-101}}, color={0,0,255}));
-  connect(twoWindingTransformer2.n, FVALDI.u[1]) annotation (Line(points={{223,
+  connect(twoWindingTransformer2.n, FVALDI.p[1]) annotation (Line(points={{223,
           -100},{200,-100},{200,-99}}, color={0,0,255}));
   connect(twoWindingTransformer2.p, GEN2.pwPin)
     annotation (Line(points={{237,-100},{259,-100}}, color={0,0,255}));
   connect(GEN3.pwPin, twoWindingTransformer3.p)
     annotation (Line(points={{0,179},{0,157}}, color={0,0,255}));
-  connect(twoWindingTransformer3.n, FVERGE.o[1])
+  connect(twoWindingTransformer3.n, FVERGE.n[1])
     annotation (Line(points={{0,143},{0,123}}, color={0,0,255}));
   connect(twoWindingTransformer1.p, GEN1.pwPin)
     annotation (Line(points={{-237,-100},{-259,-100}}, color={0,0,255}));
-  connect(twoWindingTransformer1.n, FSSV.o[1]) annotation (Line(points={{-223,-100},
+  connect(twoWindingTransformer1.n, FSSV.n[1]) annotation (Line(points={{-223,-100},
           {-200,-100},{-200,-99}}, color={0,0,255}));
   annotation (
     Diagram(coordinateSystem(extent={{-280,-200},{280,180}},
-          preserveAspectRatio=false), graphics={Text(
+          preserveAspectRatio=false), graphics={
+        Text(
           extent={{-222,-50},{-198,-60}},
           lineColor={28,108,200},
-          textString="FSSV"),Text(
+          textString="FSSV"),
+        Text(
           extent={{204,-50},{236,-60}},
           lineColor={28,108,200},
-          textString="FVALDI"),Text(
+          textString="FVALDI"),
+        Text(
           extent={{100,70},{138,60}},
           lineColor={28,108,200},
-          textString="FTDPRA"),Text(
+          textString="FTDPRA"),
+        Text(
           extent={{-132,70},{-102,60}},
           lineColor={28,108,200},
-          textString="FPAND"),Text(
+          textString="FPAND"),
+        Text(
           extent={{46,126},{84,116}},
           lineColor={28,108,200},
-          textString="FVERGE"),Text(
+          textString="FVERGE"),
+        Text(
           extent={{44,-76},{74,-86}},
           lineColor={28,108,200},
-          textString="FSBIS"),Text(
+          textString="FSBIS"),
+        Text(
           extent={{-114,-78},{-84,-88}},
           lineColor={28,108,200},
           textString="FTILL5")}),
