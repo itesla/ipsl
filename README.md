@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/SmarTS-Lab/OpenIPSL.svg?branch=master)](https://travis-ci.org/SmarTS-Lab/OpenIPSL)
+[![Build Status](https://travis-ci.org/OpenIPSL/OpenIPSL.svg?branch=master)](https://travis-ci.org/OpenIPSL/OpenIPSL)
 [![Documentation Status](https://readthedocs.org/projects/openipsl/badge/?version=latest)](http://openipsl.readthedocs.io/en/latest/?badge=latest)
 
 # **OpenIPSL**: Open-Instance Power System Library:
