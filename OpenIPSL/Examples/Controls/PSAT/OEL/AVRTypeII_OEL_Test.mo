@@ -1,3 +1,4 @@
+within OpenIPSL.Examples.Controls.PSAT.OEL;
 model AVRTypeII_OEL_Test
   extends OpenIPSL.Examples.BaseTest;
   extends Modelica.Icons.Example;
@@ -25,8 +26,7 @@ model AVRTypeII_OEL_Test
     Kf=0.45,
     Tf=1,
     Ka=400,
-    Ke=0.01)
-    annotation (Placement(transformation(extent={{-70,18},{-90,38}})));
+    Ke=0.01) annotation (Placement(transformation(extent={{-70,18},{-90,38}})));
   Electrical.Controls.PSAT.OEL.OEL oXL(
     vOEL_max=0.05,
     T0=5,
@@ -44,18 +44,18 @@ model AVRTypeII_OEL_Test
         rotation=0,
         origin={-37,59})));
 equation
-  connect(order4.pm0, order4.pm) annotation (Line(points={{-43,-11},{-43,-16},
-          {-60,-16},{-60,-5},{-47,-5}},color={0,0,127}));
+  connect(order4.pm0, order4.pm) annotation (Line(points={{-43,-11},{-43,-16},{
+          -60,-16},{-60,-5},{-47,-5}}, color={0,0,127}));
   connect(order4.p, bus.p)
     annotation (Line(points={{-25,0},{-25,0},{0,0}}, color={0,0,255}));
   connect(order4.vf, exciter_Type_II.vf) annotation (Line(points={{-47,5},{-96.75,
           5},{-96.75,28},{-92,28}}, color={0,0,127}));
-  connect(exciter_Type_II.vf0, order4.vf0) annotation (Line(points={{-80,16},
-          {-80,16},{-80,11},{-43,11}},color={0,0,127}));
+  connect(exciter_Type_II.vf0, order4.vf0) annotation (Line(points={{-80,16},{-80,
+          16},{-80,11},{-43,11}}, color={0,0,127}));
   connect(exciter_Type_II.vref0, oXL.v_ref0) annotation (Line(points={{-80,40},
           {-80,40},{-80,48},{-30,48},{-30,45.2}},color={0,0,127}));
-  connect(oXL.v, order4.v) annotation (Line(points={{-20.8,40},{-12,40},{-12,
-          3},{-24,3}}, color={0,0,127}));
+  connect(oXL.v, order4.v) annotation (Line(points={{-20.8,40},{-12,40},{-12,3},
+          {-24,3}}, color={0,0,127}));
   connect(order4.P, oXL.p) annotation (Line(points={{-24,-3},{-14,-3},{-14,36},
           {-20.8,36}}, color={0,0,127}));
   connect(order4.Q, oXL.q) annotation (Line(points={{-24,-7},{-16,-7},{-16,32},
@@ -64,10 +64,10 @@ equation
           22},{-20,3},{-24,3}}, color={0,0,127}));
   connect(exciter_Type_II.vref, add.y) annotation (Line(points={{-68,34},{-66,
           34},{-66,35},{-62.5,35}}, color={0,0,127}));
-  connect(add.u2, oXL.v_ref) annotation (Line(points={{-51,32},{-46,32},{-46,
-          34},{-40.4,34}}, color={0,0,127}));
+  connect(add.u2, oXL.v_ref) annotation (Line(points={{-51,32},{-46,32},{-46,34},
+          {-40.4,34}}, color={0,0,127}));
   connect(ramp.y, add.u1) annotation (Line(points={{-42.5,59},{-42.5,48.5},{-51,
           48.5},{-51,38}}, color={0,0,127}));
-  annotation (Documentation, Diagram(coordinateSystem(preserveAspectRatio=
-            false, extent={{-100,-100},{100,100}})));
+  annotation (Documentation, Diagram(coordinateSystem(preserveAspectRatio=false,
+          extent={{-100,-100},{100,100}})));
 end AVRTypeII_OEL_Test;
