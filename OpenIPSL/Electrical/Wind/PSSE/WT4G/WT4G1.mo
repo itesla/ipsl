@@ -52,7 +52,7 @@ model WT4G1 "Wind Generator Model with Power Converter (Type 4)"
         extent={{-10,-10},{10,10}},
         rotation=180,
         origin={-110,-80})));
-  Modelica.Blocks.Math.Feedback Iperr(y(start=0, fixed=true))
+  Modelica.Blocks.Math.Feedback Iperr(y(start=0, fixed=false))
     annotation (Placement(transformation(extent={{-80,35},{-70,45}})));
   OpenIPSL.Electrical.Wind.PSSE.Submodels.LVACL lVACL
     annotation (Placement(transformation(extent={{68,30},{88,50}})));
