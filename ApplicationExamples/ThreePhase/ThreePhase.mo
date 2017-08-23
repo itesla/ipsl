@@ -77,17 +77,17 @@ package ThreePhase
       parameter Real V_A=1 "Voltage magnitude for phase A (pu)" annotation (Dialog(group="Power flow data"));
       parameter Real V_B=1 "Voltage magnitude for phase B (pu)" annotation (Dialog(group="Power flow data"));
       parameter Real V_C=1 "Voltage magnitude for phase C (pu)" annotation (Dialog(group="Power flow data"));
-      parameter Real angle_A=0 "Voltage angle for phase A (rad)" annotation (Dialog(group="Power flow data"));
+      parameter Real angle_A=0 "Voltage angle for phase A (deg)" annotation (Dialog(group="Power flow data"));
       parameter Real angle_B=-120
-        "Voltage angle for phase B (rad)"                                              annotation (Dialog(group="Power flow data"));
+        "Voltage angle for phase B (deg)"                                              annotation (Dialog(group="Power flow data"));
       parameter Real angle_C= 120
-        "Voltage angle for phase C (rad)"                                              annotation (Dialog(group="Power flow data"));    
+        "Voltage angle for phase C (deg)"                                              annotation (Dialog(group="Power flow data"));    
       Real Va(start=V_A) "Bus voltage magnitude for phase A (pu)";
-      Real angle_a(start=angle_A) "Bus voltage angle for phase A (rad)";
+      Real angle_a(start=angle_A*Modelica.Constants.pi/180) "Bus voltage angle for phase A (deg)";
       Real Vb(start=V_B) "Bus voltage magnitude for phase B (pu)";
-      Real angle_b(start=angle_B) "Bus voltage angle for phase B (rad)";
+      Real angle_b(start=angle_B*Modelica.Constants.pi/180) "Bus voltage angle for phase B (deg)";
       Real Vc(start=V_C) "Bus voltage magnitude for phase C (pu)";
-      Real angle_c(start=angle_C) "Bus voltage angle for phase C (rad)";
+      Real angle_c(start=angle_C*Modelica.Constants.pi/180) "Bus voltage angle for phase C (deg)";
     
     protected
     
@@ -135,6 +135,7 @@ package ThreePhase
               textString=DynamicSelect("0.0", String(Vb,significantDigits=3)),
               lineColor={238,46,47})}));
     end Bus_3Ph;
+
 
 
 
