@@ -67,11 +67,11 @@ package ThreePhase
 
     model Bus_3Ph
       import Modelica.Constants.pi;
-      OpenIPSL.Interface.PwPin p1(vr(start=V_A*cos(angle_A*Modelica.Constants.pi/180)), vi(start=V_A*sin(angle_A*Modelica.Constants.pi/180)))
+      OpenIPSL.Interfaces.PwPin p1(vr(start=V_A*cos(angle_A*Modelica.Constants.pi/180)), vi(start=V_A*sin(angle_A*Modelica.Constants.pi/180)))
         annotation (Placement(transformation(extent={{-10,80},{10,100}})));
-      OpenIPSL.Interface.PwPin p2(vr(start=V_B*cos(angle_B*Modelica.Constants.pi/180)), vi(start=V_B*sin(angle_B*Modelica.Constants.pi/180)))
+      OpenIPSL.Interfaces.PwPin p2(vr(start=V_B*cos(angle_B*Modelica.Constants.pi/180)), vi(start=V_B*sin(angle_B*Modelica.Constants.pi/180)))
         annotation (Placement(transformation(extent={{-10,-10},{10,10}})));
-      OpenIPSL.Interface.PwPin p3(vr(start=V_C*cos(angle_C*Modelica.Constants.pi/180)), vi(start=V_C*sin(angle_C*Modelica.Constants.pi/180)))
+      OpenIPSL.Interfaces.PwPin p3(vr(start=V_C*cos(angle_C*Modelica.Constants.pi/180)), vi(start=V_C*sin(angle_C*Modelica.Constants.pi/180)))
         annotation (Placement(transformation(extent={{-10,-100},{10,-80}})));
     
       parameter Real V_A=1 "Voltage magnitude for phase A (pu)" annotation (Dialog(group="Power flow data"));
@@ -135,6 +135,7 @@ package ThreePhase
               textString=DynamicSelect("0.0", String(Vb,significantDigits=3)),
               lineColor={238,46,47})}));
     end Bus_3Ph;
+
 
 
 
