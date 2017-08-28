@@ -5,7 +5,7 @@ python:
 services: docker
 
 install:
-  - docker pull smartslab/ci_openipsl
+  - docker pull smartslab/openipsl
 
 script:
-  - docker run -i -t -v $(pwd):/OpenIPSL smartslab/ci_openipsl sh /OpenIPSL/CI/changeUser.sh
+  - docker run -i -t -v $(pwd):/OpenIPSL smartslab/openipsl sh /OpenIPSL/CI/changeUser.sh
