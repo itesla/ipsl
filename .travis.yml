@@ -8,4 +8,4 @@ install:
   - docker pull smartslab/openipsl:addDockerFile
 
 script:
-  - docker run -i -t -v $(pwd):/OpenIPSL smartslab/openipsl sh /OpenIPSL/CI/changeUser.sh
+  - docker run -i -t -v $(pwd):/OpenIPSL smartslab/openipsl:addDockerFile sh /OpenIPSL/CI/changeUser.sh
