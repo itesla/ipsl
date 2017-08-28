@@ -3,17 +3,17 @@ model Line_3Ph "Modeled as a PI element"
 
   outer OpenIPSL.Electrical.SystemBase SysData;
 
-  OpenIPSL.Connectors.PwPin Ain
+  OpenIPSL.Interfaces.PwPin Ain
     annotation (Placement(transformation(extent={{-100,80},{-80,100}})));
-  OpenIPSL.Connectors.PwPin Bin
+  OpenIPSL.Interfaces.PwPin Bin
     annotation (Placement(transformation(extent={{-100,-10},{-80,10}})));
-  OpenIPSL.Connectors.PwPin Cin
+  OpenIPSL.Interfaces.PwPin Cin
     annotation (Placement(transformation(extent={{-100,-100},{-80,-80}})));
-  OpenIPSL.Connectors.PwPin Aout
+  OpenIPSL.Interfaces.PwPin Aout
     annotation (Placement(transformation(extent={{80,80},{100,100}})));
-  OpenIPSL.Connectors.PwPin Bout
+  OpenIPSL.Interfaces.PwPin Bout
     annotation (Placement(transformation(extent={{80,-10},{100,10}})));
-  OpenIPSL.Connectors.PwPin Cout
+  OpenIPSL.Interfaces.PwPin Cout
     annotation (Placement(transformation(extent={{80,-100},{100,-80}})));
 
   parameter Real S = SysData.S_b "Nominal Power (MVA)" annotation (Dialog(group="Power flow data"));
