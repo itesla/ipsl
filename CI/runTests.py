@@ -1,6 +1,7 @@
 import sys
 import os
 from OMPython import OMCSession
+from OMPython import ModelicaSystem
 
 
 class CITests():
