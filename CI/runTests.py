@@ -12,6 +12,7 @@ class CITests():
         Constructor starts omc and loads MSL
         '''
         self.rootPath = rootPath
+        self.obj = ModelicaSystem(useCorba=True)
         self.omc = OMCSession()
         os.chdir(self.rootPath)
         self.omc.sendExpression("loadModel(Modelica)")
@@ -67,7 +68,7 @@ appExamples = {
 "IEEE14":"/ApplicationExamples/IEEE14/package.mo",
 "AKD":"/ApplicationExamples/AKD/package.mo",
 "N44":"/ApplicationExamples/N44/package.mo",
-"OpenCPSD5d3B":"/ApplicationExamples/OpenCPSD5d3B/package.mo"
+"OpenCPSD5d3B":"/ApplicationExamples/OpenCPSD5d3B/package.mo",
 }
 
 for package in appExamples.keys():
