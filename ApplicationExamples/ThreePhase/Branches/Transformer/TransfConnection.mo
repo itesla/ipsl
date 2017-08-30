@@ -1,5 +1,5 @@
 within ThreePhase.Branches.Transformer;
-package TransfCon_3Ph
+package TransfConnection
 
   function Yg_Yg
     input Real X;
@@ -1572,4 +1572,4 @@ package TransfCon_3Ph
   algorithm
     V := [A11r, A11i, A12r, A12i, A13r, A13i, A21r, A21i, A22r, A22i, A23r, A23i, A31r, A31i, A32r, A32i, A33r, A33i, B11r, B11i, B12r, B12i, B13r, B13i, B21r, B21i, B22r, B22i, B23r, B23i, B31r, B31i, B32r, B32i, B33r, B33i, C11r, C11i, C12r, C12i, C13r, C13i, C21r, C21i, C22r, C22i, C23r, C23i, C31r, C31i, C32r, C32i, C33r, C33i, D11r, D11i, D12r, D12i, D13r, D13i, D21r, D21i, D22r, D22i, D23r, D23i, D31r, D31i, D32r, D32i, D33r, D33i];
   end Y_Yg;
-end TransfCon_3Ph;
+end TransfConnection;
