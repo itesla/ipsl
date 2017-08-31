@@ -220,13 +220,13 @@ equation
   
     annotation (
     Diagram(coordinateSystem(preserveAspectRatio=true, extent={{-100,-100},{100,100}}), graphics),
-    Icon(graphics = {Ellipse(lineColor = {0, 0, 255}, extent = {{-46, 30}, {8, -30}}, endAngle = 360), Ellipse(lineColor = {0, 0, 255}, extent = {{-10, 30}, {44, -30}}, endAngle = 360), 
-    Line(points = {{100, 0}, {44, 0}, {44, 0}}, color = {0, 0, 255}), 
+    Icon(graphics = {Ellipse(lineColor = {0, 0, 255}, extent = {{-46, 30}, {8, -30}}, endAngle = 360), Ellipse(lineColor = {0, 0, 255}, extent = {{-8, 30}, {46, -30}}, endAngle = 360), 
+    Line(points = {{100, 0}, {46, 0}}, color = {0, 0, 255}), 
     Line(points = {{-100, 0}, {-46, 0}}, color = {0, 0, 255}), 
-    Line(points = {{110, 90}, {37, 20}}, color = {0, 0, 255}),  
-    Line(points = {{110, -90}, {37, -20}}, color = {0, 0, 255}), 
+    Line(points = {{110, 90},{75 ,90}, {39.3, 20}}, color = {0, 0, 255}),  
+    Line(points = {{110, -90},{75 , -90}, {39.3, -20}}, color = {0, 0, 255}), 
     Text(lineColor = {28, 108, 200}, extent = {{-38, 20}, {-4, -20}}, textString = "K"), 
-    Text(lineColor = {28, 108, 200}, extent = {{4, 18}, {32, -16}}, textString = "M"), 
+    Text(lineColor = {28, 108, 200}, extent = {{7, 20}, {41, -20}}, textString = "M"), 
     Text(origin = {-56, 64}, lineColor = {28, 108, 200}, extent = {{4, 18}, {104, -34}}, textString = "Hybrid Transformer")}, coordinateSystem(initialScale = 0.1)),
     Documentation(revisions="<html>
 <!--DISCLAIMER-->
