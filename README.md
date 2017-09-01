@@ -6,11 +6,11 @@ The OpenIPSL or Open-Instance Power System Library is a fork of of the [iTesla P
 
 The iPSL is a [Modelica](https://www.modelica.org) library developed during the [iTesla project](http://www.itesla-project.eu/).
 The members of this project (OpenIPSL) at SmarTS Lab (now [ALSETLab](https://github.com/ALSETLab)) where key developers of the iPSL until March 31, 2016, when the iTesla project was completed.
-Prof. [Luigi Vanfretti's](https://github.com/lvanfretti) lead the development of a large ammount of the models of the library (particularly those that replicate results from PSAT and PSS/E).
+Prof. [Luigi Vanfretti](https://github.com/lvanfretti) lead the development of a large amount of the models of the library (particularly those that replicate results from PSAT and PSS/E).
 iPSL is part of the [iTesla Tool](https://github.com/itesla/ipst), and thus, it is subject to the needs of the consortium that develops the iTesla Tool.
 Therefore, the SmarTS Lab / ALSETLab team decided to create the OpenIPSL fork in order to develop the library in a direction that is more suitable for researchers and teachers/professors, and in a transparent, open source software approach.
 
-As such, the purpose of OpenIPSL are to be used as a research library (therefore frequent release times may be available), with maximum compatibility with OpenModelica (to provide a free/libre and cost-free alternative for power system dynamic simulation), to provide as many as possible typical "test networks" for use in research and teaching, and to be developed in such way that the library can efficiently be used for power system simulation within Modelica-based workflows (i.e. helping to give reference power system models for development and testing of Modelica back-end compilers) when faced with power system simulation challenges.
+As such, the purposes of OpenIPSL are to be used as a research library (therefore frequent release times may be available), with maximum compatibility with OpenModelica (to provide a free/libre and cost-free alternative for power system dynamic simulation), to provide as many as possible typical "test networks" for use in research and teaching, and to be developed in such way that the library can efficiently be used for power system simulation within Modelica-based workflows (i.e. helping to give reference power system models for development and testing of Modelica back-end compilers) when faced with power system simulation challenges.
 
 ## Notice to Users:
 This project encompasses the development of a Modelica library for power system simulation.
@@ -18,7 +18,7 @@ As such, there are no solver tools provided in this repository (no Power Flow So
 You can find more information in our [**documentation**](http://openipsl.readthedocs.io/en/latest/user-guide/get-started.html).
 
 The OpenIPSL contains the models developed by SmarTS Lab during the iTesla project, and necesssary models that were publically released or implemented by RTE and AIA, that we can maintain properly.
-Note that several models have been removed from what it is available in iPSL (see [here](https://github.com/OpenIPSL/OpenIPSL/pull/10)).
+Note that several models have been removed from those that are available in iPSL (see [here](https://github.com/OpenIPSL/OpenIPSL/pull/10)).
 We have removed all models that are dependent on a specific software tool from the power systems domain that we don't have access for Software-to-Software validation, and those that require us to have access to closed (and expensive) standards that we don't have money to buy in order to maintain them (i.e. IEC Wind Turbine models).
 
 ## Documentation:
