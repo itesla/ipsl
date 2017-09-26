@@ -6,7 +6,7 @@ model Line_2Ph "Modeled as a PI element"
   OpenIPSL.Interfaces.PwPin Ain
     annotation (Placement(transformation(extent={{-140,35},{-120,55}})));
   OpenIPSL.Interfaces.PwPin Bin
-    annotation (Placement(transformation(extent={{-140,-55,{-120,35}})));
+    annotation (Placement(transformation(extent={{-140,-55},{-120,35}})));
 
   OpenIPSL.Interfaces.PwPin Aout
     annotation (Placement(transformation(extent={{120,35},{140,55}})));
