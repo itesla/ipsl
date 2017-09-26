@@ -6,12 +6,12 @@ model Line_2Ph "Modeled as a PI element"
   OpenIPSL.Interfaces.PwPin Ain
     annotation (Placement(transformation(extent={{-140,35},{-120,55}})));
   OpenIPSL.Interfaces.PwPin Bin
-    annotation (Placement(transformation(extent={{-140,-55},{-120,35}})));
+    annotation (Placement(transformation(extent={{-140,-55},{-120,-35}})));
 
   OpenIPSL.Interfaces.PwPin Aout
     annotation (Placement(transformation(extent={{120,35},{140,55}})));
   OpenIPSL.Interfaces.PwPin Bout
-    annotation (Placement(transformation(extent={{120,-55},{140,35}})));
+    annotation (Placement(transformation(extent={{120,-55},{140,-35}})));
 
   parameter Real S = SysData.S_b "Nominal Power (MVA)" annotation (Dialog(group="Power flow data"));
   parameter Real f = SysData.fn "System Frequency" annotation (Dialog(group="Power flow data"));
@@ -86,12 +86,10 @@ equation
           Line(points = {{45,-70}, {75, -70}}, color = {0, 0, 255}),
           Line(points = {{50,-72.5}, {70, -72.5}}, color = {0, 0, 255}),
           Line(points = {{55,-75}, {65, -75}}, color = {0, 0, 255}),          
-          Line(points = {{-90,0}, {-130, 0}}, color = {0, 0, 255}),
-          Line(points = {{-90,0}, {-110, 90},{-130,90}}, color = {0, 0, 255}),
-          Line(points = {{-90,0}, {-110, -90},{-130,-90}}, color = {0, 0, 255}),         
-          Line(points = {{90,0}, {130, 0}}, color = {0, 0, 255}),
-          Line(points = {{90,0}, {110, 90},{130,90}}, color = {0, 0, 255}),
-          Line(points = {{90,0}, {110, -90},{130,-90}}, color = {0, 0, 255}),
+          Line(points = {{-90,0}, {-110, 45},{-130,45}}, color = {0, 0, 255}),
+          Line(points = {{-90,0}, {-110, -45},{-130,-45}}, color = {0, 0, 255}),         
+          Line(points = {{90,0}, {110, 45},{130,45}}, color = {0, 0, 255}),
+          Line(points = {{90,0}, {110, -45},{130,-45}}, color = {0, 0, 255}),
           Text(lineColor = {28, 108, 200}, extent = {{-29, -18}, {20,18}}, textString = "G +jB  "), 
           Text(lineColor = {28, 108, 200}, extent = {{-15, 5}, {-5,13}}, textString = "ser"),
           Text(lineColor = {28, 108, 200}, extent = {{19, 5}, {29,13}}, textString = "ser"),
