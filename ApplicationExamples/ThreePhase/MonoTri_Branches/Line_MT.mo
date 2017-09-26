@@ -5,10 +5,10 @@ model Line_MT "Transmission Line modeled as a PI element with a hybrid interface
   import ThreePhase.MonoTri_Branches.LineFcn.MT_FiniteImpedance;
   
   outer OpenIPSL.Electrical.SystemBase SysData;
-  OpenIPSL.Interfaces.PwPin p annotation (Placement(transformation(extent={{-120,-10},{-100,10}})));
-  OpenIPSL.Interfaces.PwPin A annotation (Placement(transformation(extent={{100,80},{120,100}})));
-  OpenIPSL.Interfaces.PwPin B annotation (Placement(transformation(extent={{100,-10},{120,10}})));
-  OpenIPSL.Interfaces.PwPin C annotation (Placement(transformation(extent={{100,-100},{120,-80}})));
+  OpenIPSL.Interfaces.PwPin p annotation (Placement(transformation(extent={{-140,-10},{-120,10}})));
+  OpenIPSL.Interfaces.PwPin A annotation (Placement(transformation(extent={{120,80},{140,100}})));
+  OpenIPSL.Interfaces.PwPin B annotation (Placement(transformation(extent={{120,-10},{140,10}})));
+  OpenIPSL.Interfaces.PwPin C annotation (Placement(transformation(extent={{120,-100},{140,-80}})));
   
   
   parameter Real S = SysData.S_b "Nominal Power (MVA)" annotation (Dialog(group="Power flow data"));
@@ -125,32 +125,44 @@ protected
   C.ii = C3r*p.vi+C3i*p.vr + D31r*A.vi+D31i*A.vr + D32r*B.vi+D32i*B.vr + D33r*C.vi+D33i*C.vr;
 
     annotation (
-    Icon(coordinateSystem(
-        extent={{-80,-100},{80,100}},
+Icon(coordinateSystem(
+        extent={{-140,-100},{140,100}},
         preserveAspectRatio=true,
         initialScale=0.1), graphics={Rectangle(
-          extent={{-79,40},{79,-40}},
+          extent={{-140,-100},{140,100}},
           lineColor={0,0,255},
           fillColor={255,255,255},
-          fillPattern=FillPattern.Solid),Rectangle(
-          extent={{-40,10},{40,-10}},
-          lineColor={0,0,255},
-          fillColor={95,95,95},
-          fillPattern=FillPattern.Solid),Line(
-          points={{100,0},{79,0}},
-          color={0,0,255},
-          smooth=Smooth.None),Line(
-          points={{-100,0},{-79,0}},
-          color={0,0,255},
-          smooth=Smooth.None),Line(
-          points={{100,90},{79,40}},
-          color={0,0,255},
-          smooth=Smooth.None),Line(
-          points={{100,-90},{79,-40}},
-          color={0,0,255},
-          smooth=Smooth.None)}),
+          fillPattern=FillPattern.Solid),
+          Line(points = {{-90,0}, {-30, 0}}, color = {0, 0, 255}),
+          Line(points = {{-30,0}, {-30, 20}, {30, 20}, {30, -20}, {-30, -20}, {-30, 0}}, color = {0, 0, 255}),
+          Line(points = {{90,0}, {30, 0}}, color = {0, 0, 255}),
+          Line(points = {{-60,0}, {-60, -20}}, color = {0, 0, 255}),
+          Line(points = {{-80,-20},{-40,-20},{-40,-55},{-80,-55},{-80,-20}}, color = {0, 0, 255}),
+          Line(points = {{60,0}, {60, -20}}, color = {0, 0, 255}), 
+          Line(points = {{80,-20},{40,-20},{40,-55},{80,-55},{80,-20}}, color = {0, 0, 255}),
+          Line(points = {{-60,-55}, {-60, -70}}, color = {0, 0, 255}), 
+          Line(points = {{-45,-70}, {-75, -70}}, color = {0, 0, 255}),
+          Line(points = {{-50,-72.5}, {-70, -72.5}}, color = {0, 0, 255}),
+          Line(points = {{-55,-75}, {-65, -75}}, color = {0, 0, 255}),                     
+          Line(points = {{60,-55}, {60, -70}}, color = {0, 0, 255}),
+          Line(points = {{45,-70}, {75, -70}}, color = {0, 0, 255}),
+          Line(points = {{50,-72.5}, {70, -72.5}}, color = {0, 0, 255}),
+          Line(points = {{55,-75}, {65, -75}}, color = {0, 0, 255}),          
+          Line(points = {{-90,0}, {-130, 0}}, color = {0, 0, 255}),       
+          Line(points = {{90,0}, {130, 0}}, color = {0, 0, 255}),
+          Line(points = {{90,0}, {110, 90},{130,90}}, color = {0, 0, 255}),
+          Line(points = {{90,0}, {110, -90},{130,-90}}, color = {0, 0, 255}),
+          Text(lineColor = {28, 108, 200}, extent = {{-29, -18}, {20,18}}, textString = "G +jB  "), 
+          Text(lineColor = {28, 108, 200}, extent = {{-15, 5}, {-5,13}}, textString = "ser"),
+          Text(lineColor = {28, 108, 200}, extent = {{19, 5}, {29,13}}, textString = "ser"),
+          Text(lineColor = {28, 108, 200}, extent = {{-75, -28}, {-55,-47}}, textString = "jB"), 
+          Text(lineColor = {28, 108, 200}, extent = {{-56, -25}, {-46,-33}}, textString = "sht"),
+          Text(lineColor = {28, 108, 200}, extent = {{65, -28}, {45, -47}}, textString = "jB"), 
+          Text(lineColor = {28, 108, 200}, extent = {{64, -25}, {74, -33}}, textString = "sht"), 
+          Text(lineColor = {28, 108, 200}, extent = {{-65, 55}, {65, 85}}, textString = "PI MODEL")                  
+          }),
     Diagram(coordinateSystem(
-        extent={{-60,-40},{60,40}},
+        extent={{-140,-100},{140,100}},
         preserveAspectRatio=true,
         initialScale=0.1)),
     uses(Modelica(version="3.2.1")),
