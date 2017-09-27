@@ -1,6 +1,6 @@
 within ThreePhase.Loads;
 
-model WyeLoad_2Ph
+model WyeLoad_1Ph
   outer OpenIPSL.Electrical.SystemBase SysData;
   parameter Real Sn = SysData.S_b "Power rating (MVA)" annotation(
     Dialog(group = "Power flow"));
@@ -86,4 +86,4 @@ equation
 <p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
 <p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
 </html>"));
-end WyeLoad_2Ph;
+end WyeLoad_1Ph;
