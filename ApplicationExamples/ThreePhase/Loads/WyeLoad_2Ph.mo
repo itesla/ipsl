@@ -4,8 +4,8 @@ model WyeLoad_2Ph
   outer OpenIPSL.Electrical.SystemBase SysData;
   parameter Real Sn = SysData.S_b "Power rating (MVA)" annotation(
     Dialog(group = "Power flow"));
-  OpenIPSL.Interfaces.PwPin A annotation(Placement(transformation(extent = {{35.0, 0.0}, {55.0, 20.0}}, origin = {0.0, 0.0}, rotation = 0), iconTransformation(extent = {{-80.0, 0.0}, {-60.0, 20.0}}, origin = {159, 100}, rotation = 0), visible = true));
-  OpenIPSL.Interfaces.PwPin B annotation(Placement(transformation(extent = {{-35.0, 0.0}, {-55.0, 20.0}}, origin = {0.0, 0.0}, rotation = 0), iconTransformation(extent = {{-80.0, 0.0}, {-60.0, 20.0}}, origin = {70, 100}, rotation = 0), visible = true));
+  OpenIPSL.Interfaces.PwPin A annotation(Placement(transformation(extent = {{35.0, 0.0}, {55.0, 20.0}}, origin = {0.0, 0.0}, rotation = 0), iconTransformation(extent = {{35.0, 120.0}, {55.0, 100.0}}, origin = {0.0, 0.0}, rotation = 0), visible = true));
+  OpenIPSL.Interfaces.PwPin B annotation(Placement(transformation(extent = {{-35.0, 0.0}, {-55.0, 20.0}}, origin = {0.0, 0.0}, rotation = 0), iconTransformation(extent = {{-35.0, 120.0}, {-55.0, 100.0}}, origin = {0.0, 0.0}, rotation = 0), visible = true));
   parameter Integer ModelType = 0 "0- Constant Power Model, 1- ZIP Model;" annotation(
     choices(choice = 0 "Constant Power", choice = 1 "ZIP Model"),
     Dialog(group = "Power flow"));

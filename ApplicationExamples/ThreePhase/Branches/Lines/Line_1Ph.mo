@@ -26,7 +26,7 @@ protected
     parameter Real[2,2] Y_ser=[Gser,-Bser; Bser,Gser];
 
     //Writing the Y_sht matrix for the pi model
-    parameter Real[2,2] Y_sht=[zero,-Bshtaa; Bshtaa,zero];
+    parameter Real[2,2] Y_sht=[zero,-Bsht; Bsht,zero];
 
     //Calculating the parameters for the Transformer
     //Writing the matrix A (Yser1+Yshtk)

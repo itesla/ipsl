@@ -12,7 +12,7 @@ model Bus_1Ph
     
     protected
     
-      Real[1, 4] Vin=[p1.vr, p1.vi]; 
+      Real[1, 2] Vin=[p1.vr, p1.vi]; 
     
     equation
       V1 = sqrt(Vin[1,1]^2 + Vin[1,2]^2);
