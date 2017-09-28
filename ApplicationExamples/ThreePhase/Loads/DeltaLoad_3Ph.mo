@@ -34,19 +34,35 @@ protected
   Real Vbci = (B.vi - C.vi)/sqrt(3); 
   Real Vcar = (C.vr - A.vr)/sqrt(3);
   Real Vcai = (C.vi - A.vi)/sqrt(3);  
+  Real [3,2] Vline = [Vabr, Vabi; Vbcr, Vbci; Vcar, Vcai];
   
   // Calculating the Magnitude of V and V squared
-  Real Vab = sqrt(Vabr^2 + Vabi^2);
-  Real Vbc = sqrt(Vbcr^2 + Vbci^2);
-  Real Vca = sqrt(Vcar^2 + Vcai^2);
+function Voltages
+  input Real [3,2] Vline;
+  input Real TimeIn;
+  output Real [2,3] out_volt;
+protected
+  Real Vab = sqrt(Vline[1,1]^2 + Vline[1,2]^2);
+  Real Vbc = sqrt(Vline[2,1]^2 + Vline[2,2]^2);
+  Real Vca = sqrt(Vline[3,1]^2 + Vline[3,2]^2);
   Real Vab2 = Vab ^ 2;
   Real Vbc2 = Vbc ^ 2;
   Real Vca2 = Vca ^ 2;
+algorithm
+  if TimeIn == 0 then
+    out_volt := [1,1,1;1,1,1]; 
+  else
+    out_volt := [Vab, Vbc, Vca; Vab2, Vbc2, Vca2];
+  end if;        
+end Voltages;
+
+  Real TimeIn = time;
+  Real[2,3] Volt = Voltages(Vline,TimeIn);  
  
  // Calculating the Coeficients for Adjusting the Power
-  Real Coef_A = ZIP_coef[1,1] + ZIP_coef[1,2]*Vab + ZIP_coef[1,3]*Vab2;
-  Real Coef_B = ZIP_coef[1,4] + ZIP_coef[1,5]*Vbc + ZIP_coef[1,6]*Vbc2;
-  Real Coef_C = ZIP_coef[1,7] + ZIP_coef[1,8]*Vca + ZIP_coef[1,9]*Vca2;
+  Real Coef_A = ZIP_coef[1,1] + ZIP_coef[1,2]*Volt[1,1] + ZIP_coef[1,3]*Volt[2,1];
+  Real Coef_B = ZIP_coef[1,4] + ZIP_coef[1,5]*Volt[1,2] + ZIP_coef[1,6]*Volt[2,2];
+  Real Coef_C = ZIP_coef[1,7] + ZIP_coef[1,8]*Volt[1,3] + ZIP_coef[1,9]*Volt[2,3];
   
   Real [1,3] in_coef = [Coef_A, Coef_B, Coef_C];
   
@@ -96,12 +112,12 @@ end PowerDefinition;
   
   // Calculating the Line Current in Delta Load:
   
-  Real Iabr = (Pab*Vabr + Qab*Vabi)/Vab2;
-  Real Iabi = (Pab*Vabi - Qab*Vabr)/Vab2;
-  Real Ibcr = (Pbc*Vbcr + Qbc*Vbci)/Vbc2;
-  Real Ibci = (Pbc*Vbci - Qbc*Vbcr)/Vbc2;
-  Real Icar = (Pca*Vcar + Qca*Vcai)/Vca2;
-  Real Icai = (Pca*Vcai - Qca*Vcar)/Vca2; 
+  Real Iabr = (Pab*Vabr + Qab*Vabi)/Volt[2,1];
+  Real Iabi = (Pab*Vabi - Qab*Vabr)/Volt[2,1];
+  Real Ibcr = (Pbc*Vbcr + Qbc*Vbci)/Volt[2,2];
+  Real Ibci = (Pbc*Vbci - Qbc*Vbcr)/Volt[2,2];
+  Real Icar = (Pca*Vcar + Qca*Vcai)/Volt[2,3];
+  Real Icai = (Pca*Vcai - Qca*Vcar)/Volt[2,3]; 
   
 equation
   

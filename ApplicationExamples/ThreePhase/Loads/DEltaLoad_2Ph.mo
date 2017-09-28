@@ -55,7 +55,7 @@ function PowerDefinition
     parameter Real coef_A = Coef;
     // Identifying input elements for Power
     parameter Real Pab_cor = TPhasePower[1, 1]*coef_A;
-    parameter Real Qab_cor = TPhasePower[1, 4]*coef_A;
+    parameter Real Qab_cor = TPhasePower[1, 2]*coef_A;
   algorithm
       Cor_Power := [Pab_cor, Qab_cor];
 end PowerDefinition;
