@@ -70,45 +70,13 @@ protected
 
   Real[1, 3] Coef = Coeficients(in_coef, ModelType);
 
-  function PowerDefinition
-    input Integer ModelType;
-    input Real[1, 6] TPhasePower;
-    input Real[1, 3] Coef;
-    output Real[1, 6] Cor_Power;
-  protected
-    // Identifying input elements for the Coeficients
-    Real coef_A = Coef[1, 1];
-    Real coef_B = Coef[1, 2];
-    Real coef_C = Coef[1, 3];
-    // Identifying input elements for Power
-    parameter Real Pan = TPhasePower[1, 1];
-    parameter Real Pbn = TPhasePower[1, 2];
-    parameter Real Pcn = TPhasePower[1, 3];
-    parameter Real Qan = TPhasePower[1, 4];
-    parameter Real Qbn = TPhasePower[1, 5];
-    parameter Real Qcn = TPhasePower[1, 6];
-    // Calculating Corrected Power
-    Real Pa_cor = Pan * coef_A;
-    Real Pb_cor = Pbn * coef_B;
-    Real Pc_cor = Pcn * coef_C;
-    Real Qa_cor = Qan * coef_A;
-    Real Qb_cor = Qbn * coef_B;
-    Real Qc_cor = Qcn * coef_C;
-  algorithm
-    if ModelType == 0 then
-      Cor_Power := [Pan, Pbn, Pcn, Qan, Qbn, Qcn];
-    elseif ModelType == 1 then
-      Cor_Power := [Pa_cor, Pb_cor, Pc_cor, Qa_cor, Qb_cor, Qc_cor];
-    end if;
-  end PowerDefinition;
-
-  Real[1, 6] Power = PowerDefinition(ModelType, TPhasePower, Coef);
-  Real Pa = Power[1, 1];
-  Real Pb = Power[1, 2];
-  Real Pc = Power[1, 3];
-  Real Qa = Power[1, 4];
-  Real Qb = Power[1, 5];
-  Real Qc = Power[1, 6];
+ // Calculating new value for Active and Reactive Power
+  Real Pa = TPhasePower[1, 1]*Coef[1,1];
+  Real Pb = TPhasePower[1, 2]*Coef[1,1];
+  Real Pc = TPhasePower[1, 3]*Coef[1,2];
+  Real Qa = TPhasePower[1, 4]*Coef[1,2];
+  Real Qb = TPhasePower[1, 5]*Coef[1,3];
+  Real Qc = TPhasePower[1, 6]*Coef[1,3];
 equation
   Pa = A.vr * A.ir + A.vi * A.ii;
   Qa = A.vi * A.ir - A.vr * A.ii;
