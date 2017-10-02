@@ -44,25 +44,12 @@ function Coeficients
 end Coeficients;
  
  Real Coef = Coeficients(in_coef, ModelType);
- 
-function PowerDefinition
-    input Integer ModelType;
-    input Real[1, 2] TPhasePower;
-    input Real Coef;
-    output Real[1, 2] Cor_Power;
-  protected
-    // Identifying input elements for the Coefficients
-    parameter Real coef_A = Coef;
-    // Identifying input elements for Power
-    parameter Real Pab_cor = TPhasePower[1, 1]*coef_A;
-    parameter Real Qab_cor = TPhasePower[1, 2]*coef_A;
-  algorithm
-      Cor_Power := [Pab_cor, Qab_cor];
-end PowerDefinition;
 
-  Real[1, 2] Power = PowerDefinition(ModelType, TPhasePower, Coef);
-  Real Pab = Power[1, 1];
-  Real Qab = Power[1, 2];
+  // Calculating new value for Active and Reactive Power
+  Real Pab = TPhasePower[1, 1]*Coef[1,1];
+  Real Pbc = TPhasePower[1, 2]*Coef[1,2];
+  Real Qab = TPhasePower[1, 3]*Coef[1,1];
+  Real Qbc = TPhasePower[1, 4]*Coef[1,2];
   
   // Calculating the Line Current in Delta Load:
   

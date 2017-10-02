@@ -41,32 +41,10 @@ protected
   end Coeficients;
 
   Real Coef = Coeficients(in_coef, ModelType);
-
-  function PowerDefinition
-    input Integer ModelType;
-    input Real[1, 2] TPhasePower;
-    input Real Coef;
-    output Real[1, 2] Cor_Power;
-  protected
-    // Identifying input elements for the Coeficients
-    Real coef_A = Coef;
-    // Identifying input elements for Power
-    parameter Real Pan = TPhasePower[1, 1];
-    parameter Real Qan = TPhasePower[1, 2];
-    // Calculating Corrected Power
-    Real Pa_cor = Pan * coef_A;
-    Real Qa_cor = Qan * coef_A;
-  algorithm
-    if ModelType == 0 then
-      Cor_Power := [Pan, Qan];
-    elseif ModelType == 1 then
-      Cor_Power := [Pa_cor, Qa_cor];
-    end if;
-  end PowerDefinition;
-
-  Real[1, 2] Power = PowerDefinition(ModelType, TPhasePower, Coef);
-  Real Pa = Power[1, 1];
-  Real Qa = Power[1, 2];
+ 
+  // Calculating new value for Active and Reactive Power
+  Real Pa = TPhasePower[1, 1]*Coef;
+  Real Qa = TPhasePower[1, 3]*Coef;
 equation
   Pa = A.vr * A.ir + A.vi * A.ii;
   Qa = A.vi * A.ir - A.vr * A.ii;
