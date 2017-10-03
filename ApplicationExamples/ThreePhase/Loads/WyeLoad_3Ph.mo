@@ -100,7 +100,7 @@ protected
   Real Qb = TPhasePower[1, 5]*Coef[1,2];
   Real Qc = TPhasePower[1, 6]*Coef[1,3];
   
-  // Initializing voltages and currents for each pin 
+  // Initializing voltages for each pin 
   parameter Real var0=VA*cos(AngA*Modelica.Constants.pi/180) "Initialitation";
   parameter Real vai0=VA*sin(AngA*Modelica.Constants.pi/180) "Initialitation";
   parameter Real vbr0=VB*cos(AngB*Modelica.Constants.pi/180) "Initialitation";

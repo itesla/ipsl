@@ -3,9 +3,15 @@ within ThreePhase.Loads;
 model DeltaLoad_3Ph
   outer OpenIPSL.Electrical.SystemBase SysData;
   parameter Real Sn = SysData.S_b "Power rating (MVA)" annotation(Dialog(group = "Power flow"));
-  OpenIPSL.Interfaces.PwPin A annotation(Placement(transformation(extent = {{80.0, 0.0}, {100.0, 20.0}}, origin = {0.0, 0.0}, rotation = 0), iconTransformation(extent = {{-80.0, 0.0}, {-60.0, 20.0}}, origin = {159, 100}, rotation = 0), visible = true));
-  OpenIPSL.Interfaces.PwPin B annotation(Placement(transformation(extent = {{-10.0, 0.0}, {10.0, 20.0}}, origin = {0.0, 0.0}, rotation = 0), iconTransformation(extent = {{-80.0, 0.0}, {-60.0, 20.0}}, origin = {70, 100}, rotation = 0), visible = true));
-  OpenIPSL.Interfaces.PwPin C annotation(Placement(transformation(extent = {{-100.0, 0.0}, {-80.0, 20.0}}, origin = {0.0, 0.0}, rotation = 0), iconTransformation(extent = {{-80.0, 0.0}, {-60.0, 20.0}}, origin = {-19, 100}, rotation = 0), visible = true));
+  OpenIPSL.Interfaces.PwPin A(
+    vr(start=var0),
+    vi(start=vai0)) annotation(Placement(transformation(extent = {{80.0, 0.0}, {100.0, 20.0}}, origin = {0.0, 0.0}, rotation = 0), iconTransformation(extent = {{-80.0, 0.0}, {-60.0, 20.0}}, origin = {159, 100}, rotation = 0), visible = true));
+  OpenIPSL.Interfaces.PwPin B(
+    vr(start=vbr0),
+    vi(start=vbi0)) annotation(Placement(transformation(extent = {{-10.0, 0.0}, {10.0, 20.0}}, origin = {0.0, 0.0}, rotation = 0), iconTransformation(extent = {{-80.0, 0.0}, {-60.0, 20.0}}, origin = {70, 100}, rotation = 0), visible = true));
+  OpenIPSL.Interfaces.PwPin C(
+    vr(start=vcr0),
+    vi(start=vci0)) annotation(Placement(transformation(extent = {{-100.0, 0.0}, {-80.0, 20.0}}, origin = {0.0, 0.0}, rotation = 0), iconTransformation(extent = {{-80.0, 0.0}, {-60.0, 20.0}}, origin = {-19, 100}, rotation = 0), visible = true));
   parameter Integer ModelType = 0 "0- Constant Power Model, 1- ZIP Model;" annotation(choices(choice = 0 "Constant Power", choice = 1 "ZIP Model"), Dialog(group = "Power flow"));
   parameter Real P_ab "Active power for line AB (MW)" annotation(Dialog(group = "Power flow"));
   parameter Real Q_ab "Reactive power for line AB (MVAr)" annotation(Dialog(group = "Power flow"));
@@ -13,6 +19,20 @@ model DeltaLoad_3Ph
   parameter Real Q_bc "Reactive power for line BC (MVAr)" annotation(Dialog(group = "Power flow"));
   parameter Real P_ca "Active power for line CA (MW)" annotation(Dialog(group = "Power flow"));
   parameter Real Q_ca "Reactive power for line CA (MVAr)" annotation(Dialog(group = "Power flow"));
+  
+  parameter Real VA = 1 "Guess value for phase A magnitude (pu)" annotation(
+    Dialog(group = "Initialization"));
+  parameter Real AngA = 0 "Guess value for phase A angle (deg)" annotation(
+    Dialog(group = "Initialization"));
+  parameter Real VB = 1 "Guess value for phase B magnitude (pu)" annotation(
+    Dialog(group = "Initialization"));
+  parameter Real AngB = -120 "Guess value for phase B angle (deg)" annotation(
+    Dialog(group = "Initialization"));
+  parameter Real VC = 1 "Guess value for phase C magnitude (pu)" annotation(
+    Dialog(group = "Initialization"));
+  parameter Real AngC = 120 "Guess value for phase C angle (deg)" annotation(
+    Dialog(group = "Initialization"));
+  
   parameter Real A_ab = 0 "Percentage of Constant Power Load for Line AB (%)" annotation(Dialog(group = "Load Parameters for ZIP Model"));
   parameter Real B_ab = 0 "Percentage of Constant Current Load for Line AB (%)" annotation(Dialog(group = "Load Parameters for ZIP Model"));
   parameter Real C_ab = 0 "Percentage of Constant Impedance Load for Line AB (%)" annotation(Dialog(group = "Load Parameters for ZIP Model"));
@@ -89,14 +109,21 @@ end Coeficients;
   Real Qbc = TPhasePower[1, 5]*Coef[1,2];
   Real Qca = TPhasePower[1, 6]*Coef[1,3];
   
-  // Calculating the Line Current in Delta Load:
-  
+  // Calculating the Line Current in Delta Load:  
   Real Iabr = (Pab*Vabr + Qab*Vabi)/Volt[2,1];
   Real Iabi = (Pab*Vabi - Qab*Vabr)/Volt[2,1];
   Real Ibcr = (Pbc*Vbcr + Qbc*Vbci)/Volt[2,2];
   Real Ibci = (Pbc*Vbci - Qbc*Vbcr)/Volt[2,2];
   Real Icar = (Pca*Vcar + Qca*Vcai)/Volt[2,3];
   Real Icai = (Pca*Vcai - Qca*Vcar)/Volt[2,3]; 
+  
+  // Initializing voltages for each pin 
+  parameter Real var0=VA*cos(AngA*Modelica.Constants.pi/180) "Initialitation";
+  parameter Real vai0=VA*sin(AngA*Modelica.Constants.pi/180) "Initialitation";
+  parameter Real vbr0=VB*cos(AngB*Modelica.Constants.pi/180) "Initialitation";
+  parameter Real vbi0=VB*sin(AngB*Modelica.Constants.pi/180) "Initialitation";
+  parameter Real vcr0=VC*cos(AngC*Modelica.Constants.pi/180) "Initialitation";
+  parameter Real vci0=VC*sin(AngC*Modelica.Constants.pi/180) "Initialitation";
   
 equation
   

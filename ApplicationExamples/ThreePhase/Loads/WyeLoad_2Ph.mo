@@ -4,8 +4,12 @@ model WyeLoad_2Ph
   outer OpenIPSL.Electrical.SystemBase SysData;
   parameter Real Sn = SysData.S_b "Power rating (MVA)" annotation(
     Dialog(group = "Power flow"));
-  OpenIPSL.Interfaces.PwPin A annotation(Placement(transformation(extent = {{35.0, 0.0}, {55.0, 20.0}}, origin = {0.0, 0.0}, rotation = 0), iconTransformation(extent = {{35.0, 120.0}, {55.0, 100.0}}, origin = {0.0, 0.0}, rotation = 0), visible = true));
-  OpenIPSL.Interfaces.PwPin B annotation(Placement(transformation(extent = {{-35.0, 0.0}, {-55.0, 20.0}}, origin = {0.0, 0.0}, rotation = 0), iconTransformation(extent = {{-35.0, 120.0}, {-55.0, 100.0}}, origin = {0.0, 0.0}, rotation = 0), visible = true));
+  OpenIPSL.Interfaces.PwPin A(
+    vr(start=var0),
+    vi(start=vai0)) annotation(Placement(transformation(extent = {{35.0, 0.0}, {55.0, 20.0}}, origin = {0.0, 0.0}, rotation = 0), iconTransformation(extent = {{35.0, 120.0}, {55.0, 100.0}}, origin = {0.0, 0.0}, rotation = 0), visible = true));
+  OpenIPSL.Interfaces.PwPin B(
+    vr(start=vbr0),
+    vi(start=vbi0)) annotation(Placement(transformation(extent = {{-35.0, 0.0}, {-55.0, 20.0}}, origin = {0.0, 0.0}, rotation = 0), iconTransformation(extent = {{-35.0, 120.0}, {-55.0, 100.0}}, origin = {0.0, 0.0}, rotation = 0), visible = true));
   parameter Integer ModelType = 0 "0- Constant Power Model, 1- ZIP Model;" annotation(
     choices(choice = 0 "Constant Power", choice = 1 "ZIP Model"),
     Dialog(group = "Power flow"));
@@ -17,6 +21,14 @@ model WyeLoad_2Ph
     Dialog(group = "Power flow"));
   parameter Real Q_b "Reactive power for phase B (MVAr)" annotation(
     Dialog(group = "Power flow"));
+  parameter Real VA = 1 "Guess value for phase A magnitude (pu)" annotation(
+    Dialog(group = "Initialization"));
+  parameter Real AngA = 0 "Guess value for phase A angle (deg)" annotation(
+    Dialog(group = "Initialization"));
+  parameter Real VB = 1 "Guess value for phase B magnitude (pu)" annotation(
+    Dialog(group = "Initialization"));
+  parameter Real AngB = -120 "Guess value for phase B angle (deg)" annotation(
+    Dialog(group = "Initialization"));
   parameter Real A_pa = 0 "Percentage of Constant Power Load for Phase A (%)" annotation(
     Dialog(group = "Load Parameters for ZIP Model"));
   parameter Real B_pa = 0 "Percentage of Constant Current Load for Phase A (%)" annotation(
@@ -61,6 +73,12 @@ protected
   Real Pb = TPhasePower[1, 2]*Coef[1,2];
   Real Qa = TPhasePower[1, 3]*Coef[1,1];
   Real Qb = TPhasePower[1, 4]*Coef[1,2];
+  
+  // Initializing voltages for each pin 
+  parameter Real var0=VA*cos(AngA*Modelica.Constants.pi/180) "Initialitation";
+  parameter Real vai0=VA*sin(AngA*Modelica.Constants.pi/180) "Initialitation";
+  parameter Real vbr0=VB*cos(AngB*Modelica.Constants.pi/180) "Initialitation";
+  parameter Real vbi0=VB*sin(AngB*Modelica.Constants.pi/180) "Initialitation";
 equation
   Pa = A.vr * A.ir + A.vi * A.ii;
   Qa = A.vi * A.ir - A.vr * A.ii;

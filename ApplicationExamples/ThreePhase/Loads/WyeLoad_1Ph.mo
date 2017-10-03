@@ -4,7 +4,9 @@ model WyeLoad_1Ph
   outer OpenIPSL.Electrical.SystemBase SysData;
   parameter Real Sn = SysData.S_b "Power rating (MVA)" annotation(
     Dialog(group = "Power flow"));
- OpenIPSL.Interfaces.PwPin A annotation(Placement(transformation(extent = {{-10.0, 0.0}, {10.0, 20.0}}, origin = {0.0, 0.0}, rotation = 0), iconTransformation(extent = {{-80.0, 0.0}, {-60.0, 20.0}}, origin = {70, 100}, rotation = 0), visible = true));
+ OpenIPSL.Interfaces.PwPin A(
+    vr(start=var0),
+    vi(start=vai0)) annotation(Placement(transformation(extent = {{-10.0, 0.0}, {10.0, 20.0}}, origin = {0.0, 0.0}, rotation = 0), iconTransformation(extent = {{-80.0, 0.0}, {-60.0, 20.0}}, origin = {70, 100}, rotation = 0), visible = true));
   parameter Integer ModelType = 0 "0- Constant Power Model, 1- ZIP Model;" annotation(
     choices(choice = 0 "Constant Power", choice = 1 "ZIP Model"),
     Dialog(group = "Power flow"));
@@ -12,6 +14,10 @@ model WyeLoad_1Ph
     Dialog(group = "Power flow"));
   parameter Real Q_a "Reactive power for phase A (MVAr)" annotation(
     Dialog(group = "Power flow"));
+  parameter Real VA = 1 "Guess value for phase A magnitude (pu)" annotation(
+    Dialog(group = "Initialization"));
+  parameter Real AngA = 0 "Guess value for phase A angle (deg)" annotation(
+    Dialog(group = "Initialization"));
   parameter Real A_pa = 0 "Percentage of Constant Power Load for Phase A (%)" annotation(
     Dialog(group = "Load Parameters for ZIP Model"));
   parameter Real B_pa = 0 "Percentage of Constant Current Load for Phase A (%)" annotation(
@@ -45,6 +51,9 @@ protected
   // Calculating new value for Active and Reactive Power
   Real Pa = TPhasePower[1, 1]*Coef;
   Real Qa = TPhasePower[1, 3]*Coef;
+  // Initializing voltages for each pin 
+  parameter Real var0=VA*cos(AngA*Modelica.Constants.pi/180) "Initialitation";
+  parameter Real vai0=VA*sin(AngA*Modelica.Constants.pi/180) "Initialitation";
 equation
   Pa = A.vr * A.ir + A.vi * A.ii;
   Qa = A.vi * A.ir - A.vr * A.ii;
