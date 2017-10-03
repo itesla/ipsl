@@ -112,12 +112,12 @@ end Coeficients;
   Real Icai = (Pca*Vcai - Qca*Vcar)/Volt[2,3]; 
   
   // Initializing voltages for each pin 
-  parameter Real var0=VA*cos(AngA*Modelica.Constants.pi/180) "Initialitation";
-  parameter Real vai0=VA*sin(AngA*Modelica.Constants.pi/180) "Initialitation";
-  parameter Real vbr0=VB*cos(AngB*Modelica.Constants.pi/180) "Initialitation";
-  parameter Real vbi0=VB*sin(AngB*Modelica.Constants.pi/180) "Initialitation";
-  parameter Real vcr0=VC*cos(AngC*Modelica.Constants.pi/180) "Initialitation";
-  parameter Real vci0=VC*sin(AngC*Modelica.Constants.pi/180) "Initialitation";
+  parameter Real var0=VA*cos(AngA*Modelica.Constants.pi/180) "Initialization";
+  parameter Real vai0=VA*sin(AngA*Modelica.Constants.pi/180) "Initialization";
+  parameter Real vbr0=VB*cos(AngB*Modelica.Constants.pi/180) "Initialization";
+  parameter Real vbi0=VB*sin(AngB*Modelica.Constants.pi/180) "Initialization";
+  parameter Real vcr0=VC*cos(AngC*Modelica.Constants.pi/180) "Initialization";
+  parameter Real vci0=VC*sin(AngC*Modelica.Constants.pi/180) "Initialization";
   
 equation
   

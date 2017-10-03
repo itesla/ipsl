@@ -6,7 +6,9 @@ model WyeLoad_1Ph
     Dialog(group = "Power flow"));
  OpenIPSL.Interfaces.PwPin A(
     vr(start=var0),
-    vi(start=vai0)) annotation(Placement(transformation(extent = {{-10.0, 0.0}, {10.0, 20.0}}, origin = {0.0, 0.0}, rotation = 0), iconTransformation(extent = {{-80.0, 0.0}, {-60.0, 20.0}}, origin = {70, 100}, rotation = 0), visible = true));
+    vi(start=vai0),
+    ir(start=iar0),
+    ii(start=iai0)) annotation(Placement(transformation(extent = {{-10.0, 0.0}, {10.0, 20.0}}, origin = {0.0, 0.0}, rotation = 0), iconTransformation(extent = {{-80.0, 0.0}, {-60.0, 20.0}}, origin = {70, 100}, rotation = 0), visible = true));
   parameter Integer ModelType = 0 "0- Constant Power Model, 1- ZIP Model;" annotation(
     choices(choice = 0 "Constant Power", choice = 1 "ZIP Model"),
     Dialog(group = "Power flow"));
@@ -50,9 +52,11 @@ protected
   // Calculating new value for Active and Reactive Power
   Real Pa = TPhasePower[1, 1]*Coef;
   Real Qa = TPhasePower[1, 2]*Coef;
-  // Initializing voltages for each pin 
-  parameter Real var0=VA*cos(AngA*Modelica.Constants.pi/180) "Initialitation";
-  parameter Real vai0=VA*sin(AngA*Modelica.Constants.pi/180) "Initialitation";
+  // Initializing voltages 
+  parameter Real var0=VA*cos(AngA*Modelica.Constants.pi/180) "Initialization";
+  parameter Real vai0=VA*sin(AngA*Modelica.Constants.pi/180) "Initialization";
+  parameter Real iar0=(TPhasePower[1,1]*var0+TPhasePower[1,2]*vai0)/(var0^2+vai0^2) "Initialization";
+  parameter Real iai0=(TPhasePower[1,1]*vai0-TPhasePower[1,2]*var0)/(var0^2+vai0^2) "Initialization";
 equation
   Pa = A.vr * A.ir + A.vi * A.ii;
   Qa = A.vi * A.ir - A.vr * A.ii;
