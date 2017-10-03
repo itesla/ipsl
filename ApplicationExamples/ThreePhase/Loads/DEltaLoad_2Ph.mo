@@ -58,8 +58,8 @@ end Coeficients;
  Real Coef = Coeficients(in_coef, ModelType);
 
   // Calculating new value for Active and Reactive Power
-  Real Pab = TPhasePower[1, 1]*Coef[1,1];
-  Real Qab = TPhasePower[1, 2]*Coef[1,1];
+  Real Pab = TPhasePower[1, 1]*Coef;
+  Real Qab = TPhasePower[1, 2]*Coef;
   
   // Calculating the Line Current in Delta Load:
   Real Iabr = (Pab*Vabr + Qab*Vabi)/Vab2;

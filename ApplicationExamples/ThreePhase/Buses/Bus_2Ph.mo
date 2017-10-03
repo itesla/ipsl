@@ -12,9 +12,9 @@ model Bus_2Ph
       parameter Real angle_2=-120
         "Voltage angle for phase 2 (deg)"                                              annotation (Dialog(group="Power flow data"));
       Real V1(start=V_1) "Bus voltage magnitude for phase 1 (pu)";
-      Real angle1(start=angle_1*Modelica.Constants.pi/180) "Bus voltage angle for phase 1 (deg)";
+      Modelica.SIunits.Conversions.NonSIunits.Angle_deg angle1(start=angle_1) "Bus voltage angle for phase 1 (deg)";
       Real V2(start=V_2) "Bus voltage magnitude for phase 2 (pu)";
-      Real angle2(start=angle_2*Modelica.Constants.pi/180) "Bus voltage angle for phase 2 (deg)";
+      Modelica.SIunits.Conversions.NonSIunits.Angle_deg angle2(start=angle_2) "Bus voltage angle for phase 2 (deg)";
       
     
     protected

@@ -59,7 +59,6 @@ protected
   // Calculating the Magnitude of V and V squared
 function Voltages
   input Real [3,2] Vline;
-  input Real TimeIn;
   output Real [2,3] out_volt;
 protected
   Real Vab = sqrt(Vline[1,1]^2 + Vline[1,2]^2);
@@ -69,15 +68,10 @@ protected
   Real Vbc2 = Vbc ^ 2;
   Real Vca2 = Vca ^ 2;
 algorithm
-  if TimeIn == 0 then
-    out_volt := [1,1,1;1,1,1]; 
-  else
-    out_volt := [Vab, Vbc, Vca; Vab2, Vbc2, Vca2];
-  end if;        
+  out_volt := [Vab, Vbc, Vca; Vab2, Vbc2, Vca2];      
 end Voltages;
 
-  Real TimeIn = time;
-  Real[2,3] Volt = Voltages(Vline,TimeIn);  
+  Real[2,3] Volt = Voltages(Vline);  
  
  // Calculating the Coeficients for Adjusting the Power
   Real Coef_A = ZIP_coef[1,1] + ZIP_coef[1,2]*Volt[1,1] + ZIP_coef[1,3]*Volt[2,1];

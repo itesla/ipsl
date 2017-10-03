@@ -32,7 +32,6 @@ protected
   Real Va2 = Va ^ 2;
   // Calculating the Coeficients for Adjusting the Power
   Real Coef_A = ZIP_coef[1, 1] + ZIP_coef[1, 2] * Va + ZIP_coef[1, 3] * Va2;
-  Real in_coef = Coef_A;
 
   function Coeficients
     input Real in_coef;
@@ -46,11 +45,11 @@ protected
     end if;
   end Coeficients;
 
-  Real Coef = Coeficients(in_coef, ModelType);
+  Real Coef = Coeficients(Coef_A, ModelType);
  
   // Calculating new value for Active and Reactive Power
   Real Pa = TPhasePower[1, 1]*Coef;
-  Real Qa = TPhasePower[1, 3]*Coef;
+  Real Qa = TPhasePower[1, 2]*Coef;
   // Initializing voltages for each pin 
   parameter Real var0=VA*cos(AngA*Modelica.Constants.pi/180) "Initialitation";
   parameter Real vai0=VA*sin(AngA*Modelica.Constants.pi/180) "Initialitation";

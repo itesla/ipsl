@@ -7,7 +7,7 @@ model Bus_1Ph
       parameter Real V_1=1 "Voltage magnitude for phase 1 (pu)" annotation (Dialog(group="Power flow data"));
       parameter Real angle_1=0 "Voltage angle for phase 1 (deg)" annotation (Dialog(group="Power flow data"));
       Real V1(start=V_1) "Bus voltage magnitude for phase 1 (pu)";
-      Real angle1(start=angle_1*Modelica.Constants.pi/180) "Bus voltage angle for phase 1 (deg)";
+      Modelica.SIunits.Conversions.NonSIunits.Angle_deg angle1(start=angle_1) "Bus voltage angle for phase 1 (deg)";
       
     
     protected
