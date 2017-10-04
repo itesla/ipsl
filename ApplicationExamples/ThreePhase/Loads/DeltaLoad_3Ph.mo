@@ -103,30 +103,23 @@ end Coeficients;
   Real Qbc = TPhasePower[1, 5]*Coef[1,2];
   Real Qca = TPhasePower[1, 6]*Coef[1,3];
   
-  // Calculating the Line Current in Delta Load:  
-  Real Iabr = (Pab*Vabr + Qab*Vabi)/Volt[2,1];
-  Real Iabi = (Pab*Vabi - Qab*Vabr)/Volt[2,1];
-  Real Ibcr = (Pbc*Vbcr + Qbc*Vbci)/Volt[2,2];
-  Real Ibci = (Pbc*Vbci - Qbc*Vbcr)/Volt[2,2];
-  Real Icar = (Pca*Vcar + Qca*Vcai)/Volt[2,3];
-  Real Icai = (Pca*Vcai - Qca*Vcar)/Volt[2,3]; 
-  
-  // Initializing voltages for each pin 
+  // Initializing voltages and currents for each pin 
   parameter Real var0=VA*cos(AngA*Modelica.Constants.pi/180) "Initialization";
   parameter Real vai0=VA*sin(AngA*Modelica.Constants.pi/180) "Initialization";
   parameter Real vbr0=VB*cos(AngB*Modelica.Constants.pi/180) "Initialization";
   parameter Real vbi0=VB*sin(AngB*Modelica.Constants.pi/180) "Initialization";
   parameter Real vcr0=VC*cos(AngC*Modelica.Constants.pi/180) "Initialization";
   parameter Real vci0=VC*sin(AngC*Modelica.Constants.pi/180) "Initialization";
-  
+   
 equation
   
-  A.ir = (Iabr - Icar)/sqrt(3);
-  A.ii = (Iabi - Icai)/sqrt(3);
-  B.ir = (Ibcr - Iabr)/sqrt(3);
-  B.ii = (Ibci - Iabi)/sqrt(3);
-  C.ir = (Icar - Ibcr)/sqrt(3);
-  C.ii = (Icai - Ibci)/sqrt(3);
+  A.ir = (Pab*(A.vr-B.vr)+Qab*(A.vi-B.vi))/((A.vr-B.vr)^2+(A.vi-B.vi)^2)-(Pca*(C.vr-A.vr)+Qca*(C.vi-A.vi))/((C.vr-A.vr)^2+(C.vi-A.vi)^2);
+  A.ii = (Pab*(A.vi-B.vi)-Qab*(A.vr-B.vr))/((A.vr-B.vr)^2+(A.vi-B.vi)^2)-(Pca*(C.vi-A.vi)-Qca*(C.vr-A.vr))/((C.vr-A.vr)^2+(C.vi-A.vi)^2);  
+  B.ir = (Pbc*(B.vr-C.vr)+Qbc*(B.vi-C.vi))/((B.vr-C.vr)^2+(B.vi-C.vi)^2)-(Pab*(A.vr-B.vr)+Qab*(A.vi-B.vi))/((A.vr-B.vr)^2+(A.vi-B.vi)^2);
+  B.ii = (Pbc*(B.vi-C.vi)-Qbc*(B.vr-C.vr))/((B.vr-C.vr)^2+(B.vi-C.vi)^2)-(Pab*(A.vi-B.vi)-Qab*(A.vr-B.vr))/((A.vr-B.vr)^2+(A.vi-B.vi)^2);    
+  C.ir = (Pca*(C.vr-A.vr)+Qca*(C.vi-A.vi))/((C.vr-A.vr)^2+(C.vi-A.vi)^2)-(Pbc*(B.vr-C.vr)+Qbc*(B.vi-C.vi))/((B.vr-C.vr)^2+(B.vi-C.vi)^2);
+  C.ii = (Pca*(C.vi-A.vi)-Qca*(C.vr-A.vr))/((C.vr-A.vr)^2+(C.vi-A.vi)^2)-(Pbc*(B.vi-C.vi)-Qbc*(B.vr-C.vr))/((B.vr-C.vr)^2+(B.vi-C.vi)^2);  
+
   annotation(Icon(coordinateSystem(preserveAspectRatio = false, initialScale = 0.1), graphics = {Line(points = {{-100, 100}, {100, 100}, {0, -100}, {-100, 100}}, color = {28, 108, 200}), Text(origin = {-24, 20},lineColor = {28, 108, 200}, extent = {{-18, 72}, {66, 45}}, textString = "Delta Load"), Text(origin = {18, 4}, lineColor = {28, 108, 200}, extent = {{-62, 45}, {28, 26}}, textString = "PQ/ZIP Load")}), Documentation(revisions = "<html>
 <!--DISCLAIMER-->
 <p>Copyright 2015-2016 RTE (France), SmarTS Lab (Sweden), AIA (Spain) and DTU (Denmark)</p>
