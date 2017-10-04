@@ -6,10 +6,14 @@ model WyeLoad_2Ph
     Dialog(group = "Power flow"));
   OpenIPSL.Interfaces.PwPin A(
     vr(start=var0),
-    vi(start=vai0)) annotation(Placement(transformation(extent = {{35.0, 0.0}, {55.0, 20.0}}, origin = {0.0, 0.0}, rotation = 0), iconTransformation(extent = {{35.0, 120.0}, {55.0, 100.0}}, origin = {0.0, 0.0}, rotation = 0), visible = true));
+    vi(start=vai0),
+    ir(start=iar0),
+    ii(start=iai0)) annotation(Placement(transformation(extent = {{35.0, 0.0}, {55.0, 20.0}}, origin = {0.0, 0.0}, rotation = 0), iconTransformation(extent = {{35.0, 120.0}, {55.0, 100.0}}, origin = {0.0, 0.0}, rotation = 0), visible = true));
   OpenIPSL.Interfaces.PwPin B(
     vr(start=vbr0),
-    vi(start=vbi0)) annotation(Placement(transformation(extent = {{-35.0, 0.0}, {-55.0, 20.0}}, origin = {0.0, 0.0}, rotation = 0), iconTransformation(extent = {{-35.0, 120.0}, {-55.0, 100.0}}, origin = {0.0, 0.0}, rotation = 0), visible = true));
+    vi(start=vbi0),
+    ir(start=ibr0),
+    ii(start=ibi0)) annotation(Placement(transformation(extent = {{-35.0, 0.0}, {-55.0, 20.0}}, origin = {0.0, 0.0}, rotation = 0), iconTransformation(extent = {{-35.0, 120.0}, {-55.0, 100.0}}, origin = {0.0, 0.0}, rotation = 0), visible = true));
   parameter Integer ModelType = 0 "0- Constant Power Model, 1- ZIP Model;" annotation(
     choices(choice = 0 "Constant Power", choice = 1 "ZIP Model"),
     Dialog(group = "Power flow"));
@@ -79,6 +83,10 @@ protected
   parameter Real vai0=VA*sin(AngA*Modelica.Constants.pi/180) "Initialitation";
   parameter Real vbr0=VB*cos(AngB*Modelica.Constants.pi/180) "Initialitation";
   parameter Real vbi0=VB*sin(AngB*Modelica.Constants.pi/180) "Initialitation";
+  parameter Real iar0=(TPhasePower[1,1]*var0+TPhasePower[1,3]*vai0)/(var0^2+vai0^2) "Initialization";
+  parameter Real iai0=(TPhasePower[1,1]*vai0-TPhasePower[1,3]*var0)/(var0^2+vai0^2) "Initialization";
+  parameter Real ibr0=(TPhasePower[1,2]*vbr0+TPhasePower[1,4]*vbi0)/(vbr0^2+vbi0^2) "Initialization";
+  parameter Real ibi0=(TPhasePower[1,2]*vbi0-TPhasePower[1,4]*vbr0)/(vbr0^2+vbi0^2) "Initialization";
 equation
   Pa = A.vr * A.ir + A.vi * A.ii;
   Qa = A.vi * A.ir - A.vr * A.ii;
