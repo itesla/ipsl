@@ -1,162 +1,143 @@
 within OpenIPSL.Examples.Controls.PSAT.AVR;
 model AVRTypeI_Test
   extends Modelica.Icons.Example;
-  OpenIPSL.Electrical.Machines.PSAT.Order6 Syn1(
-    Sn=991,
-    V_0=1.05,
-    angle_0=0.159255652433349,
-    P_0=0.899999999999999,
-    Q_0=-0.090933105025882,
-    ra=0,
-    xd=2,
-    xd1=0.245,
-    xq1=0.42,
-    xd2=0.2,
-    xq2=0.2,
-    Td10=5,
-    Tq10=0.66,
-    Td20=0.031,
-    Tq20=0.061,
-    M=2.8756*2,
-    Vn=20000,
-    V_b=20000,
-    xq=1.91,
-    Taa=0.002,
-    D=0) annotation (Placement(transformation(extent={{-116,-10},{-86,18}})));
-  OpenIPSL.Electrical.Buses.Bus bus1
-    annotation (Placement(transformation(extent={{-80,-12},{-56,12}})));
-  OpenIPSL.Electrical.Buses.Bus bus2
-    annotation (Placement(transformation(extent={{102,-12},{126,12}})));
-  OpenIPSL.Electrical.Buses.Bus bus3
-    annotation (Placement(transformation(extent={{20,20},{44,44}})));
-  OpenIPSL.Electrical.Buses.Bus bus4
-    annotation (Placement(transformation(extent={{-22,-12},{2,12}})));
-  OpenIPSL.Electrical.Buses.Bus bus5
-    annotation (Placement(transformation(extent={{60,20},{84,44}})));
-  OpenIPSL.Electrical.Branches.PwLine pwLine1to4(
-    R=0,
-    X=0.05,
-    G=0,
-    B=0) annotation (Placement(transformation(extent={{-48,-10},{-28,10}})));
-  OpenIPSL.Electrical.Branches.PwLine pwLine1(
-    R=0,
-    X=0.05,
-    G=0,
-    B=0) annotation (Placement(transformation(extent={{4,-10},{24,10}})));
-  OpenIPSL.Electrical.Branches.PwLine pwLine2(
-    R=0,
-    X=0.05,
-    G=0,
-    B=0) annotation (Placement(transformation(extent={{42,22},{62,42}})));
-  OpenIPSL.Electrical.Branches.PwLine pwLine3(
-    R=0,
-    X=0.05,
-    G=0,
-    B=0) annotation (Placement(transformation(extent={{88,-10},{108,10}})));
-  OpenIPSL.Electrical.Machines.PSAT.Order2 Syn2(
-    Sn=991,
-    Vn=20000,
-    V_b=20000,
-    V_0=1.081,
-    P_0=-0.900000000000001,
-    Q_0=0.239371894974117,
-    ra=0,
-    xd1=0.01,
-    M=6,
-    D=0) annotation (Placement(transformation(
-        extent={{-10,-10},{10,10}},
-        rotation=180,
-        origin={140,0})));
-  Modelica.Blocks.Sources.Constant vref2(k=1.198705028536746) annotation (
-      Placement(transformation(
-        extent={{-5,-5},{5,5}},
-        rotation=0,
-        origin={-167,23})));
-  OpenIPSL.Electrical.Events.PwFault pwFault(
-    R=0.15,
-    X=0,
-    t1=2,
-    t2=2.1) annotation (Placement(transformation(extent={{38,-8},{58,12}})));
-  OpenIPSL.Electrical.Controls.PSAT.AVR.AVRTypeI aVRI(vrmax=7.57)
-    annotation (Placement(transformation(extent={{-148,8},{-128,28}})));
+  OpenIPSL.Electrical.Machines.PSAT.Order6 order6Type2_Inputs_Outputs(
+    V_0=1,
+    angle_0=0,
+    V_b=200,
+    Sn=370,
+    Vn=200,
+    ra=0.001,
+    xd1=0.302,
+    M=10,
+    D=0,
+    P_0=16.0352698692006,
+    Q_0=11.859436505981)
+    annotation (Placement(transformation(extent={{-58,-32},{6,32}})));
   inner OpenIPSL.Electrical.SystemBase SysData
-    annotation (Placement(transformation(extent={{-80,60},{-38,80}})));
+    annotation (Placement(transformation(extent={{100,80},{124,100}})));
+  Electrical.Branches.PwLine pwLine1(
+    X=0.1,
+    R=0.01,
+    G=0,
+    B=0.0005) annotation (Placement(visible=true, transformation(
+        origin={70,-18},
+        extent={{-6,-6},{6,6}},
+        rotation=0)));
+  Electrical.Branches.PwLine pwLinewithOpening1(
+    G=0,
+    R=0.01,
+    X=0.1,
+    opening=1,
+    B=0.0005,
+    t1=2,
+    t2=2.15) annotation (Placement(visible=true, transformation(
+        origin={110,6},
+        extent={{-6,-6},{6,6}},
+        rotation=0)));
+  Electrical.Branches.PwLine pwLine2(
+    G=0,
+    R=0.01,
+    X=0.1,
+    B=0.0005) annotation (Placement(visible=true, transformation(
+        origin={70,6},
+        extent={{-6,-6},{6,6}},
+        rotation=0)));
+  Electrical.Branches.PwLine pwLine3(
+    G=0,
+    R=0.01,
+    X=0.1,
+    B=0.0005) annotation (Placement(visible=true, transformation(
+        origin={112,-20},
+        extent={{-6,-6},{6,6}},
+        rotation=0)));
+  Electrical.Branches.PwLine pwLine4(
+    G=0,
+    R=0.01,
+    X=0.1,
+    B=0.0005) annotation (Placement(visible=true, transformation(
+        origin={110,30},
+        extent={{-5.99999,-5.99998},{5.99999,6}},
+        rotation=0)));
+  Electrical.Loads.PSAT.LOADPQ pwLoadPQ1(
+    P_0=8,
+    Q_0=6,
+    V_0=1,
+    angle_0=0) annotation (Placement(visible=true, transformation(
+        origin={144,18},
+        extent={{-6,-6},{6,6}},
+        rotation=90)));
+  Electrical.Loads.PSAT.LOADPQ pwLoadPQ2(
+    P_0=8,
+    Q_0=6,
+    V_0=1,
+    angle_0=0) annotation (Placement(visible=true, transformation(
+        origin={144.034,-20.2889},
+        extent={{-6.2889,-6.0335},{6.2889,6.0335}},
+        rotation=90)));
+  Electrical.Buses.Bus bus
+    annotation (Placement(transformation(extent={{40,-16},{60,4}})));
+  Electrical.Buses.Bus bus1
+    annotation (Placement(transformation(extent={{80,-16},{100,4}})));
+  Electrical.Buses.Bus bus2
+    annotation (Placement(transformation(extent={{120,8},{140,28}})));
+  Electrical.Buses.Bus bus3
+    annotation (Placement(transformation(extent={{120,-30},{140,-10}})));
+  Electrical.Controls.PSAT.AVR.AVRTypeI aVRI(vrmax=7.57)
+    annotation (Placement(transformation(extent={{-26,86},{-46,106}})));
+  Modelica.Blocks.Sources.Ramp ramp(
+    duration=20,
+    startTime=1,
+    height=-0.1) annotation (Placement(transformation(
+        extent={{5,-5},{-5,5}},
+        rotation=0,
+        origin={13,99})));
+  Modelica.Blocks.Math.Add add
+    annotation (Placement(transformation(extent={{-6,96},{-16,106}})));
 equation
-  connect(Syn1.p, bus1.p) annotation (Line(
-      points={{-84.5,4.0695},{-74.5,4.0695},{-74.5,0},{-68,0}},
-      color={0,0,255},
-      smooth=Smooth.None));
-  connect(bus1.p, pwLine1to4.p) annotation (Line(
-      points={{-68,0},{-49.6667,0}},
-      color={0,0,255},
-      smooth=Smooth.None));
-  connect(pwLine1to4.n, bus4.p) annotation (Line(
-      points={{-26.3333,0},{-10,0}},
-      color={0,0,255},
-      smooth=Smooth.None));
-  connect(bus4.p, pwLine1.p) annotation (Line(
-      points={{-10,0},{2.33333,0}},
-      color={0,0,255},
-      smooth=Smooth.None));
-  connect(bus3.p, pwLine1.n) annotation (Line(
-      points={{32,32},{26,32},{26,0},{25.6667,0}},
-      color={0,0,255},
-      smooth=Smooth.None));
-  connect(bus3.p, pwLine2.p) annotation (Line(
-      points={{32,32},{40.3333,32}},
-      color={0,0,255},
-      smooth=Smooth.None));
-  connect(pwLine2.n, bus5.p) annotation (Line(
-      points={{63.6667,32},{72,32}},
-      color={0,0,255},
-      smooth=Smooth.None));
-  connect(bus5.p, pwLine3.p) annotation (Line(
-      points={{72,32},{86.3333,32},{86.3333,0}},
-      color={0,0,255},
-      smooth=Smooth.None));
-  connect(pwLine3.n, bus2.p) annotation (Line(
-      points={{109.667,0},{114,0}},
-      color={0,0,255},
-      smooth=Smooth.None));
-  connect(bus2.p, Syn2.p) annotation (Line(
-      points={{114,0},{122,0},{122,-0.04964},{129,-0.04964}},
-      color={0,0,255},
-      smooth=Smooth.None));
-  connect(Syn1.pm0, Syn1.pm) annotation (Line(points={{-113,-11.4},{-76,-11.4},
-          {-76,-18},{-126,-18},{-126,-3},{-116,-3}}, color={0,0,127}));
-  connect(bus3.p, pwFault.p) annotation (Line(points={{32,32},{36,32},{36,28},{
-          36,2},{36,2},{36.3333,2}}, color={0,0,255}));
-  connect(aVRI.vf, Syn1.vf) annotation (Line(points={{-127,18.2},{-116,18.2},{-116,
-          11}}, color={0,0,127}));
-  connect(vref2.y, aVRI.vref) annotation (Line(points={{-161.5,23},{-155.75,23},
-          {-155.75,23.6},{-150.2,23.6}}, color={0,0,127}));
-  connect(Syn1.v, aVRI.v) annotation (Line(points={{-84.5,8.2},{-74,8.2},{-74,-28},
-          {-160,-28},{-160,14.4},{-150.4,14.4}}, color={0,0,127}));
-  connect(Syn2.pm0, Syn2.pm) annotation (Line(points={{148,11},{148,20},{156,20},
-          {156,5},{150,5}}, color={0,0,127}));
-  connect(Syn2.vf, Syn2.vf0) annotation (Line(points={{150,-5},{154,-5},{154,-4},
-          {156,-4},{156,-16},{148,-16},{148,-11}}, color={0,0,127}));
+
+  connect(order6Type2_Inputs_Outputs.pm0, order6Type2_Inputs_Outputs.pm)
+    annotation (Line(points={{-51.6,-35.2},{-51.6,-42},{-51.6,-60},{-80,-60},{-80,
+          -16},{-64.4,-16}}, color={0,0,127}));
+  connect(pwLine2.p, pwLine1.p) annotation (Line(points={{64.6,6},{56,6},{56,-18},
+          {64.6,-18}}, color={0,0,255}));
+  connect(pwLine2.n, pwLine1.n) annotation (Line(points={{75.4,6},{84,6},{84,-18},
+          {75.4,-18}}, color={0,0,255}));
+  connect(pwLine4.p, pwLinewithOpening1.p) annotation (Line(points={{104.6,30},
+          {98,30},{98,6},{104.6,6}}, color={0,0,255}));
+  connect(pwLine4.n, pwLinewithOpening1.n) annotation (Line(points={{115.4,30},
+          {122,30},{122,6},{115.4,6}}, color={0,0,255}));
+  connect(bus.p, pwLine1.p) annotation (Line(points={{50,-6},{56,-6},{56,-18},{
+          64.6,-18}}, color={0,0,255}));
+  connect(bus1.p, pwLine1.n) annotation (Line(points={{90,-6},{84,-6},{84,-18},
+          {75.4,-18}},color={0,0,255}));
+  connect(bus1.p, pwLinewithOpening1.p) annotation (Line(points={{90,-6},{94,-6},
+          {94,14},{98,14},{98,6},{104.6,6}}, color={0,0,255}));
+  connect(pwLine3.p, pwLinewithOpening1.p) annotation (Line(points={{106.6,-20},
+          {94,-20},{94,14},{98,14},{98,6},{104.6,6}}, color={0,0,255}));
+  connect(bus2.p, pwLoadPQ1.p)
+    annotation (Line(points={{130,18},{138,18}}, color={0,0,255}));
+  connect(bus2.p, pwLinewithOpening1.n) annotation (Line(points={{130,18},{122,
+          18},{122,6},{115.4,6}}, color={0,0,255}));
+  connect(bus3.p, pwLoadPQ2.p) annotation (Line(points={{130,-20},{138,-20},{
+          138,-20.2889}}, color={0,0,255}));
+  connect(pwLine3.n, bus3.p) annotation (Line(points={{117.4,-20},{117.4,-20},{
+          130,-20}}, color={0,0,255}));
+  connect(bus.p, order6Type2_Inputs_Outputs.p)
+    annotation (Line(points={{50,-6},{30,-6},{30,0},{6,0}}, color={0,0,255}));
+  connect(aVRI.vf, order6Type2_Inputs_Outputs.vf) annotation (Line(points={{-48,
+          96},{-80,96},{-80,16},{-64.4,16}}, color={0,0,127}));
+  connect(aVRI.v, order6Type2_Inputs_Outputs.v) annotation (Line(points={{-24,
+          90},{22,90},{22,9.6},{9.2,9.6}}, color={0,0,127}));
+  connect(aVRI.vf0, order6Type2_Inputs_Outputs.vf0) annotation (Line(points={{-36,
+          84},{-42,84},{-42,35.2},{-51.6,35.2}}, color={0,0,127}));
+  connect(aVRI.vref0, add.u1) annotation (Line(points={{-36,108},{-36,114},{-5,
+          114},{-5,104}}, color={0,0,127}));
+  connect(ramp.y, add.u2) annotation (Line(points={{7.5,99},{0.75,99},{0.75,98},
+          {-5,98}}, color={0,0,127}));
   annotation (
-    Diagram(coordinateSystem(extent={{-180,-100},{160,100}},
+    Diagram(coordinateSystem(extent={{-100,-100},{140,120}},
           preserveAspectRatio=false)),
-    Icon(coordinateSystem(extent={{-180,-100},{160,100}})),
-    Documentation(info="<html>
-<table cellspacing=\"1\" cellpadding=\"1\" border=\"1\"><tr>
-<td><p>Reference</p></td>
-<td></td>
-</tr>
-<tr>
-<td><p>Last update</p></td>
-<td><p>15/07/2015</p></td>
-</tr>
-<tr>
-<td><p>Author</p></td>
-<td><p>MAA Murad,SmarTS Lab, KTH Royal Institute of Technology</p></td>
-</tr>
-<tr>
-<td><p>Contact</p></td>
-<td><p><a href=\"mailto:luigiv@kth.se\">luigiv@kth.se</a></p></td>
-</tr>
-</table>
-</html>"));
+    Icon(coordinateSystem(extent={{-100,-100},{140,120}})),
+    Documentation);
 end AVRTypeI_Test;
