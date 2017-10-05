@@ -1,6 +1,5 @@
 within OpenIPSL.Electrical.Sensors;
 model SoftPMU "model of a PMU measuring phasors on a line"
-  import SoftPMU;
   outer OpenIPSL.Electrical.SystemBase SysData;
   import Modelica.ComplexMath.conj;
   import Modelica.ComplexMath.real;
@@ -28,7 +27,7 @@ protected
   parameter Real vr_0=V_0*cos(angle_0*pi/180);
   parameter Real vi_0=V_0*sin(angle_0*pi/180);
 public
-  NonElectrical.Functions.FrenquencyCalc fCalc(
+  NonElectrical.Nonlinear.FrenquencyCalc fCalc(
     real_start=vr_0,
     imag_start=vi_0,
     start_guess=true)
@@ -63,5 +62,6 @@ equation
           lineColor={28,108,200},
           fillColor={85,170,255},
           fillPattern=FillPattern.Solid,
-          textString="PMU")}));
+          textString="PMU")}), Diagram(coordinateSystem(preserveAspectRatio=
+            false, extent={{-100,-100},{100,100}})));
 end SoftPMU;

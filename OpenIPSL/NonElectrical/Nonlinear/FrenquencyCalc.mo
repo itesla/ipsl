@@ -1,4 +1,4 @@
-within OpenIPSL.NonElectrical.Functions;
+within OpenIPSL.NonElectrical.Nonlinear;
 model FrenquencyCalc
   "frequency calculation of a rotating phasor, if the phasor is w.r.t a rotating coordinate system then it is the frequency difference to that system."
   parameter Boolean start_guess=false;
