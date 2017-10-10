@@ -9,7 +9,7 @@ model AVRTypeII_OEL_Test
     Sn=370,
     Vn=200,
     ra=0.001,
-    xd1=0.302,
+    x1d=0.302,
     M=10,
     D=0,
     P_0=16.0352698692006,

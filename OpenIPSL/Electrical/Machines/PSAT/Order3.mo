@@ -3,7 +3,6 @@ model Order3 "Third Order Synchronous Machine with Inputs and Outputs"
   import Modelica.Constants.pi;
   extends BaseClasses.baseMachine(
     delta(start=delta0),
-    pe(start=pm00),
     pm(start=pm00),
     pm0(start=pm00),
     vf(start=vf00),
@@ -22,14 +21,12 @@ model Order3 "Third Order Synchronous Machine with Inputs and Outputs"
   Real e1q(start=e1q0) "q-axis transient voltage (pu)";
 protected
   parameter Real Xd=xd*CoB "d-axis reactance, p.u.";
-  parameter Real x1d=xd1*CoB "d-axis transient reactance, p.u.";
   parameter Real Xq=xq*CoB "q-axis reactance, p.u.";
-  parameter Real m=M/CoB2 "Machanical starting time (2H), kWs/kVA";
-  parameter Real c1=Ra*K "CONSTANT";
+  parameter Real c1=ra*K "CONSTANT";
   parameter Real c2=x1d*K "CONSTANT";
   parameter Real c3=Xq*K " CONSTANT";
-  parameter Real K=1/(Ra*Ra + Xq*x1d) "CONSTANT";
-  parameter Real delta0=atan2(vi0 + Ra*ii0 + Xq*ir0, vr0 + Ra*ir0 - Xq*ii0)
+  parameter Real K=1/(ra*ra + Xq*x1d) "CONSTANT";
+  parameter Real delta0=atan2(vi0 + ra*ii0 + Xq*ir0, vr0 + ra*ir0 - Xq*ii0)
     "Initialitation";
   parameter Real vd0=vr0*cos(pi/2 - delta0) - vi0*sin(pi/2 - delta0)
     "Initialitation";
@@ -39,9 +36,9 @@ protected
     "Initialitation";
   parameter Real iq0=ir0*sin(pi/2 - delta0) + ii0*cos(pi/2 - delta0)
     "Initialitation";
-  parameter Real pm00=(vq0 + Ra*iq0)*iq0 + (vd0 + Ra*id0)*id0 "Initialitation";
+  parameter Real pm00=(vq0 + ra*iq0)*iq0 + (vd0 + ra*id0)*id0 "Initialitation";
   parameter Real vf00=e1q0 + (Xd - x1d)*id0 "Initialitation";
-  parameter Real e1q0=vq0 + Ra*iq0 + x1d*id0 "Initialitation";
+  parameter Real e1q0=vq0 + ra*iq0 + x1d*id0 "Initialitation";
 initial equation
   der(e1q) = 0;
 equation

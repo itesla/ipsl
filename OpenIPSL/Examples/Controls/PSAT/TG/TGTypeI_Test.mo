@@ -73,7 +73,7 @@ model TGTypeI_Test
     Sn=370,
     Vn=200,
     ra=0.001,
-    xd1=0.302,
+    x1d=0.302,
     M=10,
     D=0) annotation (Placement(transformation(extent={{-68,-12},{12,66}})));
   parameter Real p0=0.160352698692006 "Power flow, node active power";

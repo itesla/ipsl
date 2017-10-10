@@ -60,7 +60,7 @@ model PhaseShiftingTransformer_Test
     Q_0=0.010496891745129,
     angle_0=0,
     ra=0.001,
-    xd1=0.302,
+    x1d=0.302,
     M=10) annotation (Placement(transformation(extent={{-101,-11},{-81,9}})));
   Modelica.Blocks.Math.Add add
     annotation (Placement(transformation(extent={{-97,20},{-77,40}})));

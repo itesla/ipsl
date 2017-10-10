@@ -3,7 +3,6 @@ model Order2 "Second Order Synchronous Machine with Inputs and Outputs"
   import Modelica.Constants.pi;
   extends BaseClasses.baseMachine(
     delta(start=delta0),
-    pe(start=pm00),
     pm(start=pm00),
     pm0(start=pm00),
     vf(start=vf00),
@@ -13,21 +12,21 @@ model Order2 "Second Order Synchronous Machine with Inputs and Outputs"
     iq(start=iq0),
     id(start=id0));
 protected
-  parameter Real c1=Ra*K "CONSTANT";
+  parameter Real c1=ra*K "CONSTANT";
   parameter Real c2=x1d*K "CONSTANT";
   parameter Real c3=x1d*K " CONSTANT";
-  parameter Real K=1/(Ra*Ra + x1d*x1d) "CONSTANT";
-  parameter Real delta0=atan2(vi0 + Ra*ii0 + x1d*ir0, vr0 + Ra*ir0 - x1d*ii0)
-    "Initial rotor angle";
-  parameter Real pm00=(vq0 + Ra*iq0)*iq0 + (vd0 + Ra*id0)*id0 "Initialitation";
-  parameter Real vf00=vq0 + Ra*iq0 + x1d*id0 "Initialitation";
+  parameter Real K=1/(ra*ra + x1d*x1d) "CONSTANT";
+  parameter Real delta0=atan2(vi0 + ra*ii0mb + x1d*ir0mb, vr0 + ra*ir0mb - x1d*
+      ii0mb) "Initial rotor angle";
+  parameter Real pm00=(vq0 + ra*iq0)*iq0 + (vd0 + ra*id0)*id0 "Initialitation";
+  parameter Real vf00=vq0 + ra*iq0 + x1d*id0 "Initialitation";
   parameter Real vd0=vr0*cos(pi/2 - delta0) - vi0*sin(pi/2 - delta0)
     "Initialitation";
   parameter Real vq0=vr0*sin(pi/2 - delta0) + vi0*cos(pi/2 - delta0)
     "Initialitation";
-  parameter Real id0=ir0*cos(pi/2 - delta0) - ii0*sin(pi/2 - delta0)
+  parameter Real id0=ir0mb*cos(pi/2 - delta0) - ii0mb*sin(pi/2 - delta0)
     "Initialitation";
-  parameter Real iq0=ir0*sin(pi/2 - delta0) + ii0*cos(pi/2 - delta0)
+  parameter Real iq0=ir0mb*sin(pi/2 - delta0) + ii0mb*cos(pi/2 - delta0)
     "Initialitation";
 equation
   id = (-c1*vd) - c3*vq + vf*c3;

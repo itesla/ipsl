@@ -58,22 +58,22 @@ partial model baseMachine
         origin={110,-70},
         extent={{-10,-10},{10,10}},
         rotation=0)));
-  Modelica.Blocks.Interfaces.RealInput Vf "Field voltage (pu)" annotation (
+  Modelica.Blocks.Interfaces.RealInput vf "Field voltage (pu)" annotation (
       Placement(visible=true, transformation(
         origin={-120,50},
         extent={{-20,-20},{20,20}},
         rotation=0)));
-  Modelica.Blocks.Interfaces.RealOutput Vf0 "Initial field voltage (pu)"
+  Modelica.Blocks.Interfaces.RealOutput vf0 "Initial field voltage (pu)"
     annotation (Placement(visible=true, transformation(
         origin={-80,110},
         extent={{-10,-10},{10,10}},
         rotation=90)));
-  Modelica.Blocks.Interfaces.RealOutput Pm0 "Initial mechanical power (pu)"
+  Modelica.Blocks.Interfaces.RealOutput pm0 "Initial mechanical power (pu)"
     annotation (Placement(visible=true, transformation(
         origin={-80,-110},
         extent={{-10,-10},{10,10}},
         rotation=270)));
-  Modelica.Blocks.Interfaces.RealInput Pm "Mechanical power (pu)" annotation (
+  Modelica.Blocks.Interfaces.RealInput pm "Mechanical power (pu)" annotation (
       Placement(visible=true, transformation(
         origin={-120,-50},
         extent={{-20,-20},{20,20}},
@@ -97,13 +97,15 @@ protected
     "initial active power generation in pu (machine base)";
   parameter Real q0=Q_0/Sn
     "initial reactive power generation in pu (machine base)";
+  parameter Real ii0mb=-ii0/CoB;
+  parameter Real ir0mb=-ir0/CoB;
 initial equation
   w = 1;
 equation
   v = sqrt(p.vr^2 + p.vi^2);
   anglev = atan2(p.vi, p.vr);
   der(delta) = w_b*(w - 1);
-  der(w) = (Pm - (P/CoB) - D*(w - 1))/M;
+  der(w) = (pm - (P/CoB) - D*(w - 1))/M;
   [p.ir; p.ii] = -CoB*[sin(delta), cos(delta); -cos(delta), sin(delta)]*[id; iq];
   [p.vr; p.vi] = [sin(delta), cos(delta); -cos(delta), sin(delta)]*[vd; vq];
   -P = p.vr*p.ir + p.vi*p.ii;

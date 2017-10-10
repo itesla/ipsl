@@ -3,7 +3,6 @@ model Order4 "Fourth Order Synchronous Machine with Inputs and Outputs"
   import Modelica.Constants.pi;
   extends BaseClasses.baseMachine(
     delta(start=delta0),
-    pe(start=pm00),
     pm(start=pm00),
     pm0(start=pm00),
     vf(start=vf00),
@@ -37,17 +36,17 @@ protected
     "Initialitation";
   parameter Real iq0=ir0*sin(pi/2 - delta0) + ii0*cos(pi/2 - delta0)
     "Initialitation";
-  parameter Real delta0=atan2(vi0 + Ra*ii0 + Xq*ir0, vr0 + Ra*ir0 - Xq*ii0)
+  parameter Real delta0=atan2(vi0 + ra*ii0 + Xq*ir0, vr0 + ra*ir0 - Xq*ii0)
     "Initialitation";
-  parameter Real pm00=(vq0 + Ra*iq0)*iq0 + (vd0 + Ra*id0)*id0 "Initialitation";
+  parameter Real pm00=(vq0 + ra*iq0)*iq0 + (vd0 + ra*id0)*id0 "Initialitation";
   parameter Real vf00=e1q0 + (Xd - x1d)*id0 "Initialitation";
-  parameter Real e1q0=vq0 + Ra*iq0 + x1d*id0 "Initialitation";
-  parameter Real e1d0=vd0 + Ra*id0 - x1q*iq0 "Initialitation *";
+  parameter Real e1q0=vq0 + ra*iq0 + x1d*id0 "Initialitation";
+  parameter Real e1d0=vd0 + ra*id0 - x1q*iq0 "Initialitation *";
 equation
   der(e1q) = ((-e1q) - (Xd - x1d)*id + vf)/Td10;
   der(e1d) = ((-e1d) + (Xq - x1q)*iq)/Tq10 "differential equations *";
-  e1q = vq + Ra*iq + x1d*id;
-  e1d = vd + Ra*id - x1q*iq "relation between voltages and currents *";
+  e1q = vq + ra*iq + x1d*id;
+  e1d = vd + ra*id - x1q*iq "relation between voltages and currents *";
   pm0 = pm00;
   vf0 = vf00;
   annotation (Icon(coordinateSystem(extent={{-100,-100},{100,100}},

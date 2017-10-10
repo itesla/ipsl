@@ -11,7 +11,7 @@ model TWTPST_smib_test
     P_0=0.050249405357958,
     Q_0=0.010496891745129,
     ra=0.001,
-    xd1=0.302,
+    x1d=0.302,
     M=10) annotation (Placement(transformation(extent={{-122,-10},{-102,10}})));
   OpenIPSL.Electrical.Loads.PSAT.LOADPQ lOADPQ2(Q_0=0.001, P_0=0.03)
     annotation (Placement(transformation(extent={{34,-44},{54,-24}})));

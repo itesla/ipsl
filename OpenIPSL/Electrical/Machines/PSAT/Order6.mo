@@ -4,10 +4,10 @@ model Order6
   import Modelica.SIunits.*;
   extends BaseClasses.baseMachine(
     delta(start=delta0),
-    Pm(start=pm00),
-    Pm0(start=pm00),
-    Vf(start=vf00),
-    Vf0(start=vf00),
+    pm(start=pm00),
+    pm0(start=pm00),
+    vf(start=vf00),
+    vf0(start=vf00),
     vq(start=vq0),
     vd(start=vd0),
     iq(start=iq0),
@@ -38,8 +38,6 @@ model Order6
   Real e2q(start=e2q0) "q-axis sub-transient voltage";
   Real e2d(start=e2d0) "d-axis sub-transient voltage";
 
-  parameter Real ii0mb=-ii0/CoB;
-  parameter Real ir0mb=-ir0/CoB;
   parameter Angle delta0=atan2(vi0 + ra*ii0mb + xq*ir0mb, vr0 + ra*ir0mb - xq*
       ii0mb) "Initialization (rad)";
   parameter Real vd0=vr0*cos(pi/2 - delta0) - vi0*sin(pi/2 - delta0)
@@ -68,16 +66,16 @@ initial equation
 equation
 
   der(e1q) = ((-e1q) - (xd - x1d - T2d0/T1d0*x2d/x1d*(xd - x1d))*id + (1 - Taa/
-    T1d0)*Vf)/T1d0;
+    T1d0)*vf)/T1d0;
   der(e1d) = ((-e1d) + (xq - x1q - T2q0/T1q0*x2q/x1q*(xq - x1q))*iq)/T1q0;
   der(e2d) = ((-e2d) + e1d + (x1q - x2q + T2q0/T1q0*x2q/x1q*(xq - x1q))*iq)/
     T2q0;
   der(e2q) = ((-e2q) + e1q - (x1d - x2d + T2d0/T1d0*x2d/x1d*(xd - x1d))*id +
-    Taa/T1d0*Vf)/T2d0;
+    Taa/T1d0*vf)/T2d0;
   e2q = vq + ra*iq + x2d*id;
   e2d = vd + ra*id - x2q*iq;
-  Pm0 = pm00;
-  Vf0 = vf00;
+  pm0 = pm00;
+  vf0 = vf00;
   annotation (Icon(coordinateSystem(extent={{-100,-100},{100,100}},
           initialScale=0.1), graphics={Rectangle(
           visible=true,

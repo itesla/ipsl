@@ -10,7 +10,7 @@ model TCSC_Alpha_Test
     V_0=1,
     Vn=400,
     ra=0.001,
-    xd1=0.302,
+    x1d=0.302,
     M=10) annotation (Placement(transformation(extent={{-24,-10},{-4,10}})));
   Modelica.Blocks.Sources.Pulse pulse(
     period=10,

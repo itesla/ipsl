@@ -24,7 +24,7 @@ model StatcomCode_Test
     V_0=1.027606413803688,
     V_b=400,
     ra=0.001,
-    xd1=0.302,
+    x1d=0.302,
     M=10,
     angle_0=0.036282466109908*180/pi,
     P_0=0.800000000076548*SysData.S_b,
@@ -57,7 +57,7 @@ model StatcomCode_Test
     angle_0=0,
     Vn=400,
     ra=0.001,
-    xd1=0.302,
+    x1d=0.302,
     M=10,
     P_0=0.004219210312137*SysData.S_b,
     Q_0=-0.001421467052118*SysData.S_b)

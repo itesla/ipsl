@@ -6,7 +6,7 @@ model Order5test2
     Sn=370,
     Vn=200,
     ra=0.001,
-    xd1=0.302,
+    x1d=0.302,
     M=10,
     D=0,
     V_b=400,

@@ -120,13 +120,13 @@ equation
           92},{13,92}}, color={0,0,127}));
   connect(add.u1, exciter_Type_II.vref0) annotation (Line(points={{13,98},{14,
           98},{14,111.2},{-53,111.2}}, color={0,0,127}));
-  connect(order6Type2_Inputs_Outputs.Pm0, order6Type2_Inputs_Outputs.Pm)
-    annotation (Line(points={{-51.6,-35.2},{-51.6,-60},{-80,-60},{-80,-16},{
-          -64.4,-16}}, color={0,0,127}));
-  connect(order6Type2_Inputs_Outputs.Vf, exciter_Type_II.vf) annotation (Line(
+  connect(order6Type2_Inputs_Outputs.pm0, order6Type2_Inputs_Outputs.pm)
+    annotation (Line(points={{-51.6,-35.2},{-51.6,-60},{-80,-60},{-80,-16},{-64.4,
+          -16}}, color={0,0,127}));
+  connect(order6Type2_Inputs_Outputs.vf, exciter_Type_II.vf) annotation (Line(
         points={{-64.4,16},{-80,16},{-80,18},{-90.2,18},{-90.2,80}}, color={0,0,
           127}));
-  connect(order6Type2_Inputs_Outputs.Vf0, exciter_Type_II.vf0) annotation (Line(
+  connect(order6Type2_Inputs_Outputs.vf0, exciter_Type_II.vf0) annotation (Line(
         points={{-51.6,35.2},{-51.6,41.6},{-53,41.6},{-53,48.8}}, color={0,0,
           127}));
   connect(Bus1.p, pwLine2.p)
