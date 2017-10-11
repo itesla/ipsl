@@ -46,7 +46,8 @@ equation
           15},{8,15}}, color={0,0,127}));
   connect(machine.v, avr.v) annotation (Line(points={{77,9},{88,9},{88,52},{
           -50.3333,52},{-50.3333,26}}, color={0,0,127}));
-  connect(avr.vf0, machine.vf0) annotation (Line(points={{-32,34.3333},{-6,
+  connect(machine.vf0, avr.vf0) annotation (Line(points={{20,33},{4,33},{4,44},
+          {-30,44},{-30,34.3333},{-32,34.3333}},color={0,0,127}));
   annotation (
     Icon(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,
             100}}), graphics={Ellipse(
