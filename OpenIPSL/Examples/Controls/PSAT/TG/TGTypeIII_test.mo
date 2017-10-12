@@ -14,7 +14,7 @@ model TGTypeIII_test
     M=10,
     D=0,
     xd=1.9,
-    Td10=8,
+    T1d0=8,
     xq=1.7) annotation (Placement(visible=true, transformation(
         origin={-35.3443,12.6244},
         extent={{-16.6557,-16.6244},{16.6557,16.6244}},

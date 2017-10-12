@@ -91,8 +91,6 @@ algorithm
 equation
   connect(firstOrder.y, vf)
     annotation (Line(points={{73,0},{88,0},{110,0}}, color={0,0,127}));
-  connect(vf, vf)
-    annotation (Line(points={{110,0},{106,0},{110,0}}, color={0,0,127}));
   connect(ceilingBlock.u, vf) annotation (Line(points={{72,58},{80,58},{80,0},{
           110,0}}, color={0,0,127}));
   connect(ceilingBlock.y, feedback.u2)

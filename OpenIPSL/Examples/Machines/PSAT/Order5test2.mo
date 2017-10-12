@@ -16,10 +16,10 @@ model Order5test2
     Q_0=11.859436505981,
     xd=1.9,
     xq=1.7,
-    xq1=0.5,
-    Td10=8,
-    Tq10=0.8,
-    Tq20=0.02)
+    x1q=0.5,
+    T1d0=8,
+    T1q0=0.8,
+    T2q0=0.02)
     annotation (Placement(transformation(extent={{-32,-10},{-12,10}})));
 equation
   connect(order5Type1_Inputs_Outputs.vf, order5Type1_Inputs_Outputs.vf0)

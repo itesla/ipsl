@@ -32,9 +32,9 @@ model Order6
 
   parameter Real e2q0=vq0 + ra*iq0 + x2d*id0 "Initialitation";
   parameter Real e2d0=vd0 + ra*id0 - x2q*iq0 "Initialitation";
-  parameter Real e1d0=(xq - x1q - T2q0/T1q0*x2q/x1q*(xq - x1q))*iq0;
-  parameter Real K1=xd - x1d - T2d0/T1d0*x2d/x1d*(xd - x1d);
-  parameter Real K2=x1d - x2d + T2d0/T1d0*x2d/x1d*(xd - x1d);
+  parameter Real e1d0=(xq - x1q - T2q0*x2q*(xq - x1q)/(T1q0*x1q))*iq0;
+  parameter Real K1=xd - x1d - T2d0*x2d*(xd - x1d)/(T1d0*x1d);
+  parameter Real K2=x1d - x2d + T2d0*x2d*(xd - x1d)/(T1d0*x1d);
   parameter Real e1q0=e2q0 + K2*id0 - Taa/T1d0*((K1 + K2)*id0 + e2q0);
   parameter Real vf00=(K1*id0 + e1q0)/(1 - Taa/T1d0);
 initial equation

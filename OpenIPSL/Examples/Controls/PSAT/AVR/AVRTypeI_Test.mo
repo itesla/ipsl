@@ -135,6 +135,8 @@ equation
           114},{-5,104}}, color={0,0,127}));
   connect(ramp.y, add.u2) annotation (Line(points={{7.5,99},{0.75,99},{0.75,98},
           {-5,98}}, color={0,0,127}));
+  connect(add.y, aVRI.vref) annotation (Line(points={{-16.5,101},{-19.25,101},{
+          -19.25,102},{-24,102}}, color={0,0,127}));
   annotation (
     Diagram(coordinateSystem(extent={{-100,-100},{140,120}},
           preserveAspectRatio=false)),

@@ -32,8 +32,8 @@ protected
   parameter Real vf00=(K1*id0 + e1q0)/(1 - Taa/T1d0);
 initial equation
   //der(e1q) = 0;
-  // der(e2q) = 0;
-  // der(e2d) = 0;
+  der(e2q) = 0;
+  der(e2d) = 0;
 equation
   der(e1q) = ((-e1q) - (xd - x1d - T2d0/T1d0*x2d/x1d*(xd - x1d))*id + (1 - Taa/
     T1d0)*vf)/T1d0;
