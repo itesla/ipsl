@@ -22,11 +22,15 @@ protected
   parameter Real e1d0=vd0 + ra*id0 - x1q*iq0 "Initialization";
 initial equation
   der(e1q) = 0;
-  der(e1d) = 0;
 
 equation
   der(e1q) = ((-e1q) - (xd - x1d)*id + vf)/T1d0;
-  der(e1d) = ((-e1d) + (xq - x1q)*iq)/T1q0 "differential equations *";
+  if xq <> x1q then
+    // safe-guard against division by zero.
+    der(e1d) = ((-e1d) + (xq - x1q)*iq)/T1q0 "differential equations *";
+  else
+    der(e1d) = (-e1d)/T1q0 "differential equations *";
+  end if;
   e1q = vq + ra*iq + x1d*id;
   e1d = vd + ra*id - x1q*iq "relation between voltages and currents *";
   vf0 = vf00;

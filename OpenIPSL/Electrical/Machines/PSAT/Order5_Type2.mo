@@ -26,14 +26,14 @@ model Order5_Type2
 protected
   parameter Real e2q0=vq0 + ra*iq0 + x2d*id0 "Initialitation";
   parameter Real e2d0=vd0 + ra*id0 - x2q*iq0 "Initialitation";
-  parameter Real K1=xd - x1d - T2d0/T1d0*x2d/x1d*(xd - x1d);
-  parameter Real K2=x1d - x2d + T2d0/T1d0*x2d/x1d*(xd - x1d);
+  parameter Real K1=xd - x1d - (T2d0*x2d*(xd - x1d))/(T1d0*x1d);
+  parameter Real K2=x1d - x2d + (T2d0*x2d*(xd - x1d))/(T1d0*x1d);
   parameter Real e1q0=(-K1*Taa/T1d0*id0) + (1 - Taa/T1d0)*(e2q0 + K2*id0);
   parameter Real vf00=(K1*id0 + e1q0)/(1 - Taa/T1d0);
 initial equation
-  der(e1q) = 0;
-  der(e2q) = 0;
-  der(e2d) = 0;
+  //der(e1q) = 0;
+  // der(e2q) = 0;
+  // der(e2d) = 0;
 equation
   der(e1q) = ((-e1q) - (xd - x1d - T2d0/T1d0*x2d/x1d*(xd - x1d))*id + (1 - Taa/
     T1d0)*vf)/T1d0;
@@ -51,7 +51,7 @@ equation
           origin={0,60},
           extent={{-60,-20},{60,20}},
           lineColor={28,108,200},
-          textString="Order IV - Typ 2")}), Documentation(info="<html>
+          textString="Order V - Type 2")}), Documentation(info="<html>
 <table cellspacing=\"1\" cellpadding=\"1\" border=\"1\">
 <tr>
 <td><p>Reference</p></td>

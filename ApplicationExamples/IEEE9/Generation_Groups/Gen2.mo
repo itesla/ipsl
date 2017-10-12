@@ -17,9 +17,9 @@ model Gen2
     ra=0,
     xd=1.3125,
     x1d=0.1813,
-    xq1=0.25,
-    Td10=5.89,
-    Tq10=0.6,
+    x1q=0.25,
+    T1d0=5.89,
+    T1q0=0.6,
     M=6.02,
     D=0,
     xq=1.2578) annotation (Placement(transformation(
@@ -61,11 +61,11 @@ equation
   //P_MW = gen.P*S_b;
   //Q_MVA = gen.Q*S_b;
   connect(gen.v, AVR.v) annotation (Line(
-      points={{39,17},{48,17},{48,-14},{-22,-14},{-22,9},{-14,9}},
+      points={{39,17},{48,17},{48,-14},{-22,-14},{-22,4},{-18,4}},
       color={0,0,127},
       smooth=Smooth.None));
   connect(switch1.y, AVR.vref) annotation (Line(points={{-39.5,17},{-26.75,17},
-          {-26.75,16},{-18,16}}, color={0,0,127}));
+          {-26.75,16},{-18,16}},color={0,0,127}));
   connect(booleanConstant.y, switch1.u2) annotation (Line(points={{-69.5,7},{-66,
           7},{-66,17},{-51,17}}, color={255,0,255}));
   connect(step.y, switch1.u1)

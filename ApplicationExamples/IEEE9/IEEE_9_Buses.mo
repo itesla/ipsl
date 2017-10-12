@@ -28,21 +28,21 @@ model IEEE_9_Buses
         origin={-72,-21})));
   OpenIPSL.Electrical.Loads.PSAT.VoltDependant lOADPQ(
     V_b=230,
-    angle_0=-0.069617784448685*180/pi,
     V_0=0.995630859628167,
     Sn=100,
     P_0=125,
-    Q_0=50) annotation (Placement(transformation(
+    Q_0=50,
+    angle_0=-3.9888) annotation (Placement(transformation(
         extent={{-7,-7},{7,7}},
         rotation=0,
         origin={-99,-11})));
   OpenIPSL.Electrical.Loads.PSAT.VoltDependant PQ1(
     V_b=230,
-    angle_0=-0.064357203188830*180/pi,
     V_0=1.012654326639182,
     Sn=100,
     P_0=90,
-    Q_0=30) annotation (Placement(transformation(
+    Q_0=30,
+    angle_0=-3.6874) annotation (Placement(transformation(
         extent={{-7,-7},{7,7}},
         rotation=0,
         origin={109,-13})));
@@ -93,28 +93,28 @@ model IEEE_9_Buses
         origin={-102,90})));
   OpenIPSL.Electrical.Loads.PSAT.VoltDependant lOADPQ1(
     V_b=230,
-    angle_0=0.012697901381466*180/pi,
     V_0=1.015882581760390,
     Sn=100,
     P_0=100,
-    Q_0=35) annotation (Placement(transformation(
+    Q_0=35,
+    angle_0=0.72754) annotation (Placement(transformation(
         extent={{-7,-7},{7,7}},
         rotation=0,
         origin={7,53})));
   OpenIPSL.Electrical.Buses.Bus B2(
     V_0=1.025,
-    angle_0=0.161966652912444*180/pi,
-    V_b=18)
+    V_b=18,
+    angle_0=9.28)
     annotation (Placement(transformation(extent={{-130,80},{-110,100}})));
   OpenIPSL.Electrical.Buses.Bus B7(
     V_b=230,
     V_0=1.0258,
-    angle_0=-2.2168)
+    angle_0=3.7197)
     annotation (Placement(transformation(extent={{-90,80},{-70,100}})));
   OpenIPSL.Electrical.Buses.Bus B8(
     V_0=1.015882581760390,
     V_b=230,
-    angle_0=0.012697901381466*180/pi) annotation (Placement(transformation(
+    angle_0=0.72754) annotation (Placement(transformation(
         extent={{-10,-10},{10,10}},
         rotation=0,
         origin={0,90})));
@@ -126,26 +126,26 @@ model IEEE_9_Buses
   OpenIPSL.Electrical.Buses.Bus B3(
     V_0=1.025,
     V_b=13.8,
-    angle_0=0.081415270775183*180/pi)
+    angle_0=4.6648)
     annotation (Placement(transformation(extent={{110,80},{130,100}})));
   OpenIPSL.Electrical.Buses.Bus B6(
     V_0=1.012654326639182,
     V_b=230,
-    angle_0=-0.064357203188830*180/pi) annotation (Placement(transformation(
+    angle_0=-3.6874) annotation (Placement(transformation(
         extent={{-10,-10},{10,10}},
         rotation=-90,
         origin={86,20})));
   OpenIPSL.Electrical.Buses.Bus B5(
     V_0=0.995630859628167,
     V_b=230,
-    angle_0=-0.069617784448685*180/pi) annotation (Placement(transformation(
+    angle_0=-3.9888) annotation (Placement(transformation(
         extent={{-12,-12},{12,12}},
         rotation=90,
         origin={-72,20})));
   OpenIPSL.Electrical.Buses.Bus B4(
     V_0=1.0258,
     V_b=230,
-    angle_0=-0.03869) annotation (Placement(transformation(
+    angle_0=-2.2168) annotation (Placement(transformation(
         extent={{-12,-12},{12,12}},
         rotation=-90,
         origin={0,-46})));
@@ -174,11 +174,11 @@ model IEEE_9_Buses
     height_2=0.05,
     tstart_2=2,
     refdisturb_2=false,
-    angle_0=0.081415270775183*180/pi,
     vref0=1.097573933623472,
     vf0=1.402994304406186,
     P_0=85,
-    Q_0=-10.8597088920594)
+    Q_0=-10.8597088920594,
+    angle_0=4.6648)
     annotation (Placement(transformation(extent={{160,80},{140,100}})));
   Generation_Groups.Gen3 gen3(
     V_0=1.040000000000000,

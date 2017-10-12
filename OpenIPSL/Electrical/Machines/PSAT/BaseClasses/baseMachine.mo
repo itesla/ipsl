@@ -88,12 +88,12 @@ partial model baseMachine
   parameter Real CoB=Sn/S_b "From machine base to system base";
 
   // Initialize stator quantities (system base):
-protected
+  //protected
   parameter Real p0=P_0/S_b
     "Initial active power generation in pu (system base)";
   parameter Real q0=Q_0/S_b
     "Initial reactive power generation in pu (system base)";
-  parameter Complex Vt0=CM.fromPolar(V_0, -SI.Conversions.from_deg(angle_0))
+  parameter Complex Vt0=CM.fromPolar(V_0, SI.Conversions.from_deg(angle_0))
     "conj.";
   parameter Complex S0(re=p0, im=-q0) "conj.";
   parameter Complex I0=S0/(CM.conj(Vt0));
@@ -109,14 +109,16 @@ protected
     "Initial rotor angle";
   parameter Complex Vdq0=Vt0*CM.fromPolar(1, -delta0 + (pi/2));
   parameter Complex Idq0=I0/CoB*CM.fromPolar(1, -delta0 + (pi/2));
-  parameter Real vd0=CM.real(Vdq0) "Initialization (pu, systembase)";
-  parameter Real vq0=CM.imag(Vdq0) "Initialization (pu, systembase)";
-  parameter Real id0=CM.real(Idq0) "Initialization (pu, systembase)";
-  parameter Real iq0=CM.imag(Idq0) "Initialization (pu, systembase)";
-  parameter Real pm00=(vq0 + ra*iq0)*iq0 + (vd0 + ra*id0)*id0 "Initialization";
+  parameter Real vd0=CM.real(Vdq0) "Initialization (pu, machine base)";
+  parameter Real vq0=CM.imag(Vdq0) "Initialization (pu, machine base)";
+  parameter Real id0=CM.real(Idq0) "Initialization (pu, machine base)";
+  parameter Real iq0=CM.imag(Idq0) "Initialization (pu, machine base)";
+  parameter Real pm00=(vq0 + ra*iq0)*iq0 + (vd0 + ra*id0)*id0
+    "Initialization (pu, machine base";
 initial equation
   w = 1;
   der(delta) = 0;
+  delta = delta0;
 equation
   v = sqrt(p.vr^2 + p.vi^2);
   anglev = atan2(p.vi, p.vr);

@@ -18,9 +18,9 @@ model Gen1
     xd=0.8958,
     xq=0.8645,
     x1d=0.1198,
-    xq1=0.1969,
-    Td10=6,
-    Tq10=0.5350,
+    x1q=0.1969,
+    T1d0=6,
+    T1q0=0.5350,
     M=12.8,
     D=0) annotation (Placement(transformation(
         extent={{-10,-10},{10,10}},

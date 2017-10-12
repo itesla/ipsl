@@ -47,7 +47,7 @@ equation
           extent={{-60,-20},{60,20}},
           fontName="Arial",
           lineColor={28,108,200},
-          textString="Order IV - Typ 1")}), Documentation(info="<html>
+          textString="Order V - Type 1")}), Documentation(info="<html>
 <table cellspacing=\"1\" cellpadding=\"1\" border=\"1\">
 <tr>
 <td><p>Reference</p></td>
