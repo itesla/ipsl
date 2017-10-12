@@ -2,7 +2,9 @@ within OpenIPSL.Electrical.Machines.PSAT.BaseClasses;
 partial model baseMachine
   extends OpenIPSL.Electrical.Essentials.pfComponent;
   import Modelica.Constants.pi;
-  import Modelica.SIunits.*;
+  import SI = Modelica.SIunits;
+  import CM = Modelica.ComplexMath;
+  import Complex;
   parameter Real Sn "Power rating (MVA)"
     annotation (Dialog(group="Machine parameters"));
   parameter Real Vn "Voltage rating (kV)"
@@ -11,11 +13,11 @@ partial model baseMachine
     annotation (Dialog(group="Machine parameters"));
   parameter Real x1d "d-axis transient reactance (pu)"
     annotation (Dialog(group="Machine parameters"));
-  parameter Real M "Machanical starting time (2H), kWs/kVA"
+  parameter Real M "Mechanical starting time (2H), kWs/kVA"
     annotation (Dialog(group="Machine parameters"));
   parameter Real D "Damping coefficient"
     annotation (Dialog(group="Machine parameters"));
-  //Initialization of currents and voltages
+
   OpenIPSL.Interfaces.PwPin p(
     vr(start=vr0),
     vi(start=vi0),
@@ -25,6 +27,7 @@ partial model baseMachine
         extent={{-10.0,-10.0},{10.0,10.0}},
         rotation=0)));
   Modelica.Blocks.Interfaces.RealOutput delta(
+    start=delta0,
     quantity="Angle",
     unit="rad",
     displayUnit="rad") "Rotor angle (rad)" annotation (Placement(visible=true,
@@ -32,19 +35,14 @@ partial model baseMachine
         origin={110,60},
         extent={{-10,-10},{10,10}},
         rotation=0)));
-  Modelica.Blocks.Interfaces.RealOutput w(
-    start=1,
-    quantity="PerUnit",
-    displayUnit="pu") "Rotor speed (pu)" annotation (Placement(visible=true,
-        transformation(
+  Modelica.Blocks.Interfaces.RealOutput w(start=1) "Rotor speed (pu)"
+    annotation (Placement(visible=true, transformation(
         origin={110,90},
         extent={{-10,-10},{10,10}},
         rotation=0)));
-  Modelica.Blocks.Interfaces.RealOutput v(
-    quantity="PerUnit",
-    displayUnit="pu",
-    start=V_0) "Generator terminal voltage (pu)" annotation (Placement(visible=
-          true,transformation(
+  Modelica.Blocks.Interfaces.RealOutput v(start=V_0)
+    "Generator terminal voltage (pu)" annotation (Placement(visible=true,
+        transformation(
         origin={110,30},
         extent={{-10,-10},{10,10}},
         rotation=0)));
@@ -68,49 +66,71 @@ partial model baseMachine
         origin={-80,110},
         extent={{-10,-10},{10,10}},
         rotation=90)));
-  Modelica.Blocks.Interfaces.RealOutput pm0 "Initial mechanical power (pu)"
-    annotation (Placement(visible=true, transformation(
+  Modelica.Blocks.Interfaces.RealOutput pm0(start=pm00)
+    "Initial mechanical power (pu)" annotation (Placement(visible=true,
+        transformation(
         origin={-80,-110},
         extent={{-10,-10},{10,10}},
         rotation=270)));
-  Modelica.Blocks.Interfaces.RealInput pm "Mechanical power (pu)" annotation (
-      Placement(visible=true, transformation(
+  Modelica.Blocks.Interfaces.RealInput pm(start=pm00) "Mechanical power (pu)"
+    annotation (Placement(visible=true, transformation(
         origin={-120,-50},
         extent={{-20,-20},{20,20}},
         rotation=0)));
-  Angle anglev(start=Conversions.from_deg(angle_0)) " Bus voltage angle (rad)";
-  Real vd "d-axis voltage (pu)";
-  Real vq "q-axis voltage (pu)";
-  Real id "d-axis currrent (pu)";
-  Real iq "q-axis current (pu)";
-protected
-  parameter Real vr0=V_0*cos(angle_0*pi/180) "Initialization (pu)";
-  parameter Real vi0=V_0*sin(angle_0*pi/180) "Initialization (pu)";
-  parameter Real ir0=-CoB*(p0*vr0 + q0*vi0)/(vr0^2 + vi0^2)
-    "Initialization (system base)";
-  parameter Real ii0=-CoB*(p0*vi0 - q0*vr0)/(vr0^2 + vi0^2)
-    "Initialitation (system base)";
-  //From machine base to system base
-  parameter Real CoB=Sn/S_b;
+  SI.Angle anglev(start=SI.Conversions.from_deg(angle_0))
+    " Bus voltage angle (rad)";
+  Real vd(start=vd0) "d-axis voltage (pu)";
+  Real vq(start=vq0) "q-axis voltage (pu)";
+  Real id(start=id0) "d-axis currrent (pu)";
+  Real iq(start=iq0) "q-axis current (pu)";
+  //protected
   parameter Real w_b=2*pi*fn "Base frequency in rad/s";
-  parameter Real p0=P_0/Sn
-    "initial active power generation in pu (machine base)";
-  parameter Real q0=Q_0/Sn
-    "initial reactive power generation in pu (machine base)";
-  parameter Real ii0mb=-ii0/CoB;
-  parameter Real ir0mb=-ir0/CoB;
+  parameter Real CoB=Sn/S_b "From machine base to system base";
+
+  // Initialize stator quantities (system base):
+protected
+  parameter Real p0=P_0/S_b
+    "Initial active power generation in pu (system base)";
+  parameter Real q0=Q_0/S_b
+    "Initial reactive power generation in pu (system base)";
+  parameter Complex Vt0=CM.fromPolar(V_0, -SI.Conversions.from_deg(angle_0))
+    "conj.";
+  parameter Complex S0(re=p0, im=-q0) "conj.";
+  parameter Complex I0=S0/(CM.conj(Vt0));
+  parameter Real vr0=CM.real(Vt0) "Initialization (pu)";
+  parameter Real vi0=CM.imag(Vt0) "Initialization (pu)";
+  parameter Real ir0=-CM.real(I0) "Initialization (pu)";
+  parameter Real ii0=-CM.imag(I0) "Initialization (pu)";
+
+  // Initialize DQ-quantities (machine base)
+
+  parameter Real xq0 "used for setting the initial rotor angle";
+  parameter SI.Angle delta0=CM.arg(Vt0 + (ra + CM.j*xq0)*(I0/CoB))
+    "Initial rotor angle";
+  parameter Complex Vdq0=Vt0*CM.fromPolar(1, -delta0 + (pi/2));
+  parameter Complex Idq0=I0/CoB*CM.fromPolar(1, -delta0 + (pi/2));
+  parameter Real vd0=CM.real(Vdq0) "Initialization (pu, systembase)";
+  parameter Real vq0=CM.imag(Vdq0) "Initialization (pu, systembase)";
+  parameter Real id0=CM.real(Idq0) "Initialization (pu, systembase)";
+  parameter Real iq0=CM.imag(Idq0) "Initialization (pu, systembase)";
+  parameter Real pm00=(vq0 + ra*iq0)*iq0 + (vd0 + ra*id0)*id0 "Initialization";
 initial equation
   w = 1;
+  der(delta) = 0;
 equation
   v = sqrt(p.vr^2 + p.vi^2);
   anglev = atan2(p.vi, p.vr);
   der(delta) = w_b*(w - 1);
-  der(w) = (pm - (P/CoB) - D*(w - 1))/M;
+  if D > Modelica.Constants.eps then
+    der(w) = (pm - (P/CoB) - D*(w - 1))/M;
+  else
+    der(w) = (pm - (P/CoB))/M;
+  end if;
   [p.ir; p.ii] = -CoB*[sin(delta), cos(delta); -cos(delta), sin(delta)]*[id; iq];
   [p.vr; p.vi] = [sin(delta), cos(delta); -cos(delta), sin(delta)]*[vd; vq];
   -P = p.vr*p.ir + p.vi*p.ii;
   -Q = p.vi*p.ir - p.vr*p.ii;
-
+  pm0 = pm00;
   annotation (
     Icon(coordinateSystem(extent={{-100,-100},{100,100}}, initialScale=0.1),
         graphics={

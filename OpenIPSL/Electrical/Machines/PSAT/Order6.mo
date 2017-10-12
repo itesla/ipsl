@@ -1,17 +1,9 @@
 within OpenIPSL.Electrical.Machines.PSAT;
 model Order6
-  import Modelica.Constants.pi;
-  import Modelica.SIunits.*;
   extends BaseClasses.baseMachine(
-    delta(start=delta0),
-    pm(start=pm00),
-    pm0(start=pm00),
     vf(start=vf00),
     vf0(start=vf00),
-    vq(start=vq0),
-    vd(start=vd0),
-    iq(start=iq0),
-    id(start=id0));
+    xq0=xq);
   parameter Real xd=1.9 "d-axis synchronous reactance (pu)"
     annotation (Dialog(group="Machine parameters"));
   parameter Real xq=1.7 "q-axis synchronous reactance (pu)"
@@ -38,18 +30,6 @@ model Order6
   Real e2q(start=e2q0) "q-axis sub-transient voltage";
   Real e2d(start=e2d0) "d-axis sub-transient voltage";
 
-  parameter Angle delta0=atan2(vi0 + ra*ii0mb + xq*ir0mb, vr0 + ra*ir0mb - xq*
-      ii0mb) "Initialization (rad)";
-  parameter Real vd0=vr0*cos(pi/2 - delta0) - vi0*sin(pi/2 - delta0)
-    "Initialization";
-  parameter Real vq0=vr0*sin(pi/2 - delta0) + vi0*cos(pi/2 - delta0)
-    "Initialization";
-  parameter Real id0=(ir0mb*cos(pi/2 - delta0) - ii0mb*sin(pi/2 - delta0))
-    "Initialization";
-  parameter Real iq0=(ir0mb*sin(pi/2 - delta0) + ii0mb*cos(pi/2 - delta0))
-    "Initialization";
-
-  parameter Real pm00=(vq0 + ra*iq0)*iq0 + (vd0 + ra*id0)*id0 "Initialitation";
   parameter Real e2q0=vq0 + ra*iq0 + x2d*id0 "Initialitation";
   parameter Real e2d0=vd0 + ra*id0 - x2q*iq0 "Initialitation";
   parameter Real e1d0=(xq - x1q - T2q0/T1q0*x2q/x1q*(xq - x1q))*iq0;
@@ -58,7 +38,6 @@ model Order6
   parameter Real e1q0=e2q0 + K2*id0 - Taa/T1d0*((K1 + K2)*id0 + e2q0);
   parameter Real vf00=(K1*id0 + e1q0)/(1 - Taa/T1d0);
 initial equation
-  delta = delta0;
   der(e1q) = 0;
   der(e1d) = 0;
   der(e2q) = 0;
@@ -74,7 +53,6 @@ equation
     Taa/T1d0*vf)/T2d0;
   e2q = vq + ra*iq + x2d*id;
   e2d = vd + ra*id - x2q*iq;
-  pm0 = pm00;
   vf0 = vf00;
   annotation (Icon(coordinateSystem(extent={{-100,-100},{100,100}},
           initialScale=0.1), graphics={Rectangle(
