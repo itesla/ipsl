@@ -14,7 +14,7 @@ model Order4test2_AVR
     Sn=370,
     Vn=200,
     ra=0.001,
-    xd1=0.302,
+    x1d=0.302,
     M=10,
     D=0,
     P_0=16.0352698692006,
@@ -29,9 +29,8 @@ equation
       smooth=Smooth.None));
   connect(const.y, AVRtypeIII1.vs) annotation (Line(points={{-86.5,1},{-81,1},{
           -81,0},{-76.1667,0}}, color={0,0,127}));
-  connect(AVRtypeIII1.v, order4_Inputs_Outputs.v) annotation (Line(points={{
-          -76.1667,10},{-87,10},{-87,20},{-10,20},{-10,3},{-16,3}}, color={0,0,
-          127}));
+  connect(AVRtypeIII1.v, order4_Inputs_Outputs.v) annotation (Line(points={{-76.1667,
+          10},{-87,10},{-87,20},{-10,20},{-10,3},{-16,3}}, color={0,0,127}));
   connect(order4_Inputs_Outputs.pm0, order4_Inputs_Outputs.pm) annotation (Line(
         points={{-35,-11},{-35,-13},{-41,-13},{-41,-5},{-39,-5}}, color={0,0,
           127}));

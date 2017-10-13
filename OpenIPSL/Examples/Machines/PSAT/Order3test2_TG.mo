@@ -9,11 +9,11 @@ model Order3test2_TG
     Sn=20,
     Vn=400,
     ra=0.01,
-    xd1=0.302,
+    x1d=0.302,
     M=10,
     D=0,
     xd=1.9,
-    Td10=8,
+    T1d0=8,
     xq=1.7,
     P_0=16.0352698692006,
     Q_0=11.859436505981) annotation (Placement(visible=true, transformation(

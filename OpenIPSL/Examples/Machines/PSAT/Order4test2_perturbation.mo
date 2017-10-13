@@ -11,7 +11,7 @@ model Order4test2_perturbation
     ra=0.001,
     M=10,
     D=0,
-    xd1=0.302,
+    x1d=0.302,
     P_0=16.0352698692006,
     Q_0=11.859436505981)
     annotation (Placement(transformation(extent={{-26,-10},{-6,10}})));

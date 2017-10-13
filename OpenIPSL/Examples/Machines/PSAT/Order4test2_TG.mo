@@ -12,7 +12,7 @@ model Order4test2_TG
     V_0=1,
     angle_0=0,
     ra=0.001,
-    xd1=0.302,
+    x1d=0.302,
     M=10,
     D=0,
     Sn=370,
