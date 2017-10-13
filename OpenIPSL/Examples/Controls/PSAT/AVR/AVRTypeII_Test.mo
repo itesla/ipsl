@@ -13,7 +13,7 @@ model AVRTypeII_Test
     D=0,
     P_0=16.0062,
     Q_0=12.476)
-    annotation (Placement(transformation(extent={{-58,-32},{6,32}})));
+    annotation (Placement(transformation(extent={{-86,-18},{-46,22}})));
   OpenIPSL.Electrical.Controls.PSAT.AVR.AVRTypeII exciter_Type_II(
     vrmin=-5,
     vrmax=5,
@@ -25,16 +25,16 @@ model AVRTypeII_Test
     Kf=0.45,
     Tf=1,
     Ka=400,
-    Ke=0.01) annotation (Placement(transformation(extent={{-22,54},{-84,106}})));
+    Ke=0.01) annotation (Placement(transformation(extent={{-70,34},{-94,56}})));
   inner OpenIPSL.Electrical.SystemBase SysData
-    annotation (Placement(transformation(extent={{100,80},{124,100}})));
+    annotation (Placement(transformation(extent={{76,78},{100,98}})));
   Electrical.Branches.PwLine pwLine2(
     G=0,
     R=0.01,
     X=0.1,
     displayPF=true,
     B=2*0.0005) annotation (Placement(visible=true, transformation(
-        origin={68,0},
+        origin={-4,2},
         extent={{-6,-6},{6,6}},
         rotation=0)));
   Electrical.Branches.PwLine pwLine3(
@@ -42,7 +42,7 @@ model AVRTypeII_Test
     R=0.01,
     X=0.1,
     B=2*0.0005) annotation (Placement(visible=true, transformation(
-        origin={112,-20},
+        origin={40,-18},
         extent={{-6,-6},{6,6}},
         rotation=0)));
   Electrical.Branches.PwLine pwLine4(
@@ -51,7 +51,7 @@ model AVRTypeII_Test
     X=0.1,
     displayPF=true,
     B=2*0.0005) annotation (Placement(visible=true, transformation(
-        origin={110,20},
+        origin={38,22},
         extent={{-5.99999,-5.99998},{5.99999,6}},
         rotation=0)));
   Electrical.Loads.PSAT.LOADPQ pwLoadPQ1(
@@ -60,7 +60,7 @@ model AVRTypeII_Test
     V_b=200,
     V_0=0.97905,
     angle_0=-1.3001) annotation (Placement(visible=true, transformation(
-        origin={144,20},
+        origin={72,22},
         extent={{-6,-6},{6,6}},
         rotation=90)));
   Electrical.Loads.PSAT.LOADPQ pwLoadPQ2(
@@ -69,76 +69,75 @@ model AVRTypeII_Test
     V_b=200,
     V_0=0.97905,
     angle_0=-1.3001) annotation (Placement(visible=true, transformation(
-        origin={144.034,-20.2889},
+        origin={72.034,-18.2889},
         extent={{-6.2889,-6.0335},{6.2889,6.0335}},
         rotation=90)));
   Electrical.Buses.Bus Bus1(
     V_b=200,
     V_0=1,
-    angle_0=0) annotation (Placement(transformation(extent={{38,-10},{58,10}})));
+    angle_0=0)
+    annotation (Placement(transformation(extent={{-34,-8},{-14,12}})));
   Electrical.Buses.Bus Bus2(
     V_b=200,
     V_0=0.986,
     angle_0=-0.86075)
-    annotation (Placement(transformation(extent={{78,-10},{98,10}})));
+    annotation (Placement(transformation(extent={{6,-8},{26,12}})));
   Electrical.Buses.Bus Bus3(
     V_b=200,
     angle_0=-1.3001,
     V_0=0.97905)
-    annotation (Placement(transformation(extent={{120,10},{140,30}})));
+    annotation (Placement(transformation(extent={{48,12},{68,32}})));
   Electrical.Buses.Bus Bus4(
     V_b=200,
     angle_0=-1.3001,
     V_0=0.97905)
-    annotation (Placement(transformation(extent={{120,-30},{140,-10}})));
+    annotation (Placement(transformation(extent={{48,-28},{68,-8}})));
   Modelica.Blocks.Math.Add add
-    annotation (Placement(transformation(extent={{12,90},{2,100}})));
+    annotation (Placement(transformation(extent={{-48,46},{-58,56}})));
   Modelica.Blocks.Sources.Ramp ramp(
     height=-0.1,
     duration=20,
     startTime=1) annotation (Placement(transformation(
         extent={{5,-5},{-5,5}},
         rotation=0,
-        origin={47,75})));
+        origin={-33,49})));
 equation
 
   connect(order6Type2_Inputs_Outputs.v, exciter_Type_II.v) annotation (Line(
-      points={{9.2,9.6},{24,9.6},{24,64.4},{-15.8,64.4}},
+      points={{-44,8},{-40,8},{-40,38.4},{-67.6,38.4}},
       color={0,0,127},
       smooth=Smooth.None));
   connect(Bus3.p, pwLoadPQ1.p)
-    annotation (Line(points={{130,20},{134,20},{138,20}}, color={0,0,255}));
-  connect(Bus4.p, pwLoadPQ2.p) annotation (Line(points={{130,-20},{138,-20},{
-          138,-20.2889}}, color={0,0,255}));
-  connect(pwLine3.n, Bus4.p) annotation (Line(points={{117.4,-20},{117.4,-20},{
-          130,-20}}, color={0,0,255}));
+    annotation (Line(points={{58,22},{66,22}}, color={0,0,255}));
+  connect(Bus4.p, pwLoadPQ2.p) annotation (Line(points={{58,-18},{66.0005,-18},
+          {66.0005,-18.2889}}, color={0,0,255}));
+  connect(pwLine3.n, Bus4.p)
+    annotation (Line(points={{45.4,-18},{58,-18}}, color={0,0,255}));
   connect(Bus1.p, order6Type2_Inputs_Outputs.p)
-    annotation (Line(points={{48,0},{30,0},{6,0}}, color={0,0,255}));
-  connect(exciter_Type_II.vref, add.y) annotation (Line(points={{-15.8,95.6},{-5.9,
-          95.6},{-5.9,95},{1.5,95}}, color={0,0,127}));
-  connect(ramp.y, add.u2) annotation (Line(points={{41.5,75},{27.75,75},{27.75,
-          92},{13,92}}, color={0,0,127}));
-  connect(add.u1, exciter_Type_II.vref0) annotation (Line(points={{13,98},{14,
-          98},{14,111.2},{-53,111.2}}, color={0,0,127}));
+    annotation (Line(points={{-24,2},{-46,2}}, color={0,0,255}));
+  connect(exciter_Type_II.vref, add.y) annotation (Line(points={{-67.6,51.6},{
+          -64,51.6},{-64,52},{-62,52},{-62,51},{-58.5,51}}, color={0,0,127}));
+  connect(ramp.y, add.u2) annotation (Line(points={{-38.5,49},{-42.25,49},{
+          -42.25,48},{-47,48}}, color={0,0,127}));
   connect(order6Type2_Inputs_Outputs.pm0, order6Type2_Inputs_Outputs.pm)
-    annotation (Line(points={{-51.6,-35.2},{-51.6,-60},{-80,-60},{-80,-16},{-64.4,
-          -16}}, color={0,0,127}));
+    annotation (Line(points={{-82,-20},{-82,-24},{-94,-24},{-94,-8},{-90,-8}},
+        color={0,0,127}));
   connect(order6Type2_Inputs_Outputs.vf, exciter_Type_II.vf) annotation (Line(
-        points={{-64.4,16},{-80,16},{-80,18},{-90.2,18},{-90.2,80}}, color={0,0,
-          127}));
-  connect(order6Type2_Inputs_Outputs.vf0, exciter_Type_II.vf0) annotation (Line(
-        points={{-51.6,35.2},{-51.6,41.6},{-53,41.6},{-53,48.8}}, color={0,0,
-          127}));
+        points={{-90,12},{-96.4,12},{-96.4,45}}, color={0,0,127}));
+  connect(order6Type2_Inputs_Outputs.vf0, exciter_Type_II.vf0)
+    annotation (Line(points={{-82,24},{-82,31.8}}, color={0,0,127}));
   connect(Bus1.p, pwLine2.p)
-    annotation (Line(points={{48,0},{56,0},{62.6,0}}, color={0,0,255}));
+    annotation (Line(points={{-24,2},{-9.4,2}}, color={0,0,255}));
   connect(pwLine2.n, Bus2.p)
-    annotation (Line(points={{73.4,0},{88,0}}, color={0,0,255}));
-  connect(pwLine4.p, Bus2.p) annotation (Line(points={{104.6,20},{100,20},{100,
-          0},{88,0}}, color={0,0,255}));
-  connect(Bus3.p, pwLine4.n) annotation (Line(points={{130,20},{115.4,20},{
-          115.4,20}}, color={0,0,255}));
-  connect(pwLine3.p, Bus2.p) annotation (Line(points={{106.6,-20},{100,-20},{
-          100,0},{88,0}}, color={0,0,255}));
+    annotation (Line(points={{1.4,2},{16,2}}, color={0,0,255}));
+  connect(pwLine4.p, Bus2.p) annotation (Line(points={{32.6,22},{28,22},{28,2},
+          {16,2}}, color={0,0,255}));
+  connect(Bus3.p, pwLine4.n)
+    annotation (Line(points={{58,22},{43.4,22}}, color={0,0,255}));
+  connect(pwLine3.p, Bus2.p) annotation (Line(points={{34.6,-18},{28,-18},{28,2},
+          {16,2}}, color={0,0,255}));
+  connect(add.u1, exciter_Type_II.vref0) annotation (Line(points={{-47,54},{-44,
+          54},{-44,64},{-82,64},{-82,58.2}}, color={0,0,127}));
   annotation (
     Diagram(coordinateSystem(extent={{-100,-100},{100,100}},
           preserveAspectRatio=false)),

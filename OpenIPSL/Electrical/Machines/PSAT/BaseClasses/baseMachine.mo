@@ -136,6 +136,11 @@ equation
   annotation (
     Icon(coordinateSystem(extent={{-100,-100},{100,100}}, initialScale=0.1),
         graphics={
+        Rectangle(
+          fillColor={255,255,255},
+          extent={{-100,-100},{100,100}},
+          lineColor={28,108,200},
+          fillPattern=FillPattern.Solid),
         Text(
           origin={-80,50},
           extent={{-10,-10},{10,10}},
@@ -171,10 +176,6 @@ equation
           extent={{-10,-10},{10,10}},
           lineColor={28,108,200},
           textString="v"),
-        Rectangle(
-          fillColor={255,255,255},
-          extent={{-100,-100},{100,100}},
-          lineColor={28,108,200}),
         Ellipse(extent={{-40,40},{40,-40}}, lineColor={28,108,200}),
         Line(
           points={{-20,0},{-9,15},{9,-15},{20,0}},
