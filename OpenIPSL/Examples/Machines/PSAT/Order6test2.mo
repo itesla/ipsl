@@ -28,8 +28,8 @@ model Order6test2
 equation
   connect(order6Type2_1.vf0, order6Type2_1.vf) annotation (Line(points={{-57,22},
           {-57,25},{-71,25},{-71,10},{-65,10}}, color={0,0,127}));
-  connect(order6Type2_1.pm, order6Type2_1.pm0) annotation (Line(points={{-65,
-          -10},{-71,-10},{-71,-25},{-57,-25},{-57,-22}}, color={0,0,127}));
+  connect(order6Type2_1.pm, order6Type2_1.pm0) annotation (Line(points={{-65,-10},
+          {-71,-10},{-71,-25},{-57,-25},{-57,-22}}, color={0,0,127}));
   connect(order6Type2_1.p, bus.p)
     annotation (Line(points={{-21,0},{-10,0},{-10,0},{0,0}}, color={0,0,255}));
   annotation (

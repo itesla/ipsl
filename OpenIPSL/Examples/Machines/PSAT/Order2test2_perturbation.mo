@@ -112,12 +112,10 @@ equation
           0.1663},{-5.66375,0.1663},{-5.66375,0},{0,0}}, color={0,0,255}));
   connect(add31.y, order2_Inputs_Outputs1.vf) annotation (Line(points={{-39.5,
           25},{-35,25},{-35,4.74945},{-30.7783,4.74945}}, color={0,0,127}));
-  connect(order2_Inputs_Outputs1.vf0, add31.u3) annotation (Line(points={{
-          -27.2217,10.2492},{-27.2217,14},{-55,14},{-55,21},{-51,21}}, color={0,
-          0,127}));
-  connect(add32.y, order2_Inputs_Outputs1.pm) annotation (Line(points={{-39.5,
-          -25.0001},{-35,-25.0001},{-35,-4.41685},{-30.7783,-4.41685}}, color={
-          0,0,127}));
+  connect(order2_Inputs_Outputs1.vf0, add31.u3) annotation (Line(points={{-27.2217,
+          10.2492},{-27.2217,14},{-55,14},{-55,21},{-51,21}}, color={0,0,127}));
+  connect(add32.y, order2_Inputs_Outputs1.pm) annotation (Line(points={{-39.5,-25.0001},
+          {-35,-25.0001},{-35,-4.41685},{-30.7783,-4.41685}}, color={0,0,127}));
   connect(add1.y, add31.u1) annotation (Line(points={{-69.5,35},{-60,35},{-60,
           29},{-51,29}}, color={0,0,127}));
   connect(add2.y, add31.u2) annotation (Line(points={{-69.5,15},{-60,15},{-60,
@@ -130,9 +128,9 @@ equation
           {-81,12}}, color={0,0,127}));
   connect(sine1.y, add2.u1) annotation (Line(points={{-89.5,20},{-86,20},{-86,
           18},{-81,18}}, color={0,0,127}));
-  connect(order2_Inputs_Outputs1.pm0, add32.u1) annotation (Line(points={{
-          -27.2217,-9.91663},{-27.2217,-13},{-54,-13},{-54,-21},{-51.0001,-21}},
-        color={0,0,127}));
+  connect(order2_Inputs_Outputs1.pm0, add32.u1) annotation (Line(points={{-27.2217,
+          -9.91663},{-27.2217,-13},{-54,-13},{-54,-21},{-51.0001,-21}}, color={
+          0,0,127}));
   connect(add4.y, add32.u2) annotation (Line(points={{-69.5,-25},{-60,-25},{-60,
           -25.0001},{-51.0001,-25.0001}}, color={0,0,127}));
   connect(sine4.y, add3.u1) annotation (Line(points={{-89.5,-55},{-85,-55},{-85,

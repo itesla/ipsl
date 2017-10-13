@@ -114,8 +114,8 @@ equation
           130,-20}}, color={0,0,255}));
   connect(Bus1.p, order6Type2_Inputs_Outputs.p)
     annotation (Line(points={{48,0},{30,0},{6,0}}, color={0,0,255}));
-  connect(exciter_Type_II.vref, add.y) annotation (Line(points={{-15.8,95.6},{
-          -5.9,95.6},{-5.9,95},{1.5,95}}, color={0,0,127}));
+  connect(exciter_Type_II.vref, add.y) annotation (Line(points={{-15.8,95.6},{-5.9,
+          95.6},{-5.9,95},{1.5,95}}, color={0,0,127}));
   connect(ramp.y, add.u2) annotation (Line(points={{41.5,75},{27.75,75},{27.75,
           92},{13,92}}, color={0,0,127}));
   connect(add.u1, exciter_Type_II.vref0) annotation (Line(points={{13,98},{14,
@@ -140,9 +140,9 @@ equation
   connect(pwLine3.p, Bus2.p) annotation (Line(points={{106.6,-20},{100,-20},{
           100,0},{88,0}}, color={0,0,255}));
   annotation (
-    Diagram(coordinateSystem(extent={{-100,-100},{140,120}},
+    Diagram(coordinateSystem(extent={{-100,-100},{100,100}},
           preserveAspectRatio=false)),
-    Icon(coordinateSystem(extent={{-100,-100},{140,120}})),
+    Icon(coordinateSystem(extent={{-100,-100},{100,100}})),
     Documentation,
     experiment(StopTime=20),
     __Dymola_experimentSetupOutput);

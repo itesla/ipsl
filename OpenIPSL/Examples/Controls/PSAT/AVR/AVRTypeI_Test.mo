@@ -138,8 +138,8 @@ equation
   connect(add.y, aVRI.vref) annotation (Line(points={{-16.5,101},{-19.25,101},{
           -19.25,102},{-24,102}}, color={0,0,127}));
   annotation (
-    Diagram(coordinateSystem(extent={{-100,-100},{140,120}},
+    Diagram(coordinateSystem(extent={{-100,-100},{100,100}},
           preserveAspectRatio=false)),
-    Icon(coordinateSystem(extent={{-100,-100},{140,120}})),
+    Icon(coordinateSystem(extent={{-100,-100},{100,100}})),
     Documentation);
 end AVRTypeI_Test;
