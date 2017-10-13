@@ -13,30 +13,30 @@ model AVRTypeII "PSAT AVR Type 2"
     "Reference generator terminal voltage (pu)" annotation (Placement(
         transformation(extent={{-140,40},{-100,80}}), iconTransformation(extent
           ={{-140,40},{-100,80}})));
-  parameter Real vrmin "Minimum regulator voltage (pu)";
-  parameter Real vrmax "Maximum regulator voltage (p.u..)";
-  parameter Real Ka "Amplifier gain (p.u/p.u)";
-  parameter Real Ta "Amplifier time constant (s)";
-  parameter Real Kf "Stabilizer gain (p.u/p.u)";
-  parameter Real Tf "Stabilizer time constant (s)";
-  parameter Real Ke "Field circuit integral deviation (p.u/p.u)";
-  parameter Real Te "Field circuit time constant (s)";
-  parameter Real Tr "Measurement time constant (s)";
+  parameter Real vrmin=-5 "Minimum regulator voltage (pu)";
+  parameter Real vrmax=5 "Maximum regulator voltage (p.u..)";
+  parameter Real Ka=100 "Amplifier gain (p.u/p.u)";
+  parameter Real Ta=0.5 "Amplifier time constant (s)";
+  parameter Real Kf=0.15 "Stabilizer gain (p.u/p.u)";
+  parameter Real Tf=0.1 "Stabilizer time constant (s)";
+  parameter Real Ke=0 "Field circuit integral deviation (p.u/p.u)";
+  parameter Real Te=0.2 "Field circuit time constant (s)";
+  parameter Real Tr=0.001 "Measurement time constant (s)";
   parameter Real Ae=0.0006 "1st ceiling coefficient";
   parameter Real Be=0.9 "2nd ceiling coefficient";
-  parameter Real v0=1 "Initialization";
-
-  parameter Real vf00(fixed=false) "Initialization";
+  parameter Real v0=1 "Initial measured voltage";
+  parameter Real vfstate=vr10 - (Ae*Modelica.Math.exp(Be*abs(vf00))*vf00);
+  parameter Real vf00(fixed=false) "Initialization of vf";
   parameter Real vr10=Ke*vf00 + Ae*Modelica.Math.exp(Be*abs(vf00))*vf00
     "Initialization";
   parameter Real vr20=-vf00*Kf/Tf "Initialization";
 public
-  Modelica.Blocks.Continuous.FirstOrder simpleLagLim(
-    T=Ta,
+  Modelica.Blocks.Continuous.FirstOrder FirstOrderController(
     k=Ka,
-    y_start=Ka*vr10,
-    initType=Modelica.Blocks.Types.Init.SteadyState)
-    annotation (Placement(transformation(extent={{-20,-10},{0,10}})));
+    T=Ta,
+    initType=Modelica.Blocks.Types.Init.SteadyState,
+    y_start=Ka)
+    annotation (Placement(transformation(extent={{-30,-10},{-10,10}})));
 
   Modelica.Blocks.Interfaces.RealOutput vref0 "Voltage reference at t=0 (pu)"
     annotation (Placement(transformation(
@@ -56,76 +56,90 @@ public
         rotation=90,
         origin={0,-120})));
   Modelica.Blocks.Math.Feedback feedback
-    annotation (Placement(transformation(extent={{26,10},{46,-10}})));
-  Modelica.Blocks.Continuous.FirstOrder firstOrder(
+    annotation (Placement(transformation(extent={{30,10},{50,-10}})));
+  Modelica.Blocks.Continuous.TransferFunction ExcitationSystem(
     y_start=vf00,
-    k=1/Ke,
-    T=Te/Ke,
-    initType=Modelica.Blocks.Types.Init.SteadyState)
+    a={Te,Ke},
+    x_start={vfstate},
+    initType=Modelica.Blocks.Types.Init.InitialOutput)
     annotation (Placement(transformation(extent={{52,-10},{72,10}})));
   NonElectrical.Nonlinear.CeilingBlock ceilingBlock(Ae=Ae, Be=Be)
-    annotation (Placement(transformation(extent={{70,48},{50,68}})));
-  Modelica.Blocks.Continuous.TransferFunction firstOrder1(
-    y_start=vr20,
-    a={Tf,1},
-    x_start={vf00},
+    annotation (Placement(transformation(extent={{72,30},{52,50}})));
+  Modelica.Blocks.Continuous.Derivative firstOrder1(
+    y_start=0,
     initType=Modelica.Blocks.Types.Init.SteadyState,
-    b={Kf,0}) annotation (Placement(transformation(extent={{72,-60},{52,-40}})));
+    k=Kf,
+    T=Tf,
+    x_start=vf00)
+    annotation (Placement(transformation(extent={{72,-50},{52,-30}})));
   Modelica.Blocks.Math.Feedback feedback1
-    annotation (Placement(transformation(extent={{-46,-10},{-26,10}})));
+    annotation (Placement(transformation(extent={{-50,-10},{-30,10}})));
   Modelica.Blocks.Continuous.FirstOrder firstOrder2(
     k=1,
     T=Tr,
     y_start=v0,
-    initType=Modelica.Blocks.Types.Init.SteadyState)
-    annotation (Placement(transformation(extent={{-90,-70},{-70,-50}})));
+    initType=Modelica.Blocks.Types.Init.SteadyState) annotation (Placement(
+        transformation(
+        extent={{-10,-10},{10,10}},
+        rotation=90,
+        origin={-60,-34})));
   Modelica.Blocks.Math.Feedback Verr
     annotation (Placement(transformation(extent={{-70,-10},{-50,10}})));
   Modelica.Blocks.Nonlinear.Limiter limiter(uMax=vrmax, uMin=vrmin)
-    annotation (Placement(transformation(extent={{4,-10},{24,10}})));
+    annotation (Placement(transformation(extent={{0,-10},{20,10}})));
 initial algorithm
   vf00 := vf0;
 algorithm
   vref0 := v0 + vr10/Ka;
 
 equation
-  connect(firstOrder.y, vf)
+  connect(ExcitationSystem.y, vf)
     annotation (Line(points={{73,0},{88,0},{110,0}}, color={0,0,127}));
-  connect(ceilingBlock.u, vf) annotation (Line(points={{72,58},{80,58},{80,0},{
-          110,0}}, color={0,0,127}));
   connect(ceilingBlock.y, feedback.u2)
-    annotation (Line(points={{49,58},{36,58},{36,8}}, color={0,0,127}));
-  connect(firstOrder1.u, vf) annotation (Line(points={{74,-50},{80,-50},{80,0},
-          {110,0}},color={0,0,127}));
-  connect(feedback1.y, simpleLagLim.u)
-    annotation (Line(points={{-27,0},{-22,0}},color={0,0,127}));
-  connect(firstOrder1.y, feedback1.u2)
-    annotation (Line(points={{51,-50},{-36,-50},{-36,-8}}, color={0,0,127}));
-  connect(v, firstOrder2.u) annotation (Line(points={{-120,-60},{-106,-60},{-92,
-          -60}}, color={0,0,127}));
-  connect(Verr.u2, firstOrder2.y) annotation (Line(points={{-60,-8},{-60,-8},{-60,
-          -60},{-69,-60}}, color={0,0,127}));
+    annotation (Line(points={{51,40},{40,40},{40,8}}, color={0,0,127}));
+  connect(feedback1.y, FirstOrderController.u)
+    annotation (Line(points={{-31,0},{-32,0}}, color={0,0,127}));
+  connect(v, firstOrder2.u) annotation (Line(points={{-120,-60},{-60,-60},{-60,
+          -46}}, color={0,0,127}));
+  connect(Verr.u2, firstOrder2.y)
+    annotation (Line(points={{-60,-8},{-60,-23}}, color={0,0,127}));
   connect(Verr.y, feedback1.u1)
-    annotation (Line(points={{-51,0},{-44,0}}, color={0,0,127}));
+    annotation (Line(points={{-51,0},{-48,0}}, color={0,0,127}));
   connect(Verr.u1, vref) annotation (Line(points={{-68,0},{-80,0},{-80,60},{-120,
           60}}, color={0,0,127}));
-  connect(feedback.y, firstOrder.u)
-    annotation (Line(points={{45,0},{47.5,0},{50,0}}, color={0,0,127}));
-  connect(simpleLagLim.y, limiter.u)
-    annotation (Line(points={{1,0},{2,0}}, color={0,0,127}));
+  connect(feedback.y, ExcitationSystem.u)
+    annotation (Line(points={{49,0},{49,0},{50,0}}, color={0,0,127}));
+  connect(FirstOrderController.y, limiter.u)
+    annotation (Line(points={{-9,0},{-9,0},{-2,0}}, color={0,0,127}));
   connect(feedback.u1, limiter.y)
-    annotation (Line(points={{28,0},{26,0},{25,0}}, color={0,0,127}));
+    annotation (Line(points={{32,0},{32,0},{21,0}}, color={0,0,127}));
+  connect(ceilingBlock.u, vf) annotation (Line(points={{74,40},{80,40},{80,0},{
+          110,0}}, color={0,0,127}));
+  connect(firstOrder1.u, vf) annotation (Line(points={{74,-40},{86,-40},{86,0},
+          {110,0}},color={0,0,127}));
+  connect(feedback1.u2, firstOrder1.y) annotation (Line(points={{-40,-8},{-40,-8},
+          {-40,-40},{51,-40}}, color={0,0,127}));
   annotation (
     Diagram(coordinateSystem(
         extent={{-100,-100},{100,100}},
         initialScale=0.1,
-        preserveAspectRatio=false), graphics={Text(
-          extent={{30,-38},{44,-46}},
-          lineColor={0,0,127},
-          textString="vr2"), Text(
-          extent={{28,6},{28,6}},
-          lineColor={0,0,127},
-          textString="vr1")}),
+        preserveAspectRatio=false), graphics={
+        Text(
+          extent={{32,-28},{46,-36}},
+          lineColor={28,108,200},
+          textString="vr2"),
+        Text(
+          extent={{-2,0},{-8,12}},
+          lineColor={28,108,200},
+          textString="vr1"),
+        Text(
+          extent={{-72,-14},{-64,-20}},
+          lineColor={28,108,200},
+          textString="Vm"),
+        Text(
+          extent={{24,12},{30,2}},
+          lineColor={28,108,200},
+          textString="vr")}),
     Icon(coordinateSystem(
         extent={{-100,-100},{100,100}},
         initialScale=0.1,

@@ -13,18 +13,18 @@ model AVRTypeI "PSAT AVR Type 1"
     "Reference generator terminal voltage (pu)" annotation (Placement(
         transformation(extent={{-140,40},{-100,80}}), iconTransformation(extent
           ={{-140,40},{-100,80}})));
-  parameter Real vrmax=7.57 "Maximum regulator voltage, p.u";
-  parameter Real vrmin=0 "Minimum regulator voltage, p.u";
-  parameter Real K0=7.04 "Regulator gain, p.u/p.u";
-  parameter Real T1=6.67 "First pole, s";
-  parameter Real T2=1 "First zero, s";
-  parameter Real T3=1 "Second pole, s";
-  parameter Real T4=1 "Second pole, s";
-  parameter Real Te=0.4 "Field circuit time constant, s";
-  parameter Real Tr=0.05 "Measurement time constant, s";
+  parameter Real vrmax=7.57 "Maximum regulator voltage (pu)";
+  parameter Real vrmin=0 "Minimum regulator voltage (pu)";
+  parameter Real K0=7.04 "Regulator gain, (pu/pu)";
+  parameter Real T1=6.67 "First pole (s)";
+  parameter Real T2=1 "First zero (s)";
+  parameter Real T3=1 "Second pole (s";
+  parameter Real T4=1 "Second pole (s)";
+  parameter Real Te=0.4 "Field circuit time constant (s)";
+  parameter Real Tr=0.05 "Measurement time constant (s)";
   parameter Real Ae=0.0006 "1st ceiling coefficient";
   parameter Real Be=0.9 "2nd ceiling coefficient";
-  parameter Real v0=1 "Initialization";
+  parameter Real v0=1 "Initialization (pu)";
 protected
   parameter Real vf00(fixed=false) "Initialization";
   parameter Real vr0=vf00 - Ae*Modelica.Math.exp(Be*abs(vf00)) "Initialization";
@@ -96,7 +96,7 @@ equation
   connect(transferFunction.y, limiter.u)
     annotation (Line(points={{-19,0},{-14.5,0},{-10,0}}, color={0,0,127}));
   connect(limiter.y, feedback.u1)
-    annotation (Line(points={{13,0},{28,0},{28,0}}, color={0,0,127}));
+    annotation (Line(points={{13,0},{28,0}}, color={0,0,127}));
   annotation (
     Diagram(coordinateSystem(
         extent={{-100,-100},{100,100}},

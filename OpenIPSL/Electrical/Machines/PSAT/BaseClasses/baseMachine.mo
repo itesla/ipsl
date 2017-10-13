@@ -83,7 +83,7 @@ partial model baseMachine
   Real vq(start=vq0) "q-axis voltage (pu)";
   Real id(start=id0) "d-axis currrent (pu)";
   Real iq(start=iq0) "q-axis current (pu)";
-  //protected
+protected
   parameter Real w_b=2*pi*fn "Base frequency in rad/s";
   parameter Real CoB=Sn/S_b "From machine base to system base";
 

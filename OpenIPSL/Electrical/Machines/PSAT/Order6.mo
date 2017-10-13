@@ -29,7 +29,7 @@ model Order6
   Real e1d(start=e1d0) "d-axis transient voltage";
   Real e2q(start=e2q0) "q-axis sub-transient voltage";
   Real e2d(start=e2d0) "d-axis sub-transient voltage";
-
+protected
   parameter Real e2q0=vq0 + ra*iq0 + x2d*id0 "Initialitation";
   parameter Real e2d0=vd0 + ra*id0 - x2q*iq0 "Initialitation";
   parameter Real e1d0=(xq - x1q - T2q0*x2q*(xq - x1q)/(T1q0*x1q))*iq0;
