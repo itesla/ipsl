@@ -51,9 +51,9 @@ equation
   Pa = (A.vr*A.ir + A.vi*A.ii);
   Pb = (B.vr*B.ir + B.vi*B.ii);
   Pc = (C.vr*C.ir + C.vi*C.ii);
-  Qa = (A.vi*A.ir - A.vr*A.ii)/((A.vr)^2+(A.vi)^2);
-  Qb = (B.vi*B.ir - B.vr*B.ii)/((B.vr)^2+(B.vi)^2);
-  Qc = (C.vi*C.ir - C.vr*C.ii)/((C.vr)^2+(C.vi)^2);
+  Qa = (-A.vi*A.ir + A.vr*A.ii)/((A.vr)^2+(A.vi)^2);
+  Qb = (-B.vi*B.ir + B.vr*B.ii)/((B.vr)^2+(B.vi)^2);
+  Qc = (-C.vi*C.ir + C.vr*C.ii)/((C.vr)^2+(C.vi)^2);
 
   annotation (Icon(coordinateSystem(
         extent={{-100,-100},{100,100}},
