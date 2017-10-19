@@ -1,19 +1,14 @@
 within OpenIPSL.Electrical.Machines.PSAT;
 model Order2 "Second Order Synchronous Machine with Inputs and Outputs"
-  extends BaseClasses.baseMachine(
-    vf(start=vf00),
-    vf0(start=vf00),
-    xq0=x1d);
+  extends BaseClasses.baseMachine(vf(start=vf00), xq0=x1d);
 protected
   parameter Real K=1/(ra^2 + x1d^2) "a constant for scaling";
   parameter Real c1=ra*K "scaled ra";
   parameter Real c2=x1d*K "scaled x'd";
   parameter Real c3=x1d*K "scaled x'd";
   parameter Real vf00=vq0 + ra*iq0 + x1d*id0 "Initialization";
-initial equation
-  vf0 = vf00;
 equation
-  id = -c1*vd + c3*vq + vf*c3;
+  id = -c1*vd - c3*vq + vf*c3;
   iq = c2*vd - c1*vq + vf*c1;
   vf0 = vf00;
   annotation (Documentation(info="<html> 

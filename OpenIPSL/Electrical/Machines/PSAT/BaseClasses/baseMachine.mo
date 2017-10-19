@@ -46,12 +46,12 @@ partial model baseMachine
         origin={110,30},
         extent={{-10,-10},{10,10}},
         rotation=0)));
-  Modelica.Blocks.Interfaces.RealOutput P(start=P_0/S_b) "Active power (pu)"
+  Modelica.Blocks.Interfaces.RealOutput P(start=p0) "Active power (pu)"
     annotation (Placement(visible=true, transformation(
         origin={110,-30},
         extent={{-10,-10},{10,10}},
         rotation=0)));
-  Modelica.Blocks.Interfaces.RealOutput Q(start=Q_0/S_b) "Reactive power (pu)"
+  Modelica.Blocks.Interfaces.RealOutput Q(start=q0) "Reactive power (pu)"
     annotation (Placement(visible=true, transformation(
         origin={110,-70},
         extent={{-10,-10},{10,10}},
@@ -84,55 +84,64 @@ partial model baseMachine
   Real id(start=id0) "d-axis currrent (pu)";
   Real iq(start=iq0) "q-axis current (pu)";
 protected
+  Real pe(start=pm00) "electrical power transmitted through the air-gap";
   parameter Real w_b=2*pi*fn "Base frequency in rad/s";
-  parameter Real CoB=Sn/S_b "From machine base to system base";
+  // Define multiplicative transforms to go from one pu-base to another:
+  parameter Real S_SBtoMB=S_b/Sn "S(system base) -> S(machine base)";
+  parameter Real I_MBtoSB=(Sn*V_b)/(S_b*Vn) "I(machine base) -> I(system base)";
+  parameter Real V_MBtoSB=Vn/V_b "V(machine base) -> V(system base)";
+  parameter Real Z_MBtoSB=(S_b*Vn^2)/(Sn*V_b^2)
+    "Z(machine base) -> S(system base)";
 
   // Initialize stator quantities (system base):
-  //protected
   parameter Real p0=P_0/S_b
     "Initial active power generation in pu (system base)";
   parameter Real q0=Q_0/S_b
     "Initial reactive power generation in pu (system base)";
   parameter Complex Vt0=CM.fromPolar(V_0, SI.Conversions.from_deg(angle_0))
-    "conj.";
-  parameter Complex S0(re=p0, im=-q0) "conj.";
-  parameter Complex I0=S0/(CM.conj(Vt0));
-  parameter Real vr0=CM.real(Vt0) "Initialization (pu)";
-  parameter Real vi0=CM.imag(Vt0) "Initialization (pu)";
-  parameter Real ir0=-CM.real(I0) "Initialization (pu)";
-  parameter Real ii0=-CM.imag(I0) "Initialization (pu)";
+    "Init. val., conjugate";
+  parameter Complex S0(re=p0, im=-q0) "Init. val., conjugate";
+  parameter Complex I0=S0/(CM.conj(Vt0)) "Init. val., conjugate";
+  parameter Real vr0=CM.real(Vt0) "Init. val.";
+  parameter Real vi0=CM.imag(Vt0) "Init. val.";
+  parameter Real ir0=-CM.real(I0) "Init. val.";
+  parameter Real ii0=-CM.imag(I0) "Init. val.";
 
-  // Initialize DQ-quantities (machine base)
-
+  // Initialize DQ-quantities (pu, machine base)
   parameter Real xq0 "used for setting the initial rotor angle";
-  parameter SI.Angle delta0=CM.arg(Vt0 + (ra + CM.j*xq0)*(I0/CoB))
-    "Initial rotor angle";
-  parameter Complex Vdq0=Vt0*CM.fromPolar(1, -delta0 + (pi/2));
-  parameter Complex Idq0=I0/CoB*CM.fromPolar(1, -delta0 + (pi/2));
-  parameter Real vd0=CM.real(Vdq0) "Initialization (pu, machine base)";
-  parameter Real vq0=CM.imag(Vdq0) "Initialization (pu, machine base)";
-  parameter Real id0=CM.real(Idq0) "Initialization (pu, machine base)";
-  parameter Real iq0=CM.imag(Idq0) "Initialization (pu, machine base)";
-  parameter Real pm00=(vq0 + ra*iq0)*iq0 + (vd0 + ra*id0)*id0
-    "Initialization (pu, machine base";
+  parameter SI.Angle delta0=CM.arg((Vt0 + ((ra + CM.j*xq0)*Z_MBtoSB*I0)))
+    "Init. val. rotor angle";
+  parameter Complex Vdq0=Vt0*CM.fromPolar(1/V_MBtoSB, (-delta0 + (pi/2)))
+    "Init. val (pu, machine base)";
+  parameter Complex Idq0=I0*CM.fromPolar(1/I_MBtoSB, (-delta0 + (pi/2)))
+    "(pu, machine base)";
+  parameter Real vd0=CM.real(Vdq0) "Init. val.";
+  parameter Real vq0=CM.imag(Vdq0) "Init. val.";
+  parameter Real id0=CM.real(Idq0) "Init. val.";
+  parameter Real iq0=CM.imag(Idq0) "Init. val.";
+
+  parameter Real pm00=((vq0 + ra*iq0)*iq0 + (vd0 + ra*id0)*id0)/S_SBtoMB
+    "Init. val. (pu, system base)";
 initial equation
   w = 1;
-  der(delta) = 0;
   delta = delta0;
 equation
   v = sqrt(p.vr^2 + p.vi^2);
   anglev = atan2(p.vi, p.vr);
   der(delta) = w_b*(w - 1);
   if D > Modelica.Constants.eps then
-    der(w) = (pm - (P/CoB) - D*(w - 1))/M;
+    der(w) = (pm*S_SBtoMB - pe - D*(w - 1))/M;
   else
-    der(w) = (pm - (P/CoB))/M;
+    der(w) = (pm*S_SBtoMB - pe)/M;
   end if;
-  [p.ir; p.ii] = -CoB*[sin(delta), cos(delta); -cos(delta), sin(delta)]*[id; iq];
-  [p.vr; p.vi] = [sin(delta), cos(delta); -cos(delta), sin(delta)]*[vd; vq];
-  -P = p.vr*p.ir + p.vi*p.ii;
-  -Q = p.vi*p.ir - p.vr*p.ii;
-  pm0 = pm00;
+  [p.ir; p.ii] = -[sin(delta), cos(delta); -cos(delta), sin(delta)]*[id; iq]*
+    I_MBtoSB;
+  [p.vr; p.vi] = [sin(delta), cos(delta); -cos(delta), sin(delta)]*[vd; vq]*
+    V_MBtoSB;
+  P = -p.vr*p.ir - p.vi*p.ii;
+  Q = -p.vi*p.ir + p.vr*p.ii;
+  pe = (vq + ra*iq)*iq + (vd + ra*id)*id "pu, machine base";
+  pm0 = pm00 "pu, system base";
   annotation (
     Icon(coordinateSystem(extent={{-100,-100},{100,100}}, initialScale=0.1),
         graphics={
