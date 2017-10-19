@@ -260,7 +260,7 @@ equation
     Line(points = {{204, 157}, {204, 192}}, color = {0, 0, 255}));
   annotation(
     Diagram(coordinateSystem(extent = {{-100, -100}, {500, 300}})),
-    Icon(coordinateSystem(extent = {{-100, -100}, {500, 300}})),
+    Icon(coordinateSystem(extent = {{-100, -100}, {100, 100}})),
     version = "",
     uses(OpenIPSL(version = "1.0.0"), ThreePhase(version = "1")),
     __OpenModelica_commandLineOptions = "",
