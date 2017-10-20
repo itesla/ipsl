@@ -17,11 +17,11 @@ model Bus_3Ph
       parameter Real angle_C= 120
         "Voltage angle for phase C (deg)"                                              annotation (Dialog(group="Power flow data"));    
       Real Va(start=V_A) "Bus voltage magnitude for phase A (pu)";
-      Real angle_a(start=angle_A*Modelica.Constants.pi/180) "Bus voltage angle for phase A (deg)";
+      Modelica.SIunits.Conversions.NonSIunits.Angle_deg angle_a(start=angle_A) "Bus voltage angle for phase A (deg)";
       Real Vb(start=V_B) "Bus voltage magnitude for phase B (pu)";
-      Real angle_b(start=angle_B*Modelica.Constants.pi/180) "Bus voltage angle for phase B (deg)";
+      Modelica.SIunits.Conversions.NonSIunits.Angle_deg angle_b(start=angle_B) "Bus voltage angle for phase B (deg)";
       Real Vc(start=V_C) "Bus voltage magnitude for phase C (pu)";
-      Real angle_c(start=angle_C*Modelica.Constants.pi/180) "Bus voltage angle for phase C (deg)";
+      Modelica.SIunits.Conversions.NonSIunits.Angle_deg angle_c(start=angle_C) "Bus voltage angle for phase C (deg)";
     
     protected
     

@@ -191,10 +191,7 @@ model IEEE_14_Buses
     V_b=69,
     P_0=1.4*0.217*SysData.S_b,
     Q_0=1.4*0.127*SysData.S_b,
-    angle_0=-0.135677901384789*180/pi) annotation (Placement(transformation(
-        extent={{-6,-6},{6,6}},
-        rotation=180,
-        origin={-28,-118})));
+    angle_0=-0.135677901384789*180/pi) annotation (Placement(visible = true, transformation(origin = {-28, -118}, extent = {{-6, -6}, {6, 6}}, rotation = 180)));
   OpenIPSL.Electrical.Loads.PSAT.VoltDependant lPQ12(
     V_0=1.01,
     V_b=69,
@@ -378,6 +375,8 @@ model IEEE_14_Buses
     Q_0=-0.281968127428245*SysData.S_b)
     annotation (Placement(transformation(extent={{-178,-16},{-158,4}})));
 equation
+  connect(B2.p, lPQ3.p) annotation (Line(points={{-60,-128}, {-60, -124}, {-28, -124}},
+        color={0,0,255}));
   connect(B12.p, L11.p) annotation (Line(
       points={{-128,68},{-128,62},{-96,62},{-88,62},{-88,68.5}},
       color={0,0,255},
@@ -451,8 +450,6 @@ equation
   connect(B7.p, L2.p) annotation (Line(points={{91,1},{91,9.5},{91.5,9.5},{91.5,
           8.41667}}, color={0,0,255}));
   connect(B9.p, L2.n) annotation (Line(points={{86,44},{91.5,44},{91.5,30.5833}},
-        color={0,0,255}));
-  connect(B2.p, lPQ3.p) annotation (Line(points={{-60,-128},{-60,-124.6},{-28,-124.6}},
         color={0,0,255}));
   connect(B2.p, L1.p) annotation (Line(points={{-60,-128},{-60,-108},{-60,-87.5},
           {-60,-87.5}}, color={0,0,255}));
