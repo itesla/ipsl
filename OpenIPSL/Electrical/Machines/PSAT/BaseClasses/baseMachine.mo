@@ -85,6 +85,7 @@ partial model baseMachine
   Real iq(start=iq0) "q-axis current (pu)";
 protected
   Real pe(start=pm00) "electrical power transmitted through the air-gap";
+  Real vf_MB=vf*V_b/Vn "field voltage on machine base";
   parameter Real w_b=2*pi*fn "Base frequency in rad/s";
   // Define multiplicative transforms to go from one pu-base to another:
   parameter Real S_SBtoMB=S_b/Sn "S(system base) -> S(machine base)";
