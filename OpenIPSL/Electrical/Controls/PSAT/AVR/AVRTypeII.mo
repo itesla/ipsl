@@ -30,13 +30,6 @@ model AVRTypeII "PSAT AVR Type 2"
   parameter Real vr10=Ke*vf00 + Ae*Modelica.Math.exp(Be*abs(vf00))*vf00
     "Initialization";
   parameter Real vr20=-vf00*Kf/Tf "Initialization";
-public
-  Modelica.Blocks.Continuous.FirstOrder FirstOrderController(
-    k=Ka,
-    T=Ta,
-    initType=Modelica.Blocks.Types.Init.SteadyState,
-    y_start=Ka)
-    annotation (Placement(transformation(extent={{-30,-10},{-10,10}})));
 
   Modelica.Blocks.Interfaces.RealOutput vref0 "Voltage reference at t=0 (pu)"
     annotation (Placement(transformation(
@@ -65,13 +58,12 @@ public
     annotation (Placement(transformation(extent={{52,-10},{72,10}})));
   NonElectrical.Nonlinear.CeilingBlock ceilingBlock(Ae=Ae, Be=Be)
     annotation (Placement(transformation(extent={{72,30},{52,50}})));
-  Modelica.Blocks.Continuous.Derivative firstOrder1(
+  Modelica.Blocks.Continuous.Derivative derivativeBlock(
     y_start=0,
     initType=Modelica.Blocks.Types.Init.SteadyState,
-    k=Kf,
     T=Tf,
-    x_start=vf00)
-    annotation (Placement(transformation(extent={{72,-50},{52,-30}})));
+    x_start=vf00,
+    k=Kf) annotation (Placement(transformation(extent={{72,-50},{52,-30}})));
   Modelica.Blocks.Math.Feedback feedback1
     annotation (Placement(transformation(extent={{-50,-10},{-30,10}})));
   Modelica.Blocks.Continuous.FirstOrder firstOrder2(
@@ -85,8 +77,13 @@ public
         origin={-60,-34})));
   Modelica.Blocks.Math.Feedback Verr
     annotation (Placement(transformation(extent={{-70,-10},{-50,10}})));
-  Modelica.Blocks.Nonlinear.Limiter limiter(uMax=vrmax, uMin=vrmin)
-    annotation (Placement(transformation(extent={{0,-10},{20,10}})));
+  NonElectrical.Continuous.SimpleLagLim simpleLagLim(
+    outMax=vrmax,
+    outMin=vrmin,
+    K=Ka,
+    T=Ta,
+    y_start=vr10)
+    annotation (Placement(transformation(extent={{-10,-10},{10,10}})));
 initial algorithm
   vf00 := vf0;
 algorithm
@@ -97,8 +94,6 @@ equation
     annotation (Line(points={{73,0},{88,0},{110,0}}, color={0,0,127}));
   connect(ceilingBlock.y, feedback.u2)
     annotation (Line(points={{51,40},{40,40},{40,8}}, color={0,0,127}));
-  connect(feedback1.y, FirstOrderController.u)
-    annotation (Line(points={{-31,0},{-32,0}}, color={0,0,127}));
   connect(v, firstOrder2.u) annotation (Line(points={{-120,-60},{-60,-60},{-60,
           -46}}, color={0,0,127}));
   connect(Verr.u2, firstOrder2.y)
@@ -109,16 +104,16 @@ equation
           60}}, color={0,0,127}));
   connect(feedback.y, ExcitationSystem.u)
     annotation (Line(points={{49,0},{49,0},{50,0}}, color={0,0,127}));
-  connect(FirstOrderController.y, limiter.u)
-    annotation (Line(points={{-9,0},{-9,0},{-2,0}}, color={0,0,127}));
-  connect(feedback.u1, limiter.y)
-    annotation (Line(points={{32,0},{32,0},{21,0}}, color={0,0,127}));
   connect(ceilingBlock.u, vf) annotation (Line(points={{74,40},{80,40},{80,0},{
           110,0}}, color={0,0,127}));
-  connect(firstOrder1.u, vf) annotation (Line(points={{74,-40},{86,-40},{86,0},
-          {110,0}},color={0,0,127}));
-  connect(feedback1.u2, firstOrder1.y) annotation (Line(points={{-40,-8},{-40,-8},
-          {-40,-40},{51,-40}}, color={0,0,127}));
+  connect(derivativeBlock.u, vf) annotation (Line(points={{74,-40},{86,-40},{86,
+          0},{110,0}}, color={0,0,127}));
+  connect(feedback1.u2, derivativeBlock.y) annotation (Line(points={{-40,-8},{-40,
+          -8},{-40,-40},{51,-40}}, color={0,0,127}));
+  connect(feedback1.y, simpleLagLim.u)
+    annotation (Line(points={{-31,0},{-12,0}}, color={0,0,127}));
+  connect(simpleLagLim.y, feedback.u1)
+    annotation (Line(points={{11,0},{11,0},{32,0}}, color={0,0,127}));
   annotation (
     Diagram(coordinateSystem(
         extent={{-100,-100},{100,100}},

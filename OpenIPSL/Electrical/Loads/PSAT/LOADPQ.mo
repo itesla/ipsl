@@ -1,9 +1,26 @@
 within OpenIPSL.Electrical.Loads.PSAT;
 model LOADPQ "Constant PQ Load"
   extends BaseClasses.baseLoad;
+  parameter Real Vmax=1.2 "maximum voltage";
+  parameter Real Vmin=0.8 "minimum voltage";
+  parameter Boolean forcePQ=true
+    "force constant PQ-load, false may cause simulation problems";
 equation
-  P = P_0/S_b;
-  Q = Q_0/S_b;
+  if forcePQ or initial() then
+    P = P_0/S_b;
+    Q = Q_0/S_b;
+  elseif (V > Vmax) then
+    // needs a better implementation
+    P = P_0*V^2/(Vmax^2)/S_b;
+    Q = Q_0*V^2/(Vmax^2)/S_b;
+  elseif (V < Vmin) then
+    P = P_0*V^2/Vmin^2/S_b;
+    Q = Q_0*V^2/(Vmin^2)/S_b;
+  else
+    P = P_0/S_b;
+    Q = Q_0/S_b;
+  end if;
+
   annotation (
     Icon(coordinateSystem(
         extent={{-100.0,-100.0},{100.0,100.0}},

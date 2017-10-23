@@ -92,7 +92,7 @@ protected
   parameter Real I_MBtoSB=(Sn*V_b)/(S_b*Vn) "I(machine base) -> I(system base)";
   parameter Real V_MBtoSB=Vn/V_b "V(machine base) -> V(system base)";
   parameter Real Z_MBtoSB=(S_b*Vn^2)/(Sn*V_b^2)
-    "Z(machine base) -> S(system base)";
+    "Z(machine base) -> Z(system base)";
 
   // Initialize stator quantities (system base):
   parameter Real p0=P_0/S_b

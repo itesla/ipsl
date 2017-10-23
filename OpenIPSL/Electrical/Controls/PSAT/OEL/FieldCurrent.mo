@@ -22,8 +22,9 @@ protected
 equation
   gamma_p = xq*p/v;
   gamma_q = xq*q/v;
-  ifield = sqrt((v + gamma_q)^2 + p^2) + (xd/xq - 1)*(gamma_q*(v + gamma_q) +
-    gamma_p)/sqrt((v + gamma_q)^2 + p^2);
+  ifield = sqrt((v + gamma_q)^2 + p^2) + ((xd/xq - 1)*(gamma_q*(v + gamma_q) +
+    gamma_p^2)/sqrt((v + gamma_q)^2 + p^2));
+
   annotation (
     Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{
             100,100}})),

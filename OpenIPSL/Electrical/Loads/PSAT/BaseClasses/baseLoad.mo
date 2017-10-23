@@ -3,13 +3,16 @@ partial model baseLoad
   import Modelica.Constants.pi;
   extends OpenIPSL.Electrical.Essentials.pfComponent;
   parameter Real Sn=S_b "Power rating (MVA)";
-  Real V "Voltage magnitude (pu)";
-  Real Angle_V "voltage angle (rad)";
-  Real P "Active power (pu)";
-  Real Q "Reactive power (pu)";
-  Interfaces.PwPin p
+  Real V(start=V_0) "Voltage magnitude (pu)";
+  Real Angle_V(start=Modelica.SIunits.Conversions.from_deg(angle_0))
+    "voltage angle (rad)";
+  Real P(start=P_0/S_b) "Active power (pu)";
+  Real Q(start=Q_0/S_b) "Reactive power (pu)";
+  Interfaces.PwPin p(vr(start=V_0*cos(angle_0rad)),vi(start=V_0*sin(angle_0rad)))
     annotation (Placement(transformation(extent={{-10,90},{10,110}})));
 protected
+  parameter Modelica.SIunits.Angle angle_0rad=
+      Modelica.SIunits.Conversions.from_deg(angle_0);
   parameter Real CoB=Sn/S_b "Change of base between Machine and System";
 equation
   P = p.vr*p.ir + p.vi*p.ii;
