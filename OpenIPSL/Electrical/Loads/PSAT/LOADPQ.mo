@@ -1,9 +1,9 @@
 within OpenIPSL.Electrical.Loads.PSAT;
 model LOADPQ "Constant PQ Load"
   extends BaseClasses.baseLoad;
-  parameter Real Vmax=1.2 "maximum voltage"
+  parameter Modelica.SIunits.PerUnit Vmax=1.2 "maximum voltage"
     annotation (Evaluate=true, Dialog(tab="To Be Implemented"));
-  parameter Real Vmin=0.8 "minimum voltage"
+  parameter Modelica.SIunits.PerUnit Vmin=0.8 "minimum voltage"
     annotation (Evaluate=true, Dialog(tab="To Be Implemented"));
   parameter Boolean forcePQ=true
     "force constant PQ-load, false may cause simulation problems" annotation (

@@ -9,9 +9,9 @@ partial model baseMachine
     annotation (Dialog(group="Machine parameters"));
   parameter OpenIPSL.Types.VoltageKilo Vn "Voltage rating (kV)"
     annotation (Dialog(group="Machine parameters"));
-  parameter Real ra "Armature resistance (pu)"
+  parameter SI.PerUnit ra "Armature resistance (pu)"
     annotation (Dialog(group="Machine parameters"));
-  parameter Real x1d "d-axis transient reactance (pu)"
+  parameter SI.PerUnit x1d "d-axis transient reactance (pu)"
     annotation (Dialog(group="Machine parameters"));
   parameter Real M "Mechanical starting time (2H), kWs/kVA"
     annotation (Dialog(group="Machine parameters"));
@@ -84,9 +84,9 @@ partial model baseMachine
   Real id(start=id0) "d-axis currrent (pu)";
   Real iq(start=iq0) "q-axis current (pu)";
 protected
-  Real pe(start=pm00) "electrical power transmitted through the air-gap";
-  Real vf_MB=vf*V_b/Vn "field voltage on machine base";
-  parameter Real w_b=2*pi*fn "Base frequency in rad/s";
+  SI.PerUnit pe(start=pm00) "electrical power transmitted through the air-gap";
+  SI.PerUnit vf_MB=vf*V_b/Vn "field voltage on machine base";
+  parameter SI.AngularVelocity w_b=2*pi*fn "Base frequency in rad/s";
   // Define multiplicative transforms to go from one pu-base to another:
   parameter Real S_SBtoMB=S_b/Sn "S(system base) -> S(machine base)";
   parameter Real I_MBtoSB=(Sn*V_b)/(S_b*Vn) "I(machine base) -> I(system base)";
@@ -95,33 +95,33 @@ protected
     "Z(machine base) -> Z(system base)";
 
   // Initialize stator quantities (system base):
-  parameter Real p0=P_0/S_b
+  parameter SI.PerUnit p0=P_0/S_b
     "Initial active power generation in pu (system base)";
-  parameter Real q0=Q_0/S_b
+  parameter SI.PerUnit q0=Q_0/S_b
     "Initial reactive power generation in pu (system base)";
   parameter Complex Vt0=CM.fromPolar(V_0, SI.Conversions.from_deg(angle_0))
     "Init. val., conjugate";
   parameter Complex S0(re=p0, im=-q0) "Init. val., conjugate";
   parameter Complex I0=S0/(CM.conj(Vt0)) "Init. val., conjugate";
-  parameter Real vr0=CM.real(Vt0) "Init. val.";
-  parameter Real vi0=CM.imag(Vt0) "Init. val.";
-  parameter Real ir0=-CM.real(I0) "Init. val.";
-  parameter Real ii0=-CM.imag(I0) "Init. val.";
+  parameter SI.PerUnit vr0=CM.real(Vt0) "Init. val.";
+  parameter SI.PerUnit vi0=CM.imag(Vt0) "Init. val.";
+  parameter SI.PerUnit ir0=-CM.real(I0) "Init. val.";
+  parameter SI.PerUnit ii0=-CM.imag(I0) "Init. val.";
 
   // Initialize DQ-quantities (pu, machine base)
-  parameter Real xq0 "used for setting the initial rotor angle";
+  parameter SI.PerUnit xq0 "used for setting the initial rotor angle";
   parameter SI.Angle delta0=CM.arg((Vt0 + ((ra + CM.j*xq0)*Z_MBtoSB*I0)))
     "Init. val. rotor angle";
   parameter Complex Vdq0=Vt0*CM.fromPolar(1/V_MBtoSB, (-delta0 + (pi/2)))
     "Init. val (pu, machine base)";
   parameter Complex Idq0=I0*CM.fromPolar(1/I_MBtoSB, (-delta0 + (pi/2)))
     "(pu, machine base)";
-  parameter Real vd0=CM.real(Vdq0) "Init. val.";
-  parameter Real vq0=CM.imag(Vdq0) "Init. val.";
-  parameter Real id0=CM.real(Idq0) "Init. val.";
-  parameter Real iq0=CM.imag(Idq0) "Init. val.";
+  parameter SI.PerUnit vd0=CM.real(Vdq0) "Init. val.";
+  parameter SI.PerUnit vq0=CM.imag(Vdq0) "Init. val.";
+  parameter SI.PerUnit id0=CM.real(Idq0) "Init. val.";
+  parameter SI.PerUnit iq0=CM.imag(Idq0) "Init. val.";
 
-  parameter Real pm00=((vq0 + ra*iq0)*iq0 + (vd0 + ra*id0)*id0)/S_SBtoMB
+  parameter SI.PerUnit pm00=((vq0 + ra*iq0)*iq0 + (vd0 + ra*id0)*id0)/S_SBtoMB
     "Init. val. (pu, system base)";
 initial equation
   w = 1;

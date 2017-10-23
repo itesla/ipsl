@@ -15,17 +15,21 @@ model OEL "PSATs Over-Excitation Limiter"
   Modelica.Blocks.Interfaces.RealOutput v_ref annotation (Placement(
         transformation(extent={{94,-10},{114,10}}), iconTransformation(extent={
             {92,-12},{116,12}})));
-  parameter Real T0=10 "Integrator time constant (s)";
-  parameter Real xd "d-axis estimated generator reactance (pu, machine base)";
-  parameter Real xq "q-axis estimated generator reactance (pu, machine base)";
-  parameter Real if_lim "Maximum field current (pu, system base)";
-  parameter Real vOEL_max "Maximum output signal (pu, machine base)";
+  parameter Modelica.SIunits.Time T0=10 "Integrator time constant (s)";
+  parameter Modelica.SIunits.PerUnit xd
+    "d-axis estimated generator reactance (pu, machine base)";
+  parameter Modelica.SIunits.PerUnit xq
+    "q-axis estimated generator reactance (pu, machine base)";
+  parameter Modelica.SIunits.PerUnit if_lim
+    "Maximum field current (pu, system base)";
+  parameter Modelica.SIunits.PerUnit vOEL_max
+    "Maximum output signal (pu, machine base)";
   parameter OpenIPSL.Types.ApparentPowerMega Sn=SysData.S_b
     "Power rating (MVA)" annotation (Dialog(group="Machine parameters"));
   parameter OpenIPSL.Types.VoltageKilo Vn=V_b "Voltage rating (kV)"
     annotation (Dialog(group="Machine parameters"));
   parameter OpenIPSL.Types.VoltageKilo V_b=400 "Base voltage of the bus (kV)";
-  //protected
+protected
   parameter Real Z_MBtoSB=(SysData.S_b*Vn^2)/(Sn*V_b^2)
     "Z(machine base) -> Z(system base)";
   parameter Real I_MBtoSB=(Sn*V_b)/(SysData.S_b*Vn)
@@ -64,11 +68,11 @@ equation
   connect(v_ref, difference.y)
     annotation (Line(points={{104,0},{89,0}}, color={0,0,127}));
   connect(field_current.v, v) annotation (Line(points={{-40,-12.8},{-60,-12.8},
-          {-60,60},{-102,60}}, color={0,0,127}));
+          {-60,60},{-102,60}},color={0,0,127}));
   connect(limIntegrator.y, difference.u2) annotation (Line(points={{43,-20},{44,
           -20},{80,-20},{80,-8}}, color={0,0,127}));
   connect(difference.u1, v_ref0) annotation (Line(points={{72,0},{72,0},{40,0},
-          {40,60},{0,60},{0,110}}, color={0,0,127}));
+          {40,60},{0,60},{0,110}},color={0,0,127}));
   connect(p, field_current.p) annotation (Line(points={{-102,0},{-102,0},{-80,0},
           {-80,-20},{-40,-20}}, color={0,0,127}));
   connect(q, field_current.q) annotation (Line(points={{-102,-60},{-60,-60},{-60,

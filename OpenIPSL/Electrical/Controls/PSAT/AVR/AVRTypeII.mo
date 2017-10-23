@@ -13,24 +13,25 @@ model AVRTypeII "PSAT AVR Type 2"
     "Reference generator terminal voltage (pu)" annotation (Placement(
         transformation(extent={{-140,40},{-100,80}}), iconTransformation(extent
           ={{-140,40},{-100,80}})));
-  parameter Real vrmin=-5 "Minimum regulator voltage (pu)";
-  parameter Real vrmax=5 "Maximum regulator voltage (p.u..)";
-  parameter Real Ka=100 "Amplifier gain (p.u/p.u)";
-  parameter Real Ta=0.5 "Amplifier time constant (s)";
-  parameter Real Kf=0.15 "Stabilizer gain (p.u/p.u)";
-  parameter Real Tf=0.1 "Stabilizer time constant (s)";
-  parameter Real Ke=0 "Field circuit integral deviation (p.u/p.u)";
-  parameter Real Te=0.2 "Field circuit time constant (s)";
-  parameter Real Tr=0.001 "Measurement time constant (s)";
+  parameter Modelica.SIunits.PerUnit vrmin=-5 "Minimum regulator voltage (pu)";
+  parameter Modelica.SIunits.PerUnit vrmax=5 "Maximum regulator voltage (pu)";
+  parameter Real Ka=100 "Amplifier gain (pu/pu)";
+  parameter Modelica.SIunits.Time Ta=0.5 "Amplifier time constant (s)";
+  parameter Real Kf=0.15 "Stabilizer gain (pu/pu)";
+  parameter Modelica.SIunits.Time Tf=0.1 "Stabilizer time constant (s)";
+  parameter Real Ke=0 "Field circuit integral deviation (pu/pu)";
+  parameter Modelica.SIunits.Time Te=0.2 "Field circuit time constant (s)";
+  parameter Modelica.SIunits.Time Tr=0.001 "Measurement time constant (s)";
   parameter Real Ae=0.0006 "1st ceiling coefficient";
   parameter Real Be=0.9 "2nd ceiling coefficient";
-  parameter Real v0=1 "Initial measured voltage";
+  parameter Modelica.SIunits.PerUnit v0=1 "Initial measured voltage";
 protected
-  parameter Real vfstate=vr10 - (Ae*Modelica.Math.exp(Be*abs(vf00))*vf00);
-  parameter Real vf00(fixed=false) "Initialization of vf";
-  parameter Real vr10=Ke*vf00 + Ae*Modelica.Math.exp(Be*abs(vf00))*vf00
-    "Initialization";
-  parameter Real vr20=-vf00*Kf/Tf "Initialization";
+  parameter Modelica.SIunits.PerUnit vfstate=vr10 - (Ae*Modelica.Math.exp(Be*
+      abs(vf00))*vf00);
+  parameter Modelica.SIunits.PerUnit vf00(fixed=false) "Initialization of vf";
+  parameter Modelica.SIunits.PerUnit vr10=Ke*vf00 + Ae*Modelica.Math.exp(Be*abs(
+      vf00))*vf00 "Initialization";
+  parameter Modelica.SIunits.PerUnit vr20=-vf00*Kf/Tf "Initialization";
 public
   Modelica.Blocks.Interfaces.RealOutput vref0 "Voltage reference at t=0 (pu)"
     annotation (Placement(transformation(
