@@ -2,7 +2,7 @@ within OpenIPSL.Electrical.Loads.PSAT.BaseClasses;
 partial model baseLoad
   import Modelica.Constants.pi;
   extends OpenIPSL.Electrical.Essentials.pfComponent;
-  parameter Real Sn=S_b "Power rating (MVA)";
+  parameter OpenIPSL.Types.ApparentPowerMega Sn=S_b "Power rating (MVA)";
   Real V(start=V_0) "Voltage magnitude (pu)";
   Real Angle_V(start=Modelica.SIunits.Conversions.from_deg(angle_0))
     "voltage angle (rad)";

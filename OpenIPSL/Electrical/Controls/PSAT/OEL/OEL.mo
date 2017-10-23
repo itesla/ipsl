@@ -20,9 +20,9 @@ model OEL "PSATs Over-Excitation Limiter"
   parameter Real xq "q-axis estimated generator reactance (pu, machine base)";
   parameter Real if_lim "Maximum field current (pu, system base)";
   parameter Real vOEL_max "Maximum output signal (pu, machine base)";
-  parameter Real Sn=SysData.S_b "Power rating (MVA)"
-    annotation (Dialog(group="Machine parameters"));
-  parameter Real Vn=V_b "Voltage rating (kV)"
+  parameter OpenIPSL.Types.ApparentPowerMega Sn=SysData.S_b
+    "Power rating (MVA)" annotation (Dialog(group="Machine parameters"));
+  parameter OpenIPSL.Types.VoltageKilo Vn=V_b "Voltage rating (kV)"
     annotation (Dialog(group="Machine parameters"));
   parameter OpenIPSL.Types.VoltageKilo V_b=400 "Base voltage of the bus (kV)";
   //protected

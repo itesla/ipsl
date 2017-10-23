@@ -16,7 +16,8 @@ model PwLine "Model for a transmission Line based on the pi-equivalent circuit"
     annotation (Dialog(group="Line parameters"));
   parameter Real B "Shunt half susceptance (pu)"
     annotation (Dialog(group="Line parameters"));
-  parameter Real S_b=SysData.S_b "System base power (MVA)"
+  parameter OpenIPSL.Types.ApparentPowerMega S_b=SysData.S_b
+    "System base power (MVA)"
     annotation (Dialog(group="Line parameters", enable=false));
   parameter Real t1=Modelica.Constants.inf
     annotation (Dialog(group="Perturbation parameters"));

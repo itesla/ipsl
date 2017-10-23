@@ -25,12 +25,13 @@ model AVRTypeII "PSAT AVR Type 2"
   parameter Real Ae=0.0006 "1st ceiling coefficient";
   parameter Real Be=0.9 "2nd ceiling coefficient";
   parameter Real v0=1 "Initial measured voltage";
+protected
   parameter Real vfstate=vr10 - (Ae*Modelica.Math.exp(Be*abs(vf00))*vf00);
   parameter Real vf00(fixed=false) "Initialization of vf";
   parameter Real vr10=Ke*vf00 + Ae*Modelica.Math.exp(Be*abs(vf00))*vf00
     "Initialization";
   parameter Real vr20=-vf00*Kf/Tf "Initialization";
-
+public
   Modelica.Blocks.Interfaces.RealOutput vref0 "Voltage reference at t=0 (pu)"
     annotation (Placement(transformation(
         extent={{-10,-10},{10,10}},

@@ -6,23 +6,32 @@ model LOADPQ_variation
     annotation (Dialog(group="Variation 1"));
   parameter Real t_end_1=2 "End time of first load variation (s)"
     annotation (Dialog(group="Variation 1"));
-  parameter Real dP1=0 "First active load variation  (MW)"
-    annotation (Dialog(group="Variation 1"));
-  parameter Real dQ1=0 "First reactive load variation (Mvar)"
+  parameter OpenIPSL.Types.ActivePowerMega dP1=0
+    "First active load variation  (MW)" annotation (Dialog(group="Variation 1"));
+  parameter OpenIPSL.Types.ReactivePowerMega dQ1=0
+    "First reactive load variation (Mvar)"
     annotation (Dialog(group="Variation 1"));
   parameter Real t_start_2=2 "Start time of second Load variation (s)"
     annotation (Dialog(group="Variation 2"));
   parameter Real t_end_2=3 "End time of second load variation (s)"
     annotation (Dialog(group="Variation 2"));
-  parameter Real dP2=0 "Second active load variation  (MW)"
+  parameter OpenIPSL.Types.ActivePowerMega dP2=0
+    "Second active load variation  (MW)"
     annotation (Dialog(group="Variation 2"));
-  parameter Real dQ2=0 "Second reactive load variation (Mvar)"
+  parameter OpenIPSL.Types.ReactivePowerMega dQ2=0
+    "Second reactive load variation (Mvar)"
     annotation (Dialog(group="Variation 2"));
-  parameter Real Vmax=1.2 "maximum voltage";
-  parameter Real Vmin=0.8 "minimum voltage";
+  parameter Real Vmax=1.2 "maximum voltage (pu)"
+    annotation (Evaluate=true, Dialog(tab="To Be Implemented"));
+  parameter Real Vmin=0.8 "minimum voltage (pu)"
+    annotation (Evaluate=true, Dialog(tab="To Be Implemented"));
   parameter Boolean forcePQ=true
-    "force ''constant'' PQ-load, false may cause simulation problems";
-  protected
+    "force ''constant'' PQ-load, false may cause simulation problems"
+    annotation (
+    Evaluate=true,
+    choices(checkBox=true),
+    Dialog(tab="To Be Implemented"));
+protected
   Real Pd(start=P_0/S_b) "active
   power demand";
   Real Qd(start=Q_0/S_b) "reactive power demand";

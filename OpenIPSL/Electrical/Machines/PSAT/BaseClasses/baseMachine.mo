@@ -5,9 +5,9 @@ partial model baseMachine
   import SI = Modelica.SIunits;
   import CM = Modelica.ComplexMath;
   import Complex;
-  parameter Real Sn "Power rating (MVA)"
+  parameter OpenIPSL.Types.ApparentPowerMega Sn "Power rating (MVA)"
     annotation (Dialog(group="Machine parameters"));
-  parameter Real Vn "Voltage rating (kV)"
+  parameter OpenIPSL.Types.VoltageKilo Vn "Voltage rating (kV)"
     annotation (Dialog(group="Machine parameters"));
   parameter Real ra "Armature resistance (pu)"
     annotation (Dialog(group="Machine parameters"));
