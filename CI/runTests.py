@@ -68,8 +68,8 @@ appExamples = {
 "AKD":"/ApplicationExamples/AKD/package.mo",
 "N44":"/ApplicationExamples/N44/package.mo",
 "OpenCPSD5d3B":"/ApplicationExamples/OpenCPSD5d3B/package.mo",
-"ThreePhase":"/ApplicationExamples/ThreePhase/package.mo",
-"RaPIdExperiments":"/ApplicationExamples/RaPIdExperiments/package.mo"
+"RaPIdExperiments":"/ApplicationExamples/RaPIdExperiments/package.mo",
+"ThreePhase":"/ApplicationExamples/ThreePhase/package.mo"
 }
 
 for package in appExamples.keys():
