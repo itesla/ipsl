@@ -1,4 +1,4 @@
 within ThreePhase;
 package Loads
-	annotation(Documentation);
+annotation (Documentation);
 end Loads;

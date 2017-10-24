@@ -1,4 +1,4 @@
 within ThreePhase.Branches;
 package Transformer
-	annotation(Documentation);
+annotation (Documentation);
 end Transformer;

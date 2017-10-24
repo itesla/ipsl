@@ -1,4 +1,4 @@
 within ThreePhase;
 package Banks
-	annotation(Documentation);
+annotation (Documentation);
 end Banks;

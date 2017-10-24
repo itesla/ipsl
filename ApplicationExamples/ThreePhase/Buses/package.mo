@@ -1,4 +1,4 @@
 within ThreePhase;
 package Buses
-	annotation(Documentation);
+annotation (Documentation);
 end Buses;

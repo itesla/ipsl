@@ -26,7 +26,7 @@ model Transformer_3Ph "Three Phase transformer modeled in a PI element"
     annotation (Placement(transformation(extent={{80,-10},{100,10}})));
   OpenIPSL.Interfaces.PwPin Cout
     annotation (Placement(transformation(extent={{80,-100},{100,-80}})));
-  parameter Integer Connection = 0
+  parameter Integer Connection=0
     "0 Yg-Yg; 1 D-D; 2 Y-Y; 3 D-Yg; 4 Yg-D; 5 D-Y; 6 Y-D; 7 Y-Yg; 8 Yg-Y;"
     annotation (choices(
       choice=0 "Yg-Yg",
@@ -39,17 +39,22 @@ model Transformer_3Ph "Three Phase transformer modeled in a PI element"
       choice=7 "Y-Yg",
       choice=8 "Yg-Y"));
 
-  parameter Real Sb = SysData.S_b "System base power (MVA)" annotation (Dialog(group="Power flow"));
-  parameter Real fn = SysData.fn "Frequency rating (Hz)" annotation (Dialog(group="Power flow"));
-  parameter Real tap=1 "Nominal tap ratio (Vs/Vp)" annotation (Dialog(group="Transformer parameters"));
-  parameter Real X=0.001 "Reactance (pu machine base)" annotation (Dialog(group="Transformer parameters"));
-  parameter Real R=0.1 "Resistance (pu machine base)" annotation (Dialog(group="Transformer parameters"));
+  parameter Real Sb=SysData.S_b "System base power (MVA)"
+    annotation (Dialog(group="Power flow"));
+  parameter Real fn=SysData.fn "Frequency rating (Hz)"
+    annotation (Dialog(group="Power flow"));
+  parameter Real tap=1 "Nominal tap ratio (Vs/Vp)"
+    annotation (Dialog(group="Transformer parameters"));
+  parameter Real X=0.001 "Reactance (pu machine base)"
+    annotation (Dialog(group="Transformer parameters"));
+  parameter Real R=0.1 "Resistance (pu machine base)"
+    annotation (Dialog(group="Transformer parameters"));
 protected
-   function ConnectionType
+  function ConnectionType
     input Integer Connection;
     input Real X, R, tap;
-    output Real[12,12] PiEquations;
-   algorithm
+    output Real[12, 12] PiEquations;
+  algorithm
     if Connection == 0 then
       PiEquations := Yg_Yg(
           X,
@@ -96,42 +101,67 @@ protected
           R,
           tap);
     end if;
-   end ConnectionType;
+  end ConnectionType;
 
-   // Getting pi model matrix for Yg_Yg connection
-   parameter Real[12,12] OperPI = ConnectionType(Connection, X, R, tap);
-   parameter Real[6,6] Amat = OperPI[1:6,1:6];
-   parameter Real[6,6] Bmat = OperPI[1:6,7:12];
-   parameter Real[6,6] Cmat = OperPI[7:12,1:6];
-   parameter Real[6,6] Dmat = OperPI[7:12,7:12];
-   
-   // Writing matrix for voltages (in and out)
-   Real [6,1]Vin = [Ain.vr;Ain.vi;Bin.vr;Bin.vi;Cin.vr;Cin.vi];
-   Real [6,1]Vout = [Aout.vr;Aout.vi;Bout.vr;Bout.vi;Cout.vr;Cout.vi]; 
-   // Writing matrix for currents (in and out)
-   Real [6,1]Iin = [Ain.ir;Ain.ii;Bin.ir;Bin.ii;Cin.ir;Cin.ii]; 
-   Real [6,1]Iout = [Aout.ir;Aout.ii;Bout.ir;Bout.ii;Cout.ir;Cout.ii]; 
-   
+  // Getting pi model matrix for Yg_Yg connection
+  parameter Real[12, 12] OperPI=ConnectionType(
+      Connection,
+      X,
+      R,
+      tap);
+  parameter Real[6, 6] Amat=OperPI[1:6, 1:6];
+  parameter Real[6, 6] Bmat=OperPI[1:6, 7:12];
+  parameter Real[6, 6] Cmat=OperPI[7:12, 1:6];
+  parameter Real[6, 6] Dmat=OperPI[7:12, 7:12];
+
+  // Writing matrix for voltages (in and out)
+  Real[6, 1] Vin=[Ain.vr; Ain.vi; Bin.vr; Bin.vi; Cin.vr; Cin.vi];
+  Real[6, 1] Vout=[Aout.vr; Aout.vi; Bout.vr; Bout.vi; Cout.vr; Cout.vi];
+  // Writing matrix for currents (in and out)
+  Real[6, 1] Iin=[Ain.ir; Ain.ii; Bin.ir; Bin.ii; Cin.ir; Cin.ii];
+  Real[6, 1] Iout=[Aout.ir; Aout.ii; Bout.ir; Bout.ii; Cout.ir; Cout.ii];
+
 equation
-    // Equations according to pi model
-  Iin =  Amat*Vin+Bmat*Vout;  
-  Iout =  Cmat*Vin+Dmat*Vout;
+  // Equations according to pi model
+  Iin = Amat*Vin + Bmat*Vout;
+  Iout = Cmat*Vin + Dmat*Vout;
 
   annotation (
-    Diagram(coordinateSystem(preserveAspectRatio=true, extent={{-100,-100},{100,100}}), graphics),
-    Icon(graphics = {Ellipse(lineColor = {0, 0, 255}, extent = {{-46, 30}, {8, -30}}, endAngle = 360), Ellipse(lineColor = {0, 0, 255}, extent = {{-8, 30}, {46, -30}}, endAngle = 360), Line(points = {{100, 0}, {46, 0}}, color = {0, 0, 255}), Line(points = {{-100, 0}, {-46, 0}}, color = {0, 0, 255}), Line(points = {{-60, 90}, {-39, 20}}, color = {0, 0, 255}), Line(points = {{-60, 90}, {-90, 90}}, color = {0, 0, 255}), Line(points = {{60, 90}, {39, 20}}, color = {0, 0, 255}), Line(points = {{60, 90}, {90, 90}}, color = {0, 0, 255}),Line(points = {{-60, -90}, {-39, -20}}, color = {0, 0, 255}), Line(points = {{-60, -90}, {-90, -90}}, color = {0, 0, 255}),Line(points = {{60, -90}, {39, -20}}, color = {0, 0, 255}), Line(points = {{60, -90}, {90, -90}}, color = {0, 0, 255}), Text(lineColor = {28, 108, 200}, extent = {{-38, 20}, {-4, -20}}, textString = "K"), Text(origin = {6, 0},lineColor = {28, 108, 200}, extent = {{1, 20}, {35, -20}}, textString = "M"), Text(origin = {-54, 84}, lineColor = {28, 108, 200}, extent = {{4, 18}, {104, -34}}, textString = "Three Phase Transformer")}, coordinateSystem(initialScale = 0.1)),
-    Documentation(revisions="<html>
-<!--DISCLAIMER-->
-<p>Copyright 2015-2016 RTE (France), SmarTS Lab (Sweden), AIA (Spain) and DTU (Denmark)</p>
-<ul>
-<li>RTE: <a href=\"http://www.rte-france.com\">http://www.rte-france.com</a></li>
-<li>SmarTS Lab, research group at KTH: <a href=\"https://www.kth.se/en\">https://www.kth.se/en</a></li>
-<li>AIA: <a href=\"http://www.aia.es/en/energy\"> http://www.aia.es/en/energy</a></li>
-<li>DTU: <a href=\"http://www.dtu.dk/english\"> http://www.dtu.dk/english</a></li>
-</ul>
-<p>The authors can be contacted by email: <a href=\"mailto:info@itesla-ipsl.org\">info@itesla-ipsl.org</a></p>
-
-<p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
-<p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
-</html>"));
+    Diagram(coordinateSystem(preserveAspectRatio=true, extent={{-100,-100},{100,
+            100}}), graphics),
+    Icon(graphics={
+        Ellipse(
+          lineColor={0,0,255},
+          extent={{-46,30},{8,-30}},
+          endAngle=360),
+        Ellipse(
+          lineColor={0,0,255},
+          extent={{-8,30},{46,-30}},
+          endAngle=360),
+        Line(points={{100,0},{46,0}}, color={0,0,255}),
+        Line(points={{-100,0},{-46,0}}, color={0,0,255}),
+        Line(points={{-60,90},{-39,20}}, color={0,0,255}),
+        Line(points={{-60,90},{-90,90}}, color={0,0,255}),
+        Line(points={{60,90},{39,20}}, color={0,0,255}),
+        Line(points={{60,90},{90,90}}, color={0,0,255}),
+        Line(points={{-60,-90},{-39,-20}}, color={0,0,255}),
+        Line(points={{-60,-90},{-90,-90}}, color={0,0,255}),
+        Line(points={{60,-90},{39,-20}}, color={0,0,255}),
+        Line(points={{60,-90},{90,-90}}, color={0,0,255}),
+        Text(
+          lineColor={28,108,200},
+          extent={{-38,20},{-4,-20}},
+          textString="K"),
+        Text(
+          origin={6,0},
+          lineColor={28,108,200},
+          extent={{1,20},{35,-20}},
+          textString="M"),
+        Text(
+          origin={-54,84},
+          lineColor={28,108,200},
+          extent={{4,18},{104,-34}},
+          textString="Three Phase Transformer")}, coordinateSystem(initialScale
+          =0.1)),
+    Documentation);
 end Transformer_3Ph;
