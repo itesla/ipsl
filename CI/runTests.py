@@ -22,8 +22,8 @@ class CITests():
         if self.omc.sendExpression('loadFile("%s")' % (self.rootPath + libPath)):
             print "%s is successfully loaded." % libPath
         else:
-            raise Exception("%s was not loaded! Check the library path.")  % libPath
-
+            errmsg = libPath + " was not loaded! Check the library path."
+            raise Exception(errmsg)
     def runCheck(self, libName, libPath):
         # Load library
         self.loadLib(libPath)
@@ -68,7 +68,8 @@ appExamples = {
 "AKD":"/ApplicationExamples/AKD/package.mo",
 "N44":"/ApplicationExamples/N44/package.mo",
 "OpenCPSD5d3B":"/ApplicationExamples/OpenCPSD5d3B/package.mo",
-"RaPIdExperiments":"/ApplicationExamples/RaPIdExperiments/package.mo"
+"RaPIdExperiments":"/ApplicationExamples/RaPIdExperiments/package.mo",
+"ThreePhase":"/ApplicationExamples/ThreePhase/package.mo"
 }
 
 for package in appExamples.keys():
