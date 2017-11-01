@@ -1,6 +1,7 @@
 import sys
 import os
 from OMPython import OMCSession
+from OMPython import OMCSessionZMQ
 from OMPython import ModelicaSystem
 
 
@@ -13,8 +14,8 @@ class CITests():
         Constructor starts omc and loads MSL
         '''
         self.rootPath = rootPath
-        self.obj = ModelicaSystem(useCorba=True)
-        self.omc = OMCSession()
+        # self.obj = ModelicaSystem(useCorba=True)
+        self.omc = OMCSessionZMQ()
         os.chdir(self.rootPath)
         self.omc.sendExpression("loadModel(Modelica)")
 
