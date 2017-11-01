@@ -14,7 +14,7 @@ RUN curl -s http://build.openmodelica.org/apt/openmodelica.asc | apt-key add -
 RUN apt-get update --fix-missing && apt-get upgrade -y -o Dpkg::Options::="--force-confold"
 
 # Install OpenModelica
-RUN apt-get install -y openmodelica
+RUN apt-get install -y omc omlib-modelica-3.2.2
 
 RUN apt-get install -y python-pip python-dev build-essential
 RUN apt-get install -y git \
