@@ -17,13 +17,11 @@ RUN apt-get update
 RUN apt-get install -y openmodelica
 
 RUN apt-get install -y python-pip python-dev build-essential
-RUN apt-get install -y omniidl \
-                       omniidl-python \
-                       omniorb \
-                       omniorb-idl \
-	                     git \
-					             python-numpy \
-                       python-omniorb
+RUN apt-get install -y git \
+                       python-numpy
 
 # Install OMPython
 RUN python -m pip install -U https://github.com/OpenModelica/OMPython/archive/master.zip
+
+# Add User
+RUN useradd smartslab
