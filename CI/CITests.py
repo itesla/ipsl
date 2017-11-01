@@ -47,7 +47,7 @@ class CITests():
                     nFailed += 1
         # Print a check summary
         if nFailed == 0:
-            print "== %s - OK! (%s models checked)" % {libName, nPassed}
+            print "== %s - OK! (%s models checked)" % (libName, nPassed)
         else:
             print "==== Check Summary for %s ===="  % libName
             print "Number of models that passed the check is: %s" % nPassed
