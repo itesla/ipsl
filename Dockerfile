@@ -11,20 +11,21 @@ USER root
 # Make sure apt is up to date
 RUN add-apt-repository 'deb http://build.openmodelica.org/apt xenial stable'
 RUN curl -s http://build.openmodelica.org/apt/openmodelica.asc | apt-key add -
-RUN apt-get update --fix-missing && apt-get upgrade -y -o Dpkg::Options::="--force-confold"
 
-# Install OpenModelica
-RUN apt-get install -y omc omlib-modelica-3.2.2
-
-RUN apt-get install -y python-pip python-dev build-essential
-RUN apt-get install -y git \
-                       python-numpy
+# install python, omc
+RUN apt-get update --fix-missing && apt-get upgrade -y -o Dpkg::Options::="--force-confold" && apt-get install -y \
+    python-pip \
+    python-dev \
+    build-essential \
+    python-numpy \
+    omc \
+    omlib-modelica-3.2.2 \
 
 # Install OMPython
 RUN python -m pip install -U https://github.com/OpenModelica/OMPython/archive/master.zip
 
 # Clean up APT when done.
-RUN apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+RUN rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 # Add User
 RUN useradd -m -s /bin/bash smartslab
