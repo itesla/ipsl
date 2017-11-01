@@ -25,7 +25,7 @@ else:
     # Run Check on App Examples
     passAppEx = 1
     for package in appExamples.keys():
-        PassAppEx = PassAppEx * ci.runSyntaxCheck(package,appExamples[package])
+        passAppEx = passAppEx * ci.runSyntaxCheck(package,appExamples[package])
 
     # The tests are failing if the number of failed check > 0
     if passAppEx:
