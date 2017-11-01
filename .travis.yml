@@ -5,7 +5,7 @@ python:
 services: docker
 
 install:
-  - docker pull smartslab/openipsl
+  - docker pull smartslab/openipsl:test
 
 script:
-  - docker run -i -t -v $(pwd):/OpenIPSL -u smartslab smartslab/openipsl sh -c "python /OpenIPSL/CI/syntaxCheck.py"
+  - docker run -i -t -v $(pwd):/OpenIPSL -u smartslab smartslab/openipsl:test sh -c "python /OpenIPSL/CI/syntaxCheck.py"

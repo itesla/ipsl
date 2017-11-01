@@ -23,8 +23,11 @@ RUN apt-get install -y git \
 # Install OMPython
 RUN python -m pip install -U https://github.com/OpenModelica/OMPython/archive/master.zip
 
-# Add User
-RUN useradd smartslab
-
 # Clean up APT when done.
 RUN apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+
+# Add User
+RUN useradd -ms /bin/bash smartslab
+
+USER smartslab
+WORKDIR /home/smartslab
