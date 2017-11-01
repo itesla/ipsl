@@ -5,7 +5,7 @@ MAINTAINER Maxime Baudette "baudette@kth.se"
 # Use baseimage-docker's init system.
 CMD ["/sbin/my_init"]
 
-ENV DEBIAN_FRONTEND noninteractive
+ARG DEBIAN_FRONTEND=noninteractive
 USER root
 
 # Make sure apt is up to date
@@ -27,7 +27,7 @@ RUN python -m pip install -U https://github.com/OpenModelica/OMPython/archive/ma
 RUN apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 # Add User
-RUN useradd -ms /bin/bash smartslab
+RUN useradd -m -s /bin/bash smartslab
 
 USER smartslab
 WORKDIR /home/smartslab
