@@ -28,6 +28,8 @@ RUN apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 # Add User
 RUN useradd -m -s /bin/bash smartslab
+RUN chown -R smartslab:smartslab /home/smartslab
 
 USER smartslab
+ENV USER smartslab
 WORKDIR /home/smartslab
