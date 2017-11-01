@@ -26,4 +26,4 @@ RUN apt-get install -y omniidl \
                        python-omniorb
 
 # Install OMPython
-RUN sudo pip install https://github.com/OpenModelica/OMPython/archive/master.zip
+RUN python -m pip install -U https://github.com/OpenModelica/OMPython/archive/master.zip
