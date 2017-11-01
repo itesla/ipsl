@@ -1,9 +1,6 @@
 import sys
 import os
-from OMPython import OMCSession
 from OMPython import OMCSessionZMQ
-from OMPython import ModelicaSystem
-
 
 class CITests():
     '''
@@ -14,7 +11,6 @@ class CITests():
         Constructor starts omc and loads MSL
         '''
         self.rootPath = rootPath
-        # self.obj = ModelicaSystem(useCorba=True)
         self.omc = OMCSessionZMQ()
         os.chdir(self.rootPath)
         self.omc.sendExpression("loadModel(Modelica)")
@@ -25,9 +21,10 @@ class CITests():
         if self.omc.sendExpression('loadFile("%s")' % (self.rootPath + libPath)):
             print "%s is successfully loaded." % libPath
         else:
-            raise Exception("%s was not loaded! Check the library path.")  % libPath
+            errmsg = libPath + " was not loaded! Check the library path."
+            raise Exception(errmsg)
 
-    def runCheck(self, libName, libPath):
+    def runSyntaxCheck(self, libName, libPath):
         # Load library
         self.loadLib(libPath)
         '''
@@ -52,31 +49,6 @@ class CITests():
         # Print a check summary
         print "==== Check Summary for %s ===="  % libName
         print "Number of models that passed the check is: %s" % nPassed
-        print "Number of models that failed the check is: %s" % nFailed
+        if nFailed > 0:
+            print "Number of models that failed the check is: %s" % nFailed
         return (nFailed == 0)
-
-# Instance of CITests
-ci = CITests("/OpenIPSL")
-# Run Check on OpenIPSL
-passLib = ci.runCheck("OpenIPSL","/OpenIPSL/package.mo")
-
-# Libs in Application Examples
-notPassAppEx = 0
-appExamples = {
-"KundurSMIB":"/ApplicationExamples/KundurSMIB/package.mo",
-"TwoAreas":"/ApplicationExamples/TwoAreas/package.mo",
-"SevenBus":"/ApplicationExamples/SevenBus/package.mo",
-"IEEE9":"/ApplicationExamples/IEEE9/package.mo",
-"IEEE14":"/ApplicationExamples/IEEE14/package.mo",
-"AKD":"/ApplicationExamples/AKD/package.mo",
-"N44":"/ApplicationExamples/N44/package.mo",
-"OpenCPSD5d3B":"/ApplicationExamples/OpenCPSD5d3B/package.mo",
-}
-
-for package in appExamples.keys():
-    notPassAppEx = notPassAppEx + (not ci.runCheck(package,appExamples[package]))
-
-
-# The tests are failing if the number of failed check > 0
-if (not passLib) or notPassAppEx :
-    sys.exit(1)

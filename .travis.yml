@@ -8,4 +8,4 @@ install:
   - docker pull smartslab/openipsl:addDockerFile
 
 script:
-  - docker run -i -t -v $(pwd):/OpenIPSL smartslab/openipsl:addDockerFile sudo -u smartslab -H sh -c "python /OpenIPSL/CI/runTests.py"
+  - docker run -i -t -v $(pwd):/OpenIPSL smartslab/openipsl:addDockerFile sudo -u smartslab -H sh -c "python /OpenIPSL/CI/syntaxCheck.py"
