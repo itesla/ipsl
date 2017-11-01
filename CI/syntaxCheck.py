@@ -11,6 +11,7 @@ appExamples = {
 "AKD":"/ApplicationExamples/AKD/package.mo",
 "N44":"/ApplicationExamples/N44/package.mo",
 "OpenCPSD5d3B":"/ApplicationExamples/OpenCPSD5d3B/package.mo",
+"RaPIdExperiments":"/ApplicationExamples/RaPIdExperiments/package.mo"
 }
 
 # Instance of CITests
