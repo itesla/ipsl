@@ -15,17 +15,17 @@ class CITests():
         self.omc.sendExpression("loadModel(Modelica)")
 
 
-    def loadLib(self, libPath):
+    def loadLib(self, libName, libPath):
         # Attempt to load the library
         if self.omc.sendExpression('loadFile("%s")' % (self.rootPath + libPath)):
-            print "%s is successfully loaded." % libPath
+            print "Load success: %s" % libName
         else:
-            errmsg = libPath + " was not loaded! Check the library path."
+            errmsg = libName + " was not loaded! Check the library path:\n" + libPath
             raise Exception(errmsg)
 
     def runSyntaxCheck(self, libName, libPath):
         # Load library
-        self.loadLib(libPath)
+        self.loadLib(libName,libPath)
         '''
         Checks all of the models in the library and returns number of faild checks
         '''
@@ -39,7 +39,6 @@ class CITests():
             if self.omc.sendExpression("isModel(%s)" % (test)):  # Check if a class is a model
                 passMsg = self.omc.sendExpression("checkModel(%s)" % (test))
                 if "completed successfully." in passMsg:
-                    # print passMsg
                     nPassed += 1
                 else:
                     failMsg = self.omc.sendExpression("getErrorString()")
@@ -47,8 +46,8 @@ class CITests():
                     nFailed += 1
         # Print a check summary
         if nFailed == 0:
-            str1 = "== %s --------------------" % libName
-            print "%s OK! (%s models checked)" % (str1[:20], nPassed)
+            str1 = "== %s ----------------------" % libName
+            print "%s OK! == Models checked: %s" % (str1[:22], nPassed)
         else:
             print "==== Check Summary for %s ===="  % libName
             print "Number of models that passed the check is: %s" % nPassed
