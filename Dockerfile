@@ -1,6 +1,9 @@
-FROM ubuntu:14.04
+FROM phusion/baseimage:0.9.22
 MAINTAINER Maxime Baudette "baudette@kth.se"
 # Based on Dockerfile from OM Webbook by Arunkumar Palanisamy "arunkumar.palanisamy@liu.se"
+
+# Use baseimage-docker's init system.
+CMD ["/sbin/my_init"]
 
 RUN apt-get update
 # Install wget
@@ -25,3 +28,6 @@ RUN python -m pip install -U https://github.com/OpenModelica/OMPython/archive/ma
 
 # Add User
 RUN useradd smartslab
+
+# Clean up APT when done.
+RUN apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
