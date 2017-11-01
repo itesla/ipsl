@@ -1,3 +1,4 @@
+import sys
 from CITests import CITests
 
 # Libs in Application Examples

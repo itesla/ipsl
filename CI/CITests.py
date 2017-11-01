@@ -1,4 +1,3 @@
-import sys
 import os
 from OMPython import OMCSessionZMQ
 
@@ -47,8 +46,12 @@ class CITests():
                     print failMsg
                     nFailed += 1
         # Print a check summary
-        print "==== Check Summary for %s ===="  % libName
-        print "Number of models that passed the check is: %s" % nPassed
-        if nFailed > 0:
+        if nFailed == 0:
+            print "== %s - OK! (%s models checked)" % {libName, nPassed}
+        else:
+            print "==== Check Summary for %s ===="  % libName
+            print "Number of models that passed the check is: %s" % nPassed
             print "Number of models that failed the check is: %s" % nFailed
+
+        # Return test result
         return (nFailed == 0)
