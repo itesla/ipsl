@@ -21,7 +21,7 @@ passLib = ci.runSyntaxCheck("OpenIPSL","/OpenIPSL/package.mo")
 if not passLib:
     # Error in OpenIPSL
     sys.exit(1)
-else
+else:
     # Run Check on App Examples
     passAppEx = 1
     for package in appExamples.keys():
@@ -31,6 +31,6 @@ else
     if passAppEx:
         # Everything is fine
         sys.exit(0)
-    else
+    else:
         # Exit with error
         sys.exit(1)
