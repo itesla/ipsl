@@ -2,7 +2,7 @@ import sys
 from CITests import CITests
 
 # Instance of CITests
-ci = CITests("/CI")
+ci = CITests("/OpenIPSL")
 
 # Run Check on OpenIPSL
 testPASS = ci.runSyntaxCheck("checkPASS","/CIcheck/checkPASS.mo")
