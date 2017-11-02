@@ -5,8 +5,8 @@ from CITests import CITests
 ci = CITests("/OpenIPSL")
 
 # Run Check on OpenIPSL
-testPASS = ci.runSyntaxCheck("checkPASS","/CIcheck/checkPASS.mo")
-testFAIL = ci.runSyntaxCheck("checkFAIL","/CIcheck/checkFAIL.mo")
+testPASS = ci.runSyntaxCheck("checkPASS","/CI/CIcheck/checkPASS.mo")
+testFAIL = ci.runSyntaxCheck("checkFAIL","/CI/CIcheck/checkFAIL.mo")
 
 if (testPASS == True) and (testFAIL == False):
     # Everything is fine
