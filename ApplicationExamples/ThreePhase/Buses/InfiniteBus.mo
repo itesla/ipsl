@@ -64,25 +64,21 @@ equation
         extent={{-100,-100},{100,100}},
         preserveAspectRatio=false,
         initialScale=0.1,
-        grid={10,10}), graphics={
-        Rectangle(
+        grid={10,10}), graphics={Rectangle(
           fillColor={255,255,255},
           extent={{-100,-100},{100,100}},
           lineColor={0,0,0},
-          fillPattern=FillPattern.Solid),
-        Line(points={{34,86},{82,86},{74,92}}, color={0,0,0}),
-        Text(
+          fillPattern=FillPattern.Solid),Line(points={{34,86},{82,86},{74,92}},
+          color={0,0,0}),Text(
           extent={{14,84},{102,38}},
           lineColor={238,46,47},
-          textString=DynamicSelect("0.0", String(P, significantDigits=2))),
-        Line(points={{32,-54},{80,-54},{72,-48}}, color={0,0,0}),
-        Text(
+          textString=DynamicSelect("0.0", String(P, significantDigits=2))),Line(
+          points={{32,-54},{80,-54},{72,-48}}, color={0,0,0}),Text(
           extent={{12,-54},{100,-100}},
           lineColor={0,255,0},
-          textString=DynamicSelect("0.0", String(Q, significantDigits=2))),
-        Line(points={{40,-48},{40,-60}}, color={0,0,0}),
-        Line(points={{80,-54},{72,-60}}, color={0,0,0}),
-        Line(points={{82,86},{74,80}}, color={0,0,0})}), Diagram(
-        coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,
-            100}})));
+          textString=DynamicSelect("0.0", String(Q, significantDigits=2))),Line(
+          points={{40,-48},{40,-60}}, color={0,0,0}),Line(points={{80,-54},{72,
+          -60}}, color={0,0,0}),Line(points={{82,86},{74,80}}, color={0,0,0})}),
+      Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{
+            100,100}})));
 end InfiniteBus;

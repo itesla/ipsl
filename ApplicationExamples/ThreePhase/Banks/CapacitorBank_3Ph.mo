@@ -81,69 +81,53 @@ equation
   annotation (Icon(coordinateSystem(
         extent={{-100,-100},{100,100}},
         preserveAspectRatio=true,
-        initialScale=0.1), graphics={
-        Rectangle(
+        initialScale=0.1), graphics={Rectangle(
           extent={{-100,-100},{100,100}},
           lineColor={0,0,255},
           fillColor={255,255,255},
-          fillPattern=FillPattern.Solid),
-        Line(
+          fillPattern=FillPattern.Solid),Line(
           points={{0,70},{0,54}},
           color={0,0,255},
-          smooth=Smooth.None),
-        Line(
+          smooth=Smooth.None),Line(
           points={{-40,42},{40,42}},
           color={0,0,255},
-          smooth=Smooth.None),
-        Line(
+          smooth=Smooth.None),Line(
           points={{-40,54},{40,54}},
           color={0,0,255},
-          smooth=Smooth.None),
-        Line(
+          smooth=Smooth.None),Line(
           points={{0,42},{0,14}},
           color={0,0,255},
-          smooth=Smooth.None),
-        Line(
+          smooth=Smooth.None),Line(
           points={{-40,2},{40,2}},
           color={0,0,255},
-          smooth=Smooth.None),
-        Line(
+          smooth=Smooth.None),Line(
           points={{-40,14},{40,14}},
           color={0,0,255},
-          smooth=Smooth.None),
-        Line(
+          smooth=Smooth.None),Line(
           points={{0,2},{0,-22}},
           color={0,0,255},
-          smooth=Smooth.None),
-        Line(
+          smooth=Smooth.None),Line(
           points={{-38,-22},{38,-22}},
           color={0,0,255},
-          smooth=Smooth.None),
-        Line(
+          smooth=Smooth.None),Line(
           points={{-28,-30},{-20,-22}},
           color={0,0,255},
-          smooth=Smooth.None),
-        Line(
+          smooth=Smooth.None),Line(
           points={{-20,-30},{-12,-22}},
           color={0,0,255},
-          smooth=Smooth.None),
-        Line(
+          smooth=Smooth.None),Line(
           points={{-12,-30},{-4,-22}},
           color={0,0,255},
-          smooth=Smooth.None),
-        Line(
+          smooth=Smooth.None),Line(
           points={{-4,-30},{4,-22}},
           color={0,0,255},
-          smooth=Smooth.None),
-        Line(
+          smooth=Smooth.None),Line(
           points={{4,-30},{12,-22}},
           color={0,0,255},
-          smooth=Smooth.None),
-        Line(
+          smooth=Smooth.None),Line(
           points={{12,-30},{20,-22}},
           color={0,0,255},
-          smooth=Smooth.None),
-        Line(
+          smooth=Smooth.None),Line(
           points={{20,-30},{28,-22}},
           color={0,0,255},
           smooth=Smooth.None)}));

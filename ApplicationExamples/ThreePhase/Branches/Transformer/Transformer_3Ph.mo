@@ -129,35 +129,27 @@ equation
   annotation (
     Diagram(coordinateSystem(preserveAspectRatio=true, extent={{-100,-100},{100,
             100}}), graphics),
-    Icon(graphics={
-        Ellipse(
+    Icon(graphics={Ellipse(
           lineColor={0,0,255},
           extent={{-46,30},{8,-30}},
-          endAngle=360),
-        Ellipse(
+          endAngle=360),Ellipse(
           lineColor={0,0,255},
           extent={{-8,30},{46,-30}},
-          endAngle=360),
-        Line(points={{100,0},{46,0}}, color={0,0,255}),
-        Line(points={{-100,0},{-46,0}}, color={0,0,255}),
-        Line(points={{-60,90},{-39,20}}, color={0,0,255}),
-        Line(points={{-60,90},{-90,90}}, color={0,0,255}),
-        Line(points={{60,90},{39,20}}, color={0,0,255}),
-        Line(points={{60,90},{90,90}}, color={0,0,255}),
-        Line(points={{-60,-90},{-39,-20}}, color={0,0,255}),
-        Line(points={{-60,-90},{-90,-90}}, color={0,0,255}),
-        Line(points={{60,-90},{39,-20}}, color={0,0,255}),
-        Line(points={{60,-90},{90,-90}}, color={0,0,255}),
-        Text(
+          endAngle=360),Line(points={{100,0},{46,0}}, color={0,0,255}),Line(
+          points={{-100,0},{-46,0}}, color={0,0,255}),Line(points={{-60,90},{-39,
+          20}}, color={0,0,255}),Line(points={{-60,90},{-90,90}}, color={0,0,
+          255}),Line(points={{60,90},{39,20}}, color={0,0,255}),Line(points={{
+          60,90},{90,90}}, color={0,0,255}),Line(points={{-60,-90},{-39,-20}},
+          color={0,0,255}),Line(points={{-60,-90},{-90,-90}}, color={0,0,255}),
+          Line(points={{60,-90},{39,-20}}, color={0,0,255}),Line(points={{60,-90},
+          {90,-90}}, color={0,0,255}),Text(
           lineColor={28,108,200},
           extent={{-38,20},{-4,-20}},
-          textString="K"),
-        Text(
+          textString="K"),Text(
           origin={6,0},
           lineColor={28,108,200},
           extent={{1,20},{35,-20}},
-          textString="M"),
-        Text(
+          textString="M"),Text(
           origin={-54,84},
           lineColor={28,108,200},
           extent={{4,18},{104,-34}},
