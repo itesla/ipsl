@@ -352,10 +352,10 @@ model IEEE13_ThreePhase
         extent={{-10,-10},{10,10}},
         rotation=0)));
 equation
-  connect(Bus646.p2, SpotLoad646.B) annotation (Line(points={{161.5,-62},{162,
-          -62},{162,-77},{161.5,-77}}, color={0,0,255}));
-  connect(Bus646.p1, SpotLoad646.A) annotation (Line(points={{170.5,-62},{170,
-          -62},{170,-77},{170.5,-77}}, color={0,0,255}));
+  connect(Bus646.p2, SpotLoad646.B) annotation (Line(points={{161.5,-62},{162,-62},
+          {162,-77},{161.5,-77}}, color={0,0,255}));
+  connect(Bus646.p1, SpotLoad646.A) annotation (Line(points={{170.5,-62},{170,-62},
+          {170,-77},{170.5,-77}}, color={0,0,255}));
   connect(SpotLoad692.B, Bus692.p1) annotation (Line(points={{409,149.5},{372,
           149.5},{372,138},{373,138}}, color={0,0,255}));
   connect(SpotLoad692.A, Bus692.p3) annotation (Line(points={{409,158.5},{392,

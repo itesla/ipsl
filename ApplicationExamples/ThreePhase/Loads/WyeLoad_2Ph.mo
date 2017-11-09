@@ -117,17 +117,13 @@ equation
   Pb = B.vr*B.ir + B.vi*B.ii;
   Qb = B.vi*B.ir - B.vr*B.ii;
   annotation (Icon(coordinateSystem(preserveAspectRatio=false, initialScale=0.1),
-        graphics={
-        Line(points={{-100,100},{100,100},{0,-100},{-100,100}}, color={28,108,
-              200}),
-        Text(
+        graphics={Line(points={{-100,100},{100,100},{0,-100},{-100,100}}, color
+          ={28,108,200}),Text(
           lineColor={28,108,200},
           extent={{-62,90},{66,45}},
-          textString="Grounded-Wye Load"),
-        Text(
+          textString="Grounded-Wye Load"),Text(
           origin={18,4},
           lineColor={28,108,200},
           extent={{-62,45},{28,26}},
           textString="PQ/ZIP Load")}), Documentation);
-
 end WyeLoad_2Ph;

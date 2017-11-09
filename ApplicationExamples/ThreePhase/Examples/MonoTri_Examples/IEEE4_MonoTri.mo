@@ -74,8 +74,8 @@ model IEEE4_MonoTri
         extent={{-10,-10},{10,10}},
         rotation=90)));
 equation
-  connect(Transformer.C, Bus3.p3) annotation (Line(points={{1,-9},{24,-9},{24,
-          -9},{24,-9}}, color={0,0,255}));
+  connect(Transformer.C, Bus3.p3) annotation (Line(points={{1,-9},{24,-9},{24,-9},
+          {24,-9}}, color={0,0,255}));
   connect(Transformer.B, Bus3.p2)
     annotation (Line(points={{1,0},{24,0},{24,0},{24,0}}, color={0,0,255}));
   connect(Transformer.A, Bus3.p1)

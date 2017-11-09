@@ -175,19 +175,15 @@ equation
 
   annotation (
     Icon(coordinateSystem(preserveAspectRatio=false, initialScale=0.1),
-        graphics={
-        Line(points={{-100,100},{100,100},{0,-100},{-100,100}}, color={28,108,
-              200}),
-        Text(
+        graphics={Line(points={{-100,100},{100,100},{0,-100},{-100,100}}, color
+          ={28,108,200}),Text(
           lineColor={28,108,200},
           extent={{-62,90},{66,45}},
-          textString="Grounded-Wye Dynamic Load"),
-        Text(
+          textString="Grounded-Wye Dynamic Load"),Text(
           origin={20,6},
           lineColor={28,108,200},
           extent={{-62,45},{22,30}},
           textString="PQ/ZIP Load")}),
     Documentation,
     uses(Modelica(version="3.2.1")));
-
 end WyeDynLoad_3Ph;

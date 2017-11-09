@@ -2100,6 +2100,7 @@ equation
 
       color={0,0,255},
       smooth=Smooth.None));
+
   connect(line_7000_7100_3.n, bus_7000.p[1]) annotation (Line(
       points={{-254,-73.5},{-254,-87.25},{-270,-87.25},{-270,-88.2}},
       color={0,0,255},
@@ -2114,6 +2115,7 @@ equation
 
       color={0,0,255},
       smooth=Smooth.None));
+
   connect(line_7000_7100_3.p, bus_7100.n[1]) annotation (Line(
       points={{-254,-64.5},{-254,-42.975},{-252,-42.975}},
       color={0,0,255},
@@ -2452,6 +2454,7 @@ equation
 
       color={0,0,255},
       smooth=Smooth.None));
+
   connect(Load3_bus6500.p, bus_6500.n[2]) annotation (Line(
       points={{-30.5,-111.75},{-25.9,-111.75},{-25.9,-106.6},{-20,-106.6}},
       color={0,0,255},
@@ -2962,6 +2965,7 @@ equation
 
       color={0,0,255},
       smooth=Smooth.None));
+
   connect(line_3100_3249.n, bus_3249.n[7]) annotation (Line(
       points={{-189,10.5},{-189,0},{-180,0},{-180,-8.08571},{-176,-8.08571}},
       color={0,0,255},

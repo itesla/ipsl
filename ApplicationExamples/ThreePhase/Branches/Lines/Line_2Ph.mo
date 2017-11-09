@@ -56,16 +56,14 @@ equation
     Icon(coordinateSystem(
         extent={{-140,-100},{140,100}},
         preserveAspectRatio=true,
-        initialScale=0.1), graphics={
-        Line(points={{-90,0},{-110,45},{-130,45}}, color={0,0,255}),
-        Line(points={{-90,0},{-110,-45},{-130,-45}}, color={0,0,255}),
-        Line(points={{90,0},{110,45},{130,45}}, color={0,0,255}),
-        Line(points={{90,0},{110,-45},{130,-45}}, color={0,0,255})}),
+        initialScale=0.1), graphics={Line(points={{-90,0},{-110,45},{-130,45}},
+          color={0,0,255}),Line(points={{-90,0},{-110,-45},{-130,-45}}, color={
+          0,0,255}),Line(points={{90,0},{110,45},{130,45}}, color={0,0,255}),
+          Line(points={{90,0},{110,-45},{130,-45}}, color={0,0,255})}),
     Diagram(coordinateSystem(
         extent={{-140,-100},{140,100}},
         preserveAspectRatio=true,
         initialScale=0.1)),
     uses(Modelica(version="3.2.1")),
     Documentation);
-
 end Line_2Ph;
