@@ -5,11 +5,9 @@ The OpenIPSL library emerged as a fork of iPSL, which was been developed as part
 The list of publications written about OpenIPSL library and its models can be found below. 
 
 .. note::
-   If you use OpenIPSL in your work or research, we kindly ask you to cite (preferably), our `SoftwareX`_ paper.
-
-.. rubric:: SoftwareX paper:
-* L. Vanfretti, T. Rabuzin, M. Baudette, and M. Murad, iTesla Power Systems Library (iPSL):
-  A Modelica library for phasor time-domain simulations, SoftwareX, Available online 18 May 2016, ISSN 2352-7110, `DOI: 10.1016/j.softx.2016.05.001. <http://dx.doi.org/10.1016/j.softx.2016.05.001>`_
+   If you use OpenIPSL in your work or research, we kindly ask you to cite (preferably), our `SoftwareX`_ paper:
+   * L. Vanfretti, T. Rabuzin, M. Baudette, and M. Murad, iTesla Power Systems Library (iPSL):
+   A Modelica library for phasor time-domain simulations, SoftwareX, Available online 18 May 2016, ISSN 2352-7110, `DOI: 10.1016/j.softx.2016.05.001. <http://dx.doi.org/10.1016/j.softx.2016.05.001>`_
 
 
 Otherwise, you cite one of the following papers, according to a specific use of OpenIPSL:
