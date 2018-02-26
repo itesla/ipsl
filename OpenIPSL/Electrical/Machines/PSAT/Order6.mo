@@ -22,9 +22,9 @@ model Order6
   parameter Real Taa=2e-3 "d-axis aditional leakage time constant (s)"
     annotation (Dialog(group="Machine parameters"));
 
-  Real e1q(start=e1q0) "q-axis transient voltage";
+  Real e1q(start=e1q0, fixed=true) "q-axis transient voltage";
   Real e1d(start=e1d0) "d-axis transient voltage";
-  Real e2q(start=e2q0) "q-axis sub-transient voltage";
+  Real e2q(start=e2q0, fixed=true) "q-axis sub-transient voltage";
   Real e2d(start=e2d0) "d-axis sub-transient voltage";
 protected
   parameter Real e2q0=vq0 + ra*iq0 + x2d*id0 "Initialitation";
