@@ -15,9 +15,9 @@ model Order6
     annotation (Dialog(group="Machine parameters"));
   parameter Real T1q0=0.8 "q-axis open circuit transient time constant (s)"
     annotation (Dialog(group="Machine parameters"));
-  parameter Real T2d0=0.04 "d-axis open circuit transient time constant (s)"
+  parameter Real T2d0=0.04 "d-axis open circuit sub-transient time constant (s)"
     annotation (Dialog(group="Machine parameters"));
-  parameter Real T2q0=0.02 "q-axis open circuit transient time constant (s)"
+  parameter Real T2q0=0.02 "q-axis open circuit sub-transient time constant (s)"
     annotation (Dialog(group="Machine parameters"));
   parameter Real Taa=2e-3 "d-axis aditional leakage time constant (s)"
     annotation (Dialog(group="Machine parameters"));
