@@ -1,5 +1,5 @@
-within FOSSEE1.Load;
-model Loadtest3
+within FOSSEE1.Examples.Loads.PSAT;
+model Loadtest2
   extends Modelica.Icons.Example;
   OpenIPSL.Electrical.Branches.PwLine pwLine1(
     X=0.1,
@@ -127,7 +127,7 @@ model Loadtest3
         origin={3.3113,4.2487},
         extent={{-10.0,-10.0},{10.0,10.0}},
         rotation=0)));
-  ThermostatLoad3               ThLoad(
+  FOSSEE1.Loads.PSAT.ThermostatLoad3 ThLoad(
     Sn=10,
     Q_0=0.6,
     P_0=0.8) annotation (Placement(visible=true, transformation(
@@ -264,4 +264,4 @@ equation
       origin={32.8634,-0.6714},
       points={{-2,10},{-2,5},{-5,5},{-5,0},{-2,0},{-2,-10}}));
 
-end Loadtest3;
+end Loadtest2;

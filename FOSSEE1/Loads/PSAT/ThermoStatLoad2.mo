@@ -1,4 +1,4 @@
-within FOSSEE1.Load;
+within FOSSEE1.Loads.PSAT;
 model ThermoStatLoad2 "Thermostatically Controlled Load"
   extends OpenIPSL.Electrical.Loads.PSAT.BaseClasses.baseLoad;
   //parameter Real Gmin=0 "Minimum conductance";

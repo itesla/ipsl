@@ -1,4 +1,4 @@
-within FOSSEE1.Load;
+within FOSSEE1.Loads.PSAT;
 model ThermostatLoad3
   extends OpenIPSL.Electrical.Loads.PSAT.BaseClasses.baseLoad;
  // parameter Real V_0=0.99333 "Nominal voltage, initial voltage after the power flow";
