@@ -1,5 +1,5 @@
 within FOSSEE1.PSS.PSAT;
-model PSS_TypeIII
+model PSS_TypeIII "TODO Document what this model is about"
   parameter Real Kw "Stabilizer gain (pu/pu)";
   parameter Real Tw "Gain for active power";
   parameter Real T1 "Gain for bus voltage magnitude";

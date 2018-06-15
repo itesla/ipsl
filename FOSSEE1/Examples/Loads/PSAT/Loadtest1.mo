@@ -1,5 +1,5 @@
 within FOSSEE1.Examples.Loads.PSAT;
-model Loadtest1
+model Loadtest1 "TODO Document what this model is about"
   extends Modelica.Icons.Example;
   OpenIPSL.Electrical.Branches.PwLine pwLine1(
     X=0.1,

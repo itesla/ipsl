@@ -1,5 +1,5 @@
 within FOSSEE1.Loads.PSAT;
-model ThermostaticallyControlledLoad2
+model ThermostaticallyControlledLoad2 "TODO Document what this model is about"
   extends OpenIPSL.Electrical.Loads.PSAT.BaseClasses.baseLoad;
  // parameter Real V_0=0.99333 "Nominal voltage, initial voltage after the power flow";
  // parameter Real P_0=0.8 "Active power rating in pu refered to the load";
