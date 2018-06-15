@@ -273,11 +273,7 @@ equation
           {125,-35},{125.954,-35}}, color={0,0,127}));
   connect(Tref.y, ThLoad.t_ref) annotation (Line(points={{95.75,-37.5},{105,
           -37.5},{105,-17.4},{117.154,-17.4}}, color={0,0,127}));
-  annotation (Diagram(coordinateSystem(
-        extent={{-148.5,-105.0},{148.5,105.0}},
-        preserveAspectRatio=true,
-        initialScale=0.1,
-        grid={5,5})),          Documentation,
+  annotation (
     experiment(
       StopTime=200,
       Interval=0.02,

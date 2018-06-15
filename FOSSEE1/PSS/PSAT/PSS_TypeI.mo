@@ -76,11 +76,11 @@ equation
           26}}, color={0,0,127}));
   connect(w, gain.u)
     annotation (Line(points={{-90,46},{-71.2,46}}, color={0,0,127}));
-  annotation (Icon(coordinateSystem(extent={{-100,-60},{100,100}}), graphics={
+  annotation (Icon(coordinateSystem(extent={{-100,-100},{100,100}}), graphics={
           Rectangle(
           extent={{-100,100},{100,-60}},
           lineColor={28,108,200},
           fillColor={85,170,255},
           fillPattern=FillPattern.Solid)}), Diagram(coordinateSystem(extent={{-100,
-            -60},{100,100}})));
+            -100},{100,100}})));
 end PSS_TypeI;

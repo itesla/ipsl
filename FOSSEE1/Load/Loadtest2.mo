@@ -263,9 +263,5 @@ equation
       visible=true,
       origin={32.8634,-0.6714},
       points={{-2,10},{-2,5},{-5,5},{-5,0},{-2,0},{-2,-10}}));
-  annotation (Diagram(coordinateSystem(
-        extent={{-148.5,-105.0},{148.5,105.0}},
-        preserveAspectRatio=true,
-        initialScale=0.1,
-        grid={5,5})),          Documentation);
+
 end Loadtest2;
