@@ -12,4 +12,5 @@ model Loadtest2 "TODO Document what this model is about"
 equation
 
   connect(ThLoad.p, pwLine3.n) annotation (Line(points={{70,-40},{70,0},{62,0},{62,-10},{59,-10}}, color={0,0,255}));
+  annotation (experiment(StopTime=10));
 end Loadtest2;
