@@ -1,7 +1,6 @@
 within FOSSEE1.Load;
 model ThermostatLoad4
   extends OpenIPSL.Electrical.Loads.PSAT.BaseClasses.baseLoad;
-
  // parameter Real V_0=0.99333 "Nominal voltage, initial voltage after the power flow";
  // parameter Real P_0=0.8 "Active power rating in pu refered to the load";
  // parameter Real Q_0=0.6;
@@ -18,7 +17,6 @@ model ThermostatLoad4
   parameter Real g_max=KL*g0 "Maximum conductance, P.u.";
   parameter Real theta0=70 "Initial value of state variable theta, power flow";
   parameter Real x0=0.040539357  "Initial value of state variable x, power flow";
-
   parameter Real g0=0.040539357;
   // parameter Real p10=P_0*kp;
   Real theta;
@@ -26,11 +24,9 @@ model ThermostatLoad4
   Real x(  start= x0);
   Real g;
   Real v( start= V_0);
-
 initial equation
 g=g0;
 equation
-
 if der(Theta_ref- theta)  > g_max and der(Theta_ref- theta)>0 then
   v=sqrt(p.vr*p.vr + p.vi*p.vi);
   der(theta)=(Theta_a-theta+K1*p1)/T1;
@@ -39,7 +35,6 @@ if der(Theta_ref- theta)  > g_max and der(Theta_ref- theta)>0 then
   p1=g*v^2/S_b;
   P=(p1+P_0)/S_b;
   Q=Q_0/S_b;
-
 elseif (der(Theta_ref-theta)) <= 0 then
   v=sqrt(p.vr*p.vr + p.vi*p.vi);
   der(theta)=(Theta_a-theta+K1*p1)/T1;
@@ -48,7 +43,6 @@ elseif (der(Theta_ref-theta)) <= 0 then
   p1=0;
   P=P_0/S_b;
   Q=Q_0/S_b;
-
 else
   v=sqrt(p.vr*p.vr + p.vi*p.vi);
   der(theta)=(Theta_a-theta+K1*p1)/T1;
@@ -57,7 +51,5 @@ else
   p1=g*v^2/S_b;
   P=(p1+P_0)/S_b;
   Q=(Q_0)/S_b;
-
 end if;
-
 end ThermostatLoad4;

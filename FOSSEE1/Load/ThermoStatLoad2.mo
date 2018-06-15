@@ -23,7 +23,6 @@ model ThermoStatLoad2 "Thermostatically Controlled Load"
  // parameter Modelica.SIunits.PerUnit Vmax=1.2 "maximum voltage";
 //  parameter Modelica.SIunits.PerUnit Vmin=0.8 "minimum voltage";
  // parameter Boolean forcePQ=true;
-
 public
   OpenIPSL.NonElectrical.Continuous.SimpleLag
                                         firstOrder(
@@ -50,10 +49,8 @@ public
     initType=Modelica.Blocks.Types.Init.InitialOutput,
     y_start=G0 - (Kp*(T_ref - T0)))
     annotation (Placement(transformation(extent={{-16,18},{-4,30}})));
-
   Modelica.Blocks.Interfaces.RealInput t_ref
     annotation (Placement(transformation(extent={{-110,66},{-90,86}})));
-
   Modelica.Blocks.Interfaces.RealInput t_a
                                           annotation (Placement(transformation(
         extent={{-8,-8},{8,8}},
@@ -63,14 +60,12 @@ public
         extent={{-7,-7},{7,7}},
         rotation=180,
         origin={43,-7})));
-
   Modelica.Blocks.Math.Add add1(k2=+1, k1=+1)
     annotation (Placement(transformation(extent={{24,34},{42,52}})));
   Modelica.Blocks.Nonlinear.Limiter Limiter1(strict=false,
     uMax=Gmax,
     uMin=Gmin)
     annotation (Placement(transformation(extent={{54,36},{68,50}})));
-
 protected
   Modelica.Blocks.Math.Add add4(k2=+1, k1=+1)
     annotation (Placement(transformation(extent={{-7,-7},{7,7}},
@@ -91,7 +86,6 @@ equation
     //product.u1 = v0*v0;
     P=(Limiter1.y)*(v^2);
     Q = Q_0/S_b; // in p
-
   connect(add.u2, firstOrder.y) annotation (Line(points={{-79.6,37.2},{-84,37.2},
           {-84,-15.5},{-60.8,-15.5}},
                                     color={0,0,127}));
@@ -109,7 +103,6 @@ equation
                                                    color={0,0,127}));
   connect(Limiter1.y, product.u2) annotation (Line(points={{68.7,43},{82,43},{
           82,-2.8},{51.4,-2.8}},color={0,0,127}));
-
   connect(gain.y, add4.u2) annotation (Line(points={{9.5,-7},{1.125,-7},{1.125,-14.8},
           {-12.6,-14.8}},              color={0,0,127}));
   connect(add4.u1, t_a) annotation (Line(points={{-12.6,-23.2},{0,-23.2},{0,-68},

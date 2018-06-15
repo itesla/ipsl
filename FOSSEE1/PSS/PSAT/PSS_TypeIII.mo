@@ -9,7 +9,6 @@ model PSS_TypeIII
   parameter Real Tc "SimpleLagLim time constant";
   parameter Real vsmax "Max stabilizer output signal (pu)";
   parameter Real vsmin "Min stabilizer output signal (pu)";
-
   OpenIPSL.NonElectrical.Continuous.SimpleLagLim simpleLagLim(
     K=1,
     T=Tc,

@@ -7,7 +7,6 @@ model PSS_TypeI
   parameter Real vsmin "Min stabilizer output signal (pu)";
   parameter Real Tw "Wash-out time constant (s)";
   parameter Real Tc "Lag time constant";
-
   Modelica.Blocks.Interfaces.RealInput w "roto speed"
     annotation (Placement(transformation(extent={{-100,36},{-80,56}}),
         iconTransformation(extent={{-100,36},{-80,56}})));
@@ -15,7 +14,6 @@ model PSS_TypeI
     "indexes of the algebraic variable "                         annotation (
       Placement(transformation(extent={{98,10},{118,30}}), iconTransformation(
           extent={{98,10},{118,30}})));
-
   Modelica.Blocks.Interfaces.RealInput Pg "active power"
     annotation (Placement(transformation(extent={{-100,4},{-80,24}}),
         iconTransformation(extent={{-100,4},{-80,24}})));
@@ -56,7 +54,6 @@ of the generator to which the PSS is connected through the AVR"
         rotation=270,
         origin={36,90})));
 equation
-
   connect(Vg, gain2.u) annotation (Line(points={{-90,-20},{-84,-20},{-71.2,-20}},
         color={0,0,127}));
   connect(Pg, gain1.u)
