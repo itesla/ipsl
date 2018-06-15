@@ -15,34 +15,33 @@ model PSS_TypeIII "TODO Document what this model is about"
     y_start=0,
     outMax=vsmax,
     outMin=vsmin)
-    annotation (Placement(transformation(extent={{30,-12},{54,12}})));
-  Modelica.Blocks.Interfaces.RealInput vs1 "roto speed" annotation (Placement(
-        transformation(extent={{-116,-16},{-84,16}}), iconTransformation(extent=
-           {{-100,-14},{-70,16}})));
+    annotation (Placement(transformation(extent={{40,-10},{60,10}})));
+  Modelica.Blocks.Interfaces.RealInput vs1 "roto speed" annotation (Placement(transformation(extent={{-140,-20},{-100,20}})));
   Modelica.Blocks.Interfaces.RealOutput Vref
-    "indexes of the algebraic variable "                         annotation (
-      Placement(transformation(extent={{88,-12},{114,14}}),iconTransformation(
-          extent={{86,-14},{114,14}})));
+    "indexes of the algebraic variable "                         annotation (Placement(transformation(extent={{100,-10},{120,10}})));
   OpenIPSL.NonElectrical.Continuous.DerivativeLag derivativeLag(K=Kw*Tw, T=Tw,
     y_start=0)
-    annotation (Placement(transformation(extent={{-56,-12},{-32,12}})));
+    annotation (Placement(transformation(extent={{-60,-10},{-40,10}})));
   Modelica.Blocks.Continuous.TransferFunction transferFunction(b={T1,T3,1}, a={
         T2,T4,1})
-    annotation (Placement(transformation(extent={{-8,-10},{12,10}})));
+    annotation (Placement(transformation(extent={{-10,-10},{10,10}})));
 equation
   connect(simpleLagLim.y, Vref)
-    annotation (Line(points={{55.2,0},{55.2,1},{101,1}}, color={0,0,127}));
+    annotation (Line(points={{61,0},{110,0}},            color={0,0,127}));
   connect(vs1, derivativeLag.u)
-    annotation (Line(points={{-100,0},{-58.4,0}}, color={0,0,127}));
+    annotation (Line(points={{-120,0},{-62,0}},   color={0,0,127}));
   connect(derivativeLag.y, transferFunction.u)
-    annotation (Line(points={{-30.8,0},{-10,0}}, color={0,0,127}));
+    annotation (Line(points={{-39,0},{-12,0}},   color={0,0,127}));
   connect(simpleLagLim.u, transferFunction.y)
-    annotation (Line(points={{27.6,0},{20,0},{13,0}}, color={0,0,127}));
+    annotation (Line(points={{38,0},{11,0}},          color={0,0,127}));
   annotation (Icon(coordinateSystem(preserveAspectRatio=false), graphics={
           Rectangle(
           extent={{-100,100},{100,-100}},
           lineColor={28,108,200},
           fillColor={85,170,255},
-          fillPattern=FillPattern.Solid)}), Diagram(coordinateSystem(
+          fillPattern=FillPattern.Solid), Text(
+          extent={{-140,-100},{140,-160}},
+          lineColor={0,0,255},
+          textString="%name")}),            Diagram(coordinateSystem(
           preserveAspectRatio=false)));
 end PSS_TypeIII;
