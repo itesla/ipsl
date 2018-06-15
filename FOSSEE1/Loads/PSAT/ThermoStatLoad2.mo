@@ -54,8 +54,8 @@ public
   Modelica.Blocks.Interfaces.RealInput t_a
                                           annotation (Placement(transformation(
         extent={{-20,-20},{20,20}},
-        rotation=90,
-        origin={0,-120})));
+        rotation=0,
+        origin={-120,-60})));
   Modelica.Blocks.Math.Product product annotation (Placement(transformation(
         extent={{-10,-10},{10,10}},
         rotation=180,
@@ -102,7 +102,7 @@ equation
                                 color={0,0,127}));
   connect(gain.y, add4.u2) annotation (Line(points={{9,-24},{-6,-24}},
                                        color={0,0,127}));
-  connect(add4.u1, t_a) annotation (Line(points={{-6,-36},{0,-36},{0,-120}},
+  connect(add4.u1, t_a) annotation (Line(points={{-6,-36},{0,-36},{0,-60},{-120,-60}},
                                  color={0,0,127}));
   connect(firstOrder.u, add4.y) annotation (Line(points={{-38,-30},{-29,-30}},
                                            color={0,0,127}));
