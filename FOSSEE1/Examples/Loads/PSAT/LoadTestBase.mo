@@ -102,7 +102,8 @@ equation
   connect(Vstep1.y, sumV.u[1]) annotation (Line(points={{-79.6,64},{-68,64},{-68,45.6},{-60,45.6}}, color={0,0,127}));
   connect(Vstep2.y, sumV.u[2]) annotation (Line(points={{-79.6,50},{-70,50},{-70,42.8},{-60,42.8}}, color={0,0,127}));
   connect(Vsine1.y, sumV.u[3]) annotation (Line(points={{-79.6,32},{-70,32},{-70,40},{-60,40}}, color={0,0,127}));
-  connect(Vsine2.y, sumV.u[4]) annotation (Line(points={{-79.6069,16},{-68,16},{-68,37.2},{-60,37.2}}, color={0,0,127}));
+  connect(Vsine2.y, sumV.u[4]) annotation (Line(points={{-79.6069,16},{-68,16},
+          {-68,37.2},{-60,37.2}},                                                                      color={0,0,127}));
   connect(sumV.y, order3_Inputs_Outputs1.vf) annotation (Line(points={{-38.3,40},{-30,40},{-30,20},{-50,20},{-50,5},{-42,5}}, color={0,0,127}));
   connect(order3_Inputs_Outputs1.vf0, sumV.u[5]) annotation (Line(points={{-38,11},{-38,26},{-64,26},{-64,34},{-60,34},{-60,34.4}}, color={0,0,127}));
   connect(order3_Inputs_Outputs1.pm0, sumP.u[1]) annotation (Line(points={{-38,-11},{-38,-16},{-64,-16},{-64,-34.4},{-60,-34.4}}, color={0,0,127}));
@@ -112,9 +113,11 @@ equation
   connect(Psine2.y, sumP.u[5]) annotation (Line(points={{-79.6,-64},{-68,-64},{-68,-45.6},{-60,-45.6}}, color={0,0,127}));
   connect(sumP.y, order3_Inputs_Outputs1.pm) annotation (Line(points={{-38.3,-40},{-32,-40},{-32,-20},{-50,-20},{-50,-5},{-42,-5}}, color={0,0,127}));
   connect(order3_Inputs_Outputs1.p, pwLine2.p) annotation (Line(points={{-20,0},{-8,0},{-8,10.1643},{0.87023,10.1643}}, color={0,0,255}));
-  connect(pwLine2.n, pwLine4.p) annotation (Line(points={{18.9932,10.1643},{41,10.1643},{41,10}}, color={0,0,255}));
+  connect(pwLine2.n, pwLine4.p) annotation (Line(points={{18.9932,10.1643},{41,
+          10.1643},{41,10}},                                                                      color={0,0,255}));
   connect(pwLine4.n, pwLine3.n) annotation (Line(points={{59,10},{62,10},{62,-10},{59,-10}}, color={0,0,255}));
   connect(pwLine1.p, order3_Inputs_Outputs1.p) annotation (Line(points={{1,-10},{-8,-10},{-8,0},{-20,0}}, color={0,0,255}));
   connect(pwLine1.n, pwLine3.p) annotation (Line(points={{19,-10},{41,-10}}, color={0,0,255}));
-  connect(pwLine2.n, pwLine1.n) annotation (Line(points={{18.9932,10.1643},{30,10.1643},{30,-10},{19,-10}}, color={0,0,255}));
+  connect(pwLine2.n, pwLine1.n) annotation (Line(points={{18.9932,10.1643},{30,
+          10.1643},{30,-10},{19,-10}},                                                                      color={0,0,255}));
 end LoadTestBase;

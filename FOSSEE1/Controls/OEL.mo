@@ -5,7 +5,7 @@ outer OpenIPSL.Electrical.SystemBase SysData;
 Modelica.Blocks.Interfaces.RealInput P annotation (
     Placement(visible = true, transformation(origin = {-100, 60}, extent = {{-20, -20}, {20, 20}}, rotation = 0), iconTransformation(origin = {-100, 60}, extent = {{-20, -20}, {20, 20}}, rotation = 0)));
 Modelica.Blocks.Interfaces.RealInput Q annotation (
-    Placement(visible = true, transformation(origin = {-100, 2}, extent = {{-20, -20}, {20, 20}}, rotation = 0), iconTransformation(origin = {-100, 2}, extent = {{-20, -20}, {20, 20}}, rotation = 0)));
+    Placement(visible = true, transformation(origin={-100,0},    extent = {{-20, -20}, {20, 20}}, rotation = 0), iconTransformation(origin={-100,0},    extent = {{-20, -20}, {20, 20}}, rotation = 0)));
 Modelica.Blocks.Interfaces.RealInput V annotation (
     Placement(visible = true, transformation(origin = {-100, -60}, extent = {{-20, -20}, {20, 20}}, rotation = 0), iconTransformation(origin = {-100, -60}, extent = {{-20, -20}, {20, 20}}, rotation = 0)));
 Modelica.Blocks.Math.Feedback feedback1 annotation (
@@ -24,10 +24,9 @@ Modelica.Blocks.Math.Feedback feedback2 annotation (
   parameter OpenIPSL.Types.VoltageKilo Vn=V_b
   annotation (Dialog(group="Machine parameters"));
   parameter OpenIPSL.Types.VoltageKilo V_b=400;
-  FOSSEEsai.OEL.FIELDCURRENTESTIMATOR fieldcurrentestimator1(xd=1, xq=1)
-      annotation (Placement(visible=true, transformation(
-          origin={-47,-1},
-          extent={{-19,-19},{19,19}},
+  FCE fCE(xd=1, xq=1) annotation (Placement(visible=true, transformation(
+          origin={-46,0},
+          extent={{-14,-14},{14,14}},
           rotation=0)));
 Modelica.Blocks.Continuous.LimIntegrator limIntegrator1(
  k = 10 / T0, outMax = vOEL_max, outMin = 0,strict=true)
@@ -38,14 +37,12 @@ Modelica.Blocks.Sources.Constant const(k = if_lim)  annotation (
 Modelica.Blocks.Interfaces.RealOutput v_ref annotation (
     Placement(visible = true, transformation(origin = {110, 0}, extent = {{-10, -10}, {10, 10}}, rotation = 0), iconTransformation(origin = {110, 0}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
 equation
-    connect(P, fieldcurrentestimator1.P) annotation (
-      Line(points={{-100,60},{-74,60},{-74,10},{-66,10},{-66,10.4}},          color = {0, 0, 127}));
-    connect(V, fieldcurrentestimator1.V) annotation (
-      Line(points={{-100,-60},{-68,-60},{-68,-12.78},{-66,-12.78}},    color = {0, 0, 127}));
-    connect(fieldcurrentestimator1.I_field, feedback1.u1) annotation (
-      Line(points={{-26.48,-1},{-6,-1},{-6,0},{-2.8,0}},   color = {0, 0, 127}));
-    connect(Q, fieldcurrentestimator1.Q) annotation (
-      Line(points={{-100,2},{-68,2},{-68,-1},{-66,-1}},        color = {0, 0, 127}));
+    connect(P, fCE.P) annotation (Line(points={{-100,60},{-74,60},{-74,8.4},{
+            -60,8.4}}, color={0,0,127}));
+    connect(fCE.I_field, feedback1.u1) annotation (Line(points={{-30.88,
+            1.77636e-015},{-6,1.77636e-015},{-6,0},{-2.8,0}}, color={0,0,127}));
+    connect(Q, fCE.Q) annotation (Line(points={{-100,0},{-68,0},{-68,
+            1.77636e-015},{-60,1.77636e-015}}, color={0,0,127}));
   connect(feedback2.y, v_ref) annotation (
     Line(points={{88.4,56},{92,56},{92,0},{110,0}},        color = {0, 0, 127}));
   connect(const.y, feedback1.u2) annotation (
@@ -57,9 +54,12 @@ equation
   connect(v_ref0, feedback2.u1) annotation (
     Line(points={{0,100},{0,56},{61.2,56}},      color = {0, 0, 127}));
 
+    connect(fCE.V, V) annotation (Line(points={{-60,-8.68},{-74,-8.68},{-74,-60},
+            {-100,-60}}, color={0,0,127}));
 end OELM;
 
-model FCE "FIELDCURRENTESTIMATOR"
+model FCE "Field Currect Estimator"
+
   Modelica.Blocks.Interfaces.RealInput P annotation (
     Placement(visible = true, transformation(origin = {-100, 60}, extent = {{-20, -20}, {20, 20}}, rotation = 0), iconTransformation(origin = {-100, 60}, extent = {{-20, -20}, {20, 20}}, rotation = 0)));
 Modelica.Blocks.Interfaces.RealInput Q annotation (

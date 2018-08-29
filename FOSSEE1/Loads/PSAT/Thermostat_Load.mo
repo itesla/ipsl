@@ -1,5 +1,5 @@
 within FOSSEE1.Loads.PSAT;
-model ThermoStatLoad2 "Thermostatically Controlled Load"
+model Thermostat_Load
   extends OpenIPSL.Electrical.Loads.PSAT.BaseClasses.baseLoad;
   //parameter Real Gmin=0 "Minimum conductance";
   parameter Real Kl=2 "ceiling conductance output";
@@ -12,24 +12,20 @@ model ThermoStatLoad2 "Thermostatically Controlled Load"
   //parameter Real V=1.2 "initial bus voltage in pu";
   //parameter Real P0=1.2 "bus active power in MW";
   parameter Real T0=10 "No idea what is it, probably initial temperature";
-  parameter Real G0 = P_0/(100*V_0*V_0); //0.040539357 "initial conductance I guess"; //changing G0 and K1 doesnot compile the model
+  parameter Real G0 = P_0/100*(V_0*V_0); //0.040539357 "initial conductance I guess"; //changing G0 and K1 doesnot compile the model
   parameter Real Gmax = Kl*G0 "Maximum conductance";
   parameter Real Gmin = 0 "Minimum conductance";
   parameter Real K1 = (T_ref-T0)/P_0 "active power gain (pu/pu)";
   parameter Real K3=1 "gain anti wind-up";
   Real v(start=1*V_0);
- // Real P1(start=P_0);
-  //adding PQ feature
- // parameter Modelica.SIunits.PerUnit Vmax=1.2 "maximum voltage";
-//  parameter Modelica.SIunits.PerUnit Vmin=0.8 "minimum voltage";
- // parameter Boolean forcePQ=true;
+
 public
   OpenIPSL.NonElectrical.Continuous.SimpleLag
                                         firstOrder(
     K=1,
     T=T1,
     y_start=0)
-    annotation (Placement(transformation(extent={{-40,-40},{-60,-20}})));
+    annotation (Placement(transformation(extent={{-38,-40},{-58,-20}})));
   Modelica.Blocks.Math.Gain gain(k=K1)
                                  annotation (Placement(transformation(
         extent={{-10,-10},{10,10}},
@@ -47,7 +43,7 @@ public
     k=Ki/Ti,
     limitsAtInit=true,
     initType=Modelica.Blocks.Types.Init.InitialOutput,
-    y_start=G0 - (Kp*(T_ref - T0)))
+    y_start=G0 - Kp*(T_ref - T0))
     annotation (Placement(transformation(extent={{-12,14},{0,26}})));
   Modelica.Blocks.Interfaces.RealInput t_ref
     annotation (Placement(transformation(extent={{-140,40},{-100,80}})));
@@ -77,19 +73,19 @@ public
         extent={{-6,-6},{6,6}},
         rotation=0,
         origin={-36,20})));
+  Modelica.Blocks.Sources.RealExpression realExpression(y=v*v)
+    annotation (Placement(transformation(extent={{50,-70},{70,-50}})));
 initial equation
   //v0 = V;
  // t_a= Ta;
 equation
-    product.u1 = v*v;
-    v=sqrt(p.vr^2 + p.vi^2);
-    //product.u1 = v0*v0;
-    P=(Limiter1.y)*(v^2);
-    Q = Q_0/S_b; // in p
-  connect(add.u2, firstOrder.y) annotation (Line(points={{-82,34},{-90,34},{-90,-30},{-61,-30}},
-                                    color={0,0,127}));
-  connect(t_ref, add.u1) annotation (Line(points={{-120,60},{-88,60},{-88,46},{-82,46}},
-                        color={0,0,127}));
+
+   v=sqrt(p.vr^2 + p.vi^2);
+   P=((Limiter1.y)*(v^2))/S_b;
+   Q = Q_0/S_b;
+
+  connect(t_ref, add.u1) annotation (Line(points={{-120,60},{-94,60},{-94,46},{-82,
+          46}},         color={0,0,127}));
   connect(product.y, gain.u) annotation (Line(points={{49,-24},{32,-24}},
                                 color={0,0,127}));
   connect(gain1.y, add1.u1) annotation (Line(points={{-8.95,60},{11.375,60},{11.375,46},{18,46}},
@@ -104,7 +100,7 @@ equation
                                        color={0,0,127}));
   connect(add4.u1, t_a) annotation (Line(points={{-6,-36},{0,-36},{0,-60},{-120,-60}},
                                  color={0,0,127}));
-  connect(firstOrder.u, add4.y) annotation (Line(points={{-38,-30},{-29,-30}},
+  connect(firstOrder.u, add4.y) annotation (Line(points={{-36,-30},{-29,-30}},
                                            color={0,0,127}));
   connect(gain1.u, add.y) annotation (Line(points={{-33.1,60},{-50,60},{-50,40},{-59,40}},
                            color={0,0,127}));
@@ -112,6 +108,10 @@ equation
                        color={0,0,127}));
   connect(gain2.y, Limiter.u)
     annotation (Line(points={{-29.4,20},{-13.2,20}}, color={0,0,127}));
+  connect(realExpression.y, product.u1) annotation (Line(points={{71,-60},{71,-60},
+          {90,-60},{90,-30},{72,-30}}, color={0,0,127}));
+  connect(firstOrder.y, add.u2) annotation (Line(points={{-59,-30},{-72,-30},{-94,
+          -30},{-94,34},{-82,34}}, color={0,0,127}));
   annotation (                              Diagram(coordinateSystem(
           preserveAspectRatio=false, extent={{-100,-100},{100,100}})), Icon(
         graphics={Rectangle(
@@ -119,4 +119,4 @@ equation
           lineColor={28,108,200},
           fillColor={28,108,200},
           fillPattern=FillPattern.Solid)}));
-end ThermoStatLoad2;
+end Thermostat_Load;
