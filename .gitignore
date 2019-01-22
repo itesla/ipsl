@@ -17,3 +17,5 @@ dymosim
 docs/.idea/
 docs/_build/
 /Support/.idea
+
+*.moe

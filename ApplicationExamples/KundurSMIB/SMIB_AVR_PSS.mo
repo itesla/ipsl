@@ -1,5 +1,6 @@
 within KundurSMIB;
 model SMIB_AVR_PSS
+  extends Modelica.Icons.Example;
   extends SMIB_Partial;
   import Modelica.Constants.pi;
   Generation_Groups.Generator_AVR_PSS G1(
@@ -23,7 +24,6 @@ equation
           fontSize=15,
           textStyle={TextStyle.Bold},
           textString="(AVR + PSS)")}),
-    Icon(coordinateSystem(extent={{-140,-100},{120,100}})),
     experiment(
       StopTime=10,
       Interval=0.0001,
@@ -39,7 +39,7 @@ equation
 </tr>
 <tr>
 <td><p>Last update</p></td>
-<td>February 2016</td>
+<td>January 2019</td>
 </tr>
 <tr>
 <td><p>Author</p></td>
@@ -47,7 +47,7 @@ equation
 </tr>
 <tr>
 <td><p>Contact</p></td>
-<td><p><a href=\"mailto:luigiv@kth.se\">luigiv@kth.se</a></p></td>
+<td><p><a href=\"https://github.com/ALSETLab\">ALSETLab</a></p></td>
 </tr>
 </table>
 </html>"));

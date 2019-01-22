@@ -10,7 +10,7 @@ annotation (
 </tr>
 <tr>
 <td><p>Last update</p></td>
-<td>February 2016</td>
+<td>January 2019</td>
 </tr>
 <tr>
 <td><p>Author</p></td>
