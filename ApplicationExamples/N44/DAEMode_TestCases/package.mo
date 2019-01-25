@@ -7,4 +7,4 @@ package DAEMode_TestCases
   E. Henningsson, H. Olsson, L. Vanfretti
   DAE Solvers for Large-Scale Hybrid Models"
 annotation (uses(OpenIPSL(version="1.5.0")));
-end Base_Case;
+end DAEMode_TestCases;
