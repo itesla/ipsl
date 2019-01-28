@@ -13,7 +13,7 @@ model ULTC_VoltageControl
     annotation (Dialog(group="Power flow data"));
   parameter Real Sn=100 "Power rating (MVA)"
     annotation (Dialog(group="Power flow data"));
-  parameter Real Vn=400000 "Voltage rating (V)"
+  parameter Real Vn=400000 "Primary (sending) voltage rating (V)"
     annotation (Dialog(group="Power flow data"));
   parameter Real fn=50 "Frequency rating (Hz)"
     annotation (Dialog(group="Power flow data"));
