@@ -8,7 +8,7 @@ annotation (Documentation(info="<html>
 </tr>
 <tr>
 <td><p>Last update</p></td>
-<td>February 2016</td>
+<td>January 2019</td>
 </tr>
 <tr>
 <td><p>Author</p></td>
@@ -16,7 +16,7 @@ annotation (Documentation(info="<html>
 </tr>
 <tr>
 <td><p>Contact</p></td>
-<td><p><a href=\"mailto:luigiv@kth.se\">luigiv@kth.se</a></p></td>
+<td><p><a href=\"https://github.com/ALSETLab\">ALSETLab</a></p></td>
 </tr>
 </table>
 </html>"));

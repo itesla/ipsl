@@ -20,7 +20,7 @@ partial model SMIB_Partial "Partial model containing the network elements"
     X=0.5) annotation (Placement(transformation(extent={{10,14},{28,26}})));
   OpenIPSL.Electrical.Buses.InfiniteBus infinite_bus(angle_0=0, V_0=
         0.900810000000000) annotation (Placement(transformation(
-        extent={{10,10},{-10,-10}},
+        extent={{-10,10},{10,-10}},
         rotation=180,
         origin={110,0})));
   OpenIPSL.Electrical.Events.PwFault fault(
@@ -46,18 +46,18 @@ equation
     annotation (Line(points={{-80,0},{-70,0},{-61,0}}, color={0,0,255}));
   connect(transformer.n, B2.p)
     annotation (Line(points={{-39,0},{-20,0}}, color={0,0,255}));
-  connect(B2.p, line_1.p) annotation (Line(points={{-20,0},{-14,0},{-10,0},{-10,
-          20},{8.5,20}}, color={0,0,255}));
-  connect(line_1.n, B3.p) annotation (Line(points={{29.5,20},{50,20},{50,0},{60,
-          0}}, color={0,0,255}));
+  connect(B2.p, line_1.p) annotation (Line(points={{-20,0},{-14,0},{-10,0},{-10,20},{10.9,20}},
+                         color={0,0,255}));
+  connect(line_1.n, B3.p) annotation (Line(points={{27.1,20},{50,20},{50,0},{60,0}},
+               color={0,0,255}));
   connect(B3.p, infinite_bus.p)
-    annotation (Line(points={{60,0},{99,0}}, color={0,0,255}));
-  connect(fault.p, line_1.p) annotation (Line(points={{-1.66667,-50},{-14,-50},
-          {-14,0},{-10,0},{-10,20},{8.5,20}}, color={0,0,255}));
-  connect(line_2.n, B3.p) annotation (Line(points={{29.5,-20},{50,-20},{50,0},{
-          60,0}}, color={0,0,255}));
-  connect(line_2.p, line_1.p) annotation (Line(points={{8.5,-20},{-10,-20},{-10,
-          20},{8.5,20}}, color={0,0,255}));
+    annotation (Line(points={{60,0},{100,0}},color={0,0,255}));
+  connect(fault.p, line_1.p) annotation (Line(points={{-1.66667,-50},{-14,-50},{-14,0},{-10,0},{-10,20},{10.9,20}},
+                                              color={0,0,255}));
+  connect(line_2.n, B3.p) annotation (Line(points={{27.1,-20},{50,-20},{50,0},{60,0}},
+                  color={0,0,255}));
+  connect(line_2.p, line_1.p) annotation (Line(points={{10.9,-20},{-10,-20},{-10,20},{10.9,20}},
+                         color={0,0,255}));
   annotation (
     Diagram(coordinateSystem(extent={{-140,-100},{120,100}},
           preserveAspectRatio=false), graphics={Text(
@@ -75,8 +75,6 @@ equation
           fontSize=12,
           textString=
             "*P. Kundur, \"Power System Stability and Control\", Example 13.2")}),
-
-    Icon(coordinateSystem(extent={{-140,-100},{120,100}})),
     experiment(
       StopTime=10,
       Interval=0.0001,
@@ -92,7 +90,7 @@ equation
 </tr>
 <tr>
 <td><p>Last update</p></td>
-<td>February 2016</td>
+<td>January 2019</td>
 </tr>
 <tr>
 <td><p>Author</p></td>
@@ -100,7 +98,7 @@ equation
 </tr>
 <tr>
 <td><p>Contact</p></td>
-<td><p><a href=\"mailto:luigiv@kth.se\">luigiv@kth.se</a></p></td>
+<td><p><a href=\"https://github.com/ALSETLab\">ALSETLab</a></p></td>
 </tr>
 </table>
 </html>"));

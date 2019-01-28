@@ -1,6 +1,6 @@
 within KundurSMIB.Generation_Groups;
 model Generator
-  extends OpenIPSL.Electrical.Essentials.pfComponent;
+  extends OpenIPSL.Interfaces.Generator;
   OpenIPSL.Electrical.Machines.PSAT.Order6 machine(
     Vn=400,
     V_b=V_b,
@@ -22,33 +22,14 @@ model Generator
     V_0=V_0,
     angle_0=angle_0,
     Sn=2220,
-    Taa=0) annotation (Placement(transformation(extent={{14,-30},{74,30}})));
-  OpenIPSL.Interfaces.PwPin pwPin annotation (Placement(transformation(extent={
-            {100,-10},{120,10}}), iconTransformation(extent={{100,-10},{120,10}})));
+    Taa=0) annotation (Placement(transformation(extent={{20,-30},{80,30}})));
 equation
-  connect(machine.pm0, machine.pm) annotation (Line(points={{20,-33},{20,-33},{
-          20,-40},{0,-40},{0,-15},{14,-15}}, color={0,0,127}));
-  connect(machine.p, pwPin) annotation (Line(points={{77,0.14892},{78.5,0.14892},
-          {78.5,0},{110,0}}, color={0,0,255}));
-  connect(machine.vf0, machine.vf) annotation (Line(points={{20,33},{20,48},{-8,
-          48},{-8,15},{14,15}}, color={0,0,127}));
+  connect(machine.pm0, machine.pm) annotation (Line(points={{26,-33},{26,-40},{0,-40},{0,-15},{14,-15}},
+                                             color={0,0,127}));
+  connect(machine.vf0, machine.vf) annotation (Line(points={{26,33},{26,40},{0,40},{0,15},{14,15}},
+                                color={0,0,127}));
+  connect(machine.p, pwPin) annotation (Line(points={{80,0},{110,0}}, color={0,0,255}));
   annotation (
-    Icon(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,
-            100}}), graphics={Ellipse(
-          extent={{-100,100},{100,-100}},
-          lineColor={0,0,0},
-          fillColor={255,255,255},
-          fillPattern=FillPattern.Solid),Line(
-          points={{-48,2},{-20,56},{2,4},{24,-28},{48,22}},
-          color={0,0,0},
-          smooth=Smooth.Bezier),Text(
-          extent={{-52,-18},{56,-66}},
-          lineColor={0,0,0},
-          fillColor={255,255,255},
-          fillPattern=FillPattern.Solid,
-          textString="%name")}),
-    Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{
-            100,100}})),
     Documentation(info="<html>
 <table cellspacing=\"1\" cellpadding=\"1\" border=\"1\">
 <tr>
@@ -57,7 +38,7 @@ equation
 </tr>
 <tr>
 <td><p>Last update</p></td>
-<td>February 2016</td>
+<td>January 2019</td>
 </tr>
 <tr>
 <td><p>Author</p></td>
@@ -65,7 +46,7 @@ equation
 </tr>
 <tr>
 <td><p>Contact</p></td>
-<td><p><a href=\"mailto:luigiv@kth.se\">luigiv@kth.se</a></p></td>
+<td><p><a href=\"https://github.com/ALSETLab\">ALSETLab</a></p></td>
 </tr>
 </table>
 </html>"));
