@@ -1,3 +1,4 @@
+within N44.DAEMode_TestCases.Original_Systems;
 model Nordic44_Original_Case_Bus_Fault
   "Bus 3100 bus fault test case, several state events triggered."
   extends N44.Original.Nordic44_Original_Case(bus_3100(np=3));
