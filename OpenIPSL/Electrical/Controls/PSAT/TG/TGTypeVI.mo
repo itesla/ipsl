@@ -19,306 +19,223 @@ model TGTypeVI
   Real G "Gate opening (pu)";
   Modelica.Blocks.Continuous.Integrator integrator(initType=Modelica.Blocks.Types.Init.NoInit,
       y_start=po*(gmax - gmin))
-    annotation (Placement(transformation(extent={{50,52},{62,64}})));
-  Modelica.Blocks.Sources.Step step(
-    height=1,
-    offset=0,
-    startTime=0) annotation (Placement(transformation(
-        extent={{-6,-6},{6,6}},
+    annotation (Placement(transformation(extent={{-8,14},{4,26}})));
+  Modelica.Blocks.Sources.Constant one(k=1) annotation (Placement(transformation(
+        extent={{6,6},{-6,-6}},
         rotation=180,
-        origin={258,-2})));
-  Modelica.Blocks.Math.MultiSum multiSum1(k={-1,1}, nu=2)
-    annotation (Placement(transformation(extent={{-152,-26},{-140,-14}})));
+        origin={110,0})));
+  Modelica.Blocks.Math.Feedback feedback
+    annotation (Placement(transformation(extent={{-176,-36},{-164,-24}})));
   Modelica.Blocks.Continuous.Integrator integrator3(initType=Modelica.Blocks.Types.Init.NoInit,
       y_start=po) annotation (Placement(transformation(
-        extent={{-6,-6},{6,6}},
+        extent={{6,6},{-6,-6}},
         rotation=180,
-        origin={166,-2})));
+        origin={170,20})));
   Modelica.Blocks.Math.MultiSum multiSum3(nu=2, k={1,-1})
-    annotation (Placement(transformation(extent={{212,52},{224,64}})));
+    annotation (Placement(transformation(extent={{104,14},{116,26}})));
   Modelica.Blocks.Interfaces.RealOutput Pm "Mechanical power (pu)" annotation (
-      Placement(transformation(extent={{88,14},{100,26}}), iconTransformation(
-          extent={{100,24},{126,50}})));
+      Placement(transformation(extent={{200,10},{220,30}}),iconTransformation(
+          extent={{100,-10},{120,10}})));
   Modelica.Blocks.Math.Gain gain9(k=Kp)
-    annotation (Placement(transformation(extent={{-98,74},{-86,86}})));
-  Modelica.Blocks.Math.MultiSum multiSum5(nu=3, k={1,1,1})
-    annotation (Placement(transformation(extent={{-52,54},{-40,66}})));
-  Modelica.Blocks.Math.MultiSum multiSum6(k={1,-1}, nu=2)
-    annotation (Placement(transformation(extent={{-130,54},{-118,66}})));
+    annotation (Placement(transformation(extent={{-116,34},{-104,46}})));
+  Modelica.Blocks.Math.MultiSum multiSum5(      k={1,1,1}, nu=3)
+    annotation (Placement(transformation(extent={{-76,14},{-64,26}})));
+  Modelica.Blocks.Math.Feedback feedback1
+    annotation (Placement(transformation(extent={{-146,14},{-134,26}})));
   Modelica.Blocks.Math.Gain gain6(k=Rp) annotation (Placement(transformation(
         extent={{-6,-6},{6,6}},
-        rotation=180,
-        origin={-120,18})));
-  Modelica.Blocks.Math.MultiSum multiSum7(k={1,-1}, nu=2) annotation (Placement(
-        transformation(
+        rotation=90,
+        origin={-140,0})));
+  Modelica.Blocks.Math.Feedback w_fb annotation (Placement(transformation(
         extent={{-6,-6},{6,6}},
         rotation=0,
-        origin={-148,84})));
+        origin={-160,20})));
   Modelica.Blocks.Continuous.Integrator integrator5(initType=Modelica.Blocks.Types.Init.NoInit,
       y_start=po*(gmax - gmin))
-    annotation (Placement(transformation(extent={{-76,54},{-64,66}})));
+    annotation (Placement(transformation(extent={{-96,14},{-84,26}})));
   Modelica.Blocks.Math.Gain Proportional(k=beta)
-    annotation (Placement(transformation(extent={{80,96},{92,108}})));
+    annotation (Placement(transformation(extent={{64,44},{76,56}})));
   Modelica.Blocks.Math.Gain gain8(k=Ki) annotation (Placement(transformation(
         extent={{-6,-6},{6,6}},
         rotation=0,
-        origin={-92,60})));
+        origin={-110,20})));
   Modelica.Blocks.Nonlinear.Limiter limiter(uMax=vmax, uMin=vmin)
-    annotation (Placement(transformation(extent={{26,52},{38,64}})));
+    annotation (Placement(transformation(extent={{-26,14},{-14,26}})));
   Modelica.Blocks.Nonlinear.Limiter limiter1(uMax=gmax, uMin=gmin)
-    annotation (Placement(transformation(extent={{74,52},{86,64}})));
+    annotation (Placement(transformation(extent={{10,14},{22,26}})));
   Modelica.Blocks.Math.Division division
-    annotation (Placement(transformation(extent={{158,56},{170,68}})));
+    annotation (Placement(transformation(extent={{64,14},{76,26}})));
   Modelica.Blocks.Math.Product product1
-    annotation (Placement(transformation(extent={{262,64},{274,76}})));
-  Modelica.Blocks.Math.MultiProduct multiProduct(nu=2)
-    annotation (Placement(transformation(extent={{184,56},{196,68}})));
-  Modelica.Blocks.Interfaces.RealInput Pe "Active power (pu)" annotation (
-      Placement(transformation(extent={{-54,-46},{-44,-36}}),
-        iconTransformation(extent={{-132,-18},{-100,14}})));
+    annotation (Placement(transformation(extent={{184,14},{196,26}})));
+  Modelica.Blocks.Math.MultiProduct square(nu=2) annotation (Placement(transformation(extent={{84,14},{96,26}})));
+  Modelica.Blocks.Interfaces.RealInput pe "Active power (pu)" annotation (
+      Placement(transformation(extent={{-200,-40},{-180,-20}}),
+        iconTransformation(extent={{-140,-50},{-100,-10}})));
   Modelica.Blocks.Continuous.Derivative derivative(k=Kd, T=Td)
-    annotation (Placement(transformation(extent={{-90,30},{-78,42}})));
+    annotation (Placement(transformation(extent={{-106,-6},{-94,6}})));
   Modelica.Blocks.Continuous.TransferFunction transferFunction(a={Ta,1}, b={Ka})
-    annotation (Placement(transformation(extent={{0,52},{12,64}})));
-  Modelica.Blocks.Math.MultiSum multiSum2(nu=2, k={1,-1})
-    annotation (Placement(transformation(extent={{-28,52},{-16,64}})));
+    annotation (Placement(transformation(extent={{-44,14},{-32,26}})));
+  Modelica.Blocks.Math.Feedback servo_fb
+    annotation (Placement(transformation(extent={{-60,14},{-48,26}})));
   Modelica.Blocks.Math.Gain Gain10(k=1/(gmax - gmin))
-    annotation (Placement(transformation(extent={{114,52},{126,64}})));
+    annotation (Placement(transformation(extent={{42,14},{54,26}})));
   Modelica.Blocks.Math.MultiSum multiSum4(nu=2, k={-1,1}) annotation (Placement(
         transformation(
-        extent={{-6,-6},{6,6}},
+        extent={{6,6},{-6,-6}},
         rotation=180,
-        origin={224,-2})));
+        origin={130,20})));
   Modelica.Blocks.Math.Gain gain7(k=1/Tw) annotation (Placement(transformation(
-        extent={{-6,-6},{6,6}},
+        extent={{6,6},{-6,-6}},
         rotation=180,
-        origin={192,-2})));
+        origin={150,20})));
   Modelica.Blocks.Logical.Switch switch1 annotation (Placement(transformation(
-        extent={{-8,-8},{8,8}},
-        rotation=180,
-        origin={-6,-32})));
+        extent={{-4,4},{4,-4}},
+        rotation=90,
+        origin={-140,-16})));
   Modelica.Blocks.Math.RealToBoolean realToBoolean(threshold=0.5) annotation (
       Placement(transformation(
-        extent={{-8,-8},{8,8}},
+        extent={{-6,-6},{6,6}},
         rotation=180,
-        origin={38,-32})));
+        origin={-130,-40})));
   Modelica.Blocks.Sources.Constant const(k=dref) annotation (Placement(
         transformation(
         extent={{-6,-6},{6,6}},
         rotation=180,
-        origin={68,-32})));
-  Modelica.Blocks.Interfaces.RealInput Pref "Active power reference (pu)"
-    annotation (Placement(transformation(extent={{-54,-36},{-44,-26}}),
-        iconTransformation(extent={{-132,-60},{-100,-28}})));
+        origin={-110,-40})));
+  Modelica.Blocks.Interfaces.RealInput pref "Active power reference (pu)"
+    annotation (Placement(transformation(extent={{-200,-60},{-180,-40}}),
+        iconTransformation(extent={{-140,-100},{-100,-60}})));
   Modelica.Blocks.Interfaces.RealInput wref "Rotor speed reference (pu)"
-    annotation (Placement(transformation(extent={{-54,0},{-44,10}}),
-        iconTransformation(extent={{-132,62},{-100,94}})));
+    annotation (Placement(transformation(extent={{-200,10},{-180,30}}),
+        iconTransformation(extent={{-140,100},{-100,60}})));
   Modelica.Blocks.Interfaces.RealInput we "Rotor speed (pu)" annotation (
-      Placement(transformation(extent={{-54,-12},{-44,-2}}), iconTransformation(
-          extent={{-132,20},{-100,52}})));
+      Placement(transformation(extent={{-200,-10},{-180,10}}),
+                                                             iconTransformation(
+          extent={{-140,10},{-100,50}})));
 equation
   G = Gain10.y;
-  connect(gain9.y, multiSum5.u[1]) annotation (Line(
-      points={{-85.4,80},{-57.7,80},{-57.7,62.8},{-52,62.8}},
+  connect(division.y, square.u[1]) annotation (Line(
+      points={{76.6,20},{80,20},{80,22},{84,22},{84,22.1}},
       color={0,0,127},
       smooth=Smooth.None));
-  connect(limiter.y, integrator.u) annotation (Line(
-      points={{38.6,58},{48.8,58}},
+  connect(division.y, square.u[2]) annotation (Line(
+      points={{76.6,20},{80,20},{80,18},{84,18},{84,17.9}},
       color={0,0,127},
       smooth=Smooth.None));
-  connect(integrator.y, limiter1.u) annotation (Line(
-      points={{62.6,58},{72.8,58}},
-      color={0,0,127},
-      smooth=Smooth.None));
-  connect(division.y, multiProduct.u[1]) annotation (Line(
-      points={{170.6,62},{177.3,62},{177.3,64.1},{184,64.1}},
-      color={0,0,127},
-      smooth=Smooth.None));
-  connect(division.y, multiProduct.u[2]) annotation (Line(
-      points={{170.6,62},{178,62},{178,59.9},{184,59.9}},
-      color={0,0,127},
-      smooth=Smooth.None));
-  connect(multiProduct.y, multiSum3.u[1]) annotation (Line(
-      points={{197.02,62},{203.51,62},{203.51,60.1},{212,60.1}},
+  connect(square.y, multiSum3.u[1]) annotation (Line(
+      points={{97.02,20},{104,20},{104,22.1}},
       color={0,0,127},
       smooth=Smooth.None));
   connect(product1.y, Pm) annotation (Line(
-      points={{274.6,70},{282,70},{282,20},{94,20}},
+      points={{196.6,20},{210,20}},
       color={0,0,127},
       smooth=Smooth.None));
   connect(gain8.y, integrator5.u) annotation (Line(
-      points={{-85.4,60},{-77.2,60}},
+      points={{-103.4,20},{-97.2,20}},
       color={0,0,127},
       smooth=Smooth.None));
-  connect(integrator5.y, multiSum5.u[2]) annotation (Line(
-      points={{-63.4,60},{-52,60}},
+  connect(feedback1.y, gain9.u) annotation (Line(
+      points={{-134.6,20},{-129,20},{-129,40},{-117.2,40}},
       color={0,0,127},
       smooth=Smooth.None));
-  connect(derivative.y, multiSum5.u[3]) annotation (Line(
-      points={{-77.4,36},{-58,36},{-58,58},{-52,58},{-52,57.2}},
+  connect(feedback1.y, gain8.u) annotation (Line(
+      points={{-134.6,20},{-117.2,20}},
       color={0,0,127},
       smooth=Smooth.None));
-  connect(multiSum6.y, gain9.u) annotation (Line(
-      points={{-116.98,60},{-108,60},{-108,80},{-99.2,80}},
-      color={0,0,127},
-      smooth=Smooth.None));
-  connect(multiSum6.y, gain8.u) annotation (Line(
-      points={{-116.98,60},{-99.2,60}},
-      color={0,0,127},
-      smooth=Smooth.None));
-  connect(multiSum6.y, derivative.u) annotation (Line(
-      points={{-116.98,60},{-108,60},{-108,36},{-91.2,36}},
-      color={0,0,127},
-      smooth=Smooth.None));
-  connect(multiSum5.y, multiSum2.u[1]) annotation (Line(
-      points={{-38.98,60},{-27.49,60},{-27.49,60.1},{-28,60.1}},
-      color={0,0,127},
-      smooth=Smooth.None));
-  connect(multiSum2.y, transferFunction.u) annotation (Line(
-      points={{-14.98,58},{-1.2,58}},
-      color={0,0,127},
-      smooth=Smooth.None));
-  connect(transferFunction.y, limiter.u) annotation (Line(
-      points={{12.6,58},{24.8,58}},
-      color={0,0,127},
-      smooth=Smooth.None));
-  connect(Gain10.y, division.u2) annotation (Line(
-      points={{126.6,58},{144,58},{144,58.4},{156.8,58.4}},
+  connect(feedback1.y, derivative.u) annotation (Line(
+      points={{-134.6,20},{-129,20},{-129,0},{-107.2,0}},
       color={0,0,127},
       smooth=Smooth.None));
   connect(limiter1.y, Gain10.u) annotation (Line(
-      points={{86.6,58},{112.8,58}},
-      color={0,0,127},
-      smooth=Smooth.None));
-  connect(multiSum2.u[2], limiter1.y) annotation (Line(
-      points={{-28,55.9},{-36,55.9},{-36,40},{96,40},{96,58},{86.6,58}},
+      points={{22.6,20},{40.8,20}},
       color={0,0,127},
       smooth=Smooth.None));
   connect(Proportional.y, multiSum3.u[2]) annotation (Line(
-      points={{92.6,102},{138,102},{138,34},{206,34},{206,58},{212,58},{212,
-          55.9}},
+      points={{76.6,50},{100,50},{100,22},{104,22},{104,17.9}},
       color={0,0,127},
       smooth=Smooth.None));
   connect(multiSum3.y, multiSum4.u[1]) annotation (Line(
-      points={{225.02,58},{238,58},{238,4},{230,4},{230,-4.1}},
+      points={{117.02,20},{124,20},{124,22.1}},
       color={0,0,127},
       smooth=Smooth.None));
-  connect(step.y, multiSum4.u[2]) annotation (Line(
-      points={{251.4,-2},{230,-2},{230,0.1}},
+  connect(one.y, multiSum4.u[2]) annotation (Line(
+      points={{116.6,0},{120,0},{120,18},{124,18},{124,17.9}},
       color={0,0,127},
       smooth=Smooth.None));
   connect(multiSum4.y, gain7.u) annotation (Line(
-      points={{216.98,-2},{199.2,-2}},
+      points={{137.02,20},{142.8,20}},
       color={0,0,127},
       smooth=Smooth.None));
   connect(gain7.y, integrator3.u) annotation (Line(
-      points={{185.4,-2},{173.2,-2}},
-      color={0,0,127},
-      smooth=Smooth.None));
-  connect(integrator3.y, division.u1) annotation (Line(
-      points={{159.4,-2},{148,-2},{148,66},{156.8,65.6}},
+      points={{156.6,20},{162.8,20}},
       color={0,0,127},
       smooth=Smooth.None));
   connect(multiSum3.y, product1.u1) annotation (Line(
-      points={{225.02,58},{237.51,58},{237.51,73.6},{260.8,73.6}},
-      color={0,0,127},
-      smooth=Smooth.None));
-  connect(integrator3.y, product1.u2) annotation (Line(
-      points={{159.4,-2},{158,-2},{158,32},{250,32},{250,66.4},{260.8,66.4}},
+      points={{117.02,20},{120.09,20},{120.09,34},{180,34},{180,23.6},{182.8,23.6}},
       color={0,0,127},
       smooth=Smooth.None));
   connect(switch1.y, gain6.u) annotation (Line(
-      points={{-14.8,-32},{-24,-32},{-24,18},{-112.8,18}},
-      color={0,0,127},
-      smooth=Smooth.None));
-  connect(multiSum7.y, multiSum6.u[1]) annotation (Line(
-      points={{-140.98,84},{-136,84},{-136,62.1},{-130,62.1}},
-      color={0,0,127},
-      smooth=Smooth.None));
-  connect(gain6.y, multiSum6.u[2]) annotation (Line(
-      points={{-126.6,18},{-136,18},{-136,57.9},{-130,57.9}},
-      color={0,0,127},
-      smooth=Smooth.None));
-  connect(switch1.u3, multiSum1.y) annotation (Line(
-      points={{3.6,-25.6},{8,-25.6},{8,-20},{-138.98,-20}},
+      points={{-140,-11.6},{-140,-7.2}},
       color={0,0,127},
       smooth=Smooth.None));
   connect(limiter1.y, switch1.u1) annotation (Line(
-      points={{86.6,58},{102,58},{102,-48},{4,-48},{4,-38.4},{3.6,-38.4}},
+      points={{22.6,20},{30,20},{30,-26},{-136.8,-26},{-136.8,-20.8}},
       color={0,0,127},
       smooth=Smooth.None));
-  connect(const.y, realToBoolean.u) annotation (Line(
-      points={{61.4,-32},{47.6,-32}},
+  connect(w_fb.y, Proportional.u) annotation (Line(
+      points={{-154.6,20},{-150,20},{-150,50},{62.8,50}},
       color={0,0,127},
       smooth=Smooth.None));
-  connect(realToBoolean.y, switch1.u2) annotation (Line(
-      points={{29.2,-32},{3.6,-32}},
-      color={255,0,255},
-      smooth=Smooth.None));
-  connect(wref, multiSum7.u[1]) annotation (Line(
-      points={{-49,5},{-168,5},{-168,86.1},{-154,86.1}},
-      color={0,0,127},
-      smooth=Smooth.None));
-  connect(we, multiSum7.u[2]) annotation (Line(
-      points={{-49,-7},{-162,-7},{-162,81.9},{-154,81.9}},
-      color={0,0,127},
-      smooth=Smooth.None));
-  connect(Pref, multiSum1.u[1]) annotation (Line(
-      points={{-49,-31},{-162,-31},{-162,-17.9},{-152,-17.9}},
-      color={0,0,127},
-      smooth=Smooth.None));
-  connect(Pe, multiSum1.u[2]) annotation (Line(
-      points={{-49,-41},{-158,-41},{-158,-22.1},{-152,-22.1}},
-      color={0,0,127},
-      smooth=Smooth.None));
-  connect(multiSum7.y, Proportional.u) annotation (Line(
-      points={{-140.98,84},{-136,84},{-136,102},{78.8,102}},
-      color={0,0,127},
-      smooth=Smooth.None));
+  connect(integrator3.y, division.u1) annotation (Line(points={{176.6,20},{180,20},{180,-10},{60,-10},{60,23.6},{62.8,23.6}},
+                                                                                                                            color={0,0,127}));
+  connect(limiter1.y, servo_fb.u2) annotation (Line(points={{22.6,20},{30,20},{30,6},{-54,6},{-54,15.2}},
+                                                                                                        color={0,0,127}));
+  connect(we, w_fb.u2) annotation (Line(points={{-190,0},{-160,0},{-160,15.2}}, color={0,0,127}));
+  connect(wref, w_fb.u1) annotation (Line(points={{-190,20},{-164.8,20}}, color={0,0,127}));
+  connect(feedback.y, switch1.u3) annotation (Line(points={{-164.6,-30},{-143.2,-30},{-143.2,-20.8}}, color={0,0,127}));
+  connect(pe, feedback.u1) annotation (Line(points={{-190,-30},{-174.8,-30}}, color={0,0,127}));
+  connect(pref, feedback.u2) annotation (Line(points={{-190,-50},{-170,-50},{-170,-34.8}}, color={0,0,127}));
+  connect(switch1.u2, realToBoolean.y) annotation (Line(points={{-140,-20.8},{-140,-40},{-136.6,-40}}, color={255,0,255}));
+  connect(realToBoolean.u, const.y) annotation (Line(points={{-122.8,-40},{-116.6,-40}}, color={0,0,127}));
+  connect(feedback1.u2, gain6.y) annotation (Line(points={{-140,15.2},{-140,6.6}}, color={0,0,127}));
+  connect(w_fb.y, feedback1.u1) annotation (Line(points={{-154.6,20},{-144.8,20}}, color={0,0,127}));
+  connect(gain9.y, multiSum5.u[1]) annotation (Line(points={{-103.4,40},{-80,40},{-80,22},{-76,22},{-76,22.8}}, color={0,0,127}));
+  connect(integrator5.y, multiSum5.u[2]) annotation (Line(points={{-83.4,20},{-80,20},{-80,20},{-76,20}}, color={0,0,127}));
+  connect(derivative.y, multiSum5.u[3]) annotation (Line(points={{-93.4,0},{-80,0},{-80,18},{-76,18},{-76,17.2}}, color={0,0,127}));
+  connect(multiSum5.y, servo_fb.u1) annotation (Line(points={{-62.98,20},{-58.8,20}}, color={0,0,127}));
+  connect(servo_fb.y, transferFunction.u) annotation (Line(points={{-48.6,20},{-45.2,20}}, color={0,0,127}));
+  connect(transferFunction.y, limiter.u) annotation (Line(points={{-31.4,20},{-27.2,20}}, color={0,0,127}));
+  connect(limiter.y, integrator.u) annotation (Line(points={{-13.4,20},{-9.2,20}}, color={0,0,127}));
+  connect(integrator.y, limiter1.u) annotation (Line(points={{4.6,20},{8.8,20}}, color={0,0,127}));
+  connect(Gain10.y, division.u2) annotation (Line(points={{54.6,20},{58,20},{58,16.4},{62.8,16.4}}, color={0,0,127}));
+  connect(integrator3.y, product1.u2) annotation (Line(points={{176.6,20},{180,20},{180,16.4},{182.8,16.4}}, color={0,0,127}));
   annotation (
-    Icon(coordinateSystem(extent={{-100,-80},{100,120}}, preserveAspectRatio=
-            false), graphics={Rectangle(extent={{-100,120},{100,-80}},
-          lineColor={0,0,255}),Text(
-          extent={{-38,46},{36,0}},
+    Icon(coordinateSystem(extent={{-100,-100},{100,100}},preserveAspectRatio=
+            false), graphics={Rectangle(extent={{-100,100},{100,-100}}, lineColor={0,0,0}),
+                               Text(
+          extent={{-60,-20},{60,-80}},
           lineColor={0,0,255},
           textString="TGTypeVI"),Text(
-          visible=true,
-          origin={-73,78},
-          fillPattern=FillPattern.Solid,
-          extent={{-29,-10},{29,10}},
-          fontName="Arial",
+          extent={{-100,90},{-60,70}},
           lineColor={0,0,0},
           textString="wref"),Text(
-          visible=true,
-          origin={-76,37},
-          fillPattern=FillPattern.Solid,
-          extent={{-28,-11},{28,11}},
-          fontName="Arial",
+          extent={{-100,40},{-60,20}},
           lineColor={0,0,0},
           textString="we"),Text(
-          visible=true,
-          origin={-73,-7},
-          fillPattern=FillPattern.Solid,
-          extent={{-21,-13},{21,13}},
-          fontName="Arial",
-          textString="Pe",
-          lineColor={0,0,0}),Text(
-          visible=true,
-          origin={-71,-42},
-          fillPattern=FillPattern.Solid,
-          extent={{-17,-12},{17,12}},
-          fontName="Arial",
-          textString="Pref",
-          lineColor={0,0,0}),Text(
-          visible=true,
-          origin={79.0002,37},
-          fillPattern=FillPattern.Solid,
-          extent={{-21.0002,-13},{21.0002,13}},
-          fontName="Arial",
-          textString="Pm",
-          lineColor={0,0,0})}),
-    Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-80},{100,
-            120}}), graphics),
+          extent={{-100,-20},{-60,-40}},
+          lineColor={0,0,0},
+          textString="pe"),  Text(
+          extent={{-100,-70},{-60,-90}},
+          lineColor={0,0,0},
+          textString="pref"),Text(
+          extent={{60,10},{100,-10}},
+          lineColor={0,0,0},
+          textString="pm"),
+        Text(
+          extent={{-60,80},{60,20}},
+          lineColor={0,0,0},
+          textString="%name")}),
+    Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-180,-60},{200,60}})),
     Documentation(info="<html>
 <table cellspacing=\"1\" cellpadding=\"1\" border=\"1\">
 <tr>

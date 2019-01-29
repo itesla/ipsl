@@ -1,11 +1,9 @@
 within OpenIPSL.Electrical.Controls.PSAT.TG;
 model TGTypeI
   Modelica.Blocks.Interfaces.RealInput w "Rotor speed (pu)" annotation (
-      Placement(transformation(extent={{-92,-10},{-72,10}}), iconTransformation(
-          extent={{-94,-4},{-60,34}})));
+      Placement(transformation(extent={{-140,-20},{-100,20}})));
   Modelica.Blocks.Interfaces.RealOutput pm "Mechanical power (pu)" annotation (
-      Placement(transformation(extent={{70,2},{90,22}}), iconTransformation(
-          extent={{78,-8},{116,34}})));
+      Placement(transformation(extent={{100,-10},{120,10}})));
   parameter Real wref=1 "Speed reference (pu)";
   parameter Real pref "Active power reference (pu)";
   parameter Real R "Droop (pu)";
@@ -40,21 +38,22 @@ equation
   der(xg3) = ((1 - T4/T5)*(xg2 + T3*xg1/Tc) - xg3)/T5;
   pm = xg3 + (xg2 + T3*xg1/Tc)*T4/T5;
   annotation (
-    Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{
-            140,100}}), graphics),
-    Icon(coordinateSystem(extent={{-100,-100},{140,100}}, preserveAspectRatio=
-            false), graphics={Rectangle(extent={{-58,74},{80,-50}}, lineColor={
-          0,0,255}),Text(
-          extent={{-74,38},{-12,0}},
-          lineColor={0,0,255},
+    Icon(graphics={ Text(
+          extent={{-100,10},{-60,-10}},
+          lineColor={0,0,0},
           textString="w"),Text(
-          extent={{34,22},{82,-14}},
+          extent={{60,10},{100,-10}},
+          lineColor={0,0,0},
+          textString="pm"),
+       Text(
+          extent={{-60,0},{60,-80}},
           lineColor={0,0,255},
-          textString="pm
-    "),Text(
-          extent={{-18,-4},{44,-44}},
-          lineColor={0,0,255},
-          textString="TG1")}),
+          textString="TGTypeI"),
+        Rectangle(extent={{-100,100},{100,-100}}, lineColor={0,0,0}),
+        Text(
+          extent={{-80,80},{80,20}},
+          lineColor={0,0,0},
+          textString="%name")}),
     Documentation(info="<html>
 <table cellspacing=\"1\" cellpadding=\"1\" border=\"1\">
 <tr>

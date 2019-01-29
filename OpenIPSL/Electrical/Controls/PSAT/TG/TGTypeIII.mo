@@ -22,228 +22,213 @@ model TGTypeIII
   Real deltaG "Gate position variation (pu)";
   Real G "Gate position (pu)";
   Modelica.Blocks.Continuous.Integrator integrator(initType=Modelica.Blocks.Types.Init.NoInit,
-      y_start=0) annotation (Placement(transformation(extent={{-8,56},{4,68}})));
+      y_start=0) annotation (Placement(transformation(extent={{-20,-10},{0,10}})));
   Modelica.Blocks.Math.Gain gain(k=1/(Tg*Tp))
-    annotation (Placement(transformation(extent={{-88,56},{-76,68}})));
+    annotation (Placement(transformation(extent={{-140,-10},{-120,10}})));
   Modelica.Blocks.Math.Gain gain1(k=1/Tp) annotation (Placement(transformation(
-        extent={{-6,-6},{6,6}},
+        extent={{-10,-10},{10,10}},
         rotation=180,
-        origin={-54,42})));
+        origin={-76,-30})));
   Modelica.Blocks.Continuous.Integrator integrator1(initType=Modelica.Blocks.Types.Init.NoInit,
       y_start=0)
-    annotation (Placement(transformation(extent={{-56,56},{-44,68}})));
+    annotation (Placement(transformation(extent={{-86,-10},{-66,10}})));
   Modelica.Blocks.Math.Feedback feedback
-    annotation (Placement(transformation(extent={{-72,56},{-60,68}})));
+    annotation (Placement(transformation(extent={{-116,-10},{-96,10}})));
   Modelica.Blocks.Math.Gain gain2(k=delta + sigma) annotation (Placement(
         transformation(
-        extent={{-6,-6},{6,6}},
+        extent={{-10,-10},{10,10}},
         rotation=180,
-        origin={-42,82})));
+        origin={-76,30})));
   Modelica.Blocks.Math.Gain gain3(k=sigma/Tr) annotation (Placement(
         transformation(
-        extent={{-6,-6},{6,6}},
+        extent={{-10,-10},{10,10}},
         rotation=180,
-        origin={-82,26})));
+        origin={-130,-60})));
   Modelica.Blocks.Math.Gain gain5(k=1/Tr) annotation (Placement(transformation(
-        extent={{-6,-6},{6,6}},
+        extent={{-10,-10},{10,10}},
         rotation=0,
-        origin={-14,8})));
+        origin={-74,-90})));
   Modelica.Blocks.Continuous.Integrator integrator2(initType=Modelica.Blocks.Types.Init.NoInit,
       y_start=0) annotation (Placement(transformation(
-        extent={{-6,-6},{6,6}},
+        extent={{-10,10},{10,-10}},
         rotation=180,
-        origin={-10,26})));
+        origin={-76,-60})));
   Modelica.Blocks.Math.Feedback feedback1 annotation (Placement(transformation(
-        extent={{-6,6},{6,-6}},
+        extent={{-10,10},{10,-10}},
         rotation=180,
-        origin={10,26})));
+        origin={-40,-60})));
   Modelica.Blocks.Math.Gain gain4(k=1/(a11*Tw)) annotation (Placement(
         transformation(
-        extent={{-6,-6},{6,6}},
+        extent={{-10,-10},{10,10}},
         rotation=180,
-        origin={104,10})));
+        origin={140,-70})));
   Modelica.Blocks.Continuous.Integrator integrator3(initType=Modelica.Blocks.Types.Init.NoInit,
       y_start=int3) annotation (Placement(transformation(
-        extent={{-6,-6},{6,6}},
+        extent={{-10,-10},{10,10}},
         rotation=0,
-        origin={104,30})));
+        origin={150,-40})));
   Modelica.Blocks.Math.Feedback feedback2 annotation (Placement(transformation(
-        extent={{-6,-6},{6,6}},
+        extent={{-10,-10},{10,10}},
         rotation=0,
-        origin={86,30})));
+        origin={120,-40})));
   Modelica.Blocks.Math.Gain G6(k=(a11*a23 - a13*a21)/a11)
-    annotation (Placement(transformation(extent={{80,58},{92,70}})));
+    annotation (Placement(transformation(extent={{84,-10},{104,10}})));
   Modelica.Blocks.Math.Gain gain7(k=a13*a21/(a11*a11*Tw))
-    annotation (Placement(transformation(extent={{66,24},{78,36}})));
+    annotation (Placement(transformation(extent={{84,-50},{104,-30}})));
   Modelica.Blocks.Interfaces.RealInput w "Rotor speed (pu)" annotation (
-      Placement(transformation(extent={{-52,-6},{-40,6}}), iconTransformation(
-          extent={{-116,-18},{-80,18}})));
-  Modelica.Blocks.Interfaces.RealOutput Pm "Mechanical power (pu)" annotation (
-      Placement(transformation(extent={{100,-6},{112,6}}), iconTransformation(
-          extent={{100,-10},{128,18}})));
+      Placement(transformation(extent={{-280,-20},{-240,20}}), iconTransformation(extent={{-140,-20},{-100,20}})));
+  Modelica.Blocks.Interfaces.RealOutput pm "Mechanical power (pu)" annotation (
+      Placement(transformation(extent={{200,-10},{220,10}}), iconTransformation(extent={{100,-10},{120,10}})));
   Modelica.Blocks.Nonlinear.Limiter limiter(uMax=vmax, uMin=vmin)
-    annotation (Placement(transformation(extent={{-28,56},{-16,68}})));
+    annotation (Placement(transformation(extent={{-50,-10},{-30,10}})));
   Modelica.Blocks.Nonlinear.Limiter limiter1(uMax=gmax, uMin=gmin)
-    annotation (Placement(transformation(extent={{14,56},{26,68}})));
+    annotation (Placement(transformation(extent={{10,-10},{30,10}})));
   Modelica.Blocks.Math.Add add(k1=+1, k2=-1)
-    annotation (Placement(transformation(extent={{-140,56},{-128,68}})));
+    annotation (Placement(transformation(extent={{-200,-10},{-180,10}})));
   Modelica.Blocks.Math.Add3 add3_1(
     k1=-1,
     k2=1,
-    k3=1) annotation (Placement(transformation(extent={{-110,56},{-98,68}})));
+    k3=1) annotation (Placement(transformation(extent={{-170,-10},{-150,10}})));
   Modelica.Blocks.Math.Add add1
-    annotation (Placement(transformation(extent={{46,58},{58,70}})));
+    annotation (Placement(transformation(extent={{50,-10},{70,10}})));
   Modelica.Blocks.Math.Add add2
-    annotation (Placement(transformation(extent={{126,56},{138,68}})));
+    annotation (Placement(transformation(extent={{172,-10},{192,10}})));
   Modelica.Blocks.Sources.Constant const(k=P_0)
-    annotation (Placement(transformation(extent={{0,78},{12,90}})));
+    annotation (Placement(transformation(extent={{10,40},{30,60}})));
   Modelica.Blocks.Sources.Constant const1(k=wref)
-    annotation (Placement(transformation(extent={{-160,60},{-148,72}})));
+    annotation (Placement(transformation(extent={{-240,10},{-220,30}})));
 equation
   deltaG = limiter1.y;
   G = add1.y;
   connect(gain1.y, feedback.u2) annotation (Line(
-      points={{-60.6,42},{-66,42},{-66,57.2}},
+      points={{-87,-30},{-106,-30},{-106,-8}},
       color={0,0,127},
       smooth=Smooth.None));
   connect(feedback.y, integrator1.u) annotation (Line(
-      points={{-60.6,62},{-57.2,62}},
+      points={{-97,0},{-88,0}},
       color={0,0,127},
       smooth=Smooth.None));
   connect(gain.y, feedback.u1) annotation (Line(
-      points={{-75.4,62},{-70.8,62}},
+      points={{-119,0},{-114,0}},
       color={0,0,127},
       smooth=Smooth.None));
   connect(gain5.y, feedback1.u2) annotation (Line(
-      points={{-7.4,8},{10,8},{10,21.2}},
+      points={{-63,-90},{-40,-90},{-40,-68}},
       color={0,0,127},
       smooth=Smooth.None));
   connect(feedback1.y, integrator2.u) annotation (Line(
-      points={{4.6,26},{-2.8,26}},
+      points={{-49,-60},{-64,-60}},
       color={0,0,127},
       smooth=Smooth.None));
   connect(integrator2.y, gain3.u) annotation (Line(
-      points={{-16.6,26},{-74.8,26}},
+      points={{-87,-60},{-118,-60}},
       color={0,0,127},
       smooth=Smooth.None));
   connect(gain4.y, feedback2.u2) annotation (Line(
-      points={{97.4,10},{86,10},{86,25.2}},
+      points={{129,-70},{120,-70},{120,-48}},
       color={0,0,127},
       smooth=Smooth.None));
   connect(feedback2.y, integrator3.u) annotation (Line(
-      points={{91.4,30},{96.8,30}},
+      points={{129,-40},{138,-40}},
       color={0,0,127},
       smooth=Smooth.None));
   connect(gain7.y, feedback2.u1) annotation (Line(
-      points={{78.6,30},{81.2,30}},
+      points={{105,-40},{112,-40}},
       color={0,0,127},
       smooth=Smooth.None));
   connect(gain1.u, integrator1.y) annotation (Line(
-      points={{-46.8,42},{-36,42},{-36,62},{-43.4,62}},
+      points={{-64,-30},{-58.6,-30},{-58.6,0},{-65,0}},
       color={0,0,127},
       smooth=Smooth.None));
   connect(integrator2.y, gain5.u) annotation (Line(
-      points={{-16.6,26},{-28,26},{-28,8},{-21.2,8}},
+      points={{-87,-60},{-93.7,-60},{-93.7,-90},{-86,-90}},
       color={0,0,127},
       smooth=Smooth.None));
   connect(integrator3.y, gain4.u) annotation (Line(
-      points={{110.6,30},{120,30},{120,10},{111.2,10}},
+      points={{161,-40},{166,-40},{166,-70},{152,-70}},
       color={0,0,127},
       smooth=Smooth.None));
   connect(integrator1.y, limiter.u) annotation (Line(
-      points={{-43.4,62},{-29.2,62}},
+      points={{-65,0},{-52,0}},
       color={0,0,127},
       smooth=Smooth.None));
   connect(limiter.y, integrator.u) annotation (Line(
-      points={{-15.4,62},{-9.2,62}},
+      points={{-29,0},{-22,0}},
       color={0,0,127},
       smooth=Smooth.None));
   connect(integrator.y, limiter1.u) annotation (Line(
-      points={{4.6,62},{12.8,62}},
+      points={{1,0},{8,0}},
       color={0,0,127},
       smooth=Smooth.None));
   connect(feedback1.u1, limiter1.y) annotation (Line(
-      points={{14.8,26},{32,26},{32,62},{26.6,62}},
+      points={{-32,-60},{36,-60},{36,0},{31,0}},
       color={0,0,127},
       smooth=Smooth.None));
   connect(limiter1.y, gain2.u) annotation (Line(
-      points={{26.6,62},{32,62},{32,82},{-34.8,82}},
+      points={{31,0},{36,0},{36,30},{-64,30}},
       color={0,0,127},
       smooth=Smooth.None));
   connect(w, add.u2) annotation (Line(
-      points={{-46,0},{-144,0},{-144,58.4},{-141.2,58.4}},
+      points={{-260,0},{-219,0},{-219,-6},{-202,-6}},
       color={0,0,127},
       smooth=Smooth.None));
   connect(gain2.y, add3_1.u1) annotation (Line(
-      points={{-48.6,82},{-120,82},{-120,66.8},{-111.2,66.8}},
+      points={{-87,30},{-175.7,30},{-175.7,8},{-172,8}},
       color={0,0,127},
       smooth=Smooth.None));
   connect(add.y, add3_1.u2) annotation (Line(
-      points={{-127.4,62},{-111.2,62}},
+      points={{-179,0},{-172,0}},
       color={0,0,127},
       smooth=Smooth.None));
   connect(gain3.y, add3_1.u3) annotation (Line(
-      points={{-88.6,26},{-122,26},{-122,57.2},{-111.2,57.2}},
+      points={{-141,-60},{-176.7,-60},{-176.7,-8},{-172,-8}},
       color={0,0,127},
       smooth=Smooth.None));
   connect(add3_1.y, gain.u) annotation (Line(
-      points={{-97.4,62},{-89.2,62}},
+      points={{-149,0},{-142,0}},
       color={0,0,127},
       smooth=Smooth.None));
   connect(limiter1.y, add1.u2) annotation (Line(
-      points={{26.6,62},{34,62},{34,60.4},{44.8,60.4}},
+      points={{31,0},{36,0},{36,-6},{48,-6}},
       color={0,0,127},
       smooth=Smooth.None));
   connect(add1.y, G6.u) annotation (Line(
-      points={{58.6,64},{78.8,64}},
+      points={{71,0},{82,0}},
       color={0,0,127},
       smooth=Smooth.None));
   connect(add1.y, gain7.u) annotation (Line(
-      points={{58.6,64},{62,64},{62,30},{64.8,30}},
+      points={{71,0},{74.3,0},{74.3,-40},{82,-40}},
       color={0,0,127},
       smooth=Smooth.None));
   connect(G6.y, add2.u1) annotation (Line(
-      points={{92.6,64},{123.6,64},{123.6,65.6},{124.8,65.6}},
+      points={{105,0},{160.9,0},{160.9,6},{170,6}},
       color={0,0,127},
       smooth=Smooth.None));
   connect(integrator3.y, add2.u2) annotation (Line(
-      points={{110.6,30},{122,30},{122,58.4},{124.8,58.4}},
+      points={{161,-40},{166,-40},{166,-6},{170,-6}},
       color={0,0,127},
       smooth=Smooth.None));
-  connect(add2.y, Pm) annotation (Line(
-      points={{138.6,62},{144,62},{144,0},{106,0}},
-      color={0,0,127},
-      smooth=Smooth.None));
-  connect(Pm, Pm) annotation (Line(
-      points={{106,0},{106,0}},
-      color={0,0,127},
-      smooth=Smooth.None));
-  connect(const.y, add1.u1) annotation (Line(points={{12.6,84},{26,84},{40,84},
-          {40,67.6},{44.8,67.6}}, color={0,0,127}));
-  connect(const1.y, add.u1) annotation (Line(points={{-147.4,66},{-141.2,66},{-141.2,
-          65.6}}, color={0,0,127}));
+  connect(const.y, add1.u1) annotation (Line(points={{31,50},{43.3,50},{43.3,6},{48,6}},
+                                  color={0,0,127}));
+  connect(const1.y, add.u1) annotation (Line(points={{-219,20},{-210,20},{-210,6},{-202,6}},
+                  color={0,0,127}));
+  connect(add2.y, pm) annotation (Line(points={{193,0},{210,0}}, color={0,0,127}));
   annotation (
-    Icon(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,
-            100}}), graphics={Rectangle(extent={{-100,100},{100,-100}},
-          lineColor={0,0,255}),Text(
-          extent={{-44,38},{34,-30}},
+    Icon(graphics={Rectangle(extent={{-100,100},{100,-100}}, lineColor={0,0,0}),
+                               Text(
+          extent={{-60,0},{60,-80}},
           lineColor={0,0,255},
           textString="TGTypeIII"),Text(
-          visible=true,
-          origin={-71,-1},
-          fillPattern=FillPattern.Solid,
-          extent={{-19,-11},{19,11}},
-          textString="W",
-          fontName="Arial"),Text(
-          visible=true,
-          origin={83.0002,5},
-          fillPattern=FillPattern.Solid,
-          extent={{-15.0002,-11},{15.0002,11}},
-          fontName="Arial",
-          textString="Pm",
-          lineColor={0,0,0})}),
-    Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{
-            100,100}})),
+          extent={{-100,10},{-60,-10}},
+          lineColor={0,0,0},
+          textString="w"),  Text(
+          extent={{60,10},{100,-10}},
+          lineColor={0,0,0},
+          textString="pm"),
+        Text(
+          extent={{-80,80},{80,20}},
+          lineColor={0,0,0},
+          textString="%name")}),
     Documentation(info="<html>
 <table cellspacing=\"1\" cellpadding=\"1\" border=\"1\">
 <tr>
@@ -263,5 +248,6 @@ equation
 <td><p><a href=\"mailto:luigiv@kth.se\">luigiv@kth.se</a></p></td>
 </tr>
 </table>
-</html>"));
+</html>"),
+    Diagram(coordinateSystem(extent={{-240,-120},{200,80}})));
 end TGTypeIII;
