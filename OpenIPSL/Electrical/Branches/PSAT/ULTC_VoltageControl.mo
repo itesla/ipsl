@@ -101,9 +101,13 @@ equation
           points={{-20,2},{-20,16}},
           color={0,0,255},
           smooth=Smooth.None),Text(
-          extent={{-32,66},{32,54}},
+          extent={{-100,-40},{100,-100}},
           lineColor={0,128,0},
-          textString="%ULTC%")}),
+          textString="%ULTC%"),
+        Text(
+          extent={{-100,100},{100,40}},
+          lineColor={0,0,255},
+          textString="%name")}),
     Documentation(info="<html>
 <table cellspacing=\"1\" cellpadding=\"1\" border=\"1\"><tr>
 <td><p>Reference</p></td>
