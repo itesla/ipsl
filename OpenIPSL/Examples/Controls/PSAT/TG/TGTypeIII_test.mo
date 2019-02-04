@@ -2,7 +2,6 @@ within OpenIPSL.Examples.Controls.PSAT.TG;
 model TGTypeIII_test
   extends Modelica.Icons.Example;
   extends TGTestBase;
-  extends Modelica.Icons.Example;
   OpenIPSL.Electrical.Controls.PSAT.TG.TGTypeIII tGTypeIII(
     Tg=0.2,
     Tp=0.04,
