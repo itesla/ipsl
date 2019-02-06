@@ -9,5 +9,5 @@ convertClass("OpenIPSL.Electrical.Branches.PSAT.PhaseShiftingTransformer_1",
              "OpenIPSL.Electrical.Branches.PSAT.PhaseShiftingTransformer");
 convertClass("OpenIPSL.Electrical.Branches.PSAT.TWTransformerWithFixedTapRatio",
              "OpenIPSL.Electrical.Branches.PSAT.TwoWindingTransformerFixedTapRatio");
-convertModifiers("OpenIPSL.Electrical.Branches.PSAT.TwoWindingTransformerFixedTapRatio",
-                 {"R","X","Vn1"}, {"r","x","Vn"});
+convertModifiers({"OpenIPSL.Electrical.Branches.PSAT.TWTransformerWithFixedTapRatio"},
+                 {"R","X","Vn1"}, {"r=%R%","x=%X%","Vn=%Vn1%"});

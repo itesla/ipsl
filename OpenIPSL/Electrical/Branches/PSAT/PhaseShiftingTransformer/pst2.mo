@@ -28,11 +28,11 @@ model pst2
   Real alpha;
   Real pmes;
   OpenIPSL.Interfaces.PwPin p annotation (Placement(visible=true,
-        transformation(extent={{-120,-8},{-100,12}})));
+        transformation(extent={{-120,-10},{-100,10}})));
   OpenIPSL.Interfaces.PwPin n
-    annotation (Placement(transformation(extent={{100,-8},{120,12}})));
+    annotation (Placement(transformation(extent={{100,-10},{120,10}})));
   Modelica.Blocks.Interfaces.RealInput pk
-    annotation (Placement(transformation(extent={{-142,-62},{-102,-22}})));
+    annotation (Placement(transformation(extent={{-140,-60},{-100,-20}})));
 protected
   parameter Real Vb2new=Vbus1*Vbus1;
   parameter Real Vb2old=Vn1*Vn1;

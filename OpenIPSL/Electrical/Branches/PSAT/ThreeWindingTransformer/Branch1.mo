@@ -1,9 +1,9 @@
 within OpenIPSL.Electrical.Branches.PSAT.ThreeWindingTransformer;
 model Branch1 "First winding of Three Winding Transformer"
   OpenIPSL.Interfaces.PwPin p
-    annotation (Placement(transformation(extent={{-120,-6},{-100,14}})));
+    annotation (Placement(transformation(extent={{-120,-10},{-100,10}}), iconTransformation(extent={{-120,-10},{-100,10}})));
   OpenIPSL.Interfaces.PwPin n1
-    annotation (Placement(transformation(extent={{100,-10},{120,10}})));
+    annotation (Placement(transformation(extent={{100,-10},{120,10}}), iconTransformation(extent={{100,-10},{120,10}})));
   parameter Real SystemBase=100;
   parameter Real Sn=100 "Power rating MVA";
   parameter Real Vbus=400000 "Sending end bus voltage, V";

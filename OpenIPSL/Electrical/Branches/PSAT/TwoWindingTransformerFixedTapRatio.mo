@@ -9,13 +9,13 @@ model TwoWindingTransformerFixedTapRatio
     annotation (Dialog(group="Power flow data"));
   parameter Real Sn=100 "Power rating (MVA)"
     annotation (Dialog(group="Power flow data"));
-  parameter Real Vbus=400000 "Sending end bus voltage"
+  parameter Real Vbus=40 "Sending end bus voltage (kV)"
     annotation (Dialog(group="Power flow data"));
-  parameter Real Vn=400000 "Voltage rating (kV)"
+  parameter Real Vn=40 "Voltage rating (kV)"
     annotation (Dialog(group="Power flow data"));
   parameter Real fn=50 "Frequency rating (Hz)"
     annotation (Dialog(group="Power flow data"));
-  parameter Real kT=1 "Nominal tap ratio (V1/V2)"
+  parameter Real kT=1 "Nominal tap ratio (kV1/kV2)"
     annotation (Dialog(group="Transformer data"));
   parameter Real x=0.20 "Reactance (pu)"
     annotation (Dialog(group="Transformer data"));
@@ -26,16 +26,14 @@ model TwoWindingTransformerFixedTapRatio
 protected
   parameter Real Vb2new=Vbus*Vbus;
   parameter Real Vb2old=Vn*Vn;
-  parameter Real xT=x*(Vb2old*Sb)/(Vb2new*Sn) "Reactance(inductive),p.u";
-  parameter Real rT=r*(Vb2old*Sb)/(Vb2new*Sn) "Reactance(capacitive),p.u";
+  parameter Real xT=x*(Vb2old*Sb)/(Vb2new*Sn) "Reactance(inductive), pu";
+  parameter Real rT=r*(Vb2old*Sb)/(Vb2new*Sn) "Reactance(capacitive), pu";
 equation
   rT*p.ir - xT*p.ii = 1/m^2*p.vr - 1/m*n.vr;
   rT*p.ii + xT*p.ir = 1/m^2*p.vi - 1/m*n.vi;
   rT*n.ir - xT*n.ii = n.vr - 1/m*p.vr;
   xT*n.ir + rT*n.ii = n.vi - 1/m*p.vi;
   annotation (
-    Diagram(coordinateSystem(preserveAspectRatio=true, extent={{-100,-100},{100,
-            100}}), graphics),
     Documentation(info="<html>
 <table cellspacing=\"1\" cellpadding=\"1\" border=\"1\"><tr>
 <td><p>Reference</p></td>
@@ -51,12 +49,11 @@ equation
 </tr>
 <tr>
 <td><p>Contact</p></td>
-<td><p><a href=\"mailto:luigiv@kth.se\">luigiv@kth.se</a></p></td>
+<td><p><a href=\"mailto:luigi.vanfretti@gmail\">luigi.vanfretti@gmail.com</a></p></td>
 </tr>
 </table>
 </html>"),
-    Icon(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,
-            100}}), graphics={Ellipse(extent={{-46,30},{8,-30}}, lineColor={0,0,
+    Icon(graphics={Ellipse(extent={{-46,30},{8,-30}}, lineColor={0,0,
           255}),Ellipse(extent={{-10,30},{44,-30}}, lineColor={0,0,255}),Line(
           points={{100,0},{44,0},{44,0}},
           color={0,0,255},
@@ -64,7 +61,7 @@ equation
           points={{-100,0},{-46,0}},
           color={0,0,255},
           smooth=Smooth.None),Line(points={{-64,-44},{-22,12}}, color={28,108,
-          200}),Line(points={{-34,6},{-22,12}}, color={28,108,200}),Line(points
-          ={{-24,0}}, color={28,108,200}),Line(points={{-26,0},{-22,12}}, color
-          ={28,108,200})}));
+          200}),Line(points={{-34,6},{-22,12}}, color={28,108,200}),Line(points=
+           {{-24,0}}, color={28,108,200}),Line(points={{-26,0},{-22,12}}, color=
+           {28,108,200})}));
 end TwoWindingTransformerFixedTapRatio;

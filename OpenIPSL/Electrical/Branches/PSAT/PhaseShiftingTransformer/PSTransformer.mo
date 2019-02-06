@@ -28,14 +28,14 @@ model PSTransformer
   Real anglevk(start=anglevk0);
   Real anglevm(start=anglevm0);
   OpenIPSL.Interfaces.PwPin p
-    annotation (Placement(transformation(extent={{-122,-8},{-102,12}})));
+    annotation (Placement(transformation(extent={{-120,-10},{-100,10}})));
   OpenIPSL.Interfaces.PwPin n
     annotation (Placement(transformation(extent={{100,-10},{120,10}})));
   Modelica.Blocks.Interfaces.RealOutput pk(start=p_ref) annotation (Placement(
-        transformation(extent={{100,-50},{120,-30}}), iconTransformation(extent
-          ={{100,-50},{120,-30}})));
+        transformation(extent={{100,-50},{120,-30}}), iconTransformation(extent=
+           {{100,-50},{120,-30}})));
   Modelica.Blocks.Interfaces.RealInput u
-    annotation (Placement(transformation(extent={{-144,36},{-104,76}})));
+    annotation (Placement(transformation(extent={{-140,36},{-100,76}})));
   pst1 pst1_1(
     SystemBase=SystemBase,
     Vbus1=Vbus1,
@@ -57,7 +57,7 @@ model PSTransformer
     pmes0=pmes0,
     vk0=vk0,
     anglevk0=anglevk0)
-    annotation (Placement(transformation(extent={{-46,-10},{-26,10}})));
+    annotation (Placement(transformation(extent={{-40,-10},{-20,10}})));
   pst2 pst2_1(
     SystemBase=SystemBase,
     Vbus1=Vbus1,
@@ -79,7 +79,7 @@ model PSTransformer
     pmes0=pmes0,
     vm0=vm0,
     anglevm0=anglevm0)
-    annotation (Placement(transformation(extent={{16,-10},{36,10}})));
+    annotation (Placement(transformation(extent={{20,-10},{40,10}})));
 protected
   parameter Real Vb2new=Vbus1*Vbus1;
   parameter Real Vb2old=Vn1*Vn1;
@@ -97,24 +97,25 @@ equation
   anglevm = atan2(n.vi, n.vr);
   pk = p.vr*p.ir + p.vi*p.ii;
   connect(pst2_1.n, n) annotation (Line(
-      points={{37,0.2},{70.5,0.2},{70.5,0},{110,0}},
+      points={{41,0},{70.5,0},{70.5,0},{110,0}},
       color={0,0,255},
       smooth=Smooth.None));
   connect(pst2_1.p, pst1_1.n) annotation (Line(
-      points={{15,0.2},{-25,0.2}},
+      points={{19,0},{-2,0},{-2,0},{-19,0}},
       color={0,0,255},
       smooth=Smooth.None));
   connect(pst1_1.p, p) annotation (Line(
-      points={{-47,0.2},{-76.5,0.2},{-76.5,2},{-112,2}},
+      points={{-41,0},{-76.5,0},{-76.5,0},{-110,0}},
       color={0,0,255},
       smooth=Smooth.None));
   connect(u, pst2_1.pk) annotation (Line(
-      points={{-124,56},{-8,56},{-8,-4.2},{13.8,-4.2}},
+      points={{-120,56},{-8,56},{-8,-4},{18,-4}},
       color={0,0,127},
       smooth=Smooth.None));
+  connect(p, p) annotation (Line(points={{-110,0},{-110,0}}, color={0,0,255}));
   annotation (
     Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{
-            100,100}}), graphics),
+            100,100}})),
     Icon(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,
             100}}), graphics={Ellipse(extent={{-48,24},{10,-32}}, lineColor={0,
           0,255}),Ellipse(extent={{-6,26},{52,-30}}, lineColor={0,0,255}),Line(
@@ -122,21 +123,25 @@ equation
           color={0,0,255},
           smooth=Smooth.None),Rectangle(extent={{66,10},{94,-12}}, lineColor={0,
           0,255}),Line(
-          points={{50,0},{66,0},{66,0}},
+          points={{52,0},{66,0},{66,0}},
           color={0,0,255},
           smooth=Smooth.None),Line(
           points={{100,0},{94,0},{96,0}},
           color={0,0,255},
           smooth=Smooth.None),Line(
-          points={{82,-12},{82,-44},{-48,-44},{-48,0},{-48,0}},
+          points={{80,-12},{80,-44},{-50,-44},{-50,0},{-50,0}},
           color={0,0,255},
           smooth=Smooth.None),Text(
           extent={{74,4},{84,-2}},
           lineColor={0,0,255},
           textString="%Angle%"),Text(
-          extent={{-28,78},{40,46}},
+          extent={{-40,-52},{40,-92}},
           lineColor={0,128,0},
-          textString="%PST%")}),
+          textString="%PST%"),
+        Text(
+          extent={{-100,100},{100,40}},
+          lineColor={0,0,255},
+          textString="%name")}),
     Documentation(info="<html>
 <table cellspacing=\"1\" cellpadding=\"1\" border=\"1\"><tr>
 <td><p>Reference</p></td>
