@@ -1,0 +1,13 @@
+// Convert from OpenIPSL 1.5.0 to OpenIPSL 2.0.0
+
+// clear
+convertClear();
+
+// Change references to classes that are removed from OpenIPSL
+// PSAT transformer package #172:
+convertClass("OpenIPSL.Electrical.Branches.PSAT.PhaseShiftingTransformer_1",
+             "OpenIPSL.Electrical.Branches.PSAT.PhaseShiftingTransformer");
+convertClass("OpenIPSL.Electrical.Branches.PSAT.TWTransformerWithFixedTapRatio",
+             "OpenIPSL.Electrical.Branches.PSAT.TwoWindingTransformerFixedTapRatio");
+convertModifiers("OpenIPSL.Electrical.Branches.PSAT.TwoWindingTransformerFixedTapRatio",
+                 {"R","X","Vn1"}, {"r","x","Vn"});
