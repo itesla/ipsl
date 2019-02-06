@@ -18,7 +18,7 @@ model Network
         Placement(visible = true, transformation(origin = {78, 0}, extent = {{10, -10}, {-10, 10}}, rotation = 0)));
     OpenIPSL.Electrical.Events.PwFault pwFault(R = 0.0, X = 0.01 * 100 / 2220, t1 = 0.5, t2 = 0.57) annotation (
         Placement(visible = true, transformation(origin = {2, -38}, extent = {{-6, -6}, {6, 6}}, rotation = 0)));
-    Generator.Generator G1(
+    SMIB_Examples.Example_2.Generator.Generator G1(
         P_0=1997.999,
         Q_0=967.92,
         V_0=1,
