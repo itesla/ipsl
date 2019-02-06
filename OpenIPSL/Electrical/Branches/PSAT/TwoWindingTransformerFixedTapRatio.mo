@@ -63,5 +63,9 @@ equation
           smooth=Smooth.None),Line(points={{-64,-44},{-22,12}}, color={28,108,
           200}),Line(points={{-34,6},{-22,12}}, color={28,108,200}),Line(points=
            {{-24,0}}, color={28,108,200}),Line(points={{-26,0},{-22,12}}, color=
-           {28,108,200})}));
+           {28,108,200}),
+        Text(
+          extent={{-100,100},{100,40}},
+          lineColor={0,0,255},
+          textString="%name")}));
 end TwoWindingTransformerFixedTapRatio;

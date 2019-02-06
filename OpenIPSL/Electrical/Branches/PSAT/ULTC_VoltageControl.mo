@@ -103,7 +103,7 @@ equation
           smooth=Smooth.None),Text(
           extent={{-100,-40},{100,-100}},
           lineColor={0,128,0},
-          textString="%ULTC%"),
+          textString="ULTC"),
         Text(
           extent={{-100,100},{100,40}},
           lineColor={0,0,255},

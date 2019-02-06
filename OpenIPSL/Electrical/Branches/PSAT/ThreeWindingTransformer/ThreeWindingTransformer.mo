@@ -142,7 +142,7 @@ equation
           smooth=Smooth.None),Text(
           extent={{-60,-50},{60,-92}},
           lineColor={0,128,0},
-          textString="%TWT%"),
+          textString="TWT"),
         Text(
           extent={{-100,140},{100,80}},
           lineColor={0,0,255},

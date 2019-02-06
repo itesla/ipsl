@@ -137,7 +137,7 @@ equation
           textString="%Angle%"),Text(
           extent={{-40,-52},{40,-92}},
           lineColor={0,128,0},
-          textString="%PST%"),
+          textString="PST"),
         Text(
           extent={{-100,100},{100,40}},
           lineColor={0,0,255},
