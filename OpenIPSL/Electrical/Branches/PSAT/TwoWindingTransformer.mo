@@ -17,23 +17,25 @@ model TwoWindingTransformer "Modeled as series reactances without iron losses"
     annotation (Dialog(group="Power flow"));
   parameter Real kT=1 "Nominal tap ratio (kV1/kV2)"
     annotation (Dialog(group="Transformer parameters"));
-  parameter Real x=0.001 "Reactance (pu machine base)"
+  parameter Real x=0.2 "Reactance (pu)"
     annotation (Dialog(group="Transformer parameters"));
-  parameter Real r=0.1 "Resistance (pu machine base)"
+  parameter Real r=0.01 "Resistance (pu)"
     annotation (Dialog(group="Transformer parameters"));
+  parameter Real m=1.0 "Optional fixed tap ratio"
+    annotation (Dialog(group="Transformer parameters"));
+
 protected
   parameter Real Vb2new=V_b^2;
   parameter Real Vb2old=Vn*Vn;
-  parameter Real xT=x*(Vb2old*Sb)/(Vb2new*Sn) "Reactance, p.u system base";
-  parameter Real rT=r*(Vb2old*Sb)/(Vb2new*Sn) "Resistance, p.u system base";
+  parameter Real xT=x*(Vb2old*Sb)/(Vb2new*Sn) "Reactance (pu)";
+  parameter Real rT=r*(Vb2old*Sb)/(Vb2new*Sn) "Resistance (pu)";
+  parameter Boolean tc = m <> 1.0 "Internal parameter to switch on the icon arrow";
 equation
-  rT*p.ir - xT*p.ii = p.vr - n.vr;
-  rT*p.ii + xT*p.ir = p.vi - n.vi;
-  rT*n.ir - xT*n.ii = n.vr - p.vr;
-  xT*n.ir + rT*n.ii = n.vi - p.vi;
+  rT*p.ir - xT*p.ii = 1/m^2*p.vr - 1/m*n.vr;
+  rT*p.ii + xT*p.ir = 1/m^2*p.vi - 1/m*n.vi;
+  rT*n.ir - xT*n.ii = n.vr - 1/m*p.vr;
+  xT*n.ir + rT*n.ii = n.vi - 1/m*p.vi;
   annotation (
-    Diagram(coordinateSystem(preserveAspectRatio=true, extent={{-100,-100},{100,
-            100}}), graphics),
     Icon(graphics={Ellipse(extent={{-46,30},{8,-30}}, lineColor={0,0,255}),
           Ellipse(extent={{-10,30},{44,-30}}, lineColor={0,0,255}),Line(
           points={{100,0},{44,0},{44,0}},
@@ -51,7 +53,24 @@ equation
         Text(
           extent={{-100,100},{100,40}},
           lineColor={0,0,255},
-          textString="%name")}),
+          textString="%name"),
+        Line(
+          visible= tc,
+          points={{-60,-40},{0,40}},
+          color={28,108,200}),
+        Line(
+          points={{0,40},{-10,36}},
+          color={28,108,200},
+          visible=tc),
+        Line(
+          visible=tc,
+          points={{0,40},{0,30}},
+          color={28,108,200}),
+        Text(
+          visible=tc,
+          extent={{-80,-40},{-40,-60}},
+          lineColor={28,108,200},
+          textString="TC")}),
     Documentation(info="<html>
 <table cellspacing=\"1\" cellpadding=\"1\" border=\"1\"><tr>
 <td><p>Reference</p></td>
