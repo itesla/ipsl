@@ -112,7 +112,6 @@ equation
   connect(DiffV1.y, add3_1.u1) annotation (Line(points={{-69,40},{-66,40},{-66,
           8},{-62,8}}, color={0,0,127}));
   annotation (
-    Placement(transformation(extent={{50,-5},{60,5}})),
     Diagram(coordinateSystem(
         extent={{-200,-200},{200,160}},
         grid={2,2},

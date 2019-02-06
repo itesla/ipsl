@@ -135,7 +135,6 @@ equation
   connect(gain1.u, gain.u) annotation (Line(points={{110,-82},{110,-92},{82,-92},
           {82,-82}}, color={0,0,127}));
   annotation (
-    Placement(transformation(extent={{50,-5},{60,5}})),
     Diagram(coordinateSystem(
         extent={{-200,-200},{200,160}},
         grid={2,2},

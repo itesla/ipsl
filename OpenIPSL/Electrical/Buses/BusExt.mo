@@ -89,6 +89,5 @@ equation
 <td><p><a href=\"mailto:luigiv@kth.se\">luigiv@kth.se</a></p></td>
 </tr>
 </table>
-</html>", revisions=""),
-    uses(OpenIPSL(version="1.0.0"), Modelica(version="3.2.1")));
+</html>"));
 end BusExt;

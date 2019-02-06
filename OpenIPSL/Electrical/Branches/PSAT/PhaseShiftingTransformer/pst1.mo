@@ -48,10 +48,4 @@ equation
   R*p.ii + X*p.ir = 1/m^2*p.vi - 1/m*n.vi;
   R*n.ir - X*n.ii = n.vr - 1/m*p.vr;
   X*n.ir + R*n.ii = n.vi - 1/m*p.vi;
-  annotation (
-    Placement(transformation(extent={{-120,-10},{-100,10}})),
-    Placement(transformation(extent={{100,-10},{120,10}})),
-    Diagram(coordinateSystem(preserveAspectRatio=true, extent={{-100,-100},{100,
-            100}}), graphics),
-    Documentation);
 end pst1;

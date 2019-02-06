@@ -12,14 +12,12 @@ equation
   I = Complex(p.ir, p.ii);
   V = Complex(p.vr, p.vi);
   I = Complex(0, B)*V;
-  S = Complex(p.vr, p.vi)*Complex(p.ir, -p.ii) annotation (Diagram(
-        coordinateSystem(preserveAspectRatio=true, extent={{-100,-100},{100,100}}),
-        graphics), Icon(coordinateSystem(preserveAspectRatio=true, extent={{-100,
-            -100},{100,100}}), graphics={Rectangle(extent={{-100,100},{100,-100}},
+  S = Complex(p.vr, p.vi)*Complex(p.ir, -p.ii);
+   annotation (
+     Icon(graphics={Rectangle(extent={{-100,100},{100,-100}},
           lineColor={0,0,255}),Text(
           extent={{-60,60},{60,-60}},
           lineColor={0,0,255},
           textStyle={TextStyle.Bold},
           textString="jB")}));
-  annotation (Documentation);
 end PwShuntB;

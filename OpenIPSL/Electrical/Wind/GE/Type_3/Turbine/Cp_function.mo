@@ -56,7 +56,7 @@ equation
   connect(multi_Powers1.y[1], matrixGain1.u[1]) annotation (Line(
       visible=true,
       origin={-45.5,50.0},
-      points={{-7.5,-0.8},{0,-0.8},{0,-1.6},{7.5,-1.6}},
+      points={{-7.5,-0.8},{0,-0.8},{0,1.33227e-15},{7.5,1.33227e-15}},
       color={0,0,127}));
   connect(multi_Powers1.y[2], matrixGain1.u[2]);
   connect(multi_Powers1.y[3], matrixGain1.u[3]);
@@ -66,31 +66,17 @@ equation
      + matrixGain1.y[3]*multi_Powers2.y[3] + matrixGain1.y[4]*multi_Powers2.y[4]
      + matrixGain1.y[5]*multi_Powers2.y[5];
   annotation (
-    Icon(coordinateSystem(
-        extent={{-100.0,-100.0},{100.0,100.0}},
-        preserveAspectRatio=true,
-        initialScale=0.1,
-        grid={10,10}), graphics={Text(
+    Icon(graphics={Text(
           visible=true,
-          origin={0.0,-1.2231},
+          origin={0,0},
           fillPattern=FillPattern.Solid,
-          extent={{-36.5009,-18.7769},{36.5009,18.7769}},
-          textString="CP",
-          fontName="Arial")}),
+          extent={{-40,-20},{40,20}},
+          textString="CP")}),
     Documentation(info="<html>
 <p>
 Block has two continuous Real input vectors u1 and u2 and one
 continuous Real output vector y.
 All vectors have the same number of elements.
 </p>
-</html>"),
-    Diagram(coordinateSystem(
-        preserveAspectRatio=true,
-        extent={{-100,-100},{100,100}},
-        grid={2,2}), graphics),
-    Diagram(coordinateSystem(
-        extent={{-148.5,-105.0},{148.5,105.0}},
-        preserveAspectRatio=true,
-        initialScale=0.1,
-        grid={5,5})));
+</html>"));
 end Cp_function;
