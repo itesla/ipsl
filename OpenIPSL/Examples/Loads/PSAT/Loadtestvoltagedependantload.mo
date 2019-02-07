@@ -48,8 +48,8 @@ model Loadtestvoltagedependantload
         origin={-107.7833,40.985},
         extent={{-5.0,-5.0},{5.0,5.0}},
         rotation=0)));
-  Modelica.Blocks.Sources.Step step2(height=-0.0005, startTime=2.1) annotation
-    (Placement(visible=true, transformation(
+  Modelica.Blocks.Sources.Step step2(height=-0.0005, startTime=2.1) annotation (
+     Placement(visible=true, transformation(
         origin={-107.7833,25.985},
         extent={{-5.0,-5.0},{5.0,5.0}},
         rotation=0)));
@@ -89,8 +89,8 @@ model Loadtestvoltagedependantload
         origin={-107.7833,-60.5198},
         extent={{-4.4802,-4.4802},{4.4802,4.4802}},
         rotation=0)));
-  Modelica.Blocks.Sources.Step step3(height=-0.0005, startTime=7.1) annotation
-    (Placement(visible=true, transformation(
+  Modelica.Blocks.Sources.Step step3(height=-0.0005, startTime=7.1) annotation (
+     Placement(visible=true, transformation(
         origin={-107.7833,-45.0},
         extent={{-5.0,-5.0},{5.0,5.0}},
         rotation=0)));
@@ -141,26 +141,23 @@ equation
   connect(pwLine3.n, voltDepend1.p) annotation (Line(
       visible=true,
       origin={107.0,-40.0},
-      points={{-10.3333,5},{4,5},{4,6},{18,6}}));
+      points={{-13,5},{4,5},{4,5},{18,5}}));
   connect(pwLine4.n, pwLine3.n) annotation (Line(
       visible=true,
       origin={92.0,-25.0},
-      points={{4.66667,10},{4.66667,5},{5,5},{5,0},{4.66667,0},{4.66667,-10}}));
+      points={{2,10},{2,5},{5,5},{5,0},{2,0},{2,-10}}));
   connect(pwLine3.p, pwLine4.p) annotation (Line(
       visible=true,
       origin={78.0,-25.0},
-      points={{-4.66667,-10},{-4.66667,-5},{-5,-5},{-5,0},{-4.66667,0},{-4.66667,
-          10}}));
+      points={{-2,-10},{-2,-5},{-5,-5},{-5,0},{-2,0},{-2,10}}));
   connect(pwLine1.n, pwLine3.p) annotation (Line(
       visible=true,
       origin={67.2159,-35.3357},
-      points={{-15.6858,-0.3357},{4.7841,-0.3357},{4.7841,0.3357},{6.11743,
-          0.3357}}));
+      points={{-18.3525,-0.3357},{4.7841,-0.3357},{4.7841,0.3357},{8.7841,0.3357}}));
   connect(pwLine2.n, pwLine4.p) annotation (Line(
       visible=true,
       origin={67.2159,-15.3357},
-      points={{-15.6858,-0.3357},{4.7841,-0.3357},{4.7841,0.3357},{6.11743,
-          0.3357}}));
+      points={{-18.3525,-0.3357},{4.7841,-0.3357},{4.7841,0.3357},{8.7841,0.3357}}));
   connect(order3_Inputs_Outputs1.pm0, add32.u3) annotation (Line(
       visible=true,
       origin={-19.0108,-51.4898},
@@ -176,14 +173,12 @@ equation
   connect(add31.y, order3_Inputs_Outputs1.vf) annotation (Line(
       visible=true,
       origin={-28.1135,-5.371},
-      points={{-5.8865,19.3539},{-2.8865,19.3539},{-2.8865,-9.629},{-3.8826,-9.629},
-          {-3.8826,-10.3803},{21.4248,-10.3803}},
+      points={{-5.8865,19.3539},{-2.8865,19.3539},{-2.8865,-9.629},{-3.8826,-9.629},{-3.8826,-10.3803},{19.4248,-10.3803}},
       color={0,0,127}));
   connect(add32.y, order3_Inputs_Outputs1.pm) annotation (Line(
       visible=true,
       origin={-28.216,-45.5845},
-      points={{-5.784,-11.4176},{-2.784,-11.4176},{-2.784,-9.4155},{-4.0877,-9.4155},
-          {-4.0877,19.8332},{21.5273,19.8332}},
+      points={{-5.784,-11.4176},{-2.784,-11.4176},{-2.784,-9.4155},{-4.0877,-9.4155},{-4.0877,19.8332},{19.5273,19.8332}},
       color={0,0,127}));
   connect(step3.y, add4.u2) annotation (Line(
       visible=true,
@@ -195,21 +190,18 @@ equation
       visible=true,
       origin={-62.2878,-56.6625},
       points={{-9.86321,0.3396},{2.2878,0.3396},{2.2878,-0.3396},{5.2878,-0.3396}},
-
       color={0,0,127}));
 
   connect(step4.y, add4.u1) annotation (Line(
       visible=true,
       origin={-92.0911,-31.2646},
       points={{-10.1922,1.2646},{2.3974,1.2646},{2.3974,-1.26456},{5.39742,-1.26456}},
-
       color={0,0,127}));
 
   connect(add4.y, add32.u1) annotation (Line(
       visible=true,
       origin={-62.2878,-42.6625},
       points={{-9.86321,6.3396},{2.2878,6.3396},{2.2878,-6.3396},{5.2878,-6.3396}},
-
       color={0,0,127}));
 
   connect(add3.u2, sine3.y) annotation (Line(
@@ -246,36 +238,28 @@ equation
       visible=true,
       origin={-92.0911,39.7204},
       points={{-10.1922,1.2646},{2.3974,1.2646},{2.3974,-1.26456},{5.39742,-1.26456}},
-
       color={0,0,127}));
 
   connect(add1.y, add31.u1) annotation (Line(
       visible=true,
       origin={-62.2878,28.3225},
       points={{-9.86321,6.3396},{2.2878,6.3396},{2.2878,-6.3396},{5.2878,-6.3396}},
-
       color={0,0,127}));
 
   connect(add2.y, add31.u2) annotation (Line(
       visible=true,
       origin={-62.2878,14.3225},
       points={{-9.86321,0.3396},{2.2878,0.3396},{2.2878,-0.3396},{5.2878,-0.3396}},
-
       color={0,0,127}));
 
   connect(order3_Inputs_Outputs1.p, pwLine2.p) annotation (Line(
       visible=true,
       origin={25.2254,-18.2865},
-      points={{-10.9141,-2.41516},{1.638,-2.41516},{1.638,2.6151},{2.97133,
-          2.6151}}));
-  connect(pwLine1.n, pwLine2.n) annotation (Line(
-      visible=true,
-      origin={46.8634,-25.6714},
-      points={{4.66667,-10},{4.66667,-5},{5,-5},{5,0},{4.66667,0},{4.66667,10}}));
+      points={{-11.9141,-2.4648},{1.638,-2.4648},{1.638,2.6151},{5.638,2.6151}}));
   connect(pwLine2.p, pwLine1.p) annotation (Line(
       visible=true,
       origin={32.8634,-25.6714},
-      points={{-4.66667,10},{-4.66667,5},{-5,5},{-5,0},{-4.66667,0},{-4.66667,-10}}));
+      points={{-2,10},{-2,5},{-5,5},{-5,0},{-2,0},{-2,-10}}));
   annotation (Diagram(coordinateSystem(
         extent={{-148.5,-105.0},{148.5,105.0}},
         preserveAspectRatio=true,

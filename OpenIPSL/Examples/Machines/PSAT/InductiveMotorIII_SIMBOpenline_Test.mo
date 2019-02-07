@@ -41,8 +41,6 @@ equation
       points={{-60,0},{-40.175,0},{-40.175,20},{-9,20}},
       color={0,0,255},
       smooth=Smooth.None));
-  connect(pwLine1.n, infiniteBus.p)
-    annotation (Line(color={0,0,255}, smooth=Smooth.None));
   connect(pwLine2.p, motorTypeI.p)
     annotation (Line(points={{9,20},{40,20},{40,0},{60,0}}, color={0,0,255}));
   connect(pwLine1.p, motorTypeI.p) annotation (Line(points={{9,-20},{40,-20},{
