@@ -36,12 +36,6 @@ model SCRX "Bus Fed or Solid Fed Static Exciter"
         extent={{-10,-10},{10,10}},
         rotation=90,
         origin={-100,-150})));
-  Modelica.Blocks.Interfaces.RealInput XADIFD annotation (Placement(
-        transformation(
-        extent={{-20,-20},{20,20}},
-        rotation=0,
-        origin={-200,-70}), iconTransformation(extent={{-10,-10},{10,10}},
-          origin={-200,-70})));
 protected
   parameter Real VR0(fixed=false);
 initial equation
@@ -83,8 +77,7 @@ equation
           {-160,0},{-132,0},{-132,-6},{-122,-6}}, color={0,0,127}));
   connect(switch1.y, negCurLogic.Vd) annotation (Line(points={{84.6,24},{120,24},
           {120,5},{147.5,5}}, color={0,0,127}));
-  connect(XADIFD, negCurLogic.XadIfd) annotation (Line(points={{-200,-70},{-32,
-          -70},{140,-70},{140,-5},{147.5,-5}}, color={0,0,127}));
+  connect(XADIFD, negCurLogic.XadIfd) annotation (Line(points={{80,-200},{80,-5},{147.5,-5}}, color={0,0,127}));
   annotation (
     Diagram(coordinateSystem(extent={{-200,-200},{200,160}}, initialScale=0.1)),
     Icon(coordinateSystem(

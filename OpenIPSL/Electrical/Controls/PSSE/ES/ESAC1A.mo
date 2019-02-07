@@ -3,14 +3,6 @@ model ESAC1A
   import OpenIPSL.NonElectrical.Functions.SE;
   import OpenIPSL.Electrical.Controls.PSSE.ES.BaseClasses.invFEX;
   extends OpenIPSL.Electrical.Controls.PSSE.ES.BaseClasses.BaseExciter;
-  Modelica.Blocks.Interfaces.RealInput XADIFD "Field current" annotation (
-      Placement(transformation(
-        extent={{-10,-10},{10,10}},
-        rotation=180,
-        origin={200,-110}), iconTransformation(
-        extent={{-10,-10},{10,10}},
-        rotation=0,
-        origin={-200,-70})));
   parameter Real T_R=0 "Voltage input time constant (s)";
   parameter Real T_B=0 "AVR lead-lag time constant (s)";
   parameter Real T_C=0 "AVR lead-lag time constant (s)";
@@ -120,14 +112,9 @@ equation
   connect(derivative.u, rotatingExciterWithDemagnetization.V_FE) annotation (
       Line(points={{42,0},{82,0},{120,0},{120,33.75},{122.75,33.75}}, color={0,
           0,127}));
-  connect(XADIFD, rotatingExciterWithDemagnetization.XADIFD) annotation (Line(
-        points={{200,-110},{134,-110},{134,28.75}}, color={0,0,127}));
   connect(rotatingExciterWithDemagnetization.EFD,
     rectifierCommutationVoltageDrop.V_EX)
     annotation (Line(points={{145.25,40},{159,40}}, color={0,0,127}));
-  connect(rectifierCommutationVoltageDrop.XADIFD,
-    rotatingExciterWithDemagnetization.XADIFD) annotation (Line(points={{170,29},
-          {170,30},{170,-110},{134,-110},{134,28.75}}, color={0,0,127}));
   connect(rectifierCommutationVoltageDrop.EFD, EFD) annotation (Line(points={{
           181,40},{190,40},{190,0},{210,0}}, color={0,0,127}));
   connect(hV_GATE.p, lV_GATE.n2) annotation (Line(points={{42.5,40},{50,40},{50,
@@ -136,9 +123,10 @@ equation
           -60},{50,-60},{50,37},{56.5,37}}, color={0,0,127}));
   connect(lV_GATE.p, limiter1.u)
     annotation (Line(points={{80.5,40},{92,40}}, color={0,0,127}));
+  connect(XADIFD, rotatingExciterWithDemagnetization.XADIFD) annotation (Line(points={{80,-200},{80,-120},{134,-120},{134,28.75}}, color={0,0,127}));
+  connect(XADIFD, rectifierCommutationVoltageDrop.XADIFD) annotation (Line(points={{80,-200},{80,-120},{170,-120},{170,29}}, color={0,0,127}));
   annotation (
     Diagram(coordinateSystem(extent={{-200,-200},{200,160}}, initialScale=0.1)),
-
     Icon(coordinateSystem(extent={{-200,-200},{200,160}}, initialScale=0.1),
         graphics={Text(
           extent={{-186,-60},{-116,-80}},

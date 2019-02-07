@@ -50,12 +50,6 @@ model EXST1 "IEEE Type AC2A Excitation System"
         extent={{-10,-10},{10,10}},
         rotation=90,
         origin={-100,-150})));
-  Modelica.Blocks.Interfaces.RealInput XADIFD annotation (Placement(
-        transformation(
-        extent={{-20,-20},{20,20}},
-        rotation=0,
-        origin={-200,-70}), iconTransformation(extent={{-10,-10},{10,10}},
-          origin={-200,-70})));
   Modelica.Blocks.Math.Feedback feedback
     annotation (Placement(transformation(extent={{-40,-10},{-20,10}})));
 protected
@@ -104,7 +98,6 @@ equation
           -8},{-30,-60},{71,-60}}, color={0,0,127}));
   annotation (
     Diagram(coordinateSystem(extent={{-200,-200},{200,160}}, initialScale=0.1)),
-
     Icon(coordinateSystem(
         extent={{-200,-200},{200,160}},
         preserveAspectRatio=true,

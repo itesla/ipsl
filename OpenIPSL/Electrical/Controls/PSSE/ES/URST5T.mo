@@ -11,12 +11,6 @@ model URST5T "IEEE Proposed Type ST5B Excitation System"
   parameter Real V_RMIN=-10;
   parameter Real T_1=0.58;
   parameter Real K_C=0.3;
-  Modelica.Blocks.Interfaces.RealInput XADIFD annotation (Placement(
-        transformation(
-        extent={{20,-20},{-20,20}},
-        rotation=0,
-        origin={200,-60}), iconTransformation(extent={{-10,-10},{10,10}},
-          origin={-200,-70})));
   Modelica.Blocks.Math.Add VERR1 annotation (Placement(transformation(
         extent={{-10,10},{10,-10}},
         rotation=0,
@@ -77,8 +71,8 @@ model URST5T "IEEE Proposed Type ST5B Excitation System"
   Modelica.Blocks.Interfaces.RealInput VT annotation (Placement(transformation(
         extent={{20,-20},{-20,20}},
         rotation=0,
-        origin={200,70}), iconTransformation(extent={{-10,-10},{10,10}}, origin
-          ={-200,50})));
+        origin={200,70}), iconTransformation(extent={{-10,-10},{10,10}}, origin=
+           {-200,50})));
 protected
   parameter Real VR0(fixed=false);
 initial equation
@@ -113,8 +107,6 @@ equation
     annotation (Line(points={{121,0},{124.5,0},{128,0}}, color={0,0,127}));
   connect(VERR2.y, EFD)
     annotation (Line(points={{189,0},{210,0}}, color={0,0,127}));
-  connect(K_c.u, XADIFD) annotation (Line(points={{160,-42},{160,-42},{160,-60},
-          {200,-60}}, color={0,0,127}));
   connect(K_c.y, VERR2.u1) annotation (Line(points={{160,-19},{160,-19},{160,-6},
           {166,-6}}, color={0,0,127}));
   connect(simpleLagLimVar.y, VERR2.u2) annotation (Line(points={{151,0},{160,0},
@@ -127,9 +119,9 @@ equation
           124,50},{124,-20},{132,-20},{132,-14}}, color={0,0,127}));
   connect(Vmax.y, simpleLagLimVar.outMax) annotation (Line(points={{139,90},{
           128,90},{128,20},{148,20},{148,14}}, color={0,0,127}));
+  connect(K_c.u, XADIFD) annotation (Line(points={{160,-42},{160,-140},{80,-140},{80,-200}}, color={0,0,127}));
   annotation (
     Diagram(coordinateSystem(extent={{-200,-200},{200,160}}, initialScale=0.1)),
-
     Icon(coordinateSystem(
         extent={{-200,-200},{200,160}},
         preserveAspectRatio=true,

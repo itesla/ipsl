@@ -62,6 +62,7 @@ equation
           {-50,-50},{-69.35,-50}}, color={0,0,127}));
   connect(gENROE.p, GEN1.p)
     annotation (Line(points={{-64,0},{-64,0},{-40,0}}, color={0,0,255}));
+  connect(gENROE.XADIFD, eSDC2A.XADIFD) annotation (Line(points={{-62.4,-18},{-54,-18},{-54,-60},{-92.45,-60},{-92.45,-49.8}}, color={0,0,127}));
   annotation (
     Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{
             100,100}})),
