@@ -14,3 +14,7 @@ convertClass({"OpenIPSL.Electrical.Branches.PSAT.TWTransformerWithFixedTapRatio"
               "OpenIPSL.Electrical.Branches.PSAT.TwoWindingTransformer");
 convertClass("OpenIPSL.Electrical.Branches.PSAT.PhaseShiftingTransformer_1",
              "OpenIPSL.Electrical.Branches.PSAT.PhaseShiftingTransformer");
+
+// PSAT infinitbus2 removed
+convertClass("OpenIPSL.Electrical.Buses.InfiniteBus2",
+             "OpenIPSL.Electrical.Buses.InfiniteBus");
