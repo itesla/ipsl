@@ -1,7 +1,7 @@
 within OpenIPSL.Electrical.Branches.PSAT.ThreeWindingTransformer;
 model ThreeWindingTransformer
   OpenIPSL.Interfaces.PwPin b1
-    annotation (Placement(transformation(extent={{-120,-10},{-100,10}})));
+    annotation (Placement(transformation(extent={{-120,-10},{-100,10}}), iconTransformation(extent={{-120,-10},{-100,10}})));
   OpenIPSL.Interfaces.PwPin b2
     annotation (Placement(transformation(extent={{100,20},{120,40}})));
   OpenIPSL.Interfaces.PwPin b3
@@ -54,7 +54,7 @@ model ThreeWindingTransformer
     X12=X12,
     X13=X13,
     X23=X23,
-    m=m) annotation (Placement(transformation(extent={{-66,-10},{-46,10}})));
+    m=m) annotation (Placement(transformation(extent={{-60,-10},{-40,10}})));
   Branch2 branch2_1(
     SystemBase=Sb,
     Sn=Sn,
@@ -69,7 +69,7 @@ model ThreeWindingTransformer
     X12=X12,
     X13=X13,
     X23=X23,
-    m=m) annotation (Placement(transformation(extent={{18,20},{38,40}})));
+    m=m) annotation (Placement(transformation(extent={{20,20},{40,40}})));
   Branch3 branch3_1(
     SystemBase=Sb,
     Sn=Sn,
@@ -96,11 +96,11 @@ equation
   anglev2 = atan2(b2.vi, b2.vr);
   anglev3 = atan2(b3.vi, b3.vr);
   connect(branch1_1.p, b1) annotation (Line(
-      points={{-67,0.4},{-110,0.4},{-110,0}},
+      points={{-61,0},{-110,0}},
       color={0,0,255},
       smooth=Smooth.None));
   connect(branch2_1.n2, b2) annotation (Line(
-      points={{39,30},{110,30}},
+      points={{41,30},{110,30}},
       color={0,0,255},
       smooth=Smooth.None));
   connect(branch3_1.p3, b3) annotation (Line(
@@ -108,11 +108,11 @@ equation
       color={0,0,255},
       smooth=Smooth.None));
   connect(branch2_1.p2, branch3_1.n3) annotation (Line(
-      points={{17,30},{10,30},{10,-30},{19,-30}},
+      points={{19,30},{10,30},{10,-30},{19,-30}},
       color={0,0,255},
       smooth=Smooth.None));
   connect(branch1_1.n1, branch3_1.n3) annotation (Line(
-      points={{-45,0},{10,0},{10,-30},{19,-30}},
+      points={{-39,0},{10,0},{10,-30},{19,-30}},
       color={0,0,255},
       smooth=Smooth.None));
   annotation (
@@ -140,9 +140,13 @@ equation
           points={{-100,0},{-52,0}},
           color={0,0,255},
           smooth=Smooth.None),Text(
-          extent={{-54,-62},{54,-78}},
+          extent={{-60,-50},{60,-92}},
           lineColor={0,128,0},
-          textString="%TWT%")}),
+          textString="TWT"),
+        Text(
+          extent={{-100,140},{100,80}},
+          lineColor={0,0,255},
+          textString="%name")}),
     Documentation(info="<html>
 <table cellspacing=\"1\" cellpadding=\"1\" border=\"1\"><tr>
 <td><p>Reference</p></td>
