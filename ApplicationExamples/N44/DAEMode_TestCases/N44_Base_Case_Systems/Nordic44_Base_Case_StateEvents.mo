@@ -1,4 +1,4 @@
-within N44.DAEMode_TestCases.Base_Case_Systems;
+within N44.DAEMode_TestCases.N44_Base_Case_Systems;
 model Nordic44_Base_Case_StateEvents
     "Modified version of the original Nordic 44 model, base class for Bus 5603 
     bus fault experiment."
@@ -2011,7 +2011,7 @@ model Nordic44_Base_Case_StateEvents
           origin={212,14})));
     inner N44.Base_Case.Data.PF_results PF_results
       annotation (Placement(transformation(extent={{-254,192},{-234,212}})));
-    N44.DAEMode_TestCases.Base_Case_Systems.Generators.GenEventTest genEventTest(
+    N44.DAEMode_TestCases.N44_Base_Case_Systems.Generators.GenEventTest genEventTest(
       V_b=300,
       P_0=1500,
       Q_0=600,

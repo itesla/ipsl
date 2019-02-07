@@ -1,4 +1,4 @@
-within N44.DAEMode_TestCases.Base_Case_Systems.Generators;
+within N44.DAEMode_TestCases.N44_Base_Case_Systems.Generators;
 model GenEventTest "Configuration of synchronous generator with regulators: GENSAL, HYGOV, SCRX, STAB2A;
   Nordic 44 model: Buses 3115, 5300, 6100, 6700, 7100"
   extends OpenIPSL.Electrical.Essentials.pfComponent;
