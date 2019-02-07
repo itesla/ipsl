@@ -54,10 +54,10 @@ equation
     P = Pd;
     Q = Qd;
   end if;
-  if time >= t_start_1 and time <= t_end_1 then
+  if time >= t_start_1 and time < t_end_1 then
     Pd = (P_0 + dP1)/S_b;
     Qd = (Q_0 + dQ1)/S_b;
-  elseif time >= t_start_2 and time <= t_end_2 then
+  elseif time >= t_start_2 and time < t_end_2 then
     Pd = (P_0 + dP2)/S_b;
     Qd = (Q_0 + dQ2)/S_b;
   else
