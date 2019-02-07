@@ -1,4 +1,4 @@
-within N44.DAEMode_TestCases.Original_Systems;
+within N44.DAEMode_TestCases.N44_Original_Systems;
 model Nordic44_Original_Case_Line_Opening
     "Line opening test case, no state events triggered."
     extends N44.Original.Nordic44_Original_Case(line_5103_5304_1(t1=2));
