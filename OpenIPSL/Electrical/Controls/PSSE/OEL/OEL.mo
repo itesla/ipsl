@@ -1,21 +1,23 @@
 within OpenIPSL.Electrical.Controls.PSSE.OEL;
 model OEL
   Modelica.Blocks.Interfaces.RealInput IFD "Field current" annotation (
-      Placement(transformation(extent={{-104,24},{-94,36}}), iconTransformation(
+      Placement(transformation(extent={{-140,-20},{-100,20}}),
+                                                             iconTransformation(
         extent={{5,-6},{-5,6}},
         rotation=180,
         origin={-105,0})));
   Modelica.Blocks.Sources.Constant IFDSetpoint(k=IFDdes)
-    annotation (Placement(transformation(extent={{-92,62},{-76,78}})));
+    annotation (Placement(transformation(extent={{-90,30},{-70,50}})));
   Modelica.Blocks.Continuous.LimIntegrator imLimitedIntegrator(
     outMin=Vmin,
     outMax=Vmax,
     k=KMX,
     y_start=0,
     initType=Modelica.Blocks.Types.Init.InitialOutput)
-    annotation (Placement(transformation(extent={{0,58},{16,74}})));
+    annotation (Placement(transformation(extent={{10,50},{30,70}})));
   Modelica.Blocks.Interfaces.RealOutput VOEL "OEL output" annotation (Placement(
-        transformation(extent={{72,34},{82,46}}), iconTransformation(extent={{
+        transformation(extent={{100,-10},{120,10}}),
+                                                  iconTransformation(extent={{
             100,-6},{110,6}})));
   parameter Real IFD1=1.1 "Low OEL limit (pu)";
   parameter Real IFD2=1.2 "Medium OEL limit (pu)";
@@ -27,68 +29,67 @@ model OEL
   parameter Real Vmax=0 "Max. OEL output (pu)";
   parameter Real Vmin=-0.05 "Min. OEL output (pu)";
   parameter Real KMX=1 "Control constant";
-  IF_comparisor compasitor(
+  IF_comparisor comparisor(
     HighCurrentLimit=IFD3,
     MediumCurrentLimit=IFD2,
     LowCurrentLimit=IFD1)
-    annotation (Placement(transformation(extent={{-46,16},{-14,46}})));
+    annotation (Placement(transformation(extent={{-30,-10},{-10,10}})));
   Modelica.Blocks.Continuous.LimIntegrator imLimitedIntegrator1(
     outMin=Vmin,
     outMax=Vmax,
     k=KMX,
     y_start=6,
     initType=Modelica.Blocks.Types.Init.InitialOutput)
-    annotation (Placement(transformation(extent={{0,34},{16,50}})));
+    annotation (Placement(transformation(extent={{10,10},{30,30}})));
   Modelica.Blocks.Continuous.LimIntegrator imLimitedIntegrator2(
     outMin=Vmin,
     outMax=Vmax,
     k=KMX,
     y_start=6,
     initType=Modelica.Blocks.Types.Init.InitialOutput)
-    annotation (Placement(transformation(extent={{0,10},{16,26}})));
+    annotation (Placement(transformation(extent={{10,-30},{30,-10}})));
   Modelica.Blocks.Continuous.LimIntegrator imLimitedIntegrator3(
     outMin=Vmin,
     outMax=Vmax,
     k=KMX,
     y_start=7.5,
     initType=Modelica.Blocks.Types.Init.InitialOutput)
-    annotation (Placement(transformation(extent={{0,-14},{16,2}})));
+    annotation (Placement(transformation(extent={{10,-70},{30,-50}})));
   Modelica.Blocks.Math.Add add(k1=-1)
-    annotation (Placement(transformation(extent={{-68,26},{-52,42}})));
+    annotation (Placement(transformation(extent={{-60,-10},{-40,10}})));
   Modelica.Blocks.Math.MultiSum multiSum(nu=4)
-    annotation (Placement(transformation(extent={{42,34},{54,46}})));
+    annotation (Placement(transformation(extent={{60,-10},{80,10}})));
 equation
-  connect(compasitor.n1, imLimitedIntegrator.u) annotation (Line(points={{-20.72,
-          39.1},{-14,39.1},{-14,66},{-1.6,66}}, color={0,0,127}));
-  connect(compasitor.n2, imLimitedIntegrator1.u) annotation (Line(points={{-20.72,
-          34},{-10,34},{-10,42},{-1.6,42}}, color={0,0,127}));
-  connect(compasitor.n3, imLimitedIntegrator2.u) annotation (Line(points={{-20.72,
-          28.3},{-10,28.3},{-10,18},{-1.6,18}}, color={0,0,127}));
-  connect(compasitor.n4, imLimitedIntegrator3.u) annotation (Line(points={{-20.72,
-          23.5},{-14,23.5},{-14,-6},{-1.6,-6}}, color={0,0,127}));
-  connect(add.y, compasitor.p) annotation (Line(points={{-51.2,34},{-46,34},{-46,
-          33.1},{-41.84,33.1}}, color={0,0,127}));
-  connect(add.u2, IFD) annotation (Line(points={{-69.6,29.2},{-82.8,29.2},{-82.8,
-          30},{-99,30}}, color={0,0,127}));
-  connect(IFDSetpoint.y, add.u1) annotation (Line(points={{-75.2,70},{-74,70},{
-          -74,38.8},{-69.6,38.8}}, color={0,0,127}));
+  connect(comparisor.n1, imLimitedIntegrator.u) annotation (Line(points={{-9,6},{-3.84,6},{-3.84,60},{8,60}},
+                                                color={0,0,127}));
+  connect(comparisor.n2, imLimitedIntegrator1.u) annotation (Line(points={{-9,2},{0.16,2},{0.16,20},{8,20}},
+                                            color={0,0,127}));
+  connect(comparisor.n3, imLimitedIntegrator2.u) annotation (Line(points={{-9,-2},{0.16,-2},{0.16,-20},{8,-20}},
+                                                color={0,0,127}));
+  connect(comparisor.n4, imLimitedIntegrator3.u) annotation (Line(points={{-9,-6},{-3.84,-6},{-3.84,-60},{8,-60}},
+                                                color={0,0,127}));
+  connect(add.y,comparisor. p) annotation (Line(points={{-39,0},{-32,0}},
+                                color={0,0,127}));
+  connect(add.u2, IFD) annotation (Line(points={{-62,-6},{-80.5,-6},{-80.5,0},{-120,0}},
+                         color={0,0,127}));
+  connect(IFDSetpoint.y, add.u1) annotation (Line(points={{-69,40},{-65.6,40},{-65.6,6},{-62,6}},
+                                   color={0,0,127}));
   connect(multiSum.y, VOEL)
-    annotation (Line(points={{55.02,40},{66,40},{77,40}}, color={0,0,127}));
-  connect(imLimitedIntegrator.y, multiSum.u[1]) annotation (Line(points={{16.8,
-          66},{38,66},{38,43.15},{42,43.15}}, color={0,0,127}));
-  connect(imLimitedIntegrator1.y, multiSum.u[2]) annotation (Line(points={{16.8,
-          42},{30,42},{30,41.05},{42,41.05}}, color={0,0,127}));
-  connect(imLimitedIntegrator2.y, multiSum.u[3]) annotation (Line(points={{16.8,
-          18},{34,18},{34,38.95},{42,38.95}}, color={0,0,127}));
-  connect(imLimitedIntegrator3.y, multiSum.u[4]) annotation (Line(points={{16.8,
-          -6},{38,-6},{38,36.85},{42,36.85}}, color={0,0,127}));
+    annotation (Line(points={{81.7,0},{110,0}},           color={0,0,127}));
+  connect(imLimitedIntegrator.y, multiSum.u[1]) annotation (Line(points={{31,60},{48.6,60},{48.6,5.25},{60,5.25}},
+                                              color={0,0,127}));
+  connect(imLimitedIntegrator1.y, multiSum.u[2]) annotation (Line(points={{31,20},{40.6,20},{40.6,1.75},{60,1.75}},
+                                              color={0,0,127}));
+  connect(imLimitedIntegrator2.y, multiSum.u[3]) annotation (Line(points={{31,-20},{44.6,-20},{44.6,-1.75},{60,-1.75}},
+                                              color={0,0,127}));
+  connect(imLimitedIntegrator3.y, multiSum.u[4]) annotation (Line(points={{31,-60},{48.6,-60},{48.6,-5.25},{60,-5.25}},
+                                              color={0,0,127}));
   annotation (
-    Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-80},{100,
-            80}})),
-    Icon(coordinateSystem(preserveAspectRatio=false, extent={{-100,-80},{100,80}}),
-        graphics={Rectangle(extent={{-100,80},{100,-80}}, lineColor={0,0,255}),
+    Icon(
+        graphics={Rectangle(extent={{-100,100},{100,-100}},
+                                                          lineColor={0,0,255}),
           Text(
-          extent={{-36,12},{38,-16}},
+          extent={{-40,-40},{40,-80}},
           lineColor={0,0,255},
           textString="OEL"),Text(
           extent={{-96,4},{-72,-6}},
@@ -96,7 +97,11 @@ equation
           textString="IFD/EFD"),Text(
           extent={{82,4},{100,-4}},
           lineColor={0,0,255},
-          textString="VOEL")}),
+          textString="VOEL"),
+        Text(
+          extent={{-100,100},{100,40}},
+          lineColor={0,0,255},
+          textString="%name")}),
     Documentation(info="<html>
 <table cellspacing=\"1\" cellpadding=\"1\" border=\"1\">
 <tr>

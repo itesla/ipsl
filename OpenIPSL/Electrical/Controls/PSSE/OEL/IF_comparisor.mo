@@ -1,11 +1,12 @@
 within OpenIPSL.Electrical.Controls.PSSE.OEL;
 model IF_comparisor
   Modelica.Blocks.Interfaces.RealInput p
-    annotation (Placement(transformation(extent={{-84,4},{-64,24}})));
+    annotation (Placement(transformation(extent={{-140,-20},{-100,20}})));
   Modelica.Blocks.Interfaces.RealOutput n1
-    annotation (Placement(transformation(extent={{48,44},{68,64}})));
+    annotation (Placement(transformation(extent={{100,50},{120,70}})));
   Modelica.Blocks.Interfaces.RealOutput n2 annotation (Placement(transformation(
-          extent={{48,10},{68,30}}), iconTransformation(extent={{48,10},{68,30}})));
+          extent={{100,10},{120,30}}),
+                                     iconTransformation(extent={{100,10},{120,30}})));
   parameter Real HighCurrentLimit=1.5;
   parameter Real MediumCurrentLimit=1.2;
   parameter Real LowCurrentLimit=1.1;
@@ -13,9 +14,9 @@ model IF_comparisor
   parameter Real ML=1 - MediumCurrentLimit;
   parameter Real HL=1 - LowCurrentLimit;
   Modelica.Blocks.Interfaces.RealOutput n3
-    annotation (Placement(transformation(extent={{48,-28},{68,-8}})));
+    annotation (Placement(transformation(extent={{100,-30},{120,-10}})));
   Modelica.Blocks.Interfaces.RealOutput n4
-    annotation (Placement(transformation(extent={{48,-60},{68,-40}})));
+    annotation (Placement(transformation(extent={{100,-70},{120,-50}})));
 equation
   if p >= HL then
     n1 = 100;
@@ -38,43 +39,44 @@ equation
     n3 = 0;
     n4 = -0.5;
   end if;
-  connect(n1, n1) annotation (Line(
-      points={{58,54},{58,54}},
-      color={0,0,127},
-      smooth=Smooth.None));
+  connect(n1, n1) annotation (Line(points={{110,60},{110,60}}, color={0,0,127}));
   annotation (
-    Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{
-            100,100}}), graphics),
-    Icon(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,
-            100}}), graphics={Rectangle(extent={{-64,64},{48,-62}}, lineColor={
+     Icon(graphics={Rectangle(extent={{-100,100},{100,-100}},
+                                                          lineColor={
           0,0,255}),Text(
-          extent={{12,-10},{56,-44}},
+          extent={{40,-14},{80,-54}},
           lineColor={0,0,255},
           textString=">"),Text(
-          extent={{10,52},{54,18}},
+          extent={{40,66},{80,26}},
           lineColor={0,0,255},
           textString="<"),Line(
-          points={{-60,14},{-34,14}},
+          points={{-100,0},{-40,0}},
           color={0,0,255},
           smooth=Smooth.None),Line(
-          points={{-14,38},{20,38}},
+          points={{0,60},{50,60}},
           color={0,0,255},
           smooth=Smooth.None),Line(
-          points={{-12,-20},{22,-20}},
+          points={{0,-20},{50,-20}},
           color={0,0,255},
           smooth=Smooth.None),Line(
-          points={{-34,14},{-18,-8}},
+          points={{-40,0},{-16,-10}},
           color={0,0,255},
-          smooth=Smooth.None),Ellipse(extent={{-18,-8},{-14,-12}}, lineColor={0,
-          0,255}),Ellipse(extent={{-18,40},{-14,36}}, lineColor={0,0,255}),
-          Ellipse(extent={{-16,-18},{-12,-22}}, lineColor={0,0,255}),Line(
-          points={{-12,16},{22,16}},
+          smooth=Smooth.None),Ellipse(extent={{-16,-8},{-10,-14}}, lineColor={0,
+          0,255},
+          startAngle=0,
+          endAngle=360),
+                  Ellipse(extent={{-4,62},{0,58}},    lineColor={0,0,255}),
+          Ellipse(extent={{-4,-18},{0,-22}},    lineColor={0,0,255}),Line(
+          points={{0,20},{50,20}},
           color={0,0,255},
-          smooth=Smooth.None),Ellipse(extent={{-16,18},{-12,14}}, lineColor={0,
+          smooth=Smooth.None),Ellipse(extent={{-4,22},{0,18}},    lineColor={0,
           0,255}),Line(
-          points={{-12,-46},{22,-46}},
+          points={{0,-60},{48,-60}},
           color={0,0,255},
-          smooth=Smooth.None),Ellipse(extent={{-16,-44},{-12,-48}}, lineColor={
-          0,0,255})}),
-    Documentation);
+          smooth=Smooth.None),Ellipse(extent={{-4,-58},{0,-62}},    lineColor={
+          0,0,255}),
+        Text(
+          extent={{-120,140},{120,100}},
+          lineColor={0,0,255},
+          textString="%name")}));
 end IF_comparisor;
