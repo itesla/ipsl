@@ -39,10 +39,9 @@ equation
     n3 = 0;
     n4 = -0.5;
   end if;
-  connect(n1, n1) annotation (Line(points={{110,60},{110,60}}, color={0,0,127}));
   annotation (
      Icon(graphics={Rectangle(extent={{-100,100},{100,-100}},
-                                                          lineColor={
+          lineColor={
           0,0,255}),Text(
           extent={{40,-14},{80,-54}},
           lineColor={0,0,255},
