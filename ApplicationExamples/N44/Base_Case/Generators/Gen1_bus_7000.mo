@@ -82,8 +82,8 @@ equation
           -26.45},{91,-62},{-67,-62},{-67,-47.7222},{-63,-47.7222}}, color={0,0,
           127}));
   connect(gENROU.PMECH0, iEESGO.PMECH0) annotation (Line(points={{86.4,-11.05},
-          {93,-11.05},{93,-67},{-92,-67},{-92,18.2857},{-46.95,18.2857}}, color
-        ={0,0,127}));
+          {93,-11.05},{93,-67},{-92,-67},{-92,18.2857},{-46.95,18.2857}}, color=
+         {0,0,127}));
   connect(gENROU.PELEC, sTAB2A.PELEC) annotation (Line(points={{86.4,-18.75},{
           96,-18.75},{96,-75},{-96,-75},{-96,80},{-22.2091,80}}, color={0,0,127}));
   connect(sTAB2A.VOTHSG, iEEET2.VOTHSG) annotation (Line(points={{37.6364,80},{
