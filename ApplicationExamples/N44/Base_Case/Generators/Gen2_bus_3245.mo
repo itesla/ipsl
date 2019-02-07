@@ -80,8 +80,8 @@ equation
           7.6125,-52},{-16.5,-52}}, color={0,0,127}));
   annotation (
     Icon(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,
-            100}}), graphics={Ellipse(extent={{-100,-100},{101,100}}, lineColor
-          ={0,0,255}),Line(
+            100}}), graphics={Ellipse(extent={{-100,-100},{101,100}}, lineColor=
+           {0,0,255}),Line(
           points={{-76,-26},{-28,52},{27,-52},{74,23}},
           color={0,0,255},
           smooth=Smooth.Bezier)}),

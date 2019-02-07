@@ -2097,7 +2097,6 @@ equation
       smooth=Smooth.None));
   connect(line_7000_7010.n, bus_7000.n[16]) annotation (Line(
       points={{-275,-5.5},{-275,-26},{-274,-26},{-274,-52},{-272,-52},{-272,-51.75}},
-
       color={0,0,255},
       smooth=Smooth.None));
 
@@ -2112,7 +2111,6 @@ equation
 
   connect(line_7000_7100_1.n, bus_7000.p[3]) annotation (Line(
       points={{-260,-51.5},{-260,-54},{-262,-54},{-262,-58},{-270,-58},{-270,-66.6}},
-
       color={0,0,255},
       smooth=Smooth.None));
 
@@ -2290,7 +2288,6 @@ equation
       smooth=Smooth.None));
   connect(line_3200_8500.p, bus_8500.p[1]) annotation (Line(
       points={{-189,125.5},{-189,126},{-194,126},{-194,133.975},{-196,133.975}},
-
       color={0,0,255},
       smooth=Smooth.None));
 
@@ -2451,7 +2448,6 @@ equation
       smooth=Smooth.None));
   connect(line_3244_6500.p, bus_6500.n[1]) annotation (Line(
       points={{-106.5,-111},{-46,-111},{-46,-119},{-24,-119},{-24,-111},{-20,-111}},
-
       color={0,0,255},
       smooth=Smooth.None));
 
@@ -2659,7 +2655,6 @@ equation
       smooth=Smooth.None));
   connect(line_5500_5603.p, bus_5603.n[1]) annotation (Line(
       points={{118.5,-89},{168,-89},{168,-100},{196,-100},{196,-79},{220,-79}},
-
       color={0,0,255},
       smooth=Smooth.None));
 
@@ -2962,7 +2957,6 @@ equation
       smooth=Smooth.None));
   connect(line_3115_3249.p, bus_3249.n[6]) annotation (Line(
       points={{-202.5,11},{-194,11},{-194,-4},{-182,-4},{-182,-13.0571},{-176,-13.0571}},
-
       color={0,0,255},
       smooth=Smooth.None));
 
@@ -2978,7 +2972,6 @@ equation
       smooth=Smooth.None));
   connect(line_3000_3245_1.n, bus_3245.n[2]) annotation (Line(
       points={{-229.5,56},{-218,56},{-218,-34},{-214,-34},{-214,-72},{-208,-72}},
-
       color={0,0,255},
       smooth=Smooth.None));
 

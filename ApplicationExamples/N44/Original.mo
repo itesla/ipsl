@@ -1533,37 +1533,31 @@ package Original "Library of original Nordic 44 model"
   equation
     connect(G9_bus7000.pwPin, bus_7000.n[1]) annotation (Line(
         points={{-285.7,-143},{-274.075,-143},{-274.075,-92.25},{-272,-92.25}},
-
         color={0,0,255},
         smooth=Smooth.None));
 
     connect(G8_bus7000.pwPin, bus_7000.n[2]) annotation (Line(
         points={{-285.7,-135},{-275.075,-135},{-275.075,-89.55},{-272,-89.55}},
-
         color={0,0,255},
         smooth=Smooth.None));
 
     connect(G7_bus7000.pwPin, bus_7000.n[3]) annotation (Line(
         points={{-285.7,-127},{-276.075,-127},{-276.075,-86.85},{-272,-86.85}},
-
         color={0,0,255},
         smooth=Smooth.None));
 
     connect(G6_bus7000.pwPin, bus_7000.n[4]) annotation (Line(
         points={{-285.7,-119},{-277.075,-119},{-277.075,-84.15},{-272,-84.15}},
-
         color={0,0,255},
         smooth=Smooth.None));
 
     connect(G5_bus7000.pwPin, bus_7000.n[5]) annotation (Line(
         points={{-285.7,-111},{-278.075,-111},{-278.075,-81.45},{-272,-81.45}},
-
         color={0,0,255},
         smooth=Smooth.None));
 
     connect(G4_bus7000.pwPin, bus_7000.n[6]) annotation (Line(
         points={{-285.7,-103},{-279.075,-103},{-279.075,-78.75},{-272,-78.75}},
-
         color={0,0,255},
         smooth=Smooth.None));
 
@@ -1770,13 +1764,11 @@ package Original "Library of original Nordic 44 model"
         smooth=Smooth.None));
     connect(line_3300_8500_2.n, bus_3300.p[4]) annotation (Line(
         points={{-207,113.167},{-207,108},{-211,108},{-211,100.4},{-218,100.4}},
-
         color={0,0,255},
         smooth=Smooth.None));
 
     connect(line_3300_8500_1.n, bus_3300.p[5]) annotation (Line(
         points={{-211,113.167},{-211,110},{-214,110},{-214,102.8},{-218,102.8}},
-
         color={0,0,255},
         smooth=Smooth.None));
 
@@ -1806,13 +1798,11 @@ package Original "Library of original Nordic 44 model"
         smooth=Smooth.None));
     connect(Load2_bus8500.p, bus_8500.n[6]) annotation (Line(
         points={{-210.325,156.25},{-210,156.25},{-210,149.725},{-198,149.725}},
-
         color={0,0,255},
         smooth=Smooth.None));
 
     connect(Load1_bus8500.p, bus_8500.n[7]) annotation (Line(
         points={{-210.325,162.25},{-206,162.25},{-206,152.875},{-198,152.875}},
-
         color={0,0,255},
         smooth=Smooth.None));
 
@@ -1872,7 +1862,6 @@ package Original "Library of original Nordic 44 model"
         smooth=Smooth.None));
     connect(line_3200_8500.n, bus_3200.n[5]) annotation (Line(
         points={{-189,115.167},{-189,106},{-180,106},{-180,102.8},{-178,102.8}},
-
         color={0,0,255},
         smooth=Smooth.None));
 
@@ -1898,13 +1887,11 @@ package Original "Library of original Nordic 44 model"
         smooth=Smooth.None));
     connect(Load4_bus3359.p, bus_3359.n[3]) annotation (Line(
         points={{-136.325,74.25},{-133.9,74.25},{-133.9,75.2667},{-124,75.2667}},
-
         color={0,0,255},
         smooth=Smooth.None));
 
     connect(Load3_bus3359.p, bus_3359.n[4]) annotation (Line(
         points={{-134.325,78.25},{-129.9,78.25},{-129.9,79.1333},{-124,79.1333}},
-
         color={0,0,255},
         smooth=Smooth.None));
 
@@ -1914,7 +1901,6 @@ package Original "Library of original Nordic 44 model"
         smooth=Smooth.None));
     connect(Load1_bus3359.p, bus_3359.n[6]) annotation (Line(
         points={{-130.325,86.75},{-129.9,86.75},{-129.9,86.8667},{-124,86.8667}},
-
         color={0,0,255},
         smooth=Smooth.None));
 
@@ -1943,7 +1929,6 @@ package Original "Library of original Nordic 44 model"
         smooth=Smooth.None));
     connect(line_3100_3115.p, bus_3100.n[2]) annotation (Line(
         points={{-200.167,34},{-196,34},{-196,40},{-184,40},{-184,43},{-178,43}},
-
         color={0,0,255},
         smooth=Smooth.None));
 
@@ -1962,7 +1947,6 @@ package Original "Library of original Nordic 44 model"
         smooth=Smooth.None));
     connect(line_3100_3200_1.n, bus_3100.n[6]) annotation (Line(
         points={{-181,71.1667},{-181,62},{-180,62},{-180,50},{-178,50},{-178,51}},
-
         color={0,0,255},
         smooth=Smooth.None));
 
@@ -1994,13 +1978,11 @@ package Original "Library of original Nordic 44 model"
         smooth=Smooth.None));
     connect(Load3_bus6500.p, bus_6500.n[2]) annotation (Line(
         points={{-30.325,-111.75},{-25.9,-111.75},{-25.9,-106.6},{-20,-106.6}},
-
         color={0,0,255},
         smooth=Smooth.None));
 
     connect(Load2_bus6500.p, bus_6500.n[3]) annotation (Line(
         points={{-30.325,-103.75},{-25.9,-103.75},{-25.9,-102.2},{-20,-102.2}},
-
         color={0,0,255},
         smooth=Smooth.None));
 
@@ -2198,7 +2180,6 @@ package Original "Library of original Nordic 44 model"
         smooth=Smooth.None));
     connect(line_5500_5603.p, bus_5603.n[1]) annotation (Line(
         points={{119.833,-89},{168,-89},{168,-100},{196,-100},{196,-79},{220,-79}},
-
         color={0,0,255},
         smooth=Smooth.None));
 
@@ -2506,13 +2487,11 @@ package Original "Library of original Nordic 44 model"
         smooth=Smooth.None));
     connect(G3_bus3249.p, bus_3249.n[2]) annotation (Line(
         points={{-191.7,-33},{-183.85,-33},{-183.85,-32.9429},{-176,-32.9429}},
-
         color={0,0,255},
         smooth=Smooth.None));
 
     connect(G2_bus3249.p, bus_3249.n[3]) annotation (Line(
         points={{-191.7,-25},{-183.85,-25},{-183.85,-27.9714},{-176,-27.9714}},
-
         color={0,0,255},
         smooth=Smooth.None));
 
@@ -2532,7 +2511,6 @@ package Original "Library of original Nordic 44 model"
         smooth=Smooth.None));
     connect(line_3100_3249.n, bus_3249.n[7]) annotation (Line(
         points={{-189,9.16667},{-189,0},{-180,0},{-180,-8.08571},{-176,-8.08571}},
-
         color={0,0,255},
         smooth=Smooth.None));
 
@@ -2815,8 +2793,8 @@ package Original "Library of original Nordic 44 model"
               textStyle={TextStyle.Bold},
               textString="bus
 5402")}),
-      Icon(coordinateSystem(extent={{-300,-220},{300,220}}, preserveAspectRatio
-            =false)),
+      Icon(coordinateSystem(extent={{-300,-220},{300,220}}, preserveAspectRatio=
+             false)),
       Documentation);
   end Nordic44_Original_Case;
 
@@ -3469,8 +3447,8 @@ package Original "Library of original Nordic 44 model"
       connect(gENROU.p, pwPin) annotation (Line(points={{9.2,9},{76,9},{76,0},{
               110,0}}, color={0,0,255}));
       connect(gENROU.PELEC, sTAB2A.PELEC) annotation (Line(points={{8.56,-8.5},
-              {34,-8.5},{34,-32},{-82,-32},{-82,-47.5},{-74.4136,-47.5}}, color
-            ={0,0,127}));
+              {34,-8.5},{34,-32},{-82,-32},{-82,-47.5},{-74.4136,-47.5}}, color=
+             {0,0,127}));
       annotation (
         Icon(graphics={Line(
                   points={{-76,-26},{-28,52},{27,-52},{74,23}},
@@ -3567,8 +3545,8 @@ package Original "Library of original Nordic 44 model"
       connect(sTAB2A.VOTHSG, sCRX.VOTHSG) annotation (Line(points={{-16.0455,-48.5},
               {8,-48.5},{8,-39.735},{31.2292,-39.735}}, color={0,0,127}));
       connect(gENROU.PELEC, sTAB2A.PELEC) annotation (Line(points={{8.48,-7.5},
-              {18,-7.5},{18,-32},{-68,-32},{-68,-48.5},{-60.4136,-48.5}}, color
-            ={0,0,127}));
+              {18,-7.5},{18,-32},{-68,-32},{-68,-48.5},{-60.4136,-48.5}}, color=
+             {0,0,127}));
       connect(sCRX.EFD, gENROU.EFD) annotation (Line(points={{86.9167,-59.165},
               {92,-59.165},{92,-96},{-80,-96},{-80,-7.5},{-55.38,-7.5}}, color=
               {0,0,127}));
@@ -3680,8 +3658,8 @@ package Original "Library of original Nordic 44 model"
       connect(gENROU.PMECH0, iEESGO.PMECH0) annotation (Line(points={{6.32,5.7},
               {24,5.7},{24,86},{-62,86},{-62,65},{-47.725,65}}, color={0,0,127}));
       connect(gENROU.PELEC, sTAB2A.PELEC) annotation (Line(points={{6.32,-0.5},
-              {18,-0.5},{18,-22},{-80,-22},{-80,-42.5},{-73.4545,-42.5}}, color
-            ={0,0,127}));
+              {18,-0.5},{18,-22},{-80,-22},{-80,-42.5},{-73.4545,-42.5}}, color=
+             {0,0,127}));
       connect(gENROU.XADIFD, sCRX.XADIFD) annotation (Line(points={{6.32,-12.9},
               {12,-12.9},{12,-56.465},{24.7708,-56.465}}, color={0,0,127}));
       connect(gENROU.EFD0, sCRX.EFD0) annotation (Line(points={{6.32,-6.7},{16,
@@ -3754,8 +3732,8 @@ package Original "Library of original Nordic 44 model"
         annotation (Placement(transformation(extent={{31,-84},{85,-26}})));
       Modelica.Blocks.Sources.Constant cte(k=0)
         annotation (Placement(transformation(extent={{-27,-57},{-17,-47}})));
-      OpenIPSL.Interfaces.PwPin p annotation (Placement(transformation(rotation
-              =0, extent={{100,-10},{120,10}}), iconTransformation(extent={{100,
+      OpenIPSL.Interfaces.PwPin p annotation (Placement(transformation(rotation=
+               0, extent={{100,-10},{120,10}}), iconTransformation(extent={{100,
                 -10},{120,10}})));
       Original.Data.PSSE_data_Original_case PSSE_data
         annotation (Placement(transformation(extent={{88,88},{98,98}})));
@@ -3845,8 +3823,8 @@ package Original "Library of original Nordic 44 model"
         annotation (Placement(transformation(extent={{26,-90},{81,-30}})));
       Modelica.Blocks.Sources.Constant cte(k=0)
         annotation (Placement(transformation(extent={{-21,-55},{-11,-45}})));
-      OpenIPSL.Interfaces.PwPin p annotation (Placement(transformation(rotation
-              =0, extent={{100,-10},{120,10}}), iconTransformation(extent={{100,
+      OpenIPSL.Interfaces.PwPin p annotation (Placement(transformation(rotation=
+               0, extent={{100,-10},{120,10}}), iconTransformation(extent={{100,
                 -10},{120,10}})));
       Original.Data.PSSE_data_Original_case PSSE_data
         annotation (Placement(transformation(extent={{88,88},{98,98}})));
@@ -3938,8 +3916,8 @@ package Original "Library of original Nordic 44 model"
         annotation (Placement(transformation(extent={{26,-90},{84,-28}})));
       Modelica.Blocks.Sources.Constant cte(k=0)
         annotation (Placement(transformation(extent={{-17,-53},{-7,-43}})));
-      OpenIPSL.Interfaces.PwPin p annotation (Placement(transformation(rotation
-              =0, extent={{100,-10},{120,10}}), iconTransformation(extent={{100,
+      OpenIPSL.Interfaces.PwPin p annotation (Placement(transformation(rotation=
+               0, extent={{100,-10},{120,10}}), iconTransformation(extent={{100,
                 -10},{120,10}})));
       Original.Data.PSSE_data_Original_case PSSE_data
         annotation (Placement(transformation(extent={{86,86},{98,98}})));
@@ -4041,8 +4019,8 @@ package Original "Library of original Nordic 44 model"
         K_5=1,
         T_5=0.01)
         annotation (Placement(transformation(extent={{-48,-54},{7,-33}})));
-      OpenIPSL.Interfaces.PwPin p annotation (Placement(transformation(rotation
-              =0, extent={{100,-10},{120,10}}), iconTransformation(extent={{100,
+      OpenIPSL.Interfaces.PwPin p annotation (Placement(transformation(rotation=
+               0, extent={{100,-10},{120,10}}), iconTransformation(extent={{100,
                 -10},{120,10}})));
       Original.Data.PSSE_data_Original_case PSSE_data
         annotation (Placement(transformation(extent={{86,88},{96,98}})));
@@ -4148,8 +4126,8 @@ package Original "Library of original Nordic 44 model"
         K_5=1,
         T_5=0.01)
         annotation (Placement(transformation(extent={{-66,-54},{-20,-34}})));
-      OpenIPSL.Interfaces.PwPin p annotation (Placement(transformation(rotation
-              =0, extent={{100,-10},{120,10}}), iconTransformation(extent={{100,
+      OpenIPSL.Interfaces.PwPin p annotation (Placement(transformation(rotation=
+               0, extent={{100,-10},{120,10}}), iconTransformation(extent={{100,
                 -10},{120,10}})));
       Original.Data.PSSE_data_Original_case PSSE_data
         annotation (Placement(transformation(extent={{88,88},{98,98}})));
@@ -4251,8 +4229,8 @@ package Original "Library of original Nordic 44 model"
         K_5=1,
         T_5=0.01)
         annotation (Placement(transformation(extent={{-60,-46},{-22,-20}})));
-      OpenIPSL.Interfaces.PwPin p annotation (Placement(transformation(rotation
-              =0, extent={{100,-10},{120,10}}), iconTransformation(extent={{100,
+      OpenIPSL.Interfaces.PwPin p annotation (Placement(transformation(rotation=
+               0, extent={{100,-10},{120,10}}), iconTransformation(extent={{100,
                 -10},{120,10}})));
       Original.Data.PSSE_data_Original_case PSSE_data
         annotation (Placement(transformation(extent={{86,88},{96,98}})));
@@ -4355,8 +4333,8 @@ package Original "Library of original Nordic 44 model"
         K_5=1,
         T_5=0.01)
         annotation (Placement(transformation(extent={{-54,-54},{-6,-34}})));
-      OpenIPSL.Interfaces.PwPin p annotation (Placement(transformation(rotation
-              =0, extent={{100,-10},{120,10}}), iconTransformation(extent={{100,
+      OpenIPSL.Interfaces.PwPin p annotation (Placement(transformation(rotation=
+               0, extent={{100,-10},{120,10}}), iconTransformation(extent={{100,
                 -10},{120,10}})));
       Original.Data.PSSE_data_Original_case PSSE_data
         annotation (Placement(transformation(extent={{88,88},{98,98}})));
@@ -4460,8 +4438,8 @@ package Original "Library of original Nordic 44 model"
         K_5=1,
         T_5=0.01)
         annotation (Placement(transformation(extent={{-58,-50},{-12,-30}})));
-      OpenIPSL.Interfaces.PwPin p annotation (Placement(transformation(rotation
-              =0, extent={{100,-10},{120,10}}), iconTransformation(extent={{100,
+      OpenIPSL.Interfaces.PwPin p annotation (Placement(transformation(rotation=
+               0, extent={{100,-10},{120,10}}), iconTransformation(extent={{100,
                 -10},{120,10}})));
       Original.Data.PSSE_data_Original_case PSSE_data
         annotation (Placement(transformation(extent={{86,88},{96,98}})));
@@ -4553,8 +4531,8 @@ package Original "Library of original Nordic 44 model"
         annotation (Placement(transformation(extent={{16,-88},{86,-33}})));
       Modelica.Blocks.Sources.Constant cte(k=0)
         annotation (Placement(transformation(extent={{-33,-65},{-23,-55}})));
-      OpenIPSL.Interfaces.PwPin p annotation (Placement(transformation(rotation
-              =0, extent={{100,-10},{120,10}}), iconTransformation(extent={{100,
+      OpenIPSL.Interfaces.PwPin p annotation (Placement(transformation(rotation=
+               0, extent={{100,-10},{120,10}}), iconTransformation(extent={{100,
                 -10},{120,10}})));
       Original.Data.PSSE_data_Original_case PSSE_data
         annotation (Placement(transformation(extent={{88,88},{98,98}})));
@@ -4639,8 +4617,8 @@ package Original "Library of original Nordic 44 model"
         annotation (Placement(transformation(extent={{14,-76},{86,-29}})));
       Modelica.Blocks.Sources.Constant cte(k=0)
         annotation (Placement(transformation(extent={{-19,-57},{-9,-47}})));
-      OpenIPSL.Interfaces.PwPin p annotation (Placement(transformation(rotation
-              =0, extent={{100,-10},{120,10}}), iconTransformation(extent={{100,
+      OpenIPSL.Interfaces.PwPin p annotation (Placement(transformation(rotation=
+               0, extent={{100,-10},{120,10}}), iconTransformation(extent={{100,
                 -10},{120,10}})));
       Original.Data.PSSE_data_Original_case PSSE_data
         annotation (Placement(transformation(extent={{88,88},{98,98}})));
@@ -4729,8 +4707,8 @@ package Original "Library of original Nordic 44 model"
         annotation (Placement(transformation(extent={{10,-82},{80,-36}})));
       Modelica.Blocks.Sources.Constant cte(k=0)
         annotation (Placement(transformation(extent={{-30,-66},{-16,-52}})));
-      OpenIPSL.Interfaces.PwPin p annotation (Placement(transformation(rotation
-              =0, extent={{100,-10},{120,10}}), iconTransformation(extent={{100,
+      OpenIPSL.Interfaces.PwPin p annotation (Placement(transformation(rotation=
+               0, extent={{100,-10},{120,10}}), iconTransformation(extent={{100,
                 -10},{120,10}})));
       Original.Data.PSSE_data_Original_case PSSE_data
         annotation (Placement(transformation(extent={{88,88},{98,98}})));
@@ -4818,8 +4796,8 @@ package Original "Library of original Nordic 44 model"
         annotation (Placement(transformation(extent={{24,-66},{86,-26}})));
       Modelica.Blocks.Sources.Constant cte(k=0)
         annotation (Placement(transformation(extent={{-23,-51},{-13,-41}})));
-      OpenIPSL.Interfaces.PwPin p annotation (Placement(transformation(rotation
-              =0, extent={{100,-10},{120,10}}), iconTransformation(extent={{100,
+      OpenIPSL.Interfaces.PwPin p annotation (Placement(transformation(rotation=
+               0, extent={{100,-10},{120,10}}), iconTransformation(extent={{100,
                 -10},{120,10}})));
       Original.Data.PSSE_data_Original_case PSSE_data
         annotation (Placement(transformation(extent={{88,88},{98,98}})));
@@ -4907,8 +4885,8 @@ package Original "Library of original Nordic 44 model"
         annotation (Placement(transformation(extent={{6,-78},{80,-30}})));
       Modelica.Blocks.Sources.Constant cte(k=0)
         annotation (Placement(transformation(extent={{-40,-59},{-30,-49}})));
-      OpenIPSL.Interfaces.PwPin p annotation (Placement(transformation(rotation
-              =0, extent={{100,-10},{120,10}}), iconTransformation(extent={{100,
+      OpenIPSL.Interfaces.PwPin p annotation (Placement(transformation(rotation=
+               0, extent={{100,-10},{120,10}}), iconTransformation(extent={{100,
                 -10},{120,10}})));
       Original.Data.PSSE_data_Original_case PSSE_data
         annotation (Placement(transformation(extent={{86,86},{98,98}})));
