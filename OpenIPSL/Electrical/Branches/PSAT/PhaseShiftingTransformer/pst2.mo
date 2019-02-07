@@ -76,10 +76,4 @@ equation
     p.ir + n.ir = 0;
     p.ii + n.ii = 0;
   end if;
-  annotation (
-    Placement(transformation(extent={{-120,-10},{-100,10}})),
-    Placement(transformation(extent={{100,-10},{120,10}})),
-    Diagram(coordinateSystem(preserveAspectRatio=true, extent={{-100,-100},{100,
-            100}}), graphics),
-    Documentation);
 end pst2;

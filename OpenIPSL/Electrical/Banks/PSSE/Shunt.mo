@@ -13,16 +13,14 @@ equation
   I = Complex(p.ir, p.ii);
   V = Complex(p.vr, p.vi);
   I = Complex(G, B)*V;
-  S = Complex(p.vr, p.vi)*Complex(p.ir, -p.ii) annotation (Diagram(
-        coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,
-            100}}), graphics), Icon(coordinateSystem(preserveAspectRatio=false,
-          extent={{-100,-100},{100,100}}), graphics={Rectangle(extent={{-100,
+  S = Complex(p.vr, p.vi)*Complex(p.ir, -p.ii);
+  annotation (Documentation(info="<html>
+Shunt model from Nordic44 system developed by Giuseppe.
+</html>"),
+Icon(graphics={Rectangle(extent={{-100,
           100},{100,-100}}, lineColor={0,0,255}),Text(
           extent={{-60,60},{60,-80}},
           lineColor={0,0,255},
           textStyle={TextStyle.Bold},
           textString="Y")}));
-  annotation (Documentation(info="<html>
-Shunt model from Nordic44 system developed by Giuseppe.
-</html>"));
 end Shunt;

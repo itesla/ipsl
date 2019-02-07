@@ -183,11 +183,6 @@ equation
   connect(SL_7.y, SL_8.u)
     annotation (Line(points={{41,-20},{41,-20},{58,-20}}, color={0,0,127}));
   annotation (
-    Line(points={{30,0},{110,0}}, color={0,0,127}),
-    Diagram(coordinateSystem(
-        preserveAspectRatio=true,
-        extent={{-100,-100},{100,100}},
-        initialScale=0.05)),
     Icon(coordinateSystem(
         preserveAspectRatio=true,
         extent={{-100,-100},{100,100}},

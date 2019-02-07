@@ -1,8 +1,6 @@
 within OpenIPSL.Electrical.Controls.PSSE.PSS;
-model STAB2A "Models STAB2A, STAB3, and STAB4 are special representations of specific types of supplementary
-  stabilizing units. Both produce a supplementary signal by introducing phase-lead into a signal
-  proportional to electrical power output measured at the generator terminals."
-  //parameter Real PELEC0= 1;
+model STAB2A
+
   parameter Real K_2=1;
   parameter Real T_2=1;
   parameter Real K_3=1;
@@ -111,14 +109,15 @@ equation
           lineColor={0,0,255},
           textString="PELEC")}),
     Documentation(info="<html>
-<table cellspacing=\"1\" cellpadding=\"1\" border=\"1\">
-<tr>
+<pre>Models&nbsp;STAB2A,&nbsp;STAB3,&nbsp;and&nbsp;STAB4&nbsp;are&nbsp;special&nbsp;representations&nbsp;of&nbsp;specific&nbsp;types&nbsp;of&nbsp;supplementary stabilizing&nbsp;units.&nbsp;
+Both&nbsp;produce&nbsp;a&nbsp;supplementary&nbsp;signal&nbsp;by&nbsp;introducing&nbsp;phase-lead&nbsp;into&nbsp;a&nbsp;signalproportional&nbsp;to&nbsp;electrical&nbsp;power&nbsp;output&nbsp;measured&nbsp;at&nbsp;the&nbsp;generator&nbsp;terminals.</pre>
+<table cellspacing=\"1\" cellpadding=\"1\" border=\"1\"><tr>
 <td><p>Reference</p></td>
-<td>PSS/E Manual</td>
+<td><p>PSS/E Manual</p></td>
 </tr>
 <tr>
 <td><p>Last update</p></td>
-<td>Unknown</td>
+<td><p>Unknown</p></td>
 </tr>
 <tr>
 <td><p>Author</p></td>

@@ -107,8 +107,6 @@ equation
   uq = PSId - R_a*iq;
   //flow, changed from machine base to system bas
   annotation (
-    Placement(transformation(extent={{74,6},{94,26}}), iconTransformation(
-          extent={{58,-90},{74,-74}})),
     Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{
             100,100}})),
     Icon(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,

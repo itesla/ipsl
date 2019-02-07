@@ -118,70 +118,39 @@ model ST5B "IEEE 421.5 2005 ST5B Excitation System"
   NonElectrical.Continuous.SimpleLag TransducerDelay(
     K=1,
     T=T_R,
-    y_start=ECOMP0)
-    annotation (Placement(transformation(extent={{-170,-10},{-150,10}})));
-  Modelica.Blocks.Interfaces.RealInput XADIFD annotation (Placement(
-        transformation(
-        extent={{-20,-20},{20,20}},
-        rotation=90,
-        origin={130,-140}), iconTransformation(extent={{-10,-10},{10,10}},
-          origin={-200,-60})));
+    y_start=ECOMP0) annotation (Placement(transformation(extent={{-170,-10},{-150,10}})));
 protected
   parameter Real VR0(fixed=false);
 initial equation
   VR0 = Efd0 + K_C*XADIFD;
   V_REF = VR0/K_R + ECOMP;
 equation
-  connect(VERR1.y, imLimitedLeadLag.u)
-    annotation (Line(points={{1,0},{1,0},{18,0}}, color={0,0,127}));
-  connect(imLimitedLeadLag.y, imLimitedLeadLag2.u)
-    annotation (Line(points={{41,0},{41,0},{48,0}}, color={0,0,127}));
-  connect(imLimitedLeadLag1.u, imLimitedLeadLag.u)
-    annotation (Line(points={{18,-50},{8,-50},{8,0},{18,0}}, color={0,0,127}));
-  connect(imLimitedLeadLag1.y, imLimitedLeadLag3.u)
-    annotation (Line(points={{41,-50},{41,-50},{48,-50}}, color={0,0,127}));
-  connect(imLimitedLeadLag4.u, imLimitedLeadLag.u)
-    annotation (Line(points={{18,-90},{8,-90},{8,0},{18,0}}, color={0,0,127}));
-  connect(VERR2.y, simpleLagLimVar.u)
-    annotation (Line(points={{161,0},{161,0},{172,0}}, color={0,0,127}));
-  connect(low.y, simpleLagLimVar.outMin)
-    annotation (Line(points={{115,-70},{176,-70},{176,-14}}, color={0,0,127}));
-  connect(high.y, simpleLagLimVar.outMax) annotation (Line(points={{117,-30},{
-          168,-30},{168,32},{192,32},{192,14}}, color={0,0,127}));
-  connect(K_c.y, VERR2.u1) annotation (Line(points={{130,-81},{130,-81},{130,-6},
-          {138,-6}}, color={0,0,127}));
-  connect(imLimitedLeadLag4.y, imLimitedLeadLag5.u)
-    annotation (Line(points={{41,-90},{41,-90},{48,-90}}, color={0,0,127}));
-  connect(imLimitedLeadLag2.y, K_r.u)
-    annotation (Line(points={{71,0},{78,0},{78,0.5}}, color={0,0,127}));
-  connect(lV_Gate.p, VERR1.u2)
-    annotation (Line(points={{-27.375,6},{-22,6}}, color={0,0,127}));
-  connect(hV_Gate.p, lV_Gate.n2) annotation (Line(points={{-59.625,3},{-54.8125,
-          3},{-54.8125,3},{-49.375,3}}, color={0,0,127}));
-  connect(hV_Gate.n2, DiffV.y) annotation (Line(points={{-85.625,-0.5},{-91.8125,
-          -0.5},{-91.8125,0},{-99,0}}, color={0,0,127}));
-  connect(hV_Gate.n1, VUEL) annotation (Line(points={{-85.625,6.5},{-92,6.5},{-92,
-          -160},{-130,-160},{-130,-200}}, color={0,0,127}));
-  connect(lV_Gate.n1, VOEL) annotation (Line(points={{-49.375,9},{-54,9},{-54,-160},
-          {-70,-160},{-70,-200}}, color={0,0,127}));
-  connect(K_r.y, limiter.u) annotation (Line(points={{101,0.5},{104.5,0.5},{
-          104.5,0},{106,0}}, color={0,0,127}));
-  connect(limiter.y, VERR2.u2) annotation (Line(points={{129,0},{132,0},{132,6},
-          {138,6}}, color={0,0,127}));
-  connect(simpleLagLimVar.y, EFD)
-    annotation (Line(points={{195,0},{210,0},{210,0}}, color={0,0,127}));
-  connect(ECOMP, TransducerDelay.u)
-    annotation (Line(points={{-200,0},{-172,0},{-172,0}}, color={0,0,127}));
-  connect(TransducerDelay.y, DiffV.u2) annotation (Line(points={{-149,0},{-132,
-          0},{-132,-6},{-122,-6}}, color={0,0,127}));
-  connect(high.u, TransducerDelay.u) annotation (Line(points={{94,-30},{-178,-30},
-          {-178,0},{-172,0}}, color={0,0,127}));
-  connect(low.u, TransducerDelay.u) annotation (Line(points={{92,-70},{80,-70},
-          {80,-30},{-178,-30},{-178,0},{-172,0}}, color={0,0,127}));
-  connect(VOTHSG, VERR1.u1) annotation (Line(points={{-200,90},{-26,90},{-26,-6},
-          {-22,-6}}, color={0,0,127}));
-  connect(XADIFD, K_c.u)
-    annotation (Line(points={{130,-140},{130,-104}}, color={0,0,127}));
+  connect(VERR1.y, imLimitedLeadLag.u) annotation (Line(points={{1,0},{1,0},{18,0}}, color={0,0,127}));
+  connect(imLimitedLeadLag.y, imLimitedLeadLag2.u) annotation (Line(points={{41,0},{41,0},{48,0}}, color={0,0,127}));
+  connect(imLimitedLeadLag1.u, imLimitedLeadLag.u) annotation (Line(points={{18,-50},{8,-50},{8,0},{18,0}}, color={0,0,127}));
+  connect(imLimitedLeadLag1.y, imLimitedLeadLag3.u) annotation (Line(points={{41,-50},{41,-50},{48,-50}}, color={0,0,127}));
+  connect(imLimitedLeadLag4.u, imLimitedLeadLag.u) annotation (Line(points={{18,-90},{8,-90},{8,0},{18,0}}, color={0,0,127}));
+  connect(VERR2.y, simpleLagLimVar.u) annotation (Line(points={{161,0},{161,0},{172,0}}, color={0,0,127}));
+  connect(low.y, simpleLagLimVar.outMin) annotation (Line(points={{115,-70},{176,-70},{176,-14}}, color={0,0,127}));
+  connect(high.y, simpleLagLimVar.outMax) annotation (Line(points={{117,-30},{168,-30},{168,32},{192,32},{192,14}}, color={0,0,127}));
+  connect(K_c.y, VERR2.u1) annotation (Line(points={{130,-81},{130,-81},{130,-6},{138,-6}}, color={0,0,127}));
+  connect(imLimitedLeadLag4.y, imLimitedLeadLag5.u) annotation (Line(points={{41,-90},{41,-90},{48,-90}}, color={0,0,127}));
+  connect(imLimitedLeadLag2.y, K_r.u) annotation (Line(points={{71,0},{78,0},{78,0.5}}, color={0,0,127}));
+  connect(lV_Gate.p, VERR1.u2) annotation (Line(points={{-27.375,6},{-22,6}}, color={0,0,127}));
+  connect(hV_Gate.p, lV_Gate.n2) annotation (Line(points={{-59.625,3},{-54.8125,3},{-54.8125,3},{-49.375,3}}, color={0,0,127}));
+  connect(hV_Gate.n2, DiffV.y) annotation (Line(points={{-85.625,-0.5},{-91.8125,-0.5},{-91.8125,0},{-99,0}}, color={0,0,127}));
+  connect(hV_Gate.n1, VUEL) annotation (Line(points={{-85.625,6.5},{-92,6.5},{-92,-160},{-130,-160},{-130,-200}}, color={0,0,127}));
+  connect(lV_Gate.n1, VOEL) annotation (Line(points={{-49.375,9},{-54,9},{-54,-160},{-70,-160},{-70,-200}}, color={0,0,127}));
+  connect(K_r.y, limiter.u) annotation (Line(points={{101,0.5},{104.5,0.5},{104.5,0},{106,0}}, color={0,0,127}));
+  connect(limiter.y, VERR2.u2) annotation (Line(points={{129,0},{132,0},{132,6},{138,6}}, color={0,0,127}));
+  connect(simpleLagLimVar.y, EFD) annotation (Line(points={{195,0},{210,0},{210,0}}, color={0,0,127}));
+  connect(ECOMP, TransducerDelay.u) annotation (Line(points={{-200,0},{-172,0},{-172,0}}, color={0,0,127}));
+  connect(TransducerDelay.y, DiffV.u2) annotation (Line(points={{-149,0},{-132,0},{-132,-6},{-122,-6}}, color={0,0,127}));
+  connect(high.u, TransducerDelay.u) annotation (Line(points={{94,-30},{-178,-30},{-178,0},{-172,0}}, color={0,0,127}));
+  connect(low.u, TransducerDelay.u) annotation (Line(points={{92,-70},{80,-70},{80,-30},{-178,-30},{-178,0},{-172,0}}, color={0,0,127}));
+  connect(VOTHSG, VERR1.u1) annotation (Line(points={{-200,90},{-26,90},{-26,-6},{-22,-6}}, color={0,0,127}));
+  connect(XADIFD, K_c.u) annotation (Line(points={{80,-200},{80,-200},{80,-124},
+          {80,-120},{130,-120},{130,-104}}, color={0,0,127}));
   annotation (
     Diagram(coordinateSystem(
         preserveAspectRatio=true,

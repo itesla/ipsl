@@ -606,13 +606,8 @@ equation
           textString="s4"),Text(
           extent={{-254,-182},{-242,-190}},
           lineColor={255,0,0},
-          textString="s0"),Text(
-          extent={{-306,232},{-158,190}},
-          lineColor={0,0,255},
-          textString="input should be speed")}),
-    Icon(coordinateSystem(extent={{-320,-240},{260,220}}, preserveAspectRatio=
-            false), graphics={Rectangle(extent={{-320,220},{260,-240}},
-          lineColor={0,0,255}),Text(
+          textString="s0")}),
+    Icon(coordinateSystem(extent={{-320,-240},{260,220}}, preserveAspectRatio=false), graphics={Rectangle(extent={{-320,220},{260,-240}}, lineColor={0,0,255}),Text(
           extent={{-306,146},{-216,92}},
           lineColor={0,0,255},
           textString="SPEED"),Text(
