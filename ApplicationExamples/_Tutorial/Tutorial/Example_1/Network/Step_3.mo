@@ -10,11 +10,10 @@ partial model Step_3
     annotation (Placement(transformation(extent={{-110,-10},{-90,10}})));
   OpenIPSL.Electrical.Branches.PSAT.TwoWindingTransformer twoWindingTransformer(
     Sn=2220,
-    fn=60,
-    x=0.15,
-    r=0,
     V_b=400,
-    Vn=400) annotation (Placement(transformation(extent={{-50,-10},{-30,10}})));
+    Vn=400,
+    rT=0,
+    xT=0.15) annotation (Placement(transformation(extent={{-50,-10},{-30,10}})));
   OpenIPSL.Electrical.Branches.PwLine pwLine(
     R=0,
     G=0,

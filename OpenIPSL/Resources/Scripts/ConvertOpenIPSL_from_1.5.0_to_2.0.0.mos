@@ -17,7 +17,7 @@ convertClass("OpenIPSL.Electrical.Buses.InfiniteBus2",
              "OpenIPSL.Electrical.Buses.InfiniteBus");
 // PSAT Transformer clean up
 convertModifiers({"OpenIPSL.Electrical.Branches.PSAT.TwoWindingTransformer"},
-                 {"r","x","kT"}, {"rT=%r%","xT=%x%"});
+                 {"r","x","kT","fn"}, {"rT=%r%","xT=%x%"});
 convertClass("OpenIPSL.Examples.Branches.PSAT.TWTPST_smib_test",
              "OpenIPSL.Examples.Branches.PSAT.TwoWindingTransformer_Test");
 convertClass("OpenIPSL.Electrical.Branches.PSAT.ThreeWindingTransformer.ThreeWindingTransformer",
