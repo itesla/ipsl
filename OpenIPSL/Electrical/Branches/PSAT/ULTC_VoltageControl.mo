@@ -5,20 +5,18 @@ model ULTC_VoltageControl
     annotation (Placement(transformation(extent={{-120,-10},{-100,10}})));
   OpenIPSL.Interfaces.PwPin n
     annotation (Placement(transformation(extent={{100,-10},{120,10}})));
-  parameter Real Sb=100 "System base power (MVA)"
+  parameter Real S_b=100 "System base power (MVA)"
     annotation (Dialog(group="Power flow data"));
   parameter Real Vbus1=400000 "Sending end Bus nominal voltage (V)"
     annotation (Dialog(group="Power flow data"));
   parameter Real Vbus2=100000 "Receiving end Bus nominal voltage (V)"
     annotation (Dialog(group="Power flow data"));
   parameter Real Sn=100 "Power rating (MVA)"
-    annotation (Dialog(group="Power flow data"));
-  parameter Real Vn=400000 "Primary (sending) voltage rating (V)"
-    annotation (Dialog(group="Power flow data"));
-  parameter Real fn=50 "Frequency rating (Hz)"
-    annotation (Dialog(group="Power flow data"));
+    annotation (Dialog(group="ULTC data"));
+  parameter Real Vn=400000 "Voltage rating (V)"
+    annotation (Dialog(group="ULTC data"));
   parameter Real V_0=1.008959700699460
-    "Voltage magnitude of the controlled bus (pu)"
+    "Initial voltage magnitude of the controlled bus (pu)"
     annotation (Dialog(group="Power flow data"));
   parameter Real m0=0.98 "Initial tap ratio"
     annotation (Dialog(group="Power flow data"));
@@ -32,16 +30,16 @@ model ULTC_VoltageControl
     annotation (Dialog(group="ULTC data"));
   parameter Real m_min=0.9785 "Minimum tap ratio (p.u./p.u.)"
     annotation (Dialog(group="ULTC data"));
-  parameter Real deltam=0 "Tap ratio step (p.u./p.u.)"
-    annotation (Dialog(group="ULTC data"));
+//    annotation (Dialog(group="ULTC data"));
+//  parameter Real deltam=0 "Tap ratio step (p.u./p.u.)"
   parameter Real v_ref=1.0 "Reference voltage (power) (pu)"
     annotation (Dialog(group="ULTC data"));
   parameter Real xT=0.001 "Transformer reactance (pu)"
     annotation (Dialog(group="ULTC data"));
   parameter Real rT=0.1 "Transformer resistance (pu)"
     annotation (Dialog(group="ULTC data"));
-  parameter Real d=0.05 "Dead zone percentage"
-    annotation (Dialog(group="ULTC data"));
+//  parameter Real d=0.05 "Dead zone percentage"
+//    annotation (Dialog(group="ULTC data"));
   Real m "Tap ratio";
   Real vk "Voltage at primary, p.u.";
   Real vm(start=V_0) "Voltage at secondary p.u.";
@@ -49,10 +47,10 @@ model ULTC_VoltageControl
   Real anglevm "Angle at secondary ";
 protected
   parameter Real V2=Vn/kT "Secondary voltage";
-  parameter Real Vb2new=Vbus1*Vbus1;
-  parameter Real Vb2old=Vn*Vn;
-  parameter Real R=rT*(Vb2old*Sb)/(Vb2new*Sn) "Transformer Resistance, p.u.";
-  parameter Real X=xT*(Vb2old*Sb)/(Vb2new*Sn) "Transformer Reactance, p.u.";
+  parameter Real Zn = Vn^2/Sn "Transformer base impedance";
+  parameter Real Zb = Vbus1^2/S_b "System base impedance";
+  parameter Real r = rT * Zn/Zb "Resistance (pu, system base)";
+  parameter Real x = xT * Zn/Zb "Reactance (pu, system base)";
   parameter Real vref=v_ref*(V2/Vbus2);
 initial equation
   m = m0;
@@ -62,22 +60,22 @@ equation
   anglevk = atan2(p.vi, p.vr);
   anglevm = atan2(n.vi, n.vr);
   if m > m_max and der(m) > 0 then
-    R*p.ir - X*p.ii = 1/m_max^2*p.vr - 1/m_max*n.vr;
-    R*p.ii + X*p.ir = 1/m_max^2*p.vi - 1/m_max*n.vi;
-    R*n.ir - X*n.ii = n.vr - 1/m_max*p.vr;
-    X*n.ir + R*n.ii = n.vi - 1/m_max*p.vi;
+    r*p.ir - x*p.ii = 1/m_max^2*p.vr - 1/m_max*n.vr;
+    r*p.ii + x*p.ir = 1/m_max^2*p.vi - 1/m_max*n.vi;
+    r*n.ir - x*n.ii = n.vr - 1/m_max*p.vr;
+    x*n.ir + r*n.ii = n.vi - 1/m_max*p.vi;
     der(m) = 0;
   elseif m < m_min and der(m) < 0 then
-    R*p.ir - X*p.ii = 1/m_min^2*p.vr - 1/m_min*n.vr;
-    R*p.ii + X*p.ir = 1/m_min^2*p.vi - 1/m_min*n.vi;
-    R*n.ir - X*n.ii = n.vr - 1/m_min*p.vr;
-    X*n.ir + R*n.ii = n.vi - 1/m_min*p.vi;
+    r*p.ir - x*p.ii = 1/m_min^2*p.vr - 1/m_min*n.vr;
+    r*p.ii + x*p.ir = 1/m_min^2*p.vi - 1/m_min*n.vi;
+    r*n.ir - x*n.ii = n.vr - 1/m_min*p.vr;
+    x*n.ir + r*n.ii = n.vi - 1/m_min*p.vi;
     der(m) = 0;
   else
-    R*p.ir - X*p.ii = 1/m^2*p.vr - 1/m*n.vr;
-    R*p.ii + X*p.ir = 1/m^2*p.vi - 1/m*n.vi;
-    R*n.ir - X*n.ii = n.vr - 1/m*p.vr;
-    X*n.ir + R*n.ii = n.vi - 1/m*p.vi;
+    r*p.ir - x*p.ii = 1/m^2*p.vr - 1/m*n.vr;
+    r*p.ii + x*p.ir = 1/m^2*p.vi - 1/m*n.vi;
+    r*n.ir - x*n.ii = n.vr - 1/m*p.vr;
+    x*n.ir + r*n.ii = n.vi - 1/m*p.vi;
     der(m) = (-H*m) + K*(vm - vref);
   end if;
   annotation (

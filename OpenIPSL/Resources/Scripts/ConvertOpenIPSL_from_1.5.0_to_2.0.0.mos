@@ -18,6 +18,8 @@ convertClass("OpenIPSL.Electrical.Buses.InfiniteBus2",
 // PSAT Transformer clean up
 convertModifiers({"OpenIPSL.Electrical.Branches.PSAT.TwoWindingTransformer"},
                  {"r","x","kT","fn"}, {"rT=%r%","xT=%x%"});
+convertModifiers({"OpenIPSL.Electrical.Branches.PSAT.ULTC_VoltageControl"},
+                 {"Sb","fn","deltam","d"},{"S_b=%Sb%"});
 convertClass("OpenIPSL.Examples.Branches.PSAT.TWTPST_smib_test",
              "OpenIPSL.Examples.Branches.PSAT.TwoWindingTransformer_Test");
 convertClass("OpenIPSL.Electrical.Branches.PSAT.ThreeWindingTransformer.ThreeWindingTransformer",
