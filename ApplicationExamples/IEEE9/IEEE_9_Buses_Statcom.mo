@@ -2,11 +2,10 @@ within IEEE9;
 model IEEE_9_Buses_Statcom
   import Modelica.Constants.pi;
   OpenIPSL.Electrical.Branches.PSAT.TwoWindingTransformer twoWindingTransformer(
-    kT=16.5/230,
-    x=0.0576,
-    r=0,
     V_b=16.5,
-    Vn=16.5) annotation (Placement(transformation(
+    Vn=16.5,
+    rT=0,
+    xT=0.0576) annotation (Placement(transformation(
         extent={{-10,-10},{10,10}},
         rotation=90,
         origin={0,-66})));
@@ -68,24 +67,20 @@ model IEEE_9_Buses_Statcom
         extent={{-9,-6.00001},{9.00001,6.00001}},
         rotation=0,
         origin={35,90})));
-  OpenIPSL.Electrical.Branches.PSAT.TwoWindingTransformer
-    twoWindingTransformer1(
-    r=0,
-    kT=13.8/230,
-    x=0.0586,
+  OpenIPSL.Electrical.Branches.PSAT.TwoWindingTransformer twoWindingTransformer1(
     V_b=13.8,
-    Vn=13.8) annotation (Placement(transformation(
+    Vn=13.8,
+    rT=0,
+    xT=0.0586) annotation (Placement(transformation(
         extent={{-10,-10},{10,10}},
         rotation=180,
         origin={102,90})));
-  OpenIPSL.Electrical.Branches.PSAT.TwoWindingTransformer
-    twoWindingTransformer2(
-    r=0,
-    kT=18/230,
-    x=0.0625,
+  OpenIPSL.Electrical.Branches.PSAT.TwoWindingTransformer twoWindingTransformer2(
     Sn=100,
     V_b=18,
-    Vn=18) annotation (Placement(transformation(
+    Vn=18,
+    rT=0,
+    xT=0.0625) annotation (Placement(transformation(
         extent={{-10,-10},{10,10}},
         rotation=0,
         origin={-102,90})));
