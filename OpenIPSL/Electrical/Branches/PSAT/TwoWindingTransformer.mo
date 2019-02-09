@@ -5,36 +5,36 @@ model TwoWindingTransformer "Modeled as series reactances without iron losses"
     annotation (Placement(transformation(extent={{-120,-10},{-100,10}})));
   OpenIPSL.Interfaces.PwPin n
     annotation (Placement(transformation(extent={{100,-10},{120,10}})));
-  parameter Real Sb=SysData.S_b "System base power (MVA)"
-    annotation (Dialog(group="Power flow"));
-  parameter Real Sn=100 "Power rating (MVA)"
+  parameter Real S_b=SysData.S_b "System base power (MVA)"
     annotation (Dialog(group="Power flow"));
   parameter Real V_b=40 "Sending end bus voltage (kV)"
     annotation (Dialog(group="Power flow"));
-  parameter Real Vn=40 "Voltage rating (kV)"
-    annotation (Dialog(group="Power flow"));
-  parameter Real fn=SysData.fn "Frequency rating (Hz)"
-    annotation (Dialog(group="Power flow"));
-  parameter Real kT=1 "Nominal tap ratio (kV1/kV2)"
+//  parameter Real fn=SysData.fn "Frequency rating (Hz)"
+//    annotation (Dialog(group="Power flow"));
+  parameter Real Sn=100 "Power rating (MVA)"
     annotation (Dialog(group="Transformer parameters"));
-  parameter Real x=0.2 "Reactance (pu)"
+  parameter Real Vn=40 "Voltage rating of transformer (kV)"
     annotation (Dialog(group="Transformer parameters"));
-  parameter Real r=0.01 "Resistance (pu)"
+//  parameter Real kT=1 "Nominal tap ratio (kV1/kV2)"
+//    annotation (Dialog(group="Transformer parameters"));
+  parameter Real rT=0.01 "Resistance (pu, transformer base)"
+    annotation (Dialog(group="Transformer parameters"));
+  parameter Real xT=0.2 "Reactance (pu, transformer base)"
     annotation (Dialog(group="Transformer parameters"));
   parameter Real m=1.0 "Optional fixed tap ratio"
     annotation (Dialog(group="Transformer parameters"));
 
 protected
-  parameter Real Vb2new=V_b^2;
-  parameter Real Vb2old=Vn*Vn;
-  parameter Real xT=x*(Vb2old*Sb)/(Vb2new*Sn) "Reactance (pu)";
-  parameter Real rT=r*(Vb2old*Sb)/(Vb2new*Sn) "Resistance (pu)";
+  parameter Real Zn = Vn^2/Sn "Transformer base impedance";
+  parameter Real Zb = V_b^2/S_b "System base impedance";
+  parameter Real r = rT * Zn/Zb "Resistance (pu, system base)";
+  parameter Real x = xT * Zn/Zb "Reactance (pu, system base)";
   parameter Boolean tc = m <> 1.0 "Internal parameter to switch on the icon arrow";
 equation
-  rT*p.ir - xT*p.ii = 1/m^2*p.vr - 1/m*n.vr;
-  rT*p.ii + xT*p.ir = 1/m^2*p.vi - 1/m*n.vi;
-  rT*n.ir - xT*n.ii = n.vr - 1/m*p.vr;
-  xT*n.ir + rT*n.ii = n.vi - 1/m*p.vi;
+  r*p.ir - x*p.ii = 1/m^2*p.vr - 1/m*n.vr;
+  r*p.ii + x*p.ir = 1/m^2*p.vi - 1/m*n.vi;
+  r*n.ir - x*n.ii = n.vr - 1/m*p.vr;
+  x*n.ir + r*n.ii = n.vi - 1/m*p.vi;
   annotation (
     Icon(graphics={Ellipse(extent={{-46,30},{8,-30}}, lineColor={0,0,255}),
           Ellipse(extent={{-10,30},{44,-30}}, lineColor={0,0,255}),Line(
