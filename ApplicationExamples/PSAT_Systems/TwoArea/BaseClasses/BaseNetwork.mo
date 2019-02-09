@@ -44,19 +44,17 @@ partial model BaseNetwork
   OpenIPSL.Electrical.Branches.PSAT.TwoWindingTransformer Tr16(
     V_b=20,
     Vn=20,
-    x=0.005,
-    r=0,
     Sn=100,
-    kT=1) annotation (Placement(transformation(extent={{-66,24},{-52,36}})));
+    rT=0,
+    xT=0.005) annotation (Placement(transformation(extent={{-66,24},{-52,36}})));
   OpenIPSL.Electrical.Buses.Bus B7
     annotation (Placement(transformation(extent={{-8,22},{8,38}})));
   OpenIPSL.Electrical.Branches.PSAT.TwoWindingTransformer Tr67(
     V_b=20,
     Vn=20,
-    x=0.005,
-    r=0,
     Sn=100,
-    kT=1) annotation (Placement(transformation(extent={{-26,24},{-14,36}})));
+    rT=0,
+    xT=0.005) annotation (Placement(transformation(extent={{-26,24},{-14,36}})));
   OpenIPSL.Electrical.Buses.Bus B8
     annotation (Placement(transformation(extent={{32,22},{48,38}})));
   OpenIPSL.Electrical.Buses.Bus B9
@@ -64,24 +62,21 @@ partial model BaseNetwork
   OpenIPSL.Electrical.Branches.PSAT.TwoWindingTransformer Tr78(
     V_b=20,
     Vn=20,
-    x=0.005,
-    r=0,
     Sn=100,
-    kT=1) annotation (Placement(transformation(extent={{14,24},{26,36}})));
+    rT=0,
+    xT=0.005) annotation (Placement(transformation(extent={{14,24},{26,36}})));
   OpenIPSL.Electrical.Branches.PSAT.TwoWindingTransformer Tr89(
     V_b=20,
     Vn=20,
-    x=0.005,
-    r=0,
     Sn=100,
-    kT=1) annotation (Placement(transformation(extent={{54,24},{66,36}})));
+    rT=0,
+    xT=0.005) annotation (Placement(transformation(extent={{54,24},{66,36}})));
   OpenIPSL.Electrical.Branches.PSAT.TwoWindingTransformer Tr49(
     V_b=20,
     Vn=20,
-    x=0.005,
-    r=0,
     Sn=100,
-    kT=1) annotation (Placement(transformation(extent={{94,24},{106,36}})));
+    rT=0,
+    xT=0.005) annotation (Placement(transformation(extent={{94,24},{106,36}})));
   OpenIPSL.Electrical.Buses.Bus B10
     annotation (Placement(transformation(extent={{-68,-8},{-52,8}})));
   OpenIPSL.Electrical.Buses.Bus B2
@@ -235,28 +230,28 @@ partial model BaseNetwork
   OpenIPSL.Electrical.Branches.PSAT.TwoWindingTransformer Tr528(
     V_b=20,
     Vn=20,
-    x=0.005,
-    r=0) annotation (Placement(transformation(extent={{-66,-86},{-52,-74}})));
+    rT=0,
+    xT=0.005) annotation (Placement(transformation(extent={{-66,-86},{-52,-74}})));
   OpenIPSL.Electrical.Branches.PSAT.TwoWindingTransformer Tr2829(
     V_b=20,
     Vn=20,
-    x=0.005,
-    r=0) annotation (Placement(transformation(extent={{-26,-86},{-12,-74}})));
+    rT=0,
+    xT=0.005) annotation (Placement(transformation(extent={{-26,-86},{-12,-74}})));
   OpenIPSL.Electrical.Branches.PSAT.TwoWindingTransformer Tr2930(
     V_b=20,
     Vn=20,
-    x=0.005,
-    r=0) annotation (Placement(transformation(extent={{14,-86},{28,-74}})));
+    rT=0,
+    xT=0.005) annotation (Placement(transformation(extent={{14,-86},{28,-74}})));
   OpenIPSL.Electrical.Branches.PSAT.TwoWindingTransformer Tr3031(
     V_b=20,
     Vn=20,
-    x=0.005,
-    r=0) annotation (Placement(transformation(extent={{52,-86},{66,-74}})));
+    rT=0,
+    xT=0.005) annotation (Placement(transformation(extent={{52,-86},{66,-74}})));
   OpenIPSL.Electrical.Branches.PSAT.TwoWindingTransformer Tr231(
     V_b=20,
     Vn=20,
-    x=0.005,
-    r=0) annotation (Placement(transformation(extent={{94,-86},{108,-74}})));
+    rT=0,
+    xT=0.005) annotation (Placement(transformation(extent={{94,-86},{108,-74}})));
   inner OpenIPSL.Electrical.SystemBase SysData
     annotation (Placement(transformation(extent={{-180,80},{-120,100}})));
 equation
@@ -269,53 +264,53 @@ equation
   connect(Tr16.p, B1.p)
     annotation (Line(points={{-66.7,30},{-80,30}}, color={0,0,255}));
   connect(L410.n, B10.p)
-    annotation (Line(points={{-65.5,0},{-60,0}}, color={0,0,255}));
+    annotation (Line(points={{-66.3,0},{-60,0}}, color={0,0,255}));
   connect(L1011.n, B11.p)
-    annotation (Line(points={{-47.5,0},{-47.5,0},{-40,0}}, color={0,0,255}));
+    annotation (Line(points={{-48.3,0},{-48.3,0},{-40,0}}, color={0,0,255}));
   connect(B11.p, L1112.p)
-    annotation (Line(points={{-40,0},{-34.5,0}}, color={0,0,255}));
+    annotation (Line(points={{-40,0},{-33.7,0}}, color={0,0,255}));
   connect(B14.p, L1415.p)
-    annotation (Line(points={{20,0},{25.5,0}}, color={0,0,255}));
+    annotation (Line(points={{20,0},{26.3,0}}, color={0,0,255}));
   connect(B15.p, L1516.p)
-    annotation (Line(points={{40,0},{45.5,0}}, color={0,0,255}));
+    annotation (Line(points={{40,0},{46.3,0}}, color={0,0,255}));
   connect(B16.p, L1617.p)
-    annotation (Line(points={{60,0},{65.5,0}}, color={0,0,255}));
+    annotation (Line(points={{60,0},{66.3,0}}, color={0,0,255}));
   connect(L1617.n, B17.p)
-    annotation (Line(points={{72.5,0},{72.5,0},{80,0}}, color={0,0,255}));
+    annotation (Line(points={{71.7,0},{71.7,0},{80,0}}, color={0,0,255}));
   connect(L319.n, B3.p)
-    annotation (Line(points={{52.5,-40},{60,-40}}, color={0,0,255}));
-  connect(L319.p, B19.p) annotation (Line(points={{45.5,-40},{45.5,-40},{40,-40}},
+    annotation (Line(points={{51.7,-40},{60,-40}}, color={0,0,255}));
+  connect(L319.p, B19.p) annotation (Line(points={{46.3,-40},{46.3,-40},{40,-40}},
         color={0,0,255}));
-  connect(L1920.n, B19.p) annotation (Line(points={{32.5,-40},{32.5,-40},{40,-40}},
+  connect(L1920.n, B19.p) annotation (Line(points={{31.7,-40},{31.7,-40},{40,-40}},
         color={0,0,255}));
-  connect(L1920.p, B20.p) annotation (Line(points={{25.5,-40},{25.5,-40},{20,-40}},
+  connect(L1920.p, B20.p) annotation (Line(points={{26.3,-40},{26.3,-40},{20,-40}},
         color={0,0,255}));
-  connect(L2021.n, B20.p) annotation (Line(points={{12.5,-40},{12.5,-40},{20,-40}},
+  connect(L2021.n, B20.p) annotation (Line(points={{11.7,-40},{11.7,-40},{20,-40}},
         color={0,0,255}));
   connect(L2021.p, B21.p)
-    annotation (Line(points={{5.5,-40},{5.5,-40},{0,-40}}, color={0,0,255}));
+    annotation (Line(points={{6.3,-40},{6.3,-40},{0,-40}}, color={0,0,255}));
   connect(L2122.n, B21.p)
-    annotation (Line(points={{-7.5,-40},{-7.5,-40},{0,-40}}, color={0,0,255}));
-  connect(L2122.p, B22.p) annotation (Line(points={{-14.5,-40},{-14.5,-40},{-20,
-          -40}}, color={0,0,255}));
-  connect(L2223.n, B22.p) annotation (Line(points={{-27.5,-40},{-27.5,-40},{-20,
-          -40}}, color={0,0,255}));
-  connect(L2223.p, B23.p) annotation (Line(points={{-34.5,-40},{-34.5,-40},{-40,
-          -40}}, color={0,0,255}));
-  connect(L2324.p, B24.p) annotation (Line(points={{-54.5,-40},{-54.5,-40},{-60,
-          -40}}, color={0,0,255}));
-  connect(L2526.n, B25.p) annotation (Line(points={{-87.5,-40},{-87.5,-40},{-80,
-          -40}}, color={0,0,255}));
-  connect(L2526.p, B26.p) annotation (Line(points={{-94.5,-40},{-94.5,-40},{-100,
-          -40}}, color={0,0,255}));
-  connect(B26.p, L2627.p) annotation (Line(points={{-100,-40},{-116,-40},{-116,
-          -80},{-110.5,-80}}, color={0,0,255}));
-  connect(L2627.n, B27.p) annotation (Line(points={{-103.5,-80},{-103.5,-80},{-100,
-          -80}}, color={0,0,255}));
+    annotation (Line(points={{-8.3,-40},{-8.3,-40},{0,-40}}, color={0,0,255}));
+  connect(L2122.p, B22.p) annotation (Line(points={{-13.7,-40},{-13.7,-40},{-20,-40}},
+                 color={0,0,255}));
+  connect(L2223.n, B22.p) annotation (Line(points={{-28.3,-40},{-28.3,-40},{-20,-40}},
+                 color={0,0,255}));
+  connect(L2223.p, B23.p) annotation (Line(points={{-33.7,-40},{-33.7,-40},{-40,-40}},
+                 color={0,0,255}));
+  connect(L2324.p, B24.p) annotation (Line(points={{-53.7,-40},{-53.7,-40},{-60,-40}},
+                 color={0,0,255}));
+  connect(L2526.n, B25.p) annotation (Line(points={{-88.3,-40},{-88.3,-40},{-80,-40}},
+                 color={0,0,255}));
+  connect(L2526.p, B26.p) annotation (Line(points={{-93.7,-40},{-93.7,-40},{-100,-40}},
+                 color={0,0,255}));
+  connect(B26.p, L2627.p) annotation (Line(points={{-100,-40},{-116,-40},{-116,-80},{-109.7,-80}},
+                              color={0,0,255}));
+  connect(L2627.n, B27.p) annotation (Line(points={{-104.3,-80},{-104.3,-80},{-100,-80}},
+                 color={0,0,255}));
   connect(B27.p, L527.n)
-    annotation (Line(points={{-100,-80},{-94.5,-80}}, color={0,0,255}));
+    annotation (Line(points={{-100,-80},{-93.7,-80}}, color={0,0,255}));
   connect(L527.p, B5.p)
-    annotation (Line(points={{-87.5,-80},{-80,-80}}, color={0,0,255}));
+    annotation (Line(points={{-88.3,-80},{-80,-80}}, color={0,0,255}));
   connect(Tr231.n, B2.p) annotation (Line(points={{108.7,-80},{116,-80},{120,-80}},
         color={0,0,255}));
   connect(Tr231.p, B31.p)
@@ -343,51 +338,51 @@ equation
   connect(Tr89.n, B9.p)
     annotation (Line(points={{66.6,30},{73.3,30},{80,30}}, color={0,0,255}));
   connect(B10.p, L1011.p)
-    annotation (Line(points={{-60,0},{-54.5,0}}, color={0,0,255}));
+    annotation (Line(points={{-60,0},{-53.7,0}}, color={0,0,255}));
   connect(L1112.n, B12.p)
-    annotation (Line(points={{-27.5,0},{-27.5,0},{-20,0}}, color={0,0,255}));
+    annotation (Line(points={{-28.3,0},{-28.3,0},{-20,0}}, color={0,0,255}));
   connect(B12.p, L1213.p)
-    annotation (Line(points={{-20,0},{-14.5,0}}, color={0,0,255}));
+    annotation (Line(points={{-20,0},{-13.7,0}}, color={0,0,255}));
   connect(L1213.n, B13.p)
-    annotation (Line(points={{-7.5,0},{-7.5,0},{0,0}}, color={0,0,255}));
+    annotation (Line(points={{-8.3,0},{-8.3,0},{0,0}}, color={0,0,255}));
   connect(B13.p, L1314.p)
-    annotation (Line(points={{0,0},{5.5,0}}, color={0,0,255}));
+    annotation (Line(points={{0,0},{6.3,0}}, color={0,0,255}));
   connect(L1314.n, B14.p)
-    annotation (Line(points={{12.5,0},{16.25,0},{20,0}}, color={0,0,255}));
+    annotation (Line(points={{11.7,0},{11.7,0},{20,0}},  color={0,0,255}));
   connect(L1415.n, B15.p)
-    annotation (Line(points={{32.5,0},{36.25,0},{40,0}}, color={0,0,255}));
+    annotation (Line(points={{31.7,0},{31.7,0},{40,0}},  color={0,0,255}));
   connect(L1516.n, B16.p)
-    annotation (Line(points={{52.5,0},{56.25,0},{60,0}}, color={0,0,255}));
+    annotation (Line(points={{51.7,0},{51.7,0},{60,0}},  color={0,0,255}));
   connect(B9.p, Tr49.p)
     annotation (Line(points={{80,30},{93.4,30}}, color={0,0,255}));
   connect(B4.p, L410.p)
-    annotation (Line(points={{-80,0},{-72.5,0}}, color={0,0,255}));
+    annotation (Line(points={{-80,0},{-71.7,0}}, color={0,0,255}));
   connect(Tr49.n, B4.p) annotation (Line(points={{106.6,30},{110,30},{110,14},{
           -84,14},{-84,0},{-80,0}}, color={0,0,255}));
   connect(L1718.n, B18.p)
-    annotation (Line(points={{94.5,0},{97.25,0},{100,0}}, color={0,0,255}));
+    annotation (Line(points={{93.7,0},{93.7,0},{100,0}},  color={0,0,255}));
   connect(B17.p, L1718.p)
-    annotation (Line(points={{80,0},{87.5,0}}, color={0,0,255}));
+    annotation (Line(points={{80,0},{88.3,0}}, color={0,0,255}));
   connect(B25.p, L2425.p)
-    annotation (Line(points={{-80,-40},{-74.5,-40}}, color={0,0,255}));
-  connect(L2425.n, B24.p) annotation (Line(points={{-67.5,-40},{-63.75,-40},{-60,
-          -40}}, color={0,0,255}));
-  connect(L2324.n, B23.p) annotation (Line(points={{-47.5,-40},{-43.75,-40},{-40,
-          -40}}, color={0,0,255}));
+    annotation (Line(points={{-80,-40},{-73.7,-40}}, color={0,0,255}));
+  connect(L2425.n, B24.p) annotation (Line(points={{-68.3,-40},{-68.3,-40},{-60,-40}},
+                 color={0,0,255}));
+  connect(L2324.n, B23.p) annotation (Line(points={{-48.3,-40},{-48.3,-40},{-40,-40}},
+                 color={0,0,255}));
   connect(B3.p, L318.n)
-    annotation (Line(points={{60,-40},{67.5,-40}}, color={0,0,255}));
-  connect(L318.p, B18.p) annotation (Line(points={{74.5,-40},{110,-40},{110,0},
-          {100,0}}, color={0,0,255}));
-  connect(pwFault.p, L318.n) annotation (Line(points={{64,-53.3333},{64,-40},{
-          67.5,-40}}, color={0,0,255}));
+    annotation (Line(points={{60,-40},{68.3,-40}}, color={0,0,255}));
+  connect(L318.p, B18.p) annotation (Line(points={{73.7,-40},{110,-40},{110,0},{100,0}},
+                    color={0,0,255}));
+  connect(pwFault.p, L318.n) annotation (Line(points={{64,-53.3333},{64,-40},{68.3,-40}},
+                      color={0,0,255}));
   connect(B28.p, Tr2829.p)
     annotation (Line(points={{-40,-80},{-26.7,-80}}, color={0,0,255}));
-  connect(B2.p, order3.p) annotation (Line(points={{120,-80},{139,-80},{139,-80.0496}},
+  connect(B2.p, order3.p) annotation (Line(points={{120,-80},{140,-80},{140,-80}},
         color={0,0,255}));
-  connect(order3.pm, order3.pm0) annotation (Line(points={{160,-75},{162,-75},{
-          162,-69},{158,-69}}, color={0,0,127}));
-  connect(order3.vf, order3.vf0) annotation (Line(points={{160,-85},{162,-85},{
-          162,-86},{162,-91},{158,-91}}, color={0,0,127}));
+  connect(order3.pm, order3.pm0) annotation (Line(points={{162,-75},{162,-75},{162,-69},{158,-69}},
+                               color={0,0,127}));
+  connect(order3.vf, order3.vf0) annotation (Line(points={{162,-85},{162,-85},{162,-86},{162,-91},{158,-91}},
+                                         color={0,0,127}));
   annotation (
     Icon(coordinateSystem(preserveAspectRatio=false, extent={{-180,-100},{180,
             100}})),
