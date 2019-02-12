@@ -6,7 +6,7 @@ model ULTC_Test
     G=0,
     R=0.01,
     X=0.1) annotation (Placement(visible=true, transformation(
-        origin={30,-10},
+        origin={20,-10},
         extent={{-10.0,-10.0},{10.0,10.0}},
         rotation=0)));
   OpenIPSL.Electrical.Branches.PwLine pwLine4(
@@ -14,24 +14,24 @@ model ULTC_Test
     G=0,
     R=0.01,
     X=0.1) annotation (Placement(visible=true, transformation(
-        origin={30,10},
+        origin={20,10},
         extent={{-10.0,-10.0},{10.0,10.0}},
         rotation=0)));
   Modelica.Blocks.Sources.Sine sine1(amplitude=0.001, freqHz=0.2) annotation (
       Placement(visible=true, transformation(
-        origin={-132.783,10.4652},
+        origin={-92,10},
         extent={{-4.4802,-4.4802},{4.4802,4.4802}},
         rotation=0)));
-  Modelica.Blocks.Math.Add add2(k2=-1) annotation (Placement(visible=true,
+  Modelica.Blocks.Math.Add diff(k2=-1) annotation (Placement(visible=true,
         transformation(
-        origin={-109.106,-0.3379},
+        origin={-72,0},
         extent={{-6.3229,-6.3229},{6.3229,6.3229}},
         rotation=0)));
   Modelica.Blocks.Sources.Sine sine2(
     amplitude=0.001,
     freqHz=0.2,
     startTime=5) annotation (Placement(visible=true, transformation(
-        origin={-132.382,-10.5198},
+        origin={-92,-10},
         extent={{-4.4802,-4.4802},{4.4802,4.4802}},
         rotation=0)));
   OpenIPSL.Electrical.Machines.PSAT.Order2 order2_Inputs_Outputs(
@@ -45,10 +45,10 @@ model ULTC_Test
     Vn=400,
     ra=0.001,
     x1d=0.302,
-    M=10) annotation (Placement(transformation(extent={{-40,-10},{-20,10}})));
+    M=10) annotation (Placement(transformation(extent={{-30,-10},{-10,10}})));
   Modelica.Blocks.Math.Add add
-    annotation (Placement(transformation(extent={{-85,-10},{-65,10}})));
-  OpenIPSL.Electrical.Loads.PSAT.LOADPQ_variation lOADPQ(
+    annotation (Placement(transformation(extent={{-56,-6},{-44,6}})));
+  OpenIPSL.Electrical.Loads.PSAT.LOADPQ_variation lOADPQ_B3(
     P_0=0.08,
     Q_0=0.06,
     t_start_1=5,
@@ -58,80 +58,66 @@ model ULTC_Test
     dP1=0,
     dP2=0,
     dQ1=-0.05,
-    dQ2=0.05)
-    annotation (Placement(transformation(extent={{115,-10},{135,10}})));
+    dQ2=0.05) annotation (Placement(transformation(extent={{80,-40},{100,-20}})));
   OpenIPSL.Electrical.Branches.PSAT.ULTC_VoltageControl uLTC_VoltageControl
-    annotation (Placement(transformation(extent={{70,-10},{90,10}})));
+    annotation (Placement(transformation(extent={{50,-10},{70,10}})));
   OpenIPSL.Electrical.Buses.Bus B1
-    annotation (Placement(transformation(extent={{-5,-10},{15,10}})));
+    annotation (Placement(transformation(extent={{-10,-10},{10,10}})));
   OpenIPSL.Electrical.Buses.Bus B2
-    annotation (Placement(transformation(extent={{45,-10},{65,10}})));
+    annotation (Placement(transformation(extent={{30,-10},{50,10}})));
   OpenIPSL.Electrical.Buses.Bus B3
-    annotation (Placement(transformation(extent={{90,-10},{110,10}})));
+    annotation (Placement(transformation(extent={{70,-10},{90,10}})));
   inner OpenIPSL.Electrical.SystemBase SysData
-    annotation (Placement(transformation(extent={{0,50},{45,70}})));
+    annotation (Placement(transformation(extent={{-100,80},{-40,100}})));
 equation
   connect(add.y, order2_Inputs_Outputs.vf) annotation (Line(
-      points={{-64,0},{-50,0},{-50,5},{-40,5}},
+      points={{-43.4,0},{-39,0},{-39,5},{-32,5}},
       color={0,0,127},
       smooth=Smooth.None));
   connect(order2_Inputs_Outputs.pm0, order2_Inputs_Outputs.pm) annotation (Line(
-      points={{-38,-11},{-10,-11},{-10,-30},{-50,-30},{-50,-5},{-40,-5}},
+      points={{-28,-11},{-28,-14},{-36,-14},{-36,-5},{-32,-5}},
       color={0,0,127},
       smooth=Smooth.None));
-  connect(pwLine4.n, pwLine3.n) annotation (Line(
-      points={{41.6667,10},{45,10},{45,-10},{41.6667,-10}},
-      color={0,0,255},
-      smooth=Smooth.None));
-  connect(sine1.y, add2.u1) annotation (Line(
-      points={{-127.855,10.4652},{-116.693,10.4652},{-116.693,3.45584}},
+  connect(sine1.y,diff. u1) annotation (Line(
+      points={{-87.0718,10},{-82,10},{-82,4},{-79.5875,4},{-79.5875,3.79374}},
       color={0,0,127},
       smooth=Smooth.None));
-  connect(sine2.y, add2.u2) annotation (Line(
-      points={{-127.454,-10.5198},{-116.693,-10.5198},{-116.693,-4.13164}},
+  connect(sine2.y,diff. u2) annotation (Line(
+      points={{-87.0718,-10},{-82,-10},{-82,-4},{-79.5875,-4},{-79.5875,-3.79374}},
       color={0,0,127},
       smooth=Smooth.None));
   connect(pwLine4.p, pwLine3.p) annotation (Line(
-      points={{18.3333,10},{15,10},{15,-10},{18.3333,-10}},
+      points={{11,10},{6,10},{6,-10},{11,-10}},
       color={0,0,255},
       smooth=Smooth.None));
-  connect(order2_Inputs_Outputs.vf0, add.u2) annotation (Line(
-      points={{-38,11},{0,11},{0,-35},{-100,-35},{-100,-6},{-87,-6}},
-      color={0,0,127},
-      smooth=Smooth.None));
   connect(order2_Inputs_Outputs.p, B1.p) annotation (Line(
-      points={{-19,0.04964},{-7,0.04964},{-7,0},{5,0}},
+      points={{-10,0},{0,0}},
       color={0,0,255},
       smooth=Smooth.None));
   connect(B1.p, pwLine3.p) annotation (Line(
-      points={{5,0},{15,0},{15,-10},{18.3333,-10}},
+      points={{0,0},{6,0},{6,-10},{11,-10}},
       color={0,0,255},
       smooth=Smooth.None));
   connect(B2.p, pwLine3.n) annotation (Line(
-      points={{55,0},{45,0},{45,-10},{41.6667,-10}},
+      points={{40,0},{34,0},{34,-10},{29,-10}},
       color={0,0,255},
       smooth=Smooth.None));
   connect(uLTC_VoltageControl.n, B3.p) annotation (Line(
-      points={{91,0},{100,0}},
+      points={{71,0},{80,0}},
       color={0,0,255},
       smooth=Smooth.None));
-  connect(lOADPQ.p, B3.p) annotation (Line(
-      points={{125,11},{115,11},{115,0},{100,0}},
+  connect(lOADPQ_B3.p, B3.p) annotation (Line(
+      points={{90,-20},{90,0},{80,0}},
       color={0,0,255},
       smooth=Smooth.None));
   connect(B2.p, uLTC_VoltageControl.p) annotation (Line(
-      points={{55,0},{69,0}},
+      points={{40,0},{49,0}},
       color={0,0,255},
       smooth=Smooth.None));
-  connect(add2.y, add.u1) annotation (Line(
-      points={{-102.151,-0.3379},{-95,-0.3379},{-95,6},{-87,6}},
-      color={0,0,127},
-      smooth=Smooth.None));
-  annotation (Diagram(coordinateSystem(
-        extent={{-148.5,-105},{148.5,105}},
-        preserveAspectRatio=true,
-        initialScale=0.1,
-        grid={5,5}), graphics), Documentation(info="<html>
+  connect(B2.p, pwLine4.n) annotation (Line(points={{40,0},{34,0},{34,10},{29,10}}, color={0,0,255}));
+  connect(diff.y, add.u2) annotation (Line(points={{-65.0448,0},{-62,0},{-62,-3.6},{-57.2,-3.6}}, color={0,0,127}));
+  connect(add.u1, order2_Inputs_Outputs.vf0) annotation (Line(points={{-57.2,3.6},{-62,3.6},{-62,18},{-28,18},{-28,11}}, color={0,0,127}));
+  annotation (Documentation(info="<html>
 <table cellspacing=\"1\" cellpadding=\"1\" border=\"1\"><tr>
 <td><p>Reference</p></td>
 <td><p>KTH own Model, PSAT Manual 2.1.8</p></td>
