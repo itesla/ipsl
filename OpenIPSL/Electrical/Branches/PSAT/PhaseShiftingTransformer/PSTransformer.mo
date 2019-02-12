@@ -112,7 +112,6 @@ equation
       points={{-120,56},{-8,56},{-8,-4},{18,-4}},
       color={0,0,127},
       smooth=Smooth.None));
-  connect(p, p) annotation (Line(points={{-110,0},{-110,0}}, color={0,0,255}));
   annotation (
     Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{
             100,100}})),
