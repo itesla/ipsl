@@ -319,45 +319,37 @@ model IEEE_14_Buses
         rotation=180,
         origin={7,-11})));
   OpenIPSL.Electrical.Branches.PSAT.TwoWindingTransformer twoWindingTransformer(
-    fn=60,
-    kT=18/13.8,
-    x=0.17615,
-    r=0,
     V_b=18,
-    Vn=18) annotation (Placement(transformation(
+    Vn=18,
+    rT=0,
+    xT=0.17615) annotation (Placement(transformation(
         extent={{-14,-14},{14,14}},
         rotation=180,
         origin={119,-38})));
   OpenIPSL.Electrical.Branches.PSAT.TwoWindingTransformer tWTransformerWithFixedTapRatio(
-    fn=60,
-    kT=69/13.8,
     m=0.932,
     V_b=69,
     Vn=69,
-    r=0,
-    x=0.25202) annotation (Placement(transformation(
+    rT=0,
+    xT=0.25202) annotation (Placement(transformation(
         extent={{-14,-14},{14,14}},
         rotation=90,
         origin={-18,-6})));
   OpenIPSL.Electrical.Branches.PSAT.TwoWindingTransformer tWTransformerWithFixedTapRatio1(
-    fn=60,
-    kT=69/13.8,
     m=0.969,
     V_b=69,
     Vn=69,
-    r=0,
-    x=0.55618) annotation (Placement(transformation(
+    rT=0,
+    xT=0.55618) annotation (Placement(transformation(
         extent={{-14,-14},{14,14}},
         rotation=90,
         origin={44,16})));
   OpenIPSL.Electrical.Branches.PSAT.TwoWindingTransformer tWTransformerWithFixedTapRatio2(
-    fn=60,
-    kT=69/13.8,
     m=0.978,
     V_b=69,
     Vn=69,
-    r=0,
-    x=0.20912) annotation (Placement(transformation(
+    rT=0,
+    xT=0.20912) annotation (Placement(transformation(
         extent={{-14,-14},{14,14}},
         rotation=0,
         origin={64,-18})));
@@ -598,6 +590,5 @@ equation
       Interval=0.001,
       Tolerance=1e-006,
       __Dymola_fixedstepsize=0.001,
-      __Dymola_Algorithm="Rkfix2"),
-    __Dymola_experimentSetupOutput);
+      __Dymola_Algorithm="Rkfix2"));
 end IEEE_14_Buses;

@@ -3,11 +3,10 @@ model Example_3
   import Modelica.Constants.pi;
   extends Modelica.Icons.Example;
   OpenIPSL.Electrical.Branches.PSAT.TwoWindingTransformer twoWindingTransformer(
-    kT=16.5/230,
-    x=0.0576,
-    r=0,
     V_b=16.5,
-    Vn=16.5) annotation (Placement(transformation(
+    Vn=16.5,
+    rT=0,
+    xT=0.0576) annotation (Placement(transformation(
         extent={{-10,-10},{10,10}},
         rotation=90,
         origin={0,-50})));
@@ -76,24 +75,20 @@ model Example_3
         extent={{-10,10},{10,-10}},
         rotation=180,
         origin={30,90})));
-  OpenIPSL.Electrical.Branches.PSAT.TwoWindingTransformer
-    twoWindingTransformer1(
-    r=0,
-    kT=13.8/230,
-    x=0.0586,
+  OpenIPSL.Electrical.Branches.PSAT.TwoWindingTransformer twoWindingTransformer1(
     V_b=13.8,
-    Vn=13.8) annotation (Placement(transformation(
+    Vn=13.8,
+    rT=0,
+    xT=0.0586) annotation (Placement(transformation(
         extent={{-10,-10},{10,10}},
         rotation=180,
         origin={100,90})));
-  OpenIPSL.Electrical.Branches.PSAT.TwoWindingTransformer
-    twoWindingTransformer2(
-    r=0,
-    kT=18/230,
-    x=0.0625,
+  OpenIPSL.Electrical.Branches.PSAT.TwoWindingTransformer twoWindingTransformer2(
     Sn=100,
     V_b=18,
-    Vn=18) annotation (Placement(transformation(
+    Vn=18,
+    rT=0,
+    xT=0.0625) annotation (Placement(transformation(
         extent={{-10,-10},{10,10}},
         rotation=0,
         origin={-100,90})));
@@ -237,12 +232,12 @@ equation
     annotation (Line(points={{-89,90},{-89,90},{-80,90}}, color={0,0,255}));
   connect(gen2.pwPin, B3.p)
     annotation (Line(points={{139,90},{129.5,90},{120,90}}, color={0,0,255}));
-  connect(lOADPQ.p, B5.p) annotation (Line(points={{-90,1},{-90,20},{-60,20},{-60,
-          30}}, color={0,0,255}));
+  connect(lOADPQ.p, B5.p) annotation (Line(points={{-90,0},{-90,20},{-60,20},{-60,30}},
+                color={0,0,255}));
   connect(B4.p, twoWindingTransformer.n) annotation (Line(points={{0,-30},{0,-39},
           {6.66134e-16,-39}}, color={0,0,255}));
   connect(B8.p, lOADPQ1.p)
-    annotation (Line(points={{0,90},{10,90},{10,61}}, color={0,0,255}));
+    annotation (Line(points={{0,90},{10,90},{10,60}}, color={0,0,255}));
   connect(line_8_9.p, B9.p)
     annotation (Line(points={{39,90},{39,90},{60,90}}, color={0,0,255}));
   connect(B8.p, line_8_9.n)
@@ -253,7 +248,7 @@ equation
     annotation (Line(points={{-80,90},{-39,90}}, color={0,0,255}));
   connect(B8.p, pwLine2Openings.n)
     annotation (Line(points={{0,90},{-21,90}}, color={0,0,255}));
-  connect(PQ1.p, B6.p) annotation (Line(points={{110,1},{110,20},{80,20},{80,30}},
+  connect(PQ1.p, B6.p) annotation (Line(points={{110,0},{110,20},{80,20},{80,30}},
         color={0,0,255}));
   connect(gen3.pwPin, B1.p)
     annotation (Line(points={{0,-89},{0,-89},{0,-70}}, color={0,0,255}));

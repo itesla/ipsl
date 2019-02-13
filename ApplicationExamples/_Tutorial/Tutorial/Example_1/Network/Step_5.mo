@@ -14,12 +14,10 @@ model Step_5
             -10},{-90,10}}, rotation=0)));
   OpenIPSL.Electrical.Branches.PSAT.TwoWindingTransformer twoWindingTransformer(
     Sn=2220,
-    fn=60,
-    x=0.15,
-    r=0,
     V_b=400,
-    Vn=400) annotation (Placement(visible=true, transformation(extent={{-50,-10},
-            {-30,10}}, rotation=0)));
+    Vn=400,
+    rT=0,
+    xT=0.15) annotation (Placement(visible=true, transformation(extent={{-50,-10},{-30,10}}, rotation=0)));
   OpenIPSL.Electrical.Branches.PwLine pwLine(
     R=0,
     G=0,

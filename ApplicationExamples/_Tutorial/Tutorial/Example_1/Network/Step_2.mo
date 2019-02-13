@@ -12,9 +12,8 @@ partial model Step_2
     Sn=2220,
     V_b=400,
     Vn=400,
-    kT=1,
-    x=0.15,
-    r=0) annotation (Placement(transformation(extent={{-50,-10},{-30,10}})));
+    rT=0,
+    xT=0.15) annotation (Placement(transformation(extent={{-50,-10},{-30,10}})));
   OpenIPSL.Electrical.Branches.PwLine pwLine(
     R=0,
     G=0,
