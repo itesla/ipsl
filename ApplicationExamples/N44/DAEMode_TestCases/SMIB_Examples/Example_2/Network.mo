@@ -1,5 +1,5 @@
 within N44.DAEMode_TestCases.SMIB_Examples.Example_2;
-model Network
+model Network "Single machine infinite bus (SMIB) system simulated with fault in bus B2 at t=0.5s and clearance time at t=0.57s."
     OpenIPSL.Electrical.Buses.Bus B1(displayPF = true) annotation (
         Placement(visible = true, transformation(origin = {-60, 0}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
     OpenIPSL.Electrical.Buses.Bus B2(displayPF = true) annotation (
@@ -27,21 +27,21 @@ model Network
         Placement(visible = true, transformation(origin = {-82, 0}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
 equation
     connect(G1.pwPin, B1.p) annotation (
-        Line(points = {{-70, 0}, {-60, 0}, {-60, 0}, {-60, 0}}, color = {0, 0, 255}));
+        Line(points={{-71,0},{-60,0},{-60,0},{-60,0}},          color = {0, 0, 255}));
     connect(infiniteBus.p, B3.p) annotation (
         Line(points = {{68, 0}, {40, 0}}, color = {0, 0, 255}));
     connect(pwFault.p, B2.p) annotation (
-        Line(points = {{-7, -38}, {-16, -38}, {-16, 0}, {-20, 0}}, color = {0, 0, 255}));
+        Line(points={{-5,-38},{-16,-38},{-16,0},{-20,0}},          color = {0, 0, 255}));
     connect(pwLine1.p, B2.p) annotation (
-        Line(points = {{0, 20}, {-8, 20}, {-8, 0}, {-20, 0}}, color = {0, 0, 255}));
+        Line(points={{1,20},{-8,20},{-8,0},{-20,0}},          color = {0, 0, 255}));
     connect(pwLine2.p, B2.p) annotation (
-        Line(points = {{2, -20}, {-8, -20}, {-8, 0}, {-20, 0}}, color = {0, 0, 255}));
+        Line(points={{1,-20},{-8,-20},{-8,0},{-20,0}},          color = {0, 0, 255}));
     connect(pwLine2.n, B3.p) annotation (
-        Line(points = {{20, -20}, {30, -20}, {30, 0}, {40, 0}, {40, 0}}, color = {0, 0, 255}));
+        Line(points={{19,-20},{30,-20},{30,0},{40,0},{40,0}},            color = {0, 0, 255}));
     connect(pwLine1.n, B3.p) annotation (
-        Line(points = {{20, 20}, {30, 20}, {30, 0}, {40, 0}, {40, 0}}, color = {0, 0, 255}));
+        Line(points={{19,20},{30,20},{30,0},{40,0},{40,0}},            color = {0, 0, 255}));
     connect(twoWindingTransformer.n, B2.p) annotation (
-        Line(points = {{-28, 0}, {-20, 0}, {-20, 0}, {-20, 0}}, color = {0, 0, 255}));
+        Line(points={{-29,0},{-20,0},{-20,0},{-20,0}},          color = {0, 0, 255}));
     connect(twoWindingTransformer.p, B1.p) annotation (
-        Line(points = {{-52, 0}, {-60, 0}, {-60, 0}, {-60, 0}}, color = {0, 0, 255}));
+        Line(points={{-51,0},{-60,0},{-60,0},{-60,0}},          color = {0, 0, 255}));
 end Network;
