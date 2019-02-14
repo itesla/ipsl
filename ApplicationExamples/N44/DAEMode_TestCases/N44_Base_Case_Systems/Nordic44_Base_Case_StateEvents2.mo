@@ -2017,7 +2017,7 @@ model Nordic44_Base_Case_StateEvents2
       Q_0=600,
       eXST1_1(K_C=1.5))
       annotation (Placement(transformation(extent={{208,-116},{218,-106}})));
-  equation
+equation
     connect(G9_bus7000.pwPin, bus_7000.n[1]) annotation (Line(
         points={{-285.7,-143},{-274.075,-143},{-274.075,-92.25},{-272,-92.25}},
         color={0,0,255},
@@ -3713,4 +3713,4 @@ model Nordic44_Base_Case_StateEvents2
  </li>
 </ol>
 </html>"));
-  end Nordic44_Base_Case_StateEvents2;
+end Nordic44_Base_Case_StateEvents2;

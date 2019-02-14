@@ -1,5 +1,5 @@
 within N44.DAEMode_TestCases.SMIB_Examples.Example_1;
-model Network1
+model Network1 "Single machine infinite bus (SMIB) system simulated with fault in bus B2 at t=0.5s."
     SMIB_Examples.Example_1.Generator.Generator G1(P_0 = 1997.999, Q_0 = 967.92, V_0 = 1, V_b = 400, angle_0 = 28.3385, displayPF = true)  annotation (
         Placement(visible = true, transformation(origin = {-88, 0}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
     OpenIPSL.Electrical.Buses.Bus B1(displayPF=true) annotation (

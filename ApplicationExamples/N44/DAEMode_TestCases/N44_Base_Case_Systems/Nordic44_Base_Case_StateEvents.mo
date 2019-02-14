@@ -2023,7 +2023,7 @@ model Nordic44_Base_Case_StateEvents
       t1=61.050,
       t2=61.15)
       annotation (Placement(transformation(extent={{182,-136},{194,-124}})));
-  equation
+equation
     connect(G9_bus7000.pwPin, bus_7000.n[1]) annotation (Line(
         points={{-285.7,-143},{-274.075,-143},{-274.075,-92.25},{-272,-92.25}},
         color={0,0,255},
