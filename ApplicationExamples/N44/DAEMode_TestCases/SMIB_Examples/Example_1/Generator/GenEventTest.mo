@@ -90,7 +90,5 @@ equation
                 Line(
                 points={{-76,-26},{-28,52},{27,-52},{74,23}},
                 color={0,0,255},
-                smooth=Smooth.Bezier)}),
-          Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{
-                  100,100}})));
+                smooth=Smooth.Bezier)}));
 end GenEventTest;

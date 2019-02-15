@@ -4916,5 +4916,7 @@ package Original "Library of original Nordic 44 model"
         Documentation);
     end Gen5_bus_6500;
   end Generators;
-  annotation (Documentation);
+  annotation (Documentation(info="<html>
+  <p>This repository contains models for the original Nordic 44 system.</p>
+</html>"));
 end Original;
