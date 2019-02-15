@@ -2380,8 +2380,7 @@ equation
       smooth=Smooth.None));
 
   connect(line_3200_3359.n, bus_3359.n[7]) annotation (Line(
-      points={{-148.5,99},{-129,99},{-129,92},{-125,92},{-125,90.7333},{-124,
-          90.7333}},
+      points={{-148.5,99},{-129,99},{-129,92},{-125,92},{-125,90.7333},{-124,90.7333}},
       color={0,0,255},
       smooth=Smooth.None));
   connect(line_3359_8500_1.n, bus_3359.n[8]) annotation (Line(
@@ -2956,7 +2955,8 @@ equation
       color={0,0,255},
       smooth=Smooth.None));
   connect(line_3115_3249.p, bus_3249.n[6]) annotation (Line(
-      points={{-202.5,11},{-194,11},{-194,-4},{-182,-4},{-182,-13.0571},{-176,-13.0571}},
+      points={{-202.5,11},{-194,11},{-194,-4},{-182,-4},{-182,-13.0571},{-176,
+          -13.0571}},
       color={0,0,255},
       smooth=Smooth.None));
 
@@ -3348,8 +3348,6 @@ equation
           textStyle={TextStyle.Bold},
           textString="bus
 5402")}),
-    Icon(coordinateSystem(extent={{-300,-220},{300,220}}, preserveAspectRatio=
-            false)),
     Documentation(info="<html>
 <h4>Changes compared to the original case (Real data period: April, May, June and July): </h4>
 <ol>

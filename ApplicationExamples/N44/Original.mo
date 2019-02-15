@@ -1577,99 +1577,97 @@ package Original "Library of original Nordic 44 model"
         smooth=Smooth.None));
 
     connect(Load5_bus7000.p, bus_7000.n[10]) annotation (Line(
-        points={{-285.8,-60},{-283.9,-60},{-283.9,-67.95},{-272,-67.95}},
+        points={{-286,-60},{-283.9,-60},{-283.9,-67.95},{-272,-67.95}},
         color={0,0,255},
         smooth=Smooth.None));
     connect(Load4_bus7000.p, bus_7000.n[11]) annotation (Line(
-        points={{-283.8,-54},{-282.9,-54},{-282.9,-65.25},{-272,-65.25}},
+        points={{-284,-54},{-282.9,-54},{-282.9,-65.25},{-272,-65.25}},
         color={0,0,255},
         smooth=Smooth.None));
     connect(Load3_bus7000.p, bus_7000.n[12]) annotation (Line(
-        points={{-283.8,-48},{-281.9,-48},{-281.9,-62.55},{-272,-62.55}},
+        points={{-284,-48},{-281.9,-48},{-281.9,-62.55},{-272,-62.55}},
         color={0,0,255},
         smooth=Smooth.None));
     connect(Load2_bus7000.p, bus_7000.n[13]) annotation (Line(
-        points={{-283.8,-42},{-280.9,-42},{-280.9,-59.85},{-272,-59.85}},
+        points={{-284,-42},{-280.9,-42},{-280.9,-59.85},{-272,-59.85}},
         color={0,0,255},
         smooth=Smooth.None));
     connect(Load1_bus7000.p, bus_7000.n[14]) annotation (Line(
-        points={{-283.8,-36},{-279.9,-36},{-279.9,-57.15},{-272,-57.15}},
+        points={{-284,-36},{-279.9,-36},{-279.9,-57.15},{-272,-57.15}},
         color={0,0,255},
         smooth=Smooth.None));
     connect(Load1_bus7020.p, bus_7020.n[1]) annotation (Line(
-        points={{-286.325,-15.75},{-283.9,-15.75},{-283.9,-15},{-282,-15}},
+        points={{-286.5,-15.75},{-283.9,-15.75},{-283.9,-15},{-282,-15}},
         color={0,0,255},
         smooth=Smooth.None));
     connect(Load1_bus7010.p, bus_7010.n[1]) annotation (Line(
-        points={{-286.325,4.25},{-283.9,4.25},{-283.9,5},{-282,5}},
+        points={{-286.5,4.25},{-283.9,4.25},{-283.9,5},{-282,5}},
         color={0,0,255},
         smooth=Smooth.None));
     connect(bus_7010.p[1], line_7000_7010.p) annotation (Line(
-        points={{-280,5},{-278,5},{-278,4.83333},{-275,4.83333}},
+        points={{-280,5},{-278,5},{-278,3.5},{-275,3.5}},
         color={0,0,255},
         smooth=Smooth.None));
     connect(bus_7020.p[1], line_7000_7020.p) annotation (Line(
-        points={{-280,-15},{-278,-15},{-278,-23.1667}},
+        points={{-280,-15},{-278,-15},{-278,-24.5}},
         color={0,0,255},
         smooth=Smooth.None));
     connect(line_7000_7020.n, bus_7000.n[15]) annotation (Line(
-        points={{-278,-34.8333},{-278,-54.25},{-272,-54.25},{-272,-54.45}},
+        points={{-278,-33.5},{-278,-54.25},{-272,-54.25},{-272,-54.45}},
         color={0,0,255},
         smooth=Smooth.None));
     connect(line_7000_7010.n, bus_7000.n[16]) annotation (Line(
-        points={{-275,-6.83333},{-275,-26},{-274,-26},{-274,-52},{-272,-52},{-272,
-            -51.75}},
+        points={{-275,-5.5},{-275,-26},{-274,-26},{-274,-52},{-272,-52},{-272,-51.75}},
         color={0,0,255},
         smooth=Smooth.None));
     connect(line_7000_7100_3.n, bus_7000.p[1]) annotation (Line(
-        points={{-254,-74.8333},{-254,-87.25},{-270,-87.25},{-270,-86.4}},
+        points={{-254,-73.5},{-254,-87.25},{-270,-87.25},{-270,-86.4}},
         color={0,0,255},
         smooth=Smooth.None));
     connect(line_7000_7100_2.n, bus_7000.p[2]) annotation (Line(
-        points={{-257,-62.8333},{-257.5,-62.8333},{-257.5,-72},{-270,-72}},
+        points={{-257,-61.5},{-257.5,-61.5},{-257.5,-72},{-270,-72}},
         color={0,0,255},
         smooth=Smooth.None));
     connect(line_7000_7100_1.n, bus_7000.p[3]) annotation (Line(
-        points={{-260,-52.8333},{-260,-54},{-262,-54},{-262,-58},{-270,-58},{-270,
-            -57.6}},
+        points={{-260,-51.5},{-260,-54},{-262,-54},{-262,-58},{-270,-58},{-270,-57.6}},
         color={0,0,255},
         smooth=Smooth.None));
     connect(line_7000_7100_3.p, bus_7100.n[1]) annotation (Line(
-        points={{-254,-63.1667},{-254,-42.975},{-252,-42.975}},
+        points={{-254,-64.5},{-254,-42.975},{-252,-42.975}},
         color={0,0,255},
         smooth=Smooth.None));
     connect(line_7000_7100_2.p, bus_7100.n[2]) annotation (Line(
-        points={{-257,-51.1667},{-257,-40.125},{-252,-40.125}},
+        points={{-257,-52.5},{-257,-40.125},{-252,-40.125}},
         color={0,0,255},
         smooth=Smooth.None));
     connect(line_7000_7100_1.p, bus_7100.n[3]) annotation (Line(
-        points={{-260,-41.1667},{-260,-37.275},{-252,-37.275}},
+        points={{-260,-42.5},{-260,-37.275},{-252,-37.275}},
         color={0,0,255},
         smooth=Smooth.None));
     connect(Load2_bus7100.p, bus_7100.n[4]) annotation (Line(
-        points={{-261.8,-35},{-254.9,-35},{-254.9,-34.425},{-252,-34.425}},
+        points={{-262,-35},{-254.9,-35},{-254.9,-34.425},{-252,-34.425}},
         color={0,0,255},
         smooth=Smooth.None));
     connect(Load1_bus7100.p, bus_7100.n[5]) annotation (Line(
-        points={{-261.8,-30},{-257.9,-30},{-257.9,-31.575},{-252,-31.575}},
+        points={{-262,-30},{-257.9,-30},{-257.9,-31.575},{-252,-31.575}},
         color={0,0,255},
         smooth=Smooth.None));
     connect(bus_7100.p[1], line_3249_7100.n) annotation (Line(
-        points={{-250,-38.7},{-244,-38.7},{-244,-45},{-236.833,-45}},
+        points={{-250,-38.7},{-244,-38.7},{-244,-45},{-235.5,-45}},
         color={0,0,255},
         smooth=Smooth.None));
     connect(Load3_bus3000.p, bus_3000.n[1]) annotation (Line(
-        points={{-270.325,32.25},{-264,32.25},{-264,50.8571},{-258,50.8571}},
+        points={{-270.5,32.25},{-264,32.25},{-264,50.8571},{-258,50.8571}},
         color={0,0,255},
         smooth=Smooth.None));
 
     connect(Load2_bus3000.p, bus_3000.n[2]) annotation (Line(
-        points={{-270.325,39.25},{-266,39.25},{-266,52.5714},{-258,52.5714}},
+        points={{-270.5,39.25},{-266,39.25},{-266,52.5714},{-258,52.5714}},
         color={0,0,255},
         smooth=Smooth.None));
 
     connect(Load1_bus3000.p, bus_3000.n[3]) annotation (Line(
-        points={{-270.325,45.25},{-268,45.25},{-268,54.2857},{-258,54.2857}},
+        points={{-270.5,45.25},{-268,45.25},{-268,54.2857},{-258,54.2857}},
         color={0,0,255},
         smooth=Smooth.None));
 
@@ -1687,39 +1685,39 @@ package Original "Library of original Nordic 44 model"
         smooth=Smooth.None));
 
     connect(line_3000_3020.n, bus_3000.n[7]) annotation (Line(
-        points={{-263.167,79},{-262,79},{-262,61.1429},{-258,61.1429}},
+        points={{-264.5,79},{-262,79},{-262,61.1429},{-258,61.1429}},
         color={0,0,255},
         smooth=Smooth.None));
     connect(line_3000_3115.p, bus_3000.p[1]) annotation (Line(
-        points={{-244.833,29},{-254,29},{-254,51.2},{-256,51.2}},
+        points={{-243.5,29},{-254,29},{-254,51.2},{-256,51.2}},
         color={0,0,255},
         smooth=Smooth.None));
     connect(line_3000_3245_2.p, bus_3000.p[2]) annotation (Line(
-        points={{-252,20.8333},{-252,53.6},{-256,53.6}},
+        points={{-252,19.5},{-252,53.6},{-256,53.6}},
         color={0,0,255},
         smooth=Smooth.None));
     connect(line_3000_3245_1.p, bus_3000.p[3]) annotation (Line(
-        points={{-239.833,56},{-256,56}},
+        points={{-238.5,56},{-256,56}},
         color={0,0,255},
         smooth=Smooth.None));
     connect(line_3000_3300_2.n, bus_3000.p[4]) annotation (Line(
-        points={{-249,59.1667},{-252.5,59.1667},{-252.5,58.4},{-256,58.4}},
+        points={{-249,60.5},{-252.5,60.5},{-252.5,58.4},{-256,58.4}},
         color={0,0,255},
         smooth=Smooth.None));
     connect(line_3000_3300_1.n, bus_3000.p[5]) annotation (Line(
-        points={{-249,69.1667},{-254,69.1667},{-254,60.8},{-256,60.8}},
+        points={{-249,70.5},{-254,70.5},{-254,60.8},{-256,60.8}},
         color={0,0,255},
         smooth=Smooth.None));
     connect(Load_bus3020.p, bus_3020.n[1]) annotation (Line(
-        points={{-286.325,77.25},{-283.9,77.25},{-283.9,80},{-282,80}},
+        points={{-286.5,77.25},{-283.9,77.25},{-283.9,80},{-282,80}},
         color={0,0,255},
         smooth=Smooth.None));
     connect(line_3000_3300_2.p, bus_3300.n[1]) annotation (Line(
-        points={{-249,70.8333},{-222,70.8333},{-222,93.2},{-220,93.2}},
+        points={{-249,69.5},{-222,69.5},{-222,93.2},{-220,93.2}},
         color={0,0,255},
         smooth=Smooth.None));
     connect(line_3000_3300_1.p, bus_3300.n[2]) annotation (Line(
-        points={{-249,80.8333},{-224,80.8333},{-224,95.6},{-220,95.6}},
+        points={{-249,79.5},{-224,79.5},{-224,95.6},{-220,95.6}},
         color={0,0,255},
         smooth=Smooth.None));
     connect(G1_bus3300.pwPin, bus_3300.n[3]) annotation (Line(
@@ -1727,11 +1725,11 @@ package Original "Library of original Nordic 44 model"
         color={0,0,255},
         smooth=Smooth.None));
     connect(Load2_bus3300.p, bus_3300.n[4]) annotation (Line(
-        points={{-228.325,97.75},{-228,97.75},{-228,100.4},{-220,100.4}},
+        points={{-228.5,97.75},{-228,97.75},{-228,100.4},{-220,100.4}},
         color={0,0,255},
         smooth=Smooth.None));
     connect(Load1_bus3300.p, bus_3300.n[5]) annotation (Line(
-        points={{-228.325,102.25},{-228,102.25},{-228,102.8},{-220,102.8}},
+        points={{-228.5,102.25},{-228,102.25},{-228,102.8},{-220,102.8}},
         color={0,0,255},
         smooth=Smooth.None));
     connect(G3_bus3300.pwPin, bus_3300.p[1]) annotation (Line(
@@ -1743,44 +1741,42 @@ package Original "Library of original Nordic 44 model"
         color={0,0,255},
         smooth=Smooth.None));
     connect(line_3200_3300.p, bus_3300.p[3]) annotation (Line(
-        points={{-202.833,103},{-209.25,103},{-209.25,98},{-218,98}},
+        points={{-201.5,103},{-209.25,103},{-209.25,98},{-218,98}},
         color={0,0,255},
         smooth=Smooth.None));
     connect(line_3100_3200_1.p, bus_3200.n[1]) annotation (Line(
-        points={{-181,82.8333},{-181,86.25},{-178,86.25},{-178,93.2}},
+        points={{-181,81.5},{-181,86.25},{-178,86.25},{-178,93.2}},
         color={0,0,255},
         smooth=Smooth.None));
     connect(line_3100_3200_2.p, bus_3200.n[2]) annotation (Line(
-        points={{-187,82.8333},{-187,86},{-182,86},{-182,95.6},{-178,95.6}},
+        points={{-187,81.5},{-187,86},{-182,86},{-182,95.6},{-178,95.6}},
         color={0,0,255},
         smooth=Smooth.None));
     connect(line_3100_3200_3.p, bus_3200.n[3]) annotation (Line(
-        points={{-193,82.8333},{-193,90},{-184,90},{-184,98},{-178,98}},
+        points={{-193,81.5},{-193,90},{-184,90},{-184,98},{-178,98}},
         color={0,0,255},
         smooth=Smooth.None));
     connect(line_3200_3300.n, bus_3200.n[4]) annotation (Line(
-        points={{-191.167,103},{-185.75,103},{-185.75,100.4},{-178,100.4}},
+        points={{-192.5,103},{-185.75,103},{-185.75,100.4},{-178,100.4}},
         color={0,0,255},
         smooth=Smooth.None));
     connect(line_3300_8500_2.n, bus_3300.p[4]) annotation (Line(
-        points={{-207,113.167},{-207,108},{-211,108},{-211,100.4},{-218,100.4}},
+        points={{-207,114.5},{-207,108},{-211,108},{-211,100.4},{-218,100.4}},
         color={0,0,255},
         smooth=Smooth.None));
 
     connect(line_3300_8500_1.n, bus_3300.p[5]) annotation (Line(
-        points={{-211,113.167},{-211,110},{-214,110},{-214,102.8},{-218,102.8}},
+        points={{-211,114.5},{-211,110},{-214,110},{-214,102.8},{-218,102.8}},
         color={0,0,255},
         smooth=Smooth.None));
 
     connect(line_3300_8500_2.p, bus_8500.n[1]) annotation (Line(
-        points={{-207,124.833},{-207,126},{-202,126},{-202,133.975},{-198,
-            133.975}},
+        points={{-207,123.5},{-207,126},{-202,126},{-202,133.975},{-198,133.975}},
         color={0,0,255},
         smooth=Smooth.None));
 
     connect(line_3300_8500_1.p, bus_8500.n[2]) annotation (Line(
-        points={{-211,124.833},{-211,128},{-204,128},{-204,137.125},{-198,
-            137.125}},
+        points={{-211,123.5},{-211,128},{-204,128},{-204,137.125},{-198,137.125}},
         color={0,0,255},
         smooth=Smooth.None));
 
@@ -1793,35 +1789,34 @@ package Original "Library of original Nordic 44 model"
         color={0,0,255},
         smooth=Smooth.None));
     connect(Load3_bus8500.p, bus_8500.n[5]) annotation (Line(
-        points={{-211.8,148},{-208,148},{-208,146.575},{-198,146.575}},
+        points={{-212,148},{-208,148},{-208,146.575},{-198,146.575}},
         color={0,0,255},
         smooth=Smooth.None));
     connect(Load2_bus8500.p, bus_8500.n[6]) annotation (Line(
-        points={{-210.325,156.25},{-210,156.25},{-210,149.725},{-198,149.725}},
+        points={{-210.5,156.25},{-210,156.25},{-210,149.725},{-198,149.725}},
         color={0,0,255},
         smooth=Smooth.None));
 
     connect(Load1_bus8500.p, bus_8500.n[7]) annotation (Line(
-        points={{-210.325,162.25},{-206,162.25},{-206,152.875},{-198,152.875}},
+        points={{-210.5,162.25},{-206,162.25},{-206,152.875},{-198,152.875}},
         color={0,0,255},
         smooth=Smooth.None));
 
     connect(line_8500_8700.n, bus_8500.n[8]) annotation (Line(
-        points={{-209.167,167},{-204,167},{-204,156.025},{-198,156.025}},
+        points={{-210.5,167},{-204,167},{-204,156.025},{-198,156.025}},
         color={0,0,255},
         smooth=Smooth.None));
     connect(line_3200_8500.p, bus_8500.p[1]) annotation (Line(
-        points={{-189,126.833},{-189,126},{-194,126},{-194,133.975},{-196,
-            133.975}},
+        points={{-189,125.5},{-189,126},{-194,126},{-194,133.975},{-196,133.975}},
         color={0,0,255},
         smooth=Smooth.None));
 
     connect(line_3359_8500_1.p, bus_8500.p[2]) annotation (Line(
-        points={{-166.833,129},{-192,129},{-192,137.125},{-196,137.125}},
+        points={{-165.5,129},{-192,129},{-192,137.125},{-196,137.125}},
         color={0,0,255},
         smooth=Smooth.None));
     connect(line_3359_8500_2.p, bus_8500.p[3]) annotation (Line(
-        points={{-166.833,133},{-190,133},{-190,140.275},{-196,140.275}},
+        points={{-165.5,133},{-190,133},{-190,140.275},{-196,140.275}},
         color={0,0,255},
         smooth=Smooth.None));
     connect(G6_bus8500.pwPin, bus_8500.p[4]) annotation (Line(
@@ -1841,173 +1836,171 @@ package Original "Library of original Nordic 44 model"
         color={0,0,255},
         smooth=Smooth.None));
     connect(line_8500_8700.p, bus_8700.p[1]) annotation (Line(
-        points={{-220.833,167},{-227.25,167},{-227.25,166},{-236,166}},
+        points={{-219.5,167},{-227.25,167},{-227.25,166},{-236,166}},
         color={0,0,255},
         smooth=Smooth.None));
     connect(Load_bus8700.p, bus_8700.n[1]) annotation (Line(
-        points={{-244.325,166.25},{-241.9,166.25},{-241.9,166},{-238,166}},
+        points={{-244.5,166.25},{-241.9,166.25},{-241.9,166},{-238,166}},
         color={0,0,255},
         smooth=Smooth.None));
     connect(line_8500_8600.n, bus_8500.p[8]) annotation (Line(
-        points={{-184.833,169},{-190,169},{-190,156.025},{-196,156.025}},
+        points={{-183.5,169},{-190,169},{-190,156.025},{-196,156.025}},
         color={0,0,255},
         smooth=Smooth.None));
     connect(line_8500_8600.p, bus_8600.n[1]) annotation (Line(
-        points={{-173.167,169},{-168.75,169},{-168.75,166},{-162,166}},
+        points={{-174.5,169},{-168.75,169},{-168.75,166},{-162,166}},
         color={0,0,255},
         smooth=Smooth.None));
     connect(Load_bus8600.p, bus_8600.p[1]) annotation (Line(
-        points={{-153.65,166.5},{-157.1,166.5},{-157.1,166},{-160,166}},
+        points={{-153.5,166.5},{-157.1,166.5},{-157.1,166},{-160,166}},
         color={0,0,255},
         smooth=Smooth.None));
     connect(line_3200_8500.n, bus_3200.n[5]) annotation (Line(
-        points={{-189,115.167},{-189,106},{-180,106},{-180,102.8},{-178,102.8}},
+        points={{-189,116.5},{-189,106},{-180,106},{-180,102.8},{-178,102.8}},
         color={0,0,255},
         smooth=Smooth.None));
 
     connect(line_3200_3359.p, bus_3200.p[1]) annotation (Line(
-        points={{-158.833,99},{-166.25,99},{-166.25,98},{-176,98}},
+        points={{-157.5,99},{-166.25,99},{-166.25,98},{-176,98}},
         color={0,0,255},
         smooth=Smooth.None));
     connect(bus_3100.p[1], line_3100_3359_2.p) annotation (Line(
-        points={{-176,43},{-163,43},{-163,51},{-160.833,51}},
+        points={{-176,43},{-163,43},{-163,51},{-159.5,51}},
         color={0,0,255},
         smooth=Smooth.None));
     connect(bus_3100.p[2], line_3100_3359_1.p) annotation (Line(
-        points={{-176,49},{-168,49},{-168,57},{-160.833,57}},
+        points={{-176,49},{-168,49},{-168,57},{-159.5,57}},
         color={0,0,255},
         smooth=Smooth.None));
     connect(line_3100_3359_2.n, bus_3359.n[1]) annotation (Line(
-        points={{-149.167,51},{-128,51},{-128,67.5333},{-124,67.5333}},
+        points={{-150.5,51},{-128,51},{-128,67.5333},{-124,67.5333}},
         color={0,0,255},
         smooth=Smooth.None));
     connect(line_3100_3359_1.n, bus_3359.n[2]) annotation (Line(
-        points={{-149.167,57},{-132,57},{-132,71.4},{-124,71.4}},
+        points={{-150.5,57},{-132,57},{-132,71.4},{-124,71.4}},
         color={0,0,255},
         smooth=Smooth.None));
     connect(Load4_bus3359.p, bus_3359.n[3]) annotation (Line(
-        points={{-136.325,74.25},{-133.9,74.25},{-133.9,75.2667},{-124,75.2667}},
+        points={{-136.5,74.25},{-133.9,74.25},{-133.9,75.2667},{-124,75.2667}},
         color={0,0,255},
         smooth=Smooth.None));
 
     connect(Load3_bus3359.p, bus_3359.n[4]) annotation (Line(
-        points={{-134.325,78.25},{-129.9,78.25},{-129.9,79.1333},{-124,79.1333}},
+        points={{-134.5,78.25},{-129.9,78.25},{-129.9,79.1333},{-124,79.1333}},
         color={0,0,255},
         smooth=Smooth.None));
 
     connect(Load2_bus3359.p, bus_3359.n[5]) annotation (Line(
-        points={{-132.325,82.25},{-130.9,82.25},{-130.9,83},{-124,83}},
+        points={{-132.5,82.25},{-130.9,82.25},{-130.9,83},{-124,83}},
         color={0,0,255},
         smooth=Smooth.None));
     connect(Load1_bus3359.p, bus_3359.n[6]) annotation (Line(
-        points={{-130.325,86.75},{-129.9,86.75},{-129.9,86.8667},{-124,86.8667}},
+        points={{-130.5,86.75},{-129.9,86.75},{-129.9,86.8667},{-124,86.8667}},
         color={0,0,255},
         smooth=Smooth.None));
 
     connect(line_3200_3359.n, bus_3359.n[7]) annotation (Line(
-        points={{-147.167,99},{-129,99},{-129,92},{-125,92},{-125,90.7333},{-124,
+        points={{-148.5,99},{-129,99},{-129,92},{-125,92},{-125,90.7333},{-124,
             90.7333}},
         color={0,0,255},
         smooth=Smooth.None));
     connect(line_3359_8500_1.n, bus_3359.n[8]) annotation (Line(
-        points={{-155.167,129},{-137,129},{-137,106},{-127,106},{-127,94.6},{-124,
-            94.6}},
+        points={{-156.5,129},{-137,129},{-137,106},{-127,106},{-127,94.6},{-124,94.6}},
         color={0,0,255},
         smooth=Smooth.None));
     connect(line_3359_8500_2.n, bus_3359.n[9]) annotation (Line(
-        points={{-155.167,133},{-127,133},{-127,108},{-125,108},{-125,98.4667},
-            {-124,98.4667}},
+        points={{-156.5,133},{-127,133},{-127,108},{-125,108},{-125,98.4667},{
+            -124,98.4667}},
         color={0,0,255},
         smooth=Smooth.None));
     connect(Load_bus3360.p, bus_3360.p[1]) annotation (Line(
-        points={{-85.675,140.25},{-89.1,140.25},{-89.1,140},{-94,140}},
+        points={{-85.5,140.25},{-89.1,140.25},{-89.1,140},{-94,140}},
         color={0,0,255},
         smooth=Smooth.None));
     connect(line_3100_3249.p, bus_3100.n[1]) annotation (Line(
-        points={{-189,20.8333},{-189,38},{-182,38},{-182,41},{-178,41}},
+        points={{-189,19.5},{-189,38},{-182,38},{-182,41},{-178,41}},
         color={0,0,255},
         smooth=Smooth.None));
     connect(line_3100_3115.p, bus_3100.n[2]) annotation (Line(
-        points={{-200.167,34},{-196,34},{-196,40},{-184,40},{-184,43},{-178,43}},
+        points={{-201.5,34},{-196,34},{-196,40},{-184,40},{-184,43},{-178,43}},
         color={0,0,255},
         smooth=Smooth.None));
 
     connect(Load_bus3100.p, bus_3100.n[3]) annotation (Line(
-        points={{-194.325,47.25},{-186.9,47.25},{-186.9,45},{-178,45}},
+        points={{-194.5,47.25},{-186.9,47.25},{-186.9,45},{-178,45}},
         color={0,0,255},
         smooth=Smooth.None));
     connect(line_3100_3200_3.n, bus_3100.n[4]) annotation (Line(
-        points={{-193,71.1667},{-193,52},{-184,52},{-184,47},{-178,47}},
+        points={{-193,72.5},{-193,52},{-184,52},{-184,47},{-178,47}},
         color={0,0,255},
         smooth=Smooth.None));
     connect(line_3100_3200_2.n, bus_3100.n[5]) annotation (Line(
-        points={{-187,71.1667},{-187,58},{-182,58},{-182,48},{-180,48},{-180,49},
-            {-178,49}},
+        points={{-187,72.5},{-187,58},{-182,58},{-182,48},{-180,48},{-180,49},{-178,
+            49}},
         color={0,0,255},
         smooth=Smooth.None));
     connect(line_3100_3200_1.n, bus_3100.n[6]) annotation (Line(
-        points={{-181,71.1667},{-181,62},{-180,62},{-180,50},{-178,50},{-178,51}},
+        points={{-181,72.5},{-181,62},{-180,62},{-180,50},{-178,50},{-178,51}},
         color={0,0,255},
         smooth=Smooth.None));
 
     connect(line_3115_6701.n, bus_6701.n[1]) annotation (Line(
-        points={{-204,-41.8333},{-204,-60},{-172,-60},{-172,-84},{-146,-84}},
+        points={{-204,-40.5},{-204,-60},{-172,-60},{-172,-84},{-146,-84}},
         color={0,0,255},
         smooth=Smooth.None));
 
     connect(bus_3701.p[1], line_3701_6700.n) annotation (Line(
-        points={{-116,-60},{-108,-60},{-108,-69},{-100.833,-69}},
+        points={{-116,-60},{-108,-60},{-108,-69},{-99.5,-69}},
         color={0,0,255},
         smooth=Smooth.None));
     connect(bus_3244.p[1], line_3244_6500.n) annotation (Line(
-        points={{-176,-96},{-160,-96},{-160,-111},{-116.833,-111}},
+        points={{-176,-96},{-160,-96},{-160,-111},{-115.5,-111}},
         color={0,0,255},
         smooth=Smooth.None));
     connect(bus_6700.p[1], line_6500_6700_2.n) annotation (Line(
-        points={{-76,-88},{-70,-88},{-70,-91},{-56.8333,-91}},
+        points={{-76,-88},{-70,-88},{-70,-91},{-55.5,-91}},
         color={0,0,255},
         smooth=Smooth.None));
     connect(line_6500_6700_1.n, bus_6700.p[2]) annotation (Line(
-        points={{-56.8333,-85},{-70.25,-85},{-70.25,-84},{-76,-84}},
+        points={{-55.5,-85},{-70.25,-85},{-70.25,-84},{-76,-84}},
         color={0,0,255},
         smooth=Smooth.None));
     connect(line_3244_6500.p, bus_6500.n[1]) annotation (Line(
-        points={{-105.167,-111},{-46,-111},{-46,-119},{-24,-119},{-24,-111},{-20,
-            -111}},
+        points={{-106.5,-111},{-46,-111},{-46,-119},{-24,-119},{-24,-111},{-20,-111}},
         color={0,0,255},
         smooth=Smooth.None));
     connect(Load3_bus6500.p, bus_6500.n[2]) annotation (Line(
-        points={{-30.325,-111.75},{-25.9,-111.75},{-25.9,-106.6},{-20,-106.6}},
+        points={{-30.5,-111.75},{-25.9,-111.75},{-25.9,-106.6},{-20,-106.6}},
         color={0,0,255},
         smooth=Smooth.None));
 
     connect(Load2_bus6500.p, bus_6500.n[3]) annotation (Line(
-        points={{-30.325,-103.75},{-25.9,-103.75},{-25.9,-102.2},{-20,-102.2}},
+        points={{-30.5,-103.75},{-25.9,-103.75},{-25.9,-102.2},{-20,-102.2}},
         color={0,0,255},
         smooth=Smooth.None));
 
     connect(Load1_bus6500.p, bus_6500.n[4]) annotation (Line(
-        points={{-30.325,-97.75},{-25.9,-97.75},{-25.9,-97.8},{-20,-97.8}},
+        points={{-30.5,-97.75},{-25.9,-97.75},{-25.9,-97.8},{-20,-97.8}},
         color={0,0,255},
         smooth=Smooth.None));
     connect(line_6500_6700_2.p, bus_6500.n[5]) annotation (Line(
-        points={{-45.1667,-91},{-38.75,-91},{-38.75,-93.4},{-20,-93.4}},
+        points={{-46.5,-91},{-38.75,-91},{-38.75,-93.4},{-20,-93.4}},
         color={0,0,255},
         smooth=Smooth.None));
     connect(line_6500_6700_1.p, bus_6500.n[6]) annotation (Line(
-        points={{-45.1667,-85},{-38.75,-85},{-38.75,-89},{-20,-89}},
+        points={{-46.5,-85},{-38.75,-85},{-38.75,-89},{-20,-89}},
         color={0,0,255},
         smooth=Smooth.None));
     connect(bus_5100.p[1], line_5100_5500.n) annotation (Line(
-        points={{24,-67},{32,-67},{32,-65},{35.1667,-65}},
+        points={{24,-67},{32,-67},{32,-65},{36.5,-65}},
         color={0,0,255},
         smooth=Smooth.None));
     connect(line_3359_5101_2.n, bus_3359.p[1]) annotation (Line(
-        points={{-70.8333,11},{-118,11},{-118,67.5333},{-122,67.5333}},
+        points={{-69.5,11},{-118,11},{-118,67.5333},{-122,67.5333}},
         color={0,0,255},
         smooth=Smooth.None));
     connect(line_3359_5101_1.n, bus_3359.p[2]) annotation (Line(
-        points={{-70.8333,17},{-114,17},{-114,71.4},{-122,71.4}},
+        points={{-69.5,17},{-114,17},{-114,71.4},{-122,71.4}},
         color={0,0,255},
         smooth=Smooth.None));
     connect(G6_bus3359.pwPin, bus_3359.p[3]) annotation (Line(
@@ -2035,244 +2028,244 @@ package Original "Library of original Nordic 44 model"
         color={0,0,255},
         smooth=Smooth.None));
     connect(line_3359_5101_2.p, bus_5101.n[1]) annotation (Line(
-        points={{-59.1667,11},{15.25,11},{15.25,4},{22,4}},
+        points={{-60.5,11},{15.25,11},{15.25,4},{22,4}},
         color={0,0,255},
         smooth=Smooth.None));
     connect(line_3359_5101_1.p, bus_5101.n[2]) annotation (Line(
-        points={{-59.1667,17},{15.25,17},{15.25,8},{22,8}},
+        points={{-60.5,17},{15.25,17},{15.25,8},{22,8}},
         color={0,0,255},
         smooth=Smooth.None));
     connect(bus_5101.p[1], line_5101_5501.n) annotation (Line(
-        points={{24,4},{32,4},{32,3},{37.1667,3}},
+        points={{24,4},{32,4},{32,3},{38.5,3}},
         color={0,0,255},
         smooth=Smooth.None));
     connect(bus_5101.p[2], line_5101_5102.n) annotation (Line(
-        points={{24,8},{32,8},{32,9},{37.1667,9}},
+        points={{24,8},{32,8},{32,9},{38.5,9}},
         color={0,0,255},
         smooth=Smooth.None));
     connect(bus_5101.p[3], line_5101_5103.n) annotation (Line(
-        points={{24,12},{32,12},{32,15},{37.1667,15}},
+        points={{24,12},{32,12},{32,15},{38.5,15}},
         color={0,0,255},
         smooth=Smooth.None));
     connect(line_5101_5103.p, bus_5103.n[1]) annotation (Line(
-        points={{48.8333,15},{63.25,15},{63.25,48},{80,48}},
+        points={{47.5,15},{63.25,15},{63.25,48},{80,48}},
         color={0,0,255},
         smooth=Smooth.None));
     connect(line_5102_5103.n, bus_5103.p[1]) annotation (Line(
-        points={{91.1667,41},{87.75,41},{87.75,44},{82,44}},
+        points={{92.5,41},{87.75,41},{87.75,44},{82,44}},
         color={0,0,255},
         smooth=Smooth.None));
     connect(line_5103_5304_2.n, bus_5103.p[2]) annotation (Line(
-        points={{91.1667,47},{87.75,47},{87.75,48},{82,48}},
+        points={{92.5,47},{87.75,47},{87.75,48},{82,48}},
         color={0,0,255},
         smooth=Smooth.None));
     connect(line_5103_5304_1.n, bus_5103.p[3]) annotation (Line(
-        points={{91.1667,53},{87.75,53},{87.75,52},{82,52}},
+        points={{92.5,53},{87.75,53},{87.75,52},{82,52}},
         color={0,0,255},
         smooth=Smooth.None));
     connect(line_5102_5304.p, bus_5304.n[1]) annotation (Line(
-        points={{116,54.8333},{116,76},{122,76}},
+        points={{116,53.5},{116,76},{122,76}},
         color={0,0,255},
         smooth=Smooth.None));
     connect(line_5103_5304_2.p, bus_5304.n[2]) annotation (Line(
-        points={{102.833,47},{108,47},{108,80},{122,80}},
+        points={{101.5,47},{108,47},{108,80},{122,80}},
         color={0,0,255},
         smooth=Smooth.None));
     connect(line_5103_5304_1.p, bus_5304.n[3]) annotation (Line(
-        points={{102.833,53},{104,53},{104,84},{122,84}},
+        points={{101.5,53},{104,53},{104,84},{122,84}},
         color={0,0,255},
         smooth=Smooth.None));
     connect(line_5101_5102.p, bus_5102.n[1]) annotation (Line(
-        points={{48.8333,9},{84.25,9},{84.25,10},{122,10}},
+        points={{47.5,9},{84.25,9},{84.25,10},{122,10}},
         color={0,0,255},
         smooth=Smooth.None));
     connect(bus_5102.n[2], line_5102_5103.p) annotation (Line(
-        points={{122,14},{112,14},{112,24},{104,24},{104,41},{102.833,41}},
+        points={{122,14},{112,14},{112,24},{104,24},{104,41},{101.5,41}},
         color={0,0,255},
         smooth=Smooth.None));
     connect(line_5102_5304.n, bus_5102.n[3]) annotation (Line(
-        points={{116,43.1667},{116,18},{122,18}},
+        points={{116,44.5},{116,18},{122,18}},
         color={0,0,255},
         smooth=Smooth.None));
     connect(bus_5102.p[1], line_5102_6001.n) annotation (Line(
-        points={{124,14},{130.167,14}},
+        points={{124,14},{131.5,14}},
         color={0,0,255},
         smooth=Smooth.None));
     connect(line_5301_5304.n, bus_5304.p[1]) annotation (Line(
-        points={{153.167,75},{139.75,75},{139.75,76},{124,76}},
+        points={{154.5,75},{139.75,75},{139.75,76},{124,76}},
         color={0,0,255},
         smooth=Smooth.None));
     connect(line_5304_5305_2.n, bus_5304.p[2]) annotation (Line(
-        points={{141,91.1667},{141,80},{124,80}},
+        points={{141,92.5},{141,80},{124,80}},
         color={0,0,255},
         smooth=Smooth.None));
     connect(line_5304_5305_1.n, bus_5304.p[3]) annotation (Line(
-        points={{135,91.1667},{135,84},{124,84}},
+        points={{135,92.5},{135,84},{124,84}},
         color={0,0,255},
         smooth=Smooth.None));
     connect(line_5304_5305_2.p, bus_5305.n[1]) annotation (Line(
-        points={{141,102.833},{141,117},{162,117}},
+        points={{141,101.5},{141,117},{162,117}},
         color={0,0,255},
         smooth=Smooth.None));
     connect(line_5304_5305_1.p, bus_5305.n[2]) annotation (Line(
-        points={{135,102.833},{135,123},{162,123}},
+        points={{135,101.5},{135,123},{162,123}},
         color={0,0,255},
         smooth=Smooth.None));
     connect(bus_5305.p[1], line_5301_5305.p) annotation (Line(
-        points={{164,120},{183,120},{183,102.833}},
+        points={{164,120},{183,120},{183,101.5}},
         color={0,0,255},
         smooth=Smooth.None));
     connect(line_5301_6001.p, bus_5301.n[1]) annotation (Line(
-        points={{172,58.8333},{172,64},{186,64},{186,76},{200,76}},
+        points={{172,57.5},{172,64},{186,64},{186,76},{200,76}},
         color={0,0,255},
         smooth=Smooth.None));
     connect(line_5301_5304.p, bus_5301.n[2]) annotation (Line(
-        points={{164.833,75},{181.25,75},{181.25,80},{200,80}},
+        points={{163.5,75},{181.25,75},{181.25,80},{200,80}},
         color={0,0,255},
         smooth=Smooth.None));
     connect(line_5301_5305.n, bus_5301.n[3]) annotation (Line(
-        points={{183,91.1667},{183,84},{200,84}},
+        points={{183,92.5},{183,84},{200,84}},
         color={0,0,255},
         smooth=Smooth.None));
     connect(line_5300_6100.p, bus_5300.p[1]) annotation (Line(
-        points={{253.167,75},{248.75,75},{248.75,77},{242,77}},
+        points={{254.5,75},{248.75,75},{248.75,77},{242,77}},
         color={0,0,255},
         smooth=Smooth.None));
     connect(line_6000_6100.p, bus_6100.n[1]) annotation (Line(
-        points={{254,36.8333},{254,40},{278,40},{278,43.2},{280,43.2}},
+        points={{254,35.5},{254,40},{278,40},{278,43.2},{280,43.2}},
         color={0,0,255},
         smooth=Smooth.None));
     connect(line_5600_5603.n, bus_5600.n[1]) annotation (Line(
-        points={{260.833,-53},{272,-53},{272,-48.5},{280,-48.5}},
+        points={{259.5,-53},{272,-53},{272,-48.5},{280,-48.5}},
         color={0,0,255},
         smooth=Smooth.None));
     connect(Load2_bus5600.p, bus_5600.n[2]) annotation (Line(
-        points={{269.775,-44.75},{272.1,-44.75},{272.1,-45.5},{280,-45.5}},
+        points={{269.5,-44.75},{272.1,-44.75},{272.1,-45.5},{280,-45.5}},
         color={0,0,255},
         smooth=Smooth.None));
     connect(Load1_bus5600.p, bus_5600.n[3]) annotation (Line(
-        points={{269.775,-34.75},{272.1,-34.75},{272.1,-42.5},{280,-42.5}},
+        points={{269.5,-34.75},{272.1,-34.75},{272.1,-42.5},{280,-42.5}},
         color={0,0,255},
         smooth=Smooth.None));
     connect(line_5600_6000.n, bus_5600.n[4]) annotation (Line(
-        points={{270.833,-1},{274,-1},{274,-39.5},{280,-39.5}},
+        points={{269.5,-1},{274,-1},{274,-39.5},{280,-39.5}},
         color={0,0,255},
         smooth=Smooth.None));
     connect(bus_5601.p[1], line_5600_5601.p) annotation (Line(
-        points={{282,8},{289,8},{289,-9.16667}},
+        points={{282,8},{289,8},{289,-10.5}},
         color={0,0,255},
         smooth=Smooth.None));
     connect(bus_5620.p[1], line_5600_5620.n) annotation (Line(
-        points={{282,-94},{288,-94},{288,-76.8333}},
+        points={{282,-94},{288,-94},{288,-75.5}},
         color={0,0,255},
         smooth=Smooth.None));
     connect(line_5603_5610.n, bus_5610.n[1]) annotation (Line(
-        points={{233,-96.8333},{233,-106},{242,-106}},
+        points={{233,-95.5},{233,-106},{242,-106}},
         color={0,0,255},
         smooth=Smooth.None));
     connect(bus_5603.p[1], line_5603_5610.p) annotation (Line(
-        points={{222,-79},{233,-79},{233,-85.1667}},
+        points={{222,-79},{233,-79},{233,-86.5}},
         color={0,0,255},
         smooth=Smooth.None));
     connect(bus_5610.p[1], Load1_bus5610.p) annotation (Line(
-        points={{244,-106},{245.9,-106},{245.9,-104.75},{251.725,-104.75}},
+        points={{244,-106},{245.9,-106},{245.9,-104.75},{252,-104.75}},
         color={0,0,255},
         smooth=Smooth.None));
     connect(line_5500_5603.p, bus_5603.n[1]) annotation (Line(
-        points={{119.833,-89},{168,-89},{168,-100},{196,-100},{196,-79},{220,-79}},
+        points={{118.5,-89},{168,-89},{168,-100},{196,-100},{196,-79},{220,-79}},
         color={0,0,255},
         smooth=Smooth.None));
 
     connect(Load2_bus5500.p, bus_5500.n[1]) annotation (Line(
-        points={{65.675,-83.75},{71.1,-83.75},{71.1,-81.2},{76,-81.2}},
+        points={{65.5,-83.75},{71.1,-83.75},{71.1,-81.2},{76,-81.2}},
         color={0,0,255},
         smooth=Smooth.None));
     connect(Load1_bus5500.p, bus_5500.n[2]) annotation (Line(
-        points={{65.675,-75.75},{70.1,-75.75},{70.1,-76.4},{76,-76.4}},
+        points={{65.5,-75.75},{70.1,-75.75},{70.1,-76.4},{76,-76.4}},
         color={0,0,255},
         smooth=Smooth.None));
     connect(line_5100_5500.p, bus_5500.n[3]) annotation (Line(
-        points={{46.8333,-65},{60.25,-65},{60.25,-71.6},{76,-71.6}},
+        points={{45.5,-65},{60.25,-65},{60.25,-71.6},{76,-71.6}},
         color={0,0,255},
         smooth=Smooth.None));
     connect(line_5101_5501.p, bus_5501.n[1]) annotation (Line(
-        points={{48.8333,3},{72,3},{72,-19},{80,-19}},
+        points={{47.5,3},{72,3},{72,-19},{80,-19}},
         color={0,0,255},
         smooth=Smooth.None));
     connect(bus_5501.p[1], line_5401_5501.n) annotation (Line(
-        points={{82,-16},{100.167,-16}},
+        points={{82,-16},{101.5,-16}},
         color={0,0,255},
         smooth=Smooth.None));
     connect(line_5401_5501.p, bus_5401.n[1]) annotation (Line(
-        points={{111.833,-16},{111.25,-16},{111.25,-34},{122,-34}},
+        points={{110.5,-16},{111.25,-16},{111.25,-34},{122,-34}},
         color={0,0,255},
         smooth=Smooth.None));
     connect(line_5401_6001.p, bus_6001.n[1]) annotation (Line(
-        points={{140.833,-10},{140.833,2},{150,2},{150,18},{182,18}},
+        points={{139.5,-10},{139.5,2},{150,2},{150,18},{182,18}},
         color={0,0,255},
         smooth=Smooth.None));
     connect(line_5401_5602.n, bus_5401.p[1]) annotation (Line(
-        points={{135,-44.1667},{135,-38},{124,-38}},
+        points={{135,-45.5},{135,-38},{124,-38}},
         color={0,0,255},
         smooth=Smooth.None));
     connect(line_5401_5602.p, bus_5602.n[1]) annotation (Line(
-        points={{135,-55.8333},{135,-76},{182,-76}},
+        points={{135,-54.5},{135,-76},{182,-76}},
         color={0,0,255},
         smooth=Smooth.None));
     connect(line_5402_6001.p, bus_5402.n[1]) annotation (Line(
-        points={{188,-2.83333},{188,-8},{194,-8}},
+        points={{188,-1.5},{188,-8},{194,-8}},
         color={0,0,255},
         smooth=Smooth.None));
     connect(line_5102_6001.p, bus_6001.n[2]) annotation (Line(
-        points={{141.833,14},{146,14},{146,22},{182,22}},
+        points={{140.5,14},{146,14},{146,22},{182,22}},
         color={0,0,255},
         smooth=Smooth.None));
     connect(bus_6001.n[3], line_5301_6001.n) annotation (Line(
-        points={{182,26},{172,26},{172,47.1667}},
+        points={{182,26},{172,26},{172,48.5}},
         color={0,0,255},
         smooth=Smooth.None));
     connect(line_5600_6000.p, bus_6000.p[1]) annotation (Line(
-        points={{259.167,-1},{242,-1}},
+        points={{260.5,-1},{242,-1}},
         color={0,0,255},
         smooth=Smooth.None));
     connect(bus_6000.p[2], line_6000_6100.n) annotation (Line(
-        points={{242,5},{254,5},{254,25.1667}},
+        points={{242,5},{254,5},{254,26.5}},
         color={0,0,255},
         smooth=Smooth.None));
     connect(line_5101_5501.n, shunt_5101_5501.p) annotation (Line(
-        points={{37.1667,3},{37.1667,1.5},{37.92,1.5},{37.92,-0.72}},
+        points={{38.5,3},{38.5,1.5},{38,1.5},{38,0}},
         color={0,0,255},
         smooth=Smooth.None));
     connect(line_5101_5501.p, shunt_5501_5101.p) annotation (Line(
-        points={{48.8333,3},{48.8333,0.5},{47.92,0.5},{47.92,-0.72}},
+        points={{47.5,3},{47.5,0.5},{48,0.5},{48,0}},
         color={0,0,255},
         smooth=Smooth.None));
     connect(line_5102_6001.n, shunt_5102_6001.p) annotation (Line(
-        points={{130.167,14},{133,14},{133,11.28},{129.92,11.28}},
+        points={{131.5,14},{133,14},{133,12},{130,12}},
         color={0,0,255},
         smooth=Smooth.None));
     connect(line_5102_6001.p, shunt_6001_5102.p) annotation (Line(
-        points={{141.833,14},{139,14},{139,11.28},{141.92,11.28}},
+        points={{140.5,14},{139,14},{139,12},{142,12}},
         color={0,0,255},
         smooth=Smooth.None));
     connect(shunt_5401_6001.p, line_5401_6001.n) annotation (Line(
-        points={{127.92,-14.72},{127.92,-10},{129.167,-10}},
+        points={{128,-14},{128,-10},{130.5,-10}},
         color={0,0,255},
         smooth=Smooth.None));
     connect(line_5401_6001.p, shunt_6001_5401.p) annotation (Line(
-        points={{140.833,-10},{142.92,-10},{142.92,-14.72}},
+        points={{139.5,-10},{143,-10},{143,-14}},
         color={0,0,255},
         smooth=Smooth.None));
     connect(shunt_5500_5603.p, line_5500_5603.n) annotation (Line(
-        points={{105.92,-92.72},{108.167,-92.72},{108.167,-89}},
+        points={{106,-92},{109.5,-92},{109.5,-89}},
         color={0,0,255},
         smooth=Smooth.None));
     connect(line_5500_5603.p, shunt_5603_5500.p) annotation (Line(
-        points={{119.833,-89},{119.833,-92.72},{121.92,-92.72}},
+        points={{118.5,-89},{118.5,-92},{122,-92}},
         color={0,0,255},
         smooth=Smooth.None));
     connect(line_5600_5603.p, bus_5603.p[2]) annotation (Line(
-        points={{249.167,-53},{241.75,-53},{241.75,-73},{222,-73}},
+        points={{250.5,-53},{241.75,-53},{241.75,-73},{222,-73}},
         color={0,0,255},
         smooth=Smooth.None));
     connect(G3_bus7100.p, bus_7100.n[6]) annotation (Line(
@@ -2309,11 +2302,11 @@ package Original "Library of original Nordic 44 model"
         color={0,0,255},
         smooth=Smooth.None));
     connect(Load1_bus6700.p, bus_6700.n[2]) annotation (Line(
-        points={{-90.325,-87.75},{-84,-87.75},{-84,-85.5},{-78,-85.5}},
+        points={{-90.5,-87.75},{-84,-87.75},{-84,-85.5},{-78,-85.5}},
         color={0,0,255},
         smooth=Smooth.None));
     connect(line_3701_6700.p, bus_6700.n[3]) annotation (Line(
-        points={{-89.1667,-69},{-82,-69},{-82,-82.5},{-78,-82.5}},
+        points={{-90.5,-69},{-82,-69},{-82,-82.5},{-78,-82.5}},
         color={0,0,255},
         smooth=Smooth.None));
     connect(G2_bus6700.p, bus_6700.p[3]) annotation (Line(
@@ -2321,7 +2314,7 @@ package Original "Library of original Nordic 44 model"
         color={0,0,255},
         smooth=Smooth.None));
     connect(bus_5401.p[2], line_5401_6001.n) annotation (Line(
-        points={{124,-34},{132,-34},{132,-28},{129.167,-28},{129.167,-10}},
+        points={{124,-34},{132,-34},{132,-28},{130.5,-28},{130.5,-10}},
         color={0,0,255},
         smooth=Smooth.None));
     connect(G2_bus5400.p, bus_5400.p[1]) annotation (Line(
@@ -2329,7 +2322,7 @@ package Original "Library of original Nordic 44 model"
         color={0,0,255},
         smooth=Smooth.None));
     connect(line_5400_6000.n, bus_5400.p[2]) annotation (Line(
-        points={{216.167,-23},{206,-23},{206,-46},{182,-46}},
+        points={{217.5,-23},{206,-23},{206,-46},{182,-46}},
         color={0,0,255},
         smooth=Smooth.None));
     connect(G2_bus5300.p, bus_5300.p[2]) annotation (Line(
@@ -2341,15 +2334,15 @@ package Original "Library of original Nordic 44 model"
         color={0,0,255},
         smooth=Smooth.None));
     connect(Load2_bus6100.p, bus_6100.n[3]) annotation (Line(
-        points={{269.775,53.25},{271.1,53.25},{271.1,48},{280,48}},
+        points={{269.5,53.25},{271.1,53.25},{271.1,48},{280,48}},
         color={0,0,255},
         smooth=Smooth.None));
     connect(Load1_bus6100.p, bus_6100.n[4]) annotation (Line(
-        points={{269.775,63.25},{274,63.25},{274,50.4},{280,50.4}},
+        points={{269.5,63.25},{274,63.25},{274,50.4},{280,50.4}},
         color={0,0,255},
         smooth=Smooth.None));
     connect(line_5300_6100.n, bus_6100.n[5]) annotation (Line(
-        points={{264.833,75},{276,75},{276,52.8},{280,52.8}},
+        points={{263.5,75},{276,75},{276,52.8},{280,52.8}},
         color={0,0,255},
         smooth=Smooth.None));
     connect(G5_bus6100.p, bus_6100.p[1]) annotation (Line(
@@ -2369,15 +2362,15 @@ package Original "Library of original Nordic 44 model"
         color={0,0,255},
         smooth=Smooth.None));
     connect(Load_bus5620.p, bus_5620.n[1]) annotation (Line(
-        points={{269.775,-94.75},{271.9,-94.75},{271.9,-94},{280,-94}},
+        points={{269.5,-94.75},{271.9,-94.75},{271.9,-94},{280,-94}},
         color={0,0,255},
         smooth=Smooth.None));
     connect(line_3115_7100.n, bus_3115.n[1]) annotation (Line(
-        points={{-233.167,-26},{-233.75,-26},{-233.75,-6.5},{-228,-6.5}},
+        points={{-234.5,-26},{-233.75,-26},{-233.75,-6.5},{-228,-6.5}},
         color={0,0,255},
         smooth=Smooth.None));
     connect(Load_bus3115.p, bus_3115.n[2]) annotation (Line(
-        points={{-236.25,-4.5},{-231.9,-4.5},{-231.9,-1.1},{-228,-1.1}},
+        points={{-236.5,-4.5},{-231.9,-4.5},{-231.9,-1.1},{-228,-1.1}},
         color={0,0,255},
         smooth=Smooth.None));
     connect(G3_bus3115.p, bus_3115.n[3]) annotation (Line(
@@ -2393,11 +2386,11 @@ package Original "Library of original Nordic 44 model"
         color={0,0,255},
         smooth=Smooth.Bezier));
     connect(line_3000_3115.n, bus_3115.n[6]) annotation (Line(
-        points={{-233.167,29},{-233.5,29},{-233.5,20.5},{-228,20.5}},
+        points={{-234.5,29},{-233.5,29},{-233.5,20.5},{-228,20.5}},
         color={0,0,255},
         smooth=Smooth.None));
     connect(line_3115_7100.p, bus_7100.p[2]) annotation (Line(
-        points={{-244.833,-26},{-244.833,-26.5},{-250,-26.5},{-250,-27.3}},
+        points={{-243.5,-26},{-243.5,-26.5},{-250,-26.5},{-250,-27.3}},
         color={0,0,255},
         smooth=Smooth.None));
     connect(G4_bus6500.p, bus_6500.p[1]) annotation (Line(
@@ -2417,28 +2410,28 @@ package Original "Library of original Nordic 44 model"
         color={0,0,255},
         smooth=Smooth.None));
     connect(line_5100_6500.n, bus_6500.p[5]) annotation (Line(
-        points={{-2.83333,-79},{-6,-79},{-6,-89.44},{-18,-89.44}},
+        points={{-1.5,-79},{-6,-79},{-6,-89.44},{-18,-89.44}},
         color={0,0,255},
         smooth=Smooth.None));
     connect(line_3115_3245.p, bus_3115.p[1]) annotation (Line(
-        points={{-212,-13.1667},{-220,-13.1667},{-220,-5.15},{-226,-5.15}},
+        points={{-212,-14.5},{-220,-14.5},{-220,-5.15},{-226,-5.15}},
         color={0,0,255},
         smooth=Smooth.None));
     connect(line_3115_6701.p, bus_3115.p[2]) annotation (Line(
-        points={{-204,-30.1667},{-204.5,-30.1667},{-204.5,2.95},{-226,2.95}},
+        points={{-204,-31.5},{-204.5,-31.5},{-204.5,2.95},{-226,2.95}},
         color={0,0,255},
         smooth=Smooth.None));
 
     connect(line_3115_3249.n, bus_3115.p[3]) annotation (Line(
-        points={{-212.833,11},{-218.25,11},{-218.25,11.05},{-226,11.05}},
+        points={{-211.5,11},{-218.25,11},{-218.25,11.05},{-226,11.05}},
         color={0,0,255},
         smooth=Smooth.None));
     connect(line_3100_3115.n, bus_3115.p[4]) annotation (Line(
-        points={{-211.833,34},{-211.833,19.15},{-226,19.15}},
+        points={{-210.5,34},{-210.5,19.15},{-226,19.15}},
         color={0,0,255},
         smooth=Smooth.None));
     connect(line_5400_6000.p, bus_6000.n[1]) annotation (Line(
-        points={{227.833,-23},{236,-23},{236,-2},{240,-2}},
+        points={{226.5,-23},{236,-23},{236,-2},{240,-2}},
         color={0,0,255},
         smooth=Smooth.None));
     connect(G1_bus6000.p, bus_6000.n[2]) annotation (Line(
@@ -2446,7 +2439,7 @@ package Original "Library of original Nordic 44 model"
         color={0,0,255},
         smooth=Smooth.None));
     connect(line_5100_6500.p, bus_5100.n[1]) annotation (Line(
-        points={{8.83333,-79},{16,-79},{16,-68},{22,-68}},
+        points={{7.5,-79},{16,-79},{16,-68},{22,-68}},
         color={0,0,255},
         smooth=Smooth.None));
     connect(G1_bus5100.p, bus_5100.n[2]) annotation (Line(
@@ -2454,15 +2447,15 @@ package Original "Library of original Nordic 44 model"
         color={0,0,255},
         smooth=Smooth.None));
     connect(Load_bus5100.p, bus_5100.n[3]) annotation (Line(
-        points={{9.675,-59.75},{16,-59.75},{16,-60},{22,-60}},
+        points={{9.5,-59.75},{16,-59.75},{16,-60},{22,-60}},
         color={0,0,255},
         smooth=Smooth.None));
     connect(line_3000_3020.p, bus_3020.p[1]) annotation (Line(
-        points={{-274.833,79},{-276.25,79},{-276.25,80},{-280,80}},
+        points={{-273.5,79},{-276.25,79},{-276.25,80},{-280,80}},
         color={0,0,255},
         smooth=Smooth.None));
     connect(line_5400_5500.p, bus_5400.n[1]) annotation (Line(
-        points={{130.833,-63},{176,-63},{176,-50.5},{180,-50.5}},
+        points={{129.5,-63},{176,-63},{176,-50.5},{180,-50.5}},
         color={0,0,255},
         smooth=Smooth.None));
     connect(G1_bus5400.p, bus_5400.n[2]) annotation (Line(
@@ -2470,7 +2463,7 @@ package Original "Library of original Nordic 44 model"
         color={0,0,255},
         smooth=Smooth.None));
     connect(Load1_bus5400.p, bus_5400.n[3]) annotation (Line(
-        points={{167.675,-45.75},{171.1,-45.75},{171.1,-44.5},{180,-44.5}},
+        points={{167.5,-45.75},{171.1,-45.75},{171.1,-44.5},{180,-44.5}},
         color={0,0,255},
         smooth=Smooth.None));
     connect(G1_bus5300.p, bus_5300.n[1]) annotation (Line(
@@ -2478,11 +2471,11 @@ package Original "Library of original Nordic 44 model"
         color={0,0,255},
         smooth=Smooth.None));
     connect(Load_bus5300.p, bus_5300.n[2]) annotation (Line(
-        points={{225.775,77.25},{232.1,77.25},{232.1,80},{240,80}},
+        points={{225.5,77.25},{232.1,77.25},{232.1,80},{240,80}},
         color={0,0,255},
         smooth=Smooth.None));
     connect(line_3249_7100.p, bus_3249.n[1]) annotation (Line(
-        points={{-225.167,-45},{-184,-45},{-184,-37.9143},{-176,-37.9143}},
+        points={{-226.5,-45},{-184,-45},{-184,-37.9143},{-176,-37.9143}},
         color={0,0,255},
         smooth=Smooth.None));
     connect(G3_bus3249.p, bus_3249.n[2]) annotation (Line(
@@ -2500,37 +2493,36 @@ package Original "Library of original Nordic 44 model"
         color={0,0,255},
         smooth=Smooth.None));
     connect(Load_bus3249.p, bus_3249.n[5]) annotation (Line(
-        points={{-188.325,-9.75},{-186,-9.75},{-186,-10},{-184,-10},{-184,-14},
-            {-180,-14},{-180,-18.0286},{-176,-18.0286}},
+        points={{-188.5,-9.75},{-186,-9.75},{-186,-10},{-184,-10},{-184,-14},{
+            -180,-14},{-180,-18.0286},{-176,-18.0286}},
         color={0,0,255},
         smooth=Smooth.None));
     connect(line_3115_3249.p, bus_3249.n[6]) annotation (Line(
-        points={{-201.167,11},{-194,11},{-194,-4},{-182,-4},{-182,-13.0571},{-176,
+        points={{-202.5,11},{-194,11},{-194,-4},{-182,-4},{-182,-13.0571},{-176,
             -13.0571}},
         color={0,0,255},
         smooth=Smooth.None));
     connect(line_3100_3249.n, bus_3249.n[7]) annotation (Line(
-        points={{-189,9.16667},{-189,0},{-180,0},{-180,-8.08571},{-176,-8.08571}},
+        points={{-189,10.5},{-189,0},{-180,0},{-180,-8.08571},{-176,-8.08571}},
         color={0,0,255},
         smooth=Smooth.None));
 
     connect(line_3000_3245_2.n, bus_3245.n[1]) annotation (Line(
-        points={{-252,9.16667},{-252,-8},{-242,-8},{-242,-22},{-230,-22},{-230,
-            -40},{-218,-40},{-218,-76},{-208,-76}},
+        points={{-252,10.5},{-252,-8},{-242,-8},{-242,-22},{-230,-22},{-230,-40},{
+            -218,-40},{-218,-76},{-208,-76}},
         color={0,0,255},
         smooth=Smooth.None));
     connect(line_3000_3245_1.n, bus_3245.n[2]) annotation (Line(
-        points={{-228.167,56},{-218,56},{-218,-34},{-214,-34},{-214,-72},{-208,
-            -72}},
+        points={{-229.5,56},{-218,56},{-218,-34},{-214,-34},{-214,-72},{-208,-72}},
         color={0,0,255},
         smooth=Smooth.None));
     connect(line_3115_3245.n, bus_3245.n[3]) annotation (Line(
-        points={{-212,-24.8333},{-212,-30},{-210,-30},{-210,-68},{-208,-68}},
+        points={{-212,-23.5},{-212,-30},{-210,-30},{-210,-68},{-208,-68}},
         color={0,0,255},
         smooth=Smooth.None));
 
     connect(line_5600_5620.p, bus_5600.p[1]) annotation (Line(
-        points={{288,-65.1667},{288,-56},{285,-56},{285,-48.5},{282,-48.5}},
+        points={{288,-66.5},{288,-56},{285,-56},{285,-48.5},{282,-48.5}},
         color={0,0,255},
         smooth=Smooth.None));
     connect(G2_bus5600.p, bus_5600.p[2]) annotation (Line(
@@ -2542,11 +2534,11 @@ package Original "Library of original Nordic 44 model"
         color={0,0,255},
         smooth=Smooth.None));
     connect(line_5600_5601.n, bus_5600.p[4]) annotation (Line(
-        points={{289,-20.8333},{289,-38},{284,-38},{284,-39.5},{282,-39.5}},
+        points={{289,-19.5},{289,-38},{284,-38},{284,-39.5},{282,-39.5}},
         color={0,0,255},
         smooth=Smooth.None));
     connect(line_5500_5603.n, bus_5500.p[1]) annotation (Line(
-        points={{108.167,-89},{86,-89},{86,-80.4},{78,-80.4}},
+        points={{109.5,-89},{86,-89},{86,-80.4},{78,-80.4}},
         color={0,0,255},
         smooth=Smooth.None));
     connect(G1_bus5500.p, bus_5500.p[2]) annotation (Line(
@@ -2554,7 +2546,7 @@ package Original "Library of original Nordic 44 model"
         color={0,0,255},
         smooth=Smooth.None));
     connect(line_5400_5500.n, bus_5500.p[3]) annotation (Line(
-        points={{119.167,-63},{88,-63},{88,-67.6},{78,-67.6}},
+        points={{120.5,-63},{88,-63},{88,-67.6},{78,-67.6}},
         color={0,0,255},
         smooth=Smooth.None));
     connect(G1_bus3245.p, bus_3245.p[1]) annotation (Line(
@@ -2562,17 +2554,19 @@ package Original "Library of original Nordic 44 model"
         color={0,0,255},
         smooth=Smooth.None));
     connect(line_5402_6001.n, bus_6001.p[1]) annotation (Line(
-        points={{188,8.83333},{188,18},{184,18}},
+        points={{188,7.5},{188,18},{184,18}},
         color={0,0,255},
         smooth=Smooth.None));
     connect(trafo_3359_3360.n, bus_3360.n[1]) annotation (Line(points={{-101,
             140},{-101,140},{-96,140}}, color={0,0,255}));
     connect(trafo_3359_3360.p, bus_3359.p[9]) annotation (Line(points={{-115,
             140},{-118,140},{-118,98.4667},{-122,98.4667}}, color={0,0,255}));
-    connect(trafo_3249_3701.n, bus_3249.p[5]) annotation (Line(points={{-149.167,
-            -9},{-161.666,-9},{-161.666,-9.08},{-174,-9.08}}, color={0,0,255}));
-    connect(trafo_3249_3701.p, bus_3701.n[1]) annotation (Line(points={{-132.833,
-            -9},{-122,-9},{-122,-60},{-118,-60}}, color={0,0,255}));
+    connect(trafo_3249_3701.n, bus_3249.p[5]) annotation (Line(points={{
+            -149.167,-9},{-161.666,-9},{-161.666,-9.08},{-174,-9.08}},
+                                                              color={0,0,255}));
+    connect(trafo_3249_3701.p, bus_3701.n[1]) annotation (Line(points={{
+            -132.833,-9},{-122,-9},{-122,-60},{-118,-60}},
+                                                  color={0,0,255}));
     connect(trafo_3244_3245.p, bus_3244.n[1]) annotation (Line(points={{-183,-80},
             {-180,-80},{-180,-96},{-178,-96}}, color={0,0,255}));
     connect(trafo_3244_3245.n, bus_3245.p[2]) annotation (Line(points={{-197,-80},
@@ -2792,10 +2786,7 @@ package Original "Library of original Nordic 44 model"
               lineColor={0,128,0},
               textStyle={TextStyle.Bold},
               textString="bus
-5402")}),
-      Icon(coordinateSystem(extent={{-300,-220},{300,220}}, preserveAspectRatio=
-             false)),
-      Documentation);
+5402")}));
   end Nordic44_Original_Case;
 
   package Data "Modelica records containing power flow results"
@@ -3094,7 +3085,7 @@ package Original "Library of original Nordic 44 model"
       Powers_OC powers;
       annotation (Documentation);
     end PSSE_data_Original_case;
-    annotation (Documentation);
+
   end Data;
 
   package Generators "Package of generator groups for the Nordic 44 model"
@@ -4924,7 +4915,6 @@ package Original "Library of original Nordic 44 model"
                 {100,100}})),
         Documentation);
     end Gen5_bus_6500;
-    annotation (Documentation);
   end Generators;
   annotation (Documentation);
 end Original;
