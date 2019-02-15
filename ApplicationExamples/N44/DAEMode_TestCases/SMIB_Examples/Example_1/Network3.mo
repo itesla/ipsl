@@ -15,9 +15,8 @@ model Network3 "Single machine infinite bus (SMIB) system simulated with GenEven
         Sn=2220,
         V_b=400,
         Vn=400,
-        kT=1,
-        r=0.0,
-        x=0.15) annotation (
+        rT=0.0,
+        xT=0.15) annotation (
         Placement(visible = true, transformation(origin = {-40, 0}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
     OpenIPSL.Electrical.Branches.PwLine pwLine1(
         B=0.0,
@@ -68,6 +67,5 @@ equation
         StartTime=0,
         StopTime=10,
         Tolerance=1e-6,
-        Interval=1e-4),
-      Documentation);
+        Interval=1e-4));
 end Network3;

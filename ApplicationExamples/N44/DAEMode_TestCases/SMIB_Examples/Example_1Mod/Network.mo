@@ -10,7 +10,7 @@ model Network "Single machine infinite bus (SMIB) system simulated with fault in
         Placement(visible = true, transformation(origin = {68, 0}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
     inner OpenIPSL.Electrical.SystemBase SysData(S_b = 100, fn = 60) annotation (
         Placement(visible = true, transformation(origin = {-70, 85}, extent = {{-30, -15}, {30, 15}}, rotation = 0)));
-    OpenIPSL.Electrical.Branches.PSAT.TwoWindingTransformer twoWindingTransformer(Sn = 2220, V_b = 400, Vn = 400, kT = 1, r = 0.0, x = 0.15) annotation (
+    OpenIPSL.Electrical.Branches.PSAT.TwoWindingTransformer twoWindingTransformer(Sn = 2220, V_b = 400, Vn = 400, rT = 0.0, xT = 0.15) annotation (
         Placement(visible = true, transformation(origin = {-40, 0}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
     OpenIPSL.Electrical.Branches.PwLine pwLine1(B = 0.0, G = 0.0, R = 0.0, X = 0.5 * 100 / 2220) annotation (
         Placement(visible = true, transformation(origin = {26, 20}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));

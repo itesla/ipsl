@@ -3,9 +3,9 @@ model GenEventTest "Configuration of synchronous generator with regulators: GENS
   Nordic 44 model: Buses 3115, 5300, 6100, 6700, 7100"
   extends OpenIPSL.Electrical.Essentials.pfComponent;
   OpenIPSL.Electrical.Machines.PSSE.GENSAL gENSAL(
-    Tppd0=0.05 "T''do (> 0)",
-    Tppq0=0.15 "T''qo (> 0)",
-    D=0 "Speed Damping",
+    Tppd0=0.05,
+    Tppq0=0.15,
+    D=0,
     Tpd0=6.4,
     H=3.5,
     Xd=1.14,
@@ -24,9 +24,9 @@ model GenEventTest "Configuration of synchronous generator with regulators: GENS
     P_0=P_0,
     Q_0=Q_0) annotation (Placement(transformation(extent={{-64,-24},{-2,40}})));
   OpenIPSL.Electrical.Controls.PSSE.TG.HYGOV hYGOV(
-    R=0.06 "Permanent droop, p.u",
-    r=0.4 "Temporary droop, p.u",
-    VELM=0.2 "Gate open/close velosiy limit, p.u/sec",
+    R=0.06,
+    r=0.4,
+    VELM=0.2,
     T_r=5,
     T_f=0.05,
     T_g=0.2,
@@ -90,8 +90,5 @@ equation
           Line(
           points={{-76,-26},{-28,52},{27,-52},{74,23}},
           color={0,0,255},
-          smooth=Smooth.Bezier)}),
-    Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{
-            100,100}})),
-    Documentation);
+          smooth=Smooth.Bezier)}));
 end GenEventTest;

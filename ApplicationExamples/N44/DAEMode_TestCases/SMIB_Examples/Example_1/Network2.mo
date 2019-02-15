@@ -10,7 +10,7 @@ model Network2 "Single machine infinite bus (SMIB) system simulated with breaker
         Placement(visible = true, transformation(origin = {58, 0}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
     inner OpenIPSL.Electrical.SystemBase SysData(S_b = 100, fn = 60) annotation (
         Placement(visible = true, transformation(origin = {-70, 85}, extent = {{-30, -15}, {30, 15}}, rotation = 0)));
-    OpenIPSL.Electrical.Branches.PSAT.TwoWindingTransformer twoWindingTransformer(Sn = 2220, V_b = 400, Vn = 400, kT = 1, r = 0.0, x = 0.15) annotation (
+    OpenIPSL.Electrical.Branches.PSAT.TwoWindingTransformer twoWindingTransformer(Sn = 2220, V_b = 400, Vn = 400, rT = 0.0, xT = 0.15) annotation (
         Placement(visible = true, transformation(origin = {-60, 0}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
     OpenIPSL.Electrical.Branches.PwLine pwLine1(B = 0.0, G = 0.0, R = 0.0, X = 0.5 * 100 / 2220) annotation (
         Placement(visible = true, transformation(origin = {30, 20}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
@@ -45,8 +45,5 @@ equation
         Line(points={{-71,0},{-80,0}},      color = {0, 0, 255}));
       annotation (
         experiment(StartTime = 0, StopTime = 10, Tolerance = 1e-6, Interval = 1e-4),
-        Documentation,
-        Diagram(coordinateSystem(extent={{-120,-100},{120,100}})),
-        Icon(coordinateSystem(extent={{-120,-100},{120,100}})),
-        __OpenModelica_commandLineOptions="");
+        Diagram(coordinateSystem(extent={{-120,-100},{120,100}})));
 end Network2;
