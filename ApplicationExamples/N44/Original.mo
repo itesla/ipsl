@@ -1881,8 +1881,7 @@ package Original "Library of original Nordic 44 model"
         smooth=Smooth.None));
 
     connect(line_3200_3359.n, bus_3359.n[7]) annotation (Line(
-        points={{-148.5,99},{-129,99},{-129,92},{-125,92},{-125,90.7333},{-124,
-            90.7333}},
+        points={{-148.5,99},{-129,99},{-129,92},{-125,92},{-125,90.7333},{-124,90.7333}},
         color={0,0,255},
         smooth=Smooth.None));
     connect(line_3359_8500_1.n, bus_3359.n[8]) annotation (Line(
@@ -1890,8 +1889,7 @@ package Original "Library of original Nordic 44 model"
         color={0,0,255},
         smooth=Smooth.None));
     connect(line_3359_8500_2.n, bus_3359.n[9]) annotation (Line(
-        points={{-156.5,133},{-127,133},{-127,108},{-125,108},{-125,98.4667},{
-            -124,98.4667}},
+        points={{-156.5,133},{-127,133},{-127,108},{-125,108},{-125,98.4667},{-124,98.4667}},
         color={0,0,255},
         smooth=Smooth.None));
     connect(Load_bus3360.p, bus_3360.p[1]) annotation (Line(
@@ -2474,13 +2472,11 @@ package Original "Library of original Nordic 44 model"
         color={0,0,255},
         smooth=Smooth.None));
     connect(Load_bus3249.p, bus_3249.n[5]) annotation (Line(
-        points={{-188.5,-9.75},{-186,-9.75},{-186,-10},{-184,-10},{-184,-14},{
-            -180,-14},{-180,-18.0286},{-176,-18.0286}},
+        points={{-188.5,-9.75},{-186,-9.75},{-186,-10},{-184,-10},{-184,-14},{-180,-14},{-180,-18.0286},{-176,-18.0286}},
         color={0,0,255},
         smooth=Smooth.None));
     connect(line_3115_3249.p, bus_3249.n[6]) annotation (Line(
-        points={{-202.5,11},{-194,11},{-194,-4},{-182,-4},{-182,-13.0571},{-176,
-            -13.0571}},
+        points={{-202.5,11},{-194,11},{-194,-4},{-182,-4},{-182,-13.0571},{-176,-13.0571}},
         color={0,0,255},
         smooth=Smooth.None));
     connect(line_3100_3249.n, bus_3249.n[7]) annotation (Line(
@@ -2540,13 +2536,11 @@ package Original "Library of original Nordic 44 model"
         smooth=Smooth.None));
     connect(trafo_3359_3360.n, bus_3360.n[1]) annotation (Line(points={{-101,
             140},{-101,140},{-96,140}}, color={0,0,255}));
-    connect(trafo_3359_3360.p, bus_3359.p[9]) annotation (Line(points={{-115,
-            140},{-118,140},{-118,98.4667},{-122,98.4667}}, color={0,0,255}));
-    connect(trafo_3249_3701.n, bus_3249.p[5]) annotation (Line(points={{
-            -149.167,-9},{-161.666,-9},{-161.666,-9.08},{-174,-9.08}},
+    connect(trafo_3359_3360.p, bus_3359.p[9]) annotation (Line(points={{-115,140},{-118,140},{-118,98.4667},{-122,98.4667}},
+                                                            color={0,0,255}));
+    connect(trafo_3249_3701.n, bus_3249.p[5]) annotation (Line(points={{-149.167,-9},{-161.666,-9},{-161.666,-9.08},{-174,-9.08}},
                                                               color={0,0,255}));
-    connect(trafo_3249_3701.p, bus_3701.n[1]) annotation (Line(points={{
-            -132.833,-9},{-122,-9},{-122,-60},{-118,-60}},
+    connect(trafo_3249_3701.p, bus_3701.n[1]) annotation (Line(points={{-132.833,-9},{-122,-9},{-122,-60},{-118,-60}},
                                                   color={0,0,255}));
     connect(trafo_3244_3245.p, bus_3244.n[1]) annotation (Line(points={{-183,-80},
             {-180,-80},{-180,-96},{-178,-96}}, color={0,0,255}));
@@ -3045,8 +3039,8 @@ package Original "Library of original Nordic 44 model"
         </html>"));
       Voltages_OC voltages;
       /* PSSE powers from power flow solution */
-      replaceable record Powers_OC = PSSE_powers_Original_case constrainedby
-        PSSE_powers_Original_case annotation (choicesAllMatching, Documentation(
+      replaceable record Powers_OC = PSSE_powers_Original_case constrainedby PSSE_powers_Original_case
+                                  annotation (choicesAllMatching, Documentation(
             revisions="<html>
         <!--DISCLAIMER-->
         <p>Copyright 2015-2016 RTE (France), SmarTS Lab (Sweden), AIA (Spain) and DTU (Denmark)</p>
@@ -3142,36 +3136,33 @@ package Original "Library of original Nordic 44 model"
         annotation (Placement(transformation(extent={{88,88},{99,99}})));
     equation
       connect(gENROU.p, pwPin) annotation (Line(
-          points={{90.45,0},{110,0}},
+          points={{87,0},{110,0}},
           color={0,0,255},
           smooth=Smooth.None));
-      connect(gENROU.PELEC, sTAB2A.PELEC) annotation (Line(points={{89.76,-21.5},
-              {99,-21.5},{99,-86},{-116,-86},{-116,78},{-32.1545,78}}, color={0,
+      connect(gENROU.PELEC, sTAB2A.PELEC) annotation (Line(points={{90.45,12.9},{99,12.9},{99,-86},{-116,-86},{-116,78},{-32.1545,78}},
+                                                                       color={0,
               0,127}));
-      connect(sTAB2A.VOTHSG, iEEET2.VOTHSG) annotation (Line(points={{31.8182,
-              78},{38,78},{38,72},{38,55},{-107,55},{-107,-30.1},{-86.6667,-30.1}},
+      connect(sTAB2A.VOTHSG, iEEET2.VOTHSG) annotation (Line(points={{31.8182,78},{38,78},{38,72},{38,55},{-107,55},{-107,-23.0278},{-88,-23.0278}},
             color={0,0,127}));
-      connect(gENROU.SPEED, iEESGO.SPEED) annotation (Line(points={{89.76,38.7},
-              {95,38.7},{95,46},{-94,46},{-94,26.6429},{-83.175,26.6429}},
+      connect(gENROU.SPEED, iEESGO.SPEED) annotation (Line(points={{90.45,30.1},{95,30.1},{95,46},{-94,46},{-94,27.8333},{-81.9583,27.8333}},
             color={0,0,127}));
-      connect(iEESGO.PMECH, gENROU.PMECH) annotation (Line(points={{-9.71875,
-              21.2857},{1.6406,21.2857},{1.6406,21.5},{18.69,21.5}}, color={0,0,
+      connect(iEESGO.PMECH, gENROU.PMECH) annotation (Line(points={{-10.4792,20.8889},{1.6406,20.8889},{1.6406,21.5},{11.1,21.5}},
+                                                                     color={0,0,
               127}));
-      connect(gENROU.PMECH0, iEESGO.PMECH0) annotation (Line(points={{89.76,-12.9},
-              {107,-12.9},{107,-89},{-94,-89},{-94,14.1429},{-83.175,14.1429}},
+      connect(gENROU.PMECH0, iEESGO.PMECH0) annotation (Line(points={{90.45,21.5},{107,21.5},{107,-89},{-94,-89},{-94,12.5556},{-81.9583,12.5556}},
             color={0,0,127}));
-      connect(gENROU.ETERM, iEEET2.ECOMP) annotation (Line(points={{89.76,21.5},
-              {99,21.5},{99,50},{-99,50},{-99,-16.7},{-86.6667,-16.7}}, color={
+      connect(gENROU.ETERM, iEEET2.ECOMP) annotation (Line(points={{90.45,-12.9},{99,-12.9},{99,50},{-99,50},{-99,-39.7778},{-88,-39.7778}},
+                                                                        color={
               0,0,127}));
-      connect(gENROU.EFD0, iEEET2.EFD0) annotation (Line(points={{89.76,-30.1},
-              {96,-30.1},{96,-82},{-92,-82},{-92,-70.3},{-86.6667,-70.3}},
+      connect(gENROU.EFD0, iEEET2.EFD0) annotation (Line(points={{90.45,-21.5},{96,-21.5},{96,-82},{-92,-82},{-92,-63.9722},{-88,-63.9722}},
             color={0,0,127}));
-      connect(iEEET2.EFD, gENROU.EFD) annotation (Line(points={{-5,-43.5},{6,-43.5},
-              {6,-21.5},{18.69,-21.5}}, color={0,0,127}));
-      connect(iEEET2.VUEL, cte.y) annotation (Line(points={{-86.6667,-56.9},{-96,
-              -56.9},{-96,-45},{-102.425,-45}}, color={0,0,127}));
-      connect(iEEET2.VOEL, cte.y) annotation (Line(points={{-86.6667,-43.5},{-96,
-              -43.5},{-96,-45},{-102.425,-45}}, color={0,0,127}));
+      connect(iEEET2.EFD, gENROU.EFD) annotation (Line(points={{-6,-39.7778},{6,-39.7778},{6,-21.5},{11.1,-21.5}},
+                                        color={0,0,127}));
+      connect(iEEET2.VUEL, cte.y) annotation (Line(points={{-74,-77},{-96,-77},{-96,-45},{-102.425,-45}},
+                                                color={0,0,127}));
+      connect(iEEET2.VOEL, cte.y) annotation (Line(points={{-62,-77},{-96,-77},{-96,-45},{-102.425,-45}},
+                                                color={0,0,127}));
+      connect(gENROU.XADIFD, iEEET2.XADIFD) annotation (Line(points={{89.76,-38.7},{89.76,-80},{-30,-80},{-30,-76.2556}}, color={0,0,127}));
       annotation (
         Icon(coordinateSystem(
             extent={{-100,-100},{100,100}},
@@ -3258,35 +3249,32 @@ package Original "Library of original Nordic 44 model"
       Original.Data.PSSE_data_Original_case PSSE_data
         annotation (Placement(transformation(extent={{85,86},{97,98}})));
     equation
-      connect(gENROU.p, pwPin) annotation (Line(points={{87,0.5},{95.675,0.5},{
-              95.675,0},{110,0}}, color={0,0,255}));
-      connect(iEEET2.EFD, gENROU.EFD) annotation (Line(points={{9.625,-30},{
-              15.3125,-30},{15.3125,-18.75},{24.6,-18.75}}, color={0,0,127}));
-      connect(cte.y, iEEET2.VOEL) annotation (Line(points={{-79.5,-30},{-61.8333,
-              -30}}, color={0,0,127}));
-      connect(gENROU.EFD0, iEEET2.EFD0) annotation (Line(points={{86.4,-26.45},
-              {91,-26.45},{91,-62},{-67,-62},{-67,-53.2},{-61.8333,-53.2}},
+      connect(gENROU.p, pwPin) annotation (Line(points={{84,0.5},{95.675,0.5},{95.675,0},{110,0}},
+                                  color={0,0,255}));
+      connect(iEEET2.EFD, gENROU.EFD) annotation (Line(points={{8.75,-26.7778},{15.3125,-26.7778},{15.3125,-18.75},{18,-18.75}},
+                                                            color={0,0,127}));
+      connect(cte.y, iEEET2.VOEL) annotation (Line(points={{-79.5,-30},{-60,-30},{-60,-59},{-40.25,-59}},
+                     color={0,0,127}));
+      connect(gENROU.EFD0, iEEET2.EFD0) annotation (Line(points={{87,-18.75},{91,-18.75},{91,-68},{-67,-68},{-67,-47.7222},{-63,-47.7222}},
             color={0,0,127}));
-      connect(gENROU.PMECH0, iEESGO.PMECH0) annotation (Line(points={{86.4,-11.05},
-              {93,-11.05},{93,-67},{-92,-67},{-92,18.2857},{-46.95,18.2857}},
+      connect(gENROU.PMECH0, iEESGO.PMECH0) annotation (Line(points={{87,19.75},{93,19.75},{93,-73},{-92,-73},{-92,16.8889},{-46.25,16.8889}},
             color={0,0,127}));
-      connect(gENROU.PELEC, sTAB2A.PELEC) annotation (Line(points={{86.4,-18.75},
-              {96,-18.75},{96,-75},{-96,-75},{-96,80},{-22.2091,80}}, color={0,
+      connect(gENROU.PELEC, sTAB2A.PELEC) annotation (Line(points={{87,12.05},{96,12.05},{96,-79},{-96,-79},{-96,80},{-22.2091,80}},
+                                                                      color={0,
               0,127}));
-      connect(sTAB2A.VOTHSG, iEEET2.VOTHSG) annotation (Line(points={{37.6364,
-              80},{37.6364,80},{50,80},{50,50},{-80,50},{-80,-18.4},{-61.8333,-18.4}},
+      connect(sTAB2A.VOTHSG, iEEET2.VOTHSG) annotation (Line(points={{37.6364,80},{37.6364,80},{50,80},{50,50},{-80,50},{-80,-12.2778},{-63,-12.2778}},
             color={0,0,127}));
-      connect(gENROU.SPEED, iEESGO.SPEED) annotation (Line(points={{86.4,35.15},
-              {91,35.15},{91,42},{-53,42},{-53,29.2857},{-46.95,29.2857}},
+      connect(gENROU.SPEED, iEESGO.SPEED) annotation (Line(points={{87,27.45},{91,27.45},{91,42},{-53,42},{-53,30.3333},{-46.25,30.3333}},
             color={0,0,127}));
-      connect(gENROU.ETERM, iEEET2.ECOMP) annotation (Line(points={{86.4,19.75},
-              {94,19.75},{94,45},{-73,45},{-73,-6.8},{-61.8333,-6.8}}, color={0,
+      connect(gENROU.ETERM, iEEET2.ECOMP) annotation (Line(points={{87,-11.05},{94,-11.05},{94,45},{-73,45},{-73,-26.7778},{-63,-26.7778}},
+                                                                       color={0,
               0,127}));
-      connect(iEESGO.PMECH, gENROU.PMECH) annotation (Line(points={{-4.6875,
-              24.5714},{9.15625,24.5714},{9.15625,19.75},{24.6,19.75}}, color={
+      connect(iEESGO.PMECH, gENROU.PMECH) annotation (Line(points={{-5.125,24.2222},{9.15625,24.2222},{9.15625,19.75},{18,19.75}},
+                                                                        color={
               0,0,127}));
-      connect(iEEET2.VUEL, cte.y) annotation (Line(points={{-61.8333,-41.6},{-73,
-              -41.6},{-73,-30},{-79.5,-30}}, color={0,0,127}));
+      connect(iEEET2.VUEL, cte.y) annotation (Line(points={{-50.75,-59},{-73,-59},{-73,-30},{-79.5,-30}},
+                                             color={0,0,127}));
+      connect(gENROU.XADIFD, iEEET2.XADIFD) annotation (Line(points={{86.4,-34.15},{86.4,-64},{-12.25,-64},{-12.25,-58.3556}}, color={0,0,127}));
       annotation (
         Icon(coordinateSystem(
             extent={{-100,-100},{100,100}},
@@ -3367,36 +3355,34 @@ package Original "Library of original Nordic 44 model"
       Original.Data.PSSE_data_Original_case PSSE_data
         annotation (Placement(transformation(extent={{88,88},{98,98}})));
     equation
-      connect(cte.y, sCRX.VUEL) annotation (Line(points={{-8.45,-59.5},{24.775,
-              -59.5},{24.775,-58.93},{34.2333,-58.93}}, color={0,0,127}));
-      connect(sCRX.VOEL, cte.y) annotation (Line(points={{34.2333,-52.95},{-2,-52.95},
-              {-2,-54},{-2,-59.5},{-8.45,-59.5}}, color={0,0,127}));
-      connect(sTAB2A.VOTHSG, sCRX.VOTHSG) annotation (Line(points={{-30.0455,-47.5},
-              {1.97725,-47.5},{1.97725,-47.43},{34.2333,-47.43}}, color={0,0,
+      connect(cte.y, sCRX.VUEL) annotation (Line(points={{-8.45,-59.5},{24.775,-59.5},{24.775,-84},{43.8,-84}},
+                                                        color={0,0,127}));
+      connect(sCRX.VOEL, cte.y) annotation (Line(points={{52.2,-84},{-2,-84},{-2,-54},{-2,-59.5},{-8.45,-59.5}},
+                                                  color={0,0,127}));
+      connect(sTAB2A.VOTHSG, sCRX.VOTHSG) annotation (Line(points={{-30.0455,-47.5},{1.97725,-47.5},{1.97725,-46.9444},{34,-46.9444}},
+                                                                  color={0,0,
               127}));
-      connect(gENROU.SPEED, iEESGO.SPEED) annotation (Line(points={{8.56,40.5},
-              {20,40.5},{20,92},{-60,92},{-60,82.8571},{-52.6,82.8571}}, color=
+      connect(gENROU.SPEED, iEESGO.SPEED) annotation (Line(points={{9.2,33.5},{20,33.5},{20,92},{-60,92},{-60,84},{-51.6667,84}},
+                                                                         color=
               {0,0,127}));
-      connect(gENROU.PMECH0, iEESGO.PMECH0) annotation (Line(points={{8.56,-1.5},
-              {20,-1.5},{20,-28},{-70,-28},{-70,70.8571},{-52.6,70.8571}},
+      connect(gENROU.PMECH0, iEESGO.PMECH0) annotation (Line(points={{9.2,26.5},{20,26.5},{20,-28},{-70,-28},{-70,69.3333},{-51.6667,69.3333}},
             color={0,0,127}));
-      connect(sCRX.EFD, gENROU.EFD) annotation (Line(points={{90.9333,-60.77},{
-              96,-60.77},{96,-90},{-90,-90},{-90,-8.5},{-57.36,-8.5}}, color={0,
+      connect(sCRX.EFD, gENROU.EFD) annotation (Line(points={{91.4,-58.4444},{96,-58.4444},{96,-90},{-90,-90},{-90,-8.5},{-64.4,-8.5}},
+                                                                       color={0,
               0,127}));
-      connect(iEESGO.PMECH, gENROU.PMECH) annotation (Line(points={{3.75,
-              77.7143},{12,77.7143},{12,50},{-66,50},{-66,26.5},{-57.36,26.5}},
+      connect(iEESGO.PMECH, gENROU.PMECH) annotation (Line(points={{3.16667,77.3333},{12,77.3333},{12,50},{-66,50},{-66,26.5},{-64.4,26.5}},
             color={0,0,127}));
-      connect(gENROU.ETERM, sCRX.ECOMP) annotation (Line(points={{8.56,26.5},{
-              28,26.5},{28,-40.99},{34.2333,-40.99}}, color={0,0,127}));
-      connect(gENROU.EFD0, sCRX.EFD0) annotation (Line(points={{8.56,-15.5},{16,
-              -15.5},{16,-80},{26,-80},{26,-79.63},{34.2333,-79.63}}, color={0,
+      connect(gENROU.ETERM, sCRX.ECOMP) annotation (Line(points={{9.2,-1.5},{28,-1.5},{28,-58.4444},{34,-58.4444}},
+                                                      color={0,0,127}));
+      connect(gENROU.EFD0, sCRX.EFD0) annotation (Line(points={{9.2,-8.5},{16,-8.5},{16,-80},{26,-80},{26,-75.0556},{34,-75.0556}},
+                                                                      color={0,
               0,127}));
-      connect(gENROU.XADIFD, sCRX.XADIFD) annotation (Line(points={{8.56,-22.5},
-              {12,-22.5},{12,-63.99},{33.7667,-63.99}}, color={0,0,127}));
-      connect(gENROU.p, pwPin) annotation (Line(points={{9.2,9},{76,9},{76,0},{
-              110,0}}, color={0,0,255}));
-      connect(gENROU.PELEC, sTAB2A.PELEC) annotation (Line(points={{8.56,-8.5},
-              {34,-8.5},{34,-32},{-82,-32},{-82,-47.5},{-74.4136,-47.5}}, color=
+      connect(gENROU.XADIFD, sCRX.XADIFD) annotation (Line(points={{8.56,-22.5},{12,-22.5},{12,-83.4889},{74.6,-83.4889}},
+                                                        color={0,0,127}));
+      connect(gENROU.p, pwPin) annotation (Line(points={{6,9},{76,9},{76,0},{110,0}},
+                       color={0,0,255}));
+      connect(gENROU.PELEC, sTAB2A.PELEC) annotation (Line(points={{9.2,19.5},{34,19.5},{34,-32},{-82,-32},{-82,-47.5},{-74.4136,-47.5}},
+                                                                          color=
              {0,0,127}));
       annotation (
         Icon(graphics={Line(
@@ -3475,35 +3461,34 @@ package Original "Library of original Nordic 44 model"
       Original.Data.PSSE_data_Original_case PSSE_data
         annotation (Placement(transformation(extent={{84,86},{96,98}})));
     equation
-      connect(gENROU.p, pwPin) annotation (Line(points={{9.1,9},{66,9},{66,0},{
-              110,0}}, color={0,0,255}));
-      connect(iEESGO.PMECH, gENROU.PMECH) annotation (Line(points={{9.875,
-              72.8571},{20,72.8571},{20,46},{-66,46},{-66,25.5},{-55.38,25.5}},
+      connect(gENROU.p, pwPin) annotation (Line(points={{6,9},{66,9},{66,0},{110,0}},
+                       color={0,0,255}));
+      connect(iEESGO.PMECH, gENROU.PMECH) annotation (Line(points={{9.25,72.4444},{20,72.4444},{20,46},{-66,46},{-66,25.5},{-62.2,25.5}},
             color={0,0,127}));
-      connect(gENROU.SPEED, iEESGO.SPEED) annotation (Line(points={{8.48,38.7},
-              {24,38.7},{24,88},{-56,88},{-56,78.4286},{-50.5,78.4286}}, color=
+      connect(gENROU.SPEED, iEESGO.SPEED) annotation (Line(points={{9.1,32.1},{24,32.1},{24,88},{-56,88},{-56,79.6667},{-49.5,79.6667}},
+                                                                         color=
               {0,0,127}));
-      connect(gENROU.PMECH0, iEESGO.PMECH0) annotation (Line(points={{8.48,-0.9},
-              {30,-0.9},{30,92},{-60,92},{-60,65.4286},{-50.5,65.4286}}, color=
+      connect(gENROU.PMECH0, iEESGO.PMECH0) annotation (Line(points={{9.1,25.5},{30,25.5},{30,92},{-60,92},{-60,63.7778},{-49.5,63.7778}},
+                                                                         color=
               {0,0,127}));
-      connect(sTAB2A.VOTHSG, sCRX.VOTHSG) annotation (Line(points={{-16.0455,-48.5},
-              {8,-48.5},{8,-39.735},{31.2292,-39.735}}, color={0,0,127}));
-      connect(gENROU.PELEC, sTAB2A.PELEC) annotation (Line(points={{8.48,-7.5},
-              {18,-7.5},{18,-32},{-68,-32},{-68,-48.5},{-60.4136,-48.5}}, color=
+      connect(sTAB2A.VOTHSG, sCRX.VOTHSG) annotation (Line(points={{-16.0455,-48.5},{8,-48.5},{8,-39.0278},{31,-39.0278}},
+                                                        color={0,0,127}));
+      connect(gENROU.PELEC, sTAB2A.PELEC) annotation (Line(points={{9.1,18.9},{18,18.9},{18,-32},{-68,-32},{-68,-48.5},{-60.4136,-48.5}},
+                                                                          color=
              {0,0,127}));
-      connect(sCRX.EFD, gENROU.EFD) annotation (Line(points={{86.9167,-59.165},
-              {92,-59.165},{92,-96},{-80,-96},{-80,-7.5},{-55.38,-7.5}}, color=
+      connect(sCRX.EFD, gENROU.EFD) annotation (Line(points={{87.375,-55.7778},{92,-55.7778},{92,-96},{-80,-96},{-80,-7.5},{-62.2,-7.5}},
+                                                                         color=
               {0,0,127}));
-      connect(cte.y, sCRX.VUEL) annotation (Line(points={{0.5,-58},{16,-58},{16,
-              -56.485},{31.2292,-56.485}}, color={0,0,127}));
-      connect(gENROU.XADIFD, sCRX.XADIFD) annotation (Line(points={{8.48,-20.7},
-              {14,-20.7},{14,-63.855},{30.7708,-63.855}}, color={0,0,127}));
-      connect(gENROU.ETERM, sCRX.ECOMP) annotation (Line(points={{8.48,25.5},{
-              26,25.5},{26,-30.355},{31.2292,-30.355}}, color={0,0,127}));
-      connect(gENROU.EFD0, sCRX.EFD0) annotation (Line(points={{8.48,-14.1},{22,
-              -14.1},{22,-86.635},{31.2292,-86.635}}, color={0,0,127}));
-      connect(sCRX.VOEL, cte.y) annotation (Line(points={{31.2292,-47.775},{10,
-              -47.775},{10,-58},{0.5,-58}}, color={0,0,127}));
+      connect(cte.y, sCRX.VUEL) annotation (Line(points={{0.5,-58},{16,-58},{16,-93},{40.625,-93}},
+                                           color={0,0,127}));
+      connect(gENROU.XADIFD, sCRX.XADIFD) annotation (Line(points={{8.48,-20.7},{14,-20.7},{14,-92.2556},{70.875,-92.2556}},
+                                                          color={0,0,127}));
+      connect(gENROU.ETERM, sCRX.ECOMP) annotation (Line(points={{9.1,-0.9},{26,-0.9},{26,-55.7778},{31,-55.7778}},
+                                                        color={0,0,127}));
+      connect(gENROU.EFD0, sCRX.EFD0) annotation (Line(points={{9.1,-7.5},{22,-7.5},{22,-79.9722},{31,-79.9722}},
+                                                      color={0,0,127}));
+      connect(sCRX.VOEL, cte.y) annotation (Line(points={{48.875,-93},{10,-93},{10,-58},{0.5,-58}},
+                                            color={0,0,127}));
       annotation (
         Icon(graphics={Line(
                   points={{-76,-26},{-28,52},{27,-52},{74,23}},
@@ -3581,35 +3566,35 @@ package Original "Library of original Nordic 44 model"
       Original.Data.PSSE_data_Original_case PSSE_data
         annotation (Placement(transformation(extent={{88,88},{98,98}})));
     equation
-      connect(sTAB2A.VOTHSG, sCRX.VOTHSG) annotation (Line(points={{-32.1818,-42.5},
-              {-4.0909,-42.5},{-4.0909,-34.505},{25.2292,-34.505}}, color={0,0,
+      connect(sTAB2A.VOTHSG, sCRX.VOTHSG) annotation (Line(points={{-32.1818,-42.5},{-4.0909,-42.5},{-4.0909,-33.8611},{25,-33.8611}},
+                                                                    color={0,0,
               127}));
-      connect(cte.y, sCRX.VOEL) annotation (Line(points={{-10.5,-56},{4,-56},{4,
-              -41.825},{25.2292,-41.825}}, color={0,0,127}));
-      connect(gENROU.p, pwPin) annotation (Line(points={{6.9,15},{62,15},{62,0},
-              {110,0}}, color={0,0,255}));
-      connect(iEESGO.PMECH, gENROU.PMECH) annotation (Line(points={{3.59375,71},
-              {16,71},{16,50},{-68,50},{-68,30.5},{-53.42,30.5}}, color={0,0,
+      connect(cte.y, sCRX.VOEL) annotation (Line(points={{-10.5,-56},{4,-56},{4,-83},{42.875,-83}},
+                                           color={0,0,127}));
+      connect(gENROU.p, pwPin) annotation (Line(points={{4,15},{62,15},{62,0},{110,0}},
+                        color={0,0,255}));
+      connect(iEESGO.PMECH, gENROU.PMECH) annotation (Line(points={{3.0625,70.6667},{16,70.6667},{16,50},{-68,50},{-68,30.5},{-59.8,30.5}},
+                                                                  color={0,0,
               127}));
-      connect(gENROU.SPEED, iEESGO.SPEED) annotation (Line(points={{6.32,42.9},
-              {20,42.9},{20,82},{-56,82},{-56,75.5},{-47.725,75.5}}, color={0,0,
+      connect(gENROU.SPEED, iEESGO.SPEED) annotation (Line(points={{6.9,36.7},{20,36.7},{20,82},{-56,82},{-56,76.5},{-46.875,76.5}},
+                                                                     color={0,0,
               127}));
-      connect(gENROU.PMECH0, iEESGO.PMECH0) annotation (Line(points={{6.32,5.7},
-              {24,5.7},{24,86},{-62,86},{-62,65},{-47.725,65}}, color={0,0,127}));
-      connect(gENROU.PELEC, sTAB2A.PELEC) annotation (Line(points={{6.32,-0.5},
-              {18,-0.5},{18,-22},{-80,-22},{-80,-42.5},{-73.4545,-42.5}}, color=
+      connect(gENROU.PMECH0, iEESGO.PMECH0) annotation (Line(points={{6.9,30.5},{24,30.5},{24,86},{-62,86},{-62,63.6667},{-46.875,63.6667}},
+                                                                color={0,0,127}));
+      connect(gENROU.PELEC, sTAB2A.PELEC) annotation (Line(points={{6.9,24.3},{18,24.3},{18,-22},{-80,-22},{-80,-42.5},{-73.4545,-42.5}},
+                                                                          color=
              {0,0,127}));
-      connect(gENROU.XADIFD, sCRX.XADIFD) annotation (Line(points={{6.32,-12.9},
-              {12,-12.9},{12,-56.465},{24.7708,-56.465}}, color={0,0,127}));
-      connect(gENROU.EFD0, sCRX.EFD0) annotation (Line(points={{6.32,-6.7},{16,
-              -6.7},{16,-77.205},{25.2292,-77.205}}, color={0,0,127}));
-      connect(gENROU.ETERM, sCRX.ECOMP) annotation (Line(points={{6.32,30.5},{
-              22,30.5},{22,-25.965},{25.2292,-25.965}}, color={0,0,127}));
-      connect(sCRX.EFD, gENROU.EFD) annotation (Line(points={{80.9167,-52.195},
-              {86,-52.195},{86,-86},{-84,-86},{-84,-0.5},{-53.42,-0.5}}, color=
+      connect(gENROU.XADIFD, sCRX.XADIFD) annotation (Line(points={{6.32,-12.9},{12,-12.9},{12,-82.3222},{64.875,-82.3222}},
+                                                          color={0,0,127}));
+      connect(gENROU.EFD0, sCRX.EFD0) annotation (Line(points={{6.9,-0.5},{16,-0.5},{16,-71.1389},{25,-71.1389}},
+                                                     color={0,0,127}));
+      connect(gENROU.ETERM, sCRX.ECOMP) annotation (Line(points={{6.9,5.7},{22,5.7},{22,-49.1111},{25,-49.1111}},
+                                                        color={0,0,127}));
+      connect(sCRX.EFD, gENROU.EFD) annotation (Line(points={{81.375,-49.1111},{86,-49.1111},{86,-86},{-84,-86},{-84,-0.5},{-59.8,-0.5}},
+                                                                         color=
               {0,0,127}));
-      connect(sCRX.VUEL, cte.y) annotation (Line(points={{25.2292,-49.755},{14,
-              -49.755},{14,-50},{4,-50},{4,-56},{-10.5,-56}}, color={0,0,127}));
+      connect(sCRX.VUEL, cte.y) annotation (Line(points={{34.625,-83},{14,-83},{14,-50},{4,-50},{4,-56},{-10.5,-56}},
+                                                              color={0,0,127}));
       annotation (
         Icon(graphics={Line(
                   points={{-76,-26},{-28,52},{27,-52},{74,23}},
@@ -3673,29 +3658,29 @@ package Original "Library of original Nordic 44 model"
       Original.Data.PSSE_data_Original_case PSSE_data
         annotation (Placement(transformation(extent={{88,88},{98,98}})));
     equation
-      connect(gENSAL.p, p) annotation (Line(points={{4.15,11},{44,11},{44,0},{
-              110,0}}, color={0,0,255}));
-      connect(sCRX.EFD, gENSAL.EFD) annotation (Line(points={{85.9,-54.71},{94,
-              -54.71},{94,-92},{-74,-92},{-74,-6.5},{-61.37,-6.5}}, color={0,0,
+      connect(gENSAL.p, p) annotation (Line(points={{1,11},{44,11},{44,0},{110,0}},
+                       color={0,0,255}));
+      connect(sCRX.EFD, gENSAL.EFD) annotation (Line(points={{86.35,-51.7778},{94,-51.7778},{94,-92},{-74,-92},{-74,-6.5},{-68.3,-6.5}},
+                                                                    color={0,0,
               127}));
-      connect(cte.y, sCRX.VOTHSG) annotation (Line(points={{-16.5,-52},{6,-52},
-              {6,-37.89},{31.225,-37.89}}, color={0,0,127}));
-      connect(gENSAL.XADIFD, sCRX.XADIFD) annotation (Line(points={{3.52,-20.5},
-              {12,-20.5},{12,-58.77},{30.775,-58.77}}, color={0,0,127}));
-      connect(gENSAL.EFD0, sCRX.EFD0) annotation (Line(points={{3.52,-13.5},{16,
-              -13.5},{16,-78.49},{31.225,-78.49}}, color={0,0,127}));
-      connect(hYGOV.PMECH, gENSAL.PMECH) annotation (Line(points={{1.45,74},{10,
-              74},{10,50},{-72,50},{-72,28.5},{-61.37,28.5}}, color={0,0,127}));
-      connect(gENSAL.SPEED, hYGOV.SPEED) annotation (Line(points={{3.52,42.5},{
-              16,42.5},{16,92},{-64,92},{-64,82},{-57.275,82}}, color={0,0,127}));
-      connect(gENSAL.PMECH0, hYGOV.PMECH0) annotation (Line(points={{3.52,0.5},
-              {24,0.5},{24,94},{-66,94},{-66,66},{-57.275,66}}, color={0,0,127}));
-      connect(gENSAL.ETERM, sCRX.ECOMP) annotation (Line(points={{3.52,28.5},{
-              26,28.5},{26,-29.77},{31.225,-29.77}}, color={0,0,127}));
-      connect(sCRX.VOEL, cte.y) annotation (Line(points={{31.225,-44.85},{6,-44.85},
-              {6,-52},{-16.5,-52}}, color={0,0,127}));
-      connect(sCRX.VUEL, cte.y) annotation (Line(points={{31.225,-52.39},{
-              7.6125,-52.39},{7.6125,-52},{-16.5,-52}}, color={0,0,127}));
+      connect(cte.y, sCRX.VOTHSG) annotation (Line(points={{-16.5,-52},{6,-52},{6,-37.2778},{31,-37.2778}},
+                                           color={0,0,127}));
+      connect(gENSAL.XADIFD, sCRX.XADIFD) annotation (Line(points={{3.52,-20.5},{12,-20.5},{12,-83.3556},{70.15,-83.3556}},
+                                                       color={0,0,127}));
+      connect(gENSAL.EFD0, sCRX.EFD0) annotation (Line(points={{4.15,-6.5},{16,-6.5},{16,-72.7222},{31,-72.7222}},
+                                                   color={0,0,127}));
+      connect(hYGOV.PMECH, gENSAL.PMECH) annotation (Line(points={{1.20833,75.7778},{10,75.7778},{10,50},{-72,50},{-72,28.5},{-68.3,28.5}},
+                                                              color={0,0,127}));
+      connect(gENSAL.SPEED, hYGOV.SPEED) annotation (Line(points={{4.15,35.5},{16,35.5},{16,92},{-64,92},{-64,84.6667},{-55.5833,84.6667}},
+                                                                color={0,0,127}));
+      connect(gENSAL.PMECH0, hYGOV.PMECH0) annotation (Line(points={{4.15,28.5},{24,28.5},{24,94},{-66,94},{-66,65.1111},{-55.5833,65.1111}},
+                                                                color={0,0,127}));
+      connect(gENSAL.ETERM, sCRX.ECOMP) annotation (Line(points={{4.15,0.5},{26,0.5},{26,-51.7778},{31,-51.7778}},
+                                                     color={0,0,127}));
+      connect(sCRX.VOEL, cte.y) annotation (Line(points={{48.55,-84},{6,-84},{6,-52},{-16.5,-52}},
+                                    color={0,0,127}));
+      connect(sCRX.VUEL, cte.y) annotation (Line(points={{40.45,-84},{7.6125,-84},{7.6125,-52},{-16.5,-52}},
+                                                        color={0,0,127}));
       annotation (
         Icon(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{
                 100,100}}), graphics={Ellipse(extent={{-100,-100},{101,100}},
@@ -3760,31 +3745,31 @@ package Original "Library of original Nordic 44 model"
       Original.Data.PSSE_data_Original_case PSSE_data
         annotation (Placement(transformation(extent={{88,88},{98,98}})));
     equation
-      connect(cte.y, sCRX.VOEL) annotation (Line(points={{-10.5,-50},{8,-50},{8,
-              -49.5},{26.2292,-49.5}}, color={0,0,127}));
-      connect(sCRX.VOTHSG, cte.y) annotation (Line(points={{26.2292,-42.3},{8,-42.3},
-              {8,-50},{-10.5,-50}}, color={0,0,127}));
-      connect(gENSAL.XADIFD, sCRX.XADIFD) annotation (Line(points={{8.64,-16.6},
-              {14,-16.6},{14,-63.9},{25.7708,-63.9}}, color={0,0,127}));
-      connect(gENSAL.EFD0, sCRX.EFD0) annotation (Line(points={{8.64,-9.8},{18,
-              -9.8},{18,-84.3},{26.2292,-84.3}}, color={0,0,127}));
-      connect(sCRX.EFD, gENSAL.EFD) annotation (Line(points={{81.9167,-59.7},{
-              86,-59.7},{86,-94},{-72,-94},{-72,-3},{-59.34,-3}}, color={0,0,
+      connect(cte.y, sCRX.VOEL) annotation (Line(points={{-10.5,-50},{8,-50},{8,-90},{43.875,-90}},
+                                       color={0,0,127}));
+      connect(sCRX.VOTHSG, cte.y) annotation (Line(points={{26,-41.6667},{8,-41.6667},{8,-50},{-10.5,-50}},
+                                    color={0,0,127}));
+      connect(gENSAL.XADIFD, sCRX.XADIFD) annotation (Line(points={{8.64,-16.6},{14,-16.6},{14,-89.3333},{65.875,-89.3333}},
+                                                      color={0,0,127}));
+      connect(gENSAL.EFD0, sCRX.EFD0) annotation (Line(points={{9.3,-3},{18,-3},{18,-78.3333},{26,-78.3333}},
+                                                 color={0,0,127}));
+      connect(sCRX.EFD, gENSAL.EFD) annotation (Line(points={{82.375,-56.6667},{86,-56.6667},{86,-94},{-72,-94},{-72,-3},{-66.6,-3}},
+                                                                  color={0,0,
               127}));
-      connect(hYGOV.PMECH, gENSAL.PMECH) annotation (Line(points={{-0.5,75},{8,
-              75},{8,50},{-70,50},{-70,31},{-59.34,31}}, color={0,0,127}));
-      connect(gENSAL.SPEED, hYGOV.SPEED) annotation (Line(points={{8.64,44.6},{
-              16,44.6},{16,92},{-68,92},{-68,81.5},{-61.25,81.5}}, color={0,0,
+      connect(hYGOV.PMECH, gENSAL.PMECH) annotation (Line(points={{-0.75,76.4444},{8,76.4444},{8,50},{-70,50},{-70,31},{-66.6,31}},
+                                                         color={0,0,127}));
+      connect(gENSAL.SPEED, hYGOV.SPEED) annotation (Line(points={{9.3,37.8},{16,37.8},{16,92},{-68,92},{-68,83.6667},{-59.5,83.6667}},
+                                                                   color={0,0,
               127}));
-      connect(gENSAL.PMECH0, hYGOV.PMECH0) annotation (Line(points={{8.64,3.8},
-              {30,3.8},{30,96},{-72,96},{-72,68.5},{-61.25,68.5}}, color={0,0,
+      connect(gENSAL.PMECH0, hYGOV.PMECH0) annotation (Line(points={{9.3,31},{30,31},{30,96},{-72,96},{-72,67.7778},{-59.5,67.7778}},
+                                                                   color={0,0,
               127}));
-      connect(gENSAL.p, p) annotation (Line(points={{9.3,14},{54,14},{54,0},{
-              110,0}}, color={0,0,255}));
-      connect(sCRX.VUEL, cte.y) annotation (Line(points={{26.2292,-57.3},{8,-57.3},
-              {8,-50},{-10.5,-50}}, color={0,0,127}));
-      connect(sCRX.ECOMP, gENSAL.ETERM) annotation (Line(points={{26.2292,-33.9},
-              {22,-33.9},{22,31},{8.64,31}}, color={0,0,127}));
+      connect(gENSAL.p, p) annotation (Line(points={{6,14},{54,14},{54,0},{110,0}},
+                       color={0,0,255}));
+      connect(sCRX.VUEL, cte.y) annotation (Line(points={{35.625,-90},{8,-90},{8,-50},{-10.5,-50}},
+                                    color={0,0,127}));
+      connect(sCRX.ECOMP, gENSAL.ETERM) annotation (Line(points={{26,-56.6667},{22,-56.6667},{22,3.8},{9.3,3.8}},
+                                             color={0,0,127}));
       annotation (
         Icon(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{
                 100,100}}), graphics={Ellipse(extent={{-100,-100},{101,100}},
@@ -3948,35 +3933,35 @@ package Original "Library of original Nordic 44 model"
       Original.Data.PSSE_data_Original_case PSSE_data
         annotation (Placement(transformation(extent={{86,88},{96,98}})));
     equation
-      connect(sTAB2A.VOTHSG, sCRX.VOTHSG) annotation (Line(points={{9.5,-43.5},
-              {16.75,-43.5},{16.75,-43.07},{36.225,-43.07}}, color={0,0,127}));
-      connect(cte.y, sCRX.VOEL) annotation (Line(points={{-0.5,-64},{16,-64},{
-              16,-49.55},{36.225,-49.55}}, color={0,0,127}));
-      connect(gENSAL.p, p) annotation (Line(points={{19.1,9},{70,9},{70,0},{110,
-              0}}, color={0,0,255}));
-      connect(sCRX.EFD, gENSAL.EFD) annotation (Line(points={{90.9,-58.73},{94,
-              -58.73},{94,-90},{-68,-90},{-68,-7.5},{-45.38,-7.5}}, color={0,0,
+      connect(sTAB2A.VOTHSG, sCRX.VOTHSG) annotation (Line(points={{9.5,-43.5},{16.75,-43.5},{16.75,-42.5},{36,-42.5}},
+                                                             color={0,0,127}));
+      connect(cte.y, sCRX.VOEL) annotation (Line(points={{-0.5,-64},{16,-64},{16,-86},{53.55,-86}},
+                                           color={0,0,127}));
+      connect(gENSAL.p, p) annotation (Line(points={{16,9},{70,9},{70,0},{110,0}},
+                   color={0,0,255}));
+      connect(sCRX.EFD, gENSAL.EFD) annotation (Line(points={{91.35,-56},{94,-56},{94,-90},{-68,-90},{-68,-7.5},{-52.2,-7.5}},
+                                                                    color={0,0,
               127}));
-      connect(gENSAL.PELEC, sTAB2A.PELEC) annotation (Line(points={{18.48,-7.5},
-              {30,-7.5},{30,-30},{-56,-30},{-56,-43.5},{-47.25,-43.5}}, color={
+      connect(gENSAL.PELEC, sTAB2A.PELEC) annotation (Line(points={{19.1,18.9},{30,18.9},{30,-30},{-56,-30},{-56,-43.5},{-47.25,-43.5}},
+                                                                        color={
               0,0,127}));
-      connect(gENSAL.XADIFD, sCRX.XADIFD) annotation (Line(points={{18.48,-20.7},
-              {22,-20.7},{22,-62.51},{35.775,-62.51}}, color={0,0,127}));
-      connect(gENSAL.EFD0, sCRX.EFD0) annotation (Line(points={{18.48,-14.1},{
-              28,-14.1},{28,-80.87},{36.225,-80.87}}, color={0,0,127}));
-      connect(hYGOV.PMECH, gENSAL.PMECH) annotation (Line(points={{21.6,71},{28,
-              71},{34,71},{34,48},{-58,48},{-58,25.5},{-45.38,25.5}}, color={0,
+      connect(gENSAL.XADIFD, sCRX.XADIFD) annotation (Line(points={{18.48,-20.7},{22,-20.7},{22,-85.4},{75.15,-85.4}},
+                                                       color={0,0,127}));
+      connect(gENSAL.EFD0, sCRX.EFD0) annotation (Line(points={{19.1,-7.5},{28,-7.5},{28,-75.5},{36,-75.5}},
+                                                      color={0,0,127}));
+      connect(hYGOV.PMECH, gENSAL.PMECH) annotation (Line(points={{21.3333,72.6667},{28,72.6667},{34,72.6667},{34,48},{-58,48},{-58,25.5},{-52.2,25.5}},
+                                                                      color={0,
               0,127}));
-      connect(gENSAL.SPEED, hYGOV.SPEED) annotation (Line(points={{18.48,38.7},
-              {38,38.7},{38,90},{-52,90},{-52,78.5},{-43.2,78.5}}, color={0,0,
+      connect(gENSAL.SPEED, hYGOV.SPEED) annotation (Line(points={{19.1,32.1},{38,32.1},{38,90},{-52,90},{-52,81},{-41.3333,81}},
+                                                                   color={0,0,
               127}));
-      connect(gENSAL.PMECH0, hYGOV.PMECH0) annotation (Line(points={{18.48,-0.9},
-              {42,-0.9},{42,94},{-58,94},{-58,63.5},{-43.2,63.5}}, color={0,0,
+      connect(gENSAL.PMECH0, hYGOV.PMECH0) annotation (Line(points={{19.1,25.5},{42,25.5},{42,94},{-58,94},{-58,62.6667},{-41.3333,62.6667}},
+                                                                   color={0,0,
               127}));
-      connect(gENSAL.ETERM, sCRX.ECOMP) annotation (Line(points={{18.48,25.5},{
-              32,25.5},{32,-35.51},{36.225,-35.51}}, color={0,0,127}));
-      connect(sCRX.VUEL, cte.y) annotation (Line(points={{36.225,-56.57},{16,-56.57},
-              {16,-64},{-0.5,-64}}, color={0,0,127}));
+      connect(gENSAL.ETERM, sCRX.ECOMP) annotation (Line(points={{19.1,-0.9},{32,-0.9},{32,-56},{36,-56}},
+                                                     color={0,0,127}));
+      connect(sCRX.VUEL, cte.y) annotation (Line(points={{45.45,-86},{16,-86},{16,-64},{-0.5,-64}},
+                                    color={0,0,127}));
       annotation (
         Icon(graphics={Ellipse(extent={{-100,-100},{101,100}}, lineColor={0,0,
               255}),Line(
@@ -4150,32 +4135,32 @@ package Original "Library of original Nordic 44 model"
       Original.Data.PSSE_data_Original_case PSSE_data
         annotation (Placement(transformation(extent={{86,88},{96,98}})));
     equation
-      connect(gENSAL.p, p) annotation (Line(points={{1.2,22},{30,22},{30,20},{
-              64,20},{64,0},{110,0}}, color={0,0,255}));
-      connect(sCRX.EFD, gENSAL.EFD) annotation (Line(points={{76.9333,-46.77},{
-              82,-46.77},{82,-80},{-76,-80},{-76,7},{-65.36,7}}, color={0,0,127}));
-      connect(sTAB2A.VOTHSG, sCRX.VOTHSG) annotation (Line(points={{-20.2727,-33},
-              {-0.13635,-33},{-0.13635,-33.43},{20.2333,-33.43}}, color={0,0,
+      connect(gENSAL.p, p) annotation (Line(points={{-2,22},{30,22},{30,20},{64,20},{64,0},{110,0}},
+                                      color={0,0,255}));
+      connect(sCRX.EFD, gENSAL.EFD) annotation (Line(points={{77.4,-44.4444},{82,-44.4444},{82,-80},{-76,-80},{-76,7},{-72.4,7}},
+                                                                 color={0,0,127}));
+      connect(sTAB2A.VOTHSG, sCRX.VOTHSG) annotation (Line(points={{-20.2727,-33},{-0.13635,-33},{-0.13635,-32.9444},{20,-32.9444}},
+                                                                  color={0,0,
               127}));
-      connect(cte.y, sCRX.VOEL) annotation (Line(points={{-18.5,-56},{0,-56},{0,
-              -38.95},{20.2333,-38.95}}, color={0,0,127}));
-      connect(gENSAL.PELEC, sTAB2A.PELEC) annotation (Line(points={{0.56,7},{12,
-              7},{12,-18},{-68,-18},{-68,-33},{-59.4818,-33}}, color={0,0,127}));
-      connect(hYGOV.PMECH, gENSAL.PMECH) annotation (Line(points={{-6.75,79},{0,
-              79},{0,56},{-76,56},{-76,37},{-65.36,37}}, color={0,0,127}));
-      connect(gENSAL.SPEED, hYGOV.SPEED) annotation (Line(points={{0.56,49},{10,
-              49},{10,92},{-62,92},{-62,84.5},{-57.375,84.5}}, color={0,0,127}));
-      connect(gENSAL.PMECH0, hYGOV.PMECH0) annotation (Line(points={{0.56,13},{
-              16,13},{16,96},{-66,96},{-66,73.5},{-57.375,73.5}}, color={0,0,
+      connect(cte.y, sCRX.VOEL) annotation (Line(points={{-18.5,-56},{-6,-56},{-6,-74},{38,-74},{38,-70},{38.2,-70}},
+                                         color={0,0,127}));
+      connect(gENSAL.PELEC, sTAB2A.PELEC) annotation (Line(points={{1.2,31},{12,31},{12,-18},{-68,-18},{-68,-33},{-59.4818,-33}},
+                                                               color={0,0,127}));
+      connect(hYGOV.PMECH, gENSAL.PMECH) annotation (Line(points={{-6.95833,80.2222},{0,80.2222},{0,56},{-76,56},{-76,37},{-72.4,37}},
+                                                         color={0,0,127}));
+      connect(gENSAL.SPEED, hYGOV.SPEED) annotation (Line(points={{1.2,43},{10,43},{10,92},{-62,92},{-62,86.3333},{-55.9167,86.3333}},
+                                                               color={0,0,127}));
+      connect(gENSAL.PMECH0, hYGOV.PMECH0) annotation (Line(points={{1.2,37},{16,37},{16,96},{-66,96},{-66,72.8889},{-55.9167,72.8889}},
+                                                                  color={0,0,
               127}));
-      connect(gENSAL.XADIFD, sCRX.XADIFD) annotation (Line(points={{0.56,-5},{6,
-              -5},{6,-49.99},{19.7667,-49.99}}, color={0,0,127}));
-      connect(gENSAL.EFD0, sCRX.EFD0) annotation (Line(points={{0.56,1},{10,1},
-              {10,-65.63},{20.2333,-65.63}}, color={0,0,127}));
-      connect(gENSAL.ETERM, sCRX.ECOMP) annotation (Line(points={{0.56,37},{14,
-              37},{14,-26.99},{20.2333,-26.99}}, color={0,0,127}));
-      connect(sCRX.VUEL, cte.y) annotation (Line(points={{20.2333,-44.93},{0,-44.93},
-              {0,-56},{-18.5,-56}}, color={0,0,127}));
+      connect(gENSAL.XADIFD, sCRX.XADIFD) annotation (Line(points={{0.56,-5},{6,-5},{6,-76},{60,-76},{60,-69.4889},{60.6,-69.4889}},
+                                                color={0,0,127}));
+      connect(gENSAL.EFD0, sCRX.EFD0) annotation (Line(points={{1.2,7},{10,7},{10,-61.0556},{20,-61.0556}},
+                                             color={0,0,127}));
+      connect(gENSAL.ETERM, sCRX.ECOMP) annotation (Line(points={{1.2,13},{14,13},{14,-44.4444},{20,-44.4444}},
+                                                 color={0,0,127}));
+      connect(sCRX.VUEL, cte.y) annotation (Line(points={{29.8,-70},{30,-70},{30,-74},{-6,-74},{-6,-56},{-18.5,-56}},
+                                    color={0,0,127}));
       annotation (
         Icon(graphics={Ellipse(extent={{-100,-100},{101,100}}, lineColor={0,0,
               255}),Line(
@@ -4442,25 +4427,26 @@ package Original "Library of original Nordic 44 model"
     equation
       connect(cte.y, sEXS.VOEL) annotation (Line(points={{-22.5,-60},{38.75,-60},
               {38.75,-88}}, color={0,0,127}));
-      connect(sEXS.EFD, gENSAL.EFD) annotation (Line(points={{87.75,-57.4444},{
-              94,-57.4444},{94,-92},{-78,-92},{-78,-7.5},{-67.38,-7.5}}, color=
+      connect(sEXS.EFD, gENSAL.EFD) annotation (Line(points={{87.75,-57.4444},{94,-57.4444},{94,-98},{-78,-98},{-78,-7.5},{-74.2,-7.5}},
+                                                                         color=
               {0,0,127}));
-      connect(hYGOV.PMECH, gENSAL.PMECH) annotation (Line(points={{-8.7,60},{0,
-              60},{0,38},{-76,38},{-76,17.5},{-67.38,17.5}}, color={0,0,127}));
-      connect(gENSAL.SPEED, hYGOV.SPEED) annotation (Line(points={{-3.52,27.5},
-              {4,27.5},{4,76},{-70,76},{-70,67},{-61.35,67}}, color={0,0,127}));
-      connect(gENSAL.PMECH0, hYGOV.PMECH0) annotation (Line(points={{-3.52,-2.5},
-              {12,-2.5},{12,84},{-76,84},{-76,53},{-61.35,53}}, color={0,0,127}));
-      connect(gENSAL.EFD0, sEXS.EFD0) annotation (Line(points={{-3.52,-12.5},{4,
-              -12.5},{4,-77.3056},{16,-77.3056}}, color={0,0,127}));
-      connect(gENSAL.ETERM, sEXS.ECOMP) annotation (Line(points={{-3.52,17.5},{
-              8,17.5},{8,-57.4444},{16,-57.4444}}, color={0,0,127}));
-      connect(gENSAL.p, p) annotation (Line(points={{-2.9,5},{46,5},{46,0},{110,
-              0}}, color={0,0,255}));
-      connect(sEXS.VOTHSG, cte.y) annotation (Line(points={{16,-43.6944},{-4,-43.6944},
-              {-4,-60},{-22.5,-60}}, color={0,0,127}));
-      connect(sEXS.VUEL, cte.y) annotation (Line(points={{28.25,-88},{-4,-88},{
-              -4,-60},{-22.5,-60}}, color={0,0,127}));
+      connect(hYGOV.PMECH, gENSAL.PMECH) annotation (Line(points={{-8.91667,61.5556},{0,61.5556},{0,38},{-76,38},{-76,17.5},{-74.2,17.5}},
+                                                             color={0,0,127}));
+      connect(gENSAL.SPEED, hYGOV.SPEED) annotation (Line(points={{-2.9,22.5},{4,22.5},{4,76},{-70,76},{-70,69.3333},{-59.8333,69.3333}},
+                                                              color={0,0,127}));
+      connect(gENSAL.PMECH0, hYGOV.PMECH0) annotation (Line(points={{-2.9,17.5},{12,17.5},{12,84},{-76,84},{-76,52.2222},{-59.8333,52.2222}},
+                                                                color={0,0,127}));
+      connect(gENSAL.EFD0, sEXS.EFD0) annotation (Line(points={{-2.9,-7.5},{4,-7.5},{4,-77.3056},{16,-77.3056}},
+                                                  color={0,0,127}));
+      connect(gENSAL.ETERM, sEXS.ECOMP) annotation (Line(points={{-2.9,-2.5},{8,-2.5},{8,-57.4444},{16,-57.4444}},
+                                                   color={0,0,127}));
+      connect(gENSAL.p, p) annotation (Line(points={{-6,5},{46,5},{46,0},{110,0}},
+                   color={0,0,255}));
+      connect(sEXS.VOTHSG, cte.y) annotation (Line(points={{16,-43.6944},{-8,-43.6944},{-8,-60},{-22.5,-60}},
+                                     color={0,0,127}));
+      connect(sEXS.VUEL, cte.y) annotation (Line(points={{28.25,-88},{-8,-88},{-8,-60},{-22.5,-60}},
+                                    color={0,0,127}));
+      connect(gENSAL.XADIFD, sEXS.XADIFD) annotation (Line(points={{-3.52,-17.5},{2,-17.5},{2,-94},{66.75,-94},{66.75,-87.3889}}, color={0,0,127}));
       annotation (
         Icon(graphics={Ellipse(extent={{-100,-100},{101,100}}, lineColor={0,0,
               255}),Line(
@@ -4522,30 +4508,31 @@ package Original "Library of original Nordic 44 model"
       Original.Data.PSSE_data_Original_case PSSE_data
         annotation (Placement(transformation(extent={{88,88},{98,98}})));
     equation
-      connect(gENSAL.p, p) annotation (Line(points={{3.2,9},{54,9},{54,0},{110,
-              0}}, color={0,0,255}));
-      connect(hYGOV.PMECH, gENSAL.PMECH) annotation (Line(points={{1.5,63},{10,
-              63},{10,50},{10,40},{-74,40},{-74,22.5},{-63.36,22.5}}, color={0,
+      connect(gENSAL.p, p) annotation (Line(points={{0,9},{54,9},{54,0},{110,0}},
+                   color={0,0,255}));
+      connect(hYGOV.PMECH, gENSAL.PMECH) annotation (Line(points={{1.25,64.4444},{10,64.4444},{10,50},{10,40},{-74,40},{-74,22.5},{-70.4,22.5}},
+                                                                      color={0,
               0,127}));
-      connect(sEXS.EFD, gENSAL.EFD) annotation (Line(points={{87.8,-49.8889},{
-              94,-49.8889},{94,-86},{-74,-86},{-74,-4.5},{-63.36,-4.5}}, color=
+      connect(sEXS.EFD, gENSAL.EFD) annotation (Line(points={{87.8,-49.8889},{94,-49.8889},{94,-86},{-74,-86},{-74,-4.5},{-70.4,-4.5}},
+                                                                         color=
               {0,0,127}));
       connect(cte.y, sEXS.VOEL) annotation (Line(points={{-8.5,-52},{37.4,-52},
               {37.4,-76}}, color={0,0,127}));
-      connect(gENSAL.EFD0, sEXS.EFD0) annotation (Line(points={{2.56,-9.9},{6,-9.9},
-              {6,-66.8611},{14,-66.8611}}, color={0,0,127}));
-      connect(gENSAL.ETERM, sEXS.ECOMP) annotation (Line(points={{2.56,22.5},{
-              10,22.5},{10,-49.8889},{14,-49.8889}}, color={0,0,127}));
-      connect(gENSAL.SPEED, hYGOV.SPEED) annotation (Line(points={{2.56,33.3},{
-              16,33.3},{16,80},{-66,80},{-66,69.5},{-59.25,69.5}}, color={0,0,
+      connect(gENSAL.EFD0, sEXS.EFD0) annotation (Line(points={{3.2,-4.5},{6,-4.5},{6,-66.8611},{14,-66.8611}},
+                                           color={0,0,127}));
+      connect(gENSAL.ETERM, sEXS.ECOMP) annotation (Line(points={{3.2,0.9},{10,0.9},{10,-49.8889},{14,-49.8889}},
+                                                     color={0,0,127}));
+      connect(gENSAL.SPEED, hYGOV.SPEED) annotation (Line(points={{3.2,27.9},{16,27.9},{16,80},{-66,80},{-66,71.6667},{-57.5,71.6667}},
+                                                                   color={0,0,
               127}));
-      connect(gENSAL.PMECH0, hYGOV.PMECH0) annotation (Line(points={{2.56,0.9},
-              {24,0.9},{24,88},{-70,88},{-70,56.5},{-59.25,56.5}}, color={0,0,
+      connect(gENSAL.PMECH0, hYGOV.PMECH0) annotation (Line(points={{3.2,22.5},{24,22.5},{24,88},{-70,88},{-70,55.7778},{-57.5,55.7778}},
+                                                                   color={0,0,
               127}));
       connect(sEXS.VUEL, cte.y) annotation (Line(points={{26.6,-76},{-2,-76},{-2,
               -52},{-8.5,-52}}, color={0,0,127}));
-      connect(sEXS.VOTHSG, cte.y) annotation (Line(points={{14,-38.1389},{-2,-38.1389},
-              {-2,-52},{-8.5,-52}}, color={0,0,127}));
+      connect(sEXS.VOTHSG, cte.y) annotation (Line(points={{14,-38.1389},{-2,-38.1389},{-2,-52},{-8.5,-52}},
+                                    color={0,0,127}));
+      connect(gENSAL.XADIFD, sEXS.XADIFD) annotation (Line(points={{2.56,-15.3},{2.56,-80},{66.2,-80},{66.2,-75.4778}}, color={0,0,127}));
       annotation (
         Icon(graphics={Ellipse(extent={{-100,-100},{101,100}}, lineColor={0,0,
               255}),Line(
@@ -4608,29 +4595,29 @@ package Original "Library of original Nordic 44 model"
       Original.Data.PSSE_data_Original_case PSSE_data
         annotation (Placement(transformation(extent={{88,88},{98,98}})));
     equation
-      connect(hYGOV.PMECH, gENSAL.PMECH) annotation (Line(points={{-8.7,65.5},{
-              -2,65.5},{-2,40},{-76,40},{-76,19},{-67.38,19}}, color={0,0,127}));
-      connect(gENSAL.SPEED, hYGOV.SPEED) annotation (Line(points={{-3.52,29.4},
-              {4,29.4},{4,88},{-66,88},{-66,73.25},{-61.35,73.25}}, color={0,0,
+      connect(hYGOV.PMECH, gENSAL.PMECH) annotation (Line(points={{-8.91667,67.2222},{-2,67.2222},{-2,40},{-76,40},{-76,19},{-74.2,19}},
+                                                               color={0,0,127}));
+      connect(gENSAL.SPEED, hYGOV.SPEED) annotation (Line(points={{-2.9,24.2},{4,24.2},{4,88},{-66,88},{-66,75.8333},{-59.8333,75.8333}},
+                                                                    color={0,0,
               127}));
-      connect(gENSAL.PMECH0, hYGOV.PMECH0) annotation (Line(points={{-3.52,-1.8},
-              {12,-1.8},{12,92},{-74,92},{-74,57.75},{-61.35,57.75}}, color={0,
+      connect(gENSAL.PMECH0, hYGOV.PMECH0) annotation (Line(points={{-2.9,19},{12,19},{12,92},{-74,92},{-74,56.8889},{-59.8333,56.8889}},
+                                                                      color={0,
               0,127}));
-      connect(sEXS.EFD, gENSAL.EFD) annotation (Line(points={{81.75,-56.4444},{
-              90,-56.4444},{90,-92},{90,-90},{-84,-90},{-84,-7},{-67.38,-7}},
+      connect(sEXS.EFD, gENSAL.EFD) annotation (Line(points={{81.75,-56.4444},{90,-56.4444},{90,-92},{90,-90},{-84,-90},{-84,-7},{-74.2,-7}},
             color={0,0,127}));
       connect(cte.y, sEXS.VOEL) annotation (Line(points={{-15.3,-59},{32.75,-59},
               {32.75,-82}}, color={0,0,127}));
-      connect(gENSAL.EFD0, sEXS.EFD0) annotation (Line(points={{-3.52,-12.2},{0,
-              -12.2},{0,-73.0556},{10,-73.0556}}, color={0,0,127}));
-      connect(gENSAL.ETERM, sEXS.ECOMP) annotation (Line(points={{-3.52,19},{6,
-              19},{6,-56.4444},{10,-56.4444}}, color={0,0,127}));
-      connect(gENSAL.p, p) annotation (Line(points={{-2.9,6},{22,6},{50,6},{50,
-              0},{110,0}}, color={0,0,255}));
-      connect(sEXS.VOTHSG, cte.y) annotation (Line(points={{10,-44.9444},{-6,-44.9444},
-              {-6,-59},{-15.3,-59}}, color={0,0,127}));
+      connect(gENSAL.EFD0, sEXS.EFD0) annotation (Line(points={{-2.9,-7},{0,-7},{0,-73.0556},{10,-73.0556}},
+                                                  color={0,0,127}));
+      connect(gENSAL.ETERM, sEXS.ECOMP) annotation (Line(points={{-2.9,-1.8},{6,-1.8},{6,-56.4444},{10,-56.4444}},
+                                               color={0,0,127}));
+      connect(gENSAL.p, p) annotation (Line(points={{-6,6},{-6,6},{50,6},{50,0},{110,0}},
+                           color={0,0,255}));
+      connect(sEXS.VOTHSG, cte.y) annotation (Line(points={{10,-44.9444},{-6,-44.9444},{-6,-59},{-15.3,-59}},
+                                     color={0,0,127}));
       connect(sEXS.VUEL, cte.y) annotation (Line(points={{22.25,-82},{-6,-82},{
               -6,-59},{-15.3,-59}}, color={0,0,127}));
+      connect(gENSAL.XADIFD, sEXS.XADIFD) annotation (Line(points={{-3.52,-17.4},{-3.52,-86},{60.75,-86},{60.75,-81.4889}}, color={0,0,127}));
       annotation (
         Icon(graphics={Ellipse(extent={{-100,-100},{101,100}}, lineColor={0,0,
               255}),Line(
@@ -4663,7 +4650,7 @@ package Original "Library of original Nordic 44 model"
         S12=0.3,
         R_a=0,
         V_0=PSSE_data.voltages.V6000)
-        annotation (Placement(transformation(extent={{-58,-16},{0,32}})));
+        annotation (Placement(transformation(extent={{-60,-16},{-2,32}})));
       OpenIPSL.Electrical.Controls.PSSE.TG.HYGOV hYGOV(
         R=0.06 "Permanent droop, p.u",
         VELM=0.2 "Gate open/close velosiy limit, p.u/sec",
@@ -4693,29 +4680,30 @@ package Original "Library of original Nordic 44 model"
       Original.Data.PSSE_data_Original_case PSSE_data
         annotation (Placement(transformation(extent={{88,88},{98,98}})));
     equation
-      connect(hYGOV.PMECH, gENSAL.PMECH) annotation (Line(points={{3.5,63},{8,
-              63},{8,36},{-64,36},{-64,20},{-57.42,20}}, color={0,0,127}));
-      connect(gENSAL.SPEED, hYGOV.SPEED) annotation (Line(points={{2.32,29.6},{
-              14,29.6},{14,82},{-66,82},{-66,70.5},{-57.25,70.5}}, color={0,0,
+      connect(hYGOV.PMECH, gENSAL.PMECH) annotation (Line(points={{3.25,64.6667},{8,64.6667},{8,36},{-64,36},{-64,20},{-65.8,20}},
+                                                         color={0,0,127}));
+      connect(gENSAL.SPEED, hYGOV.SPEED) annotation (Line(points={{0.9,24.8},{14,24.8},{14,82},{-66,82},{-66,73},{-55.5,73}},
+                                                                   color={0,0,
               127}));
-      connect(gENSAL.PMECH0, hYGOV.PMECH0) annotation (Line(points={{2.32,0.8},
-              {20,0.8},{20,88},{-70,88},{-70,55.5},{-57.25,55.5}}, color={0,0,
+      connect(gENSAL.PMECH0, hYGOV.PMECH0) annotation (Line(points={{0.9,20},{20,20},{20,88},{-70,88},{-70,54.6667},{-55.5,54.6667}},
+                                                                   color={0,0,
               127}));
-      connect(sEXS.EFD, gENSAL.EFD) annotation (Line(points={{87.55,-43.7778},{
-              92,-43.7778},{92,-76},{-70,-76},{-70,-4},{-57.42,-4}}, color={0,0,
+      connect(sEXS.EFD, gENSAL.EFD) annotation (Line(points={{87.55,-43.7778},{92,-43.7778},{92,-76},{-70,-76},{-70,-4},{-65.8,-4}},
+                                                                     color={0,0,
               127}));
       connect(cte.y, sEXS.VOEL) annotation (Line(points={{-12.5,-46},{16,-46},{
               16,-66},{44.15,-66}}, color={0,0,127}));
-      connect(gENSAL.EFD0, sEXS.EFD0) annotation (Line(points={{2.32,-8.8},{10,
-              -8.8},{10,-58.2222},{24,-58.2222}}, color={0,0,127}));
-      connect(gENSAL.ETERM, sEXS.ECOMP) annotation (Line(points={{2.32,20},{16,
-              20},{16,-43.7778},{24,-43.7778}}, color={0,0,127}));
-      connect(gENSAL.p, p) annotation (Line(points={{2.9,8},{62,8},{62,0},{110,
-              0}}, color={0,0,255}));
-      connect(sEXS.VOTHSG, cte.y) annotation (Line(points={{24,-33.7778},{2,-33.7778},
-              {2,-46},{-12.5,-46}}, color={0,0,127}));
+      connect(gENSAL.EFD0, sEXS.EFD0) annotation (Line(points={{0.9,-4},{10,-4},{10,-58.2222},{24,-58.2222}},
+                                                  color={0,0,127}));
+      connect(gENSAL.ETERM, sEXS.ECOMP) annotation (Line(points={{0.9,0.8},{16,0.8},{16,-43.7778},{24,-43.7778}},
+                                                color={0,0,127}));
+      connect(gENSAL.p, p) annotation (Line(points={{-2,8},{62,8},{62,0},{110,0}},
+                   color={0,0,255}));
+      connect(sEXS.VOTHSG, cte.y) annotation (Line(points={{24,-33.7778},{2,-33.7778},{2,-46},{-12.5,-46}},
+                                    color={0,0,127}));
       connect(sEXS.VUEL, cte.y) annotation (Line(points={{34.85,-66},{2,-66},{2,
               -46},{-12.5,-46}}, color={0,0,127}));
+      connect(gENSAL.XADIFD, sEXS.XADIFD) annotation (Line(points={{0.32,-13.6},{6,-13.6},{6,-72},{68.95,-72},{68.95,-65.5556}}, color={0,0,127}));
       annotation (
         Icon(graphics={Ellipse(extent={{-100,-100},{101,100}}, lineColor={0,0,
               255}),Line(
@@ -4778,29 +4766,29 @@ package Original "Library of original Nordic 44 model"
       Original.Data.PSSE_data_Original_case PSSE_data
         annotation (Placement(transformation(extent={{86,86},{98,98}})));
     equation
-      connect(hYGOV.PMECH, gENSAL.PMECH) annotation (Line(points={{-12.65,75},{
-              0,75},{0,46},{-82,46},{-82,26},{-69.4,26}}, color={0,0,127}));
-      connect(gENSAL.p, p) annotation (Line(points={{-7,10},{72,10},{72,0},{110,
-              0}}, color={0,0,255}));
+      connect(hYGOV.PMECH, gENSAL.PMECH) annotation (Line(points={{-12.875,76.4444},{0,76.4444},{0,46},{-82,46},{-82,26},{-76,26}},
+                                                          color={0,0,127}));
+      connect(gENSAL.p, p) annotation (Line(points={{-10,10},{72,10},{72,0},{110,0}},
+                   color={0,0,255}));
       connect(cte.y, sEXS.VOEL) annotation (Line(points={{-29.5,-54},{0,-54},{0,
               -78},{30.05,-78}}, color={0,0,127}));
-      connect(gENSAL.EFD0, sEXS.EFD0) annotation (Line(points={{-7.6,-12.4},{0,
-              -12.4},{0,-68.6667},{6,-68.6667}}, color={0,0,127}));
-      connect(gENSAL.SPEED, hYGOV.SPEED) annotation (Line(points={{-7.6,38.8},{
-              6,38.8},{6,92},{-72,92},{-72,81.5},{-67.325,81.5}}, color={0,0,
+      connect(gENSAL.EFD0, sEXS.EFD0) annotation (Line(points={{-7,-6},{0,-6},{0,-68.6667},{6,-68.6667}},
+                                                 color={0,0,127}));
+      connect(gENSAL.SPEED, hYGOV.SPEED) annotation (Line(points={{-7,32.4},{6,32.4},{6,92},{-72,92},{-72,83.6667},{-65.75,83.6667}},
+                                                                  color={0,0,
               127}));
-      connect(gENSAL.PMECH0, hYGOV.PMECH0) annotation (Line(points={{-7.6,0.4},
-              {14,0.4},{14,96},{-78,96},{-78,68.5},{-67.325,68.5}}, color={0,0,
+      connect(gENSAL.PMECH0, hYGOV.PMECH0) annotation (Line(points={{-7,26},{14,26},{14,96},{-78,96},{-78,67.7778},{-65.75,67.7778}},
+                                                                    color={0,0,
               127}));
-      connect(sEXS.EFD, gENSAL.EFD) annotation (Line(points={{81.85,-51.3333},{
-              86,-51.3333},{86,-56},{86,-92},{-82,-92},{-82,-6},{-69.4,-6}},
+      connect(sEXS.EFD, gENSAL.EFD) annotation (Line(points={{81.85,-51.3333},{86,-51.3333},{86,-56},{86,-92},{-82,-92},{-82,-6},{-76,-6}},
             color={0,0,127}));
-      connect(gENSAL.ETERM, sEXS.ECOMP) annotation (Line(points={{-7.6,26},{2,
-              26},{2,-51.3333},{6,-51.3333}}, color={0,0,127}));
-      connect(sEXS.VOTHSG, cte.y) annotation (Line(points={{6,-39.3333},{-18,-39.3333},
-              {-18,-54},{-29.5,-54}}, color={0,0,127}));
+      connect(gENSAL.ETERM, sEXS.ECOMP) annotation (Line(points={{-7,0.4},{2,0.4},{2,-51.3333},{6,-51.3333}},
+                                              color={0,0,127}));
+      connect(sEXS.VOTHSG, cte.y) annotation (Line(points={{6,-39.3333},{-18,-39.3333},{-18,-54},{-29.5,-54}},
+                                      color={0,0,127}));
       connect(sEXS.VUEL, cte.y) annotation (Line(points={{18.95,-78},{-18,-78},
               {-18,-54},{-29.5,-54}}, color={0,0,127}));
+      connect(gENSAL.XADIFD, sEXS.XADIFD) annotation (Line(points={{-7.6,-18.8},{-2,-18.8},{-2,-84},{59.65,-84},{59.65,-77.4667}}, color={0,0,127}));
       annotation (
         Icon(graphics={Ellipse(extent={{-100,-100},{101,100}}, lineColor={0,0,
               255}),Line(

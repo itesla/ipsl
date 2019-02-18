@@ -70,33 +70,33 @@ model Gen1_bus_7000 "Configuration of synchronous generator with regulators: GEN
   OpenIPSL.Interfaces.PwPin pwPin annotation (Placement(transformation(extent={
             {100,-10},{120,10}}), iconTransformation(extent={{100,-10},{120,10}})));
 equation
-  connect(gENROU.p, pwPin) annotation (Line(points={{87,0.5},{95.675,0.5},{
-          95.675,0},{110,0}}, color={0,0,255}));
-  connect(iEEET2.EFD, gENROU.EFD) annotation (Line(points={{8.75,-26.7778},{
-          15.3125,-26.7778},{15.3125,-18.75},{24.6,-18.75}}, color={0,0,127}));
+  connect(gENROU.p, pwPin) annotation (Line(points={{84,0.5},{95.675,0.5},{95.675,0},{110,0}},
+                              color={0,0,255}));
+  connect(iEEET2.EFD, gENROU.EFD) annotation (Line(points={{8.75,-26.7778},{15.3125,-26.7778},{15.3125,-18.75},{18,-18.75}},
+                                                             color={0,0,127}));
   connect(cte.y, iEEET2.VOEL) annotation (Line(points={{-79.5,-30},{-60,-30},{-60,
           -59},{-40.25,-59}}, color={0,0,127}));
-  connect(gENROU.EFD0, iEEET2.EFD0) annotation (Line(points={{86.4,-26.45},{91,
-          -26.45},{91,-62},{-67,-62},{-67,-47.7222},{-63,-47.7222}}, color={0,0,
+  connect(gENROU.EFD0, iEEET2.EFD0) annotation (Line(points={{87,-18.75},{91,-18.75},{91,-62},{-67,-62},{-67,-47.7222},{-63,-47.7222}},
+                                                                     color={0,0,
           127}));
-  connect(gENROU.PMECH0, iEESGO.PMECH0) annotation (Line(points={{86.4,-11.05},
-          {93,-11.05},{93,-67},{-92,-67},{-92,18.2857},{-46.95,18.2857}}, color=
+  connect(gENROU.PMECH0, iEESGO.PMECH0) annotation (Line(points={{87,19.75},{93,19.75},{93,-67},{-92,-67},{-92,16.8889},{-46.25,16.8889}},
+                                                                          color=
          {0,0,127}));
-  connect(gENROU.PELEC, sTAB2A.PELEC) annotation (Line(points={{86.4,-18.75},{
-          96,-18.75},{96,-75},{-96,-75},{-96,80},{-22.2091,80}}, color={0,0,127}));
-  connect(sTAB2A.VOTHSG, iEEET2.VOTHSG) annotation (Line(points={{37.6364,80},{
-          37.6364,80},{50,80},{50,50},{-80,50},{-80,-12.2778},{-63,-12.2778}},
+  connect(gENROU.PELEC, sTAB2A.PELEC) annotation (Line(points={{87,12.05},{96,12.05},{96,-75},{-96,-75},{-96,80},{-22.2091,80}},
+                                                                 color={0,0,127}));
+  connect(sTAB2A.VOTHSG, iEEET2.VOTHSG) annotation (Line(points={{37.6364,80},{37.6364,80},{50,80},{50,50},{-80,50},{-80,-12.2778},{-63,-12.2778}},
         color={0,0,127}));
-  connect(gENROU.SPEED, iEESGO.SPEED) annotation (Line(points={{86.4,35.15},{91,
-          35.15},{91,42},{-53,42},{-53,29.2857},{-46.95,29.2857}}, color={0,0,
+  connect(gENROU.SPEED, iEESGO.SPEED) annotation (Line(points={{87,27.45},{91,27.45},{91,42},{-53,42},{-53,30.3333},{-46.25,30.3333}},
+                                                                   color={0,0,
           127}));
-  connect(gENROU.ETERM, iEEET2.ECOMP) annotation (Line(points={{86.4,19.75},{94,
-          19.75},{94,45},{-73,45},{-73,-26.7778},{-63,-26.7778}}, color={0,0,
+  connect(gENROU.ETERM, iEEET2.ECOMP) annotation (Line(points={{87,-11.05},{94,-11.05},{94,45},{-73,45},{-73,-26.7778},{-63,-26.7778}},
+                                                                  color={0,0,
           127}));
-  connect(iEESGO.PMECH, gENROU.PMECH) annotation (Line(points={{-4.6875,24.5714},
-          {9.15625,24.5714},{9.15625,19.75},{24.6,19.75}}, color={0,0,127}));
+  connect(iEESGO.PMECH, gENROU.PMECH) annotation (Line(points={{-5.125,24.2222},{9.15625,24.2222},{9.15625,19.75},{18,19.75}},
+                                                           color={0,0,127}));
   connect(iEEET2.VUEL, cte.y) annotation (Line(points={{-50.75,-59},{-73,-59},{
           -73,-30},{-79.5,-30}}, color={0,0,127}));
+  connect(iEEET2.XADIFD, gENROU.XADIFD) annotation (Line(points={{-12.25,-58.3556},{-12,-58.3556},{-12,-60},{88,-60},{88,-34.15},{86.4,-34.15}}, color={0,0,127}));
   annotation (
     Icon(coordinateSystem(
         extent={{-100,-100},{100,100}},
