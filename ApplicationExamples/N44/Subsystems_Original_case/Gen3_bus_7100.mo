@@ -55,7 +55,7 @@ model Gen3_bus_7100 "Configuration of synchronous generator with regulators: GEN
     K_4=0.55,
     K_5=1,
     T_5=0.01) annotation (Placement(transformation(extent={{-58,-50},{-12,-30}})));
-  OpenIPSL.Interfaces.PwPin p annotation (Placement(transformation(rotation=0, extent={{100,-10},{120,10}}), iconTransformation(extent={{100,-10},{120,10}})));
+  OpenIPSL.Interfaces.PwPin p annotation (Placement(transformation(extent={{100,-10},{120,10}}), iconTransformation(extent={{100,-10},{120,10}})));
   Data.PSSE_data_Original_case PSSE_data annotation (Placement(transformation(extent={{86,88},{96,98}})));
 equation
 
@@ -76,7 +76,6 @@ equation
           points={{-76,-26},{-28,52},{27,-52},{74,23}},
           color={0,0,255},
           smooth=Smooth.Bezier)}),
-    Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,100}})),
     Documentation(revisions="<html>
 <!--DISCLAIMER-->
 <p>Copyright 2015-2016 RTE (France), SmarTS Lab (Sweden), AIA (Spain) and DTU (Denmark)</p>

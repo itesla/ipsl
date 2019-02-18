@@ -214,7 +214,6 @@ package Original "Library of original Nordic 44 model"
       G=0,
       B=0.130000*0.5) annotation (Placement(transformation(
           extent={{-5,-3},{5,3}},
-          rotation=0,
           origin={-239,-26})));
     OpenIPSL.Electrical.Branches.PwLine line_3000_3115(
       R=0.075000,
@@ -313,7 +312,6 @@ package Original "Library of original Nordic 44 model"
       G=0,
       B=0) annotation (Placement(transformation(
           extent={{-5,-3},{5,3}},
-          rotation=0,
           origin={-269,79})));
     OpenIPSL.Electrical.Branches.PwLine line_3000_3300_1(
       R=0.006000,
@@ -337,7 +335,6 @@ package Original "Library of original Nordic 44 model"
       G=0,
       B=0.050000*0.5) annotation (Placement(transformation(
           extent={{-5,-3},{5,3}},
-          rotation=0,
           origin={-234,56})));
     OpenIPSL.Electrical.Branches.PwLine line_3000_3245_2(
       R=0.018000,
@@ -412,7 +409,6 @@ package Original "Library of original Nordic 44 model"
       G=0,
       B=0.060000*0.5) annotation (Placement(transformation(
           extent={{-5,-3},{5,3}},
-          rotation=0,
           origin={-197,103})));
     OpenIPSL.Electrical.Branches.PwLine line_3100_3200_3(
       R=0.040000,
@@ -508,7 +504,6 @@ package Original "Library of original Nordic 44 model"
       G=0,
       B=0.000000) annotation (Placement(transformation(
           extent={{-5,-3},{5,3}},
-          rotation=0,
           origin={-215,167})));
     Generators.Gen4_bus_8500 G3_bus8500
       annotation (Placement(transformation(extent={{-176,166},{-182,160}})));
@@ -534,7 +529,6 @@ package Original "Library of original Nordic 44 model"
       G=0,
       B=0.090000*0.5) annotation (Placement(transformation(
           extent={{-5,-3},{5,3}},
-          rotation=0,
           origin={-161,133})));
     OpenIPSL.Electrical.Branches.PwLine line_3359_8500_1(
       R=0.012000,
@@ -542,7 +536,6 @@ package Original "Library of original Nordic 44 model"
       G=0,
       B=0.100000*0.5) annotation (Placement(transformation(
           extent={{-5,-3},{5,3}},
-          rotation=0,
           origin={-161,129})));
     Generators.Gen4_bus_8500 G4_bus8500
       annotation (Placement(transformation(extent={{-178,158},{-184,152}})));
@@ -597,7 +590,6 @@ package Original "Library of original Nordic 44 model"
       G=0,
       B=0.070000*0.5) annotation (Placement(transformation(
           extent={{-5,-3},{5,3}},
-          rotation=0,
           origin={-153,99})));
     OpenIPSL.Electrical.Loads.PSSE.Load Load1_bus3359(
       V_b=420,
@@ -645,7 +637,6 @@ package Original "Library of original Nordic 44 model"
       G=0,
       B=0.250000*0.5) annotation (Placement(transformation(
           extent={{-5,-3},{5,3}},
-          rotation=0,
           origin={-155,57})));
     OpenIPSL.Electrical.Branches.PwLine line_3100_3359_2(
       R=0.040000,
@@ -653,7 +644,6 @@ package Original "Library of original Nordic 44 model"
       G=0,
       B=0.240000*0.5) annotation (Placement(transformation(
           extent={{-5,-3},{5,3}},
-          rotation=0,
           origin={-155,51})));
     OpenIPSL.Electrical.Buses.BusExt bus_3360(
       np=1,
@@ -1087,7 +1077,6 @@ package Original "Library of original Nordic 44 model"
       G=0,
       B=0.010000*0.5) annotation (Placement(transformation(
           extent={{-5,-3},{5,3}},
-          rotation=0,
           origin={259,75})));
     OpenIPSL.Electrical.Loads.PSSE.Load Load1_bus6100(
       V_b=300,
@@ -1178,7 +1167,6 @@ package Original "Library of original Nordic 44 model"
       G=0,
       B=0.070000*0.5) annotation (Placement(transformation(
           extent={{-5,-3},{5,3}},
-          rotation=0,
           origin={265,-1})));
     OpenIPSL.Electrical.Loads.PSSE.Load Load1_bus5600(
       V_b=300,
@@ -1206,7 +1194,6 @@ package Original "Library of original Nordic 44 model"
       G=0,
       B=0.020000*0.5) annotation (Placement(transformation(
           extent={{-5,-3},{5,3}},
-          rotation=0,
           origin={255,-53})));
     OpenIPSL.Electrical.Buses.BusExt bus_5620(
       np=1,
@@ -1416,7 +1403,6 @@ package Original "Library of original Nordic 44 model"
       t1=1,
       t2=1) annotation (Placement(transformation(
           extent={{6,4},{-6,-4}},
-          rotation=0,
           origin={-190,-80})));
     OpenIPSL.Electrical.Branches.PSSE.TwoWindingTransformer trafo_3249_3701(
       R=0.02,
@@ -1446,7 +1432,6 @@ package Original "Library of original Nordic 44 model"
       t1=1,
       t2=1) annotation (Placement(transformation(
           extent={{6,-4},{-6,4}},
-          rotation=0,
           origin={220,90})));
     OpenIPSL.Electrical.Branches.PSSE.TwoWindingTransformer trafo_5400_5401(
       R=0.0032,
@@ -1456,7 +1441,6 @@ package Original "Library of original Nordic 44 model"
       t1=1.00635,
       t2=1) annotation (Placement(transformation(
           extent={{6,-4},{-6,4}},
-          rotation=0,
           origin={154,-34})));
     OpenIPSL.Electrical.Branches.PSSE.TwoWindingTransformer trafo_5400_5402(
       R=0.0004,
@@ -1486,7 +1470,6 @@ package Original "Library of original Nordic 44 model"
       t2=1,
       t1=1.005362) annotation (Placement(transformation(
           extent={{6,-4},{-6,4}},
-          rotation=0,
           origin={228,26})));
     OpenIPSL.Electrical.Branches.PSSE.TwoWindingTransformer trafo_5602_5603(
       R=0.0008,
@@ -1496,7 +1479,6 @@ package Original "Library of original Nordic 44 model"
       t2=1,
       t1=0.9428532) annotation (Placement(transformation(
           extent={{6,-4},{-6,4}},
-          rotation=0,
           origin={204,-72})));
     OpenIPSL.Electrical.Branches.PSSE.TwoWindingTransformer trafo_6000_6001(
       R=0.0004,
@@ -1506,7 +1488,6 @@ package Original "Library of original Nordic 44 model"
       t1=1.00625,
       t2=1) annotation (Placement(transformation(
           extent={{6,-4},{-6,4}},
-          rotation=0,
           origin={206,16})));
     OpenIPSL.Electrical.Branches.PSSE.TwoWindingTransformer trafo_6700_6701(
       R=0.005,
@@ -2905,7 +2886,6 @@ package Original "Library of original Nordic 44 model"
       //Bus 8700
       parameter Real PL8700=0;
       parameter Real QL8700=0;
-      annotation (Documentation);
     end PSSE_powers_Original_case;
 
     record PSSE_voltages_Original_case
@@ -3042,7 +3022,6 @@ package Original "Library of original Nordic 44 model"
       //Bus 8700
       parameter Real V8700=1.02;
       parameter Real A8700=-3.048752;
-      annotation (Documentation);
     end PSSE_voltages_Original_case;
 
     record PSSE_data_Original_case "PSSE complete data record"
@@ -3060,7 +3039,7 @@ package Original "Library of original Nordic 44 model"
         <li>DTU: <a href=\"http://www.dtu.dk/english\"> http://www.dtu.dk/english</a></li>
         </ul>
         <p>The authors can be contacted by email: <a href=\"mailto:info@itesla-ipsl.org\">info@itesla-ipsl.org</a></p>
-        
+
         <p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
         <p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
         </html>"));
@@ -3078,12 +3057,11 @@ package Original "Library of original Nordic 44 model"
         <li>DTU: <a href=\"http://www.dtu.dk/english\"> http://www.dtu.dk/english</a></li>
         </ul>
         <p>The authors can be contacted by email: <a href=\"mailto:info@itesla-ipsl.org\">info@itesla-ipsl.org</a></p>
-        
+
         <p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
         <p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
         </html>"));
       Powers_OC powers;
-      annotation (Documentation);
     end PSSE_data_Original_case;
 
   end Data;
@@ -3128,7 +3106,6 @@ package Original "Library of original Nordic 44 model"
         P_MAX=1,
         P_MIN=0) annotation (Placement(transformation(
             extent={{-36.5,-12.5},{36.5,12.5}},
-            rotation=0,
             origin={-48.5,19.5})));
       OpenIPSL.Electrical.Controls.PSSE.ES.IEEET2 iEEET2(
         T_R=0,
@@ -3146,7 +3123,6 @@ package Original "Library of original Nordic 44 model"
         E_2=8,
         S_EE_2=0.2020) annotation (Placement(transformation(
             extent={{-40,-33.5},{40,33.5}},
-            rotation=0,
             origin={-48,-43.5})));
       OpenIPSL.Electrical.Controls.PSSE.PSS.STAB2A sTAB2A(
         H_LIM=0.03,
@@ -3197,21 +3173,14 @@ package Original "Library of original Nordic 44 model"
       connect(iEEET2.VOEL, cte.y) annotation (Line(points={{-86.6667,-43.5},{-96,
               -43.5},{-96,-45},{-102.425,-45}}, color={0,0,127}));
       annotation (
-        Diagram(coordinateSystem(
-            extent={{-100,-100},{100,100}},
-            preserveAspectRatio=false,
-            initialScale=0.1,
-            grid={1,1})),
         Icon(coordinateSystem(
             extent={{-100,-100},{100,100}},
             preserveAspectRatio=false,
-            initialScale=0.1,
             grid={1,1}), graphics={Line(
                   points={{-76,-26},{-28,52},{27,-52},{74,23}},
                   color={0,0,255},
                   smooth=Smooth.Bezier),Ellipse(extent={{-100,-100},{101,100}},
-              lineColor={0,0,255})}),
-        Documentation);
+              lineColor={0,0,255})}));
     end Gen1_bus_3000;
 
     model Gen1_bus_7000 "Configuration of synchronous generator with regulators: GENROU, STAB2A, IEEET2, IEESGO;
@@ -3253,7 +3222,6 @@ package Original "Library of original Nordic 44 model"
         P_MAX=1,
         P_MIN=0) annotation (Placement(transformation(
             extent={{-21,-11},{21,11}},
-            rotation=0,
             origin={-27,23})));
       OpenIPSL.Electrical.Controls.PSSE.ES.IEEET2 iEEET2(
         T_R=0,
@@ -3271,7 +3239,6 @@ package Original "Library of original Nordic 44 model"
         E_2=8,
         S_EE_2=0.2020) annotation (Placement(transformation(
             extent={{-35,-29},{35,29}},
-            rotation=0,
             origin={-28,-30})));
       OpenIPSL.Electrical.Controls.PSSE.PSS.STAB2A sTAB2A(
         H_LIM=0.03,
@@ -3321,21 +3288,14 @@ package Original "Library of original Nordic 44 model"
       connect(iEEET2.VUEL, cte.y) annotation (Line(points={{-61.8333,-41.6},{-73,
               -41.6},{-73,-30},{-79.5,-30}}, color={0,0,127}));
       annotation (
-        Diagram(coordinateSystem(
-            extent={{-100,-100},{100,100}},
-            preserveAspectRatio=false,
-            initialScale=0.1,
-            grid={1,1})),
         Icon(coordinateSystem(
             extent={{-100,-100},{100,100}},
             preserveAspectRatio=false,
-            initialScale=0.1,
             grid={1,1}), graphics={Line(
                   points={{-76,-26},{-28,52},{27,-52},{74,23}},
                   color={0,0,255},
                   smooth=Smooth.Bezier),Ellipse(extent={{-100,-100},{101,100}},
-              lineColor={0,0,255})}),
-        Documentation);
+              lineColor={0,0,255})}));
     end Gen1_bus_7000;
 
     model Gen4_bus_3300 "Configuration of synchronous generator with regulators: GENROU, STAB2A, IEEET2, IEESGO;
@@ -3377,7 +3337,6 @@ package Original "Library of original Nordic 44 model"
         P_MAX=1,
         P_MIN=0) annotation (Placement(transformation(
             extent={{-28,-12},{28,12}},
-            rotation=0,
             origin={-26,76})));
       OpenIPSL.Electrical.Controls.PSSE.ES.SCRX sCRX(
         K=10 "K",
@@ -3389,7 +3348,6 @@ package Original "Library of original Nordic 44 model"
         r_cr_fd=0,
         C_SWITCH=true) annotation (Placement(transformation(
             extent={{-28,-23},{28,23}},
-            rotation=0,
             origin={62,-61})));
       OpenIPSL.Electrical.Controls.PSSE.PSS.STAB2A sTAB2A(
         H_LIM=0.03,
@@ -3445,10 +3403,7 @@ package Original "Library of original Nordic 44 model"
                   points={{-76,-26},{-28,52},{27,-52},{74,23}},
                   color={0,0,255},
                   smooth=Smooth.Bezier),Ellipse(extent={{-100,-100},{101,100}},
-              lineColor={0,0,255})}),
-        Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},
-                {100,100}})),
-        Documentation);
+              lineColor={0,0,255})}));
     end Gen4_bus_3300;
 
     model Gen4_bus_3359 "Configuration of synchronous generator with regulators: GENROU, STAB2A, IEEET2, IEESGO;
@@ -3490,7 +3445,6 @@ package Original "Library of original Nordic 44 model"
         P_MAX=1,
         P_MIN=0) annotation (Placement(transformation(
             extent={{-30,-13},{30,13}},
-            rotation=0,
             origin={-22,71})));
       OpenIPSL.Electrical.Controls.PSSE.ES.SCRX sCRX(
         K=165,
@@ -3502,7 +3456,6 @@ package Original "Library of original Nordic 44 model"
         r_cr_fd=0,
         C_SWITCH=true) annotation (Placement(transformation(
             extent={{-27.5,-33.5},{27.5,33.5}},
-            rotation=0,
             origin={58.5,-59.5})));
       OpenIPSL.Electrical.Controls.PSSE.PSS.STAB2A sTAB2A(
         H_LIM=0.03,
@@ -3556,10 +3509,7 @@ package Original "Library of original Nordic 44 model"
                   points={{-76,-26},{-28,52},{27,-52},{74,23}},
                   color={0,0,255},
                   smooth=Smooth.Bezier),Ellipse(extent={{-100,-100},{101,100}},
-              lineColor={0,0,255})}),
-        Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},
-                {100,100}})),
-        Documentation);
+              lineColor={0,0,255})}));
     end Gen4_bus_3359;
 
     model Gen4_bus_8500 "Configuration of synchronous generator with regulators: GENROU, STAB2A, IEEET2, IEESGO;
@@ -3601,7 +3551,6 @@ package Original "Library of original Nordic 44 model"
         P_MAX=1,
         P_MIN=0) annotation (Placement(transformation(
             extent={{-25.5,-10.5},{25.5,10.5}},
-            rotation=0,
             origin={-23.5,69.5})));
       OpenIPSL.Electrical.Controls.PSSE.ES.SCRX sCRX(
         K=10 "K",
@@ -3613,7 +3562,6 @@ package Original "Library of original Nordic 44 model"
         r_cr_fd=0,
         C_SWITCH=true) annotation (Placement(transformation(
             extent={{-27.5,-30.5},{27.5,30.5}},
-            rotation=0,
             origin={52.5,-52.5})));
       OpenIPSL.Electrical.Controls.PSSE.PSS.STAB2A sTAB2A(
         H_LIM=0.03,
@@ -3667,10 +3615,7 @@ package Original "Library of original Nordic 44 model"
                   points={{-76,-26},{-28,52},{27,-52},{74,23}},
                   color={0,0,255},
                   smooth=Smooth.Bezier),Ellipse(extent={{-100,-100},{101,100}},
-              lineColor={0,0,255})}),
-        Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},
-                {100,100}})),
-        Documentation);
+              lineColor={0,0,255})}));
     end Gen4_bus_8500;
 
     model Gen2_bus_3245 "Configuration of synchronous generator with regulators: GENSAL, HYGOV, SCRX;
@@ -3723,8 +3668,7 @@ package Original "Library of original Nordic 44 model"
         annotation (Placement(transformation(extent={{31,-84},{85,-26}})));
       Modelica.Blocks.Sources.Constant cte(k=0)
         annotation (Placement(transformation(extent={{-27,-57},{-17,-47}})));
-      OpenIPSL.Interfaces.PwPin p annotation (Placement(transformation(rotation=
-               0, extent={{100,-10},{120,10}}), iconTransformation(extent={{100,
+      OpenIPSL.Interfaces.PwPin p annotation (Placement(transformation(extent={{100,-10},{120,10}}), iconTransformation(extent={{100,
                 -10},{120,10}})));
       Original.Data.PSSE_data_Original_case PSSE_data
         annotation (Placement(transformation(extent={{88,88},{98,98}})));
@@ -3758,10 +3702,7 @@ package Original "Library of original Nordic 44 model"
               lineColor={0,0,255}),Line(
                   points={{-76,-26},{-28,52},{27,-52},{74,23}},
                   color={0,0,255},
-                  smooth=Smooth.Bezier)}),
-        Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},
-                {100,100}})),
-        Documentation);
+                  smooth=Smooth.Bezier)}));
     end Gen2_bus_3245;
 
     model Gen2_bus_3249 "Configuration of synchronous generator with regulators: GENSAL, HYGOV, SCRX;
@@ -3814,8 +3755,7 @@ package Original "Library of original Nordic 44 model"
         annotation (Placement(transformation(extent={{26,-90},{81,-30}})));
       Modelica.Blocks.Sources.Constant cte(k=0)
         annotation (Placement(transformation(extent={{-21,-55},{-11,-45}})));
-      OpenIPSL.Interfaces.PwPin p annotation (Placement(transformation(rotation=
-               0, extent={{100,-10},{120,10}}), iconTransformation(extent={{100,
+      OpenIPSL.Interfaces.PwPin p annotation (Placement(transformation(extent={{100,-10},{120,10}}), iconTransformation(extent={{100,
                 -10},{120,10}})));
       Original.Data.PSSE_data_Original_case PSSE_data
         annotation (Placement(transformation(extent={{88,88},{98,98}})));
@@ -3851,10 +3791,7 @@ package Original "Library of original Nordic 44 model"
               lineColor={0,0,255}),Line(
                   points={{-76,-26},{-28,52},{27,-52},{74,23}},
                   color={0,0,255},
-                  smooth=Smooth.Bezier)}),
-        Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},
-                {100,100}})),
-        Documentation);
+                  smooth=Smooth.Bezier)}));
     end Gen2_bus_3249;
 
     model Gen2_bus_5600 "Configuration of synchronous generator with regulators: GENSAL, HYGOV, SCRX;
@@ -3907,8 +3844,7 @@ package Original "Library of original Nordic 44 model"
         annotation (Placement(transformation(extent={{26,-90},{84,-28}})));
       Modelica.Blocks.Sources.Constant cte(k=0)
         annotation (Placement(transformation(extent={{-17,-53},{-7,-43}})));
-      OpenIPSL.Interfaces.PwPin p annotation (Placement(transformation(rotation=
-               0, extent={{100,-10},{120,10}}), iconTransformation(extent={{100,
+      OpenIPSL.Interfaces.PwPin p annotation (Placement(transformation(extent={{100,-10},{120,10}}), iconTransformation(extent={{100,
                 -10},{120,10}})));
       Original.Data.PSSE_data_Original_case PSSE_data
         annotation (Placement(transformation(extent={{86,86},{98,98}})));
@@ -3943,10 +3879,7 @@ package Original "Library of original Nordic 44 model"
               lineColor={0,0,255}),Line(
                   points={{-76,-26},{-28,52},{27,-52},{74,23}},
                   color={0,0,255},
-                  smooth=Smooth.Bezier)}),
-        Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},
-                {100,100}})),
-        Documentation);
+                  smooth=Smooth.Bezier)}));
     end Gen2_bus_5600;
 
     model Gen3_bus_3115 "Configuration of synchronous generator with regulators: GENSAL, HYGOV, SCRX, STAB2A;
@@ -4010,8 +3943,7 @@ package Original "Library of original Nordic 44 model"
         K_5=1,
         T_5=0.01)
         annotation (Placement(transformation(extent={{-48,-54},{7,-33}})));
-      OpenIPSL.Interfaces.PwPin p annotation (Placement(transformation(rotation=
-               0, extent={{100,-10},{120,10}}), iconTransformation(extent={{100,
+      OpenIPSL.Interfaces.PwPin p annotation (Placement(transformation(extent={{100,-10},{120,10}}), iconTransformation(extent={{100,
                 -10},{120,10}})));
       Original.Data.PSSE_data_Original_case PSSE_data
         annotation (Placement(transformation(extent={{86,88},{96,98}})));
@@ -4050,10 +3982,7 @@ package Original "Library of original Nordic 44 model"
               255}),Line(
                   points={{-76,-26},{-28,52},{27,-52},{74,23}},
                   color={0,0,255},
-                  smooth=Smooth.Bezier)}),
-        Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},
-                {100,100}})),
-        Documentation);
+                  smooth=Smooth.Bezier)}));
     end Gen3_bus_3115;
 
     model Gen3_bus_5300 "Configuration of synchronous generator with regulators: GENSAL, HYGOV, SCRX, STAB2A;
@@ -4117,8 +4046,7 @@ package Original "Library of original Nordic 44 model"
         K_5=1,
         T_5=0.01)
         annotation (Placement(transformation(extent={{-66,-54},{-20,-34}})));
-      OpenIPSL.Interfaces.PwPin p annotation (Placement(transformation(rotation=
-               0, extent={{100,-10},{120,10}}), iconTransformation(extent={{100,
+      OpenIPSL.Interfaces.PwPin p annotation (Placement(transformation(extent={{100,-10},{120,10}}), iconTransformation(extent={{100,
                 -10},{120,10}})));
       Original.Data.PSSE_data_Original_case PSSE_data
         annotation (Placement(transformation(extent={{88,88},{98,98}})));
@@ -4154,10 +4082,7 @@ package Original "Library of original Nordic 44 model"
               255}),Line(
                   points={{-76,-26},{-28,52},{27,-52},{74,23}},
                   color={0,0,255},
-                  smooth=Smooth.Bezier)}),
-        Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},
-                {100,100}})),
-        Documentation);
+                  smooth=Smooth.Bezier)}));
     end Gen3_bus_5300;
 
     model Gen3_bus_6100 "Configuration of synchronous generator with regulators: GENSAL, HYGOV, SCRX, STAB2A;
@@ -4220,8 +4145,7 @@ package Original "Library of original Nordic 44 model"
         K_5=1,
         T_5=0.01)
         annotation (Placement(transformation(extent={{-60,-46},{-22,-20}})));
-      OpenIPSL.Interfaces.PwPin p annotation (Placement(transformation(rotation=
-               0, extent={{100,-10},{120,10}}), iconTransformation(extent={{100,
+      OpenIPSL.Interfaces.PwPin p annotation (Placement(transformation(extent={{100,-10},{120,10}}), iconTransformation(extent={{100,
                 -10},{120,10}})));
       Original.Data.PSSE_data_Original_case PSSE_data
         annotation (Placement(transformation(extent={{86,88},{96,98}})));
@@ -4257,10 +4181,7 @@ package Original "Library of original Nordic 44 model"
               255}),Line(
                   points={{-76,-26},{-28,52},{27,-52},{74,23}},
                   color={0,0,255},
-                  smooth=Smooth.Bezier)}),
-        Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},
-                {100,100}})),
-        Documentation);
+                  smooth=Smooth.Bezier)}));
     end Gen3_bus_6100;
 
     model Gen3_bus_6700 "Configuration of synchronous generator with regulators: GENSAL, HYGOV, SCRX, STAB2A;
@@ -4324,8 +4245,7 @@ package Original "Library of original Nordic 44 model"
         K_5=1,
         T_5=0.01)
         annotation (Placement(transformation(extent={{-54,-54},{-6,-34}})));
-      OpenIPSL.Interfaces.PwPin p annotation (Placement(transformation(rotation=
-               0, extent={{100,-10},{120,10}}), iconTransformation(extent={{100,
+      OpenIPSL.Interfaces.PwPin p annotation (Placement(transformation(extent={{100,-10},{120,10}}), iconTransformation(extent={{100,
                 -10},{120,10}})));
       Original.Data.PSSE_data_Original_case PSSE_data
         annotation (Placement(transformation(extent={{88,88},{98,98}})));
@@ -4363,10 +4283,7 @@ package Original "Library of original Nordic 44 model"
               255}),Line(
                   points={{-76,-26},{-28,52},{27,-52},{74,23}},
                   color={0,0,255},
-                  smooth=Smooth.Bezier)}),
-        Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},
-                {100,100}})),
-        Documentation);
+                  smooth=Smooth.Bezier)}));
     end Gen3_bus_6700;
 
     model Gen3_bus_7100 "Configuration of synchronous generator with regulators: GENSAL, HYGOV, SCRX, STAB2A;
@@ -4429,8 +4346,7 @@ package Original "Library of original Nordic 44 model"
         K_5=1,
         T_5=0.01)
         annotation (Placement(transformation(extent={{-58,-50},{-12,-30}})));
-      OpenIPSL.Interfaces.PwPin p annotation (Placement(transformation(rotation=
-               0, extent={{100,-10},{120,10}}), iconTransformation(extent={{100,
+      OpenIPSL.Interfaces.PwPin p annotation (Placement(transformation(extent={{100,-10},{120,10}}), iconTransformation(extent={{100,
                 -10},{120,10}})));
       Original.Data.PSSE_data_Original_case PSSE_data
         annotation (Placement(transformation(extent={{86,88},{96,98}})));
@@ -4467,10 +4383,7 @@ package Original "Library of original Nordic 44 model"
               255}),Line(
                   points={{-76,-26},{-28,52},{27,-52},{74,23}},
                   color={0,0,255},
-                  smooth=Smooth.Bezier)}),
-        Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},
-                {100,100}})),
-        Documentation);
+                  smooth=Smooth.Bezier)}));
     end Gen3_bus_7100;
 
     model Gen5_bus_5100 "Configuration of synchronous generator with regulators: GENSAL, SEXS, HYGOV;
@@ -4522,8 +4435,7 @@ package Original "Library of original Nordic 44 model"
         annotation (Placement(transformation(extent={{16,-88},{86,-33}})));
       Modelica.Blocks.Sources.Constant cte(k=0)
         annotation (Placement(transformation(extent={{-33,-65},{-23,-55}})));
-      OpenIPSL.Interfaces.PwPin p annotation (Placement(transformation(rotation=
-               0, extent={{100,-10},{120,10}}), iconTransformation(extent={{100,
+      OpenIPSL.Interfaces.PwPin p annotation (Placement(transformation(extent={{100,-10},{120,10}}), iconTransformation(extent={{100,
                 -10},{120,10}})));
       Original.Data.PSSE_data_Original_case PSSE_data
         annotation (Placement(transformation(extent={{88,88},{98,98}})));
@@ -4554,10 +4466,7 @@ package Original "Library of original Nordic 44 model"
               255}),Line(
                   points={{-76,-26},{-28,52},{27,-52},{74,23}},
                   color={0,0,255},
-                  smooth=Smooth.Bezier)}),
-        Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},
-                {100,100}})),
-        Documentation);
+                  smooth=Smooth.Bezier)}));
     end Gen5_bus_5100;
 
     model Gen5_bus_5400 "Configuration of synchronous generator with regulators: GENSAL, SEXS, HYGOV;
@@ -4608,8 +4517,7 @@ package Original "Library of original Nordic 44 model"
         annotation (Placement(transformation(extent={{14,-76},{86,-29}})));
       Modelica.Blocks.Sources.Constant cte(k=0)
         annotation (Placement(transformation(extent={{-19,-57},{-9,-47}})));
-      OpenIPSL.Interfaces.PwPin p annotation (Placement(transformation(rotation=
-               0, extent={{100,-10},{120,10}}), iconTransformation(extent={{100,
+      OpenIPSL.Interfaces.PwPin p annotation (Placement(transformation(extent={{100,-10},{120,10}}), iconTransformation(extent={{100,
                 -10},{120,10}})));
       Original.Data.PSSE_data_Original_case PSSE_data
         annotation (Placement(transformation(extent={{88,88},{98,98}})));
@@ -4643,10 +4551,7 @@ package Original "Library of original Nordic 44 model"
               255}),Line(
                   points={{-76,-26},{-28,52},{27,-52},{74,23}},
                   color={0,0,255},
-                  smooth=Smooth.Bezier)}),
-        Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},
-                {100,100}})),
-        Documentation);
+                  smooth=Smooth.Bezier)}));
     end Gen5_bus_5400;
 
     model Gen5_bus_5500 "Configuration of synchronous generator with regulators: GENSAL, SEXS, HYGOV;
@@ -4698,8 +4603,7 @@ package Original "Library of original Nordic 44 model"
         annotation (Placement(transformation(extent={{10,-82},{80,-36}})));
       Modelica.Blocks.Sources.Constant cte(k=0)
         annotation (Placement(transformation(extent={{-30,-66},{-16,-52}})));
-      OpenIPSL.Interfaces.PwPin p annotation (Placement(transformation(rotation=
-               0, extent={{100,-10},{120,10}}), iconTransformation(extent={{100,
+      OpenIPSL.Interfaces.PwPin p annotation (Placement(transformation(extent={{100,-10},{120,10}}), iconTransformation(extent={{100,
                 -10},{120,10}})));
       Original.Data.PSSE_data_Original_case PSSE_data
         annotation (Placement(transformation(extent={{88,88},{98,98}})));
@@ -4732,10 +4636,7 @@ package Original "Library of original Nordic 44 model"
               255}),Line(
                   points={{-76,-26},{-28,52},{27,-52},{74,23}},
                   color={0,0,255},
-                  smooth=Smooth.Bezier)}),
-        Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},
-                {100,100}})),
-        Documentation);
+                  smooth=Smooth.Bezier)}));
     end Gen5_bus_5500;
 
     model Gen5_bus_6000 "Configuration of synchronous generator with regulators: GENSAL, SEXS, HYGOV;
@@ -4787,8 +4688,7 @@ package Original "Library of original Nordic 44 model"
         annotation (Placement(transformation(extent={{24,-66},{86,-26}})));
       Modelica.Blocks.Sources.Constant cte(k=0)
         annotation (Placement(transformation(extent={{-23,-51},{-13,-41}})));
-      OpenIPSL.Interfaces.PwPin p annotation (Placement(transformation(rotation=
-               0, extent={{100,-10},{120,10}}), iconTransformation(extent={{100,
+      OpenIPSL.Interfaces.PwPin p annotation (Placement(transformation(extent={{100,-10},{120,10}}), iconTransformation(extent={{100,
                 -10},{120,10}})));
       Original.Data.PSSE_data_Original_case PSSE_data
         annotation (Placement(transformation(extent={{88,88},{98,98}})));
@@ -4821,10 +4721,7 @@ package Original "Library of original Nordic 44 model"
               255}),Line(
                   points={{-76,-26},{-28,52},{27,-52},{74,23}},
                   color={0,0,255},
-                  smooth=Smooth.Bezier)}),
-        Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},
-                {100,100}})),
-        Documentation);
+                  smooth=Smooth.Bezier)}));
     end Gen5_bus_6000;
 
     model Gen5_bus_6500 "Configuration of synchronous generator with regulators: GENSAL, SEXS, HYGOV;
@@ -4876,8 +4773,7 @@ package Original "Library of original Nordic 44 model"
         annotation (Placement(transformation(extent={{6,-78},{80,-30}})));
       Modelica.Blocks.Sources.Constant cte(k=0)
         annotation (Placement(transformation(extent={{-40,-59},{-30,-49}})));
-      OpenIPSL.Interfaces.PwPin p annotation (Placement(transformation(rotation=
-               0, extent={{100,-10},{120,10}}), iconTransformation(extent={{100,
+      OpenIPSL.Interfaces.PwPin p annotation (Placement(transformation(extent={{100,-10},{120,10}}), iconTransformation(extent={{100,
                 -10},{120,10}})));
       Original.Data.PSSE_data_Original_case PSSE_data
         annotation (Placement(transformation(extent={{86,86},{98,98}})));
@@ -4910,10 +4806,7 @@ package Original "Library of original Nordic 44 model"
               255}),Line(
                   points={{-76,-26},{-28,52},{27,-52},{74,23}},
                   color={0,0,255},
-                  smooth=Smooth.Bezier)}),
-        Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},
-                {100,100}})),
-        Documentation);
+                  smooth=Smooth.Bezier)}));
     end Gen5_bus_6500;
   end Generators;
   annotation (Documentation(info="<html>

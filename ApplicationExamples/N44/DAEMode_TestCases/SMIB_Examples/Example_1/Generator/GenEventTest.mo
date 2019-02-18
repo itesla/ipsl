@@ -51,8 +51,7 @@ model GenEventTest "Configuration of synchronous generator with regulators: GENS
           K_5=1,
           T_5=0.01)
           annotation (Placement(transformation(extent={{-66,-54},{-20,-34}})));
-    OpenIPSL.Interfaces.PwPin p annotation (Placement(transformation(rotation=0,
-                extent={{100,-10},{120,10}}), iconTransformation(extent={{100,-10},{
+    OpenIPSL.Interfaces.PwPin p annotation (Placement(transformation(extent={{100,-10},{120,10}}), iconTransformation(extent={{100,-10},{
                   120,10}})));
 equation
     connect(gENSAL.p, p)

@@ -39,7 +39,6 @@ model Gen1_bus_7000 "Configuration of synchronous generator with regulators: GEN
     P_MAX=1,
     P_MIN=0) annotation (Placement(transformation(
         extent={{-21,-11},{21,11}},
-        rotation=0,
         origin={-27,23})));
 
   OpenIPSL.Electrical.Controls.PSSE.ES.IEEET2 iEEET2(
@@ -58,7 +57,6 @@ model Gen1_bus_7000 "Configuration of synchronous generator with regulators: GEN
     E_2=8,
     S_EE_2=0.2020) annotation (Placement(transformation(
         extent={{-35,-29},{35,29}},
-        rotation=0,
         origin={-28,-30})));
   OpenIPSL.Electrical.Controls.PSSE.PSS.STAB2A sTAB2A(
     H_LIM=0.03,
@@ -86,14 +84,9 @@ equation
   connect(gENROU.ETERM, iEEET2.ECOMP) annotation (Line(points={{86.4,19.75},{94,19.75},{94,45},{-73,45},{-73,-26.7778},{-63,-26.7778}}, color={0,0,127}));
   connect(iEESGO.PMECH, gENROU.PMECH) annotation (Line(points={{-4.6875,24.5714},{9.15625,24.5714},{9.15625,19.75},{24.6,19.75}}, color={0,0,127}));
   connect(iEEET2.VUEL, cte.y) annotation (Line(points={{-50.75,-59},{-73,-59},{-73,-30},{-79.5,-30}}, color={0,0,127}));
-  annotation (Diagram(coordinateSystem(
+  annotation ( Icon(coordinateSystem(
         extent={{-100,-100},{100,100}},
         preserveAspectRatio=false,
-        initialScale=0.1,
-        grid={1,1})), Icon(coordinateSystem(
-        extent={{-100,-100},{100,100}},
-        preserveAspectRatio=false,
-        initialScale=0.1,
         grid={1,1}), graphics={Line(
           points={{-76,-26},{-28,52},{27,-52},{74,23}},
           color={0,0,255},

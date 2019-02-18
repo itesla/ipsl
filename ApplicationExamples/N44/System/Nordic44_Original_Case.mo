@@ -192,7 +192,6 @@ model Nordic44_Original_Case
     G=0,
     B=0.130000*0.5) annotation (Placement(transformation(
         extent={{-5,-3},{5,3}},
-        rotation=0,
         origin={-239,-26})));
   OpenIPSL.Electrical.Branches.PwLine line_3000_3115(
     R=0.075000,
@@ -287,7 +286,6 @@ model Nordic44_Original_Case
     G=0,
     B=0) annotation (Placement(transformation(
         extent={{-5,-3},{5,3}},
-        rotation=0,
         origin={-269,79})));
   OpenIPSL.Electrical.Branches.PwLine line_3000_3300_1(
     R=0.006000,
@@ -311,7 +309,6 @@ model Nordic44_Original_Case
     G=0,
     B=0.050000*0.5) annotation (Placement(transformation(
         extent={{-5,-3},{5,3}},
-        rotation=0,
         origin={-234,56})));
   OpenIPSL.Electrical.Branches.PwLine line_3000_3245_2(
     R=0.018000,
@@ -381,7 +378,6 @@ model Nordic44_Original_Case
     G=0,
     B=0.060000*0.5) annotation (Placement(transformation(
         extent={{-5,-3},{5,3}},
-        rotation=0,
         origin={-197,103})));
   OpenIPSL.Electrical.Branches.PwLine line_3100_3200_3(
     R=0.040000,
@@ -473,7 +469,6 @@ model Nordic44_Original_Case
     G=0,
     B=0.000000) annotation (Placement(transformation(
         extent={{-5,-3},{5,3}},
-        rotation=0,
         origin={-215,167})));
   Subsystems_Original_case.Gen4_bus_8500 G3_bus8500 annotation (Placement(transformation(extent={{-176,166},{-182,160}})));
   OpenIPSL.Electrical.Branches.PwLine line_8500_8600(
@@ -498,7 +493,6 @@ model Nordic44_Original_Case
     G=0,
     B=0.090000*0.5) annotation (Placement(transformation(
         extent={{-5,-3},{5,3}},
-        rotation=0,
         origin={-161,133})));
   OpenIPSL.Electrical.Branches.PwLine line_3359_8500_1(
     R=0.012000,
@@ -506,7 +500,6 @@ model Nordic44_Original_Case
     G=0,
     B=0.100000*0.5) annotation (Placement(transformation(
         extent={{-5,-3},{5,3}},
-        rotation=0,
         origin={-161,129})));
   Subsystems_Original_case.Gen4_bus_8500 G4_bus8500 annotation (Placement(transformation(extent={{-178,158},{-184,152}})));
   Subsystems_Original_case.Gen4_bus_8500 G5_bus8500 annotation (Placement(transformation(extent={{-178,150},{-184,144}})));
@@ -555,7 +548,6 @@ model Nordic44_Original_Case
     G=0,
     B=0.070000*0.5) annotation (Placement(transformation(
         extent={{-5,-3},{5,3}},
-        rotation=0,
         origin={-153,99})));
   OpenIPSL.Electrical.Loads.PSSE.Load Load1_bus3359(
     V_b=420,
@@ -603,7 +595,6 @@ model Nordic44_Original_Case
     G=0,
     B=0.250000*0.5) annotation (Placement(transformation(
         extent={{-5,-3},{5,3}},
-        rotation=0,
         origin={-155,57})));
   OpenIPSL.Electrical.Branches.PwLine line_3100_3359_2(
     R=0.040000,
@@ -611,7 +602,6 @@ model Nordic44_Original_Case
     G=0,
     B=0.240000*0.5) annotation (Placement(transformation(
         extent={{-5,-3},{5,3}},
-        rotation=0,
         origin={-155,51})));
   OpenIPSL.Electrical.Buses.BusExt bus_3360(
     nu=1,
@@ -1010,7 +1000,6 @@ model Nordic44_Original_Case
     G=0,
     B=0.010000*0.5) annotation (Placement(transformation(
         extent={{-5,-3},{5,3}},
-        rotation=0,
         origin={259,75})));
   OpenIPSL.Electrical.Loads.PSSE.Load Load1_bus6100(
     V_b=300,
@@ -1092,7 +1081,6 @@ model Nordic44_Original_Case
     G=0,
     B=0.070000*0.5) annotation (Placement(transformation(
         extent={{-5,-3},{5,3}},
-        rotation=0,
         origin={265,-1})));
   OpenIPSL.Electrical.Loads.PSSE.Load Load1_bus5600(
     V_b=300,
@@ -1120,7 +1108,6 @@ model Nordic44_Original_Case
     G=0,
     B=0.020000*0.5) annotation (Placement(transformation(
         extent={{-5,-3},{5,3}},
-        rotation=0,
         origin={255,-53})));
   OpenIPSL.Electrical.Buses.BusExt bus_5620(
     nu=1,
@@ -1311,7 +1298,6 @@ model Nordic44_Original_Case
     t1=1,
     t2=1) annotation (Placement(transformation(
         extent={{6,4},{-6,-4}},
-        rotation=0,
         origin={-190,-80})));
   OpenIPSL.Electrical.Branches.PSSE.TwoWindingTransformer trafo_3249_3701(
     R=0.02,
@@ -1341,7 +1327,6 @@ model Nordic44_Original_Case
     t1=1,
     t2=1) annotation (Placement(transformation(
         extent={{6,-4},{-6,4}},
-        rotation=0,
         origin={220,90})));
   OpenIPSL.Electrical.Branches.PSSE.TwoWindingTransformer trafo_5400_5401(
     R=0.0032,
@@ -1351,7 +1336,6 @@ model Nordic44_Original_Case
     t1=1.00635,
     t2=1) annotation (Placement(transformation(
         extent={{6,-4},{-6,4}},
-        rotation=0,
         origin={154,-34})));
   OpenIPSL.Electrical.Branches.PSSE.TwoWindingTransformer trafo_5400_5402(
     R=0.0004,
@@ -1381,7 +1365,6 @@ model Nordic44_Original_Case
     t2=1,
     t1=1.005362) annotation (Placement(transformation(
         extent={{6,-4},{-6,4}},
-        rotation=0,
         origin={228,26})));
   OpenIPSL.Electrical.Branches.PSSE.TwoWindingTransformer trafo_5602_5603(
     R=0.0008,
@@ -1391,7 +1374,6 @@ model Nordic44_Original_Case
     t2=1,
     t1=0.9428532) annotation (Placement(transformation(
         extent={{6,-4},{-6,4}},
-        rotation=0,
         origin={204,-72})));
   OpenIPSL.Electrical.Branches.PSSE.TwoWindingTransformer trafo_6000_6001(
     R=0.0004,
@@ -1401,7 +1383,6 @@ model Nordic44_Original_Case
     t1=1.00625,
     t2=1) annotation (Placement(transformation(
         extent={{6,-4},{-6,4}},
-        rotation=0,
         origin={206,16})));
   OpenIPSL.Electrical.Branches.PSSE.TwoWindingTransformer trafo_6700_6701(
     R=0.005,

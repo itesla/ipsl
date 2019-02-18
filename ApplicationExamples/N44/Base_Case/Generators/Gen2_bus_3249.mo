@@ -48,8 +48,7 @@ model Gen2_bus_3249 "Configuration of synchronous generator with regulators: GEN
     annotation (Placement(transformation(extent={{26,-90},{81,-30}})));
   Modelica.Blocks.Sources.Constant cte(k=0)
     annotation (Placement(transformation(extent={{-21,-55},{-11,-45}})));
-  OpenIPSL.Interfaces.PwPin p annotation (Placement(transformation(rotation=0,
-          extent={{100,-10},{120,10}}), iconTransformation(extent={{100,-10},{
+  OpenIPSL.Interfaces.PwPin p annotation (Placement(transformation(extent={{100,-10},{120,10}}), iconTransformation(extent={{100,-10},{
             120,10}})));
 equation
   connect(p, p) annotation (Line(
@@ -84,8 +83,5 @@ equation
            {0,0,255}),Line(
           points={{-76,-26},{-28,52},{27,-52},{74,23}},
           color={0,0,255},
-          smooth=Smooth.Bezier)}),
-    Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{
-            100,100}})),
-    Documentation);
+          smooth=Smooth.Bezier)}));
 end Gen2_bus_3249;
