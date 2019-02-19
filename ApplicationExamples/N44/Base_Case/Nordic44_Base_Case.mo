@@ -285,7 +285,6 @@ model Nordic44_Base_Case "Modified version of the original Nordic 44 model"
     G=0,
     B=0.130000*0.5) annotation (Placement(transformation(
         extent={{-5,-3},{5,3}},
-        rotation=0,
         origin={-239,-26})));
   OpenIPSL.Electrical.Branches.PwLine line_3000_3115(
     R=0.075000,
@@ -399,7 +398,6 @@ model Nordic44_Base_Case "Modified version of the original Nordic 44 model"
     G=0,
     B=0) annotation (Placement(transformation(
         extent={{-5,-3},{5,3}},
-        rotation=0,
         origin={-269,79})));
   OpenIPSL.Electrical.Branches.PwLine line_3000_3300_1(
     R=0.006000,
@@ -423,7 +421,6 @@ model Nordic44_Base_Case "Modified version of the original Nordic 44 model"
     G=0,
     B=0.050000*0.5) annotation (Placement(transformation(
         extent={{-5,-3},{5,3}},
-        rotation=0,
         origin={-234,56})));
   OpenIPSL.Electrical.Branches.PwLine line_3000_3245_2(
     R=0.018000,
@@ -513,7 +510,6 @@ model Nordic44_Base_Case "Modified version of the original Nordic 44 model"
     G=0,
     B=0.060000*0.5) annotation (Placement(transformation(
         extent={{-5,-3},{5,3}},
-        rotation=0,
         origin={-197,103})));
   OpenIPSL.Electrical.Branches.PwLine line_3100_3200_3(
     R=0.040000,
@@ -619,7 +615,6 @@ model Nordic44_Base_Case "Modified version of the original Nordic 44 model"
     G=0,
     B=0.000000) annotation (Placement(transformation(
         extent={{-5,-3},{5,3}},
-        rotation=0,
         origin={-215,167})));
   Generators.Gen4_bus_8500 G3_bus8500(
     V_b=420,
@@ -650,7 +645,6 @@ model Nordic44_Base_Case "Modified version of the original Nordic 44 model"
     G=0,
     B=0.090000*0.5) annotation (Placement(transformation(
         extent={{-5,-3},{5,3}},
-        rotation=0,
         origin={-161,133})));
   OpenIPSL.Electrical.Branches.PwLine line_3359_8500_1(
     R=0.012000,
@@ -658,7 +652,6 @@ model Nordic44_Base_Case "Modified version of the original Nordic 44 model"
     G=0,
     B=0.100000*0.5) annotation (Placement(transformation(
         extent={{-5,-3},{5,3}},
-        rotation=0,
         origin={-161,129})));
   Generators.Gen4_bus_8500 G4_bus8500(
     V_b=420,
@@ -728,7 +721,6 @@ model Nordic44_Base_Case "Modified version of the original Nordic 44 model"
     G=0,
     B=0.070000*0.5) annotation (Placement(transformation(
         extent={{-5,-3},{5,3}},
-        rotation=0,
         origin={-153,99})));
   OpenIPSL.Electrical.Loads.PSSE.Load Load1_bus3359(
     V_b=420,
@@ -776,7 +768,6 @@ model Nordic44_Base_Case "Modified version of the original Nordic 44 model"
     G=0,
     B=0.250000*0.5) annotation (Placement(transformation(
         extent={{-5,-3},{5,3}},
-        rotation=0,
         origin={-155,57})));
   OpenIPSL.Electrical.Branches.PwLine line_3100_3359_2(
     R=0.040000,
@@ -784,7 +775,6 @@ model Nordic44_Base_Case "Modified version of the original Nordic 44 model"
     G=0,
     B=0.240000*0.5) annotation (Placement(transformation(
         extent={{-5,-3},{5,3}},
-        rotation=0,
         origin={-155,51})));
   OpenIPSL.Electrical.Buses.BusExt bus_3360(
     np=1,
@@ -1328,7 +1318,6 @@ model Nordic44_Base_Case "Modified version of the original Nordic 44 model"
     G=0,
     B=0.010000*0.5) annotation (Placement(transformation(
         extent={{-5,-3},{5,3}},
-        rotation=0,
         origin={259,75})));
   OpenIPSL.Electrical.Loads.PSSE.Load Load1_bus6100(
     V_b=300,
@@ -1447,7 +1436,6 @@ model Nordic44_Base_Case "Modified version of the original Nordic 44 model"
     G=0,
     B=0.070000*0.5) annotation (Placement(transformation(
         extent={{-5,-3},{5,3}},
-        rotation=0,
         origin={265,-15})));
   OpenIPSL.Electrical.Loads.PSSE.Load Load1_bus5600(
     V_b=300,
@@ -1475,7 +1463,6 @@ model Nordic44_Base_Case "Modified version of the original Nordic 44 model"
     G=0,
     B=0.020000*0.5) annotation (Placement(transformation(
         extent={{-5,-3},{5,3}},
-        rotation=0,
         origin={255,-53})));
   OpenIPSL.Electrical.Buses.BusExt bus_5620(
     np=1,
@@ -1721,7 +1708,6 @@ model Nordic44_Base_Case "Modified version of the original Nordic 44 model"
     P_0=PF_results.loads.PL7000_6,
     Q_0=PF_results.loads.QL7000_6) annotation (Placement(transformation(
         extent={{-2,2},{2,-2}},
-        rotation=0,
         origin={-266,-46})));
   OpenIPSL.Electrical.Loads.PSSE.Load Exch_bus7100(
     V_b=420,
@@ -1972,7 +1958,6 @@ model Nordic44_Base_Case "Modified version of the original Nordic 44 model"
     t1=PF_results.trafos.t1_5602_5603,
     t2=PF_results.trafos.t2_5602_5603) annotation (Placement(transformation(
         extent={{6,-4},{-6,4}},
-        rotation=0,
         origin={200,-72})));
   OpenIPSL.Electrical.Branches.PSSE.TwoWindingTransformer
     twoWindingTransformer9(
@@ -1983,7 +1968,6 @@ model Nordic44_Base_Case "Modified version of the original Nordic 44 model"
     t1=PF_results.trafos.t1_5300_5301,
     t2=PF_results.trafos.t2_5300_5301) annotation (Placement(transformation(
         extent={{6,-4},{-6,4}},
-        rotation=0,
         origin={222,84})));
   OpenIPSL.Electrical.Branches.PSSE.TwoWindingTransformer
     twoWindingTransformer10(
@@ -1994,7 +1978,6 @@ model Nordic44_Base_Case "Modified version of the original Nordic 44 model"
     t1=PF_results.trafos.t1_5601_6001,
     t2=PF_results.trafos.t2_5601_6001) annotation (Placement(transformation(
         extent={{6,-4},{-6,4}},
-        rotation=0,
         origin={230,32})));
   OpenIPSL.Electrical.Branches.PSSE.TwoWindingTransformer
     twoWindingTransformer11(
@@ -2005,7 +1988,6 @@ model Nordic44_Base_Case "Modified version of the original Nordic 44 model"
     t1=PF_results.trafos.t1_6000_6001,
     t2=PF_results.trafos.t2_6000_6001) annotation (Placement(transformation(
         extent={{6,-4},{-6,4}},
-        rotation=0,
         origin={212,14})));
   inner Data.PF_results PF_results
     annotation (Placement(transformation(extent={{-254,192},{-234,212}})));
@@ -2097,7 +2079,6 @@ equation
       smooth=Smooth.None));
   connect(line_7000_7010.n, bus_7000.n[16]) annotation (Line(
       points={{-275,-5.5},{-275,-26},{-274,-26},{-274,-52},{-272,-52},{-272,-51.75}},
-
       color={0,0,255},
       smooth=Smooth.None));
 
@@ -2112,7 +2093,6 @@ equation
 
   connect(line_7000_7100_1.n, bus_7000.p[3]) annotation (Line(
       points={{-260,-51.5},{-260,-54},{-262,-54},{-262,-58},{-270,-58},{-270,-66.6}},
-
       color={0,0,255},
       smooth=Smooth.None));
 
@@ -2290,7 +2270,6 @@ equation
       smooth=Smooth.None));
   connect(line_3200_8500.p, bus_8500.p[1]) annotation (Line(
       points={{-189,125.5},{-189,126},{-194,126},{-194,133.975},{-196,133.975}},
-
       color={0,0,255},
       smooth=Smooth.None));
 
@@ -2383,8 +2362,7 @@ equation
       smooth=Smooth.None));
 
   connect(line_3200_3359.n, bus_3359.n[7]) annotation (Line(
-      points={{-148.5,99},{-129,99},{-129,92},{-125,92},{-125,90.7333},{-124,
-          90.7333}},
+      points={{-148.5,99},{-129,99},{-129,92},{-125,92},{-125,90.7333},{-124,90.7333}},
       color={0,0,255},
       smooth=Smooth.None));
   connect(line_3359_8500_1.n, bus_3359.n[8]) annotation (Line(
@@ -2451,7 +2429,6 @@ equation
       smooth=Smooth.None));
   connect(line_3244_6500.p, bus_6500.n[1]) annotation (Line(
       points={{-106.5,-111},{-46,-111},{-46,-119},{-24,-119},{-24,-111},{-20,-111}},
-
       color={0,0,255},
       smooth=Smooth.None));
 
@@ -2659,7 +2636,6 @@ equation
       smooth=Smooth.None));
   connect(line_5500_5603.p, bus_5603.n[1]) annotation (Line(
       points={{118.5,-89},{168,-89},{168,-100},{196,-100},{196,-79},{220,-79}},
-
       color={0,0,255},
       smooth=Smooth.None));
 
@@ -2961,8 +2937,8 @@ equation
       color={0,0,255},
       smooth=Smooth.None));
   connect(line_3115_3249.p, bus_3249.n[6]) annotation (Line(
-      points={{-202.5,11},{-194,11},{-194,-4},{-182,-4},{-182,-13.0571},{-176,-13.0571}},
-
+      points={{-202.5,11},{-194,11},{-194,-4},{-182,-4},{-182,-13.0571},{-176,
+          -13.0571}},
       color={0,0,255},
       smooth=Smooth.None));
 
@@ -2978,7 +2954,6 @@ equation
       smooth=Smooth.None));
   connect(line_3000_3245_1.n, bus_3245.n[2]) annotation (Line(
       points={{-229.5,56},{-218,56},{-218,-34},{-214,-34},{-214,-72},{-208,-72}},
-
       color={0,0,255},
       smooth=Smooth.None));
 
@@ -3355,8 +3330,6 @@ equation
           textStyle={TextStyle.Bold},
           textString="bus
 5402")}),
-    Icon(coordinateSystem(extent={{-300,-220},{300,220}}, preserveAspectRatio=
-            false)),
     Documentation(info="<html>
 <h4>Changes compared to the original case (Real data period: April, May, June and July): </h4>
 <ol>

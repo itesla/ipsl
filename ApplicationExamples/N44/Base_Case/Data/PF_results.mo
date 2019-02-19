@@ -147,7 +147,6 @@ record PF_results
     // Load 7020_1
     parameter Real PL7020_1=719.000000;
     parameter Real QL7020_1=236.324005;
-    annotation (Documentation);
   end Loads;
 
   record Voltages
@@ -284,7 +283,6 @@ record PF_results
     // Bus number 5501
     parameter Real V5501=1.008783;
     parameter Real A5501=13.804609;
-    annotation (Documentation);
   end Voltages;
 
   record Machines
@@ -529,7 +527,6 @@ record PF_results
     // Machine 3359_4
     parameter Real P3359_4=698.948975;
     parameter Real Q3359_4=268.691681;
-    annotation (Documentation);
   end Machines;
 
   record Trafos
@@ -570,7 +567,6 @@ record PF_results
     // 2WindingTrafo 5300_5301
     parameter Real t1_5300_5301=0.993650;
     parameter Real t2_5300_5301=1.000000;
-    annotation (Documentation);
   end Trafos;
 
   Voltages voltages;
@@ -581,6 +577,5 @@ record PF_results
     defaultComponentName="PF_results",
     defaultAttributes="inner",
     missingInnerMessage="
-    No 'PF_results' data is defined.",
-    Documentation);
+    No 'PF_results' data is defined.");
 end PF_results;

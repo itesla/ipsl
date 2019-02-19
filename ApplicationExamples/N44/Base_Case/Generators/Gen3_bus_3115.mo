@@ -57,8 +57,7 @@ model Gen3_bus_3115 "Configuration of synchronous generator with regulators: GEN
     K_4=0.087,
     K_5=1,
     T_5=0.01) annotation (Placement(transformation(extent={{-48,-54},{7,-33}})));
-  OpenIPSL.Interfaces.PwPin p annotation (Placement(transformation(rotation=0,
-          extent={{100,-10},{120,10}}), iconTransformation(extent={{100,-10},{
+  OpenIPSL.Interfaces.PwPin p annotation (Placement(transformation(extent={{100,-10},{120,10}}), iconTransformation(extent={{100,-10},{
             120,10}})));
 equation
   connect(sTAB2A.VOTHSG, sCRX.VOTHSG) annotation (Line(points={{9.5,-43.5},{
@@ -90,8 +89,5 @@ equation
           Line(
           points={{-76,-26},{-28,52},{27,-52},{74,23}},
           color={0,0,255},
-          smooth=Smooth.Bezier)}),
-    Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{
-            100,100}})),
-    Documentation);
+          smooth=Smooth.Bezier)}));
 end Gen3_bus_3115;

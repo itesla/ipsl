@@ -45,37 +45,34 @@ model Gen5_bus_5400 "Configuration of synchronous generator with regulators: GEN
     E_MAX=4) annotation (Placement(transformation(extent={{14,-76},{86,-29}})));
   Modelica.Blocks.Sources.Constant cte(k=0)
     annotation (Placement(transformation(extent={{-19,-57},{-9,-47}})));
-  OpenIPSL.Interfaces.PwPin p annotation (Placement(transformation(rotation=0,
-          extent={{100,-10},{120,10}}), iconTransformation(extent={{100,-10},{
+  OpenIPSL.Interfaces.PwPin p annotation (Placement(transformation(extent={{100,-10},{120,10}}), iconTransformation(extent={{100,-10},{
             120,10}})));
 equation
   connect(gENSAL.p, p)
-    annotation (Line(points={{3.2,9},{54,9},{54,0},{110,0}}, color={0,0,255}));
-  connect(hYGOV.PMECH, gENSAL.PMECH) annotation (Line(points={{1.5,63},{10,63},
-          {10,50},{10,40},{-74,40},{-74,22.5},{-63.36,22.5}}, color={0,0,127}));
-  connect(sEXS.EFD, gENSAL.EFD) annotation (Line(points={{87.8,-49.8889},{94,-49.8889},
-          {94,-86},{-74,-86},{-74,-4.5},{-63.36,-4.5}}, color={0,0,127}));
+    annotation (Line(points={{0,9},{54,9},{54,0},{110,0}},   color={0,0,255}));
+  connect(hYGOV.PMECH, gENSAL.PMECH) annotation (Line(points={{1.25,64.4444},{10,64.4444},{10,50},{10,40},{-74,40},{-74,22.5},{-70.4,22.5}},
+                                                              color={0,0,127}));
+  connect(sEXS.EFD, gENSAL.EFD) annotation (Line(points={{87.8,-49.8889},{94,-49.8889},{94,-86},{-74,-86},{-74,-4.5},{-70.4,-4.5}},
+                                                        color={0,0,127}));
   connect(cte.y, sEXS.VOEL) annotation (Line(points={{-8.5,-52},{37.4,-52},{
           37.4,-76}}, color={0,0,127}));
-  connect(gENSAL.EFD0, sEXS.EFD0) annotation (Line(points={{2.56,-9.9},{6,-9.9},
-          {6,-66.8611},{14,-66.8611}}, color={0,0,127}));
-  connect(gENSAL.ETERM, sEXS.ECOMP) annotation (Line(points={{2.56,22.5},{10,
-          22.5},{10,-49.8889},{14,-49.8889}}, color={0,0,127}));
-  connect(gENSAL.SPEED, hYGOV.SPEED) annotation (Line(points={{2.56,33.3},{16,
-          33.3},{16,80},{-66,80},{-66,69.5},{-59.25,69.5}}, color={0,0,127}));
-  connect(gENSAL.PMECH0, hYGOV.PMECH0) annotation (Line(points={{2.56,0.9},{24,
-          0.9},{24,88},{-70,88},{-70,56.5},{-59.25,56.5}}, color={0,0,127}));
+  connect(gENSAL.EFD0, sEXS.EFD0) annotation (Line(points={{3.2,-4.5},{6,-4.5},{6,-66.8611},{14,-66.8611}},
+                                       color={0,0,127}));
+  connect(gENSAL.ETERM, sEXS.ECOMP) annotation (Line(points={{3.2,0.9},{10,0.9},{10,-49.8889},{14,-49.8889}},
+                                              color={0,0,127}));
+  connect(gENSAL.SPEED, hYGOV.SPEED) annotation (Line(points={{3.2,27.9},{16,27.9},{16,80},{-66,80},{-66,71.6667},{-57.5,71.6667}},
+                                                            color={0,0,127}));
+  connect(gENSAL.PMECH0, hYGOV.PMECH0) annotation (Line(points={{3.2,22.5},{24,22.5},{24,88},{-70,88},{-70,55.7778},{-57.5,55.7778}},
+                                                           color={0,0,127}));
   connect(sEXS.VUEL, cte.y) annotation (Line(points={{26.6,-76},{-2,-76},{-2,-52},
           {-8.5,-52}}, color={0,0,127}));
-  connect(sEXS.VOTHSG, cte.y) annotation (Line(points={{14,-38.1389},{-2,-38.1389},
-          {-2,-52},{-8.5,-52}}, color={0,0,127}));
+  connect(sEXS.VOTHSG, cte.y) annotation (Line(points={{14,-38.1389},{-2,-38.1389},{-2,-52},{-8.5,-52}},
+                                color={0,0,127}));
+  connect(gENSAL.XADIFD, sEXS.XADIFD) annotation (Line(points={{2.56,-15.3},{2.56,-80},{66.2,-80},{66.2,-75.4778}}, color={0,0,127}));
   annotation (
     Icon(graphics={Ellipse(extent={{-100,-100},{101,100}}, lineColor={0,0,255}),
           Line(
           points={{-76,-26},{-28,52},{27,-52},{74,23}},
           color={0,0,255},
-          smooth=Smooth.Bezier)}),
-    Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{
-            100,100}})),
-    Documentation);
+          smooth=Smooth.Bezier)}));
 end Gen5_bus_5400;

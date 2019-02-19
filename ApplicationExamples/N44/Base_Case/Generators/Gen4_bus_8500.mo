@@ -38,7 +38,6 @@ model Gen4_bus_8500 "Configuration of synchronous generator with regulators: GEN
     P_MAX=1,
     P_MIN=0) annotation (Placement(transformation(
         extent={{-25.5,-10.5},{25.5,10.5}},
-        rotation=0,
         origin={-23.5,69.5})));
   OpenIPSL.Electrical.Controls.PSSE.ES.SCRX sCRX(
     K=10 "K",
@@ -50,7 +49,6 @@ model Gen4_bus_8500 "Configuration of synchronous generator with regulators: GEN
     r_cr_fd=0,
     C_SWITCH=true) annotation (Placement(transformation(
         extent={{-27.5,-30.5},{27.5,30.5}},
-        rotation=0,
         origin={52.5,-52.5})));
   OpenIPSL.Electrical.Controls.PSSE.PSS.STAB2A sTAB2A(
     H_LIM=0.03,
@@ -98,8 +96,5 @@ equation
           points={{-76,-26},{-28,52},{27,-52},{74,23}},
           color={0,0,255},
           smooth=Smooth.Bezier),Ellipse(extent={{-100,-100},{101,100}},
-          lineColor={0,0,255})}),
-    Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{
-            100,100}})),
-    Documentation);
+          lineColor={0,0,255})}));
 end Gen4_bus_8500;
