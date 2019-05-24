@@ -1,11 +1,14 @@
 within OpenIPSL.Electrical.Loads.PSAT.BaseClasses;
 partial model baseLoad
   extends OpenIPSL.Electrical.Essentials.pfComponent(
-    enableS_b=true,
-    enableangle_0=true,
-    enablev_0=true,
-    enableQ_0=true,
-    enableP_0=true);
+    final enabledisplayPF=false,
+    final enablefn=false,
+    final enableV_b=false,
+    final enableS_b=true,
+    final enableangle_0=true,
+    final enablev_0=true,
+    final enableQ_0=true,
+    final enableP_0=true);
   parameter SI.ApparentPower Sn(displayUnit="MVA")=S_b "Power rating";
   SI.PerUnit v(start=v_0) "Voltage magnitude (pu)";
   SI.Angle Angle_V(start=Modelica.SIunits.Conversions.from_deg(

@@ -1,10 +1,14 @@
 within OpenIPSL.Electrical.Buses;
 model InfiniteBus "PSAT Infinite Bus"
   extends OpenIPSL.Electrical.Essentials.pfComponent(
-    enableS_b=true,
-    enabledisplayPF=true,
-    enableangle_0=true,
-    enablev_0=true);
+    final enableQ_0=false,
+    final enableP_0=false,
+    final enablefn=false,
+    final enableV_b=false,
+    final enableS_b=true,
+    final enabledisplayPF=true,
+    final enableangle_0=true,
+    final enablev_0=true);
   SI.ActivePower P(displayUnit="MW") "Active Power absorbed by the Infinite bus";
   SI.ReactivePower Q(displayUnit="Mvar") "Reactive Power absorbed by the Infinite bus (MVAr)";
   Interfaces.PwPin p

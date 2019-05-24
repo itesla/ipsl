@@ -8,11 +8,14 @@ partial model baseMachine
   import Modelica.ComplexMath.conj;
   import Modelica.Blocks.Interfaces.*;
   extends OpenIPSL.Electrical.Essentials.pfComponent(
-    enableangle_0=true,
-    enablev_0=true,
-    enableQ_0=true,
-    enableP_0=true,
-    enableS_b=true);
+    final enabledisplayPF=false,
+    final enablefn=false,
+    final enableV_b=false,
+    final enableangle_0=true,
+    final enablev_0=true,
+    final enableQ_0=true,
+    final enableP_0=true,
+    final enableS_b=true);
   //Machine parameters
   parameter SI.ApparentPower M_b(displayUnit="MVA") "Machine base power"
     annotation (Dialog(group="Machine parameters"));

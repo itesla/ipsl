@@ -1,6 +1,14 @@
 within OpenIPSL.Electrical.Machines.PSSE;
 model GENCLS
-  extends OpenIPSL.Electrical.Essentials.pfComponent;
+  extends OpenIPSL.Electrical.Essentials.pfComponent(
+    final enabledisplayPF=false,
+    final enableangle_0=false,
+    final enablev_0=false,
+    final enableQ_0=false,
+    final enableP_0=false,
+    final enablefn=false,
+    final enableV_b=false,
+    final enableS_b=false);
   OpenIPSL.Interfaces.PwPin p(
     vr(start=vr0),
     vi(start=vi0),
