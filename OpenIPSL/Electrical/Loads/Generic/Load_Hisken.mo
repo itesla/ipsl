@@ -9,7 +9,7 @@ model Load_Hisken "Load based on Hisken"
   parameter Real Bt = 2;
   parameter Real Tp = 5;
   parameter Real Tq = 5;
-  Real Pd(start = P0);
+  Real Pd(start = P0, fixed = true);
   Real xp;
   Real v;
   Real angle;
