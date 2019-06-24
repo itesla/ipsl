@@ -1,18 +1,18 @@
 within OpenIPSL.Electrical.Branches.Generic;
 model ULTC "Discrete tap changer based on Hisken"
   parameter Real m0 = 1.0375 "Initial tap ratio, from power flow";
-  parameter Real Ttap = 20 "Time delay of tap change, second";
-  parameter Real vlow = 1.04 "Lower voltage deadband, p.u.";
-  parameter Real vhigh = 1.06 "Upper voltage deadband, p.u.";
+  parameter SI.Time Ttap = 20 "Time delay of tap change";
+  parameter SI.PerUnit vlow = 1.04 "Lower voltage deadband";
+  parameter SI.PerUnit vhigh = 1.06 "Upper voltage deadband";
   parameter Real m_max = 1.1 "Maximum tap position";
   parameter Real m_min = 0.9 "Minimum tap position";
   parameter Real m_step = 0.0125 "Step size";
-  Real m(start = m0) "Tap ratio";
-  Real vk "Voltage at primary, p.u.";
-  Real vm "Voltage at secondary p.u.";
-  Real anglevk "Angle at primary";
-  Real anglevm "Angle at secondary ";
-  Real x1(start = 0) "Timer";
+  Real m(start = m0, fixed = true) "Tap ratio";
+  SI.PerUnit vk "Voltage at primary";
+  SI.PerUnit vm "Voltage at secondary";
+  SI.Angle anglevk "Angle at primary";
+  SI.Angle anglevm "Angle at secondary ";
+  SI.Time x1(start = 0, fixed = true) "Timer";
   Real y1;
   Real y2;
   Real y3;
@@ -20,7 +20,6 @@ model ULTC "Discrete tap changer based on Hisken"
   Real y5;
   Real y7;
   Real y6;
-public
   Modelica.Blocks.Logical.ZeroCrossing zeroCrossing(enable = true) annotation (
     Placement(transformation(extent = {{-8, -12}, {12, 8}})));
   Interfaces.PwPin p annotation (Placement(transformation(extent={{-120,-10},{-100,10}})));
