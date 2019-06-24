@@ -1,7 +1,6 @@
 within OpenIPSL.Electrical.Branches.Generic;
 model ULTC "Discrete tap changer based on Hisken"
   parameter Real m0 = 1.0375 "Initial tap ratio, from power flow";
-  parameter Real n_step = 0.0125 "Step size";
   parameter Real Ttap = 20 "Time delay of tap change, second";
   parameter Real vlow = 1.04 "Lower voltage deadband, p.u.";
   parameter Real vhigh = 1.06 "Upper voltage deadband, p.u.";
