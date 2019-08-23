@@ -172,6 +172,13 @@ convertClass("OpenIPSL.Electrical.Buses.InfiniteBus2",
              "OpenIPSL.Electrical.Buses.InfiniteBus");
 
 // Shunt
+convertClass("OpenIPSL.Electrical.Banks.PwShuntC",
+             "OpenIPSL.Electrical.Banks.PwShunt");
+convertClass("OpenIPSL.Electrical.Banks.PwShuntR",
+             "OpenIPSL.Electrical.Banks.PwShunt");
+convertClass("OpenIPSL.Electrical.Banks.PwShuntB",
+             "OpenIPSL.Electrical.Banks.PwShunt");
+
 convertModifiers("OpenIPSL.Electrical.Banks.Simulink.Shunt",
      {"Qnom"},{"Qnom=%Qnom%*1e6"}, aggressive=true);
 convertModifiers("OpenIPSL.Electrical.Banks.Simulink.Shunt",
