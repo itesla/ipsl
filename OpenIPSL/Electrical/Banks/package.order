@@ -1,8 +1,5 @@
-PwCapacitorBankWithModification
-PwCapacitorBank
-PwShuntC
-PwShuntR
 PwShunt
-PwShuntB
+PwCapacitorBank
+PwCapacitorBankWithModification
 PSSE
 Simulink
