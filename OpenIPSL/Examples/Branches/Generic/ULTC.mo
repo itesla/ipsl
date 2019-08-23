@@ -34,9 +34,16 @@ model ULTC "Example model to demonstrate the working of the generic ULTC"
     X=0.40625,
     t1=20,
     t2=200) annotation (Placement(transformation(extent={{-50,-30},{-30,-10}})));
-  Electrical.Loads.Generic.Load_Hisken load annotation (Placement(transformation(extent={{80,-30},{100,-10}})));
   inner OpenIPSL.Electrical.SystemBase SysData annotation (
     Placement(visible = true, transformation(origin={-70,90},     extent={{-30,-10},{30,10}},      rotation = 0)));
+  Electrical.Loads.PSAT.ExponentialRecovery load(
+    P_0=40000000,
+    Tp=5,
+    Tq=5,
+    alpha_s=0,
+    alpha_t=2,
+    beta_s=0,
+    beta_t=2) annotation (Placement(transformation(extent={{80,-30},{100,-10}})));
 equation
   connect(Line12_a.n, B2.p) annotation (Line(points={{-31,20},{-20,20},{-20,0},{-10,0}}, color={0,0,255}));
   connect(Line12_a.p, B1.p) annotation (Line(points={{-49,20},{-60,20},{-60,0},{-70,0}}, color={0,0,255}));
