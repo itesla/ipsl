@@ -87,5 +87,5 @@ partial model pfComponent
         __Dymola_compact=true,
         __Dymola_descriptionLabel=true), choices(checkBox=true));
 protected
-  parameter SI.Angle angle_0rad = SI.Conversions.from_deg(angle_0) "Intial angle in rad";
+  parameter SI.Angle angle_0rad = SI.Conversions.from_deg(angle_0) "Initial angle in rad";
 end pfComponent;

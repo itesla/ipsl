@@ -30,7 +30,7 @@ model BusExt
   parameter SI.ApparentPower S_b(displayUnit="MVA")=SysData.S_b "System base power"
     annotation (Dialog(group="Power flow data"));
 protected
-  parameter SI.Angle angle_0rad = SI.Conversions.from_deg(angle_0) "Intial angle in rad";
+  parameter SI.Angle angle_0rad = SI.Conversions.from_deg(angle_0) "Initial angle in rad";
   parameter SI.PerUnit vr0=v_0*cos(angle_0rad);
   parameter SI.PerUnit vi0=v_0*sin(angle_0rad);
 equation

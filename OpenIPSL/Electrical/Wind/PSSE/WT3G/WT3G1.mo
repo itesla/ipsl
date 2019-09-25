@@ -109,13 +109,13 @@ protected
   parameter Real vr0=v_0*cos(anglev_rad)
     "Real component of initial terminal voltage";
   parameter Real vi0=v_0*sin(anglev_rad)
-    "Imaginary component of intitial terminal voltage";
+    "Imaginary component of initial terminal voltage";
   parameter Real ir0=(p0*vr0 + q0*vi0)/(vr0^2 + vi0^2)
     "Real component of initial armature current, mbase";
   parameter Real ii0=(p0*vi0 - q0*vr0)/(vr0^2 + vi0^2)
     "Imaginary component of initial armature current, mbase";
-  parameter Real Isr0=ir0 + vi0/X_eq "Sorce current re mbase";
-  parameter Real Isi0=ii0 - vr0/X_eq "Sorce current im mbase";
+  parameter Real Isr0=ir0 + vi0/X_eq "Source current re mbase";
+  parameter Real Isi0=ii0 - vr0/X_eq "Source current im mbase";
   parameter Real CoB=M_b/S_b;
   parameter Real ir1=-CoB*(p0*vr0 + q0*vi0)/(vr0^2 + vi0^2)
     "Real component of initial armature current, sbase";

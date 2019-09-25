@@ -17,7 +17,7 @@ model TCSCReactance
     annotation (Dialog(group="Power flow data"));
   parameter Real x_TCSCO=0.01 "Value of the state varialbe x1"
     annotation (Dialog(group="Power flow data"));
-  parameter Real x20=0.01 "Value of the state varible x2"
+  parameter Real x20=0.01 "Value of the state variable x2"
     annotation (Dialog(group="Power flow data"));
   parameter Real pref=0.080101913348342 "Reference power (pu)"
     annotation (Dialog(group="Power flow data"));

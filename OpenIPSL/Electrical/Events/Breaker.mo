@@ -1,6 +1,6 @@
 within OpenIPSL.Electrical.Events;
 model Breaker "Circuit breaker with time or signal control"
-  parameter Boolean enableTrigger=false "=true, if external tigger signal is used"
+  parameter Boolean enableTrigger=false "=true, if external trigger signal is used"
     annotation (Evaluate=true, choices(checkBox=true));
   parameter Modelica.SIunits.Time t_o=Modelica.Constants.inf "Opening time"
     annotation (Dialog(enable=not enableTrigger));

@@ -1,5 +1,5 @@
 within OpenIPSL.Electrical.Loads.PSAT;
-model ZIP_ExtInput "PSAT ZIP load with additionnal input"
+model ZIP_ExtInput "PSAT ZIP load with additional input"
   extends OpenIPSL.Electrical.Loads.PSAT.BaseClasses.baseLoad;
   parameter Real Pz=0.33 "Conductance (pu)";
   parameter Real Pi=0.33 "Active current (pu)";

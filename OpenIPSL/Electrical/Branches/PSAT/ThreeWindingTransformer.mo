@@ -29,11 +29,11 @@ model ThreeWindingTransformer
     annotation (Dialog(group="Transformer parameters"));
   parameter SI.PerUnit m=0.98 "Fixed tap ratio"
     annotation (Dialog(group="Transformer parameters"));
-  SI.Voltage v0 "Voltage of the fictious bus";
+  SI.Voltage v0 "Voltage of the fictitious bus";
   SI.Voltage v1;
   SI.Voltage v2;
   SI.Voltage v3;
-  SI.Angle anglev0 "Angle of the fictious bus";
+  SI.Angle anglev0 "Angle of the fictitious bus";
   SI.Angle anglev1;
   SI.Angle anglev2;
   SI.Angle anglev3;

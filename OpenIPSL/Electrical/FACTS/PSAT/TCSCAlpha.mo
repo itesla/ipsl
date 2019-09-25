@@ -17,7 +17,7 @@ model TCSCAlpha
     annotation (Dialog(group="Power flow data"));
   parameter Real alpha_TCSCO=0.826168365308219 "Value of state variable x1"
     annotation (Dialog(group="Power flow data"));
-  parameter Real x20=0.826168365308219 "Value of the state varible x2"
+  parameter Real x20=0.826168365308219 "Value of the state variable x2"
     annotation (Dialog(group="Power flow data"));
   parameter Real x0i=0.826168365308219 "Value of x0"
     annotation (Dialog(group="Power flow data"));

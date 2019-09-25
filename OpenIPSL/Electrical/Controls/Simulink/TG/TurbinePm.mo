@@ -1,7 +1,7 @@
 within OpenIPSL.Electrical.Controls.Simulink.TG;
 model TurbinePm "Hydraulic turbine model. Mechanical Power Pm as output"
   parameter Real p0 "Initialization, initial electrical power";
-  Modelica.Blocks.Interfaces.RealInput z "Gate openning" annotation (Placement(
+  Modelica.Blocks.Interfaces.RealInput z "Gate opening" annotation (Placement(
         transformation(extent={{-95,2},{-88,10}}), iconTransformation(extent={{
             -92,-6},{-78,8}})));
   Modelica.Blocks.Sources.Constant Hs(k=1) "set point"

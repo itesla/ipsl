@@ -97,7 +97,7 @@ protected
   parameter SI.PerUnit vr0=v_0*cos(angle_0rad)
     "Real component of initial terminal voltage";
   parameter SI.PerUnit vi0=v_0*sin(angle_0rad)
-    "Imaginary component of intitial terminal voltage";
+    "Imaginary component of initial terminal voltage";
   parameter SI.PerUnit ir0=-CoB*(p0*vr0 + q0*vi0)/(vr0^2 + vi0^2)
     "Real component of initial armature current (pu, system base)";
   parameter SI.PerUnit ii0=-CoB*(p0*vi0 - q0*vr0)/(vr0^2 + vi0^2)

@@ -44,12 +44,12 @@ protected
   parameter Complex DQ_dq=cos(delta0) - j*sin(delta0) "Parks transformation";
   parameter Complex I_dq=real(It*DQ_dq) - j*imag(It*DQ_dq);
   //Initialization of current and voltage components in synchronous reference frame.
-  parameter SI.PerUnit iq0=real(I_dq) "q-axis component of intitial current";
-  parameter SI.PerUnit id0=imag(I_dq) "d-axis component of intitial current";
+  parameter SI.PerUnit iq0=real(I_dq) "q-axis component of initial current";
+  parameter SI.PerUnit id0=imag(I_dq) "d-axis component of initial current";
   parameter SI.PerUnit ud0=v_0*cos(angle_0rad - delta0 + C.pi/2)
-    "d-axis component of intitial voltage";
+    "d-axis component of initial voltage";
   parameter SI.PerUnit uq0=v_0*sin(angle_0rad - delta0 + C.pi/2)
-    "q-axis component of intitial voltage";
+    "q-axis component of initial voltage";
   parameter Complex PSIpp0_dq=real(PSIpp0*DQ_dq) + j*imag(PSIpp0*DQ_dq)
     "Flux linkage in rotor reference frame";
   parameter SI.PerUnit PSIppq0=-imag(PSIpp0_dq)

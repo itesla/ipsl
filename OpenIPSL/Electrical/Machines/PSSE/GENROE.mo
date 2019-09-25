@@ -79,17 +79,17 @@ protected
   parameter SI.PerUnit PSIppd0=real(PSIpp0_dq)
     "d-axis component of the sub-transient flux linkage";
   //Initialization of current and voltage components in rotor reference frame (dq-axes).
-  parameter SI.PerUnit iq0=real(I_dq) "q-axis component of intitial current";
-  parameter SI.PerUnit id0=imag(I_dq) "d-axis component of intitial current";
+  parameter SI.PerUnit iq0=real(I_dq) "q-axis component of initial current";
+  parameter SI.PerUnit id0=imag(I_dq) "d-axis component of initial current";
   parameter SI.PerUnit ud0=(-(PSIppq0 - Xppq*iq0)) - R_a*id0
-    "d-axis component of intitial voltage";
+    "d-axis component of initial voltage";
   parameter SI.PerUnit uq0=PSIppd0 - Xppd*id0 - R_a*iq0
-    "q-axis component of intitial voltage";
+    "q-axis component of initial voltage";
   //Initialization current and voltage components in synchronous reference frame.
   parameter SI.PerUnit vr0=v_0*cos(angle_0rad)
     "Real component of initial terminal voltage";
   parameter SI.PerUnit vi0=v_0*sin(angle_0rad)
-    "Imaginary component of intitial terminal voltage";
+    "Imaginary component of initial terminal voltage";
   parameter SI.PerUnit ir0=-CoB*(p0*vr0 + q0*vi0)/(vr0^2 + vi0^2)
     "Real component of initial armature current, systembase";
   parameter SI.PerUnit ii0=-CoB*(p0*vi0 - q0*vr0)/(vr0^2 + vi0^2)

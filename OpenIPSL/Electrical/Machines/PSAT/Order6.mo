@@ -19,7 +19,7 @@ model Order6
     annotation (Dialog(group="Machine parameters"));
   parameter SI.Time T2q0=0.02 "q-axis open circuit sub-transient time constant (s)"
     annotation (Dialog(group="Machine parameters"));
-  parameter SI.Time Taa=2e-3 "d-axis aditional leakage time constant (s)"
+  parameter SI.Time Taa=2e-3 "d-axis additional leakage time constant (s)"
     annotation (Dialog(group="Machine parameters"));
 
   SI.PerUnit e1q(start=e1q0, fixed=true) "q-axis transient voltage";

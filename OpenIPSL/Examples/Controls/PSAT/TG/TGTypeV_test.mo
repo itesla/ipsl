@@ -29,22 +29,22 @@ model TGTypeV_test
     offset=0) annotation (Placement(transformation(
         extent={{6,-6},{-6,6}},
         origin={-26,-40})));
-  Modelica.Blocks.Math.Add pertubation annotation (Placement(transformation(
+  Modelica.Blocks.Math.Add perturbation annotation (Placement(transformation(
         extent={{-10,10},{10,-10}},
         rotation=180,
         origin={-60,-50})));
 equation
 
-  connect(sine2.y, pertubation.u1) annotation (Line(
+  connect(sine2.y, perturbation.u1) annotation (Line(
       points={{-32.6,-60},{-40,-60},{-40,-44},{-48,-44}},
       color={0,0,127},
       smooth=Smooth.None));
 
-  connect(sine1.y, pertubation.u2) annotation (Line(
+  connect(sine1.y, perturbation.u2) annotation (Line(
       points={{-32.6,-40},{-40,-40},{-40,-56},{-48,-56}},
       color={0,0,127},
       smooth=Smooth.None));
-  connect(pertubation.y, tGTypeV.wref) annotation (Line(
+  connect(perturbation.y, tGTypeV.wref) annotation (Line(
       points={{-71,-50},{-80,-50},{-80,-18.4},{-70.8,-18.4}},
       color={0,0,127},
       smooth=Smooth.None));

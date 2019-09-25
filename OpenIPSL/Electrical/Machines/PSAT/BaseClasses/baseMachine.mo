@@ -76,7 +76,7 @@ partial model baseMachine
     " Bus voltage angle (rad)";
   Real vd(start=vd0) "d-axis voltage (pu)";
   Real vq(start=vq0) "q-axis voltage (pu)";
-  Real id(start=id0) "d-axis currrent (pu)";
+  Real id(start=id0) "d-axis current (pu)";
   Real iq(start=iq0) "q-axis current (pu)";
 protected
   SI.PerUnit pe(start=pm00) "electrical power transmitted through the air-gap";

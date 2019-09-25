@@ -1,6 +1,6 @@
 within OpenIPSL.Electrical.Controls.Simulink.TG;
 model TurbineTm "Hydraulic turbine model. Mechanical torque as output"
-  Modelica.Blocks.Interfaces.RealInput z "Gate openning" annotation (Placement(
+  Modelica.Blocks.Interfaces.RealInput z "Gate opening" annotation (Placement(
         transformation(extent={{-95,2},{-88,10}}), iconTransformation(extent={{
             -92,20},{-78,34}})));
   Modelica.Blocks.Sources.Constant Hs(k=1)
