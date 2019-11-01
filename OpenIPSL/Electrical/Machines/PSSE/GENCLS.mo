@@ -16,7 +16,7 @@ model GENCLS
     ii(start=ii0)) annotation (Placement(transformation(
         origin={100,0},
         extent={{-10,-10},{10,10}})));
-  parameter SI.ApparentPower M_b(displayUnit="MVA") "Machine base power rating"
+  parameter SI.ApparentPower M_b(start = 100e6, displayUnit="MVA") "Machine base power rating"
     annotation (Dialog(group="Machine parameters"));
   parameter SI.Time H=0 "Inertia constant (s)"
     annotation (Dialog(group="Machine parameters"));
