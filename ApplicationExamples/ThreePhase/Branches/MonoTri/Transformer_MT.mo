@@ -276,6 +276,5 @@ equation
           lineColor={28,108,200},
           extent={{4,18},{104,-34}},
           textString="Hybrid Transformer")}, coordinateSystem(initialScale=0.1)),
-
     Documentation);
 end Transformer_MT;

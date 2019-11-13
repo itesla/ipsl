@@ -1,8 +1,9 @@
 within ThreePhase.Loads;
 model WyeLoad_1Ph
   outer OpenIPSL.Electrical.SystemBase SysData;
-  parameter Real Sn=SysData.S_b "Power rating (MVA)"
+  parameter SI.ApparentPower Sn(displayUnit="MVA")=SysData.S_b "System base"
     annotation (Dialog(group="Power flow"));
+
   OpenIPSL.Interfaces.PwPin A(
     vr(start=var0),
     vi(start=vai0),
@@ -17,17 +18,21 @@ model WyeLoad_1Ph
         origin={70,100},
         rotation=0),
       visible=true));
-  parameter Integer ModelType=0 "0- Constant Power Model, 1- ZIP Model;"
-    annotation (choices(choice=0 "Constant Power", choice=1 "ZIP Model"),
-      Dialog(group="Power flow"));
-  parameter Real P_a "Active power for phase A (MW)"
-    annotation (Dialog(group="Power flow"));
-  parameter Real Q_a "Reactive power for phase A (MVAr)"
-    annotation (Dialog(group="Power flow"));
-  parameter Real VA=1 "Guess value for phase A magnitude (pu)"
-    annotation (Dialog(group="Initialization"));
-  parameter Real AngA=0 "Guess value for phase A angle (deg)"
-    annotation (Dialog(group="Initialization"));
+  parameter Integer ModelType=0 "0- Constant Power Model, 1- ZIP Model;";
+
+  parameter SI.PerUnit VA=1
+    "Voltage magnitude (pu)"
+    annotation (Dialog(group="Power flow data"));
+  parameter SI.Angle AngA(displayUnit = "deg") = SI.Conversions.from_deg(0) "Voltage angle for phase A"
+    annotation (Dialog(group="Power flow data"));
+
+  parameter SI.ActivePower P_a(displayUnit="MW")=1e6
+    "Initial active power"
+    annotation (Dialog(group="Power flow data"));
+  parameter SI.ReactivePower Q_a(displayUnit="Mvar")=0
+    "Initial reactive power"
+    annotation (Dialog(group="Power flow data"));
+
   parameter Real A_pa=0 "Percentage of Constant Power Load for Phase A (%)"
     annotation (Dialog(group="Load Parameters for ZIP Model"));
   parameter Real B_pa=0 "Percentage of Constant Current Load for Phase A (%)"
@@ -61,8 +66,8 @@ protected
   Real Pa=TPhasePower[1, 1]*Coef;
   Real Qa=TPhasePower[1, 2]*Coef;
   // Initializing voltages
-  parameter Real var0=VA*cos(AngA*Modelica.Constants.pi/180) "Initialization";
-  parameter Real vai0=VA*sin(AngA*Modelica.Constants.pi/180) "Initialization";
+  parameter Real var0=VA*cos(AngA) "Initialization";
+  parameter Real vai0=VA*sin(AngA) "Initialization";
   parameter Real iar0=(TPhasePower[1, 1]*var0 + TPhasePower[1, 2]*vai0)/(var0^2
        + vai0^2) "Initialization";
   parameter Real iai0=(TPhasePower[1, 1]*vai0 - TPhasePower[1, 2]*var0)/(var0^2
@@ -71,8 +76,8 @@ equation
   Pa = A.vr*A.ir + A.vi*A.ii;
   Qa = A.vi*A.ir - A.vr*A.ii;
   annotation (Icon(coordinateSystem(preserveAspectRatio=false, initialScale=0.1),
-        graphics={Line(points={{-100,100},{100,100},{0,-100},{-100,100}}, color
-          ={28,108,200}),Text(
+        graphics={Line(points={{-100,100},{100,100},{0,-100},{-100,100}}, color=
+           {28,108,200}),Text(
           lineColor={28,108,200},
           extent={{-62,90},{66,45}},
           textString="Grounded-Wye Load"),Text(

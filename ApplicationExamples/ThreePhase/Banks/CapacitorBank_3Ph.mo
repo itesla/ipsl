@@ -2,7 +2,9 @@ within ThreePhase.Banks;
 model CapacitorBank_3Ph "Three-Phase Capacitor Bank"
   outer OpenIPSL.Electrical.SystemBase SysData;
 
-  parameter Real Sn=SysData.S_b "Power rating (MVA)";
+  parameter SI.ApparentPower Sn(displayUnit="MVA")=SysData.S_b "System base"
+    annotation (Dialog(group="Power flow"));
+
   OpenIPSL.Interfaces.PwPin A(vr(start=var0), vi(start=vai0)) annotation (
       Placement(
       transformation(
@@ -36,40 +38,48 @@ model CapacitorBank_3Ph "Three-Phase Capacitor Bank"
         origin={-19,100},
         rotation=0),
       visible=true));
-  parameter Real VA=1 "Guess value for phase A magnitude (pu)"
-    annotation (Dialog(group="Initialization"));
-  parameter Real AngA=0 "Guess value for phase A angle (deg)"
-    annotation (Dialog(group="Initialization"));
-  parameter Real VB=1 "Guess value for phase B magnitude (pu)"
-    annotation (Dialog(group="Initialization"));
-  parameter Real AngB=-120 "Guess value for phase B angle (deg)"
-    annotation (Dialog(group="Initialization"));
-  parameter Real VC=1 "Guess value for phase C magnitude (pu)"
-    annotation (Dialog(group="Initialization"));
-  parameter Real AngC=120 "Guess value for phase C angle (deg)"
-    annotation (Dialog(group="Initialization"));
 
-  parameter Real Q_a "Reactive power for phase A (MVAr)"
-    annotation (Dialog(group="Power flow"));
-  parameter Real Q_b "Reactive power for phase B (MVAr)"
-    annotation (Dialog(group="Power flow"));
-  parameter Real Q_c "Reactive power for phase C (MVAr)"
-    annotation (Dialog(group="Power flow"));
+  parameter SI.PerUnit VA=1
+    "Voltage magnitude (pu)"
+    annotation (Dialog(group="Power flow data"));
+  parameter SI.Angle AngA(displayUnit = "deg") = SI.Conversions.from_deg(0) "Voltage angle for phase A"
+    annotation (Dialog(group="Power flow data"));
+  parameter SI.PerUnit VB=1 "Voltage magnitude (pu)"
+    annotation (Dialog(group="Power flow data"));
+  parameter SI.Angle AngB(displayUnit = "deg") = SI.Conversions.from_deg(-120) "Voltage angle for phase B"
+    annotation (Dialog(group="Power flow data"));
+  parameter SI.PerUnit VC=1 "Voltage magnitude (pu)"
+    annotation (Dialog(group="Power flow data"));
+  parameter SI.Angle AngC(displayUnit = "deg") = SI.Conversions.from_deg(120) "Voltage angle for phase C"
+    annotation (Dialog(group="Power flow data"));
+
+  parameter SI.ReactivePower Q_a(displayUnit="Mvar")=0
+    "Initial reactive power"
+    annotation (Dialog(group="Power flow data"));
+
+  parameter SI.ReactivePower Q_b(displayUnit="Mvar")=0
+    "Initial reactive power"
+    annotation (Dialog(group="Power flow data"));
+
+  parameter SI.ReactivePower Q_c(displayUnit="Mvar")=0
+    "Initial reactive power"
+    annotation (Dialog(group="Power flow data"));
+
 protected
   Real Pa=0;
   Real Pb=0;
   Real Pc=0;
-  Real Qa=Q_a/(Sn/3);
-  Real Qb=Q_b/(Sn/3);
-  Real Qc=Q_c/(Sn/3);
+  Real Qa=Q_a/Sn;
+  Real Qb=Q_b/Sn;
+  Real Qc=Q_c/Sn;
 
   // Initializing voltages for each pin
-  parameter Real var0=VA*cos(AngA*Modelica.Constants.pi/180) "Initialitation";
-  parameter Real vai0=VA*sin(AngA*Modelica.Constants.pi/180) "Initialitation";
-  parameter Real vbr0=VB*cos(AngB*Modelica.Constants.pi/180) "Initialitation";
-  parameter Real vbi0=VB*sin(AngB*Modelica.Constants.pi/180) "Initialitation";
-  parameter Real vcr0=VC*cos(AngC*Modelica.Constants.pi/180) "Initialitation";
-  parameter Real vci0=VC*sin(AngC*Modelica.Constants.pi/180) "Initialitation";
+  parameter Real var0=VA*cos(AngA) "Initialitation";
+  parameter Real vai0=VA*sin(AngA) "Initialitation";
+  parameter Real vbr0=VB*cos(AngB) "Initialitation";
+  parameter Real vbi0=VB*sin(AngB) "Initialitation";
+  parameter Real vcr0=VC*cos(AngC) "Initialitation";
+  parameter Real vci0=VC*sin(AngC) "Initialitation";
 equation
   Pa = (A.vr*A.ir + A.vi*A.ii);
   Pb = (B.vr*B.ir + B.vi*B.ii);

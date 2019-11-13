@@ -1,7 +1,8 @@
 within ThreePhase.Banks;
 model CapacitorBank_1Ph
   outer OpenIPSL.Electrical.SystemBase SysData;
-  parameter Real Sn=SysData.S_b "Power rating (MVA)";
+  parameter SI.ApparentPower Sn(displayUnit="MVA")=SysData.S_b "System base"
+    annotation (Dialog(group="Power flow"));
   OpenIPSL.Interfaces.PwPin A(vr(start=var0), vi(start=vai0)) annotation (
       Placement(
       transformation(
@@ -13,20 +14,22 @@ model CapacitorBank_1Ph
         origin={70,100},
         rotation=0),
       visible=true));
-  parameter Real VA=1 "Guess value for phase A magnitude (pu)"
-    annotation (Dialog(group="Initialization"));
-  parameter Real AngA=0 "Guess value for phase A angle (deg)"
-    annotation (Dialog(group="Initialization"));
+  parameter SI.PerUnit VA=1
+    "Voltage magnitude (pu)"
+    annotation (Dialog(group="Power flow data"));
+  parameter SI.Angle AngA(displayUnit = "deg") = SI.Conversions.from_deg(0) "Voltage angle for phase A"
+    annotation (Dialog(group="Power flow data"));
 
-  parameter Real Q_a "Reactive power for phase A (MVAr)"
-    annotation (Dialog(group="Power flow"));
+  parameter SI.ReactivePower Q_a(displayUnit="Mvar")=0
+    "Initial reactive power"
+    annotation (Dialog(group="Power flow data"));
 protected
   Real Pa=0;
-  Real Qa=Q_a/(Sn/3);
+  Real Qa=Q_a/Sn;
 
   // Initializing voltages for each pin
-  parameter Real var0=VA*cos(AngA*Modelica.Constants.pi/180) "Initialitation";
-  parameter Real vai0=VA*sin(AngA*Modelica.Constants.pi/180) "Initialitation";
+  parameter Real var0=VA*cos(AngA) "Initialitation";
+  parameter Real vai0=VA*sin(AngA) "Initialitation";
 equation
   Pa = (A.vr*A.ir + A.vi*A.ii);
   Qa = (-A.vi*A.ir + A.vr*A.ii)/((A.vr)^2 + (A.vi)^2);

@@ -99,10 +99,10 @@ protected
   Real Qb=TPhasePower[1, 4]*Coef[1, 2];
 
   // Initializing voltages for each pin
-  parameter Real var0=VA*cos(AngA*Modelica.Constants.pi/180) "Initialitation";
-  parameter Real vai0=VA*sin(AngA*Modelica.Constants.pi/180) "Initialitation";
-  parameter Real vbr0=VB*cos(AngB*Modelica.Constants.pi/180) "Initialitation";
-  parameter Real vbi0=VB*sin(AngB*Modelica.Constants.pi/180) "Initialitation";
+  parameter Real var0=VA*cos(AngA) "Initialitation";
+  parameter Real vai0=VA*sin(AngA) "Initialitation";
+  parameter Real vbr0=VB*cos(AngB) "Initialitation";
+  parameter Real vbi0=VB*sin(AngB) "Initialitation";
   parameter Real iar0=(TPhasePower[1, 1]*var0 + TPhasePower[1, 3]*vai0)/(var0^2
        + vai0^2) "Initialization";
   parameter Real iai0=(TPhasePower[1, 1]*vai0 - TPhasePower[1, 3]*var0)/(var0^2
@@ -117,8 +117,8 @@ equation
   Pb = B.vr*B.ir + B.vi*B.ii;
   Qb = B.vi*B.ir - B.vr*B.ii;
   annotation (Icon(coordinateSystem(preserveAspectRatio=false, initialScale=0.1),
-        graphics={Line(points={{-100,100},{100,100},{0,-100},{-100,100}}, color
-          ={28,108,200}),Text(
+        graphics={Line(points={{-100,100},{100,100},{0,-100},{-100,100}}, color=
+           {28,108,200}),Text(
           lineColor={28,108,200},
           extent={{-62,90},{66,45}},
           textString="Grounded-Wye Load"),Text(

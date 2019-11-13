@@ -2,35 +2,44 @@ within ThreePhase.Buses;
 model InfiniteBus
   outer OpenIPSL.Electrical.SystemBase SysData
     "Must add this line in all models";
-  parameter Real Vb=400 "Base voltage of the bus (kV)"
+  parameter SI.Voltage V_b(displayUnit="kV")=400e3
+    "Base voltage of the bus"
     annotation (Dialog(group="Power flow data"));
-  parameter Real V_A=1 "Voltage magnitude (pu)"
+  parameter SI.PerUnit V_A=1
+    "Voltage magnitude (pu)"
     annotation (Dialog(group="Power flow data"));
-  parameter Real angle_A=0 "Voltage angle for phase A (deg)"
+  parameter SI.Angle angle_A(displayUnit = "deg") = SI.Conversions.from_deg(0) "Voltage angle for phase A"
     annotation (Dialog(group="Power flow data"));
-  parameter Real V_B=1 "Voltage magnitude (pu)"
+  parameter SI.PerUnit V_B=1 "Voltage magnitude (pu)"
     annotation (Dialog(group="Power flow data"));
-  parameter Real angle_B=-120 "Voltage angle for phase A (deg)"
+  parameter SI.Angle angle_B(displayUnit = "deg") = SI.Conversions.from_deg(-120) "Voltage angle for phase B"
     annotation (Dialog(group="Power flow data"));
-  parameter Real V_C=1 "Voltage magnitude (pu)"
+  parameter SI.PerUnit V_C=1 "Voltage magnitude (pu)"
     annotation (Dialog(group="Power flow data"));
-  parameter Real angle_C=120 "Voltage angle for phase A (deg)"
+  parameter SI.Angle angle_C(displayUnit = "deg") = SI.Conversions.from_deg(120) "Voltage angle for phase C"
     annotation (Dialog(group="Power flow data"));
-  parameter Real P_A=1 "Active Power for phase A (MW)"
+  parameter SI.ActivePower P_A(displayUnit="MW")=1e6
+    "Initial active power"
     annotation (Dialog(group="Power flow data"));
-  parameter Real Q_A=0 "Reactive Power for phase A (MVAr)"
+  parameter SI.ReactivePower Q_A(displayUnit="Mvar")=0
+    "Initial reactive power"
     annotation (Dialog(group="Power flow data"));
-  parameter Real P_B=1 "Active Power for phase B (MW)"
+  parameter SI.ActivePower P_B(displayUnit="MW")=1e6
+    "Initial active power"
     annotation (Dialog(group="Power flow data"));
-  parameter Real Q_B=0 "Reactive Power for phase B (MVAr)"
+  parameter SI.ReactivePower Q_B(displayUnit="Mvar")=0
+    "Initial reactive power"
     annotation (Dialog(group="Power flow data"));
-  parameter Real P_C=1 "Active Power for phase C (MW)"
+  parameter SI.ActivePower P_C(displayUnit="MW")=1e6
+    "Initial active power"
     annotation (Dialog(group="Power flow data"));
-  parameter Real Q_C=0 "Reactive Power for phase C (MVAr)"
+  parameter SI.ReactivePower Q_C(displayUnit="Mvar")=0
+    "Initial reactive power"
     annotation (Dialog(group="Power flow data"));
-  parameter Real S_b=SysData.S_b "System base power (MVA)"
+  parameter SI.ApparentPower S_b(displayUnit="MVA")=SysData.S_b "System base"
     annotation (Dialog(group="Power flow data", enable=false));
-  parameter Real fn=SysData.fn "System Frequency (Hz)"
+  parameter SI.Frequency fn=SysData.fn
+    "System frequency"
     annotation (Dialog(group="Power flow data", enable=false));
   OpenIPSL.Interfaces.PwPin p1
     annotation (Placement(transformation(extent={{80,80},{100,100}})));
@@ -38,28 +47,32 @@ model InfiniteBus
     annotation (Placement(transformation(extent={{80,-10},{100,10}})));
   OpenIPSL.Interfaces.PwPin p3
     annotation (Placement(transformation(extent={{80,-100},{100,-80}})));
-  Real Pa "Active Power suplyed by the Infinite bus (phase a) (MW)";
-  Real Qa "Reactive Power suplyed by the Infinite bus (phase a) (MVAr)";
-  Real Pb "Active Power suplyed by the Infinite bus (phase b) (MW)";
-  Real Qb "Reactive Power suplyed by the Infinite bus (phase b) (MVAr)";
-  Real Pc "Active Power suplyed by the Infinite bus (phase c) (MW)";
-  Real Qc "Reactive Power suplyed by the Infinite bus (phase c) (MVAr)";
+  SI.ActivePower Pa(displayUnit="MW") "Active Power suplyed by the Infinite bus (phase a)";
+  SI.ReactivePower Qa(displayUnit="Mvar") "Reactive Power suplyed by the Infinite bus (phase a)";
+  SI.ActivePower Pb(displayUnit="MW") "Active Power suplyed by the Infinite bus (phase b) (MW)";
+  SI.ReactivePower Qb(displayUnit="Mvar") "Reactive Power suplyed by the Infinite bus (phase b) (MVAr)";
+  SI.ActivePower Pc(displayUnit="MW") "Active Power suplyed by the Infinite bus (phase c) (MW)";
+  SI.ReactivePower Qc(displayUnit="Mvar") "Reactive Power suplyed by the Infinite bus (phase c) (MVAr)";
+  Modelica.Blocks.Interfaces.RealOutput y = Pa/1e6 annotation (Placement(transformation(
+        extent={{-24,-24},{24,24}},
+        rotation=-90,
+        origin={30,-122})));
 equation
   // Equations for Phase A
-  p1.vr = V_A*cos(angle_A*Modelica.Constants.pi/180);
-  p1.vi = V_A*sin(angle_A*Modelica.Constants.pi/180);
-  Pa = -(p1.vr*p1.ir + p1.vi*p1.ii)*S_b/3;
-  Qa = -(p1.vr*p1.ii - p1.vi*p1.ir)*S_b/3;
+  p1.vr = V_A*cos(angle_A);
+  p1.vi = V_A*sin(angle_A);
+  Pa = -(p1.vr*p1.ir + p1.vi*p1.ii)*S_b;
+  Qa = -(p1.vr*p1.ii - p1.vi*p1.ir)*S_b;
   // Equations for Phase B
-  p2.vr = V_B*cos(angle_B*Modelica.Constants.pi/180);
-  p2.vi = V_B*sin(angle_B*Modelica.Constants.pi/180);
-  Pb = -(p2.vr*p2.ir + p2.vi*p2.ii)*S_b/3;
-  Qb = -(p2.vr*p2.ii - p2.vi*p2.ir)*S_b/3;
+  p2.vr = V_B*cos(angle_B);
+  p2.vi = V_B*sin(angle_B);
+  Pb = -(p2.vr*p2.ir + p2.vi*p2.ii)*S_b;
+  Qb = -(p2.vr*p2.ii - p2.vi*p2.ir)*S_b;
   // Equations for Phase C
-  p3.vr = V_C*cos(angle_C*Modelica.Constants.pi/180);
-  p3.vi = V_C*sin(angle_C*Modelica.Constants.pi/180);
-  Pc = -(p3.vr*p3.ir + p3.vi*p3.ii)*S_b/3;
-  Qc = -(p3.vr*p3.ii - p3.vi*p3.ir)*S_b/3;
+  p3.vr = V_C*cos(angle_C);
+  p3.vi = V_C*sin(angle_C);
+  Pc = -(p3.vr*p3.ir + p3.vi*p3.ii)*S_b;
+  Qc = -(p3.vr*p3.ii - p3.vi*p3.ir)*S_b;
   annotation (Icon(coordinateSystem(
         extent={{-100,-100},{100,100}},
         preserveAspectRatio=false,

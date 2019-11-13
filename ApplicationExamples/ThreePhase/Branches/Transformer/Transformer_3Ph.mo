@@ -1,7 +1,6 @@
 within ThreePhase.Branches.Transformer;
 model Transformer_3Ph "Three Phase transformer modeled in a PI element"
 
-
   import ThreePhase.Branches.Transformer.TransfConnection.Yg_Yg;
   import ThreePhase.Branches.Transformer.TransfConnection.D_D;
   import ThreePhase.Branches.Transformer.TransfConnection.Y_Y;
@@ -153,7 +152,7 @@ equation
           origin={-54,84},
           lineColor={28,108,200},
           extent={{4,18},{104,-34}},
-          textString="Three Phase Transformer")}, coordinateSystem(initialScale
-          =0.1)),
+          textString="Three Phase Transformer")}, coordinateSystem(initialScale=
+           0.1)),
     Documentation);
 end Transformer_3Ph;

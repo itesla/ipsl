@@ -11,8 +11,8 @@ model IEEE4_ThreePhase
         origin={-88,0},
         extent={{-10,-10},{10,10}},
         rotation=0)));
-  ThreePhase.Buses.Bus_3Ph Bus1 annotation (Placement(visible=true,
-        transformation(
+  ExtremumSeekingBis.Examples.OpenIPSL_Example.Components.Meas_3Ph Bus1
+    annotation (Placement(visible=true, transformation(
         origin={-66,0},
         extent={{-10,-10},{10,10}},
         rotation=0)));
@@ -32,12 +32,12 @@ model IEEE4_ThreePhase
         origin={-44,0},
         extent={{-10,-10},{10,10}},
         rotation=0)));
-  ThreePhase.Buses.Bus_3Ph Bus2 annotation (Placement(visible=true,
-        transformation(
+  ExtremumSeekingBis.Examples.OpenIPSL_Example.Components.Meas_3Ph Bus2
+    annotation (Placement(visible=true, transformation(
         origin={-22,0},
         extent={{-10,-10},{10,10}},
         rotation=0)));
-  ThreePhase.Buses.Bus_3Ph Bus3(
+  ExtremumSeekingBis.Examples.OpenIPSL_Example.Components.Meas_3Ph Bus3(
     angle_A=-30,
     angle_B=-150,
     angle_C=90) annotation (Placement(visible=true, transformation(
@@ -60,7 +60,7 @@ model IEEE4_ThreePhase
         origin={46,0},
         extent={{-10,-10},{10,10}},
         rotation=0)));
-  ThreePhase.Buses.Bus_3Ph Bus4(
+  ExtremumSeekingBis.Examples.OpenIPSL_Example.Components.Meas_3Ph Bus4(
     angle_A=-30,
     angle_B=-150,
     angle_C=90) annotation (Placement(visible=true, transformation(
@@ -70,12 +70,12 @@ model IEEE4_ThreePhase
   ThreePhase.Loads.WyeLoad_3Ph Load(
     AngA=0,
     ModelType=0,
-    P_a=1.275,
-    P_b=1.800,
-    P_c=2.375,
-    Q_a=0.790,
-    Q_b=0.872,
-    Q_c=0.781) annotation (Placement(visible=true, transformation(
+    P_a=1275000,
+    Q_a=790000,
+    P_b=1800000,
+    Q_b=872000,
+    P_c=2375000,
+    Q_c=781000) annotation (Placement(visible=true, transformation(
         origin={90,0},
         extent={{-10,-10},{10,10}},
         rotation=90)));
@@ -120,12 +120,15 @@ equation
           36.7143,9}}, color={0,0,255}));
   connect(Line1.Cout, Bus2.p3) annotation (Line(points={{-34.7143,-9},{-22,-9},
           {-22,-9},{-22,-9}}, color={0,0,255}));
-  connect(Line1.Bout, Bus2.p2) annotation (Line(points={{-34.7143,0},{-22,0},{-22,
-          0},{-22,0}}, color={0,0,255}));
-  connect(Line1.Aout, Bus2.p1) annotation (Line(points={{-34.7143,9},{-22,9},{-22,
-          9},{-22,9}}, color={0,0,255}));
-  connect(Bus1.p3, Line1.Cin) annotation (Line(points={{-66,-9},{-54,-9},{-54,-9},
-          {-53.2857,-9}}, color={0,0,255}));
+  connect(Line1.Bout, Bus2.p2) annotation (Line(points={{-34.7143,0},{-22,0},{
+          -22,0},{-22,0}},
+                       color={0,0,255}));
+  connect(Line1.Aout, Bus2.p1) annotation (Line(points={{-34.7143,9},{-22,9},{
+          -22,9},{-22,9}},
+                       color={0,0,255}));
+  connect(Bus1.p3, Line1.Cin) annotation (Line(points={{-66,-9},{-54,-9},{-54,
+          -9},{-53.2857,-9}},
+                          color={0,0,255}));
   connect(Bus1.p2, Line1.Bin) annotation (Line(points={{-66,0},{-54,0},{-54,0},
           {-53.2857,0}}, color={0,0,255}));
   connect(Bus1.p1, Line1.Ain) annotation (Line(points={{-66,9},{-54,9},{-54,9},

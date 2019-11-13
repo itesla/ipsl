@@ -23,7 +23,6 @@ model Bus_2Ph
   Modelica.SIunits.Conversions.NonSIunits.Angle_deg angle2(start=angle_2)
     "Bus voltage angle for phase 2 (deg)";
 
-
 protected
   Real[1, 4] Vin=[p1.vr, p1.vi, p2.vr, p2.vi];
 
@@ -36,7 +35,6 @@ equation
   p1.ii = 0;
   p2.ir = 0;
   p2.ii = 0;
-
 
   annotation (Icon(coordinateSystem(
         extent={{-100,-100},{100,100}},

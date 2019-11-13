@@ -177,8 +177,8 @@ equation
 
   annotation (
     Icon(coordinateSystem(preserveAspectRatio=false, initialScale=0.1),
-        graphics={Line(points={{-100,100},{100,100},{0,-100},{-100,100}}, color
-          ={28,108,200}),Text(
+        graphics={Line(points={{-100,100},{100,100},{0,-100},{-100,100}}, color=
+           {28,108,200}),Text(
           lineColor={28,108,200},
           extent={{-62,90},{66,45}},
           textString="Delta Dynamic Load"),Text(

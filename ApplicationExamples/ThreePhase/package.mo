@@ -1,6 +1,10 @@
 package ThreePhase
+  import SI = Modelica.SIunits;
+  import C = Modelica.Constants;
+
 annotation (
-  uses(OpenIPSL(version="1.5.0"), Modelica(version="3.2.2")),
+  uses(                                                      OpenIPSL(version=
+          "2.0.0-dev"), Modelica(version="3.2.3")),
   Documentation(info="<html>
 <table cellspacing=\"1\" cellpadding=\"1\" border=\"1\">
 <tr>
@@ -17,5 +21,6 @@ annotation (
 </tr>
 </table>
 </html>"),
-  version="1");
+  version="2",
+  conversion(noneFromVersion="1"));
 end ThreePhase;

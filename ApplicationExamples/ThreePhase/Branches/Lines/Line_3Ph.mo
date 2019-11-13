@@ -40,7 +40,6 @@ model Line_3Ph "Modeled as a PI element"
   parameter Real Bshtbc=0 "in p.u." annotation (Dialog(group="Power flow data"));
   parameter Real Bshtcc=0 "in p.u." annotation (Dialog(group="Power flow data"));
 
-
   //Writing the Y_ser matrix for the pi model
 protected
   parameter Real[6, 6] Y_ser=[Gseraa, -Bseraa, Gserab, -Bserab, Gserac, -Bserac;

@@ -17,9 +17,9 @@ model IEEE4_MonoTri
     B=0,
     G=0,
     R=0.074563536332,
-    X=0.152732235479) annotation (Placement(visible=true, transformation(extent
-          ={{-56,-4},{-44,4}}, rotation=0)));
-  OpenIPSL.Electrical.Buses.Bus Bus2(V_0=1, angle_0=0) annotation (Placement(
+    X=0.152732235479) annotation (Placement(visible=true, transformation(extent=
+           {{-56,-4},{-44,4}}, rotation=0)));
+  OpenIPSL.Electrical.Buses.Bus Bus2(angle_0=0, v_0=1) annotation (Placement(
         visible=true, transformation(extent={{-42,-10},{-22,10}}, rotation=0)));
   ThreePhase.Branches.MonoTri.Transformer_MT Transformer(
     B_0=-1.82768503568,
@@ -36,8 +36,8 @@ model IEEE4_MonoTri
         origin={-10,0},
         extent={{-10,-10},{10,10}},
         rotation=0)));
-  ThreePhase.Buses.Bus_3Ph Bus3 annotation (Placement(visible=true,
-        transformation(
+  ExtremumSeekingBis.Examples.OpenIPSL_Example.Components.Meas_3Ph Bus3
+    annotation (Placement(visible=true, transformation(
         origin={24,0},
         extent={{-10,-10},{10,10}},
         rotation=0)));
@@ -57,8 +57,8 @@ model IEEE4_MonoTri
         origin={46,0},
         extent={{-10,-10},{10,10}},
         rotation=0)));
-  ThreePhase.Buses.Bus_3Ph Bus4 annotation (Placement(visible=true,
-        transformation(
+  ExtremumSeekingBis.Examples.OpenIPSL_Example.Components.Meas_3Ph Bus4
+    annotation (Placement(visible=true, transformation(
         origin={68,0},
         extent={{-10,-10},{10,10}},
         rotation=0)));

@@ -83,8 +83,6 @@ model WyeDynLoad_3Ph
   parameter Real C_pc=0 "Percentage of Constant Impedance Load for Phase C (%)"
     annotation (Dialog(group="Load Parameters for ZIP Model"));
 
-
-
 protected
   Real[1, 6] TPhasePower=[P_a/(Sn/3), P_b/(Sn/3), P_c/(Sn/3), Q_a/(Sn/3), Q_b/(
       Sn/3), Q_c/(Sn/3)]*DynFact;
@@ -172,11 +170,10 @@ equation
   Pc = (C.vr*C.ir + C.vi*C.ii);
   Qc = (C.vi*C.ir - C.vr*C.ii);
 
-
   annotation (
     Icon(coordinateSystem(preserveAspectRatio=false, initialScale=0.1),
-        graphics={Line(points={{-100,100},{100,100},{0,-100},{-100,100}}, color
-          ={28,108,200}),Text(
+        graphics={Line(points={{-100,100},{100,100},{0,-100},{-100,100}}, color=
+           {28,108,200}),Text(
           lineColor={28,108,200},
           extent={{-62,90},{66,45}},
           textString="Grounded-Wye Dynamic Load"),Text(

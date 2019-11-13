@@ -2,7 +2,7 @@ within ThreePhase.Loads;
 model WyeLoad_3Ph
   outer OpenIPSL.Electrical.SystemBase SysData;
   import Modelica.Constants.pi;
-  parameter Real Sn=SysData.S_b "Power rating (MVA)"
+  parameter SI.ApparentPower Sn(displayUnit="MVA")=SysData.S_b "System base"
     annotation (Dialog(group="Power flow"));
   OpenIPSL.Interfaces.PwPin A(vr(start=var0), vi(start=vai0)) annotation (
       Placement(
@@ -40,32 +40,37 @@ model WyeLoad_3Ph
   parameter Integer ModelType=0 "0- Constant Power Model, 1- ZIP Model;"
     annotation (choices(choice=0 "Constant Power", choice=1 "ZIP Model"),
       Dialog(group="Power flow"));
-  parameter Real P_a "Active power for phase A (MW)"
-    annotation (Dialog(group="Power flow"));
-  parameter Real Q_a "Reactive power for phase A (MVAr)"
-    annotation (Dialog(group="Power flow"));
-  parameter Real P_b "Active power for phase B (MW)"
-    annotation (Dialog(group="Power flow"));
-  parameter Real Q_b "Reactive power for phase B (MVAr)"
-    annotation (Dialog(group="Power flow"));
-  parameter Real P_c "Active power for phase C (MW)"
-    annotation (Dialog(group="Power flow"));
-  parameter Real Q_c "Reactive power for phase C (MVAr)"
-    annotation (Dialog(group="Power flow"));
-
-  parameter Real VA=1 "Guess value for phase A magnitude (pu)"
-    annotation (Dialog(group="Initialization"));
-  parameter Real AngA=0 "Guess value for phase A angle (deg)"
-    annotation (Dialog(group="Initialization"));
-  parameter Real VB=1 "Guess value for phase B magnitude (pu)"
-    annotation (Dialog(group="Initialization"));
-  parameter Real AngB=-120 "Guess value for phase B angle (deg)"
-    annotation (Dialog(group="Initialization"));
-  parameter Real VC=1 "Guess value for phase C magnitude (pu)"
-    annotation (Dialog(group="Initialization"));
-  parameter Real AngC=120 "Guess value for phase C angle (deg)"
-    annotation (Dialog(group="Initialization"));
-
+  parameter SI.PerUnit VA=1
+    "Voltage magnitude (pu)"
+    annotation (Dialog(group="Power flow data"));
+  parameter SI.Angle AngA(displayUnit = "deg") = SI.Conversions.from_deg(0) "Voltage angle for phase A"
+    annotation (Dialog(group="Power flow data"));
+  parameter SI.PerUnit VB=1 "Voltage magnitude (pu)"
+    annotation (Dialog(group="Power flow data"));
+  parameter SI.Angle AngB(displayUnit = "deg") = SI.Conversions.from_deg(-120) "Voltage angle for phase B"
+    annotation (Dialog(group="Power flow data"));
+  parameter SI.PerUnit VC=1 "Voltage magnitude (pu)"
+    annotation (Dialog(group="Power flow data"));
+  parameter SI.Angle AngC(displayUnit = "deg") = SI.Conversions.from_deg(120) "Voltage angle for phase C"
+    annotation (Dialog(group="Power flow data"));
+  parameter SI.ActivePower P_a(displayUnit="MW")=1e6
+    "Initial active power"
+    annotation (Dialog(group="Power flow data"));
+  parameter SI.ReactivePower Q_a(displayUnit="Mvar")=0
+    "Initial reactive power"
+    annotation (Dialog(group="Power flow data"));
+  parameter SI.ActivePower P_b(displayUnit="MW")=1e6
+    "Initial active power"
+    annotation (Dialog(group="Power flow data"));
+  parameter SI.ReactivePower Q_b(displayUnit="Mvar")=0
+    "Initial reactive power"
+    annotation (Dialog(group="Power flow data"));
+  parameter SI.ActivePower P_c(displayUnit="MW")=1e6
+    "Initial active power"
+    annotation (Dialog(group="Power flow data"));
+  parameter SI.ReactivePower Q_c(displayUnit="Mvar")=0
+    "Initial reactive power"
+    annotation (Dialog(group="Power flow data"));
 
   parameter Real A_pa=0 "Percentage of Constant Power Load for Phase A (%)"
     annotation (Dialog(group="Load Parameters for ZIP Model"));
@@ -88,8 +93,7 @@ model WyeLoad_3Ph
     annotation (Dialog(group="Load Parameters for ZIP Model"));
 
 protected
-  parameter Real[1, 6] TPhasePower=[P_a/(Sn/3), P_b/(Sn/3), P_c/(Sn/3), Q_a/(Sn
-      /3), Q_b/(Sn/3), Q_c/(Sn/3)];
+  parameter Real[1, 6] TPhasePower=[P_a, P_b, P_c, Q_a, Q_b, Q_c]/Sn;
   parameter Real[1, 9] ZIP_coef=[A_pa/100, B_pa/100, C_pa/100, A_pb/100, B_pb/
       100, C_pb/100, A_pc/100, B_pc/100, C_pc/100];
   // Calculating V and V2
@@ -127,12 +131,12 @@ protected
   Real Qc=TPhasePower[1, 6]*Coef[1, 3];
 
   // Initializing voltages for each pin
-  parameter Real var0=VA*cos(AngA*Modelica.Constants.pi/180) "Initialization";
-  parameter Real vai0=VA*sin(AngA*Modelica.Constants.pi/180) "Initialization";
-  parameter Real vbr0=VB*cos(AngB*Modelica.Constants.pi/180) "Initialization";
-  parameter Real vbi0=VB*sin(AngB*Modelica.Constants.pi/180) "Initialization";
-  parameter Real vcr0=VC*cos(AngC*Modelica.Constants.pi/180) "Initialization";
-  parameter Real vci0=VC*sin(AngC*Modelica.Constants.pi/180) "Initialization";
+  parameter Real var0=VA*cos(AngA) "Initialization";
+  parameter Real vai0=VA*sin(AngA) "Initialization";
+  parameter Real vbr0=VB*cos(AngB) "Initialization";
+  parameter Real vbi0=VB*sin(AngB) "Initialization";
+  parameter Real vcr0=VC*cos(AngC) "Initialization";
+  parameter Real vci0=VC*sin(AngC) "Initialization";
 
 equation
   Pa = A.vr*A.ir + A.vi*A.ii;
@@ -142,8 +146,8 @@ equation
   Pc = C.vr*C.ir + C.vi*C.ii;
   Qc = C.vi*C.ir - C.vr*C.ii;
   annotation (Icon(coordinateSystem(preserveAspectRatio=false, initialScale=0.1),
-        graphics={Line(points={{-100,100},{100,100},{0,-100},{-100,100}}, color
-          ={28,108,200}),Text(
+        graphics={Line(points={{-100,100},{100,100},{0,-100},{-100,100}}, color=
+           {28,108,200}),Text(
           lineColor={28,108,200},
           extent={{-62,90},{66,45}},
           textString="Grounded-Wye Load"),Text(
