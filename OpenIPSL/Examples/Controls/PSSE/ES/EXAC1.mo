@@ -24,7 +24,7 @@ model EXAC1 "SMIB system with one load and GENROE model"
     v_0=1) annotation (Placement(transformation(extent={{-100,-20},{-60,20}})));
   Modelica.Blocks.Sources.Constant const(k=0)
     annotation (Placement(transformation(extent={{-20,-56},{-40,-36}})));
-  OpenIPSL.Electrical.Controls.PSSE.ES.EXAC1 eXAC1_1(
+  OpenIPSL.Electrical.Controls.PSSE.ES.EXAC1 eXAC1(
     K_A=400,
     T_A=0.02,
     V_RMAX=9,
@@ -46,19 +46,19 @@ model EXAC1 "SMIB system with one load and GENROE model"
 equation
   connect(gENROE.PMECH, gENROE.PMECH0) annotation (Line(points={{-104,10},{-110,
           10},{-110,26},{-48,26},{-48,10},{-58,10}}, color={0,0,127}));
-  connect(eXAC1_1.EFD, gENROE.EFD) annotation (Line(points={{-98.95,-35.5556},{
+  connect(eXAC1.EFD, gENROE.EFD) annotation (Line(points={{-98.95,-35.5556},{
           -110,-35.5556},{-110,-10},{-104,-10}}, color={0,0,127}));
-  connect(eXAC1_1.XADIFD, gENROE.XADIFD) annotation (Line(points={{-60,-40.6111},
+  connect(eXAC1.XADIFD, gENROE.XADIFD) annotation (Line(points={{-60,-40.6111},
           {-56,-40.6111},{-56,-18},{-58.4,-18}}, color={0,0,127}));
-  connect(eXAC1_1.VOTHSG, const.y) annotation (Line(points={{-60,-29.0556},{-48,
+  connect(eXAC1.VOTHSG, const.y) annotation (Line(points={{-60,-29.0556},{-48,
           -29.0556},{-48,-46},{-41,-46}}, color={0,0,127}));
-  connect(eXAC1_1.VUEL, const.y) annotation (Line(points={{-66.65,-50},{-48,-50},
+  connect(eXAC1.VUEL, const.y) annotation (Line(points={{-66.65,-50},{-48,-50},
           {-48,-46},{-41,-46}}, color={0,0,127}));
-  connect(eXAC1_1.VOEL, const.y) annotation (Line(points={{-72.35,-50},{-48,-50},
+  connect(eXAC1.VOEL, const.y) annotation (Line(points={{-72.35,-50},{-48,-50},
           {-48,-46},{-41,-46}}, color={0,0,127}));
-  connect(eXAC1_1.ECOMP, gENROE.ETERM) annotation (Line(points={{-60,-35.5556},
+  connect(eXAC1.ECOMP, gENROE.ETERM) annotation (Line(points={{-60,-35.5556},
           {-52,-35.5556},{-52,-6},{-58,-6}},color={0,0,127}));
-  connect(eXAC1_1.EFD0, gENROE.EFD0) annotation (Line(points={{-60,-44.9444},{-54,
+  connect(eXAC1.EFD0, gENROE.EFD0) annotation (Line(points={{-60,-44.9444},{-54,
           -44.9444},{-54,-10},{-58,-10}}, color={0,0,127}));
   connect(gENROE.p, GEN1.p)
     annotation (Line(points={{-60,0},{-60,0},{-40,0}}, color={0,0,255}));
