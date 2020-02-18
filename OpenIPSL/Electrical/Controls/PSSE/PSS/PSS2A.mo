@@ -52,7 +52,6 @@ model PSS2A "PSS2A - IEEE Dual-Input Stabilizer Model"
   NonElectrical.Continuous.RampTrackingFilter rampTrackingFilter(
     M=M,
     N=N,
-    startValue=0,
     T_1=T_8,
     T_2=T_9) annotation (Placement(transformation(extent={{20,20},{40,40}})));
   NonElectrical.Continuous.DerivativeLag derivativeLag(

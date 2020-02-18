@@ -84,7 +84,6 @@ model PSS2B
   NonElectrical.Continuous.RampTrackingFilter rampTrackingFilter(
     M=M,
     N=N,
-    startValue=0,
     T_1=T_8,
     T_2=T_9) annotation (Placement(transformation(extent={{12,4},{32,24}})));
 protected
