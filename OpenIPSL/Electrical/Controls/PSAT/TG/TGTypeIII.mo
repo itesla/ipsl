@@ -1,26 +1,26 @@
 within OpenIPSL.Electrical.Controls.PSAT.TG;
 model TGTypeIII
   "Hydro Turbine (Linear model) and Governor (Standard model)- control scheme Type 3"
-  parameter Real P_0 "Active power (pu)"
+  parameter SI.PerUnit P_0 "Active power"
     annotation (Dialog(group="Power flow data"));
-  parameter Real wref=1 "Reference speed (pu)";
-  parameter Real Tg "Pilot valve droop (pu)";
-  parameter Real gmax "Maximum gate opening (pu)";
-  parameter Real gmin "Minimum gate opening (pu)";
-  parameter Real vmax "Maximum gate opening rate (pu)";
-  parameter Real vmin "Minimum gate opening rate (pu)";
-  parameter Real Tp "Pilot valve time constant (s)";
-  parameter Real Tr "Dashpot time constant (s)";
-  parameter Real delta "Transient speed droop (p.u./p.u.)";
-  parameter Real sigma "Permanent speed droop (p.u./p.u.)";
-  parameter Real Tw "Water starting time (s)";
+  parameter SI.PerUnit wref=1 "Reference speed";
+  parameter SI.PerUnit Tg "Pilot valve droop";
+  parameter SI.PerUnit gmax "Maximum gate opening";
+  parameter SI.PerUnit gmin "Minimum gate opening";
+  parameter SI.PerUnit vmax "Maximum gate opening rate";
+  parameter SI.PerUnit vmin "Minimum gate opening rate";
+  parameter SI.Time Tp "Pilot valve time constant";
+  parameter SI.Time Tr "Dashpot time constant";
+  parameter Real delta "Transient speed droop [pu/pu]";
+  parameter Real sigma "Permanent speed droop (pu/pu]";
+  parameter SI.Time Tw "Water starting time";
   parameter Real a11 "Deriv. of flow rate vs. turbine head";
   parameter Real a13 "Deriv. of flow rate vs. gate position";
   parameter Real a21 "Deriv. of torque vs. turbine head";
   parameter Real a23 "Deriv. of torque vs. gate position";
   parameter Real int3;
-  Real deltaG "Gate position variation (pu)";
-  Real G "Gate position (pu)";
+  SI.PerUnit deltaG "Gate position variation";
+  SI.PerUnit G "Gate position";
   Modelica.Blocks.Continuous.Integrator integrator(initType=Modelica.Blocks.Types.Init.NoInit,
       y_start=0) annotation (Placement(transformation(extent={{-20,-10},{0,10}})));
   Modelica.Blocks.Math.Gain gain(k=1/(Tg*Tp))
@@ -72,9 +72,9 @@ model TGTypeIII
     annotation (Placement(transformation(extent={{84,-10},{104,10}})));
   Modelica.Blocks.Math.Gain gain7(k=a13*a21/(a11*a11*Tw))
     annotation (Placement(transformation(extent={{84,-50},{104,-30}})));
-  Modelica.Blocks.Interfaces.RealInput w "Rotor speed (pu)" annotation (
+  Modelica.Blocks.Interfaces.RealInput w "Rotor speed [pu]" annotation (
       Placement(transformation(extent={{-280,-20},{-240,20}}), iconTransformation(extent={{-140,-20},{-100,20}})));
-  Modelica.Blocks.Interfaces.RealOutput pm "Mechanical power (pu)" annotation (
+  Modelica.Blocks.Interfaces.RealOutput pm "Mechanical power [pu]" annotation (
       Placement(transformation(extent={{200,-10},{220,10}}), iconTransformation(extent={{100,-10},{120,10}})));
   Modelica.Blocks.Nonlinear.Limiter limiter(uMax=vmax, uMin=vmin)
     annotation (Placement(transformation(extent={{-50,-10},{-30,10}})));
