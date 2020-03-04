@@ -6,8 +6,8 @@ model GAST "Gas Turbine-Governor"
   parameter SI.Time T_3=3.0 "Load limit response time constant";
   parameter SI.PerUnit AT=0.9 "Ambient temperature load limit";
   parameter SI.PerUnit K_T=2.0 "Load-limited feedback path adjustment gain";
-  parameter SI.PerUnit V_MAX=1.0 "Maximum valve position limit";
-  parameter SI.PerUnit V_MIN=-0.05 "Minimum valve position limit";
+  parameter SI.PerUnit V_MAX=1.0 "Operational control high limit on fuel valve opening";
+  parameter SI.PerUnit V_MIN=-0.05 "Low output control limit on fuel valve opening";
   parameter SI.PerUnit D_turb=0.0 "Turbine damping";
   Modelica.Blocks.Interfaces.RealInput SPEED
     "Machine speed deviation from nominal [pu]" annotation (Placement(transformation(
