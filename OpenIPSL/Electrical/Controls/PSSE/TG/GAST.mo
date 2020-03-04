@@ -1,19 +1,19 @@
 within OpenIPSL.Electrical.Controls.PSSE.TG;
 model GAST "Gas Turbine-Governor"
-  parameter Real R "Speed droop";
-  parameter Real T_1 "(s)";
-  parameter Real T_2 "(s)";
-  parameter Real T_3 "(s)";
-  parameter Real AT "Ambient temperature load limit";
-  parameter Real K_T "Gain value multiplied with input signal";
-  parameter Real V_MAX "Upper limits of input signals";
-  parameter Real V_MIN "Lower limits of input signals";
-  parameter Real D_turb "Gain value multiplied with input signal";
+  parameter SI.PerUnit R=0.05 "Speed droop gain";
+  parameter SI.Time T_1=0.4 "Valve response time constant";
+  parameter SI.Time T_2=0.1"Turbine response time constant";
+  parameter SI.Time T_3=3.0 "Load limit response time constant";
+  parameter SI.PerUnit AT=0.9 "Ambient temperature load limit";
+  parameter SI.PerUnit K_T=2.0 "Load-limited feedback path adjustment gain";
+  parameter SI.PerUnit V_MAX=1.0 "Maximum valve position limit";
+  parameter SI.PerUnit V_MIN=-0.05 "Minimum valve position limit";
+  parameter SI.PerUnit D_turb=0.0 "Turbine damping";
   Modelica.Blocks.Interfaces.RealInput SPEED
-    "Machine electrical power (pu on M_b)" annotation (Placement(transformation(
+    "Machine speed deviation from nominal [pu]" annotation (Placement(transformation(
           extent={{-120,30},{-80,70}}), iconTransformation(extent={{-120,30},{-80,
             70}})));
-  Modelica.Blocks.Interfaces.RealOutput PMECH "Turbine mechanical power (pu)"
+  Modelica.Blocks.Interfaces.RealOutput PMECH "Turbine mechanical power [pu]"
     annotation (Placement(transformation(extent={{100,-10},{120,10}})));
   Modelica.Blocks.Math.Add add(k1=-1)
     annotation (Placement(transformation(extent={{-78,-22},{-68,-12}})));
@@ -37,7 +37,7 @@ model GAST "Gas Turbine-Governor"
         extent={{-5,-5},{5,5}},
         rotation=270,
         origin={-85,33})));
-  Modelica.Blocks.Interfaces.RealInput Reference "Speed reference (pu)"
+  Modelica.Blocks.Interfaces.RealInput Reference "Speed reference [pu]"
     annotation (Placement(transformation(extent={{-120,-70},{-80,-30}}),
         iconTransformation(extent={{-120,-70},{-80,-30}})));
   NonElectrical.Logical.LV_GATE lV_Gate

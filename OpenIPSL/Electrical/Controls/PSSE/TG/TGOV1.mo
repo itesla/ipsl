@@ -6,13 +6,13 @@ model TGOV1 "TGOV1 - Steam Turbine-Governor"
     T2=T_3,
     K=1,
     y_start=P0) annotation (Placement(transformation(extent={{80,-11},{100,10}})));
-  parameter Real R "Governor gain, 1/R (pu)";
-  parameter Real D_t "(pu)";
-  parameter Real T_1 "Control time constant (s)";
-  parameter Real T_2 "Control time constant (s)";
-  parameter Real T_3 "Control time constant (s)";
-  parameter Real V_MAX "Max. valve position (p.u. on M_b)";
-  parameter Real V_MIN "min. valve position (p.u. on M_b)";
+  parameter SI.PerUnit R=0.04 "Inverse of governor gain (the actual gain is 1/R)";
+  parameter SI.PerUnit D_t=0 "Turbine damping factor (on Machine Base)";
+  parameter SI.Time T_1=0.4 "Regulator time constant. It must be greater than 0";
+  parameter SI.Time T_2=2 "High-pressure reheater time constant";
+  parameter SI.Time T_3=6 "Reheater time constant. It must be greater than 0";
+  parameter SI.PerUnit V_MAX=0.86 "Maximum valve position (on Machine Base)";
+  parameter SI.PerUnit V_MIN=0.3 "Minimum valve position (on Machine Base)";
   Modelica.Blocks.Math.Gain imGain9(k=1/R) annotation (Placement(transformation(extent={{0,-10},
             {20,10}})));
   Modelica.Blocks.Math.Gain imGain1(k=D_t) annotation (Placement(transformation(extent={{40,-69},
@@ -30,8 +30,8 @@ model TGOV1 "TGOV1 - Steam Turbine-Governor"
     outMax=V_MAX,
     outMin=V_MIN) annotation (Placement(transformation(extent={{40,-9},{60,10}})));
 protected
-  parameter Real P0(fixed=false) "Power reference of the governor";
-  parameter Real P_REF(fixed=false);
+  parameter SI.PerUnit P0(fixed=false) "Power reference of the governor";
+  parameter SI.PerUnit P_REF(fixed=false);
 initial equation
   P0 = PMECH0;
   P_REF = P0*R;

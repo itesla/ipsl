@@ -1,19 +1,17 @@
 within OpenIPSL.Electrical.Controls.PSSE.TG;
 model IEESGO "IEESGO - IEEE Standard Model for Turbine-Governor"
 extends BaseClasses.BaseGovernor;
-  parameter Real T_1=0.2 "Controller lag (s)";
-  parameter Real T_2=0 "Controller lead compensation (s)";
-  parameter Real T_3=0.5 "Governor lag (s)";
-  parameter Real T_4=0.12
-    "Delay due to steam inlet volumes associated with steam chest and inlet piping (s)";
-  parameter Real T_5=5 "Reheater delay including hot and cold leads (s)";
-  parameter Real T_6=0.5
-    "Delay due to IP-LP turbine, crossover pipes, and LP end hoods (s)";
-  parameter Real K_1=20 "1/p.u. regulation ";
-  parameter Real K_2=0.59 "Fraction ";
-  parameter Real K_3=0.43 "Fraction ";
-  parameter Real P_MAX=0.98 "Upper power limit";
-  parameter Real P_MIN=0 "Lower power limit";
+  parameter SI.Time T_1=0.2 "Controller lag";
+  parameter SI.Time T_2=0 "Controller lead compensation";
+  parameter SI.Time T_3=0.5 "Governor lag";
+  parameter SI.Time T_4=0.12 "Delay due to steam inlet volumes associated with steam chest and inlet piping";
+  parameter SI.Time T_5=5 "Reheater delay including hot and cold leads";
+  parameter SI.Time T_6=0.5 "Delay due to IP-LP turbine, crossover pipes, and LP end hoods";
+  parameter Real K_1=20 "Regulation gain [1/pu]";
+  parameter SI.PerUnit K_2=0.59 "Intermediate pressure turbine fraction";
+  parameter SI.PerUnit K_3=0.43 "Low pressure turbine fraction ";
+  parameter SI.PerUnit P_MAX=0.98 "Upper power limit";
+  parameter SI.PerUnit P_MIN=0 "Lower power limit";
   OpenIPSL.NonElectrical.Continuous.SimpleLag imSimpleLag(
     K=K_1,
     T=T_1,
@@ -47,7 +45,7 @@ extends BaseClasses.BaseGovernor;
   Modelica.Blocks.Math.Add3 add3_1 annotation (Placement(transformation(extent={{160,-18},
             {180,2}})));
 protected
-  parameter Real p0(fixed=false);
+  parameter SI.PerUnit p0(fixed=false);
 initial algorithm
   p0 := PMECH0;
 
