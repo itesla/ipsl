@@ -1,13 +1,13 @@
 within OpenIPSL.Electrical.Controls.PSAT.PSS;
 model PSSTypeII "PSAT PSS TypeII"
-  parameter Real vsmax "Max stabilizer output signal (pu)";
-  parameter Real vsmin "Min stabilizer output signal (pu)";
-  parameter Real Kw "Stabilizer gain (pu/pu)";
-  parameter Real Tw "Wash-out time constant (s)";
-  parameter Real T1 "First stabilizer time constant (s)";
-  parameter Real T2 "Second stabilizer time constant (s)";
-  parameter Real T3 "Third stabilizer time constant (s)";
-  parameter Real T4 "Fourth stabilizer time constant (s)";
+  parameter SI.PerUnit vsmax "Max stabilizer output signal";
+  parameter SI.PerUnit vsmin "Min stabilizer output signal";
+  parameter Real Kw "Stabilizer gain [pu/pu]";
+  parameter SI.Time Tw "Wash-out time constant";
+  parameter SI.Time T1 "First stabilizer time constant";
+  parameter SI.Time T2 "Second stabilizer time constant";
+  parameter SI.Time T3 "Third stabilizer time constant";
+  parameter SI.Time T4 "Fourth stabilizer time constant";
   Modelica.Blocks.Interfaces.RealInput vSI "PSS input signal "
     annotation (Placement(transformation(extent={{-130,-20},{-90,20}})));
   Modelica.Blocks.Interfaces.RealOutput vs "PSS output signal"
