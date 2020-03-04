@@ -1,17 +1,17 @@
 within OpenIPSL.Electrical.Controls.PSSE.PSS;
 model STBSVC "WECC Supplementary Signal for Static var Compensator"
-  parameter Real K_S1 ">0";
-  parameter Real T_S7 "(s)";
-  parameter Real T_S8 "(s)";
-  parameter Real T_S9 ">0 (s)";
-  parameter Real T_S13 ">0 (s)";
-  parameter Real T_S14 ">0 (s)";
-  parameter Real K_S3 ">0";
-  parameter Real V_SCS;
-  parameter Real K_S2;
-  parameter Real T_S10 "(s)";
-  parameter Real T_S11 "(s)";
-  parameter Real T_S12 ">0, if K_S2 != 0 (s)";
+  parameter SI.PerUnit K_S1=1 "First input low-pass filter gain. It must be greater than 0";
+  parameter SI.Time T_S7=1 "First input low-pass filter time constant";
+  parameter SI.Time T_S8=1 "First input regulator numerator (lead) time constant";
+  parameter SI.Time T_S9=1 "First input regulator denominaor (lag) time constant. It must be greater than 0";
+  parameter SI.Time T_S13=1 "Stabilizer washout numerator time constant. It must be greater than 0";
+  parameter SI.Time T_S14=1 "Stabilizer washout denominator time constant. It must be greater than 0";
+  parameter SI.PerUnit K_S3=1 "Stabilizer washout proportional gain";
+  parameter SI.PerUnit V_SCS=2 "Stabilizer output limit value";
+  parameter SI.PerUnit K_S2=1 "Second input low-pass filter gain";
+  parameter SI.Time T_S10=1 "Second input low-pass filter time constant";
+  parameter SI.Time T_S11=1 "Second input regulator numerator (lead) time constant";
+  parameter SI.Time T_S12=1 "Second input regulator denominaor (lag) time constant. It must be greater than 0 if K_S2 is different from 0";
   NonElectrical.Continuous.SimpleLag imSimpleLag(
     K=K_S1,
     y_start=V_S10,
@@ -49,11 +49,11 @@ model STBSVC "WECC Supplementary Signal for Static var Compensator"
     annotation (Placement(transformation(extent={{-150,30},{-110,70}})));
   Modelica.Blocks.Interfaces.RealInput V_S2 "PSS input signal 2"
     annotation (Placement(transformation(extent={{-150,-70},{-110,-30}})));
-  Modelica.Blocks.Interfaces.RealOutput VOTHSG "Stabilizer signal (pu)"
+  Modelica.Blocks.Interfaces.RealOutput VOTHSG "Stabilizer signal [pu]"
     annotation (Placement(transformation(extent={{120,-10},{140,10}})));
 protected
-  parameter Real V_S10(fixed=false);
-  parameter Real V_S20(fixed=false);
+  parameter SI.PerUnit V_S10(fixed=false);
+  parameter SI.PerUnit V_S20(fixed=false);
 initial equation
   V_S10 = V_S1;
   V_S20 = V_S2;

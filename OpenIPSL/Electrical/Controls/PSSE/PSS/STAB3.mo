@@ -1,11 +1,11 @@
 within OpenIPSL.Electrical.Controls.PSSE.PSS;
-model STAB3
-  parameter Real T_t "(s)";
-  parameter Real T_X1 ">0 (s)";
-  parameter Real T_X2 ">0 (s)";
-  parameter Real K_X;
-  parameter Real V_LIM;
-  Modelica.Blocks.Interfaces.RealInput PELEC "Machine electrical power (pu)"
+model STAB3 "Power Sensitive Stabilizer Model with Dual-Input Signals"
+  parameter SI.Time T_t=1 "Input transducer time constant";
+  parameter SI.Time T_X1=1 "Low-pass filter time constant. Value must be greater than 0";
+  parameter SI.Time T_X2=1 "Stabilizer washout denominator time constant. Value must be greater than 0";
+  parameter SI.Time K_X=1 "Stabilizer washout numerator time constant";
+  parameter SI.PerUnit V_LIM=5 "Limit value for stabilizer output";
+  Modelica.Blocks.Interfaces.RealInput PELEC "Machine electrical power [pu]"
     annotation (Placement(transformation(extent={{-130,-20},{-90,20}}),
         iconTransformation(extent={{-130,-20},{-90,20}})));
   Modelica.Blocks.Interfaces.RealOutput VOTHSG "PSS output signal" annotation (
@@ -16,8 +16,8 @@ model STAB3
   Modelica.Blocks.Sources.Constant const(k=P_REF)
     annotation (Placement(transformation(extent={{-60,-40},{-40,-20}})));
 protected
-  parameter Real P_REF(fixed=false);
-  parameter Real PELEC0(fixed=false);
+  parameter SI.PerUnit P_REF(fixed=false);
+  parameter SI.PerUnit PELEC0(fixed=false);
   NonElectrical.Continuous.SimpleLag imSimpleLag(
     K=1,
     T=T_t,

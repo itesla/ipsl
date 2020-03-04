@@ -1,22 +1,22 @@
 within OpenIPSL.Electrical.Controls.PSSE.PSS;
-model IEEEST "IEEE Stabilizing Model with single Input"
-  parameter Real A_1=0 "Filter Coefficient";
-  parameter Real A_2=0 "Filter Coefficient";
-  parameter Real A_3=0 "Filter Coefficient";
-  parameter Real A_4=0 "Filter Coefficient";
-  parameter Real A_5=0 "Filter Coefficient";
-  parameter Real A_6=0 "Filter Coefficient";
-  parameter Real T_1=0 "Lead Time Constant";
-  parameter Real T_2=0 "Lag Time Constant";
-  parameter Real T_3=0 "Lead Time Constant";
-  parameter Real T_4=0 "Lag Time Constant";
-  parameter Real T_5=1.65 "Washout Time Constant";
-  parameter Real T_6=1.65 "Washout Time Constant";
-  parameter Real K_S=6.2 "Stabilizer Gain";
-  parameter Real L_SMAX=0.26 "Output Limits";
-  parameter Real L_SMIN=-0.1 "Output Limits";
-  parameter Real V_CU=999 "Output Limits";
-  parameter Real V_CL=-999 "Output Limits";
+model IEEEST "1981 IEEE Power System Stabilizer Model"
+  parameter SI.Time A_1=0 "Power system stabilizer high frequency filter coefficient";
+  parameter Real A_2=0 "Power system stabilizer high frequency filter coefficient";
+  parameter SI.Time A_3=0 "Power system stabilizer high frequency filter coefficient";
+  parameter Real A_4=0 "Power system stabilizer high frequency filter coefficient";
+  parameter SI.Time A_5=0 "Power system stabilizer high frequency filter coefficient";
+  parameter Real A_6=0 "Power system stabilizer high frequency filter coefficient";
+  parameter SI.Time T_1=0 "PSS first numerator (lead) time constant";
+  parameter SI.Time T_2=0 "PSS first denominator (lag) time constant";
+  parameter SI.Time T_3=0 "PSS second numerator (lead) time constant";
+  parameter SI.Time T_4=0 "PSS second denominator (lag) time constant";
+  parameter SI.Time T_5=1.65 "Stabilizer washout numerator time constant";
+  parameter SI.Time T_6=1.65 "Stabilizer washout denominator time constant";
+  parameter SI.PerUnit K_S=6.2 "Stabilizer Gain";
+  parameter SI.PerUnit L_SMAX=0.26 "Maximum output for stabilizer washout filter";
+  parameter SI.PerUnit L_SMIN=-0.1 "Minimum output for stabilizer washout filter";
+  parameter SI.PerUnit V_CU=999 "Maximum power system stabilizer output";
+  parameter SI.PerUnit V_CL=-999 "Minimum power system stabilizer output";
   Modelica.Blocks.Continuous.TransferFunction Filter1_1(
     initType=Modelica.Blocks.Types.Init.InitialOutput,
     y_start=V_S0,
@@ -44,7 +44,7 @@ model IEEEST "IEEE Stabilizing Model with single Input"
   Modelica.Blocks.Nonlinear.Limiter VSS(uMax=L_SMAX, uMin=L_SMIN)
     annotation (Placement(transformation(extent={{100,-5},{110,5}})));
   Modelica.Blocks.Interfaces.RealInput V_CT
-    "Compensated machine terminal voltage (pu)" annotation (Placement(
+    "Compensated machine terminal voltage [pu]" annotation (Placement(
         transformation(extent={{-125,30},{-115,40}}),
         iconTransformation(extent={{-128,10},{-108,30}})));
   Modelica.Blocks.Continuous.Derivative imDerivativeLag(
@@ -57,7 +57,7 @@ protected
   Modelica.Blocks.Interfaces.RealOutput Vs "Connector of Real output signal"
     annotation (Placement(transformation(extent={{113,-5},{123,5}}),
         iconTransformation(extent={{32,-8},{36,-4}})));
-  parameter Real V_S0(fixed=false);
+  parameter SI.PerUnit V_S0(fixed=false);
   parameter Boolean bypass_filter2(fixed=false);
   parameter Boolean bypass_filter1(fixed=false);
   parameter Integer n1=if A_1 == 0 and A_2 == 0 then 4 elseif A_2 == 0 then 2

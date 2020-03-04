@@ -1,16 +1,15 @@
 within OpenIPSL.Electrical.Controls.PSSE.PSS;
-model STAB2A
-
-  parameter Real K_2=1;
-  parameter Real T_2=1;
-  parameter Real K_3=1;
-  parameter Real T_3=1;
-  parameter Real K_4=1;
-  parameter Real K_5=1;
-  parameter Real T_5=1;
-  parameter Real H_LIM=5;
+model STAB2A "ASEA power sensitive stabilizer model"
+  parameter SI.PerUnit K_2=1 "Input washout filter gain";
+  parameter SI.Time T_2=1 "Input washout filter time constant";
+  parameter SI.PerUnit K_3=1 "Low-pass filter proportional gain";
+  parameter SI.Time T_3=1 "Low-pass filter time constant";
+  parameter SI.PerUnit K_4=1 "Washout filter output proportional gain";
+  parameter SI.PerUnit K_5=1 "Output low-pass filter proportional gain";
+  parameter SI.Time T_5=1 "Output low-pass filter time constant";
+  parameter SI.PerUnit H_LIM=5 "Limit value for stabilizer output";
   input Modelica.Blocks.Interfaces.RealInput PELEC
-    "Machine electrical power (pu)" annotation (Placement(transformation(extent
+    "Machine electrical power [pu]" annotation (Placement(transformation(extent
           ={{-109,-6},{-98,10}}), iconTransformation(extent={{-107,-10},{-87,10}})));
   output Modelica.Blocks.Interfaces.RealOutput VOTHSG "PSS output signal"
     annotation (Placement(transformation(extent={{120,-10},{140,10}}),
