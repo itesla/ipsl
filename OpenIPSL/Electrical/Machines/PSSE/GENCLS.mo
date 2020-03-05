@@ -55,7 +55,7 @@ equation
   //Swing equation
   //in PSS/E setting to zero is equivalent to removing the swing equation
   if abs(H) > C.eps then
-    der(delta) = omega*2*C.pi*50;
+    der(delta) = omega*2*C.pi*fn;
     der(omega) = (P_0/S_b - P - D*omega)/(2*H);
   else
     der(delta) = 0;
