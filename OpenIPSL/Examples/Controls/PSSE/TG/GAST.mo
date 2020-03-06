@@ -71,7 +71,7 @@ equation
           {-54,12},{-22,12},{-22,66},{-44,66}}, color={0,0,127}));
   connect(gAST.PMECH, gENROU.PMECH) annotation (Line(points={{-86,60},{-118,60},
           {-118,9.5},{-104,9.5}}, color={0,0,127}));
-  connect(gENROU.PMECH0, gAST.Reference) annotation (Line(points={{-58,9.5},{-52,
+  connect(gENROU.PMECH0, gAST.PMECH0) annotation (Line(points={{-58,9.5},{-52,
           9.5},{-52,8},{-34,8},{-34,54},{-44,54}}, color={0,0,127}));
 annotation (experiment(StopTime=10));
 end GAST;
