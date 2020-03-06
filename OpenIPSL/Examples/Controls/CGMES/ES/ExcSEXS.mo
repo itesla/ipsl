@@ -59,9 +59,5 @@ equation
   connect(gENROE.p, GEN1.p)
     annotation (Line(points={{-70,0},{-40,0},{-40,0}}, color={0,0,255}));
   connect(gENROE.XADIFD, sEXS.XADIFD) annotation (Line(points={{-68.4,-18},{-62,-18},{-62,-60},{-97.55,-60},{-97.55,-53.6889}}, color={0,0,127}));
-  annotation (
-    Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-120,-100},{
-            120,100}})),
-Icon(coordinateSystem(extent={{-120,-100},{120,100}})),
-    experiment(StopTime=10));
+  annotation (experiment(StopTime=10));
 end ExcSEXS;
