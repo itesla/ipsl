@@ -30,17 +30,25 @@ model GENSAE "SALIENT POLE GENERATOR MODEL (EXPONENTIAL SATURATION)"
   SI.PerUnit PSId(start=PSId0) "d-axis flux linkage (pu)";
   SI.PerUnit PSIq(start=PSIq0) "q-axis flux linkage (pu)";
   SI.PerUnit XadIfd(start=efd0) "Machine field current (pu)";
+  SI.PerUnit PSIpp "Air-gap flux (pu)";
 protected
   parameter Complex Zs=R_a + j*Xppd "Equivalent impedance";
   parameter Complex Is=real(It + VT/Zs) + j*imag(It + VT/Zs);
   parameter Complex PSIpp0=real(Zs*Is) + j*imag(Zs*Is);
-  parameter Complex a=0 + j*(Xq - Xppd);
-  parameter Complex Epqp=real(PSIpp0 + a*It) + j*imag(PSIpp0 + a*It);
-  parameter Real delta0=arg(Epqp) "rotor angle in radians";
+  parameter Real ang_PSIpp0=arg(PSIpp0) "flux angle";
+  parameter Real ang_It=arg(It) "current angle";
+  parameter Real ang_PSIpp0andIt=ang_PSIpp0 - ang_It "angle difference";
+  parameter SI.PerUnit abs_PSIpp0='abs'(PSIpp0)
+    "magnitude of sub-transient flux linkage";
   parameter Complex VT=v_0*cos(angle_0rad) + j*v_0*sin(angle_0rad)
     "Complex terminal voltage";
   parameter Complex S=p0 + j*q0 "Complex power on machine base";
   parameter Complex It=real(S/VT) - j*imag(S/VT) "Terminal current";
+  parameter Real a=abs_PSIpp0 + abs_PSIpp0*dsat*(Xq - Xl)/(Xd - Xl);
+  parameter Real b=(It.re^2 + It.im^2)^0.5*(Xppd - Xq);
+  //Initializion rotor angle position
+  parameter Real delta0=atan(b*cos(ang_PSIpp0andIt)/(b*sin(ang_PSIpp0andIt) - a))
+       + ang_PSIpp0 "initial rotor angle in radians";
   parameter Complex DQ_dq=cos(delta0) - j*sin(delta0) "Parks transformation";
   parameter Complex I_dq=real(It*DQ_dq) - j*imag(It*DQ_dq);
   //Initialization of current and voltage components in synchronous reference frame.
@@ -63,12 +71,12 @@ protected
   //Initialization mechanical power and field voltage.
   parameter SI.PerUnit Epq0=uq0 + Xpd*id0 + R_a*iq0;
   parameter Real dsat=SE_exp(
-      Epq0,
+      abs_PSIpp0,
       S10,
       S12,
       1,
-      1.2);
-  parameter SI.PerUnit efd0=Epq0*(1 + dsat) + (Xd - Xpd)*id0
+      1.2) "To include saturation of during initialization";
+  parameter SI.PerUnit efd0=Epq0 + (Xd - Xpd)*id0 + PSIppd0*dsat
     "Initial field voltage magnitude";
   parameter SI.PerUnit pm0=p0 + R_a*iq0*iq0 + R_a*id0*id0
     "Initial mechanical power (pu machine base)";
@@ -91,16 +99,22 @@ equation
   ISORCE = XadIfd;
   der(Epq) = 1/Tpd0*(EFD - XadIfd);
   der(PSIkd) = 1/Tppd0*(Epq - PSIkd - (Xpd - Xl)*id);
-  der(PSIppq) = 1/Tppq0*((-PSIppq) + (Xq - Xppq)*iq);
+  der(PSIppq) = 1/Tppq0*((-PSIppq) + (Xq - Xppq)*iq - PSIppq*(Xq-Xl)/(Xd-Xl)*SE_exp(
+  	PSIpp,
+  	S10,
+  	S12,
+  	1,
+  	1.2));
   PSIppd = Epq*K3d + PSIkd*K4d;
   PSId = PSIppd - Xppd*id;
   PSIq = (-PSIppq) - Xppq*iq;
-  XadIfd = K1d*(Epq - PSIkd - (Xpd - Xl)*id) + (Xd - Xpd)*id + (SE_exp(
-    Epq,
+  PSIpp = sqrt(PSIppd*PSIppd + PSIppq*PSIppq);
+  XadIfd = Epq + K1d*(Epq - PSIkd - (Xpd - Xl)*id) + (Xd - Xpd)*id + (SE_exp(
+    PSIpp,
     S10,
     S12,
     1,
-    1.2) + 1)*Epq;
+    1.2))*PSIppd;
   Te = PSId*iq - PSIq*id;
   ud = (-PSIq) - R_a*id;
   uq = PSId - R_a*iq;
