@@ -147,7 +147,7 @@ equation
           extent={{38,42},{98,32}},
           lineColor={85,170,255},
           textStyle={TextStyle.Bold},
-          textString="Hydrauli Turbine System")}),
+          textString="Hydraulic Turbine System")}),
     Icon(coordinateSystem(extent={{-240,-200},{240,160}},preserveAspectRatio=false),
          graphics={Text(
           extent={{-60,16},{64,-24}},
