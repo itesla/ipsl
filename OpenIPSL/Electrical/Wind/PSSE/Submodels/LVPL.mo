@@ -1,7 +1,7 @@
 within OpenIPSL.Electrical.Wind.PSSE.Submodels;
 model LVPL "Low voltage power logic"
-  parameter Real VLVPL1 "LVPL voltage 1 (Low voltage power logic)";
-  parameter Real VLVPL2 "LVPL voltage 2";
+  parameter SI.PerUnit VLVPL1 "LVPL voltage 1 (Low voltage power logic)";
+  parameter SI.PerUnit VLVPL2 "LVPL voltage 2";
   parameter Real GLVPL "LVPL gain";
   parameter Real K=GLVPL/(VLVPL2 - VLVPL1);
   Modelica.Blocks.Interfaces.RealInput Vt annotation (Placement(transformation(
