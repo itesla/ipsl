@@ -2,20 +2,17 @@ within OpenIPSL.Electrical.Wind.PSSE.WT4G;
 model WT4G1 "Wind Generator Model with Power Converter (Type 4)"
   // Extending the PF component
   extends OpenIPSL.Electrical.Essentials.pfComponent;
-  //Constants
-  constant Real pi=Modelica.Constants.pi;
   // Model parameters
-  parameter Real M_b "Machine base power (MVA)";
-  parameter Real T_IQCmd "Converter time constant for I_Qcmd";
-  parameter Real T_IPCmd "Converter time constant for I_Pcmd";
-  parameter Real V_LVPL1 "LVPL voltage 1 (Low voltage power logic)";
-  parameter Real V_LVPL2 "LVPL voltage 2";
+  parameter SI.ApparentPower M_b(displayUnit="MVA") "Machine base power";
+  parameter SI.Time T_IQCmd "Converter time constant for I_Qcmd";
+  parameter SI.Time T_IPCmd "Converter time constant for I_Pcmd";
+  parameter SI.PerUnit V_LVPL1 "LVPL voltage 1 (Low voltage power logic)";
+  parameter SI.PerUnit V_LVPL2 "LVPL voltage 2";
   parameter Real G_LVPL "LVPL gain";
-  parameter Real V_HVRCR
-    "HVRCR voltage (High voltage reactive current limiter)";
-  parameter Real CUR_HVRCR "HVRCR current (Max. reactive current at VHVRCR)";
-  parameter Real RIp_LVPL "Rate of LVACR active current change";
-  parameter Real T_LVPL "Voltage sensor for LVACR time constant";
+  parameter SI.PerUnit V_HVRCR "HVRCR voltage (High voltage reactive current limiter)";
+  parameter SI.PerUnit CUR_HVRCR "HVRCR current (Max. reactive current at VHVRCR)";
+  parameter SI.PerUnit RIp_LVPL "Rate of LVACR active current change";
+  parameter SI.Time T_LVPL "Voltage sensor for LVACR time constant";
   // Variables
   Complex Is "Equivalent internal current source";
   OpenIPSL.Interfaces.PwPin p(
@@ -95,33 +92,32 @@ model WT4G1 "Wind Generator Model with Power Converter (Type 4)"
         rotation=90,
         origin={-20,110})));
 protected
-  Real delta(start=anglev_rad);
-  Real VT(start=v_0) "Bus voltage magnitude (pu)";
-  Real anglev(start=anglev_rad) "Bus voltage angle (rad)";
+  SI.Angle delta(start=angle0_rad);
+  SI.PerUnit VT(start=v_0) "Bus voltage magnitude (pu)";
+  SI.Angle anglev(start=angle0_rad) "Bus voltage angle (rad)";
 protected
-  parameter Real p0=P_0/M_b
+  parameter SI.PerUnit p0=P_0/M_b
     "initial value of bus active power in p.u. machinebase";
-  parameter Real q0=Q_0/M_b
+  parameter SI.PerUnit q0=Q_0/M_b
     "initial value of bus reactive power in p.u. machinebase";
-  parameter Real vr0=v_0*cos(anglev_rad)
+  parameter SI.PerUnit vr0=v_0*cos(angle0_rad)
     "Real component of initial terminal voltage";
-  parameter Real vi0=v_0*sin(anglev_rad)
+  parameter SI.PerUnit vi0=v_0*sin(angle0_rad)
     "Imaginary component of initial terminal voltage";
-  parameter Real ir0=(p0*vr0 + q0*vi0)/(vr0^2 + vi0^2)
+  parameter SI.PerUnit ir0=(p0*vr0 + q0*vi0)/(vr0^2 + vi0^2)
     "Real component of initial armature current, M_b";
-  parameter Real ii0=(p0*vi0 - q0*vr0)/(vr0^2 + vi0^2)
+  parameter SI.PerUnit ii0=(p0*vi0 - q0*vr0)/(vr0^2 + vi0^2)
     "Imaginary component of initial armature current, M_b";
-  parameter Real Isr0=ir0 "Source current re M_b";
-  parameter Real Isi0=ii0 "Source current im M_b";
+  parameter SI.PerUnit Isr0=ir0 "Source current re M_b";
+  parameter SI.PerUnit Isi0=ii0 "Source current im M_b";
   parameter Real CoB=M_b/S_b;
-  parameter Real ir1=-CoB*(p0*vr0 + q0*vi0)/(vr0^2 + vi0^2)
+  parameter SI.PerUnit ir1=-CoB*(p0*vr0 + q0*vi0)/(vr0^2 + vi0^2)
     "Real component of initial armature current, S_b";
-  parameter Real ii1=-CoB*(p0*vi0 - q0*vr0)/(vr0^2 + vi0^2)
+  parameter SI.PerUnit ii1=-CoB*(p0*vi0 - q0*vr0)/(vr0^2 + vi0^2)
     "Imaginary component of initial armature current, S_b";
-  parameter Real Ipcmd0=Ix0;
-  parameter Real anglev_rad=angle_0*pi/180 "initial value of bus anglev in rad";
-  parameter Real Ix0=Isr0*cos(-anglev_rad) - Isi0*sin(-anglev_rad);
-  parameter Real Iy0=-(Isr0*sin(-anglev_rad) + cos(-anglev_rad)*Isi0);
+  parameter SI.PerUnit Ipcmd0=Ix0;
+  parameter SI.PerUnit Ix0=Isr0*cos(-angle0_rad) - Isi0*sin(-angle0_rad);
+  parameter SI.PerUnit Iy0=-(Isr0*sin(-angle0_rad) + cos(-angle0_rad)*Isi0);
 protected
   Modelica.Blocks.Interfaces.RealInput Vtt=VT annotation (Placement(
         transformation(
