@@ -100,6 +100,7 @@ model WT3G1
         rotation=90,
         origin={-50,110})));
 protected
+  parameter SI.Angle angle0_rad = SI.Conversions.from_deg(angle_0) "Initial angle in rad";
   parameter SI.AngularVelocity wbase=2*C.pi*fn "System base speed";
   parameter SI.PerUnit p0=P_0/M_b
     "initial value of bus active power in p.u. machinebase";

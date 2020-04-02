@@ -96,6 +96,7 @@ protected
   SI.PerUnit VT(start=v_0) "Bus voltage magnitude (pu)";
   SI.Angle anglev(start=angle0_rad) "Bus voltage angle (rad)";
 protected
+  parameter SI.Angle angle0_rad = SI.Conversions.from_deg(angle_0) "Initial angle in rad";
   parameter SI.PerUnit p0=P_0/M_b
     "initial value of bus active power in p.u. machinebase";
   parameter SI.PerUnit q0=Q_0/M_b
