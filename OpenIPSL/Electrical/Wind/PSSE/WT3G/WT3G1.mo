@@ -1,20 +1,19 @@
 within OpenIPSL.Electrical.Wind.PSSE.WT3G;
 model WT3G1
   extends OpenIPSL.Electrical.Essentials.pfComponent;
-  constant Real pi=Modelica.Constants.pi;
-  parameter Real X_eq "Equivalent reactance for current injection (pu)";
-  parameter Real K_pll "PLL first integrator gain";
-  parameter Real K_ipll "PLL second integrator gain";
-  parameter Real P_llmax "PLL maximum limit";
-  parameter Real P_rated "Turbine MW rating, not used in the equation";
+  parameter SI.PerUnit X_eq "Equivalent reactance for current injection";
+  parameter SI.PerUnit K_pll "PLL first integrator gain";
+  parameter SI.TimeAging K_ipll "PLL second integrator gain";
+  parameter SI.PerUnit P_llmax "PLL maximum limit";
+  parameter SI.Power P_rated(displayUnit="MW") "Turbine rating, not used in the equation";
   parameter Complex Zs(re=0, im=X_eq) "Equivalent impedance (ZSORCE)"
     annotation (Dialog(group="Power flow data"));
-  parameter Real M_b=100 "Machine base power (MVA)"
+  parameter SI.ApparentPower M_b(displayUnit="MVA")=100 "Machine base power"
     annotation (Dialog(group="Power flow data"));
-  Real VT(start=v_0) "Bus voltage magnitude";
-  Real anglev(start=anglev_rad) "Bus voltage angle";
-  Real VY(start=0) "y-axis terminal voltage";
-  Real VX(start=v_0) "x-axis terminal voltage";
+  SI.PerUnit VT(start=v_0) "Bus voltage magnitude";
+  SI.Angle anglev(start=angle0_rad) "Bus voltage angle";
+  SI.PerUnit VY(start=0) "y-axis terminal voltage";
+  SI.PerUnit VX(start=v_0) "x-axis terminal voltage";
   Complex Is "Equivalent internal current source";
   OpenIPSL.Interfaces.PwPin p(
     vr(start=vr0),
@@ -24,7 +23,7 @@ model WT3G1
             10}}), iconTransformation(extent={{100,-10},{120,10}})));
   Modelica.Blocks.Continuous.Integrator imIntegrator(
     k=wbase,
-    y_start=anglev_rad,
+    y_start=angle0_rad,
     initType=Modelica.Blocks.Types.Init.InitialOutput)
     annotation (Placement(transformation(extent={{50,-30},{70,-10}})));
   Modelica.Blocks.Continuous.LimIntegrator imIntegrator1(
@@ -68,7 +67,7 @@ model WT3G1
     annotation (Placement(transformation(extent={{-10,-30},{10,-10}})));
   Modelica.Blocks.Nonlinear.Limiter imLimited(uMin=-P_llmax, uMax=P_llmax)
     annotation (Placement(transformation(extent={{20,-30},{40,-10}})));
-  Modelica.Blocks.Interfaces.RealOutput delta(start=anglev_rad) annotation (
+  Modelica.Blocks.Interfaces.RealOutput delta(start=angle0_rad) annotation (
       Placement(transformation(extent={{80,-30},{100,-10}}), iconTransformation(
         extent={{-10,-10},{10,10}},
         origin={110,-30})));
@@ -101,39 +100,38 @@ model WT3G1
         rotation=90,
         origin={-50,110})));
 protected
-  parameter Real wbase=2*pi*fn "System base speed";
-  parameter Real p0=P_0/M_b
+  parameter SI.AngularVelocity wbase=2*C.pi*fn "System base speed";
+  parameter SI.PerUnit p0=P_0/M_b
     "initial value of bus active power in p.u. machinebase";
-  parameter Real q0=Q_0/M_b
+  parameter SI.PerUnit q0=Q_0/M_b
     "initial value of bus reactive power in p.u. machinebase";
-  parameter Real vr0=v_0*cos(anglev_rad)
+  parameter SI.PerUnit vr0=v_0*cos(angle0_rad)
     "Real component of initial terminal voltage";
-  parameter Real vi0=v_0*sin(anglev_rad)
+  parameter SI.PerUnit vi0=v_0*sin(angle0_rad)
     "Imaginary component of initial terminal voltage";
-  parameter Real ir0=(p0*vr0 + q0*vi0)/(vr0^2 + vi0^2)
+  parameter SI.PerUnit ir0=(p0*vr0 + q0*vi0)/(vr0^2 + vi0^2)
     "Real component of initial armature current, mbase";
-  parameter Real ii0=(p0*vi0 - q0*vr0)/(vr0^2 + vi0^2)
+  parameter SI.PerUnit ii0=(p0*vi0 - q0*vr0)/(vr0^2 + vi0^2)
     "Imaginary component of initial armature current, mbase";
-  parameter Real Isr0=ir0 + vi0/X_eq "Source current re mbase";
-  parameter Real Isi0=ii0 - vr0/X_eq "Source current im mbase";
+  parameter SI.PerUnit Isr0=ir0 + vi0/X_eq "Source current re mbase";
+  parameter SI.PerUnit Isi0=ii0 - vr0/X_eq "Source current im mbase";
   parameter Real CoB=M_b/S_b;
-  parameter Real ir1=-CoB*(p0*vr0 + q0*vi0)/(vr0^2 + vi0^2)
+  parameter SI.PerUnit ir1=-CoB*(p0*vr0 + q0*vi0)/(vr0^2 + vi0^2)
     "Real component of initial armature current, sbase";
-  parameter Real ii1=-CoB*(p0*vi0 - q0*vr0)/(vr0^2 + vi0^2)
+  parameter SI.PerUnit ii1=-CoB*(p0*vi0 - q0*vr0)/(vr0^2 + vi0^2)
     "Imaginary component of initial armature current, sbase";
-  parameter Real Ix0=Isr0*cos(-anglev_rad) - Isi0*sin(-anglev_rad);
-  parameter Real Iy0=Isr0*sin(-anglev_rad) + cos(-anglev_rad)*Isi0;
-  parameter Real Eqcmd0=-Iy0*X_eq;
-  parameter Real Ipcmd0=Ix0;
-  parameter Real anglev_rad=angle_0*pi/180 "initial value of bus anglev in rad";
-  parameter Real VX0=cos(anglev_rad)*vr0 + sin(anglev_rad)*vi0;
-  parameter Real VY0=(-sin(anglev_rad)*vr0) + cos(anglev_rad)*vi0;
+  parameter SI.PerUnit Ix0=Isr0*cos(-angle0_rad) - Isi0*sin(-angle0_rad);
+  parameter SI.PerUnit Iy0=Isr0*sin(-angle0_rad) + cos(-angle0_rad)*Isi0;
+  parameter SI.PerUnit Eqcmd0=-Iy0*X_eq;
+  parameter SI.PerUnit Ipcmd0=Ix0;
+  parameter SI.PerUnit VX0=cos(angle0_rad)*vr0 + sin(angle0_rad)*vi0;
+  parameter SI.PerUnit VY0=(-sin(angle0_rad)*vr0) + cos(angle0_rad)*vi0;
 protected
   Modelica.Blocks.Interfaces.RealInput Vy annotation (Placement(transformation(
           extent={{-110,-30},{-90,-10}}), iconTransformation(extent={{-118,-40},
             {-96,-18}})));
 initial equation
-  delta = anglev_rad;
+  delta = angle0_rad;
 equation
   anglev = atan2(p.vi, p.vr);
   VT = sqrt(p.vr*p.vr + p.vi*p.vi);
