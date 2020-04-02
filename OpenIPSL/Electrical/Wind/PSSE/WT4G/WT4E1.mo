@@ -7,31 +7,31 @@ model WT4E1 "Electrical Control for Type 4 Wind Generator"
         " Qord is provided by WindVar"));
   parameter Boolean PQFLAG "P/Q priority flag"
     annotation (choices(choice=false "Q priority", choice=true "P priority"));
-  parameter Real Tfv "Filter time constant in voltage regulator (sec)";
-  parameter Real Kpv " Proportional gain in voltage regulator (pu)";
-  parameter Real KIV " Integrator gain in voltage regulator (pu)";
-  parameter Real Kpp " Proportional gain in torque regulator (pu)";
-  parameter Real KIP " Integrator gain in torque regulator (pu)";
+  parameter SI.Time Tfv "Filter time constant in voltage regulator";
+  parameter SI.PerUnit Kpv "Proportional gain in voltage regulator";
+  parameter SI.TimeAging KIV "Integrator gain in voltage regulator";
+  parameter SI.PerUnit Kpp "Proportional gain in torque regulator";
+  parameter SI.PerUnit KIP "Integrator gain in torque regulator";
   //should be 0.1 in PSSE
-  parameter Real Kf "Rate feedback gain (pu)";
-  parameter Real Tf "Rate feedback time constant (sec.)";
-  parameter Real QMX " Max limit in voltage regulator (pu)";
-  parameter Real QMN " Min limit in voltage regulator (pu)";
-  parameter Real IPMAX " Max active current limit";
-  parameter Real TRV " Voltage sensor time constant";
-  parameter Real dPMX " Max limit in power PI controller";
-  parameter Real dPMN " Min limit in power PI controller";
-  parameter Real T_Power " Power filter time constant";
-  parameter Real KQI " MVAR/Voltage gain";
+  parameter SI.PerUnit Kf "Rate feedback gain";
+  parameter SI.Time Tf "Rate feedback time constant";
+  parameter SI.PerUnit QMX "Max limit in voltage regulator";
+  parameter SI.PerUnit QMN "Min limit in voltage regulator";
+  parameter SI.PerUnit IPMAX "Max active current limit";
+  parameter SI.Time TRV "Voltage sensor time constant";
+  parameter SI.PerUnit dPMX "Max limit in power PI controller";
+  parameter SI.PerUnit dPMN "Min limit in power PI controller";
+  parameter SI.Time T_Power "Power filter time constant";
+  parameter SI.PerUnit KQI "MVAR/Voltage gain";
   //should be 0.1 in PSSE
-  parameter Real VMINCL=0.9 " Min voltage limit";
-  parameter Real VMAXCL=1.1 " Max voltage limit";
-  parameter Real KVI=120 " Voltage/MVAR gain";
-  parameter Real Tv=0.50000E-01 " Lag time constant in WindVar controller";
-  parameter Real Tp=0.50000E-01 " Pelec filter in fast PF controller";
-  parameter Real ImaxTD=1.7 "Converter current limit";
-  parameter Real Iphl=1.11 "Hard active current limit";
-  parameter Real Iqhl=1.11 "Hard reactive current limit";
+  parameter SI.PerUnit VMINCL=0.9 "Min voltage limit";
+  parameter SI.PerUnit VMAXCL=1.1 "Max voltage limit";
+  parameter SI.PerUnit KVI=120 "Voltage/MVAR gain";
+  parameter SI.Time Tv=0.50000E-01 "Lag time constant in WindVar controller";
+  parameter SI.Time Tp=0.50000E-01 "Pelec filter in fast PF controller";
+  parameter SI.PerUnit ImaxTD=1.7 "Converter current limit";
+  parameter SI.PerUnit Iphl=1.11 "Hard active current limit";
+  parameter SI.PerUnit Iqhl=1.11 "Hard reactive current limit";
   //parameter Real Qord "MVAR order from MVAR emulator";
   Modelica.Blocks.Interfaces.RealInput P(start=p0) annotation (Placement(
         transformation(extent={{-210,-10},{-190,10}}), iconTransformation(
@@ -122,27 +122,26 @@ model WT4E1 "Electrical Control for Type 4 Wind Generator"
   Modelica.Blocks.Sources.BooleanConstant UseWindVar(k=VARFLG)
     annotation (Placement(transformation(extent={{-50,80},{-30,100}})));
 protected
-  parameter Real Vref(fixed=false);
-  parameter Real Pref=p0;
-  parameter Real Qref=q0 "Q reference if PFAFLG=0 & VARFLG";
+  parameter SI.PerUnit Vref(fixed=false);
+  parameter SI.PerUnit Pref=p0;
+  parameter SI.PerUnit Qref=q0 "Q reference if PFAFLG=0 & VARFLG";
   parameter Real PFA_ref=atan2(q0, p0) "PF angle reference if PFAFLG=1";
-  parameter Real p0(fixed=false);
-  parameter Real q0(fixed=false);
-  parameter Real v0(fixed=false);
-  parameter Real Ip0(fixed=false);
-  parameter Real Iq0(fixed=false);
-  parameter Real Pord0(fixed=false);
-  parameter Real k0(fixed=false) "Filter in voltage regulator";
-  parameter Real k10(fixed=false) "Integrator in voltage regulator";
-  parameter Real k20(fixed=false) "Integrator in active power regulator";
-  parameter Real k30(fixed=false) "Active power regulator feedback";
-  parameter Real k40(fixed=false) "Voltage sensor";
-  parameter Real k50(fixed=false) "Power filter";
-  parameter Real k60(fixed=false) "MVAR/Vref integrator";
-  parameter Real k70(fixed=false) "Verror/Internal machine voltage integrator";
-  parameter Real k80(fixed=false) "Lag of the WindVar controller";
-  parameter Real k90(fixed=false)
-    "Input filter of Pelec for PF fast controller";
+  parameter SI.PerUnit p0(fixed=false);
+  parameter SI.PerUnit q0(fixed=false);
+  parameter SI.PerUnit v0(fixed=false);
+  parameter SI.PerUnit Ip0(fixed=false);
+  parameter SI.PerUnit Iq0(fixed=false);
+  parameter SI.PerUnit Pord0(fixed=false);
+  parameter SI.PerUnit k0(fixed=false) "Filter in voltage regulator";
+  parameter SI.PerUnit k10(fixed=false) "Integrator in voltage regulator";
+  parameter SI.PerUnit k20(fixed=false) "Integrator in active power regulator";
+  parameter SI.PerUnit k30(fixed=false) "Active power regulator feedback";
+  parameter SI.PerUnit k40(fixed=false) "Voltage sensor";
+  parameter SI.PerUnit k50(fixed=false) "Power filter";
+  parameter SI.PerUnit k60(fixed=false) "MVAR/Vref integrator";
+  parameter SI.PerUnit k70(fixed=false) "Verror/Internal machine voltage integrator";
+  parameter SI.PerUnit k80(fixed=false) "Lag of the WindVar controller";
+  parameter SI.PerUnit k90(fixed=false) "Input filter of Pelec for PF fast controller";
 initial equation
   Vref = v0;
   p0 = P;
@@ -234,18 +233,18 @@ protected
       annotation (Placement(transformation(
           extent={{-10,-10},{10,10}},
           origin={106,-20})));
-    parameter Real Kpp " Proportional gain in torque regulator (pu)";
-    parameter Real KIP " Integrator gain in torque regulator (pu)";
-    parameter Real Kf "Rate feedback gain (pu)";
-    parameter Real Tf "Rate feedback time constant (sec.)";
-    parameter Real dPMX " Max limit in power PI controller";
-    parameter Real dPMN " Min limit in power PI controller";
-    parameter Real T_Power " Power filter time constant";
-    parameter Real Pref=p0;
-    parameter Real k20 "Integrator in active power regulator";
-    parameter Real k30 "Active power regulator feedback";
-    parameter Real k50 "Power filter";
-    parameter Real p0;
+    parameter SI.PerUnit Kpp "Proportional gain in torque regulator";
+    parameter SI.TimeAging KIP "Integrator gain in torque regulator";
+    parameter SI.PerUnit Kf "Rate feedback gain";
+    parameter SI.Time Tf "Rate feedback time constant";
+    parameter SI.PerUnit dPMX "Max limit in power PI controller";
+    parameter SI.PerUnit dPMN "Min limit in power PI controller";
+    parameter SI.Time T_Power "Power filter time constant";
+    parameter SI.PerUnit Pref=p0;
+    parameter SI.PerUnit k20 "Integrator in active power regulator";
+    parameter SI.PerUnit k30 "Active power regulator feedback";
+    parameter SI.PerUnit k50 "Power filter";
+    parameter SI.PerUnit p0;
     Modelica.Blocks.Interfaces.RealInput PELEC annotation (Placement(
           transformation(extent={{-220,-20},{-180,20}})));
     Modelica.Blocks.Interfaces.RealInput I_PMAX annotation (Placement(
@@ -366,10 +365,10 @@ protected
       y_start=p0,
       T=Tp)
       annotation (Placement(transformation(extent={{-120,-10},{-100,10}})));
-    parameter Real Tp=0.50000E-01 " Pelec filter in fast PF controller";
+    parameter SI.Time Tp=0.50000E-01 "Pelec filter in fast PF controller";
     parameter Real PFA_ref=atan2(q0, p0) "PF angle reference if PFAFLG=1";
-    parameter Real p0;
-    parameter Real q0;
+    parameter SI.PerUnit p0;
+    parameter SI.PerUnit q0;
     Modelica.Blocks.Interfaces.RealInput u annotation (Placement(transformation(
             extent={{-214,-10},{-194,10}})));
     Modelica.Blocks.Interfaces.RealOutput Q_REF_PF
@@ -452,16 +451,16 @@ protected
       T1=0.025,
       x_start=0)
       annotation (Placement(transformation(extent={{-22,10},{-2,30}})));
-    parameter Real Tfv "Filter time constant in voltage regulator (sec)";
-    parameter Real Kpv " Proportional gain in voltage regulator (pu)";
-    parameter Real KIV " Integrator gain in voltage regulator (pu)";
-    parameter Real QMX " Max limit in voltage regulator (pu)";
-    parameter Real QMN " Min limit in voltage regulator (pu)";
-    parameter Real Tv=0.50000E-01 " Lag time constant in WindVar controller";
-    parameter Real Vref;
-    parameter Real k0 "Filter in voltage regulator";
-    parameter Real k10 "Integrator in voltage regulator";
-    parameter Real k80 "Lag of the WindVar controller";
+    parameter SI.Time Tfv "Filter time constant in voltage regulator";
+    parameter SI.PerUnit Kpv "Proportional gain in voltage regulator";
+    parameter SI.TimeAging KIV "Integrator gain in voltage regulator";
+    parameter SI.PerUnit QMX "Max limit in voltage regulator";
+    parameter SI.PerUnit QMN "Min limit in voltage regulator";
+    parameter SI.Time Tv=0.50000E-01 "Lag time constant in WindVar controller";
+    parameter SI.PerUnit Vref;
+    parameter SI.PerUnit k0 "Filter in voltage regulator";
+    parameter SI.PerUnit k10 "Integrator in voltage regulator";
+    parameter SI.PerUnit k80 "Lag of the WindVar controller";
     Modelica.Blocks.Interfaces.RealInput V_REG annotation (Placement(
           transformation(extent={{-214,-10},{-194,10}})));
     Modelica.Blocks.Interfaces.RealOutput Q_ord
