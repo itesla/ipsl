@@ -1,3 +1,4 @@
+within OpenIPSL.Electrical.Controls.PSSE.TG;
 model GAST "Gas Turbine-Governor"
   extends BaseClasses.BaseGovernor;
   parameter SI.PerUnit R=0.05 "Speed droop gain";
