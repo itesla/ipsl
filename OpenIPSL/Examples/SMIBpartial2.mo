@@ -55,7 +55,7 @@ partial model SMIBpartial2 "SMIB system with one load and one additional bus mad
         origin={44,-60})));
   OpenIPSL.Electrical.Buses.Bus GEN1
     annotation (Placement(transformation(extent={{-50,-10},{-30,10}})));
-  inner OpenIPSL.Electrical.SystemBase SysData( S_b = 100e6, fn = 50)
+  inner OpenIPSL.Electrical.SystemBase SysData(S_b = 100e6, fn = 50)
     annotation (Placement(transformation(extent={{-100,80},{-40,100}})));
   OpenIPSL.Electrical.Buses.Bus LOAD
     annotation (Placement(transformation(extent={{-10,-10},{10,10}})));
