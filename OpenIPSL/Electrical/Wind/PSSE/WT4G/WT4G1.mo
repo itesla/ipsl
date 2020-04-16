@@ -66,14 +66,14 @@ model WT4G1 "Wind Generator Model with Power Converter (Type 4)"
     VLVPL1=V_LVPL1,
     VLVPL2=V_LVPL2,
     GLVPL=G_LVPL)
-    annotation (Placement(transformation(extent={{40,-40},{20,-20}})));
+    annotation (Placement(transformation(extent={{20,-40},{0,-20}})));
   Modelica.Blocks.Nonlinear.Limiter imLimited_max(uMin=-Modelica.Constants.inf,
       uMax=RIp_LVPL)
     annotation (Placement(transformation(extent={{-50,35},{-40,45}})));
   Modelica.Blocks.Nonlinear.VariableLimiter variableLimiter(y(start=Ipcmd0))
     annotation (Placement(transformation(extent={{20,35},{30,45}})));
   Modelica.Blocks.Sources.Constant const(k=-Modelica.Constants.inf)
-    annotation (Placement(transformation(extent={{-10,25},{0,35}})));
+    annotation (Placement(transformation(extent={{-4,25},{6,35}})));
   //Initialization parameters
   Modelica.Blocks.Interfaces.RealInput I_qcmd(start=Iy0) annotation (Placement(
         transformation(extent={{-110,65},{-90,85}}), iconTransformation(extent=
@@ -91,6 +91,11 @@ model WT4G1 "Wind Generator Model with Power Converter (Type 4)"
         extent={{-10,-10},{10,10}},
         rotation=90,
         origin={-20,110})));
+  OpenIPSL.NonElectrical.Continuous.SimpleLag K2(
+    K=1,
+    T=T_LVPL,
+    y_start=v_0)
+    annotation (Placement(transformation(extent={{46,-36},{34,-24}})));
 protected
   SI.Angle delta(start=angle0_rad);
   SI.PerUnit VT(start=v_0) "Bus voltage magnitude (pu)";
@@ -160,20 +165,23 @@ equation
     annotation (Line(points={{30.5,40},{69,40}}, color={0,0,127}));
   connect(Iperr.u2, lVACL.Ip_LVPL) annotation (Line(points={{-75,36},{-75,20},{
           46,20},{46,40},{69,40}}, color={0,0,127}));
-  connect(const.y, variableLimiter.limit2) annotation (Line(points={{0.5,30},{
+  connect(const.y, variableLimiter.limit2) annotation (Line(points={{6.5,30},{
           10,30},{10,36},{19,36}}, color={0,0,127}));
   connect(K1.y, hVRCL.Iq)
     annotation (Line(points={{-19.5,75},{51.25,75}}, color={0,0,127}));
   connect(Iy, hVRCL.Iq) annotation (Line(points={{110,90},{0,90},{0,75},{51.25,
           75}}, color={0,0,127}));
-  connect(lVPL.LVPL, variableLimiter.limit1) annotation (Line(points={{19,-30},
-          {14,-30},{14,44},{19,44}}, color={0,0,127}));
+  connect(lVPL.LVPL, variableLimiter.limit1) annotation (Line(points={{-1,-30},
+          {-12,-30},{-12,44},{19,44}},
+                                     color={0,0,127}));
   connect(Vtt, hVRCL.Vt) annotation (Line(points={{60,-100},{60,66.25},{60,
           66.25}}, color={0,0,127}));
-  connect(lVPL.Vt, hVRCL.Vt)
-    annotation (Line(points={{39,-30},{60,-30},{60,66.25}}, color={0,0,127}));
   connect(lVACL.Vt, hVRCL.Vt) annotation (Line(points={{78,31},{78,-30},{60,-30},
           {60,66.25}}, color={0,0,127}));
+  connect(lVPL.Vt, K2.y)
+    annotation (Line(points={{19,-30},{33.4,-30}}, color={0,0,127}));
+  connect(K2.u, hVRCL.Vt) annotation (Line(points={{47.2,-30},{60,-30},{60,
+          66.25}}, color={0,0,127}));
   annotation (
     Diagram(coordinateSystem(
         preserveAspectRatio=true,
