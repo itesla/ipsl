@@ -118,9 +118,7 @@ protected
 
   parameter SI.PerUnit pm00=((vq0 + ra*iq0)*iq0 + (vd0 + ra*id0)*id0)/S_SBtoMB
     "Init. val. (pu, system base)";
-initial equation
-  w = 1;
-  delta = delta0;
+
 equation
   v = sqrt(p.vr^2 + p.vi^2);
   anglev = atan2(p.vi, p.vr);
