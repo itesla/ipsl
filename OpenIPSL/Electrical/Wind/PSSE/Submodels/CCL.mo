@@ -78,14 +78,24 @@ model CCL
   Modelica.Blocks.Math.Gain gain1(k=-1) annotation (Placement(transformation(
         extent={{-5,-5},{5,5}},
         rotation=90,
-        origin={75,47})));
+        origin={45,51})));
   Modelica.Blocks.Interfaces.RealInput Vt annotation (Placement(transformation(
         extent={{-20,-20},{20,20}},
         rotation=270,
         origin={0,78}), iconTransformation(
         extent={{-10,-10},{10,10}},
         origin={-100,0})));
-protected
+  Modelica.Blocks.Sources.Constant const3(k=ImaxTD)
+                                                  annotation (Placement(
+        transformation(
+        extent={{7,-7},{-7,7}},
+        origin={-43,-17})));
+  Modelica.Blocks.Sources.Constant const4(k=ImaxTD)
+                                                  annotation (Placement(
+        transformation(
+        extent={{-7,-7},{7,7}},
+        origin={31,-17})));
+protected 
   Modelica.Blocks.Interfaces.RealInput Iqmax annotation (Placement(
         transformation(
         extent={{-20,-20},{20,20}},
@@ -93,7 +103,7 @@ protected
         origin={0,40}), iconTransformation(
         extent={{-9,-9},{9,9}},
         origin={-101,5})));
-protected
+protected 
   Modelica.Blocks.Interfaces.RealOutput IQmin1 annotation (Placement(
         transformation(
         extent={{-10,-10},{10,10}},
@@ -146,7 +156,7 @@ protected
     "sqrt(ImaxTD^2 - IpCMD^2)" annotation (Placement(transformation(
         extent={{-16,-16},{16,16}},
         rotation=180,
-        origin={76,-18}), iconTransformation(
+        origin={76,-14}), iconTransformation(
         extent={{-9,-9},{9,9}},
         rotation=90,
         origin={55,-35})));
@@ -157,7 +167,7 @@ protected
         extent={{-9,-9},{9,9}},
         rotation=90,
         origin={55,-35})));
-equation
+equation 
   Available_remain1 = sqrt(ImaxTD^2 - IpCMD^2);
   Available_remain2 = sqrt(ImaxTD^2 - IqCMD^2);
   Iqmax = (Qmax - 1.6)*(Vt - 1) + Qmax;
@@ -202,10 +212,6 @@ equation
       points={{44,-44.6},{44,-68}},
       color={0,0,127},
       smooth=Smooth.None));
-  connect(min4.y, IQmin1) annotation (Line(
-      points={{44,12.6},{44,80}},
-      color={0,0,127},
-      smooth=Smooth.None));
   connect(gain.u, min2.y) annotation (Line(
       points={{-83,45},{-83,14.6},{-54,14.6}},
       color={0,0,127},
@@ -214,34 +220,28 @@ equation
       points={{-83,56.5},{-83,65.25},{-82,65.25},{-82,80}},
       color={0,0,127},
       smooth=Smooth.None));
-  connect(gain1.y, IQmax1) annotation (Line(
-      points={{75,52.5},{75,61.25},{74,61.25},{74,80}},
-      color={0,0,127},
-      smooth=Smooth.None));
   connect(gain1.u, min4.y) annotation (Line(
-      points={{75,41},{75,12.6},{44,12.6}},
+      points={{45,45},{45,12.6},{44,12.6}},
       color={0,0,127},
       smooth=Smooth.None));
   connect(Iqmax, min5.u2) annotation (Line(
       points={{0,40},{0,15.2},{-0.4,15.2}},
       color={0,0,127},
       smooth=Smooth.None));
-  connect(min4.u1, Available_remain1) annotation (Line(
-      points={{47.6,-1.2},{47.6,-18},{76,-18}},
-      color={0,0,127},
-      smooth=Smooth.None));
-  connect(min3.u2, Available_remain1) annotation (Line(
-      points={{47.6,-30.8},{47.6,-18},{76,-18}},
-      color={0,0,127},
-      smooth=Smooth.None));
-  connect(Available_remain2, min2.u2) annotation (Line(
-      points={{-90,-20},{-57.6,-20},{-57.6,0.8}},
-      color={0,0,127},
-      smooth=Smooth.None));
   connect(min1.u1, Available_remain2) annotation (Line(
       points={{-55.6,-30.8},{-55.6,-20},{-90,-20}},
       color={0,0,127},
       smooth=Smooth.None));
+  connect(const3.y, min2.u2) annotation (Line(points={{-50.7,-17},{-57.6,-17},{-57.6,
+          0.8}}, color={0,0,127}));
+  connect(const4.y, min3.u2) annotation (Line(points={{38.7,-17},{47.6,-17},{47.6,
+          -30.8}}, color={0,0,127}));
+  connect(Available_remain1, min4.u1) annotation (Line(points={{76,-14},{47.6,-14},
+          {47.6,-1.2}}, color={0,0,127}));
+  connect(gain1.y, IQmin1)
+    annotation (Line(points={{45,56.5},{45,80},{44,80}}, color={0,0,127}));
+  connect(IQmax1, min4.y) annotation (Line(points={{74,80},{74,18},{45,18},{45,12.6},
+          {44,12.6}}, color={0,0,127}));
   annotation (
     Icon(coordinateSystem(preserveAspectRatio=true, extent={{-100,-100},{100,
             100}}), graphics={Rectangle(
