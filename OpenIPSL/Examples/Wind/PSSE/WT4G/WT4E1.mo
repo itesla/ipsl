@@ -117,4 +117,5 @@ equation
           {-75.2,-9.6}}, color={0,0,127}));
   connect(wT4G1.Q, wT4E1.Q) annotation (Line(points={{-65.2,-9.6},{-68,-9.6},{-68,
           -6},{-75.2,-6}}, color={0,0,127}));
+  annotation (experiment(StopTime=10));
 end WT4E1;
