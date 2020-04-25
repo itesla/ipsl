@@ -4,24 +4,43 @@ model RampTrackingFilter "Ramp-tracking filter"
   import Modelica.Blocks.Continuous;
   parameter Real T_1;
   parameter Real T_2;
-  parameter Integer M = 5;
-  parameter Integer N = 1;
-  Continuous.TransferFunction TF1[M](b=fill({1},M), a=fill({T_2,1},M));
-  Continuous.TransferFunction TF2[N](b=fill({T_1,1},N), a=fill({T_2,1},N));
+  parameter Integer M = 5 ">=0, M*N<=8";
+  parameter Integer N = 1 ">=0, M*N<=8";
+  parameter Real y_start = 0 "Output start value";
+  Continuous.TransferFunction TF1[M-1](b=fill({1},M-1), a=fill({T_2,1},M-1),y_start=y_start);
+  Continuous.TransferFunction TF2[N](b=fill({T_1,1},N), a=fill({T_2,1},N),y_start=y_start);
 
-equation 
+equation
   if M == 0 or N == 0 then
     u = y;
-  else
-    connect(u, TF1[1].u);
-    for i in 1:M-1 loop
-      connect(TF1[i].y, TF1[i+1].u);
-    end for;
-    connect(TF1[M].y, TF2[1].u);
+  elseif M == 1 then
+    connect(u, TF2[1].u);
     for i in 1:N-1 loop
       connect(TF2[i].y, TF2[i+1].u);
     end for;
-    connect(TF2[N].y, y);
+    connect(TF2[N].y, TF1[1].u);
+    connect(TF1[1].y, y);
+  elseif N == 1 then
+    connect(u, TF2[1].u);
+    connect(TF2[1].y, TF1[1].u);
+    for i in 1:M-2 loop
+      connect(TF1[i].y, TF1[i+1].u);
+    end for;
+    connect(TF1[M-1].y, y);
+  elseif M == 1 and N ==1 then
+    connect(u, TF2[1].u);
+    connect(TF2[1].y, TF1[1].u);
+    connect(TF1[1].y, y);
+  else
+    connect(u, TF2[1].u);
+    for i in 1:N-1 loop
+      connect(TF2[i].y, TF2[i+1].u);
+    end for;
+    connect(TF2[N].y, TF1[1].u);
+    for i in 1:M-2 loop
+      connect(TF1[i].y, TF1[i+1].u);
+    end for;
+    connect(TF1[M-1].y, y);
   end if;
   annotation (
     Line(points={{30,0},{110,0}}, color={0,0,127}),
@@ -68,7 +87,7 @@ equation
 </tr>
 <tr>
 <td><p>Last update</p></td>
-<td><p>2020-02-18</p></td>
+<td><p>2020-04-23</p></td>
 </tr>
 <tr>
 <td><p>Author</p></td>
