@@ -1,5 +1,5 @@
 within OpenIPSL.Examples.Wind.PSSE.WT4G;
-model WT4G1
+model WT4E1
   extends Modelica.Icons.Example;
   OpenIPSL.Electrical.Branches.PwLine pwLine(
     R=2.50000E-2,
@@ -51,6 +51,35 @@ model WT4G1
     t1=2,
     t2=2.15)
             annotation (Placement(transformation(extent={{20,-60},{40,-40}})));
+  OpenIPSL.Electrical.Wind.PSSE.WT4G.WT4E1 wT4E1(
+    PFAFLG=false,
+    VARFLG=true,
+    Tfv=0.15,
+    Kpv=18,
+    KIV=5,
+    Kpp=0.05,
+    KIP=0.15,
+    Kf=0.0,
+    Tf=0.08,
+    QMX=0.48,
+    QMN=-0.47,
+    IPMAX=1.1,
+    TRV=0.1,
+    dPMX=0.5,
+    dPMN=-0.5,
+    T_Power=0.05,
+    KQI=0.15,
+    VMINCL=0.9,
+    VMAXCL=1.1,
+    KVI=120,
+    Tv=0.05,
+    Tp=0.05,
+    ImaxTD=1.7,
+    Iphl=1.11,
+    Iqhl=1.11,
+    PQFLAG=false,
+    PSSEMATCH=true)
+    annotation (Placement(transformation(extent={{-98,12},{-74,-12}})));
   inner OpenIPSL.Electrical.SystemBase SysData(fn=50, S_b=100000000) annotation (Placement(transformation(extent={{-100,80},{-48,100}})));
   OpenIPSL.Electrical.Buses.Bus GEN1
     annotation (Placement(transformation(extent={{-40,-10},{-20,10}})));
@@ -59,26 +88,33 @@ model WT4G1
   OpenIPSL.Electrical.Buses.Bus GEN2
     annotation (Placement(transformation(extent={{60,-10},{80,10}})));
 equation
-  connect(wT4G1.p, GEN1.p) annotation (Line(points={{-38.8,-1.77636e-015},{-40,
-          -1.77636e-015},{-40,0},{-30,0}}, color={0,0,255}));
+  connect(wT4G1.p, GEN1.p) annotation (Line(points={{-38.8,-1.77636e-015},{-40,-1.77636e-015},
+          {-40,0},{-30,0}}, color={0,0,255}));
   connect(GEN1.p, pwLine2.p)
     annotation (Line(points={{-30,0},{-19,0}}, color={0,0,255}));
   connect(pwLine2.n, FAULT.p)
     annotation (Line(points={{-1,0},{-1,0},{10,0}}, color={0,0,255}));
   connect(FAULT.p, pwLine.p)
     annotation (Line(points={{10,0},{20,0},{20,20},{31,20}}, color={0,0,255}));
-  connect(pwLine1.p, pwLine.p) annotation (Line(points={{31,-20},{20,-20},{20,20},
-          {31,20}},              color={0,0,255}));
+  connect(pwLine1.p, pwLine.p) annotation (Line(points={{31,-20},{20,-20},{20,
+          20},{31,20}}, color={0,0,255}));
   connect(pwFault.p, FAULT.p) annotation (Line(points={{18.3333,-50},{14,-50},{
-          14,0},{10,0}}, color={0,0,255}));
+          14,0},{10,0}},
+                      color={0,0,255}));
   connect(pwLine.n, GEN2.p)
     annotation (Line(points={{49,20},{60,20},{60,0},{70,0}}, color={0,0,255}));
-  connect(pwLine1.n, GEN2.p) annotation (Line(points={{49,-20},{60,-20},{60,0},
-          {70,0}}, color={0,0,255}));
+  connect(pwLine1.n, GEN2.p) annotation (Line(points={{49,-20},{60,-20},{60,0},{
+          70,0}}, color={0,0,255}));
   connect(GEN2.p, gENCLS2_1.p)
     annotation (Line(points={{70,0},{90,0},{90,0}}, color={0,0,255}));
-  connect(wT4G1.I_qcmd, wT4G1.I_qcmd0) annotation (Line(points={{-62.8,9.6},{-66,
-          9.6},{-66,16},{-59.2,16},{-59.2,13.2}}, color={0,0,127}));
-  connect(wT4G1.I_pcmd, wT4G1.I_pcmd0) annotation (Line(points={{-62.8,4.8},{-68,
-          4.8},{-68,18},{-54.4,18},{-54.4,13.2}}, color={0,0,127}));
-end WT4G1;
+  connect(wT4E1.WIQCMD, wT4G1.I_qcmd) annotation (Line(points={{-72.8,8.4},{-68,
+          8.4},{-68,9.6},{-62.8,9.6}}, color={0,0,127}));
+  connect(wT4E1.WIPCMD, wT4G1.I_pcmd) annotation (Line(points={{-72.8,3.6},{-68,
+          3.6},{-68,4.8},{-62.8,4.8}}, color={0,0,127}));
+  connect(wT4G1.P, wT4E1.P) annotation (Line(points={{-65.2,-4.8},{-68,-4.8},{-68,
+          -2.4},{-75.2,-2.4}}, color={0,0,127}));
+  connect(wT4G1.V, wT4E1.V) annotation (Line(points={{-65.2,0},{-70,0},{-70,-9.6},
+          {-75.2,-9.6}}, color={0,0,127}));
+  connect(wT4G1.Q, wT4E1.Q) annotation (Line(points={{-65.2,-9.6},{-68,-9.6},{-68,
+          -6},{-75.2,-6}}, color={0,0,127}));
+end WT4E1;
