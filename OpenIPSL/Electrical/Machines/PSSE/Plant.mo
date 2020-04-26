@@ -2,7 +2,21 @@ within OpenIPSL.Electrical.Machines.PSSE;
 model Plant
   extends Interfaces.Generator;
 
-  replaceable OpenIPSL.Electrical.Machines.PSSE.BaseClasses.baseMachine machine
+  replaceable OpenIPSL.Electrical.Machines.PSSE.BaseClasses.baseMachine machine(
+    M_b=100000000,
+    Tpd0=1,
+    Tppd0=1,
+    Tppq0=1,
+    H=1,
+    D=1,
+    Xd=0.01,
+    Xq=0.01,
+    Xpd=0.01,
+    Xppd=0.01,
+    Xppq=0.01,
+    Xl=0.01,
+    S10=1,
+    S12=1)
     annotation (choicesAllMatching=true,
                 Placement(transformation(extent={{40,-10},
             {60,10}})));
@@ -20,8 +34,8 @@ model Plant
     annotation (Placement(transformation(extent = {{-88, -6}, {-48, 12}})));
 equation
   connect(pss.V_S2, governor.PMECH0) annotation (
-    Line(points={{-87.3684,-1.5},{-94,-1.5},{-94,30},{-40,30},{-40,45.4545},{-29.1667,45.4545}},
-                                                                                          color = {0, 0, 127}));
+    Line(points={{-87.3684,-1.5},{-94,-1.5},{-94,30},{-40,30},{-40,45.4545},{
+          -29.1667,45.4545}},                                                             color = {0, 0, 127}));
   connect(pss.V_S1, machine.SPEED) annotation (
     Line(points={{-87.3684,7.5},{-98,7.5},{-98,68},{80,68},{80,7},{61,7}},           color = {0, 0, 127}));
   connect(pss.VOTHSG, exciter.VOTHSG) annotation (
@@ -30,10 +44,11 @@ equation
                                       color={0,0,127}));
   connect(machine.p, pwPin)
     annotation (Line(points={{60,0},{110,0}},         color={0,0,255}));
-  connect(exciter.XADIFD, machine.XADIFD) annotation (Line(points={{-0.45,-23.6222},{-0.45,-30},{64,-30},{64,-9},{60.8,-9}},
+  connect(exciter.XADIFD, machine.XADIFD) annotation (Line(points={{-0.45,
+          -23.6222},{-0.45,-30},{64,-30},{64,-9},{60.8,-9}},
                                                    color={0,0,127}));
-  connect(machine.EFD0, exciter.EFD0) annotation (Line(points={{61,-5},{66,-5},{66,-34},{-32,-34},{-32,-17.3889},{-28,-17.3889}},
-                                                                 color={0,0,127}));
+  connect(machine.EFD0, exciter.EFD0) annotation (Line(points={{61,-5},{66,-5},
+          {66,-34},{-32,-34},{-32,-17.3889},{-28,-17.3889}},     color={0,0,127}));
   connect(exciter.ECOMP, machine.ETERM) annotation (Line(points={{-28,-5.11111},{-32,-5.11111},{-32,20},{68,20},{68,-3},{61,-3}},
                                                             color={0,0,127}));
   connect(const.y, exciter.VUEL) annotation (Line(points={{-31.6,-50},{-21.35,
@@ -42,9 +57,11 @@ equation
           -68},{-15.65,-24}}, color={0,0,127}));
   connect(governor.PMECH, machine.PMECH) annotation (Line(points={{-9.58333,50.9091},{28,50.9091},{28,5},{38,5}},
                                 color={0,0,127}));
-  connect(governor.SPEED, machine.SPEED) annotation (Line(points={{-29.1667,55.4545},{-40,55.4545},{-40,68},{80,68},{80,7},{61,7}},
+  connect(governor.SPEED, machine.SPEED) annotation (Line(points={{-29.1667,
+          55.4545},{-40,55.4545},{-40,68},{80,68},{80,7},{61,7}},
                                                      color={0,0,127}));
-  connect(machine.PMECH0, governor.PMECH0) annotation (Line(points={{61,5},{74,5},{74,30},{-40,30},{-40,45.4545},{-29.1667,45.4545}},
+  connect(machine.PMECH0, governor.PMECH0) annotation (Line(points={{61,5},{74,
+          5},{74,30},{-40,30},{-40,45.4545},{-29.1667,45.4545}},
                                                        color={0,0,127}));
 
 end Plant;

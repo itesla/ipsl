@@ -11,7 +11,7 @@ model IEEE4_ThreePhase
         origin={-88,0},
         extent={{-10,-10},{10,10}},
         rotation=0)));
-  ExtremumSeekingBis.Examples.OpenIPSL_Example.Components.Meas_3Ph Bus1
+  Electrical.ThreePhase.Buses.Bus_3Ph                              Bus1
     annotation (Placement(visible=true, transformation(
         origin={-66,0},
         extent={{-10,-10},{10,10}},
@@ -32,12 +32,12 @@ model IEEE4_ThreePhase
         origin={-44,0},
         extent={{-10,-10},{10,10}},
         rotation=0)));
-  ExtremumSeekingBis.Examples.OpenIPSL_Example.Components.Meas_3Ph Bus2
+  Electrical.ThreePhase.Buses.Bus_3Ph Bus2
     annotation (Placement(visible=true, transformation(
         origin={-22,0},
         extent={{-10,-10},{10,10}},
         rotation=0)));
-  ExtremumSeekingBis.Examples.OpenIPSL_Example.Components.Meas_3Ph Bus3(
+  Electrical.ThreePhase.Buses.Bus_3Ph Bus3(
     angle_A=-30,
     angle_B=-150,
     angle_C=90) annotation (Placement(visible=true, transformation(
@@ -60,7 +60,7 @@ model IEEE4_ThreePhase
         origin={46,0},
         extent={{-10,-10},{10,10}},
         rotation=0)));
-  ExtremumSeekingBis.Examples.OpenIPSL_Example.Components.Meas_3Ph Bus4(
+  Electrical.ThreePhase.Buses.Bus_3Ph Bus4(
     angle_A=-30,
     angle_B=-150,
     angle_C=90) annotation (Placement(visible=true, transformation(

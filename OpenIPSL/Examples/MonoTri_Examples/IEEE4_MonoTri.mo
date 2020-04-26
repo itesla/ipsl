@@ -25,18 +25,18 @@ model IEEE4_MonoTri
     B_0=-1.82768503568,
     B_1=-5.2872570055,
     B_2=-5.2872570055,
-    Connection=0,
+    Connection=3,
     G_0=0.729734359723,
     G_1=2.58122706441,
     G_2=2.58122706441,
-    ModelType=1,
+    ModelType=0,
     R=0.166666666667,
     X=1,
     tap=1) annotation (Placement(visible=true, transformation(
         origin={-10,0},
         extent={{-10,-10},{10,10}},
         rotation=0)));
-  ExtremumSeekingBis.Examples.OpenIPSL_Example.Components.Meas_3Ph Bus3
+  Electrical.ThreePhase.Buses.Bus_3Ph                              Bus3
     annotation (Placement(visible=true, transformation(
         origin={24,0},
         extent={{-10,-10},{10,10}},
@@ -57,19 +57,20 @@ model IEEE4_MonoTri
         origin={46,0},
         extent={{-10,-10},{10,10}},
         rotation=0)));
-  ExtremumSeekingBis.Examples.OpenIPSL_Example.Components.Meas_3Ph Bus4
+  Electrical.ThreePhase.Buses.Bus_3Ph                              Bus4
     annotation (Placement(visible=true, transformation(
         origin={68,0},
         extent={{-10,-10},{10,10}},
         rotation=0)));
   Electrical.ThreePhase.Loads.WyeLoad_3Ph Load(
     ModelType=0,
-    P_a=1.275,
-    P_b=1.800,
-    P_c=2.375,
-    Q_a=0.790,
-    Q_b=0.872,
-    Q_c=0.781) annotation (Placement(visible=true, transformation(
+    P_a=1275000,
+    P_b=1800000,
+    P_c=2375000,
+    Q_a=790000,
+    Q_b=872000,
+    Q_c=781000)
+               annotation (Placement(visible=true, transformation(
         origin={90,0},
         extent={{-10,-10},{10,10}},
         rotation=90)));

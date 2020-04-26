@@ -22,12 +22,12 @@ model IEEE13_ThreePhase
         origin={38,88},
         extent={{-10,-10},{10,10}},
         rotation=0)));
-  ExtremumSeekingBis.Examples.OpenIPSL_Example.Components.Meas_3Ph Bus632
+  Electrical.ThreePhase.Buses.Bus_3Ph Bus632
     annotation (Placement(visible=true, transformation(
         origin={148,88},
         extent={{-10,-10},{10,10}},
         rotation=0)));
-  ExtremumSeekingBis.Examples.OpenIPSL_Example.Components.Meas_3Ph Bus671
+  Electrical.ThreePhase.Buses.Bus_3Ph Bus671
     annotation (Placement(visible=true, transformation(
         origin={364,88},
         extent={{-10,-10},{10,10}},
@@ -48,7 +48,7 @@ model IEEE13_ThreePhase
         origin={272,88},
         extent={{-14,-10},{14,10}},
         rotation=0)));
-  ExtremumSeekingBis.Examples.OpenIPSL_Example.Components.Meas_3Ph Bus633
+  Electrical.ThreePhase.Buses.Bus_3Ph Bus633
     annotation (Placement(visible=true, transformation(
         origin={204,192},
         extent={{-10,-10},{10,10}},
@@ -80,7 +80,7 @@ model IEEE13_ThreePhase
         origin={204,268},
         extent={{-10,-10},{10,10}},
         rotation=180)));
-  ExtremumSeekingBis.Examples.OpenIPSL_Example.Components.Meas_3Ph Bus675
+  Electrical.ThreePhase.Buses.Bus_3Ph Bus675
     annotation (Placement(visible=true, transformation(
         origin={382,210},
         extent={{-10,-10},{10,10}},
@@ -141,7 +141,7 @@ model IEEE13_ThreePhase
         origin={420,226},
         extent={{-10,-10},{10,10}},
         rotation=90)));
-  ExtremumSeekingBis.Examples.OpenIPSL_Example.Components.Meas_3Ph Bus634
+  Electrical.ThreePhase.Buses.Bus_3Ph Bus634
     annotation (Placement(visible=true, transformation(
         origin={204,238},
         extent={{-10,-10},{10,10}},
@@ -169,7 +169,7 @@ model IEEE13_ThreePhase
         origin={390,116},
         extent={{-4,-4},{4,4}},
         rotation=90)));
-  ExtremumSeekingBis.Examples.OpenIPSL_Example.Components.Meas_3Ph Bus692
+  Electrical.ThreePhase.Buses.Bus_3Ph Bus692
     annotation (Placement(visible=true, transformation(
         origin={382,138},
         extent={{-10,-10},{10,10}},
@@ -218,7 +218,7 @@ model IEEE13_ThreePhase
         origin={200,6},
         extent={{-10,-10},{10,10}},
         rotation=90)));
-  ExtremumSeekingBis.Examples.OpenIPSL_Example.Components.Meas_3Ph Bus680
+  Electrical.ThreePhase.Buses.Bus_3Ph Bus680
     annotation (Placement(visible=true, transformation(
         origin={456,88},
         extent={{-10,-10},{10,10}},
@@ -312,7 +312,7 @@ model IEEE13_ThreePhase
         origin={114,88},
         extent={{-14,-10},{14,10}},
         rotation=0)));
-  ExtremumSeekingBis.Examples.OpenIPSL_Example.Components.Meas_3Ph BusRG60(
+  Electrical.ThreePhase.Buses.Bus_3Ph BusRG60(
     V_A=1.0625,
     V_B=1.05,
     V_C=1.0687) annotation (Placement(visible=true, transformation(
@@ -467,16 +467,16 @@ equation
   connect(Bus675.p3, L692_675.Cout)
     annotation (Line(points={{391,210},{391,197}}, color={0,0,255}));
   connect(Bus671.p3, breaker3.s) annotation (Line(points={{364,79},{390,79},{
-          390,111},{390,111}}, color={0,0,255}));
+          390,112},{390,112}}, color={0,0,255}));
   connect(Bus671.p2, breaker2.s) annotation (Line(points={{364,88},{382,88},{
-          382,117},{382,117}}, color={0,0,255}));
+          382,118},{382,118}}, color={0,0,255}));
   connect(Bus671.p1, breaker.s) annotation (Line(points={{364,97},{374,97},{374,
-          111},{374,111}}, color={0,0,255}));
-  connect(breaker3.r, Bus692.p3) annotation (Line(points={{390,121},{390,121},{
+          112},{374,112}}, color={0,0,255}));
+  connect(breaker3.r, Bus692.p3) annotation (Line(points={{390,120},{390,120},{
           390,138},{391,138}}, color={0,0,255}));
-  connect(breaker2.r, Bus692.p2) annotation (Line(points={{382,127},{382,127},{
+  connect(breaker2.r, Bus692.p2) annotation (Line(points={{382,126},{382,126},{
           382,138},{382,138}}, color={0,0,255}));
-  connect(breaker.r, Bus692.p1) annotation (Line(points={{374,121},{374,121},{
+  connect(breaker.r, Bus692.p1) annotation (Line(points={{374,120},{374,120},{
           374,138},{373,138}}, color={0,0,255}));
   connect(Bus671.p3, DistLoad671.C) annotation (Line(points={{364,79},{302,79},
           {302,61},{301.1,61}}, color={0,0,255}));
