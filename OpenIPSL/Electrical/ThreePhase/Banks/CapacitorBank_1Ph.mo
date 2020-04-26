@@ -1,8 +1,7 @@
 within OpenIPSL.Electrical.ThreePhase.Banks;
 model CapacitorBank_1Ph
-  outer OpenIPSL.Electrical.SystemBase SysData;
-  parameter SI.ApparentPower Sn(displayUnit="MVA")=SysData.S_b "System base"
-    annotation (Dialog(group="Power flow"));
+  extends ThreePhaseComponent;
+
   OpenIPSL.Interfaces.PwPin A(vr(start=var0), vi(start=vai0)) annotation (
       Placement(
       transformation(
@@ -25,7 +24,7 @@ model CapacitorBank_1Ph
     annotation (Dialog(group="Power flow data"));
 protected
   Real Pa=0;
-  Real Qa=Q_a/Sn;
+  Real Qa=Q_a/S_p;
 
   // Initializing voltages for each pin
   parameter Real var0=VA*cos(AngA) "Initialitation";

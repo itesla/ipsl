@@ -1,10 +1,7 @@
 within OpenIPSL.Electrical.ThreePhase.Loads;
 model Dyn_wye_3Ph_balanced
-  outer OpenIPSL.Electrical.SystemBase SysData;
+  extends ThreePhaseComponent;
   import Modelica.Blocks.Interfaces.*;
-  parameter SI.ApparentPower Sn(displayUnit="MVA")=SysData.S_b
-    "System base power"
-    annotation (Dialog(group="Power flow"));
   Modelica.Blocks.Interfaces.RealInput P_in "external P (pu)" annotation (
       Placement(
       visible=true,
@@ -77,19 +74,19 @@ protected
     "Initial reactive power";
 
 equation
-  P_a = P_in * Sn / 3;
-  P_b = P_in * Sn / 3;
-  P_c = P_in * Sn / 3;
-  Q_a = Q_in * Sn / 3;
-  Q_b = Q_in * Sn / 3;
-  Q_c = Q_in * Sn / 3;
+  P_a = P_in * S_p / 3;
+  P_b = P_in * S_p / 3;
+  P_c = P_in * S_p / 3;
+  Q_a = Q_in * S_p / 3;
+  Q_b = Q_in * S_p / 3;
+  Q_c = Q_in * S_p / 3;
 
-  P_a = (A.vr*A.ir + A.vi*A.ii)*Sn;
-  Q_a = (A.vi*A.ir - A.vr*A.ii)*Sn;
-  P_b = (B.vr*B.ir + B.vi*B.ii)*Sn;
-  Q_b = (B.vi*B.ir - B.vr*B.ii)*Sn;
-  P_c = (C.vr*C.ir + C.vi*C.ii)*Sn;
-  Q_c = (C.vi*C.ir - C.vr*C.ii)*Sn;
+  P_a = (A.vr*A.ir + A.vi*A.ii)*S_p;
+  Q_a = (A.vi*A.ir - A.vr*A.ii)*S_p;
+  P_b = (B.vr*B.ir + B.vi*B.ii)*S_p;
+  Q_b = (B.vi*B.ir - B.vr*B.ii)*S_p;
+  P_c = (C.vr*C.ir + C.vi*C.ii)*S_p;
+  Q_c = (C.vi*C.ir - C.vr*C.ii)*S_p;
 
   annotation (
     Icon(coordinateSystem(preserveAspectRatio=false, initialScale=0.1),

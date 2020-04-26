@@ -1,5 +1,6 @@
 within OpenIPSL.Electrical.ThreePhase.Branches.Transformer;
 model Transformer_3Ph "Three Phase transformer modeled in a PI element"
+  extends ThreePhaseComponent;
 
   import OpenIPSL.Electrical.ThreePhase.Branches.Transformer.TransfConnection.Yg_Yg;
   import OpenIPSL.Electrical.ThreePhase.Branches.Transformer.TransfConnection.D_D;
@@ -10,8 +11,6 @@ model Transformer_3Ph "Three Phase transformer modeled in a PI element"
   import OpenIPSL.Electrical.ThreePhase.Branches.Transformer.TransfConnection.Y_D;
   import OpenIPSL.Electrical.ThreePhase.Branches.Transformer.TransfConnection.Y_Yg;
   import OpenIPSL.Electrical.ThreePhase.Branches.Transformer.TransfConnection.Yg_Y;
-
-  outer OpenIPSL.Electrical.SystemBase SysData;
 
   OpenIPSL.Interfaces.PwPin Ain
     annotation (Placement(transformation(extent={{-100,80},{-80,100}})));
@@ -37,9 +36,6 @@ model Transformer_3Ph "Three Phase transformer modeled in a PI element"
       choice=6 "Y-D",
       choice=7 "Y-Yg",
       choice=8 "Yg-Y"));
-
-  parameter Real Sb=SysData.S_b "System base power (MVA)"
-    annotation (Dialog(group="Power flow"));
   parameter Real fn=SysData.fn "Frequency rating (Hz)"
     annotation (Dialog(group="Power flow"));
   parameter Real tap=1 "Nominal tap ratio (Vs/Vp)"

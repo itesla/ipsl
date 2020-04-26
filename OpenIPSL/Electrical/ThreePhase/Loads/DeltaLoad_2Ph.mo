@@ -1,8 +1,6 @@
 within OpenIPSL.Electrical.ThreePhase.Loads;
 model DeltaLoad_2Ph
-  outer OpenIPSL.Electrical.SystemBase SysData;
-  parameter SI.ApparentPower Sn(displayUnit="MVA")=SysData.S_b "System base"
-    annotation (Dialog(group="Power flow"));
+  extends ThreePhaseComponent;
   OpenIPSL.Interfaces.PwPin A(
     vr(start=var0),
     vi(start=vai0),
@@ -58,7 +56,7 @@ model DeltaLoad_2Ph
     annotation (Dialog(group="Load Parameters for ZIP Model"));
 
 protected
-  parameter Real[1, 2] TPhasePower=[P_ab, Q_ab]/Sn;
+  parameter Real[1, 2] TPhasePower=[P_ab, Q_ab]/S_p;
   parameter Real[1, 3] ZIP_coef=[A_ab/100, B_ab/100, C_ab/100];
 
   // Calculating the Line Voltage in p.u.

@@ -1,9 +1,7 @@
 within OpenIPSL.Electrical.ThreePhase.Loads;
 model WyeLoad_3Ph
-  outer OpenIPSL.Electrical.SystemBase SysData;
+  extends ThreePhaseComponent;
   import Modelica.Constants.pi;
-  parameter SI.ApparentPower Sn(displayUnit="MVA")=SysData.S_b "System base"
-    annotation (Dialog(group="Power flow"));
   OpenIPSL.Interfaces.PwPin A(vr(start=var0), vi(start=vai0)) annotation (
       Placement(
       transformation(
@@ -93,7 +91,7 @@ model WyeLoad_3Ph
     annotation (Dialog(group="Load Parameters for ZIP Model"));
 
 protected
-  parameter Real[1, 6] TPhasePower=[P_a, P_b, P_c, Q_a, Q_b, Q_c]/Sn;
+  parameter Real[1, 6] TPhasePower=[P_a, P_b, P_c, Q_a, Q_b, Q_c]/S_p;
   parameter Real[1, 9] ZIP_coef=[A_pa/100, B_pa/100, C_pa/100, A_pb/100, B_pb/
       100, C_pb/100, A_pc/100, B_pc/100, C_pc/100];
   // Calculating V and V2

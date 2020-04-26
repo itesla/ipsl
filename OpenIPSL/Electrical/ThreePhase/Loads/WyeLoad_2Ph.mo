@@ -1,8 +1,6 @@
 within OpenIPSL.Electrical.ThreePhase.Loads;
 model WyeLoad_2Ph
-  outer OpenIPSL.Electrical.SystemBase SysData;
-  parameter Real Sn=SysData.S_b "Power rating (MVA)"
-    annotation (Dialog(group="Power flow"));
+  extends ThreePhaseComponent;
   OpenIPSL.Interfaces.PwPin A(
     vr(start=var0),
     vi(start=vai0),
@@ -64,8 +62,7 @@ model WyeLoad_2Ph
     "Percentage of Constant Impedance Load] for Phase B (%)"
     annotation (Dialog(group="Load Parameters for ZIP Model"));
 protected
-  parameter Real[1, 4] TPhasePower=[P_a/(Sn/3), P_b/(Sn/3), Q_a/(Sn/3), Q_b/(Sn
-      /3)];
+  parameter Real[1, 4] TPhasePower=[P_a, P_b, Q_a, Q_b]/S_p;
   parameter Real[1, 6] ZIP_coef=[A_pa/100, B_pa/100, C_pa/100, A_pb/100, B_pb/
       100, C_pb/100];
   // Calculating V and V2

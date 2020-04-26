@@ -1,5 +1,6 @@
 within OpenIPSL.Electrical.ThreePhase.Buses;
 model Bus_1Ph
+  extends ThreePhaseComponent;
   import Modelica.Constants.pi;
   OpenIPSL.Interfaces.PwPin p1(vr(start=V_1*cos(angle_1*Modelica.Constants.pi/
           180)), vi(start=V_1*sin(angle_1*Modelica.Constants.pi/180)))

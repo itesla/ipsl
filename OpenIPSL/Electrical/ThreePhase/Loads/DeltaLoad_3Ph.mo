@@ -1,8 +1,6 @@
 within OpenIPSL.Electrical.ThreePhase.Loads;
 model DeltaLoad_3Ph
-  outer OpenIPSL.Electrical.SystemBase SysData;
-  parameter SI.ApparentPower Sn(displayUnit="MVA")=SysData.S_b "System base"
-    annotation (Dialog(group="Power flow"));
+  extends ThreePhaseComponent;
   OpenIPSL.Interfaces.PwPin A(vr(start=var0), vi(start=vai0)) annotation (
       Placement(
       transformation(
@@ -91,7 +89,7 @@ model DeltaLoad_3Ph
     annotation (Dialog(group="Load Parameters for ZIP Model"));
 
 protected
-  parameter Real[1, 6] TPhasePower=[P_ab, P_bc, P_ca, Q_ab, Q_bc, Q_ca]/Sn;
+  parameter Real[1, 6] TPhasePower=[P_ab, P_bc, P_ca, Q_ab, Q_bc, Q_ca]/S_p;
   parameter Real[1, 9] ZIP_coef=[A_ab/100, B_ab/100, C_ab/100, A_bc/100, B_bc/
       100, C_bc/100, A_ca/100, B_ca/100, C_ca/100];
 

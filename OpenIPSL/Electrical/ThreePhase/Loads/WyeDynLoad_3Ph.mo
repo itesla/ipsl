@@ -1,10 +1,8 @@
 within OpenIPSL.Electrical.ThreePhase.Loads;
 model WyeDynLoad_3Ph
-
-  outer OpenIPSL.Electrical.SystemBase SysData;
+  extends ThreePhaseComponent;
   import Modelica.Blocks.Interfaces.*;
-  parameter Real Sn=SysData.S_b "Power rating (MVA)"
-    annotation (Dialog(group="Power flow"));
+
   Modelica.Blocks.Interfaces.RealInput DynFact "Load Curve (pu)" annotation (
       Placement(
       visible=true,
@@ -84,8 +82,7 @@ model WyeDynLoad_3Ph
     annotation (Dialog(group="Load Parameters for ZIP Model"));
 
 protected
-  Real[1, 6] TPhasePower=[P_a/(Sn/3), P_b/(Sn/3), P_c/(Sn/3), Q_a/(Sn/3), Q_b/(
-      Sn/3), Q_c/(Sn/3)]*DynFact;
+  Real[1, 6] TPhasePower=[P_a, P_b, P_c, Q_a, Q_b, Q_c]/S_p*DynFact;
   parameter Real[1, 9] ZIP_coef=[A_pa/100, B_pa/100, C_pa/100, A_pb/100, B_pb/
       100, C_pb/100, A_pc/100, B_pc/100, C_pc/100];
 

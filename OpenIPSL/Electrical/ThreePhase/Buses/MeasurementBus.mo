@@ -1,9 +1,6 @@
 within OpenIPSL.Electrical.ThreePhase.Buses;
 model MeasurementBus
-  outer OpenIPSL.Electrical.SystemBase SysData
-    "Must add this line in all models";
-  parameter SI.ApparentPower S_b(displayUnit="MVA")=SysData.S_b "System base"
-    annotation (Dialog(group="Power flow data", enable=false));
+  extends ThreePhaseComponent;
   OpenIPSL.Interfaces.PwPin p1
     annotation (Placement(transformation(extent={{80,80},{100,100}})));
   OpenIPSL.Interfaces.PwPin p2
@@ -58,14 +55,14 @@ model MeasurementBus
         origin={-50,110})));
 equation
   // Equations for Phase A
-  Pa = -(p1.vr*p1.ir + p1.vi*p1.ii)*S_b;
-  Qa = -(p1.vr*p1.ii - p1.vi*p1.ir)*S_b;
+  Pa = -(p1.vr*p1.ir + p1.vi*p1.ii)*S_p;
+  Qa = -(p1.vr*p1.ii - p1.vi*p1.ir)*S_p;
   // Equations for Phase B
-  Pb = -(p2.vr*p2.ir + p2.vi*p2.ii)*S_b;
-  Qb = -(p2.vr*p2.ii - p2.vi*p2.ir)*S_b;
+  Pb = -(p2.vr*p2.ir + p2.vi*p2.ii)*S_p;
+  Qb = -(p2.vr*p2.ii - p2.vi*p2.ir)*S_p;
   // Equations for Phase C
-  Pc = -(p3.vr*p3.ir + p3.vi*p3.ii)*S_b;
-  Qc = -(p3.vr*p3.ii - p3.vi*p3.ir)*S_b;
+  Pc = -(p3.vr*p3.ir + p3.vi*p3.ii)*S_p;
+  Qc = -(p3.vr*p3.ii - p3.vi*p3.ir)*S_p;
   connect(p4, p1) annotation (Line(points={{-90,90},{90,90}}, color={0,0,255}));
   connect(p5, p2) annotation (Line(points={{-90,0},{90,0}}, color={0,0,255}));
   connect(p6, p3)
