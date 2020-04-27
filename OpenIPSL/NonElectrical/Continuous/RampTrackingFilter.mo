@@ -7,9 +7,8 @@ model RampTrackingFilter "Ramp-tracking filter"
   parameter Integer M = 5 ">=0, M*N<=8";
   parameter Integer N = 1 ">=0, M*N<=8";
   parameter Real y_start = 0 "Output start value";
-  Continuous.TransferFunction TF1[M-1](b=fill({1},M-1), a=fill({T_2,1},M-1),y_start=y_start);
-  Continuous.TransferFunction TF2[N](b=fill({T_1,1},N), a=fill({T_2,1},N),y_start=y_start);
-
+  Continuous.TransferFunction TF1[M](b=fill({1},M), a=fill({T_2,1},M),each y_start=y_start);
+  Continuous.TransferFunction TF2[N](b=fill({T_1,1},N), a=fill({T_2,1},N), each y_start=y_start);
 equation
   if M == 0 or N == 0 then
     u = y;
@@ -27,6 +26,7 @@ equation
       connect(TF1[i].y, TF1[i+1].u);
     end for;
     connect(TF1[M-1].y, y);
+    connect(u, TF1[M].u);
   elseif M == 1 and N ==1 then
     connect(u, TF2[1].u);
     connect(TF2[1].y, TF1[1].u);
@@ -41,6 +41,7 @@ equation
       connect(TF1[i].y, TF1[i+1].u);
     end for;
     connect(TF1[M-1].y, y);
+    connect(u, TF1[M].u);
   end if;
   annotation (
     Line(points={{30,0},{110,0}}, color={0,0,127}),
@@ -98,5 +99,6 @@ equation
 <td><p><a href=\"mailto:luigiv@kth.se\">luigiv@kth.se</a></p></td>
 </tr>
 </table>
-</html>"));
+</html>"),
+    uses(Modelica(version="3.2.3")));
 end RampTrackingFilter;
