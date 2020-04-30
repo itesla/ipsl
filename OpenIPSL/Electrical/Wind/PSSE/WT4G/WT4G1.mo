@@ -29,7 +29,7 @@ model WT4G1 "Wind Generator Model with Power Converter (Type 4)"
   Modelica.Blocks.Continuous.Integrator K(
     y_start=Ix0,
     k=1/T_IPCmd,
-    initType=Modelica.Blocks.Types.Init.SteadyState)
+    initType=Modelica.Blocks.Types.Init.InitialOutput)
     annotation (Placement(transformation(extent={{-30,35},{-20,45}})));
   Modelica.Blocks.Interfaces.RealOutput Iy(start=Iy0) annotation (Placement(
         transformation(extent={{100,80},{120,100}}), iconTransformation(extent=
