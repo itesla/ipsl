@@ -1,7 +1,7 @@
 within OpenIPSL.Electrical.Wind.PSSE.Submodels;
 model HVRCL
   //The 'High Voltage Reactive Current Management' block limits the reactive current injected into the network equations such that the terminal voltage of the machine never exceeds Volim of nominal, as long as the converter is within current limits."
-  parameter SI.PerUnit VHVRCR "Threthod voltage for HVRCL";
+  parameter SI.PerUnit VHVRCR "Threshold voltage for HVRCL";
   parameter SI.PerUnit CurHVRCR "Max. reactive current at VHVRCR";
   Modelica.Blocks.Interfaces.RealInput Vt annotation (Placement(transformation(
         extent={{-9,-9},{9,9}},
