@@ -1,59 +1,62 @@
 within OpenIPSL.Electrical.ThreePhase.Buses;
-model MeasurementBus
+model MeasurementBus "Three-phase active and reactive power measurement bus"
   extends ThreePhaseComponent;
-  OpenIPSL.Interfaces.PwPin p1
-    annotation (Placement(transformation(extent={{80,80},{100,100}})));
-  OpenIPSL.Interfaces.PwPin p2
-    annotation (Placement(transformation(extent={{80,-10},{100,10}})));
-  OpenIPSL.Interfaces.PwPin p3
-    annotation (Placement(transformation(extent={{80,-100},{100,-80}})));
-  OpenIPSL.Interfaces.PwPin p4
-    annotation (Placement(transformation(extent={{-100,80},{-80,100}})));
-  OpenIPSL.Interfaces.PwPin p5
-    annotation (Placement(transformation(extent={{-100,-10},{-80,10}})));
-  OpenIPSL.Interfaces.PwPin p6
-    annotation (Placement(transformation(extent={{-100,-100},{-80,-80}})));
-  SI.ActivePower Pa(displayUnit="MW") "Active Power suplyed by the Infinite bus (phase a)";
-  SI.ReactivePower Qa(displayUnit="Mvar") "Reactive Power suplyed by the Infinite bus (phase a)";
-  SI.ActivePower Pb(displayUnit="MW") "Active Power suplyed by the Infinite bus (phase b) (MW)";
-  SI.ReactivePower Qb(displayUnit="Mvar") "Reactive Power suplyed by the Infinite bus (phase b) (MVAr)";
-  SI.ActivePower Pc(displayUnit="MW") "Active Power suplyed by the Infinite bus (phase c) (MW)";
-  SI.ReactivePower Qc(displayUnit="Mvar") "Reactive Power suplyed by the Infinite bus (phase c) (MVAr)";
-  Modelica.Blocks.Interfaces.RealOutput pa = Pa/S_b "[pu, system base]" annotation (Placement(transformation(
+  OpenIPSL.Interfaces.PwPin p1 "Phase A output" annotation (Placement(transformation(extent={{80,80},{100,100}})));
+  OpenIPSL.Interfaces.PwPin p2 "Phase B output" annotation (Placement(transformation(extent={{80,-10},{100,10}})));
+  OpenIPSL.Interfaces.PwPin p3 "Phase C output" annotation (Placement(transformation(extent={{80,-100},{100,-80}})));
+  OpenIPSL.Interfaces.PwPin p4 "Phase A input" annotation (Placement(transformation(extent={{-100,80},{-80,100}})));
+  OpenIPSL.Interfaces.PwPin p5 "Phase B input" annotation (Placement(transformation(extent={{-100,-10},{-80,10}})));
+  OpenIPSL.Interfaces.PwPin p6 "Phase C input" annotation (Placement(transformation(extent={{-100,-100},{-80,-80}})));
+  SI.ActivePower Pa(displayUnit="MW") "Active power suplyed in phase a";
+  SI.ReactivePower Qa(displayUnit="Mvar") "Reactive power suplyed in phase a";
+  SI.ActivePower Pb(displayUnit="MW") "Active power suplyed in phase b";
+  SI.ReactivePower Qb(displayUnit="Mvar") "Reactive power suplyed in phase b";
+  SI.ActivePower Pc(displayUnit="MW") "Active power suplyed in phase c";
+  SI.ReactivePower Qc(displayUnit="Mvar") "Reactive power suplyed in phase c";
+  Modelica.Blocks.Interfaces.RealOutput pa(unit="1") = Pa/S_b "[pu, system base]" annotation (Placement(transformation(
+        extent={{-24,-24},{24,24}},
+        rotation=-90,
+        origin={52,-124}), iconTransformation(
         extent={{-24,-24},{24,24}},
         rotation=-90,
         origin={52,-124})));
-  Modelica.Blocks.Interfaces.RealOutput pb = Pb/S_b "[pu, system base]" annotation (Placement(transformation(
+  Modelica.Blocks.Interfaces.RealOutput pb(unit="1") = Pb/S_b "[pu, system base]" annotation (Placement(transformation(
+        extent={{-24,-24},{24,24}},
+        rotation=-90,
+        origin={2,-124}), iconTransformation(
         extent={{-24,-24},{24,24}},
         rotation=-90,
         origin={2,-124})));
-  Modelica.Blocks.Interfaces.RealOutput pc = Pc/S_b "[pu, system base]" annotation (Placement(transformation(
+  Modelica.Blocks.Interfaces.RealOutput pc(unit="1") = Pc/S_b "[pu, system base]" annotation (Placement(transformation(
+        extent={{-24,-24},{24,24}},
+        rotation=-90,
+        origin={-50,-124}), iconTransformation(
         extent={{-24,-24},{24,24}},
         rotation=-90,
         origin={-50,-124})));
 
-  Modelica.Blocks.Interfaces.RealOutput qa = Qa/S_b "[pu, system base]" annotation (Placement(transformation(
-        extent={{-24,-24},{24,24}},
-        rotation=-90,
-        origin={52,-124}), iconTransformation(
+  Modelica.Blocks.Interfaces.RealOutput qa(unit="1") = Qa/S_b "[pu, system base]" annotation (Placement(transformation(
         extent={{24,-24},{-24,24}},
         rotation=-90,
-        origin={60,110})));
-  Modelica.Blocks.Interfaces.RealOutput qb = Qb/S_b "[pu, system base]" annotation (Placement(transformation(
-        extent={{-24,-24},{24,24}},
-        rotation=-90,
-        origin={2,-124}), iconTransformation(
+        origin={50,124}),  iconTransformation(
         extent={{24,-24},{-24,24}},
         rotation=-90,
-        origin={0,110})));
-  Modelica.Blocks.Interfaces.RealOutput qc = Qc/S_b "[pu, system base]" annotation (Placement(transformation(
-        extent={{-24,-24},{24,24}},
-        rotation=-90,
-        origin={-50,-124}), iconTransformation(
+        origin={50,124})));
+  Modelica.Blocks.Interfaces.RealOutput qb(unit="1") = Qb/S_b "[pu, system base]" annotation (Placement(transformation(
         extent={{24,-24},{-24,24}},
         rotation=-90,
-        origin={-50,110})));
-equation
+        origin={0,124}),  iconTransformation(
+        extent={{24,-24},{-24,24}},
+        rotation=-90,
+        origin={0,124})));
+  Modelica.Blocks.Interfaces.RealOutput qc(unit="1") = Qc/S_b "[pu, system base]" annotation (Placement(transformation(
+        extent={{24,-24},{-24,24}},
+        rotation=-90,
+        origin={-50,124}),  iconTransformation(
+        extent={{24,-24},{-24,24}},
+        rotation=-90,
+        origin={-50,124})));
+equation 
   // Equations for Phase A
   Pa = -(p1.vr*p1.ir + p1.vi*p1.ii)*S_p;
   Qa = -(p1.vr*p1.ii - p1.vi*p1.ir)*S_p;
@@ -65,8 +68,7 @@ equation
   Qc = -(p3.vr*p3.ii - p3.vi*p3.ir)*S_p;
   connect(p4, p1) annotation (Line(points={{-90,90},{90,90}}, color={0,0,255}));
   connect(p5, p2) annotation (Line(points={{-90,0},{90,0}}, color={0,0,255}));
-  connect(p6, p3)
-    annotation (Line(points={{-90,-90},{90,-90}}, color={0,0,255}));
+  connect(p6, p3) annotation (Line(points={{-90,-90},{90,-90}}, color={0,0,255}));
   annotation (Icon(coordinateSystem(
         extent={{-100,-100},{100,100}},
         preserveAspectRatio=false,
@@ -77,5 +79,35 @@ equation
           lineColor={0,0,0},
           fillPattern=FillPattern.Solid)}),
       Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{
-            100,100}})));
+            100,100}})),
+    Documentation(info="<html>
+<p>This three-phase measurement device should be connected in series, between two other devices. The main features of this device are listed below:</p>
+<ul>
+<li>Pins <i><b>p4</b></i>, <i><b>p5</b></i> and <i><b>p6</b></i> work as input pins for electrical quantities coming from phases A, B and C, respectively. </li>
+<li>In an similar way, pins<i> <b>p1</b></i>, <i><b>p2</b></i> an <i><b>p3</b></i> work as output pins for electrical quantities coming from phases A, B and C, respectively. </li>
+<li>Current flows from pin <i><b>p4</b></i> to pin <i><b>p1</b></i>, from pin <i><b>p5</b></i> to pin <i><b>p2</b></i> and from pin <i><b>p6</b></i> to pin <i><b>p3</b></i>. </li>
+<li>There is no voltage drop between the pairs of pins responsible for each phase. </li>
+</ul>
+<p>The device returns, as real outputs, active and reactive powers coming from each of the three phases. All values are calculated in per unit, using the system&apos;s three-phase power base, S_b, provided in model SystemBase. The outputs are explained in the list below:</p>
+<ul>
+<li><i><b>pa</b></i> and <i><b>qa </b></i>returns the active and reactive power, respectively, in phase A. </li>
+<li><i><b>pb</b></i> and <i><b>qb</b></i> returns the active and reactive power, respectively, in phase B. </li>
+<li><i><b>pc</b></i> and <i><b>qc</b></i> returns the active and reactive power, respectively, in phase C. </li>
+</ul>
+<p> </p>
+<table cellspacing=\"1\" cellpadding=\"1\" border=\"1\">
+<tr>
+<td><p>Last update</p></td>
+<td>2020-05-19</td>
+</tr>
+<tr>
+<td><p>Author</p></td>
+<td><p>Maxime Baudette, LNLS, and Marcelo de Castro, AlsetLab</p></td>
+</tr>
+<tr>
+<td><p>Contact</p></td>
+<td><p><a href=\"mailto:luigiv@kth.se\">vanfrl@rpi.edu</a></p></td>
+</tr>
+</table>
+</html>"));
 end MeasurementBus;
