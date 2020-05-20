@@ -1,5 +1,5 @@
-within OpenIPSL.Examples.ThreePhase_Examples;
-model IEEE13_ThreePhase
+within OpenIPSL.Examples.ThreePhase;
+model IEEE13 "Initial conditions (power-flow) calculation of IEEE4 bus system, in full three-phase formulation"
   extends Modelica.Icons.Example;
   inner OpenIPSL.Electrical.SystemBase SysData(fn=60) annotation (Placement(
         visible=true, transformation(
@@ -529,12 +529,31 @@ equation
   annotation (
     Diagram(coordinateSystem(extent={{-100,-100},{500,300}})),
     Icon(coordinateSystem(extent={{-100,-100},{100,100}})),
-    version="",
-    uses(OpenIPSL(version="1.0.0"), ThreePhase(version="1")),
-    __OpenModelica_commandLineOptions="",
     experiment(
       StartTime=0,
       StopTime=10,
       Tolerance=1e-06,
-      Interval=0.001));
-end IEEE13_ThreePhase;
+      Interval=0.001),
+    Documentation(info="<html>
+<p>This test system aims to show how a three-phase system should be assembled for simulation.
+ In this example, there are many different models being used, like two-phase lines, buses and loads.</p>
+<p>This example is not a dynamic system, and therefore the voltages and angles from all buses are static during the simulation. 
+The simulation just calculates the initialization variables, which are the solution for the three-phase power flow.
+The results can be verified against any tool that calculates a three-phase power-flow.</p>
+<p> </p>
+<table cellspacing=\"1\" cellpadding=\"1\" border=\"1\">
+<tr>
+<td><p>Last update</p></td>
+<td>2020-05-19</td>
+</tr>
+<tr>
+<td><p>Author</p></td>
+<td><p>Marcelo de Castro, AlsetLab, and Maxime Baudette, LNLS</p></td>
+</tr>
+<tr>
+<td><p>Contact</p></td>
+<td><p><a href=\"mailto:vanfrl@rpi.edu\">vanfrl@rpi.edu</a></p></td>
+</tr>
+</table>
+</html>"));
+end IEEE13;

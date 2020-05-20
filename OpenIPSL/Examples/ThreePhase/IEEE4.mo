@@ -1,5 +1,5 @@
-within OpenIPSL.Examples.ThreePhase_Examples;
-model IEEE4_ThreePhase
+within OpenIPSL.Examples.ThreePhase;
+model IEEE4 "Initial conditions (power-flow) calculation of IEEE4 bus system, in full three-phase formulation"
   extends Modelica.Icons.Example;
   inner OpenIPSL.Electrical.SystemBase SysData(fn=60) annotation (Placement(
         visible=true, transformation(
@@ -143,8 +143,28 @@ equation
       StartTime=0,
       StopTime=0.1,
       Tolerance=1e-06,
-      Interval=0.0002), uses(
-      Modelica(version="3.2.1"),
-      OpenIPSL(version="1.0.0"),
-      ThreePhase(version="1")));
-end IEEE4_ThreePhase;
+      Interval=0.0002), 
+      Documentation(info="<html>
+<p>This test system aims to show how a very small three-phase system should be assembled for simulation.
+ Its results should be compared to the example IEEE4_MonoTri, in order to show what to expect from the hybrid transformer.
+ Here, all buses are modeled as three-phase buses.</p>
+<p>This example is not a dynamic system, and therefore the voltages and angles from all buses are static during the simulation. 
+The simulation just calculates the initialization variables, which are the solution for the three-phase power flow.
+The results can be verified against any tool that calculates a three-phase power-flow.</p>
+<p> </p>
+<table cellspacing=\"1\" cellpadding=\"1\" border=\"1\">
+<tr>
+<td><p>Last update</p></td>
+<td>2020-05-19</td>
+</tr>
+<tr>
+<td><p>Author</p></td>
+<td><p>Marcelo de Castro, AlsetLab, and Maxime Baudette, LNLS</p></td>
+</tr>
+<tr>
+<td><p>Contact</p></td>
+<td><p><a href=\"mailto:vanfrl@rpi.edu\">vanfrl@rpi.edu</a></p></td>
+</tr>
+</table>
+</html>"));
+end IEEE4;
