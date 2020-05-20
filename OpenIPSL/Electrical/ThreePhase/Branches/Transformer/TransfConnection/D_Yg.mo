@@ -1,5 +1,6 @@
 within OpenIPSL.Electrical.ThreePhase.Branches.Transformer.TransfConnection;
-function D_Yg
+function D_Yg "Calculation of impedance matrices for a delta-grounded-wye-connected three-phase transformer."
+  extends Modelica.Icons.Function;
   input Real X;
   input Real R;
   input Real tap;
@@ -59,4 +60,24 @@ protected
   parameter Real[6, 6] D=Y_ser2 + Yshtm;
 algorithm
   PiMatrix := [A, B; C, D];
+annotation (
+Documentation(info="<html>
+<p>This function calculates impedance matrices of a three-phase transformer modeled as a pi-equivalent.<\p>
+<p>The transformer that uses this function should have its primary windings connected in delta and its secondary windings connected in grounded-wye (grounded-star).<\p>
+<p> <\p>
+<table cellspacing=\"1\" cellpadding=\"1\" border=\"1\">
+<tr>
+<td><p>Last update</p></td>
+<td>2020-05-20</td>
+</tr>
+<tr>
+<td><p>Author</p></td>
+<td><p>Marcelo de Castro, AlsetLab, and Maxime Baudette, LBNL</p></td>
+</tr>
+<tr>
+<td><p>Contact</p></td>
+<td><p><a href=\"mailto:vanfrl@rpi.edu\">vanfrl@rpi.edu</a></p></td>
+</tr>
+</table>
+</html>"));
 end D_Yg;

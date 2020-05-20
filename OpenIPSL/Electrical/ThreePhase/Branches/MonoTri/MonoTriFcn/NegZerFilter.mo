@@ -1,5 +1,6 @@
 within OpenIPSL.Electrical.ThreePhase.Branches.MonoTri.MonoTriFcn;
-function NegZerFilter
+function NegZerFilter "Calculation of negative, and zero-sequence filters used in Norton equivalent."
+  extends Modelica.Icons.Function;
   input Real[1, 18] Z;
   output Real[1, 18] Y;
 
@@ -76,5 +77,24 @@ algorithm
   // The output value receive the filtered value
   Y := [g11, b11, g12, b12, g13, b13, g21, b21, g22, b22, g23, b23, g31, b31,
     g32, b32, g33, b33];
-
+annotation (
+Documentation(info="<html>
+<p>This function calculates negative-, and zero-sequece impedance filters used in hybrid components.
+The filters are used as a negative-, and zero-sequece Norton equivalent admittances, representing the single-phase equivalent seen from the three-phase side.<\p>
+<p> <\p>
+<table cellspacing=\"1\" cellpadding=\"1\" border=\"1\">
+<tr>
+<td><p>Last update</p></td>
+<td>2020-05-20</td>
+</tr>
+<tr>
+<td><p>Author</p></td>
+<td><p>Marcelo de Castro, AlsetLab, and Maxime Baudette, LBNL</p></td>
+</tr>
+<tr>
+<td><p>Contact</p></td>
+<td><p><a href=\"mailto:vanfrl@rpi.edu\">vanfrl@rpi.edu</a></p></td>
+</tr>
+</table>
+</html>"));
 end NegZerFilter;

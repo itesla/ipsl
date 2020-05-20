@@ -1,5 +1,5 @@
 within OpenIPSL.Electrical.ThreePhase.Branches.Transformer;
-model Transformer_3Ph "Three Phase transformer modeled in a PI element"
+model Transformer_3Ph "Three Phase transformer modeled as a PI-equivalent device."
   extends ThreePhaseComponent;
 
   import OpenIPSL.Electrical.ThreePhase.Branches.Transformer.TransfConnection.Yg_Yg;
@@ -150,5 +150,27 @@ equation
           extent={{4,18},{104,-34}},
           textString="Three Phase Transformer")}, coordinateSystem(initialScale=
            0.1)),
-    Documentation);
+    Documentation(info="<html>
+<p>This model was design to represent three-phase two-winding transformer.<\p> 
+<p>The user should input the resistance, leakage reactance, tap value, and select the transformer connection.
+Based on this set of parameters, the pi-equivalent impedance matrices are calculated and the transformer equation is assembled.
+The transformer does not take into account excitation branch, since it is often neglected in transient-stability studies.</p>
+<p>Primary side is represented by pins <b><i>Ain</i></b>, <b><i>Bin</i></b>, and <b><i>Cin</i></b>.
+Secondary side is represented by pins <b><i>Aout</i></b>, <b><i>Bout</i></b>, and <b><i>Cout</i></b><\p> 
+<p> <\p>
+<table cellspacing=\"1\" cellpadding=\"1\" border=\"1\">
+<tr>
+<td><p>Last update</p></td>
+<td>2020-05-20</td>
+</tr>
+<tr>
+<td><p>Author</p></td>
+<td><p>Marcelo de Castro, AlsetLab, and Maxime Baudette, LBNL</p></td>
+</tr>
+<tr>
+<td><p>Contact</p></td>
+<td><p><a href=\"mailto:vanfrl@rpi.edu\">vanfrl@rpi.edu</a></p></td>
+</tr>
+</table>
+</html>"));
 end Transformer_3Ph;

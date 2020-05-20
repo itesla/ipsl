@@ -1,6 +1,5 @@
 within OpenIPSL.Electrical.ThreePhase.Branches.MonoTri;
-model Line_MT
-  "Transmission Line modeled as a PI element with a hybrid interface Single Phase x Three Phase"
+model Line_MT "Transmission Line modeled as a PI element with a hybrid interface positive-sequence/three-phase"
   extends Branches.BaseClasses.baseLine;
 
   import OpenIPSL.Electrical.ThreePhase.Branches.MonoTri.LineFcn.MT_InfiniteImpedances;
@@ -180,6 +179,28 @@ equation
         extent={{-140,-100},{140,100}},
         preserveAspectRatio=true,
         initialScale=0.1)),
-    uses(Modelica(version="3.2.1")),
-    Documentation);
+    Documentation(info="<html>
+<p>This model was design to represent a hybrid positive-sequence/three-phase power line.<\p> 
+<p>The user should input the resistance, reactance, and line charging. All in matrix form, since this model can be used to represent unbalanced lines. 
+In addition to that, the user should also state if the hybrid interface should be calculated in an approximate or exact way.
+If the exact way is selected, the user should also input Norton equivalent admittances for positive, negative and zero sequences calculated in the point of interconnection of the hybrid device.
+If approximate model is selected, these admittances are set to be zero. 
+Based on the set of parameters selected by the user, the pi-equivalent impedance matrices are calculated and the line equation is assembled.</p>
+<p>The positive-sequence system is connected using pin <b><i>p</i></b>, while three-phase system is connected using pins <b><i>A</i></b>, <b><i>B</i></b>, and <b><i>C</i></b><\p> 
+<p> <\p>
+<table cellspacing=\"1\" cellpadding=\"1\" border=\"1\">
+<tr>
+<td><p>Last update</p></td>
+<td>2020-05-20</td>
+</tr>
+<tr>
+<td><p>Author</p></td>
+<td><p>Marcelo de Castro, AlsetLab, and Maxime Baudette, LBNL</p></td>
+</tr>
+<tr>
+<td><p>Contact</p></td>
+<td><p><a href=\"mailto:vanfrl@rpi.edu\">vanfrl@rpi.edu</a></p></td>
+</tr>
+</table>
+</html>"));
 end Line_MT;

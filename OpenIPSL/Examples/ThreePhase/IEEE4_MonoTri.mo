@@ -128,7 +128,7 @@ The results can be verified against any tool that calculates a hybrid positive-s
 </tr>
 <tr>
 <td><p>Author</p></td>
-<td><p>Marcelo de Castro, AlsetLab, and Maxime Baudette, LNLS</p></td>
+<td><p>Marcelo de Castro, AlsetLab, and Maxime Baudette, LBNL</p></td>
 </tr>
 <tr>
 <td><p>Contact</p></td>

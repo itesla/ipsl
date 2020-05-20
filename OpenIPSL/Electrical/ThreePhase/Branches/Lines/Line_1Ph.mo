@@ -1,5 +1,5 @@
 within OpenIPSL.Electrical.ThreePhase.Branches.Lines;
-model Line_1Ph "Modeled as a PI element"
+model Line_1Ph "Single-phase line modeled as a PI-equivalent device."
   extends Branches.BaseClasses.baseLine;
 
   OpenIPSL.Interfaces.PwPin Ain
@@ -46,6 +46,24 @@ equation
         extent={{-140,-100},{140,100}},
         preserveAspectRatio=true,
         initialScale=0.1)),
-    uses(Modelica(version="3.2.1")),
-    Documentation);
+    Documentation(info="<html>
+<p>This model was design to represent single-phase power line, modeled as a pi-element.<\p> 
+<p>The user should input the resistance, reactance and line charging.
+Based on this set of parameters, the pi-equivalent impedance matrices are calculated and the power line equation is assembled.</p>
+<p> <\p>
+<table cellspacing=\"1\" cellpadding=\"1\" border=\"1\">
+<tr>
+<td><p>Last update</p></td>
+<td>2020-05-20</td>
+</tr>
+<tr>
+<td><p>Author</p></td>
+<td><p>Marcelo de Castro, AlsetLab, and Maxime Baudette, LBNL</p></td>
+</tr>
+<tr>
+<td><p>Contact</p></td>
+<td><p><a href=\"mailto:vanfrl@rpi.edu\">vanfrl@rpi.edu</a></p></td>
+</tr>
+</table>
+</html>"));
 end Line_1Ph;

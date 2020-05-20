@@ -1,5 +1,5 @@
 within OpenIPSL.Electrical.ThreePhase.Branches.BaseClasses;
-partial model baseLine "Modeled as a PI element"
+partial model baseLine "Partial base power line model"
 
   outer OpenIPSL.Electrical.SystemBase SysData;
   parameter Real S=SysData.S_b "Nominal Power (MVA)"
@@ -58,6 +58,23 @@ protected
         extent={{-140,-100},{140,100}},
         preserveAspectRatio=true,
         initialScale=0.1)),
-    Documentation);
+    Documentation(info="<html>
+<p>This model was design to represent the base data for a power-line modeled in three-phase approach.<\p> 
+<p> <\p>
+<table cellspacing=\"1\" cellpadding=\"1\" border=\"1\">
+<tr>
+<td><p>Last update</p></td>
+<td>2020-05-20</td>
+</tr>
+<tr>
+<td><p>Author</p></td>
+<td><p>Marcelo de Castro, AlsetLab, and Maxime Baudette, LBNL</p></td>
+</tr>
+<tr>
+<td><p>Contact</p></td>
+<td><p><a href=\"mailto:vanfrl@rpi.edu\">vanfrl@rpi.edu</a></p></td>
+</tr>
+</table>
+</html>"));
 
 end baseLine;

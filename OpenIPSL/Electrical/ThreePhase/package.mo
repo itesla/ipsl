@@ -1,21 +1,34 @@
 within OpenIPSL.Electrical;
-package ThreePhase
+package ThreePhase "Package with three-phase and hybrid positive-sequence/three-phase models"
 annotation (
   Documentation(info="<html>
+<p>This package contains three-phase models that can be used to create systems where unbalance plays an important role.
+ Distribution and sub-transmission systems are candidates.</p>
+<p>Three-phase systems can be easily connected to equivalent positive-sequence systems by using hybrid positive-sequence/three-phase devices.
+These models are called MonoTri and are usually represented as a pi-equivalent model. Transformers and power lines have their MonoTri representation in this package.</p>
+<p> In addition, multi-phase bus, bank and load models are also available <\p>
+<p> <\p>
 <table cellspacing=\"1\" cellpadding=\"1\" border=\"1\">
 <tr>
+<td><p>MonoTri models reference</p></td>
+<td><i>A hybrid three-phase single-phase power flow formulation</i>, by J.M.T. Marinho, and G.N. Taranto </td>
+</tr>
+<tr>
+<td><p>Three-phase models reference</p></td>
+<td><i>Computer modelling of electrical power systems</i>, by J. Arrillaga, C.P. Arnold, and B.J. Harker</td>
+</tr>
+<tr>
 <td><p>Last update</p></td>
-<td>01/09/2017</td>
+<td>2020-05-20</td>
 </tr>
 <tr>
 <td><p>Author</p></td>
-<td><p>Marcelo de Castro Fernandes, Federal University of Juiz de Fora and SmarTSLab, KTH</p></td>
+<td><p>Marcelo de Castro, AlsetLab, and Maxime Baudette, LBNL</p></td>
 </tr>
 <tr>
 <td><p>Contact</p></td>
-<td><p><a href=\"mailto:luigiv@kth.se\">luigiv@kth.se</a></p></td>
+<td><p><a href=\"mailto:vanfrl@rpi.edu\">vanfrl@rpi.edu</a></p></td>
 </tr>
 </table>
-</html>"),
-  conversion(noneFromVersion="1"));
+</html>"));
 end ThreePhase;

@@ -1,5 +1,6 @@
 within OpenIPSL.Electrical.ThreePhase.Branches.MonoTri.MonoTriFcn;
-function Inverse
+function Inverse "Calculation of filter admittances, given filter's impedances"
+  extends Modelica.Icons.Function;
   input Real[1, 18] I;
   output Real[1, 18] O;
   // Writing every element of the matrix to be inverted
@@ -73,4 +74,24 @@ protected
 algorithm
   O := [r11, x11, r12, x12, r13, x13, r21, x21, r22, x22, r23, x23, r31, x31,
     r32, x32, r33, x33];
+annotation (
+Documentation(info="<html>
+<p>This function is used to transform both positive and negative-zero impedance filters into admittances.
+The filters are necessary for Norton equivalent admittances calculations, and this function allows the transformation of filter impedances into admittances.<\p>
+<p> <\p>
+<table cellspacing=\"1\" cellpadding=\"1\" border=\"1\">
+<tr>
+<td><p>Last update</p></td>
+<td>2020-05-20</td>
+</tr>
+<tr>
+<td><p>Author</p></td>
+<td><p>Marcelo de Castro, AlsetLab, and Maxime Baudette, LBNL</p></td>
+</tr>
+<tr>
+<td><p>Contact</p></td>
+<td><p><a href=\"mailto:vanfrl@rpi.edu\">vanfrl@rpi.edu</a></p></td>
+</tr>
+</table>
+</html>"));
 end Inverse;

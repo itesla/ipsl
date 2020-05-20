@@ -1,5 +1,6 @@
 within OpenIPSL.Electrical.ThreePhase.Branches.MonoTri.TransformerFcn;
-function Y_D
+function Y_D "Calculation of hybrid impedance matrices for a wye-delta-connected three-phase transformer."
+  extends Modelica.Icons.Function;
   input Real X;
   input Real R;
   input Real tap;
@@ -167,5 +168,25 @@ algorithm
   V := [Ar, Ai, MB1r, MB1i, MB2r, MB2i, MB3r, MB3i, C1r, C1i, C2r, C2i, C3r,
     C3i, D11r, D11i, D12r, D12i, D13r, D13i, D21r, D21i, D22r, D22i, D23r, D23i,
     D31r, D31i, D32r, D32i, D33r, D33i];
-
+annotation (
+Documentation(info="<html>
+<p>This function calculates impedance matrices of a hybrid positive-sequece/three-phase transformer modeled as a pi-equivalent.<\p>
+<p>The transformer that uses this function should have its primary windings connected in wye (star) and its secondary windings connected in delta.
+In addition, this function considers that positive-, negative-, and zero-sequence Norton equivalent impedances have infinite values.<\p>
+<p> <\p>
+<table cellspacing=\"1\" cellpadding=\"1\" border=\"1\">
+<tr>
+<td><p>Last update</p></td>
+<td>2020-05-20</td>
+</tr>
+<tr>
+<td><p>Author</p></td>
+<td><p>Marcelo de Castro, AlsetLab, and Maxime Baudette, LBNL</p></td>
+</tr>
+<tr>
+<td><p>Contact</p></td>
+<td><p><a href=\"mailto:vanfrl@rpi.edu\">vanfrl@rpi.edu</a></p></td>
+</tr>
+</table>
+</html>"));
 end Y_D;
