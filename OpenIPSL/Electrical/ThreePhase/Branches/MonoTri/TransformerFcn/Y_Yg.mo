@@ -166,5 +166,4 @@ In addition, this function considers that positive-, negative-, and zero-sequenc
 </tr>
 </table>
 </html>"));
-end Yg_Y;
 end Y_Yg;
