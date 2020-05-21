@@ -1,5 +1,5 @@
 within OpenIPSL.Electrical.ThreePhase.Banks;
-model CapacitorBank_3Ph "Three-Phase Capacitor Bank"
+model CapacitorBank_3Ph "Three-phase capacitor bank"
   extends ThreePhaseComponent;
   OpenIPSL.Interfaces.PwPin A(vr(start=var0), vi(start=vai0)) annotation (
       Placement(
@@ -136,5 +136,24 @@ equation
           smooth=Smooth.None),Line(
           points={{20,-30},{28,-22}},
           color={0,0,255},
-          smooth=Smooth.None)}));
+          smooth=Smooth.None)}),
+          Documentation(info="<html>
+<p>This model represents a three-phase capacitor bank.</p>
+<p>This device is used to supply reactive power to the system, increasing the voltage in the three-phase bus the bank is connected to.</p>
+<p>The reactive power supplied by the capacitor bank is constant and it is defined by parameters Q_a, Q_b and Q_c, which correspond to the reactive power supplied in phases A, B and C, respectively.<\p>
+<table cellspacing=\"1\" cellpadding=\"1\" border=\"1\">
+<tr>
+<td><p>Last update</p></td>
+<td>2020-05-21</td>
+</tr>
+<tr>
+<td><p>Author</p></td>
+<td><p>Marcelo de Castro, AlsetLab, and Maxime Baudette, LBNL</p></td>
+</tr>
+<tr>
+<td><p>Contact</p></td>
+<td><p><a href=\"mailto:vanfrl@rpi.edu\">vanfrl@rpi.edu</a></p></td>
+</tr>
+</table>
+</html>"));
 end CapacitorBank_3Ph;

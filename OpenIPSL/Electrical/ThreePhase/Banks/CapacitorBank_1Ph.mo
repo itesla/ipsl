@@ -1,5 +1,5 @@
 within OpenIPSL.Electrical.ThreePhase.Banks;
-model CapacitorBank_1Ph
+model CapacitorBank_1Ph "Single-phase capacitor bank"
   extends ThreePhaseComponent;
 
   OpenIPSL.Interfaces.PwPin A(vr(start=var0), vi(start=vai0)) annotation (
@@ -84,5 +84,24 @@ equation
           smooth=Smooth.None),Line(
           points={{20,-30},{28,-22}},
           color={0,0,255},
-          smooth=Smooth.None)}));
+          smooth=Smooth.None)}),
+          Documentation(info="<html>
+<p>This model represents a single-phase capacitor bank.</p>
+<p>This device is used to supply reactive power to the system, increasing the voltage in the bus it is connected to.</p>
+<p>The reactive power supplied by the capacitor bank is constant and it is defined by parameter Q_a.<\p>
+<table cellspacing=\"1\" cellpadding=\"1\" border=\"1\">
+<tr>
+<td><p>Last update</p></td>
+<td>2020-05-21</td>
+</tr>
+<tr>
+<td><p>Author</p></td>
+<td><p>Marcelo de Castro, AlsetLab, and Maxime Baudette, LBNL</p></td>
+</tr>
+<tr>
+<td><p>Contact</p></td>
+<td><p><a href=\"mailto:vanfrl@rpi.edu\">vanfrl@rpi.edu</a></p></td>
+</tr>
+</table>
+</html>"));
 end CapacitorBank_1Ph;
