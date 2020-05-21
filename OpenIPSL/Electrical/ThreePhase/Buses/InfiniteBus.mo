@@ -1,5 +1,5 @@
 within OpenIPSL.Electrical.ThreePhase.Buses;
-model InfiniteBus
+model InfiniteBus "Three-phase infinite bus"
   extends ThreePhaseComponent;
   parameter SI.Voltage V_b(displayUnit="kV")=400e3
     "Base voltage of the bus"
@@ -86,5 +86,25 @@ equation
           points={{40,-48},{40,-60}}, color={0,0,0}),Line(points={{80,-54},{72,
           -60}}, color={0,0,0}),Line(points={{82,86},{74,80}}, color={0,0,0})}),
       Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{
-            100,100}})));
+            100,100}})),
+            Documentation(info="<html>
+<p>This is a three-phase infinite bus model.</p>
+<p>An infinite bus represents a very strong system. This means that no matter how much power is drained from or injected in it, the bus will keep the values of frequency, voltage magnitude and voltage angle constant.</p>
+<p>The infinite bus also provides the angle references that can be used in coherency studies or in power flow results.</p>
+<p> <\p>
+<table cellspacing=\"1\" cellpadding=\"1\" border=\"1\">
+<tr>
+<td><p>Last update</p></td>
+<td>2020-05-21</td>
+</tr>
+<tr>
+<td><p>Author</p></td>
+<td><p>Marcelo de Castro, AlsetLab, and Maxime Baudette, LBNL</p></td>
+</tr>
+<tr>
+<td><p>Contact</p></td>
+<td><p><a href=\"mailto:vanfrl@rpi.edu\">vanfrl@rpi.edu</a></p></td>
+</tr>
+</table>
+</html>"));
 end InfiniteBus;

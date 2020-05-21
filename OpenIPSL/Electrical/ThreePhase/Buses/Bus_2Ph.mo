@@ -1,5 +1,5 @@
 within OpenIPSL.Electrical.ThreePhase.Buses;
-model Bus_2Ph
+model Bus_2Ph "Two-phase bus"
   extends ThreePhaseComponent;
   import Modelica.Constants.pi;
   OpenIPSL.Interfaces.PwPin p1(vr(start=V_1*cos(angle_1*Modelica.Constants.pi/
@@ -62,5 +62,26 @@ equation
           extent={{-39.0262,-16.7966},{39.0262,16.7966}},
           fontName="Arial",
           textString=DynamicSelect("0.0", String(Vb, significantDigits=3)),
-          lineColor={238,46,47})}));
+          lineColor={238,46,47})}),
+          Documentation(info="<html>
+<p>This is a two-phase bus model.</p>
+<p>A bus represents a node in a power system. Therefore, this model can be used to verify voltage magnitude and angle in the two-phase nodes of the system.</p>
+<p>Although it is not necessary, it is extremely recommended to connect one bus model between two other two-phase models.</p>
+<p>Please, check if this bus model is the appropriate one for your system. For the connection of three- or single-phase models, three- or single-phase buses might be a better fit.</p>
+<p> <\p>
+<table cellspacing=\"1\" cellpadding=\"1\" border=\"1\">
+<tr>
+<td><p>Last update</p></td>
+<td>2020-05-21</td>
+</tr>
+<tr>
+<td><p>Author</p></td>
+<td><p>Marcelo de Castro, AlsetLab, and Maxime Baudette, LBNL</p></td>
+</tr>
+<tr>
+<td><p>Contact</p></td>
+<td><p><a href=\"mailto:vanfrl@rpi.edu\">vanfrl@rpi.edu</a></p></td>
+</tr>
+</table>
+</html>"));
 end Bus_2Ph;
