@@ -1,5 +1,5 @@
 within OpenIPSL.Electrical.ThreePhase.Loads;
-model DeltaDynLoad_3Ph
+model DeltaDynLoad_3Ph "Variable three-phase delta load"
   extends ThreePhaseComponent;
   import Modelica.Blocks.Interfaces.*;
   Modelica.Blocks.Interfaces.RealInput DynFact "Load Curve (pu)" annotation (
@@ -182,6 +182,31 @@ equation
           lineColor={28,108,200},
           extent={{-62,45},{22,30}},
           textString="PQ/ZIP Load")}),
-    Documentation,
-    uses(Modelica(version="3.2.1")));
+    Documentation(info="<html>
+<p>This is a three-phase delta load model that allows the user to vary the power consumed during the simulation.</p>
+<p>The user needs to input the active (<b><i>P_ab</i></b>, <b><i>P_bc</i></b> and <b><i>P_ca</i></b>) and reactive (<b><i>Q_ab</i></b>, <b><i>Q_bc</i></b> and <b><i>Q_ca</i></b>) powers consumed between phases. 
+Since the values come from independent parameters, the model allows the representation of unbalanced loads.</p> 
+<p>In addition, the model allows the load to be represented as constant power, or as a ZIP model. 
+In the first approach, the load consumes the same value of active and reactive powers between phases throughout the simulation. 
+The latter approach allows the load to be represented as a sum of three terms: constant impedance, constant current and constant power. This means that, depending on voltage levels supplied, the load will consume different values of power.</p>
+<p>In addition to that, the real input <b><i>DynFact</b></i> multiplies the power being consumed by the load. 
+This allows the load to vary over time during the simulation. 
+It is also important to note that <b><i>DynFact</b></i> multiplies all variables <b><i>P_ab</i></b>, <b><i>P_bc</i></b>, <b><i>P_ca</i></b><\p>, <b><i>Q_ab</i></b>, <b><i>Q_bc</i></b> and <b><i>Q_ca</i></b>. 
+That means that this model does not allow load variation to be performed only in selected variables. </p> 
+<p> <\p>
+<table cellspacing=\"1\" cellpadding=\"1\" border=\"1\">
+<tr>
+<td><p>Last update</p></td>
+<td>2020-05-25</td>
+</tr>
+<tr>
+<td><p>Author</p></td>
+<td><p>Marcelo de Castro, AlsetLab, and Maxime Baudette, LBNL</p></td>
+</tr>
+<tr>
+<td><p>Contact</p></td>
+<td><p><a href=\"mailto:vanfrl@rpi.edu\">vanfrl@rpi.edu</a></p></td>
+</tr>
+</table>
+</html>"));
 end DeltaDynLoad_3Ph;

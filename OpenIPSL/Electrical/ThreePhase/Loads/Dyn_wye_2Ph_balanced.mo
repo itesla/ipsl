@@ -1,5 +1,5 @@
 within OpenIPSL.Electrical.ThreePhase.Loads;
-model Dyn_wye_2Ph_balanced
+model Dyn_wye_2Ph_balanced "Variable balanced two-phase wye load"
   extends ThreePhaseComponent;
   import Modelica.Blocks.Interfaces.*;
 
@@ -81,5 +81,29 @@ equation
           lineColor={28,108,200},
           extent={{-62,45},{22,30}},
           textString="PQ Load")}),
-    Documentation);
+    Documentation(info="<html>
+<p>This is a two-phase wye load model that allows the user to vary the power consumed during the simulation.</p>
+<p>The user needs to input the entire active (<b><i>P0</i></b>) and reactive (<b><i>Q0</i></b>) powers consumed by the load. 
+Since the model represents a balanced load, the active and reactive powers consumed by each phase are <b><i>P0/2</i></b> and <b><i>Q0/2</i></b>. 
+The model allows the load to be represented as constant power only.</p>
+<p>In addition to that, the real inputs <b><i>P_in</b></i> and <b><i>Q_in</b></i> multiply the values of active and reactive power, respectively, being consumed by the load. 
+This allows the load to vary its consumed power over time during the simulation. Note that, since active and reactive powers can vary independently, the load's power factor can also vary.
+In addition, note that by changing <b><i>P0</i></b> and <b><i>Q0</i></b>, the values of power consumed by phases one and two vary identically. 
+This makes the load to be characterized as balanced.</p> 
+<p> <\p>
+<table cellspacing=\"1\" cellpadding=\"1\" border=\"1\">
+<tr>
+<td><p>Last update</p></td>
+<td>2020-05-25</td>
+</tr>
+<tr>
+<td><p>Author</p></td>
+<td><p>Marcelo de Castro, AlsetLab, and Maxime Baudette, LBNL</p></td>
+</tr>
+<tr>
+<td><p>Contact</p></td>
+<td><p><a href=\"mailto:vanfrl@rpi.edu\">vanfrl@rpi.edu</a></p></td>
+</tr>
+</table>
+</html>"));
 end Dyn_wye_2Ph_balanced;

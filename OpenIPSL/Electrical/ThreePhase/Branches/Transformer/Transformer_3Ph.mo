@@ -152,8 +152,10 @@ equation
            0.1)),
     Documentation(info="<html>
 <p>This model was design to represent three-phase two-winding transformer.<\p> 
-<p>The user should input the resistance, leakage reactance, tap value, and select the transformer connection.
-Based on this set of parameters, the pi-equivalent impedance matrices are calculated and the transformer equation is assembled.
+<p>The user should input the copper resistance <b>R</b> and leakage reactance <b>X</b> in per unit values.
+The user should also input the tap value, which is the relation between primary and secondary voltage levels, but in per unit.
+Finally, the user should select the transformer three-phase connection.</p>
+<p>Based on this set of parameters, the pi-equivalent impedance matrices are calculated and the transformer equation is assembled.
 The transformer does not take into account excitation branch, since it is often neglected in transient-stability studies.</p>
 <p>Primary side is represented by pins <b><i>Ain</i></b>, <b><i>Bin</i></b>, and <b><i>Cin</i></b>.
 Secondary side is represented by pins <b><i>Aout</i></b>, <b><i>Bout</i></b>, and <b><i>Cout</i></b><\p> 
@@ -161,7 +163,7 @@ Secondary side is represented by pins <b><i>Aout</i></b>, <b><i>Bout</i></b>, an
 <table cellspacing=\"1\" cellpadding=\"1\" border=\"1\">
 <tr>
 <td><p>Last update</p></td>
-<td>2020-05-20</td>
+<td>2020-05-25</td>
 </tr>
 <tr>
 <td><p>Author</p></td>

@@ -1,5 +1,5 @@
 within OpenIPSL.Electrical.ThreePhase.Loads;
-model WyeLoad_2Ph
+model WyeLoad_2Ph "Two-phase wye load"
   extends ThreePhaseComponent;
   OpenIPSL.Interfaces.PwPin A(
     vr(start=var0),
@@ -122,5 +122,29 @@ equation
           origin={18,4},
           lineColor={28,108,200},
           extent={{-62,45},{28,26}},
-          textString="PQ/ZIP Load")}), Documentation);
+          textString="PQ/ZIP Load")}), 
+          Documentation(info="<html>
+<p>This is a two-phase wye load model.</p>
+<p>The user needs to input the active (<b><i>P_a</i></b> and <b><i>P_b</i></b>) and reactive (<b><i>Q_a</i></b> and <b><i>Q_b</i></b>) powers consumed by each of the two phases. 
+Since the values come from independent parameters, the model allows the representation of unbalanced loads.</p> 
+<p>In addition, the model allows the load to be represented as constant power, or as a ZIP model. 
+In the first approach, the powers consumed by each phase are kept constant throughout simulation. 
+The latter approach allows the load to be represented as a sum of three terms: constant impedance, constant current and constant power. 
+This means that, depending on voltage levels supplied, the load will consume different values of power.</p>
+<p> <\p>
+<table cellspacing=\"1\" cellpadding=\"1\" border=\"1\">
+<tr>
+<td><p>Last update</p></td>
+<td>2020-05-25</td>
+</tr>
+<tr>
+<td><p>Author</p></td>
+<td><p>Marcelo de Castro, AlsetLab, and Maxime Baudette, LBNL</p></td>
+</tr>
+<tr>
+<td><p>Contact</p></td>
+<td><p><a href=\"mailto:vanfrl@rpi.edu\">vanfrl@rpi.edu</a></p></td>
+</tr>
+</table>
+</html>"));
 end WyeLoad_2Ph;

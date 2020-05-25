@@ -181,8 +181,20 @@ equation
         initialScale=0.1)),
     Documentation(info="<html>
 <p>This model was design to represent a hybrid positive-sequence/three-phase power line.<\p> 
-<p>The user should input the resistance, reactance, and line charging. All in matrix form, since this model can be used to represent unbalanced lines. 
-In addition to that, the user should also state if the hybrid interface should be calculated in an approximate or exact way.
+<p>The user should input the series conductance and susceptance, and half shunt susceptance (line charging). All in matrix form, since this model can be used to represent unbalanced lines.
+Series conductance (Gser) matrix is considered to have the following structure:</p>
+<p><b>[Gseraa</b>, <b>Gserab</b>, <b>Gserac</b>; </p>
+<p><b> Gserab</b>, <b>Gserbb</b>, <b>Gserbc</b>; </p>
+<p><b> Gserac</b>, <b>Gserbc</b>, <b>Gsercc</b>] </p>
+<p>Series susceptance (Bser) matrix is considered to have the following structure:</p>
+<p><b>[Bseraa</b>, <b>Bserab</b>, <b>Bserac</b>; </p>
+<p><b> Bserab</b>, <b>Bserbb</b>, <b>Bserbc</b>; </p>
+<p><b> Bserac</b>, <b>Bserbc</b>, <b>Bsercc</b>] </p>
+<p>The series admittance matrix is <b>Yser = Gser+jBser</b>. Each of the two shunt susceptance (Bsht) matrices is considered to have the following structure:</p>
+<p><b>[Bshtaa</b>, <b>Bshtab</b>, <b>Bshtac</b>; </p>
+<p><b> Bshtab</b>, <b>Bshtbb</b>, <b>Bshtbc</b>; </p>
+<p><b> Bshtac</b>, <b>Bshtbc</b>, <b>Bshtcc</b>] </p>
+<p>In addition to that, the user should also state if the hybrid interface should be calculated in an approximate or exact way.
 If the exact way is selected, the user should also input Norton equivalent admittances for positive, negative and zero sequences calculated in the point of interconnection of the hybrid device.
 If approximate model is selected, these admittances are set to be zero. 
 Based on the set of parameters selected by the user, the pi-equivalent impedance matrices are calculated and the line equation is assembled.</p>

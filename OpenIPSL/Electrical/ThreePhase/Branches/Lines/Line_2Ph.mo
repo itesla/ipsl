@@ -66,8 +66,17 @@ equation
         initialScale=0.1)),
     Documentation(info="<html>
 <p>This model was design to represent two-phase power line, modeled as a pi-element.<\p> 
-<p>The user should input the resistance, reactance and line charging in matrix form, since the model allows the representation of unbalanced lines.
-Based on this set of parameters, the pi-equivalent impedance matrices are calculated and the power line equation is assembled.</p>
+<p>The user should input the series conductance and susceptance, and half shunt susceptance (line charging). All in matrix form, since the model allows the representation of unbalanced lines.
+Series conductance (Gser) matrix is considered to have the following structure:</p>
+<p><b>[Gseraa</b>, <b>Gserab</b>; </p>
+<p><b> Gserab</b>, <b>Gserbb</b>] </p>
+<p>Series susceptance (Bser) matrix is considered to have the following structure:</p>
+<p><b>[Bseraa</b>, <b>Bserab</b>; </p>
+<p><b> Bserab</b>, <b>Bserbb</b>] </p>
+<p>The series admittance matrix is <b>Yser = Gser+jBser</b>. Each of the two shunt susceptance (Bsht) matrices is considered to have the following structure:</p>
+<p><b>[Bshtaa</b>, <b>Bshtab</b>; </p>
+<p><b> Bshtab</b>, <b>Bshtbb</b>] </p>
+<p>Based on this set of parameters, the pi-equivalent impedance matrices are calculated and the power line equation is assembled.</p>
 <p> <\p>
 <table cellspacing=\"1\" cellpadding=\"1\" border=\"1\">
 <tr>
