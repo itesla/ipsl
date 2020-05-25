@@ -2,9 +2,9 @@ within OpenIPSL.Electrical.ThreePhase.Branches.BaseClasses;
 partial model baseLine "Partial base power line model"
 
   outer OpenIPSL.Electrical.SystemBase SysData;
-  parameter Real S=SysData.S_b "Nominal Power (MVA)"
+  parameter SI.ApparentPower S=SysData.S_b "Nominal Power"
     annotation (Dialog(group="Power flow data"));
-  parameter Real f=SysData.fn "System Frequency"
+  parameter SI.Frequency f=SysData.fn "System Frequency"
     annotation (Dialog(group="Power flow data"));
 protected
   parameter Real zero=Modelica.Constants.eps;

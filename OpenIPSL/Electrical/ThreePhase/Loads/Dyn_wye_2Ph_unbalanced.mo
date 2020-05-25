@@ -2,7 +2,7 @@ within OpenIPSL.Electrical.ThreePhase.Loads;
 model Dyn_wye_2Ph_unbalanced "Variable unbalanced two-phase wye load"
   extends ThreePhaseComponent;
   import Modelica.Blocks.Interfaces.*;
-  Modelica.Blocks.Interfaces.RealInput P_in[2] "external P (pu)" annotation (
+  Modelica.Blocks.Interfaces.RealInput P_in[2] "external P [pu]" annotation (
       Placement(
       visible=true,
       transformation(
@@ -13,7 +13,7 @@ model Dyn_wye_2Ph_unbalanced "Variable unbalanced two-phase wye load"
         origin={-60,20},
         extent={{-20,-20},{20,20}},
         rotation=0)));
-  Modelica.Blocks.Interfaces.RealInput Q_in[2] "external Q (pu)" annotation (
+  Modelica.Blocks.Interfaces.RealInput Q_in[2] "external Q [pu]" annotation (
       Placement(
       visible=true,
       transformation(
@@ -44,13 +44,13 @@ model Dyn_wye_2Ph_unbalanced "Variable unbalanced two-phase wye load"
         origin={20,100},
         rotation=0),
       visible=true));
-  parameter SI.ActivePower P0_a(displayUnit="MW") "Initial Active power(MW)"
+  parameter SI.ActivePower P0_a(displayUnit="MW") "Initial Active power"
     annotation (Dialog(group="Power flow"));
-  parameter SI.ReactivePower Q0_a(displayUnit="Mvar") "Initial Reactive power (MVAr)"
+  parameter SI.ReactivePower Q0_a(displayUnit="Mvar") "Initial Reactive power"
     annotation (Dialog(group="Power flow"));
-  parameter SI.ActivePower P0_b(displayUnit="MW") "Initial Active power(MW)"
+  parameter SI.ActivePower P0_b(displayUnit="MW") "Initial Active power"
     annotation (Dialog(group="Power flow"));
-  parameter SI.ReactivePower Q0_b(displayUnit="Mvar") "Initial Reactive power (MVAr)"
+  parameter SI.ReactivePower Q0_b(displayUnit="Mvar") "Initial Reactive power"
     annotation (Dialog(group="Power flow"));
 
 protected

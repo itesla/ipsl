@@ -3,7 +3,7 @@ model Dyn_wye_2Ph_balanced "Variable balanced two-phase wye load"
   extends ThreePhaseComponent;
   import Modelica.Blocks.Interfaces.*;
 
-  Modelica.Blocks.Interfaces.RealInput P_in "external P (pu)" annotation (
+  Modelica.Blocks.Interfaces.RealInput P_in "external P [pu]" annotation (
       Placement(
       visible=true,
       transformation(
@@ -14,7 +14,7 @@ model Dyn_wye_2Ph_balanced "Variable balanced two-phase wye load"
         origin={-60,20},
         extent={{-20,-20},{20,20}},
         rotation=0)));
-  Modelica.Blocks.Interfaces.RealInput Q_in "external Q (pu)" annotation (
+  Modelica.Blocks.Interfaces.RealInput Q_in "external Q [pu]" annotation (
       Placement(
       visible=true,
       transformation(
@@ -45,9 +45,9 @@ model Dyn_wye_2Ph_balanced "Variable balanced two-phase wye load"
         origin={20,100},
         rotation=0),
       visible=true));
-  parameter SI.ActivePower P0(displayUnit="MW") "Initial Active power(MW)"
+  parameter SI.ActivePower P0(displayUnit="MW") "Initial Active power"
     annotation (Dialog(group="Power flow"));
-  parameter SI.ReactivePower Q0(displayUnit="Mvar") "Initial Reactive power (MVAr)"
+  parameter SI.ReactivePower Q0(displayUnit="Mvar") "Initial Reactive power"
     annotation (Dialog(group="Power flow"));
 
 protected

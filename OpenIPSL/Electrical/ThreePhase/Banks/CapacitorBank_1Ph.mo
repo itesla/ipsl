@@ -14,7 +14,7 @@ model CapacitorBank_1Ph "Single-phase capacitor bank"
         rotation=0),
       visible=true));
   parameter SI.PerUnit VA=1
-    "Voltage magnitude (pu)"
+    "Voltage magnitude"
     annotation (Dialog(group="Power flow data"));
   parameter SI.Angle AngA(displayUnit = "deg") = SI.Conversions.from_deg(0) "Voltage angle for phase A"
     annotation (Dialog(group="Power flow data"));

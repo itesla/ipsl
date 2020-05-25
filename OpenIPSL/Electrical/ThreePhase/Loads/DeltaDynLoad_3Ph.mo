@@ -2,7 +2,7 @@ within OpenIPSL.Electrical.ThreePhase.Loads;
 model DeltaDynLoad_3Ph "Variable three-phase delta load"
   extends ThreePhaseComponent;
   import Modelica.Blocks.Interfaces.*;
-  Modelica.Blocks.Interfaces.RealInput DynFact "Load Curve (pu)" annotation (
+  Modelica.Blocks.Interfaces.RealInput DynFact "Load Curve [pu]" annotation (
       Placement(
       visible=true,
       transformation(
@@ -46,17 +46,17 @@ model DeltaDynLoad_3Ph "Variable three-phase delta load"
   parameter Integer ModelType=0 "0- Constant Power Model, 1- ZIP Model;"
     annotation (choices(choice=0 "Constant Power", choice=1 "ZIP Model"),
       Dialog(group="Power flow"));
-  parameter Real P_ab "Active power for line AB (MW)"
+  parameter SI.ActivePower P_ab(displayUnit="MW")=1e6 "Active power for line AB"
     annotation (Dialog(group="Power flow"));
-  parameter Real Q_ab "Reactive power for line AB (MVAr)"
+  parameter SI.ReactivePower Q_ab(displayUnit="Mvar")=0 "Reactive power for line AB"
     annotation (Dialog(group="Power flow"));
-  parameter Real P_bc "Active power for line BC (MW)"
+  parameter SI.ActivePower P_bc(displayUnit="MW")=1e6 "Active power for line BC"
     annotation (Dialog(group="Power flow"));
-  parameter Real Q_bc "Reactive power for line BC (MVAr)"
+  parameter SI.ReactivePower Q_bc(displayUnit="Mvar")=0  "Reactive power for line BC"
     annotation (Dialog(group="Power flow"));
-  parameter Real P_ca "Active power for line CA (MW)"
+  parameter SI.ActivePower P_ca(displayUnit="MW")=1e6 "Active power for line CA"
     annotation (Dialog(group="Power flow"));
-  parameter Real Q_ca "Reactive power for line CA (MVAr)"
+  parameter SI.ReactivePower Q_ca(displayUnit="Mvar")=0  "Reactive power for line CA"
     annotation (Dialog(group="Power flow"));
   parameter Real A_ab=0 "Percentage of Constant Power Load for Line AB (%)"
     annotation (Dialog(group="Load Parameters for ZIP Model"));

@@ -3,7 +3,7 @@ model WyeDynLoad_3Ph "Variable balanced three-phase wye load"
   extends ThreePhaseComponent;
   import Modelica.Blocks.Interfaces.*;
 
-  Modelica.Blocks.Interfaces.RealInput DynFact "Load Curve (pu)" annotation (
+  Modelica.Blocks.Interfaces.RealInput DynFact "Load Curve [pu]" annotation (
       Placement(
       visible=true,
       transformation(
@@ -48,17 +48,17 @@ model WyeDynLoad_3Ph "Variable balanced three-phase wye load"
     annotation (choices(choice=0 "Constant Power", choice=1 "ZIP Model"),
       Dialog(group="Power flow"));
 
-  parameter Real P_a "Base Active power for phase A (MW)"
+  parameter SI.ActivePower P_a(displayUnit="MW")=1e6 "Base Active power for phase A"
     annotation (Dialog(group="Power flow"));
-  parameter Real Q_a "Base Reactive power for phase A (MVAr)"
+  parameter SI.ReactivePower Q_a(displayUnit="Mvar")=0 "Base Reactive power for phase A"
     annotation (Dialog(group="Power flow"));
-  parameter Real P_b "Base Active power for phase B (MW)"
+  parameter SI.ActivePower P_b(displayUnit="MW")=1e6 "Base Active power for phase B"
     annotation (Dialog(group="Power flow"));
-  parameter Real Q_b "Base Reactive power for phase B (MVAr)"
+  parameter SI.ReactivePower Q_b(displayUnit="Mvar")=0 "Base Reactive power for phase B"
     annotation (Dialog(group="Power flow"));
-  parameter Real P_c "Base Active power for phase C (MW)"
+  parameter SI.ActivePower P_c(displayUnit="MW")=1e6 P_c "Base Active power for phase C"
     annotation (Dialog(group="Power flow"));
-  parameter Real Q_c "Base Reactive power for phase C (MVAr)"
+  parameter SI.ReactivePower Q_c(displayUnit="Mvar")=0 "Base Reactive power for phase C"
     annotation (Dialog(group="Power flow"));
 
   parameter Real A_pa=0 "Percentage of Constant Power Load for Phase A (%)"

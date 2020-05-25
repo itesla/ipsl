@@ -36,13 +36,11 @@ model Transformer_3Ph "Three Phase transformer modeled as a PI-equivalent device
       choice=6 "Y-D",
       choice=7 "Y-Yg",
       choice=8 "Yg-Y"));
-  parameter Real fn=SysData.fn "Frequency rating (Hz)"
-    annotation (Dialog(group="Power flow"));
   parameter Real tap=1 "Nominal tap ratio (Vs/Vp)"
     annotation (Dialog(group="Transformer parameters"));
-  parameter Real X=0.001 "Reactance (pu machine base)"
+  parameter SI.PerUnit X=0.001 "Leakage reactance"
     annotation (Dialog(group="Transformer parameters"));
-  parameter Real R=0.1 "Resistance (pu machine base)"
+  parameter SI.PerUnit R=0.1 "Windings copper resistance"
     annotation (Dialog(group="Transformer parameters"));
 protected
   function ConnectionType

@@ -46,34 +46,29 @@ model Transformer_MT "Transformer modeled in a PI element with a hybrid interfac
     annotation (Dialog(group="Selection of model"),choices(choice=0
         "Norton admittances have infinite values", choice=1
         "Norton admittances have finite values (Only possible if the transformer connection does not introduce a phase displacement)"));
-
-  parameter Real Sb=SysData.S_b "System base power (MVA)"
-    annotation (Dialog(group="Power flow"));
-  parameter Real fn=SysData.fn "Frequency rating (Hz)"
-    annotation (Dialog(group="Power flow"));
   parameter Real tap=1 "Nominal tap ratio (Vs/Vp)"
     annotation (Dialog(group="Transformer parameters"));
-  parameter Real X=0.001 "Reactance (pu system base)"
+  parameter SI.PerUnit X=0.001 "Leakage reactance"
     annotation (Dialog(group="Transformer parameters"));
-  parameter Real R=0.1 "Resistance (pu system base)"
+  parameter SI.PerUnit R=0.1 "Windings copper resistance"
     annotation (Dialog(group="Transformer parameters"));
 
-  parameter Real G_0=0 "Zero sequence conductance in p.u." annotation (Dialog(
+  parameter SI.PerUnit G_0=0 "Zero-sequence Norton equivalent conductance" annotation (Dialog(
         group=
           "Norton equivalent admittances in terminal K - Considering that the negative and zero norton admittances have finite values"));
-  parameter Real B_0=0 "Zero sequence susceptance in p.u." annotation (Dialog(
+  parameter SI.PerUnit B_0=0 "Zero-sequence Norton equivalent susceptance" annotation (Dialog(
         group=
           "Norton equivalent admittances in terminal K - Considering that the negative and zero norton admittances have finite values"));
-  parameter Real G_1=0 "Positive sequence conductance in p.u." annotation (
+  parameter SI.PerUnit G_1=0 "Positive-sequence Norton equivalent conductance" annotation (
       Dialog(group=
           "Norton equivalent admittances in terminal K - Considering that the negative and zero norton admittances have finite values"));
-  parameter Real B_1=0 "Positive sequence susceptance in p.u." annotation (
+  parameter SI.PerUnit B_1=0 "Positive-sequence Norton equivalent susceptance" annotation (
       Dialog(group=
           "Norton equivalent admittances in terminal K - Considering that the negative and zero norton admittances have finite values"));
-  parameter Real G_2=0 "Negative sequence conductance in p.u." annotation (
+  parameter SI.PerUnit G_2=0 "Negative-sequence Norton equivalent conductance" annotation (
       Dialog(group=
           "Norton equivalent admittances in terminal K - Considering that the negative and zero norton admittances have finite values"));
-  parameter Real B_2=0 "Negative sequence susceptance in p.u." annotation (
+  parameter SI.PerUnit B_2=0 "Negative-sequence Norton equivalent susceptance" annotation (
       Dialog(group=
           "Norton equivalent admittances in terminal K - Considering that the negative and zero norton admittances have finite values"));
 

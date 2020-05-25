@@ -36,15 +36,15 @@ model CapacitorBank_3Ph "Three-phase capacitor bank"
       visible=true));
 
   parameter SI.PerUnit VA=1
-    "Voltage magnitude (pu)"
+    "Voltage magnitude"
     annotation (Dialog(group="Power flow data"));
   parameter SI.Angle AngA(displayUnit = "deg") = SI.Conversions.from_deg(0) "Voltage angle for phase A"
     annotation (Dialog(group="Power flow data"));
-  parameter SI.PerUnit VB=1 "Voltage magnitude (pu)"
+  parameter SI.PerUnit VB=1 "Voltage magnitude"
     annotation (Dialog(group="Power flow data"));
   parameter SI.Angle AngB(displayUnit = "deg") = SI.Conversions.from_deg(-120) "Voltage angle for phase B"
     annotation (Dialog(group="Power flow data"));
-  parameter SI.PerUnit VC=1 "Voltage magnitude (pu)"
+  parameter SI.PerUnit VC=1 "Voltage magnitude"
     annotation (Dialog(group="Power flow data"));
   parameter SI.Angle AngC(displayUnit = "deg") = SI.Conversions.from_deg(120) "Voltage angle for phase C"
     annotation (Dialog(group="Power flow data"));

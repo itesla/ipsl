@@ -6,13 +6,13 @@ model Bus_1Ph "Single-phase bus"
           180)), vi(start=V_1*sin(angle_1*Modelica.Constants.pi/180)))
     annotation (Placement(transformation(extent={{-10,-10},{10,10}})));
 
-  parameter Real V_1=1 "Voltage magnitude for phase 1 (pu)"
+  parameter SI.PerUnit V_1=1 "Voltage magnitude for phase 1"
     annotation (Dialog(group="Power flow data"));
-  parameter Real angle_1=0 "Voltage angle for phase 1 (deg)"
+  parameter SI.Conversions.NonSIunits.Angle_deg angle_1=0 "Voltage angle for phase 1"
     annotation (Dialog(group="Power flow data"));
-  Real V1(start=V_1) "Bus voltage magnitude for phase 1 (pu)";
-  Modelica.SIunits.Conversions.NonSIunits.Angle_deg angle1(start=angle_1)
-    "Bus voltage angle for phase 1 (deg)";
+  SI.PerUnit V1(start=V_1) "Bus voltage magnitude for phase 1";
+  SI.Conversions.NonSIunits.Angle_deg angle1(start=angle_1)
+    "Bus voltage angle for phase 1";
 
 protected
   Real[1, 2] Vin=[p1.vr, p1.vi];

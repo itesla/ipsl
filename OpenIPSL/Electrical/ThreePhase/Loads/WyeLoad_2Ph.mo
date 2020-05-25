@@ -32,21 +32,21 @@ model WyeLoad_2Ph "Two-phase wye load"
   parameter Integer ModelType=0 "0- Constant Power Model, 1- ZIP Model;"
     annotation (choices(choice=0 "Constant Power", choice=1 "ZIP Model"),
       Dialog(group="Power flow"));
-  parameter Real P_a "Active power for phase A (MW)"
+  parameter SI.ActivePower P_a(displayUnit="MW")=1e6 "Active power for phase A"
     annotation (Dialog(group="Power flow"));
-  parameter Real Q_a "Reactive power for phase A (MVAr)"
+  parameter SI.ReactivePower Q_a(displayUnit="Mvar")=0 "Reactive power for phase A"
     annotation (Dialog(group="Power flow"));
-  parameter Real P_b "Active power for phase B (MW)"
+  parameter SI.ActivePower P_b(displayUnit="MW")=1e6 "Active power for phase B"
     annotation (Dialog(group="Power flow"));
-  parameter Real Q_b "Reactive power for phase B (MVAr)"
+  parameter SI.ReactivePower Q_b(displayUnit="Mvar")=0 "Reactive power for phase B"
     annotation (Dialog(group="Power flow"));
-  parameter Real VA=1 "Guess value for phase A magnitude (pu)"
+  parameter SI.PerUnit VA=1 "Guess value for phase A magnitude"
     annotation (Dialog(group="Initialization"));
-  parameter Real AngA=0 "Guess value for phase A angle (deg)"
+  parameter SI.Angle AngA(displayUnit = "deg") = SI.Conversions.from_deg(0) "Guess value for phase A angle"
     annotation (Dialog(group="Initialization"));
-  parameter Real VB=1 "Guess value for phase B magnitude (pu)"
+  parameter SI.PerUnit VB=1 "Guess value for phase B magnitude"
     annotation (Dialog(group="Initialization"));
-  parameter Real AngB=-120 "Guess value for phase B angle (deg)"
+  parameter SI.Angle AngB(displayUnit = "deg") = SI.Conversions.from_deg(-120) "Guess value for phase B angle"
     annotation (Dialog(group="Initialization"));
   parameter Real A_pa=0 "Percentage of Constant Power Load for Phase A (%)"
     annotation (Dialog(group="Load Parameters for ZIP Model"));

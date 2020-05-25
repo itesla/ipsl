@@ -5,15 +5,15 @@ model InfiniteBus "Three-phase infinite bus"
     "Base voltage of the bus"
     annotation (Dialog(group="Power flow data"));
   parameter SI.PerUnit V_A=1
-    "Voltage magnitude (pu)"
+    "Voltage magnitude for phase A"
     annotation (Dialog(group="Power flow data"));
   parameter SI.Angle angle_A(displayUnit = "deg") = SI.Conversions.from_deg(0) "Voltage angle for phase A"
     annotation (Dialog(group="Power flow data"));
-  parameter SI.PerUnit V_B=1 "Voltage magnitude (pu)"
+  parameter SI.PerUnit V_B=1 "Voltage magnitude for phase B"
     annotation (Dialog(group="Power flow data"));
   parameter SI.Angle angle_B(displayUnit = "deg") = SI.Conversions.from_deg(-120) "Voltage angle for phase B"
     annotation (Dialog(group="Power flow data"));
-  parameter SI.PerUnit V_C=1 "Voltage magnitude (pu)"
+  parameter SI.PerUnit V_C=1 "Voltage magnitude for phase C"
     annotation (Dialog(group="Power flow data"));
   parameter SI.Angle angle_C(displayUnit = "deg") = SI.Conversions.from_deg(120) "Voltage angle for phase C"
     annotation (Dialog(group="Power flow data"));
@@ -46,10 +46,10 @@ model InfiniteBus "Three-phase infinite bus"
     annotation (Placement(transformation(extent={{80,-100},{100,-80}})));
   SI.ActivePower Pa(displayUnit="MW") "Active Power suplied by the Infinite bus (phase a)";
   SI.ReactivePower Qa(displayUnit="Mvar") "Reactive Power suplied by the Infinite bus (phase a)";
-  SI.ActivePower Pb(displayUnit="MW") "Active Power suplied by the Infinite bus (phase b) (MW)";
-  SI.ReactivePower Qb(displayUnit="Mvar") "Reactive Power suplied by the Infinite bus (phase b) (MVAr)";
-  SI.ActivePower Pc(displayUnit="MW") "Active Power suplied by the Infinite bus (phase c) (MW)";
-  SI.ReactivePower Qc(displayUnit="Mvar") "Reactive Power suplied by the Infinite bus (phase c) (MVAr)";
+  SI.ActivePower Pb(displayUnit="MW") "Active Power suplied by the Infinite bus (phase b)";
+  SI.ReactivePower Qb(displayUnit="Mvar") "Reactive Power suplied by the Infinite bus (phase b)";
+  SI.ActivePower Pc(displayUnit="MW") "Active Power suplied by the Infinite bus (phase c)";
+  SI.ReactivePower Qc(displayUnit="Mvar") "Reactive Power suplied by the Infinite bus (phase c)";
 equation
   // Equations for Phase A
   p1.vr = V_A*cos(angle_A);

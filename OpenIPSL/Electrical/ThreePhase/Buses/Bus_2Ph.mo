@@ -9,20 +9,20 @@ model Bus_2Ph "Two-phase bus"
           180)), vi(start=V_2*sin(angle_2*Modelica.Constants.pi/180)))
     annotation (Placement(transformation(extent={{-10,-55},{10,-35}})));
 
-  parameter Real V_1=1 "Voltage magnitude for phase 1 (pu)"
+  parameter SI.PerUnit V_1=1 "Voltage magnitude for phase 1"
     annotation (Dialog(group="Power flow data"));
-  parameter Real V_2=1 "Voltage magnitude for phase 2 (pu)"
+  parameter SI.PerUnit V_2=1 "Voltage magnitude for phase 2"
     annotation (Dialog(group="Power flow data"));
-  parameter Real angle_1=0 "Voltage angle for phase 1 (deg)"
+  parameter SI.Conversions.NonSIunits.Angle_deg angle_1=0 "Voltage angle for phase 1"
     annotation (Dialog(group="Power flow data"));
-  parameter Real angle_2=-120 "Voltage angle for phase 2 (deg)"
+  parameter SI.Conversions.NonSIunits.Angle_deg angle_2=-120 "Voltage angle for phase 2"
     annotation (Dialog(group="Power flow data"));
-  Real V1(start=V_1) "Bus voltage magnitude for phase 1 (pu)";
-  Modelica.SIunits.Conversions.NonSIunits.Angle_deg angle1(start=angle_1)
-    "Bus voltage angle for phase 1 (deg)";
-  Real V2(start=V_2) "Bus voltage magnitude for phase 2 (pu)";
-  Modelica.SIunits.Conversions.NonSIunits.Angle_deg angle2(start=angle_2)
-    "Bus voltage angle for phase 2 (deg)";
+  SI.PerUnit V1(start=V_1) "Bus voltage magnitude for phase 1";
+  SI.Conversions.NonSIunits.Angle_deg angle1(start=angle_1)
+    "Bus voltage angle for phase 1";
+  SI.PerUnit V2(start=V_2) "Bus voltage magnitude for phase 2";
+  SI.Conversions.NonSIunits.Angle_deg angle2(start=angle_2)
+    "Bus voltage angle for phase 2";
 
 protected
   Real[1, 4] Vin=[p1.vr, p1.vi, p2.vr, p2.vi];

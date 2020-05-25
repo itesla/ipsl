@@ -6,9 +6,9 @@ model Line_1Ph "Single-phase line modeled as a PI-equivalent device."
     annotation (Placement(transformation(extent={{-140,-10},{-120,10}})));
   OpenIPSL.Interfaces.PwPin Aout
     annotation (Placement(transformation(extent={{120,-10},{140,10}})));
-  parameter Real Gser=0 "in p.u." annotation (Dialog(group="Power flow data"));
-  parameter Real Bser=-10 "in p.u." annotation (Dialog(group="Power flow data"));
-  parameter Real Bsht=0 "in p.u." annotation (Dialog(group="Power flow data"));
+  parameter SI.PerUnit Gser=0 "Series conductance" annotation (Dialog(group="Power flow data"));
+  parameter SI.PerUnit Bser=-10 "Series susceptance" annotation (Dialog(group="Power flow data"));
+  parameter SI.PerUnit Bsht=0 "Shunt half susceptance" annotation (Dialog(group="Power flow data"));
 
   //Writing the Y_ser matrix for the pi model
 protected

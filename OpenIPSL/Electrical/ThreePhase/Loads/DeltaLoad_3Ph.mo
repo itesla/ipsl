@@ -37,15 +37,15 @@ model DeltaLoad_3Ph "Three-phase delta load"
   parameter Integer ModelType=0 "0- Constant Power Model, 1- ZIP Model;"
     annotation (choices(choice=0 "Constant Power", choice=1 "ZIP Model"),
       Dialog(group="Power flow"));
-  parameter SI.PerUnit VA=1 "Voltage magnitude (pu)"
+  parameter SI.PerUnit VA=1 "Voltage magnitude for phase A"
     annotation (Dialog(group="Power flow data"));
   parameter SI.Angle AngA(displayUnit = "deg") = SI.Conversions.from_deg(0) "Voltage angle for phase A"
     annotation (Dialog(group="Power flow data"));
-  parameter SI.PerUnit VB=1 "Voltage magnitude (pu)"
+  parameter SI.PerUnit VB=1 "Voltage magnitude for phase B"
     annotation (Dialog(group="Power flow data"));
   parameter SI.Angle AngB(displayUnit = "deg") = SI.Conversions.from_deg(-120) "Voltage angle for phase B"
     annotation (Dialog(group="Power flow data"));
-  parameter SI.PerUnit VC=1 "Voltage magnitude (pu)"
+  parameter SI.PerUnit VC=1 "Voltage magnitude for phase C"
     annotation (Dialog(group="Power flow data"));
   parameter SI.Angle AngC(displayUnit = "deg") = SI.Conversions.from_deg(120) "Voltage angle for phase C"
     annotation (Dialog(group="Power flow data"));
