@@ -56,7 +56,7 @@ model WyeDynLoad_3Ph "Variable balanced three-phase wye load"
     annotation (Dialog(group="Power flow"));
   parameter SI.ReactivePower Q_b(displayUnit="Mvar")=0 "Base Reactive power for phase B"
     annotation (Dialog(group="Power flow"));
-  parameter SI.ActivePower P_c(displayUnit="MW")=1e6 P_c "Base Active power for phase C"
+  parameter SI.ActivePower P_c(displayUnit="MW")=1e6 "Base Active power for phase C"
     annotation (Dialog(group="Power flow"));
   parameter SI.ReactivePower Q_c(displayUnit="Mvar")=0 "Base Reactive power for phase C"
     annotation (Dialog(group="Power flow"));

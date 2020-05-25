@@ -48,7 +48,7 @@ equation
           extent={{-39.0262,-16.7966},{39.0262,16.7966}},
           fontName="Arial",
           textString=DynamicSelect("0.0", String(Vb, significantDigits=3)),
-          lineColor={238,46,47})})
+          lineColor={238,46,47})}),
           Documentation(info="<html>
 <p>This is a single-phase bus model.</p>
 <p>A bus represents a node in a power system. Therefore, this model can be used to verify voltage magnitude and angle in the single-phase nodes of the system.</p>
