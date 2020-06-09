@@ -36,7 +36,7 @@ model IEEE4_MonoTri "Initial conditions (power-flow) calculation of IEEE4 bus sy
         origin={-10,0},
         extent={{-10,-10},{10,10}},
         rotation=0)));
-  Electrical.ThreePhase.Buses.Bus_3Ph                              Bus3
+  Electrical.ThreePhase.Buses.Bus_3Ph Bus3
     annotation (Placement(visible=true, transformation(
         origin={24,0},
         extent={{-10,-10},{10,10}},
@@ -57,7 +57,7 @@ model IEEE4_MonoTri "Initial conditions (power-flow) calculation of IEEE4 bus sy
         origin={46,0},
         extent={{-10,-10},{10,10}},
         rotation=0)));
-  Electrical.ThreePhase.Buses.Bus_3Ph                              Bus4
+  Electrical.ThreePhase.Buses.Bus_3Ph Bus4
     annotation (Placement(visible=true, transformation(
         origin={68,0},
         extent={{-10,-10},{10,10}},
@@ -121,19 +121,5 @@ The first two buses are positive-sequence only while buses three and four are th
 The simulation just calculates the initialization variables, which are the solution for the hybrid positive-sequence/three-phase power flow.
 The results can be verified against any tool that calculates a hybrid positive-sequence/three-phase power-flow.</p>
 <p> </p>
-<table cellspacing=\"1\" cellpadding=\"1\" border=\"1\">
-<tr>
-<td><p>Last update</p></td>
-<td>2020-05-19</td>
-</tr>
-<tr>
-<td><p>Author</p></td>
-<td><p>Marcelo de Castro, AlsetLab, and Maxime Baudette, LBNL</p></td>
-</tr>
-<tr>
-<td><p>Contact</p></td>
-<td><p><a href=\"mailto:vanfrl@rpi.edu\">vanfrl@rpi.edu</a></p></td>
-</tr>
-</table>
 </html>"));
 end IEEE4_MonoTri;

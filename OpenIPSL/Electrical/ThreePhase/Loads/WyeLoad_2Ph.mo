@@ -132,19 +132,5 @@ In the first approach, the powers consumed by each phase are kept constant throu
 The latter approach allows the load to be represented as a sum of three terms: constant impedance, constant current and constant power. 
 This means that, depending on voltage levels supplied, the load will consume different values of power.</p>
 <p> <\p>
-<table cellspacing=\"1\" cellpadding=\"1\" border=\"1\">
-<tr>
-<td><p>Last update</p></td>
-<td>2020-05-25</td>
-</tr>
-<tr>
-<td><p>Author</p></td>
-<td><p>Marcelo de Castro, AlsetLab, and Maxime Baudette, LBNL</p></td>
-</tr>
-<tr>
-<td><p>Contact</p></td>
-<td><p><a href=\"mailto:vanfrl@rpi.edu\">vanfrl@rpi.edu</a></p></td>
-</tr>
-</table>
 </html>"));
 end WyeLoad_2Ph;

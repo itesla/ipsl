@@ -158,19 +158,5 @@ The transformer does not take into account excitation branch, since it is often 
 <p>Primary side is represented by pins <b><i>Ain</i></b>, <b><i>Bin</i></b>, and <b><i>Cin</i></b>.
 Secondary side is represented by pins <b><i>Aout</i></b>, <b><i>Bout</i></b>, and <b><i>Cout</i></b><\p> 
 <p> <\p>
-<table cellspacing=\"1\" cellpadding=\"1\" border=\"1\">
-<tr>
-<td><p>Last update</p></td>
-<td>2020-05-25</td>
-</tr>
-<tr>
-<td><p>Author</p></td>
-<td><p>Marcelo de Castro, AlsetLab, and Maxime Baudette, LBNL</p></td>
-</tr>
-<tr>
-<td><p>Contact</p></td>
-<td><p><a href=\"mailto:vanfrl@rpi.edu\">vanfrl@rpi.edu</a></p></td>
-</tr>
-</table>
 </html>"));
 end Transformer_3Ph;

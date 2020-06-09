@@ -55,19 +55,5 @@ equation
 <p>Although it is not necessary, it is extremely recommended to connect one bus model between two other single-phase models.</p>
 <p>Please, check if this bus model is the appropriate one for your system. For the connection of three- or two-phase models, three- or two-phase buses might be a better fit.</p>
 <p> <\p>
-<table cellspacing=\"1\" cellpadding=\"1\" border=\"1\">
-<tr>
-<td><p>Last update</p></td>
-<td>2020-05-21</td>
-</tr>
-<tr>
-<td><p>Author</p></td>
-<td><p>Marcelo de Castro, AlsetLab, and Maxime Baudette, LBNL</p></td>
-</tr>
-<tr>
-<td><p>Contact</p></td>
-<td><p><a href=\"mailto:vanfrl@rpi.edu\">vanfrl@rpi.edu</a></p></td>
-</tr>
-</table>
 </html>"));
 end Bus_1Ph;

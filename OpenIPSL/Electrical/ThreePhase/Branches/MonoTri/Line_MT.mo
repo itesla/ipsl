@@ -200,19 +200,5 @@ If approximate model is selected, these admittances are set to be zero.
 Based on the set of parameters selected by the user, the pi-equivalent impedance matrices are calculated and the line equation is assembled.</p>
 <p>The positive-sequence system is connected using pin <b><i>p</i></b>, while three-phase system is connected using pins <b><i>A</i></b>, <b><i>B</i></b>, and <b><i>C</i></b><\p> 
 <p> <\p>
-<table cellspacing=\"1\" cellpadding=\"1\" border=\"1\">
-<tr>
-<td><p>Last update</p></td>
-<td>2020-05-20</td>
-</tr>
-<tr>
-<td><p>Author</p></td>
-<td><p>Marcelo de Castro, AlsetLab, and Maxime Baudette, LBNL</p></td>
-</tr>
-<tr>
-<td><p>Contact</p></td>
-<td><p><a href=\"mailto:vanfrl@rpi.edu\">vanfrl@rpi.edu</a></p></td>
-</tr>
-</table>
 </html>"));
 end Line_MT;

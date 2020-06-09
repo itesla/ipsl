@@ -11,7 +11,7 @@ model IEEE4 "Initial conditions (power-flow) calculation of IEEE4 bus system, in
         origin={-88,0},
         extent={{-10,-10},{10,10}},
         rotation=0)));
-  Electrical.ThreePhase.Buses.Bus_3Ph                              Bus1
+  Electrical.ThreePhase.Buses.Bus_3Ph Bus1
     annotation (Placement(visible=true, transformation(
         origin={-66,0},
         extent={{-10,-10},{10,10}},
@@ -152,19 +152,5 @@ equation
 The simulation just calculates the initialization variables, which are the solution for the three-phase power flow.
 The results can be verified against any tool that calculates a three-phase power-flow.</p>
 <p> </p>
-<table cellspacing=\"1\" cellpadding=\"1\" border=\"1\">
-<tr>
-<td><p>Last update</p></td>
-<td>2020-05-19</td>
-</tr>
-<tr>
-<td><p>Author</p></td>
-<td><p>Marcelo de Castro, AlsetLab, and Maxime Baudette, LBNL</p></td>
-</tr>
-<tr>
-<td><p>Contact</p></td>
-<td><p><a href=\"mailto:vanfrl@rpi.edu\">vanfrl@rpi.edu</a></p></td>
-</tr>
-</table>
 </html>"));
 end IEEE4;

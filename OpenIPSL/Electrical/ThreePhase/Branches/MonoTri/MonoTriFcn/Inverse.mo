@@ -79,19 +79,5 @@ Documentation(info="<html>
 <p>This function is used to transform both positive and negative-zero impedance filters into admittances.
 The filters are necessary for Norton equivalent admittances calculations, and this function allows the transformation of filter impedances into admittances.<\p>
 <p> <\p>
-<table cellspacing=\"1\" cellpadding=\"1\" border=\"1\">
-<tr>
-<td><p>Last update</p></td>
-<td>2020-05-20</td>
-</tr>
-<tr>
-<td><p>Author</p></td>
-<td><p>Marcelo de Castro, AlsetLab, and Maxime Baudette, LBNL</p></td>
-</tr>
-<tr>
-<td><p>Contact</p></td>
-<td><p><a href=\"mailto:vanfrl@rpi.edu\">vanfrl@rpi.edu</a></p></td>
-</tr>
-</table>
 </html>"));
 end Inverse;

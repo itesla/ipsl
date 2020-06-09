@@ -94,19 +94,5 @@ This allows the load to vary its consumed power over time during the simulation.
 In addition, note that, since <b><i>P_in</b></i> and <b><i>Q_in</b></i> have a 2x1 dimension, <b><i>P0_a</i></b>, <b><i>P0_b</i></b>, <b><i>Q0_a</i></b> and <b><i>Q0_b</i></b> can vary idependently. 
 This makes the load to be characterized as unbalanced.</p> 
 <p> <\p>
-<table cellspacing=\"1\" cellpadding=\"1\" border=\"1\">
-<tr>
-<td><p>Last update</p></td>
-<td>2020-05-25</td>
-</tr>
-<tr>
-<td><p>Author</p></td>
-<td><p>Marcelo de Castro, AlsetLab, and Maxime Baudette, LBNL</p></td>
-</tr>
-<tr>
-<td><p>Contact</p></td>
-<td><p><a href=\"mailto:vanfrl@rpi.edu\">vanfrl@rpi.edu</a></p></td>
-</tr>
-</table>
 </html>"));
 end Dyn_wye_2Ph_unbalanced;

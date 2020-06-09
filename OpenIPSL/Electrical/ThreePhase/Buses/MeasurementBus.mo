@@ -95,19 +95,5 @@ equation
 <li><i><b>pc</b></i> and <i><b>qc</b></i> returns the active and reactive power, respectively, in phase C. </li>
 </ul>
 <p> </p>
-<table cellspacing=\"1\" cellpadding=\"1\" border=\"1\">
-<tr>
-<td><p>Last update</p></td>
-<td>2020-05-19</td>
-</tr>
-<tr>
-<td><p>Author</p></td>
-<td><p>Maxime Baudette, LNLS, and Marcelo de Castro, AlsetLab</p></td>
-</tr>
-<tr>
-<td><p>Contact</p></td>
-<td><p><a href=\"mailto:vanfrl@rpi.edu\">vanfrl@rpi.edu</a></p></td>
-</tr>
-</table>
 </html>"));
 end MeasurementBus;

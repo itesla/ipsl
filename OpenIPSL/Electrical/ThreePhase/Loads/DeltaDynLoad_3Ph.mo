@@ -194,19 +194,5 @@ This allows the load to vary over time during the simulation.
 It is also important to note that <b><i>DynFact</b></i> multiplies all variables <b><i>P_ab</i></b>, <b><i>P_bc</i></b>, <b><i>P_ca</i></b><\p>, <b><i>Q_ab</i></b>, <b><i>Q_bc</i></b> and <b><i>Q_ca</i></b>. 
 That means that this model does not allow load variation to be performed only in selected variables. </p> 
 <p> <\p>
-<table cellspacing=\"1\" cellpadding=\"1\" border=\"1\">
-<tr>
-<td><p>Last update</p></td>
-<td>2020-05-25</td>
-</tr>
-<tr>
-<td><p>Author</p></td>
-<td><p>Marcelo de Castro, AlsetLab, and Maxime Baudette, LBNL</p></td>
-</tr>
-<tr>
-<td><p>Contact</p></td>
-<td><p><a href=\"mailto:vanfrl@rpi.edu\">vanfrl@rpi.edu</a></p></td>
-</tr>
-</table>
 </html>"));
 end DeltaDynLoad_3Ph;

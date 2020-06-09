@@ -192,19 +192,5 @@ Documentation(info="<html>
 <p>The transformer that uses this function should have its primary and secondary windings connected in wye (star).
 In addition, this function considers that positive-, negative-, and zero-sequence Norton equivalent impedances have finite values.<\p>
 <p> <\p>
-<table cellspacing=\"1\" cellpadding=\"1\" border=\"1\">
-<tr>
-<td><p>Last update</p></td>
-<td>2020-05-20</td>
-</tr>
-<tr>
-<td><p>Author</p></td>
-<td><p>Marcelo de Castro, AlsetLab, and Maxime Baudette, LBNL</p></td>
-</tr>
-<tr>
-<td><p>Contact</p></td>
-<td><p><a href=\"mailto:vanfrl@rpi.edu\">vanfrl@rpi.edu</a></p></td>
-</tr>
-</table>
 </html>"));
 end Y_Y_FinImp;

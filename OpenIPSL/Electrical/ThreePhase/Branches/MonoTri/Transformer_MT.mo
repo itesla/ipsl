@@ -282,19 +282,5 @@ The transformer does not take into account excitation branch, since it is often 
 <p>Primary side, modeled as positive-sequence equivalent, is represented by pin <b><i>p</i></b>.
 Secondary side, modeled as full three-phase system, is represented by pins <b><i>A</i></b>, <b><i>B</i></b>, and <b><i>C</i></b><\p> 
 <p> <\p>
-<table cellspacing=\"1\" cellpadding=\"1\" border=\"1\">
-<tr>
-<td><p>Last update</p></td>
-<td>2020-05-25</td>
-</tr>
-<tr>
-<td><p>Author</p></td>
-<td><p>Marcelo de Castro, AlsetLab, and Maxime Baudette, LBNL</p></td>
-</tr>
-<tr>
-<td><p>Contact</p></td>
-<td><p><a href=\"mailto:vanfrl@rpi.edu\">vanfrl@rpi.edu</a></p></td>
-</tr>
-</table>
 </html>"));
 end Transformer_MT;
