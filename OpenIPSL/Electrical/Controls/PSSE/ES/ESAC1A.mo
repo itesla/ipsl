@@ -163,6 +163,5 @@ equation
 <td><p>IEEE Type AC1A Excitation System Model.</p></td>
 </tr>
 </table>
-<p> This model has been verified against PSS/E.</p>
 </html>"));
 end ESAC1A;

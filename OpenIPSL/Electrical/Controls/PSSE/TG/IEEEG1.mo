@@ -198,6 +198,5 @@ equation
 <td><p>Governor IEEEG1, IEEG1_GE and IEEEG1D IEEE Type 1 Speed-Governor Model.</p></td>
 </tr>
 </table>
-<p> This model has been verified against PSS/E.</p>
 </html>"));
 end IEEEG1;

@@ -166,6 +166,5 @@ equation
 <td><p>IEEE Dual-Input Stabilizer Model.</p></td>
 </tr>
 </table>
-<p> This model has been verified against PSS/E.</p>
 </html>"));
 end PSS2B;

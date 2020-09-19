@@ -273,6 +273,5 @@ equation
 <td><p>IEEE Type ST1A Excitation System Model.</p></td>
 </tr>
 </table>
-<p> This model has been verified against PSS/E.</p>
 </html>"));
 end ESST1A;

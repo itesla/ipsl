@@ -118,6 +118,5 @@ equation
 <td><p>Bus Fed or Solid Fed Static Excitation System Model.</p></td>
 </tr>
 </table>
-<p> This model has been verified against PSS/E.</p>
 </html>"));
 end SCRX;
