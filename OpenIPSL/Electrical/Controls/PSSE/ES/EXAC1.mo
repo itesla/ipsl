@@ -140,14 +140,17 @@ equation
           lineColor={28,108,200},
           textString="EXAC1")}),
     Documentation(info="<html>
-<table cellspacing=\"1\" cellpadding=\"1\" border=\"1\">
+<table cellspacing=\"1\" cellpadding=\"1\" border=\"1\"><tr>
+<td><p>Model Name</p></td>
+<td><p>EXAC1</p></td>
+</tr>
 <tr>
 <td><p>Reference</p></td>
-<td>EXAC1, PSS/E Manual</td>
+<td><p>PSS/E Manual</p></td>
 </tr>
 <tr>
 <td><p>Last update</p></td>
-<td>September 2020</td>
+<td><p>September 2020</p></td>
 </tr>
 <tr>
 <td><p>Author</p></td>
@@ -157,7 +160,14 @@ equation
 <td><p>Contact</p></td>
 <td><p><a href=\"mailto:vanfrl@rpi.edu\">vanfrl@rpi.edu</a></p></td>
 </tr>
+<tr>
+<td><p>Model Verification</p></td>
+<td><p>This model has been verified against PSS/E.</p></td>
+</tr>
+<tr>
+<td><p>Description</p></td>
+<td><p> IEEE Type AC1 Excitation System Model.</p></td>
+</tr>
 </table>
-<p> This model has been verified against PSS/E.</p>
 </html>"));
 end EXAC1;

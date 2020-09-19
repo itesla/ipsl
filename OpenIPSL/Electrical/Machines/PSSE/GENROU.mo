@@ -164,6 +164,10 @@ equation
           textString="GENROU")}),
     Documentation(info="<html>
 <table cellspacing=\"1\" cellpadding=\"1\" border=\"1\"><tr>
+<td><p>Model Name</p></td>
+<td><p>GENROU</p></td>
+</tr>
+<tr>
 <td><p>Reference</p></td>
 <td><p>PSS/E Manual</p></td>
 </tr>
@@ -173,13 +177,20 @@ equation
 </tr>
 <tr>
 <td><p>Author</p></td>
-<td><p>Mengjia Zhang,SmarTS Lab, KTH Royal Institute of Technology</p></td>
+<td><p>Mengjia Zhang, SmarTS Lab, KTH Royal Institute of Technology</p></td>
 </tr>
 <tr>
 <td><p>Contact</p></td>
 <td><p><a href=\"mailto:vanfrl@rpi.edu\">vanfrl@rpi.edu</a></p></td>
 </tr>
+<tr>
+<td><p>Model Verification</p></td>
+<td><p>This model has been verified against PSS/E.</p></td>
+</tr>
+<tr>
+<td><p>Description</p></td>
+<td><p>Solid Rotor Generator represented by equal mutual inductance rotor modeling.</p></td>
+</tr>
 </table>
-<p> This model has been verified against PSS/E.</p>
 </html>"));
 end GENROU;
