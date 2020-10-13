@@ -1,6 +1,6 @@
 within OpenIPSL.Electrical.Controls.PSSE.TG;
-model IEEEG1
-  Modelica.Blocks.Interfaces.RealInput SPEED_HP "Machine speed deviation from nominal (pu)"
+model IEEEG1 "1981 IEEE Type 1 Turbine-Governor Model"
+  Modelica.Blocks.Interfaces.RealInput SPEED_HP "Machine speed deviation from nominal [pu]"
     annotation (Placement(transformation(extent={{-172,2},{-162,14}}), iconTransformation(extent={{-162,-16},{-132,16}})));
   OpenIPSL.NonElectrical.Continuous.LeadLag imLeadLag(
     K=K,
@@ -58,32 +58,32 @@ model IEEEG1
         rotation=-90,
         origin={130,-16})));
   Modelica.Blocks.Interfaces.RealOutput PMECH_HP
-    "Turbine mechanical power (pu)" annotation (Placement(transformation(extent
+    "Turbine mechanical power [pu]" annotation (Placement(transformation(extent
           ={{170,52},{180,64}}), iconTransformation(extent={{160,26},{188,54}})));
   Modelica.Blocks.Interfaces.RealOutput PMECH_LP
-    "Turbine mechanical power (pu)" annotation (Placement(transformation(extent
+    "Turbine mechanical power [pu]" annotation (Placement(transformation(extent
           ={{170,-48},{180,-36}}), iconTransformation(extent={{160,-56},{188,-24}})));
-  parameter Real P0 "Power reference of the governor";
-  parameter Real K=20 "Governor gain, 1/R (pu)";
-  parameter Real T_1=1e-8 "Control time constant (s)";
-  parameter Real T_2=1e-8 "Control time constant (s)";
-  parameter Real T_3=0.1 "Control time constant (s)";
-  parameter Real U_o=0.1 "Max. rate if valve opening (p.u./s)";
-  parameter Real U_c=-0.1 "Max. rate if valve closing (p.u./s)";
-  parameter Real P_MAX=0.903 "Max. valve position (pu)";
-  parameter Real P_MIN=0 "Min. valve position (pu)";
-  parameter Real T_4=0.4 "HP section time constant (s)";
-  parameter Real K_1=0.3 "Fraction of power from HP (pu)";
-  parameter Real K_2=0;
-  parameter Real T_5=9 "Reheat+IP time constant (s)";
-  parameter Real K_3=0.4 "Fraction of power from IP (pu)";
-  parameter Real K_4=0;
-  parameter Real T_6=0.5 "Reheat+IP time constant s";
-  parameter Real K_5=0.3 "Fraction of power from LP (pu)";
-  parameter Real K_6=0;
-  parameter Real T_7=1e-8 "LP section time const s";
-  parameter Real K_7=0 "Fraction of power from IP  (pu)";
-  parameter Real K_8=0;
+  parameter SI.PerUnit P0=1 "Power reference of the governor";
+  parameter Real K=20 "Regulation gain [1/pu]";
+  parameter SI.Time T_1=1e-8 "Control time constant";
+  parameter SI.Time T_2=1e-8 "Control time constant";
+  parameter SI.Time T_3=0.1 "Control time constant";
+  parameter SI.TimeAging U_o=0.1 "Max. rate if valve opening";
+  parameter SI.TimeAging U_c=-0.1 "Max. rate if valve closing";
+  parameter SI.PerUnit P_MAX=0.903 "Max. valve position";
+  parameter SI.PerUnit P_MIN=0 "Min. valve position";
+  parameter SI.Time T_4=0.4 "HP section time constant";
+  parameter SI.PerUnit K_1=0.3 "Fraction of power from high pressure turbine (upper branch)";
+  parameter SI.PerUnit K_2=0 "Fraction of power from high pressure turbine (lower branch)";
+  parameter SI.Time T_5=9 "Reheat plus intermediate pressure turbine time constant";
+  parameter SI.PerUnit K_3=0.4 "Fraction of power from intermediate pressure turbine (upper branch)";
+  parameter SI.PerUnit K_4=0 "Fraction of power from intermediate pressure turbine (lower branch)";
+  parameter SI.Time T_6=0.5 "Reheater plus intermediate pressure turbine time constant (second)";
+  parameter SI.PerUnit K_5=0.3 "Fraction of power from low pressure turbine (first LP, upper branch)";
+  parameter SI.PerUnit K_6=0 "Fraction of power from low pressure turbine (first LP, lower branch)";
+  parameter SI.Time T_7=1e-8 "Low pressure turbine time constant";
+  parameter SI.PerUnit K_7=0 "Fraction of power from low pressure turbine (second LP, upper branch)";
+  parameter SI.PerUnit K_8=0 "Fraction of power from low pressure turbine (second LP, lower branch)";
   Modelica.Blocks.Sources.Constant Pref(k=P0) "Power reference "
     annotation (Placement(transformation(extent={{-144,34},{-128,50}})));
   Modelica.Blocks.Math.Add3 add3_1(k2=-1, k3=-1)

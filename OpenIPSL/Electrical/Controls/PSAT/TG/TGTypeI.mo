@@ -1,29 +1,29 @@
 within OpenIPSL.Electrical.Controls.PSAT.TG;
 model TGTypeI
-  Modelica.Blocks.Interfaces.RealInput w "Rotor speed (pu)" annotation (
+  Modelica.Blocks.Interfaces.RealInput w "Rotor speed [pu]" annotation (
       Placement(transformation(extent={{-140,-20},{-100,20}})));
-  Modelica.Blocks.Interfaces.RealOutput pm "Mechanical power (pu)" annotation (
+  Modelica.Blocks.Interfaces.RealOutput pm "Mechanical power [pu]" annotation (
       Placement(transformation(extent={{100,-10},{120,10}})));
-  parameter Real wref=1 "Speed reference (pu)";
-  parameter Real pref "Active power reference (pu)";
-  parameter Real R "Droop (pu)";
-  parameter Real pmax "Maximum turbine output (pu)";
-  parameter Real pmin "Minimum turbine output (pu)";
-  parameter Real Ts "Governor time constant (s)";
-  parameter Real Tc "Servo time constant (s)";
-  parameter Real T3 "Transient gain time constant (s)";
-  parameter Real T4 "Power fraction time constant (s)";
-  parameter Real T5 "Reheat time constant (s)";
-  Real pin "Turbine output (pu)";
+  parameter SI.PerUnit wref=1 "Speed reference";
+  parameter SI.PerUnit pref "Active power reference";
+  parameter SI.PerUnit R "Droop";
+  parameter SI.PerUnit pmax "Maximum turbine output";
+  parameter SI.PerUnit pmin "Minimum turbine output";
+  parameter SI.Time Ts "Governor time constant";
+  parameter SI.Time Tc "Servo time constant";
+  parameter SI.Time T3 "Transient gain time constant";
+  parameter SI.Time T4 "Power fraction time constant";
+  parameter SI.Time T5 "Reheat time constant";
+  SI.PerUnit pin "Turbine output";
 protected
-  parameter Real pin0=pref "Initialization";
-  parameter Real xg10=pin0 "Initialization";
-  parameter Real xg20=(1 - T3/Tc)*xg10 "Initialization";
-  parameter Real xg30=(1 - T4/T5)*(xg20 + T3*xg10/Tc) "Initialization";
-  Real pinstar;
-  Real xg1(start=xg10, fixed=true);
-  Real xg2(start=xg20, fixed=true);
-  Real xg3(start=xg30, fixed=true);
+  parameter SI.PerUnit pin0=pref "Initialization";
+  parameter SI.PerUnit xg10=pin0 "Initialization";
+  parameter SI.PerUnit xg20=(1 - T3/Tc)*xg10 "Initialization";
+  parameter SI.PerUnit xg30=(1 - T4/T5)*(xg20 + T3*xg10/Tc) "Initialization";
+  SI.PerUnit pinstar;
+  SI.PerUnit xg1(start=xg10, fixed=true);
+  SI.PerUnit xg2(start=xg20, fixed=true);
+  SI.PerUnit xg3(start=xg30, fixed=true);
 equation
   pinstar = pref + (wref - w)/R;
   if pinstar >= pmin and pinstar <= pmax then

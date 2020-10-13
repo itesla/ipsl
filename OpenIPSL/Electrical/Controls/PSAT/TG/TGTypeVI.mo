@@ -1,22 +1,22 @@
 within OpenIPSL.Electrical.Controls.PSAT.TG;
 model TGTypeVI
   "Hydro Turbine (Nonlinear model) and Governor (PID controller combined with servomotor)- control scheme Type 6"
-  parameter Real gmax "Maximum gate opening (pu)";
-  parameter Real gmin "Minimum gate opening (pu)";
-  parameter Real vmax "Maximum gate opening rate (pu)";
-  parameter Real vmin "Minimum gate opening rate (pu)";
-  parameter Real Ta "Pilot valve time constant (s)";
-  parameter Real Tw "Water starting time (s)";
-  parameter Real beta "Transient speed droop (p.u./p.u.)";
-  parameter Real Kp "Proportional droop (p.u./p.u.)";
-  parameter Real Ki "Integral droop (p.u./p.u.)";
-  parameter Real Kd "Derivative droop (p.u./p.u.)";
-  parameter Real Td "Derivative droop time constant (s)";
-  parameter Real Rp "Permanent droop (p.u./p.u.)";
-  parameter Real Ka;
-  parameter Real dref;
-  parameter Real po;
-  Real G "Gate opening (pu)";
+  parameter SI.PerUnit gmax "Maximum gate opening";
+  parameter SI.PerUnit gmin "Minimum gate opening";
+  parameter SI.PerUnit vmax "Maximum gate opening rate";
+  parameter SI.PerUnit vmin "Minimum gate opening rate";
+  parameter SI.Time Ta "Pilot valve time constant";
+  parameter SI.Time Tw "Water starting time";
+  parameter Real beta "Transient speed droop [pu/pu]";
+  parameter Real Kp "Proportional droop [pu/pu]";
+  parameter SI.TimeAging Ki "Integral droop";
+  parameter SI.Time Kd "Derivative droop";
+  parameter SI.Time Td "Derivative droop time constant";
+  parameter Real Rp "Permanent droop [pu/pu]";
+  parameter Real Ka "Pilot valve gain [pu/pu]";
+  parameter SI.PerUnit dref;
+  parameter SI.PerUnit po;
+  SI.PerUnit G "Gate opening [pu]";
   Modelica.Blocks.Continuous.Integrator integrator(initType=Modelica.Blocks.Types.Init.NoInit,
       y_start=po*(gmax - gmin))
     annotation (Placement(transformation(extent={{-8,14},{4,26}})));
@@ -33,7 +33,7 @@ model TGTypeVI
         origin={170,20})));
   Modelica.Blocks.Math.MultiSum multiSum3(nu=2, k={1,-1})
     annotation (Placement(transformation(extent={{104,14},{116,26}})));
-  Modelica.Blocks.Interfaces.RealOutput Pm "Mechanical power (pu)" annotation (
+  Modelica.Blocks.Interfaces.RealOutput Pm "Mechanical power [pu]" annotation (
       Placement(transformation(extent={{200,10},{220,30}}),iconTransformation(
           extent={{100,-10},{120,10}})));
   Modelica.Blocks.Math.Gain gain9(k=Kp)
@@ -66,7 +66,7 @@ model TGTypeVI
   Modelica.Blocks.Math.Product product1
     annotation (Placement(transformation(extent={{184,14},{196,26}})));
   Modelica.Blocks.Math.MultiProduct square(nu=2) annotation (Placement(transformation(extent={{84,14},{96,26}})));
-  Modelica.Blocks.Interfaces.RealInput pe "Active power (pu)" annotation (
+  Modelica.Blocks.Interfaces.RealInput pe "Active power [pu]" annotation (
       Placement(transformation(extent={{-200,-40},{-180,-20}}),
         iconTransformation(extent={{-140,-50},{-100,-10}})));
   Modelica.Blocks.Continuous.Derivative derivative(k=Kd, T=Td)
@@ -100,13 +100,13 @@ model TGTypeVI
         extent={{-6,-6},{6,6}},
         rotation=180,
         origin={-110,-40})));
-  Modelica.Blocks.Interfaces.RealInput pref "Active power reference (pu)"
+  Modelica.Blocks.Interfaces.RealInput pref "Active power reference [pu]"
     annotation (Placement(transformation(extent={{-200,-60},{-180,-40}}),
         iconTransformation(extent={{-140,-100},{-100,-60}})));
-  Modelica.Blocks.Interfaces.RealInput wref "Rotor speed reference (pu)"
+  Modelica.Blocks.Interfaces.RealInput wref "Rotor speed reference [pu]"
     annotation (Placement(transformation(extent={{-200,10},{-180,30}}),
         iconTransformation(extent={{-140,100},{-100,60}})));
-  Modelica.Blocks.Interfaces.RealInput we "Rotor speed (pu)" annotation (
+  Modelica.Blocks.Interfaces.RealInput we "Rotor speed [pu]" annotation (
       Placement(transformation(extent={{-200,-10},{-180,10}}),
                                                              iconTransformation(
           extent={{-140,10},{-100,50}})));

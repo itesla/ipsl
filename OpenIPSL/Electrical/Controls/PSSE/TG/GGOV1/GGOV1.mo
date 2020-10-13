@@ -10,40 +10,40 @@ model GGOV1 "GE General Governor/Turbine Mode"
                     characteristic" annotation (Evaluate=true, choices(choice=0
         "Fuel flow independent of speed", choice=1
         "Fuel flow proportional to speed"));
-  parameter Real R "Permanent droop (pu)";
-  parameter Real T_pelec "Electrical power transducer time constant (s)";
-  parameter Real maxerr "Maximum value for speed error signal";
-  parameter Real minerr "Minimum value for speed error signal";
-  parameter Real Kpgov "Governor proportional gain";
-  parameter Real Kigov "Governor integral gain";
-  parameter Real Kdgov "Governor derivative gain";
-  parameter Real Tdgov "Governor derivative controller time constant (s)";
-  parameter Real Vmax "Maximum valve position limit";
-  parameter Real Vmin "Minimum valve position limit";
-  parameter Real Tact "Actuator time constant (s)";
-  parameter Real Kturb "Turbine gain";
-  parameter Real Wfnl "No load fuel flow (pu)";
-  parameter Real Tb "Turbine lag time constant (s)";
-  parameter Real Tc "Turbine lead time constant (s)";
-  parameter Real Teng "Transport lag time constant for diesel engine (s)";
-  parameter Real Tfload "Load Limiter time constant (s)";
-  parameter Real Kpload "Load limiter proportional gain for PI controller";
-  parameter Real Kiload "Load limiter integral gain for PI controller";
-  parameter Real Ldref "Load limiter reference value (pu)";
-  parameter Real Dm "Mechanical damping coefficient (pu)";
-  parameter Real Ropen "Maximum valve opening rate (p.u./s)";
-  parameter Real Rclose "Maximum valve closing rate (p.u./s)";
-  parameter Real Kimw "Power controller (reset) gain";
-  parameter Real Aset "Acceleration limiter setpoint (p.u./s)";
-  parameter Real Ka "Acceleration limiter gain";
-  parameter Real Ta "Acceleration limiter time constant (s)";
-  parameter Real Trate "Turbine rating (MW)";
-  parameter Real db "Speed governor deadband";
-  parameter Real Tsa "Temperature detection lead time constant (s)";
-  parameter Real Tsb "Temperature detection lag time constant (s)";
-  parameter Real Rup "Maximum rate of load limit increase";
-  parameter Real Rdown "Maximum rate of load limit decrease";
-  parameter Real DELT "PSSE time step";
+  parameter SI.PerUnit R=0.04 "Permanent droop";
+  parameter SI.Time T_pelec=1 "Electrical power transducer time constant";
+  parameter SI.PerUnit maxerr=0.05 "Maximum value for speed error signal";
+  parameter SI.PerUnit minerr=-0.05 "Minimum value for speed error signal";
+  parameter SI.PerUnit Kpgov=10 "Governor proportional gain";
+  parameter SI.TimeAging Kigov=2 "Governor integral gain";
+  parameter SI.Time Kdgov=0 "Governor derivative gain";
+  parameter SI.Time Tdgov=1 "Governor derivative controller time constant";
+  parameter SI.PerUnit Vmax=1 "Maximum valve position limit";
+  parameter SI.PerUnit Vmin=0.15 "Minimum valve position limit";
+  parameter SI.Time Tact=0.5 "Actuator time constant";
+  parameter SI.PerUnit Kturb=1.5 "Turbine gain";
+  parameter SI.PerUnit Wfnl=0.2 "No load fuel flow";
+  parameter SI.Time Tb=0.1 "Turbine lag time constant";
+  parameter SI.Time Tc=0 "Turbine lead time constant";
+  parameter SI.Time Teng=0 "Transport lag time constant for diesel engine";
+  parameter SI.Time Tfload=3 "Load Limiter time constant";
+  parameter SI.PerUnit Kpload=2 "Load limiter proportional gain for PI controller";
+  parameter SI.TimeAging Kiload=0.67 "Load limiter integral gain for PI controller";
+  parameter SI.PerUnit Ldref=1 "Load limiter reference value";
+  parameter SI.PerUnit Dm=0 "Mechanical damping coefficient";
+  parameter SI.TimeAging Ropen=0.1 "Maximum valve opening rate";
+  parameter SI.TimeAging Rclose=-0.1 "Maximum valve closing rate";
+  parameter SI.TimeAging Kimw=0 "Power controller (reset) gain";
+  parameter SI.TimeAging Aset=0.1 "Acceleration limiter setpoint";
+  parameter SI.PerUnit Ka=10 "Acceleration limiter gain";
+  parameter SI.Time Ta=0.1 "Acceleration limiter time constant";
+  parameter SI.ActivePower Trate(displayUnit="MW")=0 "Turbine rating";
+  parameter SI.PerUnit db=0 "Speed governor deadband";
+  parameter SI.Time Tsa=4 "Temperature detection lead time constant";
+  parameter SI.Time Tsb=5 "Temperature detection lag time constant";
+  parameter SI.TimeAging Rup=99 "Maximum rate of load limit increase";
+  parameter SI.TimeAging Rdown=-99 "Maximum rate of load limit decrease";
+  parameter SI.Time DELT=0.005 "Time step used in simulation";
   Modelica.Blocks.Math.Gain KPLOAD(k=Kpload)
     annotation (Placement(transformation(extent={{-196,52},{-182,66}})));
   Modelica.Blocks.Math.Gain KPGOV(k=Kpgov)
@@ -84,10 +84,10 @@ model GGOV1 "GE General Governor/Turbine Mode"
   Modelica.Blocks.Math.Add add
     annotation (Placement(transformation(extent={{-54,-2},{-36,16}})));
   Modelica.Blocks.Interfaces.RealInput SPEED
-    "Machine speed deviation from nominal (pu)" annotation (Placement(
+    "Machine speed deviation from nominal [pu]" annotation (Placement(
         transformation(extent={{-346,102},{-310,138}}), iconTransformation(
           extent={{-346,102},{-310,138}})));
-  Modelica.Blocks.Interfaces.RealInput PELEC "Machine electrical power (pu)"
+  Modelica.Blocks.Interfaces.RealInput PELEC "Machine electrical power [pu]"
     annotation (Placement(transformation(extent={{-348,-118},{-310,-80}}),
         iconTransformation(extent={{-348,-118},{-310,-80}})));
   Modelica.Blocks.Continuous.Derivative s8(
@@ -194,7 +194,7 @@ model GGOV1 "GE General Governor/Turbine Mode"
         origin={128,-152})));
   Dm_select dm_select(Dm=Dm)
     annotation (Placement(transformation(extent={{2,154},{22,174}})));
-  Modelica.Blocks.Interfaces.RealOutput PMECH "Turbine mechanical power (pu)"
+  Modelica.Blocks.Interfaces.RealOutput PMECH "Turbine mechanical power [pu]"
     annotation (Placement(transformation(extent={{260,-10},{280,10}}),
         iconTransformation(extent={{260,-10},{280,10}})));
   Modelica.Blocks.Math.Product product1 annotation (Placement(transformation(
@@ -249,21 +249,21 @@ model GGOV1 "GE General Governor/Turbine Mode"
         rotation=90,
         origin={-206,-131})));
 protected
-  parameter Real Pe0(fixed=false);
-  parameter Real Pmech0(fixed=false);
-  parameter Real Pref(fixed=false);
-  parameter Real Pmwset(fixed=false);
-  parameter Real s00(fixed=false);
-  parameter Real s20(fixed=false);
-  parameter Real s30(fixed=false);
-  parameter Real s40(fixed=false);
-  parameter Real s50(fixed=false);
-  parameter Real s60(fixed=false);
-  parameter Real s70(fixed=false);
-  parameter Real s80(fixed=false);
-  parameter Real s90(fixed=false);
+  parameter SI.PerUnit Pe0(fixed=false);
+  parameter SI.PerUnit Pmech0(fixed=false);
+  parameter SI.PerUnit Pref(fixed=false);
+  parameter SI.PerUnit Pmwset(fixed=false);
+  parameter SI.PerUnit s00(fixed=false);
+  parameter SI.PerUnit s20(fixed=false);
+  parameter SI.PerUnit s30(fixed=false);
+  parameter SI.PerUnit s40(fixed=false);
+  parameter SI.PerUnit s50(fixed=false);
+  parameter SI.PerUnit s60(fixed=false);
+  parameter SI.PerUnit s70(fixed=false);
+  parameter SI.PerUnit s80(fixed=false);
+  parameter SI.PerUnit s90(fixed=false);
   //parameter Real s10( fixed=false);
-  parameter Real fsr0(fixed=false);
+  parameter SI.PerUnit fsr0(fixed=false);
 initial equation
   Pe0 = PELEC;
   Pmech0 = PELEC;

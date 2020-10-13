@@ -1,18 +1,18 @@
 within OpenIPSL.Electrical.Controls.PSAT.TG;
 model TGTypeV
   "Hydro Turbine (Nonlinear model) and Governor (PI controller combined with servomotor)- control scheme Type 5"
-  parameter Real Tg "Servomotor droop (pu)";
-  parameter Real gmax "Maximum gate opening (pu)";
-  parameter Real gmin "Minimum gate opening (pu)";
-  parameter Real vmax "Maximum gate opening rate (pu)";
-  parameter Real vmin "Minimum gate opening rate (pu)";
-  parameter Real Tp "Pilot valve time constant (s)";
-  parameter Real Tw "Water starting time (s)";
-  parameter Real Kp "Proportional droop (p.u./p.u.)";
-  parameter Real Ki "Integral droop (p.u./p.u.)";
-  parameter Real sigma "Permanent speed droop (p.u./p.u.)";
-  parameter Real Pref;
-  Real G "Gate opening (pu)";
+  parameter SI.PerUnit Tg "Servomotor droop";
+  parameter SI.PerUnit gmax "Maximum gate opening";
+  parameter SI.PerUnit gmin "Minimum gate opening";
+  parameter SI.PerUnit vmax "Maximum gate opening rate";
+  parameter SI.PerUnit vmin "Minimum gate opening rate";
+  parameter SI.Time Tp "Pilot valve time constant";
+  parameter SI.Time Tw "Water starting time";
+  parameter Real Kp "Proportional droop [pu/pu]";
+  parameter Real Ki "Integral droop [pu/pu]";
+  parameter Real sigma "Permanent speed droop [pu/pu]";
+  parameter SI.PerUnit Pref;
+  SI.PerUnit G "Gate opening";
   Modelica.Blocks.Continuous.Integrator integrator(initType=Modelica.Blocks.Types.Init.NoInit,
       y_start=Pref)
     annotation (Placement(transformation(extent={{64,-6},{76,6}})));
@@ -26,11 +26,11 @@ model TGTypeV
     annotation (Placement(transformation(extent={{164,-6},{176,6}})));
   Modelica.Blocks.Math.MultiSum multiSum3(k={-1,1}, nu=2)
     annotation (Placement(transformation(extent={{144,-6},{156,6}})));
-  Modelica.Blocks.Interfaces.RealInput w "Rotor speed (pu)" annotation (
+  Modelica.Blocks.Interfaces.RealInput w "Rotor speed [pu]" annotation (
       Placement(transformation(extent={{-180,-10},{-160,10}}),
                                                             iconTransformation(
           extent={{-140,-20},{-100,20}})));
-  Modelica.Blocks.Interfaces.RealOutput Pm "Power Pm (pu)" annotation (
+  Modelica.Blocks.Interfaces.RealOutput Pm "Power Pm [pu]" annotation (
       Placement(transformation(extent={{220,-6},{232,6}}),iconTransformation(
           extent={{100,-10},{120,10}})));
   Modelica.Blocks.Continuous.Integrator integrator4(initType=Modelica.Blocks.Types.Init.SteadyState,
@@ -63,7 +63,7 @@ model TGTypeV
   Modelica.Blocks.Sources.Constant one(k=1) annotation (Placement(transformation(
         extent={{-6,-6},{6,6}},
         origin={130,-20})));
-  Modelica.Blocks.Interfaces.RealInput pref "Reference power (pu)" annotation (Placement(transformation(extent={{-180,20},{-160,40}}), iconTransformation(extent={{-140,40},{-100,80}})));
+  Modelica.Blocks.Interfaces.RealInput pref "Reference power [pu]" annotation (Placement(transformation(extent={{-180,20},{-160,40}}), iconTransformation(extent={{-140,40},{-100,80}})));
   Modelica.Blocks.Math.Feedback p_feedback annotation (Placement(transformation(
         extent={{-6,-6},{6,6}},
         rotation=180,
@@ -78,7 +78,7 @@ model TGTypeV
     annotation (Placement(transformation(extent={{4,-6},{16,6}})));
   Modelica.Blocks.Math.Add add3(k1=+1, k2=-1)
     annotation (Placement(transformation(extent={{-95,-5},{-85,5}})));
-  Modelica.Blocks.Interfaces.RealInput wref "Reference rotor speed (pu)"
+  Modelica.Blocks.Interfaces.RealInput wref "Reference rotor speed [pu]"
     annotation (Placement(transformation(extent={{-180,-30},{-160,-10}}),
         iconTransformation(extent={{-140,-80},{-100,-40}})));
   Modelica.Blocks.Math.Feedback w_feedback annotation (Placement(transformation(extent={{-152,6},{-140,-6}})));

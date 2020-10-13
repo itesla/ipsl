@@ -1,6 +1,6 @@
 within OpenIPSL.Electrical.Controls.PSAT.TG;
 model TGtypeII "TG Type II"
-  Modelica.Blocks.Interfaces.RealInput pm0 "Initial mechanical power (pu)"
+  Modelica.Blocks.Interfaces.RealInput pm0 "Initial mechanical power [pu]"
     annotation (Placement(
       transformation(
         origin={0,120},
@@ -10,7 +10,7 @@ model TGtypeII "TG Type II"
         origin={0.0,120.0},
         extent={{-20.0,-20.0},{20.0,20.0}},
         rotation=-90)));
-  Modelica.Blocks.Interfaces.RealOutput pm "Mechanical power (pu)" annotation (
+  Modelica.Blocks.Interfaces.RealOutput pm "Mechanical power [pu]" annotation (
       Placement(
       transformation(
         origin={109.815,0},
@@ -18,7 +18,7 @@ model TGtypeII "TG Type II"
       iconTransformation(
         origin={110.0,-0.0},
         extent={{-10.0,-10.0},{10.0,10.0}})));
-  Modelica.Blocks.Interfaces.RealInput w "Rotor speed (pu)" annotation (
+  Modelica.Blocks.Interfaces.RealInput w "Rotor speed [pu]" annotation (
       Placement(
       transformation(
         origin={-120,5e-06},
@@ -33,15 +33,15 @@ model TGtypeII "TG Type II"
         1}) annotation (Placement(transformation(
         origin={10,4.44089e-16},
         extent={{-10.0,-10.0},{10.0,10.0}})));
-  parameter Real wref=1 "Reference speed (pu)";
-  parameter Real R=0.2 "Droop (pu)";
-  parameter Real pmax0=1 "Maximum turbine output (pu)";
-  parameter Real pmin0=0 "Minimum turbine output (pu)";
-  parameter Real Ts=0.1 "Governor Time constant (s)";
-  parameter Real T3=-0.1 "Transient gain time constant (s)";
-  parameter Real S_b=100 "System base power (MVA)"
+  parameter SI.PerUnit wref=1 "Reference speed";
+  parameter SI.PerUnit R=0.2 "Droop";
+  parameter SI.PerUnit pmax0=1 "Maximum turbine output";
+  parameter SI.PerUnit pmin0=0 "Minimum turbine output";
+  parameter SI.Time Ts=0.1 "Governor Time constant";
+  parameter SI.Time T3=-0.1 "Transient gain time constant";
+  parameter SI.ApparentPower S_b(displayUnit="MVA")=100e6 "System base power"
     annotation (Dialog(group="Power flow data"));
-  parameter Real Sn=20 "Nominal power (MVA)";
+  parameter SI.ApparentPower Sn(displayUnit="MVA")=20e6 "Nominal power";
   Modelica.Blocks.Math.Gain gain1(k=1/Ro) annotation (Placement(transformation(
         origin={-20,6.66134e-16},
         extent={{-10.0,-10.0},{10.0,10.0}})));
