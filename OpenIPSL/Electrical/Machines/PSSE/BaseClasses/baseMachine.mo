@@ -23,7 +23,7 @@ partial model baseMachine
     annotation (Dialog(group="Machine parameters"));
   parameter SI.Time Tppd0 "d-axis sub-transient open-circuit time constant"
     annotation (Dialog(group="Machine parameters"));
-  parameter SI.Time Tppq0 "q-axis transient open-circuit time constant"
+  parameter SI.Time Tppq0 "q-axis sub-transient open-circuit time constant"
     annotation (Dialog(group="Machine parameters"));
   parameter SI.Time H "Inertia constant"
     annotation (Dialog(group="Machine parameters"));
@@ -45,7 +45,7 @@ partial model baseMachine
     annotation (Dialog(group="Machine parameters"));
   parameter SI.PerUnit S12 "Saturation factor at 1.2 pu"
     annotation (Dialog(group="Machine parameters"));
-  parameter SI.PerUnit R_a=0 "Amature resistance"
+  parameter SI.PerUnit R_a=0 "Armature resistance"
     annotation (Dialog(group="Machine parameters"));
   //Initialization
   OpenIPSL.Interfaces.PwPin p(

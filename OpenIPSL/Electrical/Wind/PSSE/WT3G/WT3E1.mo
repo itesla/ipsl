@@ -12,42 +12,41 @@ model WT3E1
       choice=0 "Disable terminal voltage control",
       choice=1 "Enable terminal voltage control ",
       choice=2 "Fixed limits for Eqcmd"));
-  parameter Real Tfv=0.15000 "Filter time constant in voltage regulator (sec)";
-  parameter Real Kpv=18.000 "  Proportional gain in voltage regulator (pu)";
-  parameter Real KIV=5.0000 "  Integrator gain in voltage regulator (pu)";
-  parameter Real Xc=0.0000 "  Line drop compensation reactance (pu)";
-  parameter Real TFP=0.50000E-01 "  Filter time constant in torque regulator";
-  parameter Real Kpp=3.0000 "  Proportional gain in torque regulator (pu) ";
-  parameter Real KIP=0.60000 " Integrator gain in torque regulator (pu)";
-  parameter Real PMX=1.1200 "  Max limit in torque regulator (pu)";
-  parameter Real PMN=0.10000 "  Min limit in torque regulator (pu)";
-  parameter Real QMX=0.29600 "  Max limit in voltage regulator (pu)";
-  parameter Real QMN=-0.43600 "  Min limit in voltage regulator (pu)";
-  parameter Real IPMAX=1.1000 "  Max active current limit";
-  parameter Real TRV=0.50000E-01 " Voltage sensor time constant";
-  parameter Real RPMX=0.45000 "  Max power order derivative";
-  parameter Real RPMN=-0.45000 "  Min power order derivative";
-  parameter Real T_Power=5.0000 "  Power filter time constant";
-  parameter Real Kqi=0.50000E-01 "  MVAR/Voltage gain";
-  parameter Real VMINCL=0.90000 "  Min voltage limit";
-  parameter Real VMAXCL=1.2000 "  Max voltage limit";
-  parameter Real Kqv=40.000 "  Voltage/MVAR gain";
-  parameter Real XIQmin=-0.50000;
-  parameter Real XIQmax=0.40000;
-  parameter Real Tv=0.50000E-01 "  Lag time constant in WindVar controller";
-  parameter Real Tp=0.50000E-01 "  Pelec filter in fast PF controller";
-  parameter Real Fn=1.0000 "  A portion of online wind turbines";
-  parameter Real wPmin=0.69000 "  Shaft speed at Pmin (pu)";
-  parameter Real wP20=0.78000 "  Shaft speed at 20% rated power (pu) ";
-  parameter Real wP40=0.98000 "  Shaft speed at 40% rated power (pu)";
-  parameter Real wP60=1.1200 "  Shaft speed at 60% rated power (pu)";
-  parameter Real Pmin=0.74000
-    "  Minimum power for operating at P100 speed (pu)";
-  parameter Real wP100=1.2000 "  Shaft speed at 100% rated power (pu)";
-  parameter Real Vref " Remote bus ref voltage";
-  parameter Real v0;
-  parameter Real p0;
-  parameter Real q0;
+  parameter SI.Time Tfv=0.15000 "Filter time constant in voltage regulator";
+  parameter SI.PerUnit Kpv=18.000 "Proportional gain in voltage regulator";
+  parameter SI.TimeAging KIV=5.0000 "Integrator gain in voltage regulator";
+  parameter SI.PerUnit Xc=0.0000 "Line drop compensation reactance";
+  parameter SI.Time TFP=0.50000E-01 "Filter time constant in torque regulator";
+  parameter SI.PerUnit Kpp=3.0000 "Proportional gain in torque regulator";
+  parameter SI.TimeAging KIP=0.60000 "Integrator gain in torque regulator";
+  parameter SI.PerUnit PMX=1.1200 "Max limit in torque regulator";
+  parameter SI.PerUnit PMN=0.10000 "Min limit in torque regulator";
+  parameter SI.PerUnit QMX=0.29600 "Max limit in voltage regulator";
+  parameter SI.PerUnit QMN=-0.43600 "Min limit in voltage regulator";
+  parameter SI.PerUnit IPMAX=1.1000 "Max active current limit";
+  parameter SI.Time TRV=0.50000E-01 "Voltage sensor time constant";
+  parameter SI.PerUnit RPMX=0.45000 "Max power order derivative";
+  parameter SI.PerUnit RPMN=-0.45000 "Min power order derivative";
+  parameter SI.Time T_Power=5.0000 "Power filter time constant";
+  parameter SI.PerUnit Kqi=0.50000E-01 "MVAR/Voltage gain";
+  parameter SI.PerUnit VMINCL=0.90000 "Min voltage limit";
+  parameter SI.PerUnit VMAXCL=1.2000 "Max voltage limit";
+  parameter SI.PerUnit Kqv=40.000 "Voltage/MVAR gain";
+  parameter SI.PerUnit XIQmin=-0.50000;
+  parameter SI.PerUnit XIQmax=0.40000;
+  parameter SI.Time Tv=0.50000E-01 "Lag time constant in WindVar controller";
+  parameter SI.Time Tp=0.50000E-01 "Pelec filter in fast PF controller";
+  parameter Real Fn=1.0000 "A portion of online wind turbines";
+  parameter SI.PerUnit wPmin=0.69000 "Shaft speed at Pmin";
+  parameter SI.PerUnit wP20=0.78000 "Shaft speed at 20% rated power";
+  parameter SI.PerUnit wP40=0.98000 "Shaft speed at 40% rated power";
+  parameter SI.PerUnit wP60=1.1200 "Shaft speed at 60% rated power";
+  parameter SI.PerUnit Pmin=0.74000 "Minimum power for operating at P100 speed";
+  parameter SI.PerUnit wP100=1.2000 "Shaft speed at 100% rated power";
+  parameter SI.PerUnit Vref "Remote bus ref voltage";
+  parameter SI.PerUnit v0;
+  parameter SI.PerUnit p0;
+  parameter SI.PerUnit q0;
   Modelica.Blocks.Interfaces.RealInput PELEC annotation (Placement(
         transformation(extent={{-210,30},{-190,50}}), iconTransformation(
         extent={{10,-10},{-10,10}},
@@ -96,7 +95,7 @@ model WT3E1
     outMax=1 + XIQmax,
     outMin=XIQmin - 1)
     annotation (Placement(transformation(extent={{138,30},{158,50}})));
-  Modelica.Blocks.Interfaces.RealInput ITERM "magenitute of terminal current"
+  Modelica.Blocks.Interfaces.RealInput ITERM "magnitude of terminal current"
     annotation (Placement(transformation(extent={{-210,88},{-190,108}}),
         iconTransformation(
         extent={{10,-10},{-10,10}},
@@ -186,13 +185,13 @@ protected
   function Speed
     extends Modelica.Icons.Function;
     input Real x;
-    input Real PMN "  Min limit in torque regulator (pu)";
+    input SI.PerUnit PMN "Min limit in torque regulator";
     input Real wmin;
     input Real w20;
     input Real w40;
     input Real w60;
     input Real w100;
-    input Real Pmin " Minimum power for operating at wP100 speed (pu)";
+    input SI.PerUnit Pmin "Minimum power for operating at wP100 speed";
     output Real y;
   protected
     parameter Real K1=(w20 - wmin)/(0.2 - PMN);
@@ -284,10 +283,10 @@ protected
       y_start=p0,
       T=Tp)
       annotation (Placement(transformation(extent={{-120,-10},{-100,10}})));
-    parameter Real Tp=0.50000E-01 " Pelec filter in fast PF controller";
+    parameter SI.Time Tp=0.50000E-01 " Pelec filter in fast PF controller";
     parameter Real PFA_ref=atan2(q0, p0) "PF angle reference if PFAFLG=1";
-    parameter Real p0;
-    parameter Real q0;
+    parameter SI.PerUnit p0;
+    parameter SI.PerUnit q0;
     Modelica.Blocks.Interfaces.RealInput u annotation (Placement(transformation(
             extent={{-214,-10},{-194,10}})));
     Modelica.Blocks.Interfaces.RealOutput Q_REF_PF
@@ -382,22 +381,21 @@ protected
     Modelica.Blocks.Interfaces.RealInput WNDSP_1
       annotation (Placement(transformation(extent={{-210,-70},{-190,-50}})));
   public
-    parameter Real TFP=0.50000E-01 "  Filter time constant in torque regulator";
-    parameter Real Kpp=3.0000 "  Proportional gain in torque regulator (pu) ";
-    parameter Real KIP=0.60000 " Integrator gain in torque regulator (pu)";
-    parameter Real PMX=1.1200 "  Max limit in torque regulator (pu)";
-    parameter Real PMN=0.10000 "  Min limit in torque regulator (pu)";
-    parameter Real IPMAX=1.1000 "  Max active current limit";
-    parameter Real RPMX=0.45000 "  Max power order derivative";
-    parameter Real RPMN=-0.45000 "  Min power order derivative";
-    parameter Real T_Power=5.0000 "  Power filter time constant";
-    parameter Real wPmin=0.69000 "  Shaft speed at Pmin (pu)";
-    parameter Real wP20=0.78000 "  Shaft speed at 20% rated power (pu) ";
-    parameter Real wP40=0.98000 "  Shaft speed at 40% rated power (pu)";
-    parameter Real wP60=1.1200 "  Shaft speed at 60% rated power (pu)";
-    parameter Real Pmin=0.74000
-      "  Minimum power for operating at P100 speed (pu)";
-    parameter Real wP100=1.2000 "  Shaft speed at 100% rated power (pu)";
+    parameter SI.Time TFP=0.50000E-01 "Filter time constant in torque regulator";
+    parameter SI.PerUnit Kpp=3.0000 "Proportional gain in torque regulator";
+    parameter SI.TimeAging KIP=0.60000 "Integrator gain in torque regulator";
+    parameter SI.PerUnit PMX=1.1200 "Max limit in torque regulator";
+    parameter SI.PerUnit PMN=0.10000 "Min limit in torque regulator";
+    parameter SI.PerUnit IPMAX=1.1000 "Max active current limit";
+    parameter SI.PerUnit RPMX=0.45000 "Max power order derivative";
+    parameter SI.PerUnit RPMN=-0.45000 "Min power order derivative";
+    parameter SI.Time T_Power=5.0000 "Power filter time constant";
+    parameter SI.PerUnit wPmin=0.69000 "Shaft speed at Pmin";
+    parameter SI.PerUnit wP20=0.78000 "Shaft speed at 20% rated power";
+    parameter SI.PerUnit wP40=0.98000 "Shaft speed at 40% rated power";
+    parameter SI.PerUnit wP60=1.1200 "Shaft speed at 60% rated power";
+    parameter SI.PerUnit Pmin=0.74000 "Minimum power for operating at P100 speed";
+    parameter SI.PerUnit wP100=1.2000 "Shaft speed at 100% rated power";
     parameter Real k20;
     parameter Real k30;
     parameter Real k50;
@@ -513,14 +511,13 @@ protected
       T=Tfv,
       y_start=k0)
       annotation (Placement(transformation(extent={{160,-10},{180,10}})));
-    Modelica.Blocks.Math.Gain XC(k=Xc) "Line drop compensation reactance (pu)"
+    Modelica.Blocks.Math.Gain XC(k=Xc) "Line drop compensation reactance"
       annotation (Placement(transformation(extent={{-180,-30},{-160,-10}})));
     Modelica.Blocks.Math.Add add3(k2=-1)
       annotation (Placement(transformation(extent={{-48,-10},{-28,10}})));
     Modelica.Blocks.Sources.Constant VARL(k=Vref)
       annotation (Placement(transformation(extent={{-98,40},{-78,60}})));
     Modelica.Blocks.Math.Gain portion(k=1/Fn)
-      "Line drop compensation reactance (pu)"
       annotation (Placement(transformation(extent={{-18,-10},{2,10}})));
     NonElectrical.Continuous.SimpleLag K1(
       y_start=k10,
@@ -536,21 +533,20 @@ protected
       T=Tv,
       y_start=k80,
       K=1) annotation (Placement(transformation(extent={{22,20},{42,40}})));
-    parameter Real Tfv=0.15000
-      "Filter time constant in voltage regulator (sec)";
-    parameter Real Kpv=18.000 "  Proportional gain in voltage regulator (pu)";
-    parameter Real KIV=5.0000 "  Integrator gain in voltage regulator (pu)";
-    parameter Real Xc=0.0000 "  Line drop compensation reactance (pu)";
-    parameter Real QMX=0.29600 "  Max limit in voltage regulator (pu)";
-    parameter Real QMN=-0.43600 "  Min limit in voltage regulator (pu)";
-    parameter Real TRV=0.50000E-01 " Voltage sensor time constant";
-    parameter Real Tv=0.50000E-01 "  Lag time constant in WindVar controller";
-    parameter Real Fn=1.0000 "  A portion of online wind turbines";
-    parameter Real Vref " Remote bus ref voltage";
-    parameter Real k0;
-    parameter Real k10;
-    parameter Real k40;
-    parameter Real k80;
+    parameter SI.Time Tfv=0.15000 "Filter time constant in voltage regulator";
+    parameter SI.PerUnit Kpv=18.000 "Proportional gain in voltage regulator";
+    parameter SI.TimeAging KIV=5.0000 "Integrator gain in voltage regulator";
+    parameter SI.PerUnit Xc=0.0000 "Line drop compensation reactance";
+    parameter SI.PerUnit QMX=0.29600 "Max limit in voltage regulator";
+    parameter SI.PerUnit QMN=-0.43600 "Min limit in voltage regulator";
+    parameter SI.Time TRV=0.50000E-01 "Voltage sensor time constant";
+    parameter SI.Time Tv=0.50000E-01 "Lag time constant in WindVar controller";
+    parameter Real Fn=1.0000 "A portion of online wind turbines";
+    parameter SI.PerUnit Vref "Remote bus ref voltage";
+    parameter SI.PerUnit k0;
+    parameter SI.PerUnit k10;
+    parameter SI.PerUnit k40;
+    parameter SI.PerUnit k80;
     Modelica.Blocks.Interfaces.RealInput ITERM annotation (Placement(
           transformation(extent={{-210.5,-30},{-189.5,-10}}),
           iconTransformation(extent={{-200,30},{-180,50}})));
