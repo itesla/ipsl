@@ -16,7 +16,7 @@ model GENCLS
     ii(start=ii0)) annotation (Placement(transformation(
         origin={100,0},
         extent={{-10,-10},{10,10}})));
-  parameter SI.ApparentPower M_b(start = 100e6, displayUnit="MVA") "Machine base power rating"
+  parameter SI.ApparentPower M_b(displayUnit="MVA")=100e6 "Machine base power rating"
     annotation (Dialog(group="Machine parameters"));
   parameter SI.Time H=0 "Inertia constant (s)"
     annotation (Dialog(group="Machine parameters"));
@@ -55,7 +55,7 @@ equation
   //Swing equation
   //in PSS/E setting to zero is equivalent to removing the swing equation
   if abs(H) > C.eps then
-    der(delta) = omega*2*C.pi*50;
+    der(delta) = omega*2*C.pi*fn;
     der(omega) = (P_0/S_b - P - D*omega)/(2*H);
   else
     der(delta) = 0;

@@ -19,8 +19,8 @@ model PSS2A "PSS2A - IEEE Dual-Input Stabilizer Model"
   parameter Real T_4=0.025 "Leadlag2 time constant";
   parameter Real V_STMAX=0.1 "PSS output limiation";
   parameter Real V_STMIN=-0.1 "PSS output limiation";
-  parameter Real M "Ramp tracking filter coefficient";
-  parameter Real N "Ramp tracking filter coefficient";
+  parameter Integer M = 5 "Ramp tracking filter coefficient";
+  parameter Integer N = 1 "Ramp tracking filter coefficient";
   OpenIPSL.NonElectrical.Continuous.LeadLag Leadlag1(
     K=1,
     T1=T_1,
@@ -52,7 +52,6 @@ model PSS2A "PSS2A - IEEE Dual-Input Stabilizer Model"
   NonElectrical.Continuous.RampTrackingFilter rampTrackingFilter(
     M=M,
     N=N,
-    startValue=0,
     T_1=T_8,
     T_2=T_9) annotation (Placement(transformation(extent={{20,20},{40,40}})));
   NonElectrical.Continuous.DerivativeLag derivativeLag(
@@ -125,11 +124,12 @@ equation
 </tr>
 <tr>
 <td><p>Last update</p></td>
-<td><p>2015-08-03</p></td>
+<td><p>2020-02-18</p></td>
 </tr>
 <tr>
-<td><p>Author</p></td>
+<td><p>Authors</p></td>
 <td><p>Tin Rabuzin, SmarTS Lab, KTH Royal Institute of Technology</p></td>
+<td><p>Giuseppe Laera, ALSETLab, RPI Rensselaer Polytechnic Institute</p></td>
 </tr>
 <tr>
 <td><p>Contact</p></td>

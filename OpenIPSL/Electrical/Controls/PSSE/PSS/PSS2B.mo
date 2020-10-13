@@ -24,8 +24,8 @@ model PSS2B
   parameter Real V_S2MIN=-1.25 "PSS input 2 min. limit";
   parameter Real V_STMAX=0.1 "PSS output max. limit, 0.1 ~ 0.2";
   parameter Real V_STMIN=-0.1 "PSS output min. limit, -0.05 ~ -0.1";
-  parameter Real M "Ramp tracking filter coefficient";
-  parameter Real N "Ramp tracking filter coefficient";
+  parameter Integer M = 5 "Ramp tracking filter coefficient";
+  parameter Integer N = 1 "Ramp tracking filter coefficient";
   OpenIPSL.NonElectrical.Continuous.LeadLag Leadlag1(
     K=1,
     T1=T_1,
@@ -84,7 +84,6 @@ model PSS2B
   NonElectrical.Continuous.RampTrackingFilter rampTrackingFilter(
     M=M,
     N=N,
-    startValue=0,
     T_1=T_8,
     T_2=T_9) annotation (Placement(transformation(extent={{12,4},{32,24}})));
 protected
@@ -151,11 +150,12 @@ equation
 </tr>
 <tr>
 <td><p>Last update</p></td>
-<td>2015-10-02</td>
+<td>2020-02-18</td>
 </tr>
 <tr>
-<td><p>Author</p></td>
+<td><p>Authors</p></td>
 <td><p>Le Qi, SmarTS Lab, KTH Royal Institute of Technology</p></td>
+<td><p>Giuseppe Laera, ALSETLab, RPI Rensselaer Polytechnic Institute</p></td>
 </tr>
 <tr>
 <td><p>Contact</p></td>
