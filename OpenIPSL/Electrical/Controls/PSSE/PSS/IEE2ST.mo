@@ -1,21 +1,21 @@
 within OpenIPSL.Electrical.Controls.PSSE.PSS;
 model IEE2ST "IEEE Stabilizing Model With Dual-Input Signals"
-  parameter Real K_1;
-  parameter Real K_2;
-  parameter Real T_1 "(s)";
-  parameter Real T_2 "(s)";
-  parameter Real T_3 "(s), if T_3 equals 0, sT_3 will equal 1.0";
-  parameter Real T_4 ">0 (s)";
-  parameter Real T_5 "(s)";
-  parameter Real T_6 "(s)";
-  parameter Real T_7 "(s)";
-  parameter Real T_8 "(s)";
-  parameter Real T_9 "(s)";
-  parameter Real T_10 "(s)";
-  parameter Real L_SMAX;
-  parameter Real L_SMIN;
-  parameter Real V_CU "(pu)";
-  parameter Real V_CL "(pu)";
+  parameter SI.PerUnit K_1=1 "First input filter gain";
+  parameter SI.PerUnit K_2=1 "Second input filter gain";
+  parameter SI.Time T_1=0.005 "First input filter time constant";
+  parameter SI.Time T_2=0.005 "Second input filter time constant";
+  parameter SI.Time T_3=10 "Power system stabilizer washout numerator time constant. If T_3 equals 0, sT_3 will equal 1.0";
+  parameter SI.Time T_4=10 "Power system stabilizer washout denominator time constant. It must be greater than 0";
+  parameter SI.Time T_5=0.16 "First power system stabilizer numerator (lead) time constant";
+  parameter SI.Time T_6=0.02 "First power system stabilizer denominator (lag) time constant";
+  parameter SI.Time T_7=0.16 "Second power system stabilizer numerator (lead) time constant";
+  parameter SI.Time T_8=0.02 "Second power system stabilizer denominator (lag) time constant";
+  parameter SI.Time T_9=0.16 "Third power system stabilizer numerator (lead) time constant";
+  parameter SI.Time T_10=0.02 "Third power system stabilizer denominator (lag) time constant";
+  parameter SI.PerUnit L_SMAX = 0.1 "Maximum output for sequence of washout filters";
+  parameter SI.PerUnit L_SMIN = -0.1 "Minimum output for sequence of washout filters";
+  parameter SI.PerUnit V_CU=0 "Maximum power system stabilizer output";
+  parameter SI.PerUnit V_CL=0 "Minimum power system stabilizer output";
   Modelica.Blocks.Interfaces.RealInput V_S1 "PSS input signal 1"
     annotation (Placement(transformation(extent={{-200,20},{-160,60}})));
   Modelica.Blocks.Interfaces.RealInput V_S2 "PSS input signal 2"
@@ -58,7 +58,7 @@ model IEE2ST "IEEE Stabilizing Model With Dual-Input Signals"
     T2=T_10,
     y_start=0) annotation (Placement(transformation(extent={{60,-10},{80,10}})));
   Modelica.Blocks.Interfaces.RealInput VCT
-    "Compensated machine terminal voltage (pu)" annotation (Placement(
+    "Compensated machine terminal voltage [pu]" annotation (Placement(
         transformation(
         extent={{-20,-20},{20,20}},
         rotation=90,
@@ -67,8 +67,8 @@ protected
   Modelica.Blocks.Interfaces.RealOutput VSS
     annotation (Placement(transformation(extent={{136,-10},{156,10}})));
 protected
-  parameter Real ICS10(fixed=false);
-  parameter Real ICS20(fixed=false);
+  parameter SI.PerUnit ICS10(fixed=false);
+  parameter SI.PerUnit ICS20(fixed=false);
 initial equation
   ICS10 = V_S1;
   ICS20 = V_S2;

@@ -1,10 +1,10 @@
 within OpenIPSL.Electrical.Controls.PSSE.PSS;
-model STABNI
-  parameter Real K ">= 0";
-  parameter Real T_1 ">0 (s)";
-  parameter Real T_2 ">=0 (S)";
-  parameter Real T_0 ">0 (s)";
-  parameter Real LIMIT "+- (pu)";
+model STABNI "Power Sensitive Stabilizer Model Type NI (NVE)"
+  parameter SI.PerUnit K=1 "Input low-pass filter gain. It must be equal to or greater than 0";
+  parameter SI.Time T_1=1 "Stabilizer filter time constant. It must be greater than 0";
+  parameter SI.Time T_2=1 "Input low-pass filter time constant. It must be equal to or greater than 0";
+  parameter SI.Time T_0=1 "Stabilizer filter time constant. It must be greater than 0";
+  parameter SI.PerUnit LIMIT=5 "Limit value for stabilizer output";
   Modelica.Blocks.Interfaces.RealInput PELEC annotation (Placement(
         transformation(extent={{-148,-20},{-108,20}}), iconTransformation(
           extent={{-148,-20},{-108,20}})));
@@ -14,7 +14,7 @@ model STABNI
   Modelica.Blocks.Nonlinear.Limiter limiter(uMax=LIMIT, uMin=-LIMIT)
     annotation (Placement(transformation(extent={{60,-10},{80,10}})));
 protected
-  parameter Real PELEC0(fixed=false);
+  parameter SI.PerUnit PELEC0(fixed=false);
 protected
   NonElectrical.Continuous.SimpleLag imSimpleLag(
     K=K,
