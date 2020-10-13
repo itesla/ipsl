@@ -92,5 +92,4 @@ equation
     annotation (Line(points={{54.6,30},{40,30}}, color={0,0,255}));
   connect(pwLine2.n, GEN2.p) annotation (Line(points={{65.4,30},{76,30},{76,0},
           {80,0}}, color={0,0,255}));
-  annotation (uses(OpenIPSL(version="2.0.0-dev")));
 end SMIBpartial2;
