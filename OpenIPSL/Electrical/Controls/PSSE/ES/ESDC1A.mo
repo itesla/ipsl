@@ -152,5 +152,6 @@ equation
 <td><p>IEEE Type DC1A Excitation System Model.</p></td>
 </tr>
 </table>
+<p> This model has been verified against PSS/E.</p>
 </html>"));
 end ESDC1A;

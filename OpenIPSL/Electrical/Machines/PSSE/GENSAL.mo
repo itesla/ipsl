@@ -142,5 +142,6 @@ equation
 <td><p>Salient Pole Generator represented by equal mutual inductance rotor modeling.</p></td>
 </tr>
 </table>
+<p> This model has been verified against PSS/E.</p>
 </html>"));
 end GENSAL;

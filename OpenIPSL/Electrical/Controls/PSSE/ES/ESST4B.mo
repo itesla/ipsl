@@ -225,5 +225,6 @@ equation
 <td><p>IEEE Type ST4B Potential or Compound-Source Controlled-Rectifier Exciter Model.</p></td>
 </tr>
 </table>
+<p> This model has been verified against PSS/E.</p>
 </html>"));
 end ESST4B;

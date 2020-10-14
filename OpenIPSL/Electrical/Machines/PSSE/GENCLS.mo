@@ -123,5 +123,6 @@ equation
 <td><p>Synchronous machine represented by 'classical' modeling or Thevenin Voltage Source to play Back known voltage/frequency signal.</p></td>
 </tr>
 </table>
+<p> This model has been verified against PSS/E.</p>
 </html>"));
 end GENCLS;

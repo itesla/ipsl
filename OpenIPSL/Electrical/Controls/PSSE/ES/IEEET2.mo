@@ -149,5 +149,6 @@ equation
 <td><p>IEEE Type 2 Excitaiton System Model.</p></td>
 </tr>
 </table>
+<p> This model has been verified against PSS/E.</p>
 </html>"));
 end IEEET2;

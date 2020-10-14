@@ -212,5 +212,6 @@ equation
 <td><p>IEEE Type AC2 Excitation System Model.</p></td>
 </tr>
 </table>
+<p> This model has been verified against PSS/E.</p>
 </html>"));
 end EXAC2;

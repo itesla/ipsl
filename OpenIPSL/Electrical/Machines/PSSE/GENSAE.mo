@@ -156,5 +156,6 @@ equation
 <td><p>Salient Pole Generator represented by equal mutual inductance rotor modeling. The model is the same as GENSAL model with the exception that an exponential function is used for saturation.</p></td>
 </tr>
 </table>
+<p> This model has been verified against PSS/E.</p>
 </html>"));
 end GENSAE;
