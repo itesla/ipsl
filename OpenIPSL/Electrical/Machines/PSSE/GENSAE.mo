@@ -152,7 +152,7 @@ equation
 </tr>
 <tr>
 <td><p>Description</p></td>
-<td><p>Salient Pole Generator represented by equal mutual inductance rotor modeling. The modl is the same as GENSAL model with the exception tha an exponential function is used for saturation.</p></td>
+<td><p>Salient Pole Generator represented by equal mutual inductance rotor modeling. The model is the same as GENSAL model with the exception that an exponential function is used for saturation.</p></td>
 </tr>
 </table>
 </html>"));
