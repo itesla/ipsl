@@ -190,7 +190,7 @@ equation
 </tr>
 <tr>
 <td><p>Description</p></td>
-<td><p>Round Rotor Generator Model GENROE Induction Generator Model CIMTR1. It is the same as GENROU model except that an exponential function is used as saturation.</p></td>
+<td><p>Round Rotor Generator Model GENROE. It is the same as GENROU model except that an exponential function is used as saturation.</p></td>
 </tr>
 </table>
 </html>"));
