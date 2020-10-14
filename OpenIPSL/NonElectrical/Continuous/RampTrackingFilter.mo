@@ -99,6 +99,5 @@ equation
 <td><p><a href=\"mailto:luigiv@kth.se\">luigiv@kth.se</a></p></td>
 </tr>
 </table>
-</html>"),
-    uses(Modelica(version="3.2.3")));
+</html>"));
 end RampTrackingFilter;

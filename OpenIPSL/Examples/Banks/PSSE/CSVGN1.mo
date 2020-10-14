@@ -53,5 +53,5 @@ equation
                                                color={0,0,127}));
   connect(const.y, cSVGN1.VOTHSG) annotation (Line(points={{15,72},{22,72},{22,
           73},{28,73}}, color={0,0,127}));
-    annotation (experiment(StopTime=10), uses(Modelica(version="3.2.2")));
+    annotation (experiment(StopTime=10));
 end CSVGN1;
