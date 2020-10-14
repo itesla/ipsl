@@ -18,7 +18,7 @@ appExamples = {
 ci = CITests("/OpenIPSL")
 
 # Run Check on OpenIPSL
-passLib = ci.runSyntaxCheck("OpenIPSL","/OpenIPSL/OpenIPSL/package.mo")
+passLib = ci.runSyntaxCheck("OpenIPSL","/OpenIPSL/package.mo")
 
 if not passLib:
     # Error in OpenIPSL
