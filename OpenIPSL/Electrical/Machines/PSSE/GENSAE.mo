@@ -100,11 +100,11 @@ equation
   der(Epq) = 1/Tpd0*(EFD - XadIfd);
   der(PSIkd) = 1/Tppd0*(Epq - PSIkd - (Xpd - Xl)*id);
   der(PSIppq) = 1/Tppq0*((-PSIppq) + (Xq - Xppq)*iq - PSIppq*(Xq-Xl)/(Xd-Xl)*SE_exp(
-  	PSIpp,
-  	S10,
-  	S12,
-  	1,
-  	1.2));
+   PSIpp,
+   S10,
+   S12,
+   1,
+   1.2));
   PSIppd = Epq*K3d + PSIkd*K4d;
   PSId = PSIppd - Xppd*id;
   PSIq = (-PSIppq) - Xppq*iq;
@@ -133,7 +133,7 @@ equation
 </tr>
 <tr>
 <td><p>Last update</p></td>
-<td>Unknown</td>
+<td>September 2020</td>
 </tr>
 <tr>
 <td><p>Author</p></td>
@@ -141,8 +141,9 @@ equation
 </tr>
 <tr>
 <td><p>Contact</p></td>
-<td><p><a href=\"mailto:luigiv@kth.se\">luigiv@kth.se</a></p></td>
+<td><p><a href=\"mailto:vanfrl@rpi.edu\">vanfrl@rpi.edu</a></p></td>
 </tr>
 </table>
+<p> This model has been verified against PSS/E.</p>
 </html>"));
 end GENSAE;

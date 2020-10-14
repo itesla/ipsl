@@ -124,7 +124,7 @@ equation
 </tr>
 <tr>
 <td><p>Last update</p></td>
-<td><p>2020-02-18</p></td>
+<td><p>September 2020</p></td>
 </tr>
 <tr>
 <td><p>Authors</p></td>
@@ -133,7 +133,7 @@ equation
 </tr>
 <tr>
 <td><p>Contact</p></td>
-<td><p><a href=\"mailto:luigiv@kth.se\">luigiv@kth.se</a></p></td>
+<td><p><a href=\"mailto:vanfrl@rpi.edu\">vanfrl@rpi.edu</a></p></td>
 </tr>
 </table>
 </html>"));

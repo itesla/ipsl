@@ -53,11 +53,11 @@ model GAST "Gas Turbine-Governor"
     K=1,
     T=T_1,
     y_start=pm0) annotation (Placement(transformation(extent={{-4,-4},{6,6}})));
-protected 
+protected
   parameter SI.PerUnit pm0(fixed=false);
-initial algorithm 
+initial algorithm
   pm0 := PMECH0;
-equation 
+equation
   connect(gDturb.y, add3.u1) annotation (Line(
       points={{-43.5,60},{72,60},{72,3},{79,3}},
       color={0,0,127},
@@ -122,5 +122,26 @@ equation
         graphics={Text(
           extent={{-60,26},{58,-18}},
           lineColor={28,108,200},
-          textString="GAST")}));
+          textString="GAST")}),
+    Documentation(info="<html>
+<table cellspacing=\"1\" cellpadding=\"1\" border=\"1\">
+<tr>
+<td><p>Reference</p></td>
+<td>PSS/E Manual</td>
+</tr>
+<tr>
+<td><p>Last update</p></td>
+<td>September 2020</td>
+</tr>
+<tr>
+<td><p>Author</p></td>
+<td><p>ALSETLab, Rensselaer Polytechnic Insitute</p></td>
+</tr>
+<tr>
+<td><p>Contact</p></td>
+<td><p><a href=\"mailto:vanfrl@rpi.edu\">vanfrl@rpi.edu</a></p></td>
+</tr>
+</table>
+<p> This model has been verified against PSS/E.</p>
+</html>"));
 end GAST;

@@ -52,7 +52,7 @@ model IEEEG1
     T_6=0.4,
     K_5=0.5,
     T_7=9999) annotation (Placement(transformation(extent={{-58,46},{-98,68}})));
-equation 
+equation
   connect(iEEET1.EFD, gENROU.EFD) annotation (Line(points={{-106.8,-43.5556},{-118,
           -43.5556},{-118,-7.5},{-104,-7.5}},    color={0,0,127}));
   connect(iEEET1.ECOMP, gENROU.ETERM) annotation (Line(points={{-74,-43.5556},{-58,

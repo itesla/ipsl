@@ -50,7 +50,7 @@ model GAST
     V_MAX=1,
     V_MIN=-0.05,
     D_turb=0) annotation (Placement(transformation(extent={{-44,48},{-84,72}})));
-equation 
+equation
   connect(iEEET1.EFD, gENROU.EFD) annotation (Line(points={{-106.8,-43.5556},{-118,
           -43.5556},{-118,-7.5},{-104,-7.5}},    color={0,0,127}));
   connect(iEEET1.ECOMP, gENROU.ETERM) annotation (Line(points={{-74,-43.5556},{-58,

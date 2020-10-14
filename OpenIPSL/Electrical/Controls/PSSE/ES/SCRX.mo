@@ -1,7 +1,7 @@
 within OpenIPSL.Electrical.Controls.PSSE.ES;
 model SCRX "Bus Fed or Solid Fed Static Exciter"
   extends OpenIPSL.Electrical.Controls.PSSE.ES.BaseClasses.BaseExciter;
-  parameter Real T_AT_B=0.1"Ratio between regulator numerator (lead) and denominator (lag) time constants";
+  parameter Real T_AT_B=0.1 "Ratio between regulator numerator (lead) and denominator (lag) time constants";
   parameter SI.Time T_B=1 "Regulator denominator (lag) time constant";
   parameter SI.PerUnit K=100 "Excitation power source output gain";
   parameter SI.Time T_E=0.005 "Excitation power source output time constant";

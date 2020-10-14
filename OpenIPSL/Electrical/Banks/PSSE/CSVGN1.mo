@@ -82,7 +82,7 @@ model CSVGN1 "STATC SHUNT COMPENSATOR MODEL"
     annotation (Placement(transformation(extent={{-140,-70},{-100,-30}})));
   Modelica.Blocks.Math.Add add2(k2=-1)
     annotation (Placement(transformation(extent={{-78,-40},{-58,-20}})));
-protected 
+protected
   parameter SI.PerUnit p0=P_0/S_b "Active power pu on system base";
   parameter SI.PerUnit q0=Q_0/S_b "Reactive power pu on system base";
   parameter SI.Angle anglev_rad=SI.Conversions.from_deg(angle_0);
@@ -100,12 +100,12 @@ protected
   parameter SI.PerUnit k30(fixed=false);
   parameter SI.PerUnit k0(fixed=false);
   parameter SI.PerUnit Vref(fixed=false);
-initial equation 
+initial equation
   k50 = (CBASE/S_b - Y0)/(MBASE/S_b);
   k30 = k50;
   k0 = k30/K;
   Vref = V - k0;
-equation 
+equation
   v = sqrt(p.vr^2 + p.vi^2);
   anglev = atan2(p.vi, p.vr);
   [p.ir; p.ii] = -[sin(delta0), cos(delta0); -cos(delta0), sin(delta0)]*[id; iq];

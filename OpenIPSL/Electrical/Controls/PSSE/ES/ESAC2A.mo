@@ -101,13 +101,13 @@ import OpenIPSL.NonElectrical.Functions.SE;
     annotation (Placement(transformation(extent={{36,-54},{16,-34}})));
   Modelica.Blocks.Math.Gain gain1(k=K_B)
     annotation (Placement(transformation(extent={{0,30},{20,50}})));
-protected 
+protected
   parameter Real VR0(fixed=false);
   parameter Real Efd0(fixed=false);
   parameter Real Ifd0(fixed=false);
   parameter Real VE0(fixed=false);
   parameter Real VFE0(fixed=false);
-initial equation 
+initial equation
   Ifd0 = XADIFD;
   // Finding initial value of excitation voltage, VE0, via going through conditions of FEX function
   VE0 = invFEX(
@@ -123,7 +123,7 @@ initial equation
     E_2) + K_E) + Ifd0*K_D;
   VR0 = VFE0;
   V_REF = VR0/K_A + ECOMP0;
-equation 
+equation
   connect(imLeadLag.y, simpleLagLim.u)
     annotation (Line(points={{-39,10},{-34,10}}, color={0,0,127}));
   connect(limiter1.y, rotatingExciterWithDemagnetization.I_C)
@@ -215,7 +215,7 @@ equation
 </tr>
 <tr>
 <td><p>Author</p></td>
-<td><p>Marcelo de Castro, ALSETLab, Rensselaer Polytechnic Institute</p></td>
+<td><p>ALSETLab, Rensselaer Polytechnic Institute</p></td>
 </tr>
 <tr>
 <td><p>Contact</p></td>

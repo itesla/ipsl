@@ -34,7 +34,7 @@ model ESST1A "IEEE Type ST1A Excitation System"
   parameter SI.Time T_F=1 "Rate feedback time constant"
     annotation (Dialog(group="Excitation system parameters"));
   parameter SI.PerUnit K_LR=4.54 "Exciter output current limiter gain" annotation (Dialog(group="Excitation system parameters"));
-  parameter SI.PerUnit I_LR=4.4 "Exciter output current limit reference"annotation (Dialog(group="Excitation system parameters"));
+  parameter SI.PerUnit I_LR=4.4 "Exciter output current limit reference" annotation (Dialog(group="Excitation system parameters"));
   Modelica.Blocks.Continuous.Derivative imDerivativeLag(
     y_start=0,
     k=K_F,
