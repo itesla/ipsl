@@ -97,7 +97,7 @@ equation
 </tr>
 <tr>
 <td><p>Last update</p></td>
-<td>Unknown</td>
+<td>September 2020</td>
 </tr>
 <tr>
 <td><p>Author</p></td>
@@ -105,8 +105,9 @@ equation
 </tr>
 <tr>
 <td><p>Contact</p></td>
-<td><p><a href=\"mailto:luigiv@kth.se\">luigiv@kth.se</a></p></td>
+<td><p><a href=\"mailto:vanfrl@rpi.edu\">vanfrl@rpi.edu</a></p></td>
 </tr>
 </table>
+<p> This model has been verified against PSS/E.</p>
 </html>"));
 end SCRX;

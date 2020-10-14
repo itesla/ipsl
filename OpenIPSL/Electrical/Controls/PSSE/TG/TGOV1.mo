@@ -67,5 +67,26 @@ equation
         graphics={Text(
           extent={{-60,26},{58,-18}},
           lineColor={28,108,200},
-          textString="TGOV1")}));
+          textString="TGOV1")}),
+    Documentation(info="<html>
+<table cellspacing=\"1\" cellpadding=\"1\" border=\"1\">
+<tr>
+<td><p>Reference</p></td>
+<td>PSS/E Manual</td>
+</tr>
+<tr>
+<td><p>Last update</p></td>
+<td>September 2020</td>
+</tr>
+<tr>
+<td><p>Author</p></td>
+<td><p>ALSETLab, Rensselaer Polytechnic Institute</p></td>
+</tr>
+<tr>
+<td><p>Contact</p></td>
+<td><p><a href=\"mailto:vanfrl@rpi.edu\">vanfrl@rpi.edu</a></p></td>
+</tr>
+</table>
+<p> This model has been verified against PSS/E.</p>
+</html>"));
 end TGOV1;
