@@ -5,7 +5,7 @@ partial model SMIBpartial "SMIB system with one load"
     R=0.001,
     X=0.2,
     G=0,
-    B=0) annotation (Placement(transformation(extent={{-26,-4},{-14,4}})));
+    B=0) annotation (Placement(transformation(extent={{-20,-4},{-8,4}})));
   OpenIPSL.Electrical.Branches.PwLine pwLine3(
     R=0.0005,
     X=0.1,
@@ -44,7 +44,7 @@ partial model SMIBpartial "SMIB system with one load"
         rotation=-90,
         origin={40,-60})));
   OpenIPSL.Electrical.Buses.Bus GEN1
-    annotation (Placement(transformation(extent={{-50,-10},{-30,10}})));
+    annotation (Placement(transformation(extent={{-40,-10},{-20,10}})));
   inner OpenIPSL.Electrical.SystemBase SysData(S_b = 100e6, fn = 50)
     annotation (Placement(transformation(extent={{-100,80},{-40,100}})));
   OpenIPSL.Electrical.Buses.Bus LOAD
@@ -67,9 +67,9 @@ partial model SMIBpartial "SMIB system with one load"
     annotation (Placement(transformation(extent={{30,20},{50,40}})));
 equation
   connect(GEN1.p, pwLine.p)
-    annotation (Line(points={{-40,0},{-40,0},{-25.4,0}}, color={0,0,255}));
+    annotation (Line(points={{-30,0},{-19.4,0}},         color={0,0,255}));
   connect(pwLine.n, LOAD.p)
-    annotation (Line(points={{-14.6,0},{-14.6,0},{0,0}}, color={0,0,255}));
+    annotation (Line(points={{-8.6,0},{0,0}},            color={0,0,255}));
   connect(pwLine3.p, LOAD.p) annotation (Line(points={{14.6,-30},{10,-30},{10,0},{0,0}},
                  color={0,0,255}));
   connect(constantLoad.p, LOAD.p)

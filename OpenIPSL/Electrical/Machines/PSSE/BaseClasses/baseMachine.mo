@@ -71,13 +71,13 @@ partial model baseMachine
   RealOutput ISORCE "Machine source current (pu)"
     annotation (Placement(transformation(extent={{100,-80},{120,-60}})));
   RealOutput ANGLE "Machine relative rotor angle (deg)"
-    annotation (Placement(transformation(extent={{100,78},{120,98}})));
+    annotation (Placement(transformation(extent={{100,80},{120,100}})));
   RealOutput XADIFD "Machine field current (pu)" annotation (Placement(
         transformation(
         extent={{-10,-10},{10,10}},
         origin={110,-90}), iconTransformation(
-        extent={{-8,-8},{8,8}},
-        origin={108,-90})));
+        extent={{-10,-10},{10,10}},
+        origin={110,-90})));
   SI.PerUnit w(start=0) "Machine speed deviation (pu)";
   SI.Angle delta "Rotor angle";
   SI.PerUnit Vt(start=v_0) "Bus voltage magnitude (pu)";

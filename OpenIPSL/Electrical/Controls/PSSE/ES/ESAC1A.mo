@@ -1,8 +1,9 @@
 within OpenIPSL.Electrical.Controls.PSSE.ES;
-model ESAC1A
+model ESAC1A "IEEE Type AC1A Excitation System"
   import OpenIPSL.NonElectrical.Functions.SE;
   import OpenIPSL.Electrical.Controls.PSSE.ES.BaseClasses.invFEX;
   extends OpenIPSL.Electrical.Controls.PSSE.ES.BaseClasses.BaseExciter;
+  extends Icons.VerifiedModel;
   parameter SI.Time T_R=0 "Regulator input filter time constant";
   parameter SI.Time T_B=0 "Regulator denominator (lag) time constant";
   parameter SI.Time T_C=0 "Regulator numerator (lead) time constant";
@@ -127,12 +128,9 @@ equation
   connect(XADIFD, rectifierCommutationVoltageDrop.XADIFD) annotation (Line(points={{80,-200},{80,-120},{170,-120},{170,29}}, color={0,0,127}));
   annotation (
     Diagram(coordinateSystem(extent={{-200,-200},{200,160}})),
-    Icon(coordinateSystem(extent={{-200,-200},{200,160}}),
-        graphics={Text(
-          extent={{-186,-60},{-116,-80}},
-          lineColor={28,108,200},
-          textString="XADIFD"),Text(
-          extent={{-100,152},{100,92}},
+    Icon(coordinateSystem(extent={{-100,-100},{100,100}}),
+        graphics={             Text(
+          extent={{-100,160},{100,100}},
           lineColor={28,108,200},
           textString="ESAC1A")}),
     Documentation(info="<html>
