@@ -21,9 +21,8 @@ model ESST1A "SMIB system with one load and GENROE model"
     M_b=100000000,
     P_0=40000000,
     Q_0=5416582,
-    v_0=1) annotation (Placement(transformation(extent={{-100,-20},{-60,20}})));
-  Modelica.Blocks.Sources.Constant const(k=0)
-    annotation (Placement(transformation(extent={{-20,-56},{-40,-36}})));
+    v_0=1) annotation (Placement(transformation(extent={{-88,-20},{-48,20}})));
+  Modelica.Blocks.Sources.Constant zero(k=0) annotation (Placement(transformation(extent={{-16,-48},{-24,-40}})));
   OpenIPSL.Electrical.Controls.PSSE.ES.ESST1A eSST1A(
     V_IMAX=0.3,
     V_IMIN=-0.3,
@@ -43,39 +42,30 @@ model ESST1A "SMIB system with one load and GENROE model"
     I_LR=0,
     T_A=0.1,
     T_R=0.1)
-    annotation (Placement(transformation(extent={{-58,-60},{-86,-34}})));
-  Modelica.Blocks.Sources.Constant const1(k=-Modelica.Constants.inf)
-    annotation (Placement(transformation(extent={{-20,-90},{-40,-70}})));
-  Modelica.Blocks.Sources.Constant const2(k=Modelica.Constants.inf)
-    annotation (Placement(transformation(extent={{-18,-120},{-38,-100}})));
+    annotation (Placement(transformation(extent={{-50,-72},{-90,-32}})));
+  Modelica.Blocks.Sources.Constant minusInf(k=-Modelica.Constants.inf) annotation (Placement(transformation(extent={{-32,-100},{-40,-92}})));
+  Modelica.Blocks.Sources.Constant plusInf(k=Modelica.Constants.inf) annotation (Placement(transformation(extent={{-20,-92},{-28,-84}})));
 equation
-  connect(gENROE.PMECH, gENROE.PMECH0) annotation (Line(points={{-104,10},{-110,
-          10},{-110,26},{-48,26},{-48,10},{-58,10}}, color={0,0,127}));
-  connect(const1.y, eSST1A.VUEL2) annotation (Line(points={{-41,-80},{-71.307,-80},
-          {-71.307,-59.9928}}, color={0,0,127}));
-  connect(eSST1A.VUEL3, eSST1A.VUEL2) annotation (Line(points={{-75.4895,-59.9964},
-          {-75.4895,-80},{-71.307,-80},{-71.307,-59.9928}}, color={0,0,127}));
-  connect(const2.y, eSST1A.VOEL) annotation (Line(points={{-39,-110},{-67.1,-110},
-          {-67.1,-60}}, color={0,0,127}));
-  connect(eSST1A.EFD, gENROE.EFD) annotation (Line(points={{-86.7,-45.5556},{-112,
-          -45.5556},{-112,-10},{-104,-10}}, color={0,0,127}));
-  connect(gENROE.ETERM, eSST1A.ECOMP) annotation (Line(points={{-58,-6},{-52,-6},
-          {-52,-45.5556},{-58,-45.5556}}, color={0,0,127}));
-  connect(eSST1A.VT, eSST1A.ECOMP) annotation (Line(points={{-58.0175,-41.9625},
-          {-52,-41.9625},{-52,-45.5556},{-58,-45.5556}}, color={0,0,127}));
-  connect(eSST1A.EFD0, gENROE.EFD0) annotation (Line(points={{-58,-54.9444},{-50,
-          -54.9444},{-50,-10},{-58,-10}}, color={0,0,127}));
-  connect(eSST1A.XADIFD, gENROE.XADIFD) annotation (Line(points={{-58,-50.6111},
-          {-48,-50.6111},{-48,-18},{-58.4,-18}}, color={0,0,127}));
+  connect(gENROE.PMECH, gENROE.PMECH0) annotation (Line(points={{-92,10},{-100,10},{-100,30},{-40,30},{-40,10},{-46,10}},
+                                                     color={0,0,127}));
+  connect(minusInf.y, eSST1A.VUEL2) annotation (Line(points={{-40.4,-96},{-76.02,-96},{-76.02,-73.98}}, color={0,0,127}));
+  connect(plusInf.y, eSST1A.VOEL) annotation (Line(points={{-28.4,-88},{-70,-88},{-70,-74}}, color={0,0,127}));
+  connect(eSST1A.EFD, gENROE.EFD) annotation (Line(points={{-92,-52},{-100,-52},{-100,-10},{-92,-10}},
+                                            color={0,0,127}));
+  connect(gENROE.ETERM, eSST1A.ECOMP) annotation (Line(points={{-46,-6},{-34,-6},{-34,-52},{-48,-52}},
+                                          color={0,0,127}));
+  connect(eSST1A.VT, eSST1A.ECOMP) annotation (Line(points={{-48.05,-67.65},{-34,-67.65},{-34,-52},{-48,-52}},
+                                                         color={0,0,127}));
+  connect(eSST1A.EFD0, gENROE.EFD0) annotation (Line(points={{-48,-60},{-38,-60},{-38,-10},{-46,-10}},
+                                          color={0,0,127}));
+  connect(eSST1A.XADIFD, gENROE.XADIFD) annotation (Line(points={{-86,-74},{-86,-80},{-42,-80},{-42,-18},{-46,-18}},
+                                                 color={0,0,127}));
   connect(gENROE.p, GEN1.p)
-    annotation (Line(points={{-60,0},{-60,0},{-40,0}}, color={0,0,255}));
-  connect(eSST1A.VOTHSG2, const.y) annotation (Line(points={{-58,-36.1667},{-52,
-          -36.1667},{-52,-36},{-44,-36},{-44,-46},{-41,-46}}, color={0,0,127}));
-  connect(eSST1A.VOTHSG, const.y) annotation (Line(points={{-58,-39.0556},{-56,
-          -39.0556},{-56,-36},{-52,-36},{-44,-36},{-44,-46},{-41,-46}}, color={
-          0,0,127}));
-  connect(eSST1A.VUEL, const.y) annotation (Line(points={{-62.9,-60},{-62,-60},
-          {-62,-64},{-44,-64},{-44,-46},{-41,-46}},color={0,0,127}));
+    annotation (Line(points={{-48,0},{-30,0}},         color={0,0,255}));
+  connect(eSST1A.VOTHSG2, zero.y) annotation (Line(points={{-48,-36},{-30,-36},{-30,-44},{-24.4,-44}}, color={0,0,127}));
+  connect(eSST1A.VOTHSG, zero.y) annotation (Line(points={{-48,-44},{-24.4,-44}}, color={0,0,127}));
+  connect(eSST1A.VUEL, zero.y) annotation (Line(points={{-62,-74},{-62,-84},{-30,-84},{-30,-44},{-24.4,-44}}, color={0,0,127}));
+  connect(minusInf.y, eSST1A.VUEL3) annotation (Line(points={{-40.4,-96},{-80.37,-96},{-80.37,-73.99}}, color={0,0,127}));
   annotation (
 experiment(StopTime=10));
 end ESST1A;

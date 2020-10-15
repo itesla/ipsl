@@ -1,5 +1,6 @@
 within OpenIPSL.Electrical.Controls.PSSE.ES;
 model ESST1A "IEEE Type ST1A Excitation System"
+  extends Icons.VerifiedModel;
   extends OpenIPSL.Electrical.Controls.PSSE.ES.BaseClasses.BaseExciter;
   parameter SI.Time T_R=0 "Regulator input filter time constant"
     annotation (Dialog(group="Excitation system parameters"));
@@ -45,7 +46,7 @@ model ESST1A "IEEE Type ST1A Excitation System"
   Modelica.Blocks.Interfaces.RealInput VOTHSG2 "VOS=2" annotation (Placement(
         transformation(extent={{-210,122},{-190,142}}), iconTransformation(
         extent={{-10,-10},{10,10}},
-        origin={-200,130})));
+        origin={-110,80})));
   Modelica.Blocks.Interfaces.RealInput VUEL3 "UEL=3" annotation (Placement(
         transformation(
         extent={{-20,-20},{20,20}},
@@ -53,7 +54,7 @@ model ESST1A "IEEE Type ST1A Excitation System"
         origin={50,-200}), iconTransformation(
         extent={{9.95,-10.15},{-9.95,10.15}},
         rotation=270,
-        origin={49.85,-199.95})));
+        origin={51.85,-109.95})));
   Modelica.Blocks.Nonlinear.Limiter imLimited(uMin=V_IMIN, uMax=V_IMAX)
     annotation (Placement(transformation(extent={{-64,-10},{-44,10}})));
   NonElectrical.Logical.HV_GATE hV_GATE
@@ -65,7 +66,7 @@ model ESST1A "IEEE Type ST1A Excitation System"
         origin={-10,-200}), iconTransformation(
         extent={{9.9,-9.9},{-9.9,9.9}},
         rotation=270,
-        origin={-9.9,-199.9})));
+        origin={30.1,-109.9})));
   Modelica.Blocks.Math.Gain imGain(k=K_LR) annotation (Placement(transformation(
         extent={{-10,-10},{10,10}},
         rotation=90,
@@ -80,7 +81,7 @@ model ESST1A "IEEE Type ST1A Excitation System"
         rotation=270,
         origin={150,-140}), iconTransformation(
         extent={{-9.75,-10.25},{9.75,10.25}},
-        origin={-199.75,49.75})));
+        origin={-109.75,-78.25})));
   Modelica.Blocks.Sources.Constant Vref1(k=I_LR)
     annotation (Placement(transformation(extent={{0,-150},{20,-130}})));
   NonElectrical.Continuous.LeadLag imLeadLag(
@@ -224,38 +225,24 @@ equation
         extent={{-200,-200},{200,160}},
         grid={2,2})),
     Icon(coordinateSystem(
-        extent={{-200,-200},{200,160}},
-        grid={2,2}), graphics={Text(
-          extent={{-162,112},{-134,95}},
-          lineColor={0,128,0},
-          textString="(VOS=1)"),Text(
-          extent={{-23,-160},{5,-174}},
-          lineColor={0,128,0},
-          textString="(UEL=2)"),Text(
-          extent={{-144,-160},{-116,-174}},
-          lineColor={0,128,0},
-          textString="(UEL=1)"),Text(
-          extent={{33,-160},{61,-174}},
-          lineColor={0,128,0},
-          textString="(UEL=3)"),Text(
-          extent={{-190,140},{-108,120}},
+        extent={{-100,-100},{100,100}},
+        grid={2,2}), graphics={ Text(
+          extent={{-90,90},{-20,68}},
           lineColor={28,108,200},
           textString="VOTHSG2"),Text(
-          extent={{-162,152},{-134,135}},
-          lineColor={0,128,0},
-          textString="(VOS=2)"),Text(
-          extent={{-184,60},{-156,40}},
+          extent={{-92,-68},{-64,-88}},
           lineColor={28,108,200},
-          textString="VT"),Text(
-          extent={{-184,-62},{-114,-82}},
+          textString="VT"),    Text(
+          extent={{20,-80},{36,-100}},
           lineColor={28,108,200},
-          textString="XADIFD"),Text(
-          extent={{-36,-170},{16,-190}},
+          textString="VUEL2"),
+                             Text(
+          extent={{42,-80},{58,-100}},
           lineColor={28,108,200},
-          textString="VUEL"),Text(
-          extent={{24,-170},{76,-190}},
+          textString="VUEL3"), Text(
+          extent={{-100,160},{100,100}},
           lineColor={28,108,200},
-          textString="VUEL")}),
+          textString="ESST1A")}),
     Documentation(info="<html>
 <table cellspacing=\"1\" cellpadding=\"1\" border=\"1\"><tr>
 <td><p>Model Name</p></td>
