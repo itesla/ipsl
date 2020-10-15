@@ -21,11 +21,8 @@ model ESDC2A "SMIB system with one load and GENROE model"
     M_b=100000000,
     P_0=40000000,
     Q_0=5416582,
-    v_0=1) annotation (Placement(transformation(extent={{-104,-20},{-64,20}})));
-  Modelica.Blocks.Sources.Constant const(k=0)
-    annotation (Placement(transformation(extent={{-32,-46},{-42,-36}})));
-  Modelica.Blocks.Sources.Constant const1(k=-Modelica.Constants.inf)
-    annotation (Placement(transformation(extent={{-32,-60},{-42,-50}})));
+    v_0=1) annotation (Placement(transformation(extent={{-88,-20},{-48,20}})));
+  Modelica.Blocks.Sources.Constant minusInf(k=-Modelica.Constants.inf) annotation (Placement(transformation(extent={{-32,-84},{-40,-76}})));
   OpenIPSL.Electrical.Controls.PSSE.ES.ESDC2A eSDC2A(
     T_R=0.04,
     T_F1=1,
@@ -41,27 +38,25 @@ model ESDC2A "SMIB system with one load and GENROE model"
     T_E=0.5,
     K_F=0.07,
     V_RMAX=0,
-    K_E=0) annotation (Placement(transformation(extent={{-62,-50},{-104,-32}})));
+    K_E=0) annotation (Placement(transformation(extent={{-60,-60},{-80,-40}})));
+  Modelica.Blocks.Sources.Constant zero(k=0) annotation (Placement(transformation(extent={{-16,-42},{-24,-50}})));
 equation
-  connect(gENROE.PMECH, gENROE.PMECH0) annotation (Line(points={{-108,10},{-114,
-          10},{-114,26},{-52,26},{-52,10},{-62,10}}, color={0,0,127}));
-  connect(eSDC2A.EFD, gENROE.EFD) annotation (Line(points={{-105.05,-40},{-112,
-          -40},{-112,-10},{-108,-10}}, color={0,0,127}));
-  connect(gENROE.ETERM, eSDC2A.ECOMP) annotation (Line(points={{-62,-6},{-56,-6},
-          {-56,-40},{-62,-40}}, color={0,0,127}));
-  connect(eSDC2A.VOTHSG, const.y) annotation (Line(points={{-62,-35.5},{-46,-35.5},
-          {-46,-41},{-42.5,-41}}, color={0,0,127}));
-  connect(eSDC2A.VT, eSDC2A.ECOMP) annotation (Line(points={{-62,-43.5},{-62,-56},
-          {-56,-56},{-56,-40},{-62,-40}}, color={0,0,127}));
-  connect(eSDC2A.EFD0, gENROE.EFD0) annotation (Line(points={{-62,-46.5},{-62,-54},
-          {-58,-54},{-58,-10},{-62,-10}}, color={0,0,127}));
-  connect(eSDC2A.VOEL, const.y) annotation (Line(points={{-75.65,-50},{-46,-50},
-          {-46,-41},{-42.5,-41}}, color={0,0,127}));
-  connect(const1.y, eSDC2A.VUEL) annotation (Line(points={{-42.5,-55},{-50,-55},
-          {-50,-50},{-69.35,-50}}, color={0,0,127}));
+  connect(gENROE.PMECH, gENROE.PMECH0) annotation (Line(points={{-92,10},{-100,10},{-100,30},{-40,30},{-40,10},{-46,10}},
+                                                     color={0,0,127}));
+  connect(eSDC2A.EFD, gENROE.EFD) annotation (Line(points={{-81,-50},{-100,-50},{-100,-10},{-92,-10}},
+                                       color={0,0,127}));
+  connect(gENROE.ETERM, eSDC2A.ECOMP) annotation (Line(points={{-46,-6},{-34,-6},{-34,-50},{-59,-50}},
+                                color={0,0,127}));
+  connect(eSDC2A.VT, eSDC2A.ECOMP) annotation (Line(points={{-59,-58},{-34,-58},{-34,-50},{-59,-50}},
+                                          color={0,0,127}));
+  connect(eSDC2A.EFD0, gENROE.EFD0) annotation (Line(points={{-59,-54},{-38,-54},{-38,-10},{-46,-10}},
+                                          color={0,0,127}));
+  connect(minusInf.y, eSDC2A.VUEL) annotation (Line(points={{-40.4,-80},{-66,-80},{-66,-61}}, color={0,0,127}));
   connect(gENROE.p, GEN1.p)
-    annotation (Line(points={{-64,0},{-64,0},{-40,0}}, color={0,0,255}));
-  connect(gENROE.XADIFD, eSDC2A.XADIFD) annotation (Line(points={{-62.4,-18},{-54,-18},{-54,-60},{-92.45,-60},{-92.45,-49.8}}, color={0,0,127}));
+    annotation (Line(points={{-48,0},{-30,0}},         color={0,0,255}));
+  connect(gENROE.XADIFD, eSDC2A.XADIFD) annotation (Line(points={{-46,-18},{-42,-18},{-42,-70},{-78,-70},{-78,-61}},           color={0,0,127}));
+  connect(zero.y, eSDC2A.VOTHSG) annotation (Line(points={{-24.4,-46},{-59,-46}}, color={0,0,127}));
+  connect(zero.y, eSDC2A.VOEL) annotation (Line(points={{-24.4,-46},{-30,-46},{-30,-66},{-70,-66},{-70,-61}}, color={0,0,127}));
   annotation (
 experiment(StopTime=10));
 end ESDC2A;
