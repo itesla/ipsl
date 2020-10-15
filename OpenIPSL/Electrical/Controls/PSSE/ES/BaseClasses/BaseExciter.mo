@@ -7,7 +7,7 @@ partial model BaseExciter
         origin={-130,-200}), iconTransformation(
         extent={{-10,-10},{10,10}},
         rotation=90,
-        origin={-80,-110})));
+        origin={-40,-110})));
   Modelica.Blocks.Interfaces.RealInput VOEL annotation (Placement(
         transformation(
         extent={{-20,-20},{20,20}},
@@ -61,10 +61,10 @@ equation
           extent={{-100,100},{100,-100}},
           lineColor={28,108,200},
           fillColor={255,255,255}),      Text(
-          extent={{-100,-80},{-60,-100}},
+          extent={{-56,-80},{-24,-100}},
           lineColor={28,108,200},
           textString="VUEL"),Text(
-          extent={{-20,-80},{20,-100}},
+          extent={{-14,-80},{14,-100}},
           lineColor={28,108,200},
           textString="VOEL"),Text(
           extent={{-90,10},{-20,-10}},

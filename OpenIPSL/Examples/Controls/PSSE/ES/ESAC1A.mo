@@ -58,10 +58,10 @@ equation
                                                     color={0,0,127}));
   connect(eSAC1A.EFD, gENROE.EFD) annotation (Line(points={{-81,-50},{-100,-50},{-100,-10},{-92,-10}},
                                                  color={0,0,127}));
-  connect(minusInf.y, eSAC1A.VUEL) annotation (Line(points={{-40.4,-74},{-62,-74},{-62,-61}}, color={0,0,127}));
   connect(plusInf.y, eSAC1A.VOEL) annotation (Line(points={{-40.4,-88},{-70,-88},{-70,-61}}, color={0,0,127}));
   connect(gENROE.p, GEN1.p)
     annotation (Line(points={{-48,0},{-30,0}},         color={0,0,255}));
+  connect(minusInf.y, eSAC1A.VUEL) annotation (Line(points={{-40.4,-74},{-66,-74},{-66,-61}}, color={0,0,127}));
   annotation (
 experiment(StopTime=10));
 end ESAC1A;

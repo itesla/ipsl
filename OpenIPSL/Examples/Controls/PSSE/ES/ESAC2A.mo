@@ -52,8 +52,8 @@ equation
   connect(gENROU.p, GEN1.p) annotation (Line(points={{-48,0},{-30,0}},
                        color={0,0,255}));
   connect(zero.y, eSAC2A.VOTHSG) annotation (Line(points={{-26.6,-46},{-59,-46}}, color={0,0,127}));
-  connect(eSAC2A.VUEL, minusInf.y) annotation (Line(points={{-62,-61},{-62,-74},{-40.4,-74}}, color={0,0,127}));
   connect(plusInf.y, eSAC2A.VOEL) annotation (Line(points={{-40.4,-88},{-70,-88},{-70,-61}}, color={0,0,127}));
+  connect(minusInf.y, eSAC2A.VUEL) annotation (Line(points={{-40.4,-74},{-66,-74},{-66,-61}}, color={0,0,127}));
   annotation (
 experiment(StopTime=10));
 end ESAC2A;
