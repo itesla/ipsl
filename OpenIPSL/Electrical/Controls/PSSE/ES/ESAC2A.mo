@@ -1,7 +1,8 @@
 within OpenIPSL.Electrical.Controls.PSSE.ES;
-model ESAC2A
+model ESAC2A "IEEE Type AC2A Excitation System"
 import OpenIPSL.NonElectrical.Functions.SE;
   import OpenIPSL.Electrical.Controls.PSSE.ES.BaseClasses.invFEX;
+  extends Icons.VerifiedModel;
   extends OpenIPSL.Electrical.Controls.PSSE.ES.BaseClasses.BaseExciter;
   parameter SI.Time T_R=0 "Regulator input filter time constant";
   parameter SI.Time T_B=0 "Regulator denominator (lag) time constant";
@@ -195,12 +196,9 @@ equation
     annotation (Line(points={{21,40},{30.5,40},{30.5,37}}, color={0,0,127}));
   annotation (
     Diagram(coordinateSystem(extent={{-200,-200},{200,160}})),
-    Icon(coordinateSystem(extent={{-200,-200},{200,160}}),
-        graphics={Text(
-          extent={{-186,-60},{-116,-80}},
-          lineColor={28,108,200},
-          textString="XADIFD"),Text(
-          extent={{-100,152},{100,92}},
+    Icon(coordinateSystem(extent={{-100,-100},{100,100}}),
+        graphics={             Text(
+          extent={{-100,160},{100,100}},
           lineColor={28,108,200},
           textString="ESAC2A")}),
     Documentation(info="<html>

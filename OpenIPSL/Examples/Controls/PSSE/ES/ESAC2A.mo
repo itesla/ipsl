@@ -22,59 +22,38 @@ model ESAC2A "SMIB model example of GENROU with Excitation System ESAC2A"
     M_b=100000000,
     P_0=39999952.9123306,
     Q_0=5416571.34890556,
-    v_0=1) annotation (Placement(transformation(extent={{-108,-14},{-80,16}})));
-  Modelica.Blocks.Sources.Constant const(k=0) annotation (Placement(
-        transformation(
-        extent={{-4,-4},{4,4}},
-        rotation=180,
-        origin={-42,-26})));
-  Modelica.Blocks.Sources.Constant const4(k=1000) annotation (Placement(
-        transformation(
-        extent={{-5,-5},{5,5}},
-        rotation=180,
-        origin={-41,-45})));
-  Modelica.Blocks.Sources.Constant const5(k=-1000) annotation (Placement(
-        transformation(
-        extent={{-5,-5},{5,5}},
-        rotation=180,
-        origin={-41,-61})));
+    v_0=1) annotation (Placement(transformation(extent={{-88,-20},{-48,20}})));
   OpenIPSL.Electrical.Controls.PSSE.ES.ESAC2A eSAC2A(
     V_RMAX=4,
     V_RMIN=-4,
     V_FEMAX=10)
-    annotation (Placement(transformation(extent={{-74,-70},{-144,-24}})));
+    annotation (Placement(transformation(extent={{-60,-60},{-80,-40}})));
+  Modelica.Blocks.Sources.Constant minusInf(k=-Modelica.Constants.inf) annotation (Placement(transformation(extent={{-32,-78},{-40,-70}})));
+  Modelica.Blocks.Sources.Constant plusInf(k=Modelica.Constants.inf) annotation (Placement(transformation(extent={{-32,-92},{-40,-84}})));
+  Modelica.Blocks.Sources.Constant zero(k=0) annotation (Placement(transformation(extent={{-14,-52},{-26,-40}})));
 equation
   connect(eSAC2A.EFD0, gENROU.EFD0) annotation (Line(
-      points={{-74,-61.0556},{-60,-61.0556},{-60,-6.5},{-78.6,-6.5}},
-      color={0,0,127},
-      smooth=Smooth.None));
-  connect(const.y, eSAC2A.VOTHSG) annotation (Line(
-      points={{-46.4,-26},{-63.25,-26},{-63.25,-32.9444},{-74,-32.9444}},
+      points={{-59,-54},{-38,-54},{-38,-10},{-46,-10}},
       color={0,0,127},
       smooth=Smooth.None));
   connect(gENROU.XADIFD, eSAC2A.XADIFD) annotation (Line(
-      points={{-78.88,-12.5},{-56,-12.5},{-56,-53.3889},{-74,-53.3889}},
+      points={{-46,-18},{-42,-18},{-42,-66},{-78,-66},{-78,-61}},
       color={0,0,127},
       smooth=Smooth.None));
-  connect(eSAC2A.VOEL, const4.y) annotation (Line(
-      points={{-96.75,-70},{-58.6875,-70},{-58.6875,-45},{-46.5,-45}},
-      color={0,0,127},
-      smooth=Smooth.None));
-  connect(const5.y, eSAC2A.VUEL) annotation (Line(
-      points={{-46.5,-61},{-54,-61},{-54,-70},{-86.25,-70}},
-      color={0,0,127},
-      smooth=Smooth.None));
-  connect(eSAC2A.ECOMP, gENROU.ETERM) annotation (Line(points={{-74,-44.4444},
-          {-72,-44.4444},{-72,-44},{-68,-44},{-68,-3.5},{-78.6,-3.5}}, color={0,
+  connect(eSAC2A.ECOMP, gENROU.ETERM) annotation (Line(points={{-59,-50},{-34,-50},{-34,-6},{-46,-6}},
+                                                                       color={0,
           0,127}));
   connect(gENROU.PMECH0, gENROU.PMECH) annotation (Line(
-      points={{-78.6,8.5},{-74,8.5},{-74,20},{-110,20},{-110,8.5},{-110.8,8.5}},
+      points={{-46,10},{-40,10},{-40,30},{-100,30},{-100,10},{-92,10}},
       color={0,0,127},
       smooth=Smooth.None));
-  connect(eSAC2A.EFD, gENROU.EFD) annotation (Line(points={{-145.75,-44.4444},
-          {-150,-44.4444},{-150,-6.5},{-110.8,-6.5}}, color={0,0,127}));
-  connect(gENROU.p, GEN1.p) annotation (Line(points={{-80,1},{-58.3,1},{-58.3,
-          0},{-40,0}}, color={0,0,255}));
+  connect(eSAC2A.EFD, gENROU.EFD) annotation (Line(points={{-81,-50},{-100,-50},{-100,-10},{-92,-10}},
+                                                      color={0,0,127}));
+  connect(gENROU.p, GEN1.p) annotation (Line(points={{-48,0},{-30,0}},
+                       color={0,0,255}));
+  connect(zero.y, eSAC2A.VOTHSG) annotation (Line(points={{-26.6,-46},{-59,-46}}, color={0,0,127}));
+  connect(eSAC2A.VUEL, minusInf.y) annotation (Line(points={{-62,-61},{-62,-74},{-40.4,-74}}, color={0,0,127}));
+  connect(plusInf.y, eSAC2A.VOEL) annotation (Line(points={{-40.4,-88},{-70,-88},{-70,-61}}, color={0,0,127}));
   annotation (
 experiment(StopTime=10));
 end ESAC2A;
