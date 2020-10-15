@@ -1,5 +1,6 @@
 within OpenIPSL.Electrical.Controls.PSSE.ES;
-model ESDC1A
+model ESDC1A "IEEE Type DC1A Excitation System"
+  extends Icons.VerifiedModel;
   extends OpenIPSL.Electrical.Controls.PSSE.ES.BaseClasses.BaseExciter;
   import OpenIPSL.NonElectrical.Functions.SE;
   import
@@ -116,9 +117,9 @@ equation
         extent={{-200,-200},{200,160}},
         grid={2,2})),
     Icon(coordinateSystem(
-        extent={{-200,-200},{200,160}},
+        extent={{-100,-100},{100,100}},
         grid={2,2}), graphics={Text(
-          extent={{-120,154},{140,94}},
+          extent={{-100,160},{100,100}},
           lineColor={28,108,200},
           textString="ESDC1A")}),
     Documentation(info="<html>
