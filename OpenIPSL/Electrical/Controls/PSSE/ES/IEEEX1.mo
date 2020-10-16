@@ -112,9 +112,9 @@ equation
         extent={{-200,-200},{200,160}},
         grid={2,2})),
     Icon(coordinateSystem(
-        extent={{-200,-200},{200,160}},
+        extent={{-100,-100},{100,100}},
         grid={2,2}), graphics={Text(
-          extent={{-130,160},{130,100}},
+          extent={{-100,160},{100,100}},
           lineColor={28,108,200},
           textString="IEEEX1")}),
     Documentation(info="<html>
