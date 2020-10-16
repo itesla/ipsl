@@ -65,8 +65,7 @@ model URST5T "IEEE Proposed Type ST5B Excitation System"
     annotation (Placement(transformation(extent={{-170,-10},{-150,10}})));
   Modelica.Blocks.Interfaces.RealInput VT annotation (Placement(transformation(
         extent={{20,-20},{-20,20}},
-        origin={200,70}), iconTransformation(extent={{-10,-10},{10,10}}, origin=
-           {-200,50})));
+        origin={200,70}), iconTransformation(extent={{-10,-10},{10,10}}, origin={-110,80})));
 protected
   parameter Real VR0(fixed=false);
 initial equation
@@ -117,14 +116,14 @@ equation
   annotation (
     Diagram(coordinateSystem(extent={{-200,-200},{200,160}})),
     Icon(coordinateSystem(
-        extent={{-200,-200},{200,160}},
+        extent={{-100,-100},{100,100}},
         preserveAspectRatio=true), graphics={Text(
-          extent={{-188,60},{-154,40}},
+          extent={{-90,90},{-60,70}},
           lineColor={28,108,200},
-          textString="VT"),Text(
-          extent={{-178,-62},{-114,-82}},
+          textString="VT"),    Text(
+          extent={{-100,160},{100,100}},
           lineColor={28,108,200},
-          textString="XADIFD")}),
+          textString="URST5T")}),
     Documentation(info="<html>
 <table cellspacing=\"1\" cellpadding=\"1\" border=\"1\">
 <tr>
