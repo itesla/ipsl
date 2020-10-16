@@ -1,5 +1,6 @@
 within OpenIPSL.Electrical.Controls.PSSE.ES;
 model IEEET1 "IEEE Type 1 excitation system"
+  extends Icons.VerifiedModel;
   extends OpenIPSL.Electrical.Controls.PSSE.ES.BaseClasses.BaseExciter;
   import OpenIPSL.NonElectrical.Functions.SE;
   import
@@ -104,10 +105,9 @@ equation
           -20},{-80,-8},{-62,-8}}, color={0,0,127}));
   annotation (
     Diagram(coordinateSystem(extent={{-200,-200},{200,160}})),
-
-    Icon(coordinateSystem(extent={{-200,-200},{200,160}}),
+    Icon(coordinateSystem(extent={{-100,-100},{100,100}}),
         graphics={Text(
-          extent={{-100,154},{100,94}},
+          extent={{-100,160},{100,100}},
           lineColor={28,108,200},
           textString="IEEET1")}),
     Documentation(info="<html>
