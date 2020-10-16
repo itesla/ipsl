@@ -61,7 +61,7 @@ equation
     Documentation(info="<html>
 <table cellspacing=\"1\" cellpadding=\"1\" border=\"1\"><tr>
 <td><p>Model Name</p></td>
-<td><p>SEX</p></td>
+<td><p>SEXS</p></td>
 </tr>
 <tr>
 <td><p>Reference</p></td>
