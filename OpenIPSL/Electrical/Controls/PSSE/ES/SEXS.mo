@@ -1,5 +1,6 @@
 within OpenIPSL.Electrical.Controls.PSSE.ES;
 model SEXS "Simplified excitation system model"
+  extends Icons.VerifiedModel;
   extends OpenIPSL.Electrical.Controls.PSSE.ES.BaseClasses.BaseExciter;
   parameter Real T_AT_B=0.1 "Ratio between regulator numerator (lead) and denominator (lag) time constants";
   parameter Real T_B=1 "Regulator denominator (lag) time constant";
@@ -52,8 +53,7 @@ equation
     annotation (Line(points={{38,0},{-19,0}}, color={0,0,127}));
   annotation (
     Diagram(coordinateSystem(extent={{-200,-200},{200,160}})),
-
-    Icon(coordinateSystem(extent={{-200,-200},{200,160}}),
+    Icon(coordinateSystem(extent={{-100,-100},{100,100}}),
         graphics={Text(
           extent={{-100,160},{100,100}},
           lineColor={28,108,200},
