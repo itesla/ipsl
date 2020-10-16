@@ -1,5 +1,6 @@
 within OpenIPSL.Electrical.Wind.PSSE.WT4G;
 model WT4G1 "Wind Generator Model with Power Converter (Type 4)"
+  extends Icons.VerifiedModel;
   // Extending the PF component
   extends OpenIPSL.Electrical.Essentials.pfComponent;
   // Model parameters
@@ -201,7 +202,7 @@ equation
           lineColor={255,0,0},
           textStyle={TextStyle.Bold},
           horizontalAlignment=TextAlignment.Left,
-          textString="Source impedaance is not used for WT4G1.
+          textString="Source impedance is not used for WT4G1.
 But some value other than zero should be
 specified at PSSE model dialog")}),
     Icon(coordinateSystem(
