@@ -21,30 +21,26 @@ model EXNI "SMIB system with one load and GENROE model"
     M_b=100000000,
     P_0=40000000,
     Q_0=5416582,
-    v_0=1) annotation (Placement(transformation(extent={{-100,-20},{-60,20}})));
-  Modelica.Blocks.Sources.Constant const(k=0)
-    annotation (Placement(transformation(extent={{-20,-56},{-40,-36}})));
+    v_0=1) annotation (Placement(transformation(extent={{-88,-20},{-48,20}})));
+  Modelica.Blocks.Sources.Constant zero(k=0) annotation (Placement(transformation(extent={{-28,-86},{-40,-74}})));
   Electrical.Controls.PSSE.ES.EXNI eXNI
-    annotation (Placement(transformation(extent={{-64,-54},{-94,-26}})));
+    annotation (Placement(transformation(extent={{-60,-60},{-80,-40}})));
 equation
-  connect(gENROE.PMECH, gENROE.PMECH0) annotation (Line(points={{-104,10},{-110,
-          10},{-110,26},{-48,26},{-48,10},{-58,10}}, color={0,0,127}));
+  connect(gENROE.PMECH, gENROE.PMECH0) annotation (Line(points={{-92,10},{-100,10},{-100,30},{-40,30},{-40,10},{-46,10}},
+                                                     color={0,0,127}));
   connect(gENROE.p, GEN1.p)
-    annotation (Line(points={{-60,0},{-60,0},{-40,0}}, color={0,0,255}));
-  connect(eXNI.VOTHSG, const.y) annotation (Line(points={{-64,-31.4444},{-60,-31.4444},
-          {-60,-32},{-41,-32},{-41,-46}}, color={0,0,127}));
-  connect(eXNI.ECOMP, gENROE.ETERM) annotation (Line(points={{-64,-38.4444},{-60,
-          -38.4444},{-60,-38},{-52,-38},{-52,-6},{-58,-6}}, color={0,0,127}));
-  connect(eXNI.XADIFD, gENROE.XADIFD) annotation (Line(points={{-64,-43.8889},{
-          -60,-43.8889},{-60,-44},{-60,-18},{-58.4,-18}}, color={0,0,127}));
-  connect(eXNI.EFD0, gENROE.EFD0) annotation (Line(points={{-64,-48.5556},{-60,
-          -48.5556},{-60,-48},{-56,-48},{-56,-10},{-58,-10}}, color={0,0,127}));
-  connect(eXNI.VUEL, const.y) annotation (Line(points={{-69.25,-54},{-70,-54},{
-          -70,-60},{-46,-60},{-46,-46},{-41,-46}}, color={0,0,127}));
-  connect(eXNI.VOEL, const.y) annotation (Line(points={{-73.75,-54},{-74,-54},{
-          -74,-60},{-46,-60},{-46,-46},{-41,-46}}, color={0,0,127}));
-  connect(eXNI.EFD, gENROE.EFD) annotation (Line(points={{-94.75,-38.4444},{-110,
-          -38.4444},{-110,-10},{-104,-10}}, color={0,0,127}));
+    annotation (Line(points={{-48,0},{-30,0}},         color={0,0,255}));
+  connect(eXNI.VOTHSG, zero.y) annotation (Line(points={{-59,-46},{-54,-46},{-54,-80},{-40.6,-80}}, color={0,0,127}));
+  connect(eXNI.ECOMP, gENROE.ETERM) annotation (Line(points={{-59,-50},{-34,-50},{-34,-6},{-46,-6}},
+                                                            color={0,0,127}));
+  connect(eXNI.XADIFD, gENROE.XADIFD) annotation (Line(points={{-78,-61},{-78,-68},{-42,-68},{-42,-18},{-46,-18}},
+                                                          color={0,0,127}));
+  connect(eXNI.EFD0, gENROE.EFD0) annotation (Line(points={{-59,-54},{-38,-54},{-38,-10},{-46,-10}},
+                                                              color={0,0,127}));
+  connect(eXNI.VUEL, zero.y) annotation (Line(points={{-66,-61},{-66,-80},{-40.6,-80}}, color={0,0,127}));
+  connect(eXNI.VOEL, zero.y) annotation (Line(points={{-70,-61},{-70,-80},{-40.6,-80}}, color={0,0,127}));
+  connect(eXNI.EFD, gENROE.EFD) annotation (Line(points={{-81,-50},{-100,-50},{-100,-10},{-92,-10}},
+                                            color={0,0,127}));
   annotation (
 experiment(StopTime=10));
 end EXNI;
