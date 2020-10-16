@@ -1,5 +1,6 @@
 within OpenIPSL.Electrical.Controls.PSSE.TG;
 model TGOV1 "TGOV1 - Steam Turbine-Governor"
+  extends Icons.VerifiedModel;
   extends BaseClasses.BaseGovernor;
   OpenIPSL.NonElectrical.Continuous.LeadLag imLeadLag(
     T1=T_2,
@@ -61,11 +62,11 @@ equation
         preserveAspectRatio=false,
         grid={2,2})),
     Icon(coordinateSystem(
-        extent={{-240,-200},{240,180}},
+        extent={{-100,-100},{100,100}},
         preserveAspectRatio=false,
         grid={2,2}),
         graphics={Text(
-          extent={{-60,26},{58,-18}},
+          extent={{-100,160},{100,100}},
           lineColor={28,108,200},
           textString="TGOV1")}),
     Documentation(info="<html>

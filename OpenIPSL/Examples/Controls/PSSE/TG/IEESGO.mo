@@ -20,7 +20,7 @@ model IEESGO
     M_b=100000000,
     P_0=39999950,
     Q_0=5416571,
-    v_0=1) annotation (Placement(transformation(extent={{-90,-10},{-70,10}})));
+    v_0=1) annotation (Placement(transformation(extent={{-88,-20},{-48,20}})));
   OpenIPSL.Electrical.Controls.PSSE.ES.SCRX sCRX(
     T_B=10,
     K=100,
@@ -30,14 +30,13 @@ model IEESGO
     r_cr_fd=0,
     C_SWITCH=false,
     T_AT_B=0.1) annotation (Placement(transformation(
-        extent={{-18,-16},{18,16}},
+        extent={{-10,10},{10,-10}},
         rotation=180,
-        origin={-80,-34})));
-  Modelica.Blocks.Sources.Constant const(k=0) annotation (Placement(
-        transformation(
-        extent={{-2,-2},{2,2}},
+        origin={-70,-50})));
+  Modelica.Blocks.Sources.Constant zero(k=0) annotation (Placement(transformation(
+        extent={{-6,6},{6,-6}},
         rotation=180,
-        origin={-50,-34})));
+        origin={-34,-80})));
   OpenIPSL.Electrical.Controls.PSSE.TG.IEESGO iEESGO(
     T_1=0.01,
     T_2=0.0,
@@ -49,41 +48,36 @@ model IEESGO
     K_3=0.43,
     P_MAX=1.0,
     P_MIN=0.0,
-    K_1=0.1) annotation (Placement(transformation(extent={{-64,24},{-96,38}})));
+    K_1=0.1) annotation (Placement(transformation(extent={{-60,60},{-80,40}})));
 equation
-  connect(sCRX.VUEL, const.y) annotation (Line(
-      points={{-68.3,-18},{-53.67,-18},{-53.67,-34},{-52.2,-34}},
+  connect(sCRX.VOEL, zero.y) annotation (Line(
+      points={{-70,-61},{-70,-80},{-40.6,-80}},
       color={0,0,127},
       smooth=Smooth.None));
-  connect(sCRX.VOEL, const.y) annotation (Line(
-      points={{-73.7,-18},{-53.67,-18},{-53.67,-34},{-52.2,-34}},
-      color={0,0,127},
-      smooth=Smooth.None));
-  connect(sCRX.VOTHSG, const.y) annotation (Line(
-      points={{-62,-43.7778},{-53.67,-43.7778},{-53.67,-34},{-52.2,-34}},
+  connect(sCRX.VOTHSG, zero.y) annotation (Line(
+      points={{-59,-46},{-53.67,-46},{-53.67,-80},{-40.6,-80}},
       color={0,0,127},
       smooth=Smooth.None));
   connect(gENSAL.EFD0, sCRX.EFD0) annotation (Line(
-      points={{-69,-5},{-69,-24.2222},{-62,-24.2222}},
+      points={{-46,-10},{-38,-10},{-38,-54},{-59,-54}},
       color={0,0,127},
       smooth=Smooth.None));
-  connect(sCRX.EFD, gENSAL.EFD) annotation (Line(points={{-98.9,-35.7778},{-104,
-          -35.7778},{-104,-5},{-92,-5}}, color={0,0,127}));
-  connect(gENSAL.ETERM, sCRX.ECOMP) annotation (Line(points={{-69,-3},{-44,-3},
-          {-44,-35.7778},{-62,-35.7778}}, color={0,0,127}));
-  connect(gENSAL.XADIFD, sCRX.XADIFD) annotation (Line(points={{-69.2,-9},{-52,
-          -9},{-52,-29.5556},{-62,-29.5556}}, color={0,0,127}));
-  connect(iEESGO.SPEED, gENSAL.SPEED) annotation (Line(points={{-64.8,35},{-62,
-          35},{-62,7},{-69,7}}, color={0,0,127}));
-  connect(iEESGO.PMECH, gENSAL.PMECH) annotation (Line(points={{-97,32},{-104,
-          32},{-104,5},{-92,5}}, color={0,0,127}));
-  connect(iEESGO.PMECH0, gENSAL.PMECH0) annotation (Line(points={{-64.8,28},
-          {-62,28},{-62,5},{-69,5}},color={0,0,127}));
+  connect(sCRX.EFD, gENSAL.EFD) annotation (Line(points={{-81,-50},{-100,-50},{-100,-10},{-92,-10}},
+                                         color={0,0,127}));
+  connect(gENSAL.ETERM, sCRX.ECOMP) annotation (Line(points={{-46,-6},{-34,-6},{-34,-50},{-59,-50}},
+                                          color={0,0,127}));
+  connect(gENSAL.XADIFD, sCRX.XADIFD) annotation (Line(points={{-46,-18},{-42,-18},{-42,-68},{-78,-68},{-78,-61}},
+                                              color={0,0,127}));
+  connect(iEESGO.SPEED, gENSAL.SPEED) annotation (Line(points={{-62,44},{-42,44},{-42,14},{-46,14}},
+                                color={0,0,127}));
+  connect(iEESGO.PMECH, gENSAL.PMECH) annotation (Line(points={{-81,50.2},{-100,50.2},{-100,10},{-92,10}},
+                                 color={0,0,127}));
+  connect(iEESGO.PMECH0, gENSAL.PMECH0) annotation (Line(points={{-62,56},{-38,56},{-38,10},{-46,10}},
+                                    color={0,0,127}));
   connect(gENSAL.p, GEN1.p)
-    annotation (Line(points={{-70,0},{-70,0},{-40,0}}, color={0,0,255}));
+    annotation (Line(points={{-48,0},{-30,0}},         color={0,0,255}));
+  connect(zero.y, sCRX.VUEL) annotation (Line(points={{-40.6,-80},{-66,-80},{-66,-61}}, color={0,0,127}));
   annotation (
-    Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-120},{
-            100,80}})),
-    Icon(coordinateSystem(extent={{-100,-120},{100,80}})),
+    Diagram(coordinateSystem(preserveAspectRatio=false)),
 experiment(StopTime=10));
 end IEESGO;

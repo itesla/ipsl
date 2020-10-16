@@ -23,9 +23,8 @@ model GAST
     M_b=100000000,
     P_0=39999950,
     Q_0=5416571,
-    v_0=1) annotation (Placement(transformation(extent={{-100,-16},{-60,18}})));
-  Modelica.Blocks.Sources.Constant const(k=0)
-    annotation (Placement(transformation(extent={{-14,-50},{-34,-30}})));
+    v_0=1) annotation (Placement(transformation(extent={{-88,-20},{-48,20}})));
+  Modelica.Blocks.Sources.Constant zero(k=0) annotation (Placement(transformation(extent={{-28,-86},{-40,-74}})));
   OpenIPSL.Electrical.Controls.PSSE.ES.IEEET1 iEEET1(
     T_R=0.06,
     K_A=200,
@@ -39,7 +38,7 @@ model GAST
     V_RMAX=2,
     V_RMIN=-2,
     K_E=0.1)
-    annotation (Placement(transformation(extent={{-74,-58},{-106,-32}})));
+    annotation (Placement(transformation(extent={{-60,-60},{-80,-40}})));
   Electrical.Controls.PSSE.TG.GAST gAST(
     R=0.05,
     T_1=0.4,
@@ -49,29 +48,25 @@ model GAST
     K_T=2,
     V_MAX=1,
     V_MIN=-0.05,
-    D_turb=0) annotation (Placement(transformation(extent={{-44,48},{-84,72}})));
+    D_turb=0) annotation (Placement(transformation(extent={{-60,60},{-80,40}})));
 equation
-  connect(iEEET1.EFD, gENROU.EFD) annotation (Line(points={{-106.8,-43.5556},{-118,
-          -43.5556},{-118,-7.5},{-104,-7.5}},    color={0,0,127}));
-  connect(iEEET1.ECOMP, gENROU.ETERM) annotation (Line(points={{-74,-43.5556},{-58,
-          -43.5556},{-58,-4.1},{-58,-4.1}},  color={0,0,127}));
-  connect(iEEET1.EFD0, gENROU.EFD0) annotation (Line(points={{-74,-52.9444},{-56,
-          -52.9444},{-56,-7.5},{-58,-7.5}},   color={0,0,127}));
-  connect(iEEET1.VOTHSG, const.y) annotation (Line(points={{-74,-37.0556},{-55.3333,
-          -37.0556},{-55.3333,-40},{-35,-40}}, color={0,0,127}));
-  connect(iEEET1.VOEL, const.y) annotation (Line(points={{-84.4,-58},{-50,-58},{
-          -50,-40},{-35,-40}},  color={0,0,127}));
-  connect(iEEET1.VUEL, const.y) annotation (Line(points={{-79.6,-58},{-50,-58},{
-          -50,-40},{-35,-40}},  color={0,0,127}));
-  connect(gENROU.p, GEN1.p) annotation (Line(points={{-60,1},{-60,0},{-40,0}}, color={0,0,255}));
-  connect(gENROU.XADIFD, iEEET1.XADIFD) annotation (Line(points={{-58.4,-14.3},{
-          -58,-14.3},{-58,-57.7111},{-97.2,-57.7111}},
+  connect(iEEET1.EFD, gENROU.EFD) annotation (Line(points={{-81,-50},{-100,-50},{-100,-10},{-92,-10}},
+                                                 color={0,0,127}));
+  connect(iEEET1.ECOMP, gENROU.ETERM) annotation (Line(points={{-59,-50},{-34,-50},{-34,-6},{-46,-6}},
+                                             color={0,0,127}));
+  connect(iEEET1.EFD0, gENROU.EFD0) annotation (Line(points={{-59,-54},{-38,-54},{-38,-10},{-46,-10}},
                                               color={0,0,127}));
-  connect(gENROU.SPEED, gAST.SPEED) annotation (Line(points={{-58,12.9},{-54,12.9},
-          {-54,12},{-22,12},{-22,66},{-44,66}}, color={0,0,127}));
-  connect(gAST.PMECH, gENROU.PMECH) annotation (Line(points={{-86,60},{-118,60},
-          {-118,9.5},{-104,9.5}}, color={0,0,127}));
-  connect(gENROU.PMECH0, gAST.PMECH0) annotation (Line(points={{-58,9.5},{-52,
-          9.5},{-52,8},{-34,8},{-34,54},{-44,54}}, color={0,0,127}));
+  connect(iEEET1.VOTHSG, zero.y) annotation (Line(points={{-59,-46},{-53.3333,-46},{-53.3333,-80},{-40.6,-80}}, color={0,0,127}));
+  connect(iEEET1.VOEL, zero.y) annotation (Line(points={{-70,-61},{-70,-80},{-40.6,-80}}, color={0,0,127}));
+  connect(iEEET1.VUEL, zero.y) annotation (Line(points={{-66,-61},{-66,-80},{-40.6,-80}}, color={0,0,127}));
+  connect(gENROU.p, GEN1.p) annotation (Line(points={{-48,0},{-30,0}},         color={0,0,255}));
+  connect(gENROU.XADIFD, iEEET1.XADIFD) annotation (Line(points={{-46,-18},{-42,-18},{-42,-68},{-78,-68},{-78,-61}},
+                                              color={0,0,127}));
+  connect(gENROU.SPEED, gAST.SPEED) annotation (Line(points={{-46,14},{-42,14},{-42,44},{-62,44}},
+                                                color={0,0,127}));
+  connect(gAST.PMECH, gENROU.PMECH) annotation (Line(points={{-81,50.2},{-100,50.2},{-100,10},{-92,10}},
+                                  color={0,0,127}));
+  connect(gENROU.PMECH0, gAST.PMECH0) annotation (Line(points={{-46,10},{-38,10},{-38,56},{-62,56}},
+                                                   color={0,0,127}));
 annotation (experiment(StopTime=10));
 end GAST;

@@ -1,5 +1,6 @@
 within OpenIPSL.Electrical.Controls.PSSE.TG;
 model IEESGO "IEESGO - IEEE Standard Model for Turbine-Governor"
+  extends Icons.VerifiedModel;
 extends BaseClasses.BaseGovernor;
   parameter SI.Time T_1=0.2 "Controller lag";
   parameter SI.Time T_2=0 "Controller lead compensation";
@@ -78,9 +79,9 @@ equation
           0}}, color={0,0,127}));
   annotation (
     Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-240,-200},{240,160}})),
-    Icon(coordinateSystem(preserveAspectRatio=false, extent={{-240,-200},{240,160}}),
+    Icon(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,100}}),
          graphics={Text(
-          extent={{-52,20},{68,-20}},
+          extent={{-100,160},{100,100}},
           lineColor={28,108,200},
           textString="IEESGO")}),
     Documentation(info="<html>

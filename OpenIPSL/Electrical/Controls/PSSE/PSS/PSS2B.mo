@@ -1,5 +1,6 @@
 within OpenIPSL.Electrical.Controls.PSSE.PSS;
-model PSS2B
+model PSS2B "IEEE 421.5 2005 PSS2B IEEE Dual-Input Stabilizer Model"
+  extends Icons.VerifiedModel;
   extends BaseClasses.BasePSS;
   parameter Real T_w1=10 "Washout time constant 1";
   parameter Real T_w2=10 "Washout time constant 2";
@@ -129,19 +130,11 @@ equation
   annotation (
     Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-160,-80},{220,
             80}})),
-    Icon(coordinateSystem(preserveAspectRatio=false, extent={{-160,-80},{220,80}}), graphics={                                                             Text(
-          extent={{-34,14},{32,-16}},
+    Icon(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,100}}),
+                                                                                    graphics={                                                             Text(
+          extent={{-40,80},{40,40}},
           lineColor={28,108,200},
-          textString="PSS2B"),Text(
-          extent={{-146,46},{-106,32}},
-          lineColor={28,108,200},
-          textString="V_S1"),Text(
-          extent={{164,16},{210,-14}},
-          lineColor={28,108,200},
-          textString="VOTHSG"),Text(
-          extent={{-146,-34},{-106,-48}},
-          lineColor={28,108,200},
-          textString="V_S2")}),
+          textString="PSS2B")}),
     Documentation(info="<html>
 <table cellspacing=\"1\" cellpadding=\"1\" border=\"1\"><tr>
 <td><p>Model Name</p></td>

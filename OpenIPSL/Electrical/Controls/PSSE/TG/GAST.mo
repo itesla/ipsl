@@ -1,5 +1,6 @@
 within OpenIPSL.Electrical.Controls.PSSE.TG;
 model GAST "Gas Turbine-Governor"
+  extends Icons.VerifiedModel;
   extends BaseClasses.BaseGovernor;
   parameter SI.PerUnit R=0.05 "Speed droop gain";
   parameter SI.Time T_1=0.4 "Valve response time constant";
@@ -116,11 +117,11 @@ equation
         preserveAspectRatio=false,
         grid={2,2})),
     Icon(coordinateSystem(
-        extent={{-240,-200},{240,180}},
+        extent={{-100,-100},{100,100}},
         preserveAspectRatio=false,
         grid={2,2}),
         graphics={Text(
-          extent={{-60,26},{58,-18}},
+          extent={{-100,160},{100,100}},
           lineColor={28,108,200},
           textString="GAST")}),
     Documentation(info="<html>

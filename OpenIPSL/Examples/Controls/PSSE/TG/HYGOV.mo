@@ -20,7 +20,7 @@ model HYGOV
     M_b=100000000,
     P_0=39999950,
     Q_0=5416571,
-    v_0=1) annotation (Placement(transformation(extent={{-96,-10},{-76,10}})));
+    v_0=1) annotation (Placement(transformation(extent={{-88,-20},{-48,20}})));
   OpenIPSL.Electrical.Controls.PSSE.TG.HYGOV hYGOV(
     VELM=0.02,
     G_MAX=0.415,
@@ -34,9 +34,9 @@ model HYGOV
     A_t=1.2,
     D_turb=0.2,
     q_NL=0.08) annotation (Placement(transformation(
-        extent={{-19,-14},{19,14}},
+        extent={{-10,-10},{10,10}},
         rotation=180,
-        origin={-81,38})));
+        origin={-70,50})));
   OpenIPSL.Electrical.Controls.PSSE.ES.SCRX sCRX(
     T_B=10,
     K=100,
@@ -46,48 +46,43 @@ model HYGOV
     r_cr_fd=0,
     C_SWITCH=false,
     T_AT_B=0.1) annotation (Placement(transformation(
-        extent={{-18,-16},{18,16}},
+        extent={{-10,10},{10,-10}},
         rotation=180,
-        origin={-86,-34})));
-  Modelica.Blocks.Sources.Constant const(k=0) annotation (Placement(
-        transformation(
-        extent={{-2,-2},{2,2}},
+        origin={-70,-50})));
+  Modelica.Blocks.Sources.Constant zero(k=0) annotation (Placement(transformation(
+        extent={{-6,6},{6,-6}},
         rotation=180,
-        origin={-56,-34})));
+        origin={-34,-80})));
 equation
-  connect(sCRX.VUEL, const.y) annotation (Line(
-      points={{-74.3,-18},{-59.67,-18},{-59.67,-34},{-58.2,-34}},
+  connect(sCRX.VOEL, zero.y) annotation (Line(
+      points={{-70,-61},{-69.67,-61},{-69.67,-80},{-40.6,-80}},
       color={0,0,127},
       smooth=Smooth.None));
-  connect(sCRX.VOEL, const.y) annotation (Line(
-      points={{-79.7,-18},{-59.67,-18},{-59.67,-34},{-58.2,-34}},
-      color={0,0,127},
-      smooth=Smooth.None));
-  connect(sCRX.VOTHSG, const.y) annotation (Line(
-      points={{-68,-43.7778},{-59.67,-43.7778},{-59.67,-34},{-58.2,-34}},
+  connect(sCRX.VOTHSG, zero.y) annotation (Line(
+      points={{-59,-46},{-53.67,-46},{-53.67,-80},{-40.6,-80}},
       color={0,0,127},
       smooth=Smooth.None));
   connect(gENSAL.EFD0, sCRX.EFD0) annotation (Line(
-      points={{-75,-5},{-75,-24.2222},{-68,-24.2222}},
+      points={{-46,-10},{-38,-10},{-38,-54},{-59,-54}},
       color={0,0,127},
       smooth=Smooth.None));
-  connect(gENSAL.PMECH0, hYGOV.PMECH0) annotation (Line(points={{-75,5},{-52,
-          5},{-52,45},{-62.475,45}}, color={0,0,127}));
-  connect(gENSAL.SPEED, hYGOV.SPEED) annotation (Line(points={{-75,7},{-58,7},
-          {-58,31},{-62.475,31}}, color={0,0,127}));
-  connect(hYGOV.PMECH, gENSAL.PMECH) annotation (Line(points={{-100.95,38},{
-          -110,38},{-110,5},{-98,5}}, color={0,0,127}));
-  connect(sCRX.EFD, gENSAL.EFD) annotation (Line(points={{-104.9,-35.7778},{
-          -110,-35.7778},{-110,-5},{-98,-5}}, color={0,0,127}));
-  connect(gENSAL.ETERM, sCRX.ECOMP) annotation (Line(points={{-75,-3},{-50,-3},
-          {-50,-35.7778},{-68,-35.7778}}, color={0,0,127}));
-  connect(gENSAL.XADIFD, sCRX.XADIFD) annotation (Line(points={{-75.2,-9},{-58,
-          -9},{-58,-29.5556},{-68,-29.5556}}, color={0,0,127}));
+  connect(gENSAL.PMECH0, hYGOV.PMECH0) annotation (Line(points={{-46,10},{-38,10},{-38,56},{-62,56}},
+                                     color={0,0,127}));
+  connect(gENSAL.SPEED, hYGOV.SPEED) annotation (Line(points={{-46,14},{-42,14},{-42,44},{-62,44}},
+                                  color={0,0,127}));
+  connect(hYGOV.PMECH, gENSAL.PMECH) annotation (Line(points={{-81,50.2},{-100,50.2},{-100,10},{-92,10}},
+                                      color={0,0,127}));
+  connect(sCRX.EFD, gENSAL.EFD) annotation (Line(points={{-81,-50},{-100,-50},{-100,-10},{-92,-10}},
+                                              color={0,0,127}));
+  connect(gENSAL.ETERM, sCRX.ECOMP) annotation (Line(points={{-46,-6},{-34,-6},{-34,-50},{-59,-50}},
+                                          color={0,0,127}));
+  connect(gENSAL.XADIFD, sCRX.XADIFD) annotation (Line(points={{-46,-18},{-42,-18},{-42,-68},{-78,-68},{-78,-61}},
+                                              color={0,0,127}));
   connect(gENSAL.p, GEN1.p)
-    annotation (Line(points={{-76,0},{-76,0},{-40,0}}, color={0,0,255}));
+    annotation (Line(points={{-48,0},{-30,0}},         color={0,0,255}));
+  connect(sCRX.VUEL, zero.y) annotation (Line(points={{-66,-61},{-66,-80},{-40.6,-80}}, color={0,0,127}));
   annotation (
-    Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-120},{
-            100,80}})),
-    Icon(coordinateSystem(extent={{-100,-120},{100,80}})),
+    Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,100}})),
+    Icon(coordinateSystem(extent={{-100,-100},{100,100}})),
 experiment(StopTime=10));
 end HYGOV;
