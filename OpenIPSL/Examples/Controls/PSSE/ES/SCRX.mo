@@ -25,11 +25,8 @@ model SCRX "SMIB model example of GENROU with Excitation System SCRX"
     M_b=100000000,
     P_0=40000000,
     Q_0=5416582,
-    v_0=1) annotation (Placement(transformation(extent={{-112,-20},{-72,20}})));
-  Modelica.Blocks.Sources.Constant const(k=0) annotation (Placement(
-        transformation(
-        extent={{4,-4},{-4,4}},
-        origin={-52,-36})));
+    v_0=1) annotation (Placement(transformation(extent={{-88,-20},{-48,20}})));
+  Modelica.Blocks.Sources.Constant zero(k=0) annotation (Placement(transformation(extent={{6,-6},{-6,6}}, origin={-34,-80})));
   OpenIPSL.Electrical.Controls.PSSE.ES.SCRX sCRX(
     T_AT_B=0.1,
     T_B=1,
@@ -39,29 +36,24 @@ model SCRX "SMIB model example of GENROU with Excitation System SCRX"
     C_SWITCH=false,
     r_cr_fd=0,
     T_E=0.005)
-    annotation (Placement(transformation(extent={{-74,-58},{-108,-30}})));
+    annotation (Placement(transformation(extent={{-60,-60},{-80,-40}})));
 equation
-  connect(gENROU.PMECH, gENROU.PMECH0) annotation (Line(points={{-116,10},{-116,
-          10},{-116,26},{-62,26},{-62,10},{-70,10}}, color={0,0,127}));
-  connect(sCRX.EFD, gENROU.EFD) annotation (Line(points={{-108.85,-42.4444},{-116,-42.4444},{-116,-10},{-116,-10}},
+  connect(gENROU.PMECH, gENROU.PMECH0) annotation (Line(points={{-92,10},{-100,10},{-100,32},{-40,32},{-40,10},{-46,10}},
+                                                     color={0,0,127}));
+  connect(sCRX.EFD, gENROU.EFD) annotation (Line(points={{-81,-50},{-100,-50},{-100,-10},{-92,-10}},
                                             color={0,0,127}));
-  connect(gENROU.ETERM, sCRX.ECOMP) annotation (Line(points={{-70,-6},{-66,-6},{-66,-42.4444},{-74,-42.4444}},
+  connect(gENROU.ETERM, sCRX.ECOMP) annotation (Line(points={{-46,-6},{-34,-6},{-34,-50},{-59,-50}},
                                          color={0,0,127}));
-  connect(const.y, sCRX.VOTHSG) annotation (Line(points={{-56.4,-36},{-74,-36},{-74,-35.4444}},
-                          color={0,0,127}));
-  connect(sCRX.VOEL, sCRX.VOTHSG) annotation (Line(points={{-85.05,-58},{-70,-58},{-70,-36},{-74,-36},{-74,-35.4444}},
-                                               color={0,0,127}));
-  connect(sCRX.VUEL, sCRX.VOTHSG) annotation (Line(points={{-79.95,-58},{-70,-58},{-70,-36},{-74,-36},{-74,-35.4444}},
-                                               color={0,0,127}));
-  connect(sCRX.XADIFD, gENROU.XADIFD) annotation (Line(points={{-98.65,-57.6889},{-64,-57.6889},{-64,-18},{-70.4,-18}},
+  connect(sCRX.XADIFD, gENROU.XADIFD) annotation (Line(points={{-78,-61},{-78,-68},{-42,-68},{-42,-18},{-46,-18}},
                                                 color={0,0,127}));
-  connect(sCRX.EFD0, gENROU.EFD0) annotation (Line(points={{-74,-52.5556},{-62,-52.5556},{-62,-10},{-70,-10}},
+  connect(sCRX.EFD0, gENROU.EFD0) annotation (Line(points={{-59,-54},{-38,-54},{-38,-10},{-46,-10}},
                                           color={0,0,127}));
   connect(gENROU.p, GEN1.p)
-    annotation (Line(points={{-72,0},{-72,0},{-40,0}}, color={0,0,255}));
+    annotation (Line(points={{-48,0},{-30,0}},         color={0,0,255}));
+  connect(sCRX.VOTHSG, zero.y) annotation (Line(points={{-59,-46},{-54,-46},{-54,-80},{-40.6,-80}}, color={0,0,127}));
+  connect(sCRX.VUEL, zero.y) annotation (Line(points={{-66,-61},{-66,-80},{-40.6,-80}}, color={0,0,127}));
+  connect(sCRX.VOEL, zero.y) annotation (Line(points={{-70,-61},{-70,-80},{-40.6,-80}}, color={0,0,127}));
   annotation (
-    Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-120,-100},{
-            120,100}})),
-Icon(coordinateSystem(extent={{-120,-100},{120,100}})),
+    Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,100}})),
     experiment(StopTime=10));
 end SCRX;

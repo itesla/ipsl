@@ -1,5 +1,6 @@
 within OpenIPSL.Electrical.Controls.PSSE.ES;
 model SCRX "Bus Fed or Solid Fed Static Exciter"
+  extends Icons.VerifiedModel;
   extends OpenIPSL.Electrical.Controls.PSSE.ES.BaseClasses.BaseExciter;
   parameter Real T_AT_B=0.1 "Ratio between regulator numerator (lead) and denominator (lag) time constants";
   parameter SI.Time T_B=1 "Regulator denominator (lag) time constant";
@@ -82,11 +83,9 @@ equation
     Diagram(coordinateSystem(extent={{-200,-200},{200,160}})),
     Icon(coordinateSystem(
         preserveAspectRatio=true,
-        extent={{-200,-200},{200,160}}), graphics={Text(
-          extent={{-186,-62},{-116,-82}},
-          lineColor={28,108,200},
-          textString="XADIFD"),Text(
-          extent={{-100,156},{100,96}},
+        extent={{-100,-100},{100,100}}), graphics={
+                               Text(
+          extent={{-100,160},{100,100}},
           lineColor={28,108,200},
           textString="SCRX")}),
     Documentation(info="<html>
