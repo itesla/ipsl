@@ -1,4 +1,6 @@
+within OpenIPSL.Electrical.Banks.PSSE;
 model CSVGN1 "STATC SHUNT COMPENSATOR MODEL"
+  extends Icons.VerifiedModel;
   outer OpenIPSL.Electrical.SystemBase SysData
     "Must add this line in all models";
   parameter SI.ApparentPower S_b(displayUnit="MVA")=SysData.S_b "System base power"

@@ -20,7 +20,7 @@ model CSVGN1
     M_b=100000000,
     P_0=40000000,
     Q_0=4402877,
-    v_0=1) annotation (Placement(transformation(extent={{-100,-20},{-60,20}})));
+    v_0=1) annotation (Placement(transformation(extent={{-88,-20},{-48,20}})));
  OpenIPSL.Electrical.Banks.PSSE.CSVGN1 cSVGN1(
     K=5,
     T1=0.01,
@@ -36,22 +36,22 @@ model CSVGN1
     angle_0=-0.29,
     P_0=0,
     Q_0=6009897)
- annotation (Placement(transformation(extent={{-10,10},{10,-10}},rotation=0,origin={40,68})));
+ annotation (Placement(transformation(extent={{-10,10},{10,-10}},rotation=0,origin={40,70})));
   Modelica.Blocks.Sources.RealExpression realExpression(y=SHUNT.V)
     annotation (Placement(transformation(extent={{-6,38},{14,58}})));
   Modelica.Blocks.Sources.Constant const(k=0)
-    annotation (Placement(transformation(extent={{-6,62},{14,82}})));
+    annotation (Placement(transformation(extent={{0,68},{14,82}})));
 equation
- connect(gENSAL.PMECH, gENSAL.PMECH0) annotation (Line(points={{-104,10},{-112,
-          10},{-112,26},{-54,26},{-54,10},{-58,10}}, color={0,0,127}));
-    connect(gENSAL.EFD, gENSAL.EFD0) annotation (Line(points={{-104,-10},{-112,-10},
-          {-112,-30},{-54,-30},{-54,-10},{-58,-10}}, color={0,0,127}));
-    connect(gENSAL.p, GEN1.p) annotation (Line(points={{-60,0},{-60,0},{-40,0}}, color={0,0,255}));
- connect(cSVGN1.p, SHUNT.p) annotation (Line(points={{40,58},{40,30}}, color={0,0,255}));
+ connect(gENSAL.PMECH, gENSAL.PMECH0) annotation (Line(points={{-92,10},{-100,10},{-100,26},{-42,26},{-42,10},{-46,10}},
+                                                     color={0,0,127}));
+    connect(gENSAL.EFD, gENSAL.EFD0) annotation (Line(points={{-92,-10},{-100,-10},{-100,-30},{-42,-30},{-42,-10},{-46,-10}},
+                                                     color={0,0,127}));
+    connect(gENSAL.p, GEN1.p) annotation (Line(points={{-48,0},{-30,0}},         color={0,0,255}));
+ connect(cSVGN1.p, SHUNT.p) annotation (Line(points={{40,60},{40,30}}, color={0,0,255}));
   connect(cSVGN1.V, realExpression.y)
-    annotation (Line(points={{28,63},{20,63},{20,48},{15,48}},
+    annotation (Line(points={{28,65},{20,65},{20,48},{15,48}},
                                                color={0,0,127}));
-  connect(const.y, cSVGN1.VOTHSG) annotation (Line(points={{15,72},{22,72},{22,
-          73},{28,73}}, color={0,0,127}));
+  connect(const.y, cSVGN1.VOTHSG) annotation (Line(points={{14.7,75},{28,75}},
+                        color={0,0,127}));
     annotation (experiment(StopTime=10));
 end CSVGN1;
