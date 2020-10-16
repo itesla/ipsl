@@ -1,5 +1,6 @@
 within OpenIPSL.Electrical.Machines.PSSE;
 model GENROE "ROUND ROTOR GENERATOR MODEL (EXPONENTIAL SATURATION)"
+  extends Icons.VerifiedModel;
   //Import of dependencies
   import Complex;
   import Modelica.ComplexMath.arg;

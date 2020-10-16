@@ -1,5 +1,6 @@
 within OpenIPSL.Electrical.Machines.PSSE;
 model GENSAE "SALIENT POLE GENERATOR MODEL (EXPONENTIAL SATURATION)"
+  extends Icons.VerifiedModel;
   // Import of Dependencies
   import OpenIPSL.NonElectrical.Functions.SE_exp;
   import Complex;
