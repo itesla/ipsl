@@ -18,29 +18,30 @@ model GENCLS
         extent={{-10,-10},{10,10}})));
   parameter SI.ApparentPower M_b(displayUnit="MVA")=100e6 "Machine base power rating"
     annotation (Dialog(group="Machine parameters"));
-  parameter SI.Time H=0 "Inertia constant (s)"
+  parameter SI.Time H=0 "Inertia constant"
     annotation (Dialog(group="Machine parameters"));
   parameter Real D=0 "Damping coefficient"
     annotation (Dialog(group="Machine parameters"));
-  parameter SI.PerUnit R_a=0 "Amature resistance (pu)"
+  parameter SI.PerUnit R_a=0 "Amature resistance"
     annotation (Dialog(group="Machine parameters"));
-  parameter SI.PerUnit X_d=0.2 "d-axis transient reactance (pu)"
+  parameter SI.PerUnit X_d=0.2 "d-axis transient reactance"
     annotation (Dialog(group="Machine parameters"));
-  Real delta(start=delta0, fixed=true) "Rotor angle (deg)";
-  SI.PerUnit omega(start=0, fixed=true) "Rotor speed (pu)";
-  SI.PerUnit V(start=v_0) "Bus voltage magnitude (pu)";
-  SI.Angle anglev(start=angle_0rad) "Bus voltage angle (rad)";
-  SI.PerUnit eq(start=vf0, fixed=true) "Constant emf behind transient reactance (pu)";
-  SI.PerUnit vd(start=vd0) "d-axis voltage (pu)";
-  SI.PerUnit vq(start=vq0) "q-axis voltage (pu)";
-  SI.PerUnit id(start=id0) "d-axis current (pu)";
-  SI.PerUnit iq(start=iq0) "q-axis current (pu)";
-  SI.PerUnit P(start=P_0/S_b) "Active power (pu, system base)";
-  SI.PerUnit Q(start=Q_0/S_b) "Reactive power (pu, system base)";
+  SI.Angle delta(start=delta0, fixed=true) "Rotor angle"
+    annotation(dis);
+  SI.PerUnit omega(start=0, fixed=true) "Rotor speed";
+  SI.PerUnit V(start=v_0) "Bus voltage magnitude";
+  SI.Angle anglev(start=angle_0rad) "Bus voltage angle";
+  SI.PerUnit eq(start=vf0, fixed=true) "Constant emf behind transient reactance";
+  SI.PerUnit vd(start=vd0) "d-axis voltage";
+  SI.PerUnit vq(start=vq0) "q-axis voltage";
+  SI.PerUnit id(start=id0) "d-axis current";
+  SI.PerUnit iq(start=iq0) "q-axis current";
+  SI.PerUnit P(start=P_0/S_b) "Active power (system base)";
+  SI.PerUnit Q(start=Q_0/S_b) "Reactive power (system base)";
 protected
   parameter Real CoB=M_b/S_b "Change from system to machine base";
-  parameter SI.PerUnit p0=P_0/M_b "Initial active power (pu, machine base)";
-  parameter SI.PerUnit q0=Q_0/M_b "Initial reactive power (pu, machine base)";
+  parameter SI.PerUnit p0=P_0/M_b "Initial active power (machine base)";
+  parameter SI.PerUnit q0=Q_0/M_b "Initial reactive power (machine base)";
   parameter SI.PerUnit vr0=v_0*cos(angle_0rad);
   parameter SI.PerUnit vi0=v_0*sin(angle_0rad);
   parameter SI.PerUnit ir0=(p0*vr0 + q0*vi0)/(vr0^2 + vi0^2);
