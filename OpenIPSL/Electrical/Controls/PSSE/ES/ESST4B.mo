@@ -115,7 +115,7 @@ initial equation
 equation
   VE = 'abs'(K_P_comp*V_T + j*(K_I + K_P_comp*X_L)*I_T);
   V_T = Gen_terminal.vr + j*Gen_terminal.vi;
-  I_T = Gen_terminal.ir - Bus.ir + j*(Gen_terminal.ii - Bus.ii);
+  I_T = Gen_terminal.ir + j*Gen_terminal.ii;
   connect(add.y, limiter.u) annotation (Line(
       points={{11,0},{18,0}},
       color={0,0,127},
