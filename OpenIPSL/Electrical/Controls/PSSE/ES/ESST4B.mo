@@ -1,6 +1,7 @@
 within OpenIPSL.Electrical.Controls.PSSE.ES;
 model ESST4B "IEEE type ST4B potential or compounded
-  source-controlled rectifier exciter "
+  source-controlled rectifier exciter"
+  extends Icons.VerifiedModel;
   extends OpenIPSL.Electrical.Controls.PSSE.ES.BaseClasses.BaseExciter;
   import Modelica.ComplexMath.j;
   import Modelica.ComplexMath.'abs';
@@ -23,12 +24,6 @@ model ESST4B "IEEE type ST4B potential or compounded
   parameter SI.Conversions.NonSIunits.Angle_deg THETAP=0 "Potential circuit phase angle";
   NonElectrical.Logical.LV_GATE lV_Gate
     annotation (Placement(transformation(extent={{120,-70},{144,-58}})));
-  Modelica.Blocks.Interfaces.RealInput XADIFD annotation (Placement(
-        transformation(
-        extent={{-20,-20},{20,20}},
-        rotation=90,
-        origin={50,-180}), iconTransformation(extent={{-10,-10},{10,10}},
-          origin={-200,-70})));
   Modelica.Blocks.Math.Product product
     annotation (Placement(transformation(extent={{160,-80},{180,-60}})));
   NonElectrical.Continuous.SimpleLag VA(
@@ -73,10 +68,9 @@ model ESST4B "IEEE type ST4B potential or compounded
       uMax=V_BMAX)
     annotation (Placement(transformation(extent={{100,-120},{120,-100}})));
   OpenIPSL.Interfaces.PwPin Gen_terminal annotation (Placement(transformation(
-          extent={{-180,120},{-160,140}}), iconTransformation(extent={{-180,120},
-            {-160,140}})));
-  OpenIPSL.Interfaces.PwPin Bus annotation (Placement(transformation(extent={{
-            160,120},{180,140}}), iconTransformation(extent={{160,120},{180,140}})));
+          extent={{-180,120},{-160,140}}), iconTransformation(extent={{-100,70},{-80,90}})));
+  OpenIPSL.Interfaces.PwPin Bus annotation (Placement(transformation(extent={{180,120},{200,140}}),
+                                  iconTransformation(extent={{80,70},{100,90}})));
   Modelica.Blocks.Math.Add3 add3_1
     annotation (Placement(transformation(extent={{-80,-10},{-60,10}})));
   NonElectrical.Continuous.SimpleLag TransducerDelay(
@@ -176,28 +170,31 @@ equation
           0}}, color={0,0,127}));
   connect(gain.y, add1.u1) annotation (Line(points={{109,60},{74,60},{74,6},{78,
           6}}, color={0,0,127}));
-  connect(XADIFD, rectifierCommutationVoltageDrop.XADIFD)
-    annotation (Line(points={{50,-180},{50,-180},{50,-121}}, color={0,0,127}));
   connect(rectifierCommutationVoltageDrop.EFD, maxLimiter.u)
     annotation (Line(points={{61,-110},{98,-110}}, color={0,0,127}));
   connect(VE, rectifierCommutationVoltageDrop.V_EX)
     annotation (Line(points={{20,-110},{39,-110}}, color={0,0,127}));
-  connect(Gen_terminal, Bus) annotation (Line(points={{-170,130},{170,130},{170,
-          130}}, color={0,0,255}));
+  connect(Gen_terminal, Bus) annotation (Line(points={{-170,130},{190,130}},
+                 color={0,0,255}));
+  connect(XADIFD, rectifierCommutationVoltageDrop.XADIFD) annotation (Line(points={{80,-200},{80,-150},{50,-150},{50,-121}}, color={0,0,127}));
   annotation (
-    Diagram(coordinateSystem(extent={{-200,-200},{200,160}}),
+    Diagram(coordinateSystem(extent={{-180,-180},{200,140}}),
         graphics={Text(
           extent={{210,-4},{234,-18}},
           lineColor={255,0,0},
           textString="VB")}),
-    Icon(coordinateSystem(extent={{-200,-200},{200,160}}),
+    Icon(coordinateSystem(extent={{-100,-100},{100,100}}),
         graphics={Text(
-          extent={{-146,158},{-96,100}},
+          extent={{-80,90},{-20,70}},
           lineColor={0,0,255},
-          textString="GenT"),Text(
-          extent={{-186,-60},{-116,-80}},
+          textString="GenT"),  Text(
+          extent={{-100,160},{100,100}},
           lineColor={28,108,200},
-          textString="XADIFD")}),
+          textString="ESST4B"),
+                  Text(
+          extent={{40,90},{80,70}},
+          lineColor={0,0,255},
+          textString="Bus")}),
     Documentation(info="<html>
 <table cellspacing=\"1\" cellpadding=\"1\" border=\"1\"><tr>
 <td><p>Model Name</p></td>
