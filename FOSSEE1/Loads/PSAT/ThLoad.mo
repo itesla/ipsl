@@ -13,7 +13,6 @@ model ThLoad "Thermostatically Controlled Load"
   parameter SI.PerUnit Gmin = 0 "Minimum conductance";
   parameter Real K1 = (T_ref-T0)/P_0 "Active power gain [pu/pu]";
   parameter Real K3=1 "Gain anti wind-up";
-  SI.PerUnit v(start=v_0) "Voltage";
 
   OpenIPSL.NonElectrical.Continuous.SimpleLag
                                         firstOrder(
@@ -71,7 +70,6 @@ model ThLoad "Thermostatically Controlled Load"
 
 equation
 
-   v=sqrt(p.vr^2 + p.vi^2);
    P=((Limiter1.y)*(v^2))/S_b;
    Q = Q_0/S_b;
 
