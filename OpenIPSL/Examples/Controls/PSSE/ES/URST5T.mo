@@ -39,8 +39,6 @@ model URST5T "SMIB model example of GENROU with Excitation System URST5T"
         transformation(
         extent={{4,-4},{-4,4}},
         origin={-24,-46})));
-  inner Electrical.SystemBase SysData
-    annotation (Placement(transformation(extent={{-100,80},{-40,100}})));
 equation
   connect(VUEL.y, uRST5T.VUEL) annotation (Line(
       points={{-79.4,-90},{-66.25,-90},{-66.25,-61},{-66,-61}},
