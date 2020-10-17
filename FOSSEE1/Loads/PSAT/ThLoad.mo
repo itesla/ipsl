@@ -1,25 +1,20 @@
 within FOSSEE1.Loads.PSAT;
 model ThLoad "Thermostatically Controlled Load"
   extends OpenIPSL.Electrical.Loads.PSAT.BaseClasses.baseLoad;
-  //parameter Real Gmin=0 "Minimum conductance";
-  parameter Real Kl=2 "ceiling conductance output";
-  parameter Real Kp=10 "gain of the proportional controller (pu/pu)";
-  parameter Real Ki=25 "gain of the integral controller (pu/pu)";
-  parameter Real Ti=10 "time constant of integral controller in seconds";
-  parameter Real T1=1200 "Time constant of the thermal load in seconds";
-  //parameter Real Ta=t_a "ambient temperature";
-  parameter Real T_ref= 70      "reference temperature";
-  //parameter Real V=1.2 "initial bus voltage in pu";
-  //parameter Real P0=1.2 "bus active power in MW";
-  parameter Real T0=10 "No idea what is it, probably initial temperature";
-  parameter Real G0 = P_0/100*(V_0*V_0); //0.040539357 "initial conductance I guess"; //changing G0 and K1 doesnot compile the model
-  parameter Real Gmax = Kl*G0 "Maximum conductance";
-  parameter Real Gmin = 0 "Minimum conductance";
-  parameter Real K1 = (T_ref-T0)/P_0 "active power gain (pu/pu)";
-  parameter Real K3=1 "gain anti wind-up";
-  Real v(start=1*V_0);
+  parameter Real Kl=2 "Ceiling conductance output";
+  parameter Real Kp=10 "Gain of the proportional controller [pu/pu]";
+  parameter Real Ki=25 "Gain of the integral controller [pu/pu]";
+  parameter SI.Time Ti=10 "Time constant of integral controller";
+  parameter SI.Time T1=1200 "Time constant of the thermal load";
+  parameter SI.Temp_C T_ref=70 "Reference temperature";
+  parameter SI.Temp_C T0=10 "Initial temperature";
+  parameter SI.PerUnit G0 = P_0/100*v_0^2 "Initial conductance";
+  parameter SI.PerUnit Gmax = Kl*G0 "Maximum conductance";
+  parameter SI.PerUnit Gmin = 0 "Minimum conductance";
+  parameter Real K1 = (T_ref-T0)/P_0 "Active power gain [pu/pu]";
+  parameter Real K3=1 "Gain anti wind-up";
+  SI.PerUnit v(start=v_0) "Voltage";
 
-public
   OpenIPSL.NonElectrical.Continuous.SimpleLag
                                         firstOrder(
     K=1,
@@ -62,22 +57,18 @@ public
     uMax=Gmax,
     uMin=Gmin)
     annotation (Placement(transformation(extent={{60,30},{80,50}})));
-protected
   Modelica.Blocks.Math.Add add4(k2=+1, k1=+1)
     annotation (Placement(transformation(extent={{-10,-10},{10,10}},
         rotation=180,
         origin={-18,-30})));
-public
   Modelica.Blocks.Math.Gain gain2(k=K3)
                                  annotation (Placement(transformation(
         extent={{-6,-6},{6,6}},
         rotation=0,
         origin={-36,20})));
-  Modelica.Blocks.Sources.RealExpression realExpression(y=v*v)
+  Modelica.Blocks.Sources.RealExpression realExpression(y=v^2)
     annotation (Placement(transformation(extent={{50,-70},{70,-50}})));
-initial equation
-  //v0 = V;
- // t_a= Ta;
+
 equation
 
    v=sqrt(p.vr^2 + p.vi^2);
