@@ -1,5 +1,5 @@
 within FOSSEE1.Examples.Loads.PSAT;
-model ThLoadTest "Test of Thermostatically Controlled Load"
+model TestThLoad "Test of Thermostatically Controlled Load"
   import FOSSEE1;
   extends LoadTestBase(order3_Inputs_Outputs1(
       Q_0=0.0570163388727956*0.2,
@@ -29,16 +29,5 @@ equation
   connect(T_a.y, thLoad.t_a) annotation (Line(points={{41,-70},{46,-70},{50,-70},{50,-56},{58,-56}}, color={0,0,127}));
   connect(Tref.y, thLoad.t_ref) annotation (Line(points={{41,-30},{50,-30},{50,-44},{58,-44}}, color={0,0,127}));
   connect(thLoad.p, pwLine3.n) annotation (Line(points={{70,-40},{70,0},{62,0},{62,-10},{59,-10}}, color={0,0,255}));
-  annotation (
-    experiment(
-      StopTime=10,
-      __Dymola_NumberOfIntervals=150,
-      Tolerance=0.1,
-      __Dymola_fixedstepsize=0.02,
-      __Dymola_Algorithm="Dassl"),
-    __Dymola_experimentFlags(
-      Advanced(GenerateVariableDependencies=false, OutputModelicaCode=false),
-      Evaluate=false,
-      OutputCPUtime=false,
-      OutputFlatModelica=false));
-end ThLoadTest;
+  annotation (experiment(StopTime=10));
+end TestThLoad;
