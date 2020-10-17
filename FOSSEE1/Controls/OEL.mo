@@ -19,11 +19,11 @@ Modelica.Blocks.Math.Feedback feedback2 annotation (
   parameter Modelica.SIunits.PerUnit xq;
   parameter Modelica.SIunits.PerUnit if_lim;
   parameter Modelica.SIunits.PerUnit vOEL_max;
-  parameter OpenIPSL.Types.ApparentPowerMega Sn=SysData.S_b
+  parameter SI.ApparentPower Sn=SysData.S_b
  annotation (Dialog(group="Machine parameters"));
-  parameter OpenIPSL.Types.VoltageKilo Vn=V_b
+  parameter SI.Voltage Vn(displayUnit="kV")=V_b
   annotation (Dialog(group="Machine parameters"));
-  parameter OpenIPSL.Types.VoltageKilo V_b=400;
+  parameter SI.Voltage V_b(displayUnit="kV")=400000;
   FCE fCE(xd=1, xq=1) annotation (Placement(visible=true, transformation(
           origin={-46,0},
           extent={{-14,-14},{14,14}},
@@ -75,8 +75,8 @@ Modelica.Blocks.Interfaces.RealOutput I_field annotation (
   Real gamma_q;
 equation
 gamma_p = xq*P/V;
- gamma_q = xq*Q/V;
-  I_field = sqrt((V + gamma_q)^2 + P^2) + ((xd/xq - 1)*(gamma_q*(V + gamma_q) +
+gamma_q = xq*Q/V;
+I_field = sqrt((V + gamma_q)^2 + P^2) + ((xd/xq - 1)*(gamma_q*(V + gamma_q) +
     gamma_p^2)/sqrt((V + gamma_q)^2 + P^2));
 end FCE;
 end OEL;
