@@ -1,5 +1,5 @@
 within FOSSEE1.Loads.PSAT;
-model Thermostat_Load
+model Thermostat_Load "Thermostatically Controlled Load"
   extends OpenIPSL.Electrical.Loads.PSAT.BaseClasses.baseLoad;
   //parameter Real Gmin=0 "Minimum conductance";
   parameter Real Kl=2 "ceiling conductance output";
@@ -118,5 +118,15 @@ equation
           extent={{-100,100},{100,-100}},
           lineColor={28,108,200},
           fillColor={28,108,200},
-          fillPattern=FillPattern.Solid)}));
+          fillPattern=FillPattern.Solid)}),
+    Documentation(info="<html>
+<p>
+This load defines a dynamic load with temperature control. This
+component is initialized after the power flow solution and needs a PQ load connected
+at the same bus.</p>
+<p>
+For more information see <a href=\"OpenIPSL.UsersGuide.References\">[Milano2013]</a>, 
+section \"16.6 Thermostatically Controlled Load\".
+</p>
+</html>"));
 end Thermostat_Load;

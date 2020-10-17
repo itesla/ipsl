@@ -1,23 +1,24 @@
 within FOSSEE1.Controls;
 package PSS
   package PSAT
-    model PSS_TypeI "TODO Document what this model is about"
-      parameter Real Kw "Stabilizer gain (pu/pu)";
+    model PSS_TypeI "PSS Type I"
+      parameter Real Kw "Stabilizer gain [pu/pu]";
       parameter Real Kp "Gain for active power";
       parameter Real Kv "Gain for bus voltage magnitude";
-      parameter Real vsmax "Max stabilizer output signal (pu)";
-      parameter Real vsmin "Min stabilizer output signal (pu)";
-      parameter Real Tw "Wash-out time constant (s)";
-      parameter Real Tc "Lag time constant";
-      Modelica.Blocks.Interfaces.RealInput w "roto speed"
-        annotation (Placement(transformation(extent={{-140,40},{-100,80}})));
+      parameter SI.PerUnit vsmax "Max stabilizer output signal";
+      parameter SI.PerUnit vsmin "Min stabilizer output signal";
+      parameter SI.Time Tw "Wash-out time constant";
+      parameter SI.Time Tc "Lag time constant";
+      Modelica.Blocks.Interfaces.RealInput w "Rotor speed"
+        annotation (Placement(transformation(extent={{-140,60},{-100,100}}), iconTransformation(extent={{-140,40},{-100,80}})));
       Modelica.Blocks.Interfaces.RealOutput Vref
-        "indexes of the algebraic variable "                         annotation (Placement(transformation(extent={{100,-10},{120,10}})));
-      Modelica.Blocks.Interfaces.RealInput Pg "active power"
+        "Indexes of the algebraic variable "
+        annotation (Placement(transformation(extent={{100,-10},{120,10}})));
+      Modelica.Blocks.Interfaces.RealInput Pg "Active power"
         annotation (Placement(transformation(extent={{-140,-20},{-100,20}})));
-      Modelica.Blocks.Interfaces.RealInput Vg "voltage magnitude
+      Modelica.Blocks.Interfaces.RealInput Vg "Voltage magnitude
 of the generator to which the PSS is connected through the AVR"
-        annotation (Placement(transformation(extent={{-140,-80},{-100,-40}})));
+        annotation (Placement(transformation(extent={{-140,-100},{-100,-60}}), iconTransformation(extent={{-140,-80},{-100,-40}})));
       OpenIPSL.NonElectrical.Continuous.DerivativeLag
                                              derivativeLag(
         T=Tw,
@@ -25,12 +26,9 @@ of the generator to which the PSS is connected through the AVR"
         x_start=0,
         K=Tw)
         annotation (Placement(transformation(extent={{-20,-10},{0,10}})));
-      Modelica.Blocks.Math.Gain gain(k=Kw) "Stabilizer gain "
-        annotation (Placement(transformation(extent={{-80,50},{-60,70}})));
-      Modelica.Blocks.Math.Gain gain1(k=Kp) "Gain for active power"
-        annotation (Placement(transformation(extent={{-80,-10},{-60,10}})));
-      Modelica.Blocks.Math.Gain gain2(k=Kv) "Gain for bus voltage magnitude"
-        annotation (Placement(transformation(extent={{-80,-70},{-60,-50}})));
+      Modelica.Blocks.Math.Gain gainStabilizer(k=Kw) "Stabilizer gain " annotation (Placement(transformation(extent={{-80,70},{-60,90}})));
+      Modelica.Blocks.Math.Gain gainActivePower(k=Kp) "Gain for active power" annotation (Placement(transformation(extent={{-80,-10},{-60,10}})));
+      Modelica.Blocks.Math.Gain gainVoltage(k=Kv) "Gain for bus voltage magnitude" annotation (Placement(transformation(extent={{-80,-90},{-60,-70}})));
       Modelica.Blocks.Math.Add3 add3 annotation (Placement(transformation(extent={{-44,-6},{-32,6}})));
       Modelica.Blocks.Math.Add add annotation (Placement(transformation(extent={{70,-10},{90,10}})));
       OpenIPSL.NonElectrical.Continuous.SimpleLagLim simpleLagLim(
@@ -45,21 +43,18 @@ of the generator to which the PSS is connected through the AVR"
             rotation=270,
             origin={0,120})));
     equation
-      connect(Vg, gain2.u) annotation (Line(points={{-120,-60},{-82,-60}},
-            color={0,0,127}));
-      connect(Pg, gain1.u)
-        annotation (Line(points={{-120,0},{-82,0}},             color={0,0,127}));
-      connect(gain.y, add3.u1) annotation (Line(points={{-59,60},{-51.65,60},{-51.65,4.8},{-45.2,4.8}}, color={0,0,127}));
-      connect(gain1.y, add3.u2) annotation (Line(points={{-59,0},{-45.2,0}}, color={0,0,127}));
-      connect(gain2.y, add3.u3) annotation (Line(points={{-59,-60},{-52,-60},{-52,-4.8},{-45.2,-4.8}}, color={0,0,127}));
+      connect(Vg, gainVoltage.u) annotation (Line(points={{-120,-80},{-82,-80}}, color={0,0,127}));
+      connect(Pg, gainActivePower.u) annotation (Line(points={{-120,0},{-82,0}}, color={0,0,127}));
+      connect(gainStabilizer.y, add3.u1) annotation (Line(points={{-59,80},{-51.65,80},{-51.65,4.8},{-45.2,4.8}}, color={0,0,127}));
+      connect(gainActivePower.y, add3.u2) annotation (Line(points={{-59,0},{-45.2,0}}, color={0,0,127}));
+      connect(gainVoltage.y, add3.u3) annotation (Line(points={{-59,-80},{-52,-80},{-52,-4.8},{-45.2,-4.8}}, color={0,0,127}));
       connect(add3.y, derivativeLag.u) annotation (Line(points={{-31.4,0},{-22,0}}, color={0,0,127}));
       connect(derivativeLag.y, simpleLagLim.u)
         annotation (Line(points={{1,0},{10,0}},               color={0,0,127}));
       connect(simpleLagLim.y, add.u2) annotation (Line(points={{33,0},{42,0},{42,-6},{68,-6}}, color={0,0,127}));
       connect(add.y, Vref) annotation (Line(points={{91,0},{110,0}}, color={0,0,127}));
       connect(vref0, add.u1) annotation (Line(points={{0,120},{0,66},{40,66},{40,6},{68,6}}, color={0,0,127}));
-      connect(w, gain.u)
-        annotation (Line(points={{-120,60},{-82,60}},  color={0,0,127}));
+      connect(w, gainStabilizer.u) annotation (Line(points={{-120,80},{-82,80}}, color={0,0,127}));
       annotation (Icon(coordinateSystem(extent={{-100,-100},{100,100}}), graphics={
               Rectangle(
               extent={{-100,100},{100,-100}},
@@ -69,19 +64,25 @@ of the generator to which the PSS is connected through the AVR"
               extent={{-140,-100},{140,-160}},
               lineColor={0,0,255},
               textString="%name")}),            Diagram(coordinateSystem(extent={{-100,
-                -100},{100,100}})));
+                -100},{100,100}})),
+        Documentation(info="<html>
+<p>
+For more information see <a href=\"OpenIPSL.UsersGuide.References\">[Milano2013]</a>, section \"18.4.1
+Type I\".
+</p>
+</html>"));
     end PSS_TypeI;
 
-    model PSS_TypeIII "TODO Document what this model is about"
-      parameter Real Kw "Stabilizer gain (pu/pu)";
-      parameter Real Tw "Gain for active power";
-      parameter Real T1 "Gain for bus voltage magnitude";
-      parameter Real T2 "Wash-out time constant (s)";
-      parameter Real T3 "Lag time constant";
-      parameter Real T4 "Lag time constant";
-      parameter Real Tc "SimpleLagLim time constant";
-      parameter Real vsmax "Max stabilizer output signal (pu)";
-      parameter Real vsmin "Min stabilizer output signal (pu)";
+    model PSS_TypeIII "PSS Type III"
+      parameter Real Kw "Stabilizer gain";
+      parameter SI.Time Tw "Wash-out time constant";
+      parameter SI.Time T1 "First stabilizer time constant";
+      parameter SI.Time T2 "Second stabilizer time constant";
+      parameter SI.Time T3 "Third stabilizer time constant";
+      parameter SI.Time T4 "Fourth stabilizer time constant";
+      parameter SI.Time Tc "SimpleLagLim time constant";
+      parameter SI.PerUnit vsmax "Max stabilizer output signal";
+      parameter SI.PerUnit vsmin "Min stabilizer output signal";
       OpenIPSL.NonElectrical.Continuous.SimpleLagLim simpleLagLim(
         K=1,
         T=Tc,
@@ -89,9 +90,9 @@ of the generator to which the PSS is connected through the AVR"
         outMax=vsmax,
         outMin=vsmin)
         annotation (Placement(transformation(extent={{40,-10},{60,10}})));
-      Modelica.Blocks.Interfaces.RealInput vs1 "roto speed" annotation (Placement(transformation(extent={{-140,-20},{-100,20}})));
+      Modelica.Blocks.Interfaces.RealInput vs1 "Rotor speed" annotation (Placement(transformation(extent={{-140,-20},{-100,20}})));
       Modelica.Blocks.Interfaces.RealOutput Vref
-        "indexes of the algebraic variable "                         annotation (Placement(transformation(extent={{100,-10},{120,10}})));
+        "Indexes of the algebraic variable"                         annotation (Placement(transformation(extent={{100,-10},{120,10}})));
       OpenIPSL.NonElectrical.Continuous.DerivativeLag derivativeLag(K=Kw*Tw, T=Tw,
         y_start=0)
         annotation (Placement(transformation(extent={{-60,-10},{-40,10}})));
@@ -116,7 +117,13 @@ of the generator to which the PSS is connected through the AVR"
               extent={{-140,-100},{140,-160}},
               lineColor={0,0,255},
               textString="%name")}),            Diagram(coordinateSystem(
-              preserveAspectRatio=false)));
+              preserveAspectRatio=false)),
+        Documentation(info="<html>
+<p>
+For more information see <a href=\"OpenIPSL.UsersGuide.References\">[Milano2013]</a>, section \"18.4.3
+Type III\".
+</p>
+</html>"));
     end PSS_TypeIII;
   end PSAT;
 end PSS;
