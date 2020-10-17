@@ -1,5 +1,6 @@
 within OpenIPSL.Electrical.Controls.PSSE.ES;
-model ESDC1A
+model ESDC1A "IEEE Type DC1A Excitation System"
+  extends Icons.VerifiedModel;
   extends OpenIPSL.Electrical.Controls.PSSE.ES.BaseClasses.BaseExciter;
   import OpenIPSL.NonElectrical.Functions.SE;
   import
@@ -116,20 +117,23 @@ equation
         extent={{-200,-200},{200,160}},
         grid={2,2})),
     Icon(coordinateSystem(
-        extent={{-200,-200},{200,160}},
+        extent={{-100,-100},{100,100}},
         grid={2,2}), graphics={Text(
-          extent={{-120,154},{140,94}},
+          extent={{-100,160},{100,100}},
           lineColor={28,108,200},
           textString="ESDC1A")}),
     Documentation(info="<html>
-<table cellspacing=\"1\" cellpadding=\"1\" border=\"1\">
+<table cellspacing=\"1\" cellpadding=\"1\" border=\"1\"><tr>
+<td><p>Model Name</p></td>
+<td><p>ESDC1A</p></td>
+</tr>
 <tr>
 <td><p>Reference</p></td>
-<td>ESDC1A, PSS/E Manual</td>
+<td><p>PSS/E Manual</p></td>
 </tr>
 <tr>
 <td><p>Last update</p></td>
-<td>Major change - 2016-01-19</td>
+<td><p>September 2020</p></td>
 </tr>
 <tr>
 <td><p>Author</p></td>
@@ -137,7 +141,15 @@ equation
 </tr>
 <tr>
 <td><p>Contact</p></td>
-<td><p><a href=\"mailto:luigiv@kth.se\">luigiv@kth.se</a></p></td>
+<td><p><a href=\"mailto:vanfrl@rpi.edu\">vanfrl@rpi.edu</a></p></td>
+</tr>
+<tr>
+<td><p>Model Verification</p></td>
+<td><p>This model has been verified against PSS/E.</p></td>
+</tr>
+<tr>
+<td><p>Description</p></td>
+<td><p>IEEE Type DC1A Excitation System Model.</p></td>
 </tr>
 </table>
 </html>"));

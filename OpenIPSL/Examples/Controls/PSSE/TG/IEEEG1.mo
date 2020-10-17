@@ -23,9 +23,8 @@ model IEEEG1
     M_b=100000000,
     P_0=39999950,
     Q_0=5416571,
-    v_0=1) annotation (Placement(transformation(extent={{-100,-16},{-60,18}})));
-  Modelica.Blocks.Sources.Constant const(k=0)
-    annotation (Placement(transformation(extent={{-14,-50},{-34,-30}})));
+    v_0=1) annotation (Placement(transformation(extent={{-88,-20},{-48,20}})));
+  Modelica.Blocks.Sources.Constant zero(k=0) annotation (Placement(transformation(extent={{-28,-86},{-40,-74}})));
   OpenIPSL.Electrical.Controls.PSSE.ES.IEEET1 iEEET1(
     T_R=0.06,
     K_A=200,
@@ -39,7 +38,7 @@ model IEEEG1
     V_RMAX=2,
     V_RMIN=-2,
     K_E=0.1)
-    annotation (Placement(transformation(extent={{-74,-58},{-106,-32}})));
+    annotation (Placement(transformation(extent={{-60,-60},{-80,-40}})));
   Electrical.Controls.PSSE.TG.IEEEG1 iEEEG1(
     P0=0.4,
     K=20,
@@ -51,27 +50,23 @@ model IEEEG1
     K_3=0.25,
     T_6=0.4,
     K_5=0.5,
-    T_7=9999) annotation (Placement(transformation(extent={{-58,46},{-98,68}})));
-equation 
-  connect(iEEET1.EFD, gENROU.EFD) annotation (Line(points={{-106.8,-43.5556},{-118,
-          -43.5556},{-118,-7.5},{-104,-7.5}},    color={0,0,127}));
-  connect(iEEET1.ECOMP, gENROU.ETERM) annotation (Line(points={{-74,-43.5556},{-58,
-          -43.5556},{-58,-4.1},{-58,-4.1}},  color={0,0,127}));
-  connect(iEEET1.EFD0, gENROU.EFD0) annotation (Line(points={{-74,-52.9444},{-56,
-          -52.9444},{-56,-7.5},{-58,-7.5}},   color={0,0,127}));
-  connect(iEEET1.VOTHSG, const.y) annotation (Line(points={{-74,-37.0556},{-55.3333,
-          -37.0556},{-55.3333,-40},{-35,-40}}, color={0,0,127}));
-  connect(iEEET1.VOEL, const.y) annotation (Line(points={{-84.4,-58},{-50,-58},{
-          -50,-40},{-35,-40}},  color={0,0,127}));
-  connect(iEEET1.VUEL, const.y) annotation (Line(points={{-79.6,-58},{-50,-58},{
-          -50,-40},{-35,-40}},  color={0,0,127}));
-  connect(gENROU.p, GEN1.p) annotation (Line(points={{-60,1},{-60,0},{-40,0}}, color={0,0,255}));
-  connect(gENROU.XADIFD, iEEET1.XADIFD) annotation (Line(points={{-58.4,-14.3},{
-          -58,-14.3},{-58,-57.7111},{-97.2,-57.7111}},
+    T_7=9999) annotation (Placement(transformation(extent={{-60,30},{-80,50}})));
+equation
+  connect(iEEET1.EFD, gENROU.EFD) annotation (Line(points={{-81,-50},{-100,-50},{-100,-10},{-92,-10}},
+                                                 color={0,0,127}));
+  connect(iEEET1.ECOMP, gENROU.ETERM) annotation (Line(points={{-59,-50},{-34,-50},{-34,-6},{-46,-6}},
+                                             color={0,0,127}));
+  connect(iEEET1.EFD0, gENROU.EFD0) annotation (Line(points={{-59,-54},{-38,-54},{-38,-10},{-46,-10}},
                                               color={0,0,127}));
-  connect(iEEEG1.PMECH_HP, gENROU.PMECH) annotation (Line(points={{-99.8667,62.5},
-          {-118,62.5},{-118,9.5},{-104,9.5}}, color={0,0,127}));
-  connect(gENROU.SPEED, iEEEG1.SPEED_HP) annotation (Line(points={{-58,12.9},{
-          -54,12.9},{-54,12},{-48,12},{-48,57},{-57.0667,57}}, color={0,0,127}));
+  connect(iEEET1.VOTHSG, zero.y) annotation (Line(points={{-59,-46},{-53.3333,-46},{-53.3333,-80},{-40.6,-80}}, color={0,0,127}));
+  connect(iEEET1.VOEL, zero.y) annotation (Line(points={{-70,-61},{-70,-80},{-40.6,-80}}, color={0,0,127}));
+  connect(iEEET1.VUEL, zero.y) annotation (Line(points={{-66,-61},{-66,-80},{-40.6,-80}}, color={0,0,127}));
+  connect(gENROU.p, GEN1.p) annotation (Line(points={{-48,0},{-30,0}},         color={0,0,255}));
+  connect(gENROU.XADIFD, iEEET1.XADIFD) annotation (Line(points={{-46,-18},{-42,-18},{-42,-68},{-78,-68},{-78,-61}},
+                                              color={0,0,127}));
+  connect(iEEEG1.PMECH_HP, gENROU.PMECH) annotation (Line(points={{-81,44},{-100,44},{-100,10},{-92,10}},
+                                              color={0,0,127}));
+  connect(gENROU.SPEED, iEEEG1.SPEED_HP) annotation (Line(points={{-46,14},{-36,14},{-36,40},{-62,40}},
+                                                               color={0,0,127}));
 annotation (experiment(StopTime=10));
 end IEEEG1;

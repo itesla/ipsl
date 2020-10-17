@@ -7,7 +7,7 @@ partial model BaseExciter
         origin={-130,-200}), iconTransformation(
         extent={{-10,-10},{10,10}},
         rotation=90,
-        origin={-130,-200})));
+        origin={-40,-110})));
   Modelica.Blocks.Interfaces.RealInput VOEL annotation (Placement(
         transformation(
         extent={{-20,-20},{20,20}},
@@ -15,24 +15,23 @@ partial model BaseExciter
         origin={-70,-200}), iconTransformation(
         extent={{-10,-10},{10,10}},
         rotation=90,
-        origin={-70,-200})));
+        origin={0,-110})));
   Modelica.Blocks.Interfaces.RealOutput EFD "Excitation Voltage (pu)"
-    annotation (Placement(transformation(extent={{200,-10},{220,10}})));
+    annotation (Placement(transformation(extent={{200,-10},{220,10}}), iconTransformation(extent={{100,-10},{120,10}})));
   Modelica.Blocks.Interfaces.RealInput EFD0 annotation (Placement(
         transformation(
         extent={{-20,-20},{20,20}},
         origin={-200,-130}), iconTransformation(extent={{-10,-10},{10,10}},
-          origin={-200,-130})));
+          origin={-110,-40})));
   Modelica.Blocks.Interfaces.RealInput VOTHSG annotation (Placement(
         transformation(
         extent={{-20,-20},{20,20}},
         origin={-200,90}), iconTransformation(extent={{-10,-10},{10,10}},
-          origin={-200,90})));
+          origin={-110,40})));
   Modelica.Blocks.Interfaces.RealInput ECOMP annotation (Placement(
         transformation(
         extent={{-20,-20},{20,20}},
-        origin={-200,0}), iconTransformation(extent={{-10,-10},{10,10}}, origin
-          ={-200,0})));
+        origin={-200,0}), iconTransformation(extent={{-10,-10},{10,10}}, origin={-110,0})));
   Modelica.Blocks.Sources.Constant VoltageReference(k=V_REF)
     annotation (Placement(transformation(extent={{-170,40},{-150,60}})));
   Modelica.Blocks.Math.Add DiffV(k2=-1)
@@ -49,7 +48,7 @@ public
         origin={80,-200}), iconTransformation(
         extent={{-10,-10},{10,10}},
         rotation=90,
-        origin={90,-196})));
+        origin={80,-110})));
 initial equation
   Efd0 = EFD0;
   ECOMP0 = ECOMP;
@@ -57,29 +56,31 @@ equation
   connect(VoltageReference.y, DiffV.u1) annotation (Line(points={{-149,50},{-132,
           50},{-132,6},{-122,6}}, color={0,0,127}));
   annotation (
-    Icon(coordinateSystem(extent={{-200,-200},{200,160}}),
+    Icon(
         graphics={Rectangle(
-          extent={{-200,160},{200,-200}},
+          extent={{-100,100},{100,-100}},
           lineColor={28,108,200},
-          fillColor={255,255,255},
-          fillPattern=FillPattern.Solid),Text(
-          extent={{-154,-170},{-102,-190}},
+          fillColor={255,255,255}),      Text(
+          extent={{-56,-80},{-24,-100}},
           lineColor={28,108,200},
           textString="VUEL"),Text(
-          extent={{-92,-170},{-40,-190}},
+          extent={{-14,-80},{14,-100}},
           lineColor={28,108,200},
           textString="VOEL"),Text(
-          extent={{-184,8},{-114,-12}},
+          extent={{-90,10},{-20,-10}},
           lineColor={28,108,200},
           textString="ECOMP"),Text(
-          extent={{-188,100},{-106,80}},
+          extent={{-90,50},{-20,28}},
           lineColor={28,108,200},
           textString="VOTHSG"),Text(
-          extent={{-182,-122},{-130,-142}},
+          extent={{-90,-30},{-40,-52}},
           lineColor={28,108,200},
           textString="EFD0"),Text(
-          extent={{152,12},{194,-8}},
+          extent={{50,10},{90,-10}},
           lineColor={28,108,200},
-          textString="EFD")}),
+          textString="EFD"), Text(
+          extent={{60,-80},{100,-100}},
+          lineColor={28,108,200},
+          textString="XADIFD")}),
     Diagram(coordinateSystem(extent={{-200,-200},{200,160}})));
 end BaseExciter;

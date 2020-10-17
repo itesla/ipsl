@@ -1,5 +1,6 @@
 within OpenIPSL.Electrical.Controls.PSSE.TG;
 model GAST "Gas Turbine-Governor"
+  extends Icons.VerifiedModel;
   extends BaseClasses.BaseGovernor;
   parameter SI.PerUnit R=0.05 "Speed droop gain";
   parameter SI.Time T_1=0.4 "Valve response time constant";
@@ -53,11 +54,11 @@ model GAST "Gas Turbine-Governor"
     K=1,
     T=T_1,
     y_start=pm0) annotation (Placement(transformation(extent={{-4,-4},{6,6}})));
-protected 
+protected
   parameter SI.PerUnit pm0(fixed=false);
-initial algorithm 
+initial algorithm
   pm0 := PMECH0;
-equation 
+equation
   connect(gDturb.y, add3.u1) annotation (Line(
       points={{-43.5,60},{72,60},{72,3},{79,3}},
       color={0,0,127},
@@ -116,11 +117,42 @@ equation
         preserveAspectRatio=false,
         grid={2,2})),
     Icon(coordinateSystem(
-        extent={{-240,-200},{240,180}},
+        extent={{-100,-100},{100,100}},
         preserveAspectRatio=false,
         grid={2,2}),
         graphics={Text(
-          extent={{-60,26},{58,-18}},
+          extent={{-100,160},{100,100}},
           lineColor={28,108,200},
-          textString="GAST")}));
+          textString="GAST")}),
+    Documentation(info="<html>
+<table cellspacing=\"1\" cellpadding=\"1\" border=\"1\"><tr>
+<td><p>Model Name</p></td>
+<td><p>GAST</p></td>
+</tr>
+<tr>
+<td><p>Reference</p></td>
+<td><p>PSS/E Manual</p></td>
+</tr>
+<tr>
+<td><p>Last update</p></td>
+<td><p>September 2020</p></td>
+</tr>
+<tr>
+<td><p>Author</p></td>
+<td><p>ALSETLab, Rensselaer Polytechnic Institute</p></td>
+</tr>
+<tr>
+<td><p>Contact</p></td>
+<td><p><a href=\"mailto:vanfrl@rpi.edu\">vanfrl@rpi.edu</a></p></td>
+</tr>
+<tr>
+<td><p>Model Verification</p></td>
+<td><p>This model has been verified against PSS/E.</p></td>
+</tr>
+<tr>
+<td><p>Description</p></td>
+<td><p>Gas Turbine-Governor Model.</p></td>
+</tr>
+</table>
+</html>"));
 end GAST;

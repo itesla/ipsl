@@ -11,7 +11,7 @@ model RotatingExciterWithDemagnetization
         transformation(
         extent={{-20,-20},{20,20}},
         rotation=90,
-        origin={10,-100}), iconTransformation(
+        origin={0,-100}),  iconTransformation(
         extent={{-10,-10},{10,10}},
         rotation=90,
         origin={0,-90})));
@@ -21,8 +21,8 @@ model RotatingExciterWithDemagnetization
         rotation=180,
         origin={-90,-40}), iconTransformation(extent={{-80,-60},{-100,-40}})));
 equation
-  connect(XADIFD, Sum.u3) annotation (Line(points={{10,-100},{0,-100},{0,-38},{
-          -18,-38}}, color={0,0,127}));
+  connect(XADIFD, Sum.u3) annotation (Line(points={{0,-100},{0,-38},{-18,-38}},
+                     color={0,0,127}));
   connect(V_FE, feedback.u2)
     annotation (Line(points={{-90,-40},{-50,-40},{-50,12}}, color={0,0,127}));
   annotation (

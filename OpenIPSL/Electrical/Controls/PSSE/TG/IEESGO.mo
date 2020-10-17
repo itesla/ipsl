@@ -1,5 +1,6 @@
 within OpenIPSL.Electrical.Controls.PSSE.TG;
 model IEESGO "IEESGO - IEEE Standard Model for Turbine-Governor"
+  extends Icons.VerifiedModel;
 extends BaseClasses.BaseGovernor;
   parameter SI.Time T_1=0.2 "Controller lag";
   parameter SI.Time T_2=0 "Controller lead compensation";
@@ -78,9 +79,40 @@ equation
           0}}, color={0,0,127}));
   annotation (
     Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-240,-200},{240,160}})),
-    Icon(coordinateSystem(preserveAspectRatio=false, extent={{-240,-200},{240,160}}),
+    Icon(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,100}}),
          graphics={Text(
-          extent={{-52,20},{68,-20}},
+          extent={{-100,160},{100,100}},
           lineColor={28,108,200},
-          textString="IEESGO")}));
+          textString="IEESGO")}),
+    Documentation(info="<html>
+<table cellspacing=\"1\" cellpadding=\"1\" border=\"1\"><tr>
+<td><p>Model Name</p></td>
+<td><p>IEESGO</p></td>
+</tr>
+<tr>
+<td><p>Reference</p></td>
+<td><p>PSS/E Manual</p></td>
+</tr>
+<tr>
+<td><p>Last update</p></td>
+<td><p>September 2020</p></td>
+</tr>
+<tr>
+<td><p>Author</p></td>
+<td><p>ALSETLab, Rensselaer Polytechnic Institute</p></td>
+</tr>
+<tr>
+<td><p>Contact</p></td>
+<td><p><a href=\"mailto:vanfrl@rpi.edu\">vanfrl@rpi.edu</a></p></td>
+</tr>
+<tr>
+<td><p>Model Verification</p></td>
+<td><p>This model has been verified against PSS/E.</p></td>
+</tr>
+<tr>
+<td><p>Description</p></td>
+<td><p>IEEE Standard Model IEEESGO.</p></td>
+</tr>
+</table>
+</html>"));
 end IEESGO;

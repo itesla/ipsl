@@ -1,5 +1,5 @@
 within OpenIPSL.Electrical.Controls.PSSE.ES;
-model EXST1 "IEEE Type AC2A Excitation System"
+model EXST1 "IEEE Type ST1 Excitation System"
   extends OpenIPSL.Electrical.Controls.PSSE.ES.BaseClasses.BaseExciter;
   parameter SI.Time T_R=0.02 "Regulator input filter time constant";
   parameter SI.PerUnit V_IMAX=0.2 "Maximum voltage error (regulator input)";
@@ -97,11 +97,12 @@ equation
   annotation (
     Diagram(coordinateSystem(extent={{-200,-200},{200,160}})),
     Icon(coordinateSystem(
-        extent={{-200,-200},{200,160}},
-        preserveAspectRatio=true), graphics={Text(
-          extent={{-186,-62},{-112,-82}},
+        extent={{-100,-100},{100,100}},
+        preserveAspectRatio=true), graphics={
+                               Text(
+          extent={{-100,160},{100,100}},
           lineColor={28,108,200},
-          textString="XADIFD")}),
+          textString="EXST1")}),
     Documentation(info="<html>
 <table cellspacing=\"1\" cellpadding=\"1\" border=\"1\">
 <tr>

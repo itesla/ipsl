@@ -1,13 +1,9 @@
 within OpenIPSL.Electrical.Controls.PSSE.ES;
 model EXAC1 "1981 IEEE type AC1 Excitation System Model"
+  extends Icons.VerifiedModel;
   extends OpenIPSL.Electrical.Controls.PSSE.ES.BaseClasses.BaseExciter;
   import OpenIPSL.Electrical.Controls.PSSE.ES.BaseClasses.invFEX;
   import OpenIPSL.NonElectrical.Functions.SE;
-  Modelica.Blocks.Interfaces.RealInput XADIFD "Field current" annotation (
-      Placement(transformation(
-        extent={{-10,-10},{10,10}},
-        rotation=90,
-        origin={150,-50}), iconTransformation(extent={{-210,-80},{-190,-60}})));
   OpenIPSL.NonElectrical.Continuous.SimpleLagLim imLimitedSimpleLag(
     K=K_A,
     T=T_A,
@@ -98,7 +94,8 @@ equation
   connect(add3_1.y, leadLag.u)
     annotation (Line(points={{-39,0},{-22,0},{-2,0}}, color={0,0,127}));
   connect(rectifierCommutationVoltageDrop.XADIFD, XADIFD)
-    annotation (Line(points={{150,-11},{150,-50}}, color={0,0,127}));
+    annotation (Line(points={{150,-11},{150,-106},{150,-200},{80,-200}},
+                                                   color={0,0,127}));
   connect(rotatingExciterWithDemagnetizationLimited.EFD,
     rectifierCommutationVoltageDrop.V_EX)
     annotation (Line(points={{121.25,0},{139,0}}, color={0,0,127}));
@@ -106,8 +103,8 @@ equation
     annotation (Line(points={{81,0},{98.75,0}}, color={0,0,127}));
   connect(rectifierCommutationVoltageDrop.EFD, EFD)
     annotation (Line(points={{161,0},{210,0}}, color={0,0,127}));
-  connect(rotatingExciterWithDemagnetizationLimited.XADIFD, XADIFD) annotation
-    (Line(points={{110,-11.25},{112,-11.25},{112,-36},{150,-36},{150,-50}},
+  connect(rotatingExciterWithDemagnetizationLimited.XADIFD, XADIFD) annotation (
+     Line(points={{110,-11.25},{112,-11.25},{112,-36},{80,-36},{80,-200}},
         color={0,0,127}));
   connect(imDerivativeLag.u, rotatingExciterWithDemagnetizationLimited.V_FE)
     annotation (Line(points={{22,-50},{56,-50},{90,-50},{90,-6.25},{98.75,-6.25}},
@@ -130,24 +127,23 @@ equation
           -50},{-70,-50},{-70,-8},{-62,-8}}, color={0,0,127}));
   annotation (
     Diagram(coordinateSystem(extent={{-200,-200},{200,160}})),
-
-    Icon(coordinateSystem(extent={{-200,-200},{200,160}}),
-        graphics={Text(
-          extent={{-184,-62},{-114,-82}},
-          lineColor={28,108,200},
-          textString="XADIFD"),Text(
-          extent={{-120,158},{140,98}},
+    Icon(coordinateSystem(extent={{-100,-100},{100,100}}),
+        graphics={             Text(
+          extent={{-100,160},{100,100}},
           lineColor={28,108,200},
           textString="EXAC1")}),
     Documentation(info="<html>
-<table cellspacing=\"1\" cellpadding=\"1\" border=\"1\">
+<table cellspacing=\"1\" cellpadding=\"1\" border=\"1\"><tr>
+<td><p>Model Name</p></td>
+<td><p>EXAC1</p></td>
+</tr>
 <tr>
 <td><p>Reference</p></td>
-<td>EXAC1, PSS/E Manual</td>
+<td><p>PSS/E Manual</p></td>
 </tr>
 <tr>
 <td><p>Last update</p></td>
-<td>2015-11-26</td>
+<td><p>September 2020</p></td>
 </tr>
 <tr>
 <td><p>Author</p></td>
@@ -155,7 +151,15 @@ equation
 </tr>
 <tr>
 <td><p>Contact</p></td>
-<td><p><a href=\"mailto:luigiv@kth.se\">luigiv@kth.se</a></p></td>
+<td><p><a href=\"mailto:vanfrl@rpi.edu\">vanfrl@rpi.edu</a></p></td>
+</tr>
+<tr>
+<td><p>Model Verification</p></td>
+<td><p>This model has been verified against PSS/E.</p></td>
+</tr>
+<tr>
+<td><p>Description</p></td>
+<td><p> IEEE Type AC1 Excitation System Model.</p></td>
 </tr>
 </table>
 </html>"));

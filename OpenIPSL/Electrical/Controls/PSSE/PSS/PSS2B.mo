@@ -1,5 +1,6 @@
 within OpenIPSL.Electrical.Controls.PSSE.PSS;
-model PSS2B
+model PSS2B "IEEE 421.5 2005 PSS2B IEEE Dual-Input Stabilizer Model"
+  extends Icons.VerifiedModel;
   extends BaseClasses.BasePSS;
   parameter Real T_w1=10 "Washout time constant 1";
   parameter Real T_w2=10 "Washout time constant 2";
@@ -129,37 +130,40 @@ equation
   annotation (
     Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-160,-80},{220,
             80}})),
-    Icon(coordinateSystem(preserveAspectRatio=false, extent={{-160,-80},{220,80}}), graphics={                                                             Text(
-          extent={{-34,14},{32,-16}},
+    Icon(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,100}}),
+                                                                                    graphics={                                                             Text(
+          extent={{-40,80},{40,40}},
           lineColor={28,108,200},
-          textString="PSS2B"),Text(
-          extent={{-146,46},{-106,32}},
-          lineColor={28,108,200},
-          textString="V_S1"),Text(
-          extent={{164,16},{210,-14}},
-          lineColor={28,108,200},
-          textString="VOTHSG"),Text(
-          extent={{-146,-34},{-106,-48}},
-          lineColor={28,108,200},
-          textString="V_S2")}),
+          textString="PSS2B")}),
     Documentation(info="<html>
-<table cellspacing=\"1\" cellpadding=\"1\" border=\"1\">
+<table cellspacing=\"1\" cellpadding=\"1\" border=\"1\"><tr>
+<td><p>Model Name</p></td>
+<td><p>PSS2B</p></td>
+</tr>
 <tr>
 <td><p>Reference</p></td>
-<td>IEEE Power System Stabilizer Type 2B (PSS2B), PSSE manual</td>
+<td><p>PSS/E Manual</p></td>
 </tr>
 <tr>
 <td><p>Last update</p></td>
-<td>2020-02-18</td>
+<td><p>September 2020</p></td>
 </tr>
 <tr>
-<td><p>Authors</p></td>
+<td><p>Author</p></td>
 <td><p>Le Qi, SmarTS Lab, KTH Royal Institute of Technology</p></td>
 <td><p>Giuseppe Laera, ALSETLab, RPI Rensselaer Polytechnic Institute</p></td>
 </tr>
 <tr>
 <td><p>Contact</p></td>
-<td><p><a href=\"mailto:luigiv@kth.se\">luigiv@kth.se</a></p></td>
+<td><p><a href=\"mailto:vanfrl@rpi.edu\">vanfrl@rpi.edu</a></p></td>
+</tr>
+<tr>
+<td><p>Model Verification</p></td>
+<td><p>This model has been verified against PSS/E.</p></td>
+</tr>
+<tr>
+<td><p>Description</p></td>
+<td><p>IEEE Dual-Input Stabilizer Model.</p></td>
 </tr>
 </table>
 </html>"));

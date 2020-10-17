@@ -1,5 +1,6 @@
 within OpenIPSL.Electrical.Wind.PSSE.WT4G;
 model WT4G1 "Wind Generator Model with Power Converter (Type 4)"
+  extends Icons.VerifiedModel;
   // Extending the PF component
   extends OpenIPSL.Electrical.Essentials.pfComponent;
   // Model parameters
@@ -201,7 +202,7 @@ equation
           lineColor={255,0,0},
           textStyle={TextStyle.Bold},
           horizontalAlignment=TextAlignment.Left,
-          textString="Source impedaance is not used for WT4G1.
+          textString="Source impedance is not used for WT4G1.
 But some value other than zero should be
 specified at PSSE model dialog")}),
     Icon(coordinateSystem(
@@ -274,5 +275,36 @@ specified at PSSE model dialog")}),
           lineThickness=0.5,
           fillColor={255,255,255},
           fillPattern=FillPattern.Solid,
-          textString="I_y")}));
+          textString="I_y")}),
+    Documentation(info="<html>
+<table cellspacing=\"1\" cellpadding=\"1\" border=\"1\"><tr>
+<td><p>Model Name</p></td>
+<td><p>WT4G1</p></td>
+</tr>
+<tr>
+<td><p>Reference</p></td>
+<td><p>PSS/E Manual</p></td>
+</tr>
+<tr>
+<td><p>Last update</p></td>
+<td><p>September 2020</p></td>
+</tr>
+<tr>
+<td><p>Author</p></td>
+<td><p>ALSETLab, Rensselaer Polytechnic Institute</p></td>
+</tr>
+<tr>
+<td><p>Contact</p></td>
+<td><p><a href=\"mailto:vanfrl@rpi.edu\">vanfrl@rpi.edu</a></p></td>
+</tr>
+<tr>
+<td><p>Model Verification</p></td>
+<td><p>This model has been verified against PSS/E.</p></td>
+</tr>
+<tr>
+<td><p>Description</p></td>
+<td><p>Wind Generator Model with Power Converter WT4G1.</p></td>
+</tr>
+</table>
+</html>"));
 end WT4G1;

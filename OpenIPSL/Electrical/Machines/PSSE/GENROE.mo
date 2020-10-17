@@ -1,5 +1,6 @@
 within OpenIPSL.Electrical.Machines.PSSE;
 model GENROE "ROUND ROTOR GENERATOR MODEL (EXPONENTIAL SATURATION)"
+  extends Icons.VerifiedModel;
   //Import of dependencies
   import Complex;
   import Modelica.ComplexMath.arg;
@@ -163,5 +164,35 @@ equation
             100}}), graphics={Text(
           extent={{-54,24},{54,-26}},
           lineColor={0,0,255},
-          textString="GENROE")}));
+          textString="GENROE")}), Documentation(info="<html>
+<table cellspacing=\"1\" cellpadding=\"1\" border=\"1\"><tr>
+<td><p>Model Name</p></td>
+<td><p>GENROE</p></td>
+</tr>
+<tr>
+<td><p>Reference</p></td>
+<td><p>PSS/E Manual</p></td>
+</tr>
+<tr>
+<td><p>Last update</p></td>
+<td><p>September 2020</p></td>
+</tr>
+<tr>
+<td><p>Author</p></td>
+<td><p>ALSETLab, Rensselaer Polytechnic Insitute</p></td>
+</tr>
+<tr>
+<td><p>Contact</p></td>
+<td><p><a href=\"mailto:vanfrl@rpi.edu\">vanfrl@rpi.edu</a></p></td>
+</tr>
+<tr>
+<td><p>Model Verification</p></td>
+<td><p>This model has been verified against PSS/E.</p></td>
+</tr>
+<tr>
+<td><p>Description</p></td>
+<td><p>Round Rotor Generator Model GENROE. It is the same as GENROU model except that an exponential function is used as saturation.</p></td>
+</tr>
+</table>
+</html>"));
 end GENROE;

@@ -105,8 +105,9 @@ equation
 </tr>
 </table>
 </html>"),
-    Icon(coordinateSystem(extent={{-200,-200},{200,160}}), graphics={Text(
-          extent={{-184,-60},{-114,-80}},
+    Icon(coordinateSystem(extent={{-100,-100},{100,100}}), graphics={
+                               Text(
+          extent={{-100,160},{100,100}},
           lineColor={28,108,200},
-          textString="XADIFD")}));
+          textString="EXNI")}));
 end EXNI;

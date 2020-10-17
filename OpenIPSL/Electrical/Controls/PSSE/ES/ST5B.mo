@@ -140,15 +140,12 @@ equation
         extent={{-200,-200},{200,160}},
         grid={2,2})),
     Icon(coordinateSystem(
-        extent={{-200,-200},{200,160}},
+        extent={{-100,-100},{100,100}},
         preserveAspectRatio=true,
         grid={2,2}), graphics={Text(
-          extent={{-60,154},{62,110}},
+          extent={{-100,160},{100,100}},
           lineColor={28,108,200},
-          textString="ST5B"),Text(
-          extent={{-184,-52},{-114,-72}},
-          lineColor={28,108,200},
-          textString="XADIFD")}),
+          textString="ST5B")}),
     Documentation(info="<html>
 <table cellspacing=\"1\" cellpadding=\"1\" border=\"1\">
 <tr>

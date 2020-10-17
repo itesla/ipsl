@@ -1,68 +1,70 @@
 within OpenIPSL.Electrical.Controls.PSSE.TG;
 model IEEEG1 "1981 IEEE Type 1 Turbine-Governor Model"
+  extends Icons.VerifiedModel;
   Modelica.Blocks.Interfaces.RealInput SPEED_HP "Machine speed deviation from nominal [pu]"
-    annotation (Placement(transformation(extent={{-172,2},{-162,14}}), iconTransformation(extent={{-162,-16},{-132,16}})));
+    annotation (Placement(transformation(extent={{-180,-10},{-160,10}}),
+                                                                       iconTransformation(extent={{-100,-20},{-60,20}})));
   OpenIPSL.NonElectrical.Continuous.LeadLag imLeadLag(
     K=K,
     T1=T_2,
     T2=T_1,
     y_start=0)
-    annotation (Placement(transformation(extent={{-144,0},{-128,16}})));
+    annotation (Placement(transformation(extent={{-146,-8},{-130,8}})));
   OpenIPSL.NonElectrical.Continuous.SimpleLag imSimpleLag(
     K=1,
     T=T_4,
-    y_start=P0) annotation (Placement(transformation(extent={{-20,0},{-4,16}})));
+    y_start=P0) annotation (Placement(transformation(extent={{-22,-8},{-6,8}})));
   OpenIPSL.NonElectrical.Continuous.SimpleLag imSimpleLag1(
     K=1,
     T=T_5,
-    y_start=P0) annotation (Placement(transformation(extent={{22,0},{38,16}})));
+    y_start=P0) annotation (Placement(transformation(extent={{20,-8},{36,8}})));
   OpenIPSL.NonElectrical.Continuous.SimpleLag imSimpleLag2(
     K=1,
     T=T_6,
-    y_start=P0) annotation (Placement(transformation(extent={{62,0},{78,16}})));
+    y_start=P0) annotation (Placement(transformation(extent={{60,-8},{76,8}})));
   OpenIPSL.NonElectrical.Continuous.SimpleLag imSimpleLag3(
     K=1,
     T=T_7,
     y_start=P0)
-    annotation (Placement(transformation(extent={{102,0},{118,16}})));
+    annotation (Placement(transformation(extent={{100,-8},{116,8}})));
   Modelica.Blocks.Math.Gain imGain1(k=K_1) annotation (Placement(transformation(
         extent={{-6,-6},{6,6}},
         rotation=90,
-        origin={10,32})));
+        origin={8,24})));
   Modelica.Blocks.Math.Gain imGain2(k=K_2) annotation (Placement(transformation(
         extent={{-6,-6},{6,6}},
         rotation=-90,
-        origin={10,-16})));
+        origin={8,-24})));
   Modelica.Blocks.Math.Gain imGain3(k=K_3) annotation (Placement(transformation(
         extent={{-6,-6},{6,6}},
         rotation=90,
-        origin={50,32})));
+        origin={48,24})));
   Modelica.Blocks.Math.Gain imGain4(k=K_4) annotation (Placement(transformation(
         extent={{-6,-6},{6,6}},
         rotation=-90,
-        origin={50,-16})));
+        origin={48,-24})));
   Modelica.Blocks.Math.Gain imGain5(k=K_5) annotation (Placement(transformation(
         extent={{-6,-6},{6,6}},
         rotation=90,
-        origin={90,32})));
+        origin={88,24})));
   Modelica.Blocks.Math.Gain imGain6(k=K_6) annotation (Placement(transformation(
         extent={{-6,-6},{6,6}},
         rotation=-90,
-        origin={90,-16})));
+        origin={88,-24})));
   Modelica.Blocks.Math.Gain imGain7(k=K_7) annotation (Placement(transformation(
         extent={{-6,-6},{6,6}},
         rotation=90,
-        origin={130,32})));
+        origin={128,24})));
   Modelica.Blocks.Math.Gain imGain8(k=K_8) annotation (Placement(transformation(
         extent={{-6,-6},{6,6}},
         rotation=-90,
-        origin={130,-16})));
+        origin={128,-24})));
   Modelica.Blocks.Interfaces.RealOutput PMECH_HP
-    "Turbine mechanical power [pu]" annotation (Placement(transformation(extent
-          ={{170,52},{180,64}}), iconTransformation(extent={{160,26},{188,54}})));
+    "Turbine mechanical power [pu]" annotation (Placement(transformation(extent={{160,40},{180,60}}),
+                                 iconTransformation(extent={{100,30},{120,50}})));
   Modelica.Blocks.Interfaces.RealOutput PMECH_LP
-    "Turbine mechanical power [pu]" annotation (Placement(transformation(extent
-          ={{170,-48},{180,-36}}), iconTransformation(extent={{160,-56},{188,-24}})));
+    "Turbine mechanical power [pu]" annotation (Placement(transformation(extent={{160,-60},{180,-40}}),
+                                   iconTransformation(extent={{100,-50},{120,-30}})));
   parameter SI.PerUnit P0=1 "Power reference of the governor";
   parameter Real K=20 "Regulation gain [1/pu]";
   parameter SI.Time T_1=1e-8 "Control time constant";
@@ -85,97 +87,99 @@ model IEEEG1 "1981 IEEE Type 1 Turbine-Governor Model"
   parameter SI.PerUnit K_7=0 "Fraction of power from low pressure turbine (second LP, upper branch)";
   parameter SI.PerUnit K_8=0 "Fraction of power from low pressure turbine (second LP, lower branch)";
   Modelica.Blocks.Sources.Constant Pref(k=P0) "Power reference "
-    annotation (Placement(transformation(extent={{-144,34},{-128,50}})));
+    annotation (Placement(transformation(extent={{-146,26},{-130,42}})));
   Modelica.Blocks.Math.Add3 add3_1(k2=-1, k3=-1)
-    annotation (Placement(transformation(extent={{-112,0},{-96,16}})));
+    annotation (Placement(transformation(extent={{-114,-8},{-98,8}})));
   Modelica.Blocks.Math.Gain gain(k=1/T_3)
-    annotation (Placement(transformation(extent={{-90,0},{-74,16}})));
+    annotation (Placement(transformation(extent={{-92,-8},{-76,8}})));
   Modelica.Blocks.Nonlinear.Limiter limiter(uMax=U_o, uMin=U_c)
-    annotation (Placement(transformation(extent={{-68,0},{-52,16}})));
+    annotation (Placement(transformation(extent={{-70,-8},{-54,8}})));
   Modelica.Blocks.Continuous.LimIntegrator limIntegrator(
     k=1,
     outMax=P_MAX,
     outMin=P_MIN,
     initType=Modelica.Blocks.Types.Init.InitialOutput,
     y_start=P0)
-    annotation (Placement(transformation(extent={{-46,0},{-30,16}})));
+    annotation (Placement(transformation(extent={{-48,-8},{-32,8}})));
   Modelica.Blocks.Math.Add add
-    annotation (Placement(transformation(extent={{58,52},{70,64}})));
+    annotation (Placement(transformation(extent={{56,44},{68,56}})));
   Modelica.Blocks.Math.Add add1
-    annotation (Placement(transformation(extent={{58,-48},{70,-36}})));
+    annotation (Placement(transformation(extent={{56,-56},{68,-44}})));
   Modelica.Blocks.Math.Add add2
-    annotation (Placement(transformation(extent={{98,-48},{110,-36}})));
+    annotation (Placement(transformation(extent={{96,-56},{108,-44}})));
   Modelica.Blocks.Math.Add add3
-    annotation (Placement(transformation(extent={{98,52},{110,64}})));
+    annotation (Placement(transformation(extent={{96,44},{108,56}})));
   Modelica.Blocks.Math.Add add4
-    annotation (Placement(transformation(extent={{138,-48},{150,-36}})));
+    annotation (Placement(transformation(extent={{136,-56},{148,-44}})));
   Modelica.Blocks.Math.Add add5
-    annotation (Placement(transformation(extent={{138,52},{150,64}})));
+    annotation (Placement(transformation(extent={{136,44},{148,56}})));
 equation
-  connect(SPEED_HP, imLeadLag.u) annotation (Line(points={{-167,8},{-145.6,8}}, color={0,0,127}));
-  connect(Pref.y, add3_1.u1) annotation (Line(points={{-127.2,42},{-122,42},{-122,14.4},{-113.6,14.4}}, color={0,0,127}));
-  connect(add3_1.u2, imLeadLag.y) annotation (Line(points={{-113.6,8},{-113.6,8},{-127.2,8}}, color={0,0,127}));
-  connect(add3_1.y, gain.u) annotation (Line(points={{-95.2,8},{-91.6,8}}, color={0,0,127}));
-  connect(gain.y, limiter.u) annotation (Line(points={{-73.2,8},{-69.6,8}}, color={0,0,127}));
-  connect(limiter.y, limIntegrator.u) annotation (Line(points={{-51.2,8},{-47.6,8}}, color={0,0,127}));
-  connect(imSimpleLag1.u, imSimpleLag.y) annotation (Line(points={{20.4,8},{20.4,8},{-3.2,8}}, color={0,0,127}));
-  connect(limIntegrator.y, imSimpleLag.u) annotation (Line(points={{-29.2,8},{-21.6,8}}, color={0,0,127}));
-  connect(add3_1.u3, imSimpleLag.u) annotation (Line(points={{-113.6,1.6},{-122,1.6},{-122,-22},{-26,-22},{-26,8},{-21.6,8}}, color={0,0,127}));
-  connect(imGain1.u, imSimpleLag.y) annotation (Line(points={{10,24.8},{10,8},{-3.2,8}}, color={0,0,127}));
-  connect(imGain2.u, imSimpleLag.y) annotation (Line(points={{10,-8.8},{10,8},{-3.2,8}}, color={0,0,127}));
-  connect(imSimpleLag1.y, imSimpleLag2.u) annotation (Line(points={{38.8,8},{60.4,8}}, color={0,0,127}));
-  connect(imGain3.u, imSimpleLag2.u) annotation (Line(points={{50,24.8},{50,8},{60.4,8}}, color={0,0,127}));
-  connect(imGain4.u, imSimpleLag2.u) annotation (Line(points={{50,-8.8},{50,8},{60.4,8}}, color={0,0,127}));
-  connect(add.u2, imGain3.y) annotation (Line(points={{56.8,54.4},{50,54.4},{50,38.6}}, color={0,0,127}));
-  connect(imGain1.y, add.u1) annotation (Line(points={{10,38.6},{10,61.6},{56.8,61.6}}, color={0,0,127}));
-  connect(add1.u1, imGain4.y) annotation (Line(points={{56.8,-38.4},{50,-38.4},{50,-22.6}}, color={0,0,127}));
-  connect(imGain2.y, add1.u2) annotation (Line(points={{10,-22.6},{10,-45.6},{56.8,-45.6}}, color={0,0,127}));
-  connect(imSimpleLag2.y, imSimpleLag3.u) annotation (Line(points={{78.8,8},{100.4,8}}, color={0,0,127}));
-  connect(imGain5.u, imSimpleLag3.u) annotation (Line(points={{90,24.8},{90,8},{100.4,8}}, color={0,0,127}));
-  connect(imGain6.u, imSimpleLag3.u) annotation (Line(points={{90,-8.8},{90,8},{100.4,8}}, color={0,0,127}));
-  connect(imGain6.y, add2.u1) annotation (Line(points={{90,-22.6},{90,-38.4},{96.8,-38.4}}, color={0,0,127}));
-  connect(add1.y, add2.u2) annotation (Line(points={{70.6,-42},{90,-42},{90,-45.6},{96.8,-45.6}}, color={0,0,127}));
-  connect(add.y, add3.u1) annotation (Line(points={{70.6,58},{90,58},{90,61.6},{96.8,61.6}}, color={0,0,127}));
-  connect(imGain5.y, add3.u2) annotation (Line(points={{90,38.6},{90,54.4},{96.8,54.4}}, color={0,0,127}));
-  connect(imSimpleLag3.y, imGain7.u) annotation (Line(points={{118.8,8},{130,8},{130,24.8}}, color={0,0,127}));
-  connect(imGain8.u, imGain7.u) annotation (Line(points={{130,-8.8},{130,24.8}}, color={0,0,127}));
-  connect(add4.y, PMECH_LP) annotation (Line(points={{150.6,-42},{152,-42},{175,-42}}, color={0,0,127}));
-  connect(imGain8.y, add4.u1) annotation (Line(points={{130,-22.6},{130,-38.4},{136.8,-38.4}}, color={0,0,127}));
-  connect(add2.y, add4.u2) annotation (Line(points={{110.6,-42},{130,-42},{130,-45.6},{136.8,-45.6}}, color={0,0,127}));
-  connect(add3.y, add5.u1) annotation (Line(points={{110.6,58},{130,58},{130,61.6},{136.8,61.6}}, color={0,0,127}));
-  connect(imGain7.y, add5.u2) annotation (Line(points={{130,38.6},{130,54.4},{136.8,54.4}}, color={0,0,127}));
-  connect(add5.y, PMECH_HP) annotation (Line(points={{150.6,58},{152,58},{175,58}}, color={0,0,127}));
+  connect(SPEED_HP, imLeadLag.u) annotation (Line(points={{-170,0},{-147.6,0}}, color={0,0,127}));
+  connect(Pref.y, add3_1.u1) annotation (Line(points={{-129.2,34},{-124,34},{-124,6.4},{-115.6,6.4}},   color={0,0,127}));
+  connect(add3_1.u2, imLeadLag.y) annotation (Line(points={{-115.6,0},{-129.2,0}},            color={0,0,127}));
+  connect(add3_1.y, gain.u) annotation (Line(points={{-97.2,0},{-93.6,0}}, color={0,0,127}));
+  connect(gain.y, limiter.u) annotation (Line(points={{-75.2,0},{-71.6,0}}, color={0,0,127}));
+  connect(limiter.y, limIntegrator.u) annotation (Line(points={{-53.2,0},{-49.6,0}}, color={0,0,127}));
+  connect(imSimpleLag1.u, imSimpleLag.y) annotation (Line(points={{18.4,0},{-5.2,0}},          color={0,0,127}));
+  connect(limIntegrator.y, imSimpleLag.u) annotation (Line(points={{-31.2,0},{-23.6,0}}, color={0,0,127}));
+  connect(add3_1.u3, imSimpleLag.u) annotation (Line(points={{-115.6,-6.4},{-124,-6.4},{-124,-30},{-28,-30},{-28,0},{-23.6,0}},
+                                                                                                                              color={0,0,127}));
+  connect(imGain1.u, imSimpleLag.y) annotation (Line(points={{8,16.8},{8,0},{-5.2,0}},   color={0,0,127}));
+  connect(imGain2.u, imSimpleLag.y) annotation (Line(points={{8,-16.8},{8,0},{-5.2,0}},  color={0,0,127}));
+  connect(imSimpleLag1.y, imSimpleLag2.u) annotation (Line(points={{36.8,0},{58.4,0}}, color={0,0,127}));
+  connect(imGain3.u, imSimpleLag2.u) annotation (Line(points={{48,16.8},{48,0},{58.4,0}}, color={0,0,127}));
+  connect(imGain4.u, imSimpleLag2.u) annotation (Line(points={{48,-16.8},{48,0},{58.4,0}},color={0,0,127}));
+  connect(add.u2, imGain3.y) annotation (Line(points={{54.8,46.4},{48,46.4},{48,30.6}}, color={0,0,127}));
+  connect(imGain1.y, add.u1) annotation (Line(points={{8,30.6},{8,53.6},{54.8,53.6}},   color={0,0,127}));
+  connect(add1.u1, imGain4.y) annotation (Line(points={{54.8,-46.4},{48,-46.4},{48,-30.6}}, color={0,0,127}));
+  connect(imGain2.y, add1.u2) annotation (Line(points={{8,-30.6},{8,-53.6},{54.8,-53.6}},   color={0,0,127}));
+  connect(imSimpleLag2.y, imSimpleLag3.u) annotation (Line(points={{76.8,0},{98.4,0}},  color={0,0,127}));
+  connect(imGain5.u, imSimpleLag3.u) annotation (Line(points={{88,16.8},{88,0},{98.4,0}},  color={0,0,127}));
+  connect(imGain6.u, imSimpleLag3.u) annotation (Line(points={{88,-16.8},{88,0},{98.4,0}}, color={0,0,127}));
+  connect(imGain6.y, add2.u1) annotation (Line(points={{88,-30.6},{88,-46.4},{94.8,-46.4}}, color={0,0,127}));
+  connect(add1.y, add2.u2) annotation (Line(points={{68.6,-50},{88,-50},{88,-53.6},{94.8,-53.6}}, color={0,0,127}));
+  connect(add.y, add3.u1) annotation (Line(points={{68.6,50},{88,50},{88,53.6},{94.8,53.6}}, color={0,0,127}));
+  connect(imGain5.y, add3.u2) annotation (Line(points={{88,30.6},{88,46.4},{94.8,46.4}}, color={0,0,127}));
+  connect(imSimpleLag3.y, imGain7.u) annotation (Line(points={{116.8,0},{128,0},{128,16.8}}, color={0,0,127}));
+  connect(imGain8.u, imGain7.u) annotation (Line(points={{128,-16.8},{128,16.8}},color={0,0,127}));
+  connect(add4.y, PMECH_LP) annotation (Line(points={{148.6,-50},{170,-50}},           color={0,0,127}));
+  connect(imGain8.y, add4.u1) annotation (Line(points={{128,-30.6},{128,-46.4},{134.8,-46.4}}, color={0,0,127}));
+  connect(add2.y, add4.u2) annotation (Line(points={{108.6,-50},{128,-50},{128,-53.6},{134.8,-53.6}}, color={0,0,127}));
+  connect(add3.y, add5.u1) annotation (Line(points={{108.6,50},{128,50},{128,53.6},{134.8,53.6}}, color={0,0,127}));
+  connect(imGain7.y, add5.u2) annotation (Line(points={{128,30.6},{128,46.4},{134.8,46.4}}, color={0,0,127}));
+  connect(add5.y, PMECH_HP) annotation (Line(points={{148.6,50},{170,50}},          color={0,0,127}));
   annotation (
-    Diagram(coordinateSystem(extent={{-140,-80},{160,80}}, preserveAspectRatio=
+    Diagram(coordinateSystem(extent={{-160,-80},{160,80}}, preserveAspectRatio=
             false)),
-    Icon(coordinateSystem(extent={{-140,-80},{160,80}}, preserveAspectRatio=
-            true), graphics={Rectangle(extent={{-140,80},{160,-80}}, lineColor=
-          {0,0,255}),Text(
-          extent={{-122,18},{-68,-18}},
-          lineColor={0,0,255},
-          fillPattern=FillPattern.Solid,
+    Icon(coordinateSystem(extent={{-100,-100},{100,100}},
+                                                        preserveAspectRatio=
+            true), graphics={Rectangle(extent={{-100,100},{100,-100}},
+                                                                     lineColor={28,108,200}),
+                     Text(
+          extent={{-50,20},{10,-20}},
+          lineColor={28,108,200},
           textString="SPEED_HP"),Text(
-          extent={{84,56},{158,26}},
-          lineColor={0,0,255},
-          fillPattern=FillPattern.Solid,
+          extent={{30,60},{90,20}},
+          lineColor={28,108,200},
           textString="PMECH_HP"),Text(
-          extent={{86,-10},{158,-48}},
-          lineColor={0,0,255},
-          fillPattern=FillPattern.Solid,
+          extent={{30,-20},{88,-60}},
+          lineColor={28,108,200},
           textString="PMECH_LP"),Text(
-          extent={{-68,40},{88,-46}},
-          lineColor={0,0,255},
-          fillPattern=FillPattern.Solid,
+          extent={{-100,160},{100,100}},
+          lineColor={28,108,200},
           textString="IEEEG1")}),
     Documentation(info="<html>
-<table cellspacing=\"1\" cellpadding=\"1\" border=\"1\">
+<table cellspacing=\"1\" cellpadding=\"1\" border=\"1\"><tr>
+<td><p>Model Name</p></td>
+<td><p>IEEEG1</p></td>
+</tr>
 <tr>
 <td><p>Reference</p></td>
-<td>Turbine and Governor (IEEEG1), PSSE manual</td>
+<td><p>PSS/E Manual</p></td>
 </tr>
 <tr>
 <td><p>Last update</p></td>
-<td>2015-10-02</td>
+<td><p>September 2020</p></td>
 </tr>
 <tr>
 <td><p>Author</p></td>
@@ -183,7 +187,15 @@ equation
 </tr>
 <tr>
 <td><p>Contact</p></td>
-<td><p><a href=\"mailto:luigi.vanfretti@gmail.com\">luigi.vanfretti@gmail.com</a></p></td>
+<td><p><a href=\"mailto:vanfrl@rpi.edu\">vanfrl@rpi.edu</a></p></td>
+</tr>
+<tr>
+<td><p>Model Verification</p></td>
+<td><p>This model has been verified against PSS/E.</p></td>
+</tr>
+<tr>
+<td><p>Description</p></td>
+<td><p>Governor IEEEG1, IEEG1_GE and IEEEG1D IEEE Type 1 Speed-Governor Model.</p></td>
 </tr>
 </table>
 </html>"));

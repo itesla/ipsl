@@ -3,34 +3,31 @@ partial model BaseGovernor
 
   Modelica.Blocks.Interfaces.RealInput SPEED annotation (Placement(
         transformation(extent={{-260,-140},{-220,-100}}), iconTransformation(
-          extent={{-240,80},{-200,120}})));
+          extent={{-100,40},{-60,80}})));
   Modelica.Blocks.Interfaces.RealInput PMECH0 annotation (Placement(
         transformation(extent={{-260,60},{-220,100}}), iconTransformation(
-          extent={{-240,-140},{-200,-100}})));
+          extent={{-100,-80},{-60,-40}})));
   Modelica.Blocks.Interfaces.RealOutput PMECH annotation (Placement(
-        transformation(extent={{240,-10},{260,10}}), iconTransformation(extent=
-            {{240,-10},{260,10}})));
-  annotation (Icon(coordinateSystem(preserveAspectRatio=false, extent={{-240,
-            -240},{240,200}}), graphics={
+        transformation(extent={{240,-10},{260,10}}), iconTransformation(extent={{100,-12},{120,8}})));
+  annotation (Icon(coordinateSystem(preserveAspectRatio=false),
+                               graphics={
         Rectangle(
-          extent={{-240,200},{240,-240}},
-          lineColor={28,108,200},
-          fillColor={255,255,255},
-          fillPattern=FillPattern.Solid),
+          extent={{-100,100},{100,-100}},
+          lineColor={28,108,200}),
         Text(
-          extent={{-186,122},{-110,80}},
+          extent={{-50,80},{10,40}},
           lineColor={28,108,200},
           fillColor={255,255,255},
           fillPattern=FillPattern.Solid,
           textString="SPEED"),
         Text(
-          extent={{-188,-102},{-92,-142}},
+          extent={{-50,-40},{10,-80}},
           lineColor={28,108,200},
           fillColor={255,255,255},
           fillPattern=FillPattern.Solid,
           textString="PMECH0"),
         Text(
-          extent={{144,24},{224,-16}},
+          extent={{30,20},{90,-20}},
           lineColor={28,108,200},
           fillColor={255,255,255},
           fillPattern=FillPattern.Solid,

@@ -1,5 +1,5 @@
 within OpenIPSL.Electrical.Controls.PSSE.PSS;
-model PSS2A "PSS2A - IEEE Dual-Input Stabilizer Model"
+model PSS2A "IEEE Dual-Input Stabilizer Model"
   extends BaseClasses.BasePSS;
   parameter Real T_w1=10 "Washout 1 time constant";
   parameter Real T_w2=10 "Washout 2 time constant";
@@ -104,19 +104,11 @@ equation
   annotation (
     Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-160,-80},{220,
             80}})),
-    Icon(coordinateSystem(preserveAspectRatio=false, extent={{-160,-80},{220,80}}), graphics={                                                             Text(
-          extent={{-34,16},{32,-14}},
+    Icon(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,100}}),
+                                                                                    graphics={                                                             Text(
+          extent={{-40,80},{40,40}},
           lineColor={28,108,200},
-          textString="PSS2A"),Text(
-          extent={{-140,50},{-112,30}},
-          lineColor={28,108,200},
-          textString="V_S1"),Text(
-          extent={{-140,-30},{-112,-50}},
-          lineColor={28,108,200},
-          textString="V_S2"),Text(
-          extent={{158,10},{214,-10}},
-          lineColor={28,108,200},
-          textString="VOTHSG")}),
+          textString="PSS2A")}),
     Documentation(info="<html>
 <table cellspacing=\"1\" cellpadding=\"1\" border=\"1\"><tr>
 <td><p>Reference</p></td>
@@ -124,7 +116,7 @@ equation
 </tr>
 <tr>
 <td><p>Last update</p></td>
-<td><p>2020-02-18</p></td>
+<td><p>September 2020</p></td>
 </tr>
 <tr>
 <td><p>Authors</p></td>
@@ -133,7 +125,7 @@ equation
 </tr>
 <tr>
 <td><p>Contact</p></td>
-<td><p><a href=\"mailto:luigiv@kth.se\">luigiv@kth.se</a></p></td>
+<td><p><a href=\"mailto:vanfrl@rpi.edu\">vanfrl@rpi.edu</a></p></td>
 </tr>
 </table>
 </html>"));

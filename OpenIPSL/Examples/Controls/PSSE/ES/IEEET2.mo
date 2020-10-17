@@ -21,9 +21,8 @@ model IEEET2 "SMIB system with one load and GENROE model"
     M_b=100000000,
     P_0=40000000,
     Q_0=5416582,
-    v_0=1) annotation (Placement(transformation(extent={{-108,-20},{-68,20}})));
-  Modelica.Blocks.Sources.Constant const(k=0)
-    annotation (Placement(transformation(extent={{-28,-50},{-48,-30}})));
+    v_0=1) annotation (Placement(transformation(extent={{-88,-20},{-48,20}})));
+  Modelica.Blocks.Sources.Constant zero(k=0) annotation (Placement(transformation(extent={{-28,-86},{-40,-74}})));
   OpenIPSL.Electrical.Controls.PSSE.ES.IEEET2 iEEET2(
     T_R=0.02,
     K_A=200,
@@ -39,25 +38,22 @@ model IEEET2 "SMIB system with one load and GENROE model"
     V_RMAX=2,
     V_RMIN=-2,
     K_E=0.1)
-    annotation (Placement(transformation(extent={{-74,-58},{-106,-32}})));
+    annotation (Placement(transformation(extent={{-60,-60},{-80,-40}})));
 equation
-  connect(gENROE.PMECH, gENROE.PMECH0) annotation (Line(points={{-112,10},{-118,
-          10},{-118,26},{-56,26},{-56,10},{-66,10}}, color={0,0,127}));
-  connect(iEEET2.EFD, gENROE.EFD) annotation (Line(points={{-106.8,-43.5556},{-118,-43.5556},{-118,-10},{-112,-10}},
+  connect(gENROE.PMECH, gENROE.PMECH0) annotation (Line(points={{-92,10},{-100,10},{-100,26},{-40,26},{-40,10},{-46,10}},
+                                                     color={0,0,127}));
+  connect(iEEET2.EFD, gENROE.EFD) annotation (Line(points={{-81,-50},{-100,-50},{-100,-10},{-92,-10}},
                                                  color={0,0,127}));
-  connect(iEEET2.ECOMP, gENROE.ETERM) annotation (Line(points={{-74,-43.5556},{-58,-43.5556},{-58,-6},{-66,-6}},
+  connect(iEEET2.ECOMP, gENROE.ETERM) annotation (Line(points={{-59,-50},{-34,-50},{-34,-6},{-46,-6}},
                                              color={0,0,127}));
-  connect(iEEET2.EFD0, gENROE.EFD0) annotation (Line(points={{-74,-52.9444},{-56,-52.9444},{-56,-10},{-66,-10}},
+  connect(iEEET2.EFD0, gENROE.EFD0) annotation (Line(points={{-59,-54},{-38,-54},{-38,-10},{-46,-10}},
                                               color={0,0,127}));
-  connect(iEEET2.VOTHSG, const.y) annotation (Line(points={{-74,-37.0556},{-55.3333,-37.0556},{-55.3333,-40},{-49,-40}},
-                                               color={0,0,127}));
-  connect(iEEET2.VOEL, const.y) annotation (Line(points={{-84.4,-58},{-50,-58},
-          {-50,-40},{-49,-40}}, color={0,0,127}));
-  connect(iEEET2.VUEL, const.y) annotation (Line(points={{-79.6,-58},{-50,-58},
-          {-50,-40},{-49,-40}}, color={0,0,127}));
+  connect(iEEET2.VOTHSG, zero.y) annotation (Line(points={{-59,-46},{-55.3333,-46},{-55.3333,-80},{-40.6,-80}}, color={0,0,127}));
+  connect(iEEET2.VOEL, zero.y) annotation (Line(points={{-70,-61},{-70,-80},{-40.6,-80}}, color={0,0,127}));
+  connect(iEEET2.VUEL, zero.y) annotation (Line(points={{-66,-61},{-66,-80},{-40.6,-80}}, color={0,0,127}));
   connect(gENROE.p, GEN1.p)
-    annotation (Line(points={{-68,0},{-68,0},{-40,0}}, color={0,0,255}));
-  connect(gENROE.XADIFD, iEEET2.XADIFD) annotation (Line(points={{-66.4,-18},{-62,-18},{-62,-64},{-97.2,-64},{-97.2,-57.7111}}, color={0,0,127}));
+    annotation (Line(points={{-48,0},{-30,0}},         color={0,0,255}));
+  connect(gENROE.XADIFD, iEEET2.XADIFD) annotation (Line(points={{-46,-18},{-42,-18},{-42,-66},{-78,-66},{-78,-61}},            color={0,0,127}));
   annotation (
 experiment(StopTime=10));
 end IEEET2;

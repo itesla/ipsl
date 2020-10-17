@@ -1,5 +1,6 @@
 within OpenIPSL.Electrical.Machines.PSSE;
 model GENSAE "SALIENT POLE GENERATOR MODEL (EXPONENTIAL SATURATION)"
+  extends Icons.VerifiedModel;
   // Import of Dependencies
   import OpenIPSL.NonElectrical.Functions.SE_exp;
   import Complex;
@@ -100,11 +101,11 @@ equation
   der(Epq) = 1/Tpd0*(EFD - XadIfd);
   der(PSIkd) = 1/Tppd0*(Epq - PSIkd - (Xpd - Xl)*id);
   der(PSIppq) = 1/Tppq0*((-PSIppq) + (Xq - Xppq)*iq - PSIppq*(Xq-Xl)/(Xd-Xl)*SE_exp(
-  	PSIpp,
-  	S10,
-  	S12,
-  	1,
-  	1.2));
+   PSIpp,
+   S10,
+   S12,
+   1,
+   1.2));
   PSIppd = Epq*K3d + PSIkd*K4d;
   PSId = PSIppd - Xppd*id;
   PSIq = (-PSIppq) - Xppq*iq;
@@ -126,22 +127,33 @@ equation
           lineColor={0,0,255},
           textString="GENSAE")}),
     Documentation(info="<html>
-<table cellspacing=\"1\" cellpadding=\"1\" border=\"1\">
+<table cellspacing=\"1\" cellpadding=\"1\" border=\"1\"><tr>
+<td><p>Model Name</p></td>
+<td><p>GENSAE</p></td>
+</tr>
 <tr>
 <td><p>Reference</p></td>
-<td>PSS/E Manual</td>
+<td><p>PSS/E Manual</p></td>
 </tr>
 <tr>
 <td><p>Last update</p></td>
-<td>Unknown</td>
+<td><p>September 2020</p></td>
 </tr>
 <tr>
 <td><p>Author</p></td>
-<td><p>Mengjia Zhang,SmarTS Lab, KTH Royal Institute of Technology</p></td>
+<td><p>Mengjia Zhang, SmarTS Lab, KTH Royal Institute of Technology</p></td>
 </tr>
 <tr>
 <td><p>Contact</p></td>
-<td><p><a href=\"mailto:luigiv@kth.se\">luigiv@kth.se</a></p></td>
+<td><p><a href=\"mailto:vanfrl@rpi.edu\">vanfrl@rpi.edu</a></p></td>
+</tr>
+<tr>
+<td><p>Model Verification</p></td>
+<td><p>This model has been verified against PSS/E.</p></td>
+</tr>
+<tr>
+<td><p>Description</p></td>
+<td><p>Salient Pole Generator represented by equal mutual inductance rotor modeling. The model is the same as GENSAL model with the exception that an exponential function is used for saturation.</p></td>
 </tr>
 </table>
 </html>"));

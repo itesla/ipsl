@@ -20,13 +20,13 @@ model ST5B "SMIB system with one load and GENROE model"
     K_R=200,
     V_RMAX=5,
     V_RMIN=-4)
-    annotation (Placement(transformation(extent={{-64,-76},{-124,-44}})));
+    annotation (Placement(transformation(extent={{-60,-60},{-80,-40}})));
   Modelica.Blocks.Sources.Constant PSS_off(k=0)
-    annotation (Placement(transformation(extent={{-140,-102},{-128,-90}})));
+    annotation (Placement(transformation(extent={{-44,-44},{-52,-36}})));
   Modelica.Blocks.Sources.Constant VOEL(k=100)
-    annotation (Placement(transformation(extent={{-140,-122},{-128,-110}})));
+    annotation (Placement(transformation(extent={{-92,-78},{-80,-66}})));
   Modelica.Blocks.Sources.Constant VUEL(k=-100)
-    annotation (Placement(transformation(extent={{-140,-142},{-128,-130}})));
+    annotation (Placement(transformation(extent={{-92,-96},{-80,-84}})));
   OpenIPSL.Electrical.Machines.PSSE.GENROE gENROE(
     Tpd0=5,
     Tppd0=0.07,
@@ -47,26 +47,26 @@ model ST5B "SMIB system with one load and GENROE model"
     M_b=100000000,
     P_0=40000000,
     Q_0=5416582,
-    v_0=1) annotation (Placement(transformation(extent={{-112,-20},{-72,20}})));
+    v_0=1) annotation (Placement(transformation(extent={{-88,-20},{-48,20}})));
 equation
-  connect(PSS_off.y, sT5B.VOTHSG) annotation (Line(points={{-127.4,-96},{-64,-96},
-          {-64,-50.2222}}, color={0,0,127}));
-  connect(VOEL.y, sT5B.VOEL) annotation (Line(points={{-127.4,-116},{-83.5,-116},
-          {-83.5,-76}}, color={0,0,127}));
-  connect(VUEL.y, sT5B.VUEL) annotation (Line(points={{-127.4,-136},{-74.5,-136},
-          {-74.5,-76}}, color={0,0,127}));
-  connect(gENROE.ETERM, sT5B.ECOMP) annotation (Line(points={{-70,-6},{-50,-6},
-          {-50,-58.2222},{-64,-58.2222}},color={0,0,127}));
-  connect(sT5B.XADIFD, gENROE.XADIFD) annotation (Line(points={{-64,-63.5556},{
-          -60,-63.5556},{-60,-18},{-70.4,-18}}, color={0,0,127}));
-  connect(sT5B.EFD0, gENROE.EFD0) annotation (Line(points={{-64,-69.7778},{-56,
-          -69.7778},{-56,-10},{-70,-10}}, color={0,0,127}));
-  connect(sT5B.EFD, gENROE.EFD) annotation (Line(points={{-125.5,-58.2222},{-128,
-          -58.2222},{-128,-10},{-116,-10}}, color={0,0,127}));
-  connect(gENROE.PMECH, gENROE.PMECH0) annotation (Line(points={{-116,10},{-128,
-          10},{-128,30},{-60,30},{-60,10},{-70,10}}, color={0,0,127}));
+  connect(PSS_off.y, sT5B.VOTHSG) annotation (Line(points={{-52.4,-40},{-56,-40},{-56,-46},{-59,-46}},
+                           color={0,0,127}));
+  connect(VOEL.y, sT5B.VOEL) annotation (Line(points={{-79.4,-72},{-70,-72},{-70,-61}},
+                        color={0,0,127}));
+  connect(VUEL.y, sT5B.VUEL) annotation (Line(points={{-79.4,-90},{-66,-90},{-66,-61}},
+                        color={0,0,127}));
+  connect(gENROE.ETERM, sT5B.ECOMP) annotation (Line(points={{-46,-6},{-34,-6},{-34,-50},{-59,-50}},
+                                         color={0,0,127}));
+  connect(sT5B.XADIFD, gENROE.XADIFD) annotation (Line(points={{-78,-61},{-78,-66},{-42,-66},{-42,-18},{-46,-18}},
+                                                color={0,0,127}));
+  connect(sT5B.EFD0, gENROE.EFD0) annotation (Line(points={{-59,-54},{-38,-54},{-38,-10},{-46,-10}},
+                                          color={0,0,127}));
+  connect(sT5B.EFD, gENROE.EFD) annotation (Line(points={{-81,-50},{-100,-50},{-100,-10},{-92,-10}},
+                                            color={0,0,127}));
+  connect(gENROE.PMECH, gENROE.PMECH0) annotation (Line(points={{-92,10},{-100,10},{-100,30},{-40,30},{-40,10},{-46,10}},
+                                                     color={0,0,127}));
   connect(gENROE.p, GEN1.p)
-    annotation (Line(points={{-72,0},{-72,0},{-40,0}}, color={0,0,255}));
+    annotation (Line(points={{-48,0},{-30,0}},         color={0,0,255}));
   annotation (
 experiment(StopTime=10));
 end ST5B;

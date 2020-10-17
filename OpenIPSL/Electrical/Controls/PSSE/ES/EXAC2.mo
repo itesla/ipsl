@@ -1,17 +1,9 @@
 within OpenIPSL.Electrical.Controls.PSSE.ES;
 model EXAC2 "1981 IEEE type AC2 Excitation System Model"
+  extends Icons.VerifiedModel;
   extends OpenIPSL.Electrical.Controls.PSSE.ES.BaseClasses.BaseExciter;
   import OpenIPSL.Electrical.Controls.PSSE.ES.BaseClasses.invFEX;
   import OpenIPSL.NonElectrical.Functions.SE;
-  Modelica.Blocks.Interfaces.RealInput XADIFD "Field current" annotation (
-      Placement(
-      transformation(
-        origin={160,-48},
-        extent={{-10,-10},{10,10}},
-        rotation=90),
-      iconTransformation(
-        origin={-198,-70},
-        extent={{-10,-10},{10,10}})));
   OpenIPSL.NonElectrical.Continuous.SimpleLagLim imLimitedSimpleLag(
     K=K_A,
     T=T_A,
@@ -128,9 +120,9 @@ initial equation
   V_REF = VA0/K_A + ECOMP0;
 equation
   connect(rectifierCommutationVoltageDrop.XADIFD, XADIFD) annotation (Line(
-        points={{180,-11},{180,-30.5},{160,-30.5},{160,-48}}, color={0,0,127}));
-  connect(rotatingExciterWithDemagnetizationLimited.XADIFD, XADIFD) annotation
-    (Line(points={{140,-11.25},{140,-30},{160,-30},{160,-48}}, color={0,0,127}));
+        points={{180,-11},{180,-30.5},{80,-30.5},{80,-200}},  color={0,0,127}));
+  connect(rotatingExciterWithDemagnetizationLimited.XADIFD, XADIFD) annotation (
+     Line(points={{140,-11.25},{140,-30},{80,-30},{80,-200}},  color={0,0,127}));
   connect(leadLag.y, imLimitedSimpleLag.u)
     annotation (Line(points={{-29,0},{-29,0},{-22,0}}, color={0,0,127}));
   connect(add3_1.y, leadLag.u)
@@ -185,24 +177,23 @@ equation
     annotation (Line(points={{41,0},{44.625,0},{44.625,3}}, color={0,0,127}));
   annotation (
     Diagram(coordinateSystem(extent={{-200,-200},{200,160}})),
-
-    Icon(coordinateSystem(extent={{-200,-200},{200,160}}),
-        graphics={Text(
-          extent={{-184,-62},{-114,-82}},
-          lineColor={28,108,200},
-          textString="XADIFD"),Text(
-          extent={{-120,158},{140,98}},
+    Icon(coordinateSystem(extent={{-100,-100},{100,100}}),
+        graphics={             Text(
+          extent={{-100,160},{100,100}},
           lineColor={28,108,200},
           textString="EXAC2")}),
     Documentation(info="<html>
-<table cellspacing=\"1\" cellpadding=\"1\" border=\"1\">
+<table cellspacing=\"1\" cellpadding=\"1\" border=\"1\"><tr>
+<td><p>Model Name</p></td>
+<td><p>EXAC2</p></td>
+</tr>
 <tr>
 <td><p>Reference</p></td>
-<td>EXAC2, PSS/E Manual</td>
+<td><p>PSS/E Manual</p></td>
 </tr>
 <tr>
 <td><p>Last update</p></td>
-<td>2015-11-26</td>
+<td><p>September 2020</p></td>
 </tr>
 <tr>
 <td><p>Author</p></td>
@@ -210,7 +201,15 @@ equation
 </tr>
 <tr>
 <td><p>Contact</p></td>
-<td><p><a href=\"mailto:luigiv@kth.se\">luigiv@kth.se</a></p></td>
+<td><p><a href=\"mailto:vanfrl@rpi.edu\">vanfrl@rpi.edu</a></p></td>
+</tr>
+<tr>
+<td><p>Model Verification</p></td>
+<td><p>This model has been verified against PSS/E.</p></td>
+</tr>
+<tr>
+<td><p>Description</p></td>
+<td><p>IEEE Type AC2 Excitation System Model.</p></td>
 </tr>
 </table>
 </html>"));

@@ -1,5 +1,6 @@
 within OpenIPSL.Electrical.Controls.PSSE.ES;
 model ESDC2A
+  extends Icons.VerifiedModel;
   extends OpenIPSL.Electrical.Controls.PSSE.ES.BaseClasses.BaseExciter;
   import OpenIPSL.NonElectrical.Functions.SE;
   import
@@ -62,7 +63,7 @@ model ESDC2A
         rotation=90,
         origin={102,-120}), iconTransformation(
         extent={{-10,-10},{10,10}},
-        origin={-200,-70})));
+        origin={-110,-80})));
   Modelica.Blocks.Math.Gain gain(k=V_RMIN0) annotation (Placement(
         transformation(
         extent={{-10,-10},{10,10}},
@@ -138,12 +139,12 @@ equation
         extent={{-200,-200},{200,160}},
         grid={2,2})),
     Icon(coordinateSystem(
-        extent={{-200,-200},{200,160}},
+        extent={{-100,-100},{100,100}},
         grid={2,2}), graphics={Text(
-          extent={{-120,154},{140,94}},
+          extent={{-100,160},{100,100}},
           lineColor={28,108,200},
           textString="ESDC2A"),Text(
-          extent={{-186,-60},{-150,-80}},
+          extent={{-90,-70},{-60,-90}},
           lineColor={28,108,200},
           textString="VT")}),
     Documentation(info="<html>

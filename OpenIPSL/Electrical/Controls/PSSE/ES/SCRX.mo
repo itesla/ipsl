@@ -1,7 +1,8 @@
 within OpenIPSL.Electrical.Controls.PSSE.ES;
 model SCRX "Bus Fed or Solid Fed Static Exciter"
+  extends Icons.VerifiedModel;
   extends OpenIPSL.Electrical.Controls.PSSE.ES.BaseClasses.BaseExciter;
-  parameter Real T_AT_B=0.1"Ratio between regulator numerator (lead) and denominator (lag) time constants";
+  parameter Real T_AT_B=0.1 "Ratio between regulator numerator (lead) and denominator (lag) time constants";
   parameter SI.Time T_B=1 "Regulator denominator (lag) time constant";
   parameter SI.PerUnit K=100 "Excitation power source output gain";
   parameter SI.Time T_E=0.005 "Excitation power source output time constant";
@@ -82,30 +83,39 @@ equation
     Diagram(coordinateSystem(extent={{-200,-200},{200,160}})),
     Icon(coordinateSystem(
         preserveAspectRatio=true,
-        extent={{-200,-200},{200,160}}), graphics={Text(
-          extent={{-186,-62},{-116,-82}},
-          lineColor={28,108,200},
-          textString="XADIFD"),Text(
-          extent={{-100,156},{100,96}},
+        extent={{-100,-100},{100,100}}), graphics={
+                               Text(
+          extent={{-100,160},{100,100}},
           lineColor={28,108,200},
           textString="SCRX")}),
     Documentation(info="<html>
-<table cellspacing=\"1\" cellpadding=\"1\" border=\"1\">
+<table cellspacing=\"1\" cellpadding=\"1\" border=\"1\"><tr>
+<td><p>Model Name</p></td>
+<td><p>SCRX</p></td>
+</tr>
 <tr>
 <td><p>Reference</p></td>
-<td>PSS/E Manual</td>
+<td><p>PSS/E Manual</p></td>
 </tr>
 <tr>
 <td><p>Last update</p></td>
-<td>Unknown</td>
+<td><p>September 2020</p></td>
 </tr>
 <tr>
 <td><p>Author</p></td>
-<td><p>Mengjia Zhang,SmarTS Lab, KTH Royal Institute of Technology</p></td>
+<td><p>Mengjia Zhang, SmarTS Lab, KTH Royal Institute of Technology</p></td>
 </tr>
 <tr>
 <td><p>Contact</p></td>
-<td><p><a href=\"mailto:luigiv@kth.se\">luigiv@kth.se</a></p></td>
+<td><p><a href=\"mailto:vanfrl@rpi.edu\">vanfrl@rpi.edu</a></p></td>
+</tr>
+<tr>
+<td><p>Model Verification</p></td>
+<td><p>This model has been verified against PSS/E.</p></td>
+</tr>
+<tr>
+<td><p>Description</p></td>
+<td><p>Bus Fed or Solid Fed Static Excitation System Model.</p></td>
 </tr>
 </table>
 </html>"));

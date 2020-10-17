@@ -1,7 +1,8 @@
 within OpenIPSL.Electrical.Controls.PSSE.ES;
-model ESAC2A
+model ESAC2A "IEEE Type AC2A Excitation System"
 import OpenIPSL.NonElectrical.Functions.SE;
   import OpenIPSL.Electrical.Controls.PSSE.ES.BaseClasses.invFEX;
+  extends Icons.VerifiedModel;
   extends OpenIPSL.Electrical.Controls.PSSE.ES.BaseClasses.BaseExciter;
   parameter SI.Time T_R=0 "Regulator input filter time constant";
   parameter SI.Time T_B=0 "Regulator denominator (lag) time constant";
@@ -101,13 +102,13 @@ import OpenIPSL.NonElectrical.Functions.SE;
     annotation (Placement(transformation(extent={{36,-54},{16,-34}})));
   Modelica.Blocks.Math.Gain gain1(k=K_B)
     annotation (Placement(transformation(extent={{0,30},{20,50}})));
-protected 
+protected
   parameter Real VR0(fixed=false);
   parameter Real Efd0(fixed=false);
   parameter Real Ifd0(fixed=false);
   parameter Real VE0(fixed=false);
   parameter Real VFE0(fixed=false);
-initial equation 
+initial equation
   Ifd0 = XADIFD;
   // Finding initial value of excitation voltage, VE0, via going through conditions of FEX function
   VE0 = invFEX(
@@ -123,7 +124,7 @@ initial equation
     E_2) + K_E) + Ifd0*K_D;
   VR0 = VFE0;
   V_REF = VR0/K_A + ECOMP0;
-equation 
+equation
   connect(imLeadLag.y, simpleLagLim.u)
     annotation (Line(points={{-39,10},{-34,10}}, color={0,0,127}));
   connect(limiter1.y, rotatingExciterWithDemagnetization.I_C)
@@ -195,31 +196,39 @@ equation
     annotation (Line(points={{21,40},{30.5,40},{30.5,37}}, color={0,0,127}));
   annotation (
     Diagram(coordinateSystem(extent={{-200,-200},{200,160}})),
-    Icon(coordinateSystem(extent={{-200,-200},{200,160}}),
-        graphics={Text(
-          extent={{-186,-60},{-116,-80}},
-          lineColor={28,108,200},
-          textString="XADIFD"),Text(
-          extent={{-100,152},{100,92}},
+    Icon(coordinateSystem(extent={{-100,-100},{100,100}}),
+        graphics={             Text(
+          extent={{-100,160},{100,100}},
           lineColor={28,108,200},
           textString="ESAC2A")}),
     Documentation(info="<html>
-<table cellspacing=\"1\" cellpadding=\"1\" border=\"1\">
+<table cellspacing=\"1\" cellpadding=\"1\" border=\"1\"><tr>
+<td><p>Model Name</p></td>
+<td><p>ESAC2A</p></td>
+</tr>
 <tr>
 <td><p>Reference</p></td>
-<td>ESAC2A, PSS/E Manual</td>
+<td><p>PSS/E Manual</p></td>
 </tr>
 <tr>
 <td><p>Last update</p></td>
-<td>Major change - 2020-02-06</td>
+<td><p>September 2020</p></td>
 </tr>
 <tr>
 <td><p>Author</p></td>
-<td><p>Marcelo de Castro, ALSETLab, Rensselaer Polytechnic Institute</p></td>
+<td><p>ALSETLab, Rensselaer Polytechnic Insititute</p></td>
 </tr>
 <tr>
 <td><p>Contact</p></td>
-<td><p><a href=\"mailto:luigiv@kth.se\">luigiv@kth.se</a></p></td>
+<td><p><a href=\"mailto:vanfrl@rpi.edu\">vanfrl@rpi.edu</a></p></td>
+</tr>
+<tr>
+<td><p>Model Verification</p></td>
+<td><p>This model has been verified against PSS/E.</p></td>
+</tr>
+<tr>
+<td><p>Description</p></td>
+<td><p>IEEE Type AC2A Excitation System Model.</p></td>
 </tr>
 </table>
 </html>"));

@@ -22,57 +22,43 @@ model ESST4B "SMIB model example of GENROU with Excitation System ESST4B"
     M_b=100000000,
     P_0=39999952.9123306,
     Q_0=5416571.34890556,
-    v_0=1) annotation (Placement(transformation(extent={{-120,-16},{-92,18}})));
-  Modelica.Blocks.Sources.Constant const(k=0) annotation (Placement(
-        transformation(
-        extent={{-4,-4},{4,4}},
-        origin={-98,-52})));
-  Modelica.Blocks.Sources.Constant const5(k=0) annotation (Placement(
-        transformation(
-        extent={{-5,-5},{5,5}},
-        origin={-97,-37})));
+    v_0=1) annotation (Placement(transformation(extent={{-90,-12},{-68,12}})));
+  Modelica.Blocks.Sources.Constant zero(k=0) annotation (Placement(transformation(extent={{-5,-5},{5,5}}, origin={-75,-35})));
   OpenIPSL.Electrical.Controls.PSSE.ES.ESST4B eSST4B annotation (Placement(
         transformation(
-        extent={{-14,-10},{14,10}},
-        origin={-64,-4})));
-  Modelica.Blocks.Sources.Constant const1(k=Modelica.Constants.inf)
-    annotation (Placement(transformation(extent={{-40,-48},{-56,-32}})));
+        extent={{-10,-10},{10,10}},
+        origin={-46,-8})));
+  Modelica.Blocks.Sources.Constant plusInf(k=Modelica.Constants.inf) annotation (Placement(transformation(extent={{-20,-40},{-30,-30}})));
 equation
   connect(gENROU.p, eSST4B.Gen_terminal) annotation (Line(
-      points={{-92,1},{-66.7,1},{-66.7,4.33333},{-75.9,4.33333}},
+      points={{-68,0},{-55,0}},
       color={0,0,255},
       smooth=Smooth.None));
-  connect(const.y, eSST4B.VOTHSG) annotation (Line(
-      points={{-93.6,-52},{-86,-52},{-86,2.11111},{-78,2.11111}},
-      color={0,0,127},
-      smooth=Smooth.None));
   connect(gENROU.EFD0, eSST4B.EFD0) annotation (Line(
-      points={{-90.6,-7.5},{-90,-7.5},{-90,-10.1111},{-78,-10.1111}},
+      points={{-66.9,-6},{-64,-6},{-64,-12},{-57,-12}},
       color={0,0,127},
       smooth=Smooth.None));
-  connect(const5.y, eSST4B.VUEL) annotation (Line(
-      points={{-91.5,-37},{-84,-37},{-84,-14},{-73.1,-14}},
+  connect(zero.y, eSST4B.VUEL) annotation (Line(
+      points={{-69.5,-35},{-50,-35},{-50,-19}},
       color={0,0,127},
       smooth=Smooth.None));
   connect(gENROU.PMECH0, gENROU.PMECH) annotation (Line(
-      points={{-90.6,9.5},{-70,9.5},{-70,22},{-102,22},{-102,9.5},{-122.8,9.5}},
+      points={{-66.9,6},{-60,6},{-60,20},{-100,20},{-100,6},{-92.2,6}},
       color={0,0,127},
       smooth=Smooth.None));
   connect(eSST4B.EFD, gENROU.EFD) annotation (Line(
-      points={{-49.3,-2.88889},{-48,-2.88889},{-48,-24},{-124,-24},{-124,-7.5},
-          {-122.8,-7.5}},
+      points={{-35,-8},{-32,-8},{-32,-26},{-100,-26},{-100,-6},{-92.2,-6}},
       color={0,0,127},
       smooth=Smooth.None));
   connect(gENROU.XADIFD, eSST4B.XADIFD) annotation (Line(
-      points={{-90.88,-14.3},{-90.88,-20},{-94,-20},{-94,-6.77778},{-78,-6.77778}},
+      points={{-66.9,-10.8},{-66.9,-24},{-38,-24},{-38,-19}},
       color={0,0,127},
       smooth=Smooth.None));
-  connect(eSST4B.ECOMP, gENROU.ETERM) annotation (Line(points={{-78,-2.88889},
-          {-82,-2.88889},{-82,-2},{-90.6,-2},{-90.6,-4.1}}, color={0,0,127}));
-  connect(eSST4B.Bus, GEN1.p) annotation (Line(points={{-52.1,4.33333},{-47.5818,
-          4.33333},{-47.5818,0},{-40,0}}, color={0,0,255}));
-  connect(const1.y, eSST4B.VOEL) annotation (Line(points={{-56.8,-40},{-68.9,-40},
-          {-68.9,-14}}, color={0,0,127}));
+  connect(eSST4B.Bus, GEN1.p) annotation (Line(points={{-37,0},{-30,0}},
+                                          color={0,0,255}));
+  connect(plusInf.y, eSST4B.VOEL) annotation (Line(points={{-30.5,-35},{-46,-35},{-46,-19}}, color={0,0,127}));
+  connect(eSST4B.VOTHSG, eSST4B.VUEL) annotation (Line(points={{-57,-4},{-60,-4},{-60,-35},{-50,-35},{-50,-19}}, color={0,0,127}));
+  connect(gENROU.ETERM, eSST4B.ECOMP) annotation (Line(points={{-66.9,-3.6},{-62,-3.6},{-62,-8},{-57,-8}}, color={0,0,127}));
   annotation (
 experiment(StopTime=10));
 end ESST4B;

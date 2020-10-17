@@ -21,7 +21,7 @@ model TGOV1 "SMIB system with one load and GENROE model"
     M_b=100000000,
     P_0=40000000,
     Q_0=5416582,
-    v_0=1) annotation (Placement(transformation(extent={{-100,-20},{-60,20}})));
+    v_0=1) annotation (Placement(transformation(extent={{-88,-20},{-48,20}})));
   OpenIPSL.Electrical.Controls.PSSE.TG.TGOV1 tGOV1(
     R=0.04,
     D_t=0,
@@ -30,18 +30,18 @@ model TGOV1 "SMIB system with one load and GENROE model"
     T_3=6,
     V_MAX=0.86,
     V_MIN=0.3)
-    annotation (Placement(transformation(extent={{-72,32},{-88,44}})));
+    annotation (Placement(transformation(extent={{-60,60},{-80,40}})));
 equation
-  connect(gENROE.EFD, gENROE.EFD0) annotation (Line(points={{-104,-10},{-110,-10},
-          {-110,-30},{-48,-30},{-48,-10},{-58,-10}}, color={0,0,127}));
-  connect(tGOV1.SPEED, gENROE.SPEED) annotation (Line(points={{-73,41},{-52,
-          41},{-52,14},{-58,14}}, color={0,0,127}));
-  connect(tGOV1.PMECH0, gENROE.PMECH0) annotation (Line(points={{-73,35},{-48,
-          35},{-48,10},{-58,10}}, color={0,0,127}));
-  connect(tGOV1.PMECH, gENROE.PMECH) annotation (Line(points={{-89,38},{-110,
-          38},{-110,10},{-104,10}}, color={0,0,127}));
+  connect(gENROE.EFD, gENROE.EFD0) annotation (Line(points={{-92,-10},{-100,-10},{-100,-32},{-40,-32},{-40,-10},{-46,-10}},
+                                                     color={0,0,127}));
+  connect(tGOV1.SPEED, gENROE.SPEED) annotation (Line(points={{-62,44},{-42,44},{-42,14},{-46,14}},
+                                  color={0,0,127}));
+  connect(tGOV1.PMECH0, gENROE.PMECH0) annotation (Line(points={{-62,56},{-38,56},{-38,10},{-46,10}},
+                                  color={0,0,127}));
+  connect(tGOV1.PMECH, gENROE.PMECH) annotation (Line(points={{-81,50.2},{-100,50.2},{-100,10},{-92,10}},
+                                    color={0,0,127}));
   connect(gENROE.p, GEN1.p)
-    annotation (Line(points={{-60,0},{-60,0},{-40,0}}, color={0,0,255}));
+    annotation (Line(points={{-48,0},{-30,0}},         color={0,0,255}));
   annotation (
 experiment(StopTime=10));
 end TGOV1;

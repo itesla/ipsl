@@ -95,7 +95,7 @@ model CCL
         transformation(
         extent={{-7,-7},{7,7}},
         origin={31,-17})));
-protected 
+protected
   Modelica.Blocks.Interfaces.RealInput Iqmax annotation (Placement(
         transformation(
         extent={{-20,-20},{20,20}},
@@ -103,7 +103,7 @@ protected
         origin={0,40}), iconTransformation(
         extent={{-9,-9},{9,9}},
         origin={-101,5})));
-protected 
+protected
   Modelica.Blocks.Interfaces.RealOutput IQmin1 annotation (Placement(
         transformation(
         extent={{-10,-10},{10,10}},
@@ -167,7 +167,7 @@ protected
         extent={{-9,-9},{9,9}},
         rotation=90,
         origin={55,-35})));
-equation 
+equation
   Available_remain1 = sqrt(ImaxTD^2 - IpCMD^2);
   Available_remain2 = sqrt(ImaxTD^2 - IqCMD^2);
   Iqmax = (Qmax - 1.6)*(Vt - 1) + Qmax;
