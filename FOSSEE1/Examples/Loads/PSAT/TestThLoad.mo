@@ -1,7 +1,8 @@
 within FOSSEE1.Examples.Loads.PSAT;
 model TestThLoad "Test of Thermostatically Controlled Load"
   import FOSSEE1;
-  extends LoadTestBase(order3_Inputs_Outputs1(
+  extends OpenIPSL.Examples.Loads.PSAT.LoadTestBase(
+                       order3_Inputs_Outputs1(
       Q_0=0.0570163388727956*0.2,
       v_0=0.99744659,
       Sn=20,

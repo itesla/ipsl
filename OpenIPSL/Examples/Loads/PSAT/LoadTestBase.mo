@@ -1,4 +1,4 @@
-within FOSSEE1.Examples.Loads.PSAT;
+within OpenIPSL.Examples.Loads.PSAT;
 partial model LoadTestBase "Base class for the different load cases"
   OpenIPSL.Electrical.Branches.PwLine pwLine2(
     B=0.001/2,
