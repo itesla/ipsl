@@ -12,7 +12,7 @@ model Terminator
   parameter Real Step=0.001;
   parameter Real Iniv123;
   parameter Real Inidv;
-  Real[:] Value;
+  Real Value[:](start={1});
   Real v123(start=Iniv123);
   Real dv(start=Inidv);
   Integer i(start=1);
