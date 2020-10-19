@@ -1,14 +1,14 @@
-within FOSSEE1.PSS.PSAT;
-model PSS_TypeIII "TODO Document what this model is about"
-  parameter Real Kw "Stabilizer gain (pu/pu)";
-  parameter Real Tw "Gain for active power";
-  parameter Real T1 "Gain for bus voltage magnitude";
-  parameter Real T2 "Wash-out time constant (s)";
-  parameter Real T3 "Lag time constant";
-  parameter Real T4 "Lag time constant";
-  parameter Real Tc "SimpleLagLim time constant";
-  parameter Real vsmax "Max stabilizer output signal (pu)";
-  parameter Real vsmin "Min stabilizer output signal (pu)";
+within OpenIPSL.Electrical.Controls.PSAT.PSS;
+model PSSTypeIII "PSAT PSS Type III"
+  parameter Real Kw "Stabilizer gain";
+  parameter SI.Time Tw "Wash-out time constant";
+  parameter SI.Time T1 "First stabilizer time constant";
+  parameter SI.Time T2 "Second stabilizer time constant";
+  parameter SI.Time T3 "Third stabilizer time constant";
+  parameter SI.Time T4 "Fourth stabilizer time constant";
+  parameter SI.Time Tc "SimpleLagLim time constant";
+  parameter SI.PerUnit vsmax "Max stabilizer output signal";
+  parameter SI.PerUnit vsmin "Min stabilizer output signal";
   OpenIPSL.NonElectrical.Continuous.SimpleLagLim simpleLagLim(
     K=1,
     T=Tc,
@@ -16,9 +16,9 @@ model PSS_TypeIII "TODO Document what this model is about"
     outMax=vsmax,
     outMin=vsmin)
     annotation (Placement(transformation(extent={{40,-10},{60,10}})));
-  Modelica.Blocks.Interfaces.RealInput vs1 "roto speed" annotation (Placement(transformation(extent={{-140,-20},{-100,20}})));
+  Modelica.Blocks.Interfaces.RealInput vs1 "Rotor speed" annotation (Placement(transformation(extent={{-140,-20},{-100,20}})));
   Modelica.Blocks.Interfaces.RealOutput Vref
-    "indexes of the algebraic variable "                         annotation (Placement(transformation(extent={{100,-10},{120,10}})));
+    "Indexes of the algebraic variable"                         annotation (Placement(transformation(extent={{100,-10},{120,10}})));
   OpenIPSL.NonElectrical.Continuous.DerivativeLag derivativeLag(K=Kw*Tw, T=Tw,
     y_start=0)
     annotation (Placement(transformation(extent={{-60,-10},{-40,10}})));
@@ -43,5 +43,11 @@ equation
           extent={{-140,-100},{140,-160}},
           lineColor={0,0,255},
           textString="%name")}),            Diagram(coordinateSystem(
-          preserveAspectRatio=false)));
-end PSS_TypeIII;
+          preserveAspectRatio=false)),
+    Documentation(info="<html>
+<p>
+For more information see <a href=\"OpenIPSL.UsersGuide.References\">[Milano2013]</a>, section \"18.4.3
+Type III\".
+</p>
+</html>"));
+end PSSTypeIII;
