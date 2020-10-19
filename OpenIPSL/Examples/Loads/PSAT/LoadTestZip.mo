@@ -1,5 +1,5 @@
 within OpenIPSL.Examples.Loads.PSAT;
-model Loadtestfreq
+model LoadTestZip
   extends Modelica.Icons.Example;
   OpenIPSL.Electrical.Branches.PwLine pwLine1(
     X=0.1,
@@ -102,25 +102,23 @@ model Loadtestfreq
     Vn=400000) annotation (Placement(transformation(
         origin={3.3113,-20.7513},
         extent={{-10.0,-10.0},{10.0,10.0}})));
-  OpenIPSL.Electrical.Loads.PSAT.FrequencyDependentLoad frequencyDependentLoad1(
-    alpha_p=0,
-    beta_p=1,
-    beta_q=1,
+  OpenIPSL.Electrical.Loads.PSAT.ZIP ZIP1(
     Sn=10,
-    angle_0=-0.00746932024404292,
-    alpha_q=0,
-    Tf=0.1,
+    Pz=0.5,
+    Pi=0.3,
+    Qz=0.5,
+    Qi=0.3,
     P_0=800000,
     Q_0=600000,
     v_0=0.993325452568749) annotation (Placement(transformation(
-        origin={123.3697,-45.0},
+        origin={123.3697,-10.0},
         extent={{-10.0,-10.0},{10.0,10.0}})));
   inner OpenIPSL.Electrical.SystemBase SysData
     annotation (Placement(transformation(extent={{100,80},{125,100}})));
 equation
-  connect(pwLine3.n, frequencyDependentLoad1.p) annotation (Line(
-      origin={105.7773,-40.0},
-      points={{-11.7773,5},{3.5924,5},{3.5924,5},{17.5924,5}}));
+  connect(pwLine4.n, ZIP1.p) annotation (Line(
+      origin={105.7773,-12.5},
+      points={{-11.7773,-2.5},{3.5924,-2.5},{3.5924,12.5},{17.5924,12.5}}));
   connect(pwLine4.n, pwLine3.n) annotation (Line(
       origin={92.0,-25.0},
       points={{2,10},{2,5},{5,5},{5,0},{2,0},{2,-10}}));
@@ -226,4 +224,4 @@ equation
           extent={{-35.0,-5.8583},{35.0,5.8583}},
           textString="SystemSbase=100 MVA",
           fontName="Arial")}));
-end Loadtestfreq;
+end LoadTestZip;

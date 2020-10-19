@@ -1,5 +1,5 @@
 within OpenIPSL.Examples.Loads.PSAT;
-model Loadtestexponentialrecovery
+model LoadTestZipJimma
   extends Modelica.Icons.Example;
   OpenIPSL.Electrical.Branches.PwLine pwLine1(
     X=0.1,
@@ -102,21 +102,20 @@ model Loadtestexponentialrecovery
     Vn=400000) annotation (Placement(transformation(
         origin={3.3113,-20.7513},
         extent={{-10.0,-10.0},{10.0,10.0}})));
-  OpenIPSL.Electrical.Loads.PSAT.ExponentialRecovery exponentialRecovery1(
-    alpha_t=1.5,
-    beta_t=1.5,
+  OpenIPSL.Electrical.Loads.PSAT.ZIP_Jimma ZIP_Jimma1(
     Sn=10,
+    Tf=0.1,
     P_0=800000,
     Q_0=600000,
-    v_0=0.993325452568749) annotation (Placement(transformation(
-        origin={125.0,-17.844},
+    v_0=0.993325565105317) annotation (Placement(transformation(
+        origin={125.0,-5.0},
         extent={{-10.0,-10.0},{10.0,10.0}})));
   inner OpenIPSL.Electrical.SystemBase SysData
-    annotation (Placement(transformation(extent={{100,80},{125,100}})));
+    annotation (Placement(transformation(extent={{100,80},{135,100}})));
 equation
-  connect(pwLine4.n, exponentialRecovery1.p) annotation (Line(
-      origin={107.0,-16.422},
-      points={{-13,1.422},{4,1.422},{4,8.578},{18,8.578}}));
+  connect(pwLine4.n, ZIP_Jimma1.p) annotation (Line(
+      origin={107.0,-10.0},
+      points={{-13,-5},{4,-5},{4,15},{18,15}}));
   connect(pwLine4.n, pwLine3.n) annotation (Line(
       origin={92.0,-25.0},
       points={{2,10},{2,5},{5,5},{5,0},{2,0},{2,-10}}));
@@ -222,4 +221,4 @@ equation
           extent={{-35.0,-5.8583},{35.0,5.8583}},
           textString="SystemSbase=100 MVA",
           fontName="Arial")}));
-end Loadtestexponentialrecovery;
+end LoadTestZipJimma;

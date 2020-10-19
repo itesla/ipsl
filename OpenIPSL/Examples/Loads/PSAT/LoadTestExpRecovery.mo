@@ -1,5 +1,5 @@
 within OpenIPSL.Examples.Loads.PSAT;
-model Loadtestpq
+model LoadTestExpRecovery
   extends Modelica.Icons.Example;
   OpenIPSL.Electrical.Branches.PwLine pwLine1(
     X=0.1,
@@ -102,18 +102,21 @@ model Loadtestpq
     Vn=400000) annotation (Placement(transformation(
         origin={3.3113,-20.7513},
         extent={{-10.0,-10.0},{10.0,10.0}})));
-  OpenIPSL.Electrical.Loads.PSAT.LOADPQ LOADPQ1(
+  OpenIPSL.Electrical.Loads.PSAT.ExponentialRecovery exponentialRecovery1(
+    alpha_t=1.5,
+    beta_t=1.5,
     Sn=10,
     P_0=800000,
-    Q_0=600000) annotation (Placement(transformation(
-        origin={122.1536,-15.0},
+    Q_0=600000,
+    v_0=0.993325452568749) annotation (Placement(transformation(
+        origin={125.0,-17.844},
         extent={{-10.0,-10.0},{10.0,10.0}})));
   inner OpenIPSL.Electrical.SystemBase SysData
-    annotation (Placement(transformation(extent={{50,80},{75,100}})));
+    annotation (Placement(transformation(extent={{100,80},{125,100}})));
 equation
-  connect(pwLine4.n, LOADPQ1.p) annotation (Line(
-      origin={101.5768,-15.0},
-      points={{-7.5768,0},{20.5768,0},{20.5768,10}}));
+  connect(pwLine4.n, exponentialRecovery1.p) annotation (Line(
+      origin={107.0,-16.422},
+      points={{-13,1.422},{4,1.422},{4,8.578},{18,8.578}}));
   connect(pwLine4.n, pwLine3.n) annotation (Line(
       origin={92.0,-25.0},
       points={{2,10},{2,5},{5,5},{5,0},{2,0},{2,-10}}));
@@ -219,4 +222,4 @@ equation
           extent={{-35.0,-5.8583},{35.0,5.8583}},
           textString="SystemSbase=100 MVA",
           fontName="Arial")}));
-end Loadtestpq;
+end LoadTestExpRecovery;
