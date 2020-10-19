@@ -1,6 +1,5 @@
 within OpenIPSL.Examples.Loads.PSAT;
 model LoadTestThLoad "Test of Thermostatically Controlled Load"
-  import FOSSEE1;
   extends OpenIPSL.Examples.Loads.PSAT.LoadTestBase;
   extends Modelica.Icons.Example;
   Modelica.Blocks.Sources.Constant Tref(k=70)

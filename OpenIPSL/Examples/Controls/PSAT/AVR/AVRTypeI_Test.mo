@@ -53,7 +53,7 @@ model AVRTypeI_Test
     B=0.0005) annotation (Placement(transformation(
         origin={40,40},
         extent={{-5.99999,-5.99998},{5.99999,6}})));
-  Electrical.Loads.PSAT.LOADPQ pwLoadPQ1(
+  Electrical.Loads.PSAT.PQ     pwLoadPQ1(
     angle_0=0,
     P_0=8000000,
     Q_0=6000000,
@@ -61,7 +61,7 @@ model AVRTypeI_Test
         origin={74,32},
         extent={{-6,-6},{6,6}},
         rotation=90)));
-  Electrical.Loads.PSAT.LOADPQ pwLoadPQ2(
+  Electrical.Loads.PSAT.PQ pwLoadPQ2(
     angle_0=0,
     P_0=8000000,
     Q_0=6000000,
@@ -93,10 +93,10 @@ equation
           2},{-5.4,2}}, color={0,0,255}));
   connect(pwLine2.n, pwLine1.n) annotation (Line(points={{5.4,16},{14,16},{14,2},
           {5.4,2}}, color={0,0,255}));
-  connect(pwLine4.p, pwLinewithOpening1.p) annotation (Line(points={{34.6,40},{
-          28,40},{28,22},{34.6,22}}, color={0,0,255}));
-  connect(pwLine4.n, pwLinewithOpening1.n) annotation (Line(points={{45.4,40},{
-          52,40},{52,22},{45.4,22}}, color={0,0,255}));
+  connect(pwLine4.p, pwLinewithOpening1.p) annotation (Line(points={{34.6,40},{28,40},{28,22},{34.6,22}},
+                                     color={0,0,255}));
+  connect(pwLine4.n, pwLinewithOpening1.n) annotation (Line(points={{45.4,40},{52,40},{52,22},{45.4,22}},
+                                     color={0,0,255}));
   connect(bus.p, pwLine1.p) annotation (Line(points={{-20,8},{-14,8},{-14,2},{-5.4,
           2}}, color={0,0,255}));
   connect(bus1.p, pwLine1.n)

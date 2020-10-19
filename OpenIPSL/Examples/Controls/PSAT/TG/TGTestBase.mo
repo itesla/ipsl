@@ -1,6 +1,6 @@
 within OpenIPSL.Examples.Controls.PSAT.TG;
 partial model TGTestBase
-  OpenIPSL.Electrical.Loads.PSAT.LOADPQ pwLoadPQ1(
+  OpenIPSL.Electrical.Loads.PSAT.PQ pwLoadPQ1(
     angle_0=0,
     P_0=80000,
     Q_0=60000,
@@ -30,7 +30,7 @@ partial model TGTestBase
     X=0.1) annotation (Placement(transformation(
         origin={70,-10},
         extent={{-10,-10},{10,10}})));
-  OpenIPSL.Electrical.Loads.PSAT.LOADPQ pwLoadPQ2(
+  OpenIPSL.Electrical.Loads.PSAT.PQ pwLoadPQ2(
     angle_0=0,
     P_0=80000,
     Q_0=60000,

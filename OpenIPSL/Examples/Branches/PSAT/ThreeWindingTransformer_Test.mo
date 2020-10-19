@@ -42,7 +42,7 @@ model ThreeWindingTransformer_Test
     Vn=400000) annotation (Placement(transformation(extent={{-52,-10},{-32,10}})));
   Modelica.Blocks.Math.Add add
     annotation (Placement(transformation(extent={{-70,10},{-60,0}})));
-  OpenIPSL.Electrical.Loads.PSAT.LOADPQ_variation lOADPQ(
+  OpenIPSL.Electrical.Loads.PSAT.PQvar lOADPQ(
     t_start_1=5,
     t_end_1=8,
     t_start_2=8,
@@ -53,7 +53,7 @@ model ThreeWindingTransformer_Test
     dQ2=-0.01,
     P_0=40000,
     Q_0=20000) annotation (Placement(transformation(extent={{80,-10},{100,10}})));
-  OpenIPSL.Electrical.Loads.PSAT.LOADPQ_variation lOADPQ1(
+  OpenIPSL.Electrical.Loads.PSAT.PQvar lOADPQ1(
     t_start_1=0,
     t_end_1=0,
     t_start_2=0,

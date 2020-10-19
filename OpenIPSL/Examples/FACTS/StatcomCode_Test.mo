@@ -81,7 +81,7 @@ model StatcomCode_Test
     annotation (Placement(transformation(extent={{-14,-54},{6,-34}})));
   OpenIPSL.Electrical.Buses.Bus bus
     annotation (Placement(transformation(extent={{4,-8},{24,12}})));
-  OpenIPSL.Electrical.Loads.PSAT.LOADPQ_variation lOADPQ(
+  Electrical.Loads.PSAT.PQvar                     lOADPQ(
     t_start_1=7,
     t_end_1=7.001,
     dP1=0,
