@@ -44,7 +44,6 @@ equation
     connect(u, TF1[M].u);
   end if;
   annotation (
-    Line(points={{30,0},{110,0}}, color={0,0,127}),
     Diagram(coordinateSystem(
         preserveAspectRatio=true,
         extent={{-100,-100},{100,100}},

@@ -26,8 +26,7 @@ model GENCLS
     annotation (Dialog(group="Machine parameters"));
   parameter SI.PerUnit X_d=0.2 "d-axis transient reactance"
     annotation (Dialog(group="Machine parameters"));
-  SI.Angle delta(start=delta0, fixed=true) "Rotor angle"
-    annotation(dis);
+  SI.Angle delta(start=delta0, fixed=true) "Rotor angle";
   SI.PerUnit omega(start=0, fixed=true) "Rotor speed";
   SI.PerUnit V(start=v_0) "Bus voltage magnitude";
   SI.Angle anglev(start=angle_0rad) "Bus voltage angle";
@@ -76,8 +75,7 @@ equation
   V = sqrt(p.vr^2 + p.vi^2);
   anglev = atan2(p.vi, p.vr);
   annotation (
-    Icon(coordinateSystem(preserveAspectRatio=false),
-        graphics={Text(
+    Icon(graphics={Text(
           extent={{50,150},{100,110}},
           lineColor={0,0,255},
           lineThickness=0.5,
