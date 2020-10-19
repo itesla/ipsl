@@ -1,5 +1,5 @@
 within OpenIPSL.Electrical.Loads.PSAT;
-model FrequencyDependentLoad "Frequency Dependent Load"
+model FrequencyDependent "Fl - Frequency Dependent Load"
   extends BaseClasses.baseLoad;
   parameter Real alpha_p=0 "Active power voltage coefficient";
   parameter Real alpha_q=0 "Reactive power voltage coefficient";
@@ -51,4 +51,4 @@ equation
 </tr>
 </table>
 </html>"));
-end FrequencyDependentLoad;
+end FrequencyDependent;

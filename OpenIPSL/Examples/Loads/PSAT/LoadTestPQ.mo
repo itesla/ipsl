@@ -2,7 +2,7 @@ within OpenIPSL.Examples.Loads.PSAT;
 model LoadTestPQ
   extends LoadTestBase;
   extends Modelica.Icons.Example;
-  OpenIPSL.Electrical.Loads.PSAT.LOADPQ pQ(
+  OpenIPSL.Electrical.Loads.PSAT.PQ pQ(
     Sn=10000000,
     P_0=800000,
     Q_0=600000) annotation (Placement(transformation(origin={80,-30}, extent={{-10,-10},{10,10}})));

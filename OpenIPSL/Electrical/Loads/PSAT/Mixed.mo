@@ -1,5 +1,5 @@
 within OpenIPSL.Electrical.Loads.PSAT;
-model Mixed_Load "Mixed Load"
+model Mixed "Mixload - Mixed Load"
   extends BaseClasses.baseLoad;
   parameter Real Kpf=0 "Frequency coefficient for the active power (pu)";
   parameter Real alpha=0 "Voltage exponent for the active power";
@@ -55,4 +55,4 @@ equation
 <html>
 <pre><span style=\"font-family: Courier New,courier; color: #006400;\">Remember:&nbsp;Pz+Pi+Pp=1&nbsp;and&nbsp;Qz+Qi+Qp=1;</span></pre>
 </html>"));
-end Mixed_Load;
+end Mixed;

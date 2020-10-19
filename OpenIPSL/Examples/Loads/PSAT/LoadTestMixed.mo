@@ -2,7 +2,7 @@ within OpenIPSL.Examples.Loads.PSAT;
 model LoadTestMixed
   extends LoadTestBase;
   extends Modelica.Icons.Example;
-  OpenIPSL.Electrical.Loads.PSAT.Mixed_Load mixedLoad(
+  OpenIPSL.Electrical.Loads.PSAT.Mixed mixed(
     Sn=10000000,
     Tpv=0.1,
     Tqv=0.1,
@@ -19,7 +19,7 @@ model LoadTestMixed
 equation
 
 
-  connect(mixedLoad.p, pwLine3.n) annotation (Line(points={{80,-20},{80,0},{62,0},{62,-10},{59,-10}}, color={0,0,255}));
+  connect(mixed.p, pwLine3.n) annotation (Line(points={{80,-20},{80,0},{62,0},{62,-10},{59,-10}}, color={0,0,255}));
   annotation (experiment(
       StopTime=15,
       Interval=0.03,

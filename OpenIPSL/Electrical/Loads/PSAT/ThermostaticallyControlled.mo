@@ -1,5 +1,5 @@
 within OpenIPSL.Electrical.Loads.PSAT;
-model ThLoad "Thermostatically Controlled Load"
+model ThermostaticallyControlled "Thload - Thermostatically Controlled Load"
   extends OpenIPSL.Electrical.Loads.PSAT.BaseClasses.baseLoad;
   parameter Real Kl=2 "Ceiling conductance output";
   parameter Real Kp=10 "Gain of the proportional controller [pu/pu]";
@@ -118,4 +118,4 @@ For more information see <a href=\"OpenIPSL.UsersGuide.References\">[Milano2013]
 section \"16.6 Thermostatically Controlled Load\".
 </p>
 </html>"));
-end ThLoad;
+end ThermostaticallyControlled;

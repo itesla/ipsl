@@ -1,5 +1,5 @@
 within OpenIPSL.Electrical.Loads.PSAT;
-model VoltDependant "Voltage Dependent Load"
+model VoltageDependent "Voltage Dependent Load"
   extends BaseClasses.baseLoad;
   parameter Real alphap=2.0 "Active power exponent";
   parameter Real alphaq=2.0 "Reactive power exponent";
@@ -32,4 +32,4 @@ equation
 </tr>
 </table>
 </html>"));
-end VoltDependant;
+end VoltageDependent;

@@ -1,5 +1,5 @@
 within OpenIPSL.Electrical.Loads.PSAT;
-model ExponentialRecovery "Exponential Recovery Load"
+model ExponentialRecovery "Exload - Exponential Recovery Load"
   extends BaseClasses.baseLoad;
   parameter Real Tp=1 "Active power time constant (s)";
   parameter Real Tq=1 "Reactive power time constant (s)";

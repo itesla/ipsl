@@ -20,8 +20,7 @@ model LoadTestThLoad "Test of Thermostatically Controlled Load"
     annotation (Placement(transformation(extent={{20,-40},{40,-20}})));
   Modelica.Blocks.Sources.Constant T_a(k=10)
     annotation (Placement(transformation(extent={{20,-80},{40,-60}})));
-  Electrical.Loads.PSAT.ThLoad
-                            thLoad(
+  Electrical.Loads.PSAT.ThermostaticallyControlled thLoad(
     Sn=10000000,
     P_0=0.8,
     Q_0=0.6,

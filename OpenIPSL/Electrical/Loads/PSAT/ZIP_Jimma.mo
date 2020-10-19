@@ -1,5 +1,5 @@
 within OpenIPSL.Electrical.Loads.PSAT;
-model ZIP_Jimma "Jimma's Load"
+model ZIP_Jimma "Jimma - Jimma's Load"
   extends BaseClasses.baseLoad;
   parameter Real Tf=0.01 "Time constant of the high-pass filter (s)";
   parameter Real Pz=0.33 "Conductance";
