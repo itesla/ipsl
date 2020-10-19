@@ -10,8 +10,8 @@ model AVRTypeII "PSAT AVR Type 2"
         origin={110,0}), iconTransformation(extent={{100,-20},{140,20}})));
   Modelica.Blocks.Interfaces.RealInput vref
     "Reference generator terminal voltage [pu]" annotation (Placement(
-        transformation(extent={{-140,40},{-100,80}}), iconTransformation(extent
-          ={{-140,40},{-100,80}})));
+        transformation(extent={{-140,40},{-100,80}}), iconTransformation(extent=
+           {{-140,40},{-100,80}})));
   parameter SI.PerUnit vrmin=-5 "Minimum regulator voltage";
   parameter SI.PerUnit vrmax=5 "Maximum regulator voltage";
   parameter Real Ka=100 "Amplifier gain [pu/pu]";
@@ -175,5 +175,12 @@ equation
 <td><p><a href=\"mailto:luigiv@kth.se\">luigiv@kth.se</a></p></td>
 </tr>
 </table>
+<span style=\"color: #ff0000\">
+<h5>WARNING</h5>
+<p>The PSAT Toolbox  called this model &quot;AVR Type II&quot;
+ (see <a href=\"modelica://OpenIPSL.UsersGuide.References\">[Milano2013], section 18.3.2</a>) 
+ when it actually is the &quot;IEEE <b>Type I</b>&quot;
+ (see <a href=\"modelica://OpenIPSL.UsersGuide.References\">[Milano2010], chapter 16.2.1</a>).</p>
+</span>
 </html>"));
 end AVRTypeII;

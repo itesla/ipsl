@@ -10,8 +10,8 @@ model AVRTypeI "PSAT AVR Type 1"
         origin={110,0}), iconTransformation(extent={{100,-20},{140,20}})));
   Modelica.Blocks.Interfaces.RealInput vref
     "Reference generator terminal voltage [pu]" annotation (Placement(
-        transformation(extent={{-140,40},{-100,80}}), iconTransformation(extent
-          ={{-140,40},{-100,80}})));
+        transformation(extent={{-140,40},{-100,80}}), iconTransformation(extent=
+           {{-140,40},{-100,80}})));
   parameter SI.PerUnit vrmax=7.57 "Maximum regulator voltage";
   parameter SI.PerUnit vrmin=0 "Minimum regulator voltage";
   parameter Real K0=7.04 "Regulator gain, [pu/pu]";
@@ -123,14 +123,13 @@ equation
           lineColor={0,0,255},
           textString="vref0")}),
     Documentation(info="<html>
-<table cellspacing=\"1\" cellpadding=\"1\" border=\"1\">
-<tr>
+<table cellspacing=\"1\" cellpadding=\"1\" border=\"1\"><tr>
 <td><p>Reference</p></td>
-<td><p>AVR Type II, PSAT Manual 2.1.8</p></td>
+<td><p>AVR Type I, PSAT Manual 2.1.8</p></td>
 </tr>
 <tr>
 <td><p>Last update</p></td>
-<td>September 2015</td>
+<td><p>September 2015</p></td>
 </tr>
 <tr>
 <td><p>Author</p></td>
@@ -141,5 +140,12 @@ equation
 <td><p><a href=\"mailto:luigiv@kth.se\">luigiv@kth.se</a></p></td>
 </tr>
 </table>
+<span style=\"color: #ff0000\">
+<h5>WARNING</h5>
+<p>The PSAT Toolbox  called this model &quot;AVR Type I&quot;
+ (see <a href=\"modelica://OpenIPSL.UsersGuide.References\">[Milano2013], section 18.3.1</a>) 
+ when it actually is the &quot;IEEE <b>Type II</b>&quot;
+ (see <a href=\"modelica://OpenIPSL.UsersGuide.References\">[Milano2010], chapter 16.2.2</a>).</p>
+</span>
 </html>"));
 end AVRTypeI;
