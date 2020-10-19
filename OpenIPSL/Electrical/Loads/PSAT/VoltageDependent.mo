@@ -9,10 +9,7 @@ equation
   a = v/v_0;
   P = P_0/S_b*a^alphap;
   Q = Q_0/S_b*a^alphaq;
-  annotation (Icon(coordinateSystem(
-        extent={{-100.0,-100.0},{100.0,100.0}},
-        preserveAspectRatio=true,
-        grid={10,10})), Documentation(info="<html>
+  annotation ( Documentation(info="<html>
 <table cellspacing=\"1\" cellpadding=\"1\" border=\"1\">
 <tr>
 <td><p>Reference</p></td>

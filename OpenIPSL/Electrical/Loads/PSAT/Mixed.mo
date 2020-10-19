@@ -24,14 +24,6 @@ equation
   P = Kpf*deltaw + P_0/S_b*(a^alpha + Tpv*b);
   Q = Kqf*deltaw + Q_0/S_b*(a^beta + Tqv*b);
   annotation (
-    Icon(coordinateSystem(
-        extent={{-100.0,-100.0},{100.0,100.0}},
-        preserveAspectRatio=true,
-        grid={10,10})),
-    Diagram(coordinateSystem(
-        extent={{-148.5,-105.0},{148.5,105.0}},
-        preserveAspectRatio=true,
-        grid={5,5})),
     Documentation(info="<html>
 <table cellspacing=\"1\" cellpadding=\"1\" border=\"1\">
 <tr>

@@ -11,8 +11,8 @@ protected
   Real a "Auxiliary variable, voltage division";
 public
   Modelica.Blocks.Interfaces.RealInput u annotation (Placement(transformation(
-          extent={{48,16},{88,56}}), iconTransformation(extent={{-100,36},{-62,
-            74}})));
+          extent={{-140,-20},{-100,20}}),
+                                     iconTransformation(extent={{-100,-20},{-60,20}})));
 
 equation
   a = v/v_0;

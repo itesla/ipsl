@@ -63,13 +63,4 @@ equation
     Pd = P_0/S_b;
     Qd = Q_0/S_b;
   end if;
-  annotation (
-    Icon(coordinateSystem(
-        extent={{-100.0,-100.0},{100.0,100.0}},
-        preserveAspectRatio=true,
-        grid={10,10})),
-    Diagram(coordinateSystem(
-        extent={{-148.5,-105.0},{148.5,105.0}},
-        preserveAspectRatio=true,
-        grid={5,5})));
 end PQvar;

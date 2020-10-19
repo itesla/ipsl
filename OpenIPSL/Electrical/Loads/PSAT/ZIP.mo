@@ -14,14 +14,6 @@ equation
   P = P_0/S_b*(Pz*a^2 + Pi*a + Pp);
   Q = Q_0/S_b*(Qz*a^2 + Qi*a + Qp);
   annotation (
-    Icon(coordinateSystem(
-        extent={{-100.0,-100.0},{100.0,100.0}},
-        preserveAspectRatio=true,
-        grid={10,10})),
-    Diagram(coordinateSystem(
-        extent={{-148.5,-105.0},{148.5,105.0}},
-        preserveAspectRatio=true,
-        grid={5,5})),
     Documentation(info="<html>
 <table cellspacing=\"1\" cellpadding=\"1\" border=\"1\">
 <tr>
