@@ -1,5 +1,5 @@
 within OpenIPSL.Examples.Loads.PSAT;
-model TestThLoad "Test of Thermostatically Controlled Load"
+model LoadTestThLoad "Test of Thermostatically Controlled Load"
   import FOSSEE1;
   extends OpenIPSL.Examples.Loads.PSAT.LoadTestBase(
                        order3_Inputs_Outputs1(
@@ -32,4 +32,4 @@ equation
   connect(Tref.y, thLoad.t_ref) annotation (Line(points={{41,-30},{50,-30},{50,-44},{58,-44}}, color={0,0,127}));
   connect(thLoad.p, pwLine3.n) annotation (Line(points={{70,-40},{70,0},{62,0},{62,-10},{59,-10}}, color={0,0,255}));
   annotation (experiment(StopTime=15, Interval=0.003));
-end TestThLoad;
+end LoadTestThLoad;
