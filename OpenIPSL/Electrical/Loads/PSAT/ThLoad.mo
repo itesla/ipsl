@@ -1,4 +1,4 @@
-within FOSSEE1.Loads.PSAT;
+within OpenIPSL.Electrical.Loads.PSAT;
 model ThLoad "Thermostatically Controlled Load"
   extends OpenIPSL.Electrical.Loads.PSAT.BaseClasses.baseLoad;
   parameter Real Kl=2 "Ceiling conductance output";

@@ -5,4 +5,5 @@ LoadTestPQ
 LoadTestVoltDependant
 LoadTestZip
 LoadTestZipJimma
+TestThLoad
 LoadTestBase
