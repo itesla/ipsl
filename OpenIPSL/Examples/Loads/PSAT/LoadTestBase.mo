@@ -76,12 +76,11 @@ partial model LoadTestBase "Base class for the different load cases"
         extent={{-4,-4},{4,4}},
         rotation=0)));
   OpenIPSL.Electrical.Machines.PSAT.Order3 order3_Inputs_Outputs1(
-    P_0=0.08009898784778,
-    Q_0=0.057016338872796,
-    Sn=20,
-    V_b=400,
-    angle_0=0,
-    Vn=400,
+    P_0=800989.8784778,
+    Q_0=570163.38872796,
+    Sn=20000000,
+    V_b=400000,
+    Vn=400000,
     ra=0.001,
     x1d=0.302,
     M=10,
