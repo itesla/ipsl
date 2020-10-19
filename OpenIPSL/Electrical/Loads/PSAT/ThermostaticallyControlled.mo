@@ -39,13 +39,13 @@ model ThermostaticallyControlled "Thload - Thermostatically Controlled Load"
     initType=Modelica.Blocks.Types.Init.InitialOutput,
     y_start=G0 - Kp*(T_ref - T0))
     annotation (Placement(transformation(extent={{-12,14},{0,26}})));
-  Modelica.Blocks.Interfaces.RealInput t_ref
-    annotation (Placement(transformation(extent={{-140,40},{-100,80}})));
-  Modelica.Blocks.Interfaces.RealInput t_a
+  Modelica.Blocks.Interfaces.RealInput t_ref "Reference temperature"
+    annotation (Placement(transformation(extent={{-140,40},{-100,80}}), iconTransformation(extent={{-140,60},{-100,100}})));
+  Modelica.Blocks.Interfaces.RealInput t_a "Ambient temperature"
                                           annotation (Placement(transformation(
         extent={{-20,-20},{20,20}},
         rotation=0,
-        origin={-120,-60})));
+        origin={-120,-60}), iconTransformation(extent={{-140,-20},{-100,20}})));
   Modelica.Blocks.Math.Product product annotation (Placement(transformation(
         extent={{-10,-10},{10,10}},
         rotation=180,
@@ -102,12 +102,7 @@ equation
   connect(firstOrder.y, add.u2) annotation (Line(points={{-59,-30},{-72,-30},{-94,
           -30},{-94,34},{-82,34}}, color={0,0,127}));
   annotation (                              Diagram(coordinateSystem(
-          preserveAspectRatio=false, extent={{-100,-100},{100,100}})), Icon(
-        graphics={Rectangle(
-          extent={{-100,100},{100,-100}},
-          lineColor={28,108,200},
-          fillColor={28,108,200},
-          fillPattern=FillPattern.Solid)}),
+          preserveAspectRatio=false, extent={{-100,-100},{100,100}})),
     Documentation(info="<html>
 <p>
 This load defines a dynamic load with temperature control. This
