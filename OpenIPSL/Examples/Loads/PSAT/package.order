@@ -1,7 +1,9 @@
-Loadtestpq
-Loadtestexponentialrecovery
-Loadtestvoltagedependantload
-Loadtestzip
-Loadtestfreq
-Loadtestmixed
-Loadtestzipjimma
+LoadTestExpRecovery
+LoadTestFreqDependent
+LoadTestMixed
+LoadTestPQ
+LoadTestThLoad
+LoadTestVoltDependant
+LoadTestZip
+LoadTestZipJimma
+LoadTestBase

@@ -37,7 +37,7 @@ model TCSC_Reactance_Test
     X=0.1,
     G=0,
     B=0.001/2) annotation (Placement(transformation(extent={{62,-10},{82,10}})));
-  OpenIPSL.Electrical.Loads.PSAT.LOADPQ_variation lOADPQ(
+  Electrical.Loads.PSAT.PQvar                     lOADPQ(
     t_start_1=2,
     t_end_1=10,
     t_start_2=12,

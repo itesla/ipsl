@@ -7,13 +7,13 @@ package Events
 
     inner Electrical.SystemBase SysData annotation (Placement(transformation(extent={{-100,80},{-76,100}})));
     Electrical.Buses.InfiniteBus infiniteBusExt(displayPF=true) annotation (Placement(transformation(extent={{-80,20},{-60,40}})));
-    Electrical.Loads.PSAT.LOADPQ lOADPQExt annotation (Placement(transformation(
+    Electrical.Loads.PSAT.PQ lOADPQExt annotation (Placement(transformation(
           extent={{-10,-10},{10,10}},
           rotation=90,
           origin={50,30})));
     Electrical.Events.Breaker breakerExt(t_o=0.5, enableTrigger=true) annotation (Placement(transformation(extent={{-10,20},{10,40}})));
     Electrical.Buses.InfiniteBus infiniteBusPara(displayPF=true) annotation (Placement(transformation(extent={{-80,-40},{-60,-20}})));
-    Electrical.Loads.PSAT.LOADPQ lOADPQPara annotation (Placement(transformation(
+    Electrical.Loads.PSAT.PQ lOADPQPara annotation (Placement(transformation(
           extent={{-10,-10},{10,10}},
           rotation=90,
           origin={50,-30})));

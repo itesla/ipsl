@@ -1,5 +1,5 @@
 within OpenIPSL.Electrical.Loads.PSAT;
-model LOADPQ "Constant PQ Load"
+model PQ "Pl - Constant PQ Load"
   extends BaseClasses.baseLoad;
   parameter SI.PerUnit Vmax=1.2 "maximum voltage"
     annotation (Evaluate=true, Dialog(tab="To Be Implemented"));
@@ -27,14 +27,6 @@ equation
   end if;
 
   annotation (
-    Icon(coordinateSystem(
-        extent={{-100.0,-100.0},{100.0,100.0}},
-        preserveAspectRatio=true,
-        grid={10,10})),
-    Diagram(coordinateSystem(
-        extent={{-148.5,-105.0},{148.5,105.0}},
-        preserveAspectRatio=true,
-        grid={5,5})),
     Documentation(info="<html>
 <table cellspacing=\"1\" cellpadding=\"1\" border=\"1\">
 <tr>
@@ -58,4 +50,4 @@ equation
 <html>
 <pre><span style=\"font-family: Courier New,courier; color: #006400;\">Equations&nbsp;come&nbsp;from&nbsp;the&nbsp;mathematical&nbsp;separation&nbsp;in&nbsp;between&nbsp;reals&nbsp;and&nbsp;imaginary&nbsp;of&nbsp;S=P+jQ=UI*</span></pre>
 </html>"));
-end LOADPQ;
+end PQ;

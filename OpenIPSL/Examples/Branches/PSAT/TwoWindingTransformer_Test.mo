@@ -13,7 +13,7 @@ model TwoWindingTransformer_Test
     v_0=1,
     V_b=13800000,
     Vn=13800000) annotation (Placement(transformation(extent={{-80,-10},{-60,10}})));
-  OpenIPSL.Electrical.Loads.PSAT.LOADPQ lOADPQ(P_0=30000, Q_0=1000) annotation (Placement(transformation(extent={{60,-30},{80,-10}})));
+  OpenIPSL.Electrical.Loads.PSAT.PQ lOADPQ(P_0=30000, Q_0=1000) annotation (Placement(transformation(extent={{60,-30},{80,-10}})));
   OpenIPSL.Electrical.Branches.PSAT.TwoWindingTransformer twoWindingTransformer(
     Vn=13800,
     xT=0.1,

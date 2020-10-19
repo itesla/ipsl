@@ -36,7 +36,7 @@ model TCSC_Alpha_Test
     G=0,
     B=0.001/2,
     X=0.1) annotation (Placement(transformation(extent={{56,-10},{76,10}})));
-  OpenIPSL.Electrical.Loads.PSAT.LOADPQ_variation lOADPQ(
+  Electrical.Loads.PSAT.PQvar                     lOADPQ(
     t_start_1=2,
     t_end_1=10,
     dP1=0.01,

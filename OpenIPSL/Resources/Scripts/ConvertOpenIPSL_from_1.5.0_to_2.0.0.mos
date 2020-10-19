@@ -192,4 +192,17 @@ convertClass("OpenIPSL.Types.ApparentPower",
 convertClass("OpenIPSL.Types.ReactivePowerMega",
              "Modelica.SIunits.ReactivePower");
 convertClass("OpenIPSL.Types.VoltageKilo",
-             "Modelica.SIunits.Voltage");
+"Modelica.SIunits.Voltage");
+
+
+// PSAT loads
+convertClass("OpenIPSL.Loads.PSAT.FrequencyDependentLoad",
+             "OpenIPSL.Loads.PSAT.FrequencyDependent");
+convertClass("OpenIPSL.Loads.PSAT.VoltDependant",
+             "OpenIPSL.Loads.PSAT.VoltageDependent");
+convertClass("OpenIPSL.Loads.PSAT.Mixed_Load",
+             "OpenIPSL.Loads.PSAT.Mixed");
+convertClass("OpenIPSL.Loads.PSAT.LOADPQ",
+             "OpenIPSL.Loads.PSAT.PQ");
+convertClass("OpenIPSL.Loads.PSAT.LOADPQ_variation",
+             "OpenIPSL.Loads.PSAT.PQvar");

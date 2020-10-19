@@ -1,5 +1,5 @@
 within OpenIPSL.Electrical.Loads.PSAT;
-model FrequencyDependentLoad "Frequency Dependent Load"
+model FrequencyDependent "Fl - Frequency Dependent Load"
   extends BaseClasses.baseLoad;
   parameter Real alpha_p=0 "Active power voltage coefficient";
   parameter Real alpha_q=0 "Reactive power voltage coefficient";
@@ -19,18 +19,6 @@ equation
   P = P_0/S_b*a^alpha_p*(1 + deltaw)^beta_p;
   Q = Q_0/S_b*a^alpha_q*(1 + deltaw)^beta_q;
   annotation (
-    Icon(coordinateSystem(
-        extent={{-100.0,-100.0},{100.0,100.0}},
-        preserveAspectRatio=true,
-        grid={10,10})),
-    Diagram(coordinateSystem(
-        extent={{-148.5,-105.0},{148.5,105.0}},
-        preserveAspectRatio=true,
-        grid={5,5}), graphics={Rectangle(
-          origin={10.0,-2.5},
-          lineColor={0,0,128},
-          fillColor={255,255,255},
-          extent={{-90.0,-82.5},{90.0,82.5}})}),
     Documentation(info="<html>
 <table cellspacing=\"1\" cellpadding=\"1\" border=\"1\">
 <tr>
@@ -51,4 +39,4 @@ equation
 </tr>
 </table>
 </html>"));
-end FrequencyDependentLoad;
+end FrequencyDependent;

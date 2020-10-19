@@ -42,7 +42,7 @@ model ULTC_Test
     Vn=400000) annotation (Placement(transformation(extent={{-30,-10},{-10,10}})));
   Modelica.Blocks.Math.Add add
     annotation (Placement(transformation(extent={{-56,-6},{-44,6}})));
-  OpenIPSL.Electrical.Loads.PSAT.LOADPQ_variation lOADPQ_B3(
+  OpenIPSL.Electrical.Loads.PSAT.PQvar lOADPQ_B3(
     t_start_1=5,
     t_end_1=8,
     t_start_2=8,

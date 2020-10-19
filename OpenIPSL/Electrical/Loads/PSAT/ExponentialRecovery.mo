@@ -1,5 +1,5 @@
 within OpenIPSL.Electrical.Loads.PSAT;
-model ExponentialRecovery "Exponential Recovery Load"
+model ExponentialRecovery "Exload - Exponential Recovery Load"
   extends BaseClasses.baseLoad;
   parameter Real Tp=1 "Active power time constant (s)";
   parameter Real Tq=1 "Reactive power time constant (s)";
@@ -24,18 +24,6 @@ equation
   qs = Q_0/S_b*(v/v_0)^beta_s;
   qt = Q_0/S_b*(v/v_0)^beta_t;
   annotation (
-    Icon(coordinateSystem(
-        extent={{-100.0,-100.0},{100.0,100.0}},
-        preserveAspectRatio=true,
-        grid={10,10})),
-    Diagram(coordinateSystem(
-        extent={{-148.5,-105.0},{148.5,105.0}},
-        preserveAspectRatio=true,
-        grid={5,5}), graphics={Rectangle(
-          origin={10.0,-2.5},
-          lineColor={0,0,128},
-          fillColor={255,255,255},
-          extent={{-90.0,-82.5},{90.0,82.5}})}),
     Documentation(info="<html>
 <table cellspacing=\"1\" cellpadding=\"1\" border=\"1\">
 <tr>

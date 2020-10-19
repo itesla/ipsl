@@ -1,10 +1,11 @@
 ExponentialRecovery
-FrequencyDependentLoad
-Mixed_Load
-VoltDependant
+FrequencyDependent
+Mixed
+PQ
+PQvar
+ThermostaticallyControlled
+VoltageDependent
 ZIP
-ZIP_Jimma
 ZIP_ExtInput
-LOADPQ
-LOADPQ_variation
+ZIP_Jimma
 BaseClasses

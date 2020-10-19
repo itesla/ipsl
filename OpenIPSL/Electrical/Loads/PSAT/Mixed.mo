@@ -1,5 +1,5 @@
 within OpenIPSL.Electrical.Loads.PSAT;
-model Mixed_Load "Mixed Load"
+model Mixed "Mixload - Mixed Load"
   extends BaseClasses.baseLoad;
   parameter Real Kpf=0 "Frequency coefficient for the active power (pu)";
   parameter Real alpha=0 "Voltage exponent for the active power";
@@ -24,14 +24,6 @@ equation
   P = Kpf*deltaw + P_0/S_b*(a^alpha + Tpv*b);
   Q = Kqf*deltaw + Q_0/S_b*(a^beta + Tqv*b);
   annotation (
-    Icon(coordinateSystem(
-        extent={{-100.0,-100.0},{100.0,100.0}},
-        preserveAspectRatio=true,
-        grid={10,10})),
-    Diagram(coordinateSystem(
-        extent={{-148.5,-105.0},{148.5,105.0}},
-        preserveAspectRatio=true,
-        grid={5,5})),
     Documentation(info="<html>
 <table cellspacing=\"1\" cellpadding=\"1\" border=\"1\">
 <tr>
@@ -55,4 +47,4 @@ equation
 <html>
 <pre><span style=\"font-family: Courier New,courier; color: #006400;\">Remember:&nbsp;Pz+Pi+Pp=1&nbsp;and&nbsp;Qz+Qi+Qp=1;</span></pre>
 </html>"));
-end Mixed_Load;
+end Mixed;
