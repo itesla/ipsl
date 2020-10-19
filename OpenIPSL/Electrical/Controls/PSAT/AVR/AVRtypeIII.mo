@@ -1,5 +1,5 @@
 within OpenIPSL.Electrical.Controls.PSAT.AVR;
-model AVRtypeIII
+model AVRtypeIII "PSAT AVR Type 3"
   parameter SI.PerUnit vfmax=5;
   parameter SI.PerUnit vfmin=-5;
   parameter SI.PerUnit K0=20 "regulator gain";
@@ -97,6 +97,8 @@ equation
 <td><p><a href=\"mailto:luigiv@kth.se\">luigiv@kth.se</a></p></td>
 </tr>
 </table>
+<p>See also <a href=\"modelica://OpenIPSL.UsersGuide.References\">[Milano2013], section 18.3.3</a> 
+ or <a href=\"modelica://OpenIPSL.UsersGuide.References\">[Milano2010], chapter 16.2.3</a>.</p>
 </html>"),
     Diagram(coordinateSystem(extent={{-120,-120},{120,120}})));
 end AVRtypeIII;
