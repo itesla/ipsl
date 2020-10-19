@@ -9,7 +9,7 @@ model PSSTypeII "PSAT PSS TypeII"
   parameter SI.Time T3 "Third stabilizer time constant";
   parameter SI.Time T4 "Fourth stabilizer time constant";
   Modelica.Blocks.Interfaces.RealInput vSI "PSS input signal "
-    annotation (Placement(transformation(extent={{-130,-20},{-90,20}})));
+    annotation (Placement(transformation(extent={{-140,-20},{-100,20}}), iconTransformation(extent={{-140,-20},{-100,20}})));
   Modelica.Blocks.Interfaces.RealOutput vs "PSS output signal"
     annotation (Placement(transformation(extent={{100,-10},{120,10}})));
   NonElectrical.Continuous.LeadLag imLeadLag(
@@ -39,7 +39,7 @@ equation
   connect(imLeadLag.y, imLeadLag1.u)
     annotation (Line(points={{11,0},{26,0}}, color={0,0,127}));
   connect(vSI, derivativeLag.u)
-    annotation (Line(points={{-110,0},{-62,0},{-62,0}}, color={0,0,127}));
+    annotation (Line(points={{-120,0},{-62,0}},         color={0,0,127}));
   connect(derivativeLag.y, imLeadLag.u)
     annotation (Line(points={{-39,0},{-12,0},{-12,0}}, color={0,0,127}));
   annotation ( Documentation(info="<html>
@@ -61,5 +61,17 @@ equation
 <td><p><a href=\"mailto:luigiv@kth.se\">luigiv@kth.se</a></p></td>
 </tr>
 </table>
-</html>"));
+<p>
+For more information see <a href=\"OpenIPSL.UsersGuide.References\">[Milano2013]</a>, section \"18.4.2
+Type II\".
+</p>
+</html>"), Icon(graphics={
+          Rectangle(
+          extent={{-100,100},{100,-100}},
+          lineColor={28,108,200},
+          fillColor={85,170,255},
+          fillPattern=FillPattern.Solid), Text(
+          extent={{-140,-100},{140,-160}},
+          lineColor={0,0,255},
+          textString="%name")}));
 end PSSTypeII;
