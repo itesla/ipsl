@@ -26,7 +26,7 @@ if not passLib:
 else:
     # Run Check on App Examples
     passAppEx = 1
-    for package in appExamples.keys():
+    for package in list(appExamples.keys()):
         passAppEx = passAppEx * ci.runSyntaxCheck(package,appExamples[package])
 
     # The tests are failing if the number of failed check > 0
