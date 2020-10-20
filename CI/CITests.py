@@ -18,7 +18,7 @@ class CITests():
     def loadLib(self, libName, libPath):
         # Attempt to load the library
         if self.omc.sendExpression('loadFile("%s")' % (self.rootPath + libPath)):
-            print "Load success: %s" % libName
+            print("Load success: %s" % libName)
         else:
             errmsg = libName + " was not loaded! Check the library path:\n" + libPath
             raise Exception(errmsg)
@@ -42,16 +42,16 @@ class CITests():
                     nPassed += 1
                 else:
                     failMsg = self.omc.sendExpression("getErrorString()")
-                    print failMsg
+                    print(failMsg)
                     nFailed += 1
         # Print a check summary
         if nFailed == 0:
             str1 = "== %s ----------------------" % libName
-            print "%s OK! == Models checked: %s" % (str1[:22], nPassed)
+            print("%s OK! == Models checked: %s" % (str1[:22], nPassed))
         else:
-            print "==== Check Summary for %s ===="  % libName
-            print "Number of models that passed the check is: %s" % nPassed
-            print "Number of models that failed the check is: %s" % nFailed
+            print("==== Check Summary for %s ===="  % libName)
+            print("Number of models that passed the check is: %s" % nPassed)
+            print("Number of models that failed the check is: %s" % nFailed)
 
         # Return test result
         return (nFailed == 0)
