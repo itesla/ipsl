@@ -103,6 +103,6 @@ Series conductance (Gser) matrix is considered to have the following structure:<
 <p><b> Bshtab</b>, <b>Bshtbb</b>, <b>Bshtbc</b>; </p>
 <p><b> Bshtac</b>, <b>Bshtbc</b>, <b>Bshtcc</b>] </p>
 <p>Based on this set of parameters, the pi-equivalent impedance matrices are calculated and the power line equation is assembled.</p>
-<p> <\p>
+
 </html>"));
 end Line_3Ph;

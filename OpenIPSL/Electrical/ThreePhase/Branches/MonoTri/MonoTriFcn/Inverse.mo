@@ -78,6 +78,6 @@ annotation (
 Documentation(info="<html>
 <p>This function is used to transform both positive and negative-zero impedance filters into admittances.
 The filters are necessary for Norton equivalent admittances calculations, and this function allows the transformation of filter impedances into admittances.<\p>
-<p> <\p>
+
 </html>"));
 end Inverse;

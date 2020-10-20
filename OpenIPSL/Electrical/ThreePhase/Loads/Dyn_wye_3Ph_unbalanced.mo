@@ -116,6 +116,6 @@ Since the values come from independent parameters, the model allows the represen
 This allows the load to vary its consumed power over time during the simulation. Note that, since active and reactive powers can vary independently, the load's power factor can also vary.
 In addition, note that, since <b><i>P_in</b></i> and <b><i>Q_in</b></i> have a 3x1 dimension, <b><i>P0_a</i></b>, <b><i>P0_b</i></b>, <b><i>P0_c</i></b>, <b><i>Q0_a</i></b>, <b><i>Q0_b</i></b>, and <b><i>Q0_c</i></b> can vary idependently. 
 This makes the load to be characterized as unbalanced.</p> 
-<p> <\p>
+
 </html>"));
 end Dyn_wye_3Ph_unbalanced;

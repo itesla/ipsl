@@ -159,6 +159,6 @@ annotation (
 Documentation(info="<html>
 <p>This function calculates impedance matrices of a hybrid positive-sequece/three-phase power line modeled as a pi-equivalent.<\p>
 <p>This function considers that positive-, negative-, and zero-sequence Norton equivalent impedances have finite values.<\p>
-<p> <\p>
+
 </html>"));
 end MT_FiniteImpedance;

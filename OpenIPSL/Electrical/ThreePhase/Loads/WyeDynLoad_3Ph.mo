@@ -189,6 +189,6 @@ The latter approach allows the load to be represented as a sum of three terms: c
 This allows the load to vary over time during the simulation. 
 It is also important to note that <b><i>DynFact</b></i> multiplies all variables <b><i>P_a</i></b>, <b><i>P_b</i></b>, <b><i>P_c</i></b><\p>, <b><i>Q_a</i></b>, <b><i>Q_b</i></b> and <b><i>Q_c</i></b>. 
 That means that this model does not allow load variation to be performed only in selected variables.</p> 
-<p> <\p>
+
 </html>"));
 end WyeDynLoad_3Ph;

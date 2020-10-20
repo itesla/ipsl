@@ -191,6 +191,6 @@ Documentation(info="<html>
 <p>This function calculates impedance matrices of a hybrid positive-sequece/three-phase transformer modeled as a pi-equivalent.<\p>
 <p>The transformer that uses this function should have its primary and secondary windings connected in delta.
 In addition, this function considers that positive-, negative-, and zero-sequence Norton equivalent impedances have finite values.<\p>
-<p> <\p>
+
 </html>"));
 end D_D_FinImp;

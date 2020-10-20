@@ -199,6 +199,6 @@ If the exact way is selected, the user should also input Norton equivalent admit
 If approximate model is selected, these admittances are set to be zero. 
 Based on the set of parameters selected by the user, the pi-equivalent impedance matrices are calculated and the line equation is assembled.</p>
 <p>The positive-sequence system is connected using pin <b><i>p</i></b>, while three-phase system is connected using pins <b><i>A</i></b>, <b><i>B</i></b>, and <b><i>C</i></b><\p> 
-<p> <\p>
+
 </html>"));
 end Line_MT;

@@ -198,6 +198,6 @@ Documentation(info="<html>
 <p>This function calculates impedance matrices of a hybrid positive-sequece/three-phase transformer modeled as a pi-equivalent.<\p>
 <p>The transformer that uses this function should have its primary windings connected in wye (star) and its secondary windings connected in grounded-wye (grounded-star).
 In addition, this function considers that positive-, negative-, and zero-sequence Norton equivalent impedances have finite values.<\p>
-<p> <\p>
+
 </html>"));
 end Y_Yg_FinImp;
