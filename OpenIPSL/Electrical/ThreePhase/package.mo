@@ -6,7 +6,7 @@ annotation (
  Distribution and sub-transmission systems are candidates.</p>
 <p>Three-phase systems can be easily connected to equivalent positive-sequence systems by using hybrid positive-sequence/three-phase devices.
 These models are called MonoTri and are usually represented as a pi-equivalent model. Transformers and power lines have their MonoTri representation in this package.</p>
-<p>In addition, multi-phase bus, bank and load models are also available here. The modelling of such devices is based, mainly, on the following works:<\p>
+<p>In addition, multi-phase bus, bank and load models are also available here. The modelling of such devices is based, mainly, on the following works:</p>
 <ul>
 <li><i>A hybrid three-phase single-phase power flow formulation</i>, by J.M.T. Marinho, and G.N. Taranto, and</li>
 <li><i>Computer modelling of electrical power systems</i>, by J. Arrillaga, C.P. Arnold, and B.J. Harker. </li>

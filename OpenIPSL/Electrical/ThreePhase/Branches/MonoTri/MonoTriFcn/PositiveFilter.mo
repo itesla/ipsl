@@ -80,7 +80,7 @@ algorithm
 annotation (
 Documentation(info="<html>
 <p>This function calculates a positive-sequece impedance filter used in hybrid components.
-The filter is used as a positive-sequence Norton equivalent admittance, representing the single-phase equivalent seen from the three-phase side.<\p>
+The filter is used as a positive-sequence Norton equivalent admittance, representing the single-phase equivalent seen from the three-phase side.</p>
 
 </html>"));
 end PositiveFilter;

@@ -105,8 +105,8 @@ algorithm
     D31r, D31i, D32r, D32i, D33r, D33i];
 annotation (
 Documentation(info="<html>
-<p>This function calculates impedance matrices of a hybrid positive-sequece/three-phase power line modeled as a pi-equivalent.<\p>
-<p>This function considers that positive-, negative-, and zero-sequence Norton equivalent impedances have infinite values.<\p>
+<p>This function calculates impedance matrices of a hybrid positive-sequece/three-phase power line modeled as a pi-equivalent.</p>
+<p>This function considers that positive-, negative-, and zero-sequence Norton equivalent impedances have infinite values.</p>
 
 </html>"));
 end MT_InfiniteImpedances;

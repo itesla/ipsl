@@ -54,8 +54,8 @@ algorithm
   PiMatrix := [A, B; C, D];
 annotation (
 Documentation(info="<html>
-<p>This function calculates impedance matrices of a three-phase transformer modeled as a pi-equivalent.<\p>
-<p>The transformer that uses this function should have its primary windings connected in wye (star) and its secondary windings connected in grounded-wye (grounded-star).<\p>
+<p>This function calculates impedance matrices of a three-phase transformer modeled as a pi-equivalent.</p>
+<p>The transformer that uses this function should have its primary windings connected in wye (star) and its secondary windings connected in grounded-wye (grounded-star).</p>
 
 </html>"));
 end Y_Yg;

@@ -187,7 +187,7 @@ In the first approach, the load consumes the same value of active and reactive p
 The latter approach allows the load to be represented as a sum of three terms: constant impedance, constant current and constant power. This means that, depending on voltage levels supplied, the load will consume different values of power.</p>
 <p>In addition to that, the real input <b><i>DynFact</b></i> multiplies the power being consumed by the load. 
 This allows the load to vary over time during the simulation. 
-It is also important to note that <b><i>DynFact</b></i> multiplies all variables <b><i>P_a</i></b>, <b><i>P_b</i></b>, <b><i>P_c</i></b><\p>, <b><i>Q_a</i></b>, <b><i>Q_b</i></b> and <b><i>Q_c</i></b>. 
+It is also important to note that <b><i>DynFact</b></i> multiplies all variables <b><i>P_a</i></b>, <b><i>P_b</i></b>, <b><i>P_c</i></b></p>, <b><i>Q_a</i></b>, <b><i>Q_b</i></b> and <b><i>Q_c</i></b>. 
 That means that this model does not allow load variation to be performed only in selected variables.</p> 
 
 </html>"));

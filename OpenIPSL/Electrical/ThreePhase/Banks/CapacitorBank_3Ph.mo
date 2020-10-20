@@ -140,6 +140,6 @@ equation
           Documentation(info="<html>
 <p>This model represents a three-phase capacitor bank.</p>
 <p>This device is used to supply reactive power to the system, increasing the voltage in the three-phase bus the bank is connected to.</p>
-<p>The reactive power supplied by the capacitor bank is constant and it is defined by parameters Q_a, Q_b and Q_c, which correspond to the reactive power supplied in phases A, B and C, respectively.<\p>
+<p>The reactive power supplied by the capacitor bank is constant and it is defined by parameters Q_a, Q_b and Q_c, which correspond to the reactive power supplied in phases A, B and C, respectively.</p>
 </html>"));
 end CapacitorBank_3Ph;
