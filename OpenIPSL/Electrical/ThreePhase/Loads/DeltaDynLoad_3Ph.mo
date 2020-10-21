@@ -193,6 +193,5 @@ The latter approach allows the load to be represented as a sum of three terms: c
 This allows the load to vary over time during the simulation. 
 It is also important to note that <b><i>DynFact</b></i> multiplies all variables <b><i>P_ab</i></b>, <b><i>P_bc</i></b>, <b><i>P_ca</i></b></p>, <b><i>Q_ab</i></b>, <b><i>Q_bc</i></b> and <b><i>Q_ca</i></b>. 
 That means that this model does not allow load variation to be performed only in selected variables. </p> 
-
 </html>"));
 end DeltaDynLoad_3Ph;

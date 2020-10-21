@@ -68,6 +68,5 @@ equation
 <p>A bus represents a node in a power system. Therefore, this model can be used to verify voltage magnitude and angle in the two-phase nodes of the system.</p>
 <p>Although it is not necessary, it is extremely recommended to connect one bus model between two other two-phase models.</p>
 <p>Please, check if this bus model is the appropriate one for your system. For the connection of three- or single-phase models, three- or single-phase buses might be a better fit.</p>
-
 </html>"));
 end Bus_2Ph;

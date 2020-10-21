@@ -157,6 +157,5 @@ Finally, the user should select the transformer three-phase connection.</p>
 The transformer does not take into account excitation branch, since it is often neglected in transient-stability studies.</p>
 <p>Primary side is represented by pins <b><i>Ain</i></b>, <b><i>Bin</i></b>, and <b><i>Cin</i></b>.
 Secondary side is represented by pins <b><i>Aout</i></b>, <b><i>Bout</i></b>, and <b><i>Cout</i></b></p> 
-
 </html>"));
 end Transformer_3Ph;

@@ -11,7 +11,6 @@ These models are called MonoTri and are usually represented as a pi-equivalent m
 <li><i>A hybrid three-phase single-phase power flow formulation</i>, by J.M.T. Marinho, and G.N. Taranto, and</li>
 <li><i>Computer modelling of electrical power systems</i>, by J. Arrillaga, C.P. Arnold, and B.J. Harker. </li>
 </ul>
-
 </html>",revisions="<html>
 <p> </p>
 <table cellspacing=\"1\" cellpadding=\"1\" border=\"1\">

@@ -281,6 +281,5 @@ Based on the set of parameters selected by the user, the pi-equivalent impedance
 The transformer does not take into account excitation branch, since it is often neglected in transient-stability studies.</p>
 <p>Primary side, modeled as positive-sequence equivalent, is represented by pin <b><i>p</i></b>.
 Secondary side, modeled as full three-phase system, is represented by pins <b><i>A</i></b>, <b><i>B</i></b>, and <b><i>C</i></b></p> 
-
 </html>"));
 end Transformer_MT;
