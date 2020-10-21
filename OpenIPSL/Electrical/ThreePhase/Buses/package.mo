@@ -1,5 +1,6 @@
 within OpenIPSL.Electrical.ThreePhase;
 package Buses "Multi-phase buses"
+  extends Modelica.Icons.Package;
 annotation (Documentation(info="<html>
 <p>This package contains models for multi-phase buses.</p>
 <p>It contains single-phase, two-phase and three-phase buses that are used as nodes in the system.  
