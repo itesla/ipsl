@@ -88,6 +88,6 @@ equation
           Documentation(info="<html>
 <p>This model represents a single-phase capacitor bank.</p>
 <p>This device is used to supply reactive power to the system, increasing the voltage in the bus it is connected to.</p>
-<p>The reactive power supplied by the capacitor bank is constant and it is defined by parameter Q_a.<\p>
+<p>The reactive power supplied by the capacitor bank is constant and it is defined by parameter Q_a.</p>
 </html>"));
 end CapacitorBank_1Ph;

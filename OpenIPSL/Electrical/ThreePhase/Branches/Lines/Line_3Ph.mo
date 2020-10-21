@@ -88,7 +88,7 @@ equation
         preserveAspectRatio=true,
         initialScale=0.1)),
     Documentation(info="<html>
-<p>This model was design to represent three-phase power line, modeled as a pi-element.<\p> 
+<p>This model was design to represent three-phase power line, modeled as a pi-element.</p> 
 <p>The user should input the series conductance and susceptance, and half shunt susceptance (line charging). All in matrix form, since the model allows the representation of unbalanced lines.
 Series conductance (Gser) matrix is considered to have the following structure:</p>
 <p><b>[Gseraa</b>, <b>Gserab</b>, <b>Gserac</b>; </p>
@@ -103,6 +103,5 @@ Series conductance (Gser) matrix is considered to have the following structure:<
 <p><b> Bshtab</b>, <b>Bshtbb</b>, <b>Bshtbc</b>; </p>
 <p><b> Bshtac</b>, <b>Bshtbc</b>, <b>Bshtcc</b>] </p>
 <p>Based on this set of parameters, the pi-equivalent impedance matrices are calculated and the power line equation is assembled.</p>
-<p> <\p>
 </html>"));
 end Line_3Ph;

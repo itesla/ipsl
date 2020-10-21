@@ -199,6 +199,5 @@ equation
 In the first approach, the powers consumed between phases are kept constant throughout simulation. 
 The latter approach allows the load to be represented as a sum of three terms: constant impedance, constant current and constant power. 
 This means that, depending on voltage levels supplied, the load will consume different values of power.</p>
-<p> <\p>
 </html>"));
 end DeltaLoad_3Ph;

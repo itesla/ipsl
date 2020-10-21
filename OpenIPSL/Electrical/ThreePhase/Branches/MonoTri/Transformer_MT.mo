@@ -271,7 +271,7 @@ equation
           extent={{4,18},{104,-34}},
           textString="Hybrid Transformer")}, coordinateSystem(initialScale=0.1)),
     Documentation(info="<html>
-<p>This model was design to represent a hybrid positive-sequence/three-phase two-winding transformer.<\p> 
+<p>This model was design to represent a hybrid positive-sequence/three-phase two-winding transformer.</p> 
 <p>The user should input the copper resistance <b>R</b> and leakage reactance <b>X</b> in per unit values.
 The user should also input the tap value, which is the relation between primary and secondary voltage levels, but in per unit.
 The user should select the transformer three-phase connection and, in addition to that, the user should also state if the hybrid interface should be calculated in an approximate or exact way.
@@ -280,7 +280,6 @@ If approximate model is selected, these admittances are set to be zero.
 Based on the set of parameters selected by the user, the pi-equivalent impedance matrices are calculated and the transformer equation is assembled.
 The transformer does not take into account excitation branch, since it is often neglected in transient-stability studies.</p>
 <p>Primary side, modeled as positive-sequence equivalent, is represented by pin <b><i>p</i></b>.
-Secondary side, modeled as full three-phase system, is represented by pins <b><i>A</i></b>, <b><i>B</i></b>, and <b><i>C</i></b><\p> 
-<p> <\p>
+Secondary side, modeled as full three-phase system, is represented by pins <b><i>A</i></b>, <b><i>B</i></b>, and <b><i>C</i></b></p> 
 </html>"));
 end Transformer_MT;

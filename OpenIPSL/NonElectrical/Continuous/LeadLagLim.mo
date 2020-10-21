@@ -65,6 +65,5 @@ equation
           lineColor={0,0,255},
           textString="K")}),
     Documentation(info="<html>
-
 </html>"));
 end LeadLagLim;

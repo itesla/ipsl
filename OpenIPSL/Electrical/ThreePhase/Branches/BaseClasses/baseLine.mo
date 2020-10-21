@@ -59,8 +59,7 @@ protected
         preserveAspectRatio=true,
         initialScale=0.1)),
     Documentation(info="<html>
-<p>This model was design to represent the base data for a power-line modeled in three-phase approach.<\p> 
-<p> <\p>
+<p>This model was design to represent the base data for a power-line modeled in three-phase approach.</p> 
 </html>"));
 
 end baseLine;

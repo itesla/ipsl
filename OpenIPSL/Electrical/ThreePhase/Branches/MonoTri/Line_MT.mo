@@ -180,7 +180,7 @@ equation
         preserveAspectRatio=true,
         initialScale=0.1)),
     Documentation(info="<html>
-<p>This model was design to represent a hybrid positive-sequence/three-phase power line.<\p> 
+<p>This model was design to represent a hybrid positive-sequence/three-phase power line.</p> 
 <p>The user should input the series conductance and susceptance, and half shunt susceptance (line charging). All in matrix form, since this model can be used to represent unbalanced lines.
 Series conductance (Gser) matrix is considered to have the following structure:</p>
 <p><b>[Gseraa</b>, <b>Gserab</b>, <b>Gserac</b>; </p>
@@ -198,7 +198,6 @@ Series conductance (Gser) matrix is considered to have the following structure:<
 If the exact way is selected, the user should also input Norton equivalent admittances for positive, negative and zero sequences calculated in the point of interconnection of the hybrid device.
 If approximate model is selected, these admittances are set to be zero. 
 Based on the set of parameters selected by the user, the pi-equivalent impedance matrices are calculated and the line equation is assembled.</p>
-<p>The positive-sequence system is connected using pin <b><i>p</i></b>, while three-phase system is connected using pins <b><i>A</i></b>, <b><i>B</i></b>, and <b><i>C</i></b><\p> 
-<p> <\p>
+<p>The positive-sequence system is connected using pin <b><i>p</i></b>, while three-phase system is connected using pins <b><i>A</i></b>, <b><i>B</i></b>, and <b><i>C</i></b></p> 
 </html>"));
 end Line_MT;

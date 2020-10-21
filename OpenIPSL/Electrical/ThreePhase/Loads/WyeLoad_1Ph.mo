@@ -90,6 +90,5 @@ Since the values come from independent parameters, the model allows the represen
 <p>In addition, the model allows the load to be represented as constant power, or as a ZIP model. 
 In the first approach, the load consumes the same value of active and reactive powers throughout the simulation. 
 The latter approach allows the load to be represented as a sum of three terms: constant impedance, constant current and constant power. This means that, depending on voltage levels supplied, the load will consume different values of power.</p>
-<p> <\p>
 </html>"));
 end WyeLoad_1Ph;

@@ -108,6 +108,5 @@ The model allows the load to be represented as constant power only.</p>
 This allows the load to vary its consumed power over time during the simulation. Note that, since active and reactive powers can vary independently, the load's power factor can also vary.
 In addition, note that by changing <b><i>P0</i></b> and <b><i>Q0</i></b>, the values of power consumed by the three phases vary identically. 
 This makes the load to be characterized as balanced.</p> 
-<p> <\p>
 </html>"));
 end Dyn_wye_3Ph_balanced;

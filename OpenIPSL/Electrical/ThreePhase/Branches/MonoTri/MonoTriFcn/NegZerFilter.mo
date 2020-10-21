@@ -80,7 +80,6 @@ algorithm
 annotation (
 Documentation(info="<html>
 <p>This function calculates negative-, and zero-sequece impedance filters used in hybrid components.
-The filters are used as a negative-, and zero-sequece Norton equivalent admittances, representing the single-phase equivalent seen from the three-phase side.<\p>
-<p> <\p>
+The filters are used as a negative-, and zero-sequece Norton equivalent admittances, representing the single-phase equivalent seen from the three-phase side.</p>
 </html>"));
 end NegZerFilter;

@@ -91,6 +91,5 @@ equation
 <p>This is a three-phase infinite bus model.</p>
 <p>An infinite bus represents a very strong system. This means that no matter how much power is drained from or injected in it, the bus will keep the values of frequency, voltage magnitude and voltage angle constant.</p>
 <p>The infinite bus also provides the angle references that can be used in coherency studies or in power flow results.</p>
-<p> <\p>
 </html>"));
 end InfiniteBus;

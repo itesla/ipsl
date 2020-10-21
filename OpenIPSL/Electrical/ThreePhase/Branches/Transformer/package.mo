@@ -1,8 +1,8 @@
 within OpenIPSL.Electrical.ThreePhase.Branches;
 package Transformer "Models for three-phase transformers"
+  extends Modelica.Icons.Package;
 annotation (
 Documentation(info="<html>
-<p>This package contains a model for three-phase transformers and a set of functions used to calculate three-phase impedance matrices depending on the transformer connection.<\p>
-<p> <\p>
+<p>This package contains a model for three-phase transformers and a set of functions used to calculate three-phase impedance matrices depending on the transformer connection.</p>
 </html>"));
 end Transformer;
