@@ -1,4 +1,4 @@
 within OpenIPSL.Electrical.Loads.PSSE;
 package BaseClasses
-  extends Modelica.Icons.Package;
+  extends Modelica.Icons.BasesPackage;
 end BaseClasses;
