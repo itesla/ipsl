@@ -1,5 +1,5 @@
 within OpenIPSL.Electrical.Branches.PSAT;
-model PhaseShiftingTransformer2 "Phase Shifting Transformer (PST)"
+model PhaseShiftingTransformer "Phase Shifting Transformer (PST)"
 
   model PhaseShifter "Controller for shifting the phase (internal model)"
     parameter SI.PerUnit pref=0.01 "Desired power flow"
@@ -79,8 +79,6 @@ model PhaseShiftingTransformer2 "Phase Shifting Transformer (PST)"
     annotation (Dialog(group="Initialization"));
   parameter SI.Angle alpha0=0 "Initial phase shifting angle"
     annotation (Dialog(group="Initialization"));
-
-
 
   outer OpenIPSL.Electrical.SystemBase SysData;
   inner SI.PerUnit pk "Actual primary power flow";
@@ -193,4 +191,4 @@ impose the total real power transfer between the two areas.
 </tr>
 </table>
 </html>"));
-end PhaseShiftingTransformer2;
+end PhaseShiftingTransformer;
