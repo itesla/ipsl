@@ -1,6 +1,5 @@
 within OpenIPSL.Examples.BaseClasses;
-partial model BaseTest
-  extends Modelica.Icons.Example;
+partial model MachineTestBase
   Electrical.Branches.PwLine pwLine1(
     X=0.1,
     R=0.01,
@@ -48,7 +47,7 @@ partial model BaseTest
         extent={{-6.2889,-6.0335},{6.2889,6.0335}},
         rotation=90)));
   inner Electrical.SystemBase SysData
-    annotation (Placement(transformation(extent={{-100,80},{-40,100}})));
+    annotation (Placement(transformation(extent={{-100,80},{-60,100}})));
   Electrical.Buses.Bus bus1 annotation (Placement(transformation(extent={{-10,-10},{10,10}})));
   Electrical.Buses.Bus bus2
     annotation (Placement(transformation(extent={{30,-10},{50,10}})));
@@ -80,4 +79,4 @@ equation
                                color={0,0,255}));
   connect(pwLine3.n,bus4. p) annotation (Line(points={{67.4,-14},{67.4,-14},{80,
           -14}}, color={0,0,255}));
-end BaseTest;
+end MachineTestBase;

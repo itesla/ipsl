@@ -1,6 +1,6 @@
 within OpenIPSL.Examples.Controls.PSSE.TG;
 model GGOV "three phase to ground fault test of GGOV"
-  extends OpenIPSL.Examples.BaseClasses.SMIBpartial;
+  extends OpenIPSL.Examples.BaseClasses.SMIB;
   OpenIPSL.Electrical.Machines.PSSE.GENROU gENROU(
     Xppd=0.2,
     Xppq=0.2,

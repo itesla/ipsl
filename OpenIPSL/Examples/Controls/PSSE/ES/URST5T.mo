@@ -1,6 +1,6 @@
 within OpenIPSL.Examples.Controls.PSSE.ES;
 model URST5T "SMIB model example of GENROU with Excitation System URST5T"
-  extends OpenIPSL.Examples.BaseClasses.SMIBpartial;
+  extends OpenIPSL.Examples.BaseClasses.SMIB;
   OpenIPSL.Electrical.Machines.PSSE.GENROU gENROU(
     Xppd=0.2,
     Xppq=0.2,

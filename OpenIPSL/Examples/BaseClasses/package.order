@@ -1,4 +1,4 @@
-BaseTest
 LoadTestBase
+MachineTestBase
+SMIB
 TGTestBase
-SMIBpartial

@@ -1,7 +1,7 @@
 within OpenIPSL.Examples.Machines.PSAT;
 model Order3test2_AVR
   extends Modelica.Icons.Example;
-  extends OpenIPSL.Examples.BaseClasses.BaseTest;
+  extends OpenIPSL.Examples.BaseClasses.MachineTestBase;
   OpenIPSL.Electrical.Machines.PSAT.Order3 order3_Inputs_Outputs1(
     angle_0=0,
     ra=0.01,

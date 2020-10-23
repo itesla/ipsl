@@ -1,6 +1,6 @@
 within OpenIPSL.Examples.Controls.PSSE.ES;
 model ESST4B "SMIB model example of GENROU with Excitation System ESST4B"
-  extends OpenIPSL.Examples.BaseClasses.SMIBpartial;
+  extends OpenIPSL.Examples.BaseClasses.SMIB;
   OpenIPSL.Electrical.Machines.PSSE.GENROU gENROU(
     Xppd=0.2,
     Xppq=0.2,

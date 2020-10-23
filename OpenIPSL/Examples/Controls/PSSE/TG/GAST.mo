@@ -1,7 +1,7 @@
 within OpenIPSL.Examples.Controls.PSSE.TG;
 model GAST
   "Simple Machine Infinite Bus with Machine, Governor and Excitation system"
-  extends OpenIPSL.Examples.BaseClasses.SMIBpartial;
+  extends OpenIPSL.Examples.BaseClasses.SMIB;
   OpenIPSL.Electrical.Machines.PSSE.GENROU gENROU(
     Xppd=0.2,
     Xppq=0.2,

@@ -1,6 +1,6 @@
 within OpenIPSL.Examples.Machines.PSSE;
 model GEN "SMIB system with one load and flexible GEN model (needs replaceable support)"
-  extends OpenIPSL.Examples.BaseClasses.SMIBpartial;
+  extends OpenIPSL.Examples.BaseClasses.SMIB;
   Electrical.Machines.PSSE.Plant G1(
     redeclare Electrical.Machines.PSSE.GENROE machine(
       Tpd0=5,

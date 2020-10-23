@@ -1,6 +1,6 @@
 within OpenIPSL.Examples.Branches.PSSE;
 model TwoWindingTransformer "SMIB system with one load and GENROE model"
-  extends BaseClasses.SMIBpartial;
+  extends BaseClasses.SMIB;
   extends Modelica.Icons.Example;
   OpenIPSL.Electrical.Machines.PSSE.GENSAL gENROE(
     Tpd0=5,
