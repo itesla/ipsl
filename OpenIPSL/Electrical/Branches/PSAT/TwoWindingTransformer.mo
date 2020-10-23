@@ -19,7 +19,7 @@ model TwoWindingTransformer "Modeled as series reactances without iron losses"
     annotation (Dialog(group="Transformer parameters"));
   parameter SI.PerUnit rT=0.01 "Resistance (pu, transformer base)"
     annotation (Dialog(group="Transformer parameters"));
-  parameter SI.PerUnit xT=0.2 "Reactance (pu, transformer base)"
+  parameter SI.PerUnit xT=0.1 "Reactance (pu, transformer base)"
     annotation (Dialog(group="Transformer parameters"));
   parameter Real m=1.0 "Optional fixed tap ratio"
     annotation (Dialog(group="Transformer parameters"));
