@@ -11,15 +11,15 @@ model TwoWindingTransformer "Modeled as series reactances without iron losses"
     annotation (Placement(transformation(extent={{100,-10},{120,10}})));
   parameter SI.ApparentPower S_b(displayUnit="MVA")=SysData.S_b "System base power"
     annotation (Dialog(group="Power flow"));
-  parameter SI.ApparentPower Sn(displayUnit="MVA")=100e6 "Power rating"
-    annotation (Dialog(group="Power flow"));
   parameter SI.Voltage V_b(displayUnit="kV")=40e3 "Sending end bus voltage"
     annotation (Dialog(group="Power flow"));
-  parameter SI.Voltage Vn(displayUnit="kV")=40e3 "Voltage rating"
-    annotation (Dialog(group="Power flow"));
-  parameter Real rT=0.01 "Resistance (pu, transformer base)"
+  parameter SI.ApparentPower Sn(displayUnit="MVA")=SysData.S_b "Power rating"
     annotation (Dialog(group="Transformer parameters"));
-  parameter Real xT=0.2 "Reactance (pu, transformer base)"
+  parameter SI.Voltage Vn(displayUnit="kV")=40e3 "Voltage rating"
+    annotation (Dialog(group="Transformer parameters"));
+  parameter SI.PerUnit rT=0.01 "Resistance (pu, transformer base)"
+    annotation (Dialog(group="Transformer parameters"));
+  parameter SI.PerUnit xT=0.1 "Reactance (pu, transformer base)"
     annotation (Dialog(group="Transformer parameters"));
   parameter Real m=1.0 "Optional fixed tap ratio"
     annotation (Dialog(group="Transformer parameters"));
@@ -37,10 +37,10 @@ model TwoWindingTransformer "Modeled as series reactances without iron losses"
   Complex vr(re=n.vr, im=n.vi);
   Complex ir(re=n.ir, im=n.ii);
 protected
-  parameter Real Zn = Vn^2/Sn "Transformer base impedance";
-  parameter Real Zb = V_b^2/S_b "System base impedance";
-  parameter Real r = rT * Zn/Zb "Resistance (pu, system base)";
-  parameter Real x = xT * Zn/Zb "Reactance (pu, system base)";
+  parameter SI.Impedance Zn = Vn^2/Sn "Transformer base impedance";
+  parameter SI.Impedance Zb = V_b^2/S_b "System base impedance";
+  parameter SI.PerUnit r = rT * Zn/Zb "Resistance (pu, system base)";
+  parameter SI.PerUnit x = xT * Zn/Zb "Reactance (pu, system base)";
   parameter Boolean tc = m <> 1.0 "Internal parameter to switch on the icon arrow";
 equation
   r*p.ir - x*p.ii = 1/m^2*p.vr - 1/m*n.vr;
