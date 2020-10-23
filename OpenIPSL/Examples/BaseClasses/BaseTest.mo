@@ -1,4 +1,4 @@
-within OpenIPSL.Examples;
+within OpenIPSL.Examples.BaseClasses;
 partial model BaseTest
   extends Modelica.Icons.Example;
   Electrical.Branches.PwLine pwLine1(

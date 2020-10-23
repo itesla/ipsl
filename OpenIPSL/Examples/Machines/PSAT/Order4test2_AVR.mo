@@ -1,6 +1,6 @@
 within OpenIPSL.Examples.Machines.PSAT;
 model Order4test2_AVR
-  extends OpenIPSL.Examples.BaseTest;
+  extends OpenIPSL.Examples.BaseClasses.BaseTest;
   extends Modelica.Icons.Example;
   OpenIPSL.Electrical.Controls.PSAT.AVR.AVRtypeIII AVRtypeIII1 annotation (
       Placement(transformation(

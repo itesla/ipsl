@@ -1,6 +1,6 @@
 within OpenIPSL.Examples.Machines.PSAT;
 model Order3test2_perturbation
-  extends OpenIPSL.Examples.BaseTest;
+  extends OpenIPSL.Examples.BaseClasses.BaseTest;
   extends Modelica.Icons.Example;
   OpenIPSL.Electrical.Machines.PSAT.Order3 order3_Inputs_Outputs1(
     angle_0=0,
