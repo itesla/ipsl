@@ -1,6 +1,6 @@
 within OpenIPSL.Examples.Loads.PSAT;
 model LoadTestExpRecovery
-  extends LoadTestBase;
+  extends BaseClasses.LoadTestBase;
   extends Modelica.Icons.Example;
   OpenIPSL.Electrical.Loads.PSAT.ExponentialRecovery exponentialRecovery(
     alpha_t=1.5,

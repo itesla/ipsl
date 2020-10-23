@@ -1,6 +1,6 @@
 within OpenIPSL.Examples.Loads.PSAT;
 model LoadTestZipJimma
-  extends LoadTestBase;
+  extends BaseClasses.LoadTestBase;
   extends Modelica.Icons.Example;
   OpenIPSL.Electrical.Loads.PSAT.ZIP_Jimma zIPJimma(
     Sn=10000000,

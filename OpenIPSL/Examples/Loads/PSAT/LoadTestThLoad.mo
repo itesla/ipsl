@@ -1,6 +1,6 @@
 within OpenIPSL.Examples.Loads.PSAT;
 model LoadTestThLoad "Test of Thermostatically Controlled Load"
-  extends OpenIPSL.Examples.Loads.PSAT.LoadTestBase;
+  extends OpenIPSL.Examples.BaseClasses.LoadTestBase;
   extends Modelica.Icons.Example;
   Modelica.Blocks.Sources.Constant Tref(k=70)
     annotation (Placement(transformation(extent={{20,-40},{40,-20}})));

@@ -5,7 +5,7 @@ package Events
   model TestBreaker "Example model to test the breaker model"
     extends Modelica.Icons.Example;
 
-    inner Electrical.SystemBase SysData annotation (Placement(transformation(extent={{-100,80},{-76,100}})));
+    inner Electrical.SystemBase SysData annotation (Placement(transformation(extent={{-100,80},{-60,100}})));
     Electrical.Buses.InfiniteBus infiniteBusExt(displayPF=true) annotation (Placement(transformation(extent={{-80,20},{-60,40}})));
     Electrical.Loads.PSAT.PQ lOADPQExt annotation (Placement(transformation(
           extent={{-10,-10},{10,10}},
