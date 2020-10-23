@@ -1,4 +1,4 @@
 within OpenIPSL.Electrical;
 package Sensors
-  extends Modelica.Icons.Package;
+  extends Modelica.Icons.SensorsPackage;
 end Sensors;
