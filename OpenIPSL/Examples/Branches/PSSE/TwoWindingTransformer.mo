@@ -1,4 +1,4 @@
-within OpenIPSL.Examples;
+within OpenIPSL.Examples.Branches.PSSE;
 model TwoWindingTransformer "SMIB system with one load and GENROE model"
   extends Modelica.Icons.Example;
   OpenIPSL.Electrical.Branches.PwLine pwLine1(
