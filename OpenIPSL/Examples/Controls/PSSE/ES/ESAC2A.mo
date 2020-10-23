@@ -1,6 +1,6 @@
 within OpenIPSL.Examples.Controls.PSSE.ES;
 model ESAC2A "SMIB model example of GENROU with Excitation System ESAC2A"
-  extends OpenIPSL.Examples.SMIBpartial;
+  extends OpenIPSL.Examples.BaseClasses.SMIBpartial;
   OpenIPSL.Electrical.Machines.PSSE.GENROU gENROU(
     Xppd=0.2,
     Xppq=0.2,

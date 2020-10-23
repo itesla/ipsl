@@ -1,7 +1,7 @@
 within OpenIPSL.Examples.Controls.PSSE.ES;
 model IEEET1 "SMIB system with one load and GENROE model"
   import iPSL = OpenIPSL;
-  extends iPSL.Examples.SMIBpartial;
+  extends iPSL.Examples.BaseClasses.SMIBpartial;
   iPSL.Electrical.Machines.PSSE.GENROE gENROE(
     Tpd0=5,
     Tppd0=0.07,

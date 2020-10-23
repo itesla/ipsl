@@ -1,6 +1,6 @@
 within OpenIPSL.Examples.Controls.PSSE.ES;
 model ST5B "SMIB system with one load and GENROE model"
-  extends OpenIPSL.Examples.SMIBpartial;
+  extends OpenIPSL.Examples.BaseClasses.SMIBpartial;
   OpenIPSL.Electrical.Controls.PSSE.ES.ST5B sT5B(
     T_R=0,
     T_C1=0.8,

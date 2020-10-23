@@ -1,4 +1,4 @@
-within OpenIPSL.Examples;
+within OpenIPSL.Examples.BaseClasses;
 partial model SMIBpartial "SMIB system with one load"
   extends Modelica.Icons.Example;
   OpenIPSL.Electrical.Branches.PwLine pwLine(

@@ -1,6 +1,6 @@
 within OpenIPSL.Examples.Controls.CGMES.ES;
 model ExcSEXS "SMIB model example of GENROU with Excitation System ExcSEXS"
-  extends OpenIPSL.Examples.SMIBpartial;
+  extends OpenIPSL.Examples.BaseClasses.SMIBpartial;
   Modelica.Blocks.Sources.Constant const2(k=0)
     annotation (Placement(transformation(extent={{-110,166},{-94,182}})));
   OpenIPSL.Electrical.Machines.PSSE.GENROU gENROE(

@@ -1,6 +1,6 @@
 within OpenIPSL.Examples.Banks.PSSE;
 model CSVGN1
- extends OpenIPSL.Examples.SMIBpartial;
+ extends OpenIPSL.Examples.BaseClasses.SMIBpartial;
  OpenIPSL.Electrical.Machines.PSSE.GENSAL gENSAL(
     Tpd0=5,
     Tppd0=0.07,
