@@ -38,7 +38,6 @@ model TwoWindingTransformer "SMIB system with one load and GENROE model"
     t2=1.02,
     VNOM2=130,
     CW=3) annotation (Placement(transformation(extent={{-60,-10},{-40,10}})));
-  inner OpenIPSL.Electrical.SystemBase SysData(fn=50)                annotation (Placement(transformation(extent={{-100,80},{-40,100}})));
 equation
   connect(gENROE.PMECH, gENROE.PMECH0) annotation (Line(points={{-94.4,6},{-100,6},{-100,20},{-62,20},{-62,6},{-66.8,6}},
                                                        color={0,0,127}));
