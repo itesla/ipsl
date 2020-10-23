@@ -27,13 +27,13 @@ model PhaseShiftingTransformer "Phase Shifting Transformer (PST)"
     annotation (Placement(transformation(extent={{-120,-10},{-100,10}})));
   Interfaces.PwPin n annotation (Placement(transformation(extent={{100,-10},{120,10}}), iconTransformation(extent={{100,-10},{120,10}})));
   equation
-  if alpha > alpha_max and der(alpha) > 0 and der(pmes) > 0 then
+    if alpha > alpha_max and der(pmes) > 0 then
     der(alpha) = 0;
     der(pmes) = (pk - pmes)/Tm;
     p.vr = n.vr*cos(alpha_max) - n.vi*sin(alpha_max);
     p.vi = n.vr*sin(alpha_max) + n.vi*cos(alpha_max);
 
-  elseif alpha < alpha_min and der(alpha) < 0 and der(pmes) < 0 then
+  elseif alpha < alpha_min and der(pmes) < 0 then
     der(alpha) = 0;
     der(pmes) = (pk - pmes)/Tm;
     p.vr = n.vr*cos(alpha_min) - n.vi*sin(alpha_min);
