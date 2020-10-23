@@ -1,50 +1,7 @@
 within OpenIPSL.Examples.Branches.PSSE;
 model TwoWindingTransformer "SMIB system with one load and GENROE model"
+  extends SMIBpartial;
   extends Modelica.Icons.Example;
-  OpenIPSL.Electrical.Branches.PwLine pwLine1(
-    R=0.001,
-    X=0.2,
-    G=0,
-    B=0) annotation (Placement(transformation(extent={{40,20},{60,40}})));
-  OpenIPSL.Electrical.Branches.PwLine pwLine3(
-    t2=100,
-    R=0.0005,
-    X=0.1,
-    G=0,
-    B=0,
-    t1=100) annotation (Placement(transformation(extent={{20,-40},{40,-20}})));
-  OpenIPSL.Electrical.Branches.PwLine pwLine4(
-    t2=100,
-    t1=100,
-    R=0.0005,
-    X=0.1,
-    G=0,
-    B=0) annotation (Placement(transformation(extent={{60,-40},{80,-20}})));
-  OpenIPSL.Electrical.Machines.PSSE.GENCLS gENCLS(
-    M_b=100,
-    D=0,
-    angle_0=0,
-    X_d=0.2,
-    H=0,
-    P_0=10027800,
-    Q_0=32050720,
-    v_0=1) annotation (Placement(transformation(extent={{118,-12},{106,12}})));
-  OpenIPSL.Electrical.Loads.PSSE.Load_variation constantLoad(
-    d_t=0,
-    d_P=0,
-    t1=0,
-    angle_0=-0.5840921,
-    P_0=50000000,
-    Q_0=10000000,
-    v_0=0.9679495) annotation (Placement(transformation(extent={{-4,-52},{8,-40}})));
-  OpenIPSL.Electrical.Events.PwFault pwFault(
-    t1=2,
-    t2=2.15,
-    R=0.1,
-    X=0.1) annotation (Placement(transformation(
-        extent={{-6,-6},{6,6}},
-        rotation=-90,
-        origin={54,-58})));
   OpenIPSL.Electrical.Machines.PSSE.GENSAL gENROE(
     Tpd0=5,
     D=0,
@@ -65,7 +22,7 @@ model TwoWindingTransformer "SMIB system with one load and GENROE model"
     P_0=40000000,
     Q_0=-16460280,
     v_0=1,
-    V_b=14700) annotation (Placement(transformation(extent={{-92,-20},{-58,20}})));
+    V_b=14700) annotation (Placement(transformation(extent={{-92,-12},{-68,12}})));
   OpenIPSL.Electrical.Branches.PSSE.TwoWindingTransformer twoWindingTransformer(
     CZ=1,
     R=0.001,
@@ -80,43 +37,14 @@ model TwoWindingTransformer "SMIB system with one load and GENROE model"
     VNOM1=20,
     t2=1.02,
     VNOM2=130,
-    CW=3) annotation (Placement(transformation(extent={{-26,-4},{-14,4}})));
-  OpenIPSL.Electrical.Buses.Bus BUS01
-    annotation (Placement(transformation(extent={{-50,-10},{-30,10}})));
-  OpenIPSL.Electrical.Buses.Bus BUS02
-    annotation (Placement(transformation(extent={{-10,-10},{10,10}})));
-  OpenIPSL.Electrical.Buses.Bus BUS03
-    annotation (Placement(transformation(extent={{40,-40},{60,-20}})));
-  OpenIPSL.Electrical.Buses.Bus BUS1
-    annotation (Placement(transformation(extent={{80,-10},{100,10}})));
-  inner OpenIPSL.Electrical.SystemBase SysData(fn=50, S_b=(100)*1e6) annotation (Placement(transformation(extent={{-100,80},{-40,100}})));
+    CW=3) annotation (Placement(transformation(extent={{-60,-10},{-40,10}})));
+  inner OpenIPSL.Electrical.SystemBase SysData(fn=50)                annotation (Placement(transformation(extent={{-100,80},{-40,100}})));
 equation
-  connect(gENROE.PMECH, gENROE.PMECH0) annotation (Line(points={{-91.66,10},{-98,
-          10},{-98,26},{-50,26},{-50,-6},{-56.64,-6}}, color={0,0,127}));
-  connect(gENROE.EFD, gENROE.EFD0) annotation (Line(points={{-91.66,-10},{-98,-10},
-          {-98,-24},{-50,-24},{-50,-14},{-56.64,-14}}, color={0,0,127}));
-  connect(gENROE.p, BUS01.p)
-    annotation (Line(points={{-56.3,0},{-40,0}}, color={0,0,255}));
-  connect(BUS01.p, twoWindingTransformer.p)
-    annotation (Line(points={{-40,0},{-27,0}}, color={0,0,255}));
-  connect(twoWindingTransformer.n, BUS02.p)
-    annotation (Line(points={{-13,0},{0,0}}, color={0,0,255}));
-  connect(pwLine1.p, BUS02.p) annotation (Line(points={{38.3333,30},{4,30},{4,0},
-          {0,0}}, color={0,0,255}));
-  connect(pwLine3.p, BUS02.p) annotation (Line(points={{18.3333,-30},{4,-30},{4,
-          0},{0,0}}, color={0,0,255}));
-  connect(constantLoad.p, BUS02.p)
-    annotation (Line(points={{2,-39.4},{2,0},{0,0}}, color={0,0,255}));
-  connect(pwLine3.n, BUS03.p) annotation (Line(points={{41.6667,-30},{41.6667,-30},
-          {50,-30}}, color={0,0,255}));
-  connect(BUS03.p, pwLine4.p)
-    annotation (Line(points={{50,-30},{58.3333,-30}}, color={0,0,255}));
-  connect(BUS1.p, gENCLS.p) annotation (Line(points={{90,0},{104.8,0},{104.8,-0.180432}},
-        color={0,0,255}));
-  connect(pwLine1.n, BUS1.p) annotation (Line(points={{61.6667,30},{86,30},{86,
-          0},{90,0}}, color={0,0,255}));
-  connect(pwLine4.n, BUS1.p) annotation (Line(points={{81.6667,-30},{86,-30},{
-          86,0},{90,0}}, color={0,0,255}));
-  connect(pwFault.p, BUS03.p)
-    annotation (Line(points={{54,-51},{54,-30},{50,-30}}, color={0,0,255}));
+  connect(gENROE.PMECH, gENROE.PMECH0) annotation (Line(points={{-94.4,6},{-100,6},{-100,20},{-62,20},{-62,6},{-66.8,6}},
+                                                       color={0,0,127}));
+  connect(gENROE.EFD, gENROE.EFD0) annotation (Line(points={{-94.4,-6},{-100,-6},{-100,-20},{-62,-20},{-62,-6},{-66.8,-6}},
+                                                       color={0,0,127}));
+  connect(twoWindingTransformer.n, GEN1.p) annotation (Line(points={{-39,0},{-30,0}}, color={0,0,255}));
+  connect(gENROE.p, twoWindingTransformer.p) annotation (Line(points={{-68,0},{-64,0},{-64,0},{-61,0}}, color={0,0,255}));
+  annotation (experiment(StopTime=1));
 end TwoWindingTransformer;

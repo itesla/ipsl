@@ -5,10 +5,8 @@ model TwoWindingTransformer
   import Modelica.Constants.pi;
   import Modelica.ComplexMath.j;
   import Modelica.ComplexMath.conj;
-  OpenIPSL.Interfaces.PwPin p annotation (Placement(transformation(extent={{-80,
-            -10},{-60,10}}), iconTransformation(extent={{-80,-10},{-60,10}})));
-  OpenIPSL.Interfaces.PwPin n annotation (Placement(transformation(extent={{60,
-            -10},{80,10}}), iconTransformation(extent={{60,-10},{80,10}})));
+  OpenIPSL.Interfaces.PwPin p annotation (Placement(transformation(extent={{-120,-10},{-100,10}})));
+  OpenIPSL.Interfaces.PwPin n annotation (Placement(transformation(extent={{100,-10},{120,10}})));
   parameter SI.ApparentPower S_b(displayUnit="MVA")=SysData.S_b "System base power"
     annotation (Dialog(enable=false));
   parameter Integer CZ=1 "Impedance I/O code" annotation (Dialog(tab=
@@ -67,22 +65,18 @@ equation
   ej = ei/t + xeq*ij;
   (ii - ei*Ym)*conj(t) = -ij;
   annotation (
-    Icon(coordinateSystem(preserveAspectRatio=false, extent={{-60,-40},{60,40}}),
-        graphics={Rectangle(
-          extent={{-60,40},{60,-40}},
-          lineColor={255,255,255},
-          fillColor={255,255,255},
-          fillPattern=FillPattern.Solid),Ellipse(extent={{-50,30},{10,-30}},
-          lineColor={28,108,200}),Ellipse(extent={{-12,30},{52,-30}}, lineColor=
-           {28,108,200}),Line(
-          points={{-60,0},{-50,0}},
-          color={28,108,200},
-          arrow={Arrow.None,Arrow.Filled}),Line(points={{52,0},{60,0}}, color={
+    Icon(coordinateSystem(preserveAspectRatio=false),
+        graphics={                       Ellipse(extent={{-70,40},{10,-40}},
+          lineColor={28,108,200}),Ellipse(extent={{-10,40},{70,-40}}, lineColor=
+           {28,108,200}),Line(points={{-100,0},{-70,0}}, color={28,108,200}),
+                                           Line(points={{70,0},{100,0}},color={
           28,108,200}),Polygon(
-          points={{-56,4},{-50,0},{-56,-4},{-56,4}},
+          points={{-84,6},{-70,0},{-84,-8},{-84,6}},
           lineColor={28,108,200},
           fillColor={28,108,200},
-          fillPattern=FillPattern.Solid)}),
-    Diagram(coordinateSystem(extent={{-60,-40},{60,40}}, preserveAspectRatio=
-            false)));
+          fillPattern=FillPattern.Solid),
+        Text(
+          extent={{-80,100},{80,40}},
+          lineColor={0,0,255},
+          textString="%name")}), Diagram(coordinateSystem(preserveAspectRatio=false)));
 end TwoWindingTransformer;
