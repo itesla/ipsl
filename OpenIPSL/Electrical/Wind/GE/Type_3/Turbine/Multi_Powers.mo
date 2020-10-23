@@ -1,6 +1,6 @@
 within OpenIPSL.Electrical.Wind.GE.Type_3.Turbine;
 block Multi_Powers "Multiplexer block for four input connectors"
-  extends Modelica.Blocks.Interfaces.BlockIcon;
+  extends Modelica.Blocks.Icons.Block;
   Modelica.Blocks.Interfaces.RealInput u1 "Input" annotation (Placement(
         transformation(extent={{-140,70},{-100,110}})));
   Modelica.Blocks.Interfaces.RealOutput y[5] "Multiple powers of the input"

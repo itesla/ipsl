@@ -1,6 +1,6 @@
 within OpenIPSL.Electrical.Wind.GE.Type_3.Turbine;
 model Cp_function
-  extends Modelica.Blocks.Interfaces.BlockIcon;
+  extends Modelica.Blocks.Icons.Block;
   Modelica.Blocks.Interfaces.RealInput Lambda "Lambda" annotation (Placement(
       transformation(
         extent={{-140.0,40.0},{-100.0,80.0}},
