@@ -1,6 +1,6 @@
 within OpenIPSL.Examples.Controls.PSAT.TG;
 model TGTypeI_test
-  extends TGTestBase;
+  extends BaseClasses.TGTestBase;
   extends Modelica.Icons.Example;
   parameter Real p0=0.160352698692006 "Power flow, node active power";
   OpenIPSL.Electrical.Controls.PSAT.TG.TGTypeI tGTypeI(

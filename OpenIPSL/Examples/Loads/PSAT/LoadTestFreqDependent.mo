@@ -1,6 +1,6 @@
 within OpenIPSL.Examples.Loads.PSAT;
 model LoadTestFreqDependent
-  extends LoadTestBase;
+  extends BaseClasses.LoadTestBase;
   extends Modelica.Icons.Example;
   OpenIPSL.Electrical.Loads.PSAT.FrequencyDependent frequencyDependent(
     alpha_p=0,

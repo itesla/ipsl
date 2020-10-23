@@ -1,6 +1,6 @@
 within OpenIPSL.Examples.Controls.PSAT.OEL;
 model AVRTypeII_OEL_Test
-  extends OpenIPSL.Examples.BaseTest(
+  extends OpenIPSL.Examples.BaseClasses.MachineTestBase(
     pwLoadPQ2(
       t_start_1=1,
       t_end_1=21,

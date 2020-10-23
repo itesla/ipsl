@@ -1,5 +1,5 @@
-within OpenIPSL.Examples;
-partial model SMIBpartial "SMIB system with one load"
+within OpenIPSL.Examples.BaseClasses;
+partial model SMIB "SMIB - Single Machine Infinte Base system with one load"
   extends Modelica.Icons.Example;
   OpenIPSL.Electrical.Branches.PwLine pwLine(
     R=0.001,
@@ -46,7 +46,7 @@ partial model SMIBpartial "SMIB system with one load"
   OpenIPSL.Electrical.Buses.Bus GEN1
     annotation (Placement(transformation(extent={{-40,-10},{-20,10}})));
   inner OpenIPSL.Electrical.SystemBase SysData(S_b = 100e6, fn = 50)
-    annotation (Placement(transformation(extent={{-100,80},{-40,100}})));
+    annotation (Placement(transformation(extent={{-100,80},{-60,100}})));
   OpenIPSL.Electrical.Buses.Bus LOAD
     annotation (Placement(transformation(extent={{-10,-10},{10,10}})));
   OpenIPSL.Electrical.Buses.Bus GEN2
@@ -94,4 +94,4 @@ equation
     annotation (Line(points={{54.6,30},{40,30}}, color={0,0,255}));
   connect(pwLine2.n, GEN2.p) annotation (Line(points={{65.4,30},{70,30},{70,0},{80,0}},
                    color={0,0,255}));
-end SMIBpartial;
+end SMIB;

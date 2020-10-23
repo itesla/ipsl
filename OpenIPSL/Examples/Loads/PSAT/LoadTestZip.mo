@@ -1,6 +1,6 @@
 within OpenIPSL.Examples.Loads.PSAT;
 model LoadTestZip
-  extends LoadTestBase;
+  extends BaseClasses.LoadTestBase;
   extends Modelica.Icons.Example;
   OpenIPSL.Electrical.Loads.PSAT.ZIP zIP(
     Sn=10000000,

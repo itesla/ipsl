@@ -1,6 +1,6 @@
 within OpenIPSL.Examples.Controls.PSSE.ES;
 model SCRX "SMIB model example of GENROU with Excitation System SCRX"
-  extends OpenIPSL.Examples.SMIBpartial;
+  extends OpenIPSL.Examples.BaseClasses.SMIB;
   Modelica.Blocks.Sources.Constant const2(k=0)
     annotation (Placement(transformation(extent={{-110,166},{-94,182}})));
   OpenIPSL.Electrical.Machines.PSSE.GENROU gENROU(

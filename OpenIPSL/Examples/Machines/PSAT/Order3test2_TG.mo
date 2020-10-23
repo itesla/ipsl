@@ -1,6 +1,6 @@
 within OpenIPSL.Examples.Machines.PSAT;
 model Order3test2_TG
-  extends OpenIPSL.Examples.BaseTest;
+  extends OpenIPSL.Examples.BaseClasses.MachineTestBase;
   extends Modelica.Icons.Example;
   OpenIPSL.Electrical.Machines.PSAT.Order3 order3_Inputs_Outputs1(
     angle_0=0,

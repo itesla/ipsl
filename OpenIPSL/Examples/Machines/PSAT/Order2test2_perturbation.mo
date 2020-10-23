@@ -1,6 +1,6 @@
 within OpenIPSL.Examples.Machines.PSAT;
 model Order2test2_perturbation
-  extends OpenIPSL.Examples.BaseTest;
+  extends OpenIPSL.Examples.BaseClasses.MachineTestBase;
   extends Modelica.Icons.Example;
   Modelica.Blocks.Math.Add3 add31 annotation (Placement(transformation(
         origin={-45,25},

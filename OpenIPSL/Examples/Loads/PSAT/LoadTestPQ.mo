@@ -1,6 +1,6 @@
 within OpenIPSL.Examples.Loads.PSAT;
 model LoadTestPQ
-  extends LoadTestBase;
+  extends BaseClasses.LoadTestBase;
   extends Modelica.Icons.Example;
   OpenIPSL.Electrical.Loads.PSAT.PQ pQ(
     Sn=10000000,
