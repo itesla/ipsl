@@ -1,5 +1,5 @@
 within OpenIPSL.Electrical.Branches.PSAT;
-model PhaseShiftingTransformer2
+model PhaseShiftingTransformer2 "Phase Shifting Transformer (PST)"
 
   model PhaseShifter "Controller for shifting the phase (internal model)"
     parameter SI.PerUnit pref=0.01 "Desired power flow"
@@ -145,5 +145,52 @@ equation
                   Line(
           points={{94,0},{100,0},{100,0}},
           color={0,0,255},
-          smooth=Smooth.None)}),                                 Diagram(coordinateSystem(preserveAspectRatio=false)));
+          smooth=Smooth.None)}),                                 Diagram(coordinateSystem(preserveAspectRatio=false)),
+    Documentation(info="<html>
+<p>The following documentation is adapted from 
+<a href=\"modelica://OpenIPSL.UsersGuide.References\">[Milano2010], chapter 11.2.3</a>:</p>
+<blockquote>
+<p>Phase Shifting Transformers (PhSTs) are able to vary the phase shifting angle
+&phi; to control the active power flow. These devices are used in meshed networks
+for reducing the congestion on some transmission lines and/or properly redis-
+tributing active power flows in transmission lines. A fairly complete review
+of PhST technologies can be found in 
+<a href=\"modelica://OpenIPSL.UsersGuide.References\">[Verboomen2005]</a>.
+</p>
+<p>
+[...]
+</p>
+<p>
+The measured <code>pmes</code> of the real power flow <code>pk</code> 
+is compared with the desired power flow <code>pref</code> and a PI controller 
+is used for varying the phase angle &phi;.
+<p>
+[...]
+</p>
+<p>
+The phase angle &phi; is subjected to an windup limiter. 
+[...] It is relevant to note that connecting two areas of a
+network only by means of PhSTs can lead to unsolvable cases, as PhSTs
+impose the total real power transfer between the two areas.
+</p>
+</blockquote>
+</html>", revisions="<html>
+<table cellspacing=\"1\" cellpadding=\"1\" border=\"1\"><tr>
+<td><p>Reference</p></td>
+<td><p>PSAT Manual 2.1.8</p></td>
+</tr>
+<tr>
+<td><p>Last update</p></td>
+<td><p>2020-10-23</p></td>
+</tr>
+<tr>
+<td><p>Author</p></td>
+<td><p>Dietmar Winkler, USN</p></td>
+</tr>
+<tr>
+<td><p>Contact</p></td>
+<td><p><a href=\"http://openipsl.org\">openipsl.org</a></p></td>
+</tr>
+</table>
+</html>"));
 end PhaseShiftingTransformer2;
