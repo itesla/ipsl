@@ -1,6 +1,6 @@
 within OpenIPSL.Examples.Controls.PSAT.TG;
 model TGTypeIV_test
-  extends TGTestBase;
+  extends BaseClasses.TGTestBase;
   extends Modelica.Icons.Example;
   OpenIPSL.Electrical.Controls.PSAT.TG.TGTypeIV tGTypeIV(
     Ki=0.105,

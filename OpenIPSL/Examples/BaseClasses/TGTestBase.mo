@@ -1,4 +1,4 @@
-within OpenIPSL.Examples.Controls.PSAT.TG;
+within OpenIPSL.Examples.BaseClasses;
 partial model TGTestBase
   OpenIPSL.Electrical.Loads.PSAT.PQ pwLoadPQ1(
     angle_0=0,

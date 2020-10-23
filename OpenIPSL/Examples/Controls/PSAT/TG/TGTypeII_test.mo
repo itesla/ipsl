@@ -1,6 +1,6 @@
 within OpenIPSL.Examples.Controls.PSAT.TG;
 model TGTypeII_test
-  extends TGTestBase;
+  extends BaseClasses.TGTestBase;
   extends Modelica.Icons.Example;
   Electrical.Controls.PSAT.TG.TGtypeII           tGtypeII(S_b=SysData.S_b)
              annotation (Placement(transformation(extent={{-68,-24},{-40,4}})));
