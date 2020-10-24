@@ -47,7 +47,7 @@ partial model SMIB "SMIB - Single Machine Infinte Base system with one load"
     annotation (Placement(transformation(extent={{-40,-10},{-20,10}})));
   inner OpenIPSL.Electrical.SystemBase SysData(S_b = 100e6, fn = 50)
     annotation (Placement(transformation(extent={{-100,80},{-60,100}})));
-  OpenIPSL.Electrical.Buses.Bus LOAD
+  OpenIPSL.Electrical.Buses.Bus LOAD(v_0=constantLoad.v_0, angle_0=constantLoad.angle_0)
     annotation (Placement(transformation(extent={{-10,-10},{10,10}})));
   OpenIPSL.Electrical.Buses.Bus GEN2
     annotation (Placement(transformation(extent={{70,-10},{90,10}})));
