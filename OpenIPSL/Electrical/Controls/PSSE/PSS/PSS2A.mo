@@ -1,5 +1,5 @@
 within OpenIPSL.Electrical.Controls.PSSE.PSS;
-model PSS2A "IEEE Dual-Input Stabilizer Model"
+model PSS2A "PSS2A - Dual-Input Stabilizer Model (IEEE Std 421.5-1992)"
   extends BaseClasses.BasePSS;
   parameter Real T_w1=10 "Washout 1 time constant";
   parameter Real T_w2=10 "Washout 2 time constant";

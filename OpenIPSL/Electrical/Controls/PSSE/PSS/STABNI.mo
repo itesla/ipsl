@@ -1,5 +1,5 @@
 within OpenIPSL.Electrical.Controls.PSSE.PSS;
-model STABNI "Power Sensitive Stabilizer Model Type NI (NVE)"
+model STABNI "STABNI - Power Sensitive Stabilizer Model Type NI (NVE)"
   parameter SI.PerUnit K=1 "Input low-pass filter gain. It must be equal to or greater than 0";
   parameter SI.Time T_1=1 "Stabilizer filter time constant. It must be greater than 0";
   parameter SI.Time T_2=1 "Input low-pass filter time constant. It must be equal to or greater than 0";
@@ -68,8 +68,8 @@ equation
     Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-120,-40},{120,
             40}})),
     Icon(coordinateSystem(extent={{-120,-40},{120,40}}, preserveAspectRatio=
-            false), graphics={Rectangle(extent={{-120,40},{120,-40}}, lineColor
-          ={28,108,200}),Text(
+            false), graphics={Rectangle(extent={{-120,40},{120,-40}}, lineColor=
+           {28,108,200}),Text(
           extent={{-64,20},{56,-20}},
           lineColor={28,108,200},
           textString="STABNI"),Text(

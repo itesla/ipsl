@@ -1,5 +1,5 @@
 within OpenIPSL.Electrical.Controls.PSSE.PSS;
-model IEEEST "1981 IEEE Power System Stabilizer Model"
+model IEEEST "IEEEST - 1981 IEEE Power System Stabilizer Model"
   parameter SI.Time A_1=0 "Power system stabilizer high frequency filter coefficient";
   parameter Real A_2=0 "Power system stabilizer high frequency filter coefficient";
   parameter SI.Time A_3=0 "Power system stabilizer high frequency filter coefficient";

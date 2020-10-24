@@ -1,5 +1,5 @@
 within OpenIPSL.Electrical.Controls.PSSE.PSS;
-model STAB3 "Power Sensitive Stabilizer Model with Dual-Input Signals"
+model STAB3 "STAB3 - Power Sensitive Stabilizer Model with Dual-Input Signals"
   parameter SI.Time T_t=1 "Input transducer time constant";
   parameter SI.Time T_X1=1 "Low-pass filter time constant. Value must be greater than 0";
   parameter SI.Time T_X2=1 "Stabilizer washout denominator time constant. Value must be greater than 0";
@@ -59,8 +59,8 @@ equation
     Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-40},{100,
             40}})),
     Icon(coordinateSystem(extent={{-100,-40},{100,40}}, preserveAspectRatio=
-            false), graphics={Rectangle(extent={{-100,40},{100,-40}}, lineColor
-          ={28,108,200}),Text(
+            false), graphics={Rectangle(extent={{-100,40},{100,-40}}, lineColor=
+           {28,108,200}),Text(
           extent={{-70,20},{70,-20}},
           lineColor={28,108,200},
           textString="STAB3"),Text(
