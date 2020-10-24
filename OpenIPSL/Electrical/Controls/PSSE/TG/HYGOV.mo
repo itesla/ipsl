@@ -1,5 +1,5 @@
 within OpenIPSL.Electrical.Controls.PSSE.TG;
-model HYGOV "Hydro turbine-governor model"
+model HYGOV "HYGOV - Hydro Turbine-Governor model"
   extends Icons.VerifiedModel;
   extends BaseClasses.BaseGovernor;
   parameter SI.PerUnit R=0.05 "Permanent droop gain";

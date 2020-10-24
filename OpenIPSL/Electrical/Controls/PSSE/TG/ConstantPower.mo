@@ -1,5 +1,5 @@
 within OpenIPSL.Electrical.Controls.PSSE.TG;
-model ConstantPower
+model ConstantPower "Constant Power (feed through)"
 extends BaseClasses.BaseGovernor;
 equation
   connect(PMECH0, PMECH) annotation (Line(points={{-240,80},{0,80},{0,0},{250,0}},
