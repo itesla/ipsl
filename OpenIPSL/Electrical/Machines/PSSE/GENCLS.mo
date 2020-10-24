@@ -59,7 +59,7 @@ equation
     der(omega) = (P_0/S_b - P - D*omega)/(2*H);
   else
     der(delta) = 0;
-    omega = 0;
+    der(omega) = 0;
   end if;
   // d-q voltage and current equations
   der(eq) = 0 "Classical model assumes constant emf";
