@@ -1,6 +1,5 @@
 within OpenIPSL.Electrical.Controls.PSSE.ES;
-model ESST4B "IEEE type ST4B potential or compounded
-  source-controlled rectifier exciter"
+model ESST4B "ST4B Excitation System (IEEE Std 421.5-2016)"
   extends Icons.VerifiedModel;
   extends OpenIPSL.Electrical.Controls.PSSE.ES.BaseClasses.BaseExciter;
   import Modelica.ComplexMath.j;

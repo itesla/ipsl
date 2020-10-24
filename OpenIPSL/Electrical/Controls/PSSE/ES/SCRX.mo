@@ -1,5 +1,5 @@
 within OpenIPSL.Electrical.Controls.PSSE.ES;
-model SCRX "Bus Fed or Solid Fed Static Exciter"
+model SCRX "SCRX - Bus Fed or Solid Fed Static Exciter"
   extends Icons.VerifiedModel;
   extends OpenIPSL.Electrical.Controls.PSSE.ES.BaseClasses.BaseExciter;
   parameter Real T_AT_B=0.1 "Ratio between regulator numerator (lead) and denominator (lag) time constants";

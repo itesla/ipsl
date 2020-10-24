@@ -1,5 +1,5 @@
 within OpenIPSL.Electrical.Controls.PSSE.ES;
-model ConstantExcitation
+model ConstantExcitation "Constant Excitation (feed through)"
 extends OpenIPSL.Electrical.Controls.PSSE.ES.BaseClasses.BaseExciter;
 initial equation
   V_REF = 0;

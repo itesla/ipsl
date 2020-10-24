@@ -1,5 +1,5 @@
 within OpenIPSL.Electrical.Controls.PSSE.ES;
-model ESDC1A "IEEE Type DC1A Excitation System"
+model ESDC1A "DC1A Excitation System (IEEE Std 421.5-2016)"
   extends Icons.VerifiedModel;
   extends OpenIPSL.Electrical.Controls.PSSE.ES.BaseClasses.BaseExciter;
   import OpenIPSL.NonElectrical.Functions.SE;

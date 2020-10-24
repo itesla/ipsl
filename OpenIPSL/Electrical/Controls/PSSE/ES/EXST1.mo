@@ -1,5 +1,5 @@
 within OpenIPSL.Electrical.Controls.PSSE.ES;
-model EXST1 "IEEE Type ST1 Excitation System"
+model EXST1 "ST1 Excitation System (IEEE Std 421.5-2016)"
   extends OpenIPSL.Electrical.Controls.PSSE.ES.BaseClasses.BaseExciter;
   parameter SI.Time T_R=0.02 "Regulator input filter time constant";
   parameter SI.PerUnit V_IMAX=0.2 "Maximum voltage error (regulator input)";

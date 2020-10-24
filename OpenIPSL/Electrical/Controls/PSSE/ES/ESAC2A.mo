@@ -1,5 +1,5 @@
 within OpenIPSL.Electrical.Controls.PSSE.ES;
-model ESAC2A "IEEE Type AC2A Excitation System"
+model ESAC2A "AC2A Excitation System (IEEE Std 421.5-2016)"
 import OpenIPSL.NonElectrical.Functions.SE;
   import OpenIPSL.Electrical.Controls.PSSE.ES.BaseClasses.invFEX;
   extends Icons.VerifiedModel;
