@@ -47,14 +47,15 @@ partial model baseMachine
     annotation (Dialog(group="Machine parameters"));
   parameter SI.PerUnit R_a=0 "Armature resistance"
     annotation (Dialog(group="Machine parameters"));
-  //Initialization
+  parameter SI.PerUnit w0(min=-1+C.eps)=0 "Initial speed deviation from nominal"
+    annotation (Dialog(group="Initialization"));
   OpenIPSL.Interfaces.PwPin p(
     vr(start=vr0),
     vi(start=vi0),
     ir(start=ir0),
     ii(start=ii0))
     annotation (Placement(transformation(extent={{90,-10},{110,10}})));
-  RealOutput SPEED(start=0) "Machine speed deviation from nominal (pu)"
+  RealOutput SPEED "Machine speed deviation from nominal (pu)"
     annotation (Placement(transformation(extent={{100,60},{120,80}})));
   RealInput PMECH "Turbine mechanical power (pu, machine base)"
     annotation (Placement(transformation(extent={{-140,30},{-100,70}})));
@@ -78,7 +79,7 @@ partial model baseMachine
         origin={110,-90}), iconTransformation(
         extent={{-10,-10},{10,10}},
         origin={110,-90})));
-  SI.PerUnit w(start=0) "Machine speed deviation (pu)";
+  SI.PerUnit w(start=w0) "Machine speed deviation (pu)";
   SI.Angle delta "Rotor angle";
   SI.PerUnit Vt(start=v_0) "Bus voltage magnitude (pu)";
   SI.Angle anglev(start=angle_0rad) "Bus voltage angle";

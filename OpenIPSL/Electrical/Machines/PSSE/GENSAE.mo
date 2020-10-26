@@ -13,11 +13,9 @@ model GENSAE "SALIENT POLE GENERATOR MODEL (EXPONENTIAL SATURATION)"
   import Modelica.ComplexMath.j;
   //Extending machine base
   extends BaseClasses.baseMachine(
-    w(start=0),
     EFD(start=efd0),
     XADIFD(start=efd0),
     PMECH(start=pm0),
-    ANGLE(start=delta0),
     delta(start=delta0),
     id(start=id0),
     iq(start=iq0),
@@ -90,8 +88,6 @@ initial equation
   der(Epq) = 0;
   der(PSIkd) = 0;
   der(PSIppq) = 0;
-  delta = delta0;
-  w = 0;
 equation
   //Interfacing outputs with the internal variables
   XADIFD = XadIfd;
@@ -119,7 +115,6 @@ equation
   Te = PSId*iq - PSIq*id;
   ud = (-PSIq) - R_a*id;
   uq = PSId - R_a*iq;
-  //flow, changed from machine base to system bas
   annotation (
     Icon(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,
             100}}), graphics={Text(

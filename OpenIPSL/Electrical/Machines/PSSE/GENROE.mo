@@ -12,11 +12,9 @@ model GENROE "ROUND ROTOR GENERATOR MODEL (EXPONENTIAL SATURATION)"
   import OpenIPSL.NonElectrical.Functions.SE_exp;
   import Modelica.ComplexMath.j;
   extends BaseClasses.baseMachine(
-    w(start=0),
     EFD(start=efd0),
     XADIFD(start=efd0),
     PMECH(start=pm0),
-    ANGLE(start=delta0),
     delta(start=delta0),
     id(start=id0),
     iq(start=iq0),
@@ -125,8 +123,6 @@ initial equation
   der(Epq) = 0;
   der(PSIkd) = 0;
   der(PSIkq) = 0;
-  delta = delta0;
-  w = 0;
 equation
   //Interfacing outputs with the internal variables
   XADIFD = XadIfd;
@@ -158,7 +154,6 @@ equation
   //change sign for PSIppq 3/3
   ud = (-PSIq) - R_a*id;
   uq = PSId - R_a*iq;
-  //flow
   annotation (
     Icon(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,
             100}}), graphics={Text(
