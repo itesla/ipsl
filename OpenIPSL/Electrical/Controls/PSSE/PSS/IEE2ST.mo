@@ -1,5 +1,5 @@
 within OpenIPSL.Electrical.Controls.PSSE.PSS;
-model IEE2ST "IEE2S - IEEE Stabilizing Model With Dual-Input Signals"
+model IEE2ST "IEE2ST - IEEE Stabilizing Model With Dual-Input Signals"
   parameter SI.PerUnit K_1=1 "First input filter gain";
   parameter SI.PerUnit K_2=1 "Second input filter gain";
   parameter SI.Time T_1=0.005 "First input filter time constant";

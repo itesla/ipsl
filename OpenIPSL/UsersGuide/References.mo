@@ -4,6 +4,43 @@ model References "References"
   annotation (Documentation(info="<html>
 <table cellspacing=\"0\" cellpadding=\"2\" border=\"0\">
 <tr>
+<td>[IEEE1981]</td>
+<td>IEEE:
+        &quot;Excitation System Models for Power System Stability Studies&quot;,
+        in IEEE Transactions on Power Apparatus and Systems, IEEE Report 1981, 
+        <a href=\"https://doi.org/10.1109/TPAS.1981.316906\">DOI: 10.1109/TPAS.1981.316906</a>
+</td>
+</tr>
+10.1109/IEEESTD.1992.106975</a>
+<tr>
+<td>[IEEE1992]</td>
+<td>IEEE:
+        &quot;421.5-1992 - IEEE Recommended Practice for Excitation System Models 
+        for Power System Stability Studies&quot;,
+        IEEE Standard 1992,
+        <a href=\"https://doi.org/10.1109/IEEESTD.1992.106975\">DOI: 10.1109/IEEESTD.1992.106975</a>
+</td>
+</tr>
+<tr><tr>
+<td>[IEEE2005]</td>
+<td>IEEE:
+        &quot;421.5-2016 - IEEE Recommended Practice for Excitation System Models 
+        for Power System Stability Studies&quot;,
+        IEEE Standard 2005,
+        <a href=\"https://doi.org/10.1109/IEEESTD.2006.99499\">DOI: 10.1109/IEEESTD.2006.99499</a>
+</td>
+</tr>
+<tr>
+<tr>
+<td>[IEEE2016]</td>
+<td>IEEE:
+        &quot;421.5-2016 - IEEE Recommended Practice for Excitation System Models 
+        for Power System Stability Studies&quot;,
+        IEEE Standard 2016,
+        <a href=\"https://doi.org/10.1109/IEEESTD.2016.7553421\">DOI: 10.1109/IEEESTD.2016.7553421</a>
+</td>
+</tr>
+<tr>
 <td>[Milano2010]</td>
 <td>Federico Milano:
         &quot;Power System Modelling and Scripting&quot;,

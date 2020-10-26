@@ -1,5 +1,5 @@
 within OpenIPSL.Electrical.Controls.PSSE.ES;
-model ESST4B "ST4B Excitation System (IEEE Std 421.5-2016)"
+model ESST4B "ST4B Excitation System [IEEE2005]"
   extends Icons.VerifiedModel;
   extends OpenIPSL.Electrical.Controls.PSSE.ES.BaseClasses.BaseExciter;
   import Modelica.ComplexMath.j;
