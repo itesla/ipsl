@@ -1,5 +1,5 @@
 within OpenIPSL.Electrical.Controls.PSSE.ES;
-model EXNI "Bus or Solid Fed SCR Bridge Excitation System Model Type NI (NVE)"
+model EXNI "Type NI (NVE) - Bus or Solid Fed SCR Bridge Excitation System"
   extends OpenIPSL.Electrical.Controls.PSSE.ES.BaseClasses.BaseExciter;
   parameter SI.Time T_R=0.06 "Regulator input filter time constant";
   parameter SI.PerUnit K_A=150 "Regulator output gain";

@@ -1,5 +1,5 @@
 within OpenIPSL.Electrical.Controls.PSSE.PSS;
-model DisabledPSS
+model DisabledPSS "Disabled PSS (constant output)"
   extends BaseClasses.BasePSS;
 
   Modelica.Blocks.Sources.Constant const

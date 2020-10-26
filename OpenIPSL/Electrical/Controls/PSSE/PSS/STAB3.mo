@@ -1,20 +1,20 @@
 within OpenIPSL.Electrical.Controls.PSSE.PSS;
-model STAB3 "Power Sensitive Stabilizer Model with Dual-Input Signals"
+model STAB3 "STAB3 - Power Sensitive Stabilizer Model with Dual-Input Signals"
   parameter SI.Time T_t=1 "Input transducer time constant";
   parameter SI.Time T_X1=1 "Low-pass filter time constant. Value must be greater than 0";
   parameter SI.Time T_X2=1 "Stabilizer washout denominator time constant. Value must be greater than 0";
   parameter SI.Time K_X=1 "Stabilizer washout numerator time constant";
   parameter SI.PerUnit V_LIM=5 "Limit value for stabilizer output";
   Modelica.Blocks.Interfaces.RealInput PELEC "Machine electrical power [pu]"
-    annotation (Placement(transformation(extent={{-130,-20},{-90,20}}),
-        iconTransformation(extent={{-130,-20},{-90,20}})));
+    annotation (Placement(transformation(extent={{-140,-20},{-100,20}}),
+        iconTransformation(extent={{-140,-20},{-100,20}})));
   Modelica.Blocks.Interfaces.RealOutput VOTHSG "PSS output signal" annotation (
       Placement(transformation(extent={{100,-10},{120,10}}), iconTransformation(
           extent={{100,-10},{120,10}})));
   Modelica.Blocks.Nonlinear.Limiter limiter(uMax=V_LIM, uMin=-V_LIM)
-    annotation (Placement(transformation(extent={{70,-10},{90,10}})));
+    annotation (Placement(transformation(extent={{60,-10},{80,10}})));
   Modelica.Blocks.Sources.Constant const(k=P_REF)
-    annotation (Placement(transformation(extent={{-60,-40},{-40,-20}})));
+    annotation (Placement(transformation(extent={{-80,-40},{-60,-20}})));
 protected
   parameter SI.PerUnit P_REF(fixed=false);
   parameter SI.PerUnit PELEC0(fixed=false);
@@ -22,52 +22,51 @@ protected
     K=1,
     T=T_t,
     y_start=PELEC0)
-    annotation (Placement(transformation(extent={{-76,-10},{-56,10}})));
+    annotation (Placement(transformation(extent={{-80,-10},{-60,10}})));
   Modelica.Blocks.Math.Feedback feedback
-    annotation (Placement(transformation(extent={{-40,-10},{-20,10}})));
+    annotation (Placement(transformation(extent={{-50,-10},{-30,10}})));
   NonElectrical.Continuous.SimpleLag imSimpleLag1(
     K=1,
     T=T_X1,
-    y_start=0) annotation (Placement(transformation(extent={{0,-10},{20,10}})));
+    y_start=0) annotation (Placement(transformation(extent={{-20,-10},{0,10}})));
   Modelica.Blocks.Continuous.Derivative imDerivativeLag(
     y_start=0,
     k=-K_X,
     T=T_X2,
     initType=Modelica.Blocks.Types.Init.InitialOutput)
-    annotation (Placement(transformation(extent={{34,-10},{54,10}})));
+    annotation (Placement(transformation(extent={{20,-10},{40,10}})));
 initial equation
   PELEC0 = PELEC;
   P_REF = PELEC0;
 equation
   connect(imSimpleLag1.y, imDerivativeLag.u)
-    annotation (Line(points={{21,0},{32,0}}, color={0,0,127}));
+    annotation (Line(points={{1,0},{18,0}},  color={0,0,127}));
   connect(imSimpleLag.y, feedback.u1)
-    annotation (Line(points={{-55,0},{-46.5,0},{-38,0}}, color={0,0,127}));
+    annotation (Line(points={{-59,0},{-48,0}},           color={0,0,127}));
   connect(imSimpleLag.u, PELEC)
-    annotation (Line(points={{-78,0},{-110,0},{-110,0}}, color={0,0,127}));
+    annotation (Line(points={{-82,0},{-120,0}},          color={0,0,127}));
   connect(feedback.y, imSimpleLag1.u)
-    annotation (Line(points={{-21,0},{-11.5,0},{-2,0}}, color={0,0,127}));
+    annotation (Line(points={{-31,0},{-22,0}},          color={0,0,127}));
   connect(imSimpleLag1.y, imDerivativeLag.u)
-    annotation (Line(points={{21,0},{26.5,0},{32,0}}, color={0,0,127}));
+    annotation (Line(points={{1,0},{18,0}},           color={0,0,127}));
   connect(imDerivativeLag.y, limiter.u)
-    annotation (Line(points={{55,0},{68,0}}, color={0,0,127}));
+    annotation (Line(points={{41,0},{58,0}}, color={0,0,127}));
   connect(limiter.y, VOTHSG)
-    annotation (Line(points={{91,0},{110,0}}, color={0,0,127}));
+    annotation (Line(points={{81,0},{110,0}}, color={0,0,127}));
   connect(const.y, feedback.u2)
-    annotation (Line(points={{-39,-30},{-30,-30},{-30,-8}}, color={0,0,127}));
+    annotation (Line(points={{-59,-30},{-40,-30},{-40,-8}}, color={0,0,127}));
   annotation (
-    Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-40},{100,
-            40}})),
-    Icon(coordinateSystem(extent={{-100,-40},{100,40}}, preserveAspectRatio=
-            false), graphics={Rectangle(extent={{-100,40},{100,-40}}, lineColor
-          ={28,108,200}),Text(
-          extent={{-70,20},{70,-20}},
+    Diagram(coordinateSystem(extent={{-100,-60},{100,60}})),
+    Icon(graphics={Rectangle(extent={{-100,100},{100,-100}},
+                                                           lineColor=
+           {28,108,200}),Text(
+          extent={{-40,80},{40,40}},
           lineColor={28,108,200},
           textString="STAB3"),Text(
-          extent={{-88,10},{-58,-10}},
+          extent={{-92,20},{-50,-20}},
           lineColor={28,108,200},
           textString="PELEC"),Text(
-          extent={{64,14},{98,-12}},
+          extent={{50,20},{90,-20}},
           lineColor={28,108,200},
           textString="VOTHSG")}),
     Documentation(info="<html>

@@ -1,5 +1,5 @@
 within OpenIPSL.Electrical.Controls.PSSE.ES;
-model EXAC2 "1981 IEEE type AC2 Excitation System Model"
+model EXAC2 "AC2 Excitation System [IEEE1981]"
   extends Icons.VerifiedModel;
   extends OpenIPSL.Electrical.Controls.PSSE.ES.BaseClasses.BaseExciter;
   import OpenIPSL.Electrical.Controls.PSSE.ES.BaseClasses.invFEX;

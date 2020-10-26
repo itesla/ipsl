@@ -1,5 +1,5 @@
 within OpenIPSL.Electrical.Controls.PSSE.TG;
-model IEEEG1 "1981 IEEE Type 1 Turbine-Governor Model"
+model IEEEG1 "IEEEG1 - 1981 IEEE Type 1 Turbine-Governor Model"
   extends Icons.VerifiedModel;
   Modelica.Blocks.Interfaces.RealInput SPEED_HP "Machine speed deviation from nominal [pu]"
     annotation (Placement(transformation(extent={{-180,-10},{-160,10}}),

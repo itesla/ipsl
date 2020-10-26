@@ -1,5 +1,5 @@
 within OpenIPSL.Electrical.Controls.PSSE.PSS;
-model IEE2ST "IEEE Stabilizing Model With Dual-Input Signals"
+model IEE2ST "IEE2ST - IEEE Stabilizing Model With Dual-Input Signals"
   parameter SI.PerUnit K_1=1 "First input filter gain";
   parameter SI.PerUnit K_2=1 "Second input filter gain";
   parameter SI.Time T_1=0.005 "First input filter time constant";
@@ -17,15 +17,15 @@ model IEE2ST "IEEE Stabilizing Model With Dual-Input Signals"
   parameter SI.PerUnit V_CU=0 "Maximum power system stabilizer output";
   parameter SI.PerUnit V_CL=0 "Minimum power system stabilizer output";
   Modelica.Blocks.Interfaces.RealInput V_S1 "PSS input signal 1"
-    annotation (Placement(transformation(extent={{-200,20},{-160,60}})));
+    annotation (Placement(transformation(extent={{-220,20},{-180,60}}), iconTransformation(extent={{-140,20},{-100,60}})));
   Modelica.Blocks.Interfaces.RealInput V_S2 "PSS input signal 2"
-    annotation (Placement(transformation(extent={{-200,-60},{-160,-20}})));
+    annotation (Placement(transformation(extent={{-220,-60},{-180,-20}}), iconTransformation(extent={{-140,-60},{-100,-20}})));
   Modelica.Blocks.Math.Add add
     annotation (Placement(transformation(extent={{-100,-10},{-80,10}})));
   Modelica.Blocks.Nonlinear.Limiter limiter(uMax=L_SMAX, uMin=L_SMIN)
-    annotation (Placement(transformation(extent={{96,-10},{116,10}})));
+    annotation (Placement(transformation(extent={{100,-10},{120,10}})));
   Modelica.Blocks.Interfaces.RealOutput VOTHSG "PSS output signal"
-    annotation (Placement(transformation(extent={{180,-10},{200,10}})));
+    annotation (Placement(transformation(extent={{180,-10},{200,10}}), iconTransformation(extent={{100,-10},{120,10}})));
   Modelica.Blocks.Continuous.Derivative imDerivativeLag(
     k=T_3,
     T=T_4,
@@ -62,7 +62,10 @@ model IEE2ST "IEEE Stabilizing Model With Dual-Input Signals"
         transformation(
         extent={{-20,-20},{20,20}},
         rotation=90,
-        origin={0,-60})));
+        origin={0,-80}), iconTransformation(
+        extent={{-20,-20},{20,20}},
+        rotation=90,
+        origin={0,-120})));
 protected
   Modelica.Blocks.Interfaces.RealOutput VSS
     annotation (Placement(transformation(extent={{136,-10},{156,10}})));
@@ -93,17 +96,17 @@ equation
     VOTHSG = 0;
   end if;
   connect(limiter.y, VSS)
-    annotation (Line(points={{117,0},{146,0}}, color={0,0,127}));
+    annotation (Line(points={{121,0},{146,0}}, color={0,0,127}));
   connect(V_S2, imSimpleLag1.u)
-    annotation (Line(points={{-180,-40},{-152,-40}}, color={0,0,127}));
+    annotation (Line(points={{-200,-40},{-152,-40}}, color={0,0,127}));
   connect(imSimpleLag1.y, add.u2) annotation (Line(points={{-129,-40},{-120,-40},
           {-120,-6},{-102,-6}}, color={0,0,127}));
   connect(V_S1, imSimpleLag.u)
-    annotation (Line(points={{-180,40},{-166,40},{-152,40}}, color={0,0,127}));
+    annotation (Line(points={{-200,40},{-152,40}},           color={0,0,127}));
   connect(imSimpleLag.y, add.u1) annotation (Line(points={{-129,40},{-120,40},{
           -120,6},{-102,6}}, color={0,0,127}));
   connect(imLeadLag2.y, limiter.u)
-    annotation (Line(points={{81,0},{94,0}}, color={0,0,127}));
+    annotation (Line(points={{81,0},{98,0}}, color={0,0,127}));
   connect(imLeadLag1.y, imLeadLag2.u)
     annotation (Line(points={{41,0},{49.5,0},{58,0}}, color={0,0,127}));
   connect(imLeadLag.y, imLeadLag1.u)
@@ -113,25 +116,24 @@ equation
   connect(add.y, imDerivativeLag.u)
     annotation (Line(points={{-79,0},{-62,0}}, color={0,0,127}));
   annotation (
-    Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-180,-60},{180,
+    Diagram(coordinateSystem(extent={{-180,-60},{180,
             60}})),
-    Icon(coordinateSystem(extent={{-180,-60},{180,60}}, preserveAspectRatio=
-            false), graphics={Text(
-          extent={{-156,52},{-114,28}},
+    Icon( graphics={Text(
+          extent={{-88,60},{-50,20}},
           lineColor={28,108,200},
           textString="ICS1"),Text(
-          extent={{-158,-28},{-114,-54}},
+          extent={{-90,-20},{-50,-60}},
           lineColor={28,108,200},
           textString="ICS2"),Text(
-          extent={{-20,-20},{22,-42}},
+          extent={{-20,-70},{20,-92}},
           lineColor={28,108,200},
           textString="VCT"),Text(
-          extent={{106,12},{178,-14}},
+          extent={{50,20},{90,-20}},
           lineColor={28,108,200},
           textString="VOTHSG"),Text(
-          extent={{-50,32},{58,-32}},
+          extent={{-40,80},{40,40}},
           lineColor={28,108,200},
-          textString="IEE2ST"),Rectangle(extent={{-180,60},{180,-60}},
+          textString="IEE2ST"),Rectangle(extent={{-100,100},{100,-100}},
           lineColor={28,108,200})}),
     Documentation(info="<html>
 <table cellspacing=\"1\" cellpadding=\"1\" border=\"1\">

@@ -1,5 +1,5 @@
 within OpenIPSL.Electrical.Controls.CGMES.ES;
-model ExcSEXS "Simplified Excitation System Model from CGMES definition"
+model ExcSEXS "CGMES Simplified Excitation System Model"
   extends OpenIPSL.Electrical.Controls.PSSE.ES.BaseClasses.BaseExciter;
   parameter Real T_AT_B=0.1 "Ta/Tb - gain reduction ratio of lag-lead element";
   parameter SI.Time T_B=10 "Denominator time constant of lag-lead block";
@@ -65,10 +65,7 @@ equation
   connect(transferFunction.y, simpleLagLim.u)
     annotation (Line(points={{79,0},{98.5,0},{118,0}}, color={0,0,127}));
   annotation (
-    Diagram(coordinateSystem(
-        extent={{-200,-200},{200,160}},
-        preserveAspectRatio=false)),
-    Icon(coordinateSystem(extent={{-200,-200},{200,160}}),
+    Icon(
         graphics={Text(
           extent={{-100,160},{100,100}},
           lineColor={28,108,200},

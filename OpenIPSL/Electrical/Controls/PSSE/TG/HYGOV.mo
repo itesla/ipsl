@@ -1,5 +1,5 @@
 within OpenIPSL.Electrical.Controls.PSSE.TG;
-model HYGOV "Hydro turbine-governor model"
+model HYGOV "HYGOV - Hydro Turbine-Governor model"
   extends Icons.VerifiedModel;
   extends BaseClasses.BaseGovernor;
   parameter SI.PerUnit R=0.05 "Permanent droop gain";
@@ -149,8 +149,7 @@ equation
           lineColor={85,170,255},
           textStyle={TextStyle.Bold},
           textString="Hydraulic Turbine System")}),
-    Icon(coordinateSystem(extent={{-100,-100},{100,100}},preserveAspectRatio=false),
-         graphics={Text(
+    Icon(graphics={Text(
           extent={{-100,160},{100,100}},
           lineColor={28,108,200},
           textString="HYGOV")}),
