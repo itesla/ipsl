@@ -38,15 +38,16 @@ model IEEEST "IEEEST - Power System Stabilizer [IEEE1981]"
     annotation (Placement(transformation(extent={{60,-5},{70,5}})));
   Modelica.Blocks.Interfaces.RealOutput VOTHSG(start=0) "PSS output signal"
     annotation (Placement(transformation(extent={{120,-5},{130,5}}),
-        iconTransformation(extent={{120,-10},{140,10}})));
+        iconTransformation(extent={{100,-10},{120,10}})));
   Modelica.Blocks.Interfaces.RealInput V_S(start=0) "PSS input signal"
-    annotation (Placement(transformation(extent={{-125,-5},{-115,5}}), iconTransformation(extent={{-128,-30},{-108,-10}})));
+    annotation (Placement(transformation(extent={{-140,-10},{-120,10}}),
+                                                                       iconTransformation(extent={{-140,-60},{-100,-20}})));
   Modelica.Blocks.Nonlinear.Limiter VSS(uMax=L_SMAX, uMin=L_SMIN)
     annotation (Placement(transformation(extent={{100,-5},{110,5}})));
   Modelica.Blocks.Interfaces.RealInput V_CT
     "Compensated machine terminal voltage [pu]" annotation (Placement(
-        transformation(extent={{-125,30},{-115,40}}),
-        iconTransformation(extent={{-128,10},{-108,30}})));
+        transformation(extent={{-140,30},{-120,50}}),
+        iconTransformation(extent={{-140,20},{-100,60}})));
   Modelica.Blocks.Continuous.Derivative imDerivativeLag(
     T=T_6,
     y_start=0,
@@ -148,7 +149,7 @@ equation
     VOTHSG = 0;
   end if;
   connect(V_S, Filter1_1.u) annotation (Line(
-      points={{-120,0},{-100,0},{-100,-25},{-91,-25}},
+      points={{-130,0},{-100,0},{-100,-25},{-91,-25}},
       color={0,0,127},
       smooth=Smooth.None));
   connect(T_1_T_2.y, T_3_T_4.u)
@@ -199,24 +200,21 @@ equation
   annotation (
     Diagram(coordinateSystem(
         preserveAspectRatio=false,
-        extent={{-120,-40},{120,40}},
+        extent={{-120,-60},{120,60}},
         grid={1,1})),
-    Icon(coordinateSystem(
-        preserveAspectRatio=false,
-        extent={{-120,-40},{120,40}},
-        grid={1,1}), graphics={Rectangle(extent={{-120,40},{120,-40}},
+    Icon(graphics={Rectangle(extent={{-100,100},{100,-100}},
           lineColor={0,0,255}),Text(
-          extent={{-46,40},{54,-44}},
-          lineColor={0,0,255},
+          extent={{-40,80},{40,40}},
+          lineColor={28,108,200},
           textString="IEEEST"),Text(
-          extent={{-106,-10},{-84,-30}},
-          lineColor={0,0,255},
+          extent={{-90,-20},{-50,-60}},
+          lineColor={28,108,200},
           textString="V_S"),Text(
-          extent={{84,14},{118,-16}},
-          lineColor={0,0,255},
+          extent={{50,20},{90,-20}},
+          lineColor={28,108,200},
           textString="VOTHSG"),Text(
-          extent={{-106,32},{-78,8}},
-          lineColor={0,0,255},
+          extent={{-90,60},{-50,20}},
+          lineColor={28,108,200},
           textString="V_CT")}),
     Documentation(info="<html>
 <table cellspacing=\"1\" cellpadding=\"1\" border=\"1\">

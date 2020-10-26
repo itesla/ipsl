@@ -6,11 +6,10 @@ model STABNI "STABNI - Power Sensitive Stabilizer Model Type NI (NVE)"
   parameter SI.Time T_0=1 "Stabilizer filter time constant. It must be greater than 0";
   parameter SI.PerUnit LIMIT=5 "Limit value for stabilizer output";
   Modelica.Blocks.Interfaces.RealInput PELEC annotation (Placement(
-        transformation(extent={{-148,-20},{-108,20}}), iconTransformation(
-          extent={{-148,-20},{-108,20}})));
+        transformation(extent={{-160,-20},{-120,20}}), iconTransformation(
+          extent={{-140,-20},{-100,20}})));
   Modelica.Blocks.Interfaces.RealOutput VOTHSG annotation (Placement(
-        transformation(extent={{120,-10},{140,10}}), iconTransformation(extent=
-            {{120,-10},{140,10}})));
+        transformation(extent={{120,-10},{140,10}}), iconTransformation(extent={{100,-10},{120,10}})));
   Modelica.Blocks.Nonlinear.Limiter limiter(uMax=LIMIT, uMin=-LIMIT)
     annotation (Placement(transformation(extent={{60,-10},{80,10}})));
 protected
@@ -51,7 +50,7 @@ equation
   connect(VOTHSG, gain.y)
     annotation (Line(points={{130,0},{124,0},{117,0}}, color={0,0,127}));
   connect(PELEC, imSimpleLag.u)
-    annotation (Line(points={{-128,0},{-102,0}}, color={0,0,127}));
+    annotation (Line(points={{-140,0},{-102,0}}, color={0,0,127}));
   connect(imSimpleLag.y, imDerivativeLag.u)
     annotation (Line(points={{-79,0},{-72,0}}, color={0,0,127}));
   connect(imDerivativeLag.y, imDerivativeLag1.u)
@@ -65,18 +64,18 @@ equation
   connect(limiter.u, imSimpleLag1.y)
     annotation (Line(points={{58,0},{41,0}}, color={0,0,127}));
   annotation (
-    Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-120,-40},{120,
+    Diagram(coordinateSystem(extent={{-120,-40},{120,
             40}})),
-    Icon(coordinateSystem(extent={{-120,-40},{120,40}}, preserveAspectRatio=
-            false), graphics={Rectangle(extent={{-120,40},{120,-40}}, lineColor=
+    Icon(graphics={Rectangle(extent={{-100,100},{100,-100}},
+                                                           lineColor=
            {28,108,200}),Text(
-          extent={{-64,20},{56,-20}},
+          extent={{-40,80},{40,40}},
           lineColor={28,108,200},
           textString="STABNI"),Text(
-          extent={{-108,8},{-72,-10}},
+          extent={{-92,20},{-50,-20}},
           lineColor={28,108,200},
           textString="PELEC"),Text(
-          extent={{82,10},{118,-8}},
+          extent={{48,20},{90,-20}},
           lineColor={28,108,200},
           textString="VOTHSG")}),
     Documentation(info="<html>
