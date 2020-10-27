@@ -35,7 +35,7 @@ partial model baseMachine
     start=delta0,
     quantity="Angle",
     unit="rad",
-    displayUnit="rad") "Rotor angle (rad)" annotation (Placement(transformation(
+    displayUnit="rad") "Rotor angle" annotation (Placement(transformation(
         origin={110,60},
         extent={{-10,-10},{10,10}})));
   Modelica.Blocks.Interfaces.RealOutput w(start=1) "Rotor speed (pu)"

@@ -1,7 +1,7 @@
 within OpenIPSL.Electrical.Banks.PSSE;
 model Shunt
-  parameter SI.PerUnit G "(pu) on system base";
-  parameter SI.PerUnit B "(pu) on system base";
+  parameter SI.PerUnit G "Conductance (system base)";
+  parameter SI.PerUnit B "Susceptance (system base)";
   Complex I;
   Complex V;
   SI.PerUnit v;

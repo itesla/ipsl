@@ -71,7 +71,7 @@ partial model baseMachine
     annotation (Placement(transformation(extent={{100,20},{120,40}})));
   RealOutput ISORCE "Machine source current (pu)"
     annotation (Placement(transformation(extent={{100,-80},{120,-60}})));
-  RealOutput ANGLE "Machine relative rotor angle (deg)"
+  RealOutput ANGLE "Machine relative rotor angle"
     annotation (Placement(transformation(extent={{100,80},{120,100}})));
   RealOutput XADIFD "Machine field current (pu)" annotation (Placement(
         transformation(
