@@ -206,3 +206,8 @@ convertClass("OpenIPSL.Loads.PSAT.LOADPQ",
              "OpenIPSL.Loads.PSAT.PQ");
 convertClass("OpenIPSL.Loads.PSAT.LOADPQ_variation",
              "OpenIPSL.Loads.PSAT.PQvar");
+
+// Make an exception for example base class 
+// (examples should normally not be extended from and hence no conversion is normally given)
+convertClass("OpenIPSL.Examples.SMIBpartial",
+             "OpenIPSL.Examples.BaseClasses.SMIB");
