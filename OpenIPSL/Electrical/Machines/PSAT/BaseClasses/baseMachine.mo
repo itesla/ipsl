@@ -19,7 +19,7 @@ partial model baseMachine
     annotation (Dialog(group="Machine parameters"));
   parameter SI.PerUnit x1d "d-axis transient reactance"
     annotation (Dialog(group="Machine parameters"));
-  parameter SI.Time M "Mechanical starting time, 2H (MWs/MVA)"
+  parameter SI.Time M "Mechanical starting time, 2H [Ws/VA]"
     annotation (Dialog(group="Machine parameters"));
   parameter Real D "Damping coefficient"
     annotation (Dialog(group="Machine parameters"));
