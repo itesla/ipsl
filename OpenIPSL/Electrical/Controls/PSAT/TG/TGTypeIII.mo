@@ -12,7 +12,7 @@ model TGTypeIII
   parameter SI.Time Tp "Pilot valve time constant";
   parameter SI.Time Tr "Dashpot time constant";
   parameter Real delta "Transient speed droop [pu/pu]";
-  parameter Real sigma "Permanent speed droop (pu/pu]";
+  parameter Real sigma "Permanent speed droop [pu/pu]";
   parameter SI.Time Tw "Water starting time";
   parameter Real a11 "Deriv. of flow rate vs. turbine head";
   parameter Real a13 "Deriv. of flow rate vs. gate position";

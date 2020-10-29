@@ -26,11 +26,11 @@ model ULTC_VoltageControl
     annotation (Dialog(group="Voltage control"));
   parameter Real kT=4 "Nominal tap ratio (V1/V2)"
     annotation (Dialog(group="Voltage control"));
-  parameter SI.PerUnit m0=0.98 "Initial tap ratio (pu/pu)"
+  parameter Real m0=0.98 "Initial tap ratio [pu/pu]"
     annotation (Dialog(group="Voltage control"));
-  parameter SI.PerUnit m_max=0.98 "Maximum tap ratio (pu/pu)"
+  parameter Real m_max=0.98 "Maximum tap ratio [pu/pu]"
     annotation (Dialog(group="Voltage control"));
-  parameter SI.PerUnit m_min=0.9785 "Minimum tap ratio (pu/pu)"
+  parameter Real m_min=0.9785 "Minimum tap ratio [pu/pu]"
     annotation (Dialog(group="Voltage control"));
   parameter SI.PerUnit H=0.001 "Integral deviation"
     annotation (Dialog(group="Voltage control"));

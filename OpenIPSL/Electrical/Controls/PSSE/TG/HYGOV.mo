@@ -44,10 +44,10 @@ model HYGOV "HYGOV - Hydro Turbine-Governor model"
     y_start=c0,
     initType=Modelica.Blocks.Types.Init.InitialOutput)
     annotation (Placement(transformation(extent={{-68,0},{-56,12}})));
-  Real G "Gate opening [pu]";
-  Real c "Desired gate opening [pu]";
-  Real Q "Turbine flow [pu]";
-  Real H "Turbine head [pu]";
+  SI.PerUnit G "Gate opening";
+  SI.PerUnit c "Desired gate opening";
+  SI.PerUnit Q "Turbine flow";
+  SI.PerUnit H "Turbine head";
   Modelica.Blocks.Math.Add add(k2=-1)
     annotation (Placement(transformation(extent={{-144,0},{-132,12}})));
   Modelica.Blocks.Math.Add add1

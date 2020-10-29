@@ -21,7 +21,7 @@ model STATCOM "Static Synchronous Compensator model with equation"
     annotation (Dialog(group="Power flow data"));
   //parameter Real v_ref=1.002791151905167 "Reference voltage of the STATCOM regulator (pu)" annotation(Dialog(group="Power flow data"));
   parameter Real Kr=50 "Regulator gain (p.u./p.u.)";
-  parameter SI.PerUnit Tr=0.01 "Regulator time constant (s)";
+  parameter SI.Time Tr=0.01 "Regulator time constant";
   parameter SI.PerUnit i_Max=0.7 "Maximum current (pu)";
   parameter SI.PerUnit i_Min=-0.1 "Minimum current (pu)";
   parameter SI.PerUnit v_POD=0 "Power oscillation damper signal";

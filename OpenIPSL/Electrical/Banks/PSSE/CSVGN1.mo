@@ -14,7 +14,7 @@ model CSVGN1 "STATC SHUNT COMPENSATOR MODEL"
   parameter SI.Conversions.NonSIunits.Angle_deg angle_0=0 "Initial voltage angle"
     annotation (Dialog(group="Power flow data"));
   parameter SI.PerUnit ra=0 "amature resistance" annotation (Dialog(group="Plant parameters", enable = false));
-  parameter SI.PerUnit x1d=9999 "d-axis transient reactance, pu, should be set to 9999" annotation (Dialog(group="Plant parameters", enable = false));
+  parameter SI.PerUnit x1d=9999 "d-axis transient reactance, should be set to 9999" annotation (Dialog(group="Plant parameters", enable = false));
   parameter Real K=1 annotation (Dialog(group="Device parameters"));
   parameter SI.Time T1=0 annotation (Dialog(group="Device parameters"));
   parameter SI.Time T2=0 annotation (Dialog(group="Device parameters"));
@@ -85,8 +85,8 @@ model CSVGN1 "STATC SHUNT COMPENSATOR MODEL"
   Modelica.Blocks.Math.Add add2(k2=-1)
     annotation (Placement(transformation(extent={{-78,-40},{-58,-20}})));
 protected
-  parameter SI.PerUnit p0=P_0/S_b "Active power pu on system base";
-  parameter SI.PerUnit q0=Q_0/S_b "Reactive power pu on system base";
+  parameter SI.PerUnit p0=P_0/S_b "Active power (system base)";
+  parameter SI.PerUnit q0=Q_0/S_b "Reactive power (system base)";
   parameter SI.Angle anglev_rad=SI.Conversions.from_deg(angle_0);
   parameter SI.PerUnit Y0=q0/(v_0*v_0) "Capacitor output";
   parameter SI.PerUnit vr0=v_0*cos(anglev_rad) "Initialization";

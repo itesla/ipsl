@@ -41,11 +41,11 @@ model SVC "On bus 10106 & 10114"
   parameter SI.PerUnit Vref "Reference voltage";
   parameter SI.PerUnit Bref "Reference susceptance";
   parameter Real K=150 "Steady-state gain";
-  parameter Real T1 "Time constant (s)";
-  parameter Real T2 "Time constant (s)";
-  parameter Real T3 "Time constant (s)";
-  parameter Real T4 "Time constant (s)";
-  parameter Real T5=0.03 "Time constant of thyristor bridge (s)";
+  parameter SI.Time T1 "Time constant";
+  parameter SI.Time T2 "Time constant";
+  parameter SI.Time T3 "Time constant";
+  parameter SI.Time T4 "Time constant";
+  parameter SI.Time T5=0.03 "Time constant of thyristor bridge";
   parameter SI.PerUnit Vmax;
   parameter SI.PerUnit Vmin;
   parameter SI.PerUnit Vov=0.5 "Override voltage";
