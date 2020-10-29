@@ -19,9 +19,9 @@ model BusExt
         extent={{-12,-100},{12,100}}),
       iconTransformation(
         extent={{-4,-60},{4,60}})));
-  SI.PerUnit v(start=v_0) "Bus voltage magnitude (pu)";
+  SI.PerUnit v(start=v_0) "Bus voltage magnitude";
   SI.Conversions.NonSIunits.Angle_deg angle(start=angle_0) "Bus voltage angle";
-  parameter SI.PerUnit v_0=1 "Voltage magnitude (pu)"
+  parameter SI.PerUnit v_0=1 "Voltage magnitude"
     annotation (Dialog(group="Power flow data"));
   parameter SI.Conversions.NonSIunits.Angle_deg angle_0=0 "Voltage angle"
     annotation (Dialog(group="Power flow data"));

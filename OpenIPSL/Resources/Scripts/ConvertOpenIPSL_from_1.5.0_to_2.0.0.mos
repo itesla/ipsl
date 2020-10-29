@@ -186,13 +186,13 @@ convertModifiers("OpenIPSL.Electrical.Banks.Simulink.Shunt",
 
  // custom types are no longer used, conversion is not perfect since it does not take care of the scaling
 convertClass("OpenIPSL.Types.ActivePowerMega",
-             "Modelica.SIunits.ActivePower");
+             "SI.ActivePower");
 convertClass("OpenIPSL.Types.ApparentPower",
-             "Modelica.SIunits.ApparentPower");
+             "SI.ApparentPower");
 convertClass("OpenIPSL.Types.ReactivePowerMega",
-             "Modelica.SIunits.ReactivePower");
+             "SI.ReactivePower");
 convertClass("OpenIPSL.Types.VoltageKilo",
-"Modelica.SIunits.Voltage");
+"SI.Voltage");
 
 
 // PSAT loads

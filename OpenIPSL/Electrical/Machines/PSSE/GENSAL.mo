@@ -22,13 +22,13 @@ model GENSAL "SALIENT POLE GENERATOR MODEL (QUADRATIC SATURATION ON D-AXIS)"
     ud(start=ud0),
     uq(start=uq0),
     Te(start=pm0));
-  SI.PerUnit Epq(start=Epq0) "q-axis voltage behind transient reactance (pu)";
-  SI.PerUnit PSIkd(start=PSIkd0) "d-axis rotor flux linkage (pu)";
-  SI.PerUnit PSIppq(start=PSIppq0) "q-axis subtransient flux linkage (pu)";
-  SI.PerUnit PSIppd(start=PSIppd0) "d-axis subtransient flux linkage (pu)";
-  SI.PerUnit PSId(start=PSId0) "d-axis flux linkage (pu)";
-  SI.PerUnit PSIq(start=PSIq0) "q-axis flux linkage (pu)";
-  SI.PerUnit XadIfd(start=efd0) "Machine field current (pu)";
+  SI.PerUnit Epq(start=Epq0) "q-axis voltage behind transient reactance";
+  SI.PerUnit PSIkd(start=PSIkd0) "d-axis rotor flux linkage";
+  SI.PerUnit PSIppq(start=PSIppq0) "q-axis subtransient flux linkage";
+  SI.PerUnit PSIppd(start=PSIppd0) "d-axis subtransient flux linkage";
+  SI.PerUnit PSId(start=PSId0) "d-axis flux linkage";
+  SI.PerUnit PSIq(start=PSIq0) "q-axis flux linkage";
+  SI.PerUnit XadIfd(start=efd0) "Machine field current";
 protected
   parameter Complex Zs=R_a + j*Xppd "Equivalent impedance";
   parameter Complex Is=real(It + VT/Zs) + j*imag(It + VT/Zs);
@@ -70,7 +70,7 @@ protected
   parameter SI.PerUnit efd0=Epq0*(1 + dsat) + (Xd - Xpd)*id0
     "Initial field voltage magnitude";
   parameter SI.PerUnit pm0=p0 + R_a*iq0*iq0 + R_a*id0*id0
-    "Initial mechanical power (pu, machine base)";
+    "Initial mechanical power (machine base)";
   // Constants
   parameter Real K1d=(Xpd - Xppd)*(Xd - Xpd)/(Xpd - Xl)^2;
   parameter Real K2d=(Xpd - Xl)*(Xppd - Xl)/(Xpd - Xppd);

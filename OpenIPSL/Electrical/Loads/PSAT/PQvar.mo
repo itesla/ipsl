@@ -24,9 +24,9 @@ model PQvar "Equations come from the mathematical separation in between reals an
   parameter SI.ReactivePower dQ2(displayUnit="Mvar")=0
     "Second reactive load variation"
     annotation (Dialog(group="Variation 2"));
-  parameter SI.PerUnit Vmax=1.2 "maximum voltage (pu)"
+  parameter SI.PerUnit Vmax=1.2 "maximum voltage"
     annotation (Evaluate=true, Dialog(tab="To Be Implemented"));
-  parameter SI.PerUnit Vmin=0.8 "minimum voltage (pu)"
+  parameter SI.PerUnit Vmin=0.8 "minimum voltage"
     annotation (Evaluate=true, Dialog(tab="To Be Implemented"));
   parameter Boolean forcePQ=true
     "force 'constant' PQ-load, false may cause simulation problems"

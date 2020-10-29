@@ -55,43 +55,43 @@ partial model baseMachine
     ir(start=ir0),
     ii(start=ii0))
     annotation (Placement(transformation(extent={{90,-10},{110,10}})));
-  RealOutput SPEED "Machine speed deviation from nominal (pu)"
+  RealOutput SPEED "Machine speed deviation from nominal [pu]"
     annotation (Placement(transformation(extent={{100,60},{120,80}})));
-  RealInput PMECH "Turbine mechanical power (pu, machine base)"
+  RealInput PMECH "Turbine mechanical power (machine base)"
     annotation (Placement(transformation(extent={{-140,30},{-100,70}})));
-  RealOutput PMECH0 "Initial value of machine electrical power (pu, machine base)"
+  RealOutput PMECH0 "Initial value of machine electrical power (machine base)"
     annotation (Placement(transformation(extent={{100,40},{120,60}})));
-  RealOutput ETERM(start=v_0) "Machine terminal voltage (pu)"
+  RealOutput ETERM(start=v_0) "Machine terminal voltage [pu]"
     annotation (Placement(transformation(extent={{100,-40},{120,-20}})));
-  RealInput EFD "Generator main field voltage (pu)"
+  RealInput EFD "Generator main field voltage [pu]"
     annotation (Placement(transformation(extent={{-140,-70},{-100,-30}})));
-  RealOutput EFD0 "Initial generator main field voltage (pu)"
+  RealOutput EFD0 "Initial generator main field voltage [pu]"
     annotation (Placement(transformation(extent={{100,-60},{120,-40}})));
-  RealOutput PELEC(start=p0) "Machine electrical power (pu, machine base)"
+  RealOutput PELEC(start=p0) "Machine electrical power (machine base)"
     annotation (Placement(transformation(extent={{100,20},{120,40}})));
-  RealOutput ISORCE "Machine source current (pu)"
+  RealOutput ISORCE "Machine source current [pu]"
     annotation (Placement(transformation(extent={{100,-80},{120,-60}})));
   RealOutput ANGLE "Machine relative rotor angle"
     annotation (Placement(transformation(extent={{100,80},{120,100}})));
-  RealOutput XADIFD "Machine field current (pu)" annotation (Placement(
+  RealOutput XADIFD "Machine field current [pu]" annotation (Placement(
         transformation(
         extent={{-10,-10},{10,10}},
         origin={110,-90}), iconTransformation(
         extent={{-10,-10},{10,10}},
         origin={110,-90})));
-  SI.PerUnit w(start=w0) "Machine speed deviation (pu)";
+  SI.PerUnit w(start=w0) "Machine speed deviation";
   SI.Angle delta "Rotor angle";
-  SI.PerUnit Vt(start=v_0) "Bus voltage magnitude (pu)";
+  SI.PerUnit Vt(start=v_0) "Bus voltage magnitude";
   SI.Angle anglev(start=angle_0rad) "Bus voltage angle";
-  SI.PerUnit I(start=sqrt(ir0^2 + ii0^2)) "Terminal current magnitude (pu)";
+  SI.PerUnit I(start=sqrt(ir0^2 + ii0^2)) "Terminal current magnitude";
   SI.Angle anglei(start=atan2(ii0, ir0)) "Terminal current angle";
-  SI.PerUnit P(start=P_0/S_b) "Active power (pu, system base)";
-  SI.PerUnit Q(start=Q_0/S_b) "Reactive power (pu, system base)";
-  SI.PerUnit Te "Electrical torque (pu)";
-  SI.PerUnit id "d-axis armature current (pu)";
-  SI.PerUnit iq "q-axis armature current (pu)";
-  SI.PerUnit ud "d-axis terminal voltage (pu)";
-  SI.PerUnit uq "q-axis terminal voltage (pu)";
+  SI.PerUnit P(start=P_0/S_b) "Active power (system base)";
+  SI.PerUnit Q(start=Q_0/S_b) "Reactive power (system base)";
+  SI.PerUnit Te "Electrical torque [pu]";
+  SI.PerUnit id "d-axis armature current [pu]";
+  SI.PerUnit iq "q-axis armature current [pu]";
+  SI.PerUnit ud "d-axis terminal voltage [pu]";
+  SI.PerUnit uq "q-axis terminal voltage [pu]";
 protected
   parameter SI.AngularVelocity w_b=2*C.pi*fn "System base speed";
   parameter Real CoB=M_b/S_b;
@@ -100,12 +100,12 @@ protected
   parameter SI.PerUnit vi0=v_0*sin(angle_0rad)
     "Imaginary component of initial terminal voltage";
   parameter SI.PerUnit ir0=-CoB*(p0*vr0 + q0*vi0)/(vr0^2 + vi0^2)
-    "Real component of initial armature current (pu, system base)";
+    "Real component of initial armature current (system base)";
   parameter SI.PerUnit ii0=-CoB*(p0*vi0 - q0*vr0)/(vr0^2 + vi0^2)
-    "Imaginary component of initial armature current (pu, system base)";
-  parameter SI.PerUnit p0=P_0/M_b "Initial active power generation (pu, machine base)";
+    "Imaginary component of initial armature current (system base)";
+  parameter SI.PerUnit p0=P_0/M_b "Initial active power generation (machine base)";
   parameter SI.PerUnit q0=Q_0/M_b
-    "Initial reactive power generation (pu, machine base)";
+    "Initial reactive power generation (machine base)";
 equation
   //Interfacing outputs with the internal variables
   ANGLE = delta;

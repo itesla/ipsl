@@ -20,24 +20,24 @@ model GENROU "ROUND ROTOR GENERATOR MODEL (QUADRATIC SATURATION)"
     uq(start=uq0),
     Te(start=pm0));
   //Machine parameters
-  parameter SI.PerUnit Xpq "q-axis transient reactance (pu)"
+  parameter SI.PerUnit Xpq "q-axis transient reactance "
     annotation (Dialog(group="Machine parameters"));
   parameter SI.Time Tpq0 "q-axis transient open-circuit time constant"
     annotation (Dialog(group="Machine parameters"));
-  parameter SI.PerUnit Xpp=Xppd "Sub-transient reactance (pu)"
+  parameter SI.PerUnit Xpp=Xppd "Sub-transient reactance "
     annotation (Dialog(group="Machine parameters"));
-  SI.PerUnit Epd(start=Epd0) "d-axis voltage behind transient reactance (pu)";
+  SI.PerUnit Epd(start=Epd0) "d-axis voltage behind transient reactance ";
   SI.PerUnit Epq(start=Epq0) "q-axis voltage behind transient reactance ";
-  SI.PerUnit PSIkd(start=PSIkd0) "d-axis rotor flux linkage (pu)";
-  SI.PerUnit PSIkq(start=PSIkq0) "q-axis rotor flux linkage (pu)";
+  SI.PerUnit PSIkd(start=PSIkd0) "d-axis rotor flux linkage ";
+  SI.PerUnit PSIkq(start=PSIkq0) "q-axis rotor flux linkage ";
   //State variables
-  SI.PerUnit PSId(start=PSId0) "d-axis flux linkage (pu)";
-  SI.PerUnit PSIq(start=PSIq0) "q-axis flux linkage (pu)";
-  SI.PerUnit PSIppd(start=PSIppd0) "d-axis subtransient flux linkage (pu)";
-  SI.PerUnit PSIppq(start=PSIppq0) "q-axis subtransient flux linkage (pu)";
-  SI.PerUnit PSIpp "Air-gap flux (pu)";
-  SI.PerUnit XadIfd(start=efd0) "d-axis machine field current (pu)";
-  SI.PerUnit XaqIlq(start=0) "q-axis Machine field current (pu)";
+  SI.PerUnit PSId(start=PSId0) "d-axis flux linkage ";
+  SI.PerUnit PSIq(start=PSIq0) "q-axis flux linkage ";
+  SI.PerUnit PSIppd(start=PSIppd0) "d-axis subtransient flux linkage ";
+  SI.PerUnit PSIppq(start=PSIppq0) "q-axis subtransient flux linkage ";
+  SI.PerUnit PSIpp "Air-gap flux ";
+  SI.PerUnit XadIfd(start=efd0) "d-axis machine field current ";
+  SI.PerUnit XaqIlq(start=0) "q-axis Machine field current ";
 protected
   parameter Complex Zs=R_a + j*Xpp "Equivalent impedance";
   parameter Complex VT=v_0*cos(angle_0rad) + j*v_0*sin(angle_0rad)
@@ -88,12 +88,12 @@ protected
   parameter SI.PerUnit vi0=v_0*sin(angle_0rad)
     "Imaginary component of initial terminal voltage";
   parameter SI.PerUnit ir0=-CoB*(p0*vr0 + q0*vi0)/(vr0^2 + vi0^2)
-    "Real component of initial armature current (pu, system base)";
+    "Real component of initial armature current (system base)";
   parameter SI.PerUnit ii0=-CoB*(p0*vi0 - q0*vr0)/(vr0^2 + vi0^2)
-    "Imaginary component of initial armature current (pu, system base)";
+    "Imaginary component of initial armature current (system base)";
   //Initialization mechanical power and field voltage.
   parameter SI.PerUnit pm0=p0 + R_a*iq0*iq0 + R_a*id0*id0
-    "Initial mechanical power (pu, machine base)";
+    "Initial mechanical power (machine base)";
   parameter SI.PerUnit efd0=dsat*PSIppd0 + PSIppd0 + (Xpd - Xpp)*id0 + (Xd - Xpd)*id0
     "Initial field voltage magnitude";
   parameter SI.PerUnit Epq0=PSIkd0 + (Xpd - Xl)*id0;

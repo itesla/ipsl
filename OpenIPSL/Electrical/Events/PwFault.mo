@@ -3,10 +3,10 @@ model PwFault "Transitory short-circuit on a node. Shunt impedance connected onl
               Developed by AIA. 2014/12/16"
   OpenIPSL.Interfaces.PwPin p annotation (Placement(transformation(extent={{-80,
             -10},{-60,10}}), iconTransformation(extent={{-80,-10},{-60,10}})));
-  parameter Real R "Resistance (pu)";
-  parameter Real X "Reactance (pu)";
-  parameter Real t1 "Start time of the fault (s)";
-  parameter Real t2 "End time of the fault (s)";
+  parameter SI.PerUnit R "Resistance";
+  parameter SI.PerUnit X "Reactance";
+  parameter SI.Time t1 "Start time of the fault";
+  parameter SI.Time t2 "End time of the fault";
   import Modelica.Constants.eps;
 protected
   parameter Boolean ground=abs(R) < eps and abs(X) < eps;

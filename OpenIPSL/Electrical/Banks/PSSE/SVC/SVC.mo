@@ -1,7 +1,7 @@
 within OpenIPSL.Electrical.Banks.PSSE.SVC;
 model SVC "On bus 10106 & 10114"
   OpenIPSL.Interfaces.PwPin VIB
-    "Voltage signal connected to stepdown transformer (pu)"
+    "Voltage signal connected to stepdown transformer"
     annotation (Placement(transformation(extent={{-110,-10},{-90,10}})));
   Modelica.Blocks.Sources.Constant imSetPoint(k=Vref)
     annotation (Placement(transformation(extent={{-76,20},{-64,32}})));
@@ -38,8 +38,8 @@ model SVC "On bus 10106 & 10114"
     annotation (Placement(transformation(extent={{-20,-38},{-10,-28}})));
   Modelica.Blocks.Math.Gain imGain(k=1/Sbase)
     annotation (Placement(transformation(extent={{60,-36},{72,-24}})));
-  parameter SI.PerUnit Vref "Reference voltage (pu)";
-  parameter SI.PerUnit Bref "Reference susceptance (pu)";
+  parameter SI.PerUnit Vref "Reference voltage";
+  parameter SI.PerUnit Bref "Reference susceptance";
   parameter Real K=150 "Steady-state gain";
   parameter Real T1 "Time constant (s)";
   parameter Real T2 "Time constant (s)";
@@ -48,7 +48,7 @@ model SVC "On bus 10106 & 10114"
   parameter Real T5=0.03 "Time constant of thyristor bridge (s)";
   parameter SI.PerUnit Vmax;
   parameter SI.PerUnit Vmin;
-  parameter SI.PerUnit Vov=0.5 "Override voltage (pu)";
+  parameter SI.PerUnit Vov=0.5 "Override voltage";
   parameter SI.ApparentPower Sbase(displayUnit="MVA") "Base power of the bus";
   parameter Real init_SVC_Leadlag "Initial value";
   parameter Real init_SVC_Lag "Initial value";

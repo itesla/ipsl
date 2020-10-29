@@ -2,8 +2,8 @@ within OpenIPSL.NonElectrical.Continuous;
 block LeadLagLim "Lead-Lag filter with a non-windup limiter"
   extends Modelica.Blocks.Interfaces.SISO;
   parameter Real K "Gain";
-  parameter Modelica.SIunits.Time T1 "Lead time constant";
-  parameter Modelica.SIunits.Time T2 "Lag time constant";
+  parameter SI.Time T1 "Lead time constant";
+  parameter SI.Time T2 "Lag time constant";
   parameter Real outMax "Maximum output value";
   parameter Real outMin "Minimum output value";
   parameter Real y_start "Output start value"

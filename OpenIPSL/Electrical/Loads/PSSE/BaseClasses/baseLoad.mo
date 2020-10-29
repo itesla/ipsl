@@ -28,10 +28,10 @@ partial model baseLoad
     ir(start=ir0),
     ii(start=ii0))
     annotation (Placement(transformation(extent={{-10,90},{10,110}})));
-  Modelica.SIunits.Angle angle(start=angle_0rad) "Bus voltage angle";
-  SI.PerUnit v(start=v_0) "Bus voltage magnitude (pu)";
-  SI.PerUnit P "Active power consumption (pu)";
-  SI.PerUnit Q "Reactive power consumption (pu)";
+  SI.Angle angle(start=angle_0rad) "Bus voltage angle";
+  SI.PerUnit v(start=v_0) "Bus voltage magnitude";
+  SI.PerUnit P "Active power consumption";
+  SI.PerUnit Q "Reactive power consumption";
 protected
   parameter SI.PerUnit p0=(S_i.re*v_0 + S_y.re*v_0^2 + S_p.re)/S_b "pu";
   parameter SI.PerUnit q0=(S_i.im*v_0 + S_y.im*v_0^2 + S_p.im)/S_b "pu";

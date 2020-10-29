@@ -1,7 +1,7 @@
 within OpenIPSL.Electrical;
 record SystemBase "System Base Definition"
   parameter SI.ApparentPower S_b(displayUnit="MVA")=100e6 "System base";
-  parameter Modelica.SIunits.Frequency fn=50 "System frequency";
+  parameter SI.Frequency fn=50 "System frequency";
   annotation (
     Icon(coordinateSystem(
         preserveAspectRatio=false,

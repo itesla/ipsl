@@ -16,7 +16,7 @@ partial model BaseExciter
         extent={{-10,-10},{10,10}},
         rotation=90,
         origin={0,-110})));
-  Modelica.Blocks.Interfaces.RealOutput EFD "Excitation Voltage (pu)"
+  Modelica.Blocks.Interfaces.RealOutput EFD "Excitation Voltage [pu]"
     annotation (Placement(transformation(extent={{200,-10},{220,10}}), iconTransformation(extent={{100,-10},{120,10}})));
   Modelica.Blocks.Interfaces.RealInput EFD0 annotation (Placement(
         transformation(

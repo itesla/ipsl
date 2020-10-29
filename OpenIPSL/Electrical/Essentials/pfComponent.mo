@@ -54,7 +54,7 @@ partial model pfComponent
         __Dymola_compact=true,
         __Dymola_descriptionLabel=true), choices(checkBox=true));
   parameter SI.PerUnit v_0=1
-    "Initial voltage magnitude (pu)"
+    "Initial voltage magnitude)"
     annotation (Dialog(group="Power flow data", enable=enablev_0));
   parameter Boolean enablev_0 = false
     "Enable v_0 in parameter list"

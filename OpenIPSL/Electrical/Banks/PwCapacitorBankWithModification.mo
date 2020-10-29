@@ -4,8 +4,8 @@ model PwCapacitorBankWithModification "Capacitor Bank with Bank modification at 
   OpenIPSL.Interfaces.PwPin p
     annotation (Placement(transformation(extent={{-10,90},{10,110}})));
   parameter Integer nsteps "Number of steps";
-  parameter SI.PerUnit Go "Active power losses (pu) in each element";
-  parameter SI.PerUnit Bo "Reactive power (pu) in each element";
+  parameter SI.PerUnit Go "Active power losses in each element";
+  parameter SI.PerUnit Bo "Reactive power in each element";
   parameter SI.Time t1 "Time for bank Modification";
   parameter Integer nmod "Number of step to switch on/off (+/-)";
   SI.PerUnit G;

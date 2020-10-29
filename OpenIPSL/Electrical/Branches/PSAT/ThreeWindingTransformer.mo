@@ -15,17 +15,17 @@ model ThreeWindingTransformer
     annotation (Dialog(group="Transformer parameters"));
   parameter SI.Voltage Vn(displayUnit="kV")=40e3 "Voltage rating for transformer"
     annotation (Dialog(group="Transformer parameters"));
-  parameter SI.PerUnit r12=0.01 "Resistance of the branch 1-2 (pu, transformer base)"
+  parameter SI.PerUnit r12=0.01 "Resistance of the branch 1-2 (transformer base)"
     annotation (Dialog(group="Transformer parameters"));
-  parameter SI.PerUnit r13=0.01 "Resistance of the branch 1-3 (pu, transformer base)"
+  parameter SI.PerUnit r13=0.01 "Resistance of the branch 1-3 (transformer base)"
     annotation (Dialog(group="Transformer parameters"));
-  parameter SI.PerUnit r23=0.01 "Resistance of the branch 2-3 (pu, transformer base)"
+  parameter SI.PerUnit r23=0.01 "Resistance of the branch 2-3 (transformer base)"
     annotation (Dialog(group="Transformer parameters"));
-  parameter SI.PerUnit x12=0.1 "Reactance of the branch 1-2 (pu, transformer base)"
+  parameter SI.PerUnit x12=0.1 "Reactance of the branch 1-2 (transformer base)"
     annotation (Dialog(group="Transformer parameters"));
-  parameter SI.PerUnit x13=0.1 "Reactance of the branch 1-3 (pu, transformer base)"
+  parameter SI.PerUnit x13=0.1 "Reactance of the branch 1-3 (transformer base)"
     annotation (Dialog(group="Transformer parameters"));
-  parameter SI.PerUnit x23=0.1 "Reactance of the branch 2-3 (pu, transformer base)"
+  parameter SI.PerUnit x23=0.1 "Reactance of the branch 2-3 (transformer base)"
     annotation (Dialog(group="Transformer parameters"));
   parameter SI.PerUnit m=0.98 "Fixed tap ratio"
     annotation (Dialog(group="Transformer parameters"));
