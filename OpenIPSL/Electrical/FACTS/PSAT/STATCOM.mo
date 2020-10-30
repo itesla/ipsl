@@ -1,10 +1,14 @@
 within OpenIPSL.Electrical.FACTS.PSAT;
-model STATCOM "Static Synchronous Compensator model with equation"
+model STATCOM "Static Var Compensator"
   extends OpenIPSL.Electrical.Essentials.pfComponent(
-    enableangle_0=true,
-    enablev_0=true,
-    enableV_b=true,
-    enableS_b=true);
+    final enabledisplayPF=false,
+    final enableQ_0=false,
+    final enableP_0=false,
+    final enablefn=false,
+    final enableangle_0=true,
+    final enablev_0=true,
+    final enableV_b=true,
+    final enableS_b=true);
   OpenIPSL.Interfaces.PwPin p(vr(start=vr0), vi(start=vi0)) annotation (
       Placement(transformation(extent={{100,-10},{120,10}}), iconTransformation(
           extent={{100,-10},{120,10}})));
@@ -26,9 +30,15 @@ model STATCOM "Static Synchronous Compensator model with equation"
     annotation (Dialog(group="Device parameters"));
   parameter SI.PerUnit v_POD=0 "Power oscillation damper signal"
     annotation (Dialog(group="Device parameters"));
-  SI.PerUnit i_SH "STATCOM current";
   SI.PerUnit v(start=v_0) "Bus voltage magnitude";
   SI.PerUnit Q(start=Qg) "Injected reactive power (system base)";
+protected
+  Modelica.Blocks.Interfaces.RealOutput i_SH "STATCOM current" annotation (Placement(transformation(extent={{60,-10},{80,10}}), iconTransformation(extent={{34,-10},{54,10}})));
+public
+  Modelica.Blocks.Math.Add3 add(k2=-1) annotation (Placement(transformation(extent={{-50,-10},{-30,10}})));
+  Modelica.Blocks.Sources.RealExpression V(y=v) annotation (Placement(transformation(extent={{-90,-10},{-70,10}})));
+  Modelica.Blocks.Sources.RealExpression V_POD(y=v_POD) annotation (Placement(transformation(extent={{-90,30},{-70,50}})));
+  Modelica.Blocks.Sources.RealExpression V_ref(y=v_ref) annotation (Placement(transformation(extent={{-90,-50},{-70,-30}})));
 protected
   parameter SI.PerUnit In=Sn/Vn "Nominal current (local base)";
   parameter SI.PerUnit I_b=S_b/V_b "Base current";
@@ -40,22 +50,25 @@ protected
   parameter SI.PerUnit i0=Qg/v_0 "Initial current";
   parameter SI.PerUnit v_ref=i0/Kr + v_0 - v_POD "Reference voltage";
 
-  SI.PerUnit u(start=u0) "Controller input";
   NonElectrical.Continuous.SimpleLagLim simpleLagLim(
     K=Kr,
     T=Tr,
     y_start=i0,
     outMax=i_max,
-    outMin=i_min)
-    annotation (Placement(transformation(extent={{-20,-20},{20,20}})));
+    outMin=i_min,
+    u(start=u0))
+    annotation (Placement(transformation(extent={{0,-20},{40,20}})));
 equation
   v = sqrt(p.vr^2 + p.vi^2);
   0 = p.vr*p.ir + p.vi*p.ii;
   -Q = p.vi*p.ir - p.vr*p.ii;
-  u = v_ref + v_POD - v;
   Q = i_SH*v;
-  simpleLagLim.u = u;
-  simpleLagLim.y = i_SH;
+
+  connect(simpleLagLim.y, i_SH) annotation (Line(points={{42,0},{70,0}}, color={0,0,127}));
+  connect(add.y, simpleLagLim.u) annotation (Line(points={{-29,0},{-4,0}}, color={0,0,127}));
+  connect(V_POD.y, add.u1) annotation (Line(points={{-69,40},{-60,40},{-60,8},{-52,8}}, color={0,0,127}));
+  connect(V.y, add.u2) annotation (Line(points={{-69,0},{-52,0}}, color={0,0,127}));
+  connect(V_ref.y, add.u3) annotation (Line(points={{-69,-40},{-60,-40},{-60,-8},{-52,-8}}, color={0,0,127}));
   annotation (
     Icon(coordinateSystem(preserveAspectRatio=true, extent={{-100,-100},{100,
             100}}), graphics={Rectangle(extent={{-100,100},{100,-100}},
@@ -105,21 +118,31 @@ equation
           lineColor={0,0,255}),
         Line(points={{-80,-4},{-80,-20},{-52,-20}}, color={0,0,255})}),
     Documentation(info="<html>
+<p>The following documentation is adapted from 
+<a href=\"modelica://OpenIPSL.UsersGuide.References\">[Milano2010], chapter 20.3</a>:</p>
+<blockquote>
+<p>The implemented STATCOM model is a current injection model [...]. 
+The STATCOM current is always kept in quadrature in relation
+to the bus voltage so that only reactive power is exchanged between the ac system
+and the STATCOM. 
+</p>
+</blockquote>
+</html>", revisions="<html>
 <table cellspacing=\"2\" cellpadding=\"0\" border=\"1\"><tr>
 <td><p>Reference</p></td>
-<td><p>PSAT Manual 2.1.8</p></td>
+<td><p>PSAT Manual 2.1.8 <a href=\"modelica://OpenIPSL.UsersGuide.References\">[Milano2013]</a></p></td>
 </tr>
 <tr>
 <td><p>Last update</p></td>
-<td><p>15/07/2015</p></td>
+<td><p>2020-10-30</p></td>
 </tr>
 <tr>
 <td><p>Author</p></td>
-<td><p>MAA Murad, SmarTS Lab, KTH Royal Institute of Technology</p></td>
+<td><p><a href=\"https://github.com/dietmarw\">@dietmarw</a> (original: MAA Murad, SmarTS Lab)</p></td>
 </tr>
 <tr>
 <td><p>Contact</p></td>
-<td><p><a href=\"mailto:luigiv@kth.se\">luigiv@kth.se</a></p></td>
+<td><p>see <a href=\"modelica://OpenIPSL.UsersGuide.Contact\">UsersGuide.Contact</a></p></td>
 </tr>
 </table>
 </html>"));
