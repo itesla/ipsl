@@ -1,20 +1,25 @@
 within OpenIPSL.Electrical.FACTS.PSAT;
-model TCSCAlpha
+model TCSCAlpha "Thyristor Controlled Series Compensator "
+  extends Essentials.pfComponent(
+    final enabledisplayPF=false,
+    final enableangle_0=false,
+    final enablev_0=false,
+    final enableQ_0=false,
+    final enableP_0=false,
+    final enablefn=false,
+    final enableV_b=true,
+    final enableS_b=true);
   OpenIPSL.Interfaces.PwPin p
-    annotation (Placement(transformation(extent={{-119,-10},{-99,10}})));
+    annotation (Placement(transformation(extent={{-120,-10},{-100,10}}), iconTransformation(extent={{-119,-10},{-99,10}})));
   OpenIPSL.Interfaces.PwPin n
-    annotation (Placement(transformation(extent={{100,-10},{120,10}})));
-  constant Real pi=Modelica.Constants.pi;
-  parameter Real SystemBase=100 "System base power (MVA)"
-    annotation (Dialog(group="Power flow data"));
-  parameter Real Vbus=400000 "Bus nominal voltage (V)"
-    annotation (Dialog(group="Power flow data"));
-  parameter Real Sn=100 "Power rating (MVA)"
-    annotation (Dialog(group="Power flow data"));
-  parameter Real Vn=400000 "Voltage rating (V)"
-    annotation (Dialog(group="Power flow data"));
-  parameter Real f=50 "Frequency rating (Hz)"
-    annotation (Dialog(group="Power flow data"));
+    annotation (Placement(transformation(extent={{100,-10},{120,10}}), iconTransformation(extent={{100,-10},{120,10}})));
+
+
+  parameter SI.ApparentPower Sn(displayUnit="MVA")=S_b "Power rating"
+    annotation (Dialog(group="Device parameters"));
+  parameter SI.Voltage Vn(displayUnit="kV")=V_b "Voltage rating"
+    annotation (Dialog(group="Device parameters"));
+
   parameter Real alpha_TCSCO=0.826168365308219 "Value of state variable x1"
     annotation (Dialog(group="Power flow data"));
   parameter Real x20=0.826168365308219 "Value of the state variable x2"
@@ -42,17 +47,17 @@ model TCSCAlpha
   Real pkm(start=pref) "Active power flow from bus k to m (pu)";
   Real b "TCSC series susceptance (pu)";
   Real alpha_TCSC "TCSC series reactance (pu)";
-protected
   Real x0(start=x0i);
+protected
   Real x2(start=x20);
 protected
-  parameter Real Vb2new=Vbus*Vbus;
+  parameter Real Vb2new=V_b*V_b;
   parameter Real Vb2old=Vn*Vn;
-  parameter Real xL=x_L*(Vb2old*SystemBase)/(Vb2new*Sn)
+  parameter Real xL=x_L*(Vb2old*S_b)/(Vb2new*Sn)
     "Reactance(inductive),p.u";
-  parameter Real xC=x_C*(Vb2old*SystemBase)/(Vb2new*Sn)
+  parameter Real xC=x_C*(Vb2old*S_b)/(Vb2new*Sn)
     "Reactance(capacitive),p.u";
-  parameter Real X=XL*(Vb2old*SystemBase)/(Vb2new*Sn) "Line Reactance,p.u";
+  parameter Real X=XL*(Vb2old*S_b)/(Vb2new*Sn) "Line Reactance,p.u";
   parameter Real kx=sqrt(xC/xL);
   parameter Real XL2=(1 - Cp)*XL;
   parameter Real y=1/X;
@@ -66,30 +71,30 @@ equation
   if alpha_TCSC > alpha_max and der(alpha_TCSC) > 0 and der(x2) > 0 then
     der(alpha_TCSC) = 0;
     der(x2) = -Ki*(pkm - pref);
-    b = pi*(kx^4 - 2*kx^2 + 1)*cos(kx*(pi - alpha_max))/(xC*(pi*kx^4*cos(kx*(pi
-       - alpha_max))) - pi*cos(kx*(pi - alpha_max)) - 2*kx^4*alpha_max*cos(kx*(
-      pi - alpha_max)) + 2*kx^2*alpha_max*cos(kx*(pi - alpha_max)) - kx^4*sin(2
-      *alpha_max)*cos(kx*(pi - alpha_max)) + kx^2*sin(2*alpha_max)*cos(kx*(pi
-       - alpha_max)) - 4*kx^3*cos(alpha_max)^2*sin(kx*(pi - alpha_max)) - 4*kx^
-      2*cos(alpha_max)*sin(alpha_max)*cos(kx*(pi - alpha_max)));
+    b = C.pi*(kx^4 - 2*kx^2 + 1)*cos(kx*(C.pi - alpha_max))/(xC*(C.pi*kx^4*cos(kx*(C.pi
+       - alpha_max))) - C.pi*cos(kx*(C.pi - alpha_max)) - 2*kx^4*alpha_max*cos(kx*(
+      C.pi - alpha_max)) + 2*kx^2*alpha_max*cos(kx*(C.pi - alpha_max)) - kx^4*sin(2
+      *alpha_max)*cos(kx*(C.pi - alpha_max)) + kx^2*sin(2*alpha_max)*cos(kx*(C.pi
+       - alpha_max)) - 4*kx^3*cos(alpha_max)^2*sin(kx*(C.pi - alpha_max)) - 4*kx^
+      2*cos(alpha_max)*sin(alpha_max)*cos(kx*(C.pi - alpha_max)));
   elseif alpha_TCSC < alpha_min and der(alpha_TCSC) < 0 and der(x2) < 0 then
     der(alpha_TCSC) = 0;
     der(x2) = -Ki*(pkm - pref);
-    b = pi*(kx^4 - 2*kx^2 + 1)*cos(kx*(pi - alpha_min))/(xC*(pi*kx^4*cos(kx*(pi
-       - alpha_min))) - pi*cos(kx*(pi - alpha_min)) - 2*kx^4*alpha_min*cos(kx*(
-      pi - alpha_min)) + 2*kx^2*alpha_min*cos(kx*(pi - alpha_min)) - kx^4*sin(2
-      *alpha_min)*cos(kx*(pi - alpha_min)) + kx^2*sin(2*alpha_min)*cos(kx*(pi
-       - alpha_min)) - 4*kx^3*cos(alpha_min)^2*sin(kx*(pi - alpha_min)) - 4*kx^
-      2*cos(alpha_min)*sin(alpha_min)*cos(kx*(pi - alpha_min)));
+    b = C.pi*(kx^4 - 2*kx^2 + 1)*cos(kx*(C.pi - alpha_min))/(xC*(C.pi*kx^4*cos(kx*(C.pi
+       - alpha_min))) - C.pi*cos(kx*(C.pi - alpha_min)) - 2*kx^4*alpha_min*cos(kx*(
+      C.pi - alpha_min)) + 2*kx^2*alpha_min*cos(kx*(C.pi - alpha_min)) - kx^4*sin(2
+      *alpha_min)*cos(kx*(C.pi - alpha_min)) + kx^2*sin(2*alpha_min)*cos(kx*(C.pi
+       - alpha_min)) - 4*kx^3*cos(alpha_min)^2*sin(kx*(C.pi - alpha_min)) - 4*kx^
+      2*cos(alpha_min)*sin(alpha_min)*cos(kx*(C.pi - alpha_min)));
   else
     der(alpha_TCSC) = (Kr*Vs_POD - Kp*(pkm - pref) + x2 - alpha_TCSC)/Tr;
     der(x2) = -Ki*(pkm - pref);
-    b = pi*(kx^4 - 2*kx^2 + 1)*cos(kx*(pi - alpha_TCSC))/(xC*(pi*kx^4*cos(kx*(
-      pi - alpha_TCSC))) - pi*cos(kx*(pi - alpha_TCSC)) - 2*kx^4*alpha_TCSC*cos(
-      kx*(pi - alpha_TCSC)) + 2*kx^2*alpha_TCSC*cos(kx*(pi - alpha_TCSC)) - kx^
-      4*sin(2*alpha_TCSC)*cos(kx*(pi - alpha_TCSC)) + kx^2*sin(2*alpha_TCSC)*
-      cos(kx*(pi - alpha_TCSC)) - 4*kx^3*cos(alpha_TCSC)^2*sin(kx*(pi -
-      alpha_TCSC)) - 4*kx^2*cos(alpha_TCSC)*sin(alpha_TCSC)*cos(kx*(pi -
+    b = C.pi*(kx^4 - 2*kx^2 + 1)*cos(kx*(C.pi - alpha_TCSC))/(xC*(C.pi*kx^4*cos(kx*(
+      C.pi - alpha_TCSC))) - C.pi*cos(kx*(C.pi - alpha_TCSC)) - 2*kx^4*alpha_TCSC*cos(
+      kx*(C.pi - alpha_TCSC)) + 2*kx^2*alpha_TCSC*cos(kx*(C.pi - alpha_TCSC)) - kx^
+      4*sin(2*alpha_TCSC)*cos(kx*(C.pi - alpha_TCSC)) + kx^2*sin(2*alpha_TCSC)*
+      cos(kx*(C.pi - alpha_TCSC)) - 4*kx^3*cos(alpha_TCSC)^2*sin(kx*(C.pi -
+      alpha_TCSC)) - 4*kx^2*cos(alpha_TCSC)*sin(alpha_TCSC)*cos(kx*(C.pi -
       alpha_TCSC)));
   end if;
   n.ii - B*n.vr - G*n.vi = (y + b)*(p.vr - n.vr);

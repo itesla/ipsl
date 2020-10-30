@@ -35,16 +35,18 @@ model TCSC_Alpha_Test
     R=0.01,
     G=0,
     B=0.001/2,
-    X=0.1) annotation (Placement(transformation(extent={{56,-10},{76,10}})));
+    X=0.1,
+    displayPF=true)
+           annotation (Placement(transformation(extent={{56,-10},{76,10}})));
   Electrical.Loads.PSAT.PQvar                     lOADPQ(
     t_start_1=2,
     t_end_1=10,
-    dP1=0.01,
-    dQ1=0.01,
+    dP1=1000000,
+    dQ1=1000000,
     t_start_2=12,
     t_end_2=20,
-    dP2=-0.01,
-    dQ2=-0.01,
+    dP2=-1000000,
+    dQ2=-1000000,
     P_0=80000,
     Q_0=60000) annotation (Placement(transformation(extent={{94,-10},{114,10}})));
   OpenIPSL.Electrical.FACTS.PSAT.TCSCAlpha tCSCAlpha
