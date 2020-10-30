@@ -1,5 +1,5 @@
 within OpenIPSL.Electrical.Controls.PSSE.ES;
-model IEEET1 "IEEE Type 1 Excitation System"
+model IEEET1 "IEEE Type 1 Excitation System [IEEE1968]"
   extends Icons.VerifiedModel;
   extends OpenIPSL.Electrical.Controls.PSSE.ES.BaseClasses.BaseExciter;
   import OpenIPSL.NonElectrical.Functions.SE;
@@ -137,7 +137,7 @@ equation
 </tr>
 <tr>
 <td><p>Description</p></td>
-<td><p>IEEE Type 1 Exciteation System Model.</p></td>
+<td><p>IEEE Type 1 Excitation System Model.</p></td>
 </tr>
 </table>
 </html>"));

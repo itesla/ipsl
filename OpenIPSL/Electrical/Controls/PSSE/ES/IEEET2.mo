@@ -1,5 +1,5 @@
 within OpenIPSL.Electrical.Controls.PSSE.ES;
-model IEEET2 "IEEE Type 2 Excitation System"
+model IEEET2 "IEEE Type 2 Excitation System [IEEE1968]"
   extends Icons.VerifiedModel;
   extends OpenIPSL.Electrical.Controls.PSSE.ES.BaseClasses.BaseExciter;
   import
@@ -146,7 +146,7 @@ equation
 </tr>
 <tr>
 <td><p>Description</p></td>
-<td><p>IEEE Type 2 Excitaiton System Model.</p></td>
+<td><p>IEEE Type 2 Excitation System Model.</p></td>
 </tr>
 </table>
 </html>"));

@@ -1,8 +1,17 @@
-within OpenIPSL.UsersGuide;
+﻿within OpenIPSL.UsersGuide;
 model References "References"
   extends Modelica.Icons.References;
   annotation (Documentation(info="<html>
 <table cellspacing=\"0\" cellpadding=\"2\" border=\"0\">
+<tr>
+<td>[IEEE1968]</td>
+<td>IEEE:
+        &quot;Computer representation of excitation systems&quot;.
+        IEEE Transactions on Power Apparatus and Systems, Vol PAS-87, 1460–1464, 
+        No 6, June 1968.
+         <a href=\"https://doi.org/10.1109/TPAS.1968.292114\">DOI: 10.1109/TPAS.1968.292114</a>
+</td>
+</tr>
 <tr>
 <td>[IEEE1981]</td>
 <td>IEEE:
@@ -11,7 +20,6 @@ model References "References"
         <a href=\"https://doi.org/10.1109/TPAS.1981.316906\">DOI: 10.1109/TPAS.1981.316906</a>
 </td>
 </tr>
-10.1109/IEEESTD.1992.106975</a>
 <tr>
 <td>[IEEE1992]</td>
 <td>IEEE:
