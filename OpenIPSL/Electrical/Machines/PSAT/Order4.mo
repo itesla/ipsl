@@ -14,7 +14,7 @@ model Order4 "Fourth Order Synchronous Machine with Inputs and Outputs"
   SI.PerUnit e1q(start=e1q0) "q-axis transient voltage";
   SI.PerUnit e1d(start=e1d0) "d-axis transient voltage";
 protected
-  parameter SI.PerUnit vf00=V_MBtoSB*(e1q0 + (xd - x1d)*id0) "Initial value (systemn base)";
+  parameter SI.PerUnit vf00=V_MBtoSB*(e1q0 + (xd - x1d)*id0) "Initial value (system base)";
   parameter SI.PerUnit e1q0=vq0 + ra*iq0 + x1d*id0 "Initialization";
   parameter SI.PerUnit e1d0=vd0 + ra*id0 - x1q*iq0 "Initialization";
 initial equation
