@@ -3,7 +3,6 @@ model STATCOM "Static Synchronous Compensator model with equation"
   extends OpenIPSL.Electrical.Essentials.pfComponent(
     enableangle_0=true,
     enablev_0=true,
-    enablefn=true,
     enableV_b=true,
     enableS_b=true);
   OpenIPSL.Interfaces.PwPin p(vr(start=vr0), vi(start=vi0)) annotation (
@@ -17,7 +16,7 @@ model STATCOM "Static Synchronous Compensator model with equation"
 
    parameter SI.PerUnit Qg=0 "Reactive power injection (system base)"
     annotation (Dialog(group="Device parameters"));
-  parameter Real Kr=50 "Regulator gain [pu/pu]"
+  parameter Real Kr=0.1 "Regulator gain [pu/pu]"
     annotation (Dialog(group="Device parameters"));
   parameter SI.Time Tr=0.01 "Regulator time constant"
     annotation (Dialog(group="Device parameters"));
@@ -33,18 +32,15 @@ model STATCOM "Static Synchronous Compensator model with equation"
 protected
   parameter SI.PerUnit In=Sn/Vn "Nominal current (local base)";
   parameter SI.PerUnit I_b=S_b/V_b "Base current";
-  parameter Real i_max=i_Max*In/I_b "Max current (system base)";
-  parameter Real i_min=i_Min*In/I_b "Min current (system base)";
-  parameter Real vr0=v_0*cos(angle_0rad) "Initial real voltage";
-  parameter Real vi0=v_0*sin(angle_0rad) "Initial imaginary voltage";
-  parameter Real uo=v_ref + v_POD - v_0 "Initialization";
-  parameter Real i0=Qg/v_0 "Initial current";
-  parameter Real v_ref=i0/Kr + v_0 - v_POD "Initialization";
-  //parameter Real vmin=v_ref + v_POD - i_max/Kr;
-  //parameter Real vmax=v_ref + v_POD - i_min/Kr;
-  //parameter Real umax=i_max/Kr;
-  //parameter Real umin=i_min/Kr;
-  Real u(start=uo);
+  parameter SI.PerUnit i_max=i_Max*In/I_b "Max current (system base)";
+  parameter SI.PerUnit i_min=i_Min*In/I_b "Min current (system base)";
+  parameter SI.PerUnit vr0=v_0*cos(angle_0rad) "Initial real voltage";
+  parameter SI.PerUnit vi0=v_0*sin(angle_0rad) "Initial imaginary voltage";
+  parameter SI.PerUnit u0=v_ref + v_POD - v_0 "Initial controller input";
+  parameter SI.PerUnit i0=Qg/v_0 "Initial current";
+  parameter SI.PerUnit v_ref=i0/Kr + v_0 - v_POD "Reference voltage";
+
+  SI.PerUnit u(start=u0) "Controller input";
   NonElectrical.Continuous.SimpleLagLim simpleLagLim(
     K=Kr,
     T=Tr,
@@ -63,43 +59,51 @@ equation
   annotation (
     Icon(coordinateSystem(preserveAspectRatio=true, extent={{-100,-100},{100,
             100}}), graphics={Rectangle(extent={{-100,100},{100,-100}},
-          lineColor={0,0,255}),Ellipse(
-          extent={{-2,22},{48,-22}},
-          lineColor={0,0,0},
-          fillColor={215,215,215},
-          fillPattern=FillPattern.Solid),Ellipse(
-          extent={{34,24},{84,-20}},
-          lineColor={0,0,0},
-          fillPattern=FillPattern.Solid,
-          fillColor={215,215,215}),Line(
-          points={{-38,0},{-2,0},{-2,0}},
+          lineColor={28,108,200}),
+                               Ellipse(
+          extent={{0,30},{60,-30}},
+          lineColor={0,0,255}),
+                              Line(
+          points={{92,0},{100,0}},
           color={0,0,255},
           smooth=Smooth.None),Line(
-          points={{84,2},{100,2},{100,2}},
-          color={0,0,255},
-          smooth=Smooth.None),Line(
-          points={{-90,6},{-82,6},{-76,6}},
-          color={255,0,0},
-          smooth=Smooth.None,
-          thickness=0.5),Line(
-          points={{-90,-6},{-82,-6},{-76,-6}},
-          color={255,0,0},
-          smooth=Smooth.None,
-          thickness=0.5),Line(
-          points={{-38,0},{-46,0},{-46,0}},
-          color={0,0,255},
-          smooth=Smooth.None),Line(
-          points={{-84,6},{-84,26},{-46,26},{-46,-24},{-82,-24},{-84,-24},{-84,
-            -6},{-84,-6}},
-          color={255,0,0},
-          thickness=0.5,
-          smooth=Smooth.None),Text(
-          extent={{-34,-38},{24,-68}},
-          lineColor={0,0,0},
+          points={{-90,4},{-70,4}},
+          color={0,0,255}),
+                         Line(
+          points={{-90,-4},{-70,-4}},
+          color={0,0,255}),   Line(
+          points={{-52,20},{-80,20},{-80,4}},
+          color={0,0,255}),   Text(
+          extent={{-78,-46},{82,-86}},
+          lineColor={28,108,200},
           lineThickness=0.5,
           fillColor={255,0,0},
           fillPattern=FillPattern.Solid,
-          textString="%Name")}),
+          textString="%name"),
+        Line(points={{-18,0},{-14,0}}, color={217,67,180}),
+        Polygon(
+          points={{-20,-6},{-26,4},{-14,4},{-20,-6}},
+          lineColor={217,67,180},
+          fillColor={255,255,255},
+          fillPattern=FillPattern.Solid),
+        Polygon(
+          points={{-40,4},{-46,-6},{-34,-6},{-40,4}},
+          lineColor={217,67,180},
+          fillColor={255,255,255},
+          fillPattern=FillPattern.Solid),
+        Line(points={{-46,4},{-34,4}}, color={217,67,180}),
+        Line(points={{-26,-6},{-14,-6}}, color={217,67,180}),
+        Rectangle(extent={{-40,20},{-20,-20}}, lineColor={217,67,180}),
+        Line(points={{-30,20},{-30,30}}, color={217,67,180}),
+        Line(points={{-30,-30},{-30,-20}}, color={217,67,180}),
+        Rectangle(extent={{-52,34},{-8,-34}}, lineColor={0,0,255}),
+                              Line(
+          points={{-8,0},{0,0}},
+          color={0,0,255},
+          smooth=Smooth.None), Ellipse(
+          extent={{32,28},{92,-32}},
+          lineColor={0,0,255}),
+        Line(points={{-80,-4},{-80,-20},{-52,-20}}, color={0,0,255})}),
     Documentation(info="<html>
 <table cellspacing=\"2\" cellpadding=\"0\" border=\"1\"><tr>
 <td><p>Reference</p></td>
