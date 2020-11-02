@@ -11,25 +11,25 @@ model MotorTypeI "Induction Machine - Order I"
     final enableS_b=true);
   parameter Integer Sup=1 "Start-up control" annotation (Dialog(group=
           "Machine parameters"), choices(choice=0, choice=1));
-  parameter SI.PerUnit Rs=0.01 "Stator resistance (pu)"
+  parameter SI.PerUnit Rs=0.01 "Stator resistance"
     annotation (Dialog(group="Machine parameters"));
-  parameter SI.PerUnit Xs=0.15 "Stator reactance (pu)"
+  parameter SI.PerUnit Xs=0.15 "Stator reactance"
     annotation (Dialog(group="Machine parameters"));
-  parameter SI.PerUnit Rr1=0.05 "1st cage rotor resistance (pu)"
+  parameter SI.PerUnit Rr1=0.05 "1st cage rotor resistance"
     annotation (Dialog(group="Machine parameters"));
-  parameter SI.PerUnit Xr1=0.15 "1st cage rotor reactance (pu)"
+  parameter SI.PerUnit Xr1=0.15 "1st cage rotor reactance"
     annotation (Dialog(group="Machine parameters"));
-  parameter SI.PerUnit Xm=5 "Magnetizing reactance (pu)"
+  parameter SI.PerUnit Xm=5 "Magnetizing reactance"
     annotation (Dialog(group="Machine parameters"));
-  parameter SI.Time Hm=3 "Inertia constant (kWs/kVA)"
+  parameter SI.Time Hm=3 "Inertia constant [Ws/VA]"
     annotation (Dialog(group="Machine parameters"));
-  parameter SI.PerUnit a=0.5 "1st coefficient of tau_m(w) (pu)"
+  parameter SI.PerUnit a=0.5 "1st coefficient of tau_m(w)"
     annotation (Dialog(group="Machine parameters"));
-  parameter SI.PerUnit b=0.00 "2nd coefficient of tau_m(w) (pu)"
+  parameter SI.PerUnit b=0.00 "2nd coefficient of tau_m(w)"
     annotation (Dialog(group="Machine parameters"));
-  parameter SI.PerUnit c=0.00 "3rd coefficient of tau_m(w) (pu)"
+  parameter SI.PerUnit c=0.00 "3rd coefficient of tau_m(w)"
     annotation (Dialog(group="Machine parameters"));
-  parameter SI.Time tup=0 "Start up time (s)"
+  parameter SI.Time tup=0 "Start up time"
     annotation (Dialog(group="Machine parameters"));
   SI.PerUnit v(start=v_0) "Bus voltage magnitude";
   SI.Angle anglev(start=angle_0rad) "Bus voltage angle";

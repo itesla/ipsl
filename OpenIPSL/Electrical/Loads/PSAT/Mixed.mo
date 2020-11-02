@@ -1,15 +1,15 @@
 within OpenIPSL.Electrical.Loads.PSAT;
 model Mixed "Mixload - Mixed Load"
   extends BaseClasses.baseLoad;
-  parameter Real Kpf=0 "Frequency coefficient for the active power (pu)";
+  parameter SI.PerUnit Kpf=0 "Frequency coefficient for the active power";
   parameter Real alpha=0 "Voltage exponent for the active power";
-  parameter Real Tpv=0.12 "Time constant of dV/dt for the active power (s)";
-  parameter Real Kqf=0 "Frequency coefficient for the reactive power (pu)";
+  parameter SI.Time Tpv=0.12 "Time constant of dV/dt for the active power";
+  parameter SI.PerUnit Kqf=0 "Frequency coefficient for the reactive power";
   parameter Real beta=0 "Voltage exponent for the reactive power";
-  parameter Real Tqv=0.075 "Time constant of dV/dt for the reactive power (s)";
-  parameter Real Tfv=0.005 "Time constant of voltage magnitude filter (s)";
-  parameter Real Tft=0.007 "Time constant of voltage angle filter (s)";
-  Real deltaw "Frequency deviation (pu)";
+  parameter SI.Time Tqv=0.075 "Time constant of dV/dt for the reactive power";
+  parameter SI.Time Tfv=0.005 "Time constant of voltage magnitude filter";
+  parameter SI.Time Tft=0.007 "Time constant of voltage angle filter";
+  SI.PerUnit deltaw "Frequency deviation";
 protected
   Real a "Auxiliary variable, voltage division";
   Real b "Auxiliary variable, derivation";

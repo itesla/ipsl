@@ -2,7 +2,7 @@ within OpenIPSL.NonElectrical.Continuous;
 block DerivativeLag "Derivative lag transfer function block"
   extends Modelica.Blocks.Interfaces.SISO;
   parameter Real K "Gain";
-  parameter Modelica.SIunits.Time T "Time constant";
+  parameter SI.Time T "Time constant";
   parameter Real y_start "Output start value"
     annotation (Dialog(group="Initialization"));
   parameter Real x_start=0 "Start value of state variable"
@@ -17,9 +17,9 @@ block DerivativeLag "Derivative lag transfer function block"
     a={T_dummy,1})
     annotation (Placement(transformation(extent={{-8,-10},{12,10}})));
 protected
-  parameter Modelica.SIunits.Time T_dummy=if abs(T) < Modelica.Constants.eps
+  parameter SI.Time T_dummy=if abs(T) < Modelica.Constants.eps
        then 1000 else T "Lead time constant";
-  parameter Modelica.SIunits.Time K_dummy=if abs(K) < Modelica.Constants.eps
+  parameter SI.Time K_dummy=if abs(K) < Modelica.Constants.eps
        then 1 else K "Lead time constant";
 equation
   if abs(par1.y) < Modelica.Constants.eps then

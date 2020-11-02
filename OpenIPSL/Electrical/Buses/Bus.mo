@@ -16,7 +16,7 @@ model Bus "Bus model (2014/03/10)"
       iconTransformation(
         extent={{-10,-10},{10,10}})));
   SI.PerUnit V(start=v_0) "Bus voltage magnitude";
-  Modelica.SIunits.Conversions.NonSIunits.Angle_deg angle(start=angle_0)
+  SI.Conversions.NonSIunits.Angle_deg angle(start=angle_0)
     "Bus voltage angle";
 equation
   V = sqrt(p.vr^2 + p.vi^2);

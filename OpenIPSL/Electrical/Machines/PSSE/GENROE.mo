@@ -22,24 +22,24 @@ model GENROE "ROUND ROTOR GENERATOR MODEL (EXPONENTIAL SATURATION)"
     uq(start=uq0),
     Te(start=pm0));
   //Machine parameters
-  parameter SI.PerUnit Xpq "Sub-transient reactance (pu)"
+  parameter SI.PerUnit Xpq "Sub-transient reactance"
     annotation (Dialog(group="Machine parameters"));
   parameter SI.Time Tpq0 "q-axis transient open-circuit time constant"
     annotation (Dialog(group="Machine parameters"));
-  parameter SI.PerUnit Xpp=Xppd "Sub-transient reactance (pu)"
+  parameter SI.PerUnit Xpp=Xppd "Sub-transient reactance"
     annotation (Dialog(group="Machine parameters"));
-  SI.PerUnit Epd(start=Epd0) "d-axis voltage behind transient reactance (pu)";
-  SI.PerUnit Epq(start=Epq0) "q-axis voltage behind transient reactance (pu)";
-  SI.PerUnit PSIkd(start=PSIkd0) "d-axis rotor flux linkage (pu)";
-  SI.PerUnit PSIkq(start=PSIkq0) "q-axis rotor flux linkage (pu)";
+  SI.PerUnit Epd(start=Epd0) "d-axis voltage behind transient reactance";
+  SI.PerUnit Epq(start=Epq0) "q-axis voltage behind transient reactance";
+  SI.PerUnit PSIkd(start=PSIkd0) "d-axis rotor flux linkage";
+  SI.PerUnit PSIkq(start=PSIkq0) "q-axis rotor flux linkage";
   //State variables
-  SI.PerUnit PSId(start=PSId0) "d-axis flux linkage (pu)";
-  SI.PerUnit PSIq(start=PSIq0) "q-axis flux linkage (pu)";
-  SI.PerUnit PSIppd(start=PSIppd0) "d-axis subtransient flux linkage (pu)";
-  SI.PerUnit PSIppq(start=PSIppq0) "q-axis subtransient flux linkage (pu)";
-  SI.PerUnit PSIpp "Air-gap flux (pu)";
-  SI.PerUnit XadIfd(start=efd0) "d-axis machine field current (pu)";
-  SI.PerUnit XaqIlq(start=0) "q-axis Machine field current (pu)";
+  SI.PerUnit PSId(start=PSId0) "d-axis flux linkage";
+  SI.PerUnit PSIq(start=PSIq0) "q-axis flux linkage";
+  SI.PerUnit PSIppd(start=PSIppd0) "d-axis subtransient flux linkage";
+  SI.PerUnit PSIppq(start=PSIppq0) "q-axis subtransient flux linkage";
+  SI.PerUnit PSIpp "Air-gap flux";
+  SI.PerUnit XadIfd(start=efd0) "d-axis machine field current";
+  SI.PerUnit XaqIlq(start=0) "q-axis Machine field current";
 protected
   parameter Complex Zs=R_a + j*Xpp "Equivalent impedance";
   parameter Complex VT=v_0*cos(angle_0rad) + j*v_0*sin(angle_0rad)

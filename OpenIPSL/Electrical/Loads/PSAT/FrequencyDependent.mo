@@ -5,8 +5,8 @@ model FrequencyDependent "Fl - Frequency Dependent Load"
   parameter Real alpha_q=0 "Reactive power voltage coefficient";
   parameter Real beta_p=1.3 "Active power frequency coefficient";
   parameter Real beta_q=1.3 "Reactive power frequency coefficient";
-  parameter Real Tf=0.1 "Filter time constant (s)";
-  Real deltaw "Frequency deviation (pu)";
+  parameter SI.Time Tf=0.1 "Filter time constant";
+  SI.PerUnit deltaw "Frequency deviation";
 protected
   Real a "Auxiliary variable, voltage division";
   Real x(start=0) "auxiliary variable";

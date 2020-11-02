@@ -28,23 +28,23 @@ partial model baseLoad
     ir(start=ir0),
     ii(start=ii0))
     annotation (Placement(transformation(extent={{-10,90},{10,110}})));
-  Modelica.SIunits.Angle angle(start=angle_0rad) "Bus voltage angle";
-  SI.PerUnit v(start=v_0) "Bus voltage magnitude (pu)";
-  SI.PerUnit P "Active power consumption (pu)";
-  SI.PerUnit Q "Reactive power consumption (pu)";
+  SI.Angle angle(start=angle_0rad) "Bus voltage angle";
+  SI.PerUnit v(start=v_0) "Bus voltage magnitude";
+  SI.PerUnit P "Active power consumption";
+  SI.PerUnit Q "Reactive power consumption";
 protected
-  parameter SI.PerUnit p0=(S_i.re*v_0 + S_y.re*v_0^2 + S_p.re)/S_b "pu";
-  parameter SI.PerUnit q0=(S_i.im*v_0 + S_y.im*v_0^2 + S_p.im)/S_b "pu";
-  parameter SI.PerUnit vr0=v_0*cos(angle_0rad) "Initialitation";
-  parameter SI.PerUnit vi0=v_0*sin(angle_0rad) "Initialitation";
-  parameter SI.PerUnit ir0=(p0*vr0 + q0*vi0)/(vr0^2 + vi0^2) "Initialitation";
-  parameter SI.PerUnit ii0=(p0*vi0 - q0*vr0)/(vr0^2 + vi0^2) "Initialitation";
+  parameter SI.PerUnit p0=(S_i.re*v_0 + S_y.re*v_0^2 + S_p.re)/S_b "Initial active power";
+  parameter SI.PerUnit q0=(S_i.im*v_0 + S_y.im*v_0^2 + S_p.im)/S_b "Initial reactive power";
+  parameter SI.PerUnit vr0=v_0*cos(angle_0rad) "Initial real voltage";
+  parameter SI.PerUnit vi0=v_0*sin(angle_0rad) "Initial imaginary voltage";
+  parameter SI.PerUnit ir0=(p0*vr0 + q0*vi0)/(vr0^2 + vi0^2) "Initial real current";
+  parameter SI.PerUnit ii0=(p0*vi0 - q0*vr0)/(vr0^2 + vi0^2) "Initial imaginary current";
   parameter Complex S_P=Complex((1 - a.re - b.re)*S_p.re, (1 - a.im - b.im)*S_p.im)
-      /S_b "pu";
+      /S_b "[pu]";
   parameter Complex S_I=(S_i + Complex(a.re*S_p.re/v_0, a.im*S_p.im/v_0))/S_b
-    "pu";
+    "[pu]";
   parameter Complex S_Y=(S_y + Complex(b.re*S_p.re/v_0^2, b.im*S_p.im/v_0^2))/
-      S_b "pu";
+      S_b "[pu]";
   //Constant current load vary function when voltage is below 0.5
   parameter Real a2=1.502;
   parameter Real b2=1.769;

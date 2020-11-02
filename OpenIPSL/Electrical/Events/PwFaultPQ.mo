@@ -2,12 +2,12 @@ within OpenIPSL.Electrical.Events;
 model PwFaultPQ
   OpenIPSL.Interfaces.PwPin p annotation (Placement(transformation(extent={{-40,
             -10},{-20,10}}), iconTransformation(extent={{-80,-10},{-60,10}})));
-  parameter Real R "Resistance (pu)";
-  parameter Real X "Reactance (pu)";
-  parameter Real t1 "Start time of the fault (s)";
-  parameter Real t2 "End time of the fault (s)";
-  Real P "Active power supplied to the fault (pu)";
-  Real Q "Reactive power supplied to the fault (pu)";
+  parameter SI.PerUnit R "Resistance";
+  parameter SI.PerUnit X "Reactance";
+  parameter SI.Time t1 "Start time of the fault";
+  parameter SI.Time t2 "End time of the fault";
+  SI.PerUnit P "Active power supplied to the fault";
+  SI.PerUnit Q "Reactive power supplied to the fault";
 equation
   p.ir = if time < t1 then 0 else if time < t2 then 1/X*(p.vi - R*p.ii) else 0;
   p.ii = if time < t1 then 0 else if time < t2 then (R*p.vi - X*p.vr)/(X*X + R*

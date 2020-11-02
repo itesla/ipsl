@@ -13,27 +13,27 @@ model TwoWindingTransformer
           "Transformer impedance data"), choices(
       choice=1 "Z pu (winding kV system MVA)",
       choice=2 "Z pu (winding kV widing MVA)",
-      choice=3 "Load loss (W) & |Z| (pu)"));
-  parameter SI.PerUnit R "Specified R (pu)"
+      choice=3 "Load loss (W) & |Z| [pu]"));
+  parameter SI.PerUnit R "Specified R"
     annotation (Dialog(tab="Transformer impedance data"));
-  parameter SI.PerUnit X "Specified X (pu)"
+  parameter SI.PerUnit X "Specified X"
     annotation (Dialog(tab="Transformer impedance data"));
-  parameter SI.PerUnit G "Magnetizing G (pu)"
+  parameter SI.PerUnit G "Magnetizing G"
     annotation (Dialog(tab="Transformer impedance data"));
-  parameter SI.PerUnit B "Magnetizing B (pu)"
+  parameter SI.PerUnit B "Magnetizing B"
     annotation (Dialog(tab="Transformer impedance data"));
   parameter Integer CW=1 "Winding I/O code" annotation (Dialog(tab=
           "Transformer Nominal Ratings Data"), choices(
       choice=1 "Turns ratio (pu on bus base)",
       choice=2 "Winding voltage",
       choice=3 "Turns ratio (pu on nom wind)"));
-  parameter SI.PerUnit t1=1 "Winding 1 ratio (pu)"
+  parameter SI.PerUnit t1=1 "Winding 1 ratio"
     annotation (Dialog(tab="Transformer Nominal Ratings Data"));
   parameter SI.Voltage VNOM1(displayUnit="kV")=0 "Nominal voltage of winding 1"
     annotation (Dialog(tab="Transformer Nominal Ratings Data"));
   parameter SI.Voltage VB1(displayUnit="kV")=300e3 "Bus base voltage of winding 1"
     annotation (Dialog(tab="Transformer Nominal Ratings Data"));
-  parameter SI.PerUnit t2=1 "Secondary winding tap ratio (pu)"
+  parameter SI.PerUnit t2=1 "Secondary winding tap ratio"
     annotation (Dialog(tab="Transformer Nominal Ratings Data"));
   parameter SI.Voltage VNOM2(displayUnit="kV")=0 "Nominal Voltage of winding 2"
     annotation (Dialog(tab="Transformer Nominal Ratings Data"));

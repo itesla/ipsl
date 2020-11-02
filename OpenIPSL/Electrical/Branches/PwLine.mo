@@ -9,20 +9,20 @@ model PwLine "Model for a transmission Line based on the pi-equivalent circuit"
             -10},{-80,10}}), iconTransformation(extent={{-100,-10},{-80,10}})));
   OpenIPSL.Interfaces.PwPin n annotation (Placement(transformation(extent={{80,
             -10},{100,10}}), iconTransformation(extent={{80,-10},{100,10}})));
-  parameter Modelica.SIunits.PerUnit R "Resistance (pu)"
+  parameter SI.PerUnit R "Resistance"
     annotation (Dialog(group="Line parameters"));
-  parameter Modelica.SIunits.PerUnit X "Reactance (pu)"
+  parameter SI.PerUnit X "Reactance"
     annotation (Dialog(group="Line parameters"));
-  parameter Modelica.SIunits.PerUnit G "Shunt half conductance (pu)"
+  parameter SI.PerUnit G "Shunt half conductance"
     annotation (Dialog(group="Line parameters"));
-  parameter Modelica.SIunits.PerUnit B "Shunt half susceptance (pu)"
+  parameter SI.PerUnit B "Shunt half susceptance"
     annotation (Dialog(group="Line parameters"));
   parameter SI.ApparentPower S_b(displayUnit="MVA")=SysData.S_b
     "System base power"
     annotation (Dialog(group="Line parameters", enable=false));
-  parameter Modelica.SIunits.Time t1=Modelica.Constants.inf
+  parameter SI.Time t1=Modelica.Constants.inf
     annotation (Dialog(group="Perturbation parameters"));
-  parameter Modelica.SIunits.Time t2=Modelica.Constants.inf
+  parameter SI.Time t2=Modelica.Constants.inf
     annotation (Dialog(group="Perturbation parameters"));
   parameter Integer opening=1 annotation (Dialog(group=
           "Perturbation parameters"), choices(

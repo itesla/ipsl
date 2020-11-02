@@ -1,16 +1,16 @@
 within OpenIPSL.Electrical.Loads.PSAT;
 model ExponentialRecovery "Exload - Exponential Recovery Load"
   extends BaseClasses.baseLoad;
-  parameter Real Tp=1 "Active power time constant (s)";
-  parameter Real Tq=1 "Reactive power time constant (s)";
+  parameter SI.Time Tp=1 "Active power time constant";
+  parameter SI.Time Tq=1 "Reactive power time constant";
   parameter Real alpha_s=2 "Static active power exponent";
   parameter Real alpha_t=1.5 "Dynamic active power exponent";
   parameter Real beta_s=2 "Static reactive power exponent";
   parameter Real beta_t=1.5 "Dynamic reactive power exponent";
-  Real ps "Static real power absorption (pu)";
-  Real pt "Transient real power absorption (pu)";
-  Real qs "Static imaginary power absorption (pu)";
-  Real qt "Transient imaginary power absorption (pu)";
+  SI.PerUnit ps "Static real power absorption";
+  SI.PerUnit pt "Transient real power absorption";
+  SI.PerUnit qs "Static imaginary power absorption";
+  SI.PerUnit qt "Transient imaginary power absorption";
 protected
   Real xp(start=0);
   Real xq(start=0);

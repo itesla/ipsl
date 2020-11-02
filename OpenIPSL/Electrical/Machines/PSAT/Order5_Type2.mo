@@ -1,13 +1,13 @@
 within OpenIPSL.Electrical.Machines.PSAT;
 model Order5_Type2
   extends BaseClasses.baseMachine(vf(start=vf00), xq0=xq);
-  parameter SI.PerUnit xd=1.9 "d-axis synchronous reactance (pu)"
+  parameter SI.PerUnit xd=1.9 "d-axis synchronous reactance"
     annotation (Dialog(group="Machine parameters"));
-  parameter SI.PerUnit xq=1.7 "q-axis synchronous reactance (pu)"
+  parameter SI.PerUnit xq=1.7 "q-axis synchronous reactance"
     annotation (Dialog(group="Machine parameters"));
-  parameter SI.PerUnit x2d=0.204 "d-axis sub-transient reactance (pu)"
+  parameter SI.PerUnit x2d=0.204 "d-axis sub-transient reactance"
     annotation (Dialog(group="Machine parameters"));
-  parameter SI.PerUnit x2q=0.3 "q-axis sub-transient reactance (pu)"
+  parameter SI.PerUnit x2q=0.3 "q-axis sub-transient reactance"
     annotation (Dialog(group="Machine parameters"));
   parameter SI.Time T1d0=8 "d-axis open circuit transient time constant"
     annotation (Dialog(group="Machine parameters"));
@@ -27,7 +27,7 @@ protected
   parameter SI.PerUnit K2=x1d - x2d + (T2d0*x2d*(xd - x1d))/(T1d0*x1d);
   parameter SI.PerUnit e1q0=(-K1*Taa/T1d0*id0) + (1 - Taa/T1d0)*(e2q0 + K2*id0);
   parameter SI.PerUnit vf00=V_MBtoSB*(K1*id0 + e1q0)/(1 - Taa/T1d0)
-    "Init. val. (pu, SB)";
+    "Initial value (system base)";
 initial equation
   //der(e1q) = 0;
   der(e2q) = 0;

@@ -2,13 +2,13 @@ within OpenIPSL.Electrical.Events;
 model Breaker "Circuit breaker with time or signal control"
   parameter Boolean enableTrigger=false "=true, if external trigger signal is used"
     annotation (Evaluate=true, choices(checkBox=true));
-  parameter Modelica.SIunits.Time t_o=Modelica.Constants.inf "Opening time"
+  parameter SI.Time t_o=Modelica.Constants.inf "Opening time"
     annotation (Dialog(enable=not enableTrigger));
   parameter Boolean rc_enabled=false "Enable reclosure" annotation (
     Evaluate=true,
     choices(checkBox=true),
     Dialog(enable=not enableTrigger));
-  parameter Modelica.SIunits.Time t_rc=Modelica.Constants.inf "Reclosing time"
+  parameter SI.Time t_rc=Modelica.Constants.inf "Reclosing time"
      annotation (Dialog(enable=not enableTrigger and rc_enabled));
   Interfaces.PwPin s "Sending pin"
     annotation (Placement(transformation(extent={{-110,-10},{-90,10}}),iconTransformation(extent={{-110,-10},{-90,10}})));

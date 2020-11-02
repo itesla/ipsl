@@ -1,6 +1,6 @@
 within OpenIPSL.Electrical.Controls.PSSE.ES.BaseClasses;
 model RectifierCommutationVoltageDrop
-  parameter Real K_C "Rectifier load factor (pu)";
+  parameter SI.PerUnit K_C "Rectifier load factor";
   Modelica.Blocks.Interfaces.RealInput V_EX annotation (Placement(
         transformation(extent={{-140,-20},{-100,20}}), iconTransformation(
           extent={{-120,-10},{-100,10}})));

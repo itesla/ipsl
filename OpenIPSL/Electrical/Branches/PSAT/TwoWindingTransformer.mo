@@ -17,9 +17,9 @@ model TwoWindingTransformer "Modeled as series reactances without iron losses"
     annotation (Dialog(group="Transformer parameters"));
   parameter SI.Voltage Vn(displayUnit="kV")=40e3 "Voltage rating"
     annotation (Dialog(group="Transformer parameters"));
-  parameter SI.PerUnit rT=0.01 "Resistance (pu, transformer base)"
+  parameter SI.PerUnit rT=0.01 "Resistance(transformer base)"
     annotation (Dialog(group="Transformer parameters"));
-  parameter SI.PerUnit xT=0.1 "Reactance (pu, transformer base)"
+  parameter SI.PerUnit xT=0.1 "Reactance(transformer base)"
     annotation (Dialog(group="Transformer parameters"));
   parameter Real m=1.0 "Optional fixed tap ratio"
     annotation (Dialog(group="Transformer parameters"));
@@ -39,8 +39,8 @@ model TwoWindingTransformer "Modeled as series reactances without iron losses"
 protected
   parameter SI.Impedance Zn = Vn^2/Sn "Transformer base impedance";
   parameter SI.Impedance Zb = V_b^2/S_b "System base impedance";
-  parameter SI.PerUnit r = rT * Zn/Zb "Resistance (pu, system base)";
-  parameter SI.PerUnit x = xT * Zn/Zb "Reactance (pu, system base)";
+  parameter SI.PerUnit r = rT * Zn/Zb "Resistance (system base)";
+  parameter SI.PerUnit x = xT * Zn/Zb "Reactance (system base)";
   parameter Boolean tc = m <> 1.0 "Internal parameter to switch on the icon arrow";
 equation
   r*p.ir - x*p.ii = 1/m^2*p.vr - 1/m*n.vr;

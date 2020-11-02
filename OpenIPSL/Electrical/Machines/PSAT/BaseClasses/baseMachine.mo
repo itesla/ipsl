@@ -15,11 +15,11 @@ partial model baseMachine
     annotation (Dialog(group="Machine parameters"));
   parameter SI.Voltage Vn(displayUnit="kV") "Voltage rating"
     annotation (Dialog(group="Machine parameters"));
-  parameter SI.PerUnit ra "Armature resistance (pu)"
+  parameter SI.PerUnit ra "Armature resistance"
     annotation (Dialog(group="Machine parameters"));
-  parameter SI.PerUnit x1d "d-axis transient reactance (pu)"
+  parameter SI.PerUnit x1d "d-axis transient reactance"
     annotation (Dialog(group="Machine parameters"));
-  parameter SI.Time M "Mechanical starting time, 2H (MWs/MVA)"
+  parameter SI.Time M "Mechanical starting time, 2H [Ws/VA]"
     annotation (Dialog(group="Machine parameters"));
   parameter Real D "Damping coefficient"
     annotation (Dialog(group="Machine parameters"));
@@ -35,49 +35,49 @@ partial model baseMachine
     start=delta0,
     quantity="Angle",
     unit="rad",
-    displayUnit="rad") "Rotor angle (rad)" annotation (Placement(transformation(
+    displayUnit="rad") "Rotor angle" annotation (Placement(transformation(
         origin={110,60},
         extent={{-10,-10},{10,10}})));
-  Modelica.Blocks.Interfaces.RealOutput w(start=1) "Rotor speed (pu)"
+  Modelica.Blocks.Interfaces.RealOutput w(start=1) "Rotor speed [pu]"
     annotation (Placement(transformation(
         origin={110,90},
         extent={{-10,-10},{10,10}})));
   Modelica.Blocks.Interfaces.RealOutput v(start=v_0)
-    "Generator terminal voltage (pu)" annotation (Placement(transformation(
+    "Generator terminal voltage [pu]" annotation (Placement(transformation(
         origin={110,30},
         extent={{-10,-10},{10,10}})));
-  Modelica.Blocks.Interfaces.RealOutput P(start=p0) "Active power (pu)"
+  Modelica.Blocks.Interfaces.RealOutput P(start=p0) "Active power [pu]"
     annotation (Placement(transformation(
         origin={110,-30},
         extent={{-10,-10},{10,10}})));
-  Modelica.Blocks.Interfaces.RealOutput Q(start=q0) "Reactive power (pu)"
+  Modelica.Blocks.Interfaces.RealOutput Q(start=q0) "Reactive power [pu]"
     annotation (Placement(transformation(
         origin={110,-70},
         extent={{-10,-10},{10,10}})));
-  Modelica.Blocks.Interfaces.RealInput vf "Field voltage (pu)" annotation (
+  Modelica.Blocks.Interfaces.RealInput vf "Field voltage [pu]" annotation (
       Placement(transformation(
         origin={-120,50},
         extent={{-20,-20},{20,20}})));
-  Modelica.Blocks.Interfaces.RealOutput vf0 "Initial field voltage (pu)"
+  Modelica.Blocks.Interfaces.RealOutput vf0 "Initial field voltage [pu]"
     annotation (Placement(transformation(
         origin={-80,110},
         extent={{-10,-10},{10,10}},
         rotation=90)));
   Modelica.Blocks.Interfaces.RealOutput pm0(start=pm00)
-    "Initial mechanical power (pu)" annotation (Placement(transformation(
+    "Initial mechanical power [pu]" annotation (Placement(transformation(
         origin={-80,-110},
         extent={{-10,-10},{10,10}},
         rotation=270)));
-  Modelica.Blocks.Interfaces.RealInput pm(start=pm00) "Mechanical power (pu)"
+  Modelica.Blocks.Interfaces.RealInput pm(start=pm00) "Mechanical power [pu]"
     annotation (Placement(transformation(
         origin={-120,-50},
         extent={{-20,-20},{20,20}})));
   SI.Angle anglev(start=SI.Conversions.from_deg(angle_0))
     " Bus voltage angle (rad)";
-  Real vd(start=vd0) "d-axis voltage (pu)";
-  Real vq(start=vq0) "q-axis voltage (pu)";
-  Real id(start=id0) "d-axis current (pu)";
-  Real iq(start=iq0) "q-axis current (pu)";
+  SI.PerUnit vd(start=vd0) "d-axis voltage";
+  SI.PerUnit vq(start=vq0) "q-axis voltage";
+  SI.PerUnit id(start=id0) "d-axis current";
+  SI.PerUnit iq(start=iq0) "q-axis current";
 protected
   SI.PerUnit pe(start=pm00) "electrical power transmitted through the air-gap";
   SI.PerUnit vf_MB=vf*V_b/Vn "field voltage on machine base";
@@ -103,12 +103,12 @@ protected
   parameter SI.PerUnit ir0=-CM.real(I0) "Init. val.";
   parameter SI.PerUnit ii0=-CM.imag(I0) "Init. val.";
 
-  // Initialize DQ-quantities (pu, machine base)
+  // Initialize DQ-quantities (machine base)
   parameter SI.PerUnit xq0 "used for setting the initial rotor angle";
   parameter SI.Angle delta0=CM.arg((Vt0 + ((ra + CM.j*xq0)*Z_MBtoSB*I0)))
     "Init. val. rotor angle";
   parameter Complex Vdq0=Vt0*CM.fromPolar(1/V_MBtoSB, (-delta0 + (C.pi/2)))
-    "Init. val (pu, machine base)";
+    "Init. val (machine base)";
   parameter Complex Idq0=I0*CM.fromPolar(1/I_MBtoSB, (-delta0 + (C.pi/2)))
     "(pu, machine base)";
   parameter SI.PerUnit vd0=CM.real(Vdq0) "Init. val.";
@@ -117,7 +117,7 @@ protected
   parameter SI.PerUnit iq0=CM.imag(Idq0) "Init. val.";
 
   parameter SI.PerUnit pm00=((vq0 + ra*iq0)*iq0 + (vd0 + ra*id0)*id0)/S_SBtoMB
-    "Init. val. (pu, system base)";
+    "Initial value (system base)";
 
 equation
   v = sqrt(p.vr^2 + p.vi^2);

@@ -3,11 +3,11 @@ model PwShunt "Thyristor controlled Shunt reactor/capacitor"
   OpenIPSL.Interfaces.PwPin p
     annotation (Placement(transformation(extent={{-10,90},{10,110}})));
   Modelica.Blocks.Interfaces.RealInput Q
-    "Reactive power produced by the shunt (pu)"
+    "Reactive power produced by the shunt [pu]"
     annotation (Placement(transformation(extent={{-120,-10},{-100,10}})));
   parameter SI.Frequency fn=50 "Frequency rating";
-  SI.PerUnit c "Capacitance in (pu)";
-  SI.PerUnit l "Inductance in (pu)";
+  SI.PerUnit c "Capacitance";
+  SI.PerUnit l "Inductance";
   SI.PerUnit v;
   SI.Angle anglev;
   SI.PerUnit i;

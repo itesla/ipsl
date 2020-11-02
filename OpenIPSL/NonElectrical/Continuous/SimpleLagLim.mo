@@ -6,7 +6,7 @@ block SimpleLagLim
     annotation (Placement(transformation(extent={{-58,32},{-38,52}})));
   Real state;
   parameter Real K "Gain";
-  parameter Modelica.SIunits.Time T "Lag time constant";
+  parameter SI.Time T "Lag time constant";
   parameter Real y_start "Output start value";
   parameter Real outMax "Maximum output value";
   parameter Real outMin "Minimum output value";

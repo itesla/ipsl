@@ -22,14 +22,14 @@ model GENSAE "SALIENT POLE GENERATOR MODEL (EXPONENTIAL SATURATION)"
     ud(start=ud0),
     uq(start=uq0),
     Te(start=pm0));
-  SI.PerUnit Epq(start=Epq0) "q-axis voltage behind transient reactance (pu)";
-  SI.PerUnit PSIkd(start=PSIkd0) "d-axis rotor flux linkage (pu)";
-  SI.PerUnit PSIppq(start=PSIppq0) "q-axis subtransient flux linkage (pu)";
-  SI.PerUnit PSIppd(start=PSIppd0) "d-axis subtransient flux linkage (pu)";
-  SI.PerUnit PSId(start=PSId0) "d-axis flux linkage (pu)";
-  SI.PerUnit PSIq(start=PSIq0) "q-axis flux linkage (pu)";
-  SI.PerUnit XadIfd(start=efd0) "Machine field current (pu)";
-  SI.PerUnit PSIpp "Air-gap flux (pu)";
+  SI.PerUnit Epq(start=Epq0) "q-axis voltage behind transient reactance";
+  SI.PerUnit PSIkd(start=PSIkd0) "d-axis rotor flux linkage";
+  SI.PerUnit PSIppq(start=PSIppq0) "q-axis subtransient flux linkage";
+  SI.PerUnit PSIppd(start=PSIppd0) "d-axis subtransient flux linkage";
+  SI.PerUnit PSId(start=PSId0) "d-axis flux linkage";
+  SI.PerUnit PSIq(start=PSIq0) "q-axis flux linkage";
+  SI.PerUnit XadIfd(start=efd0) "Machine field current";
+  SI.PerUnit PSIpp "Air-gap flux";
 protected
   parameter Complex Zs=R_a + j*Xppd "Equivalent impedance";
   parameter Complex Is=real(It + VT/Zs) + j*imag(It + VT/Zs);

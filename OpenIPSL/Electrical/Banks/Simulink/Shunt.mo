@@ -5,7 +5,7 @@ model Shunt "Shunt Inductor or Capacitor"
   parameter SI.ReactivePower Qnom(displayUnit="Mvar")
     "Reactive power produced by the shunt at 1 pu voltage, (negative for inductive charge, positive for capacitive charge)";
   parameter SI.ApparentPower Sbase(displayUnit="MVA") "Base power of the system";
-  parameter SI.PerUnit X=Sbase/(-Qnom) "Reactance (pu)";
+  parameter SI.PerUnit X=Sbase/(-Qnom) "Reactance";
   SI.PerUnit Q "Consumed power";
   SI.PerUnit v;
 equation

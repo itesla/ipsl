@@ -1,25 +1,25 @@
 within OpenIPSL.Electrical.Machines.PSAT;
 model Order6
   extends BaseClasses.baseMachine(vf(start=vf00), xq0=xq);
-  parameter SI.PerUnit xd=1.9 "d-axis synchronous reactance (pu)"
+  parameter SI.PerUnit xd=1.9 "d-axis synchronous reactance"
     annotation (Dialog(group="Machine parameters"));
-  parameter SI.PerUnit xq=1.7 "q-axis synchronous reactance (pu)"
+  parameter SI.PerUnit xq=1.7 "q-axis synchronous reactance"
     annotation (Dialog(group="Machine parameters"));
-  parameter SI.PerUnit x1q=0.5 "q-axis transient reactance (pu)"
+  parameter SI.PerUnit x1q=0.5 "q-axis transient reactance"
     annotation (Dialog(group="Machine parameters"));
-  parameter SI.PerUnit x2d=0.204 "d-axis sub-transient reactance (pu)"
+  parameter SI.PerUnit x2d=0.204 "d-axis sub-transient reactance"
     annotation (Dialog(group="Machine parameters"));
-  parameter SI.PerUnit x2q=0.3 "q-axis sub-transient reactance (pu)"
+  parameter SI.PerUnit x2q=0.3 "q-axis sub-transient reactance"
     annotation (Dialog(group="Machine parameters"));
-  parameter SI.Time T1d0=8 "d-axis open circuit transient time constant (s)"
+  parameter SI.Time T1d0=8 "d-axis open circuit transient time constant"
     annotation (Dialog(group="Machine parameters"));
-  parameter SI.Time T1q0=0.8 "q-axis open circuit transient time constant (s)"
+  parameter SI.Time T1q0=0.8 "q-axis open circuit transient time constant"
     annotation (Dialog(group="Machine parameters"));
-  parameter SI.Time T2d0=0.04 "d-axis open circuit sub-transient time constant (s)"
+  parameter SI.Time T2d0=0.04 "d-axis open circuit sub-transient time constant"
     annotation (Dialog(group="Machine parameters"));
-  parameter SI.Time T2q0=0.02 "q-axis open circuit sub-transient time constant (s)"
+  parameter SI.Time T2q0=0.02 "q-axis open circuit sub-transient time constant"
     annotation (Dialog(group="Machine parameters"));
-  parameter SI.Time Taa=2e-3 "d-axis additional leakage time constant (s)"
+  parameter SI.Time Taa=2e-3 "d-axis additional leakage time constant"
     annotation (Dialog(group="Machine parameters"));
 
   SI.PerUnit e1q(start=e1q0, fixed=true) "q-axis transient voltage";
