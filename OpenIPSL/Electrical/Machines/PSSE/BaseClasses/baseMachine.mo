@@ -157,11 +157,11 @@ equation
           lineColor={0,0,255},
           lineThickness=0.5,
           textString="XADIFD0"),Text(
-          extent={{-84,56},{-44,46}},
+          extent={{-90,60},{-50,40}},
           lineColor={0,0,255},
           lineThickness=0.5,
-          textString="PMECH0"),Text(
-          extent={{-88,-46},{-58,-56}},
+          textString="PMECH"), Text(
+          extent={{-90,-40},{-60,-60}},
           lineColor={0,0,255},
           lineThickness=0.5,
           textString="EFD")}));
