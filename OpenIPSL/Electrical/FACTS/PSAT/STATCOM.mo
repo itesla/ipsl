@@ -24,9 +24,9 @@ model STATCOM "Static Var Compensator"
     annotation (Dialog(group="Device parameters"));
   parameter SI.Time Tr=0.01 "Regulator time constant"
     annotation (Dialog(group="Device parameters"));
-  parameter SI.PerUnit i_Max=0.7 "Maximum current (local base)"
+  parameter SI.PerUnit i_Max=0.7 "Maximum current (device base)"
     annotation (Dialog(group="Device parameters"));
-  parameter SI.PerUnit i_Min=-0.1 "Minimum current (local base)"
+  parameter SI.PerUnit i_Min=-0.1 "Minimum current (device base)"
     annotation (Dialog(group="Device parameters"));
   parameter SI.PerUnit v_POD=0 "Power oscillation damper signal"
     annotation (Dialog(group="Device parameters"));
@@ -35,12 +35,12 @@ model STATCOM "Static Var Compensator"
 protected
   Modelica.Blocks.Interfaces.RealOutput i_SH "STATCOM current" annotation (Placement(transformation(extent={{60,-10},{80,10}}), iconTransformation(extent={{34,-10},{54,10}})));
 public
-  Modelica.Blocks.Math.Add3 add(k2=-1) annotation (Placement(transformation(extent={{-50,-10},{-30,10}})));
+  Modelica.Blocks.Math.Add3 feedback(k2=-1) annotation (Placement(transformation(extent={{-50,-10},{-30,10}})));
   Modelica.Blocks.Sources.RealExpression V(y=v) annotation (Placement(transformation(extent={{-90,-10},{-70,10}})));
   Modelica.Blocks.Sources.RealExpression V_POD(y=v_POD) annotation (Placement(transformation(extent={{-90,30},{-70,50}})));
   Modelica.Blocks.Sources.RealExpression V_ref(y=v_ref) annotation (Placement(transformation(extent={{-90,-50},{-70,-30}})));
 protected
-  parameter SI.PerUnit In=Sn/Vn "Nominal current (local base)";
+  parameter SI.PerUnit In=Sn/Vn "Nominal current (device base)";
   parameter SI.PerUnit I_b=S_b/V_b "Base current";
   parameter SI.PerUnit i_max=i_Max*In/I_b "Max current (system base)";
   parameter SI.PerUnit i_min=i_Min*In/I_b "Min current (system base)";
@@ -65,10 +65,10 @@ equation
   Q = i_SH*v;
 
   connect(simpleLagLim.y, i_SH) annotation (Line(points={{42,0},{70,0}}, color={0,0,127}));
-  connect(add.y, simpleLagLim.u) annotation (Line(points={{-29,0},{-4,0}}, color={0,0,127}));
-  connect(V_POD.y, add.u1) annotation (Line(points={{-69,40},{-60,40},{-60,8},{-52,8}}, color={0,0,127}));
-  connect(V.y, add.u2) annotation (Line(points={{-69,0},{-52,0}}, color={0,0,127}));
-  connect(V_ref.y, add.u3) annotation (Line(points={{-69,-40},{-60,-40},{-60,-8},{-52,-8}}, color={0,0,127}));
+  connect(feedback.y, simpleLagLim.u) annotation (Line(points={{-29,0},{-4,0}}, color={0,0,127}));
+  connect(V_POD.y, feedback.u1) annotation (Line(points={{-69,40},{-60,40},{-60,8},{-52,8}}, color={0,0,127}));
+  connect(V.y, feedback.u2) annotation (Line(points={{-69,0},{-52,0}}, color={0,0,127}));
+  connect(V_ref.y, feedback.u3) annotation (Line(points={{-69,-40},{-60,-40},{-60,-8},{-52,-8}}, color={0,0,127}));
   annotation (
     Icon(coordinateSystem(preserveAspectRatio=true, extent={{-100,-100},{100,
             100}}), graphics={Rectangle(extent={{-100,100},{100,-100}},
