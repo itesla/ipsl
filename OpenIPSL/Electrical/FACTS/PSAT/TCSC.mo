@@ -38,7 +38,7 @@ model TCSC "Thyristor Controlled Series Compensator"
     annotation (Dialog(group="Power flow data"));
   parameter SI.PerUnit pref=0.080101913348342 "Reference power"
     annotation (Dialog(group="Power flow data"));
-  parameter Real Cp=0.10 "Percentage of series compensation [%]";
+    //  parameter Real Cp=0.10 "Percentage of series compensation [%] (only for power flow calculation)";
   parameter SI.Time Tr=0.5 "Regulator time constant";
   parameter Real Kp=5 "Proportional gain of PI controller [pu/pu]";
   parameter Real Ki=1 "Integral gain of PI controller [pu/pu]";
@@ -55,8 +55,10 @@ model TCSC "Thyristor Controlled Series Compensator"
   SI.PerUnit pkm(start=pref) "Active power flow from bus k to m (pu)";
   SI.PerUnit b "TCSC series susceptance";
   SI.Angle alpha "TCSC firing angle";
-  Real x "State representing x-tilde or alpha-tilde";
-  Real x0(start=x0i);
+  SI.PerUnit xTCSC "TCSC series reactance";
+  Real x "State representing alpha-tilde or xTCSC-tilde";
+  Real x1 "State representing alpha or xTCSC";
+  Real x2 "State of PI controller";
 protected
    type Ctrl = enumeration(
       alpha
@@ -64,26 +66,26 @@ protected
       xTCSC
     "Control using reactance xTCSC") "Control type of the TCSC"
       annotation (Evaluate=true);
-
-  Real x2(start=x20);
-protected
-  parameter Real Vb2new=V_b*V_b;
-  parameter Real Vb2old=Vn*Vn;
-  parameter Real xL=x_L*(Vb2old*S_b)/(Vb2new*Sn)
-    "Reactance(inductive),p.u";
-  parameter Real xC=x_C*(Vb2old*S_b)/(Vb2new*Sn)
-    "Reactance(capacitive),p.u";
-  parameter Real X=XL*(Vb2old*S_b)/(Vb2new*Sn) "Line Reactance,p.u";
+  parameter Boolean alphaCtrl=ctrl == Ctrl.alpha annotation (Evaluate=true);
+  parameter SI.PerUnit xL=x_L * (Vn^2/Sn) * (S_b/V_b^2)
+    "Reactance (inductive)";
+  parameter SI.PerUnit xC=x_C * (Vn^2/Sn) * (S_b/V_b^2)
+    "Reactance (capacitive)";
+  parameter SI.PerUnit X=XL * (Vn^2/Sn) * (S_b/V_b^2)
+    "Line Reactance";
+  parameter SI.PerUnit y=1/X "Line admittance";
   parameter Real kx=sqrt(xC/xL);
-  parameter Real XL2=(1 - Cp)*XL;
-  parameter Real y=1/X;
-initial equation
-  alpha_TCSC = alpha_TCSCO;
+//  parameter SI.PerUnit XL2=(1 - Cp)*XL "Simplified line reactance for power flow calculation";
+  parameter Real x1_min=if alphaCtrl then alpha_min else xTCSC_min annotation (Evaluate=true);
+  parameter Real x1_max=if alphaCtrl then alpha_max else xTCSC_max annotation (Evaluate=true);
+
+
 equation
   vk = sqrt(p.vr^2 + p.vi^2) "Voltage magnitude of sending bus";
   vm = sqrt(n.vr^2 + n.vi^2) "Voltage magnitude of receiving bus";
   pkm = p.vr*p.ir + p.vi*p.ii "Transferred active power from k to m";
-  x0 = -(Kp*(pkm - pref) - x2);
+ // x0 = -(Kp*(pkm - pref) - x2);
+
   if x1 > x1_max and der(x1) > 0 and der(x2) > 0 then
     der(x1) = 0;
     x1 = x1_max;
@@ -92,15 +94,23 @@ equation
     x1 = x1_min;
   else
     der(x1) = (x + Kr*Vs_POD - x1)/Tr;
+
+    x1 = if alphaCtrl then alpha else xTCSC;
   end if;
+
+  xTCSC = alpha "Dummy to make equation count happy";
+
   x = Kp*(pkm - pref) + x2;
   der(x2) = -Ki*(pkm - pref);
-  b = C.pi*(kx^4 - 2*kx^2 + 1)*cos(kx*(C.pi - alpha))/
+  b = if alphaCtrl then
+        C.pi*(kx^4 - 2*kx^2 + 1)*cos(kx*(C.pi - alpha))/
         (xC*(C.pi*kx^4*cos(kx*(C.pi - alpha)))
          - C.pi*cos(kx*(C.pi - alpha)) - 2*kx^4*alpha*cos(kx*(C.pi - alpha))
          + 2*alpha*kx^2*cos(kx*(C.pi - alpha)) - kx^4*sin(2*alpha)*cos(kx*(C.pi - alpha))
          + kx^2*sin(2*alpha)*cos(kx*(C.pi - alpha)) - 4*kx^3*cos(alpha)^2*sin(kx*(C.pi - alpha))
-         - 4*kx^2*cos(alpha)*sin(alpha)*cos(kx*(C.pi - alpha)));
+         - 4*kx^2*cos(alpha)*sin(alpha)*cos(kx*(C.pi - alpha)))
+       else   - xTCSC/X /(X*(1 - xTCSC/X));
+
   n.ii - B*n.vr - G*n.vi = (y + b)*(p.vr - n.vr);
   n.ir - G*n.vr + B*n.vi = (y + b)*(n.vi - p.vi);
   p.ii - B*p.vr - G*p.vi = (y + b)*(n.vr - p.vr);
