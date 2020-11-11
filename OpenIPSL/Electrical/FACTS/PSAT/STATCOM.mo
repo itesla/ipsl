@@ -2,13 +2,14 @@ within OpenIPSL.Electrical.FACTS.PSAT;
 model STATCOM "Static Var Compensator"
   extends OpenIPSL.Electrical.Essentials.pfComponent(
     final enabledisplayPF=false,
-    final enableQ_0=false,
+    final enableQ_0=true,
     final enableP_0=false,
     final enablefn=false,
     final enableangle_0=true,
     final enablev_0=true,
     final enableV_b=true,
-    final enableS_b=true);
+    final enableS_b=true,
+    P_0 = 0);
   OpenIPSL.Interfaces.PwPin p(vr(start=vr0), vi(start=vi0)) annotation (
       Placement(transformation(extent={{100,-10},{120,10}}), iconTransformation(
           extent={{100,-10},{120,10}})));
@@ -16,9 +17,6 @@ model STATCOM "Static Var Compensator"
   parameter SI.ApparentPower Sn(displayUnit="MVA")=S_b "Power rating"
     annotation (Dialog(group="Device parameters"));
   parameter SI.Voltage Vn(displayUnit="kV")=V_b "Voltage rating"
-    annotation (Dialog(group="Device parameters"));
-
-   parameter SI.PerUnit Qg=0 "Reactive power injection (system base)"
     annotation (Dialog(group="Device parameters"));
   parameter Real Kr=0.1 "Regulator gain [pu/pu]"
     annotation (Dialog(group="Device parameters"));
@@ -28,17 +26,22 @@ model STATCOM "Static Var Compensator"
     annotation (Dialog(group="Device parameters"));
   parameter SI.PerUnit i_Min=-0.1 "Minimum current (device base)"
     annotation (Dialog(group="Device parameters"));
-  parameter SI.PerUnit v_POD=0 "Power oscillation damper signal"
-    annotation (Dialog(group="Device parameters"));
   SI.PerUnit v(start=v_0) "Bus voltage magnitude";
-  SI.PerUnit Q(start=Qg) "Injected reactive power (system base)";
+  SI.PerUnit Q
+              "Injected reactive power (system base)";
 protected
   Modelica.Blocks.Interfaces.RealOutput i_SH "STATCOM current" annotation (Placement(transformation(extent={{60,-10},{80,10}}), iconTransformation(extent={{34,-10},{54,10}})));
 public
-  Modelica.Blocks.Math.Add3 feedback(k2=-1) annotation (Placement(transformation(extent={{-50,-10},{-30,10}})));
-  Modelica.Blocks.Sources.RealExpression V(y=v) annotation (Placement(transformation(extent={{-90,-10},{-70,10}})));
-  Modelica.Blocks.Sources.RealExpression V_POD(y=v_POD) annotation (Placement(transformation(extent={{-90,30},{-70,50}})));
+  Modelica.Blocks.Math.Add3 feedback(k1=-1) annotation (Placement(transformation(extent={{-46,-10},
+            {-26,10}})));
+  Modelica.Blocks.Sources.RealExpression V(y=v)
+    annotation (Placement(transformation(extent={{-90,30},{-70,50}})));
   Modelica.Blocks.Sources.RealExpression V_ref(y=v_ref) annotation (Placement(transformation(extent={{-90,-50},{-70,-30}})));
+  Modelica.Blocks.Interfaces.RealInput v_POD annotation (Placement(
+        transformation(extent={{-128,-20},{-88,20}}), iconTransformation(
+        extent={{-20,-20},{20,20}},
+        rotation=-90,
+        origin={0,90})));
 protected
   parameter SI.PerUnit In=Sn/Vn "Nominal current (device base)";
   parameter SI.PerUnit I_b=S_b/V_b "Base current";
@@ -46,9 +49,9 @@ protected
   parameter SI.PerUnit i_min=i_Min*In/I_b "Min current (system base)";
   parameter SI.PerUnit vr0=v_0*cos(angle_0rad) "Initial real voltage";
   parameter SI.PerUnit vi0=v_0*sin(angle_0rad) "Initial imaginary voltage";
-  parameter SI.PerUnit u0=v_ref + v_POD - v_0 "Initial controller input";
-  parameter SI.PerUnit i0=Qg/v_0 "Initial current";
-  parameter SI.PerUnit v_ref=i0/Kr + v_0 - v_POD "Reference voltage";
+  parameter SI.PerUnit u0=v_ref - v_0 "Initial controller input";
+  parameter SI.PerUnit i0=(Q_0/S_b)/v_0 "Initial current";
+  parameter SI.PerUnit v_ref=i0/Kr + v_0 "Reference voltage";
 
   NonElectrical.Continuous.SimpleLagLim simpleLagLim(
     K=Kr,
@@ -65,10 +68,14 @@ equation
   Q = i_SH*v;
 
   connect(simpleLagLim.y, i_SH) annotation (Line(points={{42,0},{70,0}}, color={0,0,127}));
-  connect(feedback.y, simpleLagLim.u) annotation (Line(points={{-29,0},{-4,0}}, color={0,0,127}));
-  connect(V_POD.y, feedback.u1) annotation (Line(points={{-69,40},{-60,40},{-60,8},{-52,8}}, color={0,0,127}));
-  connect(V.y, feedback.u2) annotation (Line(points={{-69,0},{-52,0}}, color={0,0,127}));
-  connect(V_ref.y, feedback.u3) annotation (Line(points={{-69,-40},{-60,-40},{-60,-8},{-52,-8}}, color={0,0,127}));
+  connect(feedback.y, simpleLagLim.u)
+    annotation (Line(points={{-25,0},{-4,0}}, color={0,0,127}));
+  connect(V.y, feedback.u1) annotation (Line(points={{-69,40},{-64,40},{-64,8},{
+          -48,8}}, color={0,0,127}));
+  connect(V_ref.y, feedback.u3) annotation (Line(points={{-69,-40},{-64,-40},{-64,
+          -8},{-48,-8}}, color={0,0,127}));
+  connect(v_POD, feedback.u2)
+    annotation (Line(points={{-108,0},{-48,0}}, color={0,0,127}));
   annotation (
     Icon(coordinateSystem(preserveAspectRatio=true, extent={{-100,-100},{100,
             100}}), graphics={Rectangle(extent={{-100,100},{100,-100}},
