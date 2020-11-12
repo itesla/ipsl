@@ -8,7 +8,7 @@ model STATCOM_Test "Simple model to test the functionality of STATCOM"
     Kr=25,
     Tr=0.2,
     i_Max=0.7,
-    i_Min=-0.7)                                  annotation (Placement(transformation(extent={{92,30},{72,50}})));
+    i_Min=-0.7)                                  annotation (Placement(transformation(extent={{90,30},{70,50}})));
   Electrical.Machines.PSSE.GENCLS Syn1(M_b(displayUnit="MVA")) annotation (Placement(transformation(extent={{-90,-10},{-70,10}})));
   Electrical.Branches.PwLine pwLineSC(
     displayPF=true,
@@ -45,14 +45,10 @@ model STATCOM_Test "Simple model to test the functionality of STATCOM"
   Electrical.Buses.Bus busSC(v_0=sTATCOM.v_0,
                              displayPF=true) annotation (Placement(transformation(extent={{50,30},{70,50}})));
   Electrical.Buses.Bus busLoad(displayPF=true) annotation (Placement(transformation(extent={{50,-10},{70,10}})));
-  Modelica.Blocks.Sources.Constant NoPSS(k=0) annotation (Placement(
-        transformation(
-        extent={{-10,-10},{10,10}},
-        rotation=-90,
-        origin={82,74})));
+  Modelica.Blocks.Sources.Constant NoPSS(k=0) annotation (Placement(transformation(extent={{60,60},{72,72}})));
 equation
   connect(pwLineLoad.n, lOADPQ.p) annotation (Line(points={{39,0},{80,0},{80,-20}}, color={0,0,255}));
-  connect(pwLineSC.n, sTATCOM.p) annotation (Line(points={{39,40},{71,40}}, color={0,0,255}));
+  connect(pwLineSC.n, sTATCOM.p) annotation (Line(points={{39,40},{69,40}}, color={0,0,255}));
   connect(Syn1.p, pwLineInf.p) annotation (Line(points={{-70,0},{-39,0}}, color={0,0,255}));
   connect(pwLineInf.n, pwLineLoad.p) annotation (Line(points={{-21,0},{21,0}}, color={0,0,255}));
   connect(pwLineSC.p, pwLineLoad.p) annotation (Line(points={{21,40},{0,40},{0,0},{21,0}}, color={0,0,255}));
@@ -61,7 +57,8 @@ equation
   connect(pwLineSC.n, busSC.p) annotation (Line(points={{39,40},{60,40}}, color={0,0,255}));
   connect(pwLineLoad.n, busLoad.p) annotation (Line(points={{39,0},{60,0}}, color={0,0,255}));
   connect(NoPSS.y, sTATCOM.v_POD)
-    annotation (Line(points={{82,63},{82,49}}, color={0,0,127}));
+    annotation (Line(points={{72.6,66},{80,66},{80,52}},
+                                               color={0,0,127}));
   annotation (experiment(StopTime=5), Documentation(info="<html>
 <p>
 Simulate for 5 seconds. 

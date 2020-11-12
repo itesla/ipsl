@@ -38,10 +38,10 @@ public
     annotation (Placement(transformation(extent={{-90,30},{-70,50}})));
   Modelica.Blocks.Sources.RealExpression V_ref(y=v_ref) annotation (Placement(transformation(extent={{-90,-50},{-70,-30}})));
   Modelica.Blocks.Interfaces.RealInput v_POD annotation (Placement(
-        transformation(extent={{-128,-20},{-88,20}}), iconTransformation(
+        transformation(extent={{-140,-20},{-100,20}}),iconTransformation(
         extent={{-20,-20},{20,20}},
         rotation=-90,
-        origin={0,90})));
+        origin={0,120})));
 protected
   parameter SI.PerUnit In=Sn/Vn "Nominal current (device base)";
   parameter SI.PerUnit I_b=S_b/V_b "Base current";
@@ -75,7 +75,7 @@ equation
   connect(V_ref.y, feedback.u3) annotation (Line(points={{-69,-40},{-64,-40},{-64,
           -8},{-48,-8}}, color={0,0,127}));
   connect(v_POD, feedback.u2)
-    annotation (Line(points={{-108,0},{-48,0}}, color={0,0,127}));
+    annotation (Line(points={{-120,0},{-48,0}}, color={0,0,127}));
   annotation (
     Icon(coordinateSystem(preserveAspectRatio=true, extent={{-100,-100},{100,
             100}}), graphics={Rectangle(extent={{-100,100},{100,-100}},
@@ -145,7 +145,9 @@ and the STATCOM.
 </tr>
 <tr>
 <td><p>Author</p></td>
-<td><p><a href=\"https://github.com/dietmarw\">@dietmarw</a> (original: MAA Murad, SmarTS Lab)</p></td>
+<td><p><a href=\"https://github.com/dietmarw\">@dietmarw</a>, 
+       <a href=\"https://github.com/marcelofcastro\">@marcelofcastro</a>
+       (original: MAA Murad, SmarTS Lab)</p></td>
 </tr>
 <tr>
 <td><p>Contact</p></td>
