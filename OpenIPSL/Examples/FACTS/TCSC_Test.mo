@@ -109,7 +109,7 @@ The parameters are set for varying impedance TCSC. Simulate for 10 seconds.
 <p>Variables of interest:</p>
 <ul>
 <li><code>TCSC.pkm</code></code></li>
-<li><code>TCSC.x1</code></code></li>
+<li><code>TCSC.b</code></code></li>
 </ul>
 </html>"),
     Diagram(coordinateSystem(extent={{-140,-100},{120,100}})),
