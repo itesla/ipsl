@@ -15,8 +15,6 @@ model TCSC2 "Thyristor Controlled Series Compensator"
 
   parameter SI.PerUnit pref=0.080101913348342 "Reference power"
    annotation (Dialog(group="Power flow data"));
-  parameter Real Vs_POD=0 "Power oscillation damper signal (should be input signal normally)"
-   annotation (Dialog(group="Power flow data"));
   parameter SI.ApparentPower Sn(displayUnit="MVA") = S_b "Power rating"
    annotation (Dialog(group="Device parameters"));
   parameter SI.Voltage Vn(displayUnit="kV") = V_b "Voltage rating"
@@ -64,7 +62,9 @@ model TCSC2 "Thyristor Controlled Series Compensator"
   Real x1 "State representing alpha or xTCSC";
 
   Modelica.Blocks.Math.Feedback powerDiff annotation (Placement(transformation(extent={{-50,-50},{-30,-30}})));
-  Modelica.Blocks.Continuous.TransferFunction PIcontroller(b={Kp,Ki}, a={1,0}) annotation (Placement(transformation(extent={{-20,-50},{0,-30}})));
+  Modelica.Blocks.Continuous.TransferFunction PIcontroller(b={Kp,Ki}, a={1,0},
+    initType=Modelica.Blocks.Types.Init.InitialOutput,
+    y_start=-x10)                                                              annotation (Placement(transformation(extent={{-20,-50},{0,-30}})));
   Modelica.Blocks.Math.Feedback feedback annotation (Placement(transformation(extent={{10,-10},{30,10}})));
   Modelica.Blocks.Math.Gain stabilizer(k=Kr) annotation (Placement(transformation(extent={{-20,-10},{0,10}})));
   NonElectrical.Continuous.SimpleLagLim X1(
@@ -75,8 +75,12 @@ model TCSC2 "Thyristor Controlled Series Compensator"
     outMin=x1_min) annotation (Placement(transformation(extent={{40,-10},{60,10}})));
   Modelica.Blocks.Sources.RealExpression Pref(y=pref) annotation (Placement(transformation(extent={{-80,-70},{-60,-50}})));
   Modelica.Blocks.Sources.RealExpression Pkm(y=pkm) annotation (Placement(transformation(extent={{-80,-50},{-60,-30}})));
-  Modelica.Blocks.Sources.RealExpression Vs_pod(y=Vs_POD) annotation (Placement(transformation(extent={{-60,-10},{-40,10}})));
 
+  Modelica.Blocks.Interfaces.RealInput Vs_pod annotation (Placement(
+        transformation(
+        extent={{-20,-20},{20,20}},
+        rotation=-90,
+        origin={0,120})));
 protected
   parameter Boolean alphaCtrl=ctrl == Ctrl.alpha annotation (Evaluate=true);
   parameter SI.PerUnit xL=x_L*(Vn^2/Sn)*(S_b/V_b^2) "Reactance (inductive)";
@@ -113,7 +117,8 @@ equation
   connect(Pref.y, powerDiff.u2) annotation (Line(points={{-59,-60},{-40,-60},{-40,-48}}, color={0,0,127}));
   connect(feedback.y, X1.u) annotation (Line(points={{29,0},{38,0}}, color={0,0,127}));
   connect(stabilizer.y, feedback.u1) annotation (Line(points={{1,0},{12,0}}, color={0,0,127}));
-  connect(Vs_pod.y, stabilizer.u) annotation (Line(points={{-39,0},{-22,0}}, color={0,0,127}));
+  connect(Vs_pod, stabilizer.u) annotation (Line(points={{0,120},{0,40},{-40,40},
+          {-40,0},{-22,0}}, color={0,0,127}));
   annotation (Icon(coordinateSystem(preserveAspectRatio=true, extent={{-100,-100},{100,100}}), graphics={
         Line(
           points={{40,-60},{40,-64}},
