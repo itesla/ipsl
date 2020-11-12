@@ -59,9 +59,9 @@ equation
   connect(NoPSS.y, sTATCOM.v_POD)
     annotation (Line(points={{72.6,66},{80,66},{80,52}},
                                                color={0,0,127}));
-  annotation (experiment(StopTime=5), Documentation(info="<html>
+  annotation (experiment(StopTime=10),Documentation(info="<html>
 <p>
-Simulate for 5 seconds. 
+Simulate for 10 seconds. 
 </p>
 <p>Variables of interest:</p>
 <ul>
