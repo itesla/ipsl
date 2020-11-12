@@ -105,7 +105,11 @@ equation
       - 2*kx^4*x1*cos(kx*(C.pi - x1))
       + 2*x1*kx^2*cos(kx*(C.pi - x1))
       - kx^4*sin(2*x1)*cos(kx*(C.pi - x1))
-      + kx^2*sin(2*x1)*cos(kx*(C.pi - x1)) - 4*kx^3*cos(x1)^2*sin(kx*(C.pi - x1)) - 4*kx^2*cos(x1)*sin(x1)*cos(kx*(C.pi - x1))) else -x1/X/(X*(1 - x1/X));
+      + kx^2*sin(2*x1)*cos(kx*(C.pi - x1))
+      - 4*kx^3*cos(x1)^2*sin(kx*(C.pi - x1))
+      - 4*kx^2*cos(x1)*sin(x1)*cos(kx*(C.pi - x1)))
+      else
+      -x1/X/(X*(1 - x1/X));
 
   n.ii - B*n.vr - G*n.vi = (y + b)*(p.vr - n.vr);
   n.ir - G*n.vr + B*n.vi = (y + b)*(n.vi - p.vi);
