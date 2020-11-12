@@ -9,7 +9,7 @@ model TCSC_Test "Simple model to test the functionality of TCSC"
     t_start_1=2,
     t_end_1=10,
     dP1=2000000)                                             annotation (Placement(transformation(extent={{-40,-60},{-20,-40}})));
-  Electrical.FACTS.PSAT.TCSC2 tCSC(
+  Electrical.FACTS.PSAT.TCSC tCSC(
     displayPF=true,
     ctrl=OpenIPSL.Types.Ctrl.xTCSC,
     alpha_min=0.87266462599716,
@@ -22,8 +22,7 @@ model TCSC_Test "Simple model to test the functionality of TCSC"
     pref=-0.0500733,
     G=0,
     B=0,
-    xTCSC0=0.0133767)
-         annotation (Placement(transformation(extent={{40,10},{60,30}})));
+    xTCSC0=0.0133767) annotation (Placement(transformation(extent={{40,10},{60,30}})));
   inner Electrical.SystemBase SysData annotation (Placement(transformation(extent={{-100,80},{-60,100}})));
   Electrical.Branches.PwLine pwLineInf(
     displayPF=true,
