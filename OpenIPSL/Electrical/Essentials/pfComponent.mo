@@ -63,7 +63,7 @@ partial model pfComponent
         tab="Parameter mask",
         __Dymola_compact=true,
         __Dymola_descriptionLabel=true), choices(checkBox=true));
-  parameter SI.Conversions.NonSIunits.Angle_deg angle_0=0
+  parameter SI.Conversions.NonSIunits.Angle_deg angle_0(displayUnit="deg")=0
     "Initial voltage angle"
     annotation (Dialog(group="Power flow data", enable=enableangle_0));
   parameter Boolean enableangle_0 = false
