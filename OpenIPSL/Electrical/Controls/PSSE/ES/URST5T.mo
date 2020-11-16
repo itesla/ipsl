@@ -1,5 +1,5 @@
 within OpenIPSL.Electrical.Controls.PSSE.ES;
-model URST5T "IEEE Proposed Type ST5B Excitation System"
+model URST5T "IEEE Proposed Type ST5B Excitation System [IEEE2005]"
   extends OpenIPSL.Electrical.Controls.PSSE.ES.BaseClasses.BaseExciter;
   parameter Real T_R=0.025 "Regulator input filter time constant";
   parameter Real T_C1=0.1 "Voltage regulator numerator (lead) time constant (first block)";
