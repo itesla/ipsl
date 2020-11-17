@@ -106,8 +106,8 @@ equation
           extent={{-100,100},{100,-100}})}),
                                            uses(OpenIPSL(version="0.8.1"), Modelica(version="3.2.1")),
  Documentation(info="<html>
-<p>This diagram is supplied to document the CIM model interpretation of the 
-IEEE Transactions on Power Apparatus and Systems November/December 1973, Volume PAS-92, Number 6
+<p>This diagram is supplied to document the CIM interpretation of the 
+model given in <a href=\"modelica://OpenIPSL.UsersGuide.References\">[IEEE1973]</a>.
 </p>
 </html>",
         revisions="<html>
@@ -118,15 +118,17 @@ IEEE Transactions on Power Apparatus and Systems November/December 1973, Volume 
 </tr>
 <tr>
 <td><p>Last update</p></td>
-<td>Unknown</td>
+<td><p>2020-11-17</p></td>
 </tr>
 <tr>
 <td><p>Author</p></td>
-<td><p>Mengjia Zhang,SmarTS Lab, KTH Royal Institute of Technology</p></td>
+<td><p><a href=\"https://github.com/dietmarw\">@dietmarw</a>, 
+       <a href=\"https://github.com/marcelofcastro\">@marcelofcastro</a>
+       (original: Mengjia Zhang, SmarTS Lab)</p></td>
 </tr>
 <tr>
 <td><p>Contact</p></td>
-<td><p><a href=\"mailto:luigiv@kth.se\">luigiv@kth.se</a></p></td>
+<td><p>see <a href=\"modelica://OpenIPSL.UsersGuide.Contact\">UsersGuide.Contact</a></p></td>
 </tr>
 </table>
 </html>

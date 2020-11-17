@@ -13,6 +13,14 @@ model References "References"
 </td>
 </tr>
 <tr>
+<td>[IEEE1973]</td>
+<td>IEEE:
+        &quot;Dynamic Models for Steam and Hydro Turbines in Power System Studies&quot;,
+        in IEEE Transactions on Power Apparatus and Systems, volume PAS-92, issue 6, IEEE Report 1973, 
+        <a href=\"https://doi.org/10.1109/TPAS.1973.293570\">DOI: 10.1109/TPAS.1973.293570</a>
+</td>
+</tr>
+<tr>
 <td>[IEEE1981]</td>
 <td>IEEE:
         &quot;Excitation System Models for Power System Stability Studies&quot;,
