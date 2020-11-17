@@ -74,15 +74,15 @@ equation
 <table cellspacing=\"1\" cellpadding=\"1\" border=\"1\">
 <tr>
 <td><p>Reference</p></td>
-<td>PSS/E Manual</td>
+<td>CGMES 2.5</td>
 </tr>
 <tr>
 <td><p>Last update</p></td>
-<td>Unknown</td>
+<td>11/06/2016</td>
 </tr>
 <tr>
 <td><p>Author</p></td>
-<td><p>Mengjia Zhang,SmarTS Lab, KTH Royal Institute of Technology</p></td>
+<td><p>Francisco Gómez,SmarTS Lab, KTH Royal Institute of Technology</p></td>
 </tr>
 <tr>
 <td><p>Contact</p></td>
