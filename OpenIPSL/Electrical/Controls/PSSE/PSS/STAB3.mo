@@ -1,5 +1,5 @@
 within OpenIPSL.Electrical.Controls.PSSE.PSS;
-model STAB3 "STAB3 - Power Sensitive Stabilizer Model with Dual-Input Signals"
+model STAB3 "STAB3 - Power Sensitive Stabilizer Model with Dual-Input Signals [PSSE-MODELS]"
   parameter SI.Time T_t=1 "Input transducer time constant";
   parameter SI.Time T_X1=1 "Low-pass filter time constant. Value must be greater than 0";
   parameter SI.Time T_X2=1 "Stabilizer washout denominator time constant. Value must be greater than 0";

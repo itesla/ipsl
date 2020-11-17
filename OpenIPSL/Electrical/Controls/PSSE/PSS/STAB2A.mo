@@ -1,5 +1,5 @@
 within OpenIPSL.Electrical.Controls.PSSE.PSS;
-model STAB2A "STAB2A - Power Sensitive Stabilizing Unit (ASEA)"
+model STAB2A "STAB2A - Power Sensitive Stabilizing Unit (ASEA) [PSSE-MODELS]"
   parameter SI.PerUnit K_2=1 "Input washout filter gain";
   parameter SI.Time T_2=1 "Input washout filter time constant";
   parameter SI.PerUnit K_3=1 "Low-pass filter proportional gain";
