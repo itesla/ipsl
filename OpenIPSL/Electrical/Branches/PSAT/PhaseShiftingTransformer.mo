@@ -183,11 +183,11 @@ impose the total real power transfer between the two areas.
 </tr>
 <tr>
 <td><p>Author</p></td>
-<td><p>Dietmar Winkler, USN</p></td>
+<td><p><a href=\"https://github.com/dietmarw\">@dietmarw</a></p></td>
 </tr>
 <tr>
 <td><p>Contact</p></td>
-<td><p><a href=\"http://openipsl.org\">openipsl.org</a></p></td>
+<td><p>see <a href=\"modelica://OpenIPSL.UsersGuide.Contact\">UsersGuide.Contact</a></p></td>
 </tr>
 </table>
 </html>"));
