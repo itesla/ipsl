@@ -72,31 +72,21 @@ equation
   connect(GovernorA.y, GovernorB.u) annotation (Line(points={{-59,0},{-52,0}}, color={0,0,127}));
   connect(SPEED, GovernorA.u) annotation (Line(points={{-120,0},{-82,0}}, color={0,0,127}));
   connect(Pref, difference.u1) annotation (Line(points={{-120,80},{-20,80},{-20,6},{-12,6}}, color={0,0,127}));
-  annotation (Icon(coordinateSystem(
-        grid={2,2},
-        preserveAspectRatio=false,
-        extent={{-100,-100},{100,100}}), graphics={
+  annotation (Icon(graphics={
         Text(
-          origin={-48,-48.1255},
-          extent={{128,-31.8745},{-32,8.12498}},
+          extent={{80,-80},{-80,-40}},
           lineColor={0,0,255},
           textString="GovHydroIEEE0"),
         Text(
-          origin={-47.3531,83.5},
-          extent={{7.35303,-13.5},{-42.6469,6.5}},
-          fontName="Andalus",
+          extent={{-52,70},{-92,90}},
           textString="Pref",
           lineColor={28,108,200}),
         Text(
-          origin={-38.8241,2.85},
-          extent={{8.82407,-14.85},{-51.1759,7.15}},
-          fontName="Andalus",
+          extent={{-32,-10},{-92,10}},
           textString="SPEED",
           lineColor={28,108,200}),
         Text(
-          origin={74.225,2.85},
-          extent={{16.775,-14.85},{-44.225,7.15}},
-          fontName="Andalus",
+          extent={{90,-10},{30,10}},
           textString="PMECH",
           lineColor={28,108,200}),
         Rectangle(
@@ -104,7 +94,6 @@ equation
           lineThickness=2,
           borderPattern=BorderPattern.Raised,
           extent={{-100,100},{100,-100}})}),
-                                           uses(OpenIPSL(version="0.8.1"), Modelica(version="3.2.1")),
  Documentation(info="<html>
 <p>This diagram is supplied to document the CIM interpretation of the 
 model given in <a href=\"modelica://OpenIPSL.UsersGuide.References\">[IEEE1973]</a>.
@@ -132,5 +121,5 @@ model given in <a href=\"modelica://OpenIPSL.UsersGuide.References\">[IEEE1973]<
 </tr>
 </table>
 </html>
-"), Diagram(coordinateSystem(preserveAspectRatio=false, grid={2,2})));
+"));
 end GovHydroIEEE0;

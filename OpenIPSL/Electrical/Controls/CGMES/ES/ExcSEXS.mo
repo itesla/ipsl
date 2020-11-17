@@ -1,4 +1,4 @@
-within OpenIPSL.Electrical.Controls.CGMES.ES;
+﻿within OpenIPSL.Electrical.Controls.CGMES.ES;
 model ExcSEXS "CGMES Simplified Excitation System Model"
   extends OpenIPSL.Electrical.Controls.PSSE.ES.BaseClasses.BaseExciter;
   parameter Real T_AT_B=0.1 "Ta/Tb - gain reduction ratio of lag-lead element";
@@ -70,7 +70,7 @@ equation
           extent={{-100,160},{100,100}},
           lineColor={28,108,200},
           textString="ExcSEXS")}),
-    Documentation(info="<html>
+    Documentation(info="", revisions="<html>
 <table cellspacing=\"1\" cellpadding=\"1\" border=\"1\">
 <tr>
 <td><p>Reference</p></td>
@@ -78,15 +78,15 @@ equation
 </tr>
 <tr>
 <td><p>Last update</p></td>
-<td>11/06/2016</td>
+<td>2016-11-06</td>
 </tr>
 <tr>
 <td><p>Author</p></td>
-<td><p>Francisco Gómez,SmarTS Lab, KTH Royal Institute of Technology</p></td>
+<td><p>Francisco Gómez, SmarTS Lab, KTH Royal Institute of Technology</p></td>
 </tr>
 <tr>
 <td><p>Contact</p></td>
-<td><p><a href=\"mailto:luigiv@kth.se\">luigiv@kth.se</a></p></td>
+<td><p>see <a href=\"modelica://OpenIPSL.UsersGuide.Contact\">UsersGuide.Contact</a></p></td>
 </tr>
 </table>
 </html>"));
