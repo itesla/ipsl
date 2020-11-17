@@ -1,5 +1,5 @@
 within OpenIPSL.Electrical.Controls.PSSE.PSS;
-model STBSVC "STBSVC - WECC Supplementary Signal for Static var Compensator"
+model STBSVC "STBSVC - WECC Supplementary Signal for Static var Compensator [PSSE-MODELS]"
   extends BaseClasses.BasePSS;
   parameter SI.PerUnit K_S1=1 "First input low-pass filter gain. It must be greater than 0";
   parameter SI.Time T_S7=1 "First input low-pass filter time constant";

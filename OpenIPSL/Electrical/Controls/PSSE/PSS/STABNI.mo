@@ -1,5 +1,5 @@
 within OpenIPSL.Electrical.Controls.PSSE.PSS;
-model STABNI "STABNI - Power Sensitive Stabilizer Model Type NI (NVE)"
+model STABNI "STABNI - Power Sensitive Stabilizer Model Type NI (NVE) [PSSE-MODELS]"
   parameter SI.PerUnit K=1 "Input low-pass filter gain. It must be equal to or greater than 0";
   parameter SI.Time T_1=1 "Stabilizer filter time constant. It must be greater than 0";
   parameter SI.Time T_2=1 "Input low-pass filter time constant. It must be equal to or greater than 0";

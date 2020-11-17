@@ -1,8 +1,17 @@
-within OpenIPSL.UsersGuide;
+﻿within OpenIPSL.UsersGuide;
 model References "References"
   extends Modelica.Icons.References;
   annotation (Documentation(info="<html>
 <table cellspacing=\"0\" cellpadding=\"2\" border=\"0\">
+<tr>
+<td>[IEEE1968]</td>
+<td>IEEE:
+        &quot;Computer representation of excitation systems&quot;.
+        IEEE Transactions on Power Apparatus and Systems, Vol PAS-87, 1460–1464, 
+        No 6, June 1968.
+         <a href=\"https://doi.org/10.1109/TPAS.1968.292114\">DOI: 10.1109/TPAS.1968.292114</a>
+</td>
+</tr>
 <tr>
 <td>[IEEE1981]</td>
 <td>IEEE:
@@ -11,7 +20,6 @@ model References "References"
         <a href=\"https://doi.org/10.1109/TPAS.1981.316906\">DOI: 10.1109/TPAS.1981.316906</a>
 </td>
 </tr>
-10.1109/IEEESTD.1992.106975</a>
 <tr>
 <td>[IEEE1992]</td>
 <td>IEEE:
@@ -54,6 +62,31 @@ model References "References"
         &quot;Power System Analysis Toolbox&quot;,
         Documentation for PSAT version 2.1.8, 6th January 2013,
         (<a href=\"http://faraday1.ucd.ie/psat.html\">Home page</a>)
+</td>
+</tr>
+<tr>
+<tr>
+<td>[PSSE-AGV1]</td>
+<td>Siemens:
+        &quot;PSS&reg;E Program Application Guide Volume 1&quot;,
+        version 34.2, April 2017,
+        (<a href=\"https://new.siemens.com/global/en/products/energy/energy-automation-and-smart-grid/pss-software/pss-e.html\">Home page</a>)
+</td>
+</tr>
+<tr>
+<td>[PSSE-AGV2]</td>
+<td>Siemens:
+        &quot;PSS&reg;E Program Application Guide Volume 2&quot;,
+        version 34.2, April 2017,
+        (<a href=\"https://new.siemens.com/global/en/products/energy/energy-automation-and-smart-grid/pss-software/pss-e.html\">Home page</a>)
+</td>
+</tr>
+<tr>
+<td>[PSSE-MODELS]</td>
+<td>Siemens:
+        &quot;PSS&reg;E Model Library&quot;,
+        version 34.2, April 2017,
+        (<a href=\"https://new.siemens.com/global/en/products/energy/energy-automation-and-smart-grid/pss-software/pss-e.html\">Home page</a>)
 </td>
 </tr>
 <tr>
