@@ -25,7 +25,7 @@ model ExcSEXS "SMIB model example of GENROU with Excitation System ExcSEXS"
     M_b=100000000,
     P_0=40000000,
     Q_0=5416582,
-    v_0=1) annotation (Placement(transformation(extent={{-110,-20},{-70,20}})));
+    v_0=1) annotation (Placement(transformation(extent={{-88,-20},{-48,20}})));
   Electrical.Controls.CGMES.ES.ExcSEXS sEXS(
     T_AT_B=0.1,
     T_B=1,
@@ -36,28 +36,22 @@ model ExcSEXS "SMIB model example of GENROU with Excitation System ExcSEXS"
     K_C=0.08,
     EFD_MAX=5,
     EFD_MIN=-5,
-    T_C=1) annotation (Placement(transformation(extent={{-70,-54},{-108,-26}})));
-  Modelica.Blocks.Sources.Constant const(k=0) annotation (Placement(
-        transformation(
-        extent={{4,-4},{-4,4}},
-        origin={-50,-40})));
+    T_C=1) annotation (Placement(transformation(extent={{-56,-64},{-84,-36}})));
+  Modelica.Blocks.Sources.Constant zero(k=0) annotation (Placement(transformation(extent={{4,-4},{-4,4}}, origin={-34,-88})));
 equation
-  connect(gENROE.PMECH, gENROE.PMECH0) annotation (Line(points={{-114,10},{-114,
-          10},{-114,26},{-60,26},{-60,10},{-68,10}}, color={0,0,127}));
-  connect(gENROE.EFD0, sEXS.EFD0) annotation (Line(points={{-68,-10},{-60,-10},{-60,-41.5556},{-78.55,-41.5556}},
+  connect(gENROE.PMECH, gENROE.PMECH0) annotation (Line(points={{-92,10},{-100,10},{-100,26},{-38,26},{-38,10},{-46,10}},
+                                                     color={0,0,127}));
+  connect(gENROE.EFD0, sEXS.EFD0) annotation (Line(points={{-46,-10},{-38,-10},{-38,-55.6},{-54.6,-55.6}},
                                          color={0,0,127}));
-  connect(gENROE.ETERM, sEXS.ECOMP) annotation (Line(points={{-68,-6},{-64,-6},{-64,-38.4444},{-78.55,-38.4444}},
+  connect(gENROE.ETERM, sEXS.ECOMP) annotation (Line(points={{-46,-6},{-36,-6},{-36,-50},{-54.6,-50}},
                                          color={0,0,127}));
-  connect(sEXS.VOEL, const.y) annotation (Line(points={{-89,-47},{-68,-47},{-68,-40},{-54.4,-40}},
-                                 color={0,0,127}));
-  connect(sEXS.VOTHSG, const.y) annotation (Line(points={{-78.55,-35.3333},{-64,-35.3333},{-64,-40},{-54.4,-40}},
-                                  color={0,0,127}));
-  connect(sEXS.VUEL, const.y) annotation (Line(points={{-85.2,-47},{-64,-47},{-64,-40},{-54.4,-40}},
-                                 color={0,0,127}));
-  connect(sEXS.EFD, gENROE.EFD) annotation (Line(points={{-99.45,-38.4444},{-114,-38.4444},{-114,-10},{-114,-10}},
+  connect(sEXS.VOEL, zero.y) annotation (Line(points={{-70,-65.4},{-70,-88},{-38.4,-88}}, color={0,0,127}));
+  connect(sEXS.VOTHSG, zero.y) annotation (Line(points={{-54.6,-44.4},{-50,-44.4},{-50,-88},{-38.4,-88}}, color={0,0,127}));
+  connect(sEXS.VUEL, zero.y) annotation (Line(points={{-64.4,-65.4},{-64,-65.4},{-64,-88},{-38.4,-88}}, color={0,0,127}));
+  connect(sEXS.EFD, gENROE.EFD) annotation (Line(points={{-85.4,-50},{-100,-50},{-100,-10},{-92,-10}},
                                             color={0,0,127}));
   connect(gENROE.p, GEN1.p)
-    annotation (Line(points={{-70,0},{-30,0},{-30,0}}, color={0,0,255}));
-  connect(gENROE.XADIFD, sEXS.XADIFD) annotation (Line(points={{-68,-18},{-62,-18},{-62,-60},{-96.6,-60},{-96.6,-47}},          color={0,0,127}));
+    annotation (Line(points={{-48,0},{-30,0}},         color={0,0,255}));
+  connect(gENROE.XADIFD, sEXS.XADIFD) annotation (Line(points={{-46,-18},{-40,-18},{-40,-78},{-81.2,-78},{-81.2,-65.4}},        color={0,0,127}));
   annotation (experiment(StopTime=10));
 end ExcSEXS;

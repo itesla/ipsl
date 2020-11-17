@@ -1,6 +1,6 @@
 within OpenIPSL.Examples.Controls.CGMES.TG;
 model GovHydroIEEE0_Test "SMIB model example of GENROU with Turbine Governor GovHydroIEEE0"
-  extends OpenIPSL.Examples.SMIBpartial;
+  extends OpenIPSL.Examples.BaseClasses.SMIB;
   Modelica.Blocks.Sources.Constant const2(k=0) annotation (Placement(transformation(extent={{-110,166},{-94,182}})));
   OpenIPSL.Electrical.Machines.PSSE.GENROU generator(
     M_b=100000000,
