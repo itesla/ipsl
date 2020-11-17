@@ -97,6 +97,8 @@ equation
  Documentation(info="<html>
 <p>This diagram is supplied to document the CIM interpretation of the 
 model given in <a href=\"modelica://OpenIPSL.UsersGuide.References\">[IEEE1973]</a>.
+However the general recommondation is to use alternative more sophisticated implementations like
+<a href=\"modelica://OpenIPSL.Electrical.Controls.PSSE.TG.HYGOV\">HYGOV</a> instead.
 </p>
 </html>",
         revisions="<html>
