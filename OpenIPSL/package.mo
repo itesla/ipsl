@@ -8,7 +8,6 @@ annotation (
   version="2.0.0-dev",
   conversion(
      from(version={"0.8","0.8.1","1.0.0","1.5.0"}, script="modelica://OpenIPSL/Resources/Scripts/ConvertOpenIPSL_from_1.5.0_to_2.0.0.mos")),
-  Icon(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,100}}),
-      graphics={Bitmap(extent={{-100,-100},{100,100}}, fileName=
+  Icon(graphics={Bitmap(extent={{-100,-100},{100,100}}, fileName=
             "modelica://OpenIPSL/Resources/Images/OpenIPSL_Logo.png")}));
 end OpenIPSL;
