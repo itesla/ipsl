@@ -25,6 +25,9 @@ convertClass("OpenIPSL.Electrical.Banks.PwShuntB",
 convertClass("OpenIPSL.Electrical.Banks.SVC.SVC",
              "OpenIPSL.Electrical.Banks.SVC");
 
+convertModifiers({"OpenIPSL.Electrical.Banks.PwShuntB"},
+                 {"B"}, fill("", 0), true);
+
 convertModifiers("OpenIPSL.Electrical.Banks.Simulink.Shunt",
      {"Qnom"},{"Qnom=%Qnom%*1e6"}, true);
 convertModifiers("OpenIPSL.Electrical.Banks.Simulink.Shunt",
@@ -33,8 +36,6 @@ convertModifiers("OpenIPSL.Electrical.Banks.Simulink.Shunt",
 /** Branches **/
 
 // PhaseShiftingTransformer
-convertModifiers("OpenIPSL.Electrical.Branches.PSAT.PSTransformer",
-     {"SystemBase"},{"S_b=%SystemBase%*1e6"}, true);
 convertModifiers("OpenIPSL.Electrical.Branches.PSAT.PSTransformer",
      {"SystemBase"},{"S_b=%SystemBase%*1e6"}, true);
 convertModifiers("OpenIPSL.Electrical.Branches.PSAT.PSTransformer",
@@ -93,6 +94,18 @@ convertClass("OpenIPSL.Electrical.Branches.PSAT.PhaseShiftingTransformer_1",
 convertClass("OpenIPSL.Electrical.Branches.PSAT.ThreeWindingTransformer.ThreeWindingTransformer",
              "OpenIPSL.Electrical.Branches.PSAT.ThreeWindingTransformer");
 
+// PSSE TwoWindingTransformer
+convertModifiers("OpenIPSL.Electrical.Branches.PSSE.TwoWindingTransformer",
+                {"VNOM1"},{"VNOM1=%VNOM1%*1e3"}, true);
+convertModifiers("OpenIPSL.Electrical.Branches.PSSE.TwoWindingTransformer",
+                {"VNOM2"},{"VNOM2=%VNOM2%*1e3"}, true);
+convertModifiers("OpenIPSL.Electrical.Branches.PSSE.TwoWindingTransformer",
+                {"VB1"},{"VB1=%VB1%*1e3"}, true);
+convertModifiers("OpenIPSL.Electrical.Branches.PSSE.TwoWindingTransformer",
+                {"VB2"},{"VB2=%VB2%*1e3"}, true);
+convertModifiers("OpenIPSL.Electrical.Branches.PSSE.TwoWindingTransformer",
+                {"S_n"},{"S_n=%S_n%*1e6"}, true);
+
 /** Busses **/
 
 // Bus
@@ -125,11 +138,50 @@ convertClass("OpenIPSL.Electrical.Buses.InfiniteBus2",
 
 /** Loads **/
 
+convertClass("OpenIPSL.Electrical.Loads.PSAT.VoltDependant",
+             "OpenIPSL.Electrical.Loads.PSAT.VoltageDependent");
+
+convertModifiers("OpenIPSL.Electrical.Loads.PSAT.VoltDependant",
+     {"S_b"},{"S_b=%S_b%*1e6"}, true);
+convertModifiers("OpenIPSL.Electrical.Loads.PSAT.VoltDependant",
+     {"Sn"},{"Sn=%Sn%*1e6"}, true);
+convertModifiers("OpenIPSL.Electrical.Loads.PSAT.VoltDependant",
+     {"P_0"},{" P_0=%P_0%*1e6"}, true);
+convertModifiers("OpenIPSL.Electrical.Loads.PSAT.VoltDependant",
+     {"Q_0"},{"Q_0=%Q_0%*1e6"}, true);
+convertModifiers("OpenIPSL.Electrical.Loads.PSAT.VoltDependant",
+     {"V_0"},{"v_0=%V_0%"}, true);
+convertModifiers("OpenIPSL.Electrical.Loads.PSAT.VoltDependant",
+     {"V_b"}, fill("", 0), true);
+
+// PSAT loads
+convertClass("OpenIPSL.Electrical.Loads.PSAT.FrequencyDependentLoad",
+             "OpenIPSL.Electrical.Loads.PSAT.FrequencyDependent");
+convertClass("OpenIPSL.Electrical.Loads.PSAT.VoltDependant",
+             "OpenIPSL.Electrical.Loads.PSAT.VoltageDependent");
+convertClass("OpenIPSL.Electrical.Loads.PSAT.Mixed_Load",
+             "OpenIPSL.Electrical.Loads.PSAT.Mixed");
+convertClass("OpenIPSL.Electrical.Loads.PSAT.LOADPQ",
+             "OpenIPSL.Electrical.Loads.PSAT.PQ");
+convertClass("OpenIPSL.Electrical.Loads.PSAT.LOADPQ_variation",
+             "OpenIPSL.Electrical.Loads.PSAT.PQvar");
+
+convertModifiers("OpenIPSL.Electrical.Loads.PSAT.BaseClasses.baseLoad",
+     {"V_b"}, fill("", 0), true);
+convertModifiers("OpenIPSL.Electrical.Loads.PSAT.BaseClasses.baseLoad",
+     {"V_0"},{"v_0=%V_0%"}, true);
+convertModifiers("OpenIPSL.Electrical.Loads.PSAT.BaseClasses.baseLoad",
+     {"P_0"},{" P_0=%P_0%*1e6"}, true);
+convertModifiers("OpenIPSL.Electrical.Loads.PSAT.BaseClasses.baseLoad",
+     {"Q_0"},{"Q_0=%Q_0%*1e6"}, true);
+convertModifiers("OpenIPSL.Electrical.Loads.PSAT.BaseClasses.baseLoad",
+     {"S_b"},{"S_b=%S_b%*1e6"}, true);
+
 // PSSE base load
 // the following lines are repetition of the pfComponent conversion
 // as Dymola for some reason does not convert the extended classes
 convertModifiers("OpenIPSL.Electrical.Loads.PSSE.BaseClasses.baseLoad",
-     {"V_b"},{"V_b=%V_b%*1e3"}, true);
+     {"V_b"}, fill("", 0), true);
 convertModifiers("OpenIPSL.Electrical.Loads.PSSE.BaseClasses.baseLoad",
      {"V_0"},{"v_0=%V_0%"}, true);
 convertModifiers("OpenIPSL.Electrical.Loads.PSSE.BaseClasses.baseLoad",
@@ -137,7 +189,7 @@ convertModifiers("OpenIPSL.Electrical.Loads.PSSE.BaseClasses.baseLoad",
 convertModifiers("OpenIPSL.Electrical.Loads.PSSE.BaseClasses.baseLoad",
      {"Q_0"},{"Q_0=%Q_0%*1e6"}, true);
 convertModifiers("OpenIPSL.Electrical.Loads.PSSE.BaseClasses.baseLoad",
-{"S_b"},{"S_b=%S_b%*1e6"}, true);
+     {"S_b"},{"S_b=%S_b%*1e6"}, true);
 
 /** Machines **/
 
@@ -191,17 +243,6 @@ convertModifiers("OpenIPSL.Electrical.Essentials.pfComponent",
 convertModifiers("OpenIPSL.Electrical.Essentials.pfComponent",
      {"S_b"},{"S_b=%S_b%*1e6"}, true);
 
-// PSAT loads
-convertClass("OpenIPSL.Loads.PSAT.FrequencyDependentLoad",
-             "OpenIPSL.Loads.PSAT.FrequencyDependent");
-convertClass("OpenIPSL.Loads.PSAT.VoltDependant",
-             "OpenIPSL.Loads.PSAT.VoltageDependent");
-convertClass("OpenIPSL.Loads.PSAT.Mixed_Load",
-             "OpenIPSL.Loads.PSAT.Mixed");
-convertClass("OpenIPSL.Loads.PSAT.LOADPQ",
-             "OpenIPSL.Loads.PSAT.PQ");
-convertClass("OpenIPSL.Loads.PSAT.LOADPQ_variation",
-             "OpenIPSL.Loads.PSAT.PQvar");
 
 /* NonElectrical */
 
