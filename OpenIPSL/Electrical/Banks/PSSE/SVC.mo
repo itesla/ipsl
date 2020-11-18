@@ -1,4 +1,4 @@
-within OpenIPSL.Electrical.Banks.PSSE.SVC;
+within OpenIPSL.Electrical.Banks.PSSE;
 model SVC "On bus 10106 & 10114"
   OpenIPSL.Interfaces.PwPin VIB
     "Voltage signal connected to stepdown transformer"

@@ -22,6 +22,8 @@ convertClass("OpenIPSL.Electrical.Banks.PwShuntR",
              "OpenIPSL.Electrical.Banks.PwShunt");
 convertClass("OpenIPSL.Electrical.Banks.PwShuntB",
              "OpenIPSL.Electrical.Banks.PwShunt");
+convertClass("OpenIPSL.Electrical.Banks.SVC.SVC",
+             "OpenIPSL.Electrical.Banks.SVC");
 
 convertModifiers("OpenIPSL.Electrical.Banks.Simulink.Shunt",
      {"Qnom"},{"Qnom=%Qnom%*1e6"}, true);
