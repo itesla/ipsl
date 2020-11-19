@@ -17,6 +17,13 @@ package Types "Library specific type definitions"
   type Impedance = SI.Impedance;
   type PerUnit = SI.PerUnit;
   type Time = SI.Time;
+  type TimeAging = SI.TimeAging;
+  operator record ComplexVoltage = SI.ComplexVoltage(re(nominal = 1e4, displayUnit="kV"), im(nominal = 1e4, displayUnit="kV"));
+  operator record ComplexCurrent = SI.ComplexCurrent(re(nominal = 1e4, displayUnit="kA"), im(nominal = 1e4, displayUnit="kA"));
+  operator record ComplexAdmittance = SI.ComplexAdmittance;
+  operator record ComplexImpedance = SI.ComplexImpedance;
+  operator record ComplexPower = SI.ComplexPower(re(nominal = 1e8, displayUnit="MW"), im(nominal = 1e8, displayUnit="MVA"));
+  operator record ComplexPerUnit = Complex(re(unit = "1"), im(unit = "1"));
   type Ctrl = enumeration(
       alpha  "Control using the firing angle alpha",
       xTCSC  "Control using reactance xTCSC")
