@@ -1,9 +1,9 @@
 within OpenIPSL.Electrical.Loads.PSSE;
 model Load_variation "PSS/E Load with variation"
   extends BaseClasses.baseLoad;
-  parameter SI.PerUnit d_P "Active Load Variation";
-  parameter SI.Time t1 "Time of Load Variation";
-  parameter SI.Time d_t "Time duration of load variation";
+  parameter Types.PerUnit d_P "Active Load Variation";
+  parameter Types.Time t1 "Time of Load Variation";
+  parameter Types.Time d_t "Time duration of load variation";
 protected
   parameter Real PF=if q0 == 0 then 1 else p0/q0;
   parameter Real d_Q=(p0 + d_P)/PF - q0;

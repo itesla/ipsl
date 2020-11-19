@@ -22,59 +22,59 @@ model Line_MT "Transmission Line modeled as a PI element with a hybrid interface
         "Norton admittances have finite values"));
 
   // Parameters for the abc model
-  parameter SI.PerUnit Gseraa=0 "Element (1,1) in series conductance matrix" 
+  parameter Types.PerUnit Gseraa=0 "Element (1,1) in series conductance matrix" 
     annotation (Dialog(group="Parameters for an 'abc'-Model"));
-  parameter SI.PerUnit Bseraa=-10 "Element (1,1) in series susceptance matrix"
+  parameter Types.PerUnit Bseraa=-10 "Element (1,1) in series susceptance matrix"
     annotation (Dialog(group="Parameters for an 'abc'-Model"));
-  parameter SI.PerUnit Gserab=0 "Element (1,2) in series conductance matrix" 
+  parameter Types.PerUnit Gserab=0 "Element (1,2) in series conductance matrix" 
     annotation (Dialog(group="Parameters for an 'abc'-Model"));
-  parameter SI.PerUnit Bserab=0 "Element (1,2) in series susceptance matrix"
+  parameter Types.PerUnit Bserab=0 "Element (1,2) in series susceptance matrix"
     annotation (Dialog(group="Parameters for an 'abc'-Model"));
-  parameter SI.PerUnit Gserac=0 "Element (1,3) in series conductance matrix"
+  parameter Types.PerUnit Gserac=0 "Element (1,3) in series conductance matrix"
     annotation (Dialog(group="Parameters for an 'abc'-Model"));
-  parameter SI.PerUnit Bserac=0 "Element (1,3) in series susceptance matrix"
+  parameter Types.PerUnit Bserac=0 "Element (1,3) in series susceptance matrix"
     annotation (Dialog(group="Parameters for an 'abc'-Model"));
-  parameter SI.PerUnit Gserbb=0 "Element (2,2) in series conductance matrix"
+  parameter Types.PerUnit Gserbb=0 "Element (2,2) in series conductance matrix"
     annotation (Dialog(group="Parameters for an 'abc'-Model"));
-  parameter SI.PerUnit Bserbb=-10 "Element (2,2) in series susceptance matrix"
+  parameter Types.PerUnit Bserbb=-10 "Element (2,2) in series susceptance matrix"
     annotation (Dialog(group="Parameters for an 'abc'-Model"));
-  parameter SI.PerUnit Gserbc=0 "Element (2,3) in series conductance matrix"
+  parameter Types.PerUnit Gserbc=0 "Element (2,3) in series conductance matrix"
     annotation (Dialog(group="Parameters for an 'abc'-Model"));
-  parameter SI.PerUnit Bserbc=0 "Element (2,3) in series susceptance matrix"
+  parameter Types.PerUnit Bserbc=0 "Element (2,3) in series susceptance matrix"
     annotation (Dialog(group="Parameters for an 'abc'-Model"));
-  parameter SI.PerUnit Gsercc=0 "Element (3,3) in series conductance matrix"
+  parameter Types.PerUnit Gsercc=0 "Element (3,3) in series conductance matrix"
     annotation (Dialog(group="Parameters for an 'abc'-Model"));
-  parameter SI.PerUnit Bsercc=-10 "Element (3,3) in series susceptance matrix"
+  parameter Types.PerUnit Bsercc=-10 "Element (3,3) in series susceptance matrix"
     annotation (Dialog(group="Parameters for an 'abc'-Model"));
-  parameter SI.PerUnit Bshtaa=0 "Element (1,1) in shunt half susceptance matrix"
+  parameter Types.PerUnit Bshtaa=0 "Element (1,1) in shunt half susceptance matrix"
     annotation (Dialog(group="Parameters for an 'abc'-Model"));
-  parameter SI.PerUnit Bshtab=0 "Element (1,2) in shunt half susceptance matrix"
+  parameter Types.PerUnit Bshtab=0 "Element (1,2) in shunt half susceptance matrix"
     annotation (Dialog(group="Parameters for an 'abc'-Model"));
-  parameter SI.PerUnit Bshtac=0 "Element (1,3) in shunt half susceptance matrix"
+  parameter Types.PerUnit Bshtac=0 "Element (1,3) in shunt half susceptance matrix"
     annotation (Dialog(group="Parameters for an 'abc'-Model"));
-  parameter SI.PerUnit Bshtbb=0 "Element (2,2) in shunt half susceptance matrix"
+  parameter Types.PerUnit Bshtbb=0 "Element (2,2) in shunt half susceptance matrix"
     annotation (Dialog(group="Parameters for an 'abc'-Model"));
-  parameter SI.PerUnit Bshtbc=0 "Element (2,3) in shunt half susceptance matrix"
+  parameter Types.PerUnit Bshtbc=0 "Element (2,3) in shunt half susceptance matrix"
     annotation (Dialog(group="Parameters for an 'abc'-Model"));
-  parameter SI.PerUnit Bshtcc=0 "Element (3,3) in shunt half susceptance matrix"
+  parameter Types.PerUnit Bshtcc=0 "Element (3,3) in shunt half susceptance matrix"
     annotation (Dialog(group="Parameters for an 'abc'-Model"));
 
-  parameter SI.PerUnit G_0=0 "Zero-sequence Norton equivalent conductance" annotation (Dialog(
+  parameter Types.PerUnit G_0=0 "Zero-sequence Norton equivalent conductance" annotation (Dialog(
         group=
           "Norton equivalent admittances in terminal K - Considering the negative and zero norton admittances have finite values"));
-  parameter SI.PerUnit B_0=0 "Zero-sequence Norton equivalent susceptance" annotation (Dialog(
+  parameter Types.PerUnit B_0=0 "Zero-sequence Norton equivalent susceptance" annotation (Dialog(
         group=
           "Norton equivalent admittances in terminal K - Considering the negative and zero norton admittances have finite values"));
-  parameter SI.PerUnit G_1=0 "Positive-sequence Norton equivalent conductance" annotation (
+  parameter Types.PerUnit G_1=0 "Positive-sequence Norton equivalent conductance" annotation (
       Dialog(group=
           "Norton equivalent admittances in terminal K - Considering the negative and zero norton admittances have finite values"));
-  parameter SI.PerUnit B_1=0 "Positive-sequence Norton equivalent susceptance" annotation (
+  parameter Types.PerUnit B_1=0 "Positive-sequence Norton equivalent susceptance" annotation (
       Dialog(group=
           "Norton equivalent admittances in terminal K - Considering the negative and zero norton admittances have finite values"));
-  parameter SI.PerUnit G_2=0 "Negative-sequence Norton equivalent conductance" annotation (
+  parameter Types.PerUnit G_2=0 "Negative-sequence Norton equivalent conductance" annotation (
       Dialog(group=
           "Norton equivalent admittances in terminal K - Considering the negative and zero norton admittances have finite values"));
-  parameter SI.PerUnit B_2=0 "Negative-sequence Norton equivalent susceptance" annotation (
+  parameter Types.PerUnit B_2=0 "Negative-sequence Norton equivalent susceptance" annotation (
       Dialog(group=
           "Norton equivalent admittances in terminal K - Considering the negative and zero norton admittances have finite values"));
 

@@ -12,25 +12,25 @@ model AVRTypeII "PSAT AVR Type 2"
     "Reference generator terminal voltage [pu]" annotation (Placement(
         transformation(extent={{-140,40},{-100,80}}), iconTransformation(extent=
            {{-140,40},{-100,80}})));
-  parameter SI.PerUnit vrmin=-5 "Minimum regulator voltage";
-  parameter SI.PerUnit vrmax=5 "Maximum regulator voltage";
+  parameter Types.PerUnit vrmin=-5 "Minimum regulator voltage";
+  parameter Types.PerUnit vrmax=5 "Maximum regulator voltage";
   parameter Real Ka=100 "Amplifier gain [pu/pu]";
-  parameter SI.Time Ta=0.5 "Amplifier time constant";
+  parameter Types.Time Ta=0.5 "Amplifier time constant";
   parameter Real Kf=0.15 "Stabilizer gain [pu/pu]";
-  parameter SI.Time Tf=0.1 "Stabilizer time constant";
+  parameter Types.Time Tf=0.1 "Stabilizer time constant";
   parameter Real Ke=0 "Field circuit integral deviation [pu/pu]";
-  parameter SI.Time Te=0.2 "Field circuit time constant";
-  parameter SI.Time Tr=0.001 "Measurement time constant";
+  parameter Types.Time Te=0.2 "Field circuit time constant";
+  parameter Types.Time Tr=0.001 "Measurement time constant";
   parameter Real Ae=0.0006 "1st ceiling coefficient";
   parameter Real Be=0.9 "2nd ceiling coefficient";
-  parameter SI.PerUnit v0=1 "Initial measured voltage";
+  parameter Types.PerUnit v0=1 "Initial measured voltage";
 protected
-  parameter SI.PerUnit vfstate=vr10 - (Ae*Modelica.Math.exp(Be*
+  parameter Types.PerUnit vfstate=vr10 - (Ae*Modelica.Math.exp(Be*
       abs(vf00))*vf00);
-  parameter SI.PerUnit vf00(fixed=false) "Initialization of vf";
-  parameter SI.PerUnit vr10=Ke*vf00 + Ae*Modelica.Math.exp(Be*abs(
+  parameter Types.PerUnit vf00(fixed=false) "Initialization of vf";
+  parameter Types.PerUnit vr10=Ke*vf00 + Ae*Modelica.Math.exp(Be*abs(
       vf00))*vf00 "Initialization";
-  parameter SI.PerUnit vr20=-vf00*Kf/Tf "Initialization";
+  parameter Types.PerUnit vr20=-vf00*Kf/Tf "Initialization";
 public
   Modelica.Blocks.Interfaces.RealOutput vref0 "Voltage reference at t=0 [pu]"
     annotation (Placement(transformation(

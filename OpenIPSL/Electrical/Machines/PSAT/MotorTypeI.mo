@@ -11,33 +11,33 @@ model MotorTypeI "Induction Machine - Order I"
     final enableS_b=true);
   parameter Integer Sup=1 "Start-up control" annotation (Dialog(group=
           "Machine parameters"), choices(choice=0, choice=1));
-  parameter SI.PerUnit Rs=0.01 "Stator resistance"
+  parameter Types.PerUnit Rs=0.01 "Stator resistance"
     annotation (Dialog(group="Machine parameters"));
-  parameter SI.PerUnit Xs=0.15 "Stator reactance"
+  parameter Types.PerUnit Xs=0.15 "Stator reactance"
     annotation (Dialog(group="Machine parameters"));
-  parameter SI.PerUnit Rr1=0.05 "1st cage rotor resistance"
+  parameter Types.PerUnit Rr1=0.05 "1st cage rotor resistance"
     annotation (Dialog(group="Machine parameters"));
-  parameter SI.PerUnit Xr1=0.15 "1st cage rotor reactance"
+  parameter Types.PerUnit Xr1=0.15 "1st cage rotor reactance"
     annotation (Dialog(group="Machine parameters"));
-  parameter SI.PerUnit Xm=5 "Magnetizing reactance"
+  parameter Types.PerUnit Xm=5 "Magnetizing reactance"
     annotation (Dialog(group="Machine parameters"));
-  parameter SI.Time Hm=3 "Inertia constant [Ws/VA]"
+  parameter Types.Time Hm=3 "Inertia constant [Ws/VA]"
     annotation (Dialog(group="Machine parameters"));
-  parameter SI.PerUnit a=0.5 "1st coefficient of tau_m(w)"
+  parameter Types.PerUnit a=0.5 "1st coefficient of tau_m(w)"
     annotation (Dialog(group="Machine parameters"));
-  parameter SI.PerUnit b=0.00 "2nd coefficient of tau_m(w)"
+  parameter Types.PerUnit b=0.00 "2nd coefficient of tau_m(w)"
     annotation (Dialog(group="Machine parameters"));
-  parameter SI.PerUnit c=0.00 "3rd coefficient of tau_m(w)"
+  parameter Types.PerUnit c=0.00 "3rd coefficient of tau_m(w)"
     annotation (Dialog(group="Machine parameters"));
-  parameter SI.Time tup=0 "Start up time"
+  parameter Types.Time tup=0 "Start up time"
     annotation (Dialog(group="Machine parameters"));
-  SI.PerUnit v(start=v_0) "Bus voltage magnitude";
-  SI.Angle anglev(start=angle_0rad) "Bus voltage angle";
-  SI.PerUnit s(start=Rr1*P_0/S_b*(Q_0/S_b + v_0*v_0/Xm)/(v_0*v_0*v_0*v_0*(Xs + Xr1)));
-  SI.PerUnit Tm;
-  SI.PerUnit P(start=P_0/S_b);
-  SI.PerUnit Q(start=Q_0/S_b);
-  SI.PerUnit Re;
+  Types.PerUnit v(start=v_0) "Bus voltage magnitude";
+  Types.Angle anglev(start=angle_0rad) "Bus voltage angle";
+  Types.PerUnit s(start=Rr1*P_0/S_b*(Q_0/S_b + v_0*v_0/Xm)/(v_0*v_0*v_0*v_0*(Xs + Xr1)));
+  Types.PerUnit Tm;
+  Types.PerUnit P(start=P_0/S_b);
+  Types.PerUnit Q(start=Q_0/S_b);
+  Types.PerUnit Re;
   OpenIPSL.Interfaces.PwPin p(
     vr(start=vr0),
     vi(start=vi0),
@@ -45,14 +45,14 @@ model MotorTypeI "Induction Machine - Order I"
     ii(start=ii0))
     annotation (Placement(transformation(extent={{90,-10},{110,10}})));
 protected
-  parameter SI.PerUnit vr0=v_0*cos(angle_0rad);
-  parameter SI.PerUnit vi0=v_0*sin(angle_0rad);
-  parameter SI.PerUnit ir0=(P_0/S_b*vr0 + Q_0/S_b*vi0)/(vr0^2 + vi0^2);
-  parameter SI.PerUnit ii0=(P_0/S_b*vi0 - Q_0/S_b*vr0)/(vr0^2 + vi0^2);
-  parameter SI.PerUnit A=a + b + c;
-  parameter SI.PerUnit B=(-b) - 2*c;
-  parameter SI.PerUnit C=c;
-  parameter SI.PerUnit Xe=Xs + Xr1;
+  parameter Types.PerUnit vr0=v_0*cos(angle_0rad);
+  parameter Types.PerUnit vi0=v_0*sin(angle_0rad);
+  parameter Types.PerUnit ir0=(P_0/S_b*vr0 + Q_0/S_b*vi0)/(vr0^2 + vi0^2);
+  parameter Types.PerUnit ii0=(P_0/S_b*vi0 - Q_0/S_b*vr0)/(vr0^2 + vi0^2);
+  parameter Types.PerUnit A=a + b + c;
+  parameter Types.PerUnit B=(-b) - 2*c;
+  parameter Types.PerUnit C=c;
+  parameter Types.PerUnit Xe=Xs + Xr1;
 initial equation
   der(s) = 0;
 equation

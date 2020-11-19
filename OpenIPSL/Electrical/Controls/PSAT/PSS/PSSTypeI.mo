@@ -3,10 +3,10 @@ model PSSTypeI "PSAT PSS Type I"
   parameter Real Kw "Stabilizer gain [pu/pu]";
   parameter Real Kp "Gain for active power";
   parameter Real Kv "Gain for bus voltage magnitude";
-  parameter SI.PerUnit vsmax "Max stabilizer output signal";
-  parameter SI.PerUnit vsmin "Min stabilizer output signal";
-  parameter SI.Time Tw "Wash-out time constant";
-  parameter SI.Time Tc "Lag time constant";
+  parameter Types.PerUnit vsmax "Max stabilizer output signal";
+  parameter Types.PerUnit vsmin "Min stabilizer output signal";
+  parameter Types.Time Tw "Wash-out time constant";
+  parameter Types.Time Tc "Lag time constant";
   Modelica.Blocks.Interfaces.RealInput w "Rotor speed"
     annotation (Placement(transformation(extent={{-140,60},{-100,100}}), iconTransformation(extent={{-140,40},{-100,80}})));
   Modelica.Blocks.Interfaces.RealOutput Vref

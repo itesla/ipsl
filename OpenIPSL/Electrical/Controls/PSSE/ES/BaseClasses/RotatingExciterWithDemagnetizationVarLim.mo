@@ -3,7 +3,7 @@ model RotatingExciterWithDemagnetizationVarLim
   extends RotatingExciterWithDemagnetization(redeclare replaceable
       OpenIPSL.NonElectrical.Continuous.IntegratorLimVar sISO(K=1/T_E, y_start=
           Efd0), redeclare Modelica.Blocks.Math.Add3 Sum(k3=K_D));
-  parameter SI.PerUnit K_D "Exciter demagnetizing factor";
+  parameter Types.PerUnit K_D "Exciter demagnetizing factor";
   Modelica.Blocks.Interfaces.RealInput outMin annotation (Placement(
         transformation(extent={{-120,50},{-80,90}}), iconTransformation(extent=
             {{100,50},{80,70}})));

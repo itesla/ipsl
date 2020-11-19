@@ -32,21 +32,21 @@ model WyeLoad_2Ph "Two-phase wye load"
   parameter Integer ModelType=0 "0- Constant Power Model, 1- ZIP Model;"
     annotation (choices(choice=0 "Constant Power", choice=1 "ZIP Model"),
       Dialog(group="Power flow"));
-  parameter SI.ActivePower P_a(displayUnit="MW")=1e6 "Active power for phase A"
+  parameter Types.ActivePower P_a(displayUnit="MW")=1e6 "Active power for phase A"
     annotation (Dialog(group="Power flow"));
-  parameter SI.ReactivePower Q_a(displayUnit="Mvar")=0 "Reactive power for phase A"
+  parameter Types.ReactivePower Q_a(displayUnit="Mvar")=0 "Reactive power for phase A"
     annotation (Dialog(group="Power flow"));
-  parameter SI.ActivePower P_b(displayUnit="MW")=1e6 "Active power for phase B"
+  parameter Types.ActivePower P_b(displayUnit="MW")=1e6 "Active power for phase B"
     annotation (Dialog(group="Power flow"));
-  parameter SI.ReactivePower Q_b(displayUnit="Mvar")=0 "Reactive power for phase B"
+  parameter Types.ReactivePower Q_b(displayUnit="Mvar")=0 "Reactive power for phase B"
     annotation (Dialog(group="Power flow"));
-  parameter SI.PerUnit VA=1 "Guess value for phase A magnitude"
+  parameter Types.PerUnit VA=1 "Guess value for phase A magnitude"
     annotation (Dialog(group="Initialization"));
-  parameter SI.Angle AngA(displayUnit = "deg") = SI.Conversions.from_deg(0) "Guess value for phase A angle"
+  parameter Types.Angle AngA(displayUnit = "deg") = SI.Conversions.from_deg(0) "Guess value for phase A angle"
     annotation (Dialog(group="Initialization"));
-  parameter SI.PerUnit VB=1 "Guess value for phase B magnitude"
+  parameter Types.PerUnit VB=1 "Guess value for phase B magnitude"
     annotation (Dialog(group="Initialization"));
-  parameter SI.Angle AngB(displayUnit = "deg") = SI.Conversions.from_deg(-120) "Guess value for phase B angle"
+  parameter Types.Angle AngB(displayUnit = "deg") = SI.Conversions.from_deg(-120) "Guess value for phase B angle"
     annotation (Dialog(group="Initialization"));
   parameter Real A_pa=0 "Percentage of Constant Power Load for Phase A (%)"
     annotation (Dialog(group="Load Parameters for ZIP Model"));

@@ -14,20 +14,20 @@ model STATCOM "Static Var Compensator"
       Placement(transformation(extent={{100,-10},{120,10}}), iconTransformation(
           extent={{100,-10},{120,10}})));
 
-  parameter SI.ApparentPower Sn(displayUnit="MVA")=S_b "Power rating"
+  parameter Types.ApparentPower Sn(displayUnit="MVA")=S_b "Power rating"
     annotation (Dialog(group="Device parameters"));
-  parameter SI.Voltage Vn(displayUnit="kV")=V_b "Voltage rating"
+  parameter Types.Voltage Vn(displayUnit="kV")=V_b "Voltage rating"
     annotation (Dialog(group="Device parameters"));
   parameter Real Kr=0.1 "Regulator gain [pu/pu]"
     annotation (Dialog(group="Device parameters"));
-  parameter SI.Time Tr=0.01 "Regulator time constant"
+  parameter Types.Time Tr=0.01 "Regulator time constant"
     annotation (Dialog(group="Device parameters"));
-  parameter SI.PerUnit i_Max=0.7 "Maximum current (device base)"
+  parameter Types.PerUnit i_Max=0.7 "Maximum current (device base)"
     annotation (Dialog(group="Device parameters"));
-  parameter SI.PerUnit i_Min=-0.1 "Minimum current (device base)"
+  parameter Types.PerUnit i_Min=-0.1 "Minimum current (device base)"
     annotation (Dialog(group="Device parameters"));
-  SI.PerUnit v(start=v_0) "Bus voltage magnitude";
-  SI.PerUnit Q
+  Types.PerUnit v(start=v_0) "Bus voltage magnitude";
+  Types.PerUnit Q
               "Injected reactive power (system base)";
 protected
   Modelica.Blocks.Interfaces.RealOutput i_SH "STATCOM current" annotation (Placement(transformation(extent={{60,-10},{80,10}}), iconTransformation(extent={{34,-10},{54,10}})));
@@ -43,15 +43,15 @@ public
         rotation=-90,
         origin={0,120})));
 protected
-  parameter SI.PerUnit In=Sn/Vn "Nominal current (device base)";
-  parameter SI.PerUnit I_b=S_b/V_b "Base current";
-  parameter SI.PerUnit i_max=i_Max*In/I_b "Max current (system base)";
-  parameter SI.PerUnit i_min=i_Min*In/I_b "Min current (system base)";
-  parameter SI.PerUnit vr0=v_0*cos(angle_0rad) "Initial real voltage";
-  parameter SI.PerUnit vi0=v_0*sin(angle_0rad) "Initial imaginary voltage";
-  parameter SI.PerUnit u0=v_ref - v_0 "Initial controller input";
-  parameter SI.PerUnit i0=(Q_0/S_b)/v_0 "Initial current";
-  parameter SI.PerUnit v_ref=i0/Kr + v_0 "Reference voltage";
+  parameter Types.PerUnit In=Sn/Vn "Nominal current (device base)";
+  parameter Types.PerUnit I_b=S_b/V_b "Base current";
+  parameter Types.PerUnit i_max=i_Max*In/I_b "Max current (system base)";
+  parameter Types.PerUnit i_min=i_Min*In/I_b "Min current (system base)";
+  parameter Types.PerUnit vr0=v_0*cos(angle_0rad) "Initial real voltage";
+  parameter Types.PerUnit vi0=v_0*sin(angle_0rad) "Initial imaginary voltage";
+  parameter Types.PerUnit u0=v_ref - v_0 "Initial controller input";
+  parameter Types.PerUnit i0=(Q_0/S_b)/v_0 "Initial current";
+  parameter Types.PerUnit v_ref=i0/Kr + v_0 "Reference voltage";
 
   NonElectrical.Continuous.SimpleLagLim simpleLagLim(
     K=Kr,

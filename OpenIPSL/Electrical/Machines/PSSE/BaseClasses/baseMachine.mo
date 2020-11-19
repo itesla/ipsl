@@ -17,37 +17,37 @@ partial model baseMachine
     final enableP_0=true,
     final enableS_b=true);
   //Machine parameters
-  parameter SI.ApparentPower M_b(displayUnit="MVA") "Machine base power"
+  parameter Types.ApparentPower M_b(displayUnit="MVA") "Machine base power"
     annotation (Dialog(group="Machine parameters"));
-  parameter SI.Time Tpd0 "d-axis transient open-circuit time constant"
+  parameter Types.Time Tpd0 "d-axis transient open-circuit time constant"
     annotation (Dialog(group="Machine parameters"));
-  parameter SI.Time Tppd0 "d-axis sub-transient open-circuit time constant"
+  parameter Types.Time Tppd0 "d-axis sub-transient open-circuit time constant"
     annotation (Dialog(group="Machine parameters"));
-  parameter SI.Time Tppq0 "q-axis sub-transient open-circuit time constant"
+  parameter Types.Time Tppq0 "q-axis sub-transient open-circuit time constant"
     annotation (Dialog(group="Machine parameters"));
-  parameter SI.Time H "Inertia constant"
+  parameter Types.Time H "Inertia constant"
     annotation (Dialog(group="Machine parameters"));
   parameter Real D "Speed damping"
     annotation (Dialog(group="Machine parameters"));
-  parameter SI.PerUnit Xd "d-axis reactance"
+  parameter Types.PerUnit Xd "d-axis reactance"
     annotation (Dialog(group="Machine parameters"));
-  parameter SI.PerUnit Xq "q-axis reactance"
+  parameter Types.PerUnit Xq "q-axis reactance"
     annotation (Dialog(group="Machine parameters"));
-  parameter SI.PerUnit Xpd "d-axis transient reactance"
+  parameter Types.PerUnit Xpd "d-axis transient reactance"
     annotation (Dialog(group="Machine parameters"));
-  parameter SI.PerUnit Xppd "d-axis sub-transient reactance"
+  parameter Types.PerUnit Xppd "d-axis sub-transient reactance"
     annotation (Dialog(group="Machine parameters"));
-  parameter SI.PerUnit Xppq "q-axis sub-transient reactance"
+  parameter Types.PerUnit Xppq "q-axis sub-transient reactance"
     annotation (Dialog(group="Machine parameters"));
-  parameter SI.PerUnit Xl "leakage reactance"
+  parameter Types.PerUnit Xl "leakage reactance"
     annotation (Dialog(group="Machine parameters"));
-  parameter SI.PerUnit S10 "Saturation factor at 1.0 pu"
+  parameter Types.PerUnit S10 "Saturation factor at 1.0 pu"
     annotation (Dialog(group="Machine parameters"));
-  parameter SI.PerUnit S12 "Saturation factor at 1.2 pu"
+  parameter Types.PerUnit S12 "Saturation factor at 1.2 pu"
     annotation (Dialog(group="Machine parameters"));
-  parameter SI.PerUnit R_a=0 "Armature resistance"
+  parameter Types.PerUnit R_a=0 "Armature resistance"
     annotation (Dialog(group="Machine parameters"));
-  parameter SI.PerUnit w0(min=-1+C.eps)=0 "Initial speed deviation from nominal"
+  parameter Types.PerUnit w0(min=-1+C.eps)=0 "Initial speed deviation from nominal"
     annotation (Dialog(group="Initialization"));
   OpenIPSL.Interfaces.PwPin p(
     vr(start=vr0),
@@ -79,32 +79,32 @@ partial model baseMachine
         origin={110,-90}), iconTransformation(
         extent={{-10,-10},{10,10}},
         origin={110,-90})));
-  SI.PerUnit w(start=w0) "Machine speed deviation";
-  SI.Angle delta "Rotor angle";
-  SI.PerUnit Vt(start=v_0) "Bus voltage magnitude";
-  SI.Angle anglev(start=angle_0rad) "Bus voltage angle";
-  SI.PerUnit I(start=sqrt(ir0^2 + ii0^2)) "Terminal current magnitude";
-  SI.Angle anglei(start=atan2(ii0, ir0)) "Terminal current angle";
-  SI.PerUnit P(start=P_0/S_b) "Active power (system base)";
-  SI.PerUnit Q(start=Q_0/S_b) "Reactive power (system base)";
-  SI.PerUnit Te "Electrical torque [pu]";
-  SI.PerUnit id "d-axis armature current [pu]";
-  SI.PerUnit iq "q-axis armature current [pu]";
-  SI.PerUnit ud "d-axis terminal voltage [pu]";
-  SI.PerUnit uq "q-axis terminal voltage [pu]";
+  Types.PerUnit w(start=w0) "Machine speed deviation";
+  Types.Angle delta "Rotor angle";
+  Types.PerUnit Vt(start=v_0) "Bus voltage magnitude";
+  Types.Angle anglev(start=angle_0rad) "Bus voltage angle";
+  Types.PerUnit I(start=sqrt(ir0^2 + ii0^2)) "Terminal current magnitude";
+  Types.Angle anglei(start=atan2(ii0, ir0)) "Terminal current angle";
+  Types.PerUnit P(start=P_0/S_b) "Active power (system base)";
+  Types.PerUnit Q(start=Q_0/S_b) "Reactive power (system base)";
+  Types.PerUnit Te "Electrical torque [pu]";
+  Types.PerUnit id "d-axis armature current [pu]";
+  Types.PerUnit iq "q-axis armature current [pu]";
+  Types.PerUnit ud "d-axis terminal voltage [pu]";
+  Types.PerUnit uq "q-axis terminal voltage [pu]";
 protected
-  parameter SI.AngularVelocity w_b=2*C.pi*fn "System base speed";
+  parameter Types.AngularVelocity w_b=2*C.pi*fn "System base speed";
   parameter Real CoB=M_b/S_b;
-  parameter SI.PerUnit vr0=v_0*cos(angle_0rad)
+  parameter Types.PerUnit vr0=v_0*cos(angle_0rad)
     "Real component of initial terminal voltage";
-  parameter SI.PerUnit vi0=v_0*sin(angle_0rad)
+  parameter Types.PerUnit vi0=v_0*sin(angle_0rad)
     "Imaginary component of initial terminal voltage";
-  parameter SI.PerUnit ir0=-CoB*(p0*vr0 + q0*vi0)/(vr0^2 + vi0^2)
+  parameter Types.PerUnit ir0=-CoB*(p0*vr0 + q0*vi0)/(vr0^2 + vi0^2)
     "Real component of initial armature current (system base)";
-  parameter SI.PerUnit ii0=-CoB*(p0*vi0 - q0*vr0)/(vr0^2 + vi0^2)
+  parameter Types.PerUnit ii0=-CoB*(p0*vi0 - q0*vr0)/(vr0^2 + vi0^2)
     "Imaginary component of initial armature current (system base)";
-  parameter SI.PerUnit p0=P_0/M_b "Initial active power generation (machine base)";
-  parameter SI.PerUnit q0=Q_0/M_b
+  parameter Types.PerUnit p0=P_0/M_b "Initial active power generation (machine base)";
+  parameter Types.PerUnit q0=Q_0/M_b
     "Initial reactive power generation (machine base)";
 equation
   //Interfacing outputs with the internal variables

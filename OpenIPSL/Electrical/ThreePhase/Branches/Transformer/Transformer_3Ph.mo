@@ -38,9 +38,9 @@ model Transformer_3Ph "Three Phase transformer modeled as a PI-equivalent device
       choice=8 "Yg-Y"));
   parameter Real tap=1 "Nominal tap ratio (Vs/Vp)"
     annotation (Dialog(group="Transformer parameters"));
-  parameter SI.PerUnit X=0.001 "Leakage reactance"
+  parameter Types.PerUnit X=0.001 "Leakage reactance"
     annotation (Dialog(group="Transformer parameters"));
-  parameter SI.PerUnit R=0.1 "Windings copper resistance"
+  parameter Types.PerUnit R=0.1 "Windings copper resistance"
     annotation (Dialog(group="Transformer parameters"));
 protected
   function ConnectionType

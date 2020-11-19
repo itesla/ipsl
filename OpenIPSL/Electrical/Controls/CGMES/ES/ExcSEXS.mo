@@ -2,15 +2,15 @@
 model ExcSEXS "CGMES Simplified Excitation System Model"
   extends OpenIPSL.Electrical.Controls.PSSE.ES.BaseClasses.BaseExciter;
   parameter Real T_AT_B=0.1 "Ta/Tb - gain reduction ratio of lag-lead element";
-  parameter SI.Time T_B=10 "Denominator time constant of lag-lead block";
-  parameter SI.PerUnit K=100 "Gain (K) (>0)";
-  parameter SI.Time T_E=0.05 "Time constant of gain block";
-  parameter SI.PerUnit K_C=0.08 "PI controller gain";
-  parameter SI.Time T_C=0 "PI controller phase lead time constant";
-  parameter SI.PerUnit E_MIN=-5 "Minimum field voltage output";
-  parameter SI.PerUnit E_MAX=5 "Maximum field voltage output";
-  parameter SI.PerUnit EFD_MAX=5 "Field voltage clipping maximum limit";
-  parameter SI.PerUnit EFD_MIN=-5 "Field voltage clipping minimum limit";
+  parameter Types.Time T_B=10 "Denominator time constant of lag-lead block";
+  parameter Types.PerUnit K=100 "Gain (K) (>0)";
+  parameter Types.Time T_E=0.05 "Time constant of gain block";
+  parameter Types.PerUnit K_C=0.08 "PI controller gain";
+  parameter Types.Time T_C=0 "PI controller phase lead time constant";
+  parameter Types.PerUnit E_MIN=-5 "Minimum field voltage output";
+  parameter Types.PerUnit E_MAX=5 "Maximum field voltage output";
+  parameter Types.PerUnit EFD_MAX=5 "Field voltage clipping maximum limit";
+  parameter Types.PerUnit EFD_MIN=-5 "Field voltage clipping minimum limit";
   Modelica.Blocks.Math.Add3 V_erro(
     k3=1,
     k1=1,

@@ -2,18 +2,18 @@ within OpenIPSL.Electrical.Controls.PSSE.TG;
 model HYGOV "HYGOV - Hydro Turbine-Governor model"
   extends Icons.VerifiedModel;
   extends BaseClasses.BaseGovernor;
-  parameter SI.PerUnit R=0.05 "Permanent droop gain";
-  parameter SI.PerUnit r=0.3 "Temporary droop gain";
-  parameter SI.Time T_r=5 "Governor time constant";
-  parameter SI.Time T_f=0.05 "Filter time constant";
-  parameter SI.Time T_g=0.5 "Servo time constant";
-  parameter SI.TimeAging VELM=0.2 "Gate open/close velocity limit";
-  parameter SI.PerUnit G_MAX=0.9 "Maximum gate limit";
-  parameter SI.PerUnit G_MIN=0 "Minimum gate limit";
-  parameter SI.Time T_w=1.25 "Water time constant";
-  parameter SI.PerUnit A_t=1.2 "Turbine gain";
-  parameter SI.PerUnit D_turb=0.2 "Turbine damping";
-  parameter SI.PerUnit q_NL=0.08 "Water flow at no load";
+  parameter Types.PerUnit R=0.05 "Permanent droop gain";
+  parameter Types.PerUnit r=0.3 "Temporary droop gain";
+  parameter Types.Time T_r=5 "Governor time constant";
+  parameter Types.Time T_f=0.05 "Filter time constant";
+  parameter Types.Time T_g=0.5 "Servo time constant";
+  parameter Types.TimeAging VELM=0.2 "Gate open/close velocity limit";
+  parameter Types.PerUnit G_MAX=0.9 "Maximum gate limit";
+  parameter Types.PerUnit G_MIN=0 "Minimum gate limit";
+  parameter Types.Time T_w=1.25 "Water time constant";
+  parameter Types.PerUnit A_t=1.2 "Turbine gain";
+  parameter Types.PerUnit D_turb=0.2 "Turbine damping";
+  parameter Types.PerUnit q_NL=0.08 "Water flow at no load";
   Modelica.Blocks.Sources.Constant n_ref(k=nref) annotation (Placement(transformation(extent={{-178,14},{-166,26}})));
   OpenIPSL.NonElectrical.Continuous.SimpleLag SimpleLag1(
     K=1,
@@ -44,10 +44,10 @@ model HYGOV "HYGOV - Hydro Turbine-Governor model"
     y_start=c0,
     initType=Modelica.Blocks.Types.Init.InitialOutput)
     annotation (Placement(transformation(extent={{-68,0},{-56,12}})));
-  SI.PerUnit G "Gate opening";
-  SI.PerUnit c "Desired gate opening";
-  SI.PerUnit Q "Turbine flow";
-  SI.PerUnit H "Turbine head";
+  Types.PerUnit G "Gate opening";
+  Types.PerUnit c "Desired gate opening";
+  Types.PerUnit Q "Turbine flow";
+  Types.PerUnit H "Turbine head";
   Modelica.Blocks.Math.Add add(k2=-1)
     annotation (Placement(transformation(extent={{-144,0},{-132,12}})));
   Modelica.Blocks.Math.Add add1
@@ -83,7 +83,7 @@ protected
   parameter Real e0=0 "initial output for the filter";
   parameter Real nref(fixed=false);
   //=R*c0 "speed reference";
-  parameter SI.PerUnit P_m0(fixed=false);
+  parameter Types.PerUnit P_m0(fixed=false);
 initial algorithm
   P_m0 := PMECH0;
   q0 := P_m0/(A_t*h0) + q_NL;

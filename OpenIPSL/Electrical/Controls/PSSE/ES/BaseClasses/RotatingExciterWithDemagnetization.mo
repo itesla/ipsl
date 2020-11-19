@@ -6,7 +6,7 @@ model RotatingExciterWithDemagnetization
       k=1/T_E,
       initType=Modelica.Blocks.Types.Init.InitialOutput,
       y_start=Efd0));
-  parameter SI.PerUnit K_D "Exciter demagnetizing factor";
+  parameter Types.PerUnit K_D "Exciter demagnetizing factor";
   Modelica.Blocks.Interfaces.RealInput XADIFD annotation (Placement(
         transformation(
         extent={{-20,-20},{20,20}},

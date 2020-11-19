@@ -1,26 +1,26 @@
 within OpenIPSL.Electrical.Controls.PSAT.TG;
 model TGTypeIII
   "Hydro Turbine (Linear model) and Governor (Standard model)- control scheme Type 3"
-  parameter SI.PerUnit P_0 "Active power"
+  parameter Types.PerUnit P_0 "Active power"
     annotation (Dialog(group="Power flow data"));
-  parameter SI.PerUnit wref=1 "Reference speed";
-  parameter SI.PerUnit Tg "Pilot valve droop";
-  parameter SI.PerUnit gmax "Maximum gate opening";
-  parameter SI.PerUnit gmin "Minimum gate opening";
-  parameter SI.PerUnit vmax "Maximum gate opening rate";
-  parameter SI.PerUnit vmin "Minimum gate opening rate";
-  parameter SI.Time Tp "Pilot valve time constant";
-  parameter SI.Time Tr "Dashpot time constant";
+  parameter Types.PerUnit wref=1 "Reference speed";
+  parameter Types.PerUnit Tg "Pilot valve droop";
+  parameter Types.PerUnit gmax "Maximum gate opening";
+  parameter Types.PerUnit gmin "Minimum gate opening";
+  parameter Types.PerUnit vmax "Maximum gate opening rate";
+  parameter Types.PerUnit vmin "Minimum gate opening rate";
+  parameter Types.Time Tp "Pilot valve time constant";
+  parameter Types.Time Tr "Dashpot time constant";
   parameter Real delta "Transient speed droop [pu/pu]";
   parameter Real sigma "Permanent speed droop [pu/pu]";
-  parameter SI.Time Tw "Water starting time";
+  parameter Types.Time Tw "Water starting time";
   parameter Real a11 "Deriv. of flow rate vs. turbine head";
   parameter Real a13 "Deriv. of flow rate vs. gate position";
   parameter Real a21 "Deriv. of torque vs. turbine head";
   parameter Real a23 "Deriv. of torque vs. gate position";
   parameter Real int3;
-  SI.PerUnit deltaG "Gate position variation";
-  SI.PerUnit G "Gate position";
+  Types.PerUnit deltaG "Gate position variation";
+  Types.PerUnit G "Gate position";
   Modelica.Blocks.Continuous.Integrator integrator(initType=Modelica.Blocks.Types.Init.NoInit,
       y_start=0) annotation (Placement(transformation(extent={{-20,-10},{0,10}})));
   Modelica.Blocks.Math.Gain gain(k=1/(Tg*Tp))

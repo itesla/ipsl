@@ -4,22 +4,22 @@ model ESST4B "ST4B Excitation System [IEEE2005]"
   extends OpenIPSL.Electrical.Controls.PSSE.ES.BaseClasses.BaseExciter;
   import Modelica.ComplexMath.j;
   import Modelica.ComplexMath.'abs';
-  parameter SI.Time T_R=0.3 "Regulator input filter time constant";
-  parameter SI.PerUnit K_PR=2.97 "Voltage regulator proportional gain";
-  parameter SI.TimeAging K_IR=2.97 "Voltage regulator integral gain";
-  parameter SI.PerUnit V_RMAX=1 "Maximum regulator output";
-  parameter SI.PerUnit V_RMIN=-0.87 "Minimum regulator output";
-  parameter SI.Time T_A=0.01 "Thyristor bridge firing control equivalent time constant";
-  parameter SI.PerUnit K_PM=1 "Forward proportional gain of inner loop field regulator";
-  parameter SI.TimeAging K_IM=0.2 "Forward integral gain of inner loop field regulator";
-  parameter SI.PerUnit V_MMAX=1 "Maximum output of field current regulator";
-  parameter SI.PerUnit V_MMIN=-0.87 "Minimum output of field current regulator";
-  parameter SI.PerUnit K_G=0.1 "Feedback gain of field current regulator";
-  parameter SI.PerUnit K_P=6.73 "Potential circuit (voltage) gain coefficient";
-  parameter SI.PerUnit K_I=0.1 "Compound circuit (current) gain coefficient";
-  parameter SI.PerUnit V_BMAX=8.41 "Maximum available exciter voltage";
-  parameter SI.PerUnit K_C=0.1 "Rectifier loading factor proportional to commutating reactance";
-  parameter SI.PerUnit X_L=0 "Reactance associated with potential source";
+  parameter Types.Time T_R=0.3 "Regulator input filter time constant";
+  parameter Types.PerUnit K_PR=2.97 "Voltage regulator proportional gain";
+  parameter Types.TimeAging K_IR=2.97 "Voltage regulator integral gain";
+  parameter Types.PerUnit V_RMAX=1 "Maximum regulator output";
+  parameter Types.PerUnit V_RMIN=-0.87 "Minimum regulator output";
+  parameter Types.Time T_A=0.01 "Thyristor bridge firing control equivalent time constant";
+  parameter Types.PerUnit K_PM=1 "Forward proportional gain of inner loop field regulator";
+  parameter Types.TimeAging K_IM=0.2 "Forward integral gain of inner loop field regulator";
+  parameter Types.PerUnit V_MMAX=1 "Maximum output of field current regulator";
+  parameter Types.PerUnit V_MMIN=-0.87 "Minimum output of field current regulator";
+  parameter Types.PerUnit K_G=0.1 "Feedback gain of field current regulator";
+  parameter Types.PerUnit K_P=6.73 "Potential circuit (voltage) gain coefficient";
+  parameter Types.PerUnit K_I=0.1 "Compound circuit (current) gain coefficient";
+  parameter Types.PerUnit V_BMAX=8.41 "Maximum available exciter voltage";
+  parameter Types.PerUnit K_C=0.1 "Rectifier loading factor proportional to commutating reactance";
+  parameter Types.PerUnit X_L=0 "Reactance associated with potential source";
   parameter SI.Conversions.NonSIunits.Angle_deg THETAP=0 "Potential circuit phase angle";
   NonElectrical.Logical.LV_GATE lV_Gate
     annotation (Placement(transformation(extent={{120,-70},{144,-58}})));
@@ -81,7 +81,7 @@ model ESST4B "ST4B Excitation System [IEEE2005]"
       K_C=K_C)
     annotation (Placement(transformation(extent={{40,-120},{60,-100}})));
 protected
-  parameter SI.Angle THETAPrad = SI.Conversions.from_deg(THETAP) "Potential circuit phase angle in rad";
+  parameter Types.Angle THETAPrad = SI.Conversions.from_deg(THETAP) "Potential circuit phase angle in rad";
   Modelica.Blocks.Interfaces.RealOutput VE
     annotation (Placement(transformation(extent={{10,-120},{30,-100}})));
   Complex V_T;

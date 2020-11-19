@@ -1,13 +1,13 @@
 within OpenIPSL.Electrical.Controls.PSSE.PSS;
 model STAB2A "STAB2A - Power Sensitive Stabilizing Unit (ASEA) [PSSE-MODELS]"
-  parameter SI.PerUnit K_2=1 "Input washout filter gain";
-  parameter SI.Time T_2=1 "Input washout filter time constant";
-  parameter SI.PerUnit K_3=1 "Low-pass filter proportional gain";
-  parameter SI.Time T_3=1 "Low-pass filter time constant";
-  parameter SI.PerUnit K_4=1 "Washout filter output proportional gain";
-  parameter SI.PerUnit K_5=1 "Output low-pass filter proportional gain";
-  parameter SI.Time T_5=1 "Output low-pass filter time constant";
-  parameter SI.PerUnit H_LIM=5 "Limit value for stabilizer output";
+  parameter Types.PerUnit K_2=1 "Input washout filter gain";
+  parameter Types.Time T_2=1 "Input washout filter time constant";
+  parameter Types.PerUnit K_3=1 "Low-pass filter proportional gain";
+  parameter Types.Time T_3=1 "Low-pass filter time constant";
+  parameter Types.PerUnit K_4=1 "Washout filter output proportional gain";
+  parameter Types.PerUnit K_5=1 "Output low-pass filter proportional gain";
+  parameter Types.Time T_5=1 "Output low-pass filter time constant";
+  parameter Types.PerUnit H_LIM=5 "Limit value for stabilizer output";
   input Modelica.Blocks.Interfaces.RealInput PELEC
     "Machine electrical power [pu]" annotation (Placement(transformation(extent={{-180,-20},{-140,20}}),
                                   iconTransformation(extent={{-140,-20},{-100,20}})));

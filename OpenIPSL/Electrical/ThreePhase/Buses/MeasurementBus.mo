@@ -7,12 +7,12 @@ model MeasurementBus "Three-phase active and reactive power measurement bus"
   OpenIPSL.Interfaces.PwPin p4 "Phase A input" annotation (Placement(transformation(extent={{-100,80},{-80,100}})));
   OpenIPSL.Interfaces.PwPin p5 "Phase B input" annotation (Placement(transformation(extent={{-100,-10},{-80,10}})));
   OpenIPSL.Interfaces.PwPin p6 "Phase C input" annotation (Placement(transformation(extent={{-100,-100},{-80,-80}})));
-  SI.ActivePower Pa(displayUnit="MW") "Active power suplyed in phase a";
-  SI.ReactivePower Qa(displayUnit="Mvar") "Reactive power suplyed in phase a";
-  SI.ActivePower Pb(displayUnit="MW") "Active power suplyed in phase b";
-  SI.ReactivePower Qb(displayUnit="Mvar") "Reactive power suplyed in phase b";
-  SI.ActivePower Pc(displayUnit="MW") "Active power suplyed in phase c";
-  SI.ReactivePower Qc(displayUnit="Mvar") "Reactive power suplyed in phase c";
+  Types.ActivePower Pa(displayUnit="MW") "Active power suplyed in phase a";
+  Types.ReactivePower Qa(displayUnit="Mvar") "Reactive power suplyed in phase a";
+  Types.ActivePower Pb(displayUnit="MW") "Active power suplyed in phase b";
+  Types.ReactivePower Qb(displayUnit="Mvar") "Reactive power suplyed in phase b";
+  Types.ActivePower Pc(displayUnit="MW") "Active power suplyed in phase c";
+  Types.ReactivePower Qc(displayUnit="Mvar") "Reactive power suplyed in phase c";
   Modelica.Blocks.Interfaces.RealOutput pa(unit="1") = Pa/S_b "[pu, system base]" annotation (Placement(transformation(
         extent={{-24,-24},{24,24}},
         rotation=-90,

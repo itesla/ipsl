@@ -9,12 +9,12 @@ partial model baseLoad
     final enablev_0=true,
     final enableQ_0=true,
     final enableP_0=true);
-  parameter SI.ApparentPower Sn(displayUnit="MVA")=S_b "Power rating";
-  SI.PerUnit v(start=v_0) "Voltage magnitude";
-  SI.Angle Angle_V(start=SI.Conversions.from_deg(
+  parameter Types.ApparentPower Sn(displayUnit="MVA")=S_b "Power rating";
+  Types.PerUnit v(start=v_0) "Voltage magnitude";
+  Types.Angle Angle_V(start=SI.Conversions.from_deg(
         angle_0)) "Voltage angle";
-  SI.PerUnit P(start=P_0/S_b) "Active power";
-  SI.PerUnit Q(start=Q_0/S_b) "Reactive power";
+  Types.PerUnit P(start=P_0/S_b) "Active power";
+  Types.PerUnit Q(start=Q_0/S_b) "Reactive power";
   Interfaces.PwPin p(vr(start=v_0*cos(angle_0rad)),vi(start=v_0*sin(angle_0rad)))
     annotation (Placement(transformation(extent={{-10,90},{10,110}})));
 protected

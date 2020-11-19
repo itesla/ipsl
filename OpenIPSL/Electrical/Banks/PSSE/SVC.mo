@@ -38,24 +38,24 @@ model SVC "On bus 10106 & 10114"
     annotation (Placement(transformation(extent={{-20,-38},{-10,-28}})));
   Modelica.Blocks.Math.Gain imGain(k=1/Sbase)
     annotation (Placement(transformation(extent={{60,-36},{72,-24}})));
-  parameter SI.PerUnit Vref "Reference voltage";
-  parameter SI.PerUnit Bref "Reference susceptance";
+  parameter Types.PerUnit Vref "Reference voltage";
+  parameter Types.PerUnit Bref "Reference susceptance";
   parameter Real K=150 "Steady-state gain";
-  parameter SI.Time T1 "Time constant";
-  parameter SI.Time T2 "Time constant";
-  parameter SI.Time T3 "Time constant";
-  parameter SI.Time T4 "Time constant";
-  parameter SI.Time T5=0.03 "Time constant of thyristor bridge";
-  parameter SI.PerUnit Vmax;
-  parameter SI.PerUnit Vmin;
-  parameter SI.PerUnit Vov=0.5 "Override voltage";
-  parameter SI.ApparentPower Sbase(displayUnit="MVA") "Base power of the bus";
+  parameter Types.Time T1 "Time constant";
+  parameter Types.Time T2 "Time constant";
+  parameter Types.Time T3 "Time constant";
+  parameter Types.Time T4 "Time constant";
+  parameter Types.Time T5=0.03 "Time constant of thyristor bridge";
+  parameter Types.PerUnit Vmax;
+  parameter Types.PerUnit Vmin;
+  parameter Types.PerUnit Vov=0.5 "Override voltage";
+  parameter Types.ApparentPower Sbase(displayUnit="MVA") "Base power of the bus";
   parameter Real init_SVC_Leadlag "Initial value";
   parameter Real init_SVC_Lag "Initial value";
   parameter Real OtherSignals;
-  parameter SI.ReactivePower var_C(displayUnit="Mvar")=100e6
+  parameter Types.ReactivePower var_C(displayUnit="Mvar")=100e6
     "Total compensation capacity of shunt capacitor, 100(10106)/200(10114)";
-  parameter SI.ReactivePower var_R(displayUnit="Mvar")=-50
+  parameter Types.ReactivePower var_R(displayUnit="Mvar")=-50
     "Total compensation capacity of shunt reactor";
   Modelica.Blocks.Sources.Constant imSetPoint2(k=OtherSignals)
     annotation (Placement(transformation(extent={{-52,-20},{-40,-8}})));

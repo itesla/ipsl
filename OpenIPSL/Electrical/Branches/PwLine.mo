@@ -9,20 +9,20 @@ model PwLine "Model for a transmission Line based on the pi-equivalent circuit"
             -10},{-80,10}}), iconTransformation(extent={{-100,-10},{-80,10}})));
   OpenIPSL.Interfaces.PwPin n annotation (Placement(transformation(extent={{80,
             -10},{100,10}}), iconTransformation(extent={{80,-10},{100,10}})));
-  parameter SI.PerUnit R "Resistance"
+  parameter Types.PerUnit R "Resistance"
     annotation (Dialog(group="Line parameters"));
-  parameter SI.PerUnit X "Reactance"
+  parameter Types.PerUnit X "Reactance"
     annotation (Dialog(group="Line parameters"));
-  parameter SI.PerUnit G "Shunt half conductance"
+  parameter Types.PerUnit G "Shunt half conductance"
     annotation (Dialog(group="Line parameters"));
-  parameter SI.PerUnit B "Shunt half susceptance"
+  parameter Types.PerUnit B "Shunt half susceptance"
     annotation (Dialog(group="Line parameters"));
-  parameter SI.ApparentPower S_b(displayUnit="MVA")=SysData.S_b
+  parameter Types.ApparentPower S_b(displayUnit="MVA")=SysData.S_b
     "System base power"
     annotation (Dialog(group="Line parameters", enable=false));
-  parameter SI.Time t1=Modelica.Constants.inf
+  parameter Types.Time t1=Modelica.Constants.inf
     annotation (Dialog(group="Perturbation parameters"));
-  parameter SI.Time t2=Modelica.Constants.inf
+  parameter Types.Time t2=Modelica.Constants.inf
     annotation (Dialog(group="Perturbation parameters"));
   parameter Integer opening=1 annotation (Dialog(group=
           "Perturbation parameters"), choices(
@@ -34,10 +34,10 @@ model PwLine "Model for a transmission Line based on the pi-equivalent circuit"
       group="Visualisation",
       __Dymola_compact=true,
       __Dymola_descriptionLabel=true), choices(checkBox=true));
-  SI.ActivePower P12(displayUnit="MW");
-  SI.ActivePower P21(displayUnit="MW");
-  SI.ReactivePower Q12(displayUnit="Mvar");
-  SI.ReactivePower Q21(displayUnit="Mvar");
+  Types.ActivePower P12(displayUnit="MW");
+  Types.ActivePower P21(displayUnit="MW");
+  Types.ReactivePower Q12(displayUnit="Mvar");
+  Types.ReactivePower Q21(displayUnit="Mvar");
   Complex vs(re=p.vr, im=p.vi);
   Complex is(re=p.ir, im=p.ii);
   Complex vr(re=n.vr, im=n.vi);

@@ -5,13 +5,13 @@ model PwShunt "Thyristor controlled Shunt reactor/capacitor"
   Modelica.Blocks.Interfaces.RealInput Q
     "Reactive power produced by the shunt [pu]"
     annotation (Placement(transformation(extent={{-120,-10},{-100,10}})));
-  parameter SI.Frequency fn=50 "Frequency rating";
-  SI.PerUnit c "Capacitance";
-  SI.PerUnit l "Inductance";
-  SI.PerUnit v;
-  SI.Angle anglev;
-  SI.PerUnit i;
-  SI.Angle anglei;
+  parameter Types.Frequency fn=50 "Frequency rating";
+  Types.PerUnit c "Capacitance";
+  Types.PerUnit l "Inductance";
+  Types.PerUnit v;
+  Types.Angle anglev;
+  Types.PerUnit i;
+  Types.Angle anglei;
 equation
   v = sqrt(p.vr^2 + p.vi^2);
   anglev = atan2(p.vi, p.vr);

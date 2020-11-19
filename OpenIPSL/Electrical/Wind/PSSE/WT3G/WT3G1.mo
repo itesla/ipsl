@@ -1,19 +1,19 @@
 within OpenIPSL.Electrical.Wind.PSSE.WT3G;
 model WT3G1
   extends OpenIPSL.Electrical.Essentials.pfComponent;
-  parameter SI.PerUnit X_eq "Equivalent reactance for current injection";
-  parameter SI.PerUnit K_pll "PLL first integrator gain";
-  parameter SI.TimeAging K_ipll "PLL second integrator gain";
-  parameter SI.PerUnit P_llmax "PLL maximum limit";
-  parameter SI.Power P_rated(displayUnit="MW") "Turbine rating, not used in the equation";
+  parameter Types.PerUnit X_eq "Equivalent reactance for current injection";
+  parameter Types.PerUnit K_pll "PLL first integrator gain";
+  parameter Types.TimeAging K_ipll "PLL second integrator gain";
+  parameter Types.PerUnit P_llmax "PLL maximum limit";
+  parameter Types.Power P_rated(displayUnit="MW") "Turbine rating, not used in the equation";
   parameter Complex Zs(re=0, im=X_eq) "Equivalent impedance (ZSORCE)"
     annotation (Dialog(group="Power flow data"));
-  parameter SI.ApparentPower M_b(displayUnit="MVA")=100 "Machine base power"
+  parameter Types.ApparentPower M_b(displayUnit="MVA")=100 "Machine base power"
     annotation (Dialog(group="Power flow data"));
-  SI.PerUnit VT(start=v_0) "Bus voltage magnitude";
-  SI.Angle anglev(start=angle0_rad) "Bus voltage angle";
-  SI.PerUnit VY(start=0) "y-axis terminal voltage";
-  SI.PerUnit VX(start=v_0) "x-axis terminal voltage";
+  Types.PerUnit VT(start=v_0) "Bus voltage magnitude";
+  Types.Angle anglev(start=angle0_rad) "Bus voltage angle";
+  Types.PerUnit VY(start=0) "y-axis terminal voltage";
+  Types.PerUnit VX(start=v_0) "x-axis terminal voltage";
   Complex Is "Equivalent internal current source";
   OpenIPSL.Interfaces.PwPin p(
     vr(start=vr0),
@@ -100,33 +100,33 @@ model WT3G1
         rotation=90,
         origin={-50,110})));
 protected
-  parameter SI.Angle angle0_rad = SI.Conversions.from_deg(angle_0) "Initial angle in rad";
-  parameter SI.AngularVelocity wbase=2*C.pi*fn "System base speed";
-  parameter SI.PerUnit p0=P_0/M_b
+  parameter Types.Angle angle0_rad = SI.Conversions.from_deg(angle_0) "Initial angle in rad";
+  parameter Types.AngularVelocity wbase=2*C.pi*fn "System base speed";
+  parameter Types.PerUnit p0=P_0/M_b
     "initial value of bus active power in p.u. machinebase";
-  parameter SI.PerUnit q0=Q_0/M_b
+  parameter Types.PerUnit q0=Q_0/M_b
     "initial value of bus reactive power in p.u. machinebase";
-  parameter SI.PerUnit vr0=v_0*cos(angle0_rad)
+  parameter Types.PerUnit vr0=v_0*cos(angle0_rad)
     "Real component of initial terminal voltage";
-  parameter SI.PerUnit vi0=v_0*sin(angle0_rad)
+  parameter Types.PerUnit vi0=v_0*sin(angle0_rad)
     "Imaginary component of initial terminal voltage";
-  parameter SI.PerUnit ir0=(p0*vr0 + q0*vi0)/(vr0^2 + vi0^2)
+  parameter Types.PerUnit ir0=(p0*vr0 + q0*vi0)/(vr0^2 + vi0^2)
     "Real component of initial armature current, mbase";
-  parameter SI.PerUnit ii0=(p0*vi0 - q0*vr0)/(vr0^2 + vi0^2)
+  parameter Types.PerUnit ii0=(p0*vi0 - q0*vr0)/(vr0^2 + vi0^2)
     "Imaginary component of initial armature current, mbase";
-  parameter SI.PerUnit Isr0=ir0 + vi0/X_eq "Source current re mbase";
-  parameter SI.PerUnit Isi0=ii0 - vr0/X_eq "Source current im mbase";
+  parameter Types.PerUnit Isr0=ir0 + vi0/X_eq "Source current re mbase";
+  parameter Types.PerUnit Isi0=ii0 - vr0/X_eq "Source current im mbase";
   parameter Real CoB=M_b/S_b;
-  parameter SI.PerUnit ir1=-CoB*(p0*vr0 + q0*vi0)/(vr0^2 + vi0^2)
+  parameter Types.PerUnit ir1=-CoB*(p0*vr0 + q0*vi0)/(vr0^2 + vi0^2)
     "Real component of initial armature current, sbase";
-  parameter SI.PerUnit ii1=-CoB*(p0*vi0 - q0*vr0)/(vr0^2 + vi0^2)
+  parameter Types.PerUnit ii1=-CoB*(p0*vi0 - q0*vr0)/(vr0^2 + vi0^2)
     "Imaginary component of initial armature current, sbase";
-  parameter SI.PerUnit Ix0=Isr0*cos(-angle0_rad) - Isi0*sin(-angle0_rad);
-  parameter SI.PerUnit Iy0=Isr0*sin(-angle0_rad) + cos(-angle0_rad)*Isi0;
-  parameter SI.PerUnit Eqcmd0=-Iy0*X_eq;
-  parameter SI.PerUnit Ipcmd0=Ix0;
-  parameter SI.PerUnit VX0=cos(angle0_rad)*vr0 + sin(angle0_rad)*vi0;
-  parameter SI.PerUnit VY0=(-sin(angle0_rad)*vr0) + cos(angle0_rad)*vi0;
+  parameter Types.PerUnit Ix0=Isr0*cos(-angle0_rad) - Isi0*sin(-angle0_rad);
+  parameter Types.PerUnit Iy0=Isr0*sin(-angle0_rad) + cos(-angle0_rad)*Isi0;
+  parameter Types.PerUnit Eqcmd0=-Iy0*X_eq;
+  parameter Types.PerUnit Ipcmd0=Ix0;
+  parameter Types.PerUnit VX0=cos(angle0_rad)*vr0 + sin(angle0_rad)*vi0;
+  parameter Types.PerUnit VY0=(-sin(angle0_rad)*vr0) + cos(angle0_rad)*vi0;
 protected
   Modelica.Blocks.Interfaces.RealInput Vy annotation (Placement(transformation(
           extent={{-110,-30},{-90,-10}}), iconTransformation(extent={{-118,-40},

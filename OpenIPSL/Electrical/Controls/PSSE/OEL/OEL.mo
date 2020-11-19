@@ -19,16 +19,16 @@ model OEL
         transformation(extent={{100,-10},{120,10}}),
                                                   iconTransformation(extent={{
             100,-6},{110,6}})));
-  parameter SI.PerUnit IFD1=1.1 "Low OEL limit";
-  parameter SI.PerUnit IFD2=1.2 "Medium OEL limit";
-  parameter SI.PerUnit IFD3=1.5 "High OEL limit";
-  parameter SI.Time TIME1=60 "Timing for low OEL";
-  parameter SI.Time TIME2=30 "Timimg for medium OEL";
-  parameter SI.Time TIME3=15 "Timing for high OEL";
-  parameter SI.PerUnit IFDdes=1 "IFD setpoint";
-  parameter SI.PerUnit Vmax=0 "Max. OEL output";
-  parameter SI.PerUnit Vmin=-0.05 "Min. OEL output";
-  parameter SI.PerUnit KMX=1 "Control constant";
+  parameter Types.PerUnit IFD1=1.1 "Low OEL limit";
+  parameter Types.PerUnit IFD2=1.2 "Medium OEL limit";
+  parameter Types.PerUnit IFD3=1.5 "High OEL limit";
+  parameter Types.Time TIME1=60 "Timing for low OEL";
+  parameter Types.Time TIME2=30 "Timimg for medium OEL";
+  parameter Types.Time TIME3=15 "Timing for high OEL";
+  parameter Types.PerUnit IFDdes=1 "IFD setpoint";
+  parameter Types.PerUnit Vmax=0 "Max. OEL output";
+  parameter Types.PerUnit Vmin=-0.05 "Min. OEL output";
+  parameter Types.PerUnit KMX=1 "Control constant";
   IF_comparisor comparisor(
     HighCurrentLimit=IFD3,
     MediumCurrentLimit=IFD2,

@@ -2,9 +2,9 @@ within OpenIPSL.Electrical.ThreePhase;
 partial model ThreePhaseComponent "Partial model for inheritance of single-phase base power based on three-phase system base power."
     outer OpenIPSL.Electrical.SystemBase SysData
     "Must add this line in all models";
-    parameter SI.ApparentPower S_b(displayUnit="MVA")=SysData.S_b "System base"
+    parameter Types.ApparentPower S_b(displayUnit="MVA")=SysData.S_b "System base"
     annotation (Dialog(group="Power flow data", enable=false));
-  parameter SI.ApparentPower S_p(displayUnit="MVA")=SysData.S_b/3 "Phase base"
+  parameter Types.ApparentPower S_p(displayUnit="MVA")=SysData.S_b/3 "Phase base"
     annotation (Dialog(group="Power flow data", enable=false));
   annotation (Icon(coordinateSystem(preserveAspectRatio=false)), Diagram(
         coordinateSystem(preserveAspectRatio=false)),

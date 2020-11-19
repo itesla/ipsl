@@ -1,10 +1,10 @@
 within OpenIPSL.Electrical.Wind.PSSE.Submodels;
 model CCL
-  parameter SI.PerUnit Qmax;
+  parameter Types.PerUnit Qmax;
   parameter Boolean pqflag;
-  parameter SI.PerUnit ImaxTD "Converter current limit";
-  parameter SI.PerUnit Iphl "Hard active current limit";
-  parameter SI.PerUnit Iqhl "Hard reactive current limit";
+  parameter Types.PerUnit ImaxTD "Converter current limit";
+  parameter Types.PerUnit Iphl "Hard active current limit";
+  parameter Types.PerUnit Iqhl "Hard reactive current limit";
   Modelica.Blocks.Interfaces.RealOutput IQmin annotation (Placement(
         transformation(
         extent={{-10,-10},{10,10}},

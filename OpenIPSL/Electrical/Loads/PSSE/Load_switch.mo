@@ -1,8 +1,8 @@
 within OpenIPSL.Electrical.Loads.PSSE;
 model Load_switch "PSS/E Load"
   extends OpenIPSL.Electrical.Loads.PSSE.BaseClasses.baseLoad;
-  parameter SI.Time t1 "Time of switching on";
-  parameter SI.Time t2 "Time of switching off";
+  parameter Types.Time t1 "Time of switching on";
+  parameter Types.Time t2 "Time of switching off";
 equation
   if time >= t1 and time < t2 then
     kI*S_I.re*v + S_Y.re*v^2 + kP*S_P.re = p.vr*p.ir + p.vi*p.ii;

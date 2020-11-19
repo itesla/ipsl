@@ -1,12 +1,12 @@
 within OpenIPSL.Electrical.Loads.PSAT;
 model ZIP_ExtInput "PSAT ZIP load with additional input"
   extends OpenIPSL.Electrical.Loads.PSAT.BaseClasses.baseLoad;
-  parameter SI.PerUnit Pz=0.33 "Conductance";
-  parameter SI.PerUnit Pi=0.33 "Active current";
-  parameter SI.PerUnit Pp=1 - Pz - Pi "Active power";
-  parameter SI.PerUnit Qz=0.33 "Susceptance";
-  parameter SI.PerUnit Qi=0.33 "Reactive current";
-  parameter SI.PerUnit Qp=1 - Qz - Qi "Reactive power";
+  parameter Types.PerUnit Pz=0.33 "Conductance";
+  parameter Types.PerUnit Pi=0.33 "Active current";
+  parameter Types.PerUnit Pp=1 - Pz - Pi "Active power";
+  parameter Types.PerUnit Qz=0.33 "Susceptance";
+  parameter Types.PerUnit Qi=0.33 "Reactive current";
+  parameter Types.PerUnit Qp=1 - Qz - Qi "Reactive power";
 protected
   Real a "Auxiliary variable, voltage division";
 public

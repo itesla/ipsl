@@ -1,12 +1,12 @@
 within OpenIPSL.Electrical.Controls.PSAT.AVR;
 model AVRtypeIII "PSAT AVR Type 3"
-  parameter SI.PerUnit vfmax=5;
-  parameter SI.PerUnit vfmin=-5;
-  parameter SI.PerUnit K0=20 "regulator gain";
-  parameter SI.Time T2=0.1 "regulator pole";
-  parameter SI.Time T1=0.45 "Regulator zero";
-  parameter SI.Time Te=0.1 "Field circuit time constant";
-  parameter SI.Time Tr=0.0015 "Measurement time constant";
+  parameter Types.PerUnit vfmax=5;
+  parameter Types.PerUnit vfmin=-5;
+  parameter Types.PerUnit K0=20 "regulator gain";
+  parameter Types.Time T2=0.1 "regulator pole";
+  parameter Types.Time T1=0.45 "Regulator zero";
+  parameter Types.Time Te=0.1 "Field circuit time constant";
+  parameter Types.Time Tr=0.0015 "Measurement time constant";
   Real vm;
   Real vr;
   Real vf1;
@@ -41,8 +41,8 @@ model AVRtypeIII "PSAT AVR Type 3"
         extent={{-10,-10},{10,10}},
         rotation=-90)));
 protected
-  parameter SI.PerUnit vref(fixed=false);
-  parameter SI.PerUnit s0(fixed=false);
+  parameter Types.PerUnit vref(fixed=false);
+  parameter Types.PerUnit s0(fixed=false);
 initial equation
   vref = v;
   s0 = vs;

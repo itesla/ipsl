@@ -2,8 +2,8 @@ within OpenIPSL.NonElectrical.Continuous;
 block LeadLag "Lead-Lag filter"
   extends Modelica.Blocks.Interfaces.SISO;
   parameter Real K "Gain";
-  parameter SI.Time T1 "Lead time constant";
-  parameter SI.Time T2 "Lag time constant";
+  parameter Types.Time T1 "Lead time constant";
+  parameter Types.Time T2 "Lag time constant";
   parameter Real y_start "Output start value"
     annotation (Dialog(group="Initialization"));
   parameter Real x_start=0 "Start value of state variable"
@@ -20,7 +20,7 @@ block LeadLag "Lead-Lag filter"
     x_start={x_start})
     annotation (Placement(transformation(extent={{-8,-10},{12,10}})));
 protected
-  parameter SI.Time T2_dummy=if abs(T1 - T2) < Modelica.Constants.eps
+  parameter Types.Time T2_dummy=if abs(T1 - T2) < Modelica.Constants.eps
        then 1000 else T2 "Lead time constant";
 equation
   if abs(par1.y - par2.y) < Modelica.Constants.eps then

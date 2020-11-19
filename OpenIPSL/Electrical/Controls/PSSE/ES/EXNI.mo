@@ -1,14 +1,14 @@
 within OpenIPSL.Electrical.Controls.PSSE.ES;
 model EXNI "Type NI (NVE) - Bus or Solid Fed SCR Bridge Excitation System (AC6A from [IEEE1992])"
   extends OpenIPSL.Electrical.Controls.PSSE.ES.BaseClasses.BaseExciter;
-  parameter SI.Time T_R=0.06 "Regulator input filter time constant";
-  parameter SI.PerUnit K_A=150 "Regulator output gain";
-  parameter SI.Time T_A=0 "Regulator output time constant";
-  parameter SI.PerUnit V_RMAX=4 "Maximum regulator output";
-  parameter SI.PerUnit V_RMIN=-4 "Minimum regulator output";
-  parameter SI.PerUnit K_F=0.011 "Rate feedback excitation system stabilizer gain";
-  parameter SI.Time T_F1=0.4 "Rate feedback excitation system stabilizer first time constant";
-  parameter SI.Time T_F2=0.7 "Rate feedback excitation system stabilizer second time constant";
+  parameter Types.Time T_R=0.06 "Regulator input filter time constant";
+  parameter Types.PerUnit K_A=150 "Regulator output gain";
+  parameter Types.Time T_A=0 "Regulator output time constant";
+  parameter Types.PerUnit V_RMAX=4 "Maximum regulator output";
+  parameter Types.PerUnit V_RMIN=-4 "Minimum regulator output";
+  parameter Types.PerUnit K_F=0.011 "Rate feedback excitation system stabilizer gain";
+  parameter Types.Time T_F1=0.4 "Rate feedback excitation system stabilizer first time constant";
+  parameter Types.Time T_F2=0.7 "Rate feedback excitation system stabilizer second time constant";
   parameter Boolean SWITCH=false "Feeding selection. False for bus fed, and True for solid fed";
   parameter Real r_cr_fd=10 "Ratio between crowbar circuit resistance and field circuit resistance";
   OpenIPSL.NonElectrical.Logical.NegCurLogic negCurLogic(RC_rfd=r_cr_fd, nstartvalue=Efd0) annotation (Placement(transformation(extent={{140,-14},{182,14}})));

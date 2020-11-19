@@ -10,8 +10,8 @@ model FieldCurrent
       Placement(transformation(extent={{-140,-80},{-100,-40}})));
   Modelica.Blocks.Interfaces.RealOutput ifield "estimated field current [pu]"
     annotation (Placement(transformation(extent={{100,-10},{120,10}})));
-  parameter SI.PerUnit xd;
-  parameter SI.PerUnit xq;
+  parameter Types.PerUnit xd;
+  parameter Types.PerUnit xq;
 protected
   Real gamma_p;
   Real gamma_q;

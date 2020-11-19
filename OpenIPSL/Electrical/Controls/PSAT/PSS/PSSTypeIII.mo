@@ -1,14 +1,14 @@
 within OpenIPSL.Electrical.Controls.PSAT.PSS;
 model PSSTypeIII "PSAT PSS Type III"
   parameter Real Kw "Stabilizer gain";
-  parameter SI.Time Tw "Wash-out time constant";
-  parameter SI.Time T1 "First stabilizer time constant";
-  parameter SI.Time T2 "Second stabilizer time constant";
-  parameter SI.Time T3 "Third stabilizer time constant";
-  parameter SI.Time T4 "Fourth stabilizer time constant";
-  parameter SI.Time Tc "SimpleLagLim time constant";
-  parameter SI.PerUnit vsmax "Max stabilizer output signal";
-  parameter SI.PerUnit vsmin "Min stabilizer output signal";
+  parameter Types.Time Tw "Wash-out time constant";
+  parameter Types.Time T1 "First stabilizer time constant";
+  parameter Types.Time T2 "Second stabilizer time constant";
+  parameter Types.Time T3 "Third stabilizer time constant";
+  parameter Types.Time T4 "Fourth stabilizer time constant";
+  parameter Types.Time Tc "SimpleLagLim time constant";
+  parameter Types.PerUnit vsmax "Max stabilizer output signal";
+  parameter Types.PerUnit vsmin "Min stabilizer output signal";
   OpenIPSL.NonElectrical.Continuous.SimpleLagLim simpleLagLim(
     K=1,
     T=Tc,

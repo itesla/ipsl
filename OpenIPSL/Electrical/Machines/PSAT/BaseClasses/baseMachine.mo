@@ -11,15 +11,15 @@ partial model baseMachine
     final enableS_b=true);
   import CM = Modelica.ComplexMath;
   import Complex;
-  parameter SI.ApparentPower Sn(displayUnit="MVA") "Power rating"
+  parameter Types.ApparentPower Sn(displayUnit="MVA") "Power rating"
     annotation (Dialog(group="Machine parameters"));
-  parameter SI.Voltage Vn(displayUnit="kV") "Voltage rating"
+  parameter Types.Voltage Vn(displayUnit="kV") "Voltage rating"
     annotation (Dialog(group="Machine parameters"));
-  parameter SI.PerUnit ra "Armature resistance"
+  parameter Types.PerUnit ra "Armature resistance"
     annotation (Dialog(group="Machine parameters"));
-  parameter SI.PerUnit x1d "d-axis transient reactance"
+  parameter Types.PerUnit x1d "d-axis transient reactance"
     annotation (Dialog(group="Machine parameters"));
-  parameter SI.Time M "Mechanical starting time, 2H [Ws/VA]"
+  parameter Types.Time M "Mechanical starting time, 2H [Ws/VA]"
     annotation (Dialog(group="Machine parameters"));
   parameter Real D "Damping coefficient"
     annotation (Dialog(group="Machine parameters"));
@@ -72,16 +72,16 @@ partial model baseMachine
     annotation (Placement(transformation(
         origin={-120,-50},
         extent={{-20,-20},{20,20}})));
-  SI.Angle anglev(start=SI.Conversions.from_deg(angle_0))
+  Types.Angle anglev(start=SI.Conversions.from_deg(angle_0))
     " Bus voltage angle (rad)";
-  SI.PerUnit vd(start=vd0) "d-axis voltage";
-  SI.PerUnit vq(start=vq0) "q-axis voltage";
-  SI.PerUnit id(start=id0) "d-axis current";
-  SI.PerUnit iq(start=iq0) "q-axis current";
+  Types.PerUnit vd(start=vd0) "d-axis voltage";
+  Types.PerUnit vq(start=vq0) "q-axis voltage";
+  Types.PerUnit id(start=id0) "d-axis current";
+  Types.PerUnit iq(start=iq0) "q-axis current";
 protected
-  SI.PerUnit pe(start=pm00) "electrical power transmitted through the air-gap";
-  SI.PerUnit vf_MB=vf*V_b/Vn "field voltage on machine base";
-  parameter SI.AngularVelocity w_b=2*C.pi*fn "Base frequency in rad/s";
+  Types.PerUnit pe(start=pm00) "electrical power transmitted through the air-gap";
+  Types.PerUnit vf_MB=vf*V_b/Vn "field voltage on machine base";
+  parameter Types.AngularVelocity w_b=2*C.pi*fn "Base frequency in rad/s";
   // Define multiplicative transforms to go from one pu-base to another:
   parameter Real S_SBtoMB=S_b/Sn "S(system base) -> S(machine base)";
   parameter Real I_MBtoSB=(Sn*V_b)/(S_b*Vn) "I(machine base) -> I(system base)";
@@ -90,33 +90,33 @@ protected
     "Z(machine base) -> Z(system base)";
 
   // Initialize stator quantities (system base):
-  parameter SI.PerUnit p0=P_0/S_b
+  parameter Types.PerUnit p0=P_0/S_b
     "Initial active power generation in pu (system base)";
-  parameter SI.PerUnit q0=Q_0/S_b
+  parameter Types.PerUnit q0=Q_0/S_b
     "Initial reactive power generation in pu (system base)";
   parameter Complex Vt0=CM.fromPolar(v_0, SI.Conversions.from_deg(angle_0))
     "Init. val., conjugate";
   parameter Complex S0(re=p0, im=-q0) "Init. val., conjugate";
   parameter Complex I0=S0/(CM.conj(Vt0)) "Init. val., conjugate";
-  parameter SI.PerUnit vr0=CM.real(Vt0) "Init. val.";
-  parameter SI.PerUnit vi0=CM.imag(Vt0) "Init. val.";
-  parameter SI.PerUnit ir0=-CM.real(I0) "Init. val.";
-  parameter SI.PerUnit ii0=-CM.imag(I0) "Init. val.";
+  parameter Types.PerUnit vr0=CM.real(Vt0) "Init. val.";
+  parameter Types.PerUnit vi0=CM.imag(Vt0) "Init. val.";
+  parameter Types.PerUnit ir0=-CM.real(I0) "Init. val.";
+  parameter Types.PerUnit ii0=-CM.imag(I0) "Init. val.";
 
   // Initialize DQ-quantities (machine base)
-  parameter SI.PerUnit xq0 "used for setting the initial rotor angle";
-  parameter SI.Angle delta0=CM.arg((Vt0 + ((ra + CM.j*xq0)*Z_MBtoSB*I0)))
+  parameter Types.PerUnit xq0 "used for setting the initial rotor angle";
+  parameter Types.Angle delta0=CM.arg((Vt0 + ((ra + CM.j*xq0)*Z_MBtoSB*I0)))
     "Init. val. rotor angle";
   parameter Complex Vdq0=Vt0*CM.fromPolar(1/V_MBtoSB, (-delta0 + (C.pi/2)))
     "Init. val (machine base)";
   parameter Complex Idq0=I0*CM.fromPolar(1/I_MBtoSB, (-delta0 + (C.pi/2)))
     "(pu, machine base)";
-  parameter SI.PerUnit vd0=CM.real(Vdq0) "Init. val.";
-  parameter SI.PerUnit vq0=CM.imag(Vdq0) "Init. val.";
-  parameter SI.PerUnit id0=CM.real(Idq0) "Init. val.";
-  parameter SI.PerUnit iq0=CM.imag(Idq0) "Init. val.";
+  parameter Types.PerUnit vd0=CM.real(Vdq0) "Init. val.";
+  parameter Types.PerUnit vq0=CM.imag(Vdq0) "Init. val.";
+  parameter Types.PerUnit id0=CM.real(Idq0) "Init. val.";
+  parameter Types.PerUnit iq0=CM.imag(Idq0) "Init. val.";
 
-  parameter SI.PerUnit pm00=((vq0 + ra*iq0)*iq0 + (vd0 + ra*id0)*id0)/S_SBtoMB
+  parameter Types.PerUnit pm00=((vq0 + ra*iq0)*iq0 + (vd0 + ra*id0)*id0)/S_SBtoMB
     "Initial value (system base)";
 
 equation

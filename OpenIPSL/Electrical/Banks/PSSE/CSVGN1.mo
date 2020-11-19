@@ -3,38 +3,38 @@ model CSVGN1 "STATC SHUNT COMPENSATOR MODEL"
   extends Icons.VerifiedModel;
   outer OpenIPSL.Electrical.SystemBase SysData
     "Must add this line in all models";
-  parameter SI.ApparentPower S_b(displayUnit="MVA")=SysData.S_b "System base power"
+  parameter Types.ApparentPower S_b(displayUnit="MVA")=SysData.S_b "System base power"
     annotation (Dialog(group="Power flow data"));
-  parameter SI.ActivePower P_0(displayUnit="MW")=1e6 "Initial active power"
+  parameter Types.ActivePower P_0(displayUnit="MW")=1e6 "Initial active power"
     annotation (Dialog(group="Power flow data"));
-  parameter SI.ReactivePower Q_0(displayUnit="Mvar")=0 "Initial reactive power"
+  parameter Types.ReactivePower Q_0(displayUnit="Mvar")=0 "Initial reactive power"
     annotation (Dialog(group="Power flow data"));
-  parameter SI.PerUnit v_0=1 "Initial voltage magnitude at terminal bus"
+  parameter Types.PerUnit v_0=1 "Initial voltage magnitude at terminal bus"
     annotation (Dialog(group="Power flow data"));
   parameter SI.Conversions.NonSIunits.Angle_deg angle_0=0 "Initial voltage angle"
     annotation (Dialog(group="Power flow data"));
-  parameter SI.PerUnit ra=0 "amature resistance" annotation (Dialog(group="Plant parameters", enable = false));
-  parameter SI.PerUnit x1d=9999 "d-axis transient reactance, should be set to 9999" annotation (Dialog(group="Plant parameters", enable = false));
+  parameter Types.PerUnit ra=0 "amature resistance" annotation (Dialog(group="Plant parameters", enable = false));
+  parameter Types.PerUnit x1d=9999 "d-axis transient reactance, should be set to 9999" annotation (Dialog(group="Plant parameters", enable = false));
   parameter Real K=1 annotation (Dialog(group="Device parameters"));
-  parameter SI.Time T1=0 annotation (Dialog(group="Device parameters"));
-  parameter SI.Time T2=0 annotation (Dialog(group="Device parameters"));
-  parameter SI.Time T3=0 annotation (Dialog(group="Device parameters"));
-  parameter SI.Time T4=0 annotation (Dialog(group="Device parameters"));
-  parameter SI.Time T5=0 annotation (Dialog(group="Device parameters"));
-  parameter SI.ReactivePower RMIN(displayUnit="Mvar")=0 "Reactor minmum var output" annotation (Dialog(group="Device parameters"));
-  parameter SI.PerUnit VMAX=0.5 annotation (Dialog(group="Device parameters"));
-  parameter SI.PerUnit VMIN=0 annotation (Dialog(group="Device parameters"));
-  parameter SI.ReactivePower CBASE(displayUnit="Mvar")=100e6 "Capacitor output" annotation (Dialog(group="Device parameters"));
-  parameter SI.ApparentPower MBASE(displayUnit="MVA")=100e6 "Power range of SVC" annotation (Dialog(group="Device parameters"));
-  SI.PerUnit v(start=v_0) "Bus voltage magnitude";
-  SI.Angle anglev(start=anglev_rad) " Bus voltage angle";
+  parameter Types.Time T1=0 annotation (Dialog(group="Device parameters"));
+  parameter Types.Time T2=0 annotation (Dialog(group="Device parameters"));
+  parameter Types.Time T3=0 annotation (Dialog(group="Device parameters"));
+  parameter Types.Time T4=0 annotation (Dialog(group="Device parameters"));
+  parameter Types.Time T5=0 annotation (Dialog(group="Device parameters"));
+  parameter Types.ReactivePower RMIN(displayUnit="Mvar")=0 "Reactor minmum var output" annotation (Dialog(group="Device parameters"));
+  parameter Types.PerUnit VMAX=0.5 annotation (Dialog(group="Device parameters"));
+  parameter Types.PerUnit VMIN=0 annotation (Dialog(group="Device parameters"));
+  parameter Types.ReactivePower CBASE(displayUnit="Mvar")=100e6 "Capacitor output" annotation (Dialog(group="Device parameters"));
+  parameter Types.ApparentPower MBASE(displayUnit="MVA")=100e6 "Power range of SVC" annotation (Dialog(group="Device parameters"));
+  Types.PerUnit v(start=v_0) "Bus voltage magnitude";
+  Types.Angle anglev(start=anglev_rad) " Bus voltage angle";
   //Real pe "electric power";
-  SI.PerUnit P;
-  SI.PerUnit Q;
-  SI.PerUnit vd(start=vd0) "voltage direct axis";
-  SI.PerUnit vq(start=vq0) "voltage quadrature axis";
-  SI.PerUnit id(start=id0) "current direct axis";
-  SI.PerUnit iq(start=iq0) "current quadrature axis";
+  Types.PerUnit P;
+  Types.PerUnit Q;
+  Types.PerUnit vd(start=vd0) "voltage direct axis";
+  Types.PerUnit vq(start=vq0) "voltage quadrature axis";
+  Types.PerUnit id(start=id0) "current direct axis";
+  Types.PerUnit iq(start=iq0) "current quadrature axis";
   Modelica.Blocks.Math.Product product1
     annotation (Placement(transformation(extent={{46,-10},{66,10}})));
   Modelica.Blocks.Math.Add add(k2=-1)
@@ -85,23 +85,23 @@ model CSVGN1 "STATC SHUNT COMPENSATOR MODEL"
   Modelica.Blocks.Math.Add add2(k2=-1)
     annotation (Placement(transformation(extent={{-78,-40},{-58,-20}})));
 protected
-  parameter SI.PerUnit p0=P_0/S_b "Active power (system base)";
-  parameter SI.PerUnit q0=Q_0/S_b "Reactive power (system base)";
-  parameter SI.Angle anglev_rad=SI.Conversions.from_deg(angle_0);
-  parameter SI.PerUnit Y0=q0/(v_0*v_0) "Capacitor output";
-  parameter SI.PerUnit vr0=v_0*cos(anglev_rad) "Initialization";
-  parameter SI.PerUnit vi0=v_0*sin(anglev_rad) "Initialization";
-  parameter SI.PerUnit ir0=(p0*vr0 + q0*vi0)/(vr0^2 + vi0^2) "Initialization";
-  parameter SI.PerUnit ii0=(p0*vi0 - q0*vr0)/(vr0^2 + vi0^2) "Initialization";
-  parameter SI.Angle delta0=atan2(vi0 + ra*ii0 + x1d*ir0, vr0 + ra*ir0 - x1d*ii0) "Initialization";
-  parameter SI.PerUnit vd0=vr0*cos(C.pi/2 - delta0) - vi0*sin(C.pi/2 - delta0) "Initialization";
-  parameter SI.PerUnit vq0=vr0*sin(C.pi/2 - delta0) + vi0*cos(C.pi/2 - delta0) "Initialization";
-  parameter SI.PerUnit id0=ir0*cos(C.pi/2 - delta0) - ii0*sin(C.pi/2 - delta0) "Initialization";
-  parameter SI.PerUnit iq0=ir0*sin(C.pi/2 - delta0) + ii0*cos(C.pi/2 - delta0) "Initialization";
-  parameter SI.PerUnit k50(fixed=false);
-  parameter SI.PerUnit k30(fixed=false);
-  parameter SI.PerUnit k0(fixed=false);
-  parameter SI.PerUnit Vref(fixed=false);
+  parameter Types.PerUnit p0=P_0/S_b "Active power (system base)";
+  parameter Types.PerUnit q0=Q_0/S_b "Reactive power (system base)";
+  parameter Types.Angle anglev_rad=SI.Conversions.from_deg(angle_0);
+  parameter Types.PerUnit Y0=q0/(v_0*v_0) "Capacitor output";
+  parameter Types.PerUnit vr0=v_0*cos(anglev_rad) "Initialization";
+  parameter Types.PerUnit vi0=v_0*sin(anglev_rad) "Initialization";
+  parameter Types.PerUnit ir0=(p0*vr0 + q0*vi0)/(vr0^2 + vi0^2) "Initialization";
+  parameter Types.PerUnit ii0=(p0*vi0 - q0*vr0)/(vr0^2 + vi0^2) "Initialization";
+  parameter Types.Angle delta0=atan2(vi0 + ra*ii0 + x1d*ir0, vr0 + ra*ir0 - x1d*ii0) "Initialization";
+  parameter Types.PerUnit vd0=vr0*cos(C.pi/2 - delta0) - vi0*sin(C.pi/2 - delta0) "Initialization";
+  parameter Types.PerUnit vq0=vr0*sin(C.pi/2 - delta0) + vi0*cos(C.pi/2 - delta0) "Initialization";
+  parameter Types.PerUnit id0=ir0*cos(C.pi/2 - delta0) - ii0*sin(C.pi/2 - delta0) "Initialization";
+  parameter Types.PerUnit iq0=ir0*sin(C.pi/2 - delta0) + ii0*cos(C.pi/2 - delta0) "Initialization";
+  parameter Types.PerUnit k50(fixed=false);
+  parameter Types.PerUnit k30(fixed=false);
+  parameter Types.PerUnit k0(fixed=false);
+  parameter Types.PerUnit Vref(fixed=false);
 initial equation
   k50 = (CBASE/S_b - Y0)/(MBASE/S_b);
   k30 = k50;

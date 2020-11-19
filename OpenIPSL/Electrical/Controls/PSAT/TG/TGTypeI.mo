@@ -4,26 +4,26 @@ model TGTypeI
       Placement(transformation(extent={{-140,-20},{-100,20}})));
   Modelica.Blocks.Interfaces.RealOutput pm "Mechanical power [pu]" annotation (
       Placement(transformation(extent={{100,-10},{120,10}})));
-  parameter SI.PerUnit wref=1 "Speed reference";
-  parameter SI.PerUnit pref "Active power reference";
-  parameter SI.PerUnit R "Droop";
-  parameter SI.PerUnit pmax "Maximum turbine output";
-  parameter SI.PerUnit pmin "Minimum turbine output";
-  parameter SI.Time Ts "Governor time constant";
-  parameter SI.Time Tc "Servo time constant";
-  parameter SI.Time T3 "Transient gain time constant";
-  parameter SI.Time T4 "Power fraction time constant";
-  parameter SI.Time T5 "Reheat time constant";
-  SI.PerUnit pin "Turbine output";
+  parameter Types.PerUnit wref=1 "Speed reference";
+  parameter Types.PerUnit pref "Active power reference";
+  parameter Types.PerUnit R "Droop";
+  parameter Types.PerUnit pmax "Maximum turbine output";
+  parameter Types.PerUnit pmin "Minimum turbine output";
+  parameter Types.Time Ts "Governor time constant";
+  parameter Types.Time Tc "Servo time constant";
+  parameter Types.Time T3 "Transient gain time constant";
+  parameter Types.Time T4 "Power fraction time constant";
+  parameter Types.Time T5 "Reheat time constant";
+  Types.PerUnit pin "Turbine output";
 protected
-  parameter SI.PerUnit pin0=pref "Initialization";
-  parameter SI.PerUnit xg10=pin0 "Initialization";
-  parameter SI.PerUnit xg20=(1 - T3/Tc)*xg10 "Initialization";
-  parameter SI.PerUnit xg30=(1 - T4/T5)*(xg20 + T3*xg10/Tc) "Initialization";
-  SI.PerUnit pinstar;
-  SI.PerUnit xg1(start=xg10, fixed=true);
-  SI.PerUnit xg2(start=xg20, fixed=true);
-  SI.PerUnit xg3(start=xg30, fixed=true);
+  parameter Types.PerUnit pin0=pref "Initialization";
+  parameter Types.PerUnit xg10=pin0 "Initialization";
+  parameter Types.PerUnit xg20=(1 - T3/Tc)*xg10 "Initialization";
+  parameter Types.PerUnit xg30=(1 - T4/T5)*(xg20 + T3*xg10/Tc) "Initialization";
+  Types.PerUnit pinstar;
+  Types.PerUnit xg1(start=xg10, fixed=true);
+  Types.PerUnit xg2(start=xg20, fixed=true);
+  Types.PerUnit xg3(start=xg30, fixed=true);
 equation
   pinstar = pref + (wref - w)/R;
   if pinstar >= pmin and pinstar <= pmax then

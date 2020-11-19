@@ -1,17 +1,17 @@
 within OpenIPSL.Electrical.Controls.PSAT.TG;
 model TGTypeIV
   "Hydro Turbine (Linear model) and Governor (Standard model with PI controller)- control scheme Type 4"
-  parameter SI.PerUnit wref "Reference speed";
-  parameter SI.PerUnit Tg "Pilot valve droop";
-  parameter SI.PerUnit gmax "Maximum gate opening";
-  parameter SI.PerUnit gmin "Minimum gate opening";
-  parameter SI.PerUnit vmax "Maxmimum gate opening rate";
-  parameter SI.PerUnit vmin "Maximum gate opening rate";
-  parameter SI.Time Tp "Pilot valve time constant";
-  parameter SI.Time Tr "Dashpot time constant";
+  parameter Types.PerUnit wref "Reference speed";
+  parameter Types.PerUnit Tg "Pilot valve droop";
+  parameter Types.PerUnit gmax "Maximum gate opening";
+  parameter Types.PerUnit gmin "Minimum gate opening";
+  parameter Types.PerUnit vmax "Maxmimum gate opening rate";
+  parameter Types.PerUnit vmin "Maximum gate opening rate";
+  parameter Types.Time Tp "Pilot valve time constant";
+  parameter Types.Time Tr "Dashpot time constant";
   parameter Real sigma "Permanent speed droop [pu/pu]";
   parameter Real delta "Transient speed droop [pu/pu]";
-  parameter SI.Time Tw "Water starting time";
+  parameter Types.Time Tw "Water starting time";
   parameter Real a11 "Deriv. of flow rate vs. turbine head";
   parameter Real a13 "Deriv. of flow rate vs. gate position";
   parameter Real a21 "Deriv. of torque vs. turbine head";
@@ -19,8 +19,8 @@ model TGTypeIV
   parameter Real Kp "Proportional droop";
   parameter Real Ki "Integral droop";
   parameter Real Pref;
-  SI.PerUnit deltaG "Gate position variation";
-  SI.PerUnit v "Gate opening rate";
+  Types.PerUnit deltaG "Gate position variation";
+  Types.PerUnit v "Gate opening rate";
   Modelica.Blocks.Continuous.Integrator integrator3(initType=Modelica.Blocks.Types.Init.NoInit,
       y_start=int3)
     annotation (Placement(transformation(extent={{34,-6},{46,6}})));

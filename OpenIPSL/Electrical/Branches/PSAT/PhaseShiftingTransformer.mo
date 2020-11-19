@@ -2,26 +2,26 @@ within OpenIPSL.Electrical.Branches.PSAT;
 model PhaseShiftingTransformer "Phase Shifting Transformer (PST)"
 
   model PhaseShifter "Controller for shifting the phase (internal model)"
-    parameter SI.PerUnit pref=0.01 "Desired power flow"
+    parameter Types.PerUnit pref=0.01 "Desired power flow"
       annotation (Dialog(group="Phase controller"));
     parameter Real Kp=0.5 "Proportional gain"
       annotation (Dialog(group="Phase controller"));
     parameter Real Ki=0.1 "Integral gain"
       annotation (Dialog(group="Phase controller"));
-    parameter SI.Time Tm=0.001 "Measurement time constant"
+    parameter Types.Time Tm=0.001 "Measurement time constant"
       annotation (Dialog(group="Phase controller"));
-    parameter SI.Angle alpha_max=C.pi/2 "Maximum phase angle"
+    parameter Types.Angle alpha_max=C.pi/2 "Maximum phase angle"
       annotation (Dialog(group="Phase controller"));
-    parameter SI.Angle alpha_min=-C.pi/2 "Minimum phase angle"
+    parameter Types.Angle alpha_min=-C.pi/2 "Minimum phase angle"
       annotation (Dialog(group="Phase controller"));
-    parameter SI.PerUnit pmes0=0.01 "Initial measured power flow"
+    parameter Types.PerUnit pmes0=0.01 "Initial measured power flow"
       annotation (Dialog(group="Initialization"));
-    parameter SI.Angle alpha0=0 "Initial phase shifting angle"
+    parameter Types.Angle alpha0=0 "Initial phase shifting angle"
       annotation (Dialog(group="Initialization"));
 
-    outer SI.PerUnit pk "Actual secondary power flow";
-    SI.PerUnit pmes(start=pmes0) "Measured power flow";
-    SI.Angle alpha(start=alpha0) "Shifting angle";
+    outer Types.PerUnit pk "Actual secondary power flow";
+    Types.PerUnit pmes(start=pmes0) "Measured power flow";
+    Types.Angle alpha(start=alpha0) "Shifting angle";
 
   Interfaces.PwPin          p
     annotation (Placement(transformation(extent={{-120,-10},{-100,10}})));
@@ -49,43 +49,43 @@ model PhaseShiftingTransformer "Phase Shifting Transformer (PST)"
 
   end PhaseShifter;
 
-  parameter SI.ApparentPower S_b(displayUnit="MVA")=SysData.S_b "System base power"
+  parameter Types.ApparentPower S_b(displayUnit="MVA")=SysData.S_b "System base power"
     annotation (Dialog(group="Power flow"));
-  parameter SI.Voltage V_b(displayUnit="kV")=40e3 "Sending end bus voltage"
+  parameter Types.Voltage V_b(displayUnit="kV")=40e3 "Sending end bus voltage"
     annotation (Dialog(group="Power flow"));
-  parameter SI.ApparentPower Sn(displayUnit="MVA")=SysData.S_b "Power rating"
+  parameter Types.ApparentPower Sn(displayUnit="MVA")=SysData.S_b "Power rating"
     annotation (Dialog(group="Transformer parameters"));
-  parameter SI.Voltage Vn(displayUnit="kV")=40e3 "Voltage rating"
+  parameter Types.Voltage Vn(displayUnit="kV")=40e3 "Voltage rating"
     annotation (Dialog(group="Transformer parameters"));
-  parameter SI.PerUnit rT=0.01 "Resistance (transformer base)"
+  parameter Types.PerUnit rT=0.01 "Resistance (transformer base)"
     annotation (Dialog(group="Transformer parameters"));
-  parameter SI.PerUnit xT=0.1 "Reactance (transformer base)"
+  parameter Types.PerUnit xT=0.1 "Reactance (transformer base)"
     annotation (Dialog(group="Transformer parameters"));
   parameter Real m=1.0 "Optional fixed tap ratio"
     annotation (Dialog(group="Transformer parameters"));
-  parameter SI.PerUnit pref=0.01 "Desired power flow"
+  parameter Types.PerUnit pref=0.01 "Desired power flow"
     annotation (Dialog(group="Phase controller"));
   parameter Real Kp=0.5 "Proportional gain"
     annotation (Dialog(group="Phase controller"));
   parameter Real Ki=0.1 "Integral gain"
     annotation (Dialog(group="Phase controller"));
-  parameter SI.Time Tm=0.001 "Measurement time constant"
+  parameter Types.Time Tm=0.001 "Measurement time constant"
     annotation (Dialog(group="Phase controller"));
-  parameter SI.Angle alpha_max=C.pi/2 "Maximum phase angle"
+  parameter Types.Angle alpha_max=C.pi/2 "Maximum phase angle"
     annotation (Dialog(group="Phase controller"));
-  parameter SI.Angle alpha_min=-C.pi/2 "Minimum phase angle"
+  parameter Types.Angle alpha_min=-C.pi/2 "Minimum phase angle"
     annotation (Dialog(group="Phase controller"));
-  parameter SI.PerUnit pmes0=0.01 "Initial measured power flow"
+  parameter Types.PerUnit pmes0=0.01 "Initial measured power flow"
     annotation (Dialog(group="Initialization"));
-  parameter SI.Angle alpha0=0 "Initial phase shifting angle"
+  parameter Types.Angle alpha0=0 "Initial phase shifting angle"
     annotation (Dialog(group="Initialization"));
 
   outer OpenIPSL.Electrical.SystemBase SysData;
-  inner SI.PerUnit pk "Actual primary power flow";
-  SI.Angle anglevk "Angle at primary";
-  SI.Angle anglevm "Angle at secondary";
-  SI.PerUnit vk "Voltage at primary";
-  SI.PerUnit vm "Voltage at secondary";
+  inner Types.PerUnit pk "Actual primary power flow";
+  Types.Angle anglevk "Angle at primary";
+  Types.Angle anglevm "Angle at secondary";
+  Types.PerUnit vk "Voltage at primary";
+  Types.PerUnit vm "Voltage at secondary";
 
   TwoWindingTransformer twoWindingTransformer(
     S_b=S_b,

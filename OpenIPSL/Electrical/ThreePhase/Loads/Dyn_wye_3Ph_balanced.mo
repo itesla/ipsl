@@ -54,23 +54,23 @@ model Dyn_wye_3Ph_balanced "Variable balanced three-phase wye load"
         origin={-19,100},
         rotation=0),
       visible=true));
-  parameter SI.ActivePower P0(displayUnit="MW") "Initial Active power"
+  parameter Types.ActivePower P0(displayUnit="MW") "Initial Active power"
     annotation (Dialog(group="Power flow"));
-  parameter SI.ReactivePower Q0(displayUnit="Mvar") "Initial Reactive power"
+  parameter Types.ReactivePower Q0(displayUnit="Mvar") "Initial Reactive power"
     annotation (Dialog(group="Power flow"));
 
 protected
-  SI.ActivePower P_a(displayUnit="MW", start = P0 / 3)
+  Types.ActivePower P_a(displayUnit="MW", start = P0 / 3)
     "Initial active power";
-  SI.ReactivePower Q_a(displayUnit="Mvar", start = Q0  / 3)
+  Types.ReactivePower Q_a(displayUnit="Mvar", start = Q0  / 3)
     "Initial reactive power";
-  SI.ActivePower P_b(displayUnit="MW", start = P0 / 3)
+  Types.ActivePower P_b(displayUnit="MW", start = P0 / 3)
     "Initial active power";
-  SI.ReactivePower Q_b(displayUnit="Mvar", start = Q0 / 3)
+  Types.ReactivePower Q_b(displayUnit="Mvar", start = Q0 / 3)
     "Initial reactive power";
-  SI.ActivePower P_c(displayUnit="MW", start = P0 / 3)
+  Types.ActivePower P_c(displayUnit="MW", start = P0 / 3)
     "Initial active power";
-  SI.ReactivePower Q_c(displayUnit="Mvar", start = Q0 / 3)
+  Types.ReactivePower Q_c(displayUnit="Mvar", start = Q0 / 3)
     "Initial reactive power";
 
 equation

@@ -1,10 +1,10 @@
 within OpenIPSL.Electrical.Controls.PSSE.PSS;
 model STABNI "STABNI - Power Sensitive Stabilizer Model Type NI (NVE) [PSSE-MODELS]"
-  parameter SI.PerUnit K=1 "Input low-pass filter gain. It must be equal to or greater than 0";
-  parameter SI.Time T_1=1 "Stabilizer filter time constant. It must be greater than 0";
-  parameter SI.Time T_2=1 "Input low-pass filter time constant. It must be equal to or greater than 0";
-  parameter SI.Time T_0=1 "Stabilizer filter time constant. It must be greater than 0";
-  parameter SI.PerUnit LIMIT=5 "Limit value for stabilizer output";
+  parameter Types.PerUnit K=1 "Input low-pass filter gain. It must be equal to or greater than 0";
+  parameter Types.Time T_1=1 "Stabilizer filter time constant. It must be greater than 0";
+  parameter Types.Time T_2=1 "Input low-pass filter time constant. It must be equal to or greater than 0";
+  parameter Types.Time T_0=1 "Stabilizer filter time constant. It must be greater than 0";
+  parameter Types.PerUnit LIMIT=5 "Limit value for stabilizer output";
   Modelica.Blocks.Interfaces.RealInput PELEC annotation (Placement(
         transformation(extent={{-160,-20},{-120,20}}), iconTransformation(
           extent={{-140,-20},{-100,20}})));
@@ -13,7 +13,7 @@ model STABNI "STABNI - Power Sensitive Stabilizer Model Type NI (NVE) [PSSE-MODE
   Modelica.Blocks.Nonlinear.Limiter limiter(uMax=LIMIT, uMin=-LIMIT)
     annotation (Placement(transformation(extent={{60,-10},{80,10}})));
 protected
-  parameter SI.PerUnit PELEC0(fixed=false);
+  parameter Types.PerUnit PELEC0(fixed=false);
 protected
   NonElectrical.Continuous.SimpleLag imSimpleLag(
     K=K,

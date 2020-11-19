@@ -18,27 +18,27 @@ model Line_3Ph "Three-phase line modeled as a PI-equivalent device."
   OpenIPSL.Interfaces.PwPin Cout
     annotation (Placement(transformation(extent={{120,-100},{140,-80}})));
 
-  parameter SI.PerUnit Gseraa=0 "Element (1,1) in series conductance matrix" annotation (Dialog(group="Power flow data"));
-  parameter SI.PerUnit Bseraa=-10 "Element (1,1) in series susceptance matrix"
+  parameter Types.PerUnit Gseraa=0 "Element (1,1) in series conductance matrix" annotation (Dialog(group="Power flow data"));
+  parameter Types.PerUnit Bseraa=-10 "Element (1,1) in series susceptance matrix"
     annotation (Dialog(group="Power flow data"));
-  parameter SI.PerUnit Gserab=0 "Element (1,2) in series conductance matrix" annotation (Dialog(group="Power flow data"));
-  parameter SI.PerUnit Bserab=0 "Element (1,2) in series susceptance matrix" annotation (Dialog(group="Power flow data"));
-  parameter SI.PerUnit Gserac=0 "Element (1,3) in series conductance matrix" annotation (Dialog(group="Power flow data"));
-  parameter SI.PerUnit Bserac=0 "Element (1,3) in series susceptance matrix" annotation (Dialog(group="Power flow data"));
-  parameter SI.PerUnit Gserbb=0 "Element (2,2) in series conductance matrix" annotation (Dialog(group="Power flow data"));
-  parameter SI.PerUnit Bserbb=-10 "Element (2,2) in series susceptance matrix"
+  parameter Types.PerUnit Gserab=0 "Element (1,2) in series conductance matrix" annotation (Dialog(group="Power flow data"));
+  parameter Types.PerUnit Bserab=0 "Element (1,2) in series susceptance matrix" annotation (Dialog(group="Power flow data"));
+  parameter Types.PerUnit Gserac=0 "Element (1,3) in series conductance matrix" annotation (Dialog(group="Power flow data"));
+  parameter Types.PerUnit Bserac=0 "Element (1,3) in series susceptance matrix" annotation (Dialog(group="Power flow data"));
+  parameter Types.PerUnit Gserbb=0 "Element (2,2) in series conductance matrix" annotation (Dialog(group="Power flow data"));
+  parameter Types.PerUnit Bserbb=-10 "Element (2,2) in series susceptance matrix"
     annotation (Dialog(group="Power flow data"));
-  parameter SI.PerUnit Gserbc=0 "Element (2,3) in series conductance matrix" annotation (Dialog(group="Power flow data"));
-  parameter SI.PerUnit Bserbc=0 "Element (2,3) in series susceptance matrix" annotation (Dialog(group="Power flow data"));
-  parameter SI.PerUnit Gsercc=0 "Element (3,3) in series conductance matrix" annotation (Dialog(group="Power flow data"));
-  parameter SI.PerUnit Bsercc=-10 "Element (3,3) in series susceptance matrix"
+  parameter Types.PerUnit Gserbc=0 "Element (2,3) in series conductance matrix" annotation (Dialog(group="Power flow data"));
+  parameter Types.PerUnit Bserbc=0 "Element (2,3) in series susceptance matrix" annotation (Dialog(group="Power flow data"));
+  parameter Types.PerUnit Gsercc=0 "Element (3,3) in series conductance matrix" annotation (Dialog(group="Power flow data"));
+  parameter Types.PerUnit Bsercc=-10 "Element (3,3) in series susceptance matrix"
     annotation (Dialog(group="Power flow data"));
-  parameter SI.PerUnit Bshtaa=0 "Element (1,1) in shunt half susceptance matrix" annotation (Dialog(group="Power flow data"));
-  parameter SI.PerUnit Bshtab=0 "Element (1,2) in shunt half susceptance matrix" annotation (Dialog(group="Power flow data"));
-  parameter SI.PerUnit Bshtac=0 "Element (1,3) in shunt half susceptance matrix" annotation (Dialog(group="Power flow data"));
-  parameter SI.PerUnit Bshtbb=0 "Element (2,2) in shunt half susceptance matrix" annotation (Dialog(group="Power flow data"));
-  parameter SI.PerUnit Bshtbc=0 "Element (2,3) in shunt half susceptance matrix" annotation (Dialog(group="Power flow data"));
-  parameter SI.PerUnit Bshtcc=0 "Element (3,3) in shunt half susceptance matrix" annotation (Dialog(group="Power flow data"));
+  parameter Types.PerUnit Bshtaa=0 "Element (1,1) in shunt half susceptance matrix" annotation (Dialog(group="Power flow data"));
+  parameter Types.PerUnit Bshtab=0 "Element (1,2) in shunt half susceptance matrix" annotation (Dialog(group="Power flow data"));
+  parameter Types.PerUnit Bshtac=0 "Element (1,3) in shunt half susceptance matrix" annotation (Dialog(group="Power flow data"));
+  parameter Types.PerUnit Bshtbb=0 "Element (2,2) in shunt half susceptance matrix" annotation (Dialog(group="Power flow data"));
+  parameter Types.PerUnit Bshtbc=0 "Element (2,3) in shunt half susceptance matrix" annotation (Dialog(group="Power flow data"));
+  parameter Types.PerUnit Bshtcc=0 "Element (3,3) in shunt half susceptance matrix" annotation (Dialog(group="Power flow data"));
 
   //Writing the Y_ser matrix for the pi model
 protected
