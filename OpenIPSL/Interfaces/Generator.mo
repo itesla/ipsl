@@ -21,10 +21,8 @@ equation
           extent={{-100,100},{100,-100}},
           lineColor={0,0,0},
           fillColor={215,215,215},
-          fillPattern=FillPattern.Solid),Line(
-          points={{20,-20},{50,-40},{80,0}},
-          color={0,0,0},
-          thickness=0.5),Text(
+          fillPattern=FillPattern.Solid),
+                         Text(
           extent={{-40,20},{40,-20}},
           lineColor={0,0,0},
           textString="%name"),Text(
@@ -52,7 +50,10 @@ equation
           lineColor={0,255,0},
           fillColor={0,255,0},
           fillPattern=FillPattern.Solid),Line(
-          points={{-20,20},{-50,40},{-80,0}},
+          points={{-20,20},{-44,42},{-66,32},{-80,0}},
           color={0,0,0},
-          thickness=0.5)}));
+          smooth=Smooth.Bezier),         Line(
+          points={{20,-20},{44,-42},{66,-32},{80,0}},
+          color={0,0,0},
+          smooth=Smooth.Bezier)}));
 end Generator;
