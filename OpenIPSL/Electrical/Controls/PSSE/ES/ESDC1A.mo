@@ -5,21 +5,21 @@ model ESDC1A "DC1A Excitation System [IEEE2005]"
   import OpenIPSL.NonElectrical.Functions.SE;
   import
     OpenIPSL.Electrical.Controls.PSSE.ES.BaseClasses.calculate_dc_exciter_params;
-  parameter SI.Time T_R=0 "Regulator input filter time constant";
-  parameter SI.PerUnit K_A=400 "Regulator output gain";
-  parameter SI.Time T_A=0.02 "Regulator time constant";
-  parameter SI.Time T_B=0 "Regulator denominator (lag) time constant";
-  parameter SI.Time T_C=0 "Regulator numerator (lead) time constant";
-  parameter SI.PerUnit V_RMAX=9 "Maximum controller output";
-  parameter SI.PerUnit V_RMIN=-5.43 "Minimum controller output";
-  parameter SI.PerUnit K_E=1 "Exciter field proportional constant";
-  parameter SI.Time T_E=0.8 "Exciter field time constant";
-  parameter SI.PerUnit K_F=0.03 "Rate feedback gain";
-  parameter SI.Time T_F1=1 "Rate feedback time constant";
-  parameter SI.PerUnit E_1=5.25 "Exciter output voltage for saturation factor S_E(E_1)";
-  parameter SI.PerUnit E_2=7 "Exciter output voltage for saturation factor S_E(E_2)";
-  parameter SI.PerUnit S_EE_1=0.03 "Exciter saturation factor at exciter output voltage E_1";
-  parameter SI.PerUnit S_EE_2=0.1 "Exciter saturation factor at exciter output voltage E_2";
+  parameter Types.Time T_R=0 "Regulator input filter time constant";
+  parameter Types.PerUnit K_A=400 "Regulator output gain";
+  parameter Types.Time T_A=0.02 "Regulator time constant";
+  parameter Types.Time T_B=0 "Regulator denominator (lag) time constant";
+  parameter Types.Time T_C=0 "Regulator numerator (lead) time constant";
+  parameter Types.PerUnit V_RMAX=9 "Maximum controller output";
+  parameter Types.PerUnit V_RMIN=-5.43 "Minimum controller output";
+  parameter Types.PerUnit K_E=1 "Exciter field proportional constant";
+  parameter Types.Time T_E=0.8 "Exciter field time constant";
+  parameter Types.PerUnit K_F=0.03 "Rate feedback gain";
+  parameter Types.Time T_F1=1 "Rate feedback time constant";
+  parameter Types.PerUnit E_1=5.25 "Exciter output voltage for saturation factor S_E(E_1)";
+  parameter Types.PerUnit E_2=7 "Exciter output voltage for saturation factor S_E(E_2)";
+  parameter Types.PerUnit S_EE_1=0.03 "Exciter saturation factor at exciter output voltage E_1";
+  parameter Types.PerUnit S_EE_2=0.1 "Exciter saturation factor at exciter output voltage E_2";
   Modelica.Blocks.Continuous.Derivative imDerivativeLag(
     k=K_F,
     T=T_F1,

@@ -2,15 +2,15 @@ within OpenIPSL.Electrical.Controls.PSSE.TG;
 model GAST "GAST - Gas Turbine-Governor"
   extends Icons.VerifiedModel;
   extends BaseClasses.BaseGovernor;
-  parameter SI.PerUnit R=0.05 "Speed droop gain";
-  parameter SI.Time T_1=0.4 "Valve response time constant";
-  parameter SI.Time T_2=0.1 "Turbine response time constant";
-  parameter SI.Time T_3=3.0 "Load limit response time constant";
-  parameter SI.PerUnit AT=0.9 "Ambient temperature load limit";
-  parameter SI.PerUnit K_T=2.0 "Load-limited feedback path adjustment gain";
-  parameter SI.PerUnit V_MAX=1.0 "Operational control high limit on fuel valve opening";
-  parameter SI.PerUnit V_MIN=-0.05 "Low output control limit on fuel valve opening";
-  parameter SI.PerUnit D_turb=0.0 "Turbine damping";
+  parameter Types.PerUnit R=0.05 "Speed droop gain";
+  parameter Types.Time T_1=0.4 "Valve response time constant";
+  parameter Types.Time T_2=0.1 "Turbine response time constant";
+  parameter Types.Time T_3=3.0 "Load limit response time constant";
+  parameter Types.PerUnit AT=0.9 "Ambient temperature load limit";
+  parameter Types.PerUnit K_T=2.0 "Load-limited feedback path adjustment gain";
+  parameter Types.PerUnit V_MAX=1.0 "Operational control high limit on fuel valve opening";
+  parameter Types.PerUnit V_MIN=-0.05 "Low output control limit on fuel valve opening";
+  parameter Types.PerUnit D_turb=0.0 "Turbine damping";
   Modelica.Blocks.Math.Add add(k1=-1)
     annotation (Placement(transformation(extent={{-78,-12},{-68,-22}})));
   Modelica.Blocks.Math.Add add1(k2=-1) annotation (Placement(transformation(
@@ -55,7 +55,7 @@ model GAST "GAST - Gas Turbine-Governor"
     T=T_1,
     y_start=pm0) annotation (Placement(transformation(extent={{-4,-4},{6,6}})));
 protected
-  parameter SI.PerUnit pm0(fixed=false);
+  parameter Types.PerUnit pm0(fixed=false);
 initial algorithm
   pm0 := PMECH0;
 equation

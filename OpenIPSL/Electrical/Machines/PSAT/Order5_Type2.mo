@@ -1,32 +1,32 @@
 within OpenIPSL.Electrical.Machines.PSAT;
 model Order5_Type2
   extends BaseClasses.baseMachine(vf(start=vf00), xq0=xq);
-  parameter SI.PerUnit xd=1.9 "d-axis synchronous reactance"
+  parameter Types.PerUnit xd=1.9 "d-axis synchronous reactance"
     annotation (Dialog(group="Machine parameters"));
-  parameter SI.PerUnit xq=1.7 "q-axis synchronous reactance"
+  parameter Types.PerUnit xq=1.7 "q-axis synchronous reactance"
     annotation (Dialog(group="Machine parameters"));
-  parameter SI.PerUnit x2d=0.204 "d-axis sub-transient reactance"
+  parameter Types.PerUnit x2d=0.204 "d-axis sub-transient reactance"
     annotation (Dialog(group="Machine parameters"));
-  parameter SI.PerUnit x2q=0.3 "q-axis sub-transient reactance"
+  parameter Types.PerUnit x2q=0.3 "q-axis sub-transient reactance"
     annotation (Dialog(group="Machine parameters"));
-  parameter SI.Time T1d0=8 "d-axis open circuit transient time constant"
+  parameter Types.Time T1d0=8 "d-axis open circuit transient time constant"
     annotation (Dialog(group="Machine parameters"));
-  parameter SI.Time T2d0=0.8 "d-axis open circuit sub-transient time constant"
+  parameter Types.Time T2d0=0.8 "d-axis open circuit sub-transient time constant"
     annotation (Dialog(group="Machine parameters"));
-  parameter SI.Time T2q0=0.02 "q-axis open circuit sub-transient time constant"
+  parameter Types.Time T2q0=0.02 "q-axis open circuit sub-transient time constant"
     annotation (Dialog(group="Machine parameters"));
-  parameter SI.Time Taa=0.002 "d-axis additional leakage time constant"
+  parameter Types.Time Taa=0.002 "d-axis additional leakage time constant"
     annotation (Dialog(group="Machine parameters"));
-  SI.PerUnit e1q(start=e1q0) "q-axis transient voltage";
-  SI.PerUnit e2q(start=e2q0) "q-axis sub-transient voltage";
-  SI.PerUnit e2d(start=e2d0) "d-axis sub-transient voltage";
+  Types.PerUnit e1q(start=e1q0) "q-axis transient voltage";
+  Types.PerUnit e2q(start=e2q0) "q-axis sub-transient voltage";
+  Types.PerUnit e2d(start=e2d0) "d-axis sub-transient voltage";
 protected
-  parameter SI.PerUnit e2q0=vq0 + ra*iq0 + x2d*id0 "Initialitation";
-  parameter SI.PerUnit e2d0=vd0 + ra*id0 - x2q*iq0 "Initialitation";
-  parameter SI.PerUnit K1=xd - x1d - (T2d0*x2d*(xd - x1d))/(T1d0*x1d);
-  parameter SI.PerUnit K2=x1d - x2d + (T2d0*x2d*(xd - x1d))/(T1d0*x1d);
-  parameter SI.PerUnit e1q0=(-K1*Taa/T1d0*id0) + (1 - Taa/T1d0)*(e2q0 + K2*id0);
-  parameter SI.PerUnit vf00=V_MBtoSB*(K1*id0 + e1q0)/(1 - Taa/T1d0)
+  parameter Types.PerUnit e2q0=vq0 + ra*iq0 + x2d*id0 "Initialitation";
+  parameter Types.PerUnit e2d0=vd0 + ra*id0 - x2q*iq0 "Initialitation";
+  parameter Types.PerUnit K1=xd - x1d - (T2d0*x2d*(xd - x1d))/(T1d0*x1d);
+  parameter Types.PerUnit K2=x1d - x2d + (T2d0*x2d*(xd - x1d))/(T1d0*x1d);
+  parameter Types.PerUnit e1q0=(-K1*Taa/T1d0*id0) + (1 - Taa/T1d0)*(e2q0 + K2*id0);
+  parameter Types.PerUnit vf00=V_MBtoSB*(K1*id0 + e1q0)/(1 - Taa/T1d0)
     "Initial value (system base)";
 initial equation
   //der(e1q) = 0;

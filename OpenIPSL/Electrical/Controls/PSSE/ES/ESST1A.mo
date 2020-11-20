@@ -2,40 +2,40 @@ within OpenIPSL.Electrical.Controls.PSSE.ES;
 model ESST1A "ST1A Excitation System [IEEE2005]"
   extends Icons.VerifiedModel;
   extends OpenIPSL.Electrical.Controls.PSSE.ES.BaseClasses.BaseExciter;
-  parameter SI.Time T_R=0 "Regulator input filter time constant"
+  parameter Types.Time T_R=0 "Regulator input filter time constant"
     annotation (Dialog(group="Excitation system parameters"));
-  parameter SI.PerUnit V_IMAX=99 "Maximum voltage error (regulator input)"
+  parameter Types.PerUnit V_IMAX=99 "Maximum voltage error (regulator input)"
     annotation (Dialog(group="Excitation system parameters"));
-  parameter SI.PerUnit V_IMIN=-99 "Minimum voltage error (regulator input)"
+  parameter Types.PerUnit V_IMIN=-99 "Minimum voltage error (regulator input)"
     annotation (Dialog(group="Excitation system parameters"));
-  parameter SI.Time T_C=0 "Regulator numerator (lead) time constant. First lead-lag"
+  parameter Types.Time T_C=0 "Regulator numerator (lead) time constant. First lead-lag"
     annotation (Dialog(group="Excitation system parameters"));
-  parameter SI.Time T_B=0 "Regulator denominator (lag) time constant. First lead-lag"
+  parameter Types.Time T_B=0 "Regulator denominator (lag) time constant. First lead-lag"
     annotation (Dialog(group="Excitation system parameters"));
-  parameter SI.Time T_C1=0 "Regulator numerator (lead) time constant. Second lead-lag"
+  parameter Types.Time T_C1=0 "Regulator numerator (lead) time constant. Second lead-lag"
     annotation (Dialog(group="Excitation system parameters"));
-  parameter SI.Time T_B1=0 "Regulator denominator (lag) time constant. Second lead-lag"
+  parameter Types.Time T_B1=0 "Regulator denominator (lag) time constant. Second lead-lag"
     annotation (Dialog(group="Excitation system parameters"));
-  parameter SI.PerUnit K_A=400 "Voltage regulator gain"
+  parameter Types.PerUnit K_A=400 "Voltage regulator gain"
     annotation (Dialog(group="Excitation system parameters"));
-  parameter SI.Time T_A=0.02 "Voltage regulator time constant"
+  parameter Types.Time T_A=0.02 "Voltage regulator time constant"
     annotation (Dialog(group="Excitation system parameters"));
-  parameter SI.PerUnit V_AMAX=9 "Maximum regulator output"
+  parameter Types.PerUnit V_AMAX=9 "Maximum regulator output"
     annotation (Dialog(group="Excitation system parameters"));
-  parameter SI.PerUnit V_AMIN=-5.43 "Minimum regulator output"
+  parameter Types.PerUnit V_AMIN=-5.43 "Minimum regulator output"
     annotation (Dialog(group="Excitation system parameters"));
-  parameter SI.PerUnit V_RMAX=9 "Maximum exciter output"
+  parameter Types.PerUnit V_RMAX=9 "Maximum exciter output"
     annotation (Dialog(group="Excitation system parameters"));
-  parameter SI.PerUnit V_RMIN=-5.43 "Minimum exciter output"
+  parameter Types.PerUnit V_RMIN=-5.43 "Minimum exciter output"
     annotation (Dialog(group="Excitation system parameters"));
-  parameter SI.PerUnit K_C=0.2 "Rectifier loading factor proportional to commutating reactance"
+  parameter Types.PerUnit K_C=0.2 "Rectifier loading factor proportional to commutating reactance"
     annotation (Dialog(group="Excitation system parameters"));
-  parameter SI.PerUnit K_F=0.03 "Rate feedback gain"
+  parameter Types.PerUnit K_F=0.03 "Rate feedback gain"
     annotation (Dialog(group="Excitation system parameters"));
-  parameter SI.Time T_F=1 "Rate feedback time constant"
+  parameter Types.Time T_F=1 "Rate feedback time constant"
     annotation (Dialog(group="Excitation system parameters"));
-  parameter SI.PerUnit K_LR=4.54 "Exciter output current limiter gain" annotation (Dialog(group="Excitation system parameters"));
-  parameter SI.PerUnit I_LR=4.4 "Exciter output current limit reference" annotation (Dialog(group="Excitation system parameters"));
+  parameter Types.PerUnit K_LR=4.54 "Exciter output current limiter gain" annotation (Dialog(group="Excitation system parameters"));
+  parameter Types.PerUnit I_LR=4.4 "Exciter output current limit reference" annotation (Dialog(group="Excitation system parameters"));
   Modelica.Blocks.Continuous.Derivative imDerivativeLag(
     y_start=0,
     k=K_F,

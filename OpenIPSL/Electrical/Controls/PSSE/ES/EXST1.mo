@@ -1,18 +1,18 @@
 within OpenIPSL.Electrical.Controls.PSSE.ES;
 model EXST1 "ST1 Excitation System [IEEE1981]"
   extends OpenIPSL.Electrical.Controls.PSSE.ES.BaseClasses.BaseExciter;
-  parameter SI.Time T_R=0.02 "Regulator input filter time constant";
-  parameter SI.PerUnit V_IMAX=0.2 "Maximum voltage error (regulator input)";
-  parameter SI.PerUnit V_IMIN=0 "Minimum voltage error (regulator input)";
-  parameter SI.Time T_C=1 "Regulator numerator (lead) time constant";
-  parameter SI.Time T_B=1 "Regulator denominator (lag) time constant";
-  parameter SI.PerUnit K_A=80 "Voltage regulator gain";
-  parameter SI.Time T_A=0.05 "Voltage regulator time constant";
-  parameter SI.PerUnit V_RMAX=8 "Maximum exciter output";
-  parameter SI.PerUnit V_RMIN=-3 "Minimum exciter output";
-  parameter SI.PerUnit K_C=0.2 "Rectifier loading factor proportional to commutating reactance";
-  parameter SI.PerUnit K_F=0.1 "Rate feedback gain";
-  parameter SI.Time T_F=1 "Rate feedback time constant";
+  parameter Types.Time T_R=0.02 "Regulator input filter time constant";
+  parameter Types.PerUnit V_IMAX=0.2 "Maximum voltage error (regulator input)";
+  parameter Types.PerUnit V_IMIN=0 "Minimum voltage error (regulator input)";
+  parameter Types.Time T_C=1 "Regulator numerator (lead) time constant";
+  parameter Types.Time T_B=1 "Regulator denominator (lag) time constant";
+  parameter Types.PerUnit K_A=80 "Voltage regulator gain";
+  parameter Types.Time T_A=0.05 "Voltage regulator time constant";
+  parameter Types.PerUnit V_RMAX=8 "Maximum exciter output";
+  parameter Types.PerUnit V_RMIN=-3 "Minimum exciter output";
+  parameter Types.PerUnit K_C=0.2 "Rectifier loading factor proportional to commutating reactance";
+  parameter Types.PerUnit K_F=0.1 "Rate feedback gain";
+  parameter Types.Time T_F=1 "Rate feedback time constant";
   OpenIPSL.NonElectrical.Continuous.LeadLag imLeadLag(
     K=1,
     T1=T_C,

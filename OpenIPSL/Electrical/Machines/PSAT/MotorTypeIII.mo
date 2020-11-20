@@ -11,41 +11,41 @@ model MotorTypeIII "Induction Machine - Order III"
     final enableS_b=true);
   parameter Integer Sup=1 "Start up control" annotation (Dialog(group=
           "Machine parameters"), choices(choice=0, choice=1));
-  parameter SI.PerUnit Rs=0.01 "Stator resistance"
+  parameter Types.PerUnit Rs=0.01 "Stator resistance"
     annotation (Dialog(group="Machine parameters"));
-  parameter SI.PerUnit Xs=0.15 "Stator reactance"
+  parameter Types.PerUnit Xs=0.15 "Stator reactance"
     annotation (Dialog(group="Machine parameters"));
-  parameter SI.PerUnit Rr1=0.05 "1st cage rotor resistance"
+  parameter Types.PerUnit Rr1=0.05 "1st cage rotor resistance"
     annotation (Dialog(group="Machine parameters"));
-  parameter SI.PerUnit Xr1=0.15 "1st cage rotor reactance"
+  parameter Types.PerUnit Xr1=0.15 "1st cage rotor reactance"
     annotation (Dialog(group="Machine parameters"));
-  parameter SI.PerUnit Xm=5 "Magnetizing reactance"
+  parameter Types.PerUnit Xm=5 "Magnetizing reactance"
     annotation (Dialog(group="Machine parameters"));
-  parameter SI.Time Hm=3 "Inertia constant"
+  parameter Types.Time Hm=3 "Inertia constant"
     annotation (Dialog(group="Machine parameters"));
-  parameter SI.PerUnit a=0.25 "1st coefficient of tau_m(w)"
+  parameter Types.PerUnit a=0.25 "1st coefficient of tau_m(w)"
     annotation (Dialog(group="Machine parameters"));
-  parameter SI.PerUnit b=0.00 "2nd coefficient of tau_m(w)"
+  parameter Types.PerUnit b=0.00 "2nd coefficient of tau_m(w)"
     annotation (Dialog(group="Machine parameters"));
-  parameter SI.PerUnit c=0.00 "3rd coefficient of tau_m(w)"
+  parameter Types.PerUnit c=0.00 "3rd coefficient of tau_m(w)"
     annotation (Dialog(group="Machine parameters"));
-  parameter SI.Time tup=0 "Start up time"
+  parameter Types.Time tup=0 "Start up time"
     annotation (Dialog(group="Machine parameters"));
-  SI.PerUnit v(start=v_0) "Bus voltage magnitude";
-  SI.PerUnit anglev(start=angle_0) "Bus voltage angle";
-  SI.PerUnit s(start=S0);
-  SI.PerUnit Tm;
-  SI.PerUnit Te;
-  SI.PerUnit P(start=P_0/S_b);
-  SI.PerUnit Q(start=Q_0/S_b);
-  SI.PerUnit Vr;
-  SI.PerUnit Vm;
-  SI.PerUnit Ir;
-  SI.PerUnit Im;
-  SI.PerUnit epr(start=epr0);
-  SI.PerUnit epm(start=epm0);
-  SI.PerUnit I;
-  SI.Angle anglei;
+  Types.PerUnit v(start=v_0) "Bus voltage magnitude";
+  Types.PerUnit anglev(start=angle_0) "Bus voltage angle";
+  Types.PerUnit s(start=S0);
+  Types.PerUnit Tm;
+  Types.PerUnit Te;
+  Types.PerUnit P(start=P_0/S_b);
+  Types.PerUnit Q(start=Q_0/S_b);
+  Types.PerUnit Vr;
+  Types.PerUnit Vm;
+  Types.PerUnit Ir;
+  Types.PerUnit Im;
+  Types.PerUnit epr(start=epr0);
+  Types.PerUnit epm(start=epm0);
+  Types.PerUnit I;
+  Types.Angle anglei;
   OpenIPSL.Interfaces.PwPin p(
     vr(start=vr0),
     vi(start=vi0),
@@ -55,18 +55,18 @@ model MotorTypeIII "Induction Machine - Order III"
 
   import Modelica.Constants.pi;
 protected
-  parameter SI.AngularVelocity Omegab=2*pi*fn "Base freq";
-  parameter SI.PerUnit vr0=v_0*cos(angle_0rad);
-  parameter SI.PerUnit vi0=v_0*sin(angle_0rad);
-  parameter SI.PerUnit ir0=(P_0/S_b*vr0 + Q_0/S_b*vi0)/(vr0^2 + vi0^2);
-  parameter SI.PerUnit ii0=(P_0/S_b*vi0 - Q_0/S_b*vr0)/(vr0^2 + vi0^2);
-  parameter SI.PerUnit i2=ir0*ir0 + ii0*ii0;
-  parameter SI.PerUnit A=a + b + c;
-  parameter SI.PerUnit B=(-b) - 2*c;
-  parameter SI.PerUnit C=c;
-  parameter SI.PerUnit X0=Xs + Xm;
-  parameter SI.PerUnit Xp=Xs + Xr1*Xm/(Xr1 + Xm);
-  parameter SI.Time Tp0=(Xr1 + Xm)/(Omegab*Rr1);
+  parameter Types.AngularVelocity Omegab=2*pi*fn "Base freq";
+  parameter Types.PerUnit vr0=v_0*cos(angle_0rad);
+  parameter Types.PerUnit vi0=v_0*sin(angle_0rad);
+  parameter Types.PerUnit ir0=(P_0/S_b*vr0 + Q_0/S_b*vi0)/(vr0^2 + vi0^2);
+  parameter Types.PerUnit ii0=(P_0/S_b*vi0 - Q_0/S_b*vr0)/(vr0^2 + vi0^2);
+  parameter Types.PerUnit i2=ir0*ir0 + ii0*ii0;
+  parameter Types.PerUnit A=a + b + c;
+  parameter Types.PerUnit B=(-b) - 2*c;
+  parameter Types.PerUnit C=c;
+  parameter Types.PerUnit X0=Xs + Xm;
+  parameter Types.PerUnit Xp=Xs + Xr1*Xm/(Xr1 + Xm);
+  parameter Types.Time Tp0=(Xr1 + Xm)/(Omegab*Rr1);
   parameter Real RZs2=1/(Rs*Rs + Xp*Xp);
   parameter Real K=Rr1/((Xr1 + Xm)*A);
   parameter Real K2=1 + Tp0*Tp0*Omegab*Omegab*S0*S0;

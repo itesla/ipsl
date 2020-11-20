@@ -1,10 +1,10 @@
 within OpenIPSL.Electrical.Banks.PSSE;
 model Shunt
-  parameter SI.PerUnit G "Conductance (system base)";
-  parameter SI.PerUnit B "Susceptance (system base)";
+  parameter Types.PerUnit G "Conductance (system base)";
+  parameter Types.PerUnit B "Susceptance (system base)";
   Complex I;
   Complex V;
-  SI.PerUnit v;
+  Types.PerUnit v;
   Complex S;
   OpenIPSL.Interfaces.PwPin p
     annotation (Placement(transformation(extent={{-10,90},{10,110}})));

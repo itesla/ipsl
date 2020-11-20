@@ -1,12 +1,12 @@
 within OpenIPSL.Electrical.Controls.CGMES.TG;
 class GovHydroIEEE0
   parameter Real K=5 "Governor gain";
-  parameter SI.Time T1=0.25 "Governor lag time constant";
-  parameter SI.Time T2=0 "Governor lead time constant";
-  parameter SI.Time T3=0.1 "Gate actuator time constant";
-  parameter SI.Time T4=0.04 "Water starting time";
-  parameter SI.PerUnit Pmax=1.5 "Gate maximum";
-  parameter SI.PerUnit Pmin=0.5 "Gate minimum";
+  parameter Types.Time T1=0.25 "Governor lag time constant";
+  parameter Types.Time T2=0 "Governor lead time constant";
+  parameter Types.Time T3=0.1 "Gate actuator time constant";
+  parameter Types.Time T4=0.04 "Water starting time";
+  parameter Types.PerUnit Pmax=1.5 "Gate maximum";
+  parameter Types.PerUnit Pmin=0.5 "Gate minimum";
   NonElectrical.Continuous.LeadLag GovernorA(
     K=K,
     T1=T2,

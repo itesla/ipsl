@@ -3,7 +3,7 @@ partial model pfComponent
   "Partial model containing all the parameters for entering power flow data"
   outer OpenIPSL.Electrical.SystemBase SysData
     "Must add this line in all models";
-  parameter SI.ApparentPower S_b(displayUnit="MVA")=SysData.S_b
+  parameter Types.ApparentPower S_b(displayUnit="MVA")=SysData.S_b
     "System base power"
     annotation (Dialog(group="Power flow data", enable=enableS_b));
   parameter Boolean enableS_b = false
@@ -13,7 +13,7 @@ partial model pfComponent
         tab="Parameter mask",
         __Dymola_compact=true,
         __Dymola_descriptionLabel=true), choices(checkBox=true));
-  parameter SI.Voltage V_b(displayUnit="kV")=400e3
+  parameter Types.Voltage V_b(displayUnit="kV")=400e3
     "Base voltage of the bus"
     annotation (Dialog(group="Power flow data", enable=enableV_b));
   parameter Boolean enableV_b = false
@@ -23,7 +23,7 @@ partial model pfComponent
         tab="Parameter mask",
         __Dymola_compact=true,
         __Dymola_descriptionLabel=true), choices(checkBox=true));
-  parameter SI.Frequency fn=SysData.fn
+  parameter Types.Frequency fn=SysData.fn
     "System frequency"
     annotation (Dialog(group="Power flow data", enable=enablefn));
   parameter Boolean enablefn = false
@@ -33,7 +33,7 @@ partial model pfComponent
         tab="Parameter mask",
         __Dymola_compact=true,
         __Dymola_descriptionLabel=true), choices(checkBox=true));
-  parameter SI.ActivePower P_0(displayUnit="MW")=1e6
+  parameter Types.ActivePower P_0(displayUnit="MW")=1e6
     "Initial active power"
     annotation (Dialog(group="Power flow data", enable=enableP_0));
   parameter Boolean enableP_0 = false
@@ -43,7 +43,7 @@ partial model pfComponent
         tab="Parameter mask",
         __Dymola_compact=true,
         __Dymola_descriptionLabel=true), choices(checkBox=true));
-  parameter SI.ReactivePower Q_0(displayUnit="Mvar")=0
+  parameter Types.ReactivePower Q_0(displayUnit="Mvar")=0
     "Initial reactive power"
     annotation (Dialog(group="Power flow data", enable=enableQ_0));
   parameter Boolean enableQ_0 = false
@@ -53,7 +53,7 @@ partial model pfComponent
         tab="Parameter mask",
         __Dymola_compact=true,
         __Dymola_descriptionLabel=true), choices(checkBox=true));
-  parameter SI.PerUnit v_0=1
+  parameter Types.PerUnit v_0=1
     "Initial voltage magnitude"
     annotation (Dialog(group="Power flow data", enable=enablev_0));
   parameter Boolean enablev_0 = false
@@ -87,5 +87,5 @@ partial model pfComponent
         __Dymola_compact=true,
         __Dymola_descriptionLabel=true), choices(checkBox=true));
 protected
-  parameter SI.Angle angle_0rad = SI.Conversions.from_deg(angle_0) "Initial angle in rad";
+  parameter Types.Angle angle_0rad = SI.Conversions.from_deg(angle_0) "Initial angle in rad";
 end pfComponent;

@@ -1,18 +1,18 @@
 within OpenIPSL.Electrical.Controls.PSSE.PSS;
 model STBSVC "STBSVC - WECC Supplementary Signal for Static var Compensator [PSSE-MODELS]"
   extends BaseClasses.BasePSS;
-  parameter SI.PerUnit K_S1=1 "First input low-pass filter gain. It must be greater than 0";
-  parameter SI.Time T_S7=1 "First input low-pass filter time constant";
-  parameter SI.Time T_S8=1 "First input regulator numerator (lead) time constant";
-  parameter SI.Time T_S9=1 "First input regulator denominaor (lag) time constant. It must be greater than 0";
-  parameter SI.Time T_S13=1 "Stabilizer washout numerator time constant. It must be greater than 0";
-  parameter SI.Time T_S14=1 "Stabilizer washout denominator time constant. It must be greater than 0";
-  parameter SI.PerUnit K_S3=1 "Stabilizer washout proportional gain";
-  parameter SI.PerUnit V_SCS=2 "Stabilizer output limit value";
-  parameter SI.PerUnit K_S2=1 "Second input low-pass filter gain";
-  parameter SI.Time T_S10=1 "Second input low-pass filter time constant";
-  parameter SI.Time T_S11=1 "Second input regulator numerator (lead) time constant";
-  parameter SI.Time T_S12=1 "Second input regulator denominaor (lag) time constant. It must be greater than 0 if K_S2 is different from 0";
+  parameter Types.PerUnit K_S1=1 "First input low-pass filter gain. It must be greater than 0";
+  parameter Types.Time T_S7=1 "First input low-pass filter time constant";
+  parameter Types.Time T_S8=1 "First input regulator numerator (lead) time constant";
+  parameter Types.Time T_S9=1 "First input regulator denominaor (lag) time constant. It must be greater than 0";
+  parameter Types.Time T_S13=1 "Stabilizer washout numerator time constant. It must be greater than 0";
+  parameter Types.Time T_S14=1 "Stabilizer washout denominator time constant. It must be greater than 0";
+  parameter Types.PerUnit K_S3=1 "Stabilizer washout proportional gain";
+  parameter Types.PerUnit V_SCS=2 "Stabilizer output limit value";
+  parameter Types.PerUnit K_S2=1 "Second input low-pass filter gain";
+  parameter Types.Time T_S10=1 "Second input low-pass filter time constant";
+  parameter Types.Time T_S11=1 "Second input regulator numerator (lead) time constant";
+  parameter Types.Time T_S12=1 "Second input regulator denominaor (lag) time constant. It must be greater than 0 if K_S2 is different from 0";
   NonElectrical.Continuous.SimpleLag imSimpleLag(
     K=K_S1,
     y_start=V_S10,
@@ -47,8 +47,8 @@ model STBSVC "STBSVC - WECC Supplementary Signal for Static var Compensator [PSS
   Modelica.Blocks.Nonlinear.Limiter limiter(uMax=V_SCS, uMin=-V_SCS)
     annotation (Placement(transformation(extent={{120,-10},{140,10}})));
 protected
-  parameter SI.PerUnit V_S10(fixed=false);
-  parameter SI.PerUnit V_S20(fixed=false);
+  parameter Types.PerUnit V_S10(fixed=false);
+  parameter Types.PerUnit V_S20(fixed=false);
 initial equation
   V_S10 = V_S1;
   V_S20 = V_S2;

@@ -38,35 +38,35 @@ model WyeLoad_3Ph "Three-phase wye load"
   parameter Integer ModelType=0 "0- Constant Power Model, 1- ZIP Model;"
     annotation (choices(choice=0 "Constant Power", choice=1 "ZIP Model"),
       Dialog(group="Power flow"));
-  parameter SI.PerUnit VA=1
+  parameter Types.PerUnit VA=1
     "Voltage magnitude"
     annotation (Dialog(group="Power flow data"));
-  parameter SI.Angle AngA(displayUnit = "deg") = SI.Conversions.from_deg(0) "Voltage angle for phase A"
+  parameter Types.Angle AngA(displayUnit = "deg") = SI.Conversions.from_deg(0) "Voltage angle for phase A"
     annotation (Dialog(group="Power flow data"));
-  parameter SI.PerUnit VB=1 "Voltage magnitude"
+  parameter Types.PerUnit VB=1 "Voltage magnitude"
     annotation (Dialog(group="Power flow data"));
-  parameter SI.Angle AngB(displayUnit = "deg") = SI.Conversions.from_deg(-120) "Voltage angle for phase B"
+  parameter Types.Angle AngB(displayUnit = "deg") = SI.Conversions.from_deg(-120) "Voltage angle for phase B"
     annotation (Dialog(group="Power flow data"));
-  parameter SI.PerUnit VC=1 "Voltage magnitude"
+  parameter Types.PerUnit VC=1 "Voltage magnitude"
     annotation (Dialog(group="Power flow data"));
-  parameter SI.Angle AngC(displayUnit = "deg") = SI.Conversions.from_deg(120) "Voltage angle for phase C"
+  parameter Types.Angle AngC(displayUnit = "deg") = SI.Conversions.from_deg(120) "Voltage angle for phase C"
     annotation (Dialog(group="Power flow data"));
-  parameter SI.ActivePower P_a(displayUnit="MW")=1e6
+  parameter Types.ActivePower P_a(displayUnit="MW")=1e6
     "Initial active power"
     annotation (Dialog(group="Power flow data"));
-  parameter SI.ReactivePower Q_a(displayUnit="Mvar")=0
+  parameter Types.ReactivePower Q_a(displayUnit="Mvar")=0
     "Initial reactive power"
     annotation (Dialog(group="Power flow data"));
-  parameter SI.ActivePower P_b(displayUnit="MW")=1e6
+  parameter Types.ActivePower P_b(displayUnit="MW")=1e6
     "Initial active power"
     annotation (Dialog(group="Power flow data"));
-  parameter SI.ReactivePower Q_b(displayUnit="Mvar")=0
+  parameter Types.ReactivePower Q_b(displayUnit="Mvar")=0
     "Initial reactive power"
     annotation (Dialog(group="Power flow data"));
-  parameter SI.ActivePower P_c(displayUnit="MW")=1e6
+  parameter Types.ActivePower P_c(displayUnit="MW")=1e6
     "Initial active power"
     annotation (Dialog(group="Power flow data"));
-  parameter SI.ReactivePower Q_c(displayUnit="Mvar")=0
+  parameter Types.ReactivePower Q_c(displayUnit="Mvar")=0
     "Initial reactive power"
     annotation (Dialog(group="Power flow data"));
 

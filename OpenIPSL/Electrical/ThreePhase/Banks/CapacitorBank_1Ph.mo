@@ -13,13 +13,13 @@ model CapacitorBank_1Ph "Single-phase capacitor bank"
         origin={70,100},
         rotation=0),
       visible=true));
-  parameter SI.PerUnit VA=1
+  parameter Types.PerUnit VA=1
     "Voltage magnitude"
     annotation (Dialog(group="Power flow data"));
-  parameter SI.Angle AngA(displayUnit = "deg") = SI.Conversions.from_deg(0) "Voltage angle for phase A"
+  parameter Types.Angle AngA(displayUnit = "deg") = SI.Conversions.from_deg(0) "Voltage angle for phase A"
     annotation (Dialog(group="Power flow data"));
 
-  parameter SI.ReactivePower Q_a(displayUnit="Mvar")=0
+  parameter Types.ReactivePower Q_a(displayUnit="Mvar")=0
     "Initial reactive power"
     annotation (Dialog(group="Power flow data"));
 protected

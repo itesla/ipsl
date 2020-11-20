@@ -1,18 +1,18 @@
 within OpenIPSL.Electrical.Controls.PSAT.TG;
 model TGTypeV
   "Hydro Turbine (Nonlinear model) and Governor (PI controller combined with servomotor)- control scheme Type 5"
-  parameter SI.PerUnit Tg "Servomotor droop";
-  parameter SI.PerUnit gmax "Maximum gate opening";
-  parameter SI.PerUnit gmin "Minimum gate opening";
-  parameter SI.PerUnit vmax "Maximum gate opening rate";
-  parameter SI.PerUnit vmin "Minimum gate opening rate";
-  parameter SI.Time Tp "Pilot valve time constant";
-  parameter SI.Time Tw "Water starting time";
+  parameter Types.PerUnit Tg "Servomotor droop";
+  parameter Types.PerUnit gmax "Maximum gate opening";
+  parameter Types.PerUnit gmin "Minimum gate opening";
+  parameter Types.PerUnit vmax "Maximum gate opening rate";
+  parameter Types.PerUnit vmin "Minimum gate opening rate";
+  parameter Types.Time Tp "Pilot valve time constant";
+  parameter Types.Time Tw "Water starting time";
   parameter Real Kp "Proportional droop [pu/pu]";
   parameter Real Ki "Integral droop [pu/pu]";
   parameter Real sigma "Permanent speed droop [pu/pu]";
-  parameter SI.PerUnit Pref;
-  SI.PerUnit G "Gate opening";
+  parameter Types.PerUnit Pref;
+  Types.PerUnit G "Gate opening";
   Modelica.Blocks.Continuous.Integrator integrator(initType=Modelica.Blocks.Types.Init.NoInit,
       y_start=Pref)
     annotation (Placement(transformation(extent={{64,-6},{76,6}})));

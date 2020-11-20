@@ -11,15 +11,15 @@ model OEL "PSATs Over-Excitation Limiter"
     annotation (Placement(transformation(extent={{-40,-30},{-20,-10}})));
   Modelica.Blocks.Interfaces.RealOutput v_ref annotation (Placement(
         transformation(extent={{100,-10},{120,10}})));
-  parameter SI.Time T0=10 "Integrator time constant";
-  parameter SI.PerUnit xd "d-axis estimated generator reactance (machine base)";
-  parameter SI.PerUnit xq "q-axis estimated generator reactance (machine base)";
-  parameter SI.PerUnit if_lim "Maximum field current (system base)";
-  parameter SI.PerUnit vOEL_max "Maximum output signal (machine base)";
-  parameter SI.ApparentPower Sn(displayUnit="MVA")=SysData.S_b "Power rating" annotation (Dialog(group="Machine parameters"));
-  parameter SI.Voltage Vn(displayUnit="kV")=V_b "Voltage rating"
+  parameter Types.Time T0=10 "Integrator time constant";
+  parameter Types.PerUnit xd "d-axis estimated generator reactance (machine base)";
+  parameter Types.PerUnit xq "q-axis estimated generator reactance (machine base)";
+  parameter Types.PerUnit if_lim "Maximum field current (system base)";
+  parameter Types.PerUnit vOEL_max "Maximum output signal (machine base)";
+  parameter Types.ApparentPower Sn(displayUnit="MVA")=SysData.S_b "Power rating" annotation (Dialog(group="Machine parameters"));
+  parameter Types.Voltage Vn(displayUnit="kV")=V_b "Voltage rating"
     annotation (Dialog(group="Machine parameters"));
-  parameter SI.Voltage V_b(displayUnit="kV")=400e3 "Base voltage of the bus";
+  parameter Types.Voltage V_b(displayUnit="kV")=400e3 "Base voltage of the bus";
 
   Modelica.Blocks.Math.Feedback add
     annotation (Placement(transformation(extent={{-10,-30},{10,-10}})));

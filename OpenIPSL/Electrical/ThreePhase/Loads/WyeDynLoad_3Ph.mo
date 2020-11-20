@@ -48,17 +48,17 @@ model WyeDynLoad_3Ph "Variable balanced three-phase wye load"
     annotation (choices(choice=0 "Constant Power", choice=1 "ZIP Model"),
       Dialog(group="Power flow"));
 
-  parameter SI.ActivePower P_a(displayUnit="MW")=1e6 "Base Active power for phase A"
+  parameter Types.ActivePower P_a(displayUnit="MW")=1e6 "Base Active power for phase A"
     annotation (Dialog(group="Power flow"));
-  parameter SI.ReactivePower Q_a(displayUnit="Mvar")=0 "Base Reactive power for phase A"
+  parameter Types.ReactivePower Q_a(displayUnit="Mvar")=0 "Base Reactive power for phase A"
     annotation (Dialog(group="Power flow"));
-  parameter SI.ActivePower P_b(displayUnit="MW")=1e6 "Base Active power for phase B"
+  parameter Types.ActivePower P_b(displayUnit="MW")=1e6 "Base Active power for phase B"
     annotation (Dialog(group="Power flow"));
-  parameter SI.ReactivePower Q_b(displayUnit="Mvar")=0 "Base Reactive power for phase B"
+  parameter Types.ReactivePower Q_b(displayUnit="Mvar")=0 "Base Reactive power for phase B"
     annotation (Dialog(group="Power flow"));
-  parameter SI.ActivePower P_c(displayUnit="MW")=1e6 "Base Active power for phase C"
+  parameter Types.ActivePower P_c(displayUnit="MW")=1e6 "Base Active power for phase C"
     annotation (Dialog(group="Power flow"));
-  parameter SI.ReactivePower Q_c(displayUnit="Mvar")=0 "Base Reactive power for phase C"
+  parameter Types.ReactivePower Q_c(displayUnit="Mvar")=0 "Base Reactive power for phase C"
     annotation (Dialog(group="Power flow"));
 
   parameter Real A_pa=0 "Percentage of Constant Power Load for Phase A (%)"

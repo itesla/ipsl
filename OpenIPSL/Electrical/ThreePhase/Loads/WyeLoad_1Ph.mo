@@ -18,16 +18,16 @@ model WyeLoad_1Ph "Single-phase load"
       visible=true));
   parameter Integer ModelType=0 "0- Constant Power Model, 1- ZIP Model;";
 
-  parameter SI.PerUnit VA=1
+  parameter Types.PerUnit VA=1
     "Voltage magnitude"
     annotation (Dialog(group="Power flow data"));
-  parameter SI.Angle AngA(displayUnit = "deg") = SI.Conversions.from_deg(0) "Voltage angle for phase A"
+  parameter Types.Angle AngA(displayUnit = "deg") = SI.Conversions.from_deg(0) "Voltage angle for phase A"
     annotation (Dialog(group="Power flow data"));
 
-  parameter SI.ActivePower P_a(displayUnit="MW")=1e6
+  parameter Types.ActivePower P_a(displayUnit="MW")=1e6
     "Initial active power"
     annotation (Dialog(group="Power flow data"));
-  parameter SI.ReactivePower Q_a(displayUnit="Mvar")=0
+  parameter Types.ReactivePower Q_a(displayUnit="Mvar")=0
     "Initial reactive power"
     annotation (Dialog(group="Power flow data"));
 

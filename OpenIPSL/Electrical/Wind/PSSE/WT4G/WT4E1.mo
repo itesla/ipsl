@@ -7,31 +7,31 @@ model WT4E1 "Electrical Control for Type 4 Wind Generator"
         " Qord is provided by WindVar"));
   parameter Boolean PQFLAG "P/Q priority flag"
     annotation (choices(choice=false "Q priority", choice=true "P priority"));
-  parameter SI.Time Tfv "Filter time constant in voltage regulator";
-  parameter SI.PerUnit Kpv "Proportional gain in voltage regulator";
-  parameter SI.TimeAging KIV "Integrator gain in voltage regulator";
-  parameter SI.PerUnit Kpp "Proportional gain in torque regulator";
-  parameter SI.PerUnit KIP "Integrator gain in torque regulator";
+  parameter Types.Time Tfv "Filter time constant in voltage regulator";
+  parameter Types.PerUnit Kpv "Proportional gain in voltage regulator";
+  parameter Types.TimeAging KIV "Integrator gain in voltage regulator";
+  parameter Types.PerUnit Kpp "Proportional gain in torque regulator";
+  parameter Types.PerUnit KIP "Integrator gain in torque regulator";
   //should be 0.1 in PSSE
-  parameter SI.PerUnit Kf "Rate feedback gain";
-  parameter SI.Time Tf "Rate feedback time constant";
-  parameter SI.PerUnit QMX "Max limit in voltage regulator";
-  parameter SI.PerUnit QMN "Min limit in voltage regulator";
-  parameter SI.PerUnit IPMAX "Max active current limit";
-  parameter SI.Time TRV "Voltage sensor time constant";
-  parameter SI.PerUnit dPMX "Max limit in power PI controller";
-  parameter SI.PerUnit dPMN "Min limit in power PI controller";
-  parameter SI.Time T_Power "Power filter time constant";
-  parameter SI.PerUnit KQI "MVAR/Voltage gain";
+  parameter Types.PerUnit Kf "Rate feedback gain";
+  parameter Types.Time Tf "Rate feedback time constant";
+  parameter Types.PerUnit QMX "Max limit in voltage regulator";
+  parameter Types.PerUnit QMN "Min limit in voltage regulator";
+  parameter Types.PerUnit IPMAX "Max active current limit";
+  parameter Types.Time TRV "Voltage sensor time constant";
+  parameter Types.PerUnit dPMX "Max limit in power PI controller";
+  parameter Types.PerUnit dPMN "Min limit in power PI controller";
+  parameter Types.Time T_Power "Power filter time constant";
+  parameter Types.PerUnit KQI "MVAR/Voltage gain";
   //should be 0.1 in PSSE
-  parameter SI.PerUnit VMINCL=0.9 "Min voltage limit";
-  parameter SI.PerUnit VMAXCL=1.1 "Max voltage limit";
-  parameter SI.PerUnit KVI=120 "Voltage/MVAR gain";
-  parameter SI.Time Tv=0.50000E-01 "Lag time constant in WindVar controller";
-  parameter SI.Time Tp=0.50000E-01 "Pelec filter in fast PF controller";
-  parameter SI.PerUnit ImaxTD=1.7 "Converter current limit";
-  parameter SI.PerUnit Iphl=1.11 "Hard active current limit";
-  parameter SI.PerUnit Iqhl=1.11 "Hard reactive current limit";
+  parameter Types.PerUnit VMINCL=0.9 "Min voltage limit";
+  parameter Types.PerUnit VMAXCL=1.1 "Max voltage limit";
+  parameter Types.PerUnit KVI=120 "Voltage/MVAR gain";
+  parameter Types.Time Tv=0.50000E-01 "Lag time constant in WindVar controller";
+  parameter Types.Time Tp=0.50000E-01 "Pelec filter in fast PF controller";
+  parameter Types.PerUnit ImaxTD=1.7 "Converter current limit";
+  parameter Types.PerUnit Iphl=1.11 "Hard active current limit";
+  parameter Types.PerUnit Iqhl=1.11 "Hard reactive current limit";
   parameter Boolean PSSEMATCH annotation (choices(choice=false "Use Integrator in Wind Control", choice=true "Ignore Integrator in Wind Control"));
   //parameter Real Qord "MVAR order from MVAR emulator";
   Modelica.Blocks.Interfaces.RealInput P(start=p0) annotation (Placement(
@@ -128,26 +128,26 @@ model WT4E1 "Electrical Control for Type 4 Wind Generator"
       y_start=k70)
     annotation (Placement(transformation(extent={{148,50},{168,70}})));
 protected
-  parameter SI.PerUnit Vref(fixed=false);
-  parameter SI.PerUnit Pref=p0;
-  parameter SI.PerUnit Qref=q0 "Q reference if PFAFLG=0 & VARFLG";
+  parameter Types.PerUnit Vref(fixed=false);
+  parameter Types.PerUnit Pref=p0;
+  parameter Types.PerUnit Qref=q0 "Q reference if PFAFLG=0 & VARFLG";
   parameter Real PFA_ref=atan2(q0, p0) "PF angle reference if PFAFLG=1";
-  parameter SI.PerUnit p0(fixed=false);
-  parameter SI.PerUnit q0(fixed=false);
-  parameter SI.PerUnit v0(fixed=false);
-  parameter SI.PerUnit Ip0(fixed=false);
-  parameter SI.PerUnit Iq0(fixed=false);
-  parameter SI.PerUnit Pord0(fixed=false);
-  parameter SI.PerUnit k0(fixed=false) "Filter in voltage regulator";
-  parameter SI.PerUnit k10(fixed=false) "Integrator in voltage regulator";
-  parameter SI.PerUnit k20(fixed=false) "Integrator in active power regulator";
-  parameter SI.PerUnit k30(fixed=false) "Active power regulator feedback";
-  parameter SI.PerUnit k40(fixed=false) "Voltage sensor";
-  parameter SI.PerUnit k50(fixed=false) "Power filter";
-  parameter SI.PerUnit k60(fixed=false) "MVAR/Vref integrator";
-  parameter SI.PerUnit k70(fixed=false) "Verror/Internal machine voltage integrator";
-  parameter SI.PerUnit k80(fixed=false) "Lag of the WindVar controller";
-  parameter SI.PerUnit k90(fixed=false) "Input filter of Pelec for PF fast controller";
+  parameter Types.PerUnit p0(fixed=false);
+  parameter Types.PerUnit q0(fixed=false);
+  parameter Types.PerUnit v0(fixed=false);
+  parameter Types.PerUnit Ip0(fixed=false);
+  parameter Types.PerUnit Iq0(fixed=false);
+  parameter Types.PerUnit Pord0(fixed=false);
+  parameter Types.PerUnit k0(fixed=false) "Filter in voltage regulator";
+  parameter Types.PerUnit k10(fixed=false) "Integrator in voltage regulator";
+  parameter Types.PerUnit k20(fixed=false) "Integrator in active power regulator";
+  parameter Types.PerUnit k30(fixed=false) "Active power regulator feedback";
+  parameter Types.PerUnit k40(fixed=false) "Voltage sensor";
+  parameter Types.PerUnit k50(fixed=false) "Power filter";
+  parameter Types.PerUnit k60(fixed=false) "MVAR/Vref integrator";
+  parameter Types.PerUnit k70(fixed=false) "Verror/Internal machine voltage integrator";
+  parameter Types.PerUnit k80(fixed=false) "Lag of the WindVar controller";
+  parameter Types.PerUnit k90(fixed=false) "Input filter of Pelec for PF fast controller";
 initial equation
   Vref = v0;
   p0 = P;
@@ -233,18 +233,18 @@ protected
       annotation (Placement(transformation(
           extent={{-10,-10},{10,10}},
           origin={106,-20})));
-    parameter SI.PerUnit Kpp "Proportional gain in torque regulator";
-    parameter SI.TimeAging KIP "Integrator gain in torque regulator";
-    parameter SI.PerUnit Kf "Rate feedback gain";
-    parameter SI.Time Tf "Rate feedback time constant";
-    parameter SI.PerUnit dPMX "Max limit in power PI controller";
-    parameter SI.PerUnit dPMN "Min limit in power PI controller";
-    parameter SI.Time T_Power "Power filter time constant";
-    parameter SI.PerUnit Pref=p0;
-    parameter SI.PerUnit k20 "Integrator in active power regulator";
-    parameter SI.PerUnit k30 "Active power regulator feedback";
-    parameter SI.PerUnit k50 "Power filter";
-    parameter SI.PerUnit p0;
+    parameter Types.PerUnit Kpp "Proportional gain in torque regulator";
+    parameter Types.TimeAging KIP "Integrator gain in torque regulator";
+    parameter Types.PerUnit Kf "Rate feedback gain";
+    parameter Types.Time Tf "Rate feedback time constant";
+    parameter Types.PerUnit dPMX "Max limit in power PI controller";
+    parameter Types.PerUnit dPMN "Min limit in power PI controller";
+    parameter Types.Time T_Power "Power filter time constant";
+    parameter Types.PerUnit Pref=p0;
+    parameter Types.PerUnit k20 "Integrator in active power regulator";
+    parameter Types.PerUnit k30 "Active power regulator feedback";
+    parameter Types.PerUnit k50 "Power filter";
+    parameter Types.PerUnit p0;
     Modelica.Blocks.Interfaces.RealInput PELEC annotation (Placement(
           transformation(extent={{-220,-20},{-180,20}})));
     Modelica.Blocks.Interfaces.RealInput I_PMAX annotation (Placement(
@@ -366,10 +366,10 @@ protected
       y_start=p0,
       T=Tp)
       annotation (Placement(transformation(extent={{-120,-10},{-100,10}})));
-    parameter SI.Time Tp=0.50000E-01 "Pelec filter in fast PF controller";
+    parameter Types.Time Tp=0.50000E-01 "Pelec filter in fast PF controller";
     parameter Real PFA_ref=atan2(q0, p0) "PF angle reference if PFAFLG=1";
-    parameter SI.PerUnit p0;
-    parameter SI.PerUnit q0;
+    parameter Types.PerUnit p0;
+    parameter Types.PerUnit q0;
     Modelica.Blocks.Interfaces.RealInput u annotation (Placement(transformation(
             extent={{-214,-10},{-194,10}})));
     Modelica.Blocks.Interfaces.RealOutput Q_REF_PF
@@ -438,18 +438,18 @@ protected
       y_start=k40,
       K=1,
       T=TRV)  annotation (Placement(transformation(extent={{-96,-16},{-76,4}})));
-    parameter SI.Time Tfv "Filter time constant in voltage regulator";
-    parameter SI.PerUnit Kpv "Proportional gain in voltage regulator";
-    parameter SI.TimeAging KIV "Integrator gain in voltage regulator";
-    parameter SI.PerUnit QMX "Max limit in voltage regulator";
-    parameter SI.PerUnit QMN "Min limit in voltage regulator";
-    parameter SI.Time TRV "Voltage sensor time constant";
-    parameter SI.Time Tv=0.50000E-01 "Lag time constant in WindVar controller";
-    parameter SI.PerUnit Vref;
-    parameter SI.PerUnit k0 "Filter in voltage regulator";
-    parameter SI.PerUnit k10 "Integrator in voltage regulator";
-    parameter SI.PerUnit k40 "Voltage sensor";
-    parameter SI.PerUnit k80 "Lag of the WindVar controller";
+    parameter Types.Time Tfv "Filter time constant in voltage regulator";
+    parameter Types.PerUnit Kpv "Proportional gain in voltage regulator";
+    parameter Types.TimeAging KIV "Integrator gain in voltage regulator";
+    parameter Types.PerUnit QMX "Max limit in voltage regulator";
+    parameter Types.PerUnit QMN "Min limit in voltage regulator";
+    parameter Types.Time TRV "Voltage sensor time constant";
+    parameter Types.Time Tv=0.50000E-01 "Lag time constant in WindVar controller";
+    parameter Types.PerUnit Vref;
+    parameter Types.PerUnit k0 "Filter in voltage regulator";
+    parameter Types.PerUnit k10 "Integrator in voltage regulator";
+    parameter Types.PerUnit k40 "Voltage sensor";
+    parameter Types.PerUnit k80 "Lag of the WindVar controller";
     parameter Boolean PSSEMATCH "Ignore integral signal";
     Modelica.Blocks.Interfaces.RealInput V_REG annotation (Placement(
           transformation(extent={{-214,-10},{-194,10}})));

@@ -2,7 +2,7 @@ within OpenIPSL.NonElectrical.Continuous;
 block SimpleLagRateLimVar
   "First order lag transfer function block with a non windup limiter, rate limits, variable output limits and blocking input"
   extends Modelica.Blocks.Interfaces.SISO;
-  parameter SI.Time T "Lag time constant"
+  parameter Types.Time T "Lag time constant"
     annotation (Evaluate=false);
   parameter Real y_start "Output start value"
     annotation (Dialog(group="Initialization"));

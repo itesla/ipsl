@@ -1,12 +1,12 @@
 within OpenIPSL.Electrical.Controls.PSSE.ES.BaseClasses;
 model RotatingExciterBase
-  parameter SI.Time T_E "Exciter time constant";
+  parameter Types.Time T_E "Exciter time constant";
   parameter Real K_E "Exciter field gain";
-  parameter SI.PerUnit E_1 "Exciter saturation point 1";
-  parameter SI.PerUnit E_2 "Exciter saturation point 2";
-  parameter SI.PerUnit S_EE_1 "Saturation at E_1";
-  parameter SI.PerUnit S_EE_2 "Saturation at E_2";
-  parameter SI.PerUnit Efd0;
+  parameter Types.PerUnit E_1 "Exciter saturation point 1";
+  parameter Types.PerUnit E_2 "Exciter saturation point 2";
+  parameter Types.PerUnit S_EE_1 "Saturation at E_1";
+  parameter Types.PerUnit S_EE_2 "Saturation at E_2";
+  parameter Types.PerUnit Efd0;
   Modelica.Blocks.Interfaces.RealInput I_C annotation (Placement(transformation(
           extent={{-120,-20},{-80,20}}), iconTransformation(extent={{-100,-10},
             {-80,10}})));

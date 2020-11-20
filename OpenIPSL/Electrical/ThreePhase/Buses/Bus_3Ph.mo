@@ -12,11 +12,11 @@ model Bus_3Ph "Three-phase bus"
           180)), vi(start=V_C*sin(angle_C*Modelica.Constants.pi/180)))
     annotation (Placement(transformation(extent={{-10,-100},{10,-80}})));
 
-  parameter SI.PerUnit V_A=1 "Voltage magnitude for phase A"
+  parameter Types.PerUnit V_A=1 "Voltage magnitude for phase A"
     annotation (Dialog(group="Power flow data"));
-  parameter SI.PerUnit V_B=1 "Voltage magnitude for phase B"
+  parameter Types.PerUnit V_B=1 "Voltage magnitude for phase B"
     annotation (Dialog(group="Power flow data"));
-  parameter SI.PerUnit V_C=1 "Voltage magnitude for phase C"
+  parameter Types.PerUnit V_C=1 "Voltage magnitude for phase C"
     annotation (Dialog(group="Power flow data"));
   parameter SI.Conversions.NonSIunits.Angle_deg angle_A=0 "Voltage angle for phase A"
     annotation (Dialog(group="Power flow data"));
@@ -24,13 +24,13 @@ model Bus_3Ph "Three-phase bus"
     annotation (Dialog(group="Power flow data"));
   parameter SI.Conversions.NonSIunits.Angle_deg angle_C=120 "Voltage angle for phase C"
     annotation (Dialog(group="Power flow data"));
-  SI.PerUnit Va(start=V_A) "Bus voltage magnitude for phase A";
+  Types.PerUnit Va(start=V_A) "Bus voltage magnitude for phase A";
   SI.Conversions.NonSIunits.Angle_deg angle_a(start=angle_A)
     "Bus voltage angle for phase A";
-  SI.PerUnit Vb(start=V_B) "Bus voltage magnitude for phase B";
+  Types.PerUnit Vb(start=V_B) "Bus voltage magnitude for phase B";
   SI.Conversions.NonSIunits.Angle_deg angle_b(start=angle_B)
     "Bus voltage angle for phase B";
-  SI.PerUnit Vc(start=V_C) "Bus voltage magnitude for phase C";
+  Types.PerUnit Vc(start=V_C) "Bus voltage magnitude for phase C";
   SI.Conversions.NonSIunits.Angle_deg angle_c(start=angle_C)
     "Bus voltage angle for phase C";
 

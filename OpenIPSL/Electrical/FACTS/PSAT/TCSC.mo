@@ -13,25 +13,25 @@ model TCSC "Thyristor Controlled Series Compensator"
   OpenIPSL.Interfaces.PwPin p annotation (Placement(transformation(extent={{-120,-10},{-100,10}}), iconTransformation(extent={{-119,-10},{-99,10}})));
   OpenIPSL.Interfaces.PwPin n annotation (Placement(transformation(extent={{100,-10},{120,10}}), iconTransformation(extent={{100,-10},{120,10}})));
 
-  parameter SI.PerUnit pref=0.080101913348342 "Reference power"
+  parameter Types.PerUnit pref=0.080101913348342 "Reference power"
    annotation (Dialog(group="Power flow data"));
-  parameter SI.ApparentPower Sn(displayUnit="MVA") = S_b "Power rating"
+  parameter Types.ApparentPower Sn(displayUnit="MVA") = S_b "Power rating"
    annotation (Dialog(group="Device parameters"));
-  parameter SI.Voltage Vn(displayUnit="kV") = V_b "Voltage rating"
+  parameter Types.Voltage Vn(displayUnit="kV") = V_b "Voltage rating"
    annotation (Dialog(group="Device parameters"));
   parameter Ctrl ctrl=Ctrl.alpha "Type of control of the TCSC"
    annotation (Dialog(group="Device parameters"));
-  parameter SI.Angle alpha_min=0.7 "Minimum firing angle"
+  parameter Types.Angle alpha_min=0.7 "Minimum firing angle"
    annotation (Dialog(enable=ctrl == Ctrl.alpha, group="Device parameters"));
-  parameter SI.Angle alpha_max=0.85 " Maximum firing angle"
+  parameter Types.Angle alpha_max=0.85 " Maximum firing angle"
    annotation (Dialog(enable=ctrl == Ctrl.alpha, group="Device parameters"));
-  parameter SI.PerUnit xTCSC_min=-0.05 "Minimum reactance"
+  parameter Types.PerUnit xTCSC_min=-0.05 "Minimum reactance"
    annotation (Dialog(enable=ctrl <> Ctrl.alpha, group="Device parameters"));
-  parameter SI.PerUnit xTCSC_max=0.05 "Maximum reactance"
+  parameter Types.PerUnit xTCSC_max=0.05 "Maximum reactance"
    annotation (Dialog(enable=ctrl <> Ctrl.alpha, group="Device parameters"));
 
   //  parameter Real Cp=0.10 "Percentage of series compensation [%] (only for power flow calculation)";
-  parameter SI.Time Tr=0.5 "Regulator time constant"
+  parameter Types.Time Tr=0.5 "Regulator time constant"
    annotation (Dialog(group="Device parameters"));
   parameter Real Kp=5 "Proportional gain of PI controller [pu/pu]"
   annotation (Dialog(group="Device parameters"));
@@ -39,26 +39,26 @@ model TCSC "Thyristor Controlled Series Compensator"
    annotation (Dialog(group="Device parameters"));
   parameter Real Kr=10 "Gain of stabilizing signal [pu/pu]"
    annotation (Dialog(group="Device parameters"));
-  parameter SI.PerUnit x_L=0.2 "Reactance (inductive)"
+  parameter Types.PerUnit x_L=0.2 "Reactance (inductive)"
    annotation (Dialog(group="Device parameters"));
-  parameter SI.PerUnit x_C=0.1 "Reactance (capacitive)"
+  parameter Types.PerUnit x_C=0.1 "Reactance (capacitive)"
    annotation (Dialog(group="Device parameters"));
-  parameter SI.PerUnit XL=0.1 "Line reactance"
+  parameter Types.PerUnit XL=0.1 "Line reactance"
    annotation (Dialog(group="Device parameters"));
-  parameter SI.PerUnit G=0 "Shunt half conductance"
+  parameter Types.PerUnit G=0 "Shunt half conductance"
   annotation (Dialog(group="Device parameters"));
-  parameter SI.PerUnit B=0 "Shunt half susceptance"
+  parameter Types.PerUnit B=0 "Shunt half susceptance"
   annotation (Dialog(group="Device parameters"));
 
-  parameter SI.Angle alpha0=0.8 "Initial firing angle"
+  parameter Types.Angle alpha0=0.8 "Initial firing angle"
    annotation (Dialog(enable=ctrl == Ctrl.alpha, group="Initialization"));
-  parameter SI.PerUnit xTCSC0=0 "Initial reactance"
+  parameter Types.PerUnit xTCSC0=0 "Initial reactance"
    annotation (Dialog(enable=ctrl <> Ctrl.alpha, group="Initialization"));
 
-  SI.PerUnit vk "Bus voltage of bus k";
-  SI.PerUnit vm "Bus voltage of bus m";
-  SI.PerUnit pkm(start=pref) "Active power flow from bus k to m (pu)";
-  SI.PerUnit b "TCSC series susceptance";
+  Types.PerUnit vk "Bus voltage of bus k";
+  Types.PerUnit vm "Bus voltage of bus m";
+  Types.PerUnit pkm(start=pref) "Active power flow from bus k to m (pu)";
+  Types.PerUnit b "TCSC series susceptance";
   Real x1 "State representing alpha or xTCSC";
 
   Modelica.Blocks.Math.Feedback powerDiff annotation (Placement(transformation(extent={{-50,-50},{-30,-30}})));
@@ -83,12 +83,12 @@ model TCSC "Thyristor Controlled Series Compensator"
         origin={0,120})));
 protected
   parameter Boolean alphaCtrl=ctrl == Ctrl.alpha annotation (Evaluate=true);
-  parameter SI.PerUnit xL=x_L*(Vn^2/Sn)*(S_b/V_b^2) "Reactance (inductive)";
-  parameter SI.PerUnit xC=x_C*(Vn^2/Sn)*(S_b/V_b^2) "Reactance (capacitive)";
-  parameter SI.PerUnit X=XL*(Vn^2/Sn)*(S_b/V_b^2) "Line Reactance";
-  parameter SI.PerUnit y=1/X "Line admittance";
+  parameter Types.PerUnit xL=x_L*(Vn^2/Sn)*(S_b/V_b^2) "Reactance (inductive)";
+  parameter Types.PerUnit xC=x_C*(Vn^2/Sn)*(S_b/V_b^2) "Reactance (capacitive)";
+  parameter Types.PerUnit X=XL*(Vn^2/Sn)*(S_b/V_b^2) "Line Reactance";
+  parameter Types.PerUnit y=1/X "Line admittance";
   parameter Real kx=sqrt(xC/xL);
-  //  parameter SI.PerUnit XL2=(1 - Cp)*XL "Simplified line reactance for power flow calculation";
+  //  parameter Types.PerUnit XL2=(1 - Cp)*XL "Simplified line reactance for power flow calculation";
   parameter Real x1_min=if alphaCtrl then alpha_min else xTCSC_min annotation (Evaluate=true);
   parameter Real x1_max=if alphaCtrl then alpha_max else xTCSC_max annotation (Evaluate=true);
   parameter Real x10=if alphaCtrl then alpha0 else xTCSC0 annotation (Evaluate=true);

@@ -33,18 +33,18 @@ model DeltaLoad_2Ph "Two-phase delta load"
     annotation (choices(choice=0 "Constant Power", choice=1 "ZIP Model"),
       Dialog(group="Power flow"));
 
-  parameter SI.PerUnit VA=1 "Voltage magnitude for phase A"
+  parameter Types.PerUnit VA=1 "Voltage magnitude for phase A"
     annotation (Dialog(group="Power flow data"));
-  parameter SI.Angle AngA(displayUnit = "deg") = SI.Conversions.from_deg(0) "Voltage angle for phase A"
+  parameter Types.Angle AngA(displayUnit = "deg") = SI.Conversions.from_deg(0) "Voltage angle for phase A"
     annotation (Dialog(group="Power flow data"));
-  parameter SI.PerUnit VB=1 "Voltage magnitude for phase B"
+  parameter Types.PerUnit VB=1 "Voltage magnitude for phase B"
     annotation (Dialog(group="Power flow data"));
-  parameter SI.Angle AngB(displayUnit = "deg") = SI.Conversions.from_deg(-120) "Voltage angle for phase B"
+  parameter Types.Angle AngB(displayUnit = "deg") = SI.Conversions.from_deg(-120) "Voltage angle for phase B"
     annotation (Dialog(group="Power flow data"));
-  parameter SI.ActivePower P_ab(displayUnit="MW")=1e6
+  parameter Types.ActivePower P_ab(displayUnit="MW")=1e6
     "Initial active power"
     annotation (Dialog(group="Power flow data"));
-  parameter SI.ReactivePower Q_ab(displayUnit="Mvar")=0
+  parameter Types.ReactivePower Q_ab(displayUnit="Mvar")=0
     "Initial reactive power"
     annotation (Dialog(group="Power flow data"));
 

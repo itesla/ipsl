@@ -45,19 +45,19 @@ model Dyn_wye_2Ph_balanced "Variable balanced two-phase wye load"
         origin={20,100},
         rotation=0),
       visible=true));
-  parameter SI.ActivePower P0(displayUnit="MW") "Initial Active power"
+  parameter Types.ActivePower P0(displayUnit="MW") "Initial Active power"
     annotation (Dialog(group="Power flow"));
-  parameter SI.ReactivePower Q0(displayUnit="Mvar") "Initial Reactive power"
+  parameter Types.ReactivePower Q0(displayUnit="Mvar") "Initial Reactive power"
     annotation (Dialog(group="Power flow"));
 
 protected
-  SI.ActivePower P_a(displayUnit="MW", start = P0 / 2)
+  Types.ActivePower P_a(displayUnit="MW", start = P0 / 2)
     "Initial active power";
-  SI.ReactivePower Q_a(displayUnit="Mvar", start = Q0  / 2)
+  Types.ReactivePower Q_a(displayUnit="Mvar", start = Q0  / 2)
     "Initial reactive power";
-  SI.ActivePower P_b(displayUnit="MW", start = P0 / 2)
+  Types.ActivePower P_b(displayUnit="MW", start = P0 / 2)
     "Initial active power";
-  SI.ReactivePower Q_b(displayUnit="Mvar", start = Q0 / 2)
+  Types.ReactivePower Q_b(displayUnit="Mvar", start = Q0 / 2)
     "Initial reactive power";
 
 equation

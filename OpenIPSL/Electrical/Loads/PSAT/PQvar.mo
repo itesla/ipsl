@@ -1,32 +1,32 @@
 within OpenIPSL.Electrical.Loads.PSAT;
 model PQvar "Equations come from the mathematical separation in between reals and imaginary of S=P+jQ=UI*"
   extends BaseClasses.baseLoad;
-  parameter SI.Time t_start_1=1
+  parameter Types.Time t_start_1=1
     "Start time of first load variation"
     annotation (Dialog(group="Variation 1"));
-  parameter SI.Time t_end_1=2
+  parameter Types.Time t_end_1=2
     "End time of first load variation"
     annotation (Dialog(group="Variation 1"));
-  parameter SI.ActivePower dP1(displayUnit="MW")=0
+  parameter Types.ActivePower dP1(displayUnit="MW")=0
     "First active load variation" annotation (Dialog(group="Variation 1"));
-  parameter SI.ReactivePower dQ1(displayUnit="Mvar")=0
+  parameter Types.ReactivePower dQ1(displayUnit="Mvar")=0
     "First reactive load variation"
     annotation (Dialog(group="Variation 1"));
-  parameter SI.Time t_start_2=2
+  parameter Types.Time t_start_2=2
     "Start time of second Load variation"
     annotation (Dialog(group="Variation 2"));
-  parameter SI.Time t_end_2=3
+  parameter Types.Time t_end_2=3
     "End time of second load variation"
     annotation (Dialog(group="Variation 2"));
-  parameter SI.ActivePower dP2(displayUnit="MW")=0
+  parameter Types.ActivePower dP2(displayUnit="MW")=0
     "Second active load variation"
     annotation (Dialog(group="Variation 2"));
-  parameter SI.ReactivePower dQ2(displayUnit="Mvar")=0
+  parameter Types.ReactivePower dQ2(displayUnit="Mvar")=0
     "Second reactive load variation"
     annotation (Dialog(group="Variation 2"));
-  parameter SI.PerUnit Vmax=1.2 "maximum voltage"
+  parameter Types.PerUnit Vmax=1.2 "maximum voltage"
     annotation (Evaluate=true, Dialog(tab="To Be Implemented"));
-  parameter SI.PerUnit Vmin=0.8 "minimum voltage"
+  parameter Types.PerUnit Vmin=0.8 "minimum voltage"
     annotation (Evaluate=true, Dialog(tab="To Be Implemented"));
   parameter Boolean forcePQ=true
     "force 'constant' PQ-load, false may cause simulation problems"
@@ -35,9 +35,9 @@ model PQvar "Equations come from the mathematical separation in between reals an
     choices(checkBox=true),
     Dialog(tab="To Be Implemented"));
 protected
-  SI.PerUnit Pd(start=P_0/S_b) "active
+  Types.PerUnit Pd(start=P_0/S_b) "active
   power demand";
-  SI.PerUnit Qd(start=Q_0/S_b) "reactive power demand";
+  Types.PerUnit Qd(start=Q_0/S_b) "reactive power demand";
 equation
   // forcePQ=false needs better implementation
   if forcePQ or initial() then

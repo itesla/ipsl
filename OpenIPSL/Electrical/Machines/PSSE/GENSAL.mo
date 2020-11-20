@@ -22,13 +22,13 @@ model GENSAL "SALIENT POLE GENERATOR MODEL (QUADRATIC SATURATION ON D-AXIS)"
     ud(start=ud0),
     uq(start=uq0),
     Te(start=pm0));
-  SI.PerUnit Epq(start=Epq0) "q-axis voltage behind transient reactance";
-  SI.PerUnit PSIkd(start=PSIkd0) "d-axis rotor flux linkage";
-  SI.PerUnit PSIppq(start=PSIppq0) "q-axis subtransient flux linkage";
-  SI.PerUnit PSIppd(start=PSIppd0) "d-axis subtransient flux linkage";
-  SI.PerUnit PSId(start=PSId0) "d-axis flux linkage";
-  SI.PerUnit PSIq(start=PSIq0) "q-axis flux linkage";
-  SI.PerUnit XadIfd(start=efd0) "Machine field current";
+  Types.PerUnit Epq(start=Epq0) "q-axis voltage behind transient reactance";
+  Types.PerUnit PSIkd(start=PSIkd0) "d-axis rotor flux linkage";
+  Types.PerUnit PSIppq(start=PSIppq0) "q-axis subtransient flux linkage";
+  Types.PerUnit PSIppd(start=PSIppd0) "d-axis subtransient flux linkage";
+  Types.PerUnit PSId(start=PSId0) "d-axis flux linkage";
+  Types.PerUnit PSIq(start=PSIq0) "q-axis flux linkage";
+  Types.PerUnit XadIfd(start=efd0) "Machine field current";
 protected
   parameter Complex Zs=R_a + j*Xppd "Equivalent impedance";
   parameter Complex Is=real(It + VT/Zs) + j*imag(It + VT/Zs);
@@ -43,33 +43,33 @@ protected
   parameter Complex DQ_dq=cos(delta0) - j*sin(delta0) "Parks transformation";
   parameter Complex I_dq=real(It*DQ_dq) - j*imag(It*DQ_dq);
   //Initialization of current and voltage components in synchronous reference frame.
-  parameter SI.PerUnit iq0=real(I_dq) "q-axis component of initial current";
-  parameter SI.PerUnit id0=imag(I_dq) "d-axis component of initial current";
-  parameter SI.PerUnit ud0=v_0*cos(angle_0rad - delta0 + C.pi/2)
+  parameter Types.PerUnit iq0=real(I_dq) "q-axis component of initial current";
+  parameter Types.PerUnit id0=imag(I_dq) "d-axis component of initial current";
+  parameter Types.PerUnit ud0=v_0*cos(angle_0rad - delta0 + C.pi/2)
     "d-axis component of initial voltage";
-  parameter SI.PerUnit uq0=v_0*sin(angle_0rad - delta0 + C.pi/2)
+  parameter Types.PerUnit uq0=v_0*sin(angle_0rad - delta0 + C.pi/2)
     "q-axis component of initial voltage";
   parameter Complex PSIpp0_dq=real(PSIpp0*DQ_dq) + j*imag(PSIpp0*DQ_dq)
     "Flux linkage in rotor reference frame";
-  parameter SI.PerUnit PSIppq0=-imag(PSIpp0_dq)
+  parameter Types.PerUnit PSIppq0=-imag(PSIpp0_dq)
     "q-axis component of the sub-transient flux linkage";
-  parameter SI.PerUnit PSIppd0=real(PSIpp0_dq)
+  parameter Types.PerUnit PSIppd0=real(PSIpp0_dq)
     "d-axis component of the sub-transient flux linkage";
-  parameter SI.PerUnit PSIkd0=(PSIppd0 - (Xpd - Xl)*K3d*id0)/(K3d + K4d)
+  parameter Types.PerUnit PSIkd0=(PSIppd0 - (Xpd - Xl)*K3d*id0)/(K3d + K4d)
     "d-axis initial rotor flux linkage";
-  parameter SI.PerUnit PSId0=PSIppd0 - Xppd*id0;
-  parameter SI.PerUnit PSIq0=(-PSIppq0) - Xppq*iq0;
+  parameter Types.PerUnit PSId0=PSIppd0 - Xppd*id0;
+  parameter Types.PerUnit PSIq0=(-PSIppq0) - Xppq*iq0;
   //Initialization mechanical power and field voltage.
-  parameter SI.PerUnit Epq0=uq0 + Xpd*id0 + R_a*iq0;
+  parameter Types.PerUnit Epq0=uq0 + Xpd*id0 + R_a*iq0;
   parameter Real dsat=SE(
       Epq0,
       S10,
       S12,
       1,
       1.2);
-  parameter SI.PerUnit efd0=Epq0*(1 + dsat) + (Xd - Xpd)*id0
+  parameter Types.PerUnit efd0=Epq0*(1 + dsat) + (Xd - Xpd)*id0
     "Initial field voltage magnitude";
-  parameter SI.PerUnit pm0=p0 + R_a*iq0*iq0 + R_a*id0*id0
+  parameter Types.PerUnit pm0=p0 + R_a*iq0*iq0 + R_a*id0*id0
     "Initial mechanical power (machine base)";
   // Constants
   parameter Real K1d=(Xpd - Xppd)*(Xd - Xpd)/(Xpd - Xl)^2;

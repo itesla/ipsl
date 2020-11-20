@@ -2,10 +2,10 @@ within OpenIPSL.Electrical.Loads.NoiseInjections;
 model SineNoiseInjection
   extends BaseClass;
   parameter Real amplitude=1 "Amplitude of sine wave";
-  parameter SI.Frequency freqHz(start=1) "Frequency of sine wave";
-  parameter SI.Angle phase=0 "Phase of sine wave";
+  parameter Types.Frequency freqHz(start=1) "Frequency of sine wave";
+  parameter Types.Angle phase=0 "Phase of sine wave";
   parameter Real offset=0 "Offset of output signal";
-  parameter SI.Time startTime=0
+  parameter Types.Time startTime=0
     "Output = offset for time < startTime";
 
   Modelica.Blocks.Sources.Sine sine(

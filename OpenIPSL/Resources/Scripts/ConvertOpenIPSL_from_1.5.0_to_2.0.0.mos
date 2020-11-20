@@ -266,10 +266,10 @@ convertModifiers("OpenIPSL.Interfaces.Generator",
 
 // custom types are no longer used, conversion is not perfect since it does not take care of the scaling
 convertClass("OpenIPSL.Types.ActivePowerMega",
-             "SI.ActivePower");
+             "Types.ActivePower");
 convertClass("OpenIPSL.Types.ApparentPower",
-             "SI.ApparentPower");
+             "Types.ApparentPower");
 convertClass("OpenIPSL.Types.ReactivePowerMega",
-             "SI.ReactivePower");
+             "Types.ReactivePower");
 convertClass("OpenIPSL.Types.VoltageKilo",
-"SI.Voltage");
+"Types.Voltage");

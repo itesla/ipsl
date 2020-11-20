@@ -22,24 +22,24 @@ model GENROE "ROUND ROTOR GENERATOR MODEL (EXPONENTIAL SATURATION)"
     uq(start=uq0),
     Te(start=pm0));
   //Machine parameters
-  parameter SI.PerUnit Xpq "Sub-transient reactance"
+  parameter Types.PerUnit Xpq "Sub-transient reactance"
     annotation (Dialog(group="Machine parameters"));
-  parameter SI.Time Tpq0 "q-axis transient open-circuit time constant"
+  parameter Types.Time Tpq0 "q-axis transient open-circuit time constant"
     annotation (Dialog(group="Machine parameters"));
-  parameter SI.PerUnit Xpp=Xppd "Sub-transient reactance"
+  parameter Types.PerUnit Xpp=Xppd "Sub-transient reactance"
     annotation (Dialog(group="Machine parameters"));
-  SI.PerUnit Epd(start=Epd0) "d-axis voltage behind transient reactance";
-  SI.PerUnit Epq(start=Epq0) "q-axis voltage behind transient reactance";
-  SI.PerUnit PSIkd(start=PSIkd0) "d-axis rotor flux linkage";
-  SI.PerUnit PSIkq(start=PSIkq0) "q-axis rotor flux linkage";
+  Types.PerUnit Epd(start=Epd0) "d-axis voltage behind transient reactance";
+  Types.PerUnit Epq(start=Epq0) "q-axis voltage behind transient reactance";
+  Types.PerUnit PSIkd(start=PSIkd0) "d-axis rotor flux linkage";
+  Types.PerUnit PSIkq(start=PSIkq0) "q-axis rotor flux linkage";
   //State variables
-  SI.PerUnit PSId(start=PSId0) "d-axis flux linkage";
-  SI.PerUnit PSIq(start=PSIq0) "q-axis flux linkage";
-  SI.PerUnit PSIppd(start=PSIppd0) "d-axis subtransient flux linkage";
-  SI.PerUnit PSIppq(start=PSIppq0) "q-axis subtransient flux linkage";
-  SI.PerUnit PSIpp "Air-gap flux";
-  SI.PerUnit XadIfd(start=efd0) "d-axis machine field current";
-  SI.PerUnit XaqIlq(start=0) "q-axis Machine field current";
+  Types.PerUnit PSId(start=PSId0) "d-axis flux linkage";
+  Types.PerUnit PSIq(start=PSIq0) "q-axis flux linkage";
+  Types.PerUnit PSIppd(start=PSIppd0) "d-axis subtransient flux linkage";
+  Types.PerUnit PSIppq(start=PSIppq0) "q-axis subtransient flux linkage";
+  Types.PerUnit PSIpp "Air-gap flux";
+  Types.PerUnit XadIfd(start=efd0) "d-axis machine field current";
+  Types.PerUnit XaqIlq(start=0) "q-axis Machine field current";
 protected
   parameter Complex Zs=R_a + j*Xpp "Equivalent impedance";
   parameter Complex VT=v_0*cos(angle_0rad) + j*v_0*sin(angle_0rad)
@@ -54,7 +54,7 @@ protected
   parameter Real ang_PSIpp0=arg(PSIpp0) "flux angle";
   parameter Real ang_It=arg(It) "current angle";
   parameter Real ang_PSIpp0andIt=ang_PSIpp0 - ang_It "angle difference";
-  parameter SI.PerUnit abs_PSIpp0='abs'(PSIpp0)
+  parameter Types.PerUnit abs_PSIpp0='abs'(PSIpp0)
     "magnitude of sub-transient flux linkage";
   parameter Real dsat=SE_exp(
       abs_PSIpp0,
@@ -73,40 +73,40 @@ protected
     "Flux linkage in rotor reference frame";
   parameter Complex I_dq=real(It*DQ_dq) - j*imag(It*DQ_dq);
   //"The terminal current in rotor reference frame"
-  parameter SI.PerUnit PSIppq0=imag(PSIpp0_dq)
+  parameter Types.PerUnit PSIppq0=imag(PSIpp0_dq)
     "q-axis component of the sub-transient flux linkage";
-  parameter SI.PerUnit PSIppd0=real(PSIpp0_dq)
+  parameter Types.PerUnit PSIppd0=real(PSIpp0_dq)
     "d-axis component of the sub-transient flux linkage";
   //Initialization of current and voltage components in rotor reference frame (dq-axes).
-  parameter SI.PerUnit iq0=real(I_dq) "q-axis component of initial current";
-  parameter SI.PerUnit id0=imag(I_dq) "d-axis component of initial current";
-  parameter SI.PerUnit ud0=(-(PSIppq0 - Xppq*iq0)) - R_a*id0
+  parameter Types.PerUnit iq0=real(I_dq) "q-axis component of initial current";
+  parameter Types.PerUnit id0=imag(I_dq) "d-axis component of initial current";
+  parameter Types.PerUnit ud0=(-(PSIppq0 - Xppq*iq0)) - R_a*id0
     "d-axis component of initial voltage";
-  parameter SI.PerUnit uq0=PSIppd0 - Xppd*id0 - R_a*iq0
+  parameter Types.PerUnit uq0=PSIppd0 - Xppd*id0 - R_a*iq0
     "q-axis component of initial voltage";
   //Initialization current and voltage components in synchronous reference frame.
-  parameter SI.PerUnit vr0=v_0*cos(angle_0rad)
+  parameter Types.PerUnit vr0=v_0*cos(angle_0rad)
     "Real component of initial terminal voltage";
-  parameter SI.PerUnit vi0=v_0*sin(angle_0rad)
+  parameter Types.PerUnit vi0=v_0*sin(angle_0rad)
     "Imaginary component of initial terminal voltage";
-  parameter SI.PerUnit ir0=-CoB*(p0*vr0 + q0*vi0)/(vr0^2 + vi0^2)
+  parameter Types.PerUnit ir0=-CoB*(p0*vr0 + q0*vi0)/(vr0^2 + vi0^2)
     "Real component of initial armature current, systembase";
-  parameter SI.PerUnit ii0=-CoB*(p0*vi0 - q0*vr0)/(vr0^2 + vi0^2)
+  parameter Types.PerUnit ii0=-CoB*(p0*vi0 - q0*vr0)/(vr0^2 + vi0^2)
     "Imaginary component of initial armature current, systembase";
   //Initialization mechanical power and field voltage.
-  parameter SI.PerUnit pm0=p0 + R_a*iq0*iq0 + R_a*id0*id0
+  parameter Types.PerUnit pm0=p0 + R_a*iq0*iq0 + R_a*id0*id0
     "Initial mechanical power, machine base";
-  parameter SI.PerUnit efd0=dsat*PSIppd0 + PSIppd0 + (Xpd - Xpp)*id0 + (Xd - Xpd)*id0
+  parameter Types.PerUnit efd0=dsat*PSIppd0 + PSIppd0 + (Xpd - Xpp)*id0 + (Xd - Xpd)*id0
     "Initial field voltage magnitude";
-  parameter SI.PerUnit Epq0=PSIkd0 + (Xpd - Xl)*id0;
-  parameter SI.PerUnit Epd0=PSIkq0 - (Xpq - Xl)*iq0;
+  parameter Types.PerUnit Epq0=PSIkd0 + (Xpd - Xl)*id0;
+  parameter Types.PerUnit Epd0=PSIkq0 - (Xpq - Xl)*iq0;
   //Initialize remaining states:
-  parameter SI.PerUnit PSIkd0=(PSIppd0 - (Xpd - Xl)*K3d*id0)/(K3d + K4d)
+  parameter Types.PerUnit PSIkd0=(PSIppd0 - (Xpd - Xl)*K3d*id0)/(K3d + K4d)
     "d-axis initial rotor flux linkage";
-  parameter SI.PerUnit PSIkq0=((-PSIppq0) + (Xpq - Xl)*K3q*iq0)/(K3q + K4q)
+  parameter Types.PerUnit PSIkq0=((-PSIppq0) + (Xpq - Xl)*K3q*iq0)/(K3q + K4q)
     "q-axis initial rotor flux linkage";
-  parameter SI.PerUnit PSId0=PSIppd0 - Xppd*id0;
-  parameter SI.PerUnit PSIq0=PSIppq0 - Xppq*iq0;
+  parameter Types.PerUnit PSId0=PSIppd0 - Xppd*id0;
+  parameter Types.PerUnit PSIq0=PSIppq0 - Xppq*iq0;
   // Constants
   parameter Real K1d=(Xpd - Xppd)*(Xd - Xpd)/(Xpd - Xl)^2;
   parameter Real K2d=(Xpd - Xl)*(Xppd - Xl)/(Xpd - Xppd);

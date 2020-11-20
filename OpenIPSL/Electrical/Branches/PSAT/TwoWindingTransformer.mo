@@ -9,17 +9,17 @@ model TwoWindingTransformer "Modeled as series reactances without iron losses"
     annotation (Placement(transformation(extent={{-120,-10},{-100,10}})));
   OpenIPSL.Interfaces.PwPin n
     annotation (Placement(transformation(extent={{100,-10},{120,10}})));
-  parameter SI.ApparentPower S_b(displayUnit="MVA")=SysData.S_b "System base power"
+  parameter Types.ApparentPower S_b(displayUnit="MVA")=SysData.S_b "System base power"
     annotation (Dialog(group="Power flow"));
-  parameter SI.Voltage V_b(displayUnit="kV")=40e3 "Sending end bus voltage"
+  parameter Types.Voltage V_b(displayUnit="kV")=40e3 "Sending end bus voltage"
     annotation (Dialog(group="Power flow"));
-  parameter SI.ApparentPower Sn(displayUnit="MVA")=SysData.S_b "Power rating"
+  parameter Types.ApparentPower Sn(displayUnit="MVA")=SysData.S_b "Power rating"
     annotation (Dialog(group="Transformer parameters"));
-  parameter SI.Voltage Vn(displayUnit="kV")=40e3 "Voltage rating"
+  parameter Types.Voltage Vn(displayUnit="kV")=40e3 "Voltage rating"
     annotation (Dialog(group="Transformer parameters"));
-  parameter SI.PerUnit rT=0.01 "Resistance(transformer base)"
+  parameter Types.PerUnit rT=0.01 "Resistance(transformer base)"
     annotation (Dialog(group="Transformer parameters"));
-  parameter SI.PerUnit xT=0.1 "Reactance(transformer base)"
+  parameter Types.PerUnit xT=0.1 "Reactance(transformer base)"
     annotation (Dialog(group="Transformer parameters"));
   parameter Real m=1.0 "Optional fixed tap ratio"
     annotation (Dialog(group="Transformer parameters"));
@@ -28,19 +28,19 @@ model TwoWindingTransformer "Modeled as series reactances without iron losses"
       group="Visualisation",
       __Dymola_compact=true,
       __Dymola_descriptionLabel=true), choices(checkBox=true));
-  SI.ActivePower P12(displayUnit="MW");
-  SI.ActivePower P21(displayUnit="MW");
-  SI.ReactivePower Q12(displayUnit="Mvar");
-  SI.ReactivePower Q21(displayUnit="Mvar");
+  Types.ActivePower P12(displayUnit="MW");
+  Types.ActivePower P21(displayUnit="MW");
+  Types.ReactivePower Q12(displayUnit="Mvar");
+  Types.ReactivePower Q21(displayUnit="Mvar");
   Complex vs(re=p.vr, im=p.vi);
   Complex is(re=p.ir, im=p.ii);
   Complex vr(re=n.vr, im=n.vi);
   Complex ir(re=n.ir, im=n.ii);
 protected
-  parameter SI.Impedance Zn = Vn^2/Sn "Transformer base impedance";
-  parameter SI.Impedance Zb = V_b^2/S_b "System base impedance";
-  parameter SI.PerUnit r = rT * Zn/Zb "Resistance (system base)";
-  parameter SI.PerUnit x = xT * Zn/Zb "Reactance (system base)";
+  parameter Types.Impedance Zn = Vn^2/Sn "Transformer base impedance";
+  parameter Types.Impedance Zb = V_b^2/S_b "System base impedance";
+  parameter Types.PerUnit r = rT * Zn/Zb "Resistance (system base)";
+  parameter Types.PerUnit x = xT * Zn/Zb "Reactance (system base)";
   parameter Boolean tc = m <> 1.0 "Internal parameter to switch on the icon arrow";
 equation
   r*p.ir - x*p.ii = 1/m^2*p.vr - 1/m*n.vr;

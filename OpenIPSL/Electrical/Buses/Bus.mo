@@ -15,7 +15,7 @@ model Bus "Bus model (2014/03/10)"
         extent={{-10.0,-10.0},{10.0,10.0}}),
       iconTransformation(
         extent={{-10,-10},{10,10}})));
-  SI.PerUnit V(start=v_0) "Bus voltage magnitude";
+  Types.PerUnit V(start=v_0) "Bus voltage magnitude";
   SI.Conversions.NonSIunits.Angle_deg angle(start=angle_0)
     "Bus voltage angle";
 equation

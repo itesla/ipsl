@@ -9,8 +9,8 @@ model InfiniteBus "PSAT Infinite Bus"
     final enabledisplayPF=true,
     final enableangle_0=true,
     final enablev_0=true);
-  SI.ActivePower P(displayUnit="MW") "Active Power absorbed by the Infinite bus";
-  SI.ReactivePower Q(displayUnit="Mvar") "Reactive Power absorbed by the Infinite bus (MVAr)";
+  Types.ActivePower P(displayUnit="MW") "Active Power absorbed by the Infinite bus";
+  Types.ReactivePower Q(displayUnit="Mvar") "Reactive Power absorbed by the Infinite bus (MVAr)";
   Interfaces.PwPin p
     annotation (Placement(transformation(extent={{90,-10},{110,10}})));
 

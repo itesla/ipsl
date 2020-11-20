@@ -10,11 +10,11 @@ partial model baseLoad
     final enableQ_0=true,
     final enableP_0=true);
  import Modelica.ComplexMath.j;
-  parameter SI.ComplexPower S_p=P_0 + j*Q_0
+  parameter Types.ComplexPower S_p=P_0 + j*Q_0
     "Consumption of original constant power load";
-  parameter SI.ComplexPower S_i=0 + j*0
+  parameter Types.ComplexPower S_i=0 + j*0
     "Consumption of original constant current load";
-  parameter SI.ComplexPower S_y=0 + j*0
+  parameter Types.ComplexPower S_y=0 + j*0
     "Consumption of original constant shunt admittance load";
   parameter Complex a=1 + j*0
     "Load transfer fraction for constant current load";
@@ -28,17 +28,17 @@ partial model baseLoad
     ir(start=ir0),
     ii(start=ii0))
     annotation (Placement(transformation(extent={{-10,90},{10,110}})));
-  SI.Angle angle(start=angle_0rad) "Bus voltage angle";
-  SI.PerUnit v(start=v_0) "Bus voltage magnitude";
-  SI.PerUnit P "Active power consumption";
-  SI.PerUnit Q "Reactive power consumption";
+  Types.Angle angle(start=angle_0rad) "Bus voltage angle";
+  Types.PerUnit v(start=v_0) "Bus voltage magnitude";
+  Types.PerUnit P "Active power consumption";
+  Types.PerUnit Q "Reactive power consumption";
 protected
-  parameter SI.PerUnit p0=(S_i.re*v_0 + S_y.re*v_0^2 + S_p.re)/S_b "Initial active power";
-  parameter SI.PerUnit q0=(S_i.im*v_0 + S_y.im*v_0^2 + S_p.im)/S_b "Initial reactive power";
-  parameter SI.PerUnit vr0=v_0*cos(angle_0rad) "Initial real voltage";
-  parameter SI.PerUnit vi0=v_0*sin(angle_0rad) "Initial imaginary voltage";
-  parameter SI.PerUnit ir0=(p0*vr0 + q0*vi0)/(vr0^2 + vi0^2) "Initial real current";
-  parameter SI.PerUnit ii0=(p0*vi0 - q0*vr0)/(vr0^2 + vi0^2) "Initial imaginary current";
+  parameter Types.PerUnit p0=(S_i.re*v_0 + S_y.re*v_0^2 + S_p.re)/S_b "Initial active power";
+  parameter Types.PerUnit q0=(S_i.im*v_0 + S_y.im*v_0^2 + S_p.im)/S_b "Initial reactive power";
+  parameter Types.PerUnit vr0=v_0*cos(angle_0rad) "Initial real voltage";
+  parameter Types.PerUnit vi0=v_0*sin(angle_0rad) "Initial imaginary voltage";
+  parameter Types.PerUnit ir0=(p0*vr0 + q0*vi0)/(vr0^2 + vi0^2) "Initial real current";
+  parameter Types.PerUnit ii0=(p0*vi0 - q0*vr0)/(vr0^2 + vi0^2) "Initial imaginary current";
   parameter Complex S_P=Complex((1 - a.re - b.re)*S_p.re, (1 - a.im - b.im)*S_p.im)
       /S_b "[pu]";
   parameter Complex S_I=(S_i + Complex(a.re*S_p.re/v_0, a.im*S_p.im/v_0))/S_b

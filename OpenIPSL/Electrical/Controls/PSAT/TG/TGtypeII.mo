@@ -33,15 +33,15 @@ model TGtypeII "TG Type II"
         1}) annotation (Placement(transformation(
         origin={10,4.44089e-16},
         extent={{-10.0,-10.0},{10.0,10.0}})));
-  parameter SI.PerUnit wref=1 "Reference speed";
-  parameter SI.PerUnit R=0.2 "Droop";
-  parameter SI.PerUnit pmax0=1 "Maximum turbine output";
-  parameter SI.PerUnit pmin0=0 "Minimum turbine output";
-  parameter SI.Time Ts=0.1 "Governor Time constant";
-  parameter SI.Time T3=-0.1 "Transient gain time constant";
-  parameter SI.ApparentPower S_b(displayUnit="MVA")=100e6 "System base power"
+  parameter Types.PerUnit wref=1 "Reference speed";
+  parameter Types.PerUnit R=0.2 "Droop";
+  parameter Types.PerUnit pmax0=1 "Maximum turbine output";
+  parameter Types.PerUnit pmin0=0 "Minimum turbine output";
+  parameter Types.Time Ts=0.1 "Governor Time constant";
+  parameter Types.Time T3=-0.1 "Transient gain time constant";
+  parameter Types.ApparentPower S_b(displayUnit="MVA")=100e6 "System base power"
     annotation (Dialog(group="Power flow data"));
-  parameter SI.ApparentPower Sn(displayUnit="MVA")=20e6 "Nominal power";
+  parameter Types.ApparentPower Sn(displayUnit="MVA")=20e6 "Nominal power";
   Modelica.Blocks.Math.Gain gain1(k=1/Ro) annotation (Placement(transformation(
         origin={-20,6.66134e-16},
         extent={{-10.0,-10.0},{10.0,10.0}})));

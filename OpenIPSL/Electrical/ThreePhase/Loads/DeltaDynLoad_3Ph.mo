@@ -46,17 +46,17 @@ model DeltaDynLoad_3Ph "Variable three-phase delta load"
   parameter Integer ModelType=0 "0- Constant Power Model, 1- ZIP Model;"
     annotation (choices(choice=0 "Constant Power", choice=1 "ZIP Model"),
       Dialog(group="Power flow"));
-  parameter SI.ActivePower P_ab(displayUnit="MW")=1e6 "Active power for line AB"
+  parameter Types.ActivePower P_ab(displayUnit="MW")=1e6 "Active power for line AB"
     annotation (Dialog(group="Power flow"));
-  parameter SI.ReactivePower Q_ab(displayUnit="Mvar")=0 "Reactive power for line AB"
+  parameter Types.ReactivePower Q_ab(displayUnit="Mvar")=0 "Reactive power for line AB"
     annotation (Dialog(group="Power flow"));
-  parameter SI.ActivePower P_bc(displayUnit="MW")=1e6 "Active power for line BC"
+  parameter Types.ActivePower P_bc(displayUnit="MW")=1e6 "Active power for line BC"
     annotation (Dialog(group="Power flow"));
-  parameter SI.ReactivePower Q_bc(displayUnit="Mvar")=0  "Reactive power for line BC"
+  parameter Types.ReactivePower Q_bc(displayUnit="Mvar")=0  "Reactive power for line BC"
     annotation (Dialog(group="Power flow"));
-  parameter SI.ActivePower P_ca(displayUnit="MW")=1e6 "Active power for line CA"
+  parameter Types.ActivePower P_ca(displayUnit="MW")=1e6 "Active power for line CA"
     annotation (Dialog(group="Power flow"));
-  parameter SI.ReactivePower Q_ca(displayUnit="Mvar")=0  "Reactive power for line CA"
+  parameter Types.ReactivePower Q_ca(displayUnit="Mvar")=0  "Reactive power for line CA"
     annotation (Dialog(group="Power flow"));
   parameter Real A_ab=0 "Percentage of Constant Power Load for Line AB (%)"
     annotation (Dialog(group="Load Parameters for ZIP Model"));

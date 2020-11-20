@@ -4,13 +4,13 @@ model ThermostaticallyControlled "Thload - Thermostatically Controlled Load"
   parameter Real Kl=2 "Ceiling conductance output";
   parameter Real Kp=10 "Gain of the proportional controller [pu/pu]";
   parameter Real Ki=25 "Gain of the integral controller [pu/pu]";
-  parameter SI.Time Ti=10 "Time constant of integral controller";
-  parameter SI.Time T1=1200 "Time constant of the thermal load";
+  parameter Types.Time Ti=10 "Time constant of integral controller";
+  parameter Types.Time T1=1200 "Time constant of the thermal load";
   parameter SI.Temp_C T_ref=70 "Reference temperature";
   parameter SI.Temp_C T0=10 "Initial temperature";
-  parameter SI.PerUnit G0 = P_0/100*v_0^2 "Initial conductance";
-  parameter SI.PerUnit Gmax = Kl*G0 "Maximum conductance";
-  parameter SI.PerUnit Gmin = 0 "Minimum conductance";
+  parameter Types.PerUnit G0 = P_0/100*v_0^2 "Initial conductance";
+  parameter Types.PerUnit Gmax = Kl*G0 "Maximum conductance";
+  parameter Types.PerUnit Gmin = 0 "Minimum conductance";
   parameter Real K1 = (T_ref-T0)/P_0 "Active power gain [pu/pu]";
   parameter Real K3=1 "Gain anti wind-up";
 

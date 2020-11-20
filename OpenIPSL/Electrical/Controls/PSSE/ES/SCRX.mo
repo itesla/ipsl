@@ -3,11 +3,11 @@ model SCRX "SCRX - Bus Fed or Solid Fed Static Exciter (AC4A from [IEEE1992] / A
   extends Icons.VerifiedModel;
   extends OpenIPSL.Electrical.Controls.PSSE.ES.BaseClasses.BaseExciter;
   parameter Real T_AT_B=0.1 "Ratio between regulator numerator (lead) and denominator (lag) time constants";
-  parameter SI.Time T_B=1 "Regulator denominator (lag) time constant";
-  parameter SI.PerUnit K=100 "Excitation power source output gain";
-  parameter SI.Time T_E=0.005 "Excitation power source output time constant";
-  parameter SI.PerUnit E_MIN=-10 "Minimum exciter output";
-  parameter SI.PerUnit E_MAX=10 "Maximum exciter output";
+  parameter Types.Time T_B=1 "Regulator denominator (lag) time constant";
+  parameter Types.PerUnit K=100 "Excitation power source output gain";
+  parameter Types.Time T_E=0.005 "Excitation power source output time constant";
+  parameter Types.PerUnit E_MIN=-10 "Minimum exciter output";
+  parameter Types.PerUnit E_MAX=10 "Maximum exciter output";
   parameter Boolean C_SWITCH=false "Feeding selection. False for bus fed, and True for solid fed";
   parameter Real r_cr_fd=10 "Ratio between crowbar circuit resistance and field circuit resistance";
   Modelica.Blocks.Math.Add3 V_erro
@@ -38,7 +38,7 @@ model SCRX "SCRX - Bus Fed or Solid Fed Static Exciter (AC4A from [IEEE1992] / A
         rotation=90,
         origin={-100,-150})));
 protected
-  parameter SI.PerUnit VR0(fixed=false);
+  parameter Types.PerUnit VR0(fixed=false);
 initial equation
   if not C_SWITCH then
     VR0 = Efd0/ECOMP0;

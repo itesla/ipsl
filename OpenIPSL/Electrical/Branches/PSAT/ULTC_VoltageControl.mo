@@ -5,23 +5,23 @@ model ULTC_VoltageControl
     annotation (Placement(transformation(extent={{-120,-10},{-100,10}})));
   OpenIPSL.Interfaces.PwPin n
     annotation (Placement(transformation(extent={{100,-10},{120,10}})));
-  parameter SI.ApparentPower S_b(displayUnit="MVA")=100e6 "System base power"
+  parameter Types.ApparentPower S_b(displayUnit="MVA")=100e6 "System base power"
     annotation (Dialog(group="Power flow data"));
-  parameter SI.Voltage Vbus1(displayUnit="kV")=400e3 "Sending end Bus nominal voltage"
+  parameter Types.Voltage Vbus1(displayUnit="kV")=400e3 "Sending end Bus nominal voltage"
     annotation (Dialog(group="Power flow data"));
-  parameter SI.Voltage Vbus2(displayUnit="kV")=100e3 "Receiving end Bus nominal voltage"
+  parameter Types.Voltage Vbus2(displayUnit="kV")=100e3 "Receiving end Bus nominal voltage"
     annotation (Dialog(group="Power flow data"));
-  parameter SI.ApparentPower Sn(displayUnit="MVA")=100e6 "Power rating (MVA)"
+  parameter Types.ApparentPower Sn(displayUnit="MVA")=100e6 "Power rating (MVA)"
     annotation (Dialog(group="Transformer data"));
-  parameter SI.Voltage Vn(displayUnit="kV")=400e3 "Voltage rating"
+  parameter Types.Voltage Vn(displayUnit="kV")=400e3 "Voltage rating"
     annotation (Dialog(group="Transformer data"));
-  parameter SI.PerUnit rT=0.01 "Transformer resistance(transformer base)"
+  parameter Types.PerUnit rT=0.01 "Transformer resistance(transformer base)"
     annotation (Dialog(group="Transformer data"));
-  parameter SI.PerUnit xT=0.2 "Transformer reactance(transformer base)"
+  parameter Types.PerUnit xT=0.2 "Transformer reactance(transformer base)"
     annotation (Dialog(group="Transformer data"));
-  parameter SI.PerUnit v_ref=1.0 "Reference voltage"
+  parameter Types.PerUnit v_ref=1.0 "Reference voltage"
     annotation (Dialog(group="Voltage control"));
-  parameter SI.PerUnit v_0=1.008959700699460
+  parameter Types.PerUnit v_0=1.008959700699460
     "Initial voltage magnitude of the controlled bus"
     annotation (Dialog(group="Voltage control"));
   parameter Real kT=4 "Nominal tap ratio (V1/V2)"
@@ -32,26 +32,26 @@ model ULTC_VoltageControl
     annotation (Dialog(group="Voltage control"));
   parameter Real m_min=0.9785 "Minimum tap ratio [pu/pu]"
     annotation (Dialog(group="Voltage control"));
-  parameter SI.PerUnit H=0.001 "Integral deviation"
+  parameter Types.PerUnit H=0.001 "Integral deviation"
     annotation (Dialog(group="Voltage control"));
-  parameter SI.TimeAging K=0.10 "Inverse time constant"
+  parameter Types.TimeAging K=0.10 "Inverse time constant"
     annotation (Dialog(group="Voltage control"));
 //  parameter Real deltam=0 "Tap ratio step (p.u./p.u.)"
 //    annotation (Dialog(group="Voltage control"));
 //  parameter Real d=0.05 "Dead zone percentage"
 //    annotation (Dialog(group="Voltage control"));
-  SI.PerUnit m "Tap ratio";
-  SI.PerUnit vk "Voltage at primary";
-  SI.PerUnit vm(start=v_0) "Voltage at secondary";
-  SI.Angle anglevk "Angle at primary";
-  SI.Angle anglevm "Angle at secondary ";
+  Types.PerUnit m "Tap ratio";
+  Types.PerUnit vk "Voltage at primary";
+  Types.PerUnit vm(start=v_0) "Voltage at secondary";
+  Types.Angle anglevk "Angle at primary";
+  Types.Angle anglevm "Angle at secondary ";
 protected
-  parameter SI.Voltage V2=Vn/kT "Secondary voltage";
-  parameter SI.Impedance Zn = Vn^2/Sn "Transformer base impedance";
-  parameter SI.Impedance Zb = Vbus1^2/S_b "System base impedance";
-  parameter SI.PerUnit r = rT * Zn/Zb "Resistance(system base)";
-  parameter SI.PerUnit x = xT * Zn/Zb "Reactance(system base)";
-  parameter SI.PerUnit vref=v_ref*(V2/Vbus2);
+  parameter Types.Voltage V2=Vn/kT "Secondary voltage";
+  parameter Types.Impedance Zn = Vn^2/Sn "Transformer base impedance";
+  parameter Types.Impedance Zb = Vbus1^2/S_b "System base impedance";
+  parameter Types.PerUnit r = rT * Zn/Zb "Resistance(system base)";
+  parameter Types.PerUnit x = xT * Zn/Zb "Reactance(system base)";
+  parameter Types.PerUnit vref=v_ref*(V2/Vbus2);
 initial equation
   m = m0;
 equation

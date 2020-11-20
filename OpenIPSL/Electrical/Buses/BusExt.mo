@@ -19,20 +19,20 @@ model BusExt
         extent={{-12,-100},{12,100}}),
       iconTransformation(
         extent={{-4,-60},{4,60}})));
-  SI.PerUnit v(start=v_0) "Bus voltage magnitude";
+  Types.PerUnit v(start=v_0) "Bus voltage magnitude";
   SI.Conversions.NonSIunits.Angle_deg angle(start=angle_0) "Bus voltage angle";
-  parameter SI.PerUnit v_0=1 "Voltage magnitude"
+  parameter Types.PerUnit v_0=1 "Voltage magnitude"
     annotation (Dialog(group="Power flow data"));
   parameter SI.Conversions.NonSIunits.Angle_deg angle_0=0 "Voltage angle"
     annotation (Dialog(group="Power flow data"));
-  parameter SI.Voltage V_b(displayUnit="kV")=130e3 "Base voltage"
+  parameter Types.Voltage V_b(displayUnit="kV")=130e3 "Base voltage"
     annotation (Dialog(group="Power flow data"));
-  parameter SI.ApparentPower S_b(displayUnit="MVA")=SysData.S_b "System base power"
+  parameter Types.ApparentPower S_b(displayUnit="MVA")=SysData.S_b "System base power"
     annotation (Dialog(group="Power flow data"));
 protected
-  parameter SI.Angle angle_0rad = SI.Conversions.from_deg(angle_0) "Initial angle in rad";
-  parameter SI.PerUnit vr0=v_0*cos(angle_0rad);
-  parameter SI.PerUnit vi0=v_0*sin(angle_0rad);
+  parameter Types.Angle angle_0rad = SI.Conversions.from_deg(angle_0) "Initial angle in rad";
+  parameter Types.PerUnit vr0=v_0*cos(angle_0rad);
+  parameter Types.PerUnit vi0=v_0*sin(angle_0rad);
 equation
   if np > 1 then
     for i in 2:np loop
