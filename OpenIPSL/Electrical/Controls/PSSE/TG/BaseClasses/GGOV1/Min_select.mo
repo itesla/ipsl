@@ -1,4 +1,4 @@
-within OpenIPSL.Electrical.Controls.PSSE.TG.GGOV1;
+within OpenIPSL.Electrical.Controls.PSSE.TG.BaseClasses.GGOV1;
 block Min_select
   "Output the minimum and the maximum element of the input vector"
   parameter Integer nu(min=0) = 0 "Number of input connections"

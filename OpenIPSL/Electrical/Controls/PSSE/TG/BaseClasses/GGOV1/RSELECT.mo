@@ -1,7 +1,7 @@
-within OpenIPSL.Electrical.Controls.PSSE.TG.GGOV1;
+within OpenIPSL.Electrical.Controls.PSSE.TG.BaseClasses.GGOV1;
 block RSELECT "Output the minimum and the maximum element of the input vector"
   // extends Modelica.Blocks.Icons.Block;
-  parameter Real Rselect;
+  parameter Integer Rselect;
   Modelica.Blocks.Interfaces.RealOutput y annotation (Placement(transformation(
           extent={{100,-12},{120,8}})));
   Modelica.Blocks.Interfaces.RealInput Pelect annotation (Placement(
