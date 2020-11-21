@@ -60,10 +60,12 @@ model GGOV1DU "GE General Governor/Turbine Mode"
     "Turbine mechanical power (pu)"
     annotation (Placement(transformation(extent={{228,22},{254,48}}), iconTransformation(extent={{260,-12},{284,12}})));
 public
-  OpenIPSL.Electrical.Controls.PSSE.TG.BaseClasses.GGOV1.LoadLimiter gGOV1_Temp(
+  OpenIPSL.Electrical.Controls.PSSE.TG.BaseClasses.GGOV1.LoadLimiterDU gGOV1_Temp(
     Kturb=Kturb,
     Kpload=Kpload,
     Kiload=Kiload,
+    Vmax=Vmax,
+    Vmin=Vmin,
     Dm=Dm,
     Wfnl=Wfnl) annotation (Placement(transformation(extent={{-140,40},{-80,100}})));
   Modelica.Blocks.Nonlinear.Limiter V(uMax=Vmax, uMin=Vmin) annotation (Placement(transformation(extent={{70,-20},{96,6}})));
@@ -86,7 +88,7 @@ public
     Ka=Ka,
     Ta=Ta,
     DELT=DELT) annotation (Placement(transformation(extent={{-140,-48},{-80,12}})));
-  OpenIPSL.Electrical.Controls.PSSE.TG.BaseClasses.GGOV1.PIDGovernor gGOV1_Power(
+  OpenIPSL.Electrical.Controls.PSSE.TG.BaseClasses.GGOV1.PIDGovernorDU gGOV1_Power(
     Rselect=Rselect,
     R=R,
     T_pelec=T_pelec,
@@ -131,7 +133,6 @@ equation
   connect(gGOV1_Power.SPEED, SPEED) annotation (Line(points={{-142.357,-90.5},{-180,-90.5},{-180,-34},{-240,-34},{-240,17},{-283,17}}, color={0,0,127}));
   connect(gGOV1_Turb.SPEED, SPEED) annotation (Line(points={{133.857,31.4286},{100,31.4286},{100,140},{-240,140},{-240,17},{-283,17}}, color={0,0,127}));
   connect(gGOV1_Power.PELEC, PELEC) annotation (Line(points={{-142.357,-131.643},{-182,-131.643},{-182,-168},{-256,-168},{-256,-54},{-302,-54}}, color={0,0,127}));
-  connect(gGOV1_Temp.WF, V.y) annotation (Line(points={{-78.2,67},{80,67},{80,20},{106,20},{106,-6},{97.3,-7}}, color={0,0,127}));
   connect(gGOV1_Temp.PELEC, PELEC) annotation (Line(points={{-110,37.6},{-110,20},{-220,20},{-220,-54},{-302,-54}}, color={0,0,127}));
   connect(gGOV1_Power.VSTROKE, gGOV1_Turb.VSTROKE) annotation (Line(points={{-116.214,-141.929},{-116.214,-180},{212,-180},{212,-11.4286},{198.571,-11.4286}}, color={0,0,127}));
   connect(gGOV1_Turb.PELEC, PELEC) annotation (Line(points={{134.071,10.2143},{120,10.2143},{120,-200},{-274,-200},{-274,-54},{-302,-54}}, color={0,0,127}));
