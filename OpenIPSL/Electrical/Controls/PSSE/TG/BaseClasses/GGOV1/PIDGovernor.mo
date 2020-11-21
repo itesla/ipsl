@@ -18,14 +18,12 @@ model PIDGovernor "GE GGOV General Governor Frequency Controller"
   parameter Types.TimeAging Kimw=0 "Power controller (reset) gain";
   parameter Types.PerUnit db=0 "Speed governor deadband";
   parameter Types.PerUnit Wfnl=0.2 "No load fuel flow";
+  parameter Types.PerUnit Dm=0 "Mechanical damping coefficient";
   Modelica.Blocks.Math.Gain KPGOV(k=Kpgov) annotation (Placement(transformation(extent={{60,16},{76,32}})));
   Modelica.Blocks.Continuous.Integrator s2(
     k=1,
     initType=Modelica.Blocks.Types.Init.InitialOutput,
-    y_start=s20) annotation (Placement(transformation(
-        extent={{-7,-7},{7,7}},
-        rotation=180,
-        origin={83,-29})));
+    y_start=s20) annotation (Placement(visible = true, transformation(origin = {84, -10}, extent = {{8, 8}, {-8, -8}}, rotation = 180)));
   Modelica.Blocks.Continuous.Derivative s1(
     k=Kdgov,
     T=Tdgov,
@@ -59,32 +57,17 @@ model PIDGovernor "GE GGOV General Governor Frequency Controller"
         extent={{-10,-10},{10,10}},
         rotation=0,
         origin={-116,-82})));
-  Modelica.Blocks.Math.Gain KPGOV1(k=Kigov/Kpgov) annotation (Placement(transformation(
-        extent={{-5,-5},{5,5}},
-        rotation=180,
-        origin={103,-29})));
-  Modelica.Blocks.Math.Add LoadlimiterPI2(k1=-1) annotation (Placement(transformation(
-        extent={{-5,5},{5,-5}},
-        rotation=180,
-        origin={123,-29})));
+  Modelica.Blocks.Math.Gain KPGOV1(k=Kigov) annotation (Placement(visible = true, transformation(origin = {62, -10}, extent = {{6, -6}, {-6, 6}}, rotation = 180)));
   OpenIPSL.Electrical.Controls.PSSE.TG.BaseClasses.GGOV1.RSELECT rSELECT(Rselect=Rselect)
     annotation (Placement(transformation(
         extent={{-15,-22},{15,22}},
         rotation=90,
         origin={-52,-43})));
-protected
-  parameter Types.PerUnit Pe0(fixed=false);
-  parameter Types.PerUnit Pmech0(fixed=false);
-  parameter Types.PerUnit s00(fixed=false);
-  parameter Types.PerUnit s20(fixed=false);
-  parameter Types.PerUnit s70(fixed=false);
-  parameter Types.PerUnit fsr0(fixed=false);
-public
   Modelica.Blocks.Interfaces.RealInput PELEC
     "Machine electrical power (pu)"
     annotation (Placement(transformation(extent={{-182,-118},{-154,-90}}), iconTransformation(extent={{-168,-118},{-134,-84}})));
   Modelica.Blocks.Interfaces.RealInput PMW_SET
-    "Supervisory Load Controller Setpoint"
+  "Supervisory Load Controller Setpoint"
     annotation (Placement(transformation(extent={{-148,-66},{-118,-36}}), iconTransformation(extent={{-168,-58},{-134,-24}})));
   Modelica.Blocks.Interfaces.RealInput P_REF annotation (Placement(transformation(extent={{-156,28},{-132,52}}), iconTransformation(extent={{-168,20},{-134,54}})));
   Modelica.Blocks.Interfaces.RealInput SPEED
@@ -106,6 +89,13 @@ public
         rotation=90,
         origin={71,-149})));
   Modelica.Blocks.Interfaces.RealOutput FSRN annotation (Placement(transformation(extent={{136,6},{154,24}}), iconTransformation(extent={{140,-12},{164,12}})));
+protected
+  parameter Types.PerUnit Pe0(fixed=false);
+  parameter Types.PerUnit Pmech0(fixed=false);
+  parameter Types.PerUnit s00(fixed=false);
+  parameter Types.PerUnit s20(fixed=false);
+  parameter Types.PerUnit s70(fixed=false);
+  parameter Types.PerUnit fsr0(fixed=false);
 initial equation
   Pe0 = PELEC;
   Pmech0 = PELEC;
@@ -160,22 +150,6 @@ equation
       points={{76.8,24},{80,24},{80,15},{99.8,15}},
       color={0,0,127},
       smooth=Smooth.None));
-  connect(s2.u, KPGOV1.y) annotation (Line(
-      points={{91.4,-29},{97.5,-29}},
-      color={0,0,127},
-      smooth=Smooth.None));
-  connect(s2.y, GovernorPID.u3) annotation (Line(
-      points={{75.3,-29},{66,-29},{66,-28},{56,-28},{56,6.2},{99.8,6.2}},
-      color={0,0,127},
-      smooth=Smooth.None));
-  connect(KPGOV1.u, LoadlimiterPI2.y) annotation (Line(
-      points={{109,-29},{117.5,-29}},
-      color={0,0,127},
-      smooth=Smooth.None));
-  connect(LoadlimiterPI2.u1, GovernorPID.u3) annotation (Line(
-      points={{129,-26},{136,-26},{136,-16},{56,-16},{56,6.2},{99.8,6.2}},
-      color={0,0,127},
-      smooth=Smooth.None));
   connect(s0.y, rSELECT.Pelect) annotation (Line(
       points={{-105,-82},{-64.32,-82},{-64.32,-61}},
       color={0,0,127},
@@ -191,46 +165,15 @@ equation
   connect(VSTROKE, rSELECT.ValveStroke) annotation (Line(points={{-3,-93},{-3,-41.8},{-11,-41.8},{-25.6,-41.8}}, color={0,0,127}));
   connect(GOVOUT1, rSELECT.GovernorOutput) annotation (Line(points={{30,-104},{30,-30.4},{-25.6,-30.4}},color={0,0,127}));
   connect(FSRN, GovernorPID.y) annotation (Line(points={{145,15},{125.1,15}}, color={0,0,127}));
-  connect(LoadlimiterPI2.u2, rSELECT.GovernorOutput) annotation (Line(points={{129,-32},{136,-32},{136,-60},{30,-60},{30,-30.4},{-25.6,-30.4}}, color={0,0,127}));
+  connect(KPGOV1.y, s2.u) annotation(
+    Line(points = {{69, -10}, {74, -10}}, color = {0, 0, 127}));
+  connect(KPGOV1.u, limiterSerror.y) annotation(
+    Line(points = {{54, -10}, {48, -10}, {48, 14}, {38, 14}, {38, 14}}, color = {0, 0, 127}));
+  connect(s2.y, GovernorPID.u3) annotation(
+    Line(points = {{92, -10}, {96, -10}, {96, 6}, {100, 6}, {100, 6}}, color = {0, 0, 127}));
   annotation (
-    Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-140,-140},{140,140}}), graphics={Text(
-                    extent={{-108,8},{-96,0}},
-                    lineColor={255,0,0},
-                    textString="s7"),Text(
-                    extent={{86,78},{96,70}},
-                    lineColor={255,0,0},
-                    textString="s1"),Text(
-                    extent={{66,-34},{76,-42}},
-                    lineColor={255,0,0},
-                    textString="s2"),Text(
-                    extent={{-102,-86},{-90,-94}},
-                    lineColor={255,0,0},
-                    textString="s0")}),
-    Icon(coordinateSystem(extent={{-140,-140},{140,140}}, preserveAspectRatio=false), graphics={Rectangle(extent={{-140,140},{140,-140}}, lineColor={0,0,255}),Text(
-                    extent={{-128,104},{-72,80}},
-                    lineColor={28,108,200},
-                    textString="SPEED"),Text(
-                    extent={{-128,50},{-72,26}},
-                    lineColor={28,108,200},
-                    textString="P_REF"),Text(
-                    extent={{-130,-20},{-60,-66}},
-                    lineColor={28,108,200},
-                    textString="PMW_SET"),Text(
-                    extent={{-128,-92},{-72,-116}},
-                    lineColor={28,108,200},
-                    textString="PELEC"),Text(
-                    extent={{90,8},{138,-10}},
-                    lineColor={28,108,200},
-                    textString="FSRN"),Text(
-                    extent={{-64,42},{66,-40}},
-                    lineColor={28,108,200},
-                    textString="Governor"),Text(
-                    extent={{-58,-110},{-6,-140}},
-                    lineColor={28,108,200},
-                    textString="VSTROKE"),Text(
-                    extent={{46,-114},{100,-140}},
-                    lineColor={28,108,200},
-                    textString="GOVOUT1")}),
+    Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-140,-140},{140,140}}), graphics={Text(lineColor = {255, 0, 0}, extent = {{-108, 8}, {-96, 0}}, textString = "s7"),Text(lineColor = {255, 0, 0}, extent = {{86, 78}, {96, 70}}, textString = "s1"),Text(origin = {0, 12},lineColor = {255, 0, 0}, extent = {{66, -34}, {76, -42}}, textString = "s2"),Text(lineColor = {255, 0, 0}, extent = {{-102, -86}, {-90, -94}}, textString = "s0")}),
+    Icon(coordinateSystem(extent={{-140,-140},{140,140}}, preserveAspectRatio=false), graphics={Rectangle(lineColor = {0, 0, 255}, extent = {{-140, 140}, {140, -140}}),Text(lineColor = {28, 108, 200}, extent = {{-128, 104}, {-72, 80}}, textString = "SPEED"),Text(lineColor = {28, 108, 200}, extent = {{-128, 50}, {-72, 26}}, textString = "P_REF"),Text(lineColor = {28, 108, 200}, extent = {{-130, -20}, {-60, -66}}, textString = "PMW_SET"),Text(lineColor = {28, 108, 200}, extent = {{-128, -92}, {-72, -116}}, textString = "PELEC"),Text(lineColor = {28, 108, 200}, extent = {{90, 8}, {138, -10}}, textString = "FSRN"),Text(lineColor = {28, 108, 200}, extent = {{-64, 42}, {66, -40}}, textString = "Governor"),Text(lineColor = {28, 108, 200}, extent = {{-58, -110}, {-6, -140}}, textString = "VSTROKE"),Text(lineColor = {28, 108, 200}, extent = {{46, -114}, {100, -140}}, textString = "GOVOUT1")}),
     Documentation(revisions="<html>
 <!--DISCLAIMER-->
 <p>OpenIPSL:</p>

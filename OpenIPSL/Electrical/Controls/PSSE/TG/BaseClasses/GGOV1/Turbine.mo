@@ -26,16 +26,10 @@ model Turbine "GE General GGOV1 Turbine Model"
 	      extent={{-10,-10},{10,10}},
 	      rotation=90,
 	      origin={40,66})));
-	Modelica.Blocks.Math.Gain gain1(k=Kturb) annotation (Placement(transformation(
-	      extent={{-8,-8},{8,8}},
-	      rotation=90,
-	      origin={40,36})));
+	Modelica.Blocks.Math.Gain gain1(k=Kturb) annotation (Placement(visible = true, transformation(origin = {40, -8}, extent = {{-8, -8}, {8, 8}}, rotation = 90)));
 	Modelica.Blocks.Nonlinear.FixedDelay delay(delayTime=Teng)
 	  "Transport lag time"
-	  annotation (Placement(transformation(
-	      extent={{-14,-14},{14,14}},
-	      rotation=90,
-	      origin={40,0})));
+	  annotation (Placement(visible = true, transformation(origin = {40, 28}, extent = {{-14, -14}, {14, 14}}, rotation = 90)));
 	Modelica.Blocks.Math.Add add4(k2=-1) annotation (Placement(transformation(
 	      extent={{-6,-6},{6,6}},
 	      rotation=90,
@@ -66,14 +60,6 @@ model Turbine "GE General GGOV1 Turbine Model"
 	      extent={{-6,-6},{6,6}},
 	      rotation=0,
 	      origin={-62,-54})));
-	protected
-	parameter Types.PerUnit Pmech0(fixed=false);
-	parameter Types.PerUnit s30(fixed=false);
-    parameter Types.PerUnit s40(fixed=false);
-    parameter Types.PerUnit s50(fixed=false);
-	parameter Types.PerUnit s90(fixed=false);
-	parameter Types.PerUnit fsr0(fixed=false);
-	public
 	Modelica.Blocks.Interfaces.RealInput SPEED
 	  "Machine speed deviation from nominal (pu)"
 	  annotation (Placement(transformation(extent={{-164,-14},{-138,12}}), iconTransformation(extent={{-166,84},{-134,116}})));
@@ -117,7 +103,13 @@ model Turbine "GE General GGOV1 Turbine Model"
 	Modelica.Blocks.Sources.Constant const(k=Wfnl) annotation (Placement(transformation(extent={{76,-84},{56,-64}})));
 	Modelica.Blocks.Math.Add Dw2w annotation (Placement(transformation(extent={{-108,12},{-88,32}})));
 	Modelica.Blocks.Sources.Constant const1(k=1) annotation (Placement(transformation(extent={{-138,32},{-124,46}})));
-	initial equation
+protected
+	parameter Types.PerUnit Pmech0(fixed=false);
+	parameter Types.PerUnit s30(fixed=false);
+    parameter Types.PerUnit s40(fixed=false);
+    parameter Types.PerUnit s50(fixed=false);
+	parameter Types.PerUnit s90(fixed=false);
+	parameter Types.PerUnit fsr0(fixed=false);	initial equation
 	Pmech0 = PELEC;
 	s30 = fsr0;
 	s40 = Pmech0;
@@ -166,12 +158,6 @@ model Turbine "GE General GGOV1 Turbine Model"
 	    points={{-69.2,-57.6},{-76,-57.6},{-76,-86},{10,-86},{10,-52.4},{18.8,-52.4}},
 	    color={0,0,127},
 	    smooth=Smooth.None));
-	connect(s4.u, gain1.y) annotation (Line(
-	    points={{40,54},{40,44.8}},
-	    color={0,0,127},
-	    smooth=Smooth.None));
-	connect(delay.y, gain1.u) annotation (Line(points={{40,15.4},{40,26.4}}, color={0,0,127}));
-	connect(delay.u, add4.y) annotation (Line(points={{40,-16.8},{40,-27.4}}, color={0,0,127}));
 	connect(add5.y, PMECH) annotation (Line(points={{85,96},{90,96},{90,59},{125,59}}, color={0,0,127}));
 	connect(s5.u, s9.y) annotation (Line(
 	    points={{-100,124},{-85,124}},
@@ -195,43 +181,16 @@ model Turbine "GE General GGOV1 Turbine Model"
 	connect(const1.y, Dw2w.u1) annotation (Line(points={{-123.3,39},{-120,39},{-120,28},{-110,28}}, color={0,0,127}));
 	connect(Dw2w.y, dm_select.speed) annotation (Line(points={{-87,22},{-60,22},{-60,101.8},{-18,101.8}}, color={0,0,127}));
 	connect(flag10.speed, dm_select.speed) annotation (Line(points={{18.2,-118},{18.2,-130},{-120,-130},{-120,-20},{-60,-20},{-60,101.8},{-18,101.8}}, color={0,0,127}));
+ connect(add4.y, gain1.u) annotation(
+    Line(points = {{40, -28}, {40, -28}, {40, -18}, {40, -18}}, color = {0, 0, 127}));
+ connect(gain1.y, delay.u) annotation(
+    Line(points = {{40, 0}, {40, 0}, {40, 12}, {40, 12}}, color = {0, 0, 127}));
+ connect(delay.y, s4.u) annotation(
+    Line(points = {{40, 44}, {40, 44}, {40, 54}, {40, 54}}, color = {0, 0, 127}));
 	annotation (
-	  Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-140,-140},{140,140}}), graphics={Text(
-	                  extent={{-10,-72},{0,-80}},
-	                  lineColor={255,0,0},
-	                  textString="s3"),Text(
-	                  extent={{48,88},{58,80}},
-	                  lineColor={255,0,0},
-	                  textString="s4"),Text(
-	                  extent={{-96,138},{-86,130}},
-	                  lineColor={255,0,0},
-	                  textString="s9"),Text(
-	                  extent={{-134,138},{-124,130}},
-	                  lineColor={255,0,0},
-	                  textString="s5")}),
-	  Icon(coordinateSystem(extent={{-140,-140},{140,140}}, preserveAspectRatio=false), graphics={Rectangle(extent={{-140,140},{140,-140}}, lineColor={0,0,255}),Text(
-	                  extent={{-64,42},{58,-40}},
-	                  lineColor={28,108,200},
-	                  textString="Turbine
-	Model"),          Text(
-	        extent={{-130,112},{-74,88}},
-	                  lineColor={28,108,200},
-	                  textString="SPEED"),Text(
-	                  extent={{-138,-92},{-92,-112}},
-	                  lineColor={28,108,200},
-	                  textString="FSR"),Text(
-	                  extent={{80,12},{136,-12}},
-	                  lineColor={28,108,200},
-	                  textString="PMECH"),Text(
-	                  extent={{-24,136},{28,116}},
-	                  lineColor={28,108,200},
-	                  textString="TEXM"),Text(
-	                  extent={{66,-88},{132,-114}},
-	                  lineColor={28,108,200},
-	                  textString="VSTROKE"),Text(
-	                  extent={{-132,12},{-76,-12}},
-	                  lineColor={28,108,200},
-	                  textString="PELEC")}),
+	  Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-140,-140},{140,140}}), graphics={Text(lineColor = {255, 0, 0}, extent = {{-10, -72}, {0, -80}}, textString = "s3"),Text(lineColor = {255, 0, 0}, extent = {{48, 88}, {58, 80}}, textString = "s4"),Text(lineColor = {255, 0, 0}, extent = {{-96, 138}, {-86, 130}}, textString = "s9"),Text(lineColor = {255, 0, 0}, extent = {{-134, 138}, {-124, 130}}, textString = "s5")}),
+	  Icon(coordinateSystem(extent={{-140,-140},{140,140}}, preserveAspectRatio=false), graphics={Rectangle(lineColor = {0, 0, 255}, extent = {{-140, 140}, {140, -140}}),Text(lineColor = {28, 108, 200}, extent = {{-64, 42}, {58, -40}}, textString = "Turbine
+	Model"),          Text(lineColor = {28, 108, 200}, extent = {{-130, 112}, {-74, 88}}, textString = "SPEED"),Text(lineColor = {28, 108, 200}, extent = {{-138, -92}, {-92, -112}}, textString = "FSR"),Text(lineColor = {28, 108, 200}, extent = {{80, 12}, {136, -12}}, textString = "PMECH"),Text(lineColor = {28, 108, 200}, extent = {{-24, 136}, {28, 116}}, textString = "TEXM"),Text(lineColor = {28, 108, 200}, extent = {{66, -88}, {132, -114}}, textString = "VSTROKE"),Text(lineColor = {28, 108, 200}, extent = {{-132, 12}, {-76, -12}}, textString = "PELEC")}),
 	  Documentation(revisions="<html>
 	<!--DISCLAIMER-->
 	<p>OpenIPSL:</p>
