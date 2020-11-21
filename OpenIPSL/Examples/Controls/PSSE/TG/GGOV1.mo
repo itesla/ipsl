@@ -1,5 +1,5 @@
 within OpenIPSL.Examples.Controls.PSSE.TG;
-model GGOV "three phase to ground fault test of GGOV"
+model GGOV1 "three phase to ground fault test of GGOV1"
   extends OpenIPSL.Examples.BaseClasses.SMIB;
   OpenIPSL.Electrical.Machines.PSSE.GENROU gENROU(
     Xppd=0.2,
@@ -23,7 +23,7 @@ model GGOV "three phase to ground fault test of GGOV"
     P_0=39999950,
     Q_0=5416571,
     v_0=1) annotation (Placement(transformation(extent={{-100,-16},{-60,18}})));
-  OpenIPSL.Electrical.Controls.PSSE.TG.GGOV1.GGOV1 gGOV1(
+  OpenIPSL.Electrical.Controls.PSSE.TG.GGOV1 gGOV1(
     R=0.04,
     T_pelec=1,
     maxerr=0.05,
@@ -80,4 +80,4 @@ equation
           {-40,0}}, color={0,0,255}));
   annotation (
 experiment(StopTime=10));
-end GGOV;
+end GGOV1;
