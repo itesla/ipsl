@@ -21,27 +21,32 @@ equation
           textString="Flag"),Rectangle(extent={{-98,90},{96,-92}}, lineColor={0,
           0,255})}),
     Documentation(info="<html>
+<p>The following documentation is adapted from 
+<a href=\"modelica://OpenIPSL.UsersGuide.References\">[PSSE-Models], chapter 7.12</a>:</p>
+<blockquote>
+<p>
+This flag is used to determine if the fluid flow depends on the speed of the machine. 
+Gas turbines have fluid flow independent from speed and thus the flag should be set to 0.
+Diesel engines on the other hand have teir fluid flow proportional on the speed. In this case, the flag should be set to 1.
+</p>
+</blockquote>
+</html>", revisions="<html>
 <table cellspacing=\"1\" cellpadding=\"1\" border=\"1\"><tr>
-<td><p>Model Name</p></td>
-<td><p>Flag</p></td>
+<td><p>Reference</p></td>
+<td><p>PSS&reg;E Models</p></td>
 </tr>
 <tr>
 <td><p>Last update</p></td>
-<td><p>November 2020</p></td>
+<td><p>2020-11-22</p></td>
 </tr>
 <tr>
 <td><p>Author</p></td>
-<td><p>ALSETLab, Rensselaer Polytechnic Institute</p></td>
+<td><p><a href=\"https://github.com/maguilerac\">@maguilerac</a></p></td>
+<td><p><a href=\"https://github.com/marcelofcastro\">@marcelofcastro</a></p></td>
 </tr>
 <tr>
 <td><p>Contact</p></td>
-<td><p><a href=\"mailto:vanfrl@rpi.edu\">vanfrl@rpi.edu</a></p></td>
-</tr>
-<tr>
-<td><p>Description</p></td>
-<td><p>This flag is used to determine if the fluid flow depends on the speed of the machine. 
-Gas turbines have fluid flow independent from speed and thus the flag should be set to 0.
-Diesel engines on the other hand have teir fluid flow proportional on the speed. In this case, the flag should be set to 1.</p></td>
+<td><p>see <a href=\"modelica://OpenIPSL.UsersGuide.Contact\">UsersGuide.Contact</a></p></td>
 </tr>
 </table>
 </html>"));

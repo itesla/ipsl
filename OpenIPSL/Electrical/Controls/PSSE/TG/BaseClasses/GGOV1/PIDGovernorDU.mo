@@ -232,26 +232,32 @@ equation
                     lineColor={28,108,200},
                     textString="GOVOUT1")}),
     Documentation(info="<html>
-<table cellspacing=\"1\" cellpadding=\"1\" border=\"1\">
-<tr>
+<p>The following documentation is adapted from 
+<a href=\"modelica://OpenIPSL.UsersGuide.References\">[PSSE-Models], chapter 7.13</a>:</p>
+<blockquote>
+<p>
+Frequency control system for the general purpose Turbine/Governor models GGOV1DU. 
+Note that four feedback variables can be chosen for the droop control. 
+If the turbine is set to be isochronous, it is necessary to set the permanent droop to zero.
+</p>
+</blockquote>
+</html>", revisions="<html>
+<table cellspacing=\"1\" cellpadding=\"1\" border=\"1\"><tr>
 <td><p>Reference</p></td>
-<td><p>PSS/E Manual</p></td>
+<td><p>PSS&reg;E Models</p></td>
 </tr>
 <tr>
 <td><p>Last update</p></td>
-<td><p>November 2020</p></td>
+<td><p>2020-11-22</p></td>
 </tr>
 <tr>
 <td><p>Author</p></td>
-<td><p>ALSETLab, Rensselaer Polytechnic Institute</p></td>
+<td><p><a href=\"https://github.com/maguilerac\">@maguilerac</a></p></td>
+<td><p><a href=\"https://github.com/marcelofcastro\">@marcelofcastro</a></p></td>
 </tr>
 <tr>
 <td><p>Contact</p></td>
-<td><p><a href=\"mailto:vanfrl@rpi.edu\">vanfrl@rpi.edu</a></p></td>
-</tr>
-<tr>
-<td><p>Description</p></td>
-<td><p>Frequency control system for the general purpose Turbine/Governor models GGOV1DU. Note that four feedback variables can be chosen for the droop control. If the turbine is set to be isochronous, it is necessary to set the permanent droop to zero.</p></td>
+<td><p>see <a href=\"modelica://OpenIPSL.UsersGuide.Contact\">UsersGuide.Contact</a></p></td>
 </tr>
 </table>
 </html>"));

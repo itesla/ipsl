@@ -18,26 +18,30 @@ equation
           textString="Low value
 select"),Rectangle(extent={{-100,98},{100,-98}}, lineColor={0,0,255})}),
     Documentation(info="<html>
+<p>The following documentation is adapted from 
+<a href=\"modelica://OpenIPSL.UsersGuide.References\">[PSSE-Models], chapter 7.12</a>:</p>
+<blockquote>
+<p>
+Determines the minimum element of the input vector and provide its value as output.
+</p>
+</blockquote>
+</html>", revisions="<html>
 <table cellspacing=\"1\" cellpadding=\"1\" border=\"1\"><tr>
-<td><p>Model Name</p></td>
-<td><p>Min Select</p></td>
+<td><p>Reference</p></td>
+<td><p>PSS&reg;E Models</p></td>
 </tr>
 <tr>
 <td><p>Last update</p></td>
-<td><p>November 2020</p></td>
+<td><p>2020-11-22</p></td>
 </tr>
 <tr>
 <td><p>Author</p></td>
-<td><p>ALSETLab, Rensselaer Polytechnic Institute</p></td>
+<td><p><a href=\"https://github.com/maguilerac\">@maguilerac</a></p></td>
+<td><p><a href=\"https://github.com/marcelofcastro\">@marcelofcastro</a></p></td>
 </tr>
 <tr>
 <td><p>Contact</p></td>
-<td><p><a href=\"mailto:vanfrl@rpi.edu\">vanfrl@rpi.edu</a></p></td>
-</tr>
-<tr>
-<td><p>Description</p></td>
-<td><p>Determines the minimum element of the input vector and
-provide its value as output.</p></td>
+<td><p>see <a href=\"modelica://OpenIPSL.UsersGuide.Contact\">UsersGuide.Contact</a></p></td>
 </tr>
 </table>
 </html>"));

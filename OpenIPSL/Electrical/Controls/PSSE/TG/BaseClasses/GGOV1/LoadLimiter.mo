@@ -77,26 +77,30 @@ equation
     Icon(coordinateSystem(extent={{-100,-100},{100,100}}, preserveAspectRatio=false), graphics={Rectangle(lineColor = {0, 0, 255}, extent = {{-100, 100}, {100, -100}}),Text(lineColor = {28, 108, 200}, extent = {{-90, 12}, {-58, -10}}, textString = "LDREF"),Text(lineColor = {28, 108, 200}, extent = {{60, 62}, {92, 40}}, textString = "TEXM"),Text(lineColor = {28, 108, 200}, extent = {{68, -2}, {92, -18}}, textString = "WF"),Text(lineColor = {28, 108, 200}, extent = {{60, -50}, {92, -72}}, textString = "FSRT"),Text(lineColor = {28, 108, 200}, extent = {{-48, 14}, {50, -16}}, textString = "Load
 Limiter"),Text(lineColor = {28, 108, 200}, extent = {{-16, -78}, {16, -100}}, textString = "PELEC")}),
     Documentation(info="<html>
-<table cellspacing=\"1\" cellpadding=\"1\" border=\"1\">
-<tr>
+<p>The following documentation is adapted from 
+<a href=\"modelica://OpenIPSL.UsersGuide.References\">[PSSE-Models], chapter 7.12</a>:</p>
+<blockquote>
+<p>
+Load limiter and temperature control system for the general purpose Turbine/Governor model GGOV1.
+</p>
+</blockquote>
+</html>", revisions="<html>
+<table cellspacing=\"1\" cellpadding=\"1\" border=\"1\"><tr>
 <td><p>Reference</p></td>
-<td><p>PSS/E Manual</p></td>
+<td><p>PSS&reg;E Models</p></td>
 </tr>
 <tr>
 <td><p>Last update</p></td>
-<td><p>November 2020</p></td>
+<td><p>2020-11-22</p></td>
 </tr>
 <tr>
 <td><p>Author</p></td>
-<td><p>ALSETLab, Rensselaer Polytechnic Institute</p></td>
+<td><p><a href=\"https://github.com/maguilerac\">@maguilerac</a></p></td>
+<td><p><a href=\"https://github.com/marcelofcastro\">@marcelofcastro</a></p></td>
 </tr>
 <tr>
 <td><p>Contact</p></td>
-<td><p><a href=\"mailto:vanfrl@rpi.edu\">vanfrl@rpi.edu</a></p></td>
-</tr>
-<tr>
-<td><p>Description</p></td>
-<td><p>Load limiter and temperature control system for the general purpose Turbine/Governor model GGOV1.</p></td>
+<td><p>see <a href=\"modelica://OpenIPSL.UsersGuide.Contact\">UsersGuide.Contact</a></p></td>
 </tr>
 </table>
 </html>"));

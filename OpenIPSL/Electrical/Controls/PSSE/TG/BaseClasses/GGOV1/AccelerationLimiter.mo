@@ -67,26 +67,29 @@ Limiter"),Text(               extent={{-88,-40},{-52,-64}},
                     lineColor={28,108,200},
                     textString="FSR")}),
     Documentation(info="<html>
-<table cellspacing=\"1\" cellpadding=\"1\" border=\"1\">
-<tr>
+<p>The following documentation is adapted from 
+<a href=\"modelica://OpenIPSL.UsersGuide.References\">[PSSE-Models], chapter 7.12</a>:</p>
+<blockquote>
+<p>This is an acceleration control system for the general purpose Turbine/Governor models GGOV1 and GGOV1DU.
+</p>
+</blockquote>
+</html>", revisions="<html>
+<table cellspacing=\"1\" cellpadding=\"1\" border=\"1\"><tr>
 <td><p>Reference</p></td>
-<td><p>PSS/E Manual</p></td>
+<td><p>PSS&reg;E Models</p></td>
 </tr>
 <tr>
 <td><p>Last update</p></td>
-<td><p>November 2020</p></td>
+<td><p>2020-11-22</p></td>
 </tr>
 <tr>
 <td><p>Author</p></td>
-<td><p>ALSETLab, Rensselaer Polytechnic Institute</p></td>
+<td><p><a href=\"https://github.com/maguilerac\">@maguilerac</a></p></td>
+<td><p><a href=\"https://github.com/marcelofcastro\">@marcelofcastro</a></p></td>
 </tr>
 <tr>
 <td><p>Contact</p></td>
-<td><p><a href=\"mailto:vanfrl@rpi.edu\">vanfrl@rpi.edu</a></p></td>
-</tr>
-<tr>
-<td><p>Description</p></td>
-<td><p>Acceleration control system for the general purpose Turbine/Governor models GGOV1 and GGOV1DU.</p></td>
+<td><p>see <a href=\"modelica://OpenIPSL.UsersGuide.Contact\">UsersGuide.Contact</a></p></td>
 </tr>
 </table>
 </html>"));

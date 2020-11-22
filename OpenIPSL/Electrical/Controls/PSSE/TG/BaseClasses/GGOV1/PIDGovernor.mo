@@ -174,26 +174,32 @@ equation
     Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-140,-140},{140,140}}), graphics={Text(lineColor = {255, 0, 0}, extent = {{-108, 8}, {-96, 0}}, textString = "s7"),Text(lineColor = {255, 0, 0}, extent = {{86, 78}, {96, 70}}, textString = "s1"),Text(origin = {0, 12},lineColor = {255, 0, 0}, extent = {{66, -34}, {76, -42}}, textString = "s2"),Text(lineColor = {255, 0, 0}, extent = {{-102, -86}, {-90, -94}}, textString = "s0")}),
     Icon(coordinateSystem(extent={{-140,-140},{140,140}}, preserveAspectRatio=false), graphics={Rectangle(lineColor = {0, 0, 255}, extent = {{-140, 140}, {140, -140}}),Text(lineColor = {28, 108, 200}, extent = {{-128, 104}, {-72, 80}}, textString = "SPEED"),Text(lineColor = {28, 108, 200}, extent = {{-128, 50}, {-72, 26}}, textString = "P_REF"),Text(lineColor = {28, 108, 200}, extent = {{-130, -20}, {-60, -66}}, textString = "PMW_SET"),Text(lineColor = {28, 108, 200}, extent = {{-128, -92}, {-72, -116}}, textString = "PELEC"),Text(lineColor = {28, 108, 200}, extent = {{90, 8}, {138, -10}}, textString = "FSRN"),Text(lineColor = {28, 108, 200}, extent = {{-64, 42}, {66, -40}}, textString = "Governor"),Text(lineColor = {28, 108, 200}, extent = {{-58, -110}, {-6, -140}}, textString = "VSTROKE"),Text(lineColor = {28, 108, 200}, extent = {{46, -114}, {100, -140}}, textString = "GOVOUT1")}),
     Documentation(info="<html>
-<table cellspacing=\"1\" cellpadding=\"1\" border=\"1\">
-<tr>
+<p>The following documentation is adapted from 
+<a href=\"modelica://OpenIPSL.UsersGuide.References\">[PSSE-Models], chapter 7.12</a>:</p>
+<blockquote>
+<p>
+Frequency control system for the general purpose Turbine/Governor models GGOV1. 
+Note that four feedback variables can be chosen for the droop control. 
+If the turbine is set to be isochronous, it is necessary to set the permanent droop to zero.
+</p>
+</blockquote>
+</html>", revisions="<html>
+<table cellspacing=\"1\" cellpadding=\"1\" border=\"1\"><tr>
 <td><p>Reference</p></td>
-<td><p>PSS/E Manual</p></td>
+<td><p>PSS&reg;E Models</p></td>
 </tr>
 <tr>
 <td><p>Last update</p></td>
-<td><p>November 2020</p></td>
+<td><p>2020-11-22</p></td>
 </tr>
 <tr>
 <td><p>Author</p></td>
-<td><p>ALSETLab, Rensselaer Polytechnic Institute</p></td>
+<td><p><a href=\"https://github.com/maguilerac\">@maguilerac</a></p></td>
+<td><p><a href=\"https://github.com/marcelofcastro\">@marcelofcastro</a></p></td>
 </tr>
 <tr>
 <td><p>Contact</p></td>
-<td><p><a href=\"mailto:vanfrl@rpi.edu\">vanfrl@rpi.edu</a></p></td>
-</tr>
-<tr>
-<td><p>Description</p></td>
-<td><p>Frequency control system for the general purpose Turbine/Governor models GGOV1. Note that four feedback variables can be chosen for the droop control. If the turbine is set to be isochronous, it is necessary to set the permanent droop to zero.</p></td>
+<td><p>see <a href=\"modelica://OpenIPSL.UsersGuide.Contact\">UsersGuide.Contact</a></p></td>
 </tr>
 </table>
 </html>"));

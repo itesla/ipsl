@@ -169,33 +169,50 @@ equation
           lineColor={28,108,200},
           textString="GGOV1")}), 
     Documentation(info="<html>
+<p>The following documentation is adapted from 
+<a href=\"modelica://OpenIPSL.UsersGuide.References\">[PSSE-Models], chapter 7.12</a>:</p>
+<blockquote>
+<p>This is a general purpose Governor/Turbine model that can be used in dynamic studies. 
+The model can be used to represent many different models such as gas turbines, aeroderivative turbines and diesel engines.
+This model represents the usual PSSE implementation of the GGOV1 and a fairly complete review of this model can be found in
+<a href=\"modelica://OpenIPSL.UsersGuide.References\">[IEEE2013]</a>.
+</p>
+<p>
+[...]
+</p>
+<p>
+This model is incredibly versatile and can be used to represent different turbine models with different control modes. 
+The Governor-Turbine frequency control, for example, can have different feedback signals, such as electric power, turbine output, valve stroke or even an isochronous operation.
+Isochronous operations are used when the machine operates in an isolated system. Note that, in this case, the permanent droop parameter <code>R</code> should be set to zero.
+In addition to that, the parameters can be set so a particular control loop is used. 
+This model allows the representation of a frequency control system, a temperature control system and an acceleration limiter control system.
+</p>
+<p>
+[...]
+</p>
+<p>
+In order to represent a diesel generator using this model, one should be careful with setting some parameters. For example, a diesel generator needs to have <code>flag</code> set to 1. 
+This is because the diesel generator have teir fluid flow proportional on the speed. In addition to that, <code>Teng</code>, which represents the time delay from the engine, should be set to a number greater than 0.
+Finally, the variable <code>Dm</code> should also be set to a number greater than 0. This is because in diesel engines, the maximum power output decreases as speed increases.
+</p>
+</blockquote>
+</html>", revisions="<html>
 <table cellspacing=\"1\" cellpadding=\"1\" border=\"1\"><tr>
-<td><p>Model Name</p></td>
-<td><p>GGOV1</p></td>
-</tr>
-<tr>
 <td><p>Reference</p></td>
-<td><p>PSS/E Manual</p></td>
+<td><p>PSS&reg;E Models</p></td>
 </tr>
 <tr>
 <td><p>Last update</p></td>
-<td><p>November 2020</p></td>
+<td><p>2020-11-22</p></td>
 </tr>
 <tr>
 <td><p>Author</p></td>
-<td><p>ALSETLab, Rensselaer Polytechnic Institute</p></td>
+<td><p><a href=\"https://github.com/maguilerac\">@maguilerac</a></p></td>
+<td><p><a href=\"https://github.com/marcelofcastro\">@marcelofcastro</a></p></td>
 </tr>
 <tr>
 <td><p>Contact</p></td>
-<td><p><a href=\"mailto:vanfrl@rpi.edu\">vanfrl@rpi.edu</a></p></td>
-</tr>
-<tr>
-<td><p>Model Verification</p></td>
-<td><p>This model has been verified against PSS/E.</p></td>
-</tr>
-<tr>
-<td><p>Description</p></td>
-<td><p>GE General purpose Turbine/Governor Model.</p></td>
+<td><p>see <a href=\"modelica://OpenIPSL.UsersGuide.Contact\">UsersGuide.Contact</a></p></td>
 </tr>
 </table>
 </html>"));

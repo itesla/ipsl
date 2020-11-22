@@ -183,26 +183,30 @@ protected
 	  Icon(coordinateSystem(extent={{-140,-140},{140,140}}, preserveAspectRatio=false), graphics={Rectangle(lineColor = {0, 0, 255}, extent = {{-140, 140}, {140, -140}}),Text(lineColor = {28, 108, 200}, extent = {{-64, 42}, {58, -40}}, textString = "Turbine
 	Model"),          Text(lineColor = {28, 108, 200}, extent = {{-130, 112}, {-74, 88}}, textString = "SPEED"),Text(lineColor = {28, 108, 200}, extent = {{-138, -92}, {-92, -112}}, textString = "FSR"),Text(lineColor = {28, 108, 200}, extent = {{80, 12}, {136, -12}}, textString = "PMECH"),Text(lineColor = {28, 108, 200}, extent = {{-24, 136}, {28, 116}}, textString = "TEXM"),Text(lineColor = {28, 108, 200}, extent = {{66, -88}, {132, -114}}, textString = "VSTROKE"),Text(lineColor = {28, 108, 200}, extent = {{-132, 12}, {-76, -12}}, textString = "PELEC")}),
 	  Documentation(info="<html>
-<table cellspacing=\"1\" cellpadding=\"1\" border=\"1\">
-<tr>
+<p>The following documentation is adapted from 
+<a href=\"modelica://OpenIPSL.UsersGuide.References\">[PSSE-Models], chapter 7.12</a>:</p>
+<blockquote>
+<p>
+Turbine dynamic system for the general purpose Turbine/Governor models GGOV1 and GGOV1DU.
+</p>
+</blockquote>
+</html>", revisions="<html>
+<table cellspacing=\"1\" cellpadding=\"1\" border=\"1\"><tr>
 <td><p>Reference</p></td>
-<td><p>PSS/E Manual</p></td>
+<td><p>PSS&reg;E Models</p></td>
 </tr>
 <tr>
 <td><p>Last update</p></td>
-<td><p>November 2020</p></td>
+<td><p>2020-11-22</p></td>
 </tr>
 <tr>
 <td><p>Author</p></td>
-<td><p>ALSETLab, Rensselaer Polytechnic Institute</p></td>
+<td><p><a href=\"https://github.com/maguilerac\">@maguilerac</a></p></td>
+<td><p><a href=\"https://github.com/marcelofcastro\">@marcelofcastro</a></p></td>
 </tr>
 <tr>
 <td><p>Contact</p></td>
-<td><p><a href=\"mailto:vanfrl@rpi.edu\">vanfrl@rpi.edu</a></p></td>
-</tr>
-<tr>
-<td><p>Description</p></td>
-<td><p>Turbine dynamic system for the general purpose Turbine/Governor models GGOV1 and GGOV1DU.</p></td>
+<td><p>see <a href=\"modelica://OpenIPSL.UsersGuide.Contact\">UsersGuide.Contact</a></p></td>
 </tr>
 </table>
 </html>"));
