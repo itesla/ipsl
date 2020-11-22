@@ -1,5 +1,6 @@
 within OpenIPSL.Electrical.Controls.PSSE.TG;
-model GGOV1DU "GE General Governor/Turbine Mode"
+model GGOV1DU "GGOV1DU - Variation of GE General Governor/Turbine Model [IEEE2013]"
+  extends Icons.VerifiedModel;
   parameter Integer Rselect=1 "Feedback signal for
                     governor droop" annotation (Evaluate=true, choices(
       choice=1 "Electrical power",
@@ -46,10 +47,10 @@ model GGOV1DU "GE General Governor/Turbine Mode"
   parameter Types.Time DELT=0.005 "Time step used in simulation";
   Modelica.Blocks.Interfaces.RealInput SPEED
     "Machine speed deviation from nominal (pu)"
-    annotation (Placement(transformation(extent={{-302,-2},{-264,36}}), iconTransformation(extent={{-346,100},{-308,138}})));
+    annotation (Placement(transformation(extent={{-302,-2},{-264,36}}), iconTransformation(extent={{-100,40},{-60,80}})));
   Modelica.Blocks.Interfaces.RealInput PELEC
     "Machine electrical power (pu)"
-    annotation (Placement(transformation(extent={{-320,-72},{-284,-36}}), iconTransformation(extent={{-348,-118},{-310,-80}})));
+    annotation (Placement(transformation(extent={{-320,-72},{-284,-36}}),  iconTransformation(extent={{-100,-80},{-60,-40}})));
   Modelica.Blocks.Sources.Constant AccelerationSet(k=Aset) annotation (Placement(transformation(extent={{-198,-14},{-176,8}})));
   Modelica.Blocks.Sources.Constant P_ref(k=Pref) annotation (Placement(transformation(extent={{-234,-102},{-212,-80}})));
   Modelica.Blocks.Sources.Constant Pmw_set(k=Pmwset)
@@ -58,7 +59,7 @@ model GGOV1DU "GE General Governor/Turbine Mode"
   OpenIPSL.Electrical.Controls.PSSE.TG.BaseClasses.GGOV1.Min_select min_select(frs0=fsr0, nu=3) annotation (Placement(transformation(extent={{-20,-34},{34,20}})));
   Modelica.Blocks.Interfaces.RealOutput PMECH
     "Turbine mechanical power (pu)"
-    annotation (Placement(transformation(extent={{228,22},{254,48}}), iconTransformation(extent={{260,-12},{284,12}})));
+    annotation (Placement(transformation(extent={{228,22},{254,48}}), iconTransformation(extent={{100,-12},{120,8}})));
 public
   OpenIPSL.Electrical.Controls.PSSE.TG.BaseClasses.GGOV1.LoadLimiterDU gGOV1_Temp(
     Kturb=Kturb,
@@ -143,32 +144,61 @@ equation
     Line(points = {{-94, -142}, {-94, -142}, {-94, -154}, {52, -154}, {52, -30}, {36, -30}, {36, -30}}, color = {0, 0, 127}));
   annotation (
     Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-320,-240},{260,220}})),
-    Icon(coordinateSystem(extent={{-320,-240},{260,220}}, preserveAspectRatio=false), graphics={Rectangle(lineColor = {0, 0, 255}, extent = {{-320, 220}, {260, -240}}),Text(lineColor = {0, 0, 255}, extent = {{-306, 146}, {-216, 92}}, textString = "SPEED"),Text(lineColor = {0, 0, 255}, extent = {{-306, -74}, {-222, -126}}, textString = "PELEC"),Text(lineColor = {0, 0, 255}, extent = {{-114, 64}, {92, -64}}, textString = "GGOV1"),Text(lineColor = {0, 0, 255}, extent = {{172, 24}, {256, -28}}, textString = "PMECH")}),
-    Documentation(revisions="<html>
-<!--DISCLAIMER-->
-<p>OpenIPSL:</p>
-<p>Copyright 2016 SmarTS Lab (Sweden)</p>
-<ul>
-<li>SmarTS Lab, research group at KTH: <a href=\"https://www.kth.se/en\">https://www.kth.se/en</a></li>
-</ul>
-<p>The authors can be contacted by email: <a href=\"mailto:luigiv@kth.se\">luigiv@kth.se</a></p>
-
-<p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
-<p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
-
-<p></p>
-<p>iPSL:</p>
-<p>Copyright 2015-2016 RTE (France), SmarTS Lab (Sweden), AIA (Spain) and DTU (Denmark)</p>
-<ul>
-<li>RTE: <a href=\"http://www.rte-france.com\">http://www.rte-france.com</a></li>
-<li>SmarTS Lab, research group at KTH: <a href=\"https://www.kth.se/en\">https://www.kth.se/en</a></li>
-<li>AIA: <a href=\"http://www.aia.es/en/energy\"> http://www.aia.es/en/energy</a></li>
-<li>DTU: <a href=\"http://www.dtu.dk/english\"> http://www.dtu.dk/english</a></li>
-</ul>
-<p>The authors can be contacted by email: <a href=\"mailto:info@itesla-ipsl.org\">info@itesla-ipsl.org</a></p>
-
-<p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
-<p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
-</html>
-"));
+    Icon(            graphics={
+        Rectangle(
+          extent={{-100,100},{100,-100}},
+          lineColor={28,108,200}),
+        Text(
+          extent={{-50,80},{10,40}},
+          lineColor={28,108,200},
+          fillColor={255,255,255},
+          fillPattern=FillPattern.Solid,
+          textString="SPEED"),
+        Text(
+          extent={{-50,-40},{10,-80}},
+          lineColor={28,108,200},
+          fillColor={255,255,255},
+          fillPattern=FillPattern.Solid,
+          textString="PELEC"),
+        Text(
+          extent={{30,20},{90,-20}},
+          lineColor={28,108,200},
+          fillColor={255,255,255},
+          fillPattern=FillPattern.Solid,
+          textString="PMECH"),
+        Text(
+          extent={{-100,160},{100,100}},
+          lineColor={28,108,200},
+          textString="GGOV1DU")}), 
+    Documentation(info="<html>
+<table cellspacing=\"1\" cellpadding=\"1\" border=\"1\"><tr>
+<td><p>Model Name</p></td>
+<td><p>GGOV1DU</p></td>
+</tr>
+<tr>
+<td><p>Reference</p></td>
+<td><p>PSS/E Manual</p></td>
+</tr>
+<tr>
+<td><p>Last update</p></td>
+<td><p>November 2020</p></td>
+</tr>
+<tr>
+<td><p>Author</p></td>
+<td><p>ALSETLab, Rensselaer Polytechnic Institute</p></td>
+</tr>
+<tr>
+<td><p>Contact</p></td>
+<td><p><a href=\"mailto:vanfrl@rpi.edu\">vanfrl@rpi.edu</a></p></td>
+</tr>
+<tr>
+<td><p>Model Verification</p></td>
+<td><p>This model has been verified against PSS/E.</p></td>
+</tr>
+<tr>
+<td><p>Description</p></td>
+<td><p>GE General purpose Turbine/Governor Model.</p></td>
+</tr>
+</table>
+</html>"));
 end GGOV1DU;

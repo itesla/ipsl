@@ -1,6 +1,6 @@
 within OpenIPSL.Electrical.Controls.PSSE.TG.BaseClasses.GGOV1;
 model LoadLimiterDU
-  "GE General GGOV Governor/Turbine Temperature Control"
+  "GE General GGOV1DU Governor/Turbine Temperature Control"
   parameter Types.PerUnit Kturb=1.5 "Turbine gain";
   parameter Types.PerUnit Kpload=2 "Load limiter proportional gain for PI controller";
   parameter Types.TimeAging Kiload=0.67 "Load limiter integral gain for PI controller";
@@ -82,31 +82,28 @@ equation
     Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,100}}), graphics={Text(lineColor = {255, 0, 0}, extent = {{46, 20}, {58, 12}}, textString = "tlim"),Text(lineColor = {255, 0, 0}, extent = {{-52, -4}, {-42, -12}}, textString = "s6")}),
     Icon(coordinateSystem(extent={{-100,-100},{100,100}}, preserveAspectRatio=false), graphics={Rectangle(lineColor = {0, 0, 255}, extent = {{-100, 100}, {100, -100}}),Text(lineColor = {28, 108, 200}, extent = {{-90, 12}, {-58, -10}}, textString = "LDREF"),Text(lineColor = {28, 108, 200}, extent = {{60, 62}, {92, 40}}, textString = "TEXM"),Text(lineColor = {28, 108, 200}, extent = {{68, -2}, {92, -18}}, textString = "WF"),Text(lineColor = {28, 108, 200}, extent = {{60, -50}, {92, -72}}, textString = "FSRT"),Text(lineColor = {28, 108, 200}, extent = {{-48, 14}, {50, -16}}, textString = "Load
 Limiter"),Text(lineColor = {28, 108, 200}, extent = {{-16, -78}, {16, -100}}, textString = "PELEC")}),
-    Documentation(revisions="<html>
-<!--DISCLAIMER-->
-<p>OpenIPSL:</p>
-<p>Copyright 2016 SmarTS Lab (Sweden)</p>
-<ul>
-<li>SmarTS Lab, research group at KTH: <a href=\"https://www.kth.se/en\">https://www.kth.se/en</a></li>
-</ul>
-<p>The authors can be contacted by email: <a href=\"mailto:luigiv@kth.se\">luigiv@kth.se</a></p>
-
-<p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
-<p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
-
-<p></p>
-<p>iPSL:</p>
-<p>Copyright 2015-2016 RTE (France), SmarTS Lab (Sweden), AIA (Spain) and DTU (Denmark)</p>
-<ul>
-<li>RTE: <a href=\"http://www.rte-france.com\">http://www.rte-france.com</a></li>
-<li>SmarTS Lab, research group at KTH: <a href=\"https://www.kth.se/en\">https://www.kth.se/en</a></li>
-<li>AIA: <a href=\"http://www.aia.es/en/energy\"> http://www.aia.es/en/energy</a></li>
-<li>DTU: <a href=\"http://www.dtu.dk/english\"> http://www.dtu.dk/english</a></li>
-</ul>
-<p>The authors can be contacted by email: <a href=\"mailto:info@itesla-ipsl.org\">info@itesla-ipsl.org</a></p>
-
-<p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
-<p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
-</html>
-"));
+    Documentation(info="<html>
+<table cellspacing=\"1\" cellpadding=\"1\" border=\"1\">
+<tr>
+<td><p>Reference</p></td>
+<td><p>PSS/E Manual</p></td>
+</tr>
+<tr>
+<td><p>Last update</p></td>
+<td><p>November 2020</p></td>
+</tr>
+<tr>
+<td><p>Author</p></td>
+<td><p>ALSETLab, Rensselaer Polytechnic Institute</p></td>
+</tr>
+<tr>
+<td><p>Contact</p></td>
+<td><p><a href=\"mailto:vanfrl@rpi.edu\">vanfrl@rpi.edu</a></p></td>
+</tr>
+<tr>
+<td><p>Description</p></td>
+<td><p>Load limiter and temperature control system for the general purpose Turbine/Governor models GGOV1.</p></td>
+</tr>
+</table>
+</html>"));
 end LoadLimiterDU;

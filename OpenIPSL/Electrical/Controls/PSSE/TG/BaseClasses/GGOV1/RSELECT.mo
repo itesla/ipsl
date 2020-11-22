@@ -1,5 +1,5 @@
 within OpenIPSL.Electrical.Controls.PSSE.TG.BaseClasses.GGOV1;
-block RSELECT "Output the minimum and the maximum element of the input vector"
+block RSELECT "Selects the feedback signal used in GGOV1 and GGOV1DU frequency control systems"
   // extends Modelica.Blocks.Icons.Block;
   parameter Integer Rselect;
   Modelica.Blocks.Interfaces.RealOutput y annotation (Placement(transformation(
@@ -36,10 +36,28 @@ equation
           rotation=270),Rectangle(extent={{-100,100},{100,-100}}, lineColor={0,
           0,255})}),
     Documentation(info="<html>
-<p>
-Determines the minimum and maximum element of the input vector and
-provide both values as output.
-</p>
+<table cellspacing=\"1\" cellpadding=\"1\" border=\"1\"><tr>
+<td><p>Model Name</p></td>
+<td><p>R Select</p></td>
+</tr>
+<tr>
+<td><p>Last update</p></td>
+<td><p>November 2020</p></td>
+</tr>
+<tr>
+<td><p>Author</p></td>
+<td><p>ALSETLab, Rensselaer Polytechnic Institute</p></td>
+</tr>
+<tr>
+<td><p>Contact</p></td>
+<td><p><a href=\"mailto:vanfrl@rpi.edu\">vanfrl@rpi.edu</a></p></td>
+</tr>
+<tr>
+<td><p>Description</p></td>
+<td><p>Allows the user to determine which feedback signal will be used in the droop control for GGOV1 and GGOV1DU models. 
+Note that the permanent droop "r" should also be set to 0 if the isochronous mode is chosen (0 is selected).</p></td>
+</tr>
+</table>
 </html>"),
     Diagram(coordinateSystem(preserveAspectRatio=true, extent={{-100,-100},{100,
             100}}), graphics={Rectangle(extent={{-100,100},{100,-100}},

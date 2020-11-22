@@ -60,9 +60,9 @@ model GGOV1 "three phase to ground fault test of GGOV1"
     DELT=0.0001,
     Flag=0,
     Rselect=0) annotation (Placement(transformation(
-        extent={{-20,-18},{20,18}},
+        extent={{-19,-14},{19,14}},
         rotation=180,
-        origin={-68,40})));
+        origin={-67,44})));
 equation
   connect(gGOV1.PELEC, gENROU.PELEC) annotation (Line(
       points={{-47.3793,46.9652},{-34,46.9652},{-34,6.1},{-58,6.1}},

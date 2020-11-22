@@ -1,6 +1,6 @@
 within OpenIPSL.Electrical.Controls.PSSE.TG.BaseClasses.GGOV1;
 block Dm_select
-  "Output the minimum and the maximum element of the input vector"
+  "Representation of the variation of maximum power capability with shaft speed"
   parameter Real Dm;
   Modelica.Blocks.Interfaces.RealOutput y annotation (Placement(transformation(
           extent={{100,-12},{120,8}})));
@@ -22,9 +22,28 @@ equation
           textString="Dm_select"),Rectangle(extent={{-98,90},{96,-92}},
           lineColor={0,0,255})}),
     Documentation(info="<html>
-<p>
-Determines the minimum and maximum element of the input vector and
-provide both values as output.
-</p>
+<table cellspacing=\"1\" cellpadding=\"1\" border=\"1\"><tr>
+<td><p>Model Name</p></td>
+<td><p>Flag</p></td>
+</tr>
+<tr>
+<td><p>Last update</p></td>
+<td><p>November 2020</p></td>
+</tr>
+<tr>
+<td><p>Author</p></td>
+<td><p>ALSETLab, Rensselaer Polytechnic Institute</p></td>
+</tr>
+<tr>
+<td><p>Contact</p></td>
+<td><p><a href=\"mailto:vanfrl@rpi.edu\">vanfrl@rpi.edu</a></p></td>
+</tr>
+<tr>
+<td><p>Description</p></td>
+<td><p>This variable is used to represent the variation of the maximum power capability or maximum engine power with shaft speed.
+If Dm is positive it describes a lower maximum power output as speed increases. This is characteristic of some engines and aeroderivative turbines.
+If Dm is negative the maximum fuel flow is considered to decrease as speed increases. This is common on single shaft gas turbines. </p></td>
+</tr>
+</table>
 </html>"));
 end Dm_select;

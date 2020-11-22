@@ -1,5 +1,5 @@
 within OpenIPSL.Electrical.Controls.PSSE.TG.BaseClasses.GGOV1;
-model PIDGovernorDU "GE GGOV General Governor Frequency Controller"
+model PIDGovernorDU "GE GGOV1DU General Governor Frequency Controller"
   parameter Integer Rselect=1 "Feedback signal for governor droop" annotation (Evaluate=true, choices(
       choice=1 "Electrical power",
       choice=0 "None (isochronous governor)",
@@ -231,31 +231,28 @@ equation
                     extent={{46,-114},{100,-140}},
                     lineColor={28,108,200},
                     textString="GOVOUT1")}),
-    Documentation(revisions="<html>
-<!--DISCLAIMER-->
-<p>OpenIPSL:</p>
-<p>Copyright 2016 SmarTS Lab (Sweden)</p>
-<ul>
-<li>SmarTS Lab, research group at KTH: <a href=\"https://www.kth.se/en\">https://www.kth.se/en</a></li>
-</ul>
-<p>The authors can be contacted by email: <a href=\"mailto:luigiv@kth.se\">luigiv@kth.se</a></p>
-
-<p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
-<p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
-
-<p></p>
-<p>iPSL:</p>
-<p>Copyright 2015-2016 RTE (France), SmarTS Lab (Sweden), AIA (Spain) and DTU (Denmark)</p>
-<ul>
-<li>RTE: <a href=\"http://www.rte-france.com\">http://www.rte-france.com</a></li>
-<li>SmarTS Lab, research group at KTH: <a href=\"https://www.kth.se/en\">https://www.kth.se/en</a></li>
-<li>AIA: <a href=\"http://www.aia.es/en/energy\"> http://www.aia.es/en/energy</a></li>
-<li>DTU: <a href=\"http://www.dtu.dk/english\"> http://www.dtu.dk/english</a></li>
-</ul>
-<p>The authors can be contacted by email: <a href=\"mailto:info@itesla-ipsl.org\">info@itesla-ipsl.org</a></p>
-
-<p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
-<p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
-</html>
-"));
+    Documentation(info="<html>
+<table cellspacing=\"1\" cellpadding=\"1\" border=\"1\">
+<tr>
+<td><p>Reference</p></td>
+<td><p>PSS/E Manual</p></td>
+</tr>
+<tr>
+<td><p>Last update</p></td>
+<td><p>November 2020</p></td>
+</tr>
+<tr>
+<td><p>Author</p></td>
+<td><p>ALSETLab, Rensselaer Polytechnic Institute</p></td>
+</tr>
+<tr>
+<td><p>Contact</p></td>
+<td><p><a href=\"mailto:vanfrl@rpi.edu\">vanfrl@rpi.edu</a></p></td>
+</tr>
+<tr>
+<td><p>Description</p></td>
+<td><p>Frequency control system for the general purpose Turbine/Governor models GGOV1DU. Note that four feedback variables can be chosen for the droop control. If the turbine is set to be isochronous, it is necessary to set the permanent droop to zero.</p></td>
+</tr>
+</table>
+</html>"));
 end PIDGovernorDU;

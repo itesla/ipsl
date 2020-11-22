@@ -1,5 +1,5 @@
 within OpenIPSL.Electrical.Controls.PSSE.TG.BaseClasses.GGOV1;
-model Turbine "GE General GGOV1 Turbine Model"
+model Turbine "GE General GGOV1 and GGOV1DU Turbine Model"
 	parameter Integer Flag=1 "Switch for fuel source
 	characteristic" annotation (Evaluate=true, choices(choice=0
 	      "Fuel flow independent of speed",                                                       choice=1
@@ -182,31 +182,28 @@ protected
 	  Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-140,-140},{140,140}}), graphics={Text(origin = {-2, 0},lineColor = {255, 0, 0}, extent = {{-10, -72}, {0, -80}}, textString = "s3"),Text(lineColor = {255, 0, 0}, extent = {{48, 88}, {58, 80}}, textString = "s4"),Text(lineColor = {255, 0, 0}, extent = {{-96, 138}, {-86, 130}}, textString = "s9"),Text(lineColor = {255, 0, 0}, extent = {{-134, 138}, {-124, 130}}, textString = "s5")}),
 	  Icon(coordinateSystem(extent={{-140,-140},{140,140}}, preserveAspectRatio=false), graphics={Rectangle(lineColor = {0, 0, 255}, extent = {{-140, 140}, {140, -140}}),Text(lineColor = {28, 108, 200}, extent = {{-64, 42}, {58, -40}}, textString = "Turbine
 	Model"),          Text(lineColor = {28, 108, 200}, extent = {{-130, 112}, {-74, 88}}, textString = "SPEED"),Text(lineColor = {28, 108, 200}, extent = {{-138, -92}, {-92, -112}}, textString = "FSR"),Text(lineColor = {28, 108, 200}, extent = {{80, 12}, {136, -12}}, textString = "PMECH"),Text(lineColor = {28, 108, 200}, extent = {{-24, 136}, {28, 116}}, textString = "TEXM"),Text(lineColor = {28, 108, 200}, extent = {{66, -88}, {132, -114}}, textString = "VSTROKE"),Text(lineColor = {28, 108, 200}, extent = {{-132, 12}, {-76, -12}}, textString = "PELEC")}),
-	  Documentation(revisions="<html>
-	<!--DISCLAIMER-->
-	<p>OpenIPSL:</p>
-	<p>Copyright 2016 SmarTS Lab (Sweden)</p>
-	<ul>
-	<li>SmarTS Lab, research group at KTH: <a href=\"https://www.kth.se/en\">https://www.kth.se/en</a></li>
-	</ul>
-	<p>The authors can be contacted by email: <a href=\"mailto:luigiv@kth.se\">luigiv@kth.se</a></p>
-
-	<p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
-	<p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
-
-	<p></p>
-	<p>iPSL:</p>
-	<p>Copyright 2015-2016 RTE (France), SmarTS Lab (Sweden), AIA (Spain) and DTU (Denmark)</p>
-	<ul>
-	<li>RTE: <a href=\"http://www.rte-france.com\">http://www.rte-france.com</a></li>
-	<li>SmarTS Lab, research group at KTH: <a href=\"https://www.kth.se/en\">https://www.kth.se/en</a></li>
-	<li>AIA: <a href=\"http://www.aia.es/en/energy\"> http://www.aia.es/en/energy</a></li>
-	<li>DTU: <a href=\"http://www.dtu.dk/english\"> http://www.dtu.dk/english</a></li>
-	</ul>
-	<p>The authors can be contacted by email: <a href=\"mailto:info@itesla-ipsl.org\">info@itesla-ipsl.org</a></p>
-
-	<p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
-	<p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
-	</html>
-	"));
+	  Documentation(info="<html>
+<table cellspacing=\"1\" cellpadding=\"1\" border=\"1\">
+<tr>
+<td><p>Reference</p></td>
+<td><p>PSS/E Manual</p></td>
+</tr>
+<tr>
+<td><p>Last update</p></td>
+<td><p>November 2020</p></td>
+</tr>
+<tr>
+<td><p>Author</p></td>
+<td><p>ALSETLab, Rensselaer Polytechnic Institute</p></td>
+</tr>
+<tr>
+<td><p>Contact</p></td>
+<td><p><a href=\"mailto:vanfrl@rpi.edu\">vanfrl@rpi.edu</a></p></td>
+</tr>
+<tr>
+<td><p>Description</p></td>
+<td><p>Turbine dynamic system for the general purpose Turbine/Governor models GGOV1 and GGOV1DU.</p></td>
+</tr>
+</table>
+</html>"));
 end Turbine;

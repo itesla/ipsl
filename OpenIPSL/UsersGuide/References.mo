@@ -40,10 +40,19 @@ model References "References"
 <tr><tr>
 <td>[IEEE2005]</td>
 <td>IEEE:
-        &quot;421.5-2016 - IEEE Recommended Practice for Excitation System Models 
+        &quot;421.5-2005 - IEEE Recommended Practice for Excitation System Models 
         for Power System Stability Studies&quot;,
         IEEE Standard 2005,
         <a href=\"https://doi.org/10.1109/IEEESTD.2006.99499\">DOI: 10.1109/IEEESTD.2006.99499</a>
+</td>
+</tr>
+<tr>
+<tr>
+<td>[IEEE2013]</td>
+<td>IEEE Power & Energy Society.:
+        &quot;Dynamic models for turbine-governors in power system studies&quot;,
+        Power System Dynamic Performance Committee,
+        <a href=\"https://resourcecenter.ieee-pes.org/publications/technical-reports/PESTR1.html">IEEE PES Resource Center</a>
 </td>
 </tr>
 <tr>
