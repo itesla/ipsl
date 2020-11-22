@@ -24,7 +24,7 @@ model GGOV1 "three phase to ground fault test of GGOV1"
     Q_0=5416571,
     v_0=1) annotation (Placement(transformation(extent={{-100,-16},{-60,18}})));
   OpenIPSL.Electrical.Controls.PSSE.TG.GGOV1 gGOV1(
-    R=0.04,
+    R=0.,
     T_pelec=1,
     maxerr=0.05,
     minerr=-0.05,
@@ -58,7 +58,8 @@ model GGOV1 "three phase to ground fault test of GGOV1"
     Rup=99,
     Rdown=-99,
     DELT=0.005,
-    Flag=0) annotation (Placement(transformation(
+    Flag=0,
+    Rselect=0) annotation (Placement(transformation(
         extent={{-20,-18},{20,18}},
         rotation=180,
         origin={-68,40})));

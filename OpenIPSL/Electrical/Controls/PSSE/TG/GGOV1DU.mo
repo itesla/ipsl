@@ -79,6 +79,8 @@ public
     Dm=Dm,
     Ropen=Ropen,
     Rclose=Rclose,
+    Vmax= Vmax,
+    Vmin=Vmin,
     Tsa=Tsa,
     Tsb=Tsb,
     DELT=DELT,
@@ -137,22 +139,11 @@ equation
   connect(gGOV1_Power.VSTROKE, gGOV1_Turb.VSTROKE) annotation (Line(points={{-116.214,-141.929},{-116.214,-180},{212,-180},{212,-11.4286},{198.571,-11.4286}}, color={0,0,127}));
   connect(gGOV1_Turb.PELEC, PELEC) annotation (Line(points={{134.071,10.2143},{120,10.2143},{120,-200},{-274,-200},{-274,-54},{-302,-54}}, color={0,0,127}));
   connect(gGOV1_Turb.PMECH, PMECH) annotation (Line(points={{198.571,10},{214,10},{214,35},{241,35}}, color={0,0,127}));
-  connect(gGOV1_Power.GOVOUT1, V.y) annotation (Line(points={{-94.7857,-141.929},{-94.7857,-160},{112,-160},{112,-12},{108,-12},{108,-7},{97.3,-7}}, color={0,0,127}));
+  connect(gGOV1_Power.GOVOUT1, min_select.yMin) annotation(
+    Line(points = {{-94, -142}, {-94, -142}, {-94, -154}, {52, -154}, {52, -30}, {36, -30}, {36, -30}}, color = {0, 0, 127}));
   annotation (
     Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-320,-240},{260,220}})),
-    Icon(coordinateSystem(extent={{-320,-240},{260,220}}, preserveAspectRatio=false), graphics={Rectangle(extent={{-320,220},{260,-240}}, lineColor={0,0,255}),Text(
-                    extent={{-306,146},{-216,92}},
-                    lineColor={0,0,255},
-                    textString="SPEED"),Text(
-                    extent={{-306,-74},{-222,-126}},
-                    lineColor={0,0,255},
-                    textString="PELEC"),Text(
-                    extent={{-114,64},{92,-64}},
-                    lineColor={0,0,255},
-                    textString="GGOV1"),Text(
-                    extent={{172,24},{256,-28}},
-                    lineColor={0,0,255},
-                    textString="PMECH")}),
+    Icon(coordinateSystem(extent={{-320,-240},{260,220}}, preserveAspectRatio=false), graphics={Rectangle(lineColor = {0, 0, 255}, extent = {{-320, 220}, {260, -240}}),Text(lineColor = {0, 0, 255}, extent = {{-306, 146}, {-216, 92}}, textString = "SPEED"),Text(lineColor = {0, 0, 255}, extent = {{-306, -74}, {-222, -126}}, textString = "PELEC"),Text(lineColor = {0, 0, 255}, extent = {{-114, 64}, {92, -64}}, textString = "GGOV1"),Text(lineColor = {0, 0, 255}, extent = {{172, 24}, {256, -28}}, textString = "PMECH")}),
     Documentation(revisions="<html>
 <!--DISCLAIMER-->
 <p>OpenIPSL:</p>

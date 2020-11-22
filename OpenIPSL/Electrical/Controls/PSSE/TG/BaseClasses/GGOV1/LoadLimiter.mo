@@ -10,7 +10,7 @@ model LoadLimiter
   Modelica.Blocks.Continuous.Integrator s6(
     k=1,
     y_start=s60,
-    initType=Modelica.Blocks.Types.Init.InitialState) annotation (Placement(visible = true, transformation(origin = {-48, -30}, extent = {{6, 6}, {-6, -6}}, rotation = 180)));
+    initType=Modelica.Blocks.Types.Init.InitialOutput) annotation (Placement(visible = true, transformation(origin = {-48, -30}, extent = {{6, 6}, {-6, -6}}, rotation = 180)));
   Modelica.Blocks.Math.Add LoadlimiterPI annotation (Placement(visible = true, transformation(extent = {{-28, -56}, {-12, -40}}, rotation = 0)));
   Modelica.Blocks.Math.Add add6(k1=-1) annotation (Placement(transformation(
         extent={{-8,-8},{8,8}},

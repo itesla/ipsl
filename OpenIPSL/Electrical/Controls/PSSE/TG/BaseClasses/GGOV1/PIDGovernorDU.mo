@@ -17,7 +17,6 @@ model PIDGovernorDU "GE GGOV General Governor Frequency Controller"
   parameter Types.PerUnit Wfnl=0.2 "No load fuel flow";
   parameter Types.TimeAging Kimw=0 "Power controller (reset) gain";
   parameter Types.PerUnit db=0 "Speed governor deadband";
-  parameter Types.PerUnit Wfnl=0.2 "No load fuel flow";
   parameter Types.PerUnit Dm=0 "Mechanical damping coefficient";
   Modelica.Blocks.Math.Gain KPGOV(k=Kpgov) annotation (Placement(transformation(extent={{60,16},{76,32}})));
   Modelica.Blocks.Continuous.Integrator s2(

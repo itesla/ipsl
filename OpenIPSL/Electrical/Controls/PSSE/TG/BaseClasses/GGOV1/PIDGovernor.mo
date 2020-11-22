@@ -14,7 +14,6 @@ model PIDGovernor "GE GGOV General Governor Frequency Controller"
   parameter Types.Time Kdgov=0 "Governor derivative gain";
   parameter Types.Time Tdgov=1 "Governor derivative controller time constant";
   parameter Types.PerUnit Kturb=1.5 "Turbine gain";
-  parameter Types.PerUnit Wfnl=0.2 "No load fuel flow";
   parameter Types.TimeAging Kimw=0 "Power controller (reset) gain";
   parameter Types.PerUnit db=0 "Speed governor deadband";
   parameter Types.PerUnit Wfnl=0.2 "No load fuel flow";
