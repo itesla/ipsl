@@ -49,10 +49,10 @@ model References "References"
 <tr>
 <tr>
 <td>[IEEE2013]</td>
-<td>IEEE Power & Energy Society.:
+<td>IEEE Power & Energy Society:
         &quot;Dynamic models for turbine-governors in power system studies&quot;,
         Power System Dynamic Performance Committee,
-        <a href=\"https://resourcecenter.ieee-pes.org/publications/technical-reports/PESTR1.html">IEEE PES Resource Center</a>
+        <a href=\"https://resourcecenter.ieee-pes.org/publications/technical-reports/PESTR1.html\">IEEE PES Resource Center</a>
 </td>
 </tr>
 <tr>

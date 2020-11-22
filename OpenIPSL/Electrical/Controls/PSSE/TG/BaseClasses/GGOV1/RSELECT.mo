@@ -55,7 +55,7 @@ equation
 <tr>
 <td><p>Description</p></td>
 <td><p>Allows the user to determine which feedback signal will be used in the droop control for GGOV1 and GGOV1DU models. 
-Note that the permanent droop "r" should also be set to 0 if the isochronous mode is chosen (0 is selected).</p></td>
+Note that the permanent droop &quot;r&quot; should also be set to 0 if the isochronous mode is chosen (0 is selected).</p></td>
 </tr>
 </table>
 </html>"),
