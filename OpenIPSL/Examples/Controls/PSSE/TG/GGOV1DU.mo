@@ -23,7 +23,7 @@ model GGOV1DU "three phase to ground fault test of GGOV1DU"
     P_0=39999950,
     Q_0=5416571,
     v_0=1) annotation (Placement(transformation(extent={{-100,-16},{-60,18}})));
-  OpenIPSL.Electrical.Controls.PSSE.TG.GGOV1DU gGOV1(
+  OpenIPSL.Electrical.Controls.PSSE.TG.GGOV1DU gGOV1DU(
     R=0,
     T_pelec=1,
     maxerr=0.05,
@@ -64,7 +64,7 @@ model GGOV1DU "three phase to ground fault test of GGOV1DU"
         rotation=180,
         origin={-67,44})));
 equation
-  connect(gGOV1.PELEC, gENROU.PELEC) annotation (Line(
+  connect(gGOV1DU.PELEC, gENROU.PELEC) annotation (Line(
       points={{-47.3793,46.9652},{-34,46.9652},{-34,6.1},{-58,6.1}},
       color={0,0,127},
       smooth=Smooth.None));
@@ -73,9 +73,9 @@ equation
       color={0,0,127},
       smooth=Smooth.None));
 
-  connect(gGOV1.PMECH, gENROU.PMECH) annotation (Line(points={{-88.6897,
+  connect(gGOV1DU.PMECH, gENROU.PMECH) annotation (Line(points={{-88.6897,
           39.2174},{-106,39.2174},{-106,9.5},{-104,9.5}}, color={0,0,127}));
-  connect(gENROU.SPEED, gGOV1.SPEED) annotation (Line(points={{-58,12.9},
+  connect(gENROU.SPEED, gGOV1DU.SPEED) annotation (Line(points={{-58,12.9},
           {-40,12.9},{-40,29.8261},{-47.4483,29.8261}}, color={0,0,127}));
   connect(gENROU.p, GEN1.p) annotation (Line(points={{-60,1},{-50,1},{-50,0},
           {-40,0}}, color={0,0,255}));
