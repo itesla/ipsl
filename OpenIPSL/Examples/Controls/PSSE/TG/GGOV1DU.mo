@@ -57,7 +57,7 @@ model GGOV1DU "three phase to ground fault test of GGOV1DU"
     Tsb=5,
     Rup=99,
     Rdown=-99,
-    DELT=0.005,
+    DELT=0.0001,
     Flag=0,
     Rselect=0) annotation (Placement(transformation(
         extent={{-20,-18},{20,18}},
