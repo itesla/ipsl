@@ -22,7 +22,7 @@ model GGOV1 "three phase to ground fault test of GGOV1"
     M_b=100000000,
     P_0=39999950,
     Q_0=5416571,
-    v_0=1) annotation (Placement(transformation(extent={{-100,-16},{-60,18}})));
+    v_0=1) annotation (Placement(transformation(extent={{-88,-20},{-48,20}})));
   OpenIPSL.Electrical.Controls.PSSE.TG.GGOV1 gGOV1(
     R=0.,
     T_pelec=1,
@@ -59,26 +59,24 @@ model GGOV1 "three phase to ground fault test of GGOV1"
     Rdown=-99,
     DELT=0.0001,
     Flag=0,
-    Rselect=0) annotation (Placement(transformation(
-        extent={{-19,-14},{19,14}},
-        rotation=180,
-        origin={-67,44})));
-equation
-  connect(gGOV1.PELEC, gENROU.PELEC) annotation (Line(
-      points={{-47.3793,46.9652},{-34,46.9652},{-34,6.1},{-58,6.1}},
-      color={0,0,127},
-      smooth=Smooth.None));
-  connect(gENROU.EFD0, gENROU.EFD) annotation (Line(
-      points={{-58,-7.5},{-52,-7.5},{-52,-30},{-102,-30},{-102,-7.5},{-104,-7.5}},
-      color={0,0,127},
-      smooth=Smooth.None));
-
-  connect(gGOV1.PMECH, gENROU.PMECH) annotation (Line(points={{-88.6897,
-          39.2174},{-106,39.2174},{-106,9.5},{-104,9.5}}, color={0,0,127}));
-  connect(gENROU.SPEED, gGOV1.SPEED) annotation (Line(points={{-58,12.9},
-          {-40,12.9},{-40,29.8261},{-47.4483,29.8261}}, color={0,0,127}));
-  connect(gENROU.p, GEN1.p) annotation (Line(points={{-60,1},{-50,1},{-50,0},
-          {-40,0}}, color={0,0,255}));
+    Rselect=0) annotation (Placement(transformation(extent={{-60,60},{-80,40}})));
+equation 
+  connect(gGOV1.PELEC, gENROU.PELEC) annotation (Line(points={{-62,56},{-36,56},{-36,6},{-46,6}},color={0,0,127},smooth=Smooth.None));
+  connect(gENROU.EFD0, gENROU.EFD) annotation (Line(points={{-46,-10},{-40,-10},{-40,-28},{-98,-28},{-98,-10},{-92,-10}},color={0,0,127},smooth=Smooth.None));
+  connect(gGOV1.PMECH, gENROU.PMECH) annotation (Line(points={{-81,50.2},{-98,50.2},{-98,10},{-92,10}},color={0,0,127}));
+  connect(gENROU.SPEED, gGOV1.SPEED) annotation (Line(points={{-46,14},{-40,14},{-40,44},{-62,44}},color={0,0,127}));
+  connect(gENROU.p, GEN1.p) annotation (Line(points={{-48,0},{-50,0},{-50,0},{-30,0}},color={0,0,255}));
   annotation (
-experiment(StopTime=10));
+experiment(StopTime=10),Documentation(info="<html>
+<p>
+Simulate for 10 seconds. 
+</p>
+<p>Variables of interest:</p>
+<ul>
+<li><code>gGOV1.PMECH</code></code></li>
+<li><code>gENROU.PELEC</code></code></li>
+<li><code>gENROU.SPEED</code></code></li>
+<li><code>gENROU.delta</code></code></li>
+</ul>
+</html>"));
 end GGOV1;
