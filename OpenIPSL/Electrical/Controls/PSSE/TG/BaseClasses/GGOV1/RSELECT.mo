@@ -5,8 +5,8 @@ block RSELECT "Selects the feedback signal used in GGOV1 and GGOV1DU frequency c
   Modelica.Blocks.Interfaces.RealOutput y annotation (Placement(transformation(
           extent={{100,-12},{120,8}})));
   Modelica.Blocks.Interfaces.RealInput Pelect annotation (Placement(
-        transformation(extent={{-140,36},{-100,76}}), iconTransformation(extent
-          ={{-140,36},{-100,76}})));
+        transformation(extent={{-140,36},{-100,76}}), iconTransformation(extent=
+           {{-140,36},{-100,76}})));
   Modelica.Blocks.Interfaces.RealInput ValveStroke annotation (Placement(
         transformation(extent={{4,-80},{44,-40}}), iconTransformation(
         extent={{-20,-20},{20,20}},
