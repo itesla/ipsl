@@ -47,27 +47,25 @@ model GGOV1 "GGOV1 - Variation of GE General Governor/Turbine Model [IEEE2013]"
   parameter Types.Time DELT=0.005 "Time step used in simulation";
   Modelica.Blocks.Interfaces.RealInput SPEED
     "Machine speed deviation from nominal (pu)"
-    annotation (Placement(transformation(extent={{-302,-2},{-264,36}}), iconTransformation(extent={{-100,40},{-60,80}})));
+    annotation (Placement(visible = true,transformation(origin = {-120, 60}, extent = {{-20, -20}, {20, 20}}, rotation = 0), iconTransformation(extent = {{-100, 40}, {-60, 80}}, rotation = 0)));
   Modelica.Blocks.Interfaces.RealInput PELEC
     "Machine electrical power (pu)"
-    annotation (Placement(transformation(extent={{-320,-72},{-284,-36}}),  iconTransformation(extent={{-100,-80},{-60,-40}})));
-  Modelica.Blocks.Sources.Constant AccelerationSet(k=Aset) annotation (Placement(transformation(extent={{-198,-14},{-176,8}})));
-  Modelica.Blocks.Sources.Constant P_ref(k=Pref) annotation (Placement(transformation(extent={{-234,-102},{-212,-80}})));
+    annotation (Placement(visible = true,transformation(origin = {-120, -60}, extent = {{-20, -20}, {20, 20}}, rotation = 0),  iconTransformation(extent = {{-100, -80}, {-60, -40}}, rotation = 0)));
+  Modelica.Blocks.Sources.Constant AccelerationSet(k=Aset) annotation (Placement(visible = true, transformation(origin = {-64, 14}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
+  Modelica.Blocks.Sources.Constant P_ref(k=Pref) annotation (Placement(visible = true, transformation(origin = {-82, -26}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
   Modelica.Blocks.Sources.Constant Pmw_set(k=Pmwset)
-    "Supervisory Load Controller Setpoint,"                                                  annotation (Placement(transformation(extent={{-234,-146},{-212,-124}})));
-  Modelica.Blocks.Sources.Constant set(k=Ldref) "load reference" annotation (Placement(transformation(extent={{-200,72},{-178,94}})));
-  OpenIPSL.Electrical.Controls.PSSE.TG.BaseClasses.GGOV1.Min_select min_select(frs0=fsr0, nu=3) annotation (Placement(transformation(extent={{0,0},{20,20}})));
-  Modelica.Blocks.Interfaces.RealOutput PMECH
-    "Turbine mechanical power (pu)"
-    annotation (Placement(transformation(extent={{228,22},{254,48}}), iconTransformation(extent={{100,-12},{120,8}})));
-public
+    "Supervisory Load Controller Setpoint,"                                                  annotation (Placement(visible = true, transformation(origin = {-60, -46}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
+  Modelica.Blocks.Sources.Constant set(k=Ldref) "load reference" annotation (Placement(visible = true, transformation(origin = {-62, 80}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
+  OpenIPSL.Electrical.Controls.PSSE.TG.BaseClasses.GGOV1.Min_select min_select(frs0=fsr0, nu= 3) annotation (Placement(visible = true, transformation(extent = {{4, -10}, {24, 10}}, rotation = 0)));
+  Modelica.Blocks.Interfaces.RealOutput PMECH "Turbine mechanical power (pu)" annotation(
+    Placement(visible = true, transformation(origin = {110, 0}, extent = {{-10, -10}, {10, 10}}, rotation = 0), iconTransformation(extent = {{100, -10}, {120, 10}}, rotation = 0)));
   OpenIPSL.Electrical.Controls.PSSE.TG.BaseClasses.GGOV1.LoadLimiter gGOV1_Temp(
     Kturb=Kturb,
     Kpload=Kpload,
     Kiload=Kiload,
     Dm=Dm,
-    Wfnl=Wfnl) annotation (Placement(transformation(extent={{-140,40},{-80,100}})));
-  Modelica.Blocks.Nonlinear.Limiter V(uMax=Vmax, uMin=Vmin) annotation (Placement(transformation(extent={{70,-20},{96,6}})));
+    Wfnl=Wfnl) annotation (Placement(visible = true, transformation(origin = {-30, 80}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
+  Modelica.Blocks.Nonlinear.Limiter V(uMax=Vmax, uMin=Vmin) annotation (Placement(visible = true, transformation(origin = {44, 0}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
   OpenIPSL.Electrical.Controls.PSSE.TG.BaseClasses.GGOV1.Turbine gGOV1_Turb(
     Tact=Tact,
     Kturb=Kturb,
@@ -84,11 +82,11 @@ public
     Tsb=Tsb,
     DELT=DELT,
     Flag=Flag,
-    Wfnl=Wfnl) annotation (Placement(transformation(extent={{136,-20},{196,40}})));
+    Wfnl=Wfnl) annotation (Placement(visible = true, transformation(origin = {82, 0}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
   OpenIPSL.Electrical.Controls.PSSE.TG.BaseClasses.GGOV1.AccelerationLimiter gGOV1_Accel(
     Ka=Ka,
     Ta=Ta,
-    DELT=DELT) annotation (Placement(transformation(extent={{-140,-48},{-80,12}})));
+    DELT=DELT) annotation (Placement(visible = true, transformation(origin = {-30, 0}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
   OpenIPSL.Electrical.Controls.PSSE.TG.BaseClasses.GGOV1.PIDGovernor gGOV1_Power(
     Rselect=Rselect,
     R=R,
@@ -103,7 +101,7 @@ public
     Kimw=Kimw,
     db=db,
     Kturb=Kturb,
-    Wfnl=Wfnl) annotation (Placement(transformation(extent={{-140,-140},{-80,-80}})));
+    Wfnl=Wfnl) annotation (Placement(visible = true, transformation(origin = {-30, -52}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
 protected
   parameter Types.PerUnit Pe0(fixed=false);
   parameter Types.PerUnit Pmech0(fixed=false);
@@ -119,55 +117,52 @@ initial equation
   fsr0 = (Pmech0 + Dm)/Kturb + Wfnl;
 
 equation
-  connect(set.y, gGOV1_Temp.LDREF) annotation (Line(points={{-176.9,83},{-158,83},{-158,69.7},{-142.7,69.7}}, color={0,0,127}));
-  connect(gGOV1_Temp.FSRT, min_select.u[1]) annotation (Line(points={{-77,52},{-52,52},{-52,14.6667},{0,14.6667}},   color={0,0,127}));
-  connect(min_select.yMin, V.u) annotation (Line(points={{21,1.6},{52,1.6},{52,-7},{67.4,-7}},         color={0,0,127}));
-  connect(gGOV1_Turb.FSR, V.y) annotation (Line(points={{133.643,-11.6429},{108,-11.6429},{108,-7},{97.3,-7}}, color={0,0,127}));
-  connect(gGOV1_Turb.TEXM, gGOV1_Temp.TEXM) annotation (Line(points={{166,42.5714},{166,42.5714},{166,70},{166,85},{-77.6,85}}, color={0,0,127}));
-  connect(AccelerationSet.y, gGOV1_Accel.ASET) annotation (Line(points={{-174.9,-3},{-156,-3},{-156,-6},{-146,-6}},       color={0,0,127}));
-  connect(gGOV1_Accel.FSR, V.y) annotation (Line(points={{-74,-30},{-60,-30},{-60,-60},{106,-60},{106,-7},{97.3,-7}},   color={0,0,127}));
-  connect(gGOV1_Accel.FSRA, min_select.u[2]) annotation (Line(points={{-77,-6},{-62,-6},{-62,10},{0,10}},         color={0,0,127}));
-  connect(P_ref.y, gGOV1_Power.P_REF) annotation (Line(points={{-210.9,-91},{-198,-91},{-198,-102.071},{-142.357,-102.071}}, color={0,0,127}));
-  connect(Pmw_set.y, gGOV1_Power.PMW_SET) annotation (Line(points={{-210.9,-135},{-196,-135},{-196,-118.786},{-142.357,-118.786}}, color={0,0,127}));
-  connect(gGOV1_Power.FSRN, min_select.u[3]) annotation (Line(points={{-77.4286,-110},{-50,-110},{-50,5.33333},{0,5.33333}},
-                                                                                                                           color={0,0,127}));
-  connect(gGOV1_Accel.SPEED, SPEED) annotation (Line(points={{-146,-30},{-240,-30},{-240,17},{-283,17}},       color={0,0,127}));
-  connect(gGOV1_Power.SPEED, SPEED) annotation (Line(points={{-142.357,-90.5},{-180,-90.5},{-180,-34},{-240,-34},{-240,17},{-283,17}}, color={0,0,127}));
-  connect(gGOV1_Turb.SPEED, SPEED) annotation (Line(points={{133.857,31.4286},{100,31.4286},{100,140},{-240,140},{-240,17},{-283,17}}, color={0,0,127}));
-  connect(gGOV1_Power.PELEC, PELEC) annotation (Line(points={{-142.357,-131.643},{-182,-131.643},{-182,-168},{-256,-168},{-256,-54},{-302,-54}}, color={0,0,127}));
-  connect(gGOV1_Temp.PELEC, PELEC) annotation (Line(points={{-110,37.6},{-110,20},{-220,20},{-220,-54},{-302,-54}}, color={0,0,127}));
-  connect(gGOV1_Power.VSTROKE, gGOV1_Turb.VSTROKE) annotation (Line(points={{-116.214,-141.929},{-116.214,-180},{212,-180},{212,-11.4286},{198.571,-11.4286}}, color={0,0,127}));
-  connect(gGOV1_Turb.PELEC, PELEC) annotation (Line(points={{134.071,10.2143},{120,10.2143},{120,-200},{-274,-200},{-274,-54},{-302,-54}}, color={0,0,127}));
-  connect(gGOV1_Turb.PMECH, PMECH) annotation (Line(points={{198.571,10},{214,10},{214,35},{241,35}}, color={0,0,127}));
-  connect(gGOV1_Power.GOVOUT1, min_select.yMin) annotation (
-    Line(points={{-94.7857,-141.929},{-96,-141.929},{-96,-160},{52,-160},{52,-30},{21,-30},{21,1.6}},   color = {0, 0, 127}));
+  connect(gGOV1_Turb.PMECH, PMECH) annotation(
+    Line(points = {{93, 0}, {110, 0}}, color = {0, 0, 127}));
+  connect(set.y, gGOV1_Temp.LDREF) annotation(
+    Line(points = {{-51, 80}, {-42, 80}}, color = {0, 0, 127}));
+  connect(min_select.yMin, V.u) annotation(
+    Line(points = {{25, 0}, {32, 0}}, color = {0, 0, 127}));
+  connect(V.y, gGOV1_Turb.FSR) annotation(
+    Line(points = {{55, 0}, {70, 0}}, color = {0, 0, 127}));
+  connect(AccelerationSet.y, gGOV1_Accel.ASET) annotation(
+    Line(points = {{-53, 14}, {-48, 14}, {-48, 4}, {-42, 4}}, color = {0, 0, 127}));
+  connect(gGOV1_Temp.TEXM, gGOV1_Turb.TEXM) annotation(
+    Line(points = {{-18, 84}, {82, 84}, {82, 11}}, color = {0, 0, 127}));
+  connect(SPEED, gGOV1_Turb.SPEED) annotation(
+    Line(points = {{-120, 60}, {64, 60}, {64, 8}, {70, 8}}, color = {0, 0, 127}));
+  connect(SPEED, gGOV1_Accel.SPEED) annotation(
+    Line(points = {{-120, 60}, {-80, 60}, {-80, -4}, {-42, -4}}, color = {0, 0, 127}));
+  connect(PELEC, gGOV1_Power.PELEC) annotation(
+    Line(points = {{-120, -60}, {-44, -60}, {-44, -60}, {-42, -60}}, color = {0, 0, 127}));
+  connect(Pmw_set.y, gGOV1_Power.PMW_SET) annotation(
+    Line(points = {{-49, -46}, {-46, -46}, {-46, -52}, {-42, -52}}, color = {0, 0, 127}));
+  connect(P_ref.y, gGOV1_Power.P_REF) annotation(
+    Line(points = {{-71, -26}, {-46, -26}, {-46, -44}, {-42, -44}}, color = {0, 0, 127}));
+  connect(gGOV1_Power.SPEED, SPEED) annotation(
+    Line(points = {{-30, -40}, {-30, -12}, {-80, -12}, {-80, 60}, {-120, 60}}, color = {0, 0, 127}));
+  connect(PELEC, gGOV1_Turb.PELEC) annotation(
+    Line(points = {{-120, -60}, {-80, -60}, {-80, -90}, {64, -90}, {64, -8}, {70, -8}, {70, -8}}, color = {0, 0, 127}));
+  connect(gGOV1_Turb.VSTROKE, gGOV1_Power.VSTROKE) annotation(
+    Line(points = {{94, -8}, {96, -8}, {96, -78}, {-34, -78}, {-34, -64}, {-34, -64}}, color = {0, 0, 127}));
+  connect(PELEC, gGOV1_Temp.PELEC) annotation(
+    Line(points = {{-120, -60}, {-94, -60}, {-94, 48}, {-30, 48}, {-30, 68}}, color = {0, 0, 127}));
+  connect(V.y, gGOV1_Power.GOVOUT1) annotation(
+    Line(points = {{55, 0}, {58, 0}, {58, -74}, {-26, -74}, {-26, -64}}, color = {0, 0, 127}));
+  connect(V.y, gGOV1_Accel.FSR) annotation(
+    Line(points = {{55, 0}, {58, 0}, {58, -32}, {-12, -32}, {-12, -4}, {-18, -4}}, color = {0, 0, 127}));
+  connect(gGOV1_Power.FSRN, min_select.u[1]) annotation(
+    Line(points = {{-18, -52}, {-6, -52}, {-6, -4}, {4, -4}, {4, 0}}, color = {0, 0, 127}));
+  connect(gGOV1_Temp.FSRT, min_select.u[2]) annotation(
+    Line(points = {{-19, 74}, {-6, 74}, {-6, 4}, {4, 4}, {4, 0}}, color = {0, 0, 127}));
+  connect(gGOV1_Accel.FSRA, min_select.u[3]) annotation(
+    Line(points = {{-18, 4}, {-10, 4}, {-10, 0}, {4, 0}, {4, 0}}, color = {0, 0, 127}));
   annotation (
-        Icon(            graphics={
-        Rectangle(
-          extent={{-100,100},{100,-100}},
-          lineColor={28,108,200}),
-        Text(
-          extent={{-50,80},{10,40}},
-          lineColor={28,108,200},
-          fillColor={255,255,255},
-          fillPattern=FillPattern.Solid,
-          textString="SPEED"),
-        Text(
-          extent={{-50,-40},{10,-80}},
-          lineColor={28,108,200},
-          fillColor={255,255,255},
-          fillPattern=FillPattern.Solid,
-          textString="PELEC"),
-        Text(
-          extent={{30,20},{90,-20}},
-          lineColor={28,108,200},
-          fillColor={255,255,255},
-          fillPattern=FillPattern.Solid,
-          textString="PMECH"),
-        Text(
-          extent={{-100,160},{100,100}},
-          lineColor={28,108,200},
-          textString="GGOV1")}),
+        Icon(            graphics={Rectangle(lineColor = {28, 108, 200}, extent = {{-100, 100}, {100, -100}}),
+        Text(lineColor = {28, 108, 200}, fillColor = {255, 255, 255}, fillPattern = FillPattern.Solid, extent = {{-50, 80}, {10, 40}}, textString = "SPEED"),
+        Text(lineColor = {28, 108, 200}, fillColor = {255, 255, 255}, fillPattern = FillPattern.Solid, extent = {{-50, -40}, {10, -80}}, textString = "PELEC"),
+        Text(lineColor = {28, 108, 200}, fillColor = {255, 255, 255}, fillPattern = FillPattern.Solid, extent = {{30, 20}, {90, -20}}, textString = "PMECH"),
+        Text(lineColor = {28, 108, 200}, extent = {{-100, 160}, {100, 100}}, textString = "GGOV1")}),
     Documentation(info="<html>
 <p>The following documentation is adapted from 
 <a href=\"modelica://OpenIPSL.UsersGuide.References\">[PSSE-Models], chapter 7.12</a>:</p>
@@ -207,8 +202,8 @@ Finally, the variable <code>Dm</code> should also be set to a number greater tha
 </tr>
 <tr>
 <td><p>Author</p></td>
-<td><p><a href=\"https://github.com/maguilerac\">@maguilerac</a></p></td>
-<td><p><a href=\"https://github.com/marcelofcastro\">@marcelofcastro</a></p></td>
+<td><p><a href=\"https://github.com/maguilerac\">@maguilerac</a>,
+       <a href=\"https://github.com/marcelofcastro\">@marcelofcastro</a></p></td>
 </tr>
 <tr>
 <td><p>Contact</p></td>

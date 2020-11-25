@@ -83,8 +83,8 @@ Limiter"),Text(               extent={{-90,-30},{-52,-50}},
 </tr>
 <tr>
 <td><p>Author</p></td>
-<td><p><a href=\"https://github.com/maguilerac\">@maguilerac</a></p></td>
-<td><p><a href=\"https://github.com/marcelofcastro\">@marcelofcastro</a></p></td>
+<td><p><a href=\"https://github.com/maguilerac\">@maguilerac</a>,
+       <a href=\"https://github.com/marcelofcastro\">@marcelofcastro</a></p></td>
 </tr>
 <tr>
 <td><p>Contact</p></td>

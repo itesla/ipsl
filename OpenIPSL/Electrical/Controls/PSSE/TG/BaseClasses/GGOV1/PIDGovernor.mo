@@ -18,78 +18,63 @@ model PIDGovernor "GE GGOV1 General Governor Frequency Controller"
   parameter Types.PerUnit db=0 "Speed governor deadband";
   parameter Types.PerUnit Wfnl=0.2 "No load fuel flow";
   parameter Types.PerUnit Dm=0 "Mechanical damping coefficient";
-  Modelica.Blocks.Math.Gain KPGOV(k=Kpgov) annotation (Placement(transformation(extent={{60,16},{76,32}})));
+  Modelica.Blocks.Math.Gain KPGOV(k=Kpgov) annotation (Placement(visible = true, transformation(origin = {30, 0}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
   Modelica.Blocks.Continuous.Integrator s2(
     k=1,
     initType=Modelica.Blocks.Types.Init.InitialOutput,
-    y_start=s20) annotation (Placement(visible = true, transformation(origin = {84, -10}, extent = {{8, 8}, {-8, -8}}, rotation = 180)));
+    y_start=s20) annotation (Placement(visible = true, transformation(origin = {42, -30}, extent = {{10, 10}, {-10, -10}}, rotation = 180)));
   Modelica.Blocks.Continuous.Derivative s1(
     k=Kdgov,
     T=Tdgov,
     y_start=0,
-    initType=Modelica.Blocks.Types.Init.InitialOutput) annotation (Placement(transformation(extent={{58,58},{78,78}})));
-  Modelica.Blocks.Math.Add3 GovernorPID annotation (Placement(transformation(extent={{102,4},{124,26}})));
-  Modelica.Blocks.Nonlinear.DeadZone deadZone(uMax=db, deadZoneAtInit=false) annotation (Placement(transformation(extent={{-20,40},{0,60}})));
-  Modelica.Blocks.Nonlinear.Limiter limiterSerror(uMax=maxerr, uMin=minerr) annotation (Placement(transformation(extent={{12,40},{32,60}})));
-  Modelica.Blocks.Math.Add3 add3_2(k1=-1, k3=-1) annotation (Placement(transformation(extent={{-50,40},{-30,60}})));
-  Modelica.Blocks.Math.Gain r(k=R) "Permanent droop" annotation (Placement(transformation(
-        extent={{-10,-10},{10,10}},
-        rotation=90,
-        origin={-60,10})));
-  Modelica.Blocks.Math.Add add2 annotation (Placement(transformation(extent={{-76,44},{-64,56}})));
+    initType=Modelica.Blocks.Types.Init.InitialOutput) annotation (Placement(visible = true, transformation(extent = {{20, 20}, {40, 40}}, rotation = 0)));
+  Modelica.Blocks.Math.Add3 GovernorPID annotation (Placement(visible = true, transformation(origin = {84, 1.77636e-15}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
+  Modelica.Blocks.Nonlinear.DeadZone deadZone(uMax=db, deadZoneAtInit=false) annotation (Placement(visible = true, transformation(extent = {{10, 60}, {30, 80}}, rotation = 0)));
+  Modelica.Blocks.Nonlinear.Limiter limiterSerror(uMax=maxerr, uMin=minerr) annotation (Placement(visible = true, transformation(extent = {{40, 60}, {60, 80}}, rotation = 0)));
+  Modelica.Blocks.Math.Add3 add3_2(k1=-1, k3=-1) annotation (Placement(visible = true, transformation(extent = {{-20, 60}, {0, 80}}, rotation = 0)));
+  Modelica.Blocks.Math.Gain r(k=R) "Permanent droop" annotation (Placement(visible = true, transformation(origin = {-30, 10}, extent = {{-10, -10}, {10, 10}}, rotation = 90)));
+  Modelica.Blocks.Math.Add add2 annotation (Placement(visible = true, transformation(origin = {-44, 70}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
   Modelica.Blocks.Continuous.LimIntegrator s7(
     k=Kimw,
     outMax=1.1*R,
     initType=Modelica.Blocks.Types.Init.InitialOutput,
-    y_start=s70) "Power controller" annotation (Placement(transformation(
-        extent={{-8,-8},{8,8}},
-        rotation=90,
-        origin={-102,-122})));
-  Modelica.Blocks.Math.Add add3(k2=-1) annotation (Placement(transformation(
-        extent={{-6,-6},{6,6}},
-        rotation=90,
-        origin={-102,-146})));
+    y_start=s70) "Power controller" annotation (Placement(visible = true, transformation(origin = {-70, 46}, extent = {{-10, -10}, {10, 10}}, rotation = 90)));
+  Modelica.Blocks.Math.Add add3(k2=-1) annotation (Placement(visible = true, transformation(origin = {-70, 18}, extent = {{-10, -10}, {10, 10}}, rotation = 90)));
   OpenIPSL.NonElectrical.Continuous.SimpleLag s0(
     T=T_pelec,
     y_start=s00,
-    K=1) annotation (Placement(transformation(
-        extent={{-10,-10},{10,10}},
-        rotation=0,
-        origin={-126,-194})));
-  Modelica.Blocks.Math.Gain KPGOV1(k=Kigov) annotation (Placement(visible = true, transformation(origin = {62, -10}, extent = {{6, -6}, {-6, 6}}, rotation = 180)));
-  OpenIPSL.Electrical.Controls.PSSE.TG.BaseClasses.GGOV1.RSELECT rSELECT(Rselect=Rselect)
-    annotation (Placement(transformation(
-        extent={{-18,-18},{18,18}},
-        rotation=90,
-        origin={-64,-42})));
+    K=1) annotation (Placement(visible = true, transformation(origin = {-82, -80}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
+  Modelica.Blocks.Math.Gain KPGOV1(k=Kigov) annotation (Placement(visible = true, transformation(origin = {14, -30}, extent = {{10, -10}, {-10, 10}}, rotation = 180)));
+  OpenIPSL.Electrical.Controls.PSSE.TG.BaseClasses.GGOV1.R_select rSELECT(Rselect=Rselect)
+    annotation (Placement(visible = true, transformation(origin = {-30, -24}, extent = {{-10, -10}, {10, 10}}, rotation = 90)));
   Modelica.Blocks.Interfaces.RealInput PELEC
     "Machine electrical power (pu)"
-    annotation (Placement(transformation(extent={{-140,-100},{-100,-60}}), iconTransformation(extent={{-168,-118},{-134,-84}})));
+    annotation (Placement(visible = true,transformation(extent = {{-140, -100}, {-100, -60}}, rotation = 0), iconTransformation(origin = {-120, -80},extent = {{-20, -20}, {20, 20}}, rotation = 0)));
   Modelica.Blocks.Interfaces.RealInput PMW_SET
   "Supervisory Load Controller Setpoint"
-    annotation (Placement(transformation(extent={{-140,-60},{-100,-20}}), iconTransformation(extent={{-168,-58},{-134,-24}})));
-  Modelica.Blocks.Interfaces.RealInput P_REF annotation (Placement(transformation(extent={{-140,20},{-100,60}}), iconTransformation(extent={{-168,20},{-134,54}})));
+    annotation (Placement(visible = true,transformation(extent = {{-140, -20}, {-100, 20}}, rotation = 0), iconTransformation(origin = {-120, 0}, extent = {{-20, -20}, {20, 20}}, rotation = 0)));
+  Modelica.Blocks.Interfaces.RealInput P_REF annotation (Placement(visible = true,transformation(extent = {{-140, 60}, {-100, 100}}, rotation = 0), iconTransformation(origin = {-120, 80}, extent = {{-20, -20}, {20, 20}}, rotation = 0)));
   Modelica.Blocks.Interfaces.RealInput SPEED
     "Machine speed deviation from nominal (pu)"
-    annotation (Placement(transformation(extent={{-140,60},{-100,100}}),
-                                                                       iconTransformation(extent={{-168,74},{-134,108}})));
-  Modelica.Blocks.Interfaces.RealInput VSTROKE "Valve Stroke" annotation (Placement(transformation(
-        extent={{-17,-17},{17,17}},
-        rotation=90,
-        origin={-13,-205}),
+    annotation (Placement(visible = true,transformation(origin = {0, 120},extent = {{-20, -20}, {20, 20}}, rotation = -90),
+                                                                       iconTransformation(origin = {0, 120}, extent = {{-20, -20}, {20, 20}}, rotation = -90)));
+  Modelica.Blocks.Interfaces.RealInput VSTROKE "Valve Stroke" annotation (Placement(visible = true,transformation(
+        
+        origin={-40,-120},extent={{-20, -20},{20, 20}},
+        rotation=90),
                           iconTransformation(
-        extent={{-15,-15},{15,15}},
-        rotation=90,
-        origin={-29,-149})));
+        
+        origin={-40,-120},extent={{-20, -20},{20, 20}},
+        rotation=90)));
   Modelica.Blocks.Interfaces.RealInput GOVOUT1
-    "Governor Output before Limiter"                                            annotation (Placement(transformation(
-        extent={{-16,-16},{16,16}},
-        rotation=90,
-        origin={20,-216}),iconTransformation(
-        extent={{-15,-15},{15,15}},
-        rotation=90,
-        origin={71,-149})));
-  Modelica.Blocks.Interfaces.RealOutput FSRN annotation (Placement(transformation(extent={{136,6},{154,24}}), iconTransformation(extent={{140,-12},{164,12}})));
+    "Governor Output before Limiter"                                            annotation (Placement(visible = true,transformation(
+        
+        origin={40,-120},extent={{-20, -20},{20, 20}},
+        rotation=90),iconTransformation(
+        
+        origin={40,-120},extent={{-20, -20},{20, 20}},
+        rotation=90)));
+  Modelica.Blocks.Interfaces.RealOutput FSRN annotation (Placement(visible = true,transformation(origin = {110, 0}, extent = {{-10, -10}, {10, 10}}, rotation = 0), iconTransformation(origin = {110, 0}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
 protected
   parameter Types.PerUnit Pe0(fixed=false);
   parameter Types.PerUnit Pmech0(fixed=false);
@@ -107,76 +92,55 @@ initial equation
   fsr0 = (Pmech0 + Dm)/Kturb + Wfnl;
 
 equation
-  connect(deadZone.y, limiterSerror.u) annotation (Line(
-      points={{1,50},{10,50}},
-      color={0,0,127},
-      smooth=Smooth.None));
-  connect(KPGOV.u, limiterSerror.y) annotation (Line(
-      points={{58.4,24},{44,24},{44,50},{33,50}},
-      color={0,0,127},
-      smooth=Smooth.None));
-  connect(add3_2.y, deadZone.u) annotation (Line(
-      points={{-29,50},{-22,50}},
-      color={0,0,127},
-      smooth=Smooth.None));
-  connect(r.y, add3_2.u3) annotation (Line(
-      points={{-60,21},{-60,42},{-52,42}},
-      color={0,0,127},
-      smooth=Smooth.None));
-  connect(add2.y, add3_2.u2) annotation (Line(
-      points={{-63.4,50},{-52,50}},
-      color={0,0,127},
-      smooth=Smooth.None));
-  connect(s7.y, add2.u2) annotation (Line(
-      points={{-102,-113.2},{-102,46.4},{-77.2,46.4}},
-      color={0,0,127},
-      smooth=Smooth.None));
-  connect(add3.y, s7.u) annotation (Line(
-      points={{-102,-139.4},{-102,-131.6}},
-      color={0,0,127},
-      smooth=Smooth.None));
-  connect(s0.y, add3.u2) annotation (Line(
-      points={{-115,-194},{-98,-194},{-98,-153.2},{-98.4,-153.2}},
-      color={0,0,127},
-      smooth=Smooth.None));
-  connect(s1.u, limiterSerror.y) annotation (Line(
-      points={{56,68},{44,68},{44,50},{33,50}},
-      color={0,0,127},
-      smooth=Smooth.None));
-  connect(s1.y, GovernorPID.u1) annotation (Line(
-      points={{79,68},{90,68},{90,23.8},{99.8,23.8}},
-      color={0,0,127},
-      smooth=Smooth.None));
-  connect(KPGOV.y, GovernorPID.u2) annotation (Line(
-      points={{76.8,24},{80,24},{80,15},{99.8,15}},
-      color={0,0,127},
-      smooth=Smooth.None));
-  connect(s0.y, rSELECT.Pelect) annotation (Line(
-      points={{-115,-194},{-74.08,-194},{-74.08,-63.6}},
-      color={0,0,127},
-      smooth=Smooth.None));
-  connect(rSELECT.y, r.u) annotation (Line(
-      points={{-63.64,-22.2},{-59.72,-22.2},{-59.72,-2},{-60,-2}},
-      color={0,0,127},
-      smooth=Smooth.None));
-  connect(add3.u1, PMW_SET) annotation (Line(points={{-105.6,-153.2},{-105.6,-40},{-120,-40}},
-                                                                                            color={0,0,127}));
-  connect(add2.u1, P_REF) annotation (Line(points={{-77.2,53.6},{-111.6,53.6},{-111.6,40},{-120,40}}, color={0,0,127}));
-  connect(add3_2.u1, SPEED) annotation (Line(points={{-52,58},{-60,58},{-60,80},{-120,80}},      color={0,0,127}));
-  connect(PELEC, s0.u) annotation (Line(points={{-120,-80},{-140,-80},{-140,-194},{-138,-194}}, color={0,0,127}));
-  connect(VSTROKE, rSELECT.ValveStroke) annotation (Line(points={{-13,-205},{-13,-40.56},{-42.4,-40.56}},        color={0,0,127}));
-  connect(GOVOUT1, rSELECT.GovernorOutput) annotation (Line(points={{20,-216},{20,-26.88},{-42.4,-26.88}},
-                                                                                                        color={0,0,127}));
-  connect(FSRN, GovernorPID.y) annotation (Line(points={{145,15},{125.1,15}}, color={0,0,127}));
-  connect(KPGOV1.y, s2.u) annotation (
-    Line(points={{68.6,-10},{74.4,-10}},  color = {0, 0, 127}));
-  connect(KPGOV1.u, limiterSerror.y) annotation (
-    Line(points={{54.8,-10},{44,-10},{44,50},{33,50}},                  color = {0, 0, 127}));
-  connect(s2.y, GovernorPID.u3) annotation (
-    Line(points={{92.8,-10},{96,-10},{96,6},{99.8,6},{99.8,6.2}},      color = {0, 0, 127}));
+  connect(deadZone.y, limiterSerror.u) annotation(
+    Line(points = {{31, 70}, {38, 70}}, color = {0, 0, 127}));
+  connect(add3_2.y, deadZone.u) annotation(
+    Line(points = {{1, 70}, {8, 70}}, color = {0, 0, 127}));
+  connect(add2.y, add3_2.u2) annotation(
+    Line(points = {{-33, 70}, {-22, 70}}, color = {0, 0, 127}));
+  connect(KPGOV.y, GovernorPID.u2) annotation(
+    Line(points = {{41, 0}, {72, 0}}, color = {0, 0, 127}));
+  connect(PELEC, s0.u) annotation(
+    Line(points = {{-120, -80}, {-94, -80}}, color = {0, 0, 127}));
+  connect(FSRN, GovernorPID.y) annotation(
+    Line(points = {{110, 0}, {95, 0}}, color = {0, 0, 127}));
+  connect(KPGOV1.y, s2.u) annotation(
+    Line(points = {{25, -30}, {30, -30}}, color = {0, 0, 127}));
+  connect(s2.y, GovernorPID.u3) annotation(
+    Line(points = {{53, -30}, {60, -30}, {60, -8}, {72, -8}}, color = {0, 0, 127}));
+  connect(s1.y, GovernorPID.u1) annotation(
+    Line(points = {{41, 30}, {60, 30}, {60, 8}, {72, 8}}, color = {0, 0, 127}));
+  connect(P_REF, add2.u1) annotation(
+    Line(points = {{-120, 80}, {-70, 80}, {-70, 76}, {-56, 76}}, color = {0, 0, 127}));
+  connect(r.y, add3_2.u3) annotation(
+    Line(points = {{-30, 21}, {-30, 62}, {-22, 62}}, color = {0, 0, 127}));
+  connect(r.u, rSELECT.y) annotation(
+    Line(points = {{-30, -2}, {-30, -13}}, color = {0, 0, 127}));
+  connect(add3.y, s7.u) annotation(
+    Line(points = {{-70, 30}, {-70, 30}, {-70, 34}, {-70, 34}}, color = {0, 0, 127}));
+  connect(PMW_SET, add3.u1) annotation(
+    Line(points = {{-120, 0}, {-76, 0}, {-76, 6}, {-76, 6}}, color = {0, 0, 127}));
+  connect(s0.y, add3.u2) annotation(
+    Line(points = {{-70, -80}, {-64, -80}, {-64, 6}, {-64, 6}}, color = {0, 0, 127}));
+  connect(s0.y, rSELECT.Pelect) annotation(
+    Line(points = {{-70, -80}, {-38, -80}, {-38, -36}, {-38, -36}}, color = {0, 0, 127}));
+  connect(VSTROKE, rSELECT.ValveStroke) annotation(
+    Line(points = {{-40, -120}, {-40, -120}, {-40, -90}, {-30, -90}, {-30, -36}, {-30, -36}}, color = {0, 0, 127}));
+  connect(GOVOUT1, rSELECT.GovernorOutput) annotation(
+    Line(points = {{40, -120}, {40, -120}, {40, -90}, {-22, -90}, {-22, -36}, {-22, -36}}, color = {0, 0, 127}));
+  connect(limiterSerror.y, KPGOV1.u) annotation(
+    Line(points = {{62, 70}, {80, 70}, {80, 50}, {-4, 50}, {-4, -30}, {2, -30}}, color = {0, 0, 127}));
+  connect(KPGOV.u, limiterSerror.y) annotation(
+    Line(points = {{18, 0}, {-4, 0}, {-4, 50}, {80, 50}, {80, 70}, {62, 70}}, color = {0, 0, 127}));
+  connect(s1.u, limiterSerror.y) annotation(
+    Line(points = {{18, 30}, {-4, 30}, {-4, 50}, {80, 50}, {80, 70}, {62, 70}}, color = {0, 0, 127}));
+  connect(add2.u2, s7.y) annotation(
+    Line(points = {{-56, 64}, {-70, 64}, {-70, 58}}, color = {0, 0, 127}));
+  connect(SPEED, add3_2.u1) annotation(
+    Line(points = {{0, 120}, {0, 88}, {-30, 88}, {-30, 78}, {-22, 78}}, color = {0, 0, 127}));
   annotation (
-    Diagram(graphics={Text(lineColor = {255, 0, 0}, extent = {{-108, 8}, {-96, 0}}, textString = "s7"),Text(lineColor = {255, 0, 0}, extent = {{86, 78}, {96, 70}}, textString = "s1"),Text(origin = {0, 12},lineColor = {255, 0, 0}, extent = {{66, -34}, {76, -42}}, textString = "s2"),Text(lineColor = {255, 0, 0}, extent={{-112,-198},{-100,-206}},   textString = "s0")}),
-    Icon(graphics={Rectangle(lineColor = {0, 0, 255}, extent = {{-140, 140}, {140, -140}}),Text(lineColor = {28, 108, 200}, extent = {{-128, 104}, {-72, 80}}, textString = "SPEED"),Text(lineColor = {28, 108, 200}, extent = {{-128, 50}, {-72, 26}}, textString = "P_REF"),Text(lineColor = {28, 108, 200}, extent = {{-130, -20}, {-60, -66}}, textString = "PMW_SET"),Text(lineColor = {28, 108, 200}, extent = {{-128, -92}, {-72, -116}}, textString = "PELEC"),Text(lineColor = {28, 108, 200}, extent = {{90, 8}, {138, -10}}, textString = "FSRN"),Text(lineColor = {28, 108, 200}, extent = {{-64, 42}, {66, -40}}, textString = "Governor"),Text(lineColor = {28, 108, 200}, extent = {{-58, -110}, {-6, -140}}, textString = "VSTROKE"),Text(lineColor = {28, 108, 200}, extent = {{46, -114}, {100, -140}}, textString = "GOVOUT1")}),
+    Diagram,
+    Icon(graphics={Rectangle(lineColor = {0, 0, 255}, extent = {{-100, 100}, {100, -100}}),Text(origin = {71.4286, 13.3333}, lineColor = {28, 108, 200}, extent = {{-91.4286, 86.6667}, {-51.4286, 66.6667}}, textString = "SPEED"),Text(origin = {-8.57143, 48.3333}, lineColor = {28, 108, 200}, extent = {{-91.4286, 41.6667}, {-51.4286, 21.6667}}, textString = "P_REF"),Text(origin = {-25.7143, 18.6956},lineColor = {28, 108, 200}, extent = {{-74.2857, -8.69562}, {-34.2857, -28.6956}}, textString = "PMW_SET"),Text(origin = {-8.57143, 6.66667},lineColor = {28, 108, 200}, extent = {{-91.4286, -76.6667}, {-51.4286, -96.6667}}, textString = "PELEC"),Text(origin = {-15, 1.1111}, lineColor = {28, 108, 200}, extent = {{75, 8.88889}, {115, -11.1111}}, textString = "FSRN"),Text(origin = {-0.615385, -0.487805}, lineColor = {28, 108, 200}, extent = {{-39.3846, 20.4878}, {40.6154, -19.5122}}, textString = "Governor"),Text(origin = {-15.3846, -6.66667},lineColor = {28, 108, 200}, extent = {{-44.6154, -73.3333}, {-4.61538, -93.3333}}, textString = "VSTROKE"),Text(origin = {-14.0741, 7.69231},lineColor = {28, 108, 200}, extent = {{34.0741, -87.6923}, {74.0741, -107.692}}, textString = "GOVOUT1")}),
     Documentation(info="<html>
 <p>The following documentation is adapted from 
 <a href=\"modelica://OpenIPSL.UsersGuide.References\">[PSSE-Models], chapter 7.12</a>:</p>
@@ -198,8 +162,8 @@ If the turbine is set to be isochronous, it is necessary to set the permanent dr
 </tr>
 <tr>
 <td><p>Author</p></td>
-<td><p><a href=\"https://github.com/maguilerac\">@maguilerac</a></p></td>
-<td><p><a href=\"https://github.com/marcelofcastro\">@marcelofcastro</a></p></td>
+<td><p><a href=\"https://github.com/maguilerac\">@maguilerac</a>,
+       <a href=\"https://github.com/marcelofcastro\">@marcelofcastro</a></p></td>
 </tr>
 <tr>
 <td><p>Contact</p></td>

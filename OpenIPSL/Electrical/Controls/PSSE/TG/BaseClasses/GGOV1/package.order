@@ -6,5 +6,5 @@ LoadLimiterDU
 Min_select
 PIDGovernor
 PIDGovernorDU
-RSELECT
+R_select
 Turbine
