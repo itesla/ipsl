@@ -32,7 +32,7 @@ model Turbine "GE General GGOV1 and GGOV1DU Turbine Model"
     Placement(transformation(extent = {{-10, -10}, {10, 10}}, rotation = 0, origin = {182, 0})));
   Modelica.Blocks.Math.Gain gain2(k = Dm) annotation (
     Placement(transformation(extent = {{-10, -10}, {10, 10}}, rotation = 0, origin = {90, 6})));
-  OpenIPSL.Electrical.Controls.PSSE.TG.BaseClasses.GGOV1.Flag flag10(flag = Flag) annotation (
+  OpenIPSL.Electrical.Controls.PSSE.TG.BaseClasses.GGOV1.Flag flag10(Flag=Flag)   annotation (
     Placement(transformation(extent = {{-10, -10}, {10, 10}}, rotation = 0, origin = {-30, 0})));
   OpenIPSL.Electrical.Controls.PSSE.TG.BaseClasses.GGOV1.Dm_select dm_select(Dm = Dm) annotation (
     Placement(transformation(extent = {{-40, 30}, {-20, 50}})));
