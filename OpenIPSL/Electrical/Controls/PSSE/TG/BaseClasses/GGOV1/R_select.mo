@@ -7,7 +7,7 @@ block R_select "Selects the feedback signal used in GGOV1 and GGOV1DU frequency 
       choice=0 " 0 None (isochronous governor)",
       choice=-1 "-1 Governor output (requested stroke)",
       choice=-2 "-2 Fuel valve stroke (true stroke)"));
-  Modelica.Blocks.Interfaces.RealOutput y annotation (Placement(visible = true, transformation(extent = {{100, -12}, {120, 8}}, rotation = 0), iconTransformation(extent = {{100, -10}, {120, 10}}, rotation = 0)));
+  Modelica.Blocks.Interfaces.RealOutput y annotation (Placement(visible = true, transformation(extent={{100,-10},{120,10}},     rotation = 0), iconTransformation(extent = {{100, -10}, {120, 10}}, rotation = 0)));
   Modelica.Blocks.Interfaces.RealInput Pelect annotation (Placement(
         visible = true,transformation(extent = {{-140, 60}, {-100, 100}}, rotation = 0), iconTransformation(extent = {{-140, 60}, {-100, 100}}, rotation = 0)));
   Modelica.Blocks.Interfaces.RealInput ValveStroke annotation (Placement(
