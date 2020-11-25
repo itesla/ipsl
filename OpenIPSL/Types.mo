@@ -22,7 +22,8 @@ package Types "Library specific type definitions"
   operator record ComplexCurrent = SI.ComplexCurrent(re(nominal = 1e4, displayUnit="kA"), im(nominal = 1e4, displayUnit="kA"));
   operator record ComplexAdmittance = SI.ComplexAdmittance;
   operator record ComplexImpedance = SI.ComplexImpedance;
-  operator record ComplexPower = SI.ComplexPower(re(nominal = 1e8, displayUnit="MW"), im(nominal = 1e8, displayUnit="MVA"));
+  //operator record ComplexPower = SI.ComplexPower(re(nominal = 1e8, displayUnit="MW"), im(nominal = 1e8, displayUnit="MVA"));
+  operator record ComplexPower = SI.ComplexPower "Temp workaround until https://trac.openmodelica.org/OpenModelica/ticket/6244 is fixed";
   operator record ComplexPerUnit = Complex(re(unit = "1"), im(unit = "1"));
   type Ctrl = enumeration(
       alpha  "Control using the firing angle alpha",
