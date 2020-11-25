@@ -1,6 +1,8 @@
 within OpenIPSL.Electrical.Controls.PSSE.TG.BaseClasses.GGOV1;
 block Flag "Flag to determine if fluid flow depends on speed"
-  parameter Integer flag;
+  parameter Integer Flag "Switch for fuel source characteristic"
+    annotation (Evaluate = true,
+    choices(choice = 0 "Fuel flow independent of speed", choice = 1 "Fuel flow proportional to speed"));
   Modelica.Blocks.Interfaces.RealOutput y annotation (Placement(transformation(
           extent={{100,-10},{120,10}}), iconTransformation(extent={{100,-10},{120,10}})));
   Modelica.Blocks.Interfaces.RealInput speed annotation (Placement(
@@ -9,7 +11,7 @@ block Flag "Flag to determine if fluid flow depends on speed"
         extent={{-20,-20},{20,20}},
         origin={-120,0})));
 equation
-  y = if flag == 1 then speed + 1 else 1;
+  y = if Flag == 1 then speed + 1 else 1;
   annotation (
     Icon(graphics={Text(
           extent={{-60,40},{60,-40}},
@@ -24,7 +26,7 @@ equation
 <p>
 This flag is used to determine if the fluid flow depends on the speed of the machine. 
 Gas turbines have fluid flow independent from speed and thus the flag should be set to 0.
-Diesel engines on the other hand have teir fluid flow proportional on the speed. In this case, the flag should be set to 1.
+Diesel engines on the other hand have their fluid flow proportional on the speed. In this case, the flag should be set to 1.
 </p>
 </blockquote>
 </html>", revisions="<html>

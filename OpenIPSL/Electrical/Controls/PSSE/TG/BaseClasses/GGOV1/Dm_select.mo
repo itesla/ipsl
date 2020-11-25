@@ -1,7 +1,7 @@
 within OpenIPSL.Electrical.Controls.PSSE.TG.BaseClasses.GGOV1;
 block Dm_select
   "Representation of the variation of maximum power capability with shaft speed"
-  parameter Real Dm;
+  parameter Real Dm "Mechanical damping coefficient";
   Modelica.Blocks.Interfaces.RealOutput y annotation (Placement(transformation(
           extent={{100,-10},{120,10}}), iconTransformation(extent={{100,-10},{120,10}})));
   Modelica.Blocks.Interfaces.RealInput speed annotation (Placement(

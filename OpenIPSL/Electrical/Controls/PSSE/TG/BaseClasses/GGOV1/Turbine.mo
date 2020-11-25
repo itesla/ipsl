@@ -1,9 +1,7 @@
 within OpenIPSL.Electrical.Controls.PSSE.TG.BaseClasses.GGOV1;
-
 model Turbine "GE General GGOV1 and GGOV1DU Turbine Model"
-  parameter Integer Flag = 1 "Switch for fuel source
-  \tcharacteristic" annotation(
-    Evaluate = true,
+  parameter Integer Flag = 1 "Switch for fuel source characteristic"
+    annotation(Evaluate = true,
     choices(choice = 0 "Fuel flow independent of speed", choice = 1 "Fuel flow proportional to speed"));
   parameter Types.Time Tact = 0.5 "Actuator time constant";
   parameter Types.PerUnit Kturb = 1.5 "Turbine gain";
