@@ -14,9 +14,6 @@ equation
     Icon(graphics={Text(
           extent={{-60,40},{60,-40}},
           lineColor={0,0,255},
-          horizontalAlignment=TextAlignment.Left,
-          origin={0,0},
-          rotation=360,
           textString="Flag"),Rectangle(extent={{-100,100},{100,-100}},
                                                                    lineColor={0,
           0,255})}),

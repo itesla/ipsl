@@ -50,13 +50,13 @@ equation
   connect(add.y, FSRA) annotation (Line(points={{91,0},{110,0}},                           color={0,0,127}));
   annotation (
     Icon(graphics={Rectangle(extent={{-100,100},{100,-100}}, lineColor={0,0,255}),Text(
-                    extent={{-90,50},{-60,28}},
-                    lineColor={28,108,200},
-                    textString="ASET"),Text(
+          extent={{-90,50},{-60,30}},
+          lineColor={28,108,200},
+          textString="ASET"),          Text(
                     extent={{-70,52},{70,-50}},
                     lineColor={28,108,200},
                     textString="Acceleration
-Limiter"),Text(               extent={{-90,-30},{-52,-50}},
+Limiter"),Text(               extent={{-90,-30},{-50,-50}},
                     lineColor={28,108,200},
                     textString="SPEED"),Text(
                     extent={{60,52},{90,30}},
