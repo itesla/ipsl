@@ -20,7 +20,7 @@ partial model baseLoad
     "Load transfer fraction for constant current load";
   parameter Complex b=0 + j*1
     "Load transfer fraction for constant shunt admittance load";
-  parameter Real PQBRAK=0.7 "Constant power characteristic threshold";
+  parameter Types.PerUnit PQBRAK=0.7 "Constant power characteristic threshold";
   parameter Integer characteristic=1 annotation (choices(choice=1, choice=2));
   OpenIPSL.Interfaces.PwPin p(
     vr(start=vr0),
