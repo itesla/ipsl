@@ -15,7 +15,7 @@ model PI
         origin={110.0,0.0},
         extent={{-10.0,-10.0},{10.0,10.0}})));
   parameter Real K;
-  parameter Real T;
+  parameter Types.Time T;
   parameter Real xo;
   parameter Real Ymax;
   parameter Real Ymin;
