@@ -7,8 +7,8 @@ model Terminator
       iconTransformation(
         origin={-120.0,0.0},
         extent={{-20.0,-20.0},{20.0,20.0}})));
-  parameter Type.Time T1=0.1;
-  parameter Type.Time T2=0.05;
+  parameter Types.Time T1=0.1;
+  parameter Types.Time T2=0.05;
   parameter Real Step=0.001;
   parameter Real Iniv123;
   parameter Real Inidv;

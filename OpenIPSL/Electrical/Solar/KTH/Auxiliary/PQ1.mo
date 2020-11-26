@@ -21,9 +21,9 @@ model PQ1
   parameter Types.Time Td=15 "d-axis inverter time constant";
   parameter Types.Time Tq=15 "q-axis inverter time constant";
 protected
-  parameter Real CoB=Sn/SystemBase;
-  parameter Types.PerUnit Pref=P0*CoB "active power initialization";;
-  parameter Types.PerUnit Qref=Q0*CoB "reactive power initialization";;
+  parameter Real CoB=Sn/S_b;
+  parameter Types.PerUnit Pref=P0*CoB "active power initialization";
+  parameter Types.PerUnit Qref=Q0*CoB "reactive power initialization";
   parameter Types.PerUnit vd0=-v0*sin(anglev0) "d-axis voltage initialization";
   parameter Types.PerUnit vq0=v0*cos(anglev0) "q-axis voltage initialization";
   parameter Types.PerUnit idref=(vq0*Qref + Pref*vd0)/(vq0^2 + vd0^2) "d-axis current initialization";

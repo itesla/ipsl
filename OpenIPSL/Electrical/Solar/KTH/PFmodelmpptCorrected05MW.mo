@@ -2,7 +2,7 @@ within OpenIPSL.Electrical.Solar.KTH;
 model PFmodelmpptCorrected05MW
   parameter Types.ApparentPower S_b(displayUnit="MVA")=100000000 "System base power"
       annotation (Dialog(group="Power flow data"));
-  parameter Types.PerUnit v_0=1.00018548610126 "Voltage magnitude"
+  parameter Types.PerUnit v0=1.00018548610126 "Voltage magnitude"
       annotation (Dialog(group="Power flow data"));
   parameter SI.Conversions.NonSIunits.Angle_deg anglev0(displayUnit="deg")=-0.0000253046024029618 "Voltage angle"
       annotation (Dialog(group="Power flow data"));

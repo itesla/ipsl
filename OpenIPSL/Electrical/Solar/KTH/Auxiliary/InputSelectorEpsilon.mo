@@ -42,6 +42,7 @@ model InputSelectorEpsilon
     input Real dv;
     input Real di;
     output Real k;
+  protected
     parameter Real Epsilon=0.01;
   algorithm
     if dv == 0 then
