@@ -68,19 +68,17 @@ model PVnew
   Modelica.Blocks.Math.Product product1 annotation (Placement(transformation(
         origin={60.0,60.0},
         extent={{-10.0,-10.0},{10.0,10.0}})));
-  parameter Real nSerialModules=20;
-  parameter Real nParallelModules=140;
-  parameter Real Tdelay=0.05;
-  parameter Real Imp=4.58 "Current at maximum power";
-  parameter Real Vmp=35 "Voltage at maximum power";
-  parameter Real Iscref=5
-    "Module short-circuit current reference at reference temp and irradiance";
-  parameter Real Vocref=43.8
-    "Module open-circuit voltage reference at reference temp and irradiance";
+  parameter Integer nSerialModules=20;
+  parameter Integer nParallelModules=140;
+  parameter Types.Time Tdelay=0.05;
+  parameter Types.Current Imp=4.58 "Current at maximum power";
+  parameter Types.Voltage Vmp=35 "Voltage at maximum power";
+  parameter Types.Current Iscref=5 "Module short-circuit current reference at reference temp and irradiance";
+  parameter Types.Voltage Vocref=43.8 "Module open-circuit voltage reference at reference temp and irradiance";
   parameter Real Kv=-0.0039 "temperature correction factor for the voltage";
   parameter Real Ki=0.0004 "temperature correction factor for the current";
-  parameter Real Tstc=25 "Temperature at the standard test conditions";
-  parameter Real Estc=1000 "Irradiance at the standard test conditions";
+  parameter SI.Temperature Tstc=25 "Temperature at the standard test conditions";
+  parameter SI.Irradiance Estc=1000 "Irradiance at the standard test conditions";
 equation
   connect(Udc, gain1.u) annotation (Line(
       origin={-126.0,60.0},

@@ -15,9 +15,9 @@ model Capacitor
         origin={-120.0,-0.0},
         extent={{-20.0,-20.0},{20.0,20.0}})));
   Real x(start=Udc0/(1000*UdcN));
-  parameter Real C;
-  parameter Real Udc0;
-  parameter Real UdcN;
+  parameter SI.Capacitance C;
+  parameter Types.Voltage Udc0;
+  parameter Types.Voltage UdcN;
 equation
   y0 = x;
   der(x) = yi/C;

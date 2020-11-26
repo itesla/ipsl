@@ -1,12 +1,12 @@
 within OpenIPSL.Electrical.Solar.KTH.PFblocks;
 model Staticgenerator
-  parameter Real Pnen=0.5 "MW rated power";
-  parameter Real v0=1 "Power flow, node voltage";
-  parameter Real anglev0=1 "Power flow, node angle";
-  parameter Real p0=1 "Power flow, node active power";
-  parameter Real q0=1 "Power flow, node reactive power";
-  parameter Real Td=0.00015 "d-axis inverter time constant";
-  parameter Real Tq=0.00015 "q-axis inverter time constant";
+  parameter Types.ActivePower Pnen(displayUnit="MW")=500000 "rated power";
+  parameter Types.PerUnit v0=1 "Node voltage" annotation (Dialog(group="Power flow data"));
+  parameter SI.Conversions.NonSIunits.Angle_deg anglev0(displayUnit="deg")=1 "Node angle" annotation (Dialog(group="Power flow data"));
+  parameter Types.PerUnit p0=1 "Initial active power" annotation (Dialog(group="Power flow data"));
+  parameter Types.PerUnit q0=1 "Initial reactive power" annotation (Dialog(group="Power flow data"));
+  parameter Types.Time Td=0.00015 "d-axis inverter time constant";
+  parameter Types.Time Tq=0.00015 "q-axis inverter time constant";
   Modelica.Blocks.Interfaces.RealInput id_ref annotation (Placement(
       transformation(
         origin={-175.0,55.0},
@@ -29,10 +29,10 @@ model Staticgenerator
       iconTransformation(
         origin={110.0,0.0},
         extent={{-10.0,-10.0},{10.0,10.0}})));
-  Real anglev;
-  Real id;
-  Real iq;
-  Real Q;
+  Types.Angle anglev;
+  Types.PerUnit id;
+  Types.PerUnit iq;
+  Types.PerUnit Q;
   Modelica.Blocks.Interfaces.RealOutput P(start=p0) annotation (Placement(
       transformation(
         origin={165.1089,-78.9737},

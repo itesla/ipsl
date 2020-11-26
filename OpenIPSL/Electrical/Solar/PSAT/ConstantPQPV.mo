@@ -148,10 +148,8 @@ model ConstantPQPV
     der(iq) = (iqref1 - iq)/Tq;
     v = sqrt(p.vr^2 + p.vi^2);
     anglev = atan2(p.vi, p.vr);
-    p.ir = -iq
-      "change of sign due to the fact than in modelica when entering is + and in this case is going out";
-    p.ii = id
-      "change of sign due to the fact than in modelica when entering is + and in this case is going out";
+    p.ir = -iq "change of sign due to the fact than in modelica when entering is + and in this case is going out";
+    p.ii = id "change of sign due to the fact than in modelica when entering is + and in this case is going out";
     p.vr = vq;
     p.vi = -vd;
     annotation (
