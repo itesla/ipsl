@@ -84,7 +84,7 @@ model SolarPVtest
   OpenIPSL.Electrical.Solar.PSAT.ConstantPQPV.PV1 PV11(
     Q_0=0.283430554716626,
     angle_0=-0.00000839852213846341,
-    V_0=1.00002,
+    v_0=1.00002,
     vref=1.00002,
     P_0=0.4) annotation (Placement(transformation(
         origin={30.0,12.1033},

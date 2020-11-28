@@ -4,7 +4,7 @@ model SolarPQtest
   OpenIPSL.Electrical.Solar.PSAT.ConstantPQPV.PQ1 PQ11(
     P_0=0.4,
     Q_0=0.3,
-    V_0=1.00018548610126,
+    v_0=1.00018548610126,
     angle_0=-0.0000253046024029618) annotation (Placement(transformation(
         origin={35.0,10.0},
         extent={{-10.0,-10.0},{10.0,10.0}})));
