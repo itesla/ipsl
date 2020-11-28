@@ -16,13 +16,13 @@ model PitchControl
       iconTransformation(
         origin={-2.0,-74.0},
         extent={{102.0,54.0},{62.0,94.0}})));
-  parameter Real Kp=10 "Pitch control gain (pu)";
-  parameter Real Tp=3 "Pitch control time constant (s)";
-  parameter Real theta_p0=0;
-  parameter Real theta_p_min;
-  parameter Real theta_p_max;
+  parameter Real Kp=10 "Pitch control gain";
+  parameter Types.Time Tp=3 "Pitch control time constant";
+  parameter Types.Angle theta_p0=0;
+  parameter Types.Angle theta_p_min;
+  parameter Types.Angle theta_p_max;
   Real theta_pI "internal non-saturated theta_p";
-  Real phi;
+  Types.Angle phi;
 initial equation
   (Kp*phi - theta_pI)/Tp = 0;
 equation

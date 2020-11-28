@@ -2,50 +2,45 @@ within OpenIPSL.Electrical.Wind.GE.Type_3;
 model GE_WT
   import Modelica.Constants.pi;
   import Modelica.Constants.eps;
-  parameter Real _V0=1.03 "Terminal Voltage from Power Flow";
-  parameter Real _Ang0=0.421202138172605 "Terminal Angle from Power Flow";
-  parameter Real _P0=1.62 "Active Power from Power Flow";
-  parameter Real _Q0=-0.370492231185345 "Reactive Power from Power Flow";
-  parameter Real GEN_base=180 "Base Power from the Electrical Generator";
-  parameter Real WT_base=162 "Base Power from the Turbine";
-  parameter Real SYS_base=100 "Base Power from the power system";
-  parameter Real freq=60 "Steady state Frequency of the power system";
-  parameter Real poles=3 "Number of pole pairs";
-  parameter Real Tp=0.3 "Time Constant Pitch command";
+  parameter Types.PerUnit _V0=1.03 "Terminal Voltage from Power Flow";
+  parameter Types.Angle _Ang0(displayUnit="deg")=0.00735136412 "Terminal Angle from Power Flow";
+  parameter Types.AcitvePower _P0(displayUnit="MW")=162000000 "Active Power from Power Flow";
+  parameter Types.ReacitvePower _Q0(displayUnit="Mvar")=-37049223.1185345 "Reactive Power from Power Flow";
+  parameter Types.ApparentPower GEN_base(displayUnit="MVA")=180000000 "Base Power from the Electrical Generator";
+  parameter Types.ApparentPower WT_base(displayUnit="MVA")=162000000 "Base Power from the Turbine";
+  parameter Types.ApparentPower SYS_base(displayUnit="MVA")=100000000 "Base Power from the power system";
+  parameter Types.Frequency freq=60 "Steady state Frequency of the power system";
+  parameter Integer poles=3 "Number of pole pairs";
+  parameter Types.Time Tp=0.3 "Time Constant Pitch command";
   parameter Real Kpp=150.0 "Pitch Control gain";
   parameter Real Kip=25.0 "Gain of integrator of Pitch Control";
   parameter Real Kpc=3.0 "Pitch Compensation gain";
   parameter Real Kic=30.0 "Gain of integrator of Pitch Compensation";
-  parameter Real pimax=27.0 "Maximum pitch angle";
-  parameter Real pimin=0.0 "minimum pitch angle";
-  parameter Real pirat=10.0 "maximum variation rate of pitch angle";
-  parameter Real pwmax=1.12 "Maximal power taken from the wind";
-  parameter Real pwmin=0.1 "Minimal power taken from the wind";
-  parameter Real pwrat=0.45
-    "maximum variation rate of power taken from the wind";
+  parameter Types.Angle pimax(displayUnit="deg")=0.47123889803 "Maximum pitch angle";
+  parameter Types.Angle pimin(displayUnit="deg")=0.0 "minimum pitch angle";
+  parameter Types.TimeAging pirat=10.0 "maximum variation rate of pitch angle";
+  parameter Types.PerUnit pwmax=1.12 "Maximal power taken from the wind";
+  parameter Types.PerUnit pwmin=0.1 "Minimal power taken from the wind";
+  parameter Types.TimeAging pwrat=0.45 "maximum variation rate of power taken from the wind";
   parameter Real Kptrq=3.0 "Gain Torque Controller";
   parameter Real Kitrq=0.6 "Gain of integrator of Torque Controller";
-  parameter Real Tpc=0.05 "Time Constant Torque controller";
-  parameter Real KQi=0.1
-    "Gain constant of first PI in DFIG electrical control model";
-  parameter Real KVi=40
-    "Gain constant of second PI in DFIG electrical control model";
-  parameter Real xiqmax=0.4
-    "Up saturation of second PI in DFIG electrical control model";
-  parameter Real xiqmin=-0.5
-    "Down saturation of second PI in DFIG electrical control model";
+  parameter Types.Time Tpc=0.05 "Time Constant Torque controller";
+  parameter Real KQi=0.1 "Gain constant of first PI in DFIG electrical control model";
+  parameter Real KVi=40 "Gain constant of second PI in DFIG electrical control model";
+  parameter Types.PerUnit xiqmax=0.4 "Up saturation of second PI in DFIG electrical control model";
+  parameter Types.PerUnit xiqmin=-0.5 "Down saturation of second PI in DFIG electrical control model";
   parameter Real Kpllp=30;
-  parameter Real Xpp=0.8;
-  parameter Real qmax=0.312;
-  parameter Real qmin=-0.436;
-  parameter Real nmass=2 "Mono-mass or Two-mass model";
-  parameter Real Hg=0.62 "Inertia 2";
-  parameter Real H=4.33 "Inertia";
+  parameter Types.PerUnit Xpp=0.8;
+  parameter Types.PerUnit qmax=0.312;
+  parameter Types.PerUnit qmin=-0.436;
+  parameter Integer nmass=2 "Mono-mass or Two-mass model";
+  parameter Types.Time Hg=0.62 "Inertia 2";
+  parameter Types.Time H=4.33 "Inertia";
   parameter Real Ktg=1.11 "Gain for 2 mass model";
   parameter Real Dtg=1.5 "Damping";
   parameter Real Kl=56.6;
-  Real P "Active Power produced in SYS_base";
-  Real Q "Reactive Power produced in SYS_base";
+  Types.AcitvePower P "Active Power produced in SYS_base";
+  Types.ReacitvePower Q "Reactive Power produced in SYS_base";
   OpenIPSL.Interfaces.PwPin pwPin1 annotation (Placement(
       transformation(
         origin={-77.9122,32.2584},
@@ -62,7 +57,6 @@ model GE_WT
         extent={{-20.0,-20.0},{20.0,20.0}},
         rotation=-90)));
   Turbine.Turbine_Model turbine_Model1(
-    eps=Modelica.Constants.eps,
     GEN_base=GEN_base,
     Kic=Kic,
     Kip=Kip,
@@ -240,27 +234,27 @@ protected
   Modelica.Blocks.Sources.Constant const(k=qgen) annotation (Placement(transformation(
         origin={-44.2929,70.7071},
         extent={{-4.2929,-4.2929},{4.2929,4.2929}})));
-  parameter Real Lpp=Xpp;
-  parameter Real wbase=2*Modelica.Constants.pi*freq/poles;
-  parameter Real pelec=_P0/WT_base*SYS_base;
-  parameter Real pmech=pelec;
-  parameter Real wt_x0_0(fixed=false);
-  parameter Real wt_x1_0(fixed=false);
-  parameter Real wt_x2_0(fixed=false);
-  parameter Real wt_x3_0(fixed=false);
-  parameter Real wt_x4_0(fixed=false);
-  parameter Real wt_x5_0(fixed=false);
-  parameter Real wt_x6_0(fixed=false);
-  parameter Real wt_x7_0(fixed=false);
-  parameter Real wt_x8_0(fixed=false);
-  parameter Real wt_x9_0(fixed=false);
-  parameter Real ex_x0_0(fixed=false);
-  parameter Real ex_x1_0(fixed=false);
-  parameter Real ge_x0_0(fixed=false);
-  parameter Real ge_x1_0(fixed=false);
-  parameter Real ge_x2_0(fixed=false);
-  parameter Real qgen(fixed=false);
-  parameter Real wndtge_ang0(fixed=false);
+  parameter Types.PerUnit Lpp=Xpp;
+  parameter SI.AngularVelocity wbase=2*Modelica.Constants.pi*freq/poles;
+  parameter Types.PerUnit pelec=_P0/WT_base;
+  parameter Types.PerUnit pmech=pelec;
+  parameter Types.PerUnit wt_x0_0(fixed=false);
+  parameter Types.PerUnit wt_x1_0(fixed=false);
+  parameter Types.PerUnit wt_x2_0(fixed=false);
+  parameter Types.PerUnit wt_x3_0(fixed=false);
+  parameter Types.PerUnit wt_x4_0(fixed=false);
+  parameter Types.PerUnit wt_x5_0(fixed=false);
+  parameter Types.PerUnit wt_x6_0(fixed=false);
+  parameter Types.PerUnit wt_x7_0(fixed=false);
+  parameter Types.PerUnit wt_x8_0(fixed=false);
+  parameter Types.PerUnit wt_x9_0(fixed=false);
+  parameter Types.PerUnit ex_x0_0(fixed=false);
+  parameter Types.PerUnit ex_x1_0(fixed=false);
+  parameter Types.PerUnit ge_x0_0(fixed=false);
+  parameter Types.PerUnit ge_x1_0(fixed=false);
+  parameter Types.PerUnit ge_x2_0(fixed=false);
+  parameter Types.PerUnit qgen(fixed=false);
+  parameter Types.Angle wndtge_ang0(fixed=false);
   parameter Real wndtge_spd0(fixed=false);
   parameter Real wndtge_spdwmx(fixed=false);
   parameter Real wndtge_spdwmn(fixed=false);
@@ -282,9 +276,9 @@ initial algorithm
   wndtge_spdw1 := 14.0;
   genbc_k_speed := 1.2;
   wndtge_kp := 0.00159;
-  qgen := _Q0*SYS_base/GEN_base;
-  ge_x0_0 := _V0 + _Q0*SYS_base/GEN_base*Lpp/_V0;
-  ge_x1_0 := _P0*SYS_base/GEN_base/_V0;
+  qgen := _Q0/GEN_base;
+  ge_x0_0 := _V0 + _Q0/GEN_base*Lpp/_V0;
+  ge_x1_0 := _P0/GEN_base/_V0;
   ge_x2_0 := _Ang0;
   ex_x0_0 := _V0;
   ex_x1_0 := ge_x0_0;

@@ -1,14 +1,14 @@
 within OpenIPSL.Electrical.Wind.GE.Type_3.Electrical_Control;
 model Electrical_Control
   import Modelica.Constants.inf;
-  parameter Real qmax=1;
-  parameter Real qmin=0;
+  parameter Types.PerUnit qmax=1;
+  parameter Types.PerUnit qmin=0;
   parameter Real KQi=1;
-  parameter Real ex_x0_0=1;
-  parameter Real ex_x1_0=1;
+  parameter Types.PerUnit ex_x0_0=1;
+  parameter Types.PerUnit ex_x1_0=1;
   parameter Real KVi=1;
-  parameter Real xiqmax=1;
-  parameter Real xiqmin=1;
+  parameter Types.PerUnit xiqmax=1;
+  parameter Types.PerUnit xiqmin=1;
   Modelica.Blocks.Interfaces.RealInput Qgen
     "Reactive Power produced by the Generator" annotation (Placement(
       transformation(

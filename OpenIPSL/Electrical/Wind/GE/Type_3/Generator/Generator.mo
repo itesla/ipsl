@@ -1,15 +1,15 @@
 within OpenIPSL.Electrical.Wind.GE.Type_3.Generator;
 model Generator
   import Modelica.Constants.pi;
-  parameter Real freq=50;
-  parameter Real omega_0=2*pi*freq;
+  parameter Types.Frequency freq=50;
+  parameter SI.AngularVelocity omega_0=2*pi*freq;
   parameter Real Kpllp=1;
-  parameter Real ge_x0_0=1;
-  parameter Real ge_x1_0=1;
-  parameter Real ge_x2_0=1;
-  parameter Real GEN_base=1;
-  parameter Real SYS_base=1;
-  parameter Real Lpp=1;
+  parameter Types.PerUnit ge_x0_0=1;
+  parameter Types.PerUnit ge_x1_0=1;
+  parameter Types.PerUnit ge_x2_0=1;
+  parameter Types.ApparentPower GEN_base=1;
+  parameter Types.ApparentPower SYS_base=1;
+  parameter Types.PerUnit Lpp=1;
   Modelica.Blocks.Interfaces.RealInput Efd "Excitation voltage" annotation (
       Placement(
       transformation(
@@ -57,10 +57,10 @@ model Generator
       iconTransformation(
         origin={0.0,-110.0},
         extent={{-10.0,-10.0},{10.0,10.0}})));
-  Real Anglet;
+  Types.Angle Anglet;
 protected
-  Real Vt_re;
-  Real Vt_im;
+  Types.PerUnit Vt_re;
+  Types.PerUnit Vt_im;
   Modelica.Blocks.Continuous.Integrator integrator1(k=omega_0, y_start=ge_x2_0)
     annotation (Placement(transformation(
         origin={-67.1876,-70.0},

@@ -24,10 +24,10 @@ model MechaBlk
       iconTransformation(
         origin={-2.0,-74.0},
         extent={{102.0,54.0},{62.0,94.0}})));
-  parameter Real Sbase=100 "Power Rating [Normalization Factor] (MVA)";
-  parameter Real Pnom=10 "Nominal Power (MVA)";
-  parameter Real Hm=0.3 "inertia (pu)";
-  parameter Real Pc=0.016 "p.u. Input, PowerFlow";
+  parameter Types.ApparentPower Sbase(displayUnit="MVA")=100000000 "Power Rating [Normalization Factor]";
+  parameter Types.ApparentPower Pnom(displayUnit="MVA")=10000000 "Nominal Power";
+  parameter Types.Time Hm=0.3 "inertia";
+  parameter Types.PerUnit Pc=0.016 "Input Power Flow";
 initial equation
   if Pc < Pnom/Sbase and Pc > 0 then
     omega_m = 0.5*Pc*Sbase/Pnom + 0.5;

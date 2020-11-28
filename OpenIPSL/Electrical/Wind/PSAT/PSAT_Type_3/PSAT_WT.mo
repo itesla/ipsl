@@ -111,76 +111,76 @@ model PSAT_WT "Wind Turbine Doubly Fed Induction Generator"
       iconTransformation(
         origin={-110.0,0.0},
         extent={{-10.0,-10.0},{10.0,10.0}})));
-  parameter Real V_0=1 "Voltage magnitude (pu)"
+  parameter Types.PerUnit V_0=1 "Voltage magnitude"
     annotation (Dialog(group="Power flow data"));
-  parameter Real angle_0=-0.00243 "Voltage angle (deg.)"
+  parameter Types.Angle angle_0(displayUnit="deg")=-0.00243 "Voltage angle"
     annotation (Dialog(group="Power flow data"));
-  parameter Real P_0=0.0160000000000082 "Active power (pu)"
+  parameter Types.PerUnit P_0=0.0160000000000082 "Active power"
     annotation (Dialog(group="Power flow data"));
-  parameter Real Q_0=0.030527374471207 "Reactive power (pu)"
+  parameter Types.PerUnit Q_0=0.030527374471207 "Reactive power"
     annotation (Dialog(group="Power flow data"));
-  parameter Real S_b=100 "System base power(MVA)"
+  parameter Types.ApparentPower S_b(displayUnit="MVA")=100000000 "System base power"
     annotation (Dialog(group="Power flow data"));
-  parameter Real V_b=400 "Voltage rating kV"
+  parameter Types.Voltage V_b(displayUnit="kV")=400e3 "Voltage rating"
     annotation (Dialog(group="Power flow data"));
-  parameter Real Pnom=10 "Nominal Power (MVA)";
-  parameter Real fn=50 "Frequency rating (Hz)";
-  parameter Real rho=1.225 "Air Density (kg/m^3)";
-  parameter Real vw_base=15 "Nominal wind speed (m/s)";
-  parameter Real Rs_machine=0.01 "Stator Resistance (pu)";
-  parameter Real Xs_machine=0.1 "Stator Reactance (pu)";
-  parameter Real Rr_machine=0.01 "Rotor Resitance (pu)";
-  parameter Real Xr_machine=0.08 "Rotor Reactance (pu)";
-  parameter Real Xm_machine=3 "Magnetisation reactance (pu)";
-  parameter Real Hm_machine=3 "Inertia (pu)";
-  parameter Real Kp=10 "Pitch control gain (pu)";
-  parameter Real Tp=3 "Pitch control time constant (s)";
-  parameter Real Kv=10 "Voltage control gain (kV)";
-  parameter Real Te=0.01 "Power Control time constant (s)";
-  parameter Real l=75 "Blade length (m)";
-  parameter Real poles=2 "Number of poles-pair";
-  parameter Real nblades=3 "Number of blades";
+  parameter Types.ApparentPower Pnom(displayUnit="MVA")=10000000 "Nominal Power";
+  parameter Types.Frequency fn=50 "Frequency rating";
+  parameter SI.Density rho=1.225 "Air Density";
+  parameter SI.Velocity vw_base=15 "Nominal wind speed";
+  parameter Types.PerUnit Rs_machine=0.01 "Stator Resistance";
+  parameter Types.PerUnit Xs_machine=0.1 "Stator Reactance";
+  parameter Types.PerUnit Rr_machine=0.01 "Rotor Resitance";
+  parameter Types.PerUnit Xr_machine=0.08 "Rotor Reactance";
+  parameter Types.PerUnit Xm_machine=3 "Magnetisation reactance";
+  parameter Types.Time Hm_machine=3 "Inertia";
+  parameter Real Kp=10 "Pitch control gain";
+  parameter Types.Time Tp=3 "Pitch control time constant";
+  parameter Types.Voltage Kv(displayUnit="kV")=10 "Voltage control gain";
+  parameter Types.Time Te=0.01 "Power Control time constant";
+  parameter SI.Length l=75 "Blade length";
+  parameter Integer poles=2 "Number of poles-pair";
+  parameter Integer nblades=3 "Number of blades";
   parameter Real ngb=0.01123596 "Gear box ratio";
-  Real Vbus=elecCircuit.Vbus "Bus voltage magnitude (pu)";
-  Real Anglebus=elecCircuit.Anglebus "Bus voltage angle (deg)";
-  Real P=elecCircuit.p "Active power (pu)";
-  Real Q=elecCircuit.q "Reactive power (pu)";
+  Type.PerUnit Vbus=elecCircuit.Vbus "Bus voltage magnitude";
+  Type.Angle Anglebus=elecCircuit.Anglebus "Bus voltage angle";
+  Type.PerUnit P=elecCircuit.p "Active power";
+  Type.PerUnit Q=elecCircuit.q "Reactive power";
 protected
-  parameter Real Rs=Rs_machine*S_b/Pnom "stator Resistance (pu)";
-  parameter Real Xs=Xs_machine*S_b/Pnom "stator Reactance (pu)";
-  parameter Real Rr=Rr_machine*S_b/Pnom "Rotor Resitance (pu)";
-  parameter Real Xr=Xr_machine*S_b/Pnom "rotor Reactance (pu)";
-  parameter Real Xm=Xm_machine*S_b/Pnom "magnetisation reactance (pu)";
-  parameter Real Hm=Hm_machine*Pnom/S_b "inertia (pu)";
-  parameter Real Pmax_machine=1 "Pmax (pu)";
-  parameter Real Pmin_machine=0 "Pmin (pu)";
-  parameter Real Qmax_machine=0.7 "Qmax (pu)";
-  parameter Real Qmin_machine=-0.7 "Qmin (pu)";
-  parameter Real Pmax=Pmax_machine*Pnom/S_b "Pmax (pu)";
-  parameter Real Pmin=Pmin_machine*Pnom/S_b "Pmin (pu)";
-  parameter Real Qmax=Qmax_machine*Pnom/S_b "Qmax (pu)";
-  parameter Real Qmin=Qmin_machine*Pnom/S_b "Qmin (pu)";
-  parameter Real x1=Xs + Xm;
-  parameter Real x2=Xr + Xm;
-  parameter Real iqr_max=-x1*Pmin/Xm;
-  parameter Real iqr_min=-Pmax*x1/Xm;
-  parameter Real idr_min=(-Qmax*x1/Xm) - x1/Xm^2;
-  parameter Real idr_max=(-Qmin*x1/Xm) - x1/Xm^2;
-  parameter Real theta_max=45;
-  parameter Real theta_min=0;
-  parameter Real omega_m0=min(max(0.5*P_0*S_b/Pnom + 0.5, 0.5), 1);
-  parameter Real i2Hm=1/(2*Hm);
-  parameter Real wbase=2*Modelica.Constants.pi*fn/poles;
+  parameter Types.PerUnit Rs=Rs_machine*S_b/Pnom "stator Resistance (pu)";
+  parameter Types.PerUnit Xs=Xs_machine*S_b/Pnom "stator Reactance (pu)";
+  parameter Types.PerUnit Rr=Rr_machine*S_b/Pnom "Rotor Resitance (pu)";
+  parameter Types.PerUnit Xr=Xr_machine*S_b/Pnom "rotor Reactance (pu)";
+  parameter Types.PerUnit Xm=Xm_machine*S_b/Pnom "magnetisation reactance (pu)";
+  parameter Types.Time Hm=Hm_machine*Pnom/S_b "inertia (pu)";
+  parameter Types.PerUnit Pmax_machine=1 "Pmax (pu)";
+  parameter Types.PerUnit Pmin_machine=0 "Pmin (pu)";
+  parameter Types.PerUnit Qmax_machine=0.7 "Qmax (pu)";
+  parameter Types.PerUnit Qmin_machine=-0.7 "Qmin (pu)";
+  parameter Types.PerUnit Pmax=Pmax_machine*Pnom/S_b "Pmax (pu)";
+  parameter Types.PerUnit Pmin=Pmin_machine*Pnom/S_b "Pmin (pu)";
+  parameter Types.PerUnit Qmax=Qmax_machine*Pnom/S_b "Qmax (pu)";
+  parameter Types.PerUnit Qmin=Qmin_machine*Pnom/S_b "Qmin (pu)";
+  parameter Types.PerUnit x1=Xs + Xm;
+  parameter Types.PerUnit x2=Xr + Xm;
+  parameter Types.PerUnit iqr_max=-x1*Pmin/Xm;
+  parameter Types.PerUnit iqr_min=-Pmax*x1/Xm;
+  parameter Types.PerUnit idr_min=(-Qmax*x1/Xm) - x1/Xm^2;
+  parameter Types.PerUnit idr_max=(-Qmin*x1/Xm) - x1/Xm^2;
+  parameter Types.Angle theta_max(displayUnit="deg")=0.78539816339;
+  parameter Types.Angle theta_min(displayUnit="deg")=0;
+  parameter Types.PerUnit omega_m0=min(max(0.5*P_0*S_b/Pnom + 0.5, 0.5), 1);
+  parameter Types.TimeAging i2Hm=1/(2*Hm);
+  parameter SI.AngularVelocity wbase=2*Modelica.Constants.pi*fn/poles;
   parameter Real k=x1*Pnom/V_0/Xm/S_b "gain for iqr_off computation";
-  parameter Real theta_p0=0;
-  parameter Real ids0=((-vds0^2) + vds0*Xm*iqr0 - x1*Q_0)/(Rs*vds0 - x1*vqs0);
-  parameter Real iqs0=((-vds0*vqs0) + vqs0*Xm*iqr0 - Rs*Q_0)/(Rs*vds0 - x1*vqs0);
-  parameter Real idr0=-(vqs0 + Rs*iqs0 + x1*ids0)/Xm;
-  parameter Real iqr0=-x1*Pnom*(2*omega_m0 - 1)/V_0/Xm/S_b/omega_m0;
-  parameter Real vds0=-V_0*sin(angle_0);
-  parameter Real vqs0=V_0*cos(angle_0);
-  parameter Real vdr0=(-Rr*idr0) + (1 - omega_m0)*(x2*iqr0 + Xm*iqs0);
-  parameter Real vqr0=(-Rr*iqr0) - (1 - omega_m0)*(x2*idr0 + Xm*ids0);
+  parameter Types.Angle theta_p0(displayUnit="deg")=0;
+  parameter Types.PerUnit ids0=((-vds0^2) + vds0*Xm*iqr0 - x1*Q_0)/(Rs*vds0 - x1*vqs0);
+  parameter Types.PerUnit iqs0=((-vds0*vqs0) + vqs0*Xm*iqr0 - Rs*Q_0)/(Rs*vds0 - x1*vqs0);
+  parameter Types.PerUnit idr0=-(vqs0 + Rs*iqs0 + x1*ids0)/Xm;
+  parameter Types.PerUnit iqr0=-x1*Pnom*(2*omega_m0 - 1)/V_0/Xm/S_b/omega_m0;
+  parameter Types.PerUnit vds0=-V_0*sin(angle_0);
+  parameter Types.PerUnit vqs0=V_0*cos(angle_0);
+  parameter Types.PerUnit vdr0=(-Rr*idr0) + (1 - omega_m0)*(x2*iqr0 + Xm*iqs0);
+  parameter Types.PerUnit vqr0=(-Rr*iqr0) - (1 - omega_m0)*(x2*idr0 + Xm*ids0);
 equation
   connect(pin, elecCircuit.pin) annotation (Line(
       origin={-5.4875,-55.7974},

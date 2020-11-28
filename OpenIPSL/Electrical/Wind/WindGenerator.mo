@@ -10,15 +10,15 @@ model WindGenerator
       iconTransformation(
         origin={0.0,0.0},
         extent={{100.0,-10.0},{120.0,10.0}})));
-  parameter Real tstart=5 "Start time of the wind gust";
-  parameter Real tstop=10 "Stop time of the wind gust";
-  parameter Real v0=14 "steady state wind speed";
-  parameter Real vmax=25 "peak wind speed for Mexican Hat";
-  parameter Real wmag=-4 "magnitude of the gust of wind";
+  parameter Types.Time tstart=5 "Start time of the wind gust";
+  parameter Types.Time tstop=10 "Stop time of the wind gust";
+  parameter SI.Velocity v0=14 "steady state wind speed";
+  parameter SI.Velocity vmax=25 "peak wind speed for Mexican Hat";
+  parameter SI.Velocity wmag=-4 "magnitude of the gust of wind";
   parameter Real sigma=1 "Mexican hat wavelet shape factor";
-  parameter Real typ=1 "1:constant 2:gust 3:mexican hat";
+  parameter Integer typ=1 "1:constant 2:gust 3:mexican hat";
 protected
-  parameter Real wgwidth=tstop - tstart;
+  parameter Types.Time wgwidth=tstop - tstart;
 equation
   if typ == 1 then
     Vw = v0;
