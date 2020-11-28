@@ -141,10 +141,10 @@ model PSAT_WT "Wind Turbine Doubly Fed Induction Generator"
   parameter Integer poles=2 "Number of poles-pair";
   parameter Integer nblades=3 "Number of blades";
   parameter Real ngb=0.01123596 "Gear box ratio";
-  Type.PerUnit Vbus=elecCircuit.Vbus "Bus voltage magnitude";
-  Type.Angle Anglebus=elecCircuit.Anglebus "Bus voltage angle";
-  Type.PerUnit P=elecCircuit.p "Active power";
-  Type.PerUnit Q=elecCircuit.q "Reactive power";
+  Types.PerUnit Vbus=elecCircuit.Vbus "Bus voltage magnitude";
+  Types.Angle Anglebus=elecCircuit.Anglebus "Bus voltage angle";
+  Types.PerUnit P=elecCircuit.p "Active power";
+  Types.PerUnit Q=elecCircuit.q "Reactive power";
 protected
   parameter Types.PerUnit Rs=Rs_machine*S_b/Pnom "stator Resistance (pu)";
   parameter Types.PerUnit Xs=Xs_machine*S_b/Pnom "stator Reactance (pu)";

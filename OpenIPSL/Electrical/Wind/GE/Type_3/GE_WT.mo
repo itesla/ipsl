@@ -4,8 +4,8 @@ model GE_WT
   import Modelica.Constants.eps;
   parameter Types.PerUnit _V0=1.03 "Terminal Voltage from Power Flow";
   parameter Types.Angle _Ang0(displayUnit="deg")=0.00735136412 "Terminal Angle from Power Flow";
-  parameter Types.AcitvePower _P0(displayUnit="MW")=162000000 "Active Power from Power Flow";
-  parameter Types.ReacitvePower _Q0(displayUnit="Mvar")=-37049223.1185345 "Reactive Power from Power Flow";
+  parameter Types.ActivePower _P0(displayUnit="MW")=162000000 "Active Power from Power Flow";
+  parameter Types.ReactivePower _Q0(displayUnit="Mvar")=-37049223.1185345 "Reactive Power from Power Flow";
   parameter Types.ApparentPower GEN_base(displayUnit="MVA")=180000000 "Base Power from the Electrical Generator";
   parameter Types.ApparentPower WT_base(displayUnit="MVA")=162000000 "Base Power from the Turbine";
   parameter Types.ApparentPower SYS_base(displayUnit="MVA")=100000000 "Base Power from the power system";
