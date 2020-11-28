@@ -39,8 +39,8 @@ model GE_WT
   parameter Real Ktg=1.11 "Gain for 2 mass model";
   parameter Real Dtg=1.5 "Damping";
   parameter Real Kl=56.6;
-  Types.AcitvePower P "Active Power produced in SYS_base";
-  Types.ReacitvePower Q "Reactive Power produced in SYS_base";
+  Types.ActivePower P "Active Power produced in SYS_base";
+  Types.ReactivePower Q "Reactive Power produced in SYS_base";
   OpenIPSL.Interfaces.PwPin pwPin1 annotation (Placement(
       transformation(
         origin={-77.9122,32.2584},
