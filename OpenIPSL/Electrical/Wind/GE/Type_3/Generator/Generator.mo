@@ -2,7 +2,7 @@ within OpenIPSL.Electrical.Wind.GE.Type_3.Generator;
 model Generator
   import Modelica.Constants.pi;
   parameter Types.Frequency freq=50;
-  parameter SI.AngularVelocity omega_0=2*pi*freq;
+  parameter Real omega_0=2*pi*freq;
   parameter Real Kpllp=1;
   parameter Types.PerUnit ge_x0_0=1;
   parameter Types.PerUnit ge_x1_0=1;

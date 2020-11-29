@@ -34,7 +34,7 @@ model Rotor_Model
         extent={{102.0,54.0},{62.0,94.0}})));
   parameter Types.Time H=0.3 "inertia";
   parameter Types.Time Hg=0.3;
-  parameter Types.PerUnit wbase=1;
+  parameter Real wbase=1;
   parameter Real Dtg=1;
   parameter Real Ktg=1;
   parameter Types.PerUnit wt_x6_0=1;

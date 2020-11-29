@@ -32,7 +32,7 @@ model ElecDynBlk
         origin={-2.0,-124.0},
         extent={{102.0,54.0},{62.0,94.0}})));
   parameter Types.ApparentPower Sbase(displayUnit="MVA")=100000000 "Power Rating [Normalization Factor]";
-  parameter Types.PerUnit Vbus0=1 "p.u. Voltage from Power Flow";
+  parameter Types.PerUnit Vbus0=1 "Voltage from Power Flow";
   parameter Types.Angle angle0(displayUnit="deg")=-0.00243 "Angle from Power Flow";
   parameter Types.PerUnit Pc=0.0160000000000082 "Active Power, PowerFlow";
   parameter Types.PerUnit Qc=0.030527374471207 "Reactive Power, Power Flow";
@@ -54,7 +54,7 @@ model ElecDynBlk
   parameter Types.PerUnit iqr_min;
   parameter Types.PerUnit idr_min;
   parameter Integer poles=2 "Number of poles-pair";
-  parameter Types.Voltage Kv(displayUnit="kV")=10000 "Voltage control gain";
+  parameter Real Kv=10 "Voltage control gain";
   parameter Types.Time Te=0.01 "Power Control time constant";
   parameter Real k=x1*Pnom/Vbus0/Xm/Sbase "gain for iqr_off computation";
   parameter Types.PerUnit ids0=((-vds0^2) + vds0*Xm*iqr0 - x1*Qc)/(Rs*vds0 - x1*vqs0);
@@ -72,8 +72,9 @@ model ElecDynBlk
   Types.PerUnit pwa;
 protected
   parameter Types.TimeAging i2Hm=1/(2*Hm) "inverse inertia";
+  parameter Types.Time Tdmy = 1 "dummy time constant";
 initial equation
-  0 = ((-(Xs + Xm)*pwa/Vbus/Xm/omega_m) - iqr - iqr_off)/Te;
+  0 = ((-(Xs + Xm)*pwa/Vbus/Xm/omega_m) - iqr - iqr_off);
   Vref = Vbus0 - (idrI + Vbus0/Xm)/Kv;
   iqr_off = (-k*max(min(2*omega_m0 - 1, 1), 0)/omega_m0) - iqrI;
 equation
@@ -81,7 +82,7 @@ equation
   der(iqr_off) = 0;
   pwa = max(min(2*omega_m - 1, 1), 0)*Pnom/Sbase;
   der(iqrI) = ((-(Xs + Xm)*pwa/Vbus/Xm/omega_m) - iqr - iqr_off)/Te;
-  der(idrI) = Kv*(Vbus - Vref) - Vbus/Xm - idr;
+  der(idrI) = (Kv*(Vbus - Vref) - Vbus/Xm - idr)/Tdmy;
   iqr = min(max(iqrI, iqr_min), iqr_max);
   idr = min(max(idrI, idr_min), idr_max);
   when iqrI > iqr_max and der(iqrI) < 0 then

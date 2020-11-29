@@ -135,7 +135,7 @@ model PSAT_WT "Wind Turbine Doubly Fed Induction Generator"
   parameter Types.Time Hm_machine=3 "Inertia";
   parameter Real Kp=10 "Pitch control gain";
   parameter Types.Time Tp=3 "Pitch control time constant";
-  parameter Types.Voltage Kv(displayUnit="kV")=10 "Voltage control gain";
+  parameter Real Kv=10 "Voltage control gain";
   parameter Types.Time Te=0.01 "Power Control time constant";
   parameter SI.Length l=75 "Blade length";
   parameter Integer poles=2 "Number of poles-pair";

@@ -41,7 +41,7 @@ model ElecBlk
         origin={-2.0,-124.0},
         extent={{102.0,54.0},{62.0,94.0}})));
   parameter Types.ApparentPower Sbase(displayUnit="MVA")=100000000 "Power Rating [Normalization Factor]";
-  parameter Types.PerUnit Vbus0=1 "p.u. Voltage from Power Flow";
+  parameter Types.PerUnit Vbus0=1 "Voltage from Power Flow";
   parameter Types.Angle angle0(displayUnit="deg")=-0.00243 "Angle from Power Flow";
   parameter Types.PerUnit Pc=0.0160000000000082 "Active Power, PowerFlow";
   parameter Types.PerUnit Qc=0.030527374471207 "Reactive Power, Power Flow";

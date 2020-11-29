@@ -32,7 +32,7 @@ model Turbine_Model
   parameter Types.PerUnit wt_x7_0=1;
   parameter Types.PerUnit wt_x8_0=1;
   parameter Types.PerUnit wt_x9_0=1;
-  parameter Types.PerUnit wbase=1;
+  parameter Real wbase=1;
   parameter Real wndtge_ang0=1;
   parameter Real wndtge_spd0=1;
   Modelica.Blocks.Interfaces.RealInput Pelec "Electrical power" annotation (

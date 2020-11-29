@@ -235,7 +235,7 @@ protected
         origin={-44.2929,70.7071},
         extent={{-4.2929,-4.2929},{4.2929,4.2929}})));
   parameter Types.PerUnit Lpp=Xpp;
-  parameter SI.AngularVelocity wbase=2*Modelica.Constants.pi*freq/poles;
+  parameter Real wbase=2*Modelica.Constants.pi*freq/poles;
   parameter Types.PerUnit pelec=_P0/WT_base;
   parameter Types.PerUnit pmech=pelec;
   parameter Types.PerUnit wt_x0_0(fixed=false);
@@ -269,7 +269,7 @@ protected
   parameter Real wndtge_q11=0;
   parameter Real wndtge_q21=0;
   parameter Real lambda(fixed=false);
-  parameter Real masflg=1;
+  parameter Integer masflg=1;
 initial algorithm
   wndtge_spdwmx := 25.0 "Max. wind speed";
   wndtge_spdwmn := 3.0 "Min. wind speed";
@@ -317,9 +317,9 @@ initial algorithm
   end if;
   wndtge_kp := pmech/(cp*Vw^3);
   wt_x0_0 := theta;
-  wt_x1_0 := if Kip == 0 then 0.0 else theta - Kpc*(pelec - 1.0);
+  wt_x1_0 := if Kip <= C.eps then 0.0 else theta - Kpc*(pelec - 1.0);
   wt_x4_0 := pelec;
-  wt_x2_0 := if Kitrq == 0 then 0.0 else wt_x4_0/genbc_k_speed;
+  wt_x2_0 := if Kitrq <= C.eps then 0.0 else wt_x4_0/genbc_k_speed;
   wt_x3_0 := 0.0;
   wt_x5_0 := genbc_k_speed;
   wt_x6_0 := 0.0;
