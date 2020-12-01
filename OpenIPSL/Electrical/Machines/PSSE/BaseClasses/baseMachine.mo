@@ -79,7 +79,7 @@ partial model baseMachine
         origin={110,-90}), iconTransformation(
         extent={{-10,-10},{10,10}},
         origin={110,-90})));
-  Types.PerUnit w(start=w0) "Machine speed deviation";
+  Types.PerUnit w(start=w0, fixed=true) "Machine speed deviation";
   Types.Angle delta "Rotor angle";
   Types.PerUnit Vt(start=v_0) "Bus voltage magnitude";
   Types.Angle anglev(start=angle_0rad) "Bus voltage angle";

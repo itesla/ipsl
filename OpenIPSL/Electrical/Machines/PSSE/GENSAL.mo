@@ -16,7 +16,7 @@ model GENSAL "SALIENT POLE GENERATOR MODEL (QUADRATIC SATURATION ON D-AXIS)"
     EFD(start=efd0),
     XADIFD(start=efd0),
     PMECH(start=pm0),
-    delta(start=delta0),
+    delta(start=delta0, fixed=true),
     id(start=id0),
     iq(start=iq0),
     ud(start=ud0),

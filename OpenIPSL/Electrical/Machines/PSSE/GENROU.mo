@@ -13,7 +13,7 @@ model GENROU "ROUND ROTOR GENERATOR MODEL (QUADRATIC SATURATION)"
   import OpenIPSL.NonElectrical.Functions.SE;
   extends BaseClasses.baseMachine(
     XADIFD(start=efd0),
-    delta(start=delta0),
+    delta(start=delta0, fixed=true),
     id(start=id0),
     iq(start=iq0),
     ud(start=ud0),
