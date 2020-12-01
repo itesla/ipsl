@@ -1,6 +1,6 @@
 within OpenIPSL.Examples.Machines.PSSE;
 model GENCLS
-  extends OpenIPSL.Examples.BaseClasses.SMIB;
+  extends OpenIPSL.Examples.BaseClasses.SMIB(GEN1(v_0=gENCLS2.v_0, angle_0=gENCLS2.angle_0));
   OpenIPSL.Electrical.Machines.PSSE.GENCLS gENCLS2(
    H = 6.0,
    M_b=100000000,

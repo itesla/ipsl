@@ -1,5 +1,6 @@
 within OpenIPSL.Electrical.Machines.PSSE;
 model GENCLS
+  extends Icons.VerifiedModel;
   extends OpenIPSL.Electrical.Essentials.pfComponent(
     final enabledisplayPF=false,
     final enableangle_0=false,
@@ -92,6 +93,12 @@ equation
           96,0},{0,0}}, color={0,0,255}),Rectangle(extent={{-100,100},{100,-100}},
           lineColor={0,0,255})}),
     Documentation(info="<html>
+<p>
+Synchronous machine represented by 'classical' modeling or 
+Thevenin voltage source (for <code>H = 0</code>).
+</p>
+<p>See also <a href=\"modelica://OpenIPSL.UsersGuide.References\">[PSSE-AGV2], chapter 15</a>.</p>
+</html>", revisions="<html>
 <table cellspacing=\"1\" cellpadding=\"1\" border=\"1\"><tr>
 <td><p>Model Name</p></td>
 <td><p>GENCLS</p></td>
@@ -110,7 +117,7 @@ equation
 </tr>
 <tr>
 <td><p>Contact</p></td>
-<td><p><a href=\"mailto:vanfrl@rpi.edu\">vanfrl@rpi.edu</a></p></td>
+<td><p>see <a href=\"modelica://OpenIPSL.UsersGuide.Contact\">UsersGuide.Contact</a></p></td>
 </tr>
 <tr>
 <td><p>Model Verification</p></td>
