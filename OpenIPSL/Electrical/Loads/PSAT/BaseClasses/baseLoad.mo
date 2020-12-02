@@ -9,7 +9,7 @@ partial model baseLoad
     final enablev_0=true,
     final enableQ_0=true,
     final enableP_0=true);
-  parameter Types.ApparentPower Sn(displayUnit="MVA")=S_b "Power rating";
+  parameter Types.ApparentPower Sn=S_b "Power rating";
   Types.PerUnit v(start=v_0) "Voltage magnitude";
   Types.Angle Angle_V(start=SI.Conversions.from_deg(
         angle_0)) "Voltage angle";

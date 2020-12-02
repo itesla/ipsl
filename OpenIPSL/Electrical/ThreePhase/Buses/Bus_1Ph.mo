@@ -1,25 +1,23 @@
 within OpenIPSL.Electrical.ThreePhase.Buses;
 model Bus_1Ph "Single-phase bus"
   extends ThreePhaseComponent;
-  import Modelica.Constants.pi;
-  OpenIPSL.Interfaces.PwPin p1(vr(start=V_1*cos(angle_1*Modelica.Constants.pi/
-          180)), vi(start=V_1*sin(angle_1*Modelica.Constants.pi/180)))
+  OpenIPSL.Interfaces.PwPin p1(vr(start=V_1*cos(angle_1)),
+                               vi(start=V_1*sin(angle_1)))
     annotation (Placement(transformation(extent={{-10,-10},{10,10}})));
 
   parameter Types.PerUnit V_1=1 "Voltage magnitude for phase 1"
     annotation (Dialog(group="Power flow data"));
-  parameter SI.Conversions.NonSIunits.Angle_deg angle_1=0 "Voltage angle for phase 1"
+  parameter Types.Angle angle_1=0 "Voltage angle for phase 1"
     annotation (Dialog(group="Power flow data"));
   Types.PerUnit V1(start=V_1) "Bus voltage magnitude for phase 1";
-  SI.Conversions.NonSIunits.Angle_deg angle1(start=angle_1)
-    "Bus voltage angle for phase 1";
+  Types.Angle angle1(start=angle_1) "Bus voltage angle for phase 1";
 
 protected
   Real[1, 2] Vin=[p1.vr, p1.vi];
 
 equation
   V1 = sqrt(Vin[1, 1]^2 + Vin[1, 2]^2);
-  angle1 = atan2(Vin[1, 2], Vin[1, 1])*180/Modelica.Constants.pi;
+  angle1 = atan2(Vin[1, 2], Vin[1, 1]);
   p1.ir = 0;
   p1.ii = 0;
 

@@ -16,10 +16,10 @@ model CapacitorBank_1Ph "Single-phase capacitor bank"
   parameter Types.PerUnit VA=1
     "Voltage magnitude"
     annotation (Dialog(group="Power flow data"));
-  parameter Types.Angle AngA(displayUnit = "deg") = SI.Conversions.from_deg(0) "Voltage angle for phase A"
+  parameter Types.Angle AngA = 0 "Voltage angle for phase A"
     annotation (Dialog(group="Power flow data"));
 
-  parameter Types.ReactivePower Q_a(displayUnit="Mvar")=0
+  parameter Types.ReactivePower Q_a=0
     "Initial reactive power"
     annotation (Dialog(group="Power flow data"));
 protected

@@ -15,9 +15,9 @@ model TCSC "Thyristor Controlled Series Compensator"
 
   parameter Types.PerUnit pref=0.080101913348342 "Reference power"
    annotation (Dialog(group="Power flow data"));
-  parameter Types.ApparentPower Sn(displayUnit="MVA") = S_b "Power rating"
+  parameter Types.ApparentPower Sn = S_b "Power rating"
    annotation (Dialog(group="Device parameters"));
-  parameter Types.Voltage Vn(displayUnit="kV") = V_b "Voltage rating"
+  parameter Types.Voltage Vn = V_b "Voltage rating"
    annotation (Dialog(group="Device parameters"));
   parameter Ctrl ctrl=Ctrl.alpha "Type of control of the TCSC"
    annotation (Dialog(group="Device parameters"));

@@ -7,13 +7,13 @@ model ThreeWindingTransformer
     annotation (Placement(transformation(extent={{100,20},{120,40}})));
   OpenIPSL.Interfaces.PwPin b3
     annotation (Placement(transformation(extent={{100,-40},{120,-20}})));
-  parameter Types.ApparentPower S_b(displayUnit="MVA")=SysData.S_b "System base power"
+  parameter Types.ApparentPower S_b=SysData.S_b "System base power"
     annotation (Dialog(group="Power flow"));
-  parameter Types.Voltage V_b(displayUnit="kV")=40e3 "Sending end bus voltage"
+  parameter Types.Voltage V_b=40e3 "Sending end bus voltage"
     annotation (Dialog(group="Power flow"));
-  parameter Types.ApparentPower Sn(displayUnit="MVA")=100e6 "Power rating"
+  parameter Types.ApparentPower Sn=100e6 "Power rating"
     annotation (Dialog(group="Transformer parameters"));
-  parameter Types.Voltage Vn(displayUnit="kV")=40e3 "Voltage rating for transformer"
+  parameter Types.Voltage Vn=40e3 "Voltage rating for transformer"
     annotation (Dialog(group="Transformer parameters"));
   parameter Types.PerUnit r12=0.01 "Resistance of the branch 1-2 (transformer base)"
     annotation (Dialog(group="Transformer parameters"));

@@ -49,13 +49,13 @@ model PhaseShiftingTransformer "Phase Shifting Transformer (PST)"
 
   end PhaseShifter;
 
-  parameter Types.ApparentPower S_b(displayUnit="MVA")=SysData.S_b "System base power"
+  parameter Types.ApparentPower S_b=SysData.S_b "System base power"
     annotation (Dialog(group="Power flow"));
-  parameter Types.Voltage V_b(displayUnit="kV")=40e3 "Sending end bus voltage"
+  parameter Types.Voltage V_b=40e3 "Sending end bus voltage"
     annotation (Dialog(group="Power flow"));
-  parameter Types.ApparentPower Sn(displayUnit="MVA")=SysData.S_b "Power rating"
+  parameter Types.ApparentPower Sn=SysData.S_b "Power rating"
     annotation (Dialog(group="Transformer parameters"));
-  parameter Types.Voltage Vn(displayUnit="kV")=40e3 "Voltage rating"
+  parameter Types.Voltage Vn=40e3 "Voltage rating"
     annotation (Dialog(group="Transformer parameters"));
   parameter Types.PerUnit rT=0.01 "Resistance (transformer base)"
     annotation (Dialog(group="Transformer parameters"));

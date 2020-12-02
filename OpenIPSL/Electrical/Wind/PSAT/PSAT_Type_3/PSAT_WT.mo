@@ -113,17 +113,17 @@ model PSAT_WT "Wind Turbine Doubly Fed Induction Generator"
         extent={{-10.0,-10.0},{10.0,10.0}})));
   parameter Types.PerUnit V_0=1 "Voltage magnitude"
     annotation (Dialog(group="Power flow data"));
-  parameter Types.Angle angle_0(displayUnit="deg")=-0.00243 "Voltage angle"
+  parameter Types.Angle angle_0=-0.00243 "Voltage angle"
     annotation (Dialog(group="Power flow data"));
   parameter Types.PerUnit P_0=0.0160000000000082 "Active power"
     annotation (Dialog(group="Power flow data"));
   parameter Types.PerUnit Q_0=0.030527374471207 "Reactive power"
     annotation (Dialog(group="Power flow data"));
-  parameter Types.ApparentPower S_b(displayUnit="MVA")=100000000 "System base power"
+  parameter Types.ApparentPower S_b=100000000 "System base power"
     annotation (Dialog(group="Power flow data"));
-  parameter Types.Voltage V_b(displayUnit="kV")=400e3 "Voltage rating"
+  parameter Types.Voltage V_b=400e3 "Voltage rating"
     annotation (Dialog(group="Power flow data"));
-  parameter Types.ApparentPower Pnom(displayUnit="MVA")=10000000 "Nominal Power";
+  parameter Types.ApparentPower Pnom=10000000 "Nominal Power";
   parameter Types.Frequency fn=50 "Frequency rating";
   parameter SI.Density rho=1.225 "Air Density";
   parameter SI.Velocity vw_base=15 "Nominal wind speed";
@@ -166,13 +166,13 @@ protected
   parameter Types.PerUnit iqr_min=-Pmax*x1/Xm;
   parameter Types.PerUnit idr_min=(-Qmax*x1/Xm) - x1/Xm^2;
   parameter Types.PerUnit idr_max=(-Qmin*x1/Xm) - x1/Xm^2;
-  parameter Types.Angle theta_max(displayUnit="deg")=0.78539816339;
-  parameter Types.Angle theta_min(displayUnit="deg")=0;
+  parameter Types.Angle theta_max=0.78539816339;
+  parameter Types.Angle theta_min=0;
   parameter Types.PerUnit omega_m0=min(max(0.5*P_0*S_b/Pnom + 0.5, 0.5), 1);
   parameter Types.TimeAging i2Hm=1/(2*Hm);
   parameter SI.AngularVelocity wbase=2*Modelica.Constants.pi*fn/poles;
   parameter Real k=x1*Pnom/V_0/Xm/S_b "gain for iqr_off computation";
-  parameter Types.Angle theta_p0(displayUnit="deg")=0;
+  parameter Types.Angle theta_p0=0;
   parameter Types.PerUnit ids0=((-vds0^2) + vds0*Xm*iqr0 - x1*Q_0)/(Rs*vds0 - x1*vqs0);
   parameter Types.PerUnit iqs0=((-vds0*vqs0) + vqs0*Xm*iqr0 - Rs*Q_0)/(Rs*vds0 - x1*vqs0);
   parameter Types.PerUnit idr0=-(vqs0 + Rs*iqs0 + x1*ids0)/Xm;

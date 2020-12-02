@@ -1,12 +1,12 @@
 within OpenIPSL.Electrical.Wind.GE.Type_3.Turbine;
 model Turbine_Model
-  parameter Types.ApparentPower GEN_base(displayUnit="MVA")=1000000;
-  parameter Types.ApparentPower WT_base(displayUnit="MVA")=1000000;
+  parameter Types.ApparentPower GEN_base=1000000;
+  parameter Types.ApparentPower WT_base=1000000;
   parameter Real Kpp=1;
   parameter Real Kip=1;
   parameter Types.TimeAging pirat=1;
-  parameter Types.Angle pimax(displayUnit="deg")=1;
-  parameter Types.Angle pimin(displayUnit="deg")=1;
+  parameter Types.Angle pimax=1;
+  parameter Types.Angle pimin=1;
   parameter Types.TimeAging pwrat=1;
   parameter Types.PerUnit pwmax=1;
   parameter Types.PerUnit pwmin=1;

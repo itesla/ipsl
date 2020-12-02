@@ -24,8 +24,8 @@ model MechaBlk
       iconTransformation(
         origin={-2.0,-74.0},
         extent={{102.0,54.0},{62.0,94.0}})));
-  parameter Types.ApparentPower Sbase(displayUnit="MVA")=100000000 "Power Rating [Normalization Factor]";
-  parameter Types.ApparentPower Pnom(displayUnit="MVA")=10000000 "Nominal Power";
+  parameter Types.ApparentPower Sbase=100000000 "Power Rating [Normalization Factor]";
+  parameter Types.ApparentPower Pnom=10000000 "Nominal Power";
   parameter Types.Time Hm=0.3 "inertia";
   parameter Types.PerUnit Pc=0.016 "Input Power Flow";
 initial equation

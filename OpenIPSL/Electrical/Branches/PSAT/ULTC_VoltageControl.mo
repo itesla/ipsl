@@ -5,15 +5,15 @@ model ULTC_VoltageControl
     annotation (Placement(transformation(extent={{-120,-10},{-100,10}})));
   OpenIPSL.Interfaces.PwPin n
     annotation (Placement(transformation(extent={{100,-10},{120,10}})));
-  parameter Types.ApparentPower S_b(displayUnit="MVA")=100e6 "System base power"
+  parameter Types.ApparentPower S_b=100e6 "System base power"
     annotation (Dialog(group="Power flow data"));
-  parameter Types.Voltage Vbus1(displayUnit="kV")=400e3 "Sending end Bus nominal voltage"
+  parameter Types.Voltage Vbus1=400e3 "Sending end Bus nominal voltage"
     annotation (Dialog(group="Power flow data"));
-  parameter Types.Voltage Vbus2(displayUnit="kV")=100e3 "Receiving end Bus nominal voltage"
+  parameter Types.Voltage Vbus2=100e3 "Receiving end Bus nominal voltage"
     annotation (Dialog(group="Power flow data"));
-  parameter Types.ApparentPower Sn(displayUnit="MVA")=100e6 "Power rating (MVA)"
+  parameter Types.ApparentPower Sn"
     annotation (Dialog(group="Transformer data"));
-  parameter Types.Voltage Vn(displayUnit="kV")=400e3 "Voltage rating"
+  parameter Types.Voltage Vn=400e3 "Voltage rating"
     annotation (Dialog(group="Transformer data"));
   parameter Types.PerUnit rT=0.01 "Transformer resistance(transformer base)"
     annotation (Dialog(group="Transformer data"));

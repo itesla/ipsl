@@ -33,7 +33,7 @@ model WindBlk
         extent={{102.0,54.0},{62.0,94.0}})));
   parameter SI.Velocity vw_base=15 "Vw Nominal";
   parameter SI.Density rho=1.225 "Air Density";
-  parameter Types.ApparentPower Sbase(displayUnit="MVA")=100000000 "Power Rating [Normalization Factor]";
+  parameter Types.ApparentPower Sbase=100000000 "Power Rating [Normalization Factor]";
   parameter SI.Length l=75 "Blade length";
   parameter Real ngb=0.01123596 "gear box ratio";
   parameter Real Radapt=ngb*l "r_{gearbox}*r";

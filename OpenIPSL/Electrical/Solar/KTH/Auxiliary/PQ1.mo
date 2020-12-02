@@ -7,12 +7,12 @@ model PQ1
       iconTransformation(
         origin={-110.0,0.0},
         extent={{-10.0,-10.0},{10.0,10.0}})));
-  parameter Types.ApparentPower S_b(displayUnit="MVA")=100000000 "System base power"
+  parameter Types.ApparentPower S_b=100000000 "System base power"
       annotation (Dialog(group="Power flow data"));
-  parameter Types.ApparentPower Sn(displayUnit="MVA")=10000000 "Nominal power";
+  parameter Types.ApparentPower Sn=10000000 "Nominal power";
   parameter Types.PerUnit v0=1.00018548610126 "Voltage magnitude"
       annotation (Dialog(group="Power flow data"));
-  parameter SI.Conversions.NonSIunits.Angle_deg anglev0(displayUnit="deg")=-0.0000253046024029618 "Voltage angle"
+  parameter Types.Angle anglev0=-0.0000253046024029618 "Voltage angle"
       annotation (Dialog(group="Power flow data"));
   parameter Types.PerUnit P0=0.4 "Active power"
       annotation (Dialog(group="Power flow data"));

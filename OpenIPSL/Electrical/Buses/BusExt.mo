@@ -20,19 +20,18 @@ model BusExt
       iconTransformation(
         extent={{-4,-60},{4,60}})));
   Types.PerUnit v(start=v_0) "Bus voltage magnitude";
-  SI.Conversions.NonSIunits.Angle_deg angle(start=angle_0) "Bus voltage angle";
-  parameter Types.PerUnit v_0=1 "Voltage magnitude"
+  Types.Angle angle(start=angle_0) "Bus voltage angle";
+  parameter Types.PerUnit v_0=1 "Initial voltage magnitude"
     annotation (Dialog(group="Power flow data"));
-  parameter SI.Conversions.NonSIunits.Angle_deg angle_0=0 "Voltage angle"
+  parameter Types.Angle angle_0=0 "Initial voltage angle"
     annotation (Dialog(group="Power flow data"));
-  parameter Types.Voltage V_b(displayUnit="kV")=130e3 "Base voltage"
+  parameter Types.Voltage V_b=130e3 "Base voltage"
     annotation (Dialog(group="Power flow data"));
-  parameter Types.ApparentPower S_b(displayUnit="MVA")=SysData.S_b "System base power"
+  parameter Types.ApparentPower S_b=SysData.S_b "System base power"
     annotation (Dialog(group="Power flow data"));
 protected
-  parameter Types.Angle angle_0rad = SI.Conversions.from_deg(angle_0) "Initial angle in rad";
-  parameter Types.PerUnit vr0=v_0*cos(angle_0rad);
-  parameter Types.PerUnit vi0=v_0*sin(angle_0rad);
+  parameter Types.PerUnit vr0=v_0*cos(angle_0);
+  parameter Types.PerUnit vi0=v_0*sin(angle_0);
 equation
   if np > 1 then
     for i in 2:np loop
@@ -49,10 +48,10 @@ equation
   end if;
   if np > 0 then
     v = sqrt(p[1].vr^2 + p[1].vi^2);
-    angle = SI.Conversions.to_deg(atan2(p[1].vi, p[1].vr));
+    angle = atan2(p[1].vi, p[1].vr);
   elseif nn > 0 then
     v = sqrt(n[1].vr^2 + n[1].vi^2);
-    angle = SI.Conversions.to_deg(atan2(n[1].vi, n[1].vr));
+    angle = atan2(n[1].vi, n[1].vr);
   else
     v = 0;
     angle = 0;

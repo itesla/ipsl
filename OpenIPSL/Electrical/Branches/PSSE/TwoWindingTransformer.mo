@@ -2,12 +2,11 @@ within OpenIPSL.Electrical.Branches.PSSE;
 model TwoWindingTransformer
   "Static Two-winding transformer according to PSS/E, without phase shift"
   outer OpenIPSL.Electrical.SystemBase SysData;
-  import Modelica.Constants.pi;
   import Modelica.ComplexMath.j;
   import Modelica.ComplexMath.conj;
   OpenIPSL.Interfaces.PwPin p annotation (Placement(transformation(extent={{-120,-10},{-100,10}})));
   OpenIPSL.Interfaces.PwPin n annotation (Placement(transformation(extent={{100,-10},{120,10}})));
-  parameter Types.ApparentPower S_b(displayUnit="MVA")=SysData.S_b "System base power"
+  parameter Types.ApparentPower S_b=SysData.S_b "System base power"
     annotation (Dialog(enable=false));
   parameter Integer CZ=1 "Impedance I/O code" annotation (Dialog(tab=
           "Transformer impedance data"), choices(
@@ -29,19 +28,19 @@ model TwoWindingTransformer
       choice=3 "Turns ratio (pu on nom wind)"));
   parameter Types.PerUnit t1=1 "Winding 1 ratio"
     annotation (Dialog(tab="Transformer Nominal Ratings Data"));
-  parameter Types.Voltage VNOM1(displayUnit="kV")=0 "Nominal voltage of winding 1"
+  parameter Types.Voltage VNOM1=0 "Nominal voltage of winding 1"
     annotation (Dialog(tab="Transformer Nominal Ratings Data"));
-  parameter Types.Voltage VB1(displayUnit="kV")=300e3 "Bus base voltage of winding 1"
+  parameter Types.Voltage VB1=300e3 "Bus base voltage of winding 1"
     annotation (Dialog(tab="Transformer Nominal Ratings Data"));
   parameter Types.PerUnit t2=1 "Secondary winding tap ratio"
     annotation (Dialog(tab="Transformer Nominal Ratings Data"));
-  parameter Types.Voltage VNOM2(displayUnit="kV")=0 "Nominal Voltage of winding 2"
+  parameter Types.Voltage VNOM2=0 "Nominal Voltage of winding 2"
     annotation (Dialog(tab="Transformer Nominal Ratings Data"));
-  parameter Types.Voltage VB2(displayUnit="kV")=300e3 "Bus base voltage of winding 2"
+  parameter Types.Voltage VB2=300e3 "Bus base voltage of winding 2"
     annotation (Dialog(tab="Transformer Nominal Ratings Data"));
-  parameter SI.Conversions.NonSIunits.Angle_deg ANG1=0 "Winding (1-2) Angle"
+  parameter Types.Angle ANG1=0 "Winding (1-2) Angle"
     annotation (Dialog(tab="Transformer Nominal Ratings Data"));
-  parameter Types.ApparentPower S_n(displayUnit="MVA")=S_b "Winding MVA"
+  parameter Types.ApparentPower S_n=S_b "Winding MVA"
     annotation (Dialog(tab="Transformer Nominal Ratings Data"));
 protected
   parameter Types.Voltage VNOM1_int=if abs(VNOM1) < Modelica.Constants.eps then VB1
@@ -50,7 +49,7 @@ protected
        else VNOM2;
   parameter Types.PerUnit r=if CZ == 1 then R else R*S_b/S_n;
   parameter Types.PerUnit x=if CZ == 1 then X else X*S_b/S_n;
-  parameter Complex t=T1/T2*(cos(ANG1/180*pi) + j*sin(ANG1/180*pi));
+  parameter Complex t=T1/T2*(cos(ANG1) + j*sin(ANG1));
   parameter Types.PerUnit T2=if CW == 1 then t2 elseif CW == 3 then t2*(VNOM2_int/VB2)
        else t2/VB2;
   parameter Types.PerUnit T1=if CW == 1 then t1 elseif CW == 3 then t1*(VNOM1_int/VB1)

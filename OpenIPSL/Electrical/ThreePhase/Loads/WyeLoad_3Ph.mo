@@ -41,32 +41,32 @@ model WyeLoad_3Ph "Three-phase wye load"
   parameter Types.PerUnit VA=1
     "Voltage magnitude"
     annotation (Dialog(group="Power flow data"));
-  parameter Types.Angle AngA(displayUnit = "deg") = SI.Conversions.from_deg(0) "Voltage angle for phase A"
+  parameter Types.Angle AngA = 0 "Voltage angle for phase A"
     annotation (Dialog(group="Power flow data"));
   parameter Types.PerUnit VB=1 "Voltage magnitude"
     annotation (Dialog(group="Power flow data"));
-  parameter Types.Angle AngB(displayUnit = "deg") = SI.Conversions.from_deg(-120) "Voltage angle for phase B"
+  parameter Types.Angle AngB = -2*pi/3 "Voltage angle for phase B"
     annotation (Dialog(group="Power flow data"));
   parameter Types.PerUnit VC=1 "Voltage magnitude"
     annotation (Dialog(group="Power flow data"));
-  parameter Types.Angle AngC(displayUnit = "deg") = SI.Conversions.from_deg(120) "Voltage angle for phase C"
+  parameter Types.Angle AngC = 2*pi/3 "Voltage angle for phase C"
     annotation (Dialog(group="Power flow data"));
-  parameter Types.ActivePower P_a(displayUnit="MW")=1e6
+  parameter Types.ActivePower P_a=1e6
     "Initial active power"
     annotation (Dialog(group="Power flow data"));
-  parameter Types.ReactivePower Q_a(displayUnit="Mvar")=0
+  parameter Types.ReactivePower Q_a=0
     "Initial reactive power"
     annotation (Dialog(group="Power flow data"));
-  parameter Types.ActivePower P_b(displayUnit="MW")=1e6
+  parameter Types.ActivePower P_b=1e6
     "Initial active power"
     annotation (Dialog(group="Power flow data"));
-  parameter Types.ReactivePower Q_b(displayUnit="Mvar")=0
+  parameter Types.ReactivePower Q_b=0
     "Initial reactive power"
     annotation (Dialog(group="Power flow data"));
-  parameter Types.ActivePower P_c(displayUnit="MW")=1e6
+  parameter Types.ActivePower P_c=1e6
     "Initial active power"
     annotation (Dialog(group="Power flow data"));
-  parameter Types.ReactivePower Q_c(displayUnit="Mvar")=0
+  parameter Types.ReactivePower Q_c=0
     "Initial reactive power"
     annotation (Dialog(group="Power flow data"));
 
@@ -152,7 +152,7 @@ equation
           origin={18,4},
           lineColor={28,108,200},
           extent={{-62,45},{28,26}},
-          textString="PQ/ZIP Load")}), 
+          textString="PQ/ZIP Load")}),
           Documentation(info="<html>
 <p>This is a three-phase wye load model.</p>
 <p>The user needs to input the active (<b><i>P_a</i></b>, <b><i>P_b</i></b> and <b><i>P_c</i></b>) and reactive (<b><i>Q_a</i></b>, <b><i>Q_b</i></b> and <b><i>Q_c</i></b>) powers consumed by each phase. 

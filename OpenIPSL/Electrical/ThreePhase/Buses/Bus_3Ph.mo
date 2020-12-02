@@ -1,15 +1,14 @@
 within OpenIPSL.Electrical.ThreePhase.Buses;
 model Bus_3Ph "Three-phase bus"
   extends ThreePhaseComponent;
-  import Modelica.Constants.pi;
-  OpenIPSL.Interfaces.PwPin p1(vr(start=V_A*cos(angle_A*Modelica.Constants.pi/
-          180)), vi(start=V_A*sin(angle_A*Modelica.Constants.pi/180)))
+  OpenIPSL.Interfaces.PwPin p1(vr(start=V_A*cos(angle_A)),
+                               vi(start=V_A*sin(angle_A)))
     annotation (Placement(transformation(extent={{-10,80},{10,100}})));
-  OpenIPSL.Interfaces.PwPin p2(vr(start=V_B*cos(angle_B*Modelica.Constants.pi/
-          180)), vi(start=V_B*sin(angle_B*Modelica.Constants.pi/180)))
+  OpenIPSL.Interfaces.PwPin p2(vr(start=V_B*cos(angle_B)),
+                               vi(start=V_B*sin(angle_B)))
     annotation (Placement(transformation(extent={{-10,-10},{10,10}})));
-  OpenIPSL.Interfaces.PwPin p3(vr(start=V_C*cos(angle_C*Modelica.Constants.pi/
-          180)), vi(start=V_C*sin(angle_C*Modelica.Constants.pi/180)))
+  OpenIPSL.Interfaces.PwPin p3(vr(start=V_C*cos(angle_C)),
+                               vi(start=V_C*sin(angle_C)))
     annotation (Placement(transformation(extent={{-10,-100},{10,-80}})));
 
   parameter Types.PerUnit V_A=1 "Voltage magnitude for phase A"
@@ -18,20 +17,20 @@ model Bus_3Ph "Three-phase bus"
     annotation (Dialog(group="Power flow data"));
   parameter Types.PerUnit V_C=1 "Voltage magnitude for phase C"
     annotation (Dialog(group="Power flow data"));
-  parameter SI.Conversions.NonSIunits.Angle_deg angle_A=0 "Voltage angle for phase A"
+  parameter Types.Angle angle_A=0 "Voltage angle for phase A"
     annotation (Dialog(group="Power flow data"));
-  parameter SI.Conversions.NonSIunits.Angle_deg angle_B=-120 "Voltage angle for phase B"
+  parameter Types.Angle angle_B=-2*C.pi/3 "Voltage angle for phase B"
     annotation (Dialog(group="Power flow data"));
-  parameter SI.Conversions.NonSIunits.Angle_deg angle_C=120 "Voltage angle for phase C"
+  parameter Types.Angle angle_C=2*C.pi/3 "Voltage angle for phase C"
     annotation (Dialog(group="Power flow data"));
   Types.PerUnit Va(start=V_A) "Bus voltage magnitude for phase A";
-  SI.Conversions.NonSIunits.Angle_deg angle_a(start=angle_A)
+  Types.Angle angle_a(start=angle_A)
     "Bus voltage angle for phase A";
   Types.PerUnit Vb(start=V_B) "Bus voltage magnitude for phase B";
-  SI.Conversions.NonSIunits.Angle_deg angle_b(start=angle_B)
+  Types.Angle angle_b(start=angle_B)
     "Bus voltage angle for phase B";
   Types.PerUnit Vc(start=V_C) "Bus voltage magnitude for phase C";
-  SI.Conversions.NonSIunits.Angle_deg angle_c(start=angle_C)
+  Types.Angle angle_c(start=angle_C)
     "Bus voltage angle for phase C";
 
 protected
@@ -39,11 +38,11 @@ protected
 
 equation
   Va = sqrt(Vin[1, 1]^2 + Vin[1, 2]^2);
-  angle_a = atan2(Vin[1, 2], Vin[1, 1])*180/Modelica.Constants.pi;
+  angle_a = atan2(Vin[1, 2], Vin[1, 1]);
   Vb = sqrt(Vin[1, 3]^2 + Vin[1, 4]^2);
-  angle_b = atan2(Vin[1, 4], Vin[1, 3])*180/Modelica.Constants.pi;
+  angle_b = atan2(Vin[1, 4], Vin[1, 3]);
   Vc = sqrt(Vin[1, 5]^2 + Vin[1, 6]^2);
-  angle_c = atan2(Vin[1, 6], Vin[1, 5])*180/Modelica.Constants.pi;
+  angle_c = atan2(Vin[1, 6], Vin[1, 5]);
   p1.ir = 0;
   p1.ii = 0;
   p2.ir = 0;

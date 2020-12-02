@@ -1,6 +1,6 @@
 within OpenIPSL.Electrical;
 record SystemBase "System Base Definition"
-  parameter Types.ApparentPower S_b(displayUnit="MVA")=100e6 "System base";
+  parameter Types.ApparentPower S_b=100e6 "System base";
   parameter Types.Frequency fn=50 "System frequency";
   annotation (
     Icon(coordinateSystem(

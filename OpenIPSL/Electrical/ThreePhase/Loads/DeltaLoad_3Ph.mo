@@ -1,6 +1,7 @@
 within OpenIPSL.Electrical.ThreePhase.Loads;
 model DeltaLoad_3Ph "Three-phase delta load"
   extends ThreePhaseComponent;
+  import Modelica.Constants.pi;
   OpenIPSL.Interfaces.PwPin A(vr(start=var0), vi(start=vai0)) annotation (
       Placement(
       transformation(
@@ -39,53 +40,53 @@ model DeltaLoad_3Ph "Three-phase delta load"
       Dialog(group="Power flow"));
   parameter Types.PerUnit VA=1 "Voltage magnitude for phase A"
     annotation (Dialog(group="Power flow data"));
-  parameter Types.Angle AngA(displayUnit = "deg") = SI.Conversions.from_deg(0) "Voltage angle for phase A"
+  parameter Types.Angle AngA= 0 "Voltage angle for phase A"
     annotation (Dialog(group="Power flow data"));
   parameter Types.PerUnit VB=1 "Voltage magnitude for phase B"
     annotation (Dialog(group="Power flow data"));
-  parameter Types.Angle AngB(displayUnit = "deg") = SI.Conversions.from_deg(-120) "Voltage angle for phase B"
+  parameter Types.Angle AngB = -2*pi/3 "Voltage angle for phase B"
     annotation (Dialog(group="Power flow data"));
   parameter Types.PerUnit VC=1 "Voltage magnitude for phase C"
     annotation (Dialog(group="Power flow data"));
-  parameter Types.Angle AngC(displayUnit = "deg") = SI.Conversions.from_deg(120) "Voltage angle for phase C"
+  parameter Types.Angle AngC= 2*pi/3 "Voltage angle for phase C"
     annotation (Dialog(group="Power flow data"));
-  parameter Types.ActivePower P_ab(displayUnit="MW")=1e6
+  parameter Types.ActivePower P_ab=1e6
     "Initial active power"
     annotation (Dialog(group="Power flow data"));
-  parameter Types.ReactivePower Q_ab(displayUnit="Mvar")=0
+  parameter Types.ReactivePower Q_ab=0
     "Initial reactive power"
     annotation (Dialog(group="Power flow data"));
-  parameter Types.ActivePower P_bc(displayUnit="MW")=1e6
+  parameter Types.ActivePower P_bc=1e6
     "Initial active power"
     annotation (Dialog(group="Power flow data"));
-  parameter Types.ReactivePower Q_bc(displayUnit="Mvar")=0
+  parameter Types.ReactivePower Q_bc=0
     "Initial reactive power"
     annotation (Dialog(group="Power flow data"));
-  parameter Types.ActivePower P_ca(displayUnit="MW")=1e6
+  parameter Types.ActivePower P_ca=1e6
     "Initial active power"
     annotation (Dialog(group="Power flow data"));
-  parameter Types.ReactivePower Q_ca(displayUnit="Mvar")=0
+  parameter Types.ReactivePower Q_ca=0
     "Initial reactive power"
     annotation (Dialog(group="Power flow data"));
 
-  parameter Real A_ab=0 "Percentage of Constant Power Load for Line AB (%)"
+  parameter Real A_ab=0 "Percentage of Constant Power Load for Line AB [%]"
     annotation (Dialog(group="Load Parameters for ZIP Model"));
-  parameter Real B_ab=0 "Percentage of Constant Current Load for Line AB (%)"
+  parameter Real B_ab=0 "Percentage of Constant Current Load for Line AB [%]"
     annotation (Dialog(group="Load Parameters for ZIP Model"));
-  parameter Real C_ab=0 "Percentage of Constant Impedance Load for Line AB (%)"
+  parameter Real C_ab=0 "Percentage of Constant Impedance Load for Line AB [%]"
     annotation (Dialog(group="Load Parameters for ZIP Model"));
-  parameter Real A_bc=0 "Percentage of Constant Power Load for Line BC (%)"
+  parameter Real A_bc=0 "Percentage of Constant Power Load for Line BC [%]"
     annotation (Dialog(group="Load Parameters for ZIP Model"));
-  parameter Real B_bc=0 "Percentage of Constant Current Load for Line BC (%)"
+  parameter Real B_bc=0 "Percentage of Constant Current Load for Line BC [%]"
     annotation (Dialog(group="Load Parameters for ZIP Model"));
   parameter Real C_bc=0
-    "Percentage of Constant Impedance Load] for Line BC (%)"
+    "Percentage of Constant Impedance Load] for Line BC [%]"
     annotation (Dialog(group="Load Parameters for ZIP Model"));
-  parameter Real A_ca=0 "Percentage of Constant Power Load for Line CA (%)"
+  parameter Real A_ca=0 "Percentage of Constant Power Load for Line CA [%]"
     annotation (Dialog(group="Load Parameters for ZIP Model"));
-  parameter Real B_ca=0 "Percentage of Constant Current Load for Line CA (%)"
+  parameter Real B_ca=0 "Percentage of Constant Current Load for Line CA [%]"
     annotation (Dialog(group="Load Parameters for ZIP Model"));
-  parameter Real C_ca=0 "Percentage of Constant Impedance Load for Line CA (%)"
+  parameter Real C_ca=0 "Percentage of Constant Impedance Load for Line CA [%]"
     annotation (Dialog(group="Load Parameters for ZIP Model"));
 
 protected
@@ -191,7 +192,7 @@ equation
           origin={18,4},
           lineColor={28,108,200},
           extent={{-62,45},{28,26}},
-          textString="PQ/ZIP Load")}), 
+          textString="PQ/ZIP Load")}),
           Documentation(info="<html>
 <p>This is a three-phase delta load model.</p>
 <p>The user needs to input the active (<b><i>P_ab</i></b>, <b><i>P_bc</i></b> and <b><i>P_ca</i></b>) and reactive (<b><i>Q_ab</i></b>, <b><i>Q_bc</i></b> and <b><i>Q_ca</i></b>) powers consumed between phases. Since the values come from independent parameters, the model allows the representation of unbalanced loads.</p> 

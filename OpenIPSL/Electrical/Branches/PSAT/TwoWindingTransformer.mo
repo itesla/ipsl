@@ -9,13 +9,13 @@ model TwoWindingTransformer "Modeled as series reactances without iron losses"
     annotation (Placement(transformation(extent={{-120,-10},{-100,10}})));
   OpenIPSL.Interfaces.PwPin n
     annotation (Placement(transformation(extent={{100,-10},{120,10}})));
-  parameter Types.ApparentPower S_b(displayUnit="MVA")=SysData.S_b "System base power"
+  parameter Types.ApparentPower S_b=SysData.S_b "System base power"
     annotation (Dialog(group="Power flow"));
-  parameter Types.Voltage V_b(displayUnit="kV")=40e3 "Sending end bus voltage"
+  parameter Types.Voltage V_b=40e3 "Sending end bus voltage"
     annotation (Dialog(group="Power flow"));
-  parameter Types.ApparentPower Sn(displayUnit="MVA")=SysData.S_b "Power rating"
+  parameter Types.ApparentPower Sn=SysData.S_b "Power rating"
     annotation (Dialog(group="Transformer parameters"));
-  parameter Types.Voltage Vn(displayUnit="kV")=40e3 "Voltage rating"
+  parameter Types.Voltage Vn=40e3 "Voltage rating"
     annotation (Dialog(group="Transformer parameters"));
   parameter Types.PerUnit rT=0.01 "Resistance(transformer base)"
     annotation (Dialog(group="Transformer parameters"));
@@ -28,10 +28,10 @@ model TwoWindingTransformer "Modeled as series reactances without iron losses"
       group="Visualisation",
       __Dymola_compact=true,
       __Dymola_descriptionLabel=true), choices(checkBox=true));
-  Types.ActivePower P12(displayUnit="MW");
-  Types.ActivePower P21(displayUnit="MW");
-  Types.ReactivePower Q12(displayUnit="Mvar");
-  Types.ReactivePower Q21(displayUnit="Mvar");
+  Types.ActivePower P12;
+  Types.ActivePower P21;
+  Types.ReactivePower Q12;
+  Types.ReactivePower Q21;
   Complex vs(re=p.vr, im=p.vi);
   Complex is(re=p.ir, im=p.ii);
   Complex vr(re=n.vr, im=n.vi);

@@ -35,24 +35,24 @@ model DeltaLoad_2Ph "Two-phase delta load"
 
   parameter Types.PerUnit VA=1 "Voltage magnitude for phase A"
     annotation (Dialog(group="Power flow data"));
-  parameter Types.Angle AngA(displayUnit = "deg") = SI.Conversions.from_deg(0) "Voltage angle for phase A"
+  parameter Types.Angle AngA= 0 "Voltage angle for phase A"
     annotation (Dialog(group="Power flow data"));
   parameter Types.PerUnit VB=1 "Voltage magnitude for phase B"
     annotation (Dialog(group="Power flow data"));
-  parameter Types.Angle AngB(displayUnit = "deg") = SI.Conversions.from_deg(-120) "Voltage angle for phase B"
+  parameter Types.Angle AngB = -2*C.pi/3 "Voltage angle for phase B"
     annotation (Dialog(group="Power flow data"));
-  parameter Types.ActivePower P_ab(displayUnit="MW")=1e6
+  parameter Types.ActivePower P_ab=1e6
     "Initial active power"
     annotation (Dialog(group="Power flow data"));
-  parameter Types.ReactivePower Q_ab(displayUnit="Mvar")=0
+  parameter Types.ReactivePower Q_ab=0
     "Initial reactive power"
     annotation (Dialog(group="Power flow data"));
 
-  parameter Real A_ab=0 "Percentage of Constant Power Load for Line AB (%)"
+  parameter Real A_ab=0 "Percentage of Constant Power Load for Line AB [%]"
     annotation (Dialog(group="Load Parameters for ZIP Model"));
-  parameter Real B_ab=0 "Percentage of Constant Current Load for Line AB (%)"
+  parameter Real B_ab=0 "Percentage of Constant Current Load for Line AB [%]"
     annotation (Dialog(group="Load Parameters for ZIP Model"));
-  parameter Real C_ab=0 "Percentage of Constant Impedance Load for Line AB (%)"
+  parameter Real C_ab=0 "Percentage of Constant Impedance Load for Line AB [%]"
     annotation (Dialog(group="Load Parameters for ZIP Model"));
 
 protected
@@ -122,7 +122,7 @@ equation
           origin={18,4},
           lineColor={28,108,200},
           extent={{-62,45},{28,26}},
-          textString="PQ/ZIP Load")}), 
+          textString="PQ/ZIP Load")}),
           Documentation(info="<html>
 <p>This is a two-phase delta load model. The model allows the user to represent active and reactive power beeing consumed between two phases.</p>
 <p>The user needs to input the active (<b><i>P_ab</i></b>) and reactive (<b><i>Q_ab</i></b>) powera consumed between phases one and two (A and B).</p> 

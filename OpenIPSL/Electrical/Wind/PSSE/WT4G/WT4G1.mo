@@ -4,7 +4,7 @@ model WT4G1 "Wind Generator Model with Power Converter (Type 4)"
   // Extending the PF component
   extends OpenIPSL.Electrical.Essentials.pfComponent;
   // Model parameters
-  parameter Types.ApparentPower M_b(displayUnit="MVA") "Machine base power";
+  parameter Types.ApparentPower M_b "Machine base power";
   parameter Types.Time T_IQCmd "Converter time constant for I_Qcmd";
   parameter Types.Time T_IPCmd "Converter time constant for I_Pcmd";
   parameter Types.PerUnit V_LVPL1 "LVPL voltage 1 (Low voltage power logic)";
@@ -98,18 +98,16 @@ model WT4G1 "Wind Generator Model with Power Converter (Type 4)"
     y_start=v_0)
     annotation (Placement(transformation(extent={{46,-36},{34,-24}})));
 protected
-  Types.Angle delta(start=angle0_rad);
-  Types.PerUnit VT(start=v_0) "Bus voltage magnitude (pu)";
-  Types.Angle anglev(start=angle0_rad) "Bus voltage angle (rad)";
-protected
-  parameter Types.Angle angle0_rad = SI.Conversions.from_deg(angle_0) "Initial angle in rad";
+  Types.Angle delta(start=angle_0);
+  Types.PerUnit VT(start=v_0) "Bus voltage magnitude";
+  Types.Angle anglev(start=angle_0) "Bus voltage angle";
   parameter Types.PerUnit p0=P_0/M_b
     "initial value of bus active power in p.u. machinebase";
   parameter Types.PerUnit q0=Q_0/M_b
     "initial value of bus reactive power in p.u. machinebase";
-  parameter Types.PerUnit vr0=v_0*cos(angle0_rad)
+  parameter Types.PerUnit vr0=v_0*cos(angle_0)
     "Real component of initial terminal voltage";
-  parameter Types.PerUnit vi0=v_0*sin(angle0_rad)
+  parameter Types.PerUnit vi0=v_0*sin(angle_0)
     "Imaginary component of initial terminal voltage";
   parameter Types.PerUnit ir0=(p0*vr0 + q0*vi0)/(vr0^2 + vi0^2)
     "Real component of initial armature current, M_b";
@@ -123,9 +121,8 @@ protected
   parameter Types.PerUnit ii1=-CoB*(p0*vi0 - q0*vr0)/(vr0^2 + vi0^2)
     "Imaginary component of initial armature current, S_b";
   parameter Types.PerUnit Ipcmd0=Ix0;
-  parameter Types.PerUnit Ix0=Isr0*cos(-angle0_rad) - Isi0*sin(-angle0_rad);
-  parameter Types.PerUnit Iy0=-(Isr0*sin(-angle0_rad) + cos(-angle0_rad)*Isi0);
-protected
+  parameter Types.PerUnit Ix0=Isr0*cos(-angle_0) - Isi0*sin(-angle_0);
+  parameter Types.PerUnit Iy0=-(Isr0*sin(-angle_0) + cos(-angle_0)*Isi0);
   Modelica.Blocks.Interfaces.RealInput Vtt=VT annotation (Placement(
         transformation(
         extent={{-10,-10},{10,10}},

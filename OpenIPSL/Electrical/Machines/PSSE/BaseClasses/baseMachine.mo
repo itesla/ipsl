@@ -17,7 +17,7 @@ partial model baseMachine
     final enableP_0=true,
     final enableS_b=true);
   //Machine parameters
-  parameter Types.ApparentPower M_b(displayUnit="MVA") "Machine base power"
+  parameter Types.ApparentPower M_b "Machine base power"
     annotation (Dialog(group="Machine parameters"));
   parameter Types.Time Tpd0 "d-axis transient open-circuit time constant"
     annotation (Dialog(group="Machine parameters"));

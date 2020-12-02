@@ -32,34 +32,34 @@ model WyeLoad_2Ph "Two-phase wye load"
   parameter Integer ModelType=0 "0- Constant Power Model, 1- ZIP Model;"
     annotation (choices(choice=0 "Constant Power", choice=1 "ZIP Model"),
       Dialog(group="Power flow"));
-  parameter Types.ActivePower P_a(displayUnit="MW")=1e6 "Active power for phase A"
+  parameter Types.ActivePower P_a=1e6 "Active power for phase A"
     annotation (Dialog(group="Power flow"));
-  parameter Types.ReactivePower Q_a(displayUnit="Mvar")=0 "Reactive power for phase A"
+  parameter Types.ReactivePower Q_a=0 "Reactive power for phase A"
     annotation (Dialog(group="Power flow"));
-  parameter Types.ActivePower P_b(displayUnit="MW")=1e6 "Active power for phase B"
+  parameter Types.ActivePower P_b=1e6 "Active power for phase B"
     annotation (Dialog(group="Power flow"));
-  parameter Types.ReactivePower Q_b(displayUnit="Mvar")=0 "Reactive power for phase B"
+  parameter Types.ReactivePower Q_b=0 "Reactive power for phase B"
     annotation (Dialog(group="Power flow"));
   parameter Types.PerUnit VA=1 "Guess value for phase A magnitude"
     annotation (Dialog(group="Initialization"));
-  parameter Types.Angle AngA(displayUnit = "deg") = SI.Conversions.from_deg(0) "Guess value for phase A angle"
+  parameter Types.Angle AngA = 0 "Guess value for phase A angle"
     annotation (Dialog(group="Initialization"));
   parameter Types.PerUnit VB=1 "Guess value for phase B magnitude"
     annotation (Dialog(group="Initialization"));
-  parameter Types.Angle AngB(displayUnit = "deg") = SI.Conversions.from_deg(-120) "Guess value for phase B angle"
+  parameter Types.Angle AngB = -2*C.pi/3 "Guess value for phase B angle"
     annotation (Dialog(group="Initialization"));
-  parameter Real A_pa=0 "Percentage of Constant Power Load for Phase A (%)"
+  parameter Real A_pa=0 "Percentage of Constant Power Load for Phase A [%]"
     annotation (Dialog(group="Load Parameters for ZIP Model"));
-  parameter Real B_pa=0 "Percentage of Constant Current Load for Phase A (%)"
+  parameter Real B_pa=0 "Percentage of Constant Current Load for Phase A [%]"
     annotation (Dialog(group="Load Parameters for ZIP Model"));
-  parameter Real C_pa=0 "Percentage of Constant Impedance Load for Phase A (%)"
+  parameter Real C_pa=0 "Percentage of Constant Impedance Load for Phase A [%]"
     annotation (Dialog(group="Load Parameters for ZIP Model"));
-  parameter Real A_pb=0 "Percentage of Constant Power Load for Phase B (%)"
+  parameter Real A_pb=0 "Percentage of Constant Power Load for Phase B [%]"
     annotation (Dialog(group="Load Parameters for ZIP Model"));
-  parameter Real B_pb=0 "Percentage of Constant Current Load for Phase B (%)"
+  parameter Real B_pb=0 "Percentage of Constant Current Load for Phase B [%]"
     annotation (Dialog(group="Load Parameters for ZIP Model"));
   parameter Real C_pb=0
-    "Percentage of Constant Impedance Load] for Phase B (%)"
+    "Percentage of Constant Impedance Load] for Phase B [%]"
     annotation (Dialog(group="Load Parameters for ZIP Model"));
 protected
   parameter Real[1, 4] TPhasePower=[P_a, P_b, Q_a, Q_b]/S_p;
@@ -122,7 +122,7 @@ equation
           origin={18,4},
           lineColor={28,108,200},
           extent={{-62,45},{28,26}},
-          textString="PQ/ZIP Load")}), 
+          textString="PQ/ZIP Load")}),
           Documentation(info="<html>
 <p>This is a two-phase wye load model.</p>
 <p>The user needs to input the active (<b><i>P_a</i></b> and <b><i>P_b</i></b>) and reactive (<b><i>Q_a</i></b> and <b><i>Q_b</i></b>) powers consumed by each of the two phases. 

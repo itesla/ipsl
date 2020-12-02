@@ -1,8 +1,8 @@
 within OpenIPSL.Electrical.Solar.KTH.PFblocks;
 model Staticgenerator
-  parameter Types.ActivePower Pnen(displayUnit="MW")=500000 "rated power";
+  parameter Types.ActivePower Pnen=500000 "rated power";
   parameter Types.PerUnit v0=1 "Node voltage" annotation (Dialog(group="Power flow data"));
-  parameter SI.Conversions.NonSIunits.Angle_deg anglev0(displayUnit="deg")=1 "Node angle" annotation (Dialog(group="Power flow data"));
+  parameter Types.Angle anglev0=1 "Node angle" annotation (Dialog(group="Power flow data"));
   parameter Types.PerUnit p0=1 "Initial active power" annotation (Dialog(group="Power flow data"));
   parameter Types.PerUnit q0=1 "Initial reactive power" annotation (Dialog(group="Power flow data"));
   parameter Types.Time Td=0.00015 "d-axis inverter time constant";

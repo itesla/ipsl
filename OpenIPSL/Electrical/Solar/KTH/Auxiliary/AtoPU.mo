@@ -14,8 +14,8 @@ model AtoPU
       iconTransformation(
         origin={-120.0,-0.0},
         extent={{-20.0,-20.0},{20.0,20.0}})));
-  parameter Types.ActivePower Pnen(displayUnit="MW");
-  parameter Types.Voltage UdcN(displayUnit="kV");
+  parameter Types.ActivePower Pnen;
+  parameter Types.Voltage UdcN;
 equation
   y0 = yi/Pnen*1/UdcN;
   annotation (

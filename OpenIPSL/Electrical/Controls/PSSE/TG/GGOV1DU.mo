@@ -38,7 +38,7 @@ model GGOV1DU "GGOV1DU - Variation of GE General Governor/Turbine Model [IEEE201
   parameter Types.TimeAging Aset=0.1 "Acceleration limiter setpoint";
   parameter Types.PerUnit Ka=10 "Acceleration limiter gain";
   parameter Types.Time Ta=0.1 "Acceleration limiter time constant";
-  parameter Types.ActivePower Trate(displayUnit="MW")=0 "Turbine rating";
+  parameter Types.ActivePower Trate=0 "Turbine rating";
   parameter Types.PerUnit db=0 "Speed governor deadband";
   parameter Types.Time Tsa=4 "Temperature detection lead time constant";
   parameter Types.Time Tsb=5 "Temperature detection lag time constant";

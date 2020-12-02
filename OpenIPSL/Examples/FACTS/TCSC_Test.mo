@@ -30,12 +30,13 @@ model TCSC_Test "Simple model to test the functionality of TCSC"
     X=0.2,
     G=0,
     B=0) annotation (Placement(transformation(extent={{-70,-10},{-50,10}})));
-  Electrical.Buses.Bus Gen(angle_0=4.04614,
+  Electrical.Buses.Bus Gen(angle_0= 0.070618464996643,
                            displayPF=true)
     annotation (Placement(transformation(extent={{-100,-10},{-80,10}})));
   Electrical.Buses.Bus Load(
     v_0=0.991992,
-    angle_0=-0.576411,      displayPF=true)
+    angle_0 = -0.010060269794713,
+                            displayPF=true)
     annotation (Placement(transformation(extent={{-40,-10},{-20,10}})));
   Electrical.Buses.Bus Inf(displayPF=true)
     annotation (Placement(transformation(extent={{70,-10},{90,10}})));
