@@ -14,7 +14,7 @@ model Capacitor
       iconTransformation(
         origin={-120.0,-0.0},
         extent={{-20.0,-20.0},{20.0,20.0}})));
-  Real x(start=Udc0/(1000*UdcN));
+  Real x(start=Udc0/(UdcN));
   parameter SI.Capacitance C;
   parameter Types.Voltage Udc0;
   parameter Types.Voltage UdcN;
