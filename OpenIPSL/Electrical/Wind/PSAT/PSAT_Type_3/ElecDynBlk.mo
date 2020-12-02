@@ -70,8 +70,8 @@ model ElecDynBlk
   Types.PerUnit Vref;
   Types.PerUnit iqr_off;
   Types.PerUnit pwa;
-protected
   parameter Types.TimeAging i2Hm=1/(2*Hm) "inverse inertia";
+protected
   parameter Types.Time Tdmy = 1 "dummy time constant";
 initial equation
   0 = ((-(Xs + Xm)*pwa/Vbus/Xm/omega_m) - iqr - iqr_off);

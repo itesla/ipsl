@@ -84,7 +84,6 @@ model ElecBlk
         extent={{-10.0,-10.0},{10.0,10.0}})));
   Real slip;
   Types.Angle Anglebus=atan(pin.vi/pin.vr);
-protected
   parameter Types.TimeAging i2Hm=1/(2*Hm) "inverse inertia";
 equation
   Vbus = sqrt(vds^2 + vqs^2);
