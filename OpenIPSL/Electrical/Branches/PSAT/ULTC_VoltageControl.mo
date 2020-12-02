@@ -11,7 +11,7 @@ model ULTC_VoltageControl
     annotation (Dialog(group="Power flow data"));
   parameter Types.Voltage Vbus2=100e3 "Receiving end Bus nominal voltage"
     annotation (Dialog(group="Power flow data"));
-  parameter Types.ApparentPower Sn"
+  parameter Types.ApparentPower Sn=100e6 "Power rating"
     annotation (Dialog(group="Transformer data"));
   parameter Types.Voltage Vn=400e3 "Voltage rating"
     annotation (Dialog(group="Transformer data"));
