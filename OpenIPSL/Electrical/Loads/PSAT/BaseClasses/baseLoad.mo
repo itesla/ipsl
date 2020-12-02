@@ -11,11 +11,10 @@ partial model baseLoad
     final enableP_0=true);
   parameter Types.ApparentPower Sn=S_b "Power rating";
   Types.PerUnit v(start=v_0) "Voltage magnitude";
-  Types.Angle Angle_V(start=SI.Conversions.from_deg(
-        angle_0)) "Voltage angle";
+  Types.Angle anglev(start=angle_0) "Voltage angle";
   Types.PerUnit P(start=P_0/S_b) "Active power";
   Types.PerUnit Q(start=Q_0/S_b) "Reactive power";
-  Interfaces.PwPin p(vr(start=v_0*cos(angle_0rad)),vi(start=v_0*sin(angle_0rad)))
+  Interfaces.PwPin p(vr(start=v_0*cos(angle_0)),vi(start=v_0*sin(angle_0)))
     annotation (Placement(transformation(extent={{-10,90},{10,110}})));
 protected
   parameter Real CoB=Sn/S_b "Change of base between Machine and System";
@@ -23,7 +22,7 @@ equation
   P = p.vr*p.ir + p.vi*p.ii;
   Q = p.vi*p.ir - p.vr*p.ii;
   v = sqrt(p.vr^2 + p.vi^2);
-  Angle_V = atan2(p.vi, p.vr);
+  anglev = atan2(p.vi, p.vr);
   annotation (Icon(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},
             {100,100}}), graphics={Line(points={{-100,100},{100,100},{0,-100},{
           -100,100}}, color={28,108,200}),Text(

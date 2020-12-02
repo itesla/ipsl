@@ -18,7 +18,7 @@ model GGOV1DU "three phase to ground fault test of GGOV1DU"
     S12=0.5,
     Xpq=0.6,
     Tpq0=0.7,
-    angle_0=4.05,
+    angle_0=0.07068583470577,
     M_b=100000000,
     P_0=39999950,
     Q_0=5416571,

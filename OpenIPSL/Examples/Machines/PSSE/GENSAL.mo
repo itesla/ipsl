@@ -14,7 +14,7 @@ model GENSAL "SMIB system with one load and GENSAL model"
     Xl=0.12,
     S10=0.11,
     S12=0.39,
-    angle_0=4.046276,
+    angle_0=0.070492225331847,
     Xppq=0.2,
     R_a=0,
     M_b=100000000,
