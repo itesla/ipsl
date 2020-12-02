@@ -42,7 +42,7 @@ model ElecBlk
         extent={{102.0,54.0},{62.0,94.0}})));
   parameter Types.ApparentPower Sbase=100000000 "Power Rating [Normalization Factor]";
   parameter Types.PerUnit Vbus0=1 "Voltage from Power Flow";
-  parameter Types.Angle angle0=-0.00243 "Angle from Power Flow";
+  parameter Types.Angle angle_0=-0.00243 "Angle from Power Flow";
   parameter Types.PerUnit Pc=0.0160000000000082 "Active Power, PowerFlow";
   parameter Types.PerUnit Qc=0.030527374471207 "Reactive Power, Power Flow";
   parameter Types.PerUnit omega_m0=min(max(0.5*Pc*Sbase/Pnom + 0.5, 0.5), 1);
@@ -62,8 +62,8 @@ model ElecBlk
   parameter Types.PerUnit iqs0=((-vds0*vqs0) + vqs0*Xm*iqr0 - Rs*Qc)/(Rs*vds0 - x1*vqs0);
   parameter Types.PerUnit idr0=-(vqs0 + Rs*iqs0 + x1*ids0)/Xm;
   parameter Types.PerUnit iqr0=-x1*Pnom*(2*omega_m0 - 1)/Vbus0/Xm/Sbase/omega_m0;
-  parameter Types.PerUnit vds0=-Vbus0*sin(angle0);
-  parameter Types.PerUnit vqs0=Vbus0*cos(angle0);
+  parameter Types.PerUnit vds0=-Vbus0*sin(angle_0);
+  parameter Types.PerUnit vqs0=Vbus0*cos(angle_0);
   parameter Types.PerUnit vdr0=(-Rr*idr0) + (1 - omega_m0)*((Xm + Xr)*iqr0 + Xm*iqs0);
   parameter Types.PerUnit vqr0=(-Rr*iqr0) - (1 - omega_m0)*((Xm + Xr)*idr0 + Xm*ids0);
   parameter Integer poles=2 "Number of poles-pair";

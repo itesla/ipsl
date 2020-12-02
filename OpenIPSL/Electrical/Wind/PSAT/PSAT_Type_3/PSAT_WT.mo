@@ -4,7 +4,7 @@ model PSAT_WT "Wind Turbine Doubly Fed Induction Generator"
   ElecDynBlk elecDyn(
     Sbase=S_b,
     Vbus0=V_0,
-    angle0=angle_0,
+    angle_0=angle_0,
     Pc=P_0,
     Qc=Q_0,
     omega_m0=omega_m0,
@@ -42,7 +42,7 @@ model PSAT_WT "Wind Turbine Doubly Fed Induction Generator"
   ElecBlk elecCircuit(
     Sbase=S_b,
     Vbus0=V_0,
-    angle0=angle_0,
+    angle_0=angle_0,
     Pc=P_0,
     Qc=Q_0,
     omega_m0=omega_m0,
