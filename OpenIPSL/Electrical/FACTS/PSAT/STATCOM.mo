@@ -47,8 +47,8 @@ protected
   parameter Types.PerUnit I_b=S_b/V_b "Base current";
   parameter Types.PerUnit i_max=i_Max*In/I_b "Max current (system base)";
   parameter Types.PerUnit i_min=i_Min*In/I_b "Min current (system base)";
-  parameter Types.PerUnit vr0=v_0*cos(angle_0rad) "Initial real voltage";
-  parameter Types.PerUnit vi0=v_0*sin(angle_0rad) "Initial imaginary voltage";
+  parameter Types.PerUnit vr0=v_0*cos(angle_0) "Initial real voltage";
+  parameter Types.PerUnit vi0=v_0*sin(angle_0) "Initial imaginary voltage";
   parameter Types.PerUnit u0=v_ref - v_0 "Initial controller input";
   parameter Types.PerUnit i0=(Q_0/S_b)/v_0 "Initial current";
   parameter Types.PerUnit v_ref=i0/Kr + v_0 "Reference voltage";

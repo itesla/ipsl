@@ -32,7 +32,7 @@ model MotorTypeI "Induction Machine - Order I"
   parameter Types.Time tup=0 "Start up time"
     annotation (Dialog(group="Machine parameters"));
   Types.PerUnit v(start=v_0) "Bus voltage magnitude";
-  Types.Angle anglev(start=angle_0rad) "Bus voltage angle";
+  Types.Angle anglev(start=angle_0) "Bus voltage angle";
   Types.PerUnit s(start=Rr1*P_0/S_b*(Q_0/S_b + v_0*v_0/Xm)/(v_0*v_0*v_0*v_0*(Xs + Xr1)));
   Types.PerUnit Tm;
   Types.PerUnit P(start=P_0/S_b);
@@ -45,8 +45,8 @@ model MotorTypeI "Induction Machine - Order I"
     ii(start=ii0))
     annotation (Placement(transformation(extent={{90,-10},{110,10}})));
 protected
-  parameter Types.PerUnit vr0=v_0*cos(angle_0rad);
-  parameter Types.PerUnit vi0=v_0*sin(angle_0rad);
+  parameter Types.PerUnit vr0=v_0*cos(angle_0);
+  parameter Types.PerUnit vi0=v_0*sin(angle_0);
   parameter Types.PerUnit ir0=(P_0/S_b*vr0 + Q_0/S_b*vi0)/(vr0^2 + vi0^2);
   parameter Types.PerUnit ii0=(P_0/S_b*vi0 - Q_0/S_b*vr0)/(vr0^2 + vi0^2);
   parameter Types.PerUnit A=a + b + c;

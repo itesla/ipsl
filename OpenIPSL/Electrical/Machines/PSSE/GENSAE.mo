@@ -39,7 +39,7 @@ protected
   parameter Real ang_PSIpp0andIt=ang_PSIpp0 - ang_It "angle difference";
   parameter Types.PerUnit abs_PSIpp0='abs'(PSIpp0)
     "magnitude of sub-transient flux linkage";
-  parameter Complex VT=v_0*cos(angle_0rad) + j*v_0*sin(angle_0rad)
+  parameter Complex VT=v_0*cos(angle_0) + j*v_0*sin(angle_0)
     "Complex terminal voltage";
   parameter Complex S=p0 + j*q0 "Complex power on machine base";
   parameter Complex It=real(S/VT) - j*imag(S/VT) "Terminal current";
@@ -53,9 +53,9 @@ protected
   //Initialization of current and voltage components in synchronous reference frame.
   parameter Types.PerUnit iq0=real(I_dq) "q-axis component of initial current";
   parameter Types.PerUnit id0=imag(I_dq) "d-axis component of initial current";
-  parameter Types.PerUnit ud0=v_0*cos(angle_0rad - delta0 + C.pi/2)
+  parameter Types.PerUnit ud0=v_0*cos(angle_0 - delta0 + C.pi/2)
     "d-axis component of initial voltage";
-  parameter Types.PerUnit uq0=v_0*sin(angle_0rad - delta0 + C.pi/2)
+  parameter Types.PerUnit uq0=v_0*sin(angle_0 - delta0 + C.pi/2)
     "q-axis component of initial voltage";
   parameter Complex PSIpp0_dq=real(PSIpp0*DQ_dq) + j*imag(PSIpp0*DQ_dq)
     "Flux linkage in rotor reference frame";

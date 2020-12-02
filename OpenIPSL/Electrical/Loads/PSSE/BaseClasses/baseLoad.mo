@@ -28,15 +28,15 @@ partial model baseLoad
     ir(start=ir0),
     ii(start=ii0))
     annotation (Placement(transformation(extent={{-10,90},{10,110}})));
-  Types.Angle angle(start=angle_0rad) "Bus voltage angle";
+  Types.Angle angle(start=angle_0) "Bus voltage angle";
   Types.PerUnit v(start=v_0) "Bus voltage magnitude";
   Types.PerUnit P "Active power consumption";
   Types.PerUnit Q "Reactive power consumption";
 protected
   parameter Types.PerUnit p0=(S_i.re*v_0 + S_y.re*v_0^2 + S_p.re)/S_b "Initial active power";
   parameter Types.PerUnit q0=(S_i.im*v_0 + S_y.im*v_0^2 + S_p.im)/S_b "Initial reactive power";
-  parameter Types.PerUnit vr0=v_0*cos(angle_0rad) "Initial real voltage";
-  parameter Types.PerUnit vi0=v_0*sin(angle_0rad) "Initial imaginary voltage";
+  parameter Types.PerUnit vr0=v_0*cos(angle_0) "Initial real voltage";
+  parameter Types.PerUnit vi0=v_0*sin(angle_0) "Initial imaginary voltage";
   parameter Types.PerUnit ir0=(p0*vr0 + q0*vi0)/(vr0^2 + vi0^2) "Initial real current";
   parameter Types.PerUnit ii0=(p0*vi0 - q0*vr0)/(vr0^2 + vi0^2) "Initial imaginary current";
   parameter Complex S_P=Complex((1 - a.re - b.re)*S_p.re, (1 - a.im - b.im)*S_p.im)

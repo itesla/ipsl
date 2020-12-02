@@ -42,7 +42,7 @@ model GENROE "ROUND ROTOR GENERATOR MODEL (EXPONENTIAL SATURATION)"
   Types.PerUnit XaqIlq(start=0) "q-axis Machine field current";
 protected
   parameter Complex Zs=R_a + j*Xpp "Equivalent impedance";
-  parameter Complex VT=v_0*cos(angle_0rad) + j*v_0*sin(angle_0rad)
+  parameter Complex VT=v_0*cos(angle_0) + j*v_0*sin(angle_0)
     "Complex terminal voltage";
   parameter Complex S=p0 + j*q0 "Complex power on machine base";
   parameter Complex It=real(S/VT) - j*imag(S/VT)
@@ -85,9 +85,9 @@ protected
   parameter Types.PerUnit uq0=PSIppd0 - Xppd*id0 - R_a*iq0
     "q-axis component of initial voltage";
   //Initialization current and voltage components in synchronous reference frame.
-  parameter Types.PerUnit vr0=v_0*cos(angle_0rad)
+  parameter Types.PerUnit vr0=v_0*cos(angle_0)
     "Real component of initial terminal voltage";
-  parameter Types.PerUnit vi0=v_0*sin(angle_0rad)
+  parameter Types.PerUnit vi0=v_0*sin(angle_0)
     "Imaginary component of initial terminal voltage";
   parameter Types.PerUnit ir0=-CoB*(p0*vr0 + q0*vi0)/(vr0^2 + vi0^2)
     "Real component of initial armature current, systembase";

@@ -19,8 +19,8 @@ equation
   a = v/v_0;
   der(x) = ((-v/Tfv) - x)/Tfv;
   b = x + v/Tfv;
-  der(y) = -1/Tft*(1/(2*C.pi*fn*Tft)*(Angle_V - angle_0rad) + y);
-  deltaw = y + 1/(2*C.pi*fn*Tft)*(Angle_V - angle_0rad);
+  der(y) = -1/Tft*(1/(2*C.pi*fn*Tft)*(anglev - angle_0) + y);
+  deltaw = y + 1/(2*C.pi*fn*Tft)*(anglev - angle_0);
   P = Kpf*deltaw + P_0/S_b*(a^alpha + Tpv*b);
   Q = Kqf*deltaw + Q_0/S_b*(a^beta + Tqv*b);
   annotation (

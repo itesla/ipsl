@@ -82,7 +82,7 @@ partial model baseMachine
   Types.PerUnit w(start=w0, fixed=true) "Machine speed deviation";
   Types.Angle delta "Rotor angle";
   Types.PerUnit Vt(start=v_0) "Bus voltage magnitude";
-  Types.Angle anglev(start=angle_0rad) "Bus voltage angle";
+  Types.Angle anglev(start=angle_0) "Bus voltage angle";
   Types.PerUnit I(start=sqrt(ir0^2 + ii0^2)) "Terminal current magnitude";
   Types.Angle anglei(start=atan2(ii0, ir0)) "Terminal current angle";
   Types.PerUnit P(start=P_0/S_b) "Active power (system base)";
@@ -95,9 +95,9 @@ partial model baseMachine
 protected
   parameter Types.AngularVelocity w_b=2*C.pi*fn "System base speed";
   parameter Real CoB=M_b/S_b;
-  parameter Types.PerUnit vr0=v_0*cos(angle_0rad)
+  parameter Types.PerUnit vr0=v_0*cos(angle_0)
     "Real component of initial terminal voltage";
-  parameter Types.PerUnit vi0=v_0*sin(angle_0rad)
+  parameter Types.PerUnit vi0=v_0*sin(angle_0)
     "Imaginary component of initial terminal voltage";
   parameter Types.PerUnit ir0=-CoB*(p0*vr0 + q0*vi0)/(vr0^2 + vi0^2)
     "Real component of initial armature current (system base)";

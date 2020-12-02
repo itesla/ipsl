@@ -56,8 +56,8 @@ model MotorTypeIII "Induction Machine - Order III"
   import Modelica.Constants.pi;
 protected
   parameter Types.AngularVelocity Omegab=2*pi*fn "Base freq";
-  parameter Types.PerUnit vr0=v_0*cos(angle_0rad);
-  parameter Types.PerUnit vi0=v_0*sin(angle_0rad);
+  parameter Types.PerUnit vr0=v_0*cos(angle_0);
+  parameter Types.PerUnit vi0=v_0*sin(angle_0);
   parameter Types.PerUnit ir0=(P_0/S_b*vr0 + Q_0/S_b*vi0)/(vr0^2 + vi0^2);
   parameter Types.PerUnit ii0=(P_0/S_b*vi0 - Q_0/S_b*vr0)/(vr0^2 + vi0^2);
   parameter Types.PerUnit i2=ir0*ir0 + ii0*ii0;

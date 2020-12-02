@@ -30,7 +30,7 @@ model GENCLS
   Types.Angle delta(start=delta0, fixed=true) "Rotor angle";
   Types.PerUnit omega(start=0, fixed=true) "Rotor speed";
   Types.PerUnit V(start=v_0) "Bus voltage magnitude";
-  Types.Angle anglev(start=angle_0rad) "Bus voltage angle";
+  Types.Angle anglev(start=angle_0) "Bus voltage angle";
   Types.PerUnit eq(start=vf0, fixed=true) "Constant emf behind transient reactance";
   Types.PerUnit vd(start=vd0) "d-axis voltage";
   Types.PerUnit vq(start=vq0) "q-axis voltage";
@@ -42,8 +42,8 @@ protected
   parameter Real CoB=M_b/S_b "Change from system to machine base";
   parameter Types.PerUnit p0=P_0/M_b "Initial active power (machine base)";
   parameter Types.PerUnit q0=Q_0/M_b "Initial reactive power (machine base)";
-  parameter Types.PerUnit vr0=v_0*cos(angle_0rad);
-  parameter Types.PerUnit vi0=v_0*sin(angle_0rad);
+  parameter Types.PerUnit vr0=v_0*cos(angle_0);
+  parameter Types.PerUnit vi0=v_0*sin(angle_0);
   parameter Types.PerUnit ir0=(p0*vr0 + q0*vi0)/(vr0^2 + vi0^2);
   parameter Types.PerUnit ii0=(p0*vi0 - q0*vr0)/(vr0^2 + vi0^2);
   parameter Types.Angle delta0=atan2(vi0 + R_a*ii0 + X_d*ir0, vr0 + R_a*ir0 - X_d*ii0);

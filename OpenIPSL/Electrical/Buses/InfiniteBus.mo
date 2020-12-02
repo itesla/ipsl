@@ -15,8 +15,8 @@ model InfiniteBus "PSAT Infinite Bus"
     annotation (Placement(transformation(extent={{90,-10},{110,10}})));
 
 equation
-  p.vr = v_0*cos(angle_0*C.pi/180);
-  p.vi = v_0*sin(angle_0*C.pi/180);
+  p.vr = v_0*cos(angle_0);
+  p.vi = v_0*sin(angle_0);
   P = -(p.vr*p.ir + p.vi*p.ii)*S_b;
   Q = -(p.vi*p.ir - p.vr*p.ii)*S_b;
   annotation (

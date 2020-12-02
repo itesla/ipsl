@@ -17,11 +17,11 @@ model Bus "Bus model (2014/03/10)"
         extent={{-10,-10},{10,10}})));
   Types.PerUnit V(start=v_0) "Bus voltage magnitude";
   Types.Angle angle(start=angle_0) "Bus voltage angle";
-  SI.Conversions.NonSIunits.Angle_deg angleDisplay = Modelica.SIunits.Conversions.to_deg(angle)
+  SI.Conversions.NonSIunits.Angle_deg angleDisplay = SI.Conversions.to_deg(angle)
     "Angle in degrees for display purposes";
 equation
   V = sqrt(p.vr^2 + p.vi^2);
-  angle = atan2(p.vi, p.vr)*180/C.pi;
+  angle = atan2(p.vi, p.vr);
   p.ir = 0;
   p.ii = 0;
   annotation (Icon(graphics={Rectangle(
