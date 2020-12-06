@@ -234,11 +234,11 @@ equation
           lineColor={0,0,0},
           textString="%name")}),
     Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-180,-60},{200,60}})),
-    Documentation(info="<html>
+    Documentation(revisions="<html>
 <table cellspacing=\"1\" cellpadding=\"1\" border=\"1\">
 <tr>
 <td><p>Reference</p></td>
-<td>Hydro Turbine (Linear model) and Governor (Standard model) - control scheme Type 6, PSAT Manual</td>
+<td>PSAT Manual</td>
 </tr>
 <tr>
 <td><p>Last update</p></td>
@@ -246,11 +246,11 @@ equation
 </tr>
 <tr>
 <td><p>Author</p></td>
-<td><p>Tetiana Bogodorova, SmarTS Lab, KTH Royal Institute of Technology</p></td>
+<td><p>Tetiana Bogodorova</p></td>
 </tr>
 <tr>
 <td><p>Contact</p></td>
-<td><p><a href=\"mailto:luigiv@kth.se\">luigiv@kth.se</a></p></td>
+<td><p>see <a href=\"modelica://OpenIPSL.UsersGuide.Contact\">UsersGuide.Contact</a></p></td>
 </tr>
 </table>
 </html>"));
