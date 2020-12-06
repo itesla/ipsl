@@ -134,22 +134,22 @@ equation
       smooth=Smooth.None));
   connect(sine1.y, add2.u1) annotation (Line(points={{-86.8548,9.4652},{-84,9.4652},{-84,4},{-82.8,4},{-82.8,4.4}}, color={0,0,127}));
   connect(sine2.y, add2.u2) annotation (Line(points={{-86.4538,-5.5198},{-84.2269,-5.5198},{-84.2269,-0.4},{-82.8,-0.4}}, color={0,0,127}));
-  annotation (Documentation(info="<html>
+  annotation (Documentation(revisions="<html>
 <table cellspacing=\"2\" cellpadding=\"1\" border=\"1\"><tr>
 <td><p>Reference</p></td>
-<td><p>KTH own Model, PSAT Manual 2.1.8</p></td>
+<td><p>PSAT Manual 2.1.8</p></td>
 </tr>
 <tr>
 <td><p>Last update</p></td>
-<td><p>29/09/2015</p></td>
+<td><p>2015-09-29</p></td>
 </tr>
 <tr>
 <td><p>Author</p></td>
-<td><p>MAA Murad, SmarTS Lab, KTH Royal Institute of Technology</p></td>
+<td><p>MAA Murad, KTH Royal Institute of Technology</p></td>
 </tr>
 <tr>
 <td><p>Contact</p></td>
-<td><p><a href=\"mailto:luigiv@kth.se\">luigiv@kth.se</a></p></td>
+<td><p>see <a href=\"modelica://OpenIPSL.UsersGuide.Contact\">UsersGuide.Contact</a></p></td>
 </tr>
 </table>
 </html>"));
