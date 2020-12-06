@@ -33,7 +33,7 @@ equation
     y = max(min(state, outMax), outMin);
   end if;
   annotation (
-    Documentation(info="<html>
+    Documentation(revisions="<html>
 <table cellspacing=\"1\" cellpadding=\"1\" border=\"1\">
 <tr>
 <td><p>Reference</p></td>
@@ -45,11 +45,11 @@ equation
 </tr>
 <tr>
 <td><p>Author</p></td>
-<td><p>Tin Rabuzin,SmarTS Lab, KTH Royal Institute of Technology</p></td>
+<td><p><a href=\"https://github.com/tinrabuzin\">@tinrabuzin</a></p></td>
 </tr>
 <tr>
 <td><p>Contact</p></td>
-<td><p><a href=\"mailto:luigiv@kth.se\">luigiv@kth.se</a></p></td>
+<td><p>see <a href=\"modelica://OpenIPSL.UsersGuide.Contact\">UsersGuide.Contact</a></p></td>
 </tr>
 </table>
 </html>"),

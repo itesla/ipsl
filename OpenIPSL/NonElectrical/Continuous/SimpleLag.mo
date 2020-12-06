@@ -31,11 +31,11 @@ equation
           color={0,0,255},
           smooth=Smooth.Bezier,
           thickness=0.5)}),
-    Documentation(info="<html>
+    Documentation(revisions="<html>
 <table cellspacing=\"1\" cellpadding=\"1\" border=\"1\">
 <tr>
 <td><p>Reference</p></td>
-<td></td>
+<td> </td>
 </tr>
 <tr>
 <td><p>Last update</p></td>
@@ -43,11 +43,11 @@ equation
 </tr>
 <tr>
 <td><p>Author</p></td>
-<td><p>Tin Rabuzin, SmarTS Lab, KTH Royal Institute of Technology</p></td>
+<td><p><a href=\"https://github.com/tinrabuzin\">@tinrabuzin</a></p></td>
 </tr>
 <tr>
 <td><p>Contact</p></td>
-<td><p><a href=\"mailto:luigiv@kth.se\">luigiv@kth.se</a></p></td>
+<td><p>see <a href=\"modelica://OpenIPSL.UsersGuide.Contact\">UsersGuide.Contact</a></p></td>
 </tr>
 </table>
 </html>"));
