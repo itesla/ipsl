@@ -64,22 +64,21 @@ equation
           lineColor={0,0,255},
           fillColor={85,170,255},
           fillPattern=FillPattern.Solid)}),
-    Documentation(info="<html>
-<table cellspacing=\"1\" cellpadding=\"1\" border=\"1\"><tr>
-<td><p>Reference</p></td>
-<td><p>None</p></td>
-</tr>
+    Documentation(revisions="<html>
+<table cellspacing=\"1\" cellpadding=\"1\" border=\"1\">
 <tr>
 <td><p>Last update</p></td>
 <td><p>2017-07-07</p></td>
 </tr>
 <tr>
 <td><p>Author</p></td>
-<td><p>Jan Lavenius, Giuseppe Laera, KTH Royal Institute of Technology; <a href=\"https://github.com/tbeu\">tbeu</a> </p></td>
+<td><p><a href=\"https://github.com/GiuseppeLaera\">@GiuseppeLaera</a></p>
+    <p><a href=\"https://github.com/janlav\">@janlav</a></p>
+    <p><a href=\"https://github.com/tbeu\">@tbeu</a></p></td>
 </tr>
 <tr>
 <td><p>Contact</p></td>
-<td><p><a href=\"mailto:luigiv@kth.se\">luigiv@kth.se</a></p></td>
+<td><p>see <a href=\"modelica://OpenIPSL.UsersGuide.Contact\">UsersGuide.Contact</a></p></td>
 </tr>
 </table>
 </html>"));
