@@ -140,6 +140,7 @@ equation
 <td><p>see <a href=\"modelica://OpenIPSL.UsersGuide.Contact\">UsersGuide.Contact</a></p></td>
 </tr>
 </table>
+</html>", info="<html>
 <span style=\"color: #ff0000\">
 <h5>WARNING</h5>
 <p>The PSAT Toolbox  called this model &quot;AVR Type I&quot;

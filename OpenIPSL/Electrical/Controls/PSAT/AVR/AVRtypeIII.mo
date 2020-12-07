@@ -97,6 +97,7 @@ equation
 <td><p>see <a href=\"modelica://OpenIPSL.UsersGuide.Contact\">UsersGuide.Contact</a></p></td>
 </tr>
 </table>
+</html>", info="<html>
 <p>See also <a href=\"modelica://OpenIPSL.UsersGuide.References\">[Milano2013], section 18.3.3</a> 
  or <a href=\"modelica://OpenIPSL.UsersGuide.References\">[Milano2010], chapter 16.2.3</a>.</p>
 </html>"),
