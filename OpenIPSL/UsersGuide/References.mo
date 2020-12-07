@@ -86,7 +86,7 @@ model References "References"
 <td>[PSSE-AGV1]</td>
 <td>Siemens:
         &quot;PSS&reg;E Program Application Guide Volume 1&quot;,
-        version 34.2, April 2017,
+        version 33, April 2017,
         (<a href=\"https://new.siemens.com/global/en/products/energy/energy-automation-and-smart-grid/pss-software/pss-e.html\">Home page</a>)
 </td>
 </tr>
@@ -94,7 +94,7 @@ model References "References"
 <td>[PSSE-AGV2]</td>
 <td>Siemens:
         &quot;PSS&reg;E Program Application Guide Volume 2&quot;,
-        version 34.2, April 2017,
+        version 33, April 2017,
         (<a href=\"https://new.siemens.com/global/en/products/energy/energy-automation-and-smart-grid/pss-software/pss-e.html\">Home page</a>)
 </td>
 </tr>
@@ -102,7 +102,7 @@ model References "References"
 <td>[PSSE-MODELS]</td>
 <td>Siemens:
         &quot;PSS&reg;E Model Library&quot;,
-        version 34.2, April 2017,
+        version 33, April 2017,
         (<a href=\"https://new.siemens.com/global/en/products/energy/energy-automation-and-smart-grid/pss-software/pss-e.html\">Home page</a>)
 </td>
 </tr>
