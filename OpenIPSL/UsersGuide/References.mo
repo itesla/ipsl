@@ -37,7 +37,7 @@ model References "References"
         <a href=\"https://doi.org/10.1109/IEEESTD.1992.106975\">DOI: 10.1109/IEEESTD.1992.106975</a>
 </td>
 </tr>
-<tr><tr>
+<tr>
 <td>[IEEE2005]</td>
 <td>IEEE:
         &quot;421.5-2005 - IEEE Recommended Practice for Excitation System Models 
@@ -47,7 +47,6 @@ model References "References"
 </td>
 </tr>
 <tr>
-<tr>
 <td>[IEEE2013]</td>
 <td>IEEE Power & Energy Society:
         &quot;Dynamic models for turbine-governors in power system studies&quot;,
@@ -55,7 +54,6 @@ model References "References"
         <a href=\"https://resourcecenter.ieee-pes.org/publications/technical-reports/PESTR1.html\">IEEE PES Resource Center</a>
 </td>
 </tr>
-<tr>
 <tr>
 <td>[IEEE2016]</td>
 <td>IEEE:
@@ -81,7 +79,6 @@ model References "References"
         (<a href=\"http://faraday1.ucd.ie/psat.html\">Home page</a>)
 </td>
 </tr>
-<tr>
 <tr>
 <td>[PSSE-AGV1]</td>
 <td>Siemens:
