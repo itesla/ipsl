@@ -70,5 +70,5 @@ If a copy of the MPL was not distributed with this file, You can obtain one at h
 ## Acknowledgements:
 
 
-This work was supported in primarily by the New York State Energy Research and Development Authority (NYSERDA) through the Electric Power Transmission and Distribution (EPTD) PON 3770 High Performing Grid Program together with the New York Power Administration (NYPA). This work was also supported in part by the ERC Program of the National Science Foundation and DOE under NSF Award Number EEC-1041877 and the CURENT Industry Partnership Program.
+This work was supported in primarily by the New York State Energy Research and Development Authority (NYSERDA) through the Electric Power Transmission and Distribution (EPTD) PON 3770 High Performing Grid Program together with the New York Power Authority (NYPA). This work was also supported in part by the ERC Program of the National Science Foundation and DOE under NSF Award Number EEC-1041877 and the CURENT Industry Partnership Program.
 
