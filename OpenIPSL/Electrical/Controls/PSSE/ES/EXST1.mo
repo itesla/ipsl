@@ -103,7 +103,7 @@ equation
           extent={{-100,160},{100,100}},
           lineColor={28,108,200},
           textString="EXST1")}),
-    Documentation(revision="<html>
+    Documentation(revisions="<html>
 <table cellspacing=\"1\" cellpadding=\"1\" border=\"1\">
 <tr>
 <td><p>Reference</p></td>
