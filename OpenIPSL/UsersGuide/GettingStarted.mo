@@ -1,5 +1,5 @@
 within OpenIPSL.UsersGuide;
-model GettingStarted "Getting Started with OpenIPSL"
+model GettingStarted "Getting Started"
   extends Modelica.Icons.Information;
 
 

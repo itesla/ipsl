@@ -2,7 +2,7 @@ package OpenIPSL "Open-Instance Power System Library"
   import SI = Modelica.SIunits;
   import C = Modelica.Constants;
 
-annotation (
+annotation (preferredView="info",
   Protection(access = Access.packageDuplicate),
   uses(Complex(version="3.2.3"), Modelica(version="3.2.3")),
   version="2.0.0-dev",

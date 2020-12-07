@@ -22,7 +22,7 @@ It also contains one model, <code>SystemBase</code>, which is going to be explai
 Within each subpakcage, the user will find models grouped into software tools from which each model design was extracted.
 </p>
 
-<table border=0 cellspacing=0 cellpadding=2>
+<table border=1 cellspacing=0 cellpadding=2>
 <tr><td valign=\"top\"><b>Subpackage</b> </td>
    <td valign=\"top\"><b>Description</b></td>
 </tr>
