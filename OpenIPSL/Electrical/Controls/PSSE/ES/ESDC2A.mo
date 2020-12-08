@@ -155,7 +155,7 @@ equation
 </tr>
 <tr>
 <td><p>Last update</p></td>
-<td>Major change - 2016-01-19</td>
+<td><p>2016-01-19</p></td>
 </tr>
 <tr>
 <td><p>Author</p></td>
