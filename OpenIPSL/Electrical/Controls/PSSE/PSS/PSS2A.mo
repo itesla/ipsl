@@ -98,23 +98,24 @@ equation
           extent={{-40,80},{40,40}},
           lineColor={28,108,200},
           textString="PSS2A")}),
-    Documentation(info="<html>
-<table cellspacing=\"1\" cellpadding=\"1\" border=\"1\"><tr>
+    Documentation(revisions="<html>
+<table cellspacing=\"1\" cellpadding=\"1\" border=\"1\">
+<tr>
 <td><p>Reference</p></td>
-<td><p>PSS2A, PSS/E Manual </p></td>
+<td><p>PSS&reg;E Manual</p></td>
 </tr>
 <tr>
 <td><p>Last update</p></td>
-<td><p>September 2020</p></td>
+<td><p>2020-09</p></td>
 </tr>
 <tr>
 <td><p>Authors</p></td>
-<td><p>Tin Rabuzin, SmarTS Lab, KTH Royal Institute of Technology</p></td>
-<td><p>Giuseppe Laera, ALSETLab, RPI Rensselaer Polytechnic Institute</p></td>
+<td><p><a href=\"https://github.com/tinrabuzin\">@tinrabuzin</a></p>
+    <p><a href=\"https://github.com/GiuseppeLaera\">@GiuseppeLaera</a></p></td>
 </tr>
 <tr>
 <td><p>Contact</p></td>
-<td><p><a href=\"mailto:vanfrl@rpi.edu\">vanfrl@rpi.edu</a></p></td>
+<td><p>see <a href=\"modelica://OpenIPSL.UsersGuide.Contact\">UsersGuide.Contact</a></p></td>
 </tr>
 </table>
 </html>"));
