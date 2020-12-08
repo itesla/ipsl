@@ -69,34 +69,24 @@ equation
           extent={{-100,160},{100,100}},
           lineColor={28,108,200},
           textString="TGOV1")}),
-    Documentation(info="<html>
-<table cellspacing=\"1\" cellpadding=\"1\" border=\"1\"><tr>
-<td><p>Model Name</p></td>
-<td><p>GENSAL</p></td>
-</tr>
+    Documentation(info="<html>Steam Turbine-Governor Model TGOV1.</html>",
+    revisions="<html>
+<table cellspacing=\"1\" cellpadding=\"1\" border=\"1\">
 <tr>
 <td><p>Reference</p></td>
-<td><p>PSS/E Manual</p></td>
+<td><p>PSS&reg;E Manual</p></td>
 </tr>
 <tr>
 <td><p>Last update</p></td>
-<td><p>September 2020</p></td>
+<td><p>2020-09</p></td>
 </tr>
 <tr>
 <td><p>Author</p></td>
-<td><p>ALSETLab, Rensselaer Polytechnic Institute</p></td>
+<td><p>ALSETLab, Rensselaer Polytechnic Insitute</p></td>
 </tr>
 <tr>
 <td><p>Contact</p></td>
-<td><p><a href=\"mailto:vanfrl@rpi.edu\">vanfrl@rpi.edu</a></p></td>
-</tr>
-<tr>
-<td><p>Model Verification</p></td>
-<td><p>This model has been verified against PSS/E.</p></td>
-</tr>
-<tr>
-<td><p>Description</p></td>
-<td><p>Steam Turbine-Governor Model TGOV1.</p></td>
+<td><p>see <a href=\"modelica://OpenIPSL.UsersGuide.Contact\">UsersGuide.Contact</a></p></td>
 </tr>
 </table>
 </html>"));
