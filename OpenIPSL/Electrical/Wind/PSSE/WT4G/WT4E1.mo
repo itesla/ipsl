@@ -26,14 +26,14 @@ model WT4E1 "Electrical Control for Type 4 Wind Generator"
   //should be 0.1 in PSSE
   parameter Types.PerUnit VMINCL=0.9 "Min voltage limit";
   parameter Types.PerUnit VMAXCL=1.1 "Max voltage limit";
-  parameter Types.PerUnit KVI=120 "Voltage/MVAR gain";
+  parameter Types.PerUnit KVI=120 "Voltage/Mvar gain";
   parameter Types.Time Tv=0.50000E-01 "Lag time constant in WindVar controller";
   parameter Types.Time Tp=0.50000E-01 "Pelec filter in fast PF controller";
   parameter Types.PerUnit ImaxTD=1.7 "Converter current limit";
   parameter Types.PerUnit Iphl=1.11 "Hard active current limit";
   parameter Types.PerUnit Iqhl=1.11 "Hard reactive current limit";
   parameter Boolean PSSEMATCH annotation (choices(choice=false "Use Integrator in Wind Control", choice=true "Ignore Integrator in Wind Control"));
-  //parameter Real Qord "MVAR order from MVAR emulator";
+  //parameter Real Qord "Mvar order from Mvar emulator";
   Modelica.Blocks.Interfaces.RealInput P(start=p0) annotation (Placement(
         transformation(extent={{-210,-10},{-190,10}}), iconTransformation(
         extent={{-20,-20},{20,20}},
@@ -144,7 +144,7 @@ protected
   parameter Types.PerUnit k30(fixed=false) "Active power regulator feedback";
   parameter Types.PerUnit k40(fixed=false) "Voltage sensor";
   parameter Types.PerUnit k50(fixed=false) "Power filter";
-  parameter Types.PerUnit k60(fixed=false) "MVAR/Vref integrator";
+  parameter Types.PerUnit k60(fixed=false) "Mvar/Vref integrator";
   parameter Types.PerUnit k70(fixed=false) "Verror/Internal machine voltage integrator";
   parameter Types.PerUnit k80(fixed=false) "Lag of the WindVar controller";
   parameter Types.PerUnit k90(fixed=false) "Input filter of Pelec for PF fast controller";

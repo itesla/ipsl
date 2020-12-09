@@ -9,7 +9,7 @@ model STATCOM_Test "Simple model to test the functionality of STATCOM"
     Tr=0.2,
     i_Max=0.7,
     i_Min=-0.7)                                  annotation (Placement(transformation(extent={{90,30},{70,50}})));
-  Electrical.Machines.PSSE.GENCLS Syn1(M_b(displayUnit="MVA")) annotation (Placement(transformation(extent={{-90,-10},{-70,10}})));
+  Electrical.Machines.PSSE.GENCLS Syn1 annotation (Placement(transformation(extent={{-90,-10},{-70,10}})));
   Electrical.Branches.PwLine pwLineSC(
     displayPF=true,
     R=0.0001,

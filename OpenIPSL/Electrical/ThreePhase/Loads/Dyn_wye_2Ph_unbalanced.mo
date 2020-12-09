@@ -44,23 +44,23 @@ model Dyn_wye_2Ph_unbalanced "Variable unbalanced two-phase wye load"
         origin={20,100},
         rotation=0),
       visible=true));
-  parameter Types.ActivePower P0_a(displayUnit="MW") "Initial Active power"
+  parameter Types.ActivePower P0_a "Initial Active power"
     annotation (Dialog(group="Power flow"));
-  parameter Types.ReactivePower Q0_a(displayUnit="Mvar") "Initial Reactive power"
+  parameter Types.ReactivePower Q0_a "Initial Reactive power"
     annotation (Dialog(group="Power flow"));
-  parameter Types.ActivePower P0_b(displayUnit="MW") "Initial Active power"
+  parameter Types.ActivePower P0_b "Initial Active power"
     annotation (Dialog(group="Power flow"));
-  parameter Types.ReactivePower Q0_b(displayUnit="Mvar") "Initial Reactive power"
+  parameter Types.ReactivePower Q0_b "Initial Reactive power"
     annotation (Dialog(group="Power flow"));
 
 protected
-  Types.ActivePower P_a(displayUnit="MW", start = P0_a)
+  Types.ActivePower P_a(start = P0_a)
     "Initial active power";
-  Types.ReactivePower Q_a(displayUnit="Mvar", start = Q0_a)
+  Types.ReactivePower Q_a(start = Q0_a)
     "Initial reactive power";
-  Types.ActivePower P_b(displayUnit="MW", start = P0_b)
+  Types.ActivePower P_b(start = P0_b)
     "Initial active power";
-  Types.ReactivePower Q_b(displayUnit="Mvar", start = Q0_b)
+  Types.ReactivePower Q_b(start = Q0_b)
     "Initial reactive power";
 equation
   P_a = P_in[1] * S_p;

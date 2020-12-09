@@ -1,10 +1,15 @@
 within OpenIPSL.Electrical.Solar.KTH;
 model PFmodelmpptCorrected05MW
-  parameter Real SystemBase=100 "MVa";
-  parameter Real v0=0.99422 "Power flow, node voltage";
-  parameter Real anglev0=0.00158 "Power flow, node angle";
-  parameter Real p0=0.44884 "Power flow, node active power";
-  parameter Real q0=0 "Power flow, node reactive power";
+  parameter Types.ApparentPower S_b=100000000 "System base power"
+      annotation (Dialog(group="Power flow data"));
+  parameter Types.PerUnit v0=1.00018548610126 "Voltage magnitude"
+      annotation (Dialog(group="Power flow data"));
+  parameter Types.Angle anglev0=-0.0000253046024029618 "Voltage angle"
+      annotation (Dialog(group="Power flow data"));
+  parameter Types.PerUnit p0=0.44884 "Active power"
+      annotation (Dialog(group="Power flow data"));
+  parameter Types.PerUnit q0=0 "Reactive power"
+      annotation (Dialog(group="Power flow data"));
   OpenIPSL.Electrical.Solar.KTH.PFblocks.PVnew PVnew1 annotation (Placement(
         transformation(
         origin={-95.0,-5.0},
@@ -59,19 +64,19 @@ model PFmodelmpptCorrected05MW
         extent={{-10.0,-10.0},{10.0,10.0}},
         rotation=-180)));
 protected
-  parameter Real vr=v0*cos(anglev0);
-  parameter Real vi=v0*sin(anglev0);
-  parameter Real A=vi*cos(anglev0) - vr*sin(anglev0);
-  parameter Real B=vr*cos(anglev0) + vi*sin(anglev0);
-  parameter Real idref0=(p0*B + q0*A)/(A^2 + B^2);
-  parameter Real iqref0=((-q0*B) + p0*A)/(A^2 + B^2) "
+  parameter Types.PerUnit vr=v0*cos(anglev0);
+  parameter Types.PerUnit vi=v0*sin(anglev0);
+  parameter Types.PerUnit A=vi*cos(anglev0) - vr*sin(anglev0);
+  parameter Types.PerUnit B=vr*cos(anglev0) + vi*sin(anglev0);
+  parameter Types.PerUnit idref0=(p0*B + q0*A)/(A^2 + B^2);
+  parameter Types.PerUnit iqref0=((-q0*B) + p0*A)/(A^2 + B^2) "
 
                                               parameter Real vd0=-v0*sin(anglev0) ;
                                               parameter Real vq0=v0*cos(anglev0) ;
                                               parameter Real iqref0=2*(vq0*q0 + p0*vd0)/(vq0^2 + vd0^2) ;
                                               parameter Real idref0=2*(-vd0*q0 + p0*vq0)/(vq0^2 + vd0^2) ";
-  parameter Real xq=2*iqref0*1.02;
-  parameter Real xd=2*idref0*1.02;
+  parameter Types.PerUnit xq=2*iqref0*1.02;
+  parameter Types.PerUnit xd=2*idref0*1.02;
 equation
   connect(gain1.y, DCBusBar1.Pac) annotation (Line(
       origin={-25.8892,0.9021},

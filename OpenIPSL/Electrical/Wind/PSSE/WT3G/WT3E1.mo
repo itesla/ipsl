@@ -28,10 +28,10 @@ model WT3E1
   parameter Types.PerUnit RPMX=0.45000 "Max power order derivative";
   parameter Types.PerUnit RPMN=-0.45000 "Min power order derivative";
   parameter Types.Time T_Power=5.0000 "Power filter time constant";
-  parameter Types.PerUnit Kqi=0.50000E-01 "MVAR/Voltage gain";
+  parameter Types.PerUnit Kqi=0.50000E-01 "Mvar/Voltage gain";
   parameter Types.PerUnit VMINCL=0.90000 "Min voltage limit";
   parameter Types.PerUnit VMAXCL=1.2000 "Max voltage limit";
-  parameter Types.PerUnit Kqv=40.000 "Voltage/MVAR gain";
+  parameter Types.PerUnit Kqv=40.000 "Voltage/Mvar gain";
   parameter Types.PerUnit XIQmin=-0.50000;
   parameter Types.PerUnit XIQmax=0.40000;
   parameter Types.Time Tv=0.50000E-01 "Lag time constant in WindVar controller";
@@ -160,7 +160,7 @@ model WT3E1
             {-46,104}})));
 protected
   parameter Real PFA_ref(fixed=false) "PF angle reference if PFAFLG=1";
-  //parameter Real Qord "MVAR order from MVAR emulator";
+  //parameter Real Qord "Mvar order from Mvar emulator";
   parameter Real Qref=q0 "Q reference if PFAFLG=0 & VARFLG";
   parameter Real sp0=Speed(
       p0,

@@ -16,10 +16,10 @@ model OEL "PSATs Over-Excitation Limiter"
   parameter Types.PerUnit xq "q-axis estimated generator reactance (machine base)";
   parameter Types.PerUnit if_lim "Maximum field current (system base)";
   parameter Types.PerUnit vOEL_max "Maximum output signal (machine base)";
-  parameter Types.ApparentPower Sn(displayUnit="MVA")=SysData.S_b "Power rating" annotation (Dialog(group="Machine parameters"));
-  parameter Types.Voltage Vn(displayUnit="kV")=V_b "Voltage rating"
+  parameter Types.ApparentPower Sn=SysData.S_b "Power rating" annotation (Dialog(group="Machine parameters"));
+  parameter Types.Voltage Vn=V_b "Voltage rating"
     annotation (Dialog(group="Machine parameters"));
-  parameter Types.Voltage V_b(displayUnit="kV")=400e3 "Base voltage of the bus";
+  parameter Types.Voltage V_b=400e3 "Base voltage of the bus";
 
   Modelica.Blocks.Math.Feedback add
     annotation (Placement(transformation(extent={{-10,-30},{10,-10}})));

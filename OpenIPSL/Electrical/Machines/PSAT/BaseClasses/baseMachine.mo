@@ -11,9 +11,9 @@ partial model baseMachine
     final enableS_b=true);
   import CM = Modelica.ComplexMath;
   import Complex;
-  parameter Types.ApparentPower Sn(displayUnit="MVA") "Power rating"
+  parameter Types.ApparentPower Sn "Power rating"
     annotation (Dialog(group="Machine parameters"));
-  parameter Types.Voltage Vn(displayUnit="kV") "Voltage rating"
+  parameter Types.Voltage Vn "Voltage rating"
     annotation (Dialog(group="Machine parameters"));
   parameter Types.PerUnit ra "Armature resistance"
     annotation (Dialog(group="Machine parameters"));
@@ -72,8 +72,7 @@ partial model baseMachine
     annotation (Placement(transformation(
         origin={-120,-50},
         extent={{-20,-20},{20,20}})));
-  Types.Angle anglev(start=SI.Conversions.from_deg(angle_0))
-    " Bus voltage angle (rad)";
+  Types.Angle anglev(start=angle_0) "Bus voltage angle";
   Types.PerUnit vd(start=vd0) "d-axis voltage";
   Types.PerUnit vq(start=vq0) "q-axis voltage";
   Types.PerUnit id(start=id0) "d-axis current";
@@ -94,7 +93,7 @@ protected
     "Initial active power generation in pu (system base)";
   parameter Types.PerUnit q0=Q_0/S_b
     "Initial reactive power generation in pu (system base)";
-  parameter Complex Vt0=CM.fromPolar(v_0, SI.Conversions.from_deg(angle_0))
+  parameter Complex Vt0=CM.fromPolar(v_0, angle_0)
     "Init. val., conjugate";
   parameter Complex S0(re=p0, im=-q0) "Init. val., conjugate";
   parameter Complex I0=S0/(CM.conj(Vt0)) "Init. val., conjugate";

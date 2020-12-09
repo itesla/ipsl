@@ -14,7 +14,7 @@ model CSVGN1
     Xl=0.12,
     S10=0.11,
     S12=0.39,
-    angle_0=4.038907,
+    angle_0= 0.070492225331847,
     Xppq=0.2,
     R_a=0,
     M_b=100000000,
@@ -33,7 +33,7 @@ model CSVGN1
     CBASE=40000000,
     MBASE=80000000,
     v_0=1,
-    angle_0=-0.29,
+    angle_0=-0.0050614548307836,
     P_0=0,
     Q_0=6009897)
  annotation (Placement(transformation(extent={{-10,10},{10,-10}},rotation=0,origin={40,70})));

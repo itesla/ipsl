@@ -1,5 +1,5 @@
 within OpenIPSL.Examples.Solar.PSAT;
-model testIrradation
+model testIrradiation
   extends Modelica.Icons.Example;
   Modelica.Blocks.Sources.Constant const(k=25) annotation (Placement(transformation(
         origin={-59.5887,-17.0499},
@@ -108,4 +108,4 @@ equation
           extent={{-41.1319,-13.2857},{41.1319,13.2857}},
           textString="VoltageGrid=10000 (1p.u.)",
           fontName="Arial")}));
-end testIrradation;
+end testIrradiation;

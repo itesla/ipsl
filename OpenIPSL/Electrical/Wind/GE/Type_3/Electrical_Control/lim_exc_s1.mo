@@ -1,9 +1,13 @@
 within OpenIPSL.Electrical.Wind.GE.Type_3.Electrical_Control;
 model lim_exc_s1
   extends Modelica.Blocks.Icons.Block;
-  parameter Real xiqmin=1;
-  parameter Real xiqmax=1;
-  parameter Real typpe=1;
+  parameter Types.PerUnit xiqmin=1;
+  parameter Types.PerUnit xiqmax=1;
+  parameter Integer typpe=1 
+      annotation (Evaluate=true, choices(
+      choice=0,
+      choice=1,
+      choice=2));
   Modelica.Blocks.Interfaces.RealInput Efd "Input: Excitation voltage"
     annotation (Placement(
       transformation(

@@ -14,9 +14,9 @@ model STATCOM "Static Var Compensator"
       Placement(transformation(extent={{100,-10},{120,10}}), iconTransformation(
           extent={{100,-10},{120,10}})));
 
-  parameter Types.ApparentPower Sn(displayUnit="MVA")=S_b "Power rating"
+  parameter Types.ApparentPower Sn=S_b "Power rating"
     annotation (Dialog(group="Device parameters"));
-  parameter Types.Voltage Vn(displayUnit="kV")=V_b "Voltage rating"
+  parameter Types.Voltage Vn=V_b "Voltage rating"
     annotation (Dialog(group="Device parameters"));
   parameter Real Kr=0.1 "Regulator gain [pu/pu]"
     annotation (Dialog(group="Device parameters"));
@@ -47,8 +47,8 @@ protected
   parameter Types.PerUnit I_b=S_b/V_b "Base current";
   parameter Types.PerUnit i_max=i_Max*In/I_b "Max current (system base)";
   parameter Types.PerUnit i_min=i_Min*In/I_b "Min current (system base)";
-  parameter Types.PerUnit vr0=v_0*cos(angle_0rad) "Initial real voltage";
-  parameter Types.PerUnit vi0=v_0*sin(angle_0rad) "Initial imaginary voltage";
+  parameter Types.PerUnit vr0=v_0*cos(angle_0) "Initial real voltage";
+  parameter Types.PerUnit vi0=v_0*sin(angle_0) "Initial imaginary voltage";
   parameter Types.PerUnit u0=v_ref - v_0 "Initial controller input";
   parameter Types.PerUnit i0=(Q_0/S_b)/v_0 "Initial current";
   parameter Types.PerUnit v_ref=i0/Kr + v_0 "Reference voltage";

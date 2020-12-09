@@ -39,9 +39,9 @@ model TGtypeII "TG Type II"
   parameter Types.PerUnit pmin0=0 "Minimum turbine output";
   parameter Types.Time Ts=0.1 "Governor Time constant";
   parameter Types.Time T3=-0.1 "Transient gain time constant";
-  parameter Types.ApparentPower S_b(displayUnit="MVA")=100e6 "System base power"
+  parameter Types.ApparentPower S_b=100e6 "System base power"
     annotation (Dialog(group="Power flow data"));
-  parameter Types.ApparentPower Sn(displayUnit="MVA")=20e6 "Nominal power";
+  parameter Types.ApparentPower Sn=20e6 "Nominal power";
   Modelica.Blocks.Math.Gain gain1(k=1/Ro) annotation (Placement(transformation(
         origin={-20,6.66134e-16},
         extent={{-10.0,-10.0},{10.0,10.0}})));

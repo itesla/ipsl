@@ -6,7 +6,7 @@ model IEESGO
     Xppd=0.2,
     Xppq=0.2,
     Xl=0.12,
-    angle_0=4.05,
+    angle_0=0.07068583470577,
     Tpd0=6.7000,
     Tppd0=0.028,
     Tppq0=0.0358,

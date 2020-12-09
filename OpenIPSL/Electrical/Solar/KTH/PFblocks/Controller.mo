@@ -1,18 +1,18 @@
 within OpenIPSL.Electrical.Solar.KTH.PFblocks;
 model Controller
-  parameter Real v0=1;
-  parameter Real ibase=1.02;
-  parameter Real ibase_iq=1;
+  parameter Types.PerUnit v0=1;
+  parameter Types.PerUnit ibase=1.02;
+  parameter Types.PerUnit ibase_iq=1;
   parameter Real Kdc=-0.005 "DC voltage Controller Gain";
-  parameter Real Tdc=0.0015 "DC controller time constant";
-  parameter Real id_max=1;
-  parameter Real id_min=0;
+  parameter Types.Time Tdc=0.0015 "DC controller time constant";
+  parameter Types.PerUnit id_max=1;
+  parameter Types.PerUnit id_min=0;
   parameter Real Kac=-2.346 "AC voltage Controller Gain";
-  parameter Real Tac=-0.0002131 "AC controller time constant";
-  parameter Real iq_max=3;
-  parameter Real iq_min=-3;
-  parameter Real xq=1 "Initialitation";
-  parameter Real xd=1 "Initialitation";
+  parameter Types.Time Tac=-0.0002131 "AC controller time constant";
+  parameter Types.PerUnit iq_max=3;
+  parameter Types.PerUnit iq_min=-3;
+  parameter Types.PerUnit xq=1 "Initialization";
+  parameter Types.PerUnit xd=1 "Initialization";
   Modelica.Blocks.Interfaces.RealInput udc annotation (Placement(
       transformation(
         origin={-168.0386,-48.3466},

@@ -7,7 +7,7 @@ model GENCLS
    P_0=40000000,
    Q_0=5416582,
    v_0=1,
-   angle_0=4.046276,
+   angle_0=0.070492225331847,
    omega(fixed=true)) annotation (Placement(transformation(extent={{-100,-20},{-60,20}})));
 equation
  connect(gENCLS2.p, GEN1.p)

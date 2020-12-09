@@ -5,7 +5,7 @@ model TCSC_Test "Simple model to test the functionality of TCSC"
     P_0=50000000,
     Q_0=10000000,
     v_0=0.991992,
-    angle_0=-0.576411,
+    angle_0 = -0.010060269794713,
     t_start_1=2,
     t_end_1=10,
     dP1=2000000)                                             annotation (Placement(transformation(extent={{-40,-60},{-20,-40}})));
@@ -30,18 +30,19 @@ model TCSC_Test "Simple model to test the functionality of TCSC"
     X=0.2,
     G=0,
     B=0) annotation (Placement(transformation(extent={{-70,-10},{-50,10}})));
-  Electrical.Buses.Bus Gen(angle_0=4.04614,
+  Electrical.Buses.Bus Gen(angle_0= 0.070618464996643,
                            displayPF=true)
     annotation (Placement(transformation(extent={{-100,-10},{-80,10}})));
   Electrical.Buses.Bus Load(
     v_0=0.991992,
-    angle_0=-0.576411,      displayPF=true)
+    angle_0 = -0.010060269794713,
+                            displayPF=true)
     annotation (Placement(transformation(extent={{-40,-10},{-20,10}})));
   Electrical.Buses.Bus Inf(displayPF=true)
     annotation (Placement(transformation(extent={{70,-10},{90,10}})));
   Electrical.Machines.PSAT.Order2          Gen1(
     D=0,
-    angle_0=4.04614,
+    angle_0 = 0.070618464996643,
     ra=0.01,
     x1d=0.302,
     M=10,

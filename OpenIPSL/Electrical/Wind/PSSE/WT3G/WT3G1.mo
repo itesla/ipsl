@@ -5,13 +5,13 @@ model WT3G1
   parameter Types.PerUnit K_pll "PLL first integrator gain";
   parameter Types.TimeAging K_ipll "PLL second integrator gain";
   parameter Types.PerUnit P_llmax "PLL maximum limit";
-  parameter Types.Power P_rated(displayUnit="MW") "Turbine rating, not used in the equation";
+  parameter Types.Power P_rated "Turbine rating, not used in the equation";
   parameter Complex Zs(re=0, im=X_eq) "Equivalent impedance (ZSORCE)"
     annotation (Dialog(group="Power flow data"));
-  parameter Types.ApparentPower M_b(displayUnit="MVA")=100 "Machine base power"
+  parameter Types.ApparentPower M_b=100 "Machine base power"
     annotation (Dialog(group="Power flow data"));
   Types.PerUnit VT(start=v_0) "Bus voltage magnitude";
-  Types.Angle anglev(start=angle0_rad) "Bus voltage angle";
+  Types.Angle anglev(start=angle_0) "Bus voltage angle";
   Types.PerUnit VY(start=0) "y-axis terminal voltage";
   Types.PerUnit VX(start=v_0) "x-axis terminal voltage";
   Complex Is "Equivalent internal current source";
@@ -23,7 +23,7 @@ model WT3G1
             10}}), iconTransformation(extent={{100,-10},{120,10}})));
   Modelica.Blocks.Continuous.Integrator imIntegrator(
     k=wbase,
-    y_start=angle0_rad,
+    y_start=angle_0,
     initType=Modelica.Blocks.Types.Init.InitialOutput)
     annotation (Placement(transformation(extent={{50,-30},{70,-10}})));
   Modelica.Blocks.Continuous.LimIntegrator imIntegrator1(
@@ -67,7 +67,7 @@ model WT3G1
     annotation (Placement(transformation(extent={{-10,-30},{10,-10}})));
   Modelica.Blocks.Nonlinear.Limiter imLimited(uMin=-P_llmax, uMax=P_llmax)
     annotation (Placement(transformation(extent={{20,-30},{40,-10}})));
-  Modelica.Blocks.Interfaces.RealOutput delta(start=angle0_rad) annotation (
+  Modelica.Blocks.Interfaces.RealOutput delta(start=angle_0) annotation (
       Placement(transformation(extent={{80,-30},{100,-10}}), iconTransformation(
         extent={{-10,-10},{10,10}},
         origin={110,-30})));
@@ -100,15 +100,14 @@ model WT3G1
         rotation=90,
         origin={-50,110})));
 protected
-  parameter Types.Angle angle0_rad = SI.Conversions.from_deg(angle_0) "Initial angle in rad";
-  parameter Types.AngularVelocity wbase=2*C.pi*fn "System base speed";
+ parameter Types.AngularVelocity wbase=2*C.pi*fn "System base speed";
   parameter Types.PerUnit p0=P_0/M_b
     "initial value of bus active power in p.u. machinebase";
   parameter Types.PerUnit q0=Q_0/M_b
     "initial value of bus reactive power in p.u. machinebase";
-  parameter Types.PerUnit vr0=v_0*cos(angle0_rad)
+  parameter Types.PerUnit vr0=v_0*cos(angle_0)
     "Real component of initial terminal voltage";
-  parameter Types.PerUnit vi0=v_0*sin(angle0_rad)
+  parameter Types.PerUnit vi0=v_0*sin(angle_0)
     "Imaginary component of initial terminal voltage";
   parameter Types.PerUnit ir0=(p0*vr0 + q0*vi0)/(vr0^2 + vi0^2)
     "Real component of initial armature current, mbase";
@@ -121,18 +120,17 @@ protected
     "Real component of initial armature current, sbase";
   parameter Types.PerUnit ii1=-CoB*(p0*vi0 - q0*vr0)/(vr0^2 + vi0^2)
     "Imaginary component of initial armature current, sbase";
-  parameter Types.PerUnit Ix0=Isr0*cos(-angle0_rad) - Isi0*sin(-angle0_rad);
-  parameter Types.PerUnit Iy0=Isr0*sin(-angle0_rad) + cos(-angle0_rad)*Isi0;
+  parameter Types.PerUnit Ix0=Isr0*cos(-angle_0) - Isi0*sin(-angle_0);
+  parameter Types.PerUnit Iy0=Isr0*sin(-angle_0) + cos(-angle_0)*Isi0;
   parameter Types.PerUnit Eqcmd0=-Iy0*X_eq;
   parameter Types.PerUnit Ipcmd0=Ix0;
-  parameter Types.PerUnit VX0=cos(angle0_rad)*vr0 + sin(angle0_rad)*vi0;
-  parameter Types.PerUnit VY0=(-sin(angle0_rad)*vr0) + cos(angle0_rad)*vi0;
+  parameter Types.PerUnit VX0=cos(angle_0)*vr0 + sin(angle_0)*vi0;
+  parameter Types.PerUnit VY0=(-sin(angle_0)*vr0) + cos(angle_0)*vi0;
 protected
   Modelica.Blocks.Interfaces.RealInput Vy annotation (Placement(transformation(
           extent={{-110,-30},{-90,-10}}), iconTransformation(extent={{-118,-40},
             {-96,-18}})));
-initial equation
-  delta = angle0_rad;
+
 equation
   anglev = atan2(p.vi, p.vr);
   VT = sqrt(p.vr*p.vr + p.vi*p.vi);

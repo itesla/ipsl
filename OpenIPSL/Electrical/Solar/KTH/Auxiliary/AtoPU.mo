@@ -14,10 +14,10 @@ model AtoPU
       iconTransformation(
         origin={-120.0,-0.0},
         extent={{-20.0,-20.0},{20.0,20.0}})));
-  parameter Real Pnen;
-  parameter Real UdcN;
+  parameter Types.ActivePower Pnen;
+  parameter Types.Voltage UdcN;
 equation
-  y0 = yi/Pnen*1000/UdcN;
+  y0 = yi/Pnen*1/UdcN;
   annotation (
     Icon(coordinateSystem(
         extent={{-100.0,-100.0},{100.0,100.0}},

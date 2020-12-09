@@ -22,10 +22,10 @@ model MPPT
       iconTransformation(
         origin={-120.0,-50.0},
         extent={{-20.0,-20.0},{20.0,20.0}})));
-  parameter Real Tdelay1=0.0045;
-  parameter Real Tdelay=0.005;
-  parameter Real Vbase=1;
-  parameter Real Vmpp0_array=700;
+  parameter Types.Time Tdelay1=0.0045;
+  parameter Types.Time Tdelay=0.005;
+  parameter Types.Voltage Vbase=1;
+  parameter Types.Voltage Vmpp0_array=700;
   parameter Real Step=125;
   Modelica.Blocks.Math.Add add1(k2=-1) annotation (Placement(transformation(
         origin={0.0,40.0},

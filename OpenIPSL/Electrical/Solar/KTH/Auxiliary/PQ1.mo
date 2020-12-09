@@ -7,33 +7,38 @@ model PQ1
       iconTransformation(
         origin={-110.0,0.0},
         extent={{-10.0,-10.0},{10.0,10.0}})));
-  parameter Real SystemBase=100;
-  parameter Real Sn=10;
-  parameter Real CoB=Sn/SystemBase;
-  parameter Real v0=1.00018548610126 "voltage magnitude after power flow, pu";
-  parameter Real anglev0=-0.0000253046024029618
-    "voltage angle after power flow";
-  parameter Real P0=0.4 "active power,pu";
-  parameter Real Q0=0.3 "reactive power,pu";
-  parameter Real Pref=P0*CoB;
-  parameter Real Qref=Q0*CoB;
-  parameter Real vd0=-v0*sin(anglev0) "Initialitation";
-  parameter Real vq0=v0*cos(anglev0) "Initialitation";
-  parameter Real Td=15 "d-axis inverter time constant";
-  parameter Real Tq=15 "q-axis inverter time constant";
-  parameter Real idref=(vq0*Qref + Pref*vd0)/(vq0^2 + vd0^2) "Initialitation";
-  parameter Real iqref=((-vd0*Qref) + Pref*vq0)/(vq0^2 + vd0^2)
-    "Initialitation";
-  Real idref1(start=idref);
-  Real iqref1(start=iqref);
-  Real v;
-  Real anglev;
-  Real id(start=idref);
-  Real iq(start=iqref);
-  Real vd(start=vd0);
-  Real vq(start=vq0);
-  Real Pgen(start=Pref);
-  Real Q(start=Qref);
+  parameter Types.ApparentPower S_b=100000000 "System base power"
+      annotation (Dialog(group="Power flow data"));
+  parameter Types.ApparentPower Sn=10000000 "Nominal power";
+  parameter Types.PerUnit v0=1.00018548610126 "Voltage magnitude"
+      annotation (Dialog(group="Power flow data"));
+  parameter Types.Angle anglev0=-0.0000253046024029618 "Voltage angle"
+      annotation (Dialog(group="Power flow data"));
+  parameter Types.PerUnit P0=0.4 "Active power"
+      annotation (Dialog(group="Power flow data"));
+  parameter Types.PerUnit Q0=0.3 "Reactive power"
+      annotation (Dialog(group="Power flow data"));
+  parameter Types.Time Td=15 "d-axis inverter time constant";
+  parameter Types.Time Tq=15 "q-axis inverter time constant";
+protected
+  parameter Real CoB=Sn/S_b;
+  parameter Types.PerUnit Pref=P0*CoB "active power initialization";
+  parameter Types.PerUnit Qref=Q0*CoB "reactive power initialization";
+  parameter Types.PerUnit vd0=-v0*sin(anglev0) "d-axis voltage initialization";
+  parameter Types.PerUnit vq0=v0*cos(anglev0) "q-axis voltage initialization";
+  parameter Types.PerUnit idref=(vq0*Qref + Pref*vd0)/(vq0^2 + vd0^2) "d-axis current initialization";
+  parameter Types.PerUnit iqref=((-vd0*Qref) + Pref*vq0)/(vq0^2 + vd0^2) "q-axis current initialization";
+public
+  Types.PerUnit idref1(start=idref);
+  Types.PerUnit iqref1(start=iqref);
+  Types.PerUnit v;
+  Types.Angle anglev;
+  Types.PerUnit id(start=idref);
+  Types.PerUnit iq(start=iqref);
+  Types.PerUnit vd(start=vd0);
+  Types.PerUnit vq(start=vq0);
+  Types.PerUnit Pgen(start=Pref);
+  Types.PerUnit Q(start=Qref);
   Modelica.Blocks.Interfaces.RealInput P(start=Pref) annotation (Placement(
       transformation(
         origin={165.1089,40.5794},

@@ -20,7 +20,7 @@ model ESST4B "ST4B Excitation System [IEEE2005]"
   parameter Types.PerUnit V_BMAX=8.41 "Maximum available exciter voltage";
   parameter Types.PerUnit K_C=0.1 "Rectifier loading factor proportional to commutating reactance";
   parameter Types.PerUnit X_L=0 "Reactance associated with potential source";
-  parameter SI.Conversions.NonSIunits.Angle_deg THETAP=0 "Potential circuit phase angle";
+  parameter Types.Angle THETAP=0 "Potential circuit phase angle";
   NonElectrical.Logical.LV_GATE lV_Gate
     annotation (Placement(transformation(extent={{120,-70},{144,-58}})));
   Modelica.Blocks.Math.Product product
@@ -81,12 +81,11 @@ model ESST4B "ST4B Excitation System [IEEE2005]"
       K_C=K_C)
     annotation (Placement(transformation(extent={{40,-120},{60,-100}})));
 protected
-  parameter Types.Angle THETAPrad = SI.Conversions.from_deg(THETAP) "Potential circuit phase angle in rad";
   Modelica.Blocks.Interfaces.RealOutput VE
     annotation (Placement(transformation(extent={{10,-120},{30,-100}})));
   Complex V_T;
   Complex I_T;
-  parameter Complex K_P_comp=K_P*cos(THETAPrad) + j*K_P*sin(THETAPrad);
+  parameter Complex K_P_comp=K_P*cos(THETAP) + j*K_P*sin(THETAP);
   parameter Real Ifd0(fixed=false);
   parameter Real IN0(fixed=false);
   parameter Real VB0(fixed=false);

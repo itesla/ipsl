@@ -34,15 +34,15 @@ model Dyn_wye_1Ph "Variable single-phase load"
         origin={71,100},
         rotation=0),
       visible=true));
-  parameter Types.ActivePower P0(displayUnit="MW") "Initial Active power"
+  parameter Types.ActivePower P0 "Initial Active power"
     annotation (Dialog(group="Power flow"));
-  parameter Types.ReactivePower Q0(displayUnit="Mvar") "Initial Reactive power"
+  parameter Types.ReactivePower Q0 "Initial Reactive power"
     annotation (Dialog(group="Power flow"));
 
 protected
-  Types.ActivePower P_a(displayUnit="MW", start = P0)
+  Types.ActivePower P_a(start = P0)
     "Initial active power";
-  Types.ReactivePower Q_a(displayUnit="Mvar", start = Q0)
+  Types.ReactivePower Q_a(start = Q0)
     "Initial reactive power";
 
 equation

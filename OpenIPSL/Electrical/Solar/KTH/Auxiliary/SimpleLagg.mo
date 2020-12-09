@@ -14,7 +14,7 @@ model SimpleLagg
       iconTransformation(
         origin={110.0,0.0},
         extent={{-10.0,-10.0},{10.0,10.0}})));
-  parameter Real T=0.002;
+  parameter Types.Time T=0.002;
   parameter Real xo;
   Real x(start=xo);
 equation

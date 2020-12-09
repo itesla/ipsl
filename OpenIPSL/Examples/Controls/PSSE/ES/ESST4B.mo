@@ -6,7 +6,7 @@ model ESST4B "SMIB model example of GENROU with Excitation System ESST4B"
     Xppq=0.2,
     Xpp=0.2,
     Xl=0.12,
-    angle_0=4.04626655578613,
+    angle_0 = 0.070620673811798,
     Tpd0=5,
     Tppd0=0.50000E-01,
     Tppq0=0.1,

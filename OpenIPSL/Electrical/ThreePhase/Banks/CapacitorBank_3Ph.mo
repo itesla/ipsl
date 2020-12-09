@@ -1,6 +1,7 @@
 within OpenIPSL.Electrical.ThreePhase.Banks;
 model CapacitorBank_3Ph "Three-phase capacitor bank"
   extends ThreePhaseComponent;
+  import Modelica.Constants.pi;
   OpenIPSL.Interfaces.PwPin A(vr(start=var0), vi(start=vai0)) annotation (
       Placement(
       transformation(
@@ -38,26 +39,26 @@ model CapacitorBank_3Ph "Three-phase capacitor bank"
   parameter Types.PerUnit VA=1
     "Voltage magnitude"
     annotation (Dialog(group="Power flow data"));
-  parameter Types.Angle AngA(displayUnit = "deg") = SI.Conversions.from_deg(0) "Voltage angle for phase A"
+  parameter Types.Angle AngA = 0 "Voltage angle for phase A"
     annotation (Dialog(group="Power flow data"));
   parameter Types.PerUnit VB=1 "Voltage magnitude"
     annotation (Dialog(group="Power flow data"));
-  parameter Types.Angle AngB(displayUnit = "deg") = SI.Conversions.from_deg(-120) "Voltage angle for phase B"
+  parameter Types.Angle AngB=-2*pi/3 "Voltage angle for phase B"
     annotation (Dialog(group="Power flow data"));
   parameter Types.PerUnit VC=1 "Voltage magnitude"
-    annotation (Dialog(group="Power flow data"));
-  parameter Types.Angle AngC(displayUnit = "deg") = SI.Conversions.from_deg(120) "Voltage angle for phase C"
+      annotation (Dialog(group="Power flow data"));
+  parameter Types.Angle AngC=2*pi/3 "Voltage angle for phase C"
     annotation (Dialog(group="Power flow data"));
 
-  parameter Types.ReactivePower Q_a(displayUnit="Mvar")=0
+  parameter Types.ReactivePower Q_a=0
     "Initial reactive power"
     annotation (Dialog(group="Power flow data"));
 
-  parameter Types.ReactivePower Q_b(displayUnit="Mvar")=0
+  parameter Types.ReactivePower Q_b=0
     "Initial reactive power"
     annotation (Dialog(group="Power flow data"));
 
-  parameter Types.ReactivePower Q_c(displayUnit="Mvar")=0
+  parameter Types.ReactivePower Q_c=0
     "Initial reactive power"
     annotation (Dialog(group="Power flow data"));
 

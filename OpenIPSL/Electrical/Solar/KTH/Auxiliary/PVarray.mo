@@ -8,9 +8,9 @@ model PVarray
       iconTransformation(
         origin={-120.0,70.0},
         extent={{-20.0,-20.0},{20.0,20.0}})));
-  parameter Real Vt=(2*Vmp - Vocref)*(Iscref - Imp)/(Imp + (Iscref - Imp)*log((
+  parameter Types.Voltage Vt=(2*Vmp - Vocref)*(Iscref - Imp)/(Imp + (Iscref - Imp)*log((
       Iscref - Imp)/Iscref));
-  parameter Real Rs=(Vt*log((Iscref - Imp)/Iscref) + Vocref - Vmp)/Imp;
+  parameter SI.Resistance Rs=(Vt*log((Iscref - Imp)/Iscref) + Vocref - Vmp)/Imp;
   Modelica.Blocks.Interfaces.RealInput E(start=Estc) "Irradiance" annotation (
       Placement(
       transformation(
@@ -27,23 +27,21 @@ model PVarray
       iconTransformation(
         origin={-120.0,-70.0},
         extent={{-20.0,-20.0},{20.0,20.0}})));
-  parameter Real Imp=1;
-  parameter Real Vmp=1;
-  parameter Real Iscref=1
-    "Module short-circuit current reference at reference temp and irradiance";
-  parameter Real Vocref=1
-    "Module open-circuit voltage reference at reference temp and irradiance";
+  parameter Types.Current Imp=1;
+  parameter Types.Voltage Vmp=1;
+  parameter Types.Current Iscref=1 "Module short-circuit current reference at reference temp and irradiance";
+  parameter Types.Voltage  Vocref=1 "Module open-circuit voltage reference at reference temp and irradiance";
   parameter Real Kv=1 "temperature correction factor for the voltage";
   parameter Real Ki=1 "temperature correction factor for the current";
-  parameter Real Tstc=1 "Temperature at the standard test conditions";
-  parameter Real Estc=1 "Irradiance at the standard test conditions";
-  Real Voct;
-  Real Voc;
-  Real Isct;
-  Real Isc;
-  Real I0 "diode dark current";
-  Real Iph;
-  Real Id;
+  parameter SI.Temperature Tstc=1 "Temperature at the standard test conditions";
+  parameter SI.Irradiance Estc=1 "Irradiance at the standard test conditions";
+  Types.Voltage Voct;
+  Types.Voltage Voc;
+  Types.Current Isct;
+  Types.Current Isc;
+  Types.Current I0 "diode dark current";
+  Types.Current Iph;
+  Types.Current Id;
   Modelica.Blocks.Interfaces.RealOutput I(start=Imp) annotation (Placement(
       transformation(
         origin={160.0,60.0},

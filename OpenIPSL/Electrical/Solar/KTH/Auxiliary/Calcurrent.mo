@@ -1,6 +1,6 @@
 within OpenIPSL.Electrical.Solar.KTH.Auxiliary;
 model Calcurrent
-  parameter Real Udc0=700 "Initial dc voltage";
+  parameter Types.Voltage Udc0=700 "Initial dc voltage";
   Modelica.Blocks.Interfaces.RealInput yi annotation (Placement(
       transformation(
         origin={-155.0,40.0},

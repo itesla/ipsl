@@ -32,15 +32,15 @@ model Rotor_Model
       iconTransformation(
         origin={-2.0,-140.0376},
         extent={{102.0,54.0},{62.0,94.0}})));
-  parameter Real H=0.3 "inertia (pu)";
-  parameter Real Hg=0.3;
+  parameter Types.Time H=0.3 "inertia";
+  parameter Types.Time Hg=0.3;
   parameter Real wbase=1;
   parameter Real Dtg=1;
   parameter Real Ktg=1;
-  parameter Real wt_x6_0=1;
-  parameter Real wt_x7_0=1;
-  parameter Real wt_x8_0=1;
-  parameter Real wt_x9_0=1;
+  parameter Types.PerUnit wt_x6_0=1;
+  parameter Types.PerUnit wt_x7_0=1;
+  parameter Types.PerUnit wt_x8_0=1;
+  parameter Types.PerUnit wt_x9_0=1;
   parameter Real wndtge_ang0=1;
   parameter Real wndtge_spd0=1;
 protected
