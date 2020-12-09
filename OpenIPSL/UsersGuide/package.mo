@@ -9,7 +9,7 @@ The <b>Open-Instance Power System Library - OpenIPSL</b> contains many power sys
 </p>
 <p>
 This is a very short <b>User's Guide</b> that will try to help users to get familiar with the library providing general information about the <b>OpenIPSL</b>.
-More information about the library can be found in this <a href=\"https://openipsl.readthedocs.io/en/latest/\">website</a> dedicated to the OpenIPSL organization. 
+More information about the library can be found in this <a href=\"https://openipsl.org\">website</a> dedicated to the OpenIPSL organization. 
 </p>
 </html>"));
 end UsersGuide;
