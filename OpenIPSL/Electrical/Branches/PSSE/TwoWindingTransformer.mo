@@ -11,7 +11,7 @@ model TwoWindingTransformer
   parameter Integer CZ=1 "Impedance I/O code" annotation (Dialog(tab=
           "Transformer impedance data"), choices(
       choice=1 "Z pu (winding kV system MVA)",
-      choice=2 "Z pu (winding kV widing MVA)",
+      choice=2 "Z pu (winding kV winding MVA)",
       choice=3 "Load loss (W) & |Z| [pu]"));
   parameter Types.PerUnit R "Specified R"
     annotation (Dialog(tab="Transformer impedance data"));
@@ -25,14 +25,14 @@ model TwoWindingTransformer
           "Transformer Nominal Ratings Data"), choices(
       choice=1 "Turns ratio (pu on bus base)",
       choice=2 "Winding voltage",
-      choice=3 "Turns ratio (pu on nom wind)"));
-  parameter Types.PerUnit t1=1 "Winding 1 ratio"
+      choice=3 "Turns ratio (pu on nom winding)"));
+  parameter Types.PerUnit t1=1 "Ratio of winding 1"
     annotation (Dialog(tab="Transformer Nominal Ratings Data"));
   parameter Types.Voltage VNOM1=0 "Nominal voltage of winding 1"
     annotation (Dialog(tab="Transformer Nominal Ratings Data"));
   parameter Types.Voltage VB1=300e3 "Bus base voltage of winding 1"
     annotation (Dialog(tab="Transformer Nominal Ratings Data"));
-  parameter Types.PerUnit t2=1 "Secondary winding tap ratio"
+  parameter Types.PerUnit t2=1 "Tap ratio of winding 2"
     annotation (Dialog(tab="Transformer Nominal Ratings Data"));
   parameter Types.Voltage VNOM2=0 "Nominal Voltage of winding 2"
     annotation (Dialog(tab="Transformer Nominal Ratings Data"));
@@ -40,7 +40,7 @@ model TwoWindingTransformer
     annotation (Dialog(tab="Transformer Nominal Ratings Data"));
   parameter Types.Angle ANG1=0 "Winding (1-2) Angle"
     annotation (Dialog(tab="Transformer Nominal Ratings Data"));
-  parameter Types.ApparentPower S_n=S_b "Winding MVA"
+  parameter Types.ApparentPower S_n=S_b "Nominal power of the winding"
     annotation (Dialog(tab="Transformer Nominal Ratings Data"));
 protected
   parameter Types.Voltage VNOM1_int=if abs(VNOM1) < Modelica.Constants.eps then VB1
@@ -77,5 +77,5 @@ equation
         Text(
           extent={{-80,100},{80,40}},
           lineColor={0,0,255},
-          textString="%name")}), Diagram(coordinateSystem(preserveAspectRatio=false)));
+          textString="%name")}));
 end TwoWindingTransformer;
