@@ -1,5 +1,5 @@
 within OpenIPSL.Electrical.Banks.PSSE;
-model CSVGN1 "STATC SHUNT COMPENSATOR MODEL"
+model CSVGN1 "STATIC SHUNT COMPENSATOR MODEL"
   extends Icons.VerifiedModel;
   outer OpenIPSL.Electrical.SystemBase SysData
     "Must add this line in all models";
@@ -157,15 +157,15 @@ equation
           textString="CSVGN1"),Text(
           extent={{-100,-100},{100,-140}},
           lineColor={0,0,255},
-          textString="%name")}), Documentation(info="<html>
+          textString="%name")}), Documentation(revisions="<html>
 <table cellspacing=\"1\" cellpadding=\"1\" border=\"1\">
 <tr>
 <td><p>Reference</p></td>
-<td>PSS/E Manual</td>
+<td><p>PSS&reg;E Manual</p></td>
 </tr>
 <tr>
 <td><p>Last update</p></td>
-<td>September 2020</td>
+<td>2020-09</td>
 </tr>
 <tr>
 <td><p>Author</p></td>
@@ -173,9 +173,8 @@ equation
 </tr>
 <tr>
 <td><p>Contact</p></td>
-<td><p><a href=\"mailto:vanfrl@rpi.edu\">vanfrl@rpi.edu</a></p></td>
+<td><p>see <a href=\"modelica://OpenIPSL.UsersGuide.Contact\">UsersGuide.Contact</a></p></td>
 </tr>
 </table>
-<p> This model has been verified against PSS/E.</p>
 </html>"));
 end CSVGN1;
