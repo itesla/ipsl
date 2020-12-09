@@ -99,14 +99,14 @@ protected
   Real Vbc2=Vbc^2;
   Real Vca2=Vca^2;
 
-  // Calculating the Coeficients for Adjusting the Power
+  // Calculating the Coefficients for Adjusting the Power
   Real Coef_A=ZIP_coef[1, 1] + ZIP_coef[1, 2]*Vab + ZIP_coef[1, 3]*Vab2;
   Real Coef_B=ZIP_coef[1, 4] + ZIP_coef[1, 5]*Vbc + ZIP_coef[1, 6]*Vbc2;
   Real Coef_C=ZIP_coef[1, 7] + ZIP_coef[1, 8]*Vca + ZIP_coef[1, 9]*Vca2;
 
   Real[1, 3] in_coef=[Coef_A, Coef_B, Coef_C];
 
-  function Coeficients
+  function Coefficients
     input Real[1, 3] in_coef;
     input Integer ModelType;
     output Real[1, 3] Coef;
@@ -117,9 +117,9 @@ protected
     elseif ModelType == 1 then
       Coef := in_coef;
     end if;
-  end Coeficients;
+  end Coefficients;
 
-  Real[1, 3] Coef=Coeficients(in_coef, ModelType);
+  Real[1, 3] Coef=Coefficients(in_coef, ModelType);
 
   function PowerDefinition
     input Integer ModelType;

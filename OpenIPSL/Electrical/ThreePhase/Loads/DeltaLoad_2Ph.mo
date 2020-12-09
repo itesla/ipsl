@@ -67,12 +67,12 @@ protected
   Real Vab=sqrt(Vabr^2 + Vabi^2);
   Real Vab2=Vab^2;
 
-  // Calculating the Coeficients for Adjusting the Power
+  // Calculating the Coefficients for Adjusting the Power
   Real Coef_A=ZIP_coef[1, 1] + ZIP_coef[1, 2]*Vab + ZIP_coef[1, 3]*Vab2;
 
   Real in_coef=Coef_A;
 
-  function Coeficients
+  function Coefficients
     input Real in_coef;
     input Integer ModelType;
     output Real Coef;
@@ -83,9 +83,9 @@ protected
     elseif ModelType == 1 then
       Coef := in_coef;
     end if;
-  end Coeficients;
+  end Coefficients;
 
-  Real Coef=Coeficients(in_coef, ModelType);
+  Real Coef=Coefficients(in_coef, ModelType);
 
   // Calculating new value for Active and Reactive Power
   Real Pab=TPhasePower[1, 1]*Coef;
@@ -124,7 +124,7 @@ equation
           extent={{-62,45},{28,26}},
           textString="PQ/ZIP Load")}),
           Documentation(info="<html>
-<p>This is a two-phase delta load model. The model allows the user to represent active and reactive power beeing consumed between two phases.</p>
+<p>This is a two-phase delta load model. The model allows the user to represent active and reactive power being consumed between two phases.</p>
 <p>The user needs to input the active (<b><i>P_ab</i></b>) and reactive (<b><i>Q_ab</i></b>) powera consumed between phases one and two (A and B).</p> 
 <p>In addition, the model allows the load to be represented as constant power, or as a ZIP model. 
 In the first approach, the power consumed between the two phases is kept constant throughout simulation. 

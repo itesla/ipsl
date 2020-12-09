@@ -13,7 +13,7 @@ model CSVGN1 "STATIC SHUNT COMPENSATOR MODEL"
     annotation (Dialog(group="Power flow data"));
   parameter Types.Angle angle_0=0 "Initial voltage angle"
     annotation (Dialog(group="Power flow data"));
-  parameter Types.PerUnit ra=0 "amature resistance" annotation (Dialog(group="Plant parameters", enable = false));
+  parameter Types.PerUnit ra=0 "Armature resistance" annotation (Dialog(group="Plant parameters", enable = false));
   parameter Types.PerUnit x1d=9999 "d-axis transient reactance, should be set to 9999" annotation (Dialog(group="Plant parameters", enable = false));
   parameter Real K=1 annotation (Dialog(group="Device parameters"));
   parameter Types.Time T1=0 annotation (Dialog(group="Device parameters"));
@@ -169,7 +169,7 @@ equation
 </tr>
 <tr>
 <td><p>Author</p></td>
-<td><p>ALSETLab, Rensselaer Polytechnic Insitute</p></td>
+<td><p>ALSETLab, Rensselaer Polytechnic Institute</p></td>
 </tr>
 <tr>
 <td><p>Contact</p></td>

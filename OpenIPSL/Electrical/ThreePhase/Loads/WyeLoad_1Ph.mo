@@ -43,10 +43,10 @@ protected
   // Calculating V and V2
   Real Va=sqrt(A.vr^2 + A.vi^2);
   Real Va2=Va^2;
-  // Calculating the Coeficients for Adjusting the Power
+  // Calculating the Coefficients for Adjusting the Power
   Real Coef_A=ZIP_coef[1, 1] + ZIP_coef[1, 2]*Va + ZIP_coef[1, 3]*Va2;
 
-  function Coeficients
+  function Coefficients
     input Real in_coef;
     input Integer ModelType;
     output Real Coef;
@@ -56,9 +56,9 @@ protected
     elseif ModelType == 1 then
       Coef := in_coef;
     end if;
-  end Coeficients;
+  end Coefficients;
 
-  Real Coef=Coeficients(Coef_A, ModelType);
+  Real Coef=Coefficients(Coef_A, ModelType);
 
   // Calculating new value for Active and Reactive Power
   Real Pa=TPhasePower[1, 1]*Coef;

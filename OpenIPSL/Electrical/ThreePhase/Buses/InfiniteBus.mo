@@ -46,8 +46,7 @@ model InfiniteBus "Three-phase infinite bus"
     annotation (Placement(transformation(extent={{80,-100},{100,-80}})));
   Types.ActivePower Pa "Active Power suplied by the Infinite bus (phase a)";
   Types.ReactivePower Qa "Reactive Power suplied by the Infinite bus (phase a)";
-  Types.ActivePower Pb
-                      "Active Power suplied by the Infinite bus (phase b)";
+  Types.ActivePower Pb "Active Power suplied by the Infinite bus (phase b)";
   Types.ReactivePower Qb "Reactive Power suplied by the Infinite bus (phase b)";
   Types.ActivePower Pc "Active Power suplied by the Infinite bus (phase c)";
   Types.ReactivePower Qc "Reactive Power suplied by the Infinite bus (phase c)";
