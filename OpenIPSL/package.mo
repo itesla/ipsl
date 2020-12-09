@@ -25,6 +25,8 @@ If you are looking for an introduction to the library, have especially a look at
 <ul>
 <li><a href=\"modelica://OpenIPSL.UsersGuide\">User's Guide</a>
   and all its dependencies for general information about the library.</li>
+<li><a href=\"https://openipsl.readthedocs.io/en/latest/\">openipsl.org</a>, 
+the OpenIPSL organization website for additional information.</li>
 <li><a href=\"modelica://OpenIPSL.UsersGuide.ReleaseNotes\">Release Notes</a>
  for a summary of changes in new versions of the OpenIPSL.</li>
 <li> <a href=\"modelica://OpenIPSL.UsersGuide.Contact\">Contact</a>
