@@ -31,7 +31,7 @@ equation
           color={0,0,255},
           origin={-6,-77},
           rotation=-90),Line(points={{0,100},{0,20}}, color={0,0,255}),Line(
-          points={{0,-40},{0,-72}}, color={0,0,255})}), Documentation(info="<html>
+          points={{0,-40},{0,-72}}, color={0,0,255})}), Documentation(revisions="<html>
 <table cellspacing=\"1\" cellpadding=\"1\" border=\"1\">
 <tr>
 <td><p>Reference</p></td>
@@ -43,11 +43,11 @@ equation
 </tr>
 <tr>
 <td><p>Author</p></td>
-<td><p>Le Qi, SmarTS Lab, KTH Royal Institute of Technology</p></td>
+<td><p>Le Qi, KTH Royal Institute of Technology</p></td>
 </tr>
 <tr>
 <td><p>Contact</p></td>
-<td><p><a href=\"mailto:luigiv@kth.se\">luigiv@kth.se</a></p></td>
+<td><p>see <a href=\"modelica://OpenIPSL.UsersGuide.Contact\">UsersGuide.Contact</a></p></td>
 </tr>
 </table>
 </html>"));

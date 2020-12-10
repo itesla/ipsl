@@ -120,7 +120,7 @@ protected
 
   Real[2, 3] Volt=Voltages(Vline);
 
-  // Calculating the Coeficients for Adjusting the Power
+  // Calculating the Coefficients for Adjusting the Power
   Real Coef_A=ZIP_coef[1, 1] + ZIP_coef[1, 2]*Volt[1, 1] + ZIP_coef[1, 3]*Volt[
       2, 1];
   Real Coef_B=ZIP_coef[1, 4] + ZIP_coef[1, 5]*Volt[1, 2] + ZIP_coef[1, 6]*Volt[
@@ -130,7 +130,7 @@ protected
 
   Real[1, 3] in_coef=[Coef_A, Coef_B, Coef_C];
 
-  function Coeficients
+  function Coefficients
     input Real[1, 3] in_coef;
     input Integer ModelType;
     output Real[1, 3] Coef;
@@ -141,9 +141,9 @@ protected
     elseif ModelType == 1 then
       Coef := in_coef;
     end if;
-  end Coeficients;
+  end Coefficients;
 
-  Real[1, 3] Coef=Coeficients(in_coef, ModelType);
+  Real[1, 3] Coef=Coefficients(in_coef, ModelType);
 
   // Calculating new value for Active and Reactive Power
   Real Pab=TPhasePower[1, 1]*Coef[1, 1];

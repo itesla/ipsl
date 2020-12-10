@@ -106,7 +106,7 @@ convertModifiers("OpenIPSL.Electrical.Branches.PSSE.TwoWindingTransformer",
 convertModifiers("OpenIPSL.Electrical.Branches.PSSE.TwoWindingTransformer",
                 {"S_n"},{"S_n=%S_n%*1e6"}, true);
 
-/** Busses **/
+/** Buses **/
 
 // Bus
 // the following lines are repetition of the pfComponent conversion

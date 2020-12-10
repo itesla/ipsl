@@ -111,22 +111,22 @@ equation
   connect(B2.p, pwLine4.n) annotation (Line(points={{40,0},{34,0},{34,10},{29,10}}, color={0,0,255}));
   connect(diff.y, add.u2) annotation (Line(points={{-65.0448,0},{-62,0},{-62,-3.6},{-57.2,-3.6}}, color={0,0,127}));
   connect(add.u1, order2_Inputs_Outputs.vf0) annotation (Line(points={{-57.2,3.6},{-62,3.6},{-62,18},{-28,18},{-28,11}}, color={0,0,127}));
-  annotation (Documentation(info="<html>
+  annotation (Documentation(revisions="<html>
 <table cellspacing=\"1\" cellpadding=\"1\" border=\"1\"><tr>
 <td><p>Reference</p></td>
-<td><p>KTH own Model, PSAT Manual 2.1.8</p></td>
+<td><p>PSAT Manual 2.1.8</p></td>
 </tr>
 <tr>
 <td><p>Last update</p></td>
-<td><p>29/09/2015</p></td>
+<td><p>2015-09-29</p></td>
 </tr>
 <tr>
 <td><p>Author</p></td>
-<td><p>MAA Murad, SmarTS Lab, KTH Royal Institute of Technology</p></td>
+<td><p>MAA Murad, KTH Royal Institute of Technology</p></td>
 </tr>
 <tr>
 <td><p>Contact</p></td>
-<td><p><a href=\"mailto:luigiv@kth.se\">luigiv@kth.se</a></p></td>
+<td><p>see <a href=\"modelica://OpenIPSL.UsersGuide.Contact\">UsersGuide.Contact</a></p></td>
 </tr>
 </table>
 </html>"));

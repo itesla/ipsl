@@ -23,7 +23,7 @@ model GENCLS
     annotation (Dialog(group="Machine parameters"));
   parameter Real D=0 "Damping coefficient"
     annotation (Dialog(group="Machine parameters"));
-  parameter Types.PerUnit R_a=0 "Amature resistance"
+  parameter Types.PerUnit R_a=0 "Armature resistance"
     annotation (Dialog(group="Machine parameters"));
   parameter Types.PerUnit X_d=0.2 "d-axis transient reactance"
     annotation (Dialog(group="Machine parameters"));

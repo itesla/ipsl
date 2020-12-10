@@ -80,10 +80,10 @@ equation
           points={{-68,0},{70,0}},
           color={0,0,255},
           thickness=1)}),
-    Documentation(info="<html>
+    Documentation(revisions="<html>
 <table cellspacing=\"1\" cellpadding=\"1\" border=\"1\"><tr>
 <td><p>Reference</p></td>
-<td><p>Ramp-tracking filter up to M*N &LT;=8</p></td>
+<td><p>PSS&reg;E Manual</p></td>
 </tr>
 <tr>
 <td><p>Last update</p></td>
@@ -91,11 +91,11 @@ equation
 </tr>
 <tr>
 <td><p>Author</p></td>
-<td><p>Giuseppe Laera, ALSETLab, RPI Rensselaer Polytechnic Institute</p></td>
+<td><p><a href=\"https://github.com/GiuseppeLaera\">@GiuseppeLaera</a></p></td>
 </tr>
 <tr>
 <td><p>Contact</p></td>
-<td><p><a href=\"mailto:luigiv@kth.se\">luigiv@kth.se</a></p></td>
+<td><p>see <a href=\"modelica://OpenIPSL.UsersGuide.Contact\">UsersGuide.Contact</a></p></td>
 </tr>
 </table>
 </html>"));

@@ -1,5 +1,5 @@
 within OpenIPSL.Examples.BaseClasses;
-partial model SMIB "SMIB - Single Machine Infinte Base system with one load"
+partial model SMIB "SMIB - Single Machine Infinite Base system with one load"
   extends Modelica.Icons.Example;
   OpenIPSL.Electrical.Branches.PwLine pwLine(
     R=0.001,

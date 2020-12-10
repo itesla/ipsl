@@ -191,7 +191,7 @@ equation
 <p>The following documentation is adapted from 
 <a href=\"modelica://OpenIPSL.UsersGuide.References\">[PSSE-Models], chapter 7.13</a>:</p>
 <blockquote>
-<p>This is a general purpose Governor/Turbine model that can be used in dynamic studies. This model is a slighly different model than the GGOV1.
+<p>This is a general purpose Governor/Turbine model that can be used in dynamic studies. This model is a slightly different model than the GGOV1.
 The model can be used to represent many different models such as gas turbines, aeroderivative turbines and diesel engines.
 This model is a variation of the GGOV1 model and a fairly complete review can be found in
 <a href=\"modelica://OpenIPSL.UsersGuide.References\">[IEEE2013]</a>.

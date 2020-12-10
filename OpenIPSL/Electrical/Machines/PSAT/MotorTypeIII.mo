@@ -114,11 +114,11 @@ equation
           extent={{-57.2101,-15.0},{57.2101,15.0}},
           fontName="Arial",
           textString="%name",
-          lineColor={0,0,0})}), Documentation(info="<html>
+          lineColor={0,0,0})}), Documentation(revisions="<html>
 <table cellspacing=\"1\" cellpadding=\"1\" border=\"1\">
 <tr>
 <td><p>Reference</p></td>
-<td><p>Induction Machine, PSAT Manual 2.1.8</p></td>
+<td><p>PSAT Manual 2.1.8</p></td>
 </tr>
 <tr>
 <td><p>Last update</p></td>
@@ -126,11 +126,11 @@ equation
 </tr>
 <tr>
 <td><p>Author</p></td>
-<td><p>Joan Russinol, SmarTS Lab, KTH Royal Institute of Technology</p></td>
+<td><p>Joan Russinol, KTH Royal Institute of Technology</p></td>
 </tr>
 <tr>
 <td><p>Contact</p></td>
-<td><p><a href=\"mailto:luigiv@kth.se\">luigiv@kth.se</a></p></td>
+<td><p>see <a href=\"modelica://OpenIPSL.UsersGuide.Contact\">UsersGuide.Contact</a></p></td>
 </tr>
 </table>
 </html>"));

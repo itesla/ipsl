@@ -104,22 +104,22 @@ equation
           extent={{-100,100},{100,40}},
           lineColor={0,0,255},
           textString="%name")}),
-    Documentation(info="<html>
+    Documentation(revisions="<html>
 <table cellspacing=\"1\" cellpadding=\"1\" border=\"1\"><tr>
 <td><p>Reference</p></td>
 <td><p>PSAT Manual 2.1.8</p></td>
 </tr>
 <tr>
 <td><p>Last update</p></td>
-<td><p>15/07/2015</p></td>
+<td><p>2015-07-15</p></td>
 </tr>
 <tr>
 <td><p>Author</p></td>
-<td><p>MAA Murad, SmarTS Lab, KTH Royal Institute of Technology</p></td>
+<td><p>MAA Murad, KTH Royal Institute of Technology</p></td>
 </tr>
 <tr>
 <td><p>Contact</p></td>
-<td><p><a href=\"mailto:luigiv@kth.se\">luigiv@kth.se</a></p></td>
+<td><p>see <a href=\"modelica://OpenIPSL.UsersGuide.Contact\">UsersGuide.Contact</a></p></td>
 </tr>
 </table>
 </html>"));

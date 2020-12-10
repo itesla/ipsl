@@ -122,24 +122,25 @@ equation
 "),Text(  extent={{2,102},{42,62}},
           lineColor={0,0,255},
           textString="vref0")}),
-    Documentation(info="<html>
+    Documentation(revisions="<html>
 <table cellspacing=\"1\" cellpadding=\"1\" border=\"1\"><tr>
 <td><p>Reference</p></td>
-<td><p>AVR Type I, PSAT Manual 2.1.8</p></td>
+<td><p>PSAT Manual 2.1.8</p></td>
 </tr>
 <tr>
 <td><p>Last update</p></td>
-<td><p>September 2015</p></td>
+<td><p>2015-09</p></td>
 </tr>
 <tr>
 <td><p>Author</p></td>
-<td><p>Joan Russinol, SmarTS Lab, KTH Royal Institute of Technology</p></td>
+<td><p>Joan Russinol, KTH Royal Institute of Technology</p></td>
 </tr>
 <tr>
 <td><p>Contact</p></td>
-<td><p><a href=\"mailto:luigiv@kth.se\">luigiv@kth.se</a></p></td>
+<td><p>see <a href=\"modelica://OpenIPSL.UsersGuide.Contact\">UsersGuide.Contact</a></p></td>
 </tr>
 </table>
+</html>", info="<html>
 <span style=\"color: #ff0000\">
 <h5>WARNING</h5>
 <p>The PSAT Toolbox  called this model &quot;AVR Type I&quot;

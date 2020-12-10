@@ -37,7 +37,7 @@ model References "References"
         <a href=\"https://doi.org/10.1109/IEEESTD.1992.106975\">DOI: 10.1109/IEEESTD.1992.106975</a>
 </td>
 </tr>
-<tr><tr>
+<tr>
 <td>[IEEE2005]</td>
 <td>IEEE:
         &quot;421.5-2005 - IEEE Recommended Practice for Excitation System Models 
@@ -47,7 +47,6 @@ model References "References"
 </td>
 </tr>
 <tr>
-<tr>
 <td>[IEEE2013]</td>
 <td>IEEE Power & Energy Society:
         &quot;Dynamic models for turbine-governors in power system studies&quot;,
@@ -55,7 +54,6 @@ model References "References"
         <a href=\"https://resourcecenter.ieee-pes.org/publications/technical-reports/PESTR1.html\">IEEE PES Resource Center</a>
 </td>
 </tr>
-<tr>
 <tr>
 <td>[IEEE2016]</td>
 <td>IEEE:
@@ -82,11 +80,10 @@ model References "References"
 </td>
 </tr>
 <tr>
-<tr>
 <td>[PSSE-AGV1]</td>
 <td>Siemens:
         &quot;PSS&reg;E Program Application Guide Volume 1&quot;,
-        version 34.2, April 2017,
+        version 33, April 2017,
         (<a href=\"https://new.siemens.com/global/en/products/energy/energy-automation-and-smart-grid/pss-software/pss-e.html\">Home page</a>)
 </td>
 </tr>
@@ -94,7 +91,7 @@ model References "References"
 <td>[PSSE-AGV2]</td>
 <td>Siemens:
         &quot;PSS&reg;E Program Application Guide Volume 2&quot;,
-        version 34.2, April 2017,
+        version 33, April 2017,
         (<a href=\"https://new.siemens.com/global/en/products/energy/energy-automation-and-smart-grid/pss-software/pss-e.html\">Home page</a>)
 </td>
 </tr>
@@ -102,7 +99,7 @@ model References "References"
 <td>[PSSE-MODELS]</td>
 <td>Siemens:
         &quot;PSS&reg;E Model Library&quot;,
-        version 34.2, April 2017,
+        version 33, April 2017,
         (<a href=\"https://new.siemens.com/global/en/products/energy/energy-automation-and-smart-grid/pss-software/pss-e.html\">Home page</a>)
 </td>
 </tr>

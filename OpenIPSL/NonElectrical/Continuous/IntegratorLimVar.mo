@@ -17,7 +17,7 @@ block IntegratorLimVar
         origin={-80,-140})));
 protected
   Real x "Dummy variable for input";
-  Real w "Dummy variable for ouput";
+  Real w "Dummy variable for output";
   Real initVar "Dummy variable to be used as setting quantity";
   Boolean ReachUpper "Flag for reaching upper limit";
   Boolean ReachLower "Flag for reaching lower limit";

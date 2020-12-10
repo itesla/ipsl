@@ -16,7 +16,7 @@ model Line_MT "Transmission Line modeled as a PI element with a hybrid interface
 
   // Options for the type of model that the user wants to simulate
   parameter Integer ModelType=0
-    "0- Assuming that the negative and zero norton admittances are infinite (Aproximation), 1- Considering that the negative and zero norton admittances finite values;"
+    "0- Assuming that the negative and zero norton admittances are infinite (Approximation), 1- Considering that the negative and zero norton admittances finite values;"
     annotation (Dialog(group="Selection of model"),choices(choice=0
         "Norton admittances have infinite values", choice=1
         "Norton admittances have finite values"));
