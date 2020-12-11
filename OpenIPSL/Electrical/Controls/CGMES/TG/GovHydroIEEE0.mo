@@ -106,6 +106,5 @@ However the general recommondation is to use alternative more sophisticated impl
 <td><p>see <a href=\"modelica://OpenIPSL.UsersGuide.Contact\">UsersGuide.Contact</a></p></td>
 </tr>
 </table>
-</html>
-"));
+</html>"));
 end GovHydroIEEE0;
