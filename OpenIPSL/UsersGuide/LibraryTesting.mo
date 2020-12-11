@@ -2,7 +2,6 @@ within OpenIPSL.UsersGuide;
 model LibraryTesting "Testing and Verification"
   extends Modelica.Icons.Information;
 
-
   annotation(DocumentationClass=true, Documentation(info="<html>
 <h4>Continuous Integration</h4>
 <p>The OpenIPSL repository is connected to <a href=\"https://travis-ci.org/\">Travis CI</a> that provides <b>Continuous Integration</b> services to the repository. 

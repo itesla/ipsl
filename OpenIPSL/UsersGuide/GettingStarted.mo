@@ -2,7 +2,6 @@ within OpenIPSL.UsersGuide;
 model GettingStarted "Getting Started"
   extends Modelica.Icons.Information;
 
-
   annotation(DocumentationClass=true, Documentation(info="<html>
 <p>
 The <b>OpenIPSL</b> was developed to be a familiar alternative to traditional power system analysis tools.

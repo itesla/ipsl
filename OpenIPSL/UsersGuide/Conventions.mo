@@ -2,7 +2,6 @@ within OpenIPSL.UsersGuide;
 model Conventions "Conventions"
   extends Modelica.Icons.Information;
 
-
   annotation(DocumentationClass=true, Documentation(info="<html>
 <p>
 The team behind OpenIPSL strives to achieve a harmonized development of the library to facilitate its usability and integration into other services.

@@ -2,7 +2,6 @@ within OpenIPSL.UsersGuide;
 model Overview "Overview"
   extends Modelica.Icons.Information;
 
-
   annotation(DocumentationClass=true, Documentation(info="<html>
 <p>
 The <b>OpenIPSL</b> has, basically, six packages: Examples, Electrical, Nonelectrical, Interfaces, Icons and Types. They are briefly described below:
