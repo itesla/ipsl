@@ -31,7 +31,6 @@ model GAST "GAST - Gas Turbine-Governor"
         origin={-11,-45})));
   Modelica.Blocks.Math.Gain g1_R(k=1/R) annotation (Placement(transformation(
         extent={{-5,-5},{5,5}},
-        rotation=0,
         origin={-133,-19})));
   NonElectrical.Logical.LV_GATE lV_Gate
     annotation (Placement(transformation(extent={{-46,-10},{-26,10}})));

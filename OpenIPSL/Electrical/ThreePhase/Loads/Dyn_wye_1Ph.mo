@@ -4,36 +4,27 @@ model Dyn_wye_1Ph "Variable single-phase load"
   import Modelica.Blocks.Interfaces.*;
   Modelica.Blocks.Interfaces.RealInput P_in "external P [pu]" annotation (
       Placement(
-      visible=true,
       transformation(
         origin={-120,20},
-        extent={{-20,-20},{20,20}},
-        rotation=0),
+        extent={{-20,-20},{20,20}}),
       iconTransformation(
         origin={-60,20},
-        extent={{-20,-20},{20,20}},
-        rotation=0)));
+        extent={{-20,-20},{20,20}})));
   Modelica.Blocks.Interfaces.RealInput Q_in "external Q [pu]" annotation (
       Placement(
-      visible=true,
       transformation(
         origin={-120,-40},
-        extent={{-20,-20},{20,20}},
-        rotation=0),
+        extent={{-20,-20},{20,20}}),
       iconTransformation(
         origin={-60,-60},
-        extent={{-20,-20},{20,20}},
-        rotation=0)));
+        extent={{-20,-20},{20,20}})));
   OpenIPSL.Interfaces.PwPin A annotation (Placement(
       transformation(
         extent={{-56.0,-10.0},{-36.0,10.0}},
-        origin={-4,70},
-        rotation=0),
+        origin={-4,70}),
       iconTransformation(
         extent={{-80.0,0.0},{-60.0,20.0}},
-        origin={71,100},
-        rotation=0),
-      visible=true));
+        origin={71,100})));
   parameter Types.ActivePower P0 "Initial Active power"
     annotation (Dialog(group="Power flow"));
   parameter Types.ReactivePower Q0 "Initial Reactive power"
@@ -53,7 +44,7 @@ equation
   Q_a = (A.vi*A.ir - A.vr*A.ii)*S_p;
 
   annotation (
-    Icon(coordinateSystem(preserveAspectRatio=false, initialScale=0.1),
+    Icon(coordinateSystem(preserveAspectRatio=false),
         graphics={Line(points={{-100,100},{100,100},{0,-100},{-100,100}}, color=
            {28,108,200}),Text(
           lineColor={28,108,200},

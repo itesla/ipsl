@@ -47,18 +47,18 @@ model GGOV1DU "GGOV1DU - Variation of GE General Governor/Turbine Model [IEEE201
   parameter Types.Time DELT=0.005 "Time step used in simulation";
   Modelica.Blocks.Interfaces.RealInput SPEED
     "Machine speed deviation from nominal (pu)"
-    annotation (Placement(visible = true,transformation(origin = {-120, 60}, extent = {{-20, -20}, {20, 20}}, rotation = 0), iconTransformation(extent = {{-100, 40}, {-60, 80}}, rotation = 0)));
+    annotation (Placement(transformation(origin = {-120, 60}, extent = {{-20, -20}, {20, 20}}), iconTransformation(extent = {{-100, 40}, {-60, 80}})));
   Modelica.Blocks.Interfaces.RealInput PELEC
     "Machine electrical power (pu)"
-    annotation (Placement(visible = true,transformation(origin = {-120, -60}, extent = {{-20, -20}, {20, 20}}, rotation = 0),  iconTransformation(extent = {{-100, -80}, {-60, -40}}, rotation = 0)));
-  Modelica.Blocks.Sources.Constant AccelerationSet(k=Aset) annotation (Placement(visible = true, transformation(origin = {-64, 14}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
-  Modelica.Blocks.Sources.Constant P_ref(k=Pref) annotation (Placement(visible = true, transformation(origin = {-82, -26}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
+    annotation (Placement(transformation(origin = {-120, -60}, extent = {{-20, -20}, {20, 20}}),  iconTransformation(extent = {{-100, -80}, {-60, -40}})));
+  Modelica.Blocks.Sources.Constant AccelerationSet(k=Aset) annotation (Placement(transformation(origin = {-64, 14}, extent = {{-10, -10}, {10, 10}})));
+  Modelica.Blocks.Sources.Constant P_ref(k=Pref) annotation (Placement(transformation(origin = {-82, -26}, extent = {{-10, -10}, {10, 10}})));
   Modelica.Blocks.Sources.Constant Pmw_set(k=Pmwset)
-    "Supervisory Load Controller Setpoint,"                                                  annotation (Placement(visible = true, transformation(origin = {-60, -46}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
-  Modelica.Blocks.Sources.Constant set(k=Ldref) "load reference" annotation (Placement(visible = true, transformation(origin = {-62, 80}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
-  OpenIPSL.Electrical.Controls.PSSE.TG.BaseClasses.GGOV1.Min_select min_select(frs0=fsr0, nu= 3) annotation (Placement(visible = true, transformation(extent = {{4, -10}, {24, 10}}, rotation = 0)));
+    "Supervisory Load Controller Setpoint,"                                                  annotation (Placement(transformation(origin = {-60, -46}, extent = {{-10, -10}, {10, 10}})));
+  Modelica.Blocks.Sources.Constant set(k=Ldref) "load reference" annotation (Placement(transformation(origin = {-62, 80}, extent = {{-10, -10}, {10, 10}})));
+  OpenIPSL.Electrical.Controls.PSSE.TG.BaseClasses.GGOV1.Min_select min_select(frs0=fsr0, nu= 3) annotation (Placement(transformation(extent = {{4, -10}, {24, 10}})));
   Modelica.Blocks.Interfaces.RealOutput PMECH "Turbine mechanical power (pu)" annotation (
-    Placement(visible = true, transformation(origin = {110, 0}, extent = {{-10, -10}, {10, 10}}, rotation = 0), iconTransformation(extent = {{100, -10}, {120, 10}}, rotation = 0)));
+    Placement(transformation(origin = {110, 0}, extent = {{-10, -10}, {10, 10}}), iconTransformation(extent = {{100, -10}, {120, 10}})));
   OpenIPSL.Electrical.Controls.PSSE.TG.BaseClasses.GGOV1.LoadLimiterDU gGOV1_Temp(
     Kturb=Kturb,
     Kpload=Kpload,
@@ -66,8 +66,8 @@ model GGOV1DU "GGOV1DU - Variation of GE General Governor/Turbine Model [IEEE201
     Vmax= Vmax,
     Vmin=Vmin,
     Dm=Dm,
-    Wfnl=Wfnl) annotation (Placement(visible = true, transformation(origin = {-30, 80}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
-  Modelica.Blocks.Nonlinear.Limiter V(uMax=Vmax, uMin=Vmin) annotation (Placement(visible = true, transformation(origin = {44, 0}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
+    Wfnl=Wfnl) annotation (Placement(transformation(origin = {-30, 80}, extent = {{-10, -10}, {10, 10}})));
+  Modelica.Blocks.Nonlinear.Limiter V(uMax=Vmax, uMin=Vmin) annotation (Placement(transformation(origin = {44, 0}, extent = {{-10, -10}, {10, 10}})));
   OpenIPSL.Electrical.Controls.PSSE.TG.BaseClasses.GGOV1.Turbine gGOV1_Turb(
     Tact=Tact,
     Kturb=Kturb,
@@ -84,11 +84,11 @@ model GGOV1DU "GGOV1DU - Variation of GE General Governor/Turbine Model [IEEE201
     Tsb=Tsb,
     DELT=DELT,
     Flag=Flag,
-    Wfnl=Wfnl) annotation (Placement(visible = true, transformation(origin = {82, 0}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
+    Wfnl=Wfnl) annotation (Placement(transformation(origin = {82, 0}, extent = {{-10, -10}, {10, 10}})));
   OpenIPSL.Electrical.Controls.PSSE.TG.BaseClasses.GGOV1.AccelerationLimiter gGOV1_Accel(
     Ka=Ka,
     Ta=Ta,
-    DELT=DELT) annotation (Placement(visible = true, transformation(origin = {-30, 0}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
+    DELT=DELT) annotation (Placement(transformation(origin = {-30, 0}, extent = {{-10, -10}, {10, 10}})));
   OpenIPSL.Electrical.Controls.PSSE.TG.BaseClasses.GGOV1.PIDGovernorDU gGOV1_Power(
     Rselect=Rselect,
     R=R,
@@ -103,7 +103,7 @@ model GGOV1DU "GGOV1DU - Variation of GE General Governor/Turbine Model [IEEE201
     Kimw=Kimw,
     db=db,
     Kturb=Kturb,
-    Wfnl=Wfnl) annotation (Placement(visible = true, transformation(origin = {-30, -52}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
+    Wfnl=Wfnl) annotation (Placement(transformation(origin = {-30, -52}, extent = {{-10, -10}, {10, 10}})));
 protected
   parameter Types.PerUnit Pe0(fixed=false);
   parameter Types.PerUnit Pmech0(fixed=false);

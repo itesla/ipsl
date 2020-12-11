@@ -71,7 +71,7 @@ package Hisken
       Real angle;
       //Real Pt;
       PowerSystems.Connectors.PwPin p annotation (
-        Placement(transformation(extent = {{-56.0, -10.0}, {-36.0, 10.0}}, origin = {10, 10}, rotation = 0), iconTransformation(extent = {{-80.0, 0.0}, {-60.0, 20.0}}, origin = {-40.0, -10.0}, rotation = 0), visible = true));
+        Placement(transformation(extent = {{-56.0, -10.0}, {-36.0, 10.0}}, origin = {10, 10}), iconTransformation(extent = {{-80.0, 0.0}, {-60.0, 20.0}}, origin = {-40.0, -10.0})));
     equation
       der(xp) = 1/Tp*(P0 - Pd);
       Pd = xp + Pt*(v^2);
@@ -91,9 +91,9 @@ package Hisken
       PowerSystems.Electrical.Buses.Bus B4 annotation (
         Placement(transformation(extent = {{69, -10}, {89, 10}})));
       PowerSystems.Electrical.Branches.PwLine pwLine4(G = 0, R = 0, X = 0.65, B = 0) annotation (
-        Placement(visible = true, transformation(origin = {-84, 14}, extent = {{-10.0, -10.0}, {10.0, 10.0}}, rotation = 0)));
+        Placement(transformation(origin = {-84, 14}, extent = {{-10.0, -10.0}, {10.0, 10.0}})));
       PowerSystems.Electrical.Branches.PwLine pwLine2(G = 0, R = 0, X = 0.80, B = 0) annotation (
-        Placement(visible = true, transformation(origin = {50, 0}, extent = {{-10.0, -10.0}, {10.0, 10.0}}, rotation = 0)));
+        Placement(transformation(origin = {50, 0}, extent = {{-10.0, -10.0}, {10.0, 10.0}})));
       PowerSystems.Electrical.Buses.InfiniteBus infiniteBus(v = 1.05, angle = 0) annotation (
         Placement(transformation(extent = {{-160, -10}, {-140, 10}})));
       TransformerDiscrete transformerDiscrete annotation (
@@ -127,8 +127,7 @@ package Hisken
       annotation (
         Diagram(coordinateSystem(extent = {{-160, -100}, {120, 100}}, preserveAspectRatio = false)),
         Icon(coordinateSystem(extent = {{-160, -100}, {120, 100}})),
-        experiment(StopTime = 300, Interval = 0.001, Tolerance = 0.0001, __Dymola_Algorithm = "Dassl"),
-        __Dymola_experimentSetupOutput);
+        experiment(StopTime = 300, Interval = 0.001, Tolerance = 0.0001, __Dymola_Algorithm = "Dassl"));
     end Test_System_HiskenLoad;
 
 
@@ -213,9 +212,9 @@ package Hisken
       OpenIPSL.Electrical.Buses.Bus B4 annotation (
         Placement(transformation(extent = {{69, -10}, {89, 10}})));
       OpenIPSL.Electrical.Branches.PwLine pwLine4(G = 0, R = 0, X = 0.65, B = 0) annotation (
-        Placement(visible = true, transformation(origin = {-84, 14}, extent = {{-10.0, -10.0}, {10.0, 10.0}}, rotation = 0)));
+        Placement(transformation(origin = {-84, 14}, extent = {{-10.0, -10.0}, {10.0, 10.0}})));
       OpenIPSL.Electrical.Branches.PwLine pwLine2(G = 0, R = 0, X = 0.80, B = 0) annotation (
-        Placement(visible = true, transformation(origin = {50, 0}, extent = {{-10.0, -10.0}, {10.0, 10.0}}, rotation = 0)));
+        Placement(transformation(origin = {50, 0}, extent = {{-10.0, -10.0}, {10.0, 10.0}})));
       OpenIPSL.Electrical.Buses.InfiniteBus infiniteBus(v_0 = 1.05)  annotation (
         Placement(transformation(extent = {{-160, -10}, {-140, 10}})));
       TransformerDiscrete2 transformerDiscrete annotation (
@@ -225,7 +224,7 @@ package Hisken
       Load_Hisken_new load_Hisken annotation (
         Placement(transformation(extent = {{100, -10}, {120, 10}})));
       inner OpenIPSL.Electrical.SystemBase SysData annotation (
-        Placement(visible = true, transformation(origin = {-132, 66}, extent = {{-12, -10}, {12, 10}}, rotation = 0)));
+        Placement(transformation(origin = {-132, 66}, extent = {{-12, -10}, {12, 10}})));
     equation
       connect(pwLine4.n, B2.p) annotation (
         Line(points={{-75,14},{-64,14},{-64,0},{-41,0}},          color = {0, 0, 255}));
@@ -250,8 +249,7 @@ package Hisken
       annotation (
         Diagram(coordinateSystem(extent = {{-160, -100}, {120, 100}}, preserveAspectRatio = false)),
         Icon(coordinateSystem(extent = {{-160, -100}, {120, 100}})),
-        experiment(StopTime = 350, Interval = 0.01, Tolerance = 0.0001, __Dymola_Algorithm = "Dassl"),
-        __Dymola_experimentSetupOutput);
+        experiment(StopTime = 350, Interval = 0.01, Tolerance = 0.0001, __Dymola_Algorithm = "Dassl"));
     end Test_System_HiskenLoad_new;
 
 
@@ -273,7 +271,7 @@ package Hisken
       Real angle;
       //Real Pt;
       OpenIPSL.Interfaces.PwPin p annotation (
-        Placement(transformation(extent = {{-56.0, -10.0}, {-36.0, 10.0}}, origin = {10, 10}, rotation = 0), iconTransformation(extent = {{-80.0, 0.0}, {-60.0, 20.0}}, origin = {-40.0, -10.0}, rotation = 0), visible = true));
+        Placement(transformation(extent = {{-56.0, -10.0}, {-36.0, 10.0}}, origin = {10, 10}), iconTransformation(extent = {{-80.0, 0.0}, {-60.0, 20.0}}, origin = {-40.0, -10.0})));
     equation
       der(xp) = 1 / Tp * (P0 - Pd);
       Pd = xp + Pt * v ^ 2;

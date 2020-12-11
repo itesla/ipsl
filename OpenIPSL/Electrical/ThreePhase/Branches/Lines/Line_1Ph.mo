@@ -39,13 +39,11 @@ equation
   annotation (
     Icon(coordinateSystem(
         extent={{-140,-100},{140,100}},
-        preserveAspectRatio=true,
-        initialScale=0.1), graphics={Line(points={{-90,0},{-130,0}}, color={0,0,
+        preserveAspectRatio=true), graphics={Line(points={{-90,0},{-130,0}}, color={0,0,
           255}),Line(points={{90,0},{130,0}}, color={0,0,255})}),
     Diagram(coordinateSystem(
         extent={{-140,-100},{140,100}},
-        preserveAspectRatio=true,
-        initialScale=0.1)),
+        preserveAspectRatio=true)),
     Documentation(info="<html>
 <p>This model was design to represent single-phase power line, modeled as a pi-element.</p>
 <p>The user should input the series conductance and susceptance, and half shunt susceptance (line charging).</p>

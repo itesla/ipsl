@@ -4,45 +4,33 @@ model DeltaDynLoad_3Ph "Variable three-phase delta load"
   import Modelica.Blocks.Interfaces.*;
   Modelica.Blocks.Interfaces.RealInput DynFact "Load Curve [pu]" annotation (
       Placement(
-      visible=true,
       transformation(
         origin={-88,0},
-        extent={{-20,-20},{20,20}},
-        rotation=0),
+        extent={{-20,-20},{20,20}}),
       iconTransformation(
         origin={-52,0},
-        extent={{-20,-20},{20,20}},
-        rotation=0)));
+        extent={{-20,-20},{20,20}})));
   OpenIPSL.Interfaces.PwPin A annotation (Placement(
       transformation(
         extent={{-56.0,-10.0},{-36.0,10.0}},
-        origin={0.0,0.0},
-        rotation=0),
+        origin={0.0,0.0}),
       iconTransformation(
         extent={{-80.0,0.0},{-60.0,20.0}},
-        origin={159,100},
-        rotation=0),
-      visible=true));
+        origin={159,100})));
   OpenIPSL.Interfaces.PwPin B annotation (Placement(
       transformation(
         extent={{-56.0,-10.0},{-36.0,10.0}},
-        origin={0.0,0.0},
-        rotation=0),
+        origin={0.0,0.0}),
       iconTransformation(
         extent={{-80.0,0.0},{-60.0,20.0}},
-        origin={70,100},
-        rotation=0),
-      visible=true));
+        origin={70,100})));
   OpenIPSL.Interfaces.PwPin C annotation (Placement(
       transformation(
         extent={{-56.0,-10.0},{-36.0,10.0}},
-        origin={0.0,0.0},
-        rotation=0),
+        origin={0.0,0.0}),
       iconTransformation(
         extent={{-80.0,0.0},{-60.0,20.0}},
-        origin={-19,100},
-        rotation=0),
-      visible=true));
+        origin={-19,100})));
   parameter Integer ModelType=0 "0- Constant Power Model, 1- ZIP Model;"
     annotation (choices(choice=0 "Constant Power", choice=1 "ZIP Model"),
       Dialog(group="Power flow"));
@@ -172,7 +160,7 @@ equation
   C.ii = (Icai - Ibci)/sqrt(3);
 
   annotation (
-    Icon(coordinateSystem(preserveAspectRatio=false, initialScale=0.1),
+    Icon(coordinateSystem(preserveAspectRatio=false),
         graphics={Line(points={{-100,100},{100,100},{0,-100},{-100,100}}, color=
            {28,108,200}),Text(
           lineColor={28,108,200},

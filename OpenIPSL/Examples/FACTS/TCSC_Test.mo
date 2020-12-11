@@ -113,6 +113,5 @@ The parameters are set for varying impedance TCSC. Simulate for 10 seconds.
 <li><code>TCSC.b</code></code></li>
 </ul>
 </html>"),
-    Diagram(coordinateSystem(extent={{-140,-100},{120,100}})),
-    Icon(coordinateSystem(extent={{-100,-100},{100,100}})));
+    Diagram(coordinateSystem(extent={{-140,-100},{120,100}})));
 end TCSC_Test;

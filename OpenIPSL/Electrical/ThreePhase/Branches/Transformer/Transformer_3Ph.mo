@@ -120,8 +120,6 @@ equation
   Iout = Cmat*Vin + Dmat*Vout;
 
   annotation (
-    Diagram(coordinateSystem(preserveAspectRatio=true, extent={{-100,-100},{100,
-            100}}), graphics),
     Icon(graphics={Ellipse(
           lineColor={0,0,255},
           extent={{-46,30},{8,-30}},
@@ -146,8 +144,7 @@ equation
           origin={-54,84},
           lineColor={28,108,200},
           extent={{4,18},{104,-34}},
-          textString="Three Phase Transformer")}, coordinateSystem(initialScale=
-           0.1)),
+          textString="Three Phase Transformer")}, coordinateSystem()),
     Documentation(info="<html>
 <p>This model was design to represent three-phase two-winding transformer.</p>
 <p>The user should input the copper resistance <b>R</b> and leakage reactance <b>X</b> in per unit values.

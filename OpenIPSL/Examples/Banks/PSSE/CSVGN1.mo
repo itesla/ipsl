@@ -36,7 +36,7 @@ model CSVGN1
     angle_0=-0.0050614548307836,
     P_0=0,
     Q_0=6009897)
- annotation (Placement(transformation(extent={{-10,10},{10,-10}},rotation=0,origin={40,70})));
+ annotation (Placement(transformation(extent={{-10,10},{10,-10}},origin={40,70})));
   Modelica.Blocks.Sources.RealExpression realExpression(y=SHUNT.V)
     annotation (Placement(transformation(extent={{-6,38},{14,58}})));
   Modelica.Blocks.Sources.Constant const(k=0)

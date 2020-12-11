@@ -6,35 +6,26 @@ model CapacitorBank_3Ph "Three-phase capacitor bank"
       Placement(
       transformation(
         extent={{80.0,0.0},{100.0,20.0}},
-        origin={0.0,0.0},
-        rotation=0),
+        origin={0.0,0.0}),
       iconTransformation(
         extent={{-80.0,0.0},{-60.0,20.0}},
-        origin={159,100},
-        rotation=0),
-      visible=true));
+        origin={159,100})));
   OpenIPSL.Interfaces.PwPin B(vr(start=vbr0), vi(start=vbi0)) annotation (
       Placement(
       transformation(
         extent={{-10.0,0.0},{10.0,20.0}},
-        origin={0.0,0.0},
-        rotation=0),
+        origin={0.0,0.0}),
       iconTransformation(
         extent={{-80.0,0.0},{-60.0,20.0}},
-        origin={70,100},
-        rotation=0),
-      visible=true));
+        origin={70,100})));
   OpenIPSL.Interfaces.PwPin C(vr(start=vcr0), vi(start=vci0)) annotation (
       Placement(
       transformation(
         extent={{-100.0,0.0},{-80.0,20.0}},
-        origin={0.0,0.0},
-        rotation=0),
+        origin={0.0,0.0}),
       iconTransformation(
         extent={{-80.0,0.0},{-60.0,20.0}},
-        origin={-19,100},
-        rotation=0),
-      visible=true));
+        origin={-19,100})));
 
   parameter Types.PerUnit VA=1
     "Voltage magnitude"
@@ -87,8 +78,7 @@ equation
 
   annotation (Icon(coordinateSystem(
         extent={{-100,-100},{100,100}},
-        preserveAspectRatio=true,
-        initialScale=0.1), graphics={Rectangle(
+        preserveAspectRatio=true), graphics={Rectangle(
           extent={{-100,-100},{100,100}},
           lineColor={0,0,255},
           fillColor={255,255,255},

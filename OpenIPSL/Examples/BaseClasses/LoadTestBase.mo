@@ -4,77 +4,65 @@ partial model LoadTestBase "Base class for the different load cases"
     B=0.001/2,
     G=0,
     R=0.01,
-    X=0.1) annotation (Placement(visible=true, transformation(
+    X=0.1) annotation (Placement(transformation(
         origin={9.9317,10.1643},
-        extent={{-10.0683,-9.8357},{10.0683,9.8357}},
-        rotation=0)));
+        extent={{-10.0683,-9.8357},{10.0683,9.8357}})));
   OpenIPSL.Electrical.Branches.PwLine pwLine1(
     X=0.1,
     R=0.01,
     G=0,
-    B=0.001/2) annotation (Placement(visible=true, transformation(
+    B=0.001/2) annotation (Placement(transformation(
         origin={10,-10},
-        extent={{-10,-10},{10,10}},
-        rotation=0)));
+        extent={{-10,-10},{10,10}})));
   OpenIPSL.Electrical.Branches.PwLine pwLine3(
     B=0.001/2,
     G=0,
     R=0.01,
-    X=0.1) annotation (Placement(visible=true, transformation(
+    X=0.1) annotation (Placement(transformation(
         origin={50,-10},
-        extent={{-10,-10},{10,10}},
-        rotation=0)));
+        extent={{-10,-10},{10,10}})));
   OpenIPSL.Electrical.Branches.PwLine pwLine4(
     B=0.001/2,
     G=0,
     R=0.01,
-    X=0.1) annotation (Placement(visible=true, transformation(
+    X=0.1) annotation (Placement(transformation(
         origin={50,10},
-        extent={{-10,-10},{10,10}},
-        rotation=0)));
-  Modelica.Blocks.Sources.Step Vstep1(height=0.0005, startTime=2) annotation (Placement(visible=true, transformation(
+        extent={{-10,-10},{10,10}})));
+  Modelica.Blocks.Sources.Step Vstep1(height=0.0005, startTime=2) annotation (Placement(transformation(
         origin={-84,64},
-        extent={{-4,-4},{4,4}},
-        rotation=0)));
-  Modelica.Blocks.Sources.Step Vstep2(height=-0.0005, startTime=2.1) annotation (Placement(visible=true, transformation(
+        extent={{-4,-4},{4,4}})));
+  Modelica.Blocks.Sources.Step Vstep2(height=-0.0005, startTime=2.1) annotation (Placement(transformation(
         origin={-84,50},
-        extent={{-4,-4},{4,4}},
-        rotation=0)));
-  Modelica.Blocks.Sources.Sine Vsine1(amplitude=0.001, freqHz=0.2) annotation (Placement(visible=true, transformation(
+        extent={{-4,-4},{4,4}})));
+  Modelica.Blocks.Sources.Sine Vsine1(amplitude=0.001, freqHz=0.2) annotation (Placement(transformation(
         origin={-84,32},
-        extent={{-4,-4},{4,4}},
-        rotation=0)));
+        extent={{-4,-4},{4,4}})));
   Modelica.Blocks.Sources.Sine Vsine2(
     amplitude=0.001,
     freqHz=0.2,
     startTime=5,
-    phase=3.1415926535898) annotation (Placement(visible=true, transformation(
+    phase=3.1415926535898) annotation (Placement(transformation(
         origin={-83.9311,16},
-        extent={{-3.9311,-4},{3.9311,4}},
-        rotation=0)));
+        extent={{-3.9311,-4},{3.9311,4}})));
   Modelica.Blocks.Sources.Sine Psine2(
     amplitude=0.001,
     freqHz=0.2,
     startTime=10,
-    phase=3.1415926535898) annotation (Placement(visible=true, transformation(
+    phase=3.1415926535898) annotation (Placement(transformation(
         origin={-84,-64},
-        extent={{-4,-4},{4,4}},
-        rotation=0)));
+        extent={{-4,-4},{4,4}})));
   Modelica.Blocks.Sources.Sine Psine1(
     amplitude=0.001,
     freqHz=0.2,
-    startTime=5) annotation (Placement(visible=true, transformation(
+    startTime=5) annotation (Placement(transformation(
         origin={-84,-50},
-        extent={{-4,-4},{4,4}},
-        rotation=0)));
-  Modelica.Blocks.Sources.Step Pstep2(height=-0.0005, startTime=7.1) annotation (Placement(visible=true, transformation(
+        extent={{-4,-4},{4,4}})));
+  Modelica.Blocks.Sources.Step Pstep2(height=-0.0005, startTime=7.1) annotation (Placement(transformation(
         origin={-84,-30},
-        extent={{-4,-4},{4,4}},
-        rotation=0)));
-  Modelica.Blocks.Sources.Step Pstep1(height=0.0005, startTime=7) annotation (Placement(visible=true, transformation(
+        extent={{-4,-4},{4,4}})));
+  Modelica.Blocks.Sources.Step Pstep1(height=0.0005, startTime=7) annotation (Placement(transformation(
         origin={-84,-16},
-        extent={{-4,-4},{4,4}},
-        rotation=0)));
+        extent={{-4,-4},{4,4}})));
   OpenIPSL.Electrical.Machines.PSAT.Order3 order3_Inputs_Outputs1(
     P_0=800989.8784778,
     Q_0=570163.38872796,
@@ -87,10 +75,9 @@ partial model LoadTestBase "Base class for the different load cases"
     D=0,
     xd=1.9,
     T1d0=8,
-    xq=1.7) annotation (Placement(visible=true, transformation(
+    xq=1.7) annotation (Placement(transformation(
         origin={-30,0},
-        extent={{-10,-10},{10,10}},
-        rotation=0)));
+        extent={{-10,-10},{10,10}})));
   inner OpenIPSL.Electrical.SystemBase SysData
     annotation (Placement(transformation(extent={{-100,80},{-60,100}})));
   Modelica.Blocks.Math.MultiSum sumV(nu=5) annotation (Placement(transformation(extent={{-60,30},{-40,50}})));

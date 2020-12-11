@@ -44,7 +44,6 @@ model ThermostaticallyControlled "Thload - Thermostatically Controlled Load"
   Modelica.Blocks.Interfaces.RealInput t_a "Ambient temperature"
                                           annotation (Placement(transformation(
         extent={{-20,-20},{20,20}},
-        rotation=0,
         origin={-120,-60}), iconTransformation(extent={{-140,-20},{-100,20}})));
   Modelica.Blocks.Math.Product product annotation (Placement(transformation(
         extent={{-10,-10},{10,10}},
@@ -63,7 +62,6 @@ model ThermostaticallyControlled "Thload - Thermostatically Controlled Load"
   Modelica.Blocks.Math.Gain gain2(k=K3)
                                  annotation (Placement(transformation(
         extent={{-6,-6},{6,6}},
-        rotation=0,
         origin={-36,20})));
   Modelica.Blocks.Sources.RealExpression realExpression(y=v^2)
     annotation (Placement(transformation(extent={{50,-70},{70,-50}})));
@@ -101,9 +99,7 @@ equation
           {90,-60},{90,-30},{72,-30}}, color={0,0,127}));
   connect(firstOrder.y, add.u2) annotation (Line(points={{-59,-30},{-72,-30},{-94,
           -30},{-94,34},{-82,34}}, color={0,0,127}));
-  annotation (                              Diagram(coordinateSystem(
-          preserveAspectRatio=false, extent={{-100,-100},{100,100}})),
-    Documentation(info="<html>
+  annotation (    Documentation(info="<html>
 <p>
 This load defines a dynamic load with temperature control. This
 component is initialized after the power flow solution and needs a PQ load connected

@@ -78,6 +78,5 @@ equation
     annotation (Line(points={{-48,0},{-30,0}},         color={0,0,255}));
   connect(zero.y, sCRX.VUEL) annotation (Line(points={{-40.6,-80},{-66,-80},{-66,-61}}, color={0,0,127}));
   annotation (
-    Diagram(coordinateSystem(preserveAspectRatio=false)),
 experiment(StopTime=10));
 end IEESGO;

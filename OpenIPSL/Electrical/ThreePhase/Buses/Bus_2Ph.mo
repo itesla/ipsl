@@ -40,12 +40,9 @@ equation
   annotation (Icon(coordinateSystem(
         extent={{-100,-100},{100,100}},
         preserveAspectRatio=true,
-        initialScale=0.1,
         grid={2,2}), graphics={Rectangle(
-          visible=true,
           fillPattern=FillPattern.Solid,
           extent={{-10.0,-100.0},{10.0,100.0}}),Text(
-          visible=true,
           origin={0.9738,119.0625},
           fillPattern=FillPattern.Solid,
           extent={{-39.0262,-16.7966},{39.0262,16.7966}},

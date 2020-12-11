@@ -143,8 +143,7 @@ equation
                   Line(
           points={{94,0},{100,0},{100,0}},
           color={0,0,255},
-          smooth=Smooth.None)}),                                 Diagram(coordinateSystem(preserveAspectRatio=false)),
-    Documentation(info="<html>
+          smooth=Smooth.None)}),    Documentation(info="<html>
 <p>The following documentation is adapted from
 <a href=\"modelica://OpenIPSL.UsersGuide.References\">[Milano2010], chapter 11.2.3</a>:</p>
 <blockquote>

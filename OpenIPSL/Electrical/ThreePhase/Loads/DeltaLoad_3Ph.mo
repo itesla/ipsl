@@ -6,35 +6,26 @@ model DeltaLoad_3Ph "Three-phase delta load"
       Placement(
       transformation(
         extent={{80.0,0.0},{100.0,20.0}},
-        origin={0.0,0.0},
-        rotation=0),
+        origin={0.0,0.0}),
       iconTransformation(
         extent={{-80.0,0.0},{-60.0,20.0}},
-        origin={159,100},
-        rotation=0),
-      visible=true));
+        origin={159,100})));
   OpenIPSL.Interfaces.PwPin B(vr(start=vbr0), vi(start=vbi0)) annotation (
       Placement(
       transformation(
         extent={{-10.0,0.0},{10.0,20.0}},
-        origin={0.0,0.0},
-        rotation=0),
+        origin={0.0,0.0}),
       iconTransformation(
         extent={{-80.0,0.0},{-60.0,20.0}},
-        origin={70,100},
-        rotation=0),
-      visible=true));
+        origin={70,100})));
   OpenIPSL.Interfaces.PwPin C(vr(start=vcr0), vi(start=vci0)) annotation (
       Placement(
       transformation(
         extent={{-100.0,0.0},{-80.0,20.0}},
-        origin={0.0,0.0},
-        rotation=0),
+        origin={0.0,0.0}),
       iconTransformation(
         extent={{-80.0,0.0},{-60.0,20.0}},
-        origin={-19,100},
-        rotation=0),
-      visible=true));
+        origin={-19,100})));
   parameter Integer ModelType=0 "0- Constant Power Model, 1- ZIP Model;"
     annotation (choices(choice=0 "Constant Power", choice=1 "ZIP Model"),
       Dialog(group="Power flow"));
@@ -182,7 +173,7 @@ equation
     ^2) - (Pbc*(B.vi - C.vi) - Qbc*(B.vr - C.vr))/((B.vr - C.vr)^2 + (B.vi - C.vi)
     ^2);
 
-  annotation (Icon(coordinateSystem(preserveAspectRatio=false, initialScale=0.1),
+  annotation (Icon(coordinateSystem(preserveAspectRatio=false),
         graphics={Line(points={{-100,100},{100,100},{0,-100},{-100,100}}, color=
            {28,108,200}),Text(
           origin={-24,20},

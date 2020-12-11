@@ -15,7 +15,6 @@ model WT_Test
     X=0.0333,
     G=0,
     B=0) annotation (Placement(transformation(
-        origin={0,0},
         extent={{-9.99989,-9.99997},{10,9.99997}})));
   OpenIPSL.Electrical.Branches.PwLine pwLine4(
     R=0.05,

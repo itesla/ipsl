@@ -72,14 +72,11 @@ equation
   annotation (Icon(coordinateSystem(
         extent={{-100,-100},{100,100}},
         preserveAspectRatio=false,
-        initialScale=0.1,
         grid={10,10}), graphics={Rectangle(
           fillColor={255,255,255},
           extent={{-100,-100},{100,100}},
           lineColor={0,0,0},
           fillPattern=FillPattern.Solid)}),
-      Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{
-            100,100}})),
     Documentation(info="<html>
 <p>This three-phase measurement device should be connected in series, between two other devices. The main features of this device are listed below:</p>
 <ul>

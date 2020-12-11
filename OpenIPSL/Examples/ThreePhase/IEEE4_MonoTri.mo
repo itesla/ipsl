@@ -2,25 +2,22 @@ within OpenIPSL.Examples.ThreePhase;
 model IEEE4_MonoTri "Initial conditions (power-flow) calculation of IEEE4 bus system, in hybrid positive-sequence/three-phase formulation"
   extends Modelica.Icons.Example;
   inner OpenIPSL.Electrical.SystemBase SysData(fn=60) annotation (Placement(
-        visible=true, transformation(
+        transformation(
         origin={70,84},
-        extent={{-12,-10},{12,10}},
-        rotation=0)));
+        extent={{-12,-10},{12,10}})));
   OpenIPSL.Electrical.Buses.InfiniteBus infiniteBus annotation (Placement(
-        visible=true, transformation(
+        transformation(
         origin={-90,0},
-        extent={{-10,-10},{10,10}},
-        rotation=0)));
-  OpenIPSL.Electrical.Buses.Bus Bus1 annotation (Placement(visible=true,
-        transformation(extent={{-78,-10},{-58,10}}, rotation=0)));
+        extent={{-10,-10},{10,10}})));
+  OpenIPSL.Electrical.Buses.Bus Bus1 annotation (Placement(transformation(extent={{-78,-10},{-58,10}})));
   OpenIPSL.Electrical.Branches.PwLine Line1(
     B=0,
     G=0,
     R=0.074563536332,
-    X=0.152732235479) annotation (Placement(visible=true, transformation(extent=
-           {{-56,-4},{-44,4}}, rotation=0)));
+    X=0.152732235479) annotation (Placement(transformation(extent=
+           {{-56,-4},{-44,4}})));
   OpenIPSL.Electrical.Buses.Bus Bus2(angle_0=0, v_0=1) annotation (Placement(
-        visible=true, transformation(extent={{-42,-10},{-22,10}}, rotation=0)));
+        transformation(extent={{-42,-10},{-22,10}})));
   Electrical.ThreePhase.Branches.MonoTri.Transformer_MT Transformer(
     B_0=-1.82768503568,
     B_1=-5.2872570055,
@@ -32,15 +29,13 @@ model IEEE4_MonoTri "Initial conditions (power-flow) calculation of IEEE4 bus sy
     ModelType=0,
     R=0.166666666667,
     X=1,
-    tap=1) annotation (Placement(visible=true, transformation(
+    tap=1) annotation (Placement(transformation(
         origin={-10,0},
-        extent={{-10,-10},{10,10}},
-        rotation=0)));
+        extent={{-10,-10},{10,10}})));
   Electrical.ThreePhase.Buses.Bus_3Ph Bus3
-    annotation (Placement(visible=true, transformation(
+    annotation (Placement(transformation(
         origin={24,0},
-        extent={{-10,-10},{10,10}},
-        rotation=0)));
+        extent={{-10,-10},{10,10}})));
   Electrical.ThreePhase.Branches.Lines.Line_3Ph Line2(
     Bseraa=-0.3687,
     Bserab=0.1265,
@@ -53,15 +48,13 @@ model IEEE4_MonoTri "Initial conditions (power-flow) calculation of IEEE4 bus sy
     Gserac=-0.0312,
     Gserbb=0.1989,
     Gserbc=-0.0529,
-    Gsercc=0.1598) annotation (Placement(visible=true, transformation(
+    Gsercc=0.1598) annotation (Placement(transformation(
         origin={46,0},
-        extent={{-10,-10},{10,10}},
-        rotation=0)));
+        extent={{-10,-10},{10,10}})));
   Electrical.ThreePhase.Buses.Bus_3Ph Bus4
-    annotation (Placement(visible=true, transformation(
+    annotation (Placement(transformation(
         origin={68,0},
-        extent={{-10,-10},{10,10}},
-        rotation=0)));
+        extent={{-10,-10},{10,10}})));
   Electrical.ThreePhase.Loads.WyeLoad_3Ph Load(
     ModelType=0,
     P_a=1275000,
@@ -70,7 +63,7 @@ model IEEE4_MonoTri "Initial conditions (power-flow) calculation of IEEE4 bus sy
     Q_a=790000,
     Q_b=872000,
     Q_c=781000)
-               annotation (Placement(visible=true, transformation(
+               annotation (Placement(transformation(
         origin={90,0},
         extent={{-10,-10},{10,10}},
         rotation=90)));

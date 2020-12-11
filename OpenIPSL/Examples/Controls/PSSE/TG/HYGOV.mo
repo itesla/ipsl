@@ -82,7 +82,5 @@ equation
     annotation (Line(points={{-48,0},{-30,0}},         color={0,0,255}));
   connect(sCRX.VUEL, zero.y) annotation (Line(points={{-66,-61},{-66,-80},{-40.6,-80}}, color={0,0,127}));
   annotation (
-    Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,100}})),
-    Icon(coordinateSystem(extent={{-100,-100},{100,100}})),
 experiment(StopTime=10));
 end HYGOV;

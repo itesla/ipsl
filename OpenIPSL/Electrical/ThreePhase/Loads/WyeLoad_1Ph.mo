@@ -9,13 +9,10 @@ model WyeLoad_1Ph "Single-phase load"
     ii(start=iai0)) annotation (Placement(
       transformation(
         extent={{-10.0,0.0},{10.0,20.0}},
-        origin={0.0,0.0},
-        rotation=0),
+        origin={0.0,0.0}),
       iconTransformation(
         extent={{-80.0,0.0},{-60.0,20.0}},
-        origin={70,100},
-        rotation=0),
-      visible=true));
+        origin={70,100})));
   parameter Integer ModelType=0 "0- Constant Power Model, 1- ZIP Model;";
 
   parameter Types.PerUnit VA=1
@@ -73,7 +70,7 @@ protected
 equation
   Pa = A.vr*A.ir + A.vi*A.ii;
   Qa = A.vi*A.ir - A.vr*A.ii;
-  annotation (Icon(coordinateSystem(preserveAspectRatio=false, initialScale=0.1),
+  annotation (Icon(coordinateSystem(preserveAspectRatio=false),
         graphics={Line(points={{-100,100},{100,100},{0,-100},{-100,100}}, color=
            {28,108,200}),Text(
           lineColor={28,108,200},

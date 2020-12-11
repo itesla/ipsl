@@ -18,60 +18,60 @@ model PIDGovernorDU "GE GGOV1DU General Governor Frequency Controller"
   parameter Types.TimeAging Kimw=0 "Power controller (reset) gain";
   parameter Types.PerUnit db=0 "Speed governor deadband";
   parameter Types.PerUnit Dm=0 "Mechanical damping coefficient";
-  Modelica.Blocks.Math.Gain KPGOV(k=Kpgov) annotation (Placement(visible = true, transformation(origin = {30, 0}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
+  Modelica.Blocks.Math.Gain KPGOV(k=Kpgov) annotation (Placement(transformation(origin = {30, 0}, extent = {{-10, -10}, {10, 10}})));
   Modelica.Blocks.Continuous.Integrator s2(
     k=1,
     initType=Modelica.Blocks.Types.Init.InitialOutput,
-    y_start=s20) annotation (Placement(visible = true, transformation(origin = {10, -50}, extent = {{-10, -10}, {10, 10}}, rotation = 180)));
+    y_start=s20) annotation (Placement(transformation(origin = {10, -50}, extent = {{-10, -10}, {10, 10}}, rotation = 180)));
   Modelica.Blocks.Continuous.Derivative s1(
     k=Kdgov,
     T=Tdgov,
     y_start=0,
-    initType=Modelica.Blocks.Types.Init.InitialOutput) annotation (Placement(visible = true, transformation(extent = {{20, 20}, {40, 40}}, rotation = 0)));
-  Modelica.Blocks.Math.Add3 GovernorPID annotation (Placement(visible = true, transformation(origin = {84, 1.77636e-15}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
-  Modelica.Blocks.Nonlinear.DeadZone deadZone(uMax=db, deadZoneAtInit=false) annotation (Placement(visible = true, transformation(extent = {{10, 60}, {30, 80}}, rotation = 0)));
-  Modelica.Blocks.Nonlinear.Limiter limiterSerror(uMax=maxerr, uMin=minerr) annotation (Placement(visible = true, transformation(extent = {{40, 60}, {60, 80}}, rotation = 0)));
-  Modelica.Blocks.Math.Add3 add3_2(k1=-1, k3=-1) annotation (Placement(visible = true, transformation(origin = {-10, 70}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
-  Modelica.Blocks.Math.Gain r(k=R) "Permanent droop" annotation (Placement(visible = true, transformation(origin = {-30, 10}, extent = {{-10, -10}, {10, 10}}, rotation = 90)));
-  Modelica.Blocks.Math.Add add2 annotation (Placement(visible = true, transformation(origin = {-44, 70}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
+    initType=Modelica.Blocks.Types.Init.InitialOutput) annotation (Placement(transformation(extent = {{20, 20}, {40, 40}})));
+  Modelica.Blocks.Math.Add3 GovernorPID annotation (Placement(transformation(origin = {84, 1.77636e-15}, extent = {{-10, -10}, {10, 10}})));
+  Modelica.Blocks.Nonlinear.DeadZone deadZone(uMax=db, deadZoneAtInit=false) annotation (Placement(transformation(extent = {{10, 60}, {30, 80}})));
+  Modelica.Blocks.Nonlinear.Limiter limiterSerror(uMax=maxerr, uMin=minerr) annotation (Placement(transformation(extent = {{40, 60}, {60, 80}})));
+  Modelica.Blocks.Math.Add3 add3_2(k1=-1, k3=-1) annotation (Placement(transformation(origin = {-10, 70}, extent = {{-10, -10}, {10, 10}})));
+  Modelica.Blocks.Math.Gain r(k=R) "Permanent droop" annotation (Placement(transformation(origin = {-30, 10}, extent = {{-10, -10}, {10, 10}}, rotation = 90)));
+  Modelica.Blocks.Math.Add add2 annotation (Placement(transformation(origin = {-44, 70}, extent = {{-10, -10}, {10, 10}})));
   Modelica.Blocks.Continuous.LimIntegrator s7(
     k=Kimw,
     outMax=1.1*R,
     initType=Modelica.Blocks.Types.Init.InitialOutput,
-    y_start=s70) "Power controller" annotation (Placement(visible = true, transformation(origin = {-70, 46}, extent = {{-10, -10}, {10, 10}}, rotation = 90)));
-  Modelica.Blocks.Math.Add add3(k2=-1) annotation (Placement(visible = true, transformation(origin = {-70, 18}, extent = {{-10, -10}, {10, 10}}, rotation = 90)));
+    y_start=s70) "Power controller" annotation (Placement(transformation(origin = {-70, 46}, extent = {{-10, -10}, {10, 10}}, rotation = 90)));
+  Modelica.Blocks.Math.Add add3(k2=-1) annotation (Placement(transformation(origin = {-70, 18}, extent = {{-10, -10}, {10, 10}}, rotation = 90)));
   OpenIPSL.NonElectrical.Continuous.SimpleLag s0(
     T=T_pelec,
     y_start=s00,
-    K=1) annotation (Placement(visible = true, transformation(origin = {-82, -80}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
-  Modelica.Blocks.Math.Gain KPGOV1(k=Kigov/Kpgov) annotation (Placement(visible = true, transformation(origin = {38, -50}, extent = {{-10, -10}, {10, 10}}, rotation = 180)));
-  Modelica.Blocks.Math.Add LoadlimiterPI2(k1=-1) annotation (Placement(visible = true, transformation(origin = {66, -50}, extent = {{-10, 10}, {10, -10}}, rotation = 180)));
+    K=1) annotation (Placement(transformation(origin = {-82, -80}, extent = {{-10, -10}, {10, 10}})));
+  Modelica.Blocks.Math.Gain KPGOV1(k=Kigov/Kpgov) annotation (Placement(transformation(origin = {38, -50}, extent = {{-10, -10}, {10, 10}}, rotation = 180)));
+  Modelica.Blocks.Math.Add LoadlimiterPI2(k1=-1) annotation (Placement(transformation(origin = {66, -50}, extent = {{-10, 10}, {10, -10}}, rotation = 180)));
   Modelica.Blocks.Interfaces.RealInput PELEC
     "Machine electrical power (pu)"
-    annotation (Placement(visible = true,transformation(origin = {-120, -80}, extent = {{-20, -20}, {20, 20}}, rotation = 0), iconTransformation(origin = {-120, -80}, extent = {{-20, -20}, {20, 20}}, rotation = 0)));
+    annotation (Placement(transformation(origin = {-120, -80}, extent = {{-20, -20}, {20, 20}}), iconTransformation(origin = {-120, -80}, extent = {{-20, -20}, {20, 20}})));
   Modelica.Blocks.Interfaces.RealInput PMW_SET
     "Supervisory Load Controller Setpoint"
-    annotation (Placement(visible = true,transformation(origin = {-120, 1.77636e-15}, extent = {{-20, -20}, {20, 20}}, rotation = 0), iconTransformation(origin = {-120, -1.77636e-15}, extent = {{-20, -20}, {20, 20}}, rotation = 0)));
-  Modelica.Blocks.Interfaces.RealInput P_REF annotation (Placement(visible = true,transformation(origin = {-120, 80}, extent = {{-20, -20}, {20, 20}}, rotation = 0), iconTransformation(origin = {-120, 80}, extent = {{-20, -20}, {20, 20}}, rotation = 0)));
+    annotation (Placement(transformation(origin = {-120, 1.77636e-15}, extent = {{-20, -20}, {20, 20}}), iconTransformation(origin = {-120, -1.77636e-15}, extent = {{-20, -20}, {20, 20}})));
+  Modelica.Blocks.Interfaces.RealInput P_REF annotation (Placement(transformation(origin = {-120, 80}, extent = {{-20, -20}, {20, 20}}), iconTransformation(origin = {-120, 80}, extent = {{-20, -20}, {20, 20}})));
   Modelica.Blocks.Interfaces.RealInput SPEED
     "Machine speed deviation from nominal (pu)"
-    annotation (Placement(visible = true,transformation(origin = {-1.77636e-15, 120}, extent = {{-20, -20}, {20, 20}}, rotation = -90), iconTransformation(origin = {1.77636e-15, 120}, extent = {{-20, -20}, {20, 20}}, rotation = -90)));
-  Modelica.Blocks.Interfaces.RealInput VSTROKE "Valve Stroke" annotation (Placement(visible = true,transformation(
+    annotation (Placement(transformation(origin = {-1.77636e-15, 120}, extent = {{-20, -20}, {20, 20}}, rotation = -90), iconTransformation(origin = {1.77636e-15, 120}, extent = {{-20, -20}, {20, 20}}, rotation = -90)));
+  Modelica.Blocks.Interfaces.RealInput VSTROKE "Valve Stroke" annotation (Placement(transformation(
         origin={-40,-120},extent={{-20, -20},{20, 20}},
         rotation=90), iconTransformation(
         origin={-40,-120},extent={{-20, -20},{20, 20}},
         rotation=90)));
 
   Modelica.Blocks.Interfaces.RealInput GOVOUT1
-    "Governor Output before Limiter"                                            annotation (Placement(visible = true,transformation(
+    "Governor Output before Limiter"                                            annotation (Placement(transformation(
         origin={40,-120},extent={{-20, -20},{20, 20}},
         rotation=90),iconTransformation(
         origin={40,-120},extent={{-20, -20},{20, 20}},
         rotation=90)));
 
-  Modelica.Blocks.Interfaces.RealOutput FSRN annotation (Placement(visible = true,transformation(origin = {110, 1.77636e-15}, extent = {{-10, -10}, {10, 10}}, rotation = 0), iconTransformation(origin = {110, 0}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
+  Modelica.Blocks.Interfaces.RealOutput FSRN annotation (Placement(transformation(origin = {110, 1.77636e-15}, extent = {{-10, -10}, {10, 10}}), iconTransformation(origin = {110, 0}, extent = {{-10, -10}, {10, 10}})));
   OpenIPSL.Electrical.Controls.PSSE.TG.BaseClasses.GGOV1.R_select rSELECT(Rselect = Rselect) annotation (
-    Placement(visible = true, transformation(origin = {-30, -24}, extent = {{-10, -10}, {10, 10}}, rotation = 90)));
+    Placement(transformation(origin = {-30, -24}, extent = {{-10, -10}, {10, 10}}, rotation = 90)));
 protected
   parameter Types.PerUnit Pe0(fixed=false);
   parameter Types.PerUnit Pmech0(fixed=false);

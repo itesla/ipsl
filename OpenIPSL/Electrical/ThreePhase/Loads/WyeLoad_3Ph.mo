@@ -6,35 +6,26 @@ model WyeLoad_3Ph "Three-phase wye load"
       Placement(
       transformation(
         extent={{80.0,0.0},{100.0,20.0}},
-        origin={0.0,0.0},
-        rotation=0),
+        origin={0.0,0.0}),
       iconTransformation(
         extent={{-80.0,0.0},{-60.0,20.0}},
-        origin={159,100},
-        rotation=0),
-      visible=true));
+        origin={159,100})));
   OpenIPSL.Interfaces.PwPin B(vr(start=vbr0), vi(start=vbi0)) annotation (
       Placement(
       transformation(
         extent={{-10.0,0.0},{10.0,20.0}},
-        origin={0.0,0.0},
-        rotation=0),
+        origin={0.0,0.0}),
       iconTransformation(
         extent={{-80.0,0.0},{-60.0,20.0}},
-        origin={70,100},
-        rotation=0),
-      visible=true));
+        origin={70,100})));
   OpenIPSL.Interfaces.PwPin C(vr(start=vcr0), vi(start=vci0)) annotation (
       Placement(
       transformation(
         extent={{-100.0,0.0},{-80.0,20.0}},
-        origin={0.0,0.0},
-        rotation=0),
+        origin={0.0,0.0}),
       iconTransformation(
         extent={{-80.0,0.0},{-60.0,20.0}},
-        origin={-19,100},
-        rotation=0),
-      visible=true));
+        origin={-19,100})));
   parameter Integer ModelType=0 "0- Constant Power Model, 1- ZIP Model;"
     annotation (choices(choice=0 "Constant Power", choice=1 "ZIP Model"),
       Dialog(group="Power flow"));
@@ -143,7 +134,7 @@ equation
   Qb = B.vi*B.ir - B.vr*B.ii;
   Pc = C.vr*C.ir + C.vi*C.ii;
   Qc = C.vi*C.ir - C.vr*C.ii;
-  annotation (Icon(coordinateSystem(preserveAspectRatio=false, initialScale=0.1),
+  annotation (Icon(coordinateSystem(preserveAspectRatio=false),
         graphics={Line(points={{-100,100},{100,100},{0,-100},{-100,100}}, color=
            {28,108,200}),Text(
           lineColor={28,108,200},

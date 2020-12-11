@@ -11,59 +11,44 @@ class GovHydroIEEE0
     K=K,
     T1=T2,
     T2=T1,
-    y_start=0) annotation (Placement(visible=true, transformation(
+    y_start=0) annotation (Placement(transformation(
         origin={-70,0},
-        extent={{-10,-10},{10,10}},
-        rotation=0)));
-  Modelica.Blocks.Math.Add difference(k2=-1) annotation (Placement(visible=true, transformation(
-        origin={0,0},
-        extent={{-10,-10},{10,10}},
-        rotation=0)));
-  Modelica.Blocks.Continuous.TransferFunction GovernorB(a={T3,1}, b={1}) annotation (Placement(visible=true, transformation(
+        extent={{-10,-10},{10,10}})));
+  Modelica.Blocks.Math.Add difference(k2=-1) annotation (Placement(transformation(
+        extent={{-10,-10},{10,10}})));
+  Modelica.Blocks.Continuous.TransferFunction GovernorB(a={T3,1}, b={1}) annotation (Placement(transformation(
         origin={-40,0},
-        extent={{-10,-10},{10,10}},
-        rotation=0)));
+        extent={{-10,-10},{10,10}})));
   Modelica.Blocks.Continuous.TransferFunction waterway(
     a={0.5*T4,1},
     b={-T4,1},
-    y_start=0) "Turbine and Waterway transferfunction" annotation (Placement(visible=true, transformation(
+    y_start=0) "Turbine and Waterway transferfunction" annotation (Placement(transformation(
         origin={74,0},
-        extent={{-10,-10},{10,10}},
-        rotation=0)));
-  Modelica.Blocks.Nonlinear.Limiter limiter(uMax=Pmax, uMin=Pmin) annotation (Placement(visible=true, transformation(
+        extent={{-10,-10},{10,10}})));
+  Modelica.Blocks.Nonlinear.Limiter limiter(uMax=Pmax, uMin=Pmin) annotation (Placement(transformation(
         origin={40,0},
-        extent={{-10,-10},{10,10}},
-        rotation=0)));
+        extent={{-10,-10},{10,10}})));
   Modelica.Blocks.Interfaces.RealInput SPEED annotation (Placement(
-      visible=true,
       transformation(
         origin={-120,0},
-        extent={{-20,-20},{20,20}},
-        rotation=0),
+        extent={{-20,-20},{20,20}}),
       iconTransformation(
         origin={-120,0},
-        extent={{-20,-20},{20,20}},
-        rotation=0)));
+        extent={{-20,-20},{20,20}})));
   Modelica.Blocks.Interfaces.RealInput Pref annotation (Placement(
-      visible=true,
       transformation(
         origin={-120,80},
-        extent={{-20,-20},{20,20}},
-        rotation=0),
+        extent={{-20,-20},{20,20}}),
       iconTransformation(
         origin={-120,80},
-        extent={{-20,-20},{20,20}},
-        rotation=0)));
+        extent={{-20,-20},{20,20}})));
   Modelica.Blocks.Interfaces.RealOutput PMECH annotation (Placement(
-      visible=true,
       transformation(
         origin={110,0},
-        extent={{-10,-10},{10,10}},
-        rotation=0),
+        extent={{-10,-10},{10,10}}),
       iconTransformation(
         origin={110,0},
-        extent={{-10,-10},{10,10}},
-        rotation=0)));
+        extent={{-10,-10},{10,10}})));
 equation
   connect(waterway.y, PMECH) annotation (Line(points={{85,0},{102,0},{102,0},{110,0}}, color={0,0,127}));
   connect(limiter.y, waterway.u) annotation (Line(points={{51,0},{60,0},{60,0},{62,0}}, color={0,0,127}));
@@ -90,7 +75,6 @@ equation
           textString="PMECH",
           lineColor={28,108,200}),
         Rectangle(
-          origin={0,0},
           lineThickness=2,
           borderPattern=BorderPattern.Raised,
           extent={{-100,100},{100,-100}})}),

@@ -2,20 +2,17 @@ within OpenIPSL.Examples.ThreePhase;
 model IEEE4 "Initial conditions (power-flow) calculation of IEEE4 bus system, in full three-phase formulation"
   extends Modelica.Icons.Example;
   inner OpenIPSL.Electrical.SystemBase SysData(fn=60) annotation (Placement(
-        visible=true, transformation(
+        transformation(
         origin={70,84},
-        extent={{-12,-10},{12,10}},
-        rotation=0)));
+        extent={{-12,-10},{12,10}})));
   Electrical.ThreePhase.Buses.InfiniteBus InfiniteBus annotation (Placement(
-        visible=true, transformation(
+        transformation(
         origin={-88,0},
-        extent={{-10,-10},{10,10}},
-        rotation=0)));
+        extent={{-10,-10},{10,10}})));
   Electrical.ThreePhase.Buses.Bus_3Ph Bus1
-    annotation (Placement(visible=true, transformation(
+    annotation (Placement(transformation(
         origin={-66,0},
-        extent={{-10,-10},{10,10}},
-        rotation=0)));
+        extent={{-10,-10},{10,10}})));
   Electrical.ThreePhase.Branches.Lines.Line_3Ph Line1(
     Bseraa=-3.9929,
     Bserab=1.5824,
@@ -28,22 +25,19 @@ model IEEE4 "Initial conditions (power-flow) calculation of IEEE4 bus system, in
     Gserac=-0.5004,
     Gserbb=2.0690,
     Gserbc=-0.7714,
-    Gsercc=1.6050) annotation (Placement(visible=true, transformation(
+    Gsercc=1.6050) annotation (Placement(transformation(
         origin={-44,0},
-        extent={{-10,-10},{10,10}},
-        rotation=0)));
+        extent={{-10,-10},{10,10}})));
   Electrical.ThreePhase.Buses.Bus_3Ph Bus2
-    annotation (Placement(visible=true, transformation(
+    annotation (Placement(transformation(
         origin={-22,0},
-        extent={{-10,-10},{10,10}},
-        rotation=0)));
+        extent={{-10,-10},{10,10}})));
   Electrical.ThreePhase.Buses.Bus_3Ph Bus3(
     angle_A=-30,
     angle_B=-150,
-    angle_C=90) annotation (Placement(visible=true, transformation(
+    angle_C=90) annotation (Placement(transformation(
         origin={24,0},
-        extent={{-10,-10},{10,10}},
-        rotation=0)));
+        extent={{-10,-10},{10,10}})));
   Electrical.ThreePhase.Branches.Lines.Line_3Ph Line2(
     Bseraa=-0.3687,
     Bserab=0.1265,
@@ -56,17 +50,15 @@ model IEEE4 "Initial conditions (power-flow) calculation of IEEE4 bus system, in
     Gserac=-0.0312,
     Gserbb=0.1989,
     Gserbc=-0.0529,
-    Gsercc=0.1598) annotation (Placement(visible=true, transformation(
+    Gsercc=0.1598) annotation (Placement(transformation(
         origin={46,0},
-        extent={{-10,-10},{10,10}},
-        rotation=0)));
+        extent={{-10,-10},{10,10}})));
   Electrical.ThreePhase.Buses.Bus_3Ph Bus4(
     angle_A=-30,
     angle_B=-150,
-    angle_C=90) annotation (Placement(visible=true, transformation(
+    angle_C=90) annotation (Placement(transformation(
         origin={68,0},
-        extent={{-10,-10},{10,10}},
-        rotation=0)));
+        extent={{-10,-10},{10,10}})));
   Electrical.ThreePhase.Loads.WyeLoad_3Ph Load(
     AngA=0,
     ModelType=0,
@@ -75,7 +67,7 @@ model IEEE4 "Initial conditions (power-flow) calculation of IEEE4 bus system, in
     P_b=1800000,
     Q_b=872000,
     P_c=2375000,
-    Q_c=781000) annotation (Placement(visible=true, transformation(
+    Q_c=781000) annotation (Placement(transformation(
         origin={90,0},
         extent={{-10,-10},{10,10}},
         rotation=90)));
@@ -83,10 +75,8 @@ model IEEE4 "Initial conditions (power-flow) calculation of IEEE4 bus system, in
     Connection=0,
     R=0.16666667,
     X=1,
-    tap=1) annotation (Placement(visible=true, transformation(
-        origin={0,0},
-        extent={{-10,-10},{10,10}},
-        rotation=0)));
+    tap=1) annotation (Placement(transformation(
+        extent={{-10,-10},{10,10}})));
 equation
   connect(Trafo.Cout, Bus3.p3) annotation (Line(points={{9,-9},{24,-9},{24,-9},
           {24,-9}}, color={0,0,255}));
