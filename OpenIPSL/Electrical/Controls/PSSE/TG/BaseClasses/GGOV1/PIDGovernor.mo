@@ -164,12 +164,12 @@ equation
           extent={{20,-80},{60,-100}},
           textString="GOVOUT1")}),
     Documentation(info="<html>
-<p>The following documentation is adapted from 
+<p>The following documentation is adapted from
 <a href=\"modelica://OpenIPSL.UsersGuide.References\">[PSSE-Models], chapter 7.12</a>:</p>
 <blockquote>
 <p>
-Frequency control system for the general purpose Turbine/Governor models GGOV1. 
-Note that four feedback variables can be chosen for the droop control. 
+Frequency control system for the general purpose Turbine/Governor models GGOV1.
+Note that four feedback variables can be chosen for the droop control.
 If the turbine is set to be isochronous, it is necessary to set the permanent droop to zero.
 </p>
 </blockquote>

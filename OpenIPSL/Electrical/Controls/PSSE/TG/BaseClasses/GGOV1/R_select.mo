@@ -37,11 +37,11 @@ equation
 -2 - governor output
 "),                                                          Rectangle(lineColor = {0, 0, 255}, extent = {{-100, 100}, {100, -100}})}),
     Documentation(info="<html>
-<p>The following documentation is adapted from 
+<p>The following documentation is adapted from
 <a href=\"modelica://OpenIPSL.UsersGuide.References\">[PSSE-Models], chapter 7.12</a>:</p>
 <blockquote>
 <p>
-This model allows the user to determine which feedback signal will be used in the droop control for GGOV1 and GGOV1DU models. 
+This model allows the user to determine which feedback signal will be used in the droop control for GGOV1 and GGOV1DU models.
 Note that the permanent droop <code>r</code> should also be set to 0 if the isochronous mode is chosen (0 is selected).
 </p>
 </blockquote>

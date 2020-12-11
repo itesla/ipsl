@@ -200,7 +200,7 @@ equation
         Line(points={{0,-40},{20,-40}}, color={0,0,255})}),
                                         Documentation(info="<html>
 <p>
-A TCSC Regulator according to 
+A TCSC Regulator according to
 <a href=\"modelica://OpenIPSL.UsersGuide.References\">[Milano2010], chapter 20.2</a>.
 </p>
 </html>", revisions="<html>

@@ -95,7 +95,7 @@ equation
           borderPattern=BorderPattern.Raised,
           extent={{-100,100},{100,-100}})}),
  Documentation(info="<html>
-<p>This diagram is supplied to document the CIM interpretation of the 
+<p>This diagram is supplied to document the CIM interpretation of the
 model given in <a href=\"modelica://OpenIPSL.UsersGuide.References\">[IEEE1973]</a>.
 However the general recommondation is to use alternative more sophisticated implementations like
 <a href=\"modelica://OpenIPSL.Electrical.Controls.PSSE.TG.HYGOV\">HYGOV</a> instead.
@@ -113,7 +113,7 @@ However the general recommondation is to use alternative more sophisticated impl
 </tr>
 <tr>
 <td><p>Author</p></td>
-<td><p><a href=\"https://github.com/dietmarw\">@dietmarw</a>, 
+<td><p><a href=\"https://github.com/dietmarw\">@dietmarw</a>,
        <a href=\"https://github.com/marcelofcastro\">@marcelofcastro</a>
        (original: Mengjia Zhang, SmarTS Lab)</p></td>
 </tr>

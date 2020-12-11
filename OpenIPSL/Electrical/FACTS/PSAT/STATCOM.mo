@@ -125,13 +125,13 @@ equation
           lineColor={0,0,255}),
         Line(points={{-80,-4},{-80,-20},{-52,-20}}, color={0,0,255})}),
     Documentation(info="<html>
-<p>The following documentation is adapted from 
+<p>The following documentation is adapted from
 <a href=\"modelica://OpenIPSL.UsersGuide.References\">[Milano2010], chapter 20.3</a>:</p>
 <blockquote>
-<p>The implemented STATCOM model is a current injection model [...]. 
+<p>The implemented STATCOM model is a current injection model [...].
 The STATCOM current is always kept in quadrature in relation
 to the bus voltage so that only reactive power is exchanged between the ac system
-and the STATCOM. 
+and the STATCOM.
 </p>
 </blockquote>
 </html>", revisions="<html>
@@ -145,7 +145,7 @@ and the STATCOM.
 </tr>
 <tr>
 <td><p>Author</p></td>
-<td><p><a href=\"https://github.com/dietmarw\">@dietmarw</a>, 
+<td><p><a href=\"https://github.com/dietmarw\">@dietmarw</a>,
        <a href=\"https://github.com/marcelofcastro\">@marcelofcastro</a>
        (original: MAA Murad, SmarTS Lab)</p></td>
 </tr>

@@ -115,9 +115,9 @@ equation
       Documentation(info="<html>
 <p>This test system aims to show how the hybrid positive-sequence/three-phase transformer should be used for simulation.
 Its results should be compared to the example IEEE4, in order to show what to expect from the hybrid transformer.
-The MonoTri device interconnects to parts of the system which are modeled with different formulations. 
+The MonoTri device interconnects to parts of the system which are modeled with different formulations.
 The first two buses are positive-sequence only while buses three and four are three-phase buses.</p>
-<p>This example, however, is not a dynamic system, and therefore the voltages and angles from all buses are static during the simulation. 
+<p>This example, however, is not a dynamic system, and therefore the voltages and angles from all buses are static during the simulation.
 The simulation just calculates the initialization variables, which are the solution for the hybrid positive-sequence/three-phase power flow.
 The results can be verified against any tool that calculates a hybrid positive-sequence/three-phase power-flow.</p>
 <p> </p>

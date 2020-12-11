@@ -20,11 +20,11 @@ equation
                                                                    lineColor={0,
           0,255})}),
     Documentation(info="<html>
-<p>The following documentation is adapted from 
+<p>The following documentation is adapted from
 <a href=\"modelica://OpenIPSL.UsersGuide.References\">[PSSE-Models], chapter 7.12</a>:</p>
 <blockquote>
 <p>
-This flag is used to determine if the fluid flow depends on the speed of the machine. 
+This flag is used to determine if the fluid flow depends on the speed of the machine.
 Gas turbines have fluid flow independent from speed and thus the flag should be set to 0.
 Diesel engines on the other hand have their fluid flow proportional on the speed. In this case, the flag should be set to 1.
 </p>

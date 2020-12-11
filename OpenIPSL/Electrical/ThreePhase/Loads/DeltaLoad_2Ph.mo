@@ -125,10 +125,10 @@ equation
           textString="PQ/ZIP Load")}),
           Documentation(info="<html>
 <p>This is a two-phase delta load model. The model allows the user to represent active and reactive power being consumed between two phases.</p>
-<p>The user needs to input the active (<b><i>P_ab</i></b>) and reactive (<b><i>Q_ab</i></b>) powera consumed between phases one and two (A and B).</p> 
-<p>In addition, the model allows the load to be represented as constant power, or as a ZIP model. 
-In the first approach, the power consumed between the two phases is kept constant throughout simulation. 
-The latter approach allows the load to be represented as a sum of three terms: constant impedance, constant current and constant power. 
+<p>The user needs to input the active (<b><i>P_ab</i></b>) and reactive (<b><i>Q_ab</i></b>) powera consumed between phases one and two (A and B).</p>
+<p>In addition, the model allows the load to be represented as constant power, or as a ZIP model.
+In the first approach, the power consumed between the two phases is kept constant throughout simulation.
+The latter approach allows the load to be represented as a sum of three terms: constant impedance, constant current and constant power.
 This means that, depending on voltage levels supplied, the load will consume a different power value.</p>
 </html>"));
 end DeltaLoad_2Ph;

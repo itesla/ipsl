@@ -89,7 +89,7 @@ Limiter"), Text(
           extent={{-20,-80},{20,-100}},
           textString="PELEC")}),
     Documentation(info = "<html>
-<p>The following documentation is adapted from 
+<p>The following documentation is adapted from
 <a href=\"modelica://OpenIPSL.UsersGuide.References\">[PSSE-Models], chapter 7.13</a>:</p>
 <blockquote>
 <p>

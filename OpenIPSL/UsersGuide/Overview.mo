@@ -16,7 +16,7 @@ The <b>OpenIPSL</b> has, basically, six packages: Examples, Electrical, Nonelect
 </p>
 
 <p>
-The <b>Electrical</b> package has many other subpackages that are briefly described here. 
+The <b>Electrical</b> package has many other subpackages that are briefly described here.
 It also contains one model, <code>SystemBase</code>, which is going to be explained later in <a href=\"modelica://OpenIPSL.UsersGuide.GettingStarted\">Getting Started</a>.
 Within each subpakcage, the user will find models grouped into software tools from which each model design was extracted.
 </p>

@@ -125,11 +125,11 @@ equation
           textString="PQ/ZIP Load")}),
           Documentation(info="<html>
 <p>This is a two-phase wye load model.</p>
-<p>The user needs to input the active (<b><i>P_a</i></b> and <b><i>P_b</i></b>) and reactive (<b><i>Q_a</i></b> and <b><i>Q_b</i></b>) powers consumed by each of the two phases. 
-Since the values come from independent parameters, the model allows the representation of unbalanced loads.</p> 
-<p>In addition, the model allows the load to be represented as constant power, or as a ZIP model. 
-In the first approach, the powers consumed by each phase are kept constant throughout simulation. 
-The latter approach allows the load to be represented as a sum of three terms: constant impedance, constant current and constant power. 
+<p>The user needs to input the active (<b><i>P_a</i></b> and <b><i>P_b</i></b>) and reactive (<b><i>Q_a</i></b> and <b><i>Q_b</i></b>) powers consumed by each of the two phases.
+Since the values come from independent parameters, the model allows the representation of unbalanced loads.</p>
+<p>In addition, the model allows the load to be represented as constant power, or as a ZIP model.
+In the first approach, the powers consumed by each phase are kept constant throughout simulation.
+The latter approach allows the load to be represented as a sum of three terms: constant impedance, constant current and constant power.
 This means that, depending on voltage levels supplied, the load will consume different values of power.</p>
 </html>"));
 end WyeLoad_2Ph;

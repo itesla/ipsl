@@ -121,7 +121,7 @@ equation
           extent={{-58,62},{52,-64}},
           lineColor={0,0,255},
           textString="GENSAE")}),
-    Documentation(info="<html>Salient Pole Generator represented by equal mutual inductance rotor modeling. 
+    Documentation(info="<html>Salient Pole Generator represented by equal mutual inductance rotor modeling.
     The model is the same as GENSAL model with the exception that an exponential function is used for saturation.</html>",
     revisions="<html><table cellspacing=\"1\" cellpadding=\"1\" border=\"1\">
 <tr>

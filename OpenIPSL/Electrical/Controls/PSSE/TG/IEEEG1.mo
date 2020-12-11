@@ -168,7 +168,7 @@ equation
           extent={{-100,160},{100,100}},
           lineColor={28,108,200},
           textString="IEEEG1")}),
-    Documentation(info="<html>Governor IEEEG1, IEEG1_GE and 
+    Documentation(info="<html>Governor IEEEG1, IEEG1_GE and
     IEEEG1D IEEE Type 1 Speed-Governor Model.</html>",
     revisions="<html>
 <table cellspacing=\"1\" cellpadding=\"1\" border=\"1\">

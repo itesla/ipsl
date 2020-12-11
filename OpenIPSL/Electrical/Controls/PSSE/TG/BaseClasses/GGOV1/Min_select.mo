@@ -17,7 +17,7 @@ equation
 select"),Rectangle(extent={{-100,100},{100,-100}},
                                                  lineColor={0,0,255})}),
     Documentation(info="<html>
-<p>The following documentation is adapted from 
+<p>The following documentation is adapted from
 <a href=\"modelica://OpenIPSL.UsersGuide.References\">[PSSE-Models], chapter 7.12</a>:</p>
 <blockquote>
 <p>

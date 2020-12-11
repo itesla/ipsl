@@ -7,7 +7,7 @@ model Contact "Contact"
 <dd>&nbsp;&nbsp;</dd>
 <dt>The development of the library is organized by:</dt>
 <dd><a href=\"https://faculty.rpi.edu/node/36204\">Luigi Vanfretti</a></dd>
-<dd>Associate Professor</dd> 
+<dd>Associate Professor</dd>
 <dd>Department of Electrical, Computer, and Systems Engineering</dd>
 <dd>Rensselaer Polytechnic Institute</dd>
 <dd>110 8th St, Troy, NY 12180</dd>

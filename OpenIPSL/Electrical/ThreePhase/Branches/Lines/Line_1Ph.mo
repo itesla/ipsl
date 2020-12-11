@@ -47,7 +47,7 @@ equation
         preserveAspectRatio=true,
         initialScale=0.1)),
     Documentation(info="<html>
-<p>This model was design to represent single-phase power line, modeled as a pi-element.</p> 
+<p>This model was design to represent single-phase power line, modeled as a pi-element.</p>
 <p>The user should input the series conductance and susceptance, and half shunt susceptance (line charging).</p>
 <p>Based on this set of parameters, the pi-equivalent impedance matrices are calculated and the power line equation is assembled.</p>
 </html>"));

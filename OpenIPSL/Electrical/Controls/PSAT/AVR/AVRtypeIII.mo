@@ -98,7 +98,7 @@ equation
 </tr>
 </table>
 </html>", info="<html>
-<p>See also <a href=\"modelica://OpenIPSL.UsersGuide.References\">[Milano2013], section 18.3.3</a> 
+<p>See also <a href=\"modelica://OpenIPSL.UsersGuide.References\">[Milano2013], section 18.3.3</a>
  or <a href=\"modelica://OpenIPSL.UsersGuide.References\">[Milano2010], chapter 16.2.3</a>.</p>
 </html>"),
     Diagram(coordinateSystem(extent={{-120,-120},{120,120}})));

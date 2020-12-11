@@ -148,7 +148,7 @@ equation
 <p>This test system aims to show how a very small three-phase system should be assembled for simulation.
  Its results should be compared to the example IEEE4_MonoTri, in order to show what to expect from the hybrid transformer.
  Here, all buses are modeled as three-phase buses.</p>
-<p>This example is not a dynamic system, and therefore the voltages and angles from all buses are static during the simulation. 
+<p>This example is not a dynamic system, and therefore the voltages and angles from all buses are static during the simulation.
 The simulation just calculates the initialization variables, which are the solution for the three-phase power flow.
 The results can be verified against any tool that calculates a three-phase power-flow.</p>
 <p> </p>

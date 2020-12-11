@@ -69,7 +69,7 @@ equation
   annotation (
 experiment(StopTime=10),Documentation(info="<html>
 <p>
-Simulate for 10 seconds. 
+Simulate for 10 seconds.
 </p>
 <p>Variables of interest:</p>
 <ul>

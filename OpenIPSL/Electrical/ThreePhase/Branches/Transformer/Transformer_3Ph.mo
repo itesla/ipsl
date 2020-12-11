@@ -149,13 +149,13 @@ equation
           textString="Three Phase Transformer")}, coordinateSystem(initialScale=
            0.1)),
     Documentation(info="<html>
-<p>This model was design to represent three-phase two-winding transformer.</p> 
+<p>This model was design to represent three-phase two-winding transformer.</p>
 <p>The user should input the copper resistance <b>R</b> and leakage reactance <b>X</b> in per unit values.
 The user should also input the tap value, which is the relation between primary and secondary voltage levels, but in per unit.
 Finally, the user should select the transformer three-phase connection.</p>
 <p>Based on this set of parameters, the pi-equivalent impedance matrices are calculated and the transformer equation is assembled.
 The transformer does not take into account excitation branch, since it is often neglected in transient-stability studies.</p>
 <p>Primary side is represented by pins <b><i>Ain</i></b>, <b><i>Bin</i></b>, and <b><i>Cin</i></b>.
-Secondary side is represented by pins <b><i>Aout</i></b>, <b><i>Bout</i></b>, and <b><i>Cout</i></b></p> 
+Secondary side is represented by pins <b><i>Aout</i></b>, <b><i>Bout</i></b>, and <b><i>Cout</i></b></p>
 </html>"));
 end Transformer_3Ph;

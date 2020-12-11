@@ -7,7 +7,7 @@ model References "References"
 <td>[IEEE1968]</td>
 <td>IEEE:
         &quot;Computer representation of excitation systems&quot;.
-        IEEE Transactions on Power Apparatus and Systems, Vol PAS-87, 1460–1464, 
+        IEEE Transactions on Power Apparatus and Systems, Vol PAS-87, 1460–1464,
         No 6, June 1968.
          <a href=\"https://doi.org/10.1109/TPAS.1968.292114\">DOI: 10.1109/TPAS.1968.292114</a>
 </td>
@@ -16,7 +16,7 @@ model References "References"
 <td>[IEEE1973]</td>
 <td>IEEE:
         &quot;Dynamic Models for Steam and Hydro Turbines in Power System Studies&quot;,
-        in IEEE Transactions on Power Apparatus and Systems, volume PAS-92, issue 6, IEEE Report 1973, 
+        in IEEE Transactions on Power Apparatus and Systems, volume PAS-92, issue 6, IEEE Report 1973,
         <a href=\"https://doi.org/10.1109/TPAS.1973.293570\">DOI: 10.1109/TPAS.1973.293570</a>
 </td>
 </tr>
@@ -24,14 +24,14 @@ model References "References"
 <td>[IEEE1981]</td>
 <td>IEEE:
         &quot;Excitation System Models for Power System Stability Studies&quot;,
-        in IEEE Transactions on Power Apparatus and Systems, IEEE Report 1981, 
+        in IEEE Transactions on Power Apparatus and Systems, IEEE Report 1981,
         <a href=\"https://doi.org/10.1109/TPAS.1981.316906\">DOI: 10.1109/TPAS.1981.316906</a>
 </td>
 </tr>
 <tr>
 <td>[IEEE1992]</td>
 <td>IEEE:
-        &quot;421.5-1992 - IEEE Recommended Practice for Excitation System Models 
+        &quot;421.5-1992 - IEEE Recommended Practice for Excitation System Models
         for Power System Stability Studies&quot;,
         IEEE Standard 1992,
         <a href=\"https://doi.org/10.1109/IEEESTD.1992.106975\">DOI: 10.1109/IEEESTD.1992.106975</a>
@@ -40,7 +40,7 @@ model References "References"
 <tr>
 <td>[IEEE2005]</td>
 <td>IEEE:
-        &quot;421.5-2005 - IEEE Recommended Practice for Excitation System Models 
+        &quot;421.5-2005 - IEEE Recommended Practice for Excitation System Models
         for Power System Stability Studies&quot;,
         IEEE Standard 2005,
         <a href=\"https://doi.org/10.1109/IEEESTD.2006.99499\">DOI: 10.1109/IEEESTD.2006.99499</a>
@@ -57,7 +57,7 @@ model References "References"
 <tr>
 <td>[IEEE2016]</td>
 <td>IEEE:
-        &quot;421.5-2016 - IEEE Recommended Practice for Excitation System Models 
+        &quot;421.5-2016 - IEEE Recommended Practice for Excitation System Models
         for Power System Stability Studies&quot;,
         IEEE Standard 2016,
         <a href=\"https://doi.org/10.1109/IEEESTD.2016.7553421\">DOI: 10.1109/IEEESTD.2016.7553421</a>
@@ -67,7 +67,7 @@ model References "References"
 <td>[Milano2010]</td>
 <td>Federico Milano:
         &quot;Power System Modelling and Scripting&quot;,
-        Springer 2010, 
+        Springer 2010,
         <a href=\"https://www.springer.com/gp/book/9783642136689\">ISBN 978-3-642-13668-9</a>
 </td>
 </tr>

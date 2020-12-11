@@ -25,7 +25,7 @@ equation
   connect(phaseShiftingTransformer.n, B2.p) annotation (Line(points={{11,0},{30,0}}, color={0,0,255}));
   annotation (experiment(StopTime=10000), Documentation(info="<html>
 <p>
-This model needs to be simulated for at least 10,000 seconds. 
+This model needs to be simulated for at least 10,000 seconds.
 </p>
 <p>Variables of interest:</p>
 <ul>

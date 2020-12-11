@@ -11,7 +11,7 @@ Here are some naming conventions that we try to obey:
 </p>
 <ul>
 <li> Names of the parameters and variables should correspond to those found in the respective documentation.</li>
-<li> Subscript should be denoted in Modelica with underscore, e.g., <code>T_r</code> 
+<li> Subscript should be denoted in Modelica with underscore, e.g., <code>T_r</code>
 or <code>K_1</code>. <b>Note:</b> some parameter names have first upper case letters and others lower case.</li>
 <li> Deviation signals such as &delta;&omega;, should be written as <code>domega</code> in Modelica.</li>
 <li> Parameters which are not to be entered by user and variables which are not to be seen by users should be <b>protected</b>.</li>
