@@ -12,8 +12,7 @@ protected
   annotation (
     Icon(coordinateSystem(
         extent={{-140,-100},{140,100}},
-        preserveAspectRatio=true,
-        initialScale=0.1), graphics={Rectangle(
+        preserveAspectRatio=true), graphics={Rectangle(
           extent={{-140,-100},{140,100}},
           lineColor={0,0,255},
           fillColor={255,255,255},
@@ -56,10 +55,9 @@ protected
           textString="PI MODEL")}),
     Diagram(coordinateSystem(
         extent={{-140,-100},{140,100}},
-        preserveAspectRatio=true,
-        initialScale=0.1)),
+        preserveAspectRatio=true)),
     Documentation(info="<html>
-<p>This model was design to represent the base data for a power-line modeled in three-phase approach.</p> 
+<p>This model was design to represent the base data for a power-line modeled in three-phase approach.</p>
 </html>"));
 
 end baseLine;

@@ -47,25 +47,25 @@ model GGOV1 "GGOV1 - Variation of GE General Governor/Turbine Model [IEEE2013]"
   parameter Types.Time DELT=0.005 "Time step used in simulation";
   Modelica.Blocks.Interfaces.RealInput SPEED
     "Machine speed deviation from nominal (pu)"
-    annotation (Placement(visible = true,transformation(origin = {-120, 60}, extent = {{-20, -20}, {20, 20}}, rotation = 0), iconTransformation(extent = {{-100, 40}, {-60, 80}}, rotation = 0)));
+    annotation (Placement(transformation(origin = {-120, 60}, extent = {{-20, -20}, {20, 20}}), iconTransformation(extent = {{-100, 40}, {-60, 80}})));
   Modelica.Blocks.Interfaces.RealInput PELEC
     "Machine electrical power (pu)"
-    annotation (Placement(visible = true,transformation(origin = {-120, -60}, extent = {{-20, -20}, {20, 20}}, rotation = 0),  iconTransformation(extent = {{-100, -80}, {-60, -40}}, rotation = 0)));
-  Modelica.Blocks.Sources.Constant AccelerationSet(k=Aset) annotation (Placement(visible = true, transformation(origin = {-64, 14}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
-  Modelica.Blocks.Sources.Constant P_ref(k=Pref) annotation (Placement(visible = true, transformation(origin = {-82, -26}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
+    annotation (Placement(transformation(origin = {-120, -60}, extent = {{-20, -20}, {20, 20}}),  iconTransformation(extent = {{-100, -80}, {-60, -40}})));
+  Modelica.Blocks.Sources.Constant AccelerationSet(k=Aset) annotation (Placement(transformation(origin = {-64, 14}, extent = {{-10, -10}, {10, 10}})));
+  Modelica.Blocks.Sources.Constant P_ref(k=Pref) annotation (Placement(transformation(origin = {-82, -26}, extent = {{-10, -10}, {10, 10}})));
   Modelica.Blocks.Sources.Constant Pmw_set(k=Pmwset)
-    "Supervisory Load Controller Setpoint,"                                                  annotation (Placement(visible = true, transformation(origin={-60,-46},    extent = {{-10, -10}, {10, 10}}, rotation = 0)));
-  Modelica.Blocks.Sources.Constant set(k=Ldref) "load reference" annotation (Placement(visible = true, transformation(origin = {-62, 80}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
-  OpenIPSL.Electrical.Controls.PSSE.TG.BaseClasses.GGOV1.Min_select min_select(frs0=fsr0, nu= 3) annotation (Placement(visible = true, transformation(extent = {{4, -10}, {24, 10}}, rotation = 0)));
+    "Supervisory Load Controller Setpoint,"                                                  annotation (Placement(transformation(origin={-60,-46},    extent = {{-10, -10}, {10, 10}})));
+  Modelica.Blocks.Sources.Constant set(k=Ldref) "load reference" annotation (Placement(transformation(origin = {-62, 80}, extent = {{-10, -10}, {10, 10}})));
+  OpenIPSL.Electrical.Controls.PSSE.TG.BaseClasses.GGOV1.Min_select min_select(frs0=fsr0, nu= 3) annotation (Placement(transformation(extent = {{4, -10}, {24, 10}})));
   Modelica.Blocks.Interfaces.RealOutput PMECH "Turbine mechanical power (pu)" annotation (
-    Placement(visible = true, transformation(origin = {110, 0}, extent = {{-10, -10}, {10, 10}}, rotation = 0), iconTransformation(extent = {{100, -10}, {120, 10}}, rotation = 0)));
+    Placement(transformation(origin = {110, 0}, extent = {{-10, -10}, {10, 10}}), iconTransformation(extent = {{100, -10}, {120, 10}})));
   OpenIPSL.Electrical.Controls.PSSE.TG.BaseClasses.GGOV1.LoadLimiter gGOV1_Temp(
     Kturb=Kturb,
     Kpload=Kpload,
     Kiload=Kiload,
     Dm=Dm,
-    Wfnl=Wfnl) annotation (Placement(visible = true, transformation(origin = {-30, 80}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
-  Modelica.Blocks.Nonlinear.Limiter V(uMax=Vmax, uMin=Vmin) annotation (Placement(visible = true, transformation(origin = {44, 0}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
+    Wfnl=Wfnl) annotation (Placement(transformation(origin = {-30, 80}, extent = {{-10, -10}, {10, 10}})));
+  Modelica.Blocks.Nonlinear.Limiter V(uMax=Vmax, uMin=Vmin) annotation (Placement(transformation(origin = {44, 0}, extent = {{-10, -10}, {10, 10}})));
   OpenIPSL.Electrical.Controls.PSSE.TG.BaseClasses.GGOV1.Turbine gGOV1_Turb(
     Tact=Tact,
     Kturb=Kturb,
@@ -82,11 +82,11 @@ model GGOV1 "GGOV1 - Variation of GE General Governor/Turbine Model [IEEE2013]"
     Tsb=Tsb,
     DELT=DELT,
     Flag=Flag,
-    Wfnl=Wfnl) annotation (Placement(visible = true, transformation(origin = {82, 0}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
+    Wfnl=Wfnl) annotation (Placement(transformation(origin = {82, 0}, extent = {{-10, -10}, {10, 10}})));
   OpenIPSL.Electrical.Controls.PSSE.TG.BaseClasses.GGOV1.AccelerationLimiter gGOV1_Accel(
     Ka=Ka,
     Ta=Ta,
-    DELT=DELT) annotation (Placement(visible = true, transformation(origin = {-30, 0}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
+    DELT=DELT) annotation (Placement(transformation(origin = {-30, 0}, extent = {{-10, -10}, {10, 10}})));
   OpenIPSL.Electrical.Controls.PSSE.TG.BaseClasses.GGOV1.PIDGovernor gGOV1_Power(
     Rselect=Rselect,
     R=R,
@@ -101,7 +101,7 @@ model GGOV1 "GGOV1 - Variation of GE General Governor/Turbine Model [IEEE2013]"
     Kimw=Kimw,
     db=db,
     Kturb=Kturb,
-    Wfnl=Wfnl) annotation (Placement(visible = true, transformation(origin = {-30, -52}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
+    Wfnl=Wfnl) annotation (Placement(transformation(origin = {-30, -52}, extent = {{-10, -10}, {10, 10}})));
 protected
   parameter Types.PerUnit Pe0(fixed=false);
   parameter Types.PerUnit Pmech0(fixed=false);
@@ -164,10 +164,10 @@ equation
         Text(lineColor = {28, 108, 200}, fillColor = {255, 255, 255}, fillPattern = FillPattern.Solid, extent = {{30, 20}, {90, -20}}, textString = "PMECH"),
         Text(lineColor = {28, 108, 200}, extent = {{-100, 160}, {100, 100}}, textString = "GGOV1")}),
     Documentation(info="<html>
-<p>The following documentation is adapted from 
+<p>The following documentation is adapted from
 <a href=\"modelica://OpenIPSL.UsersGuide.References\">[PSSE-Models], chapter 7.12</a>:</p>
 <blockquote>
-<p>This is a general purpose Governor/Turbine model that can be used in dynamic studies. 
+<p>This is a general purpose Governor/Turbine model that can be used in dynamic studies.
 The model can be used to represent many different models such as gas turbines, aeroderivative turbines and diesel engines.
 This model represents the usual PSSE implementation of the GGOV1 and a fairly complete review of this model can be found in
 <a href=\"modelica://OpenIPSL.UsersGuide.References\">[IEEE2013]</a>.
@@ -176,17 +176,17 @@ This model represents the usual PSSE implementation of the GGOV1 and a fairly co
 [...]
 </p>
 <p>
-This model is incredibly versatile and can be used to represent different turbine models with different control modes. 
+This model is incredibly versatile and can be used to represent different turbine models with different control modes.
 The Governor-Turbine frequency control, for example, can have different feedback signals, such as electric power, turbine output, valve stroke or even an isochronous operation.
 Isochronous operations are used when the machine operates in an isolated system. Note that, in this case, the permanent droop parameter <code>R</code> should be set to zero.
-In addition to that, the parameters can be set so a particular control loop is used. 
+In addition to that, the parameters can be set so a particular control loop is used.
 This model allows the representation of a frequency control system, a temperature control system and an acceleration limiter control system.
 </p>
 <p>
 [...]
 </p>
 <p>
-In order to represent a diesel generator using this model, one should be careful with setting some parameters. For example, a diesel generator needs to have <code>flag</code> set to 1. 
+In order to represent a diesel generator using this model, one should be careful with setting some parameters. For example, a diesel generator needs to have <code>flag</code> set to 1.
 This is because the diesel generator have teir fluid flow proportional on the speed. In addition to that, <code>Teng</code>, which represents the time delay from the engine, should be set to a number greater than 0.
 Finally, the variable <code>Dm</code> should also be set to a number greater than 0. This is because in diesel engines, the maximum power output decreases as speed increases.
 </p>

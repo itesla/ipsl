@@ -17,6 +17,5 @@ annotation (Documentation(info="<html>
 <td><p>Marcelo de Castro, AlsetLab, and Maxime Baudette, LBNL</p></td>
 </tr>
 </table>
-</html>"
-));
+</html>"));
 end ThreePhase;

@@ -2,7 +2,6 @@ within OpenIPSL.UsersGuide;
 model GettingStarted "Getting Started"
   extends Modelica.Icons.Information;
 
-
   annotation(DocumentationClass=true, Documentation(info="<html>
 <p>
 The <b>OpenIPSL</b> was developed to be a familiar alternative to traditional power system analysis tools.
@@ -10,7 +9,7 @@ There are, however, some particularities to the nature of the library, presented
 </p>
 <h4>Power flow and Initialization</h4>
 <p>
-All models in a Modelica library require initial guess values that should come from a solution of the steady state of the overall model. This initial guess is called power flow. 
+All models in a Modelica library require initial guess values that should come from a solution of the steady state of the overall model. This initial guess is called power flow.
 However, there is no power flow solver associated to the library as of the present time. When building a use case, initialization of all variables must be performed with a power flow software.
 The users are free to choose their power flow software of choice.
 </p>

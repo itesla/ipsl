@@ -41,9 +41,5 @@ equation
 <td><p>Contact</p></td>
 <td><p>see <a href=\"modelica://OpenIPSL.UsersGuide.Contact\">UsersGuide.Contact</a></p></td>
 </tr>
-</table>
-</html>
-<html>
-<pre><span style=\"font-family: Courier New,courier; color: #006400;\">Equations&nbsp;come&nbsp;from&nbsp;the&nbsp;mathematical&nbsp;separation&nbsp;in&nbsp;between&nbsp;reals&nbsp;and&nbsp;imaginary&nbsp;of&nbsp;S=P+jQ=UI*</span></pre>
-</html>"));
+</table></html>"));
 end PQ;

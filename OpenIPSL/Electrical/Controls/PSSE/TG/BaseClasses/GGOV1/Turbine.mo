@@ -21,33 +21,33 @@ model Turbine "GE General GGOV1 and GGOV1DU Turbine Model"
   Modelica.Blocks.Math.Product product annotation (
     Placement(transformation(extent = {{0, -44}, {20, -24}})));
   OpenIPSL.NonElectrical.Continuous.LeadLag s4(K = 1, T1 = Tc, T2 = Tb, y_start = s40) annotation (
-    Placement(transformation(extent = {{-10, -10}, {10, 10}}, rotation = 0, origin = {138, -40})));
+    Placement(transformation(extent = {{-10, -10}, {10, 10}}, origin = {138, -40})));
   Modelica.Blocks.Math.Gain gain1(k = Kturb) annotation (
-    Placement(visible = true, transformation(origin = {78, -40}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
+    Placement(transformation(origin = {78, -40}, extent = {{-10, -10}, {10, 10}})));
   Modelica.Blocks.Nonlinear.FixedDelay delay(delayTime = Teng) "Transport lag time" annotation (
-    Placement(visible = true, transformation(origin = {108, -40}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
+    Placement(transformation(origin = {108, -40}, extent = {{-10, -10}, {10, 10}})));
   Modelica.Blocks.Math.Add add4(k2 = -1) annotation (
-    Placement(transformation(extent = {{-10, -10}, {10, 10}}, rotation = 0, origin = {48, -40})));
+    Placement(transformation(extent = {{-10, -10}, {10, 10}}, origin = {48, -40})));
   Modelica.Blocks.Math.Add add5(k1 = -1) annotation (
-    Placement(transformation(extent = {{-10, -10}, {10, 10}}, rotation = 0, origin = {182, 0})));
+    Placement(transformation(extent = {{-10, -10}, {10, 10}}, origin = {182, 0})));
   Modelica.Blocks.Math.Gain gain2(k = Dm) annotation (
-    Placement(transformation(extent = {{-10, -10}, {10, 10}}, rotation = 0, origin = {90, 6})));
+    Placement(transformation(extent = {{-10, -10}, {10, 10}}, origin = {90, 6})));
   OpenIPSL.Electrical.Controls.PSSE.TG.BaseClasses.GGOV1.Flag flag10(Flag=Flag)   annotation (
-    Placement(transformation(extent = {{-10, -10}, {10, 10}}, rotation = 0, origin = {-30, 0})));
+    Placement(transformation(extent = {{-10, -10}, {10, 10}}, origin = {-30, 0})));
   OpenIPSL.Electrical.Controls.PSSE.TG.BaseClasses.GGOV1.Dm_select dm_select(Dm = Dm) annotation (
     Placement(transformation(extent = {{-40, 30}, {-20, 50}})));
   Modelica.Blocks.Math.Gain Tactgain(k = 1 / Tact) annotation (
-    Placement(visible = true, transformation(origin = {-130, -40}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
+    Placement(transformation(origin = {-130, -40}, extent = {{-10, -10}, {10, 10}})));
   Modelica.Blocks.Nonlinear.Limiter V1(uMax = Ropen, uMin = Rclose) annotation (
-    Placement(visible = true, transformation(extent = {{-110, -50}, {-90, -30}}, rotation = 0)));
+    Placement(transformation(extent = {{-110, -50}, {-90, -30}})));
   Modelica.Blocks.Continuous.Integrator s3(k = 1, initType = Modelica.Blocks.Types.Init.InitialOutput, y_start = s30) annotation (
-    Placement(visible = true, transformation(origin = {-70, -40}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
+    Placement(transformation(origin = {-70, -40}, extent = {{-10, -10}, {10, 10}})));
   Modelica.Blocks.Math.Add add8(k2 = -1) annotation (
-    Placement(visible = true, transformation(origin = {-160, -40}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
+    Placement(transformation(origin = {-160, -40}, extent = {{-10, -10}, {10, 10}})));
   Modelica.Blocks.Interfaces.RealInput SPEED "Machine speed deviation from nominal (pu)" annotation (
-    Placement(visible = true, transformation(extent = {{-240, 60}, {-200, 100}}, rotation = 0), iconTransformation(extent = {{-140, 60}, {-100, 100}}, rotation = 0)));
+    Placement(transformation(extent = {{-240, 60}, {-200, 100}}), iconTransformation(extent = {{-140, 60}, {-100, 100}})));
   Modelica.Blocks.Interfaces.RealInput FSR "Governor Output" annotation (
-    Placement(visible = true, transformation(extent = {{-240, -20}, {-200, 20}}, rotation = 0), iconTransformation(extent = {{-140, -20}, {-100, 20}}, rotation = 0)));
+    Placement(transformation(extent = {{-240, -20}, {-200, 20}}), iconTransformation(extent = {{-140, -20}, {-100, 20}})));
   Modelica.Blocks.Interfaces.RealOutput PMECH "Turbine mechanical power (pu)" annotation (
     Placement(transformation(extent = {{200, -10}, {220, 10}}), iconTransformation(extent = {{100, -10}, {120, 10}})));
   OpenIPSL.NonElectrical.Continuous.SimpleLag s5(T = Tfload, y_start = s50, K = 1) annotation (
@@ -59,9 +59,9 @@ model Turbine "GE General GGOV1 and GGOV1DU Turbine Model"
   Modelica.Blocks.Interfaces.RealOutput TEXM "Measured Exhaust Temperature" annotation (
     Placement(transformation(extent = {{10, -10}, {-10, 10}}, rotation = -90, origin = {0, 110}), iconTransformation(extent = {{-10, -10}, {10, 10}}, rotation = 90, origin = {0, 110})));
   Modelica.Blocks.Interfaces.RealOutput VSTROKE "Valve Position" annotation (
-    Placement(transformation(extent = {{200, -90}, {220, -70}}), iconTransformation(extent = {{-12, -12}, {12, 12}}, rotation = 0, origin = {112, -80})));
+    Placement(transformation(extent = {{200, -90}, {220, -70}}), iconTransformation(extent = {{-12, -12}, {12, 12}}, origin = {112, -80})));
   Modelica.Blocks.Interfaces.RealInput PELEC "Machine electrical power (pu)" annotation (
-    Placement(visible = true,transformation( origin = {-220, -80},extent = {{-20, -20}, {20, 20}}, rotation = 0), iconTransformation(extent = {{-140, -100}, {-100, -60}}, rotation = 0)));
+    Placement(transformation( origin = {-220, -80},extent = {{-20, -20}, {20, 20}}), iconTransformation(extent = {{-140, -100}, {-100, -60}})));
   Modelica.Blocks.Sources.Constant const(k = Wfnl) annotation (
     Placement(transformation(extent = {{0, -70}, {20, -50}})));
   Modelica.Blocks.Math.Add Dw2w annotation (
@@ -69,7 +69,7 @@ model Turbine "GE General GGOV1 and GGOV1DU Turbine Model"
   Modelica.Blocks.Sources.Constant const1(k = 1) annotation (
     Placement(transformation(extent = {{-160, 0}, {-140, 20}})));
   Modelica.Blocks.Nonlinear.Limiter limiter(limitsAtInit = true, uMax = Vmax, uMin = Vmin) annotation (
-    Placement(visible = true, transformation(extent = {{-48, -50}, {-28, -30}}, rotation = 0)));
+    Placement(transformation(extent = {{-48, -50}, {-28, -30}})));
 protected
   parameter Types.PerUnit Pmech0(fixed = false);
   parameter Types.PerUnit s30(fixed = false);
@@ -143,7 +143,7 @@ equation
     Icon(coordinateSystem(extent = {{-100, -100}, {100, 100}}), graphics={  Rectangle(lineColor = {0, 0, 255}, extent = {{-100, 100}, {100, -100}}), Text(lineColor = {28, 108, 200}, extent = {{-60, 40}, {60, -40}}, textString = "Turbine
 Model"), Text(origin = {-4, 0},lineColor = {28, 108, 200}, extent = {{-90, 90}, {-40, 68}}, textString = "SPEED"), Text(origin = {-6, 82},lineColor = {28, 108, 200}, extent = {{-90, -70}, {-50, -90}}, textString = "FSR"), Text(lineColor = {28, 108, 200}, extent = {{40, 12}, {90, -12}}, textString = "PMECH"), Text(lineColor = {28, 108, 200}, extent = {{-20, 90}, {30, 70}}, textString = "TEXM"), Text(lineColor = {28, 108, 200}, extent = {{30, -70}, {92, -92}}, textString = "VSTROKE"), Text(origin = {-4, -78},lineColor = {28, 108, 200}, extent = {{-90, 10}, {-40, -14}}, textString = "PELEC")}),
     Documentation(info = "<html>
-<p>The following documentation is adapted from 
+<p>The following documentation is adapted from
 <a href=\"modelica://OpenIPSL.UsersGuide.References\">[PSSE-Models], chapter 7.12</a>:</p>
 <blockquote>
 <p>

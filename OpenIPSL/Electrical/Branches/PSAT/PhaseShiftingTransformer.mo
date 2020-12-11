@@ -143,30 +143,29 @@ equation
                   Line(
           points={{94,0},{100,0},{100,0}},
           color={0,0,255},
-          smooth=Smooth.None)}),                                 Diagram(coordinateSystem(preserveAspectRatio=false)),
-    Documentation(info="<html>
-<p>The following documentation is adapted from 
+          smooth=Smooth.None)}),    Documentation(info="<html>
+<p>The following documentation is adapted from
 <a href=\"modelica://OpenIPSL.UsersGuide.References\">[Milano2010], chapter 11.2.3</a>:</p>
 <blockquote>
 <p>Phase Shifting Transformers (PhSTs) are able to vary the phase shifting angle
 &phi; to control the active power flow. These devices are used in meshed networks
 for reducing the congestion on some transmission lines and/or properly redis-
 tributing active power flows in transmission lines. A fairly complete review
-of PhST technologies can be found in 
+of PhST technologies can be found in
 <a href=\"modelica://OpenIPSL.UsersGuide.References\">[Verboomen2005]</a>.
 </p>
 <p>
 [...]
 </p>
 <p>
-The measured <code>pmes</code> of the real power flow <code>pk</code> 
-is compared with the desired power flow <code>pref</code> and a PI controller 
+The measured <code>pmes</code> of the real power flow <code>pk</code>
+is compared with the desired power flow <code>pref</code> and a PI controller
 is used for varying the phase angle &phi;.
 <p>
 [...]
 </p>
 <p>
-The phase angle &phi; is subjected to an windup limiter. 
+The phase angle &phi; is subjected to an windup limiter.
 [...] It is relevant to note that connecting two areas of a
 network only by means of PhSTs can lead to unsolvable cases, as PhSTs
 impose the total real power transfer between the two areas.

@@ -22,11 +22,11 @@ model Line_MT "Transmission Line modeled as a PI element with a hybrid interface
         "Norton admittances have finite values"));
 
   // Parameters for the abc model
-  parameter Types.PerUnit Gseraa=0 "Element (1,1) in series conductance matrix" 
+  parameter Types.PerUnit Gseraa=0 "Element (1,1) in series conductance matrix"
     annotation (Dialog(group="Parameters for an 'abc'-Model"));
   parameter Types.PerUnit Bseraa=-10 "Element (1,1) in series susceptance matrix"
     annotation (Dialog(group="Parameters for an 'abc'-Model"));
-  parameter Types.PerUnit Gserab=0 "Element (1,2) in series conductance matrix" 
+  parameter Types.PerUnit Gserab=0 "Element (1,2) in series conductance matrix"
     annotation (Dialog(group="Parameters for an 'abc'-Model"));
   parameter Types.PerUnit Bserab=0 "Element (1,2) in series susceptance matrix"
     annotation (Dialog(group="Parameters for an 'abc'-Model"));
@@ -170,17 +170,15 @@ equation
   annotation (
     Icon(coordinateSystem(
         extent={{-140,-100},{140,100}},
-        preserveAspectRatio=true,
-        initialScale=0.1), graphics={Line(points={{-90,0},{-130,0}}, color={0,0,
+        preserveAspectRatio=true), graphics={Line(points={{-90,0},{-130,0}}, color={0,0,
           255}),Line(points={{90,0},{130,0}}, color={0,0,255}),Line(points={{90,
           0},{110,90},{130,90}}, color={0,0,255}),Line(points={{90,0},{110,-90},
           {130,-90}}, color={0,0,255})}),
     Diagram(coordinateSystem(
         extent={{-140,-100},{140,100}},
-        preserveAspectRatio=true,
-        initialScale=0.1)),
+        preserveAspectRatio=true)),
     Documentation(info="<html>
-<p>This model was design to represent a hybrid positive-sequence/three-phase power line.</p> 
+<p>This model was design to represent a hybrid positive-sequence/three-phase power line.</p>
 <p>The user should input the series conductance and susceptance, and half shunt susceptance (line charging). All in matrix form, since this model can be used to represent unbalanced lines.
 Series conductance (Gser) matrix is considered to have the following structure:</p>
 <p><b>[Gseraa</b>, <b>Gserab</b>, <b>Gserac</b>; </p>
@@ -196,8 +194,8 @@ Series conductance (Gser) matrix is considered to have the following structure:<
 <p><b> Bshtac</b>, <b>Bshtbc</b>, <b>Bshtcc</b>] </p>
 <p>In addition to that, the user should also state if the hybrid interface should be calculated in an approximate or exact way.
 If the exact way is selected, the user should also input Norton equivalent admittances for positive, negative and zero sequences calculated in the point of interconnection of the hybrid device.
-If approximate model is selected, these admittances are set to be zero. 
+If approximate model is selected, these admittances are set to be zero.
 Based on the set of parameters selected by the user, the pi-equivalent impedance matrices are calculated and the line equation is assembled.</p>
-<p>The positive-sequence system is connected using pin <b><i>p</i></b>, while three-phase system is connected using pins <b><i>A</i></b>, <b><i>B</i></b>, and <b><i>C</i></b></p> 
+<p>The positive-sequence system is connected using pin <b><i>p</i></b>, while three-phase system is connected using pins <b><i>A</i></b>, <b><i>B</i></b>, and <b><i>C</i></b></p>
 </html>"));
 end Line_MT;

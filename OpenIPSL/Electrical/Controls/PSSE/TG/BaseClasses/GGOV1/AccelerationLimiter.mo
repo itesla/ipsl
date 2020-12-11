@@ -66,7 +66,7 @@ Limiter"),Text(               extent={{-90,-30},{-50,-50}},
                     lineColor={28,108,200},
                     textString="FSR")}),
     Documentation(info="<html>
-<p>The following documentation is adapted from 
+<p>The following documentation is adapted from
 <a href=\"modelica://OpenIPSL.UsersGuide.References\">[PSSE-Models], chapter 7.12</a>:</p>
 <blockquote>
 <p>This is an acceleration control system for the general purpose Turbine/Governor models GGOV1 and GGOV1DU.

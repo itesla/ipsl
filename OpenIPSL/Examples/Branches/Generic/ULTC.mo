@@ -13,18 +13,16 @@ model ULTC "Example model to demonstrate the working of the generic ULTC"
     G=0,
     R=0,
     X=0.65,
-    B=0) annotation (Placement(visible=true, transformation(
+    B=0) annotation (Placement(transformation(
         origin={-40,20},
-        extent={{-10.0,-10.0},{10.0,10.0}},
-        rotation=0)));
+        extent={{-10.0,-10.0},{10.0,10.0}})));
   OpenIPSL.Electrical.Branches.PwLine Line34(
     G=0,
     R=0,
     X=0.80,
-    B=0) annotation (Placement(visible=true, transformation(
+    B=0) annotation (Placement(transformation(
         origin={50,0},
-        extent={{-10.0,-10.0},{10.0,10.0}},
-        rotation=0)));
+        extent={{-10.0,-10.0},{10.0,10.0}})));
   OpenIPSL.Electrical.Buses.InfiniteBus slack(v_0=1.05) annotation (Placement(transformation(extent={{-100,-10},{-80,10}})));
   Electrical.Branches.Generic.ULTC ultc annotation (Placement(transformation(extent={{0,-10},{20,10}})));
   OpenIPSL.Electrical.Branches.PwLine Line12_b(
@@ -35,7 +33,7 @@ model ULTC "Example model to demonstrate the working of the generic ULTC"
     t1=20,
     t2=200) annotation (Placement(transformation(extent={{-50,-30},{-30,-10}})));
   inner OpenIPSL.Electrical.SystemBase SysData annotation (
-    Placement(visible = true, transformation(origin={-70,90},     extent={{-30,-10},{30,10}},      rotation = 0)));
+    Placement(transformation(origin={-70,90},     extent={{-30,-10},{30,10}})));
   Electrical.Loads.PSAT.ExponentialRecovery load(
     P_0=40000000,
     Tp=5,

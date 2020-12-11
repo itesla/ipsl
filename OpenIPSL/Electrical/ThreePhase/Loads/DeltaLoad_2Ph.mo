@@ -8,13 +8,10 @@ model DeltaLoad_2Ph "Two-phase delta load"
     ii(start=iai0)) annotation (Placement(
       transformation(
         extent={{35.0,0.0},{55.0,20.0}},
-        origin={0.0,0.0},
-        rotation=0),
+        origin={0.0,0.0}),
       iconTransformation(
         extent={{35.0,120.0},{55.0,100.0}},
-        origin={0.0,0.0},
-        rotation=0),
-      visible=true));
+        origin={0.0,0.0})));
   OpenIPSL.Interfaces.PwPin B(
     vr(start=vbr0),
     vi(start=vbi0),
@@ -22,13 +19,10 @@ model DeltaLoad_2Ph "Two-phase delta load"
     ii(start=ibi0)) annotation (Placement(
       transformation(
         extent={{-35.0,0.0},{-55.0,20.0}},
-        origin={0.0,0.0},
-        rotation=0),
+        origin={0.0,0.0}),
       iconTransformation(
         extent={{-35.0,120.0},{-55.0,100.0}},
-        origin={0.0,0.0},
-        rotation=0),
-      visible=true));
+        origin={0.0,0.0})));
   parameter Integer ModelType=0 "0- Constant Power Model, 1- ZIP Model;"
     annotation (choices(choice=0 "Constant Power", choice=1 "ZIP Model"),
       Dialog(group="Power flow"));
@@ -112,7 +106,7 @@ equation
   B.ii = -(Pab*(A.vi - B.vi) - Qab*(A.vr - B.vr))/((A.vr - B.vr)^2 + (A.vi - B.vi)
     ^2);
 
-  annotation (Icon(coordinateSystem(preserveAspectRatio=false, initialScale=0.1),
+  annotation (Icon(coordinateSystem(preserveAspectRatio=false),
         graphics={Line(points={{-100,100},{100,100},{0,-100},{-100,100}}, color=
            {28,108,200}),Text(
           origin={-24,20},
@@ -125,10 +119,10 @@ equation
           textString="PQ/ZIP Load")}),
           Documentation(info="<html>
 <p>This is a two-phase delta load model. The model allows the user to represent active and reactive power being consumed between two phases.</p>
-<p>The user needs to input the active (<b><i>P_ab</i></b>) and reactive (<b><i>Q_ab</i></b>) powera consumed between phases one and two (A and B).</p> 
-<p>In addition, the model allows the load to be represented as constant power, or as a ZIP model. 
-In the first approach, the power consumed between the two phases is kept constant throughout simulation. 
-The latter approach allows the load to be represented as a sum of three terms: constant impedance, constant current and constant power. 
+<p>The user needs to input the active (<b><i>P_ab</i></b>) and reactive (<b><i>Q_ab</i></b>) powera consumed between phases one and two (A and B).</p>
+<p>In addition, the model allows the load to be represented as constant power, or as a ZIP model.
+In the first approach, the power consumed between the two phases is kept constant throughout simulation.
+The latter approach allows the load to be represented as a sum of three terms: constant impedance, constant current and constant power.
 This means that, depending on voltage levels supplied, the load will consume a different power value.</p>
 </html>"));
 end DeltaLoad_2Ph;

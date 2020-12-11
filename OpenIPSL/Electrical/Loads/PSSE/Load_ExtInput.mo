@@ -5,7 +5,7 @@ model Load_ExtInput "PSS/E Load with variation"
   parameter Types.Time t1 "Time of Load Variation";
   parameter Types.Time d_t "Time duration of load variation";
 protected
-  parameter Real PF=if q0 <= C.eps then 1 else p0/q0 "Ration between active and reactive power; Not Power Factor"; 
+  parameter Real PF=if q0 <= C.eps then 1 else p0/q0 "Ration between active and reactive power; Not Power Factor";
   parameter Types.PerUnit d_Q=(p0 + d_P)/PF - q0;
 public
   Modelica.Blocks.Interfaces.RealInput u annotation (Placement(transformation(

@@ -1,4 +1,4 @@
 within OpenIPSL.Electrical.Controls.CGMES;
-package TG 
+package TG
   extends Modelica.Icons.Package;
 end TG;

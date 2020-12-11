@@ -10,7 +10,6 @@ model LoadTestZipJimma
     v_0=0.993325565105317) annotation (Placement(transformation(origin={80,-30}, extent={{-10,-10},{10,10}})));
 equation
 
-
   connect(zIPJimma.p, pwLine3.n) annotation (Line(points={{80,-20},{80,0},{62,0},{62,-10},{59,-10}}, color={0,0,255}));
   annotation (experiment(
       StopTime=15,

@@ -21,9 +21,9 @@ model Publications "Publications"
     <a href=\"http://dx.doi.org/10.1016/j.softx.2016.05.001\">DOI: 10.1016/j.softx.2016.05.001.</a></li>
 
 <li> M. Zhang, M. Baudette, J. Lavenius, S. Løvlund, and L. Vanfretti,
-    &quot;Modelica Implementation and Software-to-Software Validation of Power 
+    &quot;Modelica Implementation and Software-to-Software Validation of Power
     System Component Models Commonly used by Nordic TSOs for Dynamic Simulations,&quot;
-    In Proceedings of the 56th Conference on Simulation and Modelling (SIMS 56), 
+    In Proceedings of the 56th Conference on Simulation and Modelling (SIMS 56),
     7-9 October 2015, Linköping, Sweden.
     <a href=\"https://www.openmodelica.org/events/sims-2015\">Link</a></li>
 

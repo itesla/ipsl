@@ -60,7 +60,7 @@ model GGOV1 "three phase to ground fault test of GGOV1"
     DELT=0.0001,
     Flag=0,
     Rselect=0) annotation (Placement(transformation(extent={{-60,60},{-80,40}})));
-equation 
+equation
   connect(gGOV1.PELEC, gENROU.PELEC) annotation (Line(points={{-62,56},{-36,56},{-36,6},{-46,6}},color={0,0,127},smooth=Smooth.None));
   connect(gENROU.EFD0, gENROU.EFD) annotation (Line(points={{-46,-10},{-40,-10},{-40,-28},{-98,-28},{-98,-10},{-92,-10}},color={0,0,127},smooth=Smooth.None));
   connect(gGOV1.PMECH, gENROU.PMECH) annotation (Line(points={{-81,50.2},{-98,50.2},{-98,10},{-92,10}},color={0,0,127}));
@@ -69,7 +69,7 @@ equation
   annotation (
 experiment(StopTime=10),Documentation(info="<html>
 <p>
-Simulate for 10 seconds. 
+Simulate for 10 seconds.
 </p>
 <p>Variables of interest:</p>
 <ul>

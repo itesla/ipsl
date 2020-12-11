@@ -1,6 +1,7 @@
 within OpenIPSL.Electrical;
 package ThreePhase "Package with three-phase and hybrid positive-sequence/three-phase models"
   extends Modelica.Icons.Package;
+
 annotation (
   Documentation(info="<html>
 <p>This package contains three-phase models that can be used to create systems where unbalance plays an important role.

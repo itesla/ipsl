@@ -56,7 +56,7 @@ model MeasurementBus "Three-phase active and reactive power measurement bus"
         extent={{24,-24},{-24,24}},
         rotation=-90,
         origin={-50,124})));
-equation 
+equation
   // Equations for Phase A
   Pa = -(p1.vr*p1.ir + p1.vi*p1.ii)*S_p;
   Qa = -(p1.vr*p1.ii - p1.vi*p1.ir)*S_p;
@@ -72,14 +72,11 @@ equation
   annotation (Icon(coordinateSystem(
         extent={{-100,-100},{100,100}},
         preserveAspectRatio=false,
-        initialScale=0.1,
         grid={10,10}), graphics={Rectangle(
           fillColor={255,255,255},
           extent={{-100,-100},{100,100}},
           lineColor={0,0,0},
           fillPattern=FillPattern.Solid)}),
-      Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{
-            100,100}})),
     Documentation(info="<html>
 <p>This three-phase measurement device should be connected in series, between two other devices. The main features of this device are listed below:</p>
 <ul>

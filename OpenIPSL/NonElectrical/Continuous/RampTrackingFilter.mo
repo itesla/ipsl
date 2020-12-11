@@ -44,10 +44,6 @@ equation
     connect(u, TF1[M].u);
   end if;
   annotation (
-    Diagram(coordinateSystem(
-        preserveAspectRatio=true,
-        extent={{-100,-100},{100,100}},
-        initialScale=0.05)),
     Icon(coordinateSystem(
         preserveAspectRatio=true,
         extent={{-100,-100},{100,100}},

@@ -99,9 +99,5 @@ equation
 <td><p>see <a href=\"modelica://OpenIPSL.UsersGuide.Contact\">UsersGuide.Contact</a></p></td>
 </tr>
 </table>
-</html>
-
-<html>
-<pre><span style=\"font-family: Courier New,courier; color: #006400;\">&nbsp;with&nbsp;the&nbsp;problem&nbsp;of&nbsp;a&nbsp;constant&nbsp;offset&nbsp;mismatch&nbsp;-0.00012</span></pre>
 </html>"));
 end MotorTypeI;

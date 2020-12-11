@@ -159,8 +159,8 @@ equation
             100}}), graphics={Text(
           extent={{-54,24},{54,-26}},
           lineColor={0,0,255},
-          textString="GENROE")}), 
-          Documentation(info="<html>Round Rotor Generator Model GENROE. It is the same as GENROU model 
+          textString="GENROE")}),
+          Documentation(info="<html>Round Rotor Generator Model GENROE. It is the same as GENROU model
           except that an exponential function is used as saturation.</html>",
           revisions="<html>
 <table cellspacing=\"1\" cellpadding=\"1\" border=\"1\">

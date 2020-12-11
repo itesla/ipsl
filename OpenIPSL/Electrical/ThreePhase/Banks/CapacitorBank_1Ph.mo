@@ -6,13 +6,10 @@ model CapacitorBank_1Ph "Single-phase capacitor bank"
       Placement(
       transformation(
         extent={{-10.0,0.0},{10.0,20.0}},
-        origin={0.0,0.0},
-        rotation=0),
+        origin={0.0,0.0}),
       iconTransformation(
         extent={{-80.0,0.0},{-60.0,20.0}},
-        origin={70,100},
-        rotation=0),
-      visible=true));
+        origin={70,100})));
   parameter Types.PerUnit VA=1
     "Voltage magnitude"
     annotation (Dialog(group="Power flow data"));
@@ -34,8 +31,7 @@ equation
   Qa = (-A.vi*A.ir + A.vr*A.ii)/((A.vr)^2 + (A.vi)^2);
   annotation (Icon(coordinateSystem(
         extent={{-100,-100},{100,100}},
-        preserveAspectRatio=true,
-        initialScale=0.1), graphics={Rectangle(
+        preserveAspectRatio=true), graphics={Rectangle(
           extent={{-100,-100},{100,100}},
           lineColor={0,0,255},
           fillColor={255,255,255},

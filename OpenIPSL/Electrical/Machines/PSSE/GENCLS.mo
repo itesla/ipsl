@@ -94,7 +94,7 @@ equation
           lineColor={0,0,255})}),
     Documentation(info="<html>
 <p>
-Synchronous machine represented by 'classical' modeling or 
+Synchronous machine represented by 'classical' modeling or
 Thevenin voltage source (for <code>H = 0</code>).
 </p>
 <p>See also <a href=\"modelica://OpenIPSL.UsersGuide.References\">[PSSE-AGV2], chapter 15</a>.</p>

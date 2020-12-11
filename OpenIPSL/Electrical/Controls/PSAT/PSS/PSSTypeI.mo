@@ -61,9 +61,7 @@ equation
           fillPattern=FillPattern.Solid), Text(
           extent={{-140,-100},{140,-160}},
           lineColor={0,0,255},
-          textString="%name")}),            Diagram(coordinateSystem(extent={{-100,
-            -100},{100,100}})),
-    Documentation(info="<html>
+          textString="%name")}),    Documentation(info="<html>
 <p>
 For more information see <a href=\"OpenIPSL.UsersGuide.References\">[Milano2013]</a>, section \"18.4.1
 Type I\".

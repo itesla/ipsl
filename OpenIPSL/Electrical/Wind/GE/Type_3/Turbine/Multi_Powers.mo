@@ -21,8 +21,7 @@ The output connector is the <b>concatenation</b> of the four input connectors.
 Note, that the dimensions of the input connector signals have to be
 explicitly defined via parameters n1, n2, n3 and n4.
 </p>
-</HTML>
-    "),
+</html>"),
     Icon(coordinateSystem(
         preserveAspectRatio=true,
         extent={{-100,-100},{100,100}},

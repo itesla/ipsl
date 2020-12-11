@@ -76,8 +76,7 @@ equation
   annotation (
     Icon(coordinateSystem(
         extent={{-140,-100},{140,100}},
-        preserveAspectRatio=true,
-        initialScale=0.1), graphics={Line(points={{-90,0},{-130,0}}, color={0,0,
+        preserveAspectRatio=true), graphics={Line(points={{-90,0},{-130,0}}, color={0,0,
           255}),Line(points={{-90,0},{-110,90},{-130,90}}, color={0,0,255}),
           Line(points={{-90,0},{-110,-90},{-130,-90}}, color={0,0,255}),Line(
           points={{90,0},{130,0}}, color={0,0,255}),Line(points={{90,0},{110,90},
@@ -85,10 +84,9 @@ equation
           color={0,0,255})}),
     Diagram(coordinateSystem(
         extent={{-140,-100},{140,100}},
-        preserveAspectRatio=true,
-        initialScale=0.1)),
+        preserveAspectRatio=true)),
     Documentation(info="<html>
-<p>This model was design to represent three-phase power line, modeled as a pi-element.</p> 
+<p>This model was design to represent three-phase power line, modeled as a pi-element.</p>
 <p>The user should input the series conductance and susceptance, and half shunt susceptance (line charging). All in matrix form, since the model allows the representation of unbalanced lines.
 Series conductance (Gser) matrix is considered to have the following structure:</p>
 <p><b>[Gseraa</b>, <b>Gserab</b>, <b>Gserac</b>; </p>

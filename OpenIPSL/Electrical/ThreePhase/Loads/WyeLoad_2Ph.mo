@@ -8,13 +8,10 @@ model WyeLoad_2Ph "Two-phase wye load"
     ii(start=iai0)) annotation (Placement(
       transformation(
         extent={{35.0,0.0},{55.0,20.0}},
-        origin={0.0,0.0},
-        rotation=0),
+        origin={0.0,0.0}),
       iconTransformation(
         extent={{35.0,120.0},{55.0,100.0}},
-        origin={0.0,0.0},
-        rotation=0),
-      visible=true));
+        origin={0.0,0.0})));
   OpenIPSL.Interfaces.PwPin B(
     vr(start=vbr0),
     vi(start=vbi0),
@@ -22,13 +19,10 @@ model WyeLoad_2Ph "Two-phase wye load"
     ii(start=ibi0)) annotation (Placement(
       transformation(
         extent={{-35.0,0.0},{-55.0,20.0}},
-        origin={0.0,0.0},
-        rotation=0),
+        origin={0.0,0.0}),
       iconTransformation(
         extent={{-35.0,120.0},{-55.0,100.0}},
-        origin={0.0,0.0},
-        rotation=0),
-      visible=true));
+        origin={0.0,0.0})));
   parameter Integer ModelType=0 "0- Constant Power Model, 1- ZIP Model;"
     annotation (choices(choice=0 "Constant Power", choice=1 "ZIP Model"),
       Dialog(group="Power flow"));
@@ -113,7 +107,7 @@ equation
   Qa = A.vi*A.ir - A.vr*A.ii;
   Pb = B.vr*B.ir + B.vi*B.ii;
   Qb = B.vi*B.ir - B.vr*B.ii;
-  annotation (Icon(coordinateSystem(preserveAspectRatio=false, initialScale=0.1),
+  annotation (Icon(coordinateSystem(preserveAspectRatio=false),
         graphics={Line(points={{-100,100},{100,100},{0,-100},{-100,100}}, color=
            {28,108,200}),Text(
           lineColor={28,108,200},
@@ -125,11 +119,11 @@ equation
           textString="PQ/ZIP Load")}),
           Documentation(info="<html>
 <p>This is a two-phase wye load model.</p>
-<p>The user needs to input the active (<b><i>P_a</i></b> and <b><i>P_b</i></b>) and reactive (<b><i>Q_a</i></b> and <b><i>Q_b</i></b>) powers consumed by each of the two phases. 
-Since the values come from independent parameters, the model allows the representation of unbalanced loads.</p> 
-<p>In addition, the model allows the load to be represented as constant power, or as a ZIP model. 
-In the first approach, the powers consumed by each phase are kept constant throughout simulation. 
-The latter approach allows the load to be represented as a sum of three terms: constant impedance, constant current and constant power. 
+<p>The user needs to input the active (<b><i>P_a</i></b> and <b><i>P_b</i></b>) and reactive (<b><i>Q_a</i></b> and <b><i>Q_b</i></b>) powers consumed by each of the two phases.
+Since the values come from independent parameters, the model allows the representation of unbalanced loads.</p>
+<p>In addition, the model allows the load to be represented as constant power, or as a ZIP model.
+In the first approach, the powers consumed by each phase are kept constant throughout simulation.
+The latter approach allows the load to be represented as a sum of three terms: constant impedance, constant current and constant power.
 This means that, depending on voltage levels supplied, the load will consume different values of power.</p>
 </html>"));
 end WyeLoad_2Ph;

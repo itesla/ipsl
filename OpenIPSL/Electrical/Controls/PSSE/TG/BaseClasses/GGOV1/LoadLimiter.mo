@@ -6,21 +6,21 @@ model LoadLimiter "GE General GGOV1 Governor/Turbine Temperature Control"
   parameter Types.PerUnit Dm = 0 "Mechanical damping coefficient";
   parameter Types.PerUnit Wfnl = 0.2 "No load fuel flow";
   Modelica.Blocks.Math.Gain KPLOAD(k = Kpload) annotation (
-    Placement(visible = true, transformation(extent = {{-20, -80}, {0, -60}}, rotation = 0)));
+    Placement(transformation(extent = {{-20, -80}, {0, -60}})));
   Modelica.Blocks.Continuous.Integrator s6(k = 1, y_start = s60, initType = Modelica.Blocks.Types.Init.InitialOutput) annotation (
-    Placement(visible = true, transformation(origin = {-10, -34}, extent = {{10, 10}, {-10, -10}}, rotation = 180)));
+    Placement(transformation(origin = {-10, -34}, extent = {{10, 10}, {-10, -10}}, rotation = 180)));
   Modelica.Blocks.Math.Add LoadlimiterPI annotation (
-    Placement(visible = true, transformation(extent = {{20, -50}, {40, -30}}, rotation = 0)));
+    Placement(transformation(extent = {{20, -50}, {40, -30}})));
   Modelica.Blocks.Math.Add diff(k2 = -1) annotation (
     Placement(transformation(extent = {{-10, 10}, {10, -10}}, rotation = 180, origin = {0, 0})));
   Modelica.Blocks.Math.Gain gain(k = 1 / Kturb) annotation (
     Placement(transformation(extent = {{-60, 20}, {-40, 40}})));
   Modelica.Blocks.Nonlinear.Limiter maxLimiter(uMax = 1, uMin = -Modelica.Constants.inf) annotation (
-    Placement(visible = true, transformation(extent = {{60, -50}, {80, -30}}, rotation = 0)));
+    Placement(transformation(extent = {{60, -50}, {80, -30}})));
   Modelica.Blocks.Math.Add tlim annotation (
-    Placement(transformation(extent = {{-10, -10}, {10, 10}}, rotation = 0, origin = {0, 36})));
+    Placement(transformation(extent = {{-10, -10}, {10, 10}}, origin = {0, 36})));
   Modelica.Blocks.Math.Gain Gain(k = Kiload) annotation (
-    Placement(visible = true, transformation(origin = {-50, -34}, extent = {{10, -10}, {-10, 10}}, rotation = 180)));
+    Placement(transformation(origin = {-50, -34}, extent = {{10, -10}, {-10, 10}}, rotation = 180)));
   Modelica.Blocks.Interfaces.RealOutput FSRT "Controller Output" annotation (
     Placement(transformation(extent = {{100, -50}, {120, -30}}), iconTransformation(extent = {{100, -70}, {120, -50}})));
   Modelica.Blocks.Interfaces.RealInput LDREF "Load Limiter reference value (pu)" annotation (
@@ -28,7 +28,7 @@ model LoadLimiter "GE General GGOV1 Governor/Turbine Temperature Control"
   Modelica.Blocks.Interfaces.RealInput TEXM "Measured Exhaust Temperature" annotation (
     Placement(transformation(extent = {{140, 20}, {100, 60}}), iconTransformation(extent = {{140, 20}, {100, 60}})));
   Modelica.Blocks.Interfaces.RealInput PELEC "Machine electrical power (pu)" annotation (
-    Placement(visible = true,transformation( origin = {0, -120},extent = {{-20, -20}, {20, 20}}, rotation = 90), iconTransformation( origin = {0, -120},extent = {{-20, -20}, {20, 20}}, rotation = 90)));
+    Placement(transformation( origin = {0, -120},extent = {{-20, -20}, {20, 20}}, rotation = 90), iconTransformation( origin = {0, -120},extent = {{-20, -20}, {20, 20}}, rotation = 90)));
   Modelica.Blocks.Sources.Constant const(k = Wfnl) annotation (
     Placement(transformation(extent = {{-60, 60}, {-40, 80}})));
 protected
@@ -80,7 +80,7 @@ Limiter"), Text(
           extent={{-20,-80},{20,-100}},
           textString="PELEC")}),
     Documentation(info = "<html>
-<p>The following documentation is adapted from 
+<p>The following documentation is adapted from
 <a href=\"modelica://OpenIPSL.UsersGuide.References\">[PSSE-Models], chapter 7.12</a>:</p>
 <blockquote>
 <p>

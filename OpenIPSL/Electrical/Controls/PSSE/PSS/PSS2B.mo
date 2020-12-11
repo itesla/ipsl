@@ -112,7 +112,7 @@ equation
   annotation (Icon(graphics={Text(
           extent={{-40,80},{40,40}},
           lineColor={28,108,200},
-          textString="PSS2B")}), 
+          textString="PSS2B")}),
           Documentation(info="<html>IEEE Dual-Input Stabilizer Model.</html>",
   revisions="<html><table cellspacing=\"1\" cellpadding=\"1\" border=\"1\">
 <tr>

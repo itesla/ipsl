@@ -9,13 +9,10 @@ model WyeLoad_1Ph "Single-phase load"
     ii(start=iai0)) annotation (Placement(
       transformation(
         extent={{-10.0,0.0},{10.0,20.0}},
-        origin={0.0,0.0},
-        rotation=0),
+        origin={0.0,0.0}),
       iconTransformation(
         extent={{-80.0,0.0},{-60.0,20.0}},
-        origin={70,100},
-        rotation=0),
-      visible=true));
+        origin={70,100})));
   parameter Integer ModelType=0 "0- Constant Power Model, 1- ZIP Model;";
 
   parameter Types.PerUnit VA=1
@@ -73,7 +70,7 @@ protected
 equation
   Pa = A.vr*A.ir + A.vi*A.ii;
   Qa = A.vi*A.ir - A.vr*A.ii;
-  annotation (Icon(coordinateSystem(preserveAspectRatio=false, initialScale=0.1),
+  annotation (Icon(coordinateSystem(preserveAspectRatio=false),
         graphics={Line(points={{-100,100},{100,100},{0,-100},{-100,100}}, color=
            {28,108,200}),Text(
           lineColor={28,108,200},
@@ -85,10 +82,10 @@ equation
           textString="PQ/ZIP Load")}),
           Documentation(info="<html>
 <p>This is a single-phase load model.</p>
-<p>The user needs to input the active (<b><i>P_a</i></b>) and reactive (<b><i>Q_a</i></b>) powers consumed by the phase. 
-Since the values come from independent parameters, the model allows the representation of unbalanced loads.</p> 
-<p>In addition, the model allows the load to be represented as constant power, or as a ZIP model. 
-In the first approach, the load consumes the same value of active and reactive powers throughout the simulation. 
+<p>The user needs to input the active (<b><i>P_a</i></b>) and reactive (<b><i>Q_a</i></b>) powers consumed by the phase.
+Since the values come from independent parameters, the model allows the representation of unbalanced loads.</p>
+<p>In addition, the model allows the load to be represented as constant power, or as a ZIP model.
+In the first approach, the load consumes the same value of active and reactive powers throughout the simulation.
 The latter approach allows the load to be represented as a sum of three terms: constant impedance, constant current and constant power. This means that, depending on voltage levels supplied, the load will consume different values of power.</p>
 </html>"));
 end WyeLoad_1Ph;

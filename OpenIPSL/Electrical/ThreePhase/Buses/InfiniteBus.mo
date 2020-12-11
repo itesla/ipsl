@@ -69,7 +69,6 @@ equation
   annotation (Icon(coordinateSystem(
         extent={{-100,-100},{100,100}},
         preserveAspectRatio=false,
-        initialScale=0.1,
         grid={10,10}), graphics={Rectangle(
           fillColor={255,255,255},
           extent={{-100,-100},{100,100}},
@@ -85,8 +84,6 @@ equation
           textString=DynamicSelect("0.0", String(Q, significantDigits=2))),Line(
           points={{40,-48},{40,-60}}, color={0,0,0}),Line(points={{80,-54},{72,
           -60}}, color={0,0,0}),Line(points={{82,86},{74,80}}, color={0,0,0})}),
-      Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{
-            100,100}})),
             Documentation(info="<html>
 <p>This is a three-phase infinite bus model.</p>
 <p>An infinite bus represents a very strong system. This means that no matter how much power is drained from or injected in it, the bus will keep the values of frequency, voltage magnitude and voltage angle constant.</p>

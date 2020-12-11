@@ -8,7 +8,7 @@ partial model BaseGovernor
         transformation(extent={{-260,60},{-220,100}}), iconTransformation(
           extent={{-100,-80},{-60,-40}})));
   Modelica.Blocks.Interfaces.RealOutput PMECH annotation (Placement(
-        visible = true,transformation(extent = {{240, -10}, {260, 10}}, rotation = 0), iconTransformation(extent = {{100, -10}, {120, 10}}, rotation = 0)));
+        transformation(extent = {{240, -10}, {260, 10}}), iconTransformation(extent = {{100, -10}, {120, 10}})));
   annotation (Icon(            graphics={
         Rectangle(
           extent={{-100,100},{100,-100}},
