@@ -56,7 +56,7 @@ model MeasurementBus "Three-phase active and reactive power measurement bus"
         extent={{24,-24},{-24,24}},
         rotation=-90,
         origin={-50,124})));
-equation 
+equation
   // Equations for Phase A
   Pa = -(p1.vr*p1.ir + p1.vi*p1.ii)*S_p;
   Qa = -(p1.vr*p1.ii - p1.vi*p1.ir)*S_p;

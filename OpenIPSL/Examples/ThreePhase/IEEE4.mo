@@ -143,7 +143,7 @@ equation
       StartTime=0,
       StopTime=0.1,
       Tolerance=1e-06,
-      Interval=0.0002), 
+      Interval=0.0002),
       Documentation(info="<html>
 <p>This test system aims to show how a very small three-phase system should be assembled for simulation.
  Its results should be compared to the example IEEE4_MonoTri, in order to show what to expect from the hybrid transformer.

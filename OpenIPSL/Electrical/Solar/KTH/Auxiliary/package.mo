@@ -1,6 +1,7 @@
 within OpenIPSL.Electrical.Solar.KTH;
 package Auxiliary
   extends Modelica.Icons.Package;
+
 annotation (Diagram(coordinateSystem(
       extent={{-148.5,-105.0},{148.5,105.0}},
       preserveAspectRatio=true,

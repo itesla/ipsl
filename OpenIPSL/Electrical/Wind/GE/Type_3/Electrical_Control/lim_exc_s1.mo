@@ -3,7 +3,7 @@ model lim_exc_s1
   extends Modelica.Blocks.Icons.Block;
   parameter Types.PerUnit xiqmin=1;
   parameter Types.PerUnit xiqmax=1;
-  parameter Integer typpe=1 
+  parameter Integer typpe=1
       annotation (Evaluate=true, choices(
       choice=0,
       choice=1,
