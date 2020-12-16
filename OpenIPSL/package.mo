@@ -5,7 +5,8 @@ package OpenIPSL "Open-Instance Power System Library"
 annotation (preferredView="info",
   Protection(access = Access.packageDuplicate),
   uses(Complex(version="3.2.3"), Modelica(version="3.2.3")),
-  version="2.0.0-dev",
+  version="2.0.0-beta.1",
+  versionDate="2020-12-16",
   conversion(
      from(version={"0.8","0.8.1","1.0.0","1.5.0"}, script="modelica://OpenIPSL/Resources/Scripts/ConvertOpenIPSL_from_1.5.0_to_2.0.0.mos")),
   Icon(graphics={Bitmap(extent={{-100,-100},{100,100}}, fileName=
