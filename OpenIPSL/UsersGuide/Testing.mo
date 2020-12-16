@@ -1,10 +1,10 @@
 within OpenIPSL.UsersGuide;
-model LibraryTesting "Testing and Verification"
+model Testing "Testing and Verification"
   extends Modelica.Icons.Information;
 
   annotation(DocumentationClass=true, Documentation(info="<html>
 <h4>Continuous Integration</h4>
-<p>The OpenIPSL repository is connected to <a href=\"https://travis-ci.org/\">Travis CI</a> that provides <b>Continuous Integration</b> services to the repository.
+<p>The <strong><code>OpenIPSL</code></strong> repository is connected to <a href=\"https://travis-ci.org/\">Travis CI</a> that provides <b>Continuous Integration</b> services to the repository.
 In the current implementation, the CI server performs Modelica syntax checking for all classes in OpenIPSL</p>
 
 <h4>Regression Testing</h4>
@@ -22,4 +22,4 @@ The entire result verification procedure is done using <a href=\"https://github.
 <p>Automatic regression testing is not yet configured in our Travis CI routine.</p>
 
 </html>"));
-end LibraryTesting;
+end Testing;

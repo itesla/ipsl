@@ -4,21 +4,25 @@ model Overview "Overview"
 
   annotation(DocumentationClass=true, Documentation(info="<html>
 <p>
-The <b>OpenIPSL</b> has, basically, six packages: Examples, Electrical, Nonelectrical, Interfaces, Icons and Types. They are briefly described below:
-<ul>
-<li> <b>Examples</b>: contains unit tests that verify model behavior and can be used as a starting point on how to use a specific model.</li>
-<li> <b>Electrical</b>: contains many different models that represent devices that form the grid or that are part of equipment which is connected to the grid. A more detailed overview is presented below.</li>
-<li> <b>Nonelectrical</b>: contains elementary blocks that can be used to model a specific dynamic behavior (a lead-lag transfer function, for example). It also contains functions that are called inside models.</li>
-<li> <b>Interfaces</b>: contains the connector interface and the generator mask. The connector is present in every model that is connected to the grid.</li>
-<li> <b>Icons</b>: contains the basic icons that are used and extended throughout the library.</li>
-<li> <b>Types</b>: contains a description of the units that are used in the library and an expected order of magnitude. This information can be used to scale differential equations and enhance code generation performance.</li>
-</ul>
+The <strong><code>OpenIPSL</code></strong> has, basically, six packages: 
+Examples, Electrical, Nonelectrical, Interfaces, Icons and Types. They are briefly described below:
 </p>
 
+<ul>
+<li> <a href=\"modelica://OpenIPSL.Examples\">Examples</a>: contains unit tests that verify model behavior and can be used as a starting point on how to use a specific model.</li>
+<li> <a href=\"modelica://OpenIPSL.Electrical\">Electrical</a>: contains many different models that represent devices that form the grid or that are part of equipment which is connected to the grid. A more detailed overview is presented below.</li>
+<li> <a href=\"modelica://OpenIPSL.NonElectrical\">NonElectrical</a>: contains elementary blocks that can be used to model a specific dynamic behavior (a lead-lag transfer function, for example). It also contains functions that are called inside models.</li>
+<li> <a href=\"modelica://OpenIPSL.Interfaces\">Interfaces</a>: contains the connector interface and the generator mask. The connector is present in every model that is connected to the grid.</li>
+<li> <a href=\"modelica://OpenIPSL.Icons\">Icons</a>: contains the basic icons that are used and extended throughout the library.</li>
+<li> <a href=\"modelica://OpenIPSL.Types\">Types</a>: contains a description of the units that are used in the library and an expected order of magnitude. This information can be used to scale differential equations and enhance code generation performance.</li>
+</ul>
+
 <p>
-The <b>Electrical</b> package has many other subpackages that are briefly described here.
-It also contains one model, <code>SystemBase</code>, which is going to be explained later in <a href=\"modelica://OpenIPSL.UsersGuide.GettingStarted\">Getting Started</a>.
-Within each subpakcage, the user will find models grouped into software tools from which each model design was extracted.
+The <a href=\"modelica://OpenIPSL.Electrical\">Electrical</a> package has many other subpackages that are 
+briefly described here.
+It also contains one model, <a href=\"modelica://OpenIPSL.Electrical.SystemBase\">SystemBase</a>, 
+which is going to be explained later in <a href=\"modelica://OpenIPSL.UsersGuide.GettingStarted\">Getting Started</a>.
+Within each subpackage, the user will find models grouped into software tools from which each model design was extracted.
 </p>
 
 <table border=1 cellspacing=0 cellpadding=2>

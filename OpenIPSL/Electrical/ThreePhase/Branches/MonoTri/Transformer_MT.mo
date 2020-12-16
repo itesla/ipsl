@@ -267,7 +267,7 @@ equation
           origin={-56,64},
           lineColor={28,108,200},
           extent={{4,18},{104,-34}},
-          textString="Hybrid Transformer")}, coordinateSystem()),
+          textString="Hybrid Transformer")}, coordinateSystem),
     Documentation(info="<html>
 <p>This model was design to represent a hybrid positive-sequence/three-phase two-winding transformer.</p>
 <p>The user should input the copper resistance <b>R</b> and leakage reactance <b>X</b> in per unit values.

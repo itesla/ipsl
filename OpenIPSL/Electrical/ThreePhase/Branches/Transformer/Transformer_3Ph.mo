@@ -144,7 +144,7 @@ equation
           origin={-54,84},
           lineColor={28,108,200},
           extent={{4,18},{104,-34}},
-          textString="Three Phase Transformer")}, coordinateSystem()),
+          textString="Three Phase Transformer")}, coordinateSystem),
     Documentation(info="<html>
 <p>This model was design to represent three-phase two-winding transformer.</p>
 <p>The user should input the copper resistance <b>R</b> and leakage reactance <b>X</b> in per unit values.
