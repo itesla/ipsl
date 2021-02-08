@@ -4,7 +4,7 @@ package Types "Library specific type definitions"
   type Voltage = SI.Voltage(nominal = 1e4, displayUnit = "kV");
   type Current = SI.Current(nominal = 1e4, displayUnit = "kA");
   type ActivePower = SI.ActivePower(nominal = 1e8, displayUnit = "MW");
-  type ReactivePower = SI.ReactivePower(nominal = 1e8, displayUnit = "MVA");
+  type ReactivePower = SI.ReactivePower(nominal = 1e8, displayUnit = "Mvar");
   type Power = SI.Power(nominal = 1e8, displayUnit = "MW");
   type ApparentPower = SI.ApparentPower(nominal = 1e8, displayUnit = "MVA");
   type Angle = SI.Angle(displayUnit="deg");
