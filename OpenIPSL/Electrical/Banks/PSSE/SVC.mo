@@ -55,7 +55,7 @@ model SVC "On bus 10106 & 10114"
   parameter Real OtherSignals;
   parameter Types.ReactivePower var_C=100e6
     "Total compensation capacity of shunt capacitor, 100(10106)/200(10114)";
-  parameter Types.ReactivePower var_R=-50
+  parameter Types.ReactivePower var_R=-50e6
     "Total compensation capacity of shunt reactor";
   Modelica.Blocks.Sources.Constant imSetPoint2(k=OtherSignals)
     annotation (Placement(transformation(extent={{-52,-20},{-40,-8}})));

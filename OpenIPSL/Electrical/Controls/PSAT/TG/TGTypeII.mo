@@ -1,5 +1,5 @@
 within OpenIPSL.Electrical.Controls.PSAT.TG;
-model TGtypeII "TG Type II"
+model TGTypeII "TG Type II"
   Modelica.Blocks.Interfaces.RealInput pm0 "Initial mechanical power [pu]"
     annotation (Placement(
       transformation(
@@ -114,4 +114,4 @@ equation
 </tr>
 </table>
 </html>"));
-end TGtypeII;
+end TGTypeII;
