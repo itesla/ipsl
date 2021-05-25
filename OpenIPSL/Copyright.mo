@@ -12,7 +12,7 @@ class Copyright "Disclaimer<html>
 </ul>
 <p>The authors can be contacted by email: <a href=\"mailto:luigi.vanfretti@gmail.com\">luigi.vanfretti@gmail.com</a></p>
 <p>This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </p>
-<p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
+<p>If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"https://www.mozilla.org/en-US/MPL/2.0/\"> http://mozilla.org/MPL/2.0</a>.</p>
 <p>&nbsp;</p>
 <p>iPSL:</p>
 <p>Copyright 2015-2016 RTE (France), SmarTS Lab (Sweden), AIA (Spain) and DTU (Denmark)</p>
