@@ -3,10 +3,10 @@ model GENCLS
   extends Icons.VerifiedModel;
   extends OpenIPSL.Electrical.Essentials.pfComponent(
     final enabledisplayPF=false,
-    final enableangle_0=false,
-    final enablev_0=false,
-    final enableQ_0=false,
-    final enableP_0=false,
+    final enableangle_0=true,
+    final enablev_0=true,
+    final enableQ_0=true,
+    final enableP_0=true,
     final enablefn=false,
     final enableV_b=false,
     final enableS_b=false);
