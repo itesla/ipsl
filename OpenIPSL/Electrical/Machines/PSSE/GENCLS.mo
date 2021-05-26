@@ -76,27 +76,47 @@ equation
   V = sqrt(p.vr^2 + p.vi^2);
   anglev = atan2(p.vi, p.vr);
   annotation (
-    Icon(graphics={Text(
-          extent={{50,150},{100,110}},
+    Icon(graphics={Text(extent={{-150,150},{150,110}}, textString="%name"),
+                                         Rectangle(extent={{-100,100},{100,-100}},
+          lineColor={0,0,255}),
+                              Text(
+          extent={{-60,30},{60,-32}},
           lineColor={0,0,255},
-          lineThickness=0.5,
-          fillColor={0,0,255},
-          fillPattern=FillPattern.Solid,
-          textStyle={TextStyle.Bold},
-          textString="INF"),Line(points={{-40,88},{0,68}}, color={0,0,255}),
-          Line(points={{-40,70},{0,50}}, color={0,0,255}),Line(points={{-40,50},
-          {0,30}}, color={0,0,255}),Line(points={{-40,30},{0,10}}, color={0,0,
-          255}),Line(points={{-40,10},{0,-10}}, color={0,0,255}),Line(points={{
-          -40,-10},{0,-30}}, color={0,0,255}),Line(points={{-40,-30},{0,-50}},
-          color={0,0,255}),Line(points={{-40,-50},{0,-70}}, color={0,0,255}),
-          Line(points={{0,80},{0,-80}}, color={0,0,255}),Line(points={{100,0},{
-          96,0},{0,0}}, color={0,0,255}),Rectangle(extent={{-100,100},{100,-100}},
-          lineColor={0,0,255})}),
+          textString="GENCLS")}),
     Documentation(info="<html>
 <p>
-Synchronous machine represented by 'classical' modeling or
-Thevenin voltage source (for <code>H = 0</code>).
+Synchronous machine represented by 'classical' modeling 
+(see also <a href=\"modelica://OpenIPSL.UsersGuide.References\">[PSSE-AGV2], chapter 15</a>).
 </p>
+<h5>Parametrization</h5>
+<p>
+This model changes its behavior depending on the value of the parameter <code>H</code>:
+</p>
+<ol>
+<li><code>H=0</code>: The model behaves like an infinite bus where the voltage and frequency, 
+specified by <code>v_0</code> and <code>fn</code>, are kept constant. 
+<code>P</code> and <code>Q</code> are then calculated accordingly (i.e., the initial values 
+<code>P_0</code> and <code>Q_0</code> have <strong>no</strong> influence on the behavior of the model).</li>
+<li><code>H>0</code>: \"Classical Generator\" model with physically-meaningful parameters, e.g.,
+ <code>H=5</code> in a 100 MVA base. The parameters <code>P_0</code> and <code>Q_0</code> are used
+to specify the fixed active and reactive power injected or absorbed by the model. 
+The parameters <code>v_0</code> and <code>fn</code> can be used to specify the <strong>initial</strong>
+voltage and frequency.</li>
+<li><code>H>>0</code>: By making <code>H</code> very large, e.g., <code>H=1e6</code> in a 100 MVA base,
+the speed of the machine will not undergo any changes, and consequently will set the frequency <code>f</code> at the 
+bus to a fixed value (i.e., <code>fn</code>). The parameters <code>P_0</code>, <code>Q_0</code>,
+<code>v_0</code> and <code>fn</code> have the same function as in case 2.</li>
+</ol>
+
+
+<h5>Applications</h5>
+<ol>
+<li><code>H=0</code>: Infinite bus</li> 
+<li><code>H>0</code>: Can be used to model a generation facility when only limited information
+ is available, this is the simplest model possible to represent a synchronous machine's electro-mechanical dynamics.</li>
+<li><code>H>>0</code>: Can be used to model the connection to a \"stiff grid\".</li>
+</ol>
+
 <p>See also <a href=\"modelica://OpenIPSL.UsersGuide.References\">[PSSE-AGV2], chapter 15</a>.</p>
 </html>", revisions="<html>
 <table cellspacing=\"1\" cellpadding=\"1\" border=\"1\"><tr>
