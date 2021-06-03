@@ -1,47 +1,53 @@
 within OpenIPSL.NonElectrical.Logical;
-model Relay "Relay"
+model Relay "Relay,  y = if u1 > 0 then u2 else u3"
   Modelica.Blocks.Interfaces.RealInput u1 annotation (Placement(transformation(
-          extent={{-61,20},{-41,40}}), iconTransformation(extent={{-60,20},{-40,
-            40}})));
+          extent={{-140,60},{-100,100}})));
   Modelica.Blocks.Interfaces.RealInput u2 annotation (Placement(transformation(
-          extent={{-61,-10},{-41,10}}), iconTransformation(extent={{-60,-10},{-40,
-            10}})));
+          extent={{-140,-20},{-100,20}})));
   Modelica.Blocks.Interfaces.RealInput u3 annotation (Placement(transformation(
-          extent={{-61,-40},{-41,-20}}), iconTransformation(extent={{-60,-40},{
-            -40,-20}})));
+          extent={{-140,-100},{-100,-60}})));
   Modelica.Blocks.Interfaces.RealOutput y annotation (Placement(transformation(
-          extent={{39,-10},{59,10}}), iconTransformation(extent={{40,-8},{56,8}})));
+          extent={{100,-10},{120,10}})));
+  Modelica.Blocks.Logical.GreaterThreshold greaterThreshold annotation (Placement(transformation(extent={{-80,70},{-60,90}})));
+  Modelica.Blocks.Logical.Switch switch annotation (Placement(transformation(extent={{-8,-10},{12,10}})));
 equation
-  y = if u1 > 0 then u2 else u3;
+
+  connect(greaterThreshold.u, u1) annotation (Line(points={{-82,80},{-94,80},{-94,80},{-120,80}}, color={0,0,127}));
+  connect(greaterThreshold.y, switch.u2) annotation (Line(points={{-59,80},{-20,80},{-20,0},{-10,0}}, color={255,0,255}));
+  connect(switch.u1, u2) annotation (Line(points={{-10,8},{-80,8},{-80,0},{-120,0}}, color={0,0,127}));
+  connect(switch.u3, u3) annotation (Line(points={{-10,-8},{-20,-8},{-20,-80},{-120,-80}}, color={0,0,127}));
+  connect(switch.y, y) annotation (Line(points={{13,0},{110,0}}, color={0,0,127}));
   annotation (
-    Icon(coordinateSystem(extent={{-40,-40},{40,40}}, preserveAspectRatio=true),
-        graphics={Rectangle(
-          extent={{-40,40},{40,-40}},
+    Icon(graphics={Rectangle(
+          extent={{-100,100},{100,-100}},
           lineColor={0,0,0},
           fillColor={255,255,255},
           fillPattern=FillPattern.Solid),Line(
-          points={{-28,0},{-8,0}},
+          points={{-100,0},{-42,0}},
           color={0,0,255},
           smooth=Smooth.None),Line(
-          points={{-28,-20},{-8,-20}},
+          points={{-100,-80},{-42,-80}},
           color={0,0,255},
           smooth=Smooth.None),Line(
-          points={{-12,-2},{4,-12},{24,-12}},
+          points={{-34,0},{22,-40},{70,-40},{70,0},{100,0}},
           color={0,0,255},
-          smooth=Smooth.None),Ellipse(extent={{-8,2},{-4,-2}}, lineColor={0,0,
-          255}),Ellipse(extent={{-8,-18},{-4,-22}}, lineColor={0,0,255}),
+          smooth=Smooth.None),Ellipse(extent={{-42,4},{-34,-4}},
+                                                               lineColor={0,0,
+          255}),Ellipse(extent={{-42,-76},{-34,-84}},
+                                                    lineColor={0,0,255}),
           Rectangle(
-          extent={{-12,36},{12,24}},
+          extent={{-30,90},{30,70}},
           lineColor={0,0,255},
           fillColor={255,255,255},
-          fillPattern=FillPattern.Solid),Line(points={{-12,30},{-28,30}}, color=
-           {0,0,255}),Line(points={{28,30},{12,30}}, color={0,0,255}),Line(
-          points={{0,24},{0,-10}},
+          fillPattern=FillPattern.Solid),Line(points={{-30,80},{-100,80}},color=
+           {0,0,255}),Line(points={{100,80},{30,80}},color={0,0,255}),Line(
+          points={{0,70},{0,-24}},
           color={0,0,255},
           pattern=LinePattern.Dash),Text(
-          extent={{-110,58},{110,42}},
+          extent={{-150,150},{150,110}},
           lineColor={0,0,255},
-          textString="%name")}),
-    Diagram(coordinateSystem(extent={{-40,-40},{40,40}}, preserveAspectRatio=
-            true)));
+          textString="%name"),Ellipse(extent={{18,-36},{26,-44}},
+                                                               lineColor={0,0,255},
+          fillColor={0,0,255},
+          fillPattern=FillPattern.Solid)}));
 end Relay;
