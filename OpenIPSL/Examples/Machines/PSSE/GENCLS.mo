@@ -1,7 +1,7 @@
 within OpenIPSL.Examples.Machines.PSSE;
 model GENCLS
-  extends OpenIPSL.Examples.BaseClasses.SMIB(GEN1(v_0=gENCLS2.v_0, angle_0=gENCLS2.angle_0));
-  OpenIPSL.Electrical.Machines.PSSE.GENCLS gENCLS2(
+  extends OpenIPSL.Examples.BaseClasses.SMIB(GEN1(v_0=gENCLS1.v_0, angle_0=gENCLS1.angle_0));
+  OpenIPSL.Electrical.Machines.PSSE.GENCLS gENCLS1(
    H = 6.0,
    M_b=100000000,
    P_0=40000000,
@@ -10,7 +10,7 @@ model GENCLS
    angle_0=0.070492225331847,
    omega(fixed=true)) annotation (Placement(transformation(extent={{-100,-20},{-60,20}})));
 equation
- connect(gENCLS2.p, GEN1.p)
-    annotation (Line(points={{-60,0},{-60,0},{-40,0}}, color={0,0,255}));
+ connect(gENCLS1.p, GEN1.p)
+    annotation (Line(points={{-60,0},{-60,0},{-30,0}}, color={0,0,255}));
    annotation (experiment(StopTime=10));
 end GENCLS;
