@@ -131,7 +131,7 @@ equation
     annotation (Line(points={{115,40},{122.75,40}}, color={0,0,127}));
   connect(ECOMP, imSimpleLag.u)
     annotation (Line(points={{-200,0},{-172,0}}, color={0,0,127}));
-  connect(VUEL, hV_GATE.n2) annotation (Line(points={{-130,-200},{-130,-22},{26,
+  connect(VUEL,hV_GATE.u2)  annotation (Line(points={{-130,-200},{-130,-22},{26,
           -22},{26,43},{30.5,43}}, color={0,0,127}));
   connect(imSimpleLag.y, DiffV.u2) annotation (Line(points={{-149,0},{-132,0},{
           -132,-6},{-122,-6}}, color={0,0,127}));
@@ -156,12 +156,12 @@ equation
                                                        color={0,0,127}));
   connect(rectifierCommutationVoltageDrop.EFD, EFD) annotation (Line(points={{
           181,40},{190,40},{190,0},{210,0}}, color={0,0,127}));
-  connect(hV_GATE.p, lV_GATE.n2) annotation (Line(points={{54.5,40},{56,40},{56,
+  connect(hV_GATE.y,lV_GATE.u2)  annotation (Line(points={{54.5,40},{56,40},{56,
           42},{58,42},{58,43},{62.5,43}},
                           color={0,0,127}));
-  connect(VOEL, lV_GATE.n1) annotation (Line(points={{-70,-200},{-70,-60},{58,-60},
+  connect(VOEL,lV_GATE.u1)  annotation (Line(points={{-70,-200},{-70,-60},{58,-60},
           {58,37},{62.5,37}},               color={0,0,127}));
-  connect(lV_GATE.p, limiter1.u)
+  connect(lV_GATE.y, limiter1.u)
     annotation (Line(points={{86.5,40},{92,40}},         color={0,0,127}));
   connect(lowLim.y, rotatingExciterWithDemagnetization.outMin) annotation (Line(
         points={{159,80},{150,80},{150,47.5},{145.25,47.5}}, color={0,0,127}));
@@ -192,7 +192,7 @@ equation
           {-6,-2}}, color={0,0,127}));
   connect(DiffV3.y, gain1.u) annotation (Line(points={{17,4},{20,4},{20,24},{-14,
           24},{-14,40},{-2,40}}, color={0,0,127}));
-  connect(gain1.y, hV_GATE.n1)
+  connect(gain1.y,hV_GATE.u1)
     annotation (Line(points={{21,40},{30.5,40},{30.5,37}}, color={0,0,127}));
   annotation (
     Diagram(coordinateSystem(extent={{-200,-200},{200,160}})),

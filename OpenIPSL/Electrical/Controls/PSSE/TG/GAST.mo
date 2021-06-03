@@ -86,11 +86,11 @@ equation
       points={{60.6,0},{68,0},{68,-40},{61.2,-40}},
       color={0,0,127},
       smooth=Smooth.None));
-  connect(add.y, lV_Gate.n1) annotation (Line(
+  connect(add.y,lV_Gate.u1)  annotation (Line(
       points={{-67.5,-17},{-55.75,-17},{-55.75,5},{-47.25,5}},
       color={0,0,127},
       smooth=Smooth.None));
-  connect(lV_Gate.n2, add2.y) annotation (Line(
+  connect(lV_Gate.u2, add2.y) annotation (Line(
       points={{-47.25,-5},{-47.25,-25.3},{-42.5,-25.3},{-42.5,-47}},
       color={0,0,127},
       smooth=Smooth.None));
@@ -98,7 +98,7 @@ equation
           {-31,-50}}, color={0,0,127}));
   connect(add1.u1, add2.u1) annotation (Line(points={{31,-50},{38,-50},{38,-84},
           {-8,-84},{-8,-50},{-31,-50}}, color={0,0,127}));
-  connect(simpleLagLim.u, lV_Gate.p) annotation (Line(points={{-5,1},{-17.5,1},
+  connect(simpleLagLim.u,lV_Gate.y)  annotation (Line(points={{-5,1},{-17.5,1},
           {-17.5,0},{-27.25,0}}, color={0,0,127}));
   connect(simpleLagLim.y, transferFunction1.u) annotation (Line(points={{6.5,1},
           {26.25,1},{26.25,0},{46.8,0}}, color={0,0,127}));

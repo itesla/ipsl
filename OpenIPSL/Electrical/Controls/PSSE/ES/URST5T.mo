@@ -80,15 +80,15 @@ equation
     annotation (Line(points={{-200,0},{-186,0},{-172,0}}, color={0,0,127}));
   connect(TransducerDelay.y, DiffV.u2) annotation (Line(points={{-149,0},{-132,
           0},{-132,-6},{-122,-6}}, color={0,0,127}));
-  connect(VUEL, hV_Gate.n1) annotation (Line(points={{-130,-200},{-130,-200},{-130,
+  connect(VUEL,hV_Gate.u1)  annotation (Line(points={{-130,-200},{-130,-200},{-130,
           -20},{-90,-20},{-90,3},{-87.375,3}}, color={0,0,127}));
-  connect(DiffV.y, hV_Gate.n2) annotation (Line(points={{-99,0},{-92,0},{-92,-3},
+  connect(DiffV.y,hV_Gate.u2)  annotation (Line(points={{-99,0},{-92,0},{-92,-3},
           {-87.375,-3}}, color={0,0,127}));
-  connect(VOEL, lV_Gate.n2) annotation (Line(points={{-70,-200},{-70,-200},{-70,
+  connect(VOEL,lV_Gate.u2)  annotation (Line(points={{-70,-200},{-70,-200},{-70,
           -34},{-70,-20},{-60,-20},{-60,-3},{-57.5,-3}}, color={0,0,127}));
-  connect(hV_Gate.p, lV_Gate.n1) annotation (Line(points={{-65.375,0},{-62,0},{
+  connect(hV_Gate.y,lV_Gate.u1)  annotation (Line(points={{-65.375,0},{-62,0},{
           -62,3},{-57.5,3}}, color={0,0,127}));
-  connect(lV_Gate.p, VERR1.u1) annotation (Line(points={{-33.5,0},{-30,0},{-30,
+  connect(lV_Gate.y, VERR1.u1) annotation (Line(points={{-33.5,0},{-30,0},{-30,
           -6},{-22,-6}}, color={0,0,127}));
   connect(VOTHSG, VERR1.u2) annotation (Line(points={{-200,90},{-200,90},{-30,
           90},{-30,6},{-22,6}}, color={0,0,127}));

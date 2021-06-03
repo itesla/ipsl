@@ -122,7 +122,7 @@ equation
       points={{121,-110},{148,-110},{148,-76},{158,-76}},
       color={0,0,127},
       smooth=Smooth.None));
-  connect(lV_Gate.p, product.u1) annotation (Line(
+  connect(lV_Gate.y, product.u1) annotation (Line(
       points={{142.5,-64},{158,-64}},
       color={0,0,127},
       smooth=Smooth.None));
@@ -160,9 +160,9 @@ equation
     annotation (Line(points={{161,0},{164.5,0},{168,0}}, color={0,0,127}));
   connect(product.y, EFD) annotation (Line(points={{181,-70},{198,-70},{198,0},
           {210,0}}, color={0,0,127}));
-  connect(lV_Gate.n2, VOEL) annotation (Line(points={{118.5,-67},{0,-67},{0,-160},
+  connect(lV_Gate.u2, VOEL) annotation (Line(points={{118.5,-67},{0,-67},{0,-160},
           {-70,-160},{-70,-200}}, color={0,0,127}));
-  connect(limiter1.y, lV_Gate.n1) annotation (Line(points={{191,0},{194,0},{194,
+  connect(limiter1.y,lV_Gate.u1)  annotation (Line(points={{191,0},{194,0},{194,
           -50},{112,-50},{112,-61},{118.5,-61}}, color={0,0,127}));
   connect(gain.u, EFD) annotation (Line(points={{132,60},{198,60},{198,0},{210,
           0}}, color={0,0,127}));

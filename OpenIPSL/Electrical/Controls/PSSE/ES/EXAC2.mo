@@ -169,11 +169,11 @@ equation
           {102,-24}}, color={0,0,127}));
   connect(gain1.y, limiter.u)
     annotation (Line(points={{92.8,0},{94,0},{98,0}}, color={0,0,127}));
-  connect(lV_GATE.p, gain1.u)
+  connect(lV_GATE.y, gain1.u)
     annotation (Line(points={{66.625,0},{74.4,0}}, color={0,0,127}));
-  connect(gain3.y, lV_GATE.n2) annotation (Line(points={{51,-30},{44.625,-30},{
+  connect(gain3.y,lV_GATE.u2)  annotation (Line(points={{51,-30},{44.625,-30},{
           44.625,-3}}, color={0,0,127}));
-  connect(DiffV1.y, lV_GATE.n1)
+  connect(DiffV1.y,lV_GATE.u1)
     annotation (Line(points={{41,0},{44.625,0},{44.625,3}}, color={0,0,127}));
   annotation (
     Diagram(coordinateSystem(extent={{-200,-200},{200,160}})),

@@ -380,6 +380,11 @@ convertMessage({"OpenIPSL.NonElectrical.Logical.Relay4"},
                 "This model was removed without replacement, no support of automatic conversion.");
 
 
+convertElement("OpenIPSL.NonElectrical.Logical.HV_GATE",
+               {"n1","n2","p"},{"u1","u2","y"});
+convertElement("OpenIPSL.NonElectrical.Logical.LV_GATE",
+               {"n1","n2","p"},{"u1","u2","y"});
+
 /* Interfaces */
 
 // Interfaces.Generator

@@ -119,11 +119,11 @@ equation
   connect(K_c.y, VERR2.u1) annotation (Line(points={{130,-81},{130,-81},{130,-6},{138,-6}}, color={0,0,127}));
   connect(imLimitedLeadLag4.y, imLimitedLeadLag5.u) annotation (Line(points={{41,-90},{41,-90},{48,-90}}, color={0,0,127}));
   connect(imLimitedLeadLag2.y, K_r.u) annotation (Line(points={{71,0},{78,0},{78,0.5}}, color={0,0,127}));
-  connect(lV_Gate.p, VERR1.u2) annotation (Line(points={{-27.375,6},{-22,6}}, color={0,0,127}));
-  connect(hV_Gate.p, lV_Gate.n2) annotation (Line(points={{-59.625,3},{-54.8125,3},{-54.8125,3},{-49.375,3}}, color={0,0,127}));
-  connect(hV_Gate.n2, DiffV.y) annotation (Line(points={{-85.625,-0.5},{-91.8125,-0.5},{-91.8125,0},{-99,0}}, color={0,0,127}));
-  connect(hV_Gate.n1, VUEL) annotation (Line(points={{-85.625,6.5},{-92,6.5},{-92,-160},{-130,-160},{-130,-200}}, color={0,0,127}));
-  connect(lV_Gate.n1, VOEL) annotation (Line(points={{-49.375,9},{-54,9},{-54,-160},{-70,-160},{-70,-200}}, color={0,0,127}));
+  connect(lV_Gate.y, VERR1.u2) annotation (Line(points={{-27.375,6},{-22,6}}, color={0,0,127}));
+  connect(hV_Gate.y,lV_Gate.u2)  annotation (Line(points={{-59.625,3},{-54.8125,3},{-54.8125,3},{-49.375,3}}, color={0,0,127}));
+  connect(hV_Gate.u2, DiffV.y) annotation (Line(points={{-85.625,-0.5},{-91.8125,-0.5},{-91.8125,0},{-99,0}}, color={0,0,127}));
+  connect(hV_Gate.u1, VUEL) annotation (Line(points={{-85.625,6.5},{-92,6.5},{-92,-160},{-130,-160},{-130,-200}}, color={0,0,127}));
+  connect(lV_Gate.u1, VOEL) annotation (Line(points={{-49.375,9},{-54,9},{-54,-160},{-70,-160},{-70,-200}}, color={0,0,127}));
   connect(K_r.y, limiter.u) annotation (Line(points={{101,0.5},{104.5,0.5},{104.5,0},{106,0}}, color={0,0,127}));
   connect(limiter.y, VERR2.u2) annotation (Line(points={{129,0},{132,0},{132,6},{138,6}}, color={0,0,127}));
   connect(simpleLagLimVar.y, EFD) annotation (Line(points={{195,0},{210,0},{210,0}}, color={0,0,127}));
