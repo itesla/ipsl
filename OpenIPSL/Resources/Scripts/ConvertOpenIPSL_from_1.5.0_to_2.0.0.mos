@@ -376,6 +376,9 @@ convertElement({"OpenIPSL.NonElectrical.Continuous.RampTrackingFilter"},
                {"StartValue"},{"y_start"});
 convertMessage({"OpenIPSL.NonElectrical.Continuous.RampTrackingFilter"},
                 "No support of automatic conversion for internal classes.");
+convertMessage({"OpenIPSL.NonElectrical.Logical.Relay4"},
+                "This model was removed without replacement, no support of automatic conversion.");
+
 
 /* Interfaces */
 
