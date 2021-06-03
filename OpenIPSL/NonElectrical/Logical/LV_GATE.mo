@@ -1,26 +1,17 @@
 within OpenIPSL.NonElectrical.Logical;
-model LV_GATE
-  Modelica.Blocks.Interfaces.RealInput u1 annotation (Placement(transformation(
-          extent={{-86,-2},{-46,38}}), iconTransformation(extent={{-100,10},{-80,
-            30}})));
-  Modelica.Blocks.Interfaces.RealInput u2 annotation (Placement(transformation(
-          extent={{-86,-50},{-46,-10}}), iconTransformation(extent={{-100,-30},
-            {-80,-10}})));
-  Modelica.Blocks.Interfaces.RealOutput y annotation (Placement(transformation(
-          extent={{-208,58},{-188,78}}), iconTransformation(extent={{60,-10},{
-            80,10}})));
+block LV_GATE "Passes through the lower value of the two inputs"
+  extends Modelica.Blocks.Math.Min;
 equation
-  y = if u1 >u2  then u2 else u1;
-  annotation (
-    Diagram(coordinateSystem(preserveAspectRatio=true, extent={{-80,-40},{80,40}})),
-    Icon(coordinateSystem(preserveAspectRatio=true, extent={{-80,-40},{80,40}}),
-        graphics={Polygon(
-          points={{-80,40},{-80,-40},{0,-40},{80,0},{0,40},{-80,40}},
+  connect(y, y) annotation (Line(points={{110,0},{110,0}}, color={0,0,127}));
+  annotation (Icon(graphics={Polygon(
+          points={{-100,100},{40,100},{100,0},{40,-100},{-100,-100},{-100,100}},
+          lineColor={28,108,200},
+          fillColor={255,255,255},
+          fillPattern=FillPattern.Solid), Text(
+          extent={{-100,40},{60,-40}},
           lineColor={0,0,255},
           fillColor={255,255,255},
-          fillPattern=FillPattern.Solid),Text(
-          extent={{-60,20},{0,-20}},
-          lineColor={0,0,255},
+          fillPattern=FillPattern.None,
           textString="LV
-Gate")}));
+GATE")}));
 end LV_GATE;
