@@ -12,12 +12,12 @@ model URST5T "IEEE Proposed Type ST5B Excitation System [IEEE2005]"
   parameter Real T_1=0.58 "Thyristor bridge firing control equivalent time constant";
   parameter Real K_C=0.3 "Rectifier loading factor proportional to commutating reactance";
   Modelica.Blocks.Math.Add VERR1 annotation (Placement(transformation(
-        extent={{-10,10},{10,-10}},
+        extent={{-10,-10},{10,10}},
         origin={-10,0})));
   NonElectrical.Logical.LV_GATE lV_Gate
-    annotation (Placement(transformation(extent={{-56,-6},{-32,6}})));
+    annotation (Placement(transformation(extent={{-52,-10},{-32,10}})));
   NonElectrical.Logical.HV_GATE hV_Gate
-    annotation (Placement(transformation(extent={{-86,-6},{-64,6}})));
+    annotation (Placement(transformation(extent={{-86,-10},{-66,10}})));
   NonElectrical.Continuous.LeadLagLim LL1(
     K=1,
     outMax=V_RMAX/KR,
@@ -80,18 +80,10 @@ equation
     annotation (Line(points={{-200,0},{-186,0},{-172,0}}, color={0,0,127}));
   connect(TransducerDelay.y, DiffV.u2) annotation (Line(points={{-149,0},{-132,
           0},{-132,-6},{-122,-6}}, color={0,0,127}));
-  connect(VUEL,hV_Gate.u1)  annotation (Line(points={{-130,-200},{-130,-200},{-130,
-          -20},{-90,-20},{-90,3},{-87.375,3}}, color={0,0,127}));
-  connect(DiffV.y,hV_Gate.u2)  annotation (Line(points={{-99,0},{-92,0},{-92,-3},
-          {-87.375,-3}}, color={0,0,127}));
-  connect(VOEL,lV_Gate.u2)  annotation (Line(points={{-70,-200},{-70,-200},{-70,
-          -34},{-70,-20},{-60,-20},{-60,-3},{-57.5,-3}}, color={0,0,127}));
-  connect(hV_Gate.y,lV_Gate.u1)  annotation (Line(points={{-65.375,0},{-62,0},{
-          -62,3},{-57.5,3}}, color={0,0,127}));
-  connect(lV_Gate.y, VERR1.u1) annotation (Line(points={{-33.5,0},{-30,0},{-30,
-          -6},{-22,-6}}, color={0,0,127}));
-  connect(VOTHSG, VERR1.u2) annotation (Line(points={{-200,90},{-200,90},{-30,
-          90},{-30,6},{-22,6}}, color={0,0,127}));
+  connect(VOEL,lV_Gate.u2)  annotation (Line(points={{-70,-200},{-70,-100},{-60,-100},{-60,-6},{-54,-6}},
+                                                         color={0,0,127}));
+  connect(hV_Gate.y,lV_Gate.u1)  annotation (Line(points={{-65,0},{-60,0},{-60,6},{-54,6}},
+                             color={0,0,127}));
   connect(LL2.y, K_R.u)
     annotation (Line(points={{61,0},{61,0},{68,0}}, color={0,0,127}));
   connect(K_R.y, limiter.u)
@@ -113,6 +105,10 @@ equation
   connect(Vmax.y, simpleLagLimVar.outMax) annotation (Line(points={{139,90},{
           128,90},{128,20},{148,20},{148,14}}, color={0,0,127}));
   connect(K_c.u, XADIFD) annotation (Line(points={{160,-42},{160,-140},{80,-140},{80,-200}}, color={0,0,127}));
+  connect(VUEL, hV_Gate.u2) annotation (Line(points={{-130,-200},{-130,-100},{-94,-100},{-94,-6},{-88,-6}}, color={0,0,127}));
+  connect(DiffV.y, hV_Gate.u1) annotation (Line(points={{-99,0},{-94,0},{-94,6},{-88,6}}, color={0,0,127}));
+  connect(lV_Gate.y, VERR1.u2) annotation (Line(points={{-31,0},{-28,0},{-28,-6},{-22,-6}}, color={0,0,127}));
+  connect(VERR1.u1, VOTHSG) annotation (Line(points={{-22,6},{-28,6},{-28,90},{-200,90}}, color={0,0,127}));
   annotation (
     Diagram(coordinateSystem(extent={{-200,-200},{200,160}})),
     Icon(coordinateSystem(
