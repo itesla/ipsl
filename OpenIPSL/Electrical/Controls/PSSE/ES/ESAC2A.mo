@@ -27,9 +27,9 @@ import OpenIPSL.NonElectrical.Functions.SE;
   parameter Types.PerUnit S_EE_1=0.03 "Exciter saturation factor at exciter output voltage E1";
   parameter Types.PerUnit S_EE_2=0.1 "Exciter saturation factor at exciter output voltage E2";
   NonElectrical.Logical.HV_GATE hV_GATE
-    annotation (Placement(transformation(extent={{32,46},{56,34}})));
+    annotation (Placement(transformation(extent={{32,30},{52,50}})));
   NonElectrical.Logical.LV_GATE lV_GATE
-    annotation (Placement(transformation(extent={{64,46},{88,34}})));
+    annotation (Placement(transformation(extent={{64,30},{84,50}})));
   NonElectrical.Continuous.LeadLag imLeadLag(
     K=1,
     T1=T_C,
@@ -131,8 +131,8 @@ equation
     annotation (Line(points={{115,40},{122.75,40}}, color={0,0,127}));
   connect(ECOMP, imSimpleLag.u)
     annotation (Line(points={{-200,0},{-172,0}}, color={0,0,127}));
-  connect(VUEL, hV_GATE.n2) annotation (Line(points={{-130,-200},{-130,-22},{26,
-          -22},{26,43},{30.5,43}}, color={0,0,127}));
+  connect(VUEL,hV_GATE.u2)  annotation (Line(points={{-130,-200},{-130,-22},{26,-22},{26,34},{30,34}},
+                                   color={0,0,127}));
   connect(imSimpleLag.y, DiffV.u2) annotation (Line(points={{-149,0},{-132,0},{
           -132,-6},{-122,-6}}, color={0,0,127}));
   connect(add3_1.y, imLeadLag.u)
@@ -156,19 +156,14 @@ equation
                                                        color={0,0,127}));
   connect(rectifierCommutationVoltageDrop.EFD, EFD) annotation (Line(points={{
           181,40},{190,40},{190,0},{210,0}}, color={0,0,127}));
-  connect(hV_GATE.p, lV_GATE.n2) annotation (Line(points={{54.5,40},{56,40},{56,
-          42},{58,42},{58,43},{62.5,43}},
-                          color={0,0,127}));
-  connect(VOEL, lV_GATE.n1) annotation (Line(points={{-70,-200},{-70,-60},{58,-60},
-          {58,37},{62.5,37}},               color={0,0,127}));
-  connect(lV_GATE.p, limiter1.u)
-    annotation (Line(points={{86.5,40},{92,40}},         color={0,0,127}));
+  connect(lV_GATE.y, limiter1.u)
+    annotation (Line(points={{85,40},{92,40}},           color={0,0,127}));
   connect(lowLim.y, rotatingExciterWithDemagnetization.outMin) annotation (Line(
         points={{159,80},{150,80},{150,47.5},{145.25,47.5}}, color={0,0,127}));
   connect(FEMAX.y, DiffV1.u1) annotation (Line(points={{61,130},{68,130},{68,
           136},{78,136}}, color={0,0,127}));
   connect(DiffV1.u2, rotatingExciterWithDemagnetization.XADIFD) annotation (
-      Line(points={{78,124},{66,124},{66,-20},{134,-20},{134,28.75}},
+      Line(points={{78,124},{68,124},{68,-20},{134,-20},{134,28.75}},
                    color={0,0,127}));
   connect(se1.VE_IN, EFD) annotation (Line(points={{180.9,108},{190,108},{190,0},
           {210,0}}, color={0,0,127}));
@@ -176,8 +171,8 @@ equation
           130},{159,130}}, color={0,0,127}));
   connect(DiffV2.u2, se1.VE_OUT) annotation (Line(points={{152,112},{156,112},{
           156,108},{161.46,108}}, color={0,0,127}));
-  connect(division.u1, DiffV1.y) annotation (Line(points={{116,92},{116,92},{
-          116,128},{116,130},{101,130}}, color={0,0,127}));
+  connect(division.u1, DiffV1.y) annotation (Line(points={{116,92},{116,92},{116,128},{116,130},{101,130}},
+                                         color={0,0,127}));
   connect(DiffV2.y, division.u2)
     annotation (Line(points={{129,118},{104,118},{104,92}}, color={0,0,127}));
   connect(division.y, rotatingExciterWithDemagnetization.outMax) annotation (
@@ -192,8 +187,11 @@ equation
           {-6,-2}}, color={0,0,127}));
   connect(DiffV3.y, gain1.u) annotation (Line(points={{17,4},{20,4},{20,24},{-14,
           24},{-14,40},{-2,40}}, color={0,0,127}));
-  connect(gain1.y, hV_GATE.n1)
-    annotation (Line(points={{21,40},{30.5,40},{30.5,37}}, color={0,0,127}));
+  connect(gain1.y,hV_GATE.u1)
+    annotation (Line(points={{21,40},{24,40},{24,46},{30,46}},
+                                                           color={0,0,127}));
+  connect(VOEL, lV_GATE.u2) annotation (Line(points={{-70,-200},{-70,-60},{58,-60},{58,34},{62,34}}, color={0,0,127}));
+  connect(hV_GATE.y, lV_GATE.u1) annotation (Line(points={{53,40},{57.5,40},{57.5,46},{62,46}}, color={0,0,127}));
   annotation (
     Diagram(coordinateSystem(extent={{-200,-200},{200,160}})),
     Icon(coordinateSystem(extent={{-100,-100},{100,100}}),

@@ -28,7 +28,7 @@ model ESDC1A "DC1A Excitation System [IEEE2005]"
     x_start=Efd0)
     annotation (Placement(transformation(extent={{0,-60},{-20,-40}})));
   NonElectrical.Logical.HV_GATE hV_GATE
-    annotation (Placement(transformation(extent={{40,-6},{62,6}})));
+    annotation (Placement(transformation(extent={{40,-10},{60,10}})));
   NonElectrical.Continuous.LeadLag imLeadLag(
     K=1,
     T1=T_C,
@@ -86,8 +86,8 @@ initial equation
 equation
   connect(add3_1.y, imLeadLag.u)
     annotation (Line(points={{-39,0},{-36,0},{-22,0}}, color={0,0,127}));
-  connect(hV_GATE.p, simpleLagLim.u)
-    annotation (Line(points={{60.625,0},{60.625,0},{78,0}}, color={0,0,127}));
+  connect(hV_GATE.y, simpleLagLim.u)
+    annotation (Line(points={{61,0},{78,0}},                color={0,0,127}));
   connect(simpleLagLim.y, rotatingExciterLimited.I_C)
     annotation (Line(points={{101,0},{101,0},{118.75,0}}, color={0,0,127}));
   connect(ECOMP, TransducerDelay.u)
@@ -96,10 +96,10 @@ equation
           0},{-132,-6},{-122,-6}}, color={0,0,127}));
   connect(rotatingExciterLimited.EFD, EFD)
     annotation (Line(points={{141.25,0},{210,0},{210,0}}, color={0,0,127}));
-  connect(imLeadLag.y, hV_GATE.n1) annotation (Line(points={{1,0},{32,0},{32,3},
-          {38.625,3}}, color={0,0,127}));
-  connect(VUEL, hV_GATE.n2) annotation (Line(points={{-130,-200},{-128,-200},{-128,
-          -80},{32,-80},{32,-3},{38.625,-3}}, color={0,0,127}));
+  connect(imLeadLag.y,hV_GATE.u1)  annotation (Line(points={{1,0},{32,0},{32,6},{38,6}},
+                       color={0,0,127}));
+  connect(VUEL,hV_GATE.u2)  annotation (Line(points={{-130,-200},{-128,-200},{-128,-80},{32,-80},{32,-6},{38,-6}},
+                                              color={0,0,127}));
   connect(imDerivativeLag.u, EFD) annotation (Line(points={{2,-50},{160,-50},{
           160,0},{210,0}}, color={0,0,127}));
   connect(imDerivativeLag.y, add3_1.u3) annotation (Line(points={{-21,-50},{-46,

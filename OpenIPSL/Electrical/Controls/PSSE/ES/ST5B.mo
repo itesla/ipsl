@@ -20,12 +20,12 @@ model ST5B "ST5B Excitation System [IEEE2005]"
   parameter Types.Time T_OC2=1 "OEL regulator numerator (lead) time constant (second block)";
   parameter Types.Time T_OB2=1 "OEL regulator denominator (lag) time constant (second block)";
   Modelica.Blocks.Math.Add VERR1 annotation (Placement(transformation(
-        extent={{-10,10},{10,-10}},
+        extent={{-10,-10},{10,10}},
         origin={-10,0})));
   NonElectrical.Logical.LV_GATE lV_Gate
-    annotation (Placement(transformation(extent={{-48,0},{-26,12}})));
+    annotation (Placement(transformation(extent={{-52,-10},{-32,10}})));
   NonElectrical.Logical.HV_GATE hV_Gate
-    annotation (Placement(transformation(extent={{-84,-4},{-58,10}})));
+    annotation (Placement(transformation(extent={{-86,-10},{-66,10}})));
   NonElectrical.Continuous.LeadLagLim imLimitedLeadLag(
     K=1,
     outMax=V_RMAX/K_R,
@@ -119,11 +119,8 @@ equation
   connect(K_c.y, VERR2.u1) annotation (Line(points={{130,-81},{130,-81},{130,-6},{138,-6}}, color={0,0,127}));
   connect(imLimitedLeadLag4.y, imLimitedLeadLag5.u) annotation (Line(points={{41,-90},{41,-90},{48,-90}}, color={0,0,127}));
   connect(imLimitedLeadLag2.y, K_r.u) annotation (Line(points={{71,0},{78,0},{78,0.5}}, color={0,0,127}));
-  connect(lV_Gate.p, VERR1.u2) annotation (Line(points={{-27.375,6},{-22,6}}, color={0,0,127}));
-  connect(hV_Gate.p, lV_Gate.n2) annotation (Line(points={{-59.625,3},{-54.8125,3},{-54.8125,3},{-49.375,3}}, color={0,0,127}));
-  connect(hV_Gate.n2, DiffV.y) annotation (Line(points={{-85.625,-0.5},{-91.8125,-0.5},{-91.8125,0},{-99,0}}, color={0,0,127}));
-  connect(hV_Gate.n1, VUEL) annotation (Line(points={{-85.625,6.5},{-92,6.5},{-92,-160},{-130,-160},{-130,-200}}, color={0,0,127}));
-  connect(lV_Gate.n1, VOEL) annotation (Line(points={{-49.375,9},{-54,9},{-54,-160},{-70,-160},{-70,-200}}, color={0,0,127}));
+  connect(lV_Gate.y, VERR1.u2) annotation (Line(points={{-31,0},{-28,0},{-28,-6},{-22,-6}},
+                                                                              color={0,0,127}));
   connect(K_r.y, limiter.u) annotation (Line(points={{101,0.5},{104.5,0.5},{104.5,0},{106,0}}, color={0,0,127}));
   connect(limiter.y, VERR2.u2) annotation (Line(points={{129,0},{132,0},{132,6},{138,6}}, color={0,0,127}));
   connect(simpleLagLimVar.y, EFD) annotation (Line(points={{195,0},{210,0},{210,0}}, color={0,0,127}));
@@ -131,9 +128,13 @@ equation
   connect(TransducerDelay.y, DiffV.u2) annotation (Line(points={{-149,0},{-132,0},{-132,-6},{-122,-6}}, color={0,0,127}));
   connect(high.u, TransducerDelay.u) annotation (Line(points={{94,-30},{-178,-30},{-178,0},{-172,0}}, color={0,0,127}));
   connect(low.u, TransducerDelay.u) annotation (Line(points={{92,-70},{80,-70},{80,-30},{-178,-30},{-178,0},{-172,0}}, color={0,0,127}));
-  connect(VOTHSG, VERR1.u1) annotation (Line(points={{-200,90},{-26,90},{-26,-6},{-22,-6}}, color={0,0,127}));
+  connect(VOTHSG, VERR1.u1) annotation (Line(points={{-200,90},{-28,90},{-28,6},{-22,6}},   color={0,0,127}));
   connect(XADIFD, K_c.u) annotation (Line(points={{80,-200},{80,-200},{80,-124},
           {80,-120},{130,-120},{130,-104}}, color={0,0,127}));
+  connect(hV_Gate.y, lV_Gate.u1) annotation (Line(points={{-65,0},{-60,0},{-60,6},{-54,6}}, color={0,0,127}));
+  connect(lV_Gate.u2, VOEL) annotation (Line(points={{-54,-6},{-60,-6},{-60,-100},{-70,-100},{-70,-200}}, color={0,0,127}));
+  connect(hV_Gate.u2, VUEL) annotation (Line(points={{-88,-6},{-94,-6},{-94,-100},{-130,-100},{-130,-200}}, color={0,0,127}));
+  connect(DiffV.y, hV_Gate.u1) annotation (Line(points={{-99,0},{-94,0},{-94,6},{-88,6}}, color={0,0,127}));
   annotation (
     Diagram(coordinateSystem(
         preserveAspectRatio=true,

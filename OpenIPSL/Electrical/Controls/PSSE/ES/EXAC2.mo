@@ -78,7 +78,7 @@ model EXAC2 "AC2 Excitation System [IEEE1981]"
   Modelica.Blocks.Math.Gain gain(k=K_H)
     annotation (Placement(transformation(extent={{60,-80},{40,-60}})));
   OpenIPSL.NonElectrical.Logical.LV_GATE lV_GATE
-    annotation (Placement(transformation(extent={{46,-6},{68,6}})));
+    annotation (Placement(transformation(extent={{50,-10},{70,10}})));
   Modelica.Blocks.Math.Gain gain1(k=K_B)
     annotation (Placement(transformation(extent={{76,-8},{92,8}})));
   Modelica.Blocks.Nonlinear.Limiter limiter(uMax=V_RMAX, uMin=V_RMIN)
@@ -152,7 +152,8 @@ equation
   connect(imDerivativeLag.y, add3_1.u3) annotation (Line(points={{-1,-90},{-1,-90},
           {-86,-90},{-86,-8},{-82,-8}}, color={0,0,127}));
   connect(imLimitedSimpleLag.y, DiffV1.u1)
-    annotation (Line(points={{1,0},{18,0},{18,6}}, color={0,0,127}));
+    annotation (Line(points={{1,0},{10,0},{10,6},{18,6}},
+                                                   color={0,0,127}));
   connect(gain.y, DiffV1.u2) annotation (Line(points={{39,-70},{10,-70},{10,-6},
           {18,-6}}, color={0,0,127}));
   connect(gain.u, rotatingExciterWithDemagnetizationLimited.V_FE) annotation (
@@ -169,12 +170,12 @@ equation
           {102,-24}}, color={0,0,127}));
   connect(gain1.y, limiter.u)
     annotation (Line(points={{92.8,0},{94,0},{98,0}}, color={0,0,127}));
-  connect(lV_GATE.p, gain1.u)
-    annotation (Line(points={{66.625,0},{74.4,0}}, color={0,0,127}));
-  connect(gain3.y, lV_GATE.n2) annotation (Line(points={{51,-30},{44.625,-30},{
-          44.625,-3}}, color={0,0,127}));
-  connect(DiffV1.y, lV_GATE.n1)
-    annotation (Line(points={{41,0},{44.625,0},{44.625,3}}, color={0,0,127}));
+  connect(lV_GATE.y, gain1.u)
+    annotation (Line(points={{71,0},{74.4,0}},     color={0,0,127}));
+  connect(gain3.y,lV_GATE.u2)  annotation (Line(points={{51,-30},{44,-30},{44,-6},{48,-6}},
+                       color={0,0,127}));
+  connect(DiffV1.y,lV_GATE.u1)
+    annotation (Line(points={{41,0},{44,0},{44,6},{48,6}},  color={0,0,127}));
   annotation (
     Diagram(coordinateSystem(extent={{-200,-200},{200,160}})),
     Icon(coordinateSystem(extent={{-100,-100},{100,100}}),
