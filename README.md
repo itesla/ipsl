@@ -30,16 +30,6 @@ We recommend you start from there.
 
 Our documentation assumes that you have working knowledge of the Modelica language, are familiar with a Modelica-compliant modeling and simulation environment, that you have proeficient knowledge on power system steady state analysis (i.e., the so called "power flow"), and knowledge on power system dynamic modeling (i.e., the called "transient" and "small-signal" stability). As such, the documentation is limited, and aims to provide very consice information for people who fulfill the requirements above. If you do not fulfill these requirements, we recommend that you first get acquainted with both Modelica and Power Systems.
 
-
-## Contributing:
-Contributions to the library are welcome and can be submitted in the form of pull requests to this repository.
-
-Please consult the [contribution guidelines](http://openipsl.readthedocs.io/en/latest/community/contributing.html).
-
-More information about our contributors can be found over [here](http://openipsl.readthedocs.io/en/latest/community/community-home.html).
-
-Don't hesitate to contact us.
-
 ## Citing OpenIPSL in Publications:
 If you use OpenIPSL in your work or research, all we ask you in exchange is that you **cite the reference publications**, according to your use.
 Please consult our [Publication List](http://openipsl.readthedocs.io/en/latest/publications.html), for browsing the reference publications.
@@ -48,29 +38,31 @@ Preferably, please cite the following paper:
   - Maxime Baudette, Marcelo Castro, Tin Rabuzin, Jan Lavenius, Tetiana Bogodorova, Luigi Vanfretti, OpenIPSL: Open-Instance Power System Library — Update 1.5 to “iTesla Power Systems Library (iPSL): A Modelica library for phasor time-domain simulations”, SoftwareX, Volume 7, January–June 2018, Pages 34-36, ISSN 2352-7110, https://doi.org/10.1016/j.softx.2018.01.002
     - Link to Publisher's Website: [SoftwareX](https://www.sciencedirect.com/science/article/pii/S2352711018300050)
 
-You are also welcome to submit your contributions as stated above.
+You are also welcome to submit your contributions as stated below.
+
+## Contributing:
+Contributions to the library are welcome and can be submitted in the form of pull requests to this repository. 
+
+Please consult the [contribution guidelines](http://openipsl.readthedocs.io/en/latest/community/contributing.html). More information about our contributors can be found over [here](http://openipsl.readthedocs.io/en/latest/community/community-home.html). 
+
+Contributors should read, accept and virtually sign the Contributors License Agreement (CLA) for contributions to be included in the OpenIPSL. Please, don't hesitate to contact us.
 
 ## Copyright and License Information:
 
-The OpenIPSL is released under the same license as former iPSL project.
-All changes applied in this fork have the following copyright statement.
+The OpenIPSL is released under the a different license as former iPSL project.
+All changes applied in this fork are subject to the OpenIPSL license stated below.
 
 ### OpenIPSL:
-Copyright July 2017 - current [Luigi Vanfretti](https://github.com/lvanfretti), [Rensselaer Polytechnic Institute](http://rpi.edu), [ALSETLab](https://github.com/ALSETLab), Troy, NY.
-
-Copyright April 2016 - May 2017 [SmarTS Lab](http://openipsl.readthedocs.io/en/latest/community/community-home.html); Prof. [Luigi Vanfretti's](https://github.com/lvanfretti) research group formerly at KTH Royal Institute of Technology, Stockholm, Sweden, now [ALSETLab](https://github.com/ALSETLab) at Rensselaer Polytechnic Institute, Troy, NY, USA.
-
+Copyright April 2016 - current [Luigi Vanfretti](https://github.com/lvanfretti), [ALSETLab](https://github.com/ALSETLab), Troy, NY (Formely [SmarTS Lab](http://openipsl.readthedocs.io/en/latest/community/community-home.html), Stockholm, Sweden). 
 The authors can be contacted by email: [luigi.vanfretti@gmail.com](href="mailto:luigi.vanfretti@gmail.com?subject=From_OpenIPSL_in_Github").
-This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
-If a copy of the MPL was not distributed with this file, You can obtain one at http://mozilla.org/MPL/2.0.
+This Source Code Form is subject to the terms of the 3-Clause BSD license.
 
 #### iPSL:
 Copyright 2015-March 31 2016 [RTE](http://www.rte-france.com) (France), [SmarTS Lab](http://openipsl.readthedocs.io/en/latest/community/community-home.html) (Prof. [Luigi Vanfretti's](https://github.com/lvanfretti) research group formerly at KTH Royal Institute of Technology, Stockholm, Sweden), [AIA](http://www.aia.es/en/energy) (Spain) and [DTU](http://www.dtu.dk/english) (Denmark).
 The authors can be contacted by email: info@itesla-ipsl.org
 This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
-If a copy of the MPL was not distributed with this file, You can obtain one at http://mozilla.org/MPL/2.0.
+If a copy of the MPL was not distributed with this file, you can obtain one at https://www.mozilla.org/en-US/MPL/2.0/.
 
 ## Acknowledgements:
 
-
-This work was supported in primarily by the New York State Energy Research and Development Authority (NYSERDA) through the Electric Power Transmission and Distribution (EPTD) PON 3770 High Performing Grid Program together with the New York Power Authority (NYPA). This work was also supported in part by the ERC Program of the National Science Foundation and DOE under NSF Award Number EEC-1041877 and the CURENT Industry Partnership Program.
+This work was supported in primarily by the New York State Energy Research and Development Authority (NYSERDA) through the Electric Power Transmission and Distribution (EPTD) PON 3770 High Performing Grid Program together with the New York Power Authority (NYPA). This work was also supported in part by the ERC Program of the National Science Foundation and DOE under NSF Award Number EEC-1041877 and in part by the CURENT Industry Partnership Program.
