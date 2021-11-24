@@ -18,8 +18,8 @@ jobs:
           # the below token should have repo scope and must be manually added by you in the repository's secret
           PERSONAL_ACCESS_TOKEN : ${{ secrets.PERSONAL_ACCESS_TOKEN }}
         with:
-          path-to-signatures: 'signatures/version1/cla.json'
-          path-to-document: 'https://github.com/cla-assistant/github-action/blob/master/SAPCLA.md' # -> Need to change this part for the actual CLA agreement.
+          path-to-signatures: 'OpenIPSL/Resources/signatures/version1/cla.json'
+          path-to-document: 'OpenIPSL/Resources/legal/cla-individual.md' 
           # branch should not be protected
           branch: 'master' # need to modify it if master changes to main
           allowlist: bot*
