@@ -45,12 +45,9 @@ Contributions to the library are welcome and can be submitted in the form of pul
 
 Please consult the [contribution guidelines](http://openipsl.readthedocs.io/en/latest/community/contributing.html). More information about our contributors can be found over [here](http://openipsl.readthedocs.io/en/latest/community/community-home.html). 
 
-Contributors should read, accept and virtually sign the Contributors License Agreement (CLA) for contributions to be included in the OpenIPSL. Please, don't hesitate to contact us.
+Individual contributors should read, accept and virtually sign the [Individual Contributor License Agreement](https://github.com/OpenIPSL/OpenIPSL/tree/master/OpenIPSL/Resources/legal/cla-individual.md) for contributions to be included in the OpenIPSL. Contributions submitted by entities need to have the [Entity Contributor License Agreement](https://github.com/OpenIPSL/OpenIPSL/tree/master/OpenIPSL/Resources/legal/cla-individual.md) read, accepted and virtually signed. If you have any questions, please don't hesitate to contact us.
 
 ## Copyright and License Information:
-
-The OpenIPSL is released under the a different license as former iPSL project.
-All changes applied in this fork are subject to the OpenIPSL license stated below.
 
 ### OpenIPSL:
 Copyright April 2016 - current [Luigi Vanfretti](https://github.com/lvanfretti), [ALSETLab](https://github.com/ALSETLab), Troy, NY (Formely [SmarTS Lab](http://openipsl.readthedocs.io/en/latest/community/community-home.html), Stockholm, Sweden). 
@@ -58,7 +55,7 @@ The authors can be contacted by email: [luigi.vanfretti@gmail.com](href="mailto:
 This Source Code Form is subject to the terms of the 3-Clause BSD license.
 
 #### iPSL:
-Copyright 2015-March 31 2016 [RTE](http://www.rte-france.com) (France), [SmarTS Lab](http://openipsl.readthedocs.io/en/latest/community/community-home.html) (Prof. [Luigi Vanfretti's](https://github.com/lvanfretti) research group formerly at KTH Royal Institute of Technology, Stockholm, Sweden), [AIA](http://www.aia.es/en/energy) (Spain) and [DTU](http://www.dtu.dk/english) (Denmark).
+Copyright 2015 - March 2016 [RTE](http://www.rte-france.com) (France), [SmarTS Lab](http://openipsl.readthedocs.io/en/latest/community/community-home.html) (Prof. [Luigi Vanfretti's](https://github.com/lvanfretti) research group formerly at KTH Royal Institute of Technology, Stockholm, Sweden), [AIA](http://www.aia.es/en/energy) (Spain) and [DTU](http://www.dtu.dk/english) (Denmark).
 The authors can be contacted by email: info@itesla-ipsl.org
 This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
 If a copy of the MPL was not distributed with this file, you can obtain one at https://www.mozilla.org/en-US/MPL/2.0/.
