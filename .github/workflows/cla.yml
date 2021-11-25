@@ -18,7 +18,7 @@ jobs:
           # the below token should have repo scope and must be manually added by you in the repository's secret
           PERSONAL_ACCESS_TOKEN : ${{ secrets.PERSONAL_ACCESS_TOKEN }}
         with:
-          path-to-signatures: 'OpenIPSL/Resources/signatures/version1/cla.json'
+          path-to-signatures: 'OpenIPSL/Resources/legal/signatures/version1/cla.json'
           path-to-document: 'OpenIPSL/Resources/legal/cla-individual.md' 
           # branch should not be protected
           branch: 'master' # need to modify it if master changes to main
