@@ -55,7 +55,7 @@ The authors can be contacted by email: [luigi.vanfretti@gmail.com](href="mailto:
 This Source Code Form is subject to the terms of the 3-Clause BSD license.
 
 #### iPSL:
-Copyright 2015 - March 2016 [RTE](http://www.rte-france.com) (France), [SmarTS Lab](http://openipsl.readthedocs.io/en/latest/community/community-home.html) (Prof. [Luigi Vanfretti's](https://github.com/lvanfretti) research group formerly at KTH Royal Institute of Technology, Stockholm, Sweden), [AIA](http://www.aia.es/en/energy) (Spain) and [DTU](http://www.dtu.dk/english) (Denmark).
+Copyright 2015 - March 2016 [RTE](http://www.rte-france.com) (France), [SmarTS Lab](http://openipsl.readthedocs.io/en/latest/community/community-home.html) (Prof. [Luigi Vanfretti's](https://github.com/lvanfretti) former research group at KTH Royal Institute of Technology, Stockholm, Sweden), [AIA](http://www.aia.es/en/energy) (Spain) and [DTU](http://www.dtu.dk/english) (Denmark).
 The authors can be contacted by email: info@itesla-ipsl.org
 This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
 If a copy of the MPL was not distributed with this file, you can obtain one at https://www.mozilla.org/en-US/MPL/2.0/.
