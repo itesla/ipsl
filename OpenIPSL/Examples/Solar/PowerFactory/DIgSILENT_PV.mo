@@ -10,7 +10,7 @@ model DIgSILENT_PV "Voltage drop test of DIgSILENT_PV model"
     Placement(visible = true, transformation(origin = {70, 30}, extent = {{10, -10}, {-10, 10}}, rotation = 0)));
   inner OpenIPSL.Electrical.SystemBase SysData annotation(
     Placement(visible = true, transformation(origin = {-70.5, 90}, extent = {{-29.5, -10}, {29.5, 10}}, rotation = 0)));
-  OpenIPSL.Electrical.Solar.PowerFactory.DIgSILENT.PV_Plant pv_plant(M_b(displayUnit = "V.A") = 0.5e6, P_0 = 300000, angle_0 = 0, v_0 = 1)  annotation(
+  OpenIPSL.Electrical.Solar.PowerFactory.DIgSILENT.PV_Plant pv_plant(M_b(displayUnit = "MVA") = 0.5e6, P_0 = 300000, angle_0 = 0, v_0 = 1)  annotation(
     Placement(visible = true, transformation(origin = {-30, 0}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
 equation
   connect(pv_plant.p, voltage_source.p) annotation(
