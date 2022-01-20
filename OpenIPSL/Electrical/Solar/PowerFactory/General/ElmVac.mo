@@ -58,5 +58,5 @@ Controllable voltage source with frequency and volage as inputs.
 <td><p>This model has been verified against PowerFactory.</p></td>
 </tr>
 </table>
-</html>") );
+</html>"));
 end ElmVac;

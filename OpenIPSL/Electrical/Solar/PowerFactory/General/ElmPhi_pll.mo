@@ -17,7 +17,11 @@ equation
   cosphi = p.vr/v;
   p.ii = 0;
   p.ir = 0;
-  annotation(
+  annotation (
     Diagram(coordinateSystem(initialScale = 0.1)),
-    Icon(graphics = {Rectangle(lineColor = {118, 18, 62},fillColor = {255, 255, 255}, fillPattern = FillPattern.Solid, extent = {{-100, 100}, {100, -100}}), Text(origin = {0, -10}, lineColor = {0, 0, 255}, extent = {{-100, 150}, {100, 110}}, textString = "%name")}, coordinateSystem(initialScale = 0.1)));
+    Icon(graphics={  Rectangle(
+          lineColor={118,18,62},
+          fillColor={255,255,255},
+          fillPattern=FillPattern.Solid,
+          extent={{-100,100},{100,-100}}),                                                                                                                   Text(origin = {0, -10}, lineColor = {0, 0, 255}, extent = {{-100, 150}, {100, 110}}, textString = "%name")}, coordinateSystem(initialScale = 0.1)));
 end ElmPhi_pll;

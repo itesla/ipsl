@@ -1,5 +1,4 @@
 within OpenIPSL.Electrical.Solar.PowerFactory.DIgSILENT;
-
 model DCBusBar "Model of a DC busbar between the module and inverter"
   parameter SI.Capacitance C=1.5e-3 "Capacity of capacitor on DC busbar";
   Modelica.Blocks.Interfaces.RealInput P_conv annotation (
@@ -26,23 +25,24 @@ model DCBusBar "Model of a DC busbar between the module and inverter"
         origin={110,0},
         extent={{-10, -10},{10, 10}}, rotation = 0)));
   Modelica.Blocks.Math.Add add(k2=-1) annotation (Placement(visible = true, transformation(origin = {6, 0}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
-  Modelica.Blocks.Math.Division P_to_I annotation(
+  Modelica.Blocks.Math.Division P_to_I annotation (
     Placement(visible = true, transformation(origin = {-24, -50}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
-  Modelica.Blocks.Continuous.Integrator integrator(initType = Modelica.Blocks.Types.Init.SteadyState, k = 1 / C)  annotation(
+  Modelica.Blocks.Continuous.Integrator integrator(initType = Modelica.Blocks.Types.Init.SteadyState, k = 1 / C)  annotation (
     Placement(visible = true, transformation(origin = {70, 0}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
 equation
-  connect(I_pv, add.u1) annotation(
-    Line(points = {{-120, 51}, {-10, 51}, {-10, 6}, {-6, 6}}, color = {0, 0, 127}));
-  connect(P_to_I.y, add.u2) annotation(
-    Line(points = {{-12, -50}, {-10, -50}, {-10, -6}, {-6, -6}, {-6, -6}}, color = {0, 0, 127}));
-  connect(P_conv, P_to_I.u1) annotation(
-    Line(points = {{-120, -44}, {-36, -44}}, color = {0, 0, 127}));
-  connect(integrator.u, add.y) annotation(
-    Line(points = {{58, 0}, {16, 0}, {16, 0}, {18, 0}}, color = {0, 0, 127}));
-  connect(integrator.y, Udc) annotation(
-    Line(points = {{82, 0}, {122, 0}, {122, 0}, {130, 0}}, color = {0, 0, 127}));
-  connect(P_to_I.u2, integrator.y) annotation(
-    Line(points = {{-36, -56}, {-60, -56}, {-60, -80}, {100, -80}, {100, 0}, {82, 0}, {82, 0}}, color = {0, 0, 127}));
+  connect(I_pv, add.u1) annotation (
+    Line(points={{-120.096,51.0723},{-10,51.0723},{-10,6},{-6,6}},
+                                                              color = {0, 0, 127}));
+  connect(P_to_I.y, add.u2) annotation (
+    Line(points={{-13,-50},{-10,-50},{-10,-6},{-6,-6},{-6,-6}},            color = {0, 0, 127}));
+  connect(P_conv, P_to_I.u1) annotation (
+    Line(points={{-120.245,-44},{-36,-44}},  color = {0, 0, 127}));
+  connect(integrator.u, add.y) annotation (
+    Line(points={{58,0},{16,0},{16,0},{17,0}},          color = {0, 0, 127}));
+  connect(integrator.y, Udc) annotation (
+    Line(points={{81,0},{122,0},{122,0},{130,0}},          color = {0, 0, 127}));
+  connect(P_to_I.u2, integrator.y) annotation (
+    Line(points={{-36,-56},{-60,-56},{-60,-80},{100,-80},{100,0},{81,0},{81,0}},                color = {0, 0, 127}));
   annotation (
     Icon(coordinateSystem(
         extent={{-100, -100},{100, 100}},
