@@ -10,7 +10,6 @@ dymosim.exe
 dymosim.exp
 dymosim.lib
 dymosim
-*~*
 *.fmu
 *.h
 *.bak-mo
