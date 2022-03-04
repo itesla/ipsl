@@ -32,7 +32,7 @@ Our documentation assumes that you have working knowledge of the Modelica langua
 
 ## Citing OpenIPSL in Publications:
 If you use OpenIPSL in your work or research, all we ask you in exchange is that you **cite the reference publications**, according to your use.
-Please consult our [Publication List](http://openipsl.readthedocs.io/en/latest/publications.html), for browsing the reference publications.
+Please consult our publication list, located within the Users' Guide package, in the Publications page, for browsing the reference publications.
 
 Preferably, please cite the following paper:
   - Maxime Baudette, Marcelo Castro, Tin Rabuzin, Jan Lavenius, Tetiana Bogodorova, Luigi Vanfretti, OpenIPSL: Open-Instance Power System Library — Update 1.5 to “iTesla Power Systems Library (iPSL): A Modelica library for phasor time-domain simulations”, SoftwareX, Volume 7, January–June 2018, Pages 34-36, ISSN 2352-7110, https://doi.org/10.1016/j.softx.2018.01.002
@@ -43,7 +43,7 @@ You are also welcome to submit your contributions as stated below.
 ## Contributing:
 Contributions to the library are welcome and can be submitted in the form of pull requests to this repository. 
 
-Please consult the [contribution guidelines](http://openipsl.readthedocs.io/en/latest/community/contributing.html). More information about our contributors can be found when the library is loaded into a Modelica-compliant software. The information is located within the User's Guide package, in the Contact page.
+Please consult the [contribution guidelines](http://openipsl.readthedocs.io/en/latest/community/contributing.html). More information about our contributors can be found when the library is loaded into a Modelica-compliant software. The information is located within the Users' Guide package, in the Contact page.
 
 Individual contributors should read, accept and virtually sign the [Individual Contributor License Agreement](https://github.com/OpenIPSL/OpenIPSL/tree/master/OpenIPSL/Resources/legal/cla-individual.md) for contributions to be included in the OpenIPSL. Contributions submitted by entities need to have the [Entity Contributor License Agreement](https://github.com/OpenIPSL/OpenIPSL/tree/master/OpenIPSL/Resources/legal/cla-individual.md) read, accepted and virtually signed. If you have any questions, please don't hesitate to contact us.
 
