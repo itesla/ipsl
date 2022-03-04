@@ -25,7 +25,7 @@ Therefore, the SmarTS Lab / ALSETLab team decided to create the OpenIPSL fork in
 ## Documentation:
 Documentation is provided within the library and can be accessed when loading OpenIPSL in any Modelica-compliant tool. Additional documentation can also be found [**here**](http://openipsl.readthedocs.io/).
 
-Tutorials on OpenIPSL have been given at many conferences, and are available under [Release](https://github.com/SmarTS-Lab/OpenIPSL/releases).
+Tutorials on OpenIPSL have been given at many conferences, and are available under [Release](https://github.com/OpenIPSL/OpenIPSL/releases).
 We recommend you start from there.
 
 Our documentation assumes that you have working knowledge of the Modelica language, are familiar with a Modelica-compliant modeling and simulation environment, that you have proeficient knowledge on power system steady state analysis (i.e., the so called "power flow"), and knowledge on power system dynamic modeling (i.e., the called "transient" and "small-signal" stability). As such, the documentation is limited, and aims to provide very consice information for people who fulfill the requirements above. If you do not fulfill these requirements, we recommend that you first get acquainted with both Modelica and Power Systems.
