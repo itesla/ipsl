@@ -23,7 +23,7 @@ iPSL is part of the [iTesla Tool](https://github.com/itesla/ipst), and thus, it 
 Therefore, the SmarTS Lab / ALSETLab team decided to create the OpenIPSL fork in order to develop the library in a direction that is more suitable for researchers and teachers/professors, and in a transparent, open source software approach.
 
 ## Documentation:
-Documentation is provided within the library and can be accessed when loading OpenIPSL in any Modelica-compliant tool. Additional documentation can also be found [**here**](http://openipsl.readthedocs.io/).
+Documentation is provided within the library and can be accessed when loading OpenIPSL in any Modelica-compliant tool.
 
 Tutorials on OpenIPSL have been given at many conferences, and are available under [Release](https://github.com/OpenIPSL/OpenIPSL/releases).
 We recommend you start from there.
@@ -43,7 +43,7 @@ You are also welcome to submit your contributions as stated below.
 ## Contributing:
 Contributions to the library are welcome and can be submitted in the form of pull requests to this repository. 
 
-Please consult the [contribution guidelines](http://openipsl.readthedocs.io/en/latest/community/contributing.html). More information about our contributors can be found over [here](http://openipsl.readthedocs.io/en/latest/community/community-home.html). 
+Please consult the [contribution guidelines](http://openipsl.readthedocs.io/en/latest/community/contributing.html). More information about our contributors can be found when the library is loaded into a Modelica-compliant software. The information is located within the User's Guide package, in the Contact page.
 
 Individual contributors should read, accept and virtually sign the [Individual Contributor License Agreement](https://github.com/OpenIPSL/OpenIPSL/tree/master/OpenIPSL/Resources/legal/cla-individual.md) for contributions to be included in the OpenIPSL. Contributions submitted by entities need to have the [Entity Contributor License Agreement](https://github.com/OpenIPSL/OpenIPSL/tree/master/OpenIPSL/Resources/legal/cla-individual.md) read, accepted and virtually signed. If you have any questions, please don't hesitate to contact us.
 
