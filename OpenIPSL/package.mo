@@ -8,9 +8,9 @@ annotation (preferredView="info",
   version="2.0.0-beta.1",
   versionDate="2020-12-16",
   conversion(
-     from(version={"0.8","0.8.1","1.0.0","1.5.0"}, script="modelica://OpenIPSL/Resources/Scripts/ConvertOpenIPSL_from_1.5.0_to_2.0.0.mos")),
+     from(version={"0.8","0.8.1","1.0.0","1.5.0"}, script="modelica://OpenIPSL/Resources/scripts/ConvertOpenIPSL_from_1.5.0_to_2.0.0.mos")),
   Icon(graphics={Bitmap(extent={{-100,-100},{100,100}}, fileName=
-            "modelica://OpenIPSL/Resources/Images/OpenIPSL_Logo.png")}),
+            "modelica://OpenIPSL/Resources/images/OpenIPSL_Logo.png")}),
   Documentation(info="<html>
 <p>
 The <strong><code>OpenIPSL</code></strong> or Open-Instance Power System Library is a
