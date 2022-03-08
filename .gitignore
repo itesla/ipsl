@@ -16,3 +16,4 @@ dymosim
 *.bak-mo
 *.moe
 *.mol
+.DS_Store
