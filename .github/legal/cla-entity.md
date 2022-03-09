@@ -2,7 +2,7 @@
 
 Thank you for your interest in contributing to Open Instance Power System Library - OpenIPSL  ("We" or "Us").
 
-This contributor agreement ("Agreement") documents the rights granted by contributors to Us. To make this document effective, please sign it and send it to Us by electronic submission, following the instructions [here](README.md). This is a legally binding document, so please read it carefully before agreeing to it. The Agreement may cover more than one software project managed by Us.
+This contributor agreement ("Agreement") documents the rights granted by contributors to Us. To make this document effective, please sign it and send it to Us by electronic submission, following [these instructions](README.md). This is a legally binding document, so please read it carefully before agreeing to it. The Agreement may cover more than one software project managed by Us.
 
 ## 1. Definitions
 
@@ -56,7 +56,7 @@ You confirm that:
   <li> You have the legal authority to enter into this Agreement.</li>
   <li> You or Your Affiliates own the Copyright and patent claims covering the Contribution which are required to grant the rights under Section 2.</li>
   <li> The grant of rights under Section 2 does not violate any grant of rights which You or Your Affiliates have made to third parties.</li>
-  <li> You have followed the instructions in <a href="README.md">here</a> for signing the the Agreement.</li>
+  <li> You have followed <a href="README.md">these instructions</a> for signing the the Agreement.</li>
 </ol>
 
 ## 4. Disclaimer

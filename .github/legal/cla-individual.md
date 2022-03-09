@@ -2,13 +2,13 @@
 
 Thank you for your interest in contributing to Open Instance Power System Library - OpenIPSL  ("We" or "Us").
 
-This contributor agreement ("Agreement") documents the rights granted by contributors to Us. To make this document effective, please sign it and send it to Us by electronic submission, following the instructions [here](README.md). This is a legally binding document, so please read it carefully before agreeing to it. The Agreement may cover more than one software project managed by Us.
+This contributor agreement ("Agreement") documents the rights granted by contributors to Us. To make this document effective, please sign it and send it to Us by electronic submission, following [these instructions](README.md). This is a legally binding document, so please read it carefully before agreeing to it. The Agreement may cover more than one software project managed by Us.
 
 ## 1. Definitions
 
 <ul>
 <li>"You" means the individual who Submits a Contribution to Us.</li>
-<li>"Contribution" means any work of authorship that is Submitted by You to Us in which You own or assert ownership of the Copyright. If You do not own the Copyright in the entire work of authorship, please consider the Entity Contributor License Agreement <a href="cla-entity.md">here</a>.</li>
+<li>"Contribution" means any work of authorship that is Submitted by You to Us in which You own or assert ownership of the Copyright. If You do not own the Copyright in the entire work of authorship, please consider the <a href="cla-entity.md">Entity Contributor License Agreement</a>.</li>
 <li>"Copyright" means all rights protecting works of authorship owned or controlled by You, including copyright, moral and neighboring rights, as appropriate, for the full term of their existence including any extensions by You.</li>
 
 <li>"Material" means the work of authorship which is made available by Us to third parties. When this Agreement covers more than one software project, the Material means the work of authorship to which the Contribution was Submitted. After You Submit the Contribution, it may be included in the Material.</li>
@@ -60,8 +60,8 @@ You confirm that:
 <ol type="a">
   <li> You have the legal authority to enter into this Agreement.</li>
   <li> You own the Copyright and patent claims covering the Contribution which are required to grant the rights under Section 2.</li>
-  <li> The grant of rights under Section 2 does not violate any grant of rights which You or Your Affiliates have made to third parties, including Your employer.  If You are an employee, You have had Your employer approve this Agreement or sign the Entity version of this document, available <a href="cla-entity.md">here</a>. If You are less than eighteen years old, please have Your parents or guardian sign the Agreement.</li>
-  <li> You have followed the instructions in <a href="README.md">here</a> for signing the the Agreement.</li>
+  <li> The grant of rights under Section 2 does not violate any grant of rights which You or Your Affiliates have made to third parties, including Your employer.  If You are an employee, You have had Your employer approve this Agreement or sign the <a href="cla-entity.md">Entity version of this document</a>. If You are less than eighteen years old, please have Your parents or guardian sign the Agreement.</li>
+  <li> You have followed <a href="README.md">these instructions</a> for signing the the Agreement.</li>
 </ol>
 
 
