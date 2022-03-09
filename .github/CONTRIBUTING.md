@@ -18,7 +18,7 @@ Please, use the Table of Contents to find a specific section of this guide quick
   * [Common Workflow for Contributing to OpenIPSL](#common-workflow-for-contributing-to-openipsl)
 
 [How Can I Contribute?](#how-can-i-contribute-?)
-  * [Getting Started](#getting-started-by-interacting-begginer)
+  * [Getting Started](#getting-started-by-interacting-beginner)
   * [Reporting New Bugs](#reporting-new-bugs-bug)
   * [Improving Documentation ](#improving-documentation-memo)
   * [Improving Models in the Library](#improving-models-in-the-library-rocket)
