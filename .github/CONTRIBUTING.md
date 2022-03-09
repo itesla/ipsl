@@ -18,10 +18,10 @@ Please, use the Table of Contents to find a specific section of this guide quick
   * [Common Workflow for Contributing to OpenIPSL](#common-workflow-for-contributing-to-openipsl)
 
 [How Can I Contribute?](#how-can-i-contribute-?)
-  * [Getting Started](#getting-started)
-  * [Reporting New Bugs](#reporting-new-bugs)
-  * [Improving Documentation ](#improving-documentation)
-  * [Improving Models in the Library](#improving-models-in-the-library)
+  * [Getting Started](#getting-started-by-interacting-begginer)
+  * [Reporting New Bugs](#reporting-new-bugs-bug)
+  * [Improving Documentation ](#improving-documentation-memo)
+  * [Improving Models in the Library](#improving-models-in-the-library-rocket)
 
 [The Contributor License Agreement](#the-contributor-license-agreement)
 
@@ -75,7 +75,7 @@ Once you address all the comments and sign the applicable CLA, you don't have to
 
 There are many ways you can contribute to a better library. Here we list some ways you can start contributing. 
 
-### Getting Started :beginner:
+### Getting Started by Interacting :beginner:
 
 If you are a user, you might want to check the [Discussion Section](https://github.com/OpenIPSL/OpenIPSL/discussions) to find other user's experiences. Maybe you can improve the discussion by relating your own experience. In addition to that you might want to check the [Issue List](https://github.com/OpenIPSL/OpenIPSL/issues). You might be able to help by trying to reproduce the errors that are listed there and reporting your own experiences with the library, for example. This enriches the overall information available for the community to address the issue and can help developers in identifying potential bugs.
 
