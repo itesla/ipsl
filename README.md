@@ -5,14 +5,14 @@
 [![Build Status](https://github.com/openipsl/openipsl/actions/workflows/checkCI.yml/badge.svg?branch=master)](https://github.com/OpenIPSL/OpenIPSL/actions)
 
 # **OpenIPSL**: Open-Instance Power System Library:
-The OpenIPSL or Open-Instance Power System Library is library of power system component models written in the [Modelica](http://modelica.org) language that can be used for power system dynamic analysis, such as phasor time-domain simulations.
+The OpenIPSL or Open-Instance Power System Library is a library of power system component models written in the [Modelica](http://modelica.org) language that can be used for power system dynamic analysis, such as phasor time-domain simulations.
 
-OpenIPSL is currently developed and maintained by Prof. [Luigi Vanfretti's](https://github.com/lvanfretti) research group [ALSETLab](https://github.com/ALSETLab) at [Rensselaer Polytechnic Institute](http://rpi.edu), Troy, NY, collaborators and friends, such as [Dietmar Winkler](https://github.com/dietmarw) and [FOSSEE](https://om.fossee.in/fellowship2018) (contributions are welcome!).
+The OpenIPSL is currently developed and maintained by Prof. [Luigi Vanfretti's](https://github.com/lvanfretti) research group [ALSETLab](https://github.com/ALSETLab) at [Rensselaer Polytechnic Institute](http://rpi.edu), Troy, NY, collaborators and friends, such as [Dietmar Winkler](https://github.com/dietmarw) and [FOSSEE](https://om.fossee.in/fellowship2018) (contributions are welcome!).
 
 ## Scope
-The purposes of OpenIPSL are to be used for research and education (therefore frequent release times may be available), with maximum compatibility with [OpenModelica](http://openmodelica.org/) (to provide a free/libre and cost-free alternative for power system dynamic simulation), to provide as many as possible typical "test networks" for use in research and teaching, and to be developed in such way that the library can efficiently be used for power system simulation within Modelica-based workflows (i.e., helping to give reference power system models for development and testing of Modelica back-end compilers) when faced with power system simulation challenges.
+The OpenIPSL is developed to be used for research and education (therefore frequent release times may be available), with maximum compatibility with [OpenModelica](http://openmodelica.org/) (to provide a free/libre and cost-free alternative for power system dynamic simulation), to provide as many as possible typical "test networks" for use in research and teaching, and to be developed in such way that the library can efficiently be used for power system simulation within Modelica-based workflows (i.e., helping to give reference power system models for development and testing of Modelica back-end compilers) when faced with power system simulation challenges.
 
-Please note that the library contains only models that can be used for the study. As such, there are no solver tools provided in this repository (no Power Flow Solvers, no Time-Domain solvers, etc.).
+Please note that the library contains only the models that can be used for dynamic studies. As such, there are no solver tools provided in this repository (no Power Flow Solvers, no Time-Domain solvers, etc.).
 The user should use a Modelica-compliant tool for simulation of models in this lirbary.
 
 ## History
@@ -23,10 +23,7 @@ iPSL is part of the [iTesla Tool](https://github.com/itesla/ipst), and thus, it 
 Therefore, the SmarTS Lab / ALSETLab team decided to create the OpenIPSL fork in order to develop the library in a direction that is more suitable for researchers and teachers/professors, and in a transparent, open source software approach.
 
 ## Documentation:
-Documentation is provided within the library and can be accessed when loading OpenIPSL in any Modelica-compliant tool.
-
-Tutorials on OpenIPSL have been given at many conferences, and are available under [Release](https://github.com/OpenIPSL/OpenIPSL/releases).
-We recommend you start from there.
+Documentation is provided within the library and can be accessed when loading OpenIPSL in any Modelica-compliant tool. Tutorials on OpenIPSL have been given at many conferences, and are available under [Release](https://github.com/OpenIPSL/OpenIPSL/releases). We recommend you start from there.
 
 Our documentation assumes that you have working knowledge of the Modelica language, are familiar with a Modelica-compliant modeling and simulation environment, that you have proeficient knowledge on power system steady state analysis (i.e., the so called "power flow"), and knowledge on power system dynamic modeling (i.e., the called "transient" and "small-signal" stability). As such, the documentation is limited, and aims to provide very consice information for people who fulfill the requirements above. If you do not fulfill these requirements, we recommend that you first get acquainted with both Modelica and Power Systems.
 
@@ -41,16 +38,14 @@ Preferably, please cite the following paper:
 You are also welcome to submit your contributions as stated below.
 
 ## Contributing:
-Contributions to the library are welcome and can be submitted in the form of pull requests to this repository. 
 
-Please consult the [contribution guidelines](http://openipsl.readthedocs.io/en/latest/community/contributing.html). More information about our contributors can be found when the library is loaded into a Modelica-compliant software. The information is located within the Users' Guide package, in the Contact page.
+Contributions to the library are welcome and can be submitted in the form of pull requests to this repository. Please consult the [contribution guidelines](.github/CONTRIBUTING.md) for more information on how to contribute to the development of this library. Information about our current and past contributors can be found when the library is loaded into a Modelica-compliant software. The information is located within the Users' Guide package, in the Contact page.
 
-Individual contributors should read, accept and virtually sign the [Individual Contributor License Agreement](https://github.com/OpenIPSL/OpenIPSL/tree/master/OpenIPSL/Resources/legal/cla-individual.md) for contributions to be included in the OpenIPSL. Contributions submitted by entities need to have the [Entity Contributor License Agreement](https://github.com/OpenIPSL/OpenIPSL/tree/master/OpenIPSL/Resources/legal/cla-individual.md) read, accepted and virtually signed. If you have any questions, please don't hesitate to contact us.
+If you want to submit your contributions to the OpenIPSL, note that we have a [Contributor's License Agreement (CLA)](.github/legal/README.md). Individual contributors should read, accept and virtually sign the [Individual Contributor License Agreement](https://github.com/OpenIPSL/OpenIPSL/tree/master/OpenIPSL/Resources/legal/cla-individual.md) for contributions to be included in the OpenIPSL. Contributions submitted by entities need to have the [Entity Contributor License Agreement](https://github.com/OpenIPSL/OpenIPSL/tree/master/OpenIPSL/Resources/legal/cla-individual.md) read, accepted and virtually signed. If you have any questions, please don't hesitate to [contact us](href="mailto:luigi.vanfretti@gmail.com?subject=Contributing_to_OpenIPSL").
 
 ## Copyright and License Information:
 
-### OpenIPSL:
-Copyright April 2016 - current [Luigi Vanfretti](https://github.com/lvanfretti), [ALSETLab](https://github.com/ALSETLab), Troy, NY (Formely [SmarTS Lab](http://openipsl.readthedocs.io/en/latest/community/community-home.html), Stockholm, Sweden). 
+**OpenIPSL** - Copyright April 2016 - current [Luigi Vanfretti](https://github.com/lvanfretti), [ALSETLab](https://github.com/ALSETLab), Troy, NY (Formely SmarTS Lab, Stockholm, Sweden). 
 The authors can be contacted by email: [luigi.vanfretti@gmail.com](href="mailto:luigi.vanfretti@gmail.com?subject=From_OpenIPSL_in_Github").
 This Source Code Form is subject to the terms of the 3-Clause BSD license.
 
