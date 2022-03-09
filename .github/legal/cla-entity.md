@@ -56,7 +56,7 @@ You confirm that:
   <li> You have the legal authority to enter into this Agreement.</li>
   <li> You or Your Affiliates own the Copyright and patent claims covering the Contribution which are required to grant the rights under Section 2.</li>
   <li> The grant of rights under Section 2 does not violate any grant of rights which You or Your Affiliates have made to third parties.</li>
-  <li> You have followed the instructions in <a href="https://github.com/OpenIPSL/OpenIPSL/tree/master/.github/legal/README.md">here</a> for signing the the Agreement.</li>
+  <li> You have followed the instructions in <a href="README.md">here</a> for signing the the Agreement.</li>
 </ol>
 
 ## 4. Disclaimer
