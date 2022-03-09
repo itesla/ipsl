@@ -1,6 +1,6 @@
 # Contributing to OpenIPSL
 
-Thank you for considering to invest your time to contribute to OpenIPSL! :tada::+1:
+Thank you for considering investing your time to contribute to OpenIPSL! :tada::+1:
 
 Here, you will find a set of guidelines for contributing to the OpenIPSL, which is hosted in the [OpenIPSL page](https://github.com/OpenIPSL) on GitHub. Many of the instructions in this document are considered to be suggestions rather than strict rules, so please use your best judgement when reading this document and when contributing to OpenIPSL. In addition, you can find some tips and good practices in [GitHub's Contribution Guideline](https://github.com/github/docs/blob/3c5055fc4eecf3f83560419d94be54458c2f56a1/CONTRIBUTING.md) and in [Atom's Contribution Guideline](https://github.com/atom/atom/blob/master/CONTRIBUTING.md).
 
@@ -17,22 +17,24 @@ Please, use the Table of Contents to find a specific section of this guide quick
   * [Getting Used to Git](#getting-used-to-git)
   * [Common Workflow for Contributing to OpenIPSL](#common-workflow-for-contributing-to-openipsl)
 
-[How Can I Contribute?]
-  * [Getting Started](#getting-started-:begginer:)
-  * [Reporting New Bugs](#reporting-new-bugs-:bug:)
-  * [Improving Documentation ](#improving-documentation-:memo:)
-  * [Improving Models in the Library](#improving-models-in-the-library-:rocket:)
+[How Can I Contribute?](#how-can-i-contribute-?)
+  * [Getting Started](#getting-started)
+  * [Reporting New Bugs](#reporting-new-bugs)
+  * [Improving Documentation ](#improving-documentation)
+  * [Improving Models in the Library](#improving-models-in-the-library)
 
 [The Contributor License Agreement](#the-contributor-license-agreement)
 
 
 ## Code of conduct
 
-OpenIPSL and all of its contributors are governed by the [OpenIPSL Code of Conduct](CODE-OF-CONDUCT.md). By participating in this community you are expected to read this code and to abide by it. We expect you to keep our community approachable and respectable.
+OpenIPSL and all of its contributors are governed by the [OpenIPSL Code of Conduct](CODE_OF_CONDUCT.md). By participating in this community you are expected to read this code and to abide by it. We expect you to keep our community approachable and respectable.
 
 ## I Just Have a Question!!!
 
-> **Note:** Please don't file an issue to ask a question. It is better (and faster) to reach out to the developers by asking a question in our [Discussions Page](https://github.com/OpenIPSL/OpenIPSL/discussions). Discussions can further be filed as an issue, so you can easily start your contribution by just asking a question in our discussions page.
+If you just have a question, there is no need for you to read this entire document. Use our [Discussions Page](https://github.com/OpenIPSL/OpenIPSL/discussions) to start a question. It is better (and faster) to reach out to the developers by asking a question. In addition, discussions can further be filed as an issue, so you can easily start your contribution by starting a discussion.
+
+> **Note:** PLEASE DON'T FILE AN ISSUE TO ASK A QUESTION.
 
 ## Getting Started
 
@@ -115,6 +117,6 @@ If the models you are adding/fixing are not mentioned in any issue, you are welc
 
 ## The Contributor License Agreement
 
-After following this guide in order to submit your contributions to the OpenIPSL, it is time for you to understand what are the details about the intellectual properties related to the library and to the enhancements you are proposing. In order to do so, you should check the [information](./.github/legal/README.md) about the Contributor's License Agreement (CLA) and the CLA assistant that is used by the OpenIPSL project to ensure transparency and fairness between contributors and developers.
+After following this guide in order to submit your contributions to the OpenIPSL, it is time for you to understand what are the details about the intellectual properties related to the library and to the enhancements you are proposing. In order to do so, you should check the [information](legal/README.md) about the Contributor's License Agreement (CLA) and the CLA assistant that is used by the OpenIPSL project to ensure transparency and fairness between contributors and developers.
 
 
