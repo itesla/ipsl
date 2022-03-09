@@ -4,7 +4,7 @@
 -->
 [![Build Status](https://github.com/openipsl/openipsl/actions/workflows/checkCI.yml/badge.svg?branch=master)](https://github.com/OpenIPSL/OpenIPSL/actions)
 
-# **OpenIPSL**: Open-Instance Power System Library:
+# **OpenIPSL**: Open-Instance Power System Library
 The OpenIPSL or Open-Instance Power System Library is a library of power system component models written in the [Modelica](http://modelica.org) language that can be used for power system dynamic analysis, such as phasor time-domain simulations.
 
 The OpenIPSL is currently developed and maintained by Prof. [Luigi Vanfretti's](https://github.com/lvanfretti) research group [ALSETLab](https://github.com/ALSETLab) at [Rensselaer Polytechnic Institute](http://rpi.edu), Troy, NY, collaborators and friends, such as [Dietmar Winkler](https://github.com/dietmarw) and [FOSSEE](https://om.fossee.in/fellowship2018) (contributions are welcome!).
@@ -41,12 +41,12 @@ You are also welcome to submit your contributions as stated below.
 
 Contributions to the library are welcome and can be submitted in the form of pull requests to this repository. Please consult the [contribution guidelines](.github/CONTRIBUTING.md) for more information on how to contribute to the development of this library. Information about our current and past contributors can be found when the library is loaded into a Modelica-compliant software. The information is located within the Users' Guide package, in the Contact page.
 
-If you want to submit your contributions to the OpenIPSL, note that we have a [Contributor's License Agreement (CLA)](.github/legal/README.md). Individual contributors should read, accept and virtually sign the [Individual Contributor License Agreement](https://github.com/OpenIPSL/OpenIPSL/tree/master/.github/legal/cla-individual.md) for contributions to be included in the OpenIPSL. Contributions submitted by entities need to have the [Entity Contributor License Agreement](https://github.com/OpenIPSL/OpenIPSL/tree/master/.github/legal/cla-individual.md) read, accepted and virtually signed. If you have any questions, please don't hesitate to <a href="mailto:luigi.vanfretti@gmail.com?subject=Contributing_to_OpenIPSL">contact us</a>.
+If you want to submit your contributions to the OpenIPSL, note that we have a [Contributor's License Agreement (CLA)](.github/legal/README.md). Individual contributors should read, accept and virtually sign the [Individual Contributor License Agreement](.github/legal/cla-individual.md) for contributions to be included in the OpenIPSL. Contributions submitted by entities need to have the [Entity Contributor License Agreement](.github/legal/cla-individual.md) read, accepted and virtually signed. If you have any questions, please don't hesitate to <a href="mailto:luigi.vanfretti@gmail.com?subject=Contributing_to_OpenIPSL">contact us</a>.
 
 ## Copyright and License Information:
 
 **OpenIPSL:** Copyright April 2016 - current [Luigi Vanfretti](https://github.com/lvanfretti), [ALSETLab](https://github.com/ALSETLab), Troy, NY (Formely SmarTS Lab, Stockholm, Sweden). 
-The authors can be contacted by email: <a href="mailto:luigi.vanfretti@gmail.com?subject=From_OpenIPSL_in_Github">luigi.vanfretti@gmail.com</a>. This Source Code Form is subject to the terms of the 3-Clause BSD license.
+The authors can be contacted by email: <a href="mailto:luigi.vanfretti@gmail.com?subject=OpenIPSL_License">luigi.vanfretti@gmail.com</a>. This Source Code Form is subject to the terms of the 3-Clause BSD license.
 
 ## Acknowledgements:
 
