@@ -117,6 +117,6 @@ If the models you are adding/fixing are not mentioned in any issue, we encourage
 
 ## The Contributor License Agreement
 
-After following this guide in order to submit your contributions to the OpenIPSL, it is time for you to understand what are the details about the intellectual properties related to the library and to the enhancements you are proposing. In order to do so, you should check the [information](legal/README.md) about the Contributor's License Agreement (CLA) and the CLA assistant that is used by the OpenIPSL project to ensure transparency and fairness between contributors and developers.
+After following this guide for submitting your contributions to the OpenIPSL, it is time to understand the details related to the intellectual properties involved in the enhancements you are proposing. In order to do so, you should check the [information](legal/README.md) about the Contributor's License Agreement (CLA) used by the OpenIPSL project. This repository also uses a CLA-assitant to facilitate contributions to be made while ensuring transparency and fairness between contributors and developers during the process.
 
 
