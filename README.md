@@ -41,13 +41,12 @@ You are also welcome to submit your contributions as stated below.
 
 Contributions to the library are welcome and can be submitted in the form of pull requests to this repository. Please consult the [contribution guidelines](.github/CONTRIBUTING.md) for more information on how to contribute to the development of this library. Information about our current and past contributors can be found when the library is loaded into a Modelica-compliant software. The information is located within the Users' Guide package, in the Contact page.
 
-If you want to submit your contributions to the OpenIPSL, note that we have a [Contributor's License Agreement (CLA)](.github/legal/README.md). Individual contributors should read, accept and virtually sign the [Individual Contributor License Agreement](https://github.com/OpenIPSL/OpenIPSL/tree/master/OpenIPSL/Resources/legal/cla-individual.md) for contributions to be included in the OpenIPSL. Contributions submitted by entities need to have the [Entity Contributor License Agreement](https://github.com/OpenIPSL/OpenIPSL/tree/master/OpenIPSL/Resources/legal/cla-individual.md) read, accepted and virtually signed. If you have any questions, please don't hesitate to [contact us](href="mailto:luigi.vanfretti@gmail.com?subject=Contributing_to_OpenIPSL").
+If you want to submit your contributions to the OpenIPSL, note that we have a [Contributor's License Agreement (CLA)](.github/legal/README.md). Individual contributors should read, accept and virtually sign the [Individual Contributor License Agreement](https://github.com/OpenIPSL/OpenIPSL/tree/master/.github/legal/cla-individual.md) for contributions to be included in the OpenIPSL. Contributions submitted by entities need to have the [Entity Contributor License Agreement](https://github.com/OpenIPSL/OpenIPSL/tree/master/.github/legal/cla-individual.md) read, accepted and virtually signed. If you have any questions, please don't hesitate to <a href="mailto:luigi.vanfretti@gmail.com?subject=Contributing_to_OpenIPSL">contact us</a>.
 
 ## Copyright and License Information:
 
-**OpenIPSL** - Copyright April 2016 - current [Luigi Vanfretti](https://github.com/lvanfretti), [ALSETLab](https://github.com/ALSETLab), Troy, NY (Formely SmarTS Lab, Stockholm, Sweden). 
-The authors can be contacted by email: [luigi.vanfretti@gmail.com](href="mailto:luigi.vanfretti@gmail.com?subject=From_OpenIPSL_in_Github").
-This Source Code Form is subject to the terms of the 3-Clause BSD license.
+**OpenIPSL:** Copyright April 2016 - current [Luigi Vanfretti](https://github.com/lvanfretti), [ALSETLab](https://github.com/ALSETLab), Troy, NY (Formely SmarTS Lab, Stockholm, Sweden). 
+The authors can be contacted by email: <a href="mailto:luigi.vanfretti@gmail.com?subject=From_OpenIPSL_in_Github">luigi.vanfretti@gmail.com</a>. This Source Code Form is subject to the terms of the 3-Clause BSD license.
 
 ## Acknowledgements:
 
