@@ -1,0 +1,31 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+authors:
+- name: "OpenIPSL"
+title: "OpenIPSL: an Open-Instance Power System Library"
+version: 2.0.0
+url: "https://github.com/OpenIPSL/OpenIPSL"
+preferred-citation:
+  type: article
+  authors:
+  - family-names: "Baudette"
+    given-names: "Maxime"
+  - family-names: "Castro"
+    given-names: "Marcelo"
+  - family-names: "Rabuzin"
+    given-names: "Tin"
+  - family-names: "Lavenius"
+    given-names: "Jan"
+  - family-names: "Bogodorova"
+    given-names: "Tetiana"
+  - family-names: "Vanfretti"
+    given-names: "Luigi"
+  doi: "https://doi.org/10.1016/j.softx.2018.01.002"
+  journal: "OpenIPSL: Open-Instance Power System Library — Update 1.5 to “iTesla Power Systems Library (iPSL): A Modelica library for phasor time-domain simulations"
+  start: 34 # First page number
+  end: 36 # Last page number
+  title: "My awesome research software"
+  issn: "2352-7110" 
+  volume: 7
+  year: 2018
+  url: "https://www.sciencedirect.com/science/article/pii/S2352711018300050"
