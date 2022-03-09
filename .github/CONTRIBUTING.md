@@ -103,7 +103,7 @@ The library has been in development for many years now, and comprises many model
 
 If you are adding/fixing models that are mentioned in one Issue, please document your contribution in the appropriate issue page and [link your PR to that issue](https://docs.github.com/en/issues/tracking-your-work-with-issues/linking-a-pull-request-to-an-issue). This allows the team managing the repository to understand and review the changes suggested by you more quickly. In addition, provide as much information as possible to allow the developers of OpenIPSL to understand the motivation behind the suggested changes.
 
-If the models you are adding/fixing are not mentioned in any issue, you are welcomed to open a new Issue but, if you prefer, you can directly open a PR with a full description of the models you are suggesting OpenIPSL to add. When submitting these new models to the library, please also include the following in the associated issue:
+If the models you are adding/fixing are not mentioned in any issue, we encourage you to open a new Issue but, if you prefer, you can directly open a PR with a full description of the models you are suggesting OpenIPSL to add. When submitting these new models to the library, please also include the following in the associated issue:
 
 * A short report describing your component model, as well as the validation test.
 * The source files that you used to validate your model against a reference tool.
