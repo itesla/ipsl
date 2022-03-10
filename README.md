@@ -28,7 +28,7 @@ Documentation is provided within the library and can be accessed when loading Op
 Our documentation assumes that you have working knowledge of the Modelica language, are familiar with a Modelica-compliant modeling and simulation environment, that you have proeficient knowledge on power system steady state analysis (i.e., the so called "power flow"), and knowledge on power system dynamic modeling (i.e., the called "transient" and "small-signal" stability). As such, the documentation is limited, and aims to provide very consice information for people who fulfill the requirements above. If you do not fulfill these requirements, we recommend that you first get acquainted with both Modelica and Power Systems.
 
 ## Citing OpenIPSL in Publications:
-If you use OpenIPSL in your work or research, all we ask you in exchange is that you **cite the reference publications**, according to your use. Please consult our publication list, located within the Users' Guide package, in the Publications page, for browsing the reference publications. Preferrably, please cite this repository by using our preferred reference, as seen on GitHub GUI.
+If you use OpenIPSL in your work or research, all we ask you in exchange is that you **cite the reference publications**, according to your use. Please consult our publication list, located within the User's Guide package, in the Publications page, for browsing the reference publications. Preferrably, please cite this repository by using our preferred reference, as seen on GitHub GUI.
 
 You are also welcome to submit your contributions as stated below.
 
