@@ -21,10 +21,10 @@ preferred-citation:
   - family-names: "Vanfretti"
     given-names: "Luigi"
   doi: "https://doi.org/10.1016/j.softx.2018.01.002"
-  journal: "OpenIPSL: Open-Instance Power System Library — Update 1.5 to “iTesla Power Systems Library (iPSL): A Modelica library for phasor time-domain simulations"
+  journal: "SoftwareX"
   start: 34 # First page number
   end: 36 # Last page number
-  title: "My awesome research software"
+  title: "OpenIPSL: Open-Instance Power System Library — Update 1.5 to “iTesla Power Systems Library (iPSL): A Modelica library for phasor time-domain simulations"
   issn: "2352-7110" 
   volume: 7
   year: 2018
