@@ -83,6 +83,6 @@ equation
           extent={{-100,100},{100,40}},
           lineColor={0,0,255},
           textString="%name")}), Documentation(info="<html>
-<p>See <a href=\"modelica:OpenIPSL/Resources/Documents/ULTC/ultc.pdf\">PDF documentation</a> by Mohammed Ahsan Adib Murad. </p>
+<p>See <a href=\"modelica:OpenIPSL/Resources/docs/ULTC/ultc.pdf\">PDF documentation</a> by Mohammed Ahsan Adib Murad. </p>
 </html>"));
 end ULTC;
