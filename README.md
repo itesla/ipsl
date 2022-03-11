@@ -45,4 +45,7 @@ The authors can be contacted by email: <a href="mailto:luigi.vanfretti@gmail.com
 
 ## Acknowledgements:
 
-This work was supported in primarily by the New York State Energy Research and Development Authority (NYSERDA) through the Electric Power Transmission and Distribution (EPTD) PON 3770 High Performing Grid Program together with the New York Power Authority (NYPA). This work was also supported in part by the ERC Program of the National Science Foundation and DOE under NSF Award Number EEC-1041877 and in part by the CURENT Industry Partnership Program. The development of OpenIPSL has also been supported in part by Dominion Energy Virginia through sponsored research grants at RPI during the years of 2018-2023.
+This work was supported primarily by the following grants and institutions, in reverse chronological order:
+- 2018-2023: Dominion Energy Virginia through sponsored research projects: (2018-2019) Flexible Alternating Current Transmission System Modeling and Performance Analysis using Measurement Data, (2020-2021) Model Validation of Generator Power Plants, and (2021-2022) Cloud-Based Integrated Model-and-Measurement Analytics for Power System Applications, at Rensselaer Polytechnic Institute.
+- 2019-2021: New York State Energy Research and Development Authority (NYSERDA) through the Electric Power Transmission and Distribution (EPTD) PON 3770 High Performing Grid Program together with the New York Power Authority (NYPA). 
+- 2018-2020: This work was also supported in part by the ERC Program of the National Science Foundation and DOE under NSF Award Number EEC-1041877 and in part by the CURENT Industry Partnership Program. 
