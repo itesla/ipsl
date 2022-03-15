@@ -19,9 +19,9 @@ jobs:
           PERSONAL_ACCESS_TOKEN : ${{ secrets.PERSONAL_ACCESS_TOKEN }}
         with:
           path-to-signatures: '.github/legal/signatures/version1/cla.json'
-          path-to-document: 'https://github.com/OpenIPSL/OpenIPSL/blob/master/.github/legal/cla-individual.md' 
+          path-to-document: 'https://github.com/OpenIPSL/OpenIPSL/blob/master/.github/legal/cla-individual.md'
           # branch should not be protected
-          branch: 'master' # need to modify it if master changes to main
+          branch: 'signatures'
           allowlist: bot*
 
          #below are the optional inputs - If the optional inputs are not given, then default values will be taken
