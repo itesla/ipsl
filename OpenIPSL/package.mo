@@ -45,10 +45,11 @@ If you are looking for an introduction to the library, have especially a look at
   for a brief list of contributors and developers of the library.</li>
 </ul>
 </li>
-<li><a href=\"modelica://OpenIPSL.Examples\">Examples</a> package for demonstration on how certain components should be used.</li>
+<li><a href=\"modelica://OpenIPSL.Tests\">Tests</a> package for small test systems which show basic behavior of some of the many components of this library.</li>
+<li><a href=\"modelica://OpenIPSL.Examples\">Examples</a> package for demonstration of power system examples that can be assembled using the library.</li>
 </ul>
 <p>
-See also the <strong><code>OpenIPSL</code></strong> organization website <a href=\"http://openipsl.org\">openipsl.org</a>
+Please check the library's <a href=\"modelica://OpenIPSL.Copyright\">Copyright</a> disclaimer for information on license. See also the <strong><code>OpenIPSL</code></strong> organization website <a href=\"http://openipsl.org\">openipsl.org</a>
 for additional information.
 </p>
 </html>"));

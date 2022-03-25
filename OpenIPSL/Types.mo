@@ -1,5 +1,5 @@
 within OpenIPSL;
-package Types "Library specific type definitions"
+package Types "Library specific type definitions."
   extends Modelica.Icons.TypesPackage;
   type Voltage = SI.Voltage(nominal = 1e4, displayUnit = "kV");
   type Current = SI.Current(nominal = 1e4, displayUnit = "kA");

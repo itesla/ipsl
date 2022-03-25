@@ -1,5 +1,5 @@
 within OpenIPSL;
-package UsersGuide "User's Guide"
+package UsersGuide "User's Guide."
   extends Modelica.Icons.Information;
 
   annotation(DocumentationClass=true, Documentation(info="<html>
