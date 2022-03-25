@@ -1,5 +1,5 @@
 within OpenIPSL.Tests.Loads.PSAT;
-model LoadTestVoltDependant
+model LoadTestVoltDependant "Simple system to test functionality of voltage-dependent load model."
   extends BaseClasses.LoadTestBase;
   extends Modelica.Icons.Example;
   OpenIPSL.Electrical.Loads.PSAT.VoltageDependent voltageDependent(

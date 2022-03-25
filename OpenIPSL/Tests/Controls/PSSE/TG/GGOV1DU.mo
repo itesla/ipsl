@@ -1,5 +1,5 @@
 within OpenIPSL.Tests.Controls.PSSE.TG;
-model GGOV1DU "three phase to ground fault test of GGOV1DU"
+model GGOV1DU "SMIB system to test functionality of GGOV1DU model."
   extends OpenIPSL.Tests.BaseClasses.SMIB;
   OpenIPSL.Electrical.Machines.PSSE.GENROU gENROU(
     Xppd=0.2,

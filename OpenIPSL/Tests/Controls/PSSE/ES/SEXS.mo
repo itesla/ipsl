@@ -1,5 +1,5 @@
 within OpenIPSL.Tests.Controls.PSSE.ES;
-model SEXS "SMIB model example of GENROU with Excitation System SEXS"
+model SEXS "SMIB system to test functionality of SEXS model."
   extends OpenIPSL.Tests.BaseClasses.SMIB;
   Modelica.Blocks.Sources.Constant const2(k=0)
     annotation (Placement(transformation(extent={{-110,166},{-94,182}})));

@@ -1,5 +1,5 @@
 within OpenIPSL.Tests.Controls.PSSE.ES;
-model SCRX "SMIB model example of GENROU with Excitation System SCRX"
+model SCRX "SMIB system to test functionality of SCRX model."
   extends OpenIPSL.Tests.BaseClasses.SMIB;
   Modelica.Blocks.Sources.Constant const2(k=0)
     annotation (Placement(transformation(extent={{-110,166},{-94,182}})));

@@ -1,5 +1,5 @@
 within OpenIPSL.Tests.Machines.PSAT;
-model Order3test2_AVR
+model Order3test2_AVR "Simple system with line opening to test functionality of order 3 machine connected to an AVR type III from PSAT."
   extends Modelica.Icons.Example;
   extends OpenIPSL.Tests.BaseClasses.MachineTestBase;
   OpenIPSL.Electrical.Machines.PSAT.Order3 order3_Inputs_Outputs1(

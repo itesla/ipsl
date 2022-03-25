@@ -1,6 +1,6 @@
 within OpenIPSL.Tests.Solar.PowerFactory;
 
-model DIgSILENT_PV "Voltage drop test of DIgSILENT_PV model"
+model DIgSILENT_PV "Simple system to test voltage drop disturbance in DIgSILENT_PV model."
   extends Modelica.Icons.Example;
   Modelica.Blocks.Sources.Step voltage(height = -0.05, offset = 1, startTime = 0.5)  annotation(
     Placement(visible = true, transformation(origin = {70, -20}, extent = {{10, -10}, {-10, 10}}, rotation = 0)));

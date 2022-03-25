@@ -1,5 +1,5 @@
 within OpenIPSL.Tests.Machines.PSSE;
-model GENROE
+model GENROE "SMIB system to test functionality of generator model with round rotor and exponential saturation."
   extends OpenIPSL.Tests.BaseClasses.SMIB;
   OpenIPSL.Electrical.Machines.PSSE.GENROE gENROE(
     Tpd0=5,

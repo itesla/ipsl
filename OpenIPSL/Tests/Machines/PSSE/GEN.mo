@@ -1,5 +1,5 @@
 within OpenIPSL.Tests.Machines.PSSE;
-model GEN "SMIB system with one load and flexible GEN model (needs replaceable support)"
+model GEN "SMIB system to test functionality of flexible GEN model (needs replaceable support)."
   extends OpenIPSL.Tests.BaseClasses.SMIB;
   Electrical.Machines.PSSE.Plant G1(
     redeclare Electrical.Machines.PSSE.GENROE machine(

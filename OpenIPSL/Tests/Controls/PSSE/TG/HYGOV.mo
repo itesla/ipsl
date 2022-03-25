@@ -1,6 +1,5 @@
 within OpenIPSL.Tests.Controls.PSSE.TG;
-model HYGOV
-  "Simple Machine Infinite Bus with Machine, Governor and Excitation system"
+model HYGOV "SMIB system to test functionality of HYGOV model."
   extends OpenIPSL.Tests.BaseClasses.SMIB;
   OpenIPSL.Electrical.Machines.PSSE.GENSAL gENSAL(
     Xppd=0.2,

@@ -1,5 +1,5 @@
 within OpenIPSL.Tests.Branches.PSAT;
-model TwoWindingTransformer_Test
+model TwoWindingTransformer_Test "Simple model for testing two-winding transformer model."
   extends Modelica.Icons.Example;
   OpenIPSL.Electrical.Machines.PSAT.Order2 order2_1(
     D=5,

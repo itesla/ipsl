@@ -1,6 +1,5 @@
 within OpenIPSL.Tests.Controls.PSSE.TG;
-model GAST
-  "Simple Machine Infinite Bus with Machine, Governor and Excitation system"
+model GAST "SMIB system to test functionality of GAST model."
   extends OpenIPSL.Tests.BaseClasses.SMIB;
   OpenIPSL.Electrical.Machines.PSSE.GENROU gENROU(
     Xppd=0.2,

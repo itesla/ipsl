@@ -1,5 +1,5 @@
 within OpenIPSL.Tests.Controls.PSAT.TG;
-model TGTypeII_test
+model TGTypeII_test "Simple system to test functionality of TG type II model."
   extends BaseClasses.TGTestBase;
   extends Modelica.Icons.Example;
   Electrical.Controls.PSAT.TG.TGTypeII           tGtypeII(S_b=SysData.S_b)

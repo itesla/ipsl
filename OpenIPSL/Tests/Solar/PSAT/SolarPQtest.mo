@@ -1,5 +1,5 @@
 within OpenIPSL.Tests.Solar.PSAT;
-model SolarPQtest
+model SolarPQtest "Simple system to test the functionality of PV model with controlled Active and Reactive Powers (P and Q)."
   extends Modelica.Icons.Example;
   OpenIPSL.Electrical.Solar.PSAT.ConstantPQPV.PQ1 PQ11(
     P_0=0.4,

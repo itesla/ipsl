@@ -1,5 +1,5 @@
 within OpenIPSL.Tests.Branches.Generic;
-model ULTC "Example model to demonstrate the working of the generic ULTC"
+model ULTC "Example model to demonstrate the working of the generic ULTC."
   extends Modelica.Icons.Example;
   OpenIPSL.Electrical.Buses.Bus B1 annotation (
     Placement(transformation(extent={{-80,-10},{-60,10}})));

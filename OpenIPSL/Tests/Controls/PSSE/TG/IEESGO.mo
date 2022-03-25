@@ -1,6 +1,5 @@
 within OpenIPSL.Tests.Controls.PSSE.TG;
-model IEESGO
-  "Simple Machine Infinite Bus with Machine, Governor and Excitation system"
+model IEESGO "SMIB system to test functionality of IEESGO model."
   extends OpenIPSL.Tests.BaseClasses.SMIB;
   OpenIPSL.Electrical.Machines.PSSE.GENSAL gENSAL(
     Xppd=0.2,

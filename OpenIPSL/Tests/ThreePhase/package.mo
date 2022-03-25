@@ -1,5 +1,5 @@
 within OpenIPSL.Tests;
-package ThreePhase
+package ThreePhase "Set of simple systems to test the functionality of three-phase and hybrid positive-sequence/three-phase interface."
 extends Modelica.Icons.ExamplesPackage;
 
 annotation (Documentation(info="<html>

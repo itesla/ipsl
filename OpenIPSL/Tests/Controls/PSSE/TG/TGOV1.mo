@@ -1,5 +1,5 @@
 within OpenIPSL.Tests.Controls.PSSE.TG;
-model TGOV1 "SMIB system with one load and GENROE model"
+model TGOV1 "SMIB system to test functionality of TGOV1 model."
   extends OpenIPSL.Tests.BaseClasses.SMIB;
   OpenIPSL.Electrical.Machines.PSSE.GENROE gENROE(
     Tpd0=5,

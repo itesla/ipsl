@@ -1,5 +1,5 @@
 within OpenIPSL.Tests.Controls.CGMES.ES;
-model ExcSEXS "SMIB model example of GENROU with Excitation System ExcSEXS"
+model ExcSEXS "SMIB system to test functionality of excitation system model ExcSEXS."
   extends OpenIPSL.Tests.BaseClasses.SMIB;
   Modelica.Blocks.Sources.Constant const2(k=0)
     annotation (Placement(transformation(extent={{-110,166},{-94,182}})));

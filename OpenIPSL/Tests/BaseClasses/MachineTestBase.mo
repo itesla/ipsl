@@ -1,5 +1,5 @@
 within OpenIPSL.Tests.BaseClasses;
-partial model MachineTestBase
+partial model MachineTestBase "Base class for tests involving machines."
   Electrical.Branches.PwLine pwLine1(
     X=0.1,
     R=0.01,

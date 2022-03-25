@@ -1,6 +1,5 @@
 within OpenIPSL.Tests.Controls.PSSE.TG;
-model IEEEG1
-  "Simple Machine Infinite Bus with Machine, Governor and Excitation system"
+model IEEEG1 "SMIB system to test functionality of IEEEG1 model."
   extends OpenIPSL.Tests.BaseClasses.SMIB;
   OpenIPSL.Electrical.Machines.PSSE.GENROU gENROU(
     Xppd=0.2,

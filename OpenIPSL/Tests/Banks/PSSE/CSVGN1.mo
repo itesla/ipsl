@@ -1,5 +1,5 @@
 within OpenIPSL.Tests.Banks.PSSE;
-model CSVGN1
+model CSVGN1 "SMIB system to test functionality of model CSVGN1."
  extends OpenIPSL.Tests.BaseClasses.SMIB;
  OpenIPSL.Electrical.Machines.PSSE.GENSAL gENSAL(
     Tpd0=5,
@@ -37,7 +37,7 @@ model CSVGN1
     P_0=0,
     Q_0=6009897)
  annotation (Placement(transformation(extent={{-10,10},{10,-10}},origin={40,70})));
-  Modelica.Blocks.Sources.RealExpression realExpression(y=SHUNT.V)
+  Modelica.Blocks.Sources.RealExpression realExpression(y=SHUNT.v)
     annotation (Placement(transformation(extent={{-6,38},{14,58}})));
   Modelica.Blocks.Sources.Constant const(k=0)
     annotation (Placement(transformation(extent={{0,68},{14,82}})));
@@ -53,5 +53,15 @@ equation
                                                color={0,0,127}));
   connect(const.y, cSVGN1.VOTHSG) annotation (Line(points={{14.7,75},{28,75}},
                         color={0,0,127}));
-    annotation (experiment(StopTime=10));
+    annotation (experiment(StopTime=10), Documentation(info="<html>
+<p>
+The CSVGN is a Static Compensator and should inject reactive power to control the terminal bus voltage during the fault disturbance.
+Simulate for 10 seconds.
+</p>
+<p>Variables of interest:</p>
+<ul>
+<li><code>cSVGN1.v</code></li>
+<li><code>cSVGN1.Q</code></li>
+</ul>
+</html>"));
 end CSVGN1;

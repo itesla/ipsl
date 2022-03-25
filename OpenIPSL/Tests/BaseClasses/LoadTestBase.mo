@@ -1,5 +1,5 @@
 within OpenIPSL.Tests.BaseClasses;
-partial model LoadTestBase "Base class for the different load cases"
+partial model LoadTestBase "Base class for the different load cases."
   OpenIPSL.Electrical.Branches.PwLine pwLine2(
     B=0.001/2,
     G=0,

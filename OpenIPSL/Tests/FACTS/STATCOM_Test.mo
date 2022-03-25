@@ -1,5 +1,5 @@
 within OpenIPSL.Tests.FACTS;
-model STATCOM_Test "Simple model to test the functionality of STATCOM"
+model STATCOM_Test "Simple model to test the functionality of STATCOM."
   extends Modelica.Icons.Example;
   Electrical.FACTS.PSAT.STATCOM sTATCOM(
     Q_0=524550,

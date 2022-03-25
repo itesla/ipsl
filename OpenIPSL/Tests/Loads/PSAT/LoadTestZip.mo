@@ -1,5 +1,5 @@
 within OpenIPSL.Tests.Loads.PSAT;
-model LoadTestZip
+model LoadTestZip "Simple system to test functionality of ZIP (constant impedance, current and power) load model."
   extends BaseClasses.LoadTestBase;
   extends Modelica.Icons.Example;
   OpenIPSL.Electrical.Loads.PSAT.ZIP zIP(

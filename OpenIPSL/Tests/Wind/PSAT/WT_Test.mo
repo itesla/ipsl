@@ -1,5 +1,5 @@
 within OpenIPSL.Tests.Wind.PSAT;
-model WT_Test
+model WT_Test "Simple system to test the functionality of type-3 wind turbine model from PSAT."
   extends Modelica.Icons.Example;
   OpenIPSL.Electrical.Wind.PSAT.PSAT_Type_3.PSAT_WT dfig_Turbine(
     V_b=1,

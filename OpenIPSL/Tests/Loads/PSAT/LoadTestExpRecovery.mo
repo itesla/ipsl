@@ -1,5 +1,5 @@
 within OpenIPSL.Tests.Loads.PSAT;
-model LoadTestExpRecovery
+model LoadTestExpRecovery "Simple system to test functionality of eponential recovery load model."
   extends BaseClasses.LoadTestBase;
   extends Modelica.Icons.Example;
   OpenIPSL.Electrical.Loads.PSAT.ExponentialRecovery exponentialRecovery(

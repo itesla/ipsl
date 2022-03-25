@@ -1,5 +1,5 @@
 within OpenIPSL.Tests.BaseClasses;
-partial model TGTestBase
+partial model TGTestBase "Base class for tests involving turbine governors."
   OpenIPSL.Electrical.Loads.PSAT.PQ pwLoadPQ1(
     angle_0=0,
     P_0=80000,

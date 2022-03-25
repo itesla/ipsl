@@ -1,5 +1,5 @@
 within OpenIPSL.Tests.Machines.PSAT;
-model Order4test2_perturbation
+model Order4test2_perturbation "Simple system with perturbation to test functionality of order 4 machine from PSAT."
   extends OpenIPSL.Tests.BaseClasses.MachineTestBase;
   extends Modelica.Icons.Example;
   OpenIPSL.Electrical.Machines.PSAT.Order4 Generator(
