@@ -1,0 +1,11 @@
+within OpenIPSL.Examples.OpenCPS.NoiseInjections;
+model WienerProcessInjection
+  extends BaseClass;
+
+initial equation
+  P = 0;
+
+equation
+  der(P) = noise_gen.y;
+  Q = 0;
+end WienerProcessInjection;
