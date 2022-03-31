@@ -7,15 +7,15 @@ model Step_5
   OpenIPSL.Electrical.Buses.Bus B3(displayPF=false) annotation (Placement(
         visible=true, transformation(extent={{60,-10},{80,10}}, rotation=0)));
   Generator.Generator G1(
-    V_0=1,
+    v_0=1,
     angle_0=0.4946,
-    P_0=1997.999,
-    Q_0=967.92) annotation (Placement(visible=true, transformation(extent={{-110,
+    P_0=1997999000,
+    Q_0=967920000) annotation (Placement(visible=true, transformation(extent={{-110,
             -10},{-90,10}}, rotation=0)));
   OpenIPSL.Electrical.Branches.PSAT.TwoWindingTransformer twoWindingTransformer(
-    Sn=2220,
-    V_b=400,
-    Vn=400,
+    Sn=2220000000,
+    V_b=400000,
+    Vn=400000,
     rT=0,
     xT=0.15) annotation (Placement(visible=true, transformation(extent={{-50,-10},{-30,10}}, rotation=0)));
   OpenIPSL.Electrical.Branches.PwLine pwLine(
@@ -23,13 +23,13 @@ model Step_5
     G=0,
     B=0,
     X=0.5*100/2220,
-    S_b=100) annotation (Placement(visible=true, transformation(extent={{20,10},
+    S_b=100000000) annotation (Placement(visible=true, transformation(extent={{20,10},
             {40,30}}, rotation=0)));
   OpenIPSL.Electrical.Buses.InfiniteBus infiniteBus(
-    V_0=0.90081,
+    v_0=0.90081,
     angle_0=0,
-    P_0=-1998,
-    Q_0=87.066) annotation (Placement(visible=true, transformation(
+    P_0=-1998000000,
+    Q_0=87066000) annotation (Placement(visible=true, transformation(
         origin={100,0},
         extent={{-10,10},{10,-10}},
         rotation=180)));
@@ -43,10 +43,10 @@ model Step_5
     R=0,
     G=0,
     B=0,
-    S_b=100,
+    S_b=100000000,
     X=0.93*100/2220) annotation (Placement(visible=true, transformation(extent=
             {{20,-30},{40,-10}}, rotation=0)));
-  inner OpenIPSL.Electrical.SystemBase SysData(S_b=100, fn=60) annotation (
+  inner OpenIPSL.Electrical.SystemBase SysData(fn=60) annotation (
       Placement(visible=true, transformation(
         origin={85.0001,-80},
         extent={{-25.0001,-20},{34.9999,20}},

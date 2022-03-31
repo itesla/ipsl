@@ -12,7 +12,7 @@ partial model Step_2
   Modelica.Blocks.Sources.Constant pss_off(k=0)
     annotation (Placement(transformation(extent={{-100,-4},{-80,16}})));
   OpenIPSL.Electrical.Machines.PSAT.Order6 machine(
-    Vn=400,
+    Vn=400000,
     ra=0.003,
     xd=1.81,
     xq=1.76,
@@ -27,9 +27,9 @@ partial model Step_2
     Taa=0.002,
     M=7,
     D=0,
-    Sn=2220,
+    Sn=2220000000,
     V_b=V_b,
-    V_0=V_0,
+    v_0=v_0,
     angle_0=angle_0,
     P_0=P_0,
     Q_0=Q_0) annotation (Placement(transformation(extent={{20,-30},{80,30}})));

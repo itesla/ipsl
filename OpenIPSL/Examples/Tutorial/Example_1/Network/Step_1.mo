@@ -8,7 +8,7 @@ partial model Step_1
     annotation (Placement(transformation(extent={{60,-10},{80,10}})));
   Generator.Generator G1
     annotation (Placement(transformation(extent={{-110,-10},{-90,10}})));
-  inner OpenIPSL.Electrical.SystemBase SysData(S_b=100, fn=60) annotation (
+  inner OpenIPSL.Electrical.SystemBase SysData(fn=60) annotation (
       Placement(visible=true, transformation(
         origin={85.0002,-80},
         extent={{-25.0002,-20},{34.9998,20}},

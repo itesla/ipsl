@@ -1,5 +1,6 @@
 within OpenIPSL.Examples.Tutorial.Example_1;
 function modal_analysis
+  extends Modelica.Icons.Function;
   import Modelica_LinearSystems2.StateSpace;
   import Modelica_LinearSystems2.TransferFunction;
   input String pathToPlantModel="OpenIPSL.Examples.Tutorial.Example_1.Example_1";
