@@ -1,5 +1,5 @@
 within OpenIPSL.Examples.KundurSMIB.Generation_Groups;
-model Generator
+model Generator "Generation unit used in SMIB system"
   extends OpenIPSL.Interfaces.Generator;
   OpenIPSL.Electrical.Machines.PSAT.Order6 machine(
     Vn=400,
@@ -31,14 +31,12 @@ equation
   connect(machine.p, pwPin) annotation (Line(points={{80,0},{110,0}}, color={0,0,255}));
   annotation (
     Documentation(info="<html>
+<p> Generation unit composed of a order 6 machine model.</p>
+<p> </p>
 <table cellspacing=\"1\" cellpadding=\"1\" border=\"1\">
 <tr>
 <td><p>Reference</p></td>
 <td><p>SMIB PSAT, d_kundur2.mdl, PSAT</p></td>
-</tr>
-<tr>
-<td><p>Last update</p></td>
-<td>January 2019</td>
 </tr>
 <tr>
 <td><p>Author</p></td>

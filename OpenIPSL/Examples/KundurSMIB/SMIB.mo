@@ -1,5 +1,5 @@
 within OpenIPSL.Examples.KundurSMIB;
-model SMIB
+model SMIB "Single-Machine-Infinite-Bus system with generation unit composed of Machine."
   extends Modelica.Icons.Example;
   extends SMIB_Partial;
   import Modelica.Constants.pi;
@@ -32,14 +32,18 @@ equation
       __Dymola_Algorithm="Rkfix2"),
     __Dymola_experimentSetupOutput,
     Documentation(info="<html>
+<p>This example system represents an SMIB system with generation unit composed only of a machine. The system should be simulated during 10 seconds.</p>
+<p>Variables of interest are:</p>
+<ul>
+<li><code>B1.v</code></li>
+<li><code>G1.machine.delta</code></li>
+</ul>
+<p>Compare these variables with the ones obtained when simulating <code>SMIB_AVR</code> and <code>SMIB_AVR_PSS</code> for 10 seconds.</p>
+<p> </p>
 <table cellspacing=\"1\" cellpadding=\"1\" border=\"1\">
 <tr>
 <td><p>Reference</p></td>
 <td><p>SMIB PSAT, d_kundur2.mdl, PSAT</p></td>
-</tr>
-<tr>
-<td><p>Last update</p></td>
-<td>January 2019</td>
 </tr>
 <tr>
 <td><p>Author</p></td>

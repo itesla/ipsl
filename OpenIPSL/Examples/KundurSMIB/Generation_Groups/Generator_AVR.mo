@@ -1,5 +1,5 @@
 within OpenIPSL.Examples.KundurSMIB.Generation_Groups;
-model Generator_AVR
+model Generator_AVR "Generation unit used in SMIB AVR system"
   extends OpenIPSL.Interfaces.Generator;
   OpenIPSL.Electrical.Machines.PSAT.Order6 machine(
     Vn=400,
@@ -38,28 +38,28 @@ equation
                                             color={0,0,127}));
   connect(machine.p, pwPin)
     annotation (Line(points={{80,0},{110,0}},          color={0,0,255}));
-  connect(pss_off.y, avr.vs) annotation (Line(points={{-59,0},{-54,0},{-54,4},{-48.3333,4}},
+  connect(pss_off.y, avr.vs) annotation (Line(points={{-59,0},{-54,0},{-54,4},{
+          -48.3333,4}},
                color={0,0,127}));
   connect(avr.vf, machine.vf) annotation (Line(points={{-8.33333,14},{14,14},{14,15}},
                        color={0,0,127}));
-  connect(machine.v, avr.v) annotation (Line(points={{83,9},{88,9},{88,50},{-60,50},{-60,24},{-48.3333,24}},
+  connect(machine.v, avr.v) annotation (Line(points={{83,9},{88,9},{88,50},{-60,
+          50},{-60,24},{-48.3333,24}},
                               color={0,0,127}));
-  connect(machine.vf0, avr.vf0) annotation (Line(points={{26,33},{26,40},{-30,40},{-30,32.3333}},
-                                                color={0,0,127}));
+  connect(machine.vf0, avr.vf0) annotation (Line(points={{26,33},{26,40},{-30,
+          40},{-30,32.3333}},                   color={0,0,127}));
   annotation (
     Icon(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,
             100}})),
     Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{
             100,100}})),
     Documentation(info="<html>
+<p> Generation unit composed of order 6 machine and an AVR type III.</p>
+<p> </p>
 <table cellspacing=\"1\" cellpadding=\"1\" border=\"1\">
 <tr>
 <td><p>Reference</p></td>
 <td><p>SMIB PSAT, d_kundur2.mdl, PSAT</p></td>
-</tr>
-<tr>
-<td><p>Last update</p></td>
-<td>January 2019</td>
 </tr>
 <tr>
 <td><p>Author</p></td>
