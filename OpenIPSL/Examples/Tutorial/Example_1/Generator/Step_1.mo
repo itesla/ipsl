@@ -1,5 +1,5 @@
 within OpenIPSL.Examples.Tutorial.Example_1.Generator;
-partial model Step_1
+partial model Step_1 "Machine model and parameters."
   extends OpenIPSL.Interfaces.Generator;
   OpenIPSL.Electrical.Machines.PSAT.Order6 machine(
     Vn=400000,

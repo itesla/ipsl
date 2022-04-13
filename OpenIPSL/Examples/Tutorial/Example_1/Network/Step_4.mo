@@ -1,5 +1,5 @@
 within OpenIPSL.Examples.Tutorial.Example_1.Network;
-partial model Step_4
+partial model Step_4 "Adding fault event."
   OpenIPSL.Electrical.Buses.Bus B1(displayPF=false)
     annotation (Placement(transformation(extent={{-80,-10},{-60,10}})));
   OpenIPSL.Electrical.Buses.Bus B2(displayPF=false)

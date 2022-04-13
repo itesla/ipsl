@@ -1,16 +1,16 @@
 within OpenIPSL.Examples.Tutorial.Example_3.Generation_Groups;
-model Gen1
+model Gen1 "100MVA/18kV generation unit for bus 1"
   extends OpenIPSL.Interfaces.Generator;
-  parameter Real vf0=1.755517086537914;
-  parameter Real vref0=1.118023800520641;
-  parameter Real height annotation (Dialog(group="AVR Disturbance"));
-  parameter Real tstart annotation (Dialog(group="AVR Disturbance"));
-  parameter Boolean refdisturb annotation (Dialog(group="AVR Disturbance"));
+  parameter Real vf0=1.755517086537914 "Initial field voltage value";
+  parameter Real vref0=1.118023800520641 "Initial terminal voltage reference value";
+  parameter Real height "Disturbance magnitude" annotation (Dialog(group="AVR Disturbance"));
+  parameter Real tstart "Disturbance time instant" annotation (Dialog(group="AVR Disturbance"));
+  parameter Boolean refdisturb "Allow disturbance" annotation (Dialog(group="AVR Disturbance"));
   OpenIPSL.Electrical.Machines.PSAT.Order4 gen(
-    Sn=100,
-    Vn=18,
+    Sn=100000000,
+    Vn=18000,
     V_b=V_b,
-    V_0=V_0,
+    v_0=v_0,
     angle_0=angle_0,
     P_0=P_0,
     Q_0=Q_0,
@@ -29,7 +29,7 @@ model Gen1
   OpenIPSL.Electrical.Controls.PSAT.AVR.AVRTypeII AVR(
     vrmin=-5,
     vrmax=5,
-    v0=V_0,
+    v0=v_0,
     Ka=20,
     Ta=0.2,
     Kf=0.063,
@@ -77,6 +77,9 @@ equation
   connect(AVR.vref0, switch1.u3) annotation (Line(points={{16,24.4},{16,24.4},{
           16,58},{10,58},{10,72},{-88,72},{-88,-36},{-42,-36},{-42,-8}}, color=
           {0,0,127}));
-  annotation (Documentation, Diagram(coordinateSystem(preserveAspectRatio=false,
+  annotation (Documentation(info="<html>
+<p>Note that this 100MVA/18kV generation unit allows the user to perform a step disturbance of magnitude <code>height</code> at instant <code>tstart</code> in the voltage reference value for each Automatic Voltage Regulator. </p>
+<p>Also note that boolean variable <code>refdisturb</code> needs to be set to true for disturbance to take place.</p>
+</html>"),                   Diagram(coordinateSystem(preserveAspectRatio=false,
           extent={{-100,-100},{100,100}})));
 end Gen1;

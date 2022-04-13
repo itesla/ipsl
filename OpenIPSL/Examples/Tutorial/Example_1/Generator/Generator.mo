@@ -1,5 +1,5 @@
 within OpenIPSL.Examples.Tutorial.Example_1.Generator;
-model Generator
+model Generator "Complete generation unit ready for simulation."
   extends OpenIPSL.Interfaces.Generator;
   OpenIPSL.Electrical.Controls.PSAT.AVR.AVRtypeIII avr(
     vfmax=7,
@@ -36,8 +36,9 @@ model Generator
 equation
   connect(avr.vf, machine.vf) annotation (Line(points={{1.66667,10},{1.66667,10},
           {36,10}}, color={0,0,127}));
-  connect(avr.v, machine.v) annotation (Line(points={{-38.3333,20},{-72,20},{-72,
-          50},{94,50},{94,6},{82,6}}, color={0,0,127}));
+  connect(avr.v, machine.v) annotation (Line(points={{-38.3333,20},{-72,20},{
+          -72,50},{94,50},{94,6},{82,6}},
+                                      color={0,0,127}));
   connect(machine.pm0, machine.pm) annotation (Line(points={{44,-22},{44,-22},{
           44,-30},{30,-30},{30,-10},{36,-10}}, color={0,0,127}));
   connect(pss_off.y, avr.vs)

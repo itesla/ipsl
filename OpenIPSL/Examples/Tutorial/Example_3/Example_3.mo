@@ -1,10 +1,9 @@
 within OpenIPSL.Examples.Tutorial.Example_3;
-model Example_3
-  import Modelica.Constants.pi;
+model Example_3 "Fully assembled 9-bus 3-generator test system."
   extends Modelica.Icons.Example;
   OpenIPSL.Electrical.Branches.PSAT.TwoWindingTransformer twoWindingTransformer(
-    V_b=16.5,
-    Vn=16.5,
+    V_b=16500,
+    Vn=16500,
     rT=0,
     xT=0.0576) annotation (Placement(transformation(
         extent={{-10,-10},{10,10}},
@@ -28,23 +27,23 @@ model Example_3
         extent={{10,10},{-10,-10}},
         rotation=270,
         origin={-60,-2})));
-  OpenIPSL.Electrical.Loads.PSAT.VoltDependant lOADPQ(
-    V_b=230,
-    angle_0=-0.069617784448685*180/pi,
-    V_0=0.995630859628167,
-    Sn=100,
+  OpenIPSL.Electrical.Loads.PSAT.VoltageDependent lOADPQ(
+    V_b=230000,
+    angle_0=-0.069617784448685,
+    v_0=0.995630859628167,
+    Sn=100000000,
     P_0=1.25*SysData.S_b,
     Q_0=0.5*SysData.S_b) annotation (Placement(transformation(
         extent={{-10,-10},{10,10}},
         rotation=0,
         origin={-90,-10})));
-  OpenIPSL.Electrical.Loads.PSAT.VoltDependant PQ1(
-    V_b=230,
+  OpenIPSL.Electrical.Loads.PSAT.VoltageDependent PQ1(
+    V_b=230000,
     P_0=0.9*SysData.S_b,
     Q_0=0.3*SysData.S_b,
-    angle_0=-0.064357203188830*180/pi,
-    V_0=1.012654326639182,
-    Sn=100) annotation (Placement(transformation(
+    angle_0=-0.064357203188830,
+    v_0=1.012654326639182,
+    Sn=100000000) annotation (Placement(transformation(
         extent={{-10,-10},{10,10}},
         rotation=0,
         origin={110,-10})));
@@ -76,35 +75,35 @@ model Example_3
         rotation=180,
         origin={30,90})));
   OpenIPSL.Electrical.Branches.PSAT.TwoWindingTransformer twoWindingTransformer1(
-    V_b=13.8,
-    Vn=13.8,
+    V_b=13800,
+    Vn=13800,
     rT=0,
     xT=0.0586) annotation (Placement(transformation(
         extent={{-10,-10},{10,10}},
         rotation=180,
         origin={100,90})));
   OpenIPSL.Electrical.Branches.PSAT.TwoWindingTransformer twoWindingTransformer2(
-    Sn=100,
-    V_b=18,
-    Vn=18,
+    Sn=100000000,
+    V_b=18000,
+    Vn=18000,
     rT=0,
     xT=0.0625) annotation (Placement(transformation(
         extent={{-10,-10},{10,10}},
         rotation=0,
         origin={-100,90})));
-  OpenIPSL.Electrical.Loads.PSAT.VoltDependant lOADPQ1(
-    V_b=230,
+  OpenIPSL.Electrical.Loads.PSAT.VoltageDependent lOADPQ1(
+    V_b=230000,
     P_0=1*SysData.S_b,
     Q_0=0.35*SysData.S_b,
-    angle_0=0.012697901381466*180/pi,
-    V_0=1.015882581760390,
-    Sn=100) annotation (Placement(transformation(
+    angle_0=0.012697901381466,
+    v_0=1.015882581760390,
+    Sn=100000000) annotation (Placement(transformation(
         extent={{-10,-10},{10,10}},
         rotation=0,
         origin={10,50})));
   OpenIPSL.Electrical.Buses.Bus B2(
-    V_0=1.025,
-    angle_0=0.161966652912444*180/pi,
+    v_0=1.025,
+    angle_0=0.161966652912444,
     displayPF=true)
     annotation (Placement(transformation(extent={{-130,80},{-110,100}})));
   OpenIPSL.Electrical.Buses.Bus B7(displayPF=true)
@@ -139,12 +138,12 @@ model Example_3
         rotation=90,
         origin={0,-70})));
   Tutorial.Example_3.Generation_Groups.Gen1 gen1(
-    V_b=18,
-    V_0=1.025,
+    V_b=18000,
+    v_0=1.025,
     height=0.05,
     tstart=2,
     refdisturb=false,
-    angle_0=0.161966652912444*180/pi,
+    angle_0=0.161966652912444,
     vref0=1.120103884682511,
     P_0=1.629999999999999*SysData.S_b,
     Q_0=0.066536560198189*SysData.S_b,
@@ -152,9 +151,9 @@ model Example_3
     displayPF=true)
     annotation (Placement(transformation(extent={{-160,80},{-140,100}})));
   Generation_Groups.Gen2 gen2(
-    V_b=13.8,
-    V_0=1.025,
-    angle_0=0.081415270775183*180/pi,
+    V_b=13800,
+    v_0=1.025,
+    angle_0=0.081415270775183,
     vref0=1.097573933623472,
     P_0=0.850000000000000*SysData.S_b,
     Q_0=-0.108597088920594*SysData.S_b,
@@ -165,9 +164,9 @@ model Example_3
     displayPF=true)
     annotation (Placement(transformation(extent={{160,80},{140,100}})));
   Generation_Groups.Gen3 gen3(
-    V_0=1.040000000000000,
+    v_0=1.040000000000000,
     angle_0=0,
-    V_b=16.5,
+    V_b=16500,
     vref0=1.095242742681042,
     Q_0=0.270459279594234*SysData.S_b,
     vf0=1.082148046273888,
@@ -179,7 +178,7 @@ model Example_3
         extent={{-10,-10},{10,10}},
         rotation=90,
         origin={0,-100})));
-  inner OpenIPSL.Electrical.SystemBase SysData(S_b=100, fn=60)
+  inner OpenIPSL.Electrical.SystemBase SysData(fn=60)
     annotation (Placement(transformation(extent={{100,-120},{180,-80}})));
   OpenIPSL.Electrical.Events.PwFault pwFault2(
     X=0.01,
@@ -265,8 +264,21 @@ equation
   annotation (
     Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-180,-120},{
             180,120}})),
-    Icon(coordinateSystem(extent={{-180,-120},{180,120}})),
+    Icon(coordinateSystem(extent={{-100,-100},{100,100}})),
     Documentation(info="<html>
+
+<p>This example system represents a 9-bus 3-generator test system with a three-phase-to-ground fault at bus 9 and it must be simulated during 20 seconds.</p>
+<p>Variables of interest are:</p>
+<ul>
+<li><code>B1.v</code></li>
+<li><code>B2.v</code></li>
+<li><code>B3.v</code></li>
+<li><code>Gen1.gen.delta</code></li>
+<li><code>Gen2.gen.delta</code></li>
+<li><code>Gen3.gen.delta</code></li>
+</ul>
+<p>Note that the voltage curves present different acting modes. Also note that disturbances in the AVR reference voltage can be added to each generation unit.</p>
+<p> </p>
 <table cellspacing=\"2\" cellpadding=\"0\" border=\"0\"<tr>
 <td><p>Reference</p></td>
 <td><p>PSAT Manual 2.1.8</p></td>
@@ -281,7 +293,7 @@ equation
 </tr>
 <tr>
 <td><p>Contact</p></td>
-<td><p><a href=\"mailto:luigiv@kth.se\">luigiv@kth.se</a></p></td>
+<td><p><a href=\"mailto:luigi.vanfretti@gmail.com\">luigi.vanfretti@gmail.com</a></p></td>
 </tr>
 </table>
 </html>"),

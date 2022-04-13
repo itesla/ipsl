@@ -1,5 +1,5 @@
 within OpenIPSL.Examples.Tutorial.Example_1;
-model Example_1
+model Example_1 "Fully assembled single-machine-infinite-bus (SMIB) example system."
   extends Modelica.Icons.Example;
   OpenIPSL.Electrical.Buses.Bus B1(angle_0=0.494677176989154, displayPF=
         false)
@@ -69,8 +69,8 @@ equation
           1.33227e-15},{90,1.33227e-15}}, color={0,0,255}));
   connect(line_2.n, B3.p) annotation (Line(points={{39,-20},{60,-20},{60,0},{70,
           0}}, color={0,0,255}));
-  connect(fault.p, B2.p) annotation (Line(points={{18.3333,-50},{10,-50},{10,0},{-10,0}},
-                    color={0,0,255}));
+  connect(fault.p, B2.p) annotation (Line(points={{18.3333,-50},{10,-50},{10,0},
+          {-10,0}}, color={0,0,255}));
   connect(line_2.p, B2.p) annotation (Line(points={{21,-20},{10,-20},{10,0},{-10,
           0}}, color={0,0,255}));
   connect(line_1.p, B2.p) annotation (Line(points={{21,20},{10,20},{10,0},{-10,
@@ -93,11 +93,26 @@ equation
           textString="Example 1: Single-machine infinite bus model*",
           fontSize=15,
           textStyle={TextStyle.Bold})}),
-    Icon(coordinateSystem(extent={{-120,-100},{120,100}})),
+    Icon(coordinateSystem(extent={{-100,-100},{100,100}})),
     experiment(
       StartTime=0,
       StopTime=10,
       Tolerance=1e-6,
       Interval=1e-4),
-    Documentation);
+    Documentation(info="<html>
+<p>This example system represents the resulting model after one has followed the steps to assemble the generation unit and the network. The system must be simulated during 10 seconds.</p>
+<p>Variables of interest are:</p>
+<ul>
+<li><code>B1.v</code></li>
+<li><code>B2.v</code></li>
+<li><code>G1.machine.delta</code></li>
+</ul>
+<p>Note that these curves have oscillations that grow with time, indicating a clear case of instability. This issue is addressed on Example 2.</p>
+<p>Also note that validation agains PSAT can be performed by loading the file <code>Tutorial/Additional_Material/PSAT_dyn.csv</code>. The correspondent curves are:</p>
+<ul>
+<li><code>PSAT_dyn.v</code> corresponds to <code>G1.machine.v</code></li>
+<li><code>PSAT_dyn.vf</code> corresponds to <code>G1.avr.vf</code></li>
+<li><code>PSAT_dyn.w</code> corresponds to <code>G1.machine.w</code></li>
+</ul>
+</html>"));
 end Example_1;

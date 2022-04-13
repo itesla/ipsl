@@ -1,5 +1,5 @@
 within OpenIPSL.Examples.Tutorial.Example_1.Generator;
-partial model Step_2
+partial model Step_2 "AVR and disabled PSS."
   extends OpenIPSL.Interfaces.Generator;
   OpenIPSL.Electrical.Controls.PSAT.AVR.AVRtypeIII avr(
     vfmax=7,

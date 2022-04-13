@@ -1,5 +1,5 @@
 within OpenIPSL.Examples.Tutorial.Example_1.Generator;
-model Step_3
+model Step_3 "Connecting models and assembling generation unit."
   extends OpenIPSL.Interfaces.Generator;
   OpenIPSL.Electrical.Machines.PSAT.Order6 machine(
     Vn=400000,
@@ -40,14 +40,14 @@ equation
           {-52.3333,-36}}, color={0,0,127}));
   connect(avr.v, machine.v) annotation (Line(points={{-52.3333,-16},{-70,-16},{
           -70,6},{86,6},{86,-31},{82.5,-31},{79,-31}}, color={0,0,127}));
-  connect(avr.vf, machine.vf) annotation (Line(points={{-12.3333,-26},{16,-26},
-          {16,-25}}, color={0,0,127}));
-  connect(machine.pm, machine.pm0) annotation (Line(points={{16,-55},{6,-55},{-4,
+  connect(avr.vf, machine.vf) annotation (Line(points={{-12.3333,-26},{10,-26},
+          {10,-25}}, color={0,0,127}));
+  connect(machine.pm, machine.pm0) annotation (Line(points={{10,-55},{10,-55},{-4,
           -55},{-4,-80},{22,-80},{22,-76.5},{22,-73}}, color={0,0,127}));
   connect(avr.vf0, machine.vf0) annotation (Line(points={{-34,-7.66667},{-34,4},
           {22,4},{22,-7}}, color={0,0,127}));
-  connect(machine.p, pwPin) annotation (Line(points={{79,-40},{79,-40.9256},{
-          110,-40.9256},{110,0}}, color={0,0,255}));
+  connect(machine.p, pwPin) annotation (Line(points={{76,-40},{76,-40.9256},{110,
+          -40.9256},{110,0}},     color={0,0,255}));
   annotation (Diagram(coordinateSystem(
         extent={{-100,-100},{100,100}},
         preserveAspectRatio=false,
