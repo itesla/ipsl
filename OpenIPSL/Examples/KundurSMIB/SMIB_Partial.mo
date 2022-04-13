@@ -1,6 +1,5 @@
 within OpenIPSL.Examples.KundurSMIB;
 partial model SMIB_Partial "Partial model containing the network elements"
-  import Modelica.Constants.pi;
   OpenIPSL.Electrical.Buses.Bus B1
     annotation (Placement(transformation(extent={{-92,-12},{-68,12}})));
   OpenIPSL.Electrical.Buses.Bus B2
@@ -8,17 +7,17 @@ partial model SMIB_Partial "Partial model containing the network elements"
   OpenIPSL.Electrical.Buses.Bus B3
     annotation (Placement(transformation(extent={{48,-12},{72,12}})));
   OpenIPSL.Electrical.Branches.PSAT.TwoWindingTransformer transformer(
-    Sn=2220,
-    x=0.15,
-    r=0,
-    V_b=400,
-    Vn=400) annotation (Placement(transformation(extent={{-60,-10},{-40,10}})));
+    Sn=2220000000,
+    xT=0.15,
+    rT=0,
+    V_b=400000,
+    Vn=400000) annotation (Placement(transformation(extent={{-60,-10},{-40,10}})));
   OpenIPSL.Electrical.Branches.PwLine line_1(
     R=0,
     G=0,
     B=0,
     X=0.5) annotation (Placement(transformation(extent={{10,14},{28,26}})));
-  OpenIPSL.Electrical.Buses.InfiniteBus infinite_bus(angle_0=0, V_0=
+  OpenIPSL.Electrical.Buses.InfiniteBus infinite_bus(angle_0=0, v_0=
         0.900810000000000) annotation (Placement(transformation(
         extent={{-10,10},{10,-10}},
         rotation=180,
@@ -37,7 +36,8 @@ partial model SMIB_Partial "Partial model containing the network elements"
     t2=100,
     opening=1)
     annotation (Placement(transformation(extent={{10,-26},{28,-14}})));
-  inner OpenIPSL.Electrical.SystemBase SysData(S_b=2220, fn=60)
+  inner OpenIPSL.Electrical.SystemBase SysData(S_b=2220000000,
+                                                         fn=60)
     annotation (Placement(transformation(extent={{-140,80},{-86,100}})));
 protected
   parameter Real S_b=SysData.S_b;

@@ -2,12 +2,11 @@ within OpenIPSL.Examples.KundurSMIB;
 model SMIB_AVR "Single-Machine-Infinite-Bus system with generation unit composed of Machine and AVR."
   extends Modelica.Icons.Example;
   extends SMIB_Partial;
-  import Modelica.Constants.pi;
   Generation_Groups.Generator_AVR G1(
-    V_0=1,
+    v_0=1,
     P_0=0.899999999997135*S_b,
     Q_0=0.436002238696658*S_b,
-    angle_0=0.494677176989155*180/pi)
+    angle_0=0.494677176989155)
     annotation (Placement(transformation(extent={{-120,-10},{-100,10}})));
 protected
   parameter Real S_b=SysData.S_b;
@@ -38,7 +37,7 @@ equation
 <li><code>B1.v</code></li>
 <li><code>G1.machine.delta</code></li>
 </ul>
-<p>Compare these variables with the ones obtained when simulating <code>SMIB</code> and <code>SMIB_AVR_PSS</code> for 10 seconds.</p>
+<p>Note that the system is unstable. Compare these variables with the ones obtained when simulating <code>SMIB</code> and <code>SMIB_AVR_PSS</code> for 10 seconds.</p>
 <p> </p>
 <table cellspacing=\"1\" cellpadding=\"1\" border=\"1\">
 <tr>

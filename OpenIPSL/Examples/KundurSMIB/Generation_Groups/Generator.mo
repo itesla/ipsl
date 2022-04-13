@@ -2,7 +2,7 @@ within OpenIPSL.Examples.KundurSMIB.Generation_Groups;
 model Generator "Generation unit used in SMIB system"
   extends OpenIPSL.Interfaces.Generator;
   OpenIPSL.Electrical.Machines.PSAT.Order6 machine(
-    Vn=400,
+    Vn=400000,
     V_b=V_b,
     ra=0.003,
     xd=1.81,
@@ -19,9 +19,9 @@ model Generator "Generation unit used in SMIB system"
     D=0,
     P_0=P_0,
     Q_0=Q_0,
-    V_0=V_0,
+    v_0=v_0,
     angle_0=angle_0,
-    Sn=2220,
+    Sn=2220000000,
     Taa=0) annotation (Placement(transformation(extent={{20,-30},{80,30}})));
 equation
   connect(machine.pm0, machine.pm) annotation (Line(points={{26,-33},{26,-40},{0,-40},{0,-15},{14,-15}},
