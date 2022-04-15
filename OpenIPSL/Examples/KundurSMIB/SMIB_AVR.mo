@@ -7,14 +7,14 @@ model SMIB_AVR "Single-Machine-Infinite-Bus system with generation unit composed
     P_0=0.899999999997135*S_b,
     Q_0=0.436002238696658*S_b,
     angle_0=0.494677176989155)
-    annotation (Placement(transformation(extent={{-120,-10},{-100,10}})));
+    annotation (Placement(transformation(extent={{-82,-10},{-62,10}})));
 protected
   parameter Real S_b=SysData.S_b;
 equation
   connect(G1.pwPin, B1.p)
-    annotation (Line(points={{-99,0},{-90,0},{-80,0}}, color={0,0,255}));
+    annotation (Line(points={{-61,0},{-52,0}},         color={0,0,255}));
   annotation (
-    Diagram(coordinateSystem(extent={{-140,-100},{120,100}},
+    Diagram(coordinateSystem(extent={{-100,-100},{100,100}},
           preserveAspectRatio=false), graphics={Text(
           extent={{-110,70},{110,50}},
           lineColor={0,0,0},
