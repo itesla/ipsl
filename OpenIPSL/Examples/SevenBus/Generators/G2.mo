@@ -1,11 +1,11 @@
 within OpenIPSL.Examples.SevenBus.Generators;
-model G2
+model G2 "Generation unit connected to bus FVALDI"
   extends OpenIPSL.Electrical.Essentials.pfComponent;
-  parameter Real M_b "Machine base power (MVA)"
+  parameter Types.ApparentPower M_b "Machine base power"
     annotation (Dialog(group="Power flow data"));
   OpenIPSL.Electrical.Machines.PSSE.GENROU gENROU(
     V_b=V_b,
-    V_0=V_0,
+    v_0=v_0,
     angle_0=angle_0,
     P_0=P_0,
     Q_0=Q_0,
@@ -26,7 +26,7 @@ model G2
     Xppq=0.367,
     Xppd=0.367,
     R_a=0.003275)
-    annotation (Placement(transformation(extent={{-30,-30},{30,30}})));
+    annotation (Placement(transformation(extent={{0,-20},{40,20}})));
   OpenIPSL.Interfaces.PwPin pwPin
     annotation (Placement(transformation(extent={{100,-10},{120,10}})));
   OpenIPSL.Electrical.Controls.PSSE.ES.ST5B sT5B(
@@ -48,7 +48,7 @@ model G2
     T_OB1=2,
     T_OC2=0.08,
     T_OB2=0.08)
-    annotation (Placement(transformation(extent={{30,-76},{-30,-44}})));
+    annotation (Placement(transformation(extent={{20,-60},{0,-40}})));
   OpenIPSL.Electrical.Controls.PSSE.PSS.PSS2B pSS2B(
     T_w1=2,
     T_w2=2,
@@ -74,13 +74,11 @@ model G2
     V_STMAX=0.1,
     V_STMIN=-0.1,
     M=0,
-    N=0) annotation (Placement(transformation(extent={{56,-100},{20,-92}})));
+    N=0) annotation (Placement(transformation(extent={{60,-46},{40,-26}})));
   Modelica.Blocks.Sources.Constant VUEL(k=-100)
-    annotation (Placement(transformation(extent={{-72,-92},{-60,-80}})));
+    annotation (Placement(transformation(extent={{-60,-92},{-40,-72}})));
   Modelica.Blocks.Sources.Constant VOEL(k=100)
-    annotation (Placement(transformation(extent={{-72,-60},{-60,-48}})));
-  Modelica.Blocks.Sources.Constant PSS_off(k=0)
-    annotation (Placement(transformation(extent={{-72,-120},{-60,-108}})));
+    annotation (Placement(transformation(extent={{-60,-60},{-40,-40}})));
   OpenIPSL.Electrical.Controls.PSSE.TG.IEESGO iEESGO(
     T_1=0.3,
     T_2=1,
@@ -92,34 +90,36 @@ model G2
     K_2=0.3,
     K_3=0.5,
     P_MAX=1,
-    P_MIN=0) annotation (Placement(transformation(extent={{28,54},{-28,76}})));
+    P_MIN=0) annotation (Placement(transformation(extent={{60,50},{40,30}})));
 equation
   connect(gENROU.p, pwPin)
-    annotation (Line(points={{33,0},{72,0},{110,0}}, color={0,0,255}));
-  connect(gENROU.ETERM, sT5B.ECOMP) annotation (Line(points={{32.4,15},{44,15},
-          {44,-48},{29,-48}}, color={0,0,127}));
-  connect(sT5B.XADIFD, gENROU.XADIFD) annotation (Line(points={{29,-64},{38,-64},
-          {38,-27},{32.4,-27}}, color={0,0,127}));
-  connect(sT5B.EFD0, gENROU.EFD0) annotation (Line(points={{29,-72},{40,-72},{
-          40,-21},{32.4,-21}}, color={0,0,127}));
-  connect(gENROU.SPEED, pSS2B.V_S1) annotation (Line(points={{32.4,27},{66,27},
-          {66,-94},{56,-94}}, color={0,0,127}));
-  connect(gENROU.PELEC, pSS2B.V_S2) annotation (Line(points={{32.4,-15},{72,-15},
-          {72,-98},{56,-98}}, color={0,0,127}));
-  connect(VUEL.y, sT5B.VUEL) annotation (Line(points={{-59.4,-86},{-24,-86},{13,
-          -86},{13,-74.6667}}, color={0,0,127}));
-  connect(VOEL.y, sT5B.VOEL) annotation (Line(points={{-59.4,-54},{-56,-54},{-56,
-          -80},{5,-80},{5,-74.6667}}, color={0,0,127}));
-  connect(pSS2B.VOTHSG, sT5B.VOTHSG) annotation (Line(points={{19.4,-96},{-3,-96},
-          {-3,-74.6667}}, color={0,0,127}));
-  connect(gENROU.EFD, sT5B.EFD) annotation (Line(points={{-29.4,-15},{-40,-15},
-          {-40,-60},{-31,-60}}, color={0,0,127}));
-  connect(iEESGO.PMECH, gENROU.PMECH) annotation (Line(points={{-29.75,66.5714},
-          {-40,66.5714},{-40,15},{-29.4,15}}, color={0,0,127}));
-  connect(iEESGO.SPEED, gENROU.SPEED) annotation (Line(points={{26.6,71.2857},{
-          32.4,71.2857},{32.4,27}}, color={0,0,127}));
-  connect(iEESGO.PMECH0, gENROU.PMECH0) annotation (Line(points={{26.6,60.2857},
-          {52,60.2857},{52,-9},{32.4,-9}}, color={0,0,127}));
+    annotation (Line(points={{40,0},{110,0}},        color={0,0,255}));
+  connect(gENROU.ETERM, sT5B.ECOMP) annotation (Line(points={{42,-6},{76,-6},{76,
+          -50},{21,-50}},     color={0,0,127}));
+  connect(sT5B.XADIFD, gENROU.XADIFD) annotation (Line(points={{2,-61},{2,-72},{
+          70,-72},{70,-18},{42,-18}},
+                                color={0,0,127}));
+  connect(sT5B.EFD0, gENROU.EFD0) annotation (Line(points={{21,-54},{82,-54},{82,
+          -10},{42,-10}},      color={0,0,127}));
+  connect(gENROU.SPEED, pSS2B.V_S1) annotation (Line(points={{42,14},{88,14},{88,
+          -32},{61,-32}},     color={0,0,127}));
+  connect(gENROU.PELEC, pSS2B.V_S2) annotation (Line(points={{42,6},{92,6},{92,-40},
+          {61,-40}},          color={0,0,127}));
+  connect(VUEL.y, sT5B.VUEL) annotation (Line(points={{-39,-82},{14,-82},{14,-61}},
+                               color={0,0,127}));
+  connect(VOEL.y, sT5B.VOEL) annotation (Line(points={{-39,-50},{-30,-50},{-30,-78},
+          {10,-78},{10,-61}},         color={0,0,127}));
+  connect(pSS2B.VOTHSG, sT5B.VOTHSG) annotation (Line(points={{39,-36},{28,-36},
+          {28,-46},{21,-46}},
+                          color={0,0,127}));
+  connect(gENROU.EFD, sT5B.EFD) annotation (Line(points={{-4,-12},{-20,-12},{-20,
+          -50},{-1,-50}},       color={0,0,127}));
+  connect(iEESGO.PMECH, gENROU.PMECH) annotation (Line(points={{39,40},{-20,40},
+          {-20,12},{-4,12}},                  color={0,0,127}));
+  connect(iEESGO.SPEED, gENROU.SPEED) annotation (Line(points={{58,34},{88,34},{
+          88,14},{42,14}},          color={0,0,127}));
+  connect(iEESGO.PMECH0, gENROU.PMECH0) annotation (Line(points={{58,46},{92,46},
+          {92,10},{42,10}},                color={0,0,127}));
   annotation (
     Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{
             100,100}})),
@@ -136,5 +136,13 @@ equation
           fillColor={255,255,255},
           fillPattern=FillPattern.Solid,
           textString="%name")}),
-    Documentation);
+    Documentation(info="<html>
+<p>Generation unit number 2, connected to bus FVALDI, and composed of the following component models:</p>
+<ul>
+<li><strong>Machine</strong>: GENROU, from PSSE.</li>
+<li><strong>Exciter</strong>: ST5B, from PSSE.</li>
+<li><strong>Turbine-Governor</strong>: IESGO, from PSSE.</li>
+<li><strong>Stabilizer</strong>: PSS2B, from PSSE.</li>
+</ul>
+</html>"));
 end G2;
