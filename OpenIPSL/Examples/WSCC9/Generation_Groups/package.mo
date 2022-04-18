@@ -1,4 +1,4 @@
-within OpenIPSL.Examples.IEEE9;
+within OpenIPSL.Examples.WSCC9;
 package Generation_Groups "Set of generation unit models used in WSCC 9-bus system"
 annotation (Documentation(info="<html>
 <p>This package contains three generation unit models, composed of machine and exciter models, that are used in the WSCC 9-bus system. These models are:</p>

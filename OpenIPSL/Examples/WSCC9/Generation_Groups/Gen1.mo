@@ -1,28 +1,28 @@
-within OpenIPSL.Examples.IEEE9.Generation_Groups;
-model Gen2 "13.8kV/100MVA generation unit connected to bus 3"
+within OpenIPSL.Examples.WSCC9.Generation_Groups;
+model Gen1 "18kV/100MVA generation unit connected to bus 2"
   extends OpenIPSL.Electrical.Essentials.pfComponent;
-  parameter Real vf0=1.359665419632471;
-  parameter Real vref0=1.095179545801796;
-  parameter Real height_2 annotation (Dialog(group="AVR Disturbance"));
-  parameter Real tstart_2 annotation (Dialog(group="AVR Disturbance"));
-  parameter Boolean refdisturb_2 annotation (Dialog(group="AVR Disturbance"));
+  parameter Real vf0=1.755517086537914;
+  parameter Real vref0=1.118023800520641;
+  parameter Real height_1 annotation (Dialog(group="AVR Disturbance"));
+  parameter Real tstart_1 annotation (Dialog(group="AVR Disturbance"));
+  parameter Boolean refdisturb_1 annotation (Dialog(group="AVR Disturbance"));
   OpenIPSL.Electrical.Machines.PSAT.Order4 gen(
     Sn=100000000,
-    Vn=13800,
+    Vn=18000,
     V_b=V_b,
     v_0=v_0,
     angle_0=angle_0,
     P_0=P_0,
     Q_0=Q_0,
     ra=0,
-    xd=1.3125,
-    x1d=0.1813,
-    x1q=0.25,
-    T1d0=5.89,
-    T1q0=0.6,
-    M=6.02,
-    D=0,
-    xq=1.2578) annotation (Placement(transformation(
+    xd=0.8958,
+    xq=0.8645,
+    x1d=0.1198,
+    x1q=0.1969,
+    T1d0=6,
+    T1q0=0.5350,
+    M=12.8,
+    D=0) annotation (Placement(transformation(
         extent={{-10,-10},{10,10}},
         rotation=0,
         origin={28,14})));
@@ -43,15 +43,15 @@ model Gen2 "13.8kV/100MVA generation unit connected to bus 3"
         rotation=0,
         origin={-6,10})));
   Modelica.Blocks.Sources.Step step(
-    startTime=tstart_2,
-    height=height_2,
-    offset=vref0) annotation (Placement(transformation(
+    startTime=tstart_1,
+    offset=vref0,
+    height=height_1) annotation (Placement(transformation(
         extent={{-4,-4},{4,4}},
         rotation=90,
         origin={-56,-2})));
   Modelica.Blocks.Logical.Switch switch1
     annotation (Placement(transformation(extent={{-50,12},{-40,22}})));
-  Modelica.Blocks.Sources.BooleanConstant booleanConstant(k=refdisturb_2)
+  Modelica.Blocks.Sources.BooleanConstant booleanConstant(k=refdisturb_1)
     annotation (Placement(transformation(extent={{-80,2},{-70,12}})));
   OpenIPSL.Interfaces.PwPin pwPin
     annotation (Placement(transformation(extent={{100,-10},{120,10}})));
@@ -59,7 +59,7 @@ model Gen2 "13.8kV/100MVA generation unit connected to bus 3"
   //Real Q_MVA;
 equation
   //P_MW = gen.P*S_b;
-  //Q_MVA = gen.Q*S_b;
+  // Q_MVA = gen.Q*S_b;
   connect(gen.v, AVR.v) annotation (Line(
       points={{39,17},{48,17},{48,-14},{-22,-14},{-22,4},{-18,4}},
       color={0,0,127},
@@ -74,12 +74,12 @@ equation
         color={0,0,255}));
   connect(AVR.vf, gen.vf)
     annotation (Line(points={{6,10},{8,10},{8,19},{16,19}}, color={0,0,127}));
-  connect(gen.pm0, gen.pm) annotation (Line(points={{20,3},{20,0},{12,0},{12,9},
+  connect(gen.pm0, gen.pm) annotation (Line(points={{20,3},{20,0},{14,0},{14,9},
           {16,9}}, color={0,0,127}));
-  connect(AVR.vref0, switch1.u3) annotation (Line(points={{-6,22},{-34,22},{-34,
-          42},{-62,42},{-62,13},{-51,13}}, color={0,0,127}));
-  connect(AVR.vf0, gen.vf0) annotation (Line(points={{-6,-2},{0,-2},{0,-6},{10,
-          -6},{10,25},{20,25}}, color={0,0,127}));
+  connect(gen.vf0, AVR.vf0) annotation (Line(points={{20,25},{10,25},{10,36},{-26,
+          36},{-26,-8},{-6,-8},{-6,-2}}, color={0,0,127}));
+  connect(AVR.vref0, switch1.u3) annotation (Line(points={{-6,22},{-30,22},{-30,
+          50},{-68,50},{-68,42},{-68,13},{-51,13}}, color={0,0,127}));
   annotation (
     Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{
             100,100}})),
@@ -104,11 +104,11 @@ equation
           fillPattern=FillPattern.Solid,
           textString=DynamicSelect("0.0", String(Q_MVA, significantDigits=3)))}),
     Documentation(info="<html>
-<p>13.8kV/100MVA Generation unit, identified as number 2, connected to bus 3, and composed of the following component models:</p>
+<p>18kV/100MVA Generation unit, identified as number 1, connected to bus 2, and composed of the following component models:</p>
 <ul>
 <li><strong>Machine</strong>: 4th order, from PSAT.</li>
 <li><strong>Exciter</strong>: type II, from PSAT.</li>
 </ul>
 <p>Note that the model allows for a disturbance to be introduced in the voltage reference value for the excitation system.</p>
 </html>"));
-end Gen2;
+end Gen1;

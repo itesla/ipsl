@@ -1,5 +1,5 @@
-within OpenIPSL.Examples.IEEE9;
-model IEEE_9_Buses_Statcom "WSCC 9-bus 3-machine test system with STATCOM"
+within OpenIPSL.Examples.WSCC9;
+model WSCC_9_Buses_Statcom "WSCC 9-bus 3-machine test system with STATCOM"
   extends Modelica.Icons.Example;
   OpenIPSL.Electrical.Branches.PSAT.TwoWindingTransformer twoWindingTransformer(
     V_b=16500,
@@ -287,4 +287,4 @@ equation
       __Dymola_fixedstepsize=0.001,
       __Dymola_Algorithm="Rkfix2"),
     __Dymola_experimentSetupOutput);
-end IEEE_9_Buses_Statcom;
+end WSCC_9_Buses_Statcom;

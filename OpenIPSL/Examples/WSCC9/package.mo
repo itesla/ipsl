@@ -1,5 +1,5 @@
 within OpenIPSL.Examples;
-package IEEE9 "WSCC 9-bus 3-machine test system package"
+package WSCC9 "WSCC 9-bus 3-machine test system package"
  extends Modelica.Icons.ExamplesPackage;
 
 annotation (Documentation(info="<html>
@@ -25,4 +25,4 @@ annotation (Documentation(info="<html>
 </tr>
 </table>
 </html>"));
-end IEEE9;
+end WSCC9;
