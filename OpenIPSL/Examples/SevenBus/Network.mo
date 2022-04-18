@@ -392,7 +392,7 @@ equation
 <li><code>GEN2.iEESGO.SPEED</code></li>
 <li><code>GEN3.iEESGO.SPEED</code></li>
 </ul>
-<p>Where interesting oscillatory behavior is observed, since the generators appear to be non-coherent, swinging against each others.</p> 
+<p>where interesting oscillatory behavior is observed, since the generators appear to be non-coherent, swinging against each others.</p> 
 <p>In addition to that, it is also interesting to check the following voltage variables:</p>
 <ul>
 <li><code>FPAND.v</code></li>
