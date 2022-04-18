@@ -1,5 +1,5 @@
 within OpenIPSL.Examples.IEEE9.Generation_Groups;
-model Gen2
+model Gen2 "13.8kV/100MVA generation unit connected to bus 3"
   extends OpenIPSL.Electrical.Essentials.pfComponent;
   parameter Real vf0=1.359665419632471;
   parameter Real vref0=1.095179545801796;
@@ -7,10 +7,10 @@ model Gen2
   parameter Real tstart_2 annotation (Dialog(group="AVR Disturbance"));
   parameter Boolean refdisturb_2 annotation (Dialog(group="AVR Disturbance"));
   OpenIPSL.Electrical.Machines.PSAT.Order4 gen(
-    Sn=100,
-    Vn=13.8,
+    Sn=100000000,
+    Vn=13800,
     V_b=V_b,
-    V_0=V_0,
+    v_0=v_0,
     angle_0=angle_0,
     P_0=P_0,
     Q_0=Q_0,
@@ -29,7 +29,7 @@ model Gen2
   OpenIPSL.Electrical.Controls.PSAT.AVR.AVRTypeII AVR(
     vrmin=-5,
     vrmax=5,
-    v0=V_0,
+    v0=v_0,
     Ka=20,
     Ta=0.2,
     Kf=0.063,
@@ -84,8 +84,8 @@ equation
     Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{
             100,100}})),
     Icon(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,
-            100}}), graphics={Ellipse(extent={{-100,-100},{100,100}}, lineColor
-          ={28,108,200}),Line(points={{-60,-20},{-20,20},{20,-20},{60,20}},
+            100}}), graphics={Ellipse(extent={{-100,-100},{100,100}}, lineColor=
+           {28,108,200}),Line(points={{-60,-20},{-20,20},{20,-20},{60,20}},
           color={28,108,200}),Text(
           extent={{-34,-32},{38,-52}},
           lineColor={28,108,200},
@@ -103,6 +103,12 @@ equation
           fillColor={0,0,255},
           fillPattern=FillPattern.Solid,
           textString=DynamicSelect("0.0", String(Q_MVA, significantDigits=3)))}),
-
-    Documentation);
+    Documentation(info="<html>
+<p>13.8kV/100MVA Generation unit, identified as number 2, connected to bus 3, and composed of the following component models:</p>
+<ul>
+<li><strong>Machine</strong>: 4th order, from PSAT.</li>
+<li><strong>Exciter</strong>: type II, from PSAT.</li>
+</ul>
+<p>Note that the model allows for a disturbance to be introduced in the voltage reference value for the excitation system.</p>
+</html>"));
 end Gen2;

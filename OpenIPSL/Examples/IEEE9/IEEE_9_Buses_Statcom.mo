@@ -1,9 +1,9 @@
 within OpenIPSL.Examples.IEEE9;
-model IEEE_9_Buses_Statcom
-  import Modelica.Constants.pi;
+model IEEE_9_Buses_Statcom "WSCC 9-bus 3-machine test system with STATCOM"
+  extends Modelica.Icons.Example;
   OpenIPSL.Electrical.Branches.PSAT.TwoWindingTransformer twoWindingTransformer(
-    V_b=16.5,
-    Vn=16.5,
+    V_b=16500,
+    Vn=16500,
     rT=0,
     xT=0.0576) annotation (Placement(transformation(
         extent={{-10,-10},{10,10}},
@@ -25,19 +25,19 @@ model IEEE_9_Buses_Statcom
         extent={{-9,-6},{9,6}},
         rotation=90,
         origin={-72,-21})));
-  OpenIPSL.Electrical.Loads.PSAT.VoltDependant lOADPQ(
-    V_b=230,
-    V_0=0.997968971576412,
-    angle_0=-0.069547629203294*180/pi,
+  OpenIPSL.Electrical.Loads.PSAT.VoltageDependent lOADPQ(
+    V_b=230000,
+    v_0=0.997968971576412,
+    angle_0=-0.069547629203294,
     P_0=1.25*SysData.S_b,
     Q_0=0.5*SysData.S_b) annotation (Placement(transformation(
         extent={{-7,-7},{7,7}},
         rotation=0,
         origin={-99,-9})));
-  OpenIPSL.Electrical.Loads.PSAT.VoltDependant PQ1(
-    V_b=230,
-    V_0=1.014662489636656,
-    angle_0=-0.064300235023830*180/pi,
+  OpenIPSL.Electrical.Loads.PSAT.VoltageDependent PQ1(
+    V_b=230000,
+    v_0=1.014662489636656,
+    angle_0=-0.064300235023830,
     P_0=0.9*SysData.S_b,
     Q_0=0.3*SysData.S_b) annotation (Placement(transformation(
         extent={{-7,-7},{7,7}},
@@ -68,41 +68,41 @@ model IEEE_9_Buses_Statcom
         rotation=0,
         origin={35,90})));
   OpenIPSL.Electrical.Branches.PSAT.TwoWindingTransformer twoWindingTransformer1(
-    V_b=13.8,
-    Vn=13.8,
+    V_b=13800,
+    Vn=13800,
     rT=0,
     xT=0.0586) annotation (Placement(transformation(
         extent={{-10,-10},{10,10}},
         rotation=180,
         origin={102,90})));
   OpenIPSL.Electrical.Branches.PSAT.TwoWindingTransformer twoWindingTransformer2(
-    Sn=100,
-    V_b=18,
-    Vn=18,
+    Sn=100000000,
+    V_b=18000,
+    Vn=18000,
     rT=0,
     xT=0.0625) annotation (Placement(transformation(
         extent={{-10,-10},{10,10}},
         rotation=0,
         origin={-102,90})));
-  OpenIPSL.Electrical.Loads.PSAT.VoltDependant lOADPQ1(
-    V_0=1.025,
-    angle_0=0.011660880329004*180/pi,
-    V_b=230,
+  OpenIPSL.Electrical.Loads.PSAT.VoltageDependent lOADPQ1(
+    v_0=1.025,
+    angle_0=0.011660880329004,
+    V_b=230000,
     P_0=1*SysData.S_b,
     Q_0=0.35*SysData.S_b) annotation (Placement(transformation(
         extent={{-7,-7},{7,7}},
         rotation=0,
         origin={-9,65})));
   OpenIPSL.Electrical.FACTS.PSAT.STATCOM sTATCOM3_1(
-    Qg=0.128730182132440,
+    Q_0=128730.182132440,
     Tr=0.1,
-    Sn=100,
+    Sn=100000000,
     fn=60,
-    V_0=1.025,
-    Vbus=230,
-    Vn=230,
-    Sb=SysData.S_b,
-    angle_0=0.011660880329004*180/pi,
+    v_0=1.025,
+    V_b=230000,
+    Vn=230000,
+    S_b=SysData.S_b,
+    angle_0=0.011660880329004,
     i_Min=-0.8,
     Kr=100,
     i_Max=1.2) annotation (Placement(transformation(
@@ -113,7 +113,7 @@ model IEEE_9_Buses_Statcom
     annotation (Placement(transformation(extent={{-130,80},{-110,100}})));
   OpenIPSL.Electrical.Buses.Bus B7
     annotation (Placement(transformation(extent={{-90,80},{-70,100}})));
-  OpenIPSL.Electrical.Buses.Bus B8(V_0=1.025) annotation (Placement(
+  OpenIPSL.Electrical.Buses.Bus B8(v_0=1.025) annotation (Placement(
         transformation(
         extent={{-10,-10},{10,10}},
         rotation=0,
@@ -138,7 +138,7 @@ model IEEE_9_Buses_Statcom
         extent={{-12,-12},{12,12}},
         rotation=-90,
         origin={0,-86})));
-  OpenIPSL.Electrical.Branches.PwLine ine_7_8(
+  OpenIPSL.Electrical.Branches.PwLine line_7_8(
     R=0.0085,
     X=0.072,
     G=0,
@@ -148,38 +148,38 @@ model IEEE_9_Buses_Statcom
     opening=1)
     annotation (Placement(transformation(extent={{-48,84},{-30,96}})));
   Generation_Groups.Gen1 gen1(
-    V_b=18,
-    V_0=1.025,
+    V_b=18000,
+    v_0=1.025,
     height_1=0.05,
     tstart_1=2,
-    angle_0=0.160490018910725*180/pi,
+    angle_0=0.160490018910725,
     P_0=1.63*SysData.S_b,
     Q_0=0.001552891584958*SysData.S_b,
     refdisturb_1=false)
     annotation (Placement(transformation(extent={{-160,80},{-140,100}})));
   Generation_Groups.Gen2 gen2(
-    V_b=13.8,
-    V_0=1.025,
+    V_b=13800,
+    v_0=1.025,
     height_2=0.05,
     tstart_2=2,
     refdisturb_2=false,
     P_0=0.85*SysData.S_b,
     Q_0=-0.163501111031896*SysData.S_b,
-    angle_0=0.080629575357894*180/pi)
+    angle_0=0.080629575357894)
     annotation (Placement(transformation(extent={{160,80},{140,100}})));
   Generation_Groups.Gen3 gen3(
-    V_0=1.040000000000000,
+    v_0=1.040000000000000,
     angle_0=0,
     height_3=0.05,
     tstart_3=2,
     refdisturb_3=false,
-    V_b=16.5,
+    V_b=16500,
     Q_0=0.248141030193284*SysData.S_b,
     P_0=0.715870954698346*SysData.S_b) annotation (Placement(transformation(
         extent={{-10,-10},{10,10}},
         rotation=90,
         origin={0,-106})));
-  inner OpenIPSL.Electrical.SystemBase SysData(S_b=100, fn=60)
+  inner OpenIPSL.Electrical.SystemBase SysData(S_b=100000000, fn=60)
     annotation (Placement(transformation(extent={{80,-120},{180,-80}})));
   OpenIPSL.Electrical.Events.PwFault pwFault2(
     X=0.01,
@@ -189,6 +189,10 @@ model IEEE_9_Buses_Statcom
         extent={{-7,-7},{7,7}},
         rotation=270,
         origin={59,67})));
+  Modelica.Blocks.Sources.Constant no_pss(k=0) annotation (Placement(transformation(
+        extent={{-10,-10},{10,10}},
+        rotation=90,
+        origin={0,30})));
 equation
   connect(line_5_7.n, B7.p) annotation (Line(
       points={{-72,61.1},{-72,90},{-80,90}},
@@ -226,9 +230,9 @@ equation
       points={{0,-77},{0,-86}},
       color={0,0,255},
       smooth=Smooth.None));
-  connect(B7.p, ine_7_8.p) annotation (Line(points={{-80,90},{-47.1,90},{-47.1,
+  connect(B7.p, line_7_8.p) annotation (Line(points={{-80,90},{-47.1,90},{-47.1,
           90}}, color={0,0,255}));
-  connect(ine_7_8.n, B8.p)
+  connect(line_7_8.n, B8.p)
     annotation (Line(points={{-30.9,90},{-30.9,90},{0,90}}, color={0,0,255}));
   connect(B2.p, gen1.pwPin)
     annotation (Line(points={{-120,90},{-139,90}}, color={0,0,255}));
@@ -260,28 +264,21 @@ equation
     annotation (Line(points={{12,72.6},{12,90},{26.9,90}}, color={0,0,255}));
   connect(B9.p, pwFault2.p)
     annotation (Line(points={{80,90},{59,90},{59,75.1667}}, color={0,0,255}));
+  connect(no_pss.y, sTATCOM3_1.v_POD)
+    annotation (Line(points={{0,41},{0,66},{4.8,66}}, color={0,0,127}));
   annotation (
     Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-180,-120},{
             180,120}})),
-    Icon(coordinateSystem(extent={{-180,-120},{180,120}})),
+    Icon(coordinateSystem(extent={{-100,-100},{100,100}})),
     Documentation(info="<html>
-<table cellspacing=\"2\" cellpadding=\"0\" border=\"0\"<tr>
-<td><p>Reference</p></td>
-<td><p>PSAT Manual 2.1.8</p></td>
-</tr>
-<tr>
-<td><p>Last update</p></td>
-<td><p>15/07/2015</p></td>
-</tr>
-<tr>
-<td><p>Author</p></td>
-<td><p>MAA Murad, SmarTS Lab, KTH Royal Institute of Technology</p></td>
-</tr>
-<tr>
-<td><p>Contact</p></td>
-<td><p><a href=\"mailto:luigiv@kth.se\">luigiv@kth.se</a></p></td>
-</tr>
-</table>
+<p>This example is composed by the base WSCC 9-bus 3-machine system but with a STATCOM connected to bus 8. The system undergoes a three-phase-to-ground fault at 3s, lasting for 100ms. Simulate the system for 20 seconds.</p>
+<p>Variables of interest are </p>
+<ul>
+<li><code>Bus7.v</code></li>
+<li><code>Bus8.v</code></li>
+<li><code>Bus9.v</code></li>
+</ul>
+<p>Compare the results with the ones obtained when simulating <strong>WSCC_9_Buses</strong>.
 </html>"),
     experiment(
       StopTime=20,

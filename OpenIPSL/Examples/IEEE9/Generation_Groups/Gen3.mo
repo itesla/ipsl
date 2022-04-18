@@ -1,5 +1,5 @@
 within OpenIPSL.Examples.IEEE9.Generation_Groups;
-model Gen3
+model Gen3 "16.5kV/100MVA generation unit connected to bus 1"
   extends OpenIPSL.Electrical.Essentials.pfComponent;
   parameter Real vf0=1.079018784709528;
   parameter Real vref0=1.095077501312303;
@@ -7,7 +7,7 @@ model Gen3
   parameter Real tstart_3 annotation (Dialog(group="AVR Disturbance"));
   parameter Boolean refdisturb_3 annotation (Dialog(group="AVR Disturbance"));
   OpenIPSL.Electrical.Machines.PSAT.Order4 gen(
-    Sn=100,
+    Sn=100000000,
     ra=0,
     xd=0.1460,
     xq=0.0969,
@@ -16,12 +16,12 @@ model Gen3
     T1d0=8.96,
     T1q0=0.310,
     V_b=V_b,
-    V_0=V_0,
+    v_0=v_0,
     P_0=P_0,
     Q_0=Q_0,
     M=47.28,
     D=0,
-    Vn=16.5,
+    Vn=16500,
     angle_0=angle_0) annotation (Placement(transformation(
         extent={{-10,-10},{10,10}},
         rotation=0,
@@ -29,7 +29,7 @@ model Gen3
   OpenIPSL.Electrical.Controls.PSAT.AVR.AVRTypeII AVR(
     vrmin=-5,
     vrmax=5,
-    v0=V_0,
+    v0=v_0,
     Ka=20,
     Ta=0.2,
     Kf=0.063,
@@ -84,8 +84,8 @@ equation
     Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{
             100,100}})),
     Icon(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,
-            100}}), graphics={Ellipse(extent={{-100,-100},{100,100}}, lineColor
-          ={28,108,200}),Line(points={{-60,-20},{-20,20},{20,-20},{60,20}},
+            100}}), graphics={Ellipse(extent={{-100,-100},{100,100}}, lineColor=
+           {28,108,200}),Line(points={{-60,-20},{-20,20},{20,-20},{60,20}},
           color={28,108,200}),Text(
           extent={{-34,-32},{38,-52}},
           lineColor={28,108,200},
@@ -103,6 +103,12 @@ equation
           fillColor={0,0,255},
           fillPattern=FillPattern.Solid,
           textString=DynamicSelect("0.0", String(Q_MVA, significantDigits=3)))}),
-
-    Documentation);
+    Documentation(info="<html>
+<p>16.5kV/100MVA Generation unit, identified as number 3, connected to bus 1, and composed of the following component models:</p>
+<ul>
+<li><strong>Machine</strong>: 4th order, from PSAT.</li>
+<li><strong>Exciter</strong>: type II, from PSAT.</li>
+</ul>
+<p>Note that the model allows for a disturbance to be introduced in the voltage reference value for the excitation system.</p>
+</html>"));
 end Gen3;
