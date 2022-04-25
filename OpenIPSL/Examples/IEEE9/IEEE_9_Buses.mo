@@ -1,5 +1,5 @@
-within OpenIPSL.Examples.WSCC9;
-model WSCC_9_Buses "WSCC 9-bus 3-machine base test system"
+within OpenIPSL.Examples.IEEE9;
+model IEEE_9_Buses "IEEE (WSCC) 9-bus 3-machine base test system"
   extends Modelica.Icons.Example;
   OpenIPSL.Electrical.Branches.PSAT.TwoWindingTransformer twoWindingTransformer(
     V_b=16500,
@@ -285,7 +285,7 @@ equation
 <li><code>Bus8.v</code></li>
 <li><code>Bus9.v</code></li>
 </ul>
-<p>Compare the results with the ones obtained when simulating <strong>WSCC_9_Buses_Statcom</strong>.
+<p>Compare the results with the ones obtained when simulating <strong>IEEE_9_Buses_Statcom</strong>.
 </html>"),
     experiment(
       StopTime=20,
@@ -294,4 +294,4 @@ equation
       __Dymola_fixedstepsize=0.001,
       __Dymola_Algorithm="Rkfix2"),
     __Dymola_experimentSetupOutput);
-end WSCC_9_Buses;
+end IEEE_9_Buses;

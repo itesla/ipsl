@@ -1,5 +1,5 @@
-within OpenIPSL.Examples.WSCC9;
-model WSCC_9_Buses_Statcom "WSCC 9-bus 3-machine test system with STATCOM"
+within OpenIPSL.Examples.IEEE9;
+model IEEE_9_Buses_Statcom "IEEE (WSCC) 9-bus 3-machine test system with STATCOM"
   extends Modelica.Icons.Example;
   OpenIPSL.Electrical.Branches.PSAT.TwoWindingTransformer twoWindingTransformer(
     V_b=16500,
@@ -271,14 +271,14 @@ equation
             180,120}})),
     Icon(coordinateSystem(extent={{-100,-100},{100,100}})),
     Documentation(info="<html>
-<p>This example is composed by the base WSCC 9-bus 3-machine system but with a STATCOM connected to bus 8. The system undergoes a three-phase-to-ground fault at 3s, lasting for 100ms. Simulate the system for 20 seconds.</p>
+<p>This example is composed by the base IEEE (WSCC) 9-bus 3-machine system but with a STATCOM connected to bus 8. The system undergoes a three-phase-to-ground fault at 3s, lasting for 100ms. Simulate the system for 20 seconds.</p>
 <p>Variables of interest are </p>
 <ul>
 <li><code>Bus7.v</code></li>
 <li><code>Bus8.v</code></li>
 <li><code>Bus9.v</code></li>
 </ul>
-<p>Compare the results with the ones obtained when simulating <strong>WSCC_9_Buses</strong>.
+<p>Compare the results with the ones obtained when simulating <strong>IEEE_9_Buses</strong>.
 </html>"),
     experiment(
       StopTime=20,
@@ -287,4 +287,4 @@ equation
       __Dymola_fixedstepsize=0.001,
       __Dymola_Algorithm="Rkfix2"),
     __Dymola_experimentSetupOutput);
-end WSCC_9_Buses_Statcom;
+end IEEE_9_Buses_Statcom;
