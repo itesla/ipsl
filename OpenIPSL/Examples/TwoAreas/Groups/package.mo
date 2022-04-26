@@ -1,23 +1,10 @@
 within OpenIPSL.Examples.TwoAreas;
-package Groups
+package Groups "Set of generation groups models for the different test systems"
 annotation (Documentation(info="<html>
-<table cellspacing=\"1\" cellpadding=\"1\" border=\"1\">
-<tr>
-<td><p>Reference</p></td>
-<td><p>Two-Area System, Prabha Kundur, Power System Stability and Control, Example 12.6, page 813</p></td>
-</tr>
-<tr>
-<td><p>Last update</p></td>
-<td>February 2016</td>
-</tr>
-<tr>
-<td><p>Author</p></td>
-<td><p>Maxime Baudette, Tin Rabuzin, Ahsan Murad, SmarTS Lab, KTH Royal Institute of Technology</p></td>
-</tr>
-<tr>
-<td><p>Contact</p></td>
-<td><p><a href=\"mailto:luigiv@kth.se\">luigiv@kth.se</a></p></td>
-</tr>
-</table>
+<p>This package contains two subpackages with generation unit models. These subpackages are:</p>
+<ul>
+<li><strong>PSAT</strong>: package containing generation unit models implemented with PSAT.</li>
+<li><strong>PSSE</strong>: package containing generation unit models implemented with PSSE.</li>
+</ul>
 </html>"));
 end Groups;

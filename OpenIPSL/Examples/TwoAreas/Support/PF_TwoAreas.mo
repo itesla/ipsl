@@ -1,6 +1,6 @@
 within OpenIPSL.Examples.TwoAreas.Support;
-partial record PF_TwoAreas
-  record Voltages
+partial record PF_TwoAreas "Template data record used to store powr flow results for initialization of power networks"
+  record Voltages "Template data record for voltage magnitudes and angles"
     // Bus number 1
     parameter Real V1;
     parameter Real A1;
@@ -37,7 +37,7 @@ partial record PF_TwoAreas
     annotation (Documentation);
   end Voltages;
 
-  record Machines
+  record Machines "Template data record for active and reactive power from generation units"
     // Gen at bus 1
     parameter Real P1_1;
     parameter Real Q1_1;
@@ -53,7 +53,7 @@ partial record PF_TwoAreas
     annotation (Documentation);
   end Machines;
 
-  record Loads
+  record Loads "Template data record for active and reactive power consumed by loads"
     // Gen at bus 1
     parameter Real PL7_1;
     parameter Real QL7_1;

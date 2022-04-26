@@ -1,6 +1,6 @@
 within OpenIPSL.Examples.TwoAreas;
-model Two_Areas_PSAT
-  import Modelica.Constants.pi;
+model Two_Areas_PSAT "11-bus 4-machine 2-area test system implemented with PSAT models"
+  extends Modelica.Icons.Example;
   parameter Real r=0.0001;
   parameter Real x=0.001;
   parameter Real b=0.00175*0.5;
@@ -29,33 +29,33 @@ model Two_Areas_PSAT
   OpenIPSL.Electrical.Buses.Bus bus11
     annotation (Placement(transformation(extent={{130,20},{150,40}})));
   Groups.PSAT.G1 g1(
-    V_b=20,
-    V_0=PF_results.voltages.V1,
+    V_b=20000,
+    v_0=PF_results.voltages.V1,
     angle_0=PF_results.voltages.A1,
     P_0=PF_results.machines.P1_1,
     Q_0=PF_results.machines.Q1_1)
     annotation (Placement(transformation(extent={{-214,24},{-202,36}})));
   Groups.PSAT.G2 g2(
-    V_0=PF_results.voltages.V2,
+    v_0=PF_results.voltages.V2,
     angle_0=PF_results.voltages.A2,
     P_0=PF_results.machines.P2_1,
     Q_0=PF_results.machines.Q2_1,
-    V_b=20) annotation (Placement(transformation(extent={{-214,-6},{-202,6}})));
+    V_b=20000) annotation (Placement(transformation(extent={{-214,-6},{-202,6}})));
   Groups.PSAT.G3 g3(
-    V_0=PF_results.voltages.V3,
+    v_0=PF_results.voltages.V3,
     angle_0=PF_results.voltages.A3,
     P_0=PF_results.machines.P3_1,
     Q_0=PF_results.machines.Q3_1,
-    V_b=20) annotation (Placement(transformation(
+    V_b=20000) annotation (Placement(transformation(
         extent={{-6,-6},{6,6}},
         rotation=180,
         origin={208,30})));
   Groups.PSAT.G4 g4(
-    V_0=PF_results.voltages.V4,
+    v_0=PF_results.voltages.V4,
     angle_0=PF_results.voltages.A4,
     P_0=PF_results.machines.P4_1,
     Q_0=PF_results.machines.Q4_1,
-    V_b=20) annotation (Placement(transformation(
+    V_b=20000) annotation (Placement(transformation(
         extent={{-6,-6},{6,6}},
         rotation=180,
         origin={208,-10})));
@@ -113,8 +113,8 @@ model Two_Areas_PSAT
     Pi=1,
     Qz=0,
     Qi=0,
-    V_b=230,
-    V_0=PF_results.voltages.V7,
+    V_b=230000,
+    v_0=PF_results.voltages.V7,
     angle_0=PF_results.voltages.A7,
     P_0=PF_results.loads.PL7_1,
     Q_0=PF_results.loads.QL7_1)
@@ -124,38 +124,38 @@ model Two_Areas_PSAT
     Pi=1,
     Qz=0,
     Qi=0,
-    V_b=230,
-    V_0=PF_results.voltages.V9,
+    V_b=230000,
+    v_0=PF_results.voltages.V9,
     angle_0=PF_results.voltages.A9,
     P_0=PF_results.loads.PL9_1,
     Q_0=PF_results.loads.QL9_1)
     annotation (Placement(transformation(extent={{80,-30},{54,-4}})));
   OpenIPSL.Electrical.Branches.PSAT.TwoWindingTransformer trafo1(
-    Sn=900,
-    V_b=20,
-    Vn=20,
+    Sn=900000000,
+    V_b=20000,
+    Vn=20000,
     rT=0,
     xT=0.15) annotation (Placement(transformation(extent={{-170,20},{-150,40}})));
   OpenIPSL.Electrical.Branches.PSAT.TwoWindingTransformer trafo2(
-    Sn=900,
-    V_b=20,
-    Vn=20,
+    Sn=900000000,
+    V_b=20000,
+    Vn=20000,
     rT=0,
     xT=0.15) annotation (Placement(transformation(extent={{-170,-10},{-150,10}})));
   OpenIPSL.Electrical.Branches.PSAT.TwoWindingTransformer trafo3(
-    Sn=900,
-    V_b=20,
-    Vn=20,
+    Sn=900000000,
+    V_b=20000,
+    Vn=20000,
     rT=0,
     xT=0.15) annotation (Placement(transformation(extent={{170,20},{150,40}})));
   OpenIPSL.Electrical.Branches.PSAT.TwoWindingTransformer trafo4(
-    Sn=900,
-    V_b=20,
-    Vn=20,
+    Sn=900000000,
+    V_b=20000,
+    Vn=20000,
     rT=0,
     xT=0.15) annotation (Placement(transformation(extent={{170,-20},{150,0}})));
   inner OpenIPSL.Electrical.SystemBase SysData(fn=60)
-    annotation (Placement(transformation(extent={{-220,46},{-170,60}})));
+    annotation (Placement(transformation(extent={{-220,44},{-180,60}})));
 equation
   connect(g1.pwPin, bus1.p) annotation (Line(points={{-201.4,30},{-201.4,30},{-180,
           30}}, color={0,0,255}));
@@ -226,26 +226,17 @@ equation
           lineColor={28,108,200},
           textString="Two-Area System
 Prabha Kundur, \"Power System Stability and Control\", Example 12.6, page 813")}),
-    Icon(coordinateSystem(extent={{-220,-40},{220,60}})),
+    Icon(coordinateSystem(extent={{-100,-100},{100,100}})),
     Documentation(info="<html>
-<table cellspacing=\"1\" cellpadding=\"1\" border=\"1\">
-<tr>
-<td><p>Reference</p></td>
-<td><p>Two Area System PSAT, d_kundur1.mdl, PSAT</p></td>
-</tr>
-<tr>
-<td><p>Last update</p></td>
-<td>February 2016</td>
-</tr>
-<tr>
-<td><p>Author</p></td>
-<td><p>Maxime Baudette, Ahsan Murad, SmarTS Lab, KTH Royal Institute of Technology</p></td>
-</tr>
-<tr>
-<td><p>Contact</p></td>
-<td><p><a href=\"mailto:luigiv@kth.se\">luigiv@kth.se</a></p></td>
-</tr>
-</table>
+<p>This example is composed by the 11-bus 4-machine 2-area system, where these two areas are connected via weak tie lines. This test system is ideal for studying dynamic stability, power interchange, oscillation damping, etc.</p>
+<p>The system undergoes a three-phase-to-ground fault on Bus 8 at 1s, lasting for 50ms. Simulate the system for 10 seconds. Variables of interest are the ones related to inter-area modes. For example:</p>
+<ul>
+<li><code>g1.order6_1.w</code></li>
+<li><code>g2.order6_1.w</code></li>
+<li><code>g3.order6_1.w</code></li>
+<li><code>g4.order6_1.w</code></li>
+</ul>
+<p>which are variables that represent the generator's speed, in per unit. Note that generators 1 and 2 swing together, while swinging against generators 3 and 4. This is due to coherency between the area's group of generators.</p>
 </html>"),
     experiment(
       StopTime=10,

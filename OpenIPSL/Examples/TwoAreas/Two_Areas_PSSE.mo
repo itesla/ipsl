@@ -1,9 +1,10 @@
 within OpenIPSL.Examples.TwoAreas;
-model Two_Areas_PSSE
+model Two_Areas_PSSE "11-bus 4-machine 2-area test system implemented with machine models from PSSE"
+  extends Modelica.Icons.Example;
   parameter Real r=0.0001;
   parameter Real x=0.001;
   parameter Real b=0.00175*0.5;
-  replaceable Data.PF3 PF_results constrainedby Support.PF_TwoAreas
+  replaceable Data.PF2 PF_results constrainedby Support.PF_TwoAreas
     annotation (Placement(transformation(extent={{-220,-40},{-200,-20}})));
   OpenIPSL.Electrical.Buses.Bus bus1
     annotation (Placement(transformation(extent={{-190,20},{-170,40}})));
@@ -28,19 +29,19 @@ model Two_Areas_PSSE
   OpenIPSL.Electrical.Buses.Bus bus11
     annotation (Placement(transformation(extent={{130,20},{150,40}})));
   TwoAreas.Groups.PSSE.No_Controls.G1 g1(
-    V_0=PF_results.voltages.V1,
+    v_0=PF_results.voltages.V1,
     angle_0=PF_results.voltages.A1,
     P_0=PF_results.machines.P1_1,
     Q_0=PF_results.machines.Q1_1)
     annotation (Placement(transformation(extent={{-214,24},{-202,36}})));
   TwoAreas.Groups.PSSE.No_Controls.G2 g2(
-    V_0=PF_results.voltages.V2,
+    v_0=PF_results.voltages.V2,
     angle_0=PF_results.voltages.A2,
     P_0=PF_results.machines.P2_1,
     Q_0=PF_results.machines.Q2_1)
     annotation (Placement(transformation(extent={{-214,-6},{-202,6}})));
   TwoAreas.Groups.PSSE.No_Controls.G3 g3(
-    V_0=PF_results.voltages.V3,
+    v_0=PF_results.voltages.V3,
     angle_0=PF_results.voltages.A3,
     P_0=PF_results.machines.P3_1,
     Q_0=PF_results.machines.Q3_1) annotation (Placement(transformation(
@@ -48,7 +49,7 @@ model Two_Areas_PSSE
         rotation=180,
         origin={208,30})));
   TwoAreas.Groups.PSSE.No_Controls.G4 g4(
-    V_0=PF_results.voltages.V4,
+    v_0=PF_results.voltages.V4,
     angle_0=PF_results.voltages.A4,
     P_0=PF_results.machines.P4_1,
     Q_0=PF_results.machines.Q4_1) annotation (Placement(transformation(
@@ -96,7 +97,7 @@ model Two_Areas_PSSE
     G=0,
     B=b*25) annotation (Placement(transformation(extent={{110,20},{130,40}})));
   OpenIPSL.Electrical.Events.PwFault pwFault(
-    X=0,
+    X=1e-5,
     R=0,
     t1=3,
     t2=3.2) annotation (Placement(transformation(
@@ -105,14 +106,14 @@ model Two_Areas_PSSE
         origin={2,-16})));
   OpenIPSL.Electrical.Loads.PSSE.Load Load7(
     PQBRAK=0.7,
-    V_0=PF_results.voltages.V7,
+    v_0=PF_results.voltages.V7,
     angle_0=PF_results.voltages.A7,
     P_0=PF_results.loads.PL7_1,
     Q_0=PF_results.loads.QL7_1)
     annotation (Placement(transformation(extent={{-78,-26},{-50,0}})));
   OpenIPSL.Electrical.Loads.PSSE.Load Load9(
     PQBRAK=0.7,
-    V_0=PF_results.voltages.V9,
+    v_0=PF_results.voltages.V9,
     angle_0=PF_results.voltages.A9,
     P_0=PF_results.loads.PL9_1,
     Q_0=PF_results.loads.QL9_1)
@@ -138,70 +139,70 @@ model Two_Areas_PSSE
     X=0.01667,
     B=0) annotation (Placement(transformation(extent={{150,-20},{170,0}})));
   inner OpenIPSL.Electrical.SystemBase SysData(fn=60)
-    annotation (Placement(transformation(extent={{-220,48},{-172,62}})));
+    annotation (Placement(transformation(extent={{-220,44},{-180,60}})));
 equation
   connect(g1.pwPin, bus1.p) annotation (Line(points={{-201.4,30},{-201.4,30},{-180,
           30}}, color={0,0,255}));
   connect(g2.pwPin, bus2.p) annotation (Line(points={{-201.4,0},{-201.4,0},{-180,
           0}}, color={0,0,255}));
-  connect(Line6_7.n, bus7.p) annotation (Line(points={{-68.3333,30},{-68.3333,
-          30},{-60,30}}, color={0,0,255}));
-  connect(Line6_7.p, bus6.p) annotation (Line(points={{-91.6667,30},{-91.6667,
-          30},{-100,30}}, color={0,0,255}));
-  connect(Line5_6.n, bus6.p) annotation (Line(points={{-108.333,30},{-108.333,
-          30},{-100,30}}, color={0,0,255}));
-  connect(Line5_6.p, bus5.p) annotation (Line(points={{-131.667,30},{-131.667,
-          30},{-140,30}}, color={0,0,255}));
-  connect(Line8_9_2.n, bus9.p) annotation (Line(points={{41.6667,20},{54,20},{
-          54,30},{60,30}}, color={0,0,255}));
-  connect(Line8_9_1.n, bus9.p) annotation (Line(points={{41.6667,40},{54,40},{
-          54,30},{60,30}}, color={0,0,255}));
-  connect(Line8_9_2.p, bus8.p) annotation (Line(points={{18.3333,20},{6,20},{6,
-          30},{0,30}}, color={0,0,255}));
-  connect(Line8_9_1.p, bus8.p) annotation (Line(points={{18.3333,40},{6,40},{6,
-          30},{0,30}}, color={0,0,255}));
-  connect(Line7_8_2.n, bus8.p) annotation (Line(points={{-18.3333,20},{-6,20},{
-          -6,22},{-6,30},{0,30}}, color={0,0,255}));
-  connect(Line7_8_1.n, bus8.p) annotation (Line(points={{-18.3333,40},{-6,40},{
-          -6,30},{0,30}}, color={0,0,255}));
-  connect(Line7_8_1.p, bus7.p) annotation (Line(points={{-41.6667,40},{-54,40},
-          {-54,30},{-60,30}}, color={0,0,255}));
-  connect(Line7_8_2.p, bus7.p) annotation (Line(points={{-41.6667,20},{-54,20},
-          {-54,30},{-60,30}}, color={0,0,255}));
+  connect(Line6_7.n, bus7.p) annotation (Line(points={{-71,30},{-71,30},{-60,30}},
+                         color={0,0,255}));
+  connect(Line6_7.p, bus6.p) annotation (Line(points={{-89,30},{-89,30},{-100,30}},
+                          color={0,0,255}));
+  connect(Line5_6.n, bus6.p) annotation (Line(points={{-111,30},{-111,30},{-100,
+          30}},           color={0,0,255}));
+  connect(Line5_6.p, bus5.p) annotation (Line(points={{-129,30},{-129,30},{-140,
+          30}},           color={0,0,255}));
+  connect(Line8_9_2.n, bus9.p) annotation (Line(points={{39,20},{54,20},{54,30},
+          {60,30}},        color={0,0,255}));
+  connect(Line8_9_1.n, bus9.p) annotation (Line(points={{39,40},{54,40},{54,30},
+          {60,30}},        color={0,0,255}));
+  connect(Line8_9_2.p, bus8.p) annotation (Line(points={{21,20},{6,20},{6,30},{0,
+          30}},        color={0,0,255}));
+  connect(Line8_9_1.p, bus8.p) annotation (Line(points={{21,40},{6,40},{6,30},{0,
+          30}},        color={0,0,255}));
+  connect(Line7_8_2.n, bus8.p) annotation (Line(points={{-21,20},{-6,20},{-6,22},
+          {-6,30},{0,30}},        color={0,0,255}));
+  connect(Line7_8_1.n, bus8.p) annotation (Line(points={{-21,40},{-6,40},{-6,30},
+          {0,30}},        color={0,0,255}));
+  connect(Line7_8_1.p, bus7.p) annotation (Line(points={{-39,40},{-54,40},{-54,30},
+          {-60,30}},          color={0,0,255}));
+  connect(Line7_8_2.p, bus7.p) annotation (Line(points={{-39,20},{-54,20},{-54,30},
+          {-60,30}},          color={0,0,255}));
   connect(bus9.p, Line9_10.p)
-    annotation (Line(points={{60,30},{68.3333,30}}, color={0,0,255}));
-  connect(Line9_10.n, bus10.p) annotation (Line(points={{91.6667,30},{91.6667,
-          30},{100,30}}, color={0,0,255}));
+    annotation (Line(points={{60,30},{71,30}},      color={0,0,255}));
+  connect(Line9_10.n, bus10.p) annotation (Line(points={{89,30},{89,30},{100,30}},
+                         color={0,0,255}));
   connect(bus10.p, Line10_11.p)
-    annotation (Line(points={{100,30},{108.333,30}}, color={0,0,255}));
-  connect(Line10_11.n, bus11.p) annotation (Line(points={{131.667,30},{131.667,
-          30},{140,30}}, color={0,0,255}));
+    annotation (Line(points={{100,30},{111,30}},     color={0,0,255}));
+  connect(Line10_11.n, bus11.p) annotation (Line(points={{129,30},{129,30},{140,
+          30}},          color={0,0,255}));
   connect(g4.pwPin, bus4.p) annotation (Line(points={{201.4,-10},{201.4,-10},{
           180,-10}}, color={0,0,255}));
   connect(g3.pwPin, bus3.p)
     annotation (Line(points={{201.4,30},{180,30}}, color={0,0,255}));
-  connect(Load7.p, bus7.p) annotation (Line(points={{-64,1.3},{-64,1.3},{-64,30},
-          {-60,30}}, color={0,0,255}));
-  connect(Load9.p, Line9_10.p) annotation (Line(points={{65,1.3},{66,1.3},{66,
-          30},{68.3333,30}}, color={0,0,255}));
+  connect(Load7.p, bus7.p) annotation (Line(points={{-64,0},{-64,0},{-64,30},{-60,
+          30}},      color={0,0,255}));
+  connect(Load9.p, Line9_10.p) annotation (Line(points={{65,0},{66,0},{66,30},{71,
+          30}},              color={0,0,255}));
   connect(pwFault.p, bus8.p)
     annotation (Line(points={{2,-4.33333},{2,30},{0,30}}, color={0,0,255}));
   connect(bus1.p, Line5_1.p)
-    annotation (Line(points={{-180,30},{-171.667,30}}, color={0,0,255}));
+    annotation (Line(points={{-180,30},{-169,30}},     color={0,0,255}));
   connect(bus5.p, Line5_1.n)
-    annotation (Line(points={{-140,30},{-148.333,30}}, color={0,0,255}));
+    annotation (Line(points={{-140,30},{-151,30}},     color={0,0,255}));
   connect(bus2.p, Line5_2.p)
-    annotation (Line(points={{-180,0},{-171.667,0}}, color={0,0,255}));
-  connect(Line5_2.n, bus6.p) annotation (Line(points={{-148.333,0},{-104,0},{-104,
-          30},{-100,30}}, color={0,0,255}));
+    annotation (Line(points={{-180,0},{-169,0}},     color={0,0,255}));
+  connect(Line5_2.n, bus6.p) annotation (Line(points={{-151,0},{-104,0},{-104,30},
+          {-100,30}},     color={0,0,255}));
   connect(bus11.p, Line5_3.p)
-    annotation (Line(points={{140,30},{148.333,30}}, color={0,0,255}));
-  connect(Line5_3.n, bus3.p) annotation (Line(points={{171.667,30},{171.667,30},
-          {180,30}}, color={0,0,255}));
+    annotation (Line(points={{140,30},{151,30}},     color={0,0,255}));
+  connect(Line5_3.n, bus3.p) annotation (Line(points={{169,30},{169,30},{180,30}},
+                     color={0,0,255}));
   connect(bus4.p, Line5_4.n)
-    annotation (Line(points={{180,-10},{171.667,-10}}, color={0,0,255}));
-  connect(Line5_4.p, Line10_11.p) annotation (Line(points={{148.333,-10},{104,-10},
-          {104,30},{108.333,30}}, color={0,0,255}));
+    annotation (Line(points={{180,-10},{169,-10}},     color={0,0,255}));
+  connect(Line5_4.p, Line10_11.p) annotation (Line(points={{151,-10},{104,-10},{
+          104,30},{111,30}},      color={0,0,255}));
   annotation (
     Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-220,-40},{220,
             60}}), graphics={Text(
@@ -209,27 +210,19 @@ equation
           lineColor={28,108,200},
           textString="Two-Area System
 Prabha Kundur, \"Power System Stability and Control\", Example 12.6, page 813")}),
-
-    Icon(coordinateSystem(extent={{-220,-40},{220,60}})),
+    Icon(coordinateSystem(extent={{-100,-100},{100,100}})),
     Documentation(info="<html>
-<table cellspacing=\"1\" cellpadding=\"1\" border=\"1\">
-<tr>
-<td><p>Reference</p></td>
-<td>Klein-Rogers-Kundur power network</td>
-</tr>
-<tr>
-<td><p>Last update</p></td>
-<td>2015-12-01</td>
-</tr>
-<tr>
-<td><p>Author</p></td>
-<td><p>Maxime Baudette, Tin Rabuzin, SmarTS Lab, KTH Royal Institute of Technology</p></td>
-</tr>
-<tr>
-<td><p>Contact</p></td>
-<td><p><a href=\"mailto:luigiv@kth.se\">luigiv@kth.se</a></p></td>
-</tr>
-</table>
+<p>This example is composed by the 11-bus 4-machine 2-area system, where these two areas are connected via weak tie lines. This test system is ideal for studying dynamic stability, power interchange, oscillation damping, etc.</p>
+<p>The four generation units are composed only of machines, differently from the system <strong>Two_Areas_PSSE_AVR</strong>, where excitation systems are also represented.</p>
+<p>The system undergoes a three-phase-to-ground fault on Bus 8 at 3s, lasting for 200ms. Simulate the system for 10 seconds. Variables of interest are the ones related to inter-area modes. For example:</p>
+<ul>
+<li><code>g1.gENSAL.SPEED</code></li>
+<li><code>g2.gENSAL.SPEED</code></li>
+<li><code>g3.gENSAL.SPEED</code></li>
+<li><code>g4.gENSAL.SPEED</code></li>
+</ul>
+<p>which are variables that represent the generator's deviation from nominal speed, in per unit. Note that generators 1 and 2 swing together, while swinging against generators 3 and 4. This is due to coherency between the area's group of generators.</p>
+<p>Compare these results with the ones from <strong>Two_Areas_PSSE_AVR</strong>.</p>
 </html>"),
     experiment(StopTime=10, Tolerance=0.001));
 end Two_Areas_PSSE;

@@ -1,6 +1,6 @@
 within OpenIPSL.Examples.TwoAreas.Groups.PSSE;
-package No_Controls
-  model G1
+package No_Controls "Set of generation units modeled with PSSE composed only of machines"
+  model G1 "900MVA generation unit, composed only of a machine model, connected to bus 1"
     extends TwoAreas.Support.Generator;
     OpenIPSL.Electrical.Machines.PSSE.GENSAL gENSAL(
       Tpd0=8,
@@ -17,20 +17,20 @@ package No_Controls
       D=0.02,
       S12=0.802,
       S10=0.18600,
-      M_b=900,
+      M_b=900000000,
       V_b=V_b,
-      V_0=V_0,
+      v_0=v_0,
       angle_0=angle_0,
       P_0=P_0,
       Q_0=Q_0)
-      annotation (Placement(transformation(extent={{-16,-14},{24,22}})));
+      annotation (Placement(transformation(extent={{32,-20},{72,20}})));
   equation
-    connect(gENSAL.EFD0, gENSAL.EFD) annotation (Line(points={{25.6,-8.6},{26,-8.6},
-            {26,-20},{-18,-20},{-18,-5},{-15.6,-5}}, color={0,0,127}));
-    connect(gENSAL.PMECH, gENSAL.PMECH0) annotation (Line(points={{-15.6,13},{-18,
-            13},{-18,30},{24,30},{24,-1.4},{25.6,-1.4}}, color={0,0,127}));
+    connect(gENSAL.EFD0, gENSAL.EFD) annotation (Line(points={{74,-10},{80,-10},
+            {80,-30},{20,-30},{20,-12},{28,-12}},    color={0,0,127}));
+    connect(gENSAL.PMECH, gENSAL.PMECH0) annotation (Line(points={{28,12},{20,
+            12},{20,30},{80,30},{80,10},{74,10}},        color={0,0,127}));
     connect(gENSAL.p, pwPin)
-      annotation (Line(points={{26,4},{42,4},{42,0},{70,0}}, color={0,0,255}));
+      annotation (Line(points={{72,0},{100,0}},              color={0,0,255}));
     annotation (
       Diagram(coordinateSystem(
           preserveAspectRatio=false,
@@ -40,10 +40,15 @@ package No_Controls
           preserveAspectRatio=true,
           extent={{-100,-100},{100,100}},
           initialScale=0.1)),
-      Documentation);
+      Documentation(info="<html>
+<p>900MVA generation unit connected to bus 1, and composed of the following component models:</p>
+<ul>
+<li><strong>Machine</strong>: GENSAL, a salient pole synchronous generator model, from PSSE.</li>
+</ul>
+</html>"));
   end G1;
 
-  model G2
+  model G2 "900MVA generation unit, composed only of a machine model, connected to bus 2"
     extends TwoAreas.Support.Generator;
     OpenIPSL.Electrical.Machines.PSSE.GENSAL gENSAL(
       Tpd0=8,
@@ -60,20 +65,20 @@ package No_Controls
       D=0.02,
       S12=0.802,
       S10=0.18600,
-      M_b=900,
+      M_b=900000000,
       V_b=V_b,
-      V_0=V_0,
+      v_0=v_0,
       angle_0=angle_0,
       P_0=P_0,
       Q_0=Q_0)
-      annotation (Placement(transformation(extent={{-16,-14},{24,22}})));
+      annotation (Placement(transformation(extent={{32,-20},{72,20}})));
   equation
-    connect(gENSAL.EFD, gENSAL.EFD0) annotation (Line(points={{-15.6,-5},{-26,-5},
-            {-26,-30},{26,-30},{26,-8.6},{25.6,-8.6}}, color={0,0,127}));
-    connect(gENSAL.PMECH, gENSAL.PMECH0) annotation (Line(points={{-15.6,13},{-26,
-            13},{-26,34},{28,34},{28,-1.4},{25.6,-1.4}}, color={0,0,127}));
+    connect(gENSAL.EFD, gENSAL.EFD0) annotation (Line(points={{28,-12},{20,-12},
+            {20,-30},{80,-30},{80,-10},{74,-10}},      color={0,0,127}));
+    connect(gENSAL.PMECH, gENSAL.PMECH0) annotation (Line(points={{28,12},{20,
+            12},{20,30},{80,30},{80,10},{74,10}},        color={0,0,127}));
     connect(gENSAL.p, pwPin)
-      annotation (Line(points={{26,4},{44,4},{44,0},{70,0}}, color={0,0,255}));
+      annotation (Line(points={{72,0},{100,0}},              color={0,0,255}));
     annotation (
       Diagram(coordinateSystem(
           preserveAspectRatio=false,
@@ -83,10 +88,15 @@ package No_Controls
           preserveAspectRatio=false,
           extent={{-100,-100},{100,100}},
           initialScale=0.1)),
-      Documentation);
+      Documentation(info="<html>
+<p>900MVA generation unit connected to bus 2, and composed of the following component models:</p>
+<ul>
+<li><strong>Machine</strong>: GENSAL, a salient pole synchronous generator model, from PSSE.</li>
+</ul>
+</html>"));
   end G2;
 
-  model G3
+  model G3 "900MVA generation unit, composed only of a machine model, connected to bus 3"
     extends TwoAreas.Support.Generator;
     OpenIPSL.Electrical.Machines.PSSE.GENSAL gENSAL(
       Tpd0=8,
@@ -103,21 +113,21 @@ package No_Controls
       R_a=0.0025,
       S12=0.802,
       S10=0.18600,
-      M_b=900,
+      M_b=900000000,
       V_b=V_b,
-      V_0=V_0,
+      v_0=v_0,
       P_0=P_0,
       Q_0=Q_0,
       angle_0=angle_0)
-      annotation (Placement(transformation(extent={{-30,-30},{30,36}})));
+      annotation (Placement(transformation(extent={{32,-20},{72,20}})));
   equation
-    connect(gENSAL.PMECH, gENSAL.PMECH0) annotation (Line(points={{-29.4,19.5},
-            {-40,19.5},{-40,44},{30,44},{30,-6.9},{32.4,-6.9}}, color={0,0,127}));
-    connect(gENSAL.EFD0, gENSAL.EFD) annotation (Line(points={{32.4,-20.1},{38,
-            -20.1},{38,-40},{-38,-40},{-38,0},{-38,-13.5},{-29.4,-13.5}}, color
-          ={0,0,127}));
-    connect(gENSAL.p, pwPin) annotation (Line(points={{33,3},{46.5,3},{46.5,0},
-            {70,0}}, color={0,0,255}));
+    connect(gENSAL.PMECH, gENSAL.PMECH0) annotation (Line(points={{28,12},{20,
+            12},{20,30},{80,30},{80,10},{74,10}},               color={0,0,127}));
+    connect(gENSAL.EFD0, gENSAL.EFD) annotation (Line(points={{74,-10},{80,-10},
+            {80,-30},{20,-30},{20,-12},{28,-12}},                         color=
+           {0,0,127}));
+    connect(gENSAL.p, pwPin) annotation (Line(points={{72,0},{100,0}},
+                     color={0,0,255}));
     annotation (
       Diagram(coordinateSystem(
           preserveAspectRatio=false,
@@ -127,10 +137,15 @@ package No_Controls
           preserveAspectRatio=false,
           extent={{-100,-100},{100,100}},
           initialScale=0.1)),
-      Documentation);
+      Documentation(info="<html>
+<p>900MVA generation unit connected to bus 3, and composed of the following component models:</p>
+<ul>
+<li><strong>Machine</strong>: GENSAL, a salient pole synchronous generator model, from PSSE.</li>
+</ul>
+</html>"));
   end G3;
 
-  model G4
+  model G4 "900MVA generation unit, composed only of a machine model, connected to bus 4"
     extends TwoAreas.Support.Generator;
     OpenIPSL.Electrical.Machines.PSSE.GENSAL gENSAL(
       Tpd0=8,
@@ -147,20 +162,20 @@ package No_Controls
       D=0.02,
       S12=0.802,
       S10=0.18600,
-      M_b=900,
+      M_b=900000000,
       V_b=V_b,
-      V_0=V_0,
+      v_0=v_0,
       angle_0=angle_0,
       P_0=P_0,
       Q_0=Q_0)
-      annotation (Placement(transformation(extent={{-16,-14},{24,22}})));
+      annotation (Placement(transformation(extent={{32,-20},{72,20}})));
   equation
     connect(gENSAL.p, pwPin)
-      annotation (Line(points={{26,4},{42,4},{42,0},{70,0}}, color={0,0,255}));
-    connect(gENSAL.EFD0, gENSAL.EFD) annotation (Line(points={{25.6,-8.6},{34,-8.6},
-            {34,-20},{-24,-20},{-24,-5},{-15.6,-5}}, color={0,0,127}));
-    connect(gENSAL.PMECH, gENSAL.PMECH0) annotation (Line(points={{-15.6,13},{-14,
-            13},{-14,12},{-24,12},{-24,30},{34,30},{34,-1.4},{25.6,-1.4}},
+      annotation (Line(points={{72,0},{100,0}},              color={0,0,255}));
+    connect(gENSAL.EFD0, gENSAL.EFD) annotation (Line(points={{74,-10},{80,-10},
+            {80,-30},{20,-30},{20,-12},{28,-12}},    color={0,0,127}));
+    connect(gENSAL.PMECH, gENSAL.PMECH0) annotation (Line(points={{28,12},{20,
+            12},{20,30},{80,30},{80,10},{74,10}},
           color={0,0,127}));
     annotation (
       Diagram(coordinateSystem(
@@ -171,7 +186,14 @@ package No_Controls
           preserveAspectRatio=false,
           extent={{-100,-100},{100,100}},
           initialScale=0.1)),
-      Documentation);
+      Documentation(info="<html>
+<p>900MVA generation unit connected to bus 4, and composed of the following component models:</p>
+<ul>
+<li><strong>Machine</strong>: GENSAL, a salient pole synchronous generator model, from PSSE.</li>
+</ul>
+</html>"));
   end G4;
-  annotation (Documentation);
+  annotation (Documentation(info="<html>
+<p>This package contains four generation unit models composed solely of PSSE machine models, that are used in the <strong>Two_Areas_PSSE</strong> system.</p>
+</html>"));
 end No_Controls;

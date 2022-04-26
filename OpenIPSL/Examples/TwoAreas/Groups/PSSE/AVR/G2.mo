@@ -1,5 +1,5 @@
 within OpenIPSL.Examples.TwoAreas.Groups.PSSE.AVR;
-model G2
+model G2 "900MVA generation unit, composed of machine and exciter, connected to bus 2"
   extends TwoAreas.Support.Generator;
   OpenIPSL.Electrical.Machines.PSSE.GENROU g2(
     Tpd0=8,
@@ -16,14 +16,14 @@ model G2
     D=0.02,
     S12=0.802,
     S10=0.18600,
-    M_b=900,
+    M_b=900000000,
     V_b=V_b,
-    V_0=V_0,
+    v_0=v_0,
     angle_0=angle_0,
     P_0=P_0,
     Q_0=Q_0,
     Xpq=0.55,
-    Tpq0=0.4) annotation (Placement(transformation(extent={{6,-18},{46,18}})));
+    Tpq0=0.4) annotation (Placement(transformation(extent={{32,-20},{72,20}})));
   OpenIPSL.Electrical.Controls.PSSE.ES.ESDC1A eSDC1A(
     T_R=0.5,
     K_A=20,
@@ -40,26 +40,28 @@ model G2
     E_2=2,
     S_EE_1=0.0164,
     S_EE_2=0.0481)
-    annotation (Placement(transformation(extent={{-38,-18},{-4,0}})));
-  Modelica.Blocks.Sources.Constant const(k=0)
-    annotation (Placement(transformation(extent={{-56,4},{-48,12}})));
+    annotation (Placement(transformation(extent={{-4,-22},{16,-2}})));
+  Modelica.Blocks.Sources.Constant non_active_inputs(k=0)
+    annotation (Placement(transformation(extent={{40,-60},{20,-40}})));
 equation
-  connect(g2.PMECH, g2.PMECH0) annotation (Line(points={{6.4,9},{-2,9},{-2,32},
-          {52,32},{52,-5.4},{47.6,-5.4}}, color={0,0,127}));
+  connect(g2.PMECH, g2.PMECH0) annotation (Line(points={{28,12},{20,12},{20,30},
+          {80,30},{80,10},{74,10}},       color={0,0,127}));
   connect(g2.p, pwPin)
-    annotation (Line(points={{48,0},{44,0},{70,0}}, color={0,0,255}));
+    annotation (Line(points={{72,0},{100,0}},       color={0,0,255}));
   connect(g2.EFD, eSDC1A.EFD)
-    annotation (Line(points={{6.4,-9},{-3.05556,-9}}, color={0,0,127}));
-  connect(eSDC1A.EFD0, g2.EFD0) annotation (Line(points={{-24.7778,-16.65},{-24.7778,
-          -24},{56,-24},{56,-12.6},{47.6,-12.6}}, color={0,0,127}));
-  connect(const.y, eSDC1A.VUEL) annotation (Line(points={{-47.6,8},{-42,8},{-42,
-          -15.75},{-37.0556,-15.75}}, color={0,0,127}));
-  connect(eSDC1A.VOEL, eSDC1A.VUEL) annotation (Line(points={{-37.0556,-11.25},
-          {-42,-11.25},{-42,-15.75},{-37.0556,-15.75}}, color={0,0,127}));
-  connect(eSDC1A.VOTHSG, eSDC1A.VUEL) annotation (Line(points={{-37.0556,-6.75},
-          {-42,-6.75},{-42,-15.75},{-37.0556,-15.75}}, color={0,0,127}));
-  connect(g2.ETERM, eSDC1A.ECOMP) annotation (Line(points={{47.6,9},{58,9},{58,
-          -26},{-40,-26},{-40,-2.475},{-37.0556,-2.475}}, color={0,0,127}));
+    annotation (Line(points={{28,-12},{17,-12}},      color={0,0,127}));
+  connect(eSDC1A.EFD0, g2.EFD0) annotation (Line(points={{-5,-16},{-18,-16},{
+          -18,-68},{80,-68},{80,-10},{74,-10}},   color={0,0,127}));
+  connect(non_active_inputs.y, eSDC1A.VUEL)
+    annotation (Line(points={{19,-50},{2,-50},{2,-23}}, color={0,0,127}));
+  connect(g2.ETERM, eSDC1A.ECOMP) annotation (Line(points={{74,-6},{82,-6},{82,
+          -70},{-20,-70},{-20,-12},{-5,-12}},             color={0,0,127}));
+  connect(non_active_inputs.y, eSDC1A.VOEL)
+    annotation (Line(points={{19,-50},{6,-50},{6,-23}}, color={0,0,127}));
+  connect(non_active_inputs.y, eSDC1A.VOTHSG) annotation (Line(points={{19,-50},
+          {-12,-50},{-12,-8},{-5,-8}}, color={0,0,127}));
+  connect(g2.XADIFD, eSDC1A.XADIFD) annotation (Line(points={{74,-18},{78,-18},
+          {78,-32},{14,-32},{14,-23}}, color={0,0,127}));
   annotation (
     Diagram(coordinateSystem(
         preserveAspectRatio=false,
@@ -70,23 +72,10 @@ equation
         extent={{-100,-100},{100,100}},
         initialScale=0.1)),
     Documentation(info="<html>
-<table cellspacing=\"1\" cellpadding=\"1\" border=\"1\">
-<tr>
-<td><p>Reference</p></td>
-<td>Klein-Rogers-Kundur power network</td>
-</tr>
-<tr>
-<td><p>Last update</p></td>
-<td>2015-12-01</td>
-</tr>
-<tr>
-<td><p>Author</p></td>
-<td><p>Maxime Baudette, Tin Rabuzin, SmarTS Lab, KTH Royal Institute of Technology</p></td>
-</tr>
-<tr>
-<td><p>Contact</p></td>
-<td><p><a href=\"mailto:luigiv@kth.se\">luigiv@kth.se</a></p></td>
-</tr>
-</table>
+<p>900MVA generation unit connected to bus 2, and composed of the following component models:</p>
+<ul>
+<li><strong>Machine</strong>: GENROU, a round rotor synchronous generator model, from PSSE.</li>
+<li><strong>Exciter</strong>: ESDC1A, a DC-type excitation system model, from PSSE.</li>
+</ul>
 </html>"));
 end G2;

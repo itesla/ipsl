@@ -1,23 +1,7 @@
 within OpenIPSL.Examples.TwoAreas.Groups;
-package PSSE
+package PSSE "Set of generation units modeled with PSSE"
 annotation (Documentation(info="<html>
-<table cellspacing=\"1\" cellpadding=\"1\" border=\"1\">
-<tr>
-<td><p>Reference</p></td>
-<td>Klein-Rogers-Kundur power network</td>
-</tr>
-<tr>
-<td><p>Last update</p></td>
-<td>2015-12-01</td>
-</tr>
-<tr>
-<td><p>Author</p></td>
-<td><p>Maxime Baudette, Tin Rabuzin, SmarTS Lab, KTH Royal Institute of Technology</p></td>
-</tr>
-<tr>
-<td><p>Contact</p></td>
-<td><p><a href=\"mailto:luigiv@kth.se\">luigiv@kth.se</a></p></td>
-</tr>
-</table>
-</html>"));
+<p>This package contains two sets of four generation units each, based on PSSE models, that are used in the <strong>Two_Areas_PSSE</strong> and in the <strong>Two_Areas_PSSE_AVR</strong> systems.</p>
+</html>
+"));
 end PSSE;
