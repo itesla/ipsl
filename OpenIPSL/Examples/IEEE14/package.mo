@@ -1,16 +1,18 @@
 within OpenIPSL.Examples;
-package IEEE14
+package IEEE14 "IEEE 14-bus 5-machine test system package"
   extends Modelica.Icons.ExamplesPackage;
+
 annotation (
   uses(Modelica(version="3.2.2"), OpenIPSL(version="2.0.0-dev")),
   Documentation(info="<html>
-<table cellspacing=\"1\" cellpadding=\"1\" border=\"1\"><tr>
-<td><p>Reference</p></td>
-<td><p>PSAT Manual 2.1.8</p></td>
-</tr>
+<p>This package contains a 14-bus 5-machine test system, representing a simple equivalent approximation for the American Electric Power System as of February of 1962. </p>
+<p>In general, this system has low base voltages and an overabundance of voltage control capabilities, being ideal for testing such features. </p>
+<p>The user might find a single test system in this package, but they are encouraged to duplicate the model and test fault events in different buses, together with different possible clearing times.</p> 
+<p> </p>
+<table cellspacing=\"1\" cellpadding=\"1\" border=\"1\">
 <tr>
-<td><p>Last update</p></td>
-<td><p>13/07/2015</p></td>
+<td><p>Reference</p></td>
+<td>PSAT Manual 2.1.8</td>
 </tr>
 <tr>
 <td><p>Author</p></td>
@@ -18,7 +20,7 @@ annotation (
 </tr>
 <tr>
 <td><p>Contact</p></td>
-<td><p><a href=\"mailto:luigiv@kth.se\">luigiv@kth.se</a></p></td>
+<td><p><a href=\"mailto:luigi.vanfretti@gmail.com\">luigi.vanfretti@gmail.com</a></p></td>
 </tr>
 </table>
 </html>"),

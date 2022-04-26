@@ -1,5 +1,5 @@
 within OpenIPSL.Examples.IEEE14.Generation_Groups;
-model GroupBus6
+model GroupBus6 "13.8kV/25MVA reactive power generation unit (synchronous condenser) connected to bus 6"
   extends OpenIPSL.Electrical.Essentials.pfComponent;
   parameter Real vf0=3.146313160164693 "Initial field voltage";
   parameter Real vref0=1.228917822125829 "Reference voltage AVR";
@@ -11,7 +11,7 @@ model GroupBus6
     Ka=20,
     Kf=0.001,
     Te=0.7,
-    v0=V_0,
+    v0=v_0,
     vrmin=1.395,
     vrmax=6.81) annotation (Placement(transformation(
         extent={{-23,-17},{23,17}},
@@ -20,7 +20,7 @@ model GroupBus6
   OpenIPSL.Electrical.Machines.PSAT.Order6 Syn5(
     fn=60,
     D=2,
-    Sn=25,
+    Sn=25000000,
     xd=1.25,
     xq=1.22,
     x1d=0.232,
@@ -32,9 +32,9 @@ model GroupBus6
     T2d0=0.06,
     T2q0=0.21,
     M=2*5.06,
-    Vn=13.8,
+    Vn=13800,
     V_b=V_b,
-    V_0=V_0,
+    v_0=v_0,
     angle_0=angle_0,
     P_0=P_0,
     Q_0=Q_0,
@@ -61,43 +61,25 @@ equation
     Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{
             100,100}})),
     Icon(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,
-            100}}), graphics={Ellipse(extent={{-92,78},{100,-74}}, lineColor={
-          28,108,200}),Line(points={{-20,26},{6,-6},{24,20}}, color={28,108,200}),
-          Line(points={{-36,2},{-20,26}}, color={28,108,200}),Text(
-          extent={{-24,-22},{14,-54}},
+            100}}), graphics={
+                             Text(
+          extent={{-93,6},{-24,-12}},
+          lineColor={0,0,255},
+          textStyle={TextStyle.Italic},
+          textString=""),
+          Text(extent={{-34,-32},{38,-52}},
           lineColor={28,108,200},
-          textString="Gen4 6")}),
+          fillColor={0,0,255},
+          fillPattern=FillPattern.Solid,
+          textString="%name"),
+                         Line(points={{-60,-20},{-20,20},{20,-20},{60,20}},
+          color={28,108,200}),Ellipse(extent={{-100,-100},{100,100}}, lineColor=
+           {28,108,200})}),
     Documentation(info="<html>
-<table cellspacing=\"1\" cellpadding=\"1\" border=\"1\">
-<tr>
-<td><p>Reference</p></td>
-<td>PSAT Manual 2.1.8</td>
-</tr>
-<tr>
-<td><p>Last update</p></td>
-<td>13/07/2015</td>
-</tr>
-<tr>
-<td><p>Author</p></td>
-<td><p>MAA Murad,SmarTS Lab, KTH Royal Institute of Technology</p></td>
-</tr>
-<tr>
-<td><p>Contact</p></td>
-<td><p><a href=\"mailto:luigiv@kth.se\">luigiv@kth.se</a></p></td>
-</tr>
-</table>
-<p><br><span style=\"font-family: MS Shell Dlg 2;\">&LT;OpenIPSL: iTesla Power System Library&GT;</span></p>
-<p><span style=\"font-family: MS Shell Dlg 2;\">Copyright 2015 RTE (France), AIA (Spain), KTH (Sweden) and DTU (Denmark)</span></p>
+<p>13.8kV/25MVA Reactive power generation unit (synchronous condenser) connected to bus 6, and composed of the following component models:</p>
 <ul>
-<li><span style=\"font-family: MS Shell Dlg 2;\">RTE: http://www.rte-france.com/ </span></li>
-<li><span style=\"font-family: MS Shell Dlg 2;\">AIA: http://www.aia.es/en/energy/</span></li>
-<li><span style=\"font-family: MS Shell Dlg 2;\">KTH: https://www.kth.se/en</span></li>
-<li><span style=\"font-family: MS Shell Dlg 2;\">DTU:http://www.dtu.dk/english</span></li>
+<li><strong>Machine</strong>: 6th order, from PSAT.</li>
+<li><strong>Exciter</strong>: type II, from PSAT.</li>
 </ul>
-<p><span style=\"font-family: MS Shell Dlg 2;\">The authors can be contacted by email: info at itesla-ipsl dot org</span></p>
-<p><span style=\"font-family: MS Shell Dlg 2;\">This package is part of the iTesla Power System Library (&QUOT;OpenIPSL&QUOT;) .</span></p>
-<p><span style=\"font-family: MS Shell Dlg 2;\">The OpenIPSL is free software: you can redistribute it and/or modify it under the terms of the GNU Lesser General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.</span></p>
-<p><span style=\"font-family: MS Shell Dlg 2;\">The OpenIPSL is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU Lesser General Public License for more details.</span></p>
-<p><span style=\"font-family: MS Shell Dlg 2;\">You should have received a copy of the GNU Lesser General Public License along with the OpenIPSL. If not, see &LT;http://www.gnu.org/licenses/&GT;.</span></p>
 </html>"));
 end GroupBus6;
