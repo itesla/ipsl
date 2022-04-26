@@ -14,7 +14,7 @@ model GroupBus2 "69kV/60MVA generation unit connected to bus 2"
     v0=v_0,
     vrmin=0,
     vrmax=4.38)
-    annotation (Placement(transformation(extent={{-74,12},{-24,50}})));
+    annotation (Placement(transformation(extent={{-6,0},{14,20}})));
   OpenIPSL.Electrical.Machines.PSAT.Order6 Syn3(
     Sn=60000000,
     Vn=69000,
@@ -35,23 +35,23 @@ model GroupBus2 "69kV/60MVA generation unit connected to bus 2"
     xd=1.05,
     angle_0=angle_0,
     P_0=P_0,
-    Q_0=Q_0) annotation (Placement(transformation(extent={{20,-36},{86,34}})));
+    Q_0=Q_0) annotation (Placement(transformation(extent={{42,-20},{82,20}})));
   OpenIPSL.Interfaces.PwPin pwPin annotation (Placement(transformation(extent={{100,-10},
             {120,10}}),          iconTransformation(extent={{100,-10},{120,10}})));
 equation
-  connect(aVR1TypeII1.vf, Syn3.vf) annotation (Line(points={{-19,31},{-2.65,31},
-          {-2.65,16.5},{13.4,16.5}}, color={0,0,127}));
-  connect(Syn3.v, aVR1TypeII1.v) annotation (Line(points={{89.3,9.5},{116,9.5},
-          {116,-88},{-82,-88},{-82,-84},{-82,14},{-82,19.6},{-79,19.6}},color={
+  connect(aVR1TypeII1.vf, Syn3.vf) annotation (Line(points={{16,10},{38,10}},
+                                     color={0,0,127}));
+  connect(Syn3.v, aVR1TypeII1.v) annotation (Line(points={{84,6},{90,6},{90,-32},
+          {-14,-32},{-14,4},{-8,4}},                                    color={
           0,0,127}));
-  connect(Syn3.p, pwPin) annotation (Line(points={{86,-1},{110.65,-1},{110.65,0},
-          {110,0}}, color={0,0,255}));
-  connect(Syn3.pm0, Syn3.pm) annotation (Line(points={{26.6,-39.5},{26.6,-50},{
-          2,-50},{2,-18.5},{13.4,-18.5}}, color={0,0,127}));
-  connect(Syn3.vf0, aVR1TypeII1.vf0) annotation (Line(points={{26.6,37.5},{26.6,
-          54},{-14,54},{-14,-12},{-14,-6},{-49,-6},{-49,8.2}}, color={0,0,127}));
-  connect(aVR1TypeII1.vref0, aVR1TypeII1.vref) annotation (Line(points={{-49,
-          53.8},{-49,68},{-98,68},{-98,40},{-98,42.4},{-79,42.4}}, color={0,0,
+  connect(Syn3.p, pwPin) annotation (Line(points={{82,0},{110,0}},
+                    color={0,0,255}));
+  connect(Syn3.pm0, Syn3.pm) annotation (Line(points={{46,-22},{46,-28},{28,-28},
+          {28,-10},{38,-10}},             color={0,0,127}));
+  connect(Syn3.vf0, aVR1TypeII1.vf0) annotation (Line(points={{46,22},{46,28},{
+          24,28},{24,-28},{4,-28},{4,-2}},                     color={0,0,127}));
+  connect(aVR1TypeII1.vref0, aVR1TypeII1.vref) annotation (Line(points={{4,22},{
+          4,28},{-14,28},{-14,16},{-8,16}},                        color={0,0,
           127}));
   annotation (
     Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-120,-100},{
