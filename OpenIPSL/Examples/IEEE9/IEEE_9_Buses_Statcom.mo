@@ -27,19 +27,19 @@ model IEEE_9_Buses_Statcom "IEEE (WSCC) 9-bus 3-machine test system with STATCOM
         origin={-72,-21})));
   OpenIPSL.Electrical.Loads.PSAT.VoltageDependent lOADPQ(
     V_b=230000,
-    v_0=0.997968971576412,
-    angle_0=-0.069547629203294,
-    P_0=1.25*SysData.S_b,
-    Q_0=0.5*SysData.S_b) annotation (Placement(transformation(
+    v_0=0.995630859628167,
+    angle_0=-0.0696176932,
+    P_0=125000000,
+    Q_0=50000000) annotation (Placement(transformation(
         extent={{-7,-7},{7,7}},
         rotation=0,
         origin={-99,-9})));
   OpenIPSL.Electrical.Loads.PSAT.VoltageDependent PQ1(
     V_b=230000,
-    v_0=1.014662489636656,
-    angle_0=-0.064300235023830,
-    P_0=0.9*SysData.S_b,
-    Q_0=0.3*SysData.S_b) annotation (Placement(transformation(
+    v_0=1.012654326639182,
+    angle_0=-0.06435727083,
+    P_0=90000000,
+    Q_0=30000000) annotation (Placement(transformation(
         extent={{-7,-7},{7,7}},
         rotation=0,
         origin={109,-13})));
@@ -85,11 +85,11 @@ model IEEE_9_Buses_Statcom "IEEE (WSCC) 9-bus 3-machine test system with STATCOM
         rotation=0,
         origin={-102,90})));
   OpenIPSL.Electrical.Loads.PSAT.VoltageDependent lOADPQ1(
-    v_0=1.025,
-    angle_0=0.011660880329004,
+    v_0=1.015882581760390,
+    angle_0=0.01269796844,
     V_b=230000,
-    P_0=1*SysData.S_b,
-    Q_0=0.35*SysData.S_b) annotation (Placement(transformation(
+    P_0=100000000,
+    Q_0=35000000) annotation (Placement(transformation(
         extent={{-7,-7},{7,7}},
         rotation=0,
         origin={-9,65})));
@@ -98,7 +98,7 @@ model IEEE_9_Buses_Statcom "IEEE (WSCC) 9-bus 3-machine test system with STATCOM
     Tr=0.1,
     Sn=100000000,
     fn=60,
-    v_0=1.025,
+    v_0=1.015882581760390,
     V_b=230000,
     Vn=230000,
     S_b=SysData.S_b,
@@ -150,22 +150,27 @@ model IEEE_9_Buses_Statcom "IEEE (WSCC) 9-bus 3-machine test system with STATCOM
   Generation_Groups.Gen1 gen1(
     V_b=18000,
     v_0=1.025,
+    vref0=1.120103884682511,
+    vf0=1.789323314329606,
     height_1=0.05,
     tstart_1=2,
-    angle_0=0.160490018910725,
-    P_0=1.63*SysData.S_b,
-    Q_0=0.001552891584958*SysData.S_b,
+    angle_0=0.161966652912444,
+    P_0=163000000,
+    Q_0=6653656.0198189,
     refdisturb_1=false)
     annotation (Placement(transformation(extent={{-160,80},{-140,100}})));
+
   Generation_Groups.Gen2 gen2(
     V_b=13800,
     v_0=1.025,
     height_2=0.05,
     tstart_2=2,
     refdisturb_2=false,
-    P_0=0.85*SysData.S_b,
-    Q_0=-0.163501111031896*SysData.S_b,
-    angle_0=0.080629575357894)
+    vref0=1.097573933623472,
+    vf0=1.402994304406186,
+    P_0=85000000,
+    Q_0=-10859708.8920594,
+    angle_0=0.08141611894)
     annotation (Placement(transformation(extent={{160,80},{140,100}})));
   Generation_Groups.Gen3 gen3(
     v_0=1.040000000000000,
@@ -174,8 +179,10 @@ model IEEE_9_Buses_Statcom "IEEE (WSCC) 9-bus 3-machine test system with STATCOM
     tstart_3=2,
     refdisturb_3=false,
     V_b=16500,
-    Q_0=0.248141030193284*SysData.S_b,
-    P_0=0.715870954698346*SysData.S_b) annotation (Placement(transformation(
+    vref0=1.095242742681042,
+    vf0=1.082148046273888,
+    P_0=71641021.4993680,
+    Q_0=27045927.9594234) annotation (Placement(transformation(
         extent={{-10,-10},{10,10}},
         rotation=90,
         origin={0,-106})));
