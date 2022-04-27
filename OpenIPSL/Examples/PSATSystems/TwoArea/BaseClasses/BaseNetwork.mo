@@ -1,10 +1,10 @@
 within OpenIPSL.Examples.PSATSystems.TwoArea.BaseClasses;
-partial model BaseNetwork
+partial model BaseNetwork "Base network for TwoArea test system"
   OpenIPSL.Electrical.Machines.PSAT.Order3 order3(
-    Sn=991,
-    Vn=20,
-    V_b=20,
-    V_0=1.081,
+    Sn=991000000,
+    Vn=20000,
+    V_b=20000,
+    v_0=1.081,
     ra=0,
     xd=2,
     x1d=0.245,
@@ -13,8 +13,8 @@ partial model BaseNetwork
     M=6,
     D=0,
     angle_0=0,
-    P_0=-110.0000000000006,
-    Q_0=30.3786000438159) annotation (Placement(transformation(
+    P_0=-110000000.0000006,
+    Q_0=30378600.0438159) annotation (Placement(transformation(
         extent={{-10,-10},{10,10}},
         rotation=180,
         origin={150,-80})));
@@ -42,17 +42,17 @@ partial model BaseNetwork
   OpenIPSL.Electrical.Buses.Bus B6
     annotation (Placement(transformation(extent={{-48,22},{-32,38}})));
   OpenIPSL.Electrical.Branches.PSAT.TwoWindingTransformer Tr16(
-    V_b=20,
-    Vn=20,
-    Sn=100,
+    V_b=20000,
+    Vn=20000,
+    Sn=100000000,
     rT=0,
     xT=0.005) annotation (Placement(transformation(extent={{-66,24},{-52,36}})));
   OpenIPSL.Electrical.Buses.Bus B7
     annotation (Placement(transformation(extent={{-8,22},{8,38}})));
   OpenIPSL.Electrical.Branches.PSAT.TwoWindingTransformer Tr67(
-    V_b=20,
-    Vn=20,
-    Sn=100,
+    V_b=20000,
+    Vn=20000,
+    Sn=100000000,
     rT=0,
     xT=0.005) annotation (Placement(transformation(extent={{-26,24},{-14,36}})));
   OpenIPSL.Electrical.Buses.Bus B8
@@ -60,21 +60,21 @@ partial model BaseNetwork
   OpenIPSL.Electrical.Buses.Bus B9
     annotation (Placement(transformation(extent={{72,22},{88,38}})));
   OpenIPSL.Electrical.Branches.PSAT.TwoWindingTransformer Tr78(
-    V_b=20,
-    Vn=20,
-    Sn=100,
+    V_b=20000,
+    Vn=20000,
+    Sn=100000000,
     rT=0,
     xT=0.005) annotation (Placement(transformation(extent={{14,24},{26,36}})));
   OpenIPSL.Electrical.Branches.PSAT.TwoWindingTransformer Tr89(
-    V_b=20,
-    Vn=20,
-    Sn=100,
+    V_b=20000,
+    Vn=20000,
+    Sn=100000000,
     rT=0,
     xT=0.005) annotation (Placement(transformation(extent={{54,24},{66,36}})));
   OpenIPSL.Electrical.Branches.PSAT.TwoWindingTransformer Tr49(
-    V_b=20,
-    Vn=20,
-    Sn=100,
+    V_b=20000,
+    Vn=20000,
+    Sn=100000000,
     rT=0,
     xT=0.005) annotation (Placement(transformation(extent={{94,24},{106,36}})));
   OpenIPSL.Electrical.Buses.Bus B10
@@ -228,28 +228,28 @@ partial model BaseNetwork
   OpenIPSL.Electrical.Buses.Bus B31
     annotation (Placement(transformation(extent={{72,-88},{88,-72}})));
   OpenIPSL.Electrical.Branches.PSAT.TwoWindingTransformer Tr528(
-    V_b=20,
-    Vn=20,
+    V_b=20000,
+    Vn=20000,
     rT=0,
     xT=0.005) annotation (Placement(transformation(extent={{-66,-86},{-52,-74}})));
   OpenIPSL.Electrical.Branches.PSAT.TwoWindingTransformer Tr2829(
-    V_b=20,
-    Vn=20,
+    V_b=20000,
+    Vn=20000,
     rT=0,
     xT=0.005) annotation (Placement(transformation(extent={{-26,-86},{-12,-74}})));
   OpenIPSL.Electrical.Branches.PSAT.TwoWindingTransformer Tr2930(
-    V_b=20,
-    Vn=20,
+    V_b=20000,
+    Vn=20000,
     rT=0,
     xT=0.005) annotation (Placement(transformation(extent={{14,-86},{28,-74}})));
   OpenIPSL.Electrical.Branches.PSAT.TwoWindingTransformer Tr3031(
-    V_b=20,
-    Vn=20,
+    V_b=20000,
+    Vn=20000,
     rT=0,
     xT=0.005) annotation (Placement(transformation(extent={{52,-86},{66,-74}})));
   OpenIPSL.Electrical.Branches.PSAT.TwoWindingTransformer Tr231(
-    V_b=20,
-    Vn=20,
+    V_b=20000,
+    Vn=20000,
     rT=0,
     xT=0.005) annotation (Placement(transformation(extent={{94,-86},{108,-74}})));
   inner OpenIPSL.Electrical.SystemBase SysData
@@ -373,8 +373,8 @@ equation
     annotation (Line(points={{60,-40},{68.3,-40}}, color={0,0,255}));
   connect(L318.p, B18.p) annotation (Line(points={{73.7,-40},{110,-40},{110,0},{100,0}},
                     color={0,0,255}));
-  connect(pwFault.p, L318.n) annotation (Line(points={{64,-53.3333},{64,-40},{68.3,-40}},
-                      color={0,0,255}));
+  connect(pwFault.p, L318.n) annotation (Line(points={{64,-53.3333},{64,-40},{
+          68.3,-40}}, color={0,0,255}));
   connect(B28.p, Tr2829.p)
     annotation (Line(points={{-40,-80},{-26.7,-80}}, color={0,0,255}));
   connect(B2.p, order3.p) annotation (Line(points={{120,-80},{140,-80},{140,-80}},
@@ -389,23 +389,7 @@ equation
     Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-180,-100},{
             180,100}})),
     Documentation(info="<html>
-<table cellspacing=\"1\" cellpadding=\"1\" border=\"1\">
-<tr>
-<td><p>Reference</p></td>
-<td><p></p></td>
-</tr>
-<tr>
-<td><p>Last update</p></td>
-<td>Tin Rabuzin, May 2016</td>
-</tr>
-<tr>
-<td><p>Author</p></td>
-<td><p>Yuwa Chompoobutrgool, SmarTS Lab, KTH Royal Institute of Technology</p></td>
-</tr>
-<tr>
-<td><p>Contact</p></td>
-<td><p><a href=\"mailto:luigiv@kth.se\">luigiv@kth.se</a></p></td>
-</tr>
-</table>
+<p>This base network is extended in the example systems from <strong>TwoArea</strong> subpackage. It contains a generator model connected to bus 2, represented by an order 3 machine, from PSAT.</p>
+<p>The 31-bus system has a three-phase-to-ground fault event occurring on bus 3 at 2 seconds and lasting for 100ms.</p>
 </html>"));
 end BaseNetwork;

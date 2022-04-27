@@ -69,23 +69,6 @@ equation
           textString="Discrete
 AVR2")}),
     Documentation(info="<html>
-<table cellspacing=\"1\" cellpadding=\"1\" border=\"1\">
-<tr>
-<td><p>Reference</p></td>
-<td><p></p></td>
-</tr>
-<tr>
-<td><p>Last update</p></td>
-<td></td>
-</tr>
-<tr>
-<td><p>Author</p></td>
-<td><p>Yuwa Chompoobutrgool, SmarTS Lab, KTH Royal Institute of Technology</p></td>
-</tr>
-<tr>
-<td><p>Contact</p></td>
-<td><p><a href=\"mailto:luigiv@kth.se\">luigiv@kth.se</a></p></td>
-</tr>
-</table>
+<p>This AVR model is supposed to represent the Type 2 from PSAT. However, differently from the model that is found in the main body of the library, this AVR has a discrete implementation.</p>
 </html>"));
 end AVRTypeII_discrete;

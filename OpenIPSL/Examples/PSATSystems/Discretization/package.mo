@@ -1,4 +1,8 @@
 within OpenIPSL.Examples.PSATSystems;
-package Discretization "contains test systems to validate discrete AVR models"
-annotation (Documentation);
+package Discretization "Test systems used to validate discrete AVR models"
+  extends Modelica.Icons.ExamplesPackage;
+
+annotation (Documentation(info="<html>
+
+</html>"));
 end Discretization;

@@ -1,5 +1,6 @@
 within OpenIPSL.Examples.PSATSystems.ThreeArea;
 model ThirdOrder_AVRII "ABC system with 3rd-order machines and AVR Type II"
+  extends Modelica.Icons.Example;
   extends OpenIPSL.Examples.PSATSystems.ThreeArea.BaseClasses.BaseOrder3;
   OpenIPSL.Electrical.Controls.PSAT.AVR.AVRTypeII Exc1(
     Te=0.01,
@@ -47,30 +48,21 @@ equation
   annotation (
     Diagram(coordinateSystem(extent={{-180,-120},{180,120}},
           preserveAspectRatio=false)),
-    Icon(coordinateSystem(extent={{-180,-120},{180,120}})),
+    Icon(coordinateSystem(extent={{-100,-100},{100,100}})),
     experiment(
       StopTime=20,
       __Dymola_fixedstepsize=0.001,
       __Dymola_Algorithm="Rkfix2"),
     __Dymola_experimentSetupOutput,
     Documentation(info="<html>
-<table cellspacing=\"1\" cellpadding=\"1\" border=\"1\">
-<tr>
-<td><p>Reference</p></td>
-<td><p></p></td>
-</tr>
-<tr>
-<td><p>Last update</p></td>
-<td>Tin Rabuzin, May 2016</td>
-</tr>
-<tr>
-<td><p>Author</p></td>
-<td><p>Yuwa Chompoobutrgool, SmarTS Lab, KTH Royal Institute of Technology</p></td>
-</tr>
-<tr>
-<td><p>Contact</p></td>
-<td><p><a href=\"mailto:luigiv@kth.se\">luigiv@kth.se</a></p></td>
-</tr>
-</table>
+<p>This system is tests the third order machine with a type 2 AVR, from PSAT. Simulate the system for 20 seconds using the <code>Rkfix2</code> integrator.</p>
+<p>Variables of interest are:</p>
+<ul>
+<li><code>order2.w</code></li>
+<li><code>order3_1.w</code></li>
+<li><code>order3_2.w</code></li>
+</ul>
+<p>Note that the oscillations illustrate a clear example of non-coherent machines.</p>
+<p>Compare these results with the ones from the other example systems within the <strong>ThreeArea</strong> subpackage.</p>
 </html>"));
 end ThirdOrder_AVRII;

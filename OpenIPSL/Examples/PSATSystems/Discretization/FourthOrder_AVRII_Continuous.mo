@@ -1,6 +1,6 @@
 within OpenIPSL.Examples.PSATSystems.Discretization;
-model FourthOrder_AVRII_Continuous
-  "5-bus system with 4th-order machine and AVR Type II"
+model FourthOrder_AVRII_Continuous "5-bus system with 4th-order machine and AVR Type II"
+  extends Modelica.Icons.Example;
   extends OpenIPSL.Examples.PSATSystems.TwoAreaOld.BaseClasses.BaseOrder4;
   OpenIPSL.Electrical.Controls.PSAT.AVR.AVRTypeII aVRTypeII(
     v0=1.05,
@@ -28,30 +28,17 @@ equation
   annotation (
     Diagram(coordinateSystem(extent={{-160,-80},{160,80}}, preserveAspectRatio=
             false)),
-    Icon(coordinateSystem(extent={{-160,-80},{160,80}})),
+    Icon(coordinateSystem(extent={{-100,-100},{100,100}})),
     experiment(
       StopTime=20,
-      __Dymola_fixedstepsize=0.0001,
-      __Dymola_Algorithm="Rkfix2"),
+      __Dymola_fixedstepsize=0.01,
+      __Dymola_Algorithm="Euler"),
     __Dymola_experimentSetupOutput,
     Documentation(info="<html>
-<table cellspacing=\"1\" cellpadding=\"1\" border=\"1\">
-<tr>
-<td><p>Reference</p></td>
-<td><p></p></td>
-</tr>
-<tr>
-<td><p>Last update</p></td>
-<td>Tin Rabuzin, May 2016</td>
-</tr>
-<tr>
-<td><p>Author</p></td>
-<td><p>Yuwa Chompoobutrgool, SmarTS Lab, KTH Royal Institute of Technology</p></td>
-</tr>
-<tr>
-<td><p>Contact</p></td>
-<td><p><a href=\"mailto:luigiv@kth.se\">luigiv@kth.se</a></p></td>
-</tr>
-</table>
+<p>Simulate for 20 seconds. Variables of interest are:</p>
+<ul>
+<li><code>aVRTypeII.vf</code></li>
+</ul>
+<p>Compare these results with the ones from the other example systems within the <strong>Discretization</strong> subpackage.</p>
 </html>"));
 end FourthOrder_AVRII_Continuous;

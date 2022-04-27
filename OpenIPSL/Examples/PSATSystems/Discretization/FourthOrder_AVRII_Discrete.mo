@@ -1,8 +1,8 @@
 within OpenIPSL.Examples.PSATSystems.Discretization;
-model FourthOrder_AVRII_Discrete
-  "5-bus system with 4th-order machine and AVRTypeII_Discrete"
+model FourthOrder_AVRII_Discrete "5-bus system with 4th-order machine and AVRTypeII_Discrete"
+  extends Modelica.Icons.Example;
   extends OpenIPSL.Examples.PSATSystems.TwoAreaOld.BaseClasses.BaseOrder4;
-  PSAT_Systems.Discretization.DiscreteAVR.AVRTypeII_discrete aVRTypeII(
+  DiscreteAVR.AVRTypeII_discrete aVRTypeII(
     v0=1.05,
     vf0=1.046883400898693,
     vref0=1.198705028536746,
@@ -57,13 +57,13 @@ equation
       thickness=0.5,
       smooth=Smooth.None));
   connect(hold1.y, order4.vf)
-    annotation (Line(points={{-123.4,6},{-112,6},{-112,5}}, color={0,0,127}));
+    annotation (Line(points={{-123.4,6},{-114,6},{-114,5}}, color={0,0,127}));
   connect(sample2.u, order4.v) annotation (Line(points={{-191.2,0},{-200,0},{-200,
           -20},{-88,-20},{-88,3},{-91,3}}, color={0,0,127}));
   annotation (
     Diagram(coordinateSystem(extent={{-220,-100},{160,100}},
           preserveAspectRatio=false)),
-    Icon(coordinateSystem(extent={{-220,-100},{160,100}})),
+    Icon(coordinateSystem(extent={{-100,-100},{100,100}})),
     experiment(
       StopTime=20,
       Interval=0.01,
@@ -72,23 +72,10 @@ equation
       __Dymola_Algorithm="Euler"),
     __Dymola_experimentSetupOutput,
     Documentation(info="<html>
-<table cellspacing=\"1\" cellpadding=\"1\" border=\"1\">
-<tr>
-<td><p>Reference</p></td>
-<td><p></p></td>
-</tr>
-<tr>
-<td><p>Last update</p></td>
-<td>Tin Rabuzin, May 2016</td>
-</tr>
-<tr>
-<td><p>Author</p></td>
-<td><p>Yuwa Chompoobutrgool, SmarTS Lab, KTH Royal Institute of Technology</p></td>
-</tr>
-<tr>
-<td><p>Contact</p></td>
-<td><p><a href=\"mailto:luigiv@kth.se\">luigiv@kth.se</a></p></td>
-</tr>
-</table>
+<p>Simulate for 20 seconds. Variables of interest are:</p>
+<ul>
+<li><code>aVRTypeII.vf</code></li>
+</ul>
+<p>Compare these results with the ones from the other example systems within the <strong>Discretization</strong> subpackage.</p>
 </html>"));
 end FourthOrder_AVRII_Discrete;

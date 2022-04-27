@@ -1,31 +1,31 @@
 within OpenIPSL.Examples.PSATSystems.ThreeArea.BaseClasses;
-partial model BaseNetwork
+partial model BaseNetwork "Base network for ThreeArea test system"
 
   OpenIPSL.Electrical.Machines.PSAT.Order3 order3_2(
-    Sn=900,
-    Vn=1,
+    Sn=900000000,
+    Vn=1000,
     ra=0,
     xd=1.8,
     x1d=0.3,
     M=7,
-    V_0=1.05,
+    v_0=1.05,
     angle_0=0.755059086011694,
-    P_0=50.0000000000002,
-    Q_0=21.9157659600514,
+    P_0=50000000.0000002,
+    Q_0=21915765.9600514,
     D=2,
     T1d0=8,
     xq=1.7,
     V_b=1000)
     annotation (Placement(transformation(extent={{152,-10},{132,10}})));
   OpenIPSL.Electrical.Machines.PSAT.Order2 order2(
-    Sn=900,
-    V_0=1.050000000000000,
+    Sn=900000000,
+    v_0=1.050000000000000,
     ra=0,
     M=14,
     D=2,
     x1d=0.3,
-    P_0=-99.9999999999999,
-    Q_0=41.3913357523525,
+    P_0=-99999999.9999999,
+    Q_0=41391335.7523525,
     V_b=1000,
     Vn=1000) annotation (Placement(transformation(
         extent={{-10,-10},{10,10}},
@@ -180,142 +180,126 @@ partial model BaseNetwork
     annotation (Placement(transformation(extent={{-180,100},{-120,120}})));
 equation
   connect(pwLine1to4.n, B100.p) annotation (Line(
-      points={{-84.5,-54.5833},{-84,-54.5833},{-84,-60}},
+      points={{-84.5,-53.65},{-84,-53.65},{-84,-60}},
       color={0,0,255},
       smooth=Smooth.None));
   connect(pwLine1to4.p, B200.p) annotation (Line(
-      points={{-84.5,-46.4167},{-84,-46.4167},{-84,-40}},
+      points={{-84.5,-47.35},{-84,-47.35},{-84,-40}},
       color={0,0,255},
       smooth=Smooth.None));
   connect(pwLine1to1.p, B300.p) annotation (Line(
-      points={{-84,-27.5},{-84,-20}},
+      points={{-84,-28.3},{-84,-20}},
       color={0,0,255},
       smooth=Smooth.None));
   connect(B500.p, pwLine1to11.p) annotation (Line(
-      points={{-84,20},{-84,27.4167},{-84.5,27.4167}},
+      points={{-84,20},{-84,28.35},{-84.5,28.35}},
       color={0,0,255},
       smooth=Smooth.None));
   connect(B600.p, pwLine1to11.n) annotation (Line(
-      points={{-84,40},{-84,35.5833},{-84.5,35.5833}},
+      points={{-84,40},{-84,34.65},{-84.5,34.65}},
       color={0,0,255},
       smooth=Smooth.None));
   connect(B600.p, pwLine1to12.p) annotation (Line(
-      points={{-84,40},{-84,52.4167},{-83.5,52.4167}},
+      points={{-84,40},{-84,53.35},{-83.5,53.35}},
       color={0,0,255},
       smooth=Smooth.None));
   connect(pwLine1to13.n, B700.p) annotation (Line(
-      points={{-85.5,80},{-80,80}},
+      points={{-86.3,80},{-80,80}},
       color={0,0,255},
       smooth=Smooth.None));
   connect(pwLine1to13.p, B800.p) annotation (Line(
-      points={{-92.5,80},{-100,80}},
+      points={{-91.7,80},{-100,80}},
       color={0,0,255},
       smooth=Smooth.None));
   connect(B400.p, pwLine1to3.p) annotation (Line(
-      points={{0,0},{5.5,0}},
+      points={{0,0},{6.3,0}},
       color={0,0,255},
       smooth=Smooth.None));
   connect(pwLine1to3.n, B900.p) annotation (Line(
-      points={{12.5,0},{20,0}},
+      points={{11.7,0},{20,0}},
       color={0,0,255},
       smooth=Smooth.None));
   connect(B1000.p, pwLine1to9.p) annotation (Line(
-      points={{80,0},{85.5,0}},
+      points={{80,0},{86.3,0}},
       color={0,0,255},
       smooth=Smooth.None));
   connect(pwLine1to9.n, B1100.p) annotation (Line(
-      points={{92.5,0},{100,0}},
+      points={{91.7,0},{100,0}},
       color={0,0,255},
       smooth=Smooth.None));
   connect(B1100.p, pwLine1to10.p) annotation (Line(
-      points={{100,0},{105.5,0}},
+      points={{100,0},{106.3,0}},
       color={0,0,255},
       smooth=Smooth.None));
   connect(pwLine1to10.n, B1200.p) annotation (Line(
-      points={{112.5,0},{120,0}},
+      points={{111.7,0},{120,0}},
       color={0,0,255},
       smooth=Smooth.None));
   connect(pwLine1to15.n, B1000.p) annotation (Line(
-      points={{-43.5,80},{76,80},{76,0},{80,0}},
+      points={{-44.3,80},{76,80},{76,0},{80,0}},
       color={0,0,255},
       smooth=Smooth.None));
   connect(pwLine1to15.p, B700.p) annotation (Line(
-      points={{-50.5,80},{-80,80}},
+      points={{-49.7,80},{-80,80}},
       color={0,0,255},
       smooth=Smooth.None));
   connect(pwLine1to6.n, B1300.p) annotation (Line(
-      points={{34.5,0},{40,0}},
+      points={{33.7,0},{40,0}},
       color={0,0,255},
       smooth=Smooth.None));
   connect(B1300.p, pwLine1to7.p) annotation (Line(
-      points={{40,0},{45.5,0}},
+      points={{40,0},{46.3,0}},
       color={0,0,255},
       smooth=Smooth.None));
   connect(B1400.p, pwLine1to8.p) annotation (Line(
-      points={{60,0},{65.5,0}},
+      points={{60,0},{66.3,0}},
       color={0,0,255},
       smooth=Smooth.None));
   connect(pwLine1to8.n, B1000.p) annotation (Line(
-      points={{72.5,0},{80,0}},
+      points={{71.7,0},{80,0}},
       color={0,0,255},
       smooth=Smooth.None));
   connect(pwLine1to7.n, B1400.p) annotation (Line(
-      points={{52.5,0},{60,0}},
+      points={{51.7,0},{60,0}},
       color={0,0,255},
       smooth=Smooth.None));
   connect(pwFault.p, pwLine1to9.p)
-    annotation (Line(points={{84,-19.3333},{84,0},{85.5,0}}, color={0,0,255}));
-  connect(pwLine1to5.n, B1000.p) annotation (Line(points={{52.5,20},{76,20},{76,
+    annotation (Line(points={{84,-19.3333},{84,0},{86.3,0}}, color={0,0,255}));
+  connect(pwLine1to5.n, B1000.p) annotation (Line(points={{51.7,20},{76,20},{76,
           0},{80,0}}, color={0,0,255}));
   connect(pwLine1to6.p, B900.p)
-    annotation (Line(points={{27.5,0},{23.75,0},{20,0}}, color={0,0,255}));
-  connect(pwLine1to5.p, B900.p) annotation (Line(points={{45.5,20},{24,20},{24,
+    annotation (Line(points={{28.3,0},{28.3,0},{20,0}},  color={0,0,255}));
+  connect(pwLine1to5.p, B900.p) annotation (Line(points={{46.3,20},{24,20},{24,
           0},{20,0}}, color={0,0,255}));
-  connect(pwLine1to12.n, B700.p) annotation (Line(points={{-83.5,60.5833},{-83.5,
+  connect(pwLine1to12.n, B700.p) annotation (Line(points={{-83.5,59.65},{-83.5,
           80},{-80,80}}, color={0,0,255}));
   connect(pwLine1to2.n, B400.p)
-    annotation (Line(points={{-47.5,0},{-47.5,0},{0,0}}, color={0,0,255}));
-  connect(pwLine1to1.n, B200.p) annotation (Line(points={{-84,-34.5},{-84,-37.25},
+    annotation (Line(points={{-48.3,0},{-48.3,0},{0,0}}, color={0,0,255}));
+  connect(pwLine1to1.n, B200.p) annotation (Line(points={{-84,-33.7},{-84,-33.7},
           {-84,-40}}, color={0,0,255}));
-  connect(order2.p, B100.p) annotation (Line(points={{-84.0496,-69},{-84.0496,-64.5},
-          {-84,-64.5},{-84,-60}}, color={0,0,255}));
-  connect(order2.pm0, order2.pm) annotation (Line(points={{-73,-88},{-70,-88},{
-          -70,-92},{-78,-92},{-78,-90},{-79,-90}}, color={0,0,127}));
-  connect(order2.vf0, order2.vf) annotation (Line(points={{-95,-88},{-96,-88},{
-          -96,-92},{-89,-92},{-89,-90}}, color={0,0,127}));
-  connect(pwLine1to14.n, B500.p) annotation (Line(points={{-53.5,8.99998},{-84,
+  connect(order2.p, B100.p) annotation (Line(points={{-84,-70},{-84,-64.5},{-84,
+          -64.5},{-84,-60}},      color={0,0,255}));
+  connect(order2.pm0, order2.pm) annotation (Line(points={{-73,-88},{-70,-88},
+          {-70,-92},{-78,-92},{-78,-92},{-79,-92}},color={0,0,127}));
+  connect(order2.vf0, order2.vf) annotation (Line(points={{-95,-88},{-96,-88},
+          {-96,-92},{-89,-92},{-89,-92}},color={0,0,127}));
+  connect(pwLine1to14.n, B500.p) annotation (Line(points={{-52.7,8.99998},{-84,
           8.99998},{-84,20}}, color={0,0,255}));
-  connect(pwLine1to14.p, B400.p) annotation (Line(points={{-46.5,8.99998},{-4,
+  connect(pwLine1to14.p, B400.p) annotation (Line(points={{-47.3,8.99998},{-4,
           8.99998},{-4,0},{0,0}}, color={0,0,255}));
   connect(pwLine1to2.p, B300.p)
-    annotation (Line(points={{-54.5,0},{-84,0},{-84,-20}}, color={0,0,255}));
+    annotation (Line(points={{-53.7,0},{-84,0},{-84,-20}}, color={0,0,255}));
   connect(B1200.p, order3_2.p)
-    annotation (Line(points={{120,0},{131,0},{131,0.04964}}, color={0,0,255}));
+    annotation (Line(points={{120,0},{132,0},{132,0}},       color={0,0,255}));
   connect(order3_2.pm0, order3_2.pm) annotation (Line(points={{150,-11},{150,-14},
-          {156,-14},{156,-5},{152,-5}}, color={0,0,127}));
+          {156,-14},{156,-5},{154,-5}}, color={0,0,127}));
   annotation (
     Icon(coordinateSystem(preserveAspectRatio=false, extent={{-180,-120},{180,
             120}})),
     Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-180,-120},{
             180,120}})),
     Documentation(info="<html>
-<table cellspacing=\"1\" cellpadding=\"1\" border=\"1\">
-<tr>
-<td><p>Reference</p></td>
-<td><p></p></td>
-</tr>
-<tr>
-<td><p>Last update</p></td>
-<td>Tin Rabuzin, May 2016</td>
-</tr>
-<tr>
-<td><p>Author</p></td>
-<td><p>Yuwa Chompoobutrgool, SmarTS Lab, KTH Royal Institute of Technology</p></td>
-</tr>
-<tr>
-<td><p>Contact</p></td>
-<td><p><a href=\"mailto:luigiv@kth.se\">luigiv@kth.se</a></p></td>
-</tr>
-</table>
+<p>This base network is extended in the example systems from <strong>ThreeArea</strong> subpackage. It contains a generator model connected to bus 100, represented by an order 2 machine, and a generator model connected to bus 1200, represented by an order 3 machine, both from PSAT.</p>
+<p>The 14-bus 3-area system has a three-phase-to-ground fault event occurring on bus 1000 at 2 seconds and lasting for 100ms.</p>
 </html>"));
 end BaseNetwork;

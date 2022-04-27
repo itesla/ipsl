@@ -1,5 +1,6 @@
 within OpenIPSL.Examples.PSATSystems.TwoAreaOld;
 model SixthOrder_AVRI "5-bus system with 6th-order machine and AVR Type I"
+  extends Modelica.Icons.Example;
   extends OpenIPSL.Examples.PSATSystems.TwoAreaOld.BaseClasses.BaseOrder6;
   OpenIPSL.Electrical.Controls.PSAT.AVR.AVRTypeI aVRTypeI(
     v0=1.05,
@@ -22,30 +23,24 @@ equation
   annotation (
     Diagram(coordinateSystem(extent={{-160,-80},{160,80}}, preserveAspectRatio=
             false)),
-    Icon(coordinateSystem(extent={{-160,-80},{160,80}})),
+    Icon(coordinateSystem(extent={{-100,-100},{100,100}})),
     experiment(
       StopTime=20,
       __Dymola_fixedstepsize=0.0001,
       __Dymola_Algorithm="Rkfix2"),
     __Dymola_experimentSetupOutput,
     Documentation(info="<html>
-<table cellspacing=\"1\" cellpadding=\"1\" border=\"1\">
-<tr>
-<td><p>Reference</p></td>
-<td><p></p></td>
-</tr>
-<tr>
-<td><p>Last update</p></td>
-<td>Tin Rabuzin, May 2016</td>
-</tr>
-<tr>
-<td><p>Author</p></td>
-<td><p>Yuwa Chompoobutrgool, SmarTS Lab, KTH Royal Institute of Technology</p></td>
-</tr>
-<tr>
-<td><p>Contact</p></td>
-<td><p><a href=\"mailto:luigiv@kth.se\">luigiv@kth.se</a></p></td>
-</tr>
-</table>
+<p>This system tests the sixth order machine with a type 1 AVR, from PSAT. Simulate the system for 20 seconds using the <code>Rkfix2</code> integrator.</p>
+<p>Variables of interest are related to the (non-)coherency observed between the synchronous machines:</p>
+<ul>
+<li><code>order2.w</code></li>
+<li><code>order6.w</code></li>
+</ul>
+<p>Note that the oscillations, which present some considerable damping, have opposing phases, meaning that one machine is swinging against the other, in a clear example of non-coherent machines. In addition, plot:</p>
+<ul>
+<li><code>bus4.v</code></li>
+<li><code>bus5.v</code></li>
+</ul>
+<p>Compare these results with the ones from the other example systems within the <strong>TwoAreaOld</strong> subpackage.</p>
 </html>"));
 end SixthOrder_AVRI;

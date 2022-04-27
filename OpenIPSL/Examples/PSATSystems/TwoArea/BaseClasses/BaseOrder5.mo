@@ -1,15 +1,15 @@
 within OpenIPSL.Examples.PSATSystems.TwoArea.BaseClasses;
-partial model BaseOrder5
+partial model BaseOrder5 "Template for base network and a 5th order generator"
   extends BaseNetwork;
   OpenIPSL.Electrical.Machines.PSAT.Order5_Type2 order5(
-    Sn=991,
+    Sn=991000000,
     Vn=20000,
     V_b=20000,
-    V_0=1.05,
+    v_0=1.05,
     ra=0,
     T1d0=5,
-    P_0=109.9999999999998,
-    Q_0=-13.6620666228504,
+    P_0=109999999.9999998,
+    Q_0=-13662066.6228504,
     angle_0=0.145884959290248,
     xd=1.1,
     xq=0.7,
@@ -23,28 +23,11 @@ partial model BaseOrder5
     Taa=0.002)
     annotation (Placement(transformation(extent={{-120,20},{-100,40}})));
 equation
-  connect(order5.p, B1.p) annotation (Line(points={{-99,30.0496},{-89.5,30.0496},
-          {-89.5,30},{-80,30}}, color={0,0,255}));
-  connect(order5.pm, order5.pm0) annotation (Line(points={{-120,25},{-122,25},{
-          -122,19},{-118,19}}, color={0,0,127}));
+  connect(order5.p, B1.p) annotation (Line(points={{-100,30},{-89.5,30},{-89.5,30},
+          {-80,30}},            color={0,0,255}));
+  connect(order5.pm, order5.pm0) annotation (Line(points={{-122,25},{-122,25},{-122,
+          19},{-118,19}},      color={0,0,127}));
   annotation (Documentation(info="<html>
-<table cellspacing=\"1\" cellpadding=\"1\" border=\"1\">
-<tr>
-<td><p>Reference</p></td>
-<td><p></p></td>
-</tr>
-<tr>
-<td><p>Last update</p></td>
-<td>Tin Rabuzin, May 2016</td>
-</tr>
-<tr>
-<td><p>Author</p></td>
-<td><p>Yuwa Chompoobutrgool, SmarTS Lab, KTH Royal Institute of Technology</p></td>
-</tr>
-<tr>
-<td><p>Contact</p></td>
-<td><p><a href=\"mailto:luigiv@kth.se\">luigiv@kth.se</a></p></td>
-</tr>
-</table>
+<p>Extension of <strong>BaseNetwork</strong> but with a fifth order machine connected to bus 1.</p>
 </html>"));
 end BaseOrder5;
