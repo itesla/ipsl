@@ -1,17 +1,16 @@
 within OpenIPSL.Examples.N44.Original;
-model Nordic44_Original_Case
-  "Original version of the original Nordic 44 model"
-
+model Nordic44_Original_Case "Original version of the original Nordic 44 model"
+  extends Modelica.Icons.Example;
   OpenIPSL.Electrical.Buses.BusExt bus_7020(
     nn=1,
     np=1,
-    V_0=pSSE_data.voltages.V7020,
+    v_0=pSSE_data.voltages.V7020,
     angle_0=pSSE_data.voltages.A7020,
-    V_b=420)
+    V_b=420000)
     annotation (Placement(transformation(extent={{-282,-20},{-280,-10}})));
   OpenIPSL.Electrical.Loads.PSSE.Load Load1_bus7020(
-    V_b=420,
-    V_0=pSSE_data.voltages.V7020,
+    V_b=420000,
+    v_0=pSSE_data.voltages.V7020,
     angle_0=pSSE_data.voltages.A7020,
     P_0=pSSE_data.powers.PL7020,
     Q_0=pSSE_data.powers.QL7020,
@@ -22,13 +21,13 @@ model Nordic44_Original_Case
   OpenIPSL.Electrical.Buses.BusExt bus_7000(
     nn=16,
     np=3,
-    V_0=pSSE_data.voltages.V7000,
+    v_0=pSSE_data.voltages.V7000,
     angle_0=pSSE_data.voltages.A7000,
-    V_b=420)
+    V_b=420000)
     annotation (Placement(transformation(extent={{-272,-108},{-270,-36}})));
   OpenIPSL.Electrical.Loads.PSSE.Load Load1_bus7000(
-    V_b=420,
-    V_0=pSSE_data.voltages.V7000,
+    V_b=420000,
+    v_0=pSSE_data.voltages.V7000,
     angle_0=pSSE_data.voltages.A7000,
     P_0=pSSE_data.powers.PL7000,
     Q_0=pSSE_data.powers.QL7000,
@@ -37,8 +36,8 @@ model Nordic44_Original_Case
         rotation=270,
         origin={-286,-36})));
   OpenIPSL.Electrical.Loads.PSSE.Load Load2_bus7000(
-    V_b=420,
-    V_0=pSSE_data.voltages.V7000,
+    V_b=420000,
+    v_0=pSSE_data.voltages.V7000,
     angle_0=pSSE_data.voltages.A7000,
     P_0=pSSE_data.powers.PL7000,
     Q_0=pSSE_data.powers.QL7000,
@@ -47,8 +46,8 @@ model Nordic44_Original_Case
         rotation=270,
         origin={-286,-42})));
   OpenIPSL.Electrical.Loads.PSSE.Load Load3_bus7000(
-    V_b=420,
-    V_0=pSSE_data.voltages.V7000,
+    V_b=420000,
+    v_0=pSSE_data.voltages.V7000,
     angle_0=pSSE_data.voltages.A7000,
     P_0=pSSE_data.powers.PL7000,
     Q_0=pSSE_data.powers.QL7000,
@@ -57,8 +56,8 @@ model Nordic44_Original_Case
         rotation=270,
         origin={-286,-48})));
   OpenIPSL.Electrical.Loads.PSSE.Load Load4_bus7000(
-    V_b=420,
-    V_0=pSSE_data.voltages.V7000,
+    V_b=420000,
+    v_0=pSSE_data.voltages.V7000,
     angle_0=pSSE_data.voltages.A7000,
     P_0=pSSE_data.powers.PL7000,
     Q_0=pSSE_data.powers.QL7000,
@@ -67,8 +66,8 @@ model Nordic44_Original_Case
         rotation=270,
         origin={-286,-54})));
   OpenIPSL.Electrical.Loads.PSSE.Load Load5_bus7000(
-    V_b=420,
-    V_0=pSSE_data.voltages.V7000,
+    V_b=420000,
+    v_0=pSSE_data.voltages.V7000,
     angle_0=pSSE_data.voltages.A7000,
     P_0=pSSE_data.powers.PL7000,
     Q_0=pSSE_data.powers.QL7000,
@@ -97,13 +96,13 @@ model Nordic44_Original_Case
   OpenIPSL.Electrical.Buses.BusExt bus_7010(
     nn=1,
     np=1,
-    V_0=pSSE_data.voltages.V7010,
+    v_0=pSSE_data.voltages.V7010,
     angle_0=pSSE_data.voltages.A7010,
-    V_b=420)
+    V_b=420000)
     annotation (Placement(transformation(extent={{-282,0},{-280,10}})));
   OpenIPSL.Electrical.Loads.PSSE.Load Load1_bus7010(
-    V_b=420,
-    V_0=pSSE_data.voltages.V7010,
+    V_b=420000,
+    v_0=pSSE_data.voltages.V7010,
     angle_0=pSSE_data.voltages.A7010,
     P_0=pSSE_data.powers.PL7010,
     Q_0=pSSE_data.powers.QL7010,
@@ -118,8 +117,8 @@ model Nordic44_Original_Case
   Generators.Gen3_bus_7100 G3_bus7100
     annotation (Placement(transformation(extent={{-266,-26},{-260,-20}})));
   OpenIPSL.Electrical.Loads.PSSE.Load Load1_bus7100(
-    V_b=420,
-    V_0=pSSE_data.voltages.V7100,
+    V_b=420000,
+    v_0=pSSE_data.voltages.V7100,
     angle_0=pSSE_data.voltages.A7100,
     P_0=pSSE_data.powers.PL7100,
     Q_0=pSSE_data.powers.QL7100,
@@ -128,8 +127,8 @@ model Nordic44_Original_Case
         rotation=270,
         origin={-264,-30})));
   OpenIPSL.Electrical.Loads.PSSE.Load Load2_bus7100(
-    V_b=420,
-    V_0=pSSE_data.voltages.V7100,
+    V_b=420000,
+    v_0=pSSE_data.voltages.V7100,
     angle_0=pSSE_data.voltages.A7100,
     P_0=pSSE_data.powers.PL7100,
     Q_0=pSSE_data.powers.QL7100,
@@ -140,9 +139,9 @@ model Nordic44_Original_Case
   OpenIPSL.Electrical.Buses.BusExt bus_7100(
     nn=8,
     np=2,
-    V_0=pSSE_data.voltages.V7100,
+    v_0=pSSE_data.voltages.V7100,
     angle_0=pSSE_data.voltages.A7100,
-    V_b=420)
+    V_b=420000)
     annotation (Placement(transformation(extent={{-252,-52},{-250,-14}})));
   OpenIPSL.Electrical.Branches.PwLine line_7000_7010(
     R=0.000000,
@@ -187,9 +186,9 @@ model Nordic44_Original_Case
   OpenIPSL.Electrical.Buses.BusExt bus_3115(
     nn=6,
     np=4,
-    V_0=pSSE_data.voltages.V3115,
+    v_0=pSSE_data.voltages.V3115,
     angle_0=pSSE_data.voltages.A3115,
-    V_b=420)
+    V_b=420000)
     annotation (Placement(transformation(extent={{-228,-20},{-226,34}})));
   Generators.Gen3_bus_3115 G1_bus3115
     annotation (Placement(transformation(extent={{-242,14},{-236,20}})));
@@ -198,8 +197,8 @@ model Nordic44_Original_Case
   Generators.Gen3_bus_3115 G3_bus3115
     annotation (Placement(transformation(extent={{-242,0},{-236,6}})));
   OpenIPSL.Electrical.Loads.PSSE.Load Load_bus3115(
-    V_b=420,
-    V_0=pSSE_data.voltages.V3115,
+    V_b=420000,
+    v_0=pSSE_data.voltages.V3115,
     angle_0=pSSE_data.voltages.A3115,
     P_0=pSSE_data.powers.PL3115,
     Q_0=pSSE_data.powers.QL3115,
@@ -265,9 +264,9 @@ model Nordic44_Original_Case
   OpenIPSL.Electrical.Buses.BusExt bus_3000(
     nn=7,
     np=5,
-    V_0=pSSE_data.voltages.V3000,
+    v_0=pSSE_data.voltages.V3000,
     angle_0=pSSE_data.voltages.A3000,
-    V_b=420)
+    V_b=420000)
     annotation (Placement(transformation(extent={{-258,46},{-256,66}})));
   Generators.Gen1_bus_3000 G1_bus3000
     annotation (Placement(transformation(extent={{-280,64},{-274,70}})));
@@ -276,8 +275,8 @@ model Nordic44_Original_Case
   Generators.Gen1_bus_3000 G3_bus3000
     annotation (Placement(transformation(extent={{-280,48},{-274,54}})));
   OpenIPSL.Electrical.Loads.PSSE.Load Load1_bus3000(
-    V_b=420,
-    V_0=pSSE_data.voltages.V3000,
+    V_b=420000,
+    v_0=pSSE_data.voltages.V3000,
     angle_0=pSSE_data.voltages.A3000,
     P_0=pSSE_data.powers.PL3000,
     Q_0=pSSE_data.powers.QL3000,
@@ -286,8 +285,8 @@ model Nordic44_Original_Case
         rotation=270,
         origin={-272.25,45.25})));
   OpenIPSL.Electrical.Loads.PSSE.Load Load2_bus3000(
-    V_b=420,
-    V_0=pSSE_data.voltages.V3000,
+    V_b=420000,
+    v_0=pSSE_data.voltages.V3000,
     angle_0=pSSE_data.voltages.A3000,
     P_0=pSSE_data.powers.PL3000,
     Q_0=pSSE_data.powers.QL3000,
@@ -296,8 +295,8 @@ model Nordic44_Original_Case
         rotation=270,
         origin={-272.25,39.25})));
   OpenIPSL.Electrical.Loads.PSSE.Load Load3_bus3000(
-    V_b=420,
-    V_0=pSSE_data.voltages.V3000,
+    V_b=420000,
+    v_0=pSSE_data.voltages.V3000,
     angle_0=pSSE_data.voltages.A3000,
     P_0=pSSE_data.powers.PL3000,
     Q_0=pSSE_data.powers.QL3000,
@@ -346,13 +345,13 @@ model Nordic44_Original_Case
   OpenIPSL.Electrical.Buses.BusExt bus_3020(
     nn=1,
     np=1,
-    V_0=pSSE_data.voltages.V3020,
+    v_0=pSSE_data.voltages.V3020,
     angle_0=pSSE_data.voltages.A3020,
-    V_b=420)
+    V_b=420000)
     annotation (Placement(transformation(extent={{-282,70},{-280,90}})));
   OpenIPSL.Electrical.Loads.PSSE.Load Load_bus3020(
-    V_b=420,
-    V_0=pSSE_data.voltages.V3020,
+    V_b=420000,
+    v_0=pSSE_data.voltages.V3020,
     angle_0=pSSE_data.voltages.A3020,
     P_0=pSSE_data.powers.PL3020,
     Q_0=pSSE_data.powers.QL3020,
@@ -363,9 +362,9 @@ model Nordic44_Original_Case
   OpenIPSL.Electrical.Buses.BusExt bus_3300(
     nn=5,
     np=5,
-    V_0=pSSE_data.voltages.V3300,
+    v_0=pSSE_data.voltages.V3300,
     angle_0=pSSE_data.voltages.A3300,
-    V_b=420)
+    V_b=420000)
     annotation (Placement(transformation(extent={{-220,88},{-218,108}})));
   Generators.Gen4_bus_3300 G2_bus3300 annotation (Placement(transformation(
         extent={{-3,-3},{3,3}},
@@ -376,8 +375,8 @@ model Nordic44_Original_Case
   Generators.Gen4_bus_3300 G1_bus3300
     annotation (Placement(transformation(extent={{-236,89},{-230,95}})));
   OpenIPSL.Electrical.Loads.PSSE.Load Load1_bus3300(
-    V_b=420,
-    V_0=pSSE_data.voltages.V3300,
+    V_b=420000,
+    v_0=pSSE_data.voltages.V3300,
     angle_0=pSSE_data.voltages.A3300,
     P_0=pSSE_data.powers.PL3300,
     Q_0=pSSE_data.powers.QL3300,
@@ -386,8 +385,8 @@ model Nordic44_Original_Case
         rotation=270,
         origin={-230.25,102.25})));
   OpenIPSL.Electrical.Loads.PSSE.Load Load2_bus3300(
-    V_b=420,
-    V_0=pSSE_data.voltages.V3300,
+    V_b=420000,
+    v_0=pSSE_data.voltages.V3300,
     angle_0=pSSE_data.voltages.A3300,
     P_0=pSSE_data.powers.PL3300,
     Q_0=pSSE_data.powers.QL3300,
@@ -398,9 +397,9 @@ model Nordic44_Original_Case
   OpenIPSL.Electrical.Buses.BusExt bus_3200(
     nn=5,
     np=1,
-    V_0=pSSE_data.voltages.V3200,
+    v_0=pSSE_data.voltages.V3200,
     angle_0=pSSE_data.voltages.A3200,
-    V_b=420)
+    V_b=420000)
     annotation (Placement(transformation(extent={{-178,88},{-176,108}})));
   OpenIPSL.Electrical.Branches.PwLine line_3200_3300(
     R=0.020000,
@@ -436,9 +435,9 @@ model Nordic44_Original_Case
   OpenIPSL.Electrical.Buses.BusExt bus_3100(
     nn=6,
     np=2,
-    V_0=pSSE_data.voltages.V3100,
+    v_0=pSSE_data.voltages.V3100,
     angle_0=pSSE_data.voltages.A3100,
-    V_b=420)
+    V_b=420000)
     annotation (Placement(transformation(extent={{-178,36},{-176,56}})));
   OpenIPSL.Electrical.Branches.PwLine line_3300_8500_1(
     R=0.020000,
@@ -459,13 +458,13 @@ model Nordic44_Original_Case
   OpenIPSL.Electrical.Buses.BusExt bus_8500(
     nn=8,
     np=8,
-    V_0=pSSE_data.voltages.V8500,
+    v_0=pSSE_data.voltages.V8500,
     angle_0=pSSE_data.voltages.A8500,
-    V_b=420)
+    V_b=420000)
     annotation (Placement(transformation(extent={{-198,124},{-196,166}})));
   OpenIPSL.Electrical.Loads.PSSE.Load Load1_bus8500(
-    V_b=420,
-    V_0=pSSE_data.voltages.V8500,
+    V_b=420000,
+    v_0=pSSE_data.voltages.V8500,
     angle_0=pSSE_data.voltages.A8500,
     P_0=pSSE_data.powers.PL8500,
     Q_0=pSSE_data.powers.QL8500,
@@ -474,8 +473,8 @@ model Nordic44_Original_Case
         rotation=270,
         origin={-212.25,162.25})));
   OpenIPSL.Electrical.Loads.PSSE.Load Load2_bus8500(
-    V_b=420,
-    V_0=pSSE_data.voltages.V8500,
+    V_b=420000,
+    v_0=pSSE_data.voltages.V8500,
     angle_0=pSSE_data.voltages.A8500,
     P_0=pSSE_data.powers.PL8500,
     Q_0=pSSE_data.powers.QL8500,
@@ -484,8 +483,8 @@ model Nordic44_Original_Case
         rotation=270,
         origin={-212.25,156.25})));
   OpenIPSL.Electrical.Loads.PSSE.Load Load3_bus8500(
-    V_b=420,
-    V_0=pSSE_data.voltages.V8500,
+    V_b=420000,
+    v_0=pSSE_data.voltages.V8500,
     angle_0=pSSE_data.voltages.A8500,
     P_0=pSSE_data.powers.PL8500,
     Q_0=pSSE_data.powers.QL8500,
@@ -545,14 +544,14 @@ model Nordic44_Original_Case
   OpenIPSL.Electrical.Buses.BusExt bus_8700(
     nn=1,
     np=1,
-    V_0=pSSE_data.voltages.V8700,
+    v_0=pSSE_data.voltages.V8700,
     angle_0=pSSE_data.voltages.A8700,
-    V_b=420)
+    V_b=420000)
     annotation (Placement(transformation(extent={{-238,156},{-236,176}})));
   OpenIPSL.Electrical.Loads.PSSE.Load Load_bus8700(
-    V_0=pSSE_data.voltages.V8700,
+    v_0=pSSE_data.voltages.V8700,
     angle_0=pSSE_data.voltages.A8700,
-    V_b=420,
+    V_b=420000,
     P_0=pSSE_data.powers.PL8700,
     Q_0=pSSE_data.powers.QL8700,
     characteristic=2) annotation (Placement(transformation(
@@ -562,13 +561,13 @@ model Nordic44_Original_Case
   OpenIPSL.Electrical.Buses.BusExt bus_8600(
     nn=1,
     np=1,
-    V_0=pSSE_data.voltages.V8600,
+    v_0=pSSE_data.voltages.V8600,
     angle_0=pSSE_data.voltages.A8600,
-    V_b=420)
+    V_b=420000)
     annotation (Placement(transformation(extent={{-162,156},{-160,176}})));
   OpenIPSL.Electrical.Loads.PSSE.Load Load_bus8600(
-    V_b=420,
-    V_0=pSSE_data.voltages.V8600,
+    V_b=420000,
+    v_0=pSSE_data.voltages.V8600,
     angle_0=pSSE_data.voltages.A8600,
     P_0=pSSE_data.powers.PL8600,
     Q_0=pSSE_data.powers.QL8600,
@@ -579,9 +578,9 @@ model Nordic44_Original_Case
   OpenIPSL.Electrical.Buses.BusExt bus_3359(
     nn=9,
     np=9,
-    V_0=pSSE_data.voltages.V3359,
+    v_0=pSSE_data.voltages.V3359,
     angle_0=pSSE_data.voltages.A3359,
-    V_b=420)
+    V_b=420000)
     annotation (Placement(transformation(extent={{-124,54},{-122,112}})));
   OpenIPSL.Electrical.Branches.PwLine line_3200_3359(
     R=0.010000,
@@ -591,8 +590,8 @@ model Nordic44_Original_Case
         extent={{-5,-3},{5,3}},
         origin={-153,99})));
   OpenIPSL.Electrical.Loads.PSSE.Load Load1_bus3359(
-    V_b=420,
-    V_0=pSSE_data.voltages.V3359,
+    V_b=420000,
+    v_0=pSSE_data.voltages.V3359,
     angle_0=pSSE_data.voltages.A3359,
     P_0=pSSE_data.powers.PL3359,
     Q_0=pSSE_data.powers.QL3359,
@@ -601,8 +600,8 @@ model Nordic44_Original_Case
         rotation=270,
         origin={-132.25,86.75})));
   OpenIPSL.Electrical.Loads.PSSE.Load Load2_bus3359(
-    V_b=420,
-    V_0=pSSE_data.voltages.V3359,
+    V_b=420000,
+    v_0=pSSE_data.voltages.V3359,
     angle_0=pSSE_data.voltages.A3359,
     P_0=pSSE_data.powers.PL3359,
     Q_0=pSSE_data.powers.QL3359,
@@ -611,8 +610,8 @@ model Nordic44_Original_Case
         rotation=270,
         origin={-134.25,82.25})));
   OpenIPSL.Electrical.Loads.PSSE.Load Load3_bus3359(
-    V_b=420,
-    V_0=pSSE_data.voltages.V3359,
+    V_b=420000,
+    v_0=pSSE_data.voltages.V3359,
     angle_0=pSSE_data.voltages.A3359,
     P_0=pSSE_data.powers.PL3359,
     Q_0=pSSE_data.powers.QL3359,
@@ -621,8 +620,8 @@ model Nordic44_Original_Case
         rotation=270,
         origin={-136.25,78.25})));
   OpenIPSL.Electrical.Loads.PSSE.Load Load4_bus3359(
-    V_b=420,
-    V_0=pSSE_data.voltages.V3359,
+    V_b=420000,
+    v_0=pSSE_data.voltages.V3359,
     angle_0=pSSE_data.voltages.A3359,
     P_0=pSSE_data.powers.PL3359,
     Q_0=pSSE_data.powers.QL3359,
@@ -646,13 +645,13 @@ model Nordic44_Original_Case
         origin={-155,51})));
   OpenIPSL.Electrical.Buses.BusExt bus_3360(
     np=1,
-    V_0=pSSE_data.voltages.V3360,
+    v_0=pSSE_data.voltages.V3360,
     angle_0=pSSE_data.voltages.A3360,
     V_b=135,
     nn=1) annotation (Placement(transformation(extent={{-96,130},{-94,150}})));
   OpenIPSL.Electrical.Loads.PSSE.Load Load_bus3360(
     V_b=135,
-    V_0=pSSE_data.voltages.V3360,
+    v_0=pSSE_data.voltages.V3360,
     angle_0=pSSE_data.voltages.A3360,
     P_0=pSSE_data.powers.PL3360,
     Q_0=pSSE_data.powers.QL3360,
@@ -661,8 +660,8 @@ model Nordic44_Original_Case
         rotation=90,
         origin={-83.75,140.25})));
   OpenIPSL.Electrical.Loads.PSSE.Load Load_bus3100(
-    V_b=420,
-    V_0=pSSE_data.voltages.V3100,
+    V_b=420000,
+    v_0=pSSE_data.voltages.V3100,
     angle_0=pSSE_data.voltages.A3100,
     P_0=pSSE_data.powers.PL3100,
     Q_0=pSSE_data.powers.QL3100,
@@ -681,13 +680,13 @@ model Nordic44_Original_Case
   OpenIPSL.Electrical.Buses.BusExt bus_3249(
     np=5,
     nn=7,
-    V_0=pSSE_data.voltages.V3249,
+    v_0=pSSE_data.voltages.V3249,
     angle_0=pSSE_data.voltages.A3249,
-    V_b=420)
+    V_b=420000)
     annotation (Placement(transformation(extent={{-176,-52},{-174,6}})));
   OpenIPSL.Electrical.Loads.PSSE.Load Load_bus3249(
-    V_b=420,
-    V_0=pSSE_data.voltages.V3249,
+    V_b=420000,
+    v_0=pSSE_data.voltages.V3249,
     angle_0=pSSE_data.voltages.A3249,
     P_0=pSSE_data.powers.PL3249,
     Q_0=pSSE_data.powers.QL3249,
@@ -711,44 +710,44 @@ model Nordic44_Original_Case
     annotation (Placement(transformation(extent={{-158,-34},{-164,-40}})));
   OpenIPSL.Electrical.Buses.BusExt bus_3701(
     np=1,
-    V_0=pSSE_data.voltages.V3701,
+    v_0=pSSE_data.voltages.V3701,
     angle_0=pSSE_data.voltages.A3701,
-    V_b=300,
+    V_b=300000,
     nn=1)
     annotation (Placement(transformation(extent={{-118,-70},{-116,-50}})));
   OpenIPSL.Electrical.Buses.BusExt bus_3245(
     nn=3,
     np=2,
-    V_0=pSSE_data.voltages.V3245,
+    v_0=pSSE_data.voltages.V3245,
     angle_0=pSSE_data.voltages.A3245,
-    V_b=420)
+    V_b=420000)
     annotation (Placement(transformation(extent={{-208,-82},{-206,-62}})));
   Generators.Gen2_bus_3245 G1_bus3245
     annotation (Placement(transformation(extent={{-194,-62},{-200,-68}})));
   OpenIPSL.Electrical.Buses.BusExt bus_3244(
     np=1,
-    V_0=pSSE_data.voltages.V3244,
+    v_0=pSSE_data.voltages.V3244,
     angle_0=pSSE_data.voltages.A3244,
-    V_b=300,
+    V_b=300000,
     nn=1)
     annotation (Placement(transformation(extent={{-178,-106},{-176,-86}})));
   OpenIPSL.Electrical.Buses.BusExt bus_6701(
     nn=1,
-    V_0=pSSE_data.voltages.V6701,
+    v_0=pSSE_data.voltages.V6701,
     angle_0=pSSE_data.voltages.A6701,
-    V_b=420,
+    V_b=420000,
     np=1)
     annotation (Placement(transformation(extent={{-146,-94},{-144,-74}})));
   OpenIPSL.Electrical.Buses.BusExt bus_6700(
     np=3,
     nn=4,
-    V_0=pSSE_data.voltages.V6700,
+    v_0=pSSE_data.voltages.V6700,
     angle_0=pSSE_data.voltages.A6700,
-    V_b=300)
+    V_b=300000)
     annotation (Placement(transformation(extent={{-78,-94},{-76,-74}})));
   OpenIPSL.Electrical.Loads.PSSE.Load Load1_bus6700(
-    V_b=300,
-    V_0=pSSE_data.voltages.V6700,
+    V_b=300000,
+    v_0=pSSE_data.voltages.V6700,
     angle_0=pSSE_data.voltages.A6700,
     P_0=pSSE_data.powers.PL6700,
     Q_0=pSSE_data.powers.QL6700,
@@ -779,9 +778,9 @@ model Nordic44_Original_Case
   OpenIPSL.Electrical.Buses.BusExt bus_6500(
     nn=6,
     np=5,
-    V_0=pSSE_data.voltages.V6500,
+    v_0=pSSE_data.voltages.V6500,
     angle_0=pSSE_data.voltages.A6500,
-    V_b=300)
+    V_b=300000)
     annotation (Placement(transformation(extent={{-20,-122},{-18,-78}})));
   OpenIPSL.Electrical.Branches.PwLine line_6500_6700_1(
     R=0.170000,
@@ -800,8 +799,8 @@ model Nordic44_Original_Case
         rotation=180,
         origin={-51,-91})));
   OpenIPSL.Electrical.Loads.PSSE.Load Load1_bus6500(
-    V_b=300,
-    V_0=pSSE_data.voltages.V6500,
+    V_b=300000,
+    v_0=pSSE_data.voltages.V6500,
     angle_0=pSSE_data.voltages.A6500,
     P_0=pSSE_data.powers.PL6500,
     Q_0=pSSE_data.powers.QL6500,
@@ -810,8 +809,8 @@ model Nordic44_Original_Case
         rotation=270,
         origin={-32.25,-97.75})));
   OpenIPSL.Electrical.Loads.PSSE.Load Load2_bus6500(
-    V_b=300,
-    V_0=pSSE_data.voltages.V6500,
+    V_b=300000,
+    v_0=pSSE_data.voltages.V6500,
     angle_0=pSSE_data.voltages.A6500,
     P_0=pSSE_data.powers.PL6500,
     Q_0=pSSE_data.powers.QL6500,
@@ -820,8 +819,8 @@ model Nordic44_Original_Case
         rotation=270,
         origin={-32.25,-103.75})));
   OpenIPSL.Electrical.Loads.PSSE.Load Load3_bus6500(
-    V_b=300,
-    V_0=pSSE_data.voltages.V6500,
+    V_b=300000,
+    v_0=pSSE_data.voltages.V6500,
     angle_0=pSSE_data.voltages.A6500,
     P_0=pSSE_data.powers.PL6500,
     Q_0=pSSE_data.powers.QL6500,
@@ -840,9 +839,9 @@ model Nordic44_Original_Case
   OpenIPSL.Electrical.Buses.BusExt bus_5100(
     np=2,
     nn=3,
-    V_0=pSSE_data.voltages.V5100,
+    v_0=pSSE_data.voltages.V5100,
     angle_0=pSSE_data.voltages.A5100,
-    V_b=300)
+    V_b=300000)
     annotation (Placement(transformation(extent={{22,-74},{24,-54}})));
   OpenIPSL.Electrical.Branches.PwLine line_5100_6500(
     R=0.080000,
@@ -855,8 +854,8 @@ model Nordic44_Original_Case
   Generators.Gen5_bus_5100 G1_bus5100
     annotation (Placement(transformation(extent={{2,-68},{8,-62}})));
   OpenIPSL.Electrical.Loads.PSSE.Load Load_bus5100(
-    V_b=300,
-    V_0=pSSE_data.voltages.V5100,
+    V_b=300000,
+    v_0=pSSE_data.voltages.V5100,
     angle_0=pSSE_data.voltages.A5100,
     P_0=pSSE_data.powers.PL5100,
     Q_0=pSSE_data.powers.QL5100,
@@ -875,9 +874,9 @@ model Nordic44_Original_Case
   OpenIPSL.Electrical.Buses.BusExt bus_5101(
     nn=3,
     np=3,
-    V_0=pSSE_data.voltages.V5101,
+    v_0=pSSE_data.voltages.V5101,
     angle_0=pSSE_data.voltages.A5101,
-    V_b=420) annotation (Placement(transformation(extent={{22,-2},{24,18}})));
+    V_b=420000) annotation (Placement(transformation(extent={{22,-2},{24,18}})));
   OpenIPSL.Electrical.Branches.PwLine line_3359_5101_2(
     R=0.020000,
     X=0.220000,
@@ -933,9 +932,9 @@ model Nordic44_Original_Case
   OpenIPSL.Electrical.Buses.BusExt bus_5103(
     nn=1,
     np=3,
-    V_0=pSSE_data.voltages.V5103,
+    v_0=pSSE_data.voltages.V5103,
     angle_0=pSSE_data.voltages.A5103,
-    V_b=420) annotation (Placement(transformation(extent={{80,38},{82,58}})));
+    V_b=420000) annotation (Placement(transformation(extent={{80,38},{82,58}})));
   OpenIPSL.Electrical.Branches.PwLine line_5103_5304_2(
     R=0.013000,
     X=0.200000,
@@ -948,7 +947,8 @@ model Nordic44_Original_Case
     R=0.020000,
     X=0.250000,
     G=0,
-    B=0.070000*0.5) annotation (Placement(transformation(
+    B=0.070000*0.5,
+    t1=2) annotation (Placement(transformation(
         extent={{-5,-3},{5,3}},
         rotation=180,
         origin={97,53})));
@@ -963,16 +963,16 @@ model Nordic44_Original_Case
   OpenIPSL.Electrical.Buses.BusExt bus_5304(
     np=3,
     nn=3,
-    V_0=pSSE_data.voltages.V5304,
+    v_0=pSSE_data.voltages.V5304,
     angle_0=pSSE_data.voltages.A5304,
-    V_b=420)
+    V_b=420000)
     annotation (Placement(transformation(extent={{122,70},{124,90}})));
   OpenIPSL.Electrical.Buses.BusExt bus_5102(
     nn=3,
     np=1,
-    V_0=pSSE_data.voltages.V5102,
+    v_0=pSSE_data.voltages.V5102,
     angle_0=pSSE_data.voltages.A5102,
-    V_b=420) annotation (Placement(transformation(extent={{122,4},{124,24}})));
+    V_b=420000) annotation (Placement(transformation(extent={{122,4},{124,24}})));
   OpenIPSL.Electrical.Branches.PwLine line_5102_5304(
     R=0.017000,
     X=0.240000,
@@ -992,9 +992,9 @@ model Nordic44_Original_Case
   OpenIPSL.Electrical.Buses.BusExt bus_5305(
     np=1,
     nn=2,
-    V_0=pSSE_data.voltages.V5305,
+    v_0=pSSE_data.voltages.V5305,
     angle_0=pSSE_data.voltages.A5305,
-    V_b=420)
+    V_b=420000)
     annotation (Placement(transformation(extent={{162,110},{164,130}})));
   OpenIPSL.Electrical.Branches.PwLine line_5304_5305_1(
     R=0.010000,
@@ -1022,9 +1022,9 @@ model Nordic44_Original_Case
         origin={159,75})));
   OpenIPSL.Electrical.Buses.BusExt bus_5301(
     nn=3,
-    V_0=pSSE_data.voltages.V5301,
+    v_0=pSSE_data.voltages.V5301,
     angle_0=pSSE_data.voltages.A5301,
-    V_b=420,
+    V_b=420000,
     np=1) annotation (Placement(transformation(extent={{200,70},{202,90}})));
   OpenIPSL.Electrical.Branches.PwLine line_5301_5305(
     R=0.007000,
@@ -1045,17 +1045,17 @@ model Nordic44_Original_Case
   OpenIPSL.Electrical.Buses.BusExt bus_5300(
     np=2,
     nn=3,
-    V_0=pSSE_data.voltages.V5300,
+    v_0=pSSE_data.voltages.V5300,
     angle_0=pSSE_data.voltages.A5300,
-    V_b=300)
+    V_b=300000)
     annotation (Placement(transformation(extent={{240,70},{242,90}})));
   Generators.Gen3_bus_5300 G1_bus5300
     annotation (Placement(transformation(extent={{220,64},{226,70}})));
   Generators.Gen3_bus_5300 G2_bus5300
     annotation (Placement(transformation(extent={{262,88},{256,82}})));
   OpenIPSL.Electrical.Loads.PSSE.Load Load_bus5300(
-    V_b=300,
-    V_0=pSSE_data.voltages.V5300,
+    V_b=300000,
+    v_0=pSSE_data.voltages.V5300,
     angle_0=pSSE_data.voltages.A5300,
     P_0=pSSE_data.powers.PL5300,
     Q_0=pSSE_data.powers.QL5300,
@@ -1066,9 +1066,9 @@ model Nordic44_Original_Case
   OpenIPSL.Electrical.Buses.BusExt bus_6100(
     np=4,
     nn=5,
-    V_0=pSSE_data.voltages.V6100,
+    v_0=pSSE_data.voltages.V6100,
     angle_0=pSSE_data.voltages.A6100,
-    V_b=300)
+    V_b=300000)
     annotation (Placement(transformation(extent={{280,38},{282,58}})));
   OpenIPSL.Electrical.Branches.PwLine line_5300_6100(
     R=0.021000,
@@ -1078,8 +1078,8 @@ model Nordic44_Original_Case
         extent={{-5,-3},{5,3}},
         origin={259,75})));
   OpenIPSL.Electrical.Loads.PSSE.Load Load1_bus6100(
-    V_b=300,
-    V_0=pSSE_data.voltages.V6100,
+    V_b=300000,
+    v_0=pSSE_data.voltages.V6100,
     angle_0=pSSE_data.voltages.A6100,
     P_0=pSSE_data.powers.PL6100,
     Q_0=pSSE_data.powers.QL6100,
@@ -1088,8 +1088,8 @@ model Nordic44_Original_Case
         rotation=270,
         origin={266.75,63.25})));
   OpenIPSL.Electrical.Loads.PSSE.Load Load2_bus6100(
-    V_b=300,
-    V_0=pSSE_data.voltages.V6100,
+    V_b=300000,
+    v_0=pSSE_data.voltages.V6100,
     angle_0=pSSE_data.voltages.A6100,
     P_0=pSSE_data.powers.PL6100,
     Q_0=pSSE_data.powers.QL6100,
@@ -1118,9 +1118,9 @@ model Nordic44_Original_Case
   OpenIPSL.Electrical.Buses.BusExt bus_6000(
     np=2,
     nn=3,
-    V_0=pSSE_data.voltages.V6000,
+    v_0=pSSE_data.voltages.V6000,
     angle_0=pSSE_data.voltages.A6000,
-    V_b=300)
+    V_b=300000)
     annotation (Placement(transformation(extent={{240,-8},{242,12}})));
   Generators.Gen5_bus_6000 G1_bus6000
     annotation (Placement(transformation(extent={{219,-2},{227,6}})));
@@ -1135,22 +1135,22 @@ model Nordic44_Original_Case
   OpenIPSL.Electrical.Buses.BusExt bus_6001(
     nn=3,
     np=3,
-    V_0=pSSE_data.voltages.V6001,
+    v_0=pSSE_data.voltages.V6001,
     angle_0=pSSE_data.voltages.A6001,
-    V_b=420)
+    V_b=420000)
     annotation (Placement(transformation(extent={{182,12},{184,32}})));
   OpenIPSL.Electrical.Buses.BusExt bus_5601(
     np=1,
-    V_0=pSSE_data.voltages.V5601,
+    v_0=pSSE_data.voltages.V5601,
     angle_0=pSSE_data.voltages.A5601,
-    V_b=300,
+    V_b=300000,
     nn=1) annotation (Placement(transformation(extent={{280,-2},{282,18}})));
   OpenIPSL.Electrical.Buses.BusExt bus_5600(
     nn=4,
     np=4,
-    V_0=pSSE_data.voltages.V5600,
+    v_0=pSSE_data.voltages.V5600,
     angle_0=pSSE_data.voltages.A5600,
-    V_b=300)
+    V_b=300000)
     annotation (Placement(transformation(extent={{280,-54},{282,-34}})));
   OpenIPSL.Electrical.Branches.PwLine line_5600_5601(
     R=0.030000,
@@ -1168,8 +1168,8 @@ model Nordic44_Original_Case
         extent={{-5,-3},{5,3}},
         origin={265,-1})));
   OpenIPSL.Electrical.Loads.PSSE.Load Load1_bus5600(
-    V_b=300,
-    V_0=pSSE_data.voltages.V5600,
+    V_b=300000,
+    v_0=pSSE_data.voltages.V5600,
     angle_0=pSSE_data.voltages.A5600,
     P_0=pSSE_data.powers.PL5600,
     Q_0=pSSE_data.powers.QL5600,
@@ -1178,8 +1178,8 @@ model Nordic44_Original_Case
         rotation=270,
         origin={266.75,-34.75})));
   OpenIPSL.Electrical.Loads.PSSE.Load Load2_bus5600(
-    V_b=300,
-    V_0=pSSE_data.voltages.V5600,
+    V_b=300000,
+    v_0=pSSE_data.voltages.V5600,
     angle_0=pSSE_data.voltages.A5600,
     P_0=pSSE_data.powers.PL5600,
     Q_0=pSSE_data.powers.QL5600,
@@ -1197,13 +1197,13 @@ model Nordic44_Original_Case
   OpenIPSL.Electrical.Buses.BusExt bus_5620(
     np=1,
     nn=1,
-    V_0=pSSE_data.voltages.V5620,
+    v_0=pSSE_data.voltages.V5620,
     angle_0=pSSE_data.voltages.A5620,
-    V_b=300)
+    V_b=300000)
     annotation (Placement(transformation(extent={{280,-104},{282,-84}})));
   OpenIPSL.Electrical.Loads.PSSE.Load Load_bus5620(
-    V_b=300,
-    V_0=pSSE_data.voltages.V5620,
+    V_b=300000,
+    v_0=pSSE_data.voltages.V5620,
     angle_0=pSSE_data.voltages.A5620,
     P_0=pSSE_data.powers.PL5620,
     Q_0=pSSE_data.powers.QL5620,
@@ -1226,16 +1226,16 @@ model Nordic44_Original_Case
   OpenIPSL.Electrical.Buses.BusExt bus_5603(
     np=2,
     nn=2,
-    V_0=pSSE_data.voltages.V5603,
+    v_0=pSSE_data.voltages.V5603,
     angle_0=pSSE_data.voltages.A5603,
-    V_b=300)
+    V_b=300000)
     annotation (Placement(transformation(extent={{220,-86},{222,-66}})));
   OpenIPSL.Electrical.Buses.BusExt bus_5610(
     np=1,
     nn=1,
-    V_0=pSSE_data.voltages.V5610,
+    v_0=pSSE_data.voltages.V5610,
     angle_0=pSSE_data.voltages.A5610,
-    V_b=300)
+    V_b=300000)
     annotation (Placement(transformation(extent={{242,-116},{244,-96}})));
   OpenIPSL.Electrical.Branches.PwLine line_5603_5610(
     R=0.000000,
@@ -1246,8 +1246,8 @@ model Nordic44_Original_Case
         rotation=270,
         origin={233,-91})));
   OpenIPSL.Electrical.Loads.PSSE.Load Load1_bus5610(
-    V_b=300,
-    V_0=pSSE_data.voltages.V5610,
+    V_b=300000,
+    v_0=pSSE_data.voltages.V5610,
     angle_0=pSSE_data.voltages.A5610,
     P_0=pSSE_data.powers.PL5610,
     Q_0=pSSE_data.powers.QL5610,
@@ -1257,16 +1257,16 @@ model Nordic44_Original_Case
         origin={254.75,-104.75})));
   OpenIPSL.Electrical.Buses.BusExt bus_5602(
     nn=1,
-    V_0=pSSE_data.voltages.V5602,
+    v_0=pSSE_data.voltages.V5602,
     angle_0=pSSE_data.voltages.A5602,
-    V_b=420,
+    V_b=420000,
     np=1) annotation (Placement(transformation(extent={{182,-86},{184,-66}})));
   OpenIPSL.Electrical.Buses.BusExt bus_5500(
     nn=4,
     np=3,
-    V_0=pSSE_data.voltages.V5500,
+    v_0=pSSE_data.voltages.V5500,
     angle_0=pSSE_data.voltages.A5500,
-    V_b=300)
+    V_b=300000)
     annotation (Placement(transformation(extent={{76,-90},{78,-58}})));
   OpenIPSL.Electrical.Branches.PwLine line_5500_5603(
     R=0.050000,
@@ -1289,19 +1289,19 @@ model Nordic44_Original_Case
   OpenIPSL.Electrical.Buses.BusExt bus_5401(
     nn=1,
     np=3,
-    V_0=pSSE_data.voltages.V5401,
+    v_0=pSSE_data.voltages.V5401,
     angle_0=pSSE_data.voltages.A5401,
-    V_b=420)
+    V_b=420000)
     annotation (Placement(transformation(extent={{122,-44},{124,-24}})));
   OpenIPSL.Electrical.Buses.BusExt bus_5501(
     np=1,
     nn=2,
-    V_0=pSSE_data.voltages.V5501,
+    v_0=pSSE_data.voltages.V5501,
     angle_0=pSSE_data.voltages.A5501,
-    V_b=420) annotation (Placement(transformation(extent={{80,-26},{82,-6}})));
+    V_b=420000) annotation (Placement(transformation(extent={{80,-26},{82,-6}})));
   OpenIPSL.Electrical.Loads.PSSE.Load Load1_bus5500(
-    V_b=300,
-    V_0=pSSE_data.voltages.V5500,
+    V_b=300000,
+    v_0=pSSE_data.voltages.V5500,
     angle_0=pSSE_data.voltages.A5500,
     P_0=pSSE_data.powers.PL5500,
     Q_0=pSSE_data.powers.QL5500,
@@ -1310,8 +1310,8 @@ model Nordic44_Original_Case
         rotation=270,
         origin={63.75,-75.75})));
   OpenIPSL.Electrical.Loads.PSSE.Load Load2_bus5500(
-    V_b=300,
-    V_0=pSSE_data.voltages.V5500,
+    V_b=300000,
+    v_0=pSSE_data.voltages.V5500,
     angle_0=pSSE_data.voltages.A5500,
     P_0=pSSE_data.powers.PL5500,
     Q_0=pSSE_data.powers.QL5500,
@@ -1330,15 +1330,15 @@ model Nordic44_Original_Case
   OpenIPSL.Electrical.Buses.BusExt bus_5400(
     np=3,
     nn=4,
-    V_0=pSSE_data.voltages.V5400,
+    v_0=pSSE_data.voltages.V5400,
     angle_0=pSSE_data.voltages.A5400,
-    V_b=300)
+    V_b=300000)
     annotation (Placement(transformation(extent={{180,-56},{182,-36}})));
   OpenIPSL.Electrical.Buses.BusExt bus_5402(
     nn=1,
-    V_0=pSSE_data.voltages.V5402,
+    v_0=pSSE_data.voltages.V5402,
     angle_0=pSSE_data.voltages.A5402,
-    V_b=420,
+    V_b=420000,
     np=1) annotation (Placement(transformation(extent={{194,-18},{196,2}})));
   OpenIPSL.Electrical.Branches.PwLine line_5401_6001(
     R=0.006400,
@@ -1361,8 +1361,8 @@ model Nordic44_Original_Case
   Generators.Gen5_bus_5400 G2_bus5400
     annotation (Placement(transformation(extent={{202,-50},{196,-56}})));
   OpenIPSL.Electrical.Loads.PSSE.Load Load1_bus5400(
-    V_b=300,
-    V_0=pSSE_data.voltages.V5400,
+    V_b=300000,
+    v_0=pSSE_data.voltages.V5400,
     angle_0=pSSE_data.voltages.A5400,
     P_0=pSSE_data.powers.PL5400,
     Q_0=pSSE_data.powers.QL5400,
@@ -1508,7 +1508,7 @@ model Nordic44_Original_Case
     annotation (Placement(transformation(extent={{-114,136},{-102,144}})));
   Original.Data.PSSE_data_Original_case pSSE_data
     annotation (Placement(transformation(extent={{-286,192},{-266,212}})));
-  inner OpenIPSL.Electrical.SystemBase SysData(S_b=1000)
+  inner OpenIPSL.Electrical.SystemBase SysData(S_b=1000000000)
     annotation (Placement(transformation(extent={{176,172},{278,208}})));
 equation
   connect(G9_bus7000.pwPin, bus_7000.n[1]) annotation (Line(
@@ -1880,7 +1880,8 @@ equation
       smooth=Smooth.None));
 
   connect(line_3200_3359.n, bus_3359.n[7]) annotation (Line(
-      points={{-148.5,99},{-129,99},{-129,92},{-125,92},{-125,90.7333},{-124,90.7333}},
+      points={{-148.5,99},{-129,99},{-129,92},{-125,92},{-125,90.7333},{-124,
+          90.7333}},
       color={0,0,255},
       smooth=Smooth.None));
   connect(line_3359_8500_1.n, bus_3359.n[8]) annotation (Line(
@@ -1888,7 +1889,8 @@ equation
       color={0,0,255},
       smooth=Smooth.None));
   connect(line_3359_8500_2.n, bus_3359.n[9]) annotation (Line(
-      points={{-156.5,133},{-127,133},{-127,108},{-125,108},{-125,98.4667},{-124,98.4667}},
+      points={{-156.5,133},{-127,133},{-127,108},{-125,108},{-125,98.4667},{
+          -124,98.4667}},
       color={0,0,255},
       smooth=Smooth.None));
   connect(Load_bus3360.p, bus_3360.p[1]) annotation (Line(
@@ -2471,11 +2473,13 @@ equation
       color={0,0,255},
       smooth=Smooth.None));
   connect(Load_bus3249.p, bus_3249.n[5]) annotation (Line(
-      points={{-188.5,-9.75},{-186,-9.75},{-186,-10},{-184,-10},{-184,-14},{-180,-14},{-180,-18.0286},{-176,-18.0286}},
+      points={{-188.5,-9.75},{-186,-9.75},{-186,-10},{-184,-10},{-184,-14},{
+          -180,-14},{-180,-18.0286},{-176,-18.0286}},
       color={0,0,255},
       smooth=Smooth.None));
   connect(line_3115_3249.p, bus_3249.n[6]) annotation (Line(
-      points={{-202.5,11},{-194,11},{-194,-4},{-182,-4},{-182,-13.0571},{-176,-13.0571}},
+      points={{-202.5,11},{-194,11},{-194,-4},{-182,-4},{-182,-13.0571},{-176,
+          -13.0571}},
       color={0,0,255},
       smooth=Smooth.None));
   connect(line_3100_3249.n, bus_3249.n[7]) annotation (Line(
@@ -2533,53 +2537,59 @@ equation
       points={{188,7.5},{188,18},{184,18}},
       color={0,0,255},
       smooth=Smooth.None));
-  connect(trafo_3359_3360.n, bus_3360.n[1]) annotation (Line(points={{-101,
-          140},{-101,140},{-96,140}}, color={0,0,255}));
-  connect(trafo_3359_3360.p, bus_3359.p[9]) annotation (Line(points={{-115,140},{-118,140},{-118,98.4667},{-122,98.4667}},
-                                                          color={0,0,255}));
-  connect(trafo_3249_3701.n, bus_3249.p[5]) annotation (Line(points={{-149.167,-9},{-161.666,-9},{-161.666,-9.08},{-174,-9.08}},
-                                                            color={0,0,255}));
-  connect(trafo_3249_3701.p, bus_3701.n[1]) annotation (Line(points={{-132.833,-9},{-122,-9},{-122,-60},{-118,-60}},
-                                                color={0,0,255}));
-  connect(trafo_3244_3245.p, bus_3244.n[1]) annotation (Line(points={{-183,-80},
+  connect(trafo_3359_3360.n, bus_3360.n[1]) annotation (Line(points={{-101.4,140},
+          {-101.4,140},{-96,140}},    color={0,0,255}));
+  connect(trafo_3359_3360.p, bus_3359.p[9]) annotation (Line(points={{-114.6,
+          140},{-118,140},{-118,98.4667},{-122,98.4667}}, color={0,0,255}));
+  connect(trafo_3249_3701.n, bus_3249.p[5]) annotation (Line(points={{-148.7,-9},
+          {-161.666,-9},{-161.666,-9.08},{-174,-9.08}},     color={0,0,255}));
+  connect(trafo_3249_3701.p, bus_3701.n[1]) annotation (Line(points={{-133.3,-9},
+          {-122,-9},{-122,-60},{-118,-60}},     color={0,0,255}));
+  connect(trafo_3244_3245.p, bus_3244.n[1]) annotation (Line(points={{-183.4,-80},
           {-180,-80},{-180,-96},{-178,-96}}, color={0,0,255}));
-  connect(trafo_3244_3245.n, bus_3245.p[2]) annotation (Line(points={{-197,-80},
+  connect(trafo_3244_3245.n, bus_3245.p[2]) annotation (Line(points={{-196.6,-80},
           {-200,-80},{-200,-69},{-206,-69}}, color={0,0,255}));
-  connect(trafo_6700_6701.p, bus_6700.n[4]) annotation (Line(points={{-111,-84},
+  connect(trafo_6700_6701.p, bus_6700.n[4]) annotation (Line(points={{-111.4,-84},
           {-100,-84},{-100,-79.5},{-78,-79.5}}, color={0,0,255}));
-  connect(trafo_6700_6701.n, bus_6701.p[1]) annotation (Line(points={{-125,-84},
-          {-125,-84},{-144,-84}}, color={0,0,255}));
+  connect(trafo_6700_6701.n, bus_6701.p[1]) annotation (Line(points={{-124.6,-84},
+          {-124.6,-84},{-144,-84}},
+                                  color={0,0,255}));
   connect(trafo_5100_5101.n, bus_5100.p[2])
-    annotation (Line(points={{30,-33},{30,-61},{24,-61}}, color={0,0,255}));
-  connect(trafo_5100_5101.p, bus_5101.n[3]) annotation (Line(points={{30,-19},
+    annotation (Line(points={{30,-32.6},{30,-61},{24,-61}},
+                                                          color={0,0,255}));
+  connect(trafo_5100_5101.p, bus_5101.n[3]) annotation (Line(points={{30,-19.4},
           {30,-10},{16,-10},{16,12},{22,12}}, color={0,0,255}));
-  connect(trafo_5500_5501.p, bus_5500.n[4]) annotation (Line(points={{70,-45},
-          {70,-45},{70,-62},{70,-66.8},{76,-66.8}}, color={0,0,255}));
+  connect(trafo_5500_5501.p, bus_5500.n[4]) annotation (Line(points={{70,-44.6},
+          {70,-44.6},{70,-62},{70,-66.8},{76,-66.8}},
+                                                    color={0,0,255}));
   connect(trafo_5500_5501.n, bus_5501.n[2])
-    annotation (Line(points={{70,-31},{70,-13},{80,-13}}, color={0,0,255}));
-  connect(trafo_5400_5401.p, bus_5400.n[4]) annotation (Line(points={{161,-34},
+    annotation (Line(points={{70,-31.4},{70,-13},{80,-13}},
+                                                          color={0,0,255}));
+  connect(trafo_5400_5401.p, bus_5400.n[4]) annotation (Line(points={{160.6,-34},
           {172,-34},{172,-41.5},{180,-41.5}}, color={0,0,255}));
-  connect(trafo_5400_5401.n, bus_5401.p[3]) annotation (Line(points={{147,-34},
+  connect(trafo_5400_5401.n, bus_5401.p[3]) annotation (Line(points={{147.4,-34},
           {124,-34},{124,-30}}, color={0,0,255}));
-  connect(trafo_5602_5603.n, bus_5602.p[1]) annotation (Line(points={{197,-72},
+  connect(trafo_5602_5603.n, bus_5602.p[1]) annotation (Line(points={{197.4,-72},
           {184,-72},{184,-76}}, color={0,0,255}));
-  connect(trafo_5602_5603.p, bus_5603.n[2]) annotation (Line(points={{211,-72},
+  connect(trafo_5602_5603.p, bus_5603.n[2]) annotation (Line(points={{210.6,-72},
           {220,-72},{220,-73}}, color={0,0,255}));
-  connect(trafo_5400_5402.p, bus_5400.p[3]) annotation (Line(points={{200,-35},
+  connect(trafo_5400_5402.p, bus_5400.p[3]) annotation (Line(points={{200,-34.6},
           {200,-42},{182,-42}}, color={0,0,255}));
   connect(trafo_5400_5402.n, bus_5402.p[1])
-    annotation (Line(points={{200,-21},{200,-8},{196,-8}}, color={0,0,255}));
-  connect(trafo_6000_6001.p, bus_6000.n[3]) annotation (Line(points={{213,16},
+    annotation (Line(points={{200,-21.4},{200,-8},{196,-8}},
+                                                           color={0,0,255}));
+  connect(trafo_6000_6001.p, bus_6000.n[3]) annotation (Line(points={{212.6,16},
           {230,16},{230,6},{240,6}}, color={0,0,255}));
-  connect(trafo_6000_6001.n, bus_6001.p[2]) annotation (Line(points={{199,16},
+  connect(trafo_6000_6001.n, bus_6001.p[2]) annotation (Line(points={{199.4,16},
           {192,16},{192,22},{184,22}}, color={0,0,255}));
   connect(trafo_5601_6001.n, bus_6001.p[3])
-    annotation (Line(points={{221,26},{210,26},{184,26}}, color={0,0,255}));
-  connect(trafo_5601_6001.p, bus_5601.n[1]) annotation (Line(points={{235,26},
+    annotation (Line(points={{221.4,26},{221.4,26},{184,26}},
+                                                          color={0,0,255}));
+  connect(trafo_5601_6001.p, bus_5601.n[1]) annotation (Line(points={{234.6,26},
           {248,26},{248,8},{280,8}}, color={0,0,255}));
-  connect(trafo_5300_5301.p, bus_5300.n[3]) annotation (Line(points={{227,90},
+  connect(trafo_5300_5301.p, bus_5300.n[3]) annotation (Line(points={{226.6,90},
           {232,90},{232,84},{240,84}}, color={0,0,255}));
-  connect(trafo_5300_5301.n, bus_5301.p[1]) annotation (Line(points={{213,90},
+  connect(trafo_5300_5301.n, bus_5301.p[1]) annotation (Line(points={{213.4,90},
           {208,90},{208,80},{202,80}}, color={0,0,255}));
   annotation (
     Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-300,-220},{
@@ -2802,5 +2812,15 @@ equation
             lineColor={0,128,0},
             textStyle={TextStyle.Bold},
             textString="bus
-5402")}));
+5402")}), experiment(StopTime=10, __Dymola_Algorithm="Dassl"),__Dymola_experimentFlags(
+        Advanced(Define(DAEsolver=true))),
+    Documentation(info="<html>
+<p>This example system represents the Nordic 44 test system, represented differently from the original case, but undergoing the same line opening event. </p>
+<p>Simulate the system for 10 seconds. If you are using Dymola, use the DAE mode. Variables of interest are:</p>
+<ul>
+<li><code>bus_7020.v</code></li>
+<li><code>G1_bus6500.gENSAL.SPEED</code></li>
+</ul>
+<p>Compare these results with the ones obtained in the <strong>Nordic44_Original_Case</strong>.</p>
+</html>"));
 end Nordic44_Original_Case;

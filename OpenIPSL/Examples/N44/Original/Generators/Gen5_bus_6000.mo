@@ -14,15 +14,15 @@ model Gen5_bus_6000 "Configuration of synchronous generator with regulators: GEN
     Xppd=0.28,
     Xppq=0.28,
     Xl=0.2,
-    V_b=300,
-    M_b=680,
+    V_b=300000,
+    M_b=680000000,
     angle_0=PSSE_data.voltages.A6000,
     P_0=PSSE_data.powers.P6000,
     Q_0=PSSE_data.powers.Q6000,
     S10=0.1,
     S12=0.3,
     R_a=0,
-    V_0=PSSE_data.voltages.V6000)
+    v_0=PSSE_data.voltages.V6000)
     annotation (Placement(transformation(extent={{-60,-16},{-2,32}})));
   OpenIPSL.Electrical.Controls.PSSE.TG.HYGOV hYGOV(
     R=0.06 "Permanent droop, p.u",

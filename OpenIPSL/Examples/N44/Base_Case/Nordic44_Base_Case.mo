@@ -1,16 +1,16 @@
 within OpenIPSL.Examples.N44.Base_Case;
 model Nordic44_Base_Case "Modified version of the original Nordic 44 model"
-
+  extends Modelica.Icons.Example;
   OpenIPSL.Electrical.Buses.BusExt bus_7020(
     nn=1,
     np=1,
-    V_0=PF_results.voltages.V7020,
+    v_0=PF_results.voltages.V7020,
     angle_0=PF_results.voltages.A7020,
-    V_b=420)
+    V_b=420000)
     annotation (Placement(transformation(extent={{-282,-20},{-280,-10}})));
   OpenIPSL.Electrical.Loads.PSSE.Load Load1_bus7020(
-    V_b=420,
-    V_0=PF_results.voltages.V7020,
+    V_b=420000,
+    v_0=PF_results.voltages.V7020,
     angle_0=PF_results.voltages.A7020,
     P_0=PF_results.loads.PL7020_1,
     Q_0=PF_results.loads.QL7020_1,
@@ -21,13 +21,13 @@ model Nordic44_Base_Case "Modified version of the original Nordic 44 model"
   OpenIPSL.Electrical.Buses.BusExt bus_7000(
     nn=16,
     np=4,
-    V_0=PF_results.voltages.V7000,
+    v_0=PF_results.voltages.V7000,
     angle_0=PF_results.voltages.A7000,
-    V_b=420)
+    V_b=420000)
     annotation (Placement(transformation(extent={{-272,-108},{-270,-36}})));
   OpenIPSL.Electrical.Loads.PSSE.Load Load1_bus7000(
-    V_b=420,
-    V_0=PF_results.voltages.V7000,
+    V_b=420000,
+    v_0=PF_results.voltages.V7000,
     angle_0=PF_results.voltages.A7000,
     P_0=PF_results.loads.PL7000_1,
     Q_0=PF_results.loads.QL7000_1,
@@ -36,8 +36,8 @@ model Nordic44_Base_Case "Modified version of the original Nordic 44 model"
         rotation=270,
         origin={-286,-36})));
   OpenIPSL.Electrical.Loads.PSSE.Load Load2_bus7000(
-    V_b=420,
-    V_0=PF_results.voltages.V7000,
+    V_b=420000,
+    v_0=PF_results.voltages.V7000,
     angle_0=PF_results.voltages.A7000,
     P_0=PF_results.loads.PL7000_2,
     Q_0=PF_results.loads.QL7000_2,
@@ -46,8 +46,8 @@ model Nordic44_Base_Case "Modified version of the original Nordic 44 model"
         rotation=270,
         origin={-286,-42})));
   OpenIPSL.Electrical.Loads.PSSE.Load Load3_bus7000(
-    V_b=420,
-    V_0=PF_results.voltages.V7000,
+    V_b=420000,
+    v_0=PF_results.voltages.V7000,
     angle_0=PF_results.voltages.A7000,
     P_0=PF_results.loads.PL7000_3,
     Q_0=PF_results.loads.QL7000_3,
@@ -56,8 +56,8 @@ model Nordic44_Base_Case "Modified version of the original Nordic 44 model"
         rotation=270,
         origin={-286,-48})));
   OpenIPSL.Electrical.Loads.PSSE.Load Load4_bus7000(
-    V_b=420,
-    V_0=PF_results.voltages.V7000,
+    V_b=420000,
+    v_0=PF_results.voltages.V7000,
     angle_0=PF_results.voltages.A7000,
     P_0=PF_results.loads.PL7000_4,
     Q_0=PF_results.loads.QL7000_4,
@@ -66,8 +66,8 @@ model Nordic44_Base_Case "Modified version of the original Nordic 44 model"
         rotation=270,
         origin={-286,-54})));
   OpenIPSL.Electrical.Loads.PSSE.Load Load5_bus7000(
-    V_b=420,
-    V_0=PF_results.voltages.V7000,
+    V_b=420000,
+    v_0=PF_results.voltages.V7000,
     angle_0=PF_results.voltages.A7000,
     P_0=PF_results.loads.PL7000_5,
     Q_0=PF_results.loads.QL7000_5,
@@ -78,75 +78,75 @@ model Nordic44_Base_Case "Modified version of the original Nordic 44 model"
   Generators.Gen1_bus_7000 G1_bus7000(
     P_0=PF_results.machines.P7000_1,
     Q_0=PF_results.machines.Q7000_1,
-    V_b=420,
-    V_0=PF_results.voltages.V7000,
+    V_b=420000,
+    v_0=PF_results.voltages.V7000,
     angle_0=PF_results.voltages.A7000)
     annotation (Placement(transformation(extent={{-292,-82},{-286,-76}})));
   Generators.Gen1_bus_7000 G2_bus7000(
     P_0=PF_results.machines.P7000_2,
     Q_0=PF_results.machines.Q7000_2,
-    V_b=420,
-    V_0=PF_results.voltages.V7000,
+    V_b=420000,
+    v_0=PF_results.voltages.V7000,
     angle_0=PF_results.voltages.A7000)
     annotation (Placement(transformation(extent={{-292,-90},{-286,-84}})));
   Generators.Gen1_bus_7000 G3_bus7000(
     P_0=PF_results.machines.P7000_3,
     Q_0=PF_results.machines.Q7000_3,
-    V_b=420,
-    V_0=PF_results.voltages.V7000,
+    V_b=420000,
+    v_0=PF_results.voltages.V7000,
     angle_0=PF_results.voltages.A7000)
     annotation (Placement(transformation(extent={{-292,-98},{-286,-92}})));
   Generators.Gen1_bus_7000 G4_bus7000(
     P_0=PF_results.machines.P7000_4,
     Q_0=PF_results.machines.Q7000_4,
-    V_b=420,
-    V_0=PF_results.voltages.V7000,
+    V_b=420000,
+    v_0=PF_results.voltages.V7000,
     angle_0=PF_results.voltages.A7000)
     annotation (Placement(transformation(extent={{-292,-106},{-286,-100}})));
   Generators.Gen1_bus_7000 G5_bus7000(
     P_0=PF_results.machines.P7000_5,
     Q_0=PF_results.machines.Q7000_5,
-    V_b=420,
-    V_0=PF_results.voltages.V7000,
+    V_b=420000,
+    v_0=PF_results.voltages.V7000,
     angle_0=PF_results.voltages.A7000)
     annotation (Placement(transformation(extent={{-292,-114},{-286,-108}})));
   Generators.Gen1_bus_7000 G6_bus7000(
     P_0=PF_results.machines.P7000_6,
     Q_0=PF_results.machines.Q7000_6,
-    V_b=420,
-    V_0=PF_results.voltages.V7000,
+    V_b=420000,
+    v_0=PF_results.voltages.V7000,
     angle_0=PF_results.voltages.A7000)
     annotation (Placement(transformation(extent={{-292,-122},{-286,-116}})));
   Generators.Gen1_bus_7000 G7_bus7000(
     P_0=PF_results.machines.P7000_7,
     Q_0=PF_results.machines.Q7000_7,
-    V_b=420,
-    V_0=PF_results.voltages.V7000,
+    V_b=420000,
+    v_0=PF_results.voltages.V7000,
     angle_0=PF_results.voltages.A7000)
     annotation (Placement(transformation(extent={{-292,-130},{-286,-124}})));
   Generators.Gen1_bus_7000 G8_bus7000(
     P_0=PF_results.machines.P7000_8,
     Q_0=PF_results.machines.Q7000_8,
-    V_b=420,
-    V_0=PF_results.voltages.V7000,
+    V_b=420000,
+    v_0=PF_results.voltages.V7000,
     angle_0=PF_results.voltages.A7000)
     annotation (Placement(transformation(extent={{-292,-138},{-286,-132}})));
   Generators.Gen1_bus_7000 G9_bus7000(
     P_0=PF_results.machines.P7000_9,
     Q_0=PF_results.machines.Q7000_9,
-    V_b=420,
-    V_0=PF_results.voltages.V7000,
+    V_b=420000,
+    v_0=PF_results.voltages.V7000,
     angle_0=PF_results.voltages.A7000)
     annotation (Placement(transformation(extent={{-292,-146},{-286,-140}})));
   OpenIPSL.Electrical.Buses.BusExt bus_7010(
     nn=1,
     np=1,
-    V_0=PF_results.voltages.V7010,
+    v_0=PF_results.voltages.V7010,
     angle_0=PF_results.voltages.A7010,
-    V_b=420) annotation (Placement(transformation(extent={{-282,0},{-280,10}})));
+    V_b=420000) annotation (Placement(transformation(extent={{-282,0},{-280,10}})));
   OpenIPSL.Electrical.Loads.PSSE.Load Load1_bus7010(
-    V_b=420,
-    V_0=PF_results.voltages.V7010,
+    V_b=420000,
+    v_0=PF_results.voltages.V7010,
     angle_0=PF_results.voltages.A7010,
     P_0=PF_results.loads.PL7010_1,
     Q_0=PF_results.loads.QL7010_1,
@@ -155,29 +155,29 @@ model Nordic44_Base_Case "Modified version of the original Nordic 44 model"
         rotation=270,
         origin={-288.25,4.25})));
   Generators.Gen3_bus_7100 G1_bus7100(
-    V_b=420,
-    V_0=PF_results.voltages.V7100,
+    V_b=420000,
+    v_0=PF_results.voltages.V7100,
     angle_0=PF_results.voltages.A7100,
     P_0=PF_results.machines.P7100_1,
     Q_0=PF_results.machines.Q7100_1)
     annotation (Placement(transformation(extent={{-266,-14},{-260,-8}})));
   Generators.Gen3_bus_7100 G2_bus7100(
-    V_b=420,
-    V_0=PF_results.voltages.V7100,
+    V_b=420000,
+    v_0=PF_results.voltages.V7100,
     angle_0=PF_results.voltages.A7100,
     P_0=PF_results.machines.P7100_2,
     Q_0=PF_results.machines.Q7100_2)
     annotation (Placement(transformation(extent={{-266,-20},{-260,-14}})));
   Generators.Gen3_bus_7100 G3_bus7100(
-    V_b=420,
-    V_0=PF_results.voltages.V7100,
+    V_b=420000,
+    v_0=PF_results.voltages.V7100,
     angle_0=PF_results.voltages.A7100,
     P_0=PF_results.machines.P7100_3,
     Q_0=PF_results.machines.Q7100_3)
     annotation (Placement(transformation(extent={{-266,-26},{-260,-20}})));
   OpenIPSL.Electrical.Loads.PSSE.Load Load1_bus7100(
-    V_b=420,
-    V_0=PF_results.voltages.V7100,
+    V_b=420000,
+    v_0=PF_results.voltages.V7100,
     angle_0=PF_results.voltages.A7100,
     P_0=PF_results.loads.PL7100_1,
     Q_0=PF_results.loads.QL7100_1,
@@ -186,8 +186,8 @@ model Nordic44_Base_Case "Modified version of the original Nordic 44 model"
         rotation=270,
         origin={-264,-30})));
   OpenIPSL.Electrical.Loads.PSSE.Load Load2_bus7100(
-    V_b=420,
-    V_0=PF_results.voltages.V7100,
+    V_b=420000,
+    v_0=PF_results.voltages.V7100,
     angle_0=PF_results.voltages.A7100,
     P_0=PF_results.loads.PL7100_2,
     Q_0=PF_results.loads.QL7100_2,
@@ -198,9 +198,9 @@ model Nordic44_Base_Case "Modified version of the original Nordic 44 model"
   OpenIPSL.Electrical.Buses.BusExt bus_7100(
     nn=8,
     np=3,
-    V_0=PF_results.voltages.V7100,
+    v_0=PF_results.voltages.V7100,
     angle_0=PF_results.voltages.A7100,
-    V_b=420)
+    V_b=420000)
     annotation (Placement(transformation(extent={{-252,-52},{-250,-14}})));
   OpenIPSL.Electrical.Branches.PwLine line_7000_7010(
     R=0.000000,
@@ -244,34 +244,34 @@ model Nordic44_Base_Case "Modified version of the original Nordic 44 model"
         origin={-254,-69})));
   OpenIPSL.Electrical.Buses.BusExt bus_3115(
     np=4,
-    V_0=PF_results.voltages.V3115,
+    v_0=PF_results.voltages.V3115,
     angle_0=PF_results.voltages.A3115,
-    V_b=420,
+    V_b=420000,
     nn=8) annotation (Placement(transformation(extent={{-228,-20},{-226,34}})));
   Generators.Gen3_bus_3115 G1_bus3115(
-    V_b=420,
-    V_0=PF_results.voltages.V3115,
+    V_b=420000,
+    v_0=PF_results.voltages.V3115,
     angle_0=PF_results.voltages.A3115,
     P_0=PF_results.machines.P3115_1,
     Q_0=PF_results.machines.Q3115_1)
     annotation (Placement(transformation(extent={{-248,12},{-242,18}})));
   Generators.Gen3_bus_3115 G2_bus3115(
-    V_b=420,
-    V_0=PF_results.voltages.V3115,
+    V_b=420000,
+    v_0=PF_results.voltages.V3115,
     angle_0=PF_results.voltages.A3115,
     P_0=PF_results.machines.P3115_2,
     Q_0=PF_results.machines.Q3115_2)
     annotation (Placement(transformation(extent={{-248,4},{-242,10}})));
   Generators.Gen3_bus_3115 G3_bus3115(
-    V_b=420,
-    V_0=PF_results.voltages.V3115,
+    V_b=420000,
+    v_0=PF_results.voltages.V3115,
     angle_0=PF_results.voltages.A3115,
     P_0=PF_results.machines.P3115_3,
     Q_0=PF_results.machines.Q3115_3)
     annotation (Placement(transformation(extent={{-248,-4},{-242,2}})));
   OpenIPSL.Electrical.Loads.PSSE.Load Load_bus3115(
-    V_b=420,
-    V_0=PF_results.voltages.V3115,
+    V_b=420000,
+    v_0=PF_results.voltages.V3115,
     angle_0=PF_results.voltages.A3115,
     P_0=PF_results.loads.PL3115_1,
     Q_0=PF_results.loads.QL3115_1,
@@ -337,34 +337,34 @@ model Nordic44_Base_Case "Modified version of the original Nordic 44 model"
   OpenIPSL.Electrical.Buses.BusExt bus_3000(
     nn=7,
     np=5,
-    V_0=PF_results.voltages.V3000,
+    v_0=PF_results.voltages.V3000,
     angle_0=PF_results.voltages.A3000,
-    V_b=420)
+    V_b=420000)
     annotation (Placement(transformation(extent={{-258,46},{-256,66}})));
   Generators.Gen1_bus_3000 G1_bus3000(
-    V_b=420,
-    V_0=PF_results.voltages.V3000,
+    V_b=420000,
+    v_0=PF_results.voltages.V3000,
     angle_0=PF_results.voltages.A3000,
     P_0=PF_results.machines.P3000_1,
     Q_0=PF_results.machines.Q3000_1)
     annotation (Placement(transformation(extent={{-280,64},{-274,70}})));
   Generators.Gen1_bus_3000 G2_bus3000(
-    V_b=420,
-    V_0=PF_results.voltages.V3000,
+    V_b=420000,
+    v_0=PF_results.voltages.V3000,
     angle_0=PF_results.voltages.A3000,
     P_0=PF_results.machines.P3000_2,
     Q_0=PF_results.machines.Q3000_2)
     annotation (Placement(transformation(extent={{-280,56},{-274,62}})));
   Generators.Gen1_bus_3000 G3_bus3000(
-    V_b=420,
-    V_0=PF_results.voltages.V3000,
+    V_b=420000,
+    v_0=PF_results.voltages.V3000,
     angle_0=PF_results.voltages.A3000,
     P_0=PF_results.machines.P3000_3,
     Q_0=PF_results.machines.Q3000_3)
     annotation (Placement(transformation(extent={{-280,48},{-274,54}})));
   OpenIPSL.Electrical.Loads.PSSE.Load Load1_bus3000(
-    V_b=420,
-    V_0=PF_results.voltages.V3000,
+    V_b=420000,
+    v_0=PF_results.voltages.V3000,
     angle_0=PF_results.voltages.A3000,
     P_0=PF_results.loads.PL3000_1,
     Q_0=PF_results.loads.QL3000_1,
@@ -373,8 +373,8 @@ model Nordic44_Base_Case "Modified version of the original Nordic 44 model"
         rotation=270,
         origin={-272.25,45.25})));
   OpenIPSL.Electrical.Loads.PSSE.Load Load2_bus3000(
-    V_b=420,
-    V_0=PF_results.voltages.V3000,
+    V_b=420000,
+    v_0=PF_results.voltages.V3000,
     angle_0=PF_results.voltages.A3000,
     P_0=PF_results.loads.PL3000_2,
     Q_0=PF_results.loads.QL3000_2,
@@ -383,8 +383,8 @@ model Nordic44_Base_Case "Modified version of the original Nordic 44 model"
         rotation=270,
         origin={-272.25,39.25})));
   OpenIPSL.Electrical.Loads.PSSE.Load Load3_bus3000(
-    V_b=420,
-    V_0=PF_results.voltages.V3000,
+    V_b=420000,
+    v_0=PF_results.voltages.V3000,
     angle_0=PF_results.voltages.A3000,
     P_0=PF_results.loads.PL3000_3,
     Q_0=PF_results.loads.QL3000_3,
@@ -433,13 +433,13 @@ model Nordic44_Base_Case "Modified version of the original Nordic 44 model"
   OpenIPSL.Electrical.Buses.BusExt bus_3020(
     nn=1,
     np=1,
-    V_0=PF_results.voltages.V3020,
+    v_0=PF_results.voltages.V3020,
     angle_0=PF_results.voltages.A3020,
-    V_b=420)
+    V_b=420000)
     annotation (Placement(transformation(extent={{-282,70},{-280,90}})));
   OpenIPSL.Electrical.Loads.PSSE.Load Load_bus3020(
-    V_b=420,
-    V_0=PF_results.voltages.V3020,
+    V_b=420000,
+    v_0=PF_results.voltages.V3020,
     angle_0=PF_results.voltages.A3020,
     P_0=PF_results.loads.PL3020_1,
     Q_0=PF_results.loads.QL3020_1,
@@ -450,13 +450,13 @@ model Nordic44_Base_Case "Modified version of the original Nordic 44 model"
   OpenIPSL.Electrical.Buses.BusExt bus_3300(
     nn=8,
     np=5,
-    V_0=PF_results.voltages.V3300,
+    v_0=PF_results.voltages.V3300,
     angle_0=PF_results.voltages.A3300,
-    V_b=420)
+    V_b=420000)
     annotation (Placement(transformation(extent={{-220,88},{-218,108}})));
   Generators.Gen4_bus_3300 G2_bus3300(
-    V_b=420,
-    V_0=PF_results.voltages.V3300,
+    V_b=420000,
+    v_0=PF_results.voltages.V3300,
     angle_0=PF_results.voltages.A3300,
     P_0=PF_results.machines.P3300_2,
     Q_0=PF_results.machines.Q3300_2) annotation (Placement(transformation(
@@ -464,22 +464,22 @@ model Nordic44_Base_Case "Modified version of the original Nordic 44 model"
         rotation=180,
         origin={-205,97})));
   Generators.Gen4_bus_3300 G3_bus3300(
-    V_b=420,
-    V_0=PF_results.voltages.V3300,
+    V_b=420000,
+    v_0=PF_results.voltages.V3300,
     angle_0=PF_results.voltages.A3300,
     P_0=PF_results.machines.P3300_3,
     Q_0=PF_results.machines.Q3300_3)
     annotation (Placement(transformation(extent={{-202,92},{-208,86}})));
   Generators.Gen4_bus_3300 G1_bus3300(
-    V_b=420,
-    V_0=PF_results.voltages.V3300,
+    V_b=420000,
+    v_0=PF_results.voltages.V3300,
     angle_0=PF_results.voltages.A3300,
     P_0=PF_results.machines.P3300_1,
     Q_0=PF_results.machines.Q3300_1)
     annotation (Placement(transformation(extent={{-236,89},{-230,95}})));
   OpenIPSL.Electrical.Loads.PSSE.Load Load1_bus3300(
-    V_b=420,
-    V_0=PF_results.voltages.V3300,
+    V_b=420000,
+    v_0=PF_results.voltages.V3300,
     angle_0=PF_results.voltages.A3300,
     P_0=PF_results.loads.PL3300_1,
     Q_0=PF_results.loads.QL3300_1,
@@ -488,8 +488,8 @@ model Nordic44_Base_Case "Modified version of the original Nordic 44 model"
         rotation=270,
         origin={-240.25,100.25})));
   OpenIPSL.Electrical.Loads.PSSE.Load Load2_bus3300(
-    V_b=420,
-    V_0=PF_results.voltages.V3300,
+    V_b=420000,
+    v_0=PF_results.voltages.V3300,
     angle_0=PF_results.voltages.A3300,
     P_0=PF_results.loads.PL3300_2,
     Q_0=PF_results.loads.QL3300_2,
@@ -500,9 +500,9 @@ model Nordic44_Base_Case "Modified version of the original Nordic 44 model"
   OpenIPSL.Electrical.Buses.BusExt bus_3200(
     nn=5,
     np=1,
-    V_0=PF_results.voltages.V3200,
+    v_0=PF_results.voltages.V3200,
     angle_0=PF_results.voltages.A3200,
-    V_b=420)
+    V_b=420000)
     annotation (Placement(transformation(extent={{-178,88},{-176,108}})));
   OpenIPSL.Electrical.Branches.PwLine line_3200_3300(
     R=0.020000,
@@ -538,9 +538,9 @@ model Nordic44_Base_Case "Modified version of the original Nordic 44 model"
   OpenIPSL.Electrical.Buses.BusExt bus_3100(
     nn=6,
     np=2,
-    V_0=PF_results.voltages.V3100,
+    v_0=PF_results.voltages.V3100,
     angle_0=PF_results.voltages.A3100,
-    V_b=420)
+    V_b=420000)
     annotation (Placement(transformation(extent={{-178,36},{-176,56}})));
   OpenIPSL.Electrical.Branches.PwLine line_3300_8500_1(
     R=0.020000,
@@ -561,13 +561,13 @@ model Nordic44_Base_Case "Modified version of the original Nordic 44 model"
   OpenIPSL.Electrical.Buses.BusExt bus_8500(
     nn=9,
     np=8,
-    V_0=PF_results.voltages.V8500,
+    v_0=PF_results.voltages.V8500,
     angle_0=PF_results.voltages.A8500,
-    V_b=420)
+    V_b=420000)
     annotation (Placement(transformation(extent={{-198,124},{-196,166}})));
   OpenIPSL.Electrical.Loads.PSSE.Load Load1_bus8500(
-    V_b=420,
-    V_0=PF_results.voltages.V8500,
+    V_b=420000,
+    v_0=PF_results.voltages.V8500,
     angle_0=PF_results.voltages.A8500,
     P_0=PF_results.loads.PL8500_1,
     Q_0=PF_results.loads.QL8500_1,
@@ -576,8 +576,8 @@ model Nordic44_Base_Case "Modified version of the original Nordic 44 model"
         rotation=270,
         origin={-212.25,162.25})));
   OpenIPSL.Electrical.Loads.PSSE.Load Load2_bus8500(
-    V_b=420,
-    V_0=PF_results.voltages.V8500,
+    V_b=420000,
+    v_0=PF_results.voltages.V8500,
     angle_0=PF_results.voltages.A8500,
     P_0=PF_results.loads.PL8500_2,
     Q_0=PF_results.loads.QL8500_2,
@@ -586,8 +586,8 @@ model Nordic44_Base_Case "Modified version of the original Nordic 44 model"
         rotation=270,
         origin={-212.25,156.25})));
   OpenIPSL.Electrical.Loads.PSSE.Load Load3_bus8500(
-    V_b=420,
-    V_0=PF_results.voltages.V8500,
+    V_b=420000,
+    v_0=PF_results.voltages.V8500,
     angle_0=PF_results.voltages.A8500,
     P_0=PF_results.loads.PL8500_3,
     Q_0=PF_results.loads.QL8500_3,
@@ -596,15 +596,15 @@ model Nordic44_Base_Case "Modified version of the original Nordic 44 model"
         rotation=270,
         origin={-214,148})));
   Generators.Gen4_bus_8500 G1_bus8500(
-    V_b=420,
-    V_0=PF_results.voltages.V8500,
+    V_b=420000,
+    v_0=PF_results.voltages.V8500,
     angle_0=PF_results.voltages.A8500,
     P_0=PF_results.machines.P8500_1,
     Q_0=PF_results.machines.Q8500_1)
     annotation (Placement(transformation(extent={{-218,138},{-212,144}})));
   Generators.Gen4_bus_8500 G2_bus8500(
-    V_b=420,
-    V_0=PF_results.voltages.V8500,
+    V_b=420000,
+    v_0=PF_results.voltages.V8500,
     angle_0=PF_results.voltages.A8500,
     P_0=PF_results.machines.P8500_2,
     Q_0=PF_results.machines.Q8500_2)
@@ -617,8 +617,8 @@ model Nordic44_Base_Case "Modified version of the original Nordic 44 model"
         extent={{-5,-3},{5,3}},
         origin={-215,167})));
   Generators.Gen4_bus_8500 G3_bus8500(
-    V_b=420,
-    V_0=PF_results.voltages.V8500,
+    V_b=420000,
+    v_0=PF_results.voltages.V8500,
     angle_0=PF_results.voltages.A8500,
     P_0=PF_results.machines.P8500_3,
     Q_0=PF_results.machines.Q8500_3)
@@ -654,22 +654,22 @@ model Nordic44_Base_Case "Modified version of the original Nordic 44 model"
         extent={{-5,-3},{5,3}},
         origin={-161,129})));
   Generators.Gen4_bus_8500 G4_bus8500(
-    V_b=420,
-    V_0=PF_results.voltages.V8500,
+    V_b=420000,
+    v_0=PF_results.voltages.V8500,
     angle_0=PF_results.voltages.A8500,
     P_0=PF_results.machines.P8500_4,
     Q_0=PF_results.machines.Q8500_4)
     annotation (Placement(transformation(extent={{-178,158},{-184,152}})));
   Generators.Gen4_bus_8500 G5_bus8500(
-    V_b=420,
-    V_0=PF_results.voltages.V8500,
+    V_b=420000,
+    v_0=PF_results.voltages.V8500,
     angle_0=PF_results.voltages.A8500,
     P_0=PF_results.machines.P8500_5,
     Q_0=PF_results.machines.Q8500_5)
     annotation (Placement(transformation(extent={{-178,150},{-184,144}})));
   Generators.Gen4_bus_8500 G6_bus8500(
-    V_b=420,
-    V_0=PF_results.voltages.V8500,
+    V_b=420000,
+    v_0=PF_results.voltages.V8500,
     angle_0=PF_results.voltages.A8500,
     P_0=PF_results.machines.P8500_6,
     Q_0=PF_results.machines.Q8500_6)
@@ -677,14 +677,14 @@ model Nordic44_Base_Case "Modified version of the original Nordic 44 model"
   OpenIPSL.Electrical.Buses.BusExt bus_8700(
     nn=1,
     np=1,
-    V_0=PF_results.voltages.V8700,
+    v_0=PF_results.voltages.V8700,
     angle_0=PF_results.voltages.A8700,
-    V_b=420)
+    V_b=420000)
     annotation (Placement(transformation(extent={{-238,156},{-236,176}})));
   OpenIPSL.Electrical.Loads.PSSE.Load Load_bus8700(
-    V_0=PF_results.voltages.V8700,
+    v_0=PF_results.voltages.V8700,
     angle_0=PF_results.voltages.A8700,
-    V_b=420,
+    V_b=420000,
     P_0=PF_results.loads.PL8700_1,
     Q_0=PF_results.loads.QL8700_1,
     characteristic=2) annotation (Placement(transformation(
@@ -694,13 +694,13 @@ model Nordic44_Base_Case "Modified version of the original Nordic 44 model"
   OpenIPSL.Electrical.Buses.BusExt bus_8600(
     nn=1,
     np=1,
-    V_0=PF_results.voltages.V8600,
+    v_0=PF_results.voltages.V8600,
     angle_0=PF_results.voltages.A8600,
-    V_b=420)
+    V_b=420000)
     annotation (Placement(transformation(extent={{-162,156},{-160,176}})));
   OpenIPSL.Electrical.Loads.PSSE.Load Load_bus8600(
-    V_b=420,
-    V_0=PF_results.voltages.V8600,
+    V_b=420000,
+    v_0=PF_results.voltages.V8600,
     angle_0=PF_results.voltages.A8600,
     P_0=PF_results.loads.PL8600_1,
     Q_0=PF_results.loads.QL8600_1,
@@ -711,9 +711,9 @@ model Nordic44_Base_Case "Modified version of the original Nordic 44 model"
   OpenIPSL.Electrical.Buses.BusExt bus_3359(
     nn=9,
     np=9,
-    V_0=PF_results.voltages.V3359,
+    v_0=PF_results.voltages.V3359,
     angle_0=PF_results.voltages.A3359,
-    V_b=420)
+    V_b=420000)
     annotation (Placement(transformation(extent={{-124,54},{-122,112}})));
   OpenIPSL.Electrical.Branches.PwLine line_3200_3359(
     R=0.010000,
@@ -723,8 +723,8 @@ model Nordic44_Base_Case "Modified version of the original Nordic 44 model"
         extent={{-5,-3},{5,3}},
         origin={-153,99})));
   OpenIPSL.Electrical.Loads.PSSE.Load Load1_bus3359(
-    V_b=420,
-    V_0=PF_results.voltages.V3359,
+    V_b=420000,
+    v_0=PF_results.voltages.V3359,
     angle_0=PF_results.voltages.A3359,
     P_0=PF_results.loads.PL3359_1,
     Q_0=PF_results.loads.QL3359_1,
@@ -733,8 +733,8 @@ model Nordic44_Base_Case "Modified version of the original Nordic 44 model"
         rotation=270,
         origin={-132.25,86.75})));
   OpenIPSL.Electrical.Loads.PSSE.Load Load2_bus3359(
-    V_b=420,
-    V_0=PF_results.voltages.V3359,
+    V_b=420000,
+    v_0=PF_results.voltages.V3359,
     angle_0=PF_results.voltages.A3359,
     P_0=PF_results.loads.PL3359_2,
     Q_0=PF_results.loads.QL3359_2,
@@ -743,8 +743,8 @@ model Nordic44_Base_Case "Modified version of the original Nordic 44 model"
         rotation=270,
         origin={-134.25,82.25})));
   OpenIPSL.Electrical.Loads.PSSE.Load Load3_bus3359(
-    V_b=420,
-    V_0=PF_results.voltages.V3359,
+    V_b=420000,
+    v_0=PF_results.voltages.V3359,
     angle_0=PF_results.voltages.A3359,
     P_0=PF_results.loads.PL3359_3,
     Q_0=PF_results.loads.QL3359_3,
@@ -753,8 +753,8 @@ model Nordic44_Base_Case "Modified version of the original Nordic 44 model"
         rotation=270,
         origin={-136.25,78.25})));
   OpenIPSL.Electrical.Loads.PSSE.Load Load4_bus3359(
-    V_b=420,
-    V_0=PF_results.voltages.V3359,
+    V_b=420000,
+    v_0=PF_results.voltages.V3359,
     angle_0=PF_results.voltages.A3359,
     P_0=PF_results.loads.PL3359_4,
     Q_0=PF_results.loads.QL3359_4,
@@ -778,13 +778,13 @@ model Nordic44_Base_Case "Modified version of the original Nordic 44 model"
         origin={-155,51})));
   OpenIPSL.Electrical.Buses.BusExt bus_3360(
     np=1,
-    V_0=PF_results.voltages.V3360,
+    v_0=PF_results.voltages.V3360,
     angle_0=PF_results.voltages.A3360,
     V_b=135,
     nn=1) annotation (Placement(transformation(extent={{-96,130},{-94,150}})));
   OpenIPSL.Electrical.Loads.PSSE.Load Load_bus3360(
     V_b=135,
-    V_0=PF_results.voltages.V3360,
+    v_0=PF_results.voltages.V3360,
     angle_0=PF_results.voltages.A3360,
     P_0=PF_results.loads.PL3360_1,
     Q_0=PF_results.loads.QL3360_1,
@@ -793,8 +793,8 @@ model Nordic44_Base_Case "Modified version of the original Nordic 44 model"
         rotation=90,
         origin={-83.75,140.25})));
   OpenIPSL.Electrical.Loads.PSSE.Load Load_bus3100(
-    V_b=420,
-    V_0=PF_results.voltages.V3100,
+    V_b=420000,
+    v_0=PF_results.voltages.V3100,
     angle_0=PF_results.voltages.A3100,
     P_0=PF_results.loads.PL3100_1,
     Q_0=PF_results.loads.QL3100_1,
@@ -813,13 +813,13 @@ model Nordic44_Base_Case "Modified version of the original Nordic 44 model"
   OpenIPSL.Electrical.Buses.BusExt bus_3249(
     np=6,
     nn=7,
-    V_0=PF_results.voltages.V3249,
+    v_0=PF_results.voltages.V3249,
     angle_0=PF_results.voltages.A3249,
-    V_b=420)
+    V_b=420000)
     annotation (Placement(transformation(extent={{-176,-52},{-174,6}})));
   OpenIPSL.Electrical.Loads.PSSE.Load Load_bus3249(
-    V_b=420,
-    V_0=PF_results.voltages.V3249,
+    V_b=420000,
+    v_0=PF_results.voltages.V3249,
     angle_0=PF_results.voltages.A3249,
     P_0=PF_results.loads.PL3249_1,
     Q_0=PF_results.loads.QL3249_1,
@@ -828,98 +828,98 @@ model Nordic44_Base_Case "Modified version of the original Nordic 44 model"
         rotation=270,
         origin={-190.25,-9.75})));
   Generators.Gen2_bus_3249 G1_bus3249(
-    V_b=420,
-    V_0=PF_results.voltages.V3249,
+    V_b=420000,
+    v_0=PF_results.voltages.V3249,
     angle_0=PF_results.voltages.A3249,
     P_0=PF_results.machines.P3249_1,
     Q_0=PF_results.machines.Q3249_1)
     annotation (Placement(transformation(extent={{-198,-20},{-192,-14}})));
   Generators.Gen2_bus_3249 G2_bus3249(
-    V_b=420,
-    V_0=PF_results.voltages.V3249,
+    V_b=420000,
+    v_0=PF_results.voltages.V3249,
     angle_0=PF_results.voltages.A3249,
     P_0=PF_results.machines.P3249_2,
     Q_0=PF_results.machines.Q3249_2)
     annotation (Placement(transformation(extent={{-198,-28},{-192,-22}})));
   Generators.Gen2_bus_3249 G3_bus3249(
-    V_b=420,
-    V_0=PF_results.voltages.V3249,
+    V_b=420000,
+    v_0=PF_results.voltages.V3249,
     angle_0=PF_results.voltages.A3249,
     P_0=PF_results.machines.P3249_3,
     Q_0=PF_results.machines.Q3249_3)
     annotation (Placement(transformation(extent={{-198,-36},{-192,-30}})));
   Generators.Gen2_bus_3249 G4_bus3249(
-    V_b=420,
-    V_0=PF_results.voltages.V3249,
+    V_b=420000,
+    v_0=PF_results.voltages.V3249,
     angle_0=PF_results.voltages.A3249,
     P_0=PF_results.machines.P3249_4,
     Q_0=PF_results.machines.Q3249_4)
     annotation (Placement(transformation(extent={{-158,-16},{-164,-22}})));
   Generators.Gen2_bus_3249 G5_bus3249(
-    V_b=420,
-    V_0=PF_results.voltages.V3249,
+    V_b=420000,
+    v_0=PF_results.voltages.V3249,
     angle_0=PF_results.voltages.A3249,
     P_0=PF_results.machines.P3249_5,
     Q_0=PF_results.machines.Q3249_5)
     annotation (Placement(transformation(extent={{-158,-24},{-164,-30}})));
   Generators.Gen2_bus_3249 G6_bus3249(
-    V_b=420,
-    V_0=PF_results.voltages.V3249,
+    V_b=420000,
+    v_0=PF_results.voltages.V3249,
     angle_0=PF_results.voltages.A3249,
     P_0=PF_results.machines.P3249_6,
     Q_0=PF_results.machines.Q3249_6)
     annotation (Placement(transformation(extent={{-158,-32},{-164,-38}})));
   Generators.Gen2_bus_3249 G7_bus3249(
-    V_b=420,
-    V_0=PF_results.voltages.V3249,
+    V_b=420000,
+    v_0=PF_results.voltages.V3249,
     angle_0=PF_results.voltages.A3249,
     P_0=PF_results.machines.P3249_7,
     Q_0=PF_results.machines.Q3249_7)
     annotation (Placement(transformation(extent={{-158,-42},{-164,-48}})));
   OpenIPSL.Electrical.Buses.BusExt bus_3701(
     np=1,
-    V_0=PF_results.voltages.V3701,
+    v_0=PF_results.voltages.V3701,
     angle_0=PF_results.voltages.A3701,
-    V_b=300,
+    V_b=300000,
     nn=1) annotation (Placement(transformation(extent={{-118,-70},{-116,-50}})));
   OpenIPSL.Electrical.Buses.BusExt bus_3245(
     nn=3,
     np=2,
-    V_0=PF_results.voltages.V3245,
+    v_0=PF_results.voltages.V3245,
     angle_0=PF_results.voltages.A3245,
-    V_b=420)
+    V_b=420000)
     annotation (Placement(transformation(extent={{-208,-82},{-206,-62}})));
   Generators.Gen2_bus_3245 G1_bus3245(
-    V_b=420,
-    V_0=PF_results.voltages.V3245,
+    V_b=420000,
+    v_0=PF_results.voltages.V3245,
     angle_0=PF_results.voltages.A3245,
     P_0=PF_results.machines.P3245_1,
     Q_0=PF_results.machines.Q3245_1)
     annotation (Placement(transformation(extent={{-194,-62},{-200,-68}})));
   OpenIPSL.Electrical.Buses.BusExt bus_3244(
     np=1,
-    V_0=PF_results.voltages.V3244,
+    v_0=PF_results.voltages.V3244,
     angle_0=PF_results.voltages.A3244,
-    V_b=300,
+    V_b=300000,
     nn=1)
     annotation (Placement(transformation(extent={{-178,-106},{-176,-86}})));
   OpenIPSL.Electrical.Buses.BusExt bus_6701(
     nn=2,
     np=2,
-    V_0=PF_results.voltages.V6701,
+    v_0=PF_results.voltages.V6701,
     angle_0=PF_results.voltages.A6701,
-    V_b=420)
+    V_b=420000)
     annotation (Placement(transformation(extent={{-146,-94},{-144,-74}})));
   OpenIPSL.Electrical.Buses.BusExt bus_6700(
     np=5,
     nn=4,
-    V_0=PF_results.voltages.V6700,
+    v_0=PF_results.voltages.V6700,
     angle_0=PF_results.voltages.A6700,
-    V_b=300)
+    V_b=300000)
     annotation (Placement(transformation(extent={{-78,-94},{-76,-74}})));
   OpenIPSL.Electrical.Loads.PSSE.Load Load1_bus6700(
-    V_b=300,
-    V_0=PF_results.voltages.V6700,
+    V_b=300000,
+    v_0=PF_results.voltages.V6700,
     angle_0=PF_results.voltages.A6700,
     P_0=PF_results.loads.PL6700_1,
     Q_0=PF_results.loads.QL6700_1,
@@ -928,15 +928,15 @@ model Nordic44_Base_Case "Modified version of the original Nordic 44 model"
         rotation=270,
         origin={-92.25,-85.75})));
   Generators.Gen3_bus_6700 G1_bus6700(
-    V_b=300,
-    V_0=PF_results.voltages.V6700,
+    V_b=300000,
+    v_0=PF_results.voltages.V6700,
     angle_0=PF_results.voltages.A6700,
     P_0=PF_results.machines.P6700_1,
     Q_0=PF_results.machines.Q6700_1)
     annotation (Placement(transformation(extent={{-98,-98},{-92,-92}})));
   Generators.Gen3_bus_6700 G2_bus6700(
-    V_b=300,
-    V_0=PF_results.voltages.V6700,
+    V_b=300000,
+    v_0=PF_results.voltages.V6700,
     angle_0=PF_results.voltages.A6700,
     P_0=PF_results.machines.P6700_2,
     Q_0=PF_results.machines.Q6700_2)
@@ -960,9 +960,9 @@ model Nordic44_Base_Case "Modified version of the original Nordic 44 model"
   OpenIPSL.Electrical.Buses.BusExt bus_6500(
     nn=6,
     np=5,
-    V_0=PF_results.voltages.V6500,
+    v_0=PF_results.voltages.V6500,
     angle_0=PF_results.voltages.A6500,
-    V_b=300)
+    V_b=300000)
     annotation (Placement(transformation(extent={{-20,-122},{-18,-78}})));
   OpenIPSL.Electrical.Branches.PwLine line_6500_6700_1(
     R=0.170000,
@@ -981,8 +981,8 @@ model Nordic44_Base_Case "Modified version of the original Nordic 44 model"
         rotation=180,
         origin={-51,-91})));
   OpenIPSL.Electrical.Loads.PSSE.Load Load1_bus6500(
-    V_b=300,
-    V_0=PF_results.voltages.V6500,
+    V_b=300000,
+    v_0=PF_results.voltages.V6500,
     angle_0=PF_results.voltages.A6500,
     P_0=PF_results.loads.PL6500_1,
     Q_0=PF_results.loads.QL6500_1,
@@ -991,8 +991,8 @@ model Nordic44_Base_Case "Modified version of the original Nordic 44 model"
         rotation=270,
         origin={-32.25,-97.75})));
   OpenIPSL.Electrical.Loads.PSSE.Load Load2_bus6500(
-    V_b=300,
-    V_0=PF_results.voltages.V6500,
+    V_b=300000,
+    v_0=PF_results.voltages.V6500,
     angle_0=PF_results.voltages.A6500,
     P_0=PF_results.loads.PL6500_2,
     Q_0=PF_results.loads.QL6500_2,
@@ -1001,8 +1001,8 @@ model Nordic44_Base_Case "Modified version of the original Nordic 44 model"
         rotation=270,
         origin={-32.25,-103.75})));
   OpenIPSL.Electrical.Loads.PSSE.Load Load3_bus6500(
-    V_b=300,
-    V_0=PF_results.voltages.V6500,
+    V_b=300000,
+    v_0=PF_results.voltages.V6500,
     angle_0=PF_results.voltages.A6500,
     P_0=PF_results.loads.PL6500_3,
     Q_0=PF_results.loads.QL6500_3,
@@ -1011,29 +1011,29 @@ model Nordic44_Base_Case "Modified version of the original Nordic 44 model"
         rotation=270,
         origin={-32.25,-111.75})));
   Generators.Gen5_bus_6500 G1_bus6500(
-    V_b=300,
-    V_0=PF_results.voltages.V6500,
+    V_b=300000,
+    v_0=PF_results.voltages.V6500,
     angle_0=PF_results.voltages.A6500,
     P_0=PF_results.machines.P6500_1,
     Q_0=PF_results.machines.Q6500_1)
     annotation (Placement(transformation(extent={{2,-90},{-4,-96}})));
   Generators.Gen5_bus_6500 G2_bus6500(
-    V_b=300,
-    V_0=PF_results.voltages.V6500,
+    V_b=300000,
+    v_0=PF_results.voltages.V6500,
     angle_0=PF_results.voltages.A6500,
     P_0=PF_results.machines.P6500_2,
     Q_0=PF_results.machines.Q6500_2)
     annotation (Placement(transformation(extent={{2,-98},{-4,-104}})));
   Generators.Gen5_bus_6500 G3_bus6500(
-    V_b=300,
-    V_0=PF_results.voltages.V6500,
+    V_b=300000,
+    v_0=PF_results.voltages.V6500,
     angle_0=PF_results.voltages.A6500,
     P_0=PF_results.machines.P6500_3,
     Q_0=PF_results.machines.Q6500_3)
     annotation (Placement(transformation(extent={{2,-106},{-4,-112}})));
   Generators.Gen5_bus_6500 G4_bus6500(
-    V_b=300,
-    V_0=PF_results.voltages.V6500,
+    V_b=300000,
+    v_0=PF_results.voltages.V6500,
     angle_0=PF_results.voltages.A6500,
     P_0=PF_results.machines.P6500_4,
     Q_0=PF_results.machines.Q6500_4)
@@ -1041,9 +1041,9 @@ model Nordic44_Base_Case "Modified version of the original Nordic 44 model"
   OpenIPSL.Electrical.Buses.BusExt bus_5100(
     np=2,
     nn=4,
-    V_0=PF_results.voltages.V5100,
+    v_0=PF_results.voltages.V5100,
     angle_0=PF_results.voltages.A5100,
-    V_b=300) annotation (Placement(transformation(extent={{22,-74},{24,-54}})));
+    V_b=300000) annotation (Placement(transformation(extent={{22,-74},{24,-54}})));
   OpenIPSL.Electrical.Branches.PwLine line_5100_6500(
     R=0.080000,
     X=0.900000,
@@ -1053,15 +1053,15 @@ model Nordic44_Base_Case "Modified version of the original Nordic 44 model"
         rotation=180,
         origin={3,-79})));
   Generators.Gen5_bus_5100 G1_bus5100(
-    V_b=300,
-    V_0=PF_results.voltages.V5100,
+    V_b=300000,
+    v_0=PF_results.voltages.V5100,
     angle_0=PF_results.voltages.A5100,
     P_0=PF_results.machines.P5100_1,
     Q_0=PF_results.machines.Q5100_1)
     annotation (Placement(transformation(extent={{2,-68},{8,-62}})));
   OpenIPSL.Electrical.Loads.PSSE.Load Load_bus5100(
-    V_b=300,
-    V_0=PF_results.voltages.V5100,
+    V_b=300000,
+    v_0=PF_results.voltages.V5100,
     angle_0=PF_results.voltages.A5100,
     P_0=PF_results.loads.PL5100_1,
     Q_0=PF_results.loads.QL5100_1,
@@ -1080,9 +1080,9 @@ model Nordic44_Base_Case "Modified version of the original Nordic 44 model"
   OpenIPSL.Electrical.Buses.BusExt bus_5101(
     nn=2,
     np=4,
-    V_0=PF_results.voltages.V5101,
+    v_0=PF_results.voltages.V5101,
     angle_0=PF_results.voltages.A5101,
-    V_b=420) annotation (Placement(transformation(extent={{22,-2},{24,18}})));
+    V_b=420000) annotation (Placement(transformation(extent={{22,-2},{24,18}})));
   OpenIPSL.Electrical.Branches.PwLine line_3359_5101_2(
     R=0.020000,
     X=0.220000,
@@ -1100,43 +1100,43 @@ model Nordic44_Base_Case "Modified version of the original Nordic 44 model"
         rotation=180,
         origin={-65,17})));
   Generators.Gen4_bus_3359 G1_bus3359(
-    V_b=420,
-    V_0=PF_results.voltages.V3359,
+    V_b=420000,
+    v_0=PF_results.voltages.V3359,
     angle_0=PF_results.voltages.A3359,
     P_0=PF_results.machines.P3359_1,
     Q_0=PF_results.machines.Q3359_1)
     annotation (Placement(transformation(extent={{-92,110},{-98,104}})));
   Generators.Gen4_bus_3359 G2_bus3359(
-    V_b=420,
-    V_0=PF_results.voltages.V3359,
+    V_b=420000,
+    v_0=PF_results.voltages.V3359,
     angle_0=PF_results.voltages.A3359,
     P_0=PF_results.machines.P3359_2,
     Q_0=PF_results.machines.Q3359_2)
     annotation (Placement(transformation(extent={{-92,102},{-98,96}})));
   Generators.Gen4_bus_3359 G3_bus3359(
-    V_b=420,
-    V_0=PF_results.voltages.V3359,
+    V_b=420000,
+    v_0=PF_results.voltages.V3359,
     angle_0=PF_results.voltages.A3359,
     P_0=PF_results.machines.P3359_3,
     Q_0=PF_results.machines.Q3359_3)
     annotation (Placement(transformation(extent={{-92,94},{-98,88}})));
   Generators.Gen4_bus_3359 G4_bus3359(
-    V_b=420,
-    V_0=PF_results.voltages.V3359,
+    V_b=420000,
+    v_0=PF_results.voltages.V3359,
     angle_0=PF_results.voltages.A3359,
     P_0=PF_results.machines.P3359_4,
     Q_0=PF_results.machines.Q3359_4)
     annotation (Placement(transformation(extent={{-92,86},{-98,80}})));
   Generators.Gen4_bus_3359 G5_bus3359(
-    V_b=420,
-    V_0=PF_results.voltages.V3359,
+    V_b=420000,
+    v_0=PF_results.voltages.V3359,
     angle_0=PF_results.voltages.A3359,
     P_0=PF_results.machines.P3359_5,
     Q_0=PF_results.machines.Q3359_5)
     annotation (Placement(transformation(extent={{-92,78},{-98,72}})));
   Generators.Gen4_bus_3359 G6_bus3359(
-    V_b=420,
-    V_0=PF_results.voltages.V3359,
+    V_b=420000,
+    v_0=PF_results.voltages.V3359,
     angle_0=PF_results.voltages.A3359,
     P_0=PF_results.machines.P3359_6,
     Q_0=PF_results.machines.Q3359_6)
@@ -1168,9 +1168,9 @@ model Nordic44_Base_Case "Modified version of the original Nordic 44 model"
   OpenIPSL.Electrical.Buses.BusExt bus_5103(
     nn=1,
     np=3,
-    V_0=PF_results.voltages.V5103,
+    v_0=PF_results.voltages.V5103,
     angle_0=PF_results.voltages.A5103,
-    V_b=420) annotation (Placement(transformation(extent={{80,38},{82,58}})));
+    V_b=420000) annotation (Placement(transformation(extent={{80,38},{82,58}})));
   OpenIPSL.Electrical.Branches.PwLine line_5103_5304_2(
     R=0.013000,
     X=0.200000,
@@ -1183,7 +1183,8 @@ model Nordic44_Base_Case "Modified version of the original Nordic 44 model"
     R=0.020000,
     X=0.250000,
     G=0,
-    B=0.070000*0.5) annotation (Placement(transformation(
+    B=0.070000*0.5,
+    t1=2) annotation (Placement(transformation(
         extent={{-5,-3},{5,3}},
         rotation=180,
         origin={97,53})));
@@ -1198,15 +1199,15 @@ model Nordic44_Base_Case "Modified version of the original Nordic 44 model"
   OpenIPSL.Electrical.Buses.BusExt bus_5304(
     np=3,
     nn=3,
-    V_0=PF_results.voltages.V5304,
+    v_0=PF_results.voltages.V5304,
     angle_0=PF_results.voltages.A5304,
-    V_b=420) annotation (Placement(transformation(extent={{122,70},{124,90}})));
+    V_b=420000) annotation (Placement(transformation(extent={{122,70},{124,90}})));
   OpenIPSL.Electrical.Buses.BusExt bus_5102(
     nn=3,
     np=1,
-    V_0=PF_results.voltages.V5102,
+    v_0=PF_results.voltages.V5102,
     angle_0=PF_results.voltages.A5102,
-    V_b=420) annotation (Placement(transformation(extent={{122,4},{124,24}})));
+    V_b=420000) annotation (Placement(transformation(extent={{122,4},{124,24}})));
   OpenIPSL.Electrical.Branches.PwLine line_5102_5304(
     R=0.017000,
     X=0.240000,
@@ -1226,9 +1227,9 @@ model Nordic44_Base_Case "Modified version of the original Nordic 44 model"
   OpenIPSL.Electrical.Buses.BusExt bus_5305(
     np=1,
     nn=2,
-    V_0=PF_results.voltages.V5305,
+    v_0=PF_results.voltages.V5305,
     angle_0=PF_results.voltages.A5305,
-    V_b=420)
+    V_b=420000)
     annotation (Placement(transformation(extent={{162,110},{164,130}})));
   OpenIPSL.Electrical.Branches.PwLine line_5304_5305_1(
     R=0.010000,
@@ -1256,9 +1257,9 @@ model Nordic44_Base_Case "Modified version of the original Nordic 44 model"
         origin={159,75})));
   OpenIPSL.Electrical.Buses.BusExt bus_5301(
     nn=3,
-    V_0=PF_results.voltages.V5301,
+    v_0=PF_results.voltages.V5301,
     angle_0=PF_results.voltages.A5301,
-    V_b=420,
+    V_b=420000,
     np=1) annotation (Placement(transformation(extent={{200,70},{202,90}})));
   OpenIPSL.Electrical.Branches.PwLine line_5301_5305(
     R=0.007000,
@@ -1279,26 +1280,26 @@ model Nordic44_Base_Case "Modified version of the original Nordic 44 model"
   OpenIPSL.Electrical.Buses.BusExt bus_5300(
     np=6,
     nn=3,
-    V_0=PF_results.voltages.V5300,
+    v_0=PF_results.voltages.V5300,
     angle_0=PF_results.voltages.A5300,
-    V_b=300) annotation (Placement(transformation(extent={{240,70},{242,90}})));
+    V_b=300000) annotation (Placement(transformation(extent={{240,70},{242,90}})));
   Generators.Gen3_bus_5300 G1_bus5300(
-    V_b=300,
-    V_0=PF_results.voltages.V5300,
+    V_b=300000,
+    v_0=PF_results.voltages.V5300,
     angle_0=PF_results.voltages.A5300,
     P_0=PF_results.machines.P5300_1,
     Q_0=PF_results.machines.Q5300_1)
     annotation (Placement(transformation(extent={{220,64},{226,70}})));
   Generators.Gen3_bus_5300 G2_bus5300(
-    V_b=300,
-    V_0=PF_results.voltages.V5300,
+    V_b=300000,
+    v_0=PF_results.voltages.V5300,
     angle_0=PF_results.voltages.A5300,
     P_0=PF_results.machines.P5300_2,
     Q_0=PF_results.machines.Q5300_2)
     annotation (Placement(transformation(extent={{262,84},{256,78}})));
   OpenIPSL.Electrical.Loads.PSSE.Load Load_bus5300(
-    V_b=300,
-    V_0=PF_results.voltages.V5300,
+    V_b=300000,
+    v_0=PF_results.voltages.V5300,
     angle_0=PF_results.voltages.A5300,
     P_0=PF_results.loads.PL5300_2,
     Q_0=PF_results.loads.QL5300_2,
@@ -1309,9 +1310,9 @@ model Nordic44_Base_Case "Modified version of the original Nordic 44 model"
   OpenIPSL.Electrical.Buses.BusExt bus_6100(
     np=4,
     nn=5,
-    V_0=PF_results.voltages.V6100,
+    v_0=PF_results.voltages.V6100,
     angle_0=PF_results.voltages.A6100,
-    V_b=300) annotation (Placement(transformation(extent={{280,38},{282,58}})));
+    V_b=300000) annotation (Placement(transformation(extent={{280,38},{282,58}})));
   OpenIPSL.Electrical.Branches.PwLine line_5300_6100(
     R=0.021000,
     X=0.220000,
@@ -1320,8 +1321,8 @@ model Nordic44_Base_Case "Modified version of the original Nordic 44 model"
         extent={{-5,-3},{5,3}},
         origin={259,75})));
   OpenIPSL.Electrical.Loads.PSSE.Load Load1_bus6100(
-    V_b=300,
-    V_0=PF_results.voltages.V6100,
+    V_b=300000,
+    v_0=PF_results.voltages.V6100,
     angle_0=PF_results.voltages.A6100,
     P_0=PF_results.loads.PL6100_1,
     Q_0=PF_results.loads.QL6100_1,
@@ -1330,8 +1331,8 @@ model Nordic44_Base_Case "Modified version of the original Nordic 44 model"
         rotation=270,
         origin={266.75,63.25})));
   OpenIPSL.Electrical.Loads.PSSE.Load Load2_bus6100(
-    V_b=300,
-    V_0=PF_results.voltages.V6100,
+    V_b=300000,
+    v_0=PF_results.voltages.V6100,
     angle_0=PF_results.voltages.A6100,
     P_0=PF_results.loads.PL6100_2,
     Q_0=PF_results.loads.QL6100_2,
@@ -1340,36 +1341,36 @@ model Nordic44_Base_Case "Modified version of the original Nordic 44 model"
         rotation=270,
         origin={266.75,53.25})));
   Generators.Gen3_bus_6100 G1_bus6100(
-    V_b=300,
-    V_0=PF_results.voltages.V6100,
+    V_b=300000,
+    v_0=PF_results.voltages.V6100,
     angle_0=PF_results.voltages.A6100,
     P_0=PF_results.machines.P6100_1,
     Q_0=PF_results.machines.Q6100_1)
     annotation (Placement(transformation(extent={{262,42},{268,48}})));
   Generators.Gen3_bus_6100 G2_bus6100(
-    V_b=300,
-    V_0=PF_results.voltages.V6100,
+    V_b=300000,
+    v_0=PF_results.voltages.V6100,
     angle_0=PF_results.voltages.A6100,
     P_0=PF_results.machines.P6100_2,
     Q_0=PF_results.machines.Q6100_2)
     annotation (Placement(transformation(extent={{296,64},{290,58}})));
   Generators.Gen3_bus_6100 G4_bus6100(
-    V_b=300,
-    V_0=PF_results.voltages.V6100,
+    V_b=300000,
+    v_0=PF_results.voltages.V6100,
     angle_0=PF_results.voltages.A6100,
     P_0=PF_results.machines.P6100_4,
     Q_0=PF_results.machines.Q6100_4)
     annotation (Placement(transformation(extent={{296,48},{290,42}})));
   Generators.Gen3_bus_6100 G5_bus6100(
-    V_b=300,
-    V_0=PF_results.voltages.V6100,
+    V_b=300000,
+    v_0=PF_results.voltages.V6100,
     angle_0=PF_results.voltages.A6100,
     P_0=PF_results.machines.P6100_5,
     Q_0=PF_results.machines.Q6100_5)
     annotation (Placement(transformation(extent={{296,40},{290,34}})));
   Generators.Gen3_bus_6100 G3_bus6100(
-    V_b=300,
-    V_0=PF_results.voltages.V6100,
+    V_b=300000,
+    v_0=PF_results.voltages.V6100,
     angle_0=PF_results.voltages.A6100,
     P_0=PF_results.machines.P6100_3,
     Q_0=PF_results.machines.Q6100_3)
@@ -1385,12 +1386,12 @@ model Nordic44_Base_Case "Modified version of the original Nordic 44 model"
   OpenIPSL.Electrical.Buses.BusExt bus_6000(
     np=5,
     nn=3,
-    V_0=PF_results.voltages.V6000,
+    v_0=PF_results.voltages.V6000,
     angle_0=PF_results.voltages.A6000,
-    V_b=300) annotation (Placement(transformation(extent={{240,-8},{242,12}})));
+    V_b=300000) annotation (Placement(transformation(extent={{240,-8},{242,12}})));
   Generators.Gen5_bus_6000 G1_bus6000(
-    V_b=300,
-    V_0=PF_results.voltages.V6000,
+    V_b=300000,
+    v_0=PF_results.voltages.V6000,
     angle_0=PF_results.voltages.A6000,
     P_0=PF_results.machines.P6000_1,
     Q_0=PF_results.machines.Q6000_1)
@@ -1406,21 +1407,21 @@ model Nordic44_Base_Case "Modified version of the original Nordic 44 model"
   OpenIPSL.Electrical.Buses.BusExt bus_6001(
     nn=3,
     np=3,
-    V_0=PF_results.voltages.V6001,
+    v_0=PF_results.voltages.V6001,
     angle_0=PF_results.voltages.A6001,
-    V_b=420) annotation (Placement(transformation(extent={{182,12},{184,32}})));
+    V_b=420000) annotation (Placement(transformation(extent={{182,12},{184,32}})));
   OpenIPSL.Electrical.Buses.BusExt bus_5601(
     np=1,
-    V_0=PF_results.voltages.V5601,
+    v_0=PF_results.voltages.V5601,
     angle_0=PF_results.voltages.A5601,
-    V_b=300,
+    V_b=300000,
     nn=1) annotation (Placement(transformation(extent={{280,-2},{282,18}})));
   OpenIPSL.Electrical.Buses.BusExt bus_5600(
     nn=4,
     np=6,
-    V_0=PF_results.voltages.V5600,
+    v_0=PF_results.voltages.V5600,
     angle_0=PF_results.voltages.A5600,
-    V_b=300)
+    V_b=300000)
     annotation (Placement(transformation(extent={{280,-54},{282,-34}})));
   OpenIPSL.Electrical.Branches.PwLine line_5600_5601(
     R=0.030000,
@@ -1438,8 +1439,8 @@ model Nordic44_Base_Case "Modified version of the original Nordic 44 model"
         extent={{-5,-3},{5,3}},
         origin={265,-15})));
   OpenIPSL.Electrical.Loads.PSSE.Load Load1_bus5600(
-    V_b=300,
-    V_0=PF_results.voltages.V5600,
+    V_b=300000,
+    v_0=PF_results.voltages.V5600,
     angle_0=PF_results.voltages.A5600,
     P_0=PF_results.loads.PL5600_1,
     Q_0=PF_results.loads.QL5600_1,
@@ -1448,8 +1449,8 @@ model Nordic44_Base_Case "Modified version of the original Nordic 44 model"
         rotation=270,
         origin={266.75,-34.75})));
   OpenIPSL.Electrical.Loads.PSSE.Load Load2_bus5600(
-    V_b=300,
-    V_0=PF_results.voltages.V5600,
+    V_b=300000,
+    v_0=PF_results.voltages.V5600,
     angle_0=PF_results.voltages.A5600,
     P_0=PF_results.loads.PL5600_2,
     Q_0=PF_results.loads.QL5600_2,
@@ -1467,13 +1468,13 @@ model Nordic44_Base_Case "Modified version of the original Nordic 44 model"
   OpenIPSL.Electrical.Buses.BusExt bus_5620(
     np=1,
     nn=1,
-    V_0=PF_results.voltages.V5620,
+    v_0=PF_results.voltages.V5620,
     angle_0=PF_results.voltages.A5620,
-    V_b=300)
+    V_b=300000)
     annotation (Placement(transformation(extent={{280,-104},{282,-84}})));
   OpenIPSL.Electrical.Loads.PSSE.Load Load_bus5620(
-    V_b=300,
-    V_0=PF_results.voltages.V5620,
+    V_b=300000,
+    v_0=PF_results.voltages.V5620,
     angle_0=PF_results.voltages.A5620,
     P_0=PF_results.loads.PL5620_1,
     Q_0=PF_results.loads.QL5620_1,
@@ -1490,15 +1491,15 @@ model Nordic44_Base_Case "Modified version of the original Nordic 44 model"
         rotation=270,
         origin={288,-71})));
   Generators.Gen2_bus_5600 G1_bus5600(
-    V_b=300,
-    V_0=PF_results.voltages.V5600,
+    V_b=300000,
+    v_0=PF_results.voltages.V5600,
     angle_0=PF_results.voltages.A5600,
     P_0=PF_results.machines.P5600_1,
     Q_0=PF_results.machines.Q5600_1)
     annotation (Placement(transformation(extent={{298,-48},{292,-54}})));
   Generators.Gen2_bus_5600 G2_bus5600(
-    V_b=300,
-    V_0=PF_results.voltages.V5600,
+    V_b=300000,
+    v_0=PF_results.voltages.V5600,
     angle_0=PF_results.voltages.A5600,
     P_0=PF_results.machines.P5600_2,
     Q_0=PF_results.machines.Q5600_2)
@@ -1506,16 +1507,16 @@ model Nordic44_Base_Case "Modified version of the original Nordic 44 model"
   OpenIPSL.Electrical.Buses.BusExt bus_5603(
     np=2,
     nn=2,
-    V_0=PF_results.voltages.V5603,
+    v_0=PF_results.voltages.V5603,
     angle_0=PF_results.voltages.A5603,
-    V_b=300)
+    V_b=300000)
     annotation (Placement(transformation(extent={{220,-86},{222,-66}})));
   OpenIPSL.Electrical.Buses.BusExt bus_5610(
     np=1,
     nn=1,
-    V_0=PF_results.voltages.V5610,
+    v_0=PF_results.voltages.V5610,
     angle_0=PF_results.voltages.A5610,
-    V_b=300)
+    V_b=300000)
     annotation (Placement(transformation(extent={{242,-116},{244,-96}})));
   OpenIPSL.Electrical.Branches.PwLine line_5603_5610(
     R=0.000000,
@@ -1526,8 +1527,8 @@ model Nordic44_Base_Case "Modified version of the original Nordic 44 model"
         rotation=270,
         origin={233,-91})));
   OpenIPSL.Electrical.Loads.PSSE.Load Load1_bus5610(
-    V_b=300,
-    V_0=PF_results.voltages.V5610,
+    V_b=300000,
+    v_0=PF_results.voltages.V5610,
     angle_0=PF_results.voltages.A5610,
     P_0=PF_results.loads.PL5610_1,
     Q_0=PF_results.loads.QL5610_1,
@@ -1537,16 +1538,16 @@ model Nordic44_Base_Case "Modified version of the original Nordic 44 model"
         origin={254.75,-104.75})));
   OpenIPSL.Electrical.Buses.BusExt bus_5602(
     nn=1,
-    V_0=PF_results.voltages.V5602,
+    v_0=PF_results.voltages.V5602,
     angle_0=PF_results.voltages.A5602,
-    V_b=420,
+    V_b=420000,
     np=1) annotation (Placement(transformation(extent={{182,-86},{184,-66}})));
   OpenIPSL.Electrical.Buses.BusExt bus_5500(
     nn=4,
     np=4,
-    V_0=PF_results.voltages.V5500,
+    v_0=PF_results.voltages.V5500,
     angle_0=PF_results.voltages.A5500,
-    V_b=300) annotation (Placement(transformation(extent={{76,-90},{78,-58}})));
+    V_b=300000) annotation (Placement(transformation(extent={{76,-90},{78,-58}})));
   OpenIPSL.Electrical.Branches.PwLine line_5500_5603(
     R=0.050000,
     X=0.600000,
@@ -1556,8 +1557,8 @@ model Nordic44_Base_Case "Modified version of the original Nordic 44 model"
         rotation=180,
         origin={114,-89})));
   Generators.Gen5_bus_5500 G1_bus5500(
-    V_b=300,
-    V_0=PF_results.voltages.V5500,
+    V_b=300000,
+    v_0=PF_results.voltages.V5500,
     angle_0=PF_results.voltages.A5500,
     P_0=PF_results.machines.P5500_1,
     Q_0=PF_results.machines.Q5500_1)
@@ -1573,19 +1574,19 @@ model Nordic44_Base_Case "Modified version of the original Nordic 44 model"
   OpenIPSL.Electrical.Buses.BusExt bus_5401(
     nn=1,
     np=3,
-    V_0=PF_results.voltages.V5401,
+    v_0=PF_results.voltages.V5401,
     angle_0=PF_results.voltages.A5401,
-    V_b=420)
+    V_b=420000)
     annotation (Placement(transformation(extent={{122,-44},{124,-24}})));
   OpenIPSL.Electrical.Buses.BusExt bus_5501(
     np=1,
     nn=2,
-    V_0=PF_results.voltages.V5501,
+    v_0=PF_results.voltages.V5501,
     angle_0=PF_results.voltages.A5501,
-    V_b=420) annotation (Placement(transformation(extent={{80,-26},{82,-6}})));
+    V_b=420000) annotation (Placement(transformation(extent={{80,-26},{82,-6}})));
   OpenIPSL.Electrical.Loads.PSSE.Load Load1_bus5500(
-    V_b=300,
-    V_0=PF_results.voltages.V5500,
+    V_b=300000,
+    v_0=PF_results.voltages.V5500,
     angle_0=PF_results.voltages.A5500,
     P_0=PF_results.loads.PL5500_1,
     Q_0=PF_results.loads.QL5500_1,
@@ -1594,8 +1595,8 @@ model Nordic44_Base_Case "Modified version of the original Nordic 44 model"
         rotation=270,
         origin={63.75,-75.75})));
   OpenIPSL.Electrical.Loads.PSSE.Load Load2_bus5500(
-    V_b=300,
-    V_0=PF_results.voltages.V5500,
+    V_b=300000,
+    v_0=PF_results.voltages.V5500,
     angle_0=PF_results.voltages.A5500,
     P_0=PF_results.loads.PL5500_2,
     Q_0=PF_results.loads.QL5500_2,
@@ -1614,15 +1615,15 @@ model Nordic44_Base_Case "Modified version of the original Nordic 44 model"
   OpenIPSL.Electrical.Buses.BusExt bus_5400(
     np=3,
     nn=4,
-    V_0=PF_results.voltages.V5400,
+    v_0=PF_results.voltages.V5400,
     angle_0=PF_results.voltages.A5400,
-    V_b=300)
+    V_b=300000)
     annotation (Placement(transformation(extent={{180,-56},{182,-36}})));
   OpenIPSL.Electrical.Buses.BusExt bus_5402(
     nn=1,
-    V_0=PF_results.voltages.V5402,
+    v_0=PF_results.voltages.V5402,
     angle_0=PF_results.voltages.A5402,
-    V_b=420,
+    V_b=420000,
     np=1) annotation (Placement(transformation(extent={{194,-18},{196,2}})));
   OpenIPSL.Electrical.Branches.PwLine line_5401_6001(
     R=0.006400,
@@ -1641,22 +1642,22 @@ model Nordic44_Base_Case "Modified version of the original Nordic 44 model"
         rotation=90,
         origin={135,-50})));
   Generators.Gen5_bus_5400 G1_bus5400(
-    V_b=300,
-    V_0=PF_results.voltages.V5400,
+    V_b=300000,
+    v_0=PF_results.voltages.V5400,
     angle_0=PF_results.voltages.A5400,
     P_0=PF_results.machines.P5400_1,
     Q_0=PF_results.machines.Q5400_1)
     annotation (Placement(transformation(extent={{162,-60},{168,-54}})));
   Generators.Gen5_bus_5400 G2_bus5400(
-    V_b=300,
-    V_0=PF_results.voltages.V5400,
+    V_b=300000,
+    v_0=PF_results.voltages.V5400,
     angle_0=PF_results.voltages.A5400,
     P_0=PF_results.machines.P5400_2,
     Q_0=PF_results.machines.Q5400_2)
     annotation (Placement(transformation(extent={{202,-50},{196,-56}})));
   OpenIPSL.Electrical.Loads.PSSE.Load Load1_bus5400(
-    V_b=300,
-    V_0=PF_results.voltages.V5400,
+    V_b=300000,
+    v_0=PF_results.voltages.V5400,
     angle_0=PF_results.voltages.A5400,
     P_0=PF_results.loads.PL5400_1,
     Q_0=PF_results.loads.QL5400_1,
@@ -1688,11 +1689,11 @@ model Nordic44_Base_Case "Modified version of the original Nordic 44 model"
     annotation (Placement(transformation(extent={{104,-98},{108,-92}})));
   OpenIPSL.Electrical.Banks.PSSE.Shunt shunt_5603_5500(G=-0.00030, B=-0.00130)
     annotation (Placement(transformation(extent={{120,-98},{124,-92}})));
-  inner OpenIPSL.Electrical.SystemBase SysData(S_b=1000)
+  inner OpenIPSL.Electrical.SystemBase SysData(S_b=1000000000)
     annotation (Placement(transformation(extent={{176,172},{278,208}})));
   OpenIPSL.Electrical.Loads.PSSE.Load Exch_bus8500(
-    V_b=420,
-    V_0=PF_results.voltages.V8500,
+    V_b=420000,
+    v_0=PF_results.voltages.V8500,
     angle_0=PF_results.voltages.A8500,
     characteristic=2,
     P_0=PF_results.loads.PL8500_4,
@@ -1701,8 +1702,8 @@ model Nordic44_Base_Case "Modified version of the original Nordic 44 model"
         rotation=270,
         origin={-212,176})));
   OpenIPSL.Electrical.Loads.PSSE.Load Exch_bus7000(
-    V_b=420,
-    V_0=PF_results.voltages.V7000,
+    V_b=420000,
+    v_0=PF_results.voltages.V7000,
     angle_0=PF_results.voltages.A7000,
     characteristic=2,
     P_0=PF_results.loads.PL7000_6,
@@ -1710,8 +1711,8 @@ model Nordic44_Base_Case "Modified version of the original Nordic 44 model"
         extent={{-2,2},{2,-2}},
         origin={-266,-46})));
   OpenIPSL.Electrical.Loads.PSSE.Load Exch_bus7100(
-    V_b=420,
-    V_0=PF_results.voltages.V7100,
+    V_b=420000,
+    v_0=PF_results.voltages.V7100,
     angle_0=PF_results.voltages.A7100,
     characteristic=2,
     P_0=PF_results.loads.PL7100_3,
@@ -1720,9 +1721,9 @@ model Nordic44_Base_Case "Modified version of the original Nordic 44 model"
         rotation=180,
         origin={-246,-13})));
   OpenIPSL.Electrical.Loads.PSSE.Load Exch1_bus6701(
-    V_b=420,
+    V_b=420000,
     characteristic=2,
-    V_0=PF_results.voltages.V6701,
+    v_0=PF_results.voltages.V6701,
     angle_0=PF_results.voltages.A6701,
     P_0=PF_results.loads.PL6701_3,
     Q_0=PF_results.loads.QL6701_3) annotation (Placement(transformation(
@@ -1730,9 +1731,9 @@ model Nordic44_Base_Case "Modified version of the original Nordic 44 model"
         rotation=270,
         origin={-156.25,-75.75})));
   OpenIPSL.Electrical.Loads.PSSE.Load Exch2_bus6701(
-    V_b=420,
+    V_b=420000,
     characteristic=2,
-    V_0=PF_results.voltages.V6701,
+    v_0=PF_results.voltages.V6701,
     angle_0=PF_results.voltages.A6701,
     P_0=PF_results.loads.PL6701_1,
     Q_0=PF_results.loads.QL6701_1) annotation (Placement(transformation(
@@ -1740,134 +1741,134 @@ model Nordic44_Base_Case "Modified version of the original Nordic 44 model"
         rotation=270,
         origin={-134.25,-75.75})));
   Generators.Gen3_bus_3115 G4_add_bus3115(
-    V_b=420,
-    V_0=PF_results.voltages.V3115,
+    V_b=420000,
+    v_0=PF_results.voltages.V3115,
     angle_0=PF_results.voltages.A3115,
     P_0=PF_results.machines.P3115_4,
     Q_0=PF_results.machines.Q3115_4)
     annotation (Placement(transformation(extent={{-246,34},{-240,40}})));
   Generators.Gen3_bus_3115 G5_add_bus3115(
-    V_b=420,
-    V_0=PF_results.voltages.V3115,
+    V_b=420000,
+    v_0=PF_results.voltages.V3115,
     angle_0=PF_results.voltages.A3115,
     P_0=PF_results.machines.P3115_5,
     Q_0=PF_results.machines.Q3115_5)
     annotation (Placement(transformation(extent={{-246,26},{-240,32}})));
   Generators.Gen2_bus_3249 G8_add_bus3249(
-    V_0=PF_results.voltages.V3249,
+    v_0=PF_results.voltages.V3249,
     angle_0=PF_results.voltages.A3249,
-    V_b=420,
+    V_b=420000,
     P_0=PF_results.machines.P3249_8,
     Q_0=PF_results.machines.Q3249_8)
     annotation (Placement(transformation(extent={{-158,0},{-164,-6}})));
   Generators.Gen4_bus_3300 G4_add_bus3300(
-    V_b=420,
-    V_0=PF_results.voltages.V3300,
+    V_b=420000,
+    v_0=PF_results.voltages.V3300,
     angle_0=PF_results.voltages.A3300,
     P_0=PF_results.machines.P3300_4,
     Q_0=PF_results.machines.Q3300_4)
     annotation (Placement(transformation(extent={{-236,118},{-230,124}})));
   Generators.Gen4_bus_3300 G5_add_bus3300(
-    V_b=420,
-    V_0=PF_results.voltages.V3300,
+    V_b=420000,
+    v_0=PF_results.voltages.V3300,
     angle_0=PF_results.voltages.A3300,
     P_0=PF_results.machines.P3300_5,
     Q_0=PF_results.machines.Q3300_5)
     annotation (Placement(transformation(extent={{-236,110},{-230,116}})));
   Generators.Gen4_bus_3300 G6_add_bus3300(
-    V_b=420,
-    V_0=PF_results.voltages.V3300,
+    V_b=420000,
+    v_0=PF_results.voltages.V3300,
     angle_0=PF_results.voltages.A3300,
     P_0=PF_results.machines.P3300_6,
     Q_0=PF_results.machines.Q3300_6)
     annotation (Placement(transformation(extent={{-236,102},{-230,108}})));
   Generators.Gen5_bus_5100 G2_add_bus5100(
-    V_b=300,
-    V_0=PF_results.voltages.V5100,
+    V_b=300000,
+    v_0=PF_results.voltages.V5100,
     angle_0=PF_results.voltages.A5100,
     P_0=PF_results.machines.P5100_2,
     Q_0=PF_results.machines.Q5100_2)
     annotation (Placement(transformation(extent={{2,-58},{8,-52}})));
   Generators.Gen3_bus_5300 G3_add_bus5300(
-    V_b=300,
-    V_0=PF_results.voltages.V5300,
+    V_b=300000,
+    v_0=PF_results.voltages.V5300,
     angle_0=PF_results.voltages.A5300,
     P_0=PF_results.machines.P5300_3,
     Q_0=PF_results.machines.Q5300_3)
     annotation (Placement(transformation(extent={{262,92},{256,86}})));
   Generators.Gen3_bus_5300 G4_add_bus5300(
-    V_b=300,
-    V_0=PF_results.voltages.V5300,
+    V_b=300000,
+    v_0=PF_results.voltages.V5300,
     angle_0=PF_results.voltages.A5300,
     P_0=PF_results.machines.P5300_4,
     Q_0=PF_results.machines.Q5300_4)
     annotation (Placement(transformation(extent={{262,100},{256,94}})));
   Generators.Gen3_bus_5300 G5_add_bus5300(
-    V_b=300,
-    V_0=PF_results.voltages.V5300,
+    V_b=300000,
+    v_0=PF_results.voltages.V5300,
     angle_0=PF_results.voltages.A5300,
     P_0=PF_results.machines.P5300_5,
     Q_0=PF_results.machines.Q5300_5)
     annotation (Placement(transformation(extent={{262,108},{256,102}})));
   Generators.Gen3_bus_5300 G6_add_bus5300(
-    V_b=300,
-    V_0=PF_results.voltages.V5300,
+    V_b=300000,
+    v_0=PF_results.voltages.V5300,
     angle_0=PF_results.voltages.A5300,
     P_0=PF_results.machines.P5300_6,
     Q_0=PF_results.machines.Q5300_6)
     annotation (Placement(transformation(extent={{262,116},{256,110}})));
   Generators.Gen5_bus_5500 G2_add_bus5500(
-    V_b=300,
-    V_0=PF_results.voltages.V5500,
+    V_b=300000,
+    v_0=PF_results.voltages.V5500,
     angle_0=PF_results.voltages.A5500,
     P_0=PF_results.machines.P5500_2,
     Q_0=PF_results.machines.Q5500_2)
     annotation (Placement(transformation(extent={{96,-53},{90,-59}})));
   Generators.Gen2_bus_5600 G3_add_bus5600(
-    V_b=300,
-    V_0=PF_results.voltages.V5600,
+    V_b=300000,
+    v_0=PF_results.voltages.V5600,
     angle_0=PF_results.voltages.A5600,
     P_0=PF_results.machines.P5600_3,
     Q_0=PF_results.machines.Q5600_3)
     annotation (Placement(transformation(extent={{298,-40},{292,-46}})));
   Generators.Gen2_bus_5600 G4_add_bus5600(
-    V_b=300,
-    V_0=PF_results.voltages.V5600,
+    V_b=300000,
+    v_0=PF_results.voltages.V5600,
     angle_0=PF_results.voltages.A5600,
     P_0=PF_results.machines.P5600_4,
     Q_0=PF_results.machines.Q5600_4)
     annotation (Placement(transformation(extent={{298,-32},{292,-38}})));
   Generators.Gen5_bus_6000 G2_add_bus6000(
-    V_b=300,
-    V_0=PF_results.voltages.V6000,
+    V_b=300000,
+    v_0=PF_results.voltages.V6000,
     angle_0=PF_results.voltages.A6000,
     P_0=PF_results.machines.P6000_2,
     Q_0=PF_results.machines.Q6000_2)
     annotation (Placement(transformation(extent={{265,32},{257,24}})));
   Generators.Gen5_bus_6000 G3_add_bus6000(
-    V_b=300,
-    V_0=PF_results.voltages.V6000,
+    V_b=300000,
+    v_0=PF_results.voltages.V6000,
     angle_0=PF_results.voltages.A6000,
     P_0=PF_results.machines.P6000_3,
     Q_0=PF_results.machines.Q6000_3)
     annotation (Placement(transformation(extent={{265,22},{257,14}})));
   Generators.Gen5_bus_6000 G4_add_bus6000(
-    V_b=300,
-    V_0=PF_results.voltages.V6000,
+    V_b=300000,
+    v_0=PF_results.voltages.V6000,
     angle_0=PF_results.voltages.A6000,
     P_0=PF_results.machines.P6000_4,
     Q_0=PF_results.machines.Q6000_4)
     annotation (Placement(transformation(extent={{265,12},{257,4}})));
   Generators.Gen3_bus_6700 G4_add_bus6700(
-    V_b=300,
-    V_0=PF_results.voltages.V6700,
+    V_b=300000,
+    v_0=PF_results.voltages.V6700,
     angle_0=PF_results.voltages.A6700,
     P_0=PF_results.machines.P6700_4,
     Q_0=PF_results.machines.Q6700_4)
     annotation (Placement(transformation(extent={{-58,-62},{-64,-68}})));
   Generators.Gen3_bus_6700 G3_add_bus6700(
-    V_b=300,
-    V_0=PF_results.voltages.V6700,
+    V_b=300000,
+    v_0=PF_results.voltages.V6700,
     angle_0=PF_results.voltages.A6700,
     P_0=PF_results.machines.P6700_3,
     Q_0=PF_results.machines.Q6700_3)
@@ -2362,7 +2363,8 @@ equation
       smooth=Smooth.None));
 
   connect(line_3200_3359.n, bus_3359.n[7]) annotation (Line(
-      points={{-148.5,99},{-129,99},{-129,92},{-125,92},{-125,90.7333},{-124,90.7333}},
+      points={{-148.5,99},{-129,99},{-129,92},{-125,92},{-125,90.7333},{-124,
+          90.7333}},
       color={0,0,255},
       smooth=Smooth.None));
   connect(line_3359_8500_1.n, bus_3359.n[8]) annotation (Line(
@@ -2371,8 +2373,8 @@ equation
       color={0,0,255},
       smooth=Smooth.None));
   connect(line_3359_8500_2.n, bus_3359.n[9]) annotation (Line(
-      points={{-156.5,133},{-127,133},{-127,108},{-125,108},{-125,98.4667},{-124,
-          98.4667}},
+      points={{-156.5,133},{-127,133},{-127,108},{-125,108},{-125,98.4667},{
+          -124,98.4667}},
       color={0,0,255},
       smooth=Smooth.None));
   connect(Load_bus3360.p, bus_3360.p[1]) annotation (Line(
@@ -2932,8 +2934,8 @@ equation
       color={0,0,255},
       smooth=Smooth.None));
   connect(Load_bus3249.p, bus_3249.n[5]) annotation (Line(
-      points={{-188.5,-9.75},{-186,-9.75},{-186,-10},{-184,-10},{-184,-14},{-180,
-          -14},{-180,-18.0286},{-176,-18.0286}},
+      points={{-188.5,-9.75},{-186,-9.75},{-186,-10},{-184,-10},{-184,-14},{
+          -180,-14},{-180,-18.0286},{-176,-18.0286}},
       color={0,0,255},
       smooth=Smooth.None));
   connect(line_3115_3249.p, bus_3249.n[6]) annotation (Line(
@@ -3060,54 +3062,65 @@ equation
   connect(G4_add_bus6700.p, bus_6700.p[5]) annotation (Line(points={{-64.3,-65},
           {-68,-65},{-70,-65},{-70,-66},{-70,-79.2},{-76,-79.2}}, color={0,0,
           255}));
-  connect(twoWindingTransformer.n, bus_3360.n[1]) annotation (Line(points={{-101,
-          140},{-98.5,140},{-96,140}}, color={0,0,255}));
-  connect(twoWindingTransformer.p, bus_3359.p[9]) annotation (Line(points={{-115,
+  connect(twoWindingTransformer.n, bus_3360.n[1]) annotation (Line(points={{-101.4,
+          140},{-101.4,140},{-96,140}},color={0,0,255}));
+  connect(twoWindingTransformer.p, bus_3359.p[9]) annotation (Line(points={{-114.6,
           140},{-118,140},{-118,98.4667},{-122,98.4667}}, color={0,0,255}));
-  connect(twoWindingTransformer1.n, bus_3249.p[6]) annotation (Line(points={{-147,
+  connect(twoWindingTransformer1.n, bus_3249.p[6]) annotation (Line(points={{-146.6,
           -12},{-174,-12},{-174,-8.5}}, color={0,0,255}));
-  connect(twoWindingTransformer1.p, bus_3701.n[1]) annotation (Line(points={{-133,
+  connect(twoWindingTransformer1.p, bus_3701.n[1]) annotation (Line(points={{-133.4,
           -12},{-126,-12},{-126,-60},{-118,-60}}, color={0,0,255}));
-  connect(twoWindingTransformer2.n, bus_3245.p[2]) annotation (Line(points={{-197,
+  connect(twoWindingTransformer2.n, bus_3245.p[2]) annotation (Line(points={{-196.6,
           -80},{-202,-80},{-202,-69},{-206,-69}}, color={0,0,255}));
-  connect(twoWindingTransformer2.p, bus_3244.n[1]) annotation (Line(points={{-183,
+  connect(twoWindingTransformer2.p, bus_3244.n[1]) annotation (Line(points={{-183.4,
           -80},{-180,-80},{-180,-96},{-178,-96}}, color={0,0,255}));
-  connect(twoWindingTransformer3.n, bus_6701.p[2]) annotation (Line(points={{-125,
+  connect(twoWindingTransformer3.n, bus_6701.p[2]) annotation (Line(points={{-124.6,
           -88},{-144,-88},{-144,-81}}, color={0,0,255}));
-  connect(twoWindingTransformer3.p, bus_6700.n[4]) annotation (Line(points={{-111,
+  connect(twoWindingTransformer3.p, bus_6700.n[4]) annotation (Line(points={{-111.4,
           -88},{-78,-88},{-78,-79.5}}, color={0,0,255}));
   connect(twoWindingTransformer4.p, bus_5101.p[4]) annotation (Line(points={{28,
-          -21},{26,-21},{26,12.5},{24,12.5}}, color={0,0,255}));
+          -21.4},{26,-21.4},{26,12.5},{24,12.5}},
+                                              color={0,0,255}));
   connect(twoWindingTransformer4.n, bus_5100.p[2])
-    annotation (Line(points={{28,-35},{28,-61},{24,-61}}, color={0,0,255}));
+    annotation (Line(points={{28,-34.6},{28,-61},{24,-61}},
+                                                          color={0,0,255}));
   connect(twoWindingTransformer5.n, bus_5501.n[2])
-    annotation (Line(points={{66,-33},{66,-13},{80,-13}}, color={0,0,255}));
+    annotation (Line(points={{66,-33.4},{66,-13},{80,-13}},
+                                                          color={0,0,255}));
   connect(twoWindingTransformer5.p, bus_5500.n[4]) annotation (Line(points={{66,
-          -47},{66,-47},{66,-62},{66,-66.8},{76,-66.8}}, color={0,0,255}));
+          -46.6},{66,-46.6},{66,-62},{66,-66.8},{76,-66.8}},
+                                                         color={0,0,255}));
   connect(twoWindingTransformer6.n, bus_5401.p[3])
-    annotation (Line(points={{143,-34},{124,-34},{124,-30}}, color={0,0,255}));
-  connect(twoWindingTransformer6.p, bus_5400.n[4]) annotation (Line(points={{
-          157,-34},{172,-34},{172,-41.5},{180,-41.5}}, color={0,0,255}));
+    annotation (Line(points={{143.4,-34},{124,-34},{124,-30}},
+                                                             color={0,0,255}));
+  connect(twoWindingTransformer6.p, bus_5400.n[4]) annotation (Line(points={{156.6,
+          -34},{172,-34},{172,-41.5},{180,-41.5}},     color={0,0,255}));
   connect(twoWindingTransformer7.n, bus_5402.p[1])
-    annotation (Line(points={{200,-23},{200,-8},{196,-8}}, color={0,0,255}));
+    annotation (Line(points={{200,-23.4},{200,-8},{196,-8}},
+                                                           color={0,0,255}));
   connect(twoWindingTransformer7.p, bus_5400.p[3])
-    annotation (Line(points={{200,-37},{200,-42},{182,-42}}, color={0,0,255}));
+    annotation (Line(points={{200,-36.6},{200,-42},{182,-42}},
+                                                             color={0,0,255}));
   connect(twoWindingTransformer8.p, bus_5603.n[2])
-    annotation (Line(points={{207,-72},{220,-72},{220,-73}}, color={0,0,255}));
+    annotation (Line(points={{206.6,-72},{220,-72},{220,-73}},
+                                                             color={0,0,255}));
   connect(twoWindingTransformer8.n, bus_5602.p[1])
-    annotation (Line(points={{193,-72},{184,-72},{184,-76}}, color={0,0,255}));
+    annotation (Line(points={{193.4,-72},{184,-72},{184,-76}},
+                                                             color={0,0,255}));
   connect(twoWindingTransformer9.p, bus_5300.n[3])
-    annotation (Line(points={{229,84},{234.5,84},{240,84}}, color={0,0,255}));
+    annotation (Line(points={{228.6,84},{228.6,84},{240,84}},
+                                                            color={0,0,255}));
   connect(twoWindingTransformer9.n, bus_5301.p[1])
-    annotation (Line(points={{215,84},{202,84},{202,80}}, color={0,0,255}));
-  connect(twoWindingTransformer10.p, bus_5601.n[1]) annotation (Line(points={{
-          237,32},{252,32},{270,32},{270,8},{280,8}}, color={0,0,255}));
-  connect(twoWindingTransformer10.n, bus_6001.p[2]) annotation (Line(points={{
-          223,32},{190,32},{190,22},{184,22}}, color={0,0,255}));
-  connect(twoWindingTransformer11.n, bus_6001.p[3]) annotation (Line(points={{
-          205,14},{198,14},{198,26},{184,26}}, color={0,0,255}));
-  connect(twoWindingTransformer11.p, bus_6000.n[3]) annotation (Line(points={{
-          219,14},{234,14},{234,6},{240,6}}, color={0,0,255}));
+    annotation (Line(points={{215.4,84},{202,84},{202,80}},
+                                                          color={0,0,255}));
+  connect(twoWindingTransformer10.p, bus_5601.n[1]) annotation (Line(points={{236.6,
+          32},{236.6,32},{270,32},{270,8},{280,8}},   color={0,0,255}));
+  connect(twoWindingTransformer10.n, bus_6001.p[2]) annotation (Line(points={{223.4,
+          32},{190,32},{190,22},{184,22}},     color={0,0,255}));
+  connect(twoWindingTransformer11.n, bus_6001.p[3]) annotation (Line(points={{205.4,
+          14},{198,14},{198,26},{184,26}},     color={0,0,255}));
+  connect(twoWindingTransformer11.p, bus_6000.n[3]) annotation (Line(points={{218.6,
+          14},{234,14},{234,6},{240,6}},     color={0,0,255}));
   annotation (
     Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-300,-220},{
             300,220}}), graphics={Text(
@@ -3329,8 +3342,16 @@ equation
           lineColor={0,128,0},
           textStyle={TextStyle.Bold},
           textString="bus
-5402")}),
+5402")}), experiment(StopTime=10, __Dymola_Algorithm="Dassl"),__Dymola_experimentFlags(
+        Advanced(Define(DAEsolver=true))),
     Documentation(info="<html>
+<p>This example system represents the Nordic 44 test system, represented differently from the original case, but undergoing the same line opening event. </p>
+<p>Simulate the system for 10 seconds. If you are using Dymola, use the DAE mode. Variables of interest are:</p>
+<ul>
+<li><code>bus_7020.v</code></li>
+<li><code>G1_bus6500.gENSAL.SPEED</code></li>
+</ul>
+<p>Compare these results with the ones obtained in the <strong>Nordic44_Base_Case</strong>.</p>
 <h4>Changes compared to the original case (Real data period: April, May, June and July): </h4>
 <ol>
 <li>Bus names assignation &nbsp; </li>

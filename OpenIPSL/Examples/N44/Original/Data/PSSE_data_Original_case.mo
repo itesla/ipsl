@@ -20,8 +20,8 @@ record PSSE_data_Original_case "PSSE complete data record"
         </html>"));
   Voltages_OC voltages;
   /* PSSE powers from power flow solution */
-  replaceable record Powers_OC = PSSE_powers_Original_case constrainedby PSSE_powers_Original_case
-                              annotation (choicesAllMatching, Documentation(
+  replaceable record Powers_OC = PSSE_powers_Original_case constrainedby
+    PSSE_powers_Original_case annotation (choicesAllMatching, Documentation(
         revisions="<html>
         <!--DISCLAIMER-->
         <p>Copyright 2015-2016 RTE (France), SmarTS Lab (Sweden), AIA (Spain) and DTU (Denmark)</p>

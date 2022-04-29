@@ -17,11 +17,11 @@ model Gen4_bus_8500 "Configuration of synchronous generator with regulators: GEN
     Xppq=0.17062,
     Xl=0.14812,
     V_b=V_b,
-    M_b=1300,
+    M_b=1300*1e6,
     S10=0.1089,
     S12=0.37795,
     R_a=0,
-    V_0=V_0,
+    v_0=v_0,
     angle_0=angle_0,
     P_0=P_0,
     Q_0=Q_0) annotation (Placement(transformation(extent={{-54,-16},{4,46}})));

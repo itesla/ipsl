@@ -17,11 +17,11 @@ model Gen1_bus_7000 "Configuration of synchronous generator with regulators: GEN
     Tpd0=10,
     H=5.5,
     V_b=V_b,
-    M_b=1278,
+    M_b=1278*1e6,
     S10=0.1089,
     S12=0.378,
     R_a=0,
-    V_0=V_0,
+    v_0=v_0,
     angle_0=angle_0,
     P_0=P_0,
     Q_0=Q_0) annotation (Placement(transformation(extent={{24,-38},{84,39}})));

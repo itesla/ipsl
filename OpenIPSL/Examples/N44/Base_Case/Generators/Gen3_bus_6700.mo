@@ -15,11 +15,11 @@ model Gen3_bus_6700 "Configuration of synchronous generator with regulators: GEN
     Xppq=0.17062,
     Xl=0.14737,
     V_b=V_b,
-    M_b=1200,
+    M_b=1200*1e6,
     S10=0.1,
     S12=0.3,
     R_a=0,
-    V_0=V_0,
+    v_0=v_0,
     angle_0=angle_0,
     P_0=P_0,
     Q_0=Q_0) annotation (Placement(transformation(extent={{-44,-22},{18,34}})));
