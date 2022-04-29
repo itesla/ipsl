@@ -22,9 +22,9 @@ block SimpleLagLimVar
 initial equation
   state = y_start;
 equation
-  T_mod*der(state) = u - y;
-  when abs(y - outMax) <= Modelica.Constants.eps and u - y < 0 or abs(y -
-      outMin) <= Modelica.Constants.eps and u - y > 0 then
+  T_mod*der(state) = K*u - y;
+  when abs(y - outMax) <= Modelica.Constants.eps and K*u - y < 0 or abs(y -
+      outMin) <= Modelica.Constants.eps and K*u - y > 0 then
     reinit(state, y);
   end when;
   if abs(const.y) <= Modelica.Constants.eps then
