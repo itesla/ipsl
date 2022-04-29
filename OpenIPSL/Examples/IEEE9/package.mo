@@ -9,7 +9,7 @@ annotation (Documentation(info="<html>
 <li><strong>IEEE_9_Buses</strong>: WSCC base test system, producing base results.</li>
 <li><strong>IEEE_9_Buses_Statcom</strong>:WSCC test system with the addition of a STATCOM for improving transient stability.</li>
 </ul>
-<p> </p>
+</html>", revisions="<html>
 <table cellspacing=\"1\" cellpadding=\"1\" border=\"1\">
 <tr>
 <td><p>Reference</p></td>

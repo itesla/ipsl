@@ -55,20 +55,5 @@ equation
             100,100}})),
     Documentation(info="<html>
 <p> Generation unit composed of order 6 machine and an AVR type III.</p>
-<p> </p>
-<table cellspacing=\"1\" cellpadding=\"1\" border=\"1\">
-<tr>
-<td><p>Reference</p></td>
-<td><p>SMIB PSAT, d_kundur2.mdl, PSAT</p></td>
-</tr>
-<tr>
-<td><p>Author</p></td>
-<td><p>Maxime Baudette, Ahsan Murad, SmarTS Lab, KTH Royal Institute of Technology</p></td>
-</tr>
-<tr>
-<td><p>Contact</p></td>
-<td><p><a href=\"https://github.com/ALSETLab\">ALSETLab</a></p></td>
-</tr>
-</table>
 </html>"));
 end Generator_AVR;

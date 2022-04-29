@@ -38,20 +38,5 @@ equation
 <li><code>G1.machine.delta</code></li>
 </ul>
 <p>Note that the system is now stable. Compare these variables with the ones obtained when simulating <code>SMIB</code> and <code>SMIB_AVR</code> for 10 seconds.</p>
-<p> </p>
-<table cellspacing=\"1\" cellpadding=\"1\" border=\"1\">
-<tr>
-<td><p>Reference</p></td>
-<td><p>SMIB PSAT, d_kundur2.mdl, PSAT</p></td>
-</tr>
-<tr>
-<td><p>Author</p></td>
-<td><p>Maxime Baudette, Ahsan Murad, SmarTS Lab, KTH Royal Institute of Technology</p></td>
-</tr>
-<tr>
-<td><p>Contact</p></td>
-<td><p><a href=\"https://github.com/ALSETLab\">ALSETLab</a></p></td>
-</tr>
-</table>
 </html>"));
 end SMIB_AVR_PSS;

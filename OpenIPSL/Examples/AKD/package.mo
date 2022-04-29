@@ -12,7 +12,7 @@ annotation (Documentation(info="<html>
 <li><strong>System</strong>: has the power grid model that can be simulated.</li>
 <li><strong>Data</strong>: contains the power flow data that is used to initialize the power grid.</li>
 </ul>
-<p> </p>
+</html>", revisions="<html>
 <table cellspacing=\"1\" cellpadding=\"1\" border=\"1\">
 <tr>
 <td><p>Author</p></td>

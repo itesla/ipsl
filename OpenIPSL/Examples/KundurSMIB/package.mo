@@ -14,7 +14,7 @@ annotation (
 <li><strong>Configuration 3</strong>: a machine, the AVR and the PSS.</li>
 </ul>
 <p>To test and compare the results, the same disturbance is applied to the three systems.</p>
-<p> </p>
+</html>", revisions="<html>
 <table cellspacing=\"1\" cellpadding=\"1\" border=\"1\">
 <tr>
 <td><p>Reference</p></td>

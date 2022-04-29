@@ -66,5 +66,7 @@ partial record PF_TwoAreas "Template data record used to store powr flow results
   Voltages voltages;
   Machines machines;
   Loads loads;
-  annotation (Documentation);
+  annotation (Documentation(info="<html>
+
+</html>"));
 end PF_TwoAreas;

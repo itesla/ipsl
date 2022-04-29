@@ -83,23 +83,6 @@ equation
       __Dymola_Algorithm="Rkfix2"),
     __Dymola_experimentSetupOutput,
     Documentation(info="<html>
-<table cellspacing=\"1\" cellpadding=\"1\" border=\"1\">
-<tr>
-<td><p>Reference</p></td>
-<td><p>SMIB PSAT, d_kundur2.mdl, PSAT</p></td>
-</tr>
-<tr>
-<td><p>Last update</p></td>
-<td>January 2019</td>
-</tr>
-<tr>
-<td><p>Author</p></td>
-<td><p>Maxime Baudette, Ahsan Murad, SmarTS Lab, KTH Royal Institute of Technology</p></td>
-</tr>
-<tr>
-<td><p>Contact</p></td>
-<td><p><a href=\"https://github.com/ALSETLab\">ALSETLab</a></p></td>
-</tr>
-</table>
+<p>Partial network model used in the SMIB systems, composed of three buses and an infinite bus.</p>
 </html>"));
 end SMIB_Partial;

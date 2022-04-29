@@ -4,7 +4,7 @@ package PSATSystems "Different test systems implemented with PSAT models"
 
 annotation (Documentation(info="<html>
 <p>This package contains four different subpackages, each containing different sets of example test systems that are assembled using models from PSAT.</p>
-<p> </p>
+</html>", revisions="<html>
 <table cellspacing=\"1\" cellpadding=\"1\" border=\"1\">
 <tr>
 <td><p>Author</p></td>
