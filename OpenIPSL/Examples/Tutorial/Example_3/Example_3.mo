@@ -277,24 +277,6 @@ equation
 <li><code>Gen3.gen.delta</code></li>
 </ul>
 <p>Note that the voltage curves present different acting modes. Also note that disturbances in the AVR reference voltage can be added to each generation unit.</p>
-<p> </p>
-<table cellspacing=\"2\" cellpadding=\"0\" border=\"0\"<tr>
-<td><p>Reference</p></td>
-<td><p>PSAT Manual 2.1.8</p></td>
-</tr>
-<tr>
-<td><p>Last update</p></td>
-<td><p>15/07/2015</p></td>
-</tr>
-<tr>
-<td><p>Author</p></td>
-<td><p>MAA Murad, SmarTS Lab, KTH Royal Institute of Technology</p></td>
-</tr>
-<tr>
-<td><p>Contact</p></td>
-<td><p><a href=\"mailto:luigi.vanfretti@gmail.com\">luigi.vanfretti@gmail.com</a></p></td>
-</tr>
-</table>
 </html>"),
     experiment(
       StopTime=20,
