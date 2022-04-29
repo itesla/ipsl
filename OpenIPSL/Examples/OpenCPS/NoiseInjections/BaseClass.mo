@@ -1,5 +1,5 @@
 within OpenIPSL.Examples.OpenCPS.NoiseInjections;
-partial model BaseClass
+partial model BaseClass "Base class for noise injection to electrical node"
 
   // Parameters to be used by the nois generators
   parameter Real active_mu=0 "Expectation value active power noise";
@@ -36,5 +36,8 @@ equation
           origin={30,0},
           points={{-100,0},{-80,0},{-70,40},{-60,-20},{-50,20},{-28,-40},{-10,
             40},{0,-20},{12,20},{20,0},{40,0},{40,0}},
-          thickness=2)}));
+          thickness=2)}), Documentation(info="<html>
+<p>This model is used as base for building the node injections into electrical nodes via consumption of active and reactive powers, i.e. <code>P</code> and <code>Q</code>, respectivly.
+These variables are changed differently according to the noise injection procedure in which the extended models are based on. </p>
+</html>"));
 end BaseClass;

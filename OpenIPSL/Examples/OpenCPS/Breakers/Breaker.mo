@@ -1,5 +1,5 @@
 within OpenIPSL.Examples.OpenCPS.Breakers;
-model Breaker
+model Breaker "Controllable line breaker"
   import Modelica.ComplexMath.j;
   OpenIPSL.Interfaces.PwPin p annotation (Placement(transformation(extent={{-100,
             -10},{-80,10}}), iconTransformation(extent={{-100,-10},{-80,10}})));
@@ -29,5 +29,9 @@ equation
           lineThickness=0.5,
           fillColor={255,255,255},
           fillPattern=FillPattern.Solid)}), Diagram(coordinateSystem(
-          preserveAspectRatio=false, extent={{-80,-80},{80,80}})));
+          preserveAspectRatio=false, extent={{-80,-80},{80,80}})),
+    Documentation(info="<html>
+<p>This breaker model is used to open and close circuits depending on a boolean gating signal named <code>TRIGGER</code>. </p>
+<p>If <code>TRIGGER</code> is false, the breaker is open. Otherwise it is closed.</p>
+</html>"));
 end Breaker;

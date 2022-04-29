@@ -1,5 +1,5 @@
 within OpenIPSL.Examples.OpenCPS.Controls;
-model RESYNCH_UNIT
+model RESYNCH_UNIT "Resynchronization control system"
   Controls.FREQ_CTRL freq_ctrl annotation (Placement(transformation(rotation=0,
           extent={{-52,-80},{-32,-60}})));
   Controls.ANGLE_CTRL angle_ctrl annotation (Placement(transformation(
@@ -142,5 +142,9 @@ equation
           fillColor={255,255,255},
           fillPattern=FillPattern.Solid,
           textString="SPEED")}), Diagram(coordinateSystem(preserveAspectRatio=
-            false, extent={{-100,-100},{100,100}})));
+            false, extent={{-100,-100},{100,100}})),
+    Documentation(info="<html>
+This resynchronization system uses the voltage magnitude, angle and frequency controls to eliminate the differences between the mentioned variables 
+from two different electrical nodes in order to allow the resynchronization of an islanded system.</p>
+</html>"));
 end RESYNCH_UNIT;

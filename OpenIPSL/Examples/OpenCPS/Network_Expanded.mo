@@ -1,5 +1,5 @@
 within OpenIPSL.Examples.OpenCPS;
-model Network_Expanded
+model Network_Expanded "Extended network for testing resynchronization of a generation unit to a weak grid"
   extends Modelica.Icons.Example;
   OpenIPSL.Electrical.Buses.Bus BG1
     annotation (Placement(transformation(extent={{-90,30},{-70,50}})));
@@ -10,19 +10,19 @@ model Network_Expanded
     X=0.2,
     G=0,
     B=0,
-    VNOM1=220,
-    VB1=220,
-    VNOM2=24,
-    VB2=24) annotation (Placement(transformation(
+    VNOM1=220000,
+    VB1=220000,
+    VNOM2=24000,
+    VB2=24000) annotation (Placement(transformation(
         extent={{-6,-4},{6,4}},
         rotation=180,
         origin={-60,40})));
   Generators.G1 G1(
-    V_0=1,
-    P_0=40,
-    V_b=24,
-    Q_0=11.9573,
-    angle_0=6.40268)
+    v_0=1,
+    P_0=40000000,
+    V_b=24000,
+    Q_0=11957300,
+    angle_0=0.11174784695)
     annotation (Placement(transformation(extent={{-110,30},{-90,50}})));
   OpenIPSL.Electrical.Branches.PwLine L1(
     R=0.001,
@@ -44,15 +44,15 @@ model Network_Expanded
     G=0,
     B=0) annotation (Placement(transformation(extent={{24,16},{36,24}})));
   OpenIPSL.Electrical.Machines.PSSE.GENCLS IB(
-    V_b=220,
-    V_0=1,
+    V_b=220000,
+    v_0=1,
     angle_0=0,
-    M_b=100,
+    M_b=100000000,
     X_d=0.2,
-    P_0=10.1028,
-    Q_0=5.7583)
+    P_0=10102800,
+    Q_0=5758300)
     annotation (Placement(transformation(extent={{130,30},{120,50}})));
-  OpenIPSL.Electrical.Buses.Bus B4(angle_0=-6.160101, V_0=0.9291416)
+  OpenIPSL.Electrical.Buses.Bus B4(angle_0=-0.1075140447, v_0=0.9291416)
     annotation (Placement(transformation(
         extent={{-10,-10},{10,10}},
         rotation=90,
@@ -72,38 +72,39 @@ model Network_Expanded
   OpenIPSL.Electrical.Branches.PSSE.TwoWindingTransformer T2(
     G=0,
     B=0,
-    VNOM1=220,
-    VB1=220,
-    VNOM2=24,
-    VB2=24,
+    VNOM1=220000,
+    VB1=220000,
+    VNOM2=24000,
+    VB2=24000,
     R=0.005,
     X=0.1) annotation (Placement(transformation(
         extent={{-6,-4},{6,4}},
         rotation=270,
         origin={60,-40})));
   OpenIPSL.Electrical.Loads.PSSE.Load LD2(
-    V_b=220,
-    P_0=10,
-    V_0=0.9893408,
-    angle_0=-0.550183,
-    Q_0=10) annotation (Placement(transformation(extent={{94,-72},{106,-60}})));
+    V_b=220000,
+    P_0=10000000,
+    v_0=0.9893408,
+    angle_0=-0.00960250483,
+    Q_0=10000000) annotation (Placement(transformation(extent={{94,-72},{106,-60}})));
   Generators.G2 G2(
-    V_0=1,
+    v_0=1,
     angle_0=0,
-    V_b=24,
-    P_0=10.01022,
-    Q_0=10.20433) annotation (Placement(transformation(
+    V_b=24000,
+    P_0=10010220,
+    Q_0=10204330) annotation (Placement(transformation(
         extent={{-10,-10},{10,10}},
         rotation=90,
         origin={60,-80})));
-  inner OpenIPSL.Electrical.SystemBase SysData(S_b=100, fn=50)
+  inner OpenIPSL.Electrical.SystemBase SysData(S_b=100000000,
+                                                        fn=50)
     annotation (Placement(transformation(extent={{-140,100},{-80,120}})));
   OpenIPSL.Electrical.Loads.PSSE.Load LD1(
-    V_b=220,
-    P_0=50,
-    Q_0=10,
-    V_0=0.9647,
-    angle_0=-3.12989)
+    V_b=220000,
+    P_0=50000000,
+    Q_0=10000000,
+    v_0=0.9647,
+    angle_0=-0.05462688572)
     annotation (Placement(transformation(extent={{-12,-12},{0,0}})));
   Breakers.Breaker breaker1 annotation (Placement(transformation(
         extent={{-4,4},{4,-4}},
@@ -144,15 +145,17 @@ public
         rotation=90,
         origin={80,28})));
 equation
-  V_IB = B3.V;
+  V_IB = B3.v;
   fi_IB = B3.angle;
-  V_DN = B4.V;
+  V_DN = B4.v;
   fi_DN = B4.angle;
 
   connect(T1.p, B1.p)
-    annotation (Line(points={{-53,40},{-46,40},{-40,40}}, color={0,0,255}));
+    annotation (Line(points={{-53.4,40},{-53.4,40},{-40,40}},
+                                                          color={0,0,255}));
   connect(BG1.p, T1.n)
-    annotation (Line(points={{-80,40},{-67,40}}, color={0,0,255}));
+    annotation (Line(points={{-80,40},{-66.6,40}},
+                                                 color={0,0,255}));
   connect(G1.conn, BG1.p)
     annotation (Line(points={{-89,40},{-89,40},{-80,40}}, color={0,0,255}));
   connect(L1.n, B2.p)
@@ -167,16 +170,18 @@ equation
           40},{0,40}}, color={0,0,255}));
   connect(L2_2.p, B2.p) annotation (Line(points={{24.6,20},{4,20},{4,40},{0,40}},
         color={0,0,255}));
-  connect(T2.p, B4.p) annotation (Line(points={{60,-33},{60,-24},{80,-24},{80,-20}},
+  connect(T2.p, B4.p) annotation (Line(points={{60,-33.4},{60,-24},{80,-24},{80,
+          -20}},
         color={0,0,255}));
   connect(T2.n, B5.p)
-    annotation (Line(points={{60,-47},{60,-53.5},{60,-60}}, color={0,0,255}));
-  connect(LD2.p, B4.p) annotation (Line(points={{100,-59.4},{100,-24},{80,-24},
-          {80,-20}}, color={0,0,255}));
+    annotation (Line(points={{60,-46.6},{60,-46.6},{60,-60}},
+                                                            color={0,0,255}));
+  connect(LD2.p, B4.p) annotation (Line(points={{100,-60},{100,-24},{80,-24},{80,
+          -20}},     color={0,0,255}));
   connect(G2.conn, B5.p)
     annotation (Line(points={{60,-69},{60,-60}}, color={0,0,255}));
   connect(LD1.p, B2.p)
-    annotation (Line(points={{-6,0.6},{-6,40},{0,40}}, color={0,0,255}));
+    annotation (Line(points={{-6,0},{-6,40},{0,40}},   color={0,0,255}));
   connect(B4.p, breaker1.p)
     annotation (Line(points={{80,-20},{80,-14.5}}, color={0,0,255}));
   connect(V_IB, G2.V_IB)
@@ -201,7 +206,19 @@ equation
           28},{116,-80},{71,-80}}, color={255,0,255}));
   connect(breaker1.n, L3.n)
     annotation (Line(points={{80,-5.5},{80,4.6}}, color={0,0,255}));
-  annotation (Icon(coordinateSystem(preserveAspectRatio=false, extent={{-140,-120},
-            {140,120}})), Diagram(coordinateSystem(preserveAspectRatio=false,
-          extent={{-140,-120},{140,120}})));
+  annotation (Icon(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},
+            {100,100}})), Diagram(coordinateSystem(preserveAspectRatio=false,
+          extent={{-140,-120},{140,120}})),
+    Documentation(info="<html>
+    <p>This example system shows how the resynchronization controller is used to connect Generator 2 back to the grid. Note that at 2 seconds, a signal is triggered to equalize voltage magnitudes on buses 3 and 4.</p>
+<p>Simulate the system for 50 seconds. Variables of interest are:</p>
+<ul>
+<li><code>B3.v</code></li>
+<li><code>B4.v</code></li>
+<li><code>G1.gen.SPEED</code></li>
+<li><code>G2.gen.SPEED</code></li>
+</ul>
+<p>Note the behavior of those variables before and after the connection of generator G2 to the main grid.</p>
+</html>"),
+    experiment(StopTime=50));
 end Network_Expanded;

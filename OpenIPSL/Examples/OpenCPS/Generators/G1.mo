@@ -1,12 +1,12 @@
 within OpenIPSL.Examples.OpenCPS.Generators;
-model G1
+model G1 "Generation unit connected to bus BG1"
   outer OpenIPSL.Electrical.SystemBase SysData;
   extends OpenIPSL.Electrical.Essentials.pfComponent;
 
   OpenIPSL.Interfaces.PwPin conn annotation (Placement(transformation(extent={{
             100,-10},{120,10}}), iconTransformation(extent={{100,-10},{120,10}})));
-  OpenIPSL.Electrical.Machines.PSSE.GENSAL gENROE(
-    M_b=100,
+  OpenIPSL.Electrical.Machines.PSSE.GENSAL gen(
+    M_b=100000000,
     Tpd0=5,
     Tppd0=0.07,
     Tppq0=0.09,
@@ -22,10 +22,10 @@ model G1
     Xppq=0.2,
     R_a=0,
     V_b=V_b,
-    V_0=V_0,
+    v_0=v_0,
     angle_0=angle_0,
     P_0=P_0,
-    Q_0=Q_0) annotation (Placement(transformation(extent={{-20,-20},{20,20}})));
+    Q_0=Q_0) annotation (Placement(transformation(extent={{32,-20},{72,20}})));
   OpenIPSL.Electrical.Controls.PSSE.ES.SEXS sEXS(
     T_AT_B=0.1,
     T_B=1,
@@ -33,32 +33,34 @@ model G1
     T_E=0.1,
     E_MIN=-10,
     E_MAX=10)
-    annotation (Placement(transformation(extent={{-78,-10},{-38,26}})));
+    annotation (Placement(transformation(extent={{-10,0},{10,20}})));
   OpenIPSL.Electrical.Controls.PSSE.TG.HYGOV hYGOV
-    annotation (Placement(transformation(extent={{-80,-64},{-40,-32}})));
-  Modelica.Blocks.Sources.Constant const(k=0)
-    annotation (Placement(transformation(extent={{-98,40},{-86,52}})));
+    annotation (Placement(transformation(extent={{-6,-52},{14,-32}})));
+  Modelica.Blocks.Sources.Constant non_active_inputs(k=0)
+    annotation (Placement(transformation(extent={{-60,-20},{-40,0}})));
 equation
-  connect(gENROE.p, conn)
-    annotation (Line(points={{20,0},{110,0}}, color={0,0,255}));
-  connect(sEXS.EFD0, gENROE.EFD0) annotation (Line(points={{-78,-3},{-80,-3},{-80,
-          -8},{-80,-26},{26,-26},{26,-10},{22,-10}}, color={0,0,127}));
-  connect(sEXS.ECOMP, gENROE.ETERM) annotation (Line(points={{-78,10},{-80,10},
-          {-80,28},{26,28},{26,-6},{22,-6}}, color={0,0,127}));
-  connect(hYGOV.SPEED, gENROE.SPEED) annotation (Line(points={{-79.5,-40},{-84,
-          -40},{-84,32},{32,32},{32,14},{22,14}}, color={0,0,127}));
-  connect(hYGOV.PMECH0, gENROE.PMECH0) annotation (Line(points={{-79.5,-56},{-84,
-          -56},{-84,-68},{28,-68},{28,10},{22,10}}, color={0,0,127}));
-  connect(const.y, sEXS.VOTHSG) annotation (Line(points={{-85.4,46},{-82,46},{-82,
-          19},{-78,19}}, color={0,0,127}));
-  connect(sEXS.VUEL, sEXS.VOTHSG) annotation (Line(points={{-71,-10},{-70,-10},
-          {-70,-14},{-82,-14},{-82,19},{-78,19}}, color={0,0,127}));
-  connect(sEXS.VOEL, sEXS.VOTHSG) annotation (Line(points={{-65,-10},{-66,-10},
-          {-66,-14},{-82,-14},{-82,19},{-78,19}}, color={0,0,127}));
-  connect(hYGOV.PMECH, gENROE.PMECH) annotation (Line(points={{-39,-48},{-30,-48},
-          {-30,10},{-24,10}}, color={0,0,127}));
-  connect(sEXS.EFD, gENROE.EFD) annotation (Line(points={{-37,10},{-34,10},{-34,
-          -10},{-24,-10}}, color={0,0,127}));
+  connect(gen.p, conn)
+    annotation (Line(points={{72,0},{110,0}}, color={0,0,255}));
+  connect(sEXS.EFD0, gen.EFD0) annotation (Line(points={{-11,6},{-20,6},{-20,
+          -24},{80,-24},{80,-10},{74,-10}}, color={0,0,127}));
+  connect(sEXS.ECOMP, gen.ETERM) annotation (Line(points={{-11,10},{-20,10},{
+          -20,28},{80,28},{80,-6},{74,-6}}, color={0,0,127}));
+  connect(hYGOV.SPEED, gen.SPEED) annotation (Line(points={{-4,-36},{-24,-36},{
+          -24,32},{84,32},{84,14},{74,14}}, color={0,0,127}));
+  connect(hYGOV.PMECH0, gen.PMECH0) annotation (Line(points={{-4,-48},{-10,-48},
+          {-10,-56},{84,-56},{84,10},{74,10}}, color={0,0,127}));
+  connect(non_active_inputs.y, sEXS.VOTHSG) annotation (Line(points={{-39,-10},
+          {-16,-10},{-16,14},{-11,14}}, color={0,0,127}));
+  connect(hYGOV.PMECH, gen.PMECH) annotation (Line(points={{15,-42},{20,-42},{
+          20,12},{28,12}}, color={0,0,127}));
+  connect(sEXS.EFD, gen.EFD) annotation (Line(points={{11,10},{16,10},{16,-12},
+          {28,-12}}, color={0,0,127}));
+  connect(gen.XADIFD, sEXS.XADIFD) annotation (Line(points={{74,-18},{78,-18},{
+          78,-22},{8,-22},{8,-1}}, color={0,0,127}));
+  connect(non_active_inputs.y, sEXS.VUEL)
+    annotation (Line(points={{-39,-10},{-4,-10},{-4,-1}}, color={0,0,127}));
+  connect(non_active_inputs.y, sEXS.VOEL)
+    annotation (Line(points={{-39,-10},{0,-10},{0,-1}}, color={0,0,127}));
   annotation (Icon(coordinateSystem(preserveAspectRatio=false), graphics={
           Ellipse(
           extent={{-100,100},{100,-100}},
@@ -73,5 +75,13 @@ equation
           fillColor={255,255,255},
           fillPattern=FillPattern.Solid,
           textString="%name")}), Diagram(coordinateSystem(preserveAspectRatio=
-            false, extent={{-100,-100},{100,100}})));
+            false, extent={{-100,-100},{100,100}})),
+    Documentation(info="<html>
+<p>24kV/100MVA generation unit connected to bus BG1, and composed of the following component models:</p>
+<ul>
+<li><strong>Machine</strong>: GENSAL, a salient pole synchronous machine from PSSE.</li>
+<li><strong>Exciter</strong>: SEXS, a simplified excitation system from PSSE.</li>
+<li><strong>Turbine/Governor</strong>: HYGOV, a hydro-turbine governor from PSSE.</li>
+</ul>
+</html>"));
 end G1;

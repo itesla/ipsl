@@ -1,5 +1,5 @@
 within OpenIPSL.Examples.OpenCPS.Controls;
-model ACT_UNIT
+model ACT_UNIT "Unit to check limits in voltage magnitude, frequency and angle for resynchronization"
   Controls.LimitCheck fi_limit_check(
     dt=5,
     upperLim=1,

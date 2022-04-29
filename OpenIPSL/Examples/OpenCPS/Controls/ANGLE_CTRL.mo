@@ -1,5 +1,5 @@
 within OpenIPSL.Examples.OpenCPS.Controls;
-model ANGLE_CTRL
+model ANGLE_CTRL "Voltage angle control used in resynchronization"
   Modelica.Blocks.Math.Add add1(k1=-1, k2=+1) annotation (Placement(
         transformation(
         extent={{6,-6},{-6,6}},
@@ -83,5 +83,9 @@ equation
           fillColor={255,255,255},
           fillPattern=FillPattern.Solid,
           textString="ANGLE CTRL")}), Diagram(coordinateSystem(
-          preserveAspectRatio=false, extent={{-100,-100},{100,100}})));
+          preserveAspectRatio=false, extent={{-100,-100},{100,100}})),
+    Documentation(info="<html>
+<p>This angle controller, which is based on simple Integrator, is used to reduce the error (ideally to zero) of the voltage angle difference between two different nodes in the system.</p>
+<p>After the difference is reduced to zero, and the errors on voltage magnitude and frequency are also zero, the two nodes can be connected without major issues.</p>
+</html>"));
 end ANGLE_CTRL;

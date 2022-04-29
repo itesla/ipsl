@@ -1,5 +1,5 @@
 within OpenIPSL.Examples.OpenCPS.Controls;
-model VOLT_CTRL
+model VOLT_CTRL "Voltage magnitude control used in resynchronization"
 
   Modelica.Blocks.Math.Add add(k2=-1)
     annotation (Placement(transformation(extent={{-70,30},{-50,50}})));
@@ -69,5 +69,9 @@ equation
           fillColor={255,255,255},
           fillPattern=FillPattern.Solid,
           textString="V_DN")}), Diagram(coordinateSystem(preserveAspectRatio=
-            false, extent={{-100,-100},{100,100}})));
+            false, extent={{-100,-100},{100,100}})),
+    Documentation(info="<html>
+<p>This voltage controller, which is based on simple PI, is used to reduce the error (ideally to zero) of the voltage magnitude difference between two different nodes in the system.</p>
+<p>After the difference is reduced to zero, and the errors on voltage angle and frequency are also zero, the two nodes can be connected without major issues.</p>
+</html>"));
 end VOLT_CTRL;

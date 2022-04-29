@@ -1,8 +1,8 @@
 within OpenIPSL.Examples.OpenCPS.Controls;
-model FREQ_CALC
-  parameter Real T_w;
-  parameter Real T_f;
-  parameter Real fi_0;
+model FREQ_CALC "Frequency calculator"
+  parameter Types.Time T_w "Smoothing filter time constant";
+  parameter Types.Time T_f "Derivative filter time constant";
+  parameter Types.Angle fi_0 "Initial angle";
 
   Modelica.Blocks.Interfaces.RealInput ANGLE annotation (Placement(
         transformation(rotation=0, extent={{-110,-10},{-90,10}}),
@@ -11,7 +11,7 @@ model FREQ_CALC
     annotation (Placement(transformation(extent={{-60,-10},{-40,10}})));
   Modelica.Blocks.Sources.Constant const1(k=fi_0)
     annotation (Placement(transformation(extent={{-90,-50},{-70,-30}})));
-  Modelica.Blocks.Math.Gain gain(k=1/2/Modelica.Constants.pi/50)
+  Modelica.Blocks.Math.Gain gain(k=1)
     annotation (Placement(transformation(extent={{-20,-10},{0,10}})));
   Modelica.Blocks.Continuous.Derivative derivative(k=1, T=T_f)
     annotation (Placement(transformation(extent={{20,-10},{40,10}})));
@@ -33,5 +33,7 @@ equation
   connect(firstOrder.y, d_FREQ)
     annotation (Line(points={{81,0},{110,0}}, color={0,0,127}));
   annotation (Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,
-            -100},{100,100}})));
+            -100},{100,100}})), Documentation(info="<html>
+<p>This model of frequency calculator is based on a washout filter followed by a first order filter that is meant to smooth the washout output. The model can have as input the angle value of the phasor, the output will be an estimate of the frequency based on the angle variation.</p>
+</html>"));
 end FREQ_CALC;

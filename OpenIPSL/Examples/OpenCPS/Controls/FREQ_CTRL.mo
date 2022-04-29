@@ -1,5 +1,5 @@
 within OpenIPSL.Examples.OpenCPS.Controls;
-model FREQ_CTRL
+model FREQ_CTRL "Voltage frequency control used in resynchronization"
 
   Modelica.Blocks.Interfaces.RealInput SPEED annotation (Placement(
         transformation(rotation=0, extent={{-110,-10},{-90,10}}),
@@ -27,7 +27,8 @@ model FREQ_CTRL
   FREQ_CALC fREQ_CALC(
     T_w=0.05,
     T_f=3/2/Modelica.Constants.pi/50,
-    fi_0=-2.82259) annotation (Placement(transformation(
+    fi_0=-0.049263488930001)
+                         annotation (Placement(transformation(
         extent={{-10,-10},{10,10}},
         rotation=0,
         origin={-76,60})));
@@ -92,5 +93,10 @@ equation
           fillColor={255,255,255},
           fillPattern=FillPattern.Solid,
           textString="P_REF")}), Diagram(coordinateSystem(preserveAspectRatio=
-            false, extent={{-100,-100},{100,100}})));
+            false, extent={{-100,-100},{100,100}})),
+    Documentation(info="<html>
+<p>This frequency controller, which is based on simple PI, is used to reduce the error (ideally to zero) of the voltage frequency difference between two different nodes in the system.</p>
+<p>After the difference is reduced to zero, and the errors on voltage magnitude and angle are also zero, the two nodes can be connected without major issues.</p>
+<p>Note that this system uses the Frequency Calculator system.</p>
+</html>"));
 end FREQ_CTRL;

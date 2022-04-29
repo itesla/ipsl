@@ -1,16 +1,16 @@
 within OpenIPSL.Examples.OpenCPS.Controls;
-model LimitCheck
-  parameter Real upperLim;
-  parameter Real lowerLim;
-  parameter Real dt;
+model LimitCheck "Model of a limit checker"
+  parameter Real upperLim "Upper limit";
+  parameter Real lowerLim "Lower limit";
+  parameter Real dt "Comparison threshold";
   Modelica.Blocks.Logical.And and1
     annotation (Placement(transformation(extent={{-40,-10},{-20,10}})));
   Modelica.Blocks.Interfaces.RealInput u annotation (Placement(transformation(
           rotation=0, extent={{-110,-10},{-90,10}})));
   Modelica.Blocks.Interfaces.BooleanOutput START
     annotation (Placement(transformation(extent={{100,-10},{120,10}})));
-  Modelica.Blocks.Logical.GreaterEqualThreshold greaterEqualThreshold(threshold
-      =lowerLim)
+  Modelica.Blocks.Logical.GreaterEqualThreshold greaterEqualThreshold(threshold=
+       lowerLim)
     annotation (Placement(transformation(extent={{-74,10},{-54,30}})));
   Modelica.Blocks.Logical.LessEqualThreshold lessEqualThreshold(threshold=
         upperLim)
@@ -50,5 +50,8 @@ equation
           lineColor={28,108,200},
           fillColor={255,255,255},
           fillPattern=FillPattern.Solid,
-          textString="LIMIT CHECK")}));
+          textString="LIMIT CHECK")}),
+    Documentation(info="<html>
+<p>This model checks if a determined variable is within an interval determined by lower and upper limits.</p>
+</html>"));
 end LimitCheck;
