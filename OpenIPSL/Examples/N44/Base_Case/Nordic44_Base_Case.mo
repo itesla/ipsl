@@ -780,10 +780,10 @@ model Nordic44_Base_Case "Modified version of the original Nordic 44 model"
     np=1,
     v_0=PF_results.voltages.V3360,
     angle_0=PF_results.voltages.A3360,
-    V_b=135,
+    V_b=135000,
     nn=1) annotation (Placement(transformation(extent={{-96,130},{-94,150}})));
   OpenIPSL.Electrical.Loads.PSSE.Load Load_bus3360(
-    V_b=135,
+    V_b=135000,
     v_0=PF_results.voltages.V3360,
     angle_0=PF_results.voltages.A3360,
     P_0=PF_results.loads.PL3360_1,
