@@ -1,5 +1,6 @@
 within OpenIPSL.Examples.NamsskoganGrid;
-model Grid_Model
+model Grid_Model "Namsskogan distribution network modeled in positive sequence equivalent"
+  extends Modelica.Icons.Example;
   // power flow: Bus voltage and angle
   parameter Real V1=1;
   parameter Real V2=1.000978686192306;
@@ -90,7 +91,7 @@ model Grid_Model
   parameter Real Q4=-0.006527593903969;
   parameter Real Q5=-0.005469908840906;
   parameter Real Q6=-0.012176182035471;
-  parameter Real Q7=-4.504107405815501e-04;
+  parameter Real Q7=-4.504107405815501e-4;
   parameter Real Q8=-0.002893142134279;
   parameter Real Q9=-0.011808690774769;
   parameter Real Q10=-0.001897297640474;
@@ -124,14 +125,15 @@ model Grid_Model
   parameter Real VR11=0.996020051548693;
 
   OpenIPSL.Electrical.Machines.PSAT.Order6 syn1(
-    V_b=6.6,
-    V_0=V10,
-    Sn=8,
-    Vn=6.6,
+    V_b=6600,
+    v_0=V10,
+    Sn=8000000,
+    Vn=6600,
     ra=0,
     x1d=0.2,
     M=5,
     D=0,
+    w(fixed=true),
     xd=2,
     xq=1.5,
     x1q=0.3,
@@ -144,443 +146,443 @@ model Grid_Model
     Taa=0.002,
     P_0=P1*SysData.S_b,
     Q_0=Q1*SysData.S_b,
-    angle_0=Modelica.SIunits.Conversions.to_deg(A10))
+    angle_0=A10)
     annotation (Placement(transformation(extent={{28,-158},{48,-138}})));
   OpenIPSL.Electrical.Buses.BusExt B1(
-    V_b=132,
+    V_b=132000,
     nn=1,
-    V_0=V1,
-    angle_0=Modelica.SIunits.Conversions.to_deg(A1),
+    v_0=V1,
+    angle_0=A1,
     np=1) annotation (Placement(transformation(
         extent={{-2,-28},{2,28}},
         rotation=90,
         origin={208,-134})));
   OpenIPSL.Electrical.Buses.BusExt B2(
-    V_b=132,
+    V_b=132000,
     nn=3,
-    V_0=V2,
-    angle_0=Modelica.SIunits.Conversions.to_deg(A2),
-    np=1)                                            annotation (Placement(
+    v_0=V2,
+    angle_0=A2,
+    np=1)  annotation (Placement(
         transformation(
         extent={{2,-22},{-2,22}},
         rotation=90,
         origin={162,-82})));
   OpenIPSL.Electrical.Buses.BusExt B3(
-    V_b=6.6,
+    V_b=6600,
     np=1,
     nn=1,
-    V_0=V3,
-    angle_0=Modelica.SIunits.Conversions.to_deg(A3)) annotation (Placement(
+    v_0=V3,
+    angle_0=A3) annotation (Placement(
         transformation(
         extent={{2,-22},{-2,22}},
         rotation=90,
         origin={290,-96})));
   OpenIPSL.Electrical.Buses.BusExt B4(
-    V_b=132,
+    V_b=132000,
     np=1,
     nn=1,
-    V_0=V4,
-    angle_0=Modelica.SIunits.Conversions.to_deg(A4)) annotation (Placement(
+    v_0=V4,
+    angle_0=A4) annotation (Placement(
         transformation(
         extent={{2,-22},{-2,22}},
         rotation=90,
         origin={134,-32})));
   OpenIPSL.Electrical.Buses.BusExt B5(
-    V_b=22,
-    V_0=V5,
-    angle_0=Modelica.SIunits.Conversions.to_deg(A5),
+    V_b=22000,
+    v_0=V5,
+    angle_0=A5,
     nn=4,
     np=1) annotation (Placement(transformation(
         extent={{2,-22},{-2,22}},
         rotation=90,
         origin={106,2})));
   OpenIPSL.Electrical.Buses.BusExt B6(
-    V_b=22,
+    V_b=22000,
     np=2,
     nn=2,
-    V_0=V6,
-    angle_0=Modelica.SIunits.Conversions.to_deg(A6)) annotation (Placement(
+    v_0=V6,
+    angle_0=A6) annotation (Placement(
         transformation(
         extent={{2,-22},{-2,22}},
         rotation=180,
         origin={18,18})));
   OpenIPSL.Electrical.Buses.BusExt B7(
-    V_b=22,
+    V_b=22000,
     np=2,
-    V_0=V7,
-    angle_0=Modelica.SIunits.Conversions.to_deg(A7),
-    nn=1)                                            annotation (Placement(
+    v_0=V7,
+    angle_0=A7,
+    nn=1)   annotation (Placement(
         transformation(
         extent={{2,-22},{-2,22}},
         rotation=90,
         origin={-12,-44})));
   OpenIPSL.Electrical.Buses.BusExt B8(
-    V_b=6.6,
+    V_b=6600,
     np=1,
     nn=1,
-    V_0=V8,
-    angle_0=Modelica.SIunits.Conversions.to_deg(A8)) annotation (Placement(
+    v_0=V8,
+    angle_0=A8) annotation (Placement(
         transformation(
         extent={{2,-22},{-2,22}},
         rotation=90,
         origin={-40,-92})));
   OpenIPSL.Electrical.Buses.BusExt B9(
-    V_b=22,
+    V_b=22000,
     np=1,
     nn=1,
-    V_0=V9,
-    angle_0=Modelica.SIunits.Conversions.to_deg(A9)) annotation (Placement(
+    v_0=V9,
+    angle_0=A9) annotation (Placement(
         transformation(
         extent={{2,-22},{-2,22}},
         rotation=90,
         origin={58,-82})));
   OpenIPSL.Electrical.Buses.BusExt B10(
-    V_b=6.6,
+    V_b=6600,
     np=1,
     nn=1,
-    V_0=V10,
-    angle_0=Modelica.SIunits.Conversions.to_deg(A10)) annotation (Placement(
+    v_0=V10,
+    angle_0=A10) annotation (Placement(
         transformation(
         extent={{2,-22},{-2,22}},
         rotation=90,
         origin={58,-124})));
   OpenIPSL.Electrical.Buses.BusExt B11(
-    V_b=22,
+    V_b=22000,
     nn=3,
-    V_0=V11,
-    angle_0=Modelica.SIunits.Conversions.to_deg(A11),
-    np=2)                                             annotation (Placement(
+    v_0=V11,
+    angle_0=A11,
+    np=2)  annotation (Placement(
         transformation(
         extent={{2,-22},{-2,22}},
         rotation=180,
         origin={-82,16})));
   OpenIPSL.Electrical.Buses.BusExt B12(
-    V_b=22,
+    V_b=22000,
     np=1,
     nn=1,
-    V_0=V12,
-    angle_0=Modelica.SIunits.Conversions.to_deg(A12)) annotation (Placement(
+    v_0=V12,
+    angle_0=A12) annotation (Placement(
         transformation(
         extent={{2,-22},{-2,22}},
         rotation=90,
         origin={-110,-60})));
   OpenIPSL.Electrical.Buses.BusExt B13(
-    V_b=6.6,
+    V_b=6600,
     np=1,
     nn=1,
-    V_0=V13,
-    angle_0=Modelica.SIunits.Conversions.to_deg(A13)) annotation (Placement(
+    v_0=V13,
+    angle_0=A13) annotation (Placement(
         transformation(
         extent={{2,-22},{-2,22}},
         rotation=90,
         origin={-122,-118})));
   OpenIPSL.Electrical.Buses.BusExt B14(
-    V_b=22,
+    V_b=22000,
     np=1,
     nn=1,
-    V_0=V14,
-    angle_0=Modelica.SIunits.Conversions.to_deg(A14)) annotation (Placement(
+    v_0=V14,
+    angle_0=A14) annotation (Placement(
         transformation(
         extent={{2,-22},{-2,22}},
         rotation=90,
         origin={-106,80})));
   OpenIPSL.Electrical.Buses.BusExt B15(
-    V_b=0.69,
+    V_b=690,
     np=1,
     nn=1,
-    V_0=V15,
-    angle_0=Modelica.SIunits.Conversions.to_deg(A15)) annotation (Placement(
+    v_0=V15,
+    angle_0=A15) annotation (Placement(
         transformation(
         extent={{2,-22},{-2,22}},
         rotation=180,
         origin={-42,114})));
   OpenIPSL.Electrical.Buses.BusExt B16(
-    V_b=22,
+    V_b=22000,
     nn=2,
-    V_0=V16,
-    angle_0=Modelica.SIunits.Conversions.to_deg(A16),
+    v_0=V16,
+    angle_0=A16,
     np=1) annotation (Placement(transformation(
         extent={{2,-22},{-2,22}},
         rotation=90,
         origin={-194,-18})));
   OpenIPSL.Electrical.Buses.BusExt B17(
-    V_b=22,
+    V_b=22000,
     nn=1,
-    V_0=V17,
-    angle_0=Modelica.SIunits.Conversions.to_deg(A17),
+    v_0=V17,
+    angle_0=A17,
     np=1) annotation (Placement(transformation(
         extent={{2,-22},{-2,22}},
         rotation=90,
         origin={-214,-66})));
   OpenIPSL.Electrical.Buses.BusExt B18(
-    V_b=6.6,
+    V_b=6600,
     np=1,
     nn=1,
-    V_0=V18,
-    angle_0=Modelica.SIunits.Conversions.to_deg(A18)) annotation (Placement(
+    v_0=V18,
+    angle_0=A18) annotation (Placement(
         transformation(
         extent={{2,-22},{-2,22}},
         rotation=90,
         origin={-228,-112})));
   OpenIPSL.Electrical.Buses.BusExt B19(
-    V_b=22,
+    V_b=22000,
     nn=2,
-    V_0=V19,
-    angle_0=Modelica.SIunits.Conversions.to_deg(A19),
-    np=1)                                             annotation (Placement(
+    v_0=V19,
+    angle_0=A19,
+    np=1) annotation (Placement(
         transformation(
         extent={{2,-22},{-2,22}},
         rotation=90,
         origin={-266,-12})));
   OpenIPSL.Electrical.Buses.BusExt B20(
-    V_b=6.6,
+    V_b=6600,
     np=1,
     nn=1,
-    V_0=V20,
-    angle_0=Modelica.SIunits.Conversions.to_deg(A20)) annotation (Placement(
+    v_0=V20,
+    angle_0=A20) annotation (Placement(
         transformation(
         extent={{2,-22},{-2,22}},
         rotation=90,
         origin={-310,-72})));
   OpenIPSL.Electrical.Buses.BusExt B21(
-    V_b=22,
+    V_b=22000,
     np=1,
     nn=1,
-    V_0=V21,
-    angle_0=Modelica.SIunits.Conversions.to_deg(A21)) annotation (Placement(
+    v_0=V21,
+    angle_0=A21) annotation (Placement(
         transformation(
         extent={{2,-22},{-2,22}},
         rotation=180,
         origin={-318,50})));
   OpenIPSL.Electrical.Buses.BusExt B22(
-    V_b=6.6,
+    V_b=6600,
     nn=1,
-    V_0=V22,
-    angle_0=Modelica.SIunits.Conversions.to_deg(A22),
+    v_0=V22,
+    angle_0=A22,
     np=1) annotation (Placement(transformation(
         extent={{2,-22},{-2,22}},
         rotation=90,
         origin={-288,122})));
   OpenIPSL.Electrical.Buses.BusExt B23(
-    V_b=22,
+    V_b=22000,
     nn=3,
-    V_0=V23,
-    angle_0=Modelica.SIunits.Conversions.to_deg(A23),
+    v_0=V23,
+    angle_0=A23,
     np=1)                                             annotation (Placement(
         transformation(
         extent={{2,-22},{-2,22}},
         rotation=90,
         origin={98,62})));
   OpenIPSL.Electrical.Buses.BusExt B24(
-    V_b=22,
+    V_b=22000,
     np=1,
-    V_0=V24,
-    angle_0=Modelica.SIunits.Conversions.to_deg(A24),
+    v_0=V24,
+    angle_0=A24,
     nn=1) annotation (Placement(transformation(
         extent={{2,-22},{-2,22}},
         rotation=90,
         origin={192,44})));
   OpenIPSL.Electrical.Buses.BusExt B25(
-    V_b=0.69,
+    V_b=690,
     np=1,
     nn=1,
-    V_0=V25,
-    angle_0=Modelica.SIunits.Conversions.to_deg(A25)) annotation (Placement(
+    v_0=V25,
+    angle_0=A25) annotation (Placement(
         transformation(
         extent={{2,-22},{-2,22}},
         rotation=90,
         origin={240,-2})));
   OpenIPSL.Electrical.Buses.BusExt B26(
-    V_b=22,
+    V_b=22000,
     np=4,
-    V_0=V26,
-    angle_0=Modelica.SIunits.Conversions.to_deg(A26),
+    v_0=V26,
+    angle_0=A26,
     nn=2)                                             annotation (Placement(
         transformation(
         extent={{2,-22},{-2,22}},
         rotation=90,
         origin={98,110})));
   OpenIPSL.Electrical.Buses.BusExt B27(
-    V_b=22,
+    V_b=22000,
     nn=2,
-    V_0=V27,
-    angle_0=Modelica.SIunits.Conversions.to_deg(A27),
+    v_0=V27,
+    angle_0=A27,
     np=1)                                             annotation (Placement(
         transformation(
         extent={{2,-22},{-2,22}},
         rotation=90,
         origin={196,94})));
   OpenIPSL.Electrical.Buses.BusExt B28(
-    V_b=0.69,
+    V_b=690,
     np=1,
-    V_0=V28,
-    angle_0=Modelica.SIunits.Conversions.to_deg(A28),
+    v_0=V28,
+    angle_0=A28,
     nn=1) annotation (Placement(transformation(
         extent={{2,-22},{-2,22}},
         rotation=90,
         origin={266,56})));
   OpenIPSL.Electrical.Buses.BusExt B29(
-    V_b=22,
+    V_b=22000,
     nn=1,
-    V_0=V29,
-    angle_0=Modelica.SIunits.Conversions.to_deg(A29),
+    v_0=V29,
+    angle_0=A29,
     np=1) annotation (Placement(transformation(
         extent={{2,-22},{-2,22}},
         rotation=90,
         origin={322,96})));
   OpenIPSL.Electrical.Buses.BusExt B30(
-    V_b=6.6,
+    V_b=6600,
     np=1,
     nn=1,
-    V_0=V30,
-    angle_0=Modelica.SIunits.Conversions.to_deg(A30)) annotation (Placement(
+    v_0=V30,
+    angle_0=A30) annotation (Placement(
         transformation(
         extent={{2,-22},{-2,22}},
         rotation=90,
         origin={342,18})));
   OpenIPSL.Electrical.Buses.BusExt B31(
-    V_b=22,
+    V_b=22000,
     np=1,
     nn=1,
-    V_0=V31,
-    angle_0=Modelica.SIunits.Conversions.to_deg(A31)) annotation (Placement(
+    v_0=V31,
+    angle_0=A31) annotation (Placement(
         transformation(
         extent={{2,-22},{-2,22}},
         rotation=90,
         origin={94,158})));
   OpenIPSL.Electrical.Buses.BusExt B32(
-    V_b=22,
+    V_b=22000,
     nn=2,
-    V_0=V32,
-    angle_0=Modelica.SIunits.Conversions.to_deg(A32),
+    v_0=V32,
+    angle_0=A32,
     np=1)                                             annotation (Placement(
         transformation(
         extent={{2,-22},{-2,22}},
         rotation=180,
         origin={212,140})));
   OpenIPSL.Electrical.Buses.BusExt B33(
-    V_b=6.6,
+    V_b=6600,
     np=1,
     nn=1,
-    V_0=V33,
-    angle_0=Modelica.SIunits.Conversions.to_deg(A33)) annotation (Placement(
+    v_0=V33,
+    angle_0=A33) annotation (Placement(
         transformation(
         extent={{2,-22},{-2,22}},
         rotation=180,
         origin={284,136})));
 
   OpenIPSL.Electrical.Branches.PSAT.TwoWindingTransformer twoWindingTransformer(
-    Sn=50,
-    V_b=6.6,
-    Vn=6.6,
+    Sn=50000000,
+    V_b=6600,
+    Vn=6600,
     rT=0,
     xT=0.1) annotation (Placement(transformation(
         extent={{-10,-10},{10,10}},
         rotation=180,
         origin={230,-78})));
   OpenIPSL.Electrical.Branches.PSAT.TwoWindingTransformer twoWindingTransformer1(
-    Sn=50,
-    V_b=132,
-    Vn=132,
+    Sn=50000000,
+    V_b=132000,
+    Vn=132000,
     rT=0,
     xT=0.1) annotation (Placement(transformation(
         extent={{-8,-9},{8,9}},
         rotation=90,
         origin={131,-16})));
   OpenIPSL.Electrical.Branches.PSAT.TwoWindingTransformer twoWindingTransformer2(
-    V_b=6.6,
-    Vn=6.6,
-    Sn=14,
+    V_b=6600,
+    Vn=6600,
+    Sn=14000000,
     rT=0,
     xT=0.09) annotation (Placement(transformation(
         extent={{-10,-10},{10,10}},
         rotation=0,
         origin={-38,-74})));
   OpenIPSL.Electrical.Branches.PSAT.TwoWindingTransformer twoWindingTransformer3(
-    V_b=6.6,
-    Vn=6.6,
-    Sn=14,
+    V_b=6600,
+    Vn=6600,
+    Sn=14000000,
     rT=0,
     xT=0.09) annotation (Placement(transformation(
         extent={{-10,-10},{10,10}},
         rotation=270,
         origin={60,-106})));
   OpenIPSL.Electrical.Branches.PSAT.TwoWindingTransformer twoWindingTransformer4(
-    V_b=6.6,
-    Vn=6.6,
-    Sn=14,
+    V_b=6600,
+    Vn=6600,
+    Sn=14000000,
     rT=0,
     xT=0.09) annotation (Placement(transformation(
         extent={{-10,-10},{10,10}},
         rotation=270,
         origin={-114,-92})));
   OpenIPSL.Electrical.Branches.PSAT.TwoWindingTransformer twoWindingTransformer5(
-    Sn=2,
-    V_b=0.69,
-    Vn=0.69,
+    Sn=2000000,
+    V_b=690,
+    Vn=690,
     rT=0,
     xT=0.06) annotation (Placement(transformation(
         extent={{-10,-10},{10,10}},
         rotation=180,
         origin={-74,110})));
   OpenIPSL.Electrical.Branches.PSAT.TwoWindingTransformer twoWindingTransformer6(
-    V_b=6.6,
-    Vn=6.6,
-    Sn=5,
+    V_b=6600,
+    Vn=6600,
+    Sn=5000000,
     rT=0,
     xT=0.07) annotation (Placement(transformation(
         extent={{-10,-10},{10,10}},
         rotation=270,
         origin={-212,-88})));
   OpenIPSL.Electrical.Branches.PSAT.TwoWindingTransformer twoWindingTransformer7(
-    V_b=6.6,
-    Vn=6.6,
-    Sn=5,
+    V_b=6600,
+    Vn=6600,
+    Sn=5000000,
     rT=0,
     xT=0.07) annotation (Placement(transformation(
         extent={{-10,-10},{10,10}},
         rotation=270,
         origin={-292,-46})));
   OpenIPSL.Electrical.Branches.PSAT.TwoWindingTransformer twoWindingTransformer8(
-    V_b=6.6,
-    Vn=6.6,
-    Sn=8,
+    V_b=6600,
+    Vn=6600,
+    Sn=8000000,
     rT=0,
     xT=0.08) annotation (Placement(transformation(
         extent={{-10,-10},{10,10}},
         rotation=270,
         origin={-330,96})));
   OpenIPSL.Electrical.Branches.PSAT.TwoWindingTransformer twoWindingTransformer9(
-    Sn=2,
-    V_b=0.69,
-    Vn=0.69,
+    Sn=2000000,
+    V_b=690,
+    Vn=690,
     rT=0,
     xT=0.06) annotation (Placement(transformation(
         extent={{-10,-10},{10,10}},
         rotation=90,
         origin={242,22})));
   OpenIPSL.Electrical.Branches.PSAT.TwoWindingTransformer twoWindingTransformer10(
-    Sn=2,
-    V_b=0.69,
-    Vn=0.69,
+    Sn=2000000,
+    V_b=690,
+    Vn=690,
     rT=0,
     xT=0.06) annotation (Placement(transformation(
         extent={{-10,-10},{10,10}},
         rotation=180,
         origin={238,78})));
   OpenIPSL.Electrical.Branches.PSAT.TwoWindingTransformer twoWindingTransformer11(
-    Sn=8,
-    V_b=6.6,
-    Vn=6.6,
+    Sn=8000000,
+    V_b=6600,
+    Vn=6600,
     rT=0,
     xT=0.08) annotation (Placement(transformation(
         extent={{-10,-10},{10,10}},
         rotation=90,
         origin={328,54})));
   OpenIPSL.Electrical.Branches.PSAT.TwoWindingTransformer twoWindingTransformer12(
-    Sn=5,
-    V_b=6.6,
-    Vn=6.6,
+    Sn=5000000,
+    V_b=6600,
+    Vn=6600,
     rT=0,
     xT=0.07) annotation (Placement(transformation(
         extent={{-10,-10},{10,10}},
@@ -745,27 +747,24 @@ model Grid_Model
         extent={{-10,-10},{10,10}},
         rotation=180,
         origin={154,64})));
-  OpenIPSL.Electrical.Loads.PSAT.VoltDependant voltDependant(
-    V_b=22,
-    V_0=V11,
-    angle_0=Modelica.SIunits.Conversions.to_deg(A11),
-    P_0=0.2116,
-    Q_0=0.043)
-    annotation (Placement(transformation(extent={{-100,-16},{-88,-4}})));
-  OpenIPSL.Electrical.Loads.PSAT.VoltDependant voltDependant1(
-    V_b=22,
-    V_0=V26,
-    angle_0=Modelica.SIunits.Conversions.to_deg(A26),
-    P_0=0.0074,
-    Q_0=0.0018)
-    annotation (Placement(transformation(extent={{116,82},{126,92}})));
-  OpenIPSL.Electrical.Loads.PSAT.VoltDependant voltDependant2(
-    V_b=132,
-    V_0=V2,
-    angle_0=Modelica.SIunits.Conversions.to_deg(A2),
-    P_0=0.702,
-    Q_0=0.143)
-    annotation (Placement(transformation(extent={{120,-86},{128,-78}})));
+  OpenIPSL.Electrical.Loads.PSAT.VoltageDependent voltDependant(
+    V_b=22000,
+    v_0=V11,
+    angle_0=A11,
+    P_0=211600,
+    Q_0=43000) annotation (Placement(transformation(extent={{-100,-16},{-88,-4}})));
+  OpenIPSL.Electrical.Loads.PSAT.VoltageDependent voltDependant1(
+    V_b=22000,
+    v_0=V26,
+    angle_0=A26,
+    P_0=7400,
+    Q_0=1800) annotation (Placement(transformation(extent={{116,82},{126,92}})));
+  OpenIPSL.Electrical.Loads.PSAT.VoltageDependent voltDependant2(
+    V_b=132000,
+    v_0=V2,
+    angle_0=A2,
+    P_0=702000,
+    Q_0=143000) annotation (Placement(transformation(extent={{120,-86},{128,-78}})));
   OpenIPSL.Electrical.Branches.PwLine Line16_17(
     G=0,
     R=0.19365,
@@ -774,12 +773,12 @@ model Grid_Model
         extent={{-10,-10},{10,10}},
         rotation=90,
         origin={-196,-44})));
-  OpenIPSL.Electrical.Loads.PSAT.VoltDependant voltDependant3(
-    V_b=22,
-    V_0=V5,
-    angle_0=Modelica.SIunits.Conversions.to_deg(A5),
+  OpenIPSL.Electrical.Loads.PSAT.VoltageDependent voltDependant3(
+    V_b=22000,
+    v_0=V5,
+    angle_0=A5,
     P_0=0,
-    Q_0=-8) annotation (Placement(transformation(extent={{152,-2},{160,6}})));
+    Q_0=-8000000) annotation (Placement(transformation(extent={{146,-16},{160,-2}})));
   OpenIPSL.Electrical.Controls.PSAT.AVR.AVRTypeII aVR1(
     vrmin=-1,
     vrmax=1,
@@ -792,16 +791,17 @@ model Grid_Model
     Tr=1,
     v0=V10) annotation (Placement(transformation(extent={{-2,-154},{18,-134}})));
   OpenIPSL.Electrical.Machines.PSAT.Order6 syn2(
-    V_b=6.6,
-    Vn=6.6,
+    V_b=6600,
+    Vn=6600,
     ra=0,
     M=5,
     D=0,
+    w(fixed=true),
     x1q=0.3,
     T1q0=0.8,
     Taa=0.002,
-    V_0=V8,
-    Sn=15,
+    v_0=V8,
+    Sn=15000000,
     x1d=0.3,
     xd=1.5,
     xq=1,
@@ -812,8 +812,7 @@ model Grid_Model
     T2q0=0.2,
     P_0=P2*SysData.S_b,
     Q_0=Q2*SysData.S_b,
-    angle_0=Modelica.SIunits.Conversions.to_deg(A8))
-    annotation (Placement(transformation(extent={{-64,-152},{-44,-132}})));
+    angle_0=A8) annotation (Placement(transformation(extent={{-64,-152},{-44,-132}})));
   OpenIPSL.Electrical.Controls.PSAT.AVR.AVRTypeII aVR2(
     vrmin=-1,
     vrmax=1,
@@ -826,12 +825,13 @@ model Grid_Model
     Te=0.5)
     annotation (Placement(transformation(extent={{-94,-148},{-74,-128}})));
   OpenIPSL.Electrical.Machines.PSAT.Order6 syn3(
-    V_b=6.6,
-    Sn=8,
-    Vn=6.6,
+    V_b=6600,
+    Sn=8000000,
+    Vn=6600,
     ra=0,
     x1d=0.2,
     D=0,
+    w(fixed=true),
     xd=2,
     xq=1.5,
     x1q=0.3,
@@ -842,12 +842,11 @@ model Grid_Model
     T2d0=0.026667,
     T2q0=0.18,
     Taa=0.002,
-    V_0=V13,
+    v_0=V13,
     M=2.5,
     P_0=P3*SysData.S_b,
     Q_0=Q3*SysData.S_b,
-    angle_0=Modelica.SIunits.Conversions.to_deg(A13))
-    annotation (Placement(transformation(extent={{-158,-156},{-138,-136}})));
+    angle_0=A13) annotation (Placement(transformation(extent={{-158,-156},{-138,-136}})));
   OpenIPSL.Electrical.Controls.PSAT.AVR.AVRTypeII aVR3(
     Tr=1,
     vrmin=-7.3,
@@ -861,18 +860,19 @@ model Grid_Model
     v0=V13)
     annotation (Placement(transformation(extent={{-188,-152},{-168,-132}})));
   OpenIPSL.Electrical.Machines.PSAT.Order6 syn4(
-    V_b=6.6,
-    Vn=6.6,
+    V_b=6600,
+    Vn=6600,
     ra=0,
     x1d=0.2,
     D=0,
+    w(fixed=true),
     xd=2,
     xq=1.5,
     x1q=0.3,
     T1q0=0.8,
     Taa=0.002,
-    V_0=V18,
-    Sn=4,
+    v_0=V18,
+    Sn=4000000,
     M=0.7,
     x2d=0.1,
     x2q=0.15,
@@ -881,8 +881,7 @@ model Grid_Model
     T2q0=0.2,
     P_0=P4*SysData.S_b,
     Q_0=Q4*SysData.S_b,
-    angle_0=Modelica.SIunits.Conversions.to_deg(A18))
-    annotation (Placement(transformation(extent={{-252,-148},{-232,-128}})));
+    angle_0=A18) annotation (Placement(transformation(extent={{-252,-148},{-232,-128}})));
   OpenIPSL.Electrical.Controls.PSAT.AVR.AVRTypeII aVR4(
     vrmin=-1,
     vrmax=1,
@@ -896,11 +895,12 @@ model Grid_Model
     v0=V18)
     annotation (Placement(transformation(extent={{-282,-144},{-262,-124}})));
   OpenIPSL.Electrical.Machines.PSAT.Order6 syn5(
-    V_b=6.6,
-    Vn=6.6,
+    V_b=6600,
+    Vn=6600,
     ra=0,
     x1d=0.2,
     D=0,
+    w(fixed=true),
     xd=2,
     xq=1.5,
     x1q=0.3,
@@ -908,15 +908,15 @@ model Grid_Model
     Taa=0.002,
     x2d=0.1,
     T2d0=0.02,
-    V_0=V20,
-    Sn=5,
+    v_0=V20,
+    Sn=5000000,
     M=1,
     x2q=0.2,
     T1d0=4,
     T2q0=0.225,
     P_0=P5*SysData.S_b,
     Q_0=Q5*SysData.S_b,
-    angle_0=Modelica.SIunits.Conversions.to_deg(A20)) annotation (Placement(
+    angle_0=A20) annotation (Placement(
         transformation(
         extent={{-10,-10},{10,10}},
         rotation=90,
@@ -936,19 +936,20 @@ model Grid_Model
         rotation=90,
         origin={-312,-136})));
   OpenIPSL.Electrical.Machines.PSAT.Order6 syn6(
-    V_b=6.6,
-    Vn=6.6,
+    V_b=6600,
+    Vn=6600,
     ra=0,
     x1d=0.2,
     D=0,
+    w(fixed=true),
     xd=2,
     xq=1.5,
     x1q=0.3,
     T1d0=4,
     T1q0=0.8,
     Taa=0.002,
-    V_0=V22,
-    Sn=6,
+    v_0=V22,
+    Sn=6000000,
     M=1.5,
     x2d=0.1,
     x2q=0.2,
@@ -956,7 +957,7 @@ model Grid_Model
     T2q0=0.225,
     P_0=P6*SysData.S_b,
     Q_0=Q6*SysData.S_b,
-    angle_0=Modelica.SIunits.Conversions.to_deg(A22)) annotation (Placement(
+    angle_0=A22) annotation (Placement(
         transformation(
         extent={{-10,-10},{10,10}},
         rotation=180,
@@ -978,14 +979,15 @@ model Grid_Model
   OpenIPSL.Electrical.Machines.PSAT.Order6 syn7(
     ra=0,
     D=0,
+    w(fixed=true),
     x1q=0.3,
     T1q0=0.8,
     Taa=0.002,
     x2d=0.1,
-    V_b=0.69,
-    V_0=V15,
-    Sn=1.6,
-    Vn=0.69,
+    V_b=690,
+    v_0=V15,
+    Sn=1600000,
+    Vn=690,
     x1d=0.15,
     M=0.5,
     xd=1.5,
@@ -996,7 +998,7 @@ model Grid_Model
     T2q0=0.1,
     P_0=P7*SysData.S_b,
     Q_0=Q7*SysData.S_b,
-    angle_0=Modelica.SIunits.Conversions.to_deg(A15)) annotation (Placement(
+    angle_0=A15) annotation (Placement(
         transformation(
         extent={{-10,-10},{10,10}},
         rotation=180,
@@ -1018,14 +1020,15 @@ model Grid_Model
   OpenIPSL.Electrical.Machines.PSAT.Order6 syn8(
     ra=0,
     D=0,
+    w(fixed=true),
     x1q=0.3,
     T1q0=0.8,
     Taa=0.002,
     x2d=0.1,
-    V_b=6.6,
-    V_0=V33,
-    Sn=4,
-    Vn=6.6,
+    V_b=6600,
+    v_0=V33,
+    Sn=4000000,
+    Vn=6600,
     x1d=0.2,
     M=0.7,
     xd=2,
@@ -1036,7 +1039,7 @@ model Grid_Model
     T2q0=0.2,
     P_0=P8*SysData.S_b,
     Q_0=Q8*SysData.S_b,
-    angle_0=Modelica.SIunits.Conversions.to_deg(A33)) annotation (Placement(
+    angle_0=A33) annotation (Placement(
         transformation(
         extent={{-10,-10},{10,10}},
         rotation=180,
@@ -1058,25 +1061,26 @@ model Grid_Model
   OpenIPSL.Electrical.Machines.PSAT.Order6 syn9(
     ra=0,
     D=0,
+    w(fixed=true),
     x1q=0.3,
     T1q0=0.8,
     Taa=0.002,
     x2d=0.1,
-    V_b=6.6,
-    Vn=6.6,
+    V_b=6600,
+    Vn=6600,
     x1d=0.2,
     xd=2,
     xq=1.5,
     T2d0=0.02,
-    V_0=V30,
-    Sn=5,
+    v_0=V30,
+    Sn=5000000,
     M=1,
     x2q=0.2,
     T1d0=4,
     T2q0=0.225,
     P_0=P9*SysData.S_b,
     Q_0=Q9*SysData.S_b,
-    angle_0=Modelica.SIunits.Conversions.to_deg(A30)) annotation (Placement(
+    angle_0=A30) annotation (Placement(
         transformation(
         extent={{-10,-10},{10,10}},
         rotation=180,
@@ -1098,14 +1102,15 @@ model Grid_Model
   OpenIPSL.Electrical.Machines.PSAT.Order6 syn10(
     ra=0,
     D=0,
+    w(fixed=true),
     x1q=0.3,
     T1q0=0.8,
     Taa=0.002,
     x2d=0.1,
-    V_b=0.69,
-    V_0=V28,
-    Sn=1.6,
-    Vn=0.69,
+    V_b=6900,
+    v_0=V28,
+    Sn=1600000,
+    Vn=690,
     x1d=0.15,
     M=0.5,
     xd=1.5,
@@ -1116,7 +1121,7 @@ model Grid_Model
     T2q0=0.15,
     P_0=P10*SysData.S_b,
     Q_0=Q10*SysData.S_b,
-    angle_0=Modelica.SIunits.Conversions.to_deg(A28)) annotation (Placement(
+    angle_0=A28) annotation (Placement(
         transformation(
         extent={{-10,-10},{10,10}},
         rotation=90,
@@ -1138,17 +1143,18 @@ model Grid_Model
   OpenIPSL.Electrical.Machines.PSAT.Order6 syn11(
     ra=0,
     D=0,
+    w(fixed=true),
     x1q=0.3,
     T1q0=0.8,
     Taa=0.002,
     x2d=0.1,
-    V_b=0.69,
-    Vn=0.69,
+    V_b=690,
+    Vn=690,
     M=0.5,
     x2q=0.1,
     T2q0=0.15,
-    V_0=V25,
-    Sn=2,
+    v_0=V25,
+    Sn=2000000,
     x1d=0.2,
     xd=2,
     xq=1.5,
@@ -1156,7 +1162,7 @@ model Grid_Model
     T2d0=0.02,
     P_0=P11*SysData.S_b,
     Q_0=Q11*SysData.S_b,
-    angle_0=Modelica.SIunits.Conversions.to_deg(A25)) annotation (Placement(
+    angle_0=A25) annotation (Placement(
         transformation(
         extent={{-10,-10},{10,10}},
         rotation=90,
@@ -1178,13 +1184,14 @@ model Grid_Model
   OpenIPSL.Electrical.Machines.PSAT.Order6 syn12(
     ra=0,
     D=0,
+    w(fixed=true),
     x1q=0.3,
     T1q0=0.8,
     Taa=0.002,
-    V_b=6.6,
-    V_0=V3,
-    Sn=45,
-    Vn=6.6,
+    V_b=6600,
+    v_0=V3,
+    Sn=45000000,
+    Vn=6600,
     x1d=0.3,
     M=2.5,
     xd=1.05,
@@ -1196,21 +1203,22 @@ model Grid_Model
     T2q0=0.12,
     P_0=P12*SysData.S_b,
     Q_0=Q12*SysData.S_b,
-    angle_0=Modelica.SIunits.Conversions.to_deg(A3)) annotation (Placement(
+    angle_0=A3) annotation (Placement(
         transformation(
         extent={{-10,-10},{10,10}},
         rotation=90,
         origin={294,-128})));
   OpenIPSL.Electrical.Buses.InfiniteBus infiniteBus(
-    V_0=V1,
-    angle_0=Modelica.SIunits.Conversions.to_deg(A1),
-    V_b=132,
+    v_0=V1,
+    angle_0=A1,
+    V_b=132000,
     P_0=PinfBus,
     Q_0=QinfBus) annotation (Placement(transformation(
-        extent={{-8,-8},{8,8}},
+        extent={{8,-8},{-8,8}},
         rotation=180,
         origin={140,-148})));
-  inner OpenIPSL.Electrical.SystemBase SysData(S_b=100, fn=50)
+  inner OpenIPSL.Electrical.SystemBase SysData(S_b=100000000,
+                                                        fn=50)
     annotation (Placement(transformation(extent={{-358,138},{-284,180}})));
   StaticCondenser staticCondenser(B=0.02)
     annotation (Placement(transformation(extent={{164,130},{176,142}})));
@@ -1230,8 +1238,8 @@ equation
                                             color={0,0,255}));
   connect(B4.p[1], Line2_4.n) annotation (Line(points={{134,-34},{138,-34},{138,-44},{138,-46},{144,-46},{144,-51}},
                                                color={0,0,255}));
-  connect(B5.n[1], voltDependant3.p) annotation (Line(points={{115.9,4},{112,4},{112,8},{156,8},{156,6}},
-                                    color={0,0,255}));
+  connect(B5.n[1], voltDependant3.p) annotation (Line(points={{115.9,4},{112,4},
+          {112,8},{153,8},{153,-2}},color={0,0,255}));
   connect(B5.n[2], Line5_23.n) annotation (Line(points={{109.3,4},{110,4},{110,12},{110,18},{102,18},{102,29},{100,29}},
                                                     color={0,0,255}));
   connect(B5.n[3], Line56_2.p) annotation (Line(points={{102.7,4},{108,4},{108,12},{92,12},{92,30},{69,30}},
@@ -1413,8 +1421,8 @@ equation
           280,-140},{289,-140},{289,-140}}, color={0,0,127}));
   connect(syn12.pm0, syn12.pm) annotation (Line(points={{305,-136},{310,-136},{
           310,-140},{299,-140},{299,-140}}, color={0,0,127}));
-  connect(infiniteBus.p, B1.n[1]) annotation (Line(points={{132,-148},{180,-148},{180,-152},{208,-152},{208,-136}},
-                                             color={0,0,255}));
+  connect(infiniteBus.p, B1.n[1]) annotation (Line(points={{148,-148},{180,-148},
+          {180,-152},{208,-152},{208,-136}}, color={0,0,255}));
   connect(syn3.p, B13.p[1]) annotation (Line(points={{-138,-146},{-130,-146},{-130,-120},{-122,-120}},
                               color={0,0,255}));
   connect(Line16_17.n, B16.p[1]) annotation (Line(points={{-196,-35},{-196,-35},{-196,-20},{-194,-20}},
@@ -1502,7 +1510,54 @@ equation
   connect(Line26_31.n, B26.n[1]) annotation (Line(points={{94,123},{96,123},{96,112},{104.6,112}}, color={0,0,255}));
   connect(Line26_27.n, B26.n[2]) annotation (Line(points={{147,116},{100,116},{100,112},{91.4,112}}, color={0,0,255}));
   connect(twoWindingTransformer10.n, B27.p[1]) annotation (Line(points={{227,78},{210,78},{210,80},{196,80},{196,92}}, color={0,0,255}));
-  annotation (
+                  annotation (Placement(
+        transformation(
+        extent={{2,-22},{-2,22}},
+        rotation=90,
+        origin={-228,-112})),
+                Placement(transformation(extent={{-100,-16},{-88,-4}})),
+                Placement(transformation(extent={{116,82},{126,92}})),
+                Placement(transformation(extent={{120,-86},{128,-78}})),
+                              Placement(transformation(extent={{152,-2},{160,6}})),
+                Placement(transformation(extent={{-64,-152},{-44,-132}})),
+                Placement(transformation(extent={{-158,-156},{-138,-136}})),
+                Placement(transformation(extent={{-252,-148},{-232,-128}})),
+                              Placement(
+        transformation(
+        extent={{-10,-10},{10,10}},
+        rotation=90,
+        origin={-310,-106})), Placement(
+        transformation(
+        extent={{-10,-10},{10,10}},
+        rotation=180,
+        origin={-250,144})),  Placement(
+        transformation(
+        extent={{-10,-10},{10,10}},
+        rotation=180,
+        origin={-4,118})),    Placement(
+        transformation(
+        extent={{-10,-10},{10,10}},
+        rotation=180,
+        origin={320,142})),   Placement(
+        transformation(
+        extent={{-10,-10},{10,10}},
+        rotation=180,
+        origin={342,-12})),   Placement(
+        transformation(
+        extent={{-10,-10},{10,10}},
+        rotation=90,
+        origin={276,26})),    Placement(
+        transformation(
+        extent={{-10,-10},{10,10}},
+        rotation=90,
+        origin={238,-30})),  Placement(
+        transformation(
+        extent={{-10,-10},{10,10}},
+        rotation=90,
+        origin={294,-128})), Placement(transformation(
+        extent={{-8,-8},{8,8}},
+        rotation=180,
+        origin={140,-148})),
     Diagram(coordinateSystem(extent={{-360,-180},{400,180}},
           preserveAspectRatio=false), graphics={Text(
           extent={{132,-90},{132,-80}},
@@ -1637,42 +1692,24 @@ equation
           lineColor={0,0,0},
           textStyle={TextStyle.Bold},
           textString="B33")}),
-    Icon(coordinateSystem(extent={{-360,-180},{400,180}})),
+    Icon(coordinateSystem(extent={{-100,-100},{100,100}})),
     experiment(
       StopTime=10,
-      Interval=0.0001,
+      Interval=0.001,
       Tolerance=1e-006,
       __Dymola_fixedstepsize=0.001,
       __Dymola_Algorithm="Rkfix2"),
     __Dymola_experimentSetupOutput,
     Documentation(info="<html>
-<table cellspacing=\"2\" cellpadding=\"1\" border=\"1\"><tr>
-<td><p>Reference</p></td>
-<td><p> Namsskogan (Norway) Distribution Grid, Reference: PSAT</p></td>
-</tr>
-<tr>
-<td><p>Last update</p></td>
-<td><p>13/04/2016</p></td>
-</tr>
-<tr>
-<td><p>Author</p></td>
-<td><p>MAA Murad, SmarTS Lab, KTH Royal Institute of Technology</p></td>
-</tr>
-<tr>
-<td><p>Contact</p></td>
-<td><p><a href=\"mailto:luigiv@kth.se\">luigiv@kth.se</a></p></td>
-</tr>
-</table>
-</html>", revisions="<html>
-<p><span style=\"font-family: MS Shell Dlg 2;\">Copyright 2015-2016 RTE (France), SmarTS Lab (Sweden), AIA (Spain) and DTU (Denmark)</span></p>
+<p>This example is composed by the 33-bus 12-machine system representing a distribution-level subsystem of Norway.</p>
+<p>The system undergoes a three-phase fault on Bus 26 at 1s, lasting for 20ms. Simulate the system for 10 seconds.</p>
+<p>Variables of interest are the voltages in many buses. For example:</p>
 <ul>
-<li><span style=\"font-family: MS Shell Dlg 2;\">RTE: <a href=\"http://www.rte-france.com\">http://www.rte-france.com</a></span></li>
-<li><span style=\"font-family: MS Shell Dlg 2;\">SmarTS Lab, research group at KTH: <a href=\"https://www.kth.se/en\">https://www.kth.se/en</a></span></li>
-<li><span style=\"font-family: MS Shell Dlg 2;\">AIA: <a href=\"http://www.aia.es/en/energy\">http://www.aia.es/en/energy</a></span></li>
-<li><span style=\"font-family: MS Shell Dlg 2;\">DTU: <a href=\"http://www.dtu.dk/english\">http://www.dtu.dk/english</a></span></li>
+<li><code>B3.v</code></li>
+<li><code>B11.v</code></li>
+<li><code>B26.v</code></li>
 </ul>
-<p><span style=\"font-family: MS Shell Dlg 2;\">The authors can be contacted by email: <a href=\"mailto:info@itesla-ipsl.org\">info@itesla-ipsl.org</a> </span></p>
-<p><span style=\"font-family: MS Shell Dlg 2;\">This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. </span></p>
-<p><span style=\"font-family: MS Shell Dlg 2;\">If a copy of the MPL was not distributed with this file, You can obtain one at <a href=\"http://mozilla.org/MPL/2.0/\">http://mozilla.org/MPL/2.0</a>.</span></p>
+</html>", revisions="<html>
+
 </html>"));
 end Grid_Model;
