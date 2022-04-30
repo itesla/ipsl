@@ -440,7 +440,6 @@ equation
           textString="bus 58653")}),
     Icon(coordinateSystem(extent={{-100,-100},{100,100}})),
     Documentation(info="<html>
-<html>
 <p>This example system represents small portion of the Norwegian transmission system, going under the line opening between buses 58573 and 58653, at both ends. The line opens at 1s and the event lasts for 50ms and, after that, the line is reconnected.</p>
 <p>The system should be simulated during 10 seconds and the variables of interest are:</p>
 <ul>

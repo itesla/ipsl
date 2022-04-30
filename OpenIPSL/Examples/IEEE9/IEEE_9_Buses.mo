@@ -285,7 +285,7 @@ equation
 <li><code>Bus8.v</code></li>
 <li><code>Bus9.v</code></li>
 </ul>
-<p>Compare the results with the ones obtained when simulating <strong>IEEE_9_Buses_Statcom</strong>.
+<p>Compare the results with the ones obtained when simulating <strong>IEEE_9_Buses_Statcom</strong>.</p>
 </html>"),
     experiment(
       StopTime=20,

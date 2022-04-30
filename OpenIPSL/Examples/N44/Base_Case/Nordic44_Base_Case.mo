@@ -3351,7 +3351,7 @@ equation
 <li><code>bus_7020.v</code></li>
 <li><code>G1_bus6500.gENSAL.SPEED</code></li>
 </ul>
-<p>Compare these results with the ones obtained in the <b>Nordic44_Base_Case</b>.</p>
+<p>Compare these results with the ones obtained in the <strong>Nordic44_Base_Case</strong>.</p>
 <h4>Changes compared to the original case (Real data period: April, May, June and July): </h4>
 <ul>
 <li>Bus names assignation</li>
