@@ -3348,22 +3348,22 @@ equation
 <p>This example system represents the Nordic 44 test system, represented differently from the original case, but undergoing the same line opening event. </p>
 <p>Simulate the system for 10 seconds. If you are using Dymola, use the DAE mode. Variables of interest are:</p>
 <ul>
-<li><code>bus_7020.v</code></li>
-<li><code>G1_bus6500.gENSAL.SPEED</code></li>
+<li><span style=\"font-family: monospace;\">bus_7020.v</span></li>
+<li><span style=\"font-family: monospace;\">G1_bus6500.gENSAL.SPEED</span></li>
 </ul>
-<p>Compare these results with the ones obtained in the <strong>Nordic44_Base_Case</strong>.</p>
+<p>Compare these results with the ones obtained in the <b>Nordic44_Base_Case</b>.</p>
 <h4>Changes compared to the original case (Real data period: April, May, June and July): </h4>
 <ol>
-<li>Bus names assignation &nbsp; </li>
+<li>Bus names assignation</li>
 <li>New bus grouping according to the real bidding zones </li>
-<li>Introduction of 5 no scalable loads at buses: 8500, 7000, 7100 and two at 6701 (to represent missing exchanges) &nbsp; </li>
-<li>All no scalable loads have Q=P*tan(acos(0.95)) except for that one at bus 5610 with PF=0.99 (to not have frequent problems of low voltage in southern Norway) &nbsp; </li>
-<li>Trafo 5602-5603: winding 1 ratio set from 0.9683 to 1 (to not have permanent problems of low voltage in southern Norway) and no Auto Adjust &nbsp; </li>
+<li>Introduction of 5 no scalable loads at buses: 8500, 7000, 7100 and two at 6701 (to represent missing exchanges)  </li>
+<li>All no scalable loads have Q=P*tan(acos(0.95)) except for that one at bus 5610 with PF=0.99 (to not have frequent problems of low voltage in southern Norway) </li>
+<li>Trafo 5602-5603: winding 1 ratio set from 0.9683 to 1 (to not have permanent problems of low voltage in southern Norway) and no Auto Adjust </li>
 <li>Change of X about line 5400-5500 from 0.94 pu to 0.094 pu (to fix ODMS warning)</li>
 <li>Branches rates (to fix some lines overloading): </li>
-<p><code>P_max = V_1*V_2/X_line*S_base=1*1/X_line*1000;</code> </p>
+<p><span style=\"font-family: monospace;\">P_max = V_1*V_2/X_line*S_base=1*1/X_line*1000;</span> </p>
 <table cellspacing=\"0\" cellpadding=\"0\" border=\"1\" width=\"50%\"><tr>
-<td valign=\"top\"><p align=\"center\"><h5>Trafo Buses (Line Reactance)&nbsp; </h5></p></td>
+<td valign=\"top\"><p align=\"center\"><h5>Trafo Buses (Line Reactance)</h5></p></td>
 <td><p align=\"center\"><h5>Old Rate A </h5></p></td>
 <td><p align=\"center\"><h5>Old Rate B </h5></p></td>
 <td><p align=\"center\"><h5>Old Rate C </h5></p></td>
@@ -3544,18 +3544,18 @@ equation
 </tr>
 </table>
 <li>New generators introduced into the model with the same configuration and parameters as the existing ones at the buses where they are connected (to match real production): </li>
-<p style=\"margin-left: 60px;\">o&nbsp;&nbsp; Bus 3115 (Porjus): 2 generators </p>
-<p style=\"margin-left: 60px;\">o&nbsp;&nbsp; Bus 3249 (Grundfors): 1 generator </p>
-<p style=\"margin-left: 60px;\">o&nbsp;&nbsp; Bus 3300 (Oskarshamn): 3 generators </p>
-<p style=\"margin-left: 60px;\">o&nbsp;&nbsp; Bus 5100 (Tretten): 1 generator </p>
-<p style=\"margin-left: 60px;\">o&nbsp;&nbsp; Bus 5300 (Sima): 4 generators </p>
-<p style=\"margin-left: 60px;\">o&nbsp;&nbsp; Bus 5500 (Oslo2): 1 generator </p>
-<p style=\"margin-left: 60px;\">o&nbsp;&nbsp; Bus 5600 (Kristiansand): 2 generators </p>
-<p style=\"margin-left: 60px;\">o&nbsp;&nbsp; Bus 6000 (Kvilldal): 3 generators </p>
-<p style=\"margin-left: 60px;\">o&nbsp;&nbsp; Bus 6700 (Rossaga): 2 generators </p>
+<p style=\"margin-left: 60px;\">- Bus 3115 (Porjus): 2 generators </p>
+<p style=\"margin-left: 60px;\">- Bus 3249 (Grundfors): 1 generator </p>
+<p style=\"margin-left: 60px;\">- Bus 3300 (Oskarshamn): 3 generators </p>
+<p style=\"margin-left: 60px;\">- Bus 5100 (Tretten): 1 generator </p>
+<p style=\"margin-left: 60px;\">- Bus 5300 (Sima): 4 generators </p>
+<p style=\"margin-left: 60px;\">- Bus 5500 (Oslo2): 1 generator </p>
+<p style=\"margin-left: 60px;\">- Bus 5600 (Kristiansand): 2 generators </p>
+<p style=\"margin-left: 60px;\">- Bus 6000 (Kvilldal): 3 generators </p>
+<p style=\"margin-left: 60px;\">- Bus 6700 (Rossaga): 2 generators </p>
 <li>Change of line parameters (to fix frequent low voltage problems at bus 3100): </li>
 <table cellspacing=\"0\" cellpadding=\"0\" border=\"1\" width=\"50%\"><tr>
-<td valign=\"top\"><p align=\"center\"><br><h5>Line Buses&nbsp; </h5></p></td>
+<td valign=\"top\"><p align=\"center\"><h5>Line Buses </h5></p></td>
 <td><p align=\"center\"><h5>Old R </h5></p></td>
 <td><p align=\"center\"><h5>Old X </h5></p></td>
 <td><p align=\"center\"><h5>Old B </h5></p></td>
@@ -3582,9 +3582,10 @@ equation
 <td><p align=\"center\">0.2 </p></td>
 </tr>
 </table>
-<li>Trafo rates (to fix transformers overloading):
+<li>Trafo rates (to fix transformers overloading): </li>
+</ol>
 <table cellspacing=\"0\" cellpadding=\"0\" border=\"1\" width=\"50%\"><tr>
-<td valign=\"top\"><p align=\"center\"><br><h5>&nbsp; Trafo Buses</h5></p></td>
+<td valign=\"top\"><p align=\"center\"><h5> Trafo Buses</h5></p></td>
 <td><p align=\"center\"><h5>Old </h5></p><p align=\"center\"><h5>Rate A </h5></p></td>
 <td><p align=\"center\"><h5>Old </h5></p><p align=\"center\"><h5>Rate B </h5></p></td>
 <td><p align=\"center\"><h5>Old </h5></p><p align=\"center\"><h5>Rate C </h5></p></td>
@@ -3701,7 +3702,5 @@ equation
 <td valign=\"top\"><p align=\"center\">4000 </p></td>
 </tr>
 </table>
- </li>
-</ol>
 </html>"));
 end Nordic44_Base_Case;

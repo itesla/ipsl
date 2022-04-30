@@ -15,6 +15,6 @@ equation
   Q = B*V^2;
   annotation (Documentation(info="<html>
 <p>This static condenser is developed especially for this example system.
-Since this component is not a standard model, it is not in the main body of the library and its usage outside this example is not encouraged.<p>
+Since this component is not a standard model, it is not in the main body of the library and its usage outside this example is not encouraged.</p>
 </html>"));
 end StaticCondenser;
