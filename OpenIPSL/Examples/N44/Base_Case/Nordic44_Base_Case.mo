@@ -3362,349 +3362,349 @@ equation
 <li>Change of X about line 5400-5500 from 0.94 pu to 0.094 pu (to fix ODMS warning)</li>
 <li>Branches rates (to fix some lines overloading): <code>P_max = V_1*V_2/X_line*S_base=1*1/X_line*1000;</code></li>
 </ul>
-<table cellspacing="0" cellpadding="0" border="1" width="50%"><tr>
-<td valign="top"><p align="center"><strong>Trafo Buses (Line Reactance)</strong></p></td>
-<td><p align="center"><strong>Old Rate A </strong></p></td>
-<td><p align="center"><strong>Old Rate B </strong></p></td>
-<td><p align="center"><strong>Old Rate C </strong></p></td>
-<td><p align="center"><strong>New Rate A </strong></p></td>
-<td><p align="center"><strong>New Rate B </strong></p></td>
-<td><p align="center"><strong>New Rate C </strong></p></td>
+<table cellspacing=\"0\" cellpadding=\"0\" border=\"1\" width=\"50%\"><tr>
+<td valign=\"top\"><p align=\"center\"><strong>Trafo Buses (Line Reactance)</strong></p></td>
+<td><p align=\"center\"><strong>Old Rate A </strong></p></td>
+<td><p align=\"center\"><strong>Old Rate B </strong></p></td>
+<td><p align=\"center\"><strong>Old Rate C </strong></p></td>
+<td><p align=\"center\"><strong>New Rate A </strong></p></td>
+<td><p align=\"center\"><strong>New Rate B </strong></p></td>
+<td><p align=\"center\"><strong>New Rate C </strong></p></td>
 </tr>
 <tr>
-<td><p align="center">3100-3115 (Xline=0.4) </p></td>
-<td><p align="center">1100 </p></td>
-<td><p align="center">1300 </p></td>
-<td><p align="center">1400 </p></td>
-<td><p align="center">2000 </p></td>
-<td><p align="center">2500 </p></td>
-<td><p align="center">3000 </p></td>
+<td><p align=\"center\">3100-3115 (Xline=0.4) </p></td>
+<td><p align=\"center\">1100 </p></td>
+<td><p align=\"center\">1300 </p></td>
+<td><p align=\"center\">1400 </p></td>
+<td><p align=\"center\">2000 </p></td>
+<td><p align=\"center\">2500 </p></td>
+<td><p align=\"center\">3000 </p></td>
 </tr>
 <tr>
-<td><p align="center">3100-3249 (Xline=0.43) </p></td>
-<td><p align="center">1100 </p></td>
-<td><p align="center">1300 </p></td>
-<td><p align="center">1400 </p></td>
-<td><p align="center">2000 </p></td>
-<td><p align="center">2500 </p></td>
-<td><p align="center">3000 </p></td>
+<td><p align=\"center\">3100-3249 (Xline=0.43) </p></td>
+<td><p align=\"center\">1100 </p></td>
+<td><p align=\"center\">1300 </p></td>
+<td><p align=\"center\">1400 </p></td>
+<td><p align=\"center\">2000 </p></td>
+<td><p align=\"center\">2500 </p></td>
+<td><p align=\"center\">3000 </p></td>
 </tr>
 <tr>
-<td><p align="center">3200-8500 (Xline=0.17) </p></td>
-<td><p align="center">1100 </p></td>
-<td><p align="center">1300 </p></td>
-<td><p align="center">1400 </p></td>
-<td><p align="center">1900 </p></td>
-<td><p align="center">2200 </p></td>
-<td><p align="center">2600 </p></td>
+<td><p align=\"center\">3200-8500 (Xline=0.17) </p></td>
+<td><p align=\"center\">1100 </p></td>
+<td><p align=\"center\">1300 </p></td>
+<td><p align=\"center\">1400 </p></td>
+<td><p align=\"center\">1900 </p></td>
+<td><p align=\"center\">2200 </p></td>
+<td><p align=\"center\">2600 </p></td>
 </tr>
 <tr>
-<td><p align="center">3249-7100 (Xline=0.075) </p></td>
-<td><p align="center">1300 </p></td>
-<td><p align="center">1500 </p></td>
-<td><p align="center">1700 </p></td>
-<td><p align="center">1900 </p></td>
-<td><p align="center">2200 </p></td>
-<td><p align="center">2600 </p></td>
+<td><p align=\"center\">3249-7100 (Xline=0.075) </p></td>
+<td><p align=\"center\">1300 </p></td>
+<td><p align=\"center\">1500 </p></td>
+<td><p align=\"center\">1700 </p></td>
+<td><p align=\"center\">1900 </p></td>
+<td><p align=\"center\">2200 </p></td>
+<td><p align=\"center\">2600 </p></td>
 </tr>
 <tr>
-<td><p align="center">3300-8500 (Xline=0.23,027) </p></td>
-<td><p align="center">1100 </p></td>
-<td><p align="center">1300 </p></td>
-<td><p align="center">1400 </p></td>
-<td><p align="center">1900 </p></td>
-<td><p align="center">2200 </p></td>
-<td><p align="center">2600 </p></td>
+<td><p align=\"center\">3300-8500 (Xline=0.23,027) </p></td>
+<td><p align=\"center\">1100 </p></td>
+<td><p align=\"center\">1300 </p></td>
+<td><p align=\"center\">1400 </p></td>
+<td><p align=\"center\">1900 </p></td>
+<td><p align=\"center\">2200 </p></td>
+<td><p align=\"center\">2600 </p></td>
 </tr>
 <tr>
-<td><p align="center">5300-6100 (Xline=0.22) </p></td>
-<td><p align="center">800 </p></td>
-<td><p align="center">900 </p></td>
-<td><p align="center">950 </p></td>
-<td><p align="center">1900 </p></td>
-<td><p align="center">2200 </p></td>
-<td><p align="center">2600 </p></td>
+<td><p align=\"center\">5300-6100 (Xline=0.22) </p></td>
+<td><p align=\"center\">800 </p></td>
+<td><p align=\"center\">900 </p></td>
+<td><p align=\"center\">950 </p></td>
+<td><p align=\"center\">1900 </p></td>
+<td><p align=\"center\">2200 </p></td>
+<td><p align=\"center\">2600 </p></td>
 </tr>
 <tr>
-<td><p align="center">5400-5500 (Xline=0.094) </p></td>
-<td><p align="center">400 </p></td>
-<td><p align="center">550 </p></td>
-<td><p align="center">650 </p></td>
-<td><p align="center">1900 </p></td>
-<td><p align="center">2200 </p></td>
-<td><p align="center">2600 </p></td>
+<td><p align=\"center\">5400-5500 (Xline=0.094) </p></td>
+<td><p align=\"center\">400 </p></td>
+<td><p align=\"center\">550 </p></td>
+<td><p align=\"center\">650 </p></td>
+<td><p align=\"center\">1900 </p></td>
+<td><p align=\"center\">2200 </p></td>
+<td><p align=\"center\">2600 </p></td>
 </tr>
 <tr>
-<td><p align="center">5402-6001 (Xline=0.01) </p></td>
-<td><p align="center">1500 </p></td>
-<td><p align="center">1700 </p></td>
-<td><p align="center">1900 </p></td>
-<td><p align="center">2100 </p></td>
-<td><p align="center">2500 </p></td>
-<td><p align="center">3000 </p></td>
+<td><p align=\"center\">5402-6001 (Xline=0.01) </p></td>
+<td><p align=\"center\">1500 </p></td>
+<td><p align=\"center\">1700 </p></td>
+<td><p align=\"center\">1900 </p></td>
+<td><p align=\"center\">2100 </p></td>
+<td><p align=\"center\">2500 </p></td>
+<td><p align=\"center\">3000 </p></td>
 </tr>
 <tr>
-<td><p align="center">6000-6100 (Xline=0.42) </p></td>
-<td><p align="center">800 </p></td>
-<td><p align="center">900 </p></td>
-<td><p align="center">950 </p></td>
-<td><p align="center">1950 </p></td>
-<td><p align="center">2200 </p></td>
-<td><p align="center">2400 </p></td>
+<td><p align=\"center\">6000-6100 (Xline=0.42) </p></td>
+<td><p align=\"center\">800 </p></td>
+<td><p align=\"center\">900 </p></td>
+<td><p align=\"center\">950 </p></td>
+<td><p align=\"center\">1950 </p></td>
+<td><p align=\"center\">2200 </p></td>
+<td><p align=\"center\">2400 </p></td>
 </tr>
 <tr>
-<td><p align="center">5300-5301 (Xline=0.22) </p></td>
-<td><p align="center">800 </p></td>
-<td><p align="center">900 </p></td>
-<td><p align="center">950 </p></td>
-<td><p align="center">1900 </p></td>
-<td><p align="center">2200 </p></td>
-<td><p align="center">2600 </p></td>
+<td><p align=\"center\">5300-5301 (Xline=0.22) </p></td>
+<td><p align=\"center\">800 </p></td>
+<td><p align=\"center\">900 </p></td>
+<td><p align=\"center\">950 </p></td>
+<td><p align=\"center\">1900 </p></td>
+<td><p align=\"center\">2200 </p></td>
+<td><p align=\"center\">2600 </p></td>
 </tr>
 <tr>
-<td><p align="center">5600-5603 (Xline=0.22) </p></td>
-<td><p align="center">900 </p></td>
-<td><p align="center">1050 </p></td>
-<td><p align="center">1200 </p></td>
-<td><p align="center">1500 </p></td>
-<td><p align="center">1750 </p></td>
-<td><p align="center">2000 </p></td>
+<td><p align=\"center\">5600-5603 (Xline=0.22) </p></td>
+<td><p align=\"center\">900 </p></td>
+<td><p align=\"center\">1050 </p></td>
+<td><p align=\"center\">1200 </p></td>
+<td><p align=\"center\">1500 </p></td>
+<td><p align=\"center\">1750 </p></td>
+<td><p align=\"center\">2000 </p></td>
 </tr>
 <tr>
-<td><p align="center">5600-5601 (Xline=0.34) </p></td>
-<td><p align="center">800 </p></td>
-<td><p align="center">900 </p></td>
-<td><p align="center">950 </p></td>
-<td><p align="center">1200 </p></td>
-<td><p align="center">1500 </p></td>
-<td><p align="center">1800 </p></td>
+<td><p align=\"center\">5600-5601 (Xline=0.34) </p></td>
+<td><p align=\"center\">800 </p></td>
+<td><p align=\"center\">900 </p></td>
+<td><p align=\"center\">950 </p></td>
+<td><p align=\"center\">1200 </p></td>
+<td><p align=\"center\">1500 </p></td>
+<td><p align=\"center\">1800 </p></td>
 </tr>
 <tr>
-<td><p align="center">HVDC lines (Xline=0.01) </p></td>
-<td><p align="center">0 </p></td>
-<td><p align="center">0 </p></td>
-<td><p align="center">0 </p></td>
-<td><p align="center">1000 </p></td>
-<td><p align="center">1200 </p></td>
-<td><p align="center">1500 </p></td>
+<td><p align=\"center\">HVDC lines (Xline=0.01) </p></td>
+<td><p align=\"center\">0 </p></td>
+<td><p align=\"center\">0 </p></td>
+<td><p align=\"center\">0 </p></td>
+<td><p align=\"center\">1000 </p></td>
+<td><p align=\"center\">1200 </p></td>
+<td><p align=\"center\">1500 </p></td>
 </tr>
 <tr>
-<td><p align="center">5600-6000 (Xline=0.2) </p></td>
-<td><p align="center">1350 </p></td>
-<td><p align="center">1500 </p></td>
-<td><p align="center">1650 </p></td>
-<td><p align="center">2100 </p></td>
-<td><p align="center">2500 </p></td>
-<td><p align="center">2900 </p></td>
+<td><p align=\"center\">5600-6000 (Xline=0.2) </p></td>
+<td><p align=\"center\">1350 </p></td>
+<td><p align=\"center\">1500 </p></td>
+<td><p align=\"center\">1650 </p></td>
+<td><p align=\"center\">2100 </p></td>
+<td><p align=\"center\">2500 </p></td>
+<td><p align=\"center\">2900 </p></td>
 </tr>
 <tr>
-<td><p align="center">5603-5610 (Xline=0.01) </p></td>
-<td><p align="center">0 </p></td>
-<td><p align="center">0 </p></td>
-<td><p align="center">0 </p></td>
-<td><p align="center">2500 </p></td>
-<td><p align="center">3000 </p></td>
-<td><p align="center">3500 </p></td>
+<td><p align=\"center\">5603-5610 (Xline=0.01) </p></td>
+<td><p align=\"center\">0 </p></td>
+<td><p align=\"center\">0 </p></td>
+<td><p align=\"center\">0 </p></td>
+<td><p align=\"center\">2500 </p></td>
+<td><p align=\"center\">3000 </p></td>
+<td><p align=\"center\">3500 </p></td>
 </tr>
 <tr>
-<td><p align="center">3000-3020 (Xline=0.01) </p></td>
-<td><p align="center">0 </p></td>
-<td><p align="center">0 </p></td>
-<td><p align="center">0 </p></td>
-<td><p align="center">1500 </p></td>
-<td><p align="center">1800 </p></td>
-<td><p align="center">2100 </p></td>
+<td><p align=\"center\">3000-3020 (Xline=0.01) </p></td>
+<td><p align=\"center\">0 </p></td>
+<td><p align=\"center\">0 </p></td>
+<td><p align=\"center\">0 </p></td>
+<td><p align=\"center\">1500 </p></td>
+<td><p align=\"center\">1800 </p></td>
+<td><p align=\"center\">2100 </p></td>
 </tr>
 <tr>
-<td><p align="center">7000-7010 (Xline=0.01) </p></td>
-<td><p align="center">0 </p></td>
-<td><p align="center">0 </p></td>
-<td><p align="center">0 </p></td>
-<td><p align="center">2500 </p></td>
-<td><p align="center">3000 </p></td>
-<td><p align="center">3500 </p></td>
+<td><p align=\"center\">7000-7010 (Xline=0.01) </p></td>
+<td><p align=\"center\">0 </p></td>
+<td><p align=\"center\">0 </p></td>
+<td><p align=\"center\">0 </p></td>
+<td><p align=\"center\">2500 </p></td>
+<td><p align=\"center\">3000 </p></td>
+<td><p align=\"center\">3500 </p></td>
 </tr>
 <tr>
-<td><p align="center">5301-5305 (Xline=0.12) </p></td>
-<td><p align="center">1250 </p></td>
-<td><p align="center">1500 </p></td>
-<td><p align="center">1700 </p></td>
-<td><p align="center">2000 </p></td>
-<td><p align="center">2200 </p></td>
-<td><p align="center">2500 </p></td>
+<td><p align=\"center\">5301-5305 (Xline=0.12) </p></td>
+<td><p align=\"center\">1250 </p></td>
+<td><p align=\"center\">1500 </p></td>
+<td><p align=\"center\">1700 </p></td>
+<td><p align=\"center\">2000 </p></td>
+<td><p align=\"center\">2200 </p></td>
+<td><p align=\"center\">2500 </p></td>
 </tr>
 <tr>
-<td><p align="center">3115-3245 (Xline=0.5)</p></td>
-<td><p align="center">1100 </p></td>
-<td><p align="center">1300 </p></td>
-<td><p align="center">1400 </p></td>
-<td><p align="center">1300 </p></td>
-<td><p align="center">1800 </p></td>
-<td><p align="center">2000 </p></td>
+<td><p align=\"center\">3115-3245 (Xline=0.5)</p></td>
+<td><p align=\"center\">1100 </p></td>
+<td><p align=\"center\">1300 </p></td>
+<td><p align=\"center\">1400 </p></td>
+<td><p align=\"center\">1300 </p></td>
+<td><p align=\"center\">1800 </p></td>
+<td><p align=\"center\">2000 </p></td>
 </tr>
 </table>
 <ul>
 <li>New generators introduced into the model with the same configuration and parameters as the existing ones at the buses where they are connected (to match real production): </li>
 </ul>
-<p style="margin-left: 60px;">- Bus 3115 (Porjus): 2 generators </p>
-<p style="margin-left: 60px;">- Bus 3249 (Grundfors): 1 generator </p>
-<p style="margin-left: 60px;">- Bus 3300 (Oskarshamn): 3 generators </p>
-<p style="margin-left: 60px;">- Bus 5100 (Tretten): 1 generator </p>
-<p style="margin-left: 60px;">- Bus 5300 (Sima): 4 generators </p>
-<p style="margin-left: 60px;">- Bus 5500 (Oslo2): 1 generator </p>
-<p style="margin-left: 60px;">- Bus 5600 (Kristiansand): 2 generators </p>
-<p style="margin-left: 60px;">- Bus 6000 (Kvilldal): 3 generators </p>
-<p style="margin-left: 60px;">- Bus 6700 (Rossaga): 2 generators </p>
+<p style=\"margin-left: 60px;\">- Bus 3115 (Porjus): 2 generators </p>
+<p style=\"margin-left: 60px;\">- Bus 3249 (Grundfors): 1 generator </p>
+<p style=\"margin-left: 60px;\">- Bus 3300 (Oskarshamn): 3 generators </p>
+<p style=\"margin-left: 60px;\">- Bus 5100 (Tretten): 1 generator </p>
+<p style=\"margin-left: 60px;\">- Bus 5300 (Sima): 4 generators </p>
+<p style=\"margin-left: 60px;\">- Bus 5500 (Oslo2): 1 generator </p>
+<p style=\"margin-left: 60px;\">- Bus 5600 (Kristiansand): 2 generators </p>
+<p style=\"margin-left: 60px;\">- Bus 6000 (Kvilldal): 3 generators </p>
+<p style=\"margin-left: 60px;\">- Bus 6700 (Rossaga): 2 generators </p>
 <ul>
 <li>Change of line parameters (to fix frequent low voltage problems at bus 3100): </li>
 </ul>
-<table cellspacing="0" cellpadding="0" border="1" width="50%"><tr>
-<td valign="top"><p align="center"><strong>Line Buses </strong></p></td>
-<td><p align="center"><strong>Old R </strong></p></td>
-<td><p align="center"><strong>Old X </strong></p></td>
-<td><p align="center"><strong>Old B </strong></p></td>
-<td><p align="center"><strong>New R </strong></p></td>
-<td><p align="center"><strong>New X </strong></p></td>
-<td><p align="center"><strong>New B </strong></p></td>
+<table cellspacing=\"0\" cellpadding=\"0\" border=\"1\" width=\"50%\"><tr>
+<td valign=\"top\"><p align=\"center\"><strong>Line Buses </strong></p></td>
+<td><p align=\"center\"><strong>Old R </strong></p></td>
+<td><p align=\"center\"><strong>Old X </strong></p></td>
+<td><p align=\"center\"><strong>Old B </strong></p></td>
+<td><p align=\"center\"><strong>New R </strong></p></td>
+<td><p align=\"center\"><strong>New X </strong></p></td>
+<td><p align=\"center\"><strong>New B </strong></p></td>
 </tr>
 <tr>
-<td><p align="center">3100-3115 </p></td>
-<td><p align="center">0.03 </p></td>
-<td><p align="center">0.4 </p></td>
-<td><p align="center">0.11 </p></td>
-<td><p align="center">0.015 </p></td>
-<td><p align="center">0.2 </p></td>
-<td><p align="center">0.2 </p></td>
+<td><p align=\"center\">3100-3115 </p></td>
+<td><p align=\"center\">0.03 </p></td>
+<td><p align=\"center\">0.4 </p></td>
+<td><p align=\"center\">0.11 </p></td>
+<td><p align=\"center\">0.015 </p></td>
+<td><p align=\"center\">0.2 </p></td>
+<td><p align=\"center\">0.2 </p></td>
 </tr>
 <tr>
-<td><p align="center">3100-3249 </p></td>
-<td><p align="center">0.03 </p></td>
-<td><p align="center">0.43 </p></td>
-<td><p align="center">0.16 </p></td>
-<td><p align="center">0.015 </p></td>
-<td><p align="center">0.215 </p></td>
-<td><p align="center">0.2 </p></td>
+<td><p align=\"center\">3100-3249 </p></td>
+<td><p align=\"center\">0.03 </p></td>
+<td><p align=\"center\">0.43 </p></td>
+<td><p align=\"center\">0.16 </p></td>
+<td><p align=\"center\">0.015 </p></td>
+<td><p align=\"center\">0.215 </p></td>
+<td><p align=\"center\">0.2 </p></td>
 </tr>
 </table>
 <ul>
 <li>Trafo rates (to fix transformers overloading): </li>
 </ul>
-<table cellspacing="0" cellpadding="0" border="1" width="50%"><tr>
-<td valign="top"><p align="center"><strong> Trafo Buses</strong></p></td>
-<td><p align="center"><strong>Old </strong></p><p align="center"><strong>Rate A </strong></p></td>
-<td><p align="center"><strong>Old </strong></p><p align="center"><strong>Rate B </strong></p></td>
-<td><p align="center"><strong>Old </strong></p><p align="center"><strong>Rate C </strong></p></td>
-<td><p align="center"><strong>New </strong></p><p align="center"><strong>Rate A </strong></p></td>
-<td><p align="center"><strong>New </strong></p><p align="center"><strong>Rate B </strong></p></td>
-<td><p align="center"><strong>New </strong></p><p align="center"><strong>Rate C </strong></p></td>
+<table cellspacing=\"0\" cellpadding=\"0\" border=\"1\" width=\"50%\"><tr>
+<td valign=\"top\"><p align=\"center\"><strong> Trafo Buses</strong></p></td>
+<td><p align=\"center\"><strong>Old </strong></p><p align=\"center\"><strong>Rate A </strong></p></td>
+<td><p align=\"center\"><strong>Old </strong></p><p align=\"center\"><strong>Rate B </strong></p></td>
+<td><p align=\"center\"><strong>Old </strong></p><p align=\"center\"><strong>Rate C </strong></p></td>
+<td><p align=\"center\"><strong>New </strong></p><p align=\"center\"><strong>Rate A </strong></p></td>
+<td><p align=\"center\"><strong>New </strong></p><p align=\"center\"><strong>Rate B </strong></p></td>
+<td><p align=\"center\"><strong>New </strong></p><p align=\"center\"><strong>Rate C </strong></p></td>
 </tr>
 <tr>
-<td><p align="center">3244-3245 </p></td>
-<td valign="top"><p align="center">500 </p></td>
-<td valign="top"><p align="center">500 </p></td>
-<td valign="top"><p align="center">0 </p></td>
-<td valign="top"><p align="center">2000 </p></td>
-<td valign="top"><p align="center">3000 </p></td>
-<td valign="top"><p align="center">4000 </p></td>
+<td><p align=\"center\">3244-3245 </p></td>
+<td valign=\"top\"><p align=\"center\">500 </p></td>
+<td valign=\"top\"><p align=\"center\">500 </p></td>
+<td valign=\"top\"><p align=\"center\">0 </p></td>
+<td valign=\"top\"><p align=\"center\">2000 </p></td>
+<td valign=\"top\"><p align=\"center\">3000 </p></td>
+<td valign=\"top\"><p align=\"center\">4000 </p></td>
 </tr>
 <tr>
-<td><p align="center">3249-3701 </p></td>
-<td valign="top"><p align="center">300 </p></td>
-<td valign="top"><p align="center">350 </p></td>
-<td valign="top"><p align="center">0 </p></td>
-<td valign="top"><p align="center">2000 </p></td>
-<td valign="top"><p align="center">3000 </p></td>
-<td valign="top"><p align="center">4000 </p></td>
+<td><p align=\"center\">3249-3701 </p></td>
+<td valign=\"top\"><p align=\"center\">300 </p></td>
+<td valign=\"top\"><p align=\"center\">350 </p></td>
+<td valign=\"top\"><p align=\"center\">0 </p></td>
+<td valign=\"top\"><p align=\"center\">2000 </p></td>
+<td valign=\"top\"><p align=\"center\">3000 </p></td>
+<td valign=\"top\"><p align=\"center\">4000 </p></td>
 </tr>
 <tr>
-<td><p align="center">3359-3360 </p></td>
-<td valign="top"><p align="center">1000 </p></td>
-<td valign="top"><p align="center">9000 </p></td>
-<td valign="top"><p align="center">9000 </p></td>
-<td valign="top"><p align="center">2000 </p></td>
-<td valign="top"><p align="center">3000 </p></td>
-<td valign="top"><p align="center">4000 </p></td>
+<td><p align=\"center\">3359-3360 </p></td>
+<td valign=\"top\"><p align=\"center\">1000 </p></td>
+<td valign=\"top\"><p align=\"center\">9000 </p></td>
+<td valign=\"top\"><p align=\"center\">9000 </p></td>
+<td valign=\"top\"><p align=\"center\">2000 </p></td>
+<td valign=\"top\"><p align=\"center\">3000 </p></td>
+<td valign=\"top\"><p align=\"center\">4000 </p></td>
 </tr>
 <tr>
-<td><p align="center">5100-5101 </p></td>
-<td valign="top"><p align="center">1000 </p></td>
-<td valign="top"><p align="center">9000 </p></td>
-<td valign="top"><p align="center">9000 </p></td>
-<td valign="top"><p align="center">2000 </p></td>
-<td valign="top"><p align="center">3000 </p></td>
-<td valign="top"><p align="center">4000 </p></td>
+<td><p align=\"center\">5100-5101 </p></td>
+<td valign=\"top\"><p align=\"center\">1000 </p></td>
+<td valign=\"top\"><p align=\"center\">9000 </p></td>
+<td valign=\"top\"><p align=\"center\">9000 </p></td>
+<td valign=\"top\"><p align=\"center\">2000 </p></td>
+<td valign=\"top\"><p align=\"center\">3000 </p></td>
+<td valign=\"top\"><p align=\"center\">4000 </p></td>
 </tr>
 <tr>
-<td><p align="center">5300-5301 </p></td>
-<td valign="top"><p align="center">2000 </p></td>
-<td valign="top"><p align="center">9000 </p></td>
-<td valign="top"><p align="center">9000 </p></td>
-<td valign="top"><p align="center">4000 </p></td>
-<td valign="top"><p align="center">4500 </p></td>
-<td valign="top"><p align="center">5000 </p></td>
+<td><p align=\"center\">5300-5301 </p></td>
+<td valign=\"top\"><p align=\"center\">2000 </p></td>
+<td valign=\"top\"><p align=\"center\">9000 </p></td>
+<td valign=\"top\"><p align=\"center\">9000 </p></td>
+<td valign=\"top\"><p align=\"center\">4000 </p></td>
+<td valign=\"top\"><p align=\"center\">4500 </p></td>
+<td valign=\"top\"><p align=\"center\">5000 </p></td>
 </tr>
 <tr>
-<td><p align="center">5400-5401 </p></td>
-<td valign="top"><p align="center">1000 </p></td>
-<td valign="top"><p align="center">9000 </p></td>
-<td valign="top"><p align="center">9000 </p></td>
-<td valign="top"><p align="center">2000 </p></td>
-<td valign="top"><p align="center">3000 </p></td>
-<td valign="top"><p align="center">4000 </p></td>
+<td><p align=\"center\">5400-5401 </p></td>
+<td valign=\"top\"><p align=\"center\">1000 </p></td>
+<td valign=\"top\"><p align=\"center\">9000 </p></td>
+<td valign=\"top\"><p align=\"center\">9000 </p></td>
+<td valign=\"top\"><p align=\"center\">2000 </p></td>
+<td valign=\"top\"><p align=\"center\">3000 </p></td>
+<td valign=\"top\"><p align=\"center\">4000 </p></td>
 </tr>
 <tr>
-<td><p align="center">5400-5402 </p></td>
-<td valign="top"><p align="center">1000 </p></td>
-<td valign="top"><p align="center">9000 </p></td>
-<td valign="top"><p align="center">9000 </p></td>
-<td valign="top"><p align="center">2200 </p></td>
-<td valign="top"><p align="center">3000 </p></td>
-<td valign="top"><p align="center">4000 </p></td>
+<td><p align=\"center\">5400-5402 </p></td>
+<td valign=\"top\"><p align=\"center\">1000 </p></td>
+<td valign=\"top\"><p align=\"center\">9000 </p></td>
+<td valign=\"top\"><p align=\"center\">9000 </p></td>
+<td valign=\"top\"><p align=\"center\">2200 </p></td>
+<td valign=\"top\"><p align=\"center\">3000 </p></td>
+<td valign=\"top\"><p align=\"center\">4000 </p></td>
 </tr>
 <tr>
-<td><p align="center">5500-5501 </p></td>
-<td valign="top"><p align="center">1000 </p></td>
-<td valign="top"><p align="center">9000 </p></td>
-<td valign="top"><p align="center">9000 </p></td>
-<td valign="top"><p align="center">2000 </p></td>
-<td valign="top"><p align="center">3000 </p></td>
-<td valign="top"><p align="center">4000 </p></td>
+<td><p align=\"center\">5500-5501 </p></td>
+<td valign=\"top\"><p align=\"center\">1000 </p></td>
+<td valign=\"top\"><p align=\"center\">9000 </p></td>
+<td valign=\"top\"><p align=\"center\">9000 </p></td>
+<td valign=\"top\"><p align=\"center\">2000 </p></td>
+<td valign=\"top\"><p align=\"center\">3000 </p></td>
+<td valign=\"top\"><p align=\"center\">4000 </p></td>
 </tr>
 <tr>
-<td><p align="center">5601-6001 </p></td>
-<td valign="top"><p align="center">1000 </p></td>
-<td valign="top"><p align="center">9000 </p></td>
-<td valign="top"><p align="center">9000 </p></td>
-<td valign="top"><p align="center">2000 </p></td>
-<td valign="top"><p align="center">3000 </p></td>
-<td valign="top"><p align="center">4000 </p></td>
+<td><p align=\"center\">5601-6001 </p></td>
+<td valign=\"top\"><p align=\"center\">1000 </p></td>
+<td valign=\"top\"><p align=\"center\">9000 </p></td>
+<td valign=\"top\"><p align=\"center\">9000 </p></td>
+<td valign=\"top\"><p align=\"center\">2000 </p></td>
+<td valign=\"top\"><p align=\"center\">3000 </p></td>
+<td valign=\"top\"><p align=\"center\">4000 </p></td>
 </tr>
 <tr>
-<td><p align="center">5602-5603 </p></td>
-<td valign="top"><p align="center">1000 </p></td>
-<td valign="top"><p align="center">9000 </p></td>
-<td valign="top"><p align="center">9000 </p></td>
-<td valign="top"><p align="center">2000 </p></td>
-<td valign="top"><p align="center">3000 </p></td>
-<td valign="top"><p align="center">4000 </p></td>
+<td><p align=\"center\">5602-5603 </p></td>
+<td valign=\"top\"><p align=\"center\">1000 </p></td>
+<td valign=\"top\"><p align=\"center\">9000 </p></td>
+<td valign=\"top\"><p align=\"center\">9000 </p></td>
+<td valign=\"top\"><p align=\"center\">2000 </p></td>
+<td valign=\"top\"><p align=\"center\">3000 </p></td>
+<td valign=\"top\"><p align=\"center\">4000 </p></td>
 </tr>
 <tr>
-<td><p align="center">6000-6001 </p></td>
-<td valign="top"><p align="center">1000 </p></td>
-<td valign="top"><p align="center">9000 </p></td>
-<td valign="top"><p align="center">9000 </p></td>
-<td valign="top"><p align="center">2200 </p></td>
-<td valign="top"><p align="center">3000 </p></td>
-<td valign="top"><p align="center">4000 </p></td>
+<td><p align=\"center\">6000-6001 </p></td>
+<td valign=\"top\"><p align=\"center\">1000 </p></td>
+<td valign=\"top\"><p align=\"center\">9000 </p></td>
+<td valign=\"top\"><p align=\"center\">9000 </p></td>
+<td valign=\"top\"><p align=\"center\">2200 </p></td>
+<td valign=\"top\"><p align=\"center\">3000 </p></td>
+<td valign=\"top\"><p align=\"center\">4000 </p></td>
 </tr>
 <tr>
-<td><p align="center">6700-6701 </p></td>
-<td valign="top"><p align="center">1000 </p></td>
-<td valign="top"><p align="center">9000 </p></td>
-<td valign="top"><p align="center">9000 </p></td>
-<td valign="top"><p align="center">2000 </p></td>
-<td valign="top"><p align="center">3000 </p></td>
-<td valign="top"><p align="center">4000 </p></td>
+<td><p align=\"center\">6700-6701 </p></td>
+<td valign=\"top\"><p align=\"center\">1000 </p></td>
+<td valign=\"top\"><p align=\"center\">9000 </p></td>
+<td valign=\"top\"><p align=\"center\">9000 </p></td>
+<td valign=\"top\"><p align=\"center\">2000 </p></td>
+<td valign=\"top\"><p align=\"center\">3000 </p></td>
+<td valign=\"top\"><p align=\"center\">4000 </p></td>
 </tr>
 </table>
 </html>"));
