@@ -53,5 +53,5 @@ equation
   connect(Line12_b.n, B2.p) annotation (Line(points={{-31,-20},{-20,-20},{-20,0},{-10,0}}, color={0,0,255}));
   connect(Line12_b.p, B1.p) annotation (Line(points={{-49,-20},{-60,-20},{-60,0},{-70,0}}, color={0,0,255}));
   connect(B4.p, load.p) annotation (Line(points={{70,0},{90,0},{90,-10}}, color={0,0,255}));
-  annotation (experiment(StopTime = 350, Interval = 0.01, Tolerance = 0.0001, __Dymola_Algorithm = "Dassl"));
+  annotation (experiment(StopTime = 350, Interval = 0.01, Tolerance = 0.0001));
 end ULTC;

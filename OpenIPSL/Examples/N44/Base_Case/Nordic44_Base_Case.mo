@@ -3342,7 +3342,7 @@ equation
           lineColor={0,128,0},
           textStyle={TextStyle.Bold},
           textString="bus
-5402")}), experiment(StopTime=10, __Dymola_Algorithm="Dassl"),__Dymola_experimentFlags(
+5402")}), experiment(StopTime=10, __Dymola_experimentFlags(
         Advanced(Define(DAEsolver=true))),
     Documentation(info="<html>
 <p>This example system represents the Nordic 44 test system, represented differently from the original case, but undergoing the same line opening event. </p>

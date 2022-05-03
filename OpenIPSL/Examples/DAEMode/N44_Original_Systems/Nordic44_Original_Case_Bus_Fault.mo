@@ -14,7 +14,6 @@ equation
       experiment(
       StopTime=10,
       Tolerance=1e-04,
-      __Dymola_fixedstepsize=0.01),
       __Dymola_experimentFlags(Advanced(Define(DAEsolver=true))),
     Documentation(info="<html>
 <p>Simulation of the Nordic 44 test system with a fault on bus 3100 to trigger several state events. The system is simulated using the DAE mode when in Dymola.</p>
