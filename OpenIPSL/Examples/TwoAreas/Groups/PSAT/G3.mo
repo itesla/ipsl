@@ -30,7 +30,6 @@ equation
   connect(order6_1.pm0, order6_1.pm) annotation (Line(points={{44,-22},{44,-28},
           {28,-28},{28,-10},{36,-10}},                         color={0,0,127}));
   annotation (
-
     Documentation(info="<html>
 <p>20kV/900MVA generation unit connected to bus 3, and composed of the following component models:</p>
 <ul>

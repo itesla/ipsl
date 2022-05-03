@@ -381,7 +381,6 @@ equation
           extent={{-114,-110},{-84,-120}},
           lineColor={28,108,200},
           textString="FTILL5")}),
-
     Documentation(info="<html>
 <p>This example model is a small synthetic power system that can be used for assessing classic transient stability of a power grid, when undergoing a three-phase-to-ground fault. The fault is applied on bus FTILL5, at 1 second and lasts for 200ms.</p>
 <p>The system should be simulated during 10 seconds and the variables of interest are:</p>

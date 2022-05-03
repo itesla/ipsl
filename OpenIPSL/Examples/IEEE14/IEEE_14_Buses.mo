@@ -539,7 +539,6 @@ equation
   annotation (
     Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-200,-180},{
             200,160}})),
-
     Documentation(info="<html>
 <p>This example is composed by the 14-bus 5-machine system representing an approximation of the American Electric Power system. Note that the network is also composed of 11 loads and that three machines are acting as synchronous condensers.</p>
 <p>The system undergoes a three-phase-to-ground fault on Bus 4 at 1s, lasting for 200ms. Simulate the system for 10 seconds.</p>

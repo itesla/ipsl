@@ -92,7 +92,6 @@ equation
           textString="Example 1: Single-machine infinite bus model*",
           fontSize=15,
           textStyle={TextStyle.Bold})}),
-
     experiment(
       StartTime=0,
       StopTime=10,

@@ -24,7 +24,6 @@ equation
   annotation (
     Diagram(coordinateSystem(extent={{-160,-80},{160,80}}, preserveAspectRatio=
             false)),
-
     experiment(
       StopTime=20,
       __Dymola_fixedstepsize=0.0001,

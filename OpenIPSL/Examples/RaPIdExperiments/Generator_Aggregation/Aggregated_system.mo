@@ -118,7 +118,7 @@ equation
           {88,6}},                         color={0,0,255}));
   annotation (Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-140,
             -100},{140,100}})),
-            experiment(StopTime=20),
+            experiment(StopTime=20, __Dymola_Algorithm="Dassl"),
     Documentation(info="<html>
 <p>This is a Two-Machine system resulting from the aggregation of both generators connected to bus GEN2.</p>
 <p>Simulate the system for 20 seconds. Variables of interest are:</p>

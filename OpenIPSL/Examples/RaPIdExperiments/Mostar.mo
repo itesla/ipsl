@@ -110,7 +110,6 @@ equation
       StopTime=20,
       Tolerance=1e-06,
       Interval=0.04),
-
     Documentation(info="<html>
 <p>This is a Single-Machine-Infinite-Bus (SMIB) system containing disturbances on the excitation system reference, in generation unit connected to bus 1.
 These disturbances allow the user to observe dominant dynamics from the excitation system that can be used to identify certain set of parameters.</p>

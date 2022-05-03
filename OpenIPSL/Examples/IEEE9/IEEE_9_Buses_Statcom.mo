@@ -270,7 +270,6 @@ equation
   annotation (
     Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-180,-120},{
             180,120}})),
-
     Documentation(info="<html>
 <p>This example is composed by the base IEEE (WSCC) 9-bus 3-machine system but with a STATCOM connected to bus 8. The system undergoes a three-phase-to-ground fault at 3s, lasting for 100ms. Simulate the system for 20 seconds.</p>
 <p>Variables of interest are </p>

@@ -259,7 +259,6 @@ equation
   annotation (
     Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-180,-120},{
             180,120}})),
-
     Documentation(info="<html>
 <p>This example system represents a 9-bus 3-generator test system with a three-phase-to-ground fault at bus 9 and it must be simulated during 20 seconds.</p>
 <p>Variables of interest are:</p>

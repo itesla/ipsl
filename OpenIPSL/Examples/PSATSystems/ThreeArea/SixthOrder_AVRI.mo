@@ -41,7 +41,6 @@ equation
   annotation (
     Diagram(coordinateSystem(extent={{-180,-120},{180,120}},
           preserveAspectRatio=false)),
-
     experiment(
       StopTime=20,
       Interval=0.001,

@@ -6,6 +6,7 @@ model Nordic44_Original_Case_Line_Opening
         experiment(
         StopTime=10,
         Tolerance=1e-06,
+        __Dymola_fixedstepsize=0.01),
         __Dymola_experimentFlags(
         Advanced(Define(DAEsolver=true))),
     Documentation(info="<html>

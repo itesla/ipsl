@@ -121,7 +121,6 @@ equation
   connect(iEESGO.PMECH, gENROU.PMECH) annotation (Line(points={{39,40},{-20,40},
           {-20,12},{-4,12}},                  color={0,0,127}));
   annotation (
-
     Icon(graphics={Ellipse(
           extent={{-100,100},{100,-100}},
           lineColor={0,0,0},

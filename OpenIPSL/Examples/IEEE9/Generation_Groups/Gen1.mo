@@ -79,7 +79,6 @@ equation
   connect(AVR.vref0, switch1.u3) annotation (Line(points={{-6,22},{-30,22},{-30,
           50},{-68,50},{-68,42},{-68,13},{-51,13}}, color={0,0,127}));
   annotation (
-
     Icon(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,
             100}}), graphics={Ellipse(extent={{-100,-100},{100,100}}, lineColor=
            {28,108,200}),Line(points={{-60,-20},{-20,20},{20,-20},{60,20}},

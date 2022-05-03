@@ -3360,7 +3360,9 @@ equation
       StopTime=5,
       Interval=0.001,
       Tolerance=5e-05,
-      __Dymola_experimentFlags(
+      __Dymola_fixedstepsize=0.01,
+      __Dymola_Algorithm="Dassl"),
+        __Dymola_experimentFlags(
         Advanced(Define(DAEsolver=true))),
       Documentation(info="<html>
 <p>Simulation of the Nordic 44 test system, in its base case scenario, with a fault occuring at bus , triggering several events. Try simulating the system in DAE mode when in Dymola.</p>

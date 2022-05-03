@@ -57,7 +57,6 @@ equation
           22,28},{22,-26},{2,-26},{2,-2}},
                               color={0,0,127}));
   annotation (
-
     Icon(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,
             100}}), graphics={
                              Text(

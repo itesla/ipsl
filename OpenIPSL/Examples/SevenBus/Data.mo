@@ -103,12 +103,12 @@ This data record has the tap position for the different transformers in the syst
                                                     annotation (
         choicesAllMatching);
     Machines machines;
-    replaceable record Trafos = SevenBus.Data.SevenBus_trafos                                        constrainedby
-      SevenBus.Data.SevenBus_trafos                           "Transformer tap data record template"
+    replaceable record Trafos = SevenBus.Data.SevenBus_trafos                                        constrainedby SevenBus.Data.SevenBus_trafos
+                                                              "Transformer tap data record template"
                                     annotation (choicesAllMatching);
     Trafos trafos;
-    replaceable record Loads = SevenBus.Data.SevenBus_loads                                        constrainedby
-      SevenBus.Data.SevenBus_loads                          "Power data record template for loads"
+    replaceable record Loads = SevenBus.Data.SevenBus_loads                                        constrainedby SevenBus.Data.SevenBus_loads
+                                                            "Power data record template for loads"
                                    annotation (choicesAllMatching);
     Loads loads;
     annotation (

@@ -60,7 +60,6 @@ equation
   connect(gENSAL.p, pwPin)
     annotation (Line(points={{53,0},{90,0}},   color={0,0,255}));
   annotation (
-
     Icon(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,
             100}}), graphics={Ellipse(extent={{-60,60},{60,-60}}, lineColor={0,
           0,255}),Text(

@@ -53,7 +53,6 @@ equation
   connect(g3.XADIFD, sEXS.XADIFD) annotation (Line(points={{74,-18},{78,-18},{
           78,-32},{14,-32},{14,-23}}, color={0,0,127}));
   annotation (
-
     Documentation(info="<html>
 <p>900MVA generation unit connected to bus 3, and composed of the following component models:</p>
 <ul>

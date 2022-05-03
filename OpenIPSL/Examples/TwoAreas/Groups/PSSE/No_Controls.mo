@@ -32,7 +32,6 @@ package No_Controls "Set of generation units modeled with PSSE composed only of 
     connect(gENSAL.p, pwPin)
       annotation (Line(points={{72,0},{100,0}},              color={0,0,255}));
     annotation (
-
       Documentation(info="<html>
 <p>900MVA generation unit connected to bus 1, and composed of the following component models:</p>
 <ul>
@@ -73,7 +72,6 @@ package No_Controls "Set of generation units modeled with PSSE composed only of 
     connect(gENSAL.p, pwPin)
       annotation (Line(points={{72,0},{100,0}},              color={0,0,255}));
     annotation (
-
       Documentation(info="<html>
 <p>900MVA generation unit connected to bus 2, and composed of the following component models:</p>
 <ul>
@@ -115,7 +113,6 @@ package No_Controls "Set of generation units modeled with PSSE composed only of 
     connect(gENSAL.p, pwPin) annotation (Line(points={{72,0},{100,0}},
                      color={0,0,255}));
     annotation (
-
       Documentation(info="<html>
 <p>900MVA generation unit connected to bus 3, and composed of the following component models:</p>
 <ul>
@@ -157,7 +154,6 @@ package No_Controls "Set of generation units modeled with PSSE composed only of 
             12},{20,30},{80,30},{80,10},{74,10}},
           color={0,0,127}));
     annotation (
-
       Documentation(info="<html>
 <p>900MVA generation unit connected to bus 4, and composed of the following component models:</p>
 <ul>

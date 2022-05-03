@@ -68,7 +68,6 @@ equation
   connect(fault.p, B2.p) annotation (Line(points={{18.3333,-50},{10,-50},{10,0},
           {-10,0}}, color={0,0,255}));
   annotation (
-
     Diagram(coordinateSystem(
         extent={{-120,-100},{120,100}},
         preserveAspectRatio=false), graphics={Text(

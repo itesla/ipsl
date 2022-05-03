@@ -47,7 +47,6 @@ equation
   vf = previous(vf) - (vf*(Ke + Se) - vr)/Te;
   Se = Ae*e^(Be*abs(vf));
   annotation (
-
     Icon(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,
             100}}), graphics={Rectangle(
           extent={{-100,100},{100,-100}},

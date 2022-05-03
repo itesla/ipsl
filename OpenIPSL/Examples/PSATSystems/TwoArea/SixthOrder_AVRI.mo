@@ -23,7 +23,6 @@ equation
   annotation (
     Diagram(coordinateSystem(extent={{-180,-100},{180,100}},
           preserveAspectRatio=false)),
-
     experiment(
       StopTime=20,
       __Dymola_fixedstepsize=0.001,
