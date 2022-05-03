@@ -117,7 +117,7 @@ equation
   connect(pwLine2.n, gENROE1.p) annotation (Line(points={{69,-12},{72,-12},{72,6},
           {88,6}},                         color={0,0,255}));
   annotation (Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-140,
-            -100},{140,100}})), Icon(coordinateSystem(extent={{-100,-100},{100,100}})),
+            -100},{140,100}})),
             experiment(StopTime=20, __Dymola_Algorithm="Dassl"),
     Documentation(info="<html>
 <p>This is a Two-Machine system resulting from the aggregation of both generators connected to bus GEN2.</p>

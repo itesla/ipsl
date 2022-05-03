@@ -57,8 +57,7 @@ model Mostar "System with the original generator parameters for parameter identi
     annotation (Placement(transformation(extent={{-28,-58},{-40,-46}})));
   inner OpenIPSL.Electrical.SystemBase SysData(S_b=30000000,
                                                        fn=50) annotation (
-      Placement(visible=true, transformation(extent={{60,-100},{100,-80}},
-          rotation=0)));
+      Placement(transformation(extent={{60,-100},{100,-80}})));
   Modelica.Blocks.Sources.Step step(startTime=1.7, height=-0.05)
     annotation (Placement(transformation(extent={{-16,-24},{-24,-16}})));
   Modelica.Blocks.Sources.Step step1(startTime=10.25, height=0.05)
@@ -111,10 +110,9 @@ equation
       StopTime=20,
       Tolerance=1e-06,
       Interval=0.04),
-    Icon(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,
-            100}})),
+
     Documentation(info="<html>
-<p>This is a Single-Machine-Infinite-Bus (SMIB) system containing disturbances on the excitation system reference, in generation unit connected to bus 1. 
+<p>This is a Single-Machine-Infinite-Bus (SMIB) system containing disturbances on the excitation system reference, in generation unit connected to bus 1.
 These disturbances allow the user to observe dominant dynamics from the excitation system that can be used to identify certain set of parameters.</p>
 <p>Simulate the system for 20 seconds. Variables of interest are:</p>
 <ul>

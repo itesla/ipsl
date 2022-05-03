@@ -496,7 +496,6 @@ model Grid_Model "Namsskogan distribution network modeled in positive sequence e
     rT=0,
     xT=0.09) annotation (Placement(transformation(
         extent={{-10,-10},{10,10}},
-        rotation=0,
         origin={-38,-74})));
   OpenIPSL.Electrical.Branches.PSAT.TwoWindingTransformer twoWindingTransformer3(
     V_b=6600,
@@ -1692,15 +1691,14 @@ equation
           lineColor={0,0,0},
           textStyle={TextStyle.Bold},
           textString="B33")}),
-    Icon(coordinateSystem(extent={{-100,-100},{100,100}})),
+
     experiment(
       StopTime=10,
       Interval=0.001,
       Tolerance=1e-006,
       __Dymola_fixedstepsize=0.001,
       __Dymola_Algorithm="Rkfix2"),
-    __Dymola_experimentSetupOutput,
-    Documentation(info="<html>
+Documentation(info="<html>
 <p>This example is composed by the 33-bus 12-machine system representing a distribution-level subsystem of Norway.</p>
 <p>The system undergoes a three-phase fault on Bus 26 at 1s, lasting for 20ms. Simulate the system for 10 seconds.</p>
 <p>Variables of interest are the voltages in many buses. For example:</p>

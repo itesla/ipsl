@@ -24,7 +24,6 @@ model Gen1 "100MVA/18kV generation unit for bus 1"
     M=12.8,
     D=0) annotation (Placement(transformation(
         extent={{-20,-20},{20,20}},
-        rotation=0,
         origin={60,0})));
   OpenIPSL.Electrical.Controls.PSAT.AVR.AVRTypeII AVR(
     vrmin=-5,
@@ -40,14 +39,12 @@ model Gen1 "100MVA/18kV generation unit for bus 1"
     Ae=0.0039,
     Be=1.555) annotation (Placement(transformation(
         extent={{-12,-12},{12,12}},
-        rotation=0,
         origin={16,10})));
   Modelica.Blocks.Sources.Step step(
     startTime=tstart,
     offset=vref0,
     height=height) annotation (Placement(transformation(
         extent={{-10,-10},{10,10}},
-        rotation=0,
         origin={-70,50})));
   Modelica.Blocks.Logical.Switch switch1
     annotation (Placement(transformation(extent={{-40,-10},{-20,10}})));
@@ -80,6 +77,5 @@ equation
   annotation (Documentation(info="<html>
 <p>Note that this 100MVA/18kV generation unit allows the user to perform a step disturbance of magnitude <code>height</code> at instant <code>tstart</code> in the voltage reference value for each Automatic Voltage Regulator. </p>
 <p>Also note that boolean variable <code>refdisturb</code> needs to be set to true for disturbance to take place.</p>
-</html>"),                   Diagram(coordinateSystem(preserveAspectRatio=false,
-          extent={{-100,-100},{100,100}})));
+</html>"));
 end Gen1;

@@ -22,8 +22,7 @@ equation
   connect(order3.p, bus1.p) annotation (Line(points={{-92,0},{-85.5,0},{-85.5,0},
           {-80,0}},                    color={0,0,255}));
   annotation (
-    Icon(coordinateSystem(preserveAspectRatio=false)),
-    Diagram(coordinateSystem(preserveAspectRatio=false)),
+
     Documentation(info="<html>
 <p>Extension of <strong>BaseNetwork</strong> but with a third order machine connected to bus 1.</p>
 </html>"));

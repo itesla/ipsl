@@ -64,5 +64,5 @@ equation
           lineThickness=1,
           fillPattern=FillPattern.Solid,
           fontSize=12,
-          textString="Electrical.Controls.PSAT.PSS.PSSTypeII")}), Documentation);
+          textString="Electrical.Controls.PSAT.PSS.PSSTypeII")}));
 end Step_1;

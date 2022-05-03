@@ -3361,8 +3361,7 @@ equation
             textStyle={TextStyle.Bold},
             textString="bus
 5402")}),
-      Icon(coordinateSystem(extent={{-100,-100},{100,100}}, preserveAspectRatio=
-              false)),
+
               experiment(
         StartTime=0,
         StopTime=5,

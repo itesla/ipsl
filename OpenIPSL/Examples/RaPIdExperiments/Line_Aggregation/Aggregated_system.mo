@@ -112,9 +112,9 @@ equation
   connect(pref_disturb, add.u2)
     annotation (Line(points={{-162,14},{-134,14},{-122,14}}, color={0,0,127}));
   annotation (Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-200,
-            -60},{200,60}})), Icon(coordinateSystem(extent={{-100,-100},{100,100}})),
+            -60},{200,60}})),
     Documentation(info="<html>
-<p>This is a Two-Machine system contains inputs for disturbances on the mechanical power supply of the generator connected to bus GEN1. 
+<p>This is a Two-Machine system contains inputs for disturbances on the mechanical power supply of the generator connected to bus GEN1.
 These disturbances allow the user to export this model as an FMU and add different disturbances in other software packages.
 Also note that all lines are aggregated into a single equivalent branch component.</p>
 <p>This system is not for simulation, but it can be used for linearization or FMU export.</p>

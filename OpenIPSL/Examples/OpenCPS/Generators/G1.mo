@@ -74,8 +74,7 @@ equation
           lineColor={0,0,0},
           fillColor={255,255,255},
           fillPattern=FillPattern.Solid,
-          textString="%name")}), Diagram(coordinateSystem(preserveAspectRatio=
-            false, extent={{-100,-100},{100,100}})),
+          textString="%name")}),
     Documentation(info="<html>
 <p>24kV/100MVA generation unit connected to bus BG1, and composed of the following component models:</p>
 <ul>

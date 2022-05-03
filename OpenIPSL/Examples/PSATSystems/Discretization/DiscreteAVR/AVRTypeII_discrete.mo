@@ -25,11 +25,11 @@ model AVRTypeII_discrete "Discretized PSAT Exciter Type 2"
   Real vr;
   Modelica.Blocks.Interfaces.RealInput vref
     "Connector of clocked, Real input signal" annotation (Placement(
-        transformation(extent={{-140,40},{-100,80}}, rotation=0),
+        transformation(extent={{-140,40},{-100,80}}),
         iconTransformation(extent={{-140,40},{-100,80}})));
   Modelica.Blocks.Interfaces.RealInput v
     "Connector of clocked, Real input signal" annotation (Placement(
-        transformation(extent={{-140,-80},{-100,-40}}, rotation=0),
+        transformation(extent={{-140,-80},{-100,-40}}),
         iconTransformation(extent={{-140,-80},{-100,-40}})));
   Modelica.Blocks.Interfaces.RealOutput vf(start=vf0)
     annotation (Placement(transformation(extent={{100,-10},{120,10}})));
@@ -47,8 +47,7 @@ equation
   vf = previous(vf) - (vf*(Ke + Se) - vr)/Te;
   Se = Ae*e^(Be*abs(vf));
   annotation (
-    Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{
-            100,100}}), graphics),
+
     Icon(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,
             100}}), graphics={Rectangle(
           extent={{-100,100},{100,-100}},

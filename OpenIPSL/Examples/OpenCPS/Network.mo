@@ -121,12 +121,10 @@ protected
   Modelica.Blocks.Interfaces.RealOutput fi_IB annotation (Placement(
         transformation(
         extent={{-10,-10},{10,10}},
-        rotation=0,
         origin={10,-70})));
   Modelica.Blocks.Interfaces.RealOutput fi_DN annotation (Placement(
         transformation(
         extent={{-10,-10},{10,10}},
-        rotation=0,
         origin={10,-90})));
 equation
   V_IB = B3.v;
@@ -185,8 +183,7 @@ equation
           69.5,40},{60,40}}, color={0,0,255}));
   connect(IB.p, B3.p) annotation (Line(points={{100,40},{80,40},{69.5,40},{69.5,
           40},{60,40}}, color={0,0,255}));
-  annotation (Icon(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},
-            {100,100}})), Diagram(coordinateSystem(preserveAspectRatio=false,
+  annotation ( Diagram(coordinateSystem(preserveAspectRatio=false,
           extent={{-140,-120},{140,120}})),
     Documentation(info="<html>
 <p>This example system shows how the preparation for resynchronization of Generator 2 to the grid. Note that at 2 seconds, a signal is triggered so voltages between buses 3 and 4 should be equal.</p>

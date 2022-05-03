@@ -10,10 +10,10 @@ model VOLT_CTRL "Voltage magnitude control used in resynchronization"
   Modelica.Blocks.Sources.Constant const1(k=0)
     annotation (Placement(transformation(extent={{-70,-50},{-50,-30}})));
   Modelica.Blocks.Interfaces.RealInput u1 annotation (Placement(transformation(
-          rotation=0, extent={{-110,36},{-90,56}}), iconTransformation(extent={
+          extent={{-110,36},{-90,56}}), iconTransformation(extent={
             {-100,40},{-80,60}})));
   Modelica.Blocks.Interfaces.RealInput u2 annotation (Placement(transformation(
-          rotation=0, extent={{-110,-10},{-90,10}}), iconTransformation(extent=
+          extent={{-110,-10},{-90,10}}), iconTransformation(extent=
             {{-100,-60},{-80,-40}})));
   Modelica.Blocks.Math.Gain gain(k=1)
     annotation (Placement(transformation(extent={{20,20},{40,40}})));
@@ -68,8 +68,7 @@ equation
           lineColor={28,108,200},
           fillColor={255,255,255},
           fillPattern=FillPattern.Solid,
-          textString="V_DN")}), Diagram(coordinateSystem(preserveAspectRatio=
-            false, extent={{-100,-100},{100,100}})),
+          textString="V_DN")}),
     Documentation(info="<html>
 <p>This voltage controller, which is based on simple PI, is used to reduce the error (ideally to zero) of the voltage magnitude difference between two different nodes in the system.</p>
 <p>After the difference is reduced to zero, and the errors on voltage angle and frequency are also zero, the two nodes can be connected without major issues.</p>

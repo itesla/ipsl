@@ -78,8 +78,7 @@ equation
   annotation (
     Diagram(coordinateSystem(
         extent={{-120,-100},{120,100}},
-        preserveAspectRatio=false,
-        initialScale=0.1), graphics={Text(
+        preserveAspectRatio=false), graphics={Text(
           origin={40,0},
           fillPattern=FillPattern.Solid,
           lineThickness=1,
@@ -93,7 +92,7 @@ equation
           textString="Example 1: Single-machine infinite bus model*",
           fontSize=15,
           textStyle={TextStyle.Bold})}),
-    Icon(coordinateSystem(extent={{-100,-100},{100,100}})),
+
     experiment(
       StartTime=0,
       StopTime=10,

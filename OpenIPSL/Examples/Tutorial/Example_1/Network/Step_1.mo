@@ -9,10 +9,9 @@ partial model Step_1 "Creating system model, adding buses, generator and system 
   Generator.Generator G1
     annotation (Placement(transformation(extent={{-110,-10},{-90,10}})));
   inner OpenIPSL.Electrical.SystemBase SysData(fn=60) annotation (
-      Placement(visible=true, transformation(
+      Placement(transformation(
         origin={85.0002,-80},
-        extent={{-25.0002,-20},{34.9998,20}},
-        rotation=0)));
+        extent={{-25.0002,-20},{34.9998,20}})));
   annotation (
     Diagram(coordinateSystem(extent={{-120,-100},{120,100}},
           preserveAspectRatio=false), graphics={Text(
@@ -43,6 +42,5 @@ partial model Step_1 "Creating system model, adding buses, generator and system 
           lineThickness=1,
           fontSize=12,
           textString="Electrical.SystemBase")}),
-    Icon(coordinateSystem(extent={{-120,-100},{120,100}})),
-    Documentation);
+    Icon(coordinateSystem(extent={{-120,-100},{120,100}})));
 end Step_1;

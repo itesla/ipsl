@@ -49,10 +49,7 @@ equation
   connect(machine.vf0, avr.vf0) annotation (Line(points={{26,33},{26,40},{-30,
           40},{-30,32.3333}},                   color={0,0,127}));
   annotation (
-    Icon(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,
-            100}})),
-    Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{
-            100,100}})),
+
     Documentation(info="<html>
 <p> Generation unit composed of order 6 machine and an AVR type III.</p>
 </html>"));

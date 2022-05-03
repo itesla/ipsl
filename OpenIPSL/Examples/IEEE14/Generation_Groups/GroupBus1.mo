@@ -50,8 +50,7 @@ equation
   connect(AVR1.vf0, Syn1.vf0) annotation (Line(points={{2,-2},{2,-12},{20,-12},{
           20,26},{44,26},{44,22}},            color={0,0,127}));
   annotation (
-    Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{
-            100,100}})),
+
     Icon(coordinateSystem(extent={{-100,-100},{100,100}}, preserveAspectRatio=
             false),graphics={Text(
           extent={{-93,6},{-24,-12}},

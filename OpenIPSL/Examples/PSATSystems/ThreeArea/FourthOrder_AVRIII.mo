@@ -15,12 +15,10 @@ model FourthOrder_AVRIII "ABC system with 4th-order machine (Syn2) and AVR Type 
   Modelica.Blocks.Sources.Constant vs_1(k=0) annotation (Placement(
         transformation(
         extent={{-4,-4},{4,4}},
-        rotation=0,
         origin={-172,84})));
   Modelica.Blocks.Sources.Constant vs_2(k=0) annotation (Placement(
         transformation(
         extent={{4,-4},{-4,4}},
-        rotation=0,
         origin={176,-12})));
 equation
   connect(order3_2.vf, Exc2.vf)
@@ -45,7 +43,7 @@ equation
   annotation (
     Diagram(coordinateSystem(extent={{-180,-120},{180,120}},
           preserveAspectRatio=false)),
-    Icon(coordinateSystem(extent={{-100,-100},{100,100}})),
+
     experiment(
       StopTime=20,
       __Dymola_fixedstepsize=0.001,

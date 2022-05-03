@@ -210,7 +210,7 @@ equation
           lineColor={28,108,200},
           textString="Two-Area System
 Prabha Kundur, \"Power System Stability and Control\", Example 12.6, page 813")}),
-    Icon(coordinateSystem(extent={{-100,-100},{100,100}})),
+
     Documentation(info="<html>
 <p>This example is composed by the 11-bus 4-machine 2-area system, where these two areas are connected via weak tie lines. This test system is ideal for studying dynamic stability, power interchange, oscillation damping, etc.</p>
 <p>The four generation units are composed only of machines, differently from the system <strong>Two_Areas_PSSE_AVR</strong>, where excitation systems are also represented.</p>

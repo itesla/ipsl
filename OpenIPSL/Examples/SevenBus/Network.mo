@@ -101,7 +101,6 @@ model Network "Seven-bus test system model, ready for simulation"
     v_0=PF_results.voltages.V1,
     angle_0=PF_results.voltages.A1) annotation (Placement(transformation(
         extent={{-1,-39},{1,39}},
-        rotation=0,
         origin={-99,-13})));
   OpenIPSL.Electrical.Buses.BusExt FTDPRA(
     np=2,
@@ -110,7 +109,6 @@ model Network "Seven-bus test system model, ready for simulation"
     v_0=PF_results.voltages.V4,
     angle_0=PF_results.voltages.A4) annotation (Placement(transformation(
         extent={{-1,-39},{1,39}},
-        rotation=0,
         origin={99,-13})));
   OpenIPSL.Electrical.Branches.PwLine pwLine8(
     R=6e-006,
@@ -383,7 +381,7 @@ equation
           extent={{-114,-110},{-84,-120}},
           lineColor={28,108,200},
           textString="FTILL5")}),
-    Icon(coordinateSystem(extent={{-100,-100},{100,100}})),
+
     Documentation(info="<html>
 <p>This example model is a small synthetic power system that can be used for assessing classic transient stability of a power grid, when undergoing a three-phase-to-ground fault. The fault is applied on bus FTILL5, at 1 second and lasts for 200ms.</p>
 <p>The system should be simulated during 10 seconds and the variables of interest are:</p>
@@ -392,7 +390,7 @@ equation
 <li><code>GEN2.iEESGO.SPEED</code></li>
 <li><code>GEN3.iEESGO.SPEED</code></li>
 </ul>
-<p>where interesting oscillatory behavior is observed, since the generators appear to be non-coherent, swinging against each others.</p> 
+<p>where interesting oscillatory behavior is observed, since the generators appear to be non-coherent, swinging against each others.</p>
 <p>In addition to that, it is also interesting to check the following voltage variables:</p>
 <ul>
 <li><code>FPAND.v</code></li>

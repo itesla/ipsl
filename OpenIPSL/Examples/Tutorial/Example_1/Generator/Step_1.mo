@@ -26,7 +26,6 @@ partial model Step_1 "Machine model and parameters"
   annotation (Diagram(coordinateSystem(
         extent={{-100,-100},{100,100}},
         preserveAspectRatio=false,
-        initialScale=0.1,
         grid={2,2}), graphics={Rectangle(
           lineColor={255,0,0},
           lineThickness=1,
@@ -42,5 +41,5 @@ partial model Step_1 "Machine model and parameters"
           extent={{-96,104},{94,86}},
           textString="Step 1: Machine model and parameters",
           fontSize=15,
-          textStyle={TextStyle.Bold})}), Documentation);
+          textStyle={TextStyle.Bold})}));
 end Step_1;

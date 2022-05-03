@@ -4,7 +4,7 @@ package IEEE9 "IEEE (WSCC) 9-bus 3-machine test system package"
 
 annotation (Documentation(info="<html>
 <p>This package contains a 9-bus 3-machine test system, representing a simple equivalent approximation for the Western System Coordinating Council (WSCC). </p>
-<p>The system presented here is ideal to test how a STATic COMpensator (STATCOM) can improve the system's overall transient stability, by controlling voltage magnitude on particular buses. The package contains two test systems:</p> 
+<p>The system presented here is ideal to test how a STATic COMpensator (STATCOM) can improve the system's overall transient stability, by controlling voltage magnitude on particular buses. The package contains two test systems:</p>
 <ul>
 <li><strong>IEEE_9_Buses</strong>: WSCC base test system, producing base results.</li>
 <li><strong>IEEE_9_Buses_Statcom</strong>:WSCC test system with the addition of a STATCOM for improving transient stability.</li>

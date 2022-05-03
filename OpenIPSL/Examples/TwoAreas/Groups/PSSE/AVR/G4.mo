@@ -63,14 +63,7 @@ equation
   connect(gENSAL.XADIFD, eSDC1A.XADIFD) annotation (Line(points={{74,-18},{78,
           -18},{78,-32},{14,-32},{14,-23}}, color={0,0,127}));
   annotation (
-    Diagram(coordinateSystem(
-        preserveAspectRatio=false,
-        extent={{-100,-100},{100,100}},
-        initialScale=0.1)),
-    Icon(coordinateSystem(
-        preserveAspectRatio=false,
-        extent={{-100,-100},{100,100}},
-        initialScale=0.1)),
+
     Documentation(info="<html>
 <p>900MVA generation unit connected to bus 4, and composed of the following component models:</p>
 <ul>

@@ -165,11 +165,10 @@ equation
   connect(gENROE.EFD0, add1.u2) annotation (Line(points={{-16,-10},{-6,-10},{-6,
           -40},{-122,-40},{-122,-16},{-112,-16}}, color={0,0,127}));
   annotation (Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-200,
-            -100},{200,100}})), Icon(coordinateSystem(extent={{-100,-100},{100,
-            100}})),
+            -100},{200,100}})),
     experiment(StopTime=20, __Dymola_Algorithm="Dassl"),
     Documentation(info="<html>
-<p>This is a Three-Machine system containing disturbances on the excitation system of the generator connected to bus GEN1. 
+<p>This is a Three-Machine system containing disturbances on the excitation system of the generator connected to bus GEN1.
 These disturbances allow the user to observe dominant dynamics that need to be preserved when the generators conncted at bus GEN2 are aggregated into one machine.</p>
 <p>Simulate the system for 20 seconds. Variables of interest are:</p>
 <ul>

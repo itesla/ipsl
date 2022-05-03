@@ -99,7 +99,6 @@ model IEEE_14_Buses "IEEE 14-bus 5-machine base test system"
     X=0.22304,
     B=0.0492/2) annotation (Placement(transformation(
         extent={{-10,-6.99999},{10,6.99999}},
-        rotation=0,
         origin={-84,-53})));
   OpenIPSL.Electrical.Branches.PwLine L3(
     G=0,
@@ -123,7 +122,6 @@ model IEEE_14_Buses "IEEE 14-bus 5-machine base test system"
     X=0.04211,
     B=0.0128/2) annotation (Placement(transformation(
         extent={{-10,-6.99999},{10,6.99999}},
-        rotation=0,
         origin={2,-53})));
   OpenIPSL.Electrical.Branches.PwLine L13(
     G=0,
@@ -131,7 +129,6 @@ model IEEE_14_Buses "IEEE 14-bus 5-machine base test system"
     X=0.1989,
     B=0) annotation (Placement(transformation(
         extent={{-10,-6.00002},{10,6.00001}},
-        rotation=0,
         origin={-2,26})));
   OpenIPSL.Electrical.Branches.PwLine L10(
     G=0,
@@ -337,7 +334,6 @@ model IEEE_14_Buses "IEEE 14-bus 5-machine base test system"
     rT=0,
     xT=0.20912) annotation (Placement(transformation(
         extent={{-14,-14},{14,14}},
-        rotation=0,
         origin={64,-18})));
   IEEE14.Generation_Groups.GroupBus2 groupBus2_1(
     V_b=69000,
@@ -543,7 +539,7 @@ equation
   annotation (
     Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-200,-180},{
             200,160}})),
-    Icon(coordinateSystem(extent={{-100,-100},{100,100}})),
+
     Documentation(info="<html>
 <p>This example is composed by the 14-bus 5-machine system representing an approximation of the American Electric Power system. Note that the network is also composed of 11 loads and that three machines are acting as synchronous condensers.</p>
 <p>The system undergoes a three-phase-to-ground fault on Bus 4 at 1s, lasting for 200ms. Simulate the system for 10 seconds.</p>

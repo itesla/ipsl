@@ -3363,8 +3363,7 @@ equation
             textStyle={TextStyle.Bold},
             textString="bus
 5402")}),
-      Icon(coordinateSystem(extent={{-100,-100},{100,100}}, preserveAspectRatio=
-              false)),
+
       Documentation(info="<html>
 <p>Simulation of the Nordic 44 test system, in its base case scenario, with a fault occuring at bus , triggering several events. Try simulating the system with an fixed time-step solver, without DAE mode when in Dymola.</p>
 <p>Simulate the system for 5 seconds. Variables of interest are:</p>

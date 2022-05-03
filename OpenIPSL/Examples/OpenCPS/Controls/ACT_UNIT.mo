@@ -18,24 +18,23 @@ model ACT_UNIT "Unit to check limits in voltage magnitude, frequency and angle f
   Modelica.Blocks.MathBoolean.And and1(nu=3)
     annotation (Placement(transformation(extent={{54,-6},{66,6}})));
   Modelica.Blocks.Interfaces.BooleanOutput START_FREQ annotation (Placement(
-        transformation(rotation=0, extent={{100,40},{120,60}})));
+        transformation(extent={{100,40},{120,60}})));
   Modelica.Blocks.Interfaces.RealInput VOLT_DIFF annotation (Placement(
-        transformation(rotation=0, extent={{-110,40},{-90,60}}),
+        transformation(extent={{-110,40},{-90,60}}),
         iconTransformation(extent={{-100,40},{-80,60}})));
   Modelica.Blocks.Interfaces.BooleanOutput START_FI annotation (Placement(
-        transformation(rotation=0, extent={{100,-50},{120,-30}})));
+        transformation(extent={{100,-50},{120,-30}})));
   Modelica.Blocks.Interfaces.RealInput SPEED annotation (Placement(
-        transformation(rotation=0, extent={{-110,-50},{-90,-30}}),
+        transformation(extent={{-110,-50},{-90,-30}}),
         iconTransformation(extent={{-100,-10},{-80,10}})));
   Modelica.Blocks.Interfaces.RealInput FI_DIFF annotation (Placement(
-        transformation(rotation=0, extent={{-110,-80},{-90,-60}}),
+        transformation(extent={{-110,-80},{-90,-60}}),
         iconTransformation(extent={{-100,-60},{-80,-40}})));
   Modelica.Blocks.Interfaces.BooleanOutput TRIGGER annotation (Placement(
-        transformation(rotation=0, extent={{100,-10},{120,10}})));
+        transformation(extent={{100,-10},{120,10}})));
   Modelica.Blocks.Logical.RSFlipFlop rSFlipFlop(Qini=false) annotation (
       Placement(transformation(
         extent={{-10,-10},{10,10}},
-        rotation=0,
         origin={86,-6})));
   Modelica.Blocks.Sources.BooleanConstant disable(k=false)
     annotation (Placement(transformation(extent={{54,-26},{66,-14}})));
@@ -62,8 +61,7 @@ equation
     annotation (Line(points={{66.9,0},{74,0}}, color={255,0,255}));
   connect(disable.y, rSFlipFlop.R) annotation (Line(points={{66.6,-20},{68,-20},
           {68,-12},{74,-12}}, color={255,0,255}));
-  annotation (Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,
-            -100},{100,100}})), Icon(coordinateSystem(preserveAspectRatio=false,
+  annotation ( Icon(coordinateSystem(preserveAspectRatio=false,
           extent={{-100,-100},{100,100}}), graphics={Rectangle(
           extent={{-100,100},{100,-100}},
           lineColor={28,108,200},

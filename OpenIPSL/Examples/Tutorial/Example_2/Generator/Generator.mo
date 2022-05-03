@@ -56,5 +56,5 @@ equation
           44,28},{44,22}}, color={0,0,127}));
   connect(machine.p, pwPin)
     annotation (Line(points={{80,0},{98,0},{98,0},{110,0}}, color={0,0,255}));
-  annotation (Documentation);
+
 end Generator;

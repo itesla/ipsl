@@ -1,35 +1,35 @@
 within OpenIPSL.Examples.Tutorial.Example_1.Network;
 model Step_5 "Connecting models"
   OpenIPSL.Electrical.Buses.Bus B1(displayPF=false) annotation (Placement(
-        visible=true, transformation(extent={{-80,-10},{-60,10}}, rotation=0)));
+        transformation(extent={{-80,-10},{-60,10}})));
   OpenIPSL.Electrical.Buses.Bus B2(displayPF=false) annotation (Placement(
-        visible=true, transformation(extent={{-20,-10},{0,10}}, rotation=0)));
+        transformation(extent={{-20,-10},{0,10}})));
   OpenIPSL.Electrical.Buses.Bus B3(displayPF=false) annotation (Placement(
-        visible=true, transformation(extent={{60,-10},{80,10}}, rotation=0)));
+        transformation(extent={{60,-10},{80,10}})));
   Generator.Generator G1(
     v_0=1,
     angle_0=0.4946,
     P_0=1997999000,
-    Q_0=967920000) annotation (Placement(visible=true, transformation(extent={{-110,
-            -10},{-90,10}}, rotation=0)));
+    Q_0=967920000) annotation (Placement(transformation(extent={{-110,
+            -10},{-90,10}})));
   OpenIPSL.Electrical.Branches.PSAT.TwoWindingTransformer twoWindingTransformer(
     Sn=2220000000,
     V_b=400000,
     Vn=400000,
     rT=0,
-    xT=0.15) annotation (Placement(visible=true, transformation(extent={{-50,-10},{-30,10}}, rotation=0)));
+    xT=0.15) annotation (Placement(transformation(extent={{-50,-10},{-30,10}})));
   OpenIPSL.Electrical.Branches.PwLine pwLine(
     R=0,
     G=0,
     B=0,
     X=0.5*100/2220,
-    S_b=100000000) annotation (Placement(visible=true, transformation(extent={{20,10},
-            {40,30}}, rotation=0)));
+    S_b=100000000) annotation (Placement(transformation(extent={{20,10},
+            {40,30}})));
   OpenIPSL.Electrical.Buses.InfiniteBus infiniteBus(
     v_0=0.90081,
     angle_0=0,
     P_0=-1998000000,
-    Q_0=87066000) annotation (Placement(visible=true, transformation(
+    Q_0=87066000) annotation (Placement(transformation(
         origin={100,0},
         extent={{-10,10},{10,-10}},
         rotation=180)));
@@ -37,20 +37,19 @@ model Step_5 "Connecting models"
     R=0,
     t1=0.5,
     t2=0.57,
-    X=0.01*100/2220) annotation (Placement(visible=true, transformation(extent=
-            {{20,-60},{40,-40}}, rotation=0)));
+    X=0.01*100/2220) annotation (Placement(transformation(extent=
+            {{20,-60},{40,-40}})));
   OpenIPSL.Electrical.Branches.PwLine pwLine1(
     R=0,
     G=0,
     B=0,
     S_b=100000000,
-    X=0.93*100/2220) annotation (Placement(visible=true, transformation(extent=
-            {{20,-30},{40,-10}}, rotation=0)));
+    X=0.93*100/2220) annotation (Placement(transformation(extent=
+            {{20,-30},{40,-10}})));
   inner OpenIPSL.Electrical.SystemBase SysData(fn=60) annotation (
-      Placement(visible=true, transformation(
+      Placement(transformation(
         origin={85.0001,-80},
-        extent={{-25.0001,-20},{34.9999,20}},
-        rotation=0)));
+        extent={{-25.0001,-20},{34.9999,20}})));
 equation
   connect(pwLine1.n, B3.p) annotation (Line(points={{39,-20},{52,-20},{52,0},{
           70,0}}, color={0,0,255}));
@@ -80,6 +79,5 @@ equation
           fontSize=15,
           textStyle={TextStyle.Bold},
           textString="Step 5: Connecting network components")}),
-    Icon(coordinateSystem(extent={{-120,-100},{120,100}})),
-    Documentation);
+    Icon(coordinateSystem(extent={{-120,-100},{120,100}})));
 end Step_5;

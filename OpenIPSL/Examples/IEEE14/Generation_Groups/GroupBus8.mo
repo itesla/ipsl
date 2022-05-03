@@ -15,7 +15,6 @@ model GroupBus8 "18kV/25MVA reactive power generation unit (synchronous condense
     vrmin=1.395,
     vrmax=6.810) annotation (Placement(transformation(
         extent={{-10,-10},{10,10}},
-        rotation=0,
         origin={-4,10})));
   OpenIPSL.Electrical.Machines.PSAT.Order6 Syn4(
     fn=60,
@@ -40,7 +39,6 @@ model GroupBus8 "18kV/25MVA reactive power generation unit (synchronous condense
     Q_0=Q_0,
     ra=0.0041) annotation (Placement(transformation(
         extent={{-20,-20},{20,20}},
-        rotation=0,
         origin={60,0})));
   OpenIPSL.Interfaces.PwPin pwPin annotation (Placement(transformation(extent={{100,-10},
             {120,10}}),         iconTransformation(extent={{100,-10},{120,10}})));
@@ -59,8 +57,7 @@ equation
           {-4,28},{-22,28},{-22,16},{-16,16}},                     color={0,0,
           127}));
   annotation (
-    Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{
-            100,100}})),
+
     Icon(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,
             100}}), graphics={
                              Text(

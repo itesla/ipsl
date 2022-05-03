@@ -32,7 +32,6 @@ model IEEE_9_Buses_Statcom "IEEE (WSCC) 9-bus 3-machine test system with STATCOM
     P_0=125000000,
     Q_0=50000000) annotation (Placement(transformation(
         extent={{-7,-7},{7,7}},
-        rotation=0,
         origin={-99,-9})));
   OpenIPSL.Electrical.Loads.PSAT.VoltageDependent PQ1(
     V_b=230000,
@@ -41,7 +40,6 @@ model IEEE_9_Buses_Statcom "IEEE (WSCC) 9-bus 3-machine test system with STATCOM
     P_0=90000000,
     Q_0=30000000) annotation (Placement(transformation(
         extent={{-7,-7},{7,7}},
-        rotation=0,
         origin={109,-13})));
   OpenIPSL.Electrical.Branches.PwLine line_9_6(
     G=0,
@@ -65,7 +63,6 @@ model IEEE_9_Buses_Statcom "IEEE (WSCC) 9-bus 3-machine test system with STATCOM
     X=0.1008,
     B=0.1045) annotation (Placement(transformation(
         extent={{-9,-6.00001},{9.00001,6.00001}},
-        rotation=0,
         origin={35,90})));
   OpenIPSL.Electrical.Branches.PSAT.TwoWindingTransformer twoWindingTransformer1(
     V_b=13800,
@@ -82,7 +79,6 @@ model IEEE_9_Buses_Statcom "IEEE (WSCC) 9-bus 3-machine test system with STATCOM
     rT=0,
     xT=0.0625) annotation (Placement(transformation(
         extent={{-10,-10},{10,10}},
-        rotation=0,
         origin={-102,90})));
   OpenIPSL.Electrical.Loads.PSAT.VoltageDependent lOADPQ1(
     v_0=1.015882581760390,
@@ -91,7 +87,6 @@ model IEEE_9_Buses_Statcom "IEEE (WSCC) 9-bus 3-machine test system with STATCOM
     P_0=100000000,
     Q_0=35000000) annotation (Placement(transformation(
         extent={{-7,-7},{7,7}},
-        rotation=0,
         origin={-9,65})));
   OpenIPSL.Electrical.FACTS.PSAT.STATCOM sTATCOM3_1(
     Q_0=128730.182132440,
@@ -116,7 +111,6 @@ model IEEE_9_Buses_Statcom "IEEE (WSCC) 9-bus 3-machine test system with STATCOM
   OpenIPSL.Electrical.Buses.Bus B8(v_0=1.025) annotation (Placement(
         transformation(
         extent={{-10,-10},{10,10}},
-        rotation=0,
         origin={0,90})));
   OpenIPSL.Electrical.Buses.Bus B9
     annotation (Placement(transformation(extent={{70,80},{90,100}})));
@@ -276,7 +270,7 @@ equation
   annotation (
     Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-180,-120},{
             180,120}})),
-    Icon(coordinateSystem(extent={{-100,-100},{100,100}})),
+
     Documentation(info="<html>
 <p>This example is composed by the base IEEE (WSCC) 9-bus 3-machine system but with a STATCOM connected to bus 8. The system undergoes a three-phase-to-ground fault at 3s, lasting for 100ms. Simulate the system for 20 seconds.</p>
 <p>Variables of interest are </p>
@@ -292,6 +286,5 @@ equation
       Interval=0.001,
       Tolerance=1e-006,
       __Dymola_fixedstepsize=0.001,
-      __Dymola_Algorithm="Rkfix2"),
-    __Dymola_experimentSetupOutput);
+      __Dymola_Algorithm="Rkfix2"));
 end IEEE_9_Buses_Statcom;

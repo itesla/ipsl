@@ -34,7 +34,7 @@ partial record PF_TwoAreas "Template data record used to store powr flow results
     // Bus number 11
     parameter Real V11;
     parameter Real A11;
-    annotation (Documentation);
+
   end Voltages;
 
   record Machines "Template data record for active and reactive power from generation units"
@@ -50,7 +50,7 @@ partial record PF_TwoAreas "Template data record used to store powr flow results
     // Gen at bus 4
     parameter Real P4_1;
     parameter Real Q4_1;
-    annotation (Documentation);
+
   end Machines;
 
   record Loads "Template data record for active and reactive power consumed by loads"
@@ -60,7 +60,7 @@ partial record PF_TwoAreas "Template data record used to store powr flow results
     // Gen at bus 2
     parameter Real PL9_1;
     parameter Real QL9_1;
-    annotation (Documentation);
+
   end Loads;
 
   Voltages voltages;

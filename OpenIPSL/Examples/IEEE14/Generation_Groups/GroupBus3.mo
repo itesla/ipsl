@@ -15,7 +15,6 @@ model GroupBus3 "69kV/60MVA reactive power generation unit (synchronous condense
     vrmin=0,
     vrmax=4.38) annotation (Placement(transformation(
         extent={{-10,-10},{10,10}},
-        rotation=0,
         origin={4,10})));
   OpenIPSL.Electrical.Machines.PSAT.Order6 Syn2(
     Sn=60000000,
@@ -39,7 +38,6 @@ model GroupBus3 "69kV/60MVA reactive power generation unit (synchronous condense
     P_0=P_0,
     Q_0=Q_0) annotation (Placement(transformation(
         extent={{-20,-20},{20,20}},
-        rotation=0,
         origin={62,0})));
   OpenIPSL.Interfaces.PwPin pwPin annotation (Placement(transformation(extent={{100,-10},
             {120,10}}),         iconTransformation(extent={{100,-10},{120,10}})));

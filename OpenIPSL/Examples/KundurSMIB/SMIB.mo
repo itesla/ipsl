@@ -29,8 +29,7 @@ equation
       Tolerance=1e-006,
       __Dymola_fixedstepsize=0.0001,
       __Dymola_Algorithm="Rkfix2"),
-    __Dymola_experimentSetupOutput,
-    Documentation(info="<html>
+Documentation(info="<html>
 <p>This example system represents an SMIB system with generation unit composed only of a machine. The system should be simulated during 10 seconds.</p>
 <p>Variables of interest are:</p>
 <ul>

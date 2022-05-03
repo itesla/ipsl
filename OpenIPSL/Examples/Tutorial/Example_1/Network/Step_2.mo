@@ -28,10 +28,9 @@ partial model Step_2 "Adding branch models to network"
     X=0.93*100/2220)
     annotation (Placement(transformation(extent={{20,-30},{40,-10}})));
   inner OpenIPSL.Electrical.SystemBase SysData(fn=60) annotation (
-      Placement(visible=true, transformation(
+      Placement(transformation(
         origin={85.0003,-80},
-        extent={{-25.0003,-20},{34.9997,20}},
-        rotation=0)));
+        extent={{-25.0003,-20},{34.9997,20}})));
   annotation (
     Diagram(coordinateSystem(extent={{-120,-100},{120,100}},
           preserveAspectRatio=false), graphics={Text(
@@ -60,6 +59,5 @@ partial model Step_2 "Adding branch models to network"
           fillPattern=FillPattern.Solid,
           fontSize=12,
           textString="Electrical.Branches.PSAT.TwoWindingTransformer")}),
-    Icon(coordinateSystem(extent={{-120,-100},{120,100}})),
-    Documentation);
+    Icon(coordinateSystem(extent={{-120,-100},{120,100}})));
 end Step_2;

@@ -175,8 +175,7 @@ equation
   connect(disabled_exc_lims.y, iEEET2_1.VUEL)
     annotation (Line(points={{-19,-62},{-6,-62},{-6,-41}}, color={0,0,127}));
   annotation (
-    Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{
-            100,100}})),
+
     Icon(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,
             100}}), graphics={Ellipse(extent={{-60,60},{60,-60}}, lineColor={0,
           0,255}),Text(
@@ -185,7 +184,7 @@ equation
           fillPattern=FillPattern.Solid,
           textString="GEN")}),
     Documentation(info="<html>
-<p>This generation unit model allows for instantiantions with different parameter sets. The model is composed by:</p> 
+<p>This generation unit model allows for instantiantions with different parameter sets. The model is composed by:</p>
 <ul>
 <li><strong>Machine model</strong>: GENSAL, a salient pole synchronous generator model.</li>
 <li><strong>Exciter model</strong>: IEEET2, an IEEE type-2 excitation model.</li>

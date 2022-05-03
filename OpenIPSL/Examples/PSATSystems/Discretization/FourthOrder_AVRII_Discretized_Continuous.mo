@@ -58,14 +58,13 @@ equation
   annotation (
     Diagram(coordinateSystem(extent={{-220,-100},{160,100}},
           preserveAspectRatio=false)),
-    Icon(coordinateSystem(extent={{-100,-100},{100,100}})),
+
     experiment(
       StopTime=20,
       Interval=0.01,
       __Dymola_fixedstepsize=0.01,
       __Dymola_Algorithm="Euler"),
-    __Dymola_experimentSetupOutput,
-    Documentation(info="<html>
+Documentation(info="<html>
 <p>Simulate for 20 seconds. Variables of interest are:</p>
 <ul>
 <li><code>aVRTypeII.vf</code></li>

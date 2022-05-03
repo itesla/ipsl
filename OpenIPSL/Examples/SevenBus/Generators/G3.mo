@@ -120,8 +120,7 @@ equation
   connect(gENROU.SPEED, iEESGO.SPEED) annotation (Line(points={{42,14},{88,14},{
           88,34},{58,34}}, color={0,0,127}));
   annotation (
-    Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{
-            100,100}})),
+
     Icon(graphics={Ellipse(
           extent={{-100,100},{100,-100}},
           lineColor={0,0,0},

@@ -22,8 +22,8 @@ model Step_3 "Connecting models and assembling generation unit"
     v_0=v_0,
     angle_0=angle_0,
     P_0=P_0,
-    Q_0=Q_0) annotation (Placement(visible=true, transformation(extent={{16,-70},
-            {76,-10}}, rotation=0)));
+    Q_0=Q_0) annotation (Placement(transformation(extent={{16,-70},
+            {76,-10}})));
   OpenIPSL.Electrical.Controls.PSAT.AVR.AVRtypeIII avr(
     vfmax=7,
     vfmin=-6.40,
@@ -31,10 +31,9 @@ model Step_3 "Connecting models and assembling generation unit"
     T2=1,
     T1=1,
     Te=0.0001,
-    Tr=0.015) annotation (Placement(visible=true, transformation(extent={{-54,-46},
-            {-14,-6}}, rotation=0)));
-  Modelica.Blocks.Sources.Constant pss_off(k=0) annotation (Placement(visible=
-          true, transformation(extent={{-98,-46},{-78,-26}}, rotation=0)));
+    Tr=0.015) annotation (Placement(transformation(extent={{-54,-46},
+            {-14,-6}})));
+  Modelica.Blocks.Sources.Constant pss_off(k=0) annotation (Placement(transformation(extent={{-98,-46},{-78,-26}})));
 equation
   connect(pss_off.y, avr.vs) annotation (Line(points={{-77,-36},{-52.3333,-36},
           {-52.3333,-36}}, color={0,0,127}));
@@ -51,7 +50,6 @@ equation
   annotation (Diagram(coordinateSystem(
         extent={{-100,-100},{100,100}},
         preserveAspectRatio=false,
-        initialScale=0.1,
         grid={2,2}), graphics={Text(
           fillPattern=FillPattern.Solid,
           lineThickness=1,
@@ -79,5 +77,5 @@ mechanical power
 
 6. Initial generator field voltage to initial AVR field voltage
 
-7. Generator pin to External pin")}), Documentation);
+7. Generator pin to External pin")}));
 end Step_3;

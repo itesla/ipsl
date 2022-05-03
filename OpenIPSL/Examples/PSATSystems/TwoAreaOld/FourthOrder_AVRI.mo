@@ -17,13 +17,12 @@ equation
   annotation (
     Diagram(coordinateSystem(extent={{-160,-80},{160,80}}, preserveAspectRatio=
             false)),
-    Icon(coordinateSystem(extent={{-100,-100},{100,100}})),
+
     experiment(
       StopTime=20,
       __Dymola_fixedstepsize=0.0001,
       __Dymola_Algorithm="Rkfix2"),
-    __Dymola_experimentSetupOutput,
-    Documentation(info="<html>
+Documentation(info="<html>
 <p>This system tests the fourth order machine with a type 1 AVR, from PSAT. Simulate the system for 20 seconds using the <code>Rkfix2</code> integrator.</p>
 <p>Variables of interest are related to the (non-)coherency observed between the synchronous machines:</p>
 <ul>

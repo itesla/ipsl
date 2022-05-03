@@ -24,7 +24,6 @@ model Gen2 "13.8kV/100MVA generation unit connected to bus 3"
     D=0,
     xq=1.2578) annotation (Placement(transformation(
         extent={{-10,-10},{10,10}},
-        rotation=0,
         origin={28,14})));
   OpenIPSL.Electrical.Controls.PSAT.AVR.AVRTypeII AVR(
     vrmin=-5,
@@ -40,7 +39,6 @@ model Gen2 "13.8kV/100MVA generation unit connected to bus 3"
     Ae=0.0039,
     Be=1.555) annotation (Placement(transformation(
         extent={{-10,-10},{10,10}},
-        rotation=0,
         origin={-6,10})));
   Modelica.Blocks.Sources.Step step(
     startTime=tstart_2,
@@ -81,8 +79,7 @@ equation
   connect(AVR.vf0, gen.vf0) annotation (Line(points={{-6,-2},{0,-2},{0,-6},{10,
           -6},{10,25},{20,25}}, color={0,0,127}));
   annotation (
-    Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{
-            100,100}})),
+
     Icon(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,
             100}}), graphics={Ellipse(extent={{-100,-100},{100,100}}, lineColor=
            {28,108,200}),Line(points={{-60,-20},{-20,20},{20,-20},{60,20}},

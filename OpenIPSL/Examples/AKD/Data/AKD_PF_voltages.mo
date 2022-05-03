@@ -21,5 +21,5 @@ record AKD_PF_voltages "Record for voltage magnitudes and angles"
   //
   parameter Real V58653=0.993048;
   parameter Real A58653=0.01141340261;
-  annotation (Documentation);
+
 end AKD_PF_voltages;

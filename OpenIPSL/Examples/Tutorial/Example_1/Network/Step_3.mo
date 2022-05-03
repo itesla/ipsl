@@ -28,21 +28,19 @@ partial model Step_3 "Adding infinite bus"
     X=0.93*100/2220)
     annotation (Placement(transformation(extent={{20,-30},{40,-10}})));
   OpenIPSL.Electrical.Buses.InfiniteBus infiniteBus(v_0=0.90081, angle_0=0)
-    annotation (Placement(visible=true, transformation(
+    annotation (Placement(transformation(
         origin={100,0},
         extent={{-10,10},{10,-10}},
         rotation=180)));
   inner OpenIPSL.Electrical.SystemBase SysData(fn=60) annotation (
-      Placement(visible=true, transformation(
+      Placement(transformation(
         origin={85.0001,-80},
-        extent={{-25.0001,-20},{34.9999,20}},
-        rotation=0)));
+        extent={{-25.0001,-20},{34.9999,20}})));
   annotation (
     Icon(coordinateSystem(extent={{-120,-100},{120,100}})),
     Diagram(coordinateSystem(
         extent={{-120,-100},{120,100}},
         preserveAspectRatio=false,
-        initialScale=0.1,
         grid={2,2}), graphics={Text(
           fillPattern=FillPattern.Solid,
           lineThickness=1,
@@ -58,6 +56,5 @@ partial model Step_3 "Adding infinite bus"
           lineThickness=1,
           extent={{62,24},{146,14}},
           textString="Electrical.Buses.InfiniteBus",
-          fontSize=12)}),
-    Documentation);
+          fontSize=12)}));
 end Step_3;

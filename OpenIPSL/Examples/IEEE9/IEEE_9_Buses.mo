@@ -33,7 +33,6 @@ model IEEE_9_Buses "IEEE (WSCC) 9-bus 3-machine base test system"
     Q_0=50000000,
     angle_0=-0.0696176932) annotation (Placement(transformation(
         extent={{-7,-7},{7,7}},
-        rotation=0,
         origin={-99,-11})));
   OpenIPSL.Electrical.Loads.PSAT.VoltageDependent PQ1(
     V_b=230000,
@@ -43,7 +42,6 @@ model IEEE_9_Buses "IEEE (WSCC) 9-bus 3-machine base test system"
     Q_0=30000000,
     angle_0=-0.06435727083) annotation (Placement(transformation(
         extent={{-7,-7},{7,7}},
-        rotation=0,
         origin={109,-13})));
   OpenIPSL.Electrical.Branches.PwLine line_9_6(
     G=0,
@@ -84,7 +82,6 @@ model IEEE_9_Buses "IEEE (WSCC) 9-bus 3-machine base test system"
     rT=0,
     xT=0.0625) annotation (Placement(transformation(
         extent={{-10,-10},{10,10}},
-        rotation=0,
         origin={-102,90})));
   OpenIPSL.Electrical.Loads.PSAT.VoltageDependent lOADPQ1(
     V_b=230000,
@@ -94,7 +91,6 @@ model IEEE_9_Buses "IEEE (WSCC) 9-bus 3-machine base test system"
     Q_0=35000000,
     angle_0=0.01269796844) annotation (Placement(transformation(
         extent={{-7,-7},{7,7}},
-        rotation=0,
         origin={7,53})));
   OpenIPSL.Electrical.Buses.Bus B2(
     v_0=1.025,
@@ -111,7 +107,6 @@ model IEEE_9_Buses "IEEE (WSCC) 9-bus 3-machine base test system"
     V_b=230000,
     angle_0=0.01269796844) annotation (Placement(transformation(
         extent={{-10,-10},{10,10}},
-        rotation=0,
         origin={0,90})));
   OpenIPSL.Electrical.Buses.Bus B9(
     V_b=230000,
@@ -276,7 +271,7 @@ equation
   annotation (
     Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-180,-120},{
             180,120}})),
-    Icon(coordinateSystem(extent={{-100,-100},{100,100}})),
+
     Documentation(info="<html>
 <p>This example is composed by the base WSCC 9-bus 3-machine system. The system undergoes a three-phase-to-ground fault at 3s, lasting for 100ms. Simulate the system for 20 seconds.</p>
 <p>Variables of interest are </p>
@@ -292,6 +287,5 @@ equation
       Interval=0.001,
       Tolerance=1e-006,
       __Dymola_fixedstepsize=0.001,
-      __Dymola_Algorithm="Rkfix2"),
-    __Dymola_experimentSetupOutput);
+      __Dymola_Algorithm="Rkfix2"));
 end IEEE_9_Buses;

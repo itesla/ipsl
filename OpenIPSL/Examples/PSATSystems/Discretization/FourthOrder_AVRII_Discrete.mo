@@ -20,7 +20,6 @@ model FourthOrder_AVRII_Discrete "5-bus system with 4th-order machine and AVRTyp
   Modelica.Blocks.Sources.Constant vref2(k=1.198705028536746) annotation (
       Placement(transformation(
         extent={{-5,-5},{5,5}},
-        rotation=0,
         origin={-199,27})));
   Modelica_Synchronous.RealSignals.Sampler.Hold hold1(y_start=1.046883400898693)
     annotation (Placement(transformation(extent={{-136,0},{-124,12}})));
@@ -63,15 +62,14 @@ equation
   annotation (
     Diagram(coordinateSystem(extent={{-220,-100},{160,100}},
           preserveAspectRatio=false)),
-    Icon(coordinateSystem(extent={{-100,-100},{100,100}})),
+
     experiment(
       StopTime=20,
       Interval=0.01,
       Tolerance=0.001,
       __Dymola_fixedstepsize=0.01,
       __Dymola_Algorithm="Euler"),
-    __Dymola_experimentSetupOutput,
-    Documentation(info="<html>
+Documentation(info="<html>
 <p>Simulate for 20 seconds. Variables of interest are:</p>
 <ul>
 <li><code>aVRTypeII.vf</code></li>

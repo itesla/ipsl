@@ -81,8 +81,7 @@ equation
       Tolerance=1e-006,
       __Dymola_fixedstepsize=0.0001,
       __Dymola_Algorithm="Rkfix2"),
-    __Dymola_experimentSetupOutput,
-    Documentation(info="<html>
+Documentation(info="<html>
 <p>Partial network model used in the SMIB systems, composed of three buses and an infinite bus.</p>
 </html>"));
 end SMIB_Partial;

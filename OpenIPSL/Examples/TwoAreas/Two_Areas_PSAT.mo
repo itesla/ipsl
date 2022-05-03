@@ -226,7 +226,7 @@ equation
           lineColor={28,108,200},
           textString="Two-Area System
 Prabha Kundur, \"Power System Stability and Control\", Example 12.6, page 813")}),
-    Icon(coordinateSystem(extent={{-100,-100},{100,100}})),
+
     Documentation(info="<html>
 <p>This example is composed by the 11-bus 4-machine 2-area system, where these two areas are connected via weak tie lines. This test system is ideal for studying dynamic stability, power interchange, oscillation damping, etc.</p>
 <p>The system undergoes a three-phase-to-ground fault on Bus 8 at 1s, lasting for 50ms. Simulate the system for 10 seconds. Variables of interest are the ones related to inter-area modes. For example:</p>
@@ -243,6 +243,5 @@ Prabha Kundur, \"Power System Stability and Control\", Example 12.6, page 813")}
       Interval=0.0001,
       Tolerance=1e-006,
       __Dymola_fixedstepsize=0.0001,
-      __Dymola_Algorithm="Rkfix2"),
-    __Dymola_experimentSetupOutput);
+      __Dymola_Algorithm="Rkfix2"));
 end Two_Areas_PSAT;

@@ -9,22 +9,18 @@ partial model BaseClass "Base class for noise injection to electrical node"
   Real P, Q;
 
   OpenIPSL.Interfaces.PwPin pin annotation (Placement(
-      visible=true,
       transformation(
         origin={-60,30},
-        extent={{-10,-10},{10,10}},
-        rotation=0),
+        extent={{-10,-10},{10,10}}),
       iconTransformation(
         origin={-110,0},
-        extent={{-10,-10},{10,10}},
-        rotation=0)));
+        extent={{-10,-10},{10,10}})));
   Modelica.Blocks.Noise.NormalNoise noise_gen(
     mu=active_mu,
     samplePeriod=samplePeriod,
-    sigma=active_sigma) annotation (Placement(visible=true, transformation(
+    sigma=active_sigma) annotation (Placement(transformation(
         origin={20,62},
-        extent={{-10,-10},{10,10}},
-        rotation=0)));
+        extent={{-10,-10},{10,10}})));
 equation
   P = pin.vr*pin.ir - pin.vi*pin.ii;
   Q = pin.vi*pin.ir - pin.vr*pin.ii;

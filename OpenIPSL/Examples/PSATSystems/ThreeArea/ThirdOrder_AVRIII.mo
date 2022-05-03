@@ -15,12 +15,10 @@ model ThirdOrder_AVRIII "ABC system with 3rd-order machines and AVR Type III"
   Modelica.Blocks.Sources.Constant vs_1(k=0) annotation (Placement(
         transformation(
         extent={{-4,-4},{4,4}},
-        rotation=0,
         origin={-164,80})));
   Modelica.Blocks.Sources.Constant vs_2(k=0) annotation (Placement(
         transformation(
         extent={{4,-4},{-4,4}},
-        rotation=0,
         origin={184,0})));
 equation
   connect(Exc1.v, order3_1.v) annotation (Line(points={{-149.583,87.5},{-156,
@@ -48,7 +46,7 @@ equation
   annotation (
     Diagram(coordinateSystem(extent={{-180,-120},{200,120}},
           preserveAspectRatio=false)),
-    Icon(coordinateSystem(extent={{-100,-100},{100,100}})),
+
     experiment(
       StopTime=20,
       __Dymola_fixedstepsize=0.001,

@@ -38,5 +38,5 @@ record PF1 "Power flow data record, designed for test system assembled with PSAT
       QL7_1=-100000000,
       PL9_1=1767000000,
       QL9_1=-250000000));
-  annotation (Documentation);
+
 end PF1;

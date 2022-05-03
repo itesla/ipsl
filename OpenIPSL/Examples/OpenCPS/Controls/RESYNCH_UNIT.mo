@@ -1,9 +1,7 @@
 within OpenIPSL.Examples.OpenCPS.Controls;
 model RESYNCH_UNIT "Resynchronization control system"
-  Controls.FREQ_CTRL freq_ctrl annotation (Placement(transformation(rotation=0,
-          extent={{-52,-80},{-32,-60}})));
+  Controls.FREQ_CTRL freq_ctrl annotation (Placement(transformation(extent={{-52,-80},{-32,-60}})));
   Controls.ANGLE_CTRL angle_ctrl annotation (Placement(transformation(
-        rotation=0,
         extent={{-10,-10},{10,10}},
         origin={-42,-40})));
   Controls.VOLT_CTRL volt_ctrl
@@ -11,28 +9,28 @@ model RESYNCH_UNIT "Resynchronization control system"
   Modelica.Blocks.Math.Add add(k2=+1)
     annotation (Placement(transformation(extent={{8,-56},{20,-44}})));
   Modelica.Blocks.Interfaces.RealInput SPEED annotation (Placement(
-        transformation(rotation=0, extent={{-102,-80},{-82,-60}}),
+        transformation(extent={{-102,-80},{-82,-60}}),
         iconTransformation(extent={{100,-80},{80,-60}})));
   Modelica.Blocks.Interfaces.RealInput PMECH0 annotation (Placement(
-        transformation(rotation=0, extent={{-24,-38},{-4,-18}}),
+        transformation(extent={{-24,-38},{-4,-18}}),
         iconTransformation(extent={{100,-40},{80,-20}})));
   Modelica.Blocks.Interfaces.RealOutput P_CTRL annotation (Placement(
-        transformation(rotation=0, extent={{40,-60},{60,-40}}),
+        transformation(extent={{40,-60},{60,-40}}),
         iconTransformation(extent={{100,20},{120,40}})));
   Modelica.Blocks.Interfaces.RealInput fi_DN annotation (Placement(
-        transformation(rotation=0, extent={{-102,-54},{-82,-34}}),
+        transformation(extent={{-102,-54},{-82,-34}}),
         iconTransformation(extent={{-100,-40},{-80,-20}})));
   Modelica.Blocks.Interfaces.RealInput fi_IB annotation (Placement(
-        transformation(rotation=0, extent={{-102,-30},{-82,-10}}),
+        transformation(extent={{-102,-30},{-82,-10}}),
         iconTransformation(extent={{-100,-80},{-80,-60}})));
   Modelica.Blocks.Interfaces.RealInput V_IB annotation (Placement(
-        transformation(rotation=0, extent={{-102,66},{-82,86}}),
+        transformation(extent={{-102,66},{-82,86}}),
         iconTransformation(extent={{-100,60},{-80,80}})));
   Modelica.Blocks.Interfaces.RealInput V_DN annotation (Placement(
-        transformation(rotation=0, extent={{-102,34},{-82,54}}),
+        transformation(extent={{-102,34},{-82,54}}),
         iconTransformation(extent={{-100,20},{-80,40}})));
   Modelica.Blocks.Interfaces.RealOutput V_CTRL annotation (Placement(
-        transformation(rotation=0, extent={{100,50},{120,70}}),
+        transformation(extent={{100,50},{120,70}}),
         iconTransformation(extent={{100,60},{120,80}})));
   Modelica.Blocks.Math.Add add2(k2=-1)
     annotation (Placement(transformation(extent={{-32,24},{-20,36}})));
@@ -41,7 +39,7 @@ model RESYNCH_UNIT "Resynchronization control system"
   Modelica.Blocks.Interfaces.BooleanOutput TRIGGER
     annotation (Placement(transformation(extent={{100,-10},{120,10}})));
   ACT_UNIT aCT_UNIT
-    annotation (Placement(transformation(rotation=0, extent={{0,0},{20,20}})));
+    annotation (Placement(transformation(extent={{0,0},{20,20}})));
   Modelica.Blocks.Math.Add add1(k2=+1)
     annotation (Placement(transformation(extent={{-20,-60},{-8,-48}})));
 equation
@@ -141,10 +139,9 @@ equation
           lineColor={28,108,200},
           fillColor={255,255,255},
           fillPattern=FillPattern.Solid,
-          textString="SPEED")}), Diagram(coordinateSystem(preserveAspectRatio=
-            false, extent={{-100,-100},{100,100}})),
+          textString="SPEED")}),
     Documentation(info="<html>
-<p>This resynchronization system uses the voltage magnitude, angle and frequency controls to eliminate the differences between the mentioned variables 
+<p>This resynchronization system uses the voltage magnitude, angle and frequency controls to eliminate the differences between the mentioned variables
 from two different electrical nodes in order to allow the resynchronization of an islanded system.</p>
 </html>"));
 end RESYNCH_UNIT;

@@ -5,7 +5,7 @@ model FREQ_CALC "Frequency calculator"
   parameter Types.Angle fi_0 "Initial angle";
 
   Modelica.Blocks.Interfaces.RealInput ANGLE annotation (Placement(
-        transformation(rotation=0, extent={{-110,-10},{-90,10}}),
+        transformation(extent={{-110,-10},{-90,10}}),
         iconTransformation(extent={{-100,-10},{-80,10}})));
   Modelica.Blocks.Math.Add add(k2=-1)
     annotation (Placement(transformation(extent={{-60,-10},{-40,10}})));
@@ -32,8 +32,7 @@ equation
     annotation (Line(points={{41,0},{49.5,0},{58,0}}, color={0,0,127}));
   connect(firstOrder.y, d_FREQ)
     annotation (Line(points={{81,0},{110,0}}, color={0,0,127}));
-  annotation (Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,
-            -100},{100,100}})), Documentation(info="<html>
+  annotation ( Documentation(info="<html>
 <p>This model of frequency calculator is based on a washout filter followed by a first order filter that is meant to smooth the washout output. The model can have as input the angle value of the phasor, the output will be an estimate of the frequency based on the angle variation.</p>
 </html>"));
 end FREQ_CALC;

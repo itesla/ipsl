@@ -3,7 +3,7 @@ package Generator "Set of steps illustrating how to assemble a generation unit w
  extends Modelica.Icons.Package;
 
 annotation (Documentation(info="<html>
-<p>The task of modeling the generation unit with a stabilizer is basically divided into two steps:</p> 
+<p>The task of modeling the generation unit with a stabilizer is basically divided into two steps:</p>
 <ul>
 <li><strong>Step 1</strong>: instantiating Power System Stabilizer (PSS) model.</li>
 <li><strong>Step 2</strong>: performing the proper connections for PSS.</li>

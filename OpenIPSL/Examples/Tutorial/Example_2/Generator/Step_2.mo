@@ -74,5 +74,5 @@ equation
 
 2. PSS output to PSS input of the AVR
 
-3. Generator speed to the input signal of the PSS")}), Documentation);
+3. Generator speed to the input signal of the PSS")}));
 end Step_2;

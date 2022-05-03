@@ -124,12 +124,10 @@ protected
   Modelica.Blocks.Interfaces.RealOutput fi_IB annotation (Placement(
         transformation(
         extent={{-3,-3},{3,3}},
-        rotation=0,
         origin={43,-85})));
   Modelica.Blocks.Interfaces.RealOutput fi_DN annotation (Placement(
         transformation(
         extent={{-3,-3},{3,3}},
-        rotation=0,
         origin={43,-75})));
 public
   OpenIPSL.Electrical.Branches.PwLine L2(
@@ -138,7 +136,6 @@ public
     X=0.5,
     R=0.05) annotation (Placement(transformation(
         extent={{-6,-4},{6,4}},
-        rotation=0,
         origin={100,40})));
   Breakers.Breaker breaker2 annotation (Placement(transformation(
         extent={{-4,4},{4,-4}},
@@ -206,8 +203,7 @@ equation
           28},{116,-80},{71,-80}}, color={255,0,255}));
   connect(breaker1.n, L3.n)
     annotation (Line(points={{80,-5.5},{80,4.6}}, color={0,0,255}));
-  annotation (Icon(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},
-            {100,100}})), Diagram(coordinateSystem(preserveAspectRatio=false,
+  annotation ( Diagram(coordinateSystem(preserveAspectRatio=false,
           extent={{-140,-120},{140,120}})),
     Documentation(info="<html>
     <p>This example system shows how the resynchronization controller is used to connect Generator 2 back to the grid. Note that at 2 seconds, a signal is triggered to equalize voltage magnitudes on buses 3 and 4.</p>

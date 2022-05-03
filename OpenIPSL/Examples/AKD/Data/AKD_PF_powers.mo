@@ -18,5 +18,5 @@ record AKD_PF_powers "Record for active and reactive injected powers"
   //
   parameter Real P58653=13700000;
   parameter Real Q58653=-8540000;
-  annotation (Documentation);
+
 end AKD_PF_powers;

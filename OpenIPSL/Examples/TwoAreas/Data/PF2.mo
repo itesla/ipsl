@@ -39,5 +39,5 @@ record PF2 "Power flow data record, designed for test system assembled with PSSE
       QL7_1=-84700000,
       PL9_1=1767000000,
       QL9_1=-230200000));
-  annotation (Documentation);
+
 end PF2;

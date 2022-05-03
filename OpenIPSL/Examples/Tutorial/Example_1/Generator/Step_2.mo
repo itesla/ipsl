@@ -59,5 +59,5 @@ partial model Step_2 "AVR and disabled PSS"
           textString="Modelica.Blocks.Sources.Constant"),Rectangle(
           extent={{-108,24},{-74,-12}},
           lineColor={255,0,0},
-          lineThickness=1)}), Documentation);
+          lineThickness=1)}));
 end Step_2;

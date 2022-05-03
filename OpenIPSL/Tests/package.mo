@@ -13,7 +13,7 @@ These systems are also ideal for fiding model malfunctions and are used by devel
 These test systems are intended to work in different Modelica-compliant software.
 </p>
 <p>
-The test systems are usually simulated between 5 and 20 seconds. Variables of interest are usually related to the model of interest. 
+The test systems are usually simulated between 5 and 20 seconds. Variables of interest are usually related to the model of interest.
 </p>
 </html>"));
 end Tests;

@@ -35,7 +35,6 @@ model Example_3 "Fully assembled 9-bus 3-generator test system"
     P_0=1.25*SysData.S_b,
     Q_0=0.5*SysData.S_b) annotation (Placement(transformation(
         extent={{-10,-10},{10,10}},
-        rotation=0,
         origin={-90,-10})));
   OpenIPSL.Electrical.Loads.PSAT.VoltageDependent PQ1(
     V_b=230000,
@@ -45,7 +44,6 @@ model Example_3 "Fully assembled 9-bus 3-generator test system"
     v_0=1.012654326639182,
     Sn=100000000) annotation (Placement(transformation(
         extent={{-10,-10},{10,10}},
-        rotation=0,
         origin={110,-10})));
   OpenIPSL.Electrical.Branches.PwLine line_9_6(
     G=0,
@@ -89,7 +87,6 @@ model Example_3 "Fully assembled 9-bus 3-generator test system"
     rT=0,
     xT=0.0625) annotation (Placement(transformation(
         extent={{-10,-10},{10,10}},
-        rotation=0,
         origin={-100,90})));
   OpenIPSL.Electrical.Loads.PSAT.VoltageDependent lOADPQ1(
     V_b=230000,
@@ -99,7 +96,6 @@ model Example_3 "Fully assembled 9-bus 3-generator test system"
     v_0=1.015882581760390,
     Sn=100000000) annotation (Placement(transformation(
         extent={{-10,-10},{10,10}},
-        rotation=0,
         origin={10,50})));
   OpenIPSL.Electrical.Buses.Bus B2(
     v_0=1.025,
@@ -111,7 +107,6 @@ model Example_3 "Fully assembled 9-bus 3-generator test system"
   OpenIPSL.Electrical.Buses.Bus B8(displayPF=true) annotation (Placement(
         transformation(
         extent={{-10,-10},{10,10}},
-        rotation=0,
         origin={0,90})));
   OpenIPSL.Electrical.Buses.Bus B9(displayPF=true)
     annotation (Placement(transformation(extent={{50,80},{70,100}})));
@@ -264,7 +259,7 @@ equation
   annotation (
     Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-180,-120},{
             180,120}})),
-    Icon(coordinateSystem(extent={{-100,-100},{100,100}})),
+
     Documentation(info="<html>
 <p>This example system represents a 9-bus 3-generator test system with a three-phase-to-ground fault at bus 9 and it must be simulated during 20 seconds.</p>
 <p>Variables of interest are:</p>
@@ -283,6 +278,5 @@ equation
       Interval=0.001,
       Tolerance=1e-006,
       __Dymola_fixedstepsize=0.001,
-      __Dymola_Algorithm="Rkfix2"),
-    __Dymola_experimentSetupOutput);
+      __Dymola_Algorithm="Rkfix2"));
 end Example_3;

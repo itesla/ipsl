@@ -44,9 +44,7 @@ partial model BaseNetwork "Base network for ThreeArea test system"
         rotation=90,
         origin={-84,-20})));
   OpenIPSL.Electrical.Buses.Bus B400 annotation (Placement(transformation(
-        extent={{-8,-8},{8,8}},
-        rotation=0,
-        origin={0,0})));
+        extent={{-8,-8},{8,8}})));
   OpenIPSL.Electrical.Buses.Bus B500 annotation (Placement(transformation(
         extent={{-8,-8},{8,8}},
         rotation=90,
@@ -61,7 +59,6 @@ partial model BaseNetwork "Base network for ThreeArea test system"
         origin={-80,80})));
   OpenIPSL.Electrical.Buses.Bus B800 annotation (Placement(transformation(
         extent={{-8,-8},{8,8}},
-        rotation=0,
         origin={-100,80})));
   OpenIPSL.Electrical.Buses.Bus B900
     annotation (Placement(transformation(extent={{12,-8},{28,8}})));
@@ -112,7 +109,6 @@ partial model BaseNetwork "Base network for ThreeArea test system"
     B=0,
     X=0.1) annotation (Placement(transformation(
         extent={{-3,-2},{3,2}},
-        rotation=0,
         origin={31,0})));
   OpenIPSL.Electrical.Branches.PwLine pwLine1to7(
     R=0,

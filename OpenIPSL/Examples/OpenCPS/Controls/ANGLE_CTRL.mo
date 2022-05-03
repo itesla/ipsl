@@ -6,10 +6,10 @@ model ANGLE_CTRL "Voltage angle control used in resynchronization"
         rotation=180,
         origin={-60,0})));
   Modelica.Blocks.Interfaces.RealInput fi_IB annotation (Placement(
-        transformation(rotation=0, extent={{-110,40},{-90,60}}),
+        transformation(extent={{-110,40},{-90,60}}),
         iconTransformation(extent={{-100,40},{-80,60}})));
   Modelica.Blocks.Interfaces.RealInput fi_DN annotation (Placement(
-        transformation(rotation=0, extent={{-110,-62},{-90,-42}}),
+        transformation(extent={{-110,-62},{-90,-42}}),
         iconTransformation(extent={{-100,-60},{-80,-40}})));
   Modelica.Blocks.Interfaces.RealOutput y
     annotation (Placement(transformation(extent={{100,-10},{120,10}})));
@@ -82,8 +82,7 @@ equation
           lineColor={28,108,200},
           fillColor={255,255,255},
           fillPattern=FillPattern.Solid,
-          textString="ANGLE CTRL")}), Diagram(coordinateSystem(
-          preserveAspectRatio=false, extent={{-100,-100},{100,100}})),
+          textString="ANGLE CTRL")}),
     Documentation(info="<html>
 <p>This angle controller, which is based on simple Integrator, is used to reduce the error (ideally to zero) of the voltage angle difference between two different nodes in the system.</p>
 <p>After the difference is reduced to zero, and the errors on voltage magnitude and frequency are also zero, the two nodes can be connected without major issues.</p>

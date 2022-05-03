@@ -6,7 +6,7 @@ model LimitCheck "Model of a limit checker"
   Modelica.Blocks.Logical.And and1
     annotation (Placement(transformation(extent={{-40,-10},{-20,10}})));
   Modelica.Blocks.Interfaces.RealInput u annotation (Placement(transformation(
-          rotation=0, extent={{-110,-10},{-90,10}})));
+          extent={{-110,-10},{-90,10}})));
   Modelica.Blocks.Interfaces.BooleanOutput START
     annotation (Placement(transformation(extent={{100,-10},{120,10}})));
   Modelica.Blocks.Logical.GreaterEqualThreshold greaterEqualThreshold(threshold=
@@ -39,8 +39,7 @@ equation
         points={{-76,-20},{-80,-20},{-80,20},{-76,20}}, color={0,0,127}));
   connect(greaterEqualThreshold1.y, START)
     annotation (Line(points={{67,0},{110,0},{110,0}}, color={255,0,255}));
-  annotation (Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,
-            -100},{100,100}})), Icon(coordinateSystem(preserveAspectRatio=false,
+  annotation ( Icon(coordinateSystem(preserveAspectRatio=false,
           extent={{-100,-100},{100,100}}), graphics={Rectangle(
           extent={{-100,100},{100,-100}},
           lineColor={28,108,200},

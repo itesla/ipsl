@@ -15,12 +15,10 @@ model SixthOrder_AVRIII "ABC system with 6th-order machine (Syn2) and AVR Type I
   Modelica.Blocks.Sources.Constant vs_1(k=0) annotation (Placement(
         transformation(
         extent={{-4,-4},{4,4}},
-        rotation=0,
         origin={-166,84})));
   Modelica.Blocks.Sources.Constant vs_2(k=0) annotation (Placement(
         transformation(
         extent={{4,-4},{-4,4}},
-        rotation=0,
         origin={176,24})));
 equation
   connect(Exc1.vf, Syn2.vf) annotation (Line(points={{-141.5,86},{-138.4,86},{-138.4,
@@ -45,7 +43,7 @@ equation
   annotation (
     Diagram(coordinateSystem(extent={{-180,-120},{180,120}},
           preserveAspectRatio=false)),
-    Icon(coordinateSystem(extent={{-100,-100},{100,100}})),
+
     experiment(
       StopTime=20,
       __Dymola_fixedstepsize=0.001,

@@ -60,8 +60,7 @@ equation
   connect(gENSAL.p, pwPin)
     annotation (Line(points={{53,0},{90,0}},   color={0,0,255}));
   annotation (
-    Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{
-            100,100}})),
+
     Icon(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,
             100}}), graphics={Ellipse(extent={{-60,60},{60,-60}}, lineColor={0,
           0,255}),Text(
@@ -70,7 +69,7 @@ equation
           fillPattern=FillPattern.Solid,
           textString="GEN")}),
     Documentation(info="<html>
-<p>This generation unit model allows for instantiantions with different parameter sets. The model is composed by:</p> 
+<p>This generation unit model allows for instantiantions with different parameter sets. The model is composed by:</p>
 <ul>
 <li><strong>Machine model</strong>: GENSAL, a salient pole synchronous generator model.</li>
 </ul>

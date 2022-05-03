@@ -46,7 +46,6 @@ model G2 "Generation unit connected to bus B5"
   Modelica.Blocks.Interfaces.RealInput fi_IB annotation (Placement(
         transformation(
         extent={{-10,-10},{10,10}},
-        rotation=0,
         origin={-100,4}), iconTransformation(
         extent={{-10,-10},{10,10}},
         rotation=-90,
@@ -54,13 +53,12 @@ model G2 "Generation unit connected to bus B5"
   Modelica.Blocks.Interfaces.RealInput fi_DN annotation (Placement(
         transformation(
         extent={{-10,-10},{10,10}},
-        rotation=0,
         origin={-100,20}), iconTransformation(
         extent={{-10,-10},{10,10}},
         rotation=-90,
         origin={50,100})));
   Controls.RESYNCH_UNIT central_Unit annotation (Placement(transformation(
-          rotation=0, extent={{-60,30},{-40,50}})));
+          extent={{-60,30},{-40,50}})));
   Modelica.Blocks.Interfaces.BooleanOutput TRIGGER annotation (Placement(
         transformation(extent={{80,50},{100,70}}), iconTransformation(
         extent={{-10,-10},{10,10}},
@@ -116,8 +114,7 @@ equation
           lineColor={0,0,0},
           fillColor={255,255,255},
           fillPattern=FillPattern.Solid,
-          textString="%name")}), Diagram(coordinateSystem(preserveAspectRatio=
-            false, extent={{-100,-100},{100,100}})),
+          textString="%name")}),
     Documentation(info="<html>
 <p>24kV/100MVA generation unit connected to bus BG1, and composed of the following component models:</p>
 <ul>

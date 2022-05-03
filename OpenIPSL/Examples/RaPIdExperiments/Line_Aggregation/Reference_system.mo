@@ -139,9 +139,9 @@ equation
   connect(add1.u2, ramp1.y) annotation (Line(points={{-160,8},{-166,8},{-166,-6},
           {-171,-6}}, color={0,0,127}));
   annotation (Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-200,
-            -60},{200,60}})), Icon(coordinateSystem(extent={{-100,-100},{100,100}})),
+            -60},{200,60}})),
     Documentation(info="<html>
-<p>This is a Two-Machine system containing disturbances on the mechanical power supply of the generator connected to bus GEN1. 
+<p>This is a Two-Machine system containing disturbances on the mechanical power supply of the generator connected to bus GEN1.
 These disturbances allow the user to observe dominant dynamics that need to be preserved when system is simplified.</p>
 <p>Simulate the system for 20 seconds. Variables of interest are:</p>
 <ul>
