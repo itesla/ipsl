@@ -2,8 +2,7 @@ within OpenIPSL.Examples;
 package NamsskoganGrid "Package with the Namsskogan power network"
     extends Modelica.Icons.ExamplesPackage;
 
-annotation (uses(                           Modelica(version="3.2.2"), OpenIPSL(version="2.0.0-dev")),
-    Documentation(info="<html>
+annotation (Documentation(info="<html>
 This package contains the model of the Namsskogan grid, representing a distribution-level grid in Norway.
 </html>", revisions="<html>
 <table cellspacing=\"2\" cellpadding=\"1\" border=\"1\"><tr>

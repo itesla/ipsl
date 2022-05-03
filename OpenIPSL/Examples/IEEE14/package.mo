@@ -3,7 +3,6 @@ package IEEE14 "IEEE 14-bus 5-machine test system package"
   extends Modelica.Icons.ExamplesPackage;
 
 annotation (
-  uses(Modelica(version="3.2.2"), OpenIPSL(version="2.0.0-dev")),
   Documentation(info="<html>
 <p>This package contains a 14-bus 5-machine test system, representing a simple equivalent approximation for the American Electric Power System as of February of 1962. </p>
 <p>In general, this system has low base voltages and an overabundance of voltage control capabilities, being ideal for testing such features. </p>
@@ -23,6 +22,5 @@ annotation (
 <td><p><a href=\"mailto:luigi.vanfretti@gmail.com\">luigi.vanfretti@gmail.com</a></p></td>
 </tr>
 </table>
-</html>"),
-  version="1");
+</html>"));
 end IEEE14;
