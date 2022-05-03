@@ -1509,55 +1509,7 @@ equation
   connect(Line26_31.n, B26.n[1]) annotation (Line(points={{94,123},{96,123},{96,112},{104.6,112}}, color={0,0,255}));
   connect(Line26_27.n, B26.n[2]) annotation (Line(points={{147,116},{100,116},{100,112},{91.4,112}}, color={0,0,255}));
   connect(twoWindingTransformer10.n, B27.p[1]) annotation (Line(points={{227,78},{210,78},{210,80},{196,80},{196,92}}, color={0,0,255}));
-                  annotation (Placement(
-        transformation(
-        extent={{2,-22},{-2,22}},
-        rotation=90,
-        origin={-228,-112})),
-                Placement(transformation(extent={{-100,-16},{-88,-4}})),
-                Placement(transformation(extent={{116,82},{126,92}})),
-                Placement(transformation(extent={{120,-86},{128,-78}})),
-                              Placement(transformation(extent={{152,-2},{160,6}})),
-                Placement(transformation(extent={{-64,-152},{-44,-132}})),
-                Placement(transformation(extent={{-158,-156},{-138,-136}})),
-                Placement(transformation(extent={{-252,-148},{-232,-128}})),
-                              Placement(
-        transformation(
-        extent={{-10,-10},{10,10}},
-        rotation=90,
-        origin={-310,-106})), Placement(
-        transformation(
-        extent={{-10,-10},{10,10}},
-        rotation=180,
-        origin={-250,144})),  Placement(
-        transformation(
-        extent={{-10,-10},{10,10}},
-        rotation=180,
-        origin={-4,118})),    Placement(
-        transformation(
-        extent={{-10,-10},{10,10}},
-        rotation=180,
-        origin={320,142})),   Placement(
-        transformation(
-        extent={{-10,-10},{10,10}},
-        rotation=180,
-        origin={342,-12})),   Placement(
-        transformation(
-        extent={{-10,-10},{10,10}},
-        rotation=90,
-        origin={276,26})),    Placement(
-        transformation(
-        extent={{-10,-10},{10,10}},
-        rotation=90,
-        origin={238,-30})),  Placement(
-        transformation(
-        extent={{-10,-10},{10,10}},
-        rotation=90,
-        origin={294,-128})), Placement(transformation(
-        extent={{-8,-8},{8,8}},
-        rotation=180,
-        origin={140,-148})),
-    Diagram(coordinateSystem(extent={{-360,-180},{400,180}},
+  annotation(Diagram(coordinateSystem(extent={{-360,-180},{400,180}},
           preserveAspectRatio=false), graphics={Text(
           extent={{132,-90},{132,-80}},
           lineColor={0,0,0},
@@ -1691,7 +1643,6 @@ equation
           lineColor={0,0,0},
           textStyle={TextStyle.Bold},
           textString="B33")}),
-
     experiment(
       StopTime=10,
       Interval=0.001,
