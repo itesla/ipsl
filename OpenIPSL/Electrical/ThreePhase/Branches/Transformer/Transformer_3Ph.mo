@@ -1,5 +1,5 @@
 within OpenIPSL.Electrical.ThreePhase.Branches.Transformer;
-model Transformer_3Ph "Three Phase transformer modeled as a PI-equivalent device."
+model Transformer_3Ph "Three Phase transformer modeled as a PI-equivalent device"
   extends ThreePhaseComponent;
 
   import OpenIPSL.Electrical.ThreePhase.Branches.Transformer.TransfConnection.Yg_Yg;

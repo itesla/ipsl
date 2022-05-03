@@ -1,5 +1,5 @@
 within OpenIPSL.Tests.Machines.PSAT;
-model InductiveMotorI_SIMBOpenline_Test "Simple system with line opening to test functionality of order 1 inductive motor from PSAT."
+model InductiveMotorI_SIMBOpenline_Test "Simple system with line opening to test functionality of order 1 inductive motor from PSAT"
   extends Modelica.Icons.Example;
   OpenIPSL.Electrical.Machines.PSAT.MotorTypeI motorTypeI(
     Sup=0,

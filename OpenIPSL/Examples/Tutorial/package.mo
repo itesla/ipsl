@@ -1,5 +1,5 @@
 within OpenIPSL.Examples;
-package Tutorial "OpenIPSL tutorial for beginners."
+package Tutorial "OpenIPSL tutorial for beginners"
   extends Modelica.Icons.ExamplesPackage;
 
 annotation (

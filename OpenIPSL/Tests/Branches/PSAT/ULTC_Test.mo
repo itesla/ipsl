@@ -1,5 +1,5 @@
 within OpenIPSL.Tests.Branches.PSAT;
-model ULTC_Test "Simple model for testing a ULTC (under-load tap changing) transformer model."
+model ULTC_Test "Simple model for testing a ULTC (under-load tap changing) transformer model"
   extends Modelica.Icons.Example;
   OpenIPSL.Electrical.Branches.PwLine pwLine3(
     B=0.001/2,

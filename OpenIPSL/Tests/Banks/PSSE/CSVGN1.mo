@@ -1,5 +1,5 @@
 within OpenIPSL.Tests.Banks.PSSE;
-model CSVGN1 "SMIB system to test functionality of model CSVGN1."
+model CSVGN1 "SMIB system to test functionality of model CSVGN1"
  extends OpenIPSL.Tests.BaseClasses.SMIB;
  OpenIPSL.Electrical.Machines.PSSE.GENSAL gENSAL(
     Tpd0=5,

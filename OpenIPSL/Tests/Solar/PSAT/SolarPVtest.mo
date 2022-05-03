@@ -1,5 +1,5 @@
 within OpenIPSL.Tests.Solar.PSAT;
-model SolarPVtest "Simple system to test the functionality of PV model with controlled Active Power and Terminal Voltage (P and V)."
+model SolarPVtest "Simple system to test the functionality of PV model with controlled Active Power and Terminal Voltage (P and V)"
   extends Modelica.Icons.Example;
   OpenIPSL.Electrical.Branches.PwLine pwLine1(
     B=0.001/2,

@@ -1,5 +1,5 @@
 within OpenIPSL.Tests.Loads.PSAT;
-model LoadTestFreqDependent "Simple system to test functionality of frequency dependent load model."
+model LoadTestFreqDependent "Simple system to test functionality of frequency dependent load model"
   extends BaseClasses.LoadTestBase;
   extends Modelica.Icons.Example;
   OpenIPSL.Electrical.Loads.PSAT.FrequencyDependent frequencyDependent(

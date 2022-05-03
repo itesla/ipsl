@@ -1,5 +1,5 @@
 within OpenIPSL.Examples.Tutorial.Example_1.Generator;
-model Generator "Complete generation unit ready for simulation."
+model Generator "Complete generation unit ready for simulation"
   extends OpenIPSL.Interfaces.Generator;
   OpenIPSL.Electrical.Controls.PSAT.AVR.AVRtypeIII avr(
     vfmax=7,

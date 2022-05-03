@@ -1,5 +1,5 @@
 within OpenIPSL.Tests.Machines.PSSE;
-model GENSAE "SMIB system to test functionality of generator model with salient poles and exponential saturation on both axes."
+model GENSAE "SMIB system to test functionality of generator model with salient poles and exponential saturation on both axes"
   extends OpenIPSL.Tests.BaseClasses.SMIB;
   OpenIPSL.Electrical.Machines.PSSE.GENSAE gENSAE(
     Tpd0=5,

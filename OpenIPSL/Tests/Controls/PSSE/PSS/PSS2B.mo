@@ -1,5 +1,5 @@
 within OpenIPSL.Tests.Controls.PSSE.PSS;
-model PSS2B "SMIB system to test functionality of PSS2B model."
+model PSS2B "SMIB system to test functionality of PSS2B model"
   extends OpenIPSL.Tests.BaseClasses.SMIB;
   OpenIPSL.Electrical.Machines.PSSE.GENROE gENROE(
     Tpd0=5,

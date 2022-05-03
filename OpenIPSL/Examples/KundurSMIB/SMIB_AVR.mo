@@ -1,5 +1,5 @@
 within OpenIPSL.Examples.KundurSMIB;
-model SMIB_AVR "Single-Machine-Infinite-Bus system with generation unit composed of Machine and AVR."
+model SMIB_AVR "Single-Machine-Infinite-Bus system with generation unit composed of Machine and AVR"
   extends Modelica.Icons.Example;
   extends SMIB_Partial;
   Generation_Groups.Generator_AVR G1(

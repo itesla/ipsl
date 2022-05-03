@@ -1,6 +1,6 @@
 within OpenIPSL.Examples.DAEMode.N44_Original_Systems;
 model Nordic44_Original_Case_Bus_Fault
-  "Bus 3100 bus fault test case, several state events triggered."
+  "Bus 3100 bus fault test case, several state events triggered"
   extends OpenIPSL.Examples.N44.Original.Nordic44_Original_Case(bus_3100(np=3));
   OpenIPSL.Electrical.Events.PwFault pwFault(
     R=0,

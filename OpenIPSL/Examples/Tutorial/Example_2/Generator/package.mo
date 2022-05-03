@@ -1,5 +1,5 @@
 within OpenIPSL.Examples.Tutorial.Example_2;
-package Generator "Set of steps illustrating how to assemble a generation unit with stabilizer using OpenIPSL."
+package Generator "Set of steps illustrating how to assemble a generation unit with stabilizer using OpenIPSL"
  extends Modelica.Icons.Package;
 
 annotation (Documentation(info="<html>

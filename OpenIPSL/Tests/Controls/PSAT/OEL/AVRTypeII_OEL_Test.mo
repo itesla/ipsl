@@ -1,5 +1,5 @@
 within OpenIPSL.Tests.Controls.PSAT.OEL;
-model AVRTypeII_OEL_Test "Simple system to test functionality of over excitation limiter model."
+model AVRTypeII_OEL_Test "Simple system to test functionality of over excitation limiter model"
   extends OpenIPSL.Tests.BaseClasses.MachineTestBase(
     pwLoadPQ2(
       t_start_1=1,

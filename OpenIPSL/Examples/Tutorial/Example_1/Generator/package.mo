@@ -1,5 +1,5 @@
 within OpenIPSL.Examples.Tutorial.Example_1;
-package Generator "Set of steps illustrating how to assemble a generation unit using OpenIPSL."
+package Generator "Set of steps illustrating how to assemble a generation unit using OpenIPSL"
  extends Modelica.Icons.Package;
 
 annotation (Documentation(info="<html>

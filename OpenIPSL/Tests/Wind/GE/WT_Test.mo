@@ -1,5 +1,5 @@
 within OpenIPSL.Tests.Wind.GE;
-model WT_Test "Simple system to test the functionality of type-3 wind turbine model from GE."
+model WT_Test "Simple system to test the functionality of type-3 wind turbine model from GE"
   extends Modelica.Icons.Example;
   OpenIPSL.Electrical.Wind.GE.Type_3.GE_WT GE_WT_init annotation (Placement(transformation(origin={80,0}, extent={{-10,-10},{10,10}})));
   OpenIPSL.Electrical.Buses.InfiniteBus infBus(angle_0=-0.000216626610049175, v_0=1.05999999985841) annotation (Placement(transformation(origin={-80.5798,-0.0297}, extent={{-10.0,-10.0},{10.0,10.0}})));

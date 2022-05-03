@@ -1,5 +1,5 @@
 within OpenIPSL.Tests.ThreePhase;
-model IEEE4_MonoTri "Initial conditions (power-flow) calculation of IEEE4 bus system, in hybrid positive-sequence/three-phase formulation."
+model IEEE4_MonoTri "Initial conditions (power-flow) calculation of IEEE4 bus system, in hybrid positive-sequence/three-phase formulation"
   extends Modelica.Icons.Example;
   inner OpenIPSL.Electrical.SystemBase SysData(fn=60) annotation (Placement(
         transformation(

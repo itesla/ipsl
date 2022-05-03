@@ -1,6 +1,6 @@
 within OpenIPSL.Examples;
 package DAEMode "Test cases used to verify the efficiency of the Dymola DAE mode
-  implementation for hybrid models."
+  implementation for hybrid models"
   extends Modelica.Icons.ExamplesPackage;
 
   annotation (Documentation(info="<html>

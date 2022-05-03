@@ -1,5 +1,5 @@
 within OpenIPSL.Tests.Loads.PSAT;
-model LoadTestZipJimma "Simple system to test functionality of Jimma's (PSAT) ZIP load model."
+model LoadTestZipJimma "Simple system to test functionality of Jimma's (PSAT) ZIP load model"
   extends BaseClasses.LoadTestBase;
   extends Modelica.Icons.Example;
   OpenIPSL.Electrical.Loads.PSAT.ZIP_Jimma zIPJimma(

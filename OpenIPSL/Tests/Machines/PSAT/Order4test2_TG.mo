@@ -1,5 +1,5 @@
 within OpenIPSL.Tests.Machines.PSAT;
-model Order4test2_TG "Simple system with line opening to test functionality of order 4 machine connected to turbine governor type II from PSAT."
+model Order4test2_TG "Simple system with line opening to test functionality of order 4 machine connected to turbine governor type II from PSAT"
   extends OpenIPSL.Tests.BaseClasses.MachineTestBase;
   extends Modelica.Icons.Example;
   OpenIPSL.Electrical.Controls.PSAT.TG.TGTypeII TGTypeII1 annotation (Placement(

@@ -1,5 +1,5 @@
 within OpenIPSL.Examples.KundurSMIB;
-model SMIB "Single-Machine-Infinite-Bus system with generation unit composed of Machine."
+model SMIB "Single-Machine-Infinite-Bus system with generation unit composed of Machine"
   extends Modelica.Icons.Example;
   extends SMIB_Partial;
   Generation_Groups.Generator G1(

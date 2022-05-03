@@ -1,5 +1,5 @@
 within OpenIPSL.Tests.Machines.PSAT;
-model Order3test2 "Simple system with line opening to test functionality of order 3 machine from PSAT."
+model Order3test2 "Simple system with line opening to test functionality of order 3 machine from PSAT"
   extends OpenIPSL.Tests.BaseClasses.MachineTestBase;
   extends Modelica.Icons.Example;
   OpenIPSL.Electrical.Machines.PSAT.Order3 order31(

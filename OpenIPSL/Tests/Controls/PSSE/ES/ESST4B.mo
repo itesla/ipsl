@@ -1,5 +1,5 @@
 within OpenIPSL.Tests.Controls.PSSE.ES;
-model ESST4B "SMIB system to test functionality of ESST4B model."
+model ESST4B "SMIB system to test functionality of ESST4B model"
   extends OpenIPSL.Tests.BaseClasses.SMIB;
   OpenIPSL.Electrical.Machines.PSSE.GENROU gENROU(
     Xppd=0.2,

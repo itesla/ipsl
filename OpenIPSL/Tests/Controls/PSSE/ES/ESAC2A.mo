@@ -1,5 +1,5 @@
 within OpenIPSL.Tests.Controls.PSSE.ES;
-model ESAC2A "SMIB system to test functionality of ESAC2A model."
+model ESAC2A "SMIB system to test functionality of ESAC2A model"
   extends OpenIPSL.Tests.BaseClasses.SMIB;
   OpenIPSL.Electrical.Machines.PSSE.GENROU gENROU(
     Xppd=0.2,

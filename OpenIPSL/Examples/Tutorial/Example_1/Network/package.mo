@@ -1,5 +1,5 @@
 within OpenIPSL.Examples.Tutorial.Example_1;
-package Network "Set of steps illustrating how to assemble a network model using the OpenIPSL."
+package Network "Set of steps illustrating how to assemble a network model using the OpenIPSL"
  extends Modelica.Icons.Package;
 
 annotation (Documentation(info="<html>

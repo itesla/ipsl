@@ -1,5 +1,5 @@
 within OpenIPSL.Tests.Controls.PSSE.ES;
-model IEEET1 "SMIB system to test functionality of IEEET1 model."
+model IEEET1 "SMIB system to test functionality of IEEET1 model"
   import iPSL = OpenIPSL;
   extends iPSL.Tests.BaseClasses.SMIB;
   iPSL.Electrical.Machines.PSSE.GENROE gENROE(

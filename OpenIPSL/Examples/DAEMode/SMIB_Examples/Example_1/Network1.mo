@@ -1,5 +1,5 @@
 within OpenIPSL.Examples.DAEMode.SMIB_Examples.Example_1;
-model Network1 "Single machine infinite bus (SMIB) system simulated with fault in bus B2 at t=0.5s."
+model Network1 "Single machine infinite bus (SMIB) system simulated with fault in bus B2 at t=0.5s"
   extends Modelica.Icons.Example;
     SMIB_Examples.Example_1.Generator.Generator G1(P_0 = 1997999000, Q_0 = 967920000, v_0 = 1, V_b = 400000, angle_0 = 0.49460013007, displayPF = true)  annotation (
         Placement(transformation(origin = {-88, 0}, extent = {{-10, -10}, {10, 10}})));

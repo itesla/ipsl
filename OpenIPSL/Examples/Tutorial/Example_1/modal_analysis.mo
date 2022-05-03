@@ -1,5 +1,5 @@
 within OpenIPSL.Examples.Tutorial.Example_1;
-function modal_analysis "Function for executing the eigenanalysis of the test system assembled in Example 1."
+function modal_analysis "Function for executing the eigenanalysis of the test system assembled in Example 1"
   extends Modelica.Icons.Function;
   import Modelica_LinearSystems2.StateSpace;
   import Modelica_LinearSystems2.TransferFunction;

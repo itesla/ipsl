@@ -1,5 +1,5 @@
 within OpenIPSL.Tests.Loads.PSAT;
-model LoadTestMixed "Simple system to test functionality of mixed-type load model."
+model LoadTestMixed "Simple system to test functionality of mixed-type load model"
   extends BaseClasses.LoadTestBase;
   extends Modelica.Icons.Example;
   OpenIPSL.Electrical.Loads.PSAT.Mixed mixed(

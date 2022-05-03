@@ -1,5 +1,5 @@
 within OpenIPSL.Tests.Controls.PSSE.ES;
-model IEEEX1 "SMIB system to test functionality of IEEEX1 model."
+model IEEEX1 "SMIB system to test functionality of IEEEX1 model"
   extends OpenIPSL.Tests.BaseClasses.SMIB;
   OpenIPSL.Electrical.Machines.PSSE.GENROE gENROE(
     Tpd0=5,

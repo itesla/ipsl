@@ -1,5 +1,5 @@
 within OpenIPSL.Examples.Tutorial.Example_2;
-function root_locus "Function for executing the root locus analysis for tuning the AVR gain in Example 1."
+function root_locus "Function for executing the root locus analysis for tuning the AVR gain in Example 1"
   extends Modelica.Icons.Function;
   import Modelica_LinearSystems2.StateSpace;
   import Modelica_LinearSystems2.TransferFunction;

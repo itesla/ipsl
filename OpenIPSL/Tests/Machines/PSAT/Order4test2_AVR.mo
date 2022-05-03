@@ -1,5 +1,5 @@
 within OpenIPSL.Tests.Machines.PSAT;
-model Order4test2_AVR "Simple system with line opening to test functionality of order 4 machine connected to an AVR type III from PSAT."
+model Order4test2_AVR "Simple system with line opening to test functionality of order 4 machine connected to an AVR type III from PSAT"
   extends OpenIPSL.Tests.BaseClasses.MachineTestBase;
   extends Modelica.Icons.Example;
   OpenIPSL.Electrical.Controls.PSAT.AVR.AVRtypeIII AVRtypeIII1 annotation (

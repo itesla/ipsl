@@ -1,5 +1,5 @@
 within OpenIPSL.Tests.Controls.PSAT.AVR;
-model AVRTypeII_Test "Simple system to test functionality of exciter (automatic voltage regulator - AVR) type II model."
+model AVRTypeII_Test "Simple system to test functionality of exciter (automatic voltage regulator - AVR) type II model"
   extends Modelica.Icons.Example;
   OpenIPSL.Electrical.Machines.PSAT.Order6 order6Type2_Inputs_Outputs(
     angle_0=0,

@@ -1,5 +1,5 @@
 within OpenIPSL.Tests.Controls.PSSE.ES;
-model ST5B "SMIB system to test functionality of ST5B model."
+model ST5B "SMIB system to test functionality of ST5B model"
   extends OpenIPSL.Tests.BaseClasses.SMIB;
   OpenIPSL.Electrical.Controls.PSSE.ES.ST5B sT5B(
     T_R=0,

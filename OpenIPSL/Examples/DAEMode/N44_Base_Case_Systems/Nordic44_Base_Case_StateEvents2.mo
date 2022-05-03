@@ -1,6 +1,6 @@
 within OpenIPSL.Examples.DAEMode.N44_Base_Case_Systems;
 model Nordic44_Base_Case_StateEvents2
-    "Modified version of the original Nordic 44 model, used to simulate with DAE mode."
+    "Modified version of the original Nordic 44 model, used to simulate with DAE mode"
   extends Modelica.Icons.Example;
     OpenIPSL.Electrical.Buses.BusExt bus_7020(
       nn=1,

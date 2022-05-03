@@ -1,5 +1,5 @@
 within OpenIPSL.Tests.Controls.PSSE.TG;
-model GGOV1 "SMIB system to test functionality of GGOV1 model."
+model GGOV1 "SMIB system to test functionality of GGOV1 model"
   extends OpenIPSL.Tests.BaseClasses.SMIB;
   OpenIPSL.Electrical.Machines.PSSE.GENROU gENROU(
     Xppd=0.2,

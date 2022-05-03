@@ -1,5 +1,5 @@
 within OpenIPSL.Tests.Machines.PSSE;
-model GENCLS "SMIB system to test functionality of classical generator model, and its functionality as infinite bus."
+model GENCLS "SMIB system to test functionality of classical generator model, and its functionality as infinite bus"
   extends OpenIPSL.Tests.BaseClasses.SMIB(GEN1(v_0=gENCLS1.v_0, angle_0=gENCLS1.angle_0));
   OpenIPSL.Electrical.Machines.PSSE.GENCLS gENCLS1(
    H = 6.0,

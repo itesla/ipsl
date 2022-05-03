@@ -1,5 +1,5 @@
 within OpenIPSL.Tests.Machines.PSSE;
-model GENSAL "SMIB system to test functionality of generator model with salient poles and quadratic saturation on d-axis."
+model GENSAL "SMIB system to test functionality of generator model with salient poles and quadratic saturation on d-axis"
   extends OpenIPSL.Tests.BaseClasses.SMIB;
   OpenIPSL.Electrical.Machines.PSSE.GENSAL gENSAL(
     Tpd0=5,

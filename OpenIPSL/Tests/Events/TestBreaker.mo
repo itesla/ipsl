@@ -1,5 +1,5 @@
 within OpenIPSL.Tests.Events;
-model TestBreaker "Example model to test the breaker model."
+model TestBreaker "Example model to test the breaker model"
   extends Modelica.Icons.Example;
 
   inner Electrical.SystemBase SysData annotation (Placement(transformation(extent={{-100,80},{-60,100}})));

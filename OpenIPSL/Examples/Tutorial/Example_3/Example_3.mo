@@ -1,5 +1,5 @@
 within OpenIPSL.Examples.Tutorial.Example_3;
-model Example_3 "Fully assembled 9-bus 3-generator test system."
+model Example_3 "Fully assembled 9-bus 3-generator test system"
   extends Modelica.Icons.Example;
   OpenIPSL.Electrical.Branches.PSAT.TwoWindingTransformer twoWindingTransformer(
     V_b=16500,

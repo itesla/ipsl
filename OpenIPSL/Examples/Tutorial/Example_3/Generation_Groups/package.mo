@@ -1,5 +1,5 @@
 within OpenIPSL.Examples.Tutorial.Example_3;
-package Generation_Groups "Package with a set of generation units that is used in Example 3 system."
+package Generation_Groups "Package with a set of generation units that is used in Example 3 system"
  extends Modelica.Icons.Package;
 
 annotation (Documentation(info="<html>

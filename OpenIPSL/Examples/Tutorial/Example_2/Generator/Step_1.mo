@@ -1,5 +1,5 @@
 within OpenIPSL.Examples.Tutorial.Example_2.Generator;
-partial model Step_1 "Machine model, AVR and PSS models are instantiated with proper parameters."
+partial model Step_1 "Machine model, AVR and PSS models are instantiated with proper parameters"
   extends OpenIPSL.Interfaces.Generator;
   OpenIPSL.Electrical.Controls.PSAT.AVR.AVRtypeIII avr(
     vfmax=7,

@@ -1,5 +1,5 @@
 within OpenIPSL.Examples.DAEMode.SMIB_Examples.Example_2;
-model Network "Single machine infinite bus (SMIB) system simulated with fault in bus B2 at t=0.5s and clearance time at t=0.57s."
+model Network "Single machine infinite bus (SMIB) system simulated with fault in bus B2 at t=0.5s and clearance time at t=0.57s"
   extends Modelica.Icons.Example;
     OpenIPSL.Electrical.Buses.Bus B1(displayPF = true) annotation (
         Placement(transformation(origin = {-60, 0}, extent = {{-10, -10}, {10, 10}})));

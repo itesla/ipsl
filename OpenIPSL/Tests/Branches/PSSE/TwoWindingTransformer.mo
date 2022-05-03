@@ -1,5 +1,5 @@
 within OpenIPSL.Tests.Branches.PSSE;
-model TwoWindingTransformer "Simple SMIB system for testing two-winding transformer functionality."
+model TwoWindingTransformer "Simple SMIB system for testing two-winding transformer functionality"
   extends BaseClasses.SMIB;
   extends Modelica.Icons.Example;
   OpenIPSL.Electrical.Machines.PSSE.GENSAL gENROE(

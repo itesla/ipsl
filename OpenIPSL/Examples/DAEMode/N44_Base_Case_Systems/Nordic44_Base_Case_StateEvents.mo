@@ -1,7 +1,7 @@
 within OpenIPSL.Examples.DAEMode.N44_Base_Case_Systems;
 model Nordic44_Base_Case_StateEvents
     "Modified version of the original Nordic 44 model, base class for Bus 5603
-    bus fault experiment."
+    bus fault experiment"
     extends Modelica.Icons.Example;
 
     OpenIPSL.Electrical.Buses.BusExt bus_7020(

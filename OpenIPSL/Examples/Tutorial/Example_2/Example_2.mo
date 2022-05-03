@@ -1,5 +1,5 @@
 within OpenIPSL.Examples.Tutorial.Example_2;
-model Example_2 "Fully assembled single-machine-infinite-bus (SMIB) example system with a Power System Stabilizer."
+model Example_2 "Fully assembled single-machine-infinite-bus (SMIB) example system with a Power System Stabilizer"
   extends Modelica.Icons.Example;
   OpenIPSL.Electrical.Buses.Bus B1(displayPF=false)
     annotation (Placement(transformation(extent={{-80,-10},{-60,10}})));

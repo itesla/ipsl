@@ -1,5 +1,5 @@
 within OpenIPSL.Electrical.ThreePhase.Branches.Lines;
-model Line_2Ph "Two-phase line modeled as a PI-equivalent device."
+model Line_2Ph "Two-phase line modeled as a PI-equivalent device"
   extends Branches.BaseClasses.baseLine;
 
   OpenIPSL.Interfaces.PwPin Ain

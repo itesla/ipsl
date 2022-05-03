@@ -1,5 +1,5 @@
 within OpenIPSL.Examples.Tutorial;
-package Example_1 "Assembling a power system model and simulating it."
+package Example_1 "Assembling a power system model and simulating it"
 extends Modelica.Icons.ExamplesPackage;
 
 annotation (Documentation(info="<html>

@@ -1,5 +1,5 @@
 within OpenIPSL.Tests.Branches.PSAT;
-model PhaseShiftingTransformer_Test "Simple model checking the phase shifting transformer."
+model PhaseShiftingTransformer_Test "Simple model checking the phase shifting transformer"
   extends Modelica.Icons.Example;
   OpenIPSL.Electrical.Loads.PSAT.PQ lOADPQ annotation (Placement(transformation(
         extent={{-10,-10},{10,10}},

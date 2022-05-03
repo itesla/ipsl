@@ -1,6 +1,6 @@
 within OpenIPSL.Examples.DAEMode.N44_Original_Systems;
 model Nordic44_Original_Case_Line_Opening
-    "Line opening test case, no state events triggered."
+    "Line opening test case, no state events triggered"
     extends OpenIPSL.Examples.N44.Original.Nordic44_Original_Case;
     annotation (
         experiment(

@@ -1,5 +1,5 @@
 within OpenIPSL.Examples.Tutorial;
-package Example_2 "Designing a controller and stabilizing the power system."
+package Example_2 "Designing a controller and stabilizing the power system"
 extends Modelica.Icons.ExamplesPackage;
 
 annotation (Documentation(info="<html>

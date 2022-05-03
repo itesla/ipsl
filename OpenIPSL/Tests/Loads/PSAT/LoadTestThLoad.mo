@@ -1,5 +1,5 @@
 within OpenIPSL.Tests.Loads.PSAT;
-model LoadTestThLoad "Simple system to test functionality of thermostatically controlled load model."
+model LoadTestThLoad "Simple system to test functionality of thermostatically controlled load model"
   extends OpenIPSL.Examples.BaseClasses.LoadTestBase;
   extends Modelica.Icons.Example;
   Modelica.Blocks.Sources.Constant Tref(k=70)

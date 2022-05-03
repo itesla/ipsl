@@ -1,5 +1,5 @@
 within OpenIPSL.Tests.Controls.PSSE.TG;
-model HYGOV "SMIB system to test functionality of HYGOV model."
+model HYGOV "SMIB system to test functionality of HYGOV model"
   extends OpenIPSL.Tests.BaseClasses.SMIB;
   OpenIPSL.Electrical.Machines.PSSE.GENSAL gENSAL(
     Xppd=0.2,

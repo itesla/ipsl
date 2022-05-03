@@ -1,5 +1,5 @@
 within OpenIPSL.Tests.Branches.PSAT;
-model ThreeWindingTransformer_Test "Simple model for testing three-winding transformer model."
+model ThreeWindingTransformer_Test "Simple model for testing three-winding transformer model"
   extends Modelica.Icons.Example;
   OpenIPSL.Electrical.Branches.PwLine pwLine3(
     B=0.001/2,

@@ -1,5 +1,5 @@
 within OpenIPSL.Tests.Machines.PSAT;
-model Order2test2_perturbation "Simple system with perturbation to test functionality of order 2 machine from PSAT."
+model Order2test2_perturbation "Simple system with perturbation to test functionality of order 2 machine from PSAT"
   extends OpenIPSL.Tests.BaseClasses.MachineTestBase;
   extends Modelica.Icons.Example;
   Modelica.Blocks.Math.Add3 add31 annotation (Placement(transformation(

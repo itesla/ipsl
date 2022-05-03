@@ -1,5 +1,5 @@
 within OpenIPSL.Examples.Tutorial.Example_2.Generator;
-partial model Step_2 "Adequate connections are performed for connection of stabilizer."
+partial model Step_2 "Adequate connections are performed for connection of stabilizer"
   extends OpenIPSL.Interfaces.Generator;
   OpenIPSL.Electrical.Controls.PSAT.AVR.AVRtypeIII avr(
     vfmax=7,

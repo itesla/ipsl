@@ -1,5 +1,5 @@
 within OpenIPSL.Examples.Tutorial.Example_1.Network;
-partial model Step_1 "Creating system model, adding buses, generator and system data."
+partial model Step_1 "Creating system model, adding buses, generator and system data"
   OpenIPSL.Electrical.Buses.Bus B1(displayPF=false)
     annotation (Placement(transformation(extent={{-80,-10},{-60,10}})));
   OpenIPSL.Electrical.Buses.Bus B2(displayPF=false)

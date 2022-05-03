@@ -1,5 +1,5 @@
 within OpenIPSL.Tests.FACTS;
-model TCSC_Test "Simple model to test the functionality of TCSC."
+model TCSC_Test "Simple model to test the functionality of TCSC"
   extends Modelica.Icons.Example;
   Electrical.Loads.PSAT.PQvar lOADPQ(
     P_0=50000000,

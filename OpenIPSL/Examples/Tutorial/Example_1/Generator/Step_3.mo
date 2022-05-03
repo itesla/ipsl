@@ -1,5 +1,5 @@
 within OpenIPSL.Examples.Tutorial.Example_1.Generator;
-model Step_3 "Connecting models and assembling generation unit."
+model Step_3 "Connecting models and assembling generation unit"
   extends OpenIPSL.Interfaces.Generator;
   OpenIPSL.Electrical.Machines.PSAT.Order6 machine(
     Vn=400000,

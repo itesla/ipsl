@@ -1,5 +1,5 @@
 within OpenIPSL;
-package Examples "Package with set of application examples."
+package Examples "Package with set of application examples"
 extends Modelica.Icons.ExamplesPackage;
 
 annotation(Documentation(info="<html>

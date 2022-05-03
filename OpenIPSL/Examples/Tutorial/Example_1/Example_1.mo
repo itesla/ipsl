@@ -1,5 +1,5 @@
 within OpenIPSL.Examples.Tutorial.Example_1;
-model Example_1 "Fully assembled single-machine-infinite-bus (SMIB) example system."
+model Example_1 "Fully assembled single-machine-infinite-bus (SMIB) example system"
   extends Modelica.Icons.Example;
   OpenIPSL.Electrical.Buses.Bus B1(angle_0=0.494677176989154, displayPF=
         false)

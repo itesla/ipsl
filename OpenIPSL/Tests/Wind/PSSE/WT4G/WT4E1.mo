@@ -1,5 +1,5 @@
 within OpenIPSL.Tests.Wind.PSSE.WT4G;
-model WT4E1 "SMIB system to test the functionality of type-4 wind generator model (WT4G1) with electrical controller (WT4E1)."
+model WT4E1 "SMIB system to test the functionality of type-4 wind generator model (WT4G1) with electrical controller (WT4E1)"
   extends Modelica.Icons.Example;
   OpenIPSL.Electrical.Branches.PwLine pwLine(
     R=2.50000E-2,

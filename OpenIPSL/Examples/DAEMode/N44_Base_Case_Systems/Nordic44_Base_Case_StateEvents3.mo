@@ -2,7 +2,7 @@ within OpenIPSL.Examples.DAEMode.N44_Base_Case_Systems;
 model Nordic44_Base_Case_StateEvents3
     "Bus 5603 bus fault experiments. The start values were given by simulating
   Nordic44_Base_Case_StateEvents2 from t = 0s to t = 60s. These start values
-  have been stored in this model."
+  have been stored in this model"
 
     extends OpenIPSL.Examples.DAEMode.N44_Base_Case_Systems.Nordic44_Base_Case_StateEvents(
       G1_bus3115(hYGOV(Velocity_Limiter(u(start=0.0005312208465522299)))),

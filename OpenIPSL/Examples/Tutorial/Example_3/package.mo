@@ -1,5 +1,5 @@
 within OpenIPSL.Examples.Tutorial;
-package Example_3 "Adding complexity and simulating a larger system."
+package Example_3 "Adding complexity and simulating a larger system"
 extends Modelica.Icons.ExamplesPackage;
 
 annotation (Documentation(info="<html>
