@@ -240,7 +240,5 @@ Prabha Kundur, \"Power System Stability and Control\", Example 12.6, page 813")}
     experiment(
       StopTime=10,
       Interval=0.0001,
-      Tolerance=1e-006,
-      __Dymola_fixedstepsize=0.0001,
-      __Dymola_Algorithm="Rkfix2"));
+      Tolerance=1e-006));
 end Two_Areas_PSAT;

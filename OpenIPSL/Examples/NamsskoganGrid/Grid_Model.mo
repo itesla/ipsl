@@ -1646,9 +1646,7 @@ equation
     experiment(
       StopTime=10,
       Interval=0.001,
-      Tolerance=1e-006,
-      __Dymola_fixedstepsize=0.001,
-      __Dymola_Algorithm="Rkfix2"),
+      Tolerance=1e-006),
 Documentation(info="<html>
 <p>This example is composed by the 33-bus 12-machine system representing a distribution-level subsystem of Norway.</p>
 <p>The system undergoes a three-phase fault on Bus 26 at 1s, lasting for 20ms. Simulate the system for 10 seconds.</p>

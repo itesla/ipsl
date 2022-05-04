@@ -2,7 +2,10 @@ within OpenIPSL.Examples.PSATSystems.TwoAreaOld;
 model FourthOrder_AVRI "5-bus system with 4th-order machine and AVR Type I"
   extends Modelica.Icons.Example;
   extends OpenIPSL.Examples.PSATSystems.TwoAreaOld.BaseClasses.BaseOrder4;
-  OpenIPSL.Electrical.Controls.PSAT.AVR.AVRTypeI aVRTypeIchange1_1(vrmax=7.57)
+  OpenIPSL.Electrical.Controls.PSAT.AVR.AVRTypeI aVRTypeIchange1_1(vrmax=7.57,
+    Ae=0,
+    Be=0,
+    v0=1.05)
     annotation (Placement(transformation(extent={{-132,4},{-120,18}})));
 equation
   connect(aVRTypeIchange1_1.vf, order4.vf) annotation (Line(points={{-118.8,11},
@@ -18,11 +21,9 @@ equation
     Diagram(coordinateSystem(extent={{-160,-80},{160,80}}, preserveAspectRatio=
             false)),
     experiment(
-      StopTime=20,
-      __Dymola_fixedstepsize=0.0001,
-      __Dymola_Algorithm="Rkfix2"),
+      StopTime=20),
 Documentation(info="<html>
-<p>This system tests the fourth order machine with a type 1 AVR, from PSAT. Simulate the system for 20 seconds using the <code>Rkfix2</code> integrator.</p>
+<p>This system tests the fourth order machine with a type 1 AVR, from PSAT. Simulate the system for 20 seconds.</p>
 <p>Variables of interest are related to the (non-)coherency observed between the synchronous machines:</p>
 <ul>
 <li><code>order2.w</code></li>

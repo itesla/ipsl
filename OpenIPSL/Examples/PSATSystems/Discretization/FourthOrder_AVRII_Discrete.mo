@@ -65,9 +65,7 @@ equation
     experiment(
       StopTime=20,
       Interval=0.01,
-      Tolerance=0.001,
-      __Dymola_fixedstepsize=0.01,
-      __Dymola_Algorithm="Euler"),
+      Tolerance=0.001),
 Documentation(info="<html>
 <p>Simulate for 20 seconds. Variables of interest are:</p>
 <ul>

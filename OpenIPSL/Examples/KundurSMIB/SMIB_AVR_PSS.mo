@@ -6,7 +6,8 @@ model SMIB_AVR_PSS "Single-Machine-Infinite-Bus system with generation unit comp
     v_0=1,
     P_0=0.899999999997135*S_b,
     Q_0=0.436002238696658*S_b,
-    angle_0=0.494677176989155)
+    angle_0=0.494677176989155,
+    machine(delta(fixed=true)))
     annotation (Placement(transformation(extent={{-82,-10},{-62,10}})));
 protected
   parameter Real S_b=SysData.S_b;
@@ -26,9 +27,7 @@ equation
     experiment(
       StopTime=10,
       Interval=0.0001,
-      Tolerance=1e-006,
-      __Dymola_fixedstepsize=0.0001,
-      __Dymola_Algorithm="Rkfix2"),
+      Tolerance=1e-006),
 Documentation(info="<html>
 <p>This example system represents an SMIB system with generation unit composed of a machine, an AVR and a PSS. The system should be simulated during 10 seconds.</p>
 <p>Variables of interest are:</p>

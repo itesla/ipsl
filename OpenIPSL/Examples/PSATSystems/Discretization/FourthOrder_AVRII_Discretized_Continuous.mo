@@ -60,9 +60,7 @@ equation
           preserveAspectRatio=false)),
     experiment(
       StopTime=20,
-      Interval=0.01,
-      __Dymola_fixedstepsize=0.01,
-      __Dymola_Algorithm="Euler"),
+      Interval=0.01),
 Documentation(info="<html>
 <p>Simulate for 20 seconds. Variables of interest are:</p>
 <ul>

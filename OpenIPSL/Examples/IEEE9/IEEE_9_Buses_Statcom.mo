@@ -151,7 +151,8 @@ model IEEE_9_Buses_Statcom "IEEE (WSCC) 9-bus 3-machine test system with STATCOM
     angle_0=0.161966652912444,
     P_0=163000000,
     Q_0=6653656.0198189,
-    refdisturb_1=false)
+    refdisturb_1=false,
+    gen(delta(fixed = true)))
     annotation (Placement(transformation(extent={{-160,80},{-140,100}})));
 
   Generation_Groups.Gen2 gen2(
@@ -164,7 +165,8 @@ model IEEE_9_Buses_Statcom "IEEE (WSCC) 9-bus 3-machine test system with STATCOM
     vf0=1.402994304406186,
     P_0=85000000,
     Q_0=-10859708.8920594,
-    angle_0=0.08141611894)
+    angle_0=0.08141611894,
+    gen(delta(fixed = true)))
     annotation (Placement(transformation(extent={{160,80},{140,100}})));
   Generation_Groups.Gen3 gen3(
     v_0=1.040000000000000,
@@ -176,7 +178,8 @@ model IEEE_9_Buses_Statcom "IEEE (WSCC) 9-bus 3-machine test system with STATCOM
     vref0=1.095242742681042,
     vf0=1.082148046273888,
     P_0=71641021.4993680,
-    Q_0=27045927.9594234) annotation (Placement(transformation(
+    Q_0=27045927.9594234,
+    gen(delta(fixed = true))) annotation (Placement(transformation(
         extent={{-10,-10},{10,10}},
         rotation=90,
         origin={0,-106})));
@@ -283,7 +286,5 @@ equation
     experiment(
       StopTime=20,
       Interval=0.001,
-      Tolerance=1e-006,
-      __Dymola_fixedstepsize=0.001,
-      __Dymola_Algorithm="Rkfix2"));
+      Tolerance=1e-006));
 end IEEE_9_Buses_Statcom;

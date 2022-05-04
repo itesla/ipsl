@@ -284,7 +284,5 @@ equation
     experiment(
       StopTime=20,
       Interval=0.001,
-      Tolerance=1e-006,
-      __Dymola_fixedstepsize=0.001,
-      __Dymola_Algorithm="Rkfix2"));
+      Tolerance=1e-006));
 end IEEE_9_Buses;

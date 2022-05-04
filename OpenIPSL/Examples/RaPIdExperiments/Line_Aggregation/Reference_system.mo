@@ -151,8 +151,5 @@ These disturbances allow the user to observe dominant dynamics that need to be p
 </html>"),
     experiment(
       StopTime=20,
-      __Dymola_NumberOfIntervals=5000,
-      Tolerance=1e-06,
-      __Dymola_fixedstepsize=0.01,
-      __Dymola_Algorithm="Dassl"));
+      Tolerance=1e-06));
 end Reference_system;

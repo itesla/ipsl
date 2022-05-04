@@ -7,7 +7,7 @@ record PSSE_data_Original_case "PSSE complete data record"
       choicesAllMatching);
   Voltages_OC voltages;
   /* PSSE powers from power flow solution */
-  replaceable record Powers_OC = PSSE_powers_Original_case constrainedby PSSE_powers_Original_case
-                              annotation (choicesAllMatching);
+  replaceable record Powers_OC = PSSE_powers_Original_case constrainedby
+    PSSE_powers_Original_case annotation (choicesAllMatching);
   Powers_OC powers;
 end PSSE_data_Original_case;

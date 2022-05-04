@@ -28,11 +28,9 @@ equation
     Diagram(coordinateSystem(extent={{-180,-100},{180,100}},
           preserveAspectRatio=false)),
     experiment(
-      StopTime=20,
-      __Dymola_fixedstepsize=0.001,
-      __Dymola_Algorithm="Rkfix2"),
+      StopTime=20),
 Documentation(info="<html>
-<p>This system is tests the fifth order machine with a type 2 AVR, from PSAT. Simulate the system for 20 seconds using the <code>Rkfix2</code> integrator.</p>
+<p>This system is tests the fifth order machine with a type 2 AVR, from PSAT. Simulate the system for 20 seconds.</p>
 <p>Variables of interest are related to the (non-)coherency observed between the synchronous machines:</p>
 <ul>
 <li><code>order3.w</code></li>

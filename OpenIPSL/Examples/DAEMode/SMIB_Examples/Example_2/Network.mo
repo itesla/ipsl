@@ -60,5 +60,5 @@ equation
 </ul>
 <p>Note that this system is now stable due to the presence of the Stabilizer.
 Compare also with the results obtained from the simulating the systems in <strong>Example_1</strong> and <strong>Example_1Mode</strong>.</p>
-</html>"), experiment(StopTime=10, __Dymola_Algorithm="Dassl"));
+</html>"), experiment(StopTime=10));
 end Network;

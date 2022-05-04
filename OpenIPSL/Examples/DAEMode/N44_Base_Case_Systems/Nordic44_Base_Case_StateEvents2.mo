@@ -2377,7 +2377,8 @@ equation
         smooth=Smooth.None));
 
     connect(line_3200_3359.n, bus_3359.n[7]) annotation (Line(
-        points={{-148.5,99},{-129,99},{-129,92},{-125,92},{-125,90.7333},{-124,90.7333}},
+        points={{-148.5,99},{-129,99},{-129,92},{-125,92},{-125,90.7333},{-124,
+          90.7333}},
         color={0,0,255},
         smooth=Smooth.None));
     connect(line_3359_8500_1.n, bus_3359.n[8]) annotation (Line(
@@ -2386,7 +2387,8 @@ equation
         color={0,0,255},
         smooth=Smooth.None));
     connect(line_3359_8500_2.n, bus_3359.n[9]) annotation (Line(
-        points={{-156.5,133},{-127,133},{-127,108},{-125,108},{-125,98.4667},{-124,98.4667}},
+        points={{-156.5,133},{-127,133},{-127,108},{-125,108},{-125,98.4667},{
+          -124,98.4667}},
         color={0,0,255},
         smooth=Smooth.None));
     connect(Load_bus3360.p, bus_3360.p[1]) annotation (Line(
@@ -2946,11 +2948,13 @@ equation
         color={0,0,255},
         smooth=Smooth.None));
     connect(Load_bus3249.p, bus_3249.n[5]) annotation (Line(
-        points={{-188.5,-9.75},{-186,-9.75},{-186,-10},{-184,-10},{-184,-14},{-180,-14},{-180,-18.0286},{-176,-18.0286}},
+        points={{-188.5,-9.75},{-186,-9.75},{-186,-10},{-184,-10},{-184,-14},{
+          -180,-14},{-180,-18.0286},{-176,-18.0286}},
         color={0,0,255},
         smooth=Smooth.None));
     connect(line_3115_3249.p, bus_3249.n[6]) annotation (Line(
-        points={{-202.5,11},{-194,11},{-194,-4},{-182,-4},{-182,-13.0571},{-176,-13.0571}},
+        points={{-202.5,11},{-194,11},{-194,-4},{-182,-4},{-182,-13.0571},{-176,
+          -13.0571}},
         color={0,0,255},
         smooth=Smooth.None));
 
@@ -3074,8 +3078,8 @@ equation
             255}));
     connect(twoWindingTransformer.n, bus_3360.n[1]) annotation (Line(points={{-101.4,
           140},{-101.4,140},{-96,140}},  color={0,0,255}));
-    connect(twoWindingTransformer.p, bus_3359.p[9]) annotation (Line(points={{-114.6,140},{-118,140},{-118,98.4667},{-122,98.4667}},
-                                                            color={0,0,255}));
+    connect(twoWindingTransformer.p, bus_3359.p[9]) annotation (Line(points={{-114.6,
+          140},{-118,140},{-118,98.4667},{-122,98.4667}},   color={0,0,255}));
     connect(twoWindingTransformer1.n, bus_3249.p[6]) annotation (Line(points={{-146.6,
           -12},{-174,-12},{-174,-8.5}},   color={0,0,255}));
     connect(twoWindingTransformer1.p, bus_3701.n[1]) annotation (Line(points={{-133.4,
@@ -3359,9 +3363,7 @@ equation
 5402")}),     experiment(
       StopTime=5,
       Interval=0.001,
-      Tolerance=5e-05,
-      __Dymola_fixedstepsize=0.01,
-      __Dymola_Algorithm="Dassl"),
+      Tolerance=5e-05),
         __Dymola_experimentFlags(
         Advanced(Define(DAEsolver=true))),
       Documentation(info="<html>

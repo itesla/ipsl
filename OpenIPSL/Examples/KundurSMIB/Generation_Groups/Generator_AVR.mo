@@ -5,6 +5,7 @@ model Generator_AVR "Generation unit used in SMIB AVR system"
     Vn=400000,
     V_b=V_b,
     ra=0.003,
+    w(fixed=true),
     xd=1.81,
     xq=1.76,
     x1d=0.3,

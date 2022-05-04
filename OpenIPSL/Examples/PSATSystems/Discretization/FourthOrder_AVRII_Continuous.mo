@@ -29,9 +29,7 @@ equation
     Diagram(coordinateSystem(extent={{-160,-80},{160,80}}, preserveAspectRatio=
             false)),
     experiment(
-      StopTime=20,
-      __Dymola_fixedstepsize=0.01,
-      __Dymola_Algorithm="Euler"),
+      StopTime=20),
 Documentation(info="<html>
 <p>Simulate for 20 seconds. Variables of interest are:</p>
 <ul>

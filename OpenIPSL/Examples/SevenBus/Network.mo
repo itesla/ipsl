@@ -396,5 +396,6 @@ equation
 <li><code>FVALDI.v</code></li>
 <li><code>FVERGE.v</code></li>
 </ul>
-</html>"));
+</html>"),
+    experiment(StopTime=10));
 end Network;

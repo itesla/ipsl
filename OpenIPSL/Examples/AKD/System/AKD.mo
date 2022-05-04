@@ -444,5 +444,6 @@ equation
 <li><code>bus_58563.v</code></li>
 <li><code>bus_58563.angle</code></li>
 </ul>
-</html>"));
+</html>"),
+    experiment(StopTime=10));
 end AKD;
