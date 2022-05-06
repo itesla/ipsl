@@ -1,5 +1,5 @@
 within OpenIPSL.Electrical.ThreePhase.Branches.Lines;
-model Line_3Ph "Three-phase line modeled as a PI-equivalent device."
+model Line_3Ph "Three-phase line modeled as a PI-equivalent device"
   import OpenIPSL.Electrical.ThreePhase;
   extends ThreePhase.Branches.BaseClasses.baseLine;
 

@@ -43,8 +43,8 @@ public
         rotation=-90,
         origin={0,120})));
 protected
-  parameter Types.PerUnit In=Sn/Vn "Nominal current (device base)";
-  parameter Types.PerUnit I_b=S_b/V_b "Base current";
+  parameter Types.Current In=Sn/Vn "Nominal current (device base)";
+  parameter Types.Current I_b=S_b/V_b "Base current";
   parameter Types.PerUnit i_max=i_Max*In/I_b "Max current (system base)";
   parameter Types.PerUnit i_min=i_Min*In/I_b "Min current (system base)";
   parameter Types.PerUnit vr0=v_0*cos(angle_0) "Initial real voltage";
