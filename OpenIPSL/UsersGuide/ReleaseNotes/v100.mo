@@ -59,6 +59,6 @@ class v100 "Version 1.0.0 (2016-12-16)"
 <li><a href=\"https://github.com/fran-jo\">@fran-jo</a> made their first contribution in <a href=\"https://github.com/OpenIPSL/OpenIPSL/pull/62\">#62</a></li>
 </ul>
 <h4>Full Changelog</h4>
-<a href=\"https://github.com/OpenIPSL/OpenIPSL/compare/v0...v1.0.0\">v0...v1.0.0</a></span></p>
+<p><a href=\"https://github.com/OpenIPSL/OpenIPSL/compare/v0...v1.0.0\">v0...v1.0.0</a></p>
 </html>"));
 end v100;
