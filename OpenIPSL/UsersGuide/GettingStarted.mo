@@ -23,13 +23,12 @@ simulation tool, e.g., <a href=\"http://faraday1.ucd.ie/psat.html\">PSAT</a> and
 You can use these tools to create a power flow solution for your network.
 If you do not have access to these tools or do not want to use them, there are several power flow solvers
 available on Github.
-Future work in the <strong><code>OpenIPSL</code></strong> effort will include to generate Modelica records from open source power flow solvers
-such as <a href=\"https://github.com/SanPen/GridCal\">GridCal</a> or <a href=\"https://github.com/FRESNA/PyPSA\">PyPSA</a>.
+Examples on how to generate Modelica records from open source and proprietary power flow solvers, specifically <a href=\"https://github.com/SanPen/GridCal\">GridCal</a> and <a href=\"https://new.siemens.com/global/en/products/energy/energy-automation-and-smart-grid/pss-software/pss-e.html\">PSS&reg;E</a> can be found in <a href=\"https://ecp.ep.liu.se/index.php/modelica/article/view/190/150\">this paper</a> and in <a href=\"https://github.com/ALSETLab/SMIB_Tutorial\">this Github repository</a>.
 </p>
 <p>
 From these values, a Modelica tool solves the initialization problem for all algebraic and differential - state variables.
-All models in <strong><code>OpenIPSL</code></strong> are programmed in such way that by introducing a <a href=\"https://github.com/SmarTS-Lab/Raw2Record\">power flow solution</a> (from another tool), the <strong>initial guesses</strong> are computed as parameters within each model and are provided into the initial equations that are used to solve the overall initialization problem.
-See <a href=\"http://www.ep.liu.se/ecp/article.asp?issue=119&amp;article=010\">this paper</a> for a more detailed explanation.
+All models in <strong><code>OpenIPSL</code></strong> are programmed in such way that by introducing a <a href=\"https://github.com/ALSETLab/SMIB_Tutorial\">power flow solution</a> (from another tool), the <strong>initial guesses</strong> are computed as parameters within each model and are provided into the initial equations that are used as an initial guess to solve the overall initialization problem.
+See <a href=\"https://ecp.ep.liu.se/index.php/modelica/article/view/190/150\">this paper</a> for a more detailed explanation.
 </p>
 <p>
 As we have just mentioned, the full initialization of the components&apos; internal variables and states is achieved by a set of internal <strong>initial equations</strong> that are to be derived by the developer of the model.
@@ -39,7 +38,7 @@ The <strong>pfComponent</strong> also provide the support for the common <strong
 <h4>Running Time Domain Simulations</h4>
 <p>
 The time domain simulations are prepared to work with Modelica-compliant tools.
-Users of the <strong><code>OpenIPSL</code></strong> are free to choose their tool of choice. However, note that the development of <strong><code>OpenIPSL</code></strong> has been carried out using <a href=\"https://www.openmodelica.org/\">OpenModelica</a>  and <a href=\"http://www.3ds.com/products-services/catia/products/dymola\">Dymola</a>.
+Users of the <strong><code>OpenIPSL</code></strong> are free to choose their tool of choice. However, note that the development of <strong><code>OpenIPSL</code></strong> has been carried out using <a href=\"https://www.openmodelica.org/\">OpenModelica</a>, <a href=\"http://www.3ds.com/products-services/catia/products/dymola\">Dymola</a>, <a href=\"https://www.modelon.com/modelon-impact/\">Modelon Impact</a> and <a href=\"https://www.wolfram.com/system-modeler/\">Wolfram SystemModeler</a>.
 The library is, also, systematically checked using the two mentioned tools (see <a href=\"modelica://OpenIPSL.UsersGuide.LibraryTesting\">Library Testing</a>).
 Nonetheless, it might be possible to face issues when using other <a href=\"https://modelica.org/tools\">Modelica Tools</a> that we have not fully tested.
 </p>
