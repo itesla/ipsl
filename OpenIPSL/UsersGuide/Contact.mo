@@ -6,9 +6,9 @@ model Contact "Contact"
 <p>The OpenIPSL is developed by many people from a few different organizations. This page shows the active members and contributors.
 </p>
 
+<h5>The development of the library is organized by:</h5>
 <dl>
-<dt>The development of the library is organized by:</dt>
-<dd><a href=\"https://faculty.rpi.edu/node/36204\">Luigi Vanfretti</a></dd>
+<dt><a href=\"https://faculty.rpi.edu/node/36204\">Luigi Vanfretti</a></dt>
 <dd>Associate Professor</dd>
 <dd>Department of Electrical, Computer, and Systems Engineering</dd>
 <dd>Rensselaer Polytechnic Institute</dd>
@@ -17,17 +17,19 @@ model Contact "Contact"
 <dd>email: <a href=\"mailto:luigi.vanfretti@gmail.com\">luigi.vanfretti@gmail.com</a></dd>
 </dl>
 
+<h5>Version 2.0.0 is organized by:</h5>
 <dl>
-<dt>Version 2.0.0 is organized by:</dt>
-<dd><a href=\"https://github.com/dietmarw\">Dietmar Winkler</a></dd>
+<dt><a href=\"https://github.com/dietmarw\">Dietmar Winkler</a></dt>
 <dd>Assistant Professor</dd>
 <dd>Department of Electrical Engineering, Information Technology and Cybernetics</dd>
 <dd><a href=\"https://www.usn.no/english/\">University of South-Eastern Norway</a></dd>
 <dd>Campus Porsgrunn</dd>
 <dd>Norway</dd>
-<dd>email: <a href=\"mailto:Dietmar.Winkler@usn.no\">Dietmar.Winkler@usn.no</a></dd>
-<dt>and</dt>
-<dd><a href=\"https://github.com/marcelofcastro\">Marcelo de Castro</a></dd>
+<dd>email: <a href=\"mailto:dietmar.winkler@usn.no\">dietmar.winkler@usn.no</a></dd>
+</dl>
+<p>and</p>
+<dl>
+<dt><a href=\"https://github.com/marcelofcastro\">Marcelo de Castro</a></dt>
 <dd>PhD Student and Research Assistant</dd>
 <dd>Department of Electrical, Computer, and Systems Engineering</dd>
 <dd>Rensselaer Polytechnic Institute</dd>
@@ -36,6 +38,7 @@ model Contact "Contact"
 <dd>email: <a href=\"mailto:decasm3@rpi.edu\">decasm3@rpi.edu</a></dd>
 </dl>
 
+<h5>Other contributors:</h5>
 <p>In addition to that, the library currently has the following team of developers and active contributors:</p>
 
 <table border=\"1\" cellspacing=\"0\" cellpadding=\"2\">
