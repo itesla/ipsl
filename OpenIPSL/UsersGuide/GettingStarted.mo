@@ -28,7 +28,7 @@ Examples on how to generate Modelica records from open source and proprietary po
 <p>
 From these values, a Modelica tool solves the initialization problem for all algebraic and differential - state variables.
 All models in <strong><code>OpenIPSL</code></strong> are programmed in such way that by introducing a <a href=\"https://github.com/ALSETLab/SMIB_Tutorial\">power flow solution</a> (from another tool), the <strong>initial guesses</strong> are computed as parameters within each model and are provided into the initial equations that are used as an initial guess to solve the overall initialization problem.
-See <a href=\"https://ecp.ep.liu.se/index.php/modelica/article/view/190/150\">this paper</a> for a more detailed explanation.
+See <a href=\"https://doi.org/10.3384/ecp21181147\">this paper</a> for a more detailed explanation.
 </p>
 <p>
 As we have just mentioned, the full initialization of the components&apos; internal variables and states is achieved by a set of internal <strong>initial equations</strong> that are to be derived by the developer of the model.
