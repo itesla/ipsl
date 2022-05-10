@@ -15,6 +15,102 @@ model Publications "Publications"
 <p>Otherwise, you cite one of the following papers, according to a specific use of OpenIPSL:</p>
 
 <ul>
+
+<li>S. Boersma, X. Bombois, L. Vanfretti, J.C. Gonzalez-Torres, and A. Benchaib, 
+    &quot; Probing Signal Design for Enhanced Damping Estimation in Power Networks&quot;,
+    International Journal of Electrical Power & Energy Systems, vol. 129, July 2021, 106640, ISSN 0142-0615.
+    <a href=\"https://doi.org/10.1016/j.ijepes.2020.106640\">DOI:10.1016/j.ijepes.2020.106640</a></li>.
+
+<li> M. Podlaski, L. Vanfretti, T. Bogodorova, T. Rabuzin, and M. Baudette,
+    &quot; RaPId - A Parameter Estimation Toolbox for Modelica/FMI-Based Models Exploiting Global Optimization Methods&quot;,
+    SYSID 2021 - 19th IFAC Symposium on System Identification – Learning Models for Decision and Control, Padova, Italy, 14-16 July 2021,
+    IFAC-PapersOnLine, Volume 54, Issue 7, 2021, Pages 391-396, ISSN 2405-8963,
+    <a href=\"https://doi.org/10.1016/j.ifacol.2021.08.391\">DOI: 10.1016/j.ifacol.2021.08.391</a>.
+    Video of paper presentation <a href=\"https://youtu.be/S5QT6j5DOY4\">here</a>, and Github repository <a href=\"https://github.com/ALSETLab/RaPId\">here</a>.</li>
+
+<li> L. Vanfretti, G. Laera, M. de Castro Fernandes, C. Wang, C. Mishra and K. D. Jones,
+    &quot; Initial steps in deploying and calibrating power system models on a sychrophasor data cloud platform using FMI &quot;,
+    User Presentation at the FMI User Meeting at the Modelica Conference 2021, 14th International Modelica Conference, Linköping, September 20-24, 2021.
+    Presentation <a href=\"https://raw.githubusercontent.com/modelica/ModelicaConference2021/master/presentations/FMI-User-Meeting/01_FMI_Dominion_Model_Calibration_Slides.pdf\">here</a>, and 
+    authors' copy of abstract <a href=\"https://ecse.rpi.edu/~vanfrl/documents/publications/conference/2021/CNPR_2021_05_LV_Dominion_Cloud_MODELICA_2021_paper_45.pdf\">here</a>.</li>
+
+<li> B. Mukherjee, M. de Castro Fernandes, and L. Vanfretti,
+    &quot; A PMU-Based Control Scheme for Islanded Operation and Re-synchronization of DER &quot;,
+   International Journal of Electrical Power & Energy Systems, Volume 133, 2021, 107217, ISSN 0142-0615,
+    <a href=\"https://doi.org/10.1016/j.ijepes.2021.107217\">DOI: 10.1016/j.ijepes.2021.107217</a></li>
+
+<li> F.J. Gomez, L. Vanfretti, M. Aguilera, and Svein H. Olsen,
+    &quot; Software Requirements for Interoperable and Standard-Based Power System Modeling Tools &quot;,
+    Simulation Modelling Practice and Theory, Volume 103, 2020, 102095, ISSN 1569-190X,
+    <a href=\"https://doi.org/10.1016/j.simpat.2020.102095\">DOI: 10.1016/j.simpat.2020.102095</a></li>
+
+<li> M. de Castro Fernandes, M. Navarro Catalan, M. Baudette, and L. Vanfretti,
+    &quot; The Open Instance Power System Library (OpenIPSL): A Modelica Library for Phasor Time-Domain Simulations &quot;,
+    User Presentation at the American Modelica Conference 2020, Boulder, Colorado, USA, March 23-25, 2020.
+    Presentation <a href=\"https://2020.american.conference.modelica.org/proceedings/userpresentations/MarcelodeCastroOpenIPSL.pdf\">here</a>, 
+    video <a href=\"https://www.youtube.com/watch?v=2i3fvgFtcYA\">here</a>, and 
+    authors' copy of abstract <a href=\"https://sites.ecse.rpi.edu/~vanfrl/documents/publications/conference/2020/CNPR202002_openipsl_abstract.pdf\">here</a>.</li>
+
+<li> S.A. Dorado-Rojas, M. Navarro Catalan, M. de Castro Fernandes, and L. Vanfretti,
+    &quot; Performance Benchmark of Modelica Time-Domain Power System Automated Simulations using Python &quot;,
+    Proceedings of the American Modelica Conference 2020, Boulder, Colorado, USA, March 23-25, 2020,
+    <a href=\"https://doi.org/10.3384/ecp2016928\">DOI: 10.3384/ecp2016928</a></li>
+
+<li> M. Podlaski, L. Vanfretti, M. de Castro Fernandes, and J. Pesente,
+    &quot; Parameter Estimation of User-Defined Control System Models for Itaipu Power Plant using Modelica and OpenIPSL &quot;,
+    Proceedings of the American Modelica Conference 2020, Boulder, Colorado, USA, March 23-25, 2020,
+    <a href=\"https://doi.org/10.3384/ecp20169139\">DOI: 10.3384/ecp20169139</a></li>
+
+<li> M. Podlaski, L. Vanfretti, J. Pesente and P. H. Galassi,
+    &quot; Automated Parameter Identification and Calibration for the Itaipu Power Generation System using Modelica, FMI, and RaPId &quot;,
+    2019 7th Workshop on Modeling and Simulation of Cyber-Physical Energy Systems (MSCPES), 2019, pp. 1-5,
+    <a href=\"https://doi.org/10.1109/MSCPES.2019.8738793\">DOI: 10.1109/MSCPES.2019.8738793.</a></li>
+
+<li> L. Vanfretti, B. Mukherjee, K. M. Moudgalya, and F. J. Gomez,
+    &quot; Automatic Re-synchronization Controller Analysis within a Multi-Domain Gas Turbine and Power System Model &quot;,
+    2019 7th Workshop on Modeling and Simulation of Cyber-Physical Energy Systems (MSCPES), 2019, pp. 1-5,
+    <a href=\"https://doi.org/10.1109/MSCPES.2019.8738797\">DOI: 10.1109/MSCPES.2019.8738797.</a></li>
+
+<li> E. Henningsson, H. Olsson, and L. Vanfretti,
+    &quot; DAE Solvers for Large-Scale Hybrid Models &quot;,
+    Proceedings of the 13th International Modelica Conference, Regensburg, Germany, March 4–6, 2019,
+    <a href=\"http://dx.doi.org/10.3384/ecp19157491\">DOI: 10.3384/ecp19157491</a></li>
+
+<li> M. de Castro Fernandes, L. Vanfretti, Janaina G. de Oliveira, and M. Baudette,
+    &quot; A Fundamental Time-Domain and Linearized Eigenvalue Analysis of Coalesced Power Transmission and Unbalanced Distribution Grids using Modelica and the OpenIPSL &quot;,
+    Proceedings of the 13th International Modelica Conference, Regensburg, Germany, March 4–6, 2019,
+    <a href=\"http://dx.doi.org/10.3384/ecp19157617\">DOI: 10.3384/ecp19157617</a></li>
+
+<li> B. Mukherjee, and L. Vanfretti,
+    &quot; Modeling of PMU-Based Automatic Re-synchronization Controls for DER Generators in Power Distribution Networks using Modelica and the OpenIPSL &quot;,
+    Proceedings of the 13th International Modelica Conference, Regensburg, Germany, March 4–6, 2019,
+    <a href=\"http://dx.doi.org/10.3384/ecp19157607\">DOI: 10.3384/ecp19157607</a></li>
+
+<li> M. de Castro Fernandes, J. G. de Oliveira, L. Vanfretti, M. Baudette, and M.A. Tomim, 
+    &quot; Modeling and simulation of a hybrid single-phase/three-phase system in Modelica &quot;,
+    2018 Simposio Brasileiro de Sistemas Eletricos (SBSE), 2018, pp. 1-7,
+    <a href=\"http://dx.doi.org/10.1109/SBSE.2018.8395775\">DOI: 10.1109/SBSE.2018.8395775 </a></li>
+
+<li> M. Aguilera, L. Vanfretti, and F. Gomez,
+    &quot;Experiences in power system multi-domain modeling and simulation with Modelica &amp; FMI: The case of gas power turbines and power systems &quot;,
+    2018 Workshop on Modeling and Simulation of Cyber-Physical Energy Systems (MSCPES), 2018, pp. 1-6,
+    <a href=\"http://dx.doi.org/10.1109/MSCPES.2018.8405397\">DOI: 10.1109/MSCPES.2018.8405397</a></li>
+
+<li> M. Aguilera, L. Vanfretti, T. Bogodorova, and F. Gomez,
+    &quot; Coalesced Gas Turbine and Power System Modeling and Simulation using Modelica &quot;,
+    Proceedings of The American Modelica Conference 2018, October 9-10, Samberg Conference Center, Cambridge MA, USA, Volume , Issue 154, 2019-02-26, Pages 112-120, ISSN 1650-3740. 
+    <a href=\"http://dx.doi.org/10.3384/ecp1815493\">DOI: 10.3384/ecp1815493</a></li>
+
+<li> B. Mukherjee, and L. Vanfretti, 
+    &quot; Modeling of PMU-Based Islanded Operation Controls for Power Distribution Networks using Modelica and OpenIPSL &quot;,
+    Proceedings of The American Modelica Conference 2018, October 9-10, Samberg Conference Center, Cambridge MA, USA, Volume , Issue 154, 2019-02-26, Pages 112-120, ISSN 1650-3740. 
+    <a href=\" http://doi.org/10.3384/ecp18154112\">DOI: 10.3384/ecp18154112</a></li>
+
+<li> T. Rabuzin, M. Baudette and L. Vanfretti, 
+     &quot;Implementation of a continuous integration workflow for a power system Modelica library,&quot; 
+     2017 IEEE Power  &amp; Energy Society General Meeting, 2017, pp. 1-5, 
+     <a href=\"https://doi.org/10.1109/PESGM.2017.8274618\">DOI: 10.1109/PESGM.2017.8274618.</a></li>
+
 <li> L. Vanfretti, T. Rabuzin, M. Baudette, and M. Murad,
     &quot;iTesla Power Systems Library (iPSL): A Modelica library for phasor time-domain simulations,&quot;
     SoftwareX, Available online 18 May 2016, ISSN 2352-7110,
