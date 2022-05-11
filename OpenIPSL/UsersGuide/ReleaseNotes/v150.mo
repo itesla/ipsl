@@ -10,7 +10,7 @@ class v150 "Version 1.5.0 (2017-11-22)"
 <li>Implement the new power flow display and lots of other clean ups by <a href=\"https://github.com/dietmarw\">@dietmarw</a> in <a href=\"https://github.com/OpenIPSL/OpenIPSL/pull/91\">#91</a></li>
 <li>Fixes <a href=\"https://github.com/OpenIPSL/OpenIPSL/issues/96\">#96</a> Move displayFunction into existing Function package. by <a href=\"https://github.com/dietmarw\">@dietmarw</a> in <a href=\"https://github.com/OpenIPSL/OpenIPSL/pull/98\">#98</a></li>
 <li>Fix Bus that contained double parameters by <a href=\"https://github.com/MaximeBaudette\">@MaximeBaudette</a> in <a href=\"https://github.com/OpenIPSL/OpenIPSL/pull/99\">#99</a></li>
-<li>Fixing the spelling of the standard &quot;checkbox&quot; annoation by <a href=\"https://github.com/dietmarw\">@dietmarw</a> in <a href=\"https://github.com/OpenIPSL/OpenIPSL/pull/100\">#100</a></li>
+<li>Fixing the spelling of the standard &quot;checkbox&quot; annotation by <a href=\"https://github.com/dietmarw\">@dietmarw</a> in <a href=\"https://github.com/OpenIPSL/OpenIPSL/pull/100\">#100</a></li>
 <li>Reverting the fix of the checkbox by <a href=\"https://github.com/dietmarw\">@dietmarw</a> in <a href=\"https://github.com/OpenIPSL/OpenIPSL/pull/101\">#101</a></li>
 <li>Adding resynchronisation models by <a href=\"https://github.com/tinrabuzin\">@tinrabuzin</a> in <a href=\"https://github.com/OpenIPSL/OpenIPSL/pull/103\">#103</a></li>
 <li>Updates of PwPin references by <a href=\"https://github.com/tinrabuzin\">@tinrabuzin</a> in <a href=\"https://github.com/OpenIPSL/OpenIPSL/pull/106\">#106</a></li>
