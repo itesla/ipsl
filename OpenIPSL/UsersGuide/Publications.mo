@@ -19,7 +19,7 @@ model Publications "Publications"
 <li>S. Boersma, X. Bombois, L. Vanfretti, J.C. Gonzalez-Torres, and A. Benchaib, 
     &quot; Probing Signal Design for Enhanced Damping Estimation in Power Networks&quot;,
     International Journal of Electrical Power & Energy Systems, vol. 129, July 2021, 106640, ISSN 0142-0615.
-    <a href=\"https://doi.org/10.1016/j.ijepes.2020.106640\">DOI:10.1016/j.ijepes.2020.106640</a></li>.
+    <a href=\"https://doi.org/10.1016/j.ijepes.2020.106640\">DOI:10.1016/j.ijepes.2020.106640</a>.</li>
 
 <li>M. Podlaski, L. Vanfretti, T. Bogodorova, T. Rabuzin, and M. Baudette,
     &quot; RaPId - A Parameter Estimation Toolbox for Modelica/FMI-Based Models Exploiting Global Optimization Methods&quot;,
