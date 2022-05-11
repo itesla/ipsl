@@ -4,8 +4,9 @@ model Testing "Testing and Verification"
 
   annotation(DocumentationClass=true, Documentation(info="<html>
 <h4>Continuous Integration</h4>
-<p>The <strong><code>OpenIPSL</code></strong> repository is connected to <a href=\"https://travis-ci.org/\">Travis CI</a> that provides <strong>Continuous Integration</strong> services to the repository.
-In the current implementation, the CI server performs Modelica syntax checking for all classes in OpenIPSL</p>
+<p>The <strong><code>OpenIPSL</code></strong> repository uses <a href=\"https://github.com/features/actions\">GitHub Actions</a> 
+for <strong>Continuous Integration</strong> services to the repository.
+In the current implementation, Modelica syntax and HTML documentation checking for all classes in the OpenIPSL is implemented</p>
 
 <h4>Regression Testing</h4>
 <p>These tests are used to ensure the validation status of models that are based on PSSE implementations.

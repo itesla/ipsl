@@ -9,12 +9,13 @@ Examples, Electrical, Nonelectrical, Interfaces, Icons and Types. They are brief
 </p>
 
 <ul>
-<li> <a href=\"modelica://OpenIPSL.Examples\">Examples</a>: contains unit tests that verify model behavior and can be used as a starting point on how to use a specific model.</li>
+<li><a href=\"modelica://OpenIPSL.Examples\">Examples</a> package for demonstration of power system examples that can be assembled using the library.</li>
 <li> <a href=\"modelica://OpenIPSL.Electrical\">Electrical</a>: contains many different models that represent devices that form the grid or that are part of equipment which is connected to the grid. A more detailed overview is presented below.</li>
 <li> <a href=\"modelica://OpenIPSL.NonElectrical\">NonElectrical</a>: contains elementary blocks that can be used to model a specific dynamic behavior (a lead-lag transfer function, for example). It also contains functions that are called inside models.</li>
 <li> <a href=\"modelica://OpenIPSL.Interfaces\">Interfaces</a>: contains the connector interface and the generator mask. The connector is present in every model that is connected to the grid.</li>
 <li> <a href=\"modelica://OpenIPSL.Icons\">Icons</a>: contains the basic icons that are used and extended throughout the library.</li>
 <li> <a href=\"modelica://OpenIPSL.Types\">Types</a>: contains a description of the units that are used in the library and an expected order of magnitude. This information can be used to scale differential equations and enhance code generation performance.</li>
+<li><a href=\"modelica://OpenIPSL.Tests\">Tests</a> package for small test systems which show basic behavior of some of the many components of this library.</li>
 </ul>
 
 <p>
