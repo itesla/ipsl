@@ -105,6 +105,17 @@ model Publications "Publications"
     Proceedings of The American Modelica Conference 2018, October 9-10, Samberg Conference Center, Cambridge MA, USA, Volume , Issue 154, 2019-02-26, Pages 112-120, ISSN 1650-3740. 
     <a href=\" http://doi.org/10.3384/ecp18154112\">DOI: 10.3384/ecp18154112</a></li>
 
+<li>D. Winkler, 
+    &quot;Analysing the stability of an Islanded hydro-electric power system&quot;,
+    Proceedings of The American Modelica Conference 2018, October 9-10, Samberg Conference Center, Cambridge MA, USA, Volume , Issue 154, 2019-02-26, Pages 112-120, ISSN 1650-3740. 
+    <a href=\" http://doi.org/10.3384/ecp18154103\">DOI: 10.3384/ecp18154103</a></li>
+
+<li>D. Winkler, 
+    &quot;Electrical Power System Modelling in Modelica - Comparing Open-source Library Options&quot;,
+    Proceedings of the 58th Conference on Simulation and Modelling (SIMS 58), September 25-27, Reykjavik, Iceland, 
+    Issue 188, 2017-09-27, Pages 263-270, ISSN 1650-3740. 
+    <a href=\" http://doi.org/10.3384/ecp17138263\">DOI: 10.3384/ecp17138263</a></li>
+
 <li> T. Rabuzin, M. Baudette and L. Vanfretti, 
      &quot;Implementation of a continuous integration workflow for a power system Modelica library,&quot; 
      2017 IEEE Power  &amp; Energy Society General Meeting, 2017, pp. 1-5, 
