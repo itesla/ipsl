@@ -24,8 +24,10 @@ model Turbine "GE General GGOV1 and GGOV1DU Turbine Model"
     Placement(transformation(extent = {{-10, -10}, {10, 10}}, origin = {138, -40})));
   Modelica.Blocks.Math.Gain gain1(k = Kturb) annotation (
     Placement(transformation(origin = {78, -40}, extent = {{-10, -10}, {10, 10}})));
-  Modelica.Blocks.Nonlinear.FixedDelay delay(delayTime = Teng) "Transport lag time" annotation (
-    Placement(transformation(origin = {108, -40}, extent = {{-10, -10}, {10, 10}})));
+  replaceable
+  Modelica.Blocks.Nonlinear.FixedDelay delay(delayTime = Teng) constrainedby Modelica.Blocks.Nonlinear.PadeDelay
+    "Transport lag time"
+    annotation(Placement(transformation(origin = {108, -40}, extent = {{-10, -10}, {10, 10}})));
   Modelica.Blocks.Math.Add add4(k2 = -1) annotation (
     Placement(transformation(extent = {{-10, -10}, {10, 10}}, origin = {48, -40})));
   Modelica.Blocks.Math.Add add5(k1 = -1) annotation (
@@ -142,7 +144,7 @@ equation
   annotation (
     Icon(coordinateSystem(extent = {{-100, -100}, {100, 100}}), graphics={  Rectangle(lineColor = {0, 0, 255}, extent = {{-100, 100}, {100, -100}}), Text(lineColor = {28, 108, 200}, extent = {{-60, 40}, {60, -40}}, textString = "Turbine
 Model"), Text(origin = {-4, 0},lineColor = {28, 108, 200}, extent = {{-90, 90}, {-40, 68}}, textString = "SPEED"), Text(origin = {-6, 82},lineColor = {28, 108, 200}, extent = {{-90, -70}, {-50, -90}}, textString = "FSR"), Text(lineColor = {28, 108, 200}, extent = {{40, 12}, {90, -12}}, textString = "PMECH"), Text(lineColor = {28, 108, 200}, extent = {{-20, 90}, {30, 70}}, textString = "TEXM"), Text(lineColor = {28, 108, 200}, extent = {{30, -70}, {92, -92}}, textString = "VSTROKE"), Text(origin = {-4, -78},lineColor = {28, 108, 200}, extent = {{-90, 10}, {-40, -14}}, textString = "PELEC")}),
-    Documentation(info = "<html>
+    Documentation(info="<html>
 <p>The following documentation is adapted from
 <a href=\"modelica://OpenIPSL.UsersGuide.References\">[PSSE-Models], chapter 7.12</a>:</p>
 <blockquote>
@@ -150,6 +152,12 @@ Model"), Text(origin = {-4, 0},lineColor = {28, 108, 200}, extent = {{-90, 90}, 
 Turbine dynamic system for the general purpose Turbine/Governor models GGOV1 and GGOV1DU.
 </p>
 </blockquote>
+<h5>Linearisation</h5>
+<p>
+If one wants to use this model in combination with linear analysis then the replacable <code>delay</code> block
+needs to get changed to <a href=\"modelica://Modelica.Blocks.Nonlinear.PadeDelay\">Modelica.Blocks.Nonlinear.PadeDelay</a>
+block instead (only allowed matching replacement).
+</p>
 </html>", revisions = "<html>
 <table cellspacing=\"1\" cellpadding=\"1\" border=\"1\"><tr>
 <td><p>Reference</p></td>
