@@ -1,6 +1,6 @@
 within OpenIPSL.Electrical.Controls.PSSE.TG.BaseClasses.GGOV1.DelayModelChoices;
 model Interface
-  "Interface: A Common interface for the delay models, nothing in this layer, only graphical for inherence."
+  "Interface: A Common interface for the delay models. There is no \"behavior\" in this layer, only icon for common inherence."
 
 equation
 

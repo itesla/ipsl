@@ -27,7 +27,7 @@ model Turbine "GE General GGOV1 and GGOV1DU Turbine Model"
 // replaceable DelayModelChoices.PadeDelay  delay(delayTime = Teng)               constrainedby
 //     DelayModelChoices.Interface                                  "Delay Model"
 //  annotation(Placement(transformation(origin = {108, -40}, extent = {{-10, -10}, {10, 10}})));
- replaceable DelayModelChoices.FixedDelay delay(delayTime = Teng)               constrainedby
+ replaceable DelayModelChoices.PadeDelay  delay(delayTime = Teng)               constrainedby
     DelayModelChoices.Interface                                   "Delay Model"
  annotation(choices(choice(DelayModelChoices(
                            FixedDelay)),                 choice(
