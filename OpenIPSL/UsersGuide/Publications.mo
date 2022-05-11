@@ -26,7 +26,7 @@ model Publications "Publications"
     SYSID 2021 - 19th IFAC Symposium on System Identification – Learning Models for Decision and Control, Padova, Italy, 14-16 July 2021,
     IFAC-PapersOnLine, Volume 54, Issue 7, 2021, Pages 391-396, ISSN 2405-8963,
     <a href=\"https://doi.org/10.1016/j.ifacol.2021.08.391\">DOI: 10.1016/j.ifacol.2021.08.391</a>.
-    Video of paper presentation <a href=\"https://youtu.be/S5QT6j5DOY4\">here</a>, and Github repository <a href=\"https://github.com/ALSETLab/RaPId\">here</a>.</li>
+    Video of paper presentation <a href=\"https://youtu.be/S5QT6j5DOY4\">here</a>, and GitHub repository <a href=\"https://github.com/ALSETLab/RaPId\">here</a>.</li>
 
 <li>L. Vanfretti, G. Laera, M. de Castro Fernandes, C. Wang, C. Mishra and K. D. Jones,
     &quot; Initial steps in deploying and calibrating power system models on a sychrophasor data cloud platform using FMI &quot;,
