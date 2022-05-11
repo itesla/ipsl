@@ -26,13 +26,13 @@ model Publications "Publications"
     SYSID 2021 - 19th IFAC Symposium on System Identification – Learning Models for Decision and Control, Padova, Italy, 14-16 July 2021,
     IFAC-PapersOnLine, Volume 54, Issue 7, 2021, Pages 391-396, ISSN 2405-8963,
     <a href=\"https://doi.org/10.1016/j.ifacol.2021.08.391\">DOI: 10.1016/j.ifacol.2021.08.391</a>.
-    Video of paper presentation <a href=\"https://youtu.be/S5QT6j5DOY4\">here</a>, and GitHub repository <a href=\"https://github.com/ALSETLab/RaPId\">here</a>.</li>
+    <a href=\"https://youtu.be/S5QT6j5DOY4\">Video of paper presentation</a> and <a href=\"https://github.com/ALSETLab/RaPId\">GitHub repository</a>.</li>
 
 <li>L. Vanfretti, G. Laera, M. de Castro Fernandes, C. Wang, C. Mishra and K. D. Jones,
     &quot;Initial steps in deploying and calibrating power system models on a sychrophasor data cloud platform using FMI &quot;,
     User Presentation at the FMI User Meeting at the Modelica Conference 2021, 14th International Modelica Conference, Linköping, September 20-24, 2021.
-    Presentation <a href=\"https://raw.githubusercontent.com/modelica/ModelicaConference2021/master/presentations/FMI-User-Meeting/01_FMI_Dominion_Model_Calibration_Slides.pdf\">here</a>, and 
-    authors' copy of abstract <a href=\"https://ecse.rpi.edu/~vanfrl/documents/publications/conference/2021/CNPR_2021_05_LV_Dominion_Cloud_MODELICA_2021_paper_45.pdf\">here</a>.</li>
+    <a href=\"https://raw.githubusercontent.com/modelica/ModelicaConference2021/master/presentations/FMI-User-Meeting/01_FMI_Dominion_Model_Calibration_Slides.pdf\">Presentation</a>, and 
+    <a href=\"https://ecse.rpi.edu/~vanfrl/documents/publications/conference/2021/CNPR_2021_05_LV_Dominion_Cloud_MODELICA_2021_paper_45.pdf\">authors' copy of abstract</a>.</li>
 
 <li>B. Mukherjee, M. de Castro Fernandes, and L. Vanfretti,
     &quot;A PMU-Based Control Scheme for Islanded Operation and Re-synchronization of DER &quot;,
@@ -47,8 +47,9 @@ model Publications "Publications"
 <li>M. de Castro Fernandes, M. Navarro Catalan, M. Baudette, and L. Vanfretti,
     &quot;The Open Instance Power System Library (OpenIPSL): A Modelica Library for Phasor Time-Domain Simulations &quot;,
     User Presentation at the American Modelica Conference 2020, Boulder, Colorado, USA, March 23-25, 2020.
-    Presentation <a href=\"https://2020.american.conference.modelica.org/proceedings/userpresentations/MarcelodeCastroOpenIPSL.pdf\">here</a>, 
-    video <a href=\"https://www.youtube.com/watch?v=2i3fvgFtcYA\">here</a>, and authors' copy of abstract <a href=\"https://sites.ecse.rpi.edu/~vanfrl/documents/publications/conference/2020/CNPR202002_openipsl_abstract.pdf\">here</a>.</li>
+    Presentation <a href=\"https://2020.american.conference.modelica.org/proceedings/userpresentations/MarcelodeCastroOpenIPSL.pdf\">Presentation PDF</a>, 
+    <a href=\"https://www.youtube.com/watch?v=2i3fvgFtcYA\">video</a>, and 
+    <a href=\"https://sites.ecse.rpi.edu/~vanfrl/documents/publications/conference/2020/CNPR202002_openipsl_abstract.pdf\">authors' copy of abstract</a>.</li>
 
 <li>S.A. Dorado-Rojas, M. Navarro Catalan, M. de Castro Fernandes, and L. Vanfretti,
     &quot;Performance Benchmark of Modelica Time-Domain Power System Automated Simulations using Python &quot;,
