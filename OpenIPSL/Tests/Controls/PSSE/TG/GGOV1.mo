@@ -39,7 +39,7 @@ model GGOV1 "SMIB system to test functionality of GGOV1 model"
     Wfnl=0.2,
     Tb=0.1,
     Tc=0,
-    Teng=0,
+    Teng=0.5,
     Tfload=3,
     Kpload=2,
     Kiload=0.67,
@@ -62,8 +62,10 @@ model GGOV1 "SMIB system to test functionality of GGOV1 model"
     Rselect=0) annotation (Placement(transformation(extent={{-60,60},{-80,40}})));
 equation
   connect(gGOV1.PELEC, gENROU.PELEC) annotation (Line(points={{-62,56},{-36,56},{-36,6},{-46,6}},color={0,0,127},smooth=Smooth.None));
-  connect(gENROU.EFD0, gENROU.EFD) annotation (Line(points={{-46,-10},{-40,-10},{-40,-28},{-98,-28},{-98,-10},{-92,-10}},color={0,0,127},smooth=Smooth.None));
-  connect(gGOV1.PMECH, gENROU.PMECH) annotation (Line(points={{-81,50.2},{-98,50.2},{-98,10},{-92,10}},color={0,0,127}));
+  connect(gENROU.EFD0, gENROU.EFD) annotation (Line(points={{-46,-10},{-40,-10},
+          {-40,-28},{-98,-28},{-98,-12},{-92,-12}},                                                                      color={0,0,127},smooth=Smooth.None));
+  connect(gGOV1.PMECH, gENROU.PMECH) annotation (Line(points={{-81,50},{-98,50},
+          {-98,12},{-92,12}},                                                                          color={0,0,127}));
   connect(gENROU.SPEED, gGOV1.SPEED) annotation (Line(points={{-46,14},{-40,14},{-40,44},{-62,44}},color={0,0,127}));
   connect(gENROU.p, GEN1.p) annotation (Line(points={{-48,0},{-50,0},{-50,0},{-30,0}},color={0,0,255}));
   annotation (
