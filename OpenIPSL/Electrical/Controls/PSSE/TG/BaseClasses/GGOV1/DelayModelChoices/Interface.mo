@@ -1,5 +1,5 @@
 within OpenIPSL.Electrical.Controls.PSSE.TG.BaseClasses.GGOV1.DelayModelChoices;
-partial model Interface
+partial block Interface
   "Interface: A Common interface for the delay models. There is no \"behavior\" in this layer, only icon for common inherence."
 
   annotation (Icon(graphics={   Rectangle(extent={{-96,-96},{96,96}}, lineColor={244,125,35})}),
