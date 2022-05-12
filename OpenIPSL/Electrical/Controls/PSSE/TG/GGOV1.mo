@@ -26,7 +26,7 @@ model GGOV1 "GGOV1 - Variation of GE General Governor/Turbine Model [IEEE2013]"
   parameter Types.PerUnit Wfnl=0.2 "No load fuel flow";
   parameter Types.Time Tb=0.1 "Turbine lag time constant";
   parameter Types.Time Tc=0 "Turbine lead time constant";
-  parameter Types.Time Teng=0 "Transport lag time constant for diesel engine";
+  parameter Types.Time Teng=C.eps "Transport lag time constant for diesel engine";
   parameter Types.Time Tfload=3 "Load Limiter time constant";
   parameter Types.PerUnit Kpload=2 "Load limiter proportional gain for PI controller";
   parameter Types.TimeAging Kiload=0.67 "Load limiter integral gain for PI controller";
@@ -158,7 +158,7 @@ equation
   connect(gGOV1_Accel.FSRA, min_select.u[3]) annotation (
     Line(points={{-19,4},{-10,4},{-10,0},{4,0},{4,-4.66667}},     color = {0, 0, 127}));
   annotation (
-        Icon(            graphics={Rectangle(lineColor = {28, 108, 200}, extent = {{-100, 100}, {100, -100}}),
+        Icon(graphics={Rectangle(lineColor = {28, 108, 200}, extent = {{-100, 100}, {100, -100}}),
         Text(lineColor = {28, 108, 200}, fillColor = {255, 255, 255}, fillPattern = FillPattern.Solid, extent = {{-50, 80}, {10, 40}}, textString = "SPEED"),
         Text(lineColor = {28, 108, 200}, fillColor = {255, 255, 255}, fillPattern = FillPattern.Solid, extent = {{-50, -40}, {10, -80}}, textString = "PELEC"),
         Text(lineColor = {28, 108, 200}, fillColor = {255, 255, 255}, fillPattern = FillPattern.Solid, extent = {{30, 20}, {90, -20}}, textString = "PMECH"),
