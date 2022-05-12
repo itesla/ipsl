@@ -40,8 +40,11 @@ If you want to submit your contributions to the OpenIPSL, note that we make use 
 
 ## Copyright and License Information
 
-**OpenIPSL:** Copyright April 2016 - current [Luigi Vanfretti](https://github.com/lvanfretti), [ALSETLab](https://github.com/ALSETLab), Troy, NY (Formely SmarTS Lab, Stockholm, Sweden). 
-The authors can be contacted by email: <a href="mailto:luigi.vanfretti@gmail.com?subject=OpenIPSL_License">luigi.vanfretti@gmail.com</a>. This Source Code Form is subject to the terms of the 3-Clause BSD license.
+**OpenIPSL:** Copyright April 2016 - current [Luigi Vanfretti](https://github.com/lvanfretti), [ALSETLab](https://github.com/ALSETLab), Troy, NY (Formely SmarTS Lab, Stockholm, Sweden).
+
+The authors can be contacted by email: <a href="mailto:luigi.vanfretti@gmail.com?subject=OpenIPSL_License">luigi.vanfretti@gmail.com</a>.
+
+This Source Code Form is subject to the terms of the 3-Clause BSD license.
 
 ## Acknowledgements
 
