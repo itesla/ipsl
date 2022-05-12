@@ -24,15 +24,9 @@ model Turbine "GE General GGOV1 and GGOV1DU Turbine Model"
     Placement(transformation(extent = {{-10, -10}, {10, 10}}, origin = {138, -40})));
   Modelica.Blocks.Math.Gain gain1(k = Kturb) annotation (
     Placement(transformation(origin = {78, -40}, extent = {{-10, -10}, {10, 10}})));
-// replaceable DelayModelChoices.PadeDelay  delay(delayTime = Teng)               constrainedby
-//     DelayModelChoices.Interface                                  "Delay Model"
-//  annotation(Placement(transformation(origin = {108, -40}, extent = {{-10, -10}, {10, 10}})));
- replaceable DelayModelChoices.FixedDelay delay(delayTime = Teng)               constrainedby
-    DelayModelChoices.Interface                                   "Delay Model"
- annotation(choices(choice(DelayModelChoices(
-                           FixedDelay)),                 choice(
-          DelayModelChoices(                                    PadeDelay))),
-  Placement(transformation(origin = {108, -40}, extent = {{-10, -10}, {10, 10}})));
+  replaceable DelayModelChoices.FixedDelay delay(delayTime = Teng)
+    constrainedby DelayModelChoices.Interface "Delay Model"
+    annotation(Placement(transformation(origin = {108, -40}, extent = {{-10, -10}, {10, 10}})));
   Modelica.Blocks.Math.Add add4(k2 = -1) annotation (
     Placement(transformation(extent = {{-10, -10}, {10, 10}}, origin = {48, -40})));
   Modelica.Blocks.Math.Add add5(k1 = -1) annotation (
