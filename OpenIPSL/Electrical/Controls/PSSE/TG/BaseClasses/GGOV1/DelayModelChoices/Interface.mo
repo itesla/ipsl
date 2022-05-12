@@ -1,13 +1,9 @@
 within OpenIPSL.Electrical.Controls.PSSE.TG.BaseClasses.GGOV1.DelayModelChoices;
-model Interface
+partial model Interface
   "Interface: A Common interface for the delay models. There is no \"behavior\" in this layer, only icon for common inherence."
 
-equation
-
-  annotation (Icon(graphics={   Rectangle(
-          extent={{-102,-102},{102,102}},
-          lineColor={244,125,35},
-          lineThickness=1)}), Documentation(info="<html>
+  annotation (Icon(graphics={   Rectangle(extent={{-96,-96},{96,96}}, lineColor={244,125,35})}),
+                              Documentation(info="<html>
 This is only an icon/graphical interface model that provides a common interface to be able to quickly replace between the two types of delay models that are supported with their predifined parameters.
 </html>", revisions="<html>
 <table cellspacing=\"1\" cellpadding=\"1\" border=\"1\"><tr>
