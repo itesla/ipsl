@@ -23,8 +23,8 @@ model PadeDelay "Extending the Pade Delay model from the MSL"
 <td><p>see <a href=\"modelica://OpenIPSL.UsersGuide.Contact\">UsersGuide.Contact</a></p></td>
 </tr>
 </table>
-</html>
-", info="<html>
+</html>",
+ info="<html>
 <p>This model extends the Pade Delay model from the MSL, and it extends the &quot;Interface&quot; model, so that the delay models can be repleaceable while keeping default parameters.</p>
 </html>"));
 end PadeDelay;
