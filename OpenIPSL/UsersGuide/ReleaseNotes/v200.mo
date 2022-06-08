@@ -31,7 +31,7 @@ will have to be converted manually by the user.)</em>
 This release consists of 
 <a href=\"https://github.com/OpenIPSL/OpenIPSL/issues?q=is%3Aissue+milestone%3A2.0.0+is%3Aclosed\">
 39 closed issues</a> and 
-<a href=\"https://github.com/OpenIPSL/OpenIPSL/pulls?q=is%3Aopen+is%3Apr+milestone%3A2.0.0\">
+<a href=\"https://github.com/OpenIPSL/OpenIPSL/pulls?q=is%3Apr+milestone%3A2.0.0+is%3Aclosed\">
 61 merged pull requests</a>:
 </p>
 <ul>
