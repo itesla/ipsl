@@ -5,7 +5,7 @@ class v200 "Version 2.0.0 (2022-06-08)"
 <h4>What&apos;s Changed</h4>
 <p>
 This new release version 2.0.0 of <code><strong>OpenIPSL</strong></code> is a 
-<strong>non-backward compatible</strong> release based on the 
+<strong>non-backwards compatible</strong> release based on the 
 <a href=\"https://github.com/modelica/ModelicaStandardLibrary/releases/tag/v3.2.3%2Bbuild.4\">
 Modelica Standard Library version 3.2.3</a>.
 </p>
@@ -32,7 +32,7 @@ This release consists of
 <a href=\"https://github.com/OpenIPSL/OpenIPSL/issues?q=is%3Aissue+milestone%3A2.0.0+is%3Aclosed\">
 39 closed issues</a> and 
 <a href=\"https://github.com/OpenIPSL/OpenIPSL/pulls?q=is%3Aopen+is%3Apr+milestone%3A2.0.0\">
-61 merged pull-requests</a>:
+61 merged pull requests</a>:
 </p>
 <ul>
 <li>fix typo in DerivativeLag by <a href=\"https://github.com/pierre-haessig\">@pierre-haessig</a> in <a href=\"https://github.com/OpenIPSL/OpenIPSL/pull/156\">#156</a></li>
