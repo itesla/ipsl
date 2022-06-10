@@ -3,7 +3,7 @@ message: "If you use this software, please cite it as below."
 authors:
 - name: "OpenIPSL"
 title: "OpenIPSL: an Open-Instance Power System Library"
-version: 2.0.0
+version: 3.0.0
 url: "https://github.com/OpenIPSL/OpenIPSL"
 preferred-citation:
   type: article
