@@ -17,7 +17,7 @@ equation
           -4},{-64,-4}}, color={0,0,127}));
   annotation (experiment(StopTime=10, __Dymola_Algorithm="Dassl"),
       Documentation(info="<html>
-<p>This model shows how to use the component in Electrical.Sources.VoltageSourceReImInput with user specified <b>constant real and imaginary parts</b> of the voltage phasor of the source.</p>
+<p>This model shows how to use the component in <code>Electrical.Sources.VoltageSourceReImInput</code> with user specified <strong>constant real and imaginary parts</strong> of the voltage phasor of the source.</p>
 </html>", revisions="<html>
 <table cellspacing=\"1\" cellpadding=\"1\" border=\"1\"><tr>
 <td><p>Reference</p></td>

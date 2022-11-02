@@ -39,6 +39,6 @@ equation
 </tr>
 </table>
 </html>", info="<html>
-<p><span style=\"font-family: Arial;\">This model shows how to use the component in Electrical.Sources.VoltageSourceReImInput with user specified <b>varying real and constant imaginary</b> parts of the voltage phasor of the source.</span></p>
+<p>This model shows how to use the component in <code>Electrical.Sources.VoltageSourceReImInput</code> with user specified <strong>varying real and constant imaginary</strong> parts of the voltage phasor of the source.</p>
 </html>"));
 end VoltageSourceReImInputVaryReal;
