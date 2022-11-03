@@ -1,31 +1,13 @@
 within OpenIPSL.Electrical.Sources;
 model CurrentSourceReImInput
   "Ideal current source with user defined real and imaginary parts of the current phasor"
-  extends OpenIPSL.Electrical.Essentials.pfComponent(
-  enableS_b = true,
-  enableV_b = true,
-  enablefn = true,
-  enableP_0 = true,
-  enableQ_0 = true,
-  enablev_0 = true,
-  enableangle_0 = true,
-  displayPF=true);
-  Types.Angle angle(start=angle_0) "Bus voltage angle in radians";
-  Types.Voltage V(start=v_0) "Bus voltage magnitude (pu)";
-  Types.ActivePower P "Active Power absorbed by the Infinite bus (MW)";
-  Types.ReactivePower Q "Reactive Power absorbed by the Infinite bus (MVAr)";
-  OpenIPSL.Interfaces.PwPin p(vr(start=v_0*cos(angle_0*Modelica.Constants.pi/180)), vi(start=v_0*
-          sin(angle_0*Modelica.Constants.pi/180)))
-    annotation (Placement(
-      visible=true,
-      transformation(
-        origin={110,0},
-        extent={{-10.0,-10.0},{10.0,10.0}},
-        rotation=0),
-      iconTransformation(
-        origin={110,0},
-        extent={{-10,-10},{10,10}},
-        rotation=0)));
+  extends OpenIPSL.Electrical.Essentials.pfComponent(enableS_b = true);
+  Types.Angle angle "Bus voltage angle";
+  Types.Voltage v "Bus voltage magnitude";
+  Types.ActivePower P "Active Power absorbed by the Infinite bus";
+  Types.ReactivePower Q "Reactive Power absorbed by the Infinite bus";
+  OpenIPSL.Interfaces.PwPin p
+    annotation (Placement(transformation(extent={{100,-10},{120,10}})));
   Modelica.Blocks.Interfaces.RealInput iRe "Real Part of voltage phasor"
     annotation (Placement(transformation(extent={{-140,20},{-100,60}})));
   Modelica.Blocks.Interfaces.RealInput iIm "Imaginary Part of Voltage Phasor"
@@ -33,12 +15,11 @@ model CurrentSourceReImInput
 equation
   p.ir =iRe;
   p.ii =iIm;
-  V = sqrt(p.vr^2 + p.vi^2);
+  v = sqrt(p.vr^2 + p.vi^2);
   angle = atan2(p.vi, p.vr);
   P = -(p.vr*p.ir + p.vi*p.ii)*S_b;
   Q = -(p.vr*p.ii - p.vi*p.ir)*S_b;
-  annotation(Icon(coordinateSystem(extent = {{-100, -100}, {100, 100}}, preserveAspectRatio = true, initialScale = 0.1, grid = {10, 10}),
-        graphics={                 Ellipse(
+  annotation(Icon(graphics={ Ellipse(
           extent={{-100,100},{100,-100}},
           lineColor={0,0,0},
           fillColor={213,255,170},
@@ -47,18 +28,11 @@ equation
           extent={{-40,20},{40,-20}},
           lineColor={0,0,0},
           textString="%name"),
-        Line(
-          points={{-90,0},{-50,0}},
-          color={0,0,0},
-          thickness=1),
-        Line(
-          points={{50,0},{80,0}},
-          color={0,0,0},
-          thickness=1),
+        Line(points={{-90,0},{-50,0}}, color={0,0,0}),
+        Line(points={{50,0},{80,0}}, color={0,0,0}),
         Polygon(
           points={{70,10},{70,-10},{90,0},{70,10}},
           lineColor={0,0,0},
-          lineThickness=1,
           fillColor={0,0,0},
           fillPattern=FillPattern.Solid)}), Documentation(revisions="<html>
 <table cellspacing=\"1\" cellpadding=\"1\" border=\"1\"><tr>
