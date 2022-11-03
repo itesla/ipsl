@@ -1,21 +1,12 @@
 within OpenIPSL.Electrical.Sources;
 model VoltageSourceReImInput
   "Ideal voltage source with user defined real and imaginary parts of the voltage phasor"
-  extends OpenIPSL.Electrical.Essentials.pfComponent(
-  enableS_b = true,
-  enableV_b = true,
-  enablefn = true,
-  enableP_0 = true,
-  enableQ_0 = true,
-  enablev_0 = true,
-  enableangle_0 = true,
-  displayPF=true);
-  Types.Angle angle(start=angle_0) "Bus voltage angle in radians";
-  Types.Voltage V(start=v_0) "Bus voltage magnitude (pu)";
-  Types.ActivePower P "Active Power absorbed by the Infinite bus (MW)";
-  Types.ReactivePower Q "Reactive Power absorbed by the Infinite bus (MVAr)";
-  OpenIPSL.Interfaces.PwPin p(vr(start=v_0*cos(angle_0*Modelica.Constants.pi/180)), vi(start=v_0*
-          sin(angle_0*Modelica.Constants.pi/180)))
+  extends OpenIPSL.Electrical.Essentials.pfComponent(enableS_b=true);
+  Types.Angle angle "Bus voltage angle";
+  Types.Voltage v "Bus voltage magnitude";
+  Types.ActivePower P "Active power absorbed by the infinite bus";
+  Types.ReactivePower Q "Reactive power absorbed by the infinite bus";
+  OpenIPSL.Interfaces.PwPin p
     annotation (Placement(
       visible=true,
       transformation(
@@ -26,18 +17,18 @@ model VoltageSourceReImInput
         origin={110,0},
         extent={{-10,-10},{10,10}},
         rotation=0)));
-  Modelica.Blocks.Interfaces.RealInput vRe "Real Part of voltage phasor"
+  Modelica.Blocks.Interfaces.RealInput vRe "Real part of voltage phasor"
     annotation (Placement(transformation(extent={{-140,20},{-100,60}})));
-  Modelica.Blocks.Interfaces.RealInput vIm "Imaginary Part of Voltage Phasor"
+  Modelica.Blocks.Interfaces.RealInput vIm "Imaginary part of voltage Phasor"
     annotation (Placement(transformation(extent={{-140,-60},{-100,-20}})));
 equation
-  p.vr =vRe;
-  p.vi =vIm;
-  V = sqrt(p.vr^2 + p.vi^2);
+  p.vr = vRe;
+  p.vi = vIm;
+  v = sqrt(p.vr^2 + p.vi^2);
   angle = atan2(p.vi, p.vr);
   P = -(p.vr*p.ir + p.vi*p.ii)*S_b;
   Q = -(p.vr*p.ii - p.vi*p.ir)*S_b;
-  annotation(Icon(coordinateSystem(extent = {{-100, -100}, {100, 100}}, preserveAspectRatio = true, initialScale = 0.1, grid = {10, 10}),
+  annotation(Icon(
         graphics={                 Ellipse(
           extent={{-100,100},{100,-100}},
           lineColor={0,0,0},
@@ -70,7 +61,10 @@ equation
 </tr>
 </table>
 </html>", info="<html>
-<p>This model allows the user to specify the voltage real and imaginary part of the voltage phasor of an ideal voltage source. </p>
-<p>The value of each part of the phasor have to be provided through sources from Modelica.Blocks.Sources with Real valued interfaces to be connected to the vRe and vIm real interfaces.</p>
+<p>This model allows the user to specify the voltage real and imaginary part 
+of the voltage phasor of an ideal voltage source.</p>
+<p>The value of each part of the phasor have to be provided through sources from 
+<code>Modelica.Blocks.Sources</code> with Real valued interfaces to be connected to 
+the <code>vRe</code> and <code>vIm</code> real interfaces.</p>
 </html>"));
 end VoltageSourceReImInput;
