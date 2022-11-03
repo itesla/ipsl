@@ -2,20 +2,20 @@ within OpenIPSL.Tests.Sources;
 model VoltageSourceReImInputConstant
   "Test model for the VoltageSourceReImInput model with constant input"
   extends BaseClasses.SMIB;
-  Modelica.Blocks.Sources.Constant vRe(k=1)
-    annotation (Placement(transformation(extent={{-100,4},{-88,16}})));
-  Modelica.Blocks.Sources.Constant vIm(k=0)
-    annotation (Placement(transformation(extent={{-100,-20},{-88,-8}})));
+  replaceable
+  Modelica.Blocks.Sources.Constant vRe(k=1) constrainedby Modelica.Blocks.Interfaces.SO
+    annotation (Placement(transformation(extent={{-96,14},{-84,26}})));
+  replaceable
+  Modelica.Blocks.Sources.Constant vIm(k=0) constrainedby Modelica.Blocks.Interfaces.SO
+    annotation (Placement(transformation(extent={{-96,-26},{-84,-14}})));
   Electrical.Sources.VoltageSourceReImInput vSource
-    annotation (Placement(transformation(extent={{-62,-10},{-42,10}})));
+    annotation (Placement(transformation(extent={{-60,-10},{-40,10}})));
 equation
   connect(vSource.p, GEN1.p)
-    annotation (Line(points={{-41,0},{-30,0}}, color={0,0,255}));
-  connect(vRe.y, vSource.vRe) annotation (Line(points={{-87.4,10},{-72,10},{-72,
-          4},{-64,4}}, color={0,0,127}));
-  connect(vIm.y, vSource.vIm) annotation (Line(points={{-87.4,-14},{-72,-14},{-72,
-          -4},{-64,-4}}, color={0,0,127}));
-  annotation (experiment(StopTime=10, __Dymola_Algorithm="Dassl"),
+    annotation (Line(points={{-39,0},{-30,0}}, color={0,0,255}));
+  connect(vIm.y, vSource.vIm) annotation (Line(points={{-83.4,-20},{-70,-20},{-70,-4},{-62,-4}}, color={0,0,127}));
+  connect(vRe.y, vSource.vRe) annotation (Line(points={{-83.4,20},{-70,20},{-70,4},{-62,4}}, color={0,0,127}));
+  annotation (experiment(StopTime=10),
       Documentation(info="<html>
 <p>This model shows how to use the component in <code>Electrical.Sources.VoltageSourceReImInput</code> with user specified <strong>constant real and imaginary parts</strong> of the voltage phasor of the source.</p>
 </html>", revisions="<html>
