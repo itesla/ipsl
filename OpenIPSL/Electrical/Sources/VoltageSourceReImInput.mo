@@ -7,16 +7,7 @@ model VoltageSourceReImInput
   Types.ActivePower P "Active power absorbed by the infinite bus";
   Types.ReactivePower Q "Reactive power absorbed by the infinite bus";
   OpenIPSL.Interfaces.PwPin p
-    annotation (Placement(
-      visible=true,
-      transformation(
-        origin={110,0},
-        extent={{-10.0,-10.0},{10.0,10.0}},
-        rotation=0),
-      iconTransformation(
-        origin={110,0},
-        extent={{-10,-10},{10,10}},
-        rotation=0)));
+    annotation (Placement(transformation(extent={{100,-10},{120,10}})));
   Modelica.Blocks.Interfaces.RealInput vRe "Real part of voltage phasor"
     annotation (Placement(transformation(extent={{-140,20},{-100,60}})));
   Modelica.Blocks.Interfaces.RealInput vIm "Imaginary part of voltage Phasor"
