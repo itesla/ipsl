@@ -1,5 +1,6 @@
 within OpenIPSL.Electrical.Solar.PSAT.ConstantPQPV;
 model PQ1 "Constant PQ Generator, Solar Photo-Voltaic Generator"
+  outer OpenIPSL.Electrical.SystemBase SysData "Use outer SystemBase record";
   OpenIPSL.Interfaces.PwPin p
     annotation (Placement(transformation(extent={{100,-10},{120,10}})));
   parameter Types.ApparentPower S_b=SysData.S_b "System base power"

@@ -1,5 +1,6 @@
 within OpenIPSL.Electrical.Solar.PSAT.ConstantPQPV;
 model PV1 "Constant PV Generator, Solar Photo-Voltaic Generator"
+  outer OpenIPSL.Electrical.SystemBase SysData "Use outer SystemBase record";
   OpenIPSL.Interfaces.PwPin p
     annotation (Placement(transformation(extent={{100,-10},{120,10}})));
   parameter Types.ApparentPower S_b=SysData.S_b "System base power"
@@ -53,7 +54,6 @@ equation
   p.ii = id "change of sign due to the fact than in modelica when entering is + and in this case is going out";
   p.vr = vq;
   p.vi = -vd;
-  connect(p, p) annotation (Line(points={{110,0},{110,0},{110,0}}, color={0,0,255}));
   annotation (
     Icon(coordinateSystem(preserveAspectRatio=true),
       graphics={Text(
