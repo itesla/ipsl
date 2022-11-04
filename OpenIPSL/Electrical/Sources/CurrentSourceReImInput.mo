@@ -4,8 +4,8 @@ model CurrentSourceReImInput
   extends OpenIPSL.Electrical.Essentials.pfComponent(enableS_b = true);
   Types.Angle angle "Bus voltage angle";
   Types.Voltage v "Bus voltage magnitude";
-  Types.ActivePower P "Active Power absorbed by the Infinite bus";
-  Types.ReactivePower Q "Reactive Power absorbed by the Infinite bus";
+  Types.ActivePower P "Active Power absorbed or provided by the source";
+  Types.ReactivePower Q "Reactive Power absorbed or provided by the source";
   OpenIPSL.Interfaces.PwPin p
     annotation (Placement(transformation(extent={{100,-10},{120,10}})));
   Modelica.Blocks.Interfaces.RealInput iRe "Real Part of voltage phasor"
