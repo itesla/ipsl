@@ -337,8 +337,7 @@ model StartHere "Start Here"
         </td>
       </tr>
       <tr>
-        <td style=\"border-color:black;border-style:solid;border-width:1px;overflow:hidden;padding:10px 5px;word-break:normal;text-align"
-           + ":left;vertical-align:top;\">
+        <td style=\"border-color:black;border-style:solid;border-width:1px;overflow:hidden;padding:10px 5px;word-break:normal;text-align:left;vertical-align:top;\">
           <span style=\"font-weight:400;font-style:normal;text-decoration:none;color:#000;background-color:transparent\">T''do (&gt; 0)</span>
         </td>
         <td style=\"border-color:black;border-style:solid;border-width:1px;overflow:hidden;padding:10px 5px;word-break:normal;text-align:left;vertical-align:top;\">
