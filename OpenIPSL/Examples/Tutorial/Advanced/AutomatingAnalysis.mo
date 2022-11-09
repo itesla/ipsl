@@ -1,4 +1,4 @@
-﻿within OpenIPSL.Examples.Tutorial.Advanced;
+within OpenIPSL.Examples.Tutorial.Advanced;
 model AutomatingAnalysis
   "Automating Analysis with Modelica Functions"
   extends Modelica.Icons.Information;
@@ -84,7 +84,7 @@ model AutomatingAnalysis
     <img style=\"width:633px\" src=\"modelica://OpenIPSL/Resources/images/example_4/image97.png\" alt=\"Image97\" />
   </p>
   <ol type=\"1\" id=\"90b58bf2-6d60-4ee2-bcd5-6b712cb66cda\" start=\"13\">
-    <li>Right-click the <span style=\"font-family: Courier New; color: #0000ff;\">RunAndCompare</span> function, select the <em>Call Function…</em> option and then press OK. If everything goes well you will get the plots shown below. </li>
+    <li>Right-click the <span style=\"font-family: Courier New; color: #0000ff;\">RunAndCompare</span> function, select the <em>Call Function...</em> option and then press OK. If everything goes well you will get the plots shown below. </li>
   </ol>
   <p style=\"margin-left: 50px;\">
     <img style=\"width:700px\" src=\"modelica://OpenIPSL/Resources/images/example_4/image45.png\" alt=\"Image45\" />
