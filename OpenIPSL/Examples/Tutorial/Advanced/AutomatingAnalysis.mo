@@ -48,7 +48,7 @@ model AutomatingAnalysis
     <img style=\"width:662px\" src=\"modelica://OpenIPSL/Resources/images/example_4/image35.png\" alt=\"Image35\" />
   </p>
   <ol type=\"1\" id=\"51729e24-42a5-4834-ac2d-52ea5d23d086\" start=\"8\">
-    <li>Change the class of the genunit component of the <span style=\"font-family: Courier New; color: #0000ff;\">SMIB_VarLoad</span> model to the <span style=\"font-family: Courier New; color: #0000ff;\">Generator_TurbGov_AVR_PSS</span> model. You will find it as “ <em>Machine with Turbine, Governor, Excitation System and PSS</em>”. </li>
+    <li>Change the class of the genunit component of the <span style=\"font-family: Courier New; color: #0000ff;\">SMIB_VarLoad</span> model to the <span style=\"font-family: Courier New; color: #0000ff;\">Generator_TurbGov_AVR_PSS</span> model. You will find it as &quot;<em>Machine with Turbine, Governor, Excitation System and PSS</em>&quot;. </li>
   </ol>
   <p style=\"margin-left: 50px;\">
     <img style=\"width:700px\" src=\"modelica://OpenIPSL/Resources/images/example_4/image14.png\" alt=\"Image14\" />
