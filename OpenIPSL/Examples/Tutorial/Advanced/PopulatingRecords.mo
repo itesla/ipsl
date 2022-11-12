@@ -2,75 +2,139 @@ within OpenIPSL.Examples.Tutorial.Advanced;
 model PopulatingRecords "Populating Power Flows Records with GridCal"
   extends Modelica.Icons.Information;
   annotation (DocumentationClass=true, Documentation(info="<html>
-  <h5 id=\"153d8da7-e237-4c9d-ab2b-2cc35263dd82\">Populating Power Flows with GridCal</h5>
-  <p id=\"0ed9e34a-d72e-42ea-b2ee-62fb35e3e185\">The next step is to populate our model with power flow results generated from GridCal. For simplicity, we will create a power flow model from an accompanying PSS/E <span style=\"font-family: Courier New; color: #0000ff;\">.raw</span>. However, it is possible to run the power flows from a native GridCal model. </p>
-  <ol type=\"1\" id=\"66dc4dd1-545e-4349-a686-af2d1033697a\" start=\"1\">
-    <li><a href=\"https://github.com/ALSETLab/SMIB_Tutorial/tree/master/models/_old/SMIB/PSSE_Files\">Download</a> the accompanying PSS/E <span style=\"font-family: Courier New; color: #0000ff;\">.raw</span> file ( <span style=\"font-family: Courier New; color: #0000ff;\">SMIB_Base_Case.raw</span>) and save it in your model directory under <span style=\"font-family: Courier New; color: #0000ff;\">PSSE_Files</span>. The <span style=\"font-family: Courier New; color: #0000ff;\">.dyr</span> file is not required for power flow computations.</li>
+  <h5>Populating Power Flows with GridCal</h5>
+  <p>The next step is to populate our model with power flow results generated from GridCal. For simplicity, we will create a power flow model from an accompanying PSS/E <font color=\"blue\"><code>.raw</code></font>. However, it is possible to run the power flows from a native GridCal model. </p>
+  <ol type=\"1\" start=\"1\">
+    <li><a href=\"https://github.com/ALSETLab/SMIB_Tutorial/tree/master/models/_old/SMIB/PSSE_Files\">Download</a> the accompanying PSS/E <font color=\"blue\"><code>.raw</code></font> file (<font color=\"blue\"><code>SMIB_Base_Case.raw</code></font>) and save it in your model directory under <font color=\"blue\"><code>PSSE_Files</code></font>. The <font color=\"blue\"><code>.dyr</code></font> file is not required for power flow computations.</li>
   </ol>
-  <p style=\"margin-left: 40px;\">
-    <img style=\"width:445px\" src=\"modelica://OpenIPSL/Resources/images/example_4/image53.png\" alt=\"Image53\" />
+  <p>
+    <img src=\"modelica://OpenIPSL/Resources/images/example_4/image53.png\" alt=\"Image53\" />
   </p>
-  <ol type=\"1\" id=\"4e028741-e576-421d-be44-5e5f0ab1e2a5\" start=\"2\">
-    <li>Create a new Python script called <span style=\"font-family: Courier New; color: #0000ff;\">run_pf.py</span>. Copy and paste the following code inside it. </li>
+  <ol type=\"1\" start=\"2\">
+    <li>Create a new Python script called <font color=\"blue\"><code>run_pf.py</code></font>. Copy and paste the following code inside it. </li>
   </ol>
-  <p style=\"margin-left: 40px;\">
-    <img style=\"width:700px\" src=\"modelica://OpenIPSL/Resources/images/example_4/image85.png\" alt=\"Image85\" />
-  </p>
-  <p style=\"margin-left: 40px;\">
-    <img style=\"width:705px\" src=\"modelica://OpenIPSL/Resources/images/example_4/image86.png\" alt=\"Image86\" />
-  </p>
-  <p style=\"margin-left: 40px;\">
-    <img style=\"width:654px\" src=\"modelica://OpenIPSL/Resources/images/example_4/image87.png\" alt=\"Image87\" />
-  </p>
-  <p style=\"margin-left: 40px;\">
-    <img style=\"width:718px\" src=\"modelica://OpenIPSL/Resources/images/example_4/image88.png\" alt=\"Image88\" />
-  </p>
-  <ol type=\"1\" id=\"a196115e-5bd0-43b3-9755-c047c16a8af6\" start=\"3\">
-    <li>Execute <span style=\"font-family: Courier New; color: #0000ff;\">run_pf.py</span> from a terminal. </li>
+  <blockquote><pre>
+    <strong>from</strong> pf2rec <strong>import</strong> *
+
+    <strong>import</strong> numpy <strong>as</strong> np
+    <strong>import</strong> pandas <strong>as</strong> pd
+    <strong>import</strong> matplotlib.pyplot <strong>as</strong> plt
+    <strong>import</strong> datetime
+    <strong>import</strong> random
+
+    <strong>from</strong> GridCal.Engine <strong>import</strong> *
+    <strong>from</strong> GridCal.Engine.IO.file_handler <strong>import</strong> FileOpen
+    <strong>from</strong> GridCal.Engine.Devices.shunt <strong>import</strong> Shunt
+    <strong>from</strong> GridCal.Engine.Simulations.PowerFlow.time_series_driver <strong>import</strong> TimeSeries
+    <strong>from</strong> GridCal.Engine.Simulations.PowerFlow.power_flow_driver <strong>import</strong> PowerFlowDriver
+
+    LIST_OF_MODELS = [<em>'AVRI'</em>, <em>'IEEE9'</em>, <em>'IEEE14'</em>, <em>'SMIB'</em>, <em>'TwoAreas'</em>]
+
+    <strong>import</strong> argparse
+    <strong>import</strong> os
+
+    parser = argparse.ArgumentParser()
+
+    parser.add_argument(<em>\"model\"</em>, help = <em>\"Model for which the power flow structure will be created\"</em>)
+    parser.add_argument(<em>\"--version\"</em>, help = <em>\"OpenIPSL version for which the model has been created. Defaults to '1.5.0'\"</em>)
+
+    args = parser.parse_args()
+
+    <strong>if</strong> __name__ == <em>'__main__'</em>:
+
+        _model = args.model
+        <strong>if</strong> _model <strong>not in</strong> LIST_OF_MODELS:
+            <strong>raise</strong> ValueError(<em>'Model not available'</em>)
+
+        <strong>if</strong> args.version:
+            _version = args.version
+            <strong>if</strong> _version <strong>not in</strong> [<em>'1.5.0'</em>, <em>'2.0.0'</em>]:
+                <strong>raise</strong> ValueError(<em>\"OpenIPSL version could not be identified\"</em>)
+        <strong>else</strong>:
+            _version = <em>'1.5.0'</em>
+
+        <strong>if</strong> _version == <em>'1.5.0'</em>:
+            _model_lib = <em>'_old'</em>
+        <strong>elif</strong> _version == <em>'2.0.0'</em>:
+            _model_lib = <em>'_new'</em>
+
+    # Absolute path to the data directory of the model
+    data_path = os.path.abspath(os.path.join(os.getcwd(), <em>\"models\"</em>, _model_lib, _model))
+
+    grid = None
+
+    # Grid model in GridCal
+    file_handler = FileOpen(os.path.abspath(os.path.join(data_path,
+                                                        <em>\"PSSE_Files\"</em>,
+                                                        <em>f\"</em>{_model}<em>_Base_Case.raw\"</em>)))
+
+    # Creating grid object
+    grid = file_handler.open()
+
+    # Power flow options
+    options = PowerFlowOptions(SolverType.NR,
+                        verbose = True,
+                        initialize_with_existing_solution = False,
+                        multi_core = False,
+                        tolerance = 1e-12,
+                        max_iter = 99,
+                        control_q = ReactivePowerControlMode.Direct)
+
+    pf = PowerFlowDriver(grid, options)
+
+    pf.run()
+
+    gridcal2rec(grid = grid, pf = pf, model_name = _model,
+        data_path = data_path,
+        pf_num = 0, export_pf_results = False,
+        is_time_series = False, openipsl_version = _version)
+  </pre></blockquote>
+  <ol type=\"1\" start=\"3\">
+    <li>Execute <font color=\"blue\"><code>run_pf.py</code></font> from a terminal. </li>
   </ol>
   <p style=\"margin-left: 40px;\">
     <em>For OpenIPSL 1.5.0</em>:
   </p>
-  <p style=\"margin-left: 50px;\">
-    <img style=\"width:249px\" src=\"modelica://OpenIPSL/Resources/images/example_4/image89.png\" alt=\"Image89\" />
-  </p>
+  <blockquote><pre>
+    <strong>python</strong> SMIB run_pf.py.py
+  </pre></blockquote>
   <p style=\"margin-left: 40px;\">
-    <em>For OpenIPSL 2.0.0</em>:
+    <em>For OpenIPSL 2.0.0+</em>:
   </p>
-  <p style=\"margin-left: 50px;\">
-    <img style=\"width:367px\" src=\"modelica://OpenIPSL/Resources/images/example_4/image90.png\" alt=\"Image90\" />
-  </p>
+  <blockquote><pre>
+    <strong>python</strong> run_pf.py SMIB --version 2.0.0
+  </pre></blockquote>
   <hr>
-  <p style=\"margin-left: 40px;\">&#x1F4CC; A new power flow record called <span style=\"font-family: Courier New; color: #0000ff;\">PF_00000</span> should be generated inside the <span style=\"font-family: Courier New; color: #0000ff;\">PF_Data</span> subfolder. </p>
+  <p style=\"margin-left: 40px;\">&#x1F4CC; A new power flow record called <font color=\"blue\"><code>PF_00000</code></font> should be generated inside the <font color=\"blue\"><code>PF_Data</code></font> subfolder. </p>
   <hr>
-  <ol type=\"1\" id=\"27c06a73-cd94-44a6-a95a-abf415b19a99\" start=\"4\">
-    <li>Refresh your model. You should get a new file called <span style=\"font-family: Courier New; color: #0000ff;\">PF_0000.mo</span> inside your <span style=\"font-family: Courier New; color: #0000ff;\">PF_Data</span> folder. In fact, there should be a new file in every subfolder too. </li>
+  <ol type=\"1\" start=\"4\">
+    <li>Refresh your model. You should get a new file called <font color=\"blue\"><code>PF_0000.mo</code></font> inside your <font color=\"blue\"><code>PF_Data</code></font> folder. In fact, there should be a new file in every subfolder too. </li>
   </ol>
   <p style=\"margin-left: 100px;\">
-    <img style=\"width:370px\" src=\"modelica://OpenIPSL/Resources/images/example_4/image91.png\" alt=\"Image91\" />
+    <img src=\"modelica://OpenIPSL/Resources/images/example_4/image91.png\" alt=\"Image91\" />
   </p>
-  <ol type=\"1\" id=\"865fae2a-c8cd-478c-99a4-ebe9d152b421\" start=\"5\" style=\"line-height:175%;\">
-    <li>In the diagram layer of your SMIB model, double click the power flow component <span style=\"font-family: Courier New; color: #0000ff;\">pf</span>. Select the newly created power flow <span style=\"font-family: Courier New; color: #0000ff;\">PF_00000</span> as the value for the <span style=\"font-family: Courier New; color: #0000ff;\">PowerFlow</span> field. By doing so, we are specifying that the model will initialize using the power flow results in that specific container. </li>
+  <ol type=\"1\" start=\"5\" style=\"line-height:175%;\">
+    <li>In the diagram layer of your SMIB model, double click the power flow component <font color=\"blue\"><code>pf</code></font>. Select the newly created power flow <font color=\"blue\"><code>PF_00000</code></font> as the value for the <font color=\"blue\"><code>PowerFlow</code></font> field. By doing so, we are specifying that the model will initialize using the power flow results in that specific container. </li>
   </ol>
   <p style=\"margin-left: 70px;\">
-    <img style=\"width:540px\" src=\"modelica://OpenIPSL/Resources/images/example_4/image42.png\" alt=\"Image42\" />
+    <img src=\"modelica://OpenIPSL/Resources/images/example_4/image42.png\" alt=\"Image42\" />
   </p>
   <p style=\"margin-left: 50px;\">To see the power flow values in Dymola, click on the <em>square button</em>
-    <img style=\"width:19px\" src=\"modelica://OpenIPSL/Resources/images/example_4/image6.png\" alt=\"Image6\" /> on the left of the <span style=\"font-family: Courier New; color: #0000ff;\">PowerFlow</span> selection menu.
+    <img src=\"modelica://OpenIPSL/Resources/images/example_4/image6.png\" alt=\"Image6\" /> on the left of the <font color=\"blue\"><code>PowerFlow</code></font> selection menu.
   </p>
   <p style=\"margin-left: 50px;\">You should see that the power flow record is composed of four fields: <em>bus</em>, <em>loads</em>, <em>machine </em>and <em>transformers</em>. </p>
   <p style=\"margin-left: 70px;\">
-    <img style=\"width:585px\" src=\"modelica://OpenIPSL/Resources/images/example_4/image48.png\" alt=\"Image48\" />
+    <img src=\"modelica://OpenIPSL/Resources/images/example_4/image48.png\" alt=\"Image48\" />
   </p>
   <p style=\"margin-left: 50px;\">Inside each field, we can detail the power flow results</p>
   <p style=\"margin-left: 80px;\">
-    <img style=\"width:518px\" src=\"modelica://OpenIPSL/Resources/images/example_4/image39.png\" alt=\"Image39\" />
+    <img src=\"modelica://OpenIPSL/Resources/images/example_4/image39.png\" alt=\"Image39\" />
   </p>
-  <ol type=\"1\" id=\"290e240c-4d11-4b6b-bb45-b8c6c00de0a8\" start=\"6\">
+  <ol type=\"1\" start=\"6\">
     <li>Simulate the SMIB model for 2 seconds. Plot the voltage buses. Notice that the power flow solution initializes the dynamical simulation in an equilibrium (i.e., flat) so that the states of the system are not changing.</li>
   </ol>
   <p style=\"margin-left: 50px;\">
-    <img style=\"width:567px\" src=\"modelica://OpenIPSL/Resources/images/example_4/image30.png\" alt=\"Image30\" />
+    <img src=\"modelica://OpenIPSL/Resources/images/example_4/image30.png\" alt=\"Image30\" />
   </p>
 </html>"));
 end PopulatingRecords;
