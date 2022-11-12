@@ -35,7 +35,7 @@ model InstallingGridCal "Installing GridCal"
     <img style=\"width:300px;margin-left: 50px;\" src=\"modelica://OpenIPSL/Resources/images/example_4/image28.png\" alt=\"Image28\" />
   </p>
   <ol type=\"1\" id=\"92aa7be5-b938-4a15-8aea-6e17c79d2cbb\" start=\"4\">
-    <li>Upgrade <span style=\"font-family: Courier New; color: #0000ff;\">pip</span> (optional). </li>
+    <li>Upgrade <code>pip</code> (optional). </li>
   </ol>
   <p style=\"margin-left: 40px;\">On Windows:</p>
   <p>
@@ -98,7 +98,7 @@ model InstallingGridCal "Installing GridCal"
   </p>
   <p style=\"margin-left: 50px;\">As shown in the screenshot above you should not get any errors.</p>
   <ol type=\"1\" id=\"91ad9ad2-4403-4c33-9c4b-b2bb9e9b4784\" start=\"11\">
-    <li>( <strong>Optional but recommended</strong>) Install <span style=\"font-family: Courier New; color: #0000ff;\">JupyterLab</span> by using <span style=\"font-family: Courier New; color: #0000ff;\">pip</span> inside of your environment: </li>
+    <li>( <strong>Optional but recommended</strong>) Install <span style=\"font-family: Courier New; color: #0000ff;\">JupyterLab</span> by using <code>pip</code> inside of your environment: </li>
   </ol>
   <p>
     <img style=\"width:211px;margin-left: 50px;\" src=\"modelica://OpenIPSL/Resources/images/example_4/image83.png\" alt=\"Image83\" />

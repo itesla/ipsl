@@ -13,491 +13,478 @@ model StartHere "Start Here"
     <li>Download the files of the <a href=\"https://github.com/ALSETLab/SMIB_Tutorial\">SMIB_Tutorial</a> repository. </li>
   </ul>
   <h5>System Parameters</h5>
-  <p>The system parameters for the static power flow model are listed below:</p>
-  <table style=\"border-collapse:collapse;border-spacing:0;margin-left: 60px;\">
-    <thead>
-      <tr>
-        <th style=\"border-color:black;border-style:solid;border-width:1px;overflow:hidden;padding:10px 5px;word-break:normal;background-color:#b3e6ff;font-weight:bold;text-align:center;vertical-align:top;\">
-          <span style=\"font-weight:700;font-style:normal;text-decoration:none;color:#000;background-color:transparent\">Bus No.</span>
-        </th>
-        <th style=\"border-color:black;border-style:solid;border-width:1px;overflow:hidden;padding:10px 5px;word-break:normal;background-color:#b3e6ff;font-weight:bold;text-align:center;vertical-align:top;\">
-          <span style=\"font-weight:700;font-style:normal;text-decoration:none;color:#000;background-color:transparent\">Bus Name</span>
-        </th>
-        <th style=\"border-color:black;border-style:solid;border-width:1px;overflow:hidden;padding:10px 5px;word-break:normal;background-color:#b3e6ff;font-weight:bold;text-align:center;vertical-align:top;\">
-          <span style=\"font-weight:700;font-style:normal;text-decoration:none;color:#000;background-color:transparent\">Type</span>
-        </th>
-        <th style=\"border-color:black;border-style:solid;border-width:1px;overflow:hidden;padding:10px 5px;word-break:normal;background-color:#b3e6ff;font-weight:bold;text-align:center;vertical-align:top;\">
-          <span style=\"font-weight:700;font-style:normal;text-decoration:none;color:#000;background-color:transparent\">V (pu)</span>
-        </th>
-        <th style=\"border-color:black;border-style:solid;border-width:1px;overflow:hidden;padding:10px 5px;word-break:normal;background-color:#b3e6ff;font-weight:bold;text-align:center;vertical-align:top;\">
-          <span style=\"font-weight:700;font-style:normal;text-decoration:none;color:#000;background-color:transparent\">Angle</span>
-        </th>
-        <th style=\"border-color:black;border-style:solid;border-width:1px;overflow:hidden;padding:10px 5px;word-break:normal;background-color:#b3e6ff;font-weight:bold;text-align:center;vertical-align:top;\">
-          <span style=\"font-weight:700;font-style:normal;text-decoration:none;color:#000;background-color:transparent\">P (MW)</span>
-        </th>
-        <th style=\"border-color:black;border-style:solid;border-width:1px;overflow:hidden;padding:10px 5px;word-break:normal;background-color:#b3e6ff;font-weight:bold;text-align:center;vertical-align:top;\">
-          <span style=\"font-weight:700;font-style:normal;text-decoration:none;color:#000\">Q (Mvar)</span>
-        </th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td style=\"border-color:black;border-style:solid;border-width:1px;overflow:hidden;padding:10px 5px;word-break:normal;text-align:left;vertical-align:top;\">
-          <span style=\"font-weight:400;font-style:normal;text-decoration:none;color:#000;background-color:transparent\">1</span>
-        </td>
-        <td style=\"border-color:black;border-style:solid;border-width:1px;overflow:hidden;padding:10px 5px;word-break:normal;text-align:left;vertical-align:top;\">
-          <span style=\"font-weight:400;font-style:normal;text-decoration:none;color:#000;background-color:transparent\">B01</span>
-        </td>
-        <td style=\"border-color:black;border-style:solid;border-width:1px;overflow:hidden;padding:10px 5px;word-break:normal;text-align:left;vertical-align:top;\">
-          <span style=\"font-weight:400;font-style:normal;text-decoration:none;color:#000;background-color:transparent\">PV</span>
-        </td>
-        <td style=\"border-color:black;border-style:solid;border-width:1px;overflow:hidden;padding:10px 5px;word-break:normal;text-align:left;vertical-align:top;\">
-          <span style=\"font-weight:400;font-style:normal;text-decoration:none;color:#000;background-color:transparent\">1.0000</span>
-        </td>
-        <td style=\"border-color:black;border-style:solid;border-width:1px;overflow:hidden;padding:10px 5px;word-break:normal;text-align:left;vertical-align:top;\">
-          <span style=\"font-weight:400;font-style:normal;text-decoration:none;color:#000;background-color:transparent\">From PF</span>
-        </td>
-        <td style=\"border-color:black;border-style:solid;border-width:1px;overflow:hidden;padding:10px 5px;word-break:normal;text-align:left;vertical-align:top;\">
-          <span style=\"font-weight:400;font-style:normal;text-decoration:none;color:#000;background-color:transparent\">40.0000</span>
-        </td>
-        <td style=\"border-color:black;border-style:solid;border-width:1px;overflow:hidden;padding:10px 5px;word-break:normal;text-align:left;vertical-align:top;\">
-          <span style=\"font-weight:400;font-style:normal;text-decoration:none;color:#000;background-color:transparent\">From PF</span>
-        </td>
-      </tr>
-      <tr>
-        <td style=\"border-color:black;border-style:solid;border-width:1px;overflow:hidden;padding:10px 5px;word-break:normal;text-align:left;vertical-align:top;\">
-          <span style=\"font-weight:400;font-style:normal;text-decoration:none;color:#000;background-color:transparent\">2</span>
-        </td>
-        <td style=\"border-color:black;border-style:solid;border-width:1px;overflow:hidden;padding:10px 5px;word-break:normal;text-align:left;vertical-align:top;\">
-          <span style=\"font-weight:400;font-style:normal;text-decoration:none;color:#000;background-color:transparent\">B02</span>
-        </td>
-        <td style=\"border-color:black;border-style:solid;border-width:1px;overflow:hidden;padding:10px 5px;word-break:normal;text-align:left;vertical-align:top;\">
-          <span style=\"font-weight:400;font-style:normal;text-decoration:none;color:#000;background-color:transparent\">Slack</span>
-        </td>
-        <td style=\"border-color:black;border-style:solid;border-width:1px;overflow:hidden;padding:10px 5px;word-break:normal;text-align:left;vertical-align:top;\">
-          <span style=\"font-weight:400;font-style:normal;text-decoration:none;color:#000;background-color:transparent\">1.0000</span>
-        </td>
-        <td style=\"border-color:black;border-style:solid;border-width:1px;overflow:hidden;padding:10px 5px;word-break:normal;text-align:left;vertical-align:top;\">
-          <span style=\"font-weight:400;font-style:normal;text-decoration:none;color:#000;background-color:transparent\">0.0000</span>
-        </td>
-        <td style=\"border-color:black;border-style:solid;border-width:1px;overflow:hidden;padding:10px 5px;word-break:normal;text-align:left;vertical-align:top;\">
-          <span style=\"font-weight:400;font-style:normal;text-decoration:none;color:#000;background-color:transparent\">From PF</span>
-        </td>
-        <td style=\"border-color:black;border-style:solid;border-width:1px;overflow:hidden;padding:10px 5px;word-break:normal;text-align:left;vertical-align:top;\">
-          <span style=\"font-weight:400;font-style:normal;text-decoration:none;color:#000;background-color:transparent\">From PF</span>
-        </td>
-      </tr>
-      <tr>
-        <td style=\"border-color:black;border-style:solid;border-width:1px;overflow:hidden;padding:10px 5px;word-break:normal;text-align:left;vertical-align:top;\">
-          <span style=\"font-weight:400;font-style:normal;text-decoration:none;color:#000;background-color:transparent\">3</span>
-        </td>
-        <td style=\"border-color:black;border-style:solid;border-width:1px;overflow:hidden;padding:10px 5px;word-break:normal;text-align:left;vertical-align:top;\">
-          <span style=\"font-weight:400;font-style:normal;text-decoration:none;color:#000;background-color:transparent\">B03*</span>
-        </td>
-        <td style=\"border-color:black;border-style:solid;border-width:1px;overflow:hidden;padding:10px 5px;word-break:normal;text-align:left;vertical-align:top;\">
-          <span style=\"font-weight:400;font-style:normal;text-decoration:none;color:#000;background-color:transparent\">PQ</span>
-        </td>
-        <td style=\"border-color:black;border-style:solid;border-width:1px;overflow:hidden;padding:10px 5px;word-break:normal;text-align:left;vertical-align:top;\">
-          <span style=\"font-weight:400;font-style:normal;text-decoration:none;color:#000;background-color:transparent\">From PF</span>
-        </td>
-        <td style=\"border-color:black;border-style:solid;border-width:1px;overflow:hidden;padding:10px 5px;word-break:normal;text-align:left;vertical-align:top;\">
-          <span style=\"font-weight:400;font-style:normal;text-decoration:none;color:#000;background-color:transparent\">From PF</span>
-        </td>
-        <td style=\"border-color:black;border-style:solid;border-width:1px;overflow:hidden;padding:10px 5px;word-break:normal;text-align:left;vertical-align:top;\">
-          <span style=\"font-weight:400;font-style:normal;text-decoration:none;color:#000;background-color:transparent\">0.0000</span>
-        </td>
-        <td style=\"border-color:black;border-style:solid;border-width:1px;overflow:hidden;padding:10px 5px;word-break:normal;text-align:left;vertical-align:top;\">
-          <span style=\"font-weight:400;font-style:normal;text-decoration:none;color:#000;background-color:transparent\">0.0000</span>
-        </td>
-      </tr>
-      <tr>
-        <td style=\"border-color:black;border-style:solid;border-width:1px;overflow:hidden;padding:10px 5px;word-break:normal;text-align:left;vertical-align:top;\">
-          <span style=\"font-weight:400;font-style:normal;text-decoration:none;color:#000;background-color:transparent\">4</span>
-        </td>
-        <td style=\"border-color:black;border-style:solid;border-width:1px;overflow:hidden;padding:10px 5px;word-break:normal;text-align:left;vertical-align:top;\">
-          <span style=\"font-weight:400;font-style:normal;text-decoration:none;color:#000;background-color:transparent\">B04</span>
-        </td>
-        <td style=\"border-color:black;border-style:solid;border-width:1px;overflow:hidden;padding:10px 5px;word-break:normal;text-align:left;vertical-align:top;\">
-          <span style=\"font-weight:400;font-style:normal;text-decoration:none;color:#000;background-color:transparent\">PQ</span>
-        </td>
-        <td style=\"border-color:black;border-style:solid;border-width:1px;overflow:hidden;padding:10px 5px;word-break:normal;text-align:left;vertical-align:top;\">
-          <span style=\"font-weight:400;font-style:normal;text-decoration:none;color:#000;background-color:transparent\">From PF</span>
-        </td>
-        <td style=\"border-color:black;border-style:solid;border-width:1px;overflow:hidden;padding:10px 5px;word-break:normal;text-align:left;vertical-align:top;\">
-          <span style=\"font-weight:400;font-style:normal;text-decoration:none;color:#000;background-color:transparent\">From PF</span>
-        </td>
-        <td style=\"border-color:black;border-style:solid;border-width:1px;overflow:hidden;padding:10px 5px;word-break:normal;text-align:left;vertical-align:top;\">
-          <span style=\"font-weight:400;font-style:normal;text-decoration:none;color:#000;background-color:transparent\">50.0000</span>
-        </td>
-        <td style=\"border-color:black;border-style:solid;border-width:1px;overflow:hidden;padding:10px 5px;word-break:normal;text-align:left;vertical-align:top;\">
-          <span style=\"font-weight:400;font-style:normal;text-decoration:none;color:#000;background-color:transparent\">10.0000</span>
-        </td>
-      </tr>
-    </tbody>
+  <p>&nbsp;&nbsp;&nbsp;&nbsp;The system parameters for the static power flow model are listed below:</p>
+  <table cellspacing=\"0\" cellpadding=\"0\" border=\"1\" style=\"margin-left: 70px;\">
+    <caption align=\"bottom\"><em>* A three-phase fault is to be set at bus FAULT</em></caption>
+    <tr>
+      <th bgcolor=\"#b3e6ff\">
+        <p align=\"center\">
+          <strong>Bus No.</strong></p>
+      </th>
+      <th bgcolor=\"#b3e6ff\">
+        <p align=\"center\"><strong>Bus Name</strong></p>
+      </th>
+      <th bgcolor=\"#b3e6ff\">
+        <p align=\"center\"><strong>Type</strong></p>
+      </th>
+      <th bgcolor=\"#b3e6ff\">
+        <p align=\"center\"><strong>V (pu)</strong></p>
+      </th>
+      <th bgcolor=\"#b3e6ff\">
+        <p align=\"center\"><strong>Angle</strong></p>
+      </th>
+      <th bgcolor=\"#b3e6ff\">
+        <p align=\"center\"><strong>P (MW)</strong></p>
+      </th>
+      <th bgcolor=\"#b3e6ff\">
+        <p align=\"center\"><strong>Q (Mvar)</strong></p>
+      </th>
+    </tr>
+    <tr>
+      <td>
+        <p align=\"center\">1 </p>
+      </td>
+      <td>
+        <p align=\"center\">B01 </p>
+      </td>
+      <td>
+        <p align=\"center\">PV </p>
+      </td>
+      <td>
+        <p align=\"center\">1.0000 </p>
+      </td>
+      <td>
+        <p align=\"center\">From PF </p>
+      </td>
+      <td>
+        <p align=\"center\">40.0000 </p>
+      </td>
+      <td>
+        <p align=\"center\">From PF </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p align=\"center\">2 </p>
+      </td>
+      <td>
+        <p align=\"center\">B02 </p>
+      </td>
+      <td>
+        <p align=\"center\">Slack </p>
+      </td>
+      <td>
+        <p align=\"center\">1.0000 </p>
+      </td>
+      <td>
+        <p align=\"center\">0.0000 </p>
+      </td>
+      <td>
+        <p align=\"center\">From PF </p>
+      </td>
+      <td>
+        <p align=\"center\">From PF </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p align=\"center\">3 </p>
+      </td>
+      <td>
+        <p align=\"center\">B03* </p>
+      </td>
+      <td>
+        <p align=\"center\">PQ </p>
+      </td>
+      <td>
+        <p align=\"center\">From PF </p>
+      </td>
+      <td>
+        <p align=\"center\">From PF </p>
+      </td>
+      <td>
+        <p align=\"center\">0.0000 </p>
+      </td>
+      <td>
+        <p align=\"center\">0.0000 </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p align=\"center\">4 </p>
+      </td>
+      <td>
+        <p align=\"center\">B04 </p>
+      </td>
+      <td>
+        <p align=\"center\">PQ </p>
+      </td>
+      <td>
+        <p align=\"center\">From PF </p>
+      </td>
+      <td>
+        <p align=\"center\">From PF </p>
+      </td>
+      <td>
+        <p align=\"center\">50.0000 </p>
+      </td>
+      <td>
+        <p align=\"center\">10.0000 </p>
+      </td>
+    </tr>
   </table>
-  <p style=\";margin-left: 55px;\">* <em>A three-phase fault is to be set at bus FAULT</em>
-  </p>
-  <br />
-  <table style=\"border-collapse:collapse;border-spacing:0;margin-left: 95px;\">
-    <thead>
-      <tr>
-        <th style=\"border-color:black;border-style:solid;border-width:1px;overflow:hidden;padding:10px 5px;word-break:normal;background-color:#b3e6ff;font-weight:bold;text-align:center;vertical-align:top;\">
-          <span style=\"font-weight:700;font-style:normal;text-decoration:none;color:#000;background-color:transparent\">Line Name</span>
-        </th>
-        <th style=\"border-color:black;border-style:solid;border-width:1px;overflow:hidden;padding:10px 5px;word-break:normal;background-color:#b3e6ff;font-weight:bold;text-align:center;vertical-align:top;\">
-          <span style=\"font-weight:700;font-style:normal;text-decoration:none;color:#000;background-color:transparent\">From Bus</span>
-        </th>
-        <th style=\"border-color:black;border-style:solid;border-width:1px;overflow:hidden;padding:10px 5px;word-break:normal;background-color:#b3e6ff;font-weight:bold;text-align:center;vertical-align:top;\">
-          <span style=\"font-weight:700;font-style:normal;text-decoration:none;color:#000;background-color:transparent\">To Bus</span>
-        </th>
-        <th style=\"border-color:black;border-style:solid;border-width:1px;overflow:hidden;padding:10px 5px;word-break:normal;background-color:#b3e6ff;font-weight:bold;text-align:center;vertical-align:top;\">
-          <span style=\"font-weight:700;font-style:normal;text-decoration:none;color:#000;background-color:transparent\">R (pu)</span>
-        </th>
-        <th style=\"border-color:black;border-style:solid;border-width:1px;overflow:hidden;padding:10px 5px;word-break:normal;background-color:#b3e6ff;font-weight:bold;text-align:center;vertical-align:top;\">
-          <span style=\"font-weight:700;font-style:normal;text-decoration:none;color:#000;background-color:transparent\">X (pu)</span>
-        </th>
-        <th style=\"border-color:black;border-style:solid;border-width:1px;overflow:hidden;padding:10px 5px;word-break:normal;background-color:#b3e6ff;font-weight:bold;text-align:center;vertical-align:top;\">
-          <span style=\"font-weight:700;font-style:normal;text-decoration:none;color:#000;background-color:transparent\">B (pu)</span>
-        </th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td style=\"border-color:black;border-style:solid;border-width:1px;overflow:hidden;padding:10px 5px;word-break:normal;text-align:left;vertical-align:top;\">
-          <span style=\"font-weight:400;font-style:normal;text-decoration:none;color:#000;background-color:transparent\">line_01</span>
-        </td>
-        <td style=\"border-color:black;border-style:solid;border-width:1px;overflow:hidden;padding:10px 5px;word-break:normal;text-align:left;vertical-align:top;\">
-          <span style=\"font-weight:400;font-style:normal;text-decoration:none;color:#000;background-color:transparent\">B01</span>
-        </td>
-        <td style=\"border-color:black;border-style:solid;border-width:1px;overflow:hidden;padding:10px 5px;word-break:normal;text-align:left;vertical-align:top;\">
-          <span style=\"font-weight:400;font-style:normal;text-decoration:none;color:#000;background-color:transparent\">B03</span>
-        </td>
-        <td style=\"border-color:black;border-style:solid;border-width:1px;overflow:hidden;padding:10px 5px;word-break:normal;text-align:left;vertical-align:top;\">
-          <span style=\"font-weight:400;font-style:normal;text-decoration:none;color:#000;background-color:transparent\">0.0010</span>
-        </td>
-        <td style=\"border-color:black;border-style:solid;border-width:1px;overflow:hidden;padding:10px 5px;word-break:normal;text-align:left;vertical-align:top;\">
-          <span style=\"font-weight:400;font-style:normal;text-decoration:none;color:#000;background-color:transparent\">0.2000</span>
-        </td>
-        <td style=\"border-color:black;border-style:solid;border-width:1px;overflow:hidden;padding:10px 5px;word-break:normal;text-align:left;vertical-align:top;\">
-          <span style=\"font-weight:400;font-style:normal;text-decoration:none;color:#000;background-color:transparent\">0.0000</span>
-        </td>
-      </tr>
-      <tr>
-        <td style=\"border-color:black;border-style:solid;border-width:1px;overflow:hidden;padding:10px 5px;word-break:normal;text-align:left;vertical-align:top;\">
-          <span style=\"font-weight:400;font-style:normal;text-decoration:none;color:#000;background-color:transparent\">line_02</span>
-        </td>
-        <td style=\"border-color:black;border-style:solid;border-width:1px;overflow:hidden;padding:10px 5px;word-break:normal;text-align:left;vertical-align:top;\">
-          <span style=\"font-weight:400;font-style:normal;text-decoration:none;color:#000;background-color:transparent\">B03</span>
-        </td>
-        <td style=\"border-color:black;border-style:solid;border-width:1px;overflow:hidden;padding:10px 5px;word-break:normal;text-align:left;vertical-align:top;\">
-          <span style=\"font-weight:400;font-style:normal;text-decoration:none;color:#000;background-color:transparent\">B02</span>
-        </td>
-        <td style=\"border-color:black;border-style:solid;border-width:1px;overflow:hidden;padding:10px 5px;word-break:normal;text-align:left;vertical-align:top;\">
-          <span style=\"font-weight:400;font-style:normal;text-decoration:none;color:#000;background-color:transparent\">0.0010</span>
-        </td>
-        <td style=\"border-color:black;border-style:solid;border-width:1px;overflow:hidden;padding:10px 5px;word-break:normal;text-align:left;vertical-align:top;\">
-          <span style=\"font-weight:400;font-style:normal;text-decoration:none;color:#000;background-color:transparent\">0.2000</span>
-        </td>
-        <td style=\"border-color:black;border-style:solid;border-width:1px;overflow:hidden;padding:10px 5px;word-break:normal;text-align:left;vertical-align:top;\">
-          <span style=\"font-weight:400;font-style:normal;text-decoration:none;color:#000;background-color:transparent\">0.0000</span>
-        </td>
-      </tr>
-      <tr>
-        <td style=\"border-color:black;border-style:solid;border-width:1px;overflow:hidden;padding:10px 5px;word-break:normal;text-align:left;vertical-align:top;\">
-          <span style=\"font-weight:400;font-style:normal;text-decoration:none;color:#000;background-color:transparent\">line_03</span>
-        </td>
-        <td style=\"border-color:black;border-style:solid;border-width:1px;overflow:hidden;padding:10px 5px;word-break:normal;text-align:left;vertical-align:top;\">
-          <span style=\"font-weight:400;font-style:normal;text-decoration:none;color:#000;background-color:transparent\">B03</span>
-        </td>
-        <td style=\"border-color:black;border-style:solid;border-width:1px;overflow:hidden;padding:10px 5px;word-break:normal;text-align:left;vertical-align:top;\">
-          <span style=\"font-weight:400;font-style:normal;text-decoration:none;color:#000;background-color:transparent\">B04</span>
-        </td>
-        <td style=\"border-color:black;border-style:solid;border-width:1px;overflow:hidden;padding:10px 5px;word-break:normal;text-align:left;vertical-align:top;\">
-          <span style=\"font-weight:400;font-style:normal;text-decoration:none;color:#000;background-color:transparent\">0.0005</span>
-        </td>
-        <td style=\"border-color:black;border-style:solid;border-width:1px;overflow:hidden;padding:10px 5px;word-break:normal;text-align:left;vertical-align:top;\">
-          <span style=\"font-weight:400;font-style:normal;text-decoration:none;color:#000;background-color:transparent\">0.1000</span>
-        </td>
-        <td style=\"border-color:black;border-style:solid;border-width:1px;overflow:hidden;padding:10px 5px;word-break:normal;text-align:left;vertical-align:top;\">
-          <span style=\"font-weight:400;font-style:normal;text-decoration:none;color:#000;background-color:transparent\">0.0000</span>
-        </td>
-      </tr>
-      <tr>
-        <td style=\"border-color:black;border-style:solid;border-width:1px;overflow:hidden;padding:10px 5px;word-break:normal;text-align:left;vertical-align:top;\">
-          <span style=\"font-weight:400;font-style:normal;text-decoration:none;color:#000;background-color:transparent\">line_04</span>
-        </td>
-        <td style=\"border-color:black;border-style:solid;border-width:1px;overflow:hidden;padding:10px 5px;word-break:normal;text-align:left;vertical-align:top;\">
-          <span style=\"font-weight:400;font-style:normal;text-decoration:none;color:#000;background-color:transparent\">B04</span>
-        </td>
-        <td style=\"border-color:black;border-style:solid;border-width:1px;overflow:hidden;padding:10px 5px;word-break:normal;text-align:left;vertical-align:top;\">
-          <span style=\"font-weight:400;font-style:normal;text-decoration:none;color:#000;background-color:transparent\">B02</span>
-        </td>
-        <td style=\"border-color:black;border-style:solid;border-width:1px;overflow:hidden;padding:10px 5px;word-break:normal;text-align:left;vertical-align:top;\">
-          <span style=\"font-weight:400;font-style:normal;text-decoration:none;color:#000;background-color:transparent\">0.0005</span>
-        </td>
-        <td style=\"border-color:black;border-style:solid;border-width:1px;overflow:hidden;padding:10px 5px;word-break:normal;text-align:left;vertical-align:top;\">
-          <span style=\"font-weight:400;font-style:normal;text-decoration:none;color:#000;background-color:transparent\">0.1000</span>
-        </td>
-        <td style=\"border-color:black;border-style:solid;border-width:1px;overflow:hidden;padding:10px 5px;word-break:normal;text-align:left;vertical-align:top;\">
-          <span style=\"font-weight:400;font-style:normal;text-decoration:none;color:#000;background-color:transparent\">0.0000</span>
-        </td>
-      </tr>
-    </tbody>
+  <p style=\"margin-top: 1em; margin-bottom: 1em;\"></p>
+  <table cellspacing=\"0\" cellpadding=\"0\" border=\"1\" style=\"margin-left: 90px;\">
+    <tr>
+      <th bgcolor=\"#b3e6ff\">
+        <p align=\"center\"><strong>Line Name</strong></p>
+      </th>
+      <th bgcolor=\"#b3e6ff\">
+        <p align=\"center\"><strong>From Bus</strong></p>
+      </th>
+      <th bgcolor=\"#b3e6ff\">
+        <p align=\"center\"><strong>To Bus</strong></p>
+      </th>
+      <th bgcolor=\"#b3e6ff\">
+        <p align=\"center\"><strong>R (pu)</strong></p>
+      </th>
+      <th bgcolor=\"#b3e6ff\">
+        <p align=\"center\"><strong>X (pu)</strong></p>
+      </th>
+      <th bgcolor=\"#b3e6ff\">
+        <p align=\"center\"><strong>B (pu)</strong></p>
+      </th>
+    </tr>
+    <tr>
+      <td>
+        <p align=\"center\">line_01 </p>
+      </td>
+      <td>
+        <p align=\"center\">B01 </p>
+      </td>
+      <td>
+        <p align=\"center\">B03 </p>
+      </td>
+      <td>
+        <p align=\"center\">0.0010 </p>
+      </td>
+      <td>
+        <p align=\"center\">0.2000 </p>
+      </td>
+      <td>
+        <p align=\"center\">0.0000 </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p align=\"center\">line_02 </p>
+      </td>
+      <td>
+        <p align=\"center\">B03 </p>
+      </td>
+      <td>
+        <p align=\"center\">B02 </p>
+      </td>
+      <td>
+        <p align=\"center\">0.0010 </p>
+      </td>
+      <td>
+        <p align=\"center\">0.2000 </p>
+      </td>
+      <td>
+        <p align=\"center\">0.0000 </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p align=\"center\">line_03 </p>
+      </td>
+      <td>
+        <p align=\"center\">B03 </p>
+      </td>
+      <td>
+        <p align=\"center\">B04 </p>
+      </td>
+      <td>
+        <p align=\"center\">0.0005 </p>
+      </td>
+      <td>
+        <p align=\"center\">0.1000 </p>
+      </td>
+      <td>
+        <p align=\"center\">0.0000 </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p align=\"center\">line_04 </p>
+      </td>
+      <td>
+        <p align=\"center\">B04 </p>
+      </td>
+      <td>
+        <p align=\"center\">B02 </p>
+      </td>
+      <td>
+        <p align=\"center\">0.0005 </p>
+      </td>
+      <td>
+        <p align=\"center\">0.1000 </p>
+      </td>
+      <td>
+        <p align=\"center\">0.0000 </p>
+      </td>
+    </tr>
   </table>
-  <br />
-  <p id=\"3ba4b22e-c215-4513-b3cd-e6fb1014c189\">For the dynamic part of the simulation, the parameters of the models are:</p>
-  <table style=\"border-collapse:collapse;border-spacing:0;margin-left: 50px;\">
-    <thead>
-      <tr>
-        <th style=\"border-color:black;border-style:solid;border-width:1px;overflow:hidden;padding:10px 5px;word-break:normal;background-color:#b3e6ff;font-weight:bold;text-align:center;vertical-align:top;\">
-          <span style=\"font-weight:700;font-style:normal;text-decoration:none;color:#000;background-color:transparent\">Generator (Bus)</span>
-        </th>
-        <th style=\"border-color:black;border-style:solid;border-width:1px;overflow:hidden;padding:10px 5px;word-break:normal;background-color:#b3e6ff;font-weight:bold;text-align:center;vertical-align:top;\">
-          <span style=\"font-weight:700;font-style:normal;text-decoration:none;color:#000;background-color:transparent\">Generator Type</span>
-        </th>
-        <th style=\"border-color:black;border-style:solid;border-width:1px;overflow:hidden;padding:10px 5px;word-break:normal;background-color:#b3e6ff;font-weight:bold;text-align:center;vertical-align:top;\">
-          <span style=\"font-weight:700;font-style:normal;text-decoration:none;color:#000;background-color:transparent\">Exciter</span>
-        </th>
-        <th style=\"border-color:black;border-style:solid;border-width:1px;overflow:hidden;padding:10px 5px;word-break:normal;background-color:#b3e6ff;font-weight:bold;text-align:center;vertical-align:top;\">
-          <span style=\"font-weight:700;font-style:normal;text-decoration:none;color:#000;background-color:transparent\">Turbine Governor</span>
-        </th>
-        <th style=\"border-color:black;border-style:solid;border-width:1px;overflow:hidden;padding:10px 5px;word-break:normal;background-color:#b3e6ff;font-weight:bold;text-align:center;vertical-align:top;\">
-          <span style=\"font-weight:700;font-style:normal;text-decoration:none;color:#000;background-color:transparent\">Stabilizer</span>
-        </th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td style=\"border-color:black;border-style:solid;border-width:1px;overflow:hidden;padding:10px 5px;word-break:normal;text-align:left;vertical-align:top;\">
-          <span style=\"font-weight:400;font-style:normal;text-decoration:none;color:#000;background-color:transparent\">1</span>
-        </td>
-        <td style=\"border-color:black;border-style:solid;border-width:1px;overflow:hidden;padding:10px 5px;word-break:normal;text-align:left;vertical-align:top;\">
-          <span style=\"font-weight:400;font-style:normal;text-decoration:none;color:#000;background-color:transparent\">GENROE</span>
-        </td>
-        <td style=\"border-color:black;border-style:solid;border-width:1px;overflow:hidden;padding:10px 5px;word-break:normal;text-align:left;vertical-align:top;\">
-          <span style=\"font-weight:400;font-style:normal;text-decoration:none;color:#000;background-color:transparent\">None</span>
-        </td>
-        <td style=\"border-color:black;border-style:solid;border-width:1px;overflow:hidden;padding:10px 5px;word-break:normal;text-align:left;vertical-align:top;\">
-          <span style=\"font-weight:400;font-style:normal;text-decoration:none;color:#000;background-color:transparent\">None</span>
-        </td>
-        <td style=\"border-color:black;border-style:solid;border-width:1px;overflow:hidden;padding:10px 5px;word-break:normal;text-align:left;vertical-align:top;\">
-          <span style=\"font-weight:400;font-style:normal;text-decoration:none;color:#000;background-color:transparent\">None</span>
-        </td>
-      </tr>
-      <tr>
-        <td style=\"border-color:black;border-style:solid;border-width:1px;overflow:hidden;padding:10px 5px;word-break:normal;text-align:left;vertical-align:top;\">
-          <span style=\"font-weight:400;font-style:normal;text-decoration:none;color:#000;background-color:transparent\">3</span>
-        </td>
-        <td style=\"border-color:black;border-style:solid;border-width:1px;overflow:hidden;padding:10px 5px;word-break:normal;text-align:left;vertical-align:top;\">
-          <span style=\"font-weight:400;font-style:normal;text-decoration:none;color:#000;background-color:transparent\">GENCLS</span>
-        </td>
-        <td style=\"border-color:black;border-style:solid;border-width:1px;overflow:hidden;padding:10px 5px;word-break:normal;text-align:left;vertical-align:top;\">
-          <span style=\"font-weight:400;font-style:normal;text-decoration:none;color:#000;background-color:transparent\">None</span>
-        </td>
-        <td style=\"border-color:black;border-style:solid;border-width:1px;overflow:hidden;padding:10px 5px;word-break:normal;text-align:left;vertical-align:top;\">
-          <span style=\"font-weight:400;font-style:normal;text-decoration:none;color:#000;background-color:transparent\">None</span>
-        </td>
-        <td style=\"border-color:black;border-style:solid;border-width:1px;overflow:hidden;padding:10px 5px;word-break:normal;text-align:left;vertical-align:top;\">
-          <span style=\"font-weight:400;font-style:normal;text-decoration:none;color:#000;background-color:transparent\">None</span>
-        </td>
-      </tr>
-    </tbody>
+  <p style=\"margin-top: 1.5em; margin-bottom: 1em;\">&nbsp;&nbsp;&nbsp;&nbsp;For the dynamic part of the simulation, the parameters of the models are:</p>
+  <table cellspacing=\"0\" cellpadding=\"0\" border=\"1\" style=\"margin-left: 50px;\">
+    <tr>
+      <th bgcolor=\"#b3e6ff\">
+        <p align=\"center\"><strong>Generator (Bus)</strong></p>
+      </th>
+      <th bgcolor=\"#b3e6ff\">
+        <p align=\"center\"><strong>Generator Type</strong></p>
+      </th>
+      <th bgcolor=\"#b3e6ff\">
+        <p align=\"center\"><strong>Exciter</strong></p>
+      </th>
+      <th bgcolor=\"#b3e6ff\">
+        <p align=\"center\"><strong>Turbine Governor</strong></p>
+      </th>
+      <th bgcolor=\"#b3e6ff\">
+        <p align=\"center\"><strong>Stabilizer</strong></p>
+      </th>
+    </tr>
+    <tr>
+      <td>
+        <p align=\"center\">1 </p>
+      </td>
+      <td>
+        <p align=\"center\">GENROE </p>
+      </td>
+      <td>
+        <p align=\"center\">None </p>
+      </td>
+      <td>
+        <p align=\"center\">None </p>
+      </td>
+      <td>
+        <p align=\"center\">None </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p align=\"center\">3 </p>
+      </td>
+      <td>
+        <p align=\"center\">GENCLS </p>
+      </td>
+      <td>
+        <p align=\"center\">None </p>
+      </td>
+      <td>
+        <p align=\"center\">None </p>
+      </td>
+      <td>
+        <p align=\"center\">None </p>
+      </td>
+    </tr>
   </table>
-  <br />
-  <table style=\"border-collapse:collapse;border-spacing:0;margin-left: 120px;\">
-    <thead>
-      <tr>
-        <th style=\"border-color:black;border-style:solid;border-width:1px;overflow:hidden;padding:10px 5px;word-break:normal;background-color:#b3e6ff;font-weight:bold;text-align:center;vertical-align:top;\">
-          <span style=\"font-weight:700;font-style:normal;text-decoration:none;color:#000;background-color:transparent\">Generator (Bus)</span>
-        </th>
-        <th style=\"border-color:black;border-style:solid;border-width:1px;overflow:hidden;padding:10px 5px;word-break:normal;background-color:#b3e6ff;font-weight:bold;text-align:center;vertical-align:top;\">
-          <span style=\"font-weight:700;font-style:normal;text-decoration:none;color:#000;background-color:transparent\">Parameter</span>
-        </th>
-        <th style=\"border-color:black;border-style:solid;border-width:1px;overflow:hidden;padding:10px 5px;word-break:normal;background-color:#b3e6ff;font-weight:bold;text-align:center;vertical-align:top;\">
-          <span style=\"font-weight:700;font-style:normal;text-decoration:none;color:#000;background-color:transparent\">Value</span>
-        </th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td style=\"border-color:black;border-style:solid;border-width:1px;overflow:hidden;padding:10px 5px;word-break:normal;text-align:left;vertical-align:top;\" rowspan=\"17\">GENROE</td>
-        <td style=\"border-color:black;border-style:solid;border-width:1px;overflow:hidden;padding:10px 5px;word-break:normal;text-align:left;vertical-align:top;\">
-          <span style=\"font-weight:400;font-style:normal;text-decoration:none;color:#000;background-color:transparent\">Mbase</span>
-        </td>
-        <td style=\"border-color:black;border-style:solid;border-width:1px;overflow:hidden;padding:10px 5px;word-break:normal;text-align:left;vertical-align:top;\">
-          <span style=\"font-weight:400;font-style:normal;text-decoration:none;color:#000;background-color:transparent\">100 MVA</span>
-        </td>
-      </tr>
-      <tr>
-        <td style=\"border-color:black;border-style:solid;border-width:1px;overflow:hidden;padding:10px 5px;word-break:normal;text-align:left;vertical-align:top;\">
-          <span style=\"font-weight:400;font-style:normal;text-decoration:none;color:#000;background-color:transparent\">T'do (&gt; 0)</span>
-        </td>
-        <td style=\"border-color:black;border-style:solid;border-width:1px;overflow:hidden;padding:10px 5px;word-break:normal;text-align:left;vertical-align:top;\">
-          <span style=\"font-weight:400;font-style:normal;text-decoration:none;color:#000;background-color:transparent\">5.0000</span>
-        </td>
-      </tr>
-      <tr>
-        <td style=\"border-color:black;border-style:solid;border-width:1px;overflow:hidden;padding:10px 5px;word-break:normal;text-align:left;vertical-align:top;\">
-          <span style=\"font-weight:400;font-style:normal;text-decoration:none;color:#000;background-color:transparent\">T''do (&gt; 0)</span>
-        </td>
-        <td style=\"border-color:black;border-style:solid;border-width:1px;overflow:hidden;padding:10px 5px;word-break:normal;text-align:left;vertical-align:top;\">
-          <span style=\"font-weight:400;font-style:normal;text-decoration:none;color:#000;background-color:transparent\">0.0700</span>
-        </td>
-      </tr>
-      <tr>
-        <td style=\"border-color:black;border-style:solid;border-width:1px;overflow:hidden;padding:10px 5px;word-break:normal;text-align:left;vertical-align:top;\">
-          <span style=\"font-weight:400;font-style:normal;text-decoration:none;color:#000;background-color:transparent\">T'qo (&gt; 0)</span>
-        </td>
-        <td style=\"border-color:black;border-style:solid;border-width:1px;overflow:hidden;padding:10px 5px;word-break:normal;text-align:left;vertical-align:top;\">
-          <span style=\"font-weight:400;font-style:normal;text-decoration:none;color:#000;background-color:transparent\">0.9000</span>
-        </td>
-      </tr>
-      <tr>
-        <td style=\"border-color:black;border-style:solid;border-width:1px;overflow:hidden;padding:10px 5px;word-break:normal;text-align:left;vertical-align:top;\">
-          <span style=\"font-weight:400;font-style:normal;text-decoration:none;color:#000;background-color:transparent\">T''qo (&gt; 0)</span>
-        </td>
-        <td style=\"border-color:black;border-style:solid;border-width:1px;overflow:hidden;padding:10px 5px;word-break:normal;text-align:left;vertical-align:top;\">
-          <span style=\"font-weight:400;font-style:normal;text-decoration:none;color:#000;background-color:transparent\">0.0900</span>
-        </td>
-      </tr>
-      <tr>
-        <td style=\"border-color:black;border-style:solid;border-width:1px;overflow:hidden;padding:10px 5px;word-break:normal;text-align:left;vertical-align:top;\">
-          <span style=\"font-weight:400;font-style:normal;text-decoration:none;color:#000;background-color:transparent\">H, Inertia</span>
-        </td>
-        <td style=\"border-color:black;border-style:solid;border-width:1px;overflow:hidden;padding:10px 5px;word-break:normal;text-align:left;vertical-align:top;\">
-          <span style=\"font-weight:400;font-style:normal;text-decoration:none;color:#000;background-color:transparent\">4.2800</span>
-        </td>
-      </tr>
-      <tr>
-        <td style=\"border-color:black;border-style:solid;border-width:1px;overflow:hidden;padding:10px 5px;word-break:normal;text-align:left;vertical-align:top;\">
-          <span style=\"font-weight:400;font-style:normal;text-decoration:none;color:#000;background-color:transparent\">D, Speed Damping</span>
-        </td>
-        <td style=\"border-color:black;border-style:solid;border-width:1px;overflow:hidden;padding:10px 5px;word-break:normal;text-align:left;vertical-align:top;\">
-          <span style=\"font-weight:400;font-style:normal;text-decoration:none;color:#000;background-color:transparent\">0.0000</span>
-        </td>
-      </tr>
-      <tr>
-        <td style=\"border-color:black;border-style:solid;border-width:1px;overflow:hidden;padding:10px 5px;word-break:normal;text-align:left;vertical-align:top;\">
-          <span style=\"font-weight:400;font-style:normal;text-decoration:none;color:#000;background-color:transparent\">Xd</span>
-        </td>
-        <td style=\"border-color:black;border-style:solid;border-width:1px;overflow:hidden;padding:10px 5px;word-break:normal;text-align:left;vertical-align:top;\">
-          <span style=\"font-weight:400;font-style:normal;text-decoration:none;color:#000;background-color:transparent\">1.8400</span>
-        </td>
-      </tr>
-      <tr>
-        <td style=\"border-color:black;border-style:solid;border-width:1px;overflow:hidden;padding:10px 5px;word-break:normal;text-align:left;vertical-align:top;\">
-          <span style=\"font-weight:400;font-style:normal;text-decoration:none;color:#000;background-color:transparent\">Xq</span>
-        </td>
-        <td style=\"border-color:black;border-style:solid;border-width:1px;overflow:hidden;padding:10px 5px;word-break:normal;text-align:left;vertical-align:top;\">
-          <span style=\"font-weight:400;font-style:normal;text-decoration:none;color:#000;background-color:transparent\">1.7500</span>
-        </td>
-      </tr>
-      <tr>
-        <td style=\"border-color:black;border-style:solid;border-width:1px;overflow:hidden;padding:10px 5px;word-break:normal;text-align:left;vertical-align:top;\">
-          <span style=\"font-weight:400;font-style:normal;text-decoration:none;color:#000;background-color:transparent\">X'd</span>
-        </td>
-        <td style=\"border-color:black;border-style:solid;border-width:1px;overflow:hidden;padding:10px 5px;word-break:normal;text-align:left;vertical-align:top;\">
-          <span style=\"font-weight:400;font-style:normal;text-decoration:none;color:#000;background-color:transparent\">0.4100</span>
-        </td>
-      </tr>
-      <tr>
-        <td style=\"border-color:black;border-style:solid;border-width:1px;overflow:hidden;padding:10px 5px;word-break:normal;text-align:left;vertical-align:top;\">
-          <span style=\"font-weight:400;font-style:normal;text-decoration:none;color:#000;background-color:transparent\">X'q</span>
-        </td>
-        <td style=\"border-color:black;border-style:solid;border-width:1px;overflow:hidden;padding:10px 5px;word-break:normal;text-align:left;vertical-align:top;\">
-          <span style=\"font-weight:400;font-style:normal;text-decoration:none;color:#000;background-color:transparent\">0.6000</span>
-        </td>
-      </tr>
-      <tr>
-        <td style=\"border-color:black;border-style:solid;border-width:1px;overflow:hidden;padding:10px 5px;word-break:normal;text-align:left;vertical-align:top;\">
-          <span style=\"font-weight:400;font-style:normal;text-decoration:none;color:#000;background-color:transparent\">X''d = X''q</span>
-        </td>
-        <td style=\"border-color:black;border-style:solid;border-width:1px;overflow:hidden;padding:10px 5px;word-break:normal;text-align:left;vertical-align:top;\">
-          <span style=\"font-weight:400;font-style:normal;text-decoration:none;color:#000;background-color:transparent\">0.2000</span>
-        </td>
-      </tr>
-      <tr>
-        <td style=\"border-color:black;border-style:solid;border-width:1px;overflow:hidden;padding:10px 5px;word-break:normal;text-align:left;vertical-align:top;\">
-          <span style=\"font-weight:400;font-style:normal;text-decoration:none;color:#000;background-color:transparent\">Xl</span>
-        </td>
-        <td style=\"border-color:black;border-style:solid;border-width:1px;overflow:hidden;padding:10px 5px;word-break:normal;text-align:left;vertical-align:top;\">
-          <span style=\"font-weight:400;font-style:normal;text-decoration:none;color:#000;background-color:transparent\">0.1200</span>
-        </td>
-      </tr>
-      <tr>
-        <td style=\"border-color:black;border-style:solid;border-width:1px;overflow:hidden;padding:10px 5px;word-break:normal;text-align:left;vertical-align:top;\">
-          <span style=\"font-weight:400;font-style:normal;text-decoration:none;color:#000;background-color:transparent\">S(1.0)</span>
-        </td>
-        <td style=\"border-color:black;border-style:solid;border-width:1px;overflow:hidden;padding:10px 5px;word-break:normal;text-align:left;vertical-align:top;\">
-          <span style=\"font-weight:400;font-style:normal;text-decoration:none;color:#000;background-color:transparent\">0.1100</span>
-        </td>
-      </tr>
-      <tr>
-        <td style=\"border-color:black;border-style:solid;border-width:1px;overflow:hidden;padding:10px 5px;word-break:normal;text-align:left;vertical-align:top;\">
-          <span style=\"font-weight:400;font-style:normal;text-decoration:none;color:#000;background-color:transparent\">S(1.2)</span>
-        </td>
-        <td style=\"border-color:black;border-style:solid;border-width:1px;overflow:hidden;padding:10px 5px;word-break:normal;text-align:left;vertical-align:top;\">
-          <span style=\"font-weight:400;font-style:normal;text-decoration:none;color:#000;background-color:transparent\">0.3900</span>
-        </td>
-      </tr>
-      <tr>
-        <td style=\"border-color:black;border-style:solid;border-width:1px;overflow:hidden;padding:10px 5px;word-break:normal;text-align:left;vertical-align:top;\">
-          <span style=\"font-weight:400;font-style:normal;text-decoration:none;color:#000;background-color:transparent\">Ra</span>
-        </td>
-        <td style=\"border-color:black;border-style:solid;border-width:1px;overflow:hidden;padding:10px 5px;word-break:normal;text-align:left;vertical-align:top;\">
-          <span style=\"font-weight:400;font-style:normal;text-decoration:none;color:#000;background-color:transparent\">0.0000</span>
-        </td>
-      </tr>
-      <tr>
-        <td style=\"border-color:black;border-style:solid;border-width:1px;overflow:hidden;padding:10px 5px;word-break:normal;text-align:left;vertical-align:top;\">
-          <span style=\"font-weight:400;font-style:normal;text-decoration:none;color:#000;background-color:transparent\">Xsource (= Xpq)</span>
-        </td>
-        <td style=\"border-color:black;border-style:solid;border-width:1px;overflow:hidden;padding:10px 5px;word-break:normal;text-align:left;vertical-align:top;\">
-          <span style=\"font-weight:400;font-style:normal;text-decoration:none;color:#000;background-color:transparent\">0.2000</span>
-        </td>
-      </tr>
-      <tr>
-        <td style=\"border-color:black;border-style:solid;border-width:1px;overflow:hidden;padding:10px 5px;word-break:normal;text-align:left;vertical-align:top;\" rowspan=\"5\">GENCLS</td>
-        <td style=\"border-color:black;border-style:solid;border-width:1px;overflow:hidden;padding:10px 5px;word-break:normal;text-align:left;vertical-align:top;\">
-          <span style=\"font-weight:400;font-style:normal;text-decoration:none;color:#000;background-color:transparent\">Mbase</span>
-        </td>
-        <td style=\"border-color:black;border-style:solid;border-width:1px;overflow:hidden;padding:10px 5px;word-break:normal;text-align:left;vertical-align:top;\">
-          <span style=\"font-weight:400;font-style:normal;text-decoration:none;color:#000;background-color:transparent\">100 MVA</span>
-        </td>
-      </tr>
-      <tr>
-        <td style=\"border-color:black;border-style:solid;border-width:1px;overflow:hidden;padding:10px 5px;word-break:normal;text-align:left;vertical-align:top;\">
-          <span style=\"font-weight:400;font-style:normal;text-decoration:none;color:#000;background-color:transparent\">Inertia H</span>
-        </td>
-        <td style=\"border-color:black;border-style:solid;border-width:1px;overflow:hidden;padding:10px 5px;word-break:normal;text-align:left;vertical-align:top;\">
-          <span style=\"font-weight:400;font-style:normal;text-decoration:none;color:#000;background-color:transparent\">5.0000</span>
-        </td>
-      </tr>
-      <tr>
-        <td style=\"border-color:black;border-style:solid;border-width:1px;overflow:hidden;padding:10px 5px;word-break:normal;text-align:left;vertical-align:top;\">
-          <span style=\"font-weight:400;font-style:normal;text-decoration:none;color:#000;background-color:transparent\">Damping Constant D</span>
-        </td>
-        <td style=\"border-color:black;border-style:solid;border-width:1px;overflow:hidden;padding:10px 5px;word-break:normal;text-align:left;vertical-align:top;\">
-          <span style=\"font-weight:400;font-style:normal;text-decoration:none;color:#000;background-color:transparent\">0.0000</span>
-        </td>
-      </tr>
-      <tr>
-        <td style=\"border-color:black;border-style:solid;border-width:1px;overflow:hidden;padding:10px 5px;word-break:normal;text-align:left;vertical-align:top;\">
-          <span style=\"font-weight:400;font-style:normal;text-decoration:none;color:#000;background-color:transparent\">Ra</span>
-        </td>
-        <td style=\"border-color:black;border-style:solid;border-width:1px;overflow:hidden;padding:10px 5px;word-break:normal;text-align:left;vertical-align:top;\">
-          <span style=\"font-weight:400;font-style:normal;text-decoration:none;color:#000;background-color:transparent\">0.0000</span>
-        </td>
-      </tr>
-      <tr>
-        <td style=\"border-color:black;border-style:solid;border-width:1px;overflow:hidden;padding:10px 5px;word-break:normal;text-align:left;vertical-align:top;\">
-          <span style=\"font-weight:400;font-style:normal;text-decoration:none;color:#000;background-color:transparent\">XSource</span>
-        </td>
-        <td style=\"border-color:black;border-style:solid;border-width:1px;overflow:hidden;padding:10px 5px;word-break:normal;text-align:left;vertical-align:top;\">
-          <span style=\"font-weight:400;font-style:normal;text-decoration:none;color:#000;background-color:transparent\">0.2000</span>
-        </td>
-      </tr>
-    </tbody>
+  <p style=\"margin-top: 1em; margin-bottom: 1em;\"></p>
+  <table cellspacing=\"0\" cellpadding=\"0\" border=\"1\" style=\"margin-left: 100px;\">
+    <tr>
+      <th bgcolor=\"#b3e6ff\">
+        <p align=\"center\"><strong>Generator (Bus)</strong></p>
+      </th>
+      <th bgcolor=\"#b3e6ff\">
+        <p align=\"center\"><strong>Parameter</strong></p>
+      </th>
+      <th bgcolor=\"#b3e6ff\">
+        <p align=\"center\"><strong>Value</strong></p>
+      </th>
+    </tr>
+    <tr>
+      <td rowspan=\"17\">
+        <p align=\"center\">GENROE</p>
+      </td>
+      <td>
+        <p align=\"center\">Mbase </p>
+      </td>
+      <td>
+        <p align=\"center\">100 MVA </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p align=\"center\">T&apos;do (&gt; 0) </p>
+      </td>
+      <td>
+        <p align=\"center\">5.0000 </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p align=\"center\">T&apos;&apos;do (&gt; 0) </p>
+      </td>
+      <td>
+        <p align=\"center\">0.0700 </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p align=\"center\">T&apos;qo (&gt; 0) </p>
+      </td>
+      <td>
+        <p align=\"center\">0.9000 </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p align=\"center\">T&apos;&apos;qo (&gt; 0) </p>
+      </td>
+      <td>
+        <p align=\"center\">0.0900 </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p align=\"center\">H, Inertia </p>
+      </td>
+      <td>
+        <p align=\"center\">4.2800 </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p align=\"center\">D, Speed Damping </p>
+      </td>
+      <td>
+        <p align=\"center\">0.0000 </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p align=\"center\">Xd </p>
+      </td>
+      <td>
+        <p align=\"center\">1.8400 </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p align=\"center\">Xq </p>
+      </td>
+      <td>
+        <p align=\"center\">1.7500 </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p align=\"center\">X&apos;d </p>
+      </td>
+      <td>
+        <p align=\"center\">0.4100 </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p align=\"center\">X&apos;q </p>
+      </td>
+      <td>
+        <p align=\"center\">0.6000 </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p align=\"center\">X&apos;&apos;d = X&apos;&apos;q </p>
+      </td>
+      <td>
+        <p align=\"center\">0.2000 </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p align=\"center\">Xl </p>
+      </td>
+      <td>
+        <p align=\"center\">0.1200 </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p align=\"center\">S(1.0) </p>
+      </td>
+      <td>
+        <p align=\"center\">0.1100 </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p align=\"center\">S(1.2) </p>
+      </td>
+      <td>
+        <p align=\"center\">0.3900 </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p align=\"center\">Ra </p>
+      </td>
+      <td>
+        <p align=\"center\">0.0000 </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p align=\"center\">Xsource (= Xpq) </p>
+      </td>
+      <td>
+        <p align=\"center\">0.2000 </p>
+      </td>
+    </tr>
+    <tr>
+      <td rowspan=\"5\">
+        <p align=\"center\">GENCLS</p>
+      </td>
+      <td>
+        <p align=\"center\">Mbase </p>
+      </td>
+      <td>
+        <p align=\"center\">100 MVA </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p align=\"center\">Inertia H </p>
+      </td>
+      <td>
+        <p align=\"center\">5.0000 </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p align=\"center\">Damping Constant D </p>
+      </td>
+      <td>
+        <p align=\"center\">0.0000 </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p align=\"center\">Ra </p>
+      </td>
+      <td>
+        <p align=\"center\">0.0000 </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p align=\"center\">XSource </p>
+      </td>
+      <td>
+        <p align=\"center\">0.2000 </p>
+      </td>
+    </tr>
   </table>
 </html>"));
 end StartHere;
