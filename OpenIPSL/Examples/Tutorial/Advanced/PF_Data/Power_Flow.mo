@@ -1,5 +1,6 @@
 within OpenIPSL.Examples.Tutorial.Advanced.PF_Data;
 record Power_Flow
+  extends Modelica.Icons.Record;
 
   replaceable record PowerFlow =
         OpenIPSL.Examples.Tutorial.Advanced.PF_Data.Power_Flow_Template
