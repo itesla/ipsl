@@ -2,7 +2,7 @@ within OpenIPSL.Examples.Tutorial;
 package Advanced "Building a SMIB model that uses records with power flow solutions for initialization"
 extends Modelica.Icons.ExamplesPackage;
 
-annotation (Documentation(info="<html>
+  annotation (preferredView="info", Documentation(info="<html>
   <h4>SMIB with OpenIPSL and Power Flow Records</h4>
   <h5>Introduction</h5>
   <p>In this example, you will learn to build an electric power system network by using the <a href=\"https://youtu.be/2i3fvgFtcYA\">OpenIPSL library</a>. The focus will be on a <strong>Single Machine Infinite Bus</strong> ( <strong>SMIB</strong>) model. The <strong>SMIB</strong> model is frequently used by power system engineers to conduct transient stability studies. The infinite bus can be thought of as a power source without variation in frequency and voltage (the phasor). It is common to choose a bus of the power system that has a much higher capacity with respect to the rating of the machine under study. Two specific examples of events that can be part of a simulation done with the <strong>SMIB</strong> model are a fault at some point in the transmission line or a sudden change in the load. The figure below shows a typical configuration of a <strong>SMIB</strong> model that includes, in addition to the infinite bus, the transmission line as two reactances in parallel and the step-up transformer on the generation unit side. Furthermore, both the generating unit and the load could be modeled in sufficient detail as required by a specific study. </p>
