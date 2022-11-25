@@ -1,6 +1,7 @@
 within OpenIPSL.Examples.Tutorial.Advanced.Experiments;
 function RunAndCompare
   "Runs different instances of the SMIB model to compares their results"
+   extends Modelica.Icons.Function;
 
   // INPUTS TO THE FUNCTION
   input Modelica.Units.SI.Time tsim=100 "Simulation time";

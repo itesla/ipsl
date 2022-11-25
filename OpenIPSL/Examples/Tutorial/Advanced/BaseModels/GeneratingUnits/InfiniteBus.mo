@@ -1,5 +1,5 @@
 within OpenIPSL.Examples.Tutorial.Advanced.BaseModels.GeneratingUnits;
-model InfiniteBus
+model InfiniteBus "Infinite bus model"
   extends OpenIPSL.Interfaces.Generator;
   OpenIPSL.Electrical.Machines.PSSE.GENCLS gENCLS(P_0=P_0,
     Q_0=Q_0,
