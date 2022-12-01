@@ -9,7 +9,7 @@ model PFRecordCreation
     <li>Add a sub-folder named <font color=\"blue\"><code>_old</code></font> if your model has been created with OpenIPSL 1.5.0. If, on the other hand, you have used the new version of the library, then name that sub-folder <font color=\"blue\"><code> _new</code></font>. </li>
     <li>Move your model folder to the directory created in <strong>step 2</strong>. For example, let&apos;s assume you are using the new version of OpenIPSL, then if your model is saved in a folder called <font color=\"blue\"><code>SMIB</code></font>, the new path of your folder should be <font color=\"blue\"><code>models/_new/SMIB</code></font>. </li>
     <li>Make sure the directory <font color=\"blue\"><code>pf2rec</code></font> downloaded from the <font color=\"blue\"><code>SMIB_Tutorial</code></font> repository is in the same directory. Here is a screenshot of how your folder structure should look like:
-    <p style=\"margin-left:10px\">
+    <p>
       <img src=\"modelica://OpenIPSL/Resources/images/example_4/image12.png\" alt=\"Image12\" />
     </p>
     </li>
@@ -92,29 +92,29 @@ args = parser.parse_args()
 <strong>end</strong> saveTotalSMIBModel;
     </pre></blockquote>
     <hr>
-    <p style=\"margin-left:10px line-height: 2;\">&#x1F4CC; This function has no inputs and only one boolean output. The modelica standard function <em><font color=\"blue\"><code>saveTotalModel</code></font></em> is called inside the algorithm section with predefined arguments. You can check the information view of <em><font color=\"blue\"><code>saveTotalModel</code></font></em> to get to know the proper use of each of its parameters. To do that, make sure the <font color=\"blue\"><code>DymolaCommands</code></font> library is loaded within the Package Browser. Then navigate as shown in the picture below </p>
-    <p style=\"margin-left: 100px;\">
+    <p>&#x1F4CC; This function has no inputs and only one boolean output. The modelica standard function <em><font color=\"blue\"><code>saveTotalModel</code></font></em> is called inside the algorithm section with predefined arguments. You can check the information view of <em><font color=\"blue\"><code>saveTotalModel</code></font></em> to get to know the proper use of each of its parameters. To do that, make sure the <font color=\"blue\"><code>DymolaCommands</code></font> library is loaded within the Package Browser. Then navigate as shown in the picture below </p>
+    <p>
       <img src=\"modelica://OpenIPSL/Resources/images/example_4/image18.png\" alt=\"Image18\" />
     </p>
     <hr>
     </li>
     <li>Right-click the <font color=\"blue\"><code>saveTotalSMIBModel</code></font> function from the Package Browser. Select the &quot; <em>Call Function...</em>&quot; option and then click the <font color=\"blue\"><code>OK</code></font> button. As a result, you should be able to see a new file called <em><font color=\"blue\"><code>SMIBTotal.mo</code></font></em> in the same folder where your model files are being stored. </li>
     <li>Go to the system terminal, change the current directory to the location where the <font color=\"blue\"><code>create_records</code></font> python script is placed and execute it as indicated below.
-    <p style=\"margin-left: 20px;\">For OpenIPSL 1.5.0:</p>
+    <p>For OpenIPSL 1.5.0:</p>
     <blockquote><pre>
 <strong>python</strong> create_records.py
     </pre></blockquote>
-  <p style=\"margin-left: 20px;\">For OpenIPSL 2.0.0:</p>
+  <p>For OpenIPSL 2.0.0:</p>
     <blockquote><pre>
 <strong>python</strong> create_records.py --version 2.0.0
     </pre></blockquote>
     </li>
     <li>Go back to Dymola and refresh ( <img src=\"modelica://OpenIPSL/Resources/images/example_4/image17.png\" alt=\"Image17\" />) the SMIB package.
     <hr>
-    <p style=\"margin-left:10px\">
+    <p>
     &#x1F4CC; The python script <font color=\"blue\"><code>create_records</code></font> should have created a new package inside your model that looks like this
     </p>
-    <p style=\"margin-left: 100px;\">
+    <p>
       <img src=\"modelica://OpenIPSL/Resources/images/example_4/image43.png\" alt=\"Image43\" />
     </p>
     <hr>
@@ -122,15 +122,15 @@ args = parser.parse_args()
     <li>Double-click the <font color=\"blue\"><code>SMIB_Partial</code></font> model to open its diagram view. From the new <font color=\"blue\"><code>PF_Data</code></font> package, drag and drop <strong>one</strong>
       <font color=\"blue\"><code>Power_Flow</code></font> element on your canvas. <strong>For convenience, rename it as</strong>
       <font color=\"blue\"><code>pf</code></font>.
-    <p style=\"margin-left:10px\">
+    <p>
       <img src=\"modelica://OpenIPSL/Resources/images/example_4/image21.png\" alt=\"Image21\" />
     </p>
     </li>
     <li>Link the power flow variables to the different components as indicated below. <em>Yes, unfortunately you must type them!</em>
-    <p style=\"margin-left:10px margin-top: 1.5em; margin-bottom: 2em;\">
+    <p>
       <img src=\"modelica://OpenIPSL/Resources/images/example_4/image23.png\" alt=\"Image23\" />
     </p>
-  <table cellspacing=\"0\" cellpadding=\"1\" border=\"1\" style=\"margin-left:10px\">
+  <table cellspacing=\"0\" cellpadding=\"1\" border=\"1\">
     <thead>
       <tr>
         <th bgcolor=\"#b3e6ff\">Component</th>
@@ -185,10 +185,11 @@ args = parser.parse_args()
       </tr>
     </tbody>
   </table>
-    <p style=\"margin-top: 1em; margin-bottom: 1.5em;\">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;If you check your model now, you should see an error because we have not defined the power flow values. We have just pointed to the container which will have it. Next, we generate the power flow results using <font color=\"blue\"><code>GridCal</code></font>.</p>
+    <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;If you check your model now, you should see an error because we have not defined the power flow values. We have just pointed to the container which will have it. Next, we generate the power flow results using <font color=\"blue\"><code>GridCal</code></font>.</p>
     </li>
     <li>Now open the diagram layer of your SMIB model inside the <font color=\"blue\"><code>Experiments</code></font> package. Link the power flow variables to <font color=\"blue\"><code>genunit</code></font> as specified in the following table:
-  <table cellspacing=\"0\" cellpadding=\"0\" border=\"1\" style=\"margin-left:10px\">
+    <p></p>
+  <table cellspacing=\"0\" cellpadding=\"0\" border=\"1\">
     <thead>
       <tr>
         <th bgcolor=\"#b3e6ff\">Component</th>

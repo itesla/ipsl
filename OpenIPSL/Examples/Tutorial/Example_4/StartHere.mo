@@ -14,7 +14,7 @@ model StartHere "Start Here"
   </ul>
   <h5>System Parameters</h5>
   <p>&nbsp;&nbsp;&nbsp;&nbsp;The system parameters for the static power flow model are listed below:</p>
-  <table cellspacing=\"0\" cellpadding=\"0\" border=\"1\" style=\"margin-left: 70px;\">
+  <table cellspacing=\"0\" cellpadding=\"0\" border=\"1\">
     <caption align=\"bottom\"><em>* A three-phase fault is to be set at bus FAULT</em></caption>
     <tr>
       <th bgcolor=\"#b3e6ff\">
@@ -133,8 +133,8 @@ model StartHere "Start Here"
       </td>
     </tr>
   </table>
-  <p style=\"margin-top: 1em; margin-bottom: 1em;\"></p>
-  <table cellspacing=\"0\" cellpadding=\"0\" border=\"1\" style=\"margin-left: 90px;\">
+  <p></p>
+  <table cellspacing=\"0\" cellpadding=\"0\" border=\"1\">
     <tr>
       <th bgcolor=\"#b3e6ff\">
         <p align=\"center\"><strong>Line Name</strong></p>
@@ -236,8 +236,8 @@ model StartHere "Start Here"
       </td>
     </tr>
   </table>
-  <p style=\"margin-top: 1.5em; margin-bottom: 1em;\">&nbsp;&nbsp;&nbsp;&nbsp;For the dynamic part of the simulation, the parameters of the models are:</p>
-  <table cellspacing=\"0\" cellpadding=\"0\" border=\"1\" style=\"margin-left: 50px;\">
+  <p>&nbsp;&nbsp;&nbsp;&nbsp;For the dynamic part of the simulation, the parameters of the models are:</p>
+  <table cellspacing=\"0\" cellpadding=\"0\" border=\"1\">
     <tr>
       <th bgcolor=\"#b3e6ff\">
         <p align=\"center\"><strong>Generator (Bus)</strong></p>
@@ -290,8 +290,8 @@ model StartHere "Start Here"
       </td>
     </tr>
   </table>
-  <p style=\"margin-top: 1em; margin-bottom: 1em;\"></p>
-  <table cellspacing=\"0\" cellpadding=\"0\" border=\"1\" style=\"margin-left: 100px;\">
+  <p></p>
+  <table cellspacing=\"0\" cellpadding=\"0\" border=\"1\">
     <tr>
       <th bgcolor=\"#b3e6ff\">
         <p align=\"center\"><strong>Generator (Bus)</strong></p>

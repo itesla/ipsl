@@ -3,11 +3,11 @@ model SMIBSystemAssembly "Assembling a SMIB System"
   extends Modelica.Icons.Information;
   annotation (DocumentationClass=true, Documentation(info="<html>
   <h5>Assembling a SMIB System</h5>
-  <ol style=\"line-height:175%;\">
+  <ol>
     <li>Open Dymola.</li>
     <li>Load the OpenIPSL library.</li>
     <li>Create a new package called <font color=\"blue\"><code>SMIB</code></font>. Make sure to unselect the option to save the contents of the package in one file.
-        <p style=\"margin-left:10px;\">
+        <p>
       <img src=\"modelica://OpenIPSL/Resources/images/example_4/image33.png\" alt=\"Image33\" />
     </p>
     </li>
@@ -22,29 +22,29 @@ model SMIBSystemAssembly "Assembling a SMIB System"
     </li>
     <li>Inside <font color=\"blue\"><code>BaseNetwork</code></font>, create a new <em>partial</em> model called <font color=\"blue\"><code>SMIB_Partial</code></font>. </li>
     <li>Go to the Package Browser, navigate to <font color=\"blue\"><code>OpenIPSL.Interfaces.Generator</code></font>, and right-click the icon to create a new model by class extension. Name the new model <font color=\"blue\"><code>InfiniteBus</code></font> and place it inside <font color=\"blue\"><code>GenerationUnits</code></font>.
-    <p style=\"margin-left:10px;\">
+    <p>
       <img src=\"modelica://OpenIPSL/Resources/images/example_4//image3.png\" alt=\"Image3\" />
     </p>
     </li>
     <li>Repeat the procedure to create a new model called <font color=\"blue\"><code>Generator_Only</code></font>. Your package should look as follows:
-        <p style=\"margin-left:10px;\">
+        <p>
       <img src=\"modelica://OpenIPSL/Resources/images/example_4//image26.png\" alt=\"Image26\" />
     </p>
         </li>
     <li>Inside <font color=\"blue\"><code>InfiniteBus</code></font>, drag and drop a <font color=\"blue\"><code>GENCLS</code></font> generator model from <font color=\"blue\"><code>OpenIPSL.Electrical.Machines.PSSE</code></font>. </li>
     <li>Connect the <strong><font color=\"blue\">blue pin</font></strong> of the <font color=\"blue\"><code>GENCLS</code></font> component to <font color=\"blue\"><code>pwPin</code></font>. </li>
     <li>Now drag and drop a <font color=\"blue\"><code>GENROE</code></font> generator model from <font color=\"blue\"><code>OpenIPSL.Electrical.Machines.PSSE</code></font> to <font color=\"blue\"><code>Generator_Only</code></font>.
-    <p style=\"margin-left:10px;\">
+    <p>
       <img src=\"modelica://OpenIPSL/Resources/images/example_4//image31.png\" alt=\"Image31\" />
     </p>
     </li>
     <li>Connect the output pin <font color=\"blue\"><code>PMECH0</code></font> on the right to the input pin <font color=\"blue\"><code>PMECH</code></font> on the left of the <font color=\"blue\"><code>GENROE</code></font> block. Do the same for the <font color=\"blue\"><code>EFD0</code></font> output and input <font color=\"blue\"><code>EFD</code></font> on the bottom. Also, connect the blue pin to <font color=\"blue\"><code>pwPin</code></font>. Your connections should look as follows
-    <p style=\"margin-left:10px;\">
+    <p>
       <img src=\"modelica://OpenIPSL/Resources/images/example_4//image51.png\" alt=\"Image51\" />
     </p>
     </li>
     <li>Double click the <font color=\"blue\"><code>GENCLS</code></font> block inside the <font color=\"blue\"><code>InfiniteBus</code></font> model. Be sure to enter all the machine parameters in the figure below: 
-        <p style=\"margin-left:10px;\">
+        <p>
       <img src=\"modelica://OpenIPSL/Resources/images/example_4//image62.png\" alt=\"Image62\" />
     </p>
         </li>
@@ -69,17 +69,18 @@ model SMIBSystemAssembly "Assembling a SMIB System"
     </pre></blockquote>
     </li>
     <li>Go to the diagram layer of the <font color=\"blue\"><code>Generator_Only</code></font> model, double click the <font color=\"blue\"><code>GENROE</code></font> component and fill in the power flow data fields. Notice that no explicit values should be passed to <font color=\"blue\"><code>v_0</code></font> ( <font color=\"blue\"><code>V_0</code></font> in OpenIPSL 1.5), <font color=\"blue\"><code>angle_0</code></font>, <font color=\"blue\"><code>P_0</code></font>, and <font color=\"blue\"><code>Q_0</code></font>. These values are propagated from an upper layer.
-    <p style=\"margin-left:10px;\">
+    <p>
       <img src=\"modelica://OpenIPSL/Resources/images/example_4//image2.png\" alt=\"Image2\" />
     </p>
     </li>
     <li>Similarly, pass the dynamical machine parameters to the generator model
-    <p style=\"margin-left:10px;\">
+    <p>
       <img src=\"modelica://OpenIPSL/Resources/images/example_4//image7.png\" alt=\"Image7\" />
     </p>
     </li>
     <li>Go now to the diagram layer of the <font color=\"blue\"><code>SMIB_Partial</code></font> model. Drag and drop the following components:
-          <ul style=\"line-height:175%;\">
+      <p></p>
+          <ul>
         <li>four buses from <font color=\"blue\"><code>OpenIPSL.Buses.Bus</code></font> (you could also work with <font color=\"blue\"><code>OpenIPSL.Buses.BusExt</code></font>); </li>
         <li>four lines from <font color=\"blue\"><code>OpenIPSL.Branches.PwLine</code></font>; </li>
         <li>a <font color=\"blue\"><code>Load</code></font> from <font color=\"blue\"><code>OpenIPSL.Electrical.Loads.PSSE</code></font>; </li>
@@ -87,20 +88,21 @@ model SMIBSystemAssembly "Assembling a SMIB System"
         <li>a <font color=\"blue\"><code>SystemBase</code></font> from <font color=\"blue\"><code>OpenIPSL.Electrical.SystemBase</code></font>. Set the base frequency to 50 Hz and the base to 100 MVA; </li>
         <li>an <font color=\"blue\"><code>InfiniteBus</code></font> generation unit. </li>
       </ul>
+      <p></p>
     </li>
     <li>Connect and name the different components as shown below:
-    <p style=\"margin-left:10px;\">
+    <p>
       <img src=\"modelica://OpenIPSL/Resources/images/example_4//image25.png\" alt=\"Image25\" />
     </p>
     </li>
     <li>Enter the parameters for each of the four lines, as indicated in the corresponding table at the beginning of this document. For example, lines 1 and 2 should have the following parameters:
-    <p style=\"margin-left:10px;\">
+    <p>
       <img src=\"modelica://OpenIPSL/Resources/images/example_4//image65.png\" alt=\"Image65\" />
     </p>
     </li>
     <li>Click the <font color=\"blue\"><code>B01</code></font> component and select the option to display the power flow. Do the same for the remaining buses and the generation unit component. </li>
     <li>Double click the <font color=\"blue\"><code>pwFault</code></font> block and fill in the parameters as indicated below:
-    <p style=\"margin-left:10px;\">
+    <p>
       <img src=\"modelica://OpenIPSL/Resources/images/example_4//image66.png\" alt=\"Image66\" />
     </p>
     </li>
@@ -112,15 +114,15 @@ model SMIBSystemAssembly "Assembling a SMIB System"
 <strong>end</strong> SMIB;
     </pre></blockquote>
     <hr>
-    <p style=\"margin-left:10px;\">&#x1F4CC; You should have a package structure similar to this:</p>
-    <p style=\"margin-left:100px;\">
+    <p>&#x1F4CC; You should have a package structure similar to this:</p>
+    <p>
       <img src=\"modelica://OpenIPSL/Resources/images/example_4//image20.png\" alt=\"Image20\" />
     </p>
     <hr>
     </li>
     <li>Drag-and-drop a <font color=\"blue\"><code>Generator_Only</code></font> component from the <font color=\"blue\"><code>GenerationUnits</code></font> package to the diagram layer of the SMIB model. Name it genunit and make sure that the <em>Display power flow</em> option inside its parameters window is checked. </li>
     <li>Connect <font color=\"blue\"><code>genunit</code></font> to bus <font color=\"blue\"><code>B01</code></font>. The model should look as follows:
-    <p style=\"margin-left:10px;\">
+    <p>
       <img src=\"modelica://OpenIPSL/Resources/images/example_4//image68.png\" alt=\"Image68\" />
     </p>
     </li>

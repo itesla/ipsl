@@ -89,41 +89,41 @@ gridcal2rec(grid = grid, pf = pf, model_name = _model,
   </pre></blockquote>
     </li>
     <li>Execute <font color=\"blue\"><code>run_pf.py</code></font> from a terminal.
-    <p style=\"margin-left: 20px;\"><em>For OpenIPSL 1.5.0</em>:</p>
+    <p><em>For OpenIPSL 1.5.0</em>:</p>
     <blockquote><pre>
 <strong>python</strong> SMIB run_pf.py.py
     </pre></blockquote>
-    <p style=\"margin-left: 20px;\"><em>For OpenIPSL 2.0.0+</em>:</p>
+    <p><em>For OpenIPSL 2.0.0+</em>:</p>
     <blockquote><pre>
 <strong>python</strong> run_pf.py SMIB --version 2.0.0
     </pre></blockquote>
     <hr>
-    <p style=\"margin-left: 20px;\">&#x1F4CC; A new power flow record called <font color=\"blue\"><code>PF_00000</code></font> should be generated inside the <font color=\"blue\"><code>PF_Data</code></font> subfolder. </p>
+    <p>&#x1F4CC; A new power flow record called <font color=\"blue\"><code>PF_00000</code></font> should be generated inside the <font color=\"blue\"><code>PF_Data</code></font> subfolder. </p>
   <hr>
     </li>
     <li>Refresh your model. You should get a new file called <font color=\"blue\"><code>PF_0000.mo</code></font> inside your <font color=\"blue\"><code>PF_Data</code></font> folder. In fact, there should be a new file in every subfolder too.
-    <p style=\"margin-left: 60px;\">
+    <p>
       <img src=\"modelica://OpenIPSL/Resources/images/example_4/image91.png\" alt=\"Image91\" />
     </p>
     </li>
     <li>In the diagram layer of your SMIB model, double click the power flow component <font color=\"blue\"><code>pf</code></font>. Select the newly created power flow <font color=\"blue\"><code>PF_00000</code></font> as the value for the <font color=\"blue\"><code>PowerFlow</code></font> field. By doing so, we are specifying that the model will initialize using the power flow results in that specific container.
-    <p style=\"margin-left: 30px;\">
+    <p>
       <img src=\"modelica://OpenIPSL/Resources/images/example_4/image42.png\" alt=\"Image42\" />
     </p>
-    <p style=\"margin-left:10px;\">To see the power flow values in Dymola, click on the <em>square button</em>
+    <p>To see the power flow values in Dymola, click on the <em>square button</em>
       <img src=\"modelica://OpenIPSL/Resources/images/example_4/image6.png\" alt=\"Image6\" /> on the left of the <font color=\"blue\"><code>PowerFlow</code></font> selection menu.
     </p>
-    <p style=\"margin-left:10px;\">You should see that the power flow record is composed of four fields: <em>bus</em>, <em>loads</em>, <em>machine </em>and <em>transformers</em>. </p>
-    <p style=\"margin-left: 30px;\">
+    <p>You should see that the power flow record is composed of four fields: <em>bus</em>, <em>loads</em>, <em>machine </em>and <em>transformers</em>. </p>
+    <p>
       <img src=\"modelica://OpenIPSL/Resources/images/example_4/image48.png\" alt=\"Image48\" />
     </p>
-    <p style=\"margin-left:10px;\">Inside each field, we can detail the power flow results</p>
-    <p style=\"margin-left: 40px;\">
+    <p>Inside each field, we can detail the power flow results</p>
+    <p>
       <img src=\"modelica://OpenIPSL/Resources/images/example_4/image39.png\" alt=\"Image39\" />
     </p>
     </li>
     <li>Simulate the SMIB model for 2 seconds. Plot the voltage buses. Notice that the power flow solution initializes the dynamical simulation in an equilibrium (i.e., flat) so that the states of the system are not changing.
-    <p style=\"margin-left:10px;\">
+    <p>
       <img src=\"modelica://OpenIPSL/Resources/images/example_4/image30.png\" alt=\"Image30\" />
     </p>
         </li>
