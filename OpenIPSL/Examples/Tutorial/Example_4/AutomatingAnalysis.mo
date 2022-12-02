@@ -22,14 +22,14 @@ model AutomatingAnalysis
     </p>
     </li>
     <li>Double-click the load component to update its power flow parameters. You can either use the button to insert a component reference or type directly each value according to the following settings:
-      <p></p>
+      <p>&nbsp;</p>
       <ul>
         <li>P_0: <em>pf.powerflow.loads.PL1</em></li>
         <li>Q_0: <em>pf.powerflow.loads.QL1</em></li>
         <li>v_0: <em>pf.powerflow.bus.V3</em></li>
         <li>angle_0: <em>pf.powerflow.bus.A3</em></li>
       </ul>
-      <p></p>
+      <p>&nbsp;</p>
     </li>
     <li>Specify a load drop of 0.1 pu starting at t = 10 sec and for a duration of 60 sec.
     <p>

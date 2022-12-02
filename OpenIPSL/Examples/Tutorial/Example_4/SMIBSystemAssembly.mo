@@ -79,7 +79,6 @@ model SMIBSystemAssembly "Assembling a SMIB System"
     </p>
     </li>
     <li>Go now to the diagram layer of the <font color=\"blue\"><code>SMIB_Partial</code></font> model. Drag and drop the following components:
-      <p></p>
           <ul>
         <li>four buses from <font color=\"blue\"><code>OpenIPSL.Buses.Bus</code></font> (you could also work with <font color=\"blue\"><code>OpenIPSL.Buses.BusExt</code></font>); </li>
         <li>four lines from <font color=\"blue\"><code>OpenIPSL.Branches.PwLine</code></font>; </li>
@@ -88,7 +87,7 @@ model SMIBSystemAssembly "Assembling a SMIB System"
         <li>a <font color=\"blue\"><code>SystemBase</code></font> from <font color=\"blue\"><code>OpenIPSL.Electrical.SystemBase</code></font>. Set the base frequency to 50 Hz and the base to 100 MVA; </li>
         <li>an <font color=\"blue\"><code>InfiniteBus</code></font> generation unit. </li>
       </ul>
-      <p></p>
+      <p><br></p>
     </li>
     <li>Connect and name the different components as shown below:
     <p>

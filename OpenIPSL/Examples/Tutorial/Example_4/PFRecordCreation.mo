@@ -188,7 +188,6 @@ args = parser.parse_args()
     <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;If you check your model now, you should see an error because we have not defined the power flow values. We have just pointed to the container which will have it. Next, we generate the power flow results using <font color=\"blue\"><code>GridCal</code></font>.</p>
     </li>
     <li>Now open the diagram layer of your SMIB model inside the <font color=\"blue\"><code>Experiments</code></font> package. Link the power flow variables to <font color=\"blue\"><code>genunit</code></font> as specified in the following table:
-    <p></p>
   <table cellspacing=\"0\" cellpadding=\"0\" border=\"1\">
     <thead>
       <tr>

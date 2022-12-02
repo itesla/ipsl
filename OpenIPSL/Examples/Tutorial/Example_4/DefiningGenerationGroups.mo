@@ -65,7 +65,7 @@ model DefiningGenerationGroups
     </li>
     <li>In the <font color=\"blue\"><code>GENROE</code></font> machine component, remove the connection between <font color=\"blue\"><code>EFD</code></font> and <font color=\"blue\"><code>EFD0</code></font>. The <font color=\"blue\"><code>EFD</code></font> input of the machine should now be connected to the respective output from the excitation system. </li>
     <li>Add the following connections between the machine and the excitation system:
-    <p></p>
+    <p>&nbsp;</p>
   <table cellspacing=\"0\" cellpadding=\"1\" border=\"1\">
     <thead>
       <tr>
@@ -92,10 +92,10 @@ model DefiningGenerationGroups
       </tr>
     </tbody>
   </table>
-    <p></p>
+    <p>&nbsp;</p>
     </li>
     <li>Use the <code>Constant</code> blocks to set the excitation system inputs to the values indicated in the following table:
-    <p></p>
+    <p>&nbsp;</p>
   <table cellspacing=\"0\" cellpadding=\"1\" border=\"1\">
     <thead>
       <tr>
@@ -130,7 +130,7 @@ model DefiningGenerationGroups
       </tr>
     </tbody>
   </table>
-    <p></p>
+    <p>&nbsp;</p>
     <p>Your model should now look like this:</p>
     <p>
       <img src=\"modelica://OpenIPSL/Resources/images/example_4/image55.png\" alt=\"Image55\" />

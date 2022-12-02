@@ -13,7 +13,7 @@ model StartHere "Start Here"
     <li>Download the files of the <a href=\"https://github.com/ALSETLab/SMIB_Tutorial\">SMIB_Tutorial</a> repository. </li>
   </ul>
   <h5>System Parameters</h5>
-  <p>&nbsp;&nbsp;&nbsp;&nbsp;The system parameters for the static power flow model are listed below:</p>
+  <p>The system parameters for the static power flow model are listed below:</p>
   <table cellspacing=\"0\" cellpadding=\"0\" border=\"1\">
     <caption align=\"bottom\"><em>* A three-phase fault is to be set at bus FAULT</em></caption>
     <tr>
@@ -133,7 +133,7 @@ model StartHere "Start Here"
       </td>
     </tr>
   </table>
-  <p></p>
+  <p>&nbsp;</p>
   <table cellspacing=\"0\" cellpadding=\"0\" border=\"1\">
     <tr>
       <th bgcolor=\"#b3e6ff\">
@@ -236,7 +236,8 @@ model StartHere "Start Here"
       </td>
     </tr>
   </table>
-  <p>&nbsp;&nbsp;&nbsp;&nbsp;For the dynamic part of the simulation, the parameters of the models are:</p>
+  <p>&nbsp;</p>
+  <p>For the dynamic part of the simulation, the parameters of the models are:</p>
   <table cellspacing=\"0\" cellpadding=\"0\" border=\"1\">
     <tr>
       <th bgcolor=\"#b3e6ff\">
@@ -290,7 +291,7 @@ model StartHere "Start Here"
       </td>
     </tr>
   </table>
-  <p></p>
+  <p>&nbsp;</p>
   <table cellspacing=\"0\" cellpadding=\"0\" border=\"1\">
     <tr>
       <th bgcolor=\"#b3e6ff\">
