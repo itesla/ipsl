@@ -1,6 +1,6 @@
-within OpenIPSL.Examples.Tutorial.Example_4.PF_Data.Bus_Data;
-record PF_Bus_00000
-extends OpenIPSL.Examples.Tutorial.Example_4.PF_Data.Bus_Data.Bus_Template(
+within OpenIPSL.Examples.Tutorial.Example_4.PfData.BusData;
+record PfBus00000 "Record for power flow solutions in buses - Id 00000"
+extends OpenIPSL.Examples.Tutorial.Example_4.PfData.BusData.BusTemplate(
     V1=1.0000000,
     A1=0.0706208,
     V2=1.0000000,
@@ -18,4 +18,4 @@ extends OpenIPSL.Examples.Tutorial.Example_4.PF_Data.Bus_Data.Bus_Template(
 
 // Bus: 'B04' (PQ bus)
 
-end PF_Bus_00000;
+end PfBus00000;

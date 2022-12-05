@@ -2,7 +2,7 @@ within OpenIPSL.Examples.Tutorial.Example_4.Experiments;
 model SMIB
   extends Modelica.Icons.Example;
   extends BaseModels.BaseNetwork.SMIB_Partial(pf(redeclare record PowerFlow =
-          PF_Data.PF_00000));
+          PfData.Pf00000));
   replaceable
   BaseModels.GeneratingUnits.Generator_TurbGov_AVR
                                             genunit(

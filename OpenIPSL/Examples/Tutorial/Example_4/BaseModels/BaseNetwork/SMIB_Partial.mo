@@ -61,8 +61,8 @@ model SMIB_Partial "Partial SMIB Model with PF Record and Load"
         extent={{-6,-6},{6,6}},
         rotation=270,
         origin={36,-46})));
-  PF_Data.Power_Flow pf(redeclare record PowerFlow =
-        OpenIPSL.Examples.Tutorial.Example_4.PF_Data.PF_00000)
+  PfData.PowerFlow pf(redeclare record PowerFlow =
+        OpenIPSL.Examples.Tutorial.Example_4.PfData.Pf00000)
     annotation (Placement(transformation(extent={{-80,26},{-60,46}})));
 equation
   connect(line_01.p, B01.p)
