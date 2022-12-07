@@ -50,8 +50,7 @@ model SMIB_Partial "Partial SMIB Model with PF Record and Load"
     P_0=pf.powerflow.loads.PL1,
     Q_0=pf.powerflow.loads.QL1,
     v_0=pf.powerflow.bus.V3,
-    angle_0=pf.powerflow.bus.A3) constrainedby
-    OpenIPSL.Electrical.Loads.PSSE.BaseClasses.baseLoad
+    angle_0=pf.powerflow.bus.A3) constrainedby OpenIPSL.Electrical.Loads.PSSE.BaseClasses.baseLoad
     annotation (Placement(transformation(extent={{-34,-56},{-14,-36}})));
   OpenIPSL.Electrical.Events.PwFault pwFault(
     R=0.01,
@@ -87,9 +86,7 @@ equation
     annotation (Line(points={{-24,-36},{-24,0},{-30,0}}, color={0,0,255}));
   connect(pwFault.p, B04.p) annotation (Line(points={{36,-39},{36,-28},{24,
           -28},{24,-20},{20,-20}}, color={0,0,255}));
-  annotation (Icon(coordinateSystem(preserveAspectRatio=false), graphics={
-          Rectangle(extent={{-100,100},{100,-100}}, lineColor={135,135,135})}),
-                                                                 Diagram(
+  annotation (Icon(coordinateSystem(preserveAspectRatio=false)), Diagram(
         coordinateSystem(preserveAspectRatio=false), graphics={
                                                 Text(
           extent={{-92,68},{94,48}},
