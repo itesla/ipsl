@@ -86,13 +86,11 @@ equation
     annotation (Line(points={{-24,-36},{-24,0},{-30,0}}, color={0,0,255}));
   connect(pwFault.p, B04.p) annotation (Line(points={{36,-39},{36,-28},{24,
           -28},{24,-20},{20,-20}}, color={0,0,255}));
-  annotation (Icon(coordinateSystem(preserveAspectRatio=false)), Diagram(
-        coordinateSystem(preserveAspectRatio=false), graphics={
-                                                Text(
+  annotation (Diagram(graphics={Text(
           extent={{-92,68},{94,48}},
           lineColor={0,0,0},
           lineThickness=1,
           fontSize=15,
           textStyle={TextStyle.Bold},
-          textString="Single-machine infinite bus model*")}));
+          textString="Single-machine infinite bus model")}));
 end SMIB_Partial;
