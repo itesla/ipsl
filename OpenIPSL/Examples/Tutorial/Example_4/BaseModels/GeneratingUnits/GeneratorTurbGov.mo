@@ -1,5 +1,5 @@
 within OpenIPSL.Examples.Tutorial.Example_4.BaseModels.GeneratingUnits;
-model Generator_TurbGov "Machine with Turbine and Governor"
+model GeneratorTurbGov "Machine with Turbine and Governor"
   extends OpenIPSL.Interfaces.Generator;
   OpenIPSL.Electrical.Machines.PSSE.GENROE gENROE(
     v_0=v_0,
@@ -59,4 +59,4 @@ equation
         Diagram(
         coordinateSystem(preserveAspectRatio=false, extent={{-140,-100},{100,
             100}})));
-end Generator_TurbGov;
+end GeneratorTurbGov;

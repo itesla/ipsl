@@ -10,7 +10,7 @@ model PFRecordCreation
     <li>Move your model folder to the directory created in <strong>step 2</strong>. For example, let&apos;s assume you are using the new version of OpenIPSL, then if your model is saved in a folder called <font color=\"blue\"><code>SMIB</code></font>, the new path of your folder should be <font color=\"blue\"><code>models/_new/SMIB</code></font>. </li>
     <li>Make sure the directory <font color=\"blue\"><code>pf2rec</code></font> downloaded from the <font color=\"blue\"><code>SMIB_Tutorial</code></font> repository is in the same directory. Here is a screenshot of how your folder structure should look like:
     <p>
-      <img src=\"modelica://OpenIPSL/Resources/images/example_4/image12.png\" alt=\"Image12\" />
+      <img src=\"modelica://OpenIPSL/Resources/images/example_4/PFRecordCreation/FolderStructureForSMIBProject.png\" alt=\"FolderStructureForSMIBProject\" />
     </p>
     </li>
     <li>In the same location where you have your <font color=\"blue\"><code>models</code></font> and <font color=\"blue\"><code>pf2rec</code></font> folders, create a new python file called <font color=\"blue\"><code>create_records.py</code></font>. Copy and paste the following code in the file. <em>Be careful with indentation!</em>
@@ -94,7 +94,7 @@ args = parser.parse_args()
     <hr>
     <p>&#x1F4CC; This function has no inputs and only one boolean output. The modelica standard function <em><font color=\"blue\"><code>saveTotalModel</code></font></em> is called inside the algorithm section with predefined arguments. You can check the information view of <em><font color=\"blue\"><code>saveTotalModel</code></font></em> to get to know the proper use of each of its parameters. To do that, make sure the <font color=\"blue\"><code>DymolaCommands</code></font> library is loaded within the Package Browser. Then navigate as shown in the picture below </p>
     <p>
-      <img src=\"modelica://OpenIPSL/Resources/images/example_4/image18.png\" alt=\"Image18\" />
+      <img src=\"modelica://OpenIPSL/Resources/images/example_4/PFRecordCreation/SaveTotalModelFunction.png\" alt=\"SaveTotalModelFunction\" />
     </p>
     <hr>
     </li>
@@ -109,26 +109,26 @@ args = parser.parse_args()
 <strong>python</strong> create_records.py --version 2.0.0
     </pre></blockquote>
     </li>
-    <li>Go back to Dymola and refresh ( <img src=\"modelica://OpenIPSL/Resources/images/example_4/image17.png\" alt=\"Image17\" />) the SMIB package.
+    <li>Go back to Dymola and refresh ( <img src=\"modelica://OpenIPSL/Resources/images/example_4/PFRecordCreation/RefreshButton.png\" alt=\"RefreshButton\" />) the SMIB package.
     <hr>
     <p>
     &#x1F4CC; The python script <font color=\"blue\"><code>create_records</code></font> should have created a new package inside your model that looks like this
     </p>
     <p>
-      <img src=\"modelica://OpenIPSL/Resources/images/example_4/image43.png\" alt=\"Image43\" />
+      <img src=\"modelica://OpenIPSL/Resources/images/example_4/PFRecordCreation/PFDataPackageStructure.png\" alt=\"PFDataPackageStructure\" />
     </p>
     <hr>
     </li>
-    <li>Double-click the <font color=\"blue\"><code>SMIB_Partial</code></font> model to open its diagram view. From the new <font color=\"blue\"><code>PF_Data</code></font> package, drag and drop <strong>one</strong>
-      <font color=\"blue\"><code>Power_Flow</code></font> element on your canvas. <strong>For convenience, rename it as</strong>
+    <li>Double-click the <font color=\"blue\"><code>SMIBPartial</code></font> model to open its diagram view. From the new <font color=\"blue\"><code>PFData</code></font> package, drag and drop <strong>one</strong>
+      <font color=\"blue\"><code>PowerFlow</code></font> element on your canvas. <strong>For convenience, rename it as</strong>
       <font color=\"blue\"><code>pf</code></font>.
     <p>
-      <img src=\"modelica://OpenIPSL/Resources/images/example_4/image21.png\" alt=\"Image21\" />
+      <img src=\"modelica://OpenIPSL/Resources/images/example_4/PFRecordCreation/PowerFlowRecordInstantiation.png\" alt=\"PowerFlowRecordInstantiation\" />
     </p>
     </li>
     <li>Link the power flow variables to the different components as indicated below. <em>Yes, unfortunately you must type them!</em>
     <p>
-      <img src=\"modelica://OpenIPSL/Resources/images/example_4/image23.png\" alt=\"Image23\" />
+      <img src=\"modelica://OpenIPSL/Resources/images/example_4/PFRecordCreation/ComponentReferenceToPFRecord.png\" alt=\"ComponentReferenceToPFRecord\" />
     </p>
   <table cellspacing=\"0\" cellpadding=\"1\" border=\"1\">
     <thead>

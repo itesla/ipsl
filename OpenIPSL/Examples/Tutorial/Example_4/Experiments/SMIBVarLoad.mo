@@ -1,7 +1,7 @@
 within OpenIPSL.Examples.Tutorial.Example_4.Experiments;
-model SMIB_VarLoad "SMIB Model with a Variable Load"
+model SMIBVarLoad "SMIB Model with a Variable Load"
   extends Modelica.Icons.Example;
-  extends BaseModels.BaseNetwork.SMIB_Partial(
+  extends BaseModels.BaseNetwork.SMIBPartial(
     pf(redeclare record PowerFlow = PfData.Pf00000),
     redeclare OpenIPSL.Electrical.Loads.PSSE.Load_variation load(
       P_0=pf.powerflow.loads.PL1,
@@ -12,9 +12,7 @@ model SMIB_VarLoad "SMIB Model with a Variable Load"
       t1=10,
       d_t=60),
     pwFault(t1=101, t2=101.1));
-  replaceable
-  BaseModels.GeneratingUnits.Generator_TurbGov_AVR_PSS
-                                            genunit(
+  replaceable BaseModels.GeneratingUnits.GeneratorTurbGovAVRPSS genunit(
     P_0=pf.powerflow.machines.PG1,
     Q_0=pf.powerflow.machines.QG1,
     v_0=pf.powerflow.bus.V1,
@@ -30,4 +28,4 @@ equation
       Tolerance=1e-06,
       __Dymola_fixedstepsize=0.0001,
       __Dymola_Algorithm="Dassl"));
-end SMIB_VarLoad;
+end SMIBVarLoad;

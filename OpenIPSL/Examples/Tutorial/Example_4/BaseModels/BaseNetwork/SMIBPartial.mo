@@ -1,5 +1,5 @@
 within OpenIPSL.Examples.Tutorial.Example_4.BaseModels.BaseNetwork;
-model SMIB_Partial "Partial SMIB Model with PF Record and Load"
+model SMIBPartial "Partial SMIB Model with PF Record and Load"
   OpenIPSL.Electrical.Buses.Bus B01(
     v_0=pf.powerflow.bus.V1,
     angle_0=pf.powerflow.bus.A1,    displayPF=true)
@@ -98,4 +98,4 @@ equation
           fontSize=15,
           textStyle={TextStyle.Bold},
           textString="Single-machine infinite bus model*")}));
-end SMIB_Partial;
+end SMIBPartial;

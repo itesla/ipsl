@@ -16,7 +16,7 @@ model InstallingGridCal "Installing GridCal"
         </li>
         <li>Accept any python packages required to be installed by typing <strong>Y</strong> when prompted:
           <p>
-            <img src=\"modelica://OpenIPSL/Resources/images/example_4/image36.png\" alt=\"Image36\" />
+            <img src=\"modelica://OpenIPSL/Resources/images/example_4/InstallingGridCal/CreatingCondaEnvironment.png\" alt=\"CreatingCondaEnvironment\" />
           </p>
         </li>
       </ol>
@@ -28,9 +28,9 @@ model InstallingGridCal "Installing GridCal"
     <hr>
     <p>&#x1F4CC; Please notice that whenever you want to use your environment again and your environment session is no longer open, you first need to open a command prompt / terminal window, then locate the path where the environment is and finally type the <font color=\"blue\"><code>conda activate</code></font> command as indicated above. An environment session is typically finalized by typing the <font color=\"blue\"><code>conda deactivate</code></font> command. </p>
     <hr>
-    <p>After successfully activating a miniconda environment you will see the name of the environment enclosed in parenthesis a shown below</p>
+    <p>After successfully activating a miniconda environment you will see the name of the environment enclosed in parenthesis as shown below</p>
     <p>
-      <img src=\"modelica://OpenIPSL/Resources/images/example_4/image28.png\" alt=\"Image28\" />
+      <img src=\"modelica://OpenIPSL/Resources/images/example_4/InstallingGridCal/ActivatedCondaEnvironment.png\" alt=\"ActivatedCondaEnvironment\" />
     </p>
     </li>
     <li>Upgrade <code>pip</code> (optional).
@@ -44,7 +44,7 @@ model InstallingGridCal "Installing GridCal"
     </pre></blockquote>
     <p>You should get something similar to</p>
     <p>
-      <img src=\"modelica://OpenIPSL/Resources/images/example_4/image19.png\" alt=\"Image19\" />
+      <img src=\"modelica://OpenIPSL/Resources/images/example_4/InstallingGridCal/UpdatingPip.png\" alt=\"UpdatingPip\" />
     </p>
     </li>
     <li>Clean <code>pip</code> cache.
@@ -63,7 +63,7 @@ model InstallingGridCal "Installing GridCal"
     </li>
     <li>Go back to the command prompt/terminal window and navigate to the path where you have your local GridCal repo clone or unzipped files. If you use the <code>dir</code> command you should be able to see the following list of files:
     <p>
-      <img src=\"modelica://OpenIPSL/Resources/images/example_4/image56.png\" alt=\"Image56\" />
+      <img src=\"modelica://OpenIPSL/Resources/images/example_4/InstallingGridCal/GridCalDirContents.png\" alt=\"GridCalDirContents\" />
     </p>
     </li>
     <li>Navigate to the <font color=\"blue\"><code>src</code></font> folder by using the <code>cd</code> command:
@@ -84,7 +84,7 @@ model InstallingGridCal "Installing GridCal"
 <strong>from</strong> GridCal.Engine <strong>import</strong> *
     </pre></blockquote>
     <p>
-      <img src=\"modelica://OpenIPSL/Resources/images/example_4/image11.png\" alt=\"Image11\" />
+      <img src=\"modelica://OpenIPSL/Resources/images/example_4/InstallingGridCal/VerifyingGridCalInstallation.png\" alt=\"VerifyingGridCalInstallation\" />
     </p>
     <p>As shown in the screenshot above you should not get any errors.</p>
     </li>

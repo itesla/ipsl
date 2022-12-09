@@ -1,6 +1,6 @@
 within OpenIPSL.Examples.Tutorial.Example_4.BaseModels.GeneratingUnits;
-model Generator_TurbGov_AVR_PSS
-  "Machine with Turbine, Governor, Excitation System and PSS"
+model GeneratorTurbGovAVR
+  "Machine with Turbine, Governor and Excitation System"
   extends OpenIPSL.Interfaces.Generator;
   OpenIPSL.Electrical.Machines.PSSE.GENROE gENROE(
     v_0=v_0,
@@ -64,37 +64,18 @@ model Generator_TurbGov_AVR_PSS
     T_A=0.1,
     T_R=0.1)
     annotation (Placement(transformation(extent={{-110,-68},{-170,-8}})));
-  OpenIPSL.Electrical.Controls.PSSE.PSS.PSS2A pSS2A(
-    T_w1=5,
-    T_w2=5,
-    T_6=0,
-    T_w3=5,
-    T_w4=5,
-    T_7=5,
-    K_S2=0.758,
-    K_S3=1,
-    T_8=0.12,
-    T_9=0.1,
-    K_S1=2,
-    T_1=0.47,
-    T_2=0.07,
-    T_3=0.47,
-    T_4=0.07,
-    V_STMAX=0.1,
-    V_STMIN=-0.1)
-    annotation (Placement(transformation(extent={{26,52},{-56,94}})));
   Modelica.Blocks.Sources.Constant const(k=0)
     annotation (Placement(transformation(extent={{0,-102},{-20,-82}})));
   Modelica.Blocks.Sources.Constant const1(k=-Modelica.Constants.inf)
     annotation (Placement(transformation(extent={{-202,-102},{-182,-82}})));
   Modelica.Blocks.Sources.Constant const2(k=Modelica.Constants.inf)
     annotation (Placement(transformation(extent={{-88,-108},{-108,-88}})));
+  Modelica.Blocks.Sources.Constant const3(k=0)
+    annotation (Placement(transformation(extent={{-12,-46},{-32,-26}})));
 equation
   connect(eSST1A1.EFD, gENROE.EFD) annotation (Line(points={{-173,-38},{-186,
           -38},{-186,12},{-100,12},{-100,-6.4},{-59,-6.4}},
                                                        color={102,44,145}));
-  connect(pSS2A.VOTHSG, eSST1A1.VOTHSG) annotation (Line(points={{-60.1,73},{-80,
-          73},{-80,-26},{-107,-26}}, color={238,46,47}));
   connect(gENROE.SPEED, iEEEG1_1.SPEED_HP) annotation (Line(points={{44.5,31.3},
           {54,31.3},{54,32},{70,32},{70,110},{-186,110},{-186,63},{-162.6,63}},
         color={0,140,72}));
@@ -111,10 +92,6 @@ equation
           60,-15.1},{60,-116},{-164,-116},{-164,-71}}, color={0,0,127}));
   connect(eSST1A1.ECOMP, eSST1A1.VT) annotation (Line(points={{-107,-38},{-92,-38},
           {-92,-61.475},{-107.075,-61.475}}, color={102,44,145}));
-  connect(pSS2A.V_S1, iEEEG1_1.SPEED_HP) annotation (Line(points={{30.1,81.4},{70,
-          81.4},{70,110},{-186,110},{-186,63},{-162.6,63}}, color={0,140,72}));
-  connect(gENROE.PELEC, pSS2A.V_S2) annotation (Line(points={{44.5,19.7},{90,
-          19.7},{90,64.6},{30.1,64.6}}, color={238,46,47}));
   connect(const1.y, eSST1A1.VUEL2) annotation (Line(points={{-181,-92},{-149.03,-92},
           {-149.03,-70.97}}, color={0,0,0}));
   connect(eSST1A1.VUEL3, eSST1A1.VUEL2) annotation (Line(points={{-155.555,-70.985},
@@ -125,7 +102,9 @@ equation
           52.2},{-96,52.2},{-96,28.4},{-59,28.4}}, color={0,140,72}));
   connect(gENROE.p, pwPin) annotation (Line(points={{40,11},{90,11},{90,0},{110,
           0}}, color={0,0,255}));
+  connect(const3.y, eSST1A1.VOTHSG) annotation (Line(points={{-33,-36},{-72,-36},
+          {-72,-26},{-107,-26}}, color={0,0,127}));
   annotation (Icon(coordinateSystem(preserveAspectRatio=false)),
     Diagram(
         coordinateSystem(preserveAspectRatio=false, extent={{-220,-120},{100,120}})));
-end Generator_TurbGov_AVR_PSS;
+end GeneratorTurbGovAVR;

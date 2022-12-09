@@ -1,11 +1,9 @@
 within OpenIPSL.Examples.Tutorial.Example_4.Experiments;
 model SMIB
   extends Modelica.Icons.Example;
-  extends BaseModels.BaseNetwork.SMIB_Partial(pf(redeclare record PowerFlow =
+  extends BaseModels.BaseNetwork.SMIBPartial( pf(redeclare record PowerFlow =
           PfData.Pf00000));
-  replaceable
-  BaseModels.GeneratingUnits.Generator_TurbGov_AVR
-                                            genunit(
+  replaceable BaseModels.GeneratingUnits.GeneratorTurbGovAVR genunit(
     P_0=pf.powerflow.machines.PG1,
     Q_0=pf.powerflow.machines.QG1,
     v_0=pf.powerflow.bus.V1,

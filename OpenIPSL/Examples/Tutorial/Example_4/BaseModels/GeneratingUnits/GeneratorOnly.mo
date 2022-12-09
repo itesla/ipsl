@@ -1,5 +1,5 @@
 within OpenIPSL.Examples.Tutorial.Example_4.BaseModels.GeneratingUnits;
-model Generator_Only "Machine-only Generator Unit"
+model GeneratorOnly "Machine-only Generator Unit"
   extends OpenIPSL.Interfaces.Generator;
   OpenIPSL.Electrical.Machines.PSSE.GENROE gENROE(
     P_0=P_0,
@@ -32,4 +32,4 @@ equation
                                                      color={0,0,127}));
   connect(gENROE.p, pwPin)
     annotation (Line(points={{56,0},{110,0}}, color={0,0,255}));
-end Generator_Only;
+end GeneratorOnly;
