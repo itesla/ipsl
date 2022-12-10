@@ -143,42 +143,42 @@ args = parser.parse_args()
     <tbody>
       <tr>
         <td>B01 (bus)</td>
-        <td>pf.powerflow.bus.V1</td>
+        <td>pf.powerflow.bus.v1</td>
         <td>pf.powerflow.bus.A1</td>
         <td>N/A</td>
         <td>N/A</td>
       </tr>
       <tr>
         <td bgcolor=\"#e6e6e6\">B02 (bus)</td>
-        <td bgcolor=\"#e6e6e6\">pf.powerflow.bus.V2</td>
+        <td bgcolor=\"#e6e6e6\">pf.powerflow.bus.v2</td>
         <td bgcolor=\"#e6e6e6\">pf.powerflow.bus.A2</td>
         <td bgcolor=\"#e6e6e6\">N/A</td>
         <td bgcolor=\"#e6e6e6\">N/A</td>
       </tr>
       <tr>
         <td>B03 (bus)</td>
-        <td>pf.powerflow.bus.V3</td>
+        <td>pf.powerflow.bus.v3</td>
         <td>pf.powerflow.bus.A3</td>
         <td>N/A</td>
         <td>N/A</td>
       </tr>
       <tr>
         <td bgcolor=\"#e6e6e6\">B04 (bus)</td>
-        <td bgcolor=\"#e6e6e6\">pf.powerflow.bus.V4</td>
+        <td bgcolor=\"#e6e6e6\">pf.powerflow.bus.v4</td>
         <td bgcolor=\"#e6e6e6\">pf.powerflow.bus.A4</td>
         <td bgcolor=\"#e6e6e6\">N/A</td>
         <td bgcolor=\"#e6e6e6\">N/A</td>
       </tr>
       <tr>
         <td>load (load)</td>
-        <td>pf.powerflow.bus.V4</td>
-        <td>pf.powerflow.bus.A4</td>
+        <td>pf.powerflow.bus.v3</td>
+        <td>pf.powerflow.bus.A3</td>
         <td>pf.powerflow.loads.PL1</td>
         <td>pf.powerflow.loads.QL1</td>
       </tr>
       <tr>
         <td bgcolor=\"#e6e6e6\">InfiniteBus (gen)</td>
-        <td bgcolor=\"#e6e6e6\">pf.powerflow.bus.V2</td>
+        <td bgcolor=\"#e6e6e6\">pf.powerflow.bus.v2</td>
         <td bgcolor=\"#e6e6e6\">pf.powerflow.bus.A2</td>
         <td bgcolor=\"#e6e6e6\">pf.powerflow.machines.PG2</td>
         <td bgcolor=\"#e6e6e6\">pf.powerflow.machines.QG2</td>
@@ -201,7 +201,7 @@ args = parser.parse_args()
     <tbody>
       <tr>
         <td>genunit (gen)</td>
-        <td>pf.powerflow.bus.V1</td>
+        <td>pf.powerflow.bus.v1</td>
         <td>pf.powerflow.bus.A1</td>
         <td>pf.powerflow.machines.PG1</td>
         <td>pf.powerflow.machines.QG1</td>
