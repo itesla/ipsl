@@ -1,5 +1,5 @@
 within OpenIPSL.DataSets.Anderson.TurbGovData;
-partial record TurGovernorDataTemplate "Turbine-Governor Data Record Template"
+partial record TurbGovernorDataTemplate "Turbine-Governor Data Record Template"
   parameter String GOV "Governor type (G = general, H = hydraulic, C = cross-compound)";
   parameter OpenIPSL.Types.PerUnit R "Turbine steady-state regulation setting or droop";
   parameter OpenIPSL.Types.PerUnit P_MAX "Maximum Turbine Output";
@@ -10,4 +10,4 @@ partial record TurGovernorDataTemplate "Turbine-Governor Data Record Template"
   parameter OpenIPSL.Types.Time T_5 "Steam reheat time constant or 1/2 hydro water setting time constant (type C or G) or minimum gate velocity in MW/s (type H)";
   parameter OpenIPSL.Types.PerUnit F "Shaft output ahead of reheater or -2.0 for hydro units (types C or G), or maximum gate velocity in MW/s (type H)";
 
-end TurGovernorDataTemplate;
+end TurbGovernorDataTemplate;
