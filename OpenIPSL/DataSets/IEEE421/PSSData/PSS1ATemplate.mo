@@ -1,13 +1,13 @@
 within OpenIPSL.DataSets.IEEE421.PSSData;
 partial record PSS1ATemplate "Type PSS-A Power System Stabilizer"
-  parameter Real K_S "PSS gain";
-  parameter Real T_1 "Lead-lag time constant 1";
-  parameter Real T_2 "Lead-lag time constant 2";
-  parameter Real T_3 "Lead-lag time constant 3";
-  parameter Real T_4 "Lead-lag time constant 4";
-  parameter Real T_5 "Washout time constant";
-  parameter Real T_6 "Transducer time constant";
-  parameter Real V_STMAX "PSS output max. limit";
-  parameter Real V_STMIN "PSS output min. limit";
+  parameter Types.PerUnit K_S "PSS gain";
+  parameter Types.Time T_1 "Lead-lag time constant 1";
+  parameter Types.Time T_2 "Lead-lag time constant 2";
+  parameter Types.Time T_3 "Lead-lag time constant 3";
+  parameter Types.Time T_4 "Lead-lag time constant 4";
+  parameter Types.Time T_5 "Washout time constant";
+  parameter Types.Time T_6 "Transducer time constant";
+  parameter Types.PerUnit V_STMAX "PSS output max. limit";
+  parameter Types.PerUnit V_STMIN "PSS output min. limit";
 
 end PSS1ATemplate;
