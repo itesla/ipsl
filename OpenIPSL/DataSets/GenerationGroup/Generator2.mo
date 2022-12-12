@@ -202,5 +202,8 @@ equation
           extent={{6,30},{24,20}},
           textColor={28,108,200},
           textStyle={TextStyle.Bold},
-          textString="4")}));
+          textString="4")}),
+    Documentation(info="<html>
+<p>Generation Group for the Anderson-based DataSet Usage Example</p>
+</html>"));
 end Generator2;

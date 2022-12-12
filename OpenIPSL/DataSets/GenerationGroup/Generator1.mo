@@ -195,5 +195,8 @@ equation
           extent={{46,42},{64,32}},
           textColor={28,108,200},
           textStyle={TextStyle.Bold},
-          textString="4")}));
+          textString="4")}),
+    Documentation(info="<html>
+<p>Generation Group for the IEEE421.5-based DataSet Usage Example</p>
+</html>"));
 end Generator1;
