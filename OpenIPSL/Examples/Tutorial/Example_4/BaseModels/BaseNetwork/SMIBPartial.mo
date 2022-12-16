@@ -40,15 +40,15 @@ model SMIBPartial "Partial SMIB Model with PF Record and Load"
   inner OpenIPSL.Electrical.SystemBase SysData
     annotation (Placement(transformation(extent={{-88,72},{-48,90}})));
   GeneratingUnits.InfiniteBus infiniteBus(
-    P_0=pf.powerflow.machines.PG2,
-    Q_0=pf.powerflow.machines.QG2,
+    P_0=pf.powerflow.machine.PG2,
+    Q_0=pf.powerflow.machine.QG2,
     v_0=pf.powerflow.bus.v2,
     angle_0=pf.powerflow.bus.A2,          displayPF=true)
     annotation (Placement(transformation(extent={{94,-10},{74,10}})));
   replaceable
   OpenIPSL.Electrical.Loads.PSSE.Load load(
-    P_0=pf.powerflow.loads.PL1,
-    Q_0=pf.powerflow.loads.QL1,
+    P_0=pf.powerflow.load.PL1,
+    Q_0=pf.powerflow.load.QL1,
     v_0=pf.powerflow.bus.v3,
     angle_0=pf.powerflow.bus.A3) constrainedby
     OpenIPSL.Electrical.Loads.PSSE.BaseClasses.baseLoad

@@ -4,8 +4,8 @@ model SMIBVarLoad "SMIB Model with a Variable Load"
   extends BaseModels.BaseNetwork.SMIBPartial(
     pf(redeclare record PowerFlow = PFData.PF00000),
     redeclare OpenIPSL.Electrical.Loads.PSSE.Load_variation load(
-      P_0=pf.powerflow.loads.PL1,
-      Q_0=pf.powerflow.loads.QL1,
+      P_0=pf.powerflow.load.PL1,
+      Q_0=pf.powerflow.load.QL1,
       v_0=pf.powerflow.bus.v3,
       angle_0=pf.powerflow.bus.A3,
       d_P=-0.1,
@@ -13,8 +13,8 @@ model SMIBVarLoad "SMIB Model with a Variable Load"
       d_t=60),
     pwFault(t1=101, t2=101.1));
   replaceable BaseModels.GeneratingUnits.GeneratorTurbGovAVRPSS genunit(
-    P_0=pf.powerflow.machines.PG1,
-    Q_0=pf.powerflow.machines.QG1,
+    P_0=pf.powerflow.machine.PG1,
+    Q_0=pf.powerflow.machine.QG1,
     v_0=pf.powerflow.bus.v1,
     angle_0=pf.powerflow.bus.A1,
     displayPF=true) constrainedby OpenIPSL.Interfaces.Generator

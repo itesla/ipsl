@@ -7,27 +7,27 @@ replaceable record Bus =
     constrainedby
     OpenIPSL.Examples.Tutorial.Example_4.PFData.BusData.BusTemplate
                                                             "Power flow results for buses";
-Bus bus;
+  Bus bus;
 
 replaceable record Load =
       OpenIPSL.Examples.Tutorial.Example_4.PFData.LoadData.PfLoad00000
     constrainedby
     OpenIPSL.Examples.Tutorial.Example_4.PFData.LoadData.LoadTemplate
     "Power flow results for loads";
-  Load loads;
+  Load load;
 
 replaceable record Machine =
       OpenIPSL.Examples.Tutorial.Example_4.PFData.MachineData.PfMachine00000
     constrainedby
     OpenIPSL.Examples.Tutorial.Example_4.PFData.MachineData.MachineTemplate
     "Power flow results for machines";
-  Machine machines;
+  Machine machine;
 
 replaceable record Trafo =
       OpenIPSL.Examples.Tutorial.Example_4.PFData.TrafoData.PfTrafo00000
     constrainedby
     OpenIPSL.Examples.Tutorial.Example_4.PFData.TrafoData.TrafoTemplate
     "Power flow results for transformers";
-  Trafo trafos;
+  Trafo trafo;
 
 end PF00000;
