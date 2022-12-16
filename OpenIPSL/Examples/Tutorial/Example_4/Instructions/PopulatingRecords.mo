@@ -1,4 +1,4 @@
-within OpenIPSL.Examples.Tutorial.Example_4;
+within OpenIPSL.Examples.Tutorial.Example_4.Instructions;
 model PopulatingRecords "Populating Power Flows Records with GridCal"
   extends Modelica.Icons.Information;
   annotation (DocumentationClass=true, Documentation(info="<html>
@@ -44,20 +44,9 @@ args = parser.parse_args()
     <strong>if</strong> _model <strong>not in</strong> LIST_OF_MODELS:
         <strong>raise</strong> ValueError(<em>'Model not available'</em>)
 
-    <strong>if</strong> args.version:
-        _version = args.version
-        <strong>if</strong> _version <strong>not in</strong> [<em>'1.5.0'</em>, <em>'2.0.0'</em>]:
-            <strong>raise</strong> ValueError(<em>\"OpenIPSL version could not be identified\"</em>)
-    <strong>else</strong>:
-        _version = <em>'1.5.0'</em>
-
-    <strong>if</strong> _version == <em>'1.5.0'</em>:
-        _model_lib = <em>'_old'</em>
-    <strong>elif</strong> _version == <em>'2.0.0'</em>:
-        _model_lib = <em>'_new'</em>
 
 # Absolute path to the data directory of the model
-data_path = os.path.abspath(os.path.join(os.getcwd(), <em>\"models\"</em>, _model_lib, _model))
+data_path = os.path.abspath(os.path.join(os.getcwd(), <em>\"models\"</em>, _model))
 
 grid = None
 
@@ -85,15 +74,10 @@ pf.run()
 gridcal2rec(grid = grid, pf = pf, model_name = _model,
     data_path = data_path,
     pf_num = 0, export_pf_results = False,
-    is_time_series = False, openipsl_version = _version)
+    is_time_series = False, openipsl_version = '2.0.0')
   </pre></blockquote>
     </li>
     <li>Execute <font color=\"blue\"><code>run_pf.py</code></font> from a terminal.
-    <p><em>For OpenIPSL 1.5.0</em>:</p>
-    <blockquote><pre>
-<strong>python</strong> SMIB run_pf.py.py
-    </pre></blockquote>
-    <p><em>For OpenIPSL 2.0.0+</em>:</p>
     <blockquote><pre>
 <strong>python</strong> run_pf.py SMIB --version 2.0.0
     </pre></blockquote>
@@ -113,7 +97,7 @@ gridcal2rec(grid = grid, pf = pf, model_name = _model,
     <p>To see the power flow values in Dymola, click on the <em>square button</em>
       <img src=\"modelica://OpenIPSL/Resources/images/example_4/PopulatingRecords/EditButton.png\" alt=\"EditButton\" /> on the left of the <font color=\"blue\"><code>PowerFlow</code></font> selection menu.
     </p>
-    <p>You should see that the power flow record is composed of four fields: <em>bus</em>, <em>loads</em>, <em>machine </em>and <em>transformers</em>. </p>
+    <p>You should see that the power flow record is composed of four fields: <em>bus</em>, <em>load</em>, <em>machine </em>and <em>transformer</em>. </p>
     <p>
       <img src=\"modelica://OpenIPSL/Resources/images/example_4/PopulatingRecords/InspectPFRecordValues.png\" alt=\"InspectPFRecordValues\" />
     </p>

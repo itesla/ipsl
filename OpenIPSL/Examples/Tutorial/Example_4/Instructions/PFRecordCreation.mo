@@ -1,13 +1,11 @@
-within OpenIPSL.Examples.Tutorial.Example_4;
-model PFRecordCreation
-  "Creating and Integrating the Power Flow Structure"
+within OpenIPSL.Examples.Tutorial.Example_4.Instructions;
+model PFRecordCreation "Creating and Integrating the Power Flow Structure"
   extends Modelica.Icons.Information;
   annotation (DocumentationClass=true, Documentation(info="<html>
   <h5>Creating and Integrating the Power Flow Structure</h5>
   <ol>
     <li>Create a directory called <font color=\"blue\"><code>models</code></font> above your model current folder. </li>
-    <li>Add a sub-folder named <font color=\"blue\"><code>_old</code></font> if your model has been created with OpenIPSL 1.5.0. If, on the other hand, you have used the new version of the library, then name that sub-folder <font color=\"blue\"><code> _new</code></font>. </li>
-    <li>Move your model folder to the directory created in <strong>step 2</strong>. For example, let&apos;s assume you are using the new version of OpenIPSL, then if your model is saved in a folder called <font color=\"blue\"><code>SMIB</code></font>, the new path of your folder should be <font color=\"blue\"><code>models/_new/SMIB</code></font>. </li>
+    <li>Move your model folder to the directory created in <strong>step 2</strong>. For example, let&apos;s assume you are using the new version of OpenIPSL, then if your model is saved in a folder called <font color=\"blue\"><code>SMIB</code></font>, the new path of your folder should be <font color=\"blue\"><code>models/SMIB</code></font>. </li>
     <li>Make sure the directory <font color=\"blue\"><code>pf2rec</code></font> downloaded from the <font color=\"blue\"><code>SMIB_Tutorial</code></font> repository is in the same directory. Here is a screenshot of how your folder structure should look like:
     <p>
       <img src=\"modelica://OpenIPSL/Resources/images/example_4/PFRecordCreation/FolderStructureForSMIBProject.png\" alt=\"FolderStructureForSMIBProject\" />
@@ -24,7 +22,6 @@ model PFRecordCreation
 parser = argparse.ArgumentParser()
 
 parser.add_argument(<em>\"--model\"</em>, help = <em>\"Name of the package containing the target OpenIPSL model. Defaults to 'SMIB'\"</em>)
-parser.add_argument(<em>\"--version\"</em>, help = <em>\"OpenIPSL version for which the model has been created. Defaults to '1.5.0'\"</em>)
 
 args = parser.parse_args()
 
@@ -35,20 +32,8 @@ args = parser.parse_args()
     <strong>else</strong>:
         _model = <em>'SMIB'</em>
 
-    <strong>if</strong> args.version:
-        _version = args.version
-        <strong>if</strong> _version <strong>not in</strong> [<em>'1.5.0'</em>, <em>'2.0.0'</em>]:
-            raise ValueError(<em>\"OpenIPSL version could not be identified\"</em>)
-    <strong>else</strong>:
-        _version = <em>'1.5.0'</em>
-
-    <strong>if</strong> _version == <em>'1.5.0'</em>:
-        _model_lib = <em>'_old'</em>
-    <strong>elif</strong> _version == <em>'2.0.0'</em>:
-        _model_lib = <em>'_new'</em>
-
     <em># Absolute path to the '.mo' file of the model (total model)</em>
-    data_path = os.path.abspath(os.path.join(os.getcwd(), <em>\"models\"</em>, _model_lib, _model))
+    data_path = os.path.abspath(os.path.join(os.getcwd(), <em>\"models\"</em>, _model))
 
     path_mo_file = os.path.abspath(os.path.join(data_path, <em>f\"</em>{_model}<em>Total.mo\"</em>))
         
@@ -100,13 +85,8 @@ args = parser.parse_args()
     </li>
     <li>Right-click the <font color=\"blue\"><code>saveTotalSMIBModel</code></font> function from the Package Browser. Select the &quot; <em>Call Function...</em>&quot; option and then click the <font color=\"blue\"><code>OK</code></font> button. As a result, you should be able to see a new file called <em><font color=\"blue\"><code>SMIBTotal.mo</code></font></em> in the same folder where your model files are being stored. </li>
     <li>Go to the system terminal, change the current directory to the location where the <font color=\"blue\"><code>create_records</code></font> python script is placed and execute it as indicated below.
-    <p>For OpenIPSL 1.5.0:</p>
     <blockquote><pre>
 <strong>python</strong> create_records.py
-    </pre></blockquote>
-  <p>For OpenIPSL 2.0.0:</p>
-    <blockquote><pre>
-<strong>python</strong> create_records.py --version 2.0.0
     </pre></blockquote>
     </li>
     <li>Go back to Dymola and refresh ( <img src=\"modelica://OpenIPSL/Resources/images/example_4/PFRecordCreation/RefreshButton.png\" alt=\"RefreshButton\" />) the SMIB package.

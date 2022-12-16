@@ -1,6 +1,5 @@
-within OpenIPSL.Examples.Tutorial.Example_4;
-model AutomatingAnalysis
-  "Automating Analysis with Modelica Functions"
+within OpenIPSL.Examples.Tutorial.Example_4.Instructions;
+model AutomatingAnalysis "Automating Analysis with Modelica Functions"
   extends Modelica.Icons.Information;
   annotation (DocumentationClass=true, Documentation(info="<html>
   <h5>Automating Analysis with Modelica functions</h5>

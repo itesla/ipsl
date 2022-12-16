@@ -1,4 +1,4 @@
-within OpenIPSL.Examples.Tutorial.Example_4;
+within OpenIPSL.Examples.Tutorial.Example_4.Instructions;
 model SMIBSystemAssembly "Assembling a SMIB System"
   extends Modelica.Icons.Information;
   annotation (DocumentationClass=true, Documentation(info="<html>

@@ -1,4 +1,4 @@
-within OpenIPSL.Examples.Tutorial.Example_4;
+within OpenIPSL.Examples.Tutorial.Example_4.Instructions;
 model InstallingGridCal "Installing GridCal"
   extends Modelica.Icons.Information;
   annotation (DocumentationClass=true, Documentation(info="<html>

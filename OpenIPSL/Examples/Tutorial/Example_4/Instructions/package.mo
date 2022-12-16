@@ -1,5 +1,5 @@
 within OpenIPSL.Examples.Tutorial.Example_4;
-model StartHere "Start Here"
+package Instructions "Instructions"
   extends Modelica.Icons.Information;
   annotation (DocumentationClass=true, Documentation(info="<html>
   <h4>Before You Start</h4>
@@ -488,4 +488,4 @@ model StartHere "Start Here"
     </tr>
   </table>
 </html>"));
-end StartHere;
+end Instructions;
