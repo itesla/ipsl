@@ -25,7 +25,5 @@ equation
   annotation (experiment(
       StopTime=10,
       Interval=0.0001,
-      Tolerance=1e-06,
-      __Dymola_fixedstepsize=0.0001,
-      __Dymola_Algorithm="Dassl"));
+      Tolerance=1e-06));
 end SMIBVarLoad;
