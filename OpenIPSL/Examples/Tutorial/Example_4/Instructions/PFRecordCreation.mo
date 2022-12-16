@@ -6,10 +6,22 @@ model PFRecordCreation "Creating and Integrating the Power Flow Structure"
   <ol>
     <li>Create a directory called <font color=\"blue\"><code>models</code></font> above your model current folder. </li>
     <li>Move your model folder to the directory created in <strong>step 2</strong>. For example, let&apos;s assume you are using the new version of OpenIPSL, then if your model is saved in a folder called <font color=\"blue\"><code>SMIB</code></font>, the new path of your folder should be <font color=\"blue\"><code>models/SMIB</code></font>. </li>
-    <li>Make sure the directory <font color=\"blue\"><code>pf2rec</code></font> downloaded from the <font color=\"blue\"><code>SMIB_Tutorial</code></font> repository is in the same directory. Here is a screenshot of how your folder structure should look like:
-    <p>
-      <img src=\"modelica://OpenIPSL/Resources/images/example_4/PFRecordCreation/FolderStructureForSMIBProject.png\" alt=\"FolderStructureForSMIBProject\" />
-    </p>
+    <li>Make sure the directory <font color=\"blue\"><code>pf2rec</code></font> downloaded from the <font color=\"blue\"><code>SMIB_Tutorial</code></font> repository is in the same directory. The tree below shows how your folder structure should look like:
+    <blockquote><pre>
+C:\\Users\\...>tree /f /a SMIB
+Folder PATH listing
+Volume serial number is ...
+C:\\USERS\\...\\SMIB
+|   create_records.py
+|   run_pf.py
+|
++---models
+|   \\---SMIB
+|       |   ...
+|
+\\---pf2rec
+    |   ...
+    </pre></blockquote>
     </li>
     <li>In the same location where you have your <font color=\"blue\"><code>models</code></font> and <font color=\"blue\"><code>pf2rec</code></font> folders, create a new python file called <font color=\"blue\"><code>create_records.py</code></font>. Copy and paste the following code in the file. <em>Be careful with indentation!</em>
     <blockquote><pre>
@@ -153,15 +165,15 @@ args = parser.parse_args()
         <td>load (load)</td>
         <td>pf.powerflow.bus.v3</td>
         <td>pf.powerflow.bus.A3</td>
-        <td>pf.powerflow.loads.PL1</td>
-        <td>pf.powerflow.loads.QL1</td>
+        <td>pf.powerflow.load.PL1</td>
+        <td>pf.powerflow.load.QL1</td>
       </tr>
       <tr>
         <td bgcolor=\"#e6e6e6\">InfiniteBus (gen)</td>
         <td bgcolor=\"#e6e6e6\">pf.powerflow.bus.v2</td>
         <td bgcolor=\"#e6e6e6\">pf.powerflow.bus.A2</td>
-        <td bgcolor=\"#e6e6e6\">pf.powerflow.machines.PG2</td>
-        <td bgcolor=\"#e6e6e6\">pf.powerflow.machines.QG2</td>
+        <td bgcolor=\"#e6e6e6\">pf.powerflow.machine.PG2</td>
+        <td bgcolor=\"#e6e6e6\">pf.powerflow.machine.QG2</td>
       </tr>
     </tbody>
   </table>
@@ -183,8 +195,8 @@ args = parser.parse_args()
         <td>genunit (gen)</td>
         <td>pf.powerflow.bus.v1</td>
         <td>pf.powerflow.bus.A1</td>
-        <td>pf.powerflow.machines.PG1</td>
-        <td>pf.powerflow.machines.QG1</td>
+        <td>pf.powerflow.machine.PG1</td>
+        <td>pf.powerflow.machine.QG1</td>
       </tr>
     </tbody>
   </table>
