@@ -10,13 +10,27 @@ function RunAndCompare
   input Real fixedstepsizein= 1e-3 "Time step - needed only for fixed time step solvers";
 
   // MODELS TO SIMULATE
-  input String modelA="SMIB.Experiments.SMIB";
-  input String modelB="SMIB.Experiments.SMIB_VarLoad";
+  input String modelA="OpenIPSL.Examples.Tutorial.Example_4.Experiments.SMIB";
+  input String modelB="OpenIPSL.Examples.Tutorial.Example_4.Experiments.SMIBVarLoad";
 
 algorithm
   removePlots(true);
   //Advanced.FilesToKeep :=10 annotation(__Dymola_interactive=true);
-  createPlot(id=1, position={15, 15, 678, 703}, y={"B01.V"},
+  simulateModel(
+    modelA,
+    stopTime=tsim,
+    numberOfIntervals=numberOfIntervalsin,
+    method = methodin,
+    fixedstepsize=fixedstepsizein,
+    resultFile="res_casea");
+  simulateModel(
+    modelB,
+    stopTime=tsim,
+    numberOfIntervals=numberOfIntervalsin,
+    method = methodin,
+    fixedstepsize=fixedstepsizein,
+    resultFile="res_caseb");
+  createPlot(id=1, position={15, 15, 678, 703}, y={"B01.v"},
     range={0.0, 10.0, 0.4, 1.4}, grid=true, filename="res_casea.mat",
     colors={{28,108,200}}, displayUnits={"1"});
   createPlot(id=1, position={15, 15, 678, 703}, y={"genunit.P"},
@@ -25,7 +39,7 @@ algorithm
   createPlot(id=1, position={15, 15, 678, 703}, y={"genunit.Q"},
     range={0.0, 10.0, -0.5, 2.0}, grid=true, subPlot=103,
     colors={{28,108,200}}, displayUnits={"1"});
-  createPlot(id=1, position={15, 15, 678, 703}, y={"B01.V"},
+  createPlot(id=1, position={15, 15, 678, 703}, y={"B01.v"},
     range={0.0, 10.0, 0.4, 1.4}, erase=false, grid=true,
     filename="res_caseb.mat", colors={{238,46,47}}, displayUnits={"1"},
     axes={2});
