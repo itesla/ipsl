@@ -7,7 +7,7 @@ package Instructions "Instructions"
   <ul>
     <li>Dymola/OpenModelica installation.</li>
     <li>
-      <a href=\"https://github.com/SanPen/GridCal\">GridCal</a> setup to generate the power flow solutions. An installation procedure with Miniconda is outlined in the <a href=\"https://github.com/ALSETLab/SMIB_Tutorial/blob/master/docs/gridcal_installation.md\">GridCal installation instructions of ALSETLab/SMIB_Tutorial</a>.
+      <a href=\"https://github.com/SanPen/GridCal\">GridCal</a> setup to generate the power flow solutions. Please refer to section \"<strong>Installing GridCal</strong>\" for installation instructions.
     </li>
     <li>OpenIPSL library.</li>
     <li>Download the files of the <a href=\"https://github.com/ALSETLab/SMIB_Tutorial\">SMIB_Tutorial</a> repository. </li>
