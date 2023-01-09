@@ -7,7 +7,7 @@ package Instructions "Instructions"
   <ul>
     <li>Dymola/OpenModelica installation.</li>
     <li>
-      <a href=\"https://github.com/SanPen/GridCal\">GridCal</a> setup to generate the power flow solutions. Please refer to section \"<strong>Installing GridCal</strong>\" for installation instructions.
+      <strong>GridCal</strong> setup to generate the power flow solutions. Please refer to section <a href=\"modelica://OpenIPSL.Examples.Tutorial.Example_4.Instructions.InstallingGridCal\">Installing GridCal</a> for installation instructions.
     </li>
     <li>OpenIPSL library.</li>
     <li>Download the files of the <a href=\"https://github.com/ALSETLab/SMIB_Tutorial\">SMIB_Tutorial</a> repository. </li>
