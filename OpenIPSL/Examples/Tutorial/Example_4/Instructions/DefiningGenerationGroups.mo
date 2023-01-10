@@ -1,5 +1,5 @@
 within OpenIPSL.Examples.Tutorial.Example_4.Instructions;
-model DefiningGenerationGroups "Adding Generation Unit Models in More Detail"
+model DefiningGenerationGroups "More Detailed GU Models"
   extends Modelica.Icons.Information;
   annotation (DocumentationClass=true, Documentation(info="<html>
   <h5>Adding Generation Unit Models in More Detail</h5>

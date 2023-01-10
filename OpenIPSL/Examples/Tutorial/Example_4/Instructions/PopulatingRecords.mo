@@ -1,5 +1,5 @@
 within OpenIPSL.Examples.Tutorial.Example_4.Instructions;
-model PopulatingRecords "Populating Power Flows Records with GridCal"
+model PopulatingRecords "Populating PF Records"
   extends Modelica.Icons.Information;
   annotation (DocumentationClass=true, Documentation(info="<html>
   <h5>Populating Power Flows with GridCal</h5>

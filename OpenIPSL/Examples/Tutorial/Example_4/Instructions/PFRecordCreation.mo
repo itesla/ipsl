@@ -1,5 +1,5 @@
 within OpenIPSL.Examples.Tutorial.Example_4.Instructions;
-model PFRecordCreation "Creating and Integrating the Power Flow Structure"
+model PFRecordCreation "Creating the PF Structure"
   extends Modelica.Icons.Information;
   annotation (DocumentationClass=true, Documentation(info="<html>
   <h5>Creating and Integrating the Power Flow Structure</h5>
