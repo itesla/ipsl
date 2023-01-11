@@ -2,7 +2,7 @@ within OpenIPSL.Examples.Tutorial.Example_4.Experiments;
 model SMIBVarLoad "SMIB Model with a Variable Load"
   extends Modelica.Icons.Example;
   extends BaseModels.BaseNetwork.SMIBPartial(
-    pf(redeclare record PowerFlow = PxData.Px00000),
+    pf(redeclare record PowerFlow = PFData.PF00000),
     redeclare OpenIPSL.Electrical.Loads.PSSE.Load_variation load(
       P_0=pf.powerflow.load.PL1,
       Q_0=pf.powerflow.load.QL1,

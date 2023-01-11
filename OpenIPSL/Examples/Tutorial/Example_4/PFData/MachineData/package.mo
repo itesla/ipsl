@@ -1,4 +1,4 @@
-within OpenIPSL.Examples.Tutorial.Example_4.PxData;
+within OpenIPSL.Examples.Tutorial.Example_4.PFData;
 package MachineData "Records with power flow solutions for machines"
   extends Modelica.Icons.RecordsPackage;
 
