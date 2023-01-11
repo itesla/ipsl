@@ -44,7 +44,7 @@ model DefiningGenerationGroups "More Detailed GU Models"
       <img src=\"modelica://OpenIPSL/Resources/images/example_4/DefiningGenerationGroups/ResultsToKeep.png\" alt=\"ResultsToKeep\" />
     </p>
     </li>
-    <li>Go back to the diagram layer for the <font color=\"blue\"><code>SMIB</code></font> model and right-click the <em>genunit</em> block to change the class to the \" <em>Machine with Turbine and Governor</em>\" option. 
+    <li>Go back to the diagram layer for the <font color=\"blue\"><code>SMIB</code></font> model and right-click the <em>genunit</em> block to change the class to the \" <em>Machine with Turbine and Governor</em>\" option.
     <p>
       <img src=\"modelica://OpenIPSL/Resources/images/example_4/DefiningGenerationGroups/ChangeClassToMachineWithTurbGovernor.png\" alt=\"ChangeClassToMachineWithTurbGovernor\" />
     </p>

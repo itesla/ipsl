@@ -125,7 +125,7 @@ equation
           52.2},{-96,52.2},{-96,28.4},{-59,28.4}}, color={0,140,72}));
   connect(gENROE.p, pwPin) annotation (Line(points={{40,11},{90,11},{90,0},{110,
           0}}, color={0,0,255}));
-  annotation (Icon(coordinateSystem(preserveAspectRatio=false)),
+  annotation (
     Diagram(
         coordinateSystem(preserveAspectRatio=false, extent={{-220,-120},{100,120}})));
 end GeneratorTurbGovAVRPSS;

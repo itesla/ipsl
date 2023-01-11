@@ -2,19 +2,19 @@ within OpenIPSL.Examples.Tutorial.Example_4.BaseModels.BaseNetwork;
 model SMIBPartial "Partial SMIB Model with PF Record and Load"
   OpenIPSL.Electrical.Buses.Bus B01(
     v_0=pf.powerflow.bus.v1,
-    angle_0=pf.powerflow.bus.A1,    displayPF=true)
+    angle_0=pf.powerflow.bus.A1, displayPF=true)
     annotation (Placement(transformation(extent={{-70,-10},{-50,10}})));
   OpenIPSL.Electrical.Buses.Bus B03(
     v_0=pf.powerflow.bus.v3,
-    angle_0=pf.powerflow.bus.A3,    displayPF=true)
+    angle_0=pf.powerflow.bus.A3, displayPF=true)
     annotation (Placement(transformation(extent={{-40,-10},{-20,10}})));
   OpenIPSL.Electrical.Buses.Bus B04(
     v_0=pf.powerflow.bus.v4,
-    angle_0=pf.powerflow.bus.A4,    displayPF=true)
+    angle_0=pf.powerflow.bus.A4, displayPF=true)
     annotation (Placement(transformation(extent={{10,-30},{30,-10}})));
   OpenIPSL.Electrical.Buses.Bus B02(
     v_0=pf.powerflow.bus.v2,
-    angle_0=pf.powerflow.bus.A2,    displayPF=true)
+    angle_0=pf.powerflow.bus.A2, displayPF=true)
     annotation (Placement(transformation(extent={{50,-10},{70,10}})));
   OpenIPSL.Electrical.Branches.PwLine line_01(
     R=0.0010,
@@ -43,7 +43,7 @@ model SMIBPartial "Partial SMIB Model with PF Record and Load"
     P_0=pf.powerflow.machine.PG2,
     Q_0=pf.powerflow.machine.QG2,
     v_0=pf.powerflow.bus.v2,
-    angle_0=pf.powerflow.bus.A2,          displayPF=true)
+    angle_0=pf.powerflow.bus.A2, displayPF=true)
     annotation (Placement(transformation(extent={{94,-10},{74,10}})));
   replaceable
   OpenIPSL.Electrical.Loads.PSSE.Load load(

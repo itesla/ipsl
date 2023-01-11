@@ -12,7 +12,7 @@ model SMIBSystemAssembly "Assembling a SMIB System"
     </p>
     </li>
     <li>Inside <font color=\"blue\"><code>SMIB</code></font> create two sub-packages named <font color=\"blue\"><code>Experiments</code></font> and <font color=\"blue\"><code>BaseModels</code></font>. Then add two sub-packages inside <font color=\"blue\"><code>BaseModels</code></font> called <font color=\"blue\"><code>GenerationUnits</code></font> and <font color=\"blue\"><code>BaseNetwork</code></font>. Once again, remember to keep the option to &#34; <em>save the contents of the package in one file</em>&#34; unselected. </li>
-    <li>To follow the structure and appearance convention of packages in Modelica, we can add an icon to the <font color=\"blue\"><code>Experiments</code></font> package. Double-click the <font color=\"blue\"><code>Experiments</code></font> package and go to the text layer to add the following line of class extension: 
+    <li>To follow the structure and appearance convention of packages in Modelica, we can add an icon to the <font color=\"blue\"><code>Experiments</code></font> package. Double-click the <font color=\"blue\"><code>Experiments</code></font> package and go to the text layer to add the following line of class extension:
     <blockquote><pre>
 <strong>package</strong> Experiments
    <strong>extends</strong> <em>Modelica.Icons.Example</em>;
@@ -43,12 +43,12 @@ model SMIBSystemAssembly "Assembling a SMIB System"
       <img src=\"modelica://OpenIPSL/Resources/images/example_4/SMIBSystemAssembly//DefaultGENROEConnections.png\" alt=\"DefaultGENROEConnections\" />
     </p>
     </li>
-    <li>Double click the <font color=\"blue\"><code>GENCLS</code></font> block inside the <font color=\"blue\"><code>InfiniteBus</code></font> model. Be sure to enter all the machine parameters in the figure below: 
+    <li>Double click the <font color=\"blue\"><code>GENCLS</code></font> block inside the <font color=\"blue\"><code>InfiniteBus</code></font> model. Be sure to enter all the machine parameters in the figure below:
         <p>
       <img src=\"modelica://OpenIPSL/Resources/images/example_4/SMIBSystemAssembly//GENCLSMachineParameters.png\" alt=\"GENCLSMachineParameters\" />
     </p>
         </li>
-    <li>Switch to the Modelica Text of the <font color=\"blue\"><code>InfiniteBus</code></font> model. Propagate the power flow parameters one layer up as indicated in the highlighted text of the following code chunk: 
+    <li>Switch to the Modelica Text of the <font color=\"blue\"><code>InfiniteBus</code></font> model. Propagate the power flow parameters one layer up as indicated in the highlighted text of the following code chunk:
     <blockquote><pre>
 <strong>model</strong> InfiniteBus
   <strong>extends</strong> <em>OpenIPSL.Interfaces.Generator</em>;

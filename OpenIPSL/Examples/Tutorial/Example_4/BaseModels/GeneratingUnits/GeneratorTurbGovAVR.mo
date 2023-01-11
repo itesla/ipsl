@@ -104,7 +104,7 @@ equation
           0}}, color={0,0,255}));
   connect(const3.y, eSST1A1.VOTHSG) annotation (Line(points={{-33,-36},{-72,-36},
           {-72,-26},{-107,-26}}, color={0,0,127}));
-  annotation (Icon(coordinateSystem(preserveAspectRatio=false)),
+  annotation (
     Diagram(
         coordinateSystem(preserveAspectRatio=false, extent={{-220,-120},{100,120}})));
 end GeneratorTurbGovAVR;

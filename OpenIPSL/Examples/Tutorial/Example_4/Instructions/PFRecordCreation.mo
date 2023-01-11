@@ -48,7 +48,7 @@ args = parser.parse_args()
     data_path = os.path.abspath(os.path.join(os.getcwd(), <em>\"models\"</em>, _model))
 
     path_mo_file = os.path.abspath(os.path.join(data_path, <em>f\"</em>{_model}<em>Total.mo\"</em>))
-        
+
     <em># Remove Modelica code lines from the '.mo' file that alter the expected input for</em>
     <em>#   pf2rec functions (the GenerationUnits package section of Modelica code should </em>
     <em>#   be excluded)</em>
@@ -66,7 +66,7 @@ args = parser.parse_args()
                 includeCodeLine = True
             <strong>if</strong> includeCodeLine:
                 new_lines.append(l);
-        
+
     <strong>with</strong> open(path_mo_file, <em>\"w\"</em>) <strong>as</strong> mo_file:
         <strong>for</strong> l <strong>in</strong> new_lines:
             mo_file.write(<em>\"{}\"</em>.format(l))

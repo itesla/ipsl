@@ -55,7 +55,7 @@ equation
   connect(gENROE.EFD0, gENROE.EFD) annotation (Line(points={{76.4,-14},{92,
           -14},{92,-40},{-40,-40},{-40,-16.8},{-24.8,-16.8}},
                                                      color={0,0,127}));
-  annotation (Icon(coordinateSystem(preserveAspectRatio=false)),
+  annotation (
         Diagram(
         coordinateSystem(preserveAspectRatio=false, extent={{-140,-100},{100,
             100}})));

@@ -44,7 +44,6 @@ args = parser.parse_args()
     <strong>if</strong> _model <strong>not in</strong> LIST_OF_MODELS:
         <strong>raise</strong> ValueError(<em>'Model not available'</em>)
 
-
 # Absolute path to the data directory of the model
 data_path = os.path.abspath(os.path.join(os.getcwd(), <em>\"models\"</em>, _model))
 

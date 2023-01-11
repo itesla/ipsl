@@ -11,6 +11,5 @@ record PowerFlow
 
 PowerFlow powerflow;
 
-  annotation (Icon(coordinateSystem(preserveAspectRatio=false)), Diagram(
-        coordinateSystem(preserveAspectRatio=false)));
+
 end PowerFlow;

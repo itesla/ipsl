@@ -46,7 +46,6 @@ The following NEW packages will be INSTALLED:
   wheel              pkgs/main/noarch::wheel-0.37.1-pyhd3eb1b0_0
   wincertstore       pkgs/main/win-64::wincertstore-0.2-py39haa95532_2
 
-
 Proceed ([y]/n)?
           </pre></blockquote>
         </li>
