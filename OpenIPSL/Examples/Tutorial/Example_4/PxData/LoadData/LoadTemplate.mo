@@ -1,4 +1,4 @@
-within OpenIPSL.Examples.Tutorial.Example_4.PFData.LoadData;
+within OpenIPSL.Examples.Tutorial.Example_4.PxData.LoadData;
 partial record LoadTemplate
   "Record template for power flow solutions in loads"
 

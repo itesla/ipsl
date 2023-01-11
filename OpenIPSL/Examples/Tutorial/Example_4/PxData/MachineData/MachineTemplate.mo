@@ -1,4 +1,4 @@
-within OpenIPSL.Examples.Tutorial.Example_4.PFData.MachineData;
+within OpenIPSL.Examples.Tutorial.Example_4.PxData.MachineData;
 partial record MachineTemplate
   "Record template for power flow solutions in machines"
 
