@@ -1,5 +1,5 @@
 within OpenIPSL.Examples.Tutorial.Example_4.PFData;
-record Px00000 "Record for power flow solutions - Id 00000"
+record PF00000 "Record for power flow solutions - Id 00000"
 extends OpenIPSL.Examples.Tutorial.Example_4.PFData.PowerFlowTemplate;
 
 replaceable record Bus =
@@ -30,4 +30,4 @@ replaceable record Trafo =
     "Power flow results for transformers";
   Trafo trafo;
 
-end Px00000;
+end PF00000;
