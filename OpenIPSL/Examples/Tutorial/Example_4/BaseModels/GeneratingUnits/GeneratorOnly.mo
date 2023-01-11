@@ -22,14 +22,12 @@ model GeneratorOnly "Machine-only Generator Unit"
     S12=0.39,
     R_a=0,
     Xpq=0.6,
-    Tpq0=0.9) annotation (Placement(transformation(extent={{-36,-42},{56,42}})));
+    Tpq0=0.9) annotation (Placement(transformation(extent={{-40,-40},{40,40}})));
 equation
-  connect(gENROE.PMECH0, gENROE.PMECH) annotation (Line(points={{60.6,21},{80,
-          21},{80,70},{-80,70},{-80,25.2},{-45.2,25.2}},
+  connect(gENROE.PMECH0, gENROE.PMECH) annotation (Line(points={{44,20},{80,20},{80,70},{-80,70},{-80,24},{-48,24}},
                                                      color={0,0,127}));
-  connect(gENROE.EFD0, gENROE.EFD) annotation (Line(points={{60.6,-21},{80,
-          -21},{80,-70},{-80,-70},{-80,-25.2},{-45.2,-25.2}},
+  connect(gENROE.EFD0, gENROE.EFD) annotation (Line(points={{44,-20},{80,-20},{80,-70},{-80,-70},{-80,-24},{-48,-24}},
                                                      color={0,0,127}));
   connect(gENROE.p, pwPin)
-    annotation (Line(points={{56,0},{110,0}}, color={0,0,255}));
+    annotation (Line(points={{40,0},{110,0}}, color={0,0,255}));
 end GeneratorOnly;

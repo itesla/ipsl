@@ -23,7 +23,7 @@ model GeneratorTurbGov "Machine with Turbine and Governor"
     P_0(displayUnit="MW") = P_0,
     Q_0=Q_0,
     Xpq=0.6,
-    Tpq0=0.9) annotation (Placement(transformation(extent={{-16,-28},{72,28}})));
+    Tpq0=0.9) annotation (Placement(transformation(extent={{10,-30},{70,30}})));
   OpenIPSL.Electrical.Controls.PSSE.TG.IEEEG1 iEEEG1_1(
     P0=0.4,
     K=20,
@@ -42,21 +42,14 @@ model GeneratorTurbGov "Machine with Turbine and Governor"
     K_4=0,
     T_6=0.4,
     K_5=0.5)
-    annotation (Placement(transformation(extent={{-108,78},{-54,24}})));
+    annotation (Placement(transformation(extent={{-72,-10},{-32,30}})));
 equation
-  connect(iEEEG1_1.PMECH_HP, gENROE.PMECH) annotation (Line(points={{-51.3,
-          40.2},{-42,40.2},{-42,16.8},{-24.8,16.8}},
+  connect(iEEEG1_1.PMECH_HP, gENROE.PMECH) annotation (Line(points={{-30,18},{4,18}},
                                                    color={0,140,72}));
-  connect(gENROE.p, pwPin) annotation (Line(points={{72,3.55271e-15},{90,
-          3.55271e-15},{90,0},{110,0}},
+  connect(gENROE.p, pwPin) annotation (Line(points={{70,0},{110,0}},
                color={0,0,255}));
-  connect(iEEEG1_1.SPEED_HP, gENROE.SPEED) annotation (Line(points={{-102.6,51},
-          {-120,51},{-120,90},{92,90},{92,19.6},{76.4,19.6}}, color={0,0,127}));
-  connect(gENROE.EFD0, gENROE.EFD) annotation (Line(points={{76.4,-14},{92,
-          -14},{92,-40},{-40,-40},{-40,-16.8},{-24.8,-16.8}},
+  connect(iEEEG1_1.SPEED_HP, gENROE.SPEED) annotation (Line(points={{-68,10},{-90,10},{-90,50},{88,50},{88,21},{73,21}},
+                                                              color={0,0,127}));
+  connect(gENROE.EFD0, gENROE.EFD) annotation (Line(points={{73,-15},{92,-15},{92,-40},{-20,-40},{-20,-18},{4,-18}},
                                                      color={0,0,127}));
-  annotation (
-        Diagram(
-        coordinateSystem(preserveAspectRatio=false, extent={{-140,-100},{100,
-            100}})));
 end GeneratorTurbGov;
