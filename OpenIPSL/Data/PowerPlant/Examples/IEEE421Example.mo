@@ -21,7 +21,7 @@ model IEEE421Example
     enableangle_0=true)
                       annotation (Placement(transformation(rotation=0, extent={
             {-60,-10},{-40,10}})));
-  PFData.PowerFlow powerFlow(redeclare record PowerFlow = PFData.PF00050)
+  PxData.PowerFlow powerFlow(redeclare record PowerFlow = PxData.Px00050)
     annotation (Placement(transformation(extent={{-90,32},{-70,52}})));
 equation
   connect(generator1.pwPin, GEN1.p)

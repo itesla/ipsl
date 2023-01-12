@@ -1,4 +1,4 @@
-within OpenIPSL.Data.PowerPlant.PFData;
+within OpenIPSL.Data.PowerPlant.PxData;
 package BusData "Records with power flow solutions for buses"
   extends Modelica.Icons.RecordsPackage;
 
@@ -26,7 +26,7 @@ package BusData "Records with power flow solutions for buses"
 
   end BusTemplate;
 
-  record PFBus00030 "Record for power flow solutions in buses - Pload = 30 MW"
+  record PxBus00030 "Record for power flow solutions in buses - Pload = 30 MW"
     extends BusTemplate(
       v1=1.000000000000,
       A1=0.090529953603,
@@ -49,9 +49,9 @@ package BusData "Records with power flow solutions for buses"
 
     // Bus: 'B05' (PQ bus)
 
-  end PFBus00030;
+  end PxBus00030;
 
-  record PFBus00040 "Record for power flow solutions in buses - Pload = 40 MW"
+  record PxBus00040 "Record for power flow solutions in buses - Pload = 40 MW"
     extends BusTemplate(
       v1=1.000000000000,
       A1=0.080586618023,
@@ -74,9 +74,9 @@ package BusData "Records with power flow solutions for buses"
 
     // Bus: 'B05' (PQ bus)
 
-  end PFBus00040;
+  end PxBus00040;
 
-  record PFBus00050 "Record for power flow solutions in buses - Pload = 50 MW"
+  record PxBus00050 "Record for power flow solutions in buses - Pload = 50 MW"
     extends BusTemplate(
       v1=1.000000000000,
       A1=0.070620799599,
@@ -99,9 +99,9 @@ package BusData "Records with power flow solutions for buses"
 
     // Bus: 'B05' (PQ bus)
 
-  end PFBus00050;
+  end PxBus00050;
 
-  record PFBus00060 "Record for power flow solutions in buses - Pload = 60 MW"
+  record PxBus00060 "Record for power flow solutions in buses - Pload = 60 MW"
     extends BusTemplate(
       v1=1.000000000000,
       A1=0.060629254996,
@@ -124,9 +124,9 @@ package BusData "Records with power flow solutions for buses"
 
     // Bus: 'B05' (PQ bus)
 
-  end PFBus00060;
+  end PxBus00060;
 
-  record PFBus00070 "Record for power flow solutions in buses - Pload = 70 MW"
+  record PxBus00070 "Record for power flow solutions in buses - Pload = 70 MW"
     extends BusTemplate(
       v1=1.000000000000,
       A1=0.050608662468,
@@ -149,5 +149,5 @@ package BusData "Records with power flow solutions for buses"
 
     // Bus: 'B05' (PQ bus)
 
-  end PFBus00070;
+  end PxBus00070;
 end BusData;

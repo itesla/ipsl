@@ -1,4 +1,4 @@
-within OpenIPSL.Data.PowerPlant.PFData;
+within OpenIPSL.Data.PowerPlant.PxData;
 package MachineData "Records with power flow solutions for machines"
   extends Modelica.Icons.RecordsPackage;
 
@@ -17,7 +17,7 @@ package MachineData "Records with power flow solutions for machines"
 
   end MachineTemplate;
 
-  record PFMachine00030
+  record PxMachine00030
     "Record for power flow solutions in machines - Pload = 30 MW"
     extends MachineTemplate(
       PG1=1e06*(40.000000000000),
@@ -31,9 +31,9 @@ package MachineData "Records with power flow solutions for machines"
     // MACHINE: '2_1'
     // Bus: B02'
 
-  end PFMachine00030;
+  end PxMachine00030;
 
-  record PFMachine00040
+  record PxMachine00040
     "Record for power flow solutions in machines - Pload = 40 MW"
     extends MachineTemplate(
       PG1=1e06*(40.000000000000),
@@ -47,9 +47,9 @@ package MachineData "Records with power flow solutions for machines"
     // MACHINE: '2_1'
     // Bus: B02'
 
-  end PFMachine00040;
+  end PxMachine00040;
 
-  record PFMachine00050
+  record PxMachine00050
     "Record for power flow solutions in machines - Pload = 50 MW"
     extends MachineTemplate(
       PG1=1e06*(40.000000000000),
@@ -63,9 +63,9 @@ package MachineData "Records with power flow solutions for machines"
     // MACHINE: '2_1'
     // Bus: B02'
 
-  end PFMachine00050;
+  end PxMachine00050;
 
-  record PFMachine00060
+  record PxMachine00060
     "Record for power flow solutions in machines - Pload = 60 MW"
     extends MachineTemplate(
       PG1=1e06*(40.000000000000),
@@ -79,9 +79,9 @@ package MachineData "Records with power flow solutions for machines"
     // MACHINE: '2_1'
     // Bus: B02'
 
-  end PFMachine00060;
+  end PxMachine00060;
 
-  record PFMachine00070
+  record PxMachine00070
     "Record for power flow solutions in machines - Pload = 70 MW"
     extends MachineTemplate(
       PG1=1e06*(40.000000000000),
@@ -95,5 +95,5 @@ package MachineData "Records with power flow solutions for machines"
     // MACHINE: '2_1'
     // Bus: B02'
 
-  end PFMachine00070;
+  end PxMachine00070;
 end MachineData;
