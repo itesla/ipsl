@@ -96,5 +96,5 @@ equation
           lineThickness=1,
           fontSize=15,
           textStyle={TextStyle.Bold},
-          textString="Single-machine infinite bus model*")}));
+          textString="Single-machine infinite bus model")}));
 end SMIBPartial;
