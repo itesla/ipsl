@@ -20,7 +20,7 @@ model AndersonExample
     angle_0=powerFlow.powerflow.bus.A1,
     enableangle_0=true)
     annotation (Placement(transformation(rotation=0, extent={{-60,-10},{-40,10}})));
-  PxData.PowerFlow powerFlow(redeclare record PowerFlow = PxData.Px00050)
+  PFData.PowerFlow powerFlow(redeclare record PowerFlow = PFData.Px00050)
     annotation (Placement(transformation(extent={{-90,32},{-70,52}})));
 equation
   connect(generator1.pwPin, GEN1.p)

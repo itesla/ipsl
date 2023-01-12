@@ -1,4 +1,4 @@
-within OpenIPSL.Data.PowerPlant.PxData;
+within OpenIPSL.Data.PowerPlant.PFData;
 record PowerFlow
   extends Modelica.Icons.Record;
 

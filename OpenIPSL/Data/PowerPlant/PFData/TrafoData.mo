@@ -1,4 +1,4 @@
-within OpenIPSL.Data.PowerPlant.PxData;
+within OpenIPSL.Data.PowerPlant.PFData;
 package TrafoData "Records with power flow solutions for machines"
   extends Modelica.Icons.RecordsPackage;
 
@@ -7,33 +7,33 @@ package TrafoData "Records with power flow solutions for machines"
 
   end TrafoTemplate;
 
-  record PxTrafo00030
+  record PFTrafo00030
     "Record for power flow solutions in trafos - Pload = 30 MW"
     extends TrafoTemplate;
 
-  end PxTrafo00030;
+  end PFTrafo00030;
 
-  record PxTrafo00040
+  record PFTrafo00040
     "Record for power flow solutions in trafos - Pload = 40 MW"
     extends TrafoTemplate;
 
-  end PxTrafo00040;
+  end PFTrafo00040;
 
-  record PxTrafo00050
+  record PFTrafo00050
     "Record for power flow solutions in trafos - Pload = 50 MW"
     extends TrafoTemplate;
 
-  end PxTrafo00050;
+  end PFTrafo00050;
 
-  record PxTrafo00060
+  record PFTrafo00060
     "Record for power flow solutions in trafos - Pload = 60 MW"
     extends TrafoTemplate;
 
-  end PxTrafo00060;
+  end PFTrafo00060;
 
-  record PxTrafo00070
+  record PFTrafo00070
     "Record for power flow solutions in trafos - Pload = 70 MW"
     extends TrafoTemplate;
 
-  end PxTrafo00070;
+  end PFTrafo00070;
 end TrafoData;
