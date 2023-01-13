@@ -28,8 +28,7 @@ equation
   annotation (
 experiment(
       StopTime=20,
-      Tolerance=1e-06,
-      __Dymola_Algorithm="Dassl"),
+      Tolerance=1e-06),
     Documentation(info="<html>
 <p>This example demonstrates the use of records with synchronous machine, excitation system, power system stabilizer and turbine-governor model parameters, based on data sets published in the &quot;Power System Control and Stability&quot; book. The generator group for this example includes a <strong>GENROE</strong> machine together with an <strong>ESDC1A</strong> excitation system model, an <strong>IEE2ST</strong> PSS model and an <strong>IEESGO</strong> turbine-governor model.</p>
 <p>Source:</p>

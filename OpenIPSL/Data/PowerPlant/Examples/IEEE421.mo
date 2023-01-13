@@ -29,8 +29,7 @@ equation
   annotation (
 experiment(
       StopTime=20,
-      Tolerance=1e-06,
-      __Dymola_Algorithm="Dassl"), Documentation(info="<html>
+      Tolerance=1e-06), Documentation(info="<html>
 <p>This example demonstrates the use of records with synchronous machine, excitation system, and power system stabilizer parameters, based on data sets published in the IEEE421.5 standard. The generator group for this example includes a <strong>GENSAE</strong> machine together with an <strong>ESST1A</strong> excitation system model and a <strong>PSS2B</strong> PSS model.</p>
 <p>Source:</p>
 <ul>
