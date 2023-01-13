@@ -1,6 +1,6 @@
 within OpenIPSL.Data.PowerPlant.Examples;
-model AndersonExample
-  "SMIB system to learn how to use the data set records (Anderson book)"
+model IEEE421
+  "SMIB system to learn how to use the data set records (IEEE421.5 standard)"
   extends OpenIPSL.Tests.BaseClasses.SMIB(constantLoad(
       P_0=powerFlow.powerflow.loads.PL1,
       Q_0=powerFlow.powerflow.loads.QL1,
@@ -10,7 +10,7 @@ model AndersonExample
       Q_0=powerFlow.powerflow.machines.QG2,
       v_0=powerFlow.powerflow.bus.v2,
       angle_0=powerFlow.powerflow.bus.A2));
-  GenerationGroup.Generator2  generator1(
+  GenerationGroup.Generator1  generator1(
     P_0=powerFlow.powerflow.machines.PG1,
     enableP_0=true,
     Q_0=powerFlow.powerflow.machines.QG1,
@@ -19,8 +19,9 @@ model AndersonExample
     enablev_0=true,
     angle_0=powerFlow.powerflow.bus.A1,
     enableangle_0=true)
-    annotation (Placement(transformation(rotation=0, extent={{-60,-10},{-40,10}})));
-  PFData.PowerFlow powerFlow(redeclare record PowerFlow = PFData.Px00050)
+                      annotation (Placement(transformation(rotation=0, extent={
+            {-60,-10},{-40,10}})));
+  PFData.PowerFlow powerFlow(redeclare record PowerFlow = PFData.PF00050)
     annotation (Placement(transformation(extent={{-90,32},{-70,52}})));
 equation
   connect(generator1.pwPin, GEN1.p)
@@ -29,12 +30,11 @@ equation
 experiment(
       StopTime=20,
       Tolerance=1e-06,
-      __Dymola_Algorithm="Dassl"),
-    Documentation(info="<html>
-<p>This example demonstrates the use of records with synchronous machine, excitation system, power system stabilizer and turbine-governor model parameters, based on data sets published in the &quot;Power System Control and Stability&quot; book. The generator group for this example includes a <strong>GENROE</strong> machine together with an <strong>ESDC1A</strong> excitation system model, an <strong>IEE2ST</strong> PSS model and an <strong>IEESGO</strong> turbine-governor model.</p>
+      __Dymola_Algorithm="Dassl"), Documentation(info="<html>
+<p>This example demonstrates the use of records with synchronous machine, excitation system, and power system stabilizer parameters, based on data sets published in the IEEE421.5 standard. The generator group for this example includes a <strong>GENSAE</strong> machine together with an <strong>ESST1A</strong> excitation system model and a <strong>PSS2B</strong> PSS model.</p>
 <p>Source:</p>
 <ul>
-<li>Anderson, P. M., &amp; Fouad, A. A. (2008). Power system control and stability. John Wiley &amp; Sons. Pages: 566-580.</li>
+<li>IEEE (2005), IEEE Recommended Practice for Excitation System Models for Power System Stability Studies. New York, NY 10016-5997, USA.</li>
 </ul>
 </html>"),
     Diagram(graphics={
@@ -80,4 +80,4 @@ experiment(
           textColor={28,108,200},
           textStyle={TextStyle.Bold},
           textString="2")}));
-end AndersonExample;
+end IEEE421;
