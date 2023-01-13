@@ -3,6 +3,6 @@ package PowerPlant "Package with Typical Data Sets of Parameters for the Compone
   extends Modelica.Icons.VariantsPackage;
 
 annotation (Documentation(info="<html>
-<p>Please refer to the <strong>HowTo</strong> section for more information on using the datasets contained in this package.</p>
+<p>Please refer to the <a href=\"modelica://OpenIPSL.Data.PowerPlant.HowTo\"><strong>How-To</strong> section</a> for more information on using the datasets contained in this package.</p>
 </html>"));
 end PowerPlant;

@@ -1,5 +1,5 @@
 within OpenIPSL.Data.PowerPlant;
-model HowTo
+model HowTo "How-To"
   extends Modelica.Icons.Information;
   annotation (DocumentationClass=true, Documentation(info="<html>
 <h4>Data Sets Usage Guide</h4>
