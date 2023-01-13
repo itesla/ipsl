@@ -1,6 +1,6 @@
 within OpenIPSL.Data.PowerPlant.GenerationGroup;
 model Generator2
-  "Generation Group for the Anderson-based DataSet Usage Example"
+  "Generation Group for the example that uses the Anderson-based data set"
   extends OpenIPSL.Electrical.Essentials.pfComponent;
   OpenIPSL.Electrical.Machines.PSSE.GENROE gENROE(
     P_0=P_0,
@@ -126,7 +126,8 @@ equation
           fillPattern=FillPattern.Solid,
           textString="%name"),
                          Line(points={{-60,-20},{-20,20},{20,-20},{60,20}},
-          color={28,108,200}),Ellipse(extent={{-100,-100},{100,100}}, lineColor=
+          color={28,108,200}),Ellipse(extent={{-100,-100},{100,100}}, lineColor
+            =
            {28,108,200})}), Diagram(graphics={
         Rectangle(
           extent={{-80,98},{72,66}},
@@ -203,6 +204,6 @@ equation
           textStyle={TextStyle.Bold},
           textString="4")}),
     Documentation(info="<html>
-<p>Generation Group for the Anderson-based DataSet Usage Example</p>
+<p>Generation Group for the example that uses the Anderson-based data set.</p>
 </html>"));
 end Generator2;

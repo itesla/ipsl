@@ -1,5 +1,5 @@
 within OpenIPSL.Data;
-package PowerPlant "Package with Typical Data Sets of Parameters for the Components of Generation Groups."
+package PowerPlant "Package with typical data sets of parameters for the components of generation groups."
   extends Modelica.Icons.VariantsPackage;
 
 annotation (Documentation(info="<html>

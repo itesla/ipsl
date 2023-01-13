@@ -1,6 +1,6 @@
 within OpenIPSL.Data.PowerPlant.GenerationGroup;
 model Generator1
-  "Generation Group for the IEEE421.5-based DataSet Usage Example"
+  "Generation Group for example that uses the IEEE421.5-based data set"
   extends OpenIPSL.Electrical.Essentials.pfComponent;
   OpenIPSL.Electrical.Machines.PSSE.GENSAE gENSAE(
     P_0=P_0,
@@ -131,7 +131,8 @@ equation
           fillPattern=FillPattern.Solid,
           textString="%name"),
                          Line(points={{-60,-20},{-20,20},{20,-20},{60,20}},
-          color={28,108,200}),Ellipse(extent={{-100,-100},{100,100}}, lineColor=
+          color={28,108,200}),Ellipse(extent={{-100,-100},{100,100}}, lineColor
+            =
            {28,108,200})}), Diagram(graphics={
         Rectangle(
           extent={{-80,98},{72,66}},
@@ -196,6 +197,6 @@ equation
           textStyle={TextStyle.Bold},
           textString="4")}),
     Documentation(info="<html>
-<p>Generation Group for the IEEE421.5-based DataSet Usage Example</p>
+<p>Generation group for the example that uses the IEEE421.5-based data set.</p>
 </html>"));
 end Generator1;
