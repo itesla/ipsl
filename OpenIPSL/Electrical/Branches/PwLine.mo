@@ -72,10 +72,6 @@ equation
           extent={{-80,40},{80,-40}},
           lineColor={0,0,255},
           fillColor={255,255,255},
-          fillPattern=FillPattern.Solid),Rectangle(
-          extent={{-60,20},{60,-20}},
-          lineColor={0,0,255},
-          fillColor={95,95,95},
           fillPattern=FillPattern.Solid),Text(
           visible=displayPF,
           extent={{-200,160},{-20,40}},
@@ -127,7 +123,7 @@ equation
           lineColor={0,255,0},
           fillColor={0,255,0},
           fillPattern=FillPattern.Solid),Text(
-          extent={{-60,20},{60,-20}},
-          lineColor={255,255,0},
+          extent={{-80,12},{80,-14}},
+          lineColor={0,0,0},
           textString="%name")}));
 end PwLine;
