@@ -335,28 +335,28 @@ model IEEE_14_Buses "IEEE 14-bus 5-machine base test system"
     xT=0.20912) annotation (Placement(transformation(
         extent={{-14,-14},{14,14}},
         origin={64,-18})));
-  IEEE14.Generation_Groups.GroupBus2 groupBus2_1(
+  IEEE14.Generation_Groups.GroupBus2 gen2(
     V_b=69000,
     v_0=1.045,
     P_0=0.400000000000003*SysData.S_b,
     Q_0=0.948604*SysData.S_b,
     angle_0=-0.143192)
     annotation (Placement(transformation(extent={{-94,-160},{-74,-140}})));
-  IEEE14.Generation_Groups.GroupBus3 groupBus3_1(
+  IEEE14.Generation_Groups.GroupBus3 gen3(
     V_b=69000,
     v_0=1.01,
     P_0=0.000000000000001*SysData.S_b,
     Q_0=0.597359*SysData.S_b,
     angle_0=-0.3396376)
     annotation (Placement(transformation(extent={{10,-160},{30,-140}})));
-  IEEE14.Generation_Groups.GroupBus6 groupBus6_1(
+  IEEE14.Generation_Groups.GroupBus6 gen6(
     V_b=13800,
     v_0=1.07,
     P_0=0.000000000000039*SysData.S_b,
     angle_0=-0.37708,
     Q_0=0.444329*SysData.S_b)
     annotation (Placement(transformation(extent={{-96,-10},{-76,10}})));
-  IEEE14.Generation_Groups.GroupBus8 groupBus8_1(
+  IEEE14.Generation_Groups.GroupBus8 gen8(
     V_b=18000,
     v_0=1.09,
     P_0=-0.000000000000000*SysData.S_b,
@@ -385,7 +385,7 @@ model IEEE_14_Buses "IEEE 14-bus 5-machine base test system"
         extent={{-7,-7},{7,7}},
         rotation=270,
         origin={73,-51})));
-  IEEE14.Generation_Groups.GroupBus1 groupBus1_1(
+  IEEE14.Generation_Groups.GroupBus1 gen1(
     V_b=69000,
     v_0=1.06,
     angle_0=-0.00751491652,
@@ -490,11 +490,11 @@ equation
           -40},{-22,-40},{-22,-21.4},{-18,-21.4}}, color={0,0,255}));
   connect(B6.p, tWTransformerWithFixedTapRatio.n) annotation (Line(points={{-47,
           19},{-47,12},{-18,12},{-18,9.4}}, color={0,0,255}));
-  connect(groupBus2_1.pwPin, B2.p) annotation (Line(points={{-73,-150},{-60,-150},
-          {-60,-128}}, color={0,0,255}));
-  connect(groupBus3_1.pwPin, B3.p) annotation (Line(points={{31,-150},{44,-150},
-          {44,-122}}, color={0,0,255}));
-  connect(groupBus6_1.pwPin, B6.p)
+  connect(gen2.pwPin, B2.p) annotation (Line(points={{-73,-150},{-60,-150},{-60,
+          -128}}, color={0,0,255}));
+  connect(gen3.pwPin, B3.p)
+    annotation (Line(points={{31,-150},{44,-150},{44,-122}}, color={0,0,255}));
+  connect(gen6.pwPin, B6.p)
     annotation (Line(points={{-75,0},{-47,0},{-47,19}}, color={0,0,255}));
   connect(B4.p, tWTransformerWithFixedTapRatio2.p) annotation (Line(points={{32,
           -32},{36,-32},{36,-18},{48.6,-18}}, color={0,0,255}));
@@ -508,8 +508,8 @@ equation
     annotation (Line(points={{7,26},{16,26},{16,40}}, color={0,0,255}));
   connect(B5.p, L8.p) annotation (Line(points={{-24,-40},{-24,-40},{-14,-40},{-14,
           -53},{-7,-53}}, color={0,0,255}));
-  connect(B8.p, groupBus8_1.pwPin) annotation (Line(points={{149,-37},{159.5,-37},
-          {159.5,-36},{161,-36}}, color={0,0,255}));
+  connect(B8.p, gen8.pwPin) annotation (Line(points={{149,-37},{159.5,-37},{
+          159.5,-36},{161,-36}}, color={0,0,255}));
   connect(L15.p, B9.p)
     annotation (Line(points={{52,60.9},{86,60.9},{86,44}}, color={0,0,255}));
   connect(B9.p, L16.p) annotation (Line(points={{86,44},{86,44},{86,56},{96,56},
@@ -532,8 +532,8 @@ equation
   connect(L3.n, B2.p) annotation (Line(points={{-135,-105},{-135,-134},{-60,
           -134},{-60,-128}},
                        color={0,0,255}));
-  connect(groupBus1_1.pwPin, B1.p) annotation (Line(points={{-157,-6},{-135,-6},
-          {-135,-31}}, color={0,0,255}));
+  connect(gen1.pwPin, B1.p) annotation (Line(points={{-157,-6},{-135,-6},{-135,
+          -31}}, color={0,0,255}));
   connect(B4.p, pwFault2.p) annotation (Line(points={{32,-32},{32,-28},{73,-28},
           {73,-42.8333}}, color={0,0,255}));
   annotation (
