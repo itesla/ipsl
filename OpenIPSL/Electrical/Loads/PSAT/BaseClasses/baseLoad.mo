@@ -26,10 +26,13 @@ equation
   annotation (Icon(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},
             {100,100}}), graphics={Line(points={{-100,100},{100,100},{0,-100},{
           -100,100}}, color={28,108,200}),Text(
-          extent={{-60,80},{60,40}},
-          lineColor={28,108,200},
-          textString="%P_0+j%Q_0"),Text(
+          extent={{-100,80},{100,56}},
+          lineColor={0,0,0},
+          textString="%P_0"),      Text(
           extent={{-150,-110},{150,-150}},
           lineColor={0,0,255},
-          textString="%name")}));
+          textString="%name"),            Text(
+          extent={{-100,32},{100,6}},
+          lineColor={0,0,0},
+          textString="%Q_0")}));
 end baseLoad;
