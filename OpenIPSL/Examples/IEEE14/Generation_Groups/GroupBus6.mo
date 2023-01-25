@@ -46,37 +46,31 @@ equation
   connect(aVR4TypeII1.vf, Syn5.vf) annotation (Line(points={{14,10},{36,10}},
                              color={0,0,127}));
   connect(Syn5.v, aVR4TypeII1.v) annotation (Line(points={{82,6},{88,6},{88,32},
-          {-22,32},{-22,4},{-10,4}}, color={0,0,127}));
+          {-22,32},{-22,4},{-10,4}},             color={0,0,127}));
   connect(Syn5.p, pwPin) annotation (Line(points={{80,0},{110,0}},
                    color={0,0,255}));
   connect(Syn5.pm0, Syn5.pm) annotation (Line(points={{44,-22},{44,-26},{28,-26},
-          {28,-10},{36,-10}}, color={0,0,127}));
+          {28,-10},{36,-10}},      color={0,0,127}));
   connect(aVR4TypeII1.vref0, aVR4TypeII1.vref) annotation (Line(points={{2,22},{
-          2,28},{-16,28},{-16,16},{-10,16}}, color={0,0,127}));
+          2,28},{-16,28},{-16,16},{-10,16}},               color={0,0,127}));
   connect(Syn5.vf0, aVR4TypeII1.vf0) annotation (Line(points={{44,22},{44,28},{
           22,28},{22,-26},{2,-26},{2,-2}},
                               color={0,0,127}));
   annotation (
     Icon(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,
-            100}}), graphics={
-                             Text(
-          extent={{-93,6},{-24,-12}},
-          lineColor={0,0,255},
-          textStyle={TextStyle.Italic},
-          textString=""),
-          Text(extent={{-100,-34},{100,-50}},
-          lineColor={28,108,200},
-          fillColor={0,0,255},
-          fillPattern=FillPattern.Solid,
-          textString="%name"),
-                         Line(points={{-60,-20},{-20,20},{20,-20},{60,20}},
-          color={28,108,200}),Ellipse(extent={{-100,-100},{100,100}}, lineColor=
-           {28,108,200})}),
+            100}}), graphics={Text(lineColor = {0, 0, 255}, extent = {{-93, 6}, {-24, -12}}, textString = "", textStyle = {TextStyle.Italic}),
+          Text(origin={-5.31798,1}, lineColor = {28, 108, 200}, fillColor = {0, 0, 255},
+            fillPattern =                                                                              FillPattern.Solid, extent={{
+              -85.682,-23},{97.318,-37}},                                                                                                                   textString = "%name"),
+                         Line(points={{-60,0},{-20,40},{20,0},{60,40}},
+          color={28,108,200}),Ellipse(lineColor = {28, 108, 200}, extent={{-100,
+              -100},{100,100}})}),
     Documentation(info="<html>
 <p>13.8kV/25MVA Reactive power generation unit (synchronous condenser) connected to bus 6, and composed of the following component models:</p>
 <ul>
 <li><strong>Machine</strong>: 6th order, from PSAT.</li>
 <li><strong>Exciter</strong>: type II, from PSAT.</li>
 </ul>
-</html>"));
+</html>"),
+  Diagram(coordinateSystem(extent = {{-20, 40}, {120, -40}})));
 end GroupBus6;

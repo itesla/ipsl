@@ -35,40 +35,36 @@ model GroupBus1 "69kV/615MVA generation unit connected to bus 1"
     P_0=P_0,
     Q_0=Q_0) annotation (Placement(transformation(extent={{40,-20},{80,20}})));
   OpenIPSL.Interfaces.PwPin pwPin annotation (Placement(transformation(extent={{100,-10},
-            {120,10}}), iconTransformation(extent={{100,-10},{120,10}})));
+            {120,10}}),          iconTransformation(extent={{100,-10},{120,10}})));
 equation
   connect(AVR1.vf, Syn1.vf) annotation (Line(points={{14,10},{36,10}},
                         color={0,0,127}));
   connect(Syn1.v, AVR1.v) annotation (Line(points={{82,6},{88,6},{88,-30},{-16,-30},
-          {-16,4},{-10,4}}, color={0,0,127}));
+          {-16,4},{-10,4}},                         color={0,0,127}));
   connect(Syn1.p, pwPin) annotation (Line(points={{80,0},{110,0}},
                      color={0,0,255}));
   connect(Syn1.pm0, Syn1.pm) annotation (Line(points={{44,-22},{44,-26},{28,-26},
-          {28,-10},{36,-10}}, color={0,0,127}));
+          {28,-10},{36,-10}},               color={0,0,127}));
   connect(AVR1.vref0, AVR1.vref) annotation (Line(points={{2,22},{2,26},{-16,26},
-          {-16,16},{-10,16}}, color={0,0,127}));
+          {-16,16},{-10,16}},                                  color={0,0,127}));
   connect(AVR1.vf0, Syn1.vf0) annotation (Line(points={{2,-2},{2,-12},{20,-12},{
-          20,26},{44,26},{44,22}}, color={0,0,127}));
+          20,26},{44,26},{44,22}},            color={0,0,127}));
   annotation (
     Icon(coordinateSystem(extent={{-100,-100},{100,100}}, preserveAspectRatio=
-            false),graphics={Text(
-          extent={{-93,6},{-24,-12}},
-          lineColor={0,0,255},
-          textStyle={TextStyle.Italic},
-          textString=""),
-          Text(extent={{-100,-34},{100,-50}},
-          lineColor={28,108,200},
-          fillColor={0,0,255},
-          fillPattern=FillPattern.Solid,
-          textString="%name"),
-                         Line(points={{-60,-20},{-20,20},{20,-20},{60,20}},
-          color={28,108,200}),Ellipse(extent={{-100,-100},{100,100}}, lineColor=
-           {28,108,200})}),
+            false),graphics={Text(lineColor = {0, 0, 255}, extent = {{-93, 6}, {-24, -12}}, textString = "", textStyle = {TextStyle.Italic}),
+       Text(origin={-7.1542,-4.28575},
+            lineColor = {28, 108, 200}, fillColor = {0, 0, 255},
+            fillPattern = FillPattern.Solid,
+              extent={{
+              -85.8458,-19.7143},{95.1542,-31.7143}},textString = "%name"),
+       Line(points={{-60,0},{-20,40},{20,0},{60,40}},
+       color={28,108,200}),Ellipse(lineColor = {28, 108, 200}, extent={{-100, -100},{100,100}})}),
     Documentation(info="<html>
 <p>69kV/615MVA Generation unit connected to bus 1, and composed of the following component models:</p>
 <ul>
 <li><strong>Machine</strong>: 5th order type 2, from PSAT.</li>
 <li><strong>Exciter</strong>: type II, from PSAT.</li>
 </ul>
-</html>"));
+</html>"),
+  Diagram(coordinateSystem(extent = {{-20, 40}, {120, -40}})));
 end GroupBus1;
