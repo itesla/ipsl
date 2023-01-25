@@ -64,7 +64,7 @@ equation
           lineColor={0,0,255},
           textStyle={TextStyle.Italic},
           textString=""),
-          Text(extent={{-34,-32},{38,-52}},
+          Text(extent={{-100,-34},{100,-50}},
           lineColor={28,108,200},
           fillColor={0,0,255},
           fillPattern=FillPattern.Solid,
