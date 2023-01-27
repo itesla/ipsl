@@ -15,7 +15,7 @@ model GroupBus3 "69kV/60MVA reactive power generation unit (synchronous condense
     vrmin=0,
     vrmax=4.38) annotation (Placement(transformation(
         extent={{-10,-10},{10,10}},
-        origin={4,10})));
+        origin={0,10})));
   OpenIPSL.Electrical.Machines.PSAT.Order6 Syn2(
     Sn=60000000,
     Vn=69000,
@@ -38,35 +38,32 @@ model GroupBus3 "69kV/60MVA reactive power generation unit (synchronous condense
     P_0=P_0,
     Q_0=Q_0) annotation (Placement(transformation(
         extent={{-20,-20},{20,20}},
-        origin={62,0})));
+        origin={60,0})));
   OpenIPSL.Interfaces.PwPin pwPin annotation (Placement(transformation(extent={{100,-10},
-            {120,10}}),         iconTransformation(extent={{100,-10},{120,10}})));
+            {120,10}}), iconTransformation(extent={{100,-10},{120,10}})));
 equation
-  connect(aVR2TypeII2.vf, Syn2.vf) annotation (Line(points={{16,10},{38,10}},
+  connect(aVR2TypeII2.vf, Syn2.vf) annotation (Line(points={{12,10},{36,10}},
                               color={0,0,127}));
-  connect(Syn2.v, aVR2TypeII2.v) annotation (Line(points={{84,6},{90,6},{90,-30},
-          {-14,-30},{-14,4},{-8,4}},                    color={0,0,127}));
-  connect(Syn2.p, pwPin) annotation (Line(points={{82,0},{110,0}},
+  connect(Syn2.v, aVR2TypeII2.v) annotation (Line(points={{82,6},{90,6},{90,-32},{-20,-32},{-20,4},{-12,4}},
+                                                        color={0,0,127}));
+  connect(Syn2.p, pwPin) annotation (Line(points={{80,0},{110,0}},
                     color={0,0,255}));
-  connect(Syn2.pm0, Syn2.pm) annotation (Line(points={{46,-22},{46,-26},{30,-26},
-          {30,-10},{38,-10}},             color={0,0,127}));
-  connect(aVR2TypeII2.vref0, aVR2TypeII2.vref) annotation (Line(points={{4,22},{
-          4,28},{-14,28},{-14,16},{-8,16}},                        color={0,0,
+  connect(Syn2.pm0, Syn2.pm) annotation (Line(points={{44,-22},{44,-28},{28,-28},{28,-10},{36,-10}},
+                                          color={0,0,127}));
+  connect(aVR2TypeII2.vref0, aVR2TypeII2.vref) annotation (Line(points={{0,22},{0,30},{-20,30},{-20,16},{-12,16}},
+                                                                   color={0,0,
           127}));
-  connect(Syn2.vf0, aVR2TypeII2.vf0) annotation (Line(points={{46,22},{46,28},{
-          26,28},{26,-26},{4,-26},{4,-2}},                           color={0,0,
+  connect(Syn2.vf0, aVR2TypeII2.vf0) annotation (Line(points={{44,22},{44,30},{20,30},{20,-12},{0,-12},{0,-2}},
+                                                                     color={0,0,
           127}));
   annotation (
-    Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-20,-40},{120,
-            40}})),
-    Icon(coordinateSystem(extent={{-100,-100},{100,100}}, preserveAspectRatio=
-            false), graphics={
-                             Text(
+    Icon(graphics={ Text(
           extent={{-93,6},{-24,-12}},
           lineColor={0,0,255},
           textStyle={TextStyle.Italic},
           textString=""),
-          Text(extent={{-96,-20},{96,-38}},
+          Text(
+          extent={{-100,-20},{100,-40}},
           lineColor={28,108,200},
           fillColor={0,0,255},
           fillPattern=FillPattern.Solid,
