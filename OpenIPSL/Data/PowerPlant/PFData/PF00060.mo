@@ -4,22 +4,22 @@ record PF00060 "Record for power flow solutions - Pload = 60 MW"
 
   replaceable record Bus =
       BusData.PFBus00060   constrainedby BusData.BusTemplate
-    "Bus power flow results";
+    "Power flow results for buses";
   Bus bus;
 
   replaceable record Loads =
       LoadData.PFLoad00060    constrainedby LoadData.LoadTemplate
-    "Loads power flow results";
+    "Power flow results for loads";
   Loads loads;
 
   replaceable record Machines =
       MachineData.PFMachine00060    constrainedby MachineData.MachineTemplate
-    "Machine power flow results";
+    "Power flow results for machines";
   Machines machines;
 
   replaceable record Trafos =
       TrafoData.PFTrafo00060    constrainedby TrafoData.TrafoTemplate
-    "Trafos power flow results";
+    "Power flow results for transformers";
   Trafos trafos;
 
 end PF00060;

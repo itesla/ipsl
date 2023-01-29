@@ -1,5 +1,5 @@
 within OpenIPSL.Data.PowerPlant.PFData;
-record PowerFlow
+record PowerFlow "Record containing replaceable record with power flow results"
   extends Modelica.Icons.Record;
 
   replaceable record PowerFlow =
@@ -9,4 +9,7 @@ record PowerFlow
 
   PowerFlow powerflow;
 
+  annotation (Documentation(info="<html>
+<p>Instantiable record containing the replaceable record with power flow results.</p>
+</html>"));
 end PowerFlow;

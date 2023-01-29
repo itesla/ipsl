@@ -1,5 +1,5 @@
 within OpenIPSL.Data.PowerPlant.PFData;
-package TrafoData "Records with power flow solutions for machines"
+package TrafoData "Records with power flow solutions for transformers"
   extends Modelica.Icons.RecordsPackage;
 
   partial record TrafoTemplate
@@ -36,4 +36,7 @@ package TrafoData "Records with power flow solutions for machines"
     extends TrafoTemplate;
 
   end PFTrafo00070;
+  annotation (Documentation(info="<html>
+<p>Records with power flow solutions for transformers.</p>
+</html>"));
 end TrafoData;

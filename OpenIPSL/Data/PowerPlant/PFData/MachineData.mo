@@ -96,4 +96,7 @@ package MachineData "Records with power flow solutions for machines"
     // Bus: B02'
 
   end PFMachine00070;
+  annotation (Documentation(info="<html>
+<p>Records with power flow solutions for machines.</p>
+</html>"));
 end MachineData;

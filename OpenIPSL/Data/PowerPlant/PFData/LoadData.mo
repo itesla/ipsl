@@ -46,4 +46,7 @@ package LoadData "Records with power flow solutions for loads"
     // Load: '3_1'
 
   end PFLoad00070;
+  annotation (Documentation(info="<html>
+<p>Records with power flow solutions for loads.</p>
+</html>"));
 end LoadData;
