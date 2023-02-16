@@ -22,7 +22,7 @@ package Types "Library specific type definitions"
   operator record ComplexCurrent = SI.ComplexCurrent(re(nominal = 1e4, displayUnit="kA"), im(nominal = 1e4, displayUnit="kA")) "Current phasor in cartesian representation";
   operator record ComplexAdmittance = SI.ComplexAdmittance "Admittance in cartesian representation";
   operator record ComplexImpedance = SI.ComplexImpedance "Impedance in cartesian representation";
-  operator record ComplexPower = SI.ComplexPower(re(nominal = 1e8, displayUnit="MW"), im(nominal = 1e8, displayUnit="MVA")) "Active and Reactive powers in cartesian representation";
+  operator record ComplexPower = SI.ComplexPower(re(nominal = 1e8, displayUnit="MW"), im(nominal = 1e8, displayUnit="MV.A")) "Active and Reactive powers in cartesian representation";
   operator record ComplexPerUnit = Complex(re(unit = "1"), im(unit = "1")) "Per unit record for phasor in cartesian representation";
   type Ctrl = enumeration(
       alpha "Control using the firing angle alpha",
