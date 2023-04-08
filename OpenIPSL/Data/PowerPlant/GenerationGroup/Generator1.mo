@@ -80,13 +80,12 @@ model Generator1
         origin={-27,15})));
   OpenIPSL.Interfaces.PwPin pwPin annotation (Placement(transformation(extent={{100,-10},
             {120,10}}), iconTransformation(extent={{100,-10},{120,10}})));
-  GUDynamics gUDynamics(redeclare record GUnitDynamics = IEEE421.ST.ESST1A1 (redeclare
-          record ExcSystem =
-                      IEEE421.ESData.ST.ESST1A1 (
-            T_F=1,
-            K_LR=1,
-            I_LR=0)))
+  GUDynamics gUDynamics(redeclare record GUnitDynamics = GUnitDynamics)
     annotation (Placement(transformation(extent={{-94,34},{-74,54}})));
+  replaceable record GUnitDynamics =
+      IEEE421.ST.ESST1A1 (redeclare record ExcSystem =
+          IEEE421.ESData.ST.ESST1A1)
+    constrainedby GUDynamicsTemplate annotation (choicesAllMatching=true);
 equation
   connect(gENSAE.PMECH,gENSAE. PMECH0) annotation (Line(points={{22,12},{10,12},
           {10,30},{76,30},{76,10},{68,10}},          color={0,0,127}));
@@ -135,22 +134,18 @@ equation
             =
            {28,108,200})}), Diagram(graphics={
         Rectangle(
-          extent={{-80,98},{72,66}},
+          extent={{-76,98},{76,66}},
           lineColor={28,108,200},
           radius=5,
           lineThickness=0.5,
           fillColor={255,255,170},
           fillPattern=FillPattern.Solid),
         Text(
-          extent={{-76,94},{84,70}},
+          extent={{-52,94},{64,90}},
           textColor={0,0,0},
-          textString="1. Drag and Drop from the DataSets package.
-2. Propagate to the upper-level.
-3. Go to the generator component in the upper-level model.
- Choose the appropriate parameter data set from the dropdown list.
-4. Insert component references."),
+          textString="Drag and Drop from the DataSets package."),
         Line(
-          points={{-40,90},{-56,90},{-72,56}},
+          points={{-44,90},{-70,90},{-80,56}},
           color={28,108,200},
           thickness=0.5,
           arrow={Arrow.None,Arrow.Filled},
@@ -177,25 +172,45 @@ equation
           smooth=Smooth.Bezier,
           arrow={Arrow.None,Arrow.Filled}),
         Text(
-          extent={{-84,78},{-60,68}},
+          extent={{-100,70},{-76,60}},
           textColor={28,108,200},
-          textString="1-2",
-          textStyle={TextStyle.Bold}),
+          textStyle={TextStyle.Bold},
+          textString="1"),
         Text(
           extent={{-66,42},{-48,32}},
           textColor={28,108,200},
           textStyle={TextStyle.Bold},
-          textString="4"),
+          textString="2"),
         Text(
           extent={{-4,44},{14,34}},
           textColor={28,108,200},
           textStyle={TextStyle.Bold},
-          textString="4"),
+          textString="2"),
         Text(
           extent={{46,42},{64,32}},
           textColor={28,108,200},
           textStyle={TextStyle.Bold},
-          textString="4")}),
+          textString="2"),
+        Text(
+          extent={{-44,96},{-32,88}},
+          textColor={0,0,125},
+          textStyle={TextStyle.Bold},
+          textString="1."),
+        Text(
+          extent={{-34,74},{30,70}},
+          textColor={0,0,0},
+          textString="Insert component references."),
+        Text(
+          extent={{-66,86},{74,80}},
+          textColor={0,0,0},
+          textStyle={TextStyle.Italic},
+          textString="Go to the upper-level model that contains an instance of this generation
+group (e.g. IEEE421 example model). Follow the local instructions."),
+        Text(
+          extent={{-40,76},{-28,68}},
+          textColor={0,0,125},
+          textStyle={TextStyle.Bold},
+          textString="2.")}),
     Documentation(info="<html>
 <p>Generation group for the example that uses the IEEE421.5-based data set.</p>
 </html>"));

@@ -81,9 +81,10 @@ model Generator2
     P_MIN=0.0,
     K_1=1/gUDynamics.guDynamics.turbGovernor.R)
     annotation (Placement(transformation(extent={{40,-50},{20,-70}})));
-  GUDynamics gUDynamics(redeclare record GUnitDynamics =
-        Anderson.Steam.Fossil.AndersonF15)
+  GUDynamics gUDynamics(redeclare record GUnitDynamics = GUnitDynamics)
     annotation (Placement(transformation(extent={{-94,34},{-74,54}})));
+  replaceable record GUnitDynamics = Anderson.Steam.Fossil.AndersonF15
+    constrainedby GUDynamicsTemplate annotation (choicesAllMatching=true);
 equation
   connect(eSDC1A.ECOMP,gENROE. ETERM) annotation (Line(points={{-48.4,-38},{96,-38},
           {96,-6},{68,-6}},                 color={0,0,127}));
@@ -130,26 +131,12 @@ equation
             =
            {28,108,200})}), Diagram(graphics={
         Rectangle(
-          extent={{-80,98},{72,66}},
+          extent={{-76,98},{76,66}},
           lineColor={28,108,200},
           radius=5,
           lineThickness=0.5,
           fillColor={255,255,170},
           fillPattern=FillPattern.Solid),
-        Text(
-          extent={{-76,94},{84,70}},
-          textColor={0,0,0},
-          textString="1. Drag and Drop from the DataSets package.
-2. Propagate to the upper-level.
-3. Go to the generator component in the upper-level model.
- Choose the appropriate parameter data set from the dropdown list.
-4. Insert component references."),
-        Line(
-          points={{-40,90},{-56,90},{-72,56}},
-          color={28,108,200},
-          thickness=0.5,
-          arrow={Arrow.None,Arrow.Filled},
-          pattern=LinePattern.Dash),
         Line(
           points={{-36,66},{-68,36},{-70,-14}},
           color={28,108,200},
@@ -172,25 +159,20 @@ equation
           smooth=Smooth.Bezier,
           arrow={Arrow.None,Arrow.Filled}),
         Text(
-          extent={{-84,78},{-60,68}},
-          textColor={28,108,200},
-          textString="1-2",
-          textStyle={TextStyle.Bold}),
-        Text(
           extent={{-66,42},{-48,32}},
           textColor={28,108,200},
           textStyle={TextStyle.Bold},
-          textString="4"),
+          textString="2"),
         Text(
           extent={{-4,44},{14,34}},
           textColor={28,108,200},
           textStyle={TextStyle.Bold},
-          textString="4"),
+          textString="2"),
         Text(
           extent={{46,42},{64,32}},
           textColor={28,108,200},
           textStyle={TextStyle.Bold},
-          textString="4"),
+          textString="2"),
         Line(
           points={{4,66},{16,34},{-12,-22},{18,-56}},
           color={28,108,200},
@@ -202,7 +184,42 @@ equation
           extent={{6,30},{24,20}},
           textColor={28,108,200},
           textStyle={TextStyle.Bold},
-          textString="4")}),
+          textString="2"),
+        Text(
+          extent={{-44,96},{-32,88}},
+          textColor={0,0,125},
+          textStyle={TextStyle.Bold},
+          textString="1."),
+        Text(
+          extent={{-52,94},{64,90}},
+          textColor={0,0,0},
+          textString="Drag and Drop from the DataSets package."),
+        Text(
+          extent={{-66,86},{74,80}},
+          textColor={0,0,0},
+          textStyle={TextStyle.Italic},
+          textString="Go to the upper-level model that contains an instance of this generation
+group (e.g. IEEE421 example model). Follow the local instructions."),
+        Text(
+          extent={{-40,76},{-28,68}},
+          textColor={0,0,125},
+          textStyle={TextStyle.Bold},
+          textString="2."),
+        Text(
+          extent={{-34,74},{30,70}},
+          textColor={0,0,0},
+          textString="Insert component references."),
+        Line(
+          points={{-44,90},{-70,90},{-80,56}},
+          color={28,108,200},
+          thickness=0.5,
+          arrow={Arrow.None,Arrow.Filled},
+          pattern=LinePattern.Dash),
+        Text(
+          extent={{-100,70},{-76,60}},
+          textColor={28,108,200},
+          textStyle={TextStyle.Bold},
+          textString="1")}),
     Documentation(info="<html>
 <p>Generation Group for the example that uses the Anderson-based data set.</p>
 </html>"));
