@@ -199,7 +199,7 @@ equation
           textColor={0,0,0},
           textStyle={TextStyle.Italic},
           textString="Go to the upper-level model that contains an instance of this generation
-group (e.g. IEEE421 example model). Follow the local instructions."),
+group (e.g. Anderson example model). Follow the local instructions."),
         Text(
           extent={{-40,76},{-28,68}},
           textColor={0,0,125},
