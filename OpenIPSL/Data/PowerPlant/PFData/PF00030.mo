@@ -1,5 +1,5 @@
 within OpenIPSL.Data.PowerPlant.PFData;
-record PF00030 "Record for power flow solutions - Pload = 30 MW"
+record PF00030 "PF solutions for Pload = 30 MW"
   extends PowerFlowTemplate;
 
   replaceable record Bus =
