@@ -33,24 +33,19 @@ experiment(
       Tolerance=1e-06),
     Documentation(info="<html>
 <p>This example demonstrates the use of records with synchronous machine, excitation system, power system stabilizer and turbine-governor model parameters, based on data sets published in the &quot;Power System Control and Stability&quot; book. The generator group for this example includes a <strong>GENROE</strong> machine together with an <strong>ESDC1A</strong> excitation system model, an <strong>IEE2ST</strong> PSS model and an <strong>IEESGO</strong> turbine-governor model.</p>
-<p>Source:</p>
+<h5>Instructions</h5>
+Start setting up the generating unit dynamics data set as explained in <code><a href=\"modelica://OpenIPSL.Data.PowerPlant.GenerationGroup.Generator2\">GenerationGroup.Generator2</a></code>. Then, proceed with the following steps:
+<ol>
+<li>Open the parameter window of the generation group component.</li>
+<li>Choose the appropriate parameter data set for the generating unit dynamics from the <code>GUnitDynamics</code> dropdown list.</li>
+<li>Insert component references to the <code>powerFlow</code> record to define the initial values.</li>
+</ol>
+<h5>Source</h5>
 <ul>
 <li>Anderson, P. M., &amp; Fouad, A. A. (2008). Power system control and stability. John Wiley &amp; Sons. Pages: 566-580.</li>
 </ul>
 </html>"),
     Diagram(graphics={
-        Rectangle(
-          extent={{-60,96},{100,54}},
-          lineColor={28,108,200},
-          radius=5,
-          lineThickness=0.5,
-          fillColor={255,255,170},
-          fillPattern=FillPattern.Solid),
-        Text(
-          extent={{-42,84},{78,76}},
-          textColor={0,0,0},
-          textString=
-              "Open the parameter window of the generation group component."),
         Line(
           points={{-78,-24},{-60,-8}},
           color={28,108,200},
@@ -78,32 +73,5 @@ experiment(
           extent={{-48,36},{-30,26}},
           textColor={28,108,200},
           textStyle={TextStyle.Bold},
-          textString="2"),
-        Text(
-          extent={{-52,66},{102,54}},
-          textColor={0,0,0},
-          textString=
-              "Insert component references to the power_Flow record to define the initial values."),
-        Text(
-          extent={{-48,80},{92,62}},
-          textColor={0,0,0},
-          textStyle={TextStyle.Italic},
-          textString="Choose the appropriate parameter data set for the generating unit dynamics from the
-GUnitDynamics dropdown list."),
-        Text(
-          extent={{-52,84},{-40,76}},
-          textColor={0,0,125},
-          textStyle={TextStyle.Bold},
-          textString="1."),
-        Text(
-          extent={{-60,64},{-48,56}},
-          textColor={0,0,125},
-          textStyle={TextStyle.Bold},
-          textString="2."),
-        Text(
-          extent={{-58,92},{96,86}},
-          textColor={217,67,180},
-          textStyle={TextStyle.Italic},
-          textString="Start setting up the generating unit dynamics data set as explained
-in GenerationGroup.Generator2.")}));
+          textString="2")}));
 end Anderson;

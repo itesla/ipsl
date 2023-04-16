@@ -130,97 +130,58 @@ equation
           color={28,108,200}),Ellipse(extent={{-100,-100},{100,100}}, lineColor
             =
            {28,108,200})}), Diagram(graphics={
-        Rectangle(
-          extent={{-76,98},{76,66}},
-          lineColor={28,108,200},
-          radius=5,
-          lineThickness=0.5,
-          fillColor={255,255,170},
-          fillPattern=FillPattern.Solid),
         Line(
-          points={{-36,66},{-68,36},{-70,-14}},
+          points={{-4,74},{-50,58},{-70,-14}},
           color={28,108,200},
           pattern=LinePattern.Dash,
           thickness=0.5,
           arrow={Arrow.None,Arrow.Filled},
           smooth=Smooth.Bezier),
         Line(
-          points={{26,66},{40,54},{54,22}},
+          points={{8,76},{40,54},{54,22}},
           color={28,108,200},
           pattern=LinePattern.Dash,
           thickness=0.5,
           smooth=Smooth.Bezier,
           arrow={Arrow.None,Arrow.Filled}),
         Line(
-          points={{-10,66},{2,36},{-12,18}},
+          points={{-2,72},{-10,58},{-12,18}},
           color={28,108,200},
           pattern=LinePattern.Dash,
           thickness=0.5,
           smooth=Smooth.Bezier,
           arrow={Arrow.None,Arrow.Filled}),
         Text(
-          extent={{-66,42},{-48,32}},
-          textColor={28,108,200},
-          textStyle={TextStyle.Bold},
-          textString="2"),
-        Text(
-          extent={{-4,44},{14,34}},
-          textColor={28,108,200},
-          textStyle={TextStyle.Bold},
-          textString="2"),
-        Text(
-          extent={{46,42},{64,32}},
+          extent={{-6,80},{12,70}},
           textColor={28,108,200},
           textStyle={TextStyle.Bold},
           textString="2"),
         Line(
-          points={{4,66},{16,34},{-12,-22},{18,-56}},
+          points={{4,70},{16,34},{-12,-22},{18,-56}},
           color={28,108,200},
           pattern=LinePattern.Dash,
           thickness=0.5,
           smooth=Smooth.Bezier,
           arrow={Arrow.None,Arrow.Filled}),
         Text(
-          extent={{6,30},{24,20}},
+          extent={{-82,78},{-58,68}},
           textColor={28,108,200},
           textStyle={TextStyle.Bold},
-          textString="2"),
-        Text(
-          extent={{-44,96},{-32,88}},
-          textColor={0,0,125},
-          textStyle={TextStyle.Bold},
-          textString="1."),
-        Text(
-          extent={{-52,94},{64,90}},
-          textColor={0,0,0},
-          textString="Drag and Drop from the DataSets package."),
-        Text(
-          extent={{-66,86},{74,80}},
-          textColor={0,0,0},
-          textStyle={TextStyle.Italic},
-          textString="Go to the upper-level model that contains an instance of this generation
-group (e.g. Anderson example model). Follow the local instructions."),
-        Text(
-          extent={{-40,76},{-28,68}},
-          textColor={0,0,125},
-          textStyle={TextStyle.Bold},
-          textString="2."),
-        Text(
-          extent={{-34,74},{30,70}},
-          textColor={0,0,0},
-          textString="Insert component references."),
+          textString="1"),
         Line(
-          points={{-44,90},{-70,90},{-80,56}},
+          points={{-74,70},{-84,56}},
           color={28,108,200},
           thickness=0.5,
           arrow={Arrow.None,Arrow.Filled},
-          pattern=LinePattern.Dash),
-        Text(
-          extent={{-100,70},{-76,60}},
-          textColor={28,108,200},
-          textStyle={TextStyle.Bold},
-          textString="1")}),
+          pattern=LinePattern.Dash)}),
     Documentation(info="<html>
 <p>Generation Group for the example that uses the Anderson-based data set.</p>
+<h5>Instructions</h5>
+The steps for the correct use of the data sets are indicated below:
+<ol>
+<li>Drag and Drop from the <strong>DataSets</strong> package.</li>
+<li>Go to the upper-level model that contains an instance of this generation group (e.g. <strong><a href=\"modelica://OpenIPSL.Data.PowerPlant.Examples.Anderson\">Anderson</a></strong> example model). Follow the local instructions.</li>
+<li>Insert component references.</li>
+</ol>
 </html>"));
 end Generator2;

@@ -133,32 +133,21 @@ equation
           color={28,108,200}),Ellipse(extent={{-100,-100},{100,100}}, lineColor
             =
            {28,108,200})}), Diagram(graphics={
-        Rectangle(
-          extent={{-76,98},{76,66}},
-          lineColor={28,108,200},
-          radius=5,
-          lineThickness=0.5,
-          fillColor={255,255,170},
-          fillPattern=FillPattern.Solid),
-        Text(
-          extent={{-52,94},{64,90}},
-          textColor={0,0,0},
-          textString="Drag and Drop from the DataSets package."),
         Line(
-          points={{-44,90},{-70,90},{-80,56}},
+          points={{-74,70},{-84,56}},
           color={28,108,200},
           thickness=0.5,
           arrow={Arrow.None,Arrow.Filled},
           pattern=LinePattern.Dash),
         Line(
-          points={{-36,66},{-68,36},{-70,-14}},
+          points={{-20,72},{-58,50},{-70,-14}},
           color={28,108,200},
           pattern=LinePattern.Dash,
           thickness=0.5,
           arrow={Arrow.None,Arrow.Filled},
           smooth=Smooth.Bezier),
         Line(
-          points={{0,66},{40,54},{54,22}},
+          points={{-6,72},{32,60},{54,22}},
           color={28,108,200},
           pattern=LinePattern.Dash,
           thickness=0.5,
@@ -172,46 +161,23 @@ equation
           smooth=Smooth.Bezier,
           arrow={Arrow.None,Arrow.Filled}),
         Text(
-          extent={{-100,70},{-76,60}},
+          extent={{-82,78},{-58,68}},
           textColor={28,108,200},
           textStyle={TextStyle.Bold},
           textString="1"),
         Text(
-          extent={{-66,42},{-48,32}},
+          extent={{-22,78},{-4,68}},
           textColor={28,108,200},
           textStyle={TextStyle.Bold},
-          textString="2"),
-        Text(
-          extent={{-4,44},{14,34}},
-          textColor={28,108,200},
-          textStyle={TextStyle.Bold},
-          textString="2"),
-        Text(
-          extent={{46,42},{64,32}},
-          textColor={28,108,200},
-          textStyle={TextStyle.Bold},
-          textString="2"),
-        Text(
-          extent={{-44,96},{-32,88}},
-          textColor={0,0,125},
-          textStyle={TextStyle.Bold},
-          textString="1."),
-        Text(
-          extent={{-34,74},{30,70}},
-          textColor={0,0,0},
-          textString="Insert component references."),
-        Text(
-          extent={{-66,86},{74,80}},
-          textColor={0,0,0},
-          textStyle={TextStyle.Italic},
-          textString="Go to the upper-level model that contains an instance of this generation
-group (e.g. IEEE421 example model). Follow the local instructions."),
-        Text(
-          extent={{-40,76},{-28,68}},
-          textColor={0,0,125},
-          textStyle={TextStyle.Bold},
-          textString="2.")}),
+          textString="2")}),
     Documentation(info="<html>
 <p>Generation group for the example that uses the IEEE421.5-based data set.</p>
+<h5>Instructions</h5>
+The steps for the correct use of the data sets are indicated below:
+<ol>
+<li>Drag and Drop from the <strong>DataSets</strong> package.</li>
+<li>Go to the upper-level model that contains an instance of this generation group (e.g. <strong><a href=\"modelica://OpenIPSL.Data.PowerPlant.Examples.IEEE421\">IEEE421</a></strong> example model). Follow the local instructions.</li>
+<li>Insert component references.</li>
+</ol>
 </html>"));
 end Generator1;

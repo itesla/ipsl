@@ -20,8 +20,8 @@ model IEEE421
     angle_0=powerFlow.powerflow.bus.A1,
     enableangle_0=true,
     redeclare record GUnitDynamics =
-        OpenIPSL.Data.PowerPlant.IEEE421.ST.ESST1A1 (redeclare record ExcSystem
-          = OpenIPSL.Data.PowerPlant.IEEE421.ESData.ST.ESST1A1 (
+        OpenIPSL.Data.PowerPlant.IEEE421.ST.ESST1A1 (redeclare record ExcSystem =
+            OpenIPSL.Data.PowerPlant.IEEE421.ESData.ST.ESST1A1 (
             T_F=1,
             K_LR=1,
             I_LR=0))) annotation (Placement(transformation(rotation=0, extent={
@@ -36,7 +36,14 @@ experiment(
       StopTime=20,
       Tolerance=1e-06), Documentation(info="<html>
 <p>This example demonstrates the use of records with synchronous machine, excitation system, and power system stabilizer parameters, based on data sets published in the IEEE421.5 standard. The generator group for this example includes a <strong>GENSAE</strong> machine together with an <strong>ESST1A</strong> excitation system model and a <strong>PSS2B</strong> PSS model.</p>
-<p>Source:</p>
+<h5>Instructions</h5>
+Start setting up the generating unit dynamics data set as explained in <code><a href=\"modelica://OpenIPSL.Data.PowerPlant.GenerationGroup.Generator1\">GenerationGroup.Generator1</a></code>. Then, proceed with the following steps:
+<ol>
+<li>Open the parameter window of the generation group component.</li>
+<li>Choose the appropriate parameter data set for the generating unit dynamics from the <code>GUnitDynamics</code> dropdown list.</li>
+<li>Insert component references to the <code>powerFlow</code> record to define the initial values.</li>
+</ol>
+<h5>Source</h5>
 <ul>
 <li>IEEE (2005), IEEE Recommended Practice for Excitation System Models for Power System Stability Studies. New York, NY 10016-5997, USA.</li>
 </ul>
@@ -69,44 +76,5 @@ experiment(
           extent={{-48,36},{-30,26}},
           textColor={28,108,200},
           textStyle={TextStyle.Bold},
-          textString="2"),
-        Rectangle(
-          extent={{-60,96},{100,54}},
-          lineColor={28,108,200},
-          radius=5,
-          lineThickness=0.5,
-          fillColor={255,255,170},
-          fillPattern=FillPattern.Solid),
-        Text(
-          extent={{-52,66},{102,54}},
-          textColor={0,0,0},
-          textString=
-              "Insert component references to the power_Flow record to define the initial values."),
-        Text(
-          extent={{-48,80},{92,62}},
-          textColor={0,0,0},
-          textStyle={TextStyle.Italic},
-          textString="Choose the appropriate parameter data set for the generating unit dynamics from the
-GUnitDynamics dropdown list."),
-        Text(
-          extent={{-52,84},{-40,76}},
-          textColor={0,0,125},
-          textStyle={TextStyle.Bold},
-          textString="1."),
-        Text(
-          extent={{-60,64},{-48,56}},
-          textColor={0,0,125},
-          textStyle={TextStyle.Bold},
-          textString="2."),
-        Text(
-          extent={{-42,84},{78,76}},
-          textColor={0,0,0},
-          textString=
-              "Open the parameter window of the generation group component."),
-        Text(
-          extent={{-58,92},{96,86}},
-          textColor={217,67,180},
-          textStyle={TextStyle.Italic},
-          textString="Start setting up the generating unit dynamics data set as explained
-in GenerationGroup.Generator1.")}));
+          textString="2")}));
 end IEEE421;
