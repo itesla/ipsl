@@ -34,44 +34,20 @@ experiment(
     Documentation(info="<html>
 <p>This example demonstrates the use of records with synchronous machine, excitation system, power system stabilizer and turbine-governor model parameters, based on data sets published in the &quot;Power System Control and Stability&quot; book. The generator group for this example includes a <strong>GENROE</strong> machine together with an <strong>ESDC1A</strong> excitation system model, an <strong>IEE2ST</strong> PSS model and an <strong>IEESGO</strong> turbine-governor model.</p>
 <h5>Instructions</h5>
-Start setting up the generating unit dynamics data set as explained in <code><a href=\"modelica://OpenIPSL.Data.PowerPlant.GenerationGroup.Generator2\">GenerationGroup.Generator2</a></code>. Then, proceed with the following steps:
+Please start by completing the 3 first steps of the instructions in <code><a href=\"modelica://OpenIPSL.Data.PowerPlant.GenerationGroup.Generator2\">GenerationGroup.Generator2</a></code>. A <code>OpenIPSL.Data.PowerPlant.GUDynamics</code> record must be dragged and dropped into that model and its <code>GUnitDynamics</code> parameter must be propagated before continuing with the following steps::
 <ol>
 <li>Open the parameter window of the generation group component.</li>
-<li>Choose the appropriate parameter data set for the generating unit dynamics from the <code>GUnitDynamics</code> dropdown list.</li>
-<li>Insert component references to the <code>powerFlow</code> record to define the initial values.</li>
+<li>Choose the appropriate parameter data set for the generating unit dynamics from the <code>GUnitDynamics</code> dropdown list. To do this, double-click the <code>generator1</code> component. Then, expand the drop-down list of the <code>GUnitDynamics</code> parameter. Finally, choose the <em>Anderson Fossil Steam Unit 15 (448 MVA)</em> option.</li>
+<li>Choose the right data set for the <code>powerFlow</code> record. The procedure is very similar as in the previous step. This time just expand the drop-down list of the <code>PowerFlow</code> parameter of the <code>powerFlow</code> record. <em>Choose the PF solutions for Pload = 50 MW</em> option.</li>
+<li>Insert component references to the <code>powerFlow</code> record to define the initial power flow values. This has to be done for the following components:
+<ul><li>generator1: P_0=<code>powerFlow.powerflow.machines.PG1</code>; Q_0=<code>powerFlow.powerflow.machines.QG1</code>; v_0=<code>powerFlow.powerflow.bus.v1</code>; angle_0=<code>powerFlow.powerflow.bus.A1</code>.</li>
+<li>gENCLS: P_0=<code>powerFlow.powerflow.machines.PG2</code>; Q_0=<code>powerFlow.powerflow.machines.QG2</code>; v_0=<code>powerFlow.powerflow.bus.v2</code>; angle_0=<code>powerFlow.powerflow.bus.A2</code>.</li>
+<li>constantLoad: P_0=<code>powerFlow.powerflow.loads.PL1</code>; Q_0=<code>powerFlow.powerflow.loads.QL1</code>; v_0=<code>powerFlow.powerflow.bus.v3</code>; angle_0=<code>powerFlow.powerflow.bus.A3</code>.</li></ul></li>
+<li>Go back to the instructions in <code><a href=\"modelica://OpenIPSL.Data.PowerPlant.GenerationGroup.Generator2\">GenerationGroup.Generator2</a></code> and follow step 4.</li>
 </ol>
 <h5>Source</h5>
 <ul>
 <li>Anderson, P. M., &amp; Fouad, A. A. (2008). Power system control and stability. John Wiley &amp; Sons. Pages: 566-580.</li>
 </ul>
-</html>"),
-    Diagram(graphics={
-        Line(
-          points={{-78,-24},{-60,-8}},
-          color={28,108,200},
-          arrow={Arrow.None,Arrow.Filled},
-          thickness=0.5,
-          pattern=LinePattern.Dash),
-        Text(
-          extent={{-76,-18},{-58,-28}},
-          textColor={28,108,200},
-          textStyle={TextStyle.Bold},
-          textString="1"),
-        Line(
-          points={{-44,40},{-68,40}},
-          color={28,108,200},
-          arrow={Arrow.None,Arrow.Filled},
-          thickness=0.5,
-          pattern=LinePattern.Dash),
-        Line(
-          points={{-44,40},{-48,10}},
-          color={28,108,200},
-          arrow={Arrow.None,Arrow.Filled},
-          thickness=0.5,
-          pattern=LinePattern.Dash),
-        Text(
-          extent={{-48,36},{-30,26}},
-          textColor={28,108,200},
-          textStyle={TextStyle.Bold},
-          textString="2")}));
+</html>"));
 end Anderson;
