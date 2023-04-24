@@ -132,52 +132,17 @@ equation
                          Line(points={{-60,-20},{-20,20},{20,-20},{60,20}},
           color={28,108,200}),Ellipse(extent={{-100,-100},{100,100}}, lineColor
             =
-           {28,108,200})}), Diagram(graphics={
-        Line(
-          points={{-74,70},{-84,56}},
-          color={28,108,200},
-          thickness=0.5,
-          arrow={Arrow.None,Arrow.Filled},
-          pattern=LinePattern.Dash),
-        Line(
-          points={{-20,72},{-58,50},{-70,-14}},
-          color={28,108,200},
-          pattern=LinePattern.Dash,
-          thickness=0.5,
-          arrow={Arrow.None,Arrow.Filled},
-          smooth=Smooth.Bezier),
-        Line(
-          points={{-6,72},{32,60},{54,22}},
-          color={28,108,200},
-          pattern=LinePattern.Dash,
-          thickness=0.5,
-          smooth=Smooth.Bezier,
-          arrow={Arrow.None,Arrow.Filled}),
-        Line(
-          points={{-10,66},{2,36},{-12,18}},
-          color={28,108,200},
-          pattern=LinePattern.Dash,
-          thickness=0.5,
-          smooth=Smooth.Bezier,
-          arrow={Arrow.None,Arrow.Filled}),
-        Text(
-          extent={{-82,78},{-58,68}},
-          textColor={28,108,200},
-          textStyle={TextStyle.Bold},
-          textString="1"),
-        Text(
-          extent={{-22,78},{-4,68}},
-          textColor={28,108,200},
-          textStyle={TextStyle.Bold},
-          textString="2")}),
+           {28,108,200})}),
     Documentation(info="<html>
 <p>Generation group for the example that uses the IEEE421.5-based data set.</p>
 <h5>Instructions</h5>
 The steps for the correct use of the data sets are indicated below:
 <ol>
-<li>Drag and Drop from the <strong>DataSets</strong> package.</li>
-<li>Go to the upper-level model that contains an instance of this generation group (e.g. <strong><a href=\"modelica://OpenIPSL.Data.PowerPlant.Examples.IEEE421\">IEEE421</a></strong> example model). Follow the local instructions.</li>
-<li>Insert component references.</li>
+<li>Drag and Drop an instance of a <code>OpenIPSL.Data.PowerPlant.GUDynamics</code> record to the diagram layer of your generation group model.</li>
+<li>Propagate the <code>GUnitDynamics</code> parameter of the <code>GUDynamics</code> record. </li>
+<li>Go to the upper-level model that contains an instance of this generation group (e.g. <strong><a href=\"modelica://OpenIPSL.Data.PowerPlant.Examples.IEEE421\">IEEE421</a></strong> example model). Complete the local instructions and come back to continue with step 4.</li>
+<li>Insert component references inside the parameter fields of the Synchronous Machine, Excitation System and Power System Stabilizer blocks. For example, to specify the inertia constant of the GENSAE synchronous machine (i.e., H), you must fill its field with this expression: <code>gUDynamics.guDynamics.machine.H</code>. To do this, you can either type the value or recreate the whole path, by first clicking the <strong>Insert Component Reference</strong> option and then navigating the references accordingly.</li>
+</ol>
 </ol>
 </html>"));
 end Generator1;

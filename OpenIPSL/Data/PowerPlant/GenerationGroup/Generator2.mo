@@ -138,7 +138,7 @@ The steps for the correct use of the data sets are indicated below:
 <li>Drag and Drop an instance of a <code>OpenIPSL.Data.PowerPlant.GUDynamics</code> record to the diagram layer of your generation group model.</li>
 <li>Propagate the <code>GUnitDynamics</code> parameter of the <code>GUDynamics</code> record. </li>
 <li>Go to the upper-level model that contains an instance of this generation group (e.g. <strong><a href=\"modelica://OpenIPSL.Data.PowerPlant.Examples.Anderson\">Anderson</a></strong> example model). Complete the local instructions and come back to continue with step 4.</li>
-<li>Insert component references inside the parameter fields of the Synchronous Machine, Excitation System, Power System Stabilizer and Turbine/Governor blocks. For example, to specify the inertia constant of the synchronous machine (i.e., H), you must fill its field with this expression: <code>gUDynamics.guDynamics.machine.H</code>. To do this, you can either type the value or recreate the whole path, by first clicking the <strong>Insert Component Reference</strong> option and then navigating the references accordingly.</li>
+<li>Insert component references inside the parameter fields of the Synchronous Machine, Excitation System, Power System Stabilizer and Turbine/Governor blocks. For example, to specify the inertia constant of the GENROE synchronous machine (i.e., H), you must fill its field with this expression: <code>gUDynamics.guDynamics.machine.H</code>. To do this, you can either type the value or recreate the whole path, by first clicking the <strong>Insert Component Reference</strong> option and then navigating the references accordingly.</li>
 </ol>
 </html>"));
 end Generator2;
