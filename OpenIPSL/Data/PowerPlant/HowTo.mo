@@ -15,7 +15,7 @@ explains the process required to create a simple network model along with a
 Although it is not necessary to create a model only for the generation group,
 it is highly recommended as it promotes modularity and flexibility.
 It should be noted that the network model can grow in size and complexity,
-as the <a href=\"modelica://OpenIPSL.Examples.IEEE14.Generation_Groups\"><code>IEEE14</code></a> and 
+as the <a href=\"modelica://OpenIPSL.Examples.IEEE14.Generation_Groups\"><code>IEEE14</code></a> and
 <a href=\"modelica://OpenIPSL.Examples.N44.Base_Case.Generators\"><code>N44</code></a> examples demonstrate.
 For these last two cases, there is a generator group model for each generator connected to the network.
 </p>
@@ -27,9 +27,9 @@ parameters of machines and their controls from this package, you must:
 <li>Go to the <em>generation group model</em> where you intend to use the records.</li>
 <li>Drag and drop an instance of the <code>OpenIPSL.Data.PowerPlant.GUDynamics</code> record
     on the diagram layer of the model.</li>
-<li>Propagate the record to the upper-level model (i.e. to the <em>network model</em> where the
+<li>Propagate the record to the upper-level model (i.e., to the <em>network model</em> where the
     <em>generation group model</em> is instantiated).</li>
-<li>Go to the <em>network model</em> (i.e. the upper-level model) and double click on the
+<li>Go to the <em>network model</em> (i.e., the upper-level model) and double click on the
     generator component.</li>
 <li>Expand the drop-down list of the propagated <code>GUnitDynamics</code> parameter and
     and <em>choose the set of parameters that best suits your needs</em>. Notice that the
