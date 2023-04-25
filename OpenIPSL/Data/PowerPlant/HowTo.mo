@@ -22,6 +22,7 @@ For these last two cases, there is a generator group model for each generator co
 <p>
 To be able to make use of the parameterized records containing the dynamic response related
 parameters of machines and their controls from this package, you must:
+</p>
 <ul>
 <li>Go to the <em>generation group model</em> where you intend to use the records.</li>
 <li>Drag and drop an instance of the <code>OpenIPSL.Data.PowerPlant.GUDynamics</code> record
@@ -44,7 +45,6 @@ parameters of machines and their controls from this package, you must:
     (b) copied and pasted or, (c) explored using the
     <em>Insert Component Reference</em> functionality.</li>
 </ul>
-</p>
 <p>A couple of <strong>examples</strong> have been created to illustrate the entire procedure.</p>
 </html>"));
 end HowTo;
