@@ -2,7 +2,6 @@ PowerFlowTemplate
 PowerFlow
 BusData
 LoadData
-TrafoData
 MachineData
 PF00030
 PF00040

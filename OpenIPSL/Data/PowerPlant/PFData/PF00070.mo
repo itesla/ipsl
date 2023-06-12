@@ -17,9 +17,4 @@ record PF00070 "PF solutions for Pload = 70 MW"
     "Power flow results for machines";
   Machines machines;
 
-  replaceable record Trafos =
-      TrafoData.PFTrafo00070    constrainedby TrafoData.TrafoTemplate
-    "Power flow results for transformers";
-  Trafos trafos;
-
 end PF00070;
