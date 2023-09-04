@@ -8,7 +8,7 @@ The following short guide is intended to provide a brief description on the use
 of the <strong>parameter data sets for generation units</strong> contained in this package.
 </p>
 <p>
-The <a href=\"modelica://OpenIPSL.Examples.Tutorial.Example_1\"><code>Example 1</code></a>
+The <a href=\"modelica://OpenIPSL.Examples.Tutorial.Example_1\"><code>Example_1</code></a>
 of the <a href=\"modelica://OpenIPSL.Examples.Tutorial\">OpenIPSL Library Tutorial</a>
 explains the process required to create a simple network model along with a
 <strong>generation group</strong> sub-model.
