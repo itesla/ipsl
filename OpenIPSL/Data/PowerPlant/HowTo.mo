@@ -25,7 +25,7 @@ parameters of machines and their controls from this package, you must:
 </p>
 <ul>
 <li>Go to the <em>generation group model</em> where you intend to use the records.</li>
-<li>Drag and drop an instance of the <code>OpenIPSL.Data.PowerPlant.GUDynamics</code> record
+<li>Drag and drop an instance of the <a href=\"modelica://OpenIPSL.Data.PowerPlant.GUDynamics\">GUDynamics</a> record
     on the diagram layer of the model.</li>
 <li>Propagate the record to the upper-level model (i.e., to the <em>network model</em> where the
     <em>generation group model</em> is instantiated).</li>
