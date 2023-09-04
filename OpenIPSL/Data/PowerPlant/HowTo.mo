@@ -45,6 +45,6 @@ parameters of machines and their controls from this package, you must:
     (b) copied and pasted or, (c) explored using the
     <em>Insert Component Reference</em> functionality.</li>
 </ul>
-<p>A couple of <strong>examples</strong> have been created to illustrate the entire procedure.</p>
+<p>A couple of <a href=\"modelica://OpenIPSL.Data.PowerPlant.Examples\">examples</a> have been created to illustrate the entire procedure:</p>
 </html>"));
 end HowTo;
