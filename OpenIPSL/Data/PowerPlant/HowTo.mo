@@ -31,7 +31,7 @@ parameters of machines and their controls from this package, you must:
     <em>generation group model</em> is instantiated).</li>
 <li>Go to the <em>network model</em> (i.e., the upper-level model) and double click on the
     generator component.</li>
-<li>Expand the drop-down list of the propagated <code>GUnitDynamics</code> parameter and
+<li>Expand the drop-down list of the propagated <code>GUnitDynamics</code> parameter
     and <em>choose the set of parameters that best suits your needs</em>. Notice that the
     available parameters can be inspected later by first clicking on the button to the right
     of the drop-down list, and then on the button of the corresponding generator group
