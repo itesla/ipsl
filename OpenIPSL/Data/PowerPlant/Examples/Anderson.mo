@@ -35,7 +35,7 @@ experiment(
 <p>
 This example demonstrates the use of records with synchronous machine,
 excitation system, power system stabilizer and turbine-governor model parameters,
-based on data sets published in the &quot;Power System Control and Stability&quot; book.
+based on data sets published in <a href=\"modelica://OpenIPSL.UsersGuide.References\">[Anderson2002]</a>.
 The generator group for this example includes a
 <a href=\"modelica://OpenIPSL.Electrical.Machines.PSSE.GENROE\">GENROE</a>
 machine together with an
@@ -88,9 +88,5 @@ continuing with the following steps:
 <code>GenerationGroup.Generator2</code></a>
 and follow step 4.</li>
 </ol>
-<h5>Source</h5>
-<ul>
-<li>Anderson, P. M., &amp; Fouad, A. A. (2008). Power system control and stability. John Wiley &amp; Sons. Pages: 566-580.</li>
-</ul>
 </html>"));
 end Anderson;

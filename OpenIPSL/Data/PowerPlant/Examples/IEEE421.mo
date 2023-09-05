@@ -37,7 +37,7 @@ experiment(
       Tolerance=1e-06), Documentation(info="<html>
 <p>
 This example demonstrates the use of records with synchronous machine, excitation system,
-and power system stabilizer parameters, based on data sets published in the IEEE421.5 standard.
+and power system stabilizer parameters, based on data sets published in <a href=\"modelica://OpenIPSL.UsersGuide.References\">[IEEE2005]</a>.
 The generator group for this example includes a
 <a href=\"modelica://OpenIPSL.Electrical.Machines.PSSE.GENSAE\">GENSAE</a>
 machine together with an
@@ -87,9 +87,5 @@ propagated before continuing with the following steps:
 <a href=\"modelica://OpenIPSL.Data.PowerPlant.GenerationGroup.Generator1\">
 <code>GenerationGroup.Generator1</code></a> and follow step 4.</li>
 </ol>
-<h5>Source</h5>
-<ul>
-<li>IEEE (2005), IEEE Recommended Practice for Excitation System Models for Power System Stability Studies. New York, NY 10016-5997, USA.</li>
-</ul>
 </html>"));
 end IEEE421;
