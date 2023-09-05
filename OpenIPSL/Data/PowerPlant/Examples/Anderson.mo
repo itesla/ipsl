@@ -2,22 +2,22 @@ within OpenIPSL.Data.PowerPlant.Examples;
 model Anderson
   "SMIB system to learn how to use the data set records (Anderson book)"
   extends OpenIPSL.Tests.BaseClasses.SMIB(constantLoad(
-      P_0=powerFlow.powerflow.loads.PL1,
-      Q_0=powerFlow.powerflow.loads.QL1,
-      v_0=powerFlow.powerflow.bus.v3,
-      angle_0=powerFlow.powerflow.bus.A3), gENCLS(
-      P_0=powerFlow.powerflow.machines.PG2,
-      Q_0=powerFlow.powerflow.machines.QG2,
-      v_0=powerFlow.powerflow.bus.v2,
-      angle_0=powerFlow.powerflow.bus.A2));
+      P_0=powerFlow.powerFlow.loads.PL1,
+      Q_0=powerFlow.powerFlow.loads.QL1,
+      v_0=powerFlow.powerFlow.bus.v3,
+      angle_0=powerFlow.powerFlow.bus.A3), gENCLS(
+      P_0=powerFlow.powerFlow.machines.PG2,
+      Q_0=powerFlow.powerFlow.machines.QG2,
+      v_0=powerFlow.powerFlow.bus.v2,
+      angle_0=powerFlow.powerFlow.bus.A2));
   GenerationGroup.Generator2  generator1(
-    P_0=powerFlow.powerflow.machines.PG1,
+    P_0=powerFlow.powerFlow.machines.PG1,
     enableP_0=true,
-    Q_0=powerFlow.powerflow.machines.QG1,
+    Q_0=powerFlow.powerFlow.machines.QG1,
     enableQ_0=true,
-    v_0=powerFlow.powerflow.bus.v1,
+    v_0=powerFlow.powerFlow.bus.v1,
     enablev_0=true,
-    angle_0=powerFlow.powerflow.bus.A1,
+    angle_0=powerFlow.powerFlow.bus.A1,
     enableangle_0=true,
     redeclare record GUnitDynamics =
         OpenIPSL.Data.PowerPlant.Anderson.Steam.Fossil.AndersonF15)
@@ -70,18 +70,18 @@ continuing with the following steps:
 <li>Insert component references to the <code>powerFlow</code> record to define
     the initial power flow values. This has to be done for the following components:
     <ul>
-    <li>generator1: <code>P_0=powerFlow.powerflow.machines.PG1</code>;
-        <code>Q_0=powerFlow.powerflow.machines.QG1</code>;
-        <code>v_0=powerFlow.powerflow.bus.v1</code>;
-        <code>angle_0=powerFlow.powerflow.bus.A1</code>.</li>
-    <li>gENCLS: <code>P_0=powerFlow.powerflow.machines.PG2</code>;
-        <code>Q_0=powerFlow.powerflow.machines.QG2</code>;
-        <code>v_0=powerFlow.powerflow.bus.v2</code>;
-        <code>angle_0=powerFlow.powerflow.bus.A2</code>.</li>
-    <li>constantLoad: P_0=<code>powerFlow.powerflow.loads.PL1</code>;
-        <code>Q_0=powerFlow.powerflow.loads.QL1</code>;
-        <code>v_0=powerFlow.powerflow.bus.v3</code>;
-        <code>angle_0=powerFlow.powerflow.bus.A3</code>.</li>
+    <li>generator1: <code>P_0=powerFlow.powerFlow.machines.PG1</code>;
+        <code>Q_0=powerFlow.powerFlow.machines.QG1</code>;
+        <code>v_0=powerFlow.powerFlow.bus.v1</code>;
+        <code>angle_0=powerFlow.powerFlow.bus.A1</code>.</li>
+    <li>gENCLS: <code>P_0=powerFlow.powerFlow.machines.PG2</code>;
+        <code>Q_0=powerFlow.powerFlow.machines.QG2</code>;
+        <code>v_0=powerFlow.powerFlow.bus.v2</code>;
+        <code>angle_0=powerFlow.powerFlow.bus.A2</code>.</li>
+    <li>constantLoad: P_0=<code>powerFlow.powerFlow.loads.PL1</code>;
+        <code>Q_0=powerFlow.powerFlow.loads.QL1</code>;
+        <code>v_0=powerFlow.powerFlow.bus.v3</code>;
+        <code>angle_0=powerFlow.powerFlow.bus.A3</code>.</li>
     </ul></li>
 <li>Go back to the instructions in
 <a href=\"modelica://OpenIPSL.Data.PowerPlant.GenerationGroup.Generator2\">

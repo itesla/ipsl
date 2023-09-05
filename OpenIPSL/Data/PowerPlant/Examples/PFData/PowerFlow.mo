@@ -7,7 +7,7 @@ record PowerFlow "Record containing replaceable record with power flow results"
                                                   annotation (
       choicesAllMatching);
 
-  PowerFlow powerflow;
+  PowerFlow powerFlow;
 
   annotation (Documentation(info="<html>
 <p>Instantiable record containing the replaceable record with power flow results.</p>
