@@ -4,6 +4,15 @@ model References "References"
   annotation (Documentation(info="<html>
 <table cellspacing=\"0\" cellpadding=\"2\" border=\"0\">
 <tr>
+<td>[Anderson2002]</td>
+<td>Anderson, P. M., Fouad, A. A.:
+        &quot;Appendix D: Typical System Data&quot;.
+        in Power System Control and Stability, Wiley-IEEE Press, 555-581,
+        2nd edition, October 2002,
+        <a href=\"https://doi.org/10.1109/9780470545577.app4\">DOI: 10.1109/9780470545577.app4</a>
+</td>
+</tr>
+<tr>
 <td>[IEEE1968]</td>
 <td>IEEE:
         &quot;Computer representation of excitation systems&quot;.

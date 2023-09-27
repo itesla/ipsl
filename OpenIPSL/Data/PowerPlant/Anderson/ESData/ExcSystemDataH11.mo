@@ -1,0 +1,26 @@
+within OpenIPSL.Data.PowerPlant.Anderson.ESData;
+record ExcSystemDataH11
+  extends ExcSystemDataTemplate( VR_type = "A",
+    IEEE_type = "DC1x",
+    Name = "WMA",
+    RR = 1.5,
+    T_R = 0.000,
+    K_A = 276.000,
+    T_A1 = 0.060,
+    T_A2 = 0.000,
+    V_RMAX = 1.960,
+    V_RMIN = -1.960,
+    K_E = -0.184,
+    T_E = 1.290,
+    E_1 = 3.900,
+    E_2 = 5.200,
+    S_EE_1 = 0.270,
+    S_EE_2 = 0.560,
+    A_ex = 0.0303,
+    B_ex = 0.5612,
+    Efd_max = 5.200,
+    Efd_min = -5.200,
+    K_F = 0.0317,
+    T_F1 = 0.480,
+    T_F2 = 0.000);
+end ExcSystemDataH11;
