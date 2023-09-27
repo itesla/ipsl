@@ -16,7 +16,7 @@ Please note that the library contains only the models that can be used for dynam
 The user should use a Modelica-compliant tool for simulation of models in this lirbary.
 
 ## History
-The iPSL is a [Modelica](https://www.modelica.org) library developed during the [iTesla project](http://www.itesla-project.eu/).
+The iPSL is a [Modelica](https://www.modelica.org) library developed during the [iTesla project](https://cordis.europa.eu/project/id/283012/reporting).
 The members of this project (OpenIPSL) at SmarTS Lab (now [ALSETLab](https://github.com/ALSETLab)) where key developers of the iPSL until March 31, 2016, when the iTesla project was completed.
 Prof. [Luigi Vanfretti](https://github.com/lvanfretti) lead the development of a large amount of the models of the library (particularly those that replicate results from PSAT and PSS/E).
 iPSL is part of the [iTesla Tool](https://github.com/itesla/ipst), and thus, it is subject to the needs of the consortium that develops the iTesla Tool.
